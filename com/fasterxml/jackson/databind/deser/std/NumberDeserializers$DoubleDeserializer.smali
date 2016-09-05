@@ -7,15 +7,6 @@
 .annotation runtime Lcom/fasterxml/jackson/databind/annotation/JacksonStdImpl;
 .end annotation
 
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/std/NumberDeserializers;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "DoubleDeserializer"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/fasterxml/jackson/databind/deser/std/NumberDeserializers$PrimitiveOrWrapperDeserializer",
@@ -70,7 +61,6 @@
 
 .method public constructor <init>(Ljava/lang/Class;Ljava/lang/Double;)V
     .registers 3
-    .param p2, "nvl"    # Ljava/lang/Double;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -85,7 +75,6 @@
 
     .prologue
     .line 361
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<Ljava/lang/Double;>;"
     invoke-direct {p0, p1, p2}, Lcom/fasterxml/jackson/databind/deser/std/NumberDeserializers$PrimitiveOrWrapperDeserializer;-><init>(Ljava/lang/Class;Ljava/lang/Object;)V
 
     .line 362
@@ -116,14 +105,6 @@
 # virtual methods
 .method public deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Double;
     .registers 4
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 368
@@ -136,14 +117,6 @@
 
 .method public bridge synthetic deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .registers 4
-    .param p1, "x0"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 350
@@ -156,15 +129,6 @@
 
 .method public deserializeWithType(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;)Ljava/lang/Double;
     .registers 5
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .param p3, "typeDeserializer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 378
@@ -177,14 +141,6 @@
 
 .method public bridge synthetic deserializeWithType(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;)Ljava/lang/Object;
     .registers 5
-    .param p1, "x0"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .param p3, "x2"    # Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 350

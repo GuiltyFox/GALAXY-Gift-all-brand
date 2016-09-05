@@ -8,31 +8,25 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->processJsonCampaign(Ljava/lang/String;ZZZ)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->a(Ljava/lang/String;ZZZ)V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+.field final synthetic a:Landroid/widget/TextView;
 
-.field final synthetic val$textTermsConditionsDetail:Landroid/widget/TextView;
+.field final synthetic b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Landroid/widget/TextView;)V
     .registers 3
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     .prologue
-    .line 1173
-    iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$14;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    .line 1230
+    iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$14;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$14;->val$textTermsConditionsDetail:Landroid/widget/TextView;
+    iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$14;->a:Landroid/widget/TextView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -45,20 +39,19 @@
     .registers 4
 
     .prologue
-    .line 1176
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$14;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    .line 1233
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$14;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    const v2, 0x7f1000f2
+    const v1, 0x7f1000fe
 
-    invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/RelativeLayout;
 
-    .line 1178
-    .local v0, "layoutConditionsSeeMore":Landroid/widget/RelativeLayout;
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$14;->val$textTermsConditionsDetail:Landroid/widget/TextView;
+    .line 1235
+    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$14;->a:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/widget/TextView;->getLineCount()I
 
@@ -68,16 +61,16 @@
 
     if-le v1, v2, :cond_19
 
-    .line 1179
+    .line 1236
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 1183
+    .line 1240
     :goto_18
     return-void
 
-    .line 1181
+    .line 1238
     :cond_19
     const/16 v1, 0x8
 

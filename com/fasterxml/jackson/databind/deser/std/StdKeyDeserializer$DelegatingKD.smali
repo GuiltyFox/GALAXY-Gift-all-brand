@@ -6,17 +6,6 @@
 .implements Ljava/io/Serializable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/std/StdKeyDeserializer;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x18
-    name = "DelegatingKD"
-.end annotation
-
-
 # static fields
 .field private static final serialVersionUID:J = 0x1L
 
@@ -56,8 +45,6 @@
 
     .prologue
     .line 260
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p2, "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     invoke-direct {p0}, Lcom/fasterxml/jackson/databind/KeyDeserializer;-><init>()V
 
     .line 261
@@ -73,93 +60,82 @@
 
 # virtual methods
 .method public final deserializeKey(Ljava/lang/String;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
-    .registers 8
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
+    .registers 7
 
     .prologue
     .line 269
     if-nez p1, :cond_4
 
     .line 270
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 276
     :cond_3
-    return-object v1
+    return-object v0
 
     .line 274
     :cond_4
     :try_start_4
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/deser/std/StdKeyDeserializer$DelegatingKD;->_delegate:Lcom/fasterxml/jackson/databind/JsonDeserializer;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/StdKeyDeserializer$DelegatingKD;->_delegate:Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
     invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/DeserializationContext;->getParser()Lcom/fasterxml/jackson/core/JsonParser;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v2, v3, p2}, Lcom/fasterxml/jackson/databind/JsonDeserializer;->deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, p2}, Lcom/fasterxml/jackson/databind/JsonDeserializer;->deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     :try_end_d
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_d} :catch_1a
 
-    move-result-object v1
+    move-result-object v0
 
     .line 275
-    .local v1, "result":Ljava/lang/Object;
-    if-nez v1, :cond_3
+    if-nez v0, :cond_3
 
     .line 281
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/deser/std/StdKeyDeserializer$DelegatingKD;->_keyClass:Ljava/lang/Class;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/StdKeyDeserializer$DelegatingKD;->_keyClass:Ljava/lang/Class;
 
-    const-string/jumbo v3, "not a valid representation"
+    const-string/jumbo v1, "not a valid representation"
 
-    invoke-virtual {p2, v2, p1, v3}, Lcom/fasterxml/jackson/databind/DeserializationContext;->weirdKeyException(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonMappingException;
+    invoke-virtual {p2, v0, p1, v1}, Lcom/fasterxml/jackson/databind/DeserializationContext;->weirdKeyException(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonMappingException;
 
-    move-result-object v2
+    move-result-object v0
 
-    throw v2
+    throw v0
 
     .line 278
-    .end local v1    # "result":Ljava/lang/Object;
     :catch_1a
     move-exception v0
 
     .line 279
-    .local v0, "re":Ljava/lang/Exception;
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/deser/std/StdKeyDeserializer$DelegatingKD;->_keyClass:Ljava/lang/Class;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/std/StdKeyDeserializer$DelegatingKD;->_keyClass:Ljava/lang/Class;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "not a valid representation: "
+    const-string/jumbo v3, "not a valid representation: "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {p2, v2, p1, v3}, Lcom/fasterxml/jackson/databind/DeserializationContext;->weirdKeyException(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonMappingException;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    throw v2
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p2, v1, p1, v0}, Lcom/fasterxml/jackson/databind/DeserializationContext;->weirdKeyException(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonMappingException;
+
+    move-result-object v0
+
+    throw v0
 .end method
 
 .method public getKeyClass()Ljava/lang/Class;

@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/std/JsonNodeDeserializer;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x18
-    name = "ArrayDeserializer"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/fasterxml/jackson/databind/deser/std/BaseNodeDeserializer",
@@ -70,14 +61,6 @@
 # virtual methods
 .method public deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 4
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 116
@@ -111,14 +94,6 @@
 
 .method public bridge synthetic deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .registers 4
-    .param p1, "x0"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 101

@@ -25,6 +25,8 @@
     .registers 4
 
     .prologue
+    const/4 v0, 0x0
+
     .line 15
     const/16 v1, 0x7f
 
@@ -39,29 +41,26 @@
 
     invoke-static {v1, v2}, Ljava/util/Arrays;->fill([II)V
 
+    move v1, v0
+
     .line 18
-    const/4 v0, 0x0
+    :goto_e
+    const/16 v2, 0xa
 
-    .local v0, "i":I
-    :goto_d
-    const/16 v1, 0xa
+    if-ge v1, v2, :cond_1b
 
-    if-ge v0, v1, :cond_1a
+    sget-object v2, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->HEX_DIGITS:[I
 
-    sget-object v1, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->HEX_DIGITS:[I
+    add-int/lit8 v3, v1, 0x30
 
-    add-int/lit8 v2, v0, 0x30
+    aput v1, v2, v3
 
-    aput v0, v1, v2
+    add-int/lit8 v1, v1, 0x1
 
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_d
+    goto :goto_e
 
     .line 19
-    :cond_1a
-    const/4 v0, 0x0
-
+    :cond_1b
     :goto_1b
     const/4 v1, 0x6
 
@@ -109,9 +108,6 @@
 
 .method static _badChar(Ljava/lang/String;IC)I
     .registers 6
-    .param p0, "uuidStr"    # Ljava/lang/String;
-    .param p1, "index"    # I
-    .param p2, "c"    # C
 
     .prologue
     .line 104
@@ -178,7 +174,6 @@
 
 .method private _badFormat(Ljava/lang/String;)V
     .registers 4
-    .param p1, "uuidStr"    # Ljava/lang/String;
 
     .prologue
     .line 75
@@ -193,13 +188,6 @@
 
 .method private _fromBytes([BLcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/util/UUID;
     .registers 9
-    .param p1, "bytes"    # [B
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 109
@@ -261,8 +249,6 @@
 
 .method private static _int([BI)I
     .registers 4
-    .param p0, "b"    # [B
-    .param p1, "offset"    # I
 
     .prologue
     .line 124
@@ -302,126 +288,114 @@
 .end method
 
 .method private static _long([BI)J
-    .registers 9
-    .param p0, "b"    # [B
-    .param p1, "offset"    # I
+    .registers 7
 
     .prologue
-    const/16 v6, 0x20
+    const/16 v4, 0x20
 
     .line 116
     invoke-static {p0, p1}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->_int([BI)I
 
-    move-result v4
+    move-result v0
 
-    int-to-long v4, v4
+    int-to-long v0, v0
 
-    shl-long v0, v4, v6
+    shl-long/2addr v0, v4
 
     .line 117
-    .local v0, "l1":J
-    add-int/lit8 v4, p1, 0x4
+    add-int/lit8 v2, p1, 0x4
 
-    invoke-static {p0, v4}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->_int([BI)I
+    invoke-static {p0, v2}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->_int([BI)I
 
-    move-result v4
+    move-result v2
 
-    int-to-long v2, v4
+    int-to-long v2, v2
 
     .line 119
-    .local v2, "l2":J
-    shl-long v4, v2, v6
+    shl-long/2addr v2, v4
 
-    ushr-long v2, v4, v6
+    ushr-long/2addr v2, v4
 
     .line 120
-    or-long v4, v0, v2
+    or-long/2addr v0, v2
 
-    return-wide v4
+    return-wide v0
 .end method
 
 .method static byteFromChars(Ljava/lang/String;I)I
-    .registers 8
-    .param p0, "str"    # Ljava/lang/String;
-    .param p1, "index"    # I
+    .registers 7
 
     .prologue
-    const/16 v5, 0x7f
+    const/16 v4, 0x7f
 
     .line 88
     invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C
 
-    move-result v0
-
-    .line 89
-    .local v0, "c1":C
-    add-int/lit8 v3, p1, 0x1
-
-    invoke-virtual {p0, v3}, Ljava/lang/String;->charAt(I)C
-
     move-result v1
 
-    .line 91
-    .local v1, "c2":C
-    if-gt v0, v5, :cond_1f
+    .line 89
+    add-int/lit8 v0, p1, 0x1
 
-    if-gt v1, v5, :cond_1f
+    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
+
+    move-result v2
+
+    .line 91
+    if-gt v1, v4, :cond_1e
+
+    if-gt v2, v4, :cond_1e
 
     .line 92
+    sget-object v0, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->HEX_DIGITS:[I
+
+    aget v0, v0, v1
+
+    shl-int/lit8 v0, v0, 0x4
+
     sget-object v3, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->HEX_DIGITS:[I
 
-    aget v3, v3, v0
+    aget v3, v3, v2
 
-    shl-int/lit8 v3, v3, 0x4
-
-    sget-object v4, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->HEX_DIGITS:[I
-
-    aget v4, v4, v1
-
-    or-int v2, v3, v4
+    or-int/2addr v0, v3
 
     .line 93
-    .local v2, "hex":I
-    if-ltz v2, :cond_1f
+    if-ltz v0, :cond_1e
 
     .line 100
-    .end local v2    # "hex":I
-    :goto_1e
-    return v2
+    :goto_1d
+    return v0
 
     .line 97
-    :cond_1f
-    if-gt v0, v5, :cond_27
+    :cond_1e
+    if-gt v1, v4, :cond_26
 
-    sget-object v3, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->HEX_DIGITS:[I
+    sget-object v0, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->HEX_DIGITS:[I
 
-    aget v3, v3, v0
+    aget v0, v0, v1
 
-    if-gez v3, :cond_2c
+    if-gez v0, :cond_2b
 
     .line 98
-    :cond_27
-    invoke-static {p0, p1, v0}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->_badChar(Ljava/lang/String;IC)I
+    :cond_26
+    invoke-static {p0, p1, v1}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->_badChar(Ljava/lang/String;IC)I
 
-    move-result v2
+    move-result v0
 
-    goto :goto_1e
+    goto :goto_1d
 
     .line 100
-    :cond_2c
-    add-int/lit8 v3, p1, 0x1
+    :cond_2b
+    add-int/lit8 v0, p1, 0x1
 
-    invoke-static {p0, v3, v1}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->_badChar(Ljava/lang/String;IC)I
+    invoke-static {p0, v0, v2}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->_badChar(Ljava/lang/String;IC)I
 
-    move-result v2
+    move-result v0
 
-    goto :goto_1e
+    goto :goto_1d
 .end method
 
 .method static intFromChars(Ljava/lang/String;I)I
     .registers 4
-    .param p0, "str"    # Ljava/lang/String;
-    .param p1, "index"    # I
 
     .prologue
     .line 79
@@ -464,8 +438,6 @@
 
 .method static shortFromChars(Ljava/lang/String;I)I
     .registers 4
-    .param p0, "str"    # Ljava/lang/String;
-    .param p1, "index"    # I
 
     .prologue
     .line 83
@@ -490,13 +462,6 @@
 # virtual methods
 .method protected bridge synthetic _deserialize(Ljava/lang/String;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .registers 4
-    .param p1, "x0"    # Ljava/lang/String;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 11
@@ -508,214 +473,179 @@
 .end method
 
 .method protected _deserialize(Ljava/lang/String;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/util/UUID;
-    .registers 16
-    .param p1, "id"    # Ljava/lang/String;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 11
 
     .prologue
+    const/16 v7, 0x18
+
+    const/16 v2, 0x2d
+
+    const/16 v6, 0x20
+
     .line 32
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v10
+    move-result v0
 
-    const/16 v11, 0x24
+    const/16 v1, 0x24
 
-    if-eq v10, v11, :cond_20
+    if-eq v0, v1, :cond_24
 
     .line 36
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v10
+    move-result v0
 
-    const/16 v11, 0x18
-
-    if-ne v10, v11, :cond_1d
+    if-ne v0, v7, :cond_21
 
     .line 37
     invoke-static {}, Lcom/fasterxml/jackson/core/Base64Variants;->getDefaultVariant()Lcom/fasterxml/jackson/core/Base64Variant;
 
-    move-result-object v10
+    move-result-object v0
 
-    invoke-virtual {v10, p1}, Lcom/fasterxml/jackson/core/Base64Variant;->decode(Ljava/lang/String;)[B
+    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/core/Base64Variant;->decode(Ljava/lang/String;)[B
 
-    move-result-object v3
+    move-result-object v0
 
     .line 38
-    .local v3, "stuff":[B
-    invoke-direct {p0, v3, p2}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->_fromBytes([BLcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/util/UUID;
+    invoke-direct {p0, v0, p2}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->_fromBytes([BLcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/util/UUID;
 
-    move-result-object v10
+    move-result-object v0
 
     .line 61
-    .end local v3    # "stuff":[B
-    :goto_1c
-    return-object v10
+    :goto_20
+    return-object v0
 
     .line 40
-    :cond_1d
+    :cond_21
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->_badFormat(Ljava/lang/String;)V
 
     .line 44
-    :cond_20
-    const/16 v10, 0x8
+    :cond_24
+    const/16 v0, 0x8
 
-    invoke-virtual {p1, v10}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
-    move-result v10
+    move-result v0
 
-    const/16 v11, 0x2d
+    if-ne v0, v2, :cond_44
 
-    if-ne v10, v11, :cond_48
+    const/16 v0, 0xd
 
-    const/16 v10, 0xd
+    invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
-    invoke-virtual {p1, v10}, Ljava/lang/String;->charAt(I)C
+    move-result v0
 
-    move-result v10
+    if-ne v0, v2, :cond_44
 
-    const/16 v11, 0x2d
+    const/16 v0, 0x12
 
-    if-ne v10, v11, :cond_48
+    invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
-    const/16 v10, 0x12
+    move-result v0
 
-    invoke-virtual {p1, v10}, Ljava/lang/String;->charAt(I)C
+    if-ne v0, v2, :cond_44
 
-    move-result v10
+    const/16 v0, 0x17
 
-    const/16 v11, 0x2d
+    invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
-    if-ne v10, v11, :cond_48
+    move-result v0
 
-    const/16 v10, 0x17
-
-    invoke-virtual {p1, v10}, Ljava/lang/String;->charAt(I)C
-
-    move-result v10
-
-    const/16 v11, 0x2d
-
-    if-eq v10, v11, :cond_4b
+    if-eq v0, v2, :cond_47
 
     .line 46
-    :cond_48
+    :cond_44
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->_badFormat(Ljava/lang/String;)V
 
     .line 48
-    :cond_4b
-    const/4 v10, 0x0
+    :cond_47
+    const/4 v0, 0x0
 
-    invoke-static {p1, v10}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->intFromChars(Ljava/lang/String;I)I
+    invoke-static {p1, v0}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->intFromChars(Ljava/lang/String;I)I
 
-    move-result v10
+    move-result v0
 
-    int-to-long v4, v10
+    int-to-long v0, v0
 
     .line 49
-    .local v4, "l1":J
-    const/16 v10, 0x20
-
-    shl-long/2addr v4, v10
+    shl-long/2addr v0, v6
 
     .line 50
-    const/16 v10, 0x9
+    const/16 v2, 0x9
 
-    invoke-static {p1, v10}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->shortFromChars(Ljava/lang/String;I)I
+    invoke-static {p1, v2}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->shortFromChars(Ljava/lang/String;I)I
 
-    move-result v10
+    move-result v2
 
-    int-to-long v10, v10
+    int-to-long v2, v2
 
-    const/16 v12, 0x10
+    const/16 v4, 0x10
 
-    shl-long v6, v10, v12
+    shl-long/2addr v2, v4
 
     .line 51
-    .local v6, "l2":J
-    const/16 v10, 0xe
+    const/16 v4, 0xe
 
-    invoke-static {p1, v10}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->shortFromChars(Ljava/lang/String;I)I
+    invoke-static {p1, v4}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->shortFromChars(Ljava/lang/String;I)I
 
-    move-result v10
+    move-result v4
 
-    int-to-long v10, v10
+    int-to-long v4, v4
 
-    or-long/2addr v6, v10
+    or-long/2addr v2, v4
 
     .line 52
-    add-long v0, v4, v6
+    add-long/2addr v2, v0
 
     .line 54
-    .local v0, "hi":J
-    const/16 v10, 0x13
+    const/16 v0, 0x13
 
-    invoke-static {p1, v10}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->shortFromChars(Ljava/lang/String;I)I
+    invoke-static {p1, v0}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->shortFromChars(Ljava/lang/String;I)I
 
-    move-result v10
+    move-result v0
 
-    shl-int/lit8 v10, v10, 0x10
+    shl-int/lit8 v0, v0, 0x10
 
-    const/16 v11, 0x18
+    invoke-static {p1, v7}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->shortFromChars(Ljava/lang/String;I)I
 
-    invoke-static {p1, v11}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->shortFromChars(Ljava/lang/String;I)I
+    move-result v1
 
-    move-result v11
-
-    or-int v2, v10, v11
+    or-int/2addr v0, v1
 
     .line 55
-    .local v2, "i1":I
-    int-to-long v4, v2
+    int-to-long v0, v0
 
     .line 56
-    const/16 v10, 0x20
-
-    shl-long/2addr v4, v10
+    shl-long/2addr v0, v6
 
     .line 57
-    const/16 v10, 0x1c
+    const/16 v4, 0x1c
 
-    invoke-static {p1, v10}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->intFromChars(Ljava/lang/String;I)I
+    invoke-static {p1, v4}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->intFromChars(Ljava/lang/String;I)I
 
-    move-result v10
+    move-result v4
 
-    int-to-long v6, v10
+    int-to-long v4, v4
 
     .line 58
-    const/16 v10, 0x20
+    shl-long/2addr v4, v6
 
-    shl-long v10, v6, v10
-
-    const/16 v12, 0x20
-
-    ushr-long v6, v10, v12
+    ushr-long/2addr v4, v6
 
     .line 59
-    or-long v8, v4, v6
+    or-long/2addr v4, v0
 
     .line 61
-    .local v8, "lo":J
-    new-instance v10, Ljava/util/UUID;
+    new-instance v0, Ljava/util/UUID;
 
-    invoke-direct {v10, v0, v1, v8, v9}, Ljava/util/UUID;-><init>(JJ)V
+    invoke-direct {v0, v2, v3, v4, v5}, Ljava/util/UUID;-><init>(JJ)V
 
-    goto :goto_1c
+    goto :goto_20
 .end method
 
 .method protected bridge synthetic _deserializeEmbedded(Ljava/lang/Object;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .registers 4
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 11
@@ -728,13 +658,6 @@
 
 .method protected _deserializeEmbedded(Ljava/lang/Object;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/util/UUID;
     .registers 4
-    .param p1, "ob"    # Ljava/lang/Object;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 67
@@ -745,7 +668,6 @@
     .line 68
     check-cast p1, [B
 
-    .end local p1    # "ob":Ljava/lang/Object;
     check-cast p1, [B
 
     invoke-direct {p0, p1, p2}, Lcom/fasterxml/jackson/databind/deser/std/UUIDDeserializer;->_fromBytes([BLcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/util/UUID;
@@ -757,7 +679,6 @@
     return-object v0
 
     .line 70
-    .restart local p1    # "ob":Ljava/lang/Object;
     :cond_d
     invoke-super {p0, p1, p2}, Lcom/fasterxml/jackson/databind/deser/std/FromStringDeserializer;->_deserializeEmbedded(Ljava/lang/Object;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
 

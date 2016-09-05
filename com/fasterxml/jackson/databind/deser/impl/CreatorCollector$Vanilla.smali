@@ -6,17 +6,6 @@
 .implements Ljava/io/Serializable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/impl/CreatorCollector;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1c
-    name = "Vanilla"
-.end annotation
-
-
 # static fields
 .field public static final TYPE_COLLECTION:I = 0x1
 
@@ -34,7 +23,6 @@
 # direct methods
 .method public constructor <init>(I)V
     .registers 2
-    .param p1, "t"    # I
 
     .prologue
     .line 252
@@ -71,12 +59,6 @@
 
 .method public createUsingDefault(Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .registers 5
-    .param p1, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 275

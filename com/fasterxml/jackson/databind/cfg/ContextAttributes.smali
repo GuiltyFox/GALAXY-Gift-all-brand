@@ -3,14 +3,6 @@
 .source "ContextAttributes.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;
-    }
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1

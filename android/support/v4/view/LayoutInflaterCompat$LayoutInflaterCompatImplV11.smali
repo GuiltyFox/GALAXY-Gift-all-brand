@@ -3,17 +3,6 @@
 .source "LayoutInflaterCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/view/LayoutInflaterCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "LayoutInflaterCompatImplV11"
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .registers 1
@@ -27,14 +16,12 @@
 
 
 # virtual methods
-.method public setFactory(Landroid/view/LayoutInflater;Landroid/support/v4/view/LayoutInflaterFactory;)V
+.method public a(Landroid/view/LayoutInflater;Landroid/support/v4/view/LayoutInflaterFactory;)V
     .registers 3
-    .param p1, "layoutInflater"    # Landroid/view/LayoutInflater;
-    .param p2, "factory"    # Landroid/support/v4/view/LayoutInflaterFactory;
 
     .prologue
     .line 48
-    invoke-static {p1, p2}, Landroid/support/v4/view/LayoutInflaterCompatHC;->setFactory(Landroid/view/LayoutInflater;Landroid/support/v4/view/LayoutInflaterFactory;)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/LayoutInflaterCompatHC;->a(Landroid/view/LayoutInflater;Landroid/support/v4/view/LayoutInflaterFactory;)V
 
     .line 49
     return-void

@@ -4,23 +4,17 @@
 
 
 # virtual methods
-.method public abstract clearMemory()V
+.method public abstract a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 .end method
 
-.method public abstract get(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+.method public abstract a()V
 .end method
 
-.method public abstract getDirty(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+.method public abstract a(I)V
 .end method
 
-.method public abstract getMaxSize()I
+.method public abstract a(Landroid/graphics/Bitmap;)Z
 .end method
 
-.method public abstract put(Landroid/graphics/Bitmap;)Z
-.end method
-
-.method public abstract setSizeMultiplier(F)V
-.end method
-
-.method public abstract trimMemory(I)V
+.method public abstract b(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 .end method

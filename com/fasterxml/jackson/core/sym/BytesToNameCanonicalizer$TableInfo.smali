@@ -3,17 +3,6 @@
 .source "BytesToNameCanonicalizer.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "TableInfo"
-.end annotation
-
-
 # instance fields
 .field public final collCount:I
 
@@ -35,14 +24,6 @@
 # direct methods
 .method public constructor <init>(II[I[Lcom/fasterxml/jackson/core/sym/Name;[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;III)V
     .registers 9
-    .param p1, "count"    # I
-    .param p2, "mainHashMask"    # I
-    .param p3, "mainHash"    # [I
-    .param p4, "mainNames"    # [Lcom/fasterxml/jackson/core/sym/Name;
-    .param p5, "collList"    # [Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
-    .param p6, "collCount"    # I
-    .param p7, "collEnd"    # I
-    .param p8, "longestCollisionList"    # I
 
     .prologue
     .line 1163
@@ -78,7 +59,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;)V
     .registers 3
-    .param p1, "src"    # Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;
 
     .prologue
     .line 1175

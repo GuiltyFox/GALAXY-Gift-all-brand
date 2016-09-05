@@ -4,9 +4,6 @@
 
 
 # annotations
-.annotation build Lcz/msebera/android/httpclient/annotation/Immutable;
-.end annotation
-
 .annotation runtime Ljava/lang/Deprecated;
 .end annotation
 
@@ -26,45 +23,36 @@
 
 # virtual methods
 .method public process(Lcz/msebera/android/httpclient/HttpRequest;Lcz/msebera/android/httpclient/protocol/HttpContext;)V
-    .registers 8
-    .param p1, "request"    # Lcz/msebera/android/httpclient/HttpRequest;
-    .param p2, "context"    # Lcz/msebera/android/httpclient/protocol/HttpContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcz/msebera/android/httpclient/HttpException;,
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 7
 
     .prologue
     .line 58
-    const-string/jumbo v2, "HTTP request"
+    const-string/jumbo v0, "HTTP request"
 
-    invoke-static {p1, v2}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcz/msebera/android/httpclient/util/Args;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 59
-    const-string/jumbo v2, "HTTP context"
+    const-string/jumbo v0, "HTTP context"
 
-    invoke-static {p2, v2}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lcz/msebera/android/httpclient/util/Args;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 61
     invoke-interface {p1}, Lcz/msebera/android/httpclient/HttpRequest;->getRequestLine()Lcz/msebera/android/httpclient/RequestLine;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-interface {v2}, Lcz/msebera/android/httpclient/RequestLine;->getMethod()Ljava/lang/String;
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/RequestLine;->a()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 62
-    .local v1, "method":Ljava/lang/String;
-    const-string/jumbo v2, "CONNECT"
+    const-string/jumbo v1, "CONNECT"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_1e
+    if-eqz v0, :cond_1e
 
     .line 81
     :cond_1d
@@ -73,76 +61,75 @@
 
     .line 66
     :cond_1e
-    const-string/jumbo v2, "Authorization"
+    const-string/jumbo v0, "Authorization"
 
-    invoke-interface {p1, v2}, Lcz/msebera/android/httpclient/HttpRequest;->containsHeader(Ljava/lang/String;)Z
+    invoke-interface {p1, v0}, Lcz/msebera/android/httpclient/HttpRequest;->containsHeader(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_1d
+    if-nez v0, :cond_1d
 
     .line 71
-    const-string/jumbo v2, "http.auth.target-scope"
+    const-string/jumbo v0, "http.auth.target-scope"
 
-    invoke-interface {p2, v2}, Lcz/msebera/android/httpclient/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {p2, v0}, Lcz/msebera/android/httpclient/protocol/HttpContext;->a(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcz/msebera/android/httpclient/auth/AuthState;
 
     .line 73
-    .local v0, "authState":Lcz/msebera/android/httpclient/auth/AuthState;
     if-nez v0, :cond_3b
 
     .line 74
-    iget-object v2, p0, Lcz/msebera/android/httpclient/client/protocol/RequestTargetAuthentication;->log:Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/client/protocol/RequestTargetAuthentication;->a:Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;
 
-    const-string/jumbo v3, "Target auth state not set in the context"
+    const-string/jumbo v1, "Target auth state not set in the context"
 
-    invoke-virtual {v2, v3}, Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;->debug(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;->a(Ljava/lang/Object;)V
 
     goto :goto_1d
 
     .line 77
     :cond_3b
-    iget-object v2, p0, Lcz/msebera/android/httpclient/client/protocol/RequestTargetAuthentication;->log:Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;
+    iget-object v1, p0, Lcz/msebera/android/httpclient/client/protocol/RequestTargetAuthentication;->a:Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;
 
-    invoke-virtual {v2}, Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;->isDebugEnabled()Z
+    invoke-virtual {v1}, Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;->a()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_60
+    if-eqz v1, :cond_60
 
     .line 78
-    iget-object v2, p0, Lcz/msebera/android/httpclient/client/protocol/RequestTargetAuthentication;->log:Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;
+    iget-object v1, p0, Lcz/msebera/android/httpclient/client/protocol/RequestTargetAuthentication;->a:Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "Target auth state: "
+    const-string/jumbo v3, "Target auth state: "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v0}, Lcz/msebera/android/httpclient/auth/AuthState;->getState()Lcz/msebera/android/httpclient/auth/AuthProtocolState;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Lcz/msebera/android/httpclient/auth/AuthState;->b()Lcz/msebera/android/httpclient/auth/AuthProtocolState;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v2, v3}, Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;->debug(Ljava/lang/Object;)V
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;->a(Ljava/lang/Object;)V
 
     .line 80
     :cond_60
-    invoke-virtual {p0, v0, p1, p2}, Lcz/msebera/android/httpclient/client/protocol/RequestTargetAuthentication;->process(Lcz/msebera/android/httpclient/auth/AuthState;Lcz/msebera/android/httpclient/HttpRequest;Lcz/msebera/android/httpclient/protocol/HttpContext;)V
+    invoke-virtual {p0, v0, p1, p2}, Lcz/msebera/android/httpclient/client/protocol/RequestTargetAuthentication;->a(Lcz/msebera/android/httpclient/auth/AuthState;Lcz/msebera/android/httpclient/HttpRequest;Lcz/msebera/android/httpclient/protocol/HttpContext;)V
 
     goto :goto_1d
 .end method

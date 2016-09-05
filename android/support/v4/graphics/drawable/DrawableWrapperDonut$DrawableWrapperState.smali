@@ -3,89 +3,70 @@
 .source "DrawableWrapperDonut.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/graphics/drawable/DrawableWrapperDonut;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x40c
-    name = "DrawableWrapperState"
-.end annotation
-
-
 # instance fields
-.field mChangingConfigurations:I
+.field a:I
 
-.field mDrawableState:Landroid/graphics/drawable/Drawable$ConstantState;
+.field b:Landroid/graphics/drawable/Drawable$ConstantState;
 
-.field mTint:Landroid/content/res/ColorStateList;
+.field c:Landroid/content/res/ColorStateList;
 
-.field mTintMode:Landroid/graphics/PorterDuff$Mode;
+.field d:Landroid/graphics/PorterDuff$Mode;
 
 
 # direct methods
 .method constructor <init>(Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;Landroid/content/res/Resources;)V
     .registers 4
-    .param p1, "orig"    # Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p2, "res"    # Landroid/content/res/Resources;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
 
     .prologue
-    .line 351
+    .line 345
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
 
-    .line 348
+    .line 342
     const/4 v0, 0x0
 
-    iput-object v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->mTint:Landroid/content/res/ColorStateList;
+    iput-object v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->c:Landroid/content/res/ColorStateList;
 
-    .line 349
-    sget-object v0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut;->DEFAULT_TINT_MODE:Landroid/graphics/PorterDuff$Mode;
+    .line 343
+    sget-object v0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut;->a:Landroid/graphics/PorterDuff$Mode;
 
-    iput-object v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->mTintMode:Landroid/graphics/PorterDuff$Mode;
+    iput-object v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->d:Landroid/graphics/PorterDuff$Mode;
 
-    .line 352
+    .line 346
     if-eqz p1, :cond_1c
 
-    .line 353
-    iget v0, p1, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->mChangingConfigurations:I
+    .line 347
+    iget v0, p1, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->a:I
 
-    iput v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->mChangingConfigurations:I
+    iput v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->a:I
 
-    .line 354
-    iget-object v0, p1, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->mDrawableState:Landroid/graphics/drawable/Drawable$ConstantState;
+    .line 348
+    iget-object v0, p1, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->b:Landroid/graphics/drawable/Drawable$ConstantState;
 
-    iput-object v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->mDrawableState:Landroid/graphics/drawable/Drawable$ConstantState;
+    iput-object v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->b:Landroid/graphics/drawable/Drawable$ConstantState;
 
-    .line 355
-    iget-object v0, p1, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->mTint:Landroid/content/res/ColorStateList;
+    .line 349
+    iget-object v0, p1, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->c:Landroid/content/res/ColorStateList;
 
-    iput-object v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->mTint:Landroid/content/res/ColorStateList;
+    iput-object v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->c:Landroid/content/res/ColorStateList;
 
-    .line 356
-    iget-object v0, p1, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->mTintMode:Landroid/graphics/PorterDuff$Mode;
+    .line 350
+    iget-object v0, p1, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->d:Landroid/graphics/PorterDuff$Mode;
 
-    iput-object v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->mTintMode:Landroid/graphics/PorterDuff$Mode;
+    iput-object v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->d:Landroid/graphics/PorterDuff$Mode;
 
-    .line 358
+    .line 352
     :cond_1c
     return-void
 .end method
 
 
 # virtual methods
-.method canConstantState()Z
+.method a()Z
     .registers 2
 
     .prologue
-    .line 374
-    iget-object v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->mDrawableState:Landroid/graphics/drawable/Drawable$ConstantState;
+    .line 368
+    iget-object v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->b:Landroid/graphics/drawable/Drawable$ConstantState;
 
     if-eqz v0, :cond_6
 
@@ -104,14 +85,14 @@
     .registers 3
 
     .prologue
-    .line 369
-    iget v1, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->mChangingConfigurations:I
+    .line 363
+    iget v1, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->a:I
 
-    iget-object v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->mDrawableState:Landroid/graphics/drawable/Drawable$ConstantState;
+    iget-object v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->b:Landroid/graphics/drawable/Drawable$ConstantState;
 
     if-eqz v0, :cond_e
 
-    iget-object v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->mDrawableState:Landroid/graphics/drawable/Drawable$ConstantState;
+    iget-object v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->b:Landroid/graphics/drawable/Drawable$ConstantState;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable$ConstantState;->getChangingConfigurations()I
 
@@ -132,7 +113,7 @@
     .registers 2
 
     .prologue
-    .line 362
+    .line 356
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;->newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
@@ -143,8 +124,4 @@
 .end method
 
 .method public abstract newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
-    .param p1    # Landroid/content/res/Resources;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
 .end method

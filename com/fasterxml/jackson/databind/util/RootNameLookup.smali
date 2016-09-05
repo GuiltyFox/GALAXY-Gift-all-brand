@@ -51,7 +51,6 @@
 # virtual methods
 .method public findRootName(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/cfg/MapperConfig;)Lcom/fasterxml/jackson/databind/PropertyName;
     .registers 4
-    .param p1, "rootType"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -64,7 +63,6 @@
 
     .prologue
     .line 26
-    .local p2, "config":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -77,7 +75,7 @@
 .end method
 
 .method public findRootName(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/cfg/MapperConfig;)Lcom/fasterxml/jackson/databind/PropertyName;
-    .registers 10
+    .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -91,93 +89,73 @@
 
     .prologue
     .line 31
-    .local p1, "rootType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p2, "config":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
-    new-instance v3, Lcom/fasterxml/jackson/databind/type/ClassKey;
+    new-instance v1, Lcom/fasterxml/jackson/databind/type/ClassKey;
 
-    invoke-direct {v3, p1}, Lcom/fasterxml/jackson/databind/type/ClassKey;-><init>(Ljava/lang/Class;)V
+    invoke-direct {v1, p1}, Lcom/fasterxml/jackson/databind/type/ClassKey;-><init>(Ljava/lang/Class;)V
 
     .line 32
-    .local v3, "key":Lcom/fasterxml/jackson/databind/type/ClassKey;
-    iget-object v6, p0, Lcom/fasterxml/jackson/databind/util/RootNameLookup;->_rootNames:Lcom/fasterxml/jackson/databind/util/LRUMap;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/RootNameLookup;->_rootNames:Lcom/fasterxml/jackson/databind/util/LRUMap;
 
-    invoke-virtual {v6, v3}, Lcom/fasterxml/jackson/databind/util/LRUMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/databind/util/LRUMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v0
 
-    check-cast v4, Lcom/fasterxml/jackson/databind/PropertyName;
+    check-cast v0, Lcom/fasterxml/jackson/databind/PropertyName;
 
     .line 33
-    .local v4, "name":Lcom/fasterxml/jackson/databind/PropertyName;
-    if-eqz v4, :cond_11
-
-    move-object v5, v4
+    if-eqz v0, :cond_10
 
     .line 46
-    .end local v4    # "name":Lcom/fasterxml/jackson/databind/PropertyName;
-    .local v5, "name":Lcom/fasterxml/jackson/databind/PropertyName;
-    :goto_10
-    return-object v5
+    :goto_f
+    return-object v0
 
     .line 36
-    .end local v5    # "name":Lcom/fasterxml/jackson/databind/PropertyName;
-    .restart local v4    # "name":Lcom/fasterxml/jackson/databind/PropertyName;
-    :cond_11
+    :cond_10
     invoke-virtual {p2, p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->introspectClassAnnotations(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/BeanDescription;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 37
-    .local v1, "beanDesc":Lcom/fasterxml/jackson/databind/BeanDescription;
     invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getAnnotationIntrospector()Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
     move-result-object v2
 
     .line 38
-    .local v2, "intr":Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/BeanDescription;->getClassInfo()Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/BeanDescription;->getClassInfo()Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
     move-result-object v0
 
     .line 39
-    .local v0, "ac":Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
     invoke-virtual {v2, v0}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findRootName(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Lcom/fasterxml/jackson/databind/PropertyName;
 
-    move-result-object v4
+    move-result-object v0
 
     .line 41
-    if-eqz v4, :cond_29
+    if-eqz v0, :cond_28
 
-    invoke-virtual {v4}, Lcom/fasterxml/jackson/databind/PropertyName;->hasSimpleName()Z
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/PropertyName;->hasSimpleName()Z
 
-    move-result v6
+    move-result v2
 
-    if-nez v6, :cond_32
+    if-nez v2, :cond_31
 
     .line 43
-    :cond_29
-    new-instance v4, Lcom/fasterxml/jackson/databind/PropertyName;
+    :cond_28
+    new-instance v0, Lcom/fasterxml/jackson/databind/PropertyName;
 
-    .end local v4    # "name":Lcom/fasterxml/jackson/databind/PropertyName;
     invoke-virtual {p1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-direct {v4, v6}, Lcom/fasterxml/jackson/databind/PropertyName;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v2}, Lcom/fasterxml/jackson/databind/PropertyName;-><init>(Ljava/lang/String;)V
 
     .line 45
-    .restart local v4    # "name":Lcom/fasterxml/jackson/databind/PropertyName;
-    :cond_32
-    iget-object v6, p0, Lcom/fasterxml/jackson/databind/util/RootNameLookup;->_rootNames:Lcom/fasterxml/jackson/databind/util/LRUMap;
+    :cond_31
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/RootNameLookup;->_rootNames:Lcom/fasterxml/jackson/databind/util/LRUMap;
 
-    invoke-virtual {v6, v3, v4}, Lcom/fasterxml/jackson/databind/util/LRUMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v1, v0}, Lcom/fasterxml/jackson/databind/util/LRUMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-object v5, v4
-
-    .line 46
-    .end local v4    # "name":Lcom/fasterxml/jackson/databind/PropertyName;
-    .restart local v5    # "name":Lcom/fasterxml/jackson/databind/PropertyName;
-    goto :goto_10
+    goto :goto_f
 .end method
 
 .method protected readResolve()Ljava/lang/Object;

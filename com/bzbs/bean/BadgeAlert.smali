@@ -34,10 +34,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;II)V
     .registers 6
-    .param p1, "id"    # Ljava/lang/String;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "level"    # I
-    .param p4, "points"    # I
 
     .prologue
     .line 31
@@ -71,7 +67,6 @@
 
 .method public constructor <init>(Lorg/json/JSONObject;)V
     .registers 3
-    .param p1, "jsonObject"    # Lorg/json/JSONObject;
 
     .prologue
     .line 22
@@ -80,7 +75,7 @@
     .line 23
     const-string/jumbo v0, "id"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -89,7 +84,7 @@
     .line 24
     const-string/jumbo v0, "name"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -98,7 +93,7 @@
     .line 25
     const-string/jumbo v0, "level"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
     move-result v0
 
@@ -107,7 +102,7 @@
     .line 26
     const-string/jumbo v0, "points"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
     move-result v0
 
@@ -116,7 +111,7 @@
     .line 27
     const-string/jumbo v0, "description"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -125,7 +120,7 @@
     .line 28
     const-string/jumbo v0, "fb_description"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

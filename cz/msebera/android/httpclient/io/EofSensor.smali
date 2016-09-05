@@ -9,5 +9,5 @@
 
 
 # virtual methods
-.method public abstract isEof()Z
+.method public abstract c()Z
 .end method

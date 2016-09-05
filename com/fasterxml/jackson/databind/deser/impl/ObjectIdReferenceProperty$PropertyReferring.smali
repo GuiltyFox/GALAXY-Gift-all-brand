@@ -3,17 +3,6 @@
 .source "ObjectIdReferenceProperty.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReferenceProperty;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "PropertyReferring"
-.end annotation
-
-
 # instance fields
 .field private final _parent:Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReferenceProperty;
 
@@ -23,9 +12,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReferenceProperty;Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;Ljava/lang/Class;Ljava/lang/Object;)V
     .registers 5
-    .param p1, "parent"    # Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReferenceProperty;
-    .param p2, "ref"    # Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;
-    .param p4, "ob"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -40,7 +26,6 @@
 
     .prologue
     .line 103
-    .local p3, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0, p2, p3}, Lcom/fasterxml/jackson/databind/deser/impl/ReadableObjectId$Referring;-><init>(Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;Ljava/lang/Class;)V
 
     .line 104
@@ -57,13 +42,6 @@
 # virtual methods
 .method public handleResolvedForwardReference(Ljava/lang/Object;Ljava/lang/Object;)V
     .registers 6
-    .param p1, "id"    # Ljava/lang/Object;
-    .param p2, "value"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 111

@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static INSTANCE:Lrx/plugins/RxJavaObservableExecutionHookDefault;
+.field private static a:Lrx/plugins/RxJavaObservableExecutionHookDefault;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     invoke-direct {v0}, Lrx/plugins/RxJavaObservableExecutionHookDefault;-><init>()V
 
-    sput-object v0, Lrx/plugins/RxJavaObservableExecutionHookDefault;->INSTANCE:Lrx/plugins/RxJavaObservableExecutionHookDefault;
+    sput-object v0, Lrx/plugins/RxJavaObservableExecutionHookDefault;->a:Lrx/plugins/RxJavaObservableExecutionHookDefault;
 
     return-void
 .end method
@@ -32,12 +32,12 @@
     return-void
 .end method
 
-.method public static getInstance()Lrx/plugins/RxJavaObservableExecutionHook;
+.method public static a()Lrx/plugins/RxJavaObservableExecutionHook;
     .registers 1
 
     .prologue
     .line 26
-    sget-object v0, Lrx/plugins/RxJavaObservableExecutionHookDefault;->INSTANCE:Lrx/plugins/RxJavaObservableExecutionHookDefault;
+    sget-object v0, Lrx/plugins/RxJavaObservableExecutionHookDefault;->a:Lrx/plugins/RxJavaObservableExecutionHookDefault;
 
     return-object v0
 .end method

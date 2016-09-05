@@ -3,17 +3,6 @@
 .source "TabLayout.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/TabLayout;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "PagerAdapterObserver"
-.end annotation
-
-
 # instance fields
 .field final synthetic this$0:Landroid/support/design/widget/TabLayout;
 
@@ -33,8 +22,6 @@
 
 .method synthetic constructor <init>(Landroid/support/design/widget/TabLayout;Landroid/support/design/widget/TabLayout$1;)V
     .registers 3
-    .param p1, "x0"    # Landroid/support/design/widget/TabLayout;
-    .param p2, "x1"    # Landroid/support/design/widget/TabLayout$1;
 
     .prologue
     .line 2005

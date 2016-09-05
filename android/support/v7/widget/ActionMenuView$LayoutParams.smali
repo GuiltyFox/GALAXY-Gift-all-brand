@@ -3,17 +3,6 @@
 .source "ActionMenuView.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/widget/ActionMenuView;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "LayoutParams"
-.end annotation
-
-
 # instance fields
 .field public cellsUsed:I
     .annotation runtime Landroid/view/ViewDebug$ExportedProperty;
@@ -46,8 +35,6 @@
 # direct methods
 .method public constructor <init>(II)V
     .registers 4
-    .param p1, "width"    # I
-    .param p2, "height"    # I
 
     .prologue
     .line 822
@@ -64,9 +51,6 @@
 
 .method constructor <init>(IIZ)V
     .registers 4
-    .param p1, "width"    # I
-    .param p2, "height"    # I
-    .param p3, "isOverflowButton"    # Z
 
     .prologue
     .line 827
@@ -81,8 +65,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 3
-    .param p1, "c"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 809
@@ -94,7 +76,6 @@
 
 .method public constructor <init>(Landroid/support/v7/widget/ActionMenuView$LayoutParams;)V
     .registers 3
-    .param p1, "other"    # Landroid/support/v7/widget/ActionMenuView$LayoutParams;
 
     .prologue
     .line 817
@@ -111,7 +92,6 @@
 
 .method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
     .registers 2
-    .param p1, "other"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
     .line 813

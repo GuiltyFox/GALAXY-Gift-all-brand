@@ -16,7 +16,7 @@
 
 
 # virtual methods
-.method public Error()V
+.method public a()V
     .registers 1
 
     .prologue
@@ -24,9 +24,8 @@
     return-void
 .end method
 
-.method public isGranted(Z)V
+.method public a(Z)V
     .registers 2
-    .param p1, "granted"    # Z
 
     .prologue
     .line 6

@@ -9,9 +9,9 @@
 
 
 # instance fields
-.field private aborted:Z
+.field private a:Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThread;
 
-.field private waitingThread:Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThread;
+.field private b:Z
 
 
 # direct methods
@@ -27,45 +27,44 @@
 
 
 # virtual methods
-.method public abort()V
+.method public a()V
     .registers 2
 
     .prologue
     .line 48
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThreadAborter;->aborted:Z
+    iput-boolean v0, p0, Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThreadAborter;->b:Z
 
     .line 50
-    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThreadAborter;->waitingThread:Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThread;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThreadAborter;->a:Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThread;
 
     if-eqz v0, :cond_c
 
     .line 51
-    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThreadAborter;->waitingThread:Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThread;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThreadAborter;->a:Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThread;
 
-    invoke-virtual {v0}, Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThread;->interrupt()V
+    invoke-virtual {v0}, Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThread;->b()V
 
     .line 54
     :cond_c
     return-void
 .end method
 
-.method public setWaitingThread(Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThread;)V
+.method public a(Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThread;)V
     .registers 3
-    .param p1, "waitingThread"    # Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThread;
 
     .prologue
     .line 63
-    iput-object p1, p0, Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThreadAborter;->waitingThread:Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThread;
+    iput-object p1, p0, Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThreadAborter;->a:Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThread;
 
     .line 64
-    iget-boolean v0, p0, Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThreadAborter;->aborted:Z
+    iget-boolean v0, p0, Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThreadAborter;->b:Z
 
     if-eqz v0, :cond_9
 
     .line 65
-    invoke-virtual {p1}, Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThread;->interrupt()V
+    invoke-virtual {p1}, Lcz/msebera/android/httpclient/impl/conn/tsccm/WaitingThread;->b()V
 
     .line 67
     :cond_9

@@ -11,11 +11,6 @@
     value = Landroid/support/design/widget/TextInputLayout;->setEditText(Landroid/widget/EditText;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Landroid/support/design/widget/TextInputLayout;
@@ -38,7 +33,6 @@
 # virtual methods
 .method public afterTextChanged(Landroid/text/Editable;)V
     .registers 4
-    .param p1, "s"    # Landroid/text/Editable;
 
     .prologue
     .line 240
@@ -76,10 +70,6 @@
 
 .method public beforeTextChanged(Ljava/lang/CharSequence;III)V
     .registers 5
-    .param p1, "s"    # Ljava/lang/CharSequence;
-    .param p2, "start"    # I
-    .param p3, "count"    # I
-    .param p4, "after"    # I
 
     .prologue
     .line 247
@@ -88,10 +78,6 @@
 
 .method public onTextChanged(Ljava/lang/CharSequence;III)V
     .registers 5
-    .param p1, "s"    # Ljava/lang/CharSequence;
-    .param p2, "start"    # I
-    .param p3, "before"    # I
-    .param p4, "count"    # I
 
     .prologue
     .line 250

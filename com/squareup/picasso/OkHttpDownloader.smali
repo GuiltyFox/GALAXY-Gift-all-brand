@@ -7,17 +7,16 @@
 
 
 # instance fields
-.field private final client:Lcom/squareup/okhttp/OkHttpClient;
+.field private final a:Lcom/squareup/okhttp/OkHttpClient;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 45
-    invoke-static {p1}, Lcom/squareup/picasso/Utils;->createDefaultCacheDir(Landroid/content/Context;)Ljava/io/File;
+    invoke-static {p1}, Lcom/squareup/picasso/Utils;->b(Landroid/content/Context;)Ljava/io/File;
 
     move-result-object v0
 
@@ -27,33 +26,15 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;J)V
-    .registers 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "maxSize"    # J
-
-    .prologue
-    .line 65
-    invoke-static {p1}, Lcom/squareup/picasso/Utils;->createDefaultCacheDir(Landroid/content/Context;)Ljava/io/File;
-
-    move-result-object v0
-
-    invoke-direct {p0, v0, p2, p3}, Lcom/squareup/picasso/OkHttpDownloader;-><init>(Ljava/io/File;J)V
-
-    .line 66
-    return-void
-.end method
-
 .method public constructor <init>(Lcom/squareup/okhttp/OkHttpClient;)V
     .registers 2
-    .param p1, "client"    # Lcom/squareup/okhttp/OkHttpClient;
 
     .prologue
     .line 87
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 88
-    iput-object p1, p0, Lcom/squareup/picasso/OkHttpDownloader;->client:Lcom/squareup/okhttp/OkHttpClient;
+    iput-object p1, p0, Lcom/squareup/picasso/OkHttpDownloader;->a:Lcom/squareup/okhttp/OkHttpClient;
 
     .line 89
     return-void
@@ -61,11 +42,10 @@
 
 .method public constructor <init>(Ljava/io/File;)V
     .registers 4
-    .param p1, "cacheDir"    # Ljava/io/File;
 
     .prologue
     .line 55
-    invoke-static {p1}, Lcom/squareup/picasso/Utils;->calculateDiskCacheSize(Ljava/io/File;)J
+    invoke-static {p1}, Lcom/squareup/picasso/Utils;->a(Ljava/io/File;)J
 
     move-result-wide v0
 
@@ -77,12 +57,10 @@
 
 .method public constructor <init>(Ljava/io/File;J)V
     .registers 6
-    .param p1, "cacheDir"    # Ljava/io/File;
-    .param p2, "maxSize"    # J
 
     .prologue
     .line 76
-    invoke-static {}, Lcom/squareup/picasso/OkHttpDownloader;->defaultOkHttpClient()Lcom/squareup/okhttp/OkHttpClient;
+    invoke-static {}, Lcom/squareup/picasso/OkHttpDownloader;->a()Lcom/squareup/okhttp/OkHttpClient;
 
     move-result-object v0
 
@@ -90,7 +68,7 @@
 
     .line 78
     :try_start_7
-    iget-object v0, p0, Lcom/squareup/picasso/OkHttpDownloader;->client:Lcom/squareup/okhttp/OkHttpClient;
+    iget-object v0, p0, Lcom/squareup/picasso/OkHttpDownloader;->a:Lcom/squareup/okhttp/OkHttpClient;
 
     new-instance v1, Lcom/squareup/okhttp/Cache;
 
@@ -111,7 +89,7 @@
     goto :goto_11
 .end method
 
-.method private static defaultOkHttpClient()Lcom/squareup/okhttp/OkHttpClient;
+.method private static a()Lcom/squareup/okhttp/OkHttpClient;
     .registers 6
 
     .prologue
@@ -123,7 +101,6 @@
     invoke-direct {v0}, Lcom/squareup/okhttp/OkHttpClient;-><init>()V
 
     .line 32
-    .local v0, "client":Lcom/squareup/okhttp/OkHttpClient;
     const-wide/16 v2, 0x3a98
 
     sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
@@ -146,161 +123,136 @@
 
 
 # virtual methods
-.method protected final getClient()Lcom/squareup/okhttp/OkHttpClient;
-    .registers 2
-
-    .prologue
-    .line 92
-    iget-object v0, p0, Lcom/squareup/picasso/OkHttpDownloader;->client:Lcom/squareup/okhttp/OkHttpClient;
-
-    return-object v0
-.end method
-
-.method public load(Landroid/net/Uri;I)Lcom/squareup/picasso/Downloader$Response;
-    .registers 13
-    .param p1, "uri"    # Landroid/net/Uri;
-    .param p2, "networkPolicy"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+.method public a(Landroid/net/Uri;I)Lcom/squareup/picasso/Downloader$Response;
+    .registers 9
 
     .prologue
     .line 96
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 97
-    .local v1, "cacheControl":Lcom/squareup/okhttp/CacheControl;
     if-eqz p2, :cond_b
 
     .line 98
-    invoke-static {p2}, Lcom/squareup/picasso/NetworkPolicy;->isOfflineOnly(I)Z
+    invoke-static {p2}, Lcom/squareup/picasso/NetworkPolicy;->c(I)Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_5c
+    if-eqz v0, :cond_5c
 
     .line 99
-    sget-object v1, Lcom/squareup/okhttp/CacheControl;->FORCE_CACHE:Lcom/squareup/okhttp/CacheControl;
+    sget-object v0, Lcom/squareup/okhttp/CacheControl;->FORCE_CACHE:Lcom/squareup/okhttp/CacheControl;
 
     .line 112
     :cond_b
     :goto_b
-    new-instance v6, Lcom/squareup/okhttp/Request$Builder;
+    new-instance v1, Lcom/squareup/okhttp/Request$Builder;
 
-    invoke-direct {v6}, Lcom/squareup/okhttp/Request$Builder;-><init>()V
+    invoke-direct {v1}, Lcom/squareup/okhttp/Request$Builder;-><init>()V
 
     invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v2
 
-    invoke-virtual {v6, v7}, Lcom/squareup/okhttp/Request$Builder;->url(Ljava/lang/String;)Lcom/squareup/okhttp/Request$Builder;
+    invoke-virtual {v1, v2}, Lcom/squareup/okhttp/Request$Builder;->url(Ljava/lang/String;)Lcom/squareup/okhttp/Request$Builder;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 113
-    .local v0, "builder":Lcom/squareup/okhttp/Request$Builder;
-    if-eqz v1, :cond_1d
+    if-eqz v0, :cond_1d
 
     .line 114
-    invoke-virtual {v0, v1}, Lcom/squareup/okhttp/Request$Builder;->cacheControl(Lcom/squareup/okhttp/CacheControl;)Lcom/squareup/okhttp/Request$Builder;
+    invoke-virtual {v1, v0}, Lcom/squareup/okhttp/Request$Builder;->cacheControl(Lcom/squareup/okhttp/CacheControl;)Lcom/squareup/okhttp/Request$Builder;
 
     .line 117
     :cond_1d
-    iget-object v6, p0, Lcom/squareup/picasso/OkHttpDownloader;->client:Lcom/squareup/okhttp/OkHttpClient;
+    iget-object v0, p0, Lcom/squareup/picasso/OkHttpDownloader;->a:Lcom/squareup/okhttp/OkHttpClient;
 
-    invoke-virtual {v0}, Lcom/squareup/okhttp/Request$Builder;->build()Lcom/squareup/okhttp/Request;
+    invoke-virtual {v1}, Lcom/squareup/okhttp/Request$Builder;->build()Lcom/squareup/okhttp/Request;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-virtual {v6, v7}, Lcom/squareup/okhttp/OkHttpClient;->newCall(Lcom/squareup/okhttp/Request;)Lcom/squareup/okhttp/Call;
+    invoke-virtual {v0, v1}, Lcom/squareup/okhttp/OkHttpClient;->newCall(Lcom/squareup/okhttp/Request;)Lcom/squareup/okhttp/Call;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {v6}, Lcom/squareup/okhttp/Call;->execute()Lcom/squareup/okhttp/Response;
+    invoke-virtual {v0}, Lcom/squareup/okhttp/Call;->execute()Lcom/squareup/okhttp/Response;
+
+    move-result-object v1
+
+    .line 118
+    invoke-virtual {v1}, Lcom/squareup/okhttp/Response;->code()I
+
+    move-result v0
+
+    .line 119
+    const/16 v2, 0x12c
+
+    if-lt v0, v2, :cond_78
+
+    .line 120
+    invoke-virtual {v1}, Lcom/squareup/okhttp/Response;->body()Lcom/squareup/okhttp/ResponseBody;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/squareup/okhttp/ResponseBody;->close()V
+
+    .line 121
+    new-instance v2, Lcom/squareup/picasso/Downloader$ResponseException;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
-    .line 118
-    .local v3, "response":Lcom/squareup/okhttp/Response;
-    invoke-virtual {v3}, Lcom/squareup/okhttp/Response;->code()I
+    const-string/jumbo v4, " "
 
-    move-result v5
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 119
-    .local v5, "responseCode":I
-    const/16 v6, 0x12c
+    move-result-object v3
 
-    if-lt v5, v6, :cond_78
+    invoke-virtual {v1}, Lcom/squareup/okhttp/Response;->message()Ljava/lang/String;
 
-    .line 120
-    invoke-virtual {v3}, Lcom/squareup/okhttp/Response;->body()Lcom/squareup/okhttp/ResponseBody;
+    move-result-object v1
 
-    move-result-object v6
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Lcom/squareup/okhttp/ResponseBody;->close()V
+    move-result-object v1
 
-    .line 121
-    new-instance v6, Lcom/squareup/picasso/Downloader$ResponseException;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2, v1, p2, v0}, Lcom/squareup/picasso/Downloader$ResponseException;-><init>(Ljava/lang/String;II)V
 
-    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string/jumbo v8, " "
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v3}, Lcom/squareup/okhttp/Response;->message()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-direct {v6, v7, p2, v5}, Lcom/squareup/picasso/Downloader$ResponseException;-><init>(Ljava/lang/String;II)V
-
-    throw v6
+    throw v2
 
     .line 101
-    .end local v0    # "builder":Lcom/squareup/okhttp/Request$Builder;
-    .end local v3    # "response":Lcom/squareup/okhttp/Response;
-    .end local v5    # "responseCode":I
     :cond_5c
     new-instance v0, Lcom/squareup/okhttp/CacheControl$Builder;
 
     invoke-direct {v0}, Lcom/squareup/okhttp/CacheControl$Builder;-><init>()V
 
     .line 102
-    .local v0, "builder":Lcom/squareup/okhttp/CacheControl$Builder;
-    invoke-static {p2}, Lcom/squareup/picasso/NetworkPolicy;->shouldReadFromDiskCache(I)Z
+    invoke-static {p2}, Lcom/squareup/picasso/NetworkPolicy;->a(I)Z
 
-    move-result v6
+    move-result v1
 
-    if-nez v6, :cond_6a
+    if-nez v1, :cond_6a
 
     .line 103
     invoke-virtual {v0}, Lcom/squareup/okhttp/CacheControl$Builder;->noCache()Lcom/squareup/okhttp/CacheControl$Builder;
 
     .line 105
     :cond_6a
-    invoke-static {p2}, Lcom/squareup/picasso/NetworkPolicy;->shouldWriteToDiskCache(I)Z
+    invoke-static {p2}, Lcom/squareup/picasso/NetworkPolicy;->b(I)Z
 
-    move-result v6
+    move-result v1
 
-    if-nez v6, :cond_73
+    if-nez v1, :cond_73
 
     .line 106
     invoke-virtual {v0}, Lcom/squareup/okhttp/CacheControl$Builder;->noStore()Lcom/squareup/okhttp/CacheControl$Builder;
@@ -309,84 +261,44 @@
     :cond_73
     invoke-virtual {v0}, Lcom/squareup/okhttp/CacheControl$Builder;->build()Lcom/squareup/okhttp/CacheControl;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_b
 
     .line 125
-    .local v0, "builder":Lcom/squareup/okhttp/Request$Builder;
-    .restart local v3    # "response":Lcom/squareup/okhttp/Response;
-    .restart local v5    # "responseCode":I
     :cond_78
-    invoke-virtual {v3}, Lcom/squareup/okhttp/Response;->cacheResponse()Lcom/squareup/okhttp/Response;
-
-    move-result-object v6
-
-    if-eqz v6, :cond_91
-
-    const/4 v2, 0x1
-
-    .line 127
-    .local v2, "fromCache":Z
-    :goto_7f
-    invoke-virtual {v3}, Lcom/squareup/okhttp/Response;->body()Lcom/squareup/okhttp/ResponseBody;
-
-    move-result-object v4
-
-    .line 128
-    .local v4, "responseBody":Lcom/squareup/okhttp/ResponseBody;
-    new-instance v6, Lcom/squareup/picasso/Downloader$Response;
-
-    invoke-virtual {v4}, Lcom/squareup/okhttp/ResponseBody;->byteStream()Ljava/io/InputStream;
-
-    move-result-object v7
-
-    invoke-virtual {v4}, Lcom/squareup/okhttp/ResponseBody;->contentLength()J
-
-    move-result-wide v8
-
-    invoke-direct {v6, v7, v2, v8, v9}, Lcom/squareup/picasso/Downloader$Response;-><init>(Ljava/io/InputStream;ZJ)V
-
-    return-object v6
-
-    .line 125
-    .end local v2    # "fromCache":Z
-    .end local v4    # "responseBody":Lcom/squareup/okhttp/ResponseBody;
-    :cond_91
-    const/4 v2, 0x0
-
-    goto :goto_7f
-.end method
-
-.method public shutdown()V
-    .registers 3
-
-    .prologue
-    .line 132
-    iget-object v1, p0, Lcom/squareup/picasso/OkHttpDownloader;->client:Lcom/squareup/okhttp/OkHttpClient;
-
-    invoke-virtual {v1}, Lcom/squareup/okhttp/OkHttpClient;->getCache()Lcom/squareup/okhttp/Cache;
+    invoke-virtual {v1}, Lcom/squareup/okhttp/Response;->cacheResponse()Lcom/squareup/okhttp/Response;
 
     move-result-object v0
 
-    .line 133
-    .local v0, "cache":Lcom/squareup/okhttp/Cache;
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_91
 
-    .line 135
-    :try_start_8
-    invoke-virtual {v0}, Lcom/squareup/okhttp/Cache;->close()V
-    :try_end_b
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_b} :catch_c
+    const/4 v0, 0x1
 
-    .line 139
-    :cond_b
-    :goto_b
-    return-void
+    .line 127
+    :goto_7f
+    invoke-virtual {v1}, Lcom/squareup/okhttp/Response;->body()Lcom/squareup/okhttp/ResponseBody;
 
-    .line 136
-    :catch_c
-    move-exception v1
+    move-result-object v1
 
-    goto :goto_b
+    .line 128
+    new-instance v2, Lcom/squareup/picasso/Downloader$Response;
+
+    invoke-virtual {v1}, Lcom/squareup/okhttp/ResponseBody;->byteStream()Ljava/io/InputStream;
+
+    move-result-object v3
+
+    invoke-virtual {v1}, Lcom/squareup/okhttp/ResponseBody;->contentLength()J
+
+    move-result-wide v4
+
+    invoke-direct {v2, v3, v0, v4, v5}, Lcom/squareup/picasso/Downloader$Response;-><init>(Ljava/io/InputStream;ZJ)V
+
+    return-object v2
+
+    .line 125
+    :cond_91
+    const/4 v0, 0x0
+
+    goto :goto_7f
 .end method

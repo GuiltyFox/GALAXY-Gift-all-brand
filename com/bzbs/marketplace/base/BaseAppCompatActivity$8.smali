@@ -11,24 +11,18 @@
     value = Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+.field final synthetic a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/bzbs/marketplace/base/BaseAppCompatActivity;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     .prologue
     .line 661
-    iput-object p1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$8;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+    iput-object p1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$8;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,26 +33,25 @@
 # virtual methods
 .method public onLocationChanged(Landroid/location/Location;)V
     .registers 6
-    .param p1, "loc"    # Landroid/location/Location;
 
     .prologue
     .line 663
-    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$8;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$8;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-virtual {p1}, Landroid/location/Location;->getLatitude()D
 
     move-result-wide v2
 
-    iput-wide v2, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->lat:D
+    iput-wide v2, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->d:D
 
     .line 664
-    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$8;->this$0:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$8;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-virtual {p1}, Landroid/location/Location;->getLongitude()D
 
     move-result-wide v2
 
-    iput-wide v2, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->lng:D
+    iput-wide v2, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->e:D
 
     .line 665
     return-void
@@ -66,7 +59,6 @@
 
 .method public onProviderDisabled(Ljava/lang/String;)V
     .registers 2
-    .param p1, "provider"    # Ljava/lang/String;
 
     .prologue
     .line 674
@@ -75,7 +67,6 @@
 
 .method public onProviderEnabled(Ljava/lang/String;)V
     .registers 2
-    .param p1, "provider"    # Ljava/lang/String;
 
     .prologue
     .line 671
@@ -84,9 +75,6 @@
 
 .method public onStatusChanged(Ljava/lang/String;ILandroid/os/Bundle;)V
     .registers 4
-    .param p1, "provider"    # Ljava/lang/String;
-    .param p2, "status"    # I
-    .param p3, "extras"    # Landroid/os/Bundle;
 
     .prologue
     .line 668

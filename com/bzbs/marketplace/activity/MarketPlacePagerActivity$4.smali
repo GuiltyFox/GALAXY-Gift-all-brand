@@ -8,31 +8,25 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->initWidget()V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->h()V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
+.field final synthetic a:I
 
-.field final synthetic val$finalPositionCat:I
+.field final synthetic b:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;I)V
     .registers 3
-    .param p1, "this$0"    # Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     .prologue
     .line 229
-    iput-object p1, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$4;->this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
+    iput-object p1, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$4;->b:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
-    iput p2, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$4;->val$finalPositionCat:I
+    iput p2, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$4;->a:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,11 +40,11 @@
 
     .prologue
     .line 232
-    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$4;->this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$4;->b:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->vpMain:Landroid/support/v4/view/ViewPager;
 
-    iget v1, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$4;->val$finalPositionCat:I
+    iget v1, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$4;->a:I
 
     const/4 v2, 0x1
 

@@ -11,11 +11,6 @@
     value = Landroid/support/design/widget/Snackbar;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Landroid/support/design/widget/Snackbar;
@@ -38,7 +33,6 @@
 # virtual methods
 .method public dismiss(I)V
     .registers 7
-    .param p1, "event"    # I
 
     .prologue
     .line 435

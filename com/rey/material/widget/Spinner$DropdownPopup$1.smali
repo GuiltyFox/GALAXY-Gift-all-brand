@@ -11,14 +11,9 @@
     value = Lcom/rey/material/widget/Spinner$DropdownPopup;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$1:Lcom/rey/material/widget/Spinner$DropdownPopup;
+.field final synthetic a:Lcom/rey/material/widget/Spinner$DropdownPopup;
 
 
 # direct methods
@@ -27,7 +22,7 @@
 
     .prologue
     .line 1199
-    iput-object p1, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$1;->this$1:Lcom/rey/material/widget/Spinner$DropdownPopup;
+    iput-object p1, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$1;->a:Lcom/rey/material/widget/Spinner$DropdownPopup;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,15 +36,14 @@
 
     .prologue
     .line 1202
-    iget-object v0, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$1;->this$1:Lcom/rey/material/widget/Spinner$DropdownPopup;
+    iget-object v0, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$1;->a:Lcom/rey/material/widget/Spinner$DropdownPopup;
 
-    invoke-virtual {v0}, Lcom/rey/material/widget/Spinner$DropdownPopup;->computeContentWidth()V
+    invoke-virtual {v0}, Lcom/rey/material/widget/Spinner$DropdownPopup;->l()V
 
     .line 1206
-    iget-object v0, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$1;->this$1:Lcom/rey/material/widget/Spinner$DropdownPopup;
+    iget-object v0, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$1;->a:Lcom/rey/material/widget/Spinner$DropdownPopup;
 
-    # invokes: Lcom/rey/material/widget/ListPopupWindow;->show()V
-    invoke-static {v0}, Lcom/rey/material/widget/Spinner$DropdownPopup;->access$601(Lcom/rey/material/widget/Spinner$DropdownPopup;)V
+    invoke-static {v0}, Lcom/rey/material/widget/Spinner$DropdownPopup;->a(Lcom/rey/material/widget/Spinner$DropdownPopup;)V
 
     .line 1207
     return-void

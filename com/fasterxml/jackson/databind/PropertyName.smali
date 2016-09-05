@@ -60,7 +60,6 @@
 
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 3
-    .param p1, "simpleName"    # Ljava/lang/String;
 
     .prologue
     .line 60
@@ -74,8 +73,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .registers 3
-    .param p1, "simpleName"    # Ljava/lang/String;
-    .param p2, "namespace"    # Ljava/lang/String;
 
     .prologue
     .line 64
@@ -86,7 +83,6 @@
 
     const-string/jumbo p1, ""
 
-    .end local p1    # "simpleName":Ljava/lang/String;
     :cond_8
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/PropertyName;->_simpleName:Ljava/lang/String;
 
@@ -99,8 +95,6 @@
 
 .method public static construct(Ljava/lang/String;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/PropertyName;
     .registers 3
-    .param p0, "simpleName"    # Ljava/lang/String;
-    .param p1, "ns"    # Ljava/lang/String;
 
     .prologue
     .line 82
@@ -137,23 +131,22 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
-    .param p1, "o"    # Ljava/lang/Object;
+    .registers 6
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 202
     if-ne p1, p0, :cond_6
 
-    move v2, v1
+    move v1, v0
 
     .line 221
     :cond_5
     :goto_5
-    return v2
+    return v1
 
     .line 203
     :cond_6
@@ -162,75 +155,72 @@
     .line 207
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v2
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v4
+    move-result-object v3
 
-    if-ne v3, v4, :cond_5
-
-    move-object v0, p1
+    if-ne v2, v3, :cond_5
 
     .line 212
-    check-cast v0, Lcom/fasterxml/jackson/databind/PropertyName;
+    check-cast p1, Lcom/fasterxml/jackson/databind/PropertyName;
 
     .line 213
-    .local v0, "other":Lcom/fasterxml/jackson/databind/PropertyName;
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/PropertyName;->_simpleName:Ljava/lang/String;
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/PropertyName;->_simpleName:Ljava/lang/String;
 
-    if-nez v3, :cond_27
+    if-nez v2, :cond_26
 
     .line 214
-    iget-object v3, v0, Lcom/fasterxml/jackson/databind/PropertyName;->_simpleName:Ljava/lang/String;
+    iget-object v2, p1, Lcom/fasterxml/jackson/databind/PropertyName;->_simpleName:Ljava/lang/String;
 
-    if-nez v3, :cond_5
+    if-nez v2, :cond_5
 
     .line 218
-    :cond_1d
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/PropertyName;->_namespace:Ljava/lang/String;
+    :cond_1c
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/PropertyName;->_namespace:Ljava/lang/String;
 
-    if-nez v3, :cond_34
+    if-nez v2, :cond_33
 
     .line 219
-    iget-object v3, v0, Lcom/fasterxml/jackson/databind/PropertyName;->_namespace:Ljava/lang/String;
+    iget-object v2, p1, Lcom/fasterxml/jackson/databind/PropertyName;->_namespace:Ljava/lang/String;
 
-    if-nez v3, :cond_32
+    if-nez v2, :cond_31
 
-    :goto_25
-    move v2, v1
+    :goto_24
+    move v1, v0
 
     goto :goto_5
 
     .line 215
-    :cond_27
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/PropertyName;->_simpleName:Ljava/lang/String;
+    :cond_26
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/PropertyName;->_simpleName:Ljava/lang/String;
 
-    iget-object v4, v0, Lcom/fasterxml/jackson/databind/PropertyName;->_simpleName:Ljava/lang/String;
+    iget-object v3, p1, Lcom/fasterxml/jackson/databind/PropertyName;->_simpleName:Ljava/lang/String;
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_1d
+    if-nez v2, :cond_1c
 
     goto :goto_5
 
-    :cond_32
-    move v1, v2
+    :cond_31
+    move v0, v1
 
     .line 219
-    goto :goto_25
+    goto :goto_24
 
     .line 221
-    :cond_34
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/PropertyName;->_namespace:Ljava/lang/String;
+    :cond_33
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/PropertyName;->_namespace:Ljava/lang/String;
 
-    iget-object v2, v0, Lcom/fasterxml/jackson/databind/PropertyName;->_namespace:Ljava/lang/String;
+    iget-object v1, p1, Lcom/fasterxml/jackson/databind/PropertyName;->_namespace:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
     goto :goto_5
 .end method
@@ -301,7 +291,6 @@
 
 .method public hasSimpleName(Ljava/lang/String;)Z
     .registers 3
-    .param p1, "str"    # Ljava/lang/String;
 
     .prologue
     .line 171
@@ -378,45 +367,42 @@
 
     .prologue
     .line 93
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/PropertyName;->_simpleName:Ljava/lang/String;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/PropertyName;->_simpleName:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_9
+    if-nez v0, :cond_9
 
     .line 100
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/PropertyName;
     :cond_8
     :goto_8
     return-object p0
 
     .line 96
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/PropertyName;
     :cond_9
-    sget-object v1, Lcom/fasterxml/jackson/core/util/InternCache;->instance:Lcom/fasterxml/jackson/core/util/InternCache;
+    sget-object v0, Lcom/fasterxml/jackson/core/util/InternCache;->instance:Lcom/fasterxml/jackson/core/util/InternCache;
 
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/PropertyName;->_simpleName:Ljava/lang/String;
-
-    invoke-virtual {v1, v2}, Lcom/fasterxml/jackson/core/util/InternCache;->intern(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 97
-    .local v0, "interned":Ljava/lang/String;
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/PropertyName;->_simpleName:Ljava/lang/String;
 
-    if-eq v0, v1, :cond_8
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/core/util/InternCache;->intern(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 97
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/PropertyName;->_simpleName:Ljava/lang/String;
+
+    if-eq v1, v0, :cond_8
 
     .line 100
-    new-instance v1, Lcom/fasterxml/jackson/databind/PropertyName;
+    new-instance v0, Lcom/fasterxml/jackson/databind/PropertyName;
 
     iget-object v2, p0, Lcom/fasterxml/jackson/databind/PropertyName;->_namespace:Ljava/lang/String;
 
-    invoke-direct {v1, v0, v2}, Lcom/fasterxml/jackson/databind/PropertyName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Lcom/fasterxml/jackson/databind/PropertyName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object p0, v1
+    move-object p0, v0
 
     goto :goto_8
 .end method
@@ -473,13 +459,11 @@
     sget-object p0, Lcom/fasterxml/jackson/databind/PropertyName;->USE_DEFAULT:Lcom/fasterxml/jackson/databind/PropertyName;
 
     .line 77
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/PropertyName;
     :cond_11
     :goto_11
     return-object p0
 
     .line 74
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/PropertyName;
     :cond_12
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/PropertyName;->_simpleName:Ljava/lang/String;
 
@@ -502,7 +486,7 @@
 .end method
 
 .method public simpleAsEncoded(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;)Lcom/fasterxml/jackson/core/SerializableString;
-    .registers 4
+    .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -514,17 +498,15 @@
 
     .prologue
     .line 151
-    .local p1, "config":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/PropertyName;->_encodedSimple:Lcom/fasterxml/jackson/core/SerializableString;
 
     .line 152
-    .local v0, "sstr":Lcom/fasterxml/jackson/core/SerializableString;
     if-nez v0, :cond_c
 
     .line 153
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/PropertyName;->_simpleName:Ljava/lang/String;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/PropertyName;->_simpleName:Ljava/lang/String;
 
-    invoke-virtual {p1, v1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->compileString(Ljava/lang/String;)Lcom/fasterxml/jackson/core/SerializableString;
+    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->compileString(Ljava/lang/String;)Lcom/fasterxml/jackson/core/SerializableString;
 
     move-result-object v0
 
@@ -590,7 +572,6 @@
 
 .method public withNamespace(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/PropertyName;
     .registers 4
-    .param p1, "ns"    # Ljava/lang/String;
 
     .prologue
     .line 124
@@ -602,13 +583,11 @@
     if-nez v0, :cond_f
 
     .line 131
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/PropertyName;
     :cond_6
     :goto_6
     return-object p0
 
     .line 128
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/PropertyName;
     :cond_7
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/PropertyName;->_namespace:Ljava/lang/String;
 
@@ -633,7 +612,6 @@
 
 .method public withSimpleName(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/PropertyName;
     .registers 4
-    .param p1, "simpleName"    # Ljava/lang/String;
 
     .prologue
     .line 110
@@ -653,11 +631,9 @@
     if-eqz v0, :cond_e
 
     .line 116
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/PropertyName;
     :goto_d
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/PropertyName;
     :cond_e
     new-instance v0, Lcom/fasterxml/jackson/databind/PropertyName;
 

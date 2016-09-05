@@ -9,15 +9,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Lf2SpacesIndenter;,
-        Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$FixedSpaceIndenter;,
-        Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$NopIndenter;,
-        Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -81,7 +72,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/core/SerializableString;)V
     .registers 3
-    .param p1, "rootSeparator"    # Lcom/fasterxml/jackson/core/SerializableString;
 
     .prologue
     .line 119
@@ -116,7 +106,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;)V
     .registers 3
-    .param p1, "base"    # Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
 
     .prologue
     .line 124
@@ -130,8 +119,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;Lcom/fasterxml/jackson/core/SerializableString;)V
     .registers 4
-    .param p1, "base"    # Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
-    .param p2, "rootSeparator"    # Lcom/fasterxml/jackson/core/SerializableString;
 
     .prologue
     .line 129
@@ -186,7 +173,6 @@
 
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 3
-    .param p1, "rootSeparator"    # Ljava/lang/String;
 
     .prologue
     .line 108
@@ -212,29 +198,25 @@
 
 # virtual methods
 .method protected _withSpaces(Z)Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
-    .registers 4
-    .param p1, "state"    # Z
+    .registers 3
 
     .prologue
     .line 217
-    iget-boolean v1, p0, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;->_spacesInObjectEntries:Z
+    iget-boolean v0, p0, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;->_spacesInObjectEntries:Z
 
-    if-ne v1, p1, :cond_5
+    if-ne v0, p1, :cond_5
 
     .line 222
-    .end local p0    # "this":Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
     :goto_4
     return-object p0
 
     .line 220
-    .restart local p0    # "this":Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
 
     invoke-direct {v0, p0}, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;-><init>(Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;)V
 
     .line 221
-    .local v0, "pp":Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
     iput-boolean p1, v0, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;->_spacesInObjectEntries:Z
 
     move-object p0, v0
@@ -245,13 +227,6 @@
 
 .method public beforeArrayValues(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 4
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 334
@@ -267,13 +242,6 @@
 
 .method public beforeObjectEntries(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 4
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 265
@@ -313,7 +281,6 @@
 
 .method public indentArraysWith(Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;)V
     .registers 2
-    .param p1, "i"    # Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;
 
     .prologue
     .line 148
@@ -321,7 +288,6 @@
 
     sget-object p1, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$NopIndenter;->instance:Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$NopIndenter;
 
-    .end local p1    # "i":Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;
     :cond_4
     iput-object p1, p0, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;->_arrayIndenter:Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;
 
@@ -331,7 +297,6 @@
 
 .method public indentObjectsWith(Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;)V
     .registers 2
-    .param p1, "i"    # Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;
 
     .prologue
     .line 152
@@ -339,7 +304,6 @@
 
     sget-object p1, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$NopIndenter;->instance:Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$NopIndenter;
 
-    .end local p1    # "i":Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;
     :cond_4
     iput-object p1, p0, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;->_objectIndenter:Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;
 
@@ -349,7 +313,6 @@
 
 .method public spacesInObjectEntries(Z)V
     .registers 2
-    .param p1, "b"    # Z
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -361,8 +324,7 @@
 .end method
 
 .method public withArrayIndenter(Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;)Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
-    .registers 4
-    .param p1, "i"    # Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;
+    .registers 3
 
     .prologue
     .line 165
@@ -373,24 +335,21 @@
 
     .line 168
     :cond_4
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;->_arrayIndenter:Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;->_arrayIndenter:Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;
 
-    if-ne v1, p1, :cond_9
+    if-ne v0, p1, :cond_9
 
     .line 173
-    .end local p0    # "this":Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
     :goto_8
     return-object p0
 
     .line 171
-    .restart local p0    # "this":Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
     :cond_9
     new-instance v0, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
 
     invoke-direct {v0, p0}, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;-><init>(Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;)V
 
     .line 172
-    .local v0, "pp":Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
     iput-object p1, v0, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;->_arrayIndenter:Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;
 
     move-object p0, v0
@@ -400,8 +359,7 @@
 .end method
 
 .method public withObjectIndenter(Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;)Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
-    .registers 4
-    .param p1, "i"    # Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;
+    .registers 3
 
     .prologue
     .line 180
@@ -412,24 +370,21 @@
 
     .line 183
     :cond_4
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;->_objectIndenter:Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;->_objectIndenter:Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;
 
-    if-ne v1, p1, :cond_9
+    if-ne v0, p1, :cond_9
 
     .line 188
-    .end local p0    # "this":Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
     :goto_8
     return-object p0
 
     .line 186
-    .restart local p0    # "this":Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
     :cond_9
     new-instance v0, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
 
     invoke-direct {v0, p0}, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;-><init>(Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;)V
 
     .line 187
-    .local v0, "pp":Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
     iput-object p1, v0, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;->_objectIndenter:Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter$Indenter;
 
     move-object p0, v0
@@ -440,7 +395,6 @@
 
 .method public withRootSeparator(Lcom/fasterxml/jackson/core/SerializableString;)Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
     .registers 3
-    .param p1, "rootSeparator"    # Lcom/fasterxml/jackson/core/SerializableString;
 
     .prologue
     .line 140
@@ -459,12 +413,10 @@
     if-eqz v0, :cond_f
 
     .line 144
-    .end local p0    # "this":Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
     :cond_e
     :goto_e
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
     :cond_f
     new-instance v0, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
 
@@ -505,13 +457,6 @@
 
 .method public writeArrayValueSeparator(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 4
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 350
@@ -532,14 +477,6 @@
 
 .method public writeEndArray(Lcom/fasterxml/jackson/core/JsonGenerator;I)V
     .registers 5
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p2, "nrOfValues"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 358
@@ -589,14 +526,6 @@
 
 .method public writeEndObject(Lcom/fasterxml/jackson/core/JsonGenerator;I)V
     .registers 5
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p2, "nrOfEntries"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 309
@@ -646,13 +575,6 @@
 
 .method public writeObjectEntrySeparator(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 4
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 301
@@ -673,13 +595,6 @@
 
 .method public writeObjectFieldValueSeparator(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 3
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 281
@@ -707,13 +622,6 @@
 
 .method public writeRootValueSeparator(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 3
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 246
@@ -733,13 +641,6 @@
 
 .method public writeStartArray(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 3
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 324
@@ -770,13 +671,6 @@
 
 .method public writeStartObject(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 3
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 255

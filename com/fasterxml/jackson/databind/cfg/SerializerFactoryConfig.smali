@@ -57,9 +57,6 @@
 
 .method protected constructor <init>([Lcom/fasterxml/jackson/databind/ser/Serializers;[Lcom/fasterxml/jackson/databind/ser/Serializers;[Lcom/fasterxml/jackson/databind/ser/BeanSerializerModifier;)V
     .registers 4
-    .param p1, "allAdditionalSerializers"    # [Lcom/fasterxml/jackson/databind/ser/Serializers;
-    .param p2, "allAdditionalKeySerializers"    # [Lcom/fasterxml/jackson/databind/ser/Serializers;
-    .param p3, "modifiers"    # [Lcom/fasterxml/jackson/databind/ser/BeanSerializerModifier;
 
     .prologue
     .line 48
@@ -70,7 +67,6 @@
 
     sget-object p1, Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;->NO_SERIALIZERS:[Lcom/fasterxml/jackson/databind/ser/Serializers;
 
-    .end local p1    # "allAdditionalSerializers":[Lcom/fasterxml/jackson/databind/ser/Serializers;
     :cond_7
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;->_additionalSerializers:[Lcom/fasterxml/jackson/databind/ser/Serializers;
 
@@ -79,7 +75,6 @@
 
     sget-object p2, Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;->NO_SERIALIZERS:[Lcom/fasterxml/jackson/databind/ser/Serializers;
 
-    .end local p2    # "allAdditionalKeySerializers":[Lcom/fasterxml/jackson/databind/ser/Serializers;
     :cond_d
     iput-object p2, p0, Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;->_additionalKeySerializers:[Lcom/fasterxml/jackson/databind/ser/Serializers;
 
@@ -88,7 +83,6 @@
 
     sget-object p3, Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;->NO_MODIFIERS:[Lcom/fasterxml/jackson/databind/ser/BeanSerializerModifier;
 
-    .end local p3    # "modifiers":[Lcom/fasterxml/jackson/databind/ser/BeanSerializerModifier;
     :cond_13
     iput-object p3, p0, Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;->_modifiers:[Lcom/fasterxml/jackson/databind/ser/BeanSerializerModifier;
 
@@ -235,33 +229,31 @@
 
 .method public withAdditionalKeySerializers(Lcom/fasterxml/jackson/databind/ser/Serializers;)Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;
     .registers 6
-    .param p1, "additional"    # Lcom/fasterxml/jackson/databind/ser/Serializers;
 
     .prologue
     .line 67
     if-nez p1, :cond_b
 
     .line 68
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "Can not pass null Serializers"
+    const-string/jumbo v1, "Can not pass null Serializers"
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     .line 70
     :cond_b
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;->_additionalKeySerializers:[Lcom/fasterxml/jackson/databind/ser/Serializers;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;->_additionalKeySerializers:[Lcom/fasterxml/jackson/databind/ser/Serializers;
 
-    invoke-static {v1, p1}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders;->insertInListNoDup([Ljava/lang/Object;Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-static {v0, p1}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders;->insertInListNoDup([Ljava/lang/Object;Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [Lcom/fasterxml/jackson/databind/ser/Serializers;
 
     .line 71
-    .local v0, "all":[Lcom/fasterxml/jackson/databind/ser/Serializers;
     new-instance v1, Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;
 
     iget-object v2, p0, Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;->_additionalSerializers:[Lcom/fasterxml/jackson/databind/ser/Serializers;
@@ -275,33 +267,31 @@
 
 .method public withAdditionalSerializers(Lcom/fasterxml/jackson/databind/ser/Serializers;)Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;
     .registers 6
-    .param p1, "additional"    # Lcom/fasterxml/jackson/databind/ser/Serializers;
 
     .prologue
     .line 58
     if-nez p1, :cond_b
 
     .line 59
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "Can not pass null Serializers"
+    const-string/jumbo v1, "Can not pass null Serializers"
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     .line 61
     :cond_b
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;->_additionalSerializers:[Lcom/fasterxml/jackson/databind/ser/Serializers;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;->_additionalSerializers:[Lcom/fasterxml/jackson/databind/ser/Serializers;
 
-    invoke-static {v1, p1}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders;->insertInListNoDup([Ljava/lang/Object;Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-static {v0, p1}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders;->insertInListNoDup([Ljava/lang/Object;Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [Lcom/fasterxml/jackson/databind/ser/Serializers;
 
     .line 62
-    .local v0, "all":[Lcom/fasterxml/jackson/databind/ser/Serializers;
     new-instance v1, Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;
 
     iget-object v2, p0, Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;->_additionalKeySerializers:[Lcom/fasterxml/jackson/databind/ser/Serializers;
@@ -315,33 +305,31 @@
 
 .method public withSerializerModifier(Lcom/fasterxml/jackson/databind/ser/BeanSerializerModifier;)Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;
     .registers 6
-    .param p1, "modifier"    # Lcom/fasterxml/jackson/databind/ser/BeanSerializerModifier;
 
     .prologue
     .line 76
     if-nez p1, :cond_b
 
     .line 77
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "Can not pass null modifier"
+    const-string/jumbo v1, "Can not pass null modifier"
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     .line 79
     :cond_b
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;->_modifiers:[Lcom/fasterxml/jackson/databind/ser/BeanSerializerModifier;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;->_modifiers:[Lcom/fasterxml/jackson/databind/ser/BeanSerializerModifier;
 
-    invoke-static {v1, p1}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders;->insertInListNoDup([Ljava/lang/Object;Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-static {v0, p1}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders;->insertInListNoDup([Ljava/lang/Object;Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [Lcom/fasterxml/jackson/databind/ser/BeanSerializerModifier;
 
     .line 80
-    .local v0, "modifiers":[Lcom/fasterxml/jackson/databind/ser/BeanSerializerModifier;
     new-instance v1, Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;
 
     iget-object v2, p0, Lcom/fasterxml/jackson/databind/cfg/SerializerFactoryConfig;->_additionalSerializers:[Lcom/fasterxml/jackson/databind/ser/Serializers;

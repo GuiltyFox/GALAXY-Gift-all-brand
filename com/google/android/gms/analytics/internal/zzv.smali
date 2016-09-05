@@ -3,11 +3,11 @@
 
 
 # instance fields
-.field private zzQm:Z
+.field private a:Z
 
-.field private zzQn:Z
+.field private b:Z
 
-.field private zzQo:Landroid/app/AlarmManager;
+.field private c:Landroid/app/AlarmManager;
 
 
 # direct methods
@@ -16,7 +16,7 @@
 
     invoke-direct {p0, p1}, Lcom/google/android/gms/analytics/internal/zzd;-><init>(Lcom/google/android/gms/analytics/internal/zzf;)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->o()Landroid/content/Context;
 
     move-result-object v0
 
@@ -28,19 +28,19 @@
 
     check-cast v0, Landroid/app/AlarmManager;
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzv;->zzQo:Landroid/app/AlarmManager;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzv;->c:Landroid/app/AlarmManager;
 
     return-void
 .end method
 
-.method private zzkM()Landroid/app/PendingIntent;
+.method private f()Landroid/app/PendingIntent;
     .registers 5
 
     const/4 v3, 0x0
 
     new-instance v0, Landroid/content/Intent;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->o()Landroid/content/Context;
 
     move-result-object v1
 
@@ -52,7 +52,7 @@
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->o()Landroid/content/Context;
 
     move-result-object v1
 
@@ -65,51 +65,23 @@
 
 
 # virtual methods
-.method public cancel()V
-    .registers 3
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->zzje()V
-
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzv;->zzQn:Z
-
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzv;->zzQo:Landroid/app/AlarmManager;
-
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzv;->zzkM()Landroid/app/PendingIntent;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
-
-    return-void
-.end method
-
-.method public zzbr()Z
-    .registers 2
-
-    iget-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzv;->zzQn:Z
-
-    return v0
-.end method
-
-.method protected zzir()V
+.method protected a()V
     .registers 5
 
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzv;->zzQo:Landroid/app/AlarmManager;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzv;->c:Landroid/app/AlarmManager;
 
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzv;->zzkM()Landroid/app/PendingIntent;
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzv;->f()Landroid/app/PendingIntent;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->q()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->zzkj()J
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->j()J
 
     move-result-wide v0
 
@@ -119,7 +91,7 @@
 
     if-lez v0, :cond_3e
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->o()Landroid/content/Context;
 
     move-result-object v0
 
@@ -129,7 +101,7 @@
 
     new-instance v1, Landroid/content/ComponentName;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->o()Landroid/content/Context;
 
     move-result-object v2
 
@@ -151,11 +123,11 @@
 
     const-string/jumbo v0, "Receiver registered. Using alarm for local dispatch."
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzv;->zzba(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzv;->b(Ljava/lang/String;)V
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzv;->zzQm:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzv;->a:Z
     :try_end_3e
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_3e} :catch_3f
 
@@ -169,34 +141,42 @@
     goto :goto_3e
 .end method
 
-.method public zzkK()Z
+.method public b()Z
     .registers 2
 
-    iget-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzv;->zzQm:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzv;->a:Z
 
     return v0
 .end method
 
-.method public zzkL()V
+.method public c()Z
+    .registers 2
+
+    iget-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzv;->b:Z
+
+    return v0
+.end method
+
+.method public d()V
     .registers 8
 
     const-wide/16 v4, 0x0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->zzje()V
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->D()V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->zzkK()Z
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->b()Z
 
     move-result v0
 
     const-string/jumbo v1, "Receiver not registered"
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzx;->zza(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzx;->a(ZLjava/lang/Object;)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->q()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->zzkj()J
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->j()J
 
     move-result-wide v0
 
@@ -204,13 +184,13 @@
 
     if-lez v2, :cond_34
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->cancel()V
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->e()V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->zziT()Lcom/google/android/gms/internal/zznl;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->n()Lcom/google/android/gms/internal/zznl;
 
     move-result-object v2
 
-    invoke-interface {v2}, Lcom/google/android/gms/internal/zznl;->elapsedRealtime()J
+    invoke-interface {v2}, Lcom/google/android/gms/internal/zznl;->b()J
 
     move-result-wide v2
 
@@ -218,18 +198,38 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzv;->zzQn:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzv;->b:Z
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzv;->zzQo:Landroid/app/AlarmManager;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzv;->c:Landroid/app/AlarmManager;
 
     const/4 v1, 0x2
 
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzv;->zzkM()Landroid/app/PendingIntent;
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzv;->f()Landroid/app/PendingIntent;
 
     move-result-object v6
 
     invoke-virtual/range {v0 .. v6}, Landroid/app/AlarmManager;->setInexactRepeating(IJJLandroid/app/PendingIntent;)V
 
     :cond_34
+    return-void
+.end method
+
+.method public e()V
+    .registers 3
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzv;->D()V
+
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzv;->b:Z
+
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzv;->c:Landroid/app/AlarmManager;
+
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzv;->f()Landroid/app/PendingIntent;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/app/AlarmManager;->cancel(Landroid/app/PendingIntent;)V
+
     return-void
 .end method

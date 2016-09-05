@@ -4,12 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/ogaclejapan/smarttablayout/utils/v4/FragmentPagerItems$Creator;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/ogaclejapan/smarttablayout/utils/PagerItems",
@@ -23,7 +17,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 2
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 28
@@ -33,9 +26,8 @@
     return-void
 .end method
 
-.method public static with(Landroid/content/Context;)Lcom/ogaclejapan/smarttablayout/utils/v4/FragmentPagerItems$Creator;
+.method public static a(Landroid/content/Context;)Lcom/ogaclejapan/smarttablayout/utils/v4/FragmentPagerItems$Creator;
     .registers 2
-    .param p0, "context"    # Landroid/content/Context;
 
     .prologue
     .line 32

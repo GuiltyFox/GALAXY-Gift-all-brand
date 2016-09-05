@@ -8,11 +8,6 @@
     value = Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4008
-    name = null
-.end annotation
-
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;I)V
@@ -29,9 +24,8 @@
 
 
 # virtual methods
-.method protected handle(Ljava/lang/Throwable;)V
+.method protected a(Ljava/lang/Throwable;)V
     .registers 4
-    .param p1, "t"    # Ljava/lang/Throwable;
 
     .prologue
     .line 36

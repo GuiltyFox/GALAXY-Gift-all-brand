@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4019
-    name = "ENUM_REDEEM"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum",
@@ -24,13 +15,13 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
+.field public static final enum a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
 
-.field public static final enum CONTINUE:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
+.field public static final enum b:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
 
-.field public static final enum NEXT_REDEEM_ALERT:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
+.field public static final enum c:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
 
-.field public static final enum SURVEY_DONE:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
+.field private static final synthetic d:[Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
 
 
 # direct methods
@@ -51,7 +42,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;->SURVEY_DONE:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
+    sput-object v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;->a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
 
     new-instance v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
 
@@ -59,7 +50,7 @@
 
     invoke-direct {v0, v1, v3}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;->NEXT_REDEEM_ALERT:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
+    sput-object v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;->b:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
 
     new-instance v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
 
@@ -67,26 +58,26 @@
 
     invoke-direct {v0, v1, v4}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;->CONTINUE:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
+    sput-object v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;->c:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
 
     .line 4399
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
 
-    sget-object v1, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;->SURVEY_DONE:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
+    sget-object v1, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;->a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;->NEXT_REDEEM_ALERT:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
+    sget-object v1, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;->b:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;->CONTINUE:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
+    sget-object v1, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;->c:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
 
     aput-object v1, v0, v4
 
-    sput-object v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;->$VALUES:[Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
+    sput-object v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;->d:[Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
 
     return-void
 .end method
@@ -108,7 +99,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 4399
@@ -128,7 +118,7 @@
 
     .prologue
     .line 4399
-    sget-object v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;->$VALUES:[Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
+    sget-object v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;->d:[Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;
 
     invoke-virtual {v0}, [Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$ENUM_REDEEM;->clone()Ljava/lang/Object;
 

@@ -5,27 +5,21 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/RequestHelpActivity;->getCode()V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/samsung/privilege/activity/RequestHelpActivity;->p()V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/RequestHelpActivity;
+.field final synthetic a:Lcom/samsung/privilege/activity/RequestHelpActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/RequestHelpActivity;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/RequestHelpActivity;
 
     .prologue
     .line 135
-    iput-object p1, p0, Lcom/samsung/privilege/activity/RequestHelpActivity$1;->this$0:Lcom/samsung/privilege/activity/RequestHelpActivity;
+    iput-object p1, p0, Lcom/samsung/privilege/activity/RequestHelpActivity$1;->a:Lcom/samsung/privilege/activity/RequestHelpActivity;
 
     invoke-direct {p0}, Lcom/bzbs/marketplace/asynctask/http/CallbackHttpAsyncTask;-><init>()V
 
@@ -34,52 +28,36 @@
 
 
 # virtual methods
-.method public onFailure(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
-    .registers 5
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "errorResponse"    # [B
-    .param p4, "e"    # Ljava/lang/Throwable;
-
-    .prologue
-    .line 148
-    return-void
-.end method
-
-.method public onSuccess(I[Lcz/msebera/android/httpclient/Header;[B)V
+.method public a(I[Lcz/msebera/android/httpclient/Header;[B)V
     .registers 8
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBody"    # [B
 
     .prologue
     .line 138
-    const/16 v1, 0xc8
+    const/16 v0, 0xc8
 
-    if-ne p1, v1, :cond_3f
+    if-ne p1, v0, :cond_3f
 
     if-eqz p3, :cond_3f
 
     .line 139
-    new-instance v1, Lcom/google/gson/Gson;
+    new-instance v0, Lcom/google/gson/Gson;
 
-    invoke-direct {v1}, Lcom/google/gson/Gson;-><init>()V
+    invoke-direct {v0}, Lcom/google/gson/Gson;-><init>()V
 
-    new-instance v2, Ljava/lang/String;
+    new-instance v1, Ljava/lang/String;
 
-    invoke-direct {v2, p3}, Ljava/lang/String;-><init>([B)V
+    invoke-direct {v1, p3}, Ljava/lang/String;-><init>([B)V
 
-    const-class v3, Lcom/bzbs/marketplace/model/CodeModel;
+    const-class v2, Lcom/bzbs/marketplace/model/CodeModel;
 
-    invoke-virtual {v1, v2, v3}, Lcom/google/gson/Gson;->fromJson(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Lcom/google/gson/Gson;->a(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/bzbs/marketplace/model/CodeModel;
 
     .line 140
-    .local v0, "code":Lcom/bzbs/marketplace/model/CodeModel;
-    iget-object v1, p0, Lcom/samsung/privilege/activity/RequestHelpActivity$1;->this$0:Lcom/samsung/privilege/activity/RequestHelpActivity;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/RequestHelpActivity$1;->a:Lcom/samsung/privilege/activity/RequestHelpActivity;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/RequestHelpActivity;->tvCode:Landroid/widget/TextView;
 
@@ -95,29 +73,36 @@
 
     invoke-virtual {v0}, Lcom/bzbs/marketplace/model/CodeModel;->getCode()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 141
-    iget-object v1, p0, Lcom/samsung/privilege/activity/RequestHelpActivity$1;->this$0:Lcom/samsung/privilege/activity/RequestHelpActivity;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/RequestHelpActivity$1;->a:Lcom/samsung/privilege/activity/RequestHelpActivity;
 
-    iget-object v1, v1, Lcom/samsung/privilege/activity/RequestHelpActivity;->contentCode:Landroid/widget/LinearLayout;
+    iget-object v0, v0, Lcom/samsung/privilege/activity/RequestHelpActivity;->contentCode:Landroid/widget/LinearLayout;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setVisibility(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     .line 143
-    .end local v0    # "code":Lcom/bzbs/marketplace/model/CodeModel;
     :cond_3f
+    return-void
+.end method
+
+.method public a(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
+    .registers 5
+
+    .prologue
+    .line 148
     return-void
 .end method

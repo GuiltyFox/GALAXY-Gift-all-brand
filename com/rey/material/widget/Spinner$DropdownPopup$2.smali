@@ -11,16 +11,11 @@
     value = Lcom/rey/material/widget/Spinner$DropdownPopup;-><init>(Lcom/rey/material/widget/Spinner;Landroid/content/Context;Landroid/util/AttributeSet;II)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$1:Lcom/rey/material/widget/Spinner$DropdownPopup;
+.field final synthetic a:Lcom/rey/material/widget/Spinner;
 
-.field final synthetic val$this$0:Lcom/rey/material/widget/Spinner;
+.field final synthetic b:Lcom/rey/material/widget/Spinner$DropdownPopup;
 
 
 # direct methods
@@ -29,9 +24,9 @@
 
     .prologue
     .line 1217
-    iput-object p1, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$2;->this$1:Lcom/rey/material/widget/Spinner$DropdownPopup;
+    iput-object p1, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$2;->b:Lcom/rey/material/widget/Spinner$DropdownPopup;
 
-    iput-object p2, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$2;->val$this$0:Lcom/rey/material/widget/Spinner;
+    iput-object p2, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$2;->a:Lcom/rey/material/widget/Spinner;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -48,16 +43,15 @@
 
     .prologue
     .line 1223
-    iget-object v1, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$2;->this$1:Lcom/rey/material/widget/Spinner$DropdownPopup;
+    iget-object v0, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$2;->b:Lcom/rey/material/widget/Spinner$DropdownPopup;
 
-    iget-object v1, v1, Lcom/rey/material/widget/Spinner$DropdownPopup;->this$0:Lcom/rey/material/widget/Spinner;
+    iget-object v0, v0, Lcom/rey/material/widget/Spinner$DropdownPopup;->b:Lcom/rey/material/widget/Spinner;
 
-    invoke-virtual {v1}, Lcom/rey/material/widget/Spinner;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    invoke-virtual {v0}, Lcom/rey/material/widget/Spinner;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
 
     .line 1224
-    .local v0, "vto":Landroid/view/ViewTreeObserver;
     if-eqz v0, :cond_19
 
     .line 1225
@@ -68,10 +62,9 @@
     if-lt v1, v2, :cond_21
 
     .line 1226
-    iget-object v1, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$2;->this$1:Lcom/rey/material/widget/Spinner$DropdownPopup;
+    iget-object v1, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$2;->b:Lcom/rey/material/widget/Spinner$DropdownPopup;
 
-    # getter for: Lcom/rey/material/widget/Spinner$DropdownPopup;->layoutListener:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
-    invoke-static {v1}, Lcom/rey/material/widget/Spinner$DropdownPopup;->access$700(Lcom/rey/material/widget/Spinner$DropdownPopup;)Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+    invoke-static {v1}, Lcom/rey/material/widget/Spinner$DropdownPopup;->b(Lcom/rey/material/widget/Spinner$DropdownPopup;)Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
     move-result-object v1
 
@@ -80,22 +73,20 @@
     .line 1230
     :cond_19
     :goto_19
-    iget-object v1, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$2;->this$1:Lcom/rey/material/widget/Spinner$DropdownPopup;
+    iget-object v0, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$2;->b:Lcom/rey/material/widget/Spinner$DropdownPopup;
 
-    iget-object v1, v1, Lcom/rey/material/widget/Spinner$DropdownPopup;->this$0:Lcom/rey/material/widget/Spinner;
+    iget-object v0, v0, Lcom/rey/material/widget/Spinner$DropdownPopup;->b:Lcom/rey/material/widget/Spinner;
 
-    # invokes: Lcom/rey/material/widget/Spinner;->onPopupDismissed()V
-    invoke-static {v1}, Lcom/rey/material/widget/Spinner;->access$800(Lcom/rey/material/widget/Spinner;)V
+    invoke-static {v0}, Lcom/rey/material/widget/Spinner;->e(Lcom/rey/material/widget/Spinner;)V
 
     .line 1231
     return-void
 
     .line 1228
     :cond_21
-    iget-object v1, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$2;->this$1:Lcom/rey/material/widget/Spinner$DropdownPopup;
+    iget-object v1, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$2;->b:Lcom/rey/material/widget/Spinner$DropdownPopup;
 
-    # getter for: Lcom/rey/material/widget/Spinner$DropdownPopup;->layoutListener:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
-    invoke-static {v1}, Lcom/rey/material/widget/Spinner$DropdownPopup;->access$700(Lcom/rey/material/widget/Spinner$DropdownPopup;)Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+    invoke-static {v1}, Lcom/rey/material/widget/Spinner$DropdownPopup;->b(Lcom/rey/material/widget/Spinner$DropdownPopup;)Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
     move-result-object v1
 

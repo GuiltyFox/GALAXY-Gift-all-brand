@@ -19,7 +19,6 @@
 # direct methods
 .method public constructor <init>(Lcom/loopj/android/http/AsyncHttpRequest;)V
     .registers 3
-    .param p1, "request"    # Lcom/loopj/android/http/AsyncHttpRequest;
 
     .prologue
     .line 31
@@ -40,20 +39,18 @@
 # virtual methods
 .method public cancel(Z)Z
     .registers 5
-    .param p1, "mayInterruptIfRunning"    # Z
 
     .prologue
     .line 52
-    iget-object v1, p0, Lcom/loopj/android/http/RequestHandle;->request:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Lcom/loopj/android/http/RequestHandle;->request:Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/loopj/android/http/AsyncHttpRequest;
 
     .line 53
-    .local v0, "_request":Lcom/loopj/android/http/AsyncHttpRequest;
     if-eqz v0, :cond_28
 
     .line 54
@@ -80,143 +77,138 @@
     invoke-virtual {v1}, Ljava/lang/Thread;->start()V
 
     .line 63
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     .line 68
     :goto_22
-    return v1
+    return v0
 
     .line 65
     :cond_23
     invoke-virtual {v0, p1}, Lcom/loopj/android/http/AsyncHttpRequest;->cancel(Z)Z
 
-    move-result v1
+    move-result v0
 
     goto :goto_22
 
     .line 68
     :cond_28
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_22
 .end method
 
 .method public getTag()Ljava/lang/Object;
-    .registers 3
+    .registers 2
 
     .prologue
     .line 105
-    iget-object v1, p0, Lcom/loopj/android/http/RequestHandle;->request:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Lcom/loopj/android/http/RequestHandle;->request:Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/loopj/android/http/AsyncHttpRequest;
 
     .line 106
-    .local v0, "_request":Lcom/loopj/android/http/AsyncHttpRequest;
     if-nez v0, :cond_c
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_b
-    return-object v1
+    return-object v0
 
     :cond_c
     invoke-virtual {v0}, Lcom/loopj/android/http/AsyncHttpRequest;->getTag()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_b
 .end method
 
 .method public isCancelled()Z
-    .registers 3
+    .registers 2
 
     .prologue
     .line 88
-    iget-object v1, p0, Lcom/loopj/android/http/RequestHandle;->request:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Lcom/loopj/android/http/RequestHandle;->request:Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/loopj/android/http/AsyncHttpRequest;
 
     .line 89
-    .local v0, "_request":Lcom/loopj/android/http/AsyncHttpRequest;
     if-eqz v0, :cond_10
 
     invoke-virtual {v0}, Lcom/loopj/android/http/AsyncHttpRequest;->isCancelled()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_12
+    if-eqz v0, :cond_12
 
     :cond_10
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     :goto_11
-    return v1
+    return v0
 
     :cond_12
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_11
 .end method
 
 .method public isFinished()Z
-    .registers 3
+    .registers 2
 
     .prologue
     .line 78
-    iget-object v1, p0, Lcom/loopj/android/http/RequestHandle;->request:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Lcom/loopj/android/http/RequestHandle;->request:Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/loopj/android/http/AsyncHttpRequest;
 
     .line 79
-    .local v0, "_request":Lcom/loopj/android/http/AsyncHttpRequest;
     if-eqz v0, :cond_10
 
     invoke-virtual {v0}, Lcom/loopj/android/http/AsyncHttpRequest;->isDone()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_12
+    if-eqz v0, :cond_12
 
     :cond_10
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     :goto_11
-    return v1
+    return v0
 
     :cond_12
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_11
 .end method
 
 .method public setTag(Ljava/lang/Object;)Lcom/loopj/android/http/RequestHandle;
-    .registers 4
-    .param p1, "tag"    # Ljava/lang/Object;
+    .registers 3
 
     .prologue
     .line 116
-    iget-object v1, p0, Lcom/loopj/android/http/RequestHandle;->request:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Lcom/loopj/android/http/RequestHandle;->request:Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/loopj/android/http/AsyncHttpRequest;
 
     .line 117
-    .local v0, "_request":Lcom/loopj/android/http/AsyncHttpRequest;
     if-eqz v0, :cond_d
 
     .line 118
@@ -234,21 +226,20 @@
     .line 93
     invoke-virtual {p0}, Lcom/loopj/android/http/RequestHandle;->isCancelled()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_c
+    if-nez v0, :cond_c
 
     invoke-virtual {p0}, Lcom/loopj/android/http/RequestHandle;->isFinished()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_15
+    if-eqz v0, :cond_15
 
     :cond_c
     const/4 v0, 0x1
 
     .line 94
-    .local v0, "should":Z
     :goto_d
     if-eqz v0, :cond_14
 
@@ -262,7 +253,6 @@
     return v0
 
     .line 93
-    .end local v0    # "should":Z
     :cond_15
     const/4 v0, 0x0
 

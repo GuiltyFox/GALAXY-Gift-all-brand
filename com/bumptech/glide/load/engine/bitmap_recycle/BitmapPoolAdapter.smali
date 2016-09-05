@@ -19,19 +19,8 @@
 
 
 # virtual methods
-.method public clearMemory()V
-    .registers 1
-
-    .prologue
-    .line 38
-    return-void
-.end method
-
-.method public get(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+.method public a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
     .registers 5
-    .param p1, "width"    # I
-    .param p2, "height"    # I
-    .param p3, "config"    # Landroid/graphics/Bitmap$Config;
 
     .prologue
     .line 27
@@ -40,32 +29,24 @@
     return-object v0
 .end method
 
-.method public getDirty(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
-    .registers 5
-    .param p1, "width"    # I
-    .param p2, "height"    # I
-    .param p3, "config"    # Landroid/graphics/Bitmap$Config;
+.method public a()V
+    .registers 1
 
     .prologue
-    .line 32
-    const/4 v0, 0x0
-
-    return-object v0
+    .line 38
+    return-void
 .end method
 
-.method public getMaxSize()I
+.method public a(I)V
     .registers 2
 
     .prologue
-    .line 12
-    const/4 v0, 0x0
-
-    return v0
+    .line 43
+    return-void
 .end method
 
-.method public put(Landroid/graphics/Bitmap;)Z
+.method public a(Landroid/graphics/Bitmap;)Z
     .registers 3
-    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
     .line 22
@@ -74,20 +55,12 @@
     return v0
 .end method
 
-.method public setSizeMultiplier(F)V
-    .registers 2
-    .param p1, "sizeMultiplier"    # F
+.method public b(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    .registers 5
 
     .prologue
-    .line 18
-    return-void
-.end method
+    .line 32
+    const/4 v0, 0x0
 
-.method public trimMemory(I)V
-    .registers 2
-    .param p1, "level"    # I
-
-    .prologue
-    .line 43
-    return-void
+    return-object v0
 .end method

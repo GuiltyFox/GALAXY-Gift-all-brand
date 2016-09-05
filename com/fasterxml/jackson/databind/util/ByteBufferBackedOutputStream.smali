@@ -10,7 +10,6 @@
 # direct methods
 .method public constructor <init>(Ljava/nio/ByteBuffer;)V
     .registers 2
-    .param p1, "buf"    # Ljava/nio/ByteBuffer;
 
     .prologue
     .line 13
@@ -25,12 +24,6 @@
 # virtual methods
 .method public write(I)V
     .registers 4
-    .param p1, "b"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 15
@@ -45,14 +38,6 @@
 
 .method public write([BII)V
     .registers 5
-    .param p1, "bytes"    # [B
-    .param p2, "off"    # I
-    .param p3, "len"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 16

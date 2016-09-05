@@ -15,7 +15,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 50
@@ -29,8 +28,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 54
@@ -44,9 +41,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .registers 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
 
     .prologue
     .line 58
@@ -75,7 +69,7 @@
     .line 61
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatRadioButton;->mCompoundButtonHelper:Landroid/support/v7/widget/AppCompatCompoundButtonHelper;
 
-    invoke-virtual {v0, p2, p3}, Landroid/support/v7/widget/AppCompatCompoundButtonHelper;->loadFromAttributes(Landroid/util/AttributeSet;I)V
+    invoke-virtual {v0, p2, p3}, Landroid/support/v7/widget/AppCompatCompoundButtonHelper;->a(Landroid/util/AttributeSet;I)V
 
     .line 62
     return-void
@@ -93,26 +87,22 @@
     move-result v0
 
     .line 82
-    .local v0, "value":I
     iget-object v1, p0, Landroid/support/v7/widget/AppCompatRadioButton;->mCompoundButtonHelper:Landroid/support/v7/widget/AppCompatCompoundButtonHelper;
 
     if-eqz v1, :cond_e
 
     iget-object v1, p0, Landroid/support/v7/widget/AppCompatRadioButton;->mCompoundButtonHelper:Landroid/support/v7/widget/AppCompatCompoundButtonHelper;
 
-    invoke-virtual {v1, v0}, Landroid/support/v7/widget/AppCompatCompoundButtonHelper;->getCompoundPaddingLeft(I)I
+    invoke-virtual {v1, v0}, Landroid/support/v7/widget/AppCompatCompoundButtonHelper;->a(I)I
 
     move-result v0
 
-    .end local v0    # "value":I
     :cond_e
     return v0
 .end method
 
 .method public getSupportButtonTintList()Landroid/content/res/ColorStateList;
     .registers 2
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
 
     .prologue
     .line 105
@@ -122,7 +112,7 @@
 
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatRadioButton;->mCompoundButtonHelper:Landroid/support/v7/widget/AppCompatCompoundButtonHelper;
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/AppCompatCompoundButtonHelper;->getSupportButtonTintList()Landroid/content/res/ColorStateList;
+    invoke-virtual {v0}, Landroid/support/v7/widget/AppCompatCompoundButtonHelper;->a()Landroid/content/res/ColorStateList;
 
     move-result-object v0
 
@@ -137,8 +127,6 @@
 
 .method public getSupportButtonTintMode()Landroid/graphics/PorterDuff$Mode;
     .registers 2
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
 
     .prologue
     .line 128
@@ -148,7 +136,7 @@
 
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatRadioButton;->mCompoundButtonHelper:Landroid/support/v7/widget/AppCompatCompoundButtonHelper;
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/AppCompatCompoundButtonHelper;->getSupportButtonTintMode()Landroid/graphics/PorterDuff$Mode;
+    invoke-virtual {v0}, Landroid/support/v7/widget/AppCompatCompoundButtonHelper;->b()Landroid/graphics/PorterDuff$Mode;
 
     move-result-object v0
 
@@ -163,10 +151,6 @@
 
 .method public setButtonDrawable(I)V
     .registers 4
-    .param p1, "resId"    # I
-        .annotation build Landroid/support/annotation/DrawableRes;
-        .end annotation
-    .end param
 
     .prologue
     .line 74
@@ -196,7 +180,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Landroid/support/v4/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, p1}, Landroid/support/v4/content/ContextCompat;->a(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -205,7 +189,6 @@
 
 .method public setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
     .registers 3
-    .param p1, "buttonDrawable"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 66
@@ -219,7 +202,7 @@
     .line 68
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatRadioButton;->mCompoundButtonHelper:Landroid/support/v7/widget/AppCompatCompoundButtonHelper;
 
-    invoke-virtual {v0}, Landroid/support/v7/widget/AppCompatCompoundButtonHelper;->onSetButtonDrawable()V
+    invoke-virtual {v0}, Landroid/support/v7/widget/AppCompatCompoundButtonHelper;->c()V
 
     .line 70
     :cond_c
@@ -228,10 +211,6 @@
 
 .method public setSupportButtonTintList(Landroid/content/res/ColorStateList;)V
     .registers 3
-    .param p1, "tint"    # Landroid/content/res/ColorStateList;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
 
     .prologue
     .line 93
@@ -242,7 +221,7 @@
     .line 94
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatRadioButton;->mCompoundButtonHelper:Landroid/support/v7/widget/AppCompatCompoundButtonHelper;
 
-    invoke-virtual {v0, p1}, Landroid/support/v7/widget/AppCompatCompoundButtonHelper;->setSupportButtonTintList(Landroid/content/res/ColorStateList;)V
+    invoke-virtual {v0, p1}, Landroid/support/v7/widget/AppCompatCompoundButtonHelper;->a(Landroid/content/res/ColorStateList;)V
 
     .line 96
     :cond_9
@@ -251,10 +230,6 @@
 
 .method public setSupportButtonTintMode(Landroid/graphics/PorterDuff$Mode;)V
     .registers 3
-    .param p1, "tintMode"    # Landroid/graphics/PorterDuff$Mode;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
 
     .prologue
     .line 116
@@ -265,7 +240,7 @@
     .line 117
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatRadioButton;->mCompoundButtonHelper:Landroid/support/v7/widget/AppCompatCompoundButtonHelper;
 
-    invoke-virtual {v0, p1}, Landroid/support/v7/widget/AppCompatCompoundButtonHelper;->setSupportButtonTintMode(Landroid/graphics/PorterDuff$Mode;)V
+    invoke-virtual {v0, p1}, Landroid/support/v7/widget/AppCompatCompoundButtonHelper;->a(Landroid/graphics/PorterDuff$Mode;)V
 
     .line 119
     :cond_9

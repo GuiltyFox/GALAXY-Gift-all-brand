@@ -17,7 +17,6 @@
 # direct methods
 .method public constructor <init>(Ljava/io/File;)V
     .registers 2
-    .param p1, "file"    # Ljava/io/File;
 
     .prologue
     .line 12

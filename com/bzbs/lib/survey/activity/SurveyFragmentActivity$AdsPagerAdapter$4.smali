@@ -8,39 +8,33 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;->initialViewSurvey(Lcom/bzbs/lib/survey/bean/AdBuzzItem;Landroid/view/ViewGroup;I)Landroid/view/View;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;->a(Lcom/bzbs/lib/survey/bean/AdBuzzItem;Landroid/view/ViewGroup;I)Landroid/view/View;
 .end annotation
 
 
 # instance fields
-.field final synthetic this$1:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
+.field final synthetic a:Landroid/widget/EditText;
 
-.field final synthetic val$adBuzzItem:Lcom/bzbs/lib/survey/bean/AdBuzzItem;
+.field final synthetic b:Lcom/bzbs/lib/survey/bean/AdBuzzItem;
 
-.field final synthetic val$etFieldInputCode:Landroid/widget/EditText;
+.field final synthetic c:I
 
-.field final synthetic val$finalI:I
+.field final synthetic d:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
 
 
 # direct methods
 .method constructor <init>(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;Landroid/widget/EditText;Lcom/bzbs/lib/survey/bean/AdBuzzItem;I)V
     .registers 5
-    .param p1, "this$1"    # Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
 
     .prologue
     .line 1261
-    iput-object p1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->this$1:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
+    iput-object p1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->d:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
 
-    iput-object p2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->val$etFieldInputCode:Landroid/widget/EditText;
+    iput-object p2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->a:Landroid/widget/EditText;
 
-    iput-object p3, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->val$adBuzzItem:Lcom/bzbs/lib/survey/bean/AdBuzzItem;
+    iput-object p3, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->b:Lcom/bzbs/lib/survey/bean/AdBuzzItem;
 
-    iput p4, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->val$finalI:I
+    iput p4, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->c:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -51,44 +45,41 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .registers 6
-    .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 1265
-    iget-object v1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->this$1:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->d:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
 
-    iget-object v1, v1, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v0, v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;->f:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
-    iget-object v2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->this$1:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
+    iget-object v1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->d:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
 
-    iget-object v2, v2, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v1, v1, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;->f:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
-    # getter for: Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->tvScanCode:Ljava/util/List;
-    invoke-static {v2}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->access$1500(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)Ljava/util/List;
+    invoke-static {v1}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->m(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)Ljava/util/List;
 
-    move-result-object v2
+    move-result-object v1
 
-    iget-object v3, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->val$etFieldInputCode:Landroid/widget/EditText;
+    iget-object v2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->a:Landroid/widget/EditText;
 
-    invoke-interface {v2, v3}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
+    invoke-interface {v1, v2}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
 
-    move-result v2
+    move-result v1
 
-    iput v2, v1, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->currentView:I
+    iput v1, v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->q:I
 
     .line 1266
     new-instance v0, Landroid/content/Intent;
 
-    iget-object v1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->this$1:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
+    iget-object v1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->d:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
 
-    iget-object v1, v1, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v1, v1, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;->f:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
     const-class v2, Lcom/bzbs/lib/survey/util/zxing/ScannerActivity;
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
     .line 1267
-    .local v0, "zxing":Landroid/content/Intent;
     const-string/jumbo v1, "com.google.zxing.client.android.SCAN.SCAN_MODE"
 
     const-string/jumbo v2, "QR_CODE_MODE"
@@ -98,9 +89,9 @@
     .line 1268
     const-string/jumbo v1, "appName"
 
-    iget-object v2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->this$1:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
+    iget-object v2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->d:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
 
-    iget-object v2, v2, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v2, v2, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;->f:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
     sget v3, Lcom/bzbs/lib/survey/R$string;->my_app_buzzebee:I
 
@@ -111,11 +102,11 @@
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 1269
-    iget-object v1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->val$adBuzzItem:Lcom/bzbs/lib/survey/bean/AdBuzzItem;
+    iget-object v1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->b:Lcom/bzbs/lib/survey/bean/AdBuzzItem;
 
-    iget-object v1, v1, Lcom/bzbs/lib/survey/bean/AdBuzzItem;->campaignExtraSurveyPage:Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;
+    iget-object v1, v1, Lcom/bzbs/lib/survey/bean/AdBuzzItem;->b:Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;
 
-    iget-object v1, v1, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->inputs:Ljava/util/ArrayList;
+    iget-object v1, v1, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->h:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -123,21 +114,20 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    iget v2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->val$finalI:I
+    iget v2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->c:I
 
     if-ne v1, v2, :cond_58
 
     .line 1270
-    iget-object v1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->this$1:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
+    iget-object v1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->d:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
 
-    iget-object v1, v1, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v1, v1, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;->f:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
-    iget-object v2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->this$1:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
+    iget-object v2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->d:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
 
-    iget-object v2, v2, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v2, v2, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;->f:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
-    # getter for: Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->RC_BARCODE_SCANNER_CONTINUE_BREAK:I
-    invoke-static {v2}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->access$2000(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)I
+    invoke-static {v2}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->p(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)I
 
     move-result v2
 
@@ -149,16 +139,15 @@
 
     .line 1275
     :cond_58
-    iget-object v1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->this$1:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
+    iget-object v1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->d:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
 
-    iget-object v1, v1, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v1, v1, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;->f:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
-    iget-object v2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->this$1:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
+    iget-object v2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$4;->d:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;
 
-    iget-object v2, v2, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v2, v2, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter;->f:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
-    # getter for: Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->RC_BARCODE_SCANNER_CONTINUE:I
-    invoke-static {v2}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->access$2100(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)I
+    invoke-static {v2}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->q(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)I
 
     move-result v2
 

@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final MILLIS_MULTIPLIER:D
+.field private static final a:D
 
 
 # direct methods
@@ -12,7 +12,7 @@
     .registers 6
 
     .prologue
-    const-wide/high16 v0, 0x3ff0000000000000L
+    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
     .line 11
     const/16 v2, 0x11
@@ -21,9 +21,9 @@
 
     if-gt v2, v3, :cond_11
 
-    const-wide/high16 v2, 0x4024000000000000L
+    const-wide/high16 v2, 0x4024000000000000L    # 10.0
 
-    const-wide/high16 v4, 0x4018000000000000L
+    const-wide/high16 v4, 0x4018000000000000L    # 6.0
 
     invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->pow(DD)D
 
@@ -32,29 +32,17 @@
     div-double/2addr v0, v2
 
     :cond_11
-    sput-wide v0, Lcom/bumptech/glide/util/LogTime;->MILLIS_MULTIPLIER:D
+    sput-wide v0, Lcom/bumptech/glide/util/LogTime;->a:D
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 14
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 16
-    return-void
-.end method
-
-.method public static getElapsedMillis(J)D
+.method public static a(J)D
     .registers 6
-    .param p0, "logTime"    # J
 
     .prologue
     .line 37
-    invoke-static {}, Lcom/bumptech/glide/util/LogTime;->getLogTime()J
+    invoke-static {}, Lcom/bumptech/glide/util/LogTime;->a()J
 
     move-result-wide v0
 
@@ -62,14 +50,14 @@
 
     long-to-double v0, v0
 
-    sget-wide v2, Lcom/bumptech/glide/util/LogTime;->MILLIS_MULTIPLIER:D
+    sget-wide v2, Lcom/bumptech/glide/util/LogTime;->a:D
 
     mul-double/2addr v0, v2
 
     return-wide v0
 .end method
 
-.method public static getLogTime()J
+.method public static a()J
     .registers 2
     .annotation build Landroid/annotation/TargetApi;
         value = 0x11

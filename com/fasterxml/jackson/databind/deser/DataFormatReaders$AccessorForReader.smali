@@ -3,17 +3,6 @@
 .source "DataFormatReaders.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4
-    name = "AccessorForReader"
-.end annotation
-
-
 # instance fields
 .field final synthetic this$0:Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
 
@@ -21,8 +10,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;Ljava/io/InputStream;[B)V
     .registers 4
-    .param p2, "in"    # Ljava/io/InputStream;
-    .param p3, "buffer"    # [B
 
     .prologue
     .line 253
@@ -37,7 +24,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;[B)V
     .registers 3
-    .param p2, "inputDocument"    # [B
 
     .prologue
     .line 256
@@ -52,9 +38,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;[BII)V
     .registers 5
-    .param p2, "inputDocument"    # [B
-    .param p3, "start"    # I
-    .param p4, "len"    # I
 
     .prologue
     .line 259
@@ -71,8 +54,6 @@
 # virtual methods
 .method public createMatcher(Lcom/fasterxml/jackson/databind/ObjectReader;Lcom/fasterxml/jackson/core/format/MatchStrength;)Lcom/fasterxml/jackson/databind/deser/DataFormatReaders$Match;
     .registers 10
-    .param p1, "match"    # Lcom/fasterxml/jackson/databind/ObjectReader;
-    .param p2, "matchStrength"    # Lcom/fasterxml/jackson/core/format/MatchStrength;
 
     .prologue
     .line 265

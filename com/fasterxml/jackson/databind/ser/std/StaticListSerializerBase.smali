@@ -28,8 +28,6 @@
 
     .prologue
     .line 18
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/StaticListSerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/StaticListSerializerBase<TT;>;"
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/fasterxml/jackson/databind/ser/std/StdSerializer;-><init>(Ljava/lang/Class;Z)V
@@ -41,26 +39,13 @@
 
 # virtual methods
 .method protected abstract acceptContentVisitor(Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonArrayFormatVisitor;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
 .end method
 
 .method public acceptJsonFormatVisitor(Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;Lcom/fasterxml/jackson/databind/JavaType;)V
     .registers 4
-    .param p1, "visitor"    # Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;
-    .param p2, "typeHint"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
 
     .prologue
     .line 33
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/StaticListSerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/StaticListSerializerBase<TT;>;"
     invoke-interface {p1, p2}, Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;->expectArrayFormat(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonArrayFormatVisitor;
 
     move-result-object v0
@@ -76,12 +61,9 @@
 
 .method public getSchema(Lcom/fasterxml/jackson/databind/SerializerProvider;Ljava/lang/reflect/Type;)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 6
-    .param p1, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .param p2, "typeHint"    # Ljava/lang/reflect/Type;
 
     .prologue
     .line 28
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/StaticListSerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/StaticListSerializerBase<TT;>;"
     const-string/jumbo v0, "array"
 
     const/4 v1, 0x1
@@ -105,14 +87,11 @@
 
 .method public bridge synthetic isEmpty(Ljava/lang/Object;)Z
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 14
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/StaticListSerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/StaticListSerializerBase<TT;>;"
     check-cast p1, Ljava/util/Collection;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/ser/std/StaticListSerializerBase;->isEmpty(Ljava/util/Collection;)Z
 
     move-result v0
@@ -130,8 +109,6 @@
 
     .prologue
     .line 23
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/StaticListSerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/StaticListSerializerBase<TT;>;"
-    .local p1, "value":Ljava/util/Collection;, "TT;"
     if-eqz p1, :cond_8
 
     invoke-interface {p1}, Ljava/util/Collection;->size()I

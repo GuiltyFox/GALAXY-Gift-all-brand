@@ -3,37 +3,22 @@
 .source "StickerModel.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bzbs/marketplace/model/sticker/StickerModel;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "StickersEntity"
-.end annotation
-
-.annotation runtime Lorg/parceler/Parcel;
-    value = .enum Lorg/parceler/Parcel$Serialization;->BEAN:Lorg/parceler/Parcel$Serialization;
-.end annotation
-
-
 # instance fields
-.field ETag:Ljava/lang/String;
+.field public ETag:Ljava/lang/String;
 
-.field Name:Ljava/lang/String;
+.field public Name:Ljava/lang/String;
 
-.field PartitionKey:Ljava/lang/String;
+.field public PartitionKey:Ljava/lang/String;
 
-.field PictureUrl:Ljava/lang/String;
+.field public PictureUrl:Ljava/lang/String;
 
-.field RowKey:Ljava/lang/String;
+.field public RowKey:Ljava/lang/String;
 
-.field StickerKey:Ljava/lang/String;
+.field public StickerKey:Ljava/lang/String;
 
-.field Text:Ljava/lang/String;
+.field public Text:Ljava/lang/String;
 
-.field Timestamp:I
+.field public Timestamp:I
 
 
 # direct methods
@@ -131,7 +116,6 @@
 
 .method public setETag(Ljava/lang/String;)V
     .registers 2
-    .param p1, "ETag"    # Ljava/lang/String;
 
     .prologue
     .line 104
@@ -143,7 +127,6 @@
 
 .method public setName(Ljava/lang/String;)V
     .registers 2
-    .param p1, "Name"    # Ljava/lang/String;
 
     .prologue
     .line 124
@@ -155,7 +138,6 @@
 
 .method public setPartitionKey(Ljava/lang/String;)V
     .registers 2
-    .param p1, "PartitionKey"    # Ljava/lang/String;
 
     .prologue
     .line 112
@@ -167,7 +149,6 @@
 
 .method public setPictureUrl(Ljava/lang/String;)V
     .registers 2
-    .param p1, "PictureUrl"    # Ljava/lang/String;
 
     .prologue
     .line 108
@@ -179,7 +160,6 @@
 
 .method public setRowKey(Ljava/lang/String;)V
     .registers 2
-    .param p1, "RowKey"    # Ljava/lang/String;
 
     .prologue
     .line 100
@@ -191,7 +171,6 @@
 
 .method public setStickerKey(Ljava/lang/String;)V
     .registers 2
-    .param p1, "StickerKey"    # Ljava/lang/String;
 
     .prologue
     .line 96
@@ -203,7 +182,6 @@
 
 .method public setText(Ljava/lang/String;)V
     .registers 2
-    .param p1, "Text"    # Ljava/lang/String;
 
     .prologue
     .line 116
@@ -215,7 +193,6 @@
 
 .method public setTimestamp(I)V
     .registers 2
-    .param p1, "Timestamp"    # I
 
     .prologue
     .line 120

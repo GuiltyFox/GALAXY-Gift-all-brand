@@ -22,9 +22,6 @@
 .method public abstract getHeaders(Ljava/lang/String;)[Lcz/msebera/android/httpclient/Header;
 .end method
 
-.method public abstract getLastHeader(Ljava/lang/String;)Lcz/msebera/android/httpclient/Header;
-.end method
-
 .method public abstract getParams()Lcz/msebera/android/httpclient/params/HttpParams;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
@@ -43,9 +40,6 @@
 .end method
 
 .method public abstract removeHeaders(Ljava/lang/String;)V
-.end method
-
-.method public abstract setHeader(Lcz/msebera/android/httpclient/Header;)V
 .end method
 
 .method public abstract setHeader(Ljava/lang/String;Ljava/lang/String;)V

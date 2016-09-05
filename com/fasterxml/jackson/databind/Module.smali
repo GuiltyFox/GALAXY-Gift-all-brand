@@ -6,14 +6,6 @@
 .implements Lcom/fasterxml/jackson/core/Versioned;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/Module$SetupContext;
-    }
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1

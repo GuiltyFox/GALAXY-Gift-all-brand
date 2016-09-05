@@ -8,31 +8,10 @@
     value = 0xe
 .end annotation
 
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/squareup/picasso/ContactsPhotoRequestHandler;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "ContactPhotoStreamIcs"
-.end annotation
-
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 100
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method static get(Landroid/content/ContentResolver;Landroid/net/Uri;)Ljava/io/InputStream;
+.method static a(Landroid/content/ContentResolver;Landroid/net/Uri;)Ljava/io/InputStream;
     .registers 3
-    .param p0, "contentResolver"    # Landroid/content/ContentResolver;
-    .param p1, "uri"    # Landroid/net/Uri;
 
     .prologue
     .line 102

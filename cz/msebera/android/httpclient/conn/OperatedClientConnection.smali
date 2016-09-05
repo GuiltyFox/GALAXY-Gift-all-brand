@@ -13,35 +13,17 @@
 
 
 # virtual methods
-.method public abstract getSocket()Ljava/net/Socket;
+.method public abstract a(Ljava/net/Socket;Lcz/msebera/android/httpclient/HttpHost;)V
 .end method
 
-.method public abstract getTargetHost()Lcz/msebera/android/httpclient/HttpHost;
+.method public abstract a(Ljava/net/Socket;Lcz/msebera/android/httpclient/HttpHost;ZLcz/msebera/android/httpclient/params/HttpParams;)V
 .end method
 
-.method public abstract isSecure()Z
+.method public abstract a(ZLcz/msebera/android/httpclient/params/HttpParams;)V
 .end method
 
-.method public abstract openCompleted(ZLcz/msebera/android/httpclient/params/HttpParams;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+.method public abstract h()Z
 .end method
 
-.method public abstract opening(Ljava/net/Socket;Lcz/msebera/android/httpclient/HttpHost;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-.end method
-
-.method public abstract update(Ljava/net/Socket;Lcz/msebera/android/httpclient/HttpHost;ZLcz/msebera/android/httpclient/params/HttpParams;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+.method public abstract i()Ljava/net/Socket;
 .end method

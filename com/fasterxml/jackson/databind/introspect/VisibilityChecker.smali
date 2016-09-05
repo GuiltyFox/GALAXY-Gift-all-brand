@@ -4,13 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$1;,
-        Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T::",

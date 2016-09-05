@@ -69,10 +69,6 @@
 
     .prologue
     .line 23
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/EnumResolver;, "Lcom/fasterxml/jackson/databind/util/EnumResolver<TT;>;"
-    .local p1, "enumClass":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
-    .local p2, "enums":[Ljava/lang/Enum;, "[TT;"
-    .local p3, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 24
@@ -89,8 +85,7 @@
 .end method
 
 .method public static constructFor(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/util/EnumResolver;
-    .registers 11
-    .param p1, "ai"    # Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
+    .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<ET:",
@@ -107,94 +102,83 @@
 
     .prologue
     .line 35
-    .local p0, "enumCls":Ljava/lang/Class;, "Ljava/lang/Class<TET;>;"
     invoke-virtual {p0}, Ljava/lang/Class;->getEnumConstants()[Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, [Ljava/lang/Enum;
+    check-cast v0, [Ljava/lang/Enum;
 
     .line 36
-    .local v2, "enumValues":[Ljava/lang/Enum;, "[TET;"
-    if-nez v2, :cond_26
+    if-nez v0, :cond_26
 
     .line 37
-    new-instance v6, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v8, "No enum constants for class "
+    const-string/jumbo v2, "No enum constants for class "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v1
 
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v2
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-direct {v6, v7}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v6
+    throw v0
 
     .line 39
     :cond_26
-    new-instance v5, Ljava/util/HashMap;
+    new-instance v2, Ljava/util/HashMap;
 
-    invoke-direct {v5}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
     .line 40
-    .local v5, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;TET;>;"
-    move-object v0, v2
+    array-length v3, v0
 
-    .local v0, "arr$":[Ljava/lang/Enum;
-    array-length v4, v0
+    const/4 v1, 0x0
 
-    .local v4, "len$":I
-    const/4 v3, 0x0
+    :goto_2d
+    if-ge v1, v3, :cond_3b
 
-    .local v3, "i$":I
-    :goto_2e
-    if-ge v3, v4, :cond_3c
-
-    aget-object v1, v0, v3
+    aget-object v4, v0, v1
 
     .line 41
-    .local v1, "e":Ljava/lang/Enum;, "TET;"
-    invoke-virtual {p1, v1}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findEnumValue(Ljava/lang/Enum;)Ljava/lang/String;
+    invoke-virtual {p1, v4}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findEnumValue(Ljava/lang/Enum;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v5, v6, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v5, v4}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 40
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    goto :goto_2e
+    goto :goto_2d
 
     .line 43
-    .end local v1    # "e":Ljava/lang/Enum;, "TET;"
-    :cond_3c
-    new-instance v6, Lcom/fasterxml/jackson/databind/util/EnumResolver;
+    :cond_3b
+    new-instance v1, Lcom/fasterxml/jackson/databind/util/EnumResolver;
 
-    invoke-direct {v6, p0, v2, v5}, Lcom/fasterxml/jackson/databind/util/EnumResolver;-><init>(Ljava/lang/Class;[Ljava/lang/Enum;Ljava/util/HashMap;)V
+    invoke-direct {v1, p0, v0, v2}, Lcom/fasterxml/jackson/databind/util/EnumResolver;-><init>(Ljava/lang/Class;[Ljava/lang/Enum;Ljava/util/HashMap;)V
 
-    return-object v6
+    return-object v1
 .end method
 
 .method public static constructUnsafe(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/util/EnumResolver;
-    .registers 4
-    .param p1, "ai"    # Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
+    .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -209,21 +193,16 @@
 
     .prologue
     .line 92
-    .local p0, "rawEnumCls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    move-object v0, p0
-
     .line 93
-    .local v0, "enumCls":Ljava/lang/Class;, "Ljava/lang/Class<Ljava/lang/Enum;>;"
-    invoke-static {v0, p1}, Lcom/fasterxml/jackson/databind/util/EnumResolver;->constructFor(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/util/EnumResolver;
+    invoke-static {p0, p1}, Lcom/fasterxml/jackson/databind/util/EnumResolver;->constructFor(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/util/EnumResolver;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public static constructUnsafeUsingMethod(Ljava/lang/Class;Ljava/lang/reflect/Method;)Lcom/fasterxml/jackson/databind/util/EnumResolver;
-    .registers 4
-    .param p1, "accessor"    # Ljava/lang/reflect/Method;
+    .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -238,20 +217,16 @@
 
     .prologue
     .line 116
-    .local p0, "rawEnumCls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    move-object v0, p0
-
     .line 117
-    .local v0, "enumCls":Ljava/lang/Class;, "Ljava/lang/Class<Ljava/lang/Enum;>;"
-    invoke-static {v0, p1}, Lcom/fasterxml/jackson/databind/util/EnumResolver;->constructUsingMethod(Ljava/lang/Class;Ljava/lang/reflect/Method;)Lcom/fasterxml/jackson/databind/util/EnumResolver;
+    invoke-static {p0, p1}, Lcom/fasterxml/jackson/databind/util/EnumResolver;->constructUsingMethod(Ljava/lang/Class;Ljava/lang/reflect/Method;)Lcom/fasterxml/jackson/databind/util/EnumResolver;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public static constructUnsafeUsingToString(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/util/EnumResolver;
-    .registers 3
+    .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -264,21 +239,16 @@
 
     .prologue
     .line 104
-    .local p0, "rawEnumCls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    move-object v0, p0
-
     .line 105
-    .local v0, "enumCls":Ljava/lang/Class;, "Ljava/lang/Class<Ljava/lang/Enum;>;"
-    invoke-static {v0}, Lcom/fasterxml/jackson/databind/util/EnumResolver;->constructUsingToString(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/util/EnumResolver;
+    invoke-static {p0}, Lcom/fasterxml/jackson/databind/util/EnumResolver;->constructUsingToString(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/util/EnumResolver;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public static constructUsingMethod(Ljava/lang/Class;Ljava/lang/reflect/Method;)Lcom/fasterxml/jackson/databind/util/EnumResolver;
-    .registers 11
-    .param p1, "accessor"    # Ljava/lang/reflect/Method;
+    .registers 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<ET:",
@@ -295,113 +265,103 @@
 
     .prologue
     .line 65
-    .local p0, "enumCls":Ljava/lang/Class;, "Ljava/lang/Class<TET;>;"
     invoke-virtual {p0}, Ljava/lang/Class;->getEnumConstants()[Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, [Ljava/lang/Enum;
+    check-cast v0, [Ljava/lang/Enum;
 
     .line 66
-    .local v2, "enumValues":[Ljava/lang/Enum;, "[TET;"
-    new-instance v4, Ljava/util/HashMap;
+    new-instance v2, Ljava/util/HashMap;
 
-    invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
     .line 68
-    .local v4, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;TET;>;"
-    array-length v3, v2
+    array-length v1, v0
 
-    .local v3, "i":I
     :cond_c
     :goto_c
-    add-int/lit8 v3, v3, -0x1
+    add-int/lit8 v1, v1, -0x1
 
-    if-ltz v3, :cond_4d
+    if-ltz v1, :cond_4d
 
     .line 69
-    aget-object v1, v2, v3
+    aget-object v3, v0, v1
 
     .line 71
-    .local v1, "en":Ljava/lang/Enum;, "TET;"
-    const/4 v6, 0x0
+    const/4 v4, 0x0
 
     :try_start_13
-    new-array v6, v6, [Ljava/lang/Object;
+    new-array v4, v4, [Ljava/lang/Object;
 
-    invoke-virtual {p1, v1, v6}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1, v3, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v4
 
     .line 72
-    .local v5, "o":Ljava/lang/Object;
-    if-eqz v5, :cond_c
+    if-eqz v4, :cond_c
 
     .line 73
-    invoke-virtual {v5}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v4
 
-    invoke-virtual {v4, v6, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v4, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_22
     .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_22} :catch_23
 
     goto :goto_c
 
     .line 75
-    .end local v5    # "o":Ljava/lang/Object;
     :catch_23
     move-exception v0
 
     .line 76
-    .local v0, "e":Ljava/lang/Exception;
-    new-instance v6, Ljava/lang/IllegalArgumentException;
+    new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v8, "Failed to access @JsonValue of Enum value "
+    const-string/jumbo v4, "Failed to access @JsonValue of Enum value "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v2
 
-    invoke-virtual {v7, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v2
 
-    const-string/jumbo v8, ": "
+    const-string/jumbo v3, ": "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v2
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v0
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-direct {v6, v7}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v6
+    throw v1
 
     .line 79
-    .end local v0    # "e":Ljava/lang/Exception;
-    .end local v1    # "en":Ljava/lang/Enum;, "TET;"
     :cond_4d
-    new-instance v6, Lcom/fasterxml/jackson/databind/util/EnumResolver;
+    new-instance v1, Lcom/fasterxml/jackson/databind/util/EnumResolver;
 
-    invoke-direct {v6, p0, v2, v4}, Lcom/fasterxml/jackson/databind/util/EnumResolver;-><init>(Ljava/lang/Class;[Ljava/lang/Enum;Ljava/util/HashMap;)V
+    invoke-direct {v1, p0, v0, v2}, Lcom/fasterxml/jackson/databind/util/EnumResolver;-><init>(Ljava/lang/Class;[Ljava/lang/Enum;Ljava/util/HashMap;)V
 
-    return-object v6
+    return-object v1
 .end method
 
 .method public static constructUsingToString(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/util/EnumResolver;
@@ -420,57 +380,50 @@
 
     .prologue
     .line 52
-    .local p0, "enumCls":Ljava/lang/Class;, "Ljava/lang/Class<TET;>;"
     invoke-virtual {p0}, Ljava/lang/Class;->getEnumConstants()[Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, [Ljava/lang/Enum;
+    check-cast v0, [Ljava/lang/Enum;
 
     .line 53
-    .local v1, "enumValues":[Ljava/lang/Enum;, "[TET;"
-    new-instance v3, Ljava/util/HashMap;
+    new-instance v2, Ljava/util/HashMap;
 
-    invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
     .line 55
-    .local v3, "map":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;TET;>;"
-    array-length v2, v1
+    array-length v1, v0
 
-    .local v2, "i":I
     :goto_c
-    add-int/lit8 v2, v2, -0x1
+    add-int/lit8 v1, v1, -0x1
 
-    if-ltz v2, :cond_1a
+    if-ltz v1, :cond_1a
 
     .line 56
-    aget-object v0, v1, v2
+    aget-object v3, v0, v1
 
     .line 57
-    .local v0, "e":Ljava/lang/Enum;, "TET;"
-    invoke-virtual {v0}, Ljava/lang/Enum;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/Enum;->toString()Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v3, v4, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v4, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_c
 
     .line 59
-    .end local v0    # "e":Ljava/lang/Enum;, "TET;"
     :cond_1a
-    new-instance v4, Lcom/fasterxml/jackson/databind/util/EnumResolver;
+    new-instance v1, Lcom/fasterxml/jackson/databind/util/EnumResolver;
 
-    invoke-direct {v4, p0, v1, v3}, Lcom/fasterxml/jackson/databind/util/EnumResolver;-><init>(Ljava/lang/Class;[Ljava/lang/Enum;Ljava/util/HashMap;)V
+    invoke-direct {v1, p0, v0, v2}, Lcom/fasterxml/jackson/databind/util/EnumResolver;-><init>(Ljava/lang/Class;[Ljava/lang/Enum;Ljava/util/HashMap;)V
 
-    return-object v4
+    return-object v1
 .end method
 
 
 # virtual methods
 .method public findEnum(Ljava/lang/String;)Ljava/lang/Enum;
     .registers 3
-    .param p1, "key"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -481,7 +434,6 @@
 
     .prologue
     .line 120
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/EnumResolver;, "Lcom/fasterxml/jackson/databind/util/EnumResolver<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/EnumResolver;->_enumsById:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -495,7 +447,6 @@
 
 .method public getEnum(I)Ljava/lang/Enum;
     .registers 3
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)TT;"
@@ -504,7 +455,6 @@
 
     .prologue
     .line 123
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/EnumResolver;, "Lcom/fasterxml/jackson/databind/util/EnumResolver<TT;>;"
     if-ltz p1, :cond_7
 
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/EnumResolver;->_enums:[Ljava/lang/Enum;
@@ -541,14 +491,13 @@
 
     .prologue
     .line 137
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/EnumResolver;, "Lcom/fasterxml/jackson/databind/util/EnumResolver<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/EnumResolver;->_enumClass:Ljava/lang/Class;
 
     return-object v0
 .end method
 
 .method public getEnums()Ljava/util/List;
-    .registers 7
+    .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -559,44 +508,37 @@
 
     .prologue
     .line 130
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/EnumResolver;, "Lcom/fasterxml/jackson/databind/util/EnumResolver<TT;>;"
-    new-instance v2, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    iget-object v5, p0, Lcom/fasterxml/jackson/databind/util/EnumResolver;->_enums:[Ljava/lang/Enum;
-
-    array-length v5, v5
-
-    invoke-direct {v2, v5}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 131
-    .local v2, "enums":Ljava/util/ArrayList;, "Ljava/util/ArrayList<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/EnumResolver;->_enums:[Ljava/lang/Enum;
 
-    .local v0, "arr$":[Ljava/lang/Enum;
-    array-length v4, v0
+    array-length v0, v0
 
-    .local v4, "len$":I
-    const/4 v3, 0x0
-
-    .local v3, "i$":I
-    :goto_c
-    if-ge v3, v4, :cond_16
-
-    aget-object v1, v0, v3
-
-    .line 132
-    .local v1, "e":Ljava/lang/Enum;, "TT;"
-    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 131
-    add-int/lit8 v3, v3, 0x1
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/EnumResolver;->_enums:[Ljava/lang/Enum;
+
+    array-length v3, v2
+
+    const/4 v0, 0x0
+
+    :goto_c
+    if-ge v0, v3, :cond_16
+
+    aget-object v4, v2, v0
+
+    .line 132
+    invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 131
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_c
 
     .line 134
-    .end local v1    # "e":Ljava/lang/Enum;, "TT;"
     :cond_16
-    return-object v2
+    return-object v1
 .end method
 
 .method public lastValidIndex()I
@@ -604,7 +546,6 @@
 
     .prologue
     .line 139
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/EnumResolver;, "Lcom/fasterxml/jackson/databind/util/EnumResolver<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/EnumResolver;->_enums:[Ljava/lang/Enum;
 
     array-length v0, v0

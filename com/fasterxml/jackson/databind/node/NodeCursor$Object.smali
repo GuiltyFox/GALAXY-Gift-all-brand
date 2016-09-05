@@ -3,17 +3,6 @@
 .source "NodeCursor.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/node/NodeCursor;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1c
-    name = "Object"
-.end annotation
-
-
 # instance fields
 .field protected _contents:Ljava/util/Iterator;
     .annotation system Ldalvik/annotation/Signature;
@@ -47,8 +36,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/JsonNode;Lcom/fasterxml/jackson/databind/node/NodeCursor;)V
     .registers 4
-    .param p1, "n"    # Lcom/fasterxml/jackson/databind/JsonNode;
-    .param p2, "p"    # Lcom/fasterxml/jackson/databind/node/NodeCursor;
 
     .prologue
     .line 187
@@ -59,7 +46,6 @@
     .line 188
     check-cast p1, Lcom/fasterxml/jackson/databind/node/ObjectNode;
 
-    .end local p1    # "n":Lcom/fasterxml/jackson/databind/JsonNode;
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/node/ObjectNode;->fields()Ljava/util/Iterator;
 
     move-result-object v0
@@ -259,7 +245,6 @@
     move-result-object v0
 
     .line 215
-    .local v0, "t":Lcom/fasterxml/jackson/core/JsonToken;
     sget-object v1, Lcom/fasterxml/jackson/core/JsonToken;->FIELD_NAME:Lcom/fasterxml/jackson/core/JsonToken;
 
     if-ne v0, v1, :cond_c

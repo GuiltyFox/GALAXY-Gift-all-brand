@@ -23,9 +23,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonLocation;Ljava/lang/Object;Ljava/lang/Class;)V
     .registers 5
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "loc"    # Lcom/fasterxml/jackson/core/JsonLocation;
-    .param p3, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -39,7 +36,6 @@
 
     .prologue
     .line 47
-    .local p4, "targetType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0, p1, p2}, Lcom/fasterxml/jackson/databind/JsonMappingException;-><init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonLocation;)V
 
     .line 48
@@ -54,8 +50,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Class;)V
     .registers 4
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -68,7 +62,6 @@
 
     .prologue
     .line 39
-    .local p3, "targetType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/databind/JsonMappingException;-><init>(Ljava/lang/String;)V
 
     .line 40
@@ -83,9 +76,6 @@
 
 .method public static from(Lcom/fasterxml/jackson/core/JsonParser;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/exc/InvalidFormatException;
     .registers 6
-    .param p0, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -100,7 +90,6 @@
 
     .prologue
     .line 55
-    .local p3, "targetType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     new-instance v0, Lcom/fasterxml/jackson/databind/exc/InvalidFormatException;
 
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->getTokenLocation()Lcom/fasterxml/jackson/core/JsonLocation;

@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static TAG:Ljava/lang/String;
+.field private static a:Ljava/lang/String;
 
 
 # direct methods
@@ -19,7 +19,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/samsung/privilege/util/SkipLoginUtil;->TAG:Ljava/lang/String;
+    sput-object v0, Lcom/samsung/privilege/util/SkipLoginUtil;->a:Ljava/lang/String;
 
     return-void
 .end method
@@ -34,296 +34,310 @@
     return-void
 .end method
 
-.method static synthetic access$000()Ljava/lang/String;
+.method static synthetic a()Ljava/lang/String;
     .registers 1
 
     .prologue
     .line 32
-    sget-object v0, Lcom/samsung/privilege/util/SkipLoginUtil;->TAG:Ljava/lang/String;
+    sget-object v0, Lcom/samsung/privilege/util/SkipLoginUtil;->a:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method static synthetic access$100(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
-    .registers 3
-    .param p0, "x0"    # Ljava/lang/String;
-    .param p1, "x1"    # Landroid/content/Context;
-    .param p2, "x2"    # Landroid/os/Handler;
+.method public static a(Landroid/content/Context;Landroid/os/Handler;)V
+    .registers 12
 
     .prologue
-    .line 32
-    invoke-static {p0, p1, p2}, Lcom/samsung/privilege/util/SkipLoginUtil;->processJsonAuth(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
+    .line 59
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->I(Landroid/content/Context;)J
 
-    return-void
-.end method
+    move-result-wide v0
 
-.method public static doLoginDeviceSkip(Landroid/content/Context;Landroid/os/Handler;)V
-    .registers 19
-    .param p0, "activityContext"    # Landroid/content/Context;
-    .param p1, "objHandler"    # Landroid/os/Handler;
+    .line 61
+    new-instance v6, Ljava/util/Date;
 
-    .prologue
-    .line 37
-    invoke-static/range {p0 .. p0}, Lcom/bzbs/data/UserLogin;->GetLastResumeTime(Landroid/content/Context;)J
+    invoke-direct {v6}, Ljava/util/Date;-><init>()V
 
-    move-result-wide v12
-
-    .line 39
-    .local v12, "lastResumeTime":J
-    new-instance v9, Ljava/util/Date;
-
-    invoke-direct {v9}, Ljava/util/Date;-><init>()V
-
-    .line 40
-    .local v9, "date":Ljava/util/Date;
-    invoke-virtual {v9}, Ljava/util/Date;->getTime()J
+    .line 62
+    invoke-virtual {v6}, Ljava/util/Date;->getTime()J
 
     move-result-wide v2
 
-    sub-long/2addr v2, v12
+    sub-long/2addr v2, v0
 
     const-wide/16 v4, 0x3e8
 
-    div-long v10, v2, v4
+    div-long/2addr v2, v4
 
-    .line 42
-    .local v10, "difftime":J
-    sget v2, Lcom/bzbs/data/AppSetting;->RESUME_TIME:I
+    .line 64
+    sget v4, Lcom/bzbs/data/AppSetting;->Y:I
 
-    int-to-long v2, v2
+    int-to-long v4, v4
 
-    cmp-long v2, v10, v2
+    cmp-long v2, v2, v4
 
-    if-gtz v2, :cond_1f
+    if-gtz v2, :cond_1e
 
     const-wide/16 v2, 0x0
 
-    cmp-long v2, v12, v2
+    cmp-long v0, v0, v2
 
-    if-nez v2, :cond_89
+    if-nez v0, :cond_2d
 
-    .line 43
-    :cond_1f
+    .line 65
+    :cond_1e
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->h(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 66
+    if-eqz v0, :cond_2e
+
+    const-string/jumbo v1, ""
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2e
+
+    .line 115
+    :cond_2d
+    :goto_2d
+    return-void
+
+    .line 69
+    :cond_2e
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "api/auth/device_login"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 70
+    sget-object v1, Lcom/samsung/privilege/util/SkipLoginUtil;->a:Ljava/lang/String;
+
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v3, Lcom/bzbs/data/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
+    const-string/jumbo v3, "url="
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
-    const-string/jumbo v3, "api/auth/device_login"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v2
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v16
+    move-result-object v2
 
-    .line 44
-    .local v16, "url":Ljava/lang/String;
-    sget-object v2, Lcom/samsung/privilege/util/SkipLoginUtil;->TAG:Ljava/lang/String;
+    invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    .line 71
+    new-instance v1, Ljava/util/Date;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/util/Date;-><init>()V
 
-    const-string/jumbo v4, "url="
+    invoke-virtual {v1}, Ljava/util/Date;->getTime()J
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-wide v8
 
-    move-result-object v3
+    .line 72
+    new-instance v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
-    move-object/from16 v0, v16
+    invoke-direct {v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;-><init>()V
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 73
+    invoke-virtual {v1, p0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Landroid/content/Context;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->Q:Z
 
-    move-result-object v3
+    .line 74
+    invoke-virtual {v1, v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
-    invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    move-result-object v1
 
-    .line 46
-    new-instance v8, Lcom/loopj/android/http/AsyncHttpClient;
+    .line 75
+    invoke-virtual {v1, v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Ljava/lang/String;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
-    invoke-direct {v8}, Lcom/loopj/android/http/AsyncHttpClient;-><init>()V
+    move-result-object v7
 
-    .line 47
-    .local v8, "client":Lcom/loopj/android/http/AsyncHttpClient;
-    new-instance v2, Ljava/util/Date;
+    const/4 v2, 0x0
 
-    invoke-direct {v2}, Ljava/util/Date;-><init>()V
+    const-string/jumbo v3, ""
 
-    invoke-virtual {v2}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v14
-
-    .line 48
-    .local v14, "startTime":J
-    const/4 v4, 0x0
+    const-string/jumbo v4, ""
 
     const-string/jumbo v5, ""
 
-    const-string/jumbo v6, ""
+    move-object v0, p0
 
-    const-string/jumbo v7, ""
+    move-object v1, p1
 
-    move-object/from16 v2, p0
-
-    move-object/from16 v3, p1
-
-    invoke-static/range {v2 .. v7}, Lcom/samsung/privilege/util/DialogLoginGift;->getLoginParams(Landroid/content/Context;Landroid/os/Handler;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/loopj/android/http/RequestParams;
-
-    move-result-object v2
-
-    new-instance v3, Lcom/samsung/privilege/util/SkipLoginUtil$1;
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    invoke-direct {v3, v14, v15, v0, v1}, Lcom/samsung/privilege/util/SkipLoginUtil$1;-><init>(JLandroid/content/Context;Landroid/os/Handler;)V
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v16
-
-    invoke-virtual {v8, v0, v1, v2, v3}, Lcom/loopj/android/http/AsyncHttpClient;->post(Landroid/content/Context;Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
-
-    .line 84
-    invoke-virtual {v9}, Ljava/util/Date;->getTime()J
-
-    move-result-wide v12
-
-    .line 85
-    move-object/from16 v0, p0
-
-    invoke-static {v0, v12, v13}, Lcom/bzbs/data/UserLogin;->SetLastResumeTime(Landroid/content/Context;J)Z
-
-    .line 87
-    .end local v8    # "client":Lcom/loopj/android/http/AsyncHttpClient;
-    .end local v14    # "startTime":J
-    .end local v16    # "url":Ljava/lang/String;
-    :cond_89
-    return-void
-.end method
-
-.method private static processJsonAuth(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
-    .registers 4
-    .param p0, "response_text"    # Ljava/lang/String;
-    .param p1, "activityContext"    # Landroid/content/Context;
-    .param p2, "objHandler"    # Landroid/os/Handler;
-
-    .prologue
-    .line 90
-    new-instance v0, Lcom/samsung/privilege/util/SkipLoginUtil$2;
-
-    invoke-direct {v0, p0, p1, p2}, Lcom/samsung/privilege/util/SkipLoginUtil$2;-><init>(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
-
-    invoke-virtual {p2, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 234
-    return-void
-.end method
-
-.method public static showDialogMessage(Landroid/content/Context;Ljava/lang/String;Landroid/os/Handler;)V
-    .registers 8
-    .param p0, "activityContext"    # Landroid/content/Context;
-    .param p1, "message"    # Ljava/lang/String;
-    .param p2, "objHandler"    # Landroid/os/Handler;
-
-    .prologue
-    .line 237
-    move-object v4, p0
-
-    check-cast v4, Landroid/app/Activity;
-
-    invoke-virtual {v4}, Landroid/app/Activity;->isFinishing()Z
-
-    move-result v4
-
-    if-nez v4, :cond_4a
-
-    .line 238
-    new-instance v1, Landroid/app/Dialog;
-
-    const v4, 0x1030010
-
-    invoke-direct {v1, p0, v4}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
-
-    .line 240
-    .local v1, "dialog":Landroid/app/Dialog;
-    const v4, 0x7f04010b
-
-    invoke-virtual {v1, v4}, Landroid/app/Dialog;->setContentView(I)V
-
-    .line 242
-    const v4, 0x7f100152
-
-    invoke-virtual {v1, v4}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v3
-
-    check-cast v3, Landroid/widget/TextView;
-
-    .line 244
-    .local v3, "tvMessage":Landroid/widget/TextView;
-    invoke-virtual {v3, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 246
-    const v4, 0x7f100156
-
-    invoke-virtual {v1, v4}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/widget/RelativeLayout;
-
-    .line 247
-    .local v2, "layoutClose":Landroid/widget/RelativeLayout;
-    new-instance v4, Lcom/samsung/privilege/util/SkipLoginUtil$3;
-
-    invoke-direct {v4, v1}, Lcom/samsung/privilege/util/SkipLoginUtil$3;-><init>(Landroid/app/Dialog;)V
-
-    invoke-virtual {v2, v4}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 255
-    invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+    .line 76
+    invoke-static/range {v0 .. v5}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/bzbs/lib/http/okhttp/HttpParams;
 
     move-result-object v0
 
-    .line 256
-    .local v0, "WMLP":Landroid/view/WindowManager$LayoutParams;
-    const/16 v4, 0x11
+    invoke-virtual {v7, v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpParams;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
-    iput v4, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
+    move-result-object v0
 
-    .line 257
+    sget-object v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;->b:Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;
+
+    .line 77
+    invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/samsung/privilege/util/SkipLoginUtil$2;
+
+    invoke-direct {v1, v8, v9, p0, p1}, Lcom/samsung/privilege/util/SkipLoginUtil$2;-><init>(JLandroid/content/Context;Landroid/os/Handler;)V
+
+    .line 78
+    invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/ResponseListener;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
+
+    move-result-object v0
+
+    .line 109
+    invoke-virtual {v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a()Lcom/bzbs/lib/http/okhttp/HttpRequest;
+
+    .line 111
+    invoke-virtual {v6}, Ljava/util/Date;->getTime()J
+
+    move-result-wide v0
+
+    .line 112
+    invoke-static {p0, v0, v1}, Lcom/bzbs/data/UserLogin;->b(Landroid/content/Context;J)Z
+
+    goto :goto_2d
+.end method
+
+.method public static a(Landroid/content/Context;Ljava/lang/String;Landroid/os/Handler;)V
+    .registers 6
+
+    .prologue
+    .line 180
+    move-object v0, p0
+
+    check-cast v0, Landroid/app/Activity;
+
+    invoke-virtual {v0}, Landroid/app/Activity;->isFinishing()Z
+
+    move-result v0
+
+    if-nez v0, :cond_4a
+
+    .line 181
+    new-instance v1, Landroid/app/Dialog;
+
+    const v0, 0x1030010
+
+    invoke-direct {v1, p0, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
+
+    .line 183
+    const v0, 0x7f040114
+
+    invoke-virtual {v1, v0}, Landroid/app/Dialog;->setContentView(I)V
+
+    .line 185
+    const v0, 0x7f100169
+
+    invoke-virtual {v1, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    .line 187
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 189
+    const v0, 0x7f10016d
+
+    invoke-virtual {v1, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/RelativeLayout;
+
+    .line 190
+    new-instance v2, Lcom/samsung/privilege/util/SkipLoginUtil$4;
+
+    invoke-direct {v2, v1}, Lcom/samsung/privilege/util/SkipLoginUtil$4;-><init>(Landroid/app/Dialog;)V
+
+    invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 198
     invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+    invoke-virtual {v0}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
-    .line 259
+    move-result-object v0
+
+    .line 199
+    const/16 v2, 0x11
+
+    iput v2, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
+
+    .line 200
+    invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+
+    .line 202
     invoke-virtual {v1}, Landroid/app/Dialog;->show()V
 
-    .line 261
-    .end local v0    # "WMLP":Landroid/view/WindowManager$LayoutParams;
-    .end local v1    # "dialog":Landroid/app/Dialog;
-    .end local v2    # "layoutClose":Landroid/widget/RelativeLayout;
-    .end local v3    # "tvMessage":Landroid/widget/TextView;
+    .line 204
     :cond_4a
+    return-void
+.end method
+
+.method static synthetic a(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
+    .registers 3
+
+    .prologue
+    .line 32
+    invoke-static {p0, p1, p2}, Lcom/samsung/privilege/util/SkipLoginUtil;->b(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
+
+    return-void
+.end method
+
+.method private static b(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
+    .registers 4
+
+    .prologue
+    .line 118
+    new-instance v0, Lcom/samsung/privilege/util/SkipLoginUtil$3;
+
+    invoke-direct {v0, p0, p1, p2}, Lcom/samsung/privilege/util/SkipLoginUtil$3;-><init>(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
+
+    invoke-virtual {p2, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 177
     return-void
 .end method

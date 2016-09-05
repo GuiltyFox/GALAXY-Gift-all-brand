@@ -3,17 +3,6 @@
 .source "MotionEventCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/view/MotionEventCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "EclairMotionEventVersionImpl"
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .registers 1
@@ -27,69 +16,60 @@
 
 
 # virtual methods
-.method public findPointerIndex(Landroid/view/MotionEvent;I)I
-    .registers 4
-    .param p1, "event"    # Landroid/view/MotionEvent;
-    .param p2, "pointerId"    # I
-
-    .prologue
-    .line 102
-    invoke-static {p1, p2}, Landroid/support/v4/view/MotionEventCompatEclair;->findPointerIndex(Landroid/view/MotionEvent;I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getPointerCount(Landroid/view/MotionEvent;)I
+.method public a(Landroid/view/MotionEvent;)I
     .registers 3
-    .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
     .line 118
-    invoke-static {p1}, Landroid/support/v4/view/MotionEventCompatEclair;->getPointerCount(Landroid/view/MotionEvent;)I
+    invoke-static {p1}, Landroid/support/v4/view/MotionEventCompatEclair;->a(Landroid/view/MotionEvent;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public getPointerId(Landroid/view/MotionEvent;I)I
+.method public a(Landroid/view/MotionEvent;I)I
     .registers 4
-    .param p1, "event"    # Landroid/view/MotionEvent;
-    .param p2, "pointerIndex"    # I
+
+    .prologue
+    .line 102
+    invoke-static {p1, p2}, Landroid/support/v4/view/MotionEventCompatEclair;->a(Landroid/view/MotionEvent;I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public b(Landroid/view/MotionEvent;I)I
+    .registers 4
 
     .prologue
     .line 106
-    invoke-static {p1, p2}, Landroid/support/v4/view/MotionEventCompatEclair;->getPointerId(Landroid/view/MotionEvent;I)I
+    invoke-static {p1, p2}, Landroid/support/v4/view/MotionEventCompatEclair;->b(Landroid/view/MotionEvent;I)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public getX(Landroid/view/MotionEvent;I)F
+.method public c(Landroid/view/MotionEvent;I)F
     .registers 4
-    .param p1, "event"    # Landroid/view/MotionEvent;
-    .param p2, "pointerIndex"    # I
 
     .prologue
     .line 110
-    invoke-static {p1, p2}, Landroid/support/v4/view/MotionEventCompatEclair;->getX(Landroid/view/MotionEvent;I)F
+    invoke-static {p1, p2}, Landroid/support/v4/view/MotionEventCompatEclair;->c(Landroid/view/MotionEvent;I)F
 
     move-result v0
 
     return v0
 .end method
 
-.method public getY(Landroid/view/MotionEvent;I)F
+.method public d(Landroid/view/MotionEvent;I)F
     .registers 4
-    .param p1, "event"    # Landroid/view/MotionEvent;
-    .param p2, "pointerIndex"    # I
 
     .prologue
     .line 114
-    invoke-static {p1, p2}, Landroid/support/v4/view/MotionEventCompatEclair;->getY(Landroid/view/MotionEvent;I)F
+    invoke-static {p1, p2}, Landroid/support/v4/view/MotionEventCompatEclair;->d(Landroid/view/MotionEvent;I)F
 
     move-result v0
 

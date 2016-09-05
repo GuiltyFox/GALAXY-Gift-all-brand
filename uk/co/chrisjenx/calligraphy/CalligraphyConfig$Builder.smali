@@ -3,31 +3,18 @@
 .source "CalligraphyConfig.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Luk/co/chrisjenx/calligraphy/CalligraphyConfig;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Builder"
-.end annotation
-
-
-# static fields
-.field public static final INVALID_ATTR_ID:I = -0x1
-
-
 # instance fields
-.field private attrId:I
+.field private a:Z
 
-.field private customViewCreation:Z
+.field private b:Z
 
-.field private fontAssetPath:Ljava/lang/String;
+.field private c:I
 
-.field private isFontSet:Z
+.field private d:Z
 
-.field private mStyleClassMap:Ljava/util/Map;
+.field private e:Ljava/lang/String;
+
+.field private f:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",
@@ -41,8 +28,6 @@
         }
     .end annotation
 .end field
-
-.field private reflection:Z
 
 
 # direct methods
@@ -67,30 +52,30 @@
     move v0, v1
 
     :goto_c
-    iput-boolean v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->reflection:Z
+    iput-boolean v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->a:Z
 
     .line 146
-    iput-boolean v1, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->customViewCreation:Z
+    iput-boolean v1, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->b:Z
 
     .line 150
     sget v0, Luk/co/chrisjenx/calligraphy/R$attr;->fontPath:I
 
-    iput v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->attrId:I
+    iput v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->c:I
 
     .line 154
-    iput-boolean v2, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->isFontSet:Z
+    iput-boolean v2, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->d:Z
 
     .line 158
     const/4 v0, 0x0
 
-    iput-object v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->fontAssetPath:Ljava/lang/String;
+    iput-object v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->e:Ljava/lang/String;
 
     .line 162
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->mStyleClassMap:Ljava/util/Map;
+    iput-object v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->f:Ljava/util/Map;
 
     return-void
 
@@ -101,119 +86,125 @@
     goto :goto_c
 .end method
 
-.method static synthetic access$000(Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;)Z
+.method static synthetic a(Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;)Z
     .registers 2
-    .param p0, "x0"    # Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;
 
     .prologue
     .line 134
-    iget-boolean v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->isFontSet:Z
+    iget-boolean v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->d:Z
 
     return v0
 .end method
 
-.method static synthetic access$100(Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;)Ljava/lang/String;
+.method static synthetic b(Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;)Ljava/lang/String;
     .registers 2
-    .param p0, "x0"    # Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;
 
     .prologue
     .line 134
-    iget-object v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->fontAssetPath:Ljava/lang/String;
+    iget-object v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->e:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method static synthetic access$200(Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;)I
+.method static synthetic c(Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;)I
     .registers 2
-    .param p0, "x0"    # Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;
 
     .prologue
     .line 134
-    iget v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->attrId:I
+    iget v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->c:I
 
     return v0
 .end method
 
-.method static synthetic access$300(Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;)Z
+.method static synthetic d(Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;)Z
     .registers 2
-    .param p0, "x0"    # Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;
 
     .prologue
     .line 134
-    iget-boolean v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->reflection:Z
+    iget-boolean v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->a:Z
 
     return v0
 .end method
 
-.method static synthetic access$400(Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;)Z
+.method static synthetic e(Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;)Z
     .registers 2
-    .param p0, "x0"    # Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;
 
     .prologue
     .line 134
-    iget-boolean v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->customViewCreation:Z
+    iget-boolean v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->b:Z
 
     return v0
 .end method
 
-.method static synthetic access$500(Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;)Ljava/util/Map;
+.method static synthetic f(Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;)Ljava/util/Map;
     .registers 2
-    .param p0, "x0"    # Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;
 
     .prologue
     .line 134
-    iget-object v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->mStyleClassMap:Ljava/util/Map;
+    iget-object v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->f:Ljava/util/Map;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public addCustomStyle(Ljava/lang/Class;I)Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;
-    .registers 5
-    .param p2, "styleResourceAttribute"    # I
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/Class",
-            "<+",
-            "Landroid/widget/TextView;",
-            ">;I)",
-            "Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;"
-        }
-    .end annotation
+.method public a(I)Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;
+    .registers 3
 
     .prologue
-    .line 255
-    .local p1, "styleClass":Ljava/lang/Class;, "Ljava/lang/Class<+Landroid/widget/TextView;>;"
-    if-eqz p1, :cond_4
+    const/4 v0, -0x1
 
-    if-nez p2, :cond_5
+    .line 171
+    if-eq p1, v0, :cond_6
 
-    .line 257
-    :cond_4
-    :goto_4
+    :goto_3
+    iput p1, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->c:I
+
+    .line 172
     return-object p0
 
-    .line 256
-    :cond_5
-    iget-object v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->mStyleClassMap:Ljava/util/Map;
+    :cond_6
+    move p1, v0
 
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-interface {v0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    goto :goto_4
+    .line 171
+    goto :goto_3
 .end method
 
-.method public build()Luk/co/chrisjenx/calligraphy/CalligraphyConfig;
+.method public a(Ljava/lang/String;)Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;
+    .registers 3
+
+    .prologue
+    .line 183
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_c
+
+    const/4 v0, 0x1
+
+    :goto_7
+    iput-boolean v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->d:Z
+
+    .line 184
+    iput-object p1, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->e:Ljava/lang/String;
+
+    .line 185
+    return-object p0
+
+    .line 183
+    :cond_c
+    const/4 v0, 0x0
+
+    goto :goto_7
+.end method
+
+.method public a()Luk/co/chrisjenx/calligraphy/CalligraphyConfig;
     .registers 2
 
     .prologue
     .line 261
-    iget-object v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->fontAssetPath:Ljava/lang/String;
+    iget-object v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->e:Ljava/lang/String;
 
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -224,7 +215,7 @@
     const/4 v0, 0x1
 
     :goto_9
-    iput-boolean v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->isFontSet:Z
+    iput-boolean v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->d:Z
 
     .line 262
     new-instance v0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig;
@@ -238,85 +229,4 @@
     const/4 v0, 0x0
 
     goto :goto_9
-.end method
-
-.method public disableCustomViewInflation()Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;
-    .registers 2
-
-    .prologue
-    .line 234
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->customViewCreation:Z
-
-    .line 235
-    return-object p0
-.end method
-
-.method public disablePrivateFactoryInjection()Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;
-    .registers 2
-
-    .prologue
-    .line 206
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->reflection:Z
-
-    .line 207
-    return-object p0
-.end method
-
-.method public setDefaultFontPath(Ljava/lang/String;)Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;
-    .registers 3
-    .param p1, "defaultFontAssetPath"    # Ljava/lang/String;
-
-    .prologue
-    .line 183
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_c
-
-    const/4 v0, 0x1
-
-    :goto_7
-    iput-boolean v0, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->isFontSet:Z
-
-    .line 184
-    iput-object p1, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->fontAssetPath:Ljava/lang/String;
-
-    .line 185
-    return-object p0
-
-    .line 183
-    :cond_c
-    const/4 v0, 0x0
-
-    goto :goto_7
-.end method
-
-.method public setFontAttrId(I)Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;
-    .registers 3
-    .param p1, "fontAssetAttrId"    # I
-
-    .prologue
-    const/4 v0, -0x1
-
-    .line 171
-    if-eq p1, v0, :cond_6
-
-    .end local p1    # "fontAssetAttrId":I
-    :goto_3
-    iput p1, p0, Luk/co/chrisjenx/calligraphy/CalligraphyConfig$Builder;->attrId:I
-
-    .line 172
-    return-object p0
-
-    .restart local p1    # "fontAssetAttrId":I
-    :cond_6
-    move p1, v0
-
-    .line 171
-    goto :goto_3
 .end method

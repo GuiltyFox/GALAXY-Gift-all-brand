@@ -3,17 +3,6 @@
 .source "ScrollerCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/widget/ScrollerCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "ScrollerCompatImplIcs"
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .registers 1
@@ -27,13 +16,12 @@
 
 
 # virtual methods
-.method public getCurrVelocity(Ljava/lang/Object;)F
+.method public d(Ljava/lang/Object;)F
     .registers 3
-    .param p1, "scroller"    # Ljava/lang/Object;
 
     .prologue
     .line 256
-    invoke-static {p1}, Landroid/support/v4/widget/ScrollerCompatIcs;->getCurrVelocity(Ljava/lang/Object;)F
+    invoke-static {p1}, Landroid/support/v4/widget/ScrollerCompatIcs;->a(Ljava/lang/Object;)F
 
     move-result v0
 

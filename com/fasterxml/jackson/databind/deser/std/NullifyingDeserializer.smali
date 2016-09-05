@@ -4,12 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/deser/std/NullifyingDeserializer$1;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/fasterxml/jackson/databind/deser/std/StdDeserializer",
@@ -57,14 +51,6 @@
 # virtual methods
 .method public deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .registers 4
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 34
@@ -77,16 +63,7 @@
 .end method
 
 .method public deserializeWithType(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;)Ljava/lang/Object;
-    .registers 7
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .param p3, "typeDeserializer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
+    .registers 6
 
     .prologue
     .line 45
@@ -95,28 +72,27 @@
     move-result-object v0
 
     .line 46
-    .local v0, "t":Lcom/fasterxml/jackson/core/JsonToken;
     sget-object v1, Lcom/fasterxml/jackson/databind/deser/std/NullifyingDeserializer$1;->$SwitchMap$com$fasterxml$jackson$core$JsonToken:[I
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/core/JsonToken;->ordinal()I
 
-    move-result v2
+    move-result v0
 
-    aget v1, v1, v2
+    aget v0, v1, v0
 
-    packed-switch v1, :pswitch_data_16
+    packed-switch v0, :pswitch_data_16
 
     .line 52
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_10
-    return-object v1
+    return-object v0
 
     .line 50
     :pswitch_11
     invoke-virtual {p3, p1, p2}, Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;->deserializeTypedFromAny(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_10
 

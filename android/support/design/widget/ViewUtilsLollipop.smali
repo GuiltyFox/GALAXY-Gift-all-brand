@@ -16,7 +16,6 @@
 
 .method static setBoundsViewOutlineProvider(Landroid/view/View;)V
     .registers 2
-    .param p0, "view"    # Landroid/view/View;
 
     .prologue
     .line 25

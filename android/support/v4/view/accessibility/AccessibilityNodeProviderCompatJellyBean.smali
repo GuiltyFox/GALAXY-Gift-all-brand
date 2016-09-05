@@ -3,29 +3,9 @@
 .source "AccessibilityNodeProviderCompatJellyBean.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatJellyBean$AccessibilityNodeInfoBridge;
-    }
-.end annotation
-
-
 # direct methods
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 28
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 29
-    return-void
-.end method
-
-.method public static newAccessibilityNodeProviderBridge(Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatJellyBean$AccessibilityNodeInfoBridge;)Ljava/lang/Object;
+.method public static a(Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatJellyBean$AccessibilityNodeInfoBridge;)Ljava/lang/Object;
     .registers 2
-    .param p0, "bridge"    # Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompatJellyBean$AccessibilityNodeInfoBridge;
 
     .prologue
     .line 38

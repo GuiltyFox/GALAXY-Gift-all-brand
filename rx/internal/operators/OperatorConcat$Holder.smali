@@ -3,19 +3,8 @@
 .source "OperatorConcat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lrx/internal/operators/OperatorConcat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "Holder"
-.end annotation
-
-
 # static fields
-.field static final INSTANCE:Lrx/internal/operators/OperatorConcat;
+.field static final a:Lrx/internal/operators/OperatorConcat;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lrx/internal/operators/OperatorConcat",
@@ -39,17 +28,7 @@
 
     invoke-direct {v0, v1}, Lrx/internal/operators/OperatorConcat;-><init>(Lrx/internal/operators/OperatorConcat$1;)V
 
-    sput-object v0, Lrx/internal/operators/OperatorConcat$Holder;->INSTANCE:Lrx/internal/operators/OperatorConcat;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 42
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lrx/internal/operators/OperatorConcat$Holder;->a:Lrx/internal/operators/OperatorConcat;
 
     return-void
 .end method

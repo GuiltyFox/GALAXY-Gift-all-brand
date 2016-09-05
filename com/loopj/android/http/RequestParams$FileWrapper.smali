@@ -6,17 +6,6 @@
 .implements Ljava/io/Serializable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/loopj/android/http/RequestParams;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "FileWrapper"
-.end annotation
-
-
 # instance fields
 .field public final contentType:Ljava/lang/String;
 
@@ -28,9 +17,6 @@
 # direct methods
 .method public constructor <init>(Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
-    .param p1, "file"    # Ljava/io/File;
-    .param p2, "contentType"    # Ljava/lang/String;
-    .param p3, "customFileName"    # Ljava/lang/String;
 
     .prologue
     .line 676

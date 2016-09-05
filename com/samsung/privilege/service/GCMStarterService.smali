@@ -3,10 +3,6 @@
 .source "GCMStarterService.java"
 
 
-# static fields
-.field private static final TAG:Ljava/lang/String; = "GCMStarterService"
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -22,7 +18,6 @@
 # virtual methods
 .method public onBind(Landroid/content/Intent;)Landroid/os/IBinder;
     .registers 3
-    .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
     .line 34
@@ -40,7 +35,7 @@
 
     const-string/jumbo v1, "onDestroy"
 
-    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->b(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 40
     const-string/jumbo v0, "GCM Service stopped"
@@ -59,8 +54,6 @@
 
 .method public onStart(Landroid/content/Intent;I)V
     .registers 5
-    .param p1, "intent"    # Landroid/content/Intent;
-    .param p2, "startid"    # I
 
     .prologue
     .line 20
@@ -68,14 +61,14 @@
 
     const-string/jumbo v1, "onStart"
 
-    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->LogD(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->b(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 29
     invoke-virtual {p0}, Lcom/samsung/privilege/service/GCMStarterService;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/bzbs/util/GCMUtil;->registerGCM(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/bzbs/util/GCMUtil;->a(Landroid/content/Context;)V
 
     .line 30
     return-void

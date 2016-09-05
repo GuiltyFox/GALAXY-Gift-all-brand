@@ -5,19 +5,8 @@
 .implements Ljava/util/concurrent/ThreadFactory;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/gms/measurement/zzg;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "zzb"
-.end annotation
-
-
 # static fields
-.field private static final zzaRF:Ljava/util/concurrent/atomic/AtomicInteger;
+.field private static final a:Ljava/util/concurrent/atomic/AtomicInteger;
 
 
 # direct methods
@@ -28,7 +17,7 @@
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/measurement/zzg$zzb;->zzaRF:Ljava/util/concurrent/atomic/AtomicInteger;
+    sput-object v0, Lcom/google/android/gms/measurement/zzg$zzb;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
     return-void
 .end method
@@ -53,9 +42,7 @@
 # virtual methods
 .method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
     .registers 4
-    .param p1, "target"    # Ljava/lang/Runnable;
 
-    .prologue
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -66,7 +53,7 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/google/android/gms/measurement/zzg$zzb;->zzaRF:Ljava/util/concurrent/atomic/AtomicInteger;
+    sget-object v1, Lcom/google/android/gms/measurement/zzg$zzb;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
 

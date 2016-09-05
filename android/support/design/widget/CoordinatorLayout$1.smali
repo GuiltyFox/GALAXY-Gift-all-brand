@@ -11,11 +11,6 @@
     value = Landroid/support/design/widget/CoordinatorLayout;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -48,8 +43,6 @@
 # virtual methods
 .method public compare(Landroid/view/View;Landroid/view/View;)I
     .registers 6
-    .param p1, "lhs"    # Landroid/view/View;
-    .param p2, "rhs"    # Landroid/view/View;
 
     .prologue
     const/4 v1, 0x0

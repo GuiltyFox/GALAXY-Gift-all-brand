@@ -18,16 +18,10 @@
 .end annotation
 
 
-# static fields
-.field private static final DEFAULT_COMPRESSION_QUALITY:I = 0x5a
-
-.field private static final TAG:Ljava/lang/String; = "BitmapEncoder"
-
-
 # instance fields
-.field private compressFormat:Landroid/graphics/Bitmap$CompressFormat;
+.field private a:Landroid/graphics/Bitmap$CompressFormat;
 
-.field private quality:I
+.field private b:I
 
 
 # direct methods
@@ -48,35 +42,32 @@
 
 .method public constructor <init>(Landroid/graphics/Bitmap$CompressFormat;I)V
     .registers 3
-    .param p1, "compressFormat"    # Landroid/graphics/Bitmap$CompressFormat;
-    .param p2, "quality"    # I
 
     .prologue
     .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 36
-    iput-object p1, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;->compressFormat:Landroid/graphics/Bitmap$CompressFormat;
+    iput-object p1, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;->a:Landroid/graphics/Bitmap$CompressFormat;
 
     .line 37
-    iput p2, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;->quality:I
+    iput p2, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;->b:I
 
     .line 38
     return-void
 .end method
 
-.method private getFormat(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap$CompressFormat;
+.method private a(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap$CompressFormat;
     .registers 3
-    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
     .line 60
-    iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;->compressFormat:Landroid/graphics/Bitmap$CompressFormat;
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;->a:Landroid/graphics/Bitmap$CompressFormat;
 
     if-eqz v0, :cond_7
 
     .line 61
-    iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;->compressFormat:Landroid/graphics/Bitmap$CompressFormat;
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;->a:Landroid/graphics/Bitmap$CompressFormat;
 
     .line 65
     :goto_6
@@ -104,9 +95,18 @@
 
 
 # virtual methods
-.method public encode(Lcom/bumptech/glide/load/engine/Resource;Ljava/io/OutputStream;)Z
-    .registers 11
-    .param p2, "os"    # Ljava/io/OutputStream;
+.method public a()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 56
+    const-string/jumbo v0, "BitmapEncoder.com.bumptech.glide.load.resource.bitmap"
+
+    return-object v0
+.end method
+
+.method public a(Lcom/bumptech/glide/load/engine/Resource;Ljava/io/OutputStream;)Z
+    .registers 10
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -121,28 +121,24 @@
 
     .prologue
     .line 42
-    .local p1, "resource":Lcom/bumptech/glide/load/engine/Resource;, "Lcom/bumptech/glide/load/engine/Resource<Landroid/graphics/Bitmap;>;"
-    invoke-interface {p1}, Lcom/bumptech/glide/load/engine/Resource;->get()Ljava/lang/Object;
+    invoke-interface {p1}, Lcom/bumptech/glide/load/engine/Resource;->b()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/graphics/Bitmap;
 
     .line 44
-    .local v0, "bitmap":Landroid/graphics/Bitmap;
-    invoke-static {}, Lcom/bumptech/glide/util/LogTime;->getLogTime()J
+    invoke-static {}, Lcom/bumptech/glide/util/LogTime;->a()J
 
     move-result-wide v2
 
     .line 45
-    .local v2, "start":J
-    invoke-direct {p0, v0}, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;->getFormat(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap$CompressFormat;
+    invoke-direct {p0, v0}, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;->a(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap$CompressFormat;
 
     move-result-object v1
 
     .line 46
-    .local v1, "format":Landroid/graphics/Bitmap$CompressFormat;
-    iget v4, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;->quality:I
+    iget v4, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;->b:I
 
     invoke-virtual {v0, v1, v4, p2}, Landroid/graphics/Bitmap;->compress(Landroid/graphics/Bitmap$CompressFormat;ILjava/io/OutputStream;)Z
 
@@ -172,72 +168,59 @@
 
     invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    const-string/jumbo v6, " of size "
+    const-string/jumbo v5, " of size "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-static {v0}, Lcom/bumptech/glide/util/Util;->getBitmapByteSize(Landroid/graphics/Bitmap;)I
+    invoke-static {v0}, Lcom/bumptech/glide/util/Util;->a(Landroid/graphics/Bitmap;)I
 
-    move-result v6
+    move-result v0
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v0
 
-    const-string/jumbo v6, " in "
+    const-string/jumbo v1, " in "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-static {v2, v3}, Lcom/bumptech/glide/util/LogTime;->getElapsedMillis(J)D
+    invoke-static {v2, v3}, Lcom/bumptech/glide/util/LogTime;->a(J)D
 
-    move-result-wide v6
+    move-result-wide v2
 
-    invoke-virtual {v5, v6, v7}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-static {v4, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v4, v0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 51
     :cond_55
-    const/4 v4, 0x1
+    const/4 v0, 0x1
 
-    return v4
+    return v0
 .end method
 
-.method public bridge synthetic encode(Ljava/lang/Object;Ljava/io/OutputStream;)Z
+.method public bridge synthetic a(Ljava/lang/Object;Ljava/io/OutputStream;)Z
     .registers 4
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Ljava/io/OutputStream;
 
     .prologue
     .line 25
     check-cast p1, Lcom/bumptech/glide/load/engine/Resource;
 
-    .end local p1    # "x0":Ljava/lang/Object;
-    invoke-virtual {p0, p1, p2}, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;->encode(Lcom/bumptech/glide/load/engine/Resource;Ljava/io/OutputStream;)Z
+    invoke-virtual {p0, p1, p2}, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;->a(Lcom/bumptech/glide/load/engine/Resource;Ljava/io/OutputStream;)Z
 
     move-result v0
 
     return v0
-.end method
-
-.method public getId()Ljava/lang/String;
-    .registers 2
-
-    .prologue
-    .line 56
-    const-string/jumbo v0, "BitmapEncoder.com.bumptech.glide.load.resource.bitmap"
-
-    return-object v0
 .end method

@@ -20,12 +20,6 @@
 # direct methods
 .method protected constructor <init>(Ljava/io/InputStream;[BIILcom/fasterxml/jackson/core/JsonFactory;Lcom/fasterxml/jackson/core/format/MatchStrength;)V
     .registers 7
-    .param p1, "in"    # Ljava/io/InputStream;
-    .param p2, "buffered"    # [B
-    .param p3, "bufferedStart"    # I
-    .param p4, "bufferedLength"    # I
-    .param p5, "match"    # Lcom/fasterxml/jackson/core/JsonFactory;
-    .param p6, "strength"    # Lcom/fasterxml/jackson/core/format/MatchStrength;
 
     .prologue
     .line 45
@@ -57,11 +51,6 @@
 # virtual methods
 .method public createParserWithMatch()Lcom/fasterxml/jackson/core/JsonParser;
     .registers 5
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 102

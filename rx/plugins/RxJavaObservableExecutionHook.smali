@@ -16,51 +16,8 @@
 
 
 # virtual methods
-.method public onCreate(Lrx/Observable$OnSubscribe;)Lrx/Observable$OnSubscribe;
+.method public a(Ljava/lang/Throwable;)Ljava/lang/Throwable;
     .registers 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Lrx/Observable$OnSubscribe",
-            "<TT;>;)",
-            "Lrx/Observable$OnSubscribe",
-            "<TT;>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 55
-    .local p1, "f":Lrx/Observable$OnSubscribe;, "Lrx/Observable$OnSubscribe<TT;>;"
-    return-object p1
-.end method
-
-.method public onLift(Lrx/Observable$Operator;)Lrx/Observable$Operator;
-    .registers 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            "R:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Lrx/Observable$Operator",
-            "<+TR;-TT;>;)",
-            "Lrx/Observable$Operator",
-            "<+TR;-TT;>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 119
-    .local p1, "lift":Lrx/Observable$Operator;, "Lrx/Observable$Operator<+TR;-TT;>;"
-    return-object p1
-.end method
-
-.method public onSubscribeError(Ljava/lang/Throwable;)Ljava/lang/Throwable;
-    .registers 2
-    .param p1, "e"    # Ljava/lang/Throwable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -77,26 +34,26 @@
     return-object p1
 .end method
 
-.method public onSubscribeReturn(Lrx/Subscription;)Lrx/Subscription;
+.method public a(Lrx/Observable$OnSubscribe;)Lrx/Observable$OnSubscribe;
     .registers 2
-    .param p1, "subscription"    # Lrx/Subscription;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Lrx/Subscription;",
-            ")",
-            "Lrx/Subscription;"
+            "Lrx/Observable$OnSubscribe",
+            "<TT;>;)",
+            "Lrx/Observable$OnSubscribe",
+            "<TT;>;"
         }
     .end annotation
 
     .prologue
-    .line 88
+    .line 55
     return-object p1
 .end method
 
-.method public onSubscribeStart(Lrx/Observable;Lrx/Observable$OnSubscribe;)Lrx/Observable$OnSubscribe;
+.method public a(Lrx/Observable;Lrx/Observable$OnSubscribe;)Lrx/Observable$OnSubscribe;
     .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -114,7 +71,44 @@
 
     .prologue
     .line 71
-    .local p1, "observableInstance":Lrx/Observable;, "Lrx/Observable<+TT;>;"
-    .local p2, "onSubscribe":Lrx/Observable$OnSubscribe;, "Lrx/Observable$OnSubscribe<TT;>;"
     return-object p2
+.end method
+
+.method public a(Lrx/Observable$Operator;)Lrx/Observable$Operator;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            "R:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lrx/Observable$Operator",
+            "<+TR;-TT;>;)",
+            "Lrx/Observable$Operator",
+            "<+TR;-TT;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 119
+    return-object p1
+.end method
+
+.method public a(Lrx/Subscription;)Lrx/Subscription;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Lrx/Subscription;",
+            ")",
+            "Lrx/Subscription;"
+        }
+    .end annotation
+
+    .prologue
+    .line 88
+    return-object p1
 .end method

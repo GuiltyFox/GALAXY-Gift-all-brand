@@ -10,11 +10,6 @@
 # direct methods
 .method private constructor <init>(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Object;Ljava/lang/Object;Z)V
     .registers 7
-    .param p2, "keyT"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "valueT"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p4, "valueHandler"    # Ljava/lang/Object;
-    .param p5, "typeHandler"    # Ljava/lang/Object;
-    .param p6, "asStatic"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -30,7 +25,6 @@
 
     .prologue
     .line 20
-    .local p1, "mapType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct/range {p0 .. p6}, Lcom/fasterxml/jackson/databind/type/MapLikeType;-><init>(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Object;Ljava/lang/Object;Z)V
 
     .line 21
@@ -39,8 +33,6 @@
 
 .method public static construct(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/type/MapType;
     .registers 10
-    .param p1, "keyT"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p2, "valueT"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -54,7 +46,6 @@
     .end annotation
 
     .prologue
-    .local p0, "rawType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v4, 0x0
 
     .line 25
@@ -90,7 +81,6 @@
 
     .prologue
     .line 30
-    .local p1, "subclass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     new-instance v0, Lcom/fasterxml/jackson/databind/type/MapType;
 
     iget-object v2, p0, Lcom/fasterxml/jackson/databind/type/MapType;->_keyType:Lcom/fasterxml/jackson/databind/JavaType;
@@ -123,7 +113,6 @@
 
     .prologue
     .line 38
-    .local p1, "contentClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/type/MapType;->_valueType:Lcom/fasterxml/jackson/databind/JavaType;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
@@ -133,11 +122,9 @@
     if-ne p1, v0, :cond_9
 
     .line 41
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/type/MapType;
     :goto_8
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/type/MapType;
     :cond_9
     new-instance v0, Lcom/fasterxml/jackson/databind/type/MapType;
 
@@ -177,7 +164,6 @@
 
     .prologue
     .line 59
-    .local p1, "keySubclass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/type/MapType;->_keyType:Lcom/fasterxml/jackson/databind/JavaType;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
@@ -187,11 +173,9 @@
     if-ne p1, v0, :cond_9
 
     .line 62
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/type/MapType;
     :goto_8
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/type/MapType;
     :cond_9
     new-instance v0, Lcom/fasterxml/jackson/databind/type/MapType;
 
@@ -293,7 +277,6 @@
 
     .prologue
     .line 48
-    .local p1, "contentClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/type/MapType;->_valueType:Lcom/fasterxml/jackson/databind/JavaType;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
@@ -303,11 +286,9 @@
     if-ne p1, v0, :cond_9
 
     .line 51
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/type/MapType;
     :goto_8
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/type/MapType;
     :cond_9
     new-instance v0, Lcom/fasterxml/jackson/databind/type/MapType;
 
@@ -347,7 +328,6 @@
 
     .prologue
     .line 70
-    .local p1, "keySubclass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/type/MapType;->_keyType:Lcom/fasterxml/jackson/databind/JavaType;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
@@ -357,11 +337,9 @@
     if-ne p1, v0, :cond_9
 
     .line 73
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/type/MapType;
     :goto_8
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/type/MapType;
     :cond_9
     new-instance v0, Lcom/fasterxml/jackson/databind/type/MapType;
 
@@ -390,7 +368,6 @@
 
 .method public bridge synthetic withContentTypeHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 8
@@ -403,7 +380,6 @@
 
 .method public bridge synthetic withContentTypeHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/type/MapLikeType;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 8
@@ -416,7 +392,6 @@
 
 .method public withContentTypeHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/type/MapType;
     .registers 9
-    .param p1, "h"    # Ljava/lang/Object;
 
     .prologue
     .line 85
@@ -445,7 +420,6 @@
 
 .method public bridge synthetic withContentValueHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 8
@@ -458,7 +432,6 @@
 
 .method public bridge synthetic withContentValueHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/type/MapLikeType;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 8
@@ -471,7 +444,6 @@
 
 .method public withContentValueHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/type/MapType;
     .registers 9
-    .param p1, "h"    # Ljava/lang/Object;
 
     .prologue
     .line 96
@@ -500,7 +472,6 @@
 
 .method public bridge synthetic withKeyTypeHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/type/MapLikeType;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 8
@@ -513,7 +484,6 @@
 
 .method public withKeyTypeHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/type/MapType;
     .registers 9
-    .param p1, "h"    # Ljava/lang/Object;
 
     .prologue
     .line 118
@@ -542,7 +512,6 @@
 
 .method public bridge synthetic withKeyValueHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/type/MapLikeType;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 8
@@ -555,7 +524,6 @@
 
 .method public withKeyValueHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/type/MapType;
     .registers 9
-    .param p1, "h"    # Ljava/lang/Object;
 
     .prologue
     .line 124
@@ -616,11 +584,9 @@
     if-eqz v0, :cond_5
 
     .line 105
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/type/MapType;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/type/MapType;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/type/MapType;
 
@@ -653,7 +619,6 @@
 
 .method public bridge synthetic withTypeHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 8
@@ -666,7 +631,6 @@
 
 .method public bridge synthetic withTypeHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/type/MapLikeType;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 8
@@ -679,7 +643,6 @@
 
 .method public withTypeHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/type/MapType;
     .registers 9
-    .param p1, "h"    # Ljava/lang/Object;
 
     .prologue
     .line 79
@@ -704,7 +667,6 @@
 
 .method public bridge synthetic withValueHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 8
@@ -717,7 +679,6 @@
 
 .method public bridge synthetic withValueHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/type/MapLikeType;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 8
@@ -730,7 +691,6 @@
 
 .method public withValueHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/type/MapType;
     .registers 9
-    .param p1, "h"    # Ljava/lang/Object;
 
     .prologue
     .line 91

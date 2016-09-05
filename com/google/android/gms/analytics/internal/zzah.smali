@@ -2,22 +2,14 @@
 .super Lcom/google/android/gms/analytics/internal/zzd;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/android/gms/analytics/internal/zzah$zza;
-    }
-.end annotation
-
-
 # static fields
-.field private static final zzRJ:[B
+.field private static final c:[B
 
 
 # instance fields
-.field private final zzKi:Ljava/lang/String;
+.field private final a:Ljava/lang/String;
 
-.field private final zzRI:Lcom/google/android/gms/analytics/internal/zzaj;
+.field private final b:Lcom/google/android/gms/analytics/internal/zzaj;
 
 
 # direct methods
@@ -30,7 +22,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/analytics/internal/zzah;->zzRJ:[B
+    sput-object v0, Lcom/google/android/gms/analytics/internal/zzah;->c:[B
 
     return-void
 .end method
@@ -42,7 +34,7 @@
 
     const-string/jumbo v0, "GoogleAnalytics"
 
-    sget-object v1, Lcom/google/android/gms/analytics/internal/zze;->VERSION:Ljava/lang/String;
+    sget-object v1, Lcom/google/android/gms/analytics/internal/zze;->a:Ljava/lang/String;
 
     sget-object v2, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;
 
@@ -50,41 +42,41 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/google/android/gms/analytics/internal/zzam;->zza(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/google/android/gms/analytics/internal/zzam;->a(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v3
 
-    const-string v4, "GT-I9100"
+    const-string v4, "SM-G935F"
 
     sget-object v5, Landroid/os/Build;->ID:Ljava/lang/String;
 
-    invoke-static/range {v0 .. v5}, Lcom/google/android/gms/analytics/internal/zzah;->zza(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static/range {v0 .. v5}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah;->zzKi:Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah;->a:Ljava/lang/String;
 
     new-instance v0, Lcom/google/android/gms/analytics/internal/zzaj;
 
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzf;->zziT()Lcom/google/android/gms/internal/zznl;
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzf;->d()Lcom/google/android/gms/internal/zznl;
 
     move-result-object v1
 
     invoke-direct {v0, v1}, Lcom/google/android/gms/analytics/internal/zzaj;-><init>(Lcom/google/android/gms/internal/zznl;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah;->zzRI:Lcom/google/android/gms/analytics/internal/zzaj;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah;->b:Lcom/google/android/gms/analytics/internal/zzaj;
 
     return-void
 .end method
 
-.method private zza(Ljava/net/URL;[B)I
+.method private a(Ljava/net/URL;[B)I
     .registers 8
 
     const/4 v1, 0x0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string/jumbo v0, "POST bytes, url"
 
@@ -94,9 +86,9 @@
 
     move-result-object v2
 
-    invoke-virtual {p0, v0, v2, p1}, Lcom/google/android/gms/analytics/internal/zzah;->zzb(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {p0, v0, v2, p1}, Lcom/google/android/gms/analytics/internal/zzah;->b(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zzjd()Z
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->B()Z
 
     move-result v0
 
@@ -108,11 +100,11 @@
 
     invoke-direct {v2, p2}, Ljava/lang/String;-><init>([B)V
 
-    invoke-virtual {p0, v0, v2}, Lcom/google/android/gms/analytics/internal/zzah;->zza(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v0, v2}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/lang/String;Ljava/lang/Object;)V
 
     :cond_23
     :try_start_23
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/analytics/internal/zzah;->zzc(Ljava/net/URL;)Ljava/net/HttpURLConnection;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/net/URL;)Ljava/net/HttpURLConnection;
     :try_end_26
     .catch Ljava/io/IOException; {:try_start_23 .. :try_end_26} :catch_68
     .catchall {:try_start_23 .. :try_end_26} :catchall_84
@@ -136,7 +128,7 @@
 
     invoke-virtual {v1, p2}, Ljava/io/OutputStream;->write([B)V
 
-    invoke-direct {p0, v2}, Lcom/google/android/gms/analytics/internal/zzah;->zzb(Ljava/net/HttpURLConnection;)V
+    invoke-direct {p0, v2}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/net/HttpURLConnection;)V
 
     invoke-virtual {v2}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
@@ -146,11 +138,11 @@
 
     if-ne v0, v3, :cond_4b
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zzip()Lcom/google/android/gms/analytics/internal/zzb;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->t()Lcom/google/android/gms/analytics/internal/zzb;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/google/android/gms/analytics/internal/zzb;->zziP()V
+    invoke-virtual {v3}, Lcom/google/android/gms/analytics/internal/zzb;->h()V
 
     :cond_4b
     const-string/jumbo v3, "POST status"
@@ -159,7 +151,7 @@
 
     move-result-object v4
 
-    invoke-virtual {p0, v3, v4}, Lcom/google/android/gms/analytics/internal/zzah;->zzb(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v3, v4}, Lcom/google/android/gms/analytics/internal/zzah;->b(Ljava/lang/String;Ljava/lang/Object;)V
     :try_end_55
     .catch Ljava/io/IOException; {:try_start_28 .. :try_end_55} :catch_9b
     .catchall {:try_start_28 .. :try_end_55} :catchall_99
@@ -186,7 +178,7 @@
 
     const-string/jumbo v3, "Error closing http post connection output stream"
 
-    invoke-virtual {p0, v3, v1}, Lcom/google/android/gms/analytics/internal/zzah;->zze(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v3, v1}, Lcom/google/android/gms/analytics/internal/zzah;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_5a
 
@@ -199,7 +191,7 @@
     :try_start_6a
     const-string/jumbo v3, "Network POST connection error"
 
-    invoke-virtual {p0, v3, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zzd(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v3, v0}, Lcom/google/android/gms/analytics/internal/zzah;->d(Ljava/lang/String;Ljava/lang/Object;)V
     :try_end_70
     .catchall {:try_start_6a .. :try_end_70} :catchall_99
 
@@ -225,7 +217,7 @@
 
     const-string/jumbo v3, "Error closing http post connection output stream"
 
-    invoke-virtual {p0, v3, v1}, Lcom/google/android/gms/analytics/internal/zzah;->zze(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v3, v1}, Lcom/google/android/gms/analytics/internal/zzah;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_76
 
@@ -256,7 +248,7 @@
 
     const-string/jumbo v3, "Error closing http post connection output stream"
 
-    invoke-virtual {p0, v3, v1}, Lcom/google/android/gms/analytics/internal/zzah;->zze(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v3, v1}, Lcom/google/android/gms/analytics/internal/zzah;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_8b
 
@@ -271,7 +263,7 @@
     goto :goto_6a
 .end method
 
-.method private static zza(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+.method private static a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .registers 9
 
     const-string/jumbo v0, "%s/%s (Linux; U; Android %s; %s; %s Build/%s)"
@@ -311,13 +303,131 @@
     return-object v0
 .end method
 
-.method private zza(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)V
+.method private a(Lcom/google/android/gms/analytics/internal/zzab;Ljava/lang/String;)Ljava/net/URL;
     .registers 5
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/UnsupportedEncodingException;
-        }
-    .end annotation
+
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->f()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_39
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->o()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->q()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "?"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    :goto_33
+    :try_start_33
+    new-instance v0, Ljava/net/URL;
+
+    invoke-direct {v0, v1}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
+    :try_end_38
+    .catch Ljava/net/MalformedURLException; {:try_start_33 .. :try_end_38} :catch_67
+
+    :goto_38
+    return-object v0
+
+    :cond_39
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->p()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->q()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "?"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    move-object v1, v0
+
+    goto :goto_33
+
+    :catch_67
+    move-exception v0
+
+    const-string/jumbo v1, "Error trying to parse the hardcoded host url"
+
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzah;->e(Ljava/lang/String;Ljava/lang/Object;)V
+
+    const/4 v0, 0x0
+
+    goto :goto_38
+.end method
+
+.method private a(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 5
 
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->length()I
 
@@ -353,25 +463,270 @@
     return-void
 .end method
 
-.method private zzb(Ljava/net/URL;)I
+.method private a(Ljava/net/HttpURLConnection;)V
+    .registers 5
+
+    const/4 v1, 0x0
+
+    :try_start_1
+    invoke-virtual {p1}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
+
+    move-result-object v1
+
+    const/16 v0, 0x400
+
+    new-array v0, v0, [B
+
+    :cond_9
+    invoke-virtual {v1, v0}, Ljava/io/InputStream;->read([B)I
+    :try_end_c
+    .catchall {:try_start_1 .. :try_end_c} :catchall_1d
+
+    move-result v2
+
+    if-gtz v2, :cond_9
+
+    if-eqz v1, :cond_14
+
+    :try_start_11
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
+    :try_end_14
+    .catch Ljava/io/IOException; {:try_start_11 .. :try_end_14} :catch_15
+
+    :cond_14
+    :goto_14
+    return-void
+
+    :catch_15
+    move-exception v0
+
+    const-string/jumbo v1, "Error closing http connection input stream"
+
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzah;->e(Ljava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_14
+
+    :catchall_1d
+    move-exception v0
+
+    if-eqz v1, :cond_23
+
+    :try_start_20
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
+    :try_end_23
+    .catch Ljava/io/IOException; {:try_start_20 .. :try_end_23} :catch_24
+
+    :cond_23
+    :goto_23
+    throw v0
+
+    :catch_24
+    move-exception v1
+
+    const-string/jumbo v2, "Error closing http connection input stream"
+
+    invoke-virtual {p0, v2, v1}, Lcom/google/android/gms/analytics/internal/zzah;->e(Ljava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_23
+.end method
+
+.method private a(Lcom/google/android/gms/analytics/internal/zzab;)Z
+    .registers 8
+
+    const/16 v5, 0xc8
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->f()Z
+
+    move-result v0
+
+    if-nez v0, :cond_1f
+
+    move v0, v1
+
+    :goto_e
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/analytics/internal/zzah;->a(Lcom/google/android/gms/analytics/internal/zzab;Z)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-nez v0, :cond_21
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->p()Lcom/google/android/gms/analytics/internal/zzaf;
+
+    move-result-object v0
+
+    const-string/jumbo v2, "Error formatting hit for upload"
+
+    invoke-virtual {v0, p1, v2}, Lcom/google/android/gms/analytics/internal/zzaf;->a(Lcom/google/android/gms/analytics/internal/zzab;Ljava/lang/String;)V
+
+    :cond_1e
+    :goto_1e
+    return v1
+
+    :cond_1f
+    move v0, v2
+
+    goto :goto_e
+
+    :cond_21
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzr;->d()I
+
+    move-result v4
+
+    if-gt v3, v4, :cond_45
+
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/analytics/internal/zzah;->a(Lcom/google/android/gms/analytics/internal/zzab;Ljava/lang/String;)Ljava/net/URL;
+
+    move-result-object v0
+
+    if-nez v0, :cond_3d
+
+    const-string/jumbo v0, "Failed to build collect GET endpoint url"
+
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzah;->f(Ljava/lang/String;)V
+
+    move v1, v2
+
+    goto :goto_1e
+
+    :cond_3d
+    invoke-direct {p0, v0}, Lcom/google/android/gms/analytics/internal/zzah;->b(Ljava/net/URL;)I
+
+    move-result v0
+
+    if-eq v0, v5, :cond_1e
+
+    move v1, v2
+
+    goto :goto_1e
+
+    :cond_45
+    invoke-virtual {p0, p1, v2}, Lcom/google/android/gms/analytics/internal/zzah;->a(Lcom/google/android/gms/analytics/internal/zzab;Z)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-nez v0, :cond_56
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->p()Lcom/google/android/gms/analytics/internal/zzaf;
+
+    move-result-object v0
+
+    const-string/jumbo v2, "Error formatting hit for POST upload"
+
+    invoke-virtual {v0, p1, v2}, Lcom/google/android/gms/analytics/internal/zzaf;->a(Lcom/google/android/gms/analytics/internal/zzab;Ljava/lang/String;)V
+
+    goto :goto_1e
+
+    :cond_56
+    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object v0
+
+    array-length v3, v0
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzr;->f()I
+
+    move-result v4
+
+    if-le v3, v4, :cond_70
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->p()Lcom/google/android/gms/analytics/internal/zzaf;
+
+    move-result-object v0
+
+    const-string/jumbo v2, "Hit payload exceeds size limit"
+
+    invoke-virtual {v0, p1, v2}, Lcom/google/android/gms/analytics/internal/zzaf;->a(Lcom/google/android/gms/analytics/internal/zzab;Ljava/lang/String;)V
+
+    goto :goto_1e
+
+    :cond_70
+    invoke-direct {p0, p1}, Lcom/google/android/gms/analytics/internal/zzah;->b(Lcom/google/android/gms/analytics/internal/zzab;)Ljava/net/URL;
+
+    move-result-object v3
+
+    if-nez v3, :cond_7e
+
+    const-string/jumbo v0, "Failed to build collect POST endpoint url"
+
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzah;->f(Ljava/lang/String;)V
+
+    move v1, v2
+
+    goto :goto_1e
+
+    :cond_7e
+    invoke-direct {p0, v3, v0}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/net/URL;[B)I
+
+    move-result v0
+
+    if-eq v0, v5, :cond_1e
+
+    move v1, v2
+
+    goto :goto_1e
+.end method
+
+.method private static a([B)[B
+    .registers 3
+
+    new-instance v0, Ljava/io/ByteArrayOutputStream;
+
+    invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
+
+    new-instance v1, Ljava/util/zip/GZIPOutputStream;
+
+    invoke-direct {v1, v0}, Ljava/util/zip/GZIPOutputStream;-><init>(Ljava/io/OutputStream;)V
+
+    invoke-virtual {v1, p0}, Ljava/util/zip/GZIPOutputStream;->write([B)V
+
+    invoke-virtual {v1}, Ljava/util/zip/GZIPOutputStream;->close()V
+
+    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->close()V
+
+    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private b(Ljava/net/URL;)I
     .registers 6
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string/jumbo v0, "GET request"
 
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/analytics/internal/zzah;->zzb(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/analytics/internal/zzah;->b(Ljava/lang/String;Ljava/lang/Object;)V
 
     const/4 v1, 0x0
 
     :try_start_a
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/analytics/internal/zzah;->zzc(Ljava/net/URL;)Ljava/net/HttpURLConnection;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/net/URL;)Ljava/net/HttpURLConnection;
 
     move-result-object v1
 
     invoke-virtual {v1}, Ljava/net/HttpURLConnection;->connect()V
 
-    invoke-direct {p0, v1}, Lcom/google/android/gms/analytics/internal/zzah;->zzb(Ljava/net/HttpURLConnection;)V
+    invoke-direct {p0, v1}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/net/HttpURLConnection;)V
 
     invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
@@ -381,11 +736,11 @@
 
     if-ne v0, v2, :cond_23
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zzip()Lcom/google/android/gms/analytics/internal/zzb;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->t()Lcom/google/android/gms/analytics/internal/zzb;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/google/android/gms/analytics/internal/zzb;->zziP()V
+    invoke-virtual {v2}, Lcom/google/android/gms/analytics/internal/zzb;->h()V
 
     :cond_23
     const-string/jumbo v2, "GET status"
@@ -394,7 +749,7 @@
 
     move-result-object v3
 
-    invoke-virtual {p0, v2, v3}, Lcom/google/android/gms/analytics/internal/zzah;->zzb(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v2, v3}, Lcom/google/android/gms/analytics/internal/zzah;->b(Ljava/lang/String;Ljava/lang/Object;)V
     :try_end_2d
     .catch Ljava/io/IOException; {:try_start_a .. :try_end_2d} :catch_33
     .catchall {:try_start_a .. :try_end_2d} :catchall_41
@@ -413,7 +768,7 @@
     :try_start_34
     const-string/jumbo v2, "Network GET connection error"
 
-    invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zzd(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/analytics/internal/zzah;->d(Ljava/lang/String;Ljava/lang/Object;)V
     :try_end_3a
     .catchall {:try_start_34 .. :try_end_3a} :catchall_41
 
@@ -436,17 +791,17 @@
     throw v0
 .end method
 
-.method private zzb(Ljava/net/URL;[B)I
+.method private b(Ljava/net/URL;[B)I
     .registers 11
 
     const/4 v1, 0x0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p2}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     :try_start_7
-    invoke-static {p2}, Lcom/google/android/gms/analytics/internal/zzah;->zzg([B)[B
+    invoke-static {p2}, Lcom/google/android/gms/analytics/internal/zzah;->a([B)[B
 
     move-result-object v0
 
@@ -476,7 +831,7 @@
 
     move-result-object v4
 
-    invoke-virtual {p0, v2, v3, v4, p1}, Lcom/google/android/gms/analytics/internal/zzah;->zza(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {p0, v2, v3, v4, p1}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     array-length v2, v0
 
@@ -498,10 +853,10 @@
 
     move-result-object v4
 
-    invoke-virtual {p0, v2, v3, v4}, Lcom/google/android/gms/analytics/internal/zzah;->zzc(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {p0, v2, v3, v4}, Lcom/google/android/gms/analytics/internal/zzah;->c(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
     :cond_36
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zzjd()Z
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->B()Z
 
     move-result v2
 
@@ -531,10 +886,10 @@
 
     move-result-object v3
 
-    invoke-virtual {p0, v2, v3}, Lcom/google/android/gms/analytics/internal/zzah;->zza(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v2, v3}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/lang/String;Ljava/lang/Object;)V
 
     :cond_5b
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/analytics/internal/zzah;->zzc(Ljava/net/URL;)Ljava/net/HttpURLConnection;
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/net/URL;)Ljava/net/HttpURLConnection;
     :try_end_5e
     .catch Ljava/io/IOException; {:try_start_7 .. :try_end_5e} :catch_ad
     .catchall {:try_start_7 .. :try_end_5e} :catchall_c9
@@ -576,7 +931,7 @@
     const/4 v2, 0x0
 
     :try_start_7e
-    invoke-direct {p0, v3}, Lcom/google/android/gms/analytics/internal/zzah;->zzb(Ljava/net/HttpURLConnection;)V
+    invoke-direct {p0, v3}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/net/HttpURLConnection;)V
 
     invoke-virtual {v3}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
@@ -586,11 +941,11 @@
 
     if-ne v0, v4, :cond_90
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zzip()Lcom/google/android/gms/analytics/internal/zzb;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->t()Lcom/google/android/gms/analytics/internal/zzb;
 
     move-result-object v4
 
-    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzb;->zziP()V
+    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzb;->h()V
 
     :cond_90
     const-string/jumbo v4, "POST status"
@@ -599,7 +954,7 @@
 
     move-result-object v5
 
-    invoke-virtual {p0, v4, v5}, Lcom/google/android/gms/analytics/internal/zzah;->zzb(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v4, v5}, Lcom/google/android/gms/analytics/internal/zzah;->b(Ljava/lang/String;Ljava/lang/Object;)V
     :try_end_9a
     .catch Ljava/io/IOException; {:try_start_7e .. :try_end_9a} :catch_e6
     .catchall {:try_start_7e .. :try_end_9a} :catchall_de
@@ -626,7 +981,7 @@
 
     const-string/jumbo v2, "Error closing http compressed post connection output stream"
 
-    invoke-virtual {p0, v2, v1}, Lcom/google/android/gms/analytics/internal/zzah;->zze(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v2, v1}, Lcom/google/android/gms/analytics/internal/zzah;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_9f
 
@@ -639,7 +994,7 @@
     :try_start_af
     const-string/jumbo v3, "Network compressed POST connection error"
 
-    invoke-virtual {p0, v3, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zzd(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v3, v0}, Lcom/google/android/gms/analytics/internal/zzah;->d(Ljava/lang/String;Ljava/lang/Object;)V
     :try_end_b5
     .catchall {:try_start_af .. :try_end_b5} :catchall_e3
 
@@ -665,7 +1020,7 @@
 
     const-string/jumbo v3, "Error closing http compressed post connection output stream"
 
-    invoke-virtual {p0, v3, v1}, Lcom/google/android/gms/analytics/internal/zzah;->zze(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v3, v1}, Lcom/google/android/gms/analytics/internal/zzah;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_bb
 
@@ -696,7 +1051,7 @@
 
     const-string/jumbo v2, "Error closing http compressed post connection output stream"
 
-    invoke-virtual {p0, v2, v1}, Lcom/google/android/gms/analytics/internal/zzah;->zze(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v2, v1}, Lcom/google/android/gms/analytics/internal/zzah;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_d0
 
@@ -736,388 +1091,10 @@
     goto :goto_af
 .end method
 
-.method private zzb(Lcom/google/android/gms/analytics/internal/zzab;Ljava/lang/String;)Ljava/net/URL;
-    .registers 5
-
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->zzlc()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_39
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->zzko()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->zzkq()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "?"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    :goto_33
-    :try_start_33
-    new-instance v0, Ljava/net/URL;
-
-    invoke-direct {v0, v1}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
-    :try_end_38
-    .catch Ljava/net/MalformedURLException; {:try_start_33 .. :try_end_38} :catch_67
-
-    :goto_38
-    return-object v0
-
-    :cond_39
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->zzkp()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->zzkq()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "?"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    move-object v1, v0
-
-    goto :goto_33
-
-    :catch_67
-    move-exception v0
-
-    const-string/jumbo v1, "Error trying to parse the hardcoded host url"
-
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zze(Ljava/lang/String;Ljava/lang/Object;)V
-
-    const/4 v0, 0x0
-
-    goto :goto_38
-.end method
-
-.method private zzb(Ljava/net/HttpURLConnection;)V
-    .registers 5
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    const/4 v1, 0x0
-
-    :try_start_1
-    invoke-virtual {p1}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
-
-    move-result-object v1
-
-    const/16 v0, 0x400
-
-    new-array v0, v0, [B
-
-    :cond_9
-    invoke-virtual {v1, v0}, Ljava/io/InputStream;->read([B)I
-    :try_end_c
-    .catchall {:try_start_1 .. :try_end_c} :catchall_1d
-
-    move-result v2
-
-    if-gtz v2, :cond_9
-
-    if-eqz v1, :cond_14
-
-    :try_start_11
-    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
-    :try_end_14
-    .catch Ljava/io/IOException; {:try_start_11 .. :try_end_14} :catch_15
-
-    :cond_14
-    :goto_14
-    return-void
-
-    :catch_15
-    move-exception v0
-
-    const-string/jumbo v1, "Error closing http connection input stream"
-
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zze(Ljava/lang/String;Ljava/lang/Object;)V
-
-    goto :goto_14
-
-    :catchall_1d
-    move-exception v0
-
-    if-eqz v1, :cond_23
-
-    :try_start_20
-    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
-    :try_end_23
-    .catch Ljava/io/IOException; {:try_start_20 .. :try_end_23} :catch_24
-
-    :cond_23
-    :goto_23
-    throw v0
-
-    :catch_24
-    move-exception v1
-
-    const-string/jumbo v2, "Error closing http connection input stream"
-
-    invoke-virtual {p0, v2, v1}, Lcom/google/android/gms/analytics/internal/zzah;->zze(Ljava/lang/String;Ljava/lang/Object;)V
-
-    goto :goto_23
-.end method
-
-.method private zzg(Lcom/google/android/gms/analytics/internal/zzab;)Z
-    .registers 8
-
-    const/16 v5, 0xc8
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->zzlc()Z
-
-    move-result v0
-
-    if-nez v0, :cond_1f
-
-    move v0, v1
-
-    :goto_e
-    invoke-virtual {p0, p1, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zza(Lcom/google/android/gms/analytics/internal/zzab;Z)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :cond_21
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziU()Lcom/google/android/gms/analytics/internal/zzaf;
-
-    move-result-object v0
-
-    const-string/jumbo v2, "Error formatting hit for upload"
-
-    invoke-virtual {v0, p1, v2}, Lcom/google/android/gms/analytics/internal/zzaf;->zza(Lcom/google/android/gms/analytics/internal/zzab;Ljava/lang/String;)V
-
-    :cond_1e
-    :goto_1e
-    return v1
-
-    :cond_1f
-    move v0, v2
-
-    goto :goto_e
-
-    :cond_21
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzr;->zzkd()I
-
-    move-result v4
-
-    if-gt v3, v4, :cond_45
-
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zzb(Lcom/google/android/gms/analytics/internal/zzab;Ljava/lang/String;)Ljava/net/URL;
-
-    move-result-object v0
-
-    if-nez v0, :cond_3d
-
-    const-string/jumbo v0, "Failed to build collect GET endpoint url"
-
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zzbe(Ljava/lang/String;)V
-
-    move v1, v2
-
-    goto :goto_1e
-
-    :cond_3d
-    invoke-direct {p0, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zzb(Ljava/net/URL;)I
-
-    move-result v0
-
-    if-eq v0, v5, :cond_1e
-
-    move v1, v2
-
-    goto :goto_1e
-
-    :cond_45
-    invoke-virtual {p0, p1, v2}, Lcom/google/android/gms/analytics/internal/zzah;->zza(Lcom/google/android/gms/analytics/internal/zzab;Z)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :cond_56
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziU()Lcom/google/android/gms/analytics/internal/zzaf;
-
-    move-result-object v0
-
-    const-string/jumbo v2, "Error formatting hit for POST upload"
-
-    invoke-virtual {v0, p1, v2}, Lcom/google/android/gms/analytics/internal/zzaf;->zza(Lcom/google/android/gms/analytics/internal/zzab;Ljava/lang/String;)V
-
-    goto :goto_1e
-
-    :cond_56
-    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v0
-
-    array-length v3, v0
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzr;->zzkf()I
-
-    move-result v4
-
-    if-le v3, v4, :cond_70
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziU()Lcom/google/android/gms/analytics/internal/zzaf;
-
-    move-result-object v0
-
-    const-string/jumbo v2, "Hit payload exceeds size limit"
-
-    invoke-virtual {v0, p1, v2}, Lcom/google/android/gms/analytics/internal/zzaf;->zza(Lcom/google/android/gms/analytics/internal/zzab;Ljava/lang/String;)V
-
-    goto :goto_1e
-
-    :cond_70
-    invoke-direct {p0, p1}, Lcom/google/android/gms/analytics/internal/zzah;->zzh(Lcom/google/android/gms/analytics/internal/zzab;)Ljava/net/URL;
-
-    move-result-object v3
-
-    if-nez v3, :cond_7e
-
-    const-string/jumbo v0, "Failed to build collect POST endpoint url"
-
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zzbe(Ljava/lang/String;)V
-
-    move v1, v2
-
-    goto :goto_1e
-
-    :cond_7e
-    invoke-direct {p0, v3, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zza(Ljava/net/URL;[B)I
-
-    move-result v0
-
-    if-eq v0, v5, :cond_1e
-
-    move v1, v2
-
-    goto :goto_1e
-.end method
-
-.method private static zzg([B)[B
-    .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    new-instance v0, Ljava/io/ByteArrayOutputStream;
-
-    invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
-
-    new-instance v1, Ljava/util/zip/GZIPOutputStream;
-
-    invoke-direct {v1, v0}, Ljava/util/zip/GZIPOutputStream;-><init>(Ljava/io/OutputStream;)V
-
-    invoke-virtual {v1, p0}, Ljava/util/zip/GZIPOutputStream;->write([B)V
-
-    invoke-virtual {v1}, Ljava/util/zip/GZIPOutputStream;->close()V
-
-    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->close()V
-
-    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private zzh(Lcom/google/android/gms/analytics/internal/zzab;)Ljava/net/URL;
+.method private b(Lcom/google/android/gms/analytics/internal/zzab;)Ljava/net/URL;
     .registers 4
 
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->zzlc()Z
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->f()Z
 
     move-result v0
 
@@ -1127,11 +1104,11 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->zzko()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->o()Ljava/lang/String;
 
     move-result-object v1
 
@@ -1139,11 +1116,11 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->zzkq()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->q()Ljava/lang/String;
 
     move-result-object v1
 
@@ -1173,11 +1150,11 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->zzkp()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->p()Ljava/lang/String;
 
     move-result-object v1
 
@@ -1185,11 +1162,11 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->zzkq()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->q()Ljava/lang/String;
 
     move-result-object v1
 
@@ -1210,17 +1187,17 @@
 
     const-string/jumbo v1, "Error trying to parse the hardcoded host url"
 
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zze(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzah;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
     const/4 v0, 0x0
 
     goto :goto_2d
 .end method
 
-.method private zzi(Lcom/google/android/gms/analytics/internal/zzab;)Ljava/lang/String;
+.method private c(Lcom/google/android/gms/analytics/internal/zzab;)Ljava/lang/String;
     .registers 4
 
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->zzkZ()J
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->c()J
 
     move-result-wide v0
 
@@ -1231,18 +1208,26 @@
     return-object v0
 .end method
 
-.method private zzll()Ljava/net/URL;
+.method static synthetic c()[B
+    .registers 1
+
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzah;->c:[B
+
+    return-object v0
+.end method
+
+.method private d()Ljava/net/URL;
     .registers 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->zzko()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->o()Ljava/lang/String;
 
     move-result-object v1
 
@@ -1250,11 +1235,11 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->zzkr()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->r()Ljava/lang/String;
 
     move-result-object v1
 
@@ -1281,34 +1266,26 @@
 
     const-string/jumbo v1, "Error trying to parse the hardcoded host url"
 
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zze(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzah;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
     const/4 v0, 0x0
 
     goto :goto_26
 .end method
 
-.method static synthetic zzlm()[B
-    .registers 1
-
-    sget-object v0, Lcom/google/android/gms/analytics/internal/zzah;->zzRJ:[B
-
-    return-object v0
-.end method
-
 
 # virtual methods
-.method zza(Lcom/google/android/gms/analytics/internal/zzab;Z)Ljava/lang/String;
+.method a(Lcom/google/android/gms/analytics/internal/zzab;Z)Ljava/lang/String;
     .registers 9
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
     :try_start_8
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->zzn()Ljava/util/Map;
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->b()Ljava/util/Map;
 
     move-result-object v0
 
@@ -1386,7 +1363,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    invoke-direct {p0, v2, v1, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zza(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, v2, v1, v0}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)V
     :try_end_5c
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_8 .. :try_end_5c} :catch_5d
 
@@ -1397,7 +1374,7 @@
 
     const-string/jumbo v1, "Failed to encode name or value"
 
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zze(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzah;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
     const/4 v0, 0x0
 
@@ -1408,7 +1385,7 @@
     :try_start_66
     const-string/jumbo v0, "ht"
 
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->zzla()J
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->d()J
 
     move-result-wide v4
 
@@ -1416,17 +1393,17 @@
 
     move-result-object v1
 
-    invoke-direct {p0, v2, v0, v1}, Lcom/google/android/gms/analytics/internal/zzah;->zza(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, v2, v0, v1}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziT()Lcom/google/android/gms/internal/zznl;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->n()Lcom/google/android/gms/internal/zznl;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/android/gms/internal/zznl;->currentTimeMillis()J
+    invoke-interface {v0}, Lcom/google/android/gms/internal/zznl;->a()J
 
     move-result-wide v0
 
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->zzla()J
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->d()J
 
     move-result-wide v4
 
@@ -1438,13 +1415,13 @@
 
     move-result-object v0
 
-    invoke-direct {p0, v2, v3, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zza(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, v2, v3, v0}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->zzka()Z
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->a()Z
 
     move-result v0
 
@@ -1452,14 +1429,14 @@
 
     const-string/jumbo v0, "_gmsv"
 
-    sget-object v1, Lcom/google/android/gms/analytics/internal/zze;->VERSION:Ljava/lang/String;
+    sget-object v1, Lcom/google/android/gms/analytics/internal/zze;->a:Ljava/lang/String;
 
-    invoke-direct {p0, v2, v0, v1}, Lcom/google/android/gms/analytics/internal/zzah;->zza(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, v2, v0, v1}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_9d
     if-eqz p2, :cond_b3
 
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->zzld()J
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->g()J
 
     move-result-wide v0
 
@@ -1476,7 +1453,7 @@
     :goto_ad
     const-string/jumbo v1, "z"
 
-    invoke-direct {p0, v2, v1, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zza(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, v2, v1, v0}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)V
 
     :cond_b3
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -1486,7 +1463,7 @@
     goto :goto_65
 
     :cond_b8
-    invoke-direct {p0, p1}, Lcom/google/android/gms/analytics/internal/zzah;->zzi(Lcom/google/android/gms/analytics/internal/zzab;)Ljava/lang/String;
+    invoke-direct {p0, p1}, Lcom/google/android/gms/analytics/internal/zzah;->c(Lcom/google/android/gms/analytics/internal/zzab;)Ljava/lang/String;
     :try_end_bb
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_66 .. :try_end_bb} :catch_5d
 
@@ -1495,7 +1472,189 @@
     goto :goto_ad
 .end method
 
-.method zza(Ljava/util/List;Z)Ljava/util/List;
+.method a(Ljava/net/URL;)Ljava/net/HttpURLConnection;
+    .registers 5
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p1}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
+
+    move-result-object v0
+
+    instance-of v1, v0, Ljava/net/HttpURLConnection;
+
+    if-nez v1, :cond_12
+
+    new-instance v0, Ljava/io/IOException;
+
+    const-string/jumbo v1, "Failed to obtain http connection"
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_12
+    check-cast v0, Ljava/net/HttpURLConnection;
+
+    invoke-virtual {v0, v2}, Ljava/net/HttpURLConnection;->setDefaultUseCaches(Z)V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->D()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Ljava/net/HttpURLConnection;->setConnectTimeout(I)V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->E()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Ljava/net/HttpURLConnection;->setReadTimeout(I)V
+
+    invoke-virtual {v0, v2}, Ljava/net/HttpURLConnection;->setInstanceFollowRedirects(Z)V
+
+    const-string/jumbo v1, "User-Agent"
+
+    iget-object v2, p0, Lcom/google/android/gms/analytics/internal/zzah;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Ljava/net/HttpURLConnection;->setDoInput(Z)V
+
+    return-object v0
+.end method
+
+.method public a(Ljava/util/List;)Ljava/util/List;
+    .registers 10
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lcom/google/android/gms/analytics/internal/zzab;",
+            ">;)",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->m()V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->D()V
+
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->u()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2c
+
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah;->b:Lcom/google/android/gms/analytics/internal/zzaj;
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/google/android/gms/analytics/internal/zzr;->n()J
+
+    move-result-wide v4
+
+    const-wide/16 v6, 0x3e8
+
+    mul-long/2addr v4, v6
+
+    invoke-virtual {v0, v4, v5}, Lcom/google/android/gms/analytics/internal/zzaj;->a(J)Z
+
+    move-result v0
+
+    if-nez v0, :cond_35
+
+    :cond_2c
+    move v1, v2
+
+    move v0, v2
+
+    :cond_2e
+    :goto_2e
+    if-eqz v0, :cond_52
+
+    invoke-virtual {p0, p1, v1}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/util/List;Z)Ljava/util/List;
+
+    move-result-object v0
+
+    :goto_34
+    return-object v0
+
+    :cond_35
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->s()Lcom/google/android/gms/analytics/internal/zzm;
+
+    move-result-object v0
+
+    sget-object v3, Lcom/google/android/gms/analytics/internal/zzm;->a:Lcom/google/android/gms/analytics/internal/zzm;
+
+    if-eq v0, v3, :cond_50
+
+    move v0, v1
+
+    :goto_42
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/google/android/gms/analytics/internal/zzr;->t()Lcom/google/android/gms/analytics/internal/zzo;
+
+    move-result-object v3
+
+    sget-object v4, Lcom/google/android/gms/analytics/internal/zzo;->b:Lcom/google/android/gms/analytics/internal/zzo;
+
+    if-eq v3, v4, :cond_2e
+
+    move v1, v2
+
+    goto :goto_2e
+
+    :cond_50
+    move v0, v2
+
+    goto :goto_42
+
+    :cond_52
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/analytics/internal/zzah;->b(Ljava/util/List;)Ljava/util/List;
+
+    move-result-object v0
+
+    goto :goto_34
+.end method
+
+.method a(Ljava/util/List;Z)Ljava/util/List;
     .registers 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1520,7 +1679,7 @@
     const/4 v0, 0x1
 
     :goto_7
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzx;->zzab(Z)V
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzx;->a(Z)V
 
     const-string/jumbo v0, "Uploading batched hits. compression, count"
 
@@ -1536,7 +1695,7 @@
 
     move-result-object v2
 
-    invoke-virtual {p0, v0, v1, v2}, Lcom/google/android/gms/analytics/internal/zzah;->zza(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {p0, v0, v1, v2}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
     new-instance v2, Lcom/google/android/gms/analytics/internal/zzah$zza;
 
@@ -1563,14 +1722,14 @@
 
     check-cast v0, Lcom/google/android/gms/analytics/internal/zzab;
 
-    invoke-virtual {v2, v0}, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzj(Lcom/google/android/gms/analytics/internal/zzab;)Z
+    invoke-virtual {v2, v0}, Lcom/google/android/gms/analytics/internal/zzah$zza;->a(Lcom/google/android/gms/analytics/internal/zzab;)Z
 
     move-result v4
 
     if-nez v4, :cond_46
 
     :cond_3c
-    invoke-virtual {v2}, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzln()I
+    invoke-virtual {v2}, Lcom/google/android/gms/analytics/internal/zzah$zza;->a()I
 
     move-result v0
 
@@ -1587,7 +1746,7 @@
     goto :goto_7
 
     :cond_46
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzab;->zzkZ()J
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzab;->c()J
 
     move-result-wide v4
 
@@ -1600,7 +1759,7 @@
     goto :goto_2a
 
     :cond_52
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zzll()Ljava/net/URL;
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzah;->d()Ljava/net/URL;
 
     move-result-object v0
 
@@ -1608,7 +1767,7 @@
 
     const-string/jumbo v0, "Failed to build batching endpoint url"
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zzbe(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzah;->f(Ljava/lang/String;)V
 
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
@@ -1619,11 +1778,11 @@
     :cond_63
     if-eqz p2, :cond_81
 
-    invoke-virtual {v2}, Lcom/google/android/gms/analytics/internal/zzah$zza;->getPayload()[B
+    invoke-virtual {v2}, Lcom/google/android/gms/analytics/internal/zzah$zza;->b()[B
 
     move-result-object v3
 
-    invoke-direct {p0, v0, v3}, Lcom/google/android/gms/analytics/internal/zzah;->zzb(Ljava/net/URL;[B)I
+    invoke-direct {p0, v0, v3}, Lcom/google/android/gms/analytics/internal/zzah;->b(Ljava/net/URL;[B)I
 
     move-result v0
 
@@ -1634,7 +1793,7 @@
 
     const-string/jumbo v0, "Batched upload completed. Hits batched"
 
-    invoke-virtual {v2}, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzln()I
+    invoke-virtual {v2}, Lcom/google/android/gms/analytics/internal/zzah$zza;->a()I
 
     move-result v2
 
@@ -1642,18 +1801,18 @@
 
     move-result-object v2
 
-    invoke-virtual {p0, v0, v2}, Lcom/google/android/gms/analytics/internal/zzah;->zza(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v0, v2}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/lang/String;Ljava/lang/Object;)V
 
     move-object v0, v1
 
     goto :goto_43
 
     :cond_81
-    invoke-virtual {v2}, Lcom/google/android/gms/analytics/internal/zzah$zza;->getPayload()[B
+    invoke-virtual {v2}, Lcom/google/android/gms/analytics/internal/zzah$zza;->b()[B
 
     move-result-object v3
 
-    invoke-direct {p0, v0, v3}, Lcom/google/android/gms/analytics/internal/zzah;->zza(Ljava/net/URL;[B)I
+    invoke-direct {p0, v0, v3}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/net/URL;[B)I
 
     move-result v0
 
@@ -1666,13 +1825,13 @@
 
     move-result-object v2
 
-    invoke-virtual {p0, v1, v2}, Lcom/google/android/gms/analytics/internal/zzah;->zza(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v1, v2}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/lang/String;Ljava/lang/Object;)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->zzku()Ljava/util/Set;
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->u()Ljava/util/Set;
 
     move-result-object v1
 
@@ -1688,11 +1847,11 @@
 
     const-string/jumbo v0, "Server instructed the client to stop batching"
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zzbd(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzah;->e(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah;->zzRI:Lcom/google/android/gms/analytics/internal/zzaj;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah;->b:Lcom/google/android/gms/analytics/internal/zzaj;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzaj;->start()V
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzaj;->a()V
 
     :cond_b1
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
@@ -1702,266 +1861,19 @@
     goto :goto_43
 .end method
 
-.method zzc(Ljava/net/URL;)Ljava/net/HttpURLConnection;
-    .registers 5
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p1}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
-
-    move-result-object v0
-
-    instance-of v1, v0, Ljava/net/HttpURLConnection;
-
-    if-nez v1, :cond_12
-
-    new-instance v0, Ljava/io/IOException;
-
-    const-string/jumbo v1, "Failed to obtain http connection"
-
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_12
-    check-cast v0, Ljava/net/HttpURLConnection;
-
-    invoke-virtual {v0, v2}, Ljava/net/HttpURLConnection;->setDefaultUseCaches(Z)V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->zzkD()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Ljava/net/HttpURLConnection;->setConnectTimeout(I)V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->zzkE()I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Ljava/net/HttpURLConnection;->setReadTimeout(I)V
-
-    invoke-virtual {v0, v2}, Ljava/net/HttpURLConnection;->setInstanceFollowRedirects(Z)V
-
-    const-string/jumbo v1, "User-Agent"
-
-    iget-object v2, p0, Lcom/google/android/gms/analytics/internal/zzah;->zzKi:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Ljava/net/HttpURLConnection;->setDoInput(Z)V
-
-    return-object v0
-.end method
-
-.method protected zzir()V
+.method protected a()V
     .registers 3
 
     const-string/jumbo v0, "Network initialized. User agent"
 
-    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzah;->zzKi:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzah;->a:Ljava/lang/String;
 
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/analytics/internal/zzah;->zza(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/analytics/internal/zzah;->a(Ljava/lang/String;Ljava/lang/Object;)V
 
     return-void
 .end method
 
-.method public zzlk()Z
-    .registers 3
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziS()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zzje()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "connectivity"
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/net/ConnectivityManager;
-
-    const/4 v1, 0x0
-
-    :try_start_14
-    invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
-    :try_end_17
-    .catch Ljava/lang/SecurityException; {:try_start_14 .. :try_end_17} :catch_28
-
-    move-result-object v0
-
-    :goto_18
-    if-eqz v0, :cond_20
-
-    invoke-virtual {v0}, Landroid/net/NetworkInfo;->isConnected()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2b
-
-    :cond_20
-    const-string/jumbo v0, "No network connectivity"
-
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zzba(Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    :goto_27
-    return v0
-
-    :catch_28
-    move-exception v0
-
-    move-object v0, v1
-
-    goto :goto_18
-
-    :cond_2b
-    const/4 v0, 0x1
-
-    goto :goto_27
-.end method
-
-.method public zzo(Ljava/util/List;)Ljava/util/List;
-    .registers 10
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/android/gms/analytics/internal/zzab;",
-            ">;)",
-            "Ljava/util/List",
-            "<",
-            "Ljava/lang/Long;",
-            ">;"
-        }
-    .end annotation
-
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziS()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zzje()V
-
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->zzku()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
-
-    move-result v0
-
-    if-nez v0, :cond_2c
-
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah;->zzRI:Lcom/google/android/gms/analytics/internal/zzaj;
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcom/google/android/gms/analytics/internal/zzr;->zzkn()J
-
-    move-result-wide v4
-
-    const-wide/16 v6, 0x3e8
-
-    mul-long/2addr v4, v6
-
-    invoke-virtual {v0, v4, v5}, Lcom/google/android/gms/analytics/internal/zzaj;->zzv(J)Z
-
-    move-result v0
-
-    if-nez v0, :cond_35
-
-    :cond_2c
-    move v1, v2
-
-    move v0, v2
-
-    :cond_2e
-    :goto_2e
-    if-eqz v0, :cond_52
-
-    invoke-virtual {p0, p1, v1}, Lcom/google/android/gms/analytics/internal/zzah;->zza(Ljava/util/List;Z)Ljava/util/List;
-
-    move-result-object v0
-
-    :goto_34
-    return-object v0
-
-    :cond_35
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->zzks()Lcom/google/android/gms/analytics/internal/zzm;
-
-    move-result-object v0
-
-    sget-object v3, Lcom/google/android/gms/analytics/internal/zzm;->zzPQ:Lcom/google/android/gms/analytics/internal/zzm;
-
-    if-eq v0, v3, :cond_50
-
-    move v0, v1
-
-    :goto_42
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Lcom/google/android/gms/analytics/internal/zzr;->zzkt()Lcom/google/android/gms/analytics/internal/zzo;
-
-    move-result-object v3
-
-    sget-object v4, Lcom/google/android/gms/analytics/internal/zzo;->zzQb:Lcom/google/android/gms/analytics/internal/zzo;
-
-    if-eq v3, v4, :cond_2e
-
-    move v1, v2
-
-    goto :goto_2e
-
-    :cond_50
-    move v0, v2
-
-    goto :goto_42
-
-    :cond_52
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/analytics/internal/zzah;->zzp(Ljava/util/List;)Ljava/util/List;
-
-    move-result-object v0
-
-    goto :goto_34
-.end method
-
-.method zzp(Ljava/util/List;)Ljava/util/List;
+.method b(Ljava/util/List;)Ljava/util/List;
     .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2002,7 +1914,7 @@
 
     check-cast v0, Lcom/google/android/gms/analytics/internal/zzab;
 
-    invoke-direct {p0, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zzg(Lcom/google/android/gms/analytics/internal/zzab;)Z
+    invoke-direct {p0, v0}, Lcom/google/android/gms/analytics/internal/zzah;->a(Lcom/google/android/gms/analytics/internal/zzab;)Z
 
     move-result v3
 
@@ -2013,7 +1925,7 @@
     return-object v1
 
     :cond_20
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzab;->zzkZ()J
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzab;->c()J
 
     move-result-wide v4
 
@@ -2027,15 +1939,75 @@
 
     move-result v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/google/android/gms/analytics/internal/zzr;->zzkl()I
+    invoke-virtual {v3}, Lcom/google/android/gms/analytics/internal/zzr;->l()I
 
     move-result v3
 
     if-lt v0, v3, :cond_d
 
     goto :goto_1f
+.end method
+
+.method public b()Z
+    .registers 3
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->m()V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->D()V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzah;->o()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "connectivity"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/net/ConnectivityManager;
+
+    const/4 v1, 0x0
+
+    :try_start_14
+    invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
+    :try_end_17
+    .catch Ljava/lang/SecurityException; {:try_start_14 .. :try_end_17} :catch_28
+
+    move-result-object v0
+
+    :goto_18
+    if-eqz v0, :cond_20
+
+    invoke-virtual {v0}, Landroid/net/NetworkInfo;->isConnected()Z
+
+    move-result v0
+
+    if-nez v0, :cond_2b
+
+    :cond_20
+    const-string/jumbo v0, "No network connectivity"
+
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzah;->b(Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    :goto_27
+    return v0
+
+    :catch_28
+    move-exception v0
+
+    move-object v0, v1
+
+    goto :goto_18
+
+    :cond_2b
+    const/4 v0, 0x1
+
+    goto :goto_27
 .end method

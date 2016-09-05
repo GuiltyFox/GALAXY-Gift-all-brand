@@ -6,19 +6,8 @@
 .implements Landroid/view/View$OnClickListener;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "InternalTabClickListener"
-.end annotation
-
-
 # instance fields
-.field final synthetic this$0:Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
+.field final synthetic a:Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
 
 
 # direct methods
@@ -27,7 +16,7 @@
 
     .prologue
     .line 618
-    iput-object p1, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$InternalTabClickListener;->this$0:Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
+    iput-object p1, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$InternalTabClickListener;->a:Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,8 +25,6 @@
 
 .method synthetic constructor <init>(Lcom/ogaclejapan/smarttablayout/SmartTabLayout;Lcom/ogaclejapan/smarttablayout/SmartTabLayout$1;)V
     .registers 3
-    .param p1, "x0"    # Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
-    .param p2, "x1"    # Lcom/ogaclejapan/smarttablayout/SmartTabLayout$1;
 
     .prologue
     .line 618
@@ -50,17 +37,15 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .registers 4
-    .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 621
     const/4 v0, 0x0
 
-    .local v0, "i":I
     :goto_1
-    iget-object v1, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$InternalTabClickListener;->this$0:Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
+    iget-object v1, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$InternalTabClickListener;->a:Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
 
-    iget-object v1, v1, Lcom/ogaclejapan/smarttablayout/SmartTabLayout;->tabStrip:Lcom/ogaclejapan/smarttablayout/SmartTabStrip;
+    iget-object v1, v1, Lcom/ogaclejapan/smarttablayout/SmartTabLayout;->a:Lcom/ogaclejapan/smarttablayout/SmartTabStrip;
 
     invoke-virtual {v1}, Lcom/ogaclejapan/smarttablayout/SmartTabStrip;->getChildCount()I
 
@@ -69,9 +54,9 @@
     if-ge v0, v1, :cond_2f
 
     .line 622
-    iget-object v1, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$InternalTabClickListener;->this$0:Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
+    iget-object v1, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$InternalTabClickListener;->a:Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
 
-    iget-object v1, v1, Lcom/ogaclejapan/smarttablayout/SmartTabLayout;->tabStrip:Lcom/ogaclejapan/smarttablayout/SmartTabStrip;
+    iget-object v1, v1, Lcom/ogaclejapan/smarttablayout/SmartTabLayout;->a:Lcom/ogaclejapan/smarttablayout/SmartTabStrip;
 
     invoke-virtual {v1, v0}, Lcom/ogaclejapan/smarttablayout/SmartTabStrip;->getChildAt(I)Landroid/view/View;
 
@@ -80,31 +65,28 @@
     if-ne p1, v1, :cond_30
 
     .line 623
-    iget-object v1, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$InternalTabClickListener;->this$0:Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
+    iget-object v1, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$InternalTabClickListener;->a:Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
 
-    # getter for: Lcom/ogaclejapan/smarttablayout/SmartTabLayout;->onTabClickListener:Lcom/ogaclejapan/smarttablayout/SmartTabLayout$OnTabClickListener;
-    invoke-static {v1}, Lcom/ogaclejapan/smarttablayout/SmartTabLayout;->access$500(Lcom/ogaclejapan/smarttablayout/SmartTabLayout;)Lcom/ogaclejapan/smarttablayout/SmartTabLayout$OnTabClickListener;
+    invoke-static {v1}, Lcom/ogaclejapan/smarttablayout/SmartTabLayout;->b(Lcom/ogaclejapan/smarttablayout/SmartTabLayout;)Lcom/ogaclejapan/smarttablayout/SmartTabLayout$OnTabClickListener;
 
     move-result-object v1
 
     if-eqz v1, :cond_26
 
     .line 624
-    iget-object v1, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$InternalTabClickListener;->this$0:Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
+    iget-object v1, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$InternalTabClickListener;->a:Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
 
-    # getter for: Lcom/ogaclejapan/smarttablayout/SmartTabLayout;->onTabClickListener:Lcom/ogaclejapan/smarttablayout/SmartTabLayout$OnTabClickListener;
-    invoke-static {v1}, Lcom/ogaclejapan/smarttablayout/SmartTabLayout;->access$500(Lcom/ogaclejapan/smarttablayout/SmartTabLayout;)Lcom/ogaclejapan/smarttablayout/SmartTabLayout$OnTabClickListener;
+    invoke-static {v1}, Lcom/ogaclejapan/smarttablayout/SmartTabLayout;->b(Lcom/ogaclejapan/smarttablayout/SmartTabLayout;)Lcom/ogaclejapan/smarttablayout/SmartTabLayout$OnTabClickListener;
 
     move-result-object v1
 
-    invoke-interface {v1, v0}, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$OnTabClickListener;->onTabClicked(I)V
+    invoke-interface {v1, v0}, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$OnTabClickListener;->a(I)V
 
     .line 626
     :cond_26
-    iget-object v1, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$InternalTabClickListener;->this$0:Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
+    iget-object v1, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$InternalTabClickListener;->a:Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
 
-    # getter for: Lcom/ogaclejapan/smarttablayout/SmartTabLayout;->viewPager:Landroid/support/v4/view/ViewPager;
-    invoke-static {v1}, Lcom/ogaclejapan/smarttablayout/SmartTabLayout;->access$600(Lcom/ogaclejapan/smarttablayout/SmartTabLayout;)Landroid/support/v4/view/ViewPager;
+    invoke-static {v1}, Lcom/ogaclejapan/smarttablayout/SmartTabLayout;->c(Lcom/ogaclejapan/smarttablayout/SmartTabLayout;)Landroid/support/v4/view/ViewPager;
 
     move-result-object v1
 

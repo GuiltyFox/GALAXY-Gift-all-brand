@@ -3,17 +3,6 @@
 .source "Module.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/Module;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x609
-    name = "SetupContext"
-.end annotation
-
-
 # virtual methods
 .method public abstract addAbstractTypeResolver(Lcom/fasterxml/jackson/databind/AbstractTypeResolver;)V
 .end method

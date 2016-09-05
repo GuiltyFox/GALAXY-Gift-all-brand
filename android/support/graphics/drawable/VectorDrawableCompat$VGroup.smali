@@ -3,21 +3,8 @@
 .source "VectorDrawableCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/graphics/drawable/VectorDrawableCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "VGroup"
-.end annotation
-
-
 # instance fields
-.field private mChangingConfigurations:I
-
-.field final mChildren:Ljava/util/ArrayList;
+.field final a:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
@@ -28,27 +15,29 @@
     .end annotation
 .end field
 
-.field private mGroupName:Ljava/lang/String;
+.field private final b:Landroid/graphics/Matrix;
 
-.field private final mLocalMatrix:Landroid/graphics/Matrix;
+.field private c:F
 
-.field private mPivotX:F
+.field private d:F
 
-.field private mPivotY:F
+.field private e:F
 
-.field private mRotate:F
+.field private f:F
 
-.field private mScaleX:F
+.field private g:F
 
-.field private mScaleY:F
+.field private h:F
 
-.field private final mStackedMatrix:Landroid/graphics/Matrix;
+.field private i:F
 
-.field private mThemeAttrs:[I
+.field private final j:Landroid/graphics/Matrix;
 
-.field private mTranslateX:F
+.field private k:I
 
-.field private mTranslateY:F
+.field private l:[I
+
+.field private m:Ljava/lang/String;
 
 
 # direct methods
@@ -56,67 +45,66 @@
     .registers 4
 
     .prologue
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     const/4 v1, 0x0
 
-    .line 1194
+    .line 1183
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1133
+    .line 1122
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
-    iput-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mStackedMatrix:Landroid/graphics/Matrix;
+    iput-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->b:Landroid/graphics/Matrix;
 
-    .line 1137
+    .line 1126
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mChildren:Ljava/util/ArrayList;
+    iput-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->a:Ljava/util/ArrayList;
 
-    .line 1139
-    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mRotate:F
+    .line 1128
+    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->c:F
 
-    .line 1140
-    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotX:F
+    .line 1129
+    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->d:F
 
-    .line 1141
-    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotY:F
+    .line 1130
+    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->e:F
 
-    .line 1142
-    iput v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleX:F
+    .line 1131
+    iput v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->f:F
 
-    .line 1143
-    iput v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleY:F
+    .line 1132
+    iput v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->g:F
 
-    .line 1144
-    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateX:F
+    .line 1133
+    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->h:F
 
-    .line 1145
-    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateY:F
+    .line 1134
+    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->i:F
 
-    .line 1149
+    .line 1138
     new-instance v0, Landroid/graphics/Matrix;
 
     invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
-    iput-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mLocalMatrix:Landroid/graphics/Matrix;
+    iput-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->j:Landroid/graphics/Matrix;
 
-    .line 1152
+    .line 1141
     const/4 v0, 0x0
 
-    iput-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mGroupName:Ljava/lang/String;
+    iput-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->m:Ljava/lang/String;
 
-    .line 1195
+    .line 1184
     return-void
 .end method
 
 .method public constructor <init>(Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;Landroid/support/v4/util/ArrayMap;)V
-    .registers 11
-    .param p1, "copy"    # Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;
+    .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -130,755 +118,476 @@
     .end annotation
 
     .prologue
-    .local p2, "targetsMap":Landroid/support/v4/util/ArrayMap;, "Landroid/support/v4/util/ArrayMap<Ljava/lang/String;Ljava/lang/Object;>;"
-    const/high16 v7, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    const/4 v6, 0x0
-
-    .line 1154
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 1133
-    new-instance v5, Landroid/graphics/Matrix;
-
-    invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
-
-    iput-object v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mStackedMatrix:Landroid/graphics/Matrix;
-
-    .line 1137
-    new-instance v5, Ljava/util/ArrayList;
-
-    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mChildren:Ljava/util/ArrayList;
-
-    .line 1139
-    iput v6, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mRotate:F
-
-    .line 1140
-    iput v6, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotX:F
-
-    .line 1141
-    iput v6, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotY:F
-
-    .line 1142
-    iput v7, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleX:F
+    const/4 v1, 0x0
 
     .line 1143
-    iput v7, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleY:F
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 1122
+    new-instance v0, Landroid/graphics/Matrix;
+
+    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
+
+    iput-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->b:Landroid/graphics/Matrix;
+
+    .line 1126
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    iput-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->a:Ljava/util/ArrayList;
+
+    .line 1128
+    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->c:F
+
+    .line 1129
+    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->d:F
+
+    .line 1130
+    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->e:F
+
+    .line 1131
+    iput v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->f:F
+
+    .line 1132
+    iput v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->g:F
+
+    .line 1133
+    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->h:F
+
+    .line 1134
+    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->i:F
+
+    .line 1138
+    new-instance v0, Landroid/graphics/Matrix;
+
+    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
+
+    iput-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->j:Landroid/graphics/Matrix;
+
+    .line 1141
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->m:Ljava/lang/String;
 
     .line 1144
-    iput v6, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateX:F
+    iget v0, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->c:F
+
+    iput v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->c:F
 
     .line 1145
-    iput v6, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateY:F
+    iget v0, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->d:F
+
+    iput v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->d:F
+
+    .line 1146
+    iget v0, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->e:F
+
+    iput v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->e:F
+
+    .line 1147
+    iget v0, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->f:F
+
+    iput v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->f:F
+
+    .line 1148
+    iget v0, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->g:F
+
+    iput v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->g:F
 
     .line 1149
-    new-instance v5, Landroid/graphics/Matrix;
+    iget v0, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->h:F
 
-    invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
+    iput v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->h:F
 
-    iput-object v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mLocalMatrix:Landroid/graphics/Matrix;
+    .line 1150
+    iget v0, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->i:F
+
+    iput v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->i:F
+
+    .line 1151
+    iget-object v0, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->l:[I
+
+    iput-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->l:[I
 
     .line 1152
-    const/4 v5, 0x0
+    iget-object v0, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->m:Ljava/lang/String;
 
-    iput-object v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mGroupName:Ljava/lang/String;
+    iput-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->m:Ljava/lang/String;
+
+    .line 1153
+    iget v0, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->k:I
+
+    iput v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->k:I
+
+    .line 1154
+    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->m:Ljava/lang/String;
+
+    if-eqz v0, :cond_5d
 
     .line 1155
-    iget v5, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mRotate:F
+    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->m:Ljava/lang/String;
 
-    iput v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mRotate:F
-
-    .line 1156
-    iget v5, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotX:F
-
-    iput v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotX:F
-
-    .line 1157
-    iget v5, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotY:F
-
-    iput v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotY:F
+    invoke-virtual {p2, v0, p0}, Landroid/support/v4/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 1158
-    iget v5, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleX:F
+    :cond_5d
+    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->j:Landroid/graphics/Matrix;
 
-    iput v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleX:F
+    iget-object v1, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->j:Landroid/graphics/Matrix;
 
-    .line 1159
-    iget v5, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleY:F
-
-    iput v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleY:F
+    invoke-virtual {v0, v1}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
 
     .line 1160
-    iget v5, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateX:F
-
-    iput v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateX:F
+    iget-object v3, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->a:Ljava/util/ArrayList;
 
     .line 1161
-    iget v5, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateY:F
+    const/4 v0, 0x0
 
-    iput v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateY:F
+    move v1, v0
+
+    :goto_68
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    if-ge v1, v0, :cond_b7
 
     .line 1162
-    iget-object v5, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mThemeAttrs:[I
+    invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    iput-object v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mThemeAttrs:[I
+    move-result-object v0
 
     .line 1163
-    iget-object v5, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mGroupName:Ljava/lang/String;
+    instance-of v2, v0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;
 
-    iput-object v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mGroupName:Ljava/lang/String;
+    if-eqz v2, :cond_86
 
     .line 1164
-    iget v5, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mChangingConfigurations:I
-
-    iput v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mChangingConfigurations:I
+    check-cast v0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;
 
     .line 1165
-    iget-object v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mGroupName:Ljava/lang/String;
+    iget-object v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->a:Ljava/util/ArrayList;
 
-    if-eqz v5, :cond_5d
+    new-instance v4, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;
 
-    .line 1166
-    iget-object v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mGroupName:Ljava/lang/String;
+    invoke-direct {v4, v0, p2}, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;-><init>(Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;Landroid/support/v4/util/ArrayMap;)V
 
-    invoke-virtual {p2, v5, p0}, Landroid/support/v4/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1169
-    :cond_5d
-    iget-object v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mLocalMatrix:Landroid/graphics/Matrix;
-
-    iget-object v6, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mLocalMatrix:Landroid/graphics/Matrix;
-
-    invoke-virtual {v5, v6}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
-
-    .line 1171
-    iget-object v0, p1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mChildren:Ljava/util/ArrayList;
-
-    .line 1172
-    .local v0, "children":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Object;>;"
-    const/4 v3, 0x0
-
-    .local v3, "i":I
-    :goto_67
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    move-result v5
-
-    if-ge v3, v5, :cond_b5
-
-    .line 1173
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    .line 1174
-    .local v1, "copyChild":Ljava/lang/Object;
-    instance-of v5, v1, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;
-
-    if-eqz v5, :cond_85
-
-    move-object v2, v1
-
-    .line 1175
-    check-cast v2, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;
-
-    .line 1176
-    .local v2, "copyGroup":Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;
-    iget-object v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mChildren:Ljava/util/ArrayList;
-
-    new-instance v6, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;
-
-    invoke-direct {v6, v2, p2}, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;-><init>(Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;Landroid/support/v4/util/ArrayMap;)V
-
-    invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 1172
-    .end local v1    # "copyChild":Ljava/lang/Object;
-    .end local v2    # "copyGroup":Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;
+    .line 1161
     :cond_82
     :goto_82
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    goto :goto_67
+    move v1, v0
 
-    .line 1178
-    .restart local v1    # "copyChild":Ljava/lang/Object;
-    :cond_85
-    const/4 v4, 0x0
+    goto :goto_68
 
-    .line 1179
-    .local v4, "newPath":Landroid/support/graphics/drawable/VectorDrawableCompat$VPath;
-    instance-of v5, v1, Landroid/support/graphics/drawable/VectorDrawableCompat$VFullPath;
+    .line 1168
+    :cond_86
+    instance-of v2, v0, Landroid/support/graphics/drawable/VectorDrawableCompat$VFullPath;
 
-    if-eqz v5, :cond_a0
+    if-eqz v2, :cond_a1
 
-    .line 1180
-    new-instance v4, Landroid/support/graphics/drawable/VectorDrawableCompat$VFullPath;
+    .line 1169
+    new-instance v2, Landroid/support/graphics/drawable/VectorDrawableCompat$VFullPath;
 
-    .end local v4    # "newPath":Landroid/support/graphics/drawable/VectorDrawableCompat$VPath;
-    check-cast v1, Landroid/support/graphics/drawable/VectorDrawableCompat$VFullPath;
+    check-cast v0, Landroid/support/graphics/drawable/VectorDrawableCompat$VFullPath;
 
-    .end local v1    # "copyChild":Ljava/lang/Object;
-    invoke-direct {v4, v1}, Landroid/support/graphics/drawable/VectorDrawableCompat$VFullPath;-><init>(Landroid/support/graphics/drawable/VectorDrawableCompat$VFullPath;)V
+    invoke-direct {v2, v0}, Landroid/support/graphics/drawable/VectorDrawableCompat$VFullPath;-><init>(Landroid/support/graphics/drawable/VectorDrawableCompat$VFullPath;)V
 
-    .line 1186
-    .restart local v4    # "newPath":Landroid/support/graphics/drawable/VectorDrawableCompat$VPath;
-    :goto_91
-    iget-object v5, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mChildren:Ljava/util/ArrayList;
+    move-object v0, v2
 
-    invoke-virtual {v5, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 1175
+    :goto_92
+    iget-object v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->a:Ljava/util/ArrayList;
 
-    .line 1187
-    iget-object v5, v4, Landroid/support/graphics/drawable/VectorDrawableCompat$VPath;->mPathName:Ljava/lang/String;
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    if-eqz v5, :cond_82
+    .line 1176
+    iget-object v2, v0, Landroid/support/graphics/drawable/VectorDrawableCompat$VPath;->n:Ljava/lang/String;
 
-    .line 1188
-    iget-object v5, v4, Landroid/support/graphics/drawable/VectorDrawableCompat$VPath;->mPathName:Ljava/lang/String;
+    if-eqz v2, :cond_82
 
-    invoke-virtual {p2, v5, v4}, Landroid/support/v4/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 1177
+    iget-object v2, v0, Landroid/support/graphics/drawable/VectorDrawableCompat$VPath;->n:Ljava/lang/String;
+
+    invoke-virtual {p2, v2, v0}, Landroid/support/v4/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_82
 
+    .line 1170
+    :cond_a1
+    instance-of v2, v0, Landroid/support/graphics/drawable/VectorDrawableCompat$VClipPath;
+
+    if-eqz v2, :cond_ae
+
+    .line 1171
+    new-instance v2, Landroid/support/graphics/drawable/VectorDrawableCompat$VClipPath;
+
+    check-cast v0, Landroid/support/graphics/drawable/VectorDrawableCompat$VClipPath;
+
+    invoke-direct {v2, v0}, Landroid/support/graphics/drawable/VectorDrawableCompat$VClipPath;-><init>(Landroid/support/graphics/drawable/VectorDrawableCompat$VClipPath;)V
+
+    move-object v0, v2
+
+    goto :goto_92
+
+    .line 1173
+    :cond_ae
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string/jumbo v1, "Unknown object in the tree!"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
     .line 1181
-    .restart local v1    # "copyChild":Ljava/lang/Object;
-    :cond_a0
-    instance-of v5, v1, Landroid/support/graphics/drawable/VectorDrawableCompat$VClipPath;
-
-    if-eqz v5, :cond_ac
-
-    .line 1182
-    new-instance v4, Landroid/support/graphics/drawable/VectorDrawableCompat$VClipPath;
-
-    .end local v4    # "newPath":Landroid/support/graphics/drawable/VectorDrawableCompat$VPath;
-    check-cast v1, Landroid/support/graphics/drawable/VectorDrawableCompat$VClipPath;
-
-    .end local v1    # "copyChild":Ljava/lang/Object;
-    invoke-direct {v4, v1}, Landroid/support/graphics/drawable/VectorDrawableCompat$VClipPath;-><init>(Landroid/support/graphics/drawable/VectorDrawableCompat$VClipPath;)V
-
-    .restart local v4    # "newPath":Landroid/support/graphics/drawable/VectorDrawableCompat$VPath;
-    goto :goto_91
-
-    .line 1184
-    .restart local v1    # "copyChild":Ljava/lang/Object;
-    :cond_ac
-    new-instance v5, Ljava/lang/IllegalStateException;
-
-    const-string/jumbo v6, "Unknown object in the tree!"
-
-    invoke-direct {v5, v6}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v5
-
-    .line 1192
-    .end local v1    # "copyChild":Ljava/lang/Object;
-    .end local v4    # "newPath":Landroid/support/graphics/drawable/VectorDrawableCompat$VPath;
-    :cond_b5
+    :cond_b7
     return-void
 .end method
 
-.method static synthetic access$100(Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;)I
+.method static synthetic a(Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;
 
     .prologue
-    .line 1130
-    iget v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mChangingConfigurations:I
+    .line 1119
+    iget v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->k:I
 
     return v0
 .end method
 
-.method static synthetic access$200(Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;)F
-    .registers 2
-    .param p0, "x0"    # Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;
+.method private a(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;)V
+    .registers 6
 
     .prologue
-    .line 1130
-    iget v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mRotate:F
+    .line 1206
+    const/4 v0, 0x0
 
-    return v0
+    iput-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->l:[I
+
+    .line 1209
+    const-string/jumbo v0, "rotation"
+
+    const/4 v1, 0x5
+
+    iget v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->c:F
+
+    invoke-static {p1, p2, v0, v1, v2}, Landroid/support/graphics/drawable/TypedArrayUtils;->a(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+
+    move-result v0
+
+    iput v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->c:F
+
+    .line 1212
+    const/4 v0, 0x1
+
+    iget v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->d:F
+
+    invoke-virtual {p1, v0, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
+
+    move-result v0
+
+    iput v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->d:F
+
+    .line 1213
+    const/4 v0, 0x2
+
+    iget v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->e:F
+
+    invoke-virtual {p1, v0, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
+
+    move-result v0
+
+    iput v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->e:F
+
+    .line 1216
+    const-string/jumbo v0, "scaleX"
+
+    const/4 v1, 0x3
+
+    iget v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->f:F
+
+    invoke-static {p1, p2, v0, v1, v2}, Landroid/support/graphics/drawable/TypedArrayUtils;->a(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+
+    move-result v0
+
+    iput v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->f:F
+
+    .line 1220
+    const-string/jumbo v0, "scaleY"
+
+    const/4 v1, 0x4
+
+    iget v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->g:F
+
+    invoke-static {p1, p2, v0, v1, v2}, Landroid/support/graphics/drawable/TypedArrayUtils;->a(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+
+    move-result v0
+
+    iput v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->g:F
+
+    .line 1223
+    const-string/jumbo v0, "translateX"
+
+    const/4 v1, 0x6
+
+    iget v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->h:F
+
+    invoke-static {p1, p2, v0, v1, v2}, Landroid/support/graphics/drawable/TypedArrayUtils;->a(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+
+    move-result v0
+
+    iput v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->h:F
+
+    .line 1225
+    const-string/jumbo v0, "translateY"
+
+    const/4 v1, 0x7
+
+    iget v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->i:F
+
+    invoke-static {p1, p2, v0, v1, v2}, Landroid/support/graphics/drawable/TypedArrayUtils;->a(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
+
+    move-result v0
+
+    iput v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->i:F
+
+    .line 1228
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 1230
+    if-eqz v0, :cond_5a
+
+    .line 1231
+    iput-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->m:Ljava/lang/String;
+
+    .line 1234
+    :cond_5a
+    invoke-direct {p0}, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->b()V
+
+    .line 1235
+    return-void
 .end method
 
-.method static synthetic access$700(Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;)Landroid/graphics/Matrix;
+.method static synthetic b(Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;)Landroid/graphics/Matrix;
     .registers 2
-    .param p0, "x0"    # Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;
 
     .prologue
-    .line 1130
-    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mStackedMatrix:Landroid/graphics/Matrix;
+    .line 1119
+    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->b:Landroid/graphics/Matrix;
 
     return-object v0
 .end method
 
-.method static synthetic access$800(Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;)Landroid/graphics/Matrix;
-    .registers 2
-    .param p0, "x0"    # Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;
-
-    .prologue
-    .line 1130
-    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mLocalMatrix:Landroid/graphics/Matrix;
-
-    return-object v0
-.end method
-
-.method private updateLocalMatrix()V
+.method private b()V
     .registers 5
 
     .prologue
     const/4 v3, 0x0
 
-    .line 1251
-    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mLocalMatrix:Landroid/graphics/Matrix;
+    .line 1240
+    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->j:Landroid/graphics/Matrix;
 
     invoke-virtual {v0}, Landroid/graphics/Matrix;->reset()V
 
-    .line 1252
-    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mLocalMatrix:Landroid/graphics/Matrix;
+    .line 1241
+    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->j:Landroid/graphics/Matrix;
 
-    iget v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotX:F
+    iget v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->d:F
 
     neg-float v1, v1
 
-    iget v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotY:F
+    iget v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->e:F
 
     neg-float v2, v2
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 1253
-    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mLocalMatrix:Landroid/graphics/Matrix;
+    .line 1242
+    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->j:Landroid/graphics/Matrix;
 
-    iget v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleX:F
+    iget v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->f:F
 
-    iget v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleY:F
+    iget v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->g:F
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    .line 1254
-    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mLocalMatrix:Landroid/graphics/Matrix;
+    .line 1243
+    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->j:Landroid/graphics/Matrix;
 
-    iget v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mRotate:F
+    iget v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->c:F
 
     invoke-virtual {v0, v1, v3, v3}, Landroid/graphics/Matrix;->postRotate(FFF)Z
 
-    .line 1255
-    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mLocalMatrix:Landroid/graphics/Matrix;
+    .line 1244
+    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->j:Landroid/graphics/Matrix;
 
-    iget v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateX:F
+    iget v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->h:F
 
-    iget v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotX:F
+    iget v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->d:F
 
     add-float/2addr v1, v2
 
-    iget v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateY:F
+    iget v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->i:F
 
-    iget v3, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotY:F
+    iget v3, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->e:F
 
     add-float/2addr v2, v3
 
     invoke-virtual {v0, v1, v2}, Landroid/graphics/Matrix;->postTranslate(FF)Z
 
-    .line 1256
+    .line 1245
     return-void
 .end method
 
-.method private updateStateFromTypedArray(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;)V
-    .registers 7
-    .param p1, "a"    # Landroid/content/res/TypedArray;
-    .param p2, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
+.method static synthetic c(Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;)Landroid/graphics/Matrix;
+    .registers 2
 
     .prologue
-    .line 1217
-    const/4 v1, 0x0
+    .line 1119
+    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->j:Landroid/graphics/Matrix;
 
-    iput-object v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mThemeAttrs:[I
-
-    .line 1220
-    const-string/jumbo v1, "rotation"
-
-    const/4 v2, 0x5
-
-    iget v3, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mRotate:F
-
-    invoke-static {p1, p2, v1, v2, v3}, Landroid/support/graphics/drawable/TypedArrayUtils;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
-
-    move-result v1
-
-    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mRotate:F
-
-    .line 1223
-    const/4 v1, 0x1
-
-    iget v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotX:F
-
-    invoke-virtual {p1, v1, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
-
-    move-result v1
-
-    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotX:F
-
-    .line 1224
-    const/4 v1, 0x2
-
-    iget v2, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotY:F
-
-    invoke-virtual {p1, v1, v2}, Landroid/content/res/TypedArray;->getFloat(IF)F
-
-    move-result v1
-
-    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotY:F
-
-    .line 1227
-    const-string/jumbo v1, "scaleX"
-
-    const/4 v2, 0x3
-
-    iget v3, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleX:F
-
-    invoke-static {p1, p2, v1, v2, v3}, Landroid/support/graphics/drawable/TypedArrayUtils;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
-
-    move-result v1
-
-    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleX:F
-
-    .line 1231
-    const-string/jumbo v1, "scaleY"
-
-    const/4 v2, 0x4
-
-    iget v3, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleY:F
-
-    invoke-static {p1, p2, v1, v2, v3}, Landroid/support/graphics/drawable/TypedArrayUtils;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
-
-    move-result v1
-
-    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleY:F
-
-    .line 1234
-    const-string/jumbo v1, "translateX"
-
-    const/4 v2, 0x6
-
-    iget v3, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateX:F
-
-    invoke-static {p1, p2, v1, v2, v3}, Landroid/support/graphics/drawable/TypedArrayUtils;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
-
-    move-result v1
-
-    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateX:F
-
-    .line 1236
-    const-string/jumbo v1, "translateY"
-
-    const/4 v2, 0x7
-
-    iget v3, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateY:F
-
-    invoke-static {p1, p2, v1, v2, v3}, Landroid/support/graphics/drawable/TypedArrayUtils;->getNamedFloat(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;Ljava/lang/String;IF)F
-
-    move-result v1
-
-    iput v1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateY:F
-
-    .line 1239
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 1241
-    .local v0, "groupName":Ljava/lang/String;
-    if-eqz v0, :cond_5a
-
-    .line 1242
-    iput-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mGroupName:Ljava/lang/String;
-
-    .line 1245
-    :cond_5a
-    invoke-direct {p0}, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->updateLocalMatrix()V
-
-    .line 1246
-    return-void
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public getGroupName()Ljava/lang/String;
+.method public a()Ljava/lang/String;
     .registers 2
 
     .prologue
-    .line 1198
-    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mGroupName:Ljava/lang/String;
+    .line 1187
+    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->m:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public getLocalMatrix()Landroid/graphics/Matrix;
-    .registers 2
+.method public a(Landroid/content/res/Resources;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;Lorg/xmlpull/v1/XmlPullParser;)V
+    .registers 6
 
     .prologue
-    .line 1202
-    iget-object v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mLocalMatrix:Landroid/graphics/Matrix;
+    .line 1195
+    sget-object v0, Landroid/support/graphics/drawable/AndroidResources;->b:[I
 
-    return-object v0
-.end method
-
-.method public getPivotX()F
-    .registers 2
-
-    .prologue
-    .line 1274
-    iget v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotX:F
-
-    return v0
-.end method
-
-.method public getPivotY()F
-    .registers 2
-
-    .prologue
-    .line 1287
-    iget v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotY:F
-
-    return v0
-.end method
-
-.method public getRotation()F
-    .registers 2
-
-    .prologue
-    .line 1261
-    iget v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mRotate:F
-
-    return v0
-.end method
-
-.method public getScaleX()F
-    .registers 2
-
-    .prologue
-    .line 1300
-    iget v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleX:F
-
-    return v0
-.end method
-
-.method public getScaleY()F
-    .registers 2
-
-    .prologue
-    .line 1313
-    iget v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleY:F
-
-    return v0
-.end method
-
-.method public getTranslateX()F
-    .registers 2
-
-    .prologue
-    .line 1326
-    iget v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateX:F
-
-    return v0
-.end method
-
-.method public getTranslateY()F
-    .registers 2
-
-    .prologue
-    .line 1339
-    iget v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateY:F
-
-    return v0
-.end method
-
-.method public inflate(Landroid/content/res/Resources;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;Lorg/xmlpull/v1/XmlPullParser;)V
-    .registers 7
-    .param p1, "res"    # Landroid/content/res/Resources;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "theme"    # Landroid/content/res/Resources$Theme;
-    .param p4, "parser"    # Lorg/xmlpull/v1/XmlPullParser;
-
-    .prologue
-    .line 1206
-    sget-object v1, Landroid/support/graphics/drawable/AndroidResources;->styleable_VectorDrawableGroup:[I
-
-    invoke-static {p1, p3, p2, v1}, Landroid/support/graphics/drawable/VectorDrawableCommon;->obtainAttributes(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    invoke-static {p1, p3, p2, v0}, Landroid/support/graphics/drawable/VectorDrawableCommon;->b(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 1208
-    .local v0, "a":Landroid/content/res/TypedArray;
-    invoke-direct {p0, v0, p4}, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->updateStateFromTypedArray(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;)V
+    .line 1197
+    invoke-direct {p0, v0, p4}, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->a(Landroid/content/res/TypedArray;Lorg/xmlpull/v1/XmlPullParser;)V
 
-    .line 1209
+    .line 1198
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 1210
-    return-void
-.end method
-
-.method public setPivotX(F)V
-    .registers 3
-    .param p1, "pivotX"    # F
-
-    .prologue
-    .line 1279
-    iget v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotX:F
-
-    cmpl-float v0, p1, v0
-
-    if-eqz v0, :cond_b
-
-    .line 1280
-    iput p1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotX:F
-
-    .line 1281
-    invoke-direct {p0}, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->updateLocalMatrix()V
-
-    .line 1283
-    :cond_b
-    return-void
-.end method
-
-.method public setPivotY(F)V
-    .registers 3
-    .param p1, "pivotY"    # F
-
-    .prologue
-    .line 1292
-    iget v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotY:F
-
-    cmpl-float v0, p1, v0
-
-    if-eqz v0, :cond_b
-
-    .line 1293
-    iput p1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mPivotY:F
-
-    .line 1294
-    invoke-direct {p0}, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->updateLocalMatrix()V
-
-    .line 1296
-    :cond_b
-    return-void
-.end method
-
-.method public setRotation(F)V
-    .registers 3
-    .param p1, "rotation"    # F
-
-    .prologue
-    .line 1266
-    iget v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mRotate:F
-
-    cmpl-float v0, p1, v0
-
-    if-eqz v0, :cond_b
-
-    .line 1267
-    iput p1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mRotate:F
-
-    .line 1268
-    invoke-direct {p0}, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->updateLocalMatrix()V
-
-    .line 1270
-    :cond_b
-    return-void
-.end method
-
-.method public setScaleX(F)V
-    .registers 3
-    .param p1, "scaleX"    # F
-
-    .prologue
-    .line 1305
-    iget v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleX:F
-
-    cmpl-float v0, p1, v0
-
-    if-eqz v0, :cond_b
-
-    .line 1306
-    iput p1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleX:F
-
-    .line 1307
-    invoke-direct {p0}, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->updateLocalMatrix()V
-
-    .line 1309
-    :cond_b
-    return-void
-.end method
-
-.method public setScaleY(F)V
-    .registers 3
-    .param p1, "scaleY"    # F
-
-    .prologue
-    .line 1318
-    iget v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleY:F
-
-    cmpl-float v0, p1, v0
-
-    if-eqz v0, :cond_b
-
-    .line 1319
-    iput p1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mScaleY:F
-
-    .line 1320
-    invoke-direct {p0}, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->updateLocalMatrix()V
-
-    .line 1322
-    :cond_b
-    return-void
-.end method
-
-.method public setTranslateX(F)V
-    .registers 3
-    .param p1, "translateX"    # F
-
-    .prologue
-    .line 1331
-    iget v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateX:F
-
-    cmpl-float v0, p1, v0
-
-    if-eqz v0, :cond_b
-
-    .line 1332
-    iput p1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateX:F
-
-    .line 1333
-    invoke-direct {p0}, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->updateLocalMatrix()V
-
-    .line 1335
-    :cond_b
-    return-void
-.end method
-
-.method public setTranslateY(F)V
-    .registers 3
-    .param p1, "translateY"    # F
-
-    .prologue
-    .line 1344
-    iget v0, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateY:F
-
-    cmpl-float v0, p1, v0
-
-    if-eqz v0, :cond_b
-
-    .line 1345
-    iput p1, p0, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->mTranslateY:F
-
-    .line 1346
-    invoke-direct {p0}, Landroid/support/graphics/drawable/VectorDrawableCompat$VGroup;->updateLocalMatrix()V
-
-    .line 1348
-    :cond_b
+    .line 1199
     return-void
 .end method

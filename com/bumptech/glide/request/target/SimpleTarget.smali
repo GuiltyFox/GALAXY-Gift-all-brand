@@ -16,9 +16,9 @@
 
 
 # instance fields
-.field private final height:I
+.field private final a:I
 
-.field private final width:I
+.field private final b:I
 
 
 # direct methods
@@ -26,7 +26,6 @@
     .registers 2
 
     .prologue
-    .local p0, "this":Lcom/bumptech/glide/request/target/SimpleTarget;, "Lcom/bumptech/glide/request/target/SimpleTarget<TZ;>;"
     const/high16 v0, -0x80000000
 
     .line 36
@@ -38,19 +37,16 @@
 
 .method public constructor <init>(II)V
     .registers 3
-    .param p1, "width"    # I
-    .param p2, "height"    # I
 
     .prologue
     .line 45
-    .local p0, "this":Lcom/bumptech/glide/request/target/SimpleTarget;, "Lcom/bumptech/glide/request/target/SimpleTarget<TZ;>;"
     invoke-direct {p0}, Lcom/bumptech/glide/request/target/BaseTarget;-><init>()V
 
     .line 46
-    iput p1, p0, Lcom/bumptech/glide/request/target/SimpleTarget;->width:I
+    iput p1, p0, Lcom/bumptech/glide/request/target/SimpleTarget;->a:I
 
     .line 47
-    iput p2, p0, Lcom/bumptech/glide/request/target/SimpleTarget;->height:I
+    iput p2, p0, Lcom/bumptech/glide/request/target/SimpleTarget;->b:I
 
     .line 48
     return-void
@@ -58,18 +54,16 @@
 
 
 # virtual methods
-.method public final getSize(Lcom/bumptech/glide/request/target/SizeReadyCallback;)V
+.method public final a(Lcom/bumptech/glide/request/target/SizeReadyCallback;)V
     .registers 5
-    .param p1, "cb"    # Lcom/bumptech/glide/request/target/SizeReadyCallback;
 
     .prologue
     .line 57
-    .local p0, "this":Lcom/bumptech/glide/request/target/SimpleTarget;, "Lcom/bumptech/glide/request/target/SimpleTarget<TZ;>;"
-    iget v0, p0, Lcom/bumptech/glide/request/target/SimpleTarget;->width:I
+    iget v0, p0, Lcom/bumptech/glide/request/target/SimpleTarget;->a:I
 
-    iget v1, p0, Lcom/bumptech/glide/request/target/SimpleTarget;->height:I
+    iget v1, p0, Lcom/bumptech/glide/request/target/SimpleTarget;->b:I
 
-    invoke-static {v0, v1}, Lcom/bumptech/glide/util/Util;->isValidDimensions(II)Z
+    invoke-static {v0, v1}, Lcom/bumptech/glide/util/Util;->a(II)Z
 
     move-result v0
 
@@ -88,7 +82,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/bumptech/glide/request/target/SimpleTarget;->width:I
+    iget v2, p0, Lcom/bumptech/glide/request/target/SimpleTarget;->a:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -100,7 +94,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/bumptech/glide/request/target/SimpleTarget;->height:I
+    iget v2, p0, Lcom/bumptech/glide/request/target/SimpleTarget;->b:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -128,11 +122,11 @@
 
     .line 62
     :cond_41
-    iget v0, p0, Lcom/bumptech/glide/request/target/SimpleTarget;->width:I
+    iget v0, p0, Lcom/bumptech/glide/request/target/SimpleTarget;->a:I
 
-    iget v1, p0, Lcom/bumptech/glide/request/target/SimpleTarget;->height:I
+    iget v1, p0, Lcom/bumptech/glide/request/target/SimpleTarget;->b:I
 
-    invoke-interface {p1, v0, v1}, Lcom/bumptech/glide/request/target/SizeReadyCallback;->onSizeReady(II)V
+    invoke-interface {p1, v0, v1}, Lcom/bumptech/glide/request/target/SizeReadyCallback;->a(II)V
 
     .line 63
     return-void

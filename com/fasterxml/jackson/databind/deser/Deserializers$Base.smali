@@ -6,17 +6,6 @@
 .implements Lcom/fasterxml/jackson/databind/deser/Deserializers;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/Deserializers;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Base"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -32,10 +21,6 @@
 # virtual methods
 .method public findArrayDeserializer(Lcom/fasterxml/jackson/databind/type/ArrayType;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
     .registers 7
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/type/ArrayType;
-    .param p2, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p3, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
-    .param p4, "elementTypeDeserializer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -50,15 +35,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
     .line 234
-    .local p5, "elementDeserializer":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     const/4 v0, 0x0
 
     return-object v0
@@ -66,9 +44,6 @@
 
 .method public findBeanDeserializer(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
     .registers 5
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p2, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p3, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -81,12 +56,6 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
     .line 296
     const/4 v0, 0x0
@@ -96,10 +65,6 @@
 
 .method public findCollectionDeserializer(Lcom/fasterxml/jackson/databind/type/CollectionType;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
     .registers 7
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/type/CollectionType;
-    .param p2, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p3, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
-    .param p4, "elementTypeDeserializer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -114,15 +79,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
     .line 243
-    .local p5, "elementDeserializer":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     const/4 v0, 0x0
 
     return-object v0
@@ -130,10 +88,6 @@
 
 .method public findCollectionLikeDeserializer(Lcom/fasterxml/jackson/databind/type/CollectionLikeType;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
     .registers 7
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/type/CollectionLikeType;
-    .param p2, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p3, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
-    .param p4, "elementTypeDeserializer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -148,15 +102,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
     .line 252
-    .local p5, "elementDeserializer":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     const/4 v0, 0x0
 
     return-object v0
@@ -164,8 +111,6 @@
 
 .method public findEnumDeserializer(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
     .registers 5
-    .param p2, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p3, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -179,15 +124,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
     .line 280
-    .local p1, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v0, 0x0
 
     return-object v0
@@ -195,11 +133,6 @@
 
 .method public findMapDeserializer(Lcom/fasterxml/jackson/databind/type/MapType;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;Lcom/fasterxml/jackson/databind/KeyDeserializer;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
     .registers 8
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/type/MapType;
-    .param p2, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p3, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
-    .param p4, "keyDeserializer"    # Lcom/fasterxml/jackson/databind/KeyDeserializer;
-    .param p5, "elementTypeDeserializer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -215,15 +148,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
     .line 262
-    .local p6, "elementDeserializer":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     const/4 v0, 0x0
 
     return-object v0
@@ -231,11 +157,6 @@
 
 .method public findMapLikeDeserializer(Lcom/fasterxml/jackson/databind/type/MapLikeType;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;Lcom/fasterxml/jackson/databind/KeyDeserializer;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
     .registers 8
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/type/MapLikeType;
-    .param p2, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p3, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
-    .param p4, "keyDeserializer"    # Lcom/fasterxml/jackson/databind/KeyDeserializer;
-    .param p5, "elementTypeDeserializer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -251,15 +172,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
     .line 272
-    .local p6, "elementDeserializer":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     const/4 v0, 0x0
 
     return-object v0
@@ -267,8 +181,6 @@
 
 .method public findTreeNodeDeserializer(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
     .registers 5
-    .param p2, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p3, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -284,15 +196,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
     .line 288
-    .local p1, "nodeType":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/fasterxml/jackson/databind/JsonNode;>;"
     const/4 v0, 0x0
 
     return-object v0

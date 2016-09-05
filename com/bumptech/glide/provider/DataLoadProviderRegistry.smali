@@ -4,11 +4,11 @@
 
 
 # static fields
-.field private static final GET_KEY:Lcom/bumptech/glide/util/MultiClassKey;
+.field private static final a:Lcom/bumptech/glide/util/MultiClassKey;
 
 
 # instance fields
-.field private final providers:Ljava/util/Map;
+.field private final b:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",
@@ -31,7 +31,7 @@
 
     invoke-direct {v0}, Lcom/bumptech/glide/util/MultiClassKey;-><init>()V
 
-    sput-object v0, Lcom/bumptech/glide/provider/DataLoadProviderRegistry;->GET_KEY:Lcom/bumptech/glide/util/MultiClassKey;
+    sput-object v0, Lcom/bumptech/glide/provider/DataLoadProviderRegistry;->a:Lcom/bumptech/glide/util/MultiClassKey;
 
     return-void
 .end method
@@ -48,15 +48,15 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/bumptech/glide/provider/DataLoadProviderRegistry;->providers:Ljava/util/Map;
+    iput-object v0, p0, Lcom/bumptech/glide/provider/DataLoadProviderRegistry;->b:Ljava/util/Map;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public get(Ljava/lang/Class;Ljava/lang/Class;)Lcom/bumptech/glide/provider/DataLoadProvider;
-    .registers 7
+.method public a(Ljava/lang/Class;Ljava/lang/Class;)Lcom/bumptech/glide/provider/DataLoadProvider;
+    .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -75,32 +75,29 @@
 
     .prologue
     .line 44
-    .local p1, "dataClass":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
-    .local p2, "resourceClass":Ljava/lang/Class;, "Ljava/lang/Class<TZ;>;"
-    sget-object v2, Lcom/bumptech/glide/provider/DataLoadProviderRegistry;->GET_KEY:Lcom/bumptech/glide/util/MultiClassKey;
+    sget-object v1, Lcom/bumptech/glide/provider/DataLoadProviderRegistry;->a:Lcom/bumptech/glide/util/MultiClassKey;
 
-    monitor-enter v2
+    monitor-enter v1
 
     .line 45
     :try_start_3
-    sget-object v1, Lcom/bumptech/glide/provider/DataLoadProviderRegistry;->GET_KEY:Lcom/bumptech/glide/util/MultiClassKey;
+    sget-object v0, Lcom/bumptech/glide/provider/DataLoadProviderRegistry;->a:Lcom/bumptech/glide/util/MultiClassKey;
 
-    invoke-virtual {v1, p1, p2}, Lcom/bumptech/glide/util/MultiClassKey;->set(Ljava/lang/Class;Ljava/lang/Class;)V
+    invoke-virtual {v0, p1, p2}, Lcom/bumptech/glide/util/MultiClassKey;->a(Ljava/lang/Class;Ljava/lang/Class;)V
 
     .line 46
-    iget-object v1, p0, Lcom/bumptech/glide/provider/DataLoadProviderRegistry;->providers:Ljava/util/Map;
+    iget-object v0, p0, Lcom/bumptech/glide/provider/DataLoadProviderRegistry;->b:Ljava/util/Map;
 
-    sget-object v3, Lcom/bumptech/glide/provider/DataLoadProviderRegistry;->GET_KEY:Lcom/bumptech/glide/util/MultiClassKey;
+    sget-object v2, Lcom/bumptech/glide/provider/DataLoadProviderRegistry;->a:Lcom/bumptech/glide/util/MultiClassKey;
 
-    invoke-interface {v1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/bumptech/glide/provider/DataLoadProvider;
 
     .line 47
-    .local v0, "result":Lcom/bumptech/glide/provider/DataLoadProvider;, "Lcom/bumptech/glide/provider/DataLoadProvider<**>;"
-    monitor-exit v2
+    monitor-exit v1
     :try_end_13
     .catchall {:try_start_3 .. :try_end_13} :catchall_1a
 
@@ -108,7 +105,7 @@
     if-nez v0, :cond_19
 
     .line 49
-    invoke-static {}, Lcom/bumptech/glide/provider/EmptyDataLoadProvider;->get()Lcom/bumptech/glide/provider/DataLoadProvider;
+    invoke-static {}, Lcom/bumptech/glide/provider/EmptyDataLoadProvider;->e()Lcom/bumptech/glide/provider/DataLoadProvider;
 
     move-result-object v0
 
@@ -117,19 +114,18 @@
     return-object v0
 
     .line 47
-    .end local v0    # "result":Lcom/bumptech/glide/provider/DataLoadProvider;, "Lcom/bumptech/glide/provider/DataLoadProvider<**>;"
     :catchall_1a
-    move-exception v1
+    move-exception v0
 
     :try_start_1b
-    monitor-exit v2
+    monitor-exit v1
     :try_end_1c
     .catchall {:try_start_1b .. :try_end_1c} :catchall_1a
 
-    throw v1
+    throw v0
 .end method
 
-.method public register(Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/provider/DataLoadProvider;)V
+.method public a(Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/provider/DataLoadProvider;)V
     .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -149,10 +145,7 @@
 
     .prologue
     .line 30
-    .local p1, "dataClass":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
-    .local p2, "resourceClass":Ljava/lang/Class;, "Ljava/lang/Class<TZ;>;"
-    .local p3, "provider":Lcom/bumptech/glide/provider/DataLoadProvider;, "Lcom/bumptech/glide/provider/DataLoadProvider<TT;TZ;>;"
-    iget-object v0, p0, Lcom/bumptech/glide/provider/DataLoadProviderRegistry;->providers:Ljava/util/Map;
+    iget-object v0, p0, Lcom/bumptech/glide/provider/DataLoadProviderRegistry;->b:Ljava/util/Map;
 
     new-instance v1, Lcom/bumptech/glide/util/MultiClassKey;
 

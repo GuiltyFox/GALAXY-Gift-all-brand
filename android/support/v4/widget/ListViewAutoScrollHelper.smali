@@ -4,20 +4,19 @@
 
 
 # instance fields
-.field private final mTarget:Landroid/widget/ListView;
+.field private final a:Landroid/widget/ListView;
 
 
 # direct methods
 .method public constructor <init>(Landroid/widget/ListView;)V
     .registers 2
-    .param p1, "target"    # Landroid/widget/ListView;
 
     .prologue
     .line 30
     invoke-direct {p0, p1}, Landroid/support/v4/widget/AutoScrollHelper;-><init>(Landroid/view/View;)V
 
     .line 32
-    iput-object p1, p0, Landroid/support/v4/widget/ListViewAutoScrollHelper;->mTarget:Landroid/widget/ListView;
+    iput-object p1, p0, Landroid/support/v4/widget/ListViewAutoScrollHelper;->a:Landroid/widget/ListView;
 
     .line 33
     return-void
@@ -25,9 +24,21 @@
 
 
 # virtual methods
-.method public canTargetScrollHorizontally(I)Z
+.method public a(II)V
+    .registers 4
+
+    .prologue
+    .line 37
+    iget-object v0, p0, Landroid/support/v4/widget/ListViewAutoScrollHelper;->a:Landroid/widget/ListView;
+
+    invoke-static {v0, p2}, Landroid/support/v4/widget/ListViewCompat;->a(Landroid/widget/ListView;I)V
+
+    .line 38
+    return-void
+.end method
+
+.method public e(I)Z
     .registers 3
-    .param p1, "direction"    # I
 
     .prologue
     .line 43
@@ -36,77 +47,69 @@
     return v0
 .end method
 
-.method public canTargetScrollVertically(I)Z
-    .registers 12
-    .param p1, "direction"    # I
+.method public f(I)Z
+    .registers 8
 
     .prologue
-    const/4 v7, 0x0
+    const/4 v0, 0x0
 
     .line 48
-    iget-object v6, p0, Landroid/support/v4/widget/ListViewAutoScrollHelper;->mTarget:Landroid/widget/ListView;
+    iget-object v1, p0, Landroid/support/v4/widget/ListViewAutoScrollHelper;->a:Landroid/widget/ListView;
 
     .line 49
-    .local v6, "target":Landroid/widget/ListView;
-    invoke-virtual {v6}, Landroid/widget/ListView;->getCount()I
+    invoke-virtual {v1}, Landroid/widget/ListView;->getCount()I
 
-    move-result v3
+    move-result v2
 
     .line 50
-    .local v3, "itemCount":I
-    if-nez v3, :cond_a
+    if-nez v2, :cond_a
 
     .line 80
     :cond_9
     :goto_9
-    return v7
+    return v0
 
     .line 54
     :cond_a
-    invoke-virtual {v6}, Landroid/widget/ListView;->getChildCount()I
+    invoke-virtual {v1}, Landroid/widget/ListView;->getChildCount()I
 
-    move-result v0
+    move-result v3
 
     .line 55
-    .local v0, "childCount":I
-    invoke-virtual {v6}, Landroid/widget/ListView;->getFirstVisiblePosition()I
+    invoke-virtual {v1}, Landroid/widget/ListView;->getFirstVisiblePosition()I
 
-    move-result v1
+    move-result v4
 
     .line 56
-    .local v1, "firstPosition":I
-    add-int v4, v1, v0
+    add-int v5, v4, v3
 
     .line 58
-    .local v4, "lastPosition":I
     if-lez p1, :cond_2a
 
     .line 60
-    if-lt v4, v3, :cond_28
+    if-lt v5, v2, :cond_28
 
     .line 61
-    add-int/lit8 v8, v0, -0x1
+    add-int/lit8 v2, v3, -0x1
 
-    invoke-virtual {v6, v8}, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v1, v2}, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v5
+    move-result-object v2
 
     .line 62
-    .local v5, "lastView":Landroid/view/View;
-    invoke-virtual {v5}, Landroid/view/View;->getBottom()I
+    invoke-virtual {v2}, Landroid/view/View;->getBottom()I
 
-    move-result v8
+    move-result v2
 
-    invoke-virtual {v6}, Landroid/widget/ListView;->getHeight()I
+    invoke-virtual {v1}, Landroid/widget/ListView;->getHeight()I
 
-    move-result v9
+    move-result v1
 
-    if-le v8, v9, :cond_9
+    if-le v2, v1, :cond_9
 
     .line 80
-    .end local v5    # "lastView":Landroid/view/View;
     :cond_28
-    const/4 v7, 0x1
+    const/4 v0, 0x1
 
     goto :goto_9
 
@@ -115,35 +118,19 @@
     if-gez p1, :cond_9
 
     .line 68
-    if-gtz v1, :cond_28
+    if-gtz v4, :cond_28
 
     .line 69
-    invoke-virtual {v6, v7}, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v1, v0}, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 70
-    .local v2, "firstView":Landroid/view/View;
-    invoke-virtual {v2}, Landroid/view/View;->getTop()I
+    invoke-virtual {v1}, Landroid/view/View;->getTop()I
 
-    move-result v8
+    move-result v1
 
-    if-ltz v8, :cond_28
+    if-ltz v1, :cond_28
 
     goto :goto_9
-.end method
-
-.method public scrollTargetBy(II)V
-    .registers 4
-    .param p1, "deltaX"    # I
-    .param p2, "deltaY"    # I
-
-    .prologue
-    .line 37
-    iget-object v0, p0, Landroid/support/v4/widget/ListViewAutoScrollHelper;->mTarget:Landroid/widget/ListView;
-
-    invoke-static {v0, p2}, Landroid/support/v4/widget/ListViewCompat;->scrollListBy(Landroid/widget/ListView;I)V
-
-    .line 38
-    return-void
 .end method

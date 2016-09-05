@@ -11,24 +11,18 @@
     value = Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->onActivityResult(IILandroid/content/Intent;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+.field final synthetic a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
     .prologue
     .line 3715
-    iput-object p1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iput-object p1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,37 +36,33 @@
 
     .prologue
     .line 3718
-    iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
     new-instance v1, Lcom/bzbs/lib/survey/util/GPSTracker;
 
-    iget-object v2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
-    # getter for: Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->mActivity:Landroid/app/Activity;
-    invoke-static {v2}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->access$2700(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)Landroid/app/Activity;
+    invoke-static {v2}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->w(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)Landroid/app/Activity;
 
     move-result-object v2
 
     invoke-direct {v1, v2}, Lcom/bzbs/lib/survey/util/GPSTracker;-><init>(Landroid/content/Context;)V
 
-    # setter for: Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->gps:Lcom/bzbs/lib/survey/util/GPSTracker;
-    invoke-static {v0, v1}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->access$2602(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;Lcom/bzbs/lib/survey/util/GPSTracker;)Lcom/bzbs/lib/survey/util/GPSTracker;
+    invoke-static {v0, v1}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->a(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;Lcom/bzbs/lib/survey/util/GPSTracker;)Lcom/bzbs/lib/survey/util/GPSTracker;
 
     .line 3720
-    iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
-    # getter for: Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->etLocation:Landroid/widget/TextView;
-    invoke-static {v0}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->access$2500(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)Landroid/widget/TextView;
+    invoke-static {v0}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->y(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)Landroid/widget/TextView;
 
     move-result-object v0
 
     if-eqz v0, :cond_4d
 
     .line 3721
-    iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
-    # getter for: Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->etLocation:Landroid/widget/TextView;
-    invoke-static {v0}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->access$2500(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)Landroid/widget/TextView;
+    invoke-static {v0}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->y(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)Landroid/widget/TextView;
 
     move-result-object v0
 
@@ -80,14 +70,13 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
-    # getter for: Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->gps:Lcom/bzbs/lib/survey/util/GPSTracker;
-    invoke-static {v2}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->access$2600(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)Lcom/bzbs/lib/survey/util/GPSTracker;
+    invoke-static {v2}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->v(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)Lcom/bzbs/lib/survey/util/GPSTracker;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/bzbs/lib/survey/util/GPSTracker;->getLatitude()D
+    invoke-virtual {v2}, Lcom/bzbs/lib/survey/util/GPSTracker;->b()D
 
     move-result-wide v2
 
@@ -101,14 +90,13 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
-    # getter for: Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->gps:Lcom/bzbs/lib/survey/util/GPSTracker;
-    invoke-static {v2}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->access$2600(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)Lcom/bzbs/lib/survey/util/GPSTracker;
+    invoke-static {v2}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->v(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)Lcom/bzbs/lib/survey/util/GPSTracker;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Lcom/bzbs/lib/survey/util/GPSTracker;->getLongitude()D
+    invoke-virtual {v2}, Lcom/bzbs/lib/survey/util/GPSTracker;->c()D
 
     move-result-wide v2
 
@@ -124,36 +112,34 @@
 
     .line 3723
     :cond_4d
-    iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
-    iget-object v1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
-    # getter for: Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->gps:Lcom/bzbs/lib/survey/util/GPSTracker;
-    invoke-static {v1}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->access$2600(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)Lcom/bzbs/lib/survey/util/GPSTracker;
+    invoke-static {v1}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->v(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)Lcom/bzbs/lib/survey/util/GPSTracker;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/bzbs/lib/survey/util/GPSTracker;->getLatitude()D
+    invoke-virtual {v1}, Lcom/bzbs/lib/survey/util/GPSTracker;->b()D
 
     move-result-wide v2
 
-    iput-wide v2, v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->lat:D
+    iput-wide v2, v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->m:D
 
     .line 3724
-    iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
-    iget-object v1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$15;->a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
-    # getter for: Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->gps:Lcom/bzbs/lib/survey/util/GPSTracker;
-    invoke-static {v1}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->access$2600(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)Lcom/bzbs/lib/survey/util/GPSTracker;
+    invoke-static {v1}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->v(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)Lcom/bzbs/lib/survey/util/GPSTracker;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/bzbs/lib/survey/util/GPSTracker;->getLongitude()D
+    invoke-virtual {v1}, Lcom/bzbs/lib/survey/util/GPSTracker;->c()D
 
     move-result-wide v2
 
-    iput-wide v2, v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->lng:D
+    iput-wide v2, v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->n:D
 
     .line 3725
     return-void

@@ -6,19 +6,8 @@
 .implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/request/target/ViewTarget$SizeDeterminer;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "SizeDeterminerLayoutListener"
-.end annotation
-
-
 # instance fields
-.field private final sizeDeterminerRef:Ljava/lang/ref/WeakReference;
+.field private final a:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference",
@@ -33,7 +22,6 @@
 # direct methods
 .method public constructor <init>(Lcom/bumptech/glide/request/target/ViewTarget$SizeDeterminer;)V
     .registers 3
-    .param p1, "sizeDeterminer"    # Lcom/bumptech/glide/request/target/ViewTarget$SizeDeterminer;
 
     .prologue
     .line 281
@@ -44,7 +32,7 @@
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object v0, p0, Lcom/bumptech/glide/request/target/ViewTarget$SizeDeterminer$SizeDeterminerLayoutListener;->sizeDeterminerRef:Ljava/lang/ref/WeakReference;
+    iput-object v0, p0, Lcom/bumptech/glide/request/target/ViewTarget$SizeDeterminer$SizeDeterminerLayoutListener;->a:Ljava/lang/ref/WeakReference;
 
     .line 283
     return-void
@@ -53,64 +41,62 @@
 
 # virtual methods
 .method public onPreDraw()Z
-    .registers 5
+    .registers 4
 
     .prologue
     .line 287
-    const-string/jumbo v1, "ViewTarget"
+    const-string/jumbo v0, "ViewTarget"
 
-    const/4 v2, 0x2
+    const/4 v1, 0x2
 
-    invoke-static {v1, v2}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+    invoke-static {v0, v1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_24
+    if-eqz v0, :cond_24
 
     .line 288
-    const-string/jumbo v1, "ViewTarget"
+    const-string/jumbo v0, "ViewTarget"
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "OnGlobalLayoutListener called listener="
+    const-string/jumbo v2, "OnGlobalLayoutListener called listener="
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 290
     :cond_24
-    iget-object v1, p0, Lcom/bumptech/glide/request/target/ViewTarget$SizeDeterminer$SizeDeterminerLayoutListener;->sizeDeterminerRef:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/ViewTarget$SizeDeterminer$SizeDeterminerLayoutListener;->a:Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/bumptech/glide/request/target/ViewTarget$SizeDeterminer;
 
     .line 291
-    .local v0, "sizeDeterminer":Lcom/bumptech/glide/request/target/ViewTarget$SizeDeterminer;
     if-eqz v0, :cond_31
 
     .line 292
-    # invokes: Lcom/bumptech/glide/request/target/ViewTarget$SizeDeterminer;->checkCurrentDimens()V
-    invoke-static {v0}, Lcom/bumptech/glide/request/target/ViewTarget$SizeDeterminer;->access$000(Lcom/bumptech/glide/request/target/ViewTarget$SizeDeterminer;)V
+    invoke-static {v0}, Lcom/bumptech/glide/request/target/ViewTarget$SizeDeterminer;->a(Lcom/bumptech/glide/request/target/ViewTarget$SizeDeterminer;)V
 
     .line 294
     :cond_31
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    return v1
+    return v0
 .end method

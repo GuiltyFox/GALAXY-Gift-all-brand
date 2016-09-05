@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/core/JsonFactory;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4019
-    name = "Feature"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum",
@@ -99,7 +90,6 @@
 
 .method private constructor <init>(Ljava/lang/String;IZ)V
     .registers 4
-    .param p3, "defaultState"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)V"
@@ -119,56 +109,48 @@
     .registers 6
 
     .prologue
-    .line 119
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     .line 120
-    .local v2, "flags":I
     invoke-static {}, Lcom/fasterxml/jackson/core/JsonFactory$Feature;->values()[Lcom/fasterxml/jackson/core/JsonFactory$Feature;
 
-    move-result-object v0
+    move-result-object v2
 
-    .local v0, "arr$":[Lcom/fasterxml/jackson/core/JsonFactory$Feature;
-    array-length v4, v0
+    array-length v3, v2
 
-    .local v4, "len$":I
-    const/4 v3, 0x0
+    move v1, v0
 
-    .local v3, "i$":I
     :goto_7
-    if-ge v3, v4, :cond_19
+    if-ge v1, v3, :cond_19
 
-    aget-object v1, v0, v3
+    aget-object v4, v2, v1
 
     .line 121
-    .local v1, "f":Lcom/fasterxml/jackson/core/JsonFactory$Feature;
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/JsonFactory$Feature;->enabledByDefault()Z
+    invoke-virtual {v4}, Lcom/fasterxml/jackson/core/JsonFactory$Feature;->enabledByDefault()Z
 
     move-result v5
 
     if-eqz v5, :cond_16
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/JsonFactory$Feature;->getMask()I
+    invoke-virtual {v4}, Lcom/fasterxml/jackson/core/JsonFactory$Feature;->getMask()I
 
-    move-result v5
+    move-result v4
 
-    or-int/2addr v2, v5
+    or-int/2addr v0, v4
 
     .line 120
     :cond_16
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_7
 
     .line 123
-    .end local v1    # "f":Lcom/fasterxml/jackson/core/JsonFactory$Feature;
     :cond_19
-    return v2
+    return v0
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonFactory$Feature;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 60
@@ -213,7 +195,6 @@
 
 .method public enabledIn(I)Z
     .registers 3
-    .param p1, "flags"    # I
 
     .prologue
     .line 129

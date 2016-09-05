@@ -193,8 +193,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/core/io/IOContext;I)V
     .registers 9
-    .param p1, "ctxt"    # Lcom/fasterxml/jackson/core/io/IOContext;
-    .param p2, "features"    # I
 
     .prologue
     const-wide/16 v4, 0x0
@@ -271,47 +269,40 @@
     move-result-object v0
 
     .line 290
-    .local v0, "dups":Lcom/fasterxml/jackson/core/json/DupDetector;
     :cond_36
     invoke-static {v0}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->createRootContext(Lcom/fasterxml/jackson/core/json/DupDetector;)Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
     .line 291
     return-void
 .end method
 
 .method private _parseSlowFloat(I)V
-    .registers 6
-    .param p1, "expType"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 5
 
     .prologue
-    const/16 v1, 0x10
+    const/16 v0, 0x10
 
     .line 761
-    if-ne p1, v1, :cond_11
+    if-ne p1, v0, :cond_11
 
     .line 762
     :try_start_4
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/util/TextBuffer;->contentsAsDecimal()Ljava/math/BigDecimal;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/TextBuffer;->contentsAsDecimal()Ljava/math/BigDecimal;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberBigDecimal:Ljava/math/BigDecimal;
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberBigDecimal:Ljava/math/BigDecimal;
 
     .line 763
-    const/16 v1, 0x10
+    const/16 v0, 0x10
 
-    iput v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
 
     .line 773
     :goto_10
@@ -319,18 +310,18 @@
 
     .line 766
     :cond_11
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/util/TextBuffer;->contentsAsDouble()D
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/TextBuffer;->contentsAsDouble()D
 
-    move-result-wide v2
+    move-result-wide v0
 
-    iput-wide v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberDouble:D
+    iput-wide v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberDouble:D
 
     .line 767
-    const/16 v1, 0x8
+    const/16 v0, 0x8
 
-    iput v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
     :try_end_1d
     .catch Ljava/lang/NumberFormatException; {:try_start_4 .. :try_end_1d} :catch_1e
 
@@ -341,7 +332,6 @@
     move-exception v0
 
     .line 771
-    .local v0, "nex":Ljava/lang/NumberFormatException;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -379,34 +369,24 @@
 
 .method private _parseSlowInt(I[CII)V
     .registers 9
-    .param p1, "expType"    # I
-    .param p2, "buf"    # [C
-    .param p3, "offset"    # I
-    .param p4, "len"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 777
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
 
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/core/util/TextBuffer;->contentsAsString()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/TextBuffer;->contentsAsString()Ljava/lang/String;
 
     move-result-object v1
 
     .line 780
-    .local v1, "numStr":Ljava/lang/String;
     :try_start_6
-    iget-boolean v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberNegative:Z
+    iget-boolean v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberNegative:Z
 
-    invoke-static {p2, p3, p4, v2}, Lcom/fasterxml/jackson/core/io/NumberInput;->inLongRange([CIIZ)Z
+    invoke-static {p2, p3, p4, v0}, Lcom/fasterxml/jackson/core/io/NumberInput;->inLongRange([CIIZ)Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_18
+    if-eqz v0, :cond_18
 
     .line 782
     invoke-static {v1}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
@@ -416,9 +396,9 @@
     iput-wide v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberLong:J
 
     .line 783
-    const/4 v2, 0x2
+    const/4 v0, 0x2
 
-    iput v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
 
     .line 793
     :goto_17
@@ -426,16 +406,16 @@
 
     .line 786
     :cond_18
-    new-instance v2, Ljava/math/BigInteger;
+    new-instance v0, Ljava/math/BigInteger;
 
-    invoke-direct {v2, v1}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
 
-    iput-object v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberBigInt:Ljava/math/BigInteger;
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberBigInt:Ljava/math/BigInteger;
 
     .line 787
-    const/4 v2, 0x4
+    const/4 v0, 0x4
 
-    iput v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
     :try_end_22
     .catch Ljava/lang/NumberFormatException; {:try_start_6 .. :try_end_22} :catch_23
 
@@ -446,7 +426,6 @@
     move-exception v0
 
     .line 791
-    .local v0, "nex":Ljava/lang/NumberFormatException;
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -459,19 +438,19 @@
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string/jumbo v3, "\'"
+    const-string/jumbo v2, "\'"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {p0, v2, v0}, Lcom/fasterxml/jackson/core/base/ParserBase;->_wrapError(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-virtual {p0, v1, v0}, Lcom/fasterxml/jackson/core/base/ParserBase;->_wrapError(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_17
 .end method
@@ -479,36 +458,23 @@
 
 # virtual methods
 .method protected abstract _closeInput()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 .end method
 
 .method protected final _decodeBase64Escape(Lcom/fasterxml/jackson/core/Base64Variant;CI)I
-    .registers 7
-    .param p1, "b64variant"    # Lcom/fasterxml/jackson/core/Base64Variant;
-    .param p2, "ch"    # C
-    .param p3, "index"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 6
 
     .prologue
     .line 993
-    const/16 v2, 0x5c
+    const/16 v0, 0x5c
 
-    if-eq p2, v2, :cond_9
+    if-eq p2, v0, :cond_9
 
     .line 994
     invoke-virtual {p0, p1, p2, p3}, Lcom/fasterxml/jackson/core/base/ParserBase;->reportInvalidBase64Char(Lcom/fasterxml/jackson/core/Base64Variant;II)Ljava/lang/IllegalArgumentException;
 
-    move-result-object v2
+    move-result-object v0
 
-    throw v2
+    throw v0
 
     .line 996
     :cond_9
@@ -517,10 +483,9 @@
     move-result v1
 
     .line 998
-    .local v1, "unescaped":C
-    const/16 v2, 0x20
+    const/16 v0, 0x20
 
-    if-gt v1, v2, :cond_15
+    if-gt v1, v0, :cond_15
 
     .line 999
     if-nez p3, :cond_15
@@ -539,40 +504,31 @@
     move-result v0
 
     .line 1005
-    .local v0, "bits":I
     if-gez v0, :cond_14
 
     .line 1006
     invoke-virtual {p0, p1, v1, p3}, Lcom/fasterxml/jackson/core/base/ParserBase;->reportInvalidBase64Char(Lcom/fasterxml/jackson/core/Base64Variant;II)Ljava/lang/IllegalArgumentException;
 
-    move-result-object v2
+    move-result-object v0
 
-    throw v2
+    throw v0
 .end method
 
 .method protected final _decodeBase64Escape(Lcom/fasterxml/jackson/core/Base64Variant;II)I
-    .registers 7
-    .param p1, "b64variant"    # Lcom/fasterxml/jackson/core/Base64Variant;
-    .param p2, "ch"    # I
-    .param p3, "index"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 6
 
     .prologue
     .line 972
-    const/16 v2, 0x5c
+    const/16 v0, 0x5c
 
-    if-eq p2, v2, :cond_9
+    if-eq p2, v0, :cond_9
 
     .line 973
     invoke-virtual {p0, p1, p2, p3}, Lcom/fasterxml/jackson/core/base/ParserBase;->reportInvalidBase64Char(Lcom/fasterxml/jackson/core/Base64Variant;II)Ljava/lang/IllegalArgumentException;
 
-    move-result-object v2
+    move-result-object v0
 
-    throw v2
+    throw v0
 
     .line 975
     :cond_9
@@ -581,10 +537,9 @@
     move-result v1
 
     .line 977
-    .local v1, "unescaped":I
-    const/16 v2, 0x20
+    const/16 v0, 0x20
 
-    if-gt v1, v2, :cond_15
+    if-gt v1, v0, :cond_15
 
     .line 978
     if-nez p3, :cond_15
@@ -603,24 +558,18 @@
     move-result v0
 
     .line 984
-    .local v0, "bits":I
     if-gez v0, :cond_14
 
     .line 985
     invoke-virtual {p0, p1, v1, p3}, Lcom/fasterxml/jackson/core/base/ParserBase;->reportInvalidBase64Char(Lcom/fasterxml/jackson/core/Base64Variant;II)Ljava/lang/IllegalArgumentException;
 
-    move-result-object v2
+    move-result-object v0
 
-    throw v2
+    throw v0
 .end method
 
 .method protected _decodeEscaped()C
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 966
@@ -633,11 +582,6 @@
 
 .method protected final _eofAsNextChar()I
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 458
@@ -650,11 +594,6 @@
 .end method
 
 .method protected abstract _finishString()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 .end method
 
 .method public _getByteArrayBuilder()Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
@@ -690,11 +629,6 @@
 
 .method protected _handleEOF()V
     .registers 4
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 449
@@ -767,182 +701,160 @@
 .end method
 
 .method protected _parseNumericValue(I)V
-    .registers 11
-    .param p1, "expType"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 7
 
     .prologue
-    const/4 v8, 0x1
+    const/4 v4, 0x1
 
     .line 703
-    iget-object v6, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    sget-object v7, Lcom/fasterxml/jackson/core/JsonToken;->VALUE_NUMBER_INT:Lcom/fasterxml/jackson/core/JsonToken;
+    sget-object v1, Lcom/fasterxml/jackson/core/JsonToken;->VALUE_NUMBER_INT:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-ne v6, v7, :cond_66
+    if-ne v0, v1, :cond_66
 
     .line 704
-    iget-object v6, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
 
-    invoke-virtual {v6}, Lcom/fasterxml/jackson/core/util/TextBuffer;->getTextBuffer()[C
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/TextBuffer;->getTextBuffer()[C
 
-    move-result-object v0
+    move-result-object v1
 
     .line 705
-    .local v0, "buf":[C
-    iget-object v6, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
 
-    invoke-virtual {v6}, Lcom/fasterxml/jackson/core/util/TextBuffer;->getTextOffset()I
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/TextBuffer;->getTextOffset()I
 
-    move-result v5
+    move-result v0
 
     .line 706
-    .local v5, "offset":I
-    iget v4, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_intLength:I
+    iget v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_intLength:I
 
     .line 707
-    .local v4, "len":I
-    iget-boolean v6, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberNegative:Z
+    iget-boolean v3, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberNegative:Z
 
-    if-eqz v6, :cond_1b
+    if-eqz v3, :cond_1b
 
     .line 708
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     .line 710
     :cond_1b
-    const/16 v6, 0x9
+    const/16 v3, 0x9
 
-    if-gt v4, v6, :cond_2d
+    if-gt v2, v3, :cond_2d
 
     .line 711
-    invoke-static {v0, v5, v4}, Lcom/fasterxml/jackson/core/io/NumberInput;->parseInt([CII)I
+    invoke-static {v1, v0, v2}, Lcom/fasterxml/jackson/core/io/NumberInput;->parseInt([CII)I
 
-    move-result v1
+    move-result v0
 
     .line 712
-    .local v1, "i":I
-    iget-boolean v6, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberNegative:Z
+    iget-boolean v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberNegative:Z
 
-    if-eqz v6, :cond_28
+    if-eqz v1, :cond_28
 
-    neg-int v1, v1
+    neg-int v0, v0
 
-    .end local v1    # "i":I
     :cond_28
-    iput v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberInt:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberInt:I
 
     .line 713
-    iput v8, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
+    iput v4, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
 
     .line 749
-    .end local v0    # "buf":[C
-    .end local v4    # "len":I
-    .end local v5    # "offset":I
     :goto_2c
     return-void
 
     .line 716
-    .restart local v0    # "buf":[C
-    .restart local v4    # "len":I
-    .restart local v5    # "offset":I
     :cond_2d
-    const/16 v6, 0x12
+    const/16 v3, 0x12
 
-    if-gt v4, v6, :cond_62
+    if-gt v2, v3, :cond_62
 
     .line 717
-    invoke-static {v0, v5, v4}, Lcom/fasterxml/jackson/core/io/NumberInput;->parseLong([CII)J
+    invoke-static {v1, v0, v2}, Lcom/fasterxml/jackson/core/io/NumberInput;->parseLong([CII)J
 
-    move-result-wide v2
+    move-result-wide v0
 
     .line 718
-    .local v2, "l":J
-    iget-boolean v6, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberNegative:Z
+    iget-boolean v3, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberNegative:Z
 
-    if-eqz v6, :cond_3a
+    if-eqz v3, :cond_3a
 
     .line 719
-    neg-long v2, v2
+    neg-long v0, v0
 
     .line 722
     :cond_3a
-    const/16 v6, 0xa
+    const/16 v3, 0xa
 
-    if-ne v4, v6, :cond_5c
+    if-ne v2, v3, :cond_5c
 
     .line 723
-    iget-boolean v6, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberNegative:Z
+    iget-boolean v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberNegative:Z
 
-    if-eqz v6, :cond_4f
+    if-eqz v2, :cond_4f
 
     .line 724
-    const-wide/32 v6, -0x80000000
+    const-wide/32 v2, -0x80000000
 
-    cmp-long v6, v2, v6
+    cmp-long v2, v0, v2
 
-    if-ltz v6, :cond_5c
+    if-ltz v2, :cond_5c
 
     .line 725
-    long-to-int v6, v2
+    long-to-int v0, v0
 
-    iput v6, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberInt:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberInt:I
 
     .line 726
-    iput v8, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
+    iput v4, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
 
     goto :goto_2c
 
     .line 730
     :cond_4f
-    const-wide/32 v6, 0x7fffffff
+    const-wide/32 v2, 0x7fffffff
 
-    cmp-long v6, v2, v6
+    cmp-long v2, v0, v2
 
-    if-gtz v6, :cond_5c
+    if-gtz v2, :cond_5c
 
     .line 731
-    long-to-int v6, v2
+    long-to-int v0, v0
 
-    iput v6, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberInt:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberInt:I
 
     .line 732
-    iput v8, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
+    iput v4, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
 
     goto :goto_2c
 
     .line 737
     :cond_5c
-    iput-wide v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberLong:J
+    iput-wide v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberLong:J
 
     .line 738
-    const/4 v6, 0x2
+    const/4 v0, 0x2
 
-    iput v6, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
 
     goto :goto_2c
 
     .line 741
-    .end local v2    # "l":J
     :cond_62
-    invoke-direct {p0, p1, v0, v5, v4}, Lcom/fasterxml/jackson/core/base/ParserBase;->_parseSlowInt(I[CII)V
+    invoke-direct {p0, p1, v1, v0, v2}, Lcom/fasterxml/jackson/core/base/ParserBase;->_parseSlowInt(I[CII)V
 
     goto :goto_2c
 
     .line 744
-    .end local v0    # "buf":[C
-    .end local v4    # "len":I
-    .end local v5    # "offset":I
     :cond_66
-    iget-object v6, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    sget-object v7, Lcom/fasterxml/jackson/core/JsonToken;->VALUE_NUMBER_FLOAT:Lcom/fasterxml/jackson/core/JsonToken;
+    sget-object v1, Lcom/fasterxml/jackson/core/JsonToken;->VALUE_NUMBER_FLOAT:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-ne v6, v7, :cond_70
+    if-ne v0, v1, :cond_70
 
     .line 745
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/core/base/ParserBase;->_parseSlowFloat(I)V
@@ -951,56 +863,50 @@
 
     .line 748
     :cond_70
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v7, "Current token ("
+    const-string/jumbo v1, "Current token ("
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v0
 
-    iget-object v7, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v0
 
-    const-string/jumbo v7, ") not numeric, can not use numeric value accessors"
+    const-string/jumbo v1, ") not numeric, can not use numeric value accessors"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {p0, v6}, Lcom/fasterxml/jackson/core/base/ParserBase;->_reportError(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/core/base/ParserBase;->_reportError(Ljava/lang/String;)V
 
     goto :goto_2c
 .end method
 
 .method protected _releaseBuffers()V
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 434
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_textBuffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/util/TextBuffer;->releaseBuffers()V
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/TextBuffer;->releaseBuffers()V
 
     .line 435
     iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_nameCopyBuffer:[C
 
     .line 436
-    .local v0, "buf":[C
     if-eqz v0, :cond_11
 
     .line 437
@@ -1019,49 +925,41 @@
 .end method
 
 .method protected _reportMismatchedEndMarker(IC)V
-    .registers 7
-    .param p1, "actCh"    # I
-    .param p2, "expCh"    # C
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
+    .registers 6
 
     .prologue
     .line 469
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, ""
+    const-string/jumbo v1, ""
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_ioContext:Lcom/fasterxml/jackson/core/io/IOContext;
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_ioContext:Lcom/fasterxml/jackson/core/io/IOContext;
 
-    invoke-virtual {v3}, Lcom/fasterxml/jackson/core/io/IOContext;->getSourceReference()Ljava/lang/Object;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->getStartLocation(Ljava/lang/Object;)Lcom/fasterxml/jackson/core/JsonLocation;
+    invoke-virtual {v2}, Lcom/fasterxml/jackson/core/io/IOContext;->getSourceReference()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->getStartLocation(Ljava/lang/Object;)Lcom/fasterxml/jackson/core/JsonLocation;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     .line 470
-    .local v0, "startDesc":Ljava/lang/String;
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1112,19 +1010,19 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string/jumbo v2, ")"
+    const-string/jumbo v1, ")"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {p0, v1}, Lcom/fasterxml/jackson/core/base/ParserBase;->_reportError(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/core/base/ParserBase;->_reportError(Ljava/lang/String;)V
 
     .line 471
     return-void
@@ -1132,11 +1030,6 @@
 
 .method public close()V
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 331
@@ -1173,11 +1066,6 @@
 
 .method protected convertNumberToBigDecimal()V
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 910
@@ -1277,11 +1165,6 @@
 
 .method protected convertNumberToBigInteger()V
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 865
@@ -1383,11 +1266,6 @@
 
 .method protected convertNumberToDouble()V
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 888
@@ -1479,27 +1357,21 @@
 
 .method protected convertNumberToInt()V
     .registers 7
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 804
-    iget v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
 
-    and-int/lit8 v1, v1, 0x2
+    and-int/lit8 v0, v0, 0x2
 
-    if-eqz v1, :cond_3b
+    if-eqz v0, :cond_3b
 
     .line 806
-    iget-wide v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberLong:J
+    iget-wide v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberLong:J
 
-    long-to-int v0, v2
+    long-to-int v0, v0
 
     .line 807
-    .local v0, "result":I
     int-to-long v2, v0
 
     iget-wide v4, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberLong:J
@@ -1544,45 +1416,44 @@
     iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberInt:I
 
     .line 832
-    .end local v0    # "result":I
     :goto_34
-    iget v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
 
-    or-int/lit8 v1, v1, 0x1
+    or-int/lit8 v0, v0, 0x1
 
-    iput v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
 
     .line 833
     return-void
 
     .line 811
     :cond_3b
-    iget v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
 
-    and-int/lit8 v1, v1, 0x4
+    and-int/lit8 v0, v0, 0x4
 
-    if-eqz v1, :cond_61
+    if-eqz v0, :cond_61
 
     .line 812
-    sget-object v1, Lcom/fasterxml/jackson/core/base/ParserBase;->BI_MIN_INT:Ljava/math/BigInteger;
+    sget-object v0, Lcom/fasterxml/jackson/core/base/ParserBase;->BI_MIN_INT:Ljava/math/BigInteger;
 
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberBigInt:Ljava/math/BigInteger;
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberBigInt:Ljava/math/BigInteger;
 
-    invoke-virtual {v1, v2}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
+    invoke-virtual {v0, v1}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
 
-    move-result v1
+    move-result v0
 
-    if-gtz v1, :cond_55
+    if-gtz v0, :cond_55
 
-    sget-object v1, Lcom/fasterxml/jackson/core/base/ParserBase;->BI_MAX_INT:Ljava/math/BigInteger;
+    sget-object v0, Lcom/fasterxml/jackson/core/base/ParserBase;->BI_MAX_INT:Ljava/math/BigInteger;
 
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberBigInt:Ljava/math/BigInteger;
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberBigInt:Ljava/math/BigInteger;
 
-    invoke-virtual {v1, v2}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
+    invoke-virtual {v0, v1}, Ljava/math/BigInteger;->compareTo(Ljava/math/BigInteger;)I
 
-    move-result v1
+    move-result v0
 
-    if-gez v1, :cond_58
+    if-gez v0, :cond_58
 
     .line 814
     :cond_55
@@ -1590,40 +1461,40 @@
 
     .line 816
     :cond_58
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberBigInt:Ljava/math/BigInteger;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberBigInt:Ljava/math/BigInteger;
 
-    invoke-virtual {v1}, Ljava/math/BigInteger;->intValue()I
+    invoke-virtual {v0}, Ljava/math/BigInteger;->intValue()I
 
-    move-result v1
+    move-result v0
 
-    iput v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberInt:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberInt:I
 
     goto :goto_34
 
     .line 817
     :cond_61
-    iget v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
 
-    and-int/lit8 v1, v1, 0x8
+    and-int/lit8 v0, v0, 0x8
 
-    if-eqz v1, :cond_83
+    if-eqz v0, :cond_83
 
     .line 819
-    iget-wide v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberDouble:D
+    iget-wide v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberDouble:D
 
-    const-wide/high16 v4, -0x3e20000000000000L
+    const-wide/high16 v2, -0x3e20000000000000L    # -2.147483648E9
 
-    cmpg-double v1, v2, v4
+    cmpg-double v0, v0, v2
 
-    if-ltz v1, :cond_7a
+    if-ltz v0, :cond_7a
 
-    iget-wide v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberDouble:D
+    iget-wide v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberDouble:D
 
-    const-wide v4, 0x41dfffffffc00000L
+    const-wide v2, 0x41dfffffffc00000L    # 2.147483647E9
 
-    cmpl-double v1, v2, v4
+    cmpl-double v0, v0, v2
 
-    if-lez v1, :cond_7d
+    if-lez v0, :cond_7d
 
     .line 820
     :cond_7a
@@ -1631,42 +1502,42 @@
 
     .line 822
     :cond_7d
-    iget-wide v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberDouble:D
+    iget-wide v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberDouble:D
 
-    double-to-int v1, v2
+    double-to-int v0, v0
 
-    iput v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberInt:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberInt:I
 
     goto :goto_34
 
     .line 823
     :cond_83
-    iget v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numTypesValid:I
 
-    and-int/lit8 v1, v1, 0x10
+    and-int/lit8 v0, v0, 0x10
 
-    if-eqz v1, :cond_a9
+    if-eqz v0, :cond_a9
 
     .line 824
-    sget-object v1, Lcom/fasterxml/jackson/core/base/ParserBase;->BD_MIN_INT:Ljava/math/BigDecimal;
+    sget-object v0, Lcom/fasterxml/jackson/core/base/ParserBase;->BD_MIN_INT:Ljava/math/BigDecimal;
 
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberBigDecimal:Ljava/math/BigDecimal;
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberBigDecimal:Ljava/math/BigDecimal;
 
-    invoke-virtual {v1, v2}, Ljava/math/BigDecimal;->compareTo(Ljava/math/BigDecimal;)I
+    invoke-virtual {v0, v1}, Ljava/math/BigDecimal;->compareTo(Ljava/math/BigDecimal;)I
 
-    move-result v1
+    move-result v0
 
-    if-gtz v1, :cond_9d
+    if-gtz v0, :cond_9d
 
-    sget-object v1, Lcom/fasterxml/jackson/core/base/ParserBase;->BD_MAX_INT:Ljava/math/BigDecimal;
+    sget-object v0, Lcom/fasterxml/jackson/core/base/ParserBase;->BD_MAX_INT:Ljava/math/BigDecimal;
 
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberBigDecimal:Ljava/math/BigDecimal;
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberBigDecimal:Ljava/math/BigDecimal;
 
-    invoke-virtual {v1, v2}, Ljava/math/BigDecimal;->compareTo(Ljava/math/BigDecimal;)I
+    invoke-virtual {v0, v1}, Ljava/math/BigDecimal;->compareTo(Ljava/math/BigDecimal;)I
 
-    move-result v1
+    move-result v0
 
-    if-gez v1, :cond_a0
+    if-gez v0, :cond_a0
 
     .line 826
     :cond_9d
@@ -1674,13 +1545,13 @@
 
     .line 828
     :cond_a0
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberBigDecimal:Ljava/math/BigDecimal;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberBigDecimal:Ljava/math/BigDecimal;
 
-    invoke-virtual {v1}, Ljava/math/BigDecimal;->intValue()I
+    invoke-virtual {v0}, Ljava/math/BigDecimal;->intValue()I
 
-    move-result v1
+    move-result v0
 
-    iput v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberInt:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberInt:I
 
     goto :goto_34
 
@@ -1693,11 +1564,6 @@
 
 .method protected convertNumberToLong()V
     .registers 5
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 837
@@ -1781,7 +1647,7 @@
     .line 847
     iget-wide v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberDouble:D
 
-    const-wide/high16 v2, -0x3c20000000000000L
+    const-wide/high16 v2, -0x3c20000000000000L    # -9.223372036854776E18
 
     cmpg-double v0, v0, v2
 
@@ -1789,7 +1655,7 @@
 
     iget-wide v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_numberDouble:D
 
-    const-wide/high16 v2, 0x43e0000000000000L
+    const-wide/high16 v2, 0x43e0000000000000L    # 9.223372036854776E18
 
     cmpl-double v0, v0, v2
 
@@ -1863,11 +1729,6 @@
 
 .method public getBigIntegerValue()Ljava/math/BigInteger;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 631
@@ -1919,7 +1780,6 @@
     add-int/lit8 v7, v0, 0x1
 
     .line 366
-    .local v7, "col":I
     new-instance v0, Lcom/fasterxml/jackson/core/JsonLocation;
 
     iget-object v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_ioContext:Lcom/fasterxml/jackson/core/io/IOContext;
@@ -1946,63 +1806,51 @@
 .end method
 
 .method public getCurrentName()Ljava/lang/String;
-    .registers 4
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 3
 
     .prologue
     .line 307
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    sget-object v2, Lcom/fasterxml/jackson/core/JsonToken;->START_OBJECT:Lcom/fasterxml/jackson/core/JsonToken;
+    sget-object v1, Lcom/fasterxml/jackson/core/JsonToken;->START_OBJECT:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-eq v1, v2, :cond_c
+    if-eq v0, v1, :cond_c
 
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    sget-object v2, Lcom/fasterxml/jackson/core/JsonToken;->START_ARRAY:Lcom/fasterxml/jackson/core/JsonToken;
+    sget-object v1, Lcom/fasterxml/jackson/core/JsonToken;->START_ARRAY:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-ne v1, v2, :cond_17
+    if-ne v0, v1, :cond_17
 
     .line 308
     :cond_c
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->getParent()Lcom/fasterxml/jackson/core/json/JsonReadContext;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->getParent()Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
     move-result-object v0
 
     .line 309
-    .local v0, "parent":Lcom/fasterxml/jackson/core/json/JsonReadContext;
     invoke-virtual {v0}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->getCurrentName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 311
-    .end local v0    # "parent":Lcom/fasterxml/jackson/core/json/JsonReadContext;
     :goto_16
-    return-object v1
+    return-object v0
 
     :cond_17
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->getCurrentName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->getCurrentName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_16
 .end method
 
 .method public getDecimalValue()Ljava/math/BigDecimal;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 674
@@ -2042,11 +1890,6 @@
 
 .method public getDoubleValue()D
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 660
@@ -2086,11 +1929,6 @@
 
 .method public getEmbeddedObject()Ljava/lang/Object;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 385
@@ -2100,12 +1938,7 @@
 .end method
 
 .method public getFloatValue()F
-    .registers 4
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 3
 
     .prologue
     .line 645
@@ -2114,19 +1947,13 @@
     move-result-wide v0
 
     .line 654
-    .local v0, "value":D
-    double-to-float v2, v0
+    double-to-float v0, v0
 
-    return v2
+    return v0
 .end method
 
 .method public getIntValue()I
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 603
@@ -2166,11 +1993,6 @@
 
 .method public getLongValue()J
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 617
@@ -2210,11 +2032,6 @@
 
 .method public getNumberType()Lcom/fasterxml/jackson/core/JsonParser$NumberType;
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 575
@@ -2290,11 +2107,6 @@
 
 .method public getNumberValue()Ljava/lang/Number;
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 542
@@ -2444,14 +2256,11 @@
     iget v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_tokenInputCol:I
 
     .line 398
-    .local v0, "col":I
     if-gez v0, :cond_5
 
-    .end local v0    # "col":I
     :goto_4
     return v0
 
-    .restart local v0    # "col":I
     :cond_5
     add-int/lit8 v0, v0, 0x1
 
@@ -2547,20 +2356,10 @@
 .end method
 
 .method protected abstract loadMore()Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 .end method
 
 .method protected final loadMoreGuaranteed()V
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 408
@@ -2578,26 +2377,24 @@
 .end method
 
 .method public overrideCurrentName(Ljava/lang/String;)V
-    .registers 6
-    .param p1, "name"    # Ljava/lang/String;
+    .registers 5
 
     .prologue
     .line 316
     iget-object v0, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
     .line 317
-    .local v0, "ctxt":Lcom/fasterxml/jackson/core/json/JsonReadContext;
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    sget-object v3, Lcom/fasterxml/jackson/core/JsonToken;->START_OBJECT:Lcom/fasterxml/jackson/core/JsonToken;
+    sget-object v2, Lcom/fasterxml/jackson/core/JsonToken;->START_OBJECT:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-eq v2, v3, :cond_e
+    if-eq v1, v2, :cond_e
 
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/base/ParserBase;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    sget-object v3, Lcom/fasterxml/jackson/core/JsonToken;->START_ARRAY:Lcom/fasterxml/jackson/core/JsonToken;
+    sget-object v2, Lcom/fasterxml/jackson/core/JsonToken;->START_ARRAY:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-ne v2, v3, :cond_12
+    if-ne v1, v2, :cond_12
 
     .line 318
     :cond_e
@@ -2617,27 +2414,18 @@
 
     .line 325
     :catch_16
-    move-exception v1
+    move-exception v0
 
     .line 326
-    .local v1, "e":Ljava/io/IOException;
-    new-instance v2, Ljava/lang/IllegalStateException;
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    invoke-direct {v2, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
 
-    throw v2
+    throw v1
 .end method
 
 .method protected reportInvalidBase64Char(Lcom/fasterxml/jackson/core/Base64Variant;II)Ljava/lang/IllegalArgumentException;
     .registers 5
-    .param p1, "b64variant"    # Lcom/fasterxml/jackson/core/Base64Variant;
-    .param p2, "ch"    # I
-    .param p3, "bindex"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/IllegalArgumentException;
-        }
-    .end annotation
 
     .prologue
     .line 1012
@@ -2651,66 +2439,56 @@
 .end method
 
 .method protected reportInvalidBase64Char(Lcom/fasterxml/jackson/core/Base64Variant;IILjava/lang/String;)Ljava/lang/IllegalArgumentException;
-    .registers 8
-    .param p1, "b64variant"    # Lcom/fasterxml/jackson/core/Base64Variant;
-    .param p2, "ch"    # I
-    .param p3, "bindex"    # I
-    .param p4, "msg"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/IllegalArgumentException;
-        }
-    .end annotation
+    .registers 7
 
     .prologue
     .line 1021
-    const/16 v1, 0x20
+    const/16 v0, 0x20
 
-    if-gt p2, v1, :cond_50
+    if-gt p2, v0, :cond_50
 
     .line 1022
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "Illegal white space character (code 0x"
+    const-string/jumbo v1, "Illegal white space character (code 0x"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-static {p2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v1
 
-    const-string/jumbo v2, ") as character #"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    const-string/jumbo v1, ") as character #"
 
-    add-int/lit8 v2, p3, 0x1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    add-int/lit8 v1, p3, 0x1
 
-    const-string/jumbo v2, " of 4-char base64 unit: can only used between units"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    const-string/jumbo v1, " of 4-char base64 unit: can only used between units"
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     .line 1031
-    .local v0, "base":Ljava/lang/String;
     :goto_30
     if-eqz p4, :cond_4a
 
@@ -2721,19 +2499,19 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string/jumbo v2, ": "
+    const-string/jumbo v1, ": "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -2746,161 +2524,149 @@
     return-object v1
 
     .line 1023
-    .end local v0    # "base":Ljava/lang/String;
     :cond_50
     invoke-virtual {p1, p2}, Lcom/fasterxml/jackson/core/Base64Variant;->usesPaddingChar(I)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_83
+    if-eqz v0, :cond_83
 
     .line 1024
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "Unexpected padding character (\'"
+    const-string/jumbo v1, "Unexpected padding character (\'"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/Base64Variant;->getPaddingChar()C
 
-    move-result v2
+    move-result v1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "\') as character #"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    add-int/lit8 v2, p3, 0x1
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string/jumbo v2, " of 4-char base64 unit: padding only legal as 3rd or 4th character"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .restart local v0    # "base":Ljava/lang/String;
+    const-string/jumbo v1, "\') as character #"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    add-int/lit8 v1, p3, 0x1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, " of 4-char base64 unit: padding only legal as 3rd or 4th character"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
     goto :goto_30
 
     .line 1025
-    .end local v0    # "base":Ljava/lang/String;
     :cond_83
     invoke-static {p2}, Ljava/lang/Character;->isDefined(I)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_8f
+    if-eqz v0, :cond_8f
 
     invoke-static {p2}, Ljava/lang/Character;->isISOControl(I)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_af
+    if-eqz v0, :cond_af
 
     .line 1027
     :cond_8f
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "Illegal character (code 0x"
+    const-string/jumbo v1, "Illegal character (code 0x"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-static {p2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string/jumbo v2, ") in base64 content"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .restart local v0    # "base":Ljava/lang/String;
+    invoke-static {p2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, ") in base64 content"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
     goto :goto_30
 
     .line 1029
-    .end local v0    # "base":Ljava/lang/String;
     :cond_af
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "Illegal character \'"
+    const-string/jumbo v1, "Illegal character \'"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    int-to-char v2, p2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "\' (code 0x"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-static {p2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string/jumbo v2, ") in base64 content"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .restart local v0    # "base":Ljava/lang/String;
+    int-to-char v1, p2
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "\' (code 0x"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-static {p2}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, ") in base64 content"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
     goto/16 :goto_30
 .end method
 
 .method protected reportInvalidNumber(Ljava/lang/String;)V
     .registers 4
-    .param p1, "msg"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 943
@@ -2930,11 +2696,6 @@
 
 .method protected reportOverflowInt()V
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 947
@@ -2998,11 +2759,6 @@
 
 .method protected reportOverflowLong()V
     .registers 5
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 951
@@ -3065,47 +2821,39 @@
 .end method
 
 .method protected reportUnexpectedNumberChar(ILjava/lang/String;)V
-    .registers 6
-    .param p1, "ch"    # I
-    .param p2, "comment"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
+    .registers 5
 
     .prologue
     .line 935
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "Unexpected character ("
+    const-string/jumbo v1, "Unexpected character ("
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-static {p1}, Lcom/fasterxml/jackson/core/base/ParserBase;->_getCharDesc(I)Ljava/lang/String;
 
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v1
 
-    const-string/jumbo v2, ") in numeric value"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    const-string/jumbo v1, ") in numeric value"
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     .line 936
-    .local v0, "msg":Ljava/lang/String;
     if-eqz p2, :cond_39
 
     .line 937
@@ -3115,19 +2863,19 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string/jumbo v2, ": "
+    const-string/jumbo v1, ": "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -3141,10 +2889,6 @@
 
 .method protected final reset(ZIII)Lcom/fasterxml/jackson/core/JsonToken;
     .registers 6
-    .param p1, "negative"    # Z
-    .param p2, "intLen"    # I
-    .param p3, "fractLen"    # I
-    .param p4, "expLen"    # I
 
     .prologue
     const/4 v0, 0x1
@@ -3173,8 +2917,6 @@
 
 .method protected final resetAsNaN(Ljava/lang/String;D)Lcom/fasterxml/jackson/core/JsonToken;
     .registers 6
-    .param p1, "valueStr"    # Ljava/lang/String;
-    .param p2, "value"    # D
 
     .prologue
     .line 527
@@ -3198,10 +2940,6 @@
 
 .method protected final resetFloat(ZIII)Lcom/fasterxml/jackson/core/JsonToken;
     .registers 6
-    .param p1, "negative"    # Z
-    .param p2, "intLen"    # I
-    .param p3, "fractLen"    # I
-    .param p4, "expLen"    # I
 
     .prologue
     .line 517
@@ -3229,8 +2967,6 @@
 
 .method protected final resetInt(ZI)Lcom/fasterxml/jackson/core/JsonToken;
     .registers 4
-    .param p1, "negative"    # Z
-    .param p2, "intLen"    # I
 
     .prologue
     const/4 v0, 0x0

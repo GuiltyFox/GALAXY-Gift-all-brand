@@ -18,11 +18,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/core/io/IOContext;Ljava/io/InputStream;[BII)V
     .registers 6
-    .param p1, "ctxt"    # Lcom/fasterxml/jackson/core/io/IOContext;
-    .param p2, "in"    # Ljava/io/InputStream;
-    .param p3, "buf"    # [B
-    .param p4, "start"    # I
-    .param p5, "end"    # I
 
     .prologue
     .line 25
@@ -55,7 +50,6 @@
     iget-object v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_b:[B
 
     .line 114
-    .local v0, "buf":[B
     if-eqz v0, :cond_10
 
     .line 115
@@ -82,11 +76,6 @@
 # virtual methods
 .method public available()I
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 35
@@ -117,11 +106,6 @@
 
 .method public close()V
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 42
@@ -138,7 +122,6 @@
 
 .method public mark(I)V
     .registers 3
-    .param p1, "readlimit"    # I
 
     .prologue
     .line 47
@@ -184,34 +167,28 @@
 .end method
 
 .method public read()I
-    .registers 5
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 4
 
     .prologue
     .line 56
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_b:[B
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_b:[B
 
-    if-eqz v1, :cond_1a
+    if-eqz v0, :cond_1a
 
     .line 57
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_b:[B
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_b:[B
 
-    iget v2, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
+    iget v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
 
-    add-int/lit8 v3, v2, 0x1
+    add-int/lit8 v2, v1, 0x1
 
-    iput v3, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
+    iput v2, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
 
-    aget-byte v1, v1, v2
+    aget-byte v0, v0, v1
 
-    and-int/lit16 v0, v1, 0xff
+    and-int/lit16 v0, v0, 0xff
 
     .line 58
-    .local v0, "c":I
     iget v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
 
     iget v2, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_end:I
@@ -222,15 +199,14 @@
     invoke-direct {p0}, Lcom/fasterxml/jackson/core/io/MergedStream;->_free()V
 
     .line 63
-    .end local v0    # "c":I
     :cond_19
     :goto_19
     return v0
 
     :cond_1a
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_in:Ljava/io/InputStream;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_in:Ljava/io/InputStream;
 
-    invoke-virtual {v1}, Ljava/io/InputStream;->read()I
+    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
 
     move-result v0
 
@@ -239,12 +215,6 @@
 
 .method public read([B)I
     .registers 4
-    .param p1, "b"    # [B
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 67
@@ -260,86 +230,68 @@
 .end method
 
 .method public read([BII)I
-    .registers 7
-    .param p1, "b"    # [B
-    .param p2, "off"    # I
-    .param p3, "len"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 6
 
     .prologue
     .line 72
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_b:[B
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_b:[B
 
-    if-eqz v1, :cond_24
+    if-eqz v0, :cond_22
 
     .line 73
-    iget v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_end:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_end:I
 
-    iget v2, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
+    iget v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
 
-    sub-int v0, v1, v2
+    sub-int/2addr v0, v1
 
     .line 74
-    .local v0, "avail":I
-    if-le p3, v0, :cond_d
+    if-le p3, v0, :cond_c
 
-    .line 75
     move p3, v0
 
     .line 77
-    :cond_d
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_b:[B
+    :cond_c
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_b:[B
 
-    iget v2, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
+    iget v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
 
-    invoke-static {v1, v2, p1, p2, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0, v1, p1, p2, p3}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 78
-    iget v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
 
-    add-int/2addr v1, p3
+    add-int/2addr v0, p3
 
-    iput v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
 
     .line 79
-    iget v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
 
-    iget v2, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_end:I
+    iget v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_end:I
 
-    if-lt v1, v2, :cond_22
+    if-lt v0, v1, :cond_21
 
     .line 80
     invoke-direct {p0}, Lcom/fasterxml/jackson/core/io/MergedStream;->_free()V
 
-    :cond_22
-    move v1, p3
-
     .line 84
-    .end local v0    # "avail":I
-    :goto_23
-    return v1
+    :cond_21
+    :goto_21
+    return p3
 
-    :cond_24
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_in:Ljava/io/InputStream;
+    :cond_22
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_in:Ljava/io/InputStream;
 
-    invoke-virtual {v1, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
+    invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
 
-    move-result v1
+    move-result p3
 
-    goto :goto_23
+    goto :goto_21
 .end method
 
 .method public reset()V
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 89
@@ -358,89 +310,79 @@
 
 .method public skip(J)J
     .registers 10
-    .param p1, "n"    # J
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
-    .line 94
     const-wide/16 v2, 0x0
 
+    .line 94
     .line 96
-    .local v2, "count":J
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_b:[B
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_b:[B
 
-    if-eqz v1, :cond_20
+    if-eqz v0, :cond_2c
 
     .line 97
-    iget v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_end:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_end:I
 
-    iget v4, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
-
-    sub-int v0, v1, v4
-
-    .line 99
-    .local v0, "amount":I
-    int-to-long v4, v0
-
-    cmp-long v1, v4, p1
-
-    if-lez v1, :cond_19
-
-    .line 100
     iget v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
 
-    long-to-int v4, p1
+    sub-int v4, v0, v1
 
-    add-int/2addr v1, v4
+    .line 99
+    int-to-long v0, v4
 
-    iput v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
+    cmp-long v0, v0, p1
 
-    move-wide v4, p1
+    if-lez v0, :cond_18
+
+    .line 100
+    iget v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
+
+    long-to-int v1, p1
+
+    add-int/2addr v0, v1
+
+    iput v0, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_ptr:I
 
     .line 109
-    .end local v0    # "amount":I
-    :goto_18
-    return-wide v4
+    :goto_17
+    return-wide p1
 
     .line 103
-    .restart local v0    # "amount":I
-    :cond_19
+    :cond_18
     invoke-direct {p0}, Lcom/fasterxml/jackson/core/io/MergedStream;->_free()V
 
     .line 104
-    int-to-long v4, v0
+    int-to-long v0, v4
 
-    add-long/2addr v2, v4
+    add-long/2addr v0, v2
 
     .line 105
-    int-to-long v4, v0
+    int-to-long v4, v4
 
     sub-long/2addr p1, v4
 
     .line 108
-    .end local v0    # "amount":I
-    :cond_20
-    const-wide/16 v4, 0x0
+    :goto_1f
+    cmp-long v2, p1, v2
 
-    cmp-long v1, p1, v4
+    if-lez v2, :cond_2a
 
-    if-lez v1, :cond_2d
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_in:Ljava/io/InputStream;
 
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/MergedStream;->_in:Ljava/io/InputStream;
+    invoke-virtual {v2, p1, p2}, Ljava/io/InputStream;->skip(J)J
 
-    invoke-virtual {v1, p1, p2}, Ljava/io/InputStream;->skip(J)J
+    move-result-wide v2
 
-    move-result-wide v4
+    add-long/2addr v0, v2
 
-    add-long/2addr v2, v4
-
-    :cond_2d
-    move-wide v4, v2
+    :cond_2a
+    move-wide p1, v0
 
     .line 109
-    goto :goto_18
+    goto :goto_17
+
+    :cond_2c
+    move-wide v0, v2
+
+    goto :goto_1f
 .end method

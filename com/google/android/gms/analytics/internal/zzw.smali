@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract zzc(Ljava/lang/Throwable;)V
+.method public abstract a(Ljava/lang/Throwable;)V
 .end method

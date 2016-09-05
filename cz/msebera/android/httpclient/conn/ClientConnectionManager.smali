@@ -9,20 +9,14 @@
 
 
 # virtual methods
-.method public abstract closeExpiredConnections()V
+.method public abstract a(Lcz/msebera/android/httpclient/conn/routing/HttpRoute;Ljava/lang/Object;)Lcz/msebera/android/httpclient/conn/ClientConnectionRequest;
 .end method
 
-.method public abstract closeIdleConnections(JLjava/util/concurrent/TimeUnit;)V
+.method public abstract a()Lcz/msebera/android/httpclient/conn/scheme/SchemeRegistry;
 .end method
 
-.method public abstract getSchemeRegistry()Lcz/msebera/android/httpclient/conn/scheme/SchemeRegistry;
+.method public abstract a(Lcz/msebera/android/httpclient/conn/ManagedClientConnection;JLjava/util/concurrent/TimeUnit;)V
 .end method
 
-.method public abstract releaseConnection(Lcz/msebera/android/httpclient/conn/ManagedClientConnection;JLjava/util/concurrent/TimeUnit;)V
-.end method
-
-.method public abstract requestConnection(Lcz/msebera/android/httpclient/conn/routing/HttpRoute;Ljava/lang/Object;)Lcz/msebera/android/httpclient/conn/ClientConnectionRequest;
-.end method
-
-.method public abstract shutdown()V
+.method public abstract b()V
 .end method

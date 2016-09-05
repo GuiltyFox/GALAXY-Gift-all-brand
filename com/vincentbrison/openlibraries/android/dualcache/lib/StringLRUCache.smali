@@ -18,7 +18,6 @@
 # direct methods
 .method public constructor <init>(I)V
     .registers 2
-    .param p1, "maxSize"    # I
 
     .prologue
     .line 35
@@ -30,26 +29,8 @@
 
 
 # virtual methods
-.method protected bridge synthetic sizeOf(Ljava/lang/Object;Ljava/lang/Object;)I
+.method protected a(Ljava/lang/String;Ljava/lang/String;)I
     .registers 4
-
-    .prologue
-    .line 27
-    check-cast p1, Ljava/lang/String;
-
-    check-cast p2, Ljava/lang/String;
-
-    invoke-virtual {p0, p1, p2}, Lcom/vincentbrison/openlibraries/android/dualcache/lib/StringLRUCache;->sizeOf(Ljava/lang/String;Ljava/lang/String;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method protected sizeOf(Ljava/lang/String;Ljava/lang/String;)I
-    .registers 4
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/String;
 
     .prologue
     .line 40
@@ -64,6 +45,22 @@
     move-result-object v0
 
     array-length v0, v0
+
+    return v0
+.end method
+
+.method protected synthetic b(Ljava/lang/Object;Ljava/lang/Object;)I
+    .registers 4
+
+    .prologue
+    .line 27
+    check-cast p1, Ljava/lang/String;
+
+    check-cast p2, Ljava/lang/String;
+
+    invoke-virtual {p0, p1, p2}, Lcom/vincentbrison/openlibraries/android/dualcache/lib/StringLRUCache;->a(Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v0
 
     return v0
 .end method

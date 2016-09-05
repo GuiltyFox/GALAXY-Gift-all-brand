@@ -144,7 +144,7 @@
 
     iget-object v3, v0, Lcom/jaalee/sdk/service/k;->a:Lcom/jaalee/sdk/Region;
 
-    invoke-static {p1, v3}, Lcom/jaalee/sdk/Utils;->isBeaconInRegion(Lcom/jaalee/sdk/Beacon;Lcom/jaalee/sdk/Region;)Z
+    invoke-static {p1, v3}, Lcom/jaalee/sdk/Utils;->a(Lcom/jaalee/sdk/Beacon;Lcom/jaalee/sdk/Region;)Z
 
     move-result v3
 
@@ -244,7 +244,7 @@
 
     const-string/jumbo v2, "Error while delivering responses"
 
-    invoke-static {v2, v0}, Lcom/jaalee/sdk/utils/L;->e(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v2, v0}, Lcom/jaalee/sdk/utils/L;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_c
 
@@ -283,7 +283,7 @@
 
     const-string/jumbo v2, "Error while delivering responses"
 
-    invoke-static {v2, v0}, Lcom/jaalee/sdk/utils/L;->e(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v2, v0}, Lcom/jaalee/sdk/utils/L;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_16
 
@@ -322,7 +322,7 @@
 
     const-string/jumbo v2, "Error while delivering responses"
 
-    invoke-static {v2, v0}, Lcom/jaalee/sdk/utils/L;->e(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v2, v0}, Lcom/jaalee/sdk/utils/L;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_20
 .end method
@@ -420,7 +420,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->v(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->a(Ljava/lang/String;)V
 
     invoke-interface {v5}, Ljava/util/Iterator;->remove()V
 
@@ -636,7 +636,7 @@
 
     iget-object v6, v2, Lcom/jaalee/sdk/service/n;->a:Lcom/jaalee/sdk/Region;
 
-    invoke-static {v1, v6}, Lcom/jaalee/sdk/Utils;->isBeaconInRegion(Lcom/jaalee/sdk/Beacon;Lcom/jaalee/sdk/Region;)Z
+    invoke-static {v1, v6}, Lcom/jaalee/sdk/Utils;->a(Lcom/jaalee/sdk/Beacon;Lcom/jaalee/sdk/Region;)Z
 
     move-result v6
 

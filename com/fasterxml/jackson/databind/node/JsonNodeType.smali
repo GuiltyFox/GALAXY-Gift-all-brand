@@ -211,7 +211,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/node/JsonNodeType;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 17

@@ -3,16 +3,6 @@
 .source "PropertyValue.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/deser/impl/PropertyValue$Map;,
-        Lcom/fasterxml/jackson/databind/deser/impl/PropertyValue$Any;,
-        Lcom/fasterxml/jackson/databind/deser/impl/PropertyValue$Regular;
-    }
-.end annotation
-
-
 # instance fields
 .field public final next:Lcom/fasterxml/jackson/databind/deser/impl/PropertyValue;
 
@@ -22,8 +12,6 @@
 # direct methods
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/deser/impl/PropertyValue;Ljava/lang/Object;)V
     .registers 3
-    .param p1, "next"    # Lcom/fasterxml/jackson/databind/deser/impl/PropertyValue;
-    .param p2, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 24
@@ -42,10 +30,4 @@
 
 # virtual methods
 .method public abstract assign(Ljava/lang/Object;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 .end method

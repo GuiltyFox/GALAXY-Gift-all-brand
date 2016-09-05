@@ -6,19 +6,8 @@
 .implements Ljava/lang/Runnable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lit/sephiroth/android/library/widget/AdapterView;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "SelectionNotifier"
-.end annotation
-
-
 # instance fields
-.field final synthetic this$0:Lit/sephiroth/android/library/widget/AdapterView;
+.field final synthetic a:Lit/sephiroth/android/library/widget/AdapterView;
 
 
 # direct methods
@@ -27,8 +16,7 @@
 
     .prologue
     .line 878
-    .local p0, "this":Lit/sephiroth/android/library/widget/AdapterView$SelectionNotifier;, "Lit/sephiroth/android/library/widget/AdapterView<TT;>.SelectionNotifier;"
-    iput-object p1, p0, Lit/sephiroth/android/library/widget/AdapterView$SelectionNotifier;->this$0:Lit/sephiroth/android/library/widget/AdapterView;
+    iput-object p1, p0, Lit/sephiroth/android/library/widget/AdapterView$SelectionNotifier;->a:Lit/sephiroth/android/library/widget/AdapterView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,12 +25,9 @@
 
 .method synthetic constructor <init>(Lit/sephiroth/android/library/widget/AdapterView;Lit/sephiroth/android/library/widget/AdapterView$1;)V
     .registers 3
-    .param p1, "x0"    # Lit/sephiroth/android/library/widget/AdapterView;
-    .param p2, "x1"    # Lit/sephiroth/android/library/widget/AdapterView$1;
 
     .prologue
     .line 878
-    .local p0, "this":Lit/sephiroth/android/library/widget/AdapterView$SelectionNotifier;, "Lit/sephiroth/android/library/widget/AdapterView<TT;>.SelectionNotifier;"
     invoke-direct {p0, p1}, Lit/sephiroth/android/library/widget/AdapterView$SelectionNotifier;-><init>(Lit/sephiroth/android/library/widget/AdapterView;)V
 
     return-void
@@ -55,24 +40,23 @@
 
     .prologue
     .line 882
-    .local p0, "this":Lit/sephiroth/android/library/widget/AdapterView$SelectionNotifier;, "Lit/sephiroth/android/library/widget/AdapterView<TT;>.SelectionNotifier;"
-    iget-object v0, p0, Lit/sephiroth/android/library/widget/AdapterView$SelectionNotifier;->this$0:Lit/sephiroth/android/library/widget/AdapterView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AdapterView$SelectionNotifier;->a:Lit/sephiroth/android/library/widget/AdapterView;
 
-    iget-boolean v0, v0, Lit/sephiroth/android/library/widget/AdapterView;->mDataChanged:Z
+    iget-boolean v0, v0, Lit/sephiroth/android/library/widget/AdapterView;->aj:Z
 
     if-eqz v0, :cond_14
 
     .line 886
-    iget-object v0, p0, Lit/sephiroth/android/library/widget/AdapterView$SelectionNotifier;->this$0:Lit/sephiroth/android/library/widget/AdapterView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AdapterView$SelectionNotifier;->a:Lit/sephiroth/android/library/widget/AdapterView;
 
-    invoke-virtual {v0}, Lit/sephiroth/android/library/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
+    invoke-virtual {v0}, Lit/sephiroth/android/library/widget/AdapterView;->s()Landroid/widget/Adapter;
 
     move-result-object v0
 
     if-eqz v0, :cond_13
 
     .line 887
-    iget-object v0, p0, Lit/sephiroth/android/library/widget/AdapterView$SelectionNotifier;->this$0:Lit/sephiroth/android/library/widget/AdapterView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AdapterView$SelectionNotifier;->a:Lit/sephiroth/android/library/widget/AdapterView;
 
     invoke-virtual {v0, p0}, Lit/sephiroth/android/library/widget/AdapterView;->post(Ljava/lang/Runnable;)Z
 
@@ -83,16 +67,14 @@
 
     .line 890
     :cond_14
-    iget-object v0, p0, Lit/sephiroth/android/library/widget/AdapterView$SelectionNotifier;->this$0:Lit/sephiroth/android/library/widget/AdapterView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AdapterView$SelectionNotifier;->a:Lit/sephiroth/android/library/widget/AdapterView;
 
-    # invokes: Lit/sephiroth/android/library/widget/AdapterView;->fireOnSelected()V
-    invoke-static {v0}, Lit/sephiroth/android/library/widget/AdapterView;->access$200(Lit/sephiroth/android/library/widget/AdapterView;)V
+    invoke-static {v0}, Lit/sephiroth/android/library/widget/AdapterView;->b(Lit/sephiroth/android/library/widget/AdapterView;)V
 
     .line 891
-    iget-object v0, p0, Lit/sephiroth/android/library/widget/AdapterView$SelectionNotifier;->this$0:Lit/sephiroth/android/library/widget/AdapterView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AdapterView$SelectionNotifier;->a:Lit/sephiroth/android/library/widget/AdapterView;
 
-    # invokes: Lit/sephiroth/android/library/widget/AdapterView;->performAccessibilityActionsOnSelected()V
-    invoke-static {v0}, Lit/sephiroth/android/library/widget/AdapterView;->access$300(Lit/sephiroth/android/library/widget/AdapterView;)V
+    invoke-static {v0}, Lit/sephiroth/android/library/widget/AdapterView;->c(Lit/sephiroth/android/library/widget/AdapterView;)V
 
     goto :goto_13
 .end method

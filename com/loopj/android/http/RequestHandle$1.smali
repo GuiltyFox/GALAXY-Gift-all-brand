@@ -11,11 +11,6 @@
     value = Lcom/loopj/android/http/RequestHandle;->cancel(Z)Z
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Lcom/loopj/android/http/RequestHandle;
@@ -28,7 +23,6 @@
 # direct methods
 .method constructor <init>(Lcom/loopj/android/http/RequestHandle;Lcom/loopj/android/http/AsyncHttpRequest;Z)V
     .registers 4
-    .param p1, "this$0"    # Lcom/loopj/android/http/RequestHandle;
 
     .prologue
     .line 55

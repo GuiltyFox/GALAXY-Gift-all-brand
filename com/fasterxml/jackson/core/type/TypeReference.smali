@@ -27,51 +27,48 @@
 
 # direct methods
 .method protected constructor <init>()V
-    .registers 4
+    .registers 3
 
     .prologue
     .line 32
-    .local p0, "this":Lcom/fasterxml/jackson/core/type/TypeReference;, "Lcom/fasterxml/jackson/core/type/TypeReference<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 33
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getGenericSuperclass()Ljava/lang/reflect/Type;
+    invoke-virtual {v0}, Ljava/lang/Class;->getGenericSuperclass()Ljava/lang/reflect/Type;
 
     move-result-object v0
 
     .line 34
-    .local v0, "superClass":Ljava/lang/reflect/Type;
     instance-of v1, v0, Ljava/lang/Class;
 
     if-eqz v1, :cond_18
 
     .line 35
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "Internal error: TypeReference constructed without actual type information"
+    const-string/jumbo v1, "Internal error: TypeReference constructed without actual type information"
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     .line 44
     :cond_18
     check-cast v0, Ljava/lang/reflect/ParameterizedType;
 
-    .end local v0    # "superClass":Ljava/lang/reflect/Type;
     invoke-interface {v0}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
 
-    move-result-object v1
+    move-result-object v0
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    aget-object v1, v1, v2
+    aget-object v0, v0, v1
 
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/type/TypeReference;->_type:Ljava/lang/reflect/Type;
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/type/TypeReference;->_type:Ljava/lang/reflect/Type;
 
     .line 45
     return-void
@@ -91,8 +88,6 @@
 
     .prologue
     .line 55
-    .local p0, "this":Lcom/fasterxml/jackson/core/type/TypeReference;, "Lcom/fasterxml/jackson/core/type/TypeReference<TT;>;"
-    .local p1, "o":Lcom/fasterxml/jackson/core/type/TypeReference;, "Lcom/fasterxml/jackson/core/type/TypeReference<TT;>;"
     const/4 v0, 0x0
 
     return v0
@@ -100,14 +95,11 @@
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 27
-    .local p0, "this":Lcom/fasterxml/jackson/core/type/TypeReference;, "Lcom/fasterxml/jackson/core/type/TypeReference<TT;>;"
     check-cast p1, Lcom/fasterxml/jackson/core/type/TypeReference;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/core/type/TypeReference;->compareTo(Lcom/fasterxml/jackson/core/type/TypeReference;)I
 
     move-result v0
@@ -120,7 +112,6 @@
 
     .prologue
     .line 47
-    .local p0, "this":Lcom/fasterxml/jackson/core/type/TypeReference;, "Lcom/fasterxml/jackson/core/type/TypeReference<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/core/type/TypeReference;->_type:Ljava/lang/reflect/Type;
 
     return-object v0

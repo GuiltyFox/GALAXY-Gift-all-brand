@@ -6,19 +6,8 @@
 .implements Ljava/lang/Runnable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/widget/ListPopupWindow$ForwardingListener;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "TriggerLongPress"
-.end annotation
-
-
 # instance fields
-.field final synthetic this$0:Landroid/support/v7/widget/ListPopupWindow$ForwardingListener;
+.field final synthetic a:Landroid/support/v7/widget/ListPopupWindow$ForwardingListener;
 
 
 # direct methods
@@ -27,7 +16,7 @@
 
     .prologue
     .line 1518
-    iput-object p1, p0, Landroid/support/v7/widget/ListPopupWindow$ForwardingListener$TriggerLongPress;->this$0:Landroid/support/v7/widget/ListPopupWindow$ForwardingListener;
+    iput-object p1, p0, Landroid/support/v7/widget/ListPopupWindow$ForwardingListener$TriggerLongPress;->a:Landroid/support/v7/widget/ListPopupWindow$ForwardingListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,8 +25,6 @@
 
 .method synthetic constructor <init>(Landroid/support/v7/widget/ListPopupWindow$ForwardingListener;Landroid/support/v7/widget/ListPopupWindow$1;)V
     .registers 3
-    .param p1, "x0"    # Landroid/support/v7/widget/ListPopupWindow$ForwardingListener;
-    .param p2, "x1"    # Landroid/support/v7/widget/ListPopupWindow$1;
 
     .prologue
     .line 1518
@@ -53,7 +40,7 @@
 
     .prologue
     .line 1521
-    iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$ForwardingListener$TriggerLongPress;->this$0:Landroid/support/v7/widget/ListPopupWindow$ForwardingListener;
+    iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$ForwardingListener$TriggerLongPress;->a:Landroid/support/v7/widget/ListPopupWindow$ForwardingListener;
 
     # invokes: Landroid/support/v7/widget/ListPopupWindow$ForwardingListener;->onLongPress()V
     invoke-static {v0}, Landroid/support/v7/widget/ListPopupWindow$ForwardingListener;->access$1000(Landroid/support/v7/widget/ListPopupWindow$ForwardingListener;)V

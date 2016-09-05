@@ -21,19 +21,17 @@
 # virtual methods
 .method public setupForWindowInsets(Landroid/view/View;Landroid/support/v4/view/OnApplyWindowInsetsListener;)V
     .registers 4
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "insetsListener"    # Landroid/support/v4/view/OnApplyWindowInsetsListener;
 
     .prologue
     .line 26
-    invoke-static {p1}, Landroid/support/v4/view/ViewCompat;->getFitsSystemWindows(Landroid/view/View;)Z
+    invoke-static {p1}, Landroid/support/v4/view/ViewCompat;->w(Landroid/view/View;)Z
 
     move-result v0
 
     if-eqz v0, :cond_e
 
     .line 28
-    invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompat;->setOnApplyWindowInsetsListener(Landroid/view/View;Landroid/support/v4/view/OnApplyWindowInsetsListener;)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompat;->a(Landroid/view/View;Landroid/support/v4/view/OnApplyWindowInsetsListener;)V
 
     .line 30
     const/16 v0, 0x500

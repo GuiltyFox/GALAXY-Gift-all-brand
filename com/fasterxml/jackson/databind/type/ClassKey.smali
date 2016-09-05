@@ -11,11 +11,11 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
+        "Ljava/io/Serializable;",
         "Ljava/lang/Comparable",
         "<",
         "Lcom/fasterxml/jackson/databind/type/ClassKey;",
-        ">;",
-        "Ljava/io/Serializable;"
+        ">;"
     }
 .end annotation
 
@@ -76,7 +76,6 @@
 
     .prologue
     .line 43
-    .local p1, "clz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 44
@@ -106,7 +105,6 @@
 # virtual methods
 .method public compareTo(Lcom/fasterxml/jackson/databind/type/ClassKey;)I
     .registers 4
-    .param p1, "other"    # Lcom/fasterxml/jackson/databind/type/ClassKey;
 
     .prologue
     .line 66
@@ -123,13 +121,11 @@
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 19
     check-cast p1, Lcom/fasterxml/jackson/databind/type/ClassKey;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/type/ClassKey;->compareTo(Lcom/fasterxml/jackson/databind/type/ClassKey;)I
 
     move-result v0
@@ -138,13 +134,12 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
-    .param p1, "o"    # Ljava/lang/Object;
+    .registers 6
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 78
     if-ne p1, p0, :cond_5
@@ -152,13 +147,13 @@
     .line 90
     :cond_4
     :goto_4
-    return v1
+    return v0
 
     .line 79
     :cond_5
     if-nez p1, :cond_9
 
-    move v1, v2
+    move v0, v1
 
     goto :goto_4
 
@@ -166,33 +161,30 @@
     :cond_9
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v2
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v4
+    move-result-object v3
 
-    if-eq v3, v4, :cond_15
+    if-eq v2, v3, :cond_15
 
-    move v1, v2
+    move v0, v1
 
     goto :goto_4
 
-    :cond_15
-    move-object v0, p1
-
     .line 81
-    check-cast v0, Lcom/fasterxml/jackson/databind/type/ClassKey;
+    :cond_15
+    check-cast p1, Lcom/fasterxml/jackson/databind/type/ClassKey;
 
     .line 90
-    .local v0, "other":Lcom/fasterxml/jackson/databind/type/ClassKey;
-    iget-object v3, v0, Lcom/fasterxml/jackson/databind/type/ClassKey;->_class:Ljava/lang/Class;
+    iget-object v2, p1, Lcom/fasterxml/jackson/databind/type/ClassKey;->_class:Ljava/lang/Class;
 
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/type/ClassKey;->_class:Ljava/lang/Class;
+    iget-object v3, p0, Lcom/fasterxml/jackson/databind/type/ClassKey;->_class:Ljava/lang/Class;
 
-    if-eq v3, v4, :cond_4
+    if-eq v2, v3, :cond_4
 
-    move v1, v2
+    move v0, v1
 
     goto :goto_4
 .end method
@@ -219,7 +211,6 @@
 
     .prologue
     .line 51
-    .local p1, "clz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/type/ClassKey;->_class:Ljava/lang/Class;
 
     .line 52

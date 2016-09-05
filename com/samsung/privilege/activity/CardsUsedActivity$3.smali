@@ -1,127 +1,111 @@
 .class Lcom/samsung/privilege/activity/CardsUsedActivity$3;
-.super Lcom/loopj/android/http/AsyncHttpResponseHandler;
+.super Lcom/bzbs/lib/http/okhttp/ResponseListener;
 .source "CardsUsedActivity.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/CardsUsedActivity;->loadCardDetail()V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/samsung/privilege/activity/CardsUsedActivity;->d()V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/CardsUsedActivity;
+.field final synthetic a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/CardsUsedActivity;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/CardsUsedActivity;
 
     .prologue
-    .line 332
-    iput-object p1, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$3;->this$0:Lcom/samsung/privilege/activity/CardsUsedActivity;
+    .line 297
+    iput-object p1, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$3;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
+    invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onFailure(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
+.method public failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
     .registers 6
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBody"    # [B
-    .param p4, "error"    # Ljava/lang/Throwable;
 
     .prologue
-    .line 378
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$3;->this$0:Lcom/samsung/privilege/activity/CardsUsedActivity;
+    .line 341
+    invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity;->gDialog:Landroid/app/ProgressDialog;
+    .line 343
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$3;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
+
+    iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity;->d:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 379
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$3;->this$0:Lcom/samsung/privilege/activity/CardsUsedActivity;
+    .line 344
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$3;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    invoke-static {v0, p1, p2, p3, p4}, Lcom/bzbs/util/DialogUtil;->showDialogHttpFailure(Landroid/content/Context;I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
+    invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 380
+    .line 345
     return-void
 .end method
 
-.method public onSuccess(I[Lcz/msebera/android/httpclient/Header;[B)V
+.method public successfully(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
     .registers 8
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBody"    # [B
 
     .prologue
-    .line 335
-    new-instance v0, Ljava/lang/String;
+    .line 300
+    sget-object v0, Lcom/samsung/privilege/activity/CardsUsedActivity;->a:Ljava/lang/String;
 
-    invoke-direct {v0, p3}, Ljava/lang/String;-><init>([B)V
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    .line 336
-    .local v0, "response_text":Ljava/lang/String;
-    sget-object v1, Lcom/samsung/privilege/activity/CardsUsedActivity;->TAG:Ljava/lang/String;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string/jumbo v2, "(loadCardDetail|onComplete)response_code="
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v3, "(loadCardDetail|onComplete)response_code="
+    move-result-object v1
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string/jumbo v2, ",response="
 
-    move-result-object v2
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v3, ",response="
+    move-result-object v1
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v2
+    .line 302
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$3;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity;->d:Landroid/app/ProgressDialog;
 
-    .line 338
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$3;->this$0:Lcom/samsung/privilege/activity/CardsUsedActivity;
+    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    iget-object v1, v1, Lcom/samsung/privilege/activity/CardsUsedActivity;->gDialog:Landroid/app/ProgressDialog;
+    .line 304
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$3;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    invoke-virtual {v1}, Landroid/app/ProgressDialog;->dismiss()V
+    iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity;->b:Landroid/os/Handler;
 
-    .line 340
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$3;->this$0:Lcom/samsung/privilege/activity/CardsUsedActivity;
+    new-instance v1, Lcom/samsung/privilege/activity/CardsUsedActivity$3$1;
 
-    iget-object v1, v1, Lcom/samsung/privilege/activity/CardsUsedActivity;->mHandler:Landroid/os/Handler;
+    invoke-direct {v1, p0, p4}, Lcom/samsung/privilege/activity/CardsUsedActivity$3$1;-><init>(Lcom/samsung/privilege/activity/CardsUsedActivity$3;Ljava/lang/String;)V
 
-    new-instance v2, Lcom/samsung/privilege/activity/CardsUsedActivity$3$1;
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    invoke-direct {v2, p0, v0}, Lcom/samsung/privilege/activity/CardsUsedActivity$3$1;-><init>(Lcom/samsung/privilege/activity/CardsUsedActivity$3;Ljava/lang/String;)V
-
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 374
+    .line 337
     return-void
 .end method

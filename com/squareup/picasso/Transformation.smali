@@ -4,8 +4,8 @@
 
 
 # virtual methods
-.method public abstract key()Ljava/lang/String;
+.method public abstract a(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 .end method
 
-.method public abstract transform(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+.method public abstract a()Ljava/lang/String;
 .end method

@@ -8,11 +8,11 @@
 
 
 # instance fields
-.field public agencyId:Ljava/lang/String;
+.field public a:Ljava/lang/String;
 
-.field public fileName:Ljava/lang/String;
+.field public b:Ljava/lang/String;
 
-.field public imageUrl:Ljava/lang/String;
+.field public c:Ljava/lang/String;
 
 
 # direct methods
@@ -29,7 +29,6 @@
 
 .method public constructor <init>(Lorg/json/JSONObject;)V
     .registers 3
-    .param p1, "jsonObject"    # Lorg/json/JSONObject;
 
     .prologue
     .line 22
@@ -38,29 +37,29 @@
     .line 24
     const-string/jumbo v0, "agencyId"
 
-    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/ImageUrl;->agencyId:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/ImageUrl;->a:Ljava/lang/String;
 
     .line 25
     const-string/jumbo v0, "fileName"
 
-    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/ImageUrl;->fileName:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/ImageUrl;->b:Ljava/lang/String;
 
     .line 26
     const-string/jumbo v0, "imageUrl"
 
-    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/ImageUrl;->imageUrl:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/ImageUrl;->c:Ljava/lang/String;
 
     .line 28
     return-void
@@ -70,11 +69,6 @@
 # virtual methods
 .method public clone()Ljava/lang/Object;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/CloneNotSupportedException;
-        }
-    .end annotation
 
     .prologue
     .line 19

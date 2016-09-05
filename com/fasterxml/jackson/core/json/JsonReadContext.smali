@@ -20,11 +20,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/core/json/JsonReadContext;Lcom/fasterxml/jackson/core/json/DupDetector;III)V
     .registers 7
-    .param p1, "parent"    # Lcom/fasterxml/jackson/core/json/JsonReadContext;
-    .param p2, "dups"    # Lcom/fasterxml/jackson/core/json/DupDetector;
-    .param p3, "type"    # I
-    .param p4, "lineNr"    # I
-    .param p5, "colNr"    # I
 
     .prologue
     .line 49
@@ -61,13 +56,6 @@
 
 .method private _checkDup(Lcom/fasterxml/jackson/core/json/DupDetector;Ljava/lang/String;)V
     .registers 6
-    .param p1, "dd"    # Lcom/fasterxml/jackson/core/json/DupDetector;
-    .param p2, "name"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 163
@@ -135,8 +123,6 @@
 
 .method public static createRootContext(II)Lcom/fasterxml/jackson/core/json/JsonReadContext;
     .registers 3
-    .param p0, "lineNr"    # I
-    .param p1, "colNr"    # I
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -153,9 +139,6 @@
 
 .method public static createRootContext(IILcom/fasterxml/jackson/core/json/DupDetector;)Lcom/fasterxml/jackson/core/json/JsonReadContext;
     .registers 9
-    .param p0, "lineNr"    # I
-    .param p1, "colNr"    # I
-    .param p2, "dups"    # Lcom/fasterxml/jackson/core/json/DupDetector;
 
     .prologue
     .line 83
@@ -178,7 +161,6 @@
 
 .method public static createRootContext(Lcom/fasterxml/jackson/core/json/DupDetector;)Lcom/fasterxml/jackson/core/json/JsonReadContext;
     .registers 7
-    .param p0, "dups"    # Lcom/fasterxml/jackson/core/json/DupDetector;
 
     .prologue
     const/4 v3, 0x0
@@ -203,8 +185,6 @@
 # virtual methods
 .method public createChildArrayContext(II)Lcom/fasterxml/jackson/core/json/JsonReadContext;
     .registers 9
-    .param p1, "lineNr"    # I
-    .param p2, "colNr"    # I
 
     .prologue
     const/4 v3, 0x1
@@ -213,13 +193,11 @@
     iget-object v0, p0, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_child:Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
     .line 97
-    .local v0, "ctxt":Lcom/fasterxml/jackson/core/json/JsonReadContext;
     if-nez v0, :cond_1c
 
     .line 98
     new-instance v0, Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
-    .end local v0    # "ctxt":Lcom/fasterxml/jackson/core/json/JsonReadContext;
     iget-object v1, p0, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_dups:Lcom/fasterxml/jackson/core/json/DupDetector;
 
     if-nez v1, :cond_15
@@ -235,7 +213,6 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/fasterxml/jackson/core/json/JsonReadContext;-><init>(Lcom/fasterxml/jackson/core/json/JsonReadContext;Lcom/fasterxml/jackson/core/json/DupDetector;III)V
 
-    .restart local v0    # "ctxt":Lcom/fasterxml/jackson/core/json/JsonReadContext;
     iput-object v0, p0, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_child:Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
     .line 103
@@ -243,7 +220,6 @@
     return-object v0
 
     .line 98
-    .end local v0    # "ctxt":Lcom/fasterxml/jackson/core/json/JsonReadContext;
     :cond_15
     iget-object v1, p0, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_dups:Lcom/fasterxml/jackson/core/json/DupDetector;
 
@@ -254,7 +230,6 @@
     goto :goto_c
 
     .line 101
-    .restart local v0    # "ctxt":Lcom/fasterxml/jackson/core/json/JsonReadContext;
     :cond_1c
     invoke-virtual {v0, v3, p1, p2}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->reset(III)V
 
@@ -262,9 +237,7 @@
 .end method
 
 .method public createChildObjectContext(II)Lcom/fasterxml/jackson/core/json/JsonReadContext;
-    .registers 10
-    .param p1, "lineNr"    # I
-    .param p2, "colNr"    # I
+    .registers 9
 
     .prologue
     const/4 v3, 0x2
@@ -273,16 +246,14 @@
     iget-object v0, p0, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_child:Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
     .line 108
-    .local v0, "ctxt":Lcom/fasterxml/jackson/core/json/JsonReadContext;
-    if-nez v0, :cond_1d
+    if-nez v0, :cond_1c
 
     .line 109
     new-instance v0, Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
-    .end local v0    # "ctxt":Lcom/fasterxml/jackson/core/json/JsonReadContext;
     iget-object v1, p0, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_dups:Lcom/fasterxml/jackson/core/json/DupDetector;
 
-    if-nez v1, :cond_16
+    if-nez v1, :cond_15
 
     const/4 v2, 0x0
 
@@ -295,20 +266,14 @@
 
     invoke-direct/range {v0 .. v5}, Lcom/fasterxml/jackson/core/json/JsonReadContext;-><init>(Lcom/fasterxml/jackson/core/json/JsonReadContext;Lcom/fasterxml/jackson/core/json/DupDetector;III)V
 
-    .restart local v0    # "ctxt":Lcom/fasterxml/jackson/core/json/JsonReadContext;
     iput-object v0, p0, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_child:Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
-    move-object v6, v0
-
     .line 114
-    .end local v0    # "ctxt":Lcom/fasterxml/jackson/core/json/JsonReadContext;
-    .local v6, "ctxt":Ljava/lang/Object;
-    :goto_15
-    return-object v6
+    :goto_14
+    return-object v0
 
     .line 109
-    .end local v6    # "ctxt":Ljava/lang/Object;
-    :cond_16
+    :cond_15
     iget-object v1, p0, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_dups:Lcom/fasterxml/jackson/core/json/DupDetector;
 
     invoke-virtual {v1}, Lcom/fasterxml/jackson/core/json/DupDetector;->child()Lcom/fasterxml/jackson/core/json/DupDetector;
@@ -318,15 +283,10 @@
     goto :goto_c
 
     .line 113
-    .restart local v0    # "ctxt":Lcom/fasterxml/jackson/core/json/JsonReadContext;
-    :cond_1d
+    :cond_1c
     invoke-virtual {v0, v3, p1, p2}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->reset(III)V
 
-    move-object v6, v0
-
-    .line 114
-    .restart local v6    # "ctxt":Ljava/lang/Object;
-    goto :goto_15
+    goto :goto_14
 .end method
 
 .method public expectComma()Z
@@ -334,27 +294,26 @@
 
     .prologue
     .line 153
-    iget v1, p0, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_index:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_index:I
 
-    add-int/lit8 v0, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     iput v0, p0, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_index:I
 
     .line 154
-    .local v0, "ix":I
     iget v1, p0, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_type:I
 
     if-eqz v1, :cond_e
 
     if-lez v0, :cond_e
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     :goto_d
-    return v1
+    return v0
 
     :cond_e
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_d
 .end method
@@ -393,14 +352,12 @@
 
 .method public getStartLocation(Ljava/lang/Object;)Lcom/fasterxml/jackson/core/JsonLocation;
     .registers 8
-    .param p1, "srcRef"    # Ljava/lang/Object;
 
     .prologue
     .line 138
     const-wide/16 v2, -0x1
 
     .line 139
-    .local v2, "totalChars":J
     new-instance v0, Lcom/fasterxml/jackson/core/JsonLocation;
 
     iget v4, p0, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_lineNr:I
@@ -416,9 +373,6 @@
 
 .method protected reset(III)V
     .registers 5
-    .param p1, "type"    # I
-    .param p2, "lineNr"    # I
-    .param p3, "colNr"    # I
 
     .prologue
     .line 59
@@ -457,12 +411,6 @@
 
 .method public setCurrentName(Ljava/lang/String;)V
     .registers 3
-    .param p1, "name"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 158
@@ -496,7 +444,6 @@
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 181
-    .local v0, "sb":Ljava/lang/StringBuilder;
     iget v1, p0, Lcom/fasterxml/jackson/core/json/JsonReadContext;->_type:I
 
     packed-switch v1, :pswitch_data_4c
@@ -505,9 +452,9 @@
     :goto_e
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     .line 183
     :pswitch_13

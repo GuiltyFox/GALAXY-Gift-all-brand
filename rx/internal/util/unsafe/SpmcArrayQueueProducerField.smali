@@ -16,7 +16,7 @@
 
 
 # static fields
-.field protected static final P_INDEX_OFFSET:J
+.field protected static final e:J
 
 
 # instance fields
@@ -33,22 +33,20 @@
 
     const-string/jumbo v1, "producerIndex"
 
-    invoke-static {v0, v1}, Lrx/internal/util/unsafe/UnsafeAccess;->addressOf(Ljava/lang/Class;Ljava/lang/String;)J
+    invoke-static {v0, v1}, Lrx/internal/util/unsafe/UnsafeAccess;->a(Ljava/lang/Class;Ljava/lang/String;)J
 
     move-result-wide v0
 
-    sput-wide v0, Lrx/internal/util/unsafe/SpmcArrayQueueProducerField;->P_INDEX_OFFSET:J
+    sput-wide v0, Lrx/internal/util/unsafe/SpmcArrayQueueProducerField;->e:J
 
     return-void
 .end method
 
 .method public constructor <init>(I)V
     .registers 2
-    .param p1, "capacity"    # I
 
     .prologue
     .line 43
-    .local p0, "this":Lrx/internal/util/unsafe/SpmcArrayQueueProducerField;, "Lrx/internal/util/unsafe/SpmcArrayQueueProducerField<TE;>;"
     invoke-direct {p0, p1}, Lrx/internal/util/unsafe/SpmcArrayQueueL1Pad;-><init>(I)V
 
     .line 44
@@ -57,27 +55,24 @@
 
 
 # virtual methods
-.method protected final lvProducerIndex()J
+.method protected final b()J
     .registers 3
 
     .prologue
     .line 35
-    .local p0, "this":Lrx/internal/util/unsafe/SpmcArrayQueueProducerField;, "Lrx/internal/util/unsafe/SpmcArrayQueueProducerField<TE;>;"
     iget-wide v0, p0, Lrx/internal/util/unsafe/SpmcArrayQueueProducerField;->producerIndex:J
 
     return-wide v0
 .end method
 
-.method protected final soTail(J)V
+.method protected final d(J)V
     .registers 10
-    .param p1, "v"    # J
 
     .prologue
     .line 39
-    .local p0, "this":Lrx/internal/util/unsafe/SpmcArrayQueueProducerField;, "Lrx/internal/util/unsafe/SpmcArrayQueueProducerField<TE;>;"
-    sget-object v0, Lrx/internal/util/unsafe/UnsafeAccess;->UNSAFE:Lsun/misc/Unsafe;
+    sget-object v0, Lrx/internal/util/unsafe/UnsafeAccess;->a:Lsun/misc/Unsafe;
 
-    sget-wide v2, Lrx/internal/util/unsafe/SpmcArrayQueueProducerField;->P_INDEX_OFFSET:J
+    sget-wide v2, Lrx/internal/util/unsafe/SpmcArrayQueueProducerField;->e:J
 
     move-object v1, p0
 

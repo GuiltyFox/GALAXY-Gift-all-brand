@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/annotation/ObjectIdGenerators;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "UUIDGenerator"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$Base",
@@ -52,7 +43,6 @@
 
     .prologue
     .line 127
-    .local p1, "scope":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const-class v0, Ljava/lang/Object;
 
     invoke-direct {p0, v0}, Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$Base;-><init>(Ljava/lang/Class;)V
@@ -75,7 +65,6 @@
 
     .prologue
     .line 161
-    .local p1, "gen":Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;, "Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;"
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -113,13 +102,11 @@
 
     .prologue
     .line 135
-    .local p1, "scope":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     return-object p0
 .end method
 
 .method public bridge synthetic generateId(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 121
@@ -132,7 +119,6 @@
 
 .method public generateId(Ljava/lang/Object;)Ljava/util/UUID;
     .registers 3
-    .param p1, "forPojo"    # Ljava/lang/Object;
 
     .prologue
     .line 148
@@ -145,7 +131,6 @@
 
 .method public key(Ljava/lang/Object;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;
     .registers 5
-    .param p1, "key"    # Ljava/lang/Object;
 
     .prologue
     .line 153
@@ -164,7 +149,6 @@
 
 .method public newForSerialization(Ljava/lang/Object;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;
     .registers 2
-    .param p1, "context"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

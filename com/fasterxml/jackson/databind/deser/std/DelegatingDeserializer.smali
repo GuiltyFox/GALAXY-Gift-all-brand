@@ -48,7 +48,6 @@
 
     .prologue
     .line 37
-    .local p1, "delegatee":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     invoke-static {p1}, Lcom/fasterxml/jackson/databind/deser/std/DelegatingDeserializer;->_figureType(Lcom/fasterxml/jackson/databind/JsonDeserializer;)Ljava/lang/Class;
 
     move-result-object v0
@@ -76,21 +75,17 @@
 
     .prologue
     .line 45
-    .local p0, "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/JsonDeserializer;->handledType()Ljava/lang/Class;
 
     move-result-object v0
 
     .line 46
-    .local v0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     if-eqz v0, :cond_7
 
     .line 49
-    .end local v0    # "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :goto_6
     return-object v0
 
-    .restart local v0    # "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :cond_7
     const-class v0, Ljava/lang/Object;
 
@@ -101,8 +96,6 @@
 # virtual methods
 .method protected _createContextual(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/BeanProperty;Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
     .registers 5
-    .param p1, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .param p2, "property"    # Lcom/fasterxml/jackson/databind/BeanProperty;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -120,17 +113,14 @@
 
     .prologue
     .line 84
-    .local p3, "newDelegatee":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/DelegatingDeserializer;->_delegatee:Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
     if-ne p3, v0, :cond_5
 
     .line 87
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/deser/std/DelegatingDeserializer;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/deser/std/DelegatingDeserializer;
     :cond_5
     invoke-virtual {p0, p3}, Lcom/fasterxml/jackson/databind/deser/std/DelegatingDeserializer;->newDelegatingInstance(Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
@@ -141,8 +131,6 @@
 
 .method public createContextual(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/BeanProperty;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
     .registers 5
-    .param p1, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .param p2, "property"    # Lcom/fasterxml/jackson/databind/BeanProperty;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -154,32 +142,23 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
     .line 70
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/std/DelegatingDeserializer;->_delegatee:Lcom/fasterxml/jackson/databind/JsonDeserializer;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/DelegatingDeserializer;->_delegatee:Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
-    invoke-virtual {p1, v1, p2}, Lcom/fasterxml/jackson/databind/DeserializationContext;->handleSecondaryContextualization(Lcom/fasterxml/jackson/databind/JsonDeserializer;Lcom/fasterxml/jackson/databind/BeanProperty;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
+    invoke-virtual {p1, v0, p2}, Lcom/fasterxml/jackson/databind/DeserializationContext;->handleSecondaryContextualization(Lcom/fasterxml/jackson/databind/JsonDeserializer;Lcom/fasterxml/jackson/databind/BeanProperty;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
     move-result-object v0
 
     .line 71
-    .local v0, "del":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/std/DelegatingDeserializer;->_delegatee:Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
     if-ne v0, v1, :cond_b
 
     .line 74
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/deser/std/DelegatingDeserializer;
     :goto_a
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/deser/std/DelegatingDeserializer;
     :cond_b
     invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/databind/deser/std/DelegatingDeserializer;->newDelegatingInstance(Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
@@ -190,14 +169,6 @@
 
 .method public deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .registers 4
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 106
@@ -212,15 +183,6 @@
 
 .method public deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 5
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .param p3, "intoValue"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 115
@@ -235,15 +197,6 @@
 
 .method public deserializeWithType(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;)Ljava/lang/Object;
     .registers 5
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .param p3, "typeDeserializer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 123
@@ -258,7 +211,6 @@
 
 .method public findBackReference(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
     .registers 3
-    .param p1, "logicalName"    # Ljava/lang/String;
 
     .prologue
     .line 93
@@ -393,17 +345,14 @@
 
     .prologue
     .line 135
-    .local p1, "delegatee":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/DelegatingDeserializer;->_delegatee:Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
     if-ne p1, v0, :cond_5
 
     .line 138
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/deser/std/DelegatingDeserializer;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/deser/std/DelegatingDeserializer;
     :cond_5
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/deser/std/DelegatingDeserializer;->newDelegatingInstance(Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
@@ -414,12 +363,6 @@
 
 .method public resolve(Lcom/fasterxml/jackson/databind/DeserializationContext;)V
     .registers 3
-    .param p1, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
 
     .prologue
     .line 60

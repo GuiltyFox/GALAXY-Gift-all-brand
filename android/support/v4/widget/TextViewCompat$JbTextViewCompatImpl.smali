@@ -3,17 +3,6 @@
 .source "TextViewCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/widget/TextViewCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "JbTextViewCompatImpl"
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .registers 1
@@ -27,26 +16,12 @@
 
 
 # virtual methods
-.method public getMaxLines(Landroid/widget/TextView;)I
+.method public a(Landroid/widget/TextView;)I
     .registers 3
-    .param p1, "textView"    # Landroid/widget/TextView;
 
     .prologue
     .line 93
-    invoke-static {p1}, Landroid/support/v4/widget/TextViewCompatJb;->getMaxLines(Landroid/widget/TextView;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getMinLines(Landroid/widget/TextView;)I
-    .registers 3
-    .param p1, "textView"    # Landroid/widget/TextView;
-
-    .prologue
-    .line 98
-    invoke-static {p1}, Landroid/support/v4/widget/TextViewCompatJb;->getMinLines(Landroid/widget/TextView;)I
+    invoke-static {p1}, Landroid/support/v4/widget/TextViewCompatJb;->a(Landroid/widget/TextView;)I
 
     move-result v0
 

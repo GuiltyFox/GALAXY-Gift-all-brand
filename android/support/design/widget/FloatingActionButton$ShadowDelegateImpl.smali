@@ -6,17 +6,6 @@
 .implements Landroid/support/design/widget/ShadowViewDelegate;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/FloatingActionButton;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "ShadowDelegateImpl"
-.end annotation
-
-
 # instance fields
 .field final synthetic this$0:Landroid/support/design/widget/FloatingActionButton;
 
@@ -36,8 +25,6 @@
 
 .method synthetic constructor <init>(Landroid/support/design/widget/FloatingActionButton;Landroid/support/design/widget/FloatingActionButton$1;)V
     .registers 3
-    .param p1, "x0"    # Landroid/support/design/widget/FloatingActionButton;
-    .param p2, "x1"    # Landroid/support/design/widget/FloatingActionButton$1;
 
     .prologue
     .line 656
@@ -61,7 +48,7 @@
 
     int-to-float v0, v0
 
-    const/high16 v1, 0x40000000
+    const/high16 v1, 0x40000000    # 2.0f
 
     div-float/2addr v0, v1
 
@@ -85,7 +72,6 @@
 
 .method public setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
     .registers 3
-    .param p1, "background"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 671
@@ -100,10 +86,6 @@
 
 .method public setShadowPadding(IIII)V
     .registers 10
-    .param p1, "left"    # I
-    .param p2, "top"    # I
-    .param p3, "right"    # I
-    .param p4, "bottom"    # I
 
     .prologue
     .line 664

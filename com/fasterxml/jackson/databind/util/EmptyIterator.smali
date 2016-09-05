@@ -50,7 +50,6 @@
 
     .prologue
     .line 13
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/EmptyIterator;, "Lcom/fasterxml/jackson/databind/util/EmptyIterator<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -82,7 +81,6 @@
 
     .prologue
     .line 19
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/EmptyIterator;, "Lcom/fasterxml/jackson/databind/util/EmptyIterator<TT;>;"
     const/4 v0, 0x0
 
     return v0
@@ -98,7 +96,6 @@
 
     .prologue
     .line 20
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/EmptyIterator;, "Lcom/fasterxml/jackson/databind/util/EmptyIterator<TT;>;"
     new-instance v0, Ljava/util/NoSuchElementException;
 
     invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
@@ -111,7 +108,6 @@
 
     .prologue
     .line 21
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/EmptyIterator;, "Lcom/fasterxml/jackson/databind/util/EmptyIterator<TT;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V

@@ -3,15 +3,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/gms/analytics/HitBuilders;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xc
-    name = "HitBuilder"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -23,21 +14,9 @@
 
 
 # instance fields
-.field private zzNS:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field a:Lcom/google/android/gms/analytics/ecommerce/ProductAction;
 
-.field zzNT:Lcom/google/android/gms/analytics/ecommerce/ProductAction;
-
-.field zzNU:Ljava/util/Map;
+.field b:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",
@@ -51,7 +30,7 @@
     .end annotation
 .end field
 
-.field zzNV:Ljava/util/List;
+.field c:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
@@ -62,12 +41,24 @@
     .end annotation
 .end field
 
-.field zzNW:Ljava/util/List;
+.field d:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
             "<",
             "Lcom/google/android/gms/analytics/ecommerce/Product;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private e:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
             ">;"
         }
     .end annotation
@@ -84,152 +75,60 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->zzNS:Ljava/util/Map;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->e:Ljava/util/Map;
 
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->zzNU:Ljava/util/Map;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->b:Ljava/util/Map;
 
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->zzNV:Ljava/util/List;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->c:Ljava/util/List;
 
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->zzNW:Ljava/util/List;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->d:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public addImpression(Lcom/google/android/gms/analytics/ecommerce/Product;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-    .registers 5
-    .param p1, "product"    # Lcom/google/android/gms/analytics/ecommerce/Product;
-    .param p2, "impressionList"    # Ljava/lang/String;
+.method public final a(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
+    .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lcom/google/android/gms/analytics/ecommerce/Product;",
+            "Ljava/lang/String;",
             "Ljava/lang/String;",
             ")TT;"
         }
     .end annotation
 
-    .prologue
-    .local p0, "this":Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;, "Lcom/google/android/gms/analytics/HitBuilders$HitBuilder<TT;>;"
-    if-nez p1, :cond_9
+    if-eqz p1, :cond_8
 
-    const-string/jumbo v0, "product should be non-null"
+    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->e:Ljava/util/Map;
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->zzaH(Ljava/lang/String;)V
+    invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    :goto_8
+    :goto_7
     return-object p0
 
-    :cond_9
-    if-nez p2, :cond_e
+    :cond_8
+    const-string/jumbo v0, " HitBuilder.set() called with a null paramName."
 
-    const-string/jumbo p2, ""
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->c(Ljava/lang/String;)V
 
-    :cond_e
-    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->zzNU:Ljava/util/Map;
-
-    invoke-interface {v0, p2}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_20
-
-    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->zzNU:Ljava/util/Map;
-
-    new-instance v1, Ljava/util/ArrayList;
-
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
-
-    invoke-interface {v0, p2, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :cond_20
-    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->zzNU:Ljava/util/Map;
-
-    invoke-interface {v0, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_8
+    goto :goto_7
 .end method
 
-.method public addProduct(Lcom/google/android/gms/analytics/ecommerce/Product;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-    .registers 3
-    .param p1, "product"    # Lcom/google/android/gms/analytics/ecommerce/Product;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/analytics/ecommerce/Product;",
-            ")TT;"
-        }
-    .end annotation
-
-    .prologue
-    .local p0, "this":Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;, "Lcom/google/android/gms/analytics/HitBuilders$HitBuilder<TT;>;"
-    if-nez p1, :cond_9
-
-    const-string/jumbo v0, "product should be non-null"
-
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->zzaH(Ljava/lang/String;)V
-
-    :goto_8
-    return-object p0
-
-    :cond_9
-    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->zzNW:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_8
-.end method
-
-.method public addPromotion(Lcom/google/android/gms/analytics/ecommerce/Promotion;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-    .registers 3
-    .param p1, "promotion"    # Lcom/google/android/gms/analytics/ecommerce/Promotion;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/analytics/ecommerce/Promotion;",
-            ")TT;"
-        }
-    .end annotation
-
-    .prologue
-    .local p0, "this":Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;, "Lcom/google/android/gms/analytics/HitBuilders$HitBuilder<TT;>;"
-    if-nez p1, :cond_9
-
-    const-string/jumbo v0, "promotion should be non-null"
-
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->zzaH(Ljava/lang/String;)V
-
-    :goto_8
-    return-object p0
-
-    :cond_9
-    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->zzNV:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_8
-.end method
-
-.method public build()Ljava/util/Map;
+.method public a()Ljava/util/Map;
     .registers 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -246,24 +145,24 @@
 
     new-instance v5, Ljava/util/HashMap;
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->zzNS:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->e:Ljava/util/Map;
 
     invoke-direct {v5, v0}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->zzNT:Lcom/google/android/gms/analytics/ecommerce/ProductAction;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->a:Lcom/google/android/gms/analytics/ecommerce/ProductAction;
 
     if-eqz v0, :cond_15
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->zzNT:Lcom/google/android/gms/analytics/ecommerce/ProductAction;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->a:Lcom/google/android/gms/analytics/ecommerce/ProductAction;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/ecommerce/ProductAction;->build()Ljava/util/Map;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/ecommerce/ProductAction;->a()Ljava/util/Map;
 
     move-result-object v0
 
     invoke-interface {v5, v0}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
 
     :cond_15
-    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->zzNV:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->c:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -284,11 +183,11 @@
 
     check-cast v0, Lcom/google/android/gms/analytics/ecommerce/Promotion;
 
-    invoke-static {v1}, Lcom/google/android/gms/analytics/zzc;->zzZ(I)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/android/gms/analytics/zzc;->e(I)Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v0, v4}, Lcom/google/android/gms/analytics/ecommerce/Promotion;->zzaX(Ljava/lang/String;)Ljava/util/Map;
+    invoke-virtual {v0, v4}, Lcom/google/android/gms/analytics/ecommerce/Promotion;->a(Ljava/lang/String;)Ljava/util/Map;
 
     move-result-object v0
 
@@ -301,7 +200,7 @@
     goto :goto_1c
 
     :cond_37
-    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->zzNW:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->d:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -322,11 +221,11 @@
 
     check-cast v0, Lcom/google/android/gms/analytics/ecommerce/Product;
 
-    invoke-static {v1}, Lcom/google/android/gms/analytics/zzc;->zzX(I)Ljava/lang/String;
+    invoke-static {v1}, Lcom/google/android/gms/analytics/zzc;->c(I)Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v0, v4}, Lcom/google/android/gms/analytics/ecommerce/Product;->zzaX(Ljava/lang/String;)Ljava/util/Map;
+    invoke-virtual {v0, v4}, Lcom/google/android/gms/analytics/ecommerce/Product;->a(Ljava/lang/String;)Ljava/util/Map;
 
     move-result-object v0
 
@@ -339,7 +238,7 @@
     goto :goto_3e
 
     :cond_59
-    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->zzNU:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->b:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -370,7 +269,7 @@
 
     check-cast v1, Ljava/util/List;
 
-    invoke-static {v3}, Lcom/google/android/gms/analytics/zzc;->zzac(I)Ljava/lang/String;
+    invoke-static {v3}, Lcom/google/android/gms/analytics/zzc;->h(I)Ljava/lang/String;
 
     move-result-object v7
 
@@ -401,7 +300,7 @@
 
     move-result-object v9
 
-    invoke-static {v4}, Lcom/google/android/gms/analytics/zzc;->zzab(I)Ljava/lang/String;
+    invoke-static {v4}, Lcom/google/android/gms/analytics/zzc;->g(I)Ljava/lang/String;
 
     move-result-object v10
 
@@ -413,7 +312,7 @@
 
     move-result-object v9
 
-    invoke-virtual {v1, v9}, Lcom/google/android/gms/analytics/ecommerce/Product;->zzaX(Ljava/lang/String;)Ljava/util/Map;
+    invoke-virtual {v1, v9}, Lcom/google/android/gms/analytics/ecommerce/Product;->a(Ljava/lang/String;)Ljava/util/Map;
 
     move-result-object v1
 
@@ -471,399 +370,4 @@
 
     :cond_d6
     return-object v5
-.end method
-
-.method protected get(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
-    .param p1, "paramName"    # Ljava/lang/String;
-
-    .prologue
-    .local p0, "this":Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;, "Lcom/google/android/gms/analytics/HitBuilders$HitBuilder<TT;>;"
-    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->zzNS:Ljava/util/Map;
-
-    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public final set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-    .registers 4
-    .param p1, "paramName"    # Ljava/lang/String;
-    .param p2, "paramValue"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ")TT;"
-        }
-    .end annotation
-
-    .prologue
-    .local p0, "this":Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;, "Lcom/google/android/gms/analytics/HitBuilders$HitBuilder<TT;>;"
-    if-eqz p1, :cond_8
-
-    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->zzNS:Ljava/util/Map;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    :goto_7
-    return-object p0
-
-    :cond_8
-    const-string/jumbo v0, " HitBuilder.set() called with a null paramName."
-
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->zzaH(Ljava/lang/String;)V
-
-    goto :goto_7
-.end method
-
-.method public final setAll(Ljava/util/Map;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-    .registers 4
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;)TT;"
-        }
-    .end annotation
-
-    .prologue
-    .local p0, "this":Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;, "Lcom/google/android/gms/analytics/HitBuilders$HitBuilder<TT;>;"
-    .local p1, "params":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
-    if-nez p1, :cond_3
-
-    :goto_2
-    return-object p0
-
-    :cond_3
-    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->zzNS:Ljava/util/Map;
-
-    new-instance v1, Ljava/util/HashMap;
-
-    invoke-direct {v1, p1}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
-
-    goto :goto_2
-.end method
-
-.method public setCampaignParamsFromUrl(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-    .registers 5
-    .param p1, "utmParams"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            ")TT;"
-        }
-    .end annotation
-
-    .prologue
-    .local p0, "this":Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;, "Lcom/google/android/gms/analytics/HitBuilders$HitBuilder<TT;>;"
-    invoke-static {p1}, Lcom/google/android/gms/analytics/internal/zzam;->zzbr(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_b
-
-    :goto_a
-    return-object p0
-
-    :cond_b
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzam;->zzbp(Ljava/lang/String;)Ljava/util/Map;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "&cc"
-
-    const-string/jumbo v0, "utm_content"
-
-    invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-
-    const-string/jumbo v2, "&cm"
-
-    const-string/jumbo v0, "utm_medium"
-
-    invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-
-    const-string/jumbo v2, "&cn"
-
-    const-string/jumbo v0, "utm_campaign"
-
-    invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-
-    const-string/jumbo v2, "&cs"
-
-    const-string/jumbo v0, "utm_source"
-
-    invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-
-    const-string/jumbo v2, "&ck"
-
-    const-string/jumbo v0, "utm_term"
-
-    invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-
-    const-string/jumbo v2, "&ci"
-
-    const-string/jumbo v0, "utm_id"
-
-    invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-
-    const-string/jumbo v2, "&anid"
-
-    const-string/jumbo v0, "anid"
-
-    invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-
-    const-string/jumbo v2, "&gclid"
-
-    const-string/jumbo v0, "gclid"
-
-    invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-
-    const-string/jumbo v2, "&dclid"
-
-    const-string/jumbo v0, "dclid"
-
-    invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-
-    const-string/jumbo v2, "&aclid"
-
-    const-string/jumbo v0, "aclid"
-
-    invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-
-    const-string/jumbo v2, "&gmob_t"
-
-    const-string/jumbo v0, "gmob_t"
-
-    invoke-interface {v1, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-
-    goto/16 :goto_a
-.end method
-
-.method public setCustomDimension(ILjava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-    .registers 4
-    .param p1, "index"    # I
-    .param p2, "dimension"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(I",
-            "Ljava/lang/String;",
-            ")TT;"
-        }
-    .end annotation
-
-    .prologue
-    .local p0, "this":Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;, "Lcom/google/android/gms/analytics/HitBuilders$HitBuilder<TT;>;"
-    invoke-static {p1}, Lcom/google/android/gms/analytics/zzc;->zzT(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0, p2}, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-
-    return-object p0
-.end method
-
-.method public setCustomMetric(IF)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-    .registers 5
-    .param p1, "index"    # I
-    .param p2, "metric"    # F
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(IF)TT;"
-        }
-    .end annotation
-
-    .prologue
-    .local p0, "this":Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;, "Lcom/google/android/gms/analytics/HitBuilders$HitBuilder<TT;>;"
-    invoke-static {p1}, Lcom/google/android/gms/analytics/zzc;->zzV(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p2}, Ljava/lang/Float;->toString(F)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-
-    return-object p0
-.end method
-
-.method protected setHitType(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-    .registers 3
-    .param p1, "hitType"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            ")TT;"
-        }
-    .end annotation
-
-    .prologue
-    .local p0, "this":Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;, "Lcom/google/android/gms/analytics/HitBuilders$HitBuilder<TT;>;"
-    const-string/jumbo v0, "&t"
-
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-
-    return-object p0
-.end method
-
-.method public setNewSession()Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-    .registers 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TT;"
-        }
-    .end annotation
-
-    const-string/jumbo v0, "&sc"
-
-    const-string/jumbo v1, "start"
-
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-
-    return-object p0
-.end method
-
-.method public setNonInteraction(Z)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-    .registers 4
-    .param p1, "nonInteraction"    # Z
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(Z)TT;"
-        }
-    .end annotation
-
-    .prologue
-    .local p0, "this":Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;, "Lcom/google/android/gms/analytics/HitBuilders$HitBuilder<TT;>;"
-    const-string/jumbo v0, "&ni"
-
-    invoke-static {p1}, Lcom/google/android/gms/analytics/internal/zzam;->zzK(Z)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-
-    return-object p0
-.end method
-
-.method public setProductAction(Lcom/google/android/gms/analytics/ecommerce/ProductAction;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-    .registers 2
-    .param p1, "action"    # Lcom/google/android/gms/analytics/ecommerce/ProductAction;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/google/android/gms/analytics/ecommerce/ProductAction;",
-            ")TT;"
-        }
-    .end annotation
-
-    .prologue
-    .local p0, "this":Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;, "Lcom/google/android/gms/analytics/HitBuilders$HitBuilder<TT;>;"
-    iput-object p1, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->zzNT:Lcom/google/android/gms/analytics/ecommerce/ProductAction;
-
-    return-object p0
-.end method
-
-.method public setPromotionAction(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-    .registers 4
-    .param p1, "action"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            ")TT;"
-        }
-    .end annotation
-
-    .prologue
-    .local p0, "this":Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;, "Lcom/google/android/gms/analytics/HitBuilders$HitBuilder<TT;>;"
-    iget-object v0, p0, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->zzNS:Ljava/util/Map;
-
-    const-string/jumbo v1, "&promoa"
-
-    invoke-interface {v0, v1, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-object p0
 .end method

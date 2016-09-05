@@ -6,21 +6,9 @@
 .implements Landroid/view/LayoutInflater$Factory2;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/view/LayoutInflaterCompatHC;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "FactoryWrapperHC"
-.end annotation
-
-
 # direct methods
 .method constructor <init>(Landroid/support/v4/view/LayoutInflaterFactory;)V
     .registers 2
-    .param p1, "delegateFactory"    # Landroid/support/v4/view/LayoutInflaterFactory;
 
     .prologue
     .line 38
@@ -34,16 +22,12 @@
 # virtual methods
 .method public onCreateView(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
     .registers 6
-    .param p1, "parent"    # Landroid/view/View;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "context"    # Landroid/content/Context;
-    .param p4, "attributeSet"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 44
-    iget-object v0, p0, Landroid/support/v4/view/LayoutInflaterCompatHC$FactoryWrapperHC;->mDelegateFactory:Landroid/support/v4/view/LayoutInflaterFactory;
+    iget-object v0, p0, Landroid/support/v4/view/LayoutInflaterCompatHC$FactoryWrapperHC;->a:Landroid/support/v4/view/LayoutInflaterFactory;
 
-    invoke-interface {v0, p1, p2, p3, p4}, Landroid/support/v4/view/LayoutInflaterFactory;->onCreateView(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
+    invoke-interface {v0, p1, p2, p3, p4}, Landroid/support/v4/view/LayoutInflaterFactory;->a(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
 
     move-result-object v0
 

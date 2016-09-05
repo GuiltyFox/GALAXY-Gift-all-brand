@@ -74,7 +74,6 @@
 
 .method public constructor <init>(Ljava/math/BigDecimal;)V
     .registers 2
-    .param p1, "v"    # Ljava/math/BigDecimal;
 
     .prologue
     .line 32
@@ -87,7 +86,6 @@
 
 .method public static valueOf(Ljava/math/BigDecimal;)Lcom/fasterxml/jackson/databind/node/DecimalNode;
     .registers 2
-    .param p0, "d"    # Ljava/math/BigDecimal;
 
     .prologue
     .line 34
@@ -236,7 +234,6 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .registers 6
-    .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
     const/4 v0, 0x1
@@ -247,13 +244,11 @@
     if-ne p1, p0, :cond_5
 
     .line 121
-    .end local p1    # "o":Ljava/lang/Object;
     :cond_4
     :goto_4
     return v0
 
     .line 117
-    .restart local p1    # "o":Ljava/lang/Object;
     :cond_5
     if-nez p1, :cond_9
 
@@ -270,7 +265,6 @@
     .line 119
     check-cast p1, Lcom/fasterxml/jackson/databind/node/DecimalNode;
 
-    .end local p1    # "o":Ljava/lang/Object;
     iget-object v2, p1, Lcom/fasterxml/jackson/databind/node/DecimalNode;->_value:Ljava/math/BigDecimal;
 
     iget-object v3, p0, Lcom/fasterxml/jackson/databind/node/DecimalNode;->_value:Ljava/math/BigDecimal;
@@ -285,7 +279,6 @@
 
     goto :goto_4
 
-    .restart local p1    # "o":Ljava/lang/Object;
     :cond_1b
     move v0, v1
 
@@ -397,14 +390,6 @@
 
 .method public final serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 4
-    .param p1, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p2, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 110

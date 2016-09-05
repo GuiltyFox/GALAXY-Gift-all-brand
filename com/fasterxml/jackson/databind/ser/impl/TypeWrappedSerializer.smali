@@ -32,7 +32,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;Lcom/fasterxml/jackson/databind/JsonSerializer;)V
     .registers 3
-    .param p1, "typeSer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -44,7 +43,6 @@
 
     .prologue
     .line 26
-    .local p2, "ser":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<*>;"
     invoke-direct {p0}, Lcom/fasterxml/jackson/databind/JsonSerializer;-><init>()V
 
     .line 27
@@ -80,15 +78,6 @@
 
 .method public serialize(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 6
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 35
@@ -104,16 +93,6 @@
 
 .method public serializeWithType(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)V
     .registers 6
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .param p4, "typeSer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 46

@@ -15,24 +15,5 @@
 
 
 # virtual methods
-.method public abstract decode(Ljava/lang/Object;Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;IILcom/bumptech/glide/load/DecodeFormat;)Landroid/graphics/Bitmap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TT;",
-            "Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;",
-            "II",
-            "Lcom/bumptech/glide/load/DecodeFormat;",
-            ")",
-            "Landroid/graphics/Bitmap;"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/Exception;
-        }
-    .end annotation
-.end method
-
-.method public abstract getId()Ljava/lang/String;
+.method public abstract a()Ljava/lang/String;
 .end method

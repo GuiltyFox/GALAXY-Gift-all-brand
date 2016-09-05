@@ -10,9 +10,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;Lcom/fasterxml/jackson/databind/BeanProperty;Ljava/lang/String;)V
     .registers 4
-    .param p1, "idRes"    # Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;
-    .param p2, "property"    # Lcom/fasterxml/jackson/databind/BeanProperty;
-    .param p3, "propName"    # Ljava/lang/String;
 
     .prologue
     .line 30
@@ -29,13 +26,6 @@
 # virtual methods
 .method protected final _writeArrayPrefix(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 3
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 152
@@ -47,14 +37,6 @@
 
 .method protected final _writeArraySuffix(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/String;)V
     .registers 5
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "typeId"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 165
@@ -71,13 +53,6 @@
 
 .method protected final _writeObjectPrefix(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 3
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 148
@@ -89,14 +64,6 @@
 
 .method protected final _writeObjectSuffix(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/String;)V
     .registers 5
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "typeId"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 160
@@ -113,13 +80,6 @@
 
 .method protected final _writeScalarPrefix(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 3
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 145
@@ -128,14 +88,6 @@
 
 .method protected final _writeScalarSuffix(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/String;)V
     .registers 5
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "typeId"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 156
@@ -149,7 +101,6 @@
 
 .method public bridge synthetic forProperty(Lcom/fasterxml/jackson/databind/BeanProperty;)Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/BeanProperty;
 
     .prologue
     .line 25
@@ -162,7 +113,6 @@
 
 .method public forProperty(Lcom/fasterxml/jackson/databind/BeanProperty;)Lcom/fasterxml/jackson/databind/jsontype/impl/AsExternalTypeSerializer;
     .registers 5
-    .param p1, "prop"    # Lcom/fasterxml/jackson/databind/BeanProperty;
 
     .prologue
     .line 36
@@ -170,11 +120,9 @@
 
     if-ne v0, p1, :cond_5
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/jsontype/impl/AsExternalTypeSerializer;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/jsontype/impl/AsExternalTypeSerializer;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/jsontype/impl/AsExternalTypeSerializer;
 
@@ -211,14 +159,6 @@
 
 .method public writeCustomTypePrefixForArray(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/String;)V
     .registers 4
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "typeId"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 120
@@ -230,14 +170,6 @@
 
 .method public writeCustomTypePrefixForObject(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/String;)V
     .registers 4
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "typeId"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 115
@@ -249,14 +181,6 @@
 
 .method public writeCustomTypePrefixForScalar(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/String;)V
     .registers 4
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "typeId"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 110
@@ -268,14 +192,6 @@
 
 .method public writeCustomTypeSuffixForArray(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/String;)V
     .registers 4
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "typeId"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 135
@@ -287,14 +203,6 @@
 
 .method public writeCustomTypeSuffixForObject(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/String;)V
     .registers 4
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "typeId"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 130
@@ -306,14 +214,6 @@
 
 .method public writeCustomTypeSuffixForScalar(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/String;)V
     .registers 4
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "typeId"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 125
@@ -325,13 +225,6 @@
 
 .method public writeTypePrefixForArray(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 3
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 63
@@ -343,8 +236,6 @@
 
 .method public writeTypePrefixForArray(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/Class;)V
     .registers 4
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -355,15 +246,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
     .prologue
     .line 68
-    .local p3, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0, p1, p2}, Lcom/fasterxml/jackson/databind/jsontype/impl/AsExternalTypeSerializer;->_writeArrayPrefix(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;)V
 
     .line 69
@@ -372,13 +256,6 @@
 
 .method public writeTypePrefixForObject(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 3
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 53
@@ -390,8 +267,6 @@
 
 .method public writeTypePrefixForObject(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/Class;)V
     .registers 4
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -402,15 +277,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
     .prologue
     .line 58
-    .local p3, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0, p1, p2}, Lcom/fasterxml/jackson/databind/jsontype/impl/AsExternalTypeSerializer;->_writeObjectPrefix(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;)V
 
     .line 59
@@ -419,13 +287,6 @@
 
 .method public writeTypePrefixForScalar(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 3
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 73
@@ -437,8 +298,6 @@
 
 .method public writeTypePrefixForScalar(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/Class;)V
     .registers 4
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -449,15 +308,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
     .prologue
     .line 78
-    .local p3, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0, p1, p2}, Lcom/fasterxml/jackson/databind/jsontype/impl/AsExternalTypeSerializer;->_writeScalarPrefix(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;)V
 
     .line 79
@@ -466,13 +318,6 @@
 
 .method public writeTypeSuffixForArray(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 4
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 94
@@ -488,13 +333,6 @@
 
 .method public writeTypeSuffixForObject(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 4
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 89
@@ -510,13 +348,6 @@
 
 .method public writeTypeSuffixForScalar(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 4
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 99

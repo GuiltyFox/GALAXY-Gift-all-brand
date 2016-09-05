@@ -43,7 +43,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/PropertyName;Ljava/lang/Class;Ljava/lang/Class;)V
     .registers 5
-    .param p1, "name"    # Lcom/fasterxml/jackson/databind/PropertyName;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -62,8 +61,6 @@
 
     .prologue
     .line 31
-    .local p2, "scope":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p3, "gen":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;>;"
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;-><init>(Lcom/fasterxml/jackson/databind/PropertyName;Ljava/lang/Class;Ljava/lang/Class;Z)V
@@ -74,7 +71,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/PropertyName;Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)V
     .registers 11
-    .param p1, "name"    # Lcom/fasterxml/jackson/databind/PropertyName;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -94,9 +90,6 @@
 
     .prologue
     .line 25
-    .local p2, "scope":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p3, "gen":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;>;"
-    .local p4, "resolver":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/fasterxml/jackson/annotation/ObjectIdResolver;>;"
     const/4 v4, 0x0
 
     move-object v0, p0
@@ -117,8 +110,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/PropertyName;Ljava/lang/Class;Ljava/lang/Class;Z)V
     .registers 11
-    .param p1, "prop"    # Lcom/fasterxml/jackson/databind/PropertyName;
-    .param p4, "alwaysAsId"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -134,8 +125,6 @@
 
     .prologue
     .line 42
-    .local p2, "scope":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p3, "gen":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;>;"
     const-class v5, Lcom/fasterxml/jackson/annotation/SimpleObjectIdResolver;
 
     move-object v0, p0
@@ -156,8 +145,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/PropertyName;Ljava/lang/Class;Ljava/lang/Class;ZLjava/lang/Class;)V
     .registers 6
-    .param p1, "prop"    # Lcom/fasterxml/jackson/databind/PropertyName;
-    .param p4, "alwaysAsId"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -177,9 +164,6 @@
 
     .prologue
     .line 48
-    .local p2, "scope":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p3, "gen":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;>;"
-    .local p5, "resolver":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/fasterxml/jackson/annotation/ObjectIdResolver;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 49
@@ -210,7 +194,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Class;Ljava/lang/Class;)V
     .registers 6
-    .param p1, "name"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -229,8 +212,6 @@
 
     .prologue
     .line 36
-    .local p2, "scope":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p3, "gen":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;>;"
     new-instance v0, Lcom/fasterxml/jackson/databind/PropertyName;
 
     invoke-direct {v0, p1}, Lcom/fasterxml/jackson/databind/PropertyName;-><init>(Ljava/lang/String;)V
@@ -414,7 +395,6 @@
 
 .method public withAlwaysAsId(Z)Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
     .registers 6
-    .param p1, "state"    # Z
 
     .prologue
     .line 60
@@ -423,11 +403,9 @@
     if-ne v0, p1, :cond_5
 
     .line 63
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
 

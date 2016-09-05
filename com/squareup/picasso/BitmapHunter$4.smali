@@ -8,17 +8,12 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/squareup/picasso/BitmapHunter;->applyCustomTransformations(Ljava/util/List;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
+    value = Lcom/squareup/picasso/BitmapHunter;->a(Ljava/util/List;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 .end annotation
 
 
 # instance fields
-.field final synthetic val$builder:Ljava/lang/StringBuilder;
+.field final synthetic a:Ljava/lang/StringBuilder;
 
 
 # direct methods
@@ -27,7 +22,7 @@
 
     .prologue
     .line 450
-    iput-object p1, p0, Lcom/squareup/picasso/BitmapHunter$4;->val$builder:Ljava/lang/StringBuilder;
+    iput-object p1, p0, Lcom/squareup/picasso/BitmapHunter$4;->a:Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,7 +38,7 @@
     .line 452
     new-instance v0, Ljava/lang/NullPointerException;
 
-    iget-object v1, p0, Lcom/squareup/picasso/BitmapHunter$4;->val$builder:Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lcom/squareup/picasso/BitmapHunter$4;->a:Ljava/lang/StringBuilder;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 

@@ -3,16 +3,6 @@
 .source "StdKeySerializers.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/ser/std/StdKeySerializers$CalendarKeySerializer;,
-        Lcom/fasterxml/jackson/databind/ser/std/StdKeySerializers$DateKeySerializer;,
-        Lcom/fasterxml/jackson/databind/ser/std/StdKeySerializers$StringKeySerializer;
-    }
-.end annotation
-
-
 # static fields
 .field protected static final DEFAULT_KEY_SERIALIZER:Lcom/fasterxml/jackson/databind/JsonSerializer;
     .annotation system Ldalvik/annotation/Signature;
@@ -71,7 +61,6 @@
 
 .method public static getStdKeySerializer(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JsonSerializer;
     .registers 3
-    .param p0, "keyType"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -89,11 +78,11 @@
     if-nez p0, :cond_5
 
     .line 27
-    sget-object v1, Lcom/fasterxml/jackson/databind/ser/std/StdKeySerializers;->DEFAULT_KEY_SERIALIZER:Lcom/fasterxml/jackson/databind/JsonSerializer;
+    sget-object v0, Lcom/fasterxml/jackson/databind/ser/std/StdKeySerializers;->DEFAULT_KEY_SERIALIZER:Lcom/fasterxml/jackson/databind/JsonSerializer;
 
     .line 47
     :goto_4
-    return-object v1
+    return-object v0
 
     .line 29
     :cond_5
@@ -102,13 +91,12 @@
     move-result-object v0
 
     .line 30
-    .local v0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const-class v1, Ljava/lang/String;
 
     if-ne v0, v1, :cond_10
 
     .line 31
-    sget-object v1, Lcom/fasterxml/jackson/databind/ser/std/StdKeySerializers;->DEFAULT_STRING_SERIALIZER:Lcom/fasterxml/jackson/databind/JsonSerializer;
+    sget-object v0, Lcom/fasterxml/jackson/databind/ser/std/StdKeySerializers;->DEFAULT_STRING_SERIALIZER:Lcom/fasterxml/jackson/databind/JsonSerializer;
 
     goto :goto_4
 
@@ -134,7 +122,7 @@
 
     .line 34
     :cond_22
-    sget-object v1, Lcom/fasterxml/jackson/databind/ser/std/StdKeySerializers;->DEFAULT_KEY_SERIALIZER:Lcom/fasterxml/jackson/databind/JsonSerializer;
+    sget-object v0, Lcom/fasterxml/jackson/databind/ser/std/StdKeySerializers;->DEFAULT_KEY_SERIALIZER:Lcom/fasterxml/jackson/databind/JsonSerializer;
 
     goto :goto_4
 
@@ -149,7 +137,7 @@
     if-eqz v1, :cond_30
 
     .line 37
-    sget-object v1, Lcom/fasterxml/jackson/databind/ser/std/StdKeySerializers$DateKeySerializer;->instance:Lcom/fasterxml/jackson/databind/JsonSerializer;
+    sget-object v0, Lcom/fasterxml/jackson/databind/ser/std/StdKeySerializers$DateKeySerializer;->instance:Lcom/fasterxml/jackson/databind/JsonSerializer;
 
     goto :goto_4
 
@@ -159,18 +147,18 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_3b
+    if-eqz v0, :cond_3b
 
     .line 40
-    sget-object v1, Lcom/fasterxml/jackson/databind/ser/std/StdKeySerializers$CalendarKeySerializer;->instance:Lcom/fasterxml/jackson/databind/JsonSerializer;
+    sget-object v0, Lcom/fasterxml/jackson/databind/ser/std/StdKeySerializers$CalendarKeySerializer;->instance:Lcom/fasterxml/jackson/databind/JsonSerializer;
 
     goto :goto_4
 
     .line 47
     :cond_3b
-    sget-object v1, Lcom/fasterxml/jackson/databind/ser/std/StdKeySerializers;->DEFAULT_KEY_SERIALIZER:Lcom/fasterxml/jackson/databind/JsonSerializer;
+    sget-object v0, Lcom/fasterxml/jackson/databind/ser/std/StdKeySerializers;->DEFAULT_KEY_SERIALIZER:Lcom/fasterxml/jackson/databind/JsonSerializer;
 
     goto :goto_4
 .end method

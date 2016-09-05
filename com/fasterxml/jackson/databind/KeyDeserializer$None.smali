@@ -3,17 +3,6 @@
 .source "KeyDeserializer.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/KeyDeserializer;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x409
-    name = "None"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1

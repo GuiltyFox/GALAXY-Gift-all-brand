@@ -4,13 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/bzbs/lib/survey/control/PullToRefreshGridView$InternalGridViewSDK9;,
-        Lcom/bzbs/lib/survey/control/PullToRefreshGridView$InternalGridView;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshAdapterViewBase",
@@ -24,7 +17,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 2
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 34
@@ -36,8 +28,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 38
@@ -49,8 +39,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "mode"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     .prologue
     .line 42
@@ -62,9 +50,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "mode"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-    .param p3, "style"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     .prologue
     .line 46
@@ -76,30 +61,16 @@
 
 
 # virtual methods
-.method protected bridge synthetic createRefreshableView(Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
-    .registers 4
-
-    .prologue
-    .line 31
-    invoke-virtual {p0, p1, p2}, Lcom/bzbs/lib/survey/control/PullToRefreshGridView;->createRefreshableView(Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/widget/GridView;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method protected final createRefreshableView(Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/widget/GridView;
-    .registers 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+.method protected final a(Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/widget/GridView;
+    .registers 5
 
     .prologue
     .line 57
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v2, 0x9
+    const/16 v1, 0x9
 
-    if-lt v1, v2, :cond_11
+    if-lt v0, v1, :cond_11
 
     .line 58
     new-instance v0, Lcom/bzbs/lib/survey/control/PullToRefreshGridView$InternalGridViewSDK9;
@@ -107,7 +78,6 @@
     invoke-direct {v0, p0, p1, p2}, Lcom/bzbs/lib/survey/control/PullToRefreshGridView$InternalGridViewSDK9;-><init>(Lcom/bzbs/lib/survey/control/PullToRefreshGridView;Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 64
-    .local v0, "gv":Landroid/widget/GridView;
     :goto_b
     sget v1, Lcom/bzbs/lib/survey/R$id;->gridview:I
 
@@ -117,22 +87,32 @@
     return-object v0
 
     .line 60
-    .end local v0    # "gv":Landroid/widget/GridView;
     :cond_11
     new-instance v0, Lcom/bzbs/lib/survey/control/PullToRefreshGridView$InternalGridView;
 
     invoke-direct {v0, p0, p1, p2}, Lcom/bzbs/lib/survey/control/PullToRefreshGridView$InternalGridView;-><init>(Lcom/bzbs/lib/survey/control/PullToRefreshGridView;Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .restart local v0    # "gv":Landroid/widget/GridView;
     goto :goto_b
 .end method
 
-.method public final getPullToRefreshScrollDirection()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+.method public final a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
     .registers 2
 
     .prologue
     .line 51
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->VERTICAL:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+
+    return-object v0
+.end method
+
+.method protected synthetic b(Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
+    .registers 4
+
+    .prologue
+    .line 31
+    invoke-virtual {p0, p1, p2}, Lcom/bzbs/lib/survey/control/PullToRefreshGridView;->a(Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/widget/GridView;
+
+    move-result-object v0
 
     return-object v0
 .end method

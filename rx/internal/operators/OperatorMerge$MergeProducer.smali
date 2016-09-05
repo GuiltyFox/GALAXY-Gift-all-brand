@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lrx/internal/operators/OperatorMerge;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x18
-    name = "MergeProducer"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -27,12 +18,8 @@
 .end annotation
 
 
-# static fields
-.field private static final serialVersionUID:J = -0x10da57706b0ad46fL
-
-
 # instance fields
-.field final subscriber:Lrx/internal/operators/OperatorMerge$MergeSubscriber;
+.field final a:Lrx/internal/operators/OperatorMerge$MergeSubscriber;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lrx/internal/operators/OperatorMerge$MergeSubscriber",
@@ -55,12 +42,10 @@
 
     .prologue
     .line 116
-    .local p0, "this":Lrx/internal/operators/OperatorMerge$MergeProducer;, "Lrx/internal/operators/OperatorMerge$MergeProducer<TT;>;"
-    .local p1, "subscriber":Lrx/internal/operators/OperatorMerge$MergeSubscriber;, "Lrx/internal/operators/OperatorMerge$MergeSubscriber<TT;>;"
     invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicLong;-><init>()V
 
     .line 117
-    iput-object p1, p0, Lrx/internal/operators/OperatorMerge$MergeProducer;->subscriber:Lrx/internal/operators/OperatorMerge$MergeSubscriber;
+    iput-object p1, p0, Lrx/internal/operators/OperatorMerge$MergeProducer;->a:Lrx/internal/operators/OperatorMerge$MergeSubscriber;
 
     .line 118
     return-void
@@ -68,13 +53,11 @@
 
 
 # virtual methods
-.method public produced(I)J
+.method public a(I)J
     .registers 4
-    .param p1, "n"    # I
 
     .prologue
     .line 134
-    .local p0, "this":Lrx/internal/operators/OperatorMerge$MergeProducer;, "Lrx/internal/operators/OperatorMerge$MergeProducer<TT;>;"
     neg-int v0, p1
 
     int-to-long v0, v0
@@ -86,12 +69,10 @@
     return-wide v0
 .end method
 
-.method public request(J)V
+.method public a(J)V
     .registers 8
-    .param p1, "n"    # J
 
     .prologue
-    .local p0, "this":Lrx/internal/operators/OperatorMerge$MergeProducer;, "Lrx/internal/operators/OperatorMerge$MergeProducer<TT;>;"
     const-wide/16 v2, 0x0
 
     .line 122
@@ -117,12 +98,12 @@
 
     .line 126
     :cond_14
-    invoke-static {p0, p1, p2}, Lrx/internal/operators/BackpressureUtils;->getAndAddRequest(Ljava/util/concurrent/atomic/AtomicLong;J)J
+    invoke-static {p0, p1, p2}, Lrx/internal/operators/BackpressureUtils;->a(Ljava/util/concurrent/atomic/AtomicLong;J)J
 
     .line 127
-    iget-object v0, p0, Lrx/internal/operators/OperatorMerge$MergeProducer;->subscriber:Lrx/internal/operators/OperatorMerge$MergeSubscriber;
+    iget-object v0, p0, Lrx/internal/operators/OperatorMerge$MergeProducer;->a:Lrx/internal/operators/OperatorMerge$MergeSubscriber;
 
-    invoke-virtual {v0}, Lrx/internal/operators/OperatorMerge$MergeSubscriber;->emit()V
+    invoke-virtual {v0}, Lrx/internal/operators/OperatorMerge$MergeSubscriber;->g()V
 
     goto :goto_13
 

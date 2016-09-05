@@ -7,11 +7,6 @@
     value = Lcom/google/android/gms/common/internal/zze;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 
 # direct methods
 .method constructor <init>()V
@@ -24,7 +19,7 @@
 
 
 # virtual methods
-.method public zzd(C)Z
+.method public b(C)Z
     .registers 3
 
     invoke-static {p1}, Ljava/lang/Character;->isLetterOrDigit(C)Z

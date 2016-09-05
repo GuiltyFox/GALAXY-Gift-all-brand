@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract createInstance(Ljava/lang/reflect/Type;)Ljava/lang/Object;
+.method public abstract a(Ljava/lang/reflect/Type;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

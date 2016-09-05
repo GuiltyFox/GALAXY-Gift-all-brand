@@ -4,20 +4,8 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 24
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static getXVelocity(Landroid/view/VelocityTracker;I)F
+.method public static a(Landroid/view/VelocityTracker;I)F
     .registers 3
-    .param p0, "tracker"    # Landroid/view/VelocityTracker;
-    .param p1, "pointerId"    # I
 
     .prologue
     .line 26
@@ -28,10 +16,8 @@
     return v0
 .end method
 
-.method public static getYVelocity(Landroid/view/VelocityTracker;I)F
+.method public static b(Landroid/view/VelocityTracker;I)F
     .registers 3
-    .param p0, "tracker"    # Landroid/view/VelocityTracker;
-    .param p1, "pointerId"    # I
 
     .prologue
     .line 29

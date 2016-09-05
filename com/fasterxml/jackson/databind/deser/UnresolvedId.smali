@@ -21,8 +21,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;Ljava/lang/Class;Lcom/fasterxml/jackson/core/JsonLocation;)V
     .registers 4
-    .param p1, "id"    # Ljava/lang/Object;
-    .param p3, "where"    # Lcom/fasterxml/jackson/core/JsonLocation;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -36,7 +34,6 @@
 
     .prologue
     .line 15
-    .local p2, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 16

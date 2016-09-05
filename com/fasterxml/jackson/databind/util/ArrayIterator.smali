@@ -14,9 +14,9 @@
         "Ljava/lang/Object;",
         ">",
         "Ljava/lang/Object;",
-        "Ljava/util/Iterator",
-        "<TT;>;",
         "Ljava/lang/Iterable",
+        "<TT;>;",
+        "Ljava/util/Iterator",
         "<TT;>;"
     }
 .end annotation
@@ -45,8 +45,6 @@
 
     .prologue
     .line 16
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/ArrayIterator;, "Lcom/fasterxml/jackson/databind/util/ArrayIterator<TT;>;"
-    .local p1, "a":[Ljava/lang/Object;, "[TT;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 17
@@ -68,7 +66,6 @@
 
     .prologue
     .line 22
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/ArrayIterator;, "Lcom/fasterxml/jackson/databind/util/ArrayIterator<TT;>;"
     iget v0, p0, Lcom/fasterxml/jackson/databind/util/ArrayIterator;->_index:I
 
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/ArrayIterator;->_a:[Ljava/lang/Object;
@@ -100,7 +97,6 @@
 
     .prologue
     .line 33
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/ArrayIterator;, "Lcom/fasterxml/jackson/databind/util/ArrayIterator<TT;>;"
     return-object p0
 .end method
 
@@ -114,7 +110,6 @@
 
     .prologue
     .line 26
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/ArrayIterator;, "Lcom/fasterxml/jackson/databind/util/ArrayIterator<TT;>;"
     iget v0, p0, Lcom/fasterxml/jackson/databind/util/ArrayIterator;->_index:I
 
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/ArrayIterator;->_a:[Ljava/lang/Object;
@@ -150,7 +145,6 @@
 
     .prologue
     .line 32
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/ArrayIterator;, "Lcom/fasterxml/jackson/databind/util/ArrayIterator<TT;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V

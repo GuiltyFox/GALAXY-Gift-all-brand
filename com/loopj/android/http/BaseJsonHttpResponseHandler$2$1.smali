@@ -11,11 +11,6 @@
     value = Lcom/loopj/android/http/BaseJsonHttpResponseHandler$2;->run()V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$1:Lcom/loopj/android/http/BaseJsonHttpResponseHandler$2;
@@ -26,11 +21,9 @@
 # direct methods
 .method constructor <init>(Lcom/loopj/android/http/BaseJsonHttpResponseHandler$2;Ljava/lang/Object;)V
     .registers 3
-    .param p1, "this$1"    # Lcom/loopj/android/http/BaseJsonHttpResponseHandler$2;
 
     .prologue
     .line 117
-    .local p0, "this":Lcom/loopj/android/http/BaseJsonHttpResponseHandler$2$1;, "Lcom/loopj/android/http/BaseJsonHttpResponseHandler$2$1;"
     iput-object p1, p0, Lcom/loopj/android/http/BaseJsonHttpResponseHandler$2$1;->this$1:Lcom/loopj/android/http/BaseJsonHttpResponseHandler$2;
 
     iput-object p2, p0, Lcom/loopj/android/http/BaseJsonHttpResponseHandler$2$1;->val$jsonResponse:Ljava/lang/Object;
@@ -47,7 +40,6 @@
 
     .prologue
     .line 120
-    .local p0, "this":Lcom/loopj/android/http/BaseJsonHttpResponseHandler$2$1;, "Lcom/loopj/android/http/BaseJsonHttpResponseHandler$2$1;"
     iget-object v0, p0, Lcom/loopj/android/http/BaseJsonHttpResponseHandler$2$1;->this$1:Lcom/loopj/android/http/BaseJsonHttpResponseHandler$2;
 
     iget-object v0, v0, Lcom/loopj/android/http/BaseJsonHttpResponseHandler$2;->this$0:Lcom/loopj/android/http/BaseJsonHttpResponseHandler;

@@ -8,27 +8,21 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->initialParam()V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->r()V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+.field final synthetic a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
     .prologue
     .line 430
-    iput-object p1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$3;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iput-object p1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$3;->a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,10 +36,9 @@
 
     .prologue
     .line 433
-    iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$3;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$3;->a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
-    # invokes: Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->initialLayout()V
-    invoke-static {v0}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->access$200(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)V
+    invoke-static {v0}, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->c(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;)V
 
     .line 434
     return-void

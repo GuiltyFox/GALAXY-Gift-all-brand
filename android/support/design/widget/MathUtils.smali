@@ -16,9 +16,6 @@
 
 .method static constrain(FFF)F
     .registers 4
-    .param p0, "amount"    # F
-    .param p1, "low"    # F
-    .param p2, "high"    # F
 
     .prologue
     .line 26
@@ -26,11 +23,9 @@
 
     if-gez v0, :cond_5
 
-    .end local p1    # "low":F
     :goto_4
     return p1
 
-    .restart local p1    # "low":F
     :cond_5
     cmpl-float v0, p0, p2
 
@@ -48,19 +43,14 @@
 
 .method static constrain(III)I
     .registers 3
-    .param p0, "amount"    # I
-    .param p1, "low"    # I
-    .param p2, "high"    # I
 
     .prologue
     .line 22
     if-ge p0, p1, :cond_3
 
-    .end local p1    # "low":I
     :goto_2
     return p1
 
-    .restart local p1    # "low":I
     :cond_3
     if-le p0, p2, :cond_7
 

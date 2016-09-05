@@ -3,23 +3,6 @@
 .source "AppBarLayout.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/AppBarLayout;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "LayoutParams"
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/design/widget/AppBarLayout$LayoutParams$ScrollFlags;
-    }
-.end annotation
-
-
 # static fields
 .field static final FLAG_QUICK_RETURN:I = 0x5
 
@@ -45,8 +28,6 @@
 # direct methods
 .method public constructor <init>(II)V
     .registers 4
-    .param p1, "width"    # I
-    .param p2, "height"    # I
 
     .prologue
     .line 561
@@ -63,9 +44,6 @@
 
 .method public constructor <init>(IIF)V
     .registers 5
-    .param p1, "width"    # I
-    .param p2, "height"    # I
-    .param p3, "weight"    # F
 
     .prologue
     .line 565
@@ -81,64 +59,59 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 7
-    .param p1, "c"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .registers 6
 
     .prologue
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     .line 548
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 544
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
-    iput v2, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
+    iput v0, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
 
     .line 549
-    sget-object v2, Landroid/support/design/R$styleable;->AppBarLayout_LayoutParams:[I
+    sget-object v0, Landroid/support/design/R$styleable;->AppBarLayout_LayoutParams:[I
 
-    invoke-virtual {p1, p2, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
     .line 550
-    .local v0, "a":Landroid/content/res/TypedArray;
-    sget v2, Landroid/support/design/R$styleable;->AppBarLayout_LayoutParams_layout_scrollFlags:I
+    sget v1, Landroid/support/design/R$styleable;->AppBarLayout_LayoutParams_layout_scrollFlags:I
 
-    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    move-result v2
+    move-result v1
 
-    iput v2, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
+    iput v1, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
 
     .line 551
-    sget v2, Landroid/support/design/R$styleable;->AppBarLayout_LayoutParams_layout_scrollInterpolator:I
+    sget v1, Landroid/support/design/R$styleable;->AppBarLayout_LayoutParams_layout_scrollInterpolator:I
 
-    invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_29
+    if-eqz v1, :cond_29
 
     .line 552
-    sget v2, Landroid/support/design/R$styleable;->AppBarLayout_LayoutParams_layout_scrollInterpolator:I
+    sget v1, Landroid/support/design/R$styleable;->AppBarLayout_LayoutParams_layout_scrollInterpolator:I
 
-    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v1
 
     .line 554
-    .local v1, "resId":I
     invoke-static {p1, v1}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
 
-    move-result-object v2
+    move-result-object v1
 
-    iput-object v2, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollInterpolator:Landroid/view/animation/Interpolator;
+    iput-object v1, p0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollInterpolator:Landroid/view/animation/Interpolator;
 
     .line 557
-    .end local v1    # "resId":I
     :cond_29
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
@@ -148,7 +121,6 @@
 
 .method public constructor <init>(Landroid/support/design/widget/AppBarLayout$LayoutParams;)V
     .registers 3
-    .param p1, "source"    # Landroid/support/design/widget/AppBarLayout$LayoutParams;
 
     .prologue
     .line 581
@@ -175,7 +147,6 @@
 
 .method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
     .registers 3
-    .param p1, "p"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
     .line 569
@@ -192,7 +163,6 @@
 
 .method public constructor <init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
     .registers 3
-    .param p1, "source"    # Landroid/view/ViewGroup$MarginLayoutParams;
 
     .prologue
     .line 573
@@ -209,7 +179,6 @@
 
 .method public constructor <init>(Landroid/widget/LinearLayout$LayoutParams;)V
     .registers 3
-    .param p1, "source"    # Landroid/widget/LinearLayout$LayoutParams;
 
     .prologue
     .line 577
@@ -248,7 +217,6 @@
 
 .method public setScrollFlags(I)V
     .registers 2
-    .param p1, "flags"    # I
 
     .prologue
     .line 598
@@ -260,7 +228,6 @@
 
 .method public setScrollInterpolator(Landroid/view/animation/Interpolator;)V
     .registers 2
-    .param p1, "interpolator"    # Landroid/view/animation/Interpolator;
 
     .prologue
     .line 623

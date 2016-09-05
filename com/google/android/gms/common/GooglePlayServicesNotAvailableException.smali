@@ -3,18 +3,16 @@
 
 
 # instance fields
-.field public final errorCode:I
+.field public final a:I
 
 
 # direct methods
 .method public constructor <init>(I)V
     .registers 2
-    .param p1, "errorCode"    # I
 
-    .prologue
     invoke-direct {p0}, Ljava/lang/Exception;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/common/GooglePlayServicesNotAvailableException;->errorCode:I
+    iput p1, p0, Lcom/google/android/gms/common/GooglePlayServicesNotAvailableException;->a:I
 
     return-void
 .end method

@@ -17,7 +17,7 @@
 
 
 # virtual methods
-.method public abstract getCacheDecoder()Lcom/bumptech/glide/load/ResourceDecoder;
+.method public abstract a()Lcom/bumptech/glide/load/ResourceDecoder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -29,17 +29,7 @@
     .end annotation
 .end method
 
-.method public abstract getEncoder()Lcom/bumptech/glide/load/ResourceEncoder;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/bumptech/glide/load/ResourceEncoder",
-            "<TZ;>;"
-        }
-    .end annotation
-.end method
-
-.method public abstract getSourceDecoder()Lcom/bumptech/glide/load/ResourceDecoder;
+.method public abstract b()Lcom/bumptech/glide/load/ResourceDecoder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -49,12 +39,22 @@
     .end annotation
 .end method
 
-.method public abstract getSourceEncoder()Lcom/bumptech/glide/load/Encoder;
+.method public abstract c()Lcom/bumptech/glide/load/Encoder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
             "Lcom/bumptech/glide/load/Encoder",
             "<TT;>;"
+        }
+    .end annotation
+.end method
+
+.method public abstract d()Lcom/bumptech/glide/load/ResourceEncoder;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/bumptech/glide/load/ResourceEncoder",
+            "<TZ;>;"
         }
     .end annotation
 .end method

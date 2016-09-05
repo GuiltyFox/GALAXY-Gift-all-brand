@@ -2,110 +2,66 @@
 .super Landroid/widget/LinearLayout;
 .source "PullToRefreshBase.java"
 
-# interfaces
-.implements Lcom/handmark/pulltorefresh/library/internal/IPullToRefresh;
-
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;,
-        Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;,
-        Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;,
-        Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;,
-        Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2;,
-        Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener;,
-        Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnPullEventListener;,
-        Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnLastItemVisibleListener;,
-        Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;,
-        Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
         "Landroid/view/View;",
         ">",
-        "Landroid/widget/LinearLayout;",
-        "Lcom/handmark/pulltorefresh/library/internal/IPullToRefresh",
-        "<TT;>;"
+        "Landroid/widget/LinearLayout;"
     }
 .end annotation
 
 
-# static fields
-.field static final DEBUG:Z = true
-
-.field static final DEMO_SCROLL_INTERVAL:I = 0xe1
-
-.field static final FRICTION:F = 2.0f
-
-.field static final LOG_TAG:Ljava/lang/String; = "PullToRefresh"
-
-.field public static final SMOOTH_SCROLL_DURATION_MS:I = 0xc8
-
-.field public static final SMOOTH_SCROLL_LONG_DURATION_MS:I = 0x145
-
-.field static final STATE_CURRENT_MODE:Ljava/lang/String; = "ptr_current_mode"
-
-.field static final STATE_MODE:Ljava/lang/String; = "ptr_mode"
-
-.field static final STATE_SCROLLING_REFRESHING_ENABLED:Ljava/lang/String; = "ptr_disable_scrolling"
-
-.field static final STATE_SHOW_REFRESHING_VIEW:Ljava/lang/String; = "ptr_show_refreshing_view"
-
-.field static final STATE_STATE:Ljava/lang/String; = "ptr_state"
-
-.field static final STATE_SUPER:Ljava/lang/String; = "ptr_super"
-
-.field static final USE_HW_LAYERS:Z
-
-
 # instance fields
-.field private mCurrentMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-.field private mCurrentSmoothScrollRunnable:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;
+.field protected a:Landroid/view/View;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase",
-            "<TT;>.SmoothScrollRunnable;"
+            "TT;"
         }
     .end annotation
 .end field
 
-.field private mFilterTouchEvents:Z
+.field private b:I
 
-.field private mFooterLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+.field private c:F
 
-.field private mHeaderLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+.field private d:F
 
-.field private mInitialMotionX:F
+.field private e:F
 
-.field private mInitialMotionY:F
+.field private f:F
 
-.field private mIsBeingDragged:Z
+.field private g:Z
 
-.field private mLastMotionX:F
+.field private h:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-.field private mLastMotionY:F
+.field private i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-.field private mLayoutVisibilityChangesEnabled:Z
+.field private j:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-.field private mLoadingAnimationStyle:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+.field private k:Landroid/widget/FrameLayout;
 
-.field private mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+.field private l:Z
 
-.field private mOnPullEventListener:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnPullEventListener;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnPullEventListener",
-            "<TT;>;"
-        }
-    .end annotation
-.end field
+.field private m:Z
 
-.field private mOnRefreshListener:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener;
+.field private n:Z
+
+.field private o:Z
+
+.field private p:Z
+
+.field private q:Landroid/view/animation/Interpolator;
+
+.field private r:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+
+.field private s:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+
+.field private t:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+
+.field private u:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener",
@@ -114,7 +70,7 @@
     .end annotation
 .end field
 
-.field private mOnRefreshListener2:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2;
+.field private v:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2",
@@ -123,36 +79,30 @@
     .end annotation
 .end field
 
-.field private mOverScrollEnabled:Z
-
-.field protected mRefreshableView:Landroid/view/View;
+.field private w:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnPullEventListener;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "TT;"
+            "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnPullEventListener",
+            "<TT;>;"
         }
     .end annotation
 .end field
 
-.field private mRefreshableViewWrapper:Landroid/widget/FrameLayout;
-
-.field private mScrollAnimationInterpolator:Landroid/view/animation/Interpolator;
-
-.field private mScrollingWhileRefreshingEnabled:Z
-
-.field private mShowViewWhileRefreshing:Z
-
-.field private mState:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
-
-.field private mTouchSlop:I
+.field private x:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase",
+            "<TT;>.SmoothScrollRunnable;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 5
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
     const/4 v2, 0x0
 
     const/4 v1, 0x1
@@ -161,46 +111,46 @@
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     .line 71
-    iput-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mIsBeingDragged:Z
+    iput-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->g:Z
 
     .line 72
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->RESET:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mState:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->h:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     .line 73
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->getDefault()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     .line 79
-    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mShowViewWhileRefreshing:Z
+    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->l:Z
 
     .line 80
-    iput-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mScrollingWhileRefreshingEnabled:Z
+    iput-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->m:Z
 
     .line 81
-    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFilterTouchEvents:Z
+    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->n:Z
 
     .line 82
-    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOverScrollEnabled:Z
+    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->o:Z
 
     .line 83
-    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLayoutVisibilityChangesEnabled:Z
+    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->p:Z
 
     .line 86
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->getDefault()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLoadingAnimationStyle:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->r:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     .line 103
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->init(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 104
     return-void
@@ -208,11 +158,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
     const/4 v2, 0x0
 
     const/4 v1, 0x1
@@ -221,44 +168,44 @@
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 71
-    iput-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mIsBeingDragged:Z
+    iput-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->g:Z
 
     .line 72
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->RESET:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mState:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->h:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     .line 73
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->getDefault()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     .line 79
-    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mShowViewWhileRefreshing:Z
+    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->l:Z
 
     .line 80
-    iput-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mScrollingWhileRefreshingEnabled:Z
+    iput-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->m:Z
 
     .line 81
-    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFilterTouchEvents:Z
+    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->n:Z
 
     .line 82
-    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOverScrollEnabled:Z
+    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->o:Z
 
     .line 83
-    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLayoutVisibilityChangesEnabled:Z
+    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->p:Z
 
     .line 86
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->getDefault()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLoadingAnimationStyle:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->r:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     .line 108
-    invoke-direct {p0, p1, p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->init(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 109
     return-void
@@ -266,11 +213,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;)V
     .registers 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "mode"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     .prologue
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
     const/4 v2, 0x0
 
     const/4 v1, 0x1
@@ -279,49 +223,49 @@
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     .line 71
-    iput-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mIsBeingDragged:Z
+    iput-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->g:Z
 
     .line 72
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->RESET:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mState:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->h:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     .line 73
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->getDefault()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     .line 79
-    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mShowViewWhileRefreshing:Z
+    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->l:Z
 
     .line 80
-    iput-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mScrollingWhileRefreshingEnabled:Z
+    iput-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->m:Z
 
     .line 81
-    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFilterTouchEvents:Z
+    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->n:Z
 
     .line 82
-    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOverScrollEnabled:Z
+    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->o:Z
 
     .line 83
-    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLayoutVisibilityChangesEnabled:Z
+    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->p:Z
 
     .line 86
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->getDefault()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLoadingAnimationStyle:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->r:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     .line 113
-    iput-object p2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    iput-object p2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     .line 114
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->init(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 115
     return-void
@@ -329,12 +273,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;)V
     .registers 7
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "mode"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-    .param p3, "animStyle"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     .prologue
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
     const/4 v2, 0x0
 
     const/4 v1, 0x1
@@ -343,204 +283,97 @@
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     .line 71
-    iput-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mIsBeingDragged:Z
+    iput-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->g:Z
 
     .line 72
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->RESET:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mState:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->h:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     .line 73
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->getDefault()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     .line 79
-    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mShowViewWhileRefreshing:Z
+    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->l:Z
 
     .line 80
-    iput-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mScrollingWhileRefreshingEnabled:Z
+    iput-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->m:Z
 
     .line 81
-    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFilterTouchEvents:Z
+    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->n:Z
 
     .line 82
-    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOverScrollEnabled:Z
+    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->o:Z
 
     .line 83
-    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLayoutVisibilityChangesEnabled:Z
+    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->p:Z
 
     .line 86
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->getDefault()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLoadingAnimationStyle:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->r:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     .line 119
-    iput-object p2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    iput-object p2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     .line 120
-    iput-object p3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLoadingAnimationStyle:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    iput-object p3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->r:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     .line 121
     const/4 v0, 0x0
 
-    invoke-direct {p0, p1, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->init(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    invoke-direct {p0, p1, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 122
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;)V
-    .registers 1
-    .param p0, "x0"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;
+.method private final a(IJ)V
+    .registers 12
 
     .prologue
-    .line 38
-    invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->callRefreshListener()V
+    .line 1241
+    const-wide/16 v4, 0x0
 
+    const/4 v6, 0x0
+
+    move-object v0, p0
+
+    move v1, p1
+
+    move-wide v2, p2
+
+    invoke-direct/range {v0 .. v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(IJJLcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
+
+    .line 1242
     return-void
 .end method
 
-.method static synthetic access$100(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;IJJLcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
-    .registers 7
-    .param p0, "x0"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;
-    .param p1, "x1"    # I
-    .param p2, "x2"    # J
-    .param p4, "x3"    # J
-    .param p6, "x4"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;
+.method private final a(IJJLcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
+    .registers 15
 
     .prologue
-    .line 38
-    invoke-direct/range {p0 .. p6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->smoothScrollTo(IJJLcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
-
-    return-void
-.end method
-
-.method static synthetic access$200(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;)Landroid/view/animation/Interpolator;
-    .registers 2
-    .param p0, "x0"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;
-
-    .prologue
-    .line 38
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mScrollAnimationInterpolator:Landroid/view/animation/Interpolator;
-
-    return-object v0
-.end method
-
-.method private addRefreshableView(Landroid/content/Context;Landroid/view/View;)V
-    .registers 6
-    .param p1, "context"    # Landroid/content/Context;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            "TT;)V"
-        }
-    .end annotation
-
-    .prologue
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    .local p2, "refreshableView":Landroid/view/View;, "TT;"
-    const/4 v2, -0x1
-
-    .line 1050
-    new-instance v0, Landroid/widget/FrameLayout;
-
-    invoke-direct {v0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
-
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mRefreshableViewWrapper:Landroid/widget/FrameLayout;
-
-    .line 1051
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mRefreshableViewWrapper:Landroid/widget/FrameLayout;
-
-    invoke-virtual {v0, p2, v2, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;II)V
-
-    .line 1054
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mRefreshableViewWrapper:Landroid/widget/FrameLayout;
-
-    new-instance v1, Landroid/widget/LinearLayout$LayoutParams;
-
-    invoke-direct {v1, v2, v2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
-
-    invoke-virtual {p0, v0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->addViewInternal(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 1056
-    return-void
-.end method
-
-.method private callRefreshListener()V
-    .registers 3
-
-    .prologue
-    .line 1059
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOnRefreshListener:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener;
-
-    if-eqz v0, :cond_a
-
-    .line 1060
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOnRefreshListener:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener;
-
-    invoke-interface {v0, p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener;->onRefresh(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;)V
-
-    .line 1068
-    :cond_9
-    :goto_9
-    return-void
-
-    .line 1061
-    :cond_a
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOnRefreshListener2:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2;
+    .line 1246
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->x:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;
 
     if-eqz v0, :cond_9
 
-    .line 1062
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mCurrentMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    .line 1247
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->x:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_START:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->a()V
 
-    if-ne v0, v1, :cond_1a
+    .line 1251
+    :cond_9
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->a:[I
 
-    .line 1063
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOnRefreshListener2:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2;
-
-    invoke-interface {v0, p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2;->onPullDownToRefresh(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;)V
-
-    goto :goto_9
-
-    .line 1064
-    :cond_1a
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mCurrentMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_END:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    if-ne v0, v1, :cond_9
-
-    .line 1065
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOnRefreshListener2:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2;
-
-    invoke-interface {v0, p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2;->onPullUpToRefresh(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;)V
-
-    goto :goto_9
-.end method
-
-.method private getLoadingLayoutLayoutParams()Landroid/widget/LinearLayout$LayoutParams;
-    .registers 5
-
-    .prologue
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    const/4 v3, -0x1
-
-    const/4 v2, -0x2
-
-    .line 1213
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
-
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getPullToRefreshScrollDirection()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
     move-result-object v1
 
@@ -550,44 +383,407 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_1e
+    packed-switch v0, :pswitch_data_4c
 
-    .line 1219
-    new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
+    .line 1257
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getScrollY()I
 
-    invoke-direct {v0, v3, v2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+    move-result v2
 
-    :goto_16
-    return-object v0
+    .line 1261
+    :goto_1c
+    if-eq v2, p1, :cond_3f
 
-    .line 1215
-    :pswitch_17
-    new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
+    .line 1262
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->q:Landroid/view/animation/Interpolator;
 
-    invoke-direct {v0, v2, v3}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+    if-nez v0, :cond_29
 
-    goto :goto_16
+    .line 1264
+    new-instance v0, Landroid/view/animation/DecelerateInterpolator;
 
-    .line 1213
+    invoke-direct {v0}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
+
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->q:Landroid/view/animation/Interpolator;
+
+    .line 1266
+    :cond_29
+    new-instance v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;
+
+    move-object v1, p0
+
+    move v3, p1
+
+    move-wide v4, p2
+
+    move-object v6, p6
+
+    invoke-direct/range {v0 .. v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;-><init>(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;IIJLcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
+
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->x:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;
+
+    .line 1268
+    const-wide/16 v0, 0x0
+
+    cmp-long v0, p4, v0
+
+    if-lez v0, :cond_45
+
+    .line 1269
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->x:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;
+
+    invoke-virtual {p0, v0, p4, p5}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 1274
+    :cond_3f
+    :goto_3f
+    return-void
+
+    .line 1253
+    :pswitch_40
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getScrollX()I
+
+    move-result v2
+
+    goto :goto_1c
+
+    .line 1271
+    :cond_45
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->x:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;
+
+    invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->post(Ljava/lang/Runnable;)Z
+
+    goto :goto_3f
+
+    .line 1251
     nop
 
-    :pswitch_data_1e
+    :pswitch_data_4c
     .packed-switch 0x1
-        :pswitch_17
+        :pswitch_40
     .end packed-switch
+.end method
+
+.method private a(Landroid/content/Context;Landroid/util/AttributeSet;)V
+    .registers 8
+
+    .prologue
+    const/4 v4, 0x1
+
+    const/4 v3, 0x0
+
+    .line 1072
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->a:[I
+
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->ordinal()I
+
+    move-result v1
+
+    aget v0, v0, v1
+
+    packed-switch v0, :pswitch_data_d0
+
+    .line 1078
+    invoke-virtual {p0, v4}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setOrientation(I)V
+
+    .line 1082
+    :goto_14
+    const/16 v0, 0x11
+
+    invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setGravity(I)V
+
+    .line 1084
+    invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
+
+    move-result-object v0
+
+    .line 1085
+    invoke-virtual {v0}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
+
+    move-result v0
+
+    iput v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->b:I
+
+    .line 1088
+    sget-object v0, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh:[I
+
+    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+
+    move-result-object v0
+
+    .line 1090
+    sget v1, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrMode:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3d
+
+    .line 1091
+    sget v1, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrMode:I
+
+    invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getInteger(II)I
+
+    move-result v1
+
+    invoke-static {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->a(I)Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    .line 1094
+    :cond_3d
+    sget v1, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrAnimationStyle:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_51
+
+    .line 1095
+    sget v1, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrAnimationStyle:I
+
+    invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getInteger(II)I
+
+    move-result v1
+
+    invoke-static {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->a(I)Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->r:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+
+    .line 1101
+    :cond_51
+    invoke-virtual {p0, p1, p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->b(Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a:Landroid/view/View;
+
+    .line 1102
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a:Landroid/view/View;
+
+    invoke-direct {p0, p1, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Landroid/content/Context;Landroid/view/View;)V
+
+    .line 1105
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    invoke-virtual {p0, p1, v1, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;Landroid/content/res/TypedArray;)Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->s:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+
+    .line 1106
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->c:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    invoke-virtual {p0, p1, v1, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;Landroid/content/res/TypedArray;)Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->t:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+
+    .line 1111
+    sget v1, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrRefreshableViewBackground:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_b0
+
+    .line 1112
+    sget v1, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrRefreshableViewBackground:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    .line 1113
+    if-eqz v1, :cond_81
+
+    .line 1114
+    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a:Landroid/view/View;
+
+    invoke-virtual {v2, v1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 1124
+    :cond_81
+    :goto_81
+    sget v1, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrOverScroll:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_91
+
+    .line 1125
+    sget v1, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrOverScroll:I
+
+    invoke-virtual {v0, v1, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
+    move-result v1
+
+    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->o:Z
+
+    .line 1128
+    :cond_91
+    sget v1, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrScrollingWhileRefreshingEnabled:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_a1
+
+    .line 1129
+    sget v1, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrScrollingWhileRefreshingEnabled:I
+
+    invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
+    move-result v1
+
+    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->m:Z
+
+    .line 1135
+    :cond_a1
+    invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Landroid/content/res/TypedArray;)V
+
+    .line 1136
+    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+
+    .line 1139
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->g()V
+
+    .line 1140
+    return-void
+
+    .line 1074
+    :pswitch_ab
+    invoke-virtual {p0, v3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setOrientation(I)V
+
+    goto/16 :goto_14
+
+    .line 1116
+    :cond_b0
+    sget v1, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrAdapterViewBackground:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_81
+
+    .line 1117
+    const-string/jumbo v1, "ptrAdapterViewBackground"
+
+    const-string/jumbo v2, "ptrRefreshableViewBackground"
+
+    invoke-static {v1, v2}, Lcom/handmark/pulltorefresh/library/internal/Utils;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1118
+    sget v1, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrAdapterViewBackground:I
+
+    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    .line 1119
+    if-eqz v1, :cond_81
+
+    .line 1120
+    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a:Landroid/view/View;
+
+    invoke-virtual {v2, v1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    goto :goto_81
+
+    .line 1072
+    nop
+
+    :pswitch_data_d0
+    .packed-switch 0x1
+        :pswitch_ab
+    .end packed-switch
+.end method
+
+.method private a(Landroid/content/Context;Landroid/view/View;)V
+    .registers 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            "TT;)V"
+        }
+    .end annotation
+
+    .prologue
+    const/4 v2, -0x1
+
+    .line 1050
+    new-instance v0, Landroid/widget/FrameLayout;
+
+    invoke-direct {v0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->k:Landroid/widget/FrameLayout;
+
+    .line 1051
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->k:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v0, p2, v2, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;II)V
+
+    .line 1054
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->k:Landroid/widget/FrameLayout;
+
+    new-instance v1, Landroid/widget/LinearLayout$LayoutParams;
+
+    invoke-direct {v1, v2, v2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+
+    invoke-virtual {p0, v0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 1056
+    return-void
+.end method
+
+.method static synthetic a(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;)V
+    .registers 1
+
+    .prologue
+    .line 38
+    invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->q()V
+
+    return-void
+.end method
+
+.method static synthetic b(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;)Landroid/view/animation/Interpolator;
+    .registers 2
+
+    .prologue
+    .line 38
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->q:Landroid/view/animation/Interpolator;
+
+    return-object v0
 .end method
 
 .method private getMaximumPullScroll()I
     .registers 4
 
     .prologue
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    const/high16 v2, 0x40000000
+    const/high16 v2, 0x40000000    # 2.0f
 
     .line 1225
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->a:[I
 
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getPullToRefreshScrollDirection()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
     move-result-object v1
 
@@ -640,281 +836,71 @@
     .end packed-switch
 .end method
 
-.method private init(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 10
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+.method private q()V
+    .registers 3
 
     .prologue
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    const/4 v6, 0x1
+    .line 1059
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->u:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener;
 
-    const/4 v5, 0x0
+    if-eqz v0, :cond_a
 
-    .line 1072
-    sget-object v3, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
+    .line 1060
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->u:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener;
 
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getPullToRefreshScrollDirection()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    invoke-interface {v0, p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener;->a(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;)V
 
-    move-result-object v4
-
-    invoke-virtual {v4}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->ordinal()I
-
-    move-result v4
-
-    aget v3, v3, v4
-
-    packed-switch v3, :pswitch_data_d0
-
-    .line 1078
-    invoke-virtual {p0, v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setOrientation(I)V
-
-    .line 1082
-    :goto_14
-    const/16 v3, 0x11
-
-    invoke-virtual {p0, v3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setGravity(I)V
-
-    .line 1084
-    invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
-
-    move-result-object v2
-
-    .line 1085
-    .local v2, "config":Landroid/view/ViewConfiguration;
-    invoke-virtual {v2}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
-
-    move-result v3
-
-    iput v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mTouchSlop:I
-
-    .line 1088
-    sget-object v3, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh:[I
-
-    invoke-virtual {p1, p2, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
-
-    move-result-object v0
-
-    .line 1090
-    .local v0, "a":Landroid/content/res/TypedArray;
-    sget v3, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrMode:I
-
-    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_3d
-
-    .line 1091
-    sget v3, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrMode:I
-
-    invoke-virtual {v0, v3, v5}, Landroid/content/res/TypedArray;->getInteger(II)I
-
-    move-result v3
-
-    invoke-static {v3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->mapIntToValue(I)Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    move-result-object v3
-
-    iput-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    .line 1094
-    :cond_3d
-    sget v3, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrAnimationStyle:I
-
-    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_51
-
-    .line 1095
-    sget v3, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrAnimationStyle:I
-
-    invoke-virtual {v0, v3, v5}, Landroid/content/res/TypedArray;->getInteger(II)I
-
-    move-result v3
-
-    invoke-static {v3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->mapIntToValue(I)Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
-
-    move-result-object v3
-
-    iput-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLoadingAnimationStyle:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
-
-    .line 1101
-    :cond_51
-    invoke-virtual {p0, p1, p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->createRefreshableView(Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
-
-    move-result-object v3
-
-    iput-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mRefreshableView:Landroid/view/View;
-
-    .line 1102
-    iget-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mRefreshableView:Landroid/view/View;
-
-    invoke-direct {p0, p1, v3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->addRefreshableView(Landroid/content/Context;Landroid/view/View;)V
-
-    .line 1105
-    sget-object v3, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_START:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {p0, p1, v3, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->createLoadingLayout(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;Landroid/content/res/TypedArray;)Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    move-result-object v3
-
-    iput-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mHeaderLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    .line 1106
-    sget-object v3, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_END:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {p0, p1, v3, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->createLoadingLayout(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;Landroid/content/res/TypedArray;)Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    move-result-object v3
-
-    iput-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFooterLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    .line 1111
-    sget v3, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrRefreshableViewBackground:I
-
-    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_b0
-
-    .line 1112
-    sget v3, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrRefreshableViewBackground:I
-
-    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    .line 1113
-    .local v1, "background":Landroid/graphics/drawable/Drawable;
-    if-eqz v1, :cond_81
-
-    .line 1114
-    iget-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mRefreshableView:Landroid/view/View;
-
-    invoke-virtual {v3, v1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 1124
-    .end local v1    # "background":Landroid/graphics/drawable/Drawable;
-    :cond_81
-    :goto_81
-    sget v3, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrOverScroll:I
-
-    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_91
-
-    .line 1125
-    sget v3, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrOverScroll:I
-
-    invoke-virtual {v0, v3, v6}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v3
-
-    iput-boolean v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOverScrollEnabled:Z
-
-    .line 1128
-    :cond_91
-    sget v3, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrScrollingWhileRefreshingEnabled:I
-
-    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_a1
-
-    .line 1129
-    sget v3, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrScrollingWhileRefreshingEnabled:I
-
-    invoke-virtual {v0, v3, v5}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v3
-
-    iput-boolean v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mScrollingWhileRefreshingEnabled:Z
-
-    .line 1135
-    :cond_a1
-    invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->handleStyledAttributes(Landroid/content/res/TypedArray;)V
-
-    .line 1136
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
-
-    .line 1139
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->updateUIForMode()V
-
-    .line 1140
+    .line 1068
+    :cond_9
+    :goto_9
     return-void
 
-    .line 1074
-    .end local v0    # "a":Landroid/content/res/TypedArray;
-    .end local v2    # "config":Landroid/view/ViewConfiguration;
-    :pswitch_ab
-    invoke-virtual {p0, v5}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setOrientation(I)V
+    .line 1061
+    :cond_a
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->v:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2;
 
-    goto/16 :goto_14
+    if-eqz v0, :cond_9
 
-    .line 1116
-    .restart local v0    # "a":Landroid/content/res/TypedArray;
-    .restart local v2    # "config":Landroid/view/ViewConfiguration;
-    :cond_b0
-    sget v3, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrAdapterViewBackground:I
+    .line 1062
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->j:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    move-result v3
+    if-ne v0, v1, :cond_1a
 
-    if-eqz v3, :cond_81
+    .line 1063
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->v:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2;
 
-    .line 1117
-    const-string/jumbo v3, "ptrAdapterViewBackground"
+    invoke-interface {v0, p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2;->a(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;)V
 
-    const-string/jumbo v4, "ptrRefreshableViewBackground"
+    goto :goto_9
 
-    invoke-static {v3, v4}, Lcom/handmark/pulltorefresh/library/internal/Utils;->warnDeprecation(Ljava/lang/String;Ljava/lang/String;)V
+    .line 1064
+    :cond_1a
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->j:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    .line 1118
-    sget v3, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrAdapterViewBackground:I
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->c:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    if-ne v0, v1, :cond_9
 
-    move-result-object v1
+    .line 1065
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->v:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2;
 
-    .line 1119
-    .restart local v1    # "background":Landroid/graphics/drawable/Drawable;
-    if-eqz v1, :cond_81
+    invoke-interface {v0, p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2;->b(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;)V
 
-    .line 1120
-    iget-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mRefreshableView:Landroid/view/View;
-
-    invoke-virtual {v3, v1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    goto :goto_81
-
-    .line 1072
-    nop
-
-    :pswitch_data_d0
-    .packed-switch 0x1
-        :pswitch_ab
-    .end packed-switch
+    goto :goto_9
 .end method
 
-.method private isReadyForPull()Z
+.method private r()Z
     .registers 4
 
     .prologue
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
     const/4 v0, 0x0
 
     .line 1143
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->c:[I
 
-    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     invoke-virtual {v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
 
@@ -932,7 +918,7 @@
 
     .line 1145
     :pswitch_f
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->isReadyForPullStart()Z
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->e()Z
 
     move-result v0
 
@@ -940,7 +926,7 @@
 
     .line 1147
     :pswitch_14
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->isReadyForPullEnd()Z
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->f()Z
 
     move-result v0
 
@@ -948,13 +934,13 @@
 
     .line 1149
     :pswitch_19
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->isReadyForPullEnd()Z
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->f()Z
 
     move-result v1
 
     if-nez v1, :cond_25
 
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->isReadyForPullStart()Z
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->e()Z
 
     move-result v1
 
@@ -977,285 +963,20 @@
     .end packed-switch
 .end method
 
-.method private pullEvent()V
-    .registers 11
+.method private s()V
+    .registers 8
 
     .prologue
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    const/4 v9, 0x0
-
-    const/high16 v8, 0x40000000
-
-    const/4 v7, 0x0
-
-    .line 1166
-    sget-object v5, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
-
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getPullToRefreshScrollDirection()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->ordinal()I
-
-    move-result v6
-
-    aget v5, v5, v6
-
-    packed-switch v5, :pswitch_data_9c
-
-    .line 1173
-    iget v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mInitialMotionY:F
-
-    .line 1174
-    .local v0, "initialMotionValue":F
-    iget v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLastMotionY:F
-
-    .line 1178
-    .local v2, "lastMotionValue":F
-    :goto_17
-    sget-object v5, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
-
-    iget-object v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mCurrentMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
-
-    move-result v6
-
-    aget v5, v5, v6
-
-    packed-switch v5, :pswitch_data_a2
-
-    .line 1185
-    sub-float v5, v0, v2
-
-    invoke-static {v5, v7}, Ljava/lang/Math;->min(FF)F
-
-    move-result v5
-
-    div-float/2addr v5, v8
-
-    invoke-static {v5}, Ljava/lang/Math;->round(F)I
-
-    move-result v3
-
-    .line 1186
-    .local v3, "newScrollValue":I
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getHeaderSize()I
-
-    move-result v1
-
-    .line 1190
-    .local v1, "itemDimension":I
-    :goto_33
-    invoke-virtual {p0, v3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setHeaderScroll(I)V
-
-    .line 1192
-    if-eqz v3, :cond_6b
-
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->isRefreshing()Z
-
-    move-result v5
-
-    if-nez v5, :cond_6b
-
-    .line 1193
-    invoke-static {v3}, Ljava/lang/Math;->abs(I)I
-
-    move-result v5
-
-    int-to-float v5, v5
-
-    int-to-float v6, v1
-
-    div-float v4, v5, v6
-
-    .line 1194
-    .local v4, "scale":F
-    sget-object v5, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
-
-    iget-object v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mCurrentMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
-
-    move-result v6
-
-    aget v5, v5, v6
-
-    packed-switch v5, :pswitch_data_a8
-
-    .line 1200
-    iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mHeaderLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    invoke-virtual {v5, v4}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->onPull(F)V
-
-    .line 1204
-    :goto_58
-    iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mState:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
-
-    sget-object v6, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->PULL_TO_REFRESH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
-
-    if-eq v5, v6, :cond_87
-
-    invoke-static {v3}, Ljava/lang/Math;->abs(I)I
-
-    move-result v5
-
-    if-lt v1, v5, :cond_87
-
-    .line 1205
-    sget-object v5, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->PULL_TO_REFRESH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
-
-    new-array v6, v9, [Z
-
-    invoke-virtual {p0, v5, v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setState(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;[Z)V
-
-    .line 1210
-    .end local v4    # "scale":F
-    :cond_6b
-    :goto_6b
-    return-void
-
-    .line 1168
-    .end local v0    # "initialMotionValue":F
-    .end local v1    # "itemDimension":I
-    .end local v2    # "lastMotionValue":F
-    .end local v3    # "newScrollValue":I
-    :pswitch_6c
-    iget v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mInitialMotionX:F
-
-    .line 1169
-    .restart local v0    # "initialMotionValue":F
-    iget v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLastMotionX:F
-
-    .line 1170
-    .restart local v2    # "lastMotionValue":F
-    goto :goto_17
-
-    .line 1180
-    :pswitch_71
-    sub-float v5, v0, v2
-
-    invoke-static {v5, v7}, Ljava/lang/Math;->max(FF)F
-
-    move-result v5
-
-    div-float/2addr v5, v8
-
-    invoke-static {v5}, Ljava/lang/Math;->round(F)I
-
-    move-result v3
-
-    .line 1181
-    .restart local v3    # "newScrollValue":I
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getFooterSize()I
-
-    move-result v1
-
-    .line 1182
-    .restart local v1    # "itemDimension":I
-    goto :goto_33
-
-    .line 1196
-    .restart local v4    # "scale":F
-    :pswitch_81
-    iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFooterLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    invoke-virtual {v5, v4}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->onPull(F)V
-
-    goto :goto_58
-
-    .line 1206
-    :cond_87
-    iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mState:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
-
-    sget-object v6, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->PULL_TO_REFRESH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
-
-    if-ne v5, v6, :cond_6b
-
-    invoke-static {v3}, Ljava/lang/Math;->abs(I)I
-
-    move-result v5
-
-    if-ge v1, v5, :cond_6b
-
-    .line 1207
-    sget-object v5, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->RELEASE_TO_REFRESH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
-
-    new-array v6, v9, [Z
-
-    invoke-virtual {p0, v5, v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setState(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;[Z)V
-
-    goto :goto_6b
-
-    .line 1166
-    nop
-
-    :pswitch_data_9c
-    .packed-switch 0x1
-        :pswitch_6c
-    .end packed-switch
-
-    .line 1178
-    :pswitch_data_a2
-    .packed-switch 0x1
-        :pswitch_71
-    .end packed-switch
-
-    .line 1194
-    :pswitch_data_a8
-    .packed-switch 0x1
-        :pswitch_81
-    .end packed-switch
-.end method
-
-.method private final smoothScrollTo(IJ)V
-    .registers 12
-    .param p1, "scrollValue"    # I
-    .param p2, "duration"    # J
-
-    .prologue
-    .line 1241
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    const-wide/16 v4, 0x0
-
     const/4 v6, 0x0
 
-    move-object v0, p0
+    const/high16 v5, 0x40000000    # 2.0f
 
-    move v1, p1
+    const/4 v4, 0x0
 
-    move-wide v2, p2
+    .line 1166
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->a:[I
 
-    invoke-direct/range {v0 .. v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->smoothScrollTo(IJJLcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
-
-    .line 1242
-    return-void
-.end method
-
-.method private final smoothScrollTo(IJJLcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
-    .registers 15
-    .param p1, "newScrollValue"    # I
-    .param p2, "duration"    # J
-    .param p4, "delayMillis"    # J
-    .param p6, "listener"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;
-
-    .prologue
-    .line 1246
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mCurrentSmoothScrollRunnable:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;
-
-    if-eqz v0, :cond_9
-
-    .line 1247
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mCurrentSmoothScrollRunnable:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;
-
-    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;->stop()V
-
-    .line 1251
-    :cond_9
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
-
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getPullToRefreshScrollDirection()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
     move-result-object v1
 
@@ -1265,243 +986,262 @@
 
     aget v0, v0, v1
 
-    packed-switch v0, :pswitch_data_4c
+    packed-switch v0, :pswitch_data_9a
 
-    .line 1257
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getScrollY()I
+    .line 1173
+    iget v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->f:F
+
+    .line 1174
+    iget v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->d:F
+
+    .line 1178
+    :goto_17
+    sget-object v2, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->c:[I
+
+    iget-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->j:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    invoke-virtual {v3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
+
+    move-result v3
+
+    aget v2, v2, v3
+
+    packed-switch v2, :pswitch_data_a0
+
+    .line 1185
+    sub-float v0, v1, v0
+
+    invoke-static {v0, v4}, Ljava/lang/Math;->min(FF)F
+
+    move-result v0
+
+    div-float/2addr v0, v5
+
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v1
+
+    .line 1186
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getHeaderSize()I
+
+    move-result v0
+
+    .line 1190
+    :goto_33
+    invoke-virtual {p0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setHeaderScroll(I)V
+
+    .line 1192
+    if-eqz v1, :cond_6a
+
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->n()Z
 
     move-result v2
 
-    .line 1261
-    .local v2, "oldScrollValue":I
-    :goto_1c
-    if-eq v2, p1, :cond_3f
+    if-nez v2, :cond_6a
 
-    .line 1262
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mScrollAnimationInterpolator:Landroid/view/animation/Interpolator;
+    .line 1193
+    invoke-static {v1}, Ljava/lang/Math;->abs(I)I
 
-    if-nez v0, :cond_29
+    move-result v2
 
-    .line 1264
-    new-instance v0, Landroid/view/animation/DecelerateInterpolator;
+    int-to-float v2, v2
 
-    invoke-direct {v0}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
+    int-to-float v3, v0
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mScrollAnimationInterpolator:Landroid/view/animation/Interpolator;
+    div-float/2addr v2, v3
 
-    .line 1266
-    :cond_29
-    new-instance v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;
+    .line 1194
+    sget-object v3, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->c:[I
 
-    move-object v1, p0
+    iget-object v4, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->j:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    move v3, p1
+    invoke-virtual {v4}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
 
-    move-wide v4, p2
+    move-result v4
 
-    move-object v6, p6
+    aget v3, v3, v4
 
-    invoke-direct/range {v0 .. v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;-><init>(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;IIJLcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
+    packed-switch v3, :pswitch_data_a6
 
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mCurrentSmoothScrollRunnable:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;
+    .line 1200
+    iget-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->s:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
-    .line 1268
-    const-wide/16 v0, 0x0
+    invoke-virtual {v3, v2}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->b(F)V
 
-    cmp-long v0, p4, v0
+    .line 1204
+    :goto_57
+    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->h:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-    if-lez v0, :cond_45
+    sget-object v3, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-    .line 1269
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mCurrentSmoothScrollRunnable:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;
+    if-eq v2, v3, :cond_86
 
-    invoke-virtual {p0, v0, p4, p5}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-static {v1}, Ljava/lang/Math;->abs(I)I
 
-    .line 1274
-    :cond_3f
-    :goto_3f
+    move-result v2
+
+    if-lt v0, v2, :cond_86
+
+    .line 1205
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+
+    new-array v1, v6, [Z
+
+    invoke-virtual {p0, v0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;[Z)V
+
+    .line 1210
+    :cond_6a
+    :goto_6a
     return-void
 
-    .line 1253
-    .end local v2    # "oldScrollValue":I
-    :pswitch_40
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getScrollX()I
+    .line 1168
+    :pswitch_6b
+    iget v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->e:F
 
-    move-result v2
+    .line 1169
+    iget v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->c:F
 
-    .line 1254
-    .restart local v2    # "oldScrollValue":I
-    goto :goto_1c
+    goto :goto_17
 
-    .line 1271
-    :cond_45
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mCurrentSmoothScrollRunnable:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$SmoothScrollRunnable;
+    .line 1180
+    :pswitch_70
+    sub-float v0, v1, v0
 
-    invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->post(Ljava/lang/Runnable;)Z
+    invoke-static {v0, v4}, Ljava/lang/Math;->max(FF)F
 
-    goto :goto_3f
+    move-result v0
 
-    .line 1251
-    nop
+    div-float/2addr v0, v5
 
-    :pswitch_data_4c
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    move-result v1
+
+    .line 1181
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getFooterSize()I
+
+    move-result v0
+
+    goto :goto_33
+
+    .line 1196
+    :pswitch_80
+    iget-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->t:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+
+    invoke-virtual {v3, v2}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->b(F)V
+
+    goto :goto_57
+
+    .line 1206
+    :cond_86
+    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->h:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+
+    sget-object v3, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+
+    if-ne v2, v3, :cond_6a
+
+    invoke-static {v1}, Ljava/lang/Math;->abs(I)I
+
+    move-result v1
+
+    if-ge v0, v1, :cond_6a
+
+    .line 1207
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->c:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+
+    new-array v1, v6, [Z
+
+    invoke-virtual {p0, v0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;[Z)V
+
+    goto :goto_6a
+
+    .line 1166
+    :pswitch_data_9a
     .packed-switch 0x1
-        :pswitch_40
+        :pswitch_6b
+    .end packed-switch
+
+    .line 1178
+    :pswitch_data_a0
+    .packed-switch 0x1
+        :pswitch_70
+    .end packed-switch
+
+    .line 1194
+    :pswitch_data_a6
+    .packed-switch 0x1
+        :pswitch_80
     .end packed-switch
 .end method
 
-.method private final smoothScrollToAndBack(I)V
-    .registers 9
-    .param p1, "y"    # I
+.method private t()Landroid/widget/LinearLayout$LayoutParams;
+    .registers 5
 
     .prologue
-    .line 1277
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    const-wide/16 v2, 0xc8
+    const/4 v3, -0x1
 
-    const-wide/16 v4, 0x0
+    const/4 v2, -0x2
 
-    new-instance v6, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$3;
+    .line 1213
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->a:[I
 
-    invoke-direct {v6, p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$3;-><init>(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;)V
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
-    move-object v0, p0
+    move-result-object v1
 
-    move v1, p1
+    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->ordinal()I
 
-    invoke-direct/range {v0 .. v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->smoothScrollTo(IJJLcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
+    move-result v1
 
-    .line 1284
-    return-void
+    aget v0, v0, v1
+
+    packed-switch v0, :pswitch_data_1e
+
+    .line 1219
+    new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
+
+    invoke-direct {v0, v3, v2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+
+    :goto_16
+    return-object v0
+
+    .line 1215
+    :pswitch_17
+    new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
+
+    invoke-direct {v0, v2, v3}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+
+    goto :goto_16
+
+    .line 1213
+    nop
+
+    :pswitch_data_1e
+    .packed-switch 0x1
+        :pswitch_17
+    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
-    .registers 8
-    .param p1, "child"    # Landroid/view/View;
-    .param p2, "index"    # I
-    .param p3, "params"    # Landroid/view/ViewGroup$LayoutParams;
-
-    .prologue
-    .line 127
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    const-string/jumbo v1, "PullToRefresh"
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "addView: "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 130
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getRefreshableView()Landroid/view/View;
-
-    move-result-object v0
-
-    .line 132
-    .local v0, "refreshableView":Landroid/view/View;, "TT;"
-    instance-of v1, v0, Landroid/view/ViewGroup;
-
-    if-eqz v1, :cond_30
-
-    .line 133
-    check-cast v0, Landroid/view/ViewGroup;
-
-    .end local v0    # "refreshableView":Landroid/view/View;, "TT;"
-    invoke-virtual {v0, p1, p2, p3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
-
-    .line 137
-    return-void
-
-    .line 135
-    .restart local v0    # "refreshableView":Landroid/view/View;, "TT;"
-    :cond_30
-    new-instance v1, Ljava/lang/UnsupportedOperationException;
-
-    const-string/jumbo v2, "Refreshable View is not a ViewGroup so can\'t addView"
-
-    invoke-direct {v1, v2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-.end method
-
-.method protected final addViewInternal(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
-    .registers 4
-    .param p1, "child"    # Landroid/view/View;
-    .param p2, "index"    # I
-    .param p3, "params"    # Landroid/view/ViewGroup$LayoutParams;
-
-    .prologue
-    .line 570
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    invoke-super {p0, p1, p2, p3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
-
-    .line 571
-    return-void
-.end method
-
-.method protected final addViewInternal(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-    .registers 4
-    .param p1, "child"    # Landroid/view/View;
-    .param p2, "params"    # Landroid/view/ViewGroup$LayoutParams;
-
-    .prologue
-    .line 578
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    const/4 v0, -0x1
-
-    invoke-super {p0, p1, v0, p2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
-
-    .line 579
-    return-void
-.end method
-
-.method protected createLoadingLayout(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;Landroid/content/res/TypedArray;)Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-    .registers 7
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "mode"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-    .param p3, "attrs"    # Landroid/content/res/TypedArray;
+.method protected a(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;Landroid/content/res/TypedArray;)Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    .registers 6
 
     .prologue
     .line 582
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLoadingAnimationStyle:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->r:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     .line 583
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getPullToRefreshScrollDirection()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 582
-    invoke-virtual {v1, p1, p2, v2, p3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->createLoadingLayout(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;Landroid/content/res/TypedArray;)Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    invoke-virtual {v0, p1, p2, v1, p3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->a(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;Landroid/content/res/TypedArray;)Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
     move-result-object v0
 
     .line 584
-    .local v0, "layout":Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setVisibility(I)V
@@ -1510,58 +1250,486 @@
     return-object v0
 .end method
 
-.method protected createLoadingLayoutProxy(ZZ)Lcom/handmark/pulltorefresh/library/internal/LoadingLayoutProxy;
-    .registers 5
-    .param p1, "includeStart"    # Z
-    .param p2, "includeEnd"    # Z
-
-    .prologue
-    .line 593
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    new-instance v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayoutProxy;
-
-    invoke-direct {v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayoutProxy;-><init>()V
-
-    .line 595
-    .local v0, "proxy":Lcom/handmark/pulltorefresh/library/internal/LoadingLayoutProxy;
-    if-eqz p1, :cond_14
-
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showHeaderLoadingLayout()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_14
-
-    .line 596
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mHeaderLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    invoke-virtual {v0, v1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayoutProxy;->addLayout(Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;)V
-
-    .line 598
-    :cond_14
-    if-eqz p2, :cond_23
-
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showFooterLoadingLayout()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_23
-
-    .line 599
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFooterLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    invoke-virtual {v0, v1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayoutProxy;->addLayout(Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;)V
-
-    .line 602
-    :cond_23
-    return-object v0
+.method public abstract a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 .end method
 
-.method protected abstract createRefreshableView(Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
+.method protected final a(I)V
+    .registers 4
+
+    .prologue
+    .line 992
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getPullToRefreshScrollDuration()I
+
+    move-result v0
+
+    int-to-long v0, v0
+
+    invoke-direct {p0, p1, v0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(IJ)V
+
+    .line 993
+    return-void
+.end method
+
+.method protected final a(II)V
+    .registers 6
+
+    .prologue
+    .line 921
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->k:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
+
+    .line 923
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->a:[I
+
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->ordinal()I
+
+    move-result v2
+
+    aget v1, v1, v2
+
+    packed-switch v1, :pswitch_data_30
+
+    .line 937
+    :cond_17
+    :goto_17
+    return-void
+
+    .line 925
+    :pswitch_18
+    iget v1, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
+
+    if-eq v1, p1, :cond_17
+
+    .line 926
+    iput p1, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
+
+    .line 927
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->k:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->requestLayout()V
+
+    goto :goto_17
+
+    .line 931
+    :pswitch_24
+    iget v1, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
+
+    if-eq v1, p2, :cond_17
+
+    .line 932
+    iput p2, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
+
+    .line 933
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->k:Landroid/widget/FrameLayout;
+
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->requestLayout()V
+
+    goto :goto_17
+
+    .line 923
+    :pswitch_data_30
+    .packed-switch 0x1
+        :pswitch_18
+        :pswitch_24
+    .end packed-switch
+.end method
+
+.method protected final a(ILcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
+    .registers 10
+
+    .prologue
+    .line 1003
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getPullToRefreshScrollDuration()I
+
+    move-result v0
+
+    int-to-long v2, v0
+
+    const-wide/16 v4, 0x0
+
+    move-object v0, p0
+
+    move v1, p1
+
+    move-object v6, p2
+
+    invoke-direct/range {v0 .. v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(IJJLcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
+
+    .line 1004
+    return-void
+.end method
+
+.method protected a(Landroid/content/res/TypedArray;)V
+    .registers 2
+
+    .prologue
+    .line 660
+    return-void
+.end method
+
+.method protected a(Landroid/os/Bundle;)V
+    .registers 2
+
+    .prologue
+    .line 687
+    return-void
+.end method
+
+.method protected final a(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+    .registers 4
+
+    .prologue
+    .line 570
+    invoke-super {p0, p1, p2, p3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+
+    .line 571
+    return-void
+.end method
+
+.method protected final a(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    .registers 4
+
+    .prologue
+    .line 578
+    const/4 v0, -0x1
+
+    invoke-super {p0, p1, v0, p2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+
+    .line 579
+    return-void
+.end method
+
+.method public final a(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;)V
+    .registers 5
+
+    .prologue
+    .line 418
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    if-eq p1, v0, :cond_23
+
+    .line 420
+    const-string/jumbo v0, "PullToRefresh"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "Setting mode to: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 422
+    iput-object p1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    .line 423
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->g()V
+
+    .line 425
+    :cond_23
+    return-void
+.end method
+
+.method final varargs a(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;[Z)V
+    .registers 6
+
+    .prologue
+    .line 535
+    iput-object p1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->h:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+
+    .line 537
+    const-string/jumbo v0, "PullToRefresh"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "State: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->h:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+
+    invoke-virtual {v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->name()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 540
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->b:[I
+
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->h:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+
+    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->ordinal()I
+
+    move-result v1
+
+    aget v0, v0, v1
+
+    packed-switch v0, :pswitch_data_50
+
+    .line 560
+    :goto_2f
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->w:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnPullEventListener;
+
+    if-eqz v0, :cond_3c
+
+    .line 561
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->w:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnPullEventListener;
+
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->h:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+
+    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->j:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    invoke-interface {v0, p0, v1, v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnPullEventListener;->a(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;)V
+
+    .line 563
+    :cond_3c
+    return-void
+
+    .line 542
+    :pswitch_3d
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->d()V
+
+    goto :goto_2f
+
+    .line 545
+    :pswitch_41
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->b()V
+
+    goto :goto_2f
+
+    .line 548
+    :pswitch_45
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->c()V
+
+    goto :goto_2f
+
+    .line 552
+    :pswitch_49
+    const/4 v0, 0x0
+
+    aget-boolean v0, p2, v0
+
+    invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Z)V
+
+    goto :goto_2f
+
+    .line 540
+    :pswitch_data_50
+    .packed-switch 0x1
+        :pswitch_3d
+        :pswitch_41
+        :pswitch_45
+        :pswitch_49
+        :pswitch_49
+    .end packed-switch
+.end method
+
+.method protected a(Z)V
+    .registers 5
+
+    .prologue
+    .line 723
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->c()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_d
+
+    .line 724
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->s:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+
+    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f()V
+
+    .line 726
+    :cond_d
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->d()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1a
+
+    .line 727
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->t:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+
+    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f()V
+
+    .line 730
+    :cond_1a
+    if-eqz p1, :cond_48
+
+    .line 731
+    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->l:Z
+
+    if-eqz v0, :cond_43
+
+    .line 734
+    new-instance v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$1;
+
+    invoke-direct {v0, p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$1;-><init>(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;)V
+
+    .line 741
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->c:[I
+
+    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->j:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    invoke-virtual {v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
+
+    move-result v2
+
+    aget v1, v1, v2
+
+    packed-switch v1, :pswitch_data_4c
+
+    .line 748
+    :pswitch_32
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getHeaderSize()I
+
+    move-result v1
+
+    neg-int v1, v1
+
+    invoke-virtual {p0, v1, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(ILcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
+
+    .line 758
+    :goto_3a
+    return-void
+
+    .line 744
+    :pswitch_3b
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getFooterSize()I
+
+    move-result v1
+
+    invoke-virtual {p0, v1, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(ILcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
+
+    goto :goto_3a
+
+    .line 752
+    :cond_43
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(I)V
+
+    goto :goto_3a
+
+    .line 756
+    :cond_48
+    invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->q()V
+
+    goto :goto_3a
+
+    .line 741
+    :pswitch_data_4c
+    .packed-switch 0x1
+        :pswitch_3b
+        :pswitch_32
+        :pswitch_3b
+    .end packed-switch
+.end method
+
+.method public addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+    .registers 7
+
+    .prologue
+    .line 127
+    const-string/jumbo v0, "PullToRefresh"
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "addView: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 130
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->j()Landroid/view/View;
+
+    move-result-object v0
+
+    .line 132
+    instance-of v1, v0, Landroid/view/ViewGroup;
+
+    if-eqz v1, :cond_30
+
+    .line 133
+    check-cast v0, Landroid/view/ViewGroup;
+
+    invoke-virtual {v0, p1, p2, p3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+
+    .line 137
+    return-void
+
+    .line 135
+    :cond_30
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string/jumbo v1, "Refreshable View is not a ViewGroup so can\'t addView"
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method protected abstract b(Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1572,100 +1740,235 @@
     .end annotation
 .end method
 
-.method public final demo()Z
+.method protected b()V
     .registers 3
 
     .prologue
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    const/4 v0, 0x1
+    .line 703
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->c:[I
 
-    .line 141
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->j:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showHeaderLoadingLayout()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1a
-
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->isReadyForPullStart()Z
+    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
 
     move-result v1
 
-    if-eqz v1, :cond_1a
+    aget v0, v0, v1
 
-    .line 142
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getHeaderSize()I
+    packed-switch v0, :pswitch_data_1a
 
-    move-result v1
+    .line 714
+    :goto_d
+    return-void
 
-    neg-int v1, v1
+    .line 705
+    :pswitch_e
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->t:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
-    mul-int/lit8 v1, v1, 0x2
+    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->e()V
 
-    invoke-direct {p0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->smoothScrollToAndBack(I)V
+    goto :goto_d
 
-    .line 149
-    :goto_19
-    return v0
+    .line 708
+    :pswitch_14
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->s:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
-    .line 144
-    :cond_1a
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->e()V
 
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showFooterLoadingLayout()Z
+    goto :goto_d
 
-    move-result v1
-
-    if-eqz v1, :cond_32
-
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->isReadyForPullEnd()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_32
-
-    .line 145
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getFooterSize()I
-
-    move-result v1
-
-    mul-int/lit8 v1, v1, 0x2
-
-    invoke-direct {p0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->smoothScrollToAndBack(I)V
-
-    goto :goto_19
-
-    .line 149
-    :cond_32
-    const/4 v0, 0x0
-
-    goto :goto_19
+    .line 703
+    :pswitch_data_1a
+    .packed-switch 0x1
+        :pswitch_e
+        :pswitch_14
+    .end packed-switch
 .end method
 
-.method protected final disableLoadingLayoutVisibilityChanges()V
+.method protected b(Landroid/os/Bundle;)V
     .registers 2
 
     .prologue
-    .line 622
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLayoutVisibilityChangesEnabled:Z
-
-    .line 623
+    .line 696
     return-void
 .end method
 
-.method public final getCurrentMode()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-    .registers 2
+.method protected c()V
+    .registers 3
 
     .prologue
-    .line 154
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mCurrentMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    .line 765
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->c:[I
 
-    return-object v0
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->j:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
+
+    move-result v1
+
+    aget v0, v0, v1
+
+    packed-switch v0, :pswitch_data_1a
+
+    .line 776
+    :goto_d
+    return-void
+
+    .line 767
+    :pswitch_e
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->t:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+
+    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->g()V
+
+    goto :goto_d
+
+    .line 770
+    :pswitch_14
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->s:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+
+    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->g()V
+
+    goto :goto_d
+
+    .line 765
+    :pswitch_data_1a
+    .packed-switch 0x1
+        :pswitch_e
+        :pswitch_14
+    .end packed-switch
+.end method
+
+.method protected d()V
+    .registers 3
+
+    .prologue
+    const/4 v1, 0x0
+
+    .line 783
+    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->g:Z
+
+    .line 784
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->p:Z
+
+    .line 787
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->s:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+
+    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->h()V
+
+    .line 788
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->t:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+
+    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->h()V
+
+    .line 790
+    invoke-virtual {p0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(I)V
+
+    .line 791
+    return-void
+.end method
+
+.method protected abstract e()Z
+.end method
+
+.method protected abstract f()Z
+.end method
+
+.method protected g()V
+    .registers 4
+
+    .prologue
+    .line 1023
+    invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->t()Landroid/widget/LinearLayout$LayoutParams;
+
+    move-result-object v0
+
+    .line 1026
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->s:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+
+    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v1
+
+    if-ne p0, v1, :cond_11
+
+    .line 1027
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->s:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+
+    invoke-virtual {p0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->removeView(Landroid/view/View;)V
+
+    .line 1029
+    :cond_11
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->c()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_1f
+
+    .line 1030
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->s:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, v1, v2, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+
+    .line 1034
+    :cond_1f
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->t:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+
+    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v1
+
+    if-ne p0, v1, :cond_2c
+
+    .line 1035
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->t:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+
+    invoke-virtual {p0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->removeView(Landroid/view/View;)V
+
+    .line 1037
+    :cond_2c
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->d()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_39
+
+    .line 1038
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->t:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+
+    invoke-virtual {p0, v1, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 1042
+    :cond_39
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->p()V
+
+    .line 1046
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->d:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    if-eq v0, v1, :cond_47
+
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    :goto_44
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->j:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    .line 1047
+    return-void
+
+    .line 1046
+    :cond_47
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    goto :goto_44
 .end method
 
 .method public final getFilterTouchEvents()Z
@@ -1673,21 +1976,9 @@
 
     .prologue
     .line 159
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFilterTouchEvents:Z
+    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->n:Z
 
     return v0
-.end method
-
-.method protected final getFooterLayout()Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-    .registers 2
-
-    .prologue
-    .line 626
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFooterLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    return-object v0
 .end method
 
 .method protected final getFooterSize()I
@@ -1695,25 +1986,13 @@
 
     .prologue
     .line 630
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFooterLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->t:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
     invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->getContentSize()I
 
     move-result v0
 
     return v0
-.end method
-
-.method protected final getHeaderLayout()Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-    .registers 2
-
-    .prologue
-    .line 634
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mHeaderLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    return-object v0
 .end method
 
 .method protected final getHeaderSize()I
@@ -1721,8 +2000,7 @@
 
     .prologue
     .line 638
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mHeaderLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->s:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
     invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->getContentSize()I
 
@@ -1731,56 +2009,11 @@
     return v0
 .end method
 
-.method public final getLoadingLayoutProxy()Lcom/handmark/pulltorefresh/library/internal/ILoadingLayout;
-    .registers 2
-
-    .prologue
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    const/4 v0, 0x1
-
-    .line 164
-    invoke-virtual {p0, v0, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getLoadingLayoutProxy(ZZ)Lcom/handmark/pulltorefresh/library/internal/ILoadingLayout;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final getLoadingLayoutProxy(ZZ)Lcom/handmark/pulltorefresh/library/internal/ILoadingLayout;
-    .registers 4
-    .param p1, "includeStart"    # Z
-    .param p2, "includeEnd"    # Z
-
-    .prologue
-    .line 169
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    invoke-virtual {p0, p1, p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->createLoadingLayoutProxy(ZZ)Lcom/handmark/pulltorefresh/library/internal/LoadingLayoutProxy;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public final getMode()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-    .registers 2
-
-    .prologue
-    .line 174
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    return-object v0
-.end method
-
-.method public abstract getPullToRefreshScrollDirection()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
-.end method
-
 .method protected getPullToRefreshScrollDuration()I
     .registers 2
 
     .prologue
     .line 642
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
     const/16 v0, 0xc8
 
     return v0
@@ -1791,13 +2024,42 @@
 
     .prologue
     .line 646
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
     const/16 v0, 0x145
 
     return v0
 .end method
 
-.method public final getRefreshableView()Landroid/view/View;
+.method public final getShowViewWhileRefreshing()Z
+    .registers 2
+
+    .prologue
+    .line 184
+    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->l:Z
+
+    return v0
+.end method
+
+.method public final h()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    .registers 2
+
+    .prologue
+    .line 154
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->j:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    return-object v0
+.end method
+
+.method public final i()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    .registers 2
+
+    .prologue
+    .line 174
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    return-object v0
+.end method
+
+.method public final j()Landroid/view/View;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1807,113 +2069,54 @@
 
     .prologue
     .line 179
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mRefreshableView:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a:Landroid/view/View;
 
     return-object v0
 .end method
 
-.method protected getRefreshableViewWrapper()Landroid/widget/FrameLayout;
-    .registers 2
-
-    .prologue
-    .line 650
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mRefreshableViewWrapper:Landroid/widget/FrameLayout;
-
-    return-object v0
-.end method
-
-.method public final getShowViewWhileRefreshing()Z
-    .registers 2
-
-    .prologue
-    .line 184
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mShowViewWhileRefreshing:Z
-
-    return v0
-.end method
-
-.method public final getState()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+.method public final k()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
     .registers 2
 
     .prologue
     .line 189
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mState:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->h:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     return-object v0
 .end method
 
-.method protected handleStyledAttributes(Landroid/content/res/TypedArray;)V
-    .registers 2
-    .param p1, "a"    # Landroid/content/res/TypedArray;
-
-    .prologue
-    .line 660
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    return-void
-.end method
-
-.method public final isDisableScrollingWhileRefreshing()Z
-    .registers 2
-
-    .prologue
-    .line 196
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->isScrollingWhileRefreshingEnabled()Z
-
-    move-result v0
-
-    if-nez v0, :cond_8
-
-    const/4 v0, 0x1
-
-    :goto_7
-    return v0
-
-    :cond_8
-    const/4 v0, 0x0
-
-    goto :goto_7
-.end method
-
-.method public final isPullToRefreshEnabled()Z
+.method public final l()Z
     .registers 2
 
     .prologue
     .line 201
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->permitsPullToRefresh()Z
+    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->b()Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public final isPullToRefreshOverScrollEnabled()Z
+.method public final m()Z
     .registers 3
 
     .prologue
     .line 206
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x9
 
     if-lt v0, v1, :cond_14
 
-    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOverScrollEnabled:Z
+    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->o:Z
 
     if-eqz v0, :cond_14
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mRefreshableView:Landroid/view/View;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a:Landroid/view/View;
 
     .line 207
-    invoke-static {v0}, Lcom/handmark/pulltorefresh/library/internal/OverscrollHelper;->isAndroidOverScrollEnabled(Landroid/view/View;)Z
+    invoke-static {v0}, Lcom/handmark/pulltorefresh/library/internal/OverscrollHelper;->a(Landroid/view/View;)Z
 
     move-result v0
 
@@ -1930,27 +2133,20 @@
     goto :goto_13
 .end method
 
-.method protected abstract isReadyForPullEnd()Z
-.end method
-
-.method protected abstract isReadyForPullStart()Z
-.end method
-
-.method public final isRefreshing()Z
+.method public final n()Z
     .registers 3
 
     .prologue
     .line 212
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mState:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->h:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->REFRESHING:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->d:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     if-eq v0, v1, :cond_c
 
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mState:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->h:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->MANUAL_REFRESHING:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->e:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     if-ne v0, v1, :cond_e
 
@@ -1966,37 +2162,34 @@
     goto :goto_d
 .end method
 
-.method public final isScrollingWhileRefreshingEnabled()Z
+.method protected o()Landroid/widget/FrameLayout;
     .registers 2
 
     .prologue
-    .line 217
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mScrollingWhileRefreshingEnabled:Z
+    .line 650
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->k:Landroid/widget/FrameLayout;
 
-    return v0
+    return-object v0
 .end method
 
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-    .registers 11
-    .param p1, "event"    # Landroid/view/MotionEvent;
+    .registers 9
 
     .prologue
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    const/4 v6, 0x0
+    const/4 v0, 0x0
 
-    const/4 v7, 0x1
+    const/4 v2, 0x1
 
     .line 223
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->isPullToRefreshEnabled()Z
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->l()Z
 
-    move-result v8
+    move-result v1
 
-    if-nez v8, :cond_9
+    if-nez v1, :cond_9
 
     .line 294
     :goto_8
-    return v6
+    return v0
 
     .line 227
     :cond_9
@@ -2005,16 +2198,15 @@
     move-result v1
 
     .line 229
-    .local v1, "action":I
-    const/4 v8, 0x3
+    const/4 v3, 0x3
 
-    if-eq v1, v8, :cond_12
+    if-eq v1, v3, :cond_12
 
-    if-ne v1, v7, :cond_15
+    if-ne v1, v2, :cond_15
 
     .line 230
     :cond_12
-    iput-boolean v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mIsBeingDragged:Z
+    iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->g:Z
 
     goto :goto_8
 
@@ -2022,11 +2214,11 @@
     :cond_15
     if-eqz v1, :cond_1d
 
-    iget-boolean v8, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mIsBeingDragged:Z
+    iget-boolean v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->g:Z
 
-    if-eqz v8, :cond_1d
+    if-eqz v3, :cond_1d
 
-    move v6, v7
+    move v0, v2
 
     .line 235
     goto :goto_8
@@ -2039,244 +2231,228 @@
     :cond_20
     :goto_20
     :pswitch_20
-    iget-boolean v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mIsBeingDragged:Z
+    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->g:Z
 
     goto :goto_8
 
     .line 241
     :pswitch_23
-    iget-boolean v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mScrollingWhileRefreshingEnabled:Z
+    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->m:Z
 
-    if-nez v6, :cond_2f
+    if-nez v0, :cond_2f
 
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->isRefreshing()Z
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->n()Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_2f
+    if-eqz v0, :cond_2f
 
-    move v6, v7
+    move v0, v2
 
     .line 242
     goto :goto_8
 
     .line 245
     :cond_2f
-    invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->isReadyForPull()Z
+    invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->r()Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_20
+    if-eqz v0, :cond_20
 
     .line 246
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
-    move-result v5
+    move-result v3
 
-    .local v5, "y":F
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v4
 
     .line 251
-    .local v4, "x":F
-    sget-object v6, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->a:[I
 
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getPullToRefreshScrollDirection()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
-    move-result-object v8
+    move-result-object v1
 
-    invoke-virtual {v8}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->ordinal()I
+    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->ordinal()I
 
-    move-result v8
+    move-result v1
 
-    aget v6, v6, v8
+    aget v0, v0, v1
 
-    packed-switch v6, :pswitch_data_e4
+    packed-switch v0, :pswitch_data_e4
 
     .line 258
-    iget v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLastMotionY:F
+    iget v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->d:F
 
-    sub-float v2, v5, v6
+    sub-float v1, v3, v0
 
     .line 259
-    .local v2, "diff":F
-    iget v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLastMotionX:F
+    iget v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->c:F
 
-    sub-float v3, v4, v6
+    sub-float v0, v4, v0
 
     .line 262
-    .local v3, "oppositeDiff":F
     :goto_54
-    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
+    invoke-static {v1}, Ljava/lang/Math;->abs(F)F
 
-    move-result v0
+    move-result v5
 
     .line 264
-    .local v0, "absDiff":F
-    iget v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mTouchSlop:I
+    iget v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->b:I
 
     int-to-float v6, v6
 
-    cmpl-float v6, v0, v6
+    cmpl-float v6, v5, v6
 
     if-lez v6, :cond_20
 
-    iget-boolean v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFilterTouchEvents:Z
+    iget-boolean v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->n:Z
 
     if-eqz v6, :cond_6b
 
-    invoke-static {v3}, Ljava/lang/Math;->abs(F)F
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
-    move-result v6
+    move-result v0
 
-    cmpl-float v6, v0, v6
+    cmpl-float v0, v5, v0
 
-    if-lez v6, :cond_20
+    if-lez v0, :cond_20
 
     .line 265
     :cond_6b
-    iget-object v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    invoke-virtual {v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showHeaderLoadingLayout()Z
+    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->c()Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_99
+    if-eqz v0, :cond_99
 
-    const/high16 v6, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    cmpl-float v6, v2, v6
+    cmpl-float v0, v1, v0
 
-    if-ltz v6, :cond_99
+    if-ltz v0, :cond_99
 
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->isReadyForPullStart()Z
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->e()Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_99
+    if-eqz v0, :cond_99
 
     .line 266
-    iput v5, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLastMotionY:F
+    iput v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->d:F
 
     .line 267
-    iput v4, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLastMotionX:F
+    iput v4, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->c:F
 
     .line 268
-    iput-boolean v7, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mIsBeingDragged:Z
+    iput-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->g:Z
 
     .line 269
-    iget-object v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    sget-object v7, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->BOTH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->d:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    if-ne v6, v7, :cond_20
+    if-ne v0, v1, :cond_20
 
     .line 270
-    sget-object v6, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_START:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    iput-object v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mCurrentMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->j:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     goto :goto_20
 
     .line 253
-    .end local v0    # "absDiff":F
-    .end local v2    # "diff":F
-    .end local v3    # "oppositeDiff":F
     :pswitch_90
-    iget v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLastMotionX:F
+    iget v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->c:F
 
-    sub-float v2, v4, v6
+    sub-float v1, v4, v0
 
     .line 254
-    .restart local v2    # "diff":F
-    iget v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLastMotionY:F
+    iget v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->d:F
 
-    sub-float v3, v5, v6
+    sub-float v0, v3, v0
 
     .line 255
-    .restart local v3    # "oppositeDiff":F
     goto :goto_54
 
     .line 272
-    .restart local v0    # "absDiff":F
     :cond_99
-    iget-object v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    invoke-virtual {v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showFooterLoadingLayout()Z
+    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->d()Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_20
+    if-eqz v0, :cond_20
 
-    const/high16 v6, -0x40800000
+    const/high16 v0, -0x40800000    # -1.0f
 
-    cmpg-float v6, v2, v6
+    cmpg-float v0, v1, v0
 
-    if-gtz v6, :cond_20
+    if-gtz v0, :cond_20
 
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->isReadyForPullEnd()Z
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->f()Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_20
+    if-eqz v0, :cond_20
 
     .line 273
-    iput v5, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLastMotionY:F
+    iput v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->d:F
 
     .line 274
-    iput v4, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLastMotionX:F
+    iput v4, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->c:F
 
     .line 275
-    iput-boolean v7, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mIsBeingDragged:Z
+    iput-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->g:Z
 
     .line 276
-    iget-object v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    sget-object v7, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->BOTH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->d:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    if-ne v6, v7, :cond_20
+    if-ne v0, v1, :cond_20
 
     .line 277
-    sget-object v6, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_END:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->c:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    iput-object v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mCurrentMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->j:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     goto/16 :goto_20
 
     .line 285
-    .end local v0    # "absDiff":F
-    .end local v2    # "diff":F
-    .end local v3    # "oppositeDiff":F
-    .end local v4    # "x":F
-    .end local v5    # "y":F
     :pswitch_bf
-    invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->isReadyForPull()Z
+    invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->r()Z
 
-    move-result v7
+    move-result v1
 
-    if-eqz v7, :cond_20
+    if-eqz v1, :cond_20
 
     .line 286
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
-    move-result v7
+    move-result v1
 
-    iput v7, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mInitialMotionY:F
+    iput v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->f:F
 
-    iput v7, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLastMotionY:F
+    iput v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->d:F
 
     .line 287
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
-    move-result v7
+    move-result v1
 
-    iput v7, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mInitialMotionX:F
+    iput v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->e:F
 
-    iput v7, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLastMotionX:F
+    iput v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->c:F
 
     .line 288
-    iput-boolean v6, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mIsBeingDragged:Z
+    iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->g:Z
 
     goto/16 :goto_20
 
@@ -2297,407 +2473,116 @@
     .end packed-switch
 .end method
 
-.method protected onPtrRestoreInstanceState(Landroid/os/Bundle;)V
-    .registers 2
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
+.method public final onRestoreInstanceState(Landroid/os/Parcelable;)V
+    .registers 6
 
     .prologue
-    .line 687
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    return-void
-.end method
+    const/4 v3, 0x1
 
-.method protected onPtrSaveInstanceState(Landroid/os/Bundle;)V
-    .registers 2
-    .param p1, "saveState"    # Landroid/os/Bundle;
+    const/4 v2, 0x0
 
-    .prologue
-    .line 696
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    return-void
-.end method
+    .line 796
+    instance-of v0, p1, Landroid/os/Bundle;
 
-.method protected onPullToRefresh()V
-    .registers 3
+    if-eqz v0, :cond_5d
 
-    .prologue
-    .line 703
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
+    .line 797
+    check-cast p1, Landroid/os/Bundle;
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mCurrentMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    .line 799
+    const-string/jumbo v0, "ptr_mode"
 
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
-
-    move-result v1
-
-    aget v0, v0, v1
-
-    packed-switch v0, :pswitch_data_1a
-
-    .line 714
-    :goto_d
-    return-void
-
-    .line 705
-    :pswitch_e
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFooterLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->pullToRefresh()V
-
-    goto :goto_d
-
-    .line 708
-    :pswitch_14
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mHeaderLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->pullToRefresh()V
-
-    goto :goto_d
-
-    .line 703
-    :pswitch_data_1a
-    .packed-switch 0x1
-        :pswitch_e
-        :pswitch_14
-    .end packed-switch
-.end method
-
-.method public final onRefreshComplete()V
-    .registers 3
-
-    .prologue
-    .line 299
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->isRefreshing()Z
+    invoke-virtual {p1, v0, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 
     move-result v0
 
-    if-eqz v0, :cond_e
+    invoke-static {v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->a(I)Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    .line 300
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->RESET:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    move-result-object v0
 
-    const/4 v1, 0x0
-
-    new-array v1, v1, [Z
-
-    invoke-virtual {p0, v0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setState(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;[Z)V
-
-    .line 302
-    :cond_e
-    return-void
-.end method
-
-.method protected onRefreshing(Z)V
-    .registers 5
-    .param p1, "doScroll"    # Z
-
-    .prologue
-    .line 723
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showHeaderLoadingLayout()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_d
-
-    .line 724
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mHeaderLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->refreshing()V
-
-    .line 726
-    :cond_d
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showFooterLoadingLayout()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1a
-
-    .line 727
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFooterLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->refreshing()V
-
-    .line 730
-    :cond_1a
-    if-eqz p1, :cond_48
-
-    .line 731
-    iget-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mShowViewWhileRefreshing:Z
-
-    if-eqz v1, :cond_43
-
-    .line 734
-    new-instance v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$1;
-
-    invoke-direct {v0, p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$1;-><init>(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;)V
-
-    .line 741
-    .local v0, "listener":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
-
-    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mCurrentMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
-
-    move-result v2
-
-    aget v1, v1, v2
-
-    packed-switch v1, :pswitch_data_4c
-
-    .line 748
-    :pswitch_32
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getHeaderSize()I
-
-    move-result v1
-
-    neg-int v1, v1
-
-    invoke-virtual {p0, v1, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->smoothScrollTo(ILcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
-
-    .line 758
-    .end local v0    # "listener":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;
-    :goto_3a
-    return-void
-
-    .line 744
-    .restart local v0    # "listener":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;
-    :pswitch_3b
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getFooterSize()I
-
-    move-result v1
-
-    invoke-virtual {p0, v1, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->smoothScrollTo(ILcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
-
-    goto :goto_3a
-
-    .line 752
-    .end local v0    # "listener":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;
-    :cond_43
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->smoothScrollTo(I)V
-
-    goto :goto_3a
-
-    .line 756
-    :cond_48
-    invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->callRefreshListener()V
-
-    goto :goto_3a
-
-    .line 741
-    :pswitch_data_4c
-    .packed-switch 0x1
-        :pswitch_3b
-        :pswitch_32
-        :pswitch_3b
-    .end packed-switch
-.end method
-
-.method protected onReleaseToRefresh()V
-    .registers 3
-
-    .prologue
-    .line 765
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
-
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mCurrentMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
-
-    move-result v1
-
-    aget v0, v0, v1
-
-    packed-switch v0, :pswitch_data_1a
-
-    .line 776
-    :goto_d
-    return-void
-
-    .line 767
-    :pswitch_e
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFooterLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->releaseToRefresh()V
-
-    goto :goto_d
-
-    .line 770
-    :pswitch_14
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mHeaderLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->releaseToRefresh()V
-
-    goto :goto_d
-
-    .line 765
-    :pswitch_data_1a
-    .packed-switch 0x1
-        :pswitch_e
-        :pswitch_14
-    .end packed-switch
-.end method
-
-.method protected onReset()V
-    .registers 3
-
-    .prologue
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    const/4 v1, 0x0
-
-    .line 783
-    iput-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mIsBeingDragged:Z
-
-    .line 784
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLayoutVisibilityChangesEnabled:Z
-
-    .line 787
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mHeaderLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->reset()V
-
-    .line 788
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFooterLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->reset()V
-
-    .line 790
-    invoke-virtual {p0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->smoothScrollTo(I)V
-
-    .line 791
-    return-void
-.end method
-
-.method public final onRestoreInstanceState(Landroid/os/Parcelable;)V
-    .registers 7
-    .param p1, "state"    # Landroid/os/Parcelable;
-
-    .prologue
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    const/4 v4, 0x1
-
-    const/4 v3, 0x0
-
-    .line 796
-    instance-of v2, p1, Landroid/os/Bundle;
-
-    if-eqz v2, :cond_5e
-
-    move-object v0, p1
-
-    .line 797
-    check-cast v0, Landroid/os/Bundle;
-
-    .line 799
-    .local v0, "bundle":Landroid/os/Bundle;
-    const-string/jumbo v2, "ptr_mode"
-
-    invoke-virtual {v0, v2, v3}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
-
-    move-result v2
-
-    invoke-static {v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->mapIntToValue(I)Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setMode(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;)V
+    invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;)V
 
     .line 800
-    const-string/jumbo v2, "ptr_current_mode"
+    const-string/jumbo v0, "ptr_current_mode"
 
-    invoke-virtual {v0, v2, v3}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+    invoke-virtual {p1, v0, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 
-    move-result v2
+    move-result v0
 
-    invoke-static {v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->mapIntToValue(I)Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    invoke-static {v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->a(I)Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    move-result-object v2
+    move-result-object v0
 
-    iput-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mCurrentMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->j:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     .line 802
-    const-string/jumbo v2, "ptr_disable_scrolling"
+    const-string/jumbo v0, "ptr_disable_scrolling"
 
-    invoke-virtual {v0, v2, v3}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-virtual {p1, v0, v2}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
 
-    move-result v2
+    move-result v0
 
-    iput-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mScrollingWhileRefreshingEnabled:Z
+    iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->m:Z
 
     .line 803
-    const-string/jumbo v2, "ptr_show_refreshing_view"
+    const-string/jumbo v0, "ptr_show_refreshing_view"
 
-    invoke-virtual {v0, v2, v4}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+    invoke-virtual {p1, v0, v3}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
 
-    move-result v2
+    move-result v0
 
-    iput-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mShowViewWhileRefreshing:Z
+    iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->l:Z
 
     .line 806
-    const-string/jumbo v2, "ptr_super"
+    const-string/jumbo v0, "ptr_super"
 
-    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-super {p0, v2}, Landroid/widget/LinearLayout;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+    invoke-super {p0, v0}, Landroid/widget/LinearLayout;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
     .line 808
-    const-string/jumbo v2, "ptr_state"
+    const-string/jumbo v0, "ptr_state"
 
-    invoke-virtual {v0, v2, v3}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
+    invoke-virtual {p1, v0, v2}, Landroid/os/Bundle;->getInt(Ljava/lang/String;I)I
 
-    move-result v2
+    move-result v0
 
-    invoke-static {v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->mapIntToValue(I)Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    invoke-static {v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->a(I)Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 809
-    .local v1, "viewState":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
-    sget-object v2, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->REFRESHING:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->d:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-    if-eq v1, v2, :cond_53
+    if-eq v0, v1, :cond_52
 
-    sget-object v2, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->MANUAL_REFRESHING:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->e:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-    if-ne v1, v2, :cond_5a
+    if-ne v0, v1, :cond_59
 
     .line 810
-    :cond_53
-    new-array v2, v4, [Z
+    :cond_52
+    new-array v1, v3, [Z
 
-    aput-boolean v4, v2, v3
+    aput-boolean v3, v1, v2
 
-    invoke-virtual {p0, v1, v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setState(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;[Z)V
+    invoke-virtual {p0, v0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;[Z)V
 
     .line 814
-    :cond_5a
-    invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->onPtrRestoreInstanceState(Landroid/os/Bundle;)V
+    :cond_59
+    invoke-virtual {p0, p1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Landroid/os/Bundle;)V
 
     .line 819
-    .end local v0    # "bundle":Landroid/os/Bundle;
-    .end local v1    # "viewState":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
-    :goto_5d
+    :goto_5c
     return-void
 
     .line 818
-    :cond_5e
+    :cond_5d
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->onRestoreInstanceState(Landroid/os/Parcelable;)V
 
-    goto :goto_5d
+    goto :goto_5c
 .end method
 
 .method public final onSaveInstanceState()Landroid/os/Parcelable;
@@ -2705,21 +2590,19 @@
 
     .prologue
     .line 824
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     .line 828
-    .local v0, "bundle":Landroid/os/Bundle;
-    invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->onPtrSaveInstanceState(Landroid/os/Bundle;)V
+    invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->b(Landroid/os/Bundle;)V
 
     .line 830
     const-string/jumbo v1, "ptr_state"
 
-    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mState:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->h:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-    invoke-virtual {v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->getIntValue()I
+    invoke-virtual {v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->a()I
 
     move-result v2
 
@@ -2728,9 +2611,9 @@
     .line 831
     const-string/jumbo v1, "ptr_mode"
 
-    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    invoke-virtual {v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->getIntValue()I
+    invoke-virtual {v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->e()I
 
     move-result v2
 
@@ -2739,9 +2622,9 @@
     .line 832
     const-string/jumbo v1, "ptr_current_mode"
 
-    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mCurrentMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->j:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    invoke-virtual {v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->getIntValue()I
+    invoke-virtual {v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->e()I
 
     move-result v2
 
@@ -2750,14 +2633,14 @@
     .line 833
     const-string/jumbo v1, "ptr_disable_scrolling"
 
-    iget-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mScrollingWhileRefreshingEnabled:Z
+    iget-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->m:Z
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
     .line 834
     const-string/jumbo v1, "ptr_show_refreshing_view"
 
-    iget-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mShowViewWhileRefreshing:Z
+    iget-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->l:Z
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBoolean(Ljava/lang/String;Z)V
 
@@ -2776,14 +2659,9 @@
 
 .method protected final onSizeChanged(IIII)V
     .registers 10
-    .param p1, "w"    # I
-    .param p2, "h"    # I
-    .param p3, "oldw"    # I
-    .param p4, "oldh"    # I
 
     .prologue
     .line 843
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
     const-string/jumbo v0, "PullToRefresh"
 
     const-string/jumbo v1, "onSizeChanged. W: %d, H: %d"
@@ -2818,10 +2696,10 @@
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/LinearLayout;->onSizeChanged(IIII)V
 
     .line 849
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->refreshLoadingViewsSize()V
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->p()V
 
     .line 852
-    invoke-virtual {p0, p1, p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->refreshRefreshableViewSize(II)V
+    invoke-virtual {p0, p1, p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(II)V
 
     .line 858
     new-instance v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$2;
@@ -2836,16 +2714,14 @@
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .registers 6
-    .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
     .line 307
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->isPullToRefreshEnabled()Z
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->l()Z
 
     move-result v2
 
@@ -2858,11 +2734,11 @@
 
     .line 312
     :cond_9
-    iget-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mScrollingWhileRefreshingEnabled:Z
+    iget-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->m:Z
 
     if-nez v2, :cond_15
 
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->isRefreshing()Z
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->n()Z
 
     move-result v2
 
@@ -2899,7 +2775,7 @@
 
     .line 332
     :pswitch_29
-    invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->isReadyForPull()Z
+    invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->r()Z
 
     move-result v2
 
@@ -2910,18 +2786,18 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mInitialMotionY:F
+    iput v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->f:F
 
-    iput v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLastMotionY:F
+    iput v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->d:F
 
     .line 334
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
-    iput v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mInitialMotionX:F
+    iput v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->e:F
 
-    iput v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLastMotionX:F
+    iput v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->c:F
 
     move v0, v1
 
@@ -2930,7 +2806,7 @@
 
     .line 322
     :pswitch_41
-    iget-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mIsBeingDragged:Z
+    iget-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->g:Z
 
     if-eqz v2, :cond_8
 
@@ -2939,17 +2815,17 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLastMotionY:F
+    iput v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->d:F
 
     .line 324
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
-    iput v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLastMotionX:F
+    iput v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->c:F
 
     .line 325
-    invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->pullEvent()V
+    invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->s()V
 
     move v0, v1
 
@@ -2958,37 +2834,37 @@
 
     .line 342
     :pswitch_56
-    iget-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mIsBeingDragged:Z
+    iget-boolean v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->g:Z
 
     if-eqz v2, :cond_8
 
     .line 343
-    iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mIsBeingDragged:Z
+    iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->g:Z
 
     .line 345
-    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mState:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->h:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-    sget-object v3, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->RELEASE_TO_REFRESH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v3, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->c:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     if-ne v2, v3, :cond_75
 
-    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOnRefreshListener:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener;
+    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->u:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener;
 
     if-nez v2, :cond_6a
 
-    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOnRefreshListener2:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2;
+    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->v:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2;
 
     if-eqz v2, :cond_75
 
     .line 347
     :cond_6a
-    sget-object v2, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->REFRESHING:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v2, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->d:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     new-array v3, v1, [Z
 
     aput-boolean v1, v3, v0
 
-    invoke-virtual {p0, v2, v3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setState(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;[Z)V
+    invoke-virtual {p0, v2, v3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;[Z)V
 
     move v0, v1
 
@@ -2997,14 +2873,14 @@
 
     .line 352
     :cond_75
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->isRefreshing()Z
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->n()Z
 
     move-result v2
 
     if-eqz v2, :cond_80
 
     .line 353
-    invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->smoothScrollTo(I)V
+    invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(I)V
 
     move v0, v1
 
@@ -3013,11 +2889,11 @@
 
     .line 359
     :cond_80
-    sget-object v2, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->RESET:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v2, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     new-array v0, v0, [Z
 
-    invoke-virtual {p0, v2, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setState(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;[Z)V
+    invoke-virtual {p0, v2, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;[Z)V
 
     move v0, v1
 
@@ -3036,66 +2912,70 @@
     .end packed-switch
 .end method
 
-.method protected final refreshLoadingViewsSize()V
+.method protected final p()V
     .registers 11
 
     .prologue
+    const/4 v1, 0x0
+
     .line 871
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
     invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getMaximumPullScroll()I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    const v2, 0x3f99999a    # 1.2f
+
+    mul-float/2addr v0, v2
+
+    float-to-int v6, v0
+
+    .line 873
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getPaddingLeft()I
 
     move-result v5
 
-    int-to-float v5, v5
-
-    const v6, 0x3f99999a
-
-    mul-float/2addr v5, v6
-
-    float-to-int v0, v5
-
-    .line 873
-    .local v0, "maximumPullScroll":I
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getPaddingLeft()I
-
-    move-result v2
-
     .line 874
-    .local v2, "pLeft":I
     invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getPaddingTop()I
 
     move-result v4
 
     .line 875
-    .local v4, "pTop":I
     invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getPaddingRight()I
 
     move-result v3
 
     .line 876
-    .local v3, "pRight":I
     invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getPaddingBottom()I
 
-    move-result v1
+    move-result v2
 
     .line 878
-    .local v1, "pBottom":I
-    sget-object v5, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->a:[I
 
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getPullToRefreshScrollDirection()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-virtual {v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->ordinal()I
+    invoke-virtual {v7}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->ordinal()I
 
-    move-result v6
+    move-result v7
 
-    aget v5, v5, v6
+    aget v0, v0, v7
 
-    packed-switch v5, :pswitch_data_9c
+    packed-switch v0, :pswitch_data_b0
+
+    move v0, v2
+
+    move v2, v3
+
+    move v3, v4
+
+    move v4, v5
 
     .line 913
-    :goto_29
+    :goto_2e
     const-string/jumbo v5, "PullToRefresh"
 
     const-string/jumbo v6, "Setting Padding. L: %d, T: %d, R: %d, B: %d"
@@ -3104,245 +2984,195 @@
 
     new-array v7, v7, [Ljava/lang/Object;
 
-    const/4 v8, 0x0
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    aput-object v9, v7, v8
-
-    const/4 v8, 0x1
-
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v9
+    move-result-object v8
 
-    aput-object v9, v7, v8
+    aput-object v8, v7, v1
 
-    const/4 v8, 0x2
+    const/4 v1, 0x1
 
     invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v9
+    move-result-object v8
 
-    aput-object v9, v7, v8
+    aput-object v8, v7, v1
 
-    const/4 v8, 0x3
+    const/4 v1, 0x2
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v9
+    move-result-object v8
 
-    aput-object v9, v7, v8
+    aput-object v8, v7, v1
+
+    const/4 v1, 0x3
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    aput-object v8, v7, v1
 
     invoke-static {v6, v7}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v5, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 915
-    invoke-virtual {p0, v2, v4, v3, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setPadding(IIII)V
+    invoke-virtual {p0, v4, v3, v2, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setPadding(IIII)V
 
     .line 916
     return-void
 
     .line 880
-    :pswitch_59
-    iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    :pswitch_5d
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    invoke-virtual {v5}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showHeaderLoadingLayout()Z
+    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->c()Z
 
-    move-result v5
+    move-result v0
 
-    if-eqz v5, :cond_76
+    if-eqz v0, :cond_7f
 
     .line 881
-    iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mHeaderLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->s:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
-    invoke-virtual {v5, v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setWidth(I)V
+    invoke-virtual {v0, v6}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setWidth(I)V
 
     .line 882
-    neg-int v2, v0
+    neg-int v0, v6
 
     .line 887
-    :goto_67
-    iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    :goto_6b
+    iget-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    invoke-virtual {v5}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showFooterLoadingLayout()Z
+    invoke-virtual {v3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->d()Z
 
-    move-result v5
+    move-result v3
 
-    if-eqz v5, :cond_78
+    if-eqz v3, :cond_81
 
     .line 888
-    iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFooterLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->t:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
-    invoke-virtual {v5, v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setWidth(I)V
+    invoke-virtual {v3, v6}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setWidth(I)V
 
     .line 889
-    neg-int v3, v0
+    neg-int v3, v6
 
-    goto :goto_29
+    move v9, v2
+
+    move v2, v3
+
+    move v3, v4
+
+    move v4, v0
+
+    move v0, v9
+
+    goto :goto_2e
+
+    :cond_7f
+    move v0, v1
 
     .line 884
-    :cond_76
-    const/4 v2, 0x0
+    goto :goto_6b
 
-    goto :goto_67
+    :cond_81
+    move v3, v4
 
-    .line 891
-    :cond_78
-    const/4 v3, 0x0
+    move v4, v0
+
+    move v0, v2
+
+    move v2, v1
 
     .line 893
-    goto :goto_29
+    goto :goto_2e
 
     .line 896
-    :pswitch_7a
-    iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    :pswitch_86
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    invoke-virtual {v5}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showHeaderLoadingLayout()Z
+    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->c()Z
 
-    move-result v5
+    move-result v0
 
-    if-eqz v5, :cond_97
+    if-eqz v0, :cond_a8
 
     .line 897
-    iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mHeaderLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->s:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
-    invoke-virtual {v5, v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setHeight(I)V
+    invoke-virtual {v0, v6}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setHeight(I)V
 
     .line 898
-    neg-int v4, v0
+    neg-int v0, v6
 
     .line 903
-    :goto_88
-    iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    :goto_94
+    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->i:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    invoke-virtual {v5}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showFooterLoadingLayout()Z
+    invoke-virtual {v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->d()Z
 
-    move-result v5
+    move-result v2
 
-    if-eqz v5, :cond_99
+    if-eqz v2, :cond_aa
 
     .line 904
-    iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFooterLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->t:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
-    invoke-virtual {v5, v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setHeight(I)V
+    invoke-virtual {v2, v6}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setHeight(I)V
 
     .line 905
-    neg-int v1, v0
+    neg-int v2, v6
 
-    goto :goto_29
+    move v4, v5
+
+    move v9, v3
+
+    move v3, v0
+
+    move v0, v2
+
+    move v2, v9
+
+    goto :goto_2e
+
+    :cond_a8
+    move v0, v1
 
     .line 900
-    :cond_97
-    const/4 v4, 0x0
+    goto :goto_94
 
-    goto :goto_88
+    :cond_aa
+    move v2, v3
+
+    move v4, v5
+
+    move v3, v0
+
+    move v0, v1
 
     .line 907
-    :cond_99
-    const/4 v1, 0x0
-
-    goto :goto_29
+    goto :goto_2e
 
     .line 878
     nop
 
-    :pswitch_data_9c
+    :pswitch_data_b0
     .packed-switch 0x1
-        :pswitch_59
-        :pswitch_7a
-    .end packed-switch
-.end method
-
-.method protected final refreshRefreshableViewSize(II)V
-    .registers 6
-    .param p1, "width"    # I
-    .param p2, "height"    # I
-
-    .prologue
-    .line 921
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mRefreshableViewWrapper:Landroid/widget/FrameLayout;
-
-    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
-
-    .line 923
-    .local v0, "lp":Landroid/widget/LinearLayout$LayoutParams;
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
-
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getPullToRefreshScrollDirection()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->ordinal()I
-
-    move-result v2
-
-    aget v1, v1, v2
-
-    packed-switch v1, :pswitch_data_30
-
-    .line 937
-    :cond_17
-    :goto_17
-    return-void
-
-    .line 925
-    :pswitch_18
-    iget v1, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
-
-    if-eq v1, p1, :cond_17
-
-    .line 926
-    iput p1, v0, Landroid/widget/LinearLayout$LayoutParams;->width:I
-
-    .line 927
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mRefreshableViewWrapper:Landroid/widget/FrameLayout;
-
-    invoke-virtual {v1}, Landroid/widget/FrameLayout;->requestLayout()V
-
-    goto :goto_17
-
-    .line 931
-    :pswitch_24
-    iget v1, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
-
-    if-eq v1, p2, :cond_17
-
-    .line 932
-    iput p2, v0, Landroid/widget/LinearLayout$LayoutParams;->height:I
-
-    .line 933
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mRefreshableViewWrapper:Landroid/widget/FrameLayout;
-
-    invoke-virtual {v1}, Landroid/widget/FrameLayout;->requestLayout()V
-
-    goto :goto_17
-
-    .line 923
-    :pswitch_data_30
-    .packed-switch 0x1
-        :pswitch_18
-        :pswitch_24
+        :pswitch_5d
+        :pswitch_86
     .end packed-switch
 .end method
 
 .method public setDisableScrollingWhileRefreshing(Z)V
     .registers 3
-    .param p1, "disableScrollingWhileRefreshing"    # Z
 
     .prologue
     .line 378
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
     if-nez p1, :cond_7
 
     const/4 v0, 0x1
@@ -3362,49 +3192,45 @@
 
 .method public final setFilterTouchEvents(Z)V
     .registers 2
-    .param p1, "filterEvents"    # Z
 
     .prologue
     .line 383
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iput-boolean p1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFilterTouchEvents:Z
+    iput-boolean p1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->n:Z
 
     .line 384
     return-void
 .end method
 
 .method protected final setHeaderScroll(I)V
-    .registers 8
-    .param p1, "value"    # I
+    .registers 7
 
     .prologue
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    const/4 v5, 0x4
+    const/4 v4, 0x4
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     .line 947
-    const-string/jumbo v1, "PullToRefresh"
+    const-string/jumbo v0, "PullToRefresh"
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "setHeaderScroll: "
+    const-string/jumbo v2, "setHeaderScroll: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 951
     invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getMaximumPullScroll()I
@@ -3412,7 +3238,6 @@
     move-result v0
 
     .line 952
-    .local v0, "maximumPullScroll":I
     neg-int v1, v0
 
     invoke-static {v1, p1}, Ljava/lang/Math;->max(II)I
@@ -3421,27 +3246,27 @@
 
     invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
-    move-result p1
+    move-result v0
 
     .line 954
-    iget-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mLayoutVisibilityChangesEnabled:Z
+    iget-boolean v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->p:Z
 
     if-eqz v1, :cond_34
 
     .line 955
-    if-gez p1, :cond_44
+    if-gez v0, :cond_44
 
     .line 956
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mHeaderLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->s:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
-    invoke-virtual {v1, v4}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setVisibility(I)V
+    invoke-virtual {v1, v3}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setVisibility(I)V
 
     .line 975
     :cond_34
     :goto_34
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->a:[I
 
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getPullToRefreshScrollDirection()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
     move-result-object v2
 
@@ -3459,37 +3284,37 @@
 
     .line 957
     :cond_44
-    if-lez p1, :cond_4c
+    if-lez v0, :cond_4c
 
     .line 958
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFooterLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->t:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
-    invoke-virtual {v1, v4}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setVisibility(I)V
+    invoke-virtual {v1, v3}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setVisibility(I)V
 
     goto :goto_34
 
     .line 960
     :cond_4c
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mHeaderLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->s:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
-    invoke-virtual {v1, v5}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setVisibility(I)V
+    invoke-virtual {v1, v4}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setVisibility(I)V
 
     .line 961
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFooterLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->t:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 
-    invoke-virtual {v1, v5}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setVisibility(I)V
+    invoke-virtual {v1, v4}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setVisibility(I)V
 
     goto :goto_34
 
     .line 977
     :pswitch_57
-    invoke-virtual {p0, v4, p1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->scrollTo(II)V
+    invoke-virtual {p0, v3, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->scrollTo(II)V
 
     goto :goto_43
 
     .line 980
     :pswitch_5b
-    invoke-virtual {p0, p1, v4}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->scrollTo(II)V
+    invoke-virtual {p0, v0, v3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->scrollTo(II)V
 
     goto :goto_43
 
@@ -3503,74 +3328,12 @@
     .end packed-switch
 .end method
 
-.method public setLastUpdatedLabel(Ljava/lang/CharSequence;)V
-    .registers 3
-    .param p1, "label"    # Ljava/lang/CharSequence;
-
-    .prologue
-    .line 391
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getLoadingLayoutProxy()Lcom/handmark/pulltorefresh/library/internal/ILoadingLayout;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Lcom/handmark/pulltorefresh/library/internal/ILoadingLayout;->setLastUpdatedLabel(Ljava/lang/CharSequence;)V
-
-    .line 392
-    return-void
-.end method
-
-.method public setLoadingDrawable(Landroid/graphics/drawable/Drawable;)V
-    .registers 3
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
-
-    .prologue
-    .line 399
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getLoadingLayoutProxy()Lcom/handmark/pulltorefresh/library/internal/ILoadingLayout;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Lcom/handmark/pulltorefresh/library/internal/ILoadingLayout;->setLoadingDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 400
-    return-void
-.end method
-
-.method public setLoadingDrawable(Landroid/graphics/drawable/Drawable;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;)V
-    .registers 5
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
-    .param p2, "mode"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    .prologue
-    .line 407
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    invoke-virtual {p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showHeaderLoadingLayout()Z
-
-    move-result v0
-
-    invoke-virtual {p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showFooterLoadingLayout()Z
-
-    move-result v1
-
-    invoke-virtual {p0, v0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getLoadingLayoutProxy(ZZ)Lcom/handmark/pulltorefresh/library/internal/ILoadingLayout;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Lcom/handmark/pulltorefresh/library/internal/ILoadingLayout;->setLoadingDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 409
-    return-void
-.end method
-
 .method public setLongClickable(Z)V
     .registers 3
-    .param p1, "longClickable"    # Z
 
     .prologue
     .line 413
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getRefreshableView()Landroid/view/View;
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->j()Landroid/view/View;
 
     move-result-object v0
 
@@ -3580,232 +3343,54 @@
     return-void
 .end method
 
-.method public final setMode(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;)V
-    .registers 5
-    .param p1, "mode"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    .prologue
-    .line 418
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    if-eq p1, v0, :cond_23
-
-    .line 420
-    const-string/jumbo v0, "PullToRefresh"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "Setting mode to: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 422
-    iput-object p1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    .line 423
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->updateUIForMode()V
-
-    .line 425
-    :cond_23
-    return-void
-.end method
-
-.method public setOnPullEventListener(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnPullEventListener;)V
-    .registers 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnPullEventListener",
-            "<TT;>;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 428
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    .local p1, "listener":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnPullEventListener;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnPullEventListener<TT;>;"
-    iput-object p1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOnPullEventListener:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnPullEventListener;
-
-    .line 429
-    return-void
-.end method
-
-.method public final setOnRefreshListener(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2;)V
-    .registers 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2",
-            "<TT;>;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 439
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    .local p1, "listener":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2<TT;>;"
-    iput-object p1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOnRefreshListener2:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2;
-
-    .line 440
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOnRefreshListener:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener;
-
-    .line 441
-    return-void
-.end method
-
-.method public final setOnRefreshListener(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener;)V
-    .registers 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener",
-            "<TT;>;)V"
-        }
-    .end annotation
-
-    .prologue
-    .line 433
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    .local p1, "listener":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener<TT;>;"
-    iput-object p1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOnRefreshListener:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener;
-
-    .line 434
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOnRefreshListener2:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnRefreshListener2;
-
-    .line 435
-    return-void
-.end method
-
-.method public setPullLabel(Ljava/lang/CharSequence;)V
-    .registers 3
-    .param p1, "pullLabel"    # Ljava/lang/CharSequence;
-
-    .prologue
-    .line 448
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getLoadingLayoutProxy()Lcom/handmark/pulltorefresh/library/internal/ILoadingLayout;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Lcom/handmark/pulltorefresh/library/internal/ILoadingLayout;->setPullLabel(Ljava/lang/CharSequence;)V
-
-    .line 449
-    return-void
-.end method
-
-.method public setPullLabel(Ljava/lang/CharSequence;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;)V
-    .registers 5
-    .param p1, "pullLabel"    # Ljava/lang/CharSequence;
-    .param p2, "mode"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    .prologue
-    .line 456
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    invoke-virtual {p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showHeaderLoadingLayout()Z
-
-    move-result v0
-
-    invoke-virtual {p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showFooterLoadingLayout()Z
-
-    move-result v1
-
-    invoke-virtual {p0, v0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getLoadingLayoutProxy(ZZ)Lcom/handmark/pulltorefresh/library/internal/ILoadingLayout;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Lcom/handmark/pulltorefresh/library/internal/ILoadingLayout;->setPullLabel(Ljava/lang/CharSequence;)V
-
-    .line 457
-    return-void
-.end method
-
 .method public final setPullToRefreshEnabled(Z)V
     .registers 3
-    .param p1, "enable"    # Z
 
     .prologue
     .line 465
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
     if-eqz p1, :cond_a
 
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->getDefault()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     move-result-object v0
 
     :goto_6
-    invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setMode(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;)V
+    invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;)V
 
     .line 466
     return-void
 
     .line 465
     :cond_a
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->DISABLED:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     goto :goto_6
 .end method
 
 .method public final setPullToRefreshOverScrollEnabled(Z)V
     .registers 2
-    .param p1, "enabled"    # Z
 
     .prologue
     .line 470
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iput-boolean p1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOverScrollEnabled:Z
+    iput-boolean p1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->o:Z
 
     .line 471
     return-void
 .end method
 
-.method public final setRefreshing()V
-    .registers 2
-
-    .prologue
-    .line 475
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    const/4 v0, 0x1
-
-    invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setRefreshing(Z)V
-
-    .line 476
-    return-void
-.end method
-
 .method public final setRefreshing(Z)V
     .registers 5
-    .param p1, "doScroll"    # Z
 
     .prologue
     .line 480
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->isRefreshing()Z
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->n()Z
 
     move-result v0
 
     if-nez v0, :cond_11
 
     .line 481
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->MANUAL_REFRESHING:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->e:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     const/4 v1, 0x1
 
@@ -3815,118 +3400,19 @@
 
     aput-boolean p1, v1, v2
 
-    invoke-virtual {p0, v0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setState(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;[Z)V
+    invoke-virtual {p0, v0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->a(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;[Z)V
 
     .line 483
     :cond_11
     return-void
 .end method
 
-.method public setRefreshingLabel(Ljava/lang/CharSequence;)V
-    .registers 3
-    .param p1, "refreshingLabel"    # Ljava/lang/CharSequence;
-
-    .prologue
-    .line 490
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getLoadingLayoutProxy()Lcom/handmark/pulltorefresh/library/internal/ILoadingLayout;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Lcom/handmark/pulltorefresh/library/internal/ILoadingLayout;->setRefreshingLabel(Ljava/lang/CharSequence;)V
-
-    .line 491
-    return-void
-.end method
-
-.method public setRefreshingLabel(Ljava/lang/CharSequence;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;)V
-    .registers 5
-    .param p1, "refreshingLabel"    # Ljava/lang/CharSequence;
-    .param p2, "mode"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    .prologue
-    .line 498
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    invoke-virtual {p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showHeaderLoadingLayout()Z
-
-    move-result v0
-
-    invoke-virtual {p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showFooterLoadingLayout()Z
-
-    move-result v1
-
-    invoke-virtual {p0, v0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getLoadingLayoutProxy(ZZ)Lcom/handmark/pulltorefresh/library/internal/ILoadingLayout;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Lcom/handmark/pulltorefresh/library/internal/ILoadingLayout;->setRefreshingLabel(Ljava/lang/CharSequence;)V
-
-    .line 500
-    return-void
-.end method
-
-.method public setReleaseLabel(Ljava/lang/CharSequence;)V
-    .registers 3
-    .param p1, "releaseLabel"    # Ljava/lang/CharSequence;
-
-    .prologue
-    .line 507
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->BOTH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {p0, p1, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->setReleaseLabel(Ljava/lang/CharSequence;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;)V
-
-    .line 508
-    return-void
-.end method
-
-.method public setReleaseLabel(Ljava/lang/CharSequence;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;)V
-    .registers 5
-    .param p1, "releaseLabel"    # Ljava/lang/CharSequence;
-    .param p2, "mode"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    .prologue
-    .line 515
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    invoke-virtual {p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showHeaderLoadingLayout()Z
-
-    move-result v0
-
-    invoke-virtual {p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showFooterLoadingLayout()Z
-
-    move-result v1
-
-    invoke-virtual {p0, v0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getLoadingLayoutProxy(ZZ)Lcom/handmark/pulltorefresh/library/internal/ILoadingLayout;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Lcom/handmark/pulltorefresh/library/internal/ILoadingLayout;->setReleaseLabel(Ljava/lang/CharSequence;)V
-
-    .line 517
-    return-void
-.end method
-
-.method public setScrollAnimationInterpolator(Landroid/view/animation/Interpolator;)V
-    .registers 2
-    .param p1, "interpolator"    # Landroid/view/animation/Interpolator;
-
-    .prologue
-    .line 520
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iput-object p1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mScrollAnimationInterpolator:Landroid/view/animation/Interpolator;
-
-    .line 521
-    return-void
-.end method
-
 .method public final setScrollingWhileRefreshingEnabled(Z)V
     .registers 2
-    .param p1, "allowScrollingWhileRefreshing"    # Z
 
     .prologue
     .line 371
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iput-boolean p1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mScrollingWhileRefreshingEnabled:Z
+    iput-boolean p1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->m:Z
 
     .line 372
     return-void
@@ -3934,287 +3420,11 @@
 
 .method public final setShowViewWhileRefreshing(Z)V
     .registers 2
-    .param p1, "showView"    # Z
 
     .prologue
     .line 525
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iput-boolean p1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mShowViewWhileRefreshing:Z
+    iput-boolean p1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->l:Z
 
     .line 526
     return-void
-.end method
-
-.method final varargs setState(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;[Z)V
-    .registers 6
-    .param p1, "state"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
-    .param p2, "params"    # [Z
-
-    .prologue
-    .line 535
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    iput-object p1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mState:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
-
-    .line 537
-    const-string/jumbo v0, "PullToRefresh"
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "State: "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mState:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
-
-    invoke-virtual {v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->name()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 540
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$State:[I
-
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mState:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->ordinal()I
-
-    move-result v1
-
-    aget v0, v0, v1
-
-    packed-switch v0, :pswitch_data_50
-
-    .line 560
-    :goto_2f
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOnPullEventListener:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnPullEventListener;
-
-    if-eqz v0, :cond_3c
-
-    .line 561
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mOnPullEventListener:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnPullEventListener;
-
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mState:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
-
-    iget-object v2, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mCurrentMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-interface {v0, p0, v1, v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnPullEventListener;->onPullEvent(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;)V
-
-    .line 563
-    :cond_3c
-    return-void
-
-    .line 542
-    :pswitch_3d
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->onReset()V
-
-    goto :goto_2f
-
-    .line 545
-    :pswitch_41
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->onPullToRefresh()V
-
-    goto :goto_2f
-
-    .line 548
-    :pswitch_45
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->onReleaseToRefresh()V
-
-    goto :goto_2f
-
-    .line 552
-    :pswitch_49
-    const/4 v0, 0x0
-
-    aget-boolean v0, p2, v0
-
-    invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->onRefreshing(Z)V
-
-    goto :goto_2f
-
-    .line 540
-    :pswitch_data_50
-    .packed-switch 0x1
-        :pswitch_3d
-        :pswitch_41
-        :pswitch_45
-        :pswitch_49
-        :pswitch_49
-    .end packed-switch
-.end method
-
-.method protected final smoothScrollTo(I)V
-    .registers 4
-    .param p1, "scrollValue"    # I
-
-    .prologue
-    .line 992
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getPullToRefreshScrollDuration()I
-
-    move-result v0
-
-    int-to-long v0, v0
-
-    invoke-direct {p0, p1, v0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->smoothScrollTo(IJ)V
-
-    .line 993
-    return-void
-.end method
-
-.method protected final smoothScrollTo(ILcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
-    .registers 10
-    .param p1, "scrollValue"    # I
-    .param p2, "listener"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;
-
-    .prologue
-    .line 1003
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getPullToRefreshScrollDuration()I
-
-    move-result v0
-
-    int-to-long v2, v0
-
-    const-wide/16 v4, 0x0
-
-    move-object v0, p0
-
-    move v1, p1
-
-    move-object v6, p2
-
-    invoke-direct/range {v0 .. v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->smoothScrollTo(IJJLcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$OnSmoothScrollFinishedListener;)V
-
-    .line 1004
-    return-void
-.end method
-
-.method protected final smoothScrollToLonger(I)V
-    .registers 4
-    .param p1, "scrollValue"    # I
-
-    .prologue
-    .line 1013
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getPullToRefreshScrollDurationLonger()I
-
-    move-result v0
-
-    int-to-long v0, v0
-
-    invoke-direct {p0, p1, v0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->smoothScrollTo(IJ)V
-
-    .line 1014
-    return-void
-.end method
-
-.method protected updateUIForMode()V
-    .registers 4
-
-    .prologue
-    .line 1023
-    .local p0, "this":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;, "Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase<TT;>;"
-    invoke-direct {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->getLoadingLayoutLayoutParams()Landroid/widget/LinearLayout$LayoutParams;
-
-    move-result-object v0
-
-    .line 1026
-    .local v0, "lp":Landroid/widget/LinearLayout$LayoutParams;
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mHeaderLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v1
-
-    if-ne p0, v1, :cond_11
-
-    .line 1027
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mHeaderLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    invoke-virtual {p0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->removeView(Landroid/view/View;)V
-
-    .line 1029
-    :cond_11
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showHeaderLoadingLayout()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1f
-
-    .line 1030
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mHeaderLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p0, v1, v2, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->addViewInternal(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
-
-    .line 1034
-    :cond_1f
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFooterLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v1
-
-    if-ne p0, v1, :cond_2c
-
-    .line 1035
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFooterLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    invoke-virtual {p0, v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->removeView(Landroid/view/View;)V
-
-    .line 1037
-    :cond_2c
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->showFooterLoadingLayout()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_39
-
-    .line 1038
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mFooterLayout:Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
-
-    invoke-virtual {p0, v1, v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->addViewInternal(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 1042
-    :cond_39
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->refreshLoadingViewsSize()V
-
-    .line 1046
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    sget-object v2, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->BOTH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    if-eq v1, v2, :cond_47
-
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    :goto_44
-    iput-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;->mCurrentMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    .line 1047
-    return-void
-
-    .line 1046
-    :cond_47
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_START:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    goto :goto_44
 .end method

@@ -4,132 +4,19 @@
 
 
 # annotations
-.annotation build Lcz/msebera/android/httpclient/annotation/Immutable;
-.end annotation
-
 .annotation runtime Ljava/lang/Deprecated;
 .end annotation
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 46
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 47
-    return-void
-.end method
-
-.method public static getConnectionManagerTimeout(Lcz/msebera/android/httpclient/params/HttpParams;)J
-    .registers 5
-    .param p0, "params"    # Lcz/msebera/android/httpclient/params/HttpParams;
-
-    .prologue
-    .line 108
-    const-string/jumbo v1, "HTTP parameters"
-
-    invoke-static {p0, v1}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    .line 109
-    const-string/jumbo v1, "http.conn-manager.timeout"
-
-    invoke-interface {p0, v1}, Lcz/msebera/android/httpclient/params/HttpParams;->getParameter(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Long;
-
-    .line 110
-    .local v0, "timeout":Ljava/lang/Long;
-    if-eqz v0, :cond_16
-
-    .line 111
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v2
-
-    .line 113
-    :goto_15
-    return-wide v2
-
-    :cond_16
-    invoke-static {p0}, Lcz/msebera/android/httpclient/params/HttpConnectionParams;->getConnectionTimeout(Lcz/msebera/android/httpclient/params/HttpParams;)I
-
-    move-result v1
-
-    int-to-long v2, v1
-
-    goto :goto_15
-.end method
-
-.method public static getCookiePolicy(Lcz/msebera/android/httpclient/params/HttpParams;)Ljava/lang/String;
+.method public static a(Lcz/msebera/android/httpclient/params/HttpParams;)Z
     .registers 3
-    .param p0, "params"    # Lcz/msebera/android/httpclient/params/HttpParams;
-
-    .prologue
-    .line 74
-    const-string/jumbo v1, "HTTP parameters"
-
-    invoke-static {p0, v1}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    .line 75
-    const-string/jumbo v1, "http.protocol.cookie-policy"
-
-    .line 76
-    invoke-interface {p0, v1}, Lcz/msebera/android/httpclient/params/HttpParams;->getParameter(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    .line 77
-    .local v0, "cookiePolicy":Ljava/lang/String;
-    if-nez v0, :cond_14
-
-    .line 78
-    const-string/jumbo v0, "best-match"
-
-    .line 80
-    .end local v0    # "cookiePolicy":Ljava/lang/String;
-    :cond_14
-    return-object v0
-.end method
-
-.method public static isAuthenticating(Lcz/msebera/android/httpclient/params/HttpParams;)Z
-    .registers 3
-    .param p0, "params"    # Lcz/msebera/android/httpclient/params/HttpParams;
-
-    .prologue
-    .line 62
-    const-string/jumbo v0, "HTTP parameters"
-
-    invoke-static {p0, v0}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    .line 63
-    const-string/jumbo v0, "http.protocol.handle-authentication"
-
-    const/4 v1, 0x1
-
-    .line 64
-    invoke-interface {p0, v0, v1}, Lcz/msebera/android/httpclient/params/HttpParams;->getBooleanParameter(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static isRedirecting(Lcz/msebera/android/httpclient/params/HttpParams;)Z
-    .registers 3
-    .param p0, "params"    # Lcz/msebera/android/httpclient/params/HttpParams;
 
     .prologue
     .line 50
     const-string/jumbo v0, "HTTP parameters"
 
-    invoke-static {p0, v0}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p0, v0}, Lcz/msebera/android/httpclient/util/Args;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 51
     const-string/jumbo v0, "http.protocol.handle-redirects"
@@ -137,91 +24,71 @@
     const/4 v1, 0x1
 
     .line 52
-    invoke-interface {p0, v0, v1}, Lcz/msebera/android/httpclient/params/HttpParams;->getBooleanParameter(Ljava/lang/String;Z)Z
+    invoke-interface {p0, v0, v1}, Lcz/msebera/android/httpclient/params/HttpParams;->a(Ljava/lang/String;Z)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public static setAuthenticating(Lcz/msebera/android/httpclient/params/HttpParams;Z)V
+.method public static b(Lcz/msebera/android/httpclient/params/HttpParams;)Z
     .registers 3
-    .param p0, "params"    # Lcz/msebera/android/httpclient/params/HttpParams;
-    .param p1, "value"    # Z
 
     .prologue
-    .line 68
+    .line 62
     const-string/jumbo v0, "HTTP parameters"
 
-    invoke-static {p0, v0}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p0, v0}, Lcz/msebera/android/httpclient/util/Args;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    .line 69
+    .line 63
     const-string/jumbo v0, "http.protocol.handle-authentication"
 
-    .line 70
-    invoke-interface {p0, v0, p1}, Lcz/msebera/android/httpclient/params/HttpParams;->setBooleanParameter(Ljava/lang/String;Z)Lcz/msebera/android/httpclient/params/HttpParams;
+    const/4 v1, 0x1
 
-    .line 71
-    return-void
+    .line 64
+    invoke-interface {p0, v0, v1}, Lcz/msebera/android/httpclient/params/HttpParams;->a(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    return v0
 .end method
 
-.method public static setConnectionManagerTimeout(Lcz/msebera/android/httpclient/params/HttpParams;J)V
-    .registers 4
-    .param p0, "params"    # Lcz/msebera/android/httpclient/params/HttpParams;
-    .param p1, "timeout"    # J
+.method public static c(Lcz/msebera/android/httpclient/params/HttpParams;)J
+    .registers 3
 
     .prologue
-    .line 94
+    .line 108
     const-string/jumbo v0, "HTTP parameters"
 
-    invoke-static {p0, v0}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p0, v0}, Lcz/msebera/android/httpclient/util/Args;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    .line 95
+    .line 109
     const-string/jumbo v0, "http.conn-manager.timeout"
 
-    invoke-interface {p0, v0, p1, p2}, Lcz/msebera/android/httpclient/params/HttpParams;->setLongParameter(Ljava/lang/String;J)Lcz/msebera/android/httpclient/params/HttpParams;
+    invoke-interface {p0, v0}, Lcz/msebera/android/httpclient/params/HttpParams;->a(Ljava/lang/String;)Ljava/lang/Object;
 
-    .line 96
-    return-void
-.end method
+    move-result-object v0
 
-.method public static setCookiePolicy(Lcz/msebera/android/httpclient/params/HttpParams;Ljava/lang/String;)V
-    .registers 3
-    .param p0, "params"    # Lcz/msebera/android/httpclient/params/HttpParams;
-    .param p1, "cookiePolicy"    # Ljava/lang/String;
+    check-cast v0, Ljava/lang/Long;
 
-    .prologue
-    .line 84
-    const-string/jumbo v0, "HTTP parameters"
+    .line 110
+    if-eqz v0, :cond_16
 
-    invoke-static {p0, v0}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    .line 111
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
-    .line 85
-    const-string/jumbo v0, "http.protocol.cookie-policy"
+    move-result-wide v0
 
-    invoke-interface {p0, v0, p1}, Lcz/msebera/android/httpclient/params/HttpParams;->setParameter(Ljava/lang/String;Ljava/lang/Object;)Lcz/msebera/android/httpclient/params/HttpParams;
+    .line 113
+    :goto_15
+    return-wide v0
 
-    .line 86
-    return-void
-.end method
+    :cond_16
+    invoke-static {p0}, Lcz/msebera/android/httpclient/params/HttpConnectionParams;->e(Lcz/msebera/android/httpclient/params/HttpParams;)I
 
-.method public static setRedirecting(Lcz/msebera/android/httpclient/params/HttpParams;Z)V
-    .registers 3
-    .param p0, "params"    # Lcz/msebera/android/httpclient/params/HttpParams;
-    .param p1, "value"    # Z
+    move-result v0
 
-    .prologue
-    .line 56
-    const-string/jumbo v0, "HTTP parameters"
+    int-to-long v0, v0
 
-    invoke-static {p0, v0}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    .line 57
-    const-string/jumbo v0, "http.protocol.handle-redirects"
-
-    .line 58
-    invoke-interface {p0, v0, p1}, Lcz/msebera/android/httpclient/params/HttpParams;->setBooleanParameter(Ljava/lang/String;Z)Lcz/msebera/android/httpclient/params/HttpParams;
-
-    .line 59
-    return-void
+    goto :goto_15
 .end method

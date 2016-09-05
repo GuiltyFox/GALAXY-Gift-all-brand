@@ -3,7 +3,7 @@
 
 
 # instance fields
-.field zzOA:Ljava/util/Map;
+.field a:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",
@@ -26,197 +26,14 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/ecommerce/Product;->zzOA:Ljava/util/Map;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/ecommerce/Product;->a:Ljava/util/Map;
 
     return-void
 .end method
 
 
 # virtual methods
-.method put(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 4
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/String;
-
-    .prologue
-    const-string/jumbo v0, "Name should be non-null"
-
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/zzx;->zzb(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lcom/google/android/gms/analytics/ecommerce/Product;->zzOA:Ljava/util/Map;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public setBrand(Ljava/lang/String;)Lcom/google/android/gms/analytics/ecommerce/Product;
-    .registers 3
-    .param p1, "value"    # Ljava/lang/String;
-
-    .prologue
-    const-string/jumbo v0, "br"
-
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/analytics/ecommerce/Product;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public setCategory(Ljava/lang/String;)Lcom/google/android/gms/analytics/ecommerce/Product;
-    .registers 3
-    .param p1, "value"    # Ljava/lang/String;
-
-    .prologue
-    const-string/jumbo v0, "ca"
-
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/analytics/ecommerce/Product;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public setCouponCode(Ljava/lang/String;)Lcom/google/android/gms/analytics/ecommerce/Product;
-    .registers 3
-    .param p1, "value"    # Ljava/lang/String;
-
-    .prologue
-    const-string/jumbo v0, "cc"
-
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/analytics/ecommerce/Product;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public setCustomDimension(ILjava/lang/String;)Lcom/google/android/gms/analytics/ecommerce/Product;
-    .registers 4
-    .param p1, "index"    # I
-    .param p2, "value"    # Ljava/lang/String;
-
-    .prologue
-    invoke-static {p1}, Lcom/google/android/gms/analytics/zzc;->zzae(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v0, p2}, Lcom/google/android/gms/analytics/ecommerce/Product;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public setCustomMetric(II)Lcom/google/android/gms/analytics/ecommerce/Product;
-    .registers 5
-    .param p1, "index"    # I
-    .param p2, "value"    # I
-
-    .prologue
-    invoke-static {p1}, Lcom/google/android/gms/analytics/zzc;->zzaf(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/analytics/ecommerce/Product;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public setId(Ljava/lang/String;)Lcom/google/android/gms/analytics/ecommerce/Product;
-    .registers 3
-    .param p1, "value"    # Ljava/lang/String;
-
-    .prologue
-    const-string/jumbo v0, "id"
-
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/analytics/ecommerce/Product;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public setName(Ljava/lang/String;)Lcom/google/android/gms/analytics/ecommerce/Product;
-    .registers 3
-    .param p1, "value"    # Ljava/lang/String;
-
-    .prologue
-    const-string/jumbo v0, "nm"
-
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/analytics/ecommerce/Product;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public setPosition(I)Lcom/google/android/gms/analytics/ecommerce/Product;
-    .registers 4
-    .param p1, "value"    # I
-
-    .prologue
-    const-string/jumbo v0, "ps"
-
-    invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/analytics/ecommerce/Product;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public setPrice(D)Lcom/google/android/gms/analytics/ecommerce/Product;
-    .registers 6
-    .param p1, "value"    # D
-
-    .prologue
-    const-string/jumbo v0, "pr"
-
-    invoke-static {p1, p2}, Ljava/lang/Double;->toString(D)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/analytics/ecommerce/Product;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public setQuantity(I)Lcom/google/android/gms/analytics/ecommerce/Product;
-    .registers 4
-    .param p1, "value"    # I
-
-    .prologue
-    const-string/jumbo v0, "qt"
-
-    invoke-static {p1}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/analytics/ecommerce/Product;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public setVariant(Ljava/lang/String;)Lcom/google/android/gms/analytics/ecommerce/Product;
-    .registers 3
-    .param p1, "value"    # Ljava/lang/String;
-
-    .prologue
-    const-string/jumbo v0, "va"
-
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/analytics/ecommerce/Product;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/analytics/ecommerce/Product;->zzOA:Ljava/util/Map;
-
-    invoke-static {v0}, Lcom/google/android/gms/measurement/zze;->zzH(Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public zzaX(Ljava/lang/String;)Ljava/util/Map;
+.method public a(Ljava/lang/String;)Ljava/util/Map;
     .registers 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -235,7 +52,7 @@
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/ecommerce/Product;->zzOA:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/ecommerce/Product;->a:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -290,4 +107,16 @@
 
     :cond_3a
     return-object v2
+.end method
+
+.method public toString()Ljava/lang/String;
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/gms/analytics/ecommerce/Product;->a:Ljava/util/Map;
+
+    invoke-static {v0}, Lcom/google/android/gms/measurement/zze;->a(Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

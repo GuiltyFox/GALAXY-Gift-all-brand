@@ -180,7 +180,7 @@
 
     const-string/jumbo v0, "Scanning already in progress, not starting one more"
 
-    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->d(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->b(Ljava/lang/String;)V
 
     :cond_a
     :goto_a
@@ -205,7 +205,7 @@
 
     const-string/jumbo v0, "Not starting scanning, no monitored on ranged regions"
 
-    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->d(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->b(Ljava/lang/String;)V
 
     goto :goto_a
 
@@ -220,7 +220,7 @@
 
     const-string/jumbo v0, "Bluetooth is disabled, not starting scanning"
 
-    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->d(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->b(Ljava/lang/String;)V
 
     goto :goto_a
 
@@ -237,7 +237,7 @@
 
     const-string/jumbo v0, "Bluetooth adapter did not start le scan"
 
-    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->wtf(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->e(Ljava/lang/String;)V
 
     const/4 v0, -0x1
 
@@ -273,7 +273,7 @@
 
     const-string/jumbo v1, "Error while reporting message, funny right?"
 
-    invoke-static {v1, v0}, Lcom/jaalee/sdk/utils/L;->e(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {v1, v0}, Lcom/jaalee/sdk/utils/L;->a(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_a
 
@@ -374,7 +374,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->v(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->a(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/jaalee/sdk/service/BeaconService;->i:Landroid/bluetooth/BluetoothAdapter;
 
@@ -416,7 +416,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->v(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->a(Ljava/lang/String;)V
 
     invoke-direct {p0}, Lcom/jaalee/sdk/service/BeaconService;->c()V
 
@@ -470,7 +470,7 @@
 
     iget-object v0, v0, Lcom/jaalee/sdk/service/n;->a:Lcom/jaalee/sdk/Region;
 
-    invoke-virtual {v0}, Lcom/jaalee/sdk/Region;->getIdentifier()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/jaalee/sdk/Region;->a()Ljava/lang/String;
 
     move-result-object v0
 
@@ -517,7 +517,7 @@
 
     const-string/jumbo v1, "BluetoothAdapter throws unexpected exception"
 
-    invoke-static {v1, v0}, Lcom/jaalee/sdk/utils/L;->wtf(Ljava/lang/String;Ljava/lang/Exception;)V
+    invoke-static {v1, v0}, Lcom/jaalee/sdk/utils/L;->a(Ljava/lang/String;Ljava/lang/Exception;)V
 
     goto :goto_a
 .end method
@@ -717,7 +717,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->v(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->a(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/jaalee/sdk/service/BeaconService;->i:Landroid/bluetooth/BluetoothAdapter;
 
@@ -751,7 +751,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->v(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->a(Ljava/lang/String;)V
 
     invoke-direct {p0}, Lcom/jaalee/sdk/service/BeaconService;->c()V
 
@@ -805,7 +805,7 @@
 
     iget-object v0, v0, Lcom/jaalee/sdk/service/k;->a:Lcom/jaalee/sdk/Region;
 
-    invoke-virtual {v0}, Lcom/jaalee/sdk/Region;->getIdentifier()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/jaalee/sdk/Region;->a()Ljava/lang/String;
 
     move-result-object v0
 
@@ -841,7 +841,7 @@
 
     const-string/jumbo v0, "Creating service"
 
-    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->i(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->c(Ljava/lang/String;)V
 
     const-string/jumbo v0, "alarm"
 
@@ -979,7 +979,7 @@
 
     const-string/jumbo v0, "Service destroyed"
 
-    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->i(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->c(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/jaalee/sdk/service/BeaconService;->p:Landroid/content/BroadcastReceiver;
 

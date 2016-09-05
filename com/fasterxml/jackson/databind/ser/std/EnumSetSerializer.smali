@@ -19,8 +19,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/BeanProperty;)V
     .registers 10
-    .param p1, "elemType"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p2, "property"    # Lcom/fasterxml/jackson/databind/BeanProperty;
 
     .prologue
     const/4 v4, 0x0
@@ -46,9 +44,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/ser/std/EnumSetSerializer;Lcom/fasterxml/jackson/databind/BeanProperty;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;Lcom/fasterxml/jackson/databind/JsonSerializer;)V
     .registers 5
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/ser/std/EnumSetSerializer;
-    .param p2, "property"    # Lcom/fasterxml/jackson/databind/BeanProperty;
-    .param p3, "vts"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -62,7 +57,6 @@
 
     .prologue
     .line 22
-    .local p4, "valueSerializer":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<*>;"
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/fasterxml/jackson/databind/ser/std/AsArraySerializerBase;-><init>(Lcom/fasterxml/jackson/databind/ser/std/AsArraySerializerBase;Lcom/fasterxml/jackson/databind/BeanProperty;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;Lcom/fasterxml/jackson/databind/JsonSerializer;)V
 
     .line 23
@@ -73,7 +67,6 @@
 # virtual methods
 .method public bridge synthetic _withValueTypeSerializer(Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)Lcom/fasterxml/jackson/databind/ser/ContainerSerializer;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
 
     .prologue
     .line 11
@@ -86,7 +79,6 @@
 
 .method public _withValueTypeSerializer(Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)Lcom/fasterxml/jackson/databind/ser/std/EnumSetSerializer;
     .registers 2
-    .param p1, "vts"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
 
     .prologue
     .line 28
@@ -95,13 +87,11 @@
 
 .method public bridge synthetic hasSingleElement(Ljava/lang/Object;)Z
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 11
     check-cast p1, Ljava/util/EnumSet;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/ser/std/EnumSetSerializer;->hasSingleElement(Ljava/util/EnumSet;)Z
 
     move-result v0
@@ -122,7 +112,6 @@
     .end annotation
 
     .prologue
-    .local p1, "value":Ljava/util/EnumSet;, "Ljava/util/EnumSet<+Ljava/lang/Enum<*>;>;"
     const/4 v0, 0x1
 
     .line 44
@@ -143,13 +132,11 @@
 
 .method public bridge synthetic isEmpty(Ljava/lang/Object;)Z
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 11
     check-cast p1, Ljava/util/EnumSet;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/ser/std/EnumSetSerializer;->isEmpty(Ljava/util/EnumSet;)Z
 
     move-result v0
@@ -171,7 +158,6 @@
 
     .prologue
     .line 39
-    .local p1, "value":Ljava/util/EnumSet;, "Ljava/util/EnumSet<+Ljava/lang/Enum<*>;>;"
     if-eqz p1, :cond_8
 
     invoke-virtual {p1}, Ljava/util/EnumSet;->isEmpty()Z
@@ -194,30 +180,18 @@
 
 .method public bridge synthetic serializeContents(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 4
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "x2"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 11
     check-cast p1, Ljava/util/EnumSet;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2, p3}, Lcom/fasterxml/jackson/databind/ser/std/EnumSetSerializer;->serializeContents(Ljava/util/EnumSet;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
 
     return-void
 .end method
 
 .method public serializeContents(Ljava/util/EnumSet;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
-    .registers 9
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
+    .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -231,31 +205,23 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
-
     .prologue
     .line 51
-    .local p1, "value":Ljava/util/EnumSet;, "Ljava/util/EnumSet<+Ljava/lang/Enum<*>;>;"
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/ser/std/EnumSetSerializer;->_elementSerializer:Lcom/fasterxml/jackson/databind/JsonSerializer;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/std/EnumSetSerializer;->_elementSerializer:Lcom/fasterxml/jackson/databind/JsonSerializer;
 
     .line 56
-    .local v1, "enumSer":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<Ljava/lang/Object;>;"
     invoke-virtual {p1}, Ljava/util/EnumSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    .local v2, "i$":Ljava/util/Iterator;
-    :goto_6
+    move-object v1, v0
+
+    :goto_7
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_22
+    if-eqz v0, :cond_23
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -264,37 +230,32 @@
     check-cast v0, Ljava/lang/Enum;
 
     .line 57
-    .local v0, "en":Ljava/lang/Enum;, "Ljava/lang/Enum<*>;"
-    if-nez v1, :cond_1e
+    if-nez v1, :cond_1f
 
     .line 61
     invoke-virtual {v0}, Ljava/lang/Enum;->getDeclaringClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v1
 
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/ser/std/EnumSetSerializer;->_property:Lcom/fasterxml/jackson/databind/BeanProperty;
+    iget-object v3, p0, Lcom/fasterxml/jackson/databind/ser/std/EnumSetSerializer;->_property:Lcom/fasterxml/jackson/databind/BeanProperty;
 
-    invoke-virtual {p3, v3, v4}, Lcom/fasterxml/jackson/databind/SerializerProvider;->findValueSerializer(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/BeanProperty;)Lcom/fasterxml/jackson/databind/JsonSerializer;
+    invoke-virtual {p3, v1, v3}, Lcom/fasterxml/jackson/databind/SerializerProvider;->findValueSerializer(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/BeanProperty;)Lcom/fasterxml/jackson/databind/JsonSerializer;
 
     move-result-object v1
 
     .line 63
-    :cond_1e
+    :cond_1f
     invoke-virtual {v1, v0, p2, p3}, Lcom/fasterxml/jackson/databind/JsonSerializer;->serialize(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
 
-    goto :goto_6
+    goto :goto_7
 
     .line 65
-    .end local v0    # "en":Ljava/lang/Enum;, "Ljava/lang/Enum<*>;"
-    :cond_22
+    :cond_23
     return-void
 .end method
 
 .method public bridge synthetic withResolved(Lcom/fasterxml/jackson/databind/BeanProperty;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;Lcom/fasterxml/jackson/databind/JsonSerializer;)Lcom/fasterxml/jackson/databind/ser/std/AsArraySerializerBase;
     .registers 5
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/BeanProperty;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
-    .param p3, "x2"    # Lcom/fasterxml/jackson/databind/JsonSerializer;
 
     .prologue
     .line 11
@@ -307,8 +268,6 @@
 
 .method public withResolved(Lcom/fasterxml/jackson/databind/BeanProperty;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;Lcom/fasterxml/jackson/databind/JsonSerializer;)Lcom/fasterxml/jackson/databind/ser/std/EnumSetSerializer;
     .registers 5
-    .param p1, "property"    # Lcom/fasterxml/jackson/databind/BeanProperty;
-    .param p2, "vts"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -322,7 +281,6 @@
 
     .prologue
     .line 34
-    .local p3, "elementSerializer":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<*>;"
     new-instance v0, Lcom/fasterxml/jackson/databind/ser/std/EnumSetSerializer;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/fasterxml/jackson/databind/ser/std/EnumSetSerializer;-><init>(Lcom/fasterxml/jackson/databind/ser/std/EnumSetSerializer;Lcom/fasterxml/jackson/databind/BeanProperty;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;Lcom/fasterxml/jackson/databind/JsonSerializer;)V

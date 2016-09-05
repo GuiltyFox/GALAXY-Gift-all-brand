@@ -3,22 +3,9 @@
 .source "NavigationMenuPresenter.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/internal/NavigationMenuPresenter;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "SeparatorViewHolder"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;)V
     .registers 5
-    .param p1, "inflater"    # Landroid/view/LayoutInflater;
-    .param p2, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
     .line 295

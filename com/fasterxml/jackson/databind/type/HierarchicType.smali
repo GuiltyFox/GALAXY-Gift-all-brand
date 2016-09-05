@@ -25,7 +25,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/reflect/Type;)V
     .registers 5
-    .param p1, "type"    # Ljava/lang/reflect/Type;
 
     .prologue
     .line 29
@@ -42,7 +41,6 @@
     .line 32
     check-cast p1, Ljava/lang/Class;
 
-    .end local p1    # "type":Ljava/lang/reflect/Type;
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/type/HierarchicType;->_rawClass:Ljava/lang/Class;
 
     .line 33
@@ -55,7 +53,6 @@
     return-void
 
     .line 34
-    .restart local p1    # "type":Ljava/lang/reflect/Type;
     :cond_11
     instance-of v0, p1, Ljava/lang/reflect/ParameterizedType;
 
@@ -64,7 +61,6 @@
     .line 35
     check-cast p1, Ljava/lang/reflect/ParameterizedType;
 
-    .end local p1    # "type":Ljava/lang/reflect/Type;
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/type/HierarchicType;->_genericType:Ljava/lang/reflect/ParameterizedType;
 
     .line 36
@@ -81,7 +77,6 @@
     goto :goto_10
 
     .line 38
-    .restart local p1    # "type":Ljava/lang/reflect/Type;
     :cond_24
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -124,10 +119,6 @@
 
 .method private constructor <init>(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/ParameterizedType;Lcom/fasterxml/jackson/databind/type/HierarchicType;Lcom/fasterxml/jackson/databind/type/HierarchicType;)V
     .registers 6
-    .param p1, "actualType"    # Ljava/lang/reflect/Type;
-    .param p3, "genericType"    # Ljava/lang/reflect/ParameterizedType;
-    .param p4, "superType"    # Lcom/fasterxml/jackson/databind/type/HierarchicType;
-    .param p5, "subType"    # Lcom/fasterxml/jackson/databind/type/HierarchicType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -143,7 +134,6 @@
 
     .prologue
     .line 44
-    .local p2, "rawClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 45
@@ -184,14 +174,13 @@
     const/4 v5, 0x0
 
     .line 58
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/type/HierarchicType;->_superType:Lcom/fasterxml/jackson/databind/type/HierarchicType;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/type/HierarchicType;->_superType:Lcom/fasterxml/jackson/databind/type/HierarchicType;
 
-    if-nez v1, :cond_17
+    if-nez v0, :cond_17
 
     move-object v4, v5
 
     .line 59
-    .local v4, "sup":Lcom/fasterxml/jackson/databind/type/HierarchicType;
     :goto_6
     new-instance v0, Lcom/fasterxml/jackson/databind/type/HierarchicType;
 
@@ -204,7 +193,6 @@
     invoke-direct/range {v0 .. v5}, Lcom/fasterxml/jackson/databind/type/HierarchicType;-><init>(Ljava/lang/reflect/Type;Ljava/lang/Class;Ljava/lang/reflect/ParameterizedType;Lcom/fasterxml/jackson/databind/type/HierarchicType;Lcom/fasterxml/jackson/databind/type/HierarchicType;)V
 
     .line 60
-    .local v0, "result":Lcom/fasterxml/jackson/databind/type/HierarchicType;
     if-eqz v4, :cond_16
 
     .line 61
@@ -215,12 +203,10 @@
     return-object v0
 
     .line 58
-    .end local v0    # "result":Lcom/fasterxml/jackson/databind/type/HierarchicType;
-    .end local v4    # "sup":Lcom/fasterxml/jackson/databind/type/HierarchicType;
     :cond_17
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/type/HierarchicType;->_superType:Lcom/fasterxml/jackson/databind/type/HierarchicType;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/type/HierarchicType;->_superType:Lcom/fasterxml/jackson/databind/type/HierarchicType;
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/type/HierarchicType;->deepCloneWithoutSubtype()Lcom/fasterxml/jackson/databind/type/HierarchicType;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/type/HierarchicType;->deepCloneWithoutSubtype()Lcom/fasterxml/jackson/databind/type/HierarchicType;
 
     move-result-object v4
 
@@ -286,7 +272,6 @@
 
 .method public setSubType(Lcom/fasterxml/jackson/databind/type/HierarchicType;)V
     .registers 2
-    .param p1, "sub"    # Lcom/fasterxml/jackson/databind/type/HierarchicType;
 
     .prologue
     .line 68
@@ -297,7 +282,6 @@
 
 .method public setSuperType(Lcom/fasterxml/jackson/databind/type/HierarchicType;)V
     .registers 2
-    .param p1, "sup"    # Lcom/fasterxml/jackson/databind/type/HierarchicType;
 
     .prologue
     .line 66

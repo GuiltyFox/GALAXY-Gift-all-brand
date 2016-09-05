@@ -8,16 +8,10 @@
     value = Landroid/support/v7/widget/OrientationHelper;->createHorizontalHelper(Landroid/support/v7/widget/RecyclerView$LayoutManager;)Landroid/support/v7/widget/OrientationHelper;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 
 # direct methods
 .method constructor <init>(Landroid/support/v7/widget/RecyclerView$LayoutManager;)V
     .registers 3
-    .param p1, "x0"    # Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
     .prologue
     .line 216
@@ -31,8 +25,7 @@
 
 # virtual methods
 .method public getDecoratedEnd(Landroid/view/View;)I
-    .registers 5
-    .param p1, "view"    # Landroid/view/View;
+    .registers 4
 
     .prologue
     .line 255
@@ -43,23 +36,21 @@
     check-cast v0, Landroid/support/v7/widget/RecyclerView$LayoutParams;
 
     .line 257
-    .local v0, "params":Landroid/support/v7/widget/RecyclerView$LayoutParams;
     iget-object v1, p0, Landroid/support/v7/widget/OrientationHelper$1;->mLayoutManager:Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
     invoke-virtual {v1, p1}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->getDecoratedRight(Landroid/view/View;)I
 
     move-result v1
 
-    iget v2, v0, Landroid/support/v7/widget/RecyclerView$LayoutParams;->rightMargin:I
+    iget v0, v0, Landroid/support/v7/widget/RecyclerView$LayoutParams;->rightMargin:I
 
-    add-int/2addr v1, v2
+    add-int/2addr v0, v1
 
-    return v1
+    return v0
 .end method
 
 .method public getDecoratedMeasurement(Landroid/view/View;)I
     .registers 5
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 239
@@ -70,7 +61,6 @@
     check-cast v0, Landroid/support/v7/widget/RecyclerView$LayoutParams;
 
     .line 241
-    .local v0, "params":Landroid/support/v7/widget/RecyclerView$LayoutParams;
     iget-object v1, p0, Landroid/support/v7/widget/OrientationHelper$1;->mLayoutManager:Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
     invoke-virtual {v1, p1}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->getDecoratedMeasuredWidth(Landroid/view/View;)I
@@ -81,16 +71,15 @@
 
     add-int/2addr v1, v2
 
-    iget v2, v0, Landroid/support/v7/widget/RecyclerView$LayoutParams;->rightMargin:I
+    iget v0, v0, Landroid/support/v7/widget/RecyclerView$LayoutParams;->rightMargin:I
 
-    add-int/2addr v1, v2
+    add-int/2addr v0, v1
 
-    return v1
+    return v0
 .end method
 
 .method public getDecoratedMeasurementInOther(Landroid/view/View;)I
     .registers 5
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 247
@@ -101,7 +90,6 @@
     check-cast v0, Landroid/support/v7/widget/RecyclerView$LayoutParams;
 
     .line 249
-    .local v0, "params":Landroid/support/v7/widget/RecyclerView$LayoutParams;
     iget-object v1, p0, Landroid/support/v7/widget/OrientationHelper$1;->mLayoutManager:Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
     invoke-virtual {v1, p1}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->getDecoratedMeasuredHeight(Landroid/view/View;)I
@@ -112,16 +100,15 @@
 
     add-int/2addr v1, v2
 
-    iget v2, v0, Landroid/support/v7/widget/RecyclerView$LayoutParams;->bottomMargin:I
+    iget v0, v0, Landroid/support/v7/widget/RecyclerView$LayoutParams;->bottomMargin:I
 
-    add-int/2addr v1, v2
+    add-int/2addr v0, v1
 
-    return v1
+    return v0
 .end method
 
 .method public getDecoratedStart(Landroid/view/View;)I
-    .registers 5
-    .param p1, "view"    # Landroid/view/View;
+    .registers 4
 
     .prologue
     .line 262
@@ -132,18 +119,17 @@
     check-cast v0, Landroid/support/v7/widget/RecyclerView$LayoutParams;
 
     .line 264
-    .local v0, "params":Landroid/support/v7/widget/RecyclerView$LayoutParams;
     iget-object v1, p0, Landroid/support/v7/widget/OrientationHelper$1;->mLayoutManager:Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
     invoke-virtual {v1, p1}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->getDecoratedLeft(Landroid/view/View;)I
 
     move-result v1
 
-    iget v2, v0, Landroid/support/v7/widget/RecyclerView$LayoutParams;->leftMargin:I
+    iget v0, v0, Landroid/support/v7/widget/RecyclerView$LayoutParams;->leftMargin:I
 
-    sub-int/2addr v1, v2
+    sub-int v0, v1, v0
 
-    return v1
+    return v0
 .end method
 
 .method public getEnd()I
@@ -270,8 +256,6 @@
 
 .method public offsetChild(Landroid/view/View;I)V
     .registers 3
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "offset"    # I
 
     .prologue
     .line 275
@@ -283,7 +267,6 @@
 
 .method public offsetChildren(I)V
     .registers 3
-    .param p1, "amount"    # I
 
     .prologue
     .line 229

@@ -3,21 +3,10 @@
 .source "SerializedObserver.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lrx/observers/SerializedObserver;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x18
-    name = "FastList"
-.end annotation
-
-
 # instance fields
-.field array:[Ljava/lang/Object;
+.field a:[Ljava/lang/Object;
 
-.field size:I
+.field b:I
 
 
 # direct methods
@@ -33,67 +22,64 @@
 
 
 # virtual methods
-.method public add(Ljava/lang/Object;)V
-    .registers 7
-    .param p1, "o"    # Ljava/lang/Object;
+.method public a(Ljava/lang/Object;)V
+    .registers 6
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     .line 54
-    iget v2, p0, Lrx/observers/SerializedObserver$FastList;->size:I
+    iget v2, p0, Lrx/observers/SerializedObserver$FastList;->b:I
 
     .line 55
-    .local v2, "s":I
-    iget-object v0, p0, Lrx/observers/SerializedObserver$FastList;->array:[Ljava/lang/Object;
+    iget-object v1, p0, Lrx/observers/SerializedObserver$FastList;->a:[Ljava/lang/Object;
 
     .line 56
-    .local v0, "a":[Ljava/lang/Object;
-    if-nez v0, :cond_14
+    if-nez v1, :cond_14
 
     .line 57
-    const/16 v3, 0x10
+    const/16 v0, 0x10
 
-    new-array v0, v3, [Ljava/lang/Object;
+    new-array v0, v0, [Ljava/lang/Object;
 
     .line 58
-    iput-object v0, p0, Lrx/observers/SerializedObserver$FastList;->array:[Ljava/lang/Object;
+    iput-object v0, p0, Lrx/observers/SerializedObserver$FastList;->a:[Ljava/lang/Object;
 
     .line 65
-    :cond_d
     :goto_d
     aput-object p1, v0, v2
 
     .line 66
-    add-int/lit8 v3, v2, 0x1
+    add-int/lit8 v0, v2, 0x1
 
-    iput v3, p0, Lrx/observers/SerializedObserver$FastList;->size:I
+    iput v0, p0, Lrx/observers/SerializedObserver$FastList;->b:I
 
     .line 67
     return-void
 
     .line 59
     :cond_14
-    array-length v3, v0
+    array-length v0, v1
 
-    if-ne v2, v3, :cond_d
+    if-ne v2, v0, :cond_22
 
     .line 60
-    shr-int/lit8 v3, v2, 0x2
+    shr-int/lit8 v0, v2, 0x2
 
-    add-int/2addr v3, v2
+    add-int/2addr v0, v2
 
-    new-array v1, v3, [Ljava/lang/Object;
+    new-array v0, v0, [Ljava/lang/Object;
 
     .line 61
-    .local v1, "array2":[Ljava/lang/Object;
-    invoke-static {v0, v4, v1, v4, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 62
-    move-object v0, v1
+    invoke-static {v1, v3, v0, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 63
-    iput-object v0, p0, Lrx/observers/SerializedObserver$FastList;->array:[Ljava/lang/Object;
+    iput-object v0, p0, Lrx/observers/SerializedObserver$FastList;->a:[Ljava/lang/Object;
+
+    goto :goto_d
+
+    :cond_22
+    move-object v0, v1
 
     goto :goto_d
 .end method

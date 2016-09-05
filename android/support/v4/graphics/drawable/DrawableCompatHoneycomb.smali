@@ -4,19 +4,8 @@
 
 
 # direct methods
-.method constructor <init>()V
+.method public static a(Landroid/graphics/drawable/Drawable;)V
     .registers 1
-
-    .prologue
-    .line 26
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static jumpToCurrentState(Landroid/graphics/drawable/Drawable;)V
-    .registers 1
-    .param p0, "drawable"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 29
@@ -26,13 +15,12 @@
     return-void
 .end method
 
-.method public static wrapForTinting(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+.method public static b(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
     .registers 2
-    .param p0, "drawable"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 33
-    instance-of v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperHoneycomb;
+    instance-of v0, p0, Landroid/support/v4/graphics/drawable/TintAwareDrawable;
 
     if-nez v0, :cond_a
 
@@ -44,7 +32,6 @@
     move-object p0, v0
 
     .line 36
-    .end local p0    # "drawable":Landroid/graphics/drawable/Drawable;
     :cond_a
     return-object p0
 .end method

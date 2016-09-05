@@ -11,11 +11,6 @@
     value = Landroid/support/v4/app/BackStackState;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -32,7 +27,7 @@
     .registers 1
 
     .prologue
-    .line 174
+    .line 178
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,12 +35,11 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/app/BackStackState;
+.method public a(Landroid/os/Parcel;)Landroid/support/v4/app/BackStackState;
     .registers 3
-    .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 176
+    .line 180
     new-instance v0, Landroid/support/v4/app/BackStackState;
 
     invoke-direct {v0, p1}, Landroid/support/v4/app/BackStackState;-><init>(Landroid/os/Parcel;)V
@@ -53,35 +47,34 @@
     return-object v0
 .end method
 
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public a(I)[Landroid/support/v4/app/BackStackState;
     .registers 3
 
     .prologue
-    .line 174
-    invoke-virtual {p0, p1}, Landroid/support/v4/app/BackStackState$1;->createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/app/BackStackState;
+    .line 184
+    new-array v0, p1, [Landroid/support/v4/app/BackStackState;
+
+    return-object v0
+.end method
+
+.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .registers 3
+
+    .prologue
+    .line 178
+    invoke-virtual {p0, p1}, Landroid/support/v4/app/BackStackState$1;->a(Landroid/os/Parcel;)Landroid/support/v4/app/BackStackState;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public newArray(I)[Landroid/support/v4/app/BackStackState;
-    .registers 3
-    .param p1, "size"    # I
-
-    .prologue
-    .line 180
-    new-array v0, p1, [Landroid/support/v4/app/BackStackState;
-
-    return-object v0
-.end method
-
-.method public bridge synthetic newArray(I)[Ljava/lang/Object;
+.method public synthetic newArray(I)[Ljava/lang/Object;
     .registers 3
 
     .prologue
-    .line 174
-    invoke-virtual {p0, p1}, Landroid/support/v4/app/BackStackState$1;->newArray(I)[Landroid/support/v4/app/BackStackState;
+    .line 178
+    invoke-virtual {p0, p1}, Landroid/support/v4/app/BackStackState$1;->a(I)[Landroid/support/v4/app/BackStackState;
 
     move-result-object v0
 

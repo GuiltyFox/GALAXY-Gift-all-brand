@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final NONE:Lcom/squareup/picasso/Cache;
+.field public static final a:Lcom/squareup/picasso/Cache;
 
 
 # direct methods
@@ -17,27 +17,21 @@
 
     invoke-direct {v0}, Lcom/squareup/picasso/Cache$1;-><init>()V
 
-    sput-object v0, Lcom/squareup/picasso/Cache;->NONE:Lcom/squareup/picasso/Cache;
+    sput-object v0, Lcom/squareup/picasso/Cache;->a:Lcom/squareup/picasso/Cache;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract clear()V
+.method public abstract a()I
 .end method
 
-.method public abstract clearKeyUri(Ljava/lang/String;)V
+.method public abstract a(Ljava/lang/String;)Landroid/graphics/Bitmap;
 .end method
 
-.method public abstract get(Ljava/lang/String;)Landroid/graphics/Bitmap;
+.method public abstract a(Ljava/lang/String;Landroid/graphics/Bitmap;)V
 .end method
 
-.method public abstract maxSize()I
-.end method
-
-.method public abstract set(Ljava/lang/String;Landroid/graphics/Bitmap;)V
-.end method
-
-.method public abstract size()I
+.method public abstract b()I
 .end method

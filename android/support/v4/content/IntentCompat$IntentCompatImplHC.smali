@@ -3,17 +3,6 @@
 .source "IntentCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/content/IntentCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "IntentCompatImplHC"
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .registers 1
@@ -27,26 +16,12 @@
 
 
 # virtual methods
-.method public makeMainActivity(Landroid/content/ComponentName;)Landroid/content/Intent;
+.method public a(Landroid/content/ComponentName;)Landroid/content/Intent;
     .registers 3
-    .param p1, "componentName"    # Landroid/content/ComponentName;
 
     .prologue
     .line 68
-    invoke-static {p1}, Landroid/support/v4/content/IntentCompatHoneycomb;->makeMainActivity(Landroid/content/ComponentName;)Landroid/content/Intent;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public makeRestartActivityTask(Landroid/content/ComponentName;)Landroid/content/Intent;
-    .registers 3
-    .param p1, "componentName"    # Landroid/content/ComponentName;
-
-    .prologue
-    .line 72
-    invoke-static {p1}, Landroid/support/v4/content/IntentCompatHoneycomb;->makeRestartActivityTask(Landroid/content/ComponentName;)Landroid/content/Intent;
+    invoke-static {p1}, Landroid/support/v4/content/IntentCompatHoneycomb;->a(Landroid/content/ComponentName;)Landroid/content/Intent;
 
     move-result-object v0
 

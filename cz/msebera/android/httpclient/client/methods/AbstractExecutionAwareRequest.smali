@@ -5,7 +5,6 @@
 # interfaces
 .implements Lcz/msebera/android/httpclient/HttpRequest;
 .implements Lcz/msebera/android/httpclient/client/methods/AbortableHttpRequest;
-.implements Lcz/msebera/android/httpclient/client/methods/HttpExecutionAware;
 .implements Ljava/lang/Cloneable;
 
 
@@ -57,53 +56,46 @@
 
 # virtual methods
 .method public abort()V
-    .registers 5
+    .registers 4
 
     .prologue
     .line 82
-    iget-object v1, p0, Lcz/msebera/android/httpclient/client/methods/AbstractExecutionAwareRequest;->aborted:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/client/methods/AbstractExecutionAwareRequest;->aborted:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    invoke-virtual {v1, v2, v3}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_18
+    if-eqz v0, :cond_18
 
     .line 83
-    iget-object v1, p0, Lcz/msebera/android/httpclient/client/methods/AbstractExecutionAwareRequest;->cancellableRef:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/client/methods/AbstractExecutionAwareRequest;->cancellableRef:Ljava/util/concurrent/atomic/AtomicReference;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcz/msebera/android/httpclient/concurrent/Cancellable;
 
     .line 84
-    .local v0, "cancellable":Lcz/msebera/android/httpclient/concurrent/Cancellable;
     if-eqz v0, :cond_18
 
     .line 85
-    invoke-interface {v0}, Lcz/msebera/android/httpclient/concurrent/Cancellable;->cancel()Z
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/concurrent/Cancellable;->a()Z
 
     .line 88
-    .end local v0    # "cancellable":Lcz/msebera/android/httpclient/concurrent/Cancellable;
     :cond_18
     return-void
 .end method
 
 .method public clone()Ljava/lang/Object;
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/CloneNotSupportedException;
-        }
-    .end annotation
 
     .prologue
     .line 105
@@ -114,10 +106,9 @@
     check-cast v0, Lcz/msebera/android/httpclient/client/methods/AbstractExecutionAwareRequest;
 
     .line 106
-    .local v0, "clone":Lcz/msebera/android/httpclient/client/methods/AbstractExecutionAwareRequest;
     iget-object v1, p0, Lcz/msebera/android/httpclient/client/methods/AbstractExecutionAwareRequest;->headergroup:Lcz/msebera/android/httpclient/message/HeaderGroup;
 
-    invoke-static {v1}, Lcz/msebera/android/httpclient/client/utils/CloneUtils;->cloneObject(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1}, Lcz/msebera/android/httpclient/client/utils/CloneUtils;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -128,7 +119,7 @@
     .line 107
     iget-object v1, p0, Lcz/msebera/android/httpclient/client/methods/AbstractExecutionAwareRequest;->params:Lcz/msebera/android/httpclient/params/HttpParams;
 
-    invoke-static {v1}, Lcz/msebera/android/httpclient/client/utils/CloneUtils;->cloneObject(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v1}, Lcz/msebera/android/httpclient/client/utils/CloneUtils;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -170,34 +161,33 @@
 .end method
 
 .method public reset()V
-    .registers 4
+    .registers 3
 
     .prologue
     .line 124
-    iget-object v1, p0, Lcz/msebera/android/httpclient/client/methods/AbstractExecutionAwareRequest;->cancellableRef:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/client/methods/AbstractExecutionAwareRequest;->cancellableRef:Ljava/util/concurrent/atomic/AtomicReference;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcz/msebera/android/httpclient/concurrent/Cancellable;
 
     .line 125
-    .local v0, "cancellable":Lcz/msebera/android/httpclient/concurrent/Cancellable;
     if-eqz v0, :cond_e
 
     .line 126
-    invoke-interface {v0}, Lcz/msebera/android/httpclient/concurrent/Cancellable;->cancel()Z
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/concurrent/Cancellable;->a()Z
 
     .line 128
     :cond_e
-    iget-object v1, p0, Lcz/msebera/android/httpclient/client/methods/AbstractExecutionAwareRequest;->aborted:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/client/methods/AbstractExecutionAwareRequest;->aborted:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
+    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;->set(Z)V
 
     .line 129
     return-void
@@ -205,7 +195,6 @@
 
 .method public setCancellable(Lcz/msebera/android/httpclient/concurrent/Cancellable;)V
     .registers 3
-    .param p1, "cancellable"    # Lcz/msebera/android/httpclient/concurrent/Cancellable;
 
     .prologue
     .line 98
@@ -229,7 +218,6 @@
 
 .method public setConnectionRequest(Lcz/msebera/android/httpclient/conn/ClientConnectionRequest;)V
     .registers 3
-    .param p1, "connRequest"    # Lcz/msebera/android/httpclient/conn/ClientConnectionRequest;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -247,7 +235,6 @@
 
 .method public setReleaseTrigger(Lcz/msebera/android/httpclient/conn/ConnectionReleaseTrigger;)V
     .registers 3
-    .param p1, "releaseTrigger"    # Lcz/msebera/android/httpclient/conn/ConnectionReleaseTrigger;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 

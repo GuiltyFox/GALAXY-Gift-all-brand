@@ -18,8 +18,6 @@
 # direct methods
 .method constructor <init>(Landroid/support/design/widget/VisibilityAwareImageButton;Landroid/support/design/widget/ShadowViewDelegate;)V
     .registers 5
-    .param p1, "view"    # Landroid/support/design/widget/VisibilityAwareImageButton;
-    .param p2, "shadowViewDelegate"    # Landroid/support/design/widget/ShadowViewDelegate;
 
     .prologue
     .line 44
@@ -59,7 +57,6 @@
 
 .method private setupAnimator(Landroid/animation/Animator;)Landroid/animation/Animator;
     .registers 3
-    .param p1, "animator"    # Landroid/animation/Animator;
 
     .prologue
     .line 150
@@ -88,83 +85,74 @@
 .end method
 
 .method getPadding(Landroid/graphics/Rect;)V
-    .registers 9
-    .param p1, "rect"    # Landroid/graphics/Rect;
+    .registers 7
 
     .prologue
-    const/4 v6, 0x0
+    const/4 v4, 0x0
 
     .line 160
-    iget-object v4, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShadowViewDelegate:Landroid/support/design/widget/ShadowViewDelegate;
+    iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShadowViewDelegate:Landroid/support/design/widget/ShadowViewDelegate;
 
-    invoke-interface {v4}, Landroid/support/design/widget/ShadowViewDelegate;->isCompatPaddingEnabled()Z
+    invoke-interface {v0}, Landroid/support/design/widget/ShadowViewDelegate;->isCompatPaddingEnabled()Z
 
-    move-result v4
+    move-result v0
 
-    if-eqz v4, :cond_2f
+    if-eqz v0, :cond_2e
 
     .line 161
-    iget-object v4, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShadowViewDelegate:Landroid/support/design/widget/ShadowViewDelegate;
+    iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShadowViewDelegate:Landroid/support/design/widget/ShadowViewDelegate;
 
-    invoke-interface {v4}, Landroid/support/design/widget/ShadowViewDelegate;->getRadius()F
+    invoke-interface {v0}, Landroid/support/design/widget/ShadowViewDelegate;->getRadius()F
+
+    move-result v0
+
+    .line 162
+    invoke-virtual {p0}, Landroid/support/design/widget/FloatingActionButtonLollipop;->getElevation()F
+
+    move-result v1
+
+    iget v2, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mPressedTranslationZ:F
+
+    add-float/2addr v1, v2
+
+    .line 163
+    invoke-static {v1, v0, v4}, Landroid/support/design/widget/ShadowDrawableWrapper;->calculateHorizontalPadding(FFZ)F
 
     move-result v2
 
-    .line 162
-    .local v2, "radius":F
-    invoke-virtual {p0}, Landroid/support/design/widget/FloatingActionButtonLollipop;->getElevation()F
+    float-to-double v2, v2
 
-    move-result v4
+    invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
 
-    iget v5, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mPressedTranslationZ:F
+    move-result-wide v2
 
-    add-float v1, v4, v5
-
-    .line 163
-    .local v1, "maxShadowSize":F
-    invoke-static {v1, v2, v6}, Landroid/support/design/widget/ShadowDrawableWrapper;->calculateHorizontalPadding(FFZ)F
-
-    move-result v4
-
-    float-to-double v4, v4
-
-    invoke-static {v4, v5}, Ljava/lang/Math;->ceil(D)D
-
-    move-result-wide v4
-
-    double-to-int v0, v4
+    double-to-int v2, v2
 
     .line 165
-    .local v0, "hPadding":I
-    invoke-static {v1, v2, v6}, Landroid/support/design/widget/ShadowDrawableWrapper;->calculateVerticalPadding(FFZ)F
+    invoke-static {v1, v0, v4}, Landroid/support/design/widget/ShadowDrawableWrapper;->calculateVerticalPadding(FFZ)F
 
-    move-result v4
+    move-result v0
 
-    float-to-double v4, v4
+    float-to-double v0, v0
 
-    invoke-static {v4, v5}, Ljava/lang/Math;->ceil(D)D
+    invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
 
-    move-result-wide v4
+    move-result-wide v0
 
-    double-to-int v3, v4
+    double-to-int v0, v0
 
     .line 167
-    .local v3, "vPadding":I
-    invoke-virtual {p1, v0, v3, v0, v3}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {p1, v2, v0, v2, v0}, Landroid/graphics/Rect;->set(IIII)V
 
     .line 171
-    .end local v0    # "hPadding":I
-    .end local v1    # "maxShadowSize":F
-    .end local v2    # "radius":F
-    .end local v3    # "vPadding":I
-    :goto_2e
+    :goto_2d
     return-void
 
     .line 169
-    :cond_2f
-    invoke-virtual {p1, v6, v6, v6, v6}, Landroid/graphics/Rect;->set(IIII)V
+    :cond_2e
+    invoke-virtual {p1, v4, v4, v4, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    goto :goto_2e
+    goto :goto_2d
 .end method
 
 .method jumpDrawableToCurrentState()V
@@ -200,7 +188,6 @@
 
 .method onDrawableStateChanged([I)V
     .registers 2
-    .param p1, "state"    # [I
 
     .prologue
     .line 137
@@ -209,7 +196,6 @@
 
 .method public onElevationChanged(F)V
     .registers 3
-    .param p1, "elevation"    # F
 
     .prologue
     .line 89
@@ -236,7 +222,6 @@
 
 .method onPaddingUpdated(Landroid/graphics/Rect;)V
     .registers 8
-    .param p1, "padding"    # Landroid/graphics/Rect;
 
     .prologue
     .line 125
@@ -289,7 +274,6 @@
 
 .method onTranslationZChanged(F)V
     .registers 9
-    .param p1, "translationZ"    # F
 
     .prologue
     const/4 v5, 0x1
@@ -302,7 +286,6 @@
     invoke-direct {v0}, Landroid/animation/StateListAnimator;-><init>()V
 
     .line 99
-    .local v0, "stateListAnimator":Landroid/animation/StateListAnimator;
     sget-object v1, Landroid/support/design/widget/FloatingActionButtonLollipop;->PRESSED_ENABLED_STATE_SET:[I
 
     iget-object v2, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
@@ -373,13 +356,13 @@
     invoke-virtual {v1, v0}, Landroid/support/design/widget/VisibilityAwareImageButton;->setStateListAnimator(Landroid/animation/StateListAnimator;)V
 
     .line 108
-    iget-object v1, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShadowViewDelegate:Landroid/support/design/widget/ShadowViewDelegate;
+    iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShadowViewDelegate:Landroid/support/design/widget/ShadowViewDelegate;
 
-    invoke-interface {v1}, Landroid/support/design/widget/ShadowViewDelegate;->isCompatPaddingEnabled()Z
+    invoke-interface {v0}, Landroid/support/design/widget/ShadowViewDelegate;->isCompatPaddingEnabled()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_5a
+    if-eqz v0, :cond_5a
 
     .line 109
     invoke-virtual {p0}, Landroid/support/design/widget/FloatingActionButtonLollipop;->updatePadding()V
@@ -401,10 +384,6 @@
 
 .method setBackgroundDrawable(Landroid/content/res/ColorStateList;Landroid/graphics/PorterDuff$Mode;II)V
     .registers 10
-    .param p1, "backgroundTint"    # Landroid/content/res/ColorStateList;
-    .param p2, "backgroundTintMode"    # Landroid/graphics/PorterDuff$Mode;
-    .param p3, "rippleColor"    # I
-    .param p4, "borderWidth"    # I
 
     .prologue
     const/4 v4, 0x0
@@ -412,26 +391,26 @@
     .line 55
     invoke-virtual {p0}, Landroid/support/design/widget/FloatingActionButtonLollipop;->createShapeDrawable()Landroid/graphics/drawable/GradientDrawable;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/support/v4/graphics/drawable/DrawableCompat;->wrap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0}, Landroid/support/v4/graphics/drawable/DrawableCompat;->f(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShapeDrawable:Landroid/graphics/drawable/Drawable;
+    iput-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShapeDrawable:Landroid/graphics/drawable/Drawable;
 
     .line 56
-    iget-object v1, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShapeDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShapeDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {v1, p1}, Landroid/support/v4/graphics/drawable/DrawableCompat;->setTintList(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
+    invoke-static {v0, p1}, Landroid/support/v4/graphics/drawable/DrawableCompat;->a(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
 
     .line 57
     if-eqz p2, :cond_17
 
     .line 58
-    iget-object v1, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShapeDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShapeDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {v1, p2}, Landroid/support/v4/graphics/drawable/DrawableCompat;->setTintMode(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
+    invoke-static {v0, p2}, Landroid/support/v4/graphics/drawable/DrawableCompat;->a(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
 
     .line 62
     :cond_17
@@ -440,9 +419,9 @@
     .line 63
     invoke-virtual {p0, p4, p1}, Landroid/support/design/widget/FloatingActionButtonLollipop;->createBorderDrawable(ILandroid/content/res/ColorStateList;)Landroid/support/design/widget/CircularBorderDrawable;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mBorderDrawable:Landroid/support/design/widget/CircularBorderDrawable;
+    iput-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mBorderDrawable:Landroid/support/design/widget/CircularBorderDrawable;
 
     .line 64
     new-instance v0, Landroid/graphics/drawable/LayerDrawable;
@@ -466,7 +445,6 @@
     invoke-direct {v0, v1}, Landroid/graphics/drawable/LayerDrawable;-><init>([Landroid/graphics/drawable/Drawable;)V
 
     .line 70
-    .local v0, "rippleContent":Landroid/graphics/drawable/Drawable;
     :goto_31
     new-instance v1, Landroid/graphics/drawable/RippleDrawable;
 
@@ -479,35 +457,32 @@
     iput-object v1, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mRippleDrawable:Landroid/graphics/drawable/Drawable;
 
     .line 73
-    iget-object v1, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mRippleDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mRippleDrawable:Landroid/graphics/drawable/Drawable;
 
-    iput-object v1, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mContentBackground:Landroid/graphics/drawable/Drawable;
+    iput-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mContentBackground:Landroid/graphics/drawable/Drawable;
 
     .line 75
-    iget-object v1, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShadowViewDelegate:Landroid/support/design/widget/ShadowViewDelegate;
+    iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShadowViewDelegate:Landroid/support/design/widget/ShadowViewDelegate;
 
-    iget-object v2, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mRippleDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v1, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mRippleDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-interface {v1, v2}, Landroid/support/design/widget/ShadowViewDelegate;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-interface {v0, v1}, Landroid/support/design/widget/ShadowViewDelegate;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 76
     return-void
 
     .line 66
-    .end local v0    # "rippleContent":Landroid/graphics/drawable/Drawable;
     :cond_48
     iput-object v4, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mBorderDrawable:Landroid/support/design/widget/CircularBorderDrawable;
 
     .line 67
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonLollipop;->mShapeDrawable:Landroid/graphics/drawable/Drawable;
 
-    .restart local v0    # "rippleContent":Landroid/graphics/drawable/Drawable;
     goto :goto_31
 .end method
 
 .method setRippleColor(I)V
     .registers 4
-    .param p1, "rippleColor"    # I
 
     .prologue
     .line 80

@@ -1,196 +1,168 @@
 .class Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;
-.super Lcom/loopj/android/http/AsyncHttpResponseHandler;
+.super Lcom/bzbs/lib/http/okhttp/ResponseListener;
 .source "CampaignDetailGiftActivity.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->doLikeAction()V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->f()V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+.field final synthetic a:Landroid/widget/ImageView;
 
-.field final synthetic val$imageLike:Landroid/widget/ImageView;
+.field final synthetic b:Landroid/widget/ProgressBar;
 
-.field final synthetic val$pbLoadingLike:Landroid/widget/ProgressBar;
+.field final synthetic c:Landroid/widget/TextView;
 
-.field final synthetic val$textLikeCount:Landroid/widget/TextView;
+.field final synthetic d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Landroid/widget/ImageView;Landroid/widget/ProgressBar;Landroid/widget/TextView;)V
     .registers 5
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     .prologue
-    .line 2241
-    iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    .line 2321
+    iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->val$imageLike:Landroid/widget/ImageView;
+    iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->a:Landroid/widget/ImageView;
 
-    iput-object p3, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->val$pbLoadingLike:Landroid/widget/ProgressBar;
+    iput-object p3, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->b:Landroid/widget/ProgressBar;
 
-    iput-object p4, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->val$textLikeCount:Landroid/widget/TextView;
+    iput-object p4, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->c:Landroid/widget/TextView;
 
-    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
+    invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onFailure(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
-    .registers 9
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBody"    # [B
-    .param p4, "error"    # Ljava/lang/Throwable;
+.method public failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
+    .registers 8
 
     .prologue
-    .line 2277
-    new-instance v0, Ljava/lang/String;
+    .line 2356
+    invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    invoke-direct {v0, p3}, Ljava/lang/String;-><init>([B)V
+    .line 2358
+    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->h()Ljava/lang/String;
 
-    .line 2278
-    .local v0, "response_text":Ljava/lang/String;
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->TAG:Ljava/lang/String;
-    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000()Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v1
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v2, "(LIKE|onFailure)response_code="
 
-    const-string/jumbo v3, "(LIKE|onFailure)response_code="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v3, ",response="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->LogE(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 2280
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    const-string/jumbo v2, "LIKE Fail!!!"
-
-    # invokes: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->showToast(Ljava/lang/String;)V
-    invoke-static {v1, v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$2300(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Ljava/lang/String;)V
-
-    .line 2282
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->mHandler:Landroid/os/Handler;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    new-instance v2, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19$2;
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-direct {v2, p0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19$2;-><init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;)V
+    move-result-object v1
 
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    const-string/jumbo v2, ",response="
 
-    .line 2289
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 2360
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    const-string/jumbo v1, "LIKE Fail!!!"
+
+    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->b(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Ljava/lang/String;)V
+
+    .line 2362
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->f(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19$2;
+
+    invoke-direct {v1, p0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19$2;-><init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 2369
     return-void
 .end method
 
-.method public onSuccess(I[Lcz/msebera/android/httpclient/Header;[B)V
+.method public successfully(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
     .registers 8
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBody"    # [B
 
     .prologue
-    .line 2244
-    new-instance v0, Ljava/lang/String;
+    .line 2324
+    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->h()Ljava/lang/String;
 
-    invoke-direct {v0, p3}, Ljava/lang/String;-><init>([B)V
+    move-result-object v0
 
-    .line 2245
-    .local v0, "response_text":Ljava/lang/String;
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->TAG:Ljava/lang/String;
-    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$000()Ljava/lang/String;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string/jumbo v2, "(LIKE|onComplete)response_code="
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "(LIKE|onComplete)response_code="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v3, ",response="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 2247
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->mHandler:Landroid/os/Handler;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    new-instance v2, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19$1;
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-direct {v2, p0, v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19$1;-><init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;Ljava/lang/String;)V
+    move-result-object v1
 
-    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    const-string/jumbo v2, ",response="
 
-    .line 2272
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    # invokes: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getPoints()V
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$300(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)V
+    move-result-object v1
 
-    .line 2273
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 2326
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->f(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19$1;
+
+    invoke-direct {v1, p0, p4}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19$1;-><init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 2351
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->b(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)V
+
+    .line 2352
     return-void
 .end method

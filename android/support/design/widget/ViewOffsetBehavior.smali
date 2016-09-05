@@ -28,7 +28,6 @@
     .registers 2
 
     .prologue
-    .local p0, "this":Landroid/support/design/widget/ViewOffsetBehavior;, "Landroid/support/design/widget/ViewOffsetBehavior<TV;>;"
     const/4 v0, 0x0
 
     .line 33
@@ -46,11 +45,8 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
-    .local p0, "this":Landroid/support/design/widget/ViewOffsetBehavior;, "Landroid/support/design/widget/ViewOffsetBehavior<TV;>;"
     const/4 v0, 0x0
 
     .line 36
@@ -73,7 +69,6 @@
 
     .prologue
     .line 89
-    .local p0, "this":Landroid/support/design/widget/ViewOffsetBehavior;, "Landroid/support/design/widget/ViewOffsetBehavior<TV;>;"
     iget-object v0, p0, Landroid/support/design/widget/ViewOffsetBehavior;->mViewOffsetHelper:Landroid/support/design/widget/ViewOffsetHelper;
 
     if-eqz v0, :cond_b
@@ -98,7 +93,6 @@
 
     .prologue
     .line 85
-    .local p0, "this":Landroid/support/design/widget/ViewOffsetBehavior;, "Landroid/support/design/widget/ViewOffsetBehavior<TV;>;"
     iget-object v0, p0, Landroid/support/design/widget/ViewOffsetBehavior;->mViewOffsetHelper:Landroid/support/design/widget/ViewOffsetHelper;
 
     if-eqz v0, :cond_b
@@ -120,8 +114,6 @@
 
 .method protected layoutChild(Landroid/support/design/widget/CoordinatorLayout;Landroid/view/View;I)V
     .registers 4
-    .param p1, "parent"    # Landroid/support/design/widget/CoordinatorLayout;
-    .param p3, "layoutDirection"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -132,8 +124,6 @@
 
     .prologue
     .line 63
-    .local p0, "this":Landroid/support/design/widget/ViewOffsetBehavior;, "Landroid/support/design/widget/ViewOffsetBehavior<TV;>;"
-    .local p2, "child":Landroid/view/View;, "TV;"
     invoke-virtual {p1, p2, p3}, Landroid/support/design/widget/CoordinatorLayout;->onLayoutChild(Landroid/view/View;I)V
 
     .line 64
@@ -142,8 +132,6 @@
 
 .method public onLayoutChild(Landroid/support/design/widget/CoordinatorLayout;Landroid/view/View;I)Z
     .registers 7
-    .param p1, "parent"    # Landroid/support/design/widget/CoordinatorLayout;
-    .param p3, "layoutDirection"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -153,8 +141,6 @@
     .end annotation
 
     .prologue
-    .local p0, "this":Landroid/support/design/widget/ViewOffsetBehavior;, "Landroid/support/design/widget/ViewOffsetBehavior<TV;>;"
-    .local p2, "child":Landroid/view/View;, "TV;"
     const/4 v2, 0x0
 
     .line 42
@@ -218,11 +204,9 @@
 
 .method public setLeftAndRightOffset(I)Z
     .registers 3
-    .param p1, "offset"    # I
 
     .prologue
     .line 76
-    .local p0, "this":Landroid/support/design/widget/ViewOffsetBehavior;, "Landroid/support/design/widget/ViewOffsetBehavior<TV;>;"
     iget-object v0, p0, Landroid/support/design/widget/ViewOffsetBehavior;->mViewOffsetHelper:Landroid/support/design/widget/ViewOffsetHelper;
 
     if-eqz v0, :cond_b
@@ -250,11 +234,9 @@
 
 .method public setTopAndBottomOffset(I)Z
     .registers 3
-    .param p1, "offset"    # I
 
     .prologue
     .line 67
-    .local p0, "this":Landroid/support/design/widget/ViewOffsetBehavior;, "Landroid/support/design/widget/ViewOffsetBehavior<TV;>;"
     iget-object v0, p0, Landroid/support/design/widget/ViewOffsetBehavior;->mViewOffsetHelper:Landroid/support/design/widget/ViewOffsetHelper;
 
     if-eqz v0, :cond_b

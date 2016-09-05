@@ -6,19 +6,8 @@
 .implements Landroid/support/v7/view/menu/MenuBuilder$Callback;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/app/ToolbarActionBar;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x12
-    name = "MenuBuilderCallback"
-.end annotation
-
-
 # instance fields
-.field final synthetic this$0:Landroid/support/v7/app/ToolbarActionBar;
+.field final synthetic a:Landroid/support/v7/app/ToolbarActionBar;
 
 
 # direct methods
@@ -27,7 +16,7 @@
 
     .prologue
     .line 642
-    iput-object p1, p0, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;->this$0:Landroid/support/v7/app/ToolbarActionBar;
+    iput-object p1, p0, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,8 +25,6 @@
 
 .method synthetic constructor <init>(Landroid/support/v7/app/ToolbarActionBar;Landroid/support/v7/app/ToolbarActionBar$1;)V
     .registers 3
-    .param p1, "x0"    # Landroid/support/v7/app/ToolbarActionBar;
-    .param p2, "x1"    # Landroid/support/v7/app/ToolbarActionBar$1;
 
     .prologue
     .line 642
@@ -50,8 +37,6 @@
 # virtual methods
 .method public onMenuItemSelected(Landroid/support/v7/view/menu/MenuBuilder;Landroid/view/MenuItem;)Z
     .registers 4
-    .param p1, "menu"    # Landroid/support/v7/view/menu/MenuBuilder;
-    .param p2, "item"    # Landroid/view/MenuItem;
 
     .prologue
     .line 646
@@ -62,26 +47,23 @@
 
 .method public onMenuModeChange(Landroid/support/v7/view/menu/MenuBuilder;)V
     .registers 6
-    .param p1, "menu"    # Landroid/support/v7/view/menu/MenuBuilder;
 
     .prologue
     const/16 v3, 0x6c
 
     .line 651
-    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;->this$0:Landroid/support/v7/app/ToolbarActionBar;
+    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    # getter for: Landroid/support/v7/app/ToolbarActionBar;->mWindowCallback:Landroid/view/Window$Callback;
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->access$000(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
+    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
 
     move-result-object v0
 
     if-eqz v0, :cond_1f
 
     .line 652
-    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;->this$0:Landroid/support/v7/app/ToolbarActionBar;
+    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    # getter for: Landroid/support/v7/app/ToolbarActionBar;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->access$300(Landroid/support/v7/app/ToolbarActionBar;)Landroid/support/v7/widget/DecorToolbar;
+    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->c(Landroid/support/v7/app/ToolbarActionBar;)Landroid/support/v7/widget/DecorToolbar;
 
     move-result-object v0
 
@@ -92,10 +74,9 @@
     if-eqz v0, :cond_20
 
     .line 653
-    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;->this$0:Landroid/support/v7/app/ToolbarActionBar;
+    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    # getter for: Landroid/support/v7/app/ToolbarActionBar;->mWindowCallback:Landroid/view/Window$Callback;
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->access$000(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
+    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
 
     move-result-object v0
 
@@ -108,10 +89,9 @@
 
     .line 654
     :cond_20
-    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;->this$0:Landroid/support/v7/app/ToolbarActionBar;
+    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    # getter for: Landroid/support/v7/app/ToolbarActionBar;->mWindowCallback:Landroid/view/Window$Callback;
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->access$000(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
+    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
 
     move-result-object v0
 
@@ -126,10 +106,9 @@
     if-eqz v0, :cond_1f
 
     .line 656
-    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;->this$0:Landroid/support/v7/app/ToolbarActionBar;
+    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$MenuBuilderCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    # getter for: Landroid/support/v7/app/ToolbarActionBar;->mWindowCallback:Landroid/view/Window$Callback;
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->access$000(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
+    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
 
     move-result-object v0
 

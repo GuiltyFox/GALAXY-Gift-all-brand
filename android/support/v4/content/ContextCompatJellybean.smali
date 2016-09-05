@@ -4,21 +4,8 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 23
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static startActivities(Landroid/content/Context;[Landroid/content/Intent;Landroid/os/Bundle;)V
+.method public static a(Landroid/content/Context;[Landroid/content/Intent;Landroid/os/Bundle;)V
     .registers 3
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "intents"    # [Landroid/content/Intent;
-    .param p2, "options"    # Landroid/os/Bundle;
 
     .prologue
     .line 26

@@ -3,16 +3,9 @@
 .source "DBOpenHelper.java"
 
 
-# static fields
-.field private static final DB_NAME:Ljava/lang/String; = "dl.db"
-
-.field private static final DB_VERSION:I = 0x2
-
-
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 5
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 29
@@ -32,7 +25,6 @@
 # virtual methods
 .method public onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
     .registers 3
-    .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
 
     .prologue
     .line 34
@@ -51,9 +43,6 @@
 
 .method public onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
     .registers 5
-    .param p1, "db"    # Landroid/database/sqlite/SQLiteDatabase;
-    .param p2, "oldVersion"    # I
-    .param p3, "newVersion"    # I
 
     .prologue
     .line 40

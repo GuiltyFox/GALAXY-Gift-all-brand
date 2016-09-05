@@ -3,19 +3,12 @@
 .source "StackModel.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bzbs/lib/survey/bean/StackModel;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "PagesEntity"
-.end annotation
-
-
 # instance fields
-.field private listStack:Ljava/util/ArrayList;
+.field a:Z
+
+.field private b:I
+
+.field private c:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
@@ -25,10 +18,6 @@
         }
     .end annotation
 .end field
-
-.field private page:I
-
-.field radio:Z
 
 
 # direct methods
@@ -42,53 +31,35 @@
     .line 38
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/bzbs/lib/survey/bean/StackModel$PagesEntity;->radio:Z
+    iput-boolean v0, p0, Lcom/bzbs/lib/survey/bean/StackModel$PagesEntity;->a:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getListStack()Ljava/util/ArrayList;
-    .registers 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/ArrayList",
-            "<",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 55
-    iget-object v0, p0, Lcom/bzbs/lib/survey/bean/StackModel$PagesEntity;->listStack:Ljava/util/ArrayList;
-
-    return-object v0
-.end method
-
-.method public getPage()I
+.method public a()I
     .registers 2
 
     .prologue
     .line 43
-    iget v0, p0, Lcom/bzbs/lib/survey/bean/StackModel$PagesEntity;->page:I
+    iget v0, p0, Lcom/bzbs/lib/survey/bean/StackModel$PagesEntity;->b:I
 
     return v0
 .end method
 
-.method public isRadio()Z
+.method public a(I)V
     .registers 2
 
     .prologue
-    .line 59
-    iget-boolean v0, p0, Lcom/bzbs/lib/survey/bean/StackModel$PagesEntity;->radio:Z
+    .line 47
+    iput p1, p0, Lcom/bzbs/lib/survey/bean/StackModel$PagesEntity;->b:I
 
-    return v0
+    .line 48
+    return-void
 .end method
 
-.method public setListStack(Ljava/util/ArrayList;)V
+.method public a(Ljava/util/ArrayList;)V
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -102,33 +73,27 @@
 
     .prologue
     .line 51
-    .local p1, "listStack":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/lang/Integer;>;"
-    iput-object p1, p0, Lcom/bzbs/lib/survey/bean/StackModel$PagesEntity;->listStack:Ljava/util/ArrayList;
+    iput-object p1, p0, Lcom/bzbs/lib/survey/bean/StackModel$PagesEntity;->c:Ljava/util/ArrayList;
 
     .line 52
     return-void
 .end method
 
-.method public setPage(I)V
+.method public b()Ljava/util/ArrayList;
     .registers 2
-    .param p1, "page"    # I
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/ArrayList",
+            "<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
 
     .prologue
-    .line 47
-    iput p1, p0, Lcom/bzbs/lib/survey/bean/StackModel$PagesEntity;->page:I
+    .line 55
+    iget-object v0, p0, Lcom/bzbs/lib/survey/bean/StackModel$PagesEntity;->c:Ljava/util/ArrayList;
 
-    .line 48
-    return-void
-.end method
-
-.method public setRadio(Z)V
-    .registers 2
-    .param p1, "radio"    # Z
-
-    .prologue
-    .line 63
-    iput-boolean p1, p0, Lcom/bzbs/lib/survey/bean/StackModel$PagesEntity;->radio:Z
-
-    .line 64
-    return-void
+    return-object v0
 .end method

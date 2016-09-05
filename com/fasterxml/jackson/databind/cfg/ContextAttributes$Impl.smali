@@ -6,17 +6,6 @@
 .implements Ljava/io/Serializable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/cfg/ContextAttributes;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Impl"
-.end annotation
-
-
 # static fields
 .field protected static final EMPTY:Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;
 
@@ -92,7 +81,6 @@
 
     .prologue
     .line 88
-    .local p1, "shared":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Object;Ljava/lang/Object;>;"
     invoke-direct {p0}, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes;-><init>()V
 
     .line 89
@@ -127,8 +115,6 @@
 
     .prologue
     .line 93
-    .local p1, "shared":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Object;Ljava/lang/Object;>;"
-    .local p2, "nonShared":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Object;Ljava/lang/Object;>;"
     invoke-direct {p0}, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes;-><init>()V
 
     .line 94
@@ -161,7 +147,6 @@
 
     .prologue
     .line 212
-    .local p1, "src":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Object;Ljava/lang/Object;>;"
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0, p1}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
@@ -183,23 +168,21 @@
 # virtual methods
 .method public getAttribute(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
-    .param p1, "key"    # Ljava/lang/Object;
 
     .prologue
     .line 156
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_nonShared:Ljava/util/Map;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_nonShared:Ljava/util/Map;
 
-    if-eqz v1, :cond_12
+    if-eqz v0, :cond_12
 
     .line 157
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_nonShared:Ljava/util/Map;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_nonShared:Ljava/util/Map;
 
-    invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     .line 158
-    .local v0, "ob":Ljava/lang/Object;
     if-eqz v0, :cond_12
 
     .line 159
@@ -211,15 +194,14 @@
     const/4 v0, 0x0
 
     .line 165
-    .end local v0    # "ob":Ljava/lang/Object;
     :cond_11
     :goto_11
     return-object v0
 
     :cond_12
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_shared:Ljava/util/Map;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_shared:Ljava/util/Map;
 
-    invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -228,8 +210,6 @@
 
 .method protected nonSharedInstance(Ljava/lang/Object;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/cfg/ContextAttributes;
     .registers 6
-    .param p1, "key"    # Ljava/lang/Object;
-    .param p2, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 202
@@ -238,7 +218,6 @@
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     .line 203
-    .local v0, "m":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Object;Ljava/lang/Object;>;"
     if-nez p2, :cond_9
 
     .line 204
@@ -260,8 +239,6 @@
 
 .method public withPerCallAttribute(Ljava/lang/Object;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/cfg/ContextAttributes;
     .registers 4
-    .param p1, "key"    # Ljava/lang/Object;
-    .param p2, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 172
@@ -291,13 +268,11 @@
     move-result-object p0
 
     .line 187
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;
     :cond_14
     :goto_14
     return-object p0
 
     .line 186
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;
     :cond_15
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_nonShared:Ljava/util/Map;
 
@@ -308,14 +283,12 @@
 
 .method public withSharedAttribute(Ljava/lang/Object;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/cfg/ContextAttributes;
     .registers 5
-    .param p1, "key"    # Ljava/lang/Object;
-    .param p2, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 113
-    sget-object v1, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->EMPTY:Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;
+    sget-object v0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->EMPTY:Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;
 
-    if-ne p0, v1, :cond_14
+    if-ne p0, v0, :cond_14
 
     .line 114
     new-instance v0, Ljava/util/HashMap;
@@ -325,7 +298,6 @@
     invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
 
     .line 118
-    .local v0, "m":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Object;Ljava/lang/Object;>;"
     :goto_b
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -337,15 +309,13 @@
     return-object v1
 
     .line 116
-    .end local v0    # "m":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Object;Ljava/lang/Object;>;"
     :cond_14
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_shared:Ljava/util/Map;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_shared:Ljava/util/Map;
 
-    invoke-direct {p0, v1}, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_copy(Ljava/util/Map;)Ljava/util/Map;
+    invoke-direct {p0, v0}, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_copy(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
 
-    .restart local v0    # "m":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Object;Ljava/lang/Object;>;"
     goto :goto_b
 .end method
 
@@ -365,7 +335,6 @@
 
     .prologue
     .line 124
-    .local p1, "shared":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Object;Ljava/lang/Object;>;"
     new-instance v0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;
 
     invoke-direct {v0, p1}, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;-><init>(Ljava/util/Map;)V
@@ -374,46 +343,43 @@
 .end method
 
 .method public withoutSharedAttribute(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/cfg/ContextAttributes;
-    .registers 5
-    .param p1, "key"    # Ljava/lang/Object;
+    .registers 4
 
     .prologue
     .line 131
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_shared:Ljava/util/Map;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_shared:Ljava/util/Map;
 
-    invoke-interface {v1}, Ljava/util/Map;->isEmpty()Z
+    invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_9
+    if-eqz v0, :cond_9
 
     .line 144
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;
     :cond_8
     :goto_8
     return-object p0
 
     .line 134
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;
     :cond_9
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_shared:Ljava/util/Map;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_shared:Ljava/util/Map;
 
-    invoke-interface {v1, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+    invoke-interface {v0, p1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_8
+    if-eqz v0, :cond_8
 
     .line 135
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_shared:Ljava/util/Map;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_shared:Ljava/util/Map;
 
-    invoke-interface {v1}, Ljava/util/Map;->size()I
+    invoke-interface {v0}, Ljava/util/Map;->size()I
 
-    move-result v1
+    move-result v0
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    if-ne v1, v2, :cond_1d
+    if-ne v0, v1, :cond_1d
 
     .line 136
     sget-object p0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->EMPTY:Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;
@@ -422,20 +388,18 @@
 
     .line 142
     :cond_1d
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_shared:Ljava/util/Map;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_shared:Ljava/util/Map;
 
-    invoke-direct {p0, v1}, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_copy(Ljava/util/Map;)Ljava/util/Map;
+    invoke-direct {p0, v0}, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;->_copy(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
 
     .line 143
-    .local v0, "m":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Object;Ljava/lang/Object;>;"
     invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 144
     new-instance p0, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;
     invoke-direct {p0, v0}, Lcom/fasterxml/jackson/databind/cfg/ContextAttributes$Impl;-><init>(Ljava/util/Map;)V
 
     goto :goto_8

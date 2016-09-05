@@ -11,11 +11,6 @@
     value = Lcom/bumptech/glide/load/model/GenericLoaderFactory;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 
 # direct methods
 .method constructor <init>()V
@@ -30,11 +25,8 @@
 
 
 # virtual methods
-.method public getResourceFetcher(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
+.method public a(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
     .registers 6
-    .param p1, "model"    # Ljava/lang/Object;
-    .param p2, "width"    # I
-    .param p3, "height"    # I
 
     .prologue
     .line 25

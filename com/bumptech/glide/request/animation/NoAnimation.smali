@@ -7,12 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/bumptech/glide/request/animation/NoAnimation$NoAnimationFactory;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<R:",
@@ -26,7 +20,7 @@
 
 
 # static fields
-.field private static final NO_ANIMATION:Lcom/bumptech/glide/request/animation/NoAnimation;
+.field private static final a:Lcom/bumptech/glide/request/animation/NoAnimation;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/request/animation/NoAnimation",
@@ -35,7 +29,7 @@
     .end annotation
 .end field
 
-.field private static final NO_ANIMATION_FACTORY:Lcom/bumptech/glide/request/animation/GlideAnimationFactory;
+.field private static final b:Lcom/bumptech/glide/request/animation/GlideAnimationFactory;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/request/animation/GlideAnimationFactory",
@@ -55,14 +49,14 @@
 
     invoke-direct {v0}, Lcom/bumptech/glide/request/animation/NoAnimation;-><init>()V
 
-    sput-object v0, Lcom/bumptech/glide/request/animation/NoAnimation;->NO_ANIMATION:Lcom/bumptech/glide/request/animation/NoAnimation;
+    sput-object v0, Lcom/bumptech/glide/request/animation/NoAnimation;->a:Lcom/bumptech/glide/request/animation/NoAnimation;
 
     .line 11
     new-instance v0, Lcom/bumptech/glide/request/animation/NoAnimation$NoAnimationFactory;
 
     invoke-direct {v0}, Lcom/bumptech/glide/request/animation/NoAnimation$NoAnimationFactory;-><init>()V
 
-    sput-object v0, Lcom/bumptech/glide/request/animation/NoAnimation;->NO_ANIMATION_FACTORY:Lcom/bumptech/glide/request/animation/GlideAnimationFactory;
+    sput-object v0, Lcom/bumptech/glide/request/animation/NoAnimation;->b:Lcom/bumptech/glide/request/animation/GlideAnimationFactory;
 
     return-void
 .end method
@@ -72,43 +66,13 @@
 
     .prologue
     .line 8
-    .local p0, "this":Lcom/bumptech/glide/request/animation/NoAnimation;, "Lcom/bumptech/glide/request/animation/NoAnimation<TR;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 16
     return-void
 .end method
 
-.method static synthetic access$000()Lcom/bumptech/glide/request/animation/NoAnimation;
-    .registers 1
-
-    .prologue
-    .line 8
-    sget-object v0, Lcom/bumptech/glide/request/animation/NoAnimation;->NO_ANIMATION:Lcom/bumptech/glide/request/animation/NoAnimation;
-
-    return-object v0
-.end method
-
-.method public static get()Lcom/bumptech/glide/request/animation/GlideAnimation;
-    .registers 1
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<R:",
-            "Ljava/lang/Object;",
-            ">()",
-            "Lcom/bumptech/glide/request/animation/GlideAnimation",
-            "<TR;>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 37
-    sget-object v0, Lcom/bumptech/glide/request/animation/NoAnimation;->NO_ANIMATION:Lcom/bumptech/glide/request/animation/NoAnimation;
-
-    return-object v0
-.end method
-
-.method public static getFactory()Lcom/bumptech/glide/request/animation/GlideAnimationFactory;
+.method public static a()Lcom/bumptech/glide/request/animation/GlideAnimationFactory;
     .registers 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -122,21 +86,47 @@
 
     .prologue
     .line 29
-    sget-object v0, Lcom/bumptech/glide/request/animation/NoAnimation;->NO_ANIMATION_FACTORY:Lcom/bumptech/glide/request/animation/GlideAnimationFactory;
+    sget-object v0, Lcom/bumptech/glide/request/animation/NoAnimation;->b:Lcom/bumptech/glide/request/animation/GlideAnimationFactory;
+
+    return-object v0
+.end method
+
+.method public static b()Lcom/bumptech/glide/request/animation/GlideAnimation;
+    .registers 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<R:",
+            "Ljava/lang/Object;",
+            ">()",
+            "Lcom/bumptech/glide/request/animation/GlideAnimation",
+            "<TR;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 37
+    sget-object v0, Lcom/bumptech/glide/request/animation/NoAnimation;->a:Lcom/bumptech/glide/request/animation/NoAnimation;
+
+    return-object v0
+.end method
+
+.method static synthetic c()Lcom/bumptech/glide/request/animation/NoAnimation;
+    .registers 1
+
+    .prologue
+    .line 8
+    sget-object v0, Lcom/bumptech/glide/request/animation/NoAnimation;->a:Lcom/bumptech/glide/request/animation/NoAnimation;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public animate(Ljava/lang/Object;Lcom/bumptech/glide/request/animation/GlideAnimation$ViewAdapter;)Z
+.method public a(Ljava/lang/Object;Lcom/bumptech/glide/request/animation/GlideAnimation$ViewAdapter;)Z
     .registers 4
-    .param p1, "current"    # Ljava/lang/Object;
-    .param p2, "adapter"    # Lcom/bumptech/glide/request/animation/GlideAnimation$ViewAdapter;
 
     .prologue
     .line 45
-    .local p0, "this":Lcom/bumptech/glide/request/animation/NoAnimation;, "Lcom/bumptech/glide/request/animation/NoAnimation<TR;>;"
     const/4 v0, 0x0
 
     return v0

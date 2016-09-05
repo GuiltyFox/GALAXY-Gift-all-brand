@@ -8,20 +8,15 @@
     value = Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
-    name = null
-.end annotation
-
 
 # static fields
-.field static final synthetic $SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$AnimationStyle:[I
+.field static final synthetic a:[I
 
-.field static final synthetic $SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
+.field static final synthetic b:[I
 
-.field static final synthetic $SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
+.field static final synthetic c:[I
 
-.field static final synthetic $SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$State:[I
+.field static final synthetic d:[I
 
 
 # direct methods
@@ -38,12 +33,12 @@
 
     new-array v0, v0, [I
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$AnimationStyle:[I
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->d:[I
 
     :try_start_9
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$AnimationStyle:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->d:[I
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->ROTATE:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->ordinal()I
 
@@ -57,9 +52,9 @@
 
     :goto_14
     :try_start_14
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$AnimationStyle:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->d:[I
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->FLIP:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->ordinal()I
 
@@ -81,12 +76,12 @@
 
     new-array v0, v0, [I
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->c:[I
 
     :try_start_28
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->c:[I
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_END:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->c:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
 
@@ -100,9 +95,9 @@
 
     :goto_33
     :try_start_33
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->c:[I
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_START:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
 
@@ -116,9 +111,9 @@
 
     :goto_3e
     :try_start_3e
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->c:[I
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->MANUAL_REFRESH_ONLY:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->e:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
 
@@ -132,9 +127,9 @@
 
     :goto_49
     :try_start_49
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->c:[I
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->BOTH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->d:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
 
@@ -156,12 +151,12 @@
 
     new-array v0, v0, [I
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$State:[I
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->b:[I
 
     :try_start_5d
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$State:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->b:[I
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->RESET:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->ordinal()I
 
@@ -175,9 +170,9 @@
 
     :goto_68
     :try_start_68
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$State:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->b:[I
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->PULL_TO_REFRESH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->ordinal()I
 
@@ -191,9 +186,9 @@
 
     :goto_73
     :try_start_73
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$State:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->b:[I
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->RELEASE_TO_REFRESH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->c:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->ordinal()I
 
@@ -207,9 +202,9 @@
 
     :goto_7e
     :try_start_7e
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$State:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->b:[I
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->REFRESHING:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->d:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->ordinal()I
 
@@ -223,9 +218,9 @@
 
     :goto_89
     :try_start_89
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$State:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->b:[I
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->MANUAL_REFRESHING:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->e:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->ordinal()I
 
@@ -239,9 +234,9 @@
 
     :goto_94
     :try_start_94
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$State:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->b:[I
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->OVERSCROLLING:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->f:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->ordinal()I
 
@@ -263,12 +258,12 @@
 
     new-array v0, v0, [I
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->a:[I
 
     :try_start_a8
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->a:[I
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->HORIZONTAL:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
     invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->ordinal()I
 
@@ -282,9 +277,9 @@
 
     :goto_b3
     :try_start_b3
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->a:[I
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->VERTICAL:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
     invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->ordinal()I
 

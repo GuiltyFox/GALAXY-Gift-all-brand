@@ -3,15 +3,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/gms/analytics/HitBuilders;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "AppViewBuilder"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/android/gms/analytics/HitBuilders$HitBuilder",
@@ -35,17 +26,17 @@
 
     const-string/jumbo v1, "screenview"
 
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/analytics/HitBuilders$AppViewBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
+    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/analytics/HitBuilders$AppViewBuilder;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public bridge synthetic build()Ljava/util/Map;
+.method public bridge synthetic a()Ljava/util/Map;
     .registers 2
 
-    invoke-super {p0}, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->build()Ljava/util/Map;
+    invoke-super {p0}, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->a()Ljava/util/Map;
 
     move-result-object v0
 

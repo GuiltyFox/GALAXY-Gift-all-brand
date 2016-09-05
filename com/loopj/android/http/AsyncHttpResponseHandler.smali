@@ -6,14 +6,6 @@
 .implements Lcom/loopj/android/http/ResponseHandlerInterface;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/loopj/android/http/AsyncHttpResponseHandler$ResponderHandler;
-    }
-.end annotation
-
-
 # static fields
 .field protected static final BUFFER_SIZE:I = 0x1000
 
@@ -81,7 +73,6 @@
 
 .method public constructor <init>(Landroid/os/Looper;)V
     .registers 5
-    .param p1, "looper"    # Landroid/os/Looper;
 
     .prologue
     const/4 v2, 0x0
@@ -119,7 +110,6 @@
 
     move-result-object p1
 
-    .end local p1    # "looper":Landroid/os/Looper;
     :cond_1d
     iput-object p1, p0, Lcom/loopj/android/http/AsyncHttpResponseHandler;->looper:Landroid/os/Looper;
 
@@ -135,7 +125,6 @@
 
 .method public constructor <init>(Z)V
     .registers 4
-    .param p1, "usePoolThread"    # Z
 
     .prologue
     const/4 v1, 0x0
@@ -234,30 +223,26 @@
 .end method
 
 .method getResponseData(Lcz/msebera/android/httpclient/HttpEntity;)[B
-    .registers 16
-    .param p1, "entity"    # Lcz/msebera/android/httpclient/HttpEntity;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 14
 
     .prologue
+    const/16 v0, 0x1000
+
+    const-wide/16 v4, 0x0
+
     .line 462
-    const/4 v9, 0x0
+    const/4 v1, 0x0
 
     .line 463
-    .local v9, "responseBody":[B
-    if-eqz p1, :cond_76
+    if-eqz p1, :cond_75
 
     .line 464
     invoke-interface {p1}, Lcz/msebera/android/httpclient/HttpEntity;->getContent()Ljava/io/InputStream;
 
-    move-result-object v7
+    move-result-object v8
 
     .line 465
-    .local v7, "instream":Ljava/io/InputStream;
-    if-eqz v7, :cond_76
+    if-eqz v8, :cond_75
 
     .line 466
     invoke-interface {p1}, Lcz/msebera/android/httpclient/HttpEntity;->getContentLength()J
@@ -265,180 +250,152 @@
     move-result-wide v2
 
     .line 467
-    .local v2, "contentLength":J
-    const-wide/32 v12, 0x7fffffff
+    const-wide/32 v6, 0x7fffffff
 
-    cmp-long v11, v2, v12
+    cmp-long v1, v2, v6
 
-    if-lez v11, :cond_1d
+    if-lez v1, :cond_21
 
     .line 468
-    new-instance v11, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v12, "HTTP entity too large to be buffered in memory"
+    const-string/jumbo v1, "HTTP entity too large to be buffered in memory"
 
-    invoke-direct {v11, v12}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v11
+    throw v0
 
     .line 470
-    :cond_1d
-    const-wide/16 v12, 0x0
+    :cond_21
+    cmp-long v1, v2, v4
 
-    cmp-long v11, v2, v12
-
-    if-gtz v11, :cond_68
-
-    const/16 v1, 0x1000
+    if-gtz v1, :cond_51
 
     .line 472
-    .local v1, "buffersize":I
     :goto_25
     :try_start_25
-    new-instance v0, Lcz/msebera/android/httpclient/util/ByteArrayBuffer;
+    new-instance v9, Lcz/msebera/android/httpclient/util/ByteArrayBuffer;
 
-    invoke-direct {v0, v1}, Lcz/msebera/android/httpclient/util/ByteArrayBuffer;-><init>(I)V
+    invoke-direct {v9, v0}, Lcz/msebera/android/httpclient/util/ByteArrayBuffer;-><init>(I)V
     :try_end_2a
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_25 .. :try_end_2a} :catch_5b
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_25 .. :try_end_2a} :catch_68
 
     .line 474
-    .local v0, "buffer":Lcz/msebera/android/httpclient/util/ByteArrayBuffer;
-    const/16 v11, 0x1000
+    const/16 v0, 0x1000
 
     :try_start_2c
-    new-array v10, v11, [B
+    new-array v10, v0, [B
 
-    .line 475
-    .local v10, "tmp":[B
-    const-wide/16 v4, 0x0
+    move-wide v0, v4
 
     .line 478
-    .local v4, "count":J
-    :goto_30
-    invoke-virtual {v7, v10}, Ljava/io/InputStream;->read([B)I
-
-    move-result v8
-
-    .local v8, "l":I
-    const/4 v11, -0x1
-
-    if-eq v8, v11, :cond_6c
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v11
-
-    invoke-virtual {v11}, Ljava/lang/Thread;->isInterrupted()Z
+    :goto_2f
+    invoke-virtual {v8, v10}, Ljava/io/InputStream;->read([B)I
 
     move-result v11
 
-    if-nez v11, :cond_6c
+    const/4 v6, -0x1
+
+    if-eq v11, v6, :cond_55
+
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/Thread;->isInterrupted()Z
+
+    move-result v6
+
+    if-nez v6, :cond_55
 
     .line 479
-    int-to-long v12, v8
+    int-to-long v6, v11
 
-    add-long/2addr v4, v12
+    add-long/2addr v6, v0
 
     .line 480
-    const/4 v11, 0x0
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, v10, v11, v8}, Lcz/msebera/android/httpclient/util/ByteArrayBuffer;->append([BII)V
+    invoke-virtual {v9, v10, v0, v11}, Lcz/msebera/android/httpclient/util/ByteArrayBuffer;->a([BII)V
 
     .line 481
-    const-wide/16 v12, 0x0
+    cmp-long v0, v2, v4
 
-    cmp-long v11, v2, v12
+    if-gtz v0, :cond_53
 
-    if-gtz v11, :cond_6a
+    const-wide/16 v0, 0x1
 
-    const-wide/16 v12, 0x1
+    :goto_4c
+    invoke-virtual {p0, v6, v7, v0, v1}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->sendProgressMessage(JJ)V
+    :try_end_4f
+    .catchall {:try_start_2c .. :try_end_4f} :catchall_60
 
-    :goto_4f
-    invoke-virtual {p0, v4, v5, v12, v13}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->sendProgressMessage(JJ)V
-    :try_end_52
-    .catchall {:try_start_2c .. :try_end_52} :catchall_53
+    move-wide v0, v6
 
-    goto :goto_30
-
-    .line 484
-    .end local v4    # "count":J
-    .end local v8    # "l":I
-    .end local v10    # "tmp":[B
-    :catchall_53
-    move-exception v11
-
-    :try_start_54
-    invoke-static {v7}, Lcom/loopj/android/http/AsyncHttpClient;->silentCloseInputStream(Ljava/io/InputStream;)V
-
-    .line 485
-    invoke-static {p1}, Lcom/loopj/android/http/AsyncHttpClient;->endEntityViaReflection(Lcz/msebera/android/httpclient/HttpEntity;)V
-
-    throw v11
-    :try_end_5b
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_54 .. :try_end_5b} :catch_5b
-
-    .line 488
-    .end local v0    # "buffer":Lcz/msebera/android/httpclient/util/ByteArrayBuffer;
-    :catch_5b
-    move-exception v6
-
-    .line 489
-    .local v6, "e":Ljava/lang/OutOfMemoryError;
-    invoke-static {}, Ljava/lang/System;->gc()V
-
-    .line 490
-    new-instance v11, Ljava/io/IOException;
-
-    const-string/jumbo v12, "File too large to fit into available memory"
-
-    invoke-direct {v11, v12}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    throw v11
+    goto :goto_2f
 
     .line 470
-    .end local v1    # "buffersize":I
-    .end local v6    # "e":Ljava/lang/OutOfMemoryError;
-    :cond_68
-    long-to-int v1, v2
+    :cond_51
+    long-to-int v0, v2
 
     goto :goto_25
 
-    .restart local v0    # "buffer":Lcz/msebera/android/httpclient/util/ByteArrayBuffer;
-    .restart local v1    # "buffersize":I
-    .restart local v4    # "count":J
-    .restart local v8    # "l":I
-    .restart local v10    # "tmp":[B
-    :cond_6a
-    move-wide v12, v2
+    :cond_53
+    move-wide v0, v2
 
     .line 481
-    goto :goto_4f
+    goto :goto_4c
 
     .line 484
-    :cond_6c
-    :try_start_6c
-    invoke-static {v7}, Lcom/loopj/android/http/AsyncHttpClient;->silentCloseInputStream(Ljava/io/InputStream;)V
+    :cond_55
+    :try_start_55
+    invoke-static {v8}, Lcom/loopj/android/http/AsyncHttpClient;->silentCloseInputStream(Ljava/io/InputStream;)V
 
     .line 485
     invoke-static {p1}, Lcom/loopj/android/http/AsyncHttpClient;->endEntityViaReflection(Lcz/msebera/android/httpclient/HttpEntity;)V
 
     .line 487
-    invoke-virtual {v0}, Lcz/msebera/android/httpclient/util/ByteArrayBuffer;->toByteArray()[B
-    :try_end_75
-    .catch Ljava/lang/OutOfMemoryError; {:try_start_6c .. :try_end_75} :catch_5b
+    invoke-virtual {v9}, Lcz/msebera/android/httpclient/util/ByteArrayBuffer;->b()[B
 
-    move-result-object v9
+    move-result-object v0
 
     .line 494
-    .end local v0    # "buffer":Lcz/msebera/android/httpclient/util/ByteArrayBuffer;
-    .end local v1    # "buffersize":I
-    .end local v2    # "contentLength":J
-    .end local v4    # "count":J
-    .end local v7    # "instream":Ljava/io/InputStream;
-    .end local v8    # "l":I
-    .end local v10    # "tmp":[B
-    :cond_76
-    return-object v9
+    :goto_5f
+    return-object v0
+
+    .line 484
+    :catchall_60
+    move-exception v0
+
+    invoke-static {v8}, Lcom/loopj/android/http/AsyncHttpClient;->silentCloseInputStream(Ljava/io/InputStream;)V
+
+    .line 485
+    invoke-static {p1}, Lcom/loopj/android/http/AsyncHttpClient;->endEntityViaReflection(Lcz/msebera/android/httpclient/HttpEntity;)V
+
+    throw v0
+    :try_end_68
+    .catch Ljava/lang/OutOfMemoryError; {:try_start_55 .. :try_end_68} :catch_68
+
+    .line 488
+    :catch_68
+    move-exception v0
+
+    .line 489
+    invoke-static {}, Ljava/lang/System;->gc()V
+
+    .line 490
+    new-instance v0, Ljava/io/IOException;
+
+    const-string/jumbo v1, "File too large to fit into available memory"
+
+    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_75
+    move-object v0, v1
+
+    goto :goto_5f
 .end method
 
 .method public getTag()Ljava/lang/Object;
@@ -476,21 +433,20 @@
 .end method
 
 .method protected handleMessage(Landroid/os/Message;)V
-    .registers 12
-    .param p1, "message"    # Landroid/os/Message;
+    .registers 7
 
     .prologue
-    const/4 v8, 0x3
+    const/4 v4, 0x3
 
-    const/4 v7, 0x2
+    const/4 v3, 0x2
 
-    const/4 v6, 0x1
+    const/4 v2, 0x1
 
     .line 347
     :try_start_3
-    iget v5, p1, Landroid/os/Message;->what:I
+    iget v0, p1, Landroid/os/Message;->what:I
 
-    packed-switch v5, :pswitch_data_f0
+    packed-switch v0, :pswitch_data_e8
 
     .line 397
     :goto_8
@@ -498,322 +454,290 @@
 
     .line 349
     :pswitch_9
-    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v5, [Ljava/lang/Object;
-
-    move-object v0, v5
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, [Ljava/lang/Object;
 
-    move-object v3, v0
+    check-cast v0, [Ljava/lang/Object;
 
     .line 350
-    .local v3, "response":[Ljava/lang/Object;
-    if-eqz v3, :cond_36
+    if-eqz v0, :cond_34
 
-    array-length v5, v3
+    array-length v1, v0
 
-    if-lt v5, v8, :cond_36
+    if-lt v1, v4, :cond_34
 
     .line 351
-    const/4 v5, 0x0
+    const/4 v1, 0x0
 
-    aget-object v5, v3, v5
+    aget-object v1, v0, v1
 
-    check-cast v5, Ljava/lang/Integer;
+    check-cast v1, Ljava/lang/Integer;
 
-    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    move-result v7
+    move-result v2
 
-    const/4 v5, 0x1
+    const/4 v1, 0x1
 
-    aget-object v5, v3, v5
+    aget-object v1, v0, v1
 
-    check-cast v5, [Lcz/msebera/android/httpclient/Header;
+    check-cast v1, [Lcz/msebera/android/httpclient/Header;
 
-    check-cast v5, [Lcz/msebera/android/httpclient/Header;
+    check-cast v1, [Lcz/msebera/android/httpclient/Header;
 
-    const/4 v6, 0x2
+    const/4 v3, 0x2
 
-    aget-object v6, v3, v6
+    aget-object v0, v0, v3
 
-    check-cast v6, [B
+    check-cast v0, [B
 
-    check-cast v6, [B
+    check-cast v0, [B
 
-    invoke-virtual {p0, v7, v5, v6}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->onSuccess(I[Lcz/msebera/android/httpclient/Header;[B)V
-    :try_end_30
-    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_30} :catch_31
+    invoke-virtual {p0, v2, v1, v0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->onSuccess(I[Lcz/msebera/android/httpclient/Header;[B)V
+    :try_end_2e
+    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_2e} :catch_2f
 
     goto :goto_8
 
     .line 394
-    .end local v3    # "response":[Ljava/lang/Object;
-    :catch_31
-    move-exception v2
+    :catch_2f
+    move-exception v0
 
     .line 395
-    .local v2, "error":Ljava/lang/Throwable;
-    invoke-virtual {p0, v2}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->onUserException(Ljava/lang/Throwable;)V
+    invoke-virtual {p0, v0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->onUserException(Ljava/lang/Throwable;)V
 
     goto :goto_8
 
     .line 353
-    .end local v2    # "error":Ljava/lang/Throwable;
-    .restart local v3    # "response":[Ljava/lang/Object;
-    :cond_36
-    :try_start_36
-    sget-object v5, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
+    :cond_34
+    :try_start_34
+    sget-object v0, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
 
-    const-string/jumbo v6, "AsyncHttpRH"
+    const-string/jumbo v1, "AsyncHttpRH"
 
-    const-string/jumbo v7, "SUCCESS_MESSAGE didn\'t got enough params"
+    const-string/jumbo v2, "SUCCESS_MESSAGE didn\'t got enough params"
 
-    invoke-interface {v5, v6, v7}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v0, v1, v2}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_8
 
     .line 357
-    .end local v3    # "response":[Ljava/lang/Object;
-    :pswitch_42
-    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v5, [Ljava/lang/Object;
-
-    move-object v0, v5
+    :pswitch_40
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, [Ljava/lang/Object;
 
-    move-object v3, v0
+    check-cast v0, [Ljava/lang/Object;
 
     .line 358
-    .restart local v3    # "response":[Ljava/lang/Object;
-    if-eqz v3, :cond_70
+    if-eqz v0, :cond_6c
 
-    array-length v5, v3
+    array-length v1, v0
 
-    const/4 v6, 0x4
+    const/4 v2, 0x4
 
-    if-lt v5, v6, :cond_70
+    if-lt v1, v2, :cond_6c
 
     .line 359
-    const/4 v5, 0x0
+    const/4 v1, 0x0
 
-    aget-object v5, v3, v5
+    aget-object v1, v0, v1
 
-    check-cast v5, Ljava/lang/Integer;
+    check-cast v1, Ljava/lang/Integer;
 
-    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    move-result v8
+    move-result v3
 
-    const/4 v5, 0x1
+    const/4 v1, 0x1
 
-    aget-object v5, v3, v5
+    aget-object v1, v0, v1
 
-    check-cast v5, [Lcz/msebera/android/httpclient/Header;
+    check-cast v1, [Lcz/msebera/android/httpclient/Header;
 
-    check-cast v5, [Lcz/msebera/android/httpclient/Header;
+    check-cast v1, [Lcz/msebera/android/httpclient/Header;
 
-    const/4 v6, 0x2
+    const/4 v2, 0x2
 
-    aget-object v6, v3, v6
+    aget-object v2, v0, v2
 
-    check-cast v6, [B
+    check-cast v2, [B
 
-    check-cast v6, [B
+    check-cast v2, [B
 
-    const/4 v7, 0x3
+    const/4 v4, 0x3
 
-    aget-object v7, v3, v7
+    aget-object v0, v0, v4
 
-    check-cast v7, Ljava/lang/Throwable;
+    check-cast v0, Ljava/lang/Throwable;
 
-    invoke-virtual {p0, v8, v5, v6, v7}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->onFailure(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
+    invoke-virtual {p0, v3, v1, v2, v0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->onFailure(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
 
     goto :goto_8
 
     .line 361
-    :cond_70
-    sget-object v5, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
+    :cond_6c
+    sget-object v0, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
 
-    const-string/jumbo v6, "AsyncHttpRH"
+    const-string/jumbo v1, "AsyncHttpRH"
 
-    const-string/jumbo v7, "FAILURE_MESSAGE didn\'t got enough params"
+    const-string/jumbo v2, "FAILURE_MESSAGE didn\'t got enough params"
 
-    invoke-interface {v5, v6, v7}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v0, v1, v2}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_8
 
     .line 365
-    .end local v3    # "response":[Ljava/lang/Object;
-    :pswitch_7c
+    :pswitch_78
     invoke-virtual {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->onStart()V
 
     goto :goto_8
 
     .line 368
-    :pswitch_80
+    :pswitch_7c
     invoke-virtual {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->onFinish()V
 
     goto :goto_8
 
     .line 371
-    :pswitch_84
-    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v5, [Ljava/lang/Object;
-
-    move-object v0, v5
+    :pswitch_80
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, [Ljava/lang/Object;
 
-    move-object v3, v0
+    check-cast v0, [Ljava/lang/Object;
 
     .line 372
-    .restart local v3    # "response":[Ljava/lang/Object;
-    if-eqz v3, :cond_b6
+    if-eqz v0, :cond_b0
 
-    array-length v5, v3
-    :try_end_8f
-    .catch Ljava/lang/Throwable; {:try_start_36 .. :try_end_8f} :catch_31
+    array-length v1, v0
+    :try_end_89
+    .catch Ljava/lang/Throwable; {:try_start_34 .. :try_end_89} :catch_2f
 
-    if-lt v5, v7, :cond_b6
+    if-lt v1, v3, :cond_b0
 
     .line 374
-    const/4 v5, 0x0
+    const/4 v1, 0x0
 
-    :try_start_92
-    aget-object v5, v3, v5
+    :try_start_8c
+    aget-object v1, v0, v1
 
-    check-cast v5, Ljava/lang/Long;
+    check-cast v1, Ljava/lang/Long;
 
-    invoke-virtual {v5}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v6
+    move-result-wide v2
 
-    const/4 v5, 0x1
+    const/4 v1, 0x1
 
-    aget-object v5, v3, v5
+    aget-object v0, v0, v1
 
-    check-cast v5, Ljava/lang/Long;
+    check-cast v0, Ljava/lang/Long;
 
-    invoke-virtual {v5}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v8
+    move-result-wide v0
 
-    invoke-virtual {p0, v6, v7, v8, v9}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->onProgress(JJ)V
-    :try_end_a6
-    .catch Ljava/lang/Throwable; {:try_start_92 .. :try_end_a6} :catch_a8
+    invoke-virtual {p0, v2, v3, v0, v1}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->onProgress(JJ)V
+    :try_end_a0
+    .catch Ljava/lang/Throwable; {:try_start_8c .. :try_end_a0} :catch_a2
 
     goto/16 :goto_8
 
     .line 375
-    :catch_a8
-    move-exception v4
+    :catch_a2
+    move-exception v0
 
     .line 376
-    .local v4, "t":Ljava/lang/Throwable;
-    :try_start_a9
-    sget-object v5, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
+    :try_start_a3
+    sget-object v1, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
 
-    const-string/jumbo v6, "AsyncHttpRH"
+    const-string/jumbo v2, "AsyncHttpRH"
 
-    const-string/jumbo v7, "custom onProgress contains an error"
+    const-string/jumbo v3, "custom onProgress contains an error"
 
-    invoke-interface {v5, v6, v7, v4}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-interface {v1, v2, v3, v0}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto/16 :goto_8
 
     .line 379
-    .end local v4    # "t":Ljava/lang/Throwable;
-    :cond_b6
-    sget-object v5, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
+    :cond_b0
+    sget-object v0, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
 
-    const-string/jumbo v6, "AsyncHttpRH"
+    const-string/jumbo v1, "AsyncHttpRH"
 
-    const-string/jumbo v7, "PROGRESS_MESSAGE didn\'t got enough params"
+    const-string/jumbo v2, "PROGRESS_MESSAGE didn\'t got enough params"
 
-    invoke-interface {v5, v6, v7}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v0, v1, v2}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_8
 
     .line 383
-    .end local v3    # "response":[Ljava/lang/Object;
-    :pswitch_c3
-    iget-object v5, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v5, [Ljava/lang/Object;
-
-    move-object v0, v5
+    :pswitch_bd
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, [Ljava/lang/Object;
 
-    move-object v3, v0
+    check-cast v0, [Ljava/lang/Object;
 
     .line 384
-    .restart local v3    # "response":[Ljava/lang/Object;
-    if-eqz v3, :cond_de
+    if-eqz v0, :cond_d6
 
-    array-length v5, v3
+    array-length v1, v0
 
-    if-ne v5, v6, :cond_de
+    if-ne v1, v2, :cond_d6
 
     .line 385
-    const/4 v5, 0x0
+    const/4 v1, 0x0
 
-    aget-object v5, v3, v5
+    aget-object v0, v0, v1
 
-    check-cast v5, Ljava/lang/Integer;
+    check-cast v0, Ljava/lang/Integer;
 
-    invoke-virtual {v5}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
-    move-result v5
+    move-result v0
 
-    invoke-virtual {p0, v5}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->onRetry(I)V
+    invoke-virtual {p0, v0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->onRetry(I)V
 
     goto/16 :goto_8
 
     .line 387
-    :cond_de
-    sget-object v5, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
+    :cond_d6
+    sget-object v0, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
 
-    const-string/jumbo v6, "AsyncHttpRH"
+    const-string/jumbo v1, "AsyncHttpRH"
 
-    const-string/jumbo v7, "RETRY_MESSAGE didn\'t get enough params"
+    const-string/jumbo v2, "RETRY_MESSAGE didn\'t get enough params"
 
-    invoke-interface {v5, v6, v7}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v0, v1, v2}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;)V
 
     goto/16 :goto_8
 
     .line 391
-    .end local v3    # "response":[Ljava/lang/Object;
-    :pswitch_eb
+    :pswitch_e3
     invoke-virtual {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->onCancel()V
-    :try_end_ee
-    .catch Ljava/lang/Throwable; {:try_start_a9 .. :try_end_ee} :catch_31
+    :try_end_e6
+    .catch Ljava/lang/Throwable; {:try_start_a3 .. :try_end_e6} :catch_2f
 
     goto/16 :goto_8
 
     .line 347
-    :pswitch_data_f0
+    :pswitch_data_e8
     .packed-switch 0x0
         :pswitch_9
-        :pswitch_42
+        :pswitch_40
+        :pswitch_78
         :pswitch_7c
         :pswitch_80
-        :pswitch_84
-        :pswitch_c3
-        :pswitch_eb
+        :pswitch_bd
+        :pswitch_e3
     .end packed-switch
 .end method
 
 .method protected obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
     .registers 4
-    .param p1, "responseMessageId"    # I
-    .param p2, "responseMessageData"    # Ljava/lang/Object;
 
     .prologue
     .line 433
@@ -856,8 +780,6 @@
 
 .method public onPostProcessResponse(Lcom/loopj/android/http/ResponseHandlerInterface;Lcz/msebera/android/httpclient/HttpResponse;)V
     .registers 3
-    .param p1, "instance"    # Lcom/loopj/android/http/ResponseHandlerInterface;
-    .param p2, "response"    # Lcz/msebera/android/httpclient/HttpResponse;
 
     .prologue
     .line 268
@@ -866,8 +788,6 @@
 
 .method public onPreProcessResponse(Lcom/loopj/android/http/ResponseHandlerInterface;Lcz/msebera/android/httpclient/HttpResponse;)V
     .registers 3
-    .param p1, "instance"    # Lcom/loopj/android/http/ResponseHandlerInterface;
-    .param p2, "response"    # Lcz/msebera/android/httpclient/HttpResponse;
 
     .prologue
     .line 263
@@ -876,8 +796,6 @@
 
 .method public onProgress(JJ)V
     .registers 16
-    .param p1, "bytesWritten"    # J
-    .param p3, "totalSize"    # J
 
     .prologue
     .line 242
@@ -917,7 +835,7 @@
 
     long-to-double v0, p1
 
-    const-wide/high16 v8, 0x3ff0000000000000L
+    const-wide/high16 v8, 0x3ff0000000000000L    # 1.0
 
     mul-double/2addr v0, v8
 
@@ -925,7 +843,7 @@
 
     div-double/2addr v0, v8
 
-    const-wide/high16 v8, 0x4059000000000000L
+    const-wide/high16 v8, 0x4059000000000000L    # 100.0
 
     mul-double/2addr v0, v8
 
@@ -947,14 +865,13 @@
 
     .line 242
     :cond_37
-    const-wide/high16 v0, -0x4010000000000000L
+    const-wide/high16 v0, -0x4010000000000000L    # -1.0
 
     goto :goto_29
 .end method
 
 .method public onRetry(I)V
     .registers 8
-    .param p1, "retryNo"    # I
 
     .prologue
     .line 295
@@ -999,7 +916,6 @@
 
 .method public onUserException(Ljava/lang/Throwable;)V
     .registers 5
-    .param p1, "error"    # Ljava/lang/Throwable;
 
     .prologue
     .line 303
@@ -1021,7 +937,6 @@
 
 .method protected postRunnable(Ljava/lang/Runnable;)V
     .registers 3
-    .param p1, "runnable"    # Ljava/lang/Runnable;
 
     .prologue
     .line 414
@@ -1077,10 +992,6 @@
 
 .method public final sendFailureMessage(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
     .registers 9
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBody"    # [B
-    .param p4, "throwable"    # Ljava/lang/Throwable;
 
     .prologue
     const/4 v3, 0x1
@@ -1139,7 +1050,6 @@
 
 .method protected sendMessage(Landroid/os/Message;)V
     .registers 4
-    .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
     .line 400
@@ -1202,8 +1112,6 @@
 
 .method public final sendProgressMessage(JJ)V
     .registers 10
-    .param p1, "bytesWritten"    # J
-    .param p3, "bytesTotal"    # J
 
     .prologue
     .line 309
@@ -1240,43 +1148,35 @@
 .end method
 
 .method public sendResponseMessage(Lcz/msebera/android/httpclient/HttpResponse;)V
-    .registers 9
-    .param p1, "response"    # Lcz/msebera/android/httpclient/HttpResponse;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 8
 
     .prologue
     .line 439
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/Thread;->isInterrupted()Z
+    invoke-virtual {v0}, Ljava/lang/Thread;->isInterrupted()Z
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_40
+    if-nez v0, :cond_40
 
     .line 440
-    invoke-interface {p1}, Lcz/msebera/android/httpclient/HttpResponse;->getStatusLine()Lcz/msebera/android/httpclient/StatusLine;
-
-    move-result-object v1
-
-    .line 442
-    .local v1, "status":Lcz/msebera/android/httpclient/StatusLine;
-    invoke-interface {p1}, Lcz/msebera/android/httpclient/HttpResponse;->getEntity()Lcz/msebera/android/httpclient/HttpEntity;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v2}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->getResponseData(Lcz/msebera/android/httpclient/HttpEntity;)[B
+    invoke-interface {p1}, Lcz/msebera/android/httpclient/HttpResponse;->a()Lcz/msebera/android/httpclient/StatusLine;
 
     move-result-object v0
 
+    .line 442
+    invoke-interface {p1}, Lcz/msebera/android/httpclient/HttpResponse;->b()Lcz/msebera/android/httpclient/HttpEntity;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->getResponseData(Lcz/msebera/android/httpclient/HttpEntity;)[B
+
+    move-result-object v1
+
     .line 444
-    .local v0, "responseBody":[B
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v2
@@ -1288,7 +1188,7 @@
     if-nez v2, :cond_40
 
     .line 445
-    invoke-interface {v1}, Lcz/msebera/android/httpclient/StatusLine;->getStatusCode()I
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/StatusLine;->b()I
 
     move-result v2
 
@@ -1297,7 +1197,7 @@
     if-lt v2, v3, :cond_41
 
     .line 446
-    invoke-interface {v1}, Lcz/msebera/android/httpclient/StatusLine;->getStatusCode()I
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/StatusLine;->b()I
 
     move-result v2
 
@@ -1307,45 +1207,40 @@
 
     new-instance v4, Lcz/msebera/android/httpclient/client/HttpResponseException;
 
-    invoke-interface {v1}, Lcz/msebera/android/httpclient/StatusLine;->getStatusCode()I
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/StatusLine;->b()I
 
     move-result v5
 
-    invoke-interface {v1}, Lcz/msebera/android/httpclient/StatusLine;->getReasonPhrase()Ljava/lang/String;
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/StatusLine;->c()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-direct {v4, v5, v6}, Lcz/msebera/android/httpclient/client/HttpResponseException;-><init>(ILjava/lang/String;)V
+    invoke-direct {v4, v5, v0}, Lcz/msebera/android/httpclient/client/HttpResponseException;-><init>(ILjava/lang/String;)V
 
-    invoke-virtual {p0, v2, v3, v0, v4}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->sendFailureMessage(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
+    invoke-virtual {p0, v2, v3, v1, v4}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->sendFailureMessage(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
 
     .line 452
-    .end local v0    # "responseBody":[B
-    .end local v1    # "status":Lcz/msebera/android/httpclient/StatusLine;
     :cond_40
     :goto_40
     return-void
 
     .line 448
-    .restart local v0    # "responseBody":[B
-    .restart local v1    # "status":Lcz/msebera/android/httpclient/StatusLine;
     :cond_41
-    invoke-interface {v1}, Lcz/msebera/android/httpclient/StatusLine;->getStatusCode()I
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/StatusLine;->b()I
 
-    move-result v2
+    move-result v0
 
     invoke-interface {p1}, Lcz/msebera/android/httpclient/HttpResponse;->getAllHeaders()[Lcz/msebera/android/httpclient/Header;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {p0, v2, v3, v0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->sendSuccessMessage(I[Lcz/msebera/android/httpclient/Header;[B)V
+    invoke-virtual {p0, v0, v2, v1}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->sendSuccessMessage(I[Lcz/msebera/android/httpclient/Header;[B)V
 
     goto :goto_40
 .end method
 
 .method public final sendRetryMessage(I)V
     .registers 6
-    .param p1, "retryNo"    # I
 
     .prologue
     .line 334
@@ -1394,9 +1289,6 @@
 
 .method public final sendSuccessMessage(I[Lcz/msebera/android/httpclient/Header;[B)V
     .registers 7
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBytes"    # [B
 
     .prologue
     const/4 v2, 0x0
@@ -1432,7 +1324,6 @@
 
 .method public setCharset(Ljava/lang/String;)V
     .registers 2
-    .param p1, "charset"    # Ljava/lang/String;
 
     .prologue
     .line 232
@@ -1444,7 +1335,6 @@
 
 .method public setRequestHeaders([Lcz/msebera/android/httpclient/Header;)V
     .registers 2
-    .param p1, "requestHeaders"    # [Lcz/msebera/android/httpclient/Header;
 
     .prologue
     .line 176
@@ -1456,7 +1346,6 @@
 
 .method public setRequestURI(Ljava/net/URI;)V
     .registers 2
-    .param p1, "requestURI"    # Ljava/net/URI;
 
     .prologue
     .line 166
@@ -1468,7 +1357,6 @@
 
 .method public setTag(Ljava/lang/Object;)V
     .registers 3
-    .param p1, "TAG"    # Ljava/lang/Object;
 
     .prologue
     .line 156
@@ -1484,7 +1372,6 @@
 
 .method public setUsePoolThread(Z)V
     .registers 3
-    .param p1, "pool"    # Z
 
     .prologue
     const/4 v0, 0x0
@@ -1508,7 +1395,6 @@
 
 .method public setUseSynchronousMode(Z)V
     .registers 5
-    .param p1, "sync"    # Z
 
     .prologue
     .line 187

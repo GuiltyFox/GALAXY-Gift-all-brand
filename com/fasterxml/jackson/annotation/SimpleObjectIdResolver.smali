@@ -42,8 +42,6 @@
 # virtual methods
 .method public bindItem(Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;Ljava/lang/Object;)V
     .registers 6
-    .param p1, "id"    # Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;
-    .param p2, "ob"    # Ljava/lang/Object;
 
     .prologue
     .line 19
@@ -118,7 +116,6 @@
 
 .method public canUseFor(Lcom/fasterxml/jackson/annotation/ObjectIdResolver;)Z
     .registers 4
-    .param p1, "resolverType"    # Lcom/fasterxml/jackson/annotation/ObjectIdResolver;
 
     .prologue
     .line 35
@@ -145,7 +142,6 @@
 
 .method public newForDeserialization(Ljava/lang/Object;)Lcom/fasterxml/jackson/annotation/ObjectIdResolver;
     .registers 2
-    .param p1, "context"    # Ljava/lang/Object;
 
     .prologue
     .line 41
@@ -154,7 +150,6 @@
 
 .method public resolveId(Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;)Ljava/lang/Object;
     .registers 3
-    .param p1, "id"    # Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;
 
     .prologue
     .line 29

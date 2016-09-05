@@ -7,59 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lorg/parceler/NonParcelRepository$ConverterParcelable;,
-        Lorg/parceler/NonParcelRepository$StringParcelable;,
-        Lorg/parceler/NonParcelRepository$CharacterParcelable;,
-        Lorg/parceler/NonParcelRepository$CharArrayParcelable;,
-        Lorg/parceler/NonParcelRepository$BooleanParcelable;,
-        Lorg/parceler/NonParcelRepository$BooleanArrayParcelable;,
-        Lorg/parceler/NonParcelRepository$ByteArrayParcelable;,
-        Lorg/parceler/NonParcelRepository$IBinderParcelable;,
-        Lorg/parceler/NonParcelRepository$ByteParcelable;,
-        Lorg/parceler/NonParcelRepository$FloatParcelable;,
-        Lorg/parceler/NonParcelRepository$DoubleParcelable;,
-        Lorg/parceler/NonParcelRepository$LongParcelable;,
-        Lorg/parceler/NonParcelRepository$IntegerParcelable;,
-        Lorg/parceler/NonParcelRepository$SparseBooleanArrayParcelable;,
-        Lorg/parceler/NonParcelRepository$SparseArrayParcelable;,
-        Lorg/parceler/NonParcelRepository$CollectionParcelable;,
-        Lorg/parceler/NonParcelRepository$LinkedHashSetParcelable;,
-        Lorg/parceler/NonParcelRepository$TreeSetParcelable;,
-        Lorg/parceler/NonParcelRepository$SetParcelable;,
-        Lorg/parceler/NonParcelRepository$TreeMapParcelable;,
-        Lorg/parceler/NonParcelRepository$LinkedHashMapParcelable;,
-        Lorg/parceler/NonParcelRepository$MapParcelable;,
-        Lorg/parceler/NonParcelRepository$LinkedListParcelable;,
-        Lorg/parceler/NonParcelRepository$ListParcelable;,
-        Lorg/parceler/NonParcelRepository$StringParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$ByteParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$FloatParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$DoubleParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$LongParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$IntegerParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$SparseArrayParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$CollectionParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$TreeMapParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$MapParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$TreeSetParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$SetParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$LinkedHashSetParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$LinkedHashMapParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$LinkedListParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$SparseBooleanArrayParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$BundleParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$IBinderParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$BooleanArrayParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$CharArrayParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$ByteArrayParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$BooleanParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$CharacterParcelableFactory;,
-        Lorg/parceler/NonParcelRepository$ListParcelableFactory;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -72,11 +19,11 @@
 
 
 # static fields
-.field private static final INSTANCE:Lorg/parceler/NonParcelRepository;
+.field private static final a:Lorg/parceler/NonParcelRepository;
 
 
 # instance fields
-.field private final parcelableCollectionFactories:Ljava/util/Map;
+.field private final b:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",
@@ -99,7 +46,7 @@
 
     invoke-direct {v0}, Lorg/parceler/NonParcelRepository;-><init>()V
 
-    sput-object v0, Lorg/parceler/NonParcelRepository;->INSTANCE:Lorg/parceler/NonParcelRepository;
+    sput-object v0, Lorg/parceler/NonParcelRepository;->a:Lorg/parceler/NonParcelRepository;
 
     return-void
 .end method
@@ -118,10 +65,10 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iput-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     .line 35
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/util/Collection;
 
@@ -132,7 +79,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 36
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/util/List;
 
@@ -143,7 +90,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 37
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/util/ArrayList;
 
@@ -154,7 +101,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 38
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/util/Set;
 
@@ -165,7 +112,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 39
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/util/HashSet;
 
@@ -176,7 +123,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 40
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/util/TreeSet;
 
@@ -187,7 +134,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 41
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Landroid/util/SparseArray;
 
@@ -198,7 +145,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 42
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/util/Map;
 
@@ -209,7 +156,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 43
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/util/HashMap;
 
@@ -220,7 +167,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 44
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/util/TreeMap;
 
@@ -231,7 +178,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 45
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/lang/Integer;
 
@@ -242,7 +189,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 46
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/lang/Long;
 
@@ -253,7 +200,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 47
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/lang/Double;
 
@@ -264,7 +211,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 48
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/lang/Float;
 
@@ -275,7 +222,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 49
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/lang/Byte;
 
@@ -286,7 +233,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 50
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/lang/String;
 
@@ -297,7 +244,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 51
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/lang/Character;
 
@@ -308,7 +255,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 52
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/lang/Boolean;
 
@@ -319,7 +266,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 53
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, [B
 
@@ -330,7 +277,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 54
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, [C
 
@@ -341,7 +288,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 55
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, [Z
 
@@ -352,7 +299,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 56
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Landroid/os/IBinder;
 
@@ -363,7 +310,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 57
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Landroid/os/Bundle;
 
@@ -374,7 +321,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 58
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Landroid/util/SparseBooleanArray;
 
@@ -385,7 +332,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 59
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/util/LinkedList;
 
@@ -396,7 +343,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 60
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/util/LinkedHashMap;
 
@@ -407,7 +354,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 61
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/util/SortedMap;
 
@@ -418,7 +365,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 62
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/util/SortedSet;
 
@@ -429,7 +376,7 @@
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 63
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     const-class v1, Ljava/util/LinkedHashSet;
 
@@ -443,19 +390,19 @@
     return-void
 .end method
 
-.method public static getInstance()Lorg/parceler/NonParcelRepository;
+.method public static a()Lorg/parceler/NonParcelRepository;
     .registers 1
 
     .prologue
     .line 68
-    sget-object v0, Lorg/parceler/NonParcelRepository;->INSTANCE:Lorg/parceler/NonParcelRepository;
+    sget-object v0, Lorg/parceler/NonParcelRepository;->a:Lorg/parceler/NonParcelRepository;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public get()Ljava/util/Map;
+.method public b()Ljava/util/Map;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -470,7 +417,7 @@
 
     .prologue
     .line 73
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->parcelableCollectionFactories:Ljava/util/Map;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository;->b:Ljava/util/Map;
 
     return-object v0
 .end method

@@ -3,15 +3,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/gms/analytics/HitBuilders;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "TimingBuilder"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/android/gms/analytics/HitBuilders$HitBuilder",
@@ -32,89 +23,63 @@
 
     const-string/jumbo v1, "timing"
 
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;J)V
-    .registers 6
-    .param p1, "category"    # Ljava/lang/String;
-    .param p2, "variable"    # Ljava/lang/String;
-    .param p3, "value"    # J
-
-    .prologue
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;-><init>()V
-
-    invoke-virtual {p0, p2}, Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;->setVariable(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;
-
-    invoke-virtual {p0, p3, p4}, Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;->setValue(J)Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;
-
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;->setCategory(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;
+    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public bridge synthetic build()Ljava/util/Map;
-    .registers 2
-
-    invoke-super {p0}, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->build()Ljava/util/Map;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public setCategory(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;
-    .registers 3
-    .param p1, "category"    # Ljava/lang/String;
-
-    .prologue
-    const-string/jumbo v0, "&utc"
-
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-
-    return-object p0
-.end method
-
-.method public setLabel(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;
-    .registers 3
-    .param p1, "label"    # Ljava/lang/String;
-
-    .prologue
-    const-string/jumbo v0, "&utl"
-
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
-
-    return-object p0
-.end method
-
-.method public setValue(J)Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;
+.method public a(J)Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;
     .registers 6
-    .param p1, "value"    # J
 
-    .prologue
     const-string/jumbo v0, "&utt"
 
     invoke-static {p1, p2}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
+    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
 
     return-object p0
 .end method
 
-.method public setVariable(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;
+.method public a(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;
     .registers 3
-    .param p1, "variable"    # Ljava/lang/String;
 
-    .prologue
     const-string/jumbo v0, "&utv"
 
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;->set(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
+
+    return-object p0
+.end method
+
+.method public bridge synthetic a()Ljava/util/Map;
+    .registers 2
+
+    invoke-super {p0}, Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;->a()Ljava/util/Map;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public b(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;
+    .registers 3
+
+    const-string/jumbo v0, "&utc"
+
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
+
+    return-object p0
+.end method
+
+.method public c(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;
+    .registers 3
+
+    const-string/jumbo v0, "&utl"
+
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/analytics/HitBuilders$TimingBuilder;->a(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$HitBuilder;
 
     return-object p0
 .end method

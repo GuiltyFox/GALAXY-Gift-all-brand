@@ -16,7 +16,7 @@
 
 
 # instance fields
-.field private final s:Lrx/Observer;
+.field private final a:Lrx/Observer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lrx/Observer",
@@ -39,8 +39,6 @@
 
     .prologue
     .line 40
-    .local p0, "this":Lrx/observers/SerializedSubscriber;, "Lrx/observers/SerializedSubscriber<TT;>;"
-    .local p1, "s":Lrx/Subscriber;, "Lrx/Subscriber<-TT;>;"
     const/4 v0, 0x1
 
     invoke-direct {p0, p1, v0}, Lrx/observers/SerializedSubscriber;-><init>(Lrx/Subscriber;Z)V
@@ -51,7 +49,6 @@
 
 .method public constructor <init>(Lrx/Subscriber;Z)V
     .registers 4
-    .param p2, "shareSubscriptions"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -62,8 +59,6 @@
 
     .prologue
     .line 54
-    .local p0, "this":Lrx/observers/SerializedSubscriber;, "Lrx/observers/SerializedSubscriber<TT;>;"
-    .local p1, "s":Lrx/Subscriber;, "Lrx/Subscriber<-TT;>;"
     invoke-direct {p0, p1, p2}, Lrx/Subscriber;-><init>(Lrx/Subscriber;Z)V
 
     .line 55
@@ -71,7 +66,7 @@
 
     invoke-direct {v0, p1}, Lrx/observers/SerializedObserver;-><init>(Lrx/Observer;)V
 
-    iput-object v0, p0, Lrx/observers/SerializedSubscriber;->s:Lrx/Observer;
+    iput-object v0, p0, Lrx/observers/SerializedSubscriber;->a:Lrx/Observer;
 
     .line 56
     return-void
@@ -79,36 +74,20 @@
 
 
 # virtual methods
-.method public onCompleted()V
-    .registers 2
-
-    .prologue
-    .line 65
-    .local p0, "this":Lrx/observers/SerializedSubscriber;, "Lrx/observers/SerializedSubscriber<TT;>;"
-    iget-object v0, p0, Lrx/observers/SerializedSubscriber;->s:Lrx/Observer;
-
-    invoke-interface {v0}, Lrx/Observer;->onCompleted()V
-
-    .line 66
-    return-void
-.end method
-
-.method public onError(Ljava/lang/Throwable;)V
+.method public a(Ljava/lang/Throwable;)V
     .registers 3
-    .param p1, "e"    # Ljava/lang/Throwable;
 
     .prologue
     .line 79
-    .local p0, "this":Lrx/observers/SerializedSubscriber;, "Lrx/observers/SerializedSubscriber<TT;>;"
-    iget-object v0, p0, Lrx/observers/SerializedSubscriber;->s:Lrx/Observer;
+    iget-object v0, p0, Lrx/observers/SerializedSubscriber;->a:Lrx/Observer;
 
-    invoke-interface {v0, p1}, Lrx/Observer;->onError(Ljava/lang/Throwable;)V
+    invoke-interface {v0, p1}, Lrx/Observer;->a(Ljava/lang/Throwable;)V
 
     .line 80
     return-void
 .end method
 
-.method public onNext(Ljava/lang/Object;)V
+.method public a_(Ljava/lang/Object;)V
     .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -118,12 +97,23 @@
 
     .prologue
     .line 95
-    .local p0, "this":Lrx/observers/SerializedSubscriber;, "Lrx/observers/SerializedSubscriber<TT;>;"
-    .local p1, "t":Ljava/lang/Object;, "TT;"
-    iget-object v0, p0, Lrx/observers/SerializedSubscriber;->s:Lrx/Observer;
+    iget-object v0, p0, Lrx/observers/SerializedSubscriber;->a:Lrx/Observer;
 
-    invoke-interface {v0, p1}, Lrx/Observer;->onNext(Ljava/lang/Object;)V
+    invoke-interface {v0, p1}, Lrx/Observer;->a_(Ljava/lang/Object;)V
 
     .line 96
+    return-void
+.end method
+
+.method public i_()V
+    .registers 2
+
+    .prologue
+    .line 65
+    iget-object v0, p0, Lrx/observers/SerializedSubscriber;->a:Lrx/Observer;
+
+    invoke-interface {v0}, Lrx/Observer;->i_()V
+
+    .line 66
     return-void
 .end method

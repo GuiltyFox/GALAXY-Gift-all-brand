@@ -52,13 +52,6 @@
 # virtual methods
 .method public acceptJsonFormatVisitor(Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;Lcom/fasterxml/jackson/databind/JavaType;)V
     .registers 5
-    .param p1, "visitor"    # Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;
-    .param p2, "typeHint"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
 
     .prologue
     .line 66
@@ -67,7 +60,6 @@
     move-result-object v0
 
     .line 67
-    .local v0, "v2":Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonNumberFormatVisitor;
     if-eqz v0, :cond_b
 
     .line 68
@@ -82,8 +74,6 @@
 
 .method public getSchema(Lcom/fasterxml/jackson/databind/SerializerProvider;Ljava/lang/reflect/Type;)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 5
-    .param p1, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .param p2, "typeHint"    # Ljava/lang/reflect/Type;
 
     .prologue
     .line 58
@@ -100,14 +90,6 @@
 
 .method public serialize(Ljava/lang/Number;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 6
-    .param p1, "value"    # Ljava/lang/Number;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 32
@@ -118,7 +100,6 @@
     .line 33
     check-cast p1, Ljava/math/BigDecimal;
 
-    .end local p1    # "value":Ljava/lang/Number;
     invoke-virtual {p2, p1}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(Ljava/math/BigDecimal;)V
 
     .line 54
@@ -126,7 +107,6 @@
     return-void
 
     .line 34
-    .restart local p1    # "value":Ljava/lang/Number;
     :cond_a
     instance-of v0, p1, Ljava/math/BigInteger;
 
@@ -135,13 +115,11 @@
     .line 35
     check-cast p1, Ljava/math/BigInteger;
 
-    .end local p1    # "value":Ljava/lang/Number;
     invoke-virtual {p2, p1}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeNumber(Ljava/math/BigInteger;)V
 
     goto :goto_9
 
     .line 40
-    .restart local p1    # "value":Ljava/lang/Number;
     :cond_14
     instance-of v0, p1, Ljava/lang/Integer;
 
@@ -234,21 +212,11 @@
 
 .method public bridge synthetic serialize(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 4
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "x2"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 21
     check-cast p1, Ljava/lang/Number;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2, p3}, Lcom/fasterxml/jackson/databind/ser/std/NumberSerializer;->serialize(Ljava/lang/Number;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
 
     return-void

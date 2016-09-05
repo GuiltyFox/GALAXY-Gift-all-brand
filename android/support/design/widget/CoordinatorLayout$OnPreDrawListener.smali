@@ -6,17 +6,6 @@
 .implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/CoordinatorLayout;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = "OnPreDrawListener"
-.end annotation
-
-
 # instance fields
 .field final synthetic this$0:Landroid/support/design/widget/CoordinatorLayout;
 

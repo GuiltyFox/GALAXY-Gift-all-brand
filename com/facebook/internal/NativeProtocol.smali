@@ -3,17 +3,6 @@
 .source "NativeProtocol.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/facebook/internal/NativeProtocol$WakizashiAppInfo;,
-        Lcom/facebook/internal/NativeProtocol$MessengerAppInfo;,
-        Lcom/facebook/internal/NativeProtocol$KatanaAppInfo;,
-        Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
-    }
-.end annotation
-
-
 # static fields
 .field public static final ACTION_APPINVITE_DIALOG:Ljava/lang/String; = "com.facebook.platform.action.request.APPINVITES_DIALOG"
 
@@ -416,7 +405,6 @@
 
 .method static synthetic access$000(Lcom/facebook/internal/NativeProtocol$NativeAppInfo;)Ljava/util/TreeSet;
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
 
     .prologue
     .line 49
@@ -469,13 +457,11 @@
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     .line 332
-    .local v0, "map":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Lcom/facebook/internal/NativeProtocol$NativeAppInfo;>;>;"
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     .line 333
-    .local v1, "messengerAppInfoList":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/facebook/internal/NativeProtocol$NativeAppInfo;>;"
     new-instance v2, Lcom/facebook/internal/NativeProtocol$MessengerAppInfo;
 
     const/4 v3, 0x0
@@ -545,7 +531,6 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 323
-    .local v0, "list":Ljava/util/List;, "Ljava/util/List<Lcom/facebook/internal/NativeProtocol$NativeAppInfo;>;"
     sget-object v1, Lcom/facebook/internal/NativeProtocol;->FACEBOOK_APP_INFO:Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -565,7 +550,6 @@
 
 .method private static buildPlatformProviderVersionURI(Lcom/facebook/internal/NativeProtocol$NativeAppInfo;)Landroid/net/Uri;
     .registers 3
-    .param p0, "appInfo"    # Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
 
     .prologue
     .line 851
@@ -606,8 +590,6 @@
 
 .method public static computeLatestAvailableVersionFromVersionSpec(Ljava/util/TreeSet;I[I)I
     .registers 9
-    .param p1, "latestSdkVersion"    # I
-    .param p2, "versionSpec"    # [I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -619,104 +601,99 @@
     .end annotation
 
     .prologue
-    .local p0, "allAvailableFacebookAppVersions":Ljava/util/TreeSet;, "Ljava/util/TreeSet<Ljava/lang/Integer;>;"
-    const/4 v5, -0x1
-
-    .line 812
-    array-length v4, p2
-
-    add-int/lit8 v3, v4, -0x1
-
-    .line 814
-    .local v3, "versionSpecIndex":I
-    invoke-virtual {p0}, Ljava/util/TreeSet;->descendingIterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .line 815
-    .local v1, "fbAppVersionsIterator":Ljava/util/Iterator;, "Ljava/util/Iterator<Ljava/lang/Integer;>;"
     const/4 v2, -0x1
 
-    .line 817
-    .local v2, "latestFacebookAppVersion":I
-    :cond_9
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    .line 812
+    array-length v0, p2
 
-    move-result v4
+    add-int/lit8 v0, v0, -0x1
 
-    if-eqz v4, :cond_28
-
-    .line 818
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .line 814
+    invoke-virtual {p0}, Ljava/util/TreeSet;->descendingIterator()Ljava/util/Iterator;
 
     move-result-object v4
 
-    check-cast v4, Ljava/lang/Integer;
+    move v1, v2
 
-    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
+    move v3, v0
+
+    .line 817
+    :goto_a
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
+    if-eqz v0, :cond_2a
+
+    .line 818
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v5
+
     .line 821
-    .local v0, "fbAppVersion":I
-    invoke-static {v2, v0}, Ljava/lang/Math;->max(II)I
+    invoke-static {v1, v5}, Ljava/lang/Math;->max(II)I
+
+    move-result v0
+
+    move v1, v3
+
+    .line 824
+    :goto_1f
+    if-ltz v1, :cond_28
+
+    aget v3, p2, v1
+
+    if-le v3, v5, :cond_28
+
+    .line 825
+    add-int/lit8 v1, v1, -0x1
+
+    goto :goto_1f
+
+    .line 828
+    :cond_28
+    if-gez v1, :cond_2b
+
+    .line 847
+    :cond_2a
+    :goto_2a
+    return v2
+
+    .line 837
+    :cond_2b
+    aget v3, p2, v1
+
+    if-ne v3, v5, :cond_38
+
+    .line 839
+    rem-int/lit8 v1, v1, 0x2
+
+    if-nez v1, :cond_2a
+
+    .line 841
+    invoke-static {v0, p1}, Ljava/lang/Math;->min(II)I
 
     move-result v2
 
-    .line 824
-    :goto_1d
-    if-ltz v3, :cond_26
+    goto :goto_2a
 
-    aget v4, p2, v3
+    :cond_38
+    move v3, v1
 
-    if-le v4, v0, :cond_26
+    move v1, v0
 
-    .line 825
-    add-int/lit8 v3, v3, -0x1
-
-    goto :goto_1d
-
-    .line 828
-    :cond_26
-    if-gez v3, :cond_29
-
-    .line 847
-    .end local v0    # "fbAppVersion":I
-    :cond_28
-    :goto_28
-    return v5
-
-    .line 837
-    .restart local v0    # "fbAppVersion":I
-    :cond_29
-    aget v4, p2, v3
-
-    if-ne v4, v0, :cond_9
-
-    .line 839
-    rem-int/lit8 v4, v3, 0x2
-
-    if-nez v4, :cond_37
-
-    .line 841
-    invoke-static {v2, p1}, Ljava/lang/Math;->min(II)I
-
-    move-result v4
-
-    :goto_35
-    move v5, v4
-
-    goto :goto_28
-
-    :cond_37
-    move v4, v5
-
-    goto :goto_35
+    .line 845
+    goto :goto_a
 .end method
 
 .method public static createBundleForException(Lcom/facebook/FacebookException;)Landroid/os/Bundle;
     .registers 4
-    .param p0, "e"    # Lcom/facebook/FacebookException;
 
     .prologue
     .line 699
@@ -737,7 +714,6 @@
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     .line 704
-    .local v0, "errorBundle":Landroid/os/Bundle;
     const-string/jumbo v1, "error_description"
 
     invoke-virtual {p0}, Lcom/facebook/FacebookException;->toString()Ljava/lang/String;
@@ -762,35 +738,27 @@
 .end method
 
 .method public static createPlatformActivityIntent(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;ILandroid/os/Bundle;)Landroid/content/Intent;
-    .registers 7
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "callId"    # Ljava/lang/String;
-    .param p2, "action"    # Ljava/lang/String;
-    .param p3, "version"    # I
-    .param p4, "extras"    # Landroid/os/Bundle;
+    .registers 6
 
     .prologue
     .line 506
-    const-string/jumbo v1, "com.facebook.platform.PLATFORM_ACTIVITY"
+    const-string/jumbo v0, "com.facebook.platform.PLATFORM_ACTIVITY"
 
-    invoke-static {p0, v1, p2}, Lcom/facebook/internal/NativeProtocol;->findActivityIntent(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-static {p0, v0, p2}, Lcom/facebook/internal/NativeProtocol;->findActivityIntent(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v0
 
     .line 507
-    .local v0, "intent":Landroid/content/Intent;
     if-nez v0, :cond_b
 
     .line 508
     const/4 v0, 0x0
 
     .line 513
-    .end local v0    # "intent":Landroid/content/Intent;
     :goto_a
     return-object v0
 
     .line 511
-    .restart local v0    # "intent":Landroid/content/Intent;
     :cond_b
     invoke-static {v0, p1, p2, p3, p4}, Lcom/facebook/internal/NativeProtocol;->setupProtocolRequestIntent(Landroid/content/Intent;Ljava/lang/String;Ljava/lang/String;ILandroid/os/Bundle;)V
 
@@ -798,80 +766,72 @@
 .end method
 
 .method public static createPlatformServiceIntent(Landroid/content/Context;)Landroid/content/Intent;
-    .registers 6
-    .param p0, "context"    # Landroid/content/Context;
+    .registers 5
 
     .prologue
     .line 584
-    sget-object v2, Lcom/facebook/internal/NativeProtocol;->facebookAppInfoList:Ljava/util/List;
+    sget-object v0, Lcom/facebook/internal/NativeProtocol;->facebookAppInfoList:Ljava/util/List;
 
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v2
+    move-result-object v1
 
     :cond_6
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_30
+    if-eqz v0, :cond_30
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
 
     .line 585
-    .local v0, "appInfo":Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
-    new-instance v3, Landroid/content/Intent;
+    new-instance v2, Landroid/content/Intent;
 
-    const-string/jumbo v4, "com.facebook.platform.PLATFORM_SERVICE"
+    const-string/jumbo v3, "com.facebook.platform.PLATFORM_SERVICE"
 
-    invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     .line 586
     invoke-virtual {v0}, Lcom/facebook/internal/NativeProtocol$NativeAppInfo;->getPackage()Ljava/lang/String;
 
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
-
     move-result-object v3
 
-    const-string/jumbo v4, "android.intent.category.DEFAULT"
+    invoke-virtual {v2, v3}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "android.intent.category.DEFAULT"
 
     .line 587
-    invoke-virtual {v3, v4}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v2, v3}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 588
-    .local v1, "intent":Landroid/content/Intent;
-    invoke-static {p0, v1, v0}, Lcom/facebook/internal/NativeProtocol;->validateServiceIntent(Landroid/content/Context;Landroid/content/Intent;Lcom/facebook/internal/NativeProtocol$NativeAppInfo;)Landroid/content/Intent;
+    invoke-static {p0, v2, v0}, Lcom/facebook/internal/NativeProtocol;->validateServiceIntent(Landroid/content/Context;Landroid/content/Intent;Lcom/facebook/internal/NativeProtocol$NativeAppInfo;)Landroid/content/Intent;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 589
-    if-eqz v1, :cond_6
+    if-eqz v0, :cond_6
 
     .line 593
-    .end local v0    # "appInfo":Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
-    .end local v1    # "intent":Landroid/content/Intent;
     :goto_2f
-    return-object v1
+    return-object v0
 
     :cond_30
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_2f
 .end method
 
 .method public static createProtocolResultIntent(Landroid/content/Intent;Landroid/os/Bundle;Lcom/facebook/FacebookException;)Landroid/content/Intent;
-    .registers 8
-    .param p0, "requestIntent"    # Landroid/content/Intent;
-    .param p1, "results"    # Landroid/os/Bundle;
-    .param p2, "error"    # Lcom/facebook/FacebookException;
+    .registers 7
 
     .prologue
     .line 560
@@ -880,87 +840,78 @@
     move-result-object v1
 
     .line 561
-    .local v1, "callId":Ljava/util/UUID;
     if-nez v1, :cond_8
 
     .line 562
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     .line 580
     :cond_7
     :goto_7
-    return-object v2
+    return-object v0
 
     .line 565
     :cond_8
-    new-instance v2, Landroid/content/Intent;
+    new-instance v0, Landroid/content/Intent;
 
-    invoke-direct {v2}, Landroid/content/Intent;-><init>()V
+    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
 
     .line 566
-    .local v2, "resultIntent":Landroid/content/Intent;
-    const-string/jumbo v3, "com.facebook.platform.protocol.PROTOCOL_VERSION"
+    const-string/jumbo v2, "com.facebook.platform.protocol.PROTOCOL_VERSION"
 
     invoke-static {p0}, Lcom/facebook/internal/NativeProtocol;->getProtocolVersionFromIntent(Landroid/content/Intent;)I
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
     .line 568
-    new-instance v0, Landroid/os/Bundle;
+    new-instance v2, Landroid/os/Bundle;
 
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+    invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
 
     .line 569
-    .local v0, "bridgeArguments":Landroid/os/Bundle;
     const-string/jumbo v3, "action_id"
 
     invoke-virtual {v1}, Ljava/util/UUID;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v0, v3, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v2, v3, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 570
     if-eqz p2, :cond_32
 
     .line 571
-    const-string/jumbo v3, "error"
+    const-string/jumbo v1, "error"
 
     .line 572
     invoke-static {p2}, Lcom/facebook/internal/NativeProtocol;->createBundleForException(Lcom/facebook/FacebookException;)Landroid/os/Bundle;
 
-    move-result-object v4
+    move-result-object v3
 
     .line 571
-    invoke-virtual {v0, v3, v4}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
+    invoke-virtual {v2, v1, v3}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     .line 574
     :cond_32
-    const-string/jumbo v3, "com.facebook.platform.protocol.BRIDGE_ARGS"
+    const-string/jumbo v1, "com.facebook.platform.protocol.BRIDGE_ARGS"
 
-    invoke-virtual {v2, v3, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
 
     .line 576
     if-eqz p1, :cond_7
 
     .line 577
-    const-string/jumbo v3, "com.facebook.platform.protocol.RESULT_ARGS"
+    const-string/jumbo v1, "com.facebook.platform.protocol.RESULT_ARGS"
 
-    invoke-virtual {v2, v3, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
+    invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
 
     goto :goto_7
 .end method
 
 .method public static createProxyAuthIntent(Landroid/content/Context;Ljava/lang/String;Ljava/util/Collection;Ljava/lang/String;ZZLcom/facebook/login/DefaultAudience;)Landroid/content/Intent;
-    .registers 13
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "applicationId"    # Ljava/lang/String;
-    .param p3, "e2e"    # Ljava/lang/String;
-    .param p4, "isRerequest"    # Z
-    .param p5, "isForPublish"    # Z
-    .param p6, "defaultAudience"    # Lcom/facebook/login/DefaultAudience;
+    .registers 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -980,52 +931,49 @@
 
     .prologue
     .line 388
-    .local p2, "permissions":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/lang/String;>;"
-    sget-object v2, Lcom/facebook/internal/NativeProtocol;->facebookAppInfoList:Ljava/util/List;
+    sget-object v0, Lcom/facebook/internal/NativeProtocol;->facebookAppInfoList:Ljava/util/List;
 
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v2
+    move-result-object v1
 
     :cond_6
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_81
+    if-eqz v0, :cond_81
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
 
     .line 389
-    .local v0, "appInfo":Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
-    new-instance v3, Landroid/content/Intent;
+    new-instance v2, Landroid/content/Intent;
 
-    invoke-direct {v3}, Landroid/content/Intent;-><init>()V
+    invoke-direct {v2}, Landroid/content/Intent;-><init>()V
 
     .line 390
     invoke-virtual {v0}, Lcom/facebook/internal/NativeProtocol$NativeAppInfo;->getPackage()Ljava/lang/String;
 
-    move-result-object v4
-
-    const-string/jumbo v5, "com.facebook.katana.ProxyAuth"
-
-    invoke-virtual {v3, v4, v5}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
     move-result-object v3
 
-    const-string/jumbo v4, "client_id"
+    const-string/jumbo v4, "com.facebook.katana.ProxyAuth"
+
+    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "client_id"
 
     .line 391
-    invoke-virtual {v3, v4, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v2, v3, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 393
-    .local v1, "intent":Landroid/content/Intent;
     invoke-static {p2}, Lcom/facebook/internal/Utility;->isNullOrEmpty(Ljava/util/Collection;)Z
 
     move-result v3
@@ -1043,7 +991,7 @@
     move-result-object v4
 
     .line 394
-    invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 397
     :cond_3c
@@ -1056,7 +1004,7 @@
     .line 398
     const-string/jumbo v3, "e2e"
 
-    invoke-virtual {v1, v3, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v2, v3, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 401
     :cond_48
@@ -1064,14 +1012,14 @@
 
     const-string/jumbo v4, "token,signed_request"
 
-    invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 404
     const-string/jumbo v3, "return_scopes"
 
     const-string/jumbo v4, "true"
 
-    invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 407
     if-eqz p5, :cond_66
@@ -1085,7 +1033,7 @@
     move-result-object v4
 
     .line 408
-    invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 414
     :cond_66
@@ -1093,7 +1041,7 @@
 
     const-string/jumbo v4, "v2.4"
 
-    invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 419
     if-eqz p4, :cond_7a
@@ -1103,95 +1051,87 @@
 
     const-string/jumbo v4, "rerequest"
 
-    invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 425
     :cond_7a
-    invoke-static {p0, v1, v0}, Lcom/facebook/internal/NativeProtocol;->validateActivityIntent(Landroid/content/Context;Landroid/content/Intent;Lcom/facebook/internal/NativeProtocol$NativeAppInfo;)Landroid/content/Intent;
+    invoke-static {p0, v2, v0}, Lcom/facebook/internal/NativeProtocol;->validateActivityIntent(Landroid/content/Context;Landroid/content/Intent;Lcom/facebook/internal/NativeProtocol$NativeAppInfo;)Landroid/content/Intent;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 427
-    if-eqz v1, :cond_6
+    if-eqz v0, :cond_6
 
     .line 431
-    .end local v0    # "appInfo":Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
-    .end local v1    # "intent":Landroid/content/Intent;
     :goto_80
-    return-object v1
+    return-object v0
 
     :cond_81
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_80
 .end method
 
 .method public static createTokenRefreshIntent(Landroid/content/Context;)Landroid/content/Intent;
-    .registers 7
-    .param p0, "context"    # Landroid/content/Context;
+    .registers 6
 
     .prologue
     .line 435
-    sget-object v2, Lcom/facebook/internal/NativeProtocol;->facebookAppInfoList:Ljava/util/List;
+    sget-object v0, Lcom/facebook/internal/NativeProtocol;->facebookAppInfoList:Ljava/util/List;
 
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v2
+    move-result-object v1
 
     :cond_6
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_29
+    if-eqz v0, :cond_29
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
 
     .line 436
-    .local v0, "appInfo":Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
-    new-instance v3, Landroid/content/Intent;
+    new-instance v2, Landroid/content/Intent;
 
-    invoke-direct {v3}, Landroid/content/Intent;-><init>()V
+    invoke-direct {v2}, Landroid/content/Intent;-><init>()V
 
     .line 437
     invoke-virtual {v0}, Lcom/facebook/internal/NativeProtocol$NativeAppInfo;->getPackage()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    const-string/jumbo v5, "com.facebook.katana.platform.TokenRefreshService"
+    const-string/jumbo v4, "com.facebook.katana.platform.TokenRefreshService"
 
-    invoke-virtual {v3, v4, v5}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v2, v3, v4}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 439
-    .local v1, "intent":Landroid/content/Intent;
-    invoke-static {p0, v1, v0}, Lcom/facebook/internal/NativeProtocol;->validateServiceIntent(Landroid/content/Context;Landroid/content/Intent;Lcom/facebook/internal/NativeProtocol$NativeAppInfo;)Landroid/content/Intent;
+    invoke-static {p0, v2, v0}, Lcom/facebook/internal/NativeProtocol;->validateServiceIntent(Landroid/content/Context;Landroid/content/Intent;Lcom/facebook/internal/NativeProtocol$NativeAppInfo;)Landroid/content/Intent;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 441
-    if-eqz v1, :cond_6
+    if-eqz v0, :cond_6
 
     .line 445
-    .end local v0    # "appInfo":Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
-    .end local v1    # "intent":Landroid/content/Intent;
     :goto_28
-    return-object v1
+    return-object v0
 
     :cond_29
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_28
 .end method
 
 .method private static fetchAllAvailableProtocolVersionsForAppInfo(Lcom/facebook/internal/NativeProtocol$NativeAppInfo;)Ljava/util/TreeSet;
-    .registers 14
-    .param p0, "appInfo"    # Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
+    .registers 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1205,47 +1145,40 @@
     .end annotation
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v3, 0x0
+
+    const/4 v6, 0x0
 
     .line 772
-    new-instance v6, Ljava/util/TreeSet;
+    new-instance v7, Ljava/util/TreeSet;
 
-    invoke-direct {v6}, Ljava/util/TreeSet;-><init>()V
+    invoke-direct {v7}, Ljava/util/TreeSet;-><init>()V
 
     .line 774
-    .local v6, "allAvailableVersions":Ljava/util/TreeSet;, "Ljava/util/TreeSet<Ljava/lang/Integer;>;"
     invoke-static {}, Lcom/facebook/FacebookSdk;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v7
+    move-result-object v0
 
     .line 775
-    .local v7, "appContext":Landroid/content/Context;
-    invoke-virtual {v7}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v0
 
     .line 777
-    .local v0, "contentResolver":Landroid/content/ContentResolver;
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
-    new-array v2, v3, [Ljava/lang/String;
+    new-array v2, v1, [Ljava/lang/String;
 
-    const-string/jumbo v3, "version"
+    const-string/jumbo v1, "version"
 
-    aput-object v3, v2, v4
+    aput-object v1, v2, v3
 
     .line 778
-    .local v2, "projection":[Ljava/lang/String;
     invoke-static {p0}, Lcom/facebook/internal/NativeProtocol;->buildPlatformProviderVersionURI(Lcom/facebook/internal/NativeProtocol$NativeAppInfo;)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 779
-    .local v1, "uri":Landroid/net/Uri;
-    const/4 v8, 0x0
-
     .line 784
-    .local v8, "c":Landroid/database/Cursor;
     :try_start_1b
     invoke-static {}, Lcom/facebook/FacebookSdk;->getApplicationContext()Landroid/content/Context;
 
@@ -1253,43 +1186,40 @@
 
     invoke-virtual {v3}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v11
+    move-result-object v3
 
     .line 785
-    .local v11, "pm":Landroid/content/pm/PackageManager;
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-virtual {p0}, Lcom/facebook/internal/NativeProtocol$NativeAppInfo;->getPackage()Ljava/lang/String;
 
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     move-result-object v4
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string/jumbo v5, ".provider.PlatformProvider"
 
-    move-result-object v3
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v4, ".provider.PlatformProvider"
+    move-result-object v4
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
+    move-result-object v4
 
     .line 786
-    .local v9, "contentProviderName":Ljava/lang/String;
-    const/4 v3, 0x0
+    const/4 v5, 0x0
 
-    invoke-virtual {v11, v9, v3}, Landroid/content/pm/PackageManager;->resolveContentProvider(Ljava/lang/String;I)Landroid/content/pm/ProviderInfo;
+    invoke-virtual {v3, v4, v5}, Landroid/content/pm/PackageManager;->resolveContentProvider(Ljava/lang/String;I)Landroid/content/pm/ProviderInfo;
 
-    move-result-object v10
+    move-result-object v3
 
     .line 787
-    .local v10, "pInfo":Landroid/content/pm/ProviderInfo;
-    if-eqz v10, :cond_6b
+    if-eqz v3, :cond_6d
 
     .line 788
     const/4 v3, 0x0
@@ -1299,165 +1229,167 @@
     const/4 v5, 0x0
 
     invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+    :try_end_48
+    .catchall {:try_start_1b .. :try_end_48} :catchall_74
 
-    move-result-object v8
+    move-result-object v0
 
     .line 789
-    if-eqz v8, :cond_6b
+    if-eqz v0, :cond_6e
 
     .line 790
     :goto_4b
-    invoke-interface {v8}, Landroid/database/Cursor;->moveToNext()Z
+    :try_start_4b
+    invoke-interface {v0}, Landroid/database/Cursor;->moveToNext()Z
 
-    move-result v3
+    move-result v1
 
-    if-eqz v3, :cond_6b
+    if-eqz v1, :cond_6e
 
     .line 791
-    const-string/jumbo v3, "version"
+    const-string/jumbo v1, "version"
 
-    invoke-interface {v8, v3}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
+    invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
 
-    move-result v3
+    move-result v1
 
-    invoke-interface {v8, v3}, Landroid/database/Cursor;->getInt(I)I
+    invoke-interface {v0, v1}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v12
+    move-result v1
 
     .line 792
-    .local v12, "version":I
-    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v6, v3}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v7, v1}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
     :try_end_63
-    .catchall {:try_start_1b .. :try_end_63} :catchall_64
+    .catchall {:try_start_4b .. :try_end_63} :catchall_64
 
     goto :goto_4b
 
     .line 799
-    .end local v9    # "contentProviderName":Ljava/lang/String;
-    .end local v10    # "pInfo":Landroid/content/pm/ProviderInfo;
-    .end local v11    # "pm":Landroid/content/pm/PackageManager;
-    .end local v12    # "version":I
     :catchall_64
-    move-exception v3
+    move-exception v1
 
-    if-eqz v8, :cond_6a
+    move-object v6, v0
+
+    move-object v0, v1
+
+    :goto_67
+    if-eqz v6, :cond_6c
 
     .line 800
-    invoke-interface {v8}, Landroid/database/Cursor;->close()V
+    invoke-interface {v6}, Landroid/database/Cursor;->close()V
 
-    :cond_6a
-    throw v3
+    :cond_6c
+    throw v0
+
+    :cond_6d
+    move-object v0, v6
 
     .line 799
-    .restart local v9    # "contentProviderName":Ljava/lang/String;
-    .restart local v10    # "pInfo":Landroid/content/pm/ProviderInfo;
-    .restart local v11    # "pm":Landroid/content/pm/PackageManager;
-    :cond_6b
-    if-eqz v8, :cond_70
+    :cond_6e
+    if-eqz v0, :cond_73
 
     .line 800
-    invoke-interface {v8}, Landroid/database/Cursor;->close()V
+    invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    :cond_70
-    return-object v6
+    :cond_73
+    return-object v7
+
+    .line 799
+    :catchall_74
+    move-exception v0
+
+    goto :goto_67
 .end method
 
 .method private static findActivityIntent(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-    .registers 9
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "activityAction"    # Ljava/lang/String;
-    .param p2, "internalAction"    # Ljava/lang/String;
+    .registers 7
 
     .prologue
-    .line 472
-    sget-object v3, Lcom/facebook/internal/NativeProtocol;->actionToAppInfoMap:Ljava/util/Map;
+    const/4 v1, 0x0
 
-    invoke-interface {v3, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 472
+    sget-object v0, Lcom/facebook/internal/NativeProtocol;->actionToAppInfoMap:Ljava/util/Map;
+
+    invoke-interface {v0, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/List;
+
+    .line 473
+    if-nez v0, :cond_d
+
+    move-object v0, v1
+
+    .line 489
+    :cond_c
+    :goto_c
+    return-object v0
+
+    .line 478
+    :cond_d
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    check-cast v2, Ljava/util/List;
+    move-object v0, v1
 
-    .line 473
-    .local v2, "list":Ljava/util/List;, "Ljava/util/List<Lcom/facebook/internal/NativeProtocol$NativeAppInfo;>;"
-    if-nez v2, :cond_c
+    :cond_12
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 474
-    const/4 v1, 0x0
+    move-result v1
 
-    .line 489
-    :cond_b
-    :goto_b
-    return-object v1
+    if-eqz v1, :cond_c
 
-    .line 477
-    :cond_c
-    const/4 v1, 0x0
-
-    .line 478
-    .local v1, "intent":Landroid/content/Intent;
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :cond_11
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_b
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
 
     .line 479
-    .local v0, "appInfo":Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
-    new-instance v4, Landroid/content/Intent;
+    new-instance v1, Landroid/content/Intent;
 
-    invoke-direct {v4}, Landroid/content/Intent;-><init>()V
+    invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
     .line 480
-    invoke-virtual {v4, p1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v1, p1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    move-result-object v4
+    move-result-object v1
 
     .line 481
     invoke-virtual {v0}, Lcom/facebook/internal/NativeProtocol$NativeAppInfo;->getPackage()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-virtual {v4, v5}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v1, v3}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
 
-    move-result-object v4
+    move-result-object v1
 
-    const-string/jumbo v5, "android.intent.category.DEFAULT"
+    const-string/jumbo v3, "android.intent.category.DEFAULT"
 
     .line 482
-    invoke-virtual {v4, v5}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v1, v3}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
     move-result-object v1
 
     .line 483
     invoke-static {p0, v1, v0}, Lcom/facebook/internal/NativeProtocol;->validateActivityIntent(Landroid/content/Context;Landroid/content/Intent;Lcom/facebook/internal/NativeProtocol$NativeAppInfo;)Landroid/content/Intent;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 484
-    if-eqz v1, :cond_11
+    if-eqz v0, :cond_12
 
-    goto :goto_b
+    goto :goto_c
 .end method
 
 .method public static getBridgeArgumentsFromIntent(Landroid/content/Intent;)Landroid/os/Bundle;
-    .registers 3
-    .param p0, "intent"    # Landroid/content/Intent;
+    .registers 2
 
     .prologue
     .line 626
@@ -1466,40 +1398,37 @@
     move-result v0
 
     .line 627
-    .local v0, "version":I
     invoke-static {v0}, Lcom/facebook/internal/NativeProtocol;->isVersionCompatibleWithBucketedIntent(I)Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_c
+    if-nez v0, :cond_c
 
     .line 628
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 631
     :goto_b
-    return-object v1
+    return-object v0
 
     :cond_c
-    const-string/jumbo v1, "com.facebook.platform.protocol.BRIDGE_ARGS"
+    const-string/jumbo v0, "com.facebook.platform.protocol.BRIDGE_ARGS"
 
-    invoke-virtual {p0, v1}, Landroid/content/Intent;->getBundleExtra(Ljava/lang/String;)Landroid/os/Bundle;
+    invoke-virtual {p0, v0}, Landroid/content/Intent;->getBundleExtra(Ljava/lang/String;)Landroid/os/Bundle;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_b
 .end method
 
 .method public static getCallIdFromIntent(Landroid/content/Intent;)Ljava/util/UUID;
-    .registers 6
-    .param p0, "intent"    # Landroid/content/Intent;
+    .registers 4
 
     .prologue
+    const/4 v1, 0x0
+
     .line 601
     if-nez p0, :cond_4
-
-    .line 602
-    const/4 v1, 0x0
 
     .line 622
     :cond_3
@@ -1510,95 +1439,85 @@
     :cond_4
     invoke-static {p0}, Lcom/facebook/internal/NativeProtocol;->getProtocolVersionFromIntent(Landroid/content/Intent;)I
 
-    move-result v3
-
-    .line 605
-    .local v3, "version":I
-    const/4 v2, 0x0
+    move-result v0
 
     .line 606
-    .local v2, "callIdString":Ljava/lang/String;
-    invoke-static {v3}, Lcom/facebook/internal/NativeProtocol;->isVersionCompatibleWithBucketedIntent(I)Z
+    invoke-static {v0}, Lcom/facebook/internal/NativeProtocol;->isVersionCompatibleWithBucketedIntent(I)Z
 
-    move-result v4
+    move-result v0
 
-    if-eqz v4, :cond_27
+    if-eqz v0, :cond_25
 
     .line 607
-    const-string/jumbo v4, "com.facebook.platform.protocol.BRIDGE_ARGS"
+    const-string/jumbo v0, "com.facebook.platform.protocol.BRIDGE_ARGS"
 
-    invoke-virtual {p0, v4}, Landroid/content/Intent;->getBundleExtra(Ljava/lang/String;)Landroid/os/Bundle;
+    invoke-virtual {p0, v0}, Landroid/content/Intent;->getBundleExtra(Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object v0
 
     .line 608
-    .local v0, "bridgeArgs":Landroid/os/Bundle;
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_2f
 
     .line 609
-    const-string/jumbo v4, "action_id"
+    const-string/jumbo v2, "action_id"
 
-    invoke-virtual {v0, v4}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
-
-    .line 615
-    .end local v0    # "bridgeArgs":Landroid/os/Bundle;
-    :cond_1f
-    :goto_1f
-    const/4 v1, 0x0
+    move-result-object v0
 
     .line 616
-    .local v1, "callId":Ljava/util/UUID;
-    if-eqz v2, :cond_3
+    :goto_1e
+    if-eqz v0, :cond_3
 
     .line 618
-    :try_start_22
-    invoke-static {v2}, Ljava/util/UUID;->fromString(Ljava/lang/String;)Ljava/util/UUID;
-    :try_end_25
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_22 .. :try_end_25} :catch_2f
+    :try_start_20
+    invoke-static {v0}, Ljava/util/UUID;->fromString(Ljava/lang/String;)Ljava/util/UUID;
+    :try_end_23
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_20 .. :try_end_23} :catch_2d
 
     move-result-object v1
 
     goto :goto_3
 
     .line 612
-    .end local v1    # "callId":Ljava/util/UUID;
-    :cond_27
-    const-string/jumbo v4, "com.facebook.platform.protocol.CALL_ID"
+    :cond_25
+    const-string/jumbo v0, "com.facebook.platform.protocol.CALL_ID"
 
-    invoke-virtual {p0, v4}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    goto :goto_1f
+    goto :goto_1e
 
     .line 619
-    .restart local v1    # "callId":Ljava/util/UUID;
-    :catch_2f
-    move-exception v4
+    :catch_2d
+    move-exception v0
 
     goto :goto_3
+
+    :cond_2f
+    move-object v0, v1
+
+    goto :goto_1e
 .end method
 
 .method public static getErrorDataFromResultIntent(Landroid/content/Intent;)Landroid/os/Bundle;
     .registers 3
-    .param p0, "resultIntent"    # Landroid/content/Intent;
 
     .prologue
     .line 663
     invoke-static {p0}, Lcom/facebook/internal/NativeProtocol;->isErrorResult(Landroid/content/Intent;)Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_8
+    if-nez v0, :cond_8
 
     .line 664
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 672
     :goto_7
-    return-object v1
+    return-object v0
 
     .line 667
     :cond_8
@@ -1607,7 +1526,6 @@
     move-result-object v0
 
     .line 668
-    .local v0, "bridgeArgs":Landroid/os/Bundle;
     if-eqz v0, :cond_16
 
     .line 669
@@ -1615,7 +1533,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_7
 
@@ -1623,119 +1541,112 @@
     :cond_16
     invoke-virtual {p0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_7
 .end method
 
 .method public static getExceptionFromErrorData(Landroid/os/Bundle;)Lcom/facebook/FacebookException;
     .registers 4
-    .param p0, "errorData"    # Landroid/os/Bundle;
 
     .prologue
     .line 676
     if-nez p0, :cond_4
 
     .line 677
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     .line 695
     :goto_3
-    return-object v2
+    return-object v0
 
     .line 680
     :cond_4
-    const-string/jumbo v2, "error_type"
+    const-string/jumbo v0, "error_type"
 
-    invoke-virtual {p0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 681
-    .local v1, "type":Ljava/lang/String;
-    if-nez v1, :cond_14
+    if-nez v0, :cond_14
 
     .line 682
-    const-string/jumbo v2, "com.facebook.platform.status.ERROR_TYPE"
+    const-string/jumbo v0, "com.facebook.platform.status.ERROR_TYPE"
 
-    invoke-virtual {p0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 685
     :cond_14
-    const-string/jumbo v2, "error_description"
+    const-string/jumbo v1, "error_description"
 
-    invoke-virtual {p0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 686
-    .local v0, "description":Ljava/lang/String;
-    if-nez v0, :cond_24
+    if-nez v1, :cond_24
 
     .line 687
-    const-string/jumbo v2, "com.facebook.platform.status.ERROR_DESCRIPTION"
+    const-string/jumbo v1, "com.facebook.platform.status.ERROR_DESCRIPTION"
 
-    invoke-virtual {p0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v1}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 690
     :cond_24
-    if-eqz v1, :cond_35
+    if-eqz v0, :cond_35
 
     const-string/jumbo v2, "UserCanceled"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_35
+    if-eqz v0, :cond_35
 
     .line 691
-    new-instance v2, Lcom/facebook/FacebookOperationCanceledException;
+    new-instance v0, Lcom/facebook/FacebookOperationCanceledException;
 
-    invoke-direct {v2, v0}, Lcom/facebook/FacebookOperationCanceledException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/facebook/FacebookOperationCanceledException;-><init>(Ljava/lang/String;)V
 
     goto :goto_3
 
     .line 695
     :cond_35
-    new-instance v2, Lcom/facebook/FacebookException;
+    new-instance v0, Lcom/facebook/FacebookException;
 
-    invoke-direct {v2, v0}, Lcom/facebook/FacebookException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/facebook/FacebookException;-><init>(Ljava/lang/String;)V
 
     goto :goto_3
 .end method
 
 .method public static getLatestAvailableProtocolVersionForAction(Ljava/lang/String;[I)I
-    .registers 4
-    .param p0, "action"    # Ljava/lang/String;
-    .param p1, "versionSpec"    # [I
+    .registers 3
 
     .prologue
     .line 721
-    sget-object v1, Lcom/facebook/internal/NativeProtocol;->actionToAppInfoMap:Ljava/util/Map;
+    sget-object v0, Lcom/facebook/internal/NativeProtocol;->actionToAppInfoMap:Ljava/util/Map;
 
-    invoke-interface {v1, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/List;
 
     .line 722
-    .local v0, "appInfoList":Ljava/util/List;, "Ljava/util/List<Lcom/facebook/internal/NativeProtocol$NativeAppInfo;>;"
     invoke-static {v0, p1}, Lcom/facebook/internal/NativeProtocol;->getLatestAvailableProtocolVersionForAppInfoList(Ljava/util/List;[I)I
 
-    move-result v1
+    move-result v0
 
-    return v1
+    return v0
 .end method
 
 .method private static getLatestAvailableProtocolVersionForAppInfoList(Ljava/util/List;[I)I
-    .registers 8
-    .param p1, "versionSpec"    # [I
+    .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1747,8 +1658,7 @@
     .end annotation
 
     .prologue
-    .local p0, "appInfoList":Ljava/util/List;, "Ljava/util/List<Lcom/facebook/internal/NativeProtocol$NativeAppInfo;>;"
-    const/4 v2, -0x1
+    const/4 v1, -0x1
 
     .line 729
     invoke-static {}, Lcom/facebook/internal/NativeProtocol;->updateAllAvailableProtocolVersionsAsync()V
@@ -1756,57 +1666,53 @@
     .line 731
     if-nez p0, :cond_8
 
-    move v1, v2
+    move v0, v1
 
     .line 748
     :goto_7
-    return v1
+    return v0
 
     .line 736
     :cond_8
     invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v3
+    move-result-object v2
 
     :cond_c
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v0
 
-    if-eqz v4, :cond_27
+    if-eqz v0, :cond_27
 
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
 
     .line 739
-    .local v0, "appInfo":Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
     invoke-virtual {v0}, Lcom/facebook/internal/NativeProtocol$NativeAppInfo;->getAvailableVersions()Ljava/util/TreeSet;
 
-    move-result-object v4
+    move-result-object v0
 
     .line 740
     invoke-static {}, Lcom/facebook/internal/NativeProtocol;->getLatestKnownVersion()I
 
-    move-result v5
+    move-result v3
 
     .line 738
-    invoke-static {v4, v5, p1}, Lcom/facebook/internal/NativeProtocol;->computeLatestAvailableVersionFromVersionSpec(Ljava/util/TreeSet;I[I)I
+    invoke-static {v0, v3, p1}, Lcom/facebook/internal/NativeProtocol;->computeLatestAvailableVersionFromVersionSpec(Ljava/util/TreeSet;I[I)I
 
-    move-result v1
+    move-result v0
 
     .line 743
-    .local v1, "protocolVersion":I
-    if-eq v1, v2, :cond_c
+    if-eq v0, v1, :cond_c
 
     goto :goto_7
 
-    .end local v0    # "appInfo":Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
-    .end local v1    # "protocolVersion":I
     :cond_27
-    move v1, v2
+    move v0, v1
 
     .line 748
     goto :goto_7
@@ -1814,7 +1720,6 @@
 
 .method public static getLatestAvailableProtocolVersionForService(I)I
     .registers 4
-    .param p0, "minimumVersion"    # I
 
     .prologue
     .line 714
@@ -1858,8 +1763,7 @@
 .end method
 
 .method public static getMethodArgumentsFromIntent(Landroid/content/Intent;)Landroid/os/Bundle;
-    .registers 3
-    .param p0, "intent"    # Landroid/content/Intent;
+    .registers 2
 
     .prologue
     .line 635
@@ -1868,35 +1772,33 @@
     move-result v0
 
     .line 636
-    .local v0, "version":I
     invoke-static {v0}, Lcom/facebook/internal/NativeProtocol;->isVersionCompatibleWithBucketedIntent(I)Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_f
+    if-nez v0, :cond_f
 
     .line 637
     invoke-virtual {p0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 640
     :goto_e
-    return-object v1
+    return-object v0
 
     :cond_f
-    const-string/jumbo v1, "com.facebook.platform.protocol.METHOD_ARGS"
+    const-string/jumbo v0, "com.facebook.platform.protocol.METHOD_ARGS"
 
-    invoke-virtual {p0, v1}, Landroid/content/Intent;->getBundleExtra(Ljava/lang/String;)Landroid/os/Bundle;
+    invoke-virtual {p0, v0}, Landroid/content/Intent;->getBundleExtra(Ljava/lang/String;)Landroid/os/Bundle;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_e
 .end method
 
 .method public static getProtocolVersionFromIntent(Landroid/content/Intent;)I
     .registers 3
-    .param p0, "intent"    # Landroid/content/Intent;
 
     .prologue
     .line 597
@@ -1912,8 +1814,7 @@
 .end method
 
 .method public static getSuccessResultsFromIntent(Landroid/content/Intent;)Landroid/os/Bundle;
-    .registers 4
-    .param p0, "resultIntent"    # Landroid/content/Intent;
+    .registers 3
 
     .prologue
     .line 644
@@ -1922,32 +1823,28 @@
     move-result v1
 
     .line 645
-    .local v1, "version":I
     invoke-virtual {p0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
     move-result-object v0
 
     .line 646
-    .local v0, "extras":Landroid/os/Bundle;
     invoke-static {v1}, Lcom/facebook/internal/NativeProtocol;->isVersionCompatibleWithBucketedIntent(I)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_10
+    if-eqz v1, :cond_10
 
     if-nez v0, :cond_11
 
     .line 650
-    .end local v0    # "extras":Landroid/os/Bundle;
     :cond_10
     :goto_10
     return-object v0
 
-    .restart local v0    # "extras":Landroid/os/Bundle;
     :cond_11
-    const-string/jumbo v2, "com.facebook.platform.protocol.RESULT_ARGS"
+    const-string/jumbo v1, "com.facebook.platform.protocol.RESULT_ARGS"
 
-    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object v0
 
@@ -1956,7 +1853,6 @@
 
 .method public static isErrorResult(Landroid/content/Intent;)Z
     .registers 3
-    .param p0, "resultIntent"    # Landroid/content/Intent;
 
     .prologue
     .line 654
@@ -1965,7 +1861,6 @@
     move-result-object v0
 
     .line 655
-    .local v0, "bridgeArgs":Landroid/os/Bundle;
     if-eqz v0, :cond_e
 
     .line 656
@@ -1973,25 +1868,24 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Bundle;->containsKey(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v0
 
     .line 658
     :goto_d
-    return v1
+    return v0
 
     :cond_e
-    const-string/jumbo v1, "com.facebook.platform.status.ERROR_TYPE"
+    const-string/jumbo v0, "com.facebook.platform.status.ERROR_TYPE"
 
-    invoke-virtual {p0, v1}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
+    invoke-virtual {p0, v0}, Landroid/content/Intent;->hasExtra(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v0
 
     goto :goto_d
 .end method
 
 .method public static isVersionCompatibleWithBucketedIntent(I)Z
     .registers 3
-    .param p0, "version"    # I
 
     .prologue
     .line 493
@@ -2023,12 +1917,7 @@
 .end method
 
 .method public static setupProtocolRequestIntent(Landroid/content/Intent;Ljava/lang/String;Ljava/lang/String;ILandroid/os/Bundle;)V
-    .registers 11
-    .param p0, "intent"    # Landroid/content/Intent;
-    .param p1, "callId"    # Ljava/lang/String;
-    .param p2, "action"    # Ljava/lang/String;
-    .param p3, "version"    # I
-    .param p4, "params"    # Landroid/os/Bundle;
+    .registers 9
 
     .prologue
     .line 525
@@ -2037,107 +1926,93 @@
     move-result-object v0
 
     .line 526
-    .local v0, "applicationId":Ljava/lang/String;
     invoke-static {}, Lcom/facebook/FacebookSdk;->getApplicationName()Ljava/lang/String;
 
     move-result-object v1
 
     .line 528
-    .local v1, "applicationName":Ljava/lang/String;
-    const-string/jumbo v4, "com.facebook.platform.protocol.PROTOCOL_VERSION"
+    const-string/jumbo v2, "com.facebook.platform.protocol.PROTOCOL_VERSION"
 
-    invoke-virtual {p0, v4, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+    invoke-virtual {p0, v2, p3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    move-result-object v4
+    move-result-object v2
 
-    const-string/jumbo v5, "com.facebook.platform.protocol.PROTOCOL_ACTION"
+    const-string/jumbo v3, "com.facebook.platform.protocol.PROTOCOL_ACTION"
 
     .line 529
-    invoke-virtual {v4, v5, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v2, v3, p2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    move-result-object v4
+    move-result-object v2
 
-    const-string/jumbo v5, "com.facebook.platform.extra.APPLICATION_ID"
+    const-string/jumbo v3, "com.facebook.platform.extra.APPLICATION_ID"
 
     .line 530
-    invoke-virtual {v4, v5, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v2, v3, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 532
     invoke-static {p3}, Lcom/facebook/internal/NativeProtocol;->isVersionCompatibleWithBucketedIntent(I)Z
 
-    move-result v4
+    move-result v0
 
-    if-eqz v4, :cond_49
+    if-eqz v0, :cond_47
 
     .line 534
-    new-instance v2, Landroid/os/Bundle;
+    new-instance v0, Landroid/os/Bundle;
 
-    invoke-direct {v2}, Landroid/os/Bundle;-><init>()V
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     .line 535
-    .local v2, "bridgeArguments":Landroid/os/Bundle;
-    const-string/jumbo v4, "action_id"
+    const-string/jumbo v2, "action_id"
 
-    invoke-virtual {v2, v4, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, p1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 536
-    const-string/jumbo v4, "app_name"
+    const-string/jumbo v2, "app_name"
 
-    invoke-static {v2, v4, v1}, Lcom/facebook/internal/Utility;->putNonEmptyString(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2, v1}, Lcom/facebook/internal/Utility;->putNonEmptyString(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 538
-    const-string/jumbo v4, "com.facebook.platform.protocol.BRIDGE_ARGS"
+    const-string/jumbo v1, "com.facebook.platform.protocol.BRIDGE_ARGS"
 
-    invoke-virtual {p0, v4, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
+    invoke-virtual {p0, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
 
     .line 540
-    if-nez p4, :cond_47
+    if-nez p4, :cond_40
 
-    new-instance v3, Landroid/os/Bundle;
+    new-instance p4, Landroid/os/Bundle;
 
-    invoke-direct {v3}, Landroid/os/Bundle;-><init>()V
+    invoke-direct {p4}, Landroid/os/Bundle;-><init>()V
 
     .line 541
-    .local v3, "methodArguments":Landroid/os/Bundle;
-    :goto_40
-    const-string/jumbo v4, "com.facebook.platform.protocol.METHOD_ARGS"
+    :cond_40
+    const-string/jumbo v0, "com.facebook.platform.protocol.METHOD_ARGS"
 
-    invoke-virtual {p0, v4, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
+    invoke-virtual {p0, v0, p4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
 
     .line 550
-    .end local v2    # "bridgeArguments":Landroid/os/Bundle;
-    .end local v3    # "methodArguments":Landroid/os/Bundle;
     :goto_46
     return-void
 
-    .restart local v2    # "bridgeArguments":Landroid/os/Bundle;
-    :cond_47
-    move-object v3, p4
-
-    .line 540
-    goto :goto_40
-
     .line 544
-    .end local v2    # "bridgeArguments":Landroid/os/Bundle;
-    :cond_49
-    const-string/jumbo v4, "com.facebook.platform.protocol.CALL_ID"
+    :cond_47
+    const-string/jumbo v0, "com.facebook.platform.protocol.CALL_ID"
 
-    invoke-virtual {p0, v4, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {p0, v0, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 545
     invoke-static {v1}, Lcom/facebook/internal/Utility;->isNullOrEmpty(Ljava/lang/String;)Z
 
-    move-result v4
+    move-result v0
 
-    if-nez v4, :cond_5b
+    if-nez v0, :cond_59
 
     .line 546
-    const-string/jumbo v4, "com.facebook.platform.extra.APPLICATION_NAME"
+    const-string/jumbo v0, "com.facebook.platform.extra.APPLICATION_NAME"
 
-    invoke-virtual {p0, v4, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {p0, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 548
-    :cond_5b
+    :cond_59
     invoke-virtual {p0, p4}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 
     goto :goto_46
@@ -2180,120 +2055,108 @@
 .end method
 
 .method static validateActivityIntent(Landroid/content/Context;Landroid/content/Intent;Lcom/facebook/internal/NativeProtocol$NativeAppInfo;)Landroid/content/Intent;
-    .registers 7
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "intent"    # Landroid/content/Intent;
-    .param p2, "appInfo"    # Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
+    .registers 6
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 347
     if-nez p1, :cond_5
 
-    move-object p1, v1
+    move-object p1, v0
 
     .line 360
-    .end local p1    # "intent":Landroid/content/Intent;
     :cond_4
     :goto_4
     return-object p1
 
     .line 351
-    .restart local p1    # "intent":Landroid/content/Intent;
     :cond_5
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v2
+    move-result-object v1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {v2, p1, v3}, Landroid/content/pm/PackageManager;->resolveActivity(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
+    invoke-virtual {v1, p1, v2}, Landroid/content/pm/PackageManager;->resolveActivity(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 352
-    .local v0, "resolveInfo":Landroid/content/pm/ResolveInfo;
-    if-nez v0, :cond_12
+    if-nez v1, :cond_12
 
-    move-object p1, v1
+    move-object p1, v0
 
     .line 353
     goto :goto_4
 
     .line 356
     :cond_12
-    iget-object v2, v0, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
+    iget-object v1, v1, Landroid/content/pm/ResolveInfo;->activityInfo:Landroid/content/pm/ActivityInfo;
 
-    iget-object v2, v2, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
+    iget-object v1, v1, Landroid/content/pm/ActivityInfo;->packageName:Ljava/lang/String;
 
-    invoke-virtual {p2, p0, v2}, Lcom/facebook/internal/NativeProtocol$NativeAppInfo;->validateSignature(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-virtual {p2, p0, v1}, Lcom/facebook/internal/NativeProtocol$NativeAppInfo;->validateSignature(Landroid/content/Context;Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_4
+    if-nez v1, :cond_4
 
-    move-object p1, v1
+    move-object p1, v0
 
     .line 357
     goto :goto_4
 .end method
 
 .method static validateServiceIntent(Landroid/content/Context;Landroid/content/Intent;Lcom/facebook/internal/NativeProtocol$NativeAppInfo;)Landroid/content/Intent;
-    .registers 7
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "intent"    # Landroid/content/Intent;
-    .param p2, "appInfo"    # Lcom/facebook/internal/NativeProtocol$NativeAppInfo;
+    .registers 6
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 364
     if-nez p1, :cond_5
 
-    move-object p1, v1
+    move-object p1, v0
 
     .line 377
-    .end local p1    # "intent":Landroid/content/Intent;
     :cond_4
     :goto_4
     return-object p1
 
     .line 368
-    .restart local p1    # "intent":Landroid/content/Intent;
     :cond_5
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
-    move-result-object v2
+    move-result-object v1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {v2, p1, v3}, Landroid/content/pm/PackageManager;->resolveService(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
+    invoke-virtual {v1, p1, v2}, Landroid/content/pm/PackageManager;->resolveService(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 369
-    .local v0, "resolveInfo":Landroid/content/pm/ResolveInfo;
-    if-nez v0, :cond_12
+    if-nez v1, :cond_12
 
-    move-object p1, v1
+    move-object p1, v0
 
     .line 370
     goto :goto_4
 
     .line 373
     :cond_12
-    iget-object v2, v0, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
+    iget-object v1, v1, Landroid/content/pm/ResolveInfo;->serviceInfo:Landroid/content/pm/ServiceInfo;
 
-    iget-object v2, v2, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
+    iget-object v1, v1, Landroid/content/pm/ServiceInfo;->packageName:Ljava/lang/String;
 
-    invoke-virtual {p2, p0, v2}, Lcom/facebook/internal/NativeProtocol$NativeAppInfo;->validateSignature(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-virtual {p2, p0, v1}, Lcom/facebook/internal/NativeProtocol$NativeAppInfo;->validateSignature(Landroid/content/Context;Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_4
+    if-nez v1, :cond_4
 
-    move-object p1, v1
+    move-object p1, v0
 
     .line 374
     goto :goto_4

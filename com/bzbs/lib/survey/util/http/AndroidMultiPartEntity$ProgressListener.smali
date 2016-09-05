@@ -3,17 +3,6 @@
 .source "AndroidMultiPartEntity.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bzbs/lib/survey/util/http/AndroidMultiPartEntity;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x609
-    name = "ProgressListener"
-.end annotation
-
-
 # virtual methods
-.method public abstract transferred(J)V
+.method public abstract a(J)V
 .end method

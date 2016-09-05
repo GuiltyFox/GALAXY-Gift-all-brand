@@ -7,15 +7,6 @@
 .annotation runtime Lcom/fasterxml/jackson/databind/annotation/JacksonStdImpl;
 .end annotation
 
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/ser/std/StdArraySerializers;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "BooleanArraySerializer"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase",
@@ -67,7 +58,6 @@
 # virtual methods
 .method public _withValueTypeSerializer(Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)Lcom/fasterxml/jackson/databind/ser/ContainerSerializer;
     .registers 2
-    .param p1, "vts"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -85,13 +75,6 @@
 
 .method public acceptJsonFormatVisitor(Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;Lcom/fasterxml/jackson/databind/JavaType;)V
     .registers 5
-    .param p1, "visitor"    # Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;
-    .param p2, "typeHint"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
 
     .prologue
     .line 143
@@ -103,7 +86,6 @@
     move-result-object v0
 
     .line 145
-    .local v0, "v2":Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonArrayFormatVisitor;
     if-eqz v0, :cond_d
 
     .line 146
@@ -112,7 +94,6 @@
     invoke-interface {v0, v1}, Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonArrayFormatVisitor;->itemsFormat(Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatTypes;)V
 
     .line 149
-    .end local v0    # "v2":Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonArrayFormatVisitor;
     :cond_d
     return-void
 .end method
@@ -146,21 +127,18 @@
 
 .method public getSchema(Lcom/fasterxml/jackson/databind/SerializerProvider;Ljava/lang/reflect/Type;)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 6
-    .param p1, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .param p2, "typeHint"    # Ljava/lang/reflect/Type;
 
     .prologue
     .line 134
-    const-string/jumbo v1, "array"
+    const-string/jumbo v0, "array"
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    invoke-virtual {p0, v1, v2}, Lcom/fasterxml/jackson/databind/ser/std/StdArraySerializers$BooleanArraySerializer;->createSchemaNode(Ljava/lang/String;Z)Lcom/fasterxml/jackson/databind/node/ObjectNode;
+    invoke-virtual {p0, v0, v1}, Lcom/fasterxml/jackson/databind/ser/std/StdArraySerializers$BooleanArraySerializer;->createSchemaNode(Ljava/lang/String;Z)Lcom/fasterxml/jackson/databind/node/ObjectNode;
 
     move-result-object v0
 
     .line 135
-    .local v0, "o":Lcom/fasterxml/jackson/databind/node/ObjectNode;
     const-string/jumbo v1, "items"
 
     const-string/jumbo v2, "boolean"
@@ -177,13 +155,11 @@
 
 .method public bridge synthetic hasSingleElement(Ljava/lang/Object;)Z
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 84
     check-cast p1, [Z
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/ser/std/StdArraySerializers$BooleanArraySerializer;->hasSingleElement([Z)Z
 
     move-result v0
@@ -193,7 +169,6 @@
 
 .method public hasSingleElement([Z)Z
     .registers 4
-    .param p1, "value"    # [Z
 
     .prologue
     const/4 v0, 0x1
@@ -214,13 +189,11 @@
 
 .method public bridge synthetic isEmpty(Ljava/lang/Object;)Z
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 84
     check-cast p1, [Z
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/ser/std/StdArraySerializers$BooleanArraySerializer;->isEmpty([Z)Z
 
     move-result v0
@@ -230,7 +203,6 @@
 
 .method public isEmpty([Z)Z
     .registers 3
-    .param p1, "value"    # [Z
 
     .prologue
     .line 114
@@ -254,21 +226,11 @@
 
 .method public bridge synthetic serializeContents(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 4
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "x2"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 84
     check-cast p1, [Z
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2, p3}, Lcom/fasterxml/jackson/databind/ser/std/StdArraySerializers$BooleanArraySerializer;->serializeContents([ZLcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
 
     return-void
@@ -276,24 +238,13 @@
 
 .method public serializeContents([ZLcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 7
-    .param p1, "value"    # [Z
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 126
     const/4 v0, 0x0
 
-    .local v0, "i":I
     array-length v1, p1
 
-    .local v1, "len":I
     :goto_2
     if-ge v0, v1, :cond_c
 

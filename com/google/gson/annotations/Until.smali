@@ -20,5 +20,5 @@
 
 
 # virtual methods
-.method public abstract value()D
+.method public abstract a()D
 .end method

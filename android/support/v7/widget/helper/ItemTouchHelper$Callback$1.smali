@@ -11,11 +11,6 @@
     value = Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 
 # direct methods
 .method constructor <init>()V
@@ -32,7 +27,6 @@
 # virtual methods
 .method public getInterpolation(F)F
     .registers 3
-    .param p1, "t"    # F
 
     .prologue
     .line 1374

@@ -8,27 +8,21 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/bzbs/lib/survey/util/RxPermissionUtils;->request()V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/bzbs/lib/survey/util/RxPermissionUtils;->b()V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/bzbs/lib/survey/util/RxPermissionUtils;
+.field final synthetic a:Lcom/bzbs/lib/survey/util/RxPermissionUtils;
 
 
 # direct methods
 .method constructor <init>(Lcom/bzbs/lib/survey/util/RxPermissionUtils;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/bzbs/lib/survey/util/RxPermissionUtils;
 
     .prologue
     .line 127
-    iput-object p1, p0, Lcom/bzbs/lib/survey/util/RxPermissionUtils$4;->this$0:Lcom/bzbs/lib/survey/util/RxPermissionUtils;
+    iput-object p1, p0, Lcom/bzbs/lib/survey/util/RxPermissionUtils$4;->a:Lcom/bzbs/lib/survey/util/RxPermissionUtils;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,7 +31,7 @@
 
 
 # virtual methods
-.method public call()V
+.method public a()V
     .registers 1
 
     .prologue

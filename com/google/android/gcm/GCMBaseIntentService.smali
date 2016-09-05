@@ -99,8 +99,6 @@
 
 .method private constructor <init>(Ljava/lang/String;[Ljava/lang/String;)V
     .registers 3
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "senderIds"    # [Ljava/lang/String;
 
     .prologue
     .line 100
@@ -115,7 +113,6 @@
 
 .method protected varargs constructor <init>([Ljava/lang/String;)V
     .registers 3
-    .param p1, "senderIds"    # [Ljava/lang/String;
 
     .prologue
     .line 96
@@ -129,48 +126,120 @@
     return-void
 .end method
 
+.method static a(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;)V
+    .registers 7
+
+    .prologue
+    .line 270
+    sget-object v1, Lcom/google/android/gcm/GCMBaseIntentService;->LOCK:Ljava/lang/Object;
+
+    monitor-enter v1
+
+    .line 271
+    :try_start_3
+    sget-object v0, Lcom/google/android/gcm/GCMBaseIntentService;->sWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    if-nez v0, :cond_1a
+
+    .line 273
+    const-string/jumbo v0, "power"
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/os/PowerManager;
+
+    .line 275
+    const/4 v2, 0x1
+
+    const-string/jumbo v3, "GCM_LIB"
+
+    invoke-virtual {v0, v2, v3}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/android/gcm/GCMBaseIntentService;->sWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    .line 278
+    :cond_1a
+    monitor-exit v1
+    :try_end_1b
+    .catchall {:try_start_3 .. :try_end_1b} :catchall_30
+
+    .line 279
+    const-string/jumbo v0, "GCMBaseIntentService"
+
+    const-string/jumbo v1, "Acquiring wakelock"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 280
+    sget-object v0, Lcom/google/android/gcm/GCMBaseIntentService;->sWakeLock:Landroid/os/PowerManager$WakeLock;
+
+    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->acquire()V
+
+    .line 281
+    invoke-virtual {p1, p0, p2}, Landroid/content/Intent;->setClassName(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 282
+    invoke-virtual {p0, p1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+
+    .line 283
+    return-void
+
+    .line 278
+    :catchall_30
+    move-exception v0
+
+    :try_start_31
+    monitor-exit v1
+    :try_end_32
+    .catchall {:try_start_31 .. :try_end_32} :catchall_30
+
+    throw v0
+.end method
+
 .method private static getName(Ljava/lang/String;)Ljava/lang/String;
     .registers 5
-    .param p0, "senderId"    # Ljava/lang/String;
 
     .prologue
     .line 105
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "GCMIntentService-"
+    const-string/jumbo v1, "GCMIntentService-"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string/jumbo v2, "-"
+    const-string/jumbo v1, "-"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    sget v2, Lcom/google/android/gcm/GCMBaseIntentService;->sCounter:I
+    sget v1, Lcom/google/android/gcm/GCMBaseIntentService;->sCounter:I
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    sput v2, Lcom/google/android/gcm/GCMBaseIntentService;->sCounter:I
+    sput v1, Lcom/google/android/gcm/GCMBaseIntentService;->sCounter:I
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     .line 106
-    .local v0, "name":Ljava/lang/String;
     const-string/jumbo v1, "GCMBaseIntentService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -198,431 +267,296 @@
 .end method
 
 .method private static getName([Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
-    .param p0, "senderIds"    # [Ljava/lang/String;
+    .registers 2
 
     .prologue
     .line 111
-    invoke-static {p0}, Lcom/google/android/gcm/GCMRegistrar;->getFlatSenderIds([Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/google/android/gcm/GCMRegistrar;->a([Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     .line 112
-    .local v0, "flatSenderIds":Ljava/lang/String;
     invoke-static {v0}, Lcom/google/android/gcm/GCMBaseIntentService;->getName(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    return-object v1
-.end method
-
-.method private handleRegistration(Landroid/content/Context;Landroid/content/Intent;)V
-    .registers 21
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
-
-    .prologue
-    .line 286
-    const-string/jumbo v12, "registration_id"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v12}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v7
-
-    .line 287
-    .local v7, "registrationId":Ljava/lang/String;
-    const-string/jumbo v12, "error"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v12}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 288
-    .local v4, "error":Ljava/lang/String;
-    const-string/jumbo v12, "unregistered"
-
-    move-object/from16 v0, p2
-
-    invoke-virtual {v0, v12}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v11
-
-    .line 289
-    .local v11, "unregistered":Ljava/lang/String;
-    const-string/jumbo v12, "GCMBaseIntentService"
-
-    new-instance v13, Ljava/lang/StringBuilder;
-
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v14, "handleRegistration: registrationId = "
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v13, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    const-string/jumbo v14, ", error = "
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v13, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    const-string/jumbo v14, ", unregistered = "
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v13, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-static {v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 293
-    if-eqz v7, :cond_5d
-
-    .line 294
-    invoke-static/range {p1 .. p1}, Lcom/google/android/gcm/GCMRegistrar;->resetBackoff(Landroid/content/Context;)V
-
-    .line 295
-    move-object/from16 v0, p1
-
-    invoke-static {v0, v7}, Lcom/google/android/gcm/GCMRegistrar;->setRegistrationId(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 296
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1, v7}, Lcom/google/android/gcm/GCMBaseIntentService;->onRegistered(Landroid/content/Context;Ljava/lang/String;)V
-
-    .line 342
-    :cond_5c
-    :goto_5c
-    return-void
-
-    .line 301
-    :cond_5d
-    if-eqz v11, :cond_6e
-
-    .line 303
-    invoke-static/range {p1 .. p1}, Lcom/google/android/gcm/GCMRegistrar;->resetBackoff(Landroid/content/Context;)V
-
-    .line 304
-    invoke-static/range {p1 .. p1}, Lcom/google/android/gcm/GCMRegistrar;->clearRegistrationId(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 306
-    .local v6, "oldRegistrationId":Ljava/lang/String;
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1, v6}, Lcom/google/android/gcm/GCMBaseIntentService;->onUnregistered(Landroid/content/Context;Ljava/lang/String;)V
-
-    goto :goto_5c
-
-    .line 311
-    .end local v6    # "oldRegistrationId":Ljava/lang/String;
-    :cond_6e
-    const-string/jumbo v12, "GCMBaseIntentService"
-
-    new-instance v13, Ljava/lang/StringBuilder;
-
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v14, "Registration error: "
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v13, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-static {v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 313
-    const-string/jumbo v12, "SERVICE_NOT_AVAILABLE"
-
-    invoke-virtual {v12, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v12
-
-    if-eqz v12, :cond_11d
-
-    .line 314
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1, v4}, Lcom/google/android/gcm/GCMBaseIntentService;->onRecoverableError(Landroid/content/Context;Ljava/lang/String;)Z
-
-    move-result v8
-
-    .line 315
-    .local v8, "retry":Z
-    if-eqz v8, :cond_112
-
-    .line 316
-    invoke-static/range {p1 .. p1}, Lcom/google/android/gcm/GCMRegistrar;->getBackoff(Landroid/content/Context;)I
-
-    move-result v3
-
-    .line 317
-    .local v3, "backoffTimeMs":I
-    div-int/lit8 v12, v3, 0x2
-
-    sget-object v13, Lcom/google/android/gcm/GCMBaseIntentService;->sRandom:Ljava/util/Random;
-
-    invoke-virtual {v13, v3}, Ljava/util/Random;->nextInt(I)I
-
-    move-result v13
-
-    add-int v5, v12, v13
-
-    .line 319
-    .local v5, "nextAttempt":I
-    const-string/jumbo v12, "GCMBaseIntentService"
-
-    new-instance v13, Ljava/lang/StringBuilder;
-
-    invoke-direct {v13}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v14, "Scheduling registration retry, backoff = "
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v13, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    const-string/jumbo v14, " ("
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v13, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    const-string/jumbo v14, ")"
-
-    invoke-virtual {v13, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v13
-
-    invoke-virtual {v13}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v13
-
-    invoke-static {v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 321
-    new-instance v9, Landroid/content/Intent;
-
-    const-string/jumbo v12, "com.google.android.gcm.intent.RETRY"
-
-    invoke-direct {v9, v12}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    .line 323
-    .local v9, "retryIntent":Landroid/content/Intent;
-    const-string/jumbo v12, "token"
-
-    sget-object v13, Lcom/google/android/gcm/GCMBaseIntentService;->TOKEN:Ljava/lang/String;
-
-    invoke-virtual {v9, v12, v13}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 324
-    const/4 v12, 0x0
-
-    const/4 v13, 0x0
-
-    move-object/from16 v0, p1
-
-    invoke-static {v0, v12, v9, v13}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
-
-    move-result-object v10
-
-    .line 326
-    .local v10, "retryPendingIntent":Landroid/app/PendingIntent;
-    const-string/jumbo v12, "alarm"
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v12}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/app/AlarmManager;
-
-    .line 328
-    .local v2, "am":Landroid/app/AlarmManager;
-    const/4 v12, 0x3
-
-    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v14
-
-    int-to-long v0, v5
-
-    move-wide/from16 v16, v0
-
-    add-long v14, v14, v16
-
-    invoke-virtual {v2, v12, v14, v15, v10}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
-
-    .line 332
-    sget v12, Lcom/google/android/gcm/GCMBaseIntentService;->MAX_BACKOFF_MS:I
-
-    if-ge v3, v12, :cond_5c
-
-    .line 333
-    mul-int/lit8 v12, v3, 0x2
-
-    move-object/from16 v0, p1
-
-    invoke-static {v0, v12}, Lcom/google/android/gcm/GCMRegistrar;->setBackoff(Landroid/content/Context;I)V
-
-    goto/16 :goto_5c
-
-    .line 336
-    .end local v2    # "am":Landroid/app/AlarmManager;
-    .end local v3    # "backoffTimeMs":I
-    .end local v5    # "nextAttempt":I
-    .end local v9    # "retryIntent":Landroid/content/Intent;
-    .end local v10    # "retryPendingIntent":Landroid/app/PendingIntent;
-    :cond_112
-    const-string/jumbo v12, "GCMBaseIntentService"
-
-    const-string/jumbo v13, "Not retrying failed operation"
-
-    invoke-static {v12, v13}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto/16 :goto_5c
-
-    .line 340
-    .end local v8    # "retry":Z
-    :cond_11d
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1, v4}, Lcom/google/android/gcm/GCMBaseIntentService;->onError(Landroid/content/Context;Ljava/lang/String;)V
-
-    goto/16 :goto_5c
-.end method
-
-.method static runIntentInService(Landroid/content/Context;Landroid/content/Intent;Ljava/lang/String;)V
-    .registers 7
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "intent"    # Landroid/content/Intent;
-    .param p2, "className"    # Ljava/lang/String;
-
-    .prologue
-    .line 270
-    sget-object v2, Lcom/google/android/gcm/GCMBaseIntentService;->LOCK:Ljava/lang/Object;
-
-    monitor-enter v2
-
-    .line 271
-    :try_start_3
-    sget-object v1, Lcom/google/android/gcm/GCMBaseIntentService;->sWakeLock:Landroid/os/PowerManager$WakeLock;
-
-    if-nez v1, :cond_1a
-
-    .line 273
-    const-string/jumbo v1, "power"
-
-    invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Landroid/os/PowerManager;
+    return-object v0
+.end method
 
-    .line 275
-    .local v0, "pm":Landroid/os/PowerManager;
-    const/4 v1, 0x1
+.method private handleRegistration(Landroid/content/Context;Landroid/content/Intent;)V
+    .registers 13
 
-    const-string/jumbo v3, "GCM_LIB"
+    .prologue
+    const/4 v6, 0x0
 
-    invoke-virtual {v0, v1, v3}, Landroid/os/PowerManager;->newWakeLock(ILjava/lang/String;)Landroid/os/PowerManager$WakeLock;
+    .line 286
+    const-string/jumbo v0, "registration_id"
+
+    invoke-virtual {p2, v0}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 287
+    const-string/jumbo v1, "error"
+
+    invoke-virtual {p2, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    sput-object v1, Lcom/google/android/gcm/GCMBaseIntentService;->sWakeLock:Landroid/os/PowerManager$WakeLock;
+    .line 288
+    const-string/jumbo v2, "unregistered"
 
-    .line 278
-    .end local v0    # "pm":Landroid/os/PowerManager;
-    :cond_1a
-    monitor-exit v2
-    :try_end_1b
-    .catchall {:try_start_3 .. :try_end_1b} :catchall_30
+    invoke-virtual {p2, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 279
-    const-string/jumbo v1, "GCMBaseIntentService"
+    move-result-object v2
 
-    const-string/jumbo v2, "Acquiring wakelock"
+    .line 289
+    const-string/jumbo v3, "GCMBaseIntentService"
 
-    invoke-static {v1, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    .line 280
-    sget-object v1, Lcom/google/android/gcm/GCMBaseIntentService;->sWakeLock:Landroid/os/PowerManager$WakeLock;
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v1}, Landroid/os/PowerManager$WakeLock;->acquire()V
+    const-string/jumbo v5, "handleRegistration: registrationId = "
 
-    .line 281
-    invoke-virtual {p1, p0, p2}, Landroid/content/Intent;->setClassName(Landroid/content/Context;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 282
-    invoke-virtual {p0, p1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+    move-result-object v4
 
-    .line 283
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string/jumbo v5, ", error = "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    const-string/jumbo v5, ", unregistered = "
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 293
+    if-eqz v0, :cond_52
+
+    .line 294
+    invoke-static {p1}, Lcom/google/android/gcm/GCMRegistrar;->h(Landroid/content/Context;)V
+
+    .line 295
+    invoke-static {p1, v0}, Lcom/google/android/gcm/GCMRegistrar;->a(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 296
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gcm/GCMBaseIntentService;->onRegistered(Landroid/content/Context;Ljava/lang/String;)V
+
+    .line 342
+    :cond_51
+    :goto_51
     return-void
 
-    .line 278
-    :catchall_30
-    move-exception v1
+    .line 301
+    :cond_52
+    if-eqz v2, :cond_5f
 
-    :try_start_31
-    monitor-exit v2
-    :try_end_32
-    .catchall {:try_start_31 .. :try_end_32} :catchall_30
+    .line 303
+    invoke-static {p1}, Lcom/google/android/gcm/GCMRegistrar;->h(Landroid/content/Context;)V
 
-    throw v1
+    .line 304
+    invoke-static {p1}, Lcom/google/android/gcm/GCMRegistrar;->g(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 306
+    invoke-virtual {p0, p1, v0}, Lcom/google/android/gcm/GCMBaseIntentService;->onUnregistered(Landroid/content/Context;Ljava/lang/String;)V
+
+    goto :goto_51
+
+    .line 311
+    :cond_5f
+    const-string/jumbo v0, "GCMBaseIntentService"
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "Registration error: "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v0, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 313
+    const-string/jumbo v0, "SERVICE_NOT_AVAILABLE"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_fe
+
+    .line 314
+    invoke-virtual {p0, p1, v1}, Lcom/google/android/gcm/GCMBaseIntentService;->onRecoverableError(Landroid/content/Context;Ljava/lang/String;)Z
+
+    move-result v0
+
+    .line 315
+    if-eqz v0, :cond_f3
+
+    .line 316
+    invoke-static {p1}, Lcom/google/android/gcm/GCMRegistrar;->i(Landroid/content/Context;)I
+
+    move-result v1
+
+    .line 317
+    div-int/lit8 v0, v1, 0x2
+
+    sget-object v2, Lcom/google/android/gcm/GCMBaseIntentService;->sRandom:Ljava/util/Random;
+
+    invoke-virtual {v2, v1}, Ljava/util/Random;->nextInt(I)I
+
+    move-result v2
+
+    add-int/2addr v2, v0
+
+    .line 319
+    const-string/jumbo v0, "GCMBaseIntentService"
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "Scheduling registration retry, backoff = "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string/jumbo v4, " ("
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string/jumbo v4, ")"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v0, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 321
+    new-instance v0, Landroid/content/Intent;
+
+    const-string/jumbo v3, "com.google.android.gcm.intent.RETRY"
+
+    invoke-direct {v0, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    .line 323
+    const-string/jumbo v3, "token"
+
+    sget-object v4, Lcom/google/android/gcm/GCMBaseIntentService;->TOKEN:Ljava/lang/String;
+
+    invoke-virtual {v0, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 324
+    invoke-static {p1, v6, v0, v6}, Landroid/app/PendingIntent;->getBroadcast(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object v3
+
+    .line 326
+    const-string/jumbo v0, "alarm"
+
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/app/AlarmManager;
+
+    .line 328
+    const/4 v4, 0x3
+
+    invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
+
+    move-result-wide v6
+
+    int-to-long v8, v2
+
+    add-long/2addr v6, v8
+
+    invoke-virtual {v0, v4, v6, v7, v3}, Landroid/app/AlarmManager;->set(IJLandroid/app/PendingIntent;)V
+
+    .line 332
+    sget v0, Lcom/google/android/gcm/GCMBaseIntentService;->MAX_BACKOFF_MS:I
+
+    if-ge v1, v0, :cond_51
+
+    .line 333
+    mul-int/lit8 v0, v1, 0x2
+
+    invoke-static {p1, v0}, Lcom/google/android/gcm/GCMRegistrar;->a(Landroid/content/Context;I)V
+
+    goto/16 :goto_51
+
+    .line 336
+    :cond_f3
+    const-string/jumbo v0, "GCMBaseIntentService"
+
+    const-string/jumbo v1, "Not retrying failed operation"
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto/16 :goto_51
+
+    .line 340
+    :cond_fe
+    invoke-virtual {p0, p1, v1}, Lcom/google/android/gcm/GCMBaseIntentService;->onError(Landroid/content/Context;Ljava/lang/String;)V
+
+    goto/16 :goto_51
 .end method
 
 
 # virtual methods
 .method protected getSenderIds(Landroid/content/Context;)[Ljava/lang/String;
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 124
@@ -648,8 +582,6 @@
 
 .method protected onDeletedMessages(Landroid/content/Context;I)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "total"    # I
 
     .prologue
     .line 146
@@ -660,68 +592,65 @@
 .end method
 
 .method public final onHandleIntent(Landroid/content/Intent;)V
-    .registers 14
-    .param p1, "intent"    # Landroid/content/Intent;
+    .registers 8
 
     .prologue
     .line 193
     :try_start_0
     invoke-virtual {p0}, Lcom/google/android/gcm/GCMBaseIntentService;->getApplicationContext()Landroid/content/Context;
 
-    move-result-object v1
-
-    .line 194
-    .local v1, "context":Landroid/content/Context;
-    invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
-
     move-result-object v0
 
+    .line 194
+    invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v1
+
     .line 195
-    .local v0, "action":Ljava/lang/String;
-    const-string/jumbo v8, "com.google.android.c2dm.intent.REGISTRATION"
+    const-string/jumbo v2, "com.google.android.c2dm.intent.REGISTRATION"
 
-    invoke-virtual {v0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v8
+    move-result v2
 
-    if-eqz v8, :cond_2e
+    if-eqz v2, :cond_2e
 
     .line 196
-    invoke-static {v1}, Lcom/google/android/gcm/GCMRegistrar;->setRetryBroadcastReceiver(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/google/android/gcm/GCMRegistrar;->d(Landroid/content/Context;)V
 
     .line 197
-    invoke-direct {p0, v1, p1}, Lcom/google/android/gcm/GCMBaseIntentService;->handleRegistration(Landroid/content/Context;Landroid/content/Intent;)V
+    invoke-direct {p0, v0, p1}, Lcom/google/android/gcm/GCMBaseIntentService;->handleRegistration(Landroid/content/Context;Landroid/content/Intent;)V
     :try_end_17
     .catchall {:try_start_0 .. :try_end_17} :catchall_90
 
     .line 248
     :cond_17
     :goto_17
-    sget-object v9, Lcom/google/android/gcm/GCMBaseIntentService;->LOCK:Ljava/lang/Object;
+    sget-object v1, Lcom/google/android/gcm/GCMBaseIntentService;->LOCK:Ljava/lang/Object;
 
-    monitor-enter v9
+    monitor-enter v1
 
     .line 250
     :try_start_1a
-    sget-object v8, Lcom/google/android/gcm/GCMBaseIntentService;->sWakeLock:Landroid/os/PowerManager$WakeLock;
+    sget-object v0, Lcom/google/android/gcm/GCMBaseIntentService;->sWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    if-eqz v8, :cond_134
+    if-eqz v0, :cond_134
 
     .line 251
-    const-string/jumbo v8, "GCMBaseIntentService"
+    const-string/jumbo v0, "GCMBaseIntentService"
 
-    const-string/jumbo v10, "Releasing wakelock"
+    const-string/jumbo v2, "Releasing wakelock"
 
-    invoke-static {v8, v10}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 252
-    sget-object v8, Lcom/google/android/gcm/GCMBaseIntentService;->sWakeLock:Landroid/os/PowerManager$WakeLock;
+    sget-object v0, Lcom/google/android/gcm/GCMBaseIntentService;->sWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    invoke-virtual {v8}, Landroid/os/PowerManager$WakeLock;->release()V
+    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
     .line 257
     :goto_2c
-    monitor-exit v9
+    monitor-exit v1
     :try_end_2d
     .catchall {:try_start_1a .. :try_end_2d} :catchall_13f
 
@@ -732,79 +661,76 @@
     .line 198
     :cond_2e
     :try_start_2e
-    const-string/jumbo v8, "com.google.android.c2dm.intent.RECEIVE"
+    const-string/jumbo v2, "com.google.android.c2dm.intent.RECEIVE"
 
-    invoke-virtual {v0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v8
+    move-result v2
 
-    if-eqz v8, :cond_c9
+    if-eqz v2, :cond_c9
 
     .line 200
-    const-string/jumbo v8, "message_type"
+    const-string/jumbo v1, "message_type"
 
-    invoke-virtual {p1, v8}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
     .line 202
-    .local v3, "messageType":Ljava/lang/String;
-    if-eqz v3, :cond_c4
+    if-eqz v1, :cond_c4
 
     .line 203
-    const-string/jumbo v8, "deleted_messages"
+    const-string/jumbo v2, "deleted_messages"
 
-    invoke-virtual {v3, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v8
+    move-result v2
 
-    if-eqz v8, :cond_a8
+    if-eqz v2, :cond_a8
 
     .line 204
-    const-string/jumbo v8, "total_deleted"
+    const-string/jumbo v1, "total_deleted"
 
-    invoke-virtual {p1, v8}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
     :try_end_4f
     .catchall {:try_start_2e .. :try_end_4f} :catchall_90
 
-    move-result-object v4
+    move-result-object v1
 
     .line 206
-    .local v4, "sTotal":Ljava/lang/String;
-    if-eqz v4, :cond_17
+    if-eqz v1, :cond_17
 
     .line 208
     :try_start_52
-    invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v7
+    move-result v2
 
     .line 209
-    .local v7, "total":I
-    const-string/jumbo v8, "GCMBaseIntentService"
+    const-string/jumbo v3, "GCMBaseIntentService"
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v10, "Received deleted messages notification: "
+    const-string/jumbo v5, "Received deleted messages notification: "
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v4
 
-    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v4
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v4
 
-    invoke-static {v8, v9}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v3, v4}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 211
-    invoke-virtual {p0, v1, v7}, Lcom/google/android/gcm/GCMBaseIntentService;->onDeletedMessages(Landroid/content/Context;I)V
+    invoke-virtual {p0, v0, v2}, Lcom/google/android/gcm/GCMBaseIntentService;->onDeletedMessages(Landroid/content/Context;I)V
     :try_end_73
     .catch Ljava/lang/NumberFormatException; {:try_start_52 .. :try_end_73} :catch_74
     .catchall {:try_start_52 .. :try_end_73} :catchall_90
@@ -812,213 +738,201 @@
     goto :goto_17
 
     .line 212
-    .end local v7    # "total":I
     :catch_74
-    move-exception v2
+    move-exception v0
 
     .line 213
-    .local v2, "e":Ljava/lang/NumberFormatException;
     :try_start_75
-    const-string/jumbo v8, "GCMBaseIntentService"
+    const-string/jumbo v0, "GCMBaseIntentService"
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v10, "GCM returned invalid number of deleted messages: "
+    const-string/jumbo v3, "GCM returned invalid number of deleted messages: "
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v2
 
-    invoke-virtual {v9, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v1
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v1
 
-    invoke-static {v8, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_8f
     .catchall {:try_start_75 .. :try_end_8f} :catchall_90
 
     goto :goto_17
 
     .line 248
-    .end local v0    # "action":Ljava/lang/String;
-    .end local v1    # "context":Landroid/content/Context;
-    .end local v2    # "e":Ljava/lang/NumberFormatException;
-    .end local v3    # "messageType":Ljava/lang/String;
-    .end local v4    # "sTotal":Ljava/lang/String;
     :catchall_90
-    move-exception v8
+    move-exception v0
 
-    sget-object v9, Lcom/google/android/gcm/GCMBaseIntentService;->LOCK:Ljava/lang/Object;
+    sget-object v1, Lcom/google/android/gcm/GCMBaseIntentService;->LOCK:Ljava/lang/Object;
 
-    monitor-enter v9
+    monitor-enter v1
 
     .line 250
     :try_start_94
-    sget-object v10, Lcom/google/android/gcm/GCMBaseIntentService;->sWakeLock:Landroid/os/PowerManager$WakeLock;
+    sget-object v2, Lcom/google/android/gcm/GCMBaseIntentService;->sWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    if-eqz v10, :cond_142
+    if-eqz v2, :cond_142
 
     .line 251
-    const-string/jumbo v10, "GCMBaseIntentService"
+    const-string/jumbo v2, "GCMBaseIntentService"
 
-    const-string/jumbo v11, "Releasing wakelock"
+    const-string/jumbo v3, "Releasing wakelock"
 
-    invoke-static {v10, v11}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 252
-    sget-object v10, Lcom/google/android/gcm/GCMBaseIntentService;->sWakeLock:Landroid/os/PowerManager$WakeLock;
+    sget-object v2, Lcom/google/android/gcm/GCMBaseIntentService;->sWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    invoke-virtual {v10}, Landroid/os/PowerManager$WakeLock;->release()V
+    invoke-virtual {v2}, Landroid/os/PowerManager$WakeLock;->release()V
 
     .line 257
     :goto_a6
-    monitor-exit v9
+    monitor-exit v1
     :try_end_a7
     .catchall {:try_start_94 .. :try_end_a7} :catchall_14d
 
-    throw v8
+    throw v0
 
     .line 219
-    .restart local v0    # "action":Ljava/lang/String;
-    .restart local v1    # "context":Landroid/content/Context;
-    .restart local v3    # "messageType":Ljava/lang/String;
     :cond_a8
     :try_start_a8
-    const-string/jumbo v8, "GCMBaseIntentService"
+    const-string/jumbo v0, "GCMBaseIntentService"
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v10, "Received unknown special message: "
+    const-string/jumbo v3, "Received unknown special message: "
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v2
 
-    invoke-virtual {v9, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v1
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v1
 
-    invoke-static {v8, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_17
 
     .line 223
     :cond_c4
-    invoke-virtual {p0, v1, p1}, Lcom/google/android/gcm/GCMBaseIntentService;->onMessage(Landroid/content/Context;Landroid/content/Intent;)V
+    invoke-virtual {p0, v0, p1}, Lcom/google/android/gcm/GCMBaseIntentService;->onMessage(Landroid/content/Context;Landroid/content/Intent;)V
 
     goto/16 :goto_17
 
     .line 225
-    .end local v3    # "messageType":Ljava/lang/String;
     :cond_c9
-    const-string/jumbo v8, "com.google.android.gcm.intent.RETRY"
+    const-string/jumbo v2, "com.google.android.gcm.intent.RETRY"
 
-    invoke-virtual {v0, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v8
+    move-result v1
 
-    if-eqz v8, :cond_17
+    if-eqz v1, :cond_17
 
     .line 226
-    const-string/jumbo v8, "token"
+    const-string/jumbo v1, "token"
 
-    invoke-virtual {p1, v8}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v1
 
     .line 227
-    .local v6, "token":Ljava/lang/String;
-    sget-object v8, Lcom/google/android/gcm/GCMBaseIntentService;->TOKEN:Ljava/lang/String;
+    sget-object v2, Lcom/google/android/gcm/GCMBaseIntentService;->TOKEN:Ljava/lang/String;
 
-    invoke-virtual {v8, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v8
+    move-result v2
 
-    if-nez v8, :cond_120
+    if-nez v2, :cond_120
 
     .line 230
-    const-string/jumbo v8, "GCMBaseIntentService"
+    const-string/jumbo v0, "GCMBaseIntentService"
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v10, "Received invalid token: "
+    const-string/jumbo v3, "Received invalid token: "
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v2
 
-    invoke-virtual {v9, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v1
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v1
 
-    invoke-static {v8, v9}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_fb
     .catchall {:try_start_a8 .. :try_end_fb} :catchall_90
 
     .line 248
-    sget-object v9, Lcom/google/android/gcm/GCMBaseIntentService;->LOCK:Ljava/lang/Object;
+    sget-object v1, Lcom/google/android/gcm/GCMBaseIntentService;->LOCK:Ljava/lang/Object;
 
-    monitor-enter v9
+    monitor-enter v1
 
     .line 250
     :try_start_fe
-    sget-object v8, Lcom/google/android/gcm/GCMBaseIntentService;->sWakeLock:Landroid/os/PowerManager$WakeLock;
+    sget-object v0, Lcom/google/android/gcm/GCMBaseIntentService;->sWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    if-eqz v8, :cond_116
+    if-eqz v0, :cond_116
 
     .line 251
-    const-string/jumbo v8, "GCMBaseIntentService"
+    const-string/jumbo v0, "GCMBaseIntentService"
 
-    const-string/jumbo v10, "Releasing wakelock"
+    const-string/jumbo v2, "Releasing wakelock"
 
-    invoke-static {v8, v10}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v2}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 252
-    sget-object v8, Lcom/google/android/gcm/GCMBaseIntentService;->sWakeLock:Landroid/os/PowerManager$WakeLock;
+    sget-object v0, Lcom/google/android/gcm/GCMBaseIntentService;->sWakeLock:Landroid/os/PowerManager$WakeLock;
 
-    invoke-virtual {v8}, Landroid/os/PowerManager$WakeLock;->release()V
+    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
 
     .line 257
     :goto_110
-    monitor-exit v9
+    monitor-exit v1
 
     goto/16 :goto_2d
 
     :catchall_113
-    move-exception v8
+    move-exception v0
 
-    monitor-exit v9
+    monitor-exit v1
     :try_end_115
     .catchall {:try_start_fe .. :try_end_115} :catchall_113
 
-    throw v8
+    throw v0
 
     .line 255
     :cond_116
     :try_start_116
-    const-string/jumbo v8, "GCMBaseIntentService"
+    const-string/jumbo v0, "GCMBaseIntentService"
 
-    const-string/jumbo v10, "Wakelock reference is null"
+    const-string/jumbo v2, "Wakelock reference is null"
 
-    invoke-static {v8, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_11f
     .catchall {:try_start_116 .. :try_end_11f} :catchall_113
 
@@ -1027,76 +941,71 @@
     .line 234
     :cond_120
     :try_start_120
-    invoke-static {v1}, Lcom/google/android/gcm/GCMRegistrar;->isRegistered(Landroid/content/Context;)Z
+    invoke-static {v0}, Lcom/google/android/gcm/GCMRegistrar;->f(Landroid/content/Context;)Z
 
-    move-result v8
+    move-result v1
 
-    if-eqz v8, :cond_12b
+    if-eqz v1, :cond_12b
 
     .line 235
-    invoke-static {v1}, Lcom/google/android/gcm/GCMRegistrar;->internalUnregister(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/google/android/gcm/GCMRegistrar;->c(Landroid/content/Context;)V
 
     goto/16 :goto_17
 
     .line 237
     :cond_12b
-    invoke-virtual {p0, v1}, Lcom/google/android/gcm/GCMBaseIntentService;->getSenderIds(Landroid/content/Context;)[Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/google/android/gcm/GCMBaseIntentService;->getSenderIds(Landroid/content/Context;)[Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
     .line 238
-    .local v5, "senderIds":[Ljava/lang/String;
-    invoke-static {v1, v5}, Lcom/google/android/gcm/GCMRegistrar;->internalRegister(Landroid/content/Context;[Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/google/android/gcm/GCMRegistrar;->b(Landroid/content/Context;[Ljava/lang/String;)V
     :try_end_132
     .catchall {:try_start_120 .. :try_end_132} :catchall_90
 
     goto/16 :goto_17
 
     .line 255
-    .end local v5    # "senderIds":[Ljava/lang/String;
-    .end local v6    # "token":Ljava/lang/String;
     :cond_134
     :try_start_134
-    const-string/jumbo v8, "GCMBaseIntentService"
+    const-string/jumbo v0, "GCMBaseIntentService"
 
-    const-string/jumbo v10, "Wakelock reference is null"
+    const-string/jumbo v2, "Wakelock reference is null"
 
-    invoke-static {v8, v10}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_2c
 
     .line 257
     :catchall_13f
-    move-exception v8
+    move-exception v0
 
-    monitor-exit v9
+    monitor-exit v1
     :try_end_141
     .catchall {:try_start_134 .. :try_end_141} :catchall_13f
 
-    throw v8
+    throw v0
 
     .line 255
-    .end local v0    # "action":Ljava/lang/String;
-    .end local v1    # "context":Landroid/content/Context;
     :cond_142
     :try_start_142
-    const-string/jumbo v10, "GCMBaseIntentService"
+    const-string/jumbo v2, "GCMBaseIntentService"
 
-    const-string/jumbo v11, "Wakelock reference is null"
+    const-string/jumbo v3, "Wakelock reference is null"
 
-    invoke-static {v10, v11}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_a6
 
     .line 257
     :catchall_14d
-    move-exception v8
+    move-exception v0
 
-    monitor-exit v9
+    monitor-exit v1
     :try_end_14f
     .catchall {:try_start_142 .. :try_end_14f} :catchall_14d
 
-    throw v8
+    throw v0
 .end method
 
 .method protected abstract onMessage(Landroid/content/Context;Landroid/content/Intent;)V
@@ -1104,8 +1013,6 @@
 
 .method protected onRecoverableError(Landroid/content/Context;Ljava/lang/String;)Z
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "errorId"    # Ljava/lang/String;
 
     .prologue
     .line 161

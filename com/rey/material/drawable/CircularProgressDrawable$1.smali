@@ -11,14 +11,9 @@
     value = Lcom/rey/material/drawable/CircularProgressDrawable;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Lcom/rey/material/drawable/CircularProgressDrawable;
+.field final synthetic a:Lcom/rey/material/drawable/CircularProgressDrawable;
 
 
 # direct methods
@@ -27,7 +22,7 @@
 
     .prologue
     .line 461
-    iput-object p1, p0, Lcom/rey/material/drawable/CircularProgressDrawable$1;->this$0:Lcom/rey/material/drawable/CircularProgressDrawable;
+    iput-object p1, p0, Lcom/rey/material/drawable/CircularProgressDrawable$1;->a:Lcom/rey/material/drawable/CircularProgressDrawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,10 +36,9 @@
 
     .prologue
     .line 465
-    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable$1;->this$0:Lcom/rey/material/drawable/CircularProgressDrawable;
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable$1;->a:Lcom/rey/material/drawable/CircularProgressDrawable;
 
-    # invokes: Lcom/rey/material/drawable/CircularProgressDrawable;->update()V
-    invoke-static {v0}, Lcom/rey/material/drawable/CircularProgressDrawable;->access$000(Lcom/rey/material/drawable/CircularProgressDrawable;)V
+    invoke-static {v0}, Lcom/rey/material/drawable/CircularProgressDrawable;->a(Lcom/rey/material/drawable/CircularProgressDrawable;)V
 
     .line 466
     return-void

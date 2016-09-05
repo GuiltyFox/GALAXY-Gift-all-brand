@@ -8,24 +8,18 @@
     value = Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->onCreate(Landroid/os/Bundle;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/WebViewCustomInputActivity;
+.field final synthetic a:Lcom/samsung/privilege/activity/WebViewCustomInputActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/WebViewCustomInputActivity;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/WebViewCustomInputActivity;
 
     .prologue
     .line 161
-    iput-object p1, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity$1;->this$0:Lcom/samsung/privilege/activity/WebViewCustomInputActivity;
+    iput-object p1, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity$1;->a:Lcom/samsung/privilege/activity/WebViewCustomInputActivity;
 
     invoke-direct {p0}, Landroid/webkit/WebChromeClient;-><init>()V
 
@@ -36,12 +30,10 @@
 # virtual methods
 .method public onProgressChanged(Landroid/webkit/WebView;I)V
     .registers 5
-    .param p1, "view"    # Landroid/webkit/WebView;
-    .param p2, "progress"    # I
 
     .prologue
     .line 165
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity$1;->this$0:Lcom/samsung/privilege/activity/WebViewCustomInputActivity;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity$1;->a:Lcom/samsung/privilege/activity/WebViewCustomInputActivity;
 
     mul-int/lit16 v1, p2, 0x3e8
 

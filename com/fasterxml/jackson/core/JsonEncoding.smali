@@ -166,9 +166,6 @@
 
 .method private constructor <init>(Ljava/lang/String;ILjava/lang/String;ZI)V
     .registers 6
-    .param p3, "javaName"    # Ljava/lang/String;
-    .param p4, "bigEndian"    # Z
-    .param p5, "bits"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -196,7 +193,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonEncoding;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 18

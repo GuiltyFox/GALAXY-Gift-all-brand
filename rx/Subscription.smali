@@ -4,8 +4,8 @@
 
 
 # virtual methods
-.method public abstract isUnsubscribed()Z
+.method public abstract b()V
 .end method
 
-.method public abstract unsubscribe()V
+.method public abstract c()Z
 .end method

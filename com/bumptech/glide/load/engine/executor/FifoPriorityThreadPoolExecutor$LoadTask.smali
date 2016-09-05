@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "LoadTask"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -32,16 +23,14 @@
 
 
 # instance fields
-.field private final order:I
+.field private final a:I
 
-.field private final priority:I
+.field private final b:I
 
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Runnable;Ljava/lang/Object;I)V
     .registers 6
-    .param p1, "runnable"    # Ljava/lang/Runnable;
-    .param p3, "order"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -52,8 +41,6 @@
 
     .prologue
     .line 132
-    .local p0, "this":Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;, "Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask<TT;>;"
-    .local p2, "result":Ljava/lang/Object;, "TT;"
     invoke-direct {p0, p1, p2}, Ljava/util/concurrent/FutureTask;-><init>(Ljava/lang/Runnable;Ljava/lang/Object;)V
 
     .line 133
@@ -74,15 +61,14 @@
     :cond_10
     check-cast p1, Lcom/bumptech/glide/load/engine/executor/Prioritized;
 
-    .end local p1    # "runnable":Ljava/lang/Runnable;
-    invoke-interface {p1}, Lcom/bumptech/glide/load/engine/executor/Prioritized;->getPriority()I
+    invoke-interface {p1}, Lcom/bumptech/glide/load/engine/executor/Prioritized;->b()I
 
     move-result v0
 
-    iput v0, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->priority:I
+    iput v0, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->a:I
 
     .line 138
-    iput p3, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->order:I
+    iput p3, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->b:I
 
     .line 139
     return-void
@@ -90,8 +76,8 @@
 
 
 # virtual methods
-.method public compareTo(Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;)I
-    .registers 5
+.method public a(Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;)I
+    .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -102,41 +88,35 @@
 
     .prologue
     .line 160
-    .local p0, "this":Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;, "Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask<TT;>;"
-    .local p1, "loadTask":Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;, "Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask<*>;"
-    iget v1, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->priority:I
+    iget v0, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->a:I
 
-    iget v2, p1, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->priority:I
+    iget v1, p1, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->a:I
 
-    sub-int v0, v1, v2
+    sub-int/2addr v0, v1
 
     .line 161
-    .local v0, "result":I
-    if-nez v0, :cond_e
+    if-nez v0, :cond_c
 
     .line 162
-    iget v1, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->order:I
+    iget v0, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->b:I
 
-    iget v2, p1, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->order:I
+    iget v1, p1, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->b:I
 
-    sub-int v0, v1, v2
+    sub-int/2addr v0, v1
 
     .line 164
-    :cond_e
+    :cond_c
     return v0
 .end method
 
-.method public bridge synthetic compareTo(Ljava/lang/Object;)I
+.method public synthetic compareTo(Ljava/lang/Object;)I
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 127
-    .local p0, "this":Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;, "Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask<TT;>;"
     check-cast p1, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;
 
-    .end local p1    # "x0":Ljava/lang/Object;
-    invoke-virtual {p0, p1}, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->compareTo(Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;)I
+    invoke-virtual {p0, p1}, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->a(Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;)I
 
     move-result v0
 
@@ -144,60 +124,52 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 6
-    .param p1, "o"    # Ljava/lang/Object;
+    .registers 5
 
     .prologue
-    .local p0, "this":Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;, "Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask<TT;>;"
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 144
-    instance-of v2, p1, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;
+    instance-of v1, p1, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;
 
-    if-eqz v2, :cond_15
-
-    move-object v0, p1
+    if-eqz v1, :cond_14
 
     .line 145
-    check-cast v0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;
+    check-cast p1, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;
 
     .line 146
-    .local v0, "other":Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;, "Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask<Ljava/lang/Object;>;"
-    iget v2, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->order:I
+    iget v1, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->b:I
 
-    iget v3, v0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->order:I
+    iget v2, p1, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->b:I
 
-    if-ne v2, v3, :cond_15
+    if-ne v1, v2, :cond_14
 
-    iget v2, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->priority:I
+    iget v1, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->a:I
 
-    iget v3, v0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->priority:I
+    iget v2, p1, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->a:I
 
-    if-ne v2, v3, :cond_15
+    if-ne v1, v2, :cond_14
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     .line 148
-    .end local v0    # "other":Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;, "Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask<Ljava/lang/Object;>;"
-    :cond_15
-    return v1
+    :cond_14
+    return v0
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .registers 3
 
     .prologue
     .line 153
-    .local p0, "this":Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;, "Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask<TT;>;"
-    iget v0, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->priority:I
+    iget v0, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->a:I
 
     .line 154
-    .local v0, "result":I
-    mul-int/lit8 v1, v0, 0x1f
+    mul-int/lit8 v0, v0, 0x1f
 
-    iget v2, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->order:I
+    iget v1, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;->b:I
 
-    add-int v0, v1, v2
+    add-int/2addr v0, v1
 
     .line 155
     return v0

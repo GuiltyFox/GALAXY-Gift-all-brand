@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract build(ZZ)Lcom/bumptech/glide/request/animation/GlideAnimation;
+.method public abstract a(ZZ)Lcom/bumptech/glide/request/animation/GlideAnimation;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ZZ)",

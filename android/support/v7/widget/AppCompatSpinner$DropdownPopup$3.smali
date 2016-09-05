@@ -11,16 +11,11 @@
     value = Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;->show()V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$1:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
+.field final synthetic a:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
-.field final synthetic val$layoutListener:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+.field final synthetic b:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
 
 
 # direct methods
@@ -28,10 +23,10 @@
     .registers 3
 
     .prologue
-    .line 805
-    iput-object p1, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$3;->this$1:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
+    .line 811
+    iput-object p1, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$3;->b:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
 
-    iput-object p2, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$3;->val$layoutListener:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+    iput-object p2, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$3;->a:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,25 +39,24 @@
     .registers 3
 
     .prologue
-    .line 808
-    iget-object v1, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$3;->this$1:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
+    .line 814
+    iget-object v0, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$3;->b:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
 
-    iget-object v1, v1, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;->this$0:Landroid/support/v7/widget/AppCompatSpinner;
+    iget-object v0, v0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;->a:Landroid/support/v7/widget/AppCompatSpinner;
 
-    invoke-virtual {v1}, Landroid/support/v7/widget/AppCompatSpinner;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    invoke-virtual {v0}, Landroid/support/v7/widget/AppCompatSpinner;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
 
-    .line 809
-    .local v0, "vto":Landroid/view/ViewTreeObserver;
+    .line 815
     if-eqz v0, :cond_f
 
-    .line 810
-    iget-object v1, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$3;->val$layoutListener:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+    .line 816
+    iget-object v1, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$3;->a:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 812
+    .line 818
     :cond_f
     return-void
 .end method

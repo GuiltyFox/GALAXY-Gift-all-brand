@@ -11,24 +11,18 @@
     value = Lcom/bzbs/lib/survey/control/VideoControllerView;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Lcom/bzbs/lib/survey/control/VideoControllerView;
+.field final synthetic a:Lcom/bzbs/lib/survey/control/VideoControllerView;
 
 
 # direct methods
 .method constructor <init>(Lcom/bzbs/lib/survey/control/VideoControllerView;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/bzbs/lib/survey/control/VideoControllerView;
 
     .prologue
     .line 487
-    iput-object p1, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->this$0:Lcom/bzbs/lib/survey/control/VideoControllerView;
+    iput-object p1, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->a:Lcom/bzbs/lib/survey/control/VideoControllerView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,21 +32,17 @@
 
 # virtual methods
 .method public onProgressChanged(Landroid/widget/SeekBar;IZ)V
-    .registers 12
-    .param p1, "bar"    # Landroid/widget/SeekBar;
-    .param p2, "progress"    # I
-    .param p3, "fromuser"    # Z
+    .registers 8
 
     .prologue
     .line 502
-    iget-object v4, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->this$0:Lcom/bzbs/lib/survey/control/VideoControllerView;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->a:Lcom/bzbs/lib/survey/control/VideoControllerView;
 
-    # getter for: Lcom/bzbs/lib/survey/control/VideoControllerView;->mPlayer:Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;
-    invoke-static {v4}, Lcom/bzbs/lib/survey/control/VideoControllerView;->access$500(Lcom/bzbs/lib/survey/control/VideoControllerView;)Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;
+    invoke-static {v0}, Lcom/bzbs/lib/survey/control/VideoControllerView;->e(Lcom/bzbs/lib/survey/control/VideoControllerView;)Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;
 
-    move-result-object v4
+    move-result-object v0
 
-    if-nez v4, :cond_9
+    if-nez v0, :cond_9
 
     .line 517
     :cond_8
@@ -64,99 +54,89 @@
     if-eqz p3, :cond_8
 
     .line 512
-    iget-object v4, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->this$0:Lcom/bzbs/lib/survey/control/VideoControllerView;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->a:Lcom/bzbs/lib/survey/control/VideoControllerView;
 
-    # getter for: Lcom/bzbs/lib/survey/control/VideoControllerView;->mPlayer:Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;
-    invoke-static {v4}, Lcom/bzbs/lib/survey/control/VideoControllerView;->access$500(Lcom/bzbs/lib/survey/control/VideoControllerView;)Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;
+    invoke-static {v0}, Lcom/bzbs/lib/survey/control/VideoControllerView;->e(Lcom/bzbs/lib/survey/control/VideoControllerView;)Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-interface {v4}, Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;->getDuration()I
+    invoke-interface {v0}, Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;->d()I
 
-    move-result v4
+    move-result v0
 
-    int-to-long v0, v4
+    int-to-long v0, v0
 
     .line 513
-    .local v0, "duration":J
-    int-to-long v4, p2
+    int-to-long v2, p2
 
-    mul-long/2addr v4, v0
+    mul-long/2addr v0, v2
 
-    const-wide/16 v6, 0x3e8
+    const-wide/16 v2, 0x3e8
 
-    div-long v2, v4, v6
+    div-long/2addr v0, v2
 
     .line 514
-    .local v2, "newposition":J
-    iget-object v4, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->this$0:Lcom/bzbs/lib/survey/control/VideoControllerView;
+    iget-object v2, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->a:Lcom/bzbs/lib/survey/control/VideoControllerView;
 
-    # getter for: Lcom/bzbs/lib/survey/control/VideoControllerView;->mPlayer:Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;
-    invoke-static {v4}, Lcom/bzbs/lib/survey/control/VideoControllerView;->access$500(Lcom/bzbs/lib/survey/control/VideoControllerView;)Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;
+    invoke-static {v2}, Lcom/bzbs/lib/survey/control/VideoControllerView;->e(Lcom/bzbs/lib/survey/control/VideoControllerView;)Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;
 
-    move-result-object v4
+    move-result-object v2
 
-    long-to-int v5, v2
+    long-to-int v3, v0
 
-    invoke-interface {v4, v5}, Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;->seekTo(I)V
+    invoke-interface {v2, v3}, Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;->a(I)V
 
     .line 515
-    iget-object v4, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->this$0:Lcom/bzbs/lib/survey/control/VideoControllerView;
+    iget-object v2, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->a:Lcom/bzbs/lib/survey/control/VideoControllerView;
 
-    # getter for: Lcom/bzbs/lib/survey/control/VideoControllerView;->mCurrentTime:Landroid/widget/TextView;
-    invoke-static {v4}, Lcom/bzbs/lib/survey/control/VideoControllerView;->access$600(Lcom/bzbs/lib/survey/control/VideoControllerView;)Landroid/widget/TextView;
+    invoke-static {v2}, Lcom/bzbs/lib/survey/control/VideoControllerView;->f(Lcom/bzbs/lib/survey/control/VideoControllerView;)Landroid/widget/TextView;
 
-    move-result-object v4
+    move-result-object v2
 
-    if-eqz v4, :cond_8
+    if-eqz v2, :cond_8
 
     .line 516
-    iget-object v4, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->this$0:Lcom/bzbs/lib/survey/control/VideoControllerView;
+    iget-object v2, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->a:Lcom/bzbs/lib/survey/control/VideoControllerView;
 
-    # getter for: Lcom/bzbs/lib/survey/control/VideoControllerView;->mCurrentTime:Landroid/widget/TextView;
-    invoke-static {v4}, Lcom/bzbs/lib/survey/control/VideoControllerView;->access$600(Lcom/bzbs/lib/survey/control/VideoControllerView;)Landroid/widget/TextView;
+    invoke-static {v2}, Lcom/bzbs/lib/survey/control/VideoControllerView;->f(Lcom/bzbs/lib/survey/control/VideoControllerView;)Landroid/widget/TextView;
 
-    move-result-object v4
+    move-result-object v2
 
-    iget-object v5, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->this$0:Lcom/bzbs/lib/survey/control/VideoControllerView;
+    iget-object v3, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->a:Lcom/bzbs/lib/survey/control/VideoControllerView;
 
-    long-to-int v6, v2
+    long-to-int v0, v0
 
-    # invokes: Lcom/bzbs/lib/survey/control/VideoControllerView;->stringForTime(I)Ljava/lang/String;
-    invoke-static {v5, v6}, Lcom/bzbs/lib/survey/control/VideoControllerView;->access$700(Lcom/bzbs/lib/survey/control/VideoControllerView;I)Ljava/lang/String;
+    invoke-static {v3, v0}, Lcom/bzbs/lib/survey/control/VideoControllerView;->a(Lcom/bzbs/lib/survey/control/VideoControllerView;I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_8
 .end method
 
 .method public onStartTrackingTouch(Landroid/widget/SeekBar;)V
     .registers 4
-    .param p1, "bar"    # Landroid/widget/SeekBar;
 
     .prologue
     .line 489
-    iget-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->this$0:Lcom/bzbs/lib/survey/control/VideoControllerView;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->a:Lcom/bzbs/lib/survey/control/VideoControllerView;
 
     const v1, 0x36ee80
 
-    invoke-virtual {v0, v1}, Lcom/bzbs/lib/survey/control/VideoControllerView;->show(I)V
+    invoke-virtual {v0, v1}, Lcom/bzbs/lib/survey/control/VideoControllerView;->a(I)V
 
     .line 491
-    iget-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->this$0:Lcom/bzbs/lib/survey/control/VideoControllerView;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->a:Lcom/bzbs/lib/survey/control/VideoControllerView;
 
     const/4 v1, 0x1
 
-    # setter for: Lcom/bzbs/lib/survey/control/VideoControllerView;->mDragging:Z
-    invoke-static {v0, v1}, Lcom/bzbs/lib/survey/control/VideoControllerView;->access$302(Lcom/bzbs/lib/survey/control/VideoControllerView;Z)Z
+    invoke-static {v0, v1}, Lcom/bzbs/lib/survey/control/VideoControllerView;->a(Lcom/bzbs/lib/survey/control/VideoControllerView;Z)Z
 
     .line 498
-    iget-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->this$0:Lcom/bzbs/lib/survey/control/VideoControllerView;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->a:Lcom/bzbs/lib/survey/control/VideoControllerView;
 
-    # getter for: Lcom/bzbs/lib/survey/control/VideoControllerView;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/bzbs/lib/survey/control/VideoControllerView;->access$400(Lcom/bzbs/lib/survey/control/VideoControllerView;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/bzbs/lib/survey/control/VideoControllerView;->d(Lcom/bzbs/lib/survey/control/VideoControllerView;)Landroid/os/Handler;
 
     move-result-object v0
 
@@ -170,40 +150,36 @@
 
 .method public onStopTrackingTouch(Landroid/widget/SeekBar;)V
     .registers 4
-    .param p1, "bar"    # Landroid/widget/SeekBar;
 
     .prologue
     .line 520
-    iget-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->this$0:Lcom/bzbs/lib/survey/control/VideoControllerView;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->a:Lcom/bzbs/lib/survey/control/VideoControllerView;
 
     const/4 v1, 0x0
 
-    # setter for: Lcom/bzbs/lib/survey/control/VideoControllerView;->mDragging:Z
-    invoke-static {v0, v1}, Lcom/bzbs/lib/survey/control/VideoControllerView;->access$302(Lcom/bzbs/lib/survey/control/VideoControllerView;Z)Z
+    invoke-static {v0, v1}, Lcom/bzbs/lib/survey/control/VideoControllerView;->a(Lcom/bzbs/lib/survey/control/VideoControllerView;Z)Z
 
     .line 521
-    iget-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->this$0:Lcom/bzbs/lib/survey/control/VideoControllerView;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->a:Lcom/bzbs/lib/survey/control/VideoControllerView;
 
-    # invokes: Lcom/bzbs/lib/survey/control/VideoControllerView;->setProgress()I
-    invoke-static {v0}, Lcom/bzbs/lib/survey/control/VideoControllerView;->access$800(Lcom/bzbs/lib/survey/control/VideoControllerView;)I
+    invoke-static {v0}, Lcom/bzbs/lib/survey/control/VideoControllerView;->g(Lcom/bzbs/lib/survey/control/VideoControllerView;)I
 
     .line 522
-    iget-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->this$0:Lcom/bzbs/lib/survey/control/VideoControllerView;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->a:Lcom/bzbs/lib/survey/control/VideoControllerView;
 
-    invoke-virtual {v0}, Lcom/bzbs/lib/survey/control/VideoControllerView;->updatePausePlay()V
+    invoke-virtual {v0}, Lcom/bzbs/lib/survey/control/VideoControllerView;->d()V
 
     .line 523
-    iget-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->this$0:Lcom/bzbs/lib/survey/control/VideoControllerView;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->a:Lcom/bzbs/lib/survey/control/VideoControllerView;
 
     const/16 v1, 0xbb8
 
-    invoke-virtual {v0, v1}, Lcom/bzbs/lib/survey/control/VideoControllerView;->show(I)V
+    invoke-virtual {v0, v1}, Lcom/bzbs/lib/survey/control/VideoControllerView;->a(I)V
 
     .line 528
-    iget-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->this$0:Lcom/bzbs/lib/survey/control/VideoControllerView;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$4;->a:Lcom/bzbs/lib/survey/control/VideoControllerView;
 
-    # getter for: Lcom/bzbs/lib/survey/control/VideoControllerView;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/bzbs/lib/survey/control/VideoControllerView;->access$400(Lcom/bzbs/lib/survey/control/VideoControllerView;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/bzbs/lib/survey/control/VideoControllerView;->d(Lcom/bzbs/lib/survey/control/VideoControllerView;)Landroid/os/Handler;
 
     move-result-object v0
 

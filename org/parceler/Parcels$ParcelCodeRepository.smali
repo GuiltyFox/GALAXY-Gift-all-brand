@@ -3,19 +3,8 @@
 .source "Parcels.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/parceler/Parcels;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "ParcelCodeRepository"
-.end annotation
-
-
 # instance fields
-.field private generatedMap:Ljava/util/concurrent/ConcurrentMap;
+.field private a:Ljava/util/concurrent/ConcurrentMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/ConcurrentMap",
@@ -41,7 +30,7 @@
 
     invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
 
-    iput-object v0, p0, Lorg/parceler/Parcels$ParcelCodeRepository;->generatedMap:Ljava/util/concurrent/ConcurrentMap;
+    iput-object v0, p0, Lorg/parceler/Parcels$ParcelCodeRepository;->a:Ljava/util/concurrent/ConcurrentMap;
 
     .line 190
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -52,15 +41,14 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lorg/parceler/Parcels$ParcelCodeRepository;->loadRepository(Ljava/lang/ClassLoader;)V
+    invoke-virtual {p0, v0}, Lorg/parceler/Parcels$ParcelCodeRepository;->a(Ljava/lang/ClassLoader;)V
 
     .line 191
     return-void
 .end method
 
-.method private static buildParcelableImplName(Ljava/lang/Class;)Ljava/lang/String;
+.method private static c(Ljava/lang/Class;)Ljava/lang/String;
     .registers 3
-    .param p0, "clazz"    # Ljava/lang/Class;
 
     .prologue
     .line 214
@@ -97,176 +85,127 @@
 
 
 # virtual methods
-.method public findClass(Ljava/lang/Class;)Lorg/parceler/Parcels$ParcelableFactory;
+.method public a(Ljava/lang/Class;)Lorg/parceler/Parcels$ParcelableFactory;
     .registers 5
-    .param p1, "clazz"    # Ljava/lang/Class;
-
-    .prologue
-    .line 220
-    :try_start_0
-    invoke-static {p1}, Lorg/parceler/Parcels$ParcelCodeRepository;->buildParcelableImplName(Ljava/lang/Class;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v1
-
-    .line 221
-    .local v1, "parcelWrapperClass":Ljava/lang/Class;
-    new-instance v2, Lorg/parceler/Parcels$ParcelableFactoryReflectionProxy;
-
-    invoke-direct {v2, p1, v1}, Lorg/parceler/Parcels$ParcelableFactoryReflectionProxy;-><init>(Ljava/lang/Class;Ljava/lang/Class;)V
-    :try_end_d
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_d} :catch_e
-
-    .line 223
-    .end local v1    # "parcelWrapperClass":Ljava/lang/Class;
-    :goto_d
-    return-object v2
-
-    .line 222
-    :catch_e
-    move-exception v0
-
-    .line 223
-    .local v0, "e":Ljava/lang/ClassNotFoundException;
-    const/4 v2, 0x0
-
-    goto :goto_d
-.end method
-
-.method public get(Ljava/lang/Class;)Lorg/parceler/Parcels$ParcelableFactory;
-    .registers 7
-    .param p1, "clazz"    # Ljava/lang/Class;
 
     .prologue
     .line 194
-    iget-object v2, p0, Lorg/parceler/Parcels$ParcelCodeRepository;->generatedMap:Ljava/util/concurrent/ConcurrentMap;
+    iget-object v0, p0, Lorg/parceler/Parcels$ParcelCodeRepository;->a:Ljava/util/concurrent/ConcurrentMap;
 
-    invoke-interface {v2, p1}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Ljava/util/concurrent/ConcurrentMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lorg/parceler/Parcels$ParcelableFactory;
 
     .line 195
-    .local v0, "result":Lorg/parceler/Parcels$ParcelableFactory;
     if-nez v0, :cond_4f
 
     .line 196
-    invoke-virtual {p0, p1}, Lorg/parceler/Parcels$ParcelCodeRepository;->findClass(Ljava/lang/Class;)Lorg/parceler/Parcels$ParcelableFactory;
+    invoke-virtual {p0, p1}, Lorg/parceler/Parcels$ParcelCodeRepository;->b(Ljava/lang/Class;)Lorg/parceler/Parcels$ParcelableFactory;
 
     move-result-object v1
 
     .line 197
-    .local v1, "value":Lorg/parceler/Parcels$ParcelableFactory;
     if-nez v1, :cond_44
 
     .line 198
-    new-instance v2, Lorg/parceler/ParcelerRuntimeException;
+    new-instance v0, Lorg/parceler/ParcelerRuntimeException;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "Unable to find generated Parcelable class for "
+    const-string/jumbo v2, "Unable to find generated Parcelable class for "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
     .line 199
     invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
-    const-string/jumbo v4, ", verify that your class is configured properly and that the Parcelable class "
+    const-string/jumbo v2, ", verify that your class is configured properly and that the Parcelable class "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
     .line 201
-    invoke-static {p1}, Lorg/parceler/Parcels$ParcelCodeRepository;->buildParcelableImplName(Ljava/lang/Class;)Ljava/lang/String;
+    invoke-static {p1}, Lorg/parceler/Parcels$ParcelCodeRepository;->c(Ljava/lang/Class;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
-    const-string/jumbo v4, " is generated by Parceler."
+    const-string/jumbo v2, " is generated by Parceler."
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-direct {v2, v3}, Lorg/parceler/ParcelerRuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lorg/parceler/ParcelerRuntimeException;-><init>(Ljava/lang/String;)V
 
-    throw v2
+    throw v0
 
     .line 204
     :cond_44
-    iget-object v2, p0, Lorg/parceler/Parcels$ParcelCodeRepository;->generatedMap:Ljava/util/concurrent/ConcurrentMap;
+    iget-object v0, p0, Lorg/parceler/Parcels$ParcelCodeRepository;->a:Ljava/util/concurrent/ConcurrentMap;
 
-    invoke-interface {v2, p1, v1}, Ljava/util/concurrent/ConcurrentMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1, v1}, Ljava/util/concurrent/ConcurrentMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .end local v0    # "result":Lorg/parceler/Parcels$ParcelableFactory;
     check-cast v0, Lorg/parceler/Parcels$ParcelableFactory;
 
     .line 205
-    .restart local v0    # "result":Lorg/parceler/Parcels$ParcelableFactory;
     if-nez v0, :cond_4f
 
-    .line 206
     move-object v0, v1
 
     .line 210
-    .end local v1    # "value":Lorg/parceler/Parcels$ParcelableFactory;
     :cond_4f
     return-object v0
 .end method
 
-.method public loadRepository(Ljava/lang/ClassLoader;)V
-    .registers 6
-    .param p1, "classLoader"    # Ljava/lang/ClassLoader;
+.method public a(Ljava/lang/ClassLoader;)V
+    .registers 5
 
     .prologue
     .line 237
     :try_start_0
-    const-string/jumbo v2, "org.parceler.Parceler$$Parcels"
+    const-string/jumbo v0, "org.parceler.Parceler$$Parcels"
 
-    invoke-virtual {p1, v2}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-virtual {p1, v0}, Ljava/lang/ClassLoader;->loadClass(Ljava/lang/String;)Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 238
-    .local v1, "repositoryClass":Ljava/lang/Class;
-    invoke-virtual {v1}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Lorg/parceler/Repository;
+    check-cast v0, Lorg/parceler/Repository;
 
-    invoke-virtual {p0, v2}, Lorg/parceler/Parcels$ParcelCodeRepository;->loadRepository(Lorg/parceler/Repository;)V
+    invoke-virtual {p0, v0}, Lorg/parceler/Parcels$ParcelCodeRepository;->a(Lorg/parceler/Repository;)V
     :try_end_10
     .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_10} :catch_25
     .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_10} :catch_11
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_10} :catch_1b
 
     .line 248
-    .end local v1    # "repositoryClass":Ljava/lang/Class;
     :goto_10
     return-void
 
@@ -275,39 +214,35 @@
     move-exception v0
 
     .line 244
-    .local v0, "e":Ljava/lang/InstantiationException;
-    new-instance v2, Lorg/parceler/ParcelerRuntimeException;
+    new-instance v1, Lorg/parceler/ParcelerRuntimeException;
 
-    const-string/jumbo v3, "Unable to instantiate generated Repository"
+    const-string/jumbo v2, "Unable to instantiate generated Repository"
 
-    invoke-direct {v2, v3, v0}, Lorg/parceler/ParcelerRuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
+    invoke-direct {v1, v2, v0}, Lorg/parceler/ParcelerRuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
 
-    throw v2
+    throw v1
 
     .line 245
-    .end local v0    # "e":Ljava/lang/InstantiationException;
     :catch_1b
     move-exception v0
 
     .line 246
-    .local v0, "e":Ljava/lang/IllegalAccessException;
-    new-instance v2, Lorg/parceler/ParcelerRuntimeException;
+    new-instance v1, Lorg/parceler/ParcelerRuntimeException;
 
-    const-string/jumbo v3, "Unable to access generated Repository"
+    const-string/jumbo v2, "Unable to access generated Repository"
 
-    invoke-direct {v2, v3, v0}, Lorg/parceler/ParcelerRuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
+    invoke-direct {v1, v2, v0}, Lorg/parceler/ParcelerRuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Exception;)V
 
-    throw v2
+    throw v1
 
     .line 241
-    .end local v0    # "e":Ljava/lang/IllegalAccessException;
     :catch_25
-    move-exception v2
+    move-exception v0
 
     goto :goto_10
 .end method
 
-.method public loadRepository(Lorg/parceler/Repository;)V
+.method public a(Lorg/parceler/Repository;)V
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -321,10 +256,9 @@
 
     .prologue
     .line 251
-    .local p1, "repository":Lorg/parceler/Repository;, "Lorg/parceler/Repository<Lorg/parceler/Parcels$ParcelableFactory;>;"
-    iget-object v0, p0, Lorg/parceler/Parcels$ParcelCodeRepository;->generatedMap:Ljava/util/concurrent/ConcurrentMap;
+    iget-object v0, p0, Lorg/parceler/Parcels$ParcelCodeRepository;->a:Ljava/util/concurrent/ConcurrentMap;
 
-    invoke-interface {p1}, Lorg/parceler/Repository;->get()Ljava/util/Map;
+    invoke-interface {p1}, Lorg/parceler/Repository;->b()Ljava/util/Map;
 
     move-result-object v1
 
@@ -332,4 +266,39 @@
 
     .line 252
     return-void
+.end method
+
+.method public b(Ljava/lang/Class;)Lorg/parceler/Parcels$ParcelableFactory;
+    .registers 4
+
+    .prologue
+    .line 220
+    :try_start_0
+    invoke-static {p1}, Lorg/parceler/Parcels$ParcelCodeRepository;->c(Ljava/lang/Class;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v1
+
+    .line 221
+    new-instance v0, Lorg/parceler/Parcels$ParcelableFactoryReflectionProxy;
+
+    invoke-direct {v0, p1, v1}, Lorg/parceler/Parcels$ParcelableFactoryReflectionProxy;-><init>(Ljava/lang/Class;Ljava/lang/Class;)V
+    :try_end_d
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_d} :catch_e
+
+    .line 223
+    :goto_d
+    return-object v0
+
+    .line 222
+    :catch_e
+    move-exception v0
+
+    .line 223
+    const/4 v0, 0x0
+
+    goto :goto_d
 .end method

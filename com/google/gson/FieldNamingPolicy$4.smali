@@ -8,11 +8,6 @@
     value = Lcom/google/gson/FieldNamingPolicy;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4008
-    name = null
-.end annotation
-
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;I)V
@@ -29,9 +24,8 @@
 
 
 # virtual methods
-.method public translateName(Ljava/lang/reflect/Field;)Ljava/lang/String;
+.method public a(Ljava/lang/reflect/Field;)Ljava/lang/String;
     .registers 4
-    .param p1, "f"    # Ljava/lang/reflect/Field;
 
     .prologue
     .line 92
@@ -41,8 +35,7 @@
 
     const-string/jumbo v1, "_"
 
-    # invokes: Lcom/google/gson/FieldNamingPolicy;->separateCamelCase(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    invoke-static {v0, v1}, Lcom/google/gson/FieldNamingPolicy;->access$200(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1}, Lcom/google/gson/FieldNamingPolicy;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 

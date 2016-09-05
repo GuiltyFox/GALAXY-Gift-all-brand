@@ -3,7 +3,7 @@
 
 
 # direct methods
-.method public static zza(Landroid/os/PowerManager$WakeLock;Ljava/lang/String;)Ljava/lang/String;
+.method public static a(Landroid/os/PowerManager$WakeLock;Ljava/lang/String;)Ljava/lang/String;
     .registers 8
 
     new-instance v0, Ljava/lang/StringBuilder;

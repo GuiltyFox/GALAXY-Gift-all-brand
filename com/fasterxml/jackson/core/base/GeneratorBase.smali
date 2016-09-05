@@ -17,9 +17,7 @@
 
 # direct methods
 .method protected constructor <init>(ILcom/fasterxml/jackson/core/ObjectCodec;)V
-    .registers 5
-    .param p1, "features"    # I
-    .param p2, "codec"    # Lcom/fasterxml/jackson/core/ObjectCodec;
+    .registers 4
 
     .prologue
     .line 66
@@ -29,44 +27,42 @@
     iput p1, p0, Lcom/fasterxml/jackson/core/base/GeneratorBase;->_features:I
 
     .line 68
-    sget-object v1, Lcom/fasterxml/jackson/core/JsonGenerator$Feature;->STRICT_DUPLICATE_DETECTION:Lcom/fasterxml/jackson/core/JsonGenerator$Feature;
+    sget-object v0, Lcom/fasterxml/jackson/core/JsonGenerator$Feature;->STRICT_DUPLICATE_DETECTION:Lcom/fasterxml/jackson/core/JsonGenerator$Feature;
 
-    invoke-virtual {v1, p1}, Lcom/fasterxml/jackson/core/JsonGenerator$Feature;->enabledIn(I)Z
+    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/core/JsonGenerator$Feature;->enabledIn(I)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_22
+    if-eqz v0, :cond_22
 
     invoke-static {p0}, Lcom/fasterxml/jackson/core/json/DupDetector;->rootDetector(Lcom/fasterxml/jackson/core/JsonGenerator;)Lcom/fasterxml/jackson/core/json/DupDetector;
 
     move-result-object v0
 
     .line 70
-    .local v0, "dups":Lcom/fasterxml/jackson/core/json/DupDetector;
     :goto_11
     invoke-static {v0}, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->createRootContext(Lcom/fasterxml/jackson/core/json/DupDetector;)Lcom/fasterxml/jackson/core/json/JsonWriteContext;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/base/GeneratorBase;->_writeContext:Lcom/fasterxml/jackson/core/json/JsonWriteContext;
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/base/GeneratorBase;->_writeContext:Lcom/fasterxml/jackson/core/json/JsonWriteContext;
 
     .line 71
     iput-object p2, p0, Lcom/fasterxml/jackson/core/base/GeneratorBase;->_objectCodec:Lcom/fasterxml/jackson/core/ObjectCodec;
 
     .line 72
-    sget-object v1, Lcom/fasterxml/jackson/core/JsonGenerator$Feature;->WRITE_NUMBERS_AS_STRINGS:Lcom/fasterxml/jackson/core/JsonGenerator$Feature;
+    sget-object v0, Lcom/fasterxml/jackson/core/JsonGenerator$Feature;->WRITE_NUMBERS_AS_STRINGS:Lcom/fasterxml/jackson/core/JsonGenerator$Feature;
 
-    invoke-virtual {v1, p1}, Lcom/fasterxml/jackson/core/JsonGenerator$Feature;->enabledIn(I)Z
+    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/core/JsonGenerator$Feature;->enabledIn(I)Z
 
-    move-result v1
+    move-result v0
 
-    iput-boolean v1, p0, Lcom/fasterxml/jackson/core/base/GeneratorBase;->_cfgNumbersAsStrings:Z
+    iput-boolean v0, p0, Lcom/fasterxml/jackson/core/base/GeneratorBase;->_cfgNumbersAsStrings:Z
 
     .line 73
     return-void
 
     .line 68
-    .end local v0    # "dups":Lcom/fasterxml/jackson/core/json/DupDetector;
     :cond_22
     const/4 v0, 0x0
 
@@ -79,20 +75,10 @@
 .end method
 
 .method protected abstract _verifyValueWrite(Ljava/lang/String;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 .end method
 
 .method public close()V
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 266
@@ -105,7 +91,6 @@
 
 .method public disable(Lcom/fasterxml/jackson/core/JsonGenerator$Feature;)Lcom/fasterxml/jackson/core/JsonGenerator;
     .registers 5
-    .param p1, "f"    # Lcom/fasterxml/jackson/core/JsonGenerator$Feature;
 
     .prologue
     const/4 v2, 0x0
@@ -150,7 +135,6 @@
 
 .method public enable(Lcom/fasterxml/jackson/core/JsonGenerator$Feature;)Lcom/fasterxml/jackson/core/JsonGenerator;
     .registers 4
-    .param p1, "f"    # Lcom/fasterxml/jackson/core/JsonGenerator$Feature;
 
     .prologue
     .line 89
@@ -194,11 +178,6 @@
 .end method
 
 .method public abstract flush()V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 .end method
 
 .method public final getCodec()Lcom/fasterxml/jackson/core/ObjectCodec;
@@ -255,7 +234,6 @@
 
 .method public final isEnabled(Lcom/fasterxml/jackson/core/JsonGenerator$Feature;)Z
     .registers 4
-    .param p1, "f"    # Lcom/fasterxml/jackson/core/JsonGenerator$Feature;
 
     .prologue
     .line 111
@@ -282,7 +260,6 @@
 
 .method public setCodec(Lcom/fasterxml/jackson/core/ObjectCodec;)Lcom/fasterxml/jackson/core/JsonGenerator;
     .registers 2
-    .param p1, "oc"    # Lcom/fasterxml/jackson/core/ObjectCodec;
 
     .prologue
     .line 130
@@ -294,7 +271,6 @@
 
 .method public setFeatureMask(I)Lcom/fasterxml/jackson/core/JsonGenerator;
     .registers 2
-    .param p1, "mask"    # I
 
     .prologue
     .line 115
@@ -316,11 +292,9 @@
     if-eqz v0, :cond_7
 
     .line 126
-    .end local p0    # "this":Lcom/fasterxml/jackson/core/base/GeneratorBase;
     :goto_6
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/core/base/GeneratorBase;
     :cond_7
     new-instance v0, Lcom/fasterxml/jackson/core/util/DefaultPrettyPrinter;
 
@@ -351,14 +325,6 @@
 
 .method public writeBinary(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/InputStream;I)I
     .registers 5
-    .param p1, "b64variant"    # Lcom/fasterxml/jackson/core/Base64Variant;
-    .param p2, "data"    # Ljava/io/InputStream;
-    .param p3, "dataLength"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 199
@@ -372,12 +338,6 @@
 
 .method public writeFieldName(Lcom/fasterxml/jackson/core/SerializableString;)V
     .registers 3
-    .param p1, "name"    # Lcom/fasterxml/jackson/core/SerializableString;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 165
@@ -393,12 +353,6 @@
 
 .method public writeObject(Ljava/lang/Object;)V
     .registers 3
-    .param p1, "value"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 229
@@ -433,12 +387,6 @@
 
 .method public writeRawValue(Ljava/lang/String;)V
     .registers 3
-    .param p1, "text"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 182
@@ -455,14 +403,6 @@
 
 .method public writeRawValue(Ljava/lang/String;II)V
     .registers 5
-    .param p1, "text"    # Ljava/lang/String;
-    .param p2, "offset"    # I
-    .param p3, "len"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 187
@@ -479,14 +419,6 @@
 
 .method public writeRawValue([CII)V
     .registers 5
-    .param p1, "text"    # [C
-    .param p2, "offset"    # I
-    .param p3, "len"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 192
@@ -503,12 +435,6 @@
 
 .method public writeString(Lcom/fasterxml/jackson/core/SerializableString;)V
     .registers 3
-    .param p1, "text"    # Lcom/fasterxml/jackson/core/SerializableString;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 178
@@ -524,12 +450,6 @@
 
 .method public writeTree(Lcom/fasterxml/jackson/core/TreeNode;)V
     .registers 4
-    .param p1, "rootNode"    # Lcom/fasterxml/jackson/core/TreeNode;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 249

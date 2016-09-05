@@ -17,8 +17,6 @@
 
 .method public static asserts(ZLjava/lang/String;)V
     .registers 3
-    .param p0, "expression"    # Z
-    .param p1, "failedMessage"    # Ljava/lang/String;
 
     .prologue
     .line 38
@@ -38,7 +36,6 @@
 
 .method public static notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
     .registers 5
-    .param p1, "name"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -51,7 +48,6 @@
 
     .prologue
     .line 51
-    .local p0, "argument":Ljava/lang/Object;, "TT;"
     if-nez p0, :cond_1c
 
     .line 52

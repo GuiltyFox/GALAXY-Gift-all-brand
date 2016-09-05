@@ -6,7 +6,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 2
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 22
@@ -18,8 +17,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 17
@@ -31,9 +28,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyle"    # I
 
     .prologue
     .line 12
@@ -47,7 +41,6 @@
 # virtual methods
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .registers 5
-    .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
     const/4 v1, 0x0

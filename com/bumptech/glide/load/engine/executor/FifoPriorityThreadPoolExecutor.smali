@@ -3,35 +3,19 @@
 .source "FifoPriorityThreadPoolExecutor.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$1;,
-        Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;,
-        Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$DefaultThreadFactory;,
-        Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;
-    }
-.end annotation
-
-
-# static fields
-.field private static final TAG:Ljava/lang/String; = "PriorityExecutor"
-
-
 # instance fields
-.field private final ordering:Ljava/util/concurrent/atomic/AtomicInteger;
+.field private final a:Ljava/util/concurrent/atomic/AtomicInteger;
 
-.field private final uncaughtThrowableStrategy:Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;
+.field private final b:Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;
 
 
 # direct methods
 .method public constructor <init>(I)V
     .registers 3
-    .param p1, "poolSize"    # I
 
     .prologue
     .line 62
-    sget-object v0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;->LOG:Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;
+    sget-object v0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;->b:Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;
 
     invoke-direct {p0, p1, v0}, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor;-><init>(ILcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;)V
 
@@ -41,12 +25,6 @@
 
 .method public constructor <init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/ThreadFactory;Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;)V
     .registers 19
-    .param p1, "corePoolSize"    # I
-    .param p2, "maximumPoolSize"    # I
-    .param p3, "keepAlive"    # J
-    .param p5, "timeUnit"    # Ljava/util/concurrent/TimeUnit;
-    .param p6, "threadFactory"    # Ljava/util/concurrent/ThreadFactory;
-    .param p7, "uncaughtThrowableStrategy"    # Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;
 
     .prologue
     .line 80
@@ -73,12 +51,12 @@
 
     invoke-direct {v2}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
 
-    iput-object v2, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor;->ordering:Ljava/util/concurrent/atomic/AtomicInteger;
+    iput-object v2, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
     .line 81
     move-object/from16 v0, p7
 
-    iput-object v0, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor;->uncaughtThrowableStrategy:Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;
+    iput-object v0, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor;->b:Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;
 
     .line 82
     return-void
@@ -86,8 +64,6 @@
 
 .method public constructor <init>(ILcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;)V
     .registers 12
-    .param p1, "poolSize"    # I
-    .param p2, "uncaughtThrowableStrategy"    # Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;
 
     .prologue
     .line 74
@@ -116,83 +92,72 @@
 
 # virtual methods
 .method protected afterExecute(Ljava/lang/Runnable;Ljava/lang/Throwable;)V
-    .registers 6
-    .param p1, "r"    # Ljava/lang/Runnable;
-    .param p2, "t"    # Ljava/lang/Throwable;
+    .registers 5
 
     .prologue
     .line 91
     invoke-super {p0, p1, p2}, Ljava/util/concurrent/ThreadPoolExecutor;->afterExecute(Ljava/lang/Runnable;Ljava/lang/Throwable;)V
 
     .line 92
-    if-nez p2, :cond_1b
+    if-nez p2, :cond_1a
 
-    instance-of v2, p1, Ljava/util/concurrent/Future;
+    instance-of v0, p1, Ljava/util/concurrent/Future;
 
-    if-eqz v2, :cond_1b
-
-    move-object v1, p1
+    if-eqz v0, :cond_1a
 
     .line 93
-    check-cast v1, Ljava/util/concurrent/Future;
+    check-cast p1, Ljava/util/concurrent/Future;
 
     .line 94
-    .local v1, "future":Ljava/util/concurrent/Future;, "Ljava/util/concurrent/Future<*>;"
-    invoke-interface {v1}, Ljava/util/concurrent/Future;->isDone()Z
+    invoke-interface {p1}, Ljava/util/concurrent/Future;->isDone()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_1b
+    if-eqz v0, :cond_1a
 
-    invoke-interface {v1}, Ljava/util/concurrent/Future;->isCancelled()Z
+    invoke-interface {p1}, Ljava/util/concurrent/Future;->isCancelled()Z
 
-    move-result v2
+    move-result v0
 
-    if-nez v2, :cond_1b
+    if-nez v0, :cond_1a
 
     .line 96
-    :try_start_18
-    invoke-interface {v1}, Ljava/util/concurrent/Future;->get()Ljava/lang/Object;
-    :try_end_1b
-    .catch Ljava/lang/InterruptedException; {:try_start_18 .. :try_end_1b} :catch_1c
-    .catch Ljava/util/concurrent/ExecutionException; {:try_start_18 .. :try_end_1b} :catch_23
+    :try_start_17
+    invoke-interface {p1}, Ljava/util/concurrent/Future;->get()Ljava/lang/Object;
+    :try_end_1a
+    .catch Ljava/lang/InterruptedException; {:try_start_17 .. :try_end_1a} :catch_1b
+    .catch Ljava/util/concurrent/ExecutionException; {:try_start_17 .. :try_end_1a} :catch_22
 
     .line 104
-    .end local v1    # "future":Ljava/util/concurrent/Future;, "Ljava/util/concurrent/Future<*>;"
-    :cond_1b
-    :goto_1b
+    :cond_1a
+    :goto_1a
     return-void
 
     .line 97
-    .restart local v1    # "future":Ljava/util/concurrent/Future;, "Ljava/util/concurrent/Future<*>;"
-    :catch_1c
+    :catch_1b
     move-exception v0
 
     .line 98
-    .local v0, "e":Ljava/lang/InterruptedException;
-    iget-object v2, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor;->uncaughtThrowableStrategy:Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;
+    iget-object v1, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor;->b:Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;
 
-    invoke-virtual {v2, v0}, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;->handle(Ljava/lang/Throwable;)V
+    invoke-virtual {v1, v0}, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;->a(Ljava/lang/Throwable;)V
 
-    goto :goto_1b
+    goto :goto_1a
 
     .line 99
-    .end local v0    # "e":Ljava/lang/InterruptedException;
-    :catch_23
+    :catch_22
     move-exception v0
 
     .line 100
-    .local v0, "e":Ljava/util/concurrent/ExecutionException;
-    iget-object v2, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor;->uncaughtThrowableStrategy:Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;
+    iget-object v1, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor;->b:Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;
 
-    invoke-virtual {v2, v0}, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;->handle(Ljava/lang/Throwable;)V
+    invoke-virtual {v1, v0}, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$UncaughtThrowableStrategy;->a(Ljava/lang/Throwable;)V
 
-    goto :goto_1b
+    goto :goto_1a
 .end method
 
 .method protected newTaskFor(Ljava/lang/Runnable;Ljava/lang/Object;)Ljava/util/concurrent/RunnableFuture;
     .registers 5
-    .param p1, "runnable"    # Ljava/lang/Runnable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -207,10 +172,9 @@
 
     .prologue
     .line 86
-    .local p2, "value":Ljava/lang/Object;, "TT;"
     new-instance v0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$LoadTask;
 
-    iget-object v1, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor;->ordering:Ljava/util/concurrent/atomic/AtomicInteger;
+    iget-object v1, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
 

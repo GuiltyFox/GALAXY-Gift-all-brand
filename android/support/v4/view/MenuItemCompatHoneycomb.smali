@@ -4,47 +4,8 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 25
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static getActionView(Landroid/view/MenuItem;)Landroid/view/View;
-    .registers 2
-    .param p0, "item"    # Landroid/view/MenuItem;
-
-    .prologue
-    .line 39
-    invoke-interface {p0}, Landroid/view/MenuItem;->getActionView()Landroid/view/View;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static setActionView(Landroid/view/MenuItem;I)Landroid/view/MenuItem;
+.method public static a(Landroid/view/MenuItem;Landroid/view/View;)Landroid/view/MenuItem;
     .registers 3
-    .param p0, "item"    # Landroid/view/MenuItem;
-    .param p1, "resId"    # I
-
-    .prologue
-    .line 35
-    invoke-interface {p0, p1}, Landroid/view/MenuItem;->setActionView(I)Landroid/view/MenuItem;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static setActionView(Landroid/view/MenuItem;Landroid/view/View;)Landroid/view/MenuItem;
-    .registers 3
-    .param p0, "item"    # Landroid/view/MenuItem;
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 31
@@ -55,10 +16,20 @@
     return-object v0
 .end method
 
-.method public static setShowAsAction(Landroid/view/MenuItem;I)V
+.method public static a(Landroid/view/MenuItem;)Landroid/view/View;
     .registers 2
-    .param p0, "item"    # Landroid/view/MenuItem;
-    .param p1, "actionEnum"    # I
+
+    .prologue
+    .line 39
+    invoke-interface {p0}, Landroid/view/MenuItem;->getActionView()Landroid/view/View;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public static a(Landroid/view/MenuItem;I)V
+    .registers 2
 
     .prologue
     .line 27
@@ -66,4 +37,16 @@
 
     .line 28
     return-void
+.end method
+
+.method public static b(Landroid/view/MenuItem;I)Landroid/view/MenuItem;
+    .registers 3
+
+    .prologue
+    .line 35
+    invoke-interface {p0, p1}, Landroid/view/MenuItem;->setActionView(I)Landroid/view/MenuItem;
+
+    move-result-object v0
+
+    return-object v0
 .end method

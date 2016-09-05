@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x609
-    name = "OnPullEventListener"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<V:",
@@ -24,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract onPullEvent(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;)V
+.method public abstract a(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

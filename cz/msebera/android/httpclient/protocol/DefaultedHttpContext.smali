@@ -12,16 +12,14 @@
 
 
 # instance fields
-.field private final defaults:Lcz/msebera/android/httpclient/protocol/HttpContext;
+.field private final a:Lcz/msebera/android/httpclient/protocol/HttpContext;
 
-.field private final local:Lcz/msebera/android/httpclient/protocol/HttpContext;
+.field private final b:Lcz/msebera/android/httpclient/protocol/HttpContext;
 
 
 # direct methods
 .method public constructor <init>(Lcz/msebera/android/httpclient/protocol/HttpContext;Lcz/msebera/android/httpclient/protocol/HttpContext;)V
     .registers 4
-    .param p1, "local"    # Lcz/msebera/android/httpclient/protocol/HttpContext;
-    .param p2, "defaults"    # Lcz/msebera/android/httpclient/protocol/HttpContext;
 
     .prologue
     .line 49
@@ -30,16 +28,16 @@
     .line 50
     const-string/jumbo v0, "HTTP context"
 
-    invoke-static {p1, v0}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcz/msebera/android/httpclient/util/Args;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcz/msebera/android/httpclient/protocol/HttpContext;
 
-    iput-object v0, p0, Lcz/msebera/android/httpclient/protocol/DefaultedHttpContext;->local:Lcz/msebera/android/httpclient/protocol/HttpContext;
+    iput-object v0, p0, Lcz/msebera/android/httpclient/protocol/DefaultedHttpContext;->a:Lcz/msebera/android/httpclient/protocol/HttpContext;
 
     .line 51
-    iput-object p2, p0, Lcz/msebera/android/httpclient/protocol/DefaultedHttpContext;->defaults:Lcz/msebera/android/httpclient/protocol/HttpContext;
+    iput-object p2, p0, Lcz/msebera/android/httpclient/protocol/DefaultedHttpContext;->b:Lcz/msebera/android/httpclient/protocol/HttpContext;
 
     .line 52
     return-void
@@ -47,70 +45,40 @@
 
 
 # virtual methods
-.method public getAttribute(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 4
-    .param p1, "id"    # Ljava/lang/String;
+.method public a(Ljava/lang/String;)Ljava/lang/Object;
+    .registers 3
 
     .prologue
     .line 55
-    iget-object v1, p0, Lcz/msebera/android/httpclient/protocol/DefaultedHttpContext;->local:Lcz/msebera/android/httpclient/protocol/HttpContext;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/protocol/DefaultedHttpContext;->a:Lcz/msebera/android/httpclient/protocol/HttpContext;
 
-    invoke-interface {v1, p1}, Lcz/msebera/android/httpclient/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Lcz/msebera/android/httpclient/protocol/HttpContext;->a(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     .line 56
-    .local v0, "obj":Ljava/lang/Object;
     if-nez v0, :cond_e
 
     .line 57
-    iget-object v1, p0, Lcz/msebera/android/httpclient/protocol/DefaultedHttpContext;->defaults:Lcz/msebera/android/httpclient/protocol/HttpContext;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/protocol/DefaultedHttpContext;->b:Lcz/msebera/android/httpclient/protocol/HttpContext;
 
-    invoke-interface {v1, p1}, Lcz/msebera/android/httpclient/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Lcz/msebera/android/httpclient/protocol/HttpContext;->a(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     .line 59
-    .end local v0    # "obj":Ljava/lang/Object;
     :cond_e
     return-object v0
 .end method
 
-.method public getDefaults()Lcz/msebera/android/httpclient/protocol/HttpContext;
-    .registers 2
-
-    .prologue
-    .line 72
-    iget-object v0, p0, Lcz/msebera/android/httpclient/protocol/DefaultedHttpContext;->defaults:Lcz/msebera/android/httpclient/protocol/HttpContext;
-
-    return-object v0
-.end method
-
-.method public removeAttribute(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 3
-    .param p1, "id"    # Ljava/lang/String;
-
-    .prologue
-    .line 64
-    iget-object v0, p0, Lcz/msebera/android/httpclient/protocol/DefaultedHttpContext;->local:Lcz/msebera/android/httpclient/protocol/HttpContext;
-
-    invoke-interface {v0, p1}, Lcz/msebera/android/httpclient/protocol/HttpContext;->removeAttribute(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+.method public a(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 4
-    .param p1, "id"    # Ljava/lang/String;
-    .param p2, "obj"    # Ljava/lang/Object;
 
     .prologue
     .line 68
-    iget-object v0, p0, Lcz/msebera/android/httpclient/protocol/DefaultedHttpContext;->local:Lcz/msebera/android/httpclient/protocol/HttpContext;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/protocol/DefaultedHttpContext;->a:Lcz/msebera/android/httpclient/protocol/HttpContext;
 
-    invoke-interface {v0, p1, p2}, Lcz/msebera/android/httpclient/protocol/HttpContext;->setAttribute(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-interface {v0, p1, p2}, Lcz/msebera/android/httpclient/protocol/HttpContext;->a(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 69
     return-void
@@ -126,14 +94,13 @@
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 78
-    .local v0, "buf":Ljava/lang/StringBuilder;
     const-string/jumbo v1, "[local: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    iget-object v2, p0, Lcz/msebera/android/httpclient/protocol/DefaultedHttpContext;->local:Lcz/msebera/android/httpclient/protocol/HttpContext;
+    iget-object v2, p0, Lcz/msebera/android/httpclient/protocol/DefaultedHttpContext;->a:Lcz/msebera/android/httpclient/protocol/HttpContext;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -144,7 +111,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcz/msebera/android/httpclient/protocol/DefaultedHttpContext;->defaults:Lcz/msebera/android/httpclient/protocol/HttpContext;
+    iget-object v2, p0, Lcz/msebera/android/httpclient/protocol/DefaultedHttpContext;->b:Lcz/msebera/android/httpclient/protocol/HttpContext;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -156,7 +123,7 @@
     .line 81
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method

@@ -6,19 +6,8 @@
 .implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bzbs/lib/survey/control/PullToRefreshListView;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "PTROnItemClickListener"
-.end annotation
-
-
 # instance fields
-.field final synthetic this$0:Lcom/bzbs/lib/survey/control/PullToRefreshListView;
+.field final synthetic a:Lcom/bzbs/lib/survey/control/PullToRefreshListView;
 
 
 # direct methods
@@ -27,7 +16,7 @@
 
     .prologue
     .line 500
-    iput-object p1, p0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$PTROnItemClickListener;->this$0:Lcom/bzbs/lib/survey/control/PullToRefreshListView;
+    iput-object p1, p0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$PTROnItemClickListener;->a:Lcom/bzbs/lib/survey/control/PullToRefreshListView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,8 +25,6 @@
 
 .method synthetic constructor <init>(Lcom/bzbs/lib/survey/control/PullToRefreshListView;Lcom/bzbs/lib/survey/control/PullToRefreshListView$1;)V
     .registers 3
-    .param p1, "x0"    # Lcom/bzbs/lib/survey/control/PullToRefreshListView;
-    .param p2, "x1"    # Lcom/bzbs/lib/survey/control/PullToRefreshListView$1;
 
     .prologue
     .line 500
@@ -50,9 +37,6 @@
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .registers 12
-    .param p2, "view"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -65,29 +49,25 @@
 
     .prologue
     .line 505
-    .local p1, "adapterView":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
-    iget-object v0, p0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$PTROnItemClickListener;->this$0:Lcom/bzbs/lib/survey/control/PullToRefreshListView;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$PTROnItemClickListener;->a:Lcom/bzbs/lib/survey/control/PullToRefreshListView;
 
     const/4 v1, 0x0
 
-    # setter for: Lcom/bzbs/lib/survey/control/PullToRefreshListView;->hasResetHeader:Z
-    invoke-static {v0, v1}, Lcom/bzbs/lib/survey/control/PullToRefreshListView;->access$1202(Lcom/bzbs/lib/survey/control/PullToRefreshListView;Z)Z
+    invoke-static {v0, v1}, Lcom/bzbs/lib/survey/control/PullToRefreshListView;->b(Lcom/bzbs/lib/survey/control/PullToRefreshListView;Z)Z
 
     .line 507
-    iget-object v0, p0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$PTROnItemClickListener;->this$0:Lcom/bzbs/lib/survey/control/PullToRefreshListView;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$PTROnItemClickListener;->a:Lcom/bzbs/lib/survey/control/PullToRefreshListView;
 
-    # getter for: Lcom/bzbs/lib/survey/control/PullToRefreshListView;->onItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
-    invoke-static {v0}, Lcom/bzbs/lib/survey/control/PullToRefreshListView;->access$1300(Lcom/bzbs/lib/survey/control/PullToRefreshListView;)Landroid/widget/AdapterView$OnItemClickListener;
+    invoke-static {v0}, Lcom/bzbs/lib/survey/control/PullToRefreshListView;->g(Lcom/bzbs/lib/survey/control/PullToRefreshListView;)Landroid/widget/AdapterView$OnItemClickListener;
 
     move-result-object v0
 
     if-eqz v0, :cond_1b
 
     .line 508
-    iget-object v0, p0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$PTROnItemClickListener;->this$0:Lcom/bzbs/lib/survey/control/PullToRefreshListView;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$PTROnItemClickListener;->a:Lcom/bzbs/lib/survey/control/PullToRefreshListView;
 
-    # getter for: Lcom/bzbs/lib/survey/control/PullToRefreshListView;->onItemClickListener:Landroid/widget/AdapterView$OnItemClickListener;
-    invoke-static {v0}, Lcom/bzbs/lib/survey/control/PullToRefreshListView;->access$1300(Lcom/bzbs/lib/survey/control/PullToRefreshListView;)Landroid/widget/AdapterView$OnItemClickListener;
+    invoke-static {v0}, Lcom/bzbs/lib/survey/control/PullToRefreshListView;->g(Lcom/bzbs/lib/survey/control/PullToRefreshListView;)Landroid/widget/AdapterView$OnItemClickListener;
 
     move-result-object v0
 

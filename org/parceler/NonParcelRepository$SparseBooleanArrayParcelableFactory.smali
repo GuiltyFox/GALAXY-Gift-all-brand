@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/parceler/NonParcelRepository;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "SparseBooleanArrayParcelableFactory"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -40,7 +31,6 @@
 
 .method synthetic constructor <init>(Lorg/parceler/NonParcelRepository$1;)V
     .registers 2
-    .param p1, "x0"    # Lorg/parceler/NonParcelRepository$1;
 
     .prologue
     .line 140
@@ -51,9 +41,8 @@
 
 
 # virtual methods
-.method public buildParcelable(Landroid/util/SparseBooleanArray;)Landroid/os/Parcelable;
+.method public a(Landroid/util/SparseBooleanArray;)Landroid/os/Parcelable;
     .registers 3
-    .param p1, "input"    # Landroid/util/SparseBooleanArray;
 
     .prologue
     .line 144
@@ -64,14 +53,14 @@
     return-object v0
 .end method
 
-.method public bridge synthetic buildParcelable(Ljava/lang/Object;)Landroid/os/Parcelable;
+.method public bridge synthetic a(Ljava/lang/Object;)Landroid/os/Parcelable;
     .registers 3
 
     .prologue
     .line 140
     check-cast p1, Landroid/util/SparseBooleanArray;
 
-    invoke-virtual {p0, p1}, Lorg/parceler/NonParcelRepository$SparseBooleanArrayParcelableFactory;->buildParcelable(Landroid/util/SparseBooleanArray;)Landroid/os/Parcelable;
+    invoke-virtual {p0, p1}, Lorg/parceler/NonParcelRepository$SparseBooleanArrayParcelableFactory;->a(Landroid/util/SparseBooleanArray;)Landroid/os/Parcelable;
 
     move-result-object v0
 

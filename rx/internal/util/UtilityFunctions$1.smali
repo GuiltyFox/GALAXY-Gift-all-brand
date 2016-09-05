@@ -8,12 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lrx/internal/util/UtilityFunctions;->identity()Lrx/functions/Func1;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
+    value = Lrx/internal/util/UtilityFunctions;->a()Lrx/functions/Func1;
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
@@ -38,7 +33,7 @@
 
 
 # virtual methods
-.method public call(Ljava/lang/Object;)Ljava/lang/Object;
+.method public b(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -48,6 +43,5 @@
 
     .prologue
     .line 59
-    .local p1, "o":Ljava/lang/Object;, "TT;"
     return-object p1
 .end method

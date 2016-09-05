@@ -3,17 +3,6 @@
 .source "FloatingActionButton.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/FloatingActionButton;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x409
-    name = "OnVisibilityChangedListener"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -29,7 +18,6 @@
 # virtual methods
 .method public onHidden(Landroid/support/design/widget/FloatingActionButton;)V
     .registers 2
-    .param p1, "fab"    # Landroid/support/design/widget/FloatingActionButton;
 
     .prologue
     .line 80
@@ -38,7 +26,6 @@
 
 .method public onShown(Landroid/support/design/widget/FloatingActionButton;)V
     .registers 2
-    .param p1, "fab"    # Landroid/support/design/widget/FloatingActionButton;
 
     .prologue
     .line 72

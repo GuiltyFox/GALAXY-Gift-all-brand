@@ -4,21 +4,21 @@
 
 
 # instance fields
-.field count:Ljava/lang/String;
+.field public count:Ljava/lang/String;
 
-.field id:Ljava/lang/String;
+.field public id:Ljava/lang/String;
 
-.field image_url:Ljava/lang/String;
+.field public image_url:Ljava/lang/String;
 
-.field list_config:Ljava/lang/String;
+.field public list_config:Ljava/lang/String;
 
-.field mode:Ljava/lang/String;
+.field public mode:Ljava/lang/String;
 
-.field name:Ljava/lang/String;
+.field public name:Ljava/lang/String;
 
-.field name_en:Ljava/lang/String;
+.field public name_en:Ljava/lang/String;
 
-.field name_th:Ljava/lang/String;
+.field public name_th:Ljava/lang/String;
 
 
 # direct methods
@@ -168,7 +168,6 @@
 
 .method public setCount(Ljava/lang/String;)V
     .registers 2
-    .param p1, "count"    # Ljava/lang/String;
 
     .prologue
     .line 40
@@ -180,7 +179,6 @@
 
 .method public setId(Ljava/lang/String;)V
     .registers 2
-    .param p1, "id"    # Ljava/lang/String;
 
     .prologue
     .line 48
@@ -192,7 +190,6 @@
 
 .method public setImage_url(Ljava/lang/String;)V
     .registers 2
-    .param p1, "image_url"    # Ljava/lang/String;
 
     .prologue
     .line 88
@@ -204,7 +201,6 @@
 
 .method public setList_config(Ljava/lang/String;)V
     .registers 2
-    .param p1, "list_config"    # Ljava/lang/String;
 
     .prologue
     .line 32
@@ -216,7 +212,6 @@
 
 .method public setMode(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mode"    # Ljava/lang/String;
 
     .prologue
     .line 28
@@ -228,7 +223,6 @@
 
 .method public setName(Ljava/lang/String;)V
     .registers 2
-    .param p1, "name"    # Ljava/lang/String;
 
     .prologue
     .line 36
@@ -240,7 +234,6 @@
 
 .method public setName_en(Ljava/lang/String;)V
     .registers 2
-    .param p1, "name_en"    # Ljava/lang/String;
 
     .prologue
     .line 52
@@ -252,7 +245,6 @@
 
 .method public setName_th(Ljava/lang/String;)V
     .registers 2
-    .param p1, "name_th"    # Ljava/lang/String;
 
     .prologue
     .line 44

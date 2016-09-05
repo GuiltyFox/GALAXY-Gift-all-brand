@@ -6,17 +6,6 @@
 .implements Ljava/io/Serializable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/JsonMappingException;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Reference"
-.end annotation
-
-
 # static fields
 .field private static final serialVersionUID:J = 0x1L
 
@@ -48,7 +37,6 @@
 
 .method public constructor <init>(Ljava/lang/Object;)V
     .registers 3
-    .param p1, "from"    # Ljava/lang/Object;
 
     .prologue
     .line 72
@@ -67,8 +55,6 @@
 
 .method public constructor <init>(Ljava/lang/Object;I)V
     .registers 4
-    .param p1, "from"    # Ljava/lang/Object;
-    .param p2, "index"    # I
 
     .prologue
     .line 82
@@ -91,8 +77,6 @@
 
 .method public constructor <init>(Ljava/lang/Object;Ljava/lang/String;)V
     .registers 5
-    .param p1, "from"    # Ljava/lang/Object;
-    .param p2, "fieldName"    # Ljava/lang/String;
 
     .prologue
     .line 74
@@ -160,7 +144,6 @@
 
 .method public setFieldName(Ljava/lang/String;)V
     .registers 2
-    .param p1, "n"    # Ljava/lang/String;
 
     .prologue
     .line 88
@@ -171,7 +154,6 @@
 
 .method public setFrom(Ljava/lang/Object;)V
     .registers 2
-    .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
     .line 87
@@ -182,7 +164,6 @@
 
 .method public setIndex(I)V
     .registers 2
-    .param p1, "ix"    # I
 
     .prologue
     .line 89
@@ -192,127 +173,118 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 6
+    .registers 5
 
     .prologue
-    const/16 v4, 0x22
+    const/16 v3, 0x22
 
     .line 96
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 97
-    .local v2, "sb":Ljava/lang/StringBuilder;
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/JsonMappingException$Reference;->_from:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/JsonMappingException$Reference;->_from:Ljava/lang/Object;
 
-    instance-of v3, v3, Ljava/lang/Class;
+    instance-of v0, v0, Ljava/lang/Class;
 
-    if-eqz v3, :cond_49
+    if-eqz v0, :cond_48
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/JsonMappingException$Reference;->_from:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/JsonMappingException$Reference;->_from:Ljava/lang/Object;
 
-    check-cast v3, Ljava/lang/Class;
-
-    move-object v0, v3
+    check-cast v0, Ljava/lang/Class;
 
     .line 103
-    .local v0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    :goto_12
+    :goto_11
     invoke-virtual {v0}, Ljava/lang/Class;->getPackage()Ljava/lang/Package;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 104
-    .local v1, "pkg":Ljava/lang/Package;
-    if-eqz v1, :cond_24
+    if-eqz v2, :cond_23
 
     .line 105
-    invoke-virtual {v1}, Ljava/lang/Package;->getName()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/Package;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 106
-    const/16 v3, 0x2e
+    const/16 v2, 0x2e
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 108
-    :cond_24
+    :cond_23
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 109
-    const/16 v3, 0x5b
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 110
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/JsonMappingException$Reference;->_fieldName:Ljava/lang/String;
-
-    if-eqz v3, :cond_50
-
-    .line 111
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 112
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/JsonMappingException$Reference;->_fieldName:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 113
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 119
-    :goto_3f
-    const/16 v3, 0x5d
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 120
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    return-object v3
-
-    .line 97
-    .end local v0    # "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .end local v1    # "pkg":Ljava/lang/Package;
-    :cond_49
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/JsonMappingException$Reference;->_from:Ljava/lang/Object;
-
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
 
-    goto :goto_12
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 109
+    const/16 v0, 0x5b
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 110
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/JsonMappingException$Reference;->_fieldName:Ljava/lang/String;
+
+    if-eqz v0, :cond_4f
+
+    .line 111
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 112
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/JsonMappingException$Reference;->_fieldName:Ljava/lang/String;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 113
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 119
+    :goto_3e
+    const/16 v0, 0x5d
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 120
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+
+    .line 97
+    :cond_48
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/JsonMappingException$Reference;->_from:Ljava/lang/Object;
+
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object v0
+
+    goto :goto_11
 
     .line 114
-    .restart local v0    # "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .restart local v1    # "pkg":Ljava/lang/Package;
-    :cond_50
-    iget v3, p0, Lcom/fasterxml/jackson/databind/JsonMappingException$Reference;->_index:I
+    :cond_4f
+    iget v0, p0, Lcom/fasterxml/jackson/databind/JsonMappingException$Reference;->_index:I
 
-    if-ltz v3, :cond_5a
+    if-ltz v0, :cond_59
 
     .line 115
-    iget v3, p0, Lcom/fasterxml/jackson/databind/JsonMappingException$Reference;->_index:I
+    iget v0, p0, Lcom/fasterxml/jackson/databind/JsonMappingException$Reference;->_index:I
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    goto :goto_3f
+    goto :goto_3e
 
     .line 117
-    :cond_5a
-    const/16 v3, 0x3f
+    :cond_59
+    const/16 v0, 0x3f
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_3f
+    goto :goto_3e
 .end method

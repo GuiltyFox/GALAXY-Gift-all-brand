@@ -14,11 +14,6 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;IIII)V
     .registers 6
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "hash"    # I
-    .param p3, "i1"    # I
-    .param p4, "i2"    # I
-    .param p5, "i3"    # I
 
     .prologue
     .line 13
@@ -41,7 +36,6 @@
 # virtual methods
 .method public equals(I)Z
     .registers 3
-    .param p1, "quad"    # I
 
     .prologue
     .line 21
@@ -52,8 +46,6 @@
 
 .method public equals(II)Z
     .registers 4
-    .param p1, "quad1"    # I
-    .param p2, "quad2"    # I
 
     .prologue
     .line 25
@@ -64,8 +56,6 @@
 
 .method public equals([II)Z
     .registers 7
-    .param p1, "quads"    # [I
-    .param p2, "qlen"    # I
 
     .prologue
     const/4 v0, 0x1

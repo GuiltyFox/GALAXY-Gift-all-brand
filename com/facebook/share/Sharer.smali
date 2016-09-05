@@ -3,14 +3,6 @@
 .source "Sharer.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/facebook/share/Sharer$Result;
-    }
-.end annotation
-
-
 # virtual methods
 .method public abstract getShouldFailOnDataError()Z
 .end method

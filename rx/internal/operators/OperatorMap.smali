@@ -22,7 +22,7 @@
 
 
 # instance fields
-.field private final transformer:Lrx/functions/Func1;
+.field private final a:Lrx/functions/Func1;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lrx/functions/Func1",
@@ -45,48 +45,28 @@
 
     .prologue
     .line 33
-    .local p0, "this":Lrx/internal/operators/OperatorMap;, "Lrx/internal/operators/OperatorMap<TT;TR;>;"
-    .local p1, "transformer":Lrx/functions/Func1;, "Lrx/functions/Func1<-TT;+TR;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 34
-    iput-object p1, p0, Lrx/internal/operators/OperatorMap;->transformer:Lrx/functions/Func1;
+    iput-object p1, p0, Lrx/internal/operators/OperatorMap;->a:Lrx/functions/Func1;
 
     .line 35
     return-void
 .end method
 
-.method static synthetic access$000(Lrx/internal/operators/OperatorMap;)Lrx/functions/Func1;
+.method static synthetic a(Lrx/internal/operators/OperatorMap;)Lrx/functions/Func1;
     .registers 2
-    .param p0, "x0"    # Lrx/internal/operators/OperatorMap;
 
     .prologue
     .line 29
-    iget-object v0, p0, Lrx/internal/operators/OperatorMap;->transformer:Lrx/functions/Func1;
+    iget-object v0, p0, Lrx/internal/operators/OperatorMap;->a:Lrx/functions/Func1;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public bridge synthetic call(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
-
-    .prologue
-    .line 29
-    .local p0, "this":Lrx/internal/operators/OperatorMap;, "Lrx/internal/operators/OperatorMap<TT;TR;>;"
-    check-cast p1, Lrx/Subscriber;
-
-    .end local p1    # "x0":Ljava/lang/Object;
-    invoke-virtual {p0, p1}, Lrx/internal/operators/OperatorMap;->call(Lrx/Subscriber;)Lrx/Subscriber;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public call(Lrx/Subscriber;)Lrx/Subscriber;
+.method public a(Lrx/Subscriber;)Lrx/Subscriber;
     .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -100,11 +80,23 @@
 
     .prologue
     .line 39
-    .local p0, "this":Lrx/internal/operators/OperatorMap;, "Lrx/internal/operators/OperatorMap<TT;TR;>;"
-    .local p1, "o":Lrx/Subscriber;, "Lrx/Subscriber<-TR;>;"
     new-instance v0, Lrx/internal/operators/OperatorMap$1;
 
     invoke-direct {v0, p0, p1, p1}, Lrx/internal/operators/OperatorMap$1;-><init>(Lrx/internal/operators/OperatorMap;Lrx/Subscriber;Lrx/Subscriber;)V
+
+    return-object v0
+.end method
+
+.method public synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    .prologue
+    .line 29
+    check-cast p1, Lrx/Subscriber;
+
+    invoke-virtual {p0, p1}, Lrx/internal/operators/OperatorMap;->a(Lrx/Subscriber;)Lrx/Subscriber;
+
+    move-result-object v0
 
     return-object v0
 .end method

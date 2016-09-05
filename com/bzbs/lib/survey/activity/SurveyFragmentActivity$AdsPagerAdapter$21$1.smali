@@ -11,24 +11,18 @@
     value = Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$21;->onClick(Landroid/view/View;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$2:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$21;
+.field final synthetic a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$21;
 
 
 # direct methods
 .method constructor <init>(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$21;)V
     .registers 2
-    .param p1, "this$2"    # Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$21;
 
     .prologue
     .line 1844
-    iput-object p1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$21$1;->this$2:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$21;
+    iput-object p1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$21$1;->a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$21;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,9 +33,6 @@
 # virtual methods
 .method public onTimeSet(Landroid/widget/TimePicker;II)V
     .registers 11
-    .param p1, "view"    # Landroid/widget/TimePicker;
-    .param p2, "hourOfDay"    # I
-    .param p3, "minute"    # I
 
     .prologue
     const/4 v6, 0x1
@@ -49,9 +40,9 @@
     const/4 v5, 0x0
 
     .line 1848
-    iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$21$1;->this$2:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$21;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$21$1;->a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$21;
 
-    iget-object v0, v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$21;->val$etFieldInputTime:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$AdsPagerAdapter$21;->a:Landroid/widget/TextView;
 
     new-instance v1, Ljava/lang/StringBuilder;
 

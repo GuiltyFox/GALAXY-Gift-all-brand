@@ -7,15 +7,6 @@
 .annotation runtime Lcom/fasterxml/jackson/databind/annotation/JacksonStdImpl;
 .end annotation
 
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/std/PrimitiveArrayDeserializers;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x18
-    name = "BooleanDeser"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/fasterxml/jackson/databind/deser/std/PrimitiveArrayDeserializers",
@@ -43,14 +34,6 @@
 
 .method private final handleNonArray(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)[Z
     .registers 6
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 173
@@ -128,14 +111,6 @@
 # virtual methods
 .method public bridge synthetic deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .registers 4
-    .param p1, "x0"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 138
@@ -147,112 +122,99 @@
 .end method
 
 .method public deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)[Z
-    .registers 10
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
+    .registers 9
 
     .prologue
+    const/4 v1, 0x0
+
     .line 150
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->isExpectedStartArrayToken()Z
 
-    move-result v5
+    move-result v0
 
-    if-nez v5, :cond_b
+    if-nez v0, :cond_c
 
     .line 151
     invoke-direct {p0, p1, p2}, Lcom/fasterxml/jackson/databind/deser/std/PrimitiveArrayDeserializers$BooleanDeser;->handleNonArray(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)[Z
 
-    move-result-object v5
+    move-result-object v0
 
     .line 166
-    :goto_a
-    return-object v5
+    :goto_b
+    return-object v0
 
     .line 153
-    :cond_b
+    :cond_c
     invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/DeserializationContext;->getArrayBuilders()Lcom/fasterxml/jackson/databind/util/ArrayBuilders;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders;->getBooleanBuilder()Lcom/fasterxml/jackson/databind/util/ArrayBuilders$BooleanBuilder;
 
     move-result-object v0
 
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders;->getBooleanBuilder()Lcom/fasterxml/jackson/databind/util/ArrayBuilders$BooleanBuilder;
+
+    move-result-object v4
+
     .line 154
-    .local v0, "builder":Lcom/fasterxml/jackson/databind/util/ArrayBuilders$BooleanBuilder;
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders$BooleanBuilder;->resetAndStart()Ljava/lang/Object;
+    invoke-virtual {v4}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders$BooleanBuilder;->resetAndStart()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, [Z
+    check-cast v0, [Z
 
-    .line 155
-    .local v1, "chunk":[Z
-    const/4 v2, 0x0
+    move-object v2, v0
+
+    move v0, v1
 
     .line 157
-    .local v2, "ix":I
-    :goto_1a
+    :goto_1c
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->nextToken()Lcom/fasterxml/jackson/core/JsonToken;
 
-    move-result-object v5
+    move-result-object v3
 
-    sget-object v6, Lcom/fasterxml/jackson/core/JsonToken;->END_ARRAY:Lcom/fasterxml/jackson/core/JsonToken;
+    sget-object v5, Lcom/fasterxml/jackson/core/JsonToken;->END_ARRAY:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-eq v5, v6, :cond_36
+    if-eq v3, v5, :cond_38
 
     .line 159
     invoke-virtual {p0, p1, p2}, Lcom/fasterxml/jackson/databind/deser/std/PrimitiveArrayDeserializers$BooleanDeser;->_parseBooleanPrimitive(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Z
 
-    move-result v4
+    move-result v5
 
     .line 160
-    .local v4, "value":Z
-    array-length v5, v1
+    array-length v3, v2
 
-    if-lt v2, v5, :cond_30
+    if-lt v0, v3, :cond_3f
 
     .line 161
-    invoke-virtual {v0, v1, v2}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders$BooleanBuilder;->appendCompletedChunk(Ljava/lang/Object;I)Ljava/lang/Object;
+    invoke-virtual {v4, v2, v0}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders$BooleanBuilder;->appendCompletedChunk(Ljava/lang/Object;I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    .end local v1    # "chunk":[Z
-    check-cast v1, [Z
+    check-cast v0, [Z
 
-    .line 162
-    .restart local v1    # "chunk":[Z
-    const/4 v2, 0x0
+    move v3, v1
+
+    move-object v2, v0
 
     .line 164
-    :cond_30
-    add-int/lit8 v3, v2, 0x1
+    :goto_33
+    add-int/lit8 v0, v3, 0x1
 
-    .end local v2    # "ix":I
-    .local v3, "ix":I
-    aput-boolean v4, v1, v2
+    aput-boolean v5, v2, v3
 
-    move v2, v3
-
-    .line 165
-    .end local v3    # "ix":I
-    .restart local v2    # "ix":I
-    goto :goto_1a
+    goto :goto_1c
 
     .line 166
-    .end local v4    # "value":Z
-    :cond_36
-    invoke-virtual {v0, v1, v2}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders$BooleanBuilder;->completeAndClearBuffer(Ljava/lang/Object;I)Ljava/lang/Object;
+    :cond_38
+    invoke-virtual {v4, v2, v0}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders$BooleanBuilder;->completeAndClearBuffer(Ljava/lang/Object;I)Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v0
 
-    check-cast v5, [Z
+    check-cast v0, [Z
 
-    goto :goto_a
+    goto :goto_b
+
+    :cond_3f
+    move v3, v0
+
+    goto :goto_33
 .end method

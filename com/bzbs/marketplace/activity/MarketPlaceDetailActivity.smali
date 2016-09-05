@@ -3,12 +3,8 @@
 .source "MarketPlaceDetailActivity.java"
 
 
-# static fields
-.field public static final SCREEN:Ljava/lang/String; = "Campaign detail"
-
-
 # instance fields
-.field private isAds:Z
+.field private a:Z
 
 
 # direct methods
@@ -22,23 +18,60 @@
     .line 33
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->isAds:Z
+    iput-boolean v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->a:Z
 
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;)Z
+.method static synthetic a(Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;)Z
     .registers 2
-    .param p0, "x0"    # Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;
 
     .prologue
     .line 30
-    iget-boolean v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->isAds:Z
+    iget-boolean v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->a:Z
 
     return v0
 .end method
 
-.method private initFragment()V
+.method private h()V
+    .registers 3
+
+    .prologue
+    const/4 v1, 0x1
+
+    .line 81
+    invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->j()V
+
+    .line 82
+    const-string/jumbo v0, ""
+
+    invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->a(Ljava/lang/String;)V
+
+    .line 84
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->b(I)V
+
+    .line 85
+    invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->c(Z)V
+
+    .line 86
+    invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->b(Z)V
+
+    .line 87
+    invoke-direct {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->o()V
+
+    .line 88
+    invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->m()V
+
+    .line 89
+    invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->n()V
+
+    .line 90
+    return-void
+.end method
+
+.method private o()V
     .registers 6
 
     .prologue
@@ -49,10 +82,10 @@
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    iput-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->arguments:Landroid/os/Bundle;
+    iput-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->C:Landroid/os/Bundle;
 
     .line 94
-    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->arguments:Landroid/os/Bundle;
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->C:Landroid/os/Bundle;
 
     const-string/jumbo v1, "ItemMarketPlace"
 
@@ -92,57 +125,61 @@
     .line 97
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->isAds:Z
+    iput-boolean v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->a:Z
 
     .line 98
     new-instance v0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;
 
     invoke-direct {v0}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;-><init>()V
 
-    iput-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->fragment:Landroid/support/v4/app/Fragment;
+    iput-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->D:Landroid/support/v4/app/Fragment;
 
     .line 99
-    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->arguments:Landroid/os/Bundle;
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->C:Landroid/os/Bundle;
 
     const-string/jumbo v1, "BaseMarketDetail::Layout"
 
-    const v2, 0x7f040131
+    const v2, 0x7f040140
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     .line 100
-    invoke-virtual {p0, v4, v4}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->setBtnBasket(ZI)V
+    invoke-virtual {p0, v4, v4}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->a(ZI)V
 
     .line 107
     :goto_48
-    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->fragment:Landroid/support/v4/app/Fragment;
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->D:Landroid/support/v4/app/Fragment;
 
-    iget-object v1, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->arguments:Landroid/os/Bundle;
+    iget-object v1, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->C:Landroid/os/Bundle;
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/Fragment;->setArguments(Landroid/os/Bundle;)V
 
-    .line 109
+    .line 110
+    :try_start_4f
     invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/support/v4/app/FragmentManager;->beginTransaction()Landroid/support/v4/app/FragmentTransaction;
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentManager;->a()Landroid/support/v4/app/FragmentTransaction;
 
     move-result-object v0
 
-    const v1, 0x7f100175
+    const v1, 0x7f10018e
 
-    iget-object v2, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->fragment:Landroid/support/v4/app/Fragment;
-
-    .line 110
-    invoke-virtual {v0, v1, v2}, Landroid/support/v4/app/FragmentTransaction;->replace(ILandroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
-
-    move-result-object v0
+    iget-object v2, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->D:Landroid/support/v4/app/Fragment;
 
     .line 111
-    invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->commit()I
+    invoke-virtual {v0, v1, v2}, Landroid/support/v4/app/FragmentTransaction;->a(ILandroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
+
+    move-result-object v0
 
     .line 112
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->a()I
+    :try_end_63
+    .catch Ljava/lang/Exception; {:try_start_4f .. :try_end_63} :catch_7c
+
+    .line 116
+    :goto_63
     return-void
 
     .line 102
@@ -151,256 +188,193 @@
 
     invoke-direct {v0}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;-><init>()V
 
-    iput-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->fragment:Landroid/support/v4/app/Fragment;
+    iput-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->D:Landroid/support/v4/app/Fragment;
 
     .line 103
-    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->arguments:Landroid/os/Bundle;
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->C:Landroid/os/Bundle;
 
     const-string/jumbo v1, "BaseMarketDetail::Layout"
 
-    const v2, 0x7f040130
+    const v2, 0x7f04013f
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
     .line 104
-    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->textViewTitle:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->i:Landroid/widget/TextView;
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setVisibility(I)V
 
     goto :goto_48
-.end method
 
-.method private setToolbar()V
-    .registers 3
+    .line 113
+    :catch_7c
+    move-exception v0
 
-    .prologue
-    const/4 v1, 0x1
-
-    .line 81
-    invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->setToolbarShowHome()V
-
-    .line 82
-    const-string/jumbo v0, ""
-
-    invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->setToolbarTitle(Ljava/lang/String;)V
-
-    .line 84
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->setActionBarIcon(I)V
-
-    .line 85
-    invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->callCountCart(Z)V
-
-    .line 86
-    invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->hideLayoutPoint(Z)V
-
-    .line 87
-    invoke-direct {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->initFragment()V
-
-    .line 88
-    invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->setHideSmartTab()V
-
-    .line 89
-    invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->setHideSearch()V
-
-    .line 90
-    return-void
+    goto :goto_63
 .end method
 
 
 # virtual methods
-.method public createLayout(Landroid/os/Bundle;)V
-    .registers 10
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
+.method public a(Landroid/os/Bundle;)V
+    .registers 7
 
     .prologue
     .line 45
     invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->getIntent()Landroid/content/Intent;
 
-    move-result-object v4
+    move-result-object v0
 
-    const-string/jumbo v5, "from_noti"
+    const-string/jumbo v1, "from_noti"
 
-    const/4 v6, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {v4, v5, v6}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->getBooleanExtra(Ljava/lang/String;Z)Z
 
-    move-result v2
+    move-result v0
 
     .line 46
-    .local v2, "is_from_noti":Z
-    const/4 v4, 0x1
+    const/4 v1, 0x1
 
-    if-ne v2, v4, :cond_54
+    if-ne v0, v1, :cond_54
 
     .line 49
     :try_start_f
     invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->getIntent()Landroid/content/Intent;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
+    invoke-virtual {v0}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
 
-    move-result-object v4
+    move-result-object v0
 
-    const-string/jumbo v5, "ItemMarketPlace"
+    const-string/jumbo v1, "ItemMarketPlace"
 
-    invoke-virtual {v4, v5}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+    invoke-virtual {v0, v1}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-static {v4}, Lorg/parceler/Parcels;->unwrap(Landroid/os/Parcelable;)Ljava/lang/Object;
+    invoke-static {v0}, Lorg/parceler/Parcels;->a(Landroid/os/Parcelable;)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;
+    check-cast v0, Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;
 
     .line 50
-    .local v3, "objMarketPlaceListModel":Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;
-    invoke-virtual {v3}, Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;->getID()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;->getID()Ljava/lang/String;
 
     move-result-object v0
 
     .line 51
-    .local v0, "campaignID":Ljava/lang/String;
     invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->getIntent()Landroid/content/Intent;
 
-    move-result-object v4
+    move-result-object v1
 
-    const-string/jumbo v5, "from_noti_alert"
+    const-string/jumbo v2, "from_noti_alert"
 
-    invoke-virtual {v4, v5}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     .line 52
-    .local v1, "campaignName":Ljava/lang/String;
-    const-string/jumbo v4, "Push Notification"
+    const-string/jumbo v2, "Push Notification"
 
-    const-string/jumbo v5, "Click Bzbs Campaign"
+    const-string/jumbo v3, "Click Bzbs Campaign"
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v0
 
-    const-string/jumbo v7, "|"
+    const-string/jumbo v4, "|"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {v6, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-static {v4, v5, v6}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3, v0}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     :try_end_54
     .catch Ljava/lang/Exception; {:try_start_f .. :try_end_54} :catch_5b
 
     .line 58
-    .end local v0    # "campaignID":Ljava/lang/String;
-    .end local v1    # "campaignName":Ljava/lang/String;
-    .end local v3    # "objMarketPlaceListModel":Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;
     :cond_54
     :goto_54
-    const-string/jumbo v4, "BZB Campaign Details"
+    const-string/jumbo v0, "BZB Campaign Details"
 
-    invoke-static {v4}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsScreen(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;)V
 
     .line 59
     return-void
 
     .line 53
     :catch_5b
-    move-exception v4
+    move-exception v0
 
     goto :goto_54
 .end method
 
-.method public getDialogConfirmDealsGet(Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;)V
+.method public a(Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;)V
     .registers 4
-    .param p1, "itemPlaceDetailModel"    # Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
-
-    .prologue
-    .line 121
-    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->mActivity:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
-
-    invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
-
-    move-result-object v1
-
-    invoke-static {v0, v1, p1}, Lcom/bzbs/marketplace/dialog/util/DialogUtils;->getDialogConfirmDealsGet(Landroid/app/Activity;Landroid/support/v4/app/FragmentManager;Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;)V
-
-    .line 122
-    return-void
-.end method
-
-.method public getDialogError(Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;Ljava/lang/String;)V
-    .registers 5
-    .param p1, "itemPlaceDetailModel"    # Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
-    .param p2, "response"    # Ljava/lang/String;
-
-    .prologue
-    .line 133
-    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->mActivity:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
-
-    invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
-
-    move-result-object v1
-
-    invoke-static {v0, v1, p1, p2}, Lcom/bzbs/marketplace/dialog/util/DialogUtils;->getDialogError(Landroid/app/Activity;Landroid/support/v4/app/FragmentManager;Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;Ljava/lang/String;)V
-
-    .line 134
-    return-void
-.end method
-
-.method public getDialogSentByPost(Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;)V
-    .registers 4
-    .param p1, "itemPlaceDetailModel"    # Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
-
-    .prologue
-    .line 125
-    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->mActivity:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
-
-    invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
-
-    move-result-object v1
-
-    invoke-static {v0, v1, p1}, Lcom/bzbs/marketplace/dialog/util/DialogUtils;->getDialogSentByPost(Landroid/app/Activity;Landroid/support/v4/app/FragmentManager;Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;)V
-
-    .line 126
-    return-void
-.end method
-
-.method public getDialogShowCode(Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;Lcom/bzbs/marketplace/model/dialog/ConfirmOnDialogDealsGetModel;)V
-    .registers 5
-    .param p1, "itemPlaceDetailModel"    # Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;
-    .param p2, "confirmDialogDeals"    # Lcom/bzbs/marketplace/model/dialog/ConfirmOnDialogDealsGetModel;
 
     .prologue
     .line 129
-    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->mActivity:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v1
 
-    invoke-static {v0, v1, p1, p2}, Lcom/bzbs/marketplace/dialog/util/DialogUtils;->getDialogShowCode(Landroid/app/Activity;Landroid/support/v4/app/FragmentManager;Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;Lcom/bzbs/marketplace/model/dialog/ConfirmOnDialogDealsGetModel;)V
+    invoke-static {v0, v1, p1}, Lcom/bzbs/marketplace/dialog/util/DialogUtils;->d(Landroid/app/Activity;Landroid/support/v4/app/FragmentManager;Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;)V
 
     .line 130
     return-void
 .end method
 
-.method public getLayoutResource()I
+.method public a(Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;Lcom/bzbs/marketplace/model/dialog/ConfirmOnDialogDealsGetModel;)V
+    .registers 5
+
+    .prologue
+    .line 133
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+
+    invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
+
+    move-result-object v1
+
+    invoke-static {v0, v1, p1, p2}, Lcom/bzbs/marketplace/dialog/util/DialogUtils;->a(Landroid/app/Activity;Landroid/support/v4/app/FragmentManager;Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;Lcom/bzbs/marketplace/model/dialog/ConfirmOnDialogDealsGetModel;)V
+
+    .line 134
+    return-void
+.end method
+
+.method public a(Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;Ljava/lang/String;)V
+    .registers 5
+
+    .prologue
+    .line 137
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+
+    invoke-virtual {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
+
+    move-result-object v1
+
+    invoke-static {v0, v1, p1, p2}, Lcom/bzbs/marketplace/dialog/util/DialogUtils;->a(Landroid/app/Activity;Landroid/support/v4/app/FragmentManager;Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;Ljava/lang/String;)V
+
+    .line 138
+    return-void
+.end method
+
+.method public f()I
     .registers 3
 
     .prologue
@@ -414,27 +388,32 @@
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
     .line 39
-    const v0, 0x7f040037
+    const v0, 0x7f04003b
 
     return v0
 .end method
 
-.method public onActivityResult(IILandroid/content/Intent;)V
-    .registers 5
-    .param p1, "requestCode"    # I
-    .param p2, "resultCode"    # I
-    .param p3, "data"    # Landroid/content/Intent;
+.method protected g()V
+    .registers 1
 
     .prologue
-    .line 144
+    .line 122
+    return-void
+.end method
+
+.method public onActivityResult(IILandroid/content/Intent;)V
+    .registers 5
+
+    .prologue
+    .line 148
     invoke-super {p0, p1, p2, p3}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 145
-    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->fragment:Landroid/support/v4/app/Fragment;
+    .line 149
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->D:Landroid/support/v4/app/Fragment;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/support/v4/app/Fragment;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 146
+    .line 150
     return-void
 .end method
 
@@ -442,74 +421,65 @@
     .registers 1
 
     .prologue
-    .line 138
+    .line 142
     invoke-super {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->onDestroy()V
 
-    .line 139
-    invoke-static {}, Lcom/bzbs/event/LoginEvents;->clearLoginListener()V
+    .line 143
+    invoke-static {}, Lcom/bzbs/event/LoginEvents;->a()V
 
-    .line 140
+    .line 144
     return-void
 .end method
 
 .method protected onResume()V
-    .registers 7
+    .registers 5
 
     .prologue
     .line 63
     invoke-super {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->onResume()V
 
     .line 65
-    invoke-direct {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->setToolbar()V
+    invoke-direct {p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->h()V
 
     .line 66
-    iget-object v1, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->gHandler:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->x:Landroid/os/Handler;
 
-    new-instance v2, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity$1;
+    new-instance v1, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity$1;
 
-    invoke-direct {v2, p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity$1;-><init>(Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;)V
+    invoke-direct {v1, p0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity$1;-><init>(Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;)V
 
-    const-wide/16 v4, 0x3e8
+    const-wide/16 v2, 0x3e8
 
-    invoke-virtual {v1, v2, v4, v5}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 74
-    const-string/jumbo v1, "connectivity"
+    const-string/jumbo v0, "connectivity"
 
-    invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
     .line 75
-    .local v0, "cm":Landroid/net/ConnectivityManager;
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
+
+    move-result-object v0
+
+    if-nez v0, :cond_2d
+
+    .line 76
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+
+    const v1, 0x7f090251
+
+    invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    if-nez v1, :cond_2d
-
-    .line 76
-    iget-object v1, p0, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->mActivity:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
-
-    const v2, 0x7f09024b
-
-    invoke-virtual {p0, v2}, Lcom/bzbs/marketplace/activity/MarketPlaceDetailActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcom/bzbs/util/DialogUtil;->showDialogError(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/bzbs/util/DialogUtil;->b(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 78
     :cond_2d
-    return-void
-.end method
-
-.method protected setFontTypeFace()V
-    .registers 1
-
-    .prologue
-    .line 118
     return-void
 .end method

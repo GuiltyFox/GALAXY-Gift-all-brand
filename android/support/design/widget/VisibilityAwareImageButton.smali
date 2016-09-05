@@ -10,7 +10,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 29
@@ -24,8 +23,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 33
@@ -39,9 +36,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .registers 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
 
     .prologue
     .line 37
@@ -72,8 +66,6 @@
 
 .method final internalSetVisibility(IZ)V
     .registers 3
-    .param p1, "visibility"    # I
-    .param p2, "fromUser"    # Z
 
     .prologue
     .line 47
@@ -92,7 +84,6 @@
 
 .method public setVisibility(I)V
     .registers 3
-    .param p1, "visibility"    # I
 
     .prologue
     .line 43

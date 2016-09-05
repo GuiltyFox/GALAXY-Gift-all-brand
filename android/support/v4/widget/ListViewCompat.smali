@@ -4,23 +4,8 @@
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 43
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static scrollListBy(Landroid/widget/ListView;I)V
+.method public static a(Landroid/widget/ListView;I)V
     .registers 4
-    .param p0, "listView"    # Landroid/widget/ListView;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1, "y"    # I
 
     .prologue
     .line 36
@@ -31,7 +16,7 @@
     if-lt v0, v1, :cond_a
 
     .line 37
-    invoke-static {p0, p1}, Landroid/support/v4/widget/ListViewCompatKitKat;->scrollListBy(Landroid/widget/ListView;I)V
+    invoke-static {p0, p1}, Landroid/support/v4/widget/ListViewCompatKitKat;->a(Landroid/widget/ListView;I)V
 
     .line 41
     :goto_9
@@ -39,7 +24,7 @@
 
     .line 39
     :cond_a
-    invoke-static {p0, p1}, Landroid/support/v4/widget/ListViewCompatDonut;->scrollListBy(Landroid/widget/ListView;I)V
+    invoke-static {p0, p1}, Landroid/support/v4/widget/ListViewCompatDonut;->a(Landroid/widget/ListView;I)V
 
     goto :goto_9
 .end method

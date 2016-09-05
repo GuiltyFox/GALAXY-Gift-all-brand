@@ -318,7 +318,6 @@
 
 .method private constructor <init>(Ljava/lang/String;IZ)V
     .registers 4
-    .param p3, "defaultState"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)V"
@@ -338,7 +337,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/MapperFeature;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 17

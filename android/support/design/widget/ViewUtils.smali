@@ -3,16 +3,6 @@
 .source "ViewUtils.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/design/widget/ViewUtils$ViewUtilsImplLollipop;,
-        Landroid/support/design/widget/ViewUtils$ViewUtilsImplBase;,
-        Landroid/support/design/widget/ViewUtils$ViewUtilsImpl;
-    }
-.end annotation
-
-
 # static fields
 .field static final DEFAULT_ANIMATOR_CREATOR:Landroid/support/design/widget/ValueAnimatorCompat$Creator;
 
@@ -27,27 +17,26 @@
     const/4 v2, 0x0
 
     .line 24
-    new-instance v1, Landroid/support/design/widget/ViewUtils$1;
+    new-instance v0, Landroid/support/design/widget/ViewUtils$1;
 
-    invoke-direct {v1}, Landroid/support/design/widget/ViewUtils$1;-><init>()V
+    invoke-direct {v0}, Landroid/support/design/widget/ViewUtils$1;-><init>()V
 
-    sput-object v1, Landroid/support/design/widget/ViewUtils;->DEFAULT_ANIMATOR_CREATOR:Landroid/support/design/widget/ValueAnimatorCompat$Creator;
+    sput-object v0, Landroid/support/design/widget/ViewUtils;->DEFAULT_ANIMATOR_CREATOR:Landroid/support/design/widget/ValueAnimatorCompat$Creator;
 
     .line 55
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     .line 56
-    .local v0, "version":I
     const/16 v1, 0x15
 
     if-lt v0, v1, :cond_16
 
     .line 57
-    new-instance v1, Landroid/support/design/widget/ViewUtils$ViewUtilsImplLollipop;
+    new-instance v0, Landroid/support/design/widget/ViewUtils$ViewUtilsImplLollipop;
 
-    invoke-direct {v1, v2}, Landroid/support/design/widget/ViewUtils$ViewUtilsImplLollipop;-><init>(Landroid/support/design/widget/ViewUtils$1;)V
+    invoke-direct {v0, v2}, Landroid/support/design/widget/ViewUtils$ViewUtilsImplLollipop;-><init>(Landroid/support/design/widget/ViewUtils$1;)V
 
-    sput-object v1, Landroid/support/design/widget/ViewUtils;->IMPL:Landroid/support/design/widget/ViewUtils$ViewUtilsImpl;
+    sput-object v0, Landroid/support/design/widget/ViewUtils;->IMPL:Landroid/support/design/widget/ViewUtils$ViewUtilsImpl;
 
     .line 61
     :goto_15
@@ -55,11 +44,11 @@
 
     .line 59
     :cond_16
-    new-instance v1, Landroid/support/design/widget/ViewUtils$ViewUtilsImplBase;
+    new-instance v0, Landroid/support/design/widget/ViewUtils$ViewUtilsImplBase;
 
-    invoke-direct {v1, v2}, Landroid/support/design/widget/ViewUtils$ViewUtilsImplBase;-><init>(Landroid/support/design/widget/ViewUtils$1;)V
+    invoke-direct {v0, v2}, Landroid/support/design/widget/ViewUtils$ViewUtilsImplBase;-><init>(Landroid/support/design/widget/ViewUtils$1;)V
 
-    sput-object v1, Landroid/support/design/widget/ViewUtils;->IMPL:Landroid/support/design/widget/ViewUtils$ViewUtilsImpl;
+    sput-object v0, Landroid/support/design/widget/ViewUtils;->IMPL:Landroid/support/design/widget/ViewUtils$ViewUtilsImpl;
 
     goto :goto_15
 .end method
@@ -91,7 +80,6 @@
 
 .method static setBoundsViewOutlineProvider(Landroid/view/View;)V
     .registers 2
-    .param p0, "view"    # Landroid/view/View;
 
     .prologue
     .line 64

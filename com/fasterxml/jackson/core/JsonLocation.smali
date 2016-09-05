@@ -51,10 +51,6 @@
 
 .method public constructor <init>(Ljava/lang/Object;JII)V
     .registers 14
-    .param p1, "srcRef"    # Ljava/lang/Object;
-    .param p2, "totalChars"    # J
-    .param p4, "lineNr"    # I
-    .param p5, "colNr"    # I
 
     .prologue
     .line 44
@@ -78,11 +74,6 @@
 
 .method public constructor <init>(Ljava/lang/Object;JJII)V
     .registers 8
-    .param p1, "sourceRef"    # Ljava/lang/Object;
-    .param p2, "totalBytes"    # J
-    .param p4, "totalChars"    # J
-    .param p6, "lineNr"    # I
-    .param p7, "columnNr"    # I
 
     .prologue
     .line 49
@@ -110,107 +101,103 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 10
-    .param p1, "other"    # Ljava/lang/Object;
+    .registers 8
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 124
     if-ne p1, p0, :cond_6
 
-    move v2, v1
+    move v1, v0
 
     .line 133
     :cond_5
     :goto_5
-    return v2
+    return v1
 
     .line 125
     :cond_6
     if-eqz p1, :cond_5
 
     .line 126
-    instance-of v3, p1, Lcom/fasterxml/jackson/core/JsonLocation;
+    instance-of v2, p1, Lcom/fasterxml/jackson/core/JsonLocation;
 
-    if-eqz v3, :cond_5
-
-    move-object v0, p1
+    if-eqz v2, :cond_5
 
     .line 127
-    check-cast v0, Lcom/fasterxml/jackson/core/JsonLocation;
+    check-cast p1, Lcom/fasterxml/jackson/core/JsonLocation;
 
     .line 129
-    .local v0, "otherLoc":Lcom/fasterxml/jackson/core/JsonLocation;
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/JsonLocation;->_sourceRef:Ljava/lang/Object;
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/JsonLocation;->_sourceRef:Ljava/lang/Object;
 
-    if-nez v3, :cond_39
+    if-nez v2, :cond_38
 
     .line 130
-    iget-object v3, v0, Lcom/fasterxml/jackson/core/JsonLocation;->_sourceRef:Ljava/lang/Object;
+    iget-object v2, p1, Lcom/fasterxml/jackson/core/JsonLocation;->_sourceRef:Ljava/lang/Object;
 
-    if-nez v3, :cond_5
+    if-nez v2, :cond_5
 
     .line 133
-    :cond_17
-    iget v3, p0, Lcom/fasterxml/jackson/core/JsonLocation;->_lineNr:I
+    :cond_16
+    iget v2, p0, Lcom/fasterxml/jackson/core/JsonLocation;->_lineNr:I
 
-    iget v4, v0, Lcom/fasterxml/jackson/core/JsonLocation;->_lineNr:I
+    iget v3, p1, Lcom/fasterxml/jackson/core/JsonLocation;->_lineNr:I
 
-    if-ne v3, v4, :cond_44
+    if-ne v2, v3, :cond_43
 
-    iget v3, p0, Lcom/fasterxml/jackson/core/JsonLocation;->_columnNr:I
+    iget v2, p0, Lcom/fasterxml/jackson/core/JsonLocation;->_columnNr:I
 
-    iget v4, v0, Lcom/fasterxml/jackson/core/JsonLocation;->_columnNr:I
+    iget v3, p1, Lcom/fasterxml/jackson/core/JsonLocation;->_columnNr:I
 
-    if-ne v3, v4, :cond_44
+    if-ne v2, v3, :cond_43
 
-    iget-wide v4, p0, Lcom/fasterxml/jackson/core/JsonLocation;->_totalChars:J
+    iget-wide v2, p0, Lcom/fasterxml/jackson/core/JsonLocation;->_totalChars:J
 
-    iget-wide v6, v0, Lcom/fasterxml/jackson/core/JsonLocation;->_totalChars:J
+    iget-wide v4, p1, Lcom/fasterxml/jackson/core/JsonLocation;->_totalChars:J
 
-    cmp-long v3, v4, v6
+    cmp-long v2, v2, v4
 
-    if-nez v3, :cond_44
+    if-nez v2, :cond_43
 
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonLocation;->getByteOffset()J
 
+    move-result-wide v2
+
+    invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonLocation;->getByteOffset()J
+
     move-result-wide v4
 
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/JsonLocation;->getByteOffset()J
+    cmp-long v2, v2, v4
 
-    move-result-wide v6
+    if-nez v2, :cond_43
 
-    cmp-long v3, v4, v6
-
-    if-nez v3, :cond_44
-
-    :goto_37
-    move v2, v1
+    :goto_36
+    move v1, v0
 
     goto :goto_5
 
     .line 131
-    :cond_39
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/JsonLocation;->_sourceRef:Ljava/lang/Object;
+    :cond_38
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/JsonLocation;->_sourceRef:Ljava/lang/Object;
 
-    iget-object v4, v0, Lcom/fasterxml/jackson/core/JsonLocation;->_sourceRef:Ljava/lang/Object;
+    iget-object v3, p1, Lcom/fasterxml/jackson/core/JsonLocation;->_sourceRef:Ljava/lang/Object;
 
-    invoke-virtual {v3, v4}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_17
+    if-nez v2, :cond_16
 
     goto :goto_5
 
-    :cond_44
-    move v1, v2
+    :cond_43
+    move v0, v1
 
     .line 133
-    goto :goto_37
+    goto :goto_36
 .end method
 
 .method public getByteOffset()J
@@ -268,14 +255,13 @@
 
     .prologue
     .line 113
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/JsonLocation;->_sourceRef:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/JsonLocation;->_sourceRef:Ljava/lang/Object;
 
-    if-nez v1, :cond_14
+    if-nez v0, :cond_14
 
     const/4 v0, 0x1
 
     .line 114
-    .local v0, "hash":I
     :goto_5
     iget v1, p0, Lcom/fasterxml/jackson/core/JsonLocation;->_lineNr:I
 
@@ -304,11 +290,10 @@
     return v0
 
     .line 113
-    .end local v0    # "hash":I
     :cond_14
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/JsonLocation;->_sourceRef:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/JsonLocation;->_sourceRef:Ljava/lang/Object;
 
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     move-result v0
 
@@ -327,7 +312,6 @@
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 96
-    .local v0, "sb":Ljava/lang/StringBuilder;
     const-string/jumbo v1, "[Source: "
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -371,9 +355,9 @@
     .line 107
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     .line 100
     :cond_37

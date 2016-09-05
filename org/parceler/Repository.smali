@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract get()Ljava/util/Map;
+.method public abstract b()Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

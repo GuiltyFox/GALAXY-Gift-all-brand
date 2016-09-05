@@ -19,15 +19,7 @@
 
 
 # virtual methods
-.method public onDestroy()V
-    .registers 1
-
-    .prologue
-    .line 21
-    return-void
-.end method
-
-.method public onStart()V
+.method public d()V
     .registers 1
 
     .prologue
@@ -35,10 +27,18 @@
     return-void
 .end method
 
-.method public onStop()V
+.method public e()V
     .registers 1
 
     .prologue
     .line 16
+    return-void
+.end method
+
+.method public f()V
+    .registers 1
+
+    .prologue
+    .line 21
     return-void
 .end method

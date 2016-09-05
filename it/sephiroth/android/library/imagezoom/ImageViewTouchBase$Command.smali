@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x401c
-    name = "Command"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum",
@@ -24,17 +15,17 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+.field public static final enum a:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
-.field public static final enum Center:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+.field public static final enum b:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
-.field public static final enum Layout:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+.field public static final enum c:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
-.field public static final enum Move:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+.field public static final enum d:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
-.field public static final enum Reset:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+.field public static final enum e:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
-.field public static final enum Zoom:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+.field private static final synthetic f:[Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
 
 # direct methods
@@ -59,7 +50,7 @@
 
     invoke-direct {v0, v1, v2}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->Center:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+    sput-object v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->a:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
     new-instance v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
@@ -67,7 +58,7 @@
 
     invoke-direct {v0, v1, v3}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->Move:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+    sput-object v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->b:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
     new-instance v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
@@ -75,7 +66,7 @@
 
     invoke-direct {v0, v1, v4}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->Zoom:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+    sput-object v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->c:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
     new-instance v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
@@ -83,7 +74,7 @@
 
     invoke-direct {v0, v1, v5}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->Layout:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+    sput-object v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->d:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
     new-instance v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
@@ -91,34 +82,34 @@
 
     invoke-direct {v0, v1, v6}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->Reset:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+    sput-object v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->e:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
     .line 21
     const/4 v0, 0x5
 
     new-array v0, v0, [Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
-    sget-object v1, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->Center:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+    sget-object v1, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->a:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->Move:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+    sget-object v1, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->b:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->Zoom:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+    sget-object v1, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->c:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->Layout:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+    sget-object v1, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->d:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->Reset:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+    sget-object v1, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->e:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
     aput-object v1, v0, v6
 
-    sput-object v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->$VALUES:[Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+    sput-object v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->f:[Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
     return-void
 .end method
@@ -140,7 +131,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 21
@@ -160,7 +150,7 @@
 
     .prologue
     .line 21
-    sget-object v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->$VALUES:[Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
+    sget-object v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->f:[Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;
 
     invoke-virtual {v0}, [Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$Command;->clone()Ljava/lang/Object;
 

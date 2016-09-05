@@ -39,7 +39,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 4
-    .param p1, "name"    # Ljava/lang/String;
 
     .prologue
     const/4 v1, 0x0
@@ -118,7 +117,6 @@
 
 .method public constructor <init>(Lorg/json/JSONObject;)V
     .registers 4
-    .param p1, "jsonObject"    # Lorg/json/JSONObject;
 
     .prologue
     const/4 v1, 0x0
@@ -191,7 +189,7 @@
     .line 33
     const-string/jumbo v0, "id"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -200,7 +198,7 @@
     .line 34
     const-string/jumbo v0, "mode"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -209,7 +207,7 @@
     .line 35
     const-string/jumbo v0, "tags"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -218,7 +216,7 @@
     .line 36
     const-string/jumbo v0, "name"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -227,7 +225,7 @@
     .line 37
     const-string/jumbo v0, "name_en"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -236,7 +234,7 @@
     .line 38
     const-string/jumbo v0, "name_th"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -245,7 +243,7 @@
     .line 39
     const-string/jumbo v0, "count"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
     move-result v0
 
@@ -254,7 +252,7 @@
     .line 40
     const-string/jumbo v0, "cat"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
     move-result v0
 
@@ -263,7 +261,7 @@
     .line 41
     const-string/jumbo v0, "dashboard_key"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -272,7 +270,7 @@
     .line 42
     const-string/jumbo v0, "list_config"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -281,7 +279,7 @@
     .line 44
     const-string/jumbo v0, "image_url_active"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -290,7 +288,7 @@
     .line 45
     const-string/jumbo v0, "image_url_inactive"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -299,7 +297,7 @@
     .line 47
     const-string/jumbo v0, "firstpage"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getBoolean(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
 
     move-result-object v0
 
@@ -312,7 +310,7 @@
     .line 48
     const-string/jumbo v0, "selected"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getBoolean(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
 
     move-result-object v0
 

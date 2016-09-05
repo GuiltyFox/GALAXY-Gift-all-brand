@@ -17,7 +17,6 @@
 # direct methods
 .method public constructor <init>(Lcom/bumptech/glide/load/resource/gif/GifDrawable;)V
     .registers 2
-    .param p1, "drawable"    # Lcom/bumptech/glide/load/resource/gif/GifDrawable;
 
     .prologue
     .line 11
@@ -29,30 +28,30 @@
 
 
 # virtual methods
-.method public getSize()I
+.method public c()I
     .registers 3
 
     .prologue
     .line 16
-    iget-object v0, p0, Lcom/bumptech/glide/load/resource/gif/GifDrawableResource;->drawable:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/gif/GifDrawableResource;->a:Landroid/graphics/drawable/Drawable;
 
     check-cast v0, Lcom/bumptech/glide/load/resource/gif/GifDrawable;
 
-    invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/gif/GifDrawable;->getData()[B
+    invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/gif/GifDrawable;->d()[B
 
     move-result-object v0
 
     array-length v1, v0
 
-    iget-object v0, p0, Lcom/bumptech/glide/load/resource/gif/GifDrawableResource;->drawable:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/gif/GifDrawableResource;->a:Landroid/graphics/drawable/Drawable;
 
     check-cast v0, Lcom/bumptech/glide/load/resource/gif/GifDrawable;
 
-    invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/gif/GifDrawable;->getFirstFrame()Landroid/graphics/Bitmap;
+    invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/gif/GifDrawable;->b()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/bumptech/glide/util/Util;->getBitmapByteSize(Landroid/graphics/Bitmap;)I
+    invoke-static {v0}, Lcom/bumptech/glide/util/Util;->a(Landroid/graphics/Bitmap;)I
 
     move-result v0
 
@@ -61,23 +60,23 @@
     return v0
 .end method
 
-.method public recycle()V
+.method public d()V
     .registers 2
 
     .prologue
     .line 21
-    iget-object v0, p0, Lcom/bumptech/glide/load/resource/gif/GifDrawableResource;->drawable:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/gif/GifDrawableResource;->a:Landroid/graphics/drawable/Drawable;
 
     check-cast v0, Lcom/bumptech/glide/load/resource/gif/GifDrawable;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/gif/GifDrawable;->stop()V
 
     .line 22
-    iget-object v0, p0, Lcom/bumptech/glide/load/resource/gif/GifDrawableResource;->drawable:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/gif/GifDrawableResource;->a:Landroid/graphics/drawable/Drawable;
 
     check-cast v0, Lcom/bumptech/glide/load/resource/gif/GifDrawable;
 
-    invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/gif/GifDrawable;->recycle()V
+    invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/gif/GifDrawable;->f()V
 
     .line 23
     return-void

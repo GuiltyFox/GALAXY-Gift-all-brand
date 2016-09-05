@@ -4,11 +4,11 @@
 
 
 # instance fields
-.field private final LOGCAT:Ljava/lang/String;
+.field private final a:Ljava/lang/String;
 
-.field private gFont:Landroid/graphics/Typeface;
+.field private b:Landroid/os/Handler;
 
-.field private gHandler:Landroid/os/Handler;
+.field private c:Landroid/graphics/Typeface;
 
 
 # direct methods
@@ -22,50 +22,46 @@
     .line 20
     const-string/jumbo v0, "PrivacyPolicyInsingInsingActivity"
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->LOGCAT:Ljava/lang/String;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->a:Ljava/lang/String;
 
     return-void
 .end method
 
-.method private initialLayout()V
-    .registers 11
+.method private a()V
+    .registers 7
 
     .prologue
     .line 46
-    const v1, 0x7f1001cd
+    const v0, 0x7f1001e7
 
-    invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/webkit/WebView;
 
     .line 53
-    .local v0, "webView1":Landroid/webkit/WebView;
     :try_start_9
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v9
+    move-result-object v1
 
     .line 54
-    .local v9, "res":Landroid/content/res/Resources;
-    const v1, 0x7f080003
+    const v2, 0x7f080003
 
-    invoke-virtual {v9, v1}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
 
-    move-result-object v8
+    move-result-object v1
 
     .line 56
-    .local v8, "in_s":Ljava/io/InputStream;
-    invoke-virtual {v8}, Ljava/io/InputStream;->available()I
+    invoke-virtual {v1}, Ljava/io/InputStream;->available()I
 
-    move-result v1
+    move-result v2
 
-    new-array v6, v1, [B
+    new-array v3, v2, [B
 
     .line 57
-    .local v6, "b":[B
-    invoke-virtual {v8, v6}, Ljava/io/InputStream;->read([B)I
+    invoke-virtual {v1, v3}, Ljava/io/InputStream;->read([B)I
 
     .line 61
     const/4 v1, 0x1
@@ -98,7 +94,7 @@
 
     new-instance v2, Ljava/lang/String;
 
-    invoke-direct {v2, v6}, Ljava/lang/String;-><init>([B)V
+    invoke-direct {v2, v3}, Ljava/lang/String;-><init>([B)V
 
     const-string/jumbo v3, "text/html"
 
@@ -111,32 +107,27 @@
     .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_46} :catch_47
 
     .line 71
-    .end local v6    # "b":[B
-    .end local v8    # "in_s":Ljava/io/InputStream;
-    .end local v9    # "res":Landroid/content/res/Resources;
     :goto_46
     return-void
 
     .line 67
     :catch_47
-    move-exception v7
+    move-exception v0
 
     .line 69
-    .local v7, "e":Ljava/lang/Exception;
-    const-string/jumbo v1, "error"
+    const-string/jumbo v0, "error"
 
-    invoke-direct {p0, v1}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->showToast(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->a(Ljava/lang/String;)V
 
     goto :goto_46
 .end method
 
-.method private showToast(Ljava/lang/String;)V
+.method private a(Ljava/lang/String;)V
     .registers 4
-    .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
     .line 79
-    iget-object v0, p0, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->gHandler:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->b:Landroid/os/Handler;
 
     new-instance v1, Lcom/samsung/privilege/activity/UserTermsConditionsActivity$1;
 
@@ -152,7 +143,6 @@
 # virtual methods
 .method public doBack(Landroid/view/View;)V
     .registers 2
-    .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 89
@@ -164,7 +154,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .registers 4
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
     .line 27
@@ -178,7 +167,7 @@
 
     const-string/jumbo v1, "public void onCreate(Bundle savedInstanceState != null) {"
 
-    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 33
     :goto_e
@@ -187,7 +176,7 @@
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->requestWindowFeature(I)Z
 
     .line 37
-    const v0, 0x7f040051
+    const v0, 0x7f040055
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->setContentView(I)V
 
@@ -196,7 +185,7 @@
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->gHandler:Landroid/os/Handler;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->b:Landroid/os/Handler;
 
     .line 40
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->getAssets()Landroid/content/res/AssetManager;
@@ -207,7 +196,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/bzbs/data/AppSetting;->FONTS_DEFAULT_HEADER(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/AppSetting;->a(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -215,10 +204,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->gFont:Landroid/graphics/Typeface;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->c:Landroid/graphics/Typeface;
 
     .line 42
-    invoke-direct {p0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->initialLayout()V
+    invoke-direct {p0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->a()V
 
     .line 43
     return-void
@@ -229,7 +218,7 @@
 
     const-string/jumbo v1, "public void onCreate(Bundle savedInstanceState == null) {"
 
-    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     goto :goto_e
 .end method

@@ -8,17 +8,12 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/rey/material/widget/ListPopupWindow;->buildDropDown()I
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/rey/material/widget/ListPopupWindow;->m()I
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/rey/material/widget/ListPopupWindow;
+.field final synthetic a:Lcom/rey/material/widget/ListPopupWindow;
 
 
 # direct methods
@@ -27,7 +22,7 @@
 
     .prologue
     .line 1111
-    iput-object p1, p0, Lcom/rey/material/widget/ListPopupWindow$4;->this$0:Lcom/rey/material/widget/ListPopupWindow;
+    iput-object p1, p0, Lcom/rey/material/widget/ListPopupWindow$4;->a:Lcom/rey/material/widget/ListPopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,9 +33,6 @@
 # virtual methods
 .method public onItemSelected(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .registers 8
-    .param p2, "view"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -53,31 +45,26 @@
 
     .prologue
     .line 1115
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
-    const/4 v1, -0x1
+    const/4 v0, -0x1
 
-    if-eq p3, v1, :cond_f
+    if-eq p3, v0, :cond_f
 
     .line 1116
-    iget-object v1, p0, Lcom/rey/material/widget/ListPopupWindow$4;->this$0:Lcom/rey/material/widget/ListPopupWindow;
+    iget-object v0, p0, Lcom/rey/material/widget/ListPopupWindow$4;->a:Lcom/rey/material/widget/ListPopupWindow;
 
-    # getter for: Lcom/rey/material/widget/ListPopupWindow;->mDropDownList:Lcom/rey/material/widget/ListPopupWindow$DropDownListView;
-    invoke-static {v1}, Lcom/rey/material/widget/ListPopupWindow;->access$600(Lcom/rey/material/widget/ListPopupWindow;)Lcom/rey/material/widget/ListPopupWindow$DropDownListView;
+    invoke-static {v0}, Lcom/rey/material/widget/ListPopupWindow;->b(Lcom/rey/material/widget/ListPopupWindow;)Lcom/rey/material/widget/ListPopupWindow$DropDownListView;
 
     move-result-object v0
 
     .line 1118
-    .local v0, "dropDownList":Lcom/rey/material/widget/ListPopupWindow$DropDownListView;
     if-eqz v0, :cond_f
 
     .line 1119
     const/4 v1, 0x0
 
-    # setter for: Lcom/rey/material/widget/ListPopupWindow$DropDownListView;->mListSelectionHidden:Z
-    invoke-static {v0, v1}, Lcom/rey/material/widget/ListPopupWindow$DropDownListView;->access$1002(Lcom/rey/material/widget/ListPopupWindow$DropDownListView;Z)Z
+    invoke-static {v0, v1}, Lcom/rey/material/widget/ListPopupWindow$DropDownListView;->a(Lcom/rey/material/widget/ListPopupWindow$DropDownListView;Z)Z
 
     .line 1122
-    .end local v0    # "dropDownList":Lcom/rey/material/widget/ListPopupWindow$DropDownListView;
     :cond_f
     return-void
 .end method
@@ -94,6 +81,5 @@
 
     .prologue
     .line 1125
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
     return-void
 .end method

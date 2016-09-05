@@ -6,17 +6,6 @@
 .implements Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonArrayFormatVisitor;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonArrayFormatVisitor;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Base"
-.end annotation
-
-
 # instance fields
 .field protected _provider:Lcom/fasterxml/jackson/databind/SerializerProvider;
 
@@ -34,7 +23,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 2
-    .param p1, "p"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
 
     .prologue
     .line 37
@@ -59,12 +47,6 @@
 
 .method public itemsFormat(Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatTypes;)V
     .registers 2
-    .param p1, "format"    # Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatTypes;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
 
     .prologue
     .line 51
@@ -73,13 +55,6 @@
 
 .method public itemsFormat(Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitable;Lcom/fasterxml/jackson/databind/JavaType;)V
     .registers 3
-    .param p1, "handler"    # Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitable;
-    .param p2, "elementType"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
 
     .prologue
     .line 47
@@ -88,7 +63,6 @@
 
 .method public setProvider(Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 2
-    .param p1, "p"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
 
     .prologue
     .line 43

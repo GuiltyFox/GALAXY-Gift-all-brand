@@ -4,20 +4,8 @@
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 20
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 22
-    return-void
-.end method
-
-.method private static convertRGB565toARGB888(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+.method private static a(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
     .registers 3
-    .param p0, "bitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
     .line 306
@@ -32,32 +20,8 @@
     return-object v0
 .end method
 
-.method public static doBlur(Landroid/graphics/Bitmap;IZ)Landroid/graphics/Bitmap;
-    .registers 5
-    .param p0, "sentBitmap"    # Landroid/graphics/Bitmap;
-    .param p1, "radius"    # I
-    .param p2, "canReuseInBitmap"    # Z
-
-    .prologue
-    .line 33
-    const/4 v0, 0x0
-
-    const/4 v1, 0x0
-
-    invoke-static {p0, p1, p2, v0, v1}, Lfr/tvbarthel/lib/blurdialogfragment/FastBlurHelper;->doBlur(Landroid/graphics/Bitmap;IZZLandroid/content/Context;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public static doBlur(Landroid/graphics/Bitmap;IZZLandroid/content/Context;)Landroid/graphics/Bitmap;
-    .registers 51
-    .param p0, "sentBitmap"    # Landroid/graphics/Bitmap;
-    .param p1, "radius"    # I
-    .param p2, "canReuseInBitmap"    # Z
-    .param p3, "useRenderScript"    # Z
-    .param p4, "context"    # Landroid/content/Context;
+.method public static a(Landroid/graphics/Bitmap;IZZLandroid/content/Context;)Landroid/graphics/Bitmap;
+    .registers 39
     .annotation build Landroid/annotation/SuppressLint;
         value = {
             "NewApi"
@@ -66,11 +30,11 @@
 
     .prologue
     .line 50
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
     move/from16 v0, p1
 
-    if-ge v0, v4, :cond_7
+    if-ge v0, v2, :cond_7
 
     .line 51
     const/4 v2, 0x0
@@ -83,42 +47,40 @@
     :cond_7
     if-nez p2, :cond_13
 
-    if-eqz p3, :cond_66
+    if-eqz p3, :cond_54
 
     invoke-virtual/range {p0 .. p0}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
-    move-result-object v4
+    move-result-object v2
 
-    sget-object v6, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
+    sget-object v3, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
-    if-ne v4, v6, :cond_66
+    if-ne v2, v3, :cond_54
 
-    .line 58
     :cond_13
     move-object/from16 v2, p0
 
     .line 63
-    .local v2, "bitmap":Landroid/graphics/Bitmap;
     :goto_15
-    sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v6, 0x10
+    const/16 v4, 0x10
 
-    if-le v4, v6, :cond_72
+    if-le v3, v4, :cond_60
 
-    if-eqz p3, :cond_72
+    if-eqz p3, :cond_60
 
     .line 64
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
-    move-result-object v4
+    move-result-object v3
 
-    sget-object v6, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
+    sget-object v4, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
-    if-ne v4, v6, :cond_29
+    if-ne v3, v4, :cond_29
 
     .line 68
-    invoke-static {v2}, Lfr/tvbarthel/lib/blurdialogfragment/FastBlurHelper;->convertRGB565toARGB888(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
+    invoke-static {v2}, Lfr/tvbarthel/lib/blurdialogfragment/FastBlurHelper;->a(Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
@@ -126,117 +88,86 @@
     :cond_29
     invoke-static/range {p4 .. p4}, Landroid/renderscript/RenderScript;->create(Landroid/content/Context;)Landroid/renderscript/RenderScript;
 
-    move-result-object v31
+    move-result-object v3
 
     .line 72
-    .local v31, "rs":Landroid/renderscript/RenderScript;
     sget-object v4, Landroid/renderscript/Allocation$MipmapControl;->MIPMAP_NONE:Landroid/renderscript/Allocation$MipmapControl;
 
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
-    move-object/from16 v0, v31
+    invoke-static {v3, v2, v4, v5}, Landroid/renderscript/Allocation;->createFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;Landroid/renderscript/Allocation$MipmapControl;I)Landroid/renderscript/Allocation;
 
-    invoke-static {v0, v2, v4, v6}, Landroid/renderscript/Allocation;->createFromBitmap(Landroid/renderscript/RenderScript;Landroid/graphics/Bitmap;Landroid/renderscript/Allocation$MipmapControl;I)Landroid/renderscript/Allocation;
-
-    move-result-object v23
+    move-result-object v4
 
     .line 74
-    .local v23, "input":Landroid/renderscript/Allocation;
-    invoke-virtual/range {v23 .. v23}, Landroid/renderscript/Allocation;->getType()Landroid/renderscript/Type;
+    invoke-virtual {v4}, Landroid/renderscript/Allocation;->getType()Landroid/renderscript/Type;
 
-    move-result-object v4
+    move-result-object v5
 
-    move-object/from16 v0, v31
+    invoke-static {v3, v5}, Landroid/renderscript/Allocation;->createTyped(Landroid/renderscript/RenderScript;Landroid/renderscript/Type;)Landroid/renderscript/Allocation;
 
-    invoke-static {v0, v4}, Landroid/renderscript/Allocation;->createTyped(Landroid/renderscript/RenderScript;Landroid/renderscript/Type;)Landroid/renderscript/Allocation;
-
-    move-result-object v24
+    move-result-object v5
 
     .line 75
-    .local v24, "output":Landroid/renderscript/Allocation;
-    invoke-static/range {v31 .. v31}, Landroid/renderscript/Element;->U8_4(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;
+    invoke-static {v3}, Landroid/renderscript/Element;->U8_4(Landroid/renderscript/RenderScript;)Landroid/renderscript/Element;
 
-    move-result-object v4
+    move-result-object v6
 
-    move-object/from16 v0, v31
+    invoke-static {v3, v6}, Landroid/renderscript/ScriptIntrinsicBlur;->create(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)Landroid/renderscript/ScriptIntrinsicBlur;
 
-    invoke-static {v0, v4}, Landroid/renderscript/ScriptIntrinsicBlur;->create(Landroid/renderscript/RenderScript;Landroid/renderscript/Element;)Landroid/renderscript/ScriptIntrinsicBlur;
-
-    move-result-object v33
+    move-result-object v3
 
     .line 76
-    .local v33, "script":Landroid/renderscript/ScriptIntrinsicBlur;
     move/from16 v0, p1
 
-    int-to-float v4, v0
+    int-to-float v6, v0
 
-    move-object/from16 v0, v33
-
-    invoke-virtual {v0, v4}, Landroid/renderscript/ScriptIntrinsicBlur;->setRadius(F)V
+    invoke-virtual {v3, v6}, Landroid/renderscript/ScriptIntrinsicBlur;->setRadius(F)V
 
     .line 77
-    move-object/from16 v0, v33
-
-    move-object/from16 v1, v23
-
-    invoke-virtual {v0, v1}, Landroid/renderscript/ScriptIntrinsicBlur;->setInput(Landroid/renderscript/Allocation;)V
+    invoke-virtual {v3, v4}, Landroid/renderscript/ScriptIntrinsicBlur;->setInput(Landroid/renderscript/Allocation;)V
 
     .line 78
-    move-object/from16 v0, v33
-
-    move-object/from16 v1, v24
-
-    invoke-virtual {v0, v1}, Landroid/renderscript/ScriptIntrinsicBlur;->forEach(Landroid/renderscript/Allocation;)V
+    invoke-virtual {v3, v5}, Landroid/renderscript/ScriptIntrinsicBlur;->forEach(Landroid/renderscript/Allocation;)V
 
     .line 79
-    move-object/from16 v0, v24
-
-    invoke-virtual {v0, v2}, Landroid/renderscript/Allocation;->copyTo(Landroid/graphics/Bitmap;)V
+    invoke-virtual {v5, v2}, Landroid/renderscript/Allocation;->copyTo(Landroid/graphics/Bitmap;)V
 
     goto :goto_6
 
     .line 60
-    .end local v2    # "bitmap":Landroid/graphics/Bitmap;
-    .end local v23    # "input":Landroid/renderscript/Allocation;
-    .end local v24    # "output":Landroid/renderscript/Allocation;
-    .end local v31    # "rs":Landroid/renderscript/RenderScript;
-    .end local v33    # "script":Landroid/renderscript/ScriptIntrinsicBlur;
-    :cond_66
+    :cond_54
     invoke-virtual/range {p0 .. p0}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
-
-    move-result-object v4
-
-    const/4 v6, 0x1
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v4, v6}, Landroid/graphics/Bitmap;->copy(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
-    .restart local v2    # "bitmap":Landroid/graphics/Bitmap;
+    const/4 v3, 0x1
+
+    move-object/from16 v0, p0
+
+    invoke-virtual {v0, v2, v3}, Landroid/graphics/Bitmap;->copy(Landroid/graphics/Bitmap$Config;Z)Landroid/graphics/Bitmap;
+
+    move-result-object v2
+
     goto :goto_15
 
     .line 111
-    :cond_72
+    :cond_60
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v5
 
     .line 112
-    .local v5, "w":I
     invoke-virtual {v2}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v9
 
     .line 114
-    .local v9, "h":I
-    mul-int v4, v5, v9
+    mul-int v3, v5, v9
 
-    new-array v3, v4, [I
+    new-array v3, v3, [I
 
     .line 115
-    .local v3, "pix":[I
     const/4 v4, 0x0
 
     const/4 v6, 0x0
@@ -248,992 +179,950 @@
     invoke-virtual/range {v2 .. v9}, Landroid/graphics/Bitmap;->getPixels([IIIIIII)V
 
     .line 117
-    add-int/lit8 v40, v5, -0x1
+    add-int/lit8 v21, v5, -0x1
 
     .line 118
-    .local v40, "wm":I
-    add-int/lit8 v21, v9, -0x1
+    add-int/lit8 v22, v9, -0x1
 
     .line 119
-    .local v21, "hm":I
-    mul-int v39, v5, v9
+    mul-int v4, v5, v9
 
     .line 120
-    .local v39, "wh":I
-    add-int v4, p1, p1
+    add-int v6, p1, p1
 
-    add-int/lit8 v14, v4, 0x1
+    add-int/lit8 v23, v6, 0x1
 
     .line 122
-    .local v14, "div":I
-    move/from16 v0, v39
+    new-array v0, v4, [I
 
-    new-array v0, v0, [I
+    move-object/from16 v24, v0
+
+    .line 123
+    new-array v0, v4, [I
+
+    move-object/from16 v25, v0
+
+    .line 124
+    new-array v0, v4, [I
 
     move-object/from16 v26, v0
 
-    .line 123
-    .local v26, "r":[I
-    move/from16 v0, v39
-
-    new-array v0, v0, [I
-
-    move-object/from16 v17, v0
-
-    .line 124
-    .local v17, "g":[I
-    move/from16 v0, v39
-
-    new-array v10, v0, [I
-
     .line 126
-    .local v10, "b":[I
     invoke-static {v5, v9}, Ljava/lang/Math;->max(II)I
 
     move-result v4
 
     new-array v0, v4, [I
 
-    move-object/from16 v38, v0
+    move-object/from16 v27, v0
 
     .line 128
-    .local v38, "vmin":[I
-    add-int/lit8 v4, v14, 0x1
+    add-int/lit8 v4, v23, 0x1
 
-    shr-int/lit8 v15, v4, 0x1
+    shr-int/lit8 v4, v4, 0x1
 
     .line 129
-    .local v15, "divsum":I
-    mul-int/2addr v15, v15
+    mul-int v6, v4, v4
 
     .line 130
-    mul-int/lit16 v4, v15, 0x100
+    mul-int/lit16 v4, v6, 0x100
 
     new-array v0, v4, [I
 
-    move-object/from16 v16, v0
+    move-object/from16 v28, v0
 
     .line 131
-    .local v16, "dv":[I
-    const/16 v22, 0x0
+    const/4 v4, 0x0
 
-    .local v22, "i":I
-    :goto_b4
-    mul-int/lit16 v4, v15, 0x100
+    :goto_9e
+    mul-int/lit16 v7, v6, 0x100
 
-    move/from16 v0, v22
-
-    if-ge v0, v4, :cond_c1
+    if-ge v4, v7, :cond_a9
 
     .line 132
-    div-int v4, v22, v15
+    div-int v7, v4, v6
 
-    aput v4, v16, v22
+    aput v7, v28, v4
 
     .line 131
-    add-int/lit8 v22, v22, 0x1
+    add-int/lit8 v4, v4, 0x1
 
-    goto :goto_b4
+    goto :goto_9e
 
     .line 135
-    :cond_c1
-    const/16 v43, 0x0
-
-    .local v43, "yi":I
-    move/from16 v45, v43
+    :cond_a9
+    const/4 v6, 0x0
 
     .line 137
-    .local v45, "yw":I
     const/4 v4, 0x3
 
-    filled-new-array {v14, v4}, [I
+    move/from16 v0, v23
+
+    filled-new-array {v0, v4}, [I
 
     move-result-object v4
 
-    sget-object v6, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    sget-object v7, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    invoke-static {v6, v4}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;[I)Ljava/lang/Object;
+    invoke-static {v7, v4}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;[I)Ljava/lang/Object;
 
-    move-result-object v35
+    move-result-object v4
 
-    check-cast v35, [[I
+    check-cast v4, [[I
 
     .line 142
-    .local v35, "stack":[[I
-    add-int/lit8 v27, p1, 0x1
+    add-int/lit8 v29, p1, 0x1
 
     .line 146
-    .local v27, "r1":I
-    const/16 v42, 0x0
+    const/4 v7, 0x0
 
-    .local v42, "y":I
-    :goto_d6
-    move/from16 v0, v42
+    move/from16 v19, v6
 
-    if-ge v0, v9, :cond_1ff
+    move v13, v6
+
+    move/from16 v20, v7
+
+    :goto_c1
+    move/from16 v0, v20
+
+    if-ge v0, v9, :cond_21a
 
     .line 147
-    const/4 v13, 0x0
-
-    .local v13, "bsum":I
-    move/from16 v20, v13
-
-    .local v20, "gsum":I
-    move/from16 v32, v13
-
-    .local v32, "rsum":I
-    move v12, v13
-
-    .local v12, "boutsum":I
-    move/from16 v19, v13
-
-    .local v19, "goutsum":I
-    move/from16 v30, v13
-
-    .local v30, "routsum":I
-    move v11, v13
-
-    .local v11, "binsum":I
-    move/from16 v18, v13
-
-    .local v18, "ginsum":I
-    move/from16 v29, v13
+    const/4 v6, 0x0
 
     .line 148
-    .local v29, "rinsum":I
     move/from16 v0, p1
 
-    neg-int v0, v0
+    neg-int v7, v0
 
-    move/from16 v22, v0
+    move v8, v6
 
-    :goto_ee
-    move/from16 v0, v22
+    move v10, v6
 
-    move/from16 v1, p1
+    move v11, v6
 
-    if-gt v0, v1, :cond_15f
+    move v12, v6
+
+    move v14, v7
+
+    move v15, v6
+
+    move/from16 v16, v6
+
+    move/from16 v17, v6
+
+    move v7, v6
+
+    :goto_d4
+    move/from16 v0, p1
+
+    if-gt v14, v0, :cond_157
 
     .line 149
-    const/4 v4, 0x0
+    const/16 v18, 0x0
 
-    move/from16 v0, v22
+    move/from16 v0, v18
 
-    invoke-static {v0, v4}, Ljava/lang/Math;->max(II)I
+    invoke-static {v14, v0}, Ljava/lang/Math;->max(II)I
 
-    move-result v4
-
-    move/from16 v0, v40
-
-    invoke-static {v0, v4}, Ljava/lang/Math;->min(II)I
-
-    move-result v4
-
-    add-int v4, v4, v43
-
-    aget v25, v3, v4
-
-    .line 150
-    .local v25, "p":I
-    add-int v4, v22, p1
-
-    aget-object v34, v35, v4
-
-    .line 151
-    .local v34, "sir":[I
-    const/4 v4, 0x0
-
-    const/high16 v6, 0xff0000
-
-    and-int v6, v6, v25
-
-    shr-int/lit8 v6, v6, 0x10
-
-    aput v6, v34, v4
-
-    .line 152
-    const/4 v4, 0x1
-
-    const v6, 0xff00
-
-    and-int v6, v6, v25
-
-    shr-int/lit8 v6, v6, 0x8
-
-    aput v6, v34, v4
-
-    .line 153
-    const/4 v4, 0x2
-
-    move/from16 v0, v25
-
-    and-int/lit16 v6, v0, 0xff
-
-    aput v6, v34, v4
-
-    .line 154
-    invoke-static/range {v22 .. v22}, Ljava/lang/Math;->abs(I)I
-
-    move-result v4
-
-    sub-int v28, v27, v4
-
-    .line 155
-    .local v28, "rbs":I
-    const/4 v4, 0x0
-
-    aget v4, v34, v4
-
-    mul-int v4, v4, v28
-
-    add-int v32, v32, v4
-
-    .line 156
-    const/4 v4, 0x1
-
-    aget v4, v34, v4
-
-    mul-int v4, v4, v28
-
-    add-int v20, v20, v4
-
-    .line 157
-    const/4 v4, 0x2
-
-    aget v4, v34, v4
-
-    mul-int v4, v4, v28
-
-    add-int/2addr v13, v4
-
-    .line 158
-    if-lez v22, :cond_150
-
-    .line 159
-    const/4 v4, 0x0
-
-    aget v4, v34, v4
-
-    add-int v29, v29, v4
-
-    .line 160
-    const/4 v4, 0x1
-
-    aget v4, v34, v4
-
-    add-int v18, v18, v4
-
-    .line 161
-    const/4 v4, 0x2
-
-    aget v4, v34, v4
-
-    add-int/2addr v11, v4
-
-    .line 148
-    :goto_14d
-    add-int/lit8 v22, v22, 0x1
-
-    goto :goto_ee
-
-    .line 163
-    :cond_150
-    const/4 v4, 0x0
-
-    aget v4, v34, v4
-
-    add-int v30, v30, v4
-
-    .line 164
-    const/4 v4, 0x1
-
-    aget v4, v34, v4
-
-    add-int v19, v19, v4
-
-    .line 165
-    const/4 v4, 0x2
-
-    aget v4, v34, v4
-
-    add-int/2addr v12, v4
-
-    goto :goto_14d
-
-    .line 168
-    .end local v25    # "p":I
-    .end local v28    # "rbs":I
-    .end local v34    # "sir":[I
-    :cond_15f
-    move/from16 v36, p1
-
-    .line 170
-    .local v36, "stackpointer":I
-    const/16 v41, 0x0
-
-    .local v41, "x":I
-    :goto_163
-    move/from16 v0, v41
-
-    if-ge v0, v5, :cond_1f9
-
-    .line 172
-    aget v4, v16, v32
-
-    aput v4, v26, v43
-
-    .line 173
-    aget v4, v16, v20
-
-    aput v4, v17, v43
-
-    .line 174
-    aget v4, v16, v13
-
-    aput v4, v10, v43
-
-    .line 176
-    sub-int v32, v32, v30
-
-    .line 177
-    sub-int v20, v20, v19
-
-    .line 178
-    sub-int/2addr v13, v12
-
-    .line 180
-    sub-int v4, v36, p1
-
-    add-int v37, v4, v14
-
-    .line 181
-    .local v37, "stackstart":I
-    rem-int v4, v37, v14
-
-    aget-object v34, v35, v4
-
-    .line 183
-    .restart local v34    # "sir":[I
-    const/4 v4, 0x0
-
-    aget v4, v34, v4
-
-    sub-int v30, v30, v4
-
-    .line 184
-    const/4 v4, 0x1
-
-    aget v4, v34, v4
-
-    sub-int v19, v19, v4
-
-    .line 185
-    const/4 v4, 0x2
-
-    aget v4, v34, v4
-
-    sub-int/2addr v12, v4
-
-    .line 187
-    if-nez v42, :cond_19c
-
-    .line 188
-    add-int v4, v41, p1
-
-    add-int/lit8 v4, v4, 0x1
-
-    move/from16 v0, v40
-
-    invoke-static {v4, v0}, Ljava/lang/Math;->min(II)I
-
-    move-result v4
-
-    aput v4, v38, v41
-
-    .line 190
-    :cond_19c
-    aget v4, v38, v41
-
-    add-int v4, v4, v45
-
-    aget v25, v3, v4
-
-    .line 192
-    .restart local v25    # "p":I
-    const/4 v4, 0x0
-
-    const/high16 v6, 0xff0000
-
-    and-int v6, v6, v25
-
-    shr-int/lit8 v6, v6, 0x10
-
-    aput v6, v34, v4
-
-    .line 193
-    const/4 v4, 0x1
-
-    const v6, 0xff00
-
-    and-int v6, v6, v25
-
-    shr-int/lit8 v6, v6, 0x8
-
-    aput v6, v34, v4
-
-    .line 194
-    const/4 v4, 0x2
-
-    move/from16 v0, v25
-
-    and-int/lit16 v6, v0, 0xff
-
-    aput v6, v34, v4
-
-    .line 196
-    const/4 v4, 0x0
-
-    aget v4, v34, v4
-
-    add-int v29, v29, v4
-
-    .line 197
-    const/4 v4, 0x1
-
-    aget v4, v34, v4
-
-    add-int v18, v18, v4
-
-    .line 198
-    const/4 v4, 0x2
-
-    aget v4, v34, v4
-
-    add-int/2addr v11, v4
-
-    .line 200
-    add-int v32, v32, v29
-
-    .line 201
-    add-int v20, v20, v18
-
-    .line 202
-    add-int/2addr v13, v11
-
-    .line 204
-    add-int/lit8 v4, v36, 0x1
-
-    rem-int v36, v4, v14
-
-    .line 205
-    rem-int v4, v36, v14
-
-    aget-object v34, v35, v4
-
-    .line 207
-    const/4 v4, 0x0
-
-    aget v4, v34, v4
-
-    add-int v30, v30, v4
-
-    .line 208
-    const/4 v4, 0x1
-
-    aget v4, v34, v4
-
-    add-int v19, v19, v4
-
-    .line 209
-    const/4 v4, 0x2
-
-    aget v4, v34, v4
-
-    add-int/2addr v12, v4
-
-    .line 211
-    const/4 v4, 0x0
-
-    aget v4, v34, v4
-
-    sub-int v29, v29, v4
-
-    .line 212
-    const/4 v4, 0x1
-
-    aget v4, v34, v4
-
-    sub-int v18, v18, v4
-
-    .line 213
-    const/4 v4, 0x2
-
-    aget v4, v34, v4
-
-    sub-int/2addr v11, v4
-
-    .line 215
-    add-int/lit8 v43, v43, 0x1
-
-    .line 170
-    add-int/lit8 v41, v41, 0x1
-
-    goto/16 :goto_163
-
-    .line 217
-    .end local v25    # "p":I
-    .end local v34    # "sir":[I
-    .end local v37    # "stackstart":I
-    :cond_1f9
-    add-int v45, v45, v5
-
-    .line 146
-    add-int/lit8 v42, v42, 0x1
-
-    goto/16 :goto_d6
-
-    .line 219
-    .end local v11    # "binsum":I
-    .end local v12    # "boutsum":I
-    .end local v13    # "bsum":I
-    .end local v18    # "ginsum":I
-    .end local v19    # "goutsum":I
-    .end local v20    # "gsum":I
-    .end local v29    # "rinsum":I
-    .end local v30    # "routsum":I
-    .end local v32    # "rsum":I
-    .end local v36    # "stackpointer":I
-    .end local v41    # "x":I
-    :cond_1ff
-    const/16 v41, 0x0
-
-    .restart local v41    # "x":I
-    :goto_201
-    move/from16 v0, v41
-
-    if-ge v0, v5, :cond_319
-
-    .line 220
-    const/4 v13, 0x0
-
-    .restart local v13    # "bsum":I
-    move/from16 v20, v13
-
-    .restart local v20    # "gsum":I
-    move/from16 v32, v13
-
-    .restart local v32    # "rsum":I
-    move v12, v13
-
-    .restart local v12    # "boutsum":I
-    move/from16 v19, v13
-
-    .restart local v19    # "goutsum":I
-    move/from16 v30, v13
-
-    .restart local v30    # "routsum":I
-    move v11, v13
-
-    .restart local v11    # "binsum":I
-    move/from16 v18, v13
-
-    .restart local v18    # "ginsum":I
-    move/from16 v29, v13
-
-    .line 221
-    .restart local v29    # "rinsum":I
-    move/from16 v0, p1
-
-    neg-int v4, v0
-
-    mul-int v44, v4, v5
-
-    .line 222
-    .local v44, "yp":I
-    move/from16 v0, p1
-
-    neg-int v0, v0
-
-    move/from16 v22, v0
-
-    :goto_21e
-    move/from16 v0, v22
-
-    move/from16 v1, p1
-
-    if-gt v0, v1, :cond_281
-
-    .line 223
-    const/4 v4, 0x0
-
-    move/from16 v0, v44
-
-    invoke-static {v4, v0}, Ljava/lang/Math;->max(II)I
-
-    move-result v4
-
-    add-int v43, v4, v41
-
-    .line 225
-    add-int v4, v22, p1
-
-    aget-object v34, v35, v4
-
-    .line 227
-    .restart local v34    # "sir":[I
-    const/4 v4, 0x0
-
-    aget v6, v26, v43
-
-    aput v6, v34, v4
-
-    .line 228
-    const/4 v4, 0x1
-
-    aget v6, v17, v43
-
-    aput v6, v34, v4
-
-    .line 229
-    const/4 v4, 0x2
-
-    aget v6, v10, v43
-
-    aput v6, v34, v4
-
-    .line 231
-    invoke-static/range {v22 .. v22}, Ljava/lang/Math;->abs(I)I
-
-    move-result v4
-
-    sub-int v28, v27, v4
-
-    .line 233
-    .restart local v28    # "rbs":I
-    aget v4, v26, v43
-
-    mul-int v4, v4, v28
-
-    add-int v32, v32, v4
-
-    .line 234
-    aget v4, v17, v43
-
-    mul-int v4, v4, v28
-
-    add-int v20, v20, v4
-
-    .line 235
-    aget v4, v10, v43
-
-    mul-int v4, v4, v28
-
-    add-int/2addr v13, v4
-
-    .line 237
-    if-lez v22, :cond_272
-
-    .line 238
-    const/4 v4, 0x0
-
-    aget v4, v34, v4
-
-    add-int v29, v29, v4
-
-    .line 239
-    const/4 v4, 0x1
-
-    aget v4, v34, v4
-
-    add-int v18, v18, v4
-
-    .line 240
-    const/4 v4, 0x2
-
-    aget v4, v34, v4
-
-    add-int/2addr v11, v4
-
-    .line 247
-    :goto_267
-    move/from16 v0, v22
-
-    move/from16 v1, v21
-
-    if-ge v0, v1, :cond_26f
-
-    .line 248
-    add-int v44, v44, v5
-
-    .line 222
-    :cond_26f
-    add-int/lit8 v22, v22, 0x1
-
-    goto :goto_21e
-
-    .line 242
-    :cond_272
-    const/4 v4, 0x0
-
-    aget v4, v34, v4
-
-    add-int v30, v30, v4
-
-    .line 243
-    const/4 v4, 0x1
-
-    aget v4, v34, v4
-
-    add-int v19, v19, v4
-
-    .line 244
-    const/4 v4, 0x2
-
-    aget v4, v34, v4
-
-    add-int/2addr v12, v4
-
-    goto :goto_267
-
-    .line 251
-    .end local v28    # "rbs":I
-    .end local v34    # "sir":[I
-    :cond_281
-    move/from16 v43, v41
-
-    .line 252
-    move/from16 v36, p1
-
-    .line 253
-    .restart local v36    # "stackpointer":I
-    const/16 v42, 0x0
-
-    :goto_287
-    move/from16 v0, v42
-
-    if-ge v0, v9, :cond_315
-
-    .line 255
-    const/high16 v4, -0x1000000
-
-    aget v6, v3, v43
-
-    and-int/2addr v4, v6
-
-    aget v6, v16, v32
-
-    shl-int/lit8 v6, v6, 0x10
-
-    or-int/2addr v4, v6
-
-    aget v6, v16, v20
-
-    shl-int/lit8 v6, v6, 0x8
-
-    or-int/2addr v4, v6
-
-    aget v6, v16, v13
-
-    or-int/2addr v4, v6
-
-    aput v4, v3, v43
-
-    .line 257
-    sub-int v32, v32, v30
-
-    .line 258
-    sub-int v20, v20, v19
-
-    .line 259
-    sub-int/2addr v13, v12
-
-    .line 261
-    sub-int v4, v36, p1
-
-    add-int v37, v4, v14
-
-    .line 262
-    .restart local v37    # "stackstart":I
-    rem-int v4, v37, v14
-
-    aget-object v34, v35, v4
-
-    .line 264
-    .restart local v34    # "sir":[I
-    const/4 v4, 0x0
-
-    aget v4, v34, v4
-
-    sub-int v30, v30, v4
-
-    .line 265
-    const/4 v4, 0x1
-
-    aget v4, v34, v4
-
-    sub-int v19, v19, v4
-
-    .line 266
-    const/4 v4, 0x2
-
-    aget v4, v34, v4
-
-    sub-int/2addr v12, v4
-
-    .line 268
-    if-nez v41, :cond_2c7
-
-    .line 269
-    add-int v4, v42, v27
+    move-result v18
 
     move/from16 v0, v21
 
-    invoke-static {v4, v0}, Ljava/lang/Math;->min(II)I
+    move/from16 v1, v18
 
-    move-result v4
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
-    mul-int/2addr v4, v5
+    move-result v18
 
-    aput v4, v38, v42
+    add-int v18, v18, v13
 
-    .line 271
-    :cond_2c7
-    aget v4, v38, v42
+    aget v18, v3, v18
 
-    add-int v25, v41, v4
+    .line 150
+    add-int v30, v14, p1
 
-    .line 273
-    .restart local v25    # "p":I
-    const/4 v4, 0x0
+    aget-object v30, v4, v30
 
-    aget v6, v26, v25
+    .line 151
+    const/16 v31, 0x0
 
-    aput v6, v34, v4
+    const/high16 v32, 0xff0000
 
-    .line 274
-    const/4 v4, 0x1
+    and-int v32, v32, v18
 
-    aget v6, v17, v25
+    shr-int/lit8 v32, v32, 0x10
 
-    aput v6, v34, v4
+    aput v32, v30, v31
 
-    .line 275
-    const/4 v4, 0x2
+    .line 152
+    const/16 v31, 0x1
 
-    aget v6, v10, v25
+    const v32, 0xff00
 
-    aput v6, v34, v4
+    and-int v32, v32, v18
 
-    .line 277
-    const/4 v4, 0x0
+    shr-int/lit8 v32, v32, 0x8
 
-    aget v4, v34, v4
+    aput v32, v30, v31
 
-    add-int v29, v29, v4
+    .line 153
+    const/16 v31, 0x2
 
-    .line 278
-    const/4 v4, 0x1
+    move/from16 v0, v18
 
-    aget v4, v34, v4
+    and-int/lit16 v0, v0, 0xff
 
-    add-int v18, v18, v4
+    move/from16 v18, v0
 
-    .line 279
-    const/4 v4, 0x2
+    aput v18, v30, v31
 
-    aget v4, v34, v4
+    .line 154
+    invoke-static {v14}, Ljava/lang/Math;->abs(I)I
 
-    add-int/2addr v11, v4
+    move-result v18
 
-    .line 281
-    add-int v32, v32, v29
+    sub-int v18, v29, v18
 
-    .line 282
-    add-int v20, v20, v18
+    .line 155
+    const/16 v31, 0x0
 
-    .line 283
-    add-int/2addr v13, v11
+    aget v31, v30, v31
 
-    .line 285
-    add-int/lit8 v4, v36, 0x1
+    mul-int v31, v31, v18
 
-    rem-int v36, v4, v14
+    add-int v17, v17, v31
 
-    .line 286
-    aget-object v34, v35, v36
+    .line 156
+    const/16 v31, 0x1
 
-    .line 288
-    const/4 v4, 0x0
+    aget v31, v30, v31
 
-    aget v4, v34, v4
+    mul-int v31, v31, v18
 
-    add-int v30, v30, v4
+    add-int v16, v16, v31
 
-    .line 289
-    const/4 v4, 0x1
+    .line 157
+    const/16 v31, 0x2
 
-    aget v4, v34, v4
+    aget v31, v30, v31
 
-    add-int v19, v19, v4
+    mul-int v18, v18, v31
 
-    .line 290
-    const/4 v4, 0x2
+    add-int v15, v15, v18
 
-    aget v4, v34, v4
+    .line 158
+    if-lez v14, :cond_144
 
-    add-int/2addr v12, v4
+    .line 159
+    const/16 v18, 0x0
 
-    .line 292
-    const/4 v4, 0x0
+    aget v18, v30, v18
 
-    aget v4, v34, v4
+    add-int v8, v8, v18
 
-    sub-int v29, v29, v4
+    .line 160
+    const/16 v18, 0x1
 
-    .line 293
-    const/4 v4, 0x1
+    aget v18, v30, v18
 
-    aget v4, v34, v4
+    add-int v7, v7, v18
 
-    sub-int v18, v18, v4
+    .line 161
+    const/16 v18, 0x2
 
-    .line 294
-    const/4 v4, 0x2
+    aget v18, v30, v18
 
-    aget v4, v34, v4
+    add-int v6, v6, v18
 
-    sub-int/2addr v11, v4
+    .line 148
+    :goto_141
+    add-int/lit8 v14, v14, 0x1
 
-    .line 296
-    add-int v43, v43, v5
+    goto :goto_d4
 
-    .line 253
-    add-int/lit8 v42, v42, 0x1
+    .line 163
+    :cond_144
+    const/16 v18, 0x0
 
-    goto/16 :goto_287
+    aget v18, v30, v18
+
+    add-int v12, v12, v18
+
+    .line 164
+    const/16 v18, 0x1
+
+    aget v18, v30, v18
+
+    add-int v11, v11, v18
+
+    .line 165
+    const/16 v18, 0x2
+
+    aget v18, v30, v18
+
+    add-int v10, v10, v18
+
+    goto :goto_141
+
+    .line 170
+    :cond_157
+    const/4 v14, 0x0
+
+    move/from16 v18, v17
+
+    move/from16 v17, v16
+
+    move/from16 v16, v15
+
+    move v15, v14
+
+    move v14, v13
+
+    move/from16 v13, p1
+
+    :goto_162
+    if-ge v15, v5, :cond_20f
+
+    .line 172
+    aget v30, v28, v18
+
+    aput v30, v24, v14
+
+    .line 173
+    aget v30, v28, v17
+
+    aput v30, v25, v14
+
+    .line 174
+    aget v30, v28, v16
+
+    aput v30, v26, v14
+
+    .line 176
+    sub-int v18, v18, v12
+
+    .line 177
+    sub-int v17, v17, v11
+
+    .line 178
+    sub-int v16, v16, v10
+
+    .line 180
+    sub-int v30, v13, p1
+
+    add-int v30, v30, v23
+
+    .line 181
+    rem-int v30, v30, v23
+
+    aget-object v30, v4, v30
+
+    .line 183
+    const/16 v31, 0x0
+
+    aget v31, v30, v31
+
+    sub-int v12, v12, v31
+
+    .line 184
+    const/16 v31, 0x1
+
+    aget v31, v30, v31
+
+    sub-int v11, v11, v31
+
+    .line 185
+    const/16 v31, 0x2
+
+    aget v31, v30, v31
+
+    sub-int v10, v10, v31
+
+    .line 187
+    if-nez v20, :cond_1a0
+
+    .line 188
+    add-int v31, v15, p1
+
+    add-int/lit8 v31, v31, 0x1
+
+    move/from16 v0, v31
+
+    move/from16 v1, v21
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+
+    move-result v31
+
+    aput v31, v27, v15
+
+    .line 190
+    :cond_1a0
+    aget v31, v27, v15
+
+    add-int v31, v31, v19
+
+    aget v31, v3, v31
+
+    .line 192
+    const/16 v32, 0x0
+
+    const/high16 v33, 0xff0000
+
+    and-int v33, v33, v31
+
+    shr-int/lit8 v33, v33, 0x10
+
+    aput v33, v30, v32
+
+    .line 193
+    const/16 v32, 0x1
+
+    const v33, 0xff00
+
+    and-int v33, v33, v31
+
+    shr-int/lit8 v33, v33, 0x8
+
+    aput v33, v30, v32
+
+    .line 194
+    const/16 v32, 0x2
+
+    move/from16 v0, v31
+
+    and-int/lit16 v0, v0, 0xff
+
+    move/from16 v31, v0
+
+    aput v31, v30, v32
+
+    .line 196
+    const/16 v31, 0x0
+
+    aget v31, v30, v31
+
+    add-int v8, v8, v31
+
+    .line 197
+    const/16 v31, 0x1
+
+    aget v31, v30, v31
+
+    add-int v7, v7, v31
+
+    .line 198
+    const/16 v31, 0x2
+
+    aget v30, v30, v31
+
+    add-int v6, v6, v30
+
+    .line 200
+    add-int v18, v18, v8
+
+    .line 201
+    add-int v17, v17, v7
+
+    .line 202
+    add-int v16, v16, v6
+
+    .line 204
+    add-int/lit8 v13, v13, 0x1
+
+    rem-int v13, v13, v23
+
+    .line 205
+    rem-int v30, v13, v23
+
+    aget-object v30, v4, v30
+
+    .line 207
+    const/16 v31, 0x0
+
+    aget v31, v30, v31
+
+    add-int v12, v12, v31
+
+    .line 208
+    const/16 v31, 0x1
+
+    aget v31, v30, v31
+
+    add-int v11, v11, v31
+
+    .line 209
+    const/16 v31, 0x2
+
+    aget v31, v30, v31
+
+    add-int v10, v10, v31
+
+    .line 211
+    const/16 v31, 0x0
+
+    aget v31, v30, v31
+
+    sub-int v8, v8, v31
+
+    .line 212
+    const/16 v31, 0x1
+
+    aget v31, v30, v31
+
+    sub-int v7, v7, v31
+
+    .line 213
+    const/16 v31, 0x2
+
+    aget v30, v30, v31
+
+    sub-int v6, v6, v30
+
+    .line 215
+    add-int/lit8 v14, v14, 0x1
+
+    .line 170
+    add-int/lit8 v15, v15, 0x1
+
+    goto/16 :goto_162
+
+    .line 217
+    :cond_20f
+    add-int v6, v19, v5
+
+    .line 146
+    add-int/lit8 v7, v20, 0x1
+
+    move/from16 v19, v6
+
+    move v13, v14
+
+    move/from16 v20, v7
+
+    goto/16 :goto_c1
 
     .line 219
-    .end local v25    # "p":I
-    .end local v34    # "sir":[I
-    .end local v37    # "stackstart":I
-    :cond_315
-    add-int/lit8 v41, v41, 0x1
+    :cond_21a
+    const/4 v15, 0x0
 
-    goto/16 :goto_201
+    :goto_21b
+    if-ge v15, v5, :cond_357
+
+    .line 220
+    const/4 v7, 0x0
+
+    .line 221
+    move/from16 v0, p1
+
+    neg-int v6, v0
+
+    mul-int/2addr v6, v5
+
+    .line 222
+    move/from16 v0, p1
+
+    neg-int v8, v0
+
+    move v10, v7
+
+    move v11, v7
+
+    move v12, v7
+
+    move v13, v7
+
+    move/from16 v18, v8
+
+    move v14, v7
+
+    move/from16 v16, v7
+
+    move/from16 v17, v7
+
+    move v8, v7
+
+    :goto_231
+    move/from16 v0, v18
+
+    move/from16 v1, p1
+
+    if-gt v0, v1, :cond_29c
+
+    .line 223
+    const/16 v19, 0x0
+
+    move/from16 v0, v19
+
+    invoke-static {v0, v6}, Ljava/lang/Math;->max(II)I
+
+    move-result v19
+
+    add-int v20, v19, v15
+
+    .line 225
+    add-int v19, v18, p1
+
+    aget-object v21, v4, v19
+
+    .line 227
+    const/16 v19, 0x0
+
+    aget v30, v24, v20
+
+    aput v30, v21, v19
+
+    .line 228
+    const/16 v19, 0x1
+
+    aget v30, v25, v20
+
+    aput v30, v21, v19
+
+    .line 229
+    const/16 v19, 0x2
+
+    aget v30, v26, v20
+
+    aput v30, v21, v19
+
+    .line 231
+    invoke-static/range {v18 .. v18}, Ljava/lang/Math;->abs(I)I
+
+    move-result v19
+
+    sub-int v30, v29, v19
+
+    .line 233
+    aget v19, v24, v20
+
+    mul-int v19, v19, v30
+
+    add-int v19, v19, v17
+
+    .line 234
+    aget v17, v25, v20
+
+    mul-int v17, v17, v30
+
+    add-int v17, v17, v16
+
+    .line 235
+    aget v16, v26, v20
+
+    mul-int v16, v16, v30
+
+    add-int v16, v16, v14
+
+    .line 237
+    if-lez v18, :cond_28f
+
+    .line 238
+    const/4 v14, 0x0
+
+    aget v14, v21, v14
+
+    add-int/2addr v10, v14
+
+    .line 239
+    const/4 v14, 0x1
+
+    aget v14, v21, v14
+
+    add-int/2addr v8, v14
+
+    .line 240
+    const/4 v14, 0x2
+
+    aget v14, v21, v14
+
+    add-int/2addr v7, v14
+
+    .line 247
+    :goto_27d
+    move/from16 v0, v18
+
+    move/from16 v1, v22
+
+    if-ge v0, v1, :cond_284
+
+    .line 248
+    add-int/2addr v6, v5
+
+    .line 222
+    :cond_284
+    add-int/lit8 v14, v18, 0x1
+
+    move/from16 v18, v14
+
+    move/from16 v14, v16
+
+    move/from16 v16, v17
+
+    move/from16 v17, v19
+
+    goto :goto_231
+
+    .line 242
+    :cond_28f
+    const/4 v14, 0x0
+
+    aget v14, v21, v14
+
+    add-int/2addr v13, v14
+
+    .line 243
+    const/4 v14, 0x1
+
+    aget v14, v21, v14
+
+    add-int/2addr v12, v14
+
+    .line 244
+    const/4 v14, 0x2
+
+    aget v14, v21, v14
+
+    add-int/2addr v11, v14
+
+    goto :goto_27d
+
+    .line 253
+    :cond_29c
+    const/4 v6, 0x0
+
+    move/from16 v18, v16
+
+    move/from16 v19, v17
+
+    move/from16 v16, v6
+
+    move/from16 v17, v14
+
+    move v14, v15
+
+    move v6, v7
+
+    move v7, v8
+
+    move v8, v10
+
+    move v10, v11
+
+    move v11, v12
+
+    move v12, v13
+
+    move/from16 v13, p1
+
+    :goto_2ae
+    move/from16 v0, v16
+
+    if-ge v0, v9, :cond_353
+
+    .line 255
+    const/high16 v20, -0x1000000
+
+    aget v21, v3, v14
+
+    and-int v20, v20, v21
+
+    aget v21, v28, v19
+
+    shl-int/lit8 v21, v21, 0x10
+
+    or-int v20, v20, v21
+
+    aget v21, v28, v18
+
+    shl-int/lit8 v21, v21, 0x8
+
+    or-int v20, v20, v21
+
+    aget v21, v28, v17
+
+    or-int v20, v20, v21
+
+    aput v20, v3, v14
+
+    .line 257
+    sub-int v19, v19, v12
+
+    .line 258
+    sub-int v18, v18, v11
+
+    .line 259
+    sub-int v17, v17, v10
+
+    .line 261
+    sub-int v20, v13, p1
+
+    add-int v20, v20, v23
+
+    .line 262
+    rem-int v20, v20, v23
+
+    aget-object v20, v4, v20
+
+    .line 264
+    const/16 v21, 0x0
+
+    aget v21, v20, v21
+
+    sub-int v12, v12, v21
+
+    .line 265
+    const/16 v21, 0x1
+
+    aget v21, v20, v21
+
+    sub-int v11, v11, v21
+
+    .line 266
+    const/16 v21, 0x2
+
+    aget v21, v20, v21
+
+    sub-int v10, v10, v21
+
+    .line 268
+    if-nez v15, :cond_2f6
+
+    .line 269
+    add-int v21, v16, v29
+
+    invoke-static/range {v21 .. v22}, Ljava/lang/Math;->min(II)I
+
+    move-result v21
+
+    mul-int v21, v21, v5
+
+    aput v21, v27, v16
+
+    .line 271
+    :cond_2f6
+    aget v21, v27, v16
+
+    add-int v21, v21, v15
+
+    .line 273
+    const/16 v30, 0x0
+
+    aget v31, v24, v21
+
+    aput v31, v20, v30
+
+    .line 274
+    const/16 v30, 0x1
+
+    aget v31, v25, v21
+
+    aput v31, v20, v30
+
+    .line 275
+    const/16 v30, 0x2
+
+    aget v21, v26, v21
+
+    aput v21, v20, v30
+
+    .line 277
+    const/16 v21, 0x0
+
+    aget v21, v20, v21
+
+    add-int v8, v8, v21
+
+    .line 278
+    const/16 v21, 0x1
+
+    aget v21, v20, v21
+
+    add-int v7, v7, v21
+
+    .line 279
+    const/16 v21, 0x2
+
+    aget v20, v20, v21
+
+    add-int v6, v6, v20
+
+    .line 281
+    add-int v19, v19, v8
+
+    .line 282
+    add-int v18, v18, v7
+
+    .line 283
+    add-int v17, v17, v6
+
+    .line 285
+    add-int/lit8 v13, v13, 0x1
+
+    rem-int v13, v13, v23
+
+    .line 286
+    aget-object v20, v4, v13
+
+    .line 288
+    const/16 v21, 0x0
+
+    aget v21, v20, v21
+
+    add-int v12, v12, v21
+
+    .line 289
+    const/16 v21, 0x1
+
+    aget v21, v20, v21
+
+    add-int v11, v11, v21
+
+    .line 290
+    const/16 v21, 0x2
+
+    aget v21, v20, v21
+
+    add-int v10, v10, v21
+
+    .line 292
+    const/16 v21, 0x0
+
+    aget v21, v20, v21
+
+    sub-int v8, v8, v21
+
+    .line 293
+    const/16 v21, 0x1
+
+    aget v21, v20, v21
+
+    sub-int v7, v7, v21
+
+    .line 294
+    const/16 v21, 0x2
+
+    aget v20, v20, v21
+
+    sub-int v6, v6, v20
+
+    .line 296
+    add-int/2addr v14, v5
+
+    .line 253
+    add-int/lit8 v16, v16, 0x1
+
+    goto/16 :goto_2ae
+
+    .line 219
+    :cond_353
+    add-int/lit8 v15, v15, 0x1
+
+    goto/16 :goto_21b
 
     .line 300
-    .end local v11    # "binsum":I
-    .end local v12    # "boutsum":I
-    .end local v13    # "bsum":I
-    .end local v18    # "ginsum":I
-    .end local v19    # "goutsum":I
-    .end local v20    # "gsum":I
-    .end local v29    # "rinsum":I
-    .end local v30    # "routsum":I
-    .end local v32    # "rsum":I
-    .end local v36    # "stackpointer":I
-    .end local v44    # "yp":I
-    :cond_319
+    :cond_357
     const/4 v4, 0x0
 
     const/4 v6, 0x0

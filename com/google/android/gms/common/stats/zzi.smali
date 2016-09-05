@@ -3,11 +3,11 @@
 
 
 # static fields
-.field private static TAG:Ljava/lang/String;
+.field private static a:Ljava/lang/String;
 
-.field private static zzalE:Ljava/lang/Integer;
+.field private static b:Lcom/google/android/gms/common/stats/zzi;
 
-.field private static zzamh:Lcom/google/android/gms/common/stats/zzi;
+.field private static c:Ljava/lang/Integer;
 
 
 # direct methods
@@ -16,13 +16,13 @@
 
     const-string/jumbo v0, "WakeLockTracker"
 
-    sput-object v0, Lcom/google/android/gms/common/stats/zzi;->TAG:Ljava/lang/String;
+    sput-object v0, Lcom/google/android/gms/common/stats/zzi;->a:Ljava/lang/String;
 
     new-instance v0, Lcom/google/android/gms/common/stats/zzi;
 
     invoke-direct {v0}, Lcom/google/android/gms/common/stats/zzi;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/common/stats/zzi;->zzamh:Lcom/google/android/gms/common/stats/zzi;
+    sput-object v0, Lcom/google/android/gms/common/stats/zzi;->b:Lcom/google/android/gms/common/stats/zzi;
 
     return-void
 .end method
@@ -35,54 +35,22 @@
     return-void
 .end method
 
-.method private static getLogLevel()I
+.method public static a()Lcom/google/android/gms/common/stats/zzi;
     .registers 1
 
-    :try_start_0
-    invoke-static {}, Lcom/google/android/gms/internal/zznk;->zzka()Z
+    sget-object v0, Lcom/google/android/gms/common/stats/zzi;->b:Lcom/google/android/gms/common/stats/zzi;
 
-    move-result v0
-
-    if-eqz v0, :cond_13
-
-    sget-object v0, Lcom/google/android/gms/common/stats/zzc$zzb;->zzalI:Lcom/google/android/gms/internal/zzmt;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/internal/zzmt;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result v0
-
-    :goto_12
-    return v0
-
-    :cond_13
-    sget v0, Lcom/google/android/gms/common/stats/zzd;->LOG_LEVEL_OFF:I
-    :try_end_15
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_15} :catch_16
-
-    goto :goto_12
-
-    :catch_16
-    move-exception v0
-
-    sget v0, Lcom/google/android/gms/common/stats/zzd;->LOG_LEVEL_OFF:I
-
-    goto :goto_12
+    return-object v0
 .end method
 
-.method private static zzau(Landroid/content/Context;)Z
+.method private static a(Landroid/content/Context;)Z
     .registers 3
 
-    sget-object v0, Lcom/google/android/gms/common/stats/zzi;->zzalE:Ljava/lang/Integer;
+    sget-object v0, Lcom/google/android/gms/common/stats/zzi;->c:Ljava/lang/Integer;
 
     if-nez v0, :cond_e
 
-    invoke-static {}, Lcom/google/android/gms/common/stats/zzi;->getLogLevel()I
+    invoke-static {}, Lcom/google/android/gms/common/stats/zzi;->b()I
 
     move-result v0
 
@@ -90,16 +58,16 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/common/stats/zzi;->zzalE:Ljava/lang/Integer;
+    sput-object v0, Lcom/google/android/gms/common/stats/zzi;->c:Ljava/lang/Integer;
 
     :cond_e
-    sget-object v0, Lcom/google/android/gms/common/stats/zzi;->zzalE:Ljava/lang/Integer;
+    sget-object v0, Lcom/google/android/gms/common/stats/zzi;->c:Ljava/lang/Integer;
 
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
 
-    sget v1, Lcom/google/android/gms/common/stats/zzd;->LOG_LEVEL_OFF:I
+    sget v1, Lcom/google/android/gms/common/stats/zzd;->b:I
 
     if-eq v0, v1, :cond_1a
 
@@ -114,17 +82,49 @@
     goto :goto_19
 .end method
 
-.method public static zzrJ()Lcom/google/android/gms/common/stats/zzi;
+.method private static b()I
     .registers 1
 
-    sget-object v0, Lcom/google/android/gms/common/stats/zzi;->zzamh:Lcom/google/android/gms/common/stats/zzi;
+    :try_start_0
+    invoke-static {}, Lcom/google/android/gms/internal/zznk;->a()Z
 
-    return-object v0
+    move-result v0
+
+    if-eqz v0, :cond_13
+
+    sget-object v0, Lcom/google/android/gms/common/stats/zzc$zzb;->a:Lcom/google/android/gms/internal/zzmt;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/internal/zzmt;->c()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    :goto_12
+    return v0
+
+    :cond_13
+    sget v0, Lcom/google/android/gms/common/stats/zzd;->b:I
+    :try_end_15
+    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_15} :catch_16
+
+    goto :goto_12
+
+    :catch_16
+    move-exception v0
+
+    sget v0, Lcom/google/android/gms/common/stats/zzd;->b:I
+
+    goto :goto_12
 .end method
 
 
 # virtual methods
-.method public zza(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/util/List;)V
+.method public a(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/util/List;)V
     .registers 18
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -160,12 +160,12 @@
 
     move-object/from16 v7, p7
 
-    invoke-virtual/range {v0 .. v9}, Lcom/google/android/gms/common/stats/zzi;->zza(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/util/List;J)V
+    invoke-virtual/range {v0 .. v9}, Lcom/google/android/gms/common/stats/zzi;->a(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/util/List;J)V
 
     return-void
 .end method
 
-.method public zza(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/util/List;J)V
+.method public a(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/util/List;J)V
     .registers 28
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -183,7 +183,7 @@
         }
     .end annotation
 
-    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/stats/zzi;->zzau(Landroid/content/Context;)Z
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/stats/zzi;->a(Landroid/content/Context;)Z
 
     move-result v2
 
@@ -200,7 +200,7 @@
 
     if-eqz v2, :cond_29
 
-    sget-object v2, Lcom/google/android/gms/common/stats/zzi;->TAG:Ljava/lang/String;
+    sget-object v2, Lcom/google/android/gms/common/stats/zzi;->a:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -262,7 +262,7 @@
 
     move-result-wide v10
 
-    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/internal/zznq;->zzaw(Landroid/content/Context;)I
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/internal/zznq;->a(Landroid/content/Context;)I
 
     move-result v12
 
@@ -270,7 +270,7 @@
 
     move-result-object v14
 
-    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/internal/zznq;->zzax(Landroid/content/Context;)F
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/internal/zznq;->b(Landroid/content/Context;)F
 
     move-result v15
 
@@ -295,7 +295,7 @@
 
     invoke-direct {v3}, Landroid/content/Intent;-><init>()V
 
-    sget-object v4, Lcom/google/android/gms/common/stats/zzd;->zzalO:Landroid/content/ComponentName;
+    sget-object v4, Lcom/google/android/gms/common/stats/zzd;->a:Landroid/content/ComponentName;
 
     invoke-virtual {v3, v4}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
 
@@ -318,7 +318,7 @@
     :catch_7f
     move-exception v2
 
-    sget-object v3, Lcom/google/android/gms/common/stats/zzi;->TAG:Ljava/lang/String;
+    sget-object v3, Lcom/google/android/gms/common/stats/zzi;->a:Ljava/lang/String;
 
     invoke-static {v3, v2}, Landroid/util/Log;->wtf(Ljava/lang/String;Ljava/lang/Throwable;)I
 

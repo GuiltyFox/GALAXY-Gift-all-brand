@@ -6,17 +6,6 @@
 .implements Landroid/support/v4/view/ViewPropertyAnimatorListener;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/widget/AbsActionBarView;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4
-    name = "VisibilityAnimListener"
-.end annotation
-
-
 # instance fields
 .field private mCanceled:Z
 
@@ -47,7 +36,6 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/view/View;)V
     .registers 3
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 302
@@ -61,7 +49,6 @@
 
 .method public onAnimationEnd(Landroid/view/View;)V
     .registers 4
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 294
@@ -94,7 +81,6 @@
 
 .method public onAnimationStart(Landroid/view/View;)V
     .registers 4
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     const/4 v1, 0x0
@@ -114,8 +100,6 @@
 
 .method public withFinalVisibility(Landroid/support/v4/view/ViewPropertyAnimatorCompat;I)Landroid/support/v7/widget/AbsActionBarView$VisibilityAnimListener;
     .registers 4
-    .param p1, "animation"    # Landroid/support/v4/view/ViewPropertyAnimatorCompat;
-    .param p2, "visibility"    # I
 
     .prologue
     .line 281

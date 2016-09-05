@@ -6,17 +6,6 @@
 .implements Landroid/support/v4/view/ViewPropertyAnimatorListener;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/widget/DefaultItemAnimator;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "VpaListenerAdapter"
-.end annotation
-
-
 # direct methods
 .method private constructor <init>()V
     .registers 1
@@ -30,7 +19,6 @@
 
 .method synthetic constructor <init>(Landroid/support/v7/widget/DefaultItemAnimator$1;)V
     .registers 2
-    .param p1, "x0"    # Landroid/support/v7/widget/DefaultItemAnimator$1;
 
     .prologue
     .line 658
@@ -43,7 +31,6 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/view/View;)V
     .registers 2
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 666
@@ -52,7 +39,6 @@
 
 .method public onAnimationEnd(Landroid/view/View;)V
     .registers 2
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 663
@@ -61,7 +47,6 @@
 
 .method public onAnimationStart(Landroid/view/View;)V
     .registers 2
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 660

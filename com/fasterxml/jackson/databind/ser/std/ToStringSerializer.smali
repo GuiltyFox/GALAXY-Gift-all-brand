@@ -52,13 +52,6 @@
 # virtual methods
 .method public acceptJsonFormatVisitor(Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;Lcom/fasterxml/jackson/databind/JavaType;)V
     .registers 3
-    .param p1, "visitor"    # Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;
-    .param p2, "typeHint"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
 
     .prologue
     .line 89
@@ -74,13 +67,6 @@
 
 .method public getSchema(Lcom/fasterxml/jackson/databind/SerializerProvider;Ljava/lang/reflect/Type;)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 5
-    .param p1, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .param p2, "typeHint"    # Ljava/lang/reflect/Type;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
 
     .prologue
     .line 82
@@ -96,11 +82,10 @@
 .end method
 
 .method public isEmpty(Ljava/lang/Object;)Z
-    .registers 5
-    .param p1, "value"    # Ljava/lang/Object;
+    .registers 4
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     .line 42
     if-nez p1, :cond_4
@@ -108,40 +93,30 @@
     .line 47
     :cond_3
     :goto_3
-    return v1
+    return v0
 
     .line 45
     :cond_4
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 47
-    .local v0, "str":Ljava/lang/String;
-    if-eqz v0, :cond_3
+    if-eqz v1, :cond_3
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_3
+    if-eqz v1, :cond_3
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_3
 .end method
 
 .method public serialize(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 5
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 54
@@ -157,16 +132,6 @@
 
 .method public serializeWithType(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)V
     .registers 5
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .param p4, "typeSer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 73

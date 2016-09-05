@@ -8,34 +8,26 @@
     value = 0xb
 .end annotation
 
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/v7/view/SupportActionModeWrapper$CallbackWrapper;
-    }
-.end annotation
-
 
 # instance fields
-.field final mContext:Landroid/content/Context;
+.field final a:Landroid/content/Context;
 
-.field final mWrappedObject:Landroid/support/v7/view/ActionMode;
+.field final b:Landroid/support/v7/view/ActionMode;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/support/v7/view/ActionMode;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "supportActionMode"    # Landroid/support/v7/view/ActionMode;
 
     .prologue
     .line 46
     invoke-direct {p0}, Landroid/view/ActionMode;-><init>()V
 
     .line 47
-    iput-object p1, p0, Landroid/support/v7/view/SupportActionModeWrapper;->mContext:Landroid/content/Context;
+    iput-object p1, p0, Landroid/support/v7/view/SupportActionModeWrapper;->a:Landroid/content/Context;
 
     .line 48
-    iput-object p2, p0, Landroid/support/v7/view/SupportActionModeWrapper;->mWrappedObject:Landroid/support/v7/view/ActionMode;
+    iput-object p2, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
     .line 49
     return-void
@@ -48,9 +40,9 @@
 
     .prologue
     .line 78
-    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->mWrappedObject:Landroid/support/v7/view/ActionMode;
+    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
-    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->finish()V
+    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->c()V
 
     .line 79
     return-void
@@ -61,9 +53,9 @@
 
     .prologue
     .line 108
-    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->mWrappedObject:Landroid/support/v7/view/ActionMode;
+    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
-    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->getCustomView()Landroid/view/View;
+    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->i()Landroid/view/View;
 
     move-result-object v0
 
@@ -75,17 +67,17 @@
 
     .prologue
     .line 83
-    iget-object v1, p0, Landroid/support/v7/view/SupportActionModeWrapper;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/support/v7/view/SupportActionModeWrapper;->a:Landroid/content/Context;
 
-    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->mWrappedObject:Landroid/support/v7/view/ActionMode;
+    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
-    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->getMenu()Landroid/view/Menu;
+    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->b()Landroid/view/Menu;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v4/internal/view/SupportMenu;
 
-    invoke-static {v1, v0}, Landroid/support/v7/view/menu/MenuWrapperFactory;->wrapSupportMenu(Landroid/content/Context;Landroid/support/v4/internal/view/SupportMenu;)Landroid/view/Menu;
+    invoke-static {v1, v0}, Landroid/support/v7/view/menu/MenuWrapperFactory;->a(Landroid/content/Context;Landroid/support/v4/internal/view/SupportMenu;)Landroid/view/Menu;
 
     move-result-object v0
 
@@ -97,9 +89,9 @@
 
     .prologue
     .line 118
-    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->mWrappedObject:Landroid/support/v7/view/ActionMode;
+    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
-    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->getMenuInflater()Landroid/view/MenuInflater;
+    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->a()Landroid/view/MenuInflater;
 
     move-result-object v0
 
@@ -111,9 +103,9 @@
 
     .prologue
     .line 98
-    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->mWrappedObject:Landroid/support/v7/view/ActionMode;
+    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
-    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->getSubtitle()Ljava/lang/CharSequence;
+    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->g()Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -125,9 +117,9 @@
 
     .prologue
     .line 53
-    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->mWrappedObject:Landroid/support/v7/view/ActionMode;
+    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
-    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->getTag()Ljava/lang/Object;
+    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->j()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -139,9 +131,9 @@
 
     .prologue
     .line 88
-    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->mWrappedObject:Landroid/support/v7/view/ActionMode;
+    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
-    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->getTitle()Ljava/lang/CharSequence;
+    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->f()Ljava/lang/CharSequence;
 
     move-result-object v0
 
@@ -153,9 +145,9 @@
 
     .prologue
     .line 123
-    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->mWrappedObject:Landroid/support/v7/view/ActionMode;
+    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
-    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->getTitleOptionalHint()Z
+    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->k()Z
 
     move-result v0
 
@@ -167,9 +159,9 @@
 
     .prologue
     .line 73
-    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->mWrappedObject:Landroid/support/v7/view/ActionMode;
+    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
-    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->invalidate()V
+    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->d()V
 
     .line 74
     return-void
@@ -180,9 +172,9 @@
 
     .prologue
     .line 133
-    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->mWrappedObject:Landroid/support/v7/view/ActionMode;
+    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
-    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->isTitleOptional()Z
+    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->h()Z
 
     move-result v0
 
@@ -191,13 +183,12 @@
 
 .method public setCustomView(Landroid/view/View;)V
     .registers 3
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 113
-    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->mWrappedObject:Landroid/support/v7/view/ActionMode;
+    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
-    invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->setCustomView(Landroid/view/View;)V
+    invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->a(Landroid/view/View;)V
 
     .line 114
     return-void
@@ -205,13 +196,12 @@
 
 .method public setSubtitle(I)V
     .registers 3
-    .param p1, "resId"    # I
 
     .prologue
     .line 103
-    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->mWrappedObject:Landroid/support/v7/view/ActionMode;
+    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
-    invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->setSubtitle(I)V
+    invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->b(I)V
 
     .line 104
     return-void
@@ -219,13 +209,12 @@
 
 .method public setSubtitle(Ljava/lang/CharSequence;)V
     .registers 3
-    .param p1, "subtitle"    # Ljava/lang/CharSequence;
 
     .prologue
     .line 68
-    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->mWrappedObject:Landroid/support/v7/view/ActionMode;
+    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
-    invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->setSubtitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->a(Ljava/lang/CharSequence;)V
 
     .line 69
     return-void
@@ -233,13 +222,12 @@
 
 .method public setTag(Ljava/lang/Object;)V
     .registers 3
-    .param p1, "tag"    # Ljava/lang/Object;
 
     .prologue
     .line 58
-    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->mWrappedObject:Landroid/support/v7/view/ActionMode;
+    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
-    invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->a(Ljava/lang/Object;)V
 
     .line 59
     return-void
@@ -247,13 +235,12 @@
 
 .method public setTitle(I)V
     .registers 3
-    .param p1, "resId"    # I
 
     .prologue
     .line 93
-    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->mWrappedObject:Landroid/support/v7/view/ActionMode;
+    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
-    invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->setTitle(I)V
+    invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->a(I)V
 
     .line 94
     return-void
@@ -261,13 +248,12 @@
 
 .method public setTitle(Ljava/lang/CharSequence;)V
     .registers 3
-    .param p1, "title"    # Ljava/lang/CharSequence;
 
     .prologue
     .line 63
-    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->mWrappedObject:Landroid/support/v7/view/ActionMode;
+    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
-    invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->b(Ljava/lang/CharSequence;)V
 
     .line 64
     return-void
@@ -275,13 +261,12 @@
 
 .method public setTitleOptionalHint(Z)V
     .registers 3
-    .param p1, "titleOptional"    # Z
 
     .prologue
     .line 128
-    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->mWrappedObject:Landroid/support/v7/view/ActionMode;
+    iget-object v0, p0, Landroid/support/v7/view/SupportActionModeWrapper;->b:Landroid/support/v7/view/ActionMode;
 
-    invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->setTitleOptionalHint(Z)V
+    invoke-virtual {v0, p1}, Landroid/support/v7/view/ActionMode;->a(Z)V
 
     .line 129
     return-void

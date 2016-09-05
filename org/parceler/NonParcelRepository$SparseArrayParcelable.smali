@@ -4,21 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/parceler/NonParcelRepository;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "SparseArrayParcelable"
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lorg/parceler/NonParcelRepository$SparseArrayParcelable$SparseArrayCreator;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lorg/parceler/NonParcelRepository$ConverterParcelable",
@@ -30,9 +15,9 @@
 
 
 # static fields
-.field private static final CONVERTER:Lorg/parceler/converter/SparseArrayParcelConverter;
-
 .field public static final CREATOR:Lorg/parceler/NonParcelRepository$SparseArrayParcelable$SparseArrayCreator;
+
+.field private static final a:Lorg/parceler/converter/SparseArrayParcelConverter;
 
 
 # direct methods
@@ -45,7 +30,7 @@
 
     invoke-direct {v0}, Lorg/parceler/NonParcelRepository$SparseArrayParcelable$1;-><init>()V
 
-    sput-object v0, Lorg/parceler/NonParcelRepository$SparseArrayParcelable;->CONVERTER:Lorg/parceler/converter/SparseArrayParcelConverter;
+    sput-object v0, Lorg/parceler/NonParcelRepository$SparseArrayParcelable;->a:Lorg/parceler/converter/SparseArrayParcelConverter;
 
     .line 686
     new-instance v0, Lorg/parceler/NonParcelRepository$SparseArrayParcelable$SparseArrayCreator;
@@ -61,11 +46,10 @@
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .registers 4
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
     .line 678
-    sget-object v0, Lorg/parceler/NonParcelRepository$SparseArrayParcelable;->CONVERTER:Lorg/parceler/converter/SparseArrayParcelConverter;
+    sget-object v0, Lorg/parceler/NonParcelRepository$SparseArrayParcelable;->a:Lorg/parceler/converter/SparseArrayParcelConverter;
 
     const/4 v1, 0x0
 
@@ -77,11 +61,10 @@
 
 .method public constructor <init>(Landroid/util/SparseArray;)V
     .registers 4
-    .param p1, "value"    # Landroid/util/SparseArray;
 
     .prologue
     .line 682
-    sget-object v0, Lorg/parceler/NonParcelRepository$SparseArrayParcelable;->CONVERTER:Lorg/parceler/converter/SparseArrayParcelConverter;
+    sget-object v0, Lorg/parceler/NonParcelRepository$SparseArrayParcelable;->a:Lorg/parceler/converter/SparseArrayParcelConverter;
 
     const/4 v1, 0x0
 

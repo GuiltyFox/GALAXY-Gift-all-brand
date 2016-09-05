@@ -4,11 +4,9 @@
 
 
 # static fields
-.field private static final INSTANCE:Lrx/schedulers/NewThreadScheduler;
+.field private static final a:Lrx/internal/util/RxThreadFactory;
 
-.field private static final THREAD_FACTORY:Lrx/internal/util/RxThreadFactory;
-
-.field private static final THREAD_NAME_PREFIX:Ljava/lang/String; = "RxNewThreadScheduler-"
+.field private static final b:Lrx/schedulers/NewThreadScheduler;
 
 
 # direct methods
@@ -23,14 +21,14 @@
 
     invoke-direct {v0, v1}, Lrx/internal/util/RxThreadFactory;-><init>(Ljava/lang/String;)V
 
-    sput-object v0, Lrx/schedulers/NewThreadScheduler;->THREAD_FACTORY:Lrx/internal/util/RxThreadFactory;
+    sput-object v0, Lrx/schedulers/NewThreadScheduler;->a:Lrx/internal/util/RxThreadFactory;
 
     .line 29
     new-instance v0, Lrx/schedulers/NewThreadScheduler;
 
     invoke-direct {v0}, Lrx/schedulers/NewThreadScheduler;-><init>()V
 
-    sput-object v0, Lrx/schedulers/NewThreadScheduler;->INSTANCE:Lrx/schedulers/NewThreadScheduler;
+    sput-object v0, Lrx/schedulers/NewThreadScheduler;->b:Lrx/schedulers/NewThreadScheduler;
 
     return-void
 .end method
@@ -46,26 +44,26 @@
     return-void
 .end method
 
-.method static instance()Lrx/schedulers/NewThreadScheduler;
+.method static b()Lrx/schedulers/NewThreadScheduler;
     .registers 1
 
     .prologue
     .line 32
-    sget-object v0, Lrx/schedulers/NewThreadScheduler;->INSTANCE:Lrx/schedulers/NewThreadScheduler;
+    sget-object v0, Lrx/schedulers/NewThreadScheduler;->b:Lrx/schedulers/NewThreadScheduler;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public createWorker()Lrx/Scheduler$Worker;
+.method public a()Lrx/Scheduler$Worker;
     .registers 3
 
     .prologue
     .line 41
     new-instance v0, Lrx/internal/schedulers/NewThreadWorker;
 
-    sget-object v1, Lrx/schedulers/NewThreadScheduler;->THREAD_FACTORY:Lrx/internal/util/RxThreadFactory;
+    sget-object v1, Lrx/schedulers/NewThreadScheduler;->a:Lrx/internal/util/RxThreadFactory;
 
     invoke-direct {v0, v1}, Lrx/internal/schedulers/NewThreadWorker;-><init>(Ljava/util/concurrent/ThreadFactory;)V
 

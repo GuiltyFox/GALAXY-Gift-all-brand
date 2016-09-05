@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field public cacheName:Ljava/lang/String;
+.field public a:Ljava/lang/String;
 
-.field private isObject:Z
+.field private b:Z
 
 
 # direct methods
@@ -20,28 +20,24 @@
     .line 16
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/bzbs/marketplace/asynctask/BaseAsyntask;->isObject:Z
+    iput-boolean v0, p0, Lcom/bzbs/marketplace/asynctask/BaseAsyntask;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public changeCacheName(Ljava/lang/String;)Ljava/lang/String;
+.method public a(Ljava/lang/String;)Ljava/lang/String;
     .registers 5
-    .param p1, "cacheName"    # Ljava/lang/String;
 
     .prologue
     .line 27
-    move-object v0, p1
-
     .line 28
-    .local v0, "rex":Ljava/lang/String;
-    const-string/jumbo v1, "."
+    const-string/jumbo v0, "."
 
-    const-string/jumbo v2, "-"
+    const-string/jumbo v1, "-"
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-virtual {p1, v0, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -102,91 +98,17 @@
     .line 35
     invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
-.method public initList()V
-    .registers 2
-
-    .prologue
-    .line 19
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/bzbs/marketplace/asynctask/BaseAsyntask;->isObject:Z
-
-    .line 20
-    return-void
-.end method
-
-.method public initObj()V
-    .registers 2
-
-    .prologue
-    .line 23
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/bzbs/marketplace/asynctask/BaseAsyntask;->isObject:Z
-
-    .line 24
-    return-void
-.end method
-
-.method public isJSONValid(Ljava/lang/String;)Z
+.method public a(Ljava/lang/String;I)V
     .registers 5
-    .param p1, "json"    # Ljava/lang/String;
-
-    .prologue
-    .line 48
-    :try_start_0
-    new-instance v2, Lorg/json/JSONObject;
-
-    invoke-direct {v2, p1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
-    :try_end_5
-    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_5} :catch_7
-
-    .line 58
-    :goto_5
-    const/4 v2, 0x1
-
-    :goto_6
-    return v2
-
-    .line 49
-    :catch_7
-    move-exception v0
-
-    .line 53
-    .local v0, "ex":Lorg/json/JSONException;
-    :try_start_8
-    new-instance v2, Lorg/json/JSONArray;
-
-    invoke-direct {v2, p1}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
-    :try_end_d
-    .catch Lorg/json/JSONException; {:try_start_8 .. :try_end_d} :catch_e
-
-    goto :goto_5
-
-    .line 54
-    :catch_e
-    move-exception v1
-
-    .line 55
-    .local v1, "ex1":Lorg/json/JSONException;
-    const/4 v2, 0x0
-
-    goto :goto_6
-.end method
-
-.method public loadCache(Ljava/lang/String;I)V
-    .registers 5
-    .param p1, "response"    # Ljava/lang/String;
-    .param p2, "statusCode"    # I
 
     .prologue
     .line 39
-    iget-object v0, p0, Lcom/bzbs/marketplace/asynctask/BaseAsyntask;->cacheName:Ljava/lang/String;
+    iget-object v0, p0, Lcom/bzbs/marketplace/asynctask/BaseAsyntask;->a:Ljava/lang/String;
 
     if-eqz v0, :cond_21
 
@@ -194,33 +116,76 @@
 
     if-ne p2, v0, :cond_21
 
-    invoke-virtual {p0, p1}, Lcom/bzbs/marketplace/asynctask/BaseAsyntask;->isJSONValid(Ljava/lang/String;)Z
+    invoke-virtual {p0, p1}, Lcom/bzbs/marketplace/asynctask/BaseAsyntask;->b(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_21
 
     .line 40
-    invoke-static {}, Lcom/samsung/privilege/GalaxyGift;->getDualCache()Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache;
+    invoke-static {}, Lcom/samsung/privilege/GalaxyGift;->a()Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache;
 
     move-result-object v0
 
     if-eqz v0, :cond_21
 
     .line 41
-    invoke-static {}, Lcom/samsung/privilege/GalaxyGift;->getDualCache()Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache;
+    invoke-static {}, Lcom/samsung/privilege/GalaxyGift;->a()Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/bzbs/marketplace/asynctask/BaseAsyntask;->cacheName:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/marketplace/asynctask/BaseAsyntask;->a:Ljava/lang/String;
 
-    invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/asynctask/BaseAsyntask;->changeCacheName(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/asynctask/BaseAsyntask;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v0, v1, p1}, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache;->put(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {v0, v1, p1}, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache;->a(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 44
     :cond_21
     return-void
+.end method
+
+.method public b(Ljava/lang/String;)Z
+    .registers 3
+
+    .prologue
+    .line 48
+    :try_start_0
+    new-instance v0, Lorg/json/JSONObject;
+
+    invoke-direct {v0, p1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    :try_end_5
+    .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_5} :catch_7
+
+    .line 58
+    :goto_5
+    const/4 v0, 0x1
+
+    :goto_6
+    return v0
+
+    .line 49
+    :catch_7
+    move-exception v0
+
+    .line 53
+    :try_start_8
+    new-instance v0, Lorg/json/JSONArray;
+
+    invoke-direct {v0, p1}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
+    :try_end_d
+    .catch Lorg/json/JSONException; {:try_start_8 .. :try_end_d} :catch_e
+
+    goto :goto_5
+
+    .line 54
+    :catch_e
+    move-exception v0
+
+    .line 55
+    const/4 v0, 0x0
+
+    goto :goto_6
 .end method

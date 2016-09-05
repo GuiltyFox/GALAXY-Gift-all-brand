@@ -47,7 +47,6 @@
 # virtual methods
 .method public add(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;)V
     .registers 5
-    .param p1, "am"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;
 
     .prologue
     .line 23
@@ -82,7 +81,6 @@
 
 .method public find(Ljava/lang/String;[Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;
     .registers 5
-    .param p1, "name"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -96,7 +94,6 @@
 
     .prologue
     .line 56
-    .local p2, "paramTypes":[Ljava/lang/Class;, "[Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethodMap;->_methods:Ljava/util/LinkedHashMap;
 
     if-nez v0, :cond_6
@@ -126,7 +123,6 @@
 
 .method public find(Ljava/lang/reflect/Method;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;
     .registers 4
-    .param p1, "m"    # Ljava/lang/reflect/Method;
 
     .prologue
     .line 64
@@ -187,7 +183,7 @@
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .registers 3
+    .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -200,24 +196,24 @@
 
     .prologue
     .line 79
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethodMap;->_methods:Ljava/util/LinkedHashMap;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethodMap;->_methods:Ljava/util/LinkedHashMap;
 
-    if-eqz v1, :cond_f
+    if-eqz v0, :cond_f
 
     .line 80
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethodMap;->_methods:Ljava/util/LinkedHashMap;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethodMap;->_methods:Ljava/util/LinkedHashMap;
 
-    invoke-virtual {v1}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
+    invoke-virtual {v0}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-interface {v1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 83
     :goto_e
-    return-object v1
+    return-object v0
 
     .line 82
     :cond_f
@@ -226,17 +222,15 @@
     move-result-object v0
 
     .line 83
-    .local v0, "empty":Ljava/util/List;, "Ljava/util/List<Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;>;"
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_e
 .end method
 
 .method public remove(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;
     .registers 3
-    .param p1, "am"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;
 
     .prologue
     .line 35
@@ -253,7 +247,6 @@
 
 .method public remove(Ljava/lang/reflect/Method;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;
     .registers 4
-    .param p1, "m"    # Ljava/lang/reflect/Method;
 
     .prologue
     .line 40

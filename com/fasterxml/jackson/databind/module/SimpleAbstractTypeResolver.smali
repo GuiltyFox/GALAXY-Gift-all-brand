@@ -61,8 +61,6 @@
 
     .prologue
     .line 55
-    .local p1, "superType":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
-    .local p2, "subType":Ljava/lang/Class;, "Ljava/lang/Class<+TT;>;"
     if-ne p1, p2, :cond_b
 
     .line 56
@@ -193,53 +191,47 @@
 .end method
 
 .method public findTypeMapping(Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JavaType;
-    .registers 7
-    .param p1, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p2, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
+    .registers 6
 
     .prologue
     .line 74
     invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 75
-    .local v1, "src":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleAbstractTypeResolver;->_mappings:Ljava/util/HashMap;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/module/SimpleAbstractTypeResolver;->_mappings:Ljava/util/HashMap;
 
-    new-instance v3, Lcom/fasterxml/jackson/databind/type/ClassKey;
+    new-instance v2, Lcom/fasterxml/jackson/databind/type/ClassKey;
 
-    invoke-direct {v3, v1}, Lcom/fasterxml/jackson/databind/type/ClassKey;-><init>(Ljava/lang/Class;)V
+    invoke-direct {v2, v0}, Lcom/fasterxml/jackson/databind/type/ClassKey;-><init>(Ljava/lang/Class;)V
 
-    invoke-virtual {v2, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/Class;
 
     .line 76
-    .local v0, "dst":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     if-nez v0, :cond_15
 
     .line 77
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     .line 79
     :goto_14
-    return-object v2
+    return-object v0
 
     :cond_15
     invoke-virtual {p2, v0}, Lcom/fasterxml/jackson/databind/JavaType;->narrowBy(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/JavaType;
 
-    move-result-object v2
+    move-result-object v0
 
     goto :goto_14
 .end method
 
 .method public resolveAbstractType(Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 4
-    .param p1, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p2, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
 
     .prologue
     .line 87

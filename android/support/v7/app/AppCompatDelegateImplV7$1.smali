@@ -11,14 +11,9 @@
     value = Landroid/support/v7/app/AppCompatDelegateImplV7;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Landroid/support/v7/app/AppCompatDelegateImplV7;
+.field final synthetic a:Landroid/support/v7/app/AppCompatDelegateImplV7;
 
 
 # direct methods
@@ -26,8 +21,8 @@
     .registers 2
 
     .prologue
-    .line 121
-    iput-object p1, p0, Landroid/support/v7/app/AppCompatDelegateImplV7$1;->this$0:Landroid/support/v7/app/AppCompatDelegateImplV7;
+    .line 124
+    iput-object p1, p0, Landroid/support/v7/app/AppCompatDelegateImplV7$1;->a:Landroid/support/v7/app/AppCompatDelegateImplV7;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,11 +37,10 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 124
-    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV7$1;->this$0:Landroid/support/v7/app/AppCompatDelegateImplV7;
+    .line 127
+    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV7$1;->a:Landroid/support/v7/app/AppCompatDelegateImplV7;
 
-    # getter for: Landroid/support/v7/app/AppCompatDelegateImplV7;->mInvalidatePanelMenuFeatures:I
-    invoke-static {v0}, Landroid/support/v7/app/AppCompatDelegateImplV7;->access$000(Landroid/support/v7/app/AppCompatDelegateImplV7;)I
+    invoke-static {v0}, Landroid/support/v7/app/AppCompatDelegateImplV7;->a(Landroid/support/v7/app/AppCompatDelegateImplV7;)I
 
     move-result v0
 
@@ -54,18 +48,16 @@
 
     if-eqz v0, :cond_10
 
-    .line 125
-    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV7$1;->this$0:Landroid/support/v7/app/AppCompatDelegateImplV7;
+    .line 128
+    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV7$1;->a:Landroid/support/v7/app/AppCompatDelegateImplV7;
 
-    # invokes: Landroid/support/v7/app/AppCompatDelegateImplV7;->doInvalidatePanelMenu(I)V
-    invoke-static {v0, v2}, Landroid/support/v7/app/AppCompatDelegateImplV7;->access$100(Landroid/support/v7/app/AppCompatDelegateImplV7;I)V
+    invoke-static {v0, v2}, Landroid/support/v7/app/AppCompatDelegateImplV7;->a(Landroid/support/v7/app/AppCompatDelegateImplV7;I)V
 
-    .line 127
+    .line 130
     :cond_10
-    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV7$1;->this$0:Landroid/support/v7/app/AppCompatDelegateImplV7;
+    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV7$1;->a:Landroid/support/v7/app/AppCompatDelegateImplV7;
 
-    # getter for: Landroid/support/v7/app/AppCompatDelegateImplV7;->mInvalidatePanelMenuFeatures:I
-    invoke-static {v0}, Landroid/support/v7/app/AppCompatDelegateImplV7;->access$000(Landroid/support/v7/app/AppCompatDelegateImplV7;)I
+    invoke-static {v0}, Landroid/support/v7/app/AppCompatDelegateImplV7;->a(Landroid/support/v7/app/AppCompatDelegateImplV7;)I
 
     move-result v0
 
@@ -73,27 +65,24 @@
 
     if-eqz v0, :cond_21
 
-    .line 128
-    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV7$1;->this$0:Landroid/support/v7/app/AppCompatDelegateImplV7;
+    .line 131
+    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV7$1;->a:Landroid/support/v7/app/AppCompatDelegateImplV7;
 
     const/16 v1, 0x6c
 
-    # invokes: Landroid/support/v7/app/AppCompatDelegateImplV7;->doInvalidatePanelMenu(I)V
-    invoke-static {v0, v1}, Landroid/support/v7/app/AppCompatDelegateImplV7;->access$100(Landroid/support/v7/app/AppCompatDelegateImplV7;I)V
+    invoke-static {v0, v1}, Landroid/support/v7/app/AppCompatDelegateImplV7;->a(Landroid/support/v7/app/AppCompatDelegateImplV7;I)V
 
-    .line 130
+    .line 133
     :cond_21
-    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV7$1;->this$0:Landroid/support/v7/app/AppCompatDelegateImplV7;
+    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV7$1;->a:Landroid/support/v7/app/AppCompatDelegateImplV7;
 
-    # setter for: Landroid/support/v7/app/AppCompatDelegateImplV7;->mInvalidatePanelMenuPosted:Z
-    invoke-static {v0, v2}, Landroid/support/v7/app/AppCompatDelegateImplV7;->access$202(Landroid/support/v7/app/AppCompatDelegateImplV7;Z)Z
+    invoke-static {v0, v2}, Landroid/support/v7/app/AppCompatDelegateImplV7;->a(Landroid/support/v7/app/AppCompatDelegateImplV7;Z)Z
 
-    .line 131
-    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV7$1;->this$0:Landroid/support/v7/app/AppCompatDelegateImplV7;
+    .line 134
+    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV7$1;->a:Landroid/support/v7/app/AppCompatDelegateImplV7;
 
-    # setter for: Landroid/support/v7/app/AppCompatDelegateImplV7;->mInvalidatePanelMenuFeatures:I
-    invoke-static {v0, v2}, Landroid/support/v7/app/AppCompatDelegateImplV7;->access$002(Landroid/support/v7/app/AppCompatDelegateImplV7;I)I
+    invoke-static {v0, v2}, Landroid/support/v7/app/AppCompatDelegateImplV7;->b(Landroid/support/v7/app/AppCompatDelegateImplV7;I)I
 
-    .line 132
+    .line 135
     return-void
 .end method

@@ -6,21 +6,8 @@
 .implements Lcom/fasterxml/jackson/databind/util/Named;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/BeanProperty$Std;
-    }
-.end annotation
-
-
 # virtual methods
 .method public abstract depositSchemaProperty(Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonObjectFormatVisitor;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
 .end method
 
 .method public abstract getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;

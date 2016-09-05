@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/annotation/ObjectIdGenerators;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x40a
-    name = "Base"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -48,8 +39,6 @@
 
     .prologue
     .line 24
-    .local p0, "this":Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$Base;, "Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$Base<TT;>;"
-    .local p1, "scope":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0}, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;-><init>()V
 
     .line 25
@@ -73,8 +62,6 @@
 
     .prologue
     .line 35
-    .local p0, "this":Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$Base;, "Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$Base<TT;>;"
-    .local p1, "gen":Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;, "Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;"
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -126,7 +113,6 @@
 
     .prologue
     .line 30
-    .local p0, "this":Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$Base;, "Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$Base<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$Base;->_scope:Ljava/lang/Class;
 
     return-object v0

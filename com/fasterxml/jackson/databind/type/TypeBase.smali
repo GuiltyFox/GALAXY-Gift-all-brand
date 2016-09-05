@@ -17,9 +17,6 @@
 # direct methods
 .method protected constructor <init>(Ljava/lang/Class;ILjava/lang/Object;Ljava/lang/Object;)V
     .registers 11
-    .param p2, "hash"    # I
-    .param p3, "valueHandler"    # Ljava/lang/Object;
-    .param p4, "typeHandler"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -36,7 +33,6 @@
 
     .prologue
     .line 30
-    .local p1, "raw":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v5, 0x0
 
     move-object v0, p0
@@ -57,10 +53,6 @@
 
 .method protected constructor <init>(Ljava/lang/Class;ILjava/lang/Object;Ljava/lang/Object;Z)V
     .registers 6
-    .param p2, "hash"    # I
-    .param p3, "valueHandler"    # Ljava/lang/Object;
-    .param p4, "typeHandler"    # Ljava/lang/Object;
-    .param p5, "asStatic"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -74,7 +66,6 @@
 
     .prologue
     .line 39
-    .local p1, "raw":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct/range {p0 .. p5}, Lcom/fasterxml/jackson/databind/JavaType;-><init>(Ljava/lang/Class;ILjava/lang/Object;Ljava/lang/Object;Z)V
 
     .line 40
@@ -82,9 +73,7 @@
 .end method
 
 .method protected static _classSignature(Ljava/lang/Class;Ljava/lang/StringBuilder;Z)Ljava/lang/StringBuilder;
-    .registers 10
-    .param p1, "sb"    # Ljava/lang/StringBuilder;
-    .param p2, "trailingSemicolon"    # Z
+    .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -98,22 +87,21 @@
 
     .prologue
     .line 104
-    .local p0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0}, Ljava/lang/Class;->isPrimitive()Z
 
-    move-result v4
+    move-result v0
 
-    if-eqz v4, :cond_7e
+    if-eqz v0, :cond_7e
 
     .line 105
-    sget-object v4, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
-    if-ne p0, v4, :cond_10
+    if-ne p0, v0, :cond_10
 
     .line 106
-    const/16 v4, 0x5a
+    const/16 v0, 0x5a
 
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 145
     :cond_f
@@ -122,193 +110,192 @@
 
     .line 107
     :cond_10
-    sget-object v4, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
-    if-ne p0, v4, :cond_1a
+    if-ne p0, v0, :cond_1a
 
     .line 108
-    const/16 v4, 0x42
+    const/16 v0, 0x42
 
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_f
 
     .line 110
     :cond_1a
-    sget-object v4, Ljava/lang/Short;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Short;->TYPE:Ljava/lang/Class;
 
-    if-ne p0, v4, :cond_24
+    if-ne p0, v0, :cond_24
 
     .line 111
-    const/16 v4, 0x53
+    const/16 v0, 0x53
 
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_f
 
     .line 113
     :cond_24
-    sget-object v4, Ljava/lang/Character;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Character;->TYPE:Ljava/lang/Class;
 
-    if-ne p0, v4, :cond_2e
+    if-ne p0, v0, :cond_2e
 
     .line 114
-    const/16 v4, 0x43
+    const/16 v0, 0x43
 
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_f
 
     .line 116
     :cond_2e
-    sget-object v4, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    if-ne p0, v4, :cond_38
+    if-ne p0, v0, :cond_38
 
     .line 117
-    const/16 v4, 0x49
+    const/16 v0, 0x49
 
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_f
 
     .line 119
     :cond_38
-    sget-object v4, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
-    if-ne p0, v4, :cond_42
+    if-ne p0, v0, :cond_42
 
     .line 120
-    const/16 v4, 0x4a
+    const/16 v0, 0x4a
 
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_f
 
     .line 122
     :cond_42
-    sget-object v4, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
-    if-ne p0, v4, :cond_4c
+    if-ne p0, v0, :cond_4c
 
     .line 123
-    const/16 v4, 0x46
+    const/16 v0, 0x46
 
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_f
 
     .line 125
     :cond_4c
-    sget-object v4, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
 
-    if-ne p0, v4, :cond_56
+    if-ne p0, v0, :cond_56
 
     .line 126
-    const/16 v4, 0x44
+    const/16 v0, 0x44
 
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_f
 
     .line 128
     :cond_56
-    sget-object v4, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
 
-    if-ne p0, v4, :cond_60
+    if-ne p0, v0, :cond_60
 
     .line 129
-    const/16 v4, 0x56
+    const/16 v0, 0x56
 
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto :goto_f
 
     .line 131
     :cond_60
-    new-instance v4, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "Unrecognized primitive type: "
+    const-string/jumbo v2, "Unrecognized primitive type: "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-direct {v4, v5}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v4
+    throw v0
 
     .line 134
     :cond_7e
-    const/16 v4, 0x4c
+    const/16 v0, 0x4c
 
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 135
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 136
-    .local v3, "name":Ljava/lang/String;
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    .local v1, "i":I
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result v3
 
-    .local v2, "len":I
-    :goto_8c
-    if-ge v1, v2, :cond_9e
+    move v1, v0
+
+    :goto_8d
+    if-ge v1, v3, :cond_a0
 
     .line 137
-    invoke-virtual {v3, v1}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v2, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
     .line 138
-    .local v0, "c":C
     const/16 v4, 0x2e
 
-    if-ne v0, v4, :cond_98
+    if-ne v0, v4, :cond_99
 
     const/16 v0, 0x2f
 
     .line 139
-    :cond_98
+    :cond_99
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 136
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    goto :goto_8c
+    move v1, v0
+
+    goto :goto_8d
 
     .line 141
-    .end local v0    # "c":C
-    :cond_9e
+    :cond_a0
     if-eqz p2, :cond_f
 
     .line 142
-    const/16 v4, 0x3b
+    const/16 v0, 0x3b
 
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     goto/16 :goto_f
 .end method
@@ -360,14 +347,6 @@
 
 .method public serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 4
-    .param p1, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p2, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 88
@@ -383,15 +362,6 @@
 
 .method public serializeWithType(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)V
     .registers 4
-    .param p1, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p2, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .param p3, "typeSer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 79
@@ -415,7 +385,6 @@
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/type/TypeBase;->_canonicalName:Ljava/lang/String;
 
     .line 46
-    .local v0, "str":Ljava/lang/String;
     if-nez v0, :cond_8
 
     .line 47

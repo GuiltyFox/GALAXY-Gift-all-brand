@@ -3,19 +3,8 @@
 .source "RequestManager.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/RequestManager;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x609
-    name = "DefaultOptions"
-.end annotation
-
-
 # virtual methods
-.method public abstract apply(Lcom/bumptech/glide/GenericRequestBuilder;)V
+.method public abstract a(Lcom/bumptech/glide/GenericRequestBuilder;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",

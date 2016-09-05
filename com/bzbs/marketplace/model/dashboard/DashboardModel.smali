@@ -3,14 +3,6 @@
 .source "DashboardModel.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/bzbs/marketplace/model/dashboard/DashboardModel$SubcampaigndetailsEntity;
-    }
-.end annotation
-
-
 # instance fields
 .field private agency_id:Ljava/lang/String;
 
@@ -291,7 +283,6 @@
 
 .method public setAgency_id(Ljava/lang/String;)V
     .registers 2
-    .param p1, "agency_id"    # Ljava/lang/String;
 
     .prologue
     .line 35
@@ -303,7 +294,6 @@
 
 .method public setAnd_ns(Ljava/lang/String;)V
     .registers 2
-    .param p1, "and_ns"    # Ljava/lang/String;
 
     .prologue
     .line 43
@@ -315,7 +305,6 @@
 
 .method public setCat(Ljava/lang/String;)V
     .registers 2
-    .param p1, "cat"    # Ljava/lang/String;
 
     .prologue
     .line 51
@@ -327,7 +316,6 @@
 
 .method public setGa_label(Ljava/lang/String;)V
     .registers 2
-    .param p1, "ga_label"    # Ljava/lang/String;
 
     .prologue
     .line 139
@@ -339,7 +327,6 @@
 
 .method public setId(Ljava/lang/String;)V
     .registers 2
-    .param p1, "id"    # Ljava/lang/String;
 
     .prologue
     .line 59
@@ -351,7 +338,6 @@
 
 .method public setImage_url(Ljava/lang/String;)V
     .registers 2
-    .param p1, "image_url"    # Ljava/lang/String;
 
     .prologue
     .line 67
@@ -363,7 +349,6 @@
 
 .method public setImgtype(Ljava/lang/String;)V
     .registers 2
-    .param p1, "imgtype"    # Ljava/lang/String;
 
     .prologue
     .line 75
@@ -375,7 +360,6 @@
 
 .method public setLine1(Ljava/lang/String;)V
     .registers 2
-    .param p1, "line1"    # Ljava/lang/String;
 
     .prologue
     .line 83
@@ -387,7 +371,6 @@
 
 .method public setLine2(Ljava/lang/String;)V
     .registers 2
-    .param p1, "line2"    # Ljava/lang/String;
 
     .prologue
     .line 91
@@ -399,7 +382,6 @@
 
 .method public setMenu(Ljava/lang/String;)V
     .registers 2
-    .param p1, "menu"    # Ljava/lang/String;
 
     .prologue
     .line 99
@@ -411,7 +393,6 @@
 
 .method public setSize(Ljava/lang/String;)V
     .registers 2
-    .param p1, "size"    # Ljava/lang/String;
 
     .prologue
     .line 107
@@ -435,7 +416,6 @@
 
     .prologue
     .line 115
-    .local p1, "subcampaigndetails":Ljava/util/List;, "Ljava/util/List<Lcom/bzbs/marketplace/model/dashboard/DashboardModel$SubcampaigndetailsEntity;>;"
     iput-object p1, p0, Lcom/bzbs/marketplace/model/dashboard/DashboardModel;->subcampaigndetails:Ljava/util/List;
 
     .line 116
@@ -444,7 +424,6 @@
 
 .method public setType(Ljava/lang/String;)V
     .registers 2
-    .param p1, "type"    # Ljava/lang/String;
 
     .prologue
     .line 123
@@ -456,7 +435,6 @@
 
 .method public setUrl(Ljava/lang/String;)V
     .registers 2
-    .param p1, "url"    # Ljava/lang/String;
 
     .prologue
     .line 131

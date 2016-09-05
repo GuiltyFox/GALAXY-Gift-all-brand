@@ -28,8 +28,6 @@
 
     .prologue
     .line 25
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/RawSerializer;, "Lcom/fasterxml/jackson/databind/ser/std/RawSerializer<TT;>;"
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/fasterxml/jackson/databind/ser/std/StdSerializer;-><init>(Ljava/lang/Class;Z)V
@@ -42,17 +40,9 @@
 # virtual methods
 .method public acceptJsonFormatVisitor(Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;Lcom/fasterxml/jackson/databind/JavaType;)V
     .registers 3
-    .param p1, "visitor"    # Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;
-    .param p2, "typeHint"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
 
     .prologue
     .line 56
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/RawSerializer;, "Lcom/fasterxml/jackson/databind/ser/std/RawSerializer<TT;>;"
     invoke-interface {p1, p2}, Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;->expectStringFormat(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonStringFormatVisitor;
 
     .line 57
@@ -61,12 +51,9 @@
 
 .method public getSchema(Lcom/fasterxml/jackson/databind/SerializerProvider;Ljava/lang/reflect/Type;)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 5
-    .param p1, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .param p2, "typeHint"    # Ljava/lang/reflect/Type;
 
     .prologue
     .line 49
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/RawSerializer;, "Lcom/fasterxml/jackson/databind/ser/std/RawSerializer<TT;>;"
     const-string/jumbo v0, "string"
 
     const/4 v1, 0x1
@@ -80,8 +67,6 @@
 
 .method public serialize(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 5
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -91,17 +76,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
-
     .prologue
     .line 32
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/RawSerializer;, "Lcom/fasterxml/jackson/databind/ser/std/RawSerializer<TT;>;"
-    .local p1, "value":Ljava/lang/Object;, "TT;"
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -114,9 +90,6 @@
 
 .method public serializeWithType(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)V
     .registers 5
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .param p4, "typeSer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -127,17 +100,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
-
     .prologue
     .line 40
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/RawSerializer;, "Lcom/fasterxml/jackson/databind/ser/std/RawSerializer<TT;>;"
-    .local p1, "value":Ljava/lang/Object;, "TT;"
     invoke-virtual {p4, p1, p2}, Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;->writeTypePrefixForScalar(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;)V
 
     .line 41

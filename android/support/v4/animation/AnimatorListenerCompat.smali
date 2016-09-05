@@ -4,14 +4,14 @@
 
 
 # virtual methods
-.method public abstract onAnimationCancel(Landroid/support/v4/animation/ValueAnimatorCompat;)V
+.method public abstract a(Landroid/support/v4/animation/ValueAnimatorCompat;)V
 .end method
 
-.method public abstract onAnimationEnd(Landroid/support/v4/animation/ValueAnimatorCompat;)V
+.method public abstract b(Landroid/support/v4/animation/ValueAnimatorCompat;)V
 .end method
 
-.method public abstract onAnimationRepeat(Landroid/support/v4/animation/ValueAnimatorCompat;)V
+.method public abstract c(Landroid/support/v4/animation/ValueAnimatorCompat;)V
 .end method
 
-.method public abstract onAnimationStart(Landroid/support/v4/animation/ValueAnimatorCompat;)V
+.method public abstract d(Landroid/support/v4/animation/ValueAnimatorCompat;)V
 .end method

@@ -6,7 +6,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 2
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 35
@@ -18,8 +17,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 39
@@ -31,9 +28,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
 
     .prologue
     .line 43
@@ -47,44 +41,40 @@
 # virtual methods
 .method public onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
     .registers 5
-    .param p1, "outAttrs"    # Landroid/view/inputmethod/EditorInfo;
 
     .prologue
     .line 48
     invoke-super {p0, p1}, Landroid/support/v7/widget/AppCompatEditText;->onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 49
-    .local v0, "ic":Landroid/view/inputmethod/InputConnection;
-    if-eqz v0, :cond_1a
+    if-eqz v1, :cond_1a
 
-    iget-object v2, p1, Landroid/view/inputmethod/EditorInfo;->hintText:Ljava/lang/CharSequence;
+    iget-object v0, p1, Landroid/view/inputmethod/EditorInfo;->hintText:Ljava/lang/CharSequence;
 
-    if-nez v2, :cond_1a
+    if-nez v0, :cond_1a
 
     .line 52
     invoke-virtual {p0}, Landroid/support/design/widget/TextInputEditText;->getParent()Landroid/view/ViewParent;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 53
-    .local v1, "parent":Landroid/view/ViewParent;
-    instance-of v2, v1, Landroid/support/design/widget/TextInputLayout;
+    instance-of v2, v0, Landroid/support/design/widget/TextInputLayout;
 
     if-eqz v2, :cond_1a
 
     .line 54
-    check-cast v1, Landroid/support/design/widget/TextInputLayout;
+    check-cast v0, Landroid/support/design/widget/TextInputLayout;
 
-    .end local v1    # "parent":Landroid/view/ViewParent;
-    invoke-virtual {v1}, Landroid/support/design/widget/TextInputLayout;->getHint()Ljava/lang/CharSequence;
+    invoke-virtual {v0}, Landroid/support/design/widget/TextInputLayout;->getHint()Ljava/lang/CharSequence;
 
-    move-result-object v2
+    move-result-object v0
 
-    iput-object v2, p1, Landroid/view/inputmethod/EditorInfo;->hintText:Ljava/lang/CharSequence;
+    iput-object v0, p1, Landroid/view/inputmethod/EditorInfo;->hintText:Ljava/lang/CharSequence;
 
     .line 57
     :cond_1a
-    return-object v0
+    return-object v1
 .end method

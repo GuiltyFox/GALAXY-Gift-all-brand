@@ -3,17 +3,6 @@
 .source "TextUtilsCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/text/TextUtilsCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "TextUtilsCompatJellybeanMr1Impl"
-.end annotation
-
-
 # direct methods
 .method private constructor <init>()V
     .registers 2
@@ -29,7 +18,6 @@
 
 .method synthetic constructor <init>(Landroid/support/v4/text/TextUtilsCompat$1;)V
     .registers 2
-    .param p1, "x0"    # Landroid/support/v4/text/TextUtilsCompat$1;
 
     .prologue
     .line 100
@@ -40,36 +28,14 @@
 
 
 # virtual methods
-.method public getLayoutDirectionFromLocale(Ljava/util/Locale;)I
+.method public a(Ljava/util/Locale;)I
     .registers 3
-    .param p1, "locale"    # Ljava/util/Locale;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
 
     .prologue
     .line 108
-    invoke-static {p1}, Landroid/support/v4/text/TextUtilsCompatJellybeanMr1;->getLayoutDirectionFromLocale(Ljava/util/Locale;)I
+    invoke-static {p1}, Landroid/support/v4/text/TextUtilsCompatJellybeanMr1;->a(Ljava/util/Locale;)I
 
     move-result v0
 
     return v0
-.end method
-
-.method public htmlEncode(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
-    .param p1, "s"    # Ljava/lang/String;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
-
-    .prologue
-    .line 103
-    invoke-static {p1}, Landroid/support/v4/text/TextUtilsCompatJellybeanMr1;->htmlEncode(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
 .end method

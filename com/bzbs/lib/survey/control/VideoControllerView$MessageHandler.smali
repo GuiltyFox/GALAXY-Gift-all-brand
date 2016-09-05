@@ -3,19 +3,8 @@
 .source "VideoControllerView.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bzbs/lib/survey/control/VideoControllerView;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "MessageHandler"
-.end annotation
-
-
 # instance fields
-.field private final mView:Ljava/lang/ref/WeakReference;
+.field private final a:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference",
@@ -30,7 +19,6 @@
 # direct methods
 .method constructor <init>(Lcom/bzbs/lib/survey/control/VideoControllerView;)V
     .registers 3
-    .param p1, "view"    # Lcom/bzbs/lib/survey/control/VideoControllerView;
 
     .prologue
     .line 644
@@ -41,7 +29,7 @@
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$MessageHandler;->mView:Ljava/lang/ref/WeakReference;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$MessageHandler;->a:Ljava/lang/ref/WeakReference;
 
     .line 646
     return-void
@@ -51,28 +39,25 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .registers 6
-    .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
     .line 650
-    iget-object v2, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$MessageHandler;->mView:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/control/VideoControllerView$MessageHandler;->a:Ljava/lang/ref/WeakReference;
 
-    invoke-virtual {v2}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/bzbs/lib/survey/control/VideoControllerView;
+
+    .line 651
+    if-eqz v0, :cond_10
+
+    invoke-static {v0}, Lcom/bzbs/lib/survey/control/VideoControllerView;->e(Lcom/bzbs/lib/survey/control/VideoControllerView;)Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;
 
     move-result-object v1
 
-    check-cast v1, Lcom/bzbs/lib/survey/control/VideoControllerView;
-
-    .line 651
-    .local v1, "view":Lcom/bzbs/lib/survey/control/VideoControllerView;
-    if-eqz v1, :cond_10
-
-    # getter for: Lcom/bzbs/lib/survey/control/VideoControllerView;->mPlayer:Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;
-    invoke-static {v1}, Lcom/bzbs/lib/survey/control/VideoControllerView;->access$500(Lcom/bzbs/lib/survey/control/VideoControllerView;)Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;
-
-    move-result-object v2
-
-    if-nez v2, :cond_11
+    if-nez v1, :cond_11
 
     .line 668
     :cond_10
@@ -81,67 +66,62 @@
 
     .line 656
     :cond_11
-    iget v2, p1, Landroid/os/Message;->what:I
+    iget v1, p1, Landroid/os/Message;->what:I
 
-    packed-switch v2, :pswitch_data_44
+    packed-switch v1, :pswitch_data_44
 
     goto :goto_10
 
     .line 658
     :pswitch_17
-    invoke-virtual {v1}, Lcom/bzbs/lib/survey/control/VideoControllerView;->hide()V
+    invoke-virtual {v0}, Lcom/bzbs/lib/survey/control/VideoControllerView;->c()V
 
     goto :goto_10
 
     .line 661
     :pswitch_1b
-    # invokes: Lcom/bzbs/lib/survey/control/VideoControllerView;->setProgress()I
-    invoke-static {v1}, Lcom/bzbs/lib/survey/control/VideoControllerView;->access$800(Lcom/bzbs/lib/survey/control/VideoControllerView;)I
+    invoke-static {v0}, Lcom/bzbs/lib/survey/control/VideoControllerView;->g(Lcom/bzbs/lib/survey/control/VideoControllerView;)I
 
-    move-result v0
+    move-result v1
 
     .line 662
-    .local v0, "pos":I
-    # getter for: Lcom/bzbs/lib/survey/control/VideoControllerView;->mDragging:Z
-    invoke-static {v1}, Lcom/bzbs/lib/survey/control/VideoControllerView;->access$300(Lcom/bzbs/lib/survey/control/VideoControllerView;)Z
+    invoke-static {v0}, Lcom/bzbs/lib/survey/control/VideoControllerView;->h(Lcom/bzbs/lib/survey/control/VideoControllerView;)Z
 
     move-result v2
 
     if-nez v2, :cond_10
 
-    # getter for: Lcom/bzbs/lib/survey/control/VideoControllerView;->mShowing:Z
-    invoke-static {v1}, Lcom/bzbs/lib/survey/control/VideoControllerView;->access$900(Lcom/bzbs/lib/survey/control/VideoControllerView;)Z
+    invoke-static {v0}, Lcom/bzbs/lib/survey/control/VideoControllerView;->i(Lcom/bzbs/lib/survey/control/VideoControllerView;)Z
 
     move-result v2
 
     if-eqz v2, :cond_10
 
-    # getter for: Lcom/bzbs/lib/survey/control/VideoControllerView;->mPlayer:Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;
-    invoke-static {v1}, Lcom/bzbs/lib/survey/control/VideoControllerView;->access$500(Lcom/bzbs/lib/survey/control/VideoControllerView;)Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;
+    invoke-static {v0}, Lcom/bzbs/lib/survey/control/VideoControllerView;->e(Lcom/bzbs/lib/survey/control/VideoControllerView;)Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-interface {v2}, Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;->isPlaying()Z
+    invoke-interface {v0}, Lcom/bzbs/lib/survey/control/VideoControllerView$MediaPlayerControl;->f()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_10
+    if-eqz v0, :cond_10
 
     .line 663
-    const/4 v2, 0x2
+    const/4 v0, 0x2
 
-    invoke-virtual {p0, v2}, Lcom/bzbs/lib/survey/control/VideoControllerView$MessageHandler;->obtainMessage(I)Landroid/os/Message;
+    invoke-virtual {p0, v0}, Lcom/bzbs/lib/survey/control/VideoControllerView$MessageHandler;->obtainMessage(I)Landroid/os/Message;
 
-    move-result-object p1
+    move-result-object v0
 
     .line 664
-    rem-int/lit16 v2, v0, 0x3e8
+    rem-int/lit16 v1, v1, 0x3e8
 
-    rsub-int v2, v2, 0x3e8
+    rsub-int v1, v1, 0x3e8
 
-    int-to-long v2, v2
+    int-to-long v2, v1
 
-    invoke-virtual {p0, p1, v2, v3}, Lcom/bzbs/lib/survey/control/VideoControllerView$MessageHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
+    invoke-virtual {p0, v0, v2, v3}, Lcom/bzbs/lib/survey/control/VideoControllerView$MessageHandler;->sendMessageDelayed(Landroid/os/Message;J)Z
 
     goto :goto_10
 

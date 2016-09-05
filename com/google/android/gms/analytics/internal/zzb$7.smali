@@ -7,12 +7,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/gms/analytics/internal/zzb;->zziM()Z
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/google/android/gms/analytics/internal/zzb;->d()Z
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
@@ -27,14 +22,14 @@
 
 
 # instance fields
-.field final synthetic zzOJ:Lcom/google/android/gms/analytics/internal/zzb;
+.field final synthetic a:Lcom/google/android/gms/analytics/internal/zzb;
 
 
 # direct methods
 .method constructor <init>(Lcom/google/android/gms/analytics/internal/zzb;)V
     .registers 2
 
-    iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzb$7;->zzOJ:Lcom/google/android/gms/analytics/internal/zzb;
+    iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzb$7;->a:Lcom/google/android/gms/analytics/internal/zzb;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,38 +38,28 @@
 
 
 # virtual methods
-.method public synthetic call()Ljava/lang/Object;
+.method public a()Ljava/lang/Void;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/Exception;
-        }
-    .end annotation
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzb$7;->zzdm()Ljava/lang/Void;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzb$7;->a:Lcom/google/android/gms/analytics/internal/zzb;
+
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzb;->a(Lcom/google/android/gms/analytics/internal/zzb;)Lcom/google/android/gms/analytics/internal/zzl;
 
     move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzl;->j()V
+
+    const/4 v0, 0x0
 
     return-object v0
 .end method
 
-.method public zzdm()Ljava/lang/Void;
+.method public synthetic call()Ljava/lang/Object;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/Exception;
-        }
-    .end annotation
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzb$7;->zzOJ:Lcom/google/android/gms/analytics/internal/zzb;
-
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzb;->zza(Lcom/google/android/gms/analytics/internal/zzb;)Lcom/google/android/gms/analytics/internal/zzl;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzb$7;->a()Ljava/lang/Void;
 
     move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzl;->zzjJ()V
-
-    const/4 v0, 0x0
 
     return-object v0
 .end method

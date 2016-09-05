@@ -54,8 +54,7 @@
 .end method
 
 .method private doesImplement(Ljava/lang/Class;Ljava/lang/String;)Z
-    .registers 6
-    .param p2, "classNameToImplement"    # Ljava/lang/String;
+    .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -67,57 +66,52 @@
     .end annotation
 
     .prologue
-    .local p1, "actualType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     .line 107
-    move-object v0, p1
-
-    .local v0, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    :goto_2
-    if-eqz v0, :cond_1a
+    :goto_1
+    if-eqz p1, :cond_19
 
     .line 108
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_f
+    if-eqz v1, :cond_e
 
     .line 116
-    :cond_e
-    :goto_e
-    return v1
+    :cond_d
+    :goto_d
+    return v0
 
     .line 112
-    :cond_f
-    invoke-direct {p0, v0, p2}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->hasInterface(Ljava/lang/Class;Ljava/lang/String;)Z
+    :cond_e
+    invoke-direct {p0, p1, p2}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->hasInterface(Ljava/lang/Class;Ljava/lang/String;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_e
+    if-nez v1, :cond_d
 
     .line 107
-    invoke-virtual {v0}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
+    invoke-virtual {p1}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
-    move-result-object v0
+    move-result-object p1
 
-    goto :goto_2
+    goto :goto_1
 
     .line 116
-    :cond_1a
-    const/4 v1, 0x0
+    :cond_19
+    const/4 v0, 0x0
 
-    goto :goto_e
+    goto :goto_d
 .end method
 
 .method private hasInterface(Ljava/lang/Class;Ljava/lang/String;)Z
-    .registers 10
-    .param p2, "interfaceToImplement"    # Ljava/lang/String;
+    .registers 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -129,8 +123,9 @@
     .end annotation
 
     .prologue
-    .local p1, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    const/4 v5, 0x1
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
 
     .line 121
     invoke-virtual {p1}, Ljava/lang/Class;->getInterfaces()[Ljava/lang/Class;
@@ -138,84 +133,69 @@
     move-result-object v3
 
     .line 122
-    .local v3, "interfaces":[Ljava/lang/Class;, "[Ljava/lang/Class<*>;"
-    move-object v0, v3
+    array-length v4, v3
 
-    .local v0, "arr$":[Ljava/lang/Class;
-    array-length v4, v0
+    move v2, v1
 
-    .local v4, "len$":I
-    const/4 v1, 0x0
-
-    .local v1, "i$":I
     :goto_8
-    if-ge v1, v4, :cond_1a
+    if-ge v2, v4, :cond_1a
 
-    aget-object v2, v0, v1
+    aget-object v5, v3, v2
 
     .line 123
-    .local v2, "iface":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v5, p2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v5
 
-    if-eqz v6, :cond_17
+    if-eqz v5, :cond_17
 
     .line 133
-    .end local v2    # "iface":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :cond_16
     :goto_16
-    return v5
+    return v0
 
     .line 122
-    .restart local v2    # "iface":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :cond_17
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_8
 
     .line 128
-    .end local v2    # "iface":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :cond_1a
-    move-object v0, v3
+    array-length v4, v3
 
-    array-length v4, v0
+    move v2, v1
 
-    const/4 v1, 0x0
+    :goto_1c
+    if-ge v2, v4, :cond_29
 
-    :goto_1d
-    if-ge v1, v4, :cond_2a
-
-    aget-object v2, v0, v1
+    aget-object v5, v3, v2
 
     .line 129
-    .restart local v2    # "iface":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    invoke-direct {p0, v2, p2}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->hasInterface(Ljava/lang/Class;Ljava/lang/String;)Z
+    invoke-direct {p0, v5, p2}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->hasInterface(Ljava/lang/Class;Ljava/lang/String;)Z
 
-    move-result v6
+    move-result v5
 
-    if-nez v6, :cond_16
+    if-nez v5, :cond_16
 
     .line 128
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
-    goto :goto_1d
+    goto :goto_1c
+
+    :cond_29
+    move v0, v1
 
     .line 133
-    .end local v2    # "iface":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    :cond_2a
-    const/4 v5, 0x0
-
     goto :goto_16
 .end method
 
 .method private hasInterfaceStartingWith(Ljava/lang/Class;Ljava/lang/String;)Z
-    .registers 10
-    .param p2, "prefix"    # Ljava/lang/String;
+    .registers 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -227,8 +207,9 @@
     .end annotation
 
     .prologue
-    .local p1, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    const/4 v5, 0x1
+    const/4 v0, 0x1
+
+    const/4 v1, 0x0
 
     .line 155
     invoke-virtual {p1}, Ljava/lang/Class;->getInterfaces()[Ljava/lang/Class;
@@ -236,84 +217,69 @@
     move-result-object v3
 
     .line 156
-    .local v3, "interfaces":[Ljava/lang/Class;, "[Ljava/lang/Class<*>;"
-    move-object v0, v3
+    array-length v4, v3
 
-    .local v0, "arr$":[Ljava/lang/Class;
-    array-length v4, v0
+    move v2, v1
 
-    .local v4, "len$":I
-    const/4 v1, 0x0
-
-    .local v1, "i$":I
     :goto_8
-    if-ge v1, v4, :cond_1a
+    if-ge v2, v4, :cond_1a
 
-    aget-object v2, v0, v1
+    aget-object v5, v3, v2
 
     .line 157
-    .local v2, "iface":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v5, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v6
+    move-result v5
 
-    if-eqz v6, :cond_17
+    if-eqz v5, :cond_17
 
     .line 167
-    .end local v2    # "iface":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :cond_16
     :goto_16
-    return v5
+    return v0
 
     .line 156
-    .restart local v2    # "iface":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :cond_17
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
     goto :goto_8
 
     .line 162
-    .end local v2    # "iface":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :cond_1a
-    move-object v0, v3
+    array-length v4, v3
 
-    array-length v4, v0
+    move v2, v1
 
-    const/4 v1, 0x0
+    :goto_1c
+    if-ge v2, v4, :cond_29
 
-    :goto_1d
-    if-ge v1, v4, :cond_2a
-
-    aget-object v2, v0, v1
+    aget-object v5, v3, v2
 
     .line 163
-    .restart local v2    # "iface":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    invoke-direct {p0, v2, p2}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->hasInterfaceStartingWith(Ljava/lang/Class;Ljava/lang/String;)Z
+    invoke-direct {p0, v5, p2}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->hasInterfaceStartingWith(Ljava/lang/Class;Ljava/lang/String;)Z
 
-    move-result v6
+    move-result v5
 
-    if-nez v6, :cond_16
+    if-nez v5, :cond_16
 
     .line 162
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
-    goto :goto_1d
+    goto :goto_1c
+
+    :cond_29
+    move v0, v1
 
     .line 167
-    .end local v2    # "iface":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    :cond_2a
-    const/4 v5, 0x0
-
     goto :goto_16
 .end method
 
 .method private hasSupertypeStartingWith(Ljava/lang/Class;Ljava/lang/String;)Z
-    .registers 7
-    .param p2, "prefix"    # Ljava/lang/String;
+    .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -325,33 +291,30 @@
     .end annotation
 
     .prologue
-    .local p1, "rawType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
     .line 139
     invoke-virtual {p1}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
     move-result-object v1
 
-    .local v1, "supertype":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :goto_5
-    if-eqz v1, :cond_17
+    if-eqz v1, :cond_1b
 
     .line 140
     invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v2, p2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_12
+    if-eqz v2, :cond_12
 
     .line 150
-    :cond_11
     :goto_11
-    return v2
+    return v0
 
     .line 139
     :cond_12
@@ -363,36 +326,31 @@
 
     .line 145
     :cond_17
-    move-object v0, p1
+    invoke-virtual {p1}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
-    .local v0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    :goto_18
-    if-eqz v0, :cond_25
+    move-result-object p1
+
+    :cond_1b
+    if-eqz p1, :cond_24
 
     .line 146
-    invoke-direct {p0, v0, p2}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->hasInterfaceStartingWith(Ljava/lang/Class;Ljava/lang/String;)Z
+    invoke-direct {p0, p1, p2}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->hasInterfaceStartingWith(Ljava/lang/Class;Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v1
 
-    if-nez v3, :cond_11
+    if-eqz v1, :cond_17
 
-    .line 145
-    invoke-virtual {v0}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
-
-    move-result-object v0
-
-    goto :goto_18
+    goto :goto_11
 
     .line 150
-    :cond_25
-    const/4 v2, 0x0
+    :cond_24
+    const/4 v0, 0x0
 
     goto :goto_11
 .end method
 
 .method private instantiate(Ljava/lang/String;)Ljava/lang/Object;
     .registers 3
-    .param p1, "className"    # Ljava/lang/String;
 
     .prologue
     .line 98
@@ -432,10 +390,7 @@
 
 # virtual methods
 .method public findDeserializer(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
-    .registers 10
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p2, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p3, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
+    .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -448,126 +403,115 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
-    const/4 v4, 0x0
+    const/4 v1, 0x0
 
     .line 68
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
 
-    move-result-object v3
-
-    .line 69
-    .local v3, "rawType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
     move-result-object v0
 
-    .line 72
-    .local v0, "className":Ljava/lang/String;
-    const-string/jumbo v5, "javax.xml."
-
-    invoke-virtual {v0, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_1b
-
-    const-string/jumbo v5, "javax.xml."
-
-    invoke-direct {p0, v3, v5}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->hasSupertypeStartingWith(Ljava/lang/Class;Ljava/lang/String;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_25
-
-    .line 74
-    :cond_1b
-    const-string/jumbo v1, "com.fasterxml.jackson.databind.ext.CoreXMLDeserializers"
-
-    .line 82
-    .local v1, "factoryName":Ljava/lang/String;
-    invoke-direct {p0, v1}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->instantiate(Ljava/lang/String;)Ljava/lang/Object;
+    .line 69
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 72
+    const-string/jumbo v3, "javax.xml."
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1b
+
+    const-string/jumbo v2, "javax.xml."
+
+    invoke-direct {p0, v0, v2}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->hasSupertypeStartingWith(Ljava/lang/Class;Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_26
+
+    .line 74
+    :cond_1b
+    const-string/jumbo v0, "com.fasterxml.jackson.databind.ext.CoreXMLDeserializers"
+
+    .line 82
+    invoke-direct {p0, v0}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->instantiate(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
     .line 83
-    .local v2, "ob":Ljava/lang/Object;
-    if-nez v2, :cond_4b
+    if-nez v0, :cond_4e
+
+    move-object v0, v1
 
     .line 86
-    .end local v1    # "factoryName":Ljava/lang/String;
-    .end local v2    # "ob":Ljava/lang/Object;
-    :cond_24
-    :goto_24
-    return-object v4
+    :goto_25
+    return-object v0
 
     .line 75
-    :cond_25
-    const-string/jumbo v5, "org.w3c.dom.Node"
+    :cond_26
+    const-string/jumbo v2, "org.w3c.dom.Node"
 
-    invoke-direct {p0, v3, v5}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->doesImplement(Ljava/lang/Class;Ljava/lang/String;)Z
+    invoke-direct {p0, v0, v2}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->doesImplement(Ljava/lang/Class;Ljava/lang/String;)Z
 
-    move-result v5
+    move-result v2
 
-    if-eqz v5, :cond_38
+    if-eqz v2, :cond_39
 
     .line 76
-    const-string/jumbo v4, "com.fasterxml.jackson.databind.ext.DOMDeserializer$DocumentDeserializer"
+    const-string/jumbo v0, "com.fasterxml.jackson.databind.ext.DOMDeserializer$DocumentDeserializer"
 
-    invoke-direct {p0, v4}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->instantiate(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-direct {p0, v0}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->instantiate(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v0
 
-    check-cast v4, Lcom/fasterxml/jackson/databind/JsonDeserializer;
+    check-cast v0, Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
-    goto :goto_24
+    goto :goto_25
 
     .line 77
-    :cond_38
-    const-string/jumbo v5, "org.w3c.dom.Node"
+    :cond_39
+    const-string/jumbo v2, "org.w3c.dom.Node"
 
-    invoke-direct {p0, v3, v5}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->doesImplement(Ljava/lang/Class;Ljava/lang/String;)Z
+    invoke-direct {p0, v0, v2}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->doesImplement(Ljava/lang/Class;Ljava/lang/String;)Z
 
-    move-result v5
+    move-result v0
 
-    if-eqz v5, :cond_24
+    if-eqz v0, :cond_4c
 
     .line 78
-    const-string/jumbo v4, "com.fasterxml.jackson.databind.ext.DOMDeserializer$NodeDeserializer"
+    const-string/jumbo v0, "com.fasterxml.jackson.databind.ext.DOMDeserializer$NodeDeserializer"
 
-    invoke-direct {p0, v4}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->instantiate(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-direct {p0, v0}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->instantiate(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v0
 
-    check-cast v4, Lcom/fasterxml/jackson/databind/JsonDeserializer;
+    check-cast v0, Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
-    goto :goto_24
+    goto :goto_25
+
+    :cond_4c
+    move-object v0, v1
+
+    .line 80
+    goto :goto_25
 
     .line 86
-    .restart local v1    # "factoryName":Ljava/lang/String;
-    .restart local v2    # "ob":Ljava/lang/Object;
-    :cond_4b
-    check-cast v2, Lcom/fasterxml/jackson/databind/deser/Deserializers;
+    :cond_4e
+    check-cast v0, Lcom/fasterxml/jackson/databind/deser/Deserializers;
 
-    .end local v2    # "ob":Ljava/lang/Object;
-    invoke-interface {v2, p1, p2, p3}, Lcom/fasterxml/jackson/databind/deser/Deserializers;->findBeanDeserializer(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
+    invoke-interface {v0, p1, p2, p3}, Lcom/fasterxml/jackson/databind/deser/Deserializers;->findBeanDeserializer(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
-    move-result-object v4
+    move-result-object v0
 
-    goto :goto_24
+    goto :goto_25
 .end method
 
 .method public findSerializer(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/BeanDescription;)Lcom/fasterxml/jackson/databind/JsonSerializer;
-    .registers 10
-    .param p1, "config"    # Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .param p2, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
+    .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -581,89 +525,87 @@
     .end annotation
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v1, 0x0
 
     .line 44
     invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
 
-    move-result-object v3
-
-    .line 45
-    .local v3, "rawType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
     move-result-object v0
 
-    .line 48
-    .local v0, "className":Ljava/lang/String;
-    const-string/jumbo v5, "javax.xml."
-
-    invoke-virtual {v0, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_1b
-
-    const-string/jumbo v5, "javax.xml."
-
-    invoke-direct {p0, v3, v5}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->hasSupertypeStartingWith(Ljava/lang/Class;Ljava/lang/String;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_25
-
-    .line 50
-    :cond_1b
-    const-string/jumbo v1, "com.fasterxml.jackson.databind.ext.CoreXMLSerializers"
-
-    .line 57
-    .local v1, "factoryName":Ljava/lang/String;
-    invoke-direct {p0, v1}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->instantiate(Ljava/lang/String;)Ljava/lang/Object;
+    .line 45
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v2
 
+    .line 48
+    const-string/jumbo v3, "javax.xml."
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1b
+
+    const-string/jumbo v2, "javax.xml."
+
+    invoke-direct {p0, v0, v2}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->hasSupertypeStartingWith(Ljava/lang/Class;Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_26
+
+    .line 50
+    :cond_1b
+    const-string/jumbo v0, "com.fasterxml.jackson.databind.ext.CoreXMLSerializers"
+
+    .line 57
+    invoke-direct {p0, v0}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->instantiate(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
     .line 58
-    .local v2, "ob":Ljava/lang/Object;
-    if-nez v2, :cond_38
+    if-nez v0, :cond_3b
+
+    move-object v0, v1
 
     .line 61
-    .end local v1    # "factoryName":Ljava/lang/String;
-    .end local v2    # "ob":Ljava/lang/Object;
-    :cond_24
-    :goto_24
-    return-object v4
+    :goto_25
+    return-object v0
 
     .line 51
-    :cond_25
-    const-string/jumbo v5, "org.w3c.dom.Node"
+    :cond_26
+    const-string/jumbo v2, "org.w3c.dom.Node"
 
-    invoke-direct {p0, v3, v5}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->doesImplement(Ljava/lang/Class;Ljava/lang/String;)Z
+    invoke-direct {p0, v0, v2}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->doesImplement(Ljava/lang/Class;Ljava/lang/String;)Z
 
-    move-result v5
+    move-result v0
 
-    if-eqz v5, :cond_24
+    if-eqz v0, :cond_39
 
     .line 52
-    const-string/jumbo v4, "com.fasterxml.jackson.databind.ext.DOMSerializer"
+    const-string/jumbo v0, "com.fasterxml.jackson.databind.ext.DOMSerializer"
 
-    invoke-direct {p0, v4}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->instantiate(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-direct {p0, v0}, Lcom/fasterxml/jackson/databind/ext/OptionalHandlerFactory;->instantiate(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v0
 
-    check-cast v4, Lcom/fasterxml/jackson/databind/JsonSerializer;
+    check-cast v0, Lcom/fasterxml/jackson/databind/JsonSerializer;
 
-    goto :goto_24
+    goto :goto_25
+
+    :cond_39
+    move-object v0, v1
+
+    .line 54
+    goto :goto_25
 
     .line 61
-    .restart local v1    # "factoryName":Ljava/lang/String;
-    .restart local v2    # "ob":Ljava/lang/Object;
-    :cond_38
-    check-cast v2, Lcom/fasterxml/jackson/databind/ser/Serializers;
+    :cond_3b
+    check-cast v0, Lcom/fasterxml/jackson/databind/ser/Serializers;
 
-    .end local v2    # "ob":Ljava/lang/Object;
-    invoke-interface {v2, p1, p2, p3}, Lcom/fasterxml/jackson/databind/ser/Serializers;->findSerializer(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/BeanDescription;)Lcom/fasterxml/jackson/databind/JsonSerializer;
+    invoke-interface {v0, p1, p2, p3}, Lcom/fasterxml/jackson/databind/ser/Serializers;->findSerializer(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/BeanDescription;)Lcom/fasterxml/jackson/databind/JsonSerializer;
 
-    move-result-object v4
+    move-result-object v0
 
-    goto :goto_24
+    goto :goto_25
 .end method

@@ -22,9 +22,9 @@
 
 
 # instance fields
-.field private final context:Landroid/content/Context;
+.field private final a:Landroid/content/Context;
 
-.field private final urlLoader:Lcom/bumptech/glide/load/model/ModelLoader;
+.field private final b:Lcom/bumptech/glide/load/model/ModelLoader;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/ModelLoader",
@@ -39,7 +39,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/bumptech/glide/load/model/ModelLoader;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -53,23 +52,20 @@
 
     .prologue
     .line 20
-    .local p0, "this":Lcom/bumptech/glide/load/model/UriLoader;, "Lcom/bumptech/glide/load/model/UriLoader<TT;>;"
-    .local p2, "urlLoader":Lcom/bumptech/glide/load/model/ModelLoader;, "Lcom/bumptech/glide/load/model/ModelLoader<Lcom/bumptech/glide/load/model/GlideUrl;TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 21
-    iput-object p1, p0, Lcom/bumptech/glide/load/model/UriLoader;->context:Landroid/content/Context;
+    iput-object p1, p0, Lcom/bumptech/glide/load/model/UriLoader;->a:Landroid/content/Context;
 
     .line 22
-    iput-object p2, p0, Lcom/bumptech/glide/load/model/UriLoader;->urlLoader:Lcom/bumptech/glide/load/model/ModelLoader;
+    iput-object p2, p0, Lcom/bumptech/glide/load/model/UriLoader;->b:Lcom/bumptech/glide/load/model/ModelLoader;
 
     .line 23
     return-void
 .end method
 
-.method private static isLocalUri(Ljava/lang/String;)Z
+.method private static a(Ljava/lang/String;)Z
     .registers 2
-    .param p0, "scheme"    # Ljava/lang/String;
 
     .prologue
     .line 49
@@ -111,7 +107,20 @@
 
 
 # virtual methods
-.method protected abstract getAssetPathFetcher(Landroid/content/Context;Ljava/lang/String;)Lcom/bumptech/glide/load/data/DataFetcher;
+.method protected abstract a(Landroid/content/Context;Landroid/net/Uri;)Lcom/bumptech/glide/load/data/DataFetcher;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/content/Context;",
+            "Landroid/net/Uri;",
+            ")",
+            "Lcom/bumptech/glide/load/data/DataFetcher",
+            "<TT;>;"
+        }
+    .end annotation
+.end method
+
+.method protected abstract a(Landroid/content/Context;Ljava/lang/String;)Lcom/bumptech/glide/load/data/DataFetcher;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -124,24 +133,8 @@
     .end annotation
 .end method
 
-.method protected abstract getLocalUriFetcher(Landroid/content/Context;Landroid/net/Uri;)Lcom/bumptech/glide/load/data/DataFetcher;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/content/Context;",
-            "Landroid/net/Uri;",
-            ")",
-            "Lcom/bumptech/glide/load/data/DataFetcher",
-            "<TT;>;"
-        }
-    .end annotation
-.end method
-
-.method public final getResourceFetcher(Landroid/net/Uri;II)Lcom/bumptech/glide/load/data/DataFetcher;
-    .registers 10
-    .param p1, "model"    # Landroid/net/Uri;
-    .param p2, "width"    # I
-    .param p3, "height"    # I
+.method public final a(Landroid/net/Uri;II)Lcom/bumptech/glide/load/data/DataFetcher;
+    .registers 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -154,113 +147,103 @@
 
     .prologue
     .line 27
-    .local p0, "this":Lcom/bumptech/glide/load/model/UriLoader;, "Lcom/bumptech/glide/load/model/UriLoader<TT;>;"
     invoke-virtual {p1}, Landroid/net/Uri;->getScheme()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 29
-    .local v2, "scheme":Ljava/lang/String;
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 30
-    .local v1, "result":Lcom/bumptech/glide/load/data/DataFetcher;, "Lcom/bumptech/glide/load/data/DataFetcher<TT;>;"
-    invoke-static {v2}, Lcom/bumptech/glide/load/model/UriLoader;->isLocalUri(Ljava/lang/String;)Z
+    invoke-static {v1}, Lcom/bumptech/glide/load/model/UriLoader;->a(Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_23
+    if-eqz v2, :cond_23
 
     .line 31
-    invoke-static {p1}, Lcom/bumptech/glide/load/model/AssetUriParser;->isAssetUri(Landroid/net/Uri;)Z
+    invoke-static {p1}, Lcom/bumptech/glide/load/model/AssetUriParser;->a(Landroid/net/Uri;)Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_1c
+    if-eqz v0, :cond_1c
 
     .line 32
-    invoke-static {p1}, Lcom/bumptech/glide/load/model/AssetUriParser;->toAssetPath(Landroid/net/Uri;)Ljava/lang/String;
+    invoke-static {p1}, Lcom/bumptech/glide/load/model/AssetUriParser;->b(Landroid/net/Uri;)Ljava/lang/String;
 
     move-result-object v0
 
     .line 33
-    .local v0, "path":Ljava/lang/String;
-    iget-object v3, p0, Lcom/bumptech/glide/load/model/UriLoader;->context:Landroid/content/Context;
+    iget-object v1, p0, Lcom/bumptech/glide/load/model/UriLoader;->a:Landroid/content/Context;
 
-    invoke-virtual {p0, v3, v0}, Lcom/bumptech/glide/load/model/UriLoader;->getAssetPathFetcher(Landroid/content/Context;Ljava/lang/String;)Lcom/bumptech/glide/load/data/DataFetcher;
+    invoke-virtual {p0, v1, v0}, Lcom/bumptech/glide/load/model/UriLoader;->a(Landroid/content/Context;Ljava/lang/String;)Lcom/bumptech/glide/load/data/DataFetcher;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 41
-    .end local v0    # "path":Ljava/lang/String;
     :cond_1b
     :goto_1b
-    return-object v1
+    return-object v0
 
     .line 35
     :cond_1c
-    iget-object v3, p0, Lcom/bumptech/glide/load/model/UriLoader;->context:Landroid/content/Context;
+    iget-object v0, p0, Lcom/bumptech/glide/load/model/UriLoader;->a:Landroid/content/Context;
 
-    invoke-virtual {p0, v3, p1}, Lcom/bumptech/glide/load/model/UriLoader;->getLocalUriFetcher(Landroid/content/Context;Landroid/net/Uri;)Lcom/bumptech/glide/load/data/DataFetcher;
+    invoke-virtual {p0, v0, p1}, Lcom/bumptech/glide/load/model/UriLoader;->a(Landroid/content/Context;Landroid/net/Uri;)Lcom/bumptech/glide/load/data/DataFetcher;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_1b
 
     .line 37
     :cond_23
-    iget-object v3, p0, Lcom/bumptech/glide/load/model/UriLoader;->urlLoader:Lcom/bumptech/glide/load/model/ModelLoader;
+    iget-object v2, p0, Lcom/bumptech/glide/load/model/UriLoader;->b:Lcom/bumptech/glide/load/model/ModelLoader;
 
-    if-eqz v3, :cond_1b
+    if-eqz v2, :cond_1b
 
-    const-string/jumbo v3, "http"
+    const-string/jumbo v2, "http"
 
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_39
+    if-nez v2, :cond_39
 
-    const-string/jumbo v3, "https"
+    const-string/jumbo v2, "https"
 
-    invoke-virtual {v3, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v1
 
-    if-eqz v3, :cond_1b
+    if-eqz v1, :cond_1b
 
     .line 38
     :cond_39
-    iget-object v3, p0, Lcom/bumptech/glide/load/model/UriLoader;->urlLoader:Lcom/bumptech/glide/load/model/ModelLoader;
+    iget-object v0, p0, Lcom/bumptech/glide/load/model/UriLoader;->b:Lcom/bumptech/glide/load/model/ModelLoader;
 
-    new-instance v4, Lcom/bumptech/glide/load/model/GlideUrl;
+    new-instance v1, Lcom/bumptech/glide/load/model/GlideUrl;
 
     invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v2
 
-    invoke-direct {v4, v5}, Lcom/bumptech/glide/load/model/GlideUrl;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Lcom/bumptech/glide/load/model/GlideUrl;-><init>(Ljava/lang/String;)V
 
-    invoke-interface {v3, v4, p2, p3}, Lcom/bumptech/glide/load/model/ModelLoader;->getResourceFetcher(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
+    invoke-interface {v0, v1, p2, p3}, Lcom/bumptech/glide/load/model/ModelLoader;->a(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_1b
 .end method
 
-.method public bridge synthetic getResourceFetcher(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
+.method public bridge synthetic a(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
     .registers 5
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # I
-    .param p3, "x2"    # I
 
     .prologue
     .line 16
-    .local p0, "this":Lcom/bumptech/glide/load/model/UriLoader;, "Lcom/bumptech/glide/load/model/UriLoader<TT;>;"
     check-cast p1, Landroid/net/Uri;
 
-    .end local p1    # "x0":Ljava/lang/Object;
-    invoke-virtual {p0, p1, p2, p3}, Lcom/bumptech/glide/load/model/UriLoader;->getResourceFetcher(Landroid/net/Uri;II)Lcom/bumptech/glide/load/data/DataFetcher;
+    invoke-virtual {p0, p1, p2, p3}, Lcom/bumptech/glide/load/model/UriLoader;->a(Landroid/net/Uri;II)Lcom/bumptech/glide/load/data/DataFetcher;
 
     move-result-object v0
 

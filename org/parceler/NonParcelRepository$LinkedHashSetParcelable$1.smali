@@ -8,11 +8,6 @@
     value = Lorg/parceler/NonParcelRepository$LinkedHashSetParcelable;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 
 # direct methods
 .method constructor <init>()V
@@ -27,9 +22,8 @@
 
 
 # virtual methods
-.method public itemFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public a(Landroid/os/Parcel;)Ljava/lang/Object;
     .registers 3
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
     .line 588
@@ -43,21 +37,19 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lorg/parceler/Parcels;->unwrap(Landroid/os/Parcelable;)Ljava/lang/Object;
+    invoke-static {v0}, Lorg/parceler/Parcels;->a(Landroid/os/Parcelable;)Ljava/lang/Object;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public itemToParcel(Ljava/lang/Object;Landroid/os/Parcel;)V
+.method public a(Ljava/lang/Object;Landroid/os/Parcel;)V
     .registers 5
-    .param p1, "input"    # Ljava/lang/Object;
-    .param p2, "parcel"    # Landroid/os/Parcel;
 
     .prologue
     .line 593
-    invoke-static {p1}, Lorg/parceler/Parcels;->wrap(Ljava/lang/Object;)Landroid/os/Parcelable;
+    invoke-static {p1}, Lorg/parceler/Parcels;->a(Ljava/lang/Object;)Landroid/os/Parcelable;
 
     move-result-object v0
 

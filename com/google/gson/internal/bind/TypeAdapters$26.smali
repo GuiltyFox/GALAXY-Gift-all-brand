@@ -11,11 +11,6 @@
     value = Lcom/google/gson/internal/bind/TypeAdapters;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 
 # direct methods
 .method constructor <init>()V
@@ -30,9 +25,8 @@
 
 
 # virtual methods
-.method public create(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
+.method public a(Lcom/google/gson/Gson;Lcom/google/gson/reflect/TypeToken;)Lcom/google/gson/TypeAdapter;
     .registers 5
-    .param p1, "gson"    # Lcom/google/gson/Gson;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -48,13 +42,11 @@
 
     .prologue
     .line 757
-    .local p2, "typeToken":Lcom/google/gson/reflect/TypeToken;, "Lcom/google/gson/reflect/TypeToken<TT;>;"
-    invoke-virtual {p2}, Lcom/google/gson/reflect/TypeToken;->getRawType()Ljava/lang/Class;
+    invoke-virtual {p2}, Lcom/google/gson/reflect/TypeToken;->a()Ljava/lang/Class;
 
     move-result-object v0
 
     .line 758
-    .local v0, "rawType":Ljava/lang/Class;, "Ljava/lang/Class<-TT;>;"
     const-class v1, Ljava/lang/Enum;
 
     invoke-virtual {v1, v0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
@@ -69,11 +61,11 @@
 
     .line 759
     :cond_10
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 764
     :goto_11
-    return-object v1
+    return-object v0
 
     .line 761
     :cond_12
@@ -93,6 +85,8 @@
     new-instance v1, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;
 
     invoke-direct {v1, v0}, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;-><init>(Ljava/lang/Class;)V
+
+    move-object v0, v1
 
     goto :goto_11
 .end method

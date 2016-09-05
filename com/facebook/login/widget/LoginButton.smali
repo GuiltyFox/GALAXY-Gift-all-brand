@@ -3,16 +3,6 @@
 .source "LoginButton.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/facebook/login/widget/LoginButton$LoginClickListener;,
-        Lcom/facebook/login/widget/LoginButton$LoginButtonProperties;,
-        Lcom/facebook/login/widget/LoginButton$ToolTipMode;
-    }
-.end annotation
-
-
 # static fields
 .field private static final TAG:Ljava/lang/String;
 
@@ -62,7 +52,6 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 9
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     const/4 v3, 0x0
@@ -110,8 +99,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 10
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     const/4 v3, 0x0
@@ -159,9 +146,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .registers 11
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyle"    # I
 
     .prologue
     .line 215
@@ -209,8 +193,6 @@
 
 .method static synthetic access$000(Lcom/facebook/login/widget/LoginButton;Lcom/facebook/internal/Utility$FetchedAppSettings;)V
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/login/widget/LoginButton;
-    .param p1, "x1"    # Lcom/facebook/internal/Utility$FetchedAppSettings;
 
     .prologue
     .line 54
@@ -221,7 +203,6 @@
 
 .method static synthetic access$100(Lcom/facebook/login/widget/LoginButton;)Landroid/app/Activity;
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/login/widget/LoginButton;
 
     .prologue
     .line 54
@@ -234,7 +215,6 @@
 
 .method static synthetic access$1000(Lcom/facebook/login/widget/LoginButton;)Landroid/app/Activity;
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/login/widget/LoginButton;
 
     .prologue
     .line 54
@@ -247,7 +227,6 @@
 
 .method static synthetic access$1100(Lcom/facebook/login/widget/LoginButton;)Ljava/lang/String;
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/login/widget/LoginButton;
 
     .prologue
     .line 54
@@ -258,7 +237,6 @@
 
 .method static synthetic access$300(Lcom/facebook/login/widget/LoginButton;)V
     .registers 1
-    .param p0, "x0"    # Lcom/facebook/login/widget/LoginButton;
 
     .prologue
     .line 54
@@ -269,8 +247,6 @@
 
 .method static synthetic access$400(Lcom/facebook/login/widget/LoginButton;Landroid/view/View;)V
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/login/widget/LoginButton;
-    .param p1, "x1"    # Landroid/view/View;
 
     .prologue
     .line 54
@@ -281,7 +257,6 @@
 
 .method static synthetic access$500(Lcom/facebook/login/widget/LoginButton;)Z
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/login/widget/LoginButton;
 
     .prologue
     .line 54
@@ -292,7 +267,6 @@
 
 .method static synthetic access$600(Lcom/facebook/login/widget/LoginButton;)Lcom/facebook/login/widget/LoginButton$LoginButtonProperties;
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/login/widget/LoginButton;
 
     .prologue
     .line 54
@@ -303,7 +277,6 @@
 
 .method static synthetic access$900(Lcom/facebook/login/widget/LoginButton;)Landroid/app/Activity;
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/login/widget/LoginButton;
 
     .prologue
     .line 54
@@ -315,21 +288,21 @@
 .end method
 
 .method private checkToolTipSettings()V
-    .registers 5
+    .registers 4
 
     .prologue
     .line 482
-    sget-object v2, Lcom/facebook/login/widget/LoginButton$3;->$SwitchMap$com$facebook$login$widget$LoginButton$ToolTipMode:[I
+    sget-object v0, Lcom/facebook/login/widget/LoginButton$3;->$SwitchMap$com$facebook$login$widget$LoginButton$ToolTipMode:[I
 
-    iget-object v3, p0, Lcom/facebook/login/widget/LoginButton;->toolTipMode:Lcom/facebook/login/widget/LoginButton$ToolTipMode;
+    iget-object v1, p0, Lcom/facebook/login/widget/LoginButton;->toolTipMode:Lcom/facebook/login/widget/LoginButton$ToolTipMode;
 
-    invoke-virtual {v3}, Lcom/facebook/login/widget/LoginButton$ToolTipMode;->ordinal()I
+    invoke-virtual {v1}, Lcom/facebook/login/widget/LoginButton$ToolTipMode;->ordinal()I
 
-    move-result v3
+    move-result v1
 
-    aget v2, v2, v3
+    aget v0, v0, v1
 
-    packed-switch v2, :pswitch_data_32
+    packed-switch v0, :pswitch_data_32
 
     .line 507
     :goto_d
@@ -339,42 +312,39 @@
     :pswitch_e
     invoke-virtual {p0}, Lcom/facebook/login/widget/LoginButton;->getContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-static {v2}, Lcom/facebook/internal/Utility;->getMetadataApplicationId(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/facebook/internal/Utility;->getMetadataApplicationId(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     .line 486
-    .local v0, "appId":Ljava/lang/String;
     invoke-static {}, Lcom/facebook/FacebookSdk;->getExecutor()Ljava/util/concurrent/Executor;
 
-    move-result-object v2
+    move-result-object v1
 
-    new-instance v3, Lcom/facebook/login/widget/LoginButton$1;
+    new-instance v2, Lcom/facebook/login/widget/LoginButton$1;
 
-    invoke-direct {v3, p0, v0}, Lcom/facebook/login/widget/LoginButton$1;-><init>(Lcom/facebook/login/widget/LoginButton;Ljava/lang/String;)V
+    invoke-direct {v2, p0, v0}, Lcom/facebook/login/widget/LoginButton$1;-><init>(Lcom/facebook/login/widget/LoginButton;Ljava/lang/String;)V
 
-    invoke-interface {v2, v3}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
+    invoke-interface {v1, v2}, Ljava/util/concurrent/Executor;->execute(Ljava/lang/Runnable;)V
 
     goto :goto_d
 
     .line 500
-    .end local v0    # "appId":Ljava/lang/String;
     :pswitch_23
     invoke-virtual {p0}, Lcom/facebook/login/widget/LoginButton;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v2
+    move-result-object v0
 
-    sget v3, Lcom/facebook/R$string;->com_facebook_tooltip_default:I
+    sget v1, Lcom/facebook/R$string;->com_facebook_tooltip_default:I
 
-    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 502
-    .local v1, "toolTipString":Ljava/lang/String;
-    invoke-direct {p0, v1}, Lcom/facebook/login/widget/LoginButton;->displayToolTip(Ljava/lang/String;)V
+    invoke-direct {p0, v0}, Lcom/facebook/login/widget/LoginButton;->displayToolTip(Ljava/lang/String;)V
 
     goto :goto_d
 
@@ -390,7 +360,6 @@
 
 .method private displayToolTip(Ljava/lang/String;)V
     .registers 6
-    .param p1, "toolTipString"    # Ljava/lang/String;
 
     .prologue
     .line 475
@@ -424,8 +393,7 @@
 .end method
 
 .method private measureButtonWidth(Ljava/lang/String;)I
-    .registers 6
-    .param p1, "text"    # Ljava/lang/String;
+    .registers 5
 
     .prologue
     .line 634
@@ -434,89 +402,82 @@
     move-result v0
 
     .line 635
-    .local v0, "textWidth":I
     invoke-virtual {p0}, Lcom/facebook/login/widget/LoginButton;->getCompoundPaddingLeft()I
 
-    move-result v2
+    move-result v1
 
     .line 636
     invoke-virtual {p0}, Lcom/facebook/login/widget/LoginButton;->getCompoundDrawablePadding()I
 
-    move-result v3
+    move-result v2
 
-    add-int/2addr v2, v3
+    add-int/2addr v1, v2
 
-    add-int/2addr v2, v0
+    add-int/2addr v0, v1
 
     .line 638
     invoke-virtual {p0}, Lcom/facebook/login/widget/LoginButton;->getCompoundPaddingRight()I
 
-    move-result v3
+    move-result v1
 
-    add-int v1, v2, v3
+    add-int/2addr v0, v1
 
     .line 639
-    .local v1, "width":I
-    return v1
+    return v0
 .end method
 
 .method private parseLoginButtonAttributes(Landroid/content/Context;Landroid/util/AttributeSet;II)V
     .registers 8
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
-    .param p4, "defStyleRes"    # I
 
     .prologue
     .line 584
-    sget-object v1, Lcom/facebook/login/widget/LoginButton$ToolTipMode;->DEFAULT:Lcom/facebook/login/widget/LoginButton$ToolTipMode;
+    sget-object v0, Lcom/facebook/login/widget/LoginButton$ToolTipMode;->DEFAULT:Lcom/facebook/login/widget/LoginButton$ToolTipMode;
 
-    iput-object v1, p0, Lcom/facebook/login/widget/LoginButton;->toolTipMode:Lcom/facebook/login/widget/LoginButton$ToolTipMode;
+    iput-object v0, p0, Lcom/facebook/login/widget/LoginButton;->toolTipMode:Lcom/facebook/login/widget/LoginButton$ToolTipMode;
 
     .line 585
     invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
-    move-result-object v1
-
-    sget-object v2, Lcom/facebook/R$styleable;->com_facebook_login_view:[I
-
-    invoke-virtual {v1, p2, v2, p3, p4}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
-
     move-result-object v0
 
+    sget-object v1, Lcom/facebook/R$styleable;->com_facebook_login_view:[I
+
+    invoke-virtual {v0, p2, v1, p3, p4}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+
+    move-result-object v1
+
     .line 591
-    .local v0, "a":Landroid/content/res/TypedArray;
     :try_start_e
-    sget v1, Lcom/facebook/R$styleable;->com_facebook_login_view_com_facebook_confirm_logout:I
+    sget v0, Lcom/facebook/R$styleable;->com_facebook_login_view_com_facebook_confirm_logout:I
 
     const/4 v2, 0x1
 
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {v1, v0, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    move-result v1
+    move-result v0
 
-    iput-boolean v1, p0, Lcom/facebook/login/widget/LoginButton;->confirmLogout:Z
+    iput-boolean v0, p0, Lcom/facebook/login/widget/LoginButton;->confirmLogout:Z
 
     .line 592
-    sget v1, Lcom/facebook/R$styleable;->com_facebook_login_view_com_facebook_login_text:I
+    sget v0, Lcom/facebook/R$styleable;->com_facebook_login_view_com_facebook_login_text:I
 
-    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lcom/facebook/login/widget/LoginButton;->loginText:Ljava/lang/String;
+    iput-object v0, p0, Lcom/facebook/login/widget/LoginButton;->loginText:Ljava/lang/String;
 
     .line 593
-    sget v1, Lcom/facebook/R$styleable;->com_facebook_login_view_com_facebook_logout_text:I
+    sget v0, Lcom/facebook/R$styleable;->com_facebook_login_view_com_facebook_logout_text:I
 
-    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lcom/facebook/login/widget/LoginButton;->logoutText:Ljava/lang/String;
+    iput-object v0, p0, Lcom/facebook/login/widget/LoginButton;->logoutText:Ljava/lang/String;
 
     .line 594
-    sget v1, Lcom/facebook/R$styleable;->com_facebook_login_view_com_facebook_tooltip_mode:I
+    sget v0, Lcom/facebook/R$styleable;->com_facebook_login_view_com_facebook_tooltip_mode:I
 
     sget-object v2, Lcom/facebook/login/widget/LoginButton$ToolTipMode;->DEFAULT:Lcom/facebook/login/widget/LoginButton$ToolTipMode;
 
@@ -526,35 +487,35 @@
     move-result v2
 
     .line 594
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v1, v0, v2}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Lcom/facebook/login/widget/LoginButton$ToolTipMode;->fromInt(I)Lcom/facebook/login/widget/LoginButton$ToolTipMode;
+    invoke-static {v0}, Lcom/facebook/login/widget/LoginButton$ToolTipMode;->fromInt(I)Lcom/facebook/login/widget/LoginButton$ToolTipMode;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lcom/facebook/login/widget/LoginButton;->toolTipMode:Lcom/facebook/login/widget/LoginButton$ToolTipMode;
+    iput-object v0, p0, Lcom/facebook/login/widget/LoginButton;->toolTipMode:Lcom/facebook/login/widget/LoginButton$ToolTipMode;
     :try_end_39
     .catchall {:try_start_e .. :try_end_39} :catchall_3d
 
     .line 598
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 600
     return-void
 
     .line 598
     :catchall_3d
-    move-exception v1
+    move-exception v0
 
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    throw v1
+    throw v0
 .end method
 
 .method private setButtonText()V
-    .registers 6
+    .registers 5
 
     .prologue
     .line 643
@@ -563,28 +524,27 @@
     move-result-object v1
 
     .line 644
-    .local v1, "resources":Landroid/content/res/Resources;
     invoke-virtual {p0}, Lcom/facebook/login/widget/LoginButton;->isInEditMode()Z
 
-    move-result v4
+    move-result v0
 
-    if-nez v4, :cond_21
+    if-nez v0, :cond_21
 
     invoke-static {}, Lcom/facebook/AccessToken;->getCurrentAccessToken()Lcom/facebook/AccessToken;
 
-    move-result-object v4
+    move-result-object v0
 
-    if-eqz v4, :cond_21
+    if-eqz v0, :cond_21
 
     .line 645
-    iget-object v4, p0, Lcom/facebook/login/widget/LoginButton;->logoutText:Ljava/lang/String;
+    iget-object v0, p0, Lcom/facebook/login/widget/LoginButton;->logoutText:Ljava/lang/String;
 
-    if-eqz v4, :cond_1a
+    if-eqz v0, :cond_1a
 
-    iget-object v4, p0, Lcom/facebook/login/widget/LoginButton;->logoutText:Ljava/lang/String;
+    iget-object v0, p0, Lcom/facebook/login/widget/LoginButton;->logoutText:Ljava/lang/String;
 
     :goto_16
-    invoke-virtual {p0, v4}, Lcom/facebook/login/widget/LoginButton;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v0}, Lcom/facebook/login/widget/LoginButton;->setText(Ljava/lang/CharSequence;)V
 
     .line 667
     :goto_19
@@ -592,73 +552,68 @@
 
     .line 645
     :cond_1a
-    sget v4, Lcom/facebook/R$string;->com_facebook_loginview_log_out_button:I
+    sget v0, Lcom/facebook/R$string;->com_facebook_loginview_log_out_button:I
 
     .line 647
-    invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
     goto :goto_16
 
     .line 649
     :cond_21
-    iget-object v4, p0, Lcom/facebook/login/widget/LoginButton;->loginText:Ljava/lang/String;
+    iget-object v0, p0, Lcom/facebook/login/widget/LoginButton;->loginText:Ljava/lang/String;
 
-    if-eqz v4, :cond_2b
+    if-eqz v0, :cond_2b
 
     .line 650
-    iget-object v4, p0, Lcom/facebook/login/widget/LoginButton;->loginText:Ljava/lang/String;
+    iget-object v0, p0, Lcom/facebook/login/widget/LoginButton;->loginText:Ljava/lang/String;
 
-    invoke-virtual {p0, v4}, Lcom/facebook/login/widget/LoginButton;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v0}, Lcom/facebook/login/widget/LoginButton;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_19
 
     .line 652
     :cond_2b
-    sget v4, Lcom/facebook/R$string;->com_facebook_loginview_log_in_button_long:I
+    sget v0, Lcom/facebook/R$string;->com_facebook_loginview_log_in_button_long:I
 
-    invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 654
-    .local v2, "text":Ljava/lang/String;
     invoke-virtual {p0}, Lcom/facebook/login/widget/LoginButton;->getWidth()I
+
+    move-result v2
+
+    .line 656
+    if-eqz v2, :cond_43
+
+    .line 658
+    invoke-direct {p0, v0}, Lcom/facebook/login/widget/LoginButton;->measureButtonWidth(Ljava/lang/String;)I
 
     move-result v3
 
-    .line 656
-    .local v3, "width":I
-    if-eqz v3, :cond_43
-
-    .line 658
-    invoke-direct {p0, v2}, Lcom/facebook/login/widget/LoginButton;->measureButtonWidth(Ljava/lang/String;)I
-
-    move-result v0
-
     .line 659
-    .local v0, "measuredWidth":I
-    if-le v0, v3, :cond_43
+    if-le v3, v2, :cond_43
 
     .line 661
-    sget v4, Lcom/facebook/R$string;->com_facebook_loginview_log_in_button:I
+    sget v0, Lcom/facebook/R$string;->com_facebook_loginview_log_in_button:I
 
-    invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 664
-    .end local v0    # "measuredWidth":I
     :cond_43
-    invoke-virtual {p0, v2}, Lcom/facebook/login/widget/LoginButton;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v0}, Lcom/facebook/login/widget/LoginButton;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_19
 .end method
 
 .method private showToolTipPerSettings(Lcom/facebook/internal/Utility$FetchedAppSettings;)V
-    .registers 4
-    .param p1, "settings"    # Lcom/facebook/internal/Utility$FetchedAppSettings;
+    .registers 3
 
     .prologue
     .line 468
@@ -666,15 +621,15 @@
 
     invoke-virtual {p1}, Lcom/facebook/internal/Utility$FetchedAppSettings;->getNuxEnabled()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_15
+    if-eqz v0, :cond_15
 
     invoke-virtual {p0}, Lcom/facebook/login/widget/LoginButton;->getVisibility()I
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_15
+    if-nez v0, :cond_15
 
     .line 469
     invoke-virtual {p1}, Lcom/facebook/internal/Utility$FetchedAppSettings;->getNuxContent()Ljava/lang/String;
@@ -682,11 +637,9 @@
     move-result-object v0
 
     .line 470
-    .local v0, "toolTipString":Ljava/lang/String;
     invoke-direct {p0, v0}, Lcom/facebook/login/widget/LoginButton;->displayToolTip(Ljava/lang/String;)V
 
     .line 472
-    .end local v0    # "toolTipString":Ljava/lang/String;
     :cond_15
     return-void
 .end method
@@ -708,10 +661,6 @@
 
 .method protected configureButton(Landroid/content/Context;Landroid/util/AttributeSet;II)V
     .registers 7
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
-    .param p4, "defStyleRes"    # I
 
     .prologue
     .line 548
@@ -974,7 +923,6 @@
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .registers 3
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
     .line 459
@@ -1006,11 +954,6 @@
 
 .method protected onLayout(ZIIII)V
     .registers 6
-    .param p1, "changed"    # Z
-    .param p2, "left"    # I
-    .param p3, "top"    # I
-    .param p4, "right"    # I
-    .param p5, "bottom"    # I
 
     .prologue
     .line 511
@@ -1024,142 +967,129 @@
 .end method
 
 .method protected onMeasure(II)V
-    .registers 13
-    .param p1, "widthMeasureSpec"    # I
-    .param p2, "heightMeasureSpec"    # I
+    .registers 8
 
     .prologue
     .line 604
     invoke-virtual {p0}, Lcom/facebook/login/widget/LoginButton;->getPaint()Landroid/text/TextPaint;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-virtual {v7}, Landroid/text/TextPaint;->getFontMetrics()Landroid/graphics/Paint$FontMetrics;
+    invoke-virtual {v0}, Landroid/text/TextPaint;->getFontMetrics()Landroid/graphics/Paint$FontMetrics;
 
     move-result-object v0
 
     .line 605
-    .local v0, "fontMetrics":Landroid/graphics/Paint$FontMetrics;
     invoke-virtual {p0}, Lcom/facebook/login/widget/LoginButton;->getCompoundPaddingTop()I
 
-    move-result v7
+    move-result v1
 
-    iget v8, v0, Landroid/graphics/Paint$FontMetrics;->top:F
+    iget v2, v0, Landroid/graphics/Paint$FontMetrics;->top:F
 
     .line 606
-    invoke-static {v8}, Ljava/lang/Math;->abs(F)F
+    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
 
-    move-result v8
+    move-result v2
 
-    iget v9, v0, Landroid/graphics/Paint$FontMetrics;->bottom:F
+    iget v0, v0, Landroid/graphics/Paint$FontMetrics;->bottom:F
 
-    invoke-static {v9}, Ljava/lang/Math;->abs(F)F
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
 
-    move-result v9
+    move-result v0
 
-    add-float/2addr v8, v9
+    add-float/2addr v0, v2
 
-    float-to-double v8, v8
+    float-to-double v2, v0
 
-    invoke-static {v8, v9}, Ljava/lang/Math;->ceil(D)D
+    invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
 
-    move-result-wide v8
+    move-result-wide v2
 
-    double-to-int v8, v8
+    double-to-int v0, v2
 
-    add-int/2addr v7, v8
+    add-int/2addr v0, v1
 
     .line 607
     invoke-virtual {p0}, Lcom/facebook/login/widget/LoginButton;->getCompoundPaddingBottom()I
 
-    move-result v8
+    move-result v1
 
-    add-int v1, v7, v8
+    add-int/2addr v1, v0
 
     .line 609
-    .local v1, "height":I
     invoke-virtual {p0}, Lcom/facebook/login/widget/LoginButton;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v4
+    move-result-object v2
 
     .line 610
-    .local v4, "resources":Landroid/content/res/Resources;
-    iget-object v5, p0, Lcom/facebook/login/widget/LoginButton;->loginText:Ljava/lang/String;
+    iget-object v0, p0, Lcom/facebook/login/widget/LoginButton;->loginText:Ljava/lang/String;
 
     .line 613
-    .local v5, "text":Ljava/lang/String;
-    if-nez v5, :cond_44
+    if-nez v0, :cond_43
 
     .line 614
-    sget v7, Lcom/facebook/R$string;->com_facebook_loginview_log_in_button_long:I
+    sget v0, Lcom/facebook/R$string;->com_facebook_loginview_log_in_button_long:I
 
-    invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+    invoke-virtual {v2, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
     .line 615
-    invoke-direct {p0, v5}, Lcom/facebook/login/widget/LoginButton;->measureButtonWidth(Ljava/lang/String;)I
-
-    move-result v2
-
-    .line 616
-    .local v2, "logInWidth":I
-    invoke-static {v2, p1}, Lcom/facebook/login/widget/LoginButton;->resolveSize(II)I
-
-    move-result v6
-
-    .line 617
-    .local v6, "width":I
-    if-ge v6, v2, :cond_44
-
-    .line 618
-    sget v7, Lcom/facebook/R$string;->com_facebook_loginview_log_in_button:I
-
-    invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    .line 621
-    .end local v2    # "logInWidth":I
-    .end local v6    # "width":I
-    :cond_44
-    invoke-direct {p0, v5}, Lcom/facebook/login/widget/LoginButton;->measureButtonWidth(Ljava/lang/String;)I
-
-    move-result v2
-
-    .line 623
-    .restart local v2    # "logInWidth":I
-    iget-object v5, p0, Lcom/facebook/login/widget/LoginButton;->logoutText:Ljava/lang/String;
-
-    .line 624
-    if-nez v5, :cond_52
-
-    .line 625
-    sget v7, Lcom/facebook/R$string;->com_facebook_loginview_log_out_button:I
-
-    invoke-virtual {v4, v7}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    .line 627
-    :cond_52
-    invoke-direct {p0, v5}, Lcom/facebook/login/widget/LoginButton;->measureButtonWidth(Ljava/lang/String;)I
+    invoke-direct {p0, v0}, Lcom/facebook/login/widget/LoginButton;->measureButtonWidth(Ljava/lang/String;)I
 
     move-result v3
 
+    .line 616
+    invoke-static {v3, p1}, Lcom/facebook/login/widget/LoginButton;->resolveSize(II)I
+
+    move-result v4
+
+    .line 617
+    if-ge v4, v3, :cond_43
+
+    .line 618
+    sget v0, Lcom/facebook/R$string;->com_facebook_loginview_log_in_button:I
+
+    invoke-virtual {v2, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 621
+    :cond_43
+    invoke-direct {p0, v0}, Lcom/facebook/login/widget/LoginButton;->measureButtonWidth(Ljava/lang/String;)I
+
+    move-result v3
+
+    .line 623
+    iget-object v0, p0, Lcom/facebook/login/widget/LoginButton;->logoutText:Ljava/lang/String;
+
+    .line 624
+    if-nez v0, :cond_51
+
+    .line 625
+    sget v0, Lcom/facebook/R$string;->com_facebook_loginview_log_out_button:I
+
+    invoke-virtual {v2, v0}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 627
+    :cond_51
+    invoke-direct {p0, v0}, Lcom/facebook/login/widget/LoginButton;->measureButtonWidth(Ljava/lang/String;)I
+
+    move-result v0
+
     .line 629
-    .local v3, "logOutWidth":I
-    invoke-static {v2, v3}, Ljava/lang/Math;->max(II)I
+    invoke-static {v3, v0}, Ljava/lang/Math;->max(II)I
 
-    move-result v7
+    move-result v0
 
-    invoke-static {v7, p1}, Lcom/facebook/login/widget/LoginButton;->resolveSize(II)I
+    invoke-static {v0, p1}, Lcom/facebook/login/widget/LoginButton;->resolveSize(II)I
 
-    move-result v6
+    move-result v0
 
     .line 630
-    .restart local v6    # "width":I
-    invoke-virtual {p0, v6, v1}, Lcom/facebook/login/widget/LoginButton;->setMeasuredDimension(II)V
+    invoke-virtual {p0, v0, v1}, Lcom/facebook/login/widget/LoginButton;->setMeasuredDimension(II)V
 
     .line 631
     return-void
@@ -1167,8 +1097,6 @@
 
 .method protected onVisibilityChanged(Landroid/view/View;I)V
     .registers 3
-    .param p1, "changedView"    # Landroid/view/View;
-    .param p2, "visibility"    # I
 
     .prologue
     .line 526
@@ -1187,7 +1115,6 @@
 
 .method public registerCallback(Lcom/facebook/CallbackManager;Lcom/facebook/FacebookCallback;)V
     .registers 4
-    .param p1, "callbackManager"    # Lcom/facebook/CallbackManager;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1201,7 +1128,6 @@
 
     .prologue
     .line 445
-    .local p2, "callback":Lcom/facebook/FacebookCallback;, "Lcom/facebook/FacebookCallback<Lcom/facebook/login/LoginResult;>;"
     invoke-virtual {p0}, Lcom/facebook/login/widget/LoginButton;->getLoginManager()Lcom/facebook/login/LoginManager;
 
     move-result-object v0
@@ -1214,7 +1140,6 @@
 
 .method public setDefaultAudience(Lcom/facebook/login/DefaultAudience;)V
     .registers 3
-    .param p1, "defaultAudience"    # Lcom/facebook/login/DefaultAudience;
 
     .prologue
     .line 232
@@ -1228,7 +1153,6 @@
 
 .method public setLoginBehavior(Lcom/facebook/login/LoginBehavior;)V
     .registers 3
-    .param p1, "loginBehavior"    # Lcom/facebook/login/LoginBehavior;
 
     .prologue
     .line 359
@@ -1242,7 +1166,6 @@
 
 .method setLoginManager(Lcom/facebook/login/LoginManager;)V
     .registers 2
-    .param p1, "loginManager"    # Lcom/facebook/login/LoginManager;
 
     .prologue
     .line 761
@@ -1254,7 +1177,6 @@
 
 .method setProperties(Lcom/facebook/login/widget/LoginButton$LoginButtonProperties;)V
     .registers 2
-    .param p1, "properties"    # Lcom/facebook/login/widget/LoginButton$LoginButtonProperties;
 
     .prologue
     .line 539
@@ -1278,7 +1200,6 @@
 
     .prologue
     .line 314
-    .local p1, "permissions":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     iget-object v0, p0, Lcom/facebook/login/widget/LoginButton;->properties:Lcom/facebook/login/widget/LoginButton$LoginButtonProperties;
 
     invoke-virtual {v0, p1}, Lcom/facebook/login/widget/LoginButton$LoginButtonProperties;->setPublishPermissions(Ljava/util/List;)V
@@ -1289,7 +1210,6 @@
 
 .method public varargs setPublishPermissions([Ljava/lang/String;)V
     .registers 4
-    .param p1, "permissions"    # [Ljava/lang/String;
 
     .prologue
     .line 338
@@ -1319,7 +1239,6 @@
 
     .prologue
     .line 266
-    .local p1, "permissions":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     iget-object v0, p0, Lcom/facebook/login/widget/LoginButton;->properties:Lcom/facebook/login/widget/LoginButton$LoginButtonProperties;
 
     invoke-virtual {v0, p1}, Lcom/facebook/login/widget/LoginButton$LoginButtonProperties;->setReadPermissions(Ljava/util/List;)V
@@ -1330,7 +1249,6 @@
 
 .method public varargs setReadPermissions([Ljava/lang/String;)V
     .registers 4
-    .param p1, "permissions"    # [Ljava/lang/String;
 
     .prologue
     .line 289
@@ -1348,7 +1266,6 @@
 
 .method public setToolTipDisplayTime(J)V
     .registers 4
-    .param p1, "displayTime"    # J
 
     .prologue
     .line 414
@@ -1360,7 +1277,6 @@
 
 .method public setToolTipMode(Lcom/facebook/login/widget/LoginButton$ToolTipMode;)V
     .registers 2
-    .param p1, "toolTipMode"    # Lcom/facebook/login/widget/LoginButton$ToolTipMode;
 
     .prologue
     .line 393
@@ -1372,7 +1288,6 @@
 
 .method public setToolTipStyle(Lcom/facebook/login/widget/ToolTipPopup$Style;)V
     .registers 2
-    .param p1, "toolTipStyle"    # Lcom/facebook/login/widget/ToolTipPopup$Style;
 
     .prologue
     .line 382

@@ -3,22 +3,14 @@
 .source "MainDrawerActivity.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/samsung/privilege/activity/MainDrawerActivity$DrawerItemClickListener;
-    }
-.end annotation
-
-
 # instance fields
-.field private mDrawerLayout:Landroid/support/v4/widget/DrawerLayout;
+.field private a:[Ljava/lang/String;
 
-.field private mDrawerList:Landroid/widget/ListView;
+.field private b:Landroid/support/v4/widget/DrawerLayout;
 
-.field private mPlanetTitles:[Ljava/lang/String;
+.field private c:Landroid/widget/ListView;
 
-.field private mTitle:Ljava/lang/CharSequence;
+.field private d:Ljava/lang/CharSequence;
 
 
 # direct methods
@@ -32,25 +24,12 @@
     return-void
 .end method
 
-.method static synthetic access$100(Lcom/samsung/privilege/activity/MainDrawerActivity;I)V
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/MainDrawerActivity;
-    .param p1, "x1"    # I
-
-    .prologue
-    .line 16
-    invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/MainDrawerActivity;->selectItem(I)V
-
-    return-void
-.end method
-
-.method private selectItem(I)V
+.method private a(I)V
     .registers 4
-    .param p1, "position"    # I
 
     .prologue
     .line 105
-    const v0, 0x7f090384
+    const v0, 0x7f0903e3
 
     const/4 v1, 0x0
 
@@ -61,27 +40,37 @@
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
     .line 108
-    iget-object v0, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->mDrawerList:Landroid/widget/ListView;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->c:Landroid/widget/ListView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, p1, v1}, Landroid/widget/ListView;->setItemChecked(IZ)V
 
     .line 109
-    iget-object v0, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->mPlanetTitles:[Ljava/lang/String;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->a:[Ljava/lang/String;
 
     aget-object v0, v0, p1
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/MainDrawerActivity;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 110
-    iget-object v0, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->mDrawerLayout:Landroid/support/v4/widget/DrawerLayout;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->b:Landroid/support/v4/widget/DrawerLayout;
 
-    iget-object v1, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->mDrawerList:Landroid/widget/ListView;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->c:Landroid/widget/ListView;
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/widget/DrawerLayout;->closeDrawer(Landroid/view/View;)V
+    invoke-virtual {v0, v1}, Landroid/support/v4/widget/DrawerLayout;->i(Landroid/view/View;)V
 
     .line 111
+    return-void
+.end method
+
+.method static synthetic a(Lcom/samsung/privilege/activity/MainDrawerActivity;I)V
+    .registers 2
+
+    .prologue
+    .line 16
+    invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/MainDrawerActivity;->a(I)V
+
     return-void
 .end method
 
@@ -89,7 +78,6 @@
 # virtual methods
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .registers 2
-    .param p1, "newConfig"    # Landroid/content/res/Configuration;
 
     .prologue
     .line 85
@@ -101,21 +89,20 @@
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .registers 5
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
     .line 26
     invoke-super {p0, p1}, Landroid/support/v7/app/ActionBarActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 27
-    const v0, 0x7f040034
+    const v0, 0x7f040038
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/MainDrawerActivity;->setContentView(I)V
 
     .line 29
     const-string/jumbo v0, "test"
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->mTitle:Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->d:Ljava/lang/CharSequence;
 
     .line 31
     const/4 v0, 0x3
@@ -140,10 +127,10 @@
 
     aput-object v2, v0, v1
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->mPlanetTitles:[Ljava/lang/String;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->a:[Ljava/lang/String;
 
     .line 32
-    const v0, 0x7f10016a
+    const v0, 0x7f100183
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/MainDrawerActivity;->findViewById(I)Landroid/view/View;
 
@@ -151,10 +138,10 @@
 
     check-cast v0, Landroid/support/v4/widget/DrawerLayout;
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->mDrawerLayout:Landroid/support/v4/widget/DrawerLayout;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->b:Landroid/support/v4/widget/DrawerLayout;
 
     .line 33
-    const v0, 0x7f10016c
+    const v0, 0x7f100185
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/MainDrawerActivity;->findViewById(I)Landroid/view/View;
 
@@ -162,10 +149,10 @@
 
     check-cast v0, Landroid/widget/ListView;
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->mDrawerList:Landroid/widget/ListView;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->c:Landroid/widget/ListView;
 
     .line 39
-    iget-object v0, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->mDrawerList:Landroid/widget/ListView;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->c:Landroid/widget/ListView;
 
     new-instance v1, Lcom/samsung/privilege/activity/MainDrawerActivity$DrawerItemClickListener;
 
@@ -181,7 +168,6 @@
 
 .method public onCreateOptionsMenu(Landroid/view/Menu;)Z
     .registers 3
-    .param p1, "menu"    # Landroid/view/Menu;
 
     .prologue
     .line 73
@@ -192,7 +178,6 @@
 
 .method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
     .registers 3
-    .param p1, "item"    # Landroid/view/MenuItem;
 
     .prologue
     .line 98
@@ -205,7 +190,6 @@
 
 .method protected onPostCreate(Landroid/os/Bundle;)V
     .registers 2
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
     .line 78
@@ -217,20 +201,19 @@
 
 .method public setTitle(Ljava/lang/CharSequence;)V
     .registers 4
-    .param p1, "title"    # Ljava/lang/CharSequence;
 
     .prologue
     .line 115
-    iput-object p1, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->mTitle:Ljava/lang/CharSequence;
+    iput-object p1, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->d:Ljava/lang/CharSequence;
 
     .line 116
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/MainDrawerActivity;->getSupportActionBar()Landroid/support/v7/app/ActionBar;
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/MainDrawerActivity;->b()Landroid/support/v7/app/ActionBar;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->mTitle:Ljava/lang/CharSequence;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/MainDrawerActivity;->d:Ljava/lang/CharSequence;
 
-    invoke-virtual {v0, v1}, Landroid/support/v7/app/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0, v1}, Landroid/support/v7/app/ActionBar;->a(Ljava/lang/CharSequence;)V
 
     .line 117
     return-void

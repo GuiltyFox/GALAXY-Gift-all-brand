@@ -7,13 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider$1;,
-        Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider$ErrorSourceDecoder;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -27,11 +20,11 @@
 
 
 # static fields
-.field private static final ERROR_DECODER:Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider$ErrorSourceDecoder;
+.field private static final a:Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider$ErrorSourceDecoder;
 
 
 # instance fields
-.field private final cacheDecoder:Lcom/bumptech/glide/load/ResourceDecoder;
+.field private final b:Lcom/bumptech/glide/load/ResourceDecoder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/ResourceDecoder",
@@ -43,7 +36,7 @@
     .end annotation
 .end field
 
-.field private final encoder:Lcom/bumptech/glide/load/Encoder;
+.field private final c:Lcom/bumptech/glide/load/Encoder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/Encoder",
@@ -67,7 +60,7 @@
 
     invoke-direct {v0, v1}, Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider$ErrorSourceDecoder;-><init>(Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider$1;)V
 
-    sput-object v0, Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider;->ERROR_DECODER:Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider$ErrorSourceDecoder;
+    sput-object v0, Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider;->a:Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider$ErrorSourceDecoder;
 
     return-void
 .end method
@@ -84,14 +77,14 @@
 
     invoke-direct {v0}, Lcom/bumptech/glide/load/resource/file/FileDecoder;-><init>()V
 
-    iput-object v0, p0, Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider;->cacheDecoder:Lcom/bumptech/glide/load/ResourceDecoder;
+    iput-object v0, p0, Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider;->b:Lcom/bumptech/glide/load/ResourceDecoder;
 
     .line 26
     new-instance v0, Lcom/bumptech/glide/load/model/StreamEncoder;
 
     invoke-direct {v0}, Lcom/bumptech/glide/load/model/StreamEncoder;-><init>()V
 
-    iput-object v0, p0, Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider;->encoder:Lcom/bumptech/glide/load/Encoder;
+    iput-object v0, p0, Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider;->c:Lcom/bumptech/glide/load/Encoder;
 
     .line 27
     return-void
@@ -99,7 +92,7 @@
 
 
 # virtual methods
-.method public getCacheDecoder()Lcom/bumptech/glide/load/ResourceDecoder;
+.method public a()Lcom/bumptech/glide/load/ResourceDecoder;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -114,33 +107,12 @@
 
     .prologue
     .line 31
-    iget-object v0, p0, Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider;->cacheDecoder:Lcom/bumptech/glide/load/ResourceDecoder;
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider;->b:Lcom/bumptech/glide/load/ResourceDecoder;
 
     return-object v0
 .end method
 
-.method public getEncoder()Lcom/bumptech/glide/load/ResourceEncoder;
-    .registers 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/bumptech/glide/load/ResourceEncoder",
-            "<",
-            "Ljava/io/File;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 46
-    invoke-static {}, Lcom/bumptech/glide/load/resource/NullResourceEncoder;->get()Lcom/bumptech/glide/load/resource/NullResourceEncoder;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getSourceDecoder()Lcom/bumptech/glide/load/ResourceDecoder;
+.method public b()Lcom/bumptech/glide/load/ResourceDecoder;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -155,12 +127,12 @@
 
     .prologue
     .line 36
-    sget-object v0, Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider;->ERROR_DECODER:Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider$ErrorSourceDecoder;
+    sget-object v0, Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider;->a:Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider$ErrorSourceDecoder;
 
     return-object v0
 .end method
 
-.method public getSourceEncoder()Lcom/bumptech/glide/load/Encoder;
+.method public c()Lcom/bumptech/glide/load/Encoder;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -174,7 +146,28 @@
 
     .prologue
     .line 41
-    iget-object v0, p0, Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider;->encoder:Lcom/bumptech/glide/load/Encoder;
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/file/StreamFileDataLoadProvider;->c:Lcom/bumptech/glide/load/Encoder;
+
+    return-object v0
+.end method
+
+.method public d()Lcom/bumptech/glide/load/ResourceEncoder;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/bumptech/glide/load/ResourceEncoder",
+            "<",
+            "Ljava/io/File;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 46
+    invoke-static {}, Lcom/bumptech/glide/load/resource/NullResourceEncoder;->b()Lcom/bumptech/glide/load/resource/NullResourceEncoder;
+
+    move-result-object v0
 
     return-object v0
 .end method

@@ -3,19 +3,10 @@
 .source "Spinner.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/rey/material/widget/Spinner;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "RecycleBin"
-.end annotation
-
-
 # instance fields
-.field private final mScrapHeap:Landroid/util/SparseArray;
+.field final synthetic a:Lcom/rey/material/widget/Spinner;
+
+.field private final b:Landroid/util/SparseArray;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/util/SparseArray",
@@ -26,8 +17,6 @@
     .end annotation
 .end field
 
-.field final synthetic this$0:Lcom/rey/material/widget/Spinner;
-
 
 # direct methods
 .method private constructor <init>(Lcom/rey/material/widget/Spinner;)V
@@ -35,7 +24,7 @@
 
     .prologue
     .line 1064
-    iput-object p1, p0, Lcom/rey/material/widget/Spinner$RecycleBin;->this$0:Lcom/rey/material/widget/Spinner;
+    iput-object p1, p0, Lcom/rey/material/widget/Spinner$RecycleBin;->a:Lcom/rey/material/widget/Spinner;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -44,15 +33,13 @@
 
     invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
 
-    iput-object v0, p0, Lcom/rey/material/widget/Spinner$RecycleBin;->mScrapHeap:Landroid/util/SparseArray;
+    iput-object v0, p0, Lcom/rey/material/widget/Spinner$RecycleBin;->b:Landroid/util/SparseArray;
 
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/rey/material/widget/Spinner;Lcom/rey/material/widget/Spinner$1;)V
     .registers 3
-    .param p1, "x0"    # Lcom/rey/material/widget/Spinner;
-    .param p2, "x1"    # Lcom/rey/material/widget/Spinner$1;
 
     .prologue
     .line 1064
@@ -63,41 +50,24 @@
 
 
 # virtual methods
-.method clear()V
-    .registers 2
-
-    .prologue
-    .line 1080
-    iget-object v0, p0, Lcom/rey/material/widget/Spinner$RecycleBin;->mScrapHeap:Landroid/util/SparseArray;
-
-    .line 1081
-    .local v0, "scrapHeap":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/view/View;>;"
-    invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
-
-    .line 1082
-    return-void
-.end method
-
-.method get(I)Landroid/view/View;
+.method a(I)Landroid/view/View;
     .registers 4
-    .param p1, "type"    # I
 
     .prologue
     .line 1072
-    iget-object v1, p0, Lcom/rey/material/widget/Spinner$RecycleBin;->mScrapHeap:Landroid/util/SparseArray;
+    iget-object v0, p0, Lcom/rey/material/widget/Spinner$RecycleBin;->b:Landroid/util/SparseArray;
 
-    invoke-virtual {v1, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Landroid/util/SparseArray;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/View;
 
     .line 1073
-    .local v0, "result":Landroid/view/View;
     if-eqz v0, :cond_f
 
     .line 1074
-    iget-object v1, p0, Lcom/rey/material/widget/Spinner$RecycleBin;->mScrapHeap:Landroid/util/SparseArray;
+    iget-object v1, p0, Lcom/rey/material/widget/Spinner$RecycleBin;->b:Landroid/util/SparseArray;
 
     invoke-virtual {v1, p1}, Landroid/util/SparseArray;->delete(I)V
 
@@ -106,14 +76,26 @@
     return-object v0
 .end method
 
-.method public put(ILandroid/view/View;)V
+.method a()V
+    .registers 2
+
+    .prologue
+    .line 1080
+    iget-object v0, p0, Lcom/rey/material/widget/Spinner$RecycleBin;->b:Landroid/util/SparseArray;
+
+    .line 1081
+    invoke-virtual {v0}, Landroid/util/SparseArray;->clear()V
+
+    .line 1082
+    return-void
+.end method
+
+.method public a(ILandroid/view/View;)V
     .registers 4
-    .param p1, "type"    # I
-    .param p2, "v"    # Landroid/view/View;
 
     .prologue
     .line 1068
-    iget-object v0, p0, Lcom/rey/material/widget/Spinner$RecycleBin;->mScrapHeap:Landroid/util/SparseArray;
+    iget-object v0, p0, Lcom/rey/material/widget/Spinner$RecycleBin;->b:Landroid/util/SparseArray;
 
     invoke-virtual {v0, p1, p2}, Landroid/util/SparseArray;->put(ILjava/lang/Object;)V
 

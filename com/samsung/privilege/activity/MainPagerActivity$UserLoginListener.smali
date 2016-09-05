@@ -6,19 +6,8 @@
 .implements Lcom/bzbs/event/LoginEvents$LoginListener;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "UserLoginListener"
-.end annotation
-
-
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+.field final synthetic a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
 
 # direct methods
@@ -26,8 +15,8 @@
     .registers 2
 
     .prologue
-    .line 1344
-    iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .line 1398
+    iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,11 +25,9 @@
 
 .method synthetic constructor <init>(Lcom/samsung/privilege/activity/MainPagerActivity;Lcom/samsung/privilege/activity/MainPagerActivity$1;)V
     .registers 3
-    .param p1, "x0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
-    .param p2, "x1"    # Lcom/samsung/privilege/activity/MainPagerActivity$1;
 
     .prologue
-    .line 1344
+    .line 1398
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener;-><init>(Lcom/samsung/privilege/activity/MainPagerActivity;)V
 
     return-void
@@ -48,48 +35,14 @@
 
 
 # virtual methods
-.method public onAuthenOTPSuccess(Ljava/lang/String;)V
-    .registers 2
-    .param p1, "action"    # Ljava/lang/String;
-
-    .prologue
-    .line 1386
-    return-void
-.end method
-
-.method public onLoginDeviceSuccess(Ljava/lang/String;)V
+.method public a(Ljava/lang/String;)V
     .registers 4
-    .param p1, "action"    # Ljava/lang/String;
 
     .prologue
-    .line 1366
-    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .line 1401
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$900(Lcom/samsung/privilege/activity/MainPagerActivity;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener$2;
-
-    invoke-direct {v1, p0, p1}, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener$2;-><init>(Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener;Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 1381
-    return-void
-.end method
-
-.method public onLoginFacebookSuccess(Ljava/lang/String;)V
-    .registers 4
-    .param p1, "action"    # Ljava/lang/String;
-
-    .prologue
-    .line 1347
-    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$900(Lcom/samsung/privilege/activity/MainPagerActivity;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->g(Lcom/samsung/privilege/activity/MainPagerActivity;)Landroid/os/Handler;
 
     move-result-object v0
 
@@ -99,6 +52,35 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1362
+    .line 1416
+    return-void
+.end method
+
+.method public b(Ljava/lang/String;)V
+    .registers 4
+
+    .prologue
+    .line 1420
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    invoke-static {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->g(Lcom/samsung/privilege/activity/MainPagerActivity;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener$2;
+
+    invoke-direct {v1, p0, p1}, Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener$2;-><init>(Lcom/samsung/privilege/activity/MainPagerActivity$UserLoginListener;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 1435
+    return-void
+.end method
+
+.method public c(Ljava/lang/String;)V
+    .registers 2
+
+    .prologue
+    .line 1440
     return-void
 .end method

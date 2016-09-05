@@ -22,7 +22,7 @@
 
 
 # instance fields
-.field private final uriLoader:Lcom/bumptech/glide/load/model/ModelLoader;
+.field private final a:Lcom/bumptech/glide/load/model/ModelLoader;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/ModelLoader",
@@ -49,12 +49,10 @@
 
     .prologue
     .line 19
-    .local p0, "this":Lcom/bumptech/glide/load/model/FileLoader;, "Lcom/bumptech/glide/load/model/FileLoader<TT;>;"
-    .local p1, "uriLoader":Lcom/bumptech/glide/load/model/ModelLoader;, "Lcom/bumptech/glide/load/model/ModelLoader<Landroid/net/Uri;TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 20
-    iput-object p1, p0, Lcom/bumptech/glide/load/model/FileLoader;->uriLoader:Lcom/bumptech/glide/load/model/ModelLoader;
+    iput-object p1, p0, Lcom/bumptech/glide/load/model/FileLoader;->a:Lcom/bumptech/glide/load/model/ModelLoader;
 
     .line 21
     return-void
@@ -62,11 +60,8 @@
 
 
 # virtual methods
-.method public getResourceFetcher(Ljava/io/File;II)Lcom/bumptech/glide/load/data/DataFetcher;
+.method public a(Ljava/io/File;II)Lcom/bumptech/glide/load/data/DataFetcher;
     .registers 6
-    .param p1, "model"    # Ljava/io/File;
-    .param p2, "width"    # I
-    .param p3, "height"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -79,33 +74,27 @@
 
     .prologue
     .line 25
-    .local p0, "this":Lcom/bumptech/glide/load/model/FileLoader;, "Lcom/bumptech/glide/load/model/FileLoader<TT;>;"
-    iget-object v0, p0, Lcom/bumptech/glide/load/model/FileLoader;->uriLoader:Lcom/bumptech/glide/load/model/ModelLoader;
+    iget-object v0, p0, Lcom/bumptech/glide/load/model/FileLoader;->a:Lcom/bumptech/glide/load/model/ModelLoader;
 
     invoke-static {p1}, Landroid/net/Uri;->fromFile(Ljava/io/File;)Landroid/net/Uri;
 
     move-result-object v1
 
-    invoke-interface {v0, v1, p2, p3}, Lcom/bumptech/glide/load/model/ModelLoader;->getResourceFetcher(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
+    invoke-interface {v0, v1, p2, p3}, Lcom/bumptech/glide/load/model/ModelLoader;->a(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public bridge synthetic getResourceFetcher(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
+.method public bridge synthetic a(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
     .registers 5
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # I
-    .param p3, "x2"    # I
 
     .prologue
     .line 15
-    .local p0, "this":Lcom/bumptech/glide/load/model/FileLoader;, "Lcom/bumptech/glide/load/model/FileLoader<TT;>;"
     check-cast p1, Ljava/io/File;
 
-    .end local p1    # "x0":Ljava/lang/Object;
-    invoke-virtual {p0, p1, p2, p3}, Lcom/bumptech/glide/load/model/FileLoader;->getResourceFetcher(Ljava/io/File;II)Lcom/bumptech/glide/load/data/DataFetcher;
+    invoke-virtual {p0, p1, p2, p3}, Lcom/bumptech/glide/load/model/FileLoader;->a(Ljava/io/File;II)Lcom/bumptech/glide/load/data/DataFetcher;
 
     move-result-object v0
 

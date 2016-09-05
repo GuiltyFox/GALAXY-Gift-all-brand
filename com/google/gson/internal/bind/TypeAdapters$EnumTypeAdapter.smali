@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/gson/internal/bind/TypeAdapters;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "EnumTypeAdapter"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -25,18 +16,7 @@
 
 
 # instance fields
-.field private final constantToName:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map",
-            "<TT;",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final nameToConstant:Ljava/util/Map;
+.field private final a:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",
@@ -47,10 +27,21 @@
     .end annotation
 .end field
 
+.field private final b:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<TT;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Class;)V
-    .registers 15
+    .registers 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -60,164 +51,134 @@
     .end annotation
 
     .prologue
+    const/4 v3, 0x0
+
     .line 723
-    .local p0, "this":Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;, "Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter<TT;>;"
-    .local p1, "classOfT":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     invoke-direct {p0}, Lcom/google/gson/TypeAdapter;-><init>()V
 
     .line 720
-    new-instance v11, Ljava/util/HashMap;
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {v11}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v11, p0, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;->nameToConstant:Ljava/util/Map;
+    iput-object v0, p0, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;->a:Ljava/util/Map;
 
     .line 721
-    new-instance v11, Ljava/util/HashMap;
+    new-instance v0, Ljava/util/HashMap;
 
-    invoke-direct {v11}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v11, p0, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;->constantToName:Ljava/util/Map;
+    iput-object v0, p0, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;->b:Ljava/util/Map;
 
     .line 725
-    :try_start_11
+    :try_start_12
     invoke-virtual {p1}, Ljava/lang/Class;->getEnumConstants()[Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Ljava/lang/Enum;
+
+    array-length v5, v0
+
+    move v4, v3
+
+    :goto_1a
+    if-ge v4, v5, :cond_5c
+
+    aget-object v6, v0, v4
+
+    .line 726
+    invoke-virtual {v6}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v2
 
-    check-cast v2, [Ljava/lang/Enum;
-
-    .local v2, "arr$":[Ljava/lang/Enum;
-    array-length v8, v2
-
-    .local v8, "len$":I
-    const/4 v6, 0x0
-
-    .local v6, "i$":I
-    move v7, v6
-
-    .end local v2    # "arr$":[Ljava/lang/Enum;
-    .end local v6    # "i$":I
-    .end local v8    # "len$":I
-    .local v7, "i$":I
-    :goto_1a
-    if-ge v7, v8, :cond_5b
-
-    aget-object v4, v2, v7
-
-    .line 726
-    .local v4, "constant":Ljava/lang/Enum;, "TT;"
-    invoke-virtual {v4}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    move-result-object v10
-
     .line 727
-    .local v10, "name":Ljava/lang/String;
-    invoke-virtual {p1, v10}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-virtual {p1, v2}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
-    move-result-object v11
+    move-result-object v1
 
-    const-class v12, Lcom/google/gson/annotations/SerializedName;
+    const-class v7, Lcom/google/gson/annotations/SerializedName;
 
-    invoke-virtual {v11, v12}, Ljava/lang/reflect/Field;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    invoke-virtual {v1, v7}, Ljava/lang/reflect/Field;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v1
 
     check-cast v1, Lcom/google/gson/annotations/SerializedName;
 
     .line 728
-    .local v1, "annotation":Lcom/google/gson/annotations/SerializedName;
     if-eqz v1, :cond_46
 
     .line 729
-    invoke-interface {v1}, Lcom/google/gson/annotations/SerializedName;->value()Ljava/lang/String;
+    invoke-interface {v1}, Lcom/google/gson/annotations/SerializedName;->a()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v2
 
     .line 730
-    invoke-interface {v1}, Lcom/google/gson/annotations/SerializedName;->alternate()[Ljava/lang/String;
+    invoke-interface {v1}, Lcom/google/gson/annotations/SerializedName;->b()[Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v7
 
-    .local v3, "arr$":[Ljava/lang/String;
-    array-length v9, v3
+    array-length v8, v7
 
-    .local v9, "len$":I
-    const/4 v6, 0x0
+    move v1, v3
 
-    .end local v7    # "i$":I
-    .restart local v6    # "i$":I
     :goto_3a
-    if-ge v6, v9, :cond_46
+    if-ge v1, v8, :cond_46
 
-    aget-object v0, v3, v6
+    aget-object v9, v7, v1
 
     .line 731
-    .local v0, "alternate":Ljava/lang/String;
-    iget-object v11, p0, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;->nameToConstant:Ljava/util/Map;
+    iget-object v10, p0, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;->a:Ljava/util/Map;
 
-    invoke-interface {v11, v0, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v10, v9, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 730
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_3a
 
-    .line 734
-    .end local v0    # "alternate":Ljava/lang/String;
-    .end local v3    # "arr$":[Ljava/lang/String;
-    .end local v6    # "i$":I
-    .end local v9    # "len$":I
     :cond_46
-    iget-object v11, p0, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;->nameToConstant:Ljava/util/Map;
+    move-object v1, v2
 
-    invoke-interface {v11, v10, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 734
+    iget-object v2, p0, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;->a:Ljava/util/Map;
+
+    invoke-interface {v2, v1, v6}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 735
-    iget-object v11, p0, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;->constantToName:Ljava/util/Map;
+    iget-object v2, p0, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;->b:Ljava/util/Map;
 
-    invoke-interface {v11, v4, v10}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_50
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_11 .. :try_end_50} :catch_54
+    invoke-interface {v2, v6, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_51
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_12 .. :try_end_51} :catch_55
 
     .line 725
-    add-int/lit8 v6, v7, 0x1
+    add-int/lit8 v1, v4, 0x1
 
-    .restart local v6    # "i$":I
-    move v7, v6
+    move v4, v1
 
-    .end local v6    # "i$":I
-    .restart local v7    # "i$":I
     goto :goto_1a
 
     .line 737
-    .end local v1    # "annotation":Lcom/google/gson/annotations/SerializedName;
-    .end local v4    # "constant":Ljava/lang/Enum;, "TT;"
-    .end local v7    # "i$":I
-    .end local v10    # "name":Ljava/lang/String;
-    :catch_54
-    move-exception v5
+    :catch_55
+    move-exception v0
 
     .line 738
-    .local v5, "e":Ljava/lang/NoSuchFieldException;
-    new-instance v11, Ljava/lang/AssertionError;
+    new-instance v0, Ljava/lang/AssertionError;
 
-    invoke-direct {v11}, Ljava/lang/AssertionError;-><init>()V
+    invoke-direct {v0}, Ljava/lang/AssertionError;-><init>()V
 
-    throw v11
+    throw v0
 
     .line 740
-    .end local v5    # "e":Ljava/lang/NoSuchFieldException;
-    .restart local v7    # "i$":I
-    :cond_5b
+    :cond_5c
     return-void
 .end method
 
 
 # virtual methods
-.method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Enum;
+.method public a(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Enum;
     .registers 4
-    .param p1, "in"    # Lcom/google/gson/stream/JsonReader;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -226,15 +187,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
     .prologue
     .line 742
-    .local p0, "this":Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;, "Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter<TT;>;"
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
 
     move-result-object v0
@@ -254,7 +208,7 @@
     return-object v0
 
     :cond_d
-    iget-object v0, p0, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;->nameToConstant:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;->a:Ljava/util/Map;
 
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextString()Ljava/lang/String;
 
@@ -269,28 +223,8 @@
     goto :goto_c
 .end method
 
-.method public bridge synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
-    .registers 3
-    .param p1, "x0"    # Lcom/google/gson/stream/JsonReader;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .prologue
-    .line 719
-    .local p0, "this":Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;, "Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter<TT;>;"
-    invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Enum;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Enum;)V
+.method public a(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Enum;)V
     .registers 4
-    .param p1, "out"    # Lcom/google/gson/stream/JsonWriter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -299,16 +233,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
     .prologue
     .line 750
-    .local p0, "this":Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;, "Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter<TT;>;"
-    .local p2, "value":Ljava/lang/Enum;, "TT;"
     if-nez p2, :cond_7
 
     const/4 v0, 0x0
@@ -321,7 +247,7 @@
 
     .line 750
     :cond_7
-    iget-object v0, p0, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;->constantToName:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;->b:Ljava/util/Map;
 
     invoke-interface {v0, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -332,23 +258,26 @@
     goto :goto_3
 .end method
 
-.method public bridge synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
+.method public bridge synthetic a(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .registers 3
-    .param p1, "x0"    # Lcom/google/gson/stream/JsonWriter;
-    .param p2, "x1"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 719
-    .local p0, "this":Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;, "Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter<TT;>;"
     check-cast p2, Ljava/lang/Enum;
 
-    .end local p2    # "x1":Ljava/lang/Object;
-    invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;->write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Enum;)V
+    invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;->a(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Enum;)V
 
     return-void
+.end method
+
+.method public synthetic b(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+    .registers 3
+
+    .prologue
+    .line 719
+    invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/TypeAdapters$EnumTypeAdapter;->a(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Enum;
+
+    move-result-object v0
+
+    return-object v0
 .end method

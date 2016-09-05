@@ -56,7 +56,6 @@
 
 .method public constructor <init>([Ljava/lang/String;)V
     .registers 5
-    .param p1, "allowedContentTypes"    # [Ljava/lang/String;
 
     .prologue
     .line 77
@@ -118,8 +117,6 @@
 
 .method public constructor <init>([Ljava/lang/String;Landroid/os/Looper;)V
     .registers 6
-    .param p1, "allowedContentTypes"    # [Ljava/lang/String;
-    .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
     .line 93
@@ -199,62 +196,54 @@
 
 .method public final sendResponseMessage(Lcz/msebera/android/httpclient/HttpResponse;)V
     .registers 16
-    .param p1, "response"    # Lcz/msebera/android/httpclient/HttpResponse;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     const/4 v13, 0x0
 
-    const/4 v6, 0x0
+    const/4 v1, 0x1
+
+    const/4 v0, 0x0
 
     .line 119
-    invoke-interface {p1}, Lcz/msebera/android/httpclient/HttpResponse;->getStatusLine()Lcz/msebera/android/httpclient/StatusLine;
+    invoke-interface {p1}, Lcz/msebera/android/httpclient/HttpResponse;->a()Lcz/msebera/android/httpclient/StatusLine;
 
-    move-result-object v5
+    move-result-object v4
 
     .line 120
-    .local v5, "status":Lcz/msebera/android/httpclient/StatusLine;
-    const-string/jumbo v7, "Content-Type"
+    const-string/jumbo v2, "Content-Type"
 
-    invoke-interface {p1, v7}, Lcz/msebera/android/httpclient/HttpResponse;->getHeaders(Ljava/lang/String;)[Lcz/msebera/android/httpclient/Header;
+    invoke-interface {p1, v2}, Lcz/msebera/android/httpclient/HttpResponse;->getHeaders(Ljava/lang/String;)[Lcz/msebera/android/httpclient/Header;
 
     move-result-object v2
 
     .line 121
-    .local v2, "contentTypeHeaders":[Lcz/msebera/android/httpclient/Header;
-    array-length v7, v2
+    array-length v3, v2
 
-    const/4 v8, 0x1
-
-    if-eq v7, v8, :cond_29
+    if-eq v3, v1, :cond_29
 
     .line 124
-    invoke-interface {v5}, Lcz/msebera/android/httpclient/StatusLine;->getStatusCode()I
+    invoke-interface {v4}, Lcz/msebera/android/httpclient/StatusLine;->b()I
 
-    move-result v6
+    move-result v0
 
     .line 125
     invoke-interface {p1}, Lcz/msebera/android/httpclient/HttpResponse;->getAllHeaders()[Lcz/msebera/android/httpclient/Header;
 
-    move-result-object v7
+    move-result-object v1
 
-    new-instance v8, Lcz/msebera/android/httpclient/client/HttpResponseException;
+    new-instance v2, Lcz/msebera/android/httpclient/client/HttpResponseException;
 
     .line 128
-    invoke-interface {v5}, Lcz/msebera/android/httpclient/StatusLine;->getStatusCode()I
+    invoke-interface {v4}, Lcz/msebera/android/httpclient/StatusLine;->b()I
 
-    move-result v9
+    move-result v3
 
-    const-string/jumbo v10, "None, or more than one, Content-Type Header found!"
+    const-string/jumbo v4, "None, or more than one, Content-Type Header found!"
 
-    invoke-direct {v8, v9, v10}, Lcz/msebera/android/httpclient/client/HttpResponseException;-><init>(ILjava/lang/String;)V
+    invoke-direct {v2, v3, v4}, Lcz/msebera/android/httpclient/client/HttpResponseException;-><init>(ILjava/lang/String;)V
 
     .line 123
-    invoke-virtual {p0, v6, v7, v13, v8}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->sendFailureMessage(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
+    invoke-virtual {p0, v0, v1, v13, v2}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->sendFailureMessage(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
 
     .line 159
     :goto_28
@@ -262,56 +251,52 @@
 
     .line 134
     :cond_29
-    aget-object v1, v2, v6
-
-    .line 135
-    .local v1, "contentTypeHeader":Lcz/msebera/android/httpclient/Header;
-    const/4 v4, 0x0
+    aget-object v5, v2, v0
 
     .line 136
-    .local v4, "foundAllowedContentType":Z
     invoke-virtual {p0}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->getAllowedContentTypes()[Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v6
 
-    array-length v8, v7
+    array-length v7, v6
+
+    move v3, v0
 
     :goto_31
-    if-ge v6, v8, :cond_61
+    if-ge v3, v7, :cond_62
 
-    aget-object v0, v7, v6
+    aget-object v8, v6, v3
 
     .line 138
-    .local v0, "anAllowedContentType":Ljava/lang/String;
     :try_start_35
-    invoke-interface {v1}, Lcz/msebera/android/httpclient/Header;->getValue()Ljava/lang/String;
+    invoke-interface {v5}, Lcz/msebera/android/httpclient/Header;->d()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v2
 
-    invoke-static {v0, v9}, Ljava/util/regex/Pattern;->matches(Ljava/lang/String;Ljava/lang/CharSequence;)Z
+    invoke-static {v8, v2}, Ljava/util/regex/Pattern;->matches(Ljava/lang/String;Ljava/lang/CharSequence;)Z
     :try_end_3c
-    .catch Ljava/util/regex/PatternSyntaxException; {:try_start_35 .. :try_end_3c} :catch_43
+    .catch Ljava/util/regex/PatternSyntaxException; {:try_start_35 .. :try_end_3c} :catch_44
 
-    move-result v9
+    move-result v2
 
-    if-eqz v9, :cond_40
+    if-eqz v2, :cond_40
 
-    .line 139
-    const/4 v4, 0x1
+    move v0, v1
 
     .line 136
     :cond_40
     :goto_40
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v2, v3, 0x1
+
+    move v3, v2
 
     goto :goto_31
 
     .line 141
-    :catch_43
-    move-exception v3
+    :catch_44
+    move-exception v2
 
     .line 142
-    .local v3, "e":Ljava/util/regex/PatternSyntaxException;
     sget-object v9, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
 
     const-string/jumbo v10, "BinaryHttpRH"
@@ -326,79 +311,77 @@
 
     move-result-object v11
 
-    invoke-virtual {v11, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v11, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v11
+    move-result-object v8
 
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v8
 
-    invoke-interface {v9, v10, v11, v3}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-interface {v9, v10, v8, v2}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     goto :goto_40
 
     .line 145
-    .end local v0    # "anAllowedContentType":Ljava/lang/String;
-    .end local v3    # "e":Ljava/util/regex/PatternSyntaxException;
-    :cond_61
-    if-nez v4, :cond_97
+    :cond_62
+    if-nez v0, :cond_98
 
     .line 148
-    invoke-interface {v5}, Lcz/msebera/android/httpclient/StatusLine;->getStatusCode()I
+    invoke-interface {v4}, Lcz/msebera/android/httpclient/StatusLine;->b()I
 
-    move-result v6
+    move-result v0
 
     .line 149
     invoke-interface {p1}, Lcz/msebera/android/httpclient/HttpResponse;->getAllHeaders()[Lcz/msebera/android/httpclient/Header;
 
-    move-result-object v7
+    move-result-object v1
 
-    new-instance v8, Lcz/msebera/android/httpclient/client/HttpResponseException;
+    new-instance v2, Lcz/msebera/android/httpclient/client/HttpResponseException;
 
     .line 152
-    invoke-interface {v5}, Lcz/msebera/android/httpclient/StatusLine;->getStatusCode()I
+    invoke-interface {v4}, Lcz/msebera/android/httpclient/StatusLine;->b()I
 
-    move-result v9
+    move-result v3
 
-    new-instance v10, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v11, "Content-Type ("
+    const-string/jumbo v6, "Content-Type ("
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v4
 
     .line 153
-    invoke-interface {v1}, Lcz/msebera/android/httpclient/Header;->getValue()Ljava/lang/String;
+    invoke-interface {v5}, Lcz/msebera/android/httpclient/Header;->d()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v5
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v4
 
-    const-string/jumbo v11, ") not allowed!"
+    const-string/jumbo v5, ") not allowed!"
 
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v10
+    move-result-object v4
 
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v4
 
-    invoke-direct {v8, v9, v10}, Lcz/msebera/android/httpclient/client/HttpResponseException;-><init>(ILjava/lang/String;)V
+    invoke-direct {v2, v3, v4}, Lcz/msebera/android/httpclient/client/HttpResponseException;-><init>(ILjava/lang/String;)V
 
     .line 147
-    invoke-virtual {p0, v6, v7, v13, v8}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->sendFailureMessage(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
+    invoke-virtual {p0, v0, v1, v13, v2}, Lcom/loopj/android/http/BinaryHttpResponseHandler;->sendFailureMessage(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
 
     goto :goto_28
 
     .line 158
-    :cond_97
+    :cond_98
     invoke-super {p0, p1}, Lcom/loopj/android/http/AsyncHttpResponseHandler;->sendResponseMessage(Lcz/msebera/android/httpclient/HttpResponse;)V
 
     goto :goto_28

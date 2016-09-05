@@ -1,253 +1,224 @@
 .class Lcom/samsung/privilege/activity/MainPagerActivity$20;
-.super Lcom/loopj/android/http/AsyncHttpResponseHandler;
+.super Lcom/bzbs/lib/http/okhttp/ResponseListener;
 .source "MainPagerActivity.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;->getPoints()V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/samsung/privilege/activity/MainPagerActivity;->i()V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+.field final synthetic a:J
 
-.field final synthetic val$startTime:J
+.field final synthetic b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/MainPagerActivity;J)V
     .registers 4
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
 
     .prologue
-    .line 1566
-    iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .line 1626
+    iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    iput-wide p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->val$startTime:J
+    iput-wide p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->a:J
 
-    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
+    invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onFailure(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
+.method public failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
     .registers 13
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBody"    # [B
-    .param p4, "error"    # Ljava/lang/Throwable;
 
     .prologue
-    .line 1597
-    :try_start_0
-    new-instance v2, Ljava/util/Date;
+    .line 1655
+    invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    invoke-direct {v2}, Ljava/util/Date;-><init>()V
+    .line 1658
+    :try_start_3
+    new-instance v0, Ljava/util/Date;
 
-    invoke-virtual {v2}, Ljava/util/Date;->getTime()J
+    invoke-direct {v0}, Ljava/util/Date;-><init>()V
+
+    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
 
     move-result-wide v0
 
-    .line 1598
-    .local v0, "endTime":J
+    .line 1659
     const-string/jumbo v2, "MainPager"
 
     const-string/jumbo v3, "getPoints"
 
     const-string/jumbo v4, "Failure"
 
-    iget-wide v6, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->val$startTime:J
+    iget-wide v6, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->a:J
 
-    sub-long v6, v0, v6
+    sub-long/2addr v0, v6
 
-    invoke-static {v2, v3, v4, v6, v7}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsTiming(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
-    :try_end_19
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_19} :catch_1a
+    invoke-static {v2, v3, v4, v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
+    :try_end_1b
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_1c
 
-    .line 1602
-    .end local v0    # "endTime":J
-    :goto_19
+    .line 1663
+    :goto_1b
     return-void
 
-    .line 1599
-    :catch_1a
-    move-exception v2
+    .line 1660
+    :catch_1c
+    move-exception v0
 
-    goto :goto_19
+    goto :goto_1b
 .end method
 
-.method public onSuccess(I[Lcz/msebera/android/httpclient/Header;[B)V
-    .registers 16
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBody"    # [B
+.method public successfully(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
+    .registers 13
 
     .prologue
-    .line 1570
+    .line 1630
     :try_start_0
-    new-instance v7, Ljava/util/Date;
+    new-instance v0, Ljava/util/Date;
 
-    invoke-direct {v7}, Ljava/util/Date;-><init>()V
+    invoke-direct {v0}, Ljava/util/Date;-><init>()V
 
-    invoke-virtual {v7}, Ljava/util/Date;->getTime()J
+    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
 
     move-result-wide v0
 
-    .line 1571
-    .local v0, "endTime":J
-    const-string/jumbo v7, "MainPager"
+    .line 1631
+    const-string/jumbo v2, "MainPager"
 
-    const-string/jumbo v8, "getPoints"
+    const-string/jumbo v3, "getPoints"
 
-    const-string/jumbo v9, "Success"
+    const-string/jumbo v4, "Success"
 
-    iget-wide v10, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->val$startTime:J
+    iget-wide v6, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->a:J
 
-    sub-long v10, v0, v10
+    sub-long/2addr v0, v6
 
-    invoke-static {v7, v8, v9, v10, v11}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsTiming(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
-    :try_end_19
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_19} :catch_89
+    invoke-static {v2, v3, v4, v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
+    :try_end_18
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_83
 
-    .line 1576
-    .end local v0    # "endTime":J
-    :goto_19
-    new-instance v6, Ljava/lang/String;
+    .line 1636
+    :goto_18
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    invoke-direct {v6, p3}, Ljava/lang/String;-><init>([B)V
+    invoke-static {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->a(Lcom/samsung/privilege/activity/MainPagerActivity;)Ljava/lang/String;
 
-    .line 1577
-    .local v6, "response_text":Ljava/lang/String;
-    iget-object v7, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    move-result-object v0
 
-    # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->TAG:Ljava/lang/String;
-    invoke-static {v7}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$200(Lcom/samsung/privilege/activity/MainPagerActivity;)Ljava/lang/String;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    const-string/jumbo v2, "(getPoints|onComplete)response_code="
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v9, "(getPoints|onComplete)response_code="
+    move-result-object v1
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v1
 
-    invoke-virtual {v8, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string/jumbo v2, ",response="
 
-    move-result-object v8
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v9, ",response="
+    move-result-object v1
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v1
 
-    invoke-virtual {v8, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v1
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v8
+    .line 1639
+    :try_start_40
+    new-instance v0, Lorg/json/JSONObject;
 
-    invoke-static {v7, v8}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1580
-    :try_start_46
-    new-instance v3, Lorg/json/JSONObject;
+    .line 1640
+    const-string/jumbo v1, "points"
 
-    invoke-direct {v3, v6}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->c(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    .line 1581
-    .local v3, "jsonRoot":Lorg/json/JSONObject;
-    const-string/jumbo v7, "points"
+    move-result-wide v0
 
-    invoke-static {v3, v7}, Lcom/bzbs/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
+    .line 1641
+    iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    move-result-wide v4
+    invoke-virtual {v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->getApplicationContext()Landroid/content/Context;
 
-    .line 1582
-    .local v4, "points":J
-    iget-object v7, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    move-result-object v2
 
-    invoke-virtual {v7}, Lcom/samsung/privilege/activity/MainPagerActivity;->getApplicationContext()Landroid/content/Context;
+    invoke-static {v2, v0, v1}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;J)Z
 
-    move-result-object v7
+    .line 1643
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    invoke-static {v7, v4, v5}, Lcom/bzbs/data/UserLogin;->SetPoints(Landroid/content/Context;J)Z
+    new-instance v1, Lcom/samsung/privilege/activity/MainPagerActivity$20$1;
 
-    .line 1584
-    iget-object v7, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    invoke-direct {v1, p0}, Lcom/samsung/privilege/activity/MainPagerActivity$20$1;-><init>(Lcom/samsung/privilege/activity/MainPagerActivity$20;)V
 
-    new-instance v8, Lcom/samsung/privilege/activity/MainPagerActivity$20$1;
+    invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->runOnUiThread(Ljava/lang/Runnable;)V
+    :try_end_5f
+    .catch Ljava/lang/Exception; {:try_start_40 .. :try_end_5f} :catch_60
 
-    invoke-direct {v8, p0}, Lcom/samsung/privilege/activity/MainPagerActivity$20$1;-><init>(Lcom/samsung/privilege/activity/MainPagerActivity$20;)V
-
-    invoke-virtual {v7, v8}, Lcom/samsung/privilege/activity/MainPagerActivity;->runOnUiThread(Ljava/lang/Runnable;)V
-    :try_end_65
-    .catch Ljava/lang/Exception; {:try_start_46 .. :try_end_65} :catch_66
-
-    .line 1592
-    .end local v3    # "jsonRoot":Lorg/json/JSONObject;
-    .end local v4    # "points":J
-    :goto_65
+    .line 1651
+    :goto_5f
     return-void
 
-    .line 1589
-    :catch_66
-    move-exception v2
+    .line 1648
+    :catch_60
+    move-exception v0
 
-    .line 1590
-    .local v2, "ex":Ljava/lang/Exception;
-    iget-object v7, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .line 1649
+    iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->TAG:Ljava/lang/String;
-    invoke-static {v7}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$200(Lcom/samsung/privilege/activity/MainPagerActivity;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->a(Lcom/samsung/privilege/activity/MainPagerActivity;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v1
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v9, "(getPoints|Exception):"
+    const-string/jumbo v3, "(getPoints|Exception):"
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v2
 
-    invoke-virtual {v2}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v0
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v0
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v0
 
-    invoke-static {v7, v8}, Lcom/bzbs/util/LogUtil;->LogE(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_65
+    goto :goto_5f
 
-    .line 1572
-    .end local v2    # "ex":Ljava/lang/Exception;
-    .end local v6    # "response_text":Ljava/lang/String;
-    :catch_89
-    move-exception v7
+    .line 1632
+    :catch_83
+    move-exception v0
 
-    goto :goto_19
+    goto :goto_18
 .end method

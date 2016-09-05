@@ -4,20 +4,8 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 22
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method static scrollListBy(Landroid/widget/ListView;I)V
+.method static a(Landroid/widget/ListView;I)V
     .registers 2
-    .param p0, "listView"    # Landroid/widget/ListView;
-    .param p1, "y"    # I
 
     .prologue
     .line 24

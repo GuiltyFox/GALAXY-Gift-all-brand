@@ -6,11 +6,11 @@
 
 
 # static fields
-.field private static final zzaRh:Landroid/net/Uri;
+.field private static final a:Landroid/net/Uri;
 
 
 # instance fields
-.field private final zzaRi:Landroid/util/LogPrinter;
+.field private final b:Landroid/util/LogPrinter;
 
 
 # direct methods
@@ -33,7 +33,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/measurement/zzb;->zzaRh:Landroid/net/Uri;
+    sput-object v0, Lcom/google/android/gms/measurement/zzb;->a:Landroid/net/Uri;
 
     return-void
 .end method
@@ -51,19 +51,27 @@
 
     invoke-direct {v0, v1, v2}, Landroid/util/LogPrinter;-><init>(ILjava/lang/String;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/measurement/zzb;->zzaRi:Landroid/util/LogPrinter;
+    iput-object v0, p0, Lcom/google/android/gms/measurement/zzb;->b:Landroid/util/LogPrinter;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public zzb(Lcom/google/android/gms/measurement/zzc;)V
+.method public a()Landroid/net/Uri;
+    .registers 2
+
+    sget-object v0, Lcom/google/android/gms/measurement/zzb;->a:Landroid/net/Uri;
+
+    return-object v0
+.end method
+
+.method public a(Lcom/google/android/gms/measurement/zzc;)V
     .registers 6
 
     new-instance v0, Ljava/util/ArrayList;
 
-    invoke-virtual {p1}, Lcom/google/android/gms/measurement/zzc;->zzzF()Ljava/util/Collection;
+    invoke-virtual {p1}, Lcom/google/android/gms/measurement/zzc;->b()Ljava/util/Collection;
 
     move-result-object v1
 
@@ -123,7 +131,7 @@
     goto :goto_1a
 
     :cond_40
-    iget-object v0, p0, Lcom/google/android/gms/measurement/zzb;->zzaRi:Landroid/util/LogPrinter;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/zzb;->b:Landroid/util/LogPrinter;
 
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -132,12 +140,4 @@
     invoke-virtual {v0, v1}, Landroid/util/LogPrinter;->println(Ljava/lang/String;)V
 
     return-void
-.end method
-
-.method public zzii()Landroid/net/Uri;
-    .registers 2
-
-    sget-object v0, Lcom/google/android/gms/measurement/zzb;->zzaRh:Landroid/net/Uri;
-
-    return-object v0
 .end method

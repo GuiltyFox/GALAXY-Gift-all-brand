@@ -3,19 +3,8 @@
 .source "Observable.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lrx/Observable;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "EmptyHolder"
-.end annotation
-
-
 # static fields
-.field static final INSTANCE:Lrx/Observable;
+.field static final a:Lrx/Observable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lrx/Observable",
@@ -37,21 +26,11 @@
 
     invoke-direct {v0}, Lrx/Observable$EmptyHolder$1;-><init>()V
 
-    invoke-static {v0}, Lrx/Observable;->create(Lrx/Observable$OnSubscribe;)Lrx/Observable;
+    invoke-static {v0}, Lrx/Observable;->a(Lrx/Observable$OnSubscribe;)Lrx/Observable;
 
     move-result-object v0
 
-    sput-object v0, Lrx/Observable$EmptyHolder;->INSTANCE:Lrx/Observable;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 1069
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lrx/Observable$EmptyHolder;->a:Lrx/Observable;
 
     return-void
 .end method

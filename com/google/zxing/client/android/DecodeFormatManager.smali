@@ -1,10 +1,10 @@
-.class final Lcom/google/zxing/client/android/DecodeFormatManager;
+.class public final Lcom/google/zxing/client/android/DecodeFormatManager;
 .super Ljava/lang/Object;
 .source "DecodeFormatManager.java"
 
 
 # static fields
-.field static final AZTEC_FORMATS:Ljava/util/Set;
+.field static final a:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set",
@@ -15,9 +15,7 @@
     .end annotation
 .end field
 
-.field private static final COMMA_PATTERN:Ljava/util/regex/Pattern;
-
-.field static final DATA_MATRIX_FORMATS:Ljava/util/Set;
+.field static final b:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set",
@@ -28,7 +26,64 @@
     .end annotation
 .end field
 
-.field private static final FORMATS_FOR_MODE:Ljava/util/Map;
+.field static final c:Ljava/util/Set;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Set",
+            "<",
+            "Lcom/google/zxing/BarcodeFormat;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static final d:Ljava/util/Set;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Set",
+            "<",
+            "Lcom/google/zxing/BarcodeFormat;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static final e:Ljava/util/Set;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Set",
+            "<",
+            "Lcom/google/zxing/BarcodeFormat;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field static final f:Ljava/util/Set;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Set",
+            "<",
+            "Lcom/google/zxing/BarcodeFormat;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final g:Ljava/util/regex/Pattern;
+
+.field private static final h:Ljava/util/Set;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Set",
+            "<",
+            "Lcom/google/zxing/BarcodeFormat;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private static final i:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",
@@ -42,114 +97,59 @@
     .end annotation
 .end field
 
-.field static final INDUSTRIAL_FORMATS:Ljava/util/Set;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Set",
-            "<",
-            "Lcom/google/zxing/BarcodeFormat;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private static final ONE_D_FORMATS:Ljava/util/Set;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Set",
-            "<",
-            "Lcom/google/zxing/BarcodeFormat;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field static final PDF417_FORMATS:Ljava/util/Set;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Set",
-            "<",
-            "Lcom/google/zxing/BarcodeFormat;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field static final PRODUCT_FORMATS:Ljava/util/Set;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Set",
-            "<",
-            "Lcom/google/zxing/BarcodeFormat;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field static final QR_CODE_FORMATS:Ljava/util/Set;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Set",
-            "<",
-            "Lcom/google/zxing/BarcodeFormat;",
-            ">;"
-        }
-    .end annotation
-.end field
-
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 5
 
     .prologue
-    .line 33
+    .line 34
     const-string/jumbo v0, ","
 
     invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->COMMA_PATTERN:Ljava/util/regex/Pattern;
-
-    .line 38
-    sget-object v0, Lcom/google/zxing/BarcodeFormat;->QR_CODE:Lcom/google/zxing/BarcodeFormat;
-
-    invoke-static {v0}, Ljava/util/EnumSet;->of(Ljava/lang/Enum;)Ljava/util/EnumSet;
-
-    move-result-object v0
-
-    sput-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->QR_CODE_FORMATS:Ljava/util/Set;
+    sput-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->g:Ljava/util/regex/Pattern;
 
     .line 39
-    sget-object v0, Lcom/google/zxing/BarcodeFormat;->DATA_MATRIX:Lcom/google/zxing/BarcodeFormat;
+    sget-object v0, Lcom/google/zxing/BarcodeFormat;->l:Lcom/google/zxing/BarcodeFormat;
 
     invoke-static {v0}, Ljava/util/EnumSet;->of(Ljava/lang/Enum;)Ljava/util/EnumSet;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->DATA_MATRIX_FORMATS:Ljava/util/Set;
+    sput-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->c:Ljava/util/Set;
 
     .line 40
-    sget-object v0, Lcom/google/zxing/BarcodeFormat;->AZTEC:Lcom/google/zxing/BarcodeFormat;
+    sget-object v0, Lcom/google/zxing/BarcodeFormat;->f:Lcom/google/zxing/BarcodeFormat;
 
     invoke-static {v0}, Ljava/util/EnumSet;->of(Ljava/lang/Enum;)Ljava/util/EnumSet;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->AZTEC_FORMATS:Ljava/util/Set;
+    sput-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->d:Ljava/util/Set;
 
     .line 41
-    sget-object v0, Lcom/google/zxing/BarcodeFormat;->PDF_417:Lcom/google/zxing/BarcodeFormat;
+    sget-object v0, Lcom/google/zxing/BarcodeFormat;->a:Lcom/google/zxing/BarcodeFormat;
 
     invoke-static {v0}, Ljava/util/EnumSet;->of(Ljava/lang/Enum;)Ljava/util/EnumSet;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->PDF417_FORMATS:Ljava/util/Set;
+    sput-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->e:Ljava/util/Set;
 
-    .line 43
-    sget-object v0, Lcom/google/zxing/BarcodeFormat;->UPC_A:Lcom/google/zxing/BarcodeFormat;
+    .line 42
+    sget-object v0, Lcom/google/zxing/BarcodeFormat;->k:Lcom/google/zxing/BarcodeFormat;
+
+    invoke-static {v0}, Ljava/util/EnumSet;->of(Ljava/lang/Enum;)Ljava/util/EnumSet;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->f:Ljava/util/Set;
+
+    .line 45
+    sget-object v0, Lcom/google/zxing/BarcodeFormat;->o:Lcom/google/zxing/BarcodeFormat;
 
     const/4 v1, 0x5
 
@@ -157,31 +157,31 @@
 
     const/4 v2, 0x0
 
-    sget-object v3, Lcom/google/zxing/BarcodeFormat;->UPC_E:Lcom/google/zxing/BarcodeFormat;
+    sget-object v3, Lcom/google/zxing/BarcodeFormat;->p:Lcom/google/zxing/BarcodeFormat;
 
     aput-object v3, v1, v2
 
     const/4 v2, 0x1
 
-    sget-object v3, Lcom/google/zxing/BarcodeFormat;->EAN_13:Lcom/google/zxing/BarcodeFormat;
+    sget-object v3, Lcom/google/zxing/BarcodeFormat;->h:Lcom/google/zxing/BarcodeFormat;
 
     aput-object v3, v1, v2
 
     const/4 v2, 0x2
 
-    sget-object v3, Lcom/google/zxing/BarcodeFormat;->EAN_8:Lcom/google/zxing/BarcodeFormat;
+    sget-object v3, Lcom/google/zxing/BarcodeFormat;->g:Lcom/google/zxing/BarcodeFormat;
 
     aput-object v3, v1, v2
 
     const/4 v2, 0x3
 
-    sget-object v3, Lcom/google/zxing/BarcodeFormat;->RSS_14:Lcom/google/zxing/BarcodeFormat;
+    sget-object v3, Lcom/google/zxing/BarcodeFormat;->m:Lcom/google/zxing/BarcodeFormat;
 
     aput-object v3, v1, v2
 
     const/4 v2, 0x4
 
-    sget-object v3, Lcom/google/zxing/BarcodeFormat;->RSS_EXPANDED:Lcom/google/zxing/BarcodeFormat;
+    sget-object v3, Lcom/google/zxing/BarcodeFormat;->n:Lcom/google/zxing/BarcodeFormat;
 
     aput-object v3, v1, v2
 
@@ -189,119 +189,108 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->PRODUCT_FORMATS:Ljava/util/Set;
+    sput-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->a:Ljava/util/Set;
 
-    .line 49
-    sget-object v0, Lcom/google/zxing/BarcodeFormat;->CODE_39:Lcom/google/zxing/BarcodeFormat;
+    .line 51
+    sget-object v0, Lcom/google/zxing/BarcodeFormat;->c:Lcom/google/zxing/BarcodeFormat;
 
-    sget-object v1, Lcom/google/zxing/BarcodeFormat;->CODE_93:Lcom/google/zxing/BarcodeFormat;
+    sget-object v1, Lcom/google/zxing/BarcodeFormat;->d:Lcom/google/zxing/BarcodeFormat;
 
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->CODE_128:Lcom/google/zxing/BarcodeFormat;
+    sget-object v2, Lcom/google/zxing/BarcodeFormat;->e:Lcom/google/zxing/BarcodeFormat;
 
-    sget-object v3, Lcom/google/zxing/BarcodeFormat;->ITF:Lcom/google/zxing/BarcodeFormat;
+    sget-object v3, Lcom/google/zxing/BarcodeFormat;->i:Lcom/google/zxing/BarcodeFormat;
 
-    sget-object v4, Lcom/google/zxing/BarcodeFormat;->CODABAR:Lcom/google/zxing/BarcodeFormat;
+    sget-object v4, Lcom/google/zxing/BarcodeFormat;->b:Lcom/google/zxing/BarcodeFormat;
 
     invoke-static {v0, v1, v2, v3, v4}, Ljava/util/EnumSet;->of(Ljava/lang/Enum;Ljava/lang/Enum;Ljava/lang/Enum;Ljava/lang/Enum;Ljava/lang/Enum;)Ljava/util/EnumSet;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->INDUSTRIAL_FORMATS:Ljava/util/Set;
+    sput-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->b:Ljava/util/Set;
 
-    .line 54
-    sget-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->PRODUCT_FORMATS:Ljava/util/Set;
+    .line 56
+    sget-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->a:Ljava/util/Set;
 
     invoke-static {v0}, Ljava/util/EnumSet;->copyOf(Ljava/util/Collection;)Ljava/util/EnumSet;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->ONE_D_FORMATS:Ljava/util/Set;
+    sput-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->h:Ljava/util/Set;
 
-    .line 55
-    sget-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->ONE_D_FORMATS:Ljava/util/Set;
+    .line 57
+    sget-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->h:Ljava/util/Set;
 
-    sget-object v1, Lcom/google/zxing/client/android/DecodeFormatManager;->INDUSTRIAL_FORMATS:Ljava/util/Set;
+    sget-object v1, Lcom/google/zxing/client/android/DecodeFormatManager;->b:Ljava/util/Set;
 
     invoke-interface {v0, v1}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
-    .line 59
+    .line 63
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    sput-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->FORMATS_FOR_MODE:Ljava/util/Map;
+    sput-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->i:Ljava/util/Map;
 
-    .line 60
-    sget-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->FORMATS_FOR_MODE:Ljava/util/Map;
+    .line 64
+    sget-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->i:Ljava/util/Map;
 
     const-string/jumbo v1, "ONE_D_MODE"
 
-    sget-object v2, Lcom/google/zxing/client/android/DecodeFormatManager;->ONE_D_FORMATS:Ljava/util/Set;
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 61
-    sget-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->FORMATS_FOR_MODE:Ljava/util/Map;
-
-    const-string/jumbo v1, "PRODUCT_MODE"
-
-    sget-object v2, Lcom/google/zxing/client/android/DecodeFormatManager;->PRODUCT_FORMATS:Ljava/util/Set;
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 62
-    sget-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->FORMATS_FOR_MODE:Ljava/util/Map;
-
-    const-string/jumbo v1, "QR_CODE_MODE"
-
-    sget-object v2, Lcom/google/zxing/client/android/DecodeFormatManager;->QR_CODE_FORMATS:Ljava/util/Set;
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 63
-    sget-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->FORMATS_FOR_MODE:Ljava/util/Map;
-
-    const-string/jumbo v1, "DATA_MATRIX_MODE"
-
-    sget-object v2, Lcom/google/zxing/client/android/DecodeFormatManager;->DATA_MATRIX_FORMATS:Ljava/util/Set;
-
-    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 64
-    sget-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->FORMATS_FOR_MODE:Ljava/util/Map;
-
-    const-string/jumbo v1, "AZTEC_MODE"
-
-    sget-object v2, Lcom/google/zxing/client/android/DecodeFormatManager;->AZTEC_FORMATS:Ljava/util/Set;
+    sget-object v2, Lcom/google/zxing/client/android/DecodeFormatManager;->h:Ljava/util/Set;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 65
-    sget-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->FORMATS_FOR_MODE:Ljava/util/Map;
+    sget-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->i:Ljava/util/Map;
 
-    const-string/jumbo v1, "PDF417_MODE"
+    const-string/jumbo v1, "PRODUCT_MODE"
 
-    sget-object v2, Lcom/google/zxing/client/android/DecodeFormatManager;->PDF417_FORMATS:Ljava/util/Set;
+    sget-object v2, Lcom/google/zxing/client/android/DecodeFormatManager;->a:Ljava/util/Set;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 66
-    return-void
-.end method
+    sget-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->i:Ljava/util/Map;
 
-.method private constructor <init>()V
-    .registers 1
+    const-string/jumbo v1, "QR_CODE_MODE"
 
-    .prologue
+    sget-object v2, Lcom/google/zxing/client/android/DecodeFormatManager;->c:Ljava/util/Set;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 67
+    sget-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->i:Ljava/util/Map;
+
+    const-string/jumbo v1, "DATA_MATRIX_MODE"
+
+    sget-object v2, Lcom/google/zxing/client/android/DecodeFormatManager;->d:Ljava/util/Set;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 68
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->i:Ljava/util/Map;
 
+    const-string/jumbo v1, "AZTEC_MODE"
+
+    sget-object v2, Lcom/google/zxing/client/android/DecodeFormatManager;->e:Ljava/util/Set;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 69
+    sget-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->i:Ljava/util/Map;
+
+    const-string/jumbo v1, "PDF417_MODE"
+
+    sget-object v2, Lcom/google/zxing/client/android/DecodeFormatManager;->f:Ljava/util/Set;
+
+    invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 70
     return-void
 .end method
 
-.method static parseDecodeFormats(Landroid/content/Intent;)Ljava/util/Set;
-    .registers 4
-    .param p0, "intent"    # Landroid/content/Intent;
+.method public static a(Landroid/content/Intent;)Ljava/util/Set;
+    .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -315,125 +304,47 @@
     .end annotation
 
     .prologue
-    .line 71
+    .line 76
     const/4 v0, 0x0
 
-    .line 72
-    .local v0, "scanFormats":Ljava/lang/Iterable;, "Ljava/lang/Iterable<Ljava/lang/String;>;"
-    const-string/jumbo v2, "SCAN_FORMATS"
+    .line 77
+    const-string/jumbo v1, "SCAN_FORMATS"
 
-    invoke-virtual {p0, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 73
-    .local v1, "scanFormatsString":Ljava/lang/CharSequence;
+    .line 78
     if-eqz v1, :cond_14
 
-    .line 74
-    sget-object v2, Lcom/google/zxing/client/android/DecodeFormatManager;->COMMA_PATTERN:Ljava/util/regex/Pattern;
+    .line 79
+    sget-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->g:Ljava/util/regex/Pattern;
 
-    invoke-virtual {v2, v1}, Ljava/util/regex/Pattern;->split(Ljava/lang/CharSequence;)[Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v2}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    invoke-virtual {v0, v1}, Ljava/util/regex/Pattern;->split(Ljava/lang/CharSequence;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 76
-    :cond_14
-    const-string/jumbo v2, "SCAN_MODE"
-
-    invoke-virtual {p0, v2}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v0, v2}, Lcom/google/zxing/client/android/DecodeFormatManager;->parseDecodeFormats(Ljava/lang/Iterable;Ljava/lang/String;)Ljava/util/Set;
-
-    move-result-object v2
-
-    return-object v2
-.end method
-
-.method static parseDecodeFormats(Landroid/net/Uri;)Ljava/util/Set;
-    .registers 5
-    .param p0, "inputUri"    # Landroid/net/Uri;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/net/Uri;",
-            ")",
-            "Ljava/util/Set",
-            "<",
-            "Lcom/google/zxing/BarcodeFormat;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    const/4 v3, 0x0
-
-    .line 80
-    const-string/jumbo v1, "SCAN_FORMATS"
-
-    invoke-virtual {p0, v1}, Landroid/net/Uri;->getQueryParameters(Ljava/lang/String;)Ljava/util/List;
+    invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
     .line 81
-    .local v0, "formats":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    if-eqz v0, :cond_27
+    :cond_14
+    const-string/jumbo v1, "SCAN_MODE"
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v1
-
-    const/4 v2, 0x1
-
-    if-ne v1, v2, :cond_27
-
-    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-virtual {p0, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    if-eqz v1, :cond_27
-
-    .line 82
-    sget-object v2, Lcom/google/zxing/client/android/DecodeFormatManager;->COMMA_PATTERN:Ljava/util/regex/Pattern;
-
-    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/CharSequence;
-
-    invoke-virtual {v2, v1}, Ljava/util/regex/Pattern;->split(Ljava/lang/CharSequence;)[Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v0, v1}, Lcom/google/zxing/client/android/DecodeFormatManager;->a(Ljava/lang/Iterable;Ljava/lang/String;)Ljava/util/Set;
 
     move-result-object v0
 
-    .line 84
-    :cond_27
-    const-string/jumbo v1, "SCAN_MODE"
-
-    invoke-virtual {p0, v1}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/google/zxing/client/android/DecodeFormatManager;->parseDecodeFormats(Ljava/lang/Iterable;Ljava/lang/String;)Ljava/util/Set;
-
-    move-result-object v1
-
-    return-object v1
+    return-object v0
 .end method
 
-.method private static parseDecodeFormats(Ljava/lang/Iterable;Ljava/lang/String;)Ljava/util/Set;
-    .registers 6
-    .param p1, "decodeMode"    # Ljava/lang/String;
+.method private static a(Ljava/lang/Iterable;Ljava/lang/String;)Ljava/util/Set;
+    .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -451,31 +362,28 @@
     .end annotation
 
     .prologue
-    .line 88
-    .local p0, "scanFormats":Ljava/lang/Iterable;, "Ljava/lang/Iterable<Ljava/lang/String;>;"
+    .line 85
     if-eqz p0, :cond_21
 
-    .line 89
-    const-class v3, Lcom/google/zxing/BarcodeFormat;
+    .line 86
+    const-class v0, Lcom/google/zxing/BarcodeFormat;
 
-    invoke-static {v3}, Ljava/util/EnumSet;->noneOf(Ljava/lang/Class;)Ljava/util/EnumSet;
+    invoke-static {v0}, Ljava/util/EnumSet;->noneOf(Ljava/lang/Class;)Ljava/util/EnumSet;
 
     move-result-object v1
 
-    .line 91
-    .local v1, "formats":Ljava/util/Set;, "Ljava/util/Set<Lcom/google/zxing/BarcodeFormat;>;"
+    .line 88
     :try_start_8
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    .local v2, "i$":Ljava/util/Iterator;
     :goto_c
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_2c
+    if-eqz v0, :cond_2c
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -483,47 +391,47 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 92
-    .local v0, "format":Ljava/lang/String;
+    .line 89
     invoke-static {v0}, Lcom/google/zxing/BarcodeFormat;->valueOf(Ljava/lang/String;)Lcom/google/zxing/BarcodeFormat;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-interface {v1, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
     :try_end_1f
     .catch Ljava/lang/IllegalArgumentException; {:try_start_8 .. :try_end_1f} :catch_20
 
     goto :goto_c
 
-    .line 95
-    .end local v0    # "format":Ljava/lang/String;
-    .end local v2    # "i$":Ljava/util/Iterator;
+    .line 92
     :catch_20
-    move-exception v3
+    move-exception v0
+
+    .line 96
+    :cond_21
+    if-eqz p1, :cond_2e
+
+    .line 97
+    sget-object v0, Lcom/google/zxing/client/android/DecodeFormatManager;->i:Ljava/util/Map;
+
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Set;
 
     .line 99
-    .end local v1    # "formats":Ljava/util/Set;, "Ljava/util/Set<Lcom/google/zxing/BarcodeFormat;>;"
-    :cond_21
-    if-eqz p1, :cond_2d
+    :goto_2b
+    return-object v0
 
-    .line 100
-    sget-object v3, Lcom/google/zxing/client/android/DecodeFormatManager;->FORMATS_FOR_MODE:Ljava/util/Map;
-
-    invoke-interface {v3, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/util/Set;
-
-    move-object v1, v3
-
-    .line 102
     :cond_2c
-    :goto_2c
-    return-object v1
+    move-object v0, v1
 
-    :cond_2d
-    const/4 v1, 0x0
+    .line 91
+    goto :goto_2b
 
-    goto :goto_2c
+    .line 99
+    :cond_2e
+    const/4 v0, 0x0
+
+    goto :goto_2b
 .end method

@@ -6,38 +6,26 @@
 .implements Lcom/bumptech/glide/load/engine/bitmap_recycle/Poolable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "Key"
-.end annotation
-
-
 # instance fields
-.field private config:Landroid/graphics/Bitmap$Config;
+.field private final a:Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$KeyPool;
 
-.field private height:I
+.field private b:I
 
-.field private final pool:Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$KeyPool;
+.field private c:I
 
-.field private width:I
+.field private d:Landroid/graphics/Bitmap$Config;
 
 
 # direct methods
 .method public constructor <init>(Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$KeyPool;)V
     .registers 2
-    .param p1, "pool"    # Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$KeyPool;
 
     .prologue
     .line 82
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 83
-    iput-object p1, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->pool:Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$KeyPool;
+    iput-object p1, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->a:Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$KeyPool;
 
     .line 84
     return-void
@@ -45,123 +33,114 @@
 
 
 # virtual methods
-.method public equals(Ljava/lang/Object;)Z
-    .registers 6
-    .param p1, "o"    # Ljava/lang/Object;
+.method public a()V
+    .registers 2
 
     .prologue
-    const/4 v1, 0x0
+    .line 118
+    iget-object v0, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->a:Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$KeyPool;
 
-    .line 94
-    instance-of v2, p1, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;
+    invoke-virtual {v0, p0}, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$KeyPool;->a(Lcom/bumptech/glide/load/engine/bitmap_recycle/Poolable;)V
 
-    if-eqz v2, :cond_1b
-
-    move-object v0, p1
-
-    .line 95
-    check-cast v0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;
-
-    .line 96
-    .local v0, "other":Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;
-    iget v2, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->width:I
-
-    iget v3, v0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->width:I
-
-    if-ne v2, v3, :cond_1b
-
-    iget v2, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->height:I
-
-    iget v3, v0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->height:I
-
-    if-ne v2, v3, :cond_1b
-
-    iget-object v2, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->config:Landroid/graphics/Bitmap$Config;
-
-    iget-object v3, v0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->config:Landroid/graphics/Bitmap$Config;
-
-    if-ne v2, v3, :cond_1b
-
-    const/4 v1, 0x1
-
-    .line 100
-    .end local v0    # "other":Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;
-    :cond_1b
-    return v1
+    .line 119
+    return-void
 .end method
 
-.method public hashCode()I
+.method public a(IILandroid/graphics/Bitmap$Config;)V
     .registers 4
-
-    .prologue
-    .line 105
-    iget v0, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->width:I
-
-    .line 106
-    .local v0, "result":I
-    mul-int/lit8 v1, v0, 0x1f
-
-    iget v2, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->height:I
-
-    add-int v0, v1, v2
-
-    .line 107
-    mul-int/lit8 v2, v0, 0x1f
-
-    iget-object v1, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->config:Landroid/graphics/Bitmap$Config;
-
-    if-eqz v1, :cond_17
-
-    iget-object v1, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->config:Landroid/graphics/Bitmap$Config;
-
-    invoke-virtual {v1}, Landroid/graphics/Bitmap$Config;->hashCode()I
-
-    move-result v1
-
-    :goto_14
-    add-int v0, v2, v1
-
-    .line 108
-    return v0
-
-    .line 107
-    :cond_17
-    const/4 v1, 0x0
-
-    goto :goto_14
-.end method
-
-.method public init(IILandroid/graphics/Bitmap$Config;)V
-    .registers 4
-    .param p1, "width"    # I
-    .param p2, "height"    # I
-    .param p3, "config"    # Landroid/graphics/Bitmap$Config;
 
     .prologue
     .line 87
-    iput p1, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->width:I
+    iput p1, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->b:I
 
     .line 88
-    iput p2, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->height:I
+    iput p2, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->c:I
 
     .line 89
-    iput-object p3, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->config:Landroid/graphics/Bitmap$Config;
+    iput-object p3, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->d:Landroid/graphics/Bitmap$Config;
 
     .line 90
     return-void
 .end method
 
-.method public offer()V
-    .registers 2
+.method public equals(Ljava/lang/Object;)Z
+    .registers 5
 
     .prologue
-    .line 118
-    iget-object v0, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->pool:Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$KeyPool;
+    const/4 v0, 0x0
 
-    invoke-virtual {v0, p0}, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$KeyPool;->offer(Lcom/bumptech/glide/load/engine/bitmap_recycle/Poolable;)V
+    .line 94
+    instance-of v1, p1, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;
 
-    .line 119
-    return-void
+    if-eqz v1, :cond_1a
+
+    .line 95
+    check-cast p1, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;
+
+    .line 96
+    iget v1, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->b:I
+
+    iget v2, p1, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->b:I
+
+    if-ne v1, v2, :cond_1a
+
+    iget v1, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->c:I
+
+    iget v2, p1, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->c:I
+
+    if-ne v1, v2, :cond_1a
+
+    iget-object v1, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->d:Landroid/graphics/Bitmap$Config;
+
+    iget-object v2, p1, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->d:Landroid/graphics/Bitmap$Config;
+
+    if-ne v1, v2, :cond_1a
+
+    const/4 v0, 0x1
+
+    .line 100
+    :cond_1a
+    return v0
+.end method
+
+.method public hashCode()I
+    .registers 3
+
+    .prologue
+    .line 105
+    iget v0, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->b:I
+
+    .line 106
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget v1, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->c:I
+
+    add-int/2addr v0, v1
+
+    .line 107
+    mul-int/lit8 v1, v0, 0x1f
+
+    iget-object v0, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->d:Landroid/graphics/Bitmap$Config;
+
+    if-eqz v0, :cond_15
+
+    iget-object v0, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->d:Landroid/graphics/Bitmap$Config;
+
+    invoke-virtual {v0}, Landroid/graphics/Bitmap$Config;->hashCode()I
+
+    move-result v0
+
+    :goto_13
+    add-int/2addr v0, v1
+
+    .line 108
+    return v0
+
+    .line 107
+    :cond_15
+    const/4 v0, 0x0
+
+    goto :goto_13
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -169,14 +148,13 @@
 
     .prologue
     .line 113
-    iget v0, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->width:I
+    iget v0, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->b:I
 
-    iget v1, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->height:I
+    iget v1, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->c:I
 
-    iget-object v2, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->config:Landroid/graphics/Bitmap$Config;
+    iget-object v2, p0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->d:Landroid/graphics/Bitmap$Config;
 
-    # invokes: Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy;->getBitmapString(IILandroid/graphics/Bitmap$Config;)Ljava/lang/String;
-    invoke-static {v0, v1, v2}, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy;->access$000(IILandroid/graphics/Bitmap$Config;)Ljava/lang/String;
+    invoke-static {v0, v1, v2}, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy;->c(IILandroid/graphics/Bitmap$Config;)Ljava/lang/String;
 
     move-result-object v0
 

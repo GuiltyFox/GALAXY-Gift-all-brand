@@ -6,9 +6,6 @@
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroid/view/Window;Landroid/support/v7/app/AppCompatCallback;)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "window"    # Landroid/view/Window;
-    .param p3, "callback"    # Landroid/support/v7/app/AppCompatCallback;
 
     .prologue
     .line 28
@@ -20,12 +17,8 @@
 
 
 # virtual methods
-.method callActivityOnCreateView(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
+.method b(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
     .registers 6
-    .param p1, "parent"    # Landroid/view/View;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "context"    # Landroid/content/Context;
-    .param p4, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 34

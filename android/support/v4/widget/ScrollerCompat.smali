@@ -3,35 +3,15 @@
 .source "ScrollerCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplIcs;,
-        Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread;,
-        Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplBase;,
-        Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
-    }
-.end annotation
-
-
-# static fields
-.field static final CHASE_FRAME_TIME:I = 0x10
-
-.field private static final TAG:Ljava/lang/String; = "ScrollerCompat"
-
-
 # instance fields
-.field mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
+.field a:Ljava/lang/Object;
 
-.field mScroller:Ljava/lang/Object;
+.field b:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
 
 
 # direct methods
 .method private constructor <init>(ILandroid/content/Context;Landroid/view/animation/Interpolator;)V
     .registers 5
-    .param p1, "apiVersion"    # I
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "interpolator"    # Landroid/view/animation/Interpolator;
 
     .prologue
     .line 272
@@ -47,17 +27,17 @@
 
     invoke-direct {v0}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplIcs;-><init>()V
 
-    iput-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
+    iput-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->b:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
 
     .line 280
     :goto_e
-    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
+    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->b:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
 
-    invoke-interface {v0, p2, p3}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->createScroller(Landroid/content/Context;Landroid/view/animation/Interpolator;)Ljava/lang/Object;
+    invoke-interface {v0, p2, p3}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->a(Landroid/content/Context;Landroid/view/animation/Interpolator;)Ljava/lang/Object;
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mScroller:Ljava/lang/Object;
+    iput-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->a:Ljava/lang/Object;
 
     .line 281
     return-void
@@ -73,7 +53,7 @@
 
     invoke-direct {v0}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplGingerbread;-><init>()V
 
-    iput-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
+    iput-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->b:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
 
     goto :goto_e
 
@@ -83,30 +63,27 @@
 
     invoke-direct {v0}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImplBase;-><init>()V
 
-    iput-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
+    iput-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->b:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
 
     goto :goto_e
 .end method
 
-.method public static create(Landroid/content/Context;)Landroid/support/v4/widget/ScrollerCompat;
+.method public static a(Landroid/content/Context;)Landroid/support/v4/widget/ScrollerCompat;
     .registers 2
-    .param p0, "context"    # Landroid/content/Context;
 
     .prologue
     .line 261
     const/4 v0, 0x0
 
-    invoke-static {p0, v0}, Landroid/support/v4/widget/ScrollerCompat;->create(Landroid/content/Context;Landroid/view/animation/Interpolator;)Landroid/support/v4/widget/ScrollerCompat;
+    invoke-static {p0, v0}, Landroid/support/v4/widget/ScrollerCompat;->a(Landroid/content/Context;Landroid/view/animation/Interpolator;)Landroid/support/v4/widget/ScrollerCompat;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static create(Landroid/content/Context;Landroid/view/animation/Interpolator;)Landroid/support/v4/widget/ScrollerCompat;
+.method public static a(Landroid/content/Context;Landroid/view/animation/Interpolator;)Landroid/support/v4/widget/ScrollerCompat;
     .registers 4
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "interpolator"    # Landroid/view/animation/Interpolator;
 
     .prologue
     .line 265
@@ -121,53 +98,62 @@
 
 
 # virtual methods
-.method public abortAnimation()V
-    .registers 3
+.method public a(IIII)V
+    .registers 11
 
     .prologue
-    .line 456
-    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
+    .line 362
+    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->b:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
 
-    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->mScroller:Ljava/lang/Object;
+    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->a:Ljava/lang/Object;
 
-    invoke-interface {v0, v1}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->abortAnimation(Ljava/lang/Object;)V
+    move v2, p1
 
-    .line 457
+    move v3, p2
+
+    move v4, p3
+
+    move v5, p4
+
+    invoke-interface/range {v0 .. v5}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->a(Ljava/lang/Object;IIII)V
+
+    .line 363
     return-void
 .end method
 
-.method public computeScrollOffset()Z
-    .registers 3
+.method public a(IIIII)V
+    .registers 13
 
     .prologue
-    .line 344
-    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
+    .line 379
+    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->b:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
 
-    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->mScroller:Ljava/lang/Object;
+    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->a:Ljava/lang/Object;
 
-    invoke-interface {v0, v1}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->computeScrollOffset(Ljava/lang/Object;)Z
+    move v2, p1
 
-    move-result v0
+    move v3, p2
 
-    return v0
+    move v4, p3
+
+    move v5, p4
+
+    move v6, p5
+
+    invoke-interface/range {v0 .. v6}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->a(Ljava/lang/Object;IIIII)V
+
+    .line 380
+    return-void
 .end method
 
-.method public fling(IIIIIIII)V
+.method public a(IIIIIIII)V
     .registers 19
-    .param p1, "startX"    # I
-    .param p2, "startY"    # I
-    .param p3, "velocityX"    # I
-    .param p4, "velocityY"    # I
-    .param p5, "minX"    # I
-    .param p6, "maxX"    # I
-    .param p7, "minY"    # I
-    .param p8, "maxY"    # I
 
     .prologue
     .line 403
-    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
+    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->b:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
 
-    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->mScroller:Ljava/lang/Object;
+    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->a:Ljava/lang/Object;
 
     move v2, p1
 
@@ -185,30 +171,20 @@
 
     move/from16 v9, p8
 
-    invoke-interface/range {v0 .. v9}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->fling(Ljava/lang/Object;IIIIIIII)V
+    invoke-interface/range {v0 .. v9}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->a(Ljava/lang/Object;IIIIIIII)V
 
     .line 404
     return-void
 .end method
 
-.method public fling(IIIIIIIIII)V
+.method public a(IIIIIIIIII)V
     .registers 23
-    .param p1, "startX"    # I
-    .param p2, "startY"    # I
-    .param p3, "velocityX"    # I
-    .param p4, "velocityY"    # I
-    .param p5, "minX"    # I
-    .param p6, "maxX"    # I
-    .param p7, "minY"    # I
-    .param p8, "maxY"    # I
-    .param p9, "overX"    # I
-    .param p10, "overY"    # I
 
     .prologue
     .line 431
-    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
+    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->b:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
 
-    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->mScroller:Ljava/lang/Object;
+    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->a:Ljava/lang/Object;
 
     move v2, p1
 
@@ -230,174 +206,36 @@
 
     move/from16 v11, p10
 
-    invoke-interface/range {v0 .. v11}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->fling(Ljava/lang/Object;IIIIIIIIII)V
+    invoke-interface/range {v0 .. v11}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->a(Ljava/lang/Object;IIIIIIIIII)V
 
     .line 433
     return-void
 .end method
 
-.method public getCurrVelocity()F
-    .registers 3
-
-    .prologue
-    .line 335
-    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
-
-    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->mScroller:Ljava/lang/Object;
-
-    invoke-interface {v0, v1}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->getCurrVelocity(Ljava/lang/Object;)F
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getCurrX()I
-    .registers 3
-
-    .prologue
-    .line 298
-    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
-
-    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->mScroller:Ljava/lang/Object;
-
-    invoke-interface {v0, v1}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->getCurrX(Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getCurrY()I
-    .registers 3
-
-    .prologue
-    .line 307
-    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
-
-    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->mScroller:Ljava/lang/Object;
-
-    invoke-interface {v0, v1}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->getCurrY(Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getFinalX()I
-    .registers 3
-
-    .prologue
-    .line 314
-    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
-
-    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->mScroller:Ljava/lang/Object;
-
-    invoke-interface {v0, v1}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->getFinalX(Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getFinalY()I
-    .registers 3
-
-    .prologue
-    .line 321
-    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
-
-    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->mScroller:Ljava/lang/Object;
-
-    invoke-interface {v0, v1}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->getFinalY(Ljava/lang/Object;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isFinished()Z
+.method public a()Z
     .registers 3
 
     .prologue
     .line 289
-    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
+    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->b:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
 
-    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->mScroller:Ljava/lang/Object;
+    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->a:Ljava/lang/Object;
 
-    invoke-interface {v0, v1}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->isFinished(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isOverScrolled()Z
-    .registers 3
-
-    .prologue
-    .line 508
-    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
-
-    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->mScroller:Ljava/lang/Object;
-
-    invoke-interface {v0, v1}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->isOverScrolled(Ljava/lang/Object;)Z
+    invoke-interface {v0, v1}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->a(Ljava/lang/Object;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public notifyHorizontalEdgeReached(III)V
-    .registers 6
-    .param p1, "startX"    # I
-    .param p2, "finalX"    # I
-    .param p3, "overX"    # I
-
-    .prologue
-    .line 474
-    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
-
-    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->mScroller:Ljava/lang/Object;
-
-    invoke-interface {v0, v1, p1, p2, p3}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->notifyHorizontalEdgeReached(Ljava/lang/Object;III)V
-
-    .line 475
-    return-void
-.end method
-
-.method public notifyVerticalEdgeReached(III)V
-    .registers 6
-    .param p1, "startY"    # I
-    .param p2, "finalY"    # I
-    .param p3, "overY"    # I
-
-    .prologue
-    .line 491
-    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
-
-    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->mScroller:Ljava/lang/Object;
-
-    invoke-interface {v0, v1, p1, p2, p3}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->notifyVerticalEdgeReached(Ljava/lang/Object;III)V
-
-    .line 492
-    return-void
-.end method
-
-.method public springBack(IIIIII)Z
+.method public a(IIIIII)Z
     .registers 15
-    .param p1, "startX"    # I
-    .param p2, "startY"    # I
-    .param p3, "minX"    # I
-    .param p4, "maxX"    # I
-    .param p5, "minY"    # I
-    .param p6, "maxY"    # I
 
     .prologue
     .line 448
-    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
+    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->b:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
 
-    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->mScroller:Ljava/lang/Object;
+    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->a:Ljava/lang/Object;
 
     move v2, p1
 
@@ -411,66 +249,120 @@
 
     move v7, p6
 
-    invoke-interface/range {v0 .. v7}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->springBack(Ljava/lang/Object;IIIIII)Z
+    invoke-interface/range {v0 .. v7}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->a(Ljava/lang/Object;IIIIII)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method public startScroll(IIII)V
-    .registers 11
-    .param p1, "startX"    # I
-    .param p2, "startY"    # I
-    .param p3, "dx"    # I
-    .param p4, "dy"    # I
+.method public b()I
+    .registers 3
 
     .prologue
-    .line 362
-    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
+    .line 298
+    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->b:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
 
-    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->mScroller:Ljava/lang/Object;
+    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->a:Ljava/lang/Object;
 
-    move v2, p1
+    invoke-interface {v0, v1}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->b(Ljava/lang/Object;)I
 
-    move v3, p2
+    move-result v0
 
-    move v4, p3
-
-    move v5, p4
-
-    invoke-interface/range {v0 .. v5}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->startScroll(Ljava/lang/Object;IIII)V
-
-    .line 363
-    return-void
+    return v0
 .end method
 
-.method public startScroll(IIIII)V
-    .registers 13
-    .param p1, "startX"    # I
-    .param p2, "startY"    # I
-    .param p3, "dx"    # I
-    .param p4, "dy"    # I
-    .param p5, "duration"    # I
+.method public c()I
+    .registers 3
 
     .prologue
-    .line 379
-    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->mImpl:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
+    .line 307
+    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->b:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
 
-    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->mScroller:Ljava/lang/Object;
+    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->a:Ljava/lang/Object;
 
-    move v2, p1
+    invoke-interface {v0, v1}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->c(Ljava/lang/Object;)I
 
-    move v3, p2
+    move-result v0
 
-    move v4, p3
+    return v0
+.end method
 
-    move v5, p4
+.method public d()I
+    .registers 3
 
-    move v6, p5
+    .prologue
+    .line 314
+    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->b:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
 
-    invoke-interface/range {v0 .. v6}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->startScroll(Ljava/lang/Object;IIIII)V
+    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->a:Ljava/lang/Object;
 
-    .line 380
+    invoke-interface {v0, v1}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->g(Ljava/lang/Object;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public e()I
+    .registers 3
+
+    .prologue
+    .line 321
+    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->b:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
+
+    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->a:Ljava/lang/Object;
+
+    invoke-interface {v0, v1}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->h(Ljava/lang/Object;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public f()F
+    .registers 3
+
+    .prologue
+    .line 335
+    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->b:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
+
+    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->a:Ljava/lang/Object;
+
+    invoke-interface {v0, v1}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->d(Ljava/lang/Object;)F
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public g()Z
+    .registers 3
+
+    .prologue
+    .line 344
+    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->b:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
+
+    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->a:Ljava/lang/Object;
+
+    invoke-interface {v0, v1}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->e(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public h()V
+    .registers 3
+
+    .prologue
+    .line 456
+    iget-object v0, p0, Landroid/support/v4/widget/ScrollerCompat;->b:Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;
+
+    iget-object v1, p0, Landroid/support/v4/widget/ScrollerCompat;->a:Ljava/lang/Object;
+
+    invoke-interface {v0, v1}, Landroid/support/v4/widget/ScrollerCompat$ScrollerCompatImpl;->f(Ljava/lang/Object;)V
+
+    .line 457
     return-void
 .end method

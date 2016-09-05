@@ -3,11 +3,11 @@
 
 
 # static fields
-.field private static zzaml:Landroid/content/IntentFilter;
+.field private static a:Landroid/content/IntentFilter;
 
-.field private static zzamm:J
+.field private static b:J
 
-.field private static zzamn:F
+.field private static c:F
 
 
 # direct methods
@@ -20,16 +20,16 @@
 
     invoke-direct {v0, v1}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    sput-object v0, Lcom/google/android/gms/internal/zznq;->zzaml:Landroid/content/IntentFilter;
+    sput-object v0, Lcom/google/android/gms/internal/zznq;->a:Landroid/content/IntentFilter;
 
-    const/high16 v0, 0x7fc00000
+    const/high16 v0, 0x7fc00000    # NaNf
 
-    sput v0, Lcom/google/android/gms/internal/zznq;->zzamn:F
+    sput v0, Lcom/google/android/gms/internal/zznq;->c:F
 
     return-void
 .end method
 
-.method public static zzaw(Landroid/content/Context;)I
+.method public static a(Landroid/content/Context;)I
     .registers 6
 
     const/4 v2, 0x1
@@ -57,7 +57,7 @@
 
     const/4 v1, 0x0
 
-    sget-object v4, Lcom/google/android/gms/internal/zznq;->zzaml:Landroid/content/IntentFilter;
+    sget-object v4, Lcom/google/android/gms/internal/zznq;->a:Landroid/content/IntentFilter;
 
     invoke-virtual {v0, v1, v4}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
@@ -75,7 +75,7 @@
     move v1, v2
 
     :goto_1f
-    invoke-static {}, Lcom/google/android/gms/internal/zznx;->zzrV()Z
+    invoke-static {}, Lcom/google/android/gms/internal/zznx;->c()Z
 
     move-result v0
 
@@ -148,7 +148,7 @@
     goto :goto_39
 .end method
 
-.method public static declared-synchronized zzax(Landroid/content/Context;)F
+.method public static declared-synchronized b(Landroid/content/Context;)F
     .registers 7
 
     const-class v1, Lcom/google/android/gms/internal/zznq;
@@ -160,7 +160,7 @@
 
     move-result-wide v2
 
-    sget-wide v4, Lcom/google/android/gms/internal/zznq;->zzamm:J
+    sget-wide v4, Lcom/google/android/gms/internal/zznq;->b:J
 
     sub-long/2addr v2, v4
 
@@ -170,15 +170,15 @@
 
     if-gez v0, :cond_1d
 
-    sget v0, Lcom/google/android/gms/internal/zznq;->zzamn:F
+    sget v0, Lcom/google/android/gms/internal/zznq;->c:F
 
-    const/high16 v2, 0x7fc00000
+    const/high16 v2, 0x7fc00000    # NaNf
 
     cmpl-float v0, v0, v2
 
     if-eqz v0, :cond_1d
 
-    sget v0, Lcom/google/android/gms/internal/zznq;->zzamn:F
+    sget v0, Lcom/google/android/gms/internal/zznq;->c:F
     :try_end_1b
     .catchall {:try_start_3 .. :try_end_1b} :catchall_49
 
@@ -195,7 +195,7 @@
 
     const/4 v2, 0x0
 
-    sget-object v3, Lcom/google/android/gms/internal/zznq;->zzaml:Landroid/content/IntentFilter;
+    sget-object v3, Lcom/google/android/gms/internal/zznq;->a:Landroid/content/IntentFilter;
 
     invoke-virtual {v0, v2, v3}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
@@ -225,16 +225,16 @@
 
     div-float v0, v2, v0
 
-    sput v0, Lcom/google/android/gms/internal/zznq;->zzamn:F
+    sput v0, Lcom/google/android/gms/internal/zznq;->c:F
 
     :cond_40
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
-    sput-wide v2, Lcom/google/android/gms/internal/zznq;->zzamm:J
+    sput-wide v2, Lcom/google/android/gms/internal/zznq;->b:J
 
-    sget v0, Lcom/google/android/gms/internal/zznq;->zzamn:F
+    sget v0, Lcom/google/android/gms/internal/zznq;->c:F
     :try_end_48
     .catchall {:try_start_1d .. :try_end_48} :catchall_49
 

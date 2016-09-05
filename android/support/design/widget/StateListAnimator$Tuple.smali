@@ -3,17 +3,6 @@
 .source "StateListAnimator.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/StateListAnimator;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "Tuple"
-.end annotation
-
-
 # instance fields
 .field final mAnimation:Landroid/view/animation/Animation;
 
@@ -23,8 +12,6 @@
 # direct methods
 .method private constructor <init>([ILandroid/view/animation/Animation;)V
     .registers 3
-    .param p1, "specs"    # [I
-    .param p2, "Animation"    # Landroid/view/animation/Animation;
 
     .prologue
     .line 179
@@ -42,9 +29,6 @@
 
 .method synthetic constructor <init>([ILandroid/view/animation/Animation;Landroid/support/design/widget/StateListAnimator$1;)V
     .registers 4
-    .param p1, "x0"    # [I
-    .param p2, "x1"    # Landroid/view/animation/Animation;
-    .param p3, "x2"    # Landroid/support/design/widget/StateListAnimator$1;
 
     .prologue
     .line 175

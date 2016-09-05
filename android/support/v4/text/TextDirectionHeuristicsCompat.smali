@@ -3,38 +3,18 @@
 .source "TextDirectionHeuristicsCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/v4/text/TextDirectionHeuristicsCompat$1;,
-        Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicLocale;,
-        Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;,
-        Landroid/support/v4/text/TextDirectionHeuristicsCompat$FirstStrong;,
-        Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;,
-        Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;,
-        Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicImpl;
-    }
-.end annotation
-
-
 # static fields
-.field public static final ANYRTL_LTR:Landroid/support/v4/text/TextDirectionHeuristicCompat;
+.field public static final a:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
-.field public static final FIRSTSTRONG_LTR:Landroid/support/v4/text/TextDirectionHeuristicCompat;
+.field public static final b:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
-.field public static final FIRSTSTRONG_RTL:Landroid/support/v4/text/TextDirectionHeuristicCompat;
+.field public static final c:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
-.field public static final LOCALE:Landroid/support/v4/text/TextDirectionHeuristicCompat;
+.field public static final d:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
-.field public static final LTR:Landroid/support/v4/text/TextDirectionHeuristicCompat;
+.field public static final e:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
-.field public static final RTL:Landroid/support/v4/text/TextDirectionHeuristicCompat;
-
-.field private static final STATE_FALSE:I = 0x1
-
-.field private static final STATE_TRUE:I = 0x0
-
-.field private static final STATE_UNKNOWN:I = 0x2
+.field public static final f:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
 
 # direct methods
@@ -53,89 +33,76 @@
 
     invoke-direct {v0, v2, v3, v2}, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;-><init>(Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;ZLandroid/support/v4/text/TextDirectionHeuristicsCompat$1;)V
 
-    sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->LTR:Landroid/support/v4/text/TextDirectionHeuristicCompat;
+    sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->a:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
     .line 39
     new-instance v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;
 
     invoke-direct {v0, v2, v4, v2}, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;-><init>(Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;ZLandroid/support/v4/text/TextDirectionHeuristicsCompat$1;)V
 
-    sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->RTL:Landroid/support/v4/text/TextDirectionHeuristicCompat;
+    sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->b:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
     .line 47
     new-instance v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;
 
-    sget-object v1, Landroid/support/v4/text/TextDirectionHeuristicsCompat$FirstStrong;->INSTANCE:Landroid/support/v4/text/TextDirectionHeuristicsCompat$FirstStrong;
+    sget-object v1, Landroid/support/v4/text/TextDirectionHeuristicsCompat$FirstStrong;->a:Landroid/support/v4/text/TextDirectionHeuristicsCompat$FirstStrong;
 
     invoke-direct {v0, v1, v3, v2}, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;-><init>(Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;ZLandroid/support/v4/text/TextDirectionHeuristicsCompat$1;)V
 
-    sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->FIRSTSTRONG_LTR:Landroid/support/v4/text/TextDirectionHeuristicCompat;
+    sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->c:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
     .line 55
     new-instance v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;
 
-    sget-object v1, Landroid/support/v4/text/TextDirectionHeuristicsCompat$FirstStrong;->INSTANCE:Landroid/support/v4/text/TextDirectionHeuristicsCompat$FirstStrong;
+    sget-object v1, Landroid/support/v4/text/TextDirectionHeuristicsCompat$FirstStrong;->a:Landroid/support/v4/text/TextDirectionHeuristicsCompat$FirstStrong;
 
     invoke-direct {v0, v1, v4, v2}, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;-><init>(Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;ZLandroid/support/v4/text/TextDirectionHeuristicsCompat$1;)V
 
-    sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->FIRSTSTRONG_RTL:Landroid/support/v4/text/TextDirectionHeuristicCompat;
+    sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->d:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
     .line 62
     new-instance v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;
 
-    sget-object v1, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->INSTANCE_RTL:Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;
+    sget-object v1, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->a:Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;
 
     invoke-direct {v0, v1, v3, v2}, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicInternal;-><init>(Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;ZLandroid/support/v4/text/TextDirectionHeuristicsCompat$1;)V
 
-    sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->ANYRTL_LTR:Landroid/support/v4/text/TextDirectionHeuristicCompat;
+    sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->e:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
     .line 68
-    sget-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicLocale;->INSTANCE:Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicLocale;
+    sget-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicLocale;->a:Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionHeuristicLocale;
 
-    sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->LOCALE:Landroid/support/v4/text/TextDirectionHeuristicCompat;
-
-    return-void
-.end method
-
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 258
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->f:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
     return-void
 .end method
 
-.method static synthetic access$100(I)I
+.method static synthetic a(I)I
     .registers 2
-    .param p0, "x0"    # I
 
     .prologue
     .line 28
-    invoke-static {p0}, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->isRtlTextOrFormat(I)I
+    invoke-static {p0}, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->d(I)I
 
     move-result v0
 
     return v0
 .end method
 
-.method static synthetic access$200(I)I
+.method static synthetic b(I)I
     .registers 2
-    .param p0, "x0"    # I
 
     .prologue
     .line 28
-    invoke-static {p0}, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->isRtlText(I)I
+    invoke-static {p0}, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->c(I)I
 
     move-result v0
 
     return v0
 .end method
 
-.method private static isRtlText(I)I
+.method private static c(I)I
     .registers 2
-    .param p0, "directionality"    # I
 
     .prologue
     .line 79
@@ -170,9 +137,8 @@
     .end packed-switch
 .end method
 
-.method private static isRtlTextOrFormat(I)I
+.method private static d(I)I
     .registers 2
-    .param p0, "directionality"    # I
 
     .prologue
     .line 91

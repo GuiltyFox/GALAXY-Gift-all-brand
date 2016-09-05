@@ -8,17 +8,12 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/rey/material/widget/Spinner$DropdownPopup;->setAdapter(Landroid/widget/ListAdapter;)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/rey/material/widget/Spinner$DropdownPopup;->a(Landroid/widget/ListAdapter;)V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$1:Lcom/rey/material/widget/Spinner$DropdownPopup;
+.field final synthetic a:Lcom/rey/material/widget/Spinner$DropdownPopup;
 
 
 # direct methods
@@ -27,7 +22,7 @@
 
     .prologue
     .line 1240
-    iput-object p1, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$3;->this$1:Lcom/rey/material/widget/Spinner$DropdownPopup;
+    iput-object p1, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$3;->a:Lcom/rey/material/widget/Spinner$DropdownPopup;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,9 +33,6 @@
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .registers 10
-    .param p2, "v"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -53,15 +45,13 @@
 
     .prologue
     .line 1243
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
-    iget-object v0, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$3;->this$1:Lcom/rey/material/widget/Spinner$DropdownPopup;
+    iget-object v0, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$3;->a:Lcom/rey/material/widget/Spinner$DropdownPopup;
 
-    iget-object v0, v0, Lcom/rey/material/widget/Spinner$DropdownPopup;->this$0:Lcom/rey/material/widget/Spinner;
+    iget-object v0, v0, Lcom/rey/material/widget/Spinner$DropdownPopup;->b:Lcom/rey/material/widget/Spinner;
 
-    iget-object v1, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$3;->this$1:Lcom/rey/material/widget/Spinner$DropdownPopup;
+    iget-object v1, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$3;->a:Lcom/rey/material/widget/Spinner$DropdownPopup;
 
-    # getter for: Lcom/rey/material/widget/Spinner$DropdownPopup;->mAdapter:Lcom/rey/material/widget/Spinner$DropDownAdapter;
-    invoke-static {v1}, Lcom/rey/material/widget/Spinner$DropdownPopup;->access$900(Lcom/rey/material/widget/Spinner$DropdownPopup;)Lcom/rey/material/widget/Spinner$DropDownAdapter;
+    invoke-static {v1}, Lcom/rey/material/widget/Spinner$DropdownPopup;->c(Lcom/rey/material/widget/Spinner$DropdownPopup;)Lcom/rey/material/widget/Spinner$DropDownAdapter;
 
     move-result-object v1
 
@@ -69,12 +59,12 @@
 
     move-result-wide v2
 
-    invoke-virtual {v0, p2, p3, v2, v3}, Lcom/rey/material/widget/Spinner;->performItemClick(Landroid/view/View;IJ)Z
+    invoke-virtual {v0, p2, p3, v2, v3}, Lcom/rey/material/widget/Spinner;->a(Landroid/view/View;IJ)Z
 
     .line 1244
-    iget-object v0, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$3;->this$1:Lcom/rey/material/widget/Spinner$DropdownPopup;
+    iget-object v0, p0, Lcom/rey/material/widget/Spinner$DropdownPopup$3;->a:Lcom/rey/material/widget/Spinner$DropdownPopup;
 
-    invoke-virtual {v0}, Lcom/rey/material/widget/Spinner$DropdownPopup;->dismiss()V
+    invoke-virtual {v0}, Lcom/rey/material/widget/Spinner$DropdownPopup;->g()V
 
     .line 1245
     return-void

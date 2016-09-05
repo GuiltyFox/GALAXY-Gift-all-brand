@@ -4,19 +4,17 @@
 
 
 # instance fields
-.field public bundle:Landroid/os/Bundle;
+.field public a:Landroid/app/Activity;
 
-.field public fragment:Landroid/support/v4/app/Fragment;
+.field public b:Landroid/os/Bundle;
 
-.field public isClick:Z
+.field public c:Z
 
-.field public isRestore:Z
+.field protected d:Landroid/view/View;
 
-.field public mActivity:Landroid/app/Activity;
+.field public e:Z
 
-.field protected mHandler:Landroid/os/Handler;
-
-.field protected rootView:Landroid/view/View;
+.field protected f:Landroid/os/Handler;
 
 
 # direct methods
@@ -30,46 +28,40 @@
     invoke-direct {p0}, Landroid/support/v4/app/Fragment;-><init>()V
 
     .line 26
-    iput-boolean v0, p0, Lcom/bzbs/marketplace/base/BaseFragment;->isRestore:Z
+    iput-boolean v0, p0, Lcom/bzbs/marketplace/base/BaseFragment;->c:Z
 
     .line 28
-    iput-boolean v0, p0, Lcom/bzbs/marketplace/base/BaseFragment;->isClick:Z
+    iput-boolean v0, p0, Lcom/bzbs/marketplace/base/BaseFragment;->e:Z
 
     return-void
 .end method
 
-.method public static showToast(Landroid/content/Context;Ljava/lang/CharSequence;)Landroid/widget/Toast;
+.method public static a(Landroid/content/Context;Ljava/lang/CharSequence;)Landroid/widget/Toast;
     .registers 3
-    .param p0, "ctx"    # Landroid/content/Context;
-    .param p1, "msg"    # Ljava/lang/CharSequence;
 
     .prologue
     .line 74
     const/4 v0, 0x1
 
-    invoke-static {p0, p1, v0}, Lcom/bzbs/marketplace/base/BaseFragment;->showToast(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {p0, p1, v0}, Lcom/bzbs/marketplace/base/BaseFragment;->a(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static showToast(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-    .registers 5
-    .param p0, "ctx"    # Landroid/content/Context;
-    .param p1, "msg"    # Ljava/lang/CharSequence;
-    .param p2, "duration"    # I
+.method public static a(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    .registers 4
 
     .prologue
     .line 85
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    invoke-static {p0, p1, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {p0, p1, v0}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     move-result-object v0
 
     .line 86
-    .local v0, "toast":Landroid/widget/Toast;
     invoke-virtual {v0, p2}, Landroid/widget/Toast;->setDuration(I)V
 
     .line 87
@@ -81,35 +73,18 @@
 
 
 # virtual methods
-.method protected abstract createLayout(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V
-    .param p2    # Landroid/view/ViewGroup;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p3    # Landroid/os/Bundle;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
+.method protected abstract a()I
 .end method
 
-.method protected abstract getLayoutResource()I
+.method protected abstract a(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V
 .end method
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .registers 6
-    .param p1, "inflater"    # Landroid/view/LayoutInflater;
-    .param p2, "container"    # Landroid/view/ViewGroup;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p3, "savedInstanceState"    # Landroid/os/Bundle;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
 
     .prologue
     .line 33
-    invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseFragment;->getLayoutResource()I
+    invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseFragment;->a()I
 
     move-result v0
 
@@ -119,10 +94,10 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseFragment;->rootView:Landroid/view/View;
+    iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseFragment;->d:Landroid/view/View;
 
     .line 34
-    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseFragment;->rootView:Landroid/view/View;
+    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseFragment;->d:Landroid/view/View;
 
     invoke-static {p0, v0}, Lbutterknife/ButterKnife;->inject(Ljava/lang/Object;Landroid/view/View;)V
 
@@ -131,32 +106,32 @@
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
-    iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseFragment;->bundle:Landroid/os/Bundle;
+    iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseFragment;->b:Landroid/os/Bundle;
 
     .line 37
     invoke-virtual {p0}, Lcom/bzbs/marketplace/base/BaseFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseFragment;->mActivity:Landroid/app/Activity;
+    iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseFragment;->a:Landroid/app/Activity;
 
     .line 38
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseFragment;->mHandler:Landroid/os/Handler;
+    iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseFragment;->f:Landroid/os/Handler;
 
     .line 39
-    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseFragment;->mActivity:Landroid/app/Activity;
+    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseFragment;->a:Landroid/app/Activity;
 
-    invoke-static {v0}, Lcom/bzbs/data/AppSetting;->InitialLibBuzzebeesConfig(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/bzbs/data/AppSetting;->l(Landroid/content/Context;)V
 
     .line 41
-    invoke-virtual {p0, p1, p2, p3}, Lcom/bzbs/marketplace/base/BaseFragment;->createLayout(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V
+    invoke-virtual {p0, p1, p2, p3}, Lcom/bzbs/marketplace/base/BaseFragment;->a(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)V
 
     .line 43
-    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseFragment;->rootView:Landroid/view/View;
+    iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseFragment;->d:Landroid/view/View;
 
     return-object v0
 .end method

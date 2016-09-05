@@ -7,11 +7,7 @@
 
 
 # instance fields
-.field private isDestroyed:Z
-
-.field private isStarted:Z
-
-.field private final lifecycleListeners:Ljava/util/Set;
+.field private final a:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set",
@@ -21,6 +17,10 @@
         }
     .end annotation
 .end field
+
+.field private b:Z
+
+.field private c:Z
 
 
 # direct methods
@@ -40,30 +40,72 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->lifecycleListeners:Ljava/util/Set;
+    iput-object v0, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->a:Ljava/util/Set;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public addListener(Lcom/bumptech/glide/manager/LifecycleListener;)V
+.method a()V
     .registers 3
-    .param p1, "listener"    # Lcom/bumptech/glide/manager/LifecycleListener;
+
+    .prologue
+    .line 48
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->b:Z
+
+    .line 49
+    iget-object v0, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->a:Ljava/util/Set;
+
+    invoke-static {v0}, Lcom/bumptech/glide/util/Util;->a(Ljava/util/Collection;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_d
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1d
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/bumptech/glide/manager/LifecycleListener;
+
+    .line 50
+    invoke-interface {v0}, Lcom/bumptech/glide/manager/LifecycleListener;->d()V
+
+    goto :goto_d
+
+    .line 52
+    :cond_1d
+    return-void
+.end method
+
+.method public a(Lcom/bumptech/glide/manager/LifecycleListener;)V
+    .registers 3
 
     .prologue
     .line 36
-    iget-object v0, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->lifecycleListeners:Ljava/util/Set;
+    iget-object v0, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->a:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     .line 38
-    iget-boolean v0, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->isDestroyed:Z
+    iget-boolean v0, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->c:Z
 
     if-eqz v0, :cond_d
 
     .line 39
-    invoke-interface {p1}, Lcom/bumptech/glide/manager/LifecycleListener;->onDestroy()V
+    invoke-interface {p1}, Lcom/bumptech/glide/manager/LifecycleListener;->f()V
 
     .line 45
     :goto_c
@@ -71,156 +113,104 @@
 
     .line 40
     :cond_d
-    iget-boolean v0, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->isStarted:Z
+    iget-boolean v0, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->b:Z
 
     if-eqz v0, :cond_15
 
     .line 41
-    invoke-interface {p1}, Lcom/bumptech/glide/manager/LifecycleListener;->onStart()V
+    invoke-interface {p1}, Lcom/bumptech/glide/manager/LifecycleListener;->d()V
 
     goto :goto_c
 
     .line 43
     :cond_15
-    invoke-interface {p1}, Lcom/bumptech/glide/manager/LifecycleListener;->onStop()V
+    invoke-interface {p1}, Lcom/bumptech/glide/manager/LifecycleListener;->e()V
 
     goto :goto_c
 .end method
 
-.method onDestroy()V
-    .registers 4
-
-    .prologue
-    .line 62
-    const/4 v2, 0x1
-
-    iput-boolean v2, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->isDestroyed:Z
-
-    .line 63
-    iget-object v2, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->lifecycleListeners:Ljava/util/Set;
-
-    invoke-static {v2}, Lcom/bumptech/glide/util/Util;->getSnapshot(Ljava/util/Collection;)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, "i$":Ljava/util/Iterator;
-    :goto_d
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1d
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/bumptech/glide/manager/LifecycleListener;
-
-    .line 64
-    .local v1, "lifecycleListener":Lcom/bumptech/glide/manager/LifecycleListener;
-    invoke-interface {v1}, Lcom/bumptech/glide/manager/LifecycleListener;->onDestroy()V
-
-    goto :goto_d
-
-    .line 66
-    .end local v1    # "lifecycleListener":Lcom/bumptech/glide/manager/LifecycleListener;
-    :cond_1d
-    return-void
-.end method
-
-.method onStart()V
-    .registers 4
-
-    .prologue
-    .line 48
-    const/4 v2, 0x1
-
-    iput-boolean v2, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->isStarted:Z
-
-    .line 49
-    iget-object v2, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->lifecycleListeners:Ljava/util/Set;
-
-    invoke-static {v2}, Lcom/bumptech/glide/util/Util;->getSnapshot(Ljava/util/Collection;)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, "i$":Ljava/util/Iterator;
-    :goto_d
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1d
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Lcom/bumptech/glide/manager/LifecycleListener;
-
-    .line 50
-    .local v1, "lifecycleListener":Lcom/bumptech/glide/manager/LifecycleListener;
-    invoke-interface {v1}, Lcom/bumptech/glide/manager/LifecycleListener;->onStart()V
-
-    goto :goto_d
-
-    .line 52
-    .end local v1    # "lifecycleListener":Lcom/bumptech/glide/manager/LifecycleListener;
-    :cond_1d
-    return-void
-.end method
-
-.method onStop()V
-    .registers 4
+.method b()V
+    .registers 3
 
     .prologue
     .line 55
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    iput-boolean v2, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->isStarted:Z
+    iput-boolean v0, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->b:Z
 
     .line 56
-    iget-object v2, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->lifecycleListeners:Ljava/util/Set;
+    iget-object v0, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->a:Ljava/util/Set;
 
-    invoke-static {v2}, Lcom/bumptech/glide/util/Util;->getSnapshot(Ljava/util/Collection;)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-static {v0}, Lcom/bumptech/glide/util/Util;->a(Ljava/util/Collection;)Ljava/util/List;
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
-    :goto_d
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1d
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    check-cast v1, Lcom/bumptech/glide/manager/LifecycleListener;
+    :goto_d
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1d
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/bumptech/glide/manager/LifecycleListener;
 
     .line 57
-    .local v1, "lifecycleListener":Lcom/bumptech/glide/manager/LifecycleListener;
-    invoke-interface {v1}, Lcom/bumptech/glide/manager/LifecycleListener;->onStop()V
+    invoke-interface {v0}, Lcom/bumptech/glide/manager/LifecycleListener;->e()V
 
     goto :goto_d
 
     .line 59
-    .end local v1    # "lifecycleListener":Lcom/bumptech/glide/manager/LifecycleListener;
+    :cond_1d
+    return-void
+.end method
+
+.method c()V
+    .registers 3
+
+    .prologue
+    .line 62
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->c:Z
+
+    .line 63
+    iget-object v0, p0, Lcom/bumptech/glide/manager/ActivityFragmentLifecycle;->a:Ljava/util/Set;
+
+    invoke-static {v0}, Lcom/bumptech/glide/util/Util;->a(Ljava/util/Collection;)Ljava/util/List;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_d
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1d
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/bumptech/glide/manager/LifecycleListener;
+
+    .line 64
+    invoke-interface {v0}, Lcom/bumptech/glide/manager/LifecycleListener;->f()V
+
+    goto :goto_d
+
+    .line 66
     :cond_1d
     return-void
 .end method

@@ -3,17 +3,6 @@
 .source "PropertySerializerMap.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/ser/impl/PropertySerializerMap;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "Single"
-.end annotation
-
-
 # instance fields
 .field private final _serializer:Lcom/fasterxml/jackson/databind/JsonSerializer;
     .annotation system Ldalvik/annotation/Signature;
@@ -53,8 +42,6 @@
 
     .prologue
     .line 186
-    .local p1, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p2, "serializer":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<Ljava/lang/Object;>;"
     invoke-direct {p0}, Lcom/fasterxml/jackson/databind/ser/impl/PropertySerializerMap;-><init>()V
 
     .line 187
@@ -86,8 +73,6 @@
 
     .prologue
     .line 202
-    .local p1, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p2, "serializer":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<Ljava/lang/Object;>;"
     new-instance v0, Lcom/fasterxml/jackson/databind/ser/impl/PropertySerializerMap$Double;
 
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/ser/impl/PropertySerializerMap$Single;->_type:Ljava/lang/Class;
@@ -115,7 +100,6 @@
 
     .prologue
     .line 194
-    .local p1, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/impl/PropertySerializerMap$Single;->_type:Ljava/lang/Class;
 
     if-ne p1, v0, :cond_7

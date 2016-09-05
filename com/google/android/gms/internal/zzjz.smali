@@ -14,7 +14,7 @@
 
 
 # instance fields
-.field private zzOr:Ljava/util/Map;
+.field private a:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",
@@ -39,13 +39,57 @@
 
     invoke-direct {v0, v1}, Ljava/util/HashMap;-><init>(I)V
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/zzjz;->zzOr:Ljava/util/Map;
+    iput-object v0, p0, Lcom/google/android/gms/internal/zzjz;->a:Ljava/util/Map;
 
     return-void
 .end method
 
 
 # virtual methods
+.method public a()Ljava/util/Map;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/Integer;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzjz;->a:Ljava/util/Map;
+
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public a(Lcom/google/android/gms/internal/zzjz;)V
+    .registers 4
+
+    iget-object v0, p1, Lcom/google/android/gms/internal/zzjz;->a:Ljava/util/Map;
+
+    iget-object v1, p0, Lcom/google/android/gms/internal/zzjz;->a:Ljava/util/Map;
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
+
+    return-void
+.end method
+
+.method public bridge synthetic a(Lcom/google/android/gms/measurement/zze;)V
+    .registers 2
+
+    check-cast p1, Lcom/google/android/gms/internal/zzjz;
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/zzjz;->a(Lcom/google/android/gms/internal/zzjz;)V
+
+    return-void
+.end method
+
 .method public toString()Ljava/lang/String;
     .registers 6
 
@@ -53,7 +97,7 @@
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzjz;->zzOr:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzjz;->a:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -107,51 +151,7 @@
     goto :goto_f
 
     :cond_3b
-    invoke-static {v1}, Lcom/google/android/gms/internal/zzjz;->zzE(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public zza(Lcom/google/android/gms/internal/zzjz;)V
-    .registers 4
-
-    iget-object v0, p1, Lcom/google/android/gms/internal/zzjz;->zzOr:Ljava/util/Map;
-
-    iget-object v1, p0, Lcom/google/android/gms/internal/zzjz;->zzOr:Ljava/util/Map;
-
-    invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
-
-    return-void
-.end method
-
-.method public bridge synthetic zza(Lcom/google/android/gms/measurement/zze;)V
-    .registers 2
-
-    check-cast p1, Lcom/google/android/gms/internal/zzjz;
-
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/zzjz;->zza(Lcom/google/android/gms/internal/zzjz;)V
-
-    return-void
-.end method
-
-.method public zzix()Ljava/util/Map;
-    .registers 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/Integer;",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzjz;->zzOr:Ljava/util/Map;
-
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
+    invoke-static {v1}, Lcom/google/android/gms/internal/zzjz;->a(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 

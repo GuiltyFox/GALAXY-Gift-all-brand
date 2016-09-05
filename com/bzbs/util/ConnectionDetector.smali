@@ -4,20 +4,19 @@
 
 
 # instance fields
-.field private _context:Landroid/content/Context;
+.field private a:Landroid/content/Context;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 2
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 11
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 12
-    iput-object p1, p0, Lcom/bzbs/util/ConnectionDetector;->_context:Landroid/content/Context;
+    iput-object p1, p0, Lcom/bzbs/util/ConnectionDetector;->a:Landroid/content/Context;
 
     .line 13
     return-void
@@ -25,24 +24,25 @@
 
 
 # virtual methods
-.method public isConnectingToInternet()Z
+.method public a()Z
     .registers 6
 
     .prologue
+    const/4 v1, 0x0
+
     .line 16
-    iget-object v3, p0, Lcom/bzbs/util/ConnectionDetector;->_context:Landroid/content/Context;
+    iget-object v0, p0, Lcom/bzbs/util/ConnectionDetector;->a:Landroid/content/Context;
 
-    const-string/jumbo v4, "connectivity"
+    const-string/jumbo v2, "connectivity"
 
-    invoke-virtual {v3, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
     .line 17
-    .local v0, "connectivity":Landroid/net/ConnectivityManager;
-    if-eqz v0, :cond_26
+    if-eqz v0, :cond_23
 
     .line 18
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getAllNetworkInfo()[Landroid/net/NetworkInfo;
@@ -50,20 +50,18 @@
     move-result-object v2
 
     .line 19
-    .local v2, "info":[Landroid/net/NetworkInfo;
-    if-eqz v2, :cond_26
+    if-eqz v2, :cond_23
+
+    move v0, v1
 
     .line 20
-    const/4 v1, 0x0
-
-    .local v1, "i":I
-    :goto_14
+    :goto_15
     array-length v3, v2
 
-    if-ge v1, v3, :cond_26
+    if-ge v0, v3, :cond_23
 
     .line 21
-    aget-object v3, v2, v1
+    aget-object v3, v2, v0
 
     invoke-virtual {v3}, Landroid/net/NetworkInfo;->getState()Landroid/net/NetworkInfo$State;
 
@@ -71,30 +69,18 @@
 
     sget-object v4, Landroid/net/NetworkInfo$State;->CONNECTED:Landroid/net/NetworkInfo$State;
 
-    if-ne v3, v4, :cond_23
+    if-ne v3, v4, :cond_24
 
     .line 22
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
     .line 26
-    .end local v1    # "i":I
-    .end local v2    # "info":[Landroid/net/NetworkInfo;
-    :goto_22
-    return v3
+    :cond_23
+    return v1
 
     .line 20
-    .restart local v1    # "i":I
-    .restart local v2    # "info":[Landroid/net/NetworkInfo;
-    :cond_23
-    add-int/lit8 v1, v1, 0x1
+    :cond_24
+    add-int/lit8 v0, v0, 0x1
 
-    goto :goto_14
-
-    .line 26
-    .end local v1    # "i":I
-    .end local v2    # "info":[Landroid/net/NetworkInfo;
-    :cond_26
-    const/4 v3, 0x0
-
-    goto :goto_22
+    goto :goto_15
 .end method

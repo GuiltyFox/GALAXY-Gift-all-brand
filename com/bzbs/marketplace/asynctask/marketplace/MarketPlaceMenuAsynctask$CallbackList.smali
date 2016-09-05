@@ -3,17 +3,6 @@
 .source "MarketPlaceMenuAsynctask.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bzbs/marketplace/asynctask/marketplace/MarketPlaceMenuAsynctask;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x409
-    name = "CallbackList"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -27,10 +16,10 @@
 
 
 # virtual methods
-.method public abstract onFailure(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
+.method public abstract a(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
 .end method
 
-.method public abstract onSuccess(I[Lcz/msebera/android/httpclient/Header;[BLjava/util/ArrayList;)V
+.method public abstract a(I[Lcz/msebera/android/httpclient/Header;[BLjava/util/ArrayList;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I[",

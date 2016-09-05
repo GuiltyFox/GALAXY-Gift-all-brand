@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/model/stream/HttpUrlGlideUrlLoader;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Factory"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -29,7 +20,7 @@
 
 
 # instance fields
-.field private final modelCache:Lcom/bumptech/glide/load/model/ModelCache;
+.field private final a:Lcom/bumptech/glide/load/model/ModelCache;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/ModelCache",
@@ -57,17 +48,15 @@
 
     invoke-direct {v0, v1}, Lcom/bumptech/glide/load/model/ModelCache;-><init>(I)V
 
-    iput-object v0, p0, Lcom/bumptech/glide/load/model/stream/HttpUrlGlideUrlLoader$Factory;->modelCache:Lcom/bumptech/glide/load/model/ModelCache;
+    iput-object v0, p0, Lcom/bumptech/glide/load/model/stream/HttpUrlGlideUrlLoader$Factory;->a:Lcom/bumptech/glide/load/model/ModelCache;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public build(Landroid/content/Context;Lcom/bumptech/glide/load/model/GenericLoaderFactory;)Lcom/bumptech/glide/load/model/ModelLoader;
+.method public a(Landroid/content/Context;Lcom/bumptech/glide/load/model/GenericLoaderFactory;)Lcom/bumptech/glide/load/model/ModelLoader;
     .registers 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "factories"    # Lcom/bumptech/glide/load/model/GenericLoaderFactory;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -86,14 +75,14 @@
     .line 31
     new-instance v0, Lcom/bumptech/glide/load/model/stream/HttpUrlGlideUrlLoader;
 
-    iget-object v1, p0, Lcom/bumptech/glide/load/model/stream/HttpUrlGlideUrlLoader$Factory;->modelCache:Lcom/bumptech/glide/load/model/ModelCache;
+    iget-object v1, p0, Lcom/bumptech/glide/load/model/stream/HttpUrlGlideUrlLoader$Factory;->a:Lcom/bumptech/glide/load/model/ModelCache;
 
     invoke-direct {v0, v1}, Lcom/bumptech/glide/load/model/stream/HttpUrlGlideUrlLoader;-><init>(Lcom/bumptech/glide/load/model/ModelCache;)V
 
     return-object v0
 .end method
 
-.method public teardown()V
+.method public a()V
     .registers 1
 
     .prologue

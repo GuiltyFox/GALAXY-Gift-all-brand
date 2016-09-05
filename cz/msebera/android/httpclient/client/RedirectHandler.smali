@@ -10,11 +10,6 @@
 
 # virtual methods
 .method public abstract getLocationURI(Lcz/msebera/android/httpclient/HttpResponse;Lcz/msebera/android/httpclient/protocol/HttpContext;)Ljava/net/URI;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcz/msebera/android/httpclient/ProtocolException;
-        }
-    .end annotation
 .end method
 
 .method public abstract isRedirectRequested(Lcz/msebera/android/httpclient/HttpResponse;Lcz/msebera/android/httpclient/protocol/HttpContext;)Z

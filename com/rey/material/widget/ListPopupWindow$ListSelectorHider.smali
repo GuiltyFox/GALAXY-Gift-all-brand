@@ -6,19 +6,8 @@
 .implements Ljava/lang/Runnable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/rey/material/widget/ListPopupWindow;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "ListSelectorHider"
-.end annotation
-
-
 # instance fields
-.field final synthetic this$0:Lcom/rey/material/widget/ListPopupWindow;
+.field final synthetic a:Lcom/rey/material/widget/ListPopupWindow;
 
 
 # direct methods
@@ -27,7 +16,7 @@
 
     .prologue
     .line 1759
-    iput-object p1, p0, Lcom/rey/material/widget/ListPopupWindow$ListSelectorHider;->this$0:Lcom/rey/material/widget/ListPopupWindow;
+    iput-object p1, p0, Lcom/rey/material/widget/ListPopupWindow$ListSelectorHider;->a:Lcom/rey/material/widget/ListPopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,8 +25,6 @@
 
 .method synthetic constructor <init>(Lcom/rey/material/widget/ListPopupWindow;Lcom/rey/material/widget/ListPopupWindow$1;)V
     .registers 3
-    .param p1, "x0"    # Lcom/rey/material/widget/ListPopupWindow;
-    .param p2, "x1"    # Lcom/rey/material/widget/ListPopupWindow$1;
 
     .prologue
     .line 1759
@@ -53,9 +40,9 @@
 
     .prologue
     .line 1761
-    iget-object v0, p0, Lcom/rey/material/widget/ListPopupWindow$ListSelectorHider;->this$0:Lcom/rey/material/widget/ListPopupWindow;
+    iget-object v0, p0, Lcom/rey/material/widget/ListPopupWindow$ListSelectorHider;->a:Lcom/rey/material/widget/ListPopupWindow;
 
-    invoke-virtual {v0}, Lcom/rey/material/widget/ListPopupWindow;->clearListSelection()V
+    invoke-virtual {v0}, Lcom/rey/material/widget/ListPopupWindow;->h()V
 
     .line 1762
     return-void

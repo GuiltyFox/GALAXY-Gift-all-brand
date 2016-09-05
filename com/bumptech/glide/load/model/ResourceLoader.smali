@@ -21,14 +21,8 @@
 .end annotation
 
 
-# static fields
-.field private static final TAG:Ljava/lang/String; = "ResourceLoader"
-
-
 # instance fields
-.field private final resources:Landroid/content/res/Resources;
-
-.field private final uriLoader:Lcom/bumptech/glide/load/model/ModelLoader;
+.field private final a:Lcom/bumptech/glide/load/model/ModelLoader;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/ModelLoader",
@@ -39,11 +33,12 @@
     .end annotation
 .end field
 
+.field private final b:Landroid/content/res/Resources;
+
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Lcom/bumptech/glide/load/model/ModelLoader;)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -57,8 +52,6 @@
 
     .prologue
     .line 24
-    .local p0, "this":Lcom/bumptech/glide/load/model/ResourceLoader;, "Lcom/bumptech/glide/load/model/ResourceLoader<TT;>;"
-    .local p2, "uriLoader":Lcom/bumptech/glide/load/model/ModelLoader;, "Lcom/bumptech/glide/load/model/ModelLoader<Landroid/net/Uri;TT;>;"
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -71,7 +64,6 @@
 
 .method public constructor <init>(Landroid/content/res/Resources;Lcom/bumptech/glide/load/model/ModelLoader;)V
     .registers 3
-    .param p1, "resources"    # Landroid/content/res/Resources;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -85,15 +77,13 @@
 
     .prologue
     .line 27
-    .local p0, "this":Lcom/bumptech/glide/load/model/ResourceLoader;, "Lcom/bumptech/glide/load/model/ResourceLoader<TT;>;"
-    .local p2, "uriLoader":Lcom/bumptech/glide/load/model/ModelLoader;, "Lcom/bumptech/glide/load/model/ModelLoader<Landroid/net/Uri;TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 28
-    iput-object p1, p0, Lcom/bumptech/glide/load/model/ResourceLoader;->resources:Landroid/content/res/Resources;
+    iput-object p1, p0, Lcom/bumptech/glide/load/model/ResourceLoader;->b:Landroid/content/res/Resources;
 
     .line 29
-    iput-object p2, p0, Lcom/bumptech/glide/load/model/ResourceLoader;->uriLoader:Lcom/bumptech/glide/load/model/ModelLoader;
+    iput-object p2, p0, Lcom/bumptech/glide/load/model/ResourceLoader;->a:Lcom/bumptech/glide/load/model/ModelLoader;
 
     .line 30
     return-void
@@ -101,11 +91,8 @@
 
 
 # virtual methods
-.method public getResourceFetcher(Ljava/lang/Integer;II)Lcom/bumptech/glide/load/data/DataFetcher;
+.method public a(Ljava/lang/Integer;II)Lcom/bumptech/glide/load/data/DataFetcher;
     .registers 9
-    .param p1, "model"    # Ljava/lang/Integer;
-    .param p2, "width"    # I
-    .param p3, "height"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -117,109 +104,105 @@
     .end annotation
 
     .prologue
+    const/4 v0, 0x0
+
     .line 34
-    .local p0, "this":Lcom/bumptech/glide/load/model/ResourceLoader;, "Lcom/bumptech/glide/load/model/ResourceLoader<TT;>;"
-    const/4 v1, 0x0
-
     .line 36
-    .local v1, "uri":Landroid/net/Uri;
     :try_start_1
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "android.resource://"
+    const-string/jumbo v2, "android.resource://"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    iget-object v3, p0, Lcom/bumptech/glide/load/model/ResourceLoader;->resources:Landroid/content/res/Resources;
-
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v4
-
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getResourcePackageName(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const/16 v3, 0x2f
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    iget-object v3, p0, Lcom/bumptech/glide/load/model/ResourceLoader;->resources:Landroid/content/res/Resources;
+    iget-object v2, p0, Lcom/bumptech/glide/load/model/ResourceLoader;->b:Landroid/content/res/Resources;
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getResourceTypeName(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getResourcePackageName(I)Ljava/lang/String;
 
     move-result-object v2
 
-    const/16 v3, 0x2f
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    move-result-object v2
+    const/16 v2, 0x2f
 
-    iget-object v3, p0, Lcom/bumptech/glide/load/model/ResourceLoader;->resources:Landroid/content/res/Resources;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/bumptech/glide/load/model/ResourceLoader;->b:Landroid/content/res/Resources;
 
     invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {v3, v4}, Landroid/content/res/Resources;->getResourceEntryName(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getResourceTypeName(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const/16 v2, 0x2f
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/bumptech/glide/load/model/ResourceLoader;->b:Landroid/content/res/Resources;
+
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getResourceEntryName(I)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
     :try_end_4a
     .catch Landroid/content/res/Resources$NotFoundException; {:try_start_1 .. :try_end_4a} :catch_54
 
     move-result-object v1
 
     .line 46
-    :cond_4b
     :goto_4b
-    if-eqz v1, :cond_7a
+    if-eqz v1, :cond_53
 
     .line 47
-    iget-object v2, p0, Lcom/bumptech/glide/load/model/ResourceLoader;->uriLoader:Lcom/bumptech/glide/load/model/ModelLoader;
+    iget-object v0, p0, Lcom/bumptech/glide/load/model/ResourceLoader;->a:Lcom/bumptech/glide/load/model/ModelLoader;
 
-    invoke-interface {v2, v1, p2, p3}, Lcom/bumptech/glide/load/model/ModelLoader;->getResourceFetcher(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
+    invoke-interface {v0, v1, p2, p3}, Lcom/bumptech/glide/load/model/ModelLoader;->a(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 49
-    :goto_53
-    return-object v2
+    :cond_53
+    return-object v0
 
     .line 40
     :catch_54
-    move-exception v0
+    move-exception v1
 
     .line 41
-    .local v0, "e":Landroid/content/res/Resources$NotFoundException;
     const-string/jumbo v2, "ResourceLoader"
 
     const/4 v3, 0x5
@@ -228,7 +211,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_4b
+    if-eqz v2, :cond_79
 
     .line 42
     const-string/jumbo v2, "ResourceLoader"
@@ -251,31 +234,22 @@
 
     move-result-object v3
 
-    invoke-static {v2, v3, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v2, v3, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    :cond_79
+    move-object v1, v0
 
     goto :goto_4b
-
-    .line 49
-    .end local v0    # "e":Landroid/content/res/Resources$NotFoundException;
-    :cond_7a
-    const/4 v2, 0x0
-
-    goto :goto_53
 .end method
 
-.method public bridge synthetic getResourceFetcher(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
+.method public bridge synthetic a(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
     .registers 5
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # I
-    .param p3, "x2"    # I
 
     .prologue
     .line 17
-    .local p0, "this":Lcom/bumptech/glide/load/model/ResourceLoader;, "Lcom/bumptech/glide/load/model/ResourceLoader<TT;>;"
     check-cast p1, Ljava/lang/Integer;
 
-    .end local p1    # "x0":Ljava/lang/Object;
-    invoke-virtual {p0, p1, p2, p3}, Lcom/bumptech/glide/load/model/ResourceLoader;->getResourceFetcher(Ljava/lang/Integer;II)Lcom/bumptech/glide/load/data/DataFetcher;
+    invoke-virtual {p0, p1, p2, p3}, Lcom/bumptech/glide/load/model/ResourceLoader;->a(Ljava/lang/Integer;II)Lcom/bumptech/glide/load/data/DataFetcher;
 
     move-result-object v0
 

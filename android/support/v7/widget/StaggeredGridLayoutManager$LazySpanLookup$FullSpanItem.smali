@@ -6,17 +6,6 @@
 .implements Landroid/os/Parcelable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "FullSpanItem"
-.end annotation
-
-
 # static fields
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
     .annotation system Ldalvik/annotation/Signature;
@@ -31,13 +20,13 @@
 
 
 # instance fields
-.field mGapDir:I
+.field a:I
 
-.field mGapPerSpan:[I
+.field b:I
 
-.field mHasUnwantedGapAfter:Z
+.field c:[I
 
-.field mPosition:I
+.field d:Z
 
 
 # direct methods
@@ -45,7 +34,7 @@
     .registers 1
 
     .prologue
-    .line 2894
+    .line 2889
     new-instance v0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem$1;
 
     invoke-direct {v0}, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem$1;-><init>()V
@@ -59,97 +48,83 @@
     .registers 1
 
     .prologue
-    .line 2859
+    .line 2854
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2860
+    .line 2855
     return-void
 .end method
 
 .method public constructor <init>(Landroid/os/Parcel;)V
-    .registers 5
-    .param p1, "in"    # Landroid/os/Parcel;
+    .registers 4
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    .line 2848
+    .line 2843
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2849
+    .line 2844
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result v2
+    move-result v1
 
-    iput v2, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->mPosition:I
+    iput v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->a:I
 
-    .line 2850
+    .line 2845
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result v2
+    move-result v1
 
-    iput v2, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->mGapDir:I
+    iput v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->b:I
 
-    .line 2851
+    .line 2846
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result v2
+    move-result v1
 
-    if-ne v2, v1, :cond_28
+    if-ne v1, v0, :cond_28
 
     :goto_16
-    iput-boolean v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->mHasUnwantedGapAfter:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->d:Z
 
-    .line 2852
+    .line 2847
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    .line 2853
-    .local v0, "spanCount":I
+    .line 2848
     if-lez v0, :cond_27
 
-    .line 2854
-    new-array v1, v0, [I
+    .line 2849
+    new-array v0, v0, [I
 
-    iput-object v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->mGapPerSpan:[I
+    iput-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->c:[I
 
-    .line 2855
-    iget-object v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->mGapPerSpan:[I
+    .line 2850
+    iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->c:[I
 
-    invoke-virtual {p1, v1}, Landroid/os/Parcel;->readIntArray([I)V
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->readIntArray([I)V
 
-    .line 2857
+    .line 2852
     :cond_27
     return-void
 
-    .line 2851
-    .end local v0    # "spanCount":I
+    .line 2846
     :cond_28
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_16
 .end method
 
 
 # virtual methods
-.method public describeContents()I
-    .registers 2
-
-    .prologue
-    .line 2868
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method getGapForSpan(I)I
+.method a(I)I
     .registers 3
-    .param p1, "spanIndex"    # I
 
     .prologue
-    .line 2863
-    iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->mGapPerSpan:[I
+    .line 2858
+    iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->c:[I
 
     if-nez v0, :cond_6
 
@@ -159,18 +134,28 @@
     return v0
 
     :cond_6
-    iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->mGapPerSpan:[I
+    iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->c:[I
 
     aget v0, v0, p1
 
     goto :goto_5
 .end method
 
+.method public describeContents()I
+    .registers 2
+
+    .prologue
+    .line 2863
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method public toString()Ljava/lang/String;
     .registers 3
 
     .prologue
-    .line 2886
+    .line 2881
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -181,7 +166,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->mPosition:I
+    iget v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->a:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -193,7 +178,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->mGapDir:I
+    iget v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->b:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -205,7 +190,7 @@
 
     move-result-object v0
 
-    iget-boolean v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->mHasUnwantedGapAfter:Z
+    iget-boolean v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->d:Z
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -217,7 +202,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->mGapPerSpan:[I
+    iget-object v1, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->c:[I
 
     invoke-static {v1}, Ljava/util/Arrays;->toString([I)Ljava/lang/String;
 
@@ -242,24 +227,22 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .registers 5
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
     .prologue
     const/4 v1, 0x0
 
-    .line 2873
-    iget v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->mPosition:I
+    .line 2868
+    iget v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->a:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2874
-    iget v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->mGapDir:I
+    .line 2869
+    iget v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->b:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2875
-    iget-boolean v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->mHasUnwantedGapAfter:Z
+    .line 2870
+    iget-boolean v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->d:Z
 
     if-eqz v0, :cond_28
 
@@ -268,40 +251,40 @@
     :goto_10
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2876
-    iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->mGapPerSpan:[I
+    .line 2871
+    iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->c:[I
 
     if-eqz v0, :cond_2a
 
-    iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->mGapPerSpan:[I
+    iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->c:[I
 
     array-length v0, v0
 
     if-lez v0, :cond_2a
 
-    .line 2877
-    iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->mGapPerSpan:[I
+    .line 2872
+    iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->c:[I
 
     array-length v0, v0
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 2878
-    iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->mGapPerSpan:[I
+    .line 2873
+    iget-object v0, p0, Landroid/support/v7/widget/StaggeredGridLayoutManager$LazySpanLookup$FullSpanItem;->c:[I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeIntArray([I)V
 
-    .line 2882
+    .line 2877
     :goto_27
     return-void
 
     :cond_28
     move v0, v1
 
-    .line 2875
+    .line 2870
     goto :goto_10
 
-    .line 2880
+    .line 2875
     :cond_2a
     invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeInt(I)V
 

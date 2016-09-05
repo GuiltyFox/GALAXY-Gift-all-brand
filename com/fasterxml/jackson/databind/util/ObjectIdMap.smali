@@ -33,7 +33,6 @@
 # virtual methods
 .method public findId(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
-    .param p1, "pojo"    # Ljava/lang/Object;
 
     .prologue
     .line 31
@@ -46,8 +45,6 @@
 
 .method public insertId(Ljava/lang/Object;Ljava/lang/Object;)V
     .registers 3
-    .param p1, "pojo"    # Ljava/lang/Object;
-    .param p2, "id"    # Ljava/lang/Object;
 
     .prologue
     .line 36

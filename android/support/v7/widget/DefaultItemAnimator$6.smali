@@ -8,22 +8,17 @@
     value = Landroid/support/v7/widget/DefaultItemAnimator;->animateMoveImpl(Landroid/support/v7/widget/RecyclerView$ViewHolder;IIII)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Landroid/support/v7/widget/DefaultItemAnimator;
+.field final synthetic a:Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
-.field final synthetic val$animation:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+.field final synthetic b:I
 
-.field final synthetic val$deltaX:I
+.field final synthetic c:I
 
-.field final synthetic val$deltaY:I
+.field final synthetic d:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-.field final synthetic val$holder:Landroid/support/v7/widget/RecyclerView$ViewHolder;
+.field final synthetic e:Landroid/support/v7/widget/DefaultItemAnimator;
 
 
 # direct methods
@@ -32,15 +27,15 @@
 
     .prologue
     .line 286
-    iput-object p1, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->this$0:Landroid/support/v7/widget/DefaultItemAnimator;
+    iput-object p1, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->e:Landroid/support/v7/widget/DefaultItemAnimator;
 
-    iput-object p2, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->val$holder:Landroid/support/v7/widget/RecyclerView$ViewHolder;
+    iput-object p2, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->a:Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
-    iput p3, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->val$deltaX:I
+    iput p3, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->b:I
 
-    iput p4, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->val$deltaY:I
+    iput p4, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->c:I
 
-    iput-object p5, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->val$animation:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+    iput-object p5, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->d:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
     const/4 v0, 0x0
 
@@ -53,27 +48,26 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/view/View;)V
     .registers 4
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     const/4 v1, 0x0
 
     .line 293
-    iget v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->val$deltaX:I
+    iget v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->b:I
 
     if-eqz v0, :cond_8
 
     .line 294
-    invoke-static {p1, v1}, Landroid/support/v4/view/ViewCompat;->setTranslationX(Landroid/view/View;F)V
+    invoke-static {p1, v1}, Landroid/support/v4/view/ViewCompat;->a(Landroid/view/View;F)V
 
     .line 296
     :cond_8
-    iget v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->val$deltaY:I
+    iget v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->c:I
 
     if-eqz v0, :cond_f
 
     .line 297
-    invoke-static {p1, v1}, Landroid/support/v4/view/ViewCompat;->setTranslationY(Landroid/view/View;F)V
+    invoke-static {p1, v1}, Landroid/support/v4/view/ViewCompat;->b(Landroid/view/View;F)V
 
     .line 299
     :cond_f
@@ -82,37 +76,36 @@
 
 .method public onAnimationEnd(Landroid/view/View;)V
     .registers 4
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 302
-    iget-object v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->val$animation:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+    iget-object v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->d:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->setListener(Landroid/support/v4/view/ViewPropertyAnimatorListener;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+    invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a(Landroid/support/v4/view/ViewPropertyAnimatorListener;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
     .line 303
-    iget-object v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->this$0:Landroid/support/v7/widget/DefaultItemAnimator;
+    iget-object v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->e:Landroid/support/v7/widget/DefaultItemAnimator;
 
-    iget-object v1, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->val$holder:Landroid/support/v7/widget/RecyclerView$ViewHolder;
+    iget-object v1, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->a:Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/DefaultItemAnimator;->dispatchMoveFinished(Landroid/support/v7/widget/RecyclerView$ViewHolder;)V
 
     .line 304
-    iget-object v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->this$0:Landroid/support/v7/widget/DefaultItemAnimator;
+    iget-object v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->e:Landroid/support/v7/widget/DefaultItemAnimator;
 
     # getter for: Landroid/support/v7/widget/DefaultItemAnimator;->mMoveAnimations:Ljava/util/ArrayList;
     invoke-static {v0}, Landroid/support/v7/widget/DefaultItemAnimator;->access$1100(Landroid/support/v7/widget/DefaultItemAnimator;)Ljava/util/ArrayList;
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->val$holder:Landroid/support/v7/widget/RecyclerView$ViewHolder;
+    iget-object v1, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->a:Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     .line 305
-    iget-object v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->this$0:Landroid/support/v7/widget/DefaultItemAnimator;
+    iget-object v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->e:Landroid/support/v7/widget/DefaultItemAnimator;
 
     # invokes: Landroid/support/v7/widget/DefaultItemAnimator;->dispatchFinishedWhenDone()V
     invoke-static {v0}, Landroid/support/v7/widget/DefaultItemAnimator;->access$800(Landroid/support/v7/widget/DefaultItemAnimator;)V
@@ -123,13 +116,12 @@
 
 .method public onAnimationStart(Landroid/view/View;)V
     .registers 4
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 289
-    iget-object v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->this$0:Landroid/support/v7/widget/DefaultItemAnimator;
+    iget-object v0, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->e:Landroid/support/v7/widget/DefaultItemAnimator;
 
-    iget-object v1, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->val$holder:Landroid/support/v7/widget/RecyclerView$ViewHolder;
+    iget-object v1, p0, Landroid/support/v7/widget/DefaultItemAnimator$6;->a:Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/DefaultItemAnimator;->dispatchMoveStarting(Landroid/support/v7/widget/RecyclerView$ViewHolder;)V
 

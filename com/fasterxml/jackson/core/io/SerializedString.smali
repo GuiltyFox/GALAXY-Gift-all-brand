@@ -22,7 +22,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 4
-    .param p1, "v"    # Ljava/lang/String;
 
     .prologue
     .line 47
@@ -50,12 +49,6 @@
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
     .registers 3
-    .param p1, "in"    # Ljava/io/ObjectInputStream;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 69
@@ -71,12 +64,6 @@
 
 .method private writeObject(Ljava/io/ObjectOutputStream;)V
     .registers 3
-    .param p1, "out"    # Ljava/io/ObjectOutputStream;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 73
@@ -92,38 +79,34 @@
 # virtual methods
 .method public appendQuoted([CI)I
     .registers 7
-    .param p1, "buffer"    # [C
-    .param p2, "offset"    # I
 
     .prologue
     .line 156
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_quotedChars:[C
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_quotedChars:[C
 
     .line 157
-    .local v1, "result":[C
-    if-nez v1, :cond_10
+    if-nez v0, :cond_10
 
     .line 158
     invoke-static {}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->getInstance()Lcom/fasterxml/jackson/core/io/JsonStringEncoder;
 
-    move-result-object v2
+    move-result-object v0
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->quoteAsString(Ljava/lang/String;)[C
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->quoteAsString(Ljava/lang/String;)[C
 
-    move-result-object v1
+    move-result-object v0
 
     .line 159
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_quotedChars:[C
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_quotedChars:[C
 
     .line 161
     :cond_10
-    array-length v0, v1
+    array-length v1, v0
 
     .line 162
-    .local v0, "length":I
-    add-int v2, p2, v0
+    add-int v2, p2, v1
 
     array-length v3, p1
 
@@ -133,54 +116,51 @@
     const/4 v0, -0x1
 
     .line 166
-    .end local v0    # "length":I
     :goto_17
     return v0
 
     .line 165
-    .restart local v0    # "length":I
     :cond_18
     const/4 v2, 0x0
 
-    invoke-static {v1, v2, p1, p2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0, v2, p1, p2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
+    move v0, v1
+
+    .line 166
     goto :goto_17
 .end method
 
 .method public appendQuotedUTF8([BI)I
     .registers 7
-    .param p1, "buffer"    # [B
-    .param p2, "offset"    # I
 
     .prologue
     .line 141
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_quotedUTF8Ref:[B
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_quotedUTF8Ref:[B
 
     .line 142
-    .local v1, "result":[B
-    if-nez v1, :cond_10
+    if-nez v0, :cond_10
 
     .line 143
     invoke-static {}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->getInstance()Lcom/fasterxml/jackson/core/io/JsonStringEncoder;
 
-    move-result-object v2
+    move-result-object v0
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->quoteAsUTF8(Ljava/lang/String;)[B
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->quoteAsUTF8(Ljava/lang/String;)[B
 
-    move-result-object v1
+    move-result-object v0
 
     .line 144
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_quotedUTF8Ref:[B
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_quotedUTF8Ref:[B
 
     .line 146
     :cond_10
-    array-length v0, v1
+    array-length v1, v0
 
     .line 147
-    .local v0, "length":I
-    add-int v2, p2, v0
+    add-int v2, p2, v1
 
     array-length v3, p1
 
@@ -190,37 +170,34 @@
     const/4 v0, -0x1
 
     .line 151
-    .end local v0    # "length":I
     :goto_17
     return v0
 
     .line 150
-    .restart local v0    # "length":I
     :cond_18
     const/4 v2, 0x0
 
-    invoke-static {v1, v2, p1, p2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0, v2, p1, p2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
+    move v0, v1
+
+    .line 151
     goto :goto_17
 .end method
 
 .method public appendUnquoted([CI)I
     .registers 7
-    .param p1, "buffer"    # [C
-    .param p2, "offset"    # I
 
     .prologue
     .line 186
     iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
 
     .line 187
-    .local v1, "str":Ljava/lang/String;
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v0
 
     .line 188
-    .local v0, "length":I
     add-int v2, p2, v0
 
     array-length v3, p1
@@ -231,12 +208,10 @@
     const/4 v0, -0x1
 
     .line 192
-    .end local v0    # "length":I
     :goto_c
     return v0
 
     .line 191
-    .restart local v0    # "length":I
     :cond_d
     const/4 v2, 0x0
 
@@ -247,38 +222,34 @@
 
 .method public appendUnquotedUTF8([BI)I
     .registers 7
-    .param p1, "buffer"    # [B
-    .param p2, "offset"    # I
 
     .prologue
     .line 171
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_unquotedUTF8Ref:[B
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_unquotedUTF8Ref:[B
 
     .line 172
-    .local v1, "result":[B
-    if-nez v1, :cond_10
+    if-nez v0, :cond_10
 
     .line 173
     invoke-static {}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->getInstance()Lcom/fasterxml/jackson/core/io/JsonStringEncoder;
 
-    move-result-object v2
+    move-result-object v0
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->encodeAsUTF8(Ljava/lang/String;)[B
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->encodeAsUTF8(Ljava/lang/String;)[B
 
-    move-result-object v1
+    move-result-object v0
 
     .line 174
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_unquotedUTF8Ref:[B
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_unquotedUTF8Ref:[B
 
     .line 176
     :cond_10
-    array-length v0, v1
+    array-length v1, v0
 
     .line 177
-    .local v0, "length":I
-    add-int v2, p2, v0
+    add-int v2, p2, v1
 
     array-length v3, p1
 
@@ -288,39 +259,39 @@
     const/4 v0, -0x1
 
     .line 181
-    .end local v0    # "length":I
     :goto_17
     return v0
 
     .line 180
-    .restart local v0    # "length":I
     :cond_18
     const/4 v2, 0x0
 
-    invoke-static {v1, v2, p1, p2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0, v2, p1, p2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
+    move v0, v1
+
+    .line 181
     goto :goto_17
 .end method
 
 .method public final asQuotedChars()[C
-    .registers 4
+    .registers 3
 
     .prologue
     .line 97
     iget-object v0, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_quotedChars:[C
 
     .line 98
-    .local v0, "result":[C
     if-nez v0, :cond_10
 
     .line 99
     invoke-static {}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->getInstance()Lcom/fasterxml/jackson/core/io/JsonStringEncoder;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->quoteAsString(Ljava/lang/String;)[C
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->quoteAsString(Ljava/lang/String;)[C
 
     move-result-object v0
 
@@ -333,24 +304,23 @@
 .end method
 
 .method public final asQuotedUTF8()[B
-    .registers 4
+    .registers 3
 
     .prologue
     .line 125
     iget-object v0, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_quotedUTF8Ref:[B
 
     .line 126
-    .local v0, "result":[B
     if-nez v0, :cond_10
 
     .line 127
     invoke-static {}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->getInstance()Lcom/fasterxml/jackson/core/io/JsonStringEncoder;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->quoteAsUTF8(Ljava/lang/String;)[B
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->quoteAsUTF8(Ljava/lang/String;)[B
 
     move-result-object v0
 
@@ -363,24 +333,23 @@
 .end method
 
 .method public final asUnquotedUTF8()[B
-    .registers 4
+    .registers 3
 
     .prologue
     .line 111
     iget-object v0, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_unquotedUTF8Ref:[B
 
     .line 112
-    .local v0, "result":[B
     if-nez v0, :cond_10
 
     .line 113
     invoke-static {}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->getInstance()Lcom/fasterxml/jackson/core/io/JsonStringEncoder;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->encodeAsUTF8(Ljava/lang/String;)[B
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->encodeAsUTF8(Ljava/lang/String;)[B
 
     move-result-object v0
 
@@ -407,18 +376,17 @@
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 5
-    .param p1, "o"    # Ljava/lang/Object;
+    .registers 4
 
     .prologue
     .line 264
     if-ne p1, p0, :cond_4
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     .line 267
     :goto_3
-    return v1
+    return v0
 
     .line 265
     :cond_4
@@ -426,34 +394,31 @@
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v1
 
-    if-eq v1, v2, :cond_12
+    if-eq v0, v1, :cond_12
 
     :cond_10
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_3
 
-    :cond_12
-    move-object v0, p1
-
     .line 266
-    check-cast v0, Lcom/fasterxml/jackson/core/io/SerializedString;
+    :cond_12
+    check-cast p1, Lcom/fasterxml/jackson/core/io/SerializedString;
 
     .line 267
-    .local v0, "other":Lcom/fasterxml/jackson/core/io/SerializedString;
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
 
-    iget-object v2, v0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
+    iget-object v1, p1, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
     goto :goto_3
 .end method
@@ -483,114 +448,110 @@
 .end method
 
 .method public putQuotedUTF8(Ljava/nio/ByteBuffer;)I
-    .registers 6
-    .param p1, "buffer"    # Ljava/nio/ByteBuffer;
+    .registers 5
 
     .prologue
     .line 221
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_quotedUTF8Ref:[B
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_quotedUTF8Ref:[B
 
     .line 222
-    .local v1, "result":[B
-    if-nez v1, :cond_10
+    if-nez v0, :cond_10
 
     .line 223
     invoke-static {}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->getInstance()Lcom/fasterxml/jackson/core/io/JsonStringEncoder;
 
-    move-result-object v2
+    move-result-object v0
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->quoteAsUTF8(Ljava/lang/String;)[B
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->quoteAsUTF8(Ljava/lang/String;)[B
 
-    move-result-object v1
+    move-result-object v0
 
     .line 224
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_quotedUTF8Ref:[B
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_quotedUTF8Ref:[B
 
     .line 226
     :cond_10
-    array-length v0, v1
+    array-length v1, v0
 
     .line 227
-    .local v0, "length":I
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v2
 
-    if-le v0, v2, :cond_19
+    if-le v1, v2, :cond_19
 
     .line 228
     const/4 v0, -0x1
 
     .line 231
-    .end local v0    # "length":I
     :goto_18
     return v0
 
     .line 230
-    .restart local v0    # "length":I
     :cond_19
     const/4 v2, 0x0
 
-    invoke-virtual {p1, v1, v2, v0}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
+    invoke-virtual {p1, v0, v2, v1}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
 
+    move v0, v1
+
+    .line 231
     goto :goto_18
 .end method
 
 .method public putUnquotedUTF8(Ljava/nio/ByteBuffer;)I
-    .registers 6
-    .param p1, "buffer"    # Ljava/nio/ByteBuffer;
+    .registers 5
 
     .prologue
     .line 236
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_unquotedUTF8Ref:[B
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_unquotedUTF8Ref:[B
 
     .line 237
-    .local v1, "result":[B
-    if-nez v1, :cond_10
+    if-nez v0, :cond_10
 
     .line 238
     invoke-static {}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->getInstance()Lcom/fasterxml/jackson/core/io/JsonStringEncoder;
 
-    move-result-object v2
+    move-result-object v0
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->encodeAsUTF8(Ljava/lang/String;)[B
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->encodeAsUTF8(Ljava/lang/String;)[B
 
-    move-result-object v1
+    move-result-object v0
 
     .line 239
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_unquotedUTF8Ref:[B
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_unquotedUTF8Ref:[B
 
     .line 241
     :cond_10
-    array-length v0, v1
+    array-length v1, v0
 
     .line 242
-    .local v0, "length":I
     invoke-virtual {p1}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v2
 
-    if-le v0, v2, :cond_19
+    if-le v1, v2, :cond_19
 
     .line 243
     const/4 v0, -0x1
 
     .line 246
-    .end local v0    # "length":I
     :goto_18
     return v0
 
     .line 245
-    .restart local v0    # "length":I
     :cond_19
     const/4 v2, 0x0
 
-    invoke-virtual {p1, v1, v2, v0}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
+    invoke-virtual {p1, v0, v2, v1}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
 
+    move v0, v1
+
+    .line 246
     goto :goto_18
 .end method
 
@@ -619,91 +580,75 @@
 .end method
 
 .method public writeQuotedUTF8(Ljava/io/OutputStream;)I
-    .registers 6
-    .param p1, "out"    # Ljava/io/OutputStream;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 5
 
     .prologue
     .line 197
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_quotedUTF8Ref:[B
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_quotedUTF8Ref:[B
 
     .line 198
-    .local v1, "result":[B
-    if-nez v1, :cond_10
+    if-nez v0, :cond_10
 
     .line 199
     invoke-static {}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->getInstance()Lcom/fasterxml/jackson/core/io/JsonStringEncoder;
 
-    move-result-object v2
+    move-result-object v0
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->quoteAsUTF8(Ljava/lang/String;)[B
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->quoteAsUTF8(Ljava/lang/String;)[B
 
-    move-result-object v1
+    move-result-object v0
 
     .line 200
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_quotedUTF8Ref:[B
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_quotedUTF8Ref:[B
 
     .line 202
     :cond_10
-    array-length v0, v1
+    array-length v1, v0
 
     .line 203
-    .local v0, "length":I
     const/4 v2, 0x0
 
-    invoke-virtual {p1, v1, v2, v0}, Ljava/io/OutputStream;->write([BII)V
+    invoke-virtual {p1, v0, v2, v1}, Ljava/io/OutputStream;->write([BII)V
 
     .line 204
-    return v0
+    return v1
 .end method
 
 .method public writeUnquotedUTF8(Ljava/io/OutputStream;)I
-    .registers 6
-    .param p1, "out"    # Ljava/io/OutputStream;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 5
 
     .prologue
     .line 209
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_unquotedUTF8Ref:[B
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_unquotedUTF8Ref:[B
 
     .line 210
-    .local v1, "result":[B
-    if-nez v1, :cond_10
+    if-nez v0, :cond_10
 
     .line 211
     invoke-static {}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->getInstance()Lcom/fasterxml/jackson/core/io/JsonStringEncoder;
 
-    move-result-object v2
+    move-result-object v0
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_value:Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->encodeAsUTF8(Ljava/lang/String;)[B
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->encodeAsUTF8(Ljava/lang/String;)[B
 
-    move-result-object v1
+    move-result-object v0
 
     .line 212
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_unquotedUTF8Ref:[B
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/io/SerializedString;->_unquotedUTF8Ref:[B
 
     .line 214
     :cond_10
-    array-length v0, v1
+    array-length v1, v0
 
     .line 215
-    .local v0, "length":I
     const/4 v2, 0x0
 
-    invoke-virtual {p1, v1, v2, v0}, Ljava/io/OutputStream;->write([BII)V
+    invoke-virtual {p1, v0, v2, v1}, Ljava/io/OutputStream;->write([BII)V
 
     .line 216
-    return v0
+    return v1
 .end method

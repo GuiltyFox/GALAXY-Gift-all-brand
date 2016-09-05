@@ -6,16 +6,8 @@
 .implements Lrx/Subscription;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lrx/subscriptions/MultipleAssignmentSubscription$State;
-    }
-.end annotation
-
-
 # instance fields
-.field final state:Ljava/util/concurrent/atomic/AtomicReference;
+.field final a:Ljava/util/concurrent/atomic/AtomicReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/atomic/AtomicReference",
@@ -42,7 +34,7 @@
 
     const/4 v2, 0x0
 
-    invoke-static {}, Lrx/subscriptions/Subscriptions;->empty()Lrx/Subscription;
+    invoke-static {}, Lrx/subscriptions/Subscriptions;->a()Lrx/Subscription;
 
     move-result-object v3
 
@@ -50,7 +42,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object v0, p0, Lrx/subscriptions/MultipleAssignmentSubscription;->state:Ljava/util/concurrent/atomic/AtomicReference;
+    iput-object v0, p0, Lrx/subscriptions/MultipleAssignmentSubscription;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
     .line 31
     return-void
@@ -58,80 +50,41 @@
 
 
 # virtual methods
-.method public get()Lrx/Subscription;
-    .registers 2
-
-    .prologue
-    .line 101
-    iget-object v0, p0, Lrx/subscriptions/MultipleAssignmentSubscription;->state:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lrx/subscriptions/MultipleAssignmentSubscription$State;
-
-    iget-object v0, v0, Lrx/subscriptions/MultipleAssignmentSubscription$State;->subscription:Lrx/Subscription;
-
-    return-object v0
-.end method
-
-.method public isUnsubscribed()Z
-    .registers 2
-
-    .prologue
-    .line 51
-    iget-object v0, p0, Lrx/subscriptions/MultipleAssignmentSubscription;->state:Ljava/util/concurrent/atomic/AtomicReference;
-
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lrx/subscriptions/MultipleAssignmentSubscription$State;
-
-    iget-boolean v0, v0, Lrx/subscriptions/MultipleAssignmentSubscription$State;->isUnsubscribed:Z
-
-    return v0
-.end method
-
-.method public set(Lrx/Subscription;)V
-    .registers 7
-    .param p1, "s"    # Lrx/Subscription;
+.method public a(Lrx/Subscription;)V
+    .registers 5
 
     .prologue
     .line 78
     if-nez p1, :cond_b
 
     .line 79
-    new-instance v3, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v4, "Subscription can not be null"
+    const-string/jumbo v1, "Subscription can not be null"
 
-    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v0
 
     .line 83
     :cond_b
-    iget-object v0, p0, Lrx/subscriptions/MultipleAssignmentSubscription;->state:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-object v1, p0, Lrx/subscriptions/MultipleAssignmentSubscription;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
     .line 85
-    .local v0, "localState":Ljava/util/concurrent/atomic/AtomicReference;, "Ljava/util/concurrent/atomic/AtomicReference<Lrx/subscriptions/MultipleAssignmentSubscription$State;>;"
     :cond_d
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Lrx/subscriptions/MultipleAssignmentSubscription$State;
+    check-cast v0, Lrx/subscriptions/MultipleAssignmentSubscription$State;
 
     .line 86
-    .local v2, "oldState":Lrx/subscriptions/MultipleAssignmentSubscription$State;
-    iget-boolean v3, v2, Lrx/subscriptions/MultipleAssignmentSubscription$State;->isUnsubscribed:Z
+    iget-boolean v2, v0, Lrx/subscriptions/MultipleAssignmentSubscription$State;->a:Z
 
-    if-eqz v3, :cond_1b
+    if-eqz v2, :cond_1b
 
     .line 87
-    invoke-interface {p1}, Lrx/Subscription;->unsubscribe()V
+    invoke-interface {p1}, Lrx/Subscription;->b()V
 
     .line 93
     :goto_1a
@@ -139,42 +92,39 @@
 
     .line 90
     :cond_1b
-    invoke-virtual {v2, p1}, Lrx/subscriptions/MultipleAssignmentSubscription$State;->set(Lrx/Subscription;)Lrx/subscriptions/MultipleAssignmentSubscription$State;
+    invoke-virtual {v0, p1}, Lrx/subscriptions/MultipleAssignmentSubscription$State;->a(Lrx/Subscription;)Lrx/subscriptions/MultipleAssignmentSubscription$State;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 92
-    .local v1, "newState":Lrx/subscriptions/MultipleAssignmentSubscription$State;
-    invoke-virtual {v0, v2, v1}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0, v2}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_d
+    if-eqz v0, :cond_d
 
     goto :goto_1a
 .end method
 
-.method public unsubscribe()V
-    .registers 5
+.method public b()V
+    .registers 4
 
     .prologue
     .line 58
-    iget-object v0, p0, Lrx/subscriptions/MultipleAssignmentSubscription;->state:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-object v1, p0, Lrx/subscriptions/MultipleAssignmentSubscription;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
     .line 60
-    .local v0, "localState":Ljava/util/concurrent/atomic/AtomicReference;, "Ljava/util/concurrent/atomic/AtomicReference<Lrx/subscriptions/MultipleAssignmentSubscription$State;>;"
     :cond_2
-    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Lrx/subscriptions/MultipleAssignmentSubscription$State;
+    check-cast v0, Lrx/subscriptions/MultipleAssignmentSubscription$State;
 
     .line 61
-    .local v2, "oldState":Lrx/subscriptions/MultipleAssignmentSubscription$State;
-    iget-boolean v3, v2, Lrx/subscriptions/MultipleAssignmentSubscription$State;->isUnsubscribed:Z
+    iget-boolean v2, v0, Lrx/subscriptions/MultipleAssignmentSubscription$State;->a:Z
 
-    if-eqz v3, :cond_d
+    if-eqz v2, :cond_d
 
     .line 68
     :goto_c
@@ -182,22 +132,39 @@
 
     .line 64
     :cond_d
-    invoke-virtual {v2}, Lrx/subscriptions/MultipleAssignmentSubscription$State;->unsubscribe()Lrx/subscriptions/MultipleAssignmentSubscription$State;
+    invoke-virtual {v0}, Lrx/subscriptions/MultipleAssignmentSubscription$State;->a()Lrx/subscriptions/MultipleAssignmentSubscription$State;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 66
-    .local v1, "newState":Lrx/subscriptions/MultipleAssignmentSubscription$State;
-    invoke-virtual {v0, v2, v1}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0, v2}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_2
+    if-eqz v2, :cond_2
 
     .line 67
-    iget-object v3, v2, Lrx/subscriptions/MultipleAssignmentSubscription$State;->subscription:Lrx/Subscription;
+    iget-object v0, v0, Lrx/subscriptions/MultipleAssignmentSubscription$State;->b:Lrx/Subscription;
 
-    invoke-interface {v3}, Lrx/Subscription;->unsubscribe()V
+    invoke-interface {v0}, Lrx/Subscription;->b()V
 
     goto :goto_c
+.end method
+
+.method public c()Z
+    .registers 2
+
+    .prologue
+    .line 51
+    iget-object v0, p0, Lrx/subscriptions/MultipleAssignmentSubscription;->a:Ljava/util/concurrent/atomic/AtomicReference;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lrx/subscriptions/MultipleAssignmentSubscription$State;
+
+    iget-boolean v0, v0, Lrx/subscriptions/MultipleAssignmentSubscription$State;->a:Z
+
+    return v0
 .end method

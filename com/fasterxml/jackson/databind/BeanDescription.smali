@@ -10,7 +10,6 @@
 # direct methods
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/JavaType;)V
     .registers 2
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
 
     .prologue
     .line 42

@@ -3,11 +3,11 @@
 
 
 # static fields
-.field static zzNs:Lcom/google/android/gms/internal/zzse;
+.field static a:Ljava/lang/Object;
 
-.field static zzNt:Ljava/lang/Boolean;
+.field static b:Lcom/google/android/gms/internal/zzse;
 
-.field static zzqf:Ljava/lang/Object;
+.field static c:Ljava/lang/Boolean;
 
 
 # direct methods
@@ -18,7 +18,7 @@
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/analytics/AnalyticsReceiver;->zzqf:Ljava/lang/Object;
+    sput-object v0, Lcom/google/android/gms/analytics/AnalyticsReceiver;->a:Ljava/lang/Object;
 
     return-void
 .end method
@@ -31,16 +31,16 @@
     return-void
 .end method
 
-.method public static zzX(Landroid/content/Context;)Z
+.method public static a(Landroid/content/Context;)Z
     .registers 3
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v0, Lcom/google/android/gms/analytics/AnalyticsReceiver;->zzNt:Ljava/lang/Boolean;
+    sget-object v0, Lcom/google/android/gms/analytics/AnalyticsReceiver;->c:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_e
 
-    sget-object v0, Lcom/google/android/gms/analytics/AnalyticsReceiver;->zzNt:Ljava/lang/Boolean;
+    sget-object v0, Lcom/google/android/gms/analytics/AnalyticsReceiver;->c:Ljava/lang/Boolean;
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
@@ -54,7 +54,7 @@
 
     const/4 v1, 0x0
 
-    invoke-static {p0, v0, v1}, Lcom/google/android/gms/analytics/internal/zzam;->zza(Landroid/content/Context;Ljava/lang/Class;Z)Z
+    invoke-static {p0, v0, v1}, Lcom/google/android/gms/analytics/internal/zzam;->a(Landroid/content/Context;Ljava/lang/Class;Z)Z
 
     move-result v0
 
@@ -62,7 +62,7 @@
 
     move-result-object v1
 
-    sput-object v1, Lcom/google/android/gms/analytics/AnalyticsReceiver;->zzNt:Ljava/lang/Boolean;
+    sput-object v1, Lcom/google/android/gms/analytics/AnalyticsReceiver;->c:Ljava/lang/Boolean;
 
     goto :goto_d
 .end method
@@ -71,15 +71,12 @@
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
     .registers 9
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "intent"    # Landroid/content/Intent;
 
-    .prologue
-    invoke-static {p1}, Lcom/google/android/gms/analytics/internal/zzf;->zzZ(Landroid/content/Context;)Lcom/google/android/gms/analytics/internal/zzf;
+    invoke-static {p1}, Lcom/google/android/gms/analytics/internal/zzf;->a(Landroid/content/Context;)Lcom/google/android/gms/analytics/internal/zzf;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->zziU()Lcom/google/android/gms/analytics/internal/zzaf;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->f()Lcom/google/android/gms/analytics/internal/zzaf;
 
     move-result-object v1
 
@@ -87,11 +84,11 @@
 
     move-result-object v2
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->e()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->zzka()Z
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->a()Z
 
     move-result v0
 
@@ -99,7 +96,7 @@
 
     const-string/jumbo v0, "Device AnalyticsReceiver got"
 
-    invoke-virtual {v1, v0, v2}, Lcom/google/android/gms/analytics/internal/zzaf;->zza(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {v1, v0, v2}, Lcom/google/android/gms/analytics/internal/zzaf;->a(Ljava/lang/String;Ljava/lang/Object;)V
 
     :goto_1c
     const-string/jumbo v0, "com.google.android.gms.analytics.ANALYTICS_DISPATCH"
@@ -110,7 +107,7 @@
 
     if-eqz v0, :cond_3f
 
-    invoke-static {p1}, Lcom/google/android/gms/analytics/AnalyticsService;->zzY(Landroid/content/Context;)Z
+    invoke-static {p1}, Lcom/google/android/gms/analytics/AnalyticsService;->a(Landroid/content/Context;)Z
 
     move-result v0
 
@@ -124,7 +121,7 @@
 
     invoke-virtual {v2, v3}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    sget-object v3, Lcom/google/android/gms/analytics/AnalyticsReceiver;->zzqf:Ljava/lang/Object;
+    sget-object v3, Lcom/google/android/gms/analytics/AnalyticsReceiver;->a:Ljava/lang/Object;
 
     monitor-enter v3
 
@@ -144,13 +141,13 @@
     :cond_40
     const-string/jumbo v0, "Local AnalyticsReceiver got"
 
-    invoke-virtual {v1, v0, v2}, Lcom/google/android/gms/analytics/internal/zzaf;->zza(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {v1, v0, v2}, Lcom/google/android/gms/analytics/internal/zzaf;->a(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_1c
 
     :cond_47
     :try_start_47
-    sget-object v0, Lcom/google/android/gms/analytics/AnalyticsReceiver;->zzNs:Lcom/google/android/gms/internal/zzse;
+    sget-object v0, Lcom/google/android/gms/analytics/AnalyticsReceiver;->b:Lcom/google/android/gms/internal/zzse;
 
     if-nez v0, :cond_5c
 
@@ -162,20 +159,20 @@
 
     invoke-direct {v0, p1, v2, v4}, Lcom/google/android/gms/internal/zzse;-><init>(Landroid/content/Context;ILjava/lang/String;)V
 
-    sput-object v0, Lcom/google/android/gms/analytics/AnalyticsReceiver;->zzNs:Lcom/google/android/gms/internal/zzse;
+    sput-object v0, Lcom/google/android/gms/analytics/AnalyticsReceiver;->b:Lcom/google/android/gms/internal/zzse;
 
-    sget-object v0, Lcom/google/android/gms/analytics/AnalyticsReceiver;->zzNs:Lcom/google/android/gms/internal/zzse;
+    sget-object v0, Lcom/google/android/gms/analytics/AnalyticsReceiver;->b:Lcom/google/android/gms/internal/zzse;
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v2}, Lcom/google/android/gms/internal/zzse;->setReferenceCounted(Z)V
+    invoke-virtual {v0, v2}, Lcom/google/android/gms/internal/zzse;->a(Z)V
 
     :cond_5c
-    sget-object v0, Lcom/google/android/gms/analytics/AnalyticsReceiver;->zzNs:Lcom/google/android/gms/internal/zzse;
+    sget-object v0, Lcom/google/android/gms/analytics/AnalyticsReceiver;->b:Lcom/google/android/gms/internal/zzse;
 
     const-wide/16 v4, 0x3e8
 
-    invoke-virtual {v0, v4, v5}, Lcom/google/android/gms/internal/zzse;->acquire(J)V
+    invoke-virtual {v0, v4, v5}, Lcom/google/android/gms/internal/zzse;->a(J)V
     :try_end_63
     .catch Ljava/lang/SecurityException; {:try_start_47 .. :try_end_63} :catch_68
     .catchall {:try_start_47 .. :try_end_63} :catchall_65
@@ -201,7 +198,7 @@
     :try_start_69
     const-string/jumbo v0, "Analytics service at risk of not starting. For more reliable analytics, add the WAKE_LOCK permission to your manifest. See http://goo.gl/8Rd3yj for instructions."
 
-    invoke-virtual {v1, v0}, Lcom/google/android/gms/analytics/internal/zzaf;->zzbd(Ljava/lang/String;)V
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/analytics/internal/zzaf;->e(Ljava/lang/String;)V
     :try_end_6f
     .catchall {:try_start_69 .. :try_end_6f} :catchall_65
 

@@ -20,10 +20,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/JavaType;ZLcom/fasterxml/jackson/databind/jsontype/TypeSerializer;Lcom/fasterxml/jackson/databind/BeanProperty;)V
     .registers 12
-    .param p1, "elemType"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p2, "staticTyping"    # Z
-    .param p3, "vts"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
-    .param p4, "property"    # Lcom/fasterxml/jackson/databind/BeanProperty;
 
     .prologue
     .line 21
@@ -49,9 +45,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/ser/impl/IteratorSerializer;Lcom/fasterxml/jackson/databind/BeanProperty;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;Lcom/fasterxml/jackson/databind/JsonSerializer;)V
     .registers 5
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/ser/impl/IteratorSerializer;
-    .param p2, "property"    # Lcom/fasterxml/jackson/databind/BeanProperty;
-    .param p3, "vts"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -65,7 +58,6 @@
 
     .prologue
     .line 27
-    .local p4, "valueSerializer":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<*>;"
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/fasterxml/jackson/databind/ser/std/AsArraySerializerBase;-><init>(Lcom/fasterxml/jackson/databind/ser/std/AsArraySerializerBase;Lcom/fasterxml/jackson/databind/BeanProperty;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;Lcom/fasterxml/jackson/databind/JsonSerializer;)V
 
     .line 28
@@ -76,7 +68,6 @@
 # virtual methods
 .method public _withValueTypeSerializer(Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)Lcom/fasterxml/jackson/databind/ser/ContainerSerializer;
     .registers 6
-    .param p1, "vts"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -104,13 +95,11 @@
 
 .method public bridge synthetic hasSingleElement(Ljava/lang/Object;)Z
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 14
     check-cast p1, Ljava/util/Iterator;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/ser/impl/IteratorSerializer;->hasSingleElement(Ljava/util/Iterator;)Z
 
     move-result v0
@@ -130,7 +119,6 @@
 
     .prologue
     .line 38
-    .local p1, "value":Ljava/util/Iterator;, "Ljava/util/Iterator<*>;"
     const/4 v0, 0x0
 
     return v0
@@ -138,13 +126,11 @@
 
 .method public bridge synthetic isEmpty(Ljava/lang/Object;)Z
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 14
     check-cast p1, Ljava/util/Iterator;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/ser/impl/IteratorSerializer;->isEmpty(Ljava/util/Iterator;)Z
 
     move-result v0
@@ -164,7 +150,6 @@
 
     .prologue
     .line 32
-    .local p1, "value":Ljava/util/Iterator;, "Ljava/util/Iterator<*>;"
     if-eqz p1, :cond_8
 
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
@@ -187,30 +172,18 @@
 
 .method public bridge synthetic serializeContents(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 4
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "x2"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 14
     check-cast p1, Ljava/util/Iterator;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2, p3}, Lcom/fasterxml/jackson/databind/ser/impl/IteratorSerializer;->serializeContents(Ljava/util/Iterator;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
 
     return-void
 .end method
 
 .method public serializeContents(Ljava/util/Iterator;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
-    .registers 11
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
+    .registers 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -222,43 +195,29 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
-
     .prologue
+    const/4 v0, 0x0
+
     .line 56
-    .local p1, "value":Ljava/util/Iterator;, "Ljava/util/Iterator<*>;"
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v1
 
-    if-eqz v6, :cond_19
+    if-eqz v1, :cond_19
 
     .line 57
-    iget-object v5, p0, Lcom/fasterxml/jackson/databind/ser/impl/IteratorSerializer;->_valueTypeSerializer:Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
+    iget-object v3, p0, Lcom/fasterxml/jackson/databind/ser/impl/IteratorSerializer;->_valueTypeSerializer:Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
 
-    .line 58
-    .local v5, "typeSer":Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
-    const/4 v4, 0x0
-
-    .line 59
-    .local v4, "prevSerializer":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<Ljava/lang/Object;>;"
-    const/4 v3, 0x0
+    move-object v1, v0
 
     .line 61
-    .local v3, "prevClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :cond_a
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v4
 
     .line 62
-    .local v2, "elem":Ljava/lang/Object;
-    if-nez v2, :cond_1a
+    if-nez v4, :cond_1a
 
     .line 63
     invoke-virtual {p3, p2}, Lcom/fasterxml/jackson/databind/SerializerProvider;->defaultSerializeNull(Lcom/fasterxml/jackson/core/JsonGenerator;)V
@@ -267,82 +226,65 @@
     :goto_13
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v2
 
-    if-nez v6, :cond_a
+    if-nez v2, :cond_a
 
     .line 85
-    .end local v2    # "elem":Ljava/lang/Object;
-    .end local v3    # "prevClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .end local v4    # "prevSerializer":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<Ljava/lang/Object;>;"
-    .end local v5    # "typeSer":Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
     :cond_19
     return-void
 
     .line 66
-    .restart local v2    # "elem":Ljava/lang/Object;
-    .restart local v3    # "prevClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .restart local v4    # "prevSerializer":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<Ljava/lang/Object;>;"
-    .restart local v5    # "typeSer":Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
     :cond_1a
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/ser/impl/IteratorSerializer;->_elementSerializer:Lcom/fasterxml/jackson/databind/JsonSerializer;
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/ser/impl/IteratorSerializer;->_elementSerializer:Lcom/fasterxml/jackson/databind/JsonSerializer;
 
     .line 67
-    .local v1, "currSerializer":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<Ljava/lang/Object;>;"
-    if-nez v1, :cond_25
+    if-nez v2, :cond_25
 
     .line 69
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v0
+    move-result-object v2
 
     .line 70
-    .local v0, "cc":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    if-ne v0, v3, :cond_2b
+    if-ne v2, v0, :cond_2b
 
-    .line 71
-    move-object v1, v4
+    move-object v2, v1
 
     .line 78
-    .end local v0    # "cc":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :cond_25
     :goto_25
-    if-nez v5, :cond_34
+    if-nez v3, :cond_34
 
     .line 79
-    invoke-virtual {v1, v2, p2, p3}, Lcom/fasterxml/jackson/databind/JsonSerializer;->serialize(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
+    invoke-virtual {v2, v4, p2, p3}, Lcom/fasterxml/jackson/databind/JsonSerializer;->serialize(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
 
     goto :goto_13
 
     .line 73
-    .restart local v0    # "cc":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :cond_2b
-    iget-object v6, p0, Lcom/fasterxml/jackson/databind/ser/impl/IteratorSerializer;->_property:Lcom/fasterxml/jackson/databind/BeanProperty;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/impl/IteratorSerializer;->_property:Lcom/fasterxml/jackson/databind/BeanProperty;
 
-    invoke-virtual {p3, v0, v6}, Lcom/fasterxml/jackson/databind/SerializerProvider;->findValueSerializer(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/BeanProperty;)Lcom/fasterxml/jackson/databind/JsonSerializer;
+    invoke-virtual {p3, v2, v0}, Lcom/fasterxml/jackson/databind/SerializerProvider;->findValueSerializer(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/BeanProperty;)Lcom/fasterxml/jackson/databind/JsonSerializer;
 
     move-result-object v1
 
-    .line 74
-    move-object v4, v1
+    move-object v0, v2
+
+    move-object v2, v1
 
     .line 75
-    move-object v3, v0
-
     goto :goto_25
 
     .line 81
-    .end local v0    # "cc":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :cond_34
-    invoke-virtual {v1, v2, p2, p3, v5}, Lcom/fasterxml/jackson/databind/JsonSerializer;->serializeWithType(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)V
+    invoke-virtual {v2, v4, p2, p3, v3}, Lcom/fasterxml/jackson/databind/JsonSerializer;->serializeWithType(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)V
 
     goto :goto_13
 .end method
 
 .method public withResolved(Lcom/fasterxml/jackson/databind/BeanProperty;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;Lcom/fasterxml/jackson/databind/JsonSerializer;)Lcom/fasterxml/jackson/databind/ser/impl/IteratorSerializer;
     .registers 5
-    .param p1, "property"    # Lcom/fasterxml/jackson/databind/BeanProperty;
-    .param p2, "vts"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -356,7 +298,6 @@
 
     .prologue
     .line 49
-    .local p3, "elementSerializer":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<*>;"
     new-instance v0, Lcom/fasterxml/jackson/databind/ser/impl/IteratorSerializer;
 
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/fasterxml/jackson/databind/ser/impl/IteratorSerializer;-><init>(Lcom/fasterxml/jackson/databind/ser/impl/IteratorSerializer;Lcom/fasterxml/jackson/databind/BeanProperty;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;Lcom/fasterxml/jackson/databind/JsonSerializer;)V
@@ -366,9 +307,6 @@
 
 .method public bridge synthetic withResolved(Lcom/fasterxml/jackson/databind/BeanProperty;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;Lcom/fasterxml/jackson/databind/JsonSerializer;)Lcom/fasterxml/jackson/databind/ser/std/AsArraySerializerBase;
     .registers 5
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/BeanProperty;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
-    .param p3, "x2"    # Lcom/fasterxml/jackson/databind/JsonSerializer;
 
     .prologue
     .line 14

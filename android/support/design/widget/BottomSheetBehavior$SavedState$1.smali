@@ -11,11 +11,6 @@
     value = Landroid/support/design/widget/BottomSheetBehavior$SavedState;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -42,7 +37,6 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;)Landroid/support/design/widget/BottomSheetBehavior$SavedState;
     .registers 3
-    .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
     .line 664
@@ -67,7 +61,6 @@
 
 .method public newArray(I)[Landroid/support/design/widget/BottomSheetBehavior$SavedState;
     .registers 3
-    .param p1, "size"    # I
 
     .prologue
     .line 669

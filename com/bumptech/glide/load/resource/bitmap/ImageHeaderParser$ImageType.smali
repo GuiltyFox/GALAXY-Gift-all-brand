@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/resource/bitmap/ImageHeaderParser;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4019
-    name = "ImageType"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum",
@@ -38,7 +29,7 @@
 
 
 # instance fields
-.field private final hasAlpha:Z
+.field private final a:Z
 
 
 # direct methods
@@ -133,7 +124,6 @@
 
 .method private constructor <init>(Ljava/lang/String;IZ)V
     .registers 4
-    .param p3, "hasAlpha"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)V"
@@ -145,7 +135,7 @@
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 40
-    iput-boolean p3, p0, Lcom/bumptech/glide/load/resource/bitmap/ImageHeaderParser$ImageType;->hasAlpha:Z
+    iput-boolean p3, p0, Lcom/bumptech/glide/load/resource/bitmap/ImageHeaderParser$ImageType;->a:Z
 
     .line 41
     return-void
@@ -153,7 +143,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/bumptech/glide/load/resource/bitmap/ImageHeaderParser$ImageType;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 26
@@ -191,7 +180,7 @@
 
     .prologue
     .line 44
-    iget-boolean v0, p0, Lcom/bumptech/glide/load/resource/bitmap/ImageHeaderParser$ImageType;->hasAlpha:Z
+    iget-boolean v0, p0, Lcom/bumptech/glide/load/resource/bitmap/ImageHeaderParser$ImageType;->a:Z
 
     return v0
 .end method

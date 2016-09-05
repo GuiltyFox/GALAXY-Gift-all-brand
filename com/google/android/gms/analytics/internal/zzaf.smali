@@ -3,11 +3,11 @@
 
 
 # static fields
-.field private static zzRC:Ljava/lang/String;
+.field private static a:Ljava/lang/String;
 
-.field private static zzRD:Ljava/lang/String;
+.field private static b:Ljava/lang/String;
 
-.field private static zzRE:Lcom/google/android/gms/analytics/internal/zzaf;
+.field private static c:Lcom/google/android/gms/analytics/internal/zzaf;
 
 
 # direct methods
@@ -16,11 +16,11 @@
 
     const-string/jumbo v0, "3"
 
-    sput-object v0, Lcom/google/android/gms/analytics/internal/zzaf;->zzRC:Ljava/lang/String;
+    sput-object v0, Lcom/google/android/gms/analytics/internal/zzaf;->a:Ljava/lang/String;
 
     const-string/jumbo v0, "01VDIWEA?"
 
-    sput-object v0, Lcom/google/android/gms/analytics/internal/zzaf;->zzRD:Ljava/lang/String;
+    sput-object v0, Lcom/google/android/gms/analytics/internal/zzaf;->b:Ljava/lang/String;
 
     return-void
 .end method
@@ -33,436 +33,20 @@
     return-void
 .end method
 
-.method public static zzlg()Lcom/google/android/gms/analytics/internal/zzaf;
+.method public static b()Lcom/google/android/gms/analytics/internal/zzaf;
     .registers 1
 
-    sget-object v0, Lcom/google/android/gms/analytics/internal/zzaf;->zzRE:Lcom/google/android/gms/analytics/internal/zzaf;
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzaf;->c:Lcom/google/android/gms/analytics/internal/zzaf;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public zza(ILjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 8
-
-    sget-object v0, Lcom/google/android/gms/analytics/internal/zzy;->zzQr:Lcom/google/android/gms/analytics/internal/zzy$zza;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzy$zza;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-static {v0, p1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_15
-
-    invoke-static {p2, p3, p4, p5}, Lcom/google/android/gms/analytics/internal/zzaf;->zzc(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {p1, v0, v1}, Landroid/util/Log;->println(ILjava/lang/String;Ljava/lang/String;)I
-
-    :cond_15
-    const/4 v0, 0x5
-
-    if-lt p1, v0, :cond_1b
-
-    invoke-virtual/range {p0 .. p5}, Lcom/google/android/gms/analytics/internal/zzaf;->zzb(ILjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-
-    :cond_1b
-    return-void
-.end method
-
-.method public zza(Lcom/google/android/gms/analytics/internal/zzab;Ljava/lang/String;)V
-    .registers 6
-
-    if-nez p2, :cond_5
-
-    const-string/jumbo p2, "no reason provided"
-
-    :cond_5
-    if-eqz p1, :cond_23
-
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_b
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "Discarding hit. "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzaf;->zzd(Ljava/lang/String;Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_23
-    const-string/jumbo v0, "no hit data"
-
-    goto :goto_b
-.end method
-
-.method public declared-synchronized zzb(ILjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 11
-
-    const/16 v4, 0x400
-
-    const/4 v0, 0x0
-
-    monitor-enter p0
-
-    :try_start_4
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
-
-    if-gez p1, :cond_a7
-
-    :goto_9
-    sget-object v1, Lcom/google/android/gms/analytics/internal/zzaf;->zzRD:Ljava/lang/String;
-
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    if-lt v0, v1, :cond_a4
-
-    sget-object v0, Lcom/google/android/gms/analytics/internal/zzaf;->zzRD:Ljava/lang/String;
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v0
-
-    add-int/lit8 v0, v0, -0x1
-
-    move v1, v0
-
-    :goto_1a
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzaf;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->zzkb()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_91
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzaf;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->zzka()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_8e
-
-    const/16 v0, 0x50
-
-    :goto_30
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    sget-object v3, Lcom/google/android/gms/analytics/internal/zzaf;->zzRC:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/google/android/gms/analytics/internal/zzaf;->zzRD:Ljava/lang/String;
-
-    invoke-virtual {v3, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v1
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    sget-object v1, Lcom/google/android/gms/analytics/internal/zze;->VERSION:Ljava/lang/String;
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v1, ":"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {p0, p3}, Lcom/google/android/gms/analytics/internal/zzaf;->zzk(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, p4}, Lcom/google/android/gms/analytics/internal/zzaf;->zzk(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {p0, p5}, Lcom/google/android/gms/analytics/internal/zzaf;->zzk(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {p2, v1, v2, v3}, Lcom/google/android/gms/analytics/internal/zzaf;->zzc(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    if-le v1, v4, :cond_7b
-
-    const/4 v1, 0x0
-
-    const/16 v2, 0x400
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v0
-
-    :cond_7b
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzaf;->zziQ()Lcom/google/android/gms/analytics/internal/zzf;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzf;->zzjj()Lcom/google/android/gms/analytics/internal/zzai;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_8c
-
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzai;->zzlt()Lcom/google/android/gms/analytics/internal/zzai$zza;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzbn(Ljava/lang/String;)V
-    :try_end_8c
-    .catchall {:try_start_4 .. :try_end_8c} :catchall_a1
-
-    :cond_8c
-    monitor-exit p0
-
-    return-void
-
-    :cond_8e
-    const/16 v0, 0x43
-
-    goto :goto_30
-
-    :cond_91
-    :try_start_91
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzaf;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->zzka()Z
-    :try_end_98
-    .catchall {:try_start_91 .. :try_end_98} :catchall_a1
-
-    move-result v0
-
-    if-eqz v0, :cond_9e
-
-    const/16 v0, 0x70
-
-    goto :goto_30
-
-    :cond_9e
-    const/16 v0, 0x63
-
-    goto :goto_30
-
-    :catchall_a1
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-
-    :cond_a4
-    move v1, v0
-
-    goto/16 :goto_1a
-
-    :cond_a7
-    move v0, p1
-
-    goto/16 :goto_9
-.end method
-
-.method public zzh(Ljava/util/Map;Ljava/lang/String;)V
-    .registers 7
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;",
-            "Ljava/lang/String;",
-            ")V"
-        }
-    .end annotation
-
-    if-nez p2, :cond_5
-
-    const-string/jumbo p2, "no reason provided"
-
-    :cond_5
-    if-eqz p1, :cond_5f
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_14
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_43
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
-
-    move-result v1
-
-    if-lez v1, :cond_2b
-
-    const/16 v1, 0x2c
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    :cond_2b
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/16 v1, 0x3d
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :goto_14
-
-    :cond_43
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_47
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "Discarding hit. "
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzaf;->zzd(Ljava/lang/String;Ljava/lang/Object;)V
-
-    return-void
-
-    :cond_5f
-    const-string/jumbo v0, "no hit data"
-
-    goto :goto_47
-.end method
-
-.method protected zzir()V
-    .registers 3
-
-    const-class v1, Lcom/google/android/gms/analytics/internal/zzaf;
-
-    monitor-enter v1
-
-    :try_start_3
-    sput-object p0, Lcom/google/android/gms/analytics/internal/zzaf;->zzRE:Lcom/google/android/gms/analytics/internal/zzaf;
-
-    monitor-exit v1
-
-    return-void
-
-    :catchall_7
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_9
-    .catchall {:try_start_3 .. :try_end_9} :catchall_7
-
-    throw v0
-.end method
-
-.method protected zzk(Ljava/lang/Object;)Ljava/lang/String;
+.method protected a(Ljava/lang/Object;)Ljava/lang/String;
     .registers 10
 
-    const-wide/high16 v6, 0x4024000000000000L
+    const-wide/high16 v6, 0x4024000000000000L    # 10.0
 
     if-nez p1, :cond_6
 
@@ -589,7 +173,7 @@
 
     move-result-wide v0
 
-    const-wide/high16 v4, 0x3ff0000000000000L
+    const-wide/high16 v4, 0x3ff0000000000000L    # 1.0
 
     sub-double/2addr v0, v4
 
@@ -645,4 +229,420 @@
     move-object v1, p1
 
     goto/16 :goto_16
+.end method
+
+.method protected a()V
+    .registers 3
+
+    const-class v1, Lcom/google/android/gms/analytics/internal/zzaf;
+
+    monitor-enter v1
+
+    :try_start_3
+    sput-object p0, Lcom/google/android/gms/analytics/internal/zzaf;->c:Lcom/google/android/gms/analytics/internal/zzaf;
+
+    monitor-exit v1
+
+    return-void
+
+    :catchall_7
+    move-exception v0
+
+    monitor-exit v1
+    :try_end_9
+    .catchall {:try_start_3 .. :try_end_9} :catchall_7
+
+    throw v0
+.end method
+
+.method public a(ILjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    .registers 8
+
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzy;->c:Lcom/google/android/gms/analytics/internal/zzy$zza;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzy$zza;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-static {v0, p1}, Landroid/util/Log;->isLoggable(Ljava/lang/String;I)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_15
+
+    invoke-static {p2, p3, p4, p5}, Lcom/google/android/gms/analytics/internal/zzaf;->c(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p1, v0, v1}, Landroid/util/Log;->println(ILjava/lang/String;Ljava/lang/String;)I
+
+    :cond_15
+    const/4 v0, 0x5
+
+    if-lt p1, v0, :cond_1b
+
+    invoke-virtual/range {p0 .. p5}, Lcom/google/android/gms/analytics/internal/zzaf;->b(ILjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    :cond_1b
+    return-void
+.end method
+
+.method public a(Lcom/google/android/gms/analytics/internal/zzab;Ljava/lang/String;)V
+    .registers 6
+
+    if-nez p2, :cond_5
+
+    const-string/jumbo p2, "no reason provided"
+
+    :cond_5
+    if-eqz p1, :cond_23
+
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_b
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "Discarding hit. "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzaf;->d(Ljava/lang/String;Ljava/lang/Object;)V
+
+    return-void
+
+    :cond_23
+    const-string/jumbo v0, "no hit data"
+
+    goto :goto_b
+.end method
+
+.method public a(Ljava/util/Map;Ljava/lang/String;)V
+    .registers 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;",
+            "Ljava/lang/String;",
+            ")V"
+        }
+    .end annotation
+
+    if-nez p2, :cond_5
+
+    const-string/jumbo p2, "no reason provided"
+
+    :cond_5
+    if-eqz p1, :cond_5f
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    :goto_14
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_43
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
+
+    move-result v1
+
+    if-lez v1, :cond_2b
+
+    const/16 v1, 0x2c
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    :cond_2b
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/16 v1, 0x3d
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    goto :goto_14
+
+    :cond_43
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_47
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "Discarding hit. "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzaf;->d(Ljava/lang/String;Ljava/lang/Object;)V
+
+    return-void
+
+    :cond_5f
+    const-string/jumbo v0, "no hit data"
+
+    goto :goto_47
+.end method
+
+.method public declared-synchronized b(ILjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    .registers 11
+
+    const/16 v4, 0x400
+
+    const/4 v0, 0x0
+
+    monitor-enter p0
+
+    :try_start_4
+    invoke-static {p2}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    if-gez p1, :cond_a7
+
+    :goto_9
+    sget-object v1, Lcom/google/android/gms/analytics/internal/zzaf;->b:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-lt v0, v1, :cond_a4
+
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzaf;->b:Ljava/lang/String;
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    move v1, v0
+
+    :goto_1a
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzaf;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_91
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzaf;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8e
+
+    const/16 v0, 0x50
+
+    :goto_30
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v3, Lcom/google/android/gms/analytics/internal/zzaf;->a:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    sget-object v3, Lcom/google/android/gms/analytics/internal/zzaf;->b:Ljava/lang/String;
+
+    invoke-virtual {v3, v1}, Ljava/lang/String;->charAt(I)C
+
+    move-result v1
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/google/android/gms/analytics/internal/zze;->a:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, ":"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p3}, Lcom/google/android/gms/analytics/internal/zzaf;->a(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, p4}, Lcom/google/android/gms/analytics/internal/zzaf;->a(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {p0, p5}, Lcom/google/android/gms/analytics/internal/zzaf;->a(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {p2, v1, v2, v3}, Lcom/google/android/gms/analytics/internal/zzaf;->c(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-le v1, v4, :cond_7b
+
+    const/4 v1, 0x0
+
+    const/16 v2, 0x400
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v0
+
+    :cond_7b
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzaf;->k()Lcom/google/android/gms/analytics/internal/zzf;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzf;->n()Lcom/google/android/gms/analytics/internal/zzai;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_8c
+
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzai;->g()Lcom/google/android/gms/analytics/internal/zzai$zza;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->a(Ljava/lang/String;)V
+    :try_end_8c
+    .catchall {:try_start_4 .. :try_end_8c} :catchall_a1
+
+    :cond_8c
+    monitor-exit p0
+
+    return-void
+
+    :cond_8e
+    const/16 v0, 0x43
+
+    goto :goto_30
+
+    :cond_91
+    :try_start_91
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzaf;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->a()Z
+    :try_end_98
+    .catchall {:try_start_91 .. :try_end_98} :catchall_a1
+
+    move-result v0
+
+    if-eqz v0, :cond_9e
+
+    const/16 v0, 0x70
+
+    goto :goto_30
+
+    :cond_9e
+    const/16 v0, 0x63
+
+    goto :goto_30
+
+    :catchall_a1
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    :cond_a4
+    move v1, v0
+
+    goto/16 :goto_1a
+
+    :cond_a7
+    move v0, p1
+
+    goto/16 :goto_9
 .end method

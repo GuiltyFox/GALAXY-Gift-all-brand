@@ -3,44 +3,30 @@
 .source "Engine.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/engine/Engine;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "EngineJobFactory"
-.end annotation
-
-
 # instance fields
-.field private final diskCacheService:Ljava/util/concurrent/ExecutorService;
+.field private final a:Ljava/util/concurrent/ExecutorService;
 
-.field private final listener:Lcom/bumptech/glide/load/engine/EngineJobListener;
+.field private final b:Ljava/util/concurrent/ExecutorService;
 
-.field private final sourceService:Ljava/util/concurrent/ExecutorService;
+.field private final c:Lcom/bumptech/glide/load/engine/EngineJobListener;
 
 
 # direct methods
 .method public constructor <init>(Ljava/util/concurrent/ExecutorService;Ljava/util/concurrent/ExecutorService;Lcom/bumptech/glide/load/engine/EngineJobListener;)V
     .registers 4
-    .param p1, "diskCacheService"    # Ljava/util/concurrent/ExecutorService;
-    .param p2, "sourceService"    # Ljava/util/concurrent/ExecutorService;
-    .param p3, "listener"    # Lcom/bumptech/glide/load/engine/EngineJobListener;
 
     .prologue
     .line 373
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 374
-    iput-object p1, p0, Lcom/bumptech/glide/load/engine/Engine$EngineJobFactory;->diskCacheService:Ljava/util/concurrent/ExecutorService;
+    iput-object p1, p0, Lcom/bumptech/glide/load/engine/Engine$EngineJobFactory;->a:Ljava/util/concurrent/ExecutorService;
 
     .line 375
-    iput-object p2, p0, Lcom/bumptech/glide/load/engine/Engine$EngineJobFactory;->sourceService:Ljava/util/concurrent/ExecutorService;
+    iput-object p2, p0, Lcom/bumptech/glide/load/engine/Engine$EngineJobFactory;->b:Ljava/util/concurrent/ExecutorService;
 
     .line 376
-    iput-object p3, p0, Lcom/bumptech/glide/load/engine/Engine$EngineJobFactory;->listener:Lcom/bumptech/glide/load/engine/EngineJobListener;
+    iput-object p3, p0, Lcom/bumptech/glide/load/engine/Engine$EngineJobFactory;->c:Lcom/bumptech/glide/load/engine/EngineJobListener;
 
     .line 377
     return-void
@@ -48,20 +34,18 @@
 
 
 # virtual methods
-.method public build(Lcom/bumptech/glide/load/Key;Z)Lcom/bumptech/glide/load/engine/EngineJob;
+.method public a(Lcom/bumptech/glide/load/Key;Z)Lcom/bumptech/glide/load/engine/EngineJob;
     .registers 9
-    .param p1, "key"    # Lcom/bumptech/glide/load/Key;
-    .param p2, "isMemoryCacheable"    # Z
 
     .prologue
     .line 380
     new-instance v0, Lcom/bumptech/glide/load/engine/EngineJob;
 
-    iget-object v2, p0, Lcom/bumptech/glide/load/engine/Engine$EngineJobFactory;->diskCacheService:Ljava/util/concurrent/ExecutorService;
+    iget-object v2, p0, Lcom/bumptech/glide/load/engine/Engine$EngineJobFactory;->a:Ljava/util/concurrent/ExecutorService;
 
-    iget-object v3, p0, Lcom/bumptech/glide/load/engine/Engine$EngineJobFactory;->sourceService:Ljava/util/concurrent/ExecutorService;
+    iget-object v3, p0, Lcom/bumptech/glide/load/engine/Engine$EngineJobFactory;->b:Ljava/util/concurrent/ExecutorService;
 
-    iget-object v5, p0, Lcom/bumptech/glide/load/engine/Engine$EngineJobFactory;->listener:Lcom/bumptech/glide/load/engine/EngineJobListener;
+    iget-object v5, p0, Lcom/bumptech/glide/load/engine/Engine$EngineJobFactory;->c:Lcom/bumptech/glide/load/engine/EngineJobListener;
 
     move-object v1, p1
 

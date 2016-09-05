@@ -33,10 +33,6 @@
 # direct methods
 .method protected constructor <init>(Ljava/lang/Class;ILjava/lang/Object;Ljava/lang/Object;Z)V
     .registers 7
-    .param p2, "additionalHash"    # I
-    .param p3, "valueHandler"    # Ljava/lang/Object;
-    .param p4, "typeHandler"    # Ljava/lang/Object;
-    .param p5, "asStatic"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -50,7 +46,6 @@
 
     .prologue
     .line 75
-    .local p1, "raw":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0}, Lcom/fasterxml/jackson/core/type/ResolvedType;-><init>()V
 
     .line 76
@@ -98,8 +93,6 @@
 
     .prologue
     .line 407
-    .local p1, "subclass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p2, "superClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
 
     invoke-virtual {v0, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
@@ -182,7 +175,6 @@
 
     .prologue
     .line 206
-    .local p1, "superclass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/JavaType;->_narrow(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object v0
@@ -192,7 +184,6 @@
 
 .method public bridge synthetic containedType(I)Lcom/fasterxml/jackson/core/type/ResolvedType;
     .registers 3
-    .param p1, "x0"    # I
 
     .prologue
     .line 17
@@ -205,7 +196,6 @@
 
 .method public containedType(I)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 321
@@ -226,7 +216,6 @@
 
 .method public containedTypeName(I)Ljava/lang/String;
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 324
@@ -251,25 +240,21 @@
 
     .prologue
     .line 168
-    .local p1, "subclass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
 
-    if-ne p1, v1, :cond_5
+    if-ne p1, v0, :cond_5
 
     .line 179
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/JavaType;
     :goto_4
     return-object p0
 
     .line 171
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/JavaType;
     :cond_5
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/JavaType;->_narrow(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object v0
 
     .line 173
-    .local v0, "result":Lcom/fasterxml/jackson/databind/JavaType;
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/JavaType;->_valueHandler:Ljava/lang/Object;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JavaType;->getValueHandler()Ljava/lang/Object;
@@ -343,15 +328,14 @@
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 383
-    .local v0, "sb":Ljava/lang/StringBuilder;
     invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/databind/JavaType;->getErasedSignature(Ljava/lang/StringBuilder;)Ljava/lang/StringBuilder;
 
     .line 384
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public abstract getErasedSignature(Ljava/lang/StringBuilder;)Ljava/lang/StringBuilder;
@@ -369,15 +353,14 @@
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 362
-    .local v0, "sb":Ljava/lang/StringBuilder;
     invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/databind/JavaType;->getGenericSignature(Ljava/lang/StringBuilder;)Ljava/lang/StringBuilder;
 
     .line 363
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public abstract getGenericSignature(Ljava/lang/StringBuilder;)Ljava/lang/StringBuilder;
@@ -490,7 +473,6 @@
 
     .prologue
     .line 227
-    .local p1, "clz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
 
     if-ne v0, p1, :cond_6
@@ -555,35 +537,34 @@
 .end method
 
 .method public isConcrete()Z
-    .registers 3
+    .registers 2
 
     .prologue
     .line 241
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getModifiers()I
+    invoke-virtual {v0}, Ljava/lang/Class;->getModifiers()I
 
     move-result v0
 
     .line 242
-    .local v0, "mod":I
-    and-int/lit16 v1, v0, 0x600
+    and-int/lit16 v0, v0, 0x600
 
-    if-nez v1, :cond_c
+    if-nez v0, :cond_c
 
     .line 243
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     .line 248
     :goto_b
-    return v1
+    return v0
 
     :cond_c
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
 
-    invoke-virtual {v1}, Ljava/lang/Class;->isPrimitive()Z
+    invoke-virtual {v0}, Ljava/lang/Class;->isPrimitive()Z
 
-    move-result v1
+    move-result v0
 
     goto :goto_b
 .end method
@@ -690,22 +671,19 @@
 
     .prologue
     .line 146
-    .local p1, "subclass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
 
-    if-ne p1, v1, :cond_5
+    if-ne p1, v0, :cond_5
 
     .line 158
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/JavaType;
     :goto_4
     return-object p0
 
     .line 148
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/JavaType;
     :cond_5
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
 
-    invoke-virtual {p0, p1, v1}, Lcom/fasterxml/jackson/databind/JavaType;->_assertSubclass(Ljava/lang/Class;Ljava/lang/Class;)V
+    invoke-virtual {p0, p1, v0}, Lcom/fasterxml/jackson/databind/JavaType;->_assertSubclass(Ljava/lang/Class;Ljava/lang/Class;)V
 
     .line 149
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/JavaType;->_narrow(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/JavaType;
@@ -713,7 +691,6 @@
     move-result-object v0
 
     .line 152
-    .local v0, "result":Lcom/fasterxml/jackson/databind/JavaType;
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/JavaType;->_valueHandler:Ljava/lang/Object;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JavaType;->getValueHandler()Ljava/lang/Object;
@@ -790,18 +767,15 @@
 
     .prologue
     .line 193
-    .local p1, "superclass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
 
     if-ne p1, v0, :cond_5
 
     .line 196
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/JavaType;
     :goto_4
     return-object p0
 
     .line 195
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/JavaType;
     :cond_5
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/JavaType;->_class:Ljava/lang/Class;
 

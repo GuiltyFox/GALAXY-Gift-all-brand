@@ -3,14 +3,6 @@
 .source "AnnotatedConstructor.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor$Serialization;
-    }
-.end annotation
-
-
 # static fields
 .field private static final serialVersionUID:J = 0x1L
 
@@ -31,7 +23,6 @@
 # direct methods
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor$Serialization;)V
     .registers 3
-    .param p1, "ser"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor$Serialization;
 
     .prologue
     const/4 v0, 0x0
@@ -51,8 +42,6 @@
 
 .method public constructor <init>(Ljava/lang/reflect/Constructor;Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;[Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;)V
     .registers 6
-    .param p2, "classAnn"    # Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
-    .param p3, "paramAnn"    # [Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -67,7 +56,6 @@
 
     .prologue
     .line 34
-    .local p1, "constructor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<*>;"
     invoke-direct {p0, p2, p3}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedWithParams;-><init>(Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;[Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;)V
 
     .line 35
@@ -94,11 +82,6 @@
 # virtual methods
 .method public final call()Ljava/lang/Object;
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/Exception;
-        }
-    .end annotation
 
     .prologue
     .line 120
@@ -117,12 +100,6 @@
 
 .method public final call([Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
-    .param p1, "args"    # [Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/Exception;
-        }
-    .end annotation
 
     .prologue
     .line 125
@@ -137,12 +114,6 @@
 
 .method public final call1(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 5
-    .param p1, "arg"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/Exception;
-        }
-    .end annotation
 
     .prologue
     .line 130
@@ -215,29 +186,27 @@
 
 .method public getGenericParameterType(I)Ljava/lang/reflect/Type;
     .registers 4
-    .param p1, "index"    # I
 
     .prologue
     .line 114
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;->_constructor:Ljava/lang/reflect/Constructor;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;->_constructor:Ljava/lang/reflect/Constructor;
 
-    invoke-virtual {v1}, Ljava/lang/reflect/Constructor;->getGenericParameterTypes()[Ljava/lang/reflect/Type;
+    invoke-virtual {v0}, Ljava/lang/reflect/Constructor;->getGenericParameterTypes()[Ljava/lang/reflect/Type;
 
     move-result-object v0
 
     .line 115
-    .local v0, "types":[Ljava/lang/reflect/Type;
     array-length v1, v0
 
     if-lt p1, v1, :cond_b
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_a
-    return-object v1
+    return-object v0
 
     :cond_b
-    aget-object v1, v0, p1
+    aget-object v0, v0, p1
 
     goto :goto_a
 .end method
@@ -310,7 +279,6 @@
 
 .method public getRawParameterType(I)Ljava/lang/Class;
     .registers 4
-    .param p1, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -321,25 +289,24 @@
 
     .prologue
     .line 107
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;->_constructor:Ljava/lang/reflect/Constructor;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;->_constructor:Ljava/lang/reflect/Constructor;
 
-    invoke-virtual {v1}, Ljava/lang/reflect/Constructor;->getParameterTypes()[Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/reflect/Constructor;->getParameterTypes()[Ljava/lang/Class;
 
     move-result-object v0
 
     .line 108
-    .local v0, "types":[Ljava/lang/Class;, "[Ljava/lang/Class<*>;"
     array-length v1, v0
 
     if-lt p1, v1, :cond_b
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_a
-    return-object v1
+    return-object v0
 
     :cond_b
-    aget-object v1, v0, p1
+    aget-object v0, v0, p1
 
     goto :goto_a
 .end method
@@ -367,7 +334,6 @@
 
 .method public getType(Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 3
-    .param p1, "bindings"    # Lcom/fasterxml/jackson/databind/type/TypeBindings;
 
     .prologue
     .line 90
@@ -386,12 +352,6 @@
 
 .method public getValue(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 5
-    .param p1, "pojo"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/UnsupportedOperationException;
-        }
-    .end annotation
 
     .prologue
     .line 157
@@ -429,111 +389,100 @@
 .end method
 
 .method readResolve()Ljava/lang/Object;
-    .registers 7
+    .registers 6
 
     .prologue
     .line 183
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;->_serialization:Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor$Serialization;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;->_serialization:Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor$Serialization;
 
-    iget-object v0, v3, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor$Serialization;->clazz:Ljava/lang/Class;
+    iget-object v0, v0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor$Serialization;->clazz:Ljava/lang/Class;
 
     .line 185
-    .local v0, "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :try_start_4
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;->_serialization:Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor$Serialization;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;->_serialization:Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor$Serialization;
 
-    iget-object v3, v3, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor$Serialization;->args:[Ljava/lang/Class;
+    iget-object v1, v1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor$Serialization;->args:[Ljava/lang/Class;
 
-    invoke-virtual {v0, v3}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
     move-result-object v1
 
     .line 187
-    .local v1, "ctor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<*>;"
     invoke-virtual {v1}, Ljava/lang/reflect/Constructor;->isAccessible()Z
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_15
+    if-nez v2, :cond_15
 
     .line 188
     invoke-static {v1}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->checkAndFixAccess(Ljava/lang/reflect/Member;)V
 
     .line 190
     :cond_15
-    new-instance v3, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;
+    new-instance v2, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;
+
+    const/4 v3, 0x0
 
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
-
-    invoke-direct {v3, v1, v4, v5}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;-><init>(Ljava/lang/reflect/Constructor;Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;[Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;)V
+    invoke-direct {v2, v1, v3, v4}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;-><init>(Ljava/lang/reflect/Constructor;Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;[Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;)V
     :try_end_1c
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_1c} :catch_1d
 
-    return-object v3
+    return-object v2
 
     .line 191
-    .end local v1    # "ctor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<*>;"
     :catch_1d
-    move-exception v2
+    move-exception v1
 
     .line 192
-    .local v2, "e":Ljava/lang/Exception;
-    new-instance v3, Ljava/lang/IllegalArgumentException;
+    new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "Could not find constructor with "
+    const-string/jumbo v3, "Could not find constructor with "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    iget-object v5, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;->_serialization:Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor$Serialization;
+    iget-object v3, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;->_serialization:Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor$Serialization;
 
-    iget-object v5, v5, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor$Serialization;->args:[Ljava/lang/Class;
+    iget-object v3, v3, Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor$Serialization;->args:[Ljava/lang/Class;
 
-    array-length v5, v5
+    array-length v3, v3
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    const-string/jumbo v5, " args from Class \'"
+    const-string/jumbo v3, " args from Class \'"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v1
 .end method
 
 .method public setValue(Ljava/lang/Object;Ljava/lang/Object;)V
     .registers 6
-    .param p1, "pojo"    # Ljava/lang/Object;
-    .param p2, "value"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/UnsupportedOperationException;
-        }
-    .end annotation
 
     .prologue
     .line 149
@@ -620,7 +569,6 @@
 
 .method public bridge synthetic withAnnotations(Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;)Lcom/fasterxml/jackson/databind/introspect/Annotated;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
     .prologue
     .line 10
@@ -633,7 +581,6 @@
 
 .method public withAnnotations(Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;
     .registers 5
-    .param p1, "ann"    # Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
     .prologue
     .line 54

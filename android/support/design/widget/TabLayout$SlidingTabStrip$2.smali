@@ -8,11 +8,6 @@
     value = Landroid/support/design/widget/TabLayout$SlidingTabStrip;->animateIndicatorToPosition(II)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$1:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
@@ -39,7 +34,6 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/support/design/widget/ValueAnimatorCompat;)V
     .registers 4
-    .param p1, "animator"    # Landroid/support/design/widget/ValueAnimatorCompat;
 
     .prologue
     .line 1846

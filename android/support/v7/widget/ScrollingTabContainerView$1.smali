@@ -11,16 +11,11 @@
     value = Landroid/support/v7/widget/ScrollingTabContainerView;->animateToTab(I)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Landroid/support/v7/widget/ScrollingTabContainerView;
+.field final synthetic a:Landroid/view/View;
 
-.field final synthetic val$tabView:Landroid/view/View;
+.field final synthetic b:Landroid/support/v7/widget/ScrollingTabContainerView;
 
 
 # direct methods
@@ -29,9 +24,9 @@
 
     .prologue
     .line 261
-    iput-object p1, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->this$0:Landroid/support/v7/widget/ScrollingTabContainerView;
+    iput-object p1, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->b:Landroid/support/v7/widget/ScrollingTabContainerView;
 
-    iput-object p2, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->val$tabView:Landroid/view/View;
+    iput-object p2, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->a:Landroid/view/View;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,48 +36,47 @@
 
 # virtual methods
 .method public run()V
-    .registers 5
+    .registers 4
 
     .prologue
     .line 263
-    iget-object v1, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->val$tabView:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->a:Landroid/view/View;
 
-    invoke-virtual {v1}, Landroid/view/View;->getLeft()I
+    invoke-virtual {v0}, Landroid/view/View;->getLeft()I
+
+    move-result v0
+
+    iget-object v1, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->b:Landroid/support/v7/widget/ScrollingTabContainerView;
+
+    invoke-virtual {v1}, Landroid/support/v7/widget/ScrollingTabContainerView;->getWidth()I
 
     move-result v1
 
-    iget-object v2, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->this$0:Landroid/support/v7/widget/ScrollingTabContainerView;
+    iget-object v2, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->a:Landroid/view/View;
 
-    invoke-virtual {v2}, Landroid/support/v7/widget/ScrollingTabContainerView;->getWidth()I
+    invoke-virtual {v2}, Landroid/view/View;->getWidth()I
 
     move-result v2
 
-    iget-object v3, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->val$tabView:Landroid/view/View;
+    sub-int/2addr v1, v2
 
-    invoke-virtual {v3}, Landroid/view/View;->getWidth()I
+    div-int/lit8 v1, v1, 0x2
 
-    move-result v3
-
-    sub-int/2addr v2, v3
-
-    div-int/lit8 v2, v2, 0x2
-
-    sub-int v0, v1, v2
+    sub-int/2addr v0, v1
 
     .line 264
-    .local v0, "scrollPos":I
-    iget-object v1, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->this$0:Landroid/support/v7/widget/ScrollingTabContainerView;
+    iget-object v1, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->b:Landroid/support/v7/widget/ScrollingTabContainerView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v0, v2}, Landroid/support/v7/widget/ScrollingTabContainerView;->smoothScrollTo(II)V
 
     .line 265
-    iget-object v1, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->this$0:Landroid/support/v7/widget/ScrollingTabContainerView;
+    iget-object v0, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->b:Landroid/support/v7/widget/ScrollingTabContainerView;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    iput-object v2, v1, Landroid/support/v7/widget/ScrollingTabContainerView;->mTabSelector:Ljava/lang/Runnable;
+    iput-object v1, v0, Landroid/support/v7/widget/ScrollingTabContainerView;->mTabSelector:Ljava/lang/Runnable;
 
     .line 266
     return-void

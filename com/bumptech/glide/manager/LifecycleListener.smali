@@ -4,11 +4,11 @@
 
 
 # virtual methods
-.method public abstract onDestroy()V
+.method public abstract d()V
 .end method
 
-.method public abstract onStart()V
+.method public abstract e()V
 .end method
 
-.method public abstract onStop()V
+.method public abstract f()V
 .end method

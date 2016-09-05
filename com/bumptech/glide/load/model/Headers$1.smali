@@ -11,11 +11,6 @@
     value = Lcom/bumptech/glide/load/model/Headers;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 
 # direct methods
 .method constructor <init>()V
@@ -30,7 +25,7 @@
 
 
 # virtual methods
-.method public getHeaders()Ljava/util/Map;
+.method public a()Ljava/util/Map;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {

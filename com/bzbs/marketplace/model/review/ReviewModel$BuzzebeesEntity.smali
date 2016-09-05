@@ -3,32 +3,12 @@
 .source "ReviewModel.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bzbs/marketplace/model/review/ReviewModel;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "BuzzebeesEntity"
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/bzbs/marketplace/model/review/ReviewModel$BuzzebeesEntity$UpdatedPointsEntity;
-    }
-.end annotation
-
-.annotation runtime Lorg/parceler/Parcel;
-.end annotation
-
-
 # instance fields
-.field description:Ljava/lang/String;
+.field public description:Ljava/lang/String;
 
-.field points:I
+.field public points:I
 
-.field updated_points:Lcom/bzbs/marketplace/model/review/ReviewModel$BuzzebeesEntity$UpdatedPointsEntity;
+.field public updated_points:Lcom/bzbs/marketplace/model/review/ReviewModel$BuzzebeesEntity$UpdatedPointsEntity;
 
 
 # direct methods
@@ -76,7 +56,6 @@
 
 .method public setDescription(Ljava/lang/String;)V
     .registers 2
-    .param p1, "description"    # Ljava/lang/String;
 
     .prologue
     .line 377
@@ -88,7 +67,6 @@
 
 .method public setPoints(I)V
     .registers 2
-    .param p1, "points"    # I
 
     .prologue
     .line 369
@@ -100,7 +78,6 @@
 
 .method public setUpdated_points(Lcom/bzbs/marketplace/model/review/ReviewModel$BuzzebeesEntity$UpdatedPointsEntity;)V
     .registers 2
-    .param p1, "updated_points"    # Lcom/bzbs/marketplace/model/review/ReviewModel$BuzzebeesEntity$UpdatedPointsEntity;
 
     .prologue
     .line 373

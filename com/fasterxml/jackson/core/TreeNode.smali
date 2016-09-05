@@ -11,11 +11,6 @@
 .end method
 
 .method public abstract at(Ljava/lang/String;)Lcom/fasterxml/jackson/core/TreeNode;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/IllegalArgumentException;
-        }
-    .end annotation
 .end method
 
 .method public abstract fieldNames()Ljava/util/Iterator;

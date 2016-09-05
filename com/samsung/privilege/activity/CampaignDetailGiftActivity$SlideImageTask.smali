@@ -3,29 +3,17 @@
 .source "CampaignDetailGiftActivity.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = "SlideImageTask"
-.end annotation
-
-
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+.field final synthetic a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     .prologue
-    .line 1732
-    iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    .line 1789
+    iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/util/TimerTask;-><init>()V
 
@@ -38,8 +26,8 @@
     .registers 3
 
     .prologue
-    .line 1734
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    .line 1791
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     new-instance v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask$1;
 
@@ -47,6 +35,6 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 1783
+    .line 1840
     return-void
 .end method

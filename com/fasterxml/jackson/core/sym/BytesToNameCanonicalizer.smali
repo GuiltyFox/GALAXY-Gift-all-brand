@@ -3,15 +3,6 @@
 .source "BytesToNameCanonicalizer.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;,
-        Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$TableInfo;
-    }
-.end annotation
-
-
 # static fields
 .field private static final DEFAULT_T_SIZE:I = 0x40
 
@@ -83,13 +74,11 @@
 
 # direct methods
 .method private constructor <init>(IZIZ)V
-    .registers 8
-    .param p1, "sz"    # I
-    .param p2, "intern"    # Z
-    .param p3, "seed"    # I
-    .param p4, "failOnDoS"    # Z
+    .registers 7
 
     .prologue
+    const/16 v0, 0x10
+
     .line 266
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -108,64 +97,52 @@
     iput-boolean p4, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_failOnDoS:Z
 
     .line 272
-    const/16 v1, 0x10
+    if-ge p1, v0, :cond_1d
 
-    if-ge p1, v1, :cond_1e
-
-    .line 273
-    const/16 p1, 0x10
+    move p1, v0
 
     .line 286
-    :cond_12
-    :goto_12
-    new-instance v1, Ljava/util/concurrent/atomic/AtomicReference;
+    :cond_11
+    :goto_11
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->initTableInfo(I)Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$TableInfo;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-direct {v1, v2}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_tableInfo:Ljava/util/concurrent/atomic/AtomicReference;
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_tableInfo:Ljava/util/concurrent/atomic/AtomicReference;
 
     .line 287
     return-void
 
     .line 278
-    :cond_1e
+    :cond_1d
     add-int/lit8 v1, p1, -0x1
 
     and-int/2addr v1, p1
 
-    if-eqz v1, :cond_12
-
-    .line 279
-    const/16 v0, 0x10
+    if-eqz v1, :cond_11
 
     .line 280
-    .local v0, "curr":I
-    :goto_25
-    if-ge v0, p1, :cond_29
+    :goto_22
+    if-ge v0, p1, :cond_26
 
     .line 281
     add-int/2addr v0, v0
 
-    goto :goto_25
+    goto :goto_22
 
-    .line 283
-    :cond_29
+    :cond_26
     move p1, v0
 
-    goto :goto_12
+    .line 283
+    goto :goto_11
 .end method
 
 .method private constructor <init>(Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;ZIZLcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$TableInfo;)V
     .registers 8
-    .param p1, "parent"    # Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;
-    .param p2, "intern"    # Z
-    .param p3, "seed"    # I
-    .param p4, "failOnDoS"    # Z
-    .param p5, "state"    # Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$TableInfo;
 
     .prologue
     const/4 v1, 0x1
@@ -249,267 +226,244 @@
 .end method
 
 .method private _addSymbol(ILcom/fasterxml/jackson/core/sym/Name;)V
-    .registers 14
-    .param p1, "hash"    # I
-    .param p2, "symbol"    # Lcom/fasterxml/jackson/core/sym/Name;
+    .registers 9
 
     .prologue
-    const/4 v10, 0x1
+    const/4 v5, 0x1
 
     .line 819
-    iget-boolean v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hashShared:Z
+    iget-boolean v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hashShared:Z
 
-    if-eqz v7, :cond_8
+    if-eqz v0, :cond_8
 
     .line 820
     invoke-direct {p0}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->unshareMain()V
 
     .line 823
     :cond_8
-    iget-boolean v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_needRehash:Z
+    iget-boolean v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_needRehash:Z
 
-    if-eqz v7, :cond_f
+    if-eqz v0, :cond_f
 
     .line 824
     invoke-direct {p0}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->rehash()V
 
     .line 827
     :cond_f
-    iget v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_count:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_count:I
 
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    iput v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_count:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_count:I
 
     .line 832
-    iget v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hashMask:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hashMask:I
 
-    and-int v5, p1, v7
+    and-int v1, p1, v0
 
     .line 833
-    .local v5, "ix":I
-    iget-object v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
 
-    aget-object v7, v7, v5
+    aget-object v0, v0, v1
 
-    if-nez v7, :cond_44
+    if-nez v0, :cond_43
 
     .line 834
-    iget-object v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
 
-    shl-int/lit8 v8, p1, 0x8
+    shl-int/lit8 v2, p1, 0x8
 
-    aput v8, v7, v5
+    aput v2, v0, v1
 
     .line 835
-    iget-boolean v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_namesShared:Z
+    iget-boolean v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_namesShared:Z
 
-    if-eqz v7, :cond_2c
+    if-eqz v0, :cond_2c
 
     .line 836
     invoke-direct {p0}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->unshareNames()V
 
     .line 838
     :cond_2c
-    iget-object v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
 
-    aput-object p2, v7, v5
+    aput-object p2, v0, v1
 
     .line 885
     :goto_30
-    iget-object v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
 
-    array-length v4, v7
+    array-length v0, v0
 
     .line 886
-    .local v4, "hashSize":I
-    iget v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_count:I
+    iget v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_count:I
 
-    shr-int/lit8 v8, v4, 0x1
+    shr-int/lit8 v2, v0, 0x1
 
-    if-le v7, v8, :cond_43
+    if-le v1, v2, :cond_42
 
     .line 887
-    shr-int/lit8 v3, v4, 0x2
+    shr-int/lit8 v1, v0, 0x2
 
     .line 891
-    .local v3, "hashQuarter":I
-    iget v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_count:I
+    iget v2, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_count:I
 
-    sub-int v8, v4, v3
+    sub-int/2addr v0, v1
 
-    if-le v7, v8, :cond_a6
+    if-le v2, v0, :cond_a5
 
     .line 892
-    iput-boolean v10, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_needRehash:Z
+    iput-boolean v5, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_needRehash:Z
 
     .line 898
-    .end local v3    # "hashQuarter":I
-    :cond_43
-    :goto_43
+    :cond_42
+    :goto_42
     return-void
 
     .line 843
-    .end local v4    # "hashSize":I
-    :cond_44
-    iget-boolean v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collListShared:Z
+    :cond_43
+    iget-boolean v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collListShared:Z
 
-    if-eqz v7, :cond_4b
+    if-eqz v0, :cond_4a
 
     .line 844
     invoke-direct {p0}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->unshareCollision()V
 
     .line 846
-    :cond_4b
-    iget v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collCount:I
+    :cond_4a
+    iget v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collCount:I
 
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    iput v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collCount:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collCount:I
 
     .line 847
-    iget-object v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
 
-    aget v2, v7, v5
+    aget v2, v0, v1
 
     .line 848
-    .local v2, "entryValue":I
     and-int/lit16 v0, v2, 0xff
 
     .line 849
-    .local v0, "bucket":I
-    if-nez v0, :cond_92
+    if-nez v0, :cond_91
 
     .line 850
-    iget v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collEnd:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collEnd:I
 
-    const/16 v8, 0xfe
+    const/16 v3, 0xfe
 
-    if-gt v7, v8, :cond_8d
+    if-gt v0, v3, :cond_8c
 
     .line 851
     iget v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collEnd:I
 
     .line 852
-    iget v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collEnd:I
+    iget v3, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collEnd:I
 
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v3, v3, 0x1
 
-    iput v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collEnd:I
+    iput v3, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collEnd:I
 
     .line 854
-    iget-object v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+    iget-object v3, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
-    array-length v7, v7
+    array-length v3, v3
 
-    if-lt v0, v7, :cond_6f
+    if-lt v0, v3, :cond_6e
 
     .line 855
     invoke-direct {p0}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->expandCollision()V
 
     .line 861
-    :cond_6f
-    :goto_6f
-    iget-object v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
+    :cond_6e
+    :goto_6e
+    iget-object v3, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
 
-    and-int/lit16 v8, v2, -0x100
+    and-int/lit16 v2, v2, -0x100
 
-    add-int/lit8 v9, v0, 0x1
+    add-int/lit8 v4, v0, 0x1
 
-    or-int/2addr v8, v9
+    or-int/2addr v2, v4
 
-    aput v8, v7, v5
+    aput v2, v3, v1
 
     .line 867
-    :goto_78
-    new-instance v6, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+    :goto_77
+    new-instance v1, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
-    iget-object v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
-    aget-object v7, v7, v0
+    aget-object v2, v2, v0
 
-    invoke-direct {v6, p2, v7}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;-><init>(Lcom/fasterxml/jackson/core/sym/Name;Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;)V
+    invoke-direct {v1, p2, v2}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;-><init>(Lcom/fasterxml/jackson/core/sym/Name;Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;)V
 
     .line 868
-    .local v6, "newB":Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
     # getter for: Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->length:I
-    invoke-static {v6}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->access$000(Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;)I
+    invoke-static {v1}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->access$000(Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;)I
 
-    move-result v1
+    move-result v2
 
     .line 869
-    .local v1, "collLen":I
-    const/16 v7, 0x64
+    const/16 v3, 0x64
 
-    if-le v1, v7, :cond_95
+    if-le v2, v3, :cond_94
 
     .line 873
-    invoke-direct {p0, v0, v6}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_handleSpillOverflow(ILcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;)V
+    invoke-direct {p0, v0, v1}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_handleSpillOverflow(ILcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;)V
 
     goto :goto_30
 
     .line 858
-    .end local v1    # "collLen":I
-    .end local v6    # "newB":Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
-    :cond_8d
+    :cond_8c
     invoke-direct {p0}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->findBestBucket()I
 
     move-result v0
 
-    goto :goto_6f
+    goto :goto_6e
 
     .line 863
-    :cond_92
+    :cond_91
     add-int/lit8 v0, v0, -0x1
 
-    goto :goto_78
+    goto :goto_77
 
     .line 875
-    .restart local v1    # "collLen":I
-    .restart local v6    # "newB":Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
-    :cond_95
-    iget-object v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+    :cond_94
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
-    aput-object v6, v7, v0
+    aput-object v1, v2, v0
 
     .line 877
     # getter for: Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->length:I
-    invoke-static {v6}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->access$000(Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;)I
+    invoke-static {v1}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->access$000(Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;)I
 
-    move-result v7
+    move-result v0
 
-    iget v8, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_longestCollisionList:I
+    iget v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_longestCollisionList:I
 
-    invoke-static {v7, v8}, Ljava/lang/Math;->max(II)I
+    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
 
-    move-result v7
+    move-result v0
 
-    iput v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_longestCollisionList:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_longestCollisionList:I
 
     goto :goto_30
 
     .line 893
-    .end local v0    # "bucket":I
-    .end local v1    # "collLen":I
-    .end local v2    # "entryValue":I
-    .end local v6    # "newB":Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
-    .restart local v3    # "hashQuarter":I
-    .restart local v4    # "hashSize":I
-    :cond_a6
-    iget v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collCount:I
+    :cond_a5
+    iget v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collCount:I
 
-    if-lt v7, v3, :cond_43
+    if-lt v0, v1, :cond_42
 
     .line 894
-    iput-boolean v10, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_needRehash:Z
+    iput-boolean v5, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_needRehash:Z
 
-    goto :goto_43
+    goto :goto_42
 .end method
 
 .method private _handleSpillOverflow(ILcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;)V
     .registers 5
-    .param p1, "bindex"    # I
-    .param p2, "newBucket"    # Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
     .prologue
     .line 902
@@ -595,100 +549,94 @@
 .end method
 
 .method protected static calcQuads([B)[I
-    .registers 7
-    .param p0, "wordBytes"    # [B
+    .registers 6
 
     .prologue
     .line 747
-    array-length v0, p0
+    array-length v2, p0
 
     .line 748
-    .local v0, "blen":I
-    add-int/lit8 v4, v0, 0x3
+    add-int/lit8 v0, v2, 0x3
 
-    div-int/lit8 v4, v4, 0x4
+    div-int/lit8 v0, v0, 0x4
 
-    new-array v2, v4, [I
+    new-array v3, v0, [I
 
     .line 749
-    .local v2, "result":[I
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    .local v1, "i":I
-    :goto_8
-    if-ge v1, v0, :cond_39
+    move v1, v0
+
+    :goto_9
+    if-ge v1, v2, :cond_38
 
     .line 750
-    aget-byte v4, p0, v1
+    aget-byte v0, p0, v1
 
-    and-int/lit16 v3, v4, 0xff
+    and-int/lit16 v0, v0, 0xff
 
     .line 752
-    .local v3, "x":I
     add-int/lit8 v1, v1, 0x1
 
-    if-ge v1, v0, :cond_32
+    if-ge v1, v2, :cond_30
 
     .line 753
-    shl-int/lit8 v4, v3, 0x8
+    shl-int/lit8 v0, v0, 0x8
 
-    aget-byte v5, p0, v1
+    aget-byte v4, p0, v1
 
-    and-int/lit16 v5, v5, 0xff
+    and-int/lit16 v4, v4, 0xff
 
-    or-int v3, v4, v5
+    or-int/2addr v0, v4
 
     .line 754
     add-int/lit8 v1, v1, 0x1
 
-    if-ge v1, v0, :cond_32
+    if-ge v1, v2, :cond_30
 
     .line 755
-    shl-int/lit8 v4, v3, 0x8
+    shl-int/lit8 v0, v0, 0x8
 
-    aget-byte v5, p0, v1
+    aget-byte v4, p0, v1
 
-    and-int/lit16 v5, v5, 0xff
+    and-int/lit16 v4, v4, 0xff
 
-    or-int v3, v4, v5
+    or-int/2addr v0, v4
 
     .line 756
     add-int/lit8 v1, v1, 0x1
 
-    if-ge v1, v0, :cond_32
+    if-ge v1, v2, :cond_30
 
     .line 757
-    shl-int/lit8 v4, v3, 0x8
+    shl-int/lit8 v0, v0, 0x8
 
-    aget-byte v5, p0, v1
+    aget-byte v4, p0, v1
 
-    and-int/lit16 v5, v5, 0xff
+    and-int/lit16 v4, v4, 0xff
 
-    or-int v3, v4, v5
+    or-int/2addr v0, v4
 
     .line 761
-    :cond_32
+    :cond_30
     shr-int/lit8 v4, v1, 0x2
 
-    aput v3, v2, v4
+    aput v0, v3, v4
 
     .line 749
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    goto :goto_8
+    move v1, v0
+
+    goto :goto_9
 
     .line 763
-    .end local v3    # "x":I
-    :cond_39
-    return-object v2
+    :cond_38
+    return-object v3
 .end method
 
 .method private static constructName(ILjava/lang/String;II)Lcom/fasterxml/jackson/core/sym/Name;
     .registers 5
-    .param p0, "hash"    # I
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "q1"    # I
-    .param p3, "q2"    # I
 
     .prologue
     .line 1101
@@ -713,10 +661,6 @@
 
 .method private static constructName(ILjava/lang/String;[II)Lcom/fasterxml/jackson/core/sym/Name;
     .registers 10
-    .param p0, "hash"    # I
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "quads"    # [I
-    .param p3, "qlen"    # I
 
     .prologue
     const/4 v2, 0x1
@@ -792,7 +736,7 @@
 .end method
 
 .method public static createRoot()Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;
-    .registers 6
+    .registers 4
 
     .prologue
     .line 348
@@ -801,31 +745,28 @@
     move-result-wide v0
 
     .line 350
-    .local v0, "now":J
-    long-to-int v3, v0
+    long-to-int v2, v0
 
-    const/16 v4, 0x20
+    const/16 v3, 0x20
 
-    ushr-long v4, v0, v4
+    ushr-long/2addr v0, v3
 
-    long-to-int v4, v4
+    long-to-int v0, v0
 
-    add-int/2addr v3, v4
+    add-int/2addr v0, v2
 
-    or-int/lit8 v2, v3, 0x1
+    or-int/lit8 v0, v0, 0x1
 
     .line 351
-    .local v2, "seed":I
-    invoke-static {v2}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->createRoot(I)Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;
+    invoke-static {v0}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->createRoot(I)Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;
 
-    move-result-object v3
+    move-result-object v0
 
-    return-object v3
+    return-object v0
 .end method
 
 .method protected static createRoot(I)Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;
     .registers 4
-    .param p0, "seed"    # I
 
     .prologue
     const/4 v2, 0x1
@@ -848,93 +789,84 @@
     iget-object v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
     .line 1091
-    .local v0, "old":[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
     array-length v1, v0
 
     mul-int/lit8 v1, v1, 0x2
 
     invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, [Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+    check-cast v0, [Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
     .line 1092
     return-void
 .end method
 
 .method private findBestBucket()I
-    .registers 8
+    .registers 7
 
     .prologue
     .line 1044
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+    iget-object v4, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
     .line 1045
-    .local v2, "buckets":[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
-    const v0, 0x7fffffff
+    const v3, 0x7fffffff
 
     .line 1046
-    .local v0, "bestCount":I
-    const/4 v1, -0x1
+    const/4 v0, -0x1
 
     .line 1048
-    .local v1, "bestIx":I
-    const/4 v4, 0x0
+    const/4 v1, 0x0
 
-    .local v4, "i":I
     iget v5, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collEnd:I
 
-    .local v5, "len":I
     :goto_9
-    if-ge v4, v5, :cond_1c
+    if-ge v1, v5, :cond_1c
 
     .line 1049
-    aget-object v6, v2, v4
+    aget-object v2, v4, v1
 
     # getter for: Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->length:I
-    invoke-static {v6}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->access$000(Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;)I
+    invoke-static {v2}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->access$000(Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;)I
 
-    move-result v3
+    move-result v2
 
     .line 1050
-    .local v3, "count":I
-    if-ge v3, v0, :cond_19
+    if-ge v2, v3, :cond_1e
 
     .line 1051
-    const/4 v6, 0x1
+    const/4 v0, 0x1
 
-    if-ne v3, v6, :cond_17
+    if-ne v2, v0, :cond_17
 
     .line 1058
-    .end local v3    # "count":I
-    .end local v4    # "i":I
     :goto_16
-    return v4
+    return v1
 
-    .line 1054
-    .restart local v3    # "count":I
-    .restart local v4    # "i":I
     :cond_17
-    move v0, v3
-
-    .line 1055
-    move v1, v4
+    move v0, v1
 
     .line 1048
-    :cond_19
-    add-int/lit8 v4, v4, 0x1
+    :goto_18
+    add-int/lit8 v1, v1, 0x1
+
+    move v3, v2
 
     goto :goto_9
 
-    .end local v3    # "count":I
     :cond_1c
-    move v4, v1
+    move v1, v0
 
     .line 1058
     goto :goto_16
+
+    :cond_1e
+    move v2, v3
+
+    goto :goto_18
 .end method
 
 .method public static getEmptyName()Lcom/fasterxml/jackson/core/sym/Name;
@@ -951,7 +883,6 @@
 
 .method private initTableInfo(I)Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$TableInfo;
     .registers 11
-    .param p1, "sz"    # I
 
     .prologue
     const/4 v1, 0x0
@@ -980,27 +911,24 @@
 
 .method private mergeChild(Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$TableInfo;)V
     .registers 5
-    .param p1, "childState"    # Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$TableInfo;
 
     .prologue
     .line 404
-    iget v0, p1, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$TableInfo;->count:I
+    iget v1, p1, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$TableInfo;->count:I
 
     .line 405
-    .local v0, "childCount":I
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_tableInfo:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_tableInfo:Ljava/util/concurrent/atomic/AtomicReference;
 
-    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$TableInfo;
+    check-cast v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$TableInfo;
 
     .line 411
-    .local v1, "currState":Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$TableInfo;
-    iget v2, v1, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$TableInfo;->count:I
+    iget v2, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$TableInfo;->count:I
 
-    if-ne v0, v2, :cond_f
+    if-ne v1, v2, :cond_f
 
     .line 430
     :goto_e
@@ -1010,20 +938,20 @@
     :cond_f
     const/16 v2, 0x1770
 
-    if-le v0, v2, :cond_19
+    if-le v1, v2, :cond_19
 
     .line 427
-    const/16 v2, 0x40
+    const/16 v1, 0x40
 
-    invoke-direct {p0, v2}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->initTableInfo(I)Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$TableInfo;
+    invoke-direct {p0, v1}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->initTableInfo(I)Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$TableInfo;
 
     move-result-object p1
 
     .line 429
     :cond_19
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_tableInfo:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_tableInfo:Ljava/util/concurrent/atomic/AtomicReference;
 
-    invoke-virtual {v2, v1, p1}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     goto :goto_e
 .end method
@@ -1068,550 +996,359 @@
 .end method
 
 .method private rehash()V
-    .registers 22
+    .registers 14
 
     .prologue
+    const/4 v1, 0x0
+
     .line 926
-    const/16 v18, 0x0
-
-    move/from16 v0, v18
-
-    move-object/from16 v1, p0
-
-    iput-boolean v0, v1, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_needRehash:Z
+    iput-boolean v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_needRehash:Z
 
     .line 928
-    const/16 v18, 0x0
-
-    move/from16 v0, v18
-
-    move-object/from16 v1, p0
-
-    iput-boolean v0, v1, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_namesShared:Z
+    iput-boolean v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_namesShared:Z
 
     .line 934
-    move-object/from16 v0, p0
-
-    iget-object v13, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
 
     .line 935
-    .local v13, "oldMainHash":[I
-    array-length v7, v13
+    array-length v3, v0
 
     .line 936
-    .local v7, "len":I
-    add-int v10, v7, v7
+    add-int v0, v3, v3
 
     .line 941
-    .local v10, "newLen":I
-    const/high16 v18, 0x10000
+    const/high16 v2, 0x10000
 
-    move/from16 v0, v18
-
-    if-le v10, v0, :cond_21
+    if-le v0, v2, :cond_12
 
     .line 942
-    invoke-direct/range {p0 .. p0}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->nukeSymbols()V
+    invoke-direct {p0}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->nukeSymbols()V
 
     .line 1022
-    :cond_20
-    :goto_20
+    :cond_11
+    :goto_11
     return-void
 
     .line 946
-    :cond_21
-    new-array v0, v10, [I
+    :cond_12
+    new-array v2, v0, [I
 
-    move-object/from16 v18, v0
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, p0
-
-    iput-object v0, v1, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
+    iput-object v2, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
 
     .line 947
-    add-int/lit8 v18, v10, -0x1
+    add-int/lit8 v2, v0, -0x1
 
-    move/from16 v0, v18
-
-    move-object/from16 v1, p0
-
-    iput v0, v1, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hashMask:I
+    iput v2, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hashMask:I
 
     .line 948
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
+    iget-object v4, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
 
     .line 949
-    .local v14, "oldNames":[Lcom/fasterxml/jackson/core/sym/Name;
-    new-array v0, v10, [Lcom/fasterxml/jackson/core/sym/Name;
+    new-array v0, v0, [Lcom/fasterxml/jackson/core/sym/Name;
 
-    move-object/from16 v18, v0
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
 
-    move-object/from16 v0, v18
+    move v2, v1
 
-    move-object/from16 v1, p0
-
-    iput-object v0, v1, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
-
-    .line 950
-    const/16 v16, 0x0
+    move v0, v1
 
     .line 951
-    .local v16, "symbolsSeen":I
-    const/4 v5, 0x0
-
-    .local v5, "i":I
-    :goto_44
-    if-ge v5, v7, :cond_6d
+    :goto_22
+    if-ge v2, v3, :cond_3e
 
     .line 952
-    aget-object v15, v14, v5
+    aget-object v5, v4, v2
 
     .line 953
-    .local v15, "symbol":Lcom/fasterxml/jackson/core/sym/Name;
-    if-eqz v15, :cond_6a
+    if-eqz v5, :cond_3b
 
     .line 954
-    add-int/lit8 v16, v16, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     .line 955
-    invoke-virtual {v15}, Lcom/fasterxml/jackson/core/sym/Name;->hashCode()I
+    invoke-virtual {v5}, Lcom/fasterxml/jackson/core/sym/Name;->hashCode()I
 
-    move-result v4
+    move-result v6
 
     .line 956
-    .local v4, "hash":I
-    move-object/from16 v0, p0
+    iget v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hashMask:I
 
-    iget v0, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hashMask:I
-
-    move/from16 v18, v0
-
-    and-int v6, v4, v18
+    and-int/2addr v7, v6
 
     .line 957
-    .local v6, "ix":I
-    move-object/from16 v0, p0
+    iget-object v8, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
 
-    iget-object v0, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
-
-    move-object/from16 v18, v0
-
-    aput-object v15, v18, v6
+    aput-object v5, v8, v7
 
     .line 958
-    move-object/from16 v0, p0
+    iget-object v5, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
 
-    iget-object v0, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
+    shl-int/lit8 v6, v6, 0x8
 
-    move-object/from16 v18, v0
-
-    shl-int/lit8 v19, v4, 0x8
-
-    aput v19, v18, v6
+    aput v6, v5, v7
 
     .line 951
-    .end local v4    # "hash":I
-    .end local v6    # "ix":I
-    :cond_6a
-    add-int/lit8 v5, v5, 0x1
+    :cond_3b
+    add-int/lit8 v2, v2, 0x1
 
-    goto :goto_44
+    goto :goto_22
 
     .line 966
-    .end local v15    # "symbol":Lcom/fasterxml/jackson/core/sym/Name;
-    :cond_6d
-    move-object/from16 v0, p0
-
-    iget v12, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collEnd:I
+    :cond_3e
+    iget v5, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collEnd:I
 
     .line 967
-    .local v12, "oldEnd":I
-    if-nez v12, :cond_7c
+    if-nez v5, :cond_45
 
     .line 968
-    const/16 v18, 0x0
+    iput v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_longestCollisionList:I
 
-    move/from16 v0, v18
-
-    move-object/from16 v1, p0
-
-    iput v0, v1, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_longestCollisionList:I
-
-    goto :goto_20
+    goto :goto_11
 
     .line 972
-    :cond_7c
-    const/16 v18, 0x0
-
-    move/from16 v0, v18
-
-    move-object/from16 v1, p0
-
-    iput v0, v1, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collCount:I
+    :cond_45
+    iput v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collCount:I
 
     .line 973
-    const/16 v18, 0x0
-
-    move/from16 v0, v18
-
-    move-object/from16 v1, p0
-
-    iput v0, v1, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collEnd:I
+    iput v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collEnd:I
 
     .line 974
-    const/16 v18, 0x0
-
-    move/from16 v0, v18
-
-    move-object/from16 v1, p0
-
-    iput-boolean v0, v1, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collListShared:Z
-
-    .line 976
-    const/4 v8, 0x0
+    iput-boolean v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collListShared:Z
 
     .line 978
-    .local v8, "maxColl":I
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+    iget-object v6, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
     .line 979
-    .local v11, "oldBuckets":[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
-    array-length v0, v11
+    array-length v2, v6
 
-    move/from16 v18, v0
+    new-array v2, v2, [Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
-    move/from16 v0, v18
+    iput-object v2, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
-    new-array v0, v0, [Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+    move v4, v1
 
-    move-object/from16 v18, v0
-
-    move-object/from16 v0, v18
-
-    move-object/from16 v1, p0
-
-    iput-object v0, v1, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+    move v2, v0
 
     .line 980
-    const/4 v5, 0x0
-
-    :goto_a9
-    if-ge v5, v12, :cond_16c
+    :goto_54
+    if-ge v4, v5, :cond_cf
 
     .line 981
-    aget-object v3, v11, v5
+    aget-object v0, v6, v4
 
-    .local v3, "curr":Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
-    :goto_ad
-    if-eqz v3, :cond_168
+    move-object v12, v0
+
+    move v0, v2
+
+    move-object v2, v12
+
+    :goto_5b
+    if-eqz v2, :cond_ca
 
     .line 982
-    add-int/lit8 v16, v16, 0x1
+    add-int/lit8 v3, v0, 0x1
 
     .line 983
-    iget-object v15, v3, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->name:Lcom/fasterxml/jackson/core/sym/Name;
+    iget-object v7, v2, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->name:Lcom/fasterxml/jackson/core/sym/Name;
 
     .line 984
-    .restart local v15    # "symbol":Lcom/fasterxml/jackson/core/sym/Name;
-    invoke-virtual {v15}, Lcom/fasterxml/jackson/core/sym/Name;->hashCode()I
+    invoke-virtual {v7}, Lcom/fasterxml/jackson/core/sym/Name;->hashCode()I
 
-    move-result v4
+    move-result v0
 
     .line 985
-    .restart local v4    # "hash":I
-    move-object/from16 v0, p0
+    iget v8, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hashMask:I
 
-    iget v0, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hashMask:I
-
-    move/from16 v18, v0
-
-    and-int v6, v4, v18
+    and-int/2addr v8, v0
 
     .line 986
-    .restart local v6    # "ix":I
-    move-object/from16 v0, p0
+    iget-object v9, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
 
-    iget-object v0, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
-
-    move-object/from16 v18, v0
-
-    aget v17, v18, v6
+    aget v9, v9, v8
 
     .line 987
-    .local v17, "val":I
-    move-object/from16 v0, p0
+    iget-object v10, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
 
-    iget-object v0, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
+    aget-object v10, v10, v8
 
-    move-object/from16 v18, v0
-
-    aget-object v18, v18, v6
-
-    if-nez v18, :cond_e6
+    if-nez v10, :cond_83
 
     .line 988
-    move-object/from16 v0, p0
+    iget-object v9, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
 
-    iget-object v0, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
+    shl-int/lit8 v0, v0, 0x8
 
-    move-object/from16 v18, v0
-
-    shl-int/lit8 v19, v4, 0x8
-
-    aput v19, v18, v6
+    aput v0, v9, v8
 
     .line 989
-    move-object/from16 v0, p0
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
 
-    iget-object v0, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
+    aput-object v7, v0, v8
 
-    move-object/from16 v18, v0
-
-    aput-object v15, v18, v6
+    move v0, v1
 
     .line 981
-    :goto_e3
-    iget-object v3, v3, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->next:Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+    :goto_7d
+    iget-object v1, v2, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->next:Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
-    goto :goto_ad
+    move-object v2, v1
+
+    move v1, v0
+
+    move v0, v3
+
+    goto :goto_5b
 
     .line 991
-    :cond_e6
-    move-object/from16 v0, p0
+    :cond_83
+    iget v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collCount:I
 
-    iget v0, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collCount:I
+    add-int/lit8 v0, v0, 0x1
 
-    move/from16 v18, v0
-
-    add-int/lit8 v18, v18, 0x1
-
-    move/from16 v0, v18
-
-    move-object/from16 v1, p0
-
-    iput v0, v1, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collCount:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collCount:I
 
     .line 992
-    move/from16 v0, v17
-
-    and-int/lit16 v2, v0, 0xff
+    and-int/lit16 v0, v9, 0xff
 
     .line 993
-    .local v2, "bucket":I
-    if-nez v2, :cond_165
+    if-nez v0, :cond_c7
 
     .line 994
-    move-object/from16 v0, p0
+    iget v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collEnd:I
 
-    iget v0, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collEnd:I
+    const/16 v10, 0xfe
 
-    move/from16 v18, v0
-
-    const/16 v19, 0xfe
-
-    move/from16 v0, v18
-
-    move/from16 v1, v19
-
-    if-gt v0, v1, :cond_160
+    if-gt v0, v10, :cond_c2
 
     .line 995
-    move-object/from16 v0, p0
-
-    iget v2, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collEnd:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collEnd:I
 
     .line 996
-    move-object/from16 v0, p0
+    iget v10, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collEnd:I
 
-    iget v0, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collEnd:I
+    add-int/lit8 v10, v10, 0x1
 
-    move/from16 v18, v0
-
-    add-int/lit8 v18, v18, 0x1
-
-    move/from16 v0, v18
-
-    move-object/from16 v1, p0
-
-    iput v0, v1, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collEnd:I
+    iput v10, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collEnd:I
 
     .line 998
-    move-object/from16 v0, p0
+    iget-object v10, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
-    iget-object v0, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+    array-length v10, v10
 
-    move-object/from16 v18, v0
-
-    move-object/from16 v0, v18
-
-    array-length v0, v0
-
-    move/from16 v18, v0
-
-    move/from16 v0, v18
-
-    if-lt v2, v0, :cond_12c
+    if-lt v0, v10, :cond_a3
 
     .line 999
-    invoke-direct/range {p0 .. p0}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->expandCollision()V
+    invoke-direct {p0}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->expandCollision()V
 
     .line 1005
-    :cond_12c
-    :goto_12c
-    move-object/from16 v0, p0
+    :cond_a3
+    :goto_a3
+    iget-object v10, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
 
-    iget-object v0, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
+    and-int/lit16 v9, v9, -0x100
 
-    move-object/from16 v18, v0
+    add-int/lit8 v11, v0, 0x1
 
-    move/from16 v0, v17
+    or-int/2addr v9, v11
 
-    and-int/lit16 v0, v0, -0x100
-
-    move/from16 v19, v0
-
-    add-int/lit8 v20, v2, 0x1
-
-    or-int v19, v19, v20
-
-    aput v19, v18, v6
+    aput v9, v10, v8
 
     .line 1010
-    :goto_13e
-    new-instance v9, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+    :goto_ac
+    new-instance v8, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
-    move-object/from16 v0, p0
+    iget-object v9, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
-    iget-object v0, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+    aget-object v9, v9, v0
 
-    move-object/from16 v18, v0
-
-    aget-object v18, v18, v2
-
-    move-object/from16 v0, v18
-
-    invoke-direct {v9, v15, v0}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;-><init>(Lcom/fasterxml/jackson/core/sym/Name;Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;)V
+    invoke-direct {v8, v7, v9}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;-><init>(Lcom/fasterxml/jackson/core/sym/Name;Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;)V
 
     .line 1011
-    .local v9, "newB":Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
-    move-object/from16 v0, p0
+    iget-object v7, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
-    iget-object v0, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
-
-    move-object/from16 v18, v0
-
-    aput-object v9, v18, v2
+    aput-object v8, v7, v0
 
     .line 1012
     # getter for: Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->length:I
-    invoke-static {v9}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->access$000(Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;)I
+    invoke-static {v8}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->access$000(Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;)I
 
-    move-result v18
+    move-result v0
 
-    move/from16 v0, v18
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
 
-    invoke-static {v8, v0}, Ljava/lang/Math;->max(II)I
+    move-result v0
 
-    move-result v8
-
-    goto :goto_e3
+    goto :goto_7d
 
     .line 1002
-    .end local v9    # "newB":Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
-    :cond_160
-    invoke-direct/range {p0 .. p0}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->findBestBucket()I
+    :cond_c2
+    invoke-direct {p0}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->findBestBucket()I
 
-    move-result v2
+    move-result v0
 
-    goto :goto_12c
+    goto :goto_a3
 
     .line 1007
-    :cond_165
-    add-int/lit8 v2, v2, -0x1
+    :cond_c7
+    add-int/lit8 v0, v0, -0x1
 
-    goto :goto_13e
+    goto :goto_ac
 
     .line 980
-    .end local v2    # "bucket":I
-    .end local v4    # "hash":I
-    .end local v6    # "ix":I
-    .end local v15    # "symbol":Lcom/fasterxml/jackson/core/sym/Name;
-    .end local v17    # "val":I
-    :cond_168
-    add-int/lit8 v5, v5, 0x1
+    :cond_ca
+    add-int/lit8 v2, v4, 0x1
 
-    goto/16 :goto_a9
+    move v4, v2
+
+    move v2, v0
+
+    goto :goto_54
 
     .line 1017
-    .end local v3    # "curr":Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
-    :cond_16c
-    move-object/from16 v0, p0
-
-    iput v8, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_longestCollisionList:I
+    :cond_cf
+    iput v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_longestCollisionList:I
 
     .line 1019
-    move-object/from16 v0, p0
+    iget v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_count:I
 
-    iget v0, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_count:I
-
-    move/from16 v18, v0
-
-    move/from16 v0, v16
-
-    move/from16 v1, v18
-
-    if-eq v0, v1, :cond_20
+    if-eq v2, v0, :cond_11
 
     .line 1020
-    new-instance v18, Ljava/lang/RuntimeException;
+    new-instance v0, Ljava/lang/RuntimeException;
 
-    new-instance v19, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct/range {v19 .. v19}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v20, "Internal error: count after rehash "
+    const-string/jumbo v3, "Internal error: count after rehash "
 
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v19
+    move-result-object v1
 
-    move-object/from16 v0, v19
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move/from16 v1, v16
+    move-result-object v1
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const-string/jumbo v2, "; should be "
 
-    move-result-object v19
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string/jumbo v20, "; should be "
+    move-result-object v1
 
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget v2, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_count:I
 
-    move-result-object v19
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-object/from16 v0, p0
+    move-result-object v1
 
-    iget v0, v0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_count:I
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move/from16 v20, v0
+    move-result-object v1
 
-    invoke-virtual/range {v19 .. v20}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    move-result-object v19
-
-    invoke-virtual/range {v19 .. v19}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v19
-
-    invoke-direct/range {v18 .. v19}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    throw v18
+    throw v0
 .end method
 
 .method private unshareCollision()V
@@ -1622,21 +1359,20 @@
     iget-object v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
     .line 1075
-    .local v0, "old":[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
     if-nez v0, :cond_e
 
     .line 1076
-    const/16 v1, 0x20
+    const/16 v0, 0x20
 
-    new-array v1, v1, [Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+    new-array v0, v0, [Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
     .line 1080
     :goto_a
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    iput-boolean v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collListShared:Z
+    iput-boolean v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collListShared:Z
 
     .line 1081
     return-void
@@ -1647,11 +1383,11 @@
 
     invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, [Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+    check-cast v0, [Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
     goto :goto_a
 .end method
@@ -1664,19 +1400,18 @@
     iget-object v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
 
     .line 1069
-    .local v0, "old":[I
     array-length v1, v0
 
     invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([II)[I
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
 
     .line 1070
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    iput-boolean v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hashShared:Z
+    iput-boolean v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hashShared:Z
 
     .line 1071
     return-void
@@ -1690,21 +1425,20 @@
     iget-object v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
 
     .line 1085
-    .local v0, "old":[Lcom/fasterxml/jackson/core/sym/Name;
     array-length v1, v0
 
     invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, [Lcom/fasterxml/jackson/core/sym/Name;
+    check-cast v0, [Lcom/fasterxml/jackson/core/sym/Name;
 
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
 
     .line 1086
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    iput-boolean v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_namesShared:Z
+    iput-boolean v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_namesShared:Z
 
     .line 1087
     return-void
@@ -1713,21 +1447,18 @@
 
 # virtual methods
 .method public addName(Ljava/lang/String;II)Lcom/fasterxml/jackson/core/sym/Name;
-    .registers 7
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "q1"    # I
-    .param p3, "q2"    # I
+    .registers 6
 
     .prologue
     .line 646
-    iget-boolean v2, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_intern:Z
+    iget-boolean v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_intern:Z
 
-    if-eqz v2, :cond_a
+    if-eqz v0, :cond_a
 
     .line 647
-    sget-object v2, Lcom/fasterxml/jackson/core/util/InternCache;->instance:Lcom/fasterxml/jackson/core/util/InternCache;
+    sget-object v0, Lcom/fasterxml/jackson/core/util/InternCache;->instance:Lcom/fasterxml/jackson/core/util/InternCache;
 
-    invoke-virtual {v2, p1}, Lcom/fasterxml/jackson/core/util/InternCache;->intern(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/core/util/InternCache;->intern(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
@@ -1740,22 +1471,18 @@
     move-result v0
 
     .line 650
-    .local v0, "hash":I
     :goto_10
     invoke-static {v0, p1, p2, p3}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->constructName(ILjava/lang/String;II)Lcom/fasterxml/jackson/core/sym/Name;
 
     move-result-object v1
 
     .line 651
-    .local v1, "symbol":Lcom/fasterxml/jackson/core/sym/Name;
     invoke-direct {p0, v0, v1}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_addSymbol(ILcom/fasterxml/jackson/core/sym/Name;)V
 
     .line 652
     return-object v1
 
     .line 649
-    .end local v0    # "hash":I
-    .end local v1    # "symbol":Lcom/fasterxml/jackson/core/sym/Name;
     :cond_18
     invoke-virtual {p0, p2, p3}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->calcHash(II)I
 
@@ -1765,66 +1492,59 @@
 .end method
 
 .method public addName(Ljava/lang/String;[II)Lcom/fasterxml/jackson/core/sym/Name;
-    .registers 9
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "q"    # [I
-    .param p3, "qlen"    # I
+    .registers 7
 
     .prologue
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     .line 657
-    iget-boolean v2, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_intern:Z
+    iget-boolean v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_intern:Z
 
-    if-eqz v2, :cond_c
+    if-eqz v0, :cond_c
 
     .line 658
-    sget-object v2, Lcom/fasterxml/jackson/core/util/InternCache;->instance:Lcom/fasterxml/jackson/core/util/InternCache;
+    sget-object v0, Lcom/fasterxml/jackson/core/util/InternCache;->instance:Lcom/fasterxml/jackson/core/util/InternCache;
 
-    invoke-virtual {v2, p1}, Lcom/fasterxml/jackson/core/util/InternCache;->intern(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/core/util/InternCache;->intern(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
 
     .line 661
     :cond_c
-    const/4 v2, 0x3
+    const/4 v0, 0x3
 
-    if-ge p3, v2, :cond_28
+    if-ge p3, v0, :cond_28
 
     .line 662
-    if-ne p3, v4, :cond_1f
+    if-ne p3, v2, :cond_1f
 
-    aget v2, p2, v3
+    aget v0, p2, v1
 
-    invoke-virtual {p0, v2}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->calcHash(I)I
+    invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->calcHash(I)I
 
     move-result v0
 
     .line 666
-    .local v0, "hash":I
     :goto_17
     invoke-static {v0, p1, p2, p3}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->constructName(ILjava/lang/String;[II)Lcom/fasterxml/jackson/core/sym/Name;
 
     move-result-object v1
 
     .line 667
-    .local v1, "symbol":Lcom/fasterxml/jackson/core/sym/Name;
     invoke-direct {p0, v0, v1}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_addSymbol(ILcom/fasterxml/jackson/core/sym/Name;)V
 
     .line 668
     return-object v1
 
     .line 662
-    .end local v0    # "hash":I
-    .end local v1    # "symbol":Lcom/fasterxml/jackson/core/sym/Name;
     :cond_1f
-    aget v2, p2, v3
+    aget v0, p2, v1
 
-    aget v3, p2, v4
+    aget v1, p2, v2
 
-    invoke-virtual {p0, v2, v3}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->calcHash(II)I
+    invoke-virtual {p0, v0, v1}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->calcHash(II)I
 
     move-result v0
 
@@ -1836,7 +1556,6 @@
 
     move-result v0
 
-    .restart local v0    # "hash":I
     goto :goto_17
 .end method
 
@@ -1854,16 +1573,14 @@
 
 .method public calcHash(I)I
     .registers 4
-    .param p1, "q1"    # I
 
     .prologue
     .line 693
-    iget v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_seed:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_seed:I
 
-    xor-int v0, p1, v1
+    xor-int/2addr v0, p1
 
     .line 694
-    .local v0, "hash":I
     ushr-int/lit8 v1, v0, 0xf
 
     add-int/2addr v0, v1
@@ -1879,18 +1596,13 @@
 
 .method public calcHash(II)I
     .registers 5
-    .param p1, "q1"    # I
-    .param p2, "q2"    # I
 
     .prologue
     .line 704
-    move v0, p1
-
     .line 705
-    .local v0, "hash":I
-    ushr-int/lit8 v1, v0, 0xf
+    ushr-int/lit8 v0, p1, 0xf
 
-    xor-int/2addr v0, v1
+    xor-int/2addr v0, p1
 
     .line 706
     mul-int/lit8 v1, p2, 0x21
@@ -1912,110 +1624,104 @@
 .end method
 
 .method public calcHash([II)I
-    .registers 7
-    .param p1, "q"    # [I
-    .param p2, "qlen"    # I
+    .registers 6
 
     .prologue
-    .line 715
-    const/4 v2, 0x3
+    const/4 v0, 0x3
 
-    if-ge p2, v2, :cond_9
+    .line 715
+    if-ge p2, v0, :cond_9
 
     .line 716
-    new-instance v2, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    invoke-direct {v2}, Ljava/lang/IllegalArgumentException;-><init>()V
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
-    throw v2
+    throw v0
 
     .line 724
     :cond_9
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    aget v2, p1, v2
+    aget v1, p1, v1
 
-    iget v3, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_seed:I
+    iget v2, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_seed:I
 
-    xor-int v0, v2, v3
+    xor-int/2addr v1, v2
 
     .line 725
-    .local v0, "hash":I
-    ushr-int/lit8 v2, v0, 0x9
+    ushr-int/lit8 v2, v1, 0x9
 
-    add-int/2addr v0, v2
+    add-int/2addr v1, v2
 
     .line 726
-    mul-int/lit8 v0, v0, 0x21
+    mul-int/lit8 v1, v1, 0x21
 
     .line 727
     const/4 v2, 0x1
 
     aget v2, p1, v2
 
-    add-int/2addr v0, v2
+    add-int/2addr v1, v2
 
     .line 728
     const v2, 0x1003f
 
-    mul-int/2addr v0, v2
+    mul-int/2addr v1, v2
 
     .line 729
-    ushr-int/lit8 v2, v0, 0xf
+    ushr-int/lit8 v2, v1, 0xf
 
-    add-int/2addr v0, v2
+    add-int/2addr v1, v2
 
     .line 730
     const/4 v2, 0x2
 
     aget v2, p1, v2
 
-    xor-int/2addr v0, v2
+    xor-int/2addr v1, v2
 
     .line 731
-    ushr-int/lit8 v2, v0, 0x11
+    ushr-int/lit8 v2, v1, 0x11
 
-    add-int/2addr v0, v2
+    add-int/2addr v1, v2
 
     .line 733
-    const/4 v1, 0x3
-
-    .local v1, "i":I
-    :goto_28
-    if-ge v1, p2, :cond_39
+    :goto_26
+    if-ge v0, p2, :cond_36
 
     .line 734
-    mul-int/lit8 v2, v0, 0x1f
+    mul-int/lit8 v1, v1, 0x1f
 
-    aget v3, p1, v1
+    aget v2, p1, v0
 
-    xor-int v0, v2, v3
+    xor-int/2addr v1, v2
 
     .line 736
-    ushr-int/lit8 v2, v0, 0x3
+    ushr-int/lit8 v2, v1, 0x3
 
-    add-int/2addr v0, v2
+    add-int/2addr v1, v2
 
     .line 737
-    shl-int/lit8 v2, v0, 0x7
+    shl-int/lit8 v2, v1, 0x7
 
-    xor-int/2addr v0, v2
+    xor-int/2addr v1, v2
 
     .line 733
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    goto :goto_28
+    goto :goto_26
 
     .line 740
-    :cond_39
-    ushr-int/lit8 v2, v0, 0xf
+    :cond_36
+    ushr-int/lit8 v0, v1, 0xf
 
-    add-int/2addr v0, v2
+    add-int/2addr v0, v1
 
     .line 741
-    shl-int/lit8 v2, v0, 0x9
+    shl-int/lit8 v1, v0, 0x9
 
-    xor-int/2addr v0, v2
+    xor-int/2addr v0, v1
 
     .line 742
     return v0
@@ -2032,270 +1738,237 @@
 .end method
 
 .method public findName(I)Lcom/fasterxml/jackson/core/sym/Name;
-    .registers 9
-    .param p1, "q1"    # I
+    .registers 7
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v0, 0x0
 
     .line 511
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->calcHash(I)I
 
-    move-result v1
+    move-result v2
 
     .line 512
-    .local v1, "hash":I
-    iget v6, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hashMask:I
+    iget v1, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hashMask:I
 
-    and-int v2, v1, v6
+    and-int/2addr v1, v2
 
     .line 513
-    .local v2, "ix":I
-    iget-object v6, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
+    iget-object v3, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
 
-    aget v4, v6, v2
+    aget v3, v3, v1
 
     .line 518
-    .local v4, "val":I
-    shr-int/lit8 v6, v4, 0x8
+    shr-int/lit8 v4, v3, 0x8
 
-    xor-int/2addr v6, v1
+    xor-int/2addr v4, v2
 
-    shl-int/lit8 v6, v6, 0x8
+    shl-int/lit8 v4, v4, 0x8
 
-    if-nez v6, :cond_34
-
-    .line 520
-    iget-object v6, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
-
-    aget-object v3, v6, v2
-
-    .line 521
-    .local v3, "name":Lcom/fasterxml/jackson/core/sym/Name;
-    if-nez v3, :cond_1c
-
-    move-object v3, v5
-
-    .line 540
-    .end local v3    # "name":Lcom/fasterxml/jackson/core/sym/Name;
-    :cond_1b
-    :goto_1b
-    return-object v3
-
-    .line 524
-    .restart local v3    # "name":Lcom/fasterxml/jackson/core/sym/Name;
-    :cond_1c
-    invoke-virtual {v3, p1}, Lcom/fasterxml/jackson/core/sym/Name;->equals(I)Z
-
-    move-result v6
-
-    if-nez v6, :cond_1b
-
-    .line 531
-    .end local v3    # "name":Lcom/fasterxml/jackson/core/sym/Name;
-    :cond_22
-    and-int/lit16 v4, v4, 0xff
-
-    .line 532
-    if-lez v4, :cond_38
-
-    .line 533
-    add-int/lit8 v4, v4, -0x1
-
-    .line 534
-    iget-object v6, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
-
-    aget-object v0, v6, v4
-
-    .line 535
-    .local v0, "bucket":Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
-    if-eqz v0, :cond_38
-
-    .line 536
-    const/4 v5, 0x0
-
-    invoke-virtual {v0, v1, p1, v5}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->find(III)Lcom/fasterxml/jackson/core/sym/Name;
-
-    move-result-object v3
-
-    goto :goto_1b
-
-    .line 527
-    .end local v0    # "bucket":Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
-    :cond_34
     if-nez v4, :cond_22
 
-    move-object v3, v5
+    .line 520
+    iget-object v4, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
 
-    .line 528
-    goto :goto_1b
+    aget-object v1, v4, v1
 
-    :cond_38
-    move-object v3, v5
+    .line 521
+    if-nez v1, :cond_1a
 
     .line 540
-    goto :goto_1b
+    :cond_19
+    :goto_19
+    return-object v0
+
+    .line 524
+    :cond_1a
+    invoke-virtual {v1, p1}, Lcom/fasterxml/jackson/core/sym/Name;->equals(I)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_24
+
+    move-object v0, v1
+
+    .line 525
+    goto :goto_19
+
+    .line 527
+    :cond_22
+    if-eqz v3, :cond_19
+
+    .line 531
+    :cond_24
+    and-int/lit16 v1, v3, 0xff
+
+    .line 532
+    if-lez v1, :cond_19
+
+    .line 533
+    add-int/lit8 v1, v1, -0x1
+
+    .line 534
+    iget-object v3, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+
+    aget-object v1, v3, v1
+
+    .line 535
+    if-eqz v1, :cond_19
+
+    .line 536
+    const/4 v0, 0x0
+
+    invoke-virtual {v1, v2, p1, v0}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->find(III)Lcom/fasterxml/jackson/core/sym/Name;
+
+    move-result-object v0
+
+    goto :goto_19
 .end method
 
 .method public findName(II)Lcom/fasterxml/jackson/core/sym/Name;
-    .registers 10
-    .param p1, "q1"    # I
-    .param p2, "q2"    # I
+    .registers 8
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v1, 0x0
 
     .line 560
-    if-nez p2, :cond_1e
+    if-nez p2, :cond_1d
 
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->calcHash(I)I
 
-    move-result v1
+    move-result v0
 
     .line 561
-    .local v1, "hash":I
     :goto_7
-    iget v6, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hashMask:I
+    iget v2, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hashMask:I
 
-    and-int v2, v1, v6
+    and-int/2addr v2, v0
 
     .line 562
-    .local v2, "ix":I
-    iget-object v6, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
+    iget-object v3, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
 
-    aget v4, v6, v2
+    aget v3, v3, v2
 
     .line 567
-    .local v4, "val":I
-    shr-int/lit8 v6, v4, 0x8
+    shr-int/lit8 v4, v3, 0x8
 
-    xor-int/2addr v6, v1
+    xor-int/2addr v4, v0
 
-    shl-int/lit8 v6, v6, 0x8
+    shl-int/lit8 v4, v4, 0x8
 
-    if-nez v6, :cond_3a
+    if-nez v4, :cond_2a
 
     .line 569
-    iget-object v6, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
+    iget-object v4, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
 
-    aget-object v3, v6, v2
+    aget-object v2, v4, v2
 
     .line 570
-    .local v3, "name":Lcom/fasterxml/jackson/core/sym/Name;
-    if-nez v3, :cond_23
+    if-nez v2, :cond_22
 
-    move-object v3, v5
+    move-object v0, v1
 
     .line 589
-    .end local v3    # "name":Lcom/fasterxml/jackson/core/sym/Name;
-    :cond_1d
-    :goto_1d
-    return-object v3
+    :goto_1c
+    return-object v0
 
     .line 560
-    .end local v1    # "hash":I
-    .end local v2    # "ix":I
-    .end local v4    # "val":I
-    :cond_1e
+    :cond_1d
     invoke-virtual {p0, p1, p2}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->calcHash(II)I
 
-    move-result v1
+    move-result v0
 
     goto :goto_7
 
     .line 573
-    .restart local v1    # "hash":I
-    .restart local v2    # "ix":I
-    .restart local v3    # "name":Lcom/fasterxml/jackson/core/sym/Name;
-    .restart local v4    # "val":I
-    :cond_23
-    invoke-virtual {v3, p1, p2}, Lcom/fasterxml/jackson/core/sym/Name;->equals(II)Z
+    :cond_22
+    invoke-virtual {v2, p1, p2}, Lcom/fasterxml/jackson/core/sym/Name;->equals(II)Z
 
-    move-result v6
+    move-result v4
 
-    if-nez v6, :cond_1d
+    if-eqz v4, :cond_2e
 
-    .line 580
-    .end local v3    # "name":Lcom/fasterxml/jackson/core/sym/Name;
-    :cond_29
-    and-int/lit16 v4, v4, 0xff
+    move-object v0, v2
 
-    .line 581
-    if-lez v4, :cond_3e
-
-    .line 582
-    add-int/lit8 v4, v4, -0x1
-
-    .line 583
-    iget-object v6, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
-
-    aget-object v0, v6, v4
-
-    .line 584
-    .local v0, "bucket":Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
-    if-eqz v0, :cond_3e
-
-    .line 585
-    invoke-virtual {v0, v1, p1, p2}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->find(III)Lcom/fasterxml/jackson/core/sym/Name;
-
-    move-result-object v3
-
-    goto :goto_1d
+    .line 574
+    goto :goto_1c
 
     .line 576
-    .end local v0    # "bucket":Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
-    :cond_3a
-    if-nez v4, :cond_29
+    :cond_2a
+    if-nez v3, :cond_2e
 
-    move-object v3, v5
+    move-object v0, v1
 
     .line 577
-    goto :goto_1d
+    goto :goto_1c
 
-    :cond_3e
-    move-object v3, v5
+    .line 580
+    :cond_2e
+    and-int/lit16 v2, v3, 0xff
+
+    .line 581
+    if-lez v2, :cond_3f
+
+    .line 582
+    add-int/lit8 v2, v2, -0x1
+
+    .line 583
+    iget-object v3, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+
+    aget-object v2, v3, v2
+
+    .line 584
+    if-eqz v2, :cond_3f
+
+    .line 585
+    invoke-virtual {v2, v0, p1, p2}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->find(III)Lcom/fasterxml/jackson/core/sym/Name;
+
+    move-result-object v0
+
+    goto :goto_1c
+
+    :cond_3f
+    move-object v0, v1
 
     .line 589
-    goto :goto_1d
+    goto :goto_1c
 .end method
 
 .method public findName([II)Lcom/fasterxml/jackson/core/sym/Name;
-    .registers 11
-    .param p1, "q"    # [I
-    .param p2, "qlen"    # I
+    .registers 8
 
     .prologue
-    const/4 v6, 0x0
+    const/4 v1, 0x0
 
-    const/4 v5, 0x0
+    const/4 v0, 0x0
 
     .line 611
-    const/4 v7, 0x3
+    const/4 v2, 0x3
 
-    if-ge p2, v7, :cond_13
+    if-ge p2, v2, :cond_13
 
     .line 612
-    aget v6, p1, v5
+    aget v1, p1, v0
 
-    const/4 v7, 0x2
+    const/4 v2, 0x2
 
-    if-ge p2, v7, :cond_f
+    if-ge p2, v2, :cond_f
 
     :goto_a
-    invoke-virtual {p0, v6, v5}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->findName(II)Lcom/fasterxml/jackson/core/sym/Name;
+    invoke-virtual {p0, v1, v0}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->findName(II)Lcom/fasterxml/jackson/core/sym/Name;
 
-    move-result-object v3
+    move-result-object v0
 
     .line 635
     :cond_e
     :goto_e
-    return-object v3
+    return-object v0
 
     .line 612
     :cond_f
-    const/4 v5, 0x1
+    const/4 v0, 0x1
 
-    aget v5, p1, v5
+    aget v0, p1, v0
 
     goto :goto_a
 
@@ -2303,84 +1976,77 @@
     :cond_13
     invoke-virtual {p0, p1, p2}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->calcHash([II)I
 
-    move-result v1
+    move-result v2
 
     .line 616
-    .local v1, "hash":I
-    iget v5, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hashMask:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hashMask:I
 
-    and-int v2, v1, v5
+    and-int/2addr v0, v2
 
     .line 617
-    .local v2, "ix":I
-    iget-object v5, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
+    iget-object v3, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_hash:[I
 
-    aget v4, v5, v2
+    aget v3, v3, v0
 
     .line 618
-    .local v4, "val":I
-    shr-int/lit8 v5, v4, 0x8
+    shr-int/lit8 v4, v3, 0x8
 
-    xor-int/2addr v5, v1
+    xor-int/2addr v4, v2
 
-    shl-int/lit8 v5, v5, 0x8
+    shl-int/lit8 v4, v4, 0x8
 
-    if-nez v5, :cond_43
+    if-nez v4, :cond_42
 
     .line 619
-    iget-object v5, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
+    iget-object v4, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_mainNames:[Lcom/fasterxml/jackson/core/sym/Name;
 
-    aget-object v3, v5, v2
+    aget-object v0, v4, v0
 
     .line 620
-    .local v3, "name":Lcom/fasterxml/jackson/core/sym/Name;
-    if-eqz v3, :cond_e
+    if-eqz v0, :cond_e
 
-    invoke-virtual {v3, p1, p2}, Lcom/fasterxml/jackson/core/sym/Name;->equals([II)Z
+    invoke-virtual {v0, p1, p2}, Lcom/fasterxml/jackson/core/sym/Name;->equals([II)Z
 
-    move-result v5
+    move-result v4
 
-    if-nez v5, :cond_e
+    if-nez v4, :cond_e
 
     .line 627
-    .end local v3    # "name":Lcom/fasterxml/jackson/core/sym/Name;
-    :cond_32
-    and-int/lit16 v4, v4, 0xff
+    :cond_31
+    and-int/lit16 v0, v3, 0xff
 
     .line 628
-    if-lez v4, :cond_47
+    if-lez v0, :cond_46
 
     .line 629
-    add-int/lit8 v4, v4, -0x1
+    add-int/lit8 v0, v0, -0x1
 
     .line 630
-    iget-object v5, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
+    iget-object v3, p0, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;->_collList:[Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
 
-    aget-object v0, v5, v4
+    aget-object v0, v3, v0
 
     .line 631
-    .local v0, "bucket":Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_46
 
     .line 632
-    invoke-virtual {v0, v1, p1, p2}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->find(I[II)Lcom/fasterxml/jackson/core/sym/Name;
+    invoke-virtual {v0, v2, p1, p2}, Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;->find(I[II)Lcom/fasterxml/jackson/core/sym/Name;
 
-    move-result-object v3
+    move-result-object v0
 
     goto :goto_e
 
     .line 624
-    .end local v0    # "bucket":Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer$Bucket;
-    :cond_43
-    if-nez v4, :cond_32
+    :cond_42
+    if-nez v3, :cond_31
 
-    move-object v3, v6
+    move-object v0, v1
 
     .line 625
     goto :goto_e
 
-    :cond_47
-    move-object v3, v6
+    :cond_46
+    move-object v0, v1
 
     .line 635
     goto :goto_e
@@ -2398,7 +2064,6 @@
 
 .method public makeChild(I)Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;
     .registers 8
-    .param p1, "flags"    # I
 
     .prologue
     .line 367
@@ -2435,8 +2100,6 @@
 
 .method public makeChild(ZZ)Lcom/fasterxml/jackson/core/sym/BytesToNameCanonicalizer;
     .registers 9
-    .param p1, "canonicalize"    # Z
-    .param p2, "intern"    # Z
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -2537,7 +2200,6 @@
 
 .method protected reportTooManyCollisions(I)V
     .registers 5
-    .param p1, "maxLen"    # I
 
     .prologue
     .line 1133

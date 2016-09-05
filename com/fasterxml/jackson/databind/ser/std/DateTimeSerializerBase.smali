@@ -28,8 +28,6 @@
 # direct methods
 .method protected constructor <init>(Ljava/lang/Class;Ljava/lang/Boolean;Ljava/text/DateFormat;)V
     .registers 4
-    .param p2, "useTimestamp"    # Ljava/lang/Boolean;
-    .param p3, "customFormat"    # Ljava/text/DateFormat;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -43,8 +41,6 @@
 
     .prologue
     .line 40
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase<TT;>;"
-    .local p1, "type":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer;-><init>(Ljava/lang/Class;)V
 
     .line 41
@@ -61,18 +57,9 @@
 # virtual methods
 .method protected _acceptJsonFormatVisitor(Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;Lcom/fasterxml/jackson/databind/JavaType;Z)V
     .registers 6
-    .param p1, "visitor"    # Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;
-    .param p2, "typeHint"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "asNumber"    # Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
 
     .prologue
     .line 147
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase<TT;>;"
     if-eqz p3, :cond_13
 
     .line 148
@@ -81,7 +68,6 @@
     move-result-object v0
 
     .line 149
-    .local v0, "v2":Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonIntegerFormatVisitor;
     if-eqz v0, :cond_12
 
     .line 150
@@ -95,7 +81,6 @@
     invoke-interface {v0, v1}, Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonIntegerFormatVisitor;->format(Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonValueFormat;)V
 
     .line 159
-    .end local v0    # "v2":Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonIntegerFormatVisitor;
     :cond_12
     :goto_12
     return-void
@@ -107,7 +92,6 @@
     move-result-object v0
 
     .line 155
-    .local v0, "v2":Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonStringFormatVisitor;
     if-eqz v0, :cond_12
 
     .line 156
@@ -120,11 +104,9 @@
 
 .method protected _asTimestamp(Lcom/fasterxml/jackson/databind/SerializerProvider;)Z
     .registers 3
-    .param p1, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
 
     .prologue
     .line 135
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;->_useTimestamp:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_b
@@ -172,17 +154,9 @@
 
 .method public acceptJsonFormatVisitor(Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;Lcom/fasterxml/jackson/databind/JavaType;)V
     .registers 4
-    .param p1, "visitor"    # Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;
-    .param p2, "typeHint"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
 
     .prologue
     .line 115
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase<TT;>;"
     invoke-interface {p1}, Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;->getProvider()Lcom/fasterxml/jackson/databind/SerializerProvider;
 
     move-result-object v0
@@ -198,9 +172,7 @@
 .end method
 
 .method public createContextual(Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/BeanProperty;)Lcom/fasterxml/jackson/databind/JsonSerializer;
-    .registers 11
-    .param p1, "prov"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .param p2, "property"    # Lcom/fasterxml/jackson/databind/BeanProperty;
+    .registers 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -212,14 +184,7 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase<TT;>;"
     const/4 v0, 0x0
 
     .line 51
@@ -228,211 +193,203 @@
     .line 52
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/SerializerProvider;->getAnnotationIntrospector()Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
-    move-result-object v6
+    move-result-object v1
 
     invoke-interface {p2}, Lcom/fasterxml/jackson/databind/BeanProperty;->getMember()Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findFormat(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
-
     move-result-object v2
 
+    invoke-virtual {v1, v2}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findFormat(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
+
+    move-result-object v3
+
     .line 53
-    .local v2, "format":Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
-    if-eqz v2, :cond_21
+    if-eqz v3, :cond_21
 
     .line 56
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->getShape()Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;
+    invoke-virtual {v3}, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->getShape()Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {v6}, Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;->isNumeric()Z
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;->isNumeric()Z
 
-    move-result v6
+    move-result v1
 
-    if-eqz v6, :cond_22
+    if-eqz v1, :cond_22
 
     .line 57
-    sget-object v6, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-virtual {p0, v6, v0}, Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;->withFormat(Ljava/lang/Boolean;Ljava/text/DateFormat;)Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;
+    invoke-virtual {p0, v1, v0}, Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;->withFormat(Ljava/lang/Boolean;Ljava/text/DateFormat;)Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;
 
     move-result-object p0
 
     .line 89
-    .end local v2    # "format":Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase<TT;>;"
     :cond_21
     :goto_21
     return-object p0
 
     .line 60
-    .restart local v2    # "format":Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase<TT;>;"
     :cond_22
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->getShape()Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;
+    invoke-virtual {v3}, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->getShape()Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;
 
-    move-result-object v6
+    move-result-object v1
 
-    sget-object v7, Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;->STRING:Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;
+    sget-object v2, Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;->STRING:Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;
 
-    if-ne v6, v7, :cond_2c
+    if-ne v1, v2, :cond_58
 
     sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    .line 62
-    .local v0, "asNumber":Ljava/lang/Boolean;
-    :cond_2c
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->getTimeZone()Ljava/util/TimeZone;
+    move-object v1, v0
 
-    move-result-object v5
+    .line 62
+    :goto_2d
+    invoke-virtual {v3}, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->getTimeZone()Ljava/util/TimeZone;
+
+    move-result-object v2
 
     .line 63
-    .local v5, "tz":Ljava/util/TimeZone;
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->hasPattern()Z
+    invoke-virtual {v3}, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->hasPattern()Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_5c
+    if-eqz v0, :cond_5f
 
     .line 64
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->getPattern()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->getPattern()Ljava/lang/String;
 
     move-result-object v4
 
     .line 65
-    .local v4, "pattern":Ljava/lang/String;
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->hasLocale()Z
+    invoke-virtual {v3}, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->hasLocale()Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_57
+    if-eqz v0, :cond_5a
 
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->getLocale()Ljava/util/Locale;
+    invoke-virtual {v3}, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->getLocale()Ljava/util/Locale;
 
-    move-result-object v3
+    move-result-object v0
 
     .line 66
-    .local v3, "loc":Ljava/util/Locale;
-    :goto_44
-    new-instance v1, Ljava/text/SimpleDateFormat;
+    :goto_45
+    new-instance v3, Ljava/text/SimpleDateFormat;
 
-    invoke-direct {v1, v4, v3}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+    invoke-direct {v3, v4, v0}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
 
     .line 67
-    .local v1, "df":Ljava/text/SimpleDateFormat;
-    if-nez v5, :cond_4f
+    if-nez v2, :cond_93
 
     .line 68
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/SerializerProvider;->getTimeZone()Ljava/util/TimeZone;
 
-    move-result-object v5
+    move-result-object v0
 
     .line 70
-    :cond_4f
-    invoke-virtual {v1, v5}, Ljava/text/SimpleDateFormat;->setTimeZone(Ljava/util/TimeZone;)V
+    :goto_50
+    invoke-virtual {v3, v0}, Ljava/text/SimpleDateFormat;->setTimeZone(Ljava/util/TimeZone;)V
 
     .line 71
-    invoke-virtual {p0, v0, v1}, Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;->withFormat(Ljava/lang/Boolean;Ljava/text/DateFormat;)Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;
+    invoke-virtual {p0, v1, v3}, Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;->withFormat(Ljava/lang/Boolean;Ljava/text/DateFormat;)Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;
 
     move-result-object p0
 
     goto :goto_21
 
+    :cond_58
+    move-object v1, v0
+
+    .line 60
+    goto :goto_2d
+
     .line 65
-    .end local v1    # "df":Ljava/text/SimpleDateFormat;
-    .end local v3    # "loc":Ljava/util/Locale;
-    :cond_57
+    :cond_5a
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/SerializerProvider;->getLocale()Ljava/util/Locale;
 
-    move-result-object v3
+    move-result-object v0
 
-    goto :goto_44
+    goto :goto_45
 
     .line 74
-    .end local v4    # "pattern":Ljava/lang/String;
-    :cond_5c
-    if-eqz v5, :cond_21
+    :cond_5f
+    if-eqz v2, :cond_21
 
     .line 75
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/SerializerProvider;->getConfig()Lcom/fasterxml/jackson/databind/SerializationConfig;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {v6}, Lcom/fasterxml/jackson/databind/SerializationConfig;->getDateFormat()Ljava/text/DateFormat;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/SerializationConfig;->getDateFormat()Ljava/text/DateFormat;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 77
-    .local v1, "df":Ljava/text/DateFormat;
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v6
+    move-result-object v4
 
-    const-class v7, Lcom/fasterxml/jackson/databind/util/StdDateFormat;
+    const-class v5, Lcom/fasterxml/jackson/databind/util/StdDateFormat;
 
-    if-ne v6, v7, :cond_86
+    if-ne v4, v5, :cond_89
 
     .line 78
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->hasLocale()Z
+    invoke-virtual {v3}, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->hasLocale()Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_81
+    if-eqz v0, :cond_84
 
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->getLocale()Ljava/util/Locale;
+    invoke-virtual {v3}, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->getLocale()Ljava/util/Locale;
 
-    move-result-object v3
+    move-result-object v0
 
     .line 79
-    .restart local v3    # "loc":Ljava/util/Locale;
-    :goto_78
-    invoke-static {v5, v3}, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->getISO8601Format(Ljava/util/TimeZone;Ljava/util/Locale;)Ljava/text/DateFormat;
+    :goto_7b
+    invoke-static {v2, v0}, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->getISO8601Format(Ljava/util/TimeZone;Ljava/util/Locale;)Ljava/text/DateFormat;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 85
-    .end local v3    # "loc":Ljava/util/Locale;
-    :goto_7c
-    invoke-virtual {p0, v0, v1}, Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;->withFormat(Ljava/lang/Boolean;Ljava/text/DateFormat;)Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;
+    :goto_7f
+    invoke-virtual {p0, v1, v0}, Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;->withFormat(Ljava/lang/Boolean;Ljava/text/DateFormat;)Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;
 
     move-result-object p0
 
     goto :goto_21
 
     .line 78
-    :cond_81
+    :cond_84
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/SerializerProvider;->getLocale()Ljava/util/Locale;
 
-    move-result-object v3
+    move-result-object v0
 
-    goto :goto_78
+    goto :goto_7b
 
     .line 82
-    :cond_86
-    invoke-virtual {v1}, Ljava/text/DateFormat;->clone()Ljava/lang/Object;
+    :cond_89
+    invoke-virtual {v0}, Ljava/text/DateFormat;->clone()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    .end local v1    # "df":Ljava/text/DateFormat;
-    check-cast v1, Ljava/text/DateFormat;
+    check-cast v0, Ljava/text/DateFormat;
 
     .line 83
-    .restart local v1    # "df":Ljava/text/DateFormat;
-    invoke-virtual {v1, v5}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
+    invoke-virtual {v0, v2}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
 
-    goto :goto_7c
+    goto :goto_7f
+
+    :cond_93
+    move-object v0, v2
+
+    goto :goto_50
 .end method
 
 .method public getSchema(Lcom/fasterxml/jackson/databind/SerializerProvider;Ljava/lang/reflect/Type;)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 5
-    .param p1, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .param p2, "typeHint"    # Ljava/lang/reflect/Type;
 
     .prologue
     .line 109
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase<TT;>;"
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;->_asTimestamp(Lcom/fasterxml/jackson/databind/SerializerProvider;)Z
 
     move-result v0
@@ -466,8 +423,6 @@
 
     .prologue
     .line 101
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase<TT;>;"
-    .local p1, "value":Ljava/lang/Object;, "TT;"
     if-eqz p1, :cond_c
 
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;->_timestamp(Ljava/lang/Object;)J
@@ -499,13 +454,6 @@
             "Lcom/fasterxml/jackson/core/JsonGenerator;",
             "Lcom/fasterxml/jackson/databind/SerializerProvider;",
             ")V"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
         }
     .end annotation
 .end method

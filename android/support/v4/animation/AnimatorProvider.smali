@@ -4,8 +4,8 @@
 
 
 # virtual methods
-.method public abstract clearInterpolator(Landroid/view/View;)V
+.method public abstract a()Landroid/support/v4/animation/ValueAnimatorCompat;
 .end method
 
-.method public abstract emptyValueAnimator()Landroid/support/v4/animation/ValueAnimatorCompat;
+.method public abstract a(Landroid/view/View;)V
 .end method

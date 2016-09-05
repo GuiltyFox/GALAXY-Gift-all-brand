@@ -35,14 +35,13 @@
     move-result-object v0
 
     .line 69
-    .local v0, "esc":[I
     array-length v1, v0
 
     invoke-static {v0, v1}, Ljava/util/Arrays;->copyOf([II)[I
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 

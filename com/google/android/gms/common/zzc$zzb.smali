@@ -2,19 +2,8 @@
 .super Lcom/google/android/gms/common/zzc$zza;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/gms/common/zzc;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "zzb"
-.end annotation
-
-
 # instance fields
-.field private final zzaea:[B
+.field private final a:[B
 
 
 # direct methods
@@ -31,17 +20,17 @@
 
     invoke-direct {p0, v0}, Lcom/google/android/gms/common/zzc$zza;-><init>([B)V
 
-    iput-object p1, p0, Lcom/google/android/gms/common/zzc$zzb;->zzaea:[B
+    iput-object p1, p0, Lcom/google/android/gms/common/zzc$zzb;->a:[B
 
     return-void
 .end method
 
 
 # virtual methods
-.method getBytes()[B
+.method a()[B
     .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/common/zzc$zzb;->zzaea:[B
+    iget-object v0, p0, Lcom/google/android/gms/common/zzc$zzb;->a:[B
 
     return-object v0
 .end method

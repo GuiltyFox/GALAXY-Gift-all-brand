@@ -79,168 +79,164 @@
 .end method
 
 .method private createGradientShader()Landroid/graphics/Shader;
-    .registers 13
+    .registers 12
 
     .prologue
-    const/4 v11, 0x1
+    const/4 v10, 0x1
 
-    const/high16 v10, 0x3f800000
+    const/high16 v9, 0x3f800000    # 1.0f
 
-    const/high16 v7, 0x3f000000
+    const/high16 v8, 0x3f000000    # 0.5f
 
     const/4 v1, 0x0
 
-    const/4 v4, 0x0
+    const/4 v7, 0x0
 
     .line 182
-    iget-object v9, p0, Landroid/support/design/widget/CircularBorderDrawable;->mRect:Landroid/graphics/Rect;
+    iget-object v3, p0, Landroid/support/design/widget/CircularBorderDrawable;->mRect:Landroid/graphics/Rect;
 
     .line 183
-    .local v9, "rect":Landroid/graphics/Rect;
-    invoke-virtual {p0, v9}, Landroid/support/design/widget/CircularBorderDrawable;->copyBounds(Landroid/graphics/Rect;)V
+    invoke-virtual {p0, v3}, Landroid/support/design/widget/CircularBorderDrawable;->copyBounds(Landroid/graphics/Rect;)V
 
     .line 185
     iget v0, p0, Landroid/support/design/widget/CircularBorderDrawable;->mBorderWidth:F
 
-    invoke-virtual {v9}, Landroid/graphics/Rect;->height()I
+    invoke-virtual {v3}, Landroid/graphics/Rect;->height()I
 
     move-result v2
 
     int-to-float v2, v2
 
-    div-float v8, v0, v2
+    div-float/2addr v0, v2
 
     .line 187
-    .local v8, "borderRatio":F
-    const/4 v0, 0x6
+    const/4 v2, 0x6
 
-    new-array v5, v0, [I
+    new-array v5, v2, [I
 
     .line 188
-    .local v5, "colors":[I
-    iget v0, p0, Landroid/support/design/widget/CircularBorderDrawable;->mTopOuterStrokeColor:I
+    iget v2, p0, Landroid/support/design/widget/CircularBorderDrawable;->mTopOuterStrokeColor:I
 
-    iget v2, p0, Landroid/support/design/widget/CircularBorderDrawable;->mCurrentBorderTintColor:I
+    iget v4, p0, Landroid/support/design/widget/CircularBorderDrawable;->mCurrentBorderTintColor:I
 
-    invoke-static {v0, v2}, Landroid/support/v4/graphics/ColorUtils;->compositeColors(II)I
+    invoke-static {v2, v4}, Landroid/support/v4/graphics/ColorUtils;->a(II)I
 
-    move-result v0
+    move-result v2
 
-    aput v0, v5, v4
+    aput v2, v5, v7
 
     .line 189
-    iget v0, p0, Landroid/support/design/widget/CircularBorderDrawable;->mTopInnerStrokeColor:I
-
-    iget v2, p0, Landroid/support/design/widget/CircularBorderDrawable;->mCurrentBorderTintColor:I
-
-    invoke-static {v0, v2}, Landroid/support/v4/graphics/ColorUtils;->compositeColors(II)I
-
-    move-result v0
-
-    aput v0, v5, v11
-
-    .line 190
-    const/4 v0, 0x2
-
     iget v2, p0, Landroid/support/design/widget/CircularBorderDrawable;->mTopInnerStrokeColor:I
 
-    invoke-static {v2, v4}, Landroid/support/v4/graphics/ColorUtils;->setAlphaComponent(II)I
+    iget v4, p0, Landroid/support/design/widget/CircularBorderDrawable;->mCurrentBorderTintColor:I
+
+    invoke-static {v2, v4}, Landroid/support/v4/graphics/ColorUtils;->a(II)I
 
     move-result v2
 
-    iget v3, p0, Landroid/support/design/widget/CircularBorderDrawable;->mCurrentBorderTintColor:I
+    aput v2, v5, v10
 
-    invoke-static {v2, v3}, Landroid/support/v4/graphics/ColorUtils;->compositeColors(II)I
+    .line 190
+    const/4 v2, 0x2
 
-    move-result v2
+    iget v4, p0, Landroid/support/design/widget/CircularBorderDrawable;->mTopInnerStrokeColor:I
 
-    aput v2, v5, v0
+    invoke-static {v4, v7}, Landroid/support/v4/graphics/ColorUtils;->b(II)I
+
+    move-result v4
+
+    iget v6, p0, Landroid/support/design/widget/CircularBorderDrawable;->mCurrentBorderTintColor:I
+
+    invoke-static {v4, v6}, Landroid/support/v4/graphics/ColorUtils;->a(II)I
+
+    move-result v4
+
+    aput v4, v5, v2
 
     .line 192
-    const/4 v0, 0x3
+    const/4 v2, 0x3
 
-    iget v2, p0, Landroid/support/design/widget/CircularBorderDrawable;->mBottomInnerStrokeColor:I
+    iget v4, p0, Landroid/support/design/widget/CircularBorderDrawable;->mBottomInnerStrokeColor:I
 
-    invoke-static {v2, v4}, Landroid/support/v4/graphics/ColorUtils;->setAlphaComponent(II)I
+    invoke-static {v4, v7}, Landroid/support/v4/graphics/ColorUtils;->b(II)I
 
-    move-result v2
+    move-result v4
 
-    iget v3, p0, Landroid/support/design/widget/CircularBorderDrawable;->mCurrentBorderTintColor:I
+    iget v6, p0, Landroid/support/design/widget/CircularBorderDrawable;->mCurrentBorderTintColor:I
 
-    invoke-static {v2, v3}, Landroid/support/v4/graphics/ColorUtils;->compositeColors(II)I
+    invoke-static {v4, v6}, Landroid/support/v4/graphics/ColorUtils;->a(II)I
 
-    move-result v2
+    move-result v4
 
-    aput v2, v5, v0
+    aput v4, v5, v2
 
     .line 194
-    const/4 v0, 0x4
+    const/4 v2, 0x4
 
-    iget v2, p0, Landroid/support/design/widget/CircularBorderDrawable;->mBottomInnerStrokeColor:I
+    iget v4, p0, Landroid/support/design/widget/CircularBorderDrawable;->mBottomInnerStrokeColor:I
 
-    iget v3, p0, Landroid/support/design/widget/CircularBorderDrawable;->mCurrentBorderTintColor:I
+    iget v6, p0, Landroid/support/design/widget/CircularBorderDrawable;->mCurrentBorderTintColor:I
 
-    invoke-static {v2, v3}, Landroid/support/v4/graphics/ColorUtils;->compositeColors(II)I
+    invoke-static {v4, v6}, Landroid/support/v4/graphics/ColorUtils;->a(II)I
 
-    move-result v2
+    move-result v4
 
-    aput v2, v5, v0
+    aput v4, v5, v2
 
     .line 195
-    const/4 v0, 0x5
+    const/4 v2, 0x5
 
-    iget v2, p0, Landroid/support/design/widget/CircularBorderDrawable;->mBottomOuterStrokeColor:I
+    iget v4, p0, Landroid/support/design/widget/CircularBorderDrawable;->mBottomOuterStrokeColor:I
 
-    iget v3, p0, Landroid/support/design/widget/CircularBorderDrawable;->mCurrentBorderTintColor:I
+    iget v6, p0, Landroid/support/design/widget/CircularBorderDrawable;->mCurrentBorderTintColor:I
 
-    invoke-static {v2, v3}, Landroid/support/v4/graphics/ColorUtils;->compositeColors(II)I
+    invoke-static {v4, v6}, Landroid/support/v4/graphics/ColorUtils;->a(II)I
 
-    move-result v2
+    move-result v4
 
-    aput v2, v5, v0
+    aput v4, v5, v2
 
     .line 197
-    const/4 v0, 0x6
+    const/4 v2, 0x6
 
-    new-array v6, v0, [F
+    new-array v6, v2, [F
 
     .line 198
-    .local v6, "positions":[F
-    aput v1, v6, v4
+    aput v1, v6, v7
 
     .line 199
-    aput v8, v6, v11
+    aput v0, v6, v10
 
     .line 200
-    const/4 v0, 0x2
+    const/4 v2, 0x2
 
-    aput v7, v6, v0
+    aput v8, v6, v2
 
     .line 201
-    const/4 v0, 0x3
+    const/4 v2, 0x3
 
-    aput v7, v6, v0
+    aput v8, v6, v2
 
     .line 202
-    const/4 v0, 0x4
+    const/4 v2, 0x4
 
-    sub-float v2, v10, v8
+    sub-float v0, v9, v0
 
-    aput v2, v6, v0
+    aput v0, v6, v2
 
     .line 203
     const/4 v0, 0x5
 
-    aput v10, v6, v0
+    aput v9, v6, v0
 
     .line 205
     new-instance v0, Landroid/graphics/LinearGradient;
 
-    iget v2, v9, Landroid/graphics/Rect;->top:I
+    iget v2, v3, Landroid/graphics/Rect;->top:I
 
     int-to-float v2, v2
 
-    iget v3, v9, Landroid/graphics/Rect;->bottom:I
+    iget v3, v3, Landroid/graphics/Rect;->bottom:I
 
     int-to-float v4, v3
 
@@ -256,47 +252,44 @@
 
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
-    .registers 7
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
+    .registers 6
 
     .prologue
     .line 88
-    iget-boolean v2, p0, Landroid/support/design/widget/CircularBorderDrawable;->mInvalidateShader:Z
+    iget-boolean v0, p0, Landroid/support/design/widget/CircularBorderDrawable;->mInvalidateShader:Z
 
-    if-eqz v2, :cond_10
+    if-eqz v0, :cond_10
 
     .line 89
-    iget-object v2, p0, Landroid/support/design/widget/CircularBorderDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Landroid/support/design/widget/CircularBorderDrawable;->mPaint:Landroid/graphics/Paint;
 
     invoke-direct {p0}, Landroid/support/design/widget/CircularBorderDrawable;->createGradientShader()Landroid/graphics/Shader;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v2, v3}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
     .line 90
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    iput-boolean v2, p0, Landroid/support/design/widget/CircularBorderDrawable;->mInvalidateShader:Z
+    iput-boolean v0, p0, Landroid/support/design/widget/CircularBorderDrawable;->mInvalidateShader:Z
 
     .line 93
     :cond_10
-    iget-object v2, p0, Landroid/support/design/widget/CircularBorderDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Landroid/support/design/widget/CircularBorderDrawable;->mPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v2}, Landroid/graphics/Paint;->getStrokeWidth()F
+    invoke-virtual {v0}, Landroid/graphics/Paint;->getStrokeWidth()F
 
-    move-result v2
+    move-result v0
 
-    const/high16 v3, 0x40000000
+    const/high16 v1, 0x40000000    # 2.0f
 
-    div-float v0, v2, v3
+    div-float/2addr v0, v1
 
     .line 94
-    .local v0, "halfBorderWidth":F
     iget-object v1, p0, Landroid/support/design/widget/CircularBorderDrawable;->mRectF:Landroid/graphics/RectF;
 
     .line 98
-    .local v1, "rectF":Landroid/graphics/RectF;
     iget-object v2, p0, Landroid/support/design/widget/CircularBorderDrawable;->mRect:Landroid/graphics/Rect;
 
     invoke-virtual {p0, v2}, Landroid/support/design/widget/CircularBorderDrawable;->copyBounds(Landroid/graphics/Rect;)V
@@ -330,30 +323,30 @@
     .line 103
     iget v2, v1, Landroid/graphics/RectF;->bottom:F
 
-    sub-float/2addr v2, v0
+    sub-float v0, v2, v0
 
-    iput v2, v1, Landroid/graphics/RectF;->bottom:F
+    iput v0, v1, Landroid/graphics/RectF;->bottom:F
 
     .line 105
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     .line 106
-    iget v2, p0, Landroid/support/design/widget/CircularBorderDrawable;->mRotation:F
+    iget v0, p0, Landroid/support/design/widget/CircularBorderDrawable;->mRotation:F
 
     invoke-virtual {v1}, Landroid/graphics/RectF;->centerX()F
 
-    move-result v3
+    move-result v2
 
     invoke-virtual {v1}, Landroid/graphics/RectF;->centerY()F
 
-    move-result v4
+    move-result v3
 
-    invoke-virtual {p1, v2, v3, v4}, Landroid/graphics/Canvas;->rotate(FFF)V
+    invoke-virtual {p1, v0, v2, v3}, Landroid/graphics/Canvas;->rotate(FFF)V
 
     .line 108
-    iget-object v2, p0, Landroid/support/design/widget/CircularBorderDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Landroid/support/design/widget/CircularBorderDrawable;->mPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v1, v2}, Landroid/graphics/Canvas;->drawOval(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
+    invoke-virtual {p1, v1, v0}, Landroid/graphics/Canvas;->drawOval(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
     .line 109
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
@@ -387,25 +380,23 @@
 .end method
 
 .method public getPadding(Landroid/graphics/Rect;)Z
-    .registers 4
-    .param p1, "padding"    # Landroid/graphics/Rect;
+    .registers 3
 
     .prologue
     .line 114
-    iget v1, p0, Landroid/support/design/widget/CircularBorderDrawable;->mBorderWidth:F
+    iget v0, p0, Landroid/support/design/widget/CircularBorderDrawable;->mBorderWidth:F
 
-    invoke-static {v1}, Ljava/lang/Math;->round(F)I
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v0
 
     .line 115
-    .local v0, "borderWidth":I
     invoke-virtual {p1, v0, v0, v0, v0}, Landroid/graphics/Rect;->set(IIII)V
 
     .line 116
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    return v1
+    return v0
 .end method
 
 .method public isStateful()Z
@@ -446,7 +437,6 @@
 
 .method protected onBoundsChange(Landroid/graphics/Rect;)V
     .registers 3
-    .param p1, "bounds"    # Landroid/graphics/Rect;
 
     .prologue
     .line 154
@@ -459,26 +449,24 @@
 .end method
 
 .method protected onStateChange([I)Z
-    .registers 5
-    .param p1, "state"    # [I
+    .registers 4
 
     .prologue
     .line 164
-    iget-object v1, p0, Landroid/support/design/widget/CircularBorderDrawable;->mBorderTint:Landroid/content/res/ColorStateList;
+    iget-object v0, p0, Landroid/support/design/widget/CircularBorderDrawable;->mBorderTint:Landroid/content/res/ColorStateList;
 
-    if-eqz v1, :cond_15
+    if-eqz v0, :cond_15
 
     .line 165
-    iget-object v1, p0, Landroid/support/design/widget/CircularBorderDrawable;->mBorderTint:Landroid/content/res/ColorStateList;
+    iget-object v0, p0, Landroid/support/design/widget/CircularBorderDrawable;->mBorderTint:Landroid/content/res/ColorStateList;
 
-    iget v2, p0, Landroid/support/design/widget/CircularBorderDrawable;->mCurrentBorderTintColor:I
+    iget v1, p0, Landroid/support/design/widget/CircularBorderDrawable;->mCurrentBorderTintColor:I
 
-    invoke-virtual {v1, p1, v2}, Landroid/content/res/ColorStateList;->getColorForState([II)I
+    invoke-virtual {v0, p1, v1}, Landroid/content/res/ColorStateList;->getColorForState([II)I
 
     move-result v0
 
     .line 166
-    .local v0, "newColor":I
     iget v1, p0, Landroid/support/design/widget/CircularBorderDrawable;->mCurrentBorderTintColor:I
 
     if-eq v0, v1, :cond_15
@@ -492,25 +480,23 @@
     iput v0, p0, Landroid/support/design/widget/CircularBorderDrawable;->mCurrentBorderTintColor:I
 
     .line 171
-    .end local v0    # "newColor":I
     :cond_15
-    iget-boolean v1, p0, Landroid/support/design/widget/CircularBorderDrawable;->mInvalidateShader:Z
+    iget-boolean v0, p0, Landroid/support/design/widget/CircularBorderDrawable;->mInvalidateShader:Z
 
-    if-eqz v1, :cond_1c
+    if-eqz v0, :cond_1c
 
     .line 172
     invoke-virtual {p0}, Landroid/support/design/widget/CircularBorderDrawable;->invalidateSelf()V
 
     .line 174
     :cond_1c
-    iget-boolean v1, p0, Landroid/support/design/widget/CircularBorderDrawable;->mInvalidateShader:Z
+    iget-boolean v0, p0, Landroid/support/design/widget/CircularBorderDrawable;->mInvalidateShader:Z
 
-    return v1
+    return v0
 .end method
 
 .method public setAlpha(I)V
     .registers 3
-    .param p1, "alpha"    # I
 
     .prologue
     .line 121
@@ -527,7 +513,6 @@
 
 .method setBorderTint(Landroid/content/res/ColorStateList;)V
     .registers 4
-    .param p1, "tint"    # Landroid/content/res/ColorStateList;
 
     .prologue
     .line 126
@@ -564,7 +549,6 @@
 
 .method setBorderWidth(F)V
     .registers 4
-    .param p1, "width"    # F
 
     .prologue
     .line 78
@@ -580,7 +564,7 @@
     .line 80
     iget-object v0, p0, Landroid/support/design/widget/CircularBorderDrawable;->mPaint:Landroid/graphics/Paint;
 
-    const v1, 0x3faaa993
+    const v1, 0x3faaa993    # 1.3333f
 
     mul-float/2addr v1, p1
 
@@ -601,7 +585,6 @@
 
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .registers 3
-    .param p1, "colorFilter"    # Landroid/graphics/ColorFilter;
 
     .prologue
     .line 136
@@ -618,10 +601,6 @@
 
 .method setGradientColors(IIII)V
     .registers 5
-    .param p1, "topOuterStrokeColor"    # I
-    .param p2, "topInnerStrokeColor"    # I
-    .param p3, "bottomOuterStrokeColor"    # I
-    .param p4, "bottomInnerStrokeColor"    # I
 
     .prologue
     .line 68
@@ -642,7 +621,6 @@
 
 .method final setRotation(F)V
     .registers 3
-    .param p1, "rotation"    # F
 
     .prologue
     .line 146

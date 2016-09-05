@@ -5,25 +5,8 @@
 .implements Lcom/google/android/gms/internal/zzav;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/gms/internal/zzav;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x409
-    name = "zza"
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/android/gms/internal/zzav$zza$zza;
-    }
-.end annotation
-
-
 # direct methods
-.method public static zzb(Landroid/os/IBinder;)Lcom/google/android/gms/internal/zzav;
+.method public static a(Landroid/os/IBinder;)Lcom/google/android/gms/internal/zzav;
     .registers 3
 
     if-nez p0, :cond_4
@@ -62,17 +45,7 @@
 # virtual methods
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .registers 9
-    .param p1, "code"    # I
-    .param p2, "data"    # Landroid/os/Parcel;
-    .param p3, "reply"    # Landroid/os/Parcel;
-    .param p4, "flags"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
-    .prologue
     const/4 v2, 0x0
 
     const/4 v1, 0x1
@@ -98,7 +71,7 @@
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/zzav$zza;->getId()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/zzav$zza;->a()Ljava/lang/String;
 
     move-result-object v0
 
@@ -122,7 +95,7 @@
     move v0, v1
 
     :goto_2f
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/internal/zzav$zza;->zzc(Z)Z
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/internal/zzav$zza;->a(Z)Z
 
     move-result v0
 
@@ -151,7 +124,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/internal/zzav$zza;->zzn(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/internal/zzav$zza;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -179,7 +152,7 @@
     move v2, v1
 
     :cond_65
-    invoke-virtual {p0, v0, v2}, Lcom/google/android/gms/internal/zzav$zza;->zzb(Ljava/lang/String;Z)V
+    invoke-virtual {p0, v0, v2}, Lcom/google/android/gms/internal/zzav$zza;->a(Ljava/lang/String;Z)V
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 

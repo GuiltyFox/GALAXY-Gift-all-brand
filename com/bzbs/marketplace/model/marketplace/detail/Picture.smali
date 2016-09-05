@@ -3,60 +3,54 @@
 .source "Picture.java"
 
 
-# annotations
-.annotation runtime Lorg/parceler/Parcel;
-    value = .enum Lorg/parceler/Parcel$Serialization;->BEAN:Lorg/parceler/Parcel$Serialization;
-.end annotation
-
-
 # static fields
-.field static final FIELD_CAMPAIGN_ID:Ljava/lang/String; = "CampaignID"
+.field public static final FIELD_CAMPAIGN_ID:Ljava/lang/String; = "CampaignID"
 
-.field static final FIELD_CAPTION:Ljava/lang/String; = "Caption"
+.field public static final FIELD_CAPTION:Ljava/lang/String; = "Caption"
 
-.field static final FIELD_FULL_IMAGE_URL:Ljava/lang/String; = "FullImageUrl"
+.field public static final FIELD_FULL_IMAGE_URL:Ljava/lang/String; = "FullImageUrl"
 
-.field static final FIELD_ID:Ljava/lang/String; = "ID"
+.field public static final FIELD_ID:Ljava/lang/String; = "ID"
 
-.field static final FIELD_IMAGE_URL:Ljava/lang/String; = "ImageUrl"
+.field public static final FIELD_IMAGE_URL:Ljava/lang/String; = "ImageUrl"
 
-.field static final FIELD_SEQUENCE:Ljava/lang/String; = "Sequence"
+.field public static final FIELD_SEQUENCE:Ljava/lang/String; = "Sequence"
 
 
 # instance fields
-.field mCampaignID:Ljava/lang/String;
+.field a:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "CampaignID"
+        a = "ImageUrl"
     .end annotation
 .end field
 
-.field mCaption:Ljava/lang/String;
+.field b:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Caption"
+        a = "ID"
     .end annotation
 .end field
 
-.field mFullImageUrl:Ljava/lang/String;
+.field c:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "FullImageUrl"
+        a = "CampaignID"
     .end annotation
 .end field
 
-.field mID:Ljava/lang/String;
+.field d:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ID"
+        a = "FullImageUrl"
     .end annotation
 .end field
 
-.field mImageUrl:Ljava/lang/String;
+.field e:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ImageUrl"
+        a = "Sequence"
     .end annotation
 .end field
 
-.field mSequence:Ljava/lang/String;
+.field f:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Sequence"
+        a = "Caption"
     .end annotation
 .end field
 
@@ -80,7 +74,7 @@
 
     .prologue
     .line 57
-    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->mCampaignID:Ljava/lang/String;
+    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->c:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -90,7 +84,7 @@
 
     .prologue
     .line 81
-    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->mCaption:Ljava/lang/String;
+    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->f:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -100,7 +94,7 @@
 
     .prologue
     .line 65
-    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->mFullImageUrl:Ljava/lang/String;
+    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->d:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -110,7 +104,7 @@
 
     .prologue
     .line 49
-    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->mID:Ljava/lang/String;
+    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->b:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -120,7 +114,7 @@
 
     .prologue
     .line 41
-    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->mImageUrl:Ljava/lang/String;
+    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->a:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -130,18 +124,17 @@
 
     .prologue
     .line 73
-    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->mSequence:Ljava/lang/String;
+    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->e:Ljava/lang/String;
 
     return-object v0
 .end method
 
 .method public setCampaignID(Ljava/lang/String;)V
     .registers 2
-    .param p1, "campaignID"    # Ljava/lang/String;
 
     .prologue
     .line 53
-    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->mCampaignID:Ljava/lang/String;
+    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->c:Ljava/lang/String;
 
     .line 54
     return-void
@@ -149,11 +142,10 @@
 
 .method public setCaption(Ljava/lang/String;)V
     .registers 2
-    .param p1, "caption"    # Ljava/lang/String;
 
     .prologue
     .line 77
-    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->mCaption:Ljava/lang/String;
+    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->f:Ljava/lang/String;
 
     .line 78
     return-void
@@ -161,11 +153,10 @@
 
 .method public setFullImageUrl(Ljava/lang/String;)V
     .registers 2
-    .param p1, "fullImageUrl"    # Ljava/lang/String;
 
     .prologue
     .line 61
-    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->mFullImageUrl:Ljava/lang/String;
+    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->d:Ljava/lang/String;
 
     .line 62
     return-void
@@ -173,11 +164,10 @@
 
 .method public setID(Ljava/lang/String;)V
     .registers 2
-    .param p1, "iD"    # Ljava/lang/String;
 
     .prologue
     .line 45
-    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->mID:Ljava/lang/String;
+    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->b:Ljava/lang/String;
 
     .line 46
     return-void
@@ -185,11 +175,10 @@
 
 .method public setImageUrl(Ljava/lang/String;)V
     .registers 2
-    .param p1, "imageUrl"    # Ljava/lang/String;
 
     .prologue
     .line 37
-    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->mImageUrl:Ljava/lang/String;
+    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->a:Ljava/lang/String;
 
     .line 38
     return-void
@@ -197,11 +186,10 @@
 
 .method public setSequence(Ljava/lang/String;)V
     .registers 2
-    .param p1, "sequence"    # Ljava/lang/String;
 
     .prologue
     .line 69
-    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->mSequence:Ljava/lang/String;
+    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->e:Ljava/lang/String;
 
     .line 70
     return-void
@@ -222,7 +210,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->mImageUrl:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->a:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -234,7 +222,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->mID:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->b:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -246,7 +234,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->mCampaignID:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->c:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -258,7 +246,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->mFullImageUrl:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->d:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -270,7 +258,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->mSequence:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->e:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -282,7 +270,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->mCaption:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Picture;->f:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

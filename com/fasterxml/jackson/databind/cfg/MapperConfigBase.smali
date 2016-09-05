@@ -75,8 +75,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/cfg/BaseSettings;Lcom/fasterxml/jackson/databind/jsontype/SubtypeResolver;Ljava/util/Map;)V
     .registers 6
-    .param p1, "base"    # Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
-    .param p2, "str"    # Lcom/fasterxml/jackson/databind/jsontype/SubtypeResolver;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -91,8 +89,6 @@
     .end annotation
 
     .prologue
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
-    .local p3, "mixins":Ljava/util/Map;, "Ljava/util/Map<Lcom/fasterxml/jackson/databind/type/ClassKey;Ljava/lang/Class<*>;>;"
     const/4 v1, 0x0
 
     .line 84
@@ -135,8 +131,6 @@
 
     .prologue
     .line 99
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
-    .local p1, "src":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;-><init>(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;)V
 
     .line 100
@@ -170,7 +164,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;I)V
     .registers 4
-    .param p2, "mapperFeatures"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -181,8 +174,6 @@
 
     .prologue
     .line 119
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
-    .local p1, "src":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
     iget-object v0, p1, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->_base:Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
     invoke-direct {p0, v0, p2}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;-><init>(Lcom/fasterxml/jackson/databind/cfg/BaseSettings;I)V
@@ -218,7 +209,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;Lcom/fasterxml/jackson/databind/cfg/BaseSettings;)V
     .registers 4
-    .param p2, "base"    # Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -231,8 +221,6 @@
 
     .prologue
     .line 109
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
-    .local p1, "src":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
     iget v0, p1, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->_mapperFeatures:I
 
     invoke-direct {p0, p2, v0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;-><init>(Lcom/fasterxml/jackson/databind/cfg/BaseSettings;I)V
@@ -268,7 +256,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;Lcom/fasterxml/jackson/databind/cfg/ContextAttributes;)V
     .registers 4
-    .param p2, "attr"    # Lcom/fasterxml/jackson/databind/cfg/ContextAttributes;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -281,8 +268,6 @@
 
     .prologue
     .line 173
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
-    .local p1, "src":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;-><init>(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;)V
 
     .line 174
@@ -314,7 +299,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;Lcom/fasterxml/jackson/databind/jsontype/SubtypeResolver;)V
     .registers 4
-    .param p2, "str"    # Lcom/fasterxml/jackson/databind/jsontype/SubtypeResolver;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -327,8 +311,6 @@
 
     .prologue
     .line 128
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
-    .local p1, "src":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;-><init>(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;)V
 
     .line 129
@@ -372,9 +354,6 @@
 
     .prologue
     .line 147
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
-    .local p1, "src":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
-    .local p2, "view":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;-><init>(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;)V
 
     .line 148
@@ -406,7 +385,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;Ljava/lang/String;)V
     .registers 4
-    .param p2, "rootName"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -419,8 +397,6 @@
 
     .prologue
     .line 137
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
-    .local p1, "src":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;-><init>(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;)V
 
     .line 138
@@ -467,9 +443,6 @@
 
     .prologue
     .line 160
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
-    .local p1, "src":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
-    .local p2, "mixins":Ljava/util/Map;, "Ljava/util/Map<Lcom/fasterxml/jackson/databind/type/ClassKey;Ljava/lang/Class<*>;>;"
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;-><init>(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;)V
 
     .line 161
@@ -515,8 +488,6 @@
 
     .prologue
     .line 404
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->_mixInAnnotations:Ljava/util/Map;
 
     if-nez v0, :cond_6
@@ -554,7 +525,6 @@
 
     .prologue
     .line 384
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->_view:Ljava/lang/Class;
 
     return-object v0
@@ -565,7 +535,6 @@
 
     .prologue
     .line 389
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->_attributes:Lcom/fasterxml/jackson/databind/cfg/ContextAttributes;
 
     return-object v0
@@ -576,7 +545,6 @@
 
     .prologue
     .line 379
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->_rootName:Ljava/lang/String;
 
     return-object v0
@@ -587,7 +555,6 @@
 
     .prologue
     .line 375
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->_subtypeResolver:Lcom/fasterxml/jackson/databind/jsontype/SubtypeResolver;
 
     return-object v0
@@ -598,7 +565,6 @@
 
     .prologue
     .line 408
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->_mixInAnnotations:Ljava/util/Map;
 
     if-nez v0, :cond_6
@@ -760,8 +726,6 @@
 
 .method public withAttribute(Ljava/lang/Object;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
     .registers 4
-    .param p1, "key"    # Ljava/lang/Object;
-    .param p2, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -773,7 +737,6 @@
 
     .prologue
     .line 349
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->getAttributes()Lcom/fasterxml/jackson/databind/cfg/ContextAttributes;
 
     move-result-object v0
@@ -804,8 +767,6 @@
 
     .prologue
     .line 339
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
-    .local p1, "attributes":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Object;Ljava/lang/Object;>;"
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->getAttributes()Lcom/fasterxml/jackson/databind/cfg/ContextAttributes;
 
     move-result-object v0
@@ -864,7 +825,6 @@
 
 .method public withoutAttribute(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
     .registers 3
-    .param p1, "key"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -875,7 +835,6 @@
 
     .prologue
     .line 359
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase<TCFG;TT;>;"
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;->getAttributes()Lcom/fasterxml/jackson/databind/cfg/ContextAttributes;
 
     move-result-object v0

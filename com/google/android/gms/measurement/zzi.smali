@@ -3,8 +3,8 @@
 
 
 # virtual methods
-.method public abstract zzb(Lcom/google/android/gms/measurement/zzc;)V
+.method public abstract a()Landroid/net/Uri;
 .end method
 
-.method public abstract zzii()Landroid/net/Uri;
+.method public abstract a(Lcom/google/android/gms/measurement/zzc;)V
 .end method

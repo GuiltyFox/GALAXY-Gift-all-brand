@@ -4,33 +4,8 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 24
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static findPointerIndex(Landroid/view/MotionEvent;I)I
-    .registers 3
-    .param p0, "event"    # Landroid/view/MotionEvent;
-    .param p1, "pointerId"    # I
-
-    .prologue
-    .line 26
-    invoke-virtual {p0, p1}, Landroid/view/MotionEvent;->findPointerIndex(I)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static getPointerCount(Landroid/view/MotionEvent;)I
+.method public static a(Landroid/view/MotionEvent;)I
     .registers 2
-    .param p0, "event"    # Landroid/view/MotionEvent;
 
     .prologue
     .line 38
@@ -41,10 +16,20 @@
     return v0
 .end method
 
-.method public static getPointerId(Landroid/view/MotionEvent;I)I
+.method public static a(Landroid/view/MotionEvent;I)I
     .registers 3
-    .param p0, "event"    # Landroid/view/MotionEvent;
-    .param p1, "pointerIndex"    # I
+
+    .prologue
+    .line 26
+    invoke-virtual {p0, p1}, Landroid/view/MotionEvent;->findPointerIndex(I)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static b(Landroid/view/MotionEvent;I)I
+    .registers 3
 
     .prologue
     .line 29
@@ -55,10 +40,8 @@
     return v0
 .end method
 
-.method public static getX(Landroid/view/MotionEvent;I)F
+.method public static c(Landroid/view/MotionEvent;I)F
     .registers 3
-    .param p0, "event"    # Landroid/view/MotionEvent;
-    .param p1, "pointerIndex"    # I
 
     .prologue
     .line 32
@@ -69,10 +52,8 @@
     return v0
 .end method
 
-.method public static getY(Landroid/view/MotionEvent;I)F
+.method public static d(Landroid/view/MotionEvent;I)F
     .registers 3
-    .param p0, "event"    # Landroid/view/MotionEvent;
-    .param p1, "pointerIndex"    # I
 
     .prologue
     .line 35

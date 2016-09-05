@@ -4,8 +4,8 @@
 
 
 # virtual methods
-.method public abstract applyOptions(Landroid/content/Context;Lcom/bumptech/glide/GlideBuilder;)V
+.method public abstract a(Landroid/content/Context;Lcom/bumptech/glide/Glide;)V
 .end method
 
-.method public abstract registerComponents(Landroid/content/Context;Lcom/bumptech/glide/Glide;)V
+.method public abstract a(Landroid/content/Context;Lcom/bumptech/glide/GlideBuilder;)V
 .end method

@@ -46,9 +46,6 @@
 
     .prologue
     .line 17
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/LinkedNode;, "Lcom/fasterxml/jackson/databind/util/LinkedNode<TT;>;"
-    .local p1, "value":Ljava/lang/Object;, "TT;"
-    .local p2, "next":Lcom/fasterxml/jackson/databind/util/LinkedNode;, "Lcom/fasterxml/jackson/databind/util/LinkedNode<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 18
@@ -75,8 +72,6 @@
 
     .prologue
     .line 46
-    .local p0, "node":Lcom/fasterxml/jackson/databind/util/LinkedNode;, "Lcom/fasterxml/jackson/databind/util/LinkedNode<TST;>;"
-    .local p1, "value":Ljava/lang/Object;, "TST;"
     :goto_0
     if-eqz p0, :cond_f
 
@@ -123,8 +118,6 @@
 
     .prologue
     .line 24
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/LinkedNode;, "Lcom/fasterxml/jackson/databind/util/LinkedNode<TT;>;"
-    .local p1, "n":Lcom/fasterxml/jackson/databind/util/LinkedNode;, "Lcom/fasterxml/jackson/databind/util/LinkedNode<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/LinkedNode;->next:Lcom/fasterxml/jackson/databind/util/LinkedNode;
 
     if-eqz v0, :cond_a
@@ -156,7 +149,6 @@
 
     .prologue
     .line 30
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/LinkedNode;, "Lcom/fasterxml/jackson/databind/util/LinkedNode<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/LinkedNode;->next:Lcom/fasterxml/jackson/databind/util/LinkedNode;
 
     return-object v0
@@ -172,7 +164,6 @@
 
     .prologue
     .line 32
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/LinkedNode;, "Lcom/fasterxml/jackson/databind/util/LinkedNode<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/LinkedNode;->value:Ljava/lang/Object;
 
     return-object v0

@@ -13,10 +13,16 @@
 
 
 # virtual methods
-.method public abstract getEventType()I
+.method public abstract a()J
 .end method
 
-.method public abstract getTimeMillis()J
+.method public abstract b()I
+.end method
+
+.method public abstract i()J
+.end method
+
+.method public abstract l()Ljava/lang/String;
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -26,7 +32,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/zzf;->getTimeMillis()J
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/zzf;->a()J
 
     move-result-wide v2
 
@@ -40,7 +46,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/zzf;->getEventType()I
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/zzf;->b()I
 
     move-result v1
 
@@ -54,7 +60,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/zzf;->zzrv()J
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/zzf;->i()J
 
     move-result-wide v2
 
@@ -62,7 +68,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/zzf;->zzry()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/zzf;->l()Ljava/lang/String;
 
     move-result-object v1
 
@@ -75,10 +81,4 @@
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public abstract zzrv()J
-.end method
-
-.method public abstract zzry()Ljava/lang/String;
 .end method

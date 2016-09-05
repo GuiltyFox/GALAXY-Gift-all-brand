@@ -6,120 +6,71 @@
 .implements Landroid/graphics/drawable/Animatable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/rey/material/drawable/CircularProgressDrawable$Builder;
-    }
-.end annotation
-
-
-# static fields
-.field private static final PROGRESS_STATE_HIDE:I = -0x1
-
-.field private static final PROGRESS_STATE_KEEP_SHRINK:I = 0x3
-
-.field private static final PROGRESS_STATE_KEEP_STRETCH:I = 0x1
-
-.field private static final PROGRESS_STATE_SHRINK:I = 0x2
-
-.field private static final PROGRESS_STATE_STRETCH:I = 0x0
-
-.field private static final RUN_STATE_RUNNING:I = 0x3
-
-.field private static final RUN_STATE_STARTED:I = 0x2
-
-.field private static final RUN_STATE_STARTING:I = 0x1
-
-.field private static final RUN_STATE_STOPPED:I = 0x0
-
-.field private static final RUN_STATE_STOPPING:I = 0x4
-
-
 # instance fields
-.field private mInAnimationDuration:I
+.field private A:I
 
-.field private mInColors:[I
+.field private B:I
 
-.field private mInStepPercent:F
+.field private C:Landroid/view/animation/Interpolator;
 
-.field private mInitialAngle:F
+.field private final D:Ljava/lang/Runnable;
 
-.field private mKeepDuration:I
+.field private a:J
 
-.field private mLastProgressStateTime:J
+.field private b:J
 
-.field private mLastRunStateTime:J
+.field private c:J
 
-.field private mLastUpdateTime:J
+.field private d:I
 
-.field private mMaxSweepAngle:F
+.field private e:I
 
-.field private mMinSweepAngle:F
+.field private f:Landroid/graphics/Paint;
 
-.field private mOutAnimationDuration:I
+.field private g:Landroid/graphics/RectF;
 
-.field private mPadding:I
+.field private h:F
 
-.field private mPaint:Landroid/graphics/Paint;
+.field private i:F
 
-.field private mProgressMode:I
+.field private j:I
 
-.field private mProgressPercent:F
+.field private k:I
 
-.field private mProgressState:I
+.field private l:F
 
-.field private mRect:Landroid/graphics/RectF;
+.field private m:F
 
-.field private mReverse:Z
+.field private n:F
 
-.field private mRotateDuration:I
+.field private o:F
 
-.field private mRunState:I
+.field private p:F
 
-.field private mSecondaryProgressPercent:F
+.field private q:I
 
-.field private mStartAngle:F
+.field private r:[I
 
-.field private mStrokeColorIndex:I
+.field private s:I
 
-.field private mStrokeColors:[I
+.field private t:Z
 
-.field private mStrokeSecondaryColor:I
+.field private u:I
 
-.field private mStrokeSize:I
+.field private v:I
 
-.field private mSweepAngle:F
+.field private w:I
 
-.field private mTransformDuration:I
+.field private x:F
 
-.field private mTransformInterpolator:Landroid/view/animation/Interpolator;
+.field private y:[I
 
-.field private final mUpdater:Ljava/lang/Runnable;
+.field private z:I
 
 
 # direct methods
 .method private constructor <init>(IFFFFFI[IIZIIILandroid/view/animation/Interpolator;IIF[II)V
     .registers 23
-    .param p1, "padding"    # I
-    .param p2, "initialAngle"    # F
-    .param p3, "progressPercent"    # F
-    .param p4, "secondaryProgressPercent"    # F
-    .param p5, "maxSweepAngle"    # F
-    .param p6, "minSweepAngle"    # F
-    .param p7, "strokeSize"    # I
-    .param p8, "strokeColors"    # [I
-    .param p9, "strokeSecondaryColor"    # I
-    .param p10, "reverse"    # Z
-    .param p11, "rotateDuration"    # I
-    .param p12, "transformDuration"    # I
-    .param p13, "keepDuration"    # I
-    .param p14, "transformInterpolator"    # Landroid/view/animation/Interpolator;
-    .param p15, "progressMode"    # I
-    .param p16, "inAnimDuration"    # I
-    .param p17, "inStepPercent"    # F
-    .param p18, "inStepColors"    # [I
-    .param p19, "outAnimDuration"    # I
 
     .prologue
     .line 73
@@ -128,109 +79,109 @@
     .line 39
     const/4 v1, 0x0
 
-    iput v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRunState:I
+    iput v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->e:I
 
     .line 461
     new-instance v1, Lcom/rey/material/drawable/CircularProgressDrawable$1;
 
     invoke-direct {v1, p0}, Lcom/rey/material/drawable/CircularProgressDrawable$1;-><init>(Lcom/rey/material/drawable/CircularProgressDrawable;)V
 
-    iput-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mUpdater:Ljava/lang/Runnable;
+    iput-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->D:Ljava/lang/Runnable;
 
     .line 74
-    iput p1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPadding:I
+    iput p1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->k:I
 
     .line 75
-    iput p2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInitialAngle:F
+    iput p2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->l:F
 
     .line 76
-    invoke-virtual {p0, p3}, Lcom/rey/material/drawable/CircularProgressDrawable;->setProgress(F)V
+    invoke-virtual {p0, p3}, Lcom/rey/material/drawable/CircularProgressDrawable;->a(F)V
 
     .line 77
-    invoke-virtual {p0, p4}, Lcom/rey/material/drawable/CircularProgressDrawable;->setSecondaryProgress(F)V
+    invoke-virtual {p0, p4}, Lcom/rey/material/drawable/CircularProgressDrawable;->b(F)V
 
     .line 78
-    iput p5, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mMaxSweepAngle:F
+    iput p5, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->o:F
 
     .line 79
-    iput p6, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mMinSweepAngle:F
+    iput p6, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->p:F
 
     .line 80
-    iput p7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeSize:I
+    iput p7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->q:I
 
     .line 81
-    iput-object p8, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColors:[I
+    iput-object p8, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->r:[I
 
     .line 82
-    iput p9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeSecondaryColor:I
+    iput p9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->s:I
 
     .line 83
-    iput-boolean p10, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mReverse:Z
+    iput-boolean p10, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->t:Z
 
     .line 84
-    iput p11, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRotateDuration:I
+    iput p11, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->u:I
 
     .line 85
-    iput p12, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mTransformDuration:I
+    iput p12, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->v:I
 
     .line 86
     move/from16 v0, p13
 
-    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mKeepDuration:I
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->w:I
 
     .line 87
     move-object/from16 v0, p14
 
-    iput-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mTransformInterpolator:Landroid/view/animation/Interpolator;
+    iput-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->C:Landroid/view/animation/Interpolator;
 
     .line 88
     move/from16 v0, p15
 
-    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressMode:I
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->B:I
 
     .line 89
     move/from16 v0, p16
 
-    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInAnimationDuration:I
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->z:I
 
     .line 90
     move/from16 v0, p17
 
-    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInStepPercent:F
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->x:F
 
     .line 91
     move-object/from16 v0, p18
 
-    iput-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInColors:[I
+    iput-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->y:[I
 
     .line 92
     move/from16 v0, p19
 
-    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mOutAnimationDuration:I
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->A:I
 
     .line 94
     new-instance v1, Landroid/graphics/Paint;
 
     invoke-direct {v1}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
+    iput-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
 
     .line 95
-    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
 
     const/4 v2, 0x1
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
     .line 96
-    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
 
     sget-object v2, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
     .line 97
-    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
 
     sget-object v2, Landroid/graphics/Paint$Join;->ROUND:Landroid/graphics/Paint$Join;
 
@@ -241,7 +192,7 @@
 
     invoke-direct {v1}, Landroid/graphics/RectF;-><init>()V
 
-    iput-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRect:Landroid/graphics/RectF;
+    iput-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->g:Landroid/graphics/RectF;
 
     .line 100
     return-void
@@ -249,26 +200,6 @@
 
 .method synthetic constructor <init>(IFFFFFI[IIZIIILandroid/view/animation/Interpolator;IIF[IILcom/rey/material/drawable/CircularProgressDrawable$1;)V
     .registers 21
-    .param p1, "x0"    # I
-    .param p2, "x1"    # F
-    .param p3, "x2"    # F
-    .param p4, "x3"    # F
-    .param p5, "x4"    # F
-    .param p6, "x5"    # F
-    .param p7, "x6"    # I
-    .param p8, "x7"    # [I
-    .param p9, "x8"    # I
-    .param p10, "x9"    # Z
-    .param p11, "x10"    # I
-    .param p12, "x11"    # I
-    .param p13, "x12"    # I
-    .param p14, "x13"    # Landroid/view/animation/Interpolator;
-    .param p15, "x14"    # I
-    .param p16, "x15"    # I
-    .param p17, "x16"    # F
-    .param p18, "x17"    # [I
-    .param p19, "x18"    # I
-    .param p20, "x19"    # Lcom/rey/material/drawable/CircularProgressDrawable$1;
 
     .prologue
     .line 25
@@ -277,414 +208,392 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/rey/material/drawable/CircularProgressDrawable;)V
-    .registers 1
-    .param p0, "x0"    # Lcom/rey/material/drawable/CircularProgressDrawable;
-
-    .prologue
-    .line 25
-    invoke-direct {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->update()V
-
-    return-void
-.end method
-
-.method private drawDeterminate(Landroid/graphics/Canvas;)V
-    .registers 16
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
+.method private a(Landroid/graphics/Canvas;)V
+    .registers 12
 
     .prologue
     .line 192
     invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->getBounds()Landroid/graphics/Rect;
 
-    move-result-object v6
+    move-result-object v2
 
     .line 193
-    .local v6, "bounds":Landroid/graphics/Rect;
-    const/4 v7, 0x0
+    const/4 v1, 0x0
 
     .line 194
-    .local v7, "radius":F
-    const/4 v8, 0x0
+    const/4 v0, 0x0
 
     .line 196
-    .local v8, "size":F
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRunState:I
+    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->e:I
 
-    const/4 v1, 0x1
+    const/4 v4, 0x1
 
-    if-ne v0, v1, :cond_81
+    if-ne v3, v4, :cond_7d
 
     .line 197
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeSize:I
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->q:I
 
     int-to-float v0, v0
 
-    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInAnimationDuration:I
+    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->z:I
 
-    int-to-long v2, v1
+    int-to-long v4, v3
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v6
+
+    iget-wide v8, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->c:J
+
+    sub-long/2addr v6, v8
+
+    invoke-static {v4, v5, v6, v7}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v4
 
-    iget-wide v12, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastRunStateTime:J
+    long-to-float v3, v4
 
-    sub-long/2addr v4, v12
+    mul-float/2addr v0, v3
 
-    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->min(JJ)J
+    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->z:I
 
-    move-result-wide v2
+    int-to-float v3, v3
 
-    long-to-float v1, v2
-
-    mul-float/2addr v0, v1
-
-    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInAnimationDuration:I
-
-    int-to-float v1, v1
-
-    div-float v8, v0, v1
+    div-float/2addr v0, v3
 
     .line 198
-    const/4 v0, 0x0
+    const/4 v3, 0x0
 
-    cmpl-float v0, v8, v0
+    cmpl-float v3, v0, v3
 
-    if-lez v0, :cond_44
+    if-lez v3, :cond_42
 
     .line 199
-    invoke-virtual {v6}, Landroid/graphics/Rect;->width()I
-
-    move-result v0
-
-    invoke-virtual {v6}, Landroid/graphics/Rect;->height()I
+    invoke-virtual {v2}, Landroid/graphics/Rect;->width()I
 
     move-result v1
 
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+    invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
 
-    move-result v0
+    move-result v3
 
-    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPadding:I
+    invoke-static {v1, v3}, Ljava/lang/Math;->min(II)I
 
-    mul-int/lit8 v1, v1, 0x2
+    move-result v1
 
-    sub-int/2addr v0, v1
+    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->k:I
 
-    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeSize:I
+    mul-int/lit8 v3, v3, 0x2
 
-    mul-int/lit8 v1, v1, 0x2
+    sub-int/2addr v1, v3
 
-    sub-int/2addr v0, v1
+    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->q:I
 
-    int-to-float v0, v0
+    mul-int/lit8 v3, v3, 0x2
 
-    add-float/2addr v0, v8
+    sub-int/2addr v1, v3
 
-    const/high16 v1, 0x40000000
+    int-to-float v1, v1
 
-    div-float v7, v0, v1
+    add-float/2addr v1, v0
+
+    const/high16 v3, 0x40000000    # 2.0f
+
+    div-float/2addr v1, v3
 
     .line 211
-    :cond_44
-    :goto_44
-    const/4 v0, 0x0
+    :cond_42
+    :goto_42
+    const/4 v3, 0x0
 
-    cmpl-float v0, v7, v0
+    cmpl-float v3, v1, v3
 
-    if-lez v0, :cond_80
+    if-lez v3, :cond_7c
 
     .line 212
-    iget v0, v6, Landroid/graphics/Rect;->left:I
+    iget v3, v2, Landroid/graphics/Rect;->left:I
 
-    iget v1, v6, Landroid/graphics/Rect;->right:I
+    iget v4, v2, Landroid/graphics/Rect;->right:I
 
-    add-int/2addr v0, v1
+    add-int/2addr v3, v4
 
-    int-to-float v0, v0
+    int-to-float v3, v3
 
-    const/high16 v1, 0x40000000
+    const/high16 v4, 0x40000000    # 2.0f
 
-    div-float v10, v0, v1
+    div-float/2addr v3, v4
 
     .line 213
-    .local v10, "x":F
-    iget v0, v6, Landroid/graphics/Rect;->top:I
+    iget v4, v2, Landroid/graphics/Rect;->top:I
 
-    iget v1, v6, Landroid/graphics/Rect;->bottom:I
+    iget v2, v2, Landroid/graphics/Rect;->bottom:I
 
-    add-int/2addr v0, v1
+    add-int/2addr v2, v4
 
-    int-to-float v0, v0
+    int-to-float v2, v2
 
-    const/high16 v1, 0x40000000
+    const/high16 v4, 0x40000000    # 2.0f
 
-    div-float v11, v0, v1
+    div-float/2addr v2, v4
 
     .line 215
-    .local v11, "y":F
-    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v4, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
 
-    invoke-virtual {v0, v8}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+    invoke-virtual {v4, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
     .line 216
-    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
 
-    sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+    sget-object v4, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+    invoke-virtual {v0, v4}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
     .line 218
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressPercent:F
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->m:F
 
-    const/high16 v1, 0x3f800000
+    const/high16 v4, 0x3f800000    # 1.0f
 
-    cmpl-float v0, v0, v1
+    cmpl-float v0, v0, v4
 
-    if-nez v0, :cond_e5
+    if-nez v0, :cond_de
 
     .line 219
-    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
 
-    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColors:[I
+    iget-object v4, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->r:[I
 
-    const/4 v2, 0x0
+    const/4 v5, 0x0
 
-    aget v1, v1, v2
+    aget v4, v4, v5
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v0, v4}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 220
-    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v10, v11, v7, v0}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v3, v2, v1, v0}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     .line 237
-    .end local v10    # "x":F
-    .end local v11    # "y":F
-    :cond_80
-    :goto_80
+    :cond_7c
+    :goto_7c
     return-void
 
     .line 201
-    :cond_81
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRunState:I
+    :cond_7d
+    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->e:I
 
-    const/4 v1, 0x4
+    const/4 v4, 0x4
 
-    if-ne v0, v1, :cond_c3
+    if-ne v3, v4, :cond_bd
 
     .line 202
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeSize:I
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->q:I
 
     int-to-float v0, v0
 
-    const-wide/16 v2, 0x0
+    const-wide/16 v4, 0x0
 
-    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mOutAnimationDuration:I
+    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->A:I
 
-    int-to-long v4, v1
+    int-to-long v6, v3
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v12
+    move-result-wide v8
 
-    sub-long/2addr v4, v12
+    sub-long/2addr v6, v8
 
-    iget-wide v12, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastRunStateTime:J
+    iget-wide v8, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->c:J
 
-    add-long/2addr v4, v12
+    add-long/2addr v6, v8
 
-    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->max(JJ)J
+    invoke-static {v4, v5, v6, v7}, Ljava/lang/Math;->max(JJ)J
 
-    move-result-wide v2
+    move-result-wide v4
 
-    long-to-float v1, v2
+    long-to-float v3, v4
 
-    mul-float/2addr v0, v1
+    mul-float/2addr v0, v3
 
-    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mOutAnimationDuration:I
+    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->A:I
+
+    int-to-float v3, v3
+
+    div-float/2addr v0, v3
+
+    .line 203
+    const/4 v3, 0x0
+
+    cmpl-float v3, v0, v3
+
+    if-lez v3, :cond_42
+
+    .line 204
+    invoke-virtual {v2}, Landroid/graphics/Rect;->width()I
+
+    move-result v1
+
+    invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
+
+    move-result v3
+
+    invoke-static {v1, v3}, Ljava/lang/Math;->min(II)I
+
+    move-result v1
+
+    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->k:I
+
+    mul-int/lit8 v3, v3, 0x2
+
+    sub-int/2addr v1, v3
+
+    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->q:I
+
+    mul-int/lit8 v3, v3, 0x2
+
+    sub-int/2addr v1, v3
 
     int-to-float v1, v1
 
-    div-float v8, v0, v1
+    add-float/2addr v1, v0
 
-    .line 203
-    const/4 v0, 0x0
+    const/high16 v3, 0x40000000    # 2.0f
 
-    cmpl-float v0, v8, v0
+    div-float/2addr v1, v3
 
-    if-lez v0, :cond_44
-
-    .line 204
-    invoke-virtual {v6}, Landroid/graphics/Rect;->width()I
-
-    move-result v0
-
-    invoke-virtual {v6}, Landroid/graphics/Rect;->height()I
-
-    move-result v1
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
-
-    move-result v0
-
-    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPadding:I
-
-    mul-int/lit8 v1, v1, 0x2
-
-    sub-int/2addr v0, v1
-
-    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeSize:I
-
-    mul-int/lit8 v1, v1, 0x2
-
-    sub-int/2addr v0, v1
-
-    int-to-float v0, v0
-
-    add-float/2addr v0, v8
-
-    const/high16 v1, 0x40000000
-
-    div-float v7, v0, v1
-
-    goto :goto_44
+    goto :goto_42
 
     .line 206
-    :cond_c3
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRunState:I
+    :cond_bd
+    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->e:I
 
-    if-eqz v0, :cond_44
+    if-eqz v3, :cond_42
 
     .line 207
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeSize:I
-
-    int-to-float v8, v0
-
-    .line 208
-    invoke-virtual {v6}, Landroid/graphics/Rect;->width()I
-
-    move-result v0
-
-    invoke-virtual {v6}, Landroid/graphics/Rect;->height()I
-
-    move-result v1
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
-
-    move-result v0
-
-    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPadding:I
-
-    mul-int/lit8 v1, v1, 0x2
-
-    sub-int/2addr v0, v1
-
-    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeSize:I
-
-    sub-int/2addr v0, v1
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->q:I
 
     int-to-float v0, v0
 
-    const/high16 v1, 0x40000000
+    .line 208
+    invoke-virtual {v2}, Landroid/graphics/Rect;->width()I
 
-    div-float v7, v0, v1
+    move-result v1
 
-    goto/16 :goto_44
+    invoke-virtual {v2}, Landroid/graphics/Rect;->height()I
+
+    move-result v3
+
+    invoke-static {v1, v3}, Ljava/lang/Math;->min(II)I
+
+    move-result v1
+
+    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->k:I
+
+    mul-int/lit8 v3, v3, 0x2
+
+    sub-int/2addr v1, v3
+
+    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->q:I
+
+    sub-int/2addr v1, v3
+
+    int-to-float v1, v1
+
+    const/high16 v3, 0x40000000    # 2.0f
+
+    div-float/2addr v1, v3
+
+    goto/16 :goto_42
 
     .line 222
-    .restart local v10    # "x":F
-    .restart local v11    # "y":F
-    :cond_e5
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressPercent:F
+    :cond_de
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->m:F
 
-    const/4 v1, 0x0
+    const/4 v4, 0x0
 
-    cmpl-float v0, v0, v1
+    cmpl-float v0, v0, v4
 
-    if-nez v0, :cond_f9
+    if-nez v0, :cond_f2
 
     .line 223
-    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
 
-    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeSecondaryColor:I
+    iget v4, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->s:I
 
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v0, v4}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 224
-    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
 
-    invoke-virtual {p1, v10, v11, v7, v0}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {p1, v3, v2, v1, v0}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    goto :goto_80
+    goto :goto_7c
 
     .line 227
-    :cond_f9
-    iget-boolean v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mReverse:Z
+    :cond_f2
+    iget-boolean v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->t:Z
 
-    if-eqz v0, :cond_146
+    if-eqz v0, :cond_13d
 
     const/16 v0, -0x168
 
-    :goto_ff
+    :goto_f8
     int-to-float v0, v0
 
-    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressPercent:F
+    iget v4, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->m:F
 
-    mul-float v9, v0, v1
+    mul-float v6, v0, v4
 
     .line 229
-    .local v9, "sweepAngle":F
-    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRect:Landroid/graphics/RectF;
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->g:Landroid/graphics/RectF;
 
-    sub-float v1, v10, v7
+    sub-float v4, v3, v1
 
-    sub-float v2, v11, v7
+    sub-float v5, v2, v1
 
-    add-float v3, v10, v7
+    add-float/2addr v3, v1
 
-    add-float v4, v11, v7
+    add-float/2addr v1, v2
 
-    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v0, v4, v5, v3, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 230
-    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
 
-    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeSecondaryColor:I
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->s:I
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 231
-    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRect:Landroid/graphics/RectF;
+    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->g:Landroid/graphics/RectF;
 
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStartAngle:F
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->h:F
 
-    add-float v2, v0, v9
+    add-float v2, v0, v6
 
-    iget-boolean v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mReverse:Z
+    iget-boolean v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->t:Z
 
-    if-eqz v0, :cond_149
+    if-eqz v0, :cond_140
 
     const/16 v0, -0x168
 
-    :goto_124
+    :goto_11b
     int-to-float v0, v0
 
-    sub-float v3, v0, v9
+    sub-float v3, v0, v6
 
     const/4 v4, 0x0
 
-    iget-object v5, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v5, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
 
     move-object v0, p1
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
     .line 233
-    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
 
-    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColors:[I
+    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->r:[I
 
     const/4 v2, 0x0
 
@@ -693,1022 +602,47 @@
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 234
-    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRect:Landroid/graphics/RectF;
+    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->g:Landroid/graphics/RectF;
 
-    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStartAngle:F
+    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->h:F
 
     const/4 v4, 0x0
 
-    iget-object v5, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v5, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
 
     move-object v0, p1
 
-    move v3, v9
+    move v3, v6
 
     invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
 
-    goto/16 :goto_80
+    goto/16 :goto_7c
 
     .line 227
-    .end local v9    # "sweepAngle":F
-    :cond_146
+    :cond_13d
     const/16 v0, 0x168
 
-    goto :goto_ff
+    goto :goto_f8
 
     .line 231
-    .restart local v9    # "sweepAngle":F
-    :cond_149
+    :cond_140
     const/16 v0, 0x168
 
-    goto :goto_124
+    goto :goto_11b
 .end method
 
-.method private drawIndeterminate(Landroid/graphics/Canvas;)V
-    .registers 26
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
+.method static synthetic a(Lcom/rey/material/drawable/CircularProgressDrawable;)V
+    .registers 1
 
     .prologue
-    .line 250
-    move-object/from16 v0, p0
+    .line 25
+    invoke-direct {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->f()V
 
-    iget v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRunState:I
-
-    const/4 v5, 0x1
-
-    if-ne v4, v5, :cond_165
-
-    .line 251
-    invoke-virtual/range {p0 .. p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v10
-
-    .line 252
-    .local v10, "bounds":Landroid/graphics/Rect;
-    iget v4, v10, Landroid/graphics/Rect;->left:I
-
-    iget v5, v10, Landroid/graphics/Rect;->right:I
-
-    add-int/2addr v4, v5
-
-    int-to-float v4, v4
-
-    const/high16 v5, 0x40000000
-
-    div-float v20, v4, v5
-
-    .line 253
-    .local v20, "x":F
-    iget v4, v10, Landroid/graphics/Rect;->top:I
-
-    iget v5, v10, Landroid/graphics/Rect;->bottom:I
-
-    add-int/2addr v4, v5
-
-    int-to-float v4, v4
-
-    const/high16 v5, 0x40000000
-
-    div-float v21, v4, v5
-
-    .line 254
-    .local v21, "y":F
-    invoke-virtual {v10}, Landroid/graphics/Rect;->width()I
-
-    move-result v4
-
-    invoke-virtual {v10}, Landroid/graphics/Rect;->height()I
-
-    move-result v5
-
-    invoke-static {v4, v5}, Ljava/lang/Math;->min(II)I
-
-    move-result v4
-
-    move-object/from16 v0, p0
-
-    iget v5, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPadding:I
-
-    mul-int/lit8 v5, v5, 0x2
-
-    sub-int/2addr v4, v5
-
-    int-to-float v4, v4
-
-    const/high16 v5, 0x40000000
-
-    div-float v13, v4, v5
-
-    .line 256
-    .local v13, "maxRadius":F
-    const/high16 v4, 0x3f800000
-
-    move-object/from16 v0, p0
-
-    iget v5, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInStepPercent:F
-
-    move-object/from16 v0, p0
-
-    iget-object v6, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInColors:[I
-
-    array-length v6, v6
-
-    add-int/lit8 v6, v6, 0x2
-
-    int-to-float v6, v6
-
-    mul-float/2addr v5, v6
-
-    const/high16 v6, 0x3f800000
-
-    add-float/2addr v5, v6
-
-    div-float v17, v4, v5
-
-    .line 257
-    .local v17, "stepTime":F
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v4
-
-    move-object/from16 v0, p0
-
-    iget-wide v6, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastRunStateTime:J
-
-    sub-long/2addr v4, v6
-
-    long-to-float v4, v4
-
-    move-object/from16 v0, p0
-
-    iget v5, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInAnimationDuration:I
-
-    int-to-float v5, v5
-
-    div-float v19, v4, v5
-
-    .line 258
-    .local v19, "time":F
-    div-float v18, v19, v17
-
-    .line 260
-    .local v18, "steps":F
-    const/4 v14, 0x0
-
-    .line 261
-    .local v14, "outerRadius":F
-    const/4 v12, 0x0
-
-    .line 263
-    .local v12, "innerRadius":F
-    move/from16 v0, v18
-
-    float-to-double v4, v0
-
-    invoke-static {v4, v5}, Ljava/lang/Math;->floor(D)D
-
-    move-result-wide v4
-
-    double-to-int v11, v4
-
-    .local v11, "i":I
-    :goto_68
-    if-ltz v11, :cond_f4
-
-    .line 264
-    move v12, v14
-
-    .line 265
-    const/high16 v4, 0x3f800000
-
-    int-to-float v5, v11
-
-    sub-float v5, v18, v5
-
-    move-object/from16 v0, p0
-
-    iget v6, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInStepPercent:F
-
-    mul-float/2addr v5, v6
-
-    invoke-static {v4, v5}, Ljava/lang/Math;->min(FF)F
-
-    move-result v4
-
-    mul-float v14, v4, v13
-
-    .line 267
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInColors:[I
-
-    array-length v4, v4
-
-    if-lt v11, v4, :cond_85
-
-    .line 263
-    :goto_82
-    add-int/lit8 v11, v11, -0x1
-
-    goto :goto_68
-
-    .line 270
-    :cond_85
-    const/4 v4, 0x0
-
-    cmpl-float v4, v12, v4
-
-    if-nez v4, :cond_ae
-
-    .line 271
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInColors:[I
-
-    aget v5, v5, v11
-
-    invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 272
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
-
-    sget-object v5, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
-
-    invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
-
-    .line 273
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v0, p1
-
-    move/from16 v1, v20
-
-    move/from16 v2, v21
-
-    invoke-virtual {v0, v1, v2, v14, v4}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
-
-    goto :goto_82
-
-    .line 275
-    :cond_ae
-    cmpl-float v4, v14, v12
-
-    if-lez v4, :cond_f4
-
-    .line 276
-    add-float v4, v12, v14
-
-    const/high16 v5, 0x40000000
-
-    div-float v15, v4, v5
-
-    .line 277
-    .local v15, "radius":F
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRect:Landroid/graphics/RectF;
-
-    sub-float v5, v20, v15
-
-    sub-float v6, v21, v15
-
-    add-float v7, v20, v15
-
-    add-float v8, v21, v15
-
-    invoke-virtual {v4, v5, v6, v7, v8}, Landroid/graphics/RectF;->set(FFFF)V
-
-    .line 279
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
-
-    sub-float v5, v14, v12
-
-    invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setStrokeWidth(F)V
-
-    .line 280
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
-
-    sget-object v5, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
-
-    invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
-
-    .line 281
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInColors:[I
-
-    aget v5, v5, v11
-
-    invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 283
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v0, p1
-
-    move/from16 v1, v20
-
-    move/from16 v2, v21
-
-    invoke-virtual {v0, v1, v2, v15, v4}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
-
-    goto :goto_82
-
-    .line 289
-    .end local v15    # "radius":F
-    :cond_f4
-    move-object/from16 v0, p0
-
-    iget v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressState:I
-
-    const/4 v5, -0x1
-
-    if-ne v4, v5, :cond_115
-
-    .line 290
-    const/high16 v4, 0x3f800000
-
-    move-object/from16 v0, p0
-
-    iget v5, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInStepPercent:F
-
-    div-float/2addr v4, v5
-
-    cmpl-float v4, v18, v4
-
-    if-gez v4, :cond_10c
-
-    const/high16 v4, 0x3f800000
-
-    cmpl-float v4, v19, v4
-
-    if-ltz v4, :cond_114
-
-    .line 291
-    :cond_10c
-    invoke-direct/range {p0 .. p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->resetAnimation()V
-
-    .line 292
-    const/4 v4, 0x0
-
-    move-object/from16 v0, p0
-
-    iput v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressState:I
-
-    .line 336
-    .end local v10    # "bounds":Landroid/graphics/Rect;
-    .end local v11    # "i":I
-    .end local v12    # "innerRadius":F
-    .end local v13    # "maxRadius":F
-    .end local v14    # "outerRadius":F
-    .end local v17    # "stepTime":F
-    .end local v18    # "steps":F
-    .end local v19    # "time":F
-    .end local v20    # "x":F
-    .end local v21    # "y":F
-    :cond_114
-    :goto_114
     return-void
-
-    .line 296
-    .restart local v10    # "bounds":Landroid/graphics/Rect;
-    .restart local v11    # "i":I
-    .restart local v12    # "innerRadius":F
-    .restart local v13    # "maxRadius":F
-    .restart local v14    # "outerRadius":F
-    .restart local v17    # "stepTime":F
-    .restart local v18    # "steps":F
-    .restart local v19    # "time":F
-    .restart local v20    # "x":F
-    .restart local v21    # "y":F
-    :cond_115
-    move-object/from16 v0, p0
-
-    iget v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeSize:I
-
-    int-to-float v4, v4
-
-    const/high16 v5, 0x40000000
-
-    div-float/2addr v4, v5
-
-    sub-float v15, v13, v4
-
-    .line 298
-    .restart local v15    # "radius":F
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRect:Landroid/graphics/RectF;
-
-    sub-float v5, v20, v15
-
-    sub-float v6, v21, v15
-
-    add-float v7, v20, v15
-
-    add-float v8, v21, v15
-
-    invoke-virtual {v4, v5, v6, v7, v8}, Landroid/graphics/RectF;->set(FFFF)V
-
-    .line 299
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v0, p0
-
-    iget v5, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeSize:I
-
-    int-to-float v5, v5
-
-    invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setStrokeWidth(F)V
-
-    .line 300
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
-
-    sget-object v5, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
-
-    invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
-
-    .line 301
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
-
-    invoke-direct/range {p0 .. p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->getIndeterminateStrokeColor()I
-
-    move-result v5
-
-    invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 303
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRect:Landroid/graphics/RectF;
-
-    move-object/from16 v0, p0
-
-    iget v6, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStartAngle:F
-
-    move-object/from16 v0, p0
-
-    iget v7, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mSweepAngle:F
-
-    const/4 v8, 0x0
-
-    move-object/from16 v0, p0
-
-    iget-object v9, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v4, p1
-
-    invoke-virtual/range {v4 .. v9}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
-
-    goto :goto_114
-
-    .line 306
-    .end local v10    # "bounds":Landroid/graphics/Rect;
-    .end local v11    # "i":I
-    .end local v12    # "innerRadius":F
-    .end local v13    # "maxRadius":F
-    .end local v14    # "outerRadius":F
-    .end local v15    # "radius":F
-    .end local v17    # "stepTime":F
-    .end local v18    # "steps":F
-    .end local v19    # "time":F
-    .end local v20    # "x":F
-    .end local v21    # "y":F
-    :cond_165
-    move-object/from16 v0, p0
-
-    iget v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRunState:I
-
-    const/4 v5, 0x4
-
-    if-ne v4, v5, :cond_215
-
-    .line 307
-    move-object/from16 v0, p0
-
-    iget v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeSize:I
-
-    int-to-float v4, v4
-
-    const-wide/16 v6, 0x0
-
-    move-object/from16 v0, p0
-
-    iget v5, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mOutAnimationDuration:I
-
-    int-to-long v8, v5
-
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v22
-
-    sub-long v8, v8, v22
-
-    move-object/from16 v0, p0
-
-    iget-wide v0, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastRunStateTime:J
-
-    move-wide/from16 v22, v0
-
-    add-long v8, v8, v22
-
-    invoke-static {v6, v7, v8, v9}, Ljava/lang/Math;->max(JJ)J
-
-    move-result-wide v6
-
-    long-to-float v5, v6
-
-    mul-float/2addr v4, v5
-
-    move-object/from16 v0, p0
-
-    iget v5, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mOutAnimationDuration:I
-
-    int-to-float v5, v5
-
-    div-float v16, v4, v5
-
-    .line 309
-    .local v16, "size":F
-    const/4 v4, 0x0
-
-    cmpl-float v4, v16, v4
-
-    if-lez v4, :cond_114
-
-    .line 310
-    invoke-virtual/range {p0 .. p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v10
-
-    .line 311
-    .restart local v10    # "bounds":Landroid/graphics/Rect;
-    invoke-virtual {v10}, Landroid/graphics/Rect;->width()I
-
-    move-result v4
-
-    invoke-virtual {v10}, Landroid/graphics/Rect;->height()I
-
-    move-result v5
-
-    invoke-static {v4, v5}, Ljava/lang/Math;->min(II)I
-
-    move-result v4
-
-    move-object/from16 v0, p0
-
-    iget v5, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPadding:I
-
-    mul-int/lit8 v5, v5, 0x2
-
-    sub-int/2addr v4, v5
-
-    move-object/from16 v0, p0
-
-    iget v5, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeSize:I
-
-    mul-int/lit8 v5, v5, 0x2
-
-    sub-int/2addr v4, v5
-
-    int-to-float v4, v4
-
-    add-float v4, v4, v16
-
-    const/high16 v5, 0x40000000
-
-    div-float v15, v4, v5
-
-    .line 312
-    .restart local v15    # "radius":F
-    iget v4, v10, Landroid/graphics/Rect;->left:I
-
-    iget v5, v10, Landroid/graphics/Rect;->right:I
-
-    add-int/2addr v4, v5
-
-    int-to-float v4, v4
-
-    const/high16 v5, 0x40000000
-
-    div-float v20, v4, v5
-
-    .line 313
-    .restart local v20    # "x":F
-    iget v4, v10, Landroid/graphics/Rect;->top:I
-
-    iget v5, v10, Landroid/graphics/Rect;->bottom:I
-
-    add-int/2addr v4, v5
-
-    int-to-float v4, v4
-
-    const/high16 v5, 0x40000000
-
-    div-float v21, v4, v5
-
-    .line 315
-    .restart local v21    # "y":F
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRect:Landroid/graphics/RectF;
-
-    sub-float v5, v20, v15
-
-    sub-float v6, v21, v15
-
-    add-float v7, v20, v15
-
-    add-float v8, v21, v15
-
-    invoke-virtual {v4, v5, v6, v7, v8}, Landroid/graphics/RectF;->set(FFFF)V
-
-    .line 316
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
-
-    move/from16 v0, v16
-
-    invoke-virtual {v4, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
-
-    .line 317
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
-
-    sget-object v5, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
-
-    invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
-
-    .line 318
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
-
-    invoke-direct/range {p0 .. p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->getIndeterminateStrokeColor()I
-
-    move-result v5
-
-    invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 320
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRect:Landroid/graphics/RectF;
-
-    move-object/from16 v0, p0
-
-    iget v6, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStartAngle:F
-
-    move-object/from16 v0, p0
-
-    iget v7, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mSweepAngle:F
-
-    const/4 v8, 0x0
-
-    move-object/from16 v0, p0
-
-    iget-object v9, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v4, p1
-
-    invoke-virtual/range {v4 .. v9}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
-
-    goto/16 :goto_114
-
-    .line 323
-    .end local v10    # "bounds":Landroid/graphics/Rect;
-    .end local v15    # "radius":F
-    .end local v16    # "size":F
-    .end local v20    # "x":F
-    .end local v21    # "y":F
-    :cond_215
-    move-object/from16 v0, p0
-
-    iget v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRunState:I
-
-    if-eqz v4, :cond_114
-
-    .line 324
-    invoke-virtual/range {p0 .. p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->getBounds()Landroid/graphics/Rect;
-
-    move-result-object v10
-
-    .line 325
-    .restart local v10    # "bounds":Landroid/graphics/Rect;
-    invoke-virtual {v10}, Landroid/graphics/Rect;->width()I
-
-    move-result v4
-
-    invoke-virtual {v10}, Landroid/graphics/Rect;->height()I
-
-    move-result v5
-
-    invoke-static {v4, v5}, Ljava/lang/Math;->min(II)I
-
-    move-result v4
-
-    move-object/from16 v0, p0
-
-    iget v5, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPadding:I
-
-    mul-int/lit8 v5, v5, 0x2
-
-    sub-int/2addr v4, v5
-
-    move-object/from16 v0, p0
-
-    iget v5, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeSize:I
-
-    sub-int/2addr v4, v5
-
-    int-to-float v4, v4
-
-    const/high16 v5, 0x40000000
-
-    div-float v15, v4, v5
-
-    .line 326
-    .restart local v15    # "radius":F
-    iget v4, v10, Landroid/graphics/Rect;->left:I
-
-    iget v5, v10, Landroid/graphics/Rect;->right:I
-
-    add-int/2addr v4, v5
-
-    int-to-float v4, v4
-
-    const/high16 v5, 0x40000000
-
-    div-float v20, v4, v5
-
-    .line 327
-    .restart local v20    # "x":F
-    iget v4, v10, Landroid/graphics/Rect;->top:I
-
-    iget v5, v10, Landroid/graphics/Rect;->bottom:I
-
-    add-int/2addr v4, v5
-
-    int-to-float v4, v4
-
-    const/high16 v5, 0x40000000
-
-    div-float v21, v4, v5
-
-    .line 329
-    .restart local v21    # "y":F
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRect:Landroid/graphics/RectF;
-
-    sub-float v5, v20, v15
-
-    sub-float v6, v21, v15
-
-    add-float v7, v20, v15
-
-    add-float v8, v21, v15
-
-    invoke-virtual {v4, v5, v6, v7, v8}, Landroid/graphics/RectF;->set(FFFF)V
-
-    .line 330
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v0, p0
-
-    iget v5, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeSize:I
-
-    int-to-float v5, v5
-
-    invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setStrokeWidth(F)V
-
-    .line 331
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
-
-    sget-object v5, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
-
-    invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
-
-    .line 332
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
-
-    invoke-direct/range {p0 .. p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->getIndeterminateStrokeColor()I
-
-    move-result v5
-
-    invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 334
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRect:Landroid/graphics/RectF;
-
-    move-object/from16 v0, p0
-
-    iget v6, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStartAngle:F
-
-    move-object/from16 v0, p0
-
-    iget v7, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mSweepAngle:F
-
-    const/4 v8, 0x0
-
-    move-object/from16 v0, p0
-
-    iget-object v9, v0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v4, p1
-
-    invoke-virtual/range {v4 .. v9}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
-
-    goto/16 :goto_114
 .end method
 
-.method private getIndeterminateStrokeColor()I
-    .registers 9
-
-    .prologue
-    .line 240
-    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressState:I
-
-    const/4 v3, 0x3
-
-    if-ne v2, v3, :cond_b
-
-    iget-object v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColors:[I
-
-    array-length v2, v2
-
-    const/4 v3, 0x1
-
-    if-ne v2, v3, :cond_12
-
-    .line 241
-    :cond_b
-    iget-object v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColors:[I
-
-    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColorIndex:I
-
-    aget v2, v2, v3
-
-    .line 246
-    :goto_11
-    return v2
-
-    .line 243
-    :cond_12
-    const/4 v2, 0x0
-
-    const/high16 v3, 0x3f800000
-
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v4
-
-    iget-wide v6, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastProgressStateTime:J
-
-    sub-long/2addr v4, v6
-
-    long-to-float v4, v4
-
-    iget v5, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mKeepDuration:I
-
-    int-to-float v5, v5
-
-    div-float/2addr v4, v5
-
-    invoke-static {v3, v4}, Ljava/lang/Math;->min(FF)F
-
-    move-result v3
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->max(FF)F
-
-    move-result v1
-
-    .line 244
-    .local v1, "value":F
-    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColorIndex:I
-
-    if-nez v2, :cond_41
-
-    iget-object v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColors:[I
-
-    array-length v2, v2
-
-    add-int/lit8 v0, v2, -0x1
-
-    .line 246
-    .local v0, "prev_index":I
-    :goto_32
-    iget-object v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColors:[I
-
-    aget v2, v2, v0
-
-    iget-object v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColors:[I
-
-    iget v4, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColorIndex:I
-
-    aget v3, v3, v4
-
-    invoke-static {v2, v3, v1}, Lcom/rey/material/util/ColorUtil;->getMiddleColor(IIF)I
-
-    move-result v2
-
-    goto :goto_11
-
-    .line 244
-    .end local v0    # "prev_index":I
-    :cond_41
-    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColorIndex:I
-
-    add-int/lit8 v0, v2, -0x1
-
-    goto :goto_32
-.end method
-
-.method private resetAnimation()V
-    .registers 3
-
-    .prologue
-    .line 397
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v0
-
-    iput-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastUpdateTime:J
-
-    .line 398
-    iget-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastUpdateTime:J
-
-    iput-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastProgressStateTime:J
-
-    .line 399
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInitialAngle:F
-
-    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStartAngle:F
-
-    .line 400
-    const/4 v0, 0x0
-
-    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColorIndex:I
-
-    .line 401
-    iget-boolean v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mReverse:Z
-
-    if-eqz v0, :cond_1b
-
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mMinSweepAngle:F
-
-    neg-float v0, v0
-
-    :goto_18
-    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mSweepAngle:F
-
-    .line 402
-    return-void
-
-    .line 401
-    :cond_1b
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mMinSweepAngle:F
-
-    goto :goto_18
-.end method
-
-.method private start(Z)V
+.method private a(Z)V
     .registers 8
-    .param p1, "withAnimation"    # Z
 
     .prologue
     .line 415
@@ -1724,7 +658,7 @@
 
     .line 418
     :cond_7
-    invoke-direct {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->resetAnimation()V
+    invoke-direct {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->e()V
 
     .line 420
     if-eqz p1, :cond_18
@@ -1732,23 +666,23 @@
     .line 421
     const/4 v0, 0x1
 
-    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRunState:I
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->e:I
 
     .line 422
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastRunStateTime:J
+    iput-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->c:J
 
     .line 423
     const/4 v0, -0x1
 
-    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressState:I
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->d:I
 
     .line 426
     :cond_18
-    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mUpdater:Ljava/lang/Runnable;
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->D:Ljava/lang/Runnable;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -1766,9 +700,643 @@
     goto :goto_6
 .end method
 
-.method private stop(Z)V
+.method private b(Landroid/graphics/Canvas;)V
+    .registers 16
+
+    .prologue
+    .line 250
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->e:I
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_112
+
+    .line 251
+    invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v0
+
+    .line 252
+    iget v1, v0, Landroid/graphics/Rect;->left:I
+
+    iget v2, v0, Landroid/graphics/Rect;->right:I
+
+    add-int/2addr v1, v2
+
+    int-to-float v1, v1
+
+    const/high16 v2, 0x40000000    # 2.0f
+
+    div-float v3, v1, v2
+
+    .line 253
+    iget v1, v0, Landroid/graphics/Rect;->top:I
+
+    iget v2, v0, Landroid/graphics/Rect;->bottom:I
+
+    add-int/2addr v1, v2
+
+    int-to-float v1, v1
+
+    const/high16 v2, 0x40000000    # 2.0f
+
+    div-float v4, v1, v2
+
+    .line 254
+    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
+
+    move-result v1
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
+
+    move-result v0
+
+    invoke-static {v1, v0}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->k:I
+
+    mul-int/lit8 v1, v1, 0x2
+
+    sub-int/2addr v0, v1
+
+    int-to-float v0, v0
+
+    const/high16 v1, 0x40000000    # 2.0f
+
+    div-float v5, v0, v1
+
+    .line 256
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->x:F
+
+    iget-object v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->y:[I
+
+    array-length v2, v2
+
+    add-int/lit8 v2, v2, 0x2
+
+    int-to-float v2, v2
+
+    mul-float/2addr v1, v2
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    add-float/2addr v1, v2
+
+    div-float/2addr v0, v1
+
+    .line 257
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v6
+
+    iget-wide v8, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->c:J
+
+    sub-long/2addr v6, v8
+
+    long-to-float v1, v6
+
+    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->z:I
+
+    int-to-float v2, v2
+
+    div-float v6, v1, v2
+
+    .line 258
+    div-float v7, v6, v0
+
+    .line 260
+    const/4 v1, 0x0
+
+    .line 263
+    float-to-double v8, v7
+
+    invoke-static {v8, v9}, Ljava/lang/Math;->floor(D)D
+
+    move-result-wide v8
+
+    double-to-int v0, v8
+
+    :goto_58
+    if-ltz v0, :cond_be
+
+    .line 265
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    int-to-float v8, v0
+
+    sub-float v8, v7, v8
+
+    iget v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->x:F
+
+    mul-float/2addr v8, v9
+
+    invoke-static {v2, v8}, Ljava/lang/Math;->min(FF)F
+
+    move-result v2
+
+    mul-float/2addr v2, v5
+
+    .line 267
+    iget-object v8, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->y:[I
+
+    array-length v8, v8
+
+    if-lt v0, v8, :cond_70
+
+    .line 263
+    :goto_6c
+    add-int/lit8 v0, v0, -0x1
+
+    move v1, v2
+
+    goto :goto_58
+
+    .line 270
+    :cond_70
+    const/4 v8, 0x0
+
+    cmpl-float v8, v1, v8
+
+    if-nez v8, :cond_8b
+
+    .line 271
+    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
+
+    iget-object v8, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->y:[I
+
+    aget v8, v8, v0
+
+    invoke-virtual {v1, v8}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 272
+    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
+
+    sget-object v8, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v1, v8}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 273
+    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
+
+    invoke-virtual {p1, v3, v4, v2, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+
+    goto :goto_6c
+
+    .line 275
+    :cond_8b
+    cmpl-float v8, v2, v1
+
+    if-lez v8, :cond_be
+
+    .line 276
+    add-float v8, v1, v2
+
+    const/high16 v9, 0x40000000    # 2.0f
+
+    div-float/2addr v8, v9
+
+    .line 277
+    iget-object v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->g:Landroid/graphics/RectF;
+
+    sub-float v10, v3, v8
+
+    sub-float v11, v4, v8
+
+    add-float v12, v3, v8
+
+    add-float v13, v4, v8
+
+    invoke-virtual {v9, v10, v11, v12, v13}, Landroid/graphics/RectF;->set(FFFF)V
+
+    .line 279
+    iget-object v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
+
+    sub-float v1, v2, v1
+
+    invoke-virtual {v9, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+
+    .line 280
+    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
+
+    sget-object v9, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v1, v9}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 281
+    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
+
+    iget-object v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->y:[I
+
+    aget v9, v9, v0
+
+    invoke-virtual {v1, v9}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 283
+    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
+
+    invoke-virtual {p1, v3, v4, v8, v1}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+
+    goto :goto_6c
+
+    .line 289
+    :cond_be
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->d:I
+
+    const/4 v1, -0x1
+
+    if-ne v0, v1, :cond_d9
+
+    .line 290
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->x:F
+
+    div-float/2addr v0, v1
+
+    cmpl-float v0, v7, v0
+
+    if-gez v0, :cond_d2
+
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    cmpl-float v0, v6, v0
+
+    if-ltz v0, :cond_d8
+
+    .line 291
+    :cond_d2
+    invoke-direct {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->e()V
+
+    .line 292
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->d:I
+
+    .line 336
+    :cond_d8
+    :goto_d8
+    return-void
+
+    .line 296
+    :cond_d9
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->q:I
+
+    int-to-float v0, v0
+
+    const/high16 v1, 0x40000000    # 2.0f
+
+    div-float/2addr v0, v1
+
+    sub-float v0, v5, v0
+
+    .line 298
+    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->g:Landroid/graphics/RectF;
+
+    sub-float v2, v3, v0
+
+    sub-float v5, v4, v0
+
+    add-float/2addr v3, v0
+
+    add-float/2addr v0, v4
+
+    invoke-virtual {v1, v2, v5, v3, v0}, Landroid/graphics/RectF;->set(FFFF)V
+
+    .line 299
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
+
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->q:I
+
+    int-to-float v1, v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+
+    .line 300
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
+
+    sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 301
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
+
+    invoke-direct {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->d()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 303
+    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->g:Landroid/graphics/RectF;
+
+    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->h:F
+
+    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->i:F
+
+    const/4 v4, 0x0
+
+    iget-object v5, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
+
+    move-object v0, p1
+
+    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
+
+    goto :goto_d8
+
+    .line 306
+    :cond_112
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->e:I
+
+    const/4 v1, 0x4
+
+    if-ne v0, v1, :cond_196
+
+    .line 307
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->q:I
+
+    int-to-float v0, v0
+
+    const-wide/16 v2, 0x0
+
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->A:I
+
+    int-to-long v4, v1
+
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v6
+
+    sub-long/2addr v4, v6
+
+    iget-wide v6, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->c:J
+
+    add-long/2addr v4, v6
+
+    invoke-static {v2, v3, v4, v5}, Ljava/lang/Math;->max(JJ)J
+
+    move-result-wide v2
+
+    long-to-float v1, v2
+
+    mul-float/2addr v0, v1
+
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->A:I
+
+    int-to-float v1, v1
+
+    div-float/2addr v0, v1
+
+    .line 309
+    const/4 v1, 0x0
+
+    cmpl-float v1, v0, v1
+
+    if-lez v1, :cond_d8
+
+    .line 310
+    invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v1
+
+    .line 311
+    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
+
+    move-result v2
+
+    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
+
+    move-result v3
+
+    invoke-static {v2, v3}, Ljava/lang/Math;->min(II)I
+
+    move-result v2
+
+    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->k:I
+
+    mul-int/lit8 v3, v3, 0x2
+
+    sub-int/2addr v2, v3
+
+    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->q:I
+
+    mul-int/lit8 v3, v3, 0x2
+
+    sub-int/2addr v2, v3
+
+    int-to-float v2, v2
+
+    add-float/2addr v2, v0
+
+    const/high16 v3, 0x40000000    # 2.0f
+
+    div-float/2addr v2, v3
+
+    .line 312
+    iget v3, v1, Landroid/graphics/Rect;->left:I
+
+    iget v4, v1, Landroid/graphics/Rect;->right:I
+
+    add-int/2addr v3, v4
+
+    int-to-float v3, v3
+
+    const/high16 v4, 0x40000000    # 2.0f
+
+    div-float/2addr v3, v4
+
+    .line 313
+    iget v4, v1, Landroid/graphics/Rect;->top:I
+
+    iget v1, v1, Landroid/graphics/Rect;->bottom:I
+
+    add-int/2addr v1, v4
+
+    int-to-float v1, v1
+
+    const/high16 v4, 0x40000000    # 2.0f
+
+    div-float/2addr v1, v4
+
+    .line 315
+    iget-object v4, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->g:Landroid/graphics/RectF;
+
+    sub-float v5, v3, v2
+
+    sub-float v6, v1, v2
+
+    add-float/2addr v3, v2
+
+    add-float/2addr v1, v2
+
+    invoke-virtual {v4, v5, v6, v3, v1}, Landroid/graphics/RectF;->set(FFFF)V
+
+    .line 316
+    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
+
+    invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+
+    .line 317
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
+
+    sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 318
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
+
+    invoke-direct {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->d()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 320
+    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->g:Landroid/graphics/RectF;
+
+    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->h:F
+
+    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->i:F
+
+    const/4 v4, 0x0
+
+    iget-object v5, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
+
+    move-object v0, p1
+
+    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
+
+    goto/16 :goto_d8
+
+    .line 323
+    :cond_196
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->e:I
+
+    if-eqz v0, :cond_d8
+
+    .line 324
+    invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->getBounds()Landroid/graphics/Rect;
+
+    move-result-object v0
+
+    .line 325
+    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
+
+    move-result v1
+
+    invoke-virtual {v0}, Landroid/graphics/Rect;->height()I
+
+    move-result v2
+
+    invoke-static {v1, v2}, Ljava/lang/Math;->min(II)I
+
+    move-result v1
+
+    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->k:I
+
+    mul-int/lit8 v2, v2, 0x2
+
+    sub-int/2addr v1, v2
+
+    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->q:I
+
+    sub-int/2addr v1, v2
+
+    int-to-float v1, v1
+
+    const/high16 v2, 0x40000000    # 2.0f
+
+    div-float/2addr v1, v2
+
+    .line 326
+    iget v2, v0, Landroid/graphics/Rect;->left:I
+
+    iget v3, v0, Landroid/graphics/Rect;->right:I
+
+    add-int/2addr v2, v3
+
+    int-to-float v2, v2
+
+    const/high16 v3, 0x40000000    # 2.0f
+
+    div-float/2addr v2, v3
+
+    .line 327
+    iget v3, v0, Landroid/graphics/Rect;->top:I
+
+    iget v0, v0, Landroid/graphics/Rect;->bottom:I
+
+    add-int/2addr v0, v3
+
+    int-to-float v0, v0
+
+    const/high16 v3, 0x40000000    # 2.0f
+
+    div-float/2addr v0, v3
+
+    .line 329
+    iget-object v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->g:Landroid/graphics/RectF;
+
+    sub-float v4, v2, v1
+
+    sub-float v5, v0, v1
+
+    add-float/2addr v2, v1
+
+    add-float/2addr v0, v1
+
+    invoke-virtual {v3, v4, v5, v2, v0}, Landroid/graphics/RectF;->set(FFFF)V
+
+    .line 330
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
+
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->q:I
+
+    int-to-float v1, v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStrokeWidth(F)V
+
+    .line 331
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
+
+    sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 332
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
+
+    invoke-direct {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->d()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 334
+    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->g:Landroid/graphics/RectF;
+
+    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->h:F
+
+    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->i:F
+
+    const/4 v4, 0x0
+
+    iget-object v5, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
+
+    move-object v0, p1
+
+    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawArc(Landroid/graphics/RectF;FFZLandroid/graphics/Paint;)V
+
+    goto/16 :goto_d8
+.end method
+
+.method private b(Z)V
     .registers 8
-    .param p1, "withAnimation"    # Z
 
     .prologue
     .line 431
@@ -1791,17 +1359,17 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastRunStateTime:J
+    iput-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->c:J
 
     .line 436
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRunState:I
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->e:I
 
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_23
 
     .line 437
-    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mUpdater:Ljava/lang/Runnable;
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->D:Ljava/lang/Runnable;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
@@ -1820,7 +1388,7 @@
     :cond_23
     const/4 v0, 0x4
 
-    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRunState:I
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->e:I
 
     goto :goto_6
 
@@ -1828,10 +1396,10 @@
     :cond_27
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRunState:I
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->e:I
 
     .line 444
-    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mUpdater:Ljava/lang/Runnable;
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->D:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v0}, Lcom/rey/material/drawable/CircularProgressDrawable;->unscheduleSelf(Ljava/lang/Runnable;)V
 
@@ -1841,12 +1409,159 @@
     goto :goto_6
 .end method
 
-.method private update()V
+.method private d()I
+    .registers 7
+
+    .prologue
+    .line 240
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->d:I
+
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_b
+
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->r:[I
+
+    array-length v0, v0
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_12
+
+    .line 241
+    :cond_b
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->r:[I
+
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->j:I
+
+    aget v0, v0, v1
+
+    .line 246
+    :goto_11
+    return v0
+
+    .line 243
+    :cond_12
+    const/4 v0, 0x0
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v2
+
+    iget-wide v4, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->b:J
+
+    sub-long/2addr v2, v4
+
+    long-to-float v2, v2
+
+    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->w:I
+
+    int-to-float v3, v3
+
+    div-float/2addr v2, v3
+
+    invoke-static {v1, v2}, Ljava/lang/Math;->min(FF)F
+
+    move-result v1
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->max(FF)F
+
+    move-result v1
+
+    .line 244
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->j:I
+
+    if-nez v0, :cond_41
+
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->r:[I
+
+    array-length v0, v0
+
+    add-int/lit8 v0, v0, -0x1
+
+    .line 246
+    :goto_32
+    iget-object v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->r:[I
+
+    aget v0, v2, v0
+
+    iget-object v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->r:[I
+
+    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->j:I
+
+    aget v2, v2, v3
+
+    invoke-static {v0, v2, v1}, Lcom/rey/material/util/ColorUtil;->a(IIF)I
+
+    move-result v0
+
+    goto :goto_11
+
+    .line 244
+    :cond_41
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->j:I
+
+    add-int/lit8 v0, v0, -0x1
+
+    goto :goto_32
+.end method
+
+.method private e()V
+    .registers 3
+
+    .prologue
+    .line 397
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v0
+
+    iput-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->a:J
+
+    .line 398
+    iget-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->a:J
+
+    iput-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->b:J
+
+    .line 399
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->l:F
+
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->h:F
+
+    .line 400
+    const/4 v0, 0x0
+
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->j:I
+
+    .line 401
+    iget-boolean v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->t:Z
+
+    if-eqz v0, :cond_1b
+
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->p:F
+
+    neg-float v0, v0
+
+    :goto_18
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->i:F
+
+    .line 402
+    return-void
+
+    .line 401
+    :cond_1b
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->p:F
+
+    goto :goto_18
+.end method
+
+.method private f()V
     .registers 2
 
     .prologue
     .line 471
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressMode:I
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->B:I
 
     packed-switch v0, :pswitch_data_e
 
@@ -1856,13 +1571,13 @@
 
     .line 473
     :pswitch_6
-    invoke-direct {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->updateDeterminate()V
+    invoke-direct {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->g()V
 
     goto :goto_5
 
     .line 476
     :pswitch_a
-    invoke-direct {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->updateIndeterminate()V
+    invoke-direct {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->h()V
 
     goto :goto_5
 
@@ -1874,1159 +1589,1368 @@
     .end packed-switch
 .end method
 
-.method private updateDeterminate()V
-    .registers 9
+.method private g()V
+    .registers 7
 
     .prologue
     .line 482
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v0
+    move-result-wide v2
 
     .line 483
-    .local v0, "curTime":J
-    iget-wide v4, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastUpdateTime:J
+    iget-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->a:J
 
-    sub-long v4, v0, v4
+    sub-long v0, v2, v0
 
-    long-to-float v3, v4
+    long-to-float v0, v0
 
-    const/high16 v4, 0x43b40000
+    const/high16 v1, 0x43b40000    # 360.0f
 
-    mul-float/2addr v3, v4
+    mul-float/2addr v0, v1
 
-    iget v4, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRotateDuration:I
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->u:I
 
-    int-to-float v4, v4
+    int-to-float v1, v1
 
-    div-float v2, v3, v4
+    div-float/2addr v0, v1
 
     .line 484
-    .local v2, "rotateOffset":F
-    iget-boolean v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mReverse:Z
+    iget-boolean v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->t:Z
 
-    if-eqz v3, :cond_16
+    if-eqz v1, :cond_15
 
     .line 485
-    neg-float v2, v2
+    neg-float v0, v0
 
     .line 486
-    :cond_16
-    iput-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastUpdateTime:J
+    :cond_15
+    iput-wide v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->a:J
 
     .line 488
-    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStartAngle:F
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->h:F
 
-    add-float/2addr v3, v2
+    add-float/2addr v0, v1
 
-    iput v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStartAngle:F
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->h:F
 
     .line 490
-    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRunState:I
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->e:I
 
-    const/4 v4, 0x1
+    const/4 v1, 0x1
 
-    if-ne v3, v4, :cond_46
+    if-ne v0, v1, :cond_45
 
     .line 491
-    iget-wide v4, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastRunStateTime:J
+    iget-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->c:J
 
-    sub-long v4, v0, v4
+    sub-long v0, v2, v0
 
-    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInAnimationDuration:I
+    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->z:I
 
-    int-to-long v6, v3
+    int-to-long v2, v2
 
-    cmp-long v3, v4, v6
+    cmp-long v0, v0, v2
 
-    if-lez v3, :cond_30
+    if-lez v0, :cond_2f
 
     .line 492
-    const/4 v3, 0x3
+    const/4 v0, 0x3
 
-    iput v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRunState:I
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->e:I
 
     .line 502
-    :cond_30
+    :cond_2f
     invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->isRunning()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_42
+    if-eqz v0, :cond_41
 
     .line 503
-    iget-object v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mUpdater:Ljava/lang/Runnable;
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->D:Ljava/lang/Runnable;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v4
+    move-result-wide v2
 
-    const-wide/16 v6, 0x10
+    const-wide/16 v4, 0x10
 
-    add-long/2addr v4, v6
+    add-long/2addr v2, v4
 
-    invoke-virtual {p0, v3, v4, v5}, Lcom/rey/material/drawable/CircularProgressDrawable;->scheduleSelf(Ljava/lang/Runnable;J)V
+    invoke-virtual {p0, v0, v2, v3}, Lcom/rey/material/drawable/CircularProgressDrawable;->scheduleSelf(Ljava/lang/Runnable;J)V
 
     .line 505
-    :cond_42
+    :cond_41
     invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->invalidateSelf()V
 
     .line 506
-    :goto_45
+    :goto_44
     return-void
 
     .line 495
-    :cond_46
-    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRunState:I
+    :cond_45
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->e:I
 
-    const/4 v4, 0x4
+    const/4 v1, 0x4
 
-    if-ne v3, v4, :cond_30
+    if-ne v0, v1, :cond_2f
 
     .line 496
-    iget-wide v4, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastRunStateTime:J
+    iget-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->c:J
 
-    sub-long v4, v0, v4
+    sub-long v0, v2, v0
 
-    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mOutAnimationDuration:I
+    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->A:I
 
-    int-to-long v6, v3
+    int-to-long v2, v2
 
-    cmp-long v3, v4, v6
+    cmp-long v0, v0, v2
 
-    if-lez v3, :cond_30
+    if-lez v0, :cond_2f
 
     .line 497
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
-    invoke-direct {p0, v3}, Lcom/rey/material/drawable/CircularProgressDrawable;->stop(Z)V
+    invoke-direct {p0, v0}, Lcom/rey/material/drawable/CircularProgressDrawable;->b(Z)V
 
-    goto :goto_45
+    goto :goto_44
 .end method
 
-.method private updateIndeterminate()V
-    .registers 16
+.method private h()V
+    .registers 13
 
     .prologue
-    const/4 v14, 0x3
+    const/4 v11, 0x3
 
-    const/4 v13, 0x1
+    const/4 v10, 0x1
 
-    const/4 v12, 0x0
+    const/4 v9, 0x0
 
-    const/high16 v10, 0x3f800000
+    const/high16 v8, 0x3f800000    # 1.0f
 
     .line 510
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v0
+    move-result-wide v4
 
     .line 511
-    .local v0, "curTime":J
-    iget-wide v8, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastUpdateTime:J
+    iget-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->a:J
 
-    sub-long v8, v0, v8
+    sub-long v0, v4, v0
 
-    long-to-float v7, v8
+    long-to-float v0, v0
 
-    const/high16 v8, 0x43b40000
+    const/high16 v1, 0x43b40000    # 360.0f
 
-    mul-float/2addr v7, v8
+    mul-float/2addr v0, v1
 
-    iget v8, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRotateDuration:I
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->u:I
 
-    int-to-float v8, v8
+    int-to-float v1, v1
 
-    div-float v5, v7, v8
+    div-float/2addr v0, v1
 
     .line 512
-    .local v5, "rotateOffset":F
-    iget-boolean v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mReverse:Z
+    iget-boolean v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->t:Z
 
-    if-eqz v7, :cond_1b
+    if-eqz v1, :cond_1a
 
     .line 513
-    neg-float v5, v5
+    neg-float v0, v0
 
     .line 514
-    :cond_1b
-    iput-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastUpdateTime:J
+    :cond_1a
+    iput-wide v4, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->a:J
 
     .line 516
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressState:I
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->d:I
 
-    packed-switch v7, :pswitch_data_15a
+    packed-switch v1, :pswitch_data_158
 
     .line 582
-    :cond_22
-    :goto_22
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRunState:I
+    :cond_21
+    :goto_21
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->e:I
 
-    if-ne v7, v13, :cond_145
+    if-ne v0, v10, :cond_142
 
     .line 583
-    iget-wide v8, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastRunStateTime:J
+    iget-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->c:J
 
-    sub-long v8, v0, v8
+    sub-long v0, v4, v0
 
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInAnimationDuration:I
+    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->z:I
 
-    int-to-long v10, v7
+    int-to-long v2, v2
 
-    cmp-long v7, v8, v10
+    cmp-long v0, v0, v2
 
-    if-lez v7, :cond_3d
+    if-lez v0, :cond_3c
 
     .line 584
-    iput v14, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRunState:I
+    iput v11, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->e:I
 
     .line 585
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressState:I
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->d:I
 
-    const/4 v8, -0x1
+    const/4 v1, -0x1
 
-    if-ne v7, v8, :cond_3d
+    if-ne v0, v1, :cond_3c
 
     .line 586
-    invoke-direct {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->resetAnimation()V
+    invoke-direct {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->e()V
 
     .line 587
-    iput v12, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressState:I
+    iput v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->d:I
 
     .line 598
-    :cond_3d
+    :cond_3c
     invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->isRunning()Z
 
-    move-result v7
+    move-result v0
 
-    if-eqz v7, :cond_4f
+    if-eqz v0, :cond_4e
 
     .line 599
-    iget-object v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mUpdater:Ljava/lang/Runnable;
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->D:Ljava/lang/Runnable;
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v8
+    move-result-wide v2
 
-    const-wide/16 v10, 0x10
+    const-wide/16 v4, 0x10
 
-    add-long/2addr v8, v10
+    add-long/2addr v2, v4
 
-    invoke-virtual {p0, v7, v8, v9}, Lcom/rey/material/drawable/CircularProgressDrawable;->scheduleSelf(Ljava/lang/Runnable;J)V
+    invoke-virtual {p0, v0, v2, v3}, Lcom/rey/material/drawable/CircularProgressDrawable;->scheduleSelf(Ljava/lang/Runnable;J)V
 
     .line 601
-    :cond_4f
+    :cond_4e
     invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->invalidateSelf()V
 
     .line 602
-    :goto_52
+    :goto_51
     return-void
 
     .line 518
-    :pswitch_53
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mTransformDuration:I
+    :pswitch_52
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->v:I
 
-    if-gtz v7, :cond_6d
+    if-gtz v1, :cond_6c
 
     .line 519
-    iget-boolean v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mReverse:Z
+    iget-boolean v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->t:Z
 
-    if-eqz v7, :cond_6a
+    if-eqz v1, :cond_69
 
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mMinSweepAngle:F
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->p:F
 
-    neg-float v7, v7
+    neg-float v1, v1
 
-    :goto_5e
-    iput v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mSweepAngle:F
+    :goto_5d
+    iput v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->i:F
 
     .line 520
-    iput v13, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressState:I
+    iput v10, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->d:I
 
     .line 521
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStartAngle:F
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->h:F
 
-    add-float/2addr v7, v5
+    add-float/2addr v0, v1
 
-    iput v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStartAngle:F
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->h:F
 
     .line 522
-    iput-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastProgressStateTime:J
+    iput-wide v4, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->b:J
 
-    goto :goto_22
+    goto :goto_21
 
     .line 519
-    :cond_6a
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mMinSweepAngle:F
+    :cond_69
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->p:F
 
-    goto :goto_5e
+    goto :goto_5d
 
     .line 525
-    :cond_6d
-    iget-wide v8, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastProgressStateTime:J
+    :cond_6c
+    iget-wide v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->b:J
 
-    sub-long v8, v0, v8
+    sub-long v2, v4, v2
 
-    long-to-float v7, v8
+    long-to-float v1, v2
 
-    iget v8, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mTransformDuration:I
+    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->v:I
 
-    int-to-float v8, v8
+    int-to-float v2, v2
 
-    div-float v6, v7, v8
+    div-float v3, v1, v2
 
     .line 526
-    .local v6, "value":F
-    iget-boolean v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mReverse:Z
+    iget-boolean v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->t:Z
 
-    if-eqz v7, :cond_a1
+    if-eqz v1, :cond_a0
 
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mMaxSweepAngle:F
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->o:F
 
-    neg-float v2, v7
+    neg-float v1, v1
 
     .line 527
-    .local v2, "maxAngle":F
-    :goto_7e
-    iget-boolean v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mReverse:Z
+    :goto_7d
+    iget-boolean v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->t:Z
 
-    if-eqz v7, :cond_a4
+    if-eqz v2, :cond_a3
 
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mMinSweepAngle:F
+    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->p:F
 
-    neg-float v3, v7
+    neg-float v2, v2
 
     .line 529
-    .local v3, "minAngle":F
-    :goto_85
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStartAngle:F
+    :goto_84
+    iget v6, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->h:F
 
-    add-float/2addr v7, v5
+    add-float/2addr v0, v6
 
-    iput v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStartAngle:F
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->h:F
 
     .line 530
-    iget-object v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mTransformInterpolator:Landroid/view/animation/Interpolator;
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->C:Landroid/view/animation/Interpolator;
 
-    invoke-interface {v7, v6}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
+    invoke-interface {v0, v3}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
 
-    move-result v7
+    move-result v0
 
-    sub-float v8, v2, v3
+    sub-float v6, v1, v2
 
-    mul-float/2addr v7, v8
+    mul-float/2addr v0, v6
 
-    add-float/2addr v7, v3
+    add-float/2addr v0, v2
 
-    iput v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mSweepAngle:F
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->i:F
 
     .line 532
-    cmpl-float v7, v6, v10
+    cmpl-float v0, v3, v8
 
-    if-lez v7, :cond_22
+    if-lez v0, :cond_21
 
     .line 533
-    iput v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mSweepAngle:F
+    iput v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->i:F
 
     .line 534
-    iput v13, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressState:I
+    iput v10, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->d:I
 
     .line 535
-    iput-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastProgressStateTime:J
+    iput-wide v4, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->b:J
 
-    goto :goto_22
+    goto :goto_21
 
     .line 526
-    .end local v2    # "maxAngle":F
-    .end local v3    # "minAngle":F
-    :cond_a1
-    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mMaxSweepAngle:F
+    :cond_a0
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->o:F
 
-    goto :goto_7e
+    goto :goto_7d
 
     .line 527
-    .restart local v2    # "maxAngle":F
-    :cond_a4
-    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mMinSweepAngle:F
+    :cond_a3
+    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->p:F
 
-    goto :goto_85
+    goto :goto_84
 
     .line 540
-    .end local v2    # "maxAngle":F
-    .end local v6    # "value":F
-    :pswitch_a7
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStartAngle:F
+    :pswitch_a6
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->h:F
 
-    add-float/2addr v7, v5
+    add-float/2addr v0, v1
 
-    iput v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStartAngle:F
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->h:F
 
     .line 542
-    iget-wide v8, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastProgressStateTime:J
+    iget-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->b:J
 
-    sub-long v8, v0, v8
+    sub-long v0, v4, v0
 
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mKeepDuration:I
+    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->w:I
 
-    int-to-long v10, v7
+    int-to-long v2, v2
 
-    cmp-long v7, v8, v10
+    cmp-long v0, v0, v2
 
-    if-lez v7, :cond_22
+    if-lez v0, :cond_21
 
     .line 543
-    const/4 v7, 0x2
+    const/4 v0, 0x2
 
-    iput v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressState:I
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->d:I
 
     .line 544
-    iput-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastProgressStateTime:J
+    iput-wide v4, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->b:J
 
-    goto/16 :goto_22
+    goto/16 :goto_21
 
     .line 548
-    :pswitch_be
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mTransformDuration:I
+    :pswitch_bd
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->v:I
 
-    if-gtz v7, :cond_e3
+    if-gtz v1, :cond_e2
 
     .line 549
-    iget-boolean v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mReverse:Z
+    iget-boolean v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->t:Z
 
-    if-eqz v7, :cond_e0
+    if-eqz v1, :cond_df
 
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mMinSweepAngle:F
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->p:F
 
-    neg-float v7, v7
+    neg-float v1, v1
 
-    :goto_c9
-    iput v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mSweepAngle:F
+    :goto_c8
+    iput v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->i:F
 
     .line 550
-    iput v14, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressState:I
+    iput v11, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->d:I
 
     .line 551
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStartAngle:F
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->h:F
 
-    add-float/2addr v7, v5
+    add-float/2addr v0, v1
 
-    iput v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStartAngle:F
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->h:F
 
     .line 552
-    iput-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastProgressStateTime:J
+    iput-wide v4, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->b:J
 
     .line 553
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColorIndex:I
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->j:I
 
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    iget-object v8, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColors:[I
+    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->r:[I
 
-    array-length v8, v8
+    array-length v1, v1
 
-    rem-int/2addr v7, v8
+    rem-int/2addr v0, v1
 
-    iput v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColorIndex:I
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->j:I
 
-    goto/16 :goto_22
+    goto/16 :goto_21
 
     .line 549
-    :cond_e0
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mMinSweepAngle:F
+    :cond_df
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->p:F
 
-    goto :goto_c9
+    goto :goto_c8
 
     .line 556
-    :cond_e3
-    iget-wide v8, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastProgressStateTime:J
+    :cond_e2
+    iget-wide v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->b:J
 
-    sub-long v8, v0, v8
+    sub-long v2, v4, v2
 
-    long-to-float v7, v8
+    long-to-float v1, v2
 
-    iget v8, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mTransformDuration:I
+    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->v:I
 
-    int-to-float v8, v8
+    int-to-float v2, v2
 
-    div-float v6, v7, v8
+    div-float v3, v1, v2
 
     .line 557
-    .restart local v6    # "value":F
-    iget-boolean v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mReverse:Z
+    iget-boolean v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->t:Z
 
-    if-eqz v7, :cond_129
+    if-eqz v1, :cond_126
 
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mMaxSweepAngle:F
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->o:F
 
-    neg-float v2, v7
+    neg-float v1, v1
 
     .line 558
-    .restart local v2    # "maxAngle":F
-    :goto_f4
-    iget-boolean v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mReverse:Z
+    :goto_f3
+    iget-boolean v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->t:Z
 
-    if-eqz v7, :cond_12c
+    if-eqz v2, :cond_129
 
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mMinSweepAngle:F
+    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->p:F
 
-    neg-float v3, v7
+    neg-float v2, v2
 
     .line 560
-    .restart local v3    # "minAngle":F
-    :goto_fb
-    iget-object v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mTransformInterpolator:Landroid/view/animation/Interpolator;
+    :goto_fa
+    iget-object v6, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->C:Landroid/view/animation/Interpolator;
 
-    invoke-interface {v7, v6}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
+    invoke-interface {v6, v3}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
 
-    move-result v7
+    move-result v6
 
-    sub-float v7, v10, v7
+    sub-float v6, v8, v6
 
-    sub-float v8, v2, v3
+    sub-float/2addr v1, v2
 
-    mul-float/2addr v7, v8
+    mul-float/2addr v1, v6
 
-    add-float v4, v7, v3
+    add-float/2addr v1, v2
 
     .line 561
-    .local v4, "newSweepAngle":F
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStartAngle:F
+    iget v6, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->h:F
 
-    iget v8, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mSweepAngle:F
+    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->i:F
 
-    add-float/2addr v8, v5
+    add-float/2addr v0, v7
 
-    sub-float/2addr v8, v4
+    sub-float/2addr v0, v1
 
-    add-float/2addr v7, v8
+    add-float/2addr v0, v6
 
-    iput v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStartAngle:F
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->h:F
 
     .line 562
-    iput v4, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mSweepAngle:F
+    iput v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->i:F
 
     .line 564
-    cmpl-float v7, v6, v10
+    cmpl-float v0, v3, v8
 
-    if-lez v7, :cond_22
+    if-lez v0, :cond_21
 
     .line 565
-    iput v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mSweepAngle:F
+    iput v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->i:F
 
     .line 566
-    iput v14, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressState:I
+    iput v11, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->d:I
 
     .line 567
-    iput-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastProgressStateTime:J
+    iput-wide v4, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->b:J
 
     .line 568
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColorIndex:I
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->j:I
 
-    add-int/lit8 v7, v7, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    iget-object v8, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColors:[I
+    iget-object v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->r:[I
 
-    array-length v8, v8
+    array-length v1, v1
 
-    rem-int/2addr v7, v8
+    rem-int/2addr v0, v1
 
-    iput v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColorIndex:I
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->j:I
 
-    goto/16 :goto_22
+    goto/16 :goto_21
 
     .line 557
-    .end local v2    # "maxAngle":F
-    .end local v3    # "minAngle":F
-    .end local v4    # "newSweepAngle":F
-    :cond_129
-    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mMaxSweepAngle:F
+    :cond_126
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->o:F
 
-    goto :goto_f4
+    goto :goto_f3
 
     .line 558
-    .restart local v2    # "maxAngle":F
-    :cond_12c
-    iget v3, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mMinSweepAngle:F
+    :cond_129
+    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->p:F
 
-    goto :goto_fb
+    goto :goto_fa
 
     .line 573
-    .end local v2    # "maxAngle":F
-    .end local v6    # "value":F
-    :pswitch_12f
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStartAngle:F
+    :pswitch_12c
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->h:F
 
-    add-float/2addr v7, v5
+    add-float/2addr v0, v1
 
-    iput v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStartAngle:F
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->h:F
 
     .line 575
-    iget-wide v8, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastProgressStateTime:J
+    iget-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->b:J
 
-    sub-long v8, v0, v8
+    sub-long v0, v4, v0
 
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mKeepDuration:I
+    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->w:I
 
-    int-to-long v10, v7
+    int-to-long v2, v2
 
-    cmp-long v7, v8, v10
+    cmp-long v0, v0, v2
 
-    if-lez v7, :cond_22
+    if-lez v0, :cond_21
 
     .line 576
-    iput v12, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressState:I
+    iput v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->d:I
 
     .line 577
-    iput-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastProgressStateTime:J
+    iput-wide v4, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->b:J
 
-    goto/16 :goto_22
+    goto/16 :goto_21
 
     .line 591
-    :cond_145
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRunState:I
+    :cond_142
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->e:I
 
-    const/4 v8, 0x4
+    const/4 v1, 0x4
 
-    if-ne v7, v8, :cond_3d
+    if-ne v0, v1, :cond_3c
 
     .line 592
-    iget-wide v8, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mLastRunStateTime:J
+    iget-wide v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->c:J
 
-    sub-long v8, v0, v8
+    sub-long v0, v4, v0
 
-    iget v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mOutAnimationDuration:I
+    iget v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->A:I
 
-    int-to-long v10, v7
+    int-to-long v2, v2
 
-    cmp-long v7, v8, v10
+    cmp-long v0, v0, v2
 
-    if-lez v7, :cond_3d
+    if-lez v0, :cond_3c
 
     .line 593
-    invoke-direct {p0, v12}, Lcom/rey/material/drawable/CircularProgressDrawable;->stop(Z)V
+    invoke-direct {p0, v9}, Lcom/rey/material/drawable/CircularProgressDrawable;->b(Z)V
 
-    goto/16 :goto_52
+    goto/16 :goto_51
 
     .line 516
-    :pswitch_data_15a
+    nop
+
+    :pswitch_data_158
     .packed-switch 0x0
-        :pswitch_53
-        :pswitch_a7
-        :pswitch_be
-        :pswitch_12f
+        :pswitch_52
+        :pswitch_a6
+        :pswitch_bd
+        :pswitch_12c
     .end packed-switch
 .end method
 
 
 # virtual methods
-.method public applyStyle(Landroid/content/Context;I)V
-    .registers 16
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "resId"    # I
+.method public a()I
+    .registers 2
 
     .prologue
-    const/4 v12, 0x0
+    .line 354
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->B:I
 
-    const/4 v11, 0x0
+    return v0
+.end method
 
-    .line 103
-    sget-object v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable:[I
+.method public a(F)V
+    .registers 5
 
-    invoke-virtual {p1, p2, v9}, Landroid/content/Context;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
+    .prologue
+    const/4 v2, 0x0
 
-    move-result-object v0
+    .line 373
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 105
-    .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v5, 0x0
-
-    .line 106
-    .local v5, "strokeColor":I
-    const/4 v6, 0x0
-
-    .line 107
-    .local v6, "strokeColorDefined":Z
-    const/4 v7, 0x0
-
-    .line 109
-    .local v7, "strokeColors":[I
-    const/4 v3, 0x0
-
-    .local v3, "i":I
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->getIndexCount()I
-
-    move-result v2
-
-    .local v2, "count":I
-    :goto_10
-    if-ge v3, v2, :cond_149
-
-    .line 110
-    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->getIndex(I)I
+    invoke-static {v2, p1}, Ljava/lang/Math;->max(FF)F
 
     move-result v1
 
-    .line 112
-    .local v1, "attr":I
-    sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_cpd_padding:I
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(FF)F
 
-    if-ne v1, v9, :cond_23
+    move-result v0
 
-    .line 113
-    invoke-virtual {v0, v1, v11}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    .line 374
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->m:F
 
-    move-result v9
+    cmpl-float v1, v1, v0
 
-    iput v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPadding:I
+    if-eqz v1, :cond_1c
+
+    .line 375
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->m:F
+
+    .line 376
+    invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->isRunning()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1d
+
+    .line 377
+    invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->invalidateSelf()V
+
+    .line 381
+    :cond_1c
+    :goto_1c
+    return-void
+
+    .line 378
+    :cond_1d
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->m:F
+
+    cmpl-float v0, v0, v2
+
+    if-eqz v0, :cond_1c
+
+    .line 379
+    invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->start()V
+
+    goto :goto_1c
+.end method
+
+.method public a(I)V
+    .registers 3
+
+    .prologue
+    .line 358
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->B:I
+
+    if-eq v0, p1, :cond_9
+
+    .line 359
+    iput p1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->B:I
+
+    .line 360
+    invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->invalidateSelf()V
+
+    .line 362
+    :cond_9
+    return-void
+.end method
+
+.method public a(Landroid/content/Context;I)V
+    .registers 16
+
+    .prologue
+    const/4 v4, 0x1
+
+    const/4 v12, 0x0
+
+    const/4 v1, 0x0
+
+    .line 103
+    sget-object v0, Lcom/rey/material/R$styleable;->CircularProgressDrawable:[I
+
+    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
+
+    move-result-object v7
+
+    .line 107
+    const/4 v0, 0x0
 
     .line 109
-    :cond_20
-    :goto_20
-    add-int/lit8 v3, v3, 0x1
+    invoke-virtual {v7}, Landroid/content/res/TypedArray;->getIndexCount()I
 
-    goto :goto_10
+    move-result v8
+
+    move v6, v1
+
+    move v3, v1
+
+    move v5, v1
+
+    :goto_11
+    if-ge v6, v8, :cond_176
+
+    .line 110
+    invoke-virtual {v7, v6}, Landroid/content/res/TypedArray;->getIndex(I)I
+
+    move-result v2
+
+    .line 112
+    sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_cpd_padding:I
+
+    if-ne v2, v9, :cond_29
+
+    .line 113
+    invoke-virtual {v7, v2, v1}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+
+    move-result v2
+
+    iput v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->k:I
+
+    move v2, v3
+
+    move v3, v5
+
+    .line 109
+    :goto_23
+    add-int/lit8 v5, v6, 0x1
+
+    move v6, v5
+
+    move v5, v3
+
+    move v3, v2
+
+    goto :goto_11
 
     .line 114
-    :cond_23
+    :cond_29
     sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_cpd_initialAngle:I
 
-    if-ne v1, v9, :cond_2f
+    if-ne v2, v9, :cond_37
 
     .line 115
-    invoke-virtual {v0, v1, v11}, Landroid/content/res/TypedArray;->getInteger(II)I
+    invoke-virtual {v7, v2, v1}, Landroid/content/res/TypedArray;->getInteger(II)I
 
-    move-result v9
+    move-result v2
 
-    int-to-float v9, v9
+    int-to-float v2, v2
 
-    iput v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInitialAngle:F
+    iput v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->l:F
 
-    goto :goto_20
+    move v2, v3
+
+    move v3, v5
+
+    goto :goto_23
 
     .line 116
-    :cond_2f
+    :cond_37
     sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_pv_progress:I
 
-    if-ne v1, v9, :cond_3b
+    if-ne v2, v9, :cond_45
 
     .line 117
-    invoke-virtual {v0, v1, v12}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {v7, v2, v12}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
-    move-result v9
+    move-result v2
 
-    invoke-virtual {p0, v9}, Lcom/rey/material/drawable/CircularProgressDrawable;->setProgress(F)V
+    invoke-virtual {p0, v2}, Lcom/rey/material/drawable/CircularProgressDrawable;->a(F)V
 
-    goto :goto_20
+    move v2, v3
+
+    move v3, v5
+
+    goto :goto_23
 
     .line 118
-    :cond_3b
+    :cond_45
     sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_pv_secondaryProgress:I
 
-    if-ne v1, v9, :cond_47
+    if-ne v2, v9, :cond_53
 
     .line 119
-    invoke-virtual {v0, v1, v12}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {v7, v2, v12}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
-    move-result v9
+    move-result v2
 
-    invoke-virtual {p0, v9}, Lcom/rey/material/drawable/CircularProgressDrawable;->setSecondaryProgress(F)V
+    invoke-virtual {p0, v2}, Lcom/rey/material/drawable/CircularProgressDrawable;->b(F)V
 
-    goto :goto_20
+    move v2, v3
+
+    move v3, v5
+
+    goto :goto_23
 
     .line 120
-    :cond_47
+    :cond_53
     sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_cpd_maxSweepAngle:I
 
-    if-ne v1, v9, :cond_53
+    if-ne v2, v9, :cond_61
 
     .line 121
-    invoke-virtual {v0, v1, v11}, Landroid/content/res/TypedArray;->getInteger(II)I
+    invoke-virtual {v7, v2, v1}, Landroid/content/res/TypedArray;->getInteger(II)I
 
-    move-result v9
+    move-result v2
 
-    int-to-float v9, v9
+    int-to-float v2, v2
 
-    iput v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mMaxSweepAngle:F
+    iput v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->o:F
 
-    goto :goto_20
+    move v2, v3
+
+    move v3, v5
+
+    goto :goto_23
 
     .line 122
-    :cond_53
+    :cond_61
     sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_cpd_minSweepAngle:I
 
-    if-ne v1, v9, :cond_5f
+    if-ne v2, v9, :cond_6f
 
     .line 123
-    invoke-virtual {v0, v1, v11}, Landroid/content/res/TypedArray;->getInteger(II)I
+    invoke-virtual {v7, v2, v1}, Landroid/content/res/TypedArray;->getInteger(II)I
 
-    move-result v9
+    move-result v2
 
-    int-to-float v9, v9
+    int-to-float v2, v2
 
-    iput v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mMinSweepAngle:F
+    iput v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->p:F
 
-    goto :goto_20
+    move v2, v3
+
+    move v3, v5
+
+    goto :goto_23
 
     .line 124
-    :cond_5f
+    :cond_6f
     sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_cpd_strokeSize:I
 
-    if-ne v1, v9, :cond_6a
+    if-ne v2, v9, :cond_7c
 
     .line 125
-    invoke-virtual {v0, v1, v11}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v7, v2, v1}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    move-result v9
+    move-result v2
 
-    iput v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeSize:I
+    iput v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->q:I
 
-    goto :goto_20
+    move v2, v3
+
+    move v3, v5
+
+    goto :goto_23
 
     .line 126
-    :cond_6a
+    :cond_7c
     sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_cpd_strokeColor:I
 
-    if-ne v1, v9, :cond_74
+    if-ne v2, v9, :cond_87
 
     .line 127
-    invoke-virtual {v0, v1, v11}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-virtual {v7, v2, v1}, Landroid/content/res/TypedArray;->getColor(II)I
 
-    move-result v5
+    move-result v2
+
+    move v3, v2
+
+    move v2, v4
 
     .line 128
-    const/4 v6, 0x1
-
-    goto :goto_20
+    goto :goto_23
 
     .line 130
-    :cond_74
+    :cond_87
     sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_cpd_strokeColors:I
 
-    if-ne v1, v9, :cond_9e
+    if-ne v2, v9, :cond_b5
 
     .line 131
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
+    move-result-object v0
+
+    invoke-virtual {v7, v2, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v2
+
+    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->obtainTypedArray(I)Landroid/content/res/TypedArray;
+
     move-result-object v9
 
-    invoke-virtual {v0, v1, v11}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    .line 132
+    invoke-virtual {v9}, Landroid/content/res/TypedArray;->length()I
+
+    move-result v0
+
+    new-array v2, v0, [I
+
+    move v0, v1
+
+    .line 133
+    :goto_9e
+    invoke-virtual {v9}, Landroid/content/res/TypedArray;->length()I
 
     move-result v10
 
-    invoke-virtual {v9, v10}, Landroid/content/res/Resources;->obtainTypedArray(I)Landroid/content/res/TypedArray;
-
-    move-result-object v8
-
-    .line 132
-    .local v8, "ta":Landroid/content/res/TypedArray;
-    invoke-virtual {v8}, Landroid/content/res/TypedArray;->length()I
-
-    move-result v9
-
-    new-array v7, v9, [I
-
-    .line 133
-    const/4 v4, 0x0
-
-    .local v4, "j":I
-    :goto_8b
-    invoke-virtual {v8}, Landroid/content/res/TypedArray;->length()I
-
-    move-result v9
-
-    if-ge v4, v9, :cond_9a
+    if-ge v0, v10, :cond_ad
 
     .line 134
-    invoke-virtual {v8, v4, v11}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-virtual {v9, v0, v1}, Landroid/content/res/TypedArray;->getColor(II)I
 
-    move-result v9
+    move-result v10
 
-    aput v9, v7, v4
+    aput v10, v2, v0
 
     .line 133
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    goto :goto_8b
+    goto :goto_9e
 
     .line 135
-    :cond_9a
-    invoke-virtual {v8}, Landroid/content/res/TypedArray;->recycle()V
+    :cond_ad
+    invoke-virtual {v9}, Landroid/content/res/TypedArray;->recycle()V
 
-    goto :goto_20
+    move-object v0, v2
+
+    move v2, v3
+
+    move v3, v5
+
+    .line 136
+    goto/16 :goto_23
 
     .line 137
-    .end local v4    # "j":I
-    .end local v8    # "ta":Landroid/content/res/TypedArray;
-    :cond_9e
+    :cond_b5
     sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_cpd_strokeSecondaryColor:I
 
-    if-ne v1, v9, :cond_aa
+    if-ne v2, v9, :cond_c3
 
     .line 138
-    invoke-virtual {v0, v1, v11}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-virtual {v7, v2, v1}, Landroid/content/res/TypedArray;->getColor(II)I
 
-    move-result v9
+    move-result v2
 
-    iput v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeSecondaryColor:I
+    iput v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->s:I
 
-    goto/16 :goto_20
+    move v2, v3
+
+    move v3, v5
+
+    goto/16 :goto_23
 
     .line 139
-    :cond_aa
+    :cond_c3
     sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_cpd_reverse:I
 
-    if-ne v1, v9, :cond_b6
+    if-ne v2, v9, :cond_d1
 
     .line 140
-    invoke-virtual {v0, v1, v11}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {v7, v2, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    move-result v9
+    move-result v2
 
-    iput-boolean v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mReverse:Z
+    iput-boolean v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->t:Z
 
-    goto/16 :goto_20
+    move v2, v3
+
+    move v3, v5
+
+    goto/16 :goto_23
 
     .line 141
-    :cond_b6
+    :cond_d1
     sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_cpd_rotateDuration:I
 
-    if-ne v1, v9, :cond_c2
+    if-ne v2, v9, :cond_df
 
     .line 142
-    invoke-virtual {v0, v1, v11}, Landroid/content/res/TypedArray;->getInteger(II)I
+    invoke-virtual {v7, v2, v1}, Landroid/content/res/TypedArray;->getInteger(II)I
 
-    move-result v9
+    move-result v2
 
-    iput v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRotateDuration:I
+    iput v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->u:I
 
-    goto/16 :goto_20
+    move v2, v3
+
+    move v3, v5
+
+    goto/16 :goto_23
 
     .line 143
-    :cond_c2
+    :cond_df
     sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_cpd_transformDuration:I
 
-    if-ne v1, v9, :cond_ce
+    if-ne v2, v9, :cond_ed
 
     .line 144
-    invoke-virtual {v0, v1, v11}, Landroid/content/res/TypedArray;->getInteger(II)I
+    invoke-virtual {v7, v2, v1}, Landroid/content/res/TypedArray;->getInteger(II)I
 
-    move-result v9
+    move-result v2
 
-    iput v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mTransformDuration:I
+    iput v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->v:I
 
-    goto/16 :goto_20
+    move v2, v3
+
+    move v3, v5
+
+    goto/16 :goto_23
 
     .line 145
-    :cond_ce
+    :cond_ed
     sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_cpd_keepDuration:I
 
-    if-ne v1, v9, :cond_da
+    if-ne v2, v9, :cond_fb
 
     .line 146
-    invoke-virtual {v0, v1, v11}, Landroid/content/res/TypedArray;->getInteger(II)I
+    invoke-virtual {v7, v2, v1}, Landroid/content/res/TypedArray;->getInteger(II)I
 
-    move-result v9
+    move-result v2
 
-    iput v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mKeepDuration:I
+    iput v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->w:I
 
-    goto/16 :goto_20
+    move v2, v3
+
+    move v3, v5
+
+    goto/16 :goto_23
 
     .line 147
-    :cond_da
+    :cond_fb
     sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_cpd_transformInterpolator:I
 
-    if-ne v1, v9, :cond_ea
+    if-ne v2, v9, :cond_10d
 
     .line 148
-    invoke-virtual {v0, v1, v11}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {v7, v2, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    move-result v9
+    move-result v2
 
-    invoke-static {p1, v9}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
+    invoke-static {p1, v2}, Landroid/view/animation/AnimationUtils;->loadInterpolator(Landroid/content/Context;I)Landroid/view/animation/Interpolator;
 
-    move-result-object v9
+    move-result-object v2
 
-    iput-object v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mTransformInterpolator:Landroid/view/animation/Interpolator;
+    iput-object v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->C:Landroid/view/animation/Interpolator;
 
-    goto/16 :goto_20
+    move v2, v3
+
+    move v3, v5
+
+    goto/16 :goto_23
 
     .line 149
-    :cond_ea
+    :cond_10d
     sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_pv_progressMode:I
 
-    if-ne v1, v9, :cond_f6
+    if-ne v2, v9, :cond_11b
 
     .line 150
-    invoke-virtual {v0, v1, v11}, Landroid/content/res/TypedArray;->getInteger(II)I
+    invoke-virtual {v7, v2, v1}, Landroid/content/res/TypedArray;->getInteger(II)I
 
-    move-result v9
+    move-result v2
 
-    iput v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressMode:I
+    iput v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->B:I
 
-    goto/16 :goto_20
+    move v2, v3
+
+    move v3, v5
+
+    goto/16 :goto_23
 
     .line 151
-    :cond_f6
+    :cond_11b
     sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_cpd_inAnimDuration:I
 
-    if-ne v1, v9, :cond_102
+    if-ne v2, v9, :cond_129
 
     .line 152
-    invoke-virtual {v0, v1, v11}, Landroid/content/res/TypedArray;->getInteger(II)I
+    invoke-virtual {v7, v2, v1}, Landroid/content/res/TypedArray;->getInteger(II)I
 
-    move-result v9
+    move-result v2
 
-    iput v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInAnimationDuration:I
+    iput v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->z:I
 
-    goto/16 :goto_20
+    move v2, v3
+
+    move v3, v5
+
+    goto/16 :goto_23
 
     .line 153
-    :cond_102
+    :cond_129
     sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_cpd_inStepColors:I
 
-    if-ne v1, v9, :cond_131
+    if-ne v2, v9, :cond_15a
 
     .line 154
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v9
 
-    invoke-virtual {v0, v1, v11}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {v7, v2, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    move-result v10
+    move-result v2
 
-    invoke-virtual {v9, v10}, Landroid/content/res/Resources;->obtainTypedArray(I)Landroid/content/res/TypedArray;
+    invoke-virtual {v9, v2}, Landroid/content/res/Resources;->obtainTypedArray(I)Landroid/content/res/TypedArray;
 
-    move-result-object v8
+    move-result-object v9
 
     .line 155
-    .restart local v8    # "ta":Landroid/content/res/TypedArray;
-    invoke-virtual {v8}, Landroid/content/res/TypedArray;->length()I
+    invoke-virtual {v9}, Landroid/content/res/TypedArray;->length()I
 
-    move-result v9
+    move-result v2
 
-    new-array v9, v9, [I
+    new-array v2, v2, [I
 
-    iput-object v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInColors:[I
+    iput-object v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->y:[I
+
+    move v2, v1
 
     .line 156
-    const/4 v4, 0x0
-
-    .restart local v4    # "j":I
-    :goto_11b
-    invoke-virtual {v8}, Landroid/content/res/TypedArray;->length()I
-
-    move-result v9
-
-    if-ge v4, v9, :cond_12c
-
-    .line 157
-    iget-object v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInColors:[I
-
-    invoke-virtual {v8, v4, v11}, Landroid/content/res/TypedArray;->getColor(II)I
+    :goto_142
+    invoke-virtual {v9}, Landroid/content/res/TypedArray;->length()I
 
     move-result v10
 
-    aput v10, v9, v4
+    if-ge v2, v10, :cond_153
+
+    .line 157
+    iget-object v10, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->y:[I
+
+    invoke-virtual {v9, v2, v1}, Landroid/content/res/TypedArray;->getColor(II)I
+
+    move-result v11
+
+    aput v11, v10, v2
 
     .line 156
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v2, v2, 0x1
 
-    goto :goto_11b
+    goto :goto_142
 
     .line 158
-    :cond_12c
-    invoke-virtual {v8}, Landroid/content/res/TypedArray;->recycle()V
+    :cond_153
+    invoke-virtual {v9}, Landroid/content/res/TypedArray;->recycle()V
 
-    goto/16 :goto_20
+    move v2, v3
+
+    move v3, v5
+
+    .line 159
+    goto/16 :goto_23
 
     .line 160
-    .end local v4    # "j":I
-    .end local v8    # "ta":Landroid/content/res/TypedArray;
-    :cond_131
+    :cond_15a
     sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_cpd_inStepPercent:I
 
-    if-ne v1, v9, :cond_13d
+    if-ne v2, v9, :cond_168
 
     .line 161
-    invoke-virtual {v0, v1, v12}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-virtual {v7, v2, v12}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
-    move-result v9
+    move-result v2
 
-    iput v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInStepPercent:F
+    iput v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->x:F
 
-    goto/16 :goto_20
+    move v2, v3
+
+    move v3, v5
+
+    goto/16 :goto_23
 
     .line 162
-    :cond_13d
+    :cond_168
     sget v9, Lcom/rey/material/R$styleable;->CircularProgressDrawable_cpd_outAnimDuration:I
 
-    if-ne v1, v9, :cond_20
+    if-ne v2, v9, :cond_172
 
     .line 163
-    invoke-virtual {v0, v1, v11}, Landroid/content/res/TypedArray;->getInteger(II)I
+    invoke-virtual {v7, v2, v1}, Landroid/content/res/TypedArray;->getInteger(II)I
 
-    move-result v9
+    move-result v2
 
-    iput v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mOutAnimationDuration:I
+    iput v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->A:I
 
-    goto/16 :goto_20
+    :cond_172
+    move v2, v3
+
+    move v3, v5
+
+    goto/16 :goto_23
 
     .line 166
-    .end local v1    # "attr":I
-    :cond_149
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    :cond_176
+    invoke-virtual {v7}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 168
-    if-eqz v7, :cond_15d
+    if-eqz v0, :cond_18a
 
     .line 169
-    iput-object v7, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColors:[I
+    iput-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->r:[I
 
     .line 173
-    :cond_150
-    :goto_150
-    iget v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColorIndex:I
+    :cond_17d
+    :goto_17d
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->j:I
 
-    iget-object v10, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColors:[I
+    iget-object v2, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->r:[I
 
-    array-length v10, v10
+    array-length v2, v2
 
-    if-lt v9, v10, :cond_159
+    if-lt v0, v2, :cond_186
 
     .line 174
-    iput v11, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColorIndex:I
+    iput v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->j:I
 
     .line 176
-    :cond_159
+    :cond_186
     invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->invalidateSelf()V
 
     .line 177
     return-void
 
     .line 170
-    :cond_15d
-    if-eqz v6, :cond_150
+    :cond_18a
+    if-eqz v3, :cond_17d
 
     .line 171
-    const/4 v9, 0x1
+    new-array v0, v4, [I
 
-    new-array v9, v9, [I
+    aput v5, v0, v1
 
-    aput v5, v9, v11
+    iput-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->r:[I
 
-    iput-object v9, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mStrokeColors:[I
+    goto :goto_17d
+.end method
 
-    goto :goto_150
+.method public b()F
+    .registers 2
+
+    .prologue
+    .line 365
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->m:F
+
+    return v0
+.end method
+
+.method public b(F)V
+    .registers 5
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 384
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    invoke-static {v2, p1}, Ljava/lang/Math;->max(FF)F
+
+    move-result v1
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(FF)F
+
+    move-result v0
+
+    .line 385
+    iget v1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->n:F
+
+    cmpl-float v1, v1, v0
+
+    if-eqz v1, :cond_1c
+
+    .line 386
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->n:F
+
+    .line 387
+    invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->isRunning()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1d
+
+    .line 388
+    invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->invalidateSelf()V
+
+    .line 392
+    :cond_1c
+    :goto_1c
+    return-void
+
+    .line 389
+    :cond_1d
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->n:F
+
+    cmpl-float v0, v0, v2
+
+    if-eqz v0, :cond_1c
+
+    .line 390
+    invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->start()V
+
+    goto :goto_1c
+.end method
+
+.method public c()F
+    .registers 2
+
+    .prologue
+    .line 369
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->n:F
+
+    return v0
 .end method
 
 .method public draw(Landroid/graphics/Canvas;)V
     .registers 3
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
     .line 181
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressMode:I
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->B:I
 
     packed-switch v0, :pswitch_data_e
 
@@ -3036,13 +2960,13 @@
 
     .line 183
     :pswitch_6
-    invoke-direct {p0, p1}, Lcom/rey/material/drawable/CircularProgressDrawable;->drawDeterminate(Landroid/graphics/Canvas;)V
+    invoke-direct {p0, p1}, Lcom/rey/material/drawable/CircularProgressDrawable;->a(Landroid/graphics/Canvas;)V
 
     goto :goto_5
 
     .line 186
     :pswitch_a
-    invoke-direct {p0, p1}, Lcom/rey/material/drawable/CircularProgressDrawable;->drawIndeterminate(Landroid/graphics/Canvas;)V
+    invoke-direct {p0, p1}, Lcom/rey/material/drawable/CircularProgressDrawable;->b(Landroid/graphics/Canvas;)V
 
     goto :goto_5
 
@@ -3064,42 +2988,12 @@
     return v0
 .end method
 
-.method public getProgress()F
-    .registers 2
-
-    .prologue
-    .line 365
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressPercent:F
-
-    return v0
-.end method
-
-.method public getProgressMode()I
-    .registers 2
-
-    .prologue
-    .line 354
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressMode:I
-
-    return v0
-.end method
-
-.method public getSecondaryProgress()F
-    .registers 2
-
-    .prologue
-    .line 369
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mSecondaryProgressPercent:F
-
-    return v0
-.end method
-
 .method public isRunning()Z
     .registers 2
 
     .prologue
     .line 451
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRunState:I
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->e:I
 
     if-eqz v0, :cond_6
 
@@ -3116,24 +3010,22 @@
 
 .method public scheduleSelf(Ljava/lang/Runnable;J)V
     .registers 6
-    .param p1, "what"    # Ljava/lang/Runnable;
-    .param p2, "when"    # J
 
     .prologue
     .line 456
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRunState:I
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->e:I
 
     if-nez v0, :cond_b
 
     .line 457
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInAnimationDuration:I
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->z:I
 
     if-lez v0, :cond_f
 
     const/4 v0, 0x1
 
     :goto_9
-    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mRunState:I
+    iput v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->e:I
 
     .line 458
     :cond_b
@@ -3151,11 +3043,10 @@
 
 .method public setAlpha(I)V
     .registers 3
-    .param p1, "alpha"    # I
 
     .prologue
     .line 340
-    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setAlpha(I)V
 
@@ -3165,11 +3056,10 @@
 
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .registers 3
-    .param p1, "cf"    # Landroid/graphics/ColorFilter;
 
     .prologue
     .line 345
-    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->f:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
@@ -3177,154 +3067,19 @@
     return-void
 .end method
 
-.method public setProgress(F)V
-    .registers 5
-    .param p1, "percent"    # F
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 373
-    const/high16 v0, 0x3f800000
-
-    invoke-static {v2, p1}, Ljava/lang/Math;->max(FF)F
-
-    move-result v1
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(FF)F
-
-    move-result p1
-
-    .line 374
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressPercent:F
-
-    cmpl-float v0, v0, p1
-
-    if-eqz v0, :cond_1c
-
-    .line 375
-    iput p1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressPercent:F
-
-    .line 376
-    invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->isRunning()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1d
-
-    .line 377
-    invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->invalidateSelf()V
-
-    .line 381
-    :cond_1c
-    :goto_1c
-    return-void
-
-    .line 378
-    :cond_1d
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressPercent:F
-
-    cmpl-float v0, v0, v2
-
-    if-eqz v0, :cond_1c
-
-    .line 379
-    invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->start()V
-
-    goto :goto_1c
-.end method
-
-.method public setProgressMode(I)V
-    .registers 3
-    .param p1, "mode"    # I
-
-    .prologue
-    .line 358
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressMode:I
-
-    if-eq v0, p1, :cond_9
-
-    .line 359
-    iput p1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mProgressMode:I
-
-    .line 360
-    invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->invalidateSelf()V
-
-    .line 362
-    :cond_9
-    return-void
-.end method
-
-.method public setSecondaryProgress(F)V
-    .registers 5
-    .param p1, "percent"    # F
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 384
-    const/high16 v0, 0x3f800000
-
-    invoke-static {v2, p1}, Ljava/lang/Math;->max(FF)F
-
-    move-result v1
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(FF)F
-
-    move-result p1
-
-    .line 385
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mSecondaryProgressPercent:F
-
-    cmpl-float v0, v0, p1
-
-    if-eqz v0, :cond_1c
-
-    .line 386
-    iput p1, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mSecondaryProgressPercent:F
-
-    .line 387
-    invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->isRunning()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1d
-
-    .line 388
-    invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->invalidateSelf()V
-
-    .line 392
-    :cond_1c
-    :goto_1c
-    return-void
-
-    .line 389
-    :cond_1d
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mSecondaryProgressPercent:F
-
-    cmpl-float v0, v0, v2
-
-    if-eqz v0, :cond_1c
-
-    .line 390
-    invoke-virtual {p0}, Lcom/rey/material/drawable/CircularProgressDrawable;->start()V
-
-    goto :goto_1c
-.end method
-
 .method public start()V
     .registers 2
 
     .prologue
     .line 406
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mInAnimationDuration:I
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->z:I
 
     if-lez v0, :cond_9
 
     const/4 v0, 0x1
 
     :goto_5
-    invoke-direct {p0, v0}, Lcom/rey/material/drawable/CircularProgressDrawable;->start(Z)V
+    invoke-direct {p0, v0}, Lcom/rey/material/drawable/CircularProgressDrawable;->a(Z)V
 
     .line 407
     return-void
@@ -3341,14 +3096,14 @@
 
     .prologue
     .line 411
-    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->mOutAnimationDuration:I
+    iget v0, p0, Lcom/rey/material/drawable/CircularProgressDrawable;->A:I
 
     if-lez v0, :cond_9
 
     const/4 v0, 0x1
 
     :goto_5
-    invoke-direct {p0, v0}, Lcom/rey/material/drawable/CircularProgressDrawable;->stop(Z)V
+    invoke-direct {p0, v0}, Lcom/rey/material/drawable/CircularProgressDrawable;->b(Z)V
 
     .line 412
     return-void

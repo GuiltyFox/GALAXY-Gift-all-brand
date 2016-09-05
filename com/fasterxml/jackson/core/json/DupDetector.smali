@@ -25,7 +25,6 @@
 # direct methods
 .method private constructor <init>(Ljava/lang/Object;)V
     .registers 2
-    .param p1, "src"    # Ljava/lang/Object;
 
     .prologue
     .line 36
@@ -40,7 +39,6 @@
 
 .method public static rootDetector(Lcom/fasterxml/jackson/core/JsonGenerator;)Lcom/fasterxml/jackson/core/json/DupDetector;
     .registers 2
-    .param p0, "g"    # Lcom/fasterxml/jackson/core/JsonGenerator;
 
     .prologue
     .line 45
@@ -53,7 +51,6 @@
 
 .method public static rootDetector(Lcom/fasterxml/jackson/core/JsonParser;)Lcom/fasterxml/jackson/core/json/DupDetector;
     .registers 2
-    .param p0, "p"    # Lcom/fasterxml/jackson/core/JsonParser;
 
     .prologue
     .line 41
@@ -112,12 +109,6 @@
 
 .method public isDup(Ljava/lang/String;)Z
     .registers 6
-    .param p1, "name"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     const/4 v0, 0x1

@@ -3,11 +3,11 @@
 
 
 # instance fields
-.field private final zzalW:J
+.field private final a:J
 
-.field private final zzalX:I
+.field private final b:I
 
-.field private final zzalY:Landroid/support/v4/util/SimpleArrayMap;
+.field private final c:Landroid/support/v4/util/SimpleArrayMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/support/v4/util/SimpleArrayMap",
@@ -30,15 +30,15 @@
 
     const-wide/32 v0, 0xea60
 
-    iput-wide v0, p0, Lcom/google/android/gms/common/stats/zze;->zzalW:J
+    iput-wide v0, p0, Lcom/google/android/gms/common/stats/zze;->a:J
 
-    iput v2, p0, Lcom/google/android/gms/common/stats/zze;->zzalX:I
+    iput v2, p0, Lcom/google/android/gms/common/stats/zze;->b:I
 
     new-instance v0, Landroid/support/v4/util/SimpleArrayMap;
 
     invoke-direct {v0, v2}, Landroid/support/v4/util/SimpleArrayMap;-><init>(I)V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/stats/zze;->zzalY:Landroid/support/v4/util/SimpleArrayMap;
+    iput-object v0, p0, Lcom/google/android/gms/common/stats/zze;->c:Landroid/support/v4/util/SimpleArrayMap;
 
     return-void
 .end method
@@ -48,23 +48,23 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-wide p2, p0, Lcom/google/android/gms/common/stats/zze;->zzalW:J
+    iput-wide p2, p0, Lcom/google/android/gms/common/stats/zze;->a:J
 
-    iput p1, p0, Lcom/google/android/gms/common/stats/zze;->zzalX:I
+    iput p1, p0, Lcom/google/android/gms/common/stats/zze;->b:I
 
     new-instance v0, Landroid/support/v4/util/SimpleArrayMap;
 
     invoke-direct {v0}, Landroid/support/v4/util/SimpleArrayMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/common/stats/zze;->zzalY:Landroid/support/v4/util/SimpleArrayMap;
+    iput-object v0, p0, Lcom/google/android/gms/common/stats/zze;->c:Landroid/support/v4/util/SimpleArrayMap;
 
     return-void
 .end method
 
-.method private zzb(JJ)V
+.method private a(JJ)V
     .registers 10
 
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/zze;->zzalY:Landroid/support/v4/util/SimpleArrayMap;
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/zze;->c:Landroid/support/v4/util/SimpleArrayMap;
 
     invoke-virtual {v0}, Landroid/support/v4/util/SimpleArrayMap;->size()I
 
@@ -77,9 +77,9 @@
     :goto_9
     if-ltz v1, :cond_26
 
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/zze;->zzalY:Landroid/support/v4/util/SimpleArrayMap;
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/zze;->c:Landroid/support/v4/util/SimpleArrayMap;
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/util/SimpleArrayMap;->valueAt(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Landroid/support/v4/util/SimpleArrayMap;->c(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -95,9 +95,9 @@
 
     if-lez v0, :cond_22
 
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/zze;->zzalY:Landroid/support/v4/util/SimpleArrayMap;
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/zze;->c:Landroid/support/v4/util/SimpleArrayMap;
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/util/SimpleArrayMap;->removeAt(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Landroid/support/v4/util/SimpleArrayMap;->d(I)Ljava/lang/Object;
 
     :cond_22
     add-int/lit8 v0, v1, -0x1
@@ -112,30 +112,30 @@
 
 
 # virtual methods
-.method public zzcM(Ljava/lang/String;)Ljava/lang/Long;
+.method public a(Ljava/lang/String;)Ljava/lang/Long;
     .registers 9
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide v2
 
-    iget-wide v0, p0, Lcom/google/android/gms/common/stats/zze;->zzalW:J
+    iget-wide v0, p0, Lcom/google/android/gms/common/stats/zze;->a:J
 
     monitor-enter p0
 
     :goto_7
     :try_start_7
-    iget-object v4, p0, Lcom/google/android/gms/common/stats/zze;->zzalY:Landroid/support/v4/util/SimpleArrayMap;
+    iget-object v4, p0, Lcom/google/android/gms/common/stats/zze;->c:Landroid/support/v4/util/SimpleArrayMap;
 
     invoke-virtual {v4}, Landroid/support/v4/util/SimpleArrayMap;->size()I
 
     move-result v4
 
-    iget v5, p0, Lcom/google/android/gms/common/stats/zze;->zzalX:I
+    iget v5, p0, Lcom/google/android/gms/common/stats/zze;->b:I
 
     if-lt v4, v5, :cond_42
 
-    invoke-direct {p0, v0, v1, v2, v3}, Lcom/google/android/gms/common/stats/zze;->zzb(JJ)V
+    invoke-direct {p0, v0, v1, v2, v3}, Lcom/google/android/gms/common/stats/zze;->a(JJ)V
 
     const-wide/16 v4, 0x2
 
@@ -153,7 +153,7 @@
 
     move-result-object v5
 
-    iget v6, p0, Lcom/google/android/gms/common/stats/zze;->zzalX:I
+    iget v6, p0, Lcom/google/android/gms/common/stats/zze;->b:I
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -188,7 +188,7 @@
 
     :cond_42
     :try_start_42
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/zze;->zzalY:Landroid/support/v4/util/SimpleArrayMap;
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/zze;->c:Landroid/support/v4/util/SimpleArrayMap;
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -207,13 +207,13 @@
     return-object v0
 .end method
 
-.method public zzcN(Ljava/lang/String;)Z
+.method public b(Ljava/lang/String;)Z
     .registers 3
 
     monitor-enter p0
 
     :try_start_1
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/zze;->zzalY:Landroid/support/v4/util/SimpleArrayMap;
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/zze;->c:Landroid/support/v4/util/SimpleArrayMap;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/util/SimpleArrayMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 

@@ -4,12 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/bumptech/glide/request/animation/GlideAnimation$ViewAdapter;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<R:",
@@ -21,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract animate(Ljava/lang/Object;Lcom/bumptech/glide/request/animation/GlideAnimation$ViewAdapter;)Z
+.method public abstract a(Ljava/lang/Object;Lcom/bumptech/glide/request/animation/GlideAnimation$ViewAdapter;)Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TR;",

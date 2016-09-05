@@ -16,7 +16,7 @@
 
 
 # static fields
-.field private static final P_INDEX_OFFSET:J
+.field private static final e:J
 
 
 # instance fields
@@ -33,22 +33,20 @@
 
     const-string/jumbo v1, "producerIndex"
 
-    invoke-static {v0, v1}, Lrx/internal/util/unsafe/UnsafeAccess;->addressOf(Ljava/lang/Class;Ljava/lang/String;)J
+    invoke-static {v0, v1}, Lrx/internal/util/unsafe/UnsafeAccess;->a(Ljava/lang/Class;Ljava/lang/String;)J
 
     move-result-wide v0
 
-    sput-wide v0, Lrx/internal/util/unsafe/MpmcArrayQueueProducerField;->P_INDEX_OFFSET:J
+    sput-wide v0, Lrx/internal/util/unsafe/MpmcArrayQueueProducerField;->e:J
 
     return-void
 .end method
 
 .method public constructor <init>(I)V
     .registers 2
-    .param p1, "capacity"    # I
 
     .prologue
     .line 35
-    .local p0, "this":Lrx/internal/util/unsafe/MpmcArrayQueueProducerField;, "Lrx/internal/util/unsafe/MpmcArrayQueueProducerField<TE;>;"
     invoke-direct {p0, p1}, Lrx/internal/util/unsafe/MpmcArrayQueueL1Pad;-><init>(I)V
 
     .line 36
@@ -57,17 +55,24 @@
 
 
 # virtual methods
-.method protected final casProducerIndex(JJ)Z
+.method protected final b()J
+    .registers 3
+
+    .prologue
+    .line 39
+    iget-wide v0, p0, Lrx/internal/util/unsafe/MpmcArrayQueueProducerField;->producerIndex:J
+
+    return-wide v0
+.end method
+
+.method protected final c(JJ)Z
     .registers 14
-    .param p1, "expect"    # J
-    .param p3, "newValue"    # J
 
     .prologue
     .line 43
-    .local p0, "this":Lrx/internal/util/unsafe/MpmcArrayQueueProducerField;, "Lrx/internal/util/unsafe/MpmcArrayQueueProducerField<TE;>;"
-    sget-object v0, Lrx/internal/util/unsafe/UnsafeAccess;->UNSAFE:Lsun/misc/Unsafe;
+    sget-object v0, Lrx/internal/util/unsafe/UnsafeAccess;->a:Lsun/misc/Unsafe;
 
-    sget-wide v2, Lrx/internal/util/unsafe/MpmcArrayQueueProducerField;->P_INDEX_OFFSET:J
+    sget-wide v2, Lrx/internal/util/unsafe/MpmcArrayQueueProducerField;->e:J
 
     move-object v1, p0
 
@@ -80,15 +85,4 @@
     move-result v0
 
     return v0
-.end method
-
-.method protected final lvProducerIndex()J
-    .registers 3
-
-    .prologue
-    .line 39
-    .local p0, "this":Lrx/internal/util/unsafe/MpmcArrayQueueProducerField;, "Lrx/internal/util/unsafe/MpmcArrayQueueProducerField<TE;>;"
-    iget-wide v0, p0, Lrx/internal/util/unsafe/MpmcArrayQueueProducerField;->producerIndex:J
-
-    return-wide v0
 .end method

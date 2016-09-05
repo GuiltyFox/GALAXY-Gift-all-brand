@@ -8,21 +8,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/parceler/NonParcelRepository;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "StringParcelable"
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lorg/parceler/NonParcelRepository$StringParcelable$StringParcelableCreator;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -40,7 +25,7 @@
 
 
 # instance fields
-.field private contents:Ljava/lang/String;
+.field private a:Ljava/lang/String;
 
 
 # direct methods
@@ -62,7 +47,6 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .registers 3
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
     .line 1168
@@ -73,7 +57,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lorg/parceler/NonParcelRepository$StringParcelable;->contents:Ljava/lang/String;
+    iput-object v0, p0, Lorg/parceler/NonParcelRepository$StringParcelable;->a:Ljava/lang/String;
 
     .line 1170
     return-void
@@ -81,8 +65,6 @@
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Lorg/parceler/NonParcelRepository$1;)V
     .registers 3
-    .param p1, "x0"    # Landroid/os/Parcel;
-    .param p2, "x1"    # Lorg/parceler/NonParcelRepository$1;
 
     .prologue
     .line 1160
@@ -93,14 +75,13 @@
 
 .method private constructor <init>(Ljava/lang/String;)V
     .registers 2
-    .param p1, "contents"    # Ljava/lang/String;
 
     .prologue
     .line 1172
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 1173
-    iput-object p1, p0, Lorg/parceler/NonParcelRepository$StringParcelable;->contents:Ljava/lang/String;
+    iput-object p1, p0, Lorg/parceler/NonParcelRepository$StringParcelable;->a:Ljava/lang/String;
 
     .line 1174
     return-void
@@ -108,8 +89,6 @@
 
 .method synthetic constructor <init>(Ljava/lang/String;Lorg/parceler/NonParcelRepository$1;)V
     .registers 3
-    .param p1, "x0"    # Ljava/lang/String;
-    .param p2, "x1"    # Lorg/parceler/NonParcelRepository$1;
 
     .prologue
     .line 1160
@@ -120,6 +99,16 @@
 
 
 # virtual methods
+.method public a()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 1188
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository$StringParcelable;->a:Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method public describeContents()I
     .registers 2
 
@@ -130,36 +119,24 @@
     return v0
 .end method
 
-.method public bridge synthetic getParcel()Ljava/lang/Object;
+.method public synthetic getParcel()Ljava/lang/Object;
     .registers 2
 
     .prologue
     .line 1160
-    invoke-virtual {p0}, Lorg/parceler/NonParcelRepository$StringParcelable;->getParcel()Ljava/lang/String;
+    invoke-virtual {p0}, Lorg/parceler/NonParcelRepository$StringParcelable;->a()Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getParcel()Ljava/lang/String;
-    .registers 2
-
-    .prologue
-    .line 1188
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository$StringParcelable;->contents:Ljava/lang/String;
-
-    return-object v0
-.end method
-
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .registers 4
-    .param p1, "parcel"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
     .prologue
     .line 1178
-    iget-object v0, p0, Lorg/parceler/NonParcelRepository$StringParcelable;->contents:Ljava/lang/String;
+    iget-object v0, p0, Lorg/parceler/NonParcelRepository$StringParcelable;->a:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 

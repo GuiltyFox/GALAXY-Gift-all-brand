@@ -6,23 +6,6 @@
 .implements Landroid/support/v7/view/menu/MenuPresenter;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuHeaderItem;,
-        Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuSeparatorItem;,
-        Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuTextItem;,
-        Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuItem;,
-        Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuAdapter;,
-        Landroid/support/design/internal/NavigationMenuPresenter$HeaderViewHolder;,
-        Landroid/support/design/internal/NavigationMenuPresenter$SeparatorViewHolder;,
-        Landroid/support/design/internal/NavigationMenuPresenter$SubheaderViewHolder;,
-        Landroid/support/design/internal/NavigationMenuPresenter$NormalViewHolder;,
-        Landroid/support/design/internal/NavigationMenuPresenter$ViewHolder;
-    }
-.end annotation
-
-
 # static fields
 .field private static final STATE_ADAPTER:Ljava/lang/String; = "android:menu:adapter"
 
@@ -82,7 +65,6 @@
 
 .method static synthetic access$000(Landroid/support/design/internal/NavigationMenuPresenter;)Landroid/support/v7/view/menu/MenuBuilder;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/internal/NavigationMenuPresenter;
 
     .prologue
     .line 52
@@ -93,7 +75,6 @@
 
 .method static synthetic access$100(Landroid/support/design/internal/NavigationMenuPresenter;)Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuAdapter;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/internal/NavigationMenuPresenter;
 
     .prologue
     .line 52
@@ -104,7 +85,6 @@
 
 .method static synthetic access$1100(Landroid/support/design/internal/NavigationMenuPresenter;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/internal/NavigationMenuPresenter;
 
     .prologue
     .line 52
@@ -115,7 +95,6 @@
 
 .method static synthetic access$200(Landroid/support/design/internal/NavigationMenuPresenter;)Landroid/view/LayoutInflater;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/internal/NavigationMenuPresenter;
 
     .prologue
     .line 52
@@ -126,7 +105,6 @@
 
 .method static synthetic access$300(Landroid/support/design/internal/NavigationMenuPresenter;)Landroid/view/View$OnClickListener;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/internal/NavigationMenuPresenter;
 
     .prologue
     .line 52
@@ -137,7 +115,6 @@
 
 .method static synthetic access$400(Landroid/support/design/internal/NavigationMenuPresenter;)Landroid/widget/LinearLayout;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/internal/NavigationMenuPresenter;
 
     .prologue
     .line 52
@@ -148,7 +125,6 @@
 
 .method static synthetic access$500(Landroid/support/design/internal/NavigationMenuPresenter;)Landroid/content/res/ColorStateList;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/internal/NavigationMenuPresenter;
 
     .prologue
     .line 52
@@ -159,7 +135,6 @@
 
 .method static synthetic access$600(Landroid/support/design/internal/NavigationMenuPresenter;)Z
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/internal/NavigationMenuPresenter;
 
     .prologue
     .line 52
@@ -170,7 +145,6 @@
 
 .method static synthetic access$700(Landroid/support/design/internal/NavigationMenuPresenter;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/internal/NavigationMenuPresenter;
 
     .prologue
     .line 52
@@ -181,7 +155,6 @@
 
 .method static synthetic access$800(Landroid/support/design/internal/NavigationMenuPresenter;)Landroid/content/res/ColorStateList;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/internal/NavigationMenuPresenter;
 
     .prologue
     .line 52
@@ -192,7 +165,6 @@
 
 .method static synthetic access$900(Landroid/support/design/internal/NavigationMenuPresenter;)Landroid/graphics/drawable/Drawable;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/internal/NavigationMenuPresenter;
 
     .prologue
     .line 52
@@ -205,10 +177,6 @@
 # virtual methods
 .method public addHeaderView(Landroid/view/View;)V
     .registers 5
-    .param p1, "view"    # Landroid/view/View;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
 
     .prologue
     const/4 v2, 0x0
@@ -235,8 +203,6 @@
 
 .method public collapseItemActionView(Landroid/support/v7/view/menu/MenuBuilder;Landroid/support/v7/view/menu/MenuItemImpl;)Z
     .registers 4
-    .param p1, "menu"    # Landroid/support/v7/view/menu/MenuBuilder;
-    .param p2, "item"    # Landroid/support/v7/view/menu/MenuItemImpl;
 
     .prologue
     .line 145
@@ -247,8 +213,6 @@
 
 .method public expandItemActionView(Landroid/support/v7/view/menu/MenuBuilder;Landroid/support/v7/view/menu/MenuItemImpl;)Z
     .registers 4
-    .param p1, "menu"    # Landroid/support/v7/view/menu/MenuBuilder;
-    .param p2, "item"    # Landroid/support/v7/view/menu/MenuItemImpl;
 
     .prologue
     .line 140
@@ -283,7 +247,6 @@
 
 .method public getHeaderView(I)Landroid/view/View;
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 212
@@ -308,8 +271,6 @@
 
 .method public getItemBackground()Landroid/graphics/drawable/Drawable;
     .registers 2
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
 
     .prologue
     .line 243
@@ -320,8 +281,6 @@
 
 .method public getItemTextColor()Landroid/content/res/ColorStateList;
     .registers 2
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
 
     .prologue
     .line 227
@@ -332,8 +291,6 @@
 
 .method public getItemTintList()Landroid/content/res/ColorStateList;
     .registers 2
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
 
     .prologue
     .line 217
@@ -344,7 +301,6 @@
 
 .method public getMenuView(Landroid/view/ViewGroup;)Landroid/support/v7/view/menu/MenuView;
     .registers 6
-    .param p1, "root"    # Landroid/view/ViewGroup;
 
     .prologue
     const/4 v3, 0x0
@@ -410,26 +366,21 @@
 .end method
 
 .method public inflateHeaderView(I)Landroid/view/View;
-    .registers 6
-    .param p1, "res"    # I
-        .annotation build Landroid/support/annotation/LayoutRes;
-        .end annotation
-    .end param
+    .registers 5
 
     .prologue
     .line 189
-    iget-object v1, p0, Landroid/support/design/internal/NavigationMenuPresenter;->mLayoutInflater:Landroid/view/LayoutInflater;
+    iget-object v0, p0, Landroid/support/design/internal/NavigationMenuPresenter;->mLayoutInflater:Landroid/view/LayoutInflater;
 
-    iget-object v2, p0, Landroid/support/design/internal/NavigationMenuPresenter;->mHeaderLayout:Landroid/widget/LinearLayout;
+    iget-object v1, p0, Landroid/support/design/internal/NavigationMenuPresenter;->mHeaderLayout:Landroid/widget/LinearLayout;
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {v1, p1, v2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {v0, p1, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
     .line 190
-    .local v0, "view":Landroid/view/View;
     invoke-virtual {p0, v0}, Landroid/support/design/internal/NavigationMenuPresenter;->addHeaderView(Landroid/view/View;)V
 
     .line 191
@@ -438,16 +389,14 @@
 
 .method public initForMenu(Landroid/content/Context;Landroid/support/v7/view/menu/MenuBuilder;)V
     .registers 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "menu"    # Landroid/support/v7/view/menu/MenuBuilder;
 
     .prologue
     .line 86
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Landroid/support/design/internal/NavigationMenuPresenter;->mLayoutInflater:Landroid/view/LayoutInflater;
+    iput-object v0, p0, Landroid/support/design/internal/NavigationMenuPresenter;->mLayoutInflater:Landroid/view/LayoutInflater;
 
     .line 87
     iput-object p2, p0, Landroid/support/design/internal/NavigationMenuPresenter;->mMenu:Landroid/support/v7/view/menu/MenuBuilder;
@@ -458,14 +407,13 @@
     move-result-object v0
 
     .line 89
-    .local v0, "res":Landroid/content/res/Resources;
     sget v1, Landroid/support/design/R$dimen;->design_navigation_separator_vertical_padding:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelOffset(I)I
 
-    move-result v1
+    move-result v0
 
-    iput v1, p0, Landroid/support/design/internal/NavigationMenuPresenter;->mPaddingSeparator:I
+    iput v0, p0, Landroid/support/design/internal/NavigationMenuPresenter;->mPaddingSeparator:I
 
     .line 91
     return-void
@@ -473,8 +421,6 @@
 
 .method public onCloseMenu(Landroid/support/v7/view/menu/MenuBuilder;Z)V
     .registers 4
-    .param p1, "menu"    # Landroid/support/v7/view/menu/MenuBuilder;
-    .param p2, "allMenusAreClosing"    # Z
 
     .prologue
     .line 128
@@ -493,111 +439,101 @@
 .end method
 
 .method public onRestoreInstanceState(Landroid/os/Parcelable;)V
-    .registers 6
-    .param p1, "parcelable"    # Landroid/os/Parcelable;
+    .registers 4
 
     .prologue
     .line 173
-    move-object v2, p1
-
-    check-cast v2, Landroid/os/Bundle;
+    check-cast p1, Landroid/os/Bundle;
 
     .line 174
-    .local v2, "state":Landroid/os/Bundle;
-    const-string/jumbo v3, "android:menu:list"
+    const-string/jumbo v0, "android:menu:list"
 
-    invoke-virtual {v2, v3}, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;)Landroid/util/SparseArray;
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getSparseParcelableArray(Ljava/lang/String;)Landroid/util/SparseArray;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 175
-    .local v1, "hierarchy":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/os/Parcelable;>;"
-    if-eqz v1, :cond_11
+    if-eqz v0, :cond_10
 
     .line 176
-    iget-object v3, p0, Landroid/support/design/internal/NavigationMenuPresenter;->mMenuView:Landroid/support/design/internal/NavigationMenuView;
+    iget-object v1, p0, Landroid/support/design/internal/NavigationMenuPresenter;->mMenuView:Landroid/support/design/internal/NavigationMenuView;
 
-    invoke-virtual {v3, v1}, Landroid/support/design/internal/NavigationMenuView;->restoreHierarchyState(Landroid/util/SparseArray;)V
+    invoke-virtual {v1, v0}, Landroid/support/design/internal/NavigationMenuView;->restoreHierarchyState(Landroid/util/SparseArray;)V
 
     .line 178
-    :cond_11
-    const-string/jumbo v3, "android:menu:adapter"
+    :cond_10
+    const-string/jumbo v0, "android:menu:adapter"
 
-    invoke-virtual {v2, v3}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
     move-result-object v0
 
     .line 179
-    .local v0, "adapterState":Landroid/os/Bundle;
-    if-eqz v0, :cond_1f
+    if-eqz v0, :cond_1e
 
     .line 180
-    iget-object v3, p0, Landroid/support/design/internal/NavigationMenuPresenter;->mAdapter:Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuAdapter;
+    iget-object v1, p0, Landroid/support/design/internal/NavigationMenuPresenter;->mAdapter:Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuAdapter;
 
-    invoke-virtual {v3, v0}, Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuAdapter;->restoreInstanceState(Landroid/os/Bundle;)V
+    invoke-virtual {v1, v0}, Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuAdapter;->restoreInstanceState(Landroid/os/Bundle;)V
 
     .line 182
-    :cond_1f
+    :cond_1e
     return-void
 .end method
 
 .method public onSaveInstanceState()Landroid/os/Parcelable;
-    .registers 5
+    .registers 4
 
     .prologue
     .line 159
-    new-instance v1, Landroid/os/Bundle;
+    new-instance v0, Landroid/os/Bundle;
 
-    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     .line 160
-    .local v1, "state":Landroid/os/Bundle;
-    iget-object v2, p0, Landroid/support/design/internal/NavigationMenuPresenter;->mMenuView:Landroid/support/design/internal/NavigationMenuView;
+    iget-object v1, p0, Landroid/support/design/internal/NavigationMenuPresenter;->mMenuView:Landroid/support/design/internal/NavigationMenuView;
 
-    if-eqz v2, :cond_19
+    if-eqz v1, :cond_19
 
     .line 161
-    new-instance v0, Landroid/util/SparseArray;
+    new-instance v1, Landroid/util/SparseArray;
 
-    invoke-direct {v0}, Landroid/util/SparseArray;-><init>()V
+    invoke-direct {v1}, Landroid/util/SparseArray;-><init>()V
 
     .line 162
-    .local v0, "hierarchy":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/os/Parcelable;>;"
     iget-object v2, p0, Landroid/support/design/internal/NavigationMenuPresenter;->mMenuView:Landroid/support/design/internal/NavigationMenuView;
 
-    invoke-virtual {v2, v0}, Landroid/support/design/internal/NavigationMenuView;->saveHierarchyState(Landroid/util/SparseArray;)V
+    invoke-virtual {v2, v1}, Landroid/support/design/internal/NavigationMenuView;->saveHierarchyState(Landroid/util/SparseArray;)V
 
     .line 163
     const-string/jumbo v2, "android:menu:list"
 
-    invoke-virtual {v1, v2, v0}, Landroid/os/Bundle;->putSparseParcelableArray(Ljava/lang/String;Landroid/util/SparseArray;)V
+    invoke-virtual {v0, v2, v1}, Landroid/os/Bundle;->putSparseParcelableArray(Ljava/lang/String;Landroid/util/SparseArray;)V
 
     .line 165
-    .end local v0    # "hierarchy":Landroid/util/SparseArray;, "Landroid/util/SparseArray<Landroid/os/Parcelable;>;"
     :cond_19
-    iget-object v2, p0, Landroid/support/design/internal/NavigationMenuPresenter;->mAdapter:Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuAdapter;
+    iget-object v1, p0, Landroid/support/design/internal/NavigationMenuPresenter;->mAdapter:Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuAdapter;
 
-    if-eqz v2, :cond_29
+    if-eqz v1, :cond_29
 
     .line 166
-    const-string/jumbo v2, "android:menu:adapter"
+    const-string/jumbo v1, "android:menu:adapter"
 
-    iget-object v3, p0, Landroid/support/design/internal/NavigationMenuPresenter;->mAdapter:Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuAdapter;
+    iget-object v2, p0, Landroid/support/design/internal/NavigationMenuPresenter;->mAdapter:Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuAdapter;
 
-    invoke-virtual {v3}, Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuAdapter;->createInstanceState()Landroid/os/Bundle;
+    invoke-virtual {v2}, Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuAdapter;->createInstanceState()Landroid/os/Bundle;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v1, v2, v3}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
+    invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     .line 168
     :cond_29
-    return-object v1
+    return-object v0
 .end method
 
 .method public onSubMenuSelected(Landroid/support/v7/view/menu/SubMenuBuilder;)Z
     .registers 3
-    .param p1, "subMenu"    # Landroid/support/v7/view/menu/SubMenuBuilder;
 
     .prologue
     .line 123
@@ -608,10 +544,6 @@
 
 .method public removeHeaderView(Landroid/view/View;)V
     .registers 6
-    .param p1, "view"    # Landroid/view/View;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
 
     .prologue
     const/4 v3, 0x0
@@ -650,7 +582,6 @@
 
 .method public setCallback(Landroid/support/v7/view/menu/MenuPresenter$Callback;)V
     .registers 2
-    .param p1, "cb"    # Landroid/support/v7/view/menu/MenuPresenter$Callback;
 
     .prologue
     .line 118
@@ -662,7 +593,6 @@
 
 .method public setCheckedItem(Landroid/support/v7/view/menu/MenuItemImpl;)V
     .registers 3
-    .param p1, "item"    # Landroid/support/v7/view/menu/MenuItemImpl;
 
     .prologue
     .line 185
@@ -676,7 +606,6 @@
 
 .method public setId(I)V
     .registers 2
-    .param p1, "id"    # I
 
     .prologue
     .line 154
@@ -688,10 +617,6 @@
 
 .method public setItemBackground(Landroid/graphics/drawable/Drawable;)V
     .registers 3
-    .param p1, "itemBackground"    # Landroid/graphics/drawable/Drawable;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
 
     .prologue
     .line 247
@@ -708,10 +633,6 @@
 
 .method public setItemIconTintList(Landroid/content/res/ColorStateList;)V
     .registers 3
-    .param p1, "tint"    # Landroid/content/res/ColorStateList;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
 
     .prologue
     .line 221
@@ -728,10 +649,6 @@
 
 .method public setItemTextAppearance(I)V
     .registers 3
-    .param p1, "resId"    # I
-        .annotation build Landroid/support/annotation/StyleRes;
-        .end annotation
-    .end param
 
     .prologue
     .line 236
@@ -753,10 +670,6 @@
 
 .method public setItemTextColor(Landroid/content/res/ColorStateList;)V
     .registers 3
-    .param p1, "textColor"    # Landroid/content/res/ColorStateList;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
 
     .prologue
     .line 231
@@ -773,7 +686,6 @@
 
 .method public setPaddingTopDefault(I)V
     .registers 6
-    .param p1, "paddingTopDefault"    # I
 
     .prologue
     const/4 v3, 0x0
@@ -815,7 +727,6 @@
 
 .method public setUpdateSuspended(Z)V
     .registers 3
-    .param p1, "updateSuspended"    # Z
 
     .prologue
     .line 252
@@ -835,7 +746,6 @@
 
 .method public updateMenuView(Z)V
     .registers 3
-    .param p1, "cleared"    # Z
 
     .prologue
     .line 111

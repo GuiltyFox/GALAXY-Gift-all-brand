@@ -4,20 +4,20 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
+.method public static a(I)I
+    .registers 2
 
     .prologue
-    .line 24
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 26
+    invoke-static {p0}, Landroid/view/KeyEvent;->normalizeMetaState(I)I
 
-    return-void
+    move-result v0
+
+    return v0
 .end method
 
-.method public static metaStateHasModifiers(II)Z
+.method public static a(II)Z
     .registers 3
-    .param p0, "metaState"    # I
-    .param p1, "modifiers"    # I
 
     .prologue
     .line 30
@@ -28,26 +28,12 @@
     return v0
 .end method
 
-.method public static metaStateHasNoModifiers(I)Z
+.method public static b(I)Z
     .registers 2
-    .param p0, "metaState"    # I
 
     .prologue
     .line 34
     invoke-static {p0}, Landroid/view/KeyEvent;->metaStateHasNoModifiers(I)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static normalizeMetaState(I)I
-    .registers 2
-    .param p0, "metaState"    # I
-
-    .prologue
-    .line 26
-    invoke-static {p0}, Landroid/view/KeyEvent;->normalizeMetaState(I)I
 
     move-result v0
 

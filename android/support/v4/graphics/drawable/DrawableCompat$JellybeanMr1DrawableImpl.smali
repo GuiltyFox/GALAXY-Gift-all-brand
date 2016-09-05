@@ -3,17 +3,6 @@
 .source "DrawableCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/graphics/drawable/DrawableCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "JellybeanMr1DrawableImpl"
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .registers 1
@@ -27,40 +16,34 @@
 
 
 # virtual methods
-.method public getLayoutDirection(Landroid/graphics/drawable/Drawable;)I
+.method public b(Landroid/graphics/drawable/Drawable;I)V
     .registers 3
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
+
+    .prologue
+    .line 172
+    invoke-static {p1, p2}, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->a(Landroid/graphics/drawable/Drawable;I)V
+
+    .line 173
+    return-void
+.end method
+
+.method public d(Landroid/graphics/drawable/Drawable;)I
+    .registers 3
 
     .prologue
     .line 177
-    invoke-static {p1}, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->getLayoutDirection(Landroid/graphics/drawable/Drawable;)I
+    invoke-static {p1}, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->a(Landroid/graphics/drawable/Drawable;)I
 
     move-result v0
 
     .line 178
-    .local v0, "dir":I
     if-ltz v0, :cond_7
 
-    .end local v0    # "dir":I
     :goto_6
     return v0
 
-    .restart local v0    # "dir":I
     :cond_7
     const/4 v0, 0x0
 
     goto :goto_6
-.end method
-
-.method public setLayoutDirection(Landroid/graphics/drawable/Drawable;I)V
-    .registers 3
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
-    .param p2, "layoutDirection"    # I
-
-    .prologue
-    .line 172
-    invoke-static {p1, p2}, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->setLayoutDirection(Landroid/graphics/drawable/Drawable;I)V
-
-    .line 173
-    return-void
 .end method

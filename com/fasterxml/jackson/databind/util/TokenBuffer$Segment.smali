@@ -3,17 +3,6 @@
 .source "TokenBuffer.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/util/TokenBuffer;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1c
-    name = "Segment"
-.end annotation
-
-
 # static fields
 .field public static final TOKENS_PER_SEGMENT:I = 0x10
 
@@ -48,11 +37,11 @@
     const/4 v4, 0x1
 
     .line 1545
-    const/16 v1, 0x10
+    const/16 v0, 0x10
 
-    new-array v1, v1, [Lcom/fasterxml/jackson/core/JsonToken;
+    new-array v0, v0, [Lcom/fasterxml/jackson/core/JsonToken;
 
-    sput-object v1, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->TOKEN_TYPES_BY_INDEX:[Lcom/fasterxml/jackson/core/JsonToken;
+    sput-object v0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->TOKEN_TYPES_BY_INDEX:[Lcom/fasterxml/jackson/core/JsonToken;
 
     .line 1546
     invoke-static {}, Lcom/fasterxml/jackson/core/JsonToken;->values()[Lcom/fasterxml/jackson/core/JsonToken;
@@ -60,7 +49,6 @@
     move-result-object v0
 
     .line 1548
-    .local v0, "t":[Lcom/fasterxml/jackson/core/JsonToken;
     sget-object v1, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->TOKEN_TYPES_BY_INDEX:[Lcom/fasterxml/jackson/core/JsonToken;
 
     const/16 v2, 0xf
@@ -99,7 +87,6 @@
 
 .method private final _objectIdIndex(I)I
     .registers 3
-    .param p1, "i"    # I
 
     .prologue
     .line 1776
@@ -112,7 +99,6 @@
 
 .method private final _typeIdIndex(I)I
     .registers 3
-    .param p1, "i"    # I
 
     .prologue
     .line 1775
@@ -123,9 +109,6 @@
 
 .method private final assignNativeIds(ILjava/lang/Object;Ljava/lang/Object;)V
     .registers 6
-    .param p1, "index"    # I
-    .param p2, "objectId"    # Ljava/lang/Object;
-    .param p3, "typeId"    # Ljava/lang/Object;
 
     .prologue
     .line 1750
@@ -181,21 +164,17 @@
 
 .method private set(IILjava/lang/Object;)V
     .registers 8
-    .param p1, "index"    # I
-    .param p2, "rawTokenType"    # I
-    .param p3, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 1729
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokens:[Ljava/lang/Object;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokens:[Ljava/lang/Object;
 
-    aput-object p3, v2, p1
+    aput-object p3, v0, p1
 
     .line 1730
     int-to-long v0, p2
 
     .line 1731
-    .local v0, "typeCode":J
     if-lez p1, :cond_a
 
     .line 1732
@@ -207,9 +186,9 @@
     :cond_a
     iget-wide v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
 
-    or-long/2addr v2, v0
+    or-long/2addr v0, v2
 
-    iput-wide v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
+    iput-wide v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
 
     .line 1735
     return-void
@@ -217,23 +196,17 @@
 
 .method private set(IILjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
     .registers 10
-    .param p1, "index"    # I
-    .param p2, "rawTokenType"    # I
-    .param p3, "value"    # Ljava/lang/Object;
-    .param p4, "objectId"    # Ljava/lang/Object;
-    .param p5, "typeId"    # Ljava/lang/Object;
 
     .prologue
     .line 1739
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokens:[Ljava/lang/Object;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokens:[Ljava/lang/Object;
 
-    aput-object p3, v2, p1
+    aput-object p3, v0, p1
 
     .line 1740
     int-to-long v0, p2
 
     .line 1741
-    .local v0, "typeCode":J
     if-lez p1, :cond_a
 
     .line 1742
@@ -245,9 +218,9 @@
     :cond_a
     iget-wide v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
 
-    or-long/2addr v2, v0
+    or-long/2addr v0, v2
 
-    iput-wide v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
+    iput-wide v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
 
     .line 1745
     invoke-direct {p0, p1, p4, p5}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->assignNativeIds(ILjava/lang/Object;Ljava/lang/Object;)V
@@ -258,19 +231,16 @@
 
 .method private set(ILcom/fasterxml/jackson/core/JsonToken;)V
     .registers 7
-    .param p1, "index"    # I
-    .param p2, "tokenType"    # Lcom/fasterxml/jackson/core/JsonToken;
 
     .prologue
     .line 1687
     invoke-virtual {p2}, Lcom/fasterxml/jackson/core/JsonToken;->ordinal()I
 
-    move-result v2
+    move-result v0
 
-    int-to-long v0, v2
+    int-to-long v0, v0
 
     .line 1688
-    .local v0, "typeCode":J
     if-lez p1, :cond_a
 
     .line 1689
@@ -282,9 +252,9 @@
     :cond_a
     iget-wide v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
 
-    or-long/2addr v2, v0
+    or-long/2addr v0, v2
 
-    iput-wide v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
+    iput-wide v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
 
     .line 1692
     return-void
@@ -292,25 +262,21 @@
 
 .method private set(ILcom/fasterxml/jackson/core/JsonToken;Ljava/lang/Object;)V
     .registers 8
-    .param p1, "index"    # I
-    .param p2, "tokenType"    # Lcom/fasterxml/jackson/core/JsonToken;
-    .param p3, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 1707
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokens:[Ljava/lang/Object;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokens:[Ljava/lang/Object;
 
-    aput-object p3, v2, p1
+    aput-object p3, v0, p1
 
     .line 1708
     invoke-virtual {p2}, Lcom/fasterxml/jackson/core/JsonToken;->ordinal()I
 
-    move-result v2
+    move-result v0
 
-    int-to-long v0, v2
+    int-to-long v0, v0
 
     .line 1709
-    .local v0, "typeCode":J
     if-lez p1, :cond_e
 
     .line 1710
@@ -322,9 +288,9 @@
     :cond_e
     iget-wide v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
 
-    or-long/2addr v2, v0
+    or-long/2addr v0, v2
 
-    iput-wide v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
+    iput-wide v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
 
     .line 1713
     return-void
@@ -332,21 +298,16 @@
 
 .method private set(ILcom/fasterxml/jackson/core/JsonToken;Ljava/lang/Object;Ljava/lang/Object;)V
     .registers 9
-    .param p1, "index"    # I
-    .param p2, "tokenType"    # Lcom/fasterxml/jackson/core/JsonToken;
-    .param p3, "objectId"    # Ljava/lang/Object;
-    .param p4, "typeId"    # Ljava/lang/Object;
 
     .prologue
     .line 1697
     invoke-virtual {p2}, Lcom/fasterxml/jackson/core/JsonToken;->ordinal()I
 
-    move-result v2
+    move-result v0
 
-    int-to-long v0, v2
+    int-to-long v0, v0
 
     .line 1698
-    .local v0, "typeCode":J
     if-lez p1, :cond_a
 
     .line 1699
@@ -358,9 +319,9 @@
     :cond_a
     iget-wide v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
 
-    or-long/2addr v2, v0
+    or-long/2addr v0, v2
 
-    iput-wide v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
+    iput-wide v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
 
     .line 1702
     invoke-direct {p0, p1, p3, p4}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->assignNativeIds(ILjava/lang/Object;Ljava/lang/Object;)V
@@ -371,27 +332,21 @@
 
 .method private set(ILcom/fasterxml/jackson/core/JsonToken;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
     .registers 10
-    .param p1, "index"    # I
-    .param p2, "tokenType"    # Lcom/fasterxml/jackson/core/JsonToken;
-    .param p3, "value"    # Ljava/lang/Object;
-    .param p4, "objectId"    # Ljava/lang/Object;
-    .param p5, "typeId"    # Ljava/lang/Object;
 
     .prologue
     .line 1718
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokens:[Ljava/lang/Object;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokens:[Ljava/lang/Object;
 
-    aput-object p3, v2, p1
+    aput-object p3, v0, p1
 
     .line 1719
     invoke-virtual {p2}, Lcom/fasterxml/jackson/core/JsonToken;->ordinal()I
 
-    move-result v2
+    move-result v0
 
-    int-to-long v0, v2
+    int-to-long v0, v0
 
     .line 1720
-    .local v0, "typeCode":J
     if-lez p1, :cond_e
 
     .line 1721
@@ -403,9 +358,9 @@
     :cond_e
     iget-wide v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
 
-    or-long/2addr v2, v0
+    or-long/2addr v0, v2
 
-    iput-wide v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
+    iput-wide v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
 
     .line 1724
     invoke-direct {p0, p1, p4, p5}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->assignNativeIds(ILjava/lang/Object;Ljava/lang/Object;)V
@@ -418,8 +373,6 @@
 # virtual methods
 .method public append(ILcom/fasterxml/jackson/core/JsonToken;)Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
     .registers 5
-    .param p1, "index"    # I
-    .param p2, "tokenType"    # Lcom/fasterxml/jackson/core/JsonToken;
 
     .prologue
     .line 1615
@@ -460,9 +413,6 @@
 
 .method public append(ILcom/fasterxml/jackson/core/JsonToken;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
     .registers 6
-    .param p1, "index"    # I
-    .param p2, "tokenType"    # Lcom/fasterxml/jackson/core/JsonToken;
-    .param p3, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 1638
@@ -503,10 +453,6 @@
 
 .method public append(ILcom/fasterxml/jackson/core/JsonToken;Ljava/lang/Object;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
     .registers 7
-    .param p1, "index"    # I
-    .param p2, "tokenType"    # Lcom/fasterxml/jackson/core/JsonToken;
-    .param p3, "objectId"    # Ljava/lang/Object;
-    .param p4, "typeId"    # Ljava/lang/Object;
 
     .prologue
     .line 1627
@@ -547,11 +493,6 @@
 
 .method public append(ILcom/fasterxml/jackson/core/JsonToken;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
     .registers 12
-    .param p1, "index"    # I
-    .param p2, "tokenType"    # Lcom/fasterxml/jackson/core/JsonToken;
-    .param p3, "value"    # Ljava/lang/Object;
-    .param p4, "objectId"    # Ljava/lang/Object;
-    .param p5, "typeId"    # Ljava/lang/Object;
 
     .prologue
     .line 1650
@@ -600,9 +541,6 @@
 
 .method public appendRaw(IILjava/lang/Object;)Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
     .registers 6
-    .param p1, "index"    # I
-    .param p2, "rawTokenType"    # I
-    .param p3, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 1661
@@ -643,11 +581,6 @@
 
 .method public appendRaw(IILjava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
     .registers 12
-    .param p1, "index"    # I
-    .param p2, "rawTokenType"    # I
-    .param p3, "value"    # Ljava/lang/Object;
-    .param p4, "objectId"    # Ljava/lang/Object;
-    .param p5, "typeId"    # Ljava/lang/Object;
 
     .prologue
     .line 1673
@@ -696,7 +629,6 @@
 
 .method public findObjectId(I)Ljava/lang/Object;
     .registers 4
-    .param p1, "index"    # I
 
     .prologue
     .line 1765
@@ -729,7 +661,6 @@
 
 .method public findTypeId(I)Ljava/lang/Object;
     .registers 4
-    .param p1, "index"    # I
 
     .prologue
     .line 1772
@@ -762,7 +693,6 @@
 
 .method public get(I)Ljava/lang/Object;
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 1598
@@ -804,61 +734,55 @@
 .end method
 
 .method public rawType(I)I
-    .registers 6
-    .param p1, "index"    # I
+    .registers 5
 
     .prologue
     .line 1589
-    iget-wide v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
+    iget-wide v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
 
     .line 1590
-    .local v2, "l":J
     if-lez p1, :cond_7
 
     .line 1591
-    shl-int/lit8 v1, p1, 0x2
+    shl-int/lit8 v2, p1, 0x2
 
-    shr-long/2addr v2, v1
+    shr-long/2addr v0, v2
 
     .line 1593
     :cond_7
-    long-to-int v1, v2
+    long-to-int v0, v0
 
-    and-int/lit8 v0, v1, 0xf
+    and-int/lit8 v0, v0, 0xf
 
     .line 1594
-    .local v0, "ix":I
     return v0
 .end method
 
 .method public type(I)Lcom/fasterxml/jackson/core/JsonToken;
-    .registers 6
-    .param p1, "index"    # I
+    .registers 5
 
     .prologue
     .line 1579
-    iget-wide v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
+    iget-wide v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->_tokenTypes:J
 
     .line 1580
-    .local v2, "l":J
     if-lez p1, :cond_7
 
     .line 1581
-    shl-int/lit8 v1, p1, 0x2
+    shl-int/lit8 v2, p1, 0x2
 
-    shr-long/2addr v2, v1
+    shr-long/2addr v0, v2
 
     .line 1583
     :cond_7
-    long-to-int v1, v2
+    long-to-int v0, v0
 
-    and-int/lit8 v0, v1, 0xf
+    and-int/lit8 v0, v0, 0xf
 
     .line 1584
-    .local v0, "ix":I
     sget-object v1, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->TOKEN_TYPES_BY_INDEX:[Lcom/fasterxml/jackson/core/JsonToken;
 
-    aget-object v1, v1, v0
+    aget-object v0, v1, v0
 
-    return-object v1
+    return-object v0
 .end method

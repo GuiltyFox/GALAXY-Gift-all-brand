@@ -3,38 +3,25 @@
 .source "SquaringDrawable.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/request/target/SquaringDrawable;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "State"
-.end annotation
-
-
 # instance fields
-.field private final side:I
+.field private final a:Landroid/graphics/drawable/Drawable$ConstantState;
 
-.field private final wrapped:Landroid/graphics/drawable/Drawable$ConstantState;
+.field private final b:I
 
 
 # direct methods
 .method constructor <init>(Landroid/graphics/drawable/Drawable$ConstantState;I)V
     .registers 3
-    .param p1, "wrapped"    # Landroid/graphics/drawable/Drawable$ConstantState;
-    .param p2, "side"    # I
 
     .prologue
     .line 217
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable$ConstantState;-><init>()V
 
     .line 218
-    iput-object p1, p0, Lcom/bumptech/glide/request/target/SquaringDrawable$State;->wrapped:Landroid/graphics/drawable/Drawable$ConstantState;
+    iput-object p1, p0, Lcom/bumptech/glide/request/target/SquaringDrawable$State;->a:Landroid/graphics/drawable/Drawable$ConstantState;
 
     .line 219
-    iput p2, p0, Lcom/bumptech/glide/request/target/SquaringDrawable$State;->side:I
+    iput p2, p0, Lcom/bumptech/glide/request/target/SquaringDrawable$State;->b:I
 
     .line 220
     return-void
@@ -42,13 +29,12 @@
 
 .method constructor <init>(Lcom/bumptech/glide/request/target/SquaringDrawable$State;)V
     .registers 4
-    .param p1, "other"    # Lcom/bumptech/glide/request/target/SquaringDrawable$State;
 
     .prologue
     .line 214
-    iget-object v0, p1, Lcom/bumptech/glide/request/target/SquaringDrawable$State;->wrapped:Landroid/graphics/drawable/Drawable$ConstantState;
+    iget-object v0, p1, Lcom/bumptech/glide/request/target/SquaringDrawable$State;->a:Landroid/graphics/drawable/Drawable$ConstantState;
 
-    iget v1, p1, Lcom/bumptech/glide/request/target/SquaringDrawable$State;->side:I
+    iget v1, p1, Lcom/bumptech/glide/request/target/SquaringDrawable$State;->b:I
 
     invoke-direct {p0, v0, v1}, Lcom/bumptech/glide/request/target/SquaringDrawable$State;-><init>(Landroid/graphics/drawable/Drawable$ConstantState;I)V
 
@@ -56,24 +42,22 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/bumptech/glide/request/target/SquaringDrawable$State;)Landroid/graphics/drawable/Drawable$ConstantState;
+.method static synthetic a(Lcom/bumptech/glide/request/target/SquaringDrawable$State;)Landroid/graphics/drawable/Drawable$ConstantState;
     .registers 2
-    .param p0, "x0"    # Lcom/bumptech/glide/request/target/SquaringDrawable$State;
 
     .prologue
     .line 209
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable$State;->wrapped:Landroid/graphics/drawable/Drawable$ConstantState;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable$State;->a:Landroid/graphics/drawable/Drawable$ConstantState;
 
     return-object v0
 .end method
 
-.method static synthetic access$100(Lcom/bumptech/glide/request/target/SquaringDrawable$State;)I
+.method static synthetic b(Lcom/bumptech/glide/request/target/SquaringDrawable$State;)I
     .registers 2
-    .param p0, "x0"    # Lcom/bumptech/glide/request/target/SquaringDrawable$State;
 
     .prologue
     .line 209
-    iget v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable$State;->side:I
+    iget v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable$State;->b:I
 
     return v0
 .end method
@@ -106,7 +90,6 @@
 
 .method public newDrawable(Landroid/content/res/Resources;)Landroid/graphics/drawable/Drawable;
     .registers 4
-    .param p1, "res"    # Landroid/content/res/Resources;
 
     .prologue
     .line 229

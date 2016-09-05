@@ -4,13 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/design/widget/SwipeDismissBehavior$SettleRunnable;,
-        Landroid/support/design/widget/SwipeDismissBehavior$OnDismissListener;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<V:",
@@ -69,8 +62,7 @@
     .registers 4
 
     .prologue
-    .local p0, "this":Landroid/support/design/widget/SwipeDismissBehavior;, "Landroid/support/design/widget/SwipeDismissBehavior<TV;>;"
-    const/high16 v2, 0x3f000000
+    const/high16 v2, 0x3f000000    # 0.5f
 
     const/4 v1, 0x0
 
@@ -107,7 +99,6 @@
 
 .method static synthetic access$000(Landroid/support/design/widget/SwipeDismissBehavior;)Landroid/support/design/widget/SwipeDismissBehavior$OnDismissListener;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/SwipeDismissBehavior;
 
     .prologue
     .line 36
@@ -118,7 +109,6 @@
 
 .method static synthetic access$100(Landroid/support/design/widget/SwipeDismissBehavior;)Landroid/support/v4/widget/ViewDragHelper;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/SwipeDismissBehavior;
 
     .prologue
     .line 36
@@ -129,7 +119,6 @@
 
 .method static synthetic access$200(Landroid/support/design/widget/SwipeDismissBehavior;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/SwipeDismissBehavior;
 
     .prologue
     .line 36
@@ -140,7 +129,6 @@
 
 .method static synthetic access$300(Landroid/support/design/widget/SwipeDismissBehavior;)F
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/SwipeDismissBehavior;
 
     .prologue
     .line 36
@@ -151,9 +139,6 @@
 
 .method static synthetic access$400(III)I
     .registers 4
-    .param p0, "x0"    # I
-    .param p1, "x1"    # I
-    .param p2, "x2"    # I
 
     .prologue
     .line 36
@@ -166,7 +151,6 @@
 
 .method static synthetic access$500(Landroid/support/design/widget/SwipeDismissBehavior;)F
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/SwipeDismissBehavior;
 
     .prologue
     .line 36
@@ -177,7 +161,6 @@
 
 .method static synthetic access$600(Landroid/support/design/widget/SwipeDismissBehavior;)F
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/SwipeDismissBehavior;
 
     .prologue
     .line 36
@@ -188,9 +171,6 @@
 
 .method static synthetic access$700(FFF)F
     .registers 4
-    .param p0, "x0"    # F
-    .param p1, "x1"    # F
-    .param p2, "x2"    # F
 
     .prologue
     .line 36
@@ -203,9 +183,6 @@
 
 .method private static clamp(FFF)F
     .registers 4
-    .param p0, "min"    # F
-    .param p1, "value"    # F
-    .param p2, "max"    # F
 
     .prologue
     .line 384
@@ -222,9 +199,6 @@
 
 .method private static clamp(III)I
     .registers 4
-    .param p0, "min"    # I
-    .param p1, "value"    # I
-    .param p2, "max"    # I
 
     .prologue
     .line 388
@@ -241,11 +215,9 @@
 
 .method private ensureViewDragHelper(Landroid/view/ViewGroup;)V
     .registers 4
-    .param p1, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
     .line 355
-    .local p0, "this":Landroid/support/design/widget/SwipeDismissBehavior;, "Landroid/support/design/widget/SwipeDismissBehavior<TV;>;"
     iget-object v0, p0, Landroid/support/design/widget/SwipeDismissBehavior;->mViewDragHelper:Landroid/support/v4/widget/ViewDragHelper;
 
     if-nez v0, :cond_12
@@ -259,7 +231,7 @@
 
     iget-object v1, p0, Landroid/support/design/widget/SwipeDismissBehavior;->mDragCallback:Landroid/support/v4/widget/ViewDragHelper$Callback;
 
-    invoke-static {p1, v0, v1}, Landroid/support/v4/widget/ViewDragHelper;->create(Landroid/view/ViewGroup;FLandroid/support/v4/widget/ViewDragHelper$Callback;)Landroid/support/v4/widget/ViewDragHelper;
+    invoke-static {p1, v0, v1}, Landroid/support/v4/widget/ViewDragHelper;->a(Landroid/view/ViewGroup;FLandroid/support/v4/widget/ViewDragHelper$Callback;)Landroid/support/v4/widget/ViewDragHelper;
 
     move-result-object v0
 
@@ -274,7 +246,7 @@
     :cond_13
     iget-object v0, p0, Landroid/support/design/widget/SwipeDismissBehavior;->mDragCallback:Landroid/support/v4/widget/ViewDragHelper$Callback;
 
-    invoke-static {p1, v0}, Landroid/support/v4/widget/ViewDragHelper;->create(Landroid/view/ViewGroup;Landroid/support/v4/widget/ViewDragHelper$Callback;)Landroid/support/v4/widget/ViewDragHelper;
+    invoke-static {p1, v0}, Landroid/support/v4/widget/ViewDragHelper;->a(Landroid/view/ViewGroup;Landroid/support/v4/widget/ViewDragHelper$Callback;)Landroid/support/v4/widget/ViewDragHelper;
 
     move-result-object v0
 
@@ -283,9 +255,6 @@
 
 .method static fraction(FFF)F
     .registers 5
-    .param p0, "startValue"    # F
-    .param p1, "endValue"    # F
-    .param p2, "value"    # F
 
     .prologue
     .line 405
@@ -302,14 +271,9 @@
 # virtual methods
 .method public canSwipeDismissView(Landroid/view/View;)Z
     .registers 3
-    .param p1, "view"    # Landroid/view/View;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
 
     .prologue
     .line 210
-    .local p0, "this":Landroid/support/design/widget/SwipeDismissBehavior;, "Landroid/support/design/widget/SwipeDismissBehavior<TV;>;"
     const/4 v0, 0x1
 
     return v0
@@ -320,14 +284,13 @@
 
     .prologue
     .line 398
-    .local p0, "this":Landroid/support/design/widget/SwipeDismissBehavior;, "Landroid/support/design/widget/SwipeDismissBehavior<TV;>;"
     iget-object v0, p0, Landroid/support/design/widget/SwipeDismissBehavior;->mViewDragHelper:Landroid/support/v4/widget/ViewDragHelper;
 
     if-eqz v0, :cond_b
 
     iget-object v0, p0, Landroid/support/design/widget/SwipeDismissBehavior;->mViewDragHelper:Landroid/support/v4/widget/ViewDragHelper;
 
-    invoke-virtual {v0}, Landroid/support/v4/widget/ViewDragHelper;->getViewDragState()I
+    invoke-virtual {v0}, Landroid/support/v4/widget/ViewDragHelper;->a()I
 
     move-result v0
 
@@ -342,8 +305,6 @@
 
 .method public onInterceptTouchEvent(Landroid/support/design/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/MotionEvent;)Z
     .registers 7
-    .param p1, "parent"    # Landroid/support/design/widget/CoordinatorLayout;
-    .param p3, "event"    # Landroid/view/MotionEvent;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -355,12 +316,10 @@
     .end annotation
 
     .prologue
-    .local p0, "this":Landroid/support/design/widget/SwipeDismissBehavior;, "Landroid/support/design/widget/SwipeDismissBehavior<TV;>;"
-    .local p2, "child":Landroid/view/View;, "TV;"
     const/4 v1, 0x0
 
     .line 171
-    invoke-static {p3}, Landroid/support/v4/view/MotionEventCompat;->getActionMasked(Landroid/view/MotionEvent;)I
+    invoke-static {p3}, Landroid/support/v4/view/MotionEventCompat;->a(Landroid/view/MotionEvent;)I
 
     move-result v0
 
@@ -425,7 +384,7 @@
     .line 191
     iget-object v0, p0, Landroid/support/design/widget/SwipeDismissBehavior;->mViewDragHelper:Landroid/support/v4/widget/ViewDragHelper;
 
-    invoke-virtual {v0, p3}, Landroid/support/v4/widget/ViewDragHelper;->shouldInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-virtual {v0, p3}, Landroid/support/v4/widget/ViewDragHelper;->a(Landroid/view/MotionEvent;)Z
 
     move-result v1
 
@@ -444,8 +403,6 @@
 
 .method public onTouchEvent(Landroid/support/design/widget/CoordinatorLayout;Landroid/view/View;Landroid/view/MotionEvent;)Z
     .registers 5
-    .param p1, "parent"    # Landroid/support/design/widget/CoordinatorLayout;
-    .param p3, "event"    # Landroid/view/MotionEvent;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -458,8 +415,6 @@
 
     .prologue
     .line 196
-    .local p0, "this":Landroid/support/design/widget/SwipeDismissBehavior;, "Landroid/support/design/widget/SwipeDismissBehavior<TV;>;"
-    .local p2, "child":Landroid/view/View;, "TV;"
     iget-object v0, p0, Landroid/support/design/widget/SwipeDismissBehavior;->mViewDragHelper:Landroid/support/v4/widget/ViewDragHelper;
 
     if-eqz v0, :cond_b
@@ -467,7 +422,7 @@
     .line 197
     iget-object v0, p0, Landroid/support/design/widget/SwipeDismissBehavior;->mViewDragHelper:Landroid/support/v4/widget/ViewDragHelper;
 
-    invoke-virtual {v0, p3}, Landroid/support/v4/widget/ViewDragHelper;->processTouchEvent(Landroid/view/MotionEvent;)V
+    invoke-virtual {v0, p3}, Landroid/support/v4/widget/ViewDragHelper;->b(Landroid/view/MotionEvent;)V
 
     .line 198
     const/4 v0, 0x1
@@ -484,14 +439,12 @@
 
 .method public setDragDismissDistance(F)V
     .registers 4
-    .param p1, "distance"    # F
 
     .prologue
     .line 136
-    .local p0, "this":Landroid/support/design/widget/SwipeDismissBehavior;, "Landroid/support/design/widget/SwipeDismissBehavior<TV;>;"
     const/4 v0, 0x0
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-static {v0, p1, v1}, Landroid/support/design/widget/SwipeDismissBehavior;->clamp(FFF)F
 
@@ -505,14 +458,12 @@
 
 .method public setEndAlphaSwipeDistance(F)V
     .registers 4
-    .param p1, "fraction"    # F
 
     .prologue
     .line 154
-    .local p0, "this":Landroid/support/design/widget/SwipeDismissBehavior;, "Landroid/support/design/widget/SwipeDismissBehavior<TV;>;"
     const/4 v0, 0x0
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-static {v0, p1, v1}, Landroid/support/design/widget/SwipeDismissBehavior;->clamp(FFF)F
 
@@ -526,11 +477,9 @@
 
 .method public setListener(Landroid/support/design/widget/SwipeDismissBehavior$OnDismissListener;)V
     .registers 2
-    .param p1, "listener"    # Landroid/support/design/widget/SwipeDismissBehavior$OnDismissListener;
 
     .prologue
     .line 117
-    .local p0, "this":Landroid/support/design/widget/SwipeDismissBehavior;, "Landroid/support/design/widget/SwipeDismissBehavior<TV;>;"
     iput-object p1, p0, Landroid/support/design/widget/SwipeDismissBehavior;->mListener:Landroid/support/design/widget/SwipeDismissBehavior$OnDismissListener;
 
     .line 118
@@ -539,11 +488,9 @@
 
 .method public setSensitivity(F)V
     .registers 3
-    .param p1, "sensitivity"    # F
 
     .prologue
     .line 165
-    .local p0, "this":Landroid/support/design/widget/SwipeDismissBehavior;, "Landroid/support/design/widget/SwipeDismissBehavior<TV;>;"
     iput p1, p0, Landroid/support/design/widget/SwipeDismissBehavior;->mSensitivity:F
 
     .line 166
@@ -557,14 +504,12 @@
 
 .method public setStartAlphaSwipeDistance(F)V
     .registers 4
-    .param p1, "fraction"    # F
 
     .prologue
     .line 145
-    .local p0, "this":Landroid/support/design/widget/SwipeDismissBehavior;, "Landroid/support/design/widget/SwipeDismissBehavior<TV;>;"
     const/4 v0, 0x0
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-static {v0, p1, v1}, Landroid/support/design/widget/SwipeDismissBehavior;->clamp(FFF)F
 
@@ -578,11 +523,9 @@
 
 .method public setSwipeDirection(I)V
     .registers 2
-    .param p1, "direction"    # I
 
     .prologue
     .line 127
-    .local p0, "this":Landroid/support/design/widget/SwipeDismissBehavior;, "Landroid/support/design/widget/SwipeDismissBehavior<TV;>;"
     iput p1, p0, Landroid/support/design/widget/SwipeDismissBehavior;->mSwipeDirection:I
 
     .line 128

@@ -7,13 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lrx/internal/operators/OnSubscribeFromIterable$1;,
-        Lrx/internal/operators/OnSubscribeFromIterable$IterableProducer;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -27,7 +20,7 @@
 
 
 # instance fields
-.field final is:Ljava/lang/Iterable;
+.field final a:Ljava/lang/Iterable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Iterable",
@@ -50,8 +43,6 @@
 
     .prologue
     .line 36
-    .local p0, "this":Lrx/internal/operators/OnSubscribeFromIterable;, "Lrx/internal/operators/OnSubscribeFromIterable<TT;>;"
-    .local p1, "iterable":Ljava/lang/Iterable;, "Ljava/lang/Iterable<+TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 37
@@ -68,7 +59,7 @@
 
     .line 40
     :cond_e
-    iput-object p1, p0, Lrx/internal/operators/OnSubscribeFromIterable;->is:Ljava/lang/Iterable;
+    iput-object p1, p0, Lrx/internal/operators/OnSubscribeFromIterable;->a:Ljava/lang/Iterable;
 
     .line 41
     return-void
@@ -76,22 +67,19 @@
 
 
 # virtual methods
-.method public bridge synthetic call(Ljava/lang/Object;)V
+.method public bridge synthetic a(Ljava/lang/Object;)V
     .registers 2
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 32
-    .local p0, "this":Lrx/internal/operators/OnSubscribeFromIterable;, "Lrx/internal/operators/OnSubscribeFromIterable<TT;>;"
     check-cast p1, Lrx/Subscriber;
 
-    .end local p1    # "x0":Ljava/lang/Object;
-    invoke-virtual {p0, p1}, Lrx/internal/operators/OnSubscribeFromIterable;->call(Lrx/Subscriber;)V
+    invoke-virtual {p0, p1}, Lrx/internal/operators/OnSubscribeFromIterable;->a(Lrx/Subscriber;)V
 
     return-void
 .end method
 
-.method public call(Lrx/Subscriber;)V
+.method public a(Lrx/Subscriber;)V
     .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -103,30 +91,27 @@
 
     .prologue
     .line 45
-    .local p0, "this":Lrx/internal/operators/OnSubscribeFromIterable;, "Lrx/internal/operators/OnSubscribeFromIterable<TT;>;"
-    .local p1, "o":Lrx/Subscriber;, "Lrx/Subscriber<-TT;>;"
-    iget-object v1, p0, Lrx/internal/operators/OnSubscribeFromIterable;->is:Ljava/lang/Iterable;
+    iget-object v0, p0, Lrx/internal/operators/OnSubscribeFromIterable;->a:Ljava/lang/Iterable;
 
-    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
     .line 46
-    .local v0, "it":Ljava/util/Iterator;, "Ljava/util/Iterator<+TT;>;"
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
     if-nez v1, :cond_16
 
-    invoke-virtual {p1}, Lrx/Subscriber;->isUnsubscribed()Z
+    invoke-virtual {p1}, Lrx/Subscriber;->c()Z
 
     move-result v1
 
     if-nez v1, :cond_16
 
     .line 47
-    invoke-virtual {p1}, Lrx/Subscriber;->onCompleted()V
+    invoke-virtual {p1}, Lrx/Subscriber;->i_()V
 
     .line 50
     :goto_15
@@ -140,7 +125,7 @@
 
     invoke-direct {v1, p1, v0, v2}, Lrx/internal/operators/OnSubscribeFromIterable$IterableProducer;-><init>(Lrx/Subscriber;Ljava/util/Iterator;Lrx/internal/operators/OnSubscribeFromIterable$1;)V
 
-    invoke-virtual {p1, v1}, Lrx/Subscriber;->setProducer(Lrx/Producer;)V
+    invoke-virtual {p1, v1}, Lrx/Subscriber;->a(Lrx/Producer;)V
 
     goto :goto_15
 .end method

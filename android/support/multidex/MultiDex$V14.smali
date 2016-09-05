@@ -3,116 +3,19 @@
 .source "MultiDex.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/multidex/MultiDex;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "V14"
-.end annotation
-
-
 # direct methods
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 434
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method static synthetic access$100(Ljava/lang/ClassLoader;Ljava/util/List;Ljava/io/File;)V
+.method static synthetic a(Ljava/lang/ClassLoader;Ljava/util/List;Ljava/io/File;)V
     .registers 3
-    .param p0, "x0"    # Ljava/lang/ClassLoader;
-    .param p1, "x1"    # Ljava/util/List;
-    .param p2, "x2"    # Ljava/io/File;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/IllegalArgumentException;,
-            Ljava/lang/IllegalAccessException;,
-            Ljava/lang/NoSuchFieldException;,
-            Ljava/lang/reflect/InvocationTargetException;,
-            Ljava/lang/NoSuchMethodException;
-        }
-    .end annotation
 
     .prologue
     .line 434
-    invoke-static {p0, p1, p2}, Landroid/support/multidex/MultiDex$V14;->install(Ljava/lang/ClassLoader;Ljava/util/List;Ljava/io/File;)V
+    invoke-static {p0, p1, p2}, Landroid/support/multidex/MultiDex$V14;->b(Ljava/lang/ClassLoader;Ljava/util/List;Ljava/io/File;)V
 
     return-void
 .end method
 
-.method private static install(Ljava/lang/ClassLoader;Ljava/util/List;Ljava/io/File;)V
-    .registers 7
-    .param p0, "loader"    # Ljava/lang/ClassLoader;
-    .param p2, "optimizedDirectory"    # Ljava/io/File;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/ClassLoader;",
-            "Ljava/util/List",
-            "<",
-            "Ljava/io/File;",
-            ">;",
-            "Ljava/io/File;",
-            ")V"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/IllegalArgumentException;,
-            Ljava/lang/IllegalAccessException;,
-            Ljava/lang/NoSuchFieldException;,
-            Ljava/lang/reflect/InvocationTargetException;,
-            Ljava/lang/NoSuchMethodException;
-        }
-    .end annotation
-
-    .prologue
-    .line 445
-    .local p1, "additionalClassPathEntries":Ljava/util/List;, "Ljava/util/List<Ljava/io/File;>;"
-    const-string/jumbo v2, "pathList"
-
-    # invokes: Landroid/support/multidex/MultiDex;->findField(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/reflect/Field;
-    invoke-static {p0, v2}, Landroid/support/multidex/MultiDex;->access$300(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    move-result-object v1
-
-    .line 446
-    .local v1, "pathListField":Ljava/lang/reflect/Field;
-    invoke-virtual {v1, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    .line 447
-    .local v0, "dexPathList":Ljava/lang/Object;
-    const-string/jumbo v2, "dexElements"
-
-    new-instance v3, Ljava/util/ArrayList;
-
-    invoke-direct {v3, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
-
-    invoke-static {v0, v3, p2}, Landroid/support/multidex/MultiDex$V14;->makeDexElements(Ljava/lang/Object;Ljava/util/ArrayList;Ljava/io/File;)[Ljava/lang/Object;
-
-    move-result-object v3
-
-    # invokes: Landroid/support/multidex/MultiDex;->expandFieldArray(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
-    invoke-static {v0, v2, v3}, Landroid/support/multidex/MultiDex;->access$400(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
-
-    .line 449
-    return-void
-.end method
-
-.method private static makeDexElements(Ljava/lang/Object;Ljava/util/ArrayList;Ljava/io/File;)[Ljava/lang/Object;
-    .registers 10
-    .param p0, "dexPathList"    # Ljava/lang/Object;
-    .param p2, "optimizedDirectory"    # Ljava/io/File;
+.method private static a(Ljava/lang/Object;Ljava/util/ArrayList;Ljava/io/File;)[Ljava/lang/Object;
+    .registers 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -127,55 +30,89 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/IllegalAccessException;,
-            Ljava/lang/reflect/InvocationTargetException;,
-            Ljava/lang/NoSuchMethodException;
-        }
-    .end annotation
-
     .prologue
-    .local p1, "files":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Ljava/io/File;>;"
-    const/4 v6, 0x2
+    const/4 v5, 0x2
 
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     .line 459
-    const-string/jumbo v1, "makeDexElements"
+    const-string/jumbo v0, "makeDexElements"
 
-    new-array v2, v6, [Ljava/lang/Class;
+    new-array v1, v5, [Ljava/lang/Class;
 
-    const-class v3, Ljava/util/ArrayList;
+    const-class v2, Ljava/util/ArrayList;
 
-    aput-object v3, v2, v4
+    aput-object v2, v1, v3
 
-    const-class v3, Ljava/io/File;
+    const-class v2, Ljava/io/File;
 
-    aput-object v3, v2, v5
+    aput-object v2, v1, v4
 
-    # invokes: Landroid/support/multidex/MultiDex;->findMethod(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    invoke-static {p0, v1, v2}, Landroid/support/multidex/MultiDex;->access$500(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-static {p0, v0, v1}, Landroid/support/multidex/MultiDex;->a(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
 
     .line 462
-    .local v0, "makeDexElements":Ljava/lang/reflect/Method;
-    new-array v1, v6, [Ljava/lang/Object;
+    new-array v1, v5, [Ljava/lang/Object;
 
-    aput-object p1, v1, v4
+    aput-object p1, v1, v3
 
-    aput-object p2, v1, v5
+    aput-object p2, v1, v4
 
     invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, [Ljava/lang/Object;
+    check-cast v0, [Ljava/lang/Object;
 
-    check-cast v1, [Ljava/lang/Object;
+    check-cast v0, [Ljava/lang/Object;
 
-    return-object v1
+    return-object v0
+.end method
+
+.method private static b(Ljava/lang/ClassLoader;Ljava/util/List;Ljava/io/File;)V
+    .registers 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/ClassLoader;",
+            "Ljava/util/List",
+            "<",
+            "Ljava/io/File;",
+            ">;",
+            "Ljava/io/File;",
+            ")V"
+        }
+    .end annotation
+
+    .prologue
+    .line 445
+    const-string/jumbo v0, "pathList"
+
+    invoke-static {p0, v0}, Landroid/support/multidex/MultiDex;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/reflect/Field;
+
+    move-result-object v0
+
+    .line 446
+    invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    .line 447
+    const-string/jumbo v1, "dexElements"
+
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2, p1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    invoke-static {v0, v2, p2}, Landroid/support/multidex/MultiDex$V14;->a(Ljava/lang/Object;Ljava/util/ArrayList;Ljava/io/File;)[Ljava/lang/Object;
+
+    move-result-object v2
+
+    invoke-static {v0, v1, v2}, Landroid/support/multidex/MultiDex;->a(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
+
+    .line 449
+    return-void
 .end method

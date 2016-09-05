@@ -15,29 +15,29 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/google/zxing/ResultMetadataType;
+.field public static final enum a:Lcom/google/zxing/ResultMetadataType;
 
-.field public static final enum BYTE_SEGMENTS:Lcom/google/zxing/ResultMetadataType;
+.field public static final enum b:Lcom/google/zxing/ResultMetadataType;
 
-.field public static final enum ERROR_CORRECTION_LEVEL:Lcom/google/zxing/ResultMetadataType;
+.field public static final enum c:Lcom/google/zxing/ResultMetadataType;
 
-.field public static final enum ISSUE_NUMBER:Lcom/google/zxing/ResultMetadataType;
+.field public static final enum d:Lcom/google/zxing/ResultMetadataType;
 
-.field public static final enum ORIENTATION:Lcom/google/zxing/ResultMetadataType;
+.field public static final enum e:Lcom/google/zxing/ResultMetadataType;
 
-.field public static final enum OTHER:Lcom/google/zxing/ResultMetadataType;
+.field public static final enum f:Lcom/google/zxing/ResultMetadataType;
 
-.field public static final enum PDF417_EXTRA_METADATA:Lcom/google/zxing/ResultMetadataType;
+.field public static final enum g:Lcom/google/zxing/ResultMetadataType;
 
-.field public static final enum POSSIBLE_COUNTRY:Lcom/google/zxing/ResultMetadataType;
+.field public static final enum h:Lcom/google/zxing/ResultMetadataType;
 
-.field public static final enum STRUCTURED_APPEND_PARITY:Lcom/google/zxing/ResultMetadataType;
+.field public static final enum i:Lcom/google/zxing/ResultMetadataType;
 
-.field public static final enum STRUCTURED_APPEND_SEQUENCE:Lcom/google/zxing/ResultMetadataType;
+.field public static final enum j:Lcom/google/zxing/ResultMetadataType;
 
-.field public static final enum SUGGESTED_PRICE:Lcom/google/zxing/ResultMetadataType;
+.field public static final enum k:Lcom/google/zxing/ResultMetadataType;
 
-.field public static final enum UPC_EAN_EXTENSION:Lcom/google/zxing/ResultMetadataType;
+.field private static final synthetic l:[Lcom/google/zxing/ResultMetadataType;
 
 
 # direct methods
@@ -62,7 +62,7 @@
 
     invoke-direct {v0, v1, v3}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/ResultMetadataType;->OTHER:Lcom/google/zxing/ResultMetadataType;
+    sput-object v0, Lcom/google/zxing/ResultMetadataType;->a:Lcom/google/zxing/ResultMetadataType;
 
     .line 39
     new-instance v0, Lcom/google/zxing/ResultMetadataType;
@@ -71,7 +71,7 @@
 
     invoke-direct {v0, v1, v4}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/ResultMetadataType;->ORIENTATION:Lcom/google/zxing/ResultMetadataType;
+    sput-object v0, Lcom/google/zxing/ResultMetadataType;->b:Lcom/google/zxing/ResultMetadataType;
 
     .line 50
     new-instance v0, Lcom/google/zxing/ResultMetadataType;
@@ -80,7 +80,7 @@
 
     invoke-direct {v0, v1, v5}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/ResultMetadataType;->BYTE_SEGMENTS:Lcom/google/zxing/ResultMetadataType;
+    sput-object v0, Lcom/google/zxing/ResultMetadataType;->c:Lcom/google/zxing/ResultMetadataType;
 
     .line 56
     new-instance v0, Lcom/google/zxing/ResultMetadataType;
@@ -89,7 +89,7 @@
 
     invoke-direct {v0, v1, v6}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/ResultMetadataType;->ERROR_CORRECTION_LEVEL:Lcom/google/zxing/ResultMetadataType;
+    sput-object v0, Lcom/google/zxing/ResultMetadataType;->d:Lcom/google/zxing/ResultMetadataType;
 
     .line 61
     new-instance v0, Lcom/google/zxing/ResultMetadataType;
@@ -98,7 +98,7 @@
 
     invoke-direct {v0, v1, v7}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/ResultMetadataType;->ISSUE_NUMBER:Lcom/google/zxing/ResultMetadataType;
+    sput-object v0, Lcom/google/zxing/ResultMetadataType;->e:Lcom/google/zxing/ResultMetadataType;
 
     .line 67
     new-instance v0, Lcom/google/zxing/ResultMetadataType;
@@ -109,7 +109,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/ResultMetadataType;->SUGGESTED_PRICE:Lcom/google/zxing/ResultMetadataType;
+    sput-object v0, Lcom/google/zxing/ResultMetadataType;->f:Lcom/google/zxing/ResultMetadataType;
 
     .line 73
     new-instance v0, Lcom/google/zxing/ResultMetadataType;
@@ -120,7 +120,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/ResultMetadataType;->POSSIBLE_COUNTRY:Lcom/google/zxing/ResultMetadataType;
+    sput-object v0, Lcom/google/zxing/ResultMetadataType;->g:Lcom/google/zxing/ResultMetadataType;
 
     .line 78
     new-instance v0, Lcom/google/zxing/ResultMetadataType;
@@ -131,7 +131,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/ResultMetadataType;->UPC_EAN_EXTENSION:Lcom/google/zxing/ResultMetadataType;
+    sput-object v0, Lcom/google/zxing/ResultMetadataType;->h:Lcom/google/zxing/ResultMetadataType;
 
     .line 83
     new-instance v0, Lcom/google/zxing/ResultMetadataType;
@@ -142,7 +142,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/ResultMetadataType;->PDF417_EXTRA_METADATA:Lcom/google/zxing/ResultMetadataType;
+    sput-object v0, Lcom/google/zxing/ResultMetadataType;->i:Lcom/google/zxing/ResultMetadataType;
 
     .line 89
     new-instance v0, Lcom/google/zxing/ResultMetadataType;
@@ -153,7 +153,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/ResultMetadataType;->STRUCTURED_APPEND_SEQUENCE:Lcom/google/zxing/ResultMetadataType;
+    sput-object v0, Lcom/google/zxing/ResultMetadataType;->j:Lcom/google/zxing/ResultMetadataType;
 
     .line 95
     new-instance v0, Lcom/google/zxing/ResultMetadataType;
@@ -164,70 +164,70 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/ResultMetadataType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/ResultMetadataType;->STRUCTURED_APPEND_PARITY:Lcom/google/zxing/ResultMetadataType;
+    sput-object v0, Lcom/google/zxing/ResultMetadataType;->k:Lcom/google/zxing/ResultMetadataType;
 
     .line 25
     const/16 v0, 0xb
 
     new-array v0, v0, [Lcom/google/zxing/ResultMetadataType;
 
-    sget-object v1, Lcom/google/zxing/ResultMetadataType;->OTHER:Lcom/google/zxing/ResultMetadataType;
+    sget-object v1, Lcom/google/zxing/ResultMetadataType;->a:Lcom/google/zxing/ResultMetadataType;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/google/zxing/ResultMetadataType;->ORIENTATION:Lcom/google/zxing/ResultMetadataType;
+    sget-object v1, Lcom/google/zxing/ResultMetadataType;->b:Lcom/google/zxing/ResultMetadataType;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/google/zxing/ResultMetadataType;->BYTE_SEGMENTS:Lcom/google/zxing/ResultMetadataType;
+    sget-object v1, Lcom/google/zxing/ResultMetadataType;->c:Lcom/google/zxing/ResultMetadataType;
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lcom/google/zxing/ResultMetadataType;->ERROR_CORRECTION_LEVEL:Lcom/google/zxing/ResultMetadataType;
+    sget-object v1, Lcom/google/zxing/ResultMetadataType;->d:Lcom/google/zxing/ResultMetadataType;
 
     aput-object v1, v0, v6
 
-    sget-object v1, Lcom/google/zxing/ResultMetadataType;->ISSUE_NUMBER:Lcom/google/zxing/ResultMetadataType;
+    sget-object v1, Lcom/google/zxing/ResultMetadataType;->e:Lcom/google/zxing/ResultMetadataType;
 
     aput-object v1, v0, v7
 
     const/4 v1, 0x5
 
-    sget-object v2, Lcom/google/zxing/ResultMetadataType;->SUGGESTED_PRICE:Lcom/google/zxing/ResultMetadataType;
+    sget-object v2, Lcom/google/zxing/ResultMetadataType;->f:Lcom/google/zxing/ResultMetadataType;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x6
 
-    sget-object v2, Lcom/google/zxing/ResultMetadataType;->POSSIBLE_COUNTRY:Lcom/google/zxing/ResultMetadataType;
+    sget-object v2, Lcom/google/zxing/ResultMetadataType;->g:Lcom/google/zxing/ResultMetadataType;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x7
 
-    sget-object v2, Lcom/google/zxing/ResultMetadataType;->UPC_EAN_EXTENSION:Lcom/google/zxing/ResultMetadataType;
+    sget-object v2, Lcom/google/zxing/ResultMetadataType;->h:Lcom/google/zxing/ResultMetadataType;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8
 
-    sget-object v2, Lcom/google/zxing/ResultMetadataType;->PDF417_EXTRA_METADATA:Lcom/google/zxing/ResultMetadataType;
+    sget-object v2, Lcom/google/zxing/ResultMetadataType;->i:Lcom/google/zxing/ResultMetadataType;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9
 
-    sget-object v2, Lcom/google/zxing/ResultMetadataType;->STRUCTURED_APPEND_SEQUENCE:Lcom/google/zxing/ResultMetadataType;
+    sget-object v2, Lcom/google/zxing/ResultMetadataType;->j:Lcom/google/zxing/ResultMetadataType;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0xa
 
-    sget-object v2, Lcom/google/zxing/ResultMetadataType;->STRUCTURED_APPEND_PARITY:Lcom/google/zxing/ResultMetadataType;
+    sget-object v2, Lcom/google/zxing/ResultMetadataType;->k:Lcom/google/zxing/ResultMetadataType;
 
     aput-object v2, v0, v1
 
-    sput-object v0, Lcom/google/zxing/ResultMetadataType;->$VALUES:[Lcom/google/zxing/ResultMetadataType;
+    sput-object v0, Lcom/google/zxing/ResultMetadataType;->l:[Lcom/google/zxing/ResultMetadataType;
 
     return-void
 .end method
@@ -249,7 +249,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/zxing/ResultMetadataType;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 25
@@ -269,7 +268,7 @@
 
     .prologue
     .line 25
-    sget-object v0, Lcom/google/zxing/ResultMetadataType;->$VALUES:[Lcom/google/zxing/ResultMetadataType;
+    sget-object v0, Lcom/google/zxing/ResultMetadataType;->l:[Lcom/google/zxing/ResultMetadataType;
 
     invoke-virtual {v0}, [Lcom/google/zxing/ResultMetadataType;->clone()Ljava/lang/Object;
 

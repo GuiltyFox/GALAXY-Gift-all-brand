@@ -6,17 +6,6 @@
 .implements Ljava/io/Serializable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/introspect/AnnotatedConstructor;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "Serialization"
-.end annotation
-
-
 # static fields
 .field private static final serialVersionUID:J = 0x1L
 
@@ -55,7 +44,6 @@
 
     .prologue
     .line 209
-    .local p1, "ctor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 210

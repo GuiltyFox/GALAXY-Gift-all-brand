@@ -8,7 +8,7 @@
 
 
 # static fields
-.field private static volatile zzRB:Lcom/google/android/gms/analytics/Logger;
+.field private static volatile a:Lcom/google/android/gms/analytics/Logger;
 
 
 # direct methods
@@ -19,120 +19,45 @@
 
     invoke-direct {v0}, Lcom/google/android/gms/analytics/internal/zzs;-><init>()V
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->setLogger(Lcom/google/android/gms/analytics/Logger;)V
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->a(Lcom/google/android/gms/analytics/Logger;)V
 
     return-void
 .end method
 
-.method public static getLogger()Lcom/google/android/gms/analytics/Logger;
+.method public static a()Lcom/google/android/gms/analytics/Logger;
     .registers 1
 
-    sget-object v0, Lcom/google/android/gms/analytics/internal/zzae;->zzRB:Lcom/google/android/gms/analytics/Logger;
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzae;->a:Lcom/google/android/gms/analytics/Logger;
 
     return-object v0
 .end method
 
-.method public static setLogger(Lcom/google/android/gms/analytics/Logger;)V
+.method public static a(Lcom/google/android/gms/analytics/Logger;)V
     .registers 1
-    .param p0, "logger"    # Lcom/google/android/gms/analytics/Logger;
 
-    .prologue
-    sput-object p0, Lcom/google/android/gms/analytics/internal/zzae;->zzRB:Lcom/google/android/gms/analytics/Logger;
+    sput-object p0, Lcom/google/android/gms/analytics/internal/zzae;->a:Lcom/google/android/gms/analytics/Logger;
 
     return-void
 .end method
 
-.method public static v(Ljava/lang/String;)V
+.method public static a(Ljava/lang/String;)V
     .registers 2
-    .param p0, "msg"    # Ljava/lang/String;
 
-    .prologue
-    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzaf;->zzlg()Lcom/google/android/gms/analytics/internal/zzaf;
+    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzaf;->b()Lcom/google/android/gms/analytics/internal/zzaf;
 
     move-result-object v0
 
     if-eqz v0, :cond_11
 
-    invoke-virtual {v0, p0}, Lcom/google/android/gms/analytics/internal/zzaf;->zzba(Ljava/lang/String;)V
+    invoke-virtual {v0, p0}, Lcom/google/android/gms/analytics/internal/zzaf;->d(Ljava/lang/String;)V
 
     :cond_9
     :goto_9
-    sget-object v0, Lcom/google/android/gms/analytics/internal/zzae;->zzRB:Lcom/google/android/gms/analytics/Logger;
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzae;->a:Lcom/google/android/gms/analytics/Logger;
 
     if-eqz v0, :cond_10
 
-    invoke-interface {v0, p0}, Lcom/google/android/gms/analytics/Logger;->verbose(Ljava/lang/String;)V
-
-    :cond_10
-    return-void
-
-    :cond_11
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->zzQ(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_9
-
-    sget-object v0, Lcom/google/android/gms/analytics/internal/zzy;->zzQr:Lcom/google/android/gms/analytics/internal/zzy$zza;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzy$zza;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-static {v0, p0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_9
-.end method
-
-.method public static zzQ(I)Z
-    .registers 3
-
-    const/4 v0, 0x0
-
-    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzae;->getLogger()Lcom/google/android/gms/analytics/Logger;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_12
-
-    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzae;->getLogger()Lcom/google/android/gms/analytics/Logger;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Lcom/google/android/gms/analytics/Logger;->getLogLevel()I
-
-    move-result v1
-
-    if-gt v1, p0, :cond_12
-
-    const/4 v0, 0x1
-
-    :cond_12
-    return v0
-.end method
-
-.method public static zzaG(Ljava/lang/String;)V
-    .registers 2
-
-    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzaf;->zzlg()Lcom/google/android/gms/analytics/internal/zzaf;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_11
-
-    invoke-virtual {v0, p0}, Lcom/google/android/gms/analytics/internal/zzaf;->zzbc(Ljava/lang/String;)V
-
-    :cond_9
-    :goto_9
-    sget-object v0, Lcom/google/android/gms/analytics/internal/zzae;->zzRB:Lcom/google/android/gms/analytics/Logger;
-
-    if-eqz v0, :cond_10
-
-    invoke-interface {v0, p0}, Lcom/google/android/gms/analytics/Logger;->info(Ljava/lang/String;)V
+    invoke-interface {v0, p0}, Lcom/google/android/gms/analytics/Logger;->b(Ljava/lang/String;)V
 
     :cond_10
     return-void
@@ -140,15 +65,15 @@
     :cond_11
     const/4 v0, 0x1
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->zzQ(I)Z
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->a(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_9
 
-    sget-object v0, Lcom/google/android/gms/analytics/internal/zzy;->zzQr:Lcom/google/android/gms/analytics/internal/zzy$zza;
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzy;->c:Lcom/google/android/gms/analytics/internal/zzy$zza;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzy$zza;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzy$zza;->a()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -159,68 +84,24 @@
     goto :goto_9
 .end method
 
-.method public static zzaH(Ljava/lang/String;)V
-    .registers 2
-
-    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzaf;->zzlg()Lcom/google/android/gms/analytics/internal/zzaf;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_11
-
-    invoke-virtual {v0, p0}, Lcom/google/android/gms/analytics/internal/zzaf;->zzbd(Ljava/lang/String;)V
-
-    :cond_9
-    :goto_9
-    sget-object v0, Lcom/google/android/gms/analytics/internal/zzae;->zzRB:Lcom/google/android/gms/analytics/Logger;
-
-    if-eqz v0, :cond_10
-
-    invoke-interface {v0, p0}, Lcom/google/android/gms/analytics/Logger;->warn(Ljava/lang/String;)V
-
-    :cond_10
-    return-void
-
-    :cond_11
-    const/4 v0, 0x2
-
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->zzQ(I)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_9
-
-    sget-object v0, Lcom/google/android/gms/analytics/internal/zzy;->zzQr:Lcom/google/android/gms/analytics/internal/zzy$zza;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzy$zza;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-static {v0, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    goto :goto_9
-.end method
-
-.method public static zzf(Ljava/lang/String;Ljava/lang/Object;)V
+.method public static a(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 4
 
-    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzaf;->zzlg()Lcom/google/android/gms/analytics/internal/zzaf;
+    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzaf;->b()Lcom/google/android/gms/analytics/internal/zzaf;
 
     move-result-object v0
 
     if-eqz v0, :cond_11
 
-    invoke-virtual {v0, p0, p1}, Lcom/google/android/gms/analytics/internal/zzaf;->zze(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {v0, p0, p1}, Lcom/google/android/gms/analytics/internal/zzaf;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
     :cond_9
     :goto_9
-    sget-object v0, Lcom/google/android/gms/analytics/internal/zzae;->zzRB:Lcom/google/android/gms/analytics/Logger;
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzae;->a:Lcom/google/android/gms/analytics/Logger;
 
     if-eqz v0, :cond_10
 
-    invoke-interface {v0, p0}, Lcom/google/android/gms/analytics/Logger;->error(Ljava/lang/String;)V
+    invoke-interface {v0, p0}, Lcom/google/android/gms/analytics/Logger;->d(Ljava/lang/String;)V
 
     :cond_10
     return-void
@@ -228,7 +109,7 @@
     :cond_11
     const/4 v0, 0x3
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->zzQ(I)Z
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->a(I)Z
 
     move-result v0
 
@@ -261,9 +142,9 @@
     move-object v1, v0
 
     :goto_33
-    sget-object v0, Lcom/google/android/gms/analytics/internal/zzy;->zzQr:Lcom/google/android/gms/analytics/internal/zzy$zza;
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzy;->c:Lcom/google/android/gms/analytics/internal/zzy$zza;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzy$zza;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzy$zza;->a()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -277,4 +158,119 @@
     move-object v1, p0
 
     goto :goto_33
+.end method
+
+.method public static a(I)Z
+    .registers 3
+
+    const/4 v0, 0x0
+
+    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzae;->a()Lcom/google/android/gms/analytics/Logger;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_12
+
+    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzae;->a()Lcom/google/android/gms/analytics/Logger;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Lcom/google/android/gms/analytics/Logger;->a()I
+
+    move-result v1
+
+    if-gt v1, p0, :cond_12
+
+    const/4 v0, 0x1
+
+    :cond_12
+    return v0
+.end method
+
+.method public static b(Ljava/lang/String;)V
+    .registers 2
+
+    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzaf;->b()Lcom/google/android/gms/analytics/internal/zzaf;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_11
+
+    invoke-virtual {v0, p0}, Lcom/google/android/gms/analytics/internal/zzaf;->b(Ljava/lang/String;)V
+
+    :cond_9
+    :goto_9
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzae;->a:Lcom/google/android/gms/analytics/Logger;
+
+    if-eqz v0, :cond_10
+
+    invoke-interface {v0, p0}, Lcom/google/android/gms/analytics/Logger;->a(Ljava/lang/String;)V
+
+    :cond_10
+    return-void
+
+    :cond_11
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->a(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzy;->c:Lcom/google/android/gms/analytics/internal/zzy$zza;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzy$zza;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-static {v0, p0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_9
+.end method
+
+.method public static c(Ljava/lang/String;)V
+    .registers 2
+
+    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzaf;->b()Lcom/google/android/gms/analytics/internal/zzaf;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_11
+
+    invoke-virtual {v0, p0}, Lcom/google/android/gms/analytics/internal/zzaf;->e(Ljava/lang/String;)V
+
+    :cond_9
+    :goto_9
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzae;->a:Lcom/google/android/gms/analytics/Logger;
+
+    if-eqz v0, :cond_10
+
+    invoke-interface {v0, p0}, Lcom/google/android/gms/analytics/Logger;->c(Ljava/lang/String;)V
+
+    :cond_10
+    return-void
+
+    :cond_11
+    const/4 v0, 0x2
+
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->a(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9
+
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzy;->c:Lcom/google/android/gms/analytics/internal/zzy$zza;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzy$zza;->a()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-static {v0, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    goto :goto_9
 .end method

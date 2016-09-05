@@ -3,50 +3,39 @@
 .source "VideoControllerView.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bzbs/lib/survey/control/VideoControllerView;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x609
-    name = "MediaPlayerControl"
-.end annotation
-
-
 # virtual methods
-.method public abstract canPause()Z
+.method public abstract a(I)V
 .end method
 
-.method public abstract canSeekBackward()Z
+.method public abstract b()V
 .end method
 
-.method public abstract canSeekForward()Z
+.method public abstract c()V
 .end method
 
-.method public abstract getBufferPercentage()I
+.method public abstract d()I
 .end method
 
-.method public abstract getCurrentPosition()I
+.method public abstract e()I
 .end method
 
-.method public abstract getDuration()I
+.method public abstract f()Z
 .end method
 
-.method public abstract isFullScreen()Z
+.method public abstract g()I
 .end method
 
-.method public abstract isPlaying()Z
+.method public abstract h()Z
 .end method
 
-.method public abstract pause()V
+.method public abstract i()Z
 .end method
 
-.method public abstract seekTo(I)V
+.method public abstract j()Z
 .end method
 
-.method public abstract start()V
+.method public abstract k()Z
 .end method
 
-.method public abstract toggleFullScreen()V
+.method public abstract l()V
 .end method

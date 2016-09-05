@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/parceler/NonParcelRepository$TreeSetParcelable;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "TreeSetParcelableCreator"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -40,7 +31,6 @@
 
 .method synthetic constructor <init>(Lorg/parceler/NonParcelRepository$1;)V
     .registers 2
-    .param p1, "x0"    # Lorg/parceler/NonParcelRepository$1;
 
     .prologue
     .line 568
@@ -51,21 +41,8 @@
 
 
 # virtual methods
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public a(Landroid/os/Parcel;)Lorg/parceler/NonParcelRepository$TreeSetParcelable;
     .registers 3
-
-    .prologue
-    .line 568
-    invoke-virtual {p0, p1}, Lorg/parceler/NonParcelRepository$TreeSetParcelable$TreeSetParcelableCreator;->createFromParcel(Landroid/os/Parcel;)Lorg/parceler/NonParcelRepository$TreeSetParcelable;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public createFromParcel(Landroid/os/Parcel;)Lorg/parceler/NonParcelRepository$TreeSetParcelable;
-    .registers 3
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
     .line 572
@@ -76,25 +53,36 @@
     return-object v0
 .end method
 
-.method public bridge synthetic newArray(I)[Ljava/lang/Object;
+.method public a(I)[Lorg/parceler/NonParcelRepository$TreeSetParcelable;
+    .registers 3
+
+    .prologue
+    .line 577
+    new-array v0, p1, [Lorg/parceler/NonParcelRepository$TreeSetParcelable;
+
+    return-object v0
+.end method
+
+.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .registers 3
 
     .prologue
     .line 568
-    invoke-virtual {p0, p1}, Lorg/parceler/NonParcelRepository$TreeSetParcelable$TreeSetParcelableCreator;->newArray(I)[Lorg/parceler/NonParcelRepository$TreeSetParcelable;
+    invoke-virtual {p0, p1}, Lorg/parceler/NonParcelRepository$TreeSetParcelable$TreeSetParcelableCreator;->a(Landroid/os/Parcel;)Lorg/parceler/NonParcelRepository$TreeSetParcelable;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public newArray(I)[Lorg/parceler/NonParcelRepository$TreeSetParcelable;
+.method public synthetic newArray(I)[Ljava/lang/Object;
     .registers 3
-    .param p1, "size"    # I
 
     .prologue
-    .line 577
-    new-array v0, p1, [Lorg/parceler/NonParcelRepository$TreeSetParcelable;
+    .line 568
+    invoke-virtual {p0, p1}, Lorg/parceler/NonParcelRepository$TreeSetParcelable$TreeSetParcelableCreator;->a(I)[Lorg/parceler/NonParcelRepository$TreeSetParcelable;
+
+    move-result-object v0
 
     return-object v0
 .end method

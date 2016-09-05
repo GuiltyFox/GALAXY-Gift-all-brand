@@ -8,12 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lbolts/Task;->continueWithTask(Lbolts/Continuation;Ljava/util/concurrent/Executor;Lbolts/CancellationToken;)Lbolts/Task;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lbolts/Task;->b(Lbolts/Continuation;Ljava/util/concurrent/Executor;Lbolts/CancellationToken;)Lbolts/Task;
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
@@ -28,15 +23,15 @@
 
 
 # instance fields
-.field final synthetic this$0:Lbolts/Task;
+.field final synthetic a:Lbolts/Task$TaskCompletionSource;
 
-.field final synthetic val$continuation:Lbolts/Continuation;
+.field final synthetic b:Lbolts/Continuation;
 
-.field final synthetic val$ct:Lbolts/CancellationToken;
+.field final synthetic c:Ljava/util/concurrent/Executor;
 
-.field final synthetic val$executor:Ljava/util/concurrent/Executor;
+.field final synthetic d:Lbolts/CancellationToken;
 
-.field final synthetic val$tcs:Lbolts/Task$TaskCompletionSource;
+.field final synthetic e:Lbolts/Task;
 
 
 # direct methods
@@ -45,16 +40,15 @@
 
     .prologue
     .line 589
-    .local p0, "this":Lbolts/Task$10;, "Lbolts/Task.10;"
-    iput-object p1, p0, Lbolts/Task$10;->this$0:Lbolts/Task;
+    iput-object p1, p0, Lbolts/Task$10;->e:Lbolts/Task;
 
-    iput-object p2, p0, Lbolts/Task$10;->val$tcs:Lbolts/Task$TaskCompletionSource;
+    iput-object p2, p0, Lbolts/Task$10;->a:Lbolts/Task$TaskCompletionSource;
 
-    iput-object p3, p0, Lbolts/Task$10;->val$continuation:Lbolts/Continuation;
+    iput-object p3, p0, Lbolts/Task$10;->b:Lbolts/Continuation;
 
-    iput-object p4, p0, Lbolts/Task$10;->val$executor:Ljava/util/concurrent/Executor;
+    iput-object p4, p0, Lbolts/Task$10;->c:Ljava/util/concurrent/Executor;
 
-    iput-object p5, p0, Lbolts/Task$10;->val$ct:Lbolts/CancellationToken;
+    iput-object p5, p0, Lbolts/Task$10;->d:Lbolts/CancellationToken;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -63,26 +57,7 @@
 
 
 # virtual methods
-.method public bridge synthetic then(Lbolts/Task;)Ljava/lang/Object;
-    .registers 3
-    .param p1, "x0"    # Lbolts/Task;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/Exception;
-        }
-    .end annotation
-
-    .prologue
-    .line 589
-    .local p0, "this":Lbolts/Task$10;, "Lbolts/Task.10;"
-    invoke-virtual {p0, p1}, Lbolts/Task$10;->then(Lbolts/Task;)Ljava/lang/Void;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public then(Lbolts/Task;)Ljava/lang/Void;
+.method public a(Lbolts/Task;)Ljava/lang/Void;
     .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -95,21 +70,30 @@
 
     .prologue
     .line 592
-    .local p0, "this":Lbolts/Task$10;, "Lbolts/Task.10;"
-    .local p1, "task":Lbolts/Task;, "Lbolts/Task<TTResult;>;"
-    iget-object v0, p0, Lbolts/Task$10;->val$tcs:Lbolts/Task$TaskCompletionSource;
+    iget-object v0, p0, Lbolts/Task$10;->a:Lbolts/Task$TaskCompletionSource;
 
-    iget-object v1, p0, Lbolts/Task$10;->val$continuation:Lbolts/Continuation;
+    iget-object v1, p0, Lbolts/Task$10;->b:Lbolts/Continuation;
 
-    iget-object v2, p0, Lbolts/Task$10;->val$executor:Ljava/util/concurrent/Executor;
+    iget-object v2, p0, Lbolts/Task$10;->c:Ljava/util/concurrent/Executor;
 
-    iget-object v3, p0, Lbolts/Task$10;->val$ct:Lbolts/CancellationToken;
+    iget-object v3, p0, Lbolts/Task$10;->d:Lbolts/CancellationToken;
 
-    # invokes: Lbolts/Task;->completeAfterTask(Lbolts/Task$TaskCompletionSource;Lbolts/Continuation;Lbolts/Task;Ljava/util/concurrent/Executor;Lbolts/CancellationToken;)V
-    invoke-static {v0, v1, p1, v2, v3}, Lbolts/Task;->access$200(Lbolts/Task$TaskCompletionSource;Lbolts/Continuation;Lbolts/Task;Ljava/util/concurrent/Executor;Lbolts/CancellationToken;)V
+    invoke-static {v0, v1, p1, v2, v3}, Lbolts/Task;->b(Lbolts/Task$TaskCompletionSource;Lbolts/Continuation;Lbolts/Task;Ljava/util/concurrent/Executor;Lbolts/CancellationToken;)V
 
     .line 593
     const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public synthetic then(Lbolts/Task;)Ljava/lang/Object;
+    .registers 3
+
+    .prologue
+    .line 589
+    invoke-virtual {p0, p1}, Lbolts/Task$10;->a(Lbolts/Task;)Ljava/lang/Void;
+
+    move-result-object v0
 
     return-object v0
 .end method

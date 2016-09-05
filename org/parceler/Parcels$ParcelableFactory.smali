@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/parceler/Parcels;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x609
-    name = "ParcelableFactory"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -23,12 +14,8 @@
 .end annotation
 
 
-# static fields
-.field public static final BUILD_PARCELABLE:Ljava/lang/String; = "buildParcelable"
-
-
 # virtual methods
-.method public abstract buildParcelable(Ljava/lang/Object;)Landroid/os/Parcelable;
+.method public abstract a(Ljava/lang/Object;)Landroid/os/Parcelable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)",

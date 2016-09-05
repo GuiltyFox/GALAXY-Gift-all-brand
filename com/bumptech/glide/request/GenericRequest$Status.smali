@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/request/GenericRequest;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x401a
-    name = "Status"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum",
@@ -24,23 +15,23 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/bumptech/glide/request/GenericRequest$Status;
+.field public static final enum a:Lcom/bumptech/glide/request/GenericRequest$Status;
 
-.field public static final enum CANCELLED:Lcom/bumptech/glide/request/GenericRequest$Status;
+.field public static final enum b:Lcom/bumptech/glide/request/GenericRequest$Status;
 
-.field public static final enum CLEARED:Lcom/bumptech/glide/request/GenericRequest$Status;
+.field public static final enum c:Lcom/bumptech/glide/request/GenericRequest$Status;
 
-.field public static final enum COMPLETE:Lcom/bumptech/glide/request/GenericRequest$Status;
+.field public static final enum d:Lcom/bumptech/glide/request/GenericRequest$Status;
 
-.field public static final enum FAILED:Lcom/bumptech/glide/request/GenericRequest$Status;
+.field public static final enum e:Lcom/bumptech/glide/request/GenericRequest$Status;
 
-.field public static final enum PAUSED:Lcom/bumptech/glide/request/GenericRequest$Status;
+.field public static final enum f:Lcom/bumptech/glide/request/GenericRequest$Status;
 
-.field public static final enum PENDING:Lcom/bumptech/glide/request/GenericRequest$Status;
+.field public static final enum g:Lcom/bumptech/glide/request/GenericRequest$Status;
 
-.field public static final enum RUNNING:Lcom/bumptech/glide/request/GenericRequest$Status;
+.field public static final enum h:Lcom/bumptech/glide/request/GenericRequest$Status;
 
-.field public static final enum WAITING_FOR_SIZE:Lcom/bumptech/glide/request/GenericRequest$Status;
+.field private static final synthetic i:[Lcom/bumptech/glide/request/GenericRequest$Status;
 
 
 # direct methods
@@ -65,7 +56,7 @@
 
     invoke-direct {v0, v1, v3}, Lcom/bumptech/glide/request/GenericRequest$Status;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/request/GenericRequest$Status;->PENDING:Lcom/bumptech/glide/request/GenericRequest$Status;
+    sput-object v0, Lcom/bumptech/glide/request/GenericRequest$Status;->a:Lcom/bumptech/glide/request/GenericRequest$Status;
 
     .line 44
     new-instance v0, Lcom/bumptech/glide/request/GenericRequest$Status;
@@ -74,7 +65,7 @@
 
     invoke-direct {v0, v1, v4}, Lcom/bumptech/glide/request/GenericRequest$Status;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/request/GenericRequest$Status;->RUNNING:Lcom/bumptech/glide/request/GenericRequest$Status;
+    sput-object v0, Lcom/bumptech/glide/request/GenericRequest$Status;->b:Lcom/bumptech/glide/request/GenericRequest$Status;
 
     .line 46
     new-instance v0, Lcom/bumptech/glide/request/GenericRequest$Status;
@@ -83,7 +74,7 @@
 
     invoke-direct {v0, v1, v5}, Lcom/bumptech/glide/request/GenericRequest$Status;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/request/GenericRequest$Status;->WAITING_FOR_SIZE:Lcom/bumptech/glide/request/GenericRequest$Status;
+    sput-object v0, Lcom/bumptech/glide/request/GenericRequest$Status;->c:Lcom/bumptech/glide/request/GenericRequest$Status;
 
     .line 48
     new-instance v0, Lcom/bumptech/glide/request/GenericRequest$Status;
@@ -92,7 +83,7 @@
 
     invoke-direct {v0, v1, v6}, Lcom/bumptech/glide/request/GenericRequest$Status;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/request/GenericRequest$Status;->COMPLETE:Lcom/bumptech/glide/request/GenericRequest$Status;
+    sput-object v0, Lcom/bumptech/glide/request/GenericRequest$Status;->d:Lcom/bumptech/glide/request/GenericRequest$Status;
 
     .line 50
     new-instance v0, Lcom/bumptech/glide/request/GenericRequest$Status;
@@ -101,7 +92,7 @@
 
     invoke-direct {v0, v1, v7}, Lcom/bumptech/glide/request/GenericRequest$Status;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/request/GenericRequest$Status;->FAILED:Lcom/bumptech/glide/request/GenericRequest$Status;
+    sput-object v0, Lcom/bumptech/glide/request/GenericRequest$Status;->e:Lcom/bumptech/glide/request/GenericRequest$Status;
 
     .line 52
     new-instance v0, Lcom/bumptech/glide/request/GenericRequest$Status;
@@ -112,7 +103,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/bumptech/glide/request/GenericRequest$Status;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/request/GenericRequest$Status;->CANCELLED:Lcom/bumptech/glide/request/GenericRequest$Status;
+    sput-object v0, Lcom/bumptech/glide/request/GenericRequest$Status;->f:Lcom/bumptech/glide/request/GenericRequest$Status;
 
     .line 54
     new-instance v0, Lcom/bumptech/glide/request/GenericRequest$Status;
@@ -123,7 +114,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/bumptech/glide/request/GenericRequest$Status;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/request/GenericRequest$Status;->CLEARED:Lcom/bumptech/glide/request/GenericRequest$Status;
+    sput-object v0, Lcom/bumptech/glide/request/GenericRequest$Status;->g:Lcom/bumptech/glide/request/GenericRequest$Status;
 
     .line 56
     new-instance v0, Lcom/bumptech/glide/request/GenericRequest$Status;
@@ -134,52 +125,52 @@
 
     invoke-direct {v0, v1, v2}, Lcom/bumptech/glide/request/GenericRequest$Status;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/request/GenericRequest$Status;->PAUSED:Lcom/bumptech/glide/request/GenericRequest$Status;
+    sput-object v0, Lcom/bumptech/glide/request/GenericRequest$Status;->h:Lcom/bumptech/glide/request/GenericRequest$Status;
 
     .line 40
     const/16 v0, 0x8
 
     new-array v0, v0, [Lcom/bumptech/glide/request/GenericRequest$Status;
 
-    sget-object v1, Lcom/bumptech/glide/request/GenericRequest$Status;->PENDING:Lcom/bumptech/glide/request/GenericRequest$Status;
+    sget-object v1, Lcom/bumptech/glide/request/GenericRequest$Status;->a:Lcom/bumptech/glide/request/GenericRequest$Status;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/bumptech/glide/request/GenericRequest$Status;->RUNNING:Lcom/bumptech/glide/request/GenericRequest$Status;
+    sget-object v1, Lcom/bumptech/glide/request/GenericRequest$Status;->b:Lcom/bumptech/glide/request/GenericRequest$Status;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/bumptech/glide/request/GenericRequest$Status;->WAITING_FOR_SIZE:Lcom/bumptech/glide/request/GenericRequest$Status;
+    sget-object v1, Lcom/bumptech/glide/request/GenericRequest$Status;->c:Lcom/bumptech/glide/request/GenericRequest$Status;
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lcom/bumptech/glide/request/GenericRequest$Status;->COMPLETE:Lcom/bumptech/glide/request/GenericRequest$Status;
+    sget-object v1, Lcom/bumptech/glide/request/GenericRequest$Status;->d:Lcom/bumptech/glide/request/GenericRequest$Status;
 
     aput-object v1, v0, v6
 
-    sget-object v1, Lcom/bumptech/glide/request/GenericRequest$Status;->FAILED:Lcom/bumptech/glide/request/GenericRequest$Status;
+    sget-object v1, Lcom/bumptech/glide/request/GenericRequest$Status;->e:Lcom/bumptech/glide/request/GenericRequest$Status;
 
     aput-object v1, v0, v7
 
     const/4 v1, 0x5
 
-    sget-object v2, Lcom/bumptech/glide/request/GenericRequest$Status;->CANCELLED:Lcom/bumptech/glide/request/GenericRequest$Status;
+    sget-object v2, Lcom/bumptech/glide/request/GenericRequest$Status;->f:Lcom/bumptech/glide/request/GenericRequest$Status;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x6
 
-    sget-object v2, Lcom/bumptech/glide/request/GenericRequest$Status;->CLEARED:Lcom/bumptech/glide/request/GenericRequest$Status;
+    sget-object v2, Lcom/bumptech/glide/request/GenericRequest$Status;->g:Lcom/bumptech/glide/request/GenericRequest$Status;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x7
 
-    sget-object v2, Lcom/bumptech/glide/request/GenericRequest$Status;->PAUSED:Lcom/bumptech/glide/request/GenericRequest$Status;
+    sget-object v2, Lcom/bumptech/glide/request/GenericRequest$Status;->h:Lcom/bumptech/glide/request/GenericRequest$Status;
 
     aput-object v2, v0, v1
 
-    sput-object v0, Lcom/bumptech/glide/request/GenericRequest$Status;->$VALUES:[Lcom/bumptech/glide/request/GenericRequest$Status;
+    sput-object v0, Lcom/bumptech/glide/request/GenericRequest$Status;->i:[Lcom/bumptech/glide/request/GenericRequest$Status;
 
     return-void
 .end method
@@ -201,7 +192,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/bumptech/glide/request/GenericRequest$Status;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 40
@@ -221,7 +211,7 @@
 
     .prologue
     .line 40
-    sget-object v0, Lcom/bumptech/glide/request/GenericRequest$Status;->$VALUES:[Lcom/bumptech/glide/request/GenericRequest$Status;
+    sget-object v0, Lcom/bumptech/glide/request/GenericRequest$Status;->i:[Lcom/bumptech/glide/request/GenericRequest$Status;
 
     invoke-virtual {v0}, [Lcom/bumptech/glide/request/GenericRequest$Status;->clone()Ljava/lang/Object;
 

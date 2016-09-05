@@ -3,830 +3,824 @@
 .source "MarketPlaceDetailModel.java"
 
 
-# annotations
-.annotation runtime Lorg/parceler/Parcel;
-    value = .enum Lorg/parceler/Parcel$Serialization;->BEAN:Lorg/parceler/Parcel$Serialization;
-.end annotation
-
-
 # static fields
-.field static final FIELD_AGENCY_ADDRESS:Ljava/lang/String; = "AgencyAddress"
+.field public static final FIELD_AGENCY_ADDRESS:Ljava/lang/String; = "AgencyAddress"
 
-.field static final FIELD_AGENCY_CITY:Ljava/lang/String; = "AgencyCity"
+.field public static final FIELD_AGENCY_CITY:Ljava/lang/String; = "AgencyCity"
 
-.field static final FIELD_AGENCY_COUNTRY:Ljava/lang/String; = "AgencyCountry"
+.field public static final FIELD_AGENCY_COUNTRY:Ljava/lang/String; = "AgencyCountry"
 
-.field static final FIELD_AGENCY_EMAIL:Ljava/lang/String; = "AgencyEmail"
+.field public static final FIELD_AGENCY_EMAIL:Ljava/lang/String; = "AgencyEmail"
 
-.field static final FIELD_AGENCY_FAX:Ljava/lang/String; = "AgencyFAX"
+.field public static final FIELD_AGENCY_FAX:Ljava/lang/String; = "AgencyFAX"
 
-.field static final FIELD_AGENCY_ID:Ljava/lang/String; = "AgencyID"
+.field public static final FIELD_AGENCY_ID:Ljava/lang/String; = "AgencyID"
 
-.field static final FIELD_AGENCY_Id:Ljava/lang/String; = "AgencyId"
+.field public static final FIELD_AGENCY_Id:Ljava/lang/String; = "AgencyId"
 
-.field static final FIELD_AGENCY_LOGO_URL:Ljava/lang/String; = "AgencyLogoUrl"
+.field public static final FIELD_AGENCY_LOGO_URL:Ljava/lang/String; = "AgencyLogoUrl"
 
-.field static final FIELD_AGENCY_NAME:Ljava/lang/String; = "AgencyName"
+.field public static final FIELD_AGENCY_NAME:Ljava/lang/String; = "AgencyName"
 
-.field static final FIELD_AGENCY_TEL:Ljava/lang/String; = "AgencyTel"
+.field public static final FIELD_AGENCY_TEL:Ljava/lang/String; = "AgencyTel"
 
-.field static final FIELD_AGENCY_WEBSITE:Ljava/lang/String; = "AgencyWebsite"
+.field public static final FIELD_AGENCY_WEBSITE:Ljava/lang/String; = "AgencyWebsite"
 
-.field static final FIELD_AGENCY_ZIP_CODE:Ljava/lang/String; = "AgencyZipCode"
+.field public static final FIELD_AGENCY_ZIP_CODE:Ljava/lang/String; = "AgencyZipCode"
 
-.field static final FIELD_BADGES:Ljava/lang/String; = "Badges"
+.field public static final FIELD_BADGES:Ljava/lang/String; = "Badges"
 
-.field static final FIELD_BADGE_JSON:Ljava/lang/String; = "BadgeJson"
+.field public static final FIELD_BADGE_JSON:Ljava/lang/String; = "BadgeJson"
 
-.field static final FIELD_BARCODE:Ljava/lang/String; = "Barcode"
+.field public static final FIELD_BARCODE:Ljava/lang/String; = "Barcode"
 
-.field static final FIELD_BID_START_POINT:Ljava/lang/String; = "BidStartPoint"
+.field public static final FIELD_BID_START_POINT:Ljava/lang/String; = "BidStartPoint"
 
-.field static final FIELD_BID_STEP_POINT:Ljava/lang/String; = "BidStepPoint"
+.field public static final FIELD_BID_STEP_POINT:Ljava/lang/String; = "BidStepPoint"
 
-.field static final FIELD_BID_USE_POINT:Ljava/lang/String; = "BidUsePoint"
+.field public static final FIELD_BID_USE_POINT:Ljava/lang/String; = "BidUsePoint"
 
-.field static final FIELD_BUZZ:Ljava/lang/String; = "Buzz"
+.field public static final FIELD_BUZZ:Ljava/lang/String; = "Buzz"
 
-.field static final FIELD_CAPTION:Ljava/lang/String; = "Caption"
+.field public static final FIELD_CAPTION:Ljava/lang/String; = "Caption"
 
-.field static final FIELD_CATEGORY_DASHBOARD_SIZE:Ljava/lang/String; = "CategoryDashboardSize"
+.field public static final FIELD_CATEGORY_DASHBOARD_SIZE:Ljava/lang/String; = "CategoryDashboardSize"
 
-.field static final FIELD_CATEGORY_ID:Ljava/lang/String; = "CategoryID"
+.field public static final FIELD_CATEGORY_ID:Ljava/lang/String; = "CategoryID"
 
-.field static final FIELD_CATEGORY_NAME:Ljava/lang/String; = "CategoryName"
+.field public static final FIELD_CATEGORY_NAME:Ljava/lang/String; = "CategoryName"
 
-.field static final FIELD_CATEGORY_SEQUENCE:Ljava/lang/String; = "CategorySequence"
+.field public static final FIELD_CATEGORY_SEQUENCE:Ljava/lang/String; = "CategorySequence"
 
-.field static final FIELD_CONDITION:Ljava/lang/String; = "Condition"
+.field public static final FIELD_CONDITION:Ljava/lang/String; = "Condition"
 
-.field static final FIELD_CONDITION_ALERT:Ljava/lang/String; = "ConditionAlert"
+.field public static final FIELD_CONDITION_ALERT:Ljava/lang/String; = "ConditionAlert"
 
-.field static final FIELD_CONDITION_ALERT_ID:Ljava/lang/String; = "ConditionAlertId"
+.field public static final FIELD_CONDITION_ALERT_ID:Ljava/lang/String; = "ConditionAlertId"
 
-.field static final FIELD_COOL_DOWN:Ljava/lang/String; = "CoolDown"
+.field public static final FIELD_COOL_DOWN:Ljava/lang/String; = "CoolDown"
 
-.field static final FIELD_CREATE_BY:Ljava/lang/String; = "CreateBy"
+.field public static final FIELD_CREATE_BY:Ljava/lang/String; = "CreateBy"
 
-.field static final FIELD_CREATE_DATE:Ljava/lang/String; = "CreateDate"
+.field public static final FIELD_CREATE_DATE:Ljava/lang/String; = "CreateDate"
 
-.field static final FIELD_CROSS_APP_CAMPAIGN_ID:Ljava/lang/String; = "CrossAppCampaignId"
+.field public static final FIELD_CROSS_APP_CAMPAIGN_ID:Ljava/lang/String; = "CrossAppCampaignId"
 
-.field static final FIELD_CURRENT_DATE:Ljava/lang/String; = "CurrentDate"
+.field public static final FIELD_CURRENT_DATE:Ljava/lang/String; = "CurrentDate"
 
-.field static final FIELD_CUSTOM_CAPTION:Ljava/lang/String; = "CustomCaption"
+.field public static final FIELD_CUSTOM_CAPTION:Ljava/lang/String; = "CustomCaption"
 
-.field static final FIELD_CUSTOM_FACEBOOK_MESSAGE:Ljava/lang/String; = "CustomFacebookMessage"
+.field public static final FIELD_CUSTOM_FACEBOOK_MESSAGE:Ljava/lang/String; = "CustomFacebookMessage"
 
-.field static final FIELD_CUSTOM_INPUT:Ljava/lang/String; = "CustomInput"
+.field public static final FIELD_CUSTOM_INPUT:Ljava/lang/String; = "CustomInput"
 
-.field static final FIELD_DAYS_VALID_AFTER_EXPIRE:Ljava/lang/String; = "DaysValidAfterExpire"
+.field public static final FIELD_DAYS_VALID_AFTER_EXPIRE:Ljava/lang/String; = "DaysValidAfterExpire"
 
-.field static final FIELD_DAY_PROCEED:Ljava/lang/String; = "DayProceed"
+.field public static final FIELD_DAY_PROCEED:Ljava/lang/String; = "DayProceed"
 
-.field static final FIELD_DAY_REMAIN:Ljava/lang/String; = "DayRemain"
+.field public static final FIELD_DAY_REMAIN:Ljava/lang/String; = "DayRemain"
 
-.field static final FIELD_DEFAULT_PRIVILEGE_MESSAGE:Ljava/lang/String; = "DefaultPrivilegeMessage"
+.field public static final FIELD_DEFAULT_PRIVILEGE_MESSAGE:Ljava/lang/String; = "DefaultPrivilegeMessage"
 
-.field static final FIELD_DELIVERED:Ljava/lang/String; = "Delivered"
+.field public static final FIELD_DELIVERED:Ljava/lang/String; = "Delivered"
 
-.field static final FIELD_DELIVERY_JSON:Ljava/lang/String; = "DeliveryJson"
+.field public static final FIELD_DELIVERY_JSON:Ljava/lang/String; = "DeliveryJson"
 
-.field static final FIELD_DETAIL:Ljava/lang/String; = "Detail"
+.field public static final FIELD_DETAIL:Ljava/lang/String; = "Detail"
 
-.field static final FIELD_DISCOUNT:Ljava/lang/String; = "Discount"
+.field public static final FIELD_DISCOUNT:Ljava/lang/String; = "Discount"
 
-.field static final FIELD_EMS_DELIVERY_COST_PER_UNIT:Ljava/lang/String; = "EMSDeliveryCostPerUnit"
+.field public static final FIELD_EMS_DELIVERY_COST_PER_UNIT:Ljava/lang/String; = "EMSDeliveryCostPerUnit"
 
-.field static final FIELD_EXPIRE_DATE:Ljava/lang/String; = "ExpireDate"
+.field public static final FIELD_EXPIRE_DATE:Ljava/lang/String; = "ExpireDate"
 
-.field static final FIELD_EXTRA:Ljava/lang/String; = "Extra"
+.field public static final FIELD_EXTRA:Ljava/lang/String; = "Extra"
 
-.field static final FIELD_FAN_PAGE_ID:Ljava/lang/String; = "FanPageId"
+.field public static final FIELD_FAN_PAGE_ID:Ljava/lang/String; = "FanPageId"
 
-.field static final FIELD_FULL_IMAGE_URL:Ljava/lang/String; = "FullImageUrl"
+.field public static final FIELD_FULL_IMAGE_URL:Ljava/lang/String; = "FullImageUrl"
 
-.field static final FIELD_HASH_TAG_JSON:Ljava/lang/String; = "HashTagJson"
+.field public static final FIELD_HASH_TAG_JSON:Ljava/lang/String; = "HashTagJson"
 
-.field static final FIELD_HAS_CROSS_APP:Ljava/lang/String; = "HasCrossApp"
+.field public static final FIELD_HAS_CROSS_APP:Ljava/lang/String; = "HasCrossApp"
 
-.field static final FIELD_HAS_WINNER:Ljava/lang/String; = "HasWinner"
+.field public static final FIELD_HAS_WINNER:Ljava/lang/String; = "HasWinner"
 
-.field static final FIELD_ID:Ljava/lang/String; = "ID"
+.field public static final FIELD_ID:Ljava/lang/String; = "ID"
 
-.field static final FIELD_INTERFACE_DISPLAY:Ljava/lang/String; = "InterfaceDisplay"
+.field public static final FIELD_INTERFACE_DISPLAY:Ljava/lang/String; = "InterfaceDisplay"
 
-.field static final FIELD_IS_CHECK_USER_CAMPAIGN_PERMISSION:Ljava/lang/String; = "IsCheckUserCampaignPermission"
+.field public static final FIELD_IS_CHECK_USER_CAMPAIGN_PERMISSION:Ljava/lang/String; = "IsCheckUserCampaignPermission"
 
-.field static final FIELD_IS_CONDITION_PASS:Ljava/lang/String; = "IsConditionPass"
+.field public static final FIELD_IS_CONDITION_PASS:Ljava/lang/String; = "IsConditionPass"
 
-.field static final FIELD_IS_FAVOURITE:Ljava/lang/String; = "IsFavourite"
+.field public static final FIELD_IS_FAVOURITE:Ljava/lang/String; = "IsFavourite"
 
-.field static final FIELD_IS_HIGHLIGHT:Ljava/lang/String; = "IsHighlight"
+.field public static final FIELD_IS_HIGHLIGHT:Ljava/lang/String; = "IsHighlight"
 
-.field static final FIELD_IS_LIKE:Ljava/lang/String; = "IsLike"
+.field public static final FIELD_IS_LIKE:Ljava/lang/String; = "IsLike"
 
-.field static final FIELD_IS_NOT_AUTO_USE:Ljava/lang/String; = "IsNotAutoUse"
+.field public static final FIELD_IS_NOT_AUTO_USE:Ljava/lang/String; = "IsNotAutoUse"
 
-.field static final FIELD_IS_REQUIRE_POINTS:Ljava/lang/String; = "IsRequirePoints"
+.field public static final FIELD_IS_REQUIRE_POINTS:Ljava/lang/String; = "IsRequirePoints"
 
-.field static final FIELD_IS_REQUIRE_UNIQUE_SERIAL:Ljava/lang/String; = "IsRequireUniqueSerial"
+.field public static final FIELD_IS_REQUIRE_UNIQUE_SERIAL:Ljava/lang/String; = "IsRequireUniqueSerial"
 
-.field static final FIELD_IS_SHOW_NOTI_NEARBY:Ljava/lang/String; = "IsShowNotiNearby"
+.field public static final FIELD_IS_SHOW_NOTI_NEARBY:Ljava/lang/String; = "IsShowNotiNearby"
 
-.field static final FIELD_IS_SPECIFIC_LOCATION:Ljava/lang/String; = "IsSpecificLocation"
+.field public static final FIELD_IS_SPECIFIC_LOCATION:Ljava/lang/String; = "IsSpecificLocation"
 
-.field static final FIELD_IS_SPECIFIC_PRINT_VOUCHER:Ljava/lang/String; = "IsSpecificPrintVoucher"
+.field public static final FIELD_IS_SPECIFIC_PRINT_VOUCHER:Ljava/lang/String; = "IsSpecificPrintVoucher"
 
-.field static final FIELD_IS_SPLIT_POINT_SYSTEM:Ljava/lang/String; = "IsSplitPointSystem"
+.field public static final FIELD_IS_SPLIT_POINT_SYSTEM:Ljava/lang/String; = "IsSplitPointSystem"
 
-.field static final FIELD_IS_SPONSOR:Ljava/lang/String; = "IsSponsor"
+.field public static final FIELD_IS_SPONSOR:Ljava/lang/String; = "IsSponsor"
 
-.field static final FIELD_ITEM_COUNT_SOLD:Ljava/lang/String; = "ItemCountSold"
+.field public static final FIELD_ITEM_COUNT_SOLD:Ljava/lang/String; = "ItemCountSold"
 
-.field static final FIELD_KEYWORD:Ljava/lang/String; = "Keyword"
+.field public static final FIELD_KEYWORD:Ljava/lang/String; = "Keyword"
 
-.field static final FIELD_LATEST_VOTE_DATE:Ljava/lang/String; = "LatestVoteDate"
+.field public static final FIELD_LATEST_VOTE_DATE:Ljava/lang/String; = "LatestVoteDate"
 
-.field static final FIELD_LOCATION:Ljava/lang/String; = "Location"
+.field public static final FIELD_LOCATION:Ljava/lang/String; = "Location"
 
-.field static final FIELD_LOCATION_AGENCY_ID:Ljava/lang/String; = "LocationAgencyId"
+.field public static final FIELD_LOCATION_AGENCY_ID:Ljava/lang/String; = "LocationAgencyId"
 
-.field static final FIELD_MASTER_CAMPAIGN_ID:Ljava/lang/String; = "MasterCampaignId"
+.field public static final FIELD_MASTER_CAMPAIGN_ID:Ljava/lang/String; = "MasterCampaignId"
 
-.field static final FIELD_MERCHANT_STATUS_ID:Ljava/lang/String; = "MerchantStatusId"
+.field public static final FIELD_MERCHANT_STATUS_ID:Ljava/lang/String; = "MerchantStatusId"
 
-.field static final FIELD_MINUTES_VALID_AFTER_USED:Ljava/lang/String; = "MinutesValidAfterUsed"
+.field public static final FIELD_MINUTES_VALID_AFTER_USED:Ljava/lang/String; = "MinutesValidAfterUsed"
 
-.field static final FIELD_MODIFY_BY:Ljava/lang/String; = "ModifyBy"
+.field public static final FIELD_MODIFY_BY:Ljava/lang/String; = "ModifyBy"
 
-.field static final FIELD_MODIFY_DATE:Ljava/lang/String; = "ModifyDate"
+.field public static final FIELD_MODIFY_DATE:Ljava/lang/String; = "ModifyDate"
 
-.field static final FIELD_NAME:Ljava/lang/String; = "Name"
+.field public static final FIELD_NAME:Ljava/lang/String; = "Name"
 
-.field static final FIELD_NEXT_REDEEM_DATE:Ljava/lang/String; = "NextRedeemDate"
+.field public static final FIELD_NEXT_REDEEM_DATE:Ljava/lang/String; = "NextRedeemDate"
 
-.field static final FIELD_NOTIFICATION_COUNT:Ljava/lang/String; = "NotificationCount"
+.field public static final FIELD_NOTIFICATION_COUNT:Ljava/lang/String; = "NotificationCount"
 
-.field static final FIELD_ORIGINAL_PRICE:Ljava/lang/String; = "OriginalPrice"
+.field public static final FIELD_ORIGINAL_PRICE:Ljava/lang/String; = "OriginalPrice"
 
-.field static final FIELD_OTHER_POINT_PER_UNIT:Ljava/lang/String; = "OtherPointPerUnit"
+.field public static final FIELD_OTHER_POINT_PER_UNIT:Ljava/lang/String; = "OtherPointPerUnit"
 
-.field static final FIELD_PARENT_CAMPAIGN_ID:Ljava/lang/String; = "ParentCampaignId"
+.field public static final FIELD_PARENT_CAMPAIGN_ID:Ljava/lang/String; = "ParentCampaignId"
 
-.field static final FIELD_PARENT_CATEGORY_ID:Ljava/lang/String; = "ParentCategoryID"
+.field public static final FIELD_PARENT_CATEGORY_ID:Ljava/lang/String; = "ParentCategoryID"
 
-.field static final FIELD_PEOPLE_DISLIKE:Ljava/lang/String; = "PeopleDislike"
+.field public static final FIELD_PEOPLE_DISLIKE:Ljava/lang/String; = "PeopleDislike"
 
-.field static final FIELD_PEOPLE_FAVOURITE:Ljava/lang/String; = "PeopleFavourite"
+.field public static final FIELD_PEOPLE_FAVOURITE:Ljava/lang/String; = "PeopleFavourite"
 
-.field static final FIELD_PEOPLE_LIKE:Ljava/lang/String; = "PeopleLike"
+.field public static final FIELD_PEOPLE_LIKE:Ljava/lang/String; = "PeopleLike"
 
-.field static final FIELD_PEOPLE_VOTE:Ljava/lang/String; = "PeopleVote"
+.field public static final FIELD_PEOPLE_VOTE:Ljava/lang/String; = "PeopleVote"
 
-.field static final FIELD_PICTURES:Ljava/lang/String; = "Pictures"
+.field public static final FIELD_PICTURES:Ljava/lang/String; = "Pictures"
 
-.field static final FIELD_PLACES:Ljava/lang/String; = "Places"
+.field public static final FIELD_PLACES:Ljava/lang/String; = "Places"
 
-.field static final FIELD_POINT_PER_UNIT:Ljava/lang/String; = "PointPerUnit"
+.field public static final FIELD_POINT_PER_UNIT:Ljava/lang/String; = "PointPerUnit"
 
-.field static final FIELD_POINT_TYPE:Ljava/lang/String; = "PointType"
+.field public static final FIELD_POINT_TYPE:Ljava/lang/String; = "PointType"
 
-.field static final FIELD_PRICE_PER_UNIT:Ljava/lang/String; = "PricePerUnit"
+.field public static final FIELD_PRICE_PER_UNIT:Ljava/lang/String; = "PricePerUnit"
 
-.field static final FIELD_QTY:Ljava/lang/String; = "Qty"
+.field public static final FIELD_QTY:Ljava/lang/String; = "Qty"
 
-.field static final FIELD_QUANTITY:Ljava/lang/String; = "Quantity"
+.field public static final FIELD_QUANTITY:Ljava/lang/String; = "Quantity"
 
-.field static final FIELD_RANK_FAVOURITE:Ljava/lang/String; = "RankFavourite"
+.field public static final FIELD_RANK_FAVOURITE:Ljava/lang/String; = "RankFavourite"
 
-.field static final FIELD_RANK_LIKE:Ljava/lang/String; = "RankLike"
+.field public static final FIELD_RANK_LIKE:Ljava/lang/String; = "RankLike"
 
-.field static final FIELD_RANK_VOTE:Ljava/lang/String; = "RankVote"
+.field public static final FIELD_RANK_VOTE:Ljava/lang/String; = "RankVote"
 
-.field static final FIELD_RATING:Ljava/lang/String; = "Rating"
+.field public static final FIELD_RATING:Ljava/lang/String; = "Rating"
 
-.field static final FIELD_REDEEMS:Ljava/lang/String; = "Redeems"
+.field public static final FIELD_REDEEMS:Ljava/lang/String; = "Redeems"
 
-.field static final FIELD_REDEEM_COUNT:Ljava/lang/String; = "RedeemCount"
+.field public static final FIELD_REDEEM_COUNT:Ljava/lang/String; = "RedeemCount"
 
-.field static final FIELD_REDEEM_MEDIA:Ljava/lang/String; = "RedeemMedia"
+.field public static final FIELD_REDEEM_MEDIA:Ljava/lang/String; = "RedeemMedia"
 
-.field static final FIELD_REDEEM_MOST_PER_PERSON:Ljava/lang/String; = "RedeemMostPerPerson"
+.field public static final FIELD_REDEEM_MOST_PER_PERSON:Ljava/lang/String; = "RedeemMostPerPerson"
 
-.field static final FIELD_REDEEM_MOST_PER_PERSON_IN_PERIOD:Ljava/lang/String; = "RedeemMostPerPersonInPeriod"
+.field public static final FIELD_REDEEM_MOST_PER_PERSON_IN_PERIOD:Ljava/lang/String; = "RedeemMostPerPersonInPeriod"
 
-.field static final FIELD_REFERENCE_CODE:Ljava/lang/String; = "ReferenceCode"
+.field public static final FIELD_REFERENCE_CODE:Ljava/lang/String; = "ReferenceCode"
 
-.field static final FIELD_REF_AIS_CAMPAIGN_ID:Ljava/lang/String; = "RefAISCampaignID"
+.field public static final FIELD_REF_AIS_CAMPAIGN_ID:Ljava/lang/String; = "RefAISCampaignID"
 
-.field static final FIELD_REF_PTT_AGENCY_ID:Ljava/lang/String; = "RefPTTAgencyID"
+.field public static final FIELD_REF_PTT_AGENCY_ID:Ljava/lang/String; = "RefPTTAgencyID"
 
-.field static final FIELD_REGULAR_DELIVERY_COST_PER_UNIT:Ljava/lang/String; = "RegularDeliveryCostPerUnit"
+.field public static final FIELD_REGULAR_DELIVERY_COST_PER_UNIT:Ljava/lang/String; = "RegularDeliveryCostPerUnit"
 
-.field static final FIELD_RELATED:Ljava/lang/String; = "Related"
+.field public static final FIELD_RELATED:Ljava/lang/String; = "Related"
 
-.field static final FIELD_SCORE:Ljava/lang/String; = "Score"
+.field public static final FIELD_SCORE:Ljava/lang/String; = "Score"
 
-.field static final FIELD_SEND_NOTIFICATIONS:Ljava/lang/String; = "SendNotifications"
+.field public static final FIELD_SEND_NOTIFICATIONS:Ljava/lang/String; = "SendNotifications"
 
-.field static final FIELD_SEND_PULL_NOTIFICATIONS:Ljava/lang/String; = "SendPullNotifications"
+.field public static final FIELD_SEND_PULL_NOTIFICATIONS:Ljava/lang/String; = "SendPullNotifications"
 
-.field static final FIELD_SERIAL_COUNT:Ljava/lang/String; = "SerialCount"
+.field public static final FIELD_SERIAL_COUNT:Ljava/lang/String; = "SerialCount"
 
-.field static final FIELD_SERIAL_FORMAT:Ljava/lang/String; = "SerialFormat"
+.field public static final FIELD_SERIAL_FORMAT:Ljava/lang/String; = "SerialFormat"
 
-.field static final FIELD_SERIAL_PREFIX:Ljava/lang/String; = "SerialPrefix"
+.field public static final FIELD_SERIAL_PREFIX:Ljava/lang/String; = "SerialPrefix"
 
-.field static final FIELD_SHIPPING_BY:Ljava/lang/String; = "ShippingBy"
+.field public static final FIELD_SHIPPING_BY:Ljava/lang/String; = "ShippingBy"
 
-.field static final FIELD_SHIPPING_PAYMENT:Ljava/lang/String; = "ShippingPayment"
+.field public static final FIELD_SHIPPING_PAYMENT:Ljava/lang/String; = "ShippingPayment"
 
-.field static final FIELD_SOLD_OUT_DATE:Ljava/lang/String; = "SoldOutDate"
+.field public static final FIELD_SOLD_OUT_DATE:Ljava/lang/String; = "SoldOutDate"
 
-.field static final FIELD_SPECIFY_BRANCH:Ljava/lang/String; = "SpecifyBranch"
+.field public static final FIELD_SPECIFY_BRANCH:Ljava/lang/String; = "SpecifyBranch"
 
-.field static final FIELD_SPONSOR_CATEGORY_NAME:Ljava/lang/String; = "SponsorCategoryName"
+.field public static final FIELD_SPONSOR_CATEGORY_NAME:Ljava/lang/String; = "SponsorCategoryName"
 
-.field static final FIELD_START_DATE:Ljava/lang/String; = "StartDate"
+.field public static final FIELD_START_DATE:Ljava/lang/String; = "StartDate"
 
-.field static final FIELD_STATUS_ID:Ljava/lang/String; = "StatusID"
+.field public static final FIELD_STATUS_ID:Ljava/lang/String; = "StatusID"
 
-.field static final FIELD_STYLE_JSON:Ljava/lang/String; = "StyleJson"
+.field public static final FIELD_STYLE_JSON:Ljava/lang/String; = "StyleJson"
 
-.field static final FIELD_SUB_CAMPAIGNS:Ljava/lang/String; = "SubCampaigns"
+.field public static final FIELD_SUB_CAMPAIGNS:Ljava/lang/String; = "SubCampaigns"
 
-.field static final FIELD_SUB_CAMPAIGN_STYLES:Ljava/lang/String; = "SubCampaignStyles"
+.field public static final FIELD_SUB_CAMPAIGN_STYLES:Ljava/lang/String; = "SubCampaignStyles"
 
-.field static final FIELD_TERMS_AND_CONDITIONS:Ljava/lang/String; = "TermsAndConditions"
+.field public static final FIELD_TERMS_AND_CONDITIONS:Ljava/lang/String; = "TermsAndConditions"
 
-.field static final FIELD_TIME_ROUNDING:Ljava/lang/String; = "TimeRounding"
+.field public static final FIELD_TIME_ROUNDING:Ljava/lang/String; = "TimeRounding"
 
-.field static final FIELD_TOP_VOTES:Ljava/lang/String; = "TopVotes"
+.field public static final FIELD_TOP_VOTES:Ljava/lang/String; = "TopVotes"
 
-.field static final FIELD_TRACES_JSON:Ljava/lang/String; = "TracesJson"
+.field public static final FIELD_TRACES_JSON:Ljava/lang/String; = "TracesJson"
 
-.field static final FIELD_TYPE:Ljava/lang/String; = "Type"
+.field public static final FIELD_TYPE:Ljava/lang/String; = "Type"
 
-.field static final FIELD_UNDER18:Ljava/lang/String; = "Under18"
+.field public static final FIELD_UNDER18:Ljava/lang/String; = "Under18"
 
-.field static final FIELD_UPDATED_POINTS:Ljava/lang/String; = "updated_points"
+.field public static final FIELD_UPDATED_POINTS:Ljava/lang/String; = "updated_points"
 
-.field static final FIELD_UPDATED_POINTS_OTHER:Ljava/lang/String; = "updated_points_other"
+.field public static final FIELD_UPDATED_POINTS_OTHER:Ljava/lang/String; = "updated_points_other"
 
-.field static final FIELD_USER_LEVEL:Ljava/lang/String; = "UserLevel"
+.field public static final FIELD_USER_LEVEL:Ljava/lang/String; = "UserLevel"
 
-.field static final FIELD_USER_PACKAGE_POINTS:Ljava/lang/String; = "UserPackagePoints"
+.field public static final FIELD_USER_PACKAGE_POINTS:Ljava/lang/String; = "UserPackagePoints"
 
-.field static final FIELD_USER_PACKAGE_PRICES:Ljava/lang/String; = "UserPackagePrices"
+.field public static final FIELD_USER_PACKAGE_PRICES:Ljava/lang/String; = "UserPackagePrices"
 
-.field static final FIELD_USER_PROFILE_SCORE:Ljava/lang/String; = "UserProfileScore"
+.field public static final FIELD_USER_PROFILE_SCORE:Ljava/lang/String; = "UserProfileScore"
 
-.field static final FIELD_USER_REQUIRE_POINTS:Ljava/lang/String; = "UserRequirePoints"
+.field public static final FIELD_USER_REQUIRE_POINTS:Ljava/lang/String; = "UserRequirePoints"
 
-.field static final FIELD_USER_SUMMARY_PRICES:Ljava/lang/String; = "UserSummaryPrices"
+.field public static final FIELD_USER_SUMMARY_PRICES:Ljava/lang/String; = "UserSummaryPrices"
 
-.field static final FIELD_USER_VISIBILITY:Ljava/lang/String; = "UserVisibility"
+.field public static final FIELD_USER_VISIBILITY:Ljava/lang/String; = "UserVisibility"
 
-.field static final FIELD_USE_COUNT:Ljava/lang/String; = "UseCount"
+.field public static final FIELD_USE_COUNT:Ljava/lang/String; = "UseCount"
 
-.field static final FIELD_VISIBILITY:Ljava/lang/String; = "Visibility"
+.field public static final FIELD_VISIBILITY:Ljava/lang/String; = "Visibility"
 
-.field static final FIELD_VOUCHER_EXPIRE_DATE:Ljava/lang/String; = "VoucherExpireDate"
+.field public static final FIELD_VOUCHER_EXPIRE_DATE:Ljava/lang/String; = "VoucherExpireDate"
 
-.field static final FIELD_WEBSITE:Ljava/lang/String; = "Website"
+.field public static final FIELD_WEBSITE:Ljava/lang/String; = "Website"
 
-.field static final FIELD_WINNER_USER_ID:Ljava/lang/String; = "WinnerUserId"
+.field public static final FIELD_WINNER_USER_ID:Ljava/lang/String; = "WinnerUserId"
 
-.field static final FIELD_WINNER_USER_NAME:Ljava/lang/String; = "WinnerUserName"
+.field public static final FIELD_WINNER_USER_NAME:Ljava/lang/String; = "WinnerUserName"
 
 
 # instance fields
-.field mAgencyAddress:Ljava/lang/String;
+.field public mAgencyAddress:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "AgencyAddress"
+        a = "AgencyAddress"
     .end annotation
 .end field
 
-.field mAgencyCity:Ljava/lang/String;
+.field public mAgencyCity:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "AgencyCity"
+        a = "AgencyCity"
     .end annotation
 .end field
 
-.field mAgencyCountry:Ljava/lang/String;
+.field public mAgencyCountry:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "AgencyCountry"
+        a = "AgencyCountry"
     .end annotation
 .end field
 
-.field mAgencyEmail:Ljava/lang/String;
+.field public mAgencyEmail:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "AgencyEmail"
+        a = "AgencyEmail"
     .end annotation
 .end field
 
-.field mAgencyFAX:Ljava/lang/String;
+.field public mAgencyFAX:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "AgencyFAX"
+        a = "AgencyFAX"
     .end annotation
 .end field
 
-.field mAgencyID:Ljava/lang/String;
+.field public mAgencyID:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "AgencyID"
+        a = "AgencyID"
     .end annotation
 .end field
 
-.field mAgencyId:Ljava/lang/String;
+.field public mAgencyId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "AgencyId"
+        a = "AgencyId"
     .end annotation
 .end field
 
-.field mAgencyLogoUrl:Ljava/lang/String;
+.field public mAgencyLogoUrl:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "AgencyLogoUrl"
+        a = "AgencyLogoUrl"
     .end annotation
 .end field
 
-.field mAgencyName:Ljava/lang/String;
+.field public mAgencyName:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "AgencyName"
+        a = "AgencyName"
     .end annotation
 .end field
 
-.field mAgencyTel:Ljava/lang/String;
+.field public mAgencyTel:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "AgencyTel"
+        a = "AgencyTel"
     .end annotation
 .end field
 
-.field mAgencyWebsite:Ljava/lang/String;
+.field public mAgencyWebsite:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "AgencyWebsite"
+        a = "AgencyWebsite"
     .end annotation
 .end field
 
-.field mAgencyZipCode:Ljava/lang/String;
+.field public mAgencyZipCode:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "AgencyZipCode"
+        a = "AgencyZipCode"
     .end annotation
 .end field
 
-.field mBadge:Ljava/lang/String;
+.field public mBadge:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Badges"
+        a = "Badges"
     .end annotation
 .end field
 
-.field mBadgeJson:Ljava/lang/String;
+.field public mBadgeJson:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "BadgeJson"
+        a = "BadgeJson"
     .end annotation
 .end field
 
-.field mBarcode:Ljava/lang/String;
+.field public mBarcode:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Barcode"
+        a = "Barcode"
     .end annotation
 .end field
 
-.field mBidStartPoint:Ljava/lang/String;
+.field public mBidStartPoint:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "BidStartPoint"
+        a = "BidStartPoint"
     .end annotation
 .end field
 
-.field mBidStepPoint:Ljava/lang/String;
+.field public mBidStepPoint:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "BidStepPoint"
+        a = "BidStepPoint"
     .end annotation
 .end field
 
-.field mBidUsePoint:Ljava/lang/String;
+.field public mBidUsePoint:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "BidUsePoint"
+        a = "BidUsePoint"
     .end annotation
 .end field
 
-.field mBuzz:Ljava/lang/String;
+.field public mBuzz:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Buzz"
+        a = "Buzz"
     .end annotation
 .end field
 
-.field mCaption:Ljava/lang/String;
+.field public mCaption:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Caption"
+        a = "Caption"
     .end annotation
 .end field
 
-.field mCategoryDashboardSize:Ljava/lang/String;
+.field public mCategoryDashboardSize:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "CategoryDashboardSize"
+        a = "CategoryDashboardSize"
     .end annotation
 .end field
 
-.field mCategoryID:Ljava/lang/String;
+.field public mCategoryID:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "CategoryID"
+        a = "CategoryID"
     .end annotation
 .end field
 
-.field mCategoryName:Ljava/lang/String;
+.field public mCategoryName:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "CategoryName"
+        a = "CategoryName"
     .end annotation
 .end field
 
-.field mCategorySequence:Ljava/lang/String;
+.field public mCategorySequence:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "CategorySequence"
+        a = "CategorySequence"
     .end annotation
 .end field
 
-.field mCondition:Ljava/lang/String;
+.field public mCondition:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Condition"
+        a = "Condition"
     .end annotation
 .end field
 
-.field mConditionAlert:Ljava/lang/String;
+.field public mConditionAlert:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ConditionAlert"
+        a = "ConditionAlert"
     .end annotation
 .end field
 
-.field mConditionAlertId:Ljava/lang/String;
+.field public mConditionAlertId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ConditionAlertId"
+        a = "ConditionAlertId"
     .end annotation
 .end field
 
-.field mCoolDown:Ljava/lang/String;
+.field public mCoolDown:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "CoolDown"
+        a = "CoolDown"
     .end annotation
 .end field
 
-.field mCreateBy:Ljava/lang/String;
+.field public mCreateBy:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "CreateBy"
+        a = "CreateBy"
     .end annotation
 .end field
 
-.field mCreateDate:Ljava/lang/String;
+.field public mCreateDate:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "CreateDate"
+        a = "CreateDate"
     .end annotation
 .end field
 
-.field mCrossAppCampaignId:Ljava/lang/String;
+.field public mCrossAppCampaignId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "CrossAppCampaignId"
+        a = "CrossAppCampaignId"
     .end annotation
 .end field
 
-.field mCurrentDate:Ljava/lang/String;
+.field public mCurrentDate:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "CurrentDate"
+        a = "CurrentDate"
     .end annotation
 .end field
 
-.field mCustomCaption:Ljava/lang/String;
+.field public mCustomCaption:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "CustomCaption"
+        a = "CustomCaption"
     .end annotation
 .end field
 
-.field mCustomFacebookMessage:Ljava/lang/String;
+.field public mCustomFacebookMessage:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "CustomFacebookMessage"
+        a = "CustomFacebookMessage"
     .end annotation
 .end field
 
-.field mCustomInput:Ljava/lang/String;
+.field public mCustomInput:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "CustomInput"
+        a = "CustomInput"
     .end annotation
 .end field
 
-.field mDayProceed:Ljava/lang/String;
+.field public mDayProceed:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "DayProceed"
+        a = "DayProceed"
     .end annotation
 .end field
 
-.field mDayRemain:Ljava/lang/String;
+.field public mDayRemain:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "DayRemain"
+        a = "DayRemain"
     .end annotation
 .end field
 
-.field mDaysValidAfterExpire:Ljava/lang/String;
+.field public mDaysValidAfterExpire:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "DaysValidAfterExpire"
+        a = "DaysValidAfterExpire"
     .end annotation
 .end field
 
-.field mDefaultPrivilegeMessage:Ljava/lang/String;
+.field public mDefaultPrivilegeMessage:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "DefaultPrivilegeMessage"
+        a = "DefaultPrivilegeMessage"
     .end annotation
 .end field
 
-.field mDelivered:Z
+.field public mDelivered:Z
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Delivered"
+        a = "Delivered"
     .end annotation
 .end field
 
-.field mDeliveryJson:Ljava/lang/String;
+.field public mDeliveryJson:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "DeliveryJson"
+        a = "DeliveryJson"
     .end annotation
 .end field
 
-.field mDetail:Ljava/lang/String;
+.field public mDetail:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Detail"
+        a = "Detail"
     .end annotation
 .end field
 
-.field mDiscount:Ljava/lang/String;
+.field public mDiscount:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Discount"
+        a = "Discount"
     .end annotation
 .end field
 
-.field mEMSDeliveryCostPerUnit:Ljava/lang/String;
+.field public mEMSDeliveryCostPerUnit:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "EMSDeliveryCostPerUnit"
+        a = "EMSDeliveryCostPerUnit"
     .end annotation
 .end field
 
-.field mExpireDate:Ljava/lang/String;
+.field public mExpireDate:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ExpireDate"
+        a = "ExpireDate"
     .end annotation
 .end field
 
-.field mExtra:Ljava/lang/String;
+.field public mExtra:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Extra"
+        a = "Extra"
     .end annotation
 .end field
 
-.field mFanPageId:Ljava/lang/String;
+.field public mFanPageId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "FanPageId"
+        a = "FanPageId"
     .end annotation
 .end field
 
-.field mFullImageUrl:Ljava/lang/String;
+.field public mFullImageUrl:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "FullImageUrl"
+        a = "FullImageUrl"
     .end annotation
 .end field
 
-.field mHasCrossApp:Z
+.field public mHasCrossApp:Z
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "HasCrossApp"
+        a = "HasCrossApp"
     .end annotation
 .end field
 
-.field mHasWinner:Ljava/lang/String;
+.field public mHasWinner:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "HasWinner"
+        a = "HasWinner"
     .end annotation
 .end field
 
-.field mHashTagJson:Ljava/lang/String;
+.field public mHashTagJson:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "HashTagJson"
+        a = "HashTagJson"
     .end annotation
 .end field
 
-.field mID:Ljava/lang/String;
+.field public mID:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ID"
+        a = "ID"
     .end annotation
 .end field
 
-.field mInterfaceDisplay:Ljava/lang/String;
+.field public mInterfaceDisplay:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "InterfaceDisplay"
+        a = "InterfaceDisplay"
     .end annotation
 .end field
 
-.field mIsCheckUserCampaignPermission:Ljava/lang/String;
+.field public mIsCheckUserCampaignPermission:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "IsCheckUserCampaignPermission"
+        a = "IsCheckUserCampaignPermission"
     .end annotation
 .end field
 
-.field mIsConditionPass:Z
+.field public mIsConditionPass:Z
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "IsConditionPass"
+        a = "IsConditionPass"
     .end annotation
 .end field
 
-.field mIsFavourite:Ljava/lang/String;
+.field public mIsFavourite:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "IsFavourite"
+        a = "IsFavourite"
     .end annotation
 .end field
 
-.field mIsHighlight:Ljava/lang/String;
+.field public mIsHighlight:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "IsHighlight"
+        a = "IsHighlight"
     .end annotation
 .end field
 
-.field mIsLike:Z
+.field public mIsLike:Z
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "IsLike"
+        a = "IsLike"
     .end annotation
 .end field
 
-.field mIsNotAutoUse:Z
+.field public mIsNotAutoUse:Z
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "IsNotAutoUse"
+        a = "IsNotAutoUse"
     .end annotation
 .end field
 
-.field mIsRequirePoint:Z
+.field public mIsRequirePoint:Z
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "IsRequirePoints"
+        a = "IsRequirePoints"
     .end annotation
 .end field
 
-.field mIsRequireUniqueSerial:Z
+.field public mIsRequireUniqueSerial:Z
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "IsRequireUniqueSerial"
+        a = "IsRequireUniqueSerial"
     .end annotation
 .end field
 
-.field mIsShowNotiNearby:Z
+.field public mIsShowNotiNearby:Z
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "IsShowNotiNearby"
+        a = "IsShowNotiNearby"
     .end annotation
 .end field
 
-.field mIsSpecificLocation:Z
+.field public mIsSpecificLocation:Z
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "IsSpecificLocation"
+        a = "IsSpecificLocation"
     .end annotation
 .end field
 
-.field mIsSpecificPrintVoucher:Z
+.field public mIsSpecificPrintVoucher:Z
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "IsSpecificPrintVoucher"
+        a = "IsSpecificPrintVoucher"
     .end annotation
 .end field
 
-.field mIsSplitPointSystem:Z
+.field public mIsSplitPointSystem:Z
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "IsSplitPointSystem"
+        a = "IsSplitPointSystem"
     .end annotation
 .end field
 
-.field mIsSponsor:Z
+.field public mIsSponsor:Z
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "IsSponsor"
+        a = "IsSponsor"
     .end annotation
 .end field
 
-.field mItemCountSold:Ljava/lang/String;
+.field public mItemCountSold:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ItemCountSold"
+        a = "ItemCountSold"
     .end annotation
 .end field
 
-.field mKeyword:Ljava/lang/String;
+.field public mKeyword:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Keyword"
+        a = "Keyword"
     .end annotation
 .end field
 
-.field mLatestVoteDate:Ljava/lang/String;
+.field public mLatestVoteDate:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "LatestVoteDate"
+        a = "LatestVoteDate"
     .end annotation
 .end field
 
-.field mLocation:Ljava/lang/String;
+.field public mLocation:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Location"
+        a = "Location"
     .end annotation
 .end field
 
-.field mLocationAgencyId:Ljava/lang/String;
+.field public mLocationAgencyId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "LocationAgencyId"
+        a = "LocationAgencyId"
     .end annotation
 .end field
 
-.field mMasterCampaignId:Ljava/lang/String;
+.field public mMasterCampaignId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "MasterCampaignId"
+        a = "MasterCampaignId"
     .end annotation
 .end field
 
-.field mMerchantStatusId:Ljava/lang/String;
+.field public mMerchantStatusId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "MerchantStatusId"
+        a = "MerchantStatusId"
     .end annotation
 .end field
 
-.field mMinutesValidAfterUsed:Ljava/lang/String;
+.field public mMinutesValidAfterUsed:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "MinutesValidAfterUsed"
+        a = "MinutesValidAfterUsed"
     .end annotation
 .end field
 
-.field mModifyBy:Ljava/lang/String;
+.field public mModifyBy:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ModifyBy"
+        a = "ModifyBy"
     .end annotation
 .end field
 
-.field mModifyDate:Ljava/lang/String;
+.field public mModifyDate:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ModifyDate"
+        a = "ModifyDate"
     .end annotation
 .end field
 
-.field mName:Ljava/lang/String;
+.field public mName:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Name"
+        a = "Name"
     .end annotation
 .end field
 
-.field mNextRedeemDate:Ljava/lang/String;
+.field public mNextRedeemDate:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "NextRedeemDate"
+        a = "NextRedeemDate"
     .end annotation
 .end field
 
-.field mNotificationCount:Ljava/lang/String;
+.field public mNotificationCount:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "NotificationCount"
+        a = "NotificationCount"
     .end annotation
 .end field
 
-.field mOriginalPrice:Ljava/lang/String;
+.field public mOriginalPrice:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "OriginalPrice"
+        a = "OriginalPrice"
     .end annotation
 .end field
 
-.field mOtherPointPerUnit:Ljava/lang/String;
+.field public mOtherPointPerUnit:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "OtherPointPerUnit"
+        a = "OtherPointPerUnit"
     .end annotation
 .end field
 
-.field mParentCampaignId:Ljava/lang/String;
+.field public mParentCampaignId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ParentCampaignId"
+        a = "ParentCampaignId"
     .end annotation
 .end field
 
-.field mParentCategoryID:Ljava/lang/String;
+.field public mParentCategoryID:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ParentCategoryID"
+        a = "ParentCategoryID"
     .end annotation
 .end field
 
-.field mPeopleDislike:Ljava/lang/String;
+.field public mPeopleDislike:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "PeopleDislike"
+        a = "PeopleDislike"
     .end annotation
 .end field
 
-.field mPeopleFavourite:Ljava/lang/String;
+.field public mPeopleFavourite:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "PeopleFavourite"
+        a = "PeopleFavourite"
     .end annotation
 .end field
 
-.field mPeopleLike:Ljava/lang/String;
+.field public mPeopleLike:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "PeopleLike"
+        a = "PeopleLike"
     .end annotation
 .end field
 
-.field mPeopleVote:Ljava/lang/String;
+.field public mPeopleVote:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "PeopleVote"
+        a = "PeopleVote"
     .end annotation
 .end field
 
-.field mPictures:Ljava/util/List;
+.field public mPictures:Ljava/util/List;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Pictures"
+        a = "Pictures"
     .end annotation
 
     .annotation system Ldalvik/annotation/Signature;
@@ -839,345 +833,345 @@
     .end annotation
 .end field
 
-.field mPlace:Ljava/lang/String;
+.field public mPlace:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Places"
+        a = "Places"
     .end annotation
 .end field
 
-.field mPointPerUnit:F
+.field public mPointPerUnit:F
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "PointPerUnit"
+        a = "PointPerUnit"
     .end annotation
 .end field
 
-.field mPointType:Ljava/lang/String;
+.field public mPointType:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "PointType"
+        a = "PointType"
     .end annotation
 .end field
 
-.field mPricePerUnit:Ljava/lang/String;
+.field public mPricePerUnit:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "PricePerUnit"
+        a = "PricePerUnit"
     .end annotation
 .end field
 
-.field mQty:Ljava/lang/String;
+.field public mQty:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Qty"
+        a = "Qty"
     .end annotation
 .end field
 
-.field mQuantity:Ljava/lang/String;
+.field public mQuantity:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Quantity"
+        a = "Quantity"
     .end annotation
 .end field
 
-.field mRankFavourite:Ljava/lang/String;
+.field public mRankFavourite:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "RankFavourite"
+        a = "RankFavourite"
     .end annotation
 .end field
 
-.field mRankLike:Ljava/lang/String;
+.field public mRankLike:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "RankLike"
+        a = "RankLike"
     .end annotation
 .end field
 
-.field mRankVote:Ljava/lang/String;
+.field public mRankVote:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "RankVote"
+        a = "RankVote"
     .end annotation
 .end field
 
-.field mRating:Ljava/lang/String;
+.field public mRating:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Rating"
+        a = "Rating"
     .end annotation
 .end field
 
-.field mRedeem:Ljava/lang/String;
+.field public mRedeem:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Redeems"
+        a = "Redeems"
     .end annotation
 .end field
 
-.field mRedeemCount:Ljava/lang/String;
+.field public mRedeemCount:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "RedeemCount"
+        a = "RedeemCount"
     .end annotation
 .end field
 
-.field mRedeemMedium:Ljava/lang/String;
+.field public mRedeemMedium:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "RedeemMedia"
+        a = "RedeemMedia"
     .end annotation
 .end field
 
-.field mRedeemMostPerPerson:Ljava/lang/String;
+.field public mRedeemMostPerPerson:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "RedeemMostPerPerson"
+        a = "RedeemMostPerPerson"
     .end annotation
 .end field
 
-.field mRedeemMostPerPersonInPeriod:Ljava/lang/String;
+.field public mRedeemMostPerPersonInPeriod:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "RedeemMostPerPersonInPeriod"
+        a = "RedeemMostPerPersonInPeriod"
     .end annotation
 .end field
 
-.field mRefAISCampaignID:Ljava/lang/String;
+.field public mRefAISCampaignID:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "RefAISCampaignID"
+        a = "RefAISCampaignID"
     .end annotation
 .end field
 
-.field mRefPTTAgencyID:Ljava/lang/String;
+.field public mRefPTTAgencyID:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "RefPTTAgencyID"
+        a = "RefPTTAgencyID"
     .end annotation
 .end field
 
-.field mReferenceCode:Ljava/lang/String;
+.field public mReferenceCode:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ReferenceCode"
+        a = "ReferenceCode"
     .end annotation
 .end field
 
-.field mRegularDeliveryCostPerUnit:Ljava/lang/String;
+.field public mRegularDeliveryCostPerUnit:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "RegularDeliveryCostPerUnit"
+        a = "RegularDeliveryCostPerUnit"
     .end annotation
 .end field
 
-.field mRelated:Ljava/lang/String;
+.field public mRelated:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Related"
+        a = "Related"
     .end annotation
 .end field
 
-.field mScore:Ljava/lang/String;
+.field public mScore:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Score"
+        a = "Score"
     .end annotation
 .end field
 
-.field mSendNotification:Z
+.field public mSendNotification:Z
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "SendNotifications"
+        a = "SendNotifications"
     .end annotation
 .end field
 
-.field mSendPullNotification:Z
+.field public mSendPullNotification:Z
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "SendPullNotifications"
+        a = "SendPullNotifications"
     .end annotation
 .end field
 
-.field mSerialCount:Ljava/lang/String;
+.field public mSerialCount:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "SerialCount"
+        a = "SerialCount"
     .end annotation
 .end field
 
-.field mSerialFormat:Ljava/lang/String;
+.field public mSerialFormat:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "SerialFormat"
+        a = "SerialFormat"
     .end annotation
 .end field
 
-.field mSerialPrefix:Ljava/lang/String;
+.field public mSerialPrefix:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "SerialPrefix"
+        a = "SerialPrefix"
     .end annotation
 .end field
 
-.field mShippingBy:Ljava/lang/String;
+.field public mShippingBy:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ShippingBy"
+        a = "ShippingBy"
     .end annotation
 .end field
 
-.field mShippingPayment:Ljava/lang/String;
+.field public mShippingPayment:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "ShippingPayment"
+        a = "ShippingPayment"
     .end annotation
 .end field
 
-.field mSoldOutDate:Ljava/lang/String;
+.field public mSoldOutDate:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "SoldOutDate"
+        a = "SoldOutDate"
     .end annotation
 .end field
 
-.field mSpecifyBranch:Z
+.field public mSpecifyBranch:Z
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "SpecifyBranch"
+        a = "SpecifyBranch"
     .end annotation
 .end field
 
-.field mSponsorCategoryName:Ljava/lang/String;
+.field public mSponsorCategoryName:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "SponsorCategoryName"
+        a = "SponsorCategoryName"
     .end annotation
 .end field
 
-.field mStartDate:Ljava/lang/String;
+.field public mStartDate:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "StartDate"
+        a = "StartDate"
     .end annotation
 .end field
 
-.field mStatusID:Ljava/lang/String;
+.field public mStatusID:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "StatusID"
+        a = "StatusID"
     .end annotation
 .end field
 
-.field mStyleJson:Ljava/lang/String;
+.field public mStyleJson:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "StyleJson"
+        a = "StyleJson"
     .end annotation
 .end field
 
-.field mSubCampaign:Ljava/lang/String;
+.field public mSubCampaign:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "SubCampaigns"
+        a = "SubCampaigns"
     .end annotation
 .end field
 
-.field mSubCampaignStyle:Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;
+.field public mSubCampaignStyle:Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "SubCampaignStyles"
+        a = "SubCampaignStyles"
     .end annotation
 .end field
 
-.field mTermsAndCondition:Ljava/lang/String;
+.field public mTermsAndCondition:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "TermsAndConditions"
+        a = "TermsAndConditions"
     .end annotation
 .end field
 
-.field mTimeRounding:Ljava/lang/String;
+.field public mTimeRounding:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "TimeRounding"
+        a = "TimeRounding"
     .end annotation
 .end field
 
-.field mTopVote:Ljava/lang/String;
+.field public mTopVote:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "TopVotes"
+        a = "TopVotes"
     .end annotation
 .end field
 
-.field mTracesJson:Ljava/lang/String;
+.field public mTracesJson:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "TracesJson"
+        a = "TracesJson"
     .end annotation
 .end field
 
-.field mType:Ljava/lang/String;
+.field public mType:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Type"
+        a = "Type"
     .end annotation
 .end field
 
-.field mUnder18:Z
+.field public mUnder18:Z
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Under18"
+        a = "Under18"
     .end annotation
 .end field
 
-.field mUpdatedPoint:Lcom/bzbs/marketplace/model/marketplace/detail/UpdatedPoint;
+.field public mUpdatedPoint:Lcom/bzbs/marketplace/model/marketplace/detail/UpdatedPoint;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "updated_points"
+        a = "updated_points"
     .end annotation
 .end field
 
-.field mUpdatedPointsOther:Ljava/lang/String;
+.field public mUpdatedPointsOther:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "updated_points_other"
+        a = "updated_points_other"
     .end annotation
 .end field
 
-.field mUseCount:Ljava/lang/String;
+.field public mUseCount:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "UseCount"
+        a = "UseCount"
     .end annotation
 .end field
 
-.field mUserLevel:Ljava/lang/String;
+.field public mUserLevel:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "UserLevel"
+        a = "UserLevel"
     .end annotation
 .end field
 
-.field mUserPackagePoint:I
+.field public mUserPackagePoint:I
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "UserPackagePoints"
+        a = "UserPackagePoints"
     .end annotation
 .end field
 
-.field mUserPackagePrice:I
+.field public mUserPackagePrice:I
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "UserPackagePrices"
+        a = "UserPackagePrices"
     .end annotation
 .end field
 
-.field mUserProfileScore:Ljava/lang/String;
+.field public mUserProfileScore:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "UserProfileScore"
+        a = "UserProfileScore"
     .end annotation
 .end field
 
-.field mUserRequirePoint:I
+.field public mUserRequirePoint:I
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "UserRequirePoints"
+        a = "UserRequirePoints"
     .end annotation
 .end field
 
-.field mUserSummaryPrice:D
+.field public mUserSummaryPrice:D
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "UserSummaryPrices"
+        a = "UserSummaryPrices"
     .end annotation
 .end field
 
-.field mUserVisibility:Ljava/lang/String;
+.field public mUserVisibility:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "UserVisibility"
+        a = "UserVisibility"
     .end annotation
 .end field
 
-.field mVisibility:Ljava/lang/String;
+.field public mVisibility:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Visibility"
+        a = "Visibility"
     .end annotation
 .end field
 
-.field mVoucherExpireDate:Ljava/lang/String;
+.field public mVoucherExpireDate:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "VoucherExpireDate"
+        a = "VoucherExpireDate"
     .end annotation
 .end field
 
-.field mWebsite:Ljava/lang/String;
+.field public mWebsite:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "Website"
+        a = "Website"
     .end annotation
 .end field
 
-.field mWinnerUserId:Ljava/lang/String;
+.field public mWinnerUserId:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "WinnerUserId"
+        a = "WinnerUserId"
     .end annotation
 .end field
 
-.field mWinnerUserName:Ljava/lang/String;
+.field public mWinnerUserName:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "WinnerUserName"
+        a = "WinnerUserName"
     .end annotation
 .end field
 
@@ -1189,7 +1183,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 451
+    .line 450
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 159
@@ -1864,7 +1858,7 @@
 
     iput-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mParentCampaignId:Ljava/lang/String;
 
-    .line 453
+    .line 452
     return-void
 .end method
 
@@ -1874,7 +1868,7 @@
     .registers 2
 
     .prologue
-    .line 840
+    .line 839
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyAddress:Ljava/lang/String;
 
     return-object v0
@@ -1884,7 +1878,7 @@
     .registers 2
 
     .prologue
-    .line 616
+    .line 615
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyCity:Ljava/lang/String;
 
     return-object v0
@@ -1894,7 +1888,7 @@
     .registers 2
 
     .prologue
-    .line 712
+    .line 711
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyCountry:Ljava/lang/String;
 
     return-object v0
@@ -1904,7 +1898,7 @@
     .registers 2
 
     .prologue
-    .line 1372
+    .line 1371
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyEmail:Ljava/lang/String;
 
     return-object v0
@@ -1914,7 +1908,7 @@
     .registers 2
 
     .prologue
-    .line 664
+    .line 663
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyFAX:Ljava/lang/String;
 
     return-object v0
@@ -1924,7 +1918,7 @@
     .registers 2
 
     .prologue
-    .line 1580
+    .line 1579
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyID:Ljava/lang/String;
 
     return-object v0
@@ -1934,7 +1928,7 @@
     .registers 2
 
     .prologue
-    .line 576
+    .line 575
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyId:Ljava/lang/String;
 
     return-object v0
@@ -1944,7 +1938,7 @@
     .registers 2
 
     .prologue
-    .line 1540
+    .line 1539
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyLogoUrl:Ljava/lang/String;
 
     return-object v0
@@ -1954,7 +1948,7 @@
     .registers 2
 
     .prologue
-    .line 1144
+    .line 1143
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyName:Ljava/lang/String;
 
     return-object v0
@@ -1964,7 +1958,7 @@
     .registers 2
 
     .prologue
-    .line 1412
+    .line 1411
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyTel:Ljava/lang/String;
 
     return-object v0
@@ -1974,7 +1968,7 @@
     .registers 2
 
     .prologue
-    .line 640
+    .line 639
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyWebsite:Ljava/lang/String;
 
     return-object v0
@@ -1984,7 +1978,7 @@
     .registers 2
 
     .prologue
-    .line 520
+    .line 519
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyZipCode:Ljava/lang/String;
 
     return-object v0
@@ -1994,7 +1988,7 @@
     .registers 2
 
     .prologue
-    .line 1056
+    .line 1055
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mBadge:Ljava/lang/String;
 
     return-object v0
@@ -2004,7 +1998,7 @@
     .registers 2
 
     .prologue
-    .line 832
+    .line 831
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mBadgeJson:Ljava/lang/String;
 
     return-object v0
@@ -2014,7 +2008,7 @@
     .registers 2
 
     .prologue
-    .line 1572
+    .line 1571
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mBarcode:Ljava/lang/String;
 
     return-object v0
@@ -2024,7 +2018,7 @@
     .registers 2
 
     .prologue
-    .line 728
+    .line 727
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mBidStartPoint:Ljava/lang/String;
 
     return-object v0
@@ -2034,7 +2028,7 @@
     .registers 2
 
     .prologue
-    .line 1468
+    .line 1467
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mBidStepPoint:Ljava/lang/String;
 
     return-object v0
@@ -2044,7 +2038,7 @@
     .registers 2
 
     .prologue
-    .line 1484
+    .line 1483
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mBidUsePoint:Ljava/lang/String;
 
     return-object v0
@@ -2054,7 +2048,7 @@
     .registers 2
 
     .prologue
-    .line 1332
+    .line 1331
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mBuzz:Ljava/lang/String;
 
     return-object v0
@@ -2064,7 +2058,7 @@
     .registers 2
 
     .prologue
-    .line 1508
+    .line 1507
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCaption:Ljava/lang/String;
 
     return-object v0
@@ -2074,7 +2068,7 @@
     .registers 2
 
     .prologue
-    .line 1136
+    .line 1135
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCategoryDashboardSize:Ljava/lang/String;
 
     return-object v0
@@ -2084,7 +2078,7 @@
     .registers 2
 
     .prologue
-    .line 592
+    .line 591
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCategoryID:Ljava/lang/String;
 
     return-object v0
@@ -2094,7 +2088,7 @@
     .registers 2
 
     .prologue
-    .line 656
+    .line 655
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCategoryName:Ljava/lang/String;
 
     return-object v0
@@ -2104,7 +2098,7 @@
     .registers 2
 
     .prologue
-    .line 792
+    .line 791
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCategorySequence:Ljava/lang/String;
 
     return-object v0
@@ -2114,7 +2108,7 @@
     .registers 2
 
     .prologue
-    .line 1152
+    .line 1151
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCondition:Ljava/lang/String;
 
     return-object v0
@@ -2124,7 +2118,7 @@
     .registers 2
 
     .prologue
-    .line 1292
+    .line 1291
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mConditionAlert:Ljava/lang/String;
 
     return-object v0
@@ -2134,7 +2128,7 @@
     .registers 2
 
     .prologue
-    .line 1596
+    .line 1595
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mConditionAlertId:Ljava/lang/String;
 
     return-object v0
@@ -2144,7 +2138,7 @@
     .registers 2
 
     .prologue
-    .line 1532
+    .line 1531
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCoolDown:Ljava/lang/String;
 
     return-object v0
@@ -2154,7 +2148,7 @@
     .registers 2
 
     .prologue
-    .line 536
+    .line 535
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCreateBy:Ljava/lang/String;
 
     return-object v0
@@ -2164,7 +2158,7 @@
     .registers 2
 
     .prologue
-    .line 624
+    .line 623
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCreateDate:Ljava/lang/String;
 
     return-object v0
@@ -2174,7 +2168,7 @@
     .registers 2
 
     .prologue
-    .line 608
+    .line 607
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCrossAppCampaignId:Ljava/lang/String;
 
     return-object v0
@@ -2184,7 +2178,7 @@
     .registers 2
 
     .prologue
-    .line 1316
+    .line 1315
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCurrentDate:Ljava/lang/String;
 
     return-object v0
@@ -2194,7 +2188,7 @@
     .registers 2
 
     .prologue
-    .line 1204
+    .line 1203
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCustomCaption:Ljava/lang/String;
 
     return-object v0
@@ -2204,7 +2198,7 @@
     .registers 2
 
     .prologue
-    .line 1016
+    .line 1015
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCustomFacebookMessage:Ljava/lang/String;
 
     return-object v0
@@ -2214,7 +2208,7 @@
     .registers 2
 
     .prologue
-    .line 1428
+    .line 1427
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCustomInput:Ljava/lang/String;
 
     return-object v0
@@ -2224,7 +2218,7 @@
     .registers 2
 
     .prologue
-    .line 1024
+    .line 1023
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mDayProceed:Ljava/lang/String;
 
     return-object v0
@@ -2234,7 +2228,7 @@
     .registers 2
 
     .prologue
-    .line 920
+    .line 919
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mDayRemain:Ljava/lang/String;
 
     return-object v0
@@ -2244,7 +2238,7 @@
     .registers 2
 
     .prologue
-    .line 968
+    .line 967
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mDaysValidAfterExpire:Ljava/lang/String;
 
     return-object v0
@@ -2254,7 +2248,7 @@
     .registers 2
 
     .prologue
-    .line 544
+    .line 543
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mDefaultPrivilegeMessage:Ljava/lang/String;
 
     return-object v0
@@ -2264,7 +2258,7 @@
     .registers 2
 
     .prologue
-    .line 1356
+    .line 1355
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mDeliveryJson:Ljava/lang/String;
 
     return-object v0
@@ -2274,7 +2268,7 @@
     .registers 2
 
     .prologue
-    .line 1380
+    .line 1379
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mDetail:Ljava/lang/String;
 
     return-object v0
@@ -2284,7 +2278,7 @@
     .registers 2
 
     .prologue
-    .line 1460
+    .line 1459
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mDiscount:Ljava/lang/String;
 
     return-object v0
@@ -2294,7 +2288,7 @@
     .registers 2
 
     .prologue
-    .line 1072
+    .line 1071
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mEMSDeliveryCostPerUnit:Ljava/lang/String;
 
     return-object v0
@@ -2304,7 +2298,7 @@
     .registers 2
 
     .prologue
-    .line 1000
+    .line 999
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mExpireDate:Ljava/lang/String;
 
     return-object v0
@@ -2314,7 +2308,7 @@
     .registers 2
 
     .prologue
-    .line 648
+    .line 647
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mExtra:Ljava/lang/String;
 
     return-object v0
@@ -2324,7 +2318,7 @@
     .registers 2
 
     .prologue
-    .line 488
+    .line 487
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mFanPageId:Ljava/lang/String;
 
     return-object v0
@@ -2334,7 +2328,7 @@
     .registers 2
 
     .prologue
-    .line 512
+    .line 511
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mFullImageUrl:Ljava/lang/String;
 
     return-object v0
@@ -2344,7 +2338,7 @@
     .registers 2
 
     .prologue
-    .line 984
+    .line 983
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mHasWinner:Ljava/lang/String;
 
     return-object v0
@@ -2354,7 +2348,7 @@
     .registers 2
 
     .prologue
-    .line 1196
+    .line 1195
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mHashTagJson:Ljava/lang/String;
 
     return-object v0
@@ -2364,7 +2358,7 @@
     .registers 2
 
     .prologue
-    .line 720
+    .line 719
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mID:Ljava/lang/String;
 
     return-object v0
@@ -2374,15 +2368,15 @@
     .registers 2
 
     .prologue
-    .line 1184
+    .line 1183
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mInterfaceDisplay:Ljava/lang/String;
 
     if-eqz v0, :cond_7
 
-    .line 1185
+    .line 1184
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mInterfaceDisplay:Ljava/lang/String;
 
-    .line 1187
+    .line 1186
     :goto_6
     return-object v0
 
@@ -2396,7 +2390,7 @@
     .registers 2
 
     .prologue
-    .line 472
+    .line 471
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsCheckUserCampaignPermission:Ljava/lang/String;
 
     return-object v0
@@ -2406,7 +2400,7 @@
     .registers 2
 
     .prologue
-    .line 1556
+    .line 1555
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsFavourite:Ljava/lang/String;
 
     return-object v0
@@ -2416,7 +2410,7 @@
     .registers 2
 
     .prologue
-    .line 1364
+    .line 1363
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsHighlight:Ljava/lang/String;
 
     return-object v0
@@ -2426,7 +2420,7 @@
     .registers 2
 
     .prologue
-    .line 824
+    .line 823
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mItemCountSold:Ljava/lang/String;
 
     return-object v0
@@ -2436,7 +2430,7 @@
     .registers 2
 
     .prologue
-    .line 888
+    .line 887
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mKeyword:Ljava/lang/String;
 
     return-object v0
@@ -2446,7 +2440,7 @@
     .registers 2
 
     .prologue
-    .line 872
+    .line 871
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mLatestVoteDate:Ljava/lang/String;
 
     return-object v0
@@ -2456,7 +2450,7 @@
     .registers 2
 
     .prologue
-    .line 504
+    .line 503
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mLocation:Ljava/lang/String;
 
     return-object v0
@@ -2466,7 +2460,7 @@
     .registers 2
 
     .prologue
-    .line 1340
+    .line 1339
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mLocationAgencyId:Ljava/lang/String;
 
     return-object v0
@@ -2476,7 +2470,7 @@
     .registers 2
 
     .prologue
-    .line 928
+    .line 927
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mMasterCampaignId:Ljava/lang/String;
 
     return-object v0
@@ -2486,7 +2480,7 @@
     .registers 2
 
     .prologue
-    .line 1564
+    .line 1563
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mMerchantStatusId:Ljava/lang/String;
 
     return-object v0
@@ -2496,7 +2490,7 @@
     .registers 2
 
     .prologue
-    .line 880
+    .line 879
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mMinutesValidAfterUsed:Ljava/lang/String;
 
     return-object v0
@@ -2506,7 +2500,7 @@
     .registers 2
 
     .prologue
-    .line 848
+    .line 847
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mModifyBy:Ljava/lang/String;
 
     return-object v0
@@ -2516,7 +2510,7 @@
     .registers 2
 
     .prologue
-    .line 776
+    .line 775
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mModifyDate:Ljava/lang/String;
 
     return-object v0
@@ -2526,7 +2520,7 @@
     .registers 2
 
     .prologue
-    .line 1348
+    .line 1347
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mName:Ljava/lang/String;
 
     return-object v0
@@ -2536,7 +2530,7 @@
     .registers 2
 
     .prologue
-    .line 1604
+    .line 1603
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mNextRedeemDate:Ljava/lang/String;
 
     return-object v0
@@ -2546,7 +2540,7 @@
     .registers 2
 
     .prologue
-    .line 1516
+    .line 1515
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mNotificationCount:Ljava/lang/String;
 
     return-object v0
@@ -2556,7 +2550,7 @@
     .registers 2
 
     .prologue
-    .line 1500
+    .line 1499
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mOriginalPrice:Ljava/lang/String;
 
     return-object v0
@@ -2566,7 +2560,7 @@
     .registers 2
 
     .prologue
-    .line 752
+    .line 751
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mOtherPointPerUnit:Ljava/lang/String;
 
     return-object v0
@@ -2576,7 +2570,7 @@
     .registers 2
 
     .prologue
-    .line 1612
+    .line 1611
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mParentCampaignId:Ljava/lang/String;
 
     return-object v0
@@ -2586,7 +2580,7 @@
     .registers 2
 
     .prologue
-    .line 1492
+    .line 1491
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mParentCategoryID:Ljava/lang/String;
 
     return-object v0
@@ -2596,7 +2590,7 @@
     .registers 2
 
     .prologue
-    .line 856
+    .line 855
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mPeopleDislike:Ljava/lang/String;
 
     return-object v0
@@ -2606,7 +2600,7 @@
     .registers 2
 
     .prologue
-    .line 864
+    .line 863
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mPeopleFavourite:Ljava/lang/String;
 
     return-object v0
@@ -2616,7 +2610,7 @@
     .registers 2
 
     .prologue
-    .line 1396
+    .line 1395
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mPeopleLike:Ljava/lang/String;
 
     return-object v0
@@ -2626,7 +2620,7 @@
     .registers 2
 
     .prologue
-    .line 912
+    .line 911
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mPeopleVote:Ljava/lang/String;
 
     return-object v0
@@ -2645,7 +2639,7 @@
     .end annotation
 
     .prologue
-    .line 552
+    .line 551
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mPictures:Ljava/util/List;
 
     return-object v0
@@ -2655,7 +2649,7 @@
     .registers 2
 
     .prologue
-    .line 704
+    .line 703
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mPlace:Ljava/lang/String;
 
     return-object v0
@@ -2665,7 +2659,7 @@
     .registers 2
 
     .prologue
-    .line 680
+    .line 679
     iget v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mPointPerUnit:F
 
     return v0
@@ -2675,7 +2669,7 @@
     .registers 2
 
     .prologue
-    .line 1476
+    .line 1475
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mPointType:Ljava/lang/String;
 
     return-object v0
@@ -2685,7 +2679,7 @@
     .registers 2
 
     .prologue
-    .line 1308
+    .line 1307
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mPricePerUnit:Ljava/lang/String;
 
     return-object v0
@@ -2695,7 +2689,7 @@
     .registers 2
 
     .prologue
-    .line 760
+    .line 759
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mQty:Ljava/lang/String;
 
     return-object v0
@@ -2705,7 +2699,7 @@
     .registers 2
 
     .prologue
-    .line 1160
+    .line 1159
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mQuantity:Ljava/lang/String;
 
     return-object v0
@@ -2715,7 +2709,7 @@
     .registers 2
 
     .prologue
-    .line 560
+    .line 559
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRankFavourite:Ljava/lang/String;
 
     return-object v0
@@ -2725,7 +2719,7 @@
     .registers 2
 
     .prologue
-    .line 784
+    .line 783
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRankLike:Ljava/lang/String;
 
     return-object v0
@@ -2735,7 +2729,7 @@
     .registers 2
 
     .prologue
-    .line 1220
+    .line 1219
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRankVote:Ljava/lang/String;
 
     return-object v0
@@ -2745,7 +2739,7 @@
     .registers 2
 
     .prologue
-    .line 960
+    .line 959
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRating:Ljava/lang/String;
 
     return-object v0
@@ -2755,7 +2749,7 @@
     .registers 2
 
     .prologue
-    .line 1268
+    .line 1267
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRedeem:Ljava/lang/String;
 
     return-object v0
@@ -2765,7 +2759,7 @@
     .registers 2
 
     .prologue
-    .line 808
+    .line 807
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRedeemCount:Ljava/lang/String;
 
     return-object v0
@@ -2775,7 +2769,7 @@
     .registers 2
 
     .prologue
-    .line 1276
+    .line 1275
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRedeemMedium:Ljava/lang/String;
 
     return-object v0
@@ -2785,7 +2779,7 @@
     .registers 2
 
     .prologue
-    .line 632
+    .line 631
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRedeemMostPerPerson:Ljava/lang/String;
 
     return-object v0
@@ -2795,7 +2789,7 @@
     .registers 2
 
     .prologue
-    .line 1040
+    .line 1039
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRedeemMostPerPersonInPeriod:Ljava/lang/String;
 
     return-object v0
@@ -2805,7 +2799,7 @@
     .registers 2
 
     .prologue
-    .line 1436
+    .line 1435
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRefAISCampaignID:Ljava/lang/String;
 
     return-object v0
@@ -2815,7 +2809,7 @@
     .registers 2
 
     .prologue
-    .line 480
+    .line 479
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRefPTTAgencyID:Ljava/lang/String;
 
     return-object v0
@@ -2825,7 +2819,7 @@
     .registers 2
 
     .prologue
-    .line 696
+    .line 695
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mReferenceCode:Ljava/lang/String;
 
     return-object v0
@@ -2835,7 +2829,7 @@
     .registers 2
 
     .prologue
-    .line 1324
+    .line 1323
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRegularDeliveryCostPerUnit:Ljava/lang/String;
 
     return-object v0
@@ -2845,7 +2839,7 @@
     .registers 2
 
     .prologue
-    .line 1388
+    .line 1387
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRelated:Ljava/lang/String;
 
     return-object v0
@@ -2855,7 +2849,7 @@
     .registers 2
 
     .prologue
-    .line 1404
+    .line 1403
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mScore:Ljava/lang/String;
 
     return-object v0
@@ -2865,7 +2859,7 @@
     .registers 2
 
     .prologue
-    .line 1168
+    .line 1167
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mSerialCount:Ljava/lang/String;
 
     return-object v0
@@ -2875,7 +2869,7 @@
     .registers 2
 
     .prologue
-    .line 1228
+    .line 1227
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mSerialFormat:Ljava/lang/String;
 
     return-object v0
@@ -2885,7 +2879,7 @@
     .registers 2
 
     .prologue
-    .line 768
+    .line 767
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mSerialPrefix:Ljava/lang/String;
 
     return-object v0
@@ -2895,7 +2889,7 @@
     .registers 2
 
     .prologue
-    .line 896
+    .line 895
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mShippingBy:Ljava/lang/String;
 
     return-object v0
@@ -2905,7 +2899,7 @@
     .registers 2
 
     .prologue
-    .line 976
+    .line 975
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mShippingPayment:Ljava/lang/String;
 
     return-object v0
@@ -2915,7 +2909,7 @@
     .registers 2
 
     .prologue
-    .line 1008
+    .line 1007
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mSoldOutDate:Ljava/lang/String;
 
     return-object v0
@@ -2925,7 +2919,7 @@
     .registers 2
 
     .prologue
-    .line 1128
+    .line 1127
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mSponsorCategoryName:Ljava/lang/String;
 
     return-object v0
@@ -2935,7 +2929,7 @@
     .registers 2
 
     .prologue
-    .line 496
+    .line 495
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mStartDate:Ljava/lang/String;
 
     return-object v0
@@ -2945,7 +2939,7 @@
     .registers 2
 
     .prologue
-    .line 1176
+    .line 1175
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mStatusID:Ljava/lang/String;
 
     return-object v0
@@ -2955,7 +2949,7 @@
     .registers 2
 
     .prologue
-    .line 568
+    .line 567
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mStyleJson:Ljava/lang/String;
 
     return-object v0
@@ -2965,7 +2959,7 @@
     .registers 2
 
     .prologue
-    .line 1080
+    .line 1079
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mSubCampaign:Ljava/lang/String;
 
     return-object v0
@@ -2975,7 +2969,7 @@
     .registers 2
 
     .prologue
-    .line 1088
+    .line 1087
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mSubCampaignStyle:Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;
 
     return-object v0
@@ -2985,7 +2979,7 @@
     .registers 2
 
     .prologue
-    .line 1236
+    .line 1235
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mTermsAndCondition:Ljava/lang/String;
 
     return-object v0
@@ -2995,7 +2989,7 @@
     .registers 2
 
     .prologue
-    .line 1120
+    .line 1119
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mTimeRounding:Ljava/lang/String;
 
     return-object v0
@@ -3005,7 +2999,7 @@
     .registers 2
 
     .prologue
-    .line 800
+    .line 799
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mTopVote:Ljava/lang/String;
 
     return-object v0
@@ -3015,7 +3009,7 @@
     .registers 2
 
     .prologue
-    .line 584
+    .line 583
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mTracesJson:Ljava/lang/String;
 
     return-object v0
@@ -3025,7 +3019,7 @@
     .registers 2
 
     .prologue
-    .line 528
+    .line 527
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mType:Ljava/lang/String;
 
     return-object v0
@@ -3035,7 +3029,7 @@
     .registers 2
 
     .prologue
-    .line 816
+    .line 815
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUpdatedPoint:Lcom/bzbs/marketplace/model/marketplace/detail/UpdatedPoint;
 
     return-object v0
@@ -3045,7 +3039,7 @@
     .registers 2
 
     .prologue
-    .line 1260
+    .line 1259
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUpdatedPointsOther:Ljava/lang/String;
 
     return-object v0
@@ -3055,7 +3049,7 @@
     .registers 2
 
     .prologue
-    .line 1096
+    .line 1095
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUseCount:Ljava/lang/String;
 
     return-object v0
@@ -3065,7 +3059,7 @@
     .registers 2
 
     .prologue
-    .line 1524
+    .line 1523
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUserLevel:Ljava/lang/String;
 
     return-object v0
@@ -3075,7 +3069,7 @@
     .registers 2
 
     .prologue
-    .line 992
+    .line 991
     iget v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUserPackagePoint:I
 
     return v0
@@ -3085,7 +3079,7 @@
     .registers 2
 
     .prologue
-    .line 1212
+    .line 1211
     iget v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUserPackagePrice:I
 
     return v0
@@ -3095,7 +3089,7 @@
     .registers 2
 
     .prologue
-    .line 456
+    .line 455
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUserProfileScore:Ljava/lang/String;
 
     return-object v0
@@ -3105,7 +3099,7 @@
     .registers 2
 
     .prologue
-    .line 1104
+    .line 1103
     iget v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUserRequirePoint:I
 
     return v0
@@ -3115,7 +3109,7 @@
     .registers 3
 
     .prologue
-    .line 936
+    .line 935
     iget-wide v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUserSummaryPrice:D
 
     return-wide v0
@@ -3125,7 +3119,7 @@
     .registers 2
 
     .prologue
-    .line 736
+    .line 735
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUserVisibility:Ljava/lang/String;
 
     return-object v0
@@ -3135,7 +3129,7 @@
     .registers 2
 
     .prologue
-    .line 1048
+    .line 1047
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mVisibility:Ljava/lang/String;
 
     return-object v0
@@ -3145,7 +3139,7 @@
     .registers 2
 
     .prologue
-    .line 952
+    .line 951
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mVoucherExpireDate:Ljava/lang/String;
 
     return-object v0
@@ -3155,7 +3149,7 @@
     .registers 2
 
     .prologue
-    .line 688
+    .line 687
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mWebsite:Ljava/lang/String;
 
     return-object v0
@@ -3165,7 +3159,7 @@
     .registers 2
 
     .prologue
-    .line 1548
+    .line 1547
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mWinnerUserId:Ljava/lang/String;
 
     return-object v0
@@ -3175,7 +3169,7 @@
     .registers 2
 
     .prologue
-    .line 1112
+    .line 1111
     iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mWinnerUserName:Ljava/lang/String;
 
     return-object v0
@@ -3185,7 +3179,7 @@
     .registers 2
 
     .prologue
-    .line 1284
+    .line 1283
     iget-boolean v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsConditionPass:Z
 
     return v0
@@ -3195,7 +3189,7 @@
     .registers 2
 
     .prologue
-    .line 944
+    .line 943
     iget-boolean v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mDelivered:Z
 
     return v0
@@ -3205,7 +3199,7 @@
     .registers 2
 
     .prologue
-    .line 1452
+    .line 1451
     iget-boolean v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mHasCrossApp:Z
 
     return v0
@@ -3215,7 +3209,7 @@
     .registers 2
 
     .prologue
-    .line 1244
+    .line 1243
     iget-boolean v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsNotAutoUse:Z
 
     return v0
@@ -3225,7 +3219,7 @@
     .registers 2
 
     .prologue
-    .line 1300
+    .line 1299
     iget-boolean v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsRequireUniqueSerial:Z
 
     return v0
@@ -3235,7 +3229,7 @@
     .registers 2
 
     .prologue
-    .line 600
+    .line 599
     iget-boolean v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsShowNotiNearby:Z
 
     return v0
@@ -3245,7 +3239,7 @@
     .registers 2
 
     .prologue
-    .line 672
+    .line 671
     iget-boolean v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsSpecificLocation:Z
 
     return v0
@@ -3255,7 +3249,7 @@
     .registers 2
 
     .prologue
-    .line 1064
+    .line 1063
     iget-boolean v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsSpecificPrintVoucher:Z
 
     return v0
@@ -3265,7 +3259,7 @@
     .registers 2
 
     .prologue
-    .line 1588
+    .line 1587
     iget-boolean v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsSplitPointSystem:Z
 
     return v0
@@ -3275,7 +3269,7 @@
     .registers 2
 
     .prologue
-    .line 1444
+    .line 1443
     iget-boolean v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsSponsor:Z
 
     return v0
@@ -3285,7 +3279,7 @@
     .registers 2
 
     .prologue
-    .line 904
+    .line 903
     iget-boolean v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsLike:Z
 
     return v0
@@ -3295,7 +3289,7 @@
     .registers 2
 
     .prologue
-    .line 464
+    .line 463
     iget-boolean v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsRequirePoint:Z
 
     return v0
@@ -3305,7 +3299,7 @@
     .registers 2
 
     .prologue
-    .line 1252
+    .line 1251
     iget-boolean v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mSendNotification:Z
 
     return v0
@@ -3315,7 +3309,7 @@
     .registers 2
 
     .prologue
-    .line 744
+    .line 743
     iget-boolean v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mSendPullNotification:Z
 
     return v0
@@ -3325,7 +3319,7 @@
     .registers 2
 
     .prologue
-    .line 1032
+    .line 1031
     iget-boolean v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mSpecifyBranch:Z
 
     return v0
@@ -3335,7 +3329,7 @@
     .registers 2
 
     .prologue
-    .line 1420
+    .line 1419
     iget-boolean v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUnder18:Z
 
     return v0
@@ -3343,1045 +3337,958 @@
 
 .method public setAgencyAddress(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mAgencyAddress"    # Ljava/lang/String;
 
     .prologue
-    .line 844
+    .line 843
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyAddress:Ljava/lang/String;
 
-    .line 845
+    .line 844
     return-void
 .end method
 
 .method public setAgencyCity(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mAgencyCity"    # Ljava/lang/String;
 
     .prologue
-    .line 620
+    .line 619
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyCity:Ljava/lang/String;
 
-    .line 621
+    .line 620
     return-void
 .end method
 
 .method public setAgencyCountry(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mAgencyCountry"    # Ljava/lang/String;
 
     .prologue
-    .line 716
+    .line 715
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyCountry:Ljava/lang/String;
 
-    .line 717
+    .line 716
     return-void
 .end method
 
 .method public setAgencyEmail(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mAgencyEmail"    # Ljava/lang/String;
 
     .prologue
-    .line 1376
+    .line 1375
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyEmail:Ljava/lang/String;
 
-    .line 1377
+    .line 1376
     return-void
 .end method
 
 .method public setAgencyFAX(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mAgencyFAX"    # Ljava/lang/String;
 
     .prologue
-    .line 668
+    .line 667
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyFAX:Ljava/lang/String;
 
-    .line 669
+    .line 668
     return-void
 .end method
 
 .method public setAgencyID(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mAgencyID"    # Ljava/lang/String;
 
     .prologue
-    .line 1584
+    .line 1583
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyID:Ljava/lang/String;
 
-    .line 1585
+    .line 1584
     return-void
 .end method
 
 .method public setAgencyId(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mAgencyId"    # Ljava/lang/String;
 
     .prologue
-    .line 580
+    .line 579
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyId:Ljava/lang/String;
 
-    .line 581
+    .line 580
     return-void
 .end method
 
 .method public setAgencyLogoUrl(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mAgencyLogoUrl"    # Ljava/lang/String;
 
     .prologue
-    .line 1544
+    .line 1543
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyLogoUrl:Ljava/lang/String;
 
-    .line 1545
+    .line 1544
     return-void
 .end method
 
 .method public setAgencyName(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mAgencyName"    # Ljava/lang/String;
 
     .prologue
-    .line 1148
+    .line 1147
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyName:Ljava/lang/String;
 
-    .line 1149
+    .line 1148
     return-void
 .end method
 
 .method public setAgencyTel(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mAgencyTel"    # Ljava/lang/String;
 
     .prologue
-    .line 1416
+    .line 1415
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyTel:Ljava/lang/String;
 
-    .line 1417
+    .line 1416
     return-void
 .end method
 
 .method public setAgencyWebsite(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mAgencyWebsite"    # Ljava/lang/String;
 
     .prologue
-    .line 644
+    .line 643
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyWebsite:Ljava/lang/String;
 
-    .line 645
+    .line 644
     return-void
 .end method
 
 .method public setAgencyZipCode(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mAgencyZipCode"    # Ljava/lang/String;
 
     .prologue
-    .line 524
+    .line 523
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mAgencyZipCode:Ljava/lang/String;
 
-    .line 525
+    .line 524
     return-void
 .end method
 
 .method public setBadge(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mBadge"    # Ljava/lang/String;
 
     .prologue
-    .line 1060
+    .line 1059
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mBadge:Ljava/lang/String;
 
-    .line 1061
+    .line 1060
     return-void
 .end method
 
 .method public setBadgeJson(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mBadgeJson"    # Ljava/lang/String;
 
     .prologue
-    .line 836
+    .line 835
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mBadgeJson:Ljava/lang/String;
 
-    .line 837
+    .line 836
     return-void
 .end method
 
 .method public setBarcode(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mBarcode"    # Ljava/lang/String;
 
     .prologue
-    .line 1576
+    .line 1575
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mBarcode:Ljava/lang/String;
 
-    .line 1577
+    .line 1576
     return-void
 .end method
 
 .method public setBidStartPoint(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mBidStartPoint"    # Ljava/lang/String;
 
     .prologue
-    .line 732
+    .line 731
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mBidStartPoint:Ljava/lang/String;
 
-    .line 733
+    .line 732
     return-void
 .end method
 
 .method public setBidStepPoint(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mBidStepPoint"    # Ljava/lang/String;
 
     .prologue
-    .line 1472
+    .line 1471
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mBidStepPoint:Ljava/lang/String;
 
-    .line 1473
+    .line 1472
     return-void
 .end method
 
 .method public setBidUsePoint(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mBidUsePoint"    # Ljava/lang/String;
 
     .prologue
-    .line 1488
+    .line 1487
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mBidUsePoint:Ljava/lang/String;
 
-    .line 1489
+    .line 1488
     return-void
 .end method
 
 .method public setBuzz(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mBuzz"    # Ljava/lang/String;
 
     .prologue
-    .line 1336
+    .line 1335
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mBuzz:Ljava/lang/String;
 
-    .line 1337
+    .line 1336
     return-void
 .end method
 
 .method public setCaption(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mCaption"    # Ljava/lang/String;
 
     .prologue
-    .line 1512
+    .line 1511
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCaption:Ljava/lang/String;
 
-    .line 1513
+    .line 1512
     return-void
 .end method
 
 .method public setCategoryDashboardSize(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mCategoryDashboardSize"    # Ljava/lang/String;
 
     .prologue
-    .line 1140
+    .line 1139
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCategoryDashboardSize:Ljava/lang/String;
 
-    .line 1141
+    .line 1140
     return-void
 .end method
 
 .method public setCategoryID(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mCategoryID"    # Ljava/lang/String;
 
     .prologue
-    .line 596
+    .line 595
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCategoryID:Ljava/lang/String;
 
-    .line 597
+    .line 596
     return-void
 .end method
 
 .method public setCategoryName(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mCategoryName"    # Ljava/lang/String;
 
     .prologue
-    .line 660
+    .line 659
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCategoryName:Ljava/lang/String;
 
-    .line 661
+    .line 660
     return-void
 .end method
 
 .method public setCategorySequence(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mCategorySequence"    # Ljava/lang/String;
 
     .prologue
-    .line 796
+    .line 795
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCategorySequence:Ljava/lang/String;
 
-    .line 797
+    .line 796
     return-void
 .end method
 
 .method public setCondition(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mCondition"    # Ljava/lang/String;
 
     .prologue
-    .line 1156
+    .line 1155
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCondition:Ljava/lang/String;
 
-    .line 1157
+    .line 1156
     return-void
 .end method
 
 .method public setConditionAlert(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mConditionAlert"    # Ljava/lang/String;
 
     .prologue
-    .line 1296
+    .line 1295
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mConditionAlert:Ljava/lang/String;
 
-    .line 1297
+    .line 1296
     return-void
 .end method
 
 .method public setConditionAlertId(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mConditionAlertId"    # Ljava/lang/String;
 
     .prologue
-    .line 1600
+    .line 1599
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mConditionAlertId:Ljava/lang/String;
 
-    .line 1601
+    .line 1600
     return-void
 .end method
 
 .method public setCoolDown(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mCoolDown"    # Ljava/lang/String;
 
     .prologue
-    .line 1536
+    .line 1535
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCoolDown:Ljava/lang/String;
 
-    .line 1537
+    .line 1536
     return-void
 .end method
 
 .method public setCreateBy(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mCreateBy"    # Ljava/lang/String;
 
     .prologue
-    .line 540
+    .line 539
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCreateBy:Ljava/lang/String;
 
-    .line 541
+    .line 540
     return-void
 .end method
 
 .method public setCreateDate(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mCreateDate"    # Ljava/lang/String;
 
     .prologue
-    .line 628
+    .line 627
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCreateDate:Ljava/lang/String;
 
-    .line 629
+    .line 628
     return-void
 .end method
 
 .method public setCrossAppCampaignId(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mCrossAppCampaignId"    # Ljava/lang/String;
 
     .prologue
-    .line 612
+    .line 611
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCrossAppCampaignId:Ljava/lang/String;
 
-    .line 613
+    .line 612
     return-void
 .end method
 
 .method public setCurrentDate(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mCurrentDate"    # Ljava/lang/String;
 
     .prologue
-    .line 1320
+    .line 1319
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCurrentDate:Ljava/lang/String;
 
-    .line 1321
+    .line 1320
     return-void
 .end method
 
 .method public setCustomCaption(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mCustomCaption"    # Ljava/lang/String;
 
     .prologue
-    .line 1208
+    .line 1207
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCustomCaption:Ljava/lang/String;
 
-    .line 1209
+    .line 1208
     return-void
 .end method
 
 .method public setCustomFacebookMessage(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mCustomFacebookMessage"    # Ljava/lang/String;
 
     .prologue
-    .line 1020
+    .line 1019
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCustomFacebookMessage:Ljava/lang/String;
 
-    .line 1021
+    .line 1020
     return-void
 .end method
 
 .method public setCustomInput(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mCustomInput"    # Ljava/lang/String;
 
     .prologue
-    .line 1432
+    .line 1431
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mCustomInput:Ljava/lang/String;
 
-    .line 1433
+    .line 1432
     return-void
 .end method
 
 .method public setDayProceed(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mDayProceed"    # Ljava/lang/String;
 
     .prologue
-    .line 1028
+    .line 1027
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mDayProceed:Ljava/lang/String;
 
-    .line 1029
+    .line 1028
     return-void
 .end method
 
 .method public setDayRemain(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mDayRemain"    # Ljava/lang/String;
 
     .prologue
-    .line 924
+    .line 923
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mDayRemain:Ljava/lang/String;
 
-    .line 925
+    .line 924
     return-void
 .end method
 
 .method public setDaysValidAfterExpire(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mDaysValidAfterExpire"    # Ljava/lang/String;
 
     .prologue
-    .line 972
+    .line 971
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mDaysValidAfterExpire:Ljava/lang/String;
 
-    .line 973
+    .line 972
     return-void
 .end method
 
 .method public setDefaultPrivilegeMessage(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mDefaultPrivilegeMessage"    # Ljava/lang/String;
 
     .prologue
-    .line 548
+    .line 547
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mDefaultPrivilegeMessage:Ljava/lang/String;
 
-    .line 549
+    .line 548
     return-void
 .end method
 
 .method public setDelivered(Z)V
     .registers 2
-    .param p1, "mDelivered"    # Z
 
     .prologue
-    .line 948
+    .line 947
     iput-boolean p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mDelivered:Z
 
-    .line 949
+    .line 948
     return-void
 .end method
 
 .method public setDeliveryJson(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mDeliveryJson"    # Ljava/lang/String;
 
     .prologue
-    .line 1360
+    .line 1359
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mDeliveryJson:Ljava/lang/String;
 
-    .line 1361
+    .line 1360
     return-void
 .end method
 
 .method public setDetail(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mDetail"    # Ljava/lang/String;
 
     .prologue
-    .line 1384
+    .line 1383
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mDetail:Ljava/lang/String;
 
-    .line 1385
+    .line 1384
     return-void
 .end method
 
 .method public setDiscount(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mDiscount"    # Ljava/lang/String;
 
     .prologue
-    .line 1464
+    .line 1463
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mDiscount:Ljava/lang/String;
 
-    .line 1465
+    .line 1464
     return-void
 .end method
 
 .method public setEMSDeliveryCostPerUnit(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mEMSDeliveryCostPerUnit"    # Ljava/lang/String;
 
     .prologue
-    .line 1076
+    .line 1075
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mEMSDeliveryCostPerUnit:Ljava/lang/String;
 
-    .line 1077
+    .line 1076
     return-void
 .end method
 
 .method public setExpireDate(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mExpireDate"    # Ljava/lang/String;
 
     .prologue
-    .line 1004
+    .line 1003
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mExpireDate:Ljava/lang/String;
 
-    .line 1005
+    .line 1004
     return-void
 .end method
 
 .method public setExtra(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mExtra"    # Ljava/lang/String;
 
     .prologue
-    .line 652
+    .line 651
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mExtra:Ljava/lang/String;
 
-    .line 653
+    .line 652
     return-void
 .end method
 
 .method public setFanPageId(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mFanPageId"    # Ljava/lang/String;
 
     .prologue
-    .line 492
+    .line 491
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mFanPageId:Ljava/lang/String;
 
-    .line 493
+    .line 492
     return-void
 .end method
 
 .method public setFullImageUrl(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mFullImageUrl"    # Ljava/lang/String;
 
     .prologue
-    .line 516
+    .line 515
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mFullImageUrl:Ljava/lang/String;
 
-    .line 517
+    .line 516
     return-void
 .end method
 
 .method public setHasCrossApp(Z)V
     .registers 2
-    .param p1, "mHasCrossApp"    # Z
 
     .prologue
-    .line 1456
+    .line 1455
     iput-boolean p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mHasCrossApp:Z
 
-    .line 1457
+    .line 1456
     return-void
 .end method
 
 .method public setHasWinner(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mHasWinner"    # Ljava/lang/String;
 
     .prologue
-    .line 988
+    .line 987
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mHasWinner:Ljava/lang/String;
 
-    .line 989
+    .line 988
     return-void
 .end method
 
 .method public setHashTagJson(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mHashTagJson"    # Ljava/lang/String;
 
     .prologue
-    .line 1200
+    .line 1199
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mHashTagJson:Ljava/lang/String;
 
-    .line 1201
+    .line 1200
     return-void
 .end method
 
 .method public setID(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mID"    # Ljava/lang/String;
 
     .prologue
-    .line 724
+    .line 723
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mID:Ljava/lang/String;
 
-    .line 725
+    .line 724
     return-void
 .end method
 
 .method public setInterfaceDisplay(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mInterfaceDisplay"    # Ljava/lang/String;
 
     .prologue
-    .line 1192
+    .line 1191
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mInterfaceDisplay:Ljava/lang/String;
 
-    .line 1193
+    .line 1192
     return-void
 .end method
 
 .method public setIsCheckUserCampaignPermission(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mIsCheckUserCampaignPermission"    # Ljava/lang/String;
 
     .prologue
-    .line 476
+    .line 475
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsCheckUserCampaignPermission:Ljava/lang/String;
 
-    .line 477
+    .line 476
     return-void
 .end method
 
 .method public setIsConditionPass(Z)V
     .registers 2
-    .param p1, "mIsConditionPass"    # Z
 
     .prologue
-    .line 1288
+    .line 1287
     iput-boolean p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsConditionPass:Z
 
-    .line 1289
+    .line 1288
     return-void
 .end method
 
 .method public setIsFavourite(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mIsFavourite"    # Ljava/lang/String;
 
     .prologue
-    .line 1560
+    .line 1559
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsFavourite:Ljava/lang/String;
 
-    .line 1561
+    .line 1560
     return-void
 .end method
 
 .method public setIsHighlight(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mIsHighlight"    # Ljava/lang/String;
 
     .prologue
-    .line 1368
+    .line 1367
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsHighlight:Ljava/lang/String;
 
-    .line 1369
+    .line 1368
     return-void
 .end method
 
 .method public setIsLike(Z)V
     .registers 2
-    .param p1, "mIsLike"    # Z
 
     .prologue
-    .line 908
+    .line 907
     iput-boolean p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsLike:Z
 
-    .line 909
+    .line 908
     return-void
 .end method
 
 .method public setIsNotAutoUse(Z)V
     .registers 2
-    .param p1, "mIsNotAutoUse"    # Z
 
     .prologue
-    .line 1248
+    .line 1247
     iput-boolean p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsNotAutoUse:Z
 
-    .line 1249
+    .line 1248
     return-void
 .end method
 
 .method public setIsRequirePoint(Z)V
     .registers 2
-    .param p1, "mIsRequirePoint"    # Z
 
     .prologue
-    .line 468
+    .line 467
     iput-boolean p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsRequirePoint:Z
 
-    .line 469
+    .line 468
     return-void
 .end method
 
 .method public setIsRequireUniqueSerial(Z)V
     .registers 2
-    .param p1, "mIsRequireUniqueSerial"    # Z
 
     .prologue
-    .line 1304
+    .line 1303
     iput-boolean p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsRequireUniqueSerial:Z
 
-    .line 1305
+    .line 1304
     return-void
 .end method
 
 .method public setIsShowNotiNearby(Z)V
     .registers 2
-    .param p1, "mIsShowNotiNearby"    # Z
 
     .prologue
-    .line 604
+    .line 603
     iput-boolean p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsShowNotiNearby:Z
 
-    .line 605
+    .line 604
     return-void
 .end method
 
 .method public setIsSpecificLocation(Z)V
     .registers 2
-    .param p1, "mIsSpecificLocation"    # Z
 
     .prologue
-    .line 676
+    .line 675
     iput-boolean p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsSpecificLocation:Z
 
-    .line 677
+    .line 676
     return-void
 .end method
 
 .method public setIsSpecificPrintVoucher(Z)V
     .registers 2
-    .param p1, "mIsSpecificPrintVoucher"    # Z
 
     .prologue
-    .line 1068
+    .line 1067
     iput-boolean p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsSpecificPrintVoucher:Z
 
-    .line 1069
+    .line 1068
     return-void
 .end method
 
 .method public setIsSplitPointSystem(Z)V
     .registers 2
-    .param p1, "mIsSplitPointSystem"    # Z
 
     .prologue
-    .line 1592
+    .line 1591
     iput-boolean p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsSplitPointSystem:Z
 
-    .line 1593
+    .line 1592
     return-void
 .end method
 
 .method public setIsSponsor(Z)V
     .registers 2
-    .param p1, "mIsSponsor"    # Z
 
     .prologue
-    .line 1448
+    .line 1447
     iput-boolean p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mIsSponsor:Z
 
-    .line 1449
+    .line 1448
     return-void
 .end method
 
 .method public setItemCountSold(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mItemCountSold"    # Ljava/lang/String;
 
     .prologue
-    .line 828
+    .line 827
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mItemCountSold:Ljava/lang/String;
 
-    .line 829
+    .line 828
     return-void
 .end method
 
 .method public setKeyword(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mKeyword"    # Ljava/lang/String;
 
     .prologue
-    .line 892
+    .line 891
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mKeyword:Ljava/lang/String;
 
-    .line 893
+    .line 892
     return-void
 .end method
 
 .method public setLatestVoteDate(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mLatestVoteDate"    # Ljava/lang/String;
 
     .prologue
-    .line 876
+    .line 875
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mLatestVoteDate:Ljava/lang/String;
 
-    .line 877
+    .line 876
     return-void
 .end method
 
 .method public setLocation(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mLocation"    # Ljava/lang/String;
 
     .prologue
-    .line 508
+    .line 507
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mLocation:Ljava/lang/String;
 
-    .line 509
+    .line 508
     return-void
 .end method
 
 .method public setLocationAgencyId(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mLocationAgencyId"    # Ljava/lang/String;
 
     .prologue
-    .line 1344
+    .line 1343
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mLocationAgencyId:Ljava/lang/String;
 
-    .line 1345
+    .line 1344
     return-void
 .end method
 
 .method public setMasterCampaignId(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mMasterCampaignId"    # Ljava/lang/String;
 
     .prologue
-    .line 932
+    .line 931
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mMasterCampaignId:Ljava/lang/String;
 
-    .line 933
+    .line 932
     return-void
 .end method
 
 .method public setMerchantStatusId(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mMerchantStatusId"    # Ljava/lang/String;
 
     .prologue
-    .line 1568
+    .line 1567
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mMerchantStatusId:Ljava/lang/String;
 
-    .line 1569
+    .line 1568
     return-void
 .end method
 
 .method public setMinutesValidAfterUsed(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mMinutesValidAfterUsed"    # Ljava/lang/String;
 
     .prologue
-    .line 884
+    .line 883
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mMinutesValidAfterUsed:Ljava/lang/String;
 
-    .line 885
+    .line 884
     return-void
 .end method
 
 .method public setModifyBy(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mModifyBy"    # Ljava/lang/String;
 
     .prologue
-    .line 852
+    .line 851
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mModifyBy:Ljava/lang/String;
 
-    .line 853
+    .line 852
     return-void
 .end method
 
 .method public setModifyDate(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mModifyDate"    # Ljava/lang/String;
 
     .prologue
-    .line 780
+    .line 779
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mModifyDate:Ljava/lang/String;
 
-    .line 781
+    .line 780
     return-void
 .end method
 
 .method public setName(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mName"    # Ljava/lang/String;
 
     .prologue
-    .line 1352
+    .line 1351
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mName:Ljava/lang/String;
 
-    .line 1353
+    .line 1352
     return-void
 .end method
 
 .method public setNextRedeemDate(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mNextRedeemDate"    # Ljava/lang/String;
 
     .prologue
-    .line 1608
+    .line 1607
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mNextRedeemDate:Ljava/lang/String;
 
-    .line 1609
+    .line 1608
     return-void
 .end method
 
 .method public setNotificationCount(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mNotificationCount"    # Ljava/lang/String;
 
     .prologue
-    .line 1520
+    .line 1519
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mNotificationCount:Ljava/lang/String;
 
-    .line 1521
+    .line 1520
     return-void
 .end method
 
 .method public setOriginalPrice(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mOriginalPrice"    # Ljava/lang/String;
 
     .prologue
-    .line 1504
+    .line 1503
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mOriginalPrice:Ljava/lang/String;
 
-    .line 1505
+    .line 1504
     return-void
 .end method
 
 .method public setOtherPointPerUnit(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mOtherPointPerUnit"    # Ljava/lang/String;
 
     .prologue
-    .line 756
+    .line 755
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mOtherPointPerUnit:Ljava/lang/String;
 
-    .line 757
+    .line 756
     return-void
 .end method
 
 .method public setParentCampaignId(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mParentCampaignId"    # Ljava/lang/String;
 
     .prologue
-    .line 1616
+    .line 1615
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mParentCampaignId:Ljava/lang/String;
 
-    .line 1617
+    .line 1616
     return-void
 .end method
 
 .method public setParentCategoryID(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mParentCategoryID"    # Ljava/lang/String;
 
     .prologue
-    .line 1496
+    .line 1495
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mParentCategoryID:Ljava/lang/String;
 
-    .line 1497
+    .line 1496
     return-void
 .end method
 
 .method public setPeopleDislike(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mPeopleDislike"    # Ljava/lang/String;
 
     .prologue
-    .line 860
+    .line 859
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mPeopleDislike:Ljava/lang/String;
 
-    .line 861
+    .line 860
     return-void
 .end method
 
 .method public setPeopleFavourite(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mPeopleFavourite"    # Ljava/lang/String;
 
     .prologue
-    .line 868
+    .line 867
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mPeopleFavourite:Ljava/lang/String;
 
-    .line 869
+    .line 868
     return-void
 .end method
 
 .method public setPeopleLike(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mPeopleLike"    # Ljava/lang/String;
 
     .prologue
-    .line 1400
+    .line 1399
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mPeopleLike:Ljava/lang/String;
 
-    .line 1401
+    .line 1400
     return-void
 .end method
 
 .method public setPeopleVote(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mPeopleVote"    # Ljava/lang/String;
 
     .prologue
-    .line 916
+    .line 915
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mPeopleVote:Ljava/lang/String;
 
-    .line 917
+    .line 916
     return-void
 .end method
 
@@ -4398,695 +4305,637 @@
     .end annotation
 
     .prologue
-    .line 556
-    .local p1, "mPictures":Ljava/util/List;, "Ljava/util/List<Lcom/bzbs/marketplace/model/marketplace/detail/Picture;>;"
+    .line 555
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mPictures:Ljava/util/List;
 
-    .line 557
+    .line 556
     return-void
 .end method
 
 .method public setPlace(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mPlace"    # Ljava/lang/String;
 
     .prologue
-    .line 708
+    .line 707
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mPlace:Ljava/lang/String;
 
-    .line 709
+    .line 708
     return-void
 .end method
 
 .method public setPointPerUnit(F)V
     .registers 2
-    .param p1, "mPointPerUnit"    # F
 
     .prologue
-    .line 684
+    .line 683
     iput p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mPointPerUnit:F
 
-    .line 685
+    .line 684
     return-void
 .end method
 
 .method public setPointType(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mPointType"    # Ljava/lang/String;
 
     .prologue
-    .line 1480
+    .line 1479
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mPointType:Ljava/lang/String;
 
-    .line 1481
+    .line 1480
     return-void
 .end method
 
 .method public setPricePerUnit(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mPricePerUnit"    # Ljava/lang/String;
 
     .prologue
-    .line 1312
+    .line 1311
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mPricePerUnit:Ljava/lang/String;
 
-    .line 1313
+    .line 1312
     return-void
 .end method
 
 .method public setQty(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mQty"    # Ljava/lang/String;
 
     .prologue
-    .line 764
+    .line 763
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mQty:Ljava/lang/String;
 
-    .line 765
+    .line 764
     return-void
 .end method
 
 .method public setQuantity(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mQuantity"    # Ljava/lang/String;
 
     .prologue
-    .line 1164
+    .line 1163
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mQuantity:Ljava/lang/String;
 
-    .line 1165
+    .line 1164
     return-void
 .end method
 
 .method public setRankFavourite(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mRankFavourite"    # Ljava/lang/String;
 
     .prologue
-    .line 564
+    .line 563
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRankFavourite:Ljava/lang/String;
 
-    .line 565
+    .line 564
     return-void
 .end method
 
 .method public setRankLike(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mRankLike"    # Ljava/lang/String;
 
     .prologue
-    .line 788
+    .line 787
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRankLike:Ljava/lang/String;
 
-    .line 789
+    .line 788
     return-void
 .end method
 
 .method public setRankVote(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mRankVote"    # Ljava/lang/String;
 
     .prologue
-    .line 1224
+    .line 1223
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRankVote:Ljava/lang/String;
 
-    .line 1225
+    .line 1224
     return-void
 .end method
 
 .method public setRating(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mRating"    # Ljava/lang/String;
 
     .prologue
-    .line 964
+    .line 963
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRating:Ljava/lang/String;
 
-    .line 965
+    .line 964
     return-void
 .end method
 
 .method public setRedeem(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mRedeem"    # Ljava/lang/String;
 
     .prologue
-    .line 1272
+    .line 1271
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRedeem:Ljava/lang/String;
 
-    .line 1273
+    .line 1272
     return-void
 .end method
 
 .method public setRedeemCount(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mRedeemCount"    # Ljava/lang/String;
 
     .prologue
-    .line 812
+    .line 811
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRedeemCount:Ljava/lang/String;
 
-    .line 813
+    .line 812
     return-void
 .end method
 
 .method public setRedeemMedium(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mRedeemMedium"    # Ljava/lang/String;
 
     .prologue
-    .line 1280
+    .line 1279
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRedeemMedium:Ljava/lang/String;
 
-    .line 1281
+    .line 1280
     return-void
 .end method
 
 .method public setRedeemMostPerPerson(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mRedeemMostPerPerson"    # Ljava/lang/String;
 
     .prologue
-    .line 636
+    .line 635
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRedeemMostPerPerson:Ljava/lang/String;
 
-    .line 637
+    .line 636
     return-void
 .end method
 
 .method public setRedeemMostPerPersonInPeriod(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mRedeemMostPerPersonInPeriod"    # Ljava/lang/String;
 
     .prologue
-    .line 1044
+    .line 1043
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRedeemMostPerPersonInPeriod:Ljava/lang/String;
 
-    .line 1045
+    .line 1044
     return-void
 .end method
 
 .method public setRefAISCampaignID(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mRefAISCampaignID"    # Ljava/lang/String;
 
     .prologue
-    .line 1440
+    .line 1439
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRefAISCampaignID:Ljava/lang/String;
 
-    .line 1441
+    .line 1440
     return-void
 .end method
 
 .method public setRefPTTAgencyID(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mRefPTTAgencyID"    # Ljava/lang/String;
 
     .prologue
-    .line 484
+    .line 483
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRefPTTAgencyID:Ljava/lang/String;
 
-    .line 485
+    .line 484
     return-void
 .end method
 
 .method public setReferenceCode(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mReferenceCode"    # Ljava/lang/String;
 
     .prologue
-    .line 700
+    .line 699
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mReferenceCode:Ljava/lang/String;
 
-    .line 701
+    .line 700
     return-void
 .end method
 
 .method public setRegularDeliveryCostPerUnit(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mRegularDeliveryCostPerUnit"    # Ljava/lang/String;
 
     .prologue
-    .line 1328
+    .line 1327
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRegularDeliveryCostPerUnit:Ljava/lang/String;
 
-    .line 1329
+    .line 1328
     return-void
 .end method
 
 .method public setRelated(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mRelated"    # Ljava/lang/String;
 
     .prologue
-    .line 1392
+    .line 1391
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mRelated:Ljava/lang/String;
 
-    .line 1393
+    .line 1392
     return-void
 .end method
 
 .method public setScore(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mScore"    # Ljava/lang/String;
 
     .prologue
-    .line 1408
+    .line 1407
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mScore:Ljava/lang/String;
 
-    .line 1409
+    .line 1408
     return-void
 .end method
 
 .method public setSendNotification(Z)V
     .registers 2
-    .param p1, "mSendNotification"    # Z
 
     .prologue
-    .line 1256
+    .line 1255
     iput-boolean p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mSendNotification:Z
 
-    .line 1257
+    .line 1256
     return-void
 .end method
 
 .method public setSendPullNotification(Z)V
     .registers 2
-    .param p1, "mSendPullNotification"    # Z
 
     .prologue
-    .line 748
+    .line 747
     iput-boolean p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mSendPullNotification:Z
 
-    .line 749
+    .line 748
     return-void
 .end method
 
 .method public setSerialCount(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mSerialCount"    # Ljava/lang/String;
 
     .prologue
-    .line 1172
+    .line 1171
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mSerialCount:Ljava/lang/String;
 
-    .line 1173
+    .line 1172
     return-void
 .end method
 
 .method public setSerialFormat(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mSerialFormat"    # Ljava/lang/String;
 
     .prologue
-    .line 1232
+    .line 1231
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mSerialFormat:Ljava/lang/String;
 
-    .line 1233
+    .line 1232
     return-void
 .end method
 
 .method public setSerialPrefix(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mSerialPrefix"    # Ljava/lang/String;
 
     .prologue
-    .line 772
+    .line 771
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mSerialPrefix:Ljava/lang/String;
 
-    .line 773
+    .line 772
     return-void
 .end method
 
 .method public setShippingBy(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mShippingBy"    # Ljava/lang/String;
 
     .prologue
-    .line 900
+    .line 899
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mShippingBy:Ljava/lang/String;
 
-    .line 901
+    .line 900
     return-void
 .end method
 
 .method public setShippingPayment(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mShippingPayment"    # Ljava/lang/String;
 
     .prologue
-    .line 980
+    .line 979
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mShippingPayment:Ljava/lang/String;
 
-    .line 981
+    .line 980
     return-void
 .end method
 
 .method public setSoldOutDate(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mSoldOutDate"    # Ljava/lang/String;
 
     .prologue
-    .line 1012
+    .line 1011
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mSoldOutDate:Ljava/lang/String;
 
-    .line 1013
+    .line 1012
     return-void
 .end method
 
 .method public setSpecifyBranch(Z)V
     .registers 2
-    .param p1, "mSpecifyBranch"    # Z
 
     .prologue
-    .line 1036
+    .line 1035
     iput-boolean p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mSpecifyBranch:Z
 
-    .line 1037
+    .line 1036
     return-void
 .end method
 
 .method public setSponsorCategoryName(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mSponsorCategoryName"    # Ljava/lang/String;
 
     .prologue
-    .line 1132
+    .line 1131
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mSponsorCategoryName:Ljava/lang/String;
 
-    .line 1133
+    .line 1132
     return-void
 .end method
 
 .method public setStartDate(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mStartDate"    # Ljava/lang/String;
 
     .prologue
-    .line 500
+    .line 499
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mStartDate:Ljava/lang/String;
 
-    .line 501
+    .line 500
     return-void
 .end method
 
 .method public setStatusID(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mStatusID"    # Ljava/lang/String;
 
     .prologue
-    .line 1180
+    .line 1179
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mStatusID:Ljava/lang/String;
 
-    .line 1181
+    .line 1180
     return-void
 .end method
 
 .method public setStyleJson(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mStyleJson"    # Ljava/lang/String;
 
     .prologue
-    .line 572
+    .line 571
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mStyleJson:Ljava/lang/String;
 
-    .line 573
+    .line 572
     return-void
 .end method
 
 .method public setSubCampaign(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mSubCampaign"    # Ljava/lang/String;
 
     .prologue
-    .line 1084
+    .line 1083
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mSubCampaign:Ljava/lang/String;
 
-    .line 1085
+    .line 1084
     return-void
 .end method
 
 .method public setSubCampaignStyle(Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;)V
     .registers 2
-    .param p1, "mSubCampaignStyle"    # Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;
 
     .prologue
-    .line 1092
+    .line 1091
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mSubCampaignStyle:Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;
 
-    .line 1093
+    .line 1092
     return-void
 .end method
 
 .method public setTermsAndCondition(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mTermsAndCondition"    # Ljava/lang/String;
 
     .prologue
-    .line 1240
+    .line 1239
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mTermsAndCondition:Ljava/lang/String;
 
-    .line 1241
+    .line 1240
     return-void
 .end method
 
 .method public setTimeRounding(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mTimeRounding"    # Ljava/lang/String;
 
     .prologue
-    .line 1124
+    .line 1123
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mTimeRounding:Ljava/lang/String;
 
-    .line 1125
+    .line 1124
     return-void
 .end method
 
 .method public setTopVote(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mTopVote"    # Ljava/lang/String;
 
     .prologue
-    .line 804
+    .line 803
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mTopVote:Ljava/lang/String;
 
-    .line 805
+    .line 804
     return-void
 .end method
 
 .method public setTracesJson(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mTracesJson"    # Ljava/lang/String;
 
     .prologue
-    .line 588
+    .line 587
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mTracesJson:Ljava/lang/String;
 
-    .line 589
+    .line 588
     return-void
 .end method
 
 .method public setType(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mType"    # Ljava/lang/String;
 
     .prologue
-    .line 532
+    .line 531
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mType:Ljava/lang/String;
 
-    .line 533
+    .line 532
     return-void
 .end method
 
 .method public setUnder18(Z)V
     .registers 2
-    .param p1, "mUnder18"    # Z
 
     .prologue
-    .line 1424
+    .line 1423
     iput-boolean p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUnder18:Z
 
-    .line 1425
+    .line 1424
     return-void
 .end method
 
 .method public setUpdatedPoint(Lcom/bzbs/marketplace/model/marketplace/detail/UpdatedPoint;)V
     .registers 2
-    .param p1, "mUpdatedPoint"    # Lcom/bzbs/marketplace/model/marketplace/detail/UpdatedPoint;
 
     .prologue
-    .line 820
+    .line 819
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUpdatedPoint:Lcom/bzbs/marketplace/model/marketplace/detail/UpdatedPoint;
 
-    .line 821
+    .line 820
     return-void
 .end method
 
 .method public setUpdatedPointsOther(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mUpdatedPointsOther"    # Ljava/lang/String;
 
     .prologue
-    .line 1264
+    .line 1263
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUpdatedPointsOther:Ljava/lang/String;
 
-    .line 1265
+    .line 1264
     return-void
 .end method
 
 .method public setUseCount(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mUseCount"    # Ljava/lang/String;
 
     .prologue
-    .line 1100
+    .line 1099
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUseCount:Ljava/lang/String;
 
-    .line 1101
+    .line 1100
     return-void
 .end method
 
 .method public setUserLevel(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mUserLevel"    # Ljava/lang/String;
 
     .prologue
-    .line 1528
+    .line 1527
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUserLevel:Ljava/lang/String;
 
-    .line 1529
+    .line 1528
     return-void
 .end method
 
 .method public setUserPackagePoint(I)V
     .registers 2
-    .param p1, "mUserPackagePoint"    # I
 
     .prologue
-    .line 996
+    .line 995
     iput p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUserPackagePoint:I
 
-    .line 997
+    .line 996
     return-void
 .end method
 
 .method public setUserPackagePrice(I)V
     .registers 2
-    .param p1, "mUserPackagePrice"    # I
 
     .prologue
-    .line 1216
+    .line 1215
     iput p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUserPackagePrice:I
 
-    .line 1217
+    .line 1216
     return-void
 .end method
 
 .method public setUserProfileScore(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mUserProfileScore"    # Ljava/lang/String;
 
     .prologue
-    .line 460
+    .line 459
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUserProfileScore:Ljava/lang/String;
 
-    .line 461
+    .line 460
     return-void
 .end method
 
 .method public setUserRequirePoint(I)V
     .registers 2
-    .param p1, "mUserRequirePoint"    # I
 
     .prologue
-    .line 1108
+    .line 1107
     iput p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUserRequirePoint:I
 
-    .line 1109
+    .line 1108
     return-void
 .end method
 
 .method public setUserSummaryPrice(D)V
     .registers 4
-    .param p1, "mUserSummaryPrice"    # D
 
     .prologue
-    .line 940
+    .line 939
     iput-wide p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUserSummaryPrice:D
 
-    .line 941
+    .line 940
     return-void
 .end method
 
 .method public setUserVisibility(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mUserVisibility"    # Ljava/lang/String;
 
     .prologue
-    .line 740
+    .line 739
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mUserVisibility:Ljava/lang/String;
 
-    .line 741
+    .line 740
     return-void
 .end method
 
 .method public setVisibility(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mVisibility"    # Ljava/lang/String;
 
     .prologue
-    .line 1052
+    .line 1051
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mVisibility:Ljava/lang/String;
 
-    .line 1053
+    .line 1052
     return-void
 .end method
 
 .method public setVoucherExpireDate(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mVoucherExpireDate"    # Ljava/lang/String;
 
     .prologue
-    .line 956
+    .line 955
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mVoucherExpireDate:Ljava/lang/String;
 
-    .line 957
+    .line 956
     return-void
 .end method
 
 .method public setWebsite(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mWebsite"    # Ljava/lang/String;
 
     .prologue
-    .line 692
+    .line 691
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mWebsite:Ljava/lang/String;
 
-    .line 693
+    .line 692
     return-void
 .end method
 
 .method public setWinnerUserId(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mWinnerUserId"    # Ljava/lang/String;
 
     .prologue
-    .line 1552
+    .line 1551
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mWinnerUserId:Ljava/lang/String;
 
-    .line 1553
+    .line 1552
     return-void
 .end method
 
 .method public setWinnerUserName(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mWinnerUserName"    # Ljava/lang/String;
 
     .prologue
-    .line 1116
+    .line 1115
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/MarketPlaceDetailModel;->mWinnerUserName:Ljava/lang/String;
 
-    .line 1117
+    .line 1116
     return-void
 .end method
 
@@ -5094,7 +4943,7 @@
     .registers 5
 
     .prologue
-    .line 1622
+    .line 1621
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

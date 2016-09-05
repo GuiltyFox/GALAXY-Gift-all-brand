@@ -3,14 +3,6 @@
 .source "Scheduler.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lrx/Scheduler$Worker;
-    }
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -25,17 +17,5 @@
 
 
 # virtual methods
-.method public abstract createWorker()Lrx/Scheduler$Worker;
-.end method
-
-.method public now()J
-    .registers 3
-
-    .prologue
-    .line 149
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v0
-
-    return-wide v0
+.method public abstract a()Lrx/Scheduler$Worker;
 .end method

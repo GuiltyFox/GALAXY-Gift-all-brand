@@ -7,9 +7,11 @@
 
 
 # static fields
-.field public static final SIZE:I
+.field static b:I
 
-.field public static SPMC_POOL:Lrx/internal/util/ObjectPool;
+.field public static final c:I
+
+.field public static d:Lrx/internal/util/ObjectPool;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lrx/internal/util/ObjectPool",
@@ -22,7 +24,7 @@
     .end annotation
 .end field
 
-.field public static SPSC_POOL:Lrx/internal/util/ObjectPool;
+.field public static e:Lrx/internal/util/ObjectPool;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lrx/internal/util/ObjectPool",
@@ -35,9 +37,7 @@
     .end annotation
 .end field
 
-.field static _size:I
-
-.field private static final on:Lrx/internal/operators/NotificationLite;
+.field private static final f:Lrx/internal/operators/NotificationLite;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lrx/internal/operators/NotificationLite",
@@ -50,7 +50,22 @@
 
 
 # instance fields
-.field private final pool:Lrx/internal/util/ObjectPool;
+.field public volatile a:Ljava/lang/Object;
+
+.field private g:Ljava/util/Queue;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Queue",
+            "<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final h:I
+
+.field private final i:Lrx/internal/util/ObjectPool;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lrx/internal/util/ObjectPool",
@@ -63,21 +78,6 @@
     .end annotation
 .end field
 
-.field private queue:Ljava/util/Queue;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Queue",
-            "<",
-            "Ljava/lang/Object;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final size:I
-
-.field public volatile terminalState:Ljava/lang/Object;
-
 
 # direct methods
 .method static constructor <clinit>()V
@@ -85,71 +85,70 @@
 
     .prologue
     .line 144
-    invoke-static {}, Lrx/internal/operators/NotificationLite;->instance()Lrx/internal/operators/NotificationLite;
+    invoke-static {}, Lrx/internal/operators/NotificationLite;->a()Lrx/internal/operators/NotificationLite;
 
-    move-result-object v2
+    move-result-object v0
 
-    sput-object v2, Lrx/internal/util/RxRingBuffer;->on:Lrx/internal/operators/NotificationLite;
+    sput-object v0, Lrx/internal/util/RxRingBuffer;->f:Lrx/internal/operators/NotificationLite;
 
     .line 260
-    const/16 v2, 0x80
+    const/16 v0, 0x80
 
-    sput v2, Lrx/internal/util/RxRingBuffer;->_size:I
+    sput v0, Lrx/internal/util/RxRingBuffer;->b:I
 
     .line 263
-    invoke-static {}, Lrx/internal/util/PlatformDependent;->isAndroid()Z
+    invoke-static {}, Lrx/internal/util/PlatformDependent;->a()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_14
+    if-eqz v0, :cond_14
 
     .line 264
-    const/16 v2, 0x10
+    const/16 v0, 0x10
 
-    sput v2, Lrx/internal/util/RxRingBuffer;->_size:I
+    sput v0, Lrx/internal/util/RxRingBuffer;->b:I
 
     .line 268
     :cond_14
-    const-string/jumbo v2, "rx.ring-buffer.size"
+    const-string/jumbo v0, "rx.ring-buffer.size"
 
-    invoke-static {v2}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
     .line 269
-    .local v1, "sizeFromProperty":Ljava/lang/String;
     if-eqz v1, :cond_23
 
     .line 271
     :try_start_1d
     invoke-static {v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
-    move-result v2
+    move-result v0
 
-    sput v2, Lrx/internal/util/RxRingBuffer;->_size:I
+    sput v0, Lrx/internal/util/RxRingBuffer;->b:I
     :try_end_23
     .catch Ljava/lang/Exception; {:try_start_1d .. :try_end_23} :catch_36
 
     .line 277
     :cond_23
     :goto_23
-    sget v2, Lrx/internal/util/RxRingBuffer;->_size:I
+    sget v0, Lrx/internal/util/RxRingBuffer;->b:I
 
-    sput v2, Lrx/internal/util/RxRingBuffer;->SIZE:I
+    sput v0, Lrx/internal/util/RxRingBuffer;->c:I
 
     .line 280
-    new-instance v2, Lrx/internal/util/RxRingBuffer$1;
+    new-instance v0, Lrx/internal/util/RxRingBuffer$1;
 
-    invoke-direct {v2}, Lrx/internal/util/RxRingBuffer$1;-><init>()V
+    invoke-direct {v0}, Lrx/internal/util/RxRingBuffer$1;-><init>()V
 
-    sput-object v2, Lrx/internal/util/RxRingBuffer;->SPSC_POOL:Lrx/internal/util/ObjectPool;
+    sput-object v0, Lrx/internal/util/RxRingBuffer;->d:Lrx/internal/util/ObjectPool;
 
     .line 290
-    new-instance v2, Lrx/internal/util/RxRingBuffer$2;
+    new-instance v0, Lrx/internal/util/RxRingBuffer$2;
 
-    invoke-direct {v2}, Lrx/internal/util/RxRingBuffer$2;-><init>()V
+    invoke-direct {v0}, Lrx/internal/util/RxRingBuffer$2;-><init>()V
 
-    sput-object v2, Lrx/internal/util/RxRingBuffer;->SPMC_POOL:Lrx/internal/util/ObjectPool;
+    sput-object v0, Lrx/internal/util/RxRingBuffer;->e:Lrx/internal/util/ObjectPool;
 
     return-void
 
@@ -158,7 +157,6 @@
     move-exception v0
 
     .line 273
-    .local v0, "e":Ljava/lang/Exception;
     sget-object v2, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -173,27 +171,27 @@
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
-    const-string/jumbo v4, " => "
+    const-string/jumbo v3, " => "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v2, v3}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+    invoke-virtual {v2, v0}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
     goto :goto_23
 .end method
@@ -205,11 +203,11 @@
     .line 327
     new-instance v0, Lrx/internal/util/SynchronizedQueue;
 
-    sget v1, Lrx/internal/util/RxRingBuffer;->SIZE:I
+    sget v1, Lrx/internal/util/RxRingBuffer;->c:I
 
     invoke-direct {v0, v1}, Lrx/internal/util/SynchronizedQueue;-><init>(I)V
 
-    sget v1, Lrx/internal/util/RxRingBuffer;->SIZE:I
+    sget v1, Lrx/internal/util/RxRingBuffer;->c:I
 
     invoke-direct {p0, v0, v1}, Lrx/internal/util/RxRingBuffer;-><init>(Ljava/util/Queue;I)V
 
@@ -219,7 +217,6 @@
 
 .method private constructor <init>(Ljava/util/Queue;I)V
     .registers 4
-    .param p2, "size"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -232,19 +229,18 @@
 
     .prologue
     .line 299
-    .local p1, "queue":Ljava/util/Queue;, "Ljava/util/Queue<Ljava/lang/Object;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 300
-    iput-object p1, p0, Lrx/internal/util/RxRingBuffer;->queue:Ljava/util/Queue;
+    iput-object p1, p0, Lrx/internal/util/RxRingBuffer;->g:Ljava/util/Queue;
 
     .line 301
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lrx/internal/util/RxRingBuffer;->pool:Lrx/internal/util/ObjectPool;
+    iput-object v0, p0, Lrx/internal/util/RxRingBuffer;->i:Lrx/internal/util/ObjectPool;
 
     .line 302
-    iput p2, p0, Lrx/internal/util/RxRingBuffer;->size:I
+    iput p2, p0, Lrx/internal/util/RxRingBuffer;->h:I
 
     .line 303
     return-void
@@ -252,7 +248,6 @@
 
 .method private constructor <init>(Lrx/internal/util/ObjectPool;I)V
     .registers 4
-    .param p2, "size"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -267,66 +262,33 @@
 
     .prologue
     .line 305
-    .local p1, "pool":Lrx/internal/util/ObjectPool;, "Lrx/internal/util/ObjectPool<Ljava/util/Queue<Ljava/lang/Object;>;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 306
-    iput-object p1, p0, Lrx/internal/util/RxRingBuffer;->pool:Lrx/internal/util/ObjectPool;
+    iput-object p1, p0, Lrx/internal/util/RxRingBuffer;->i:Lrx/internal/util/ObjectPool;
 
     .line 307
-    invoke-virtual {p1}, Lrx/internal/util/ObjectPool;->borrowObject()Ljava/lang/Object;
+    invoke-virtual {p1}, Lrx/internal/util/ObjectPool;->a()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Queue;
 
-    iput-object v0, p0, Lrx/internal/util/RxRingBuffer;->queue:Ljava/util/Queue;
+    iput-object v0, p0, Lrx/internal/util/RxRingBuffer;->g:Ljava/util/Queue;
 
     .line 308
-    iput p2, p0, Lrx/internal/util/RxRingBuffer;->size:I
+    iput p2, p0, Lrx/internal/util/RxRingBuffer;->h:I
 
     .line 309
     return-void
 .end method
 
-.method public static getSpmcInstance()Lrx/internal/util/RxRingBuffer;
-    .registers 3
-
-    .prologue
-    .line 44
-    invoke-static {}, Lrx/internal/util/unsafe/UnsafeAccess;->isUnsafeAvailable()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    .line 45
-    new-instance v0, Lrx/internal/util/RxRingBuffer;
-
-    sget-object v1, Lrx/internal/util/RxRingBuffer;->SPMC_POOL:Lrx/internal/util/ObjectPool;
-
-    sget v2, Lrx/internal/util/RxRingBuffer;->SIZE:I
-
-    invoke-direct {v0, v1, v2}, Lrx/internal/util/RxRingBuffer;-><init>(Lrx/internal/util/ObjectPool;I)V
-
-    .line 47
-    :goto_f
-    return-object v0
-
-    :cond_10
-    new-instance v0, Lrx/internal/util/RxRingBuffer;
-
-    invoke-direct {v0}, Lrx/internal/util/RxRingBuffer;-><init>()V
-
-    goto :goto_f
-.end method
-
-.method public static getSpscInstance()Lrx/internal/util/RxRingBuffer;
+.method public static a()Lrx/internal/util/RxRingBuffer;
     .registers 3
 
     .prologue
     .line 36
-    invoke-static {}, Lrx/internal/util/unsafe/UnsafeAccess;->isUnsafeAvailable()Z
+    invoke-static {}, Lrx/internal/util/unsafe/UnsafeAccess;->a()Z
 
     move-result v0
 
@@ -335,9 +297,9 @@
     .line 37
     new-instance v0, Lrx/internal/util/RxRingBuffer;
 
-    sget-object v1, Lrx/internal/util/RxRingBuffer;->SPSC_POOL:Lrx/internal/util/ObjectPool;
+    sget-object v1, Lrx/internal/util/RxRingBuffer;->d:Lrx/internal/util/ObjectPool;
 
-    sget v2, Lrx/internal/util/RxRingBuffer;->SIZE:I
+    sget v2, Lrx/internal/util/RxRingBuffer;->c:I
 
     invoke-direct {v0, v1, v2}, Lrx/internal/util/RxRingBuffer;-><init>(Lrx/internal/util/ObjectPool;I)V
 
@@ -355,472 +317,131 @@
 
 
 # virtual methods
-.method public accept(Ljava/lang/Object;Lrx/Observer;)Z
-    .registers 4
-    .param p1, "o"    # Ljava/lang/Object;
-    .param p2, "child"    # Lrx/Observer;
+.method public a(Ljava/lang/Object;)V
+    .registers 7
 
     .prologue
-    .line 445
-    sget-object v0, Lrx/internal/util/RxRingBuffer;->on:Lrx/internal/operators/NotificationLite;
-
-    invoke-virtual {v0, p2, p1}, Lrx/internal/operators/NotificationLite;->accept(Lrx/Observer;Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public asError(Ljava/lang/Object;)Ljava/lang/Throwable;
-    .registers 3
-    .param p1, "o"    # Ljava/lang/Object;
-
-    .prologue
-    .line 449
-    sget-object v0, Lrx/internal/util/RxRingBuffer;->on:Lrx/internal/operators/NotificationLite;
-
-    invoke-virtual {v0, p1}, Lrx/internal/operators/NotificationLite;->getError(Ljava/lang/Object;)Ljava/lang/Throwable;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public available()I
-    .registers 3
-
-    .prologue
-    .line 371
-    iget v0, p0, Lrx/internal/util/RxRingBuffer;->size:I
-
-    invoke-virtual {p0}, Lrx/internal/util/RxRingBuffer;->count()I
-
-    move-result v1
-
-    sub-int/2addr v0, v1
-
-    return v0
-.end method
-
-.method public capacity()I
-    .registers 2
-
-    .prologue
-    .line 375
-    iget v0, p0, Lrx/internal/util/RxRingBuffer;->size:I
-
-    return v0
-.end method
-
-.method public count()I
-    .registers 3
-
-    .prologue
-    .line 379
-    iget-object v0, p0, Lrx/internal/util/RxRingBuffer;->queue:Ljava/util/Queue;
-
-    .line 380
-    .local v0, "q":Ljava/util/Queue;, "Ljava/util/Queue<Ljava/lang/Object;>;"
-    if-nez v0, :cond_6
-
-    .line 381
-    const/4 v1, 0x0
-
-    .line 383
-    :goto_5
-    return v1
-
-    :cond_6
-    invoke-interface {v0}, Ljava/util/Queue;->size()I
-
-    move-result v1
-
-    goto :goto_5
-.end method
-
-.method public getValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-    .param p1, "o"    # Ljava/lang/Object;
-
-    .prologue
-    .line 440
-    sget-object v0, Lrx/internal/util/RxRingBuffer;->on:Lrx/internal/operators/NotificationLite;
-
-    invoke-virtual {v0, p1}, Lrx/internal/operators/NotificationLite;->getValue(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public isCompleted(Ljava/lang/Object;)Z
-    .registers 3
-    .param p1, "o"    # Ljava/lang/Object;
-
-    .prologue
-    .line 432
-    sget-object v0, Lrx/internal/util/RxRingBuffer;->on:Lrx/internal/operators/NotificationLite;
-
-    invoke-virtual {v0, p1}, Lrx/internal/operators/NotificationLite;->isCompleted(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isEmpty()Z
-    .registers 3
-
-    .prologue
-    .line 387
-    iget-object v0, p0, Lrx/internal/util/RxRingBuffer;->queue:Ljava/util/Queue;
-
-    .line 388
-    .local v0, "q":Ljava/util/Queue;, "Ljava/util/Queue<Ljava/lang/Object;>;"
-    if-nez v0, :cond_6
-
-    .line 389
-    const/4 v1, 0x1
-
-    .line 391
-    :goto_5
-    return v1
-
-    :cond_6
-    invoke-interface {v0}, Ljava/util/Queue;->isEmpty()Z
-
-    move-result v1
-
-    goto :goto_5
-.end method
-
-.method public isError(Ljava/lang/Object;)Z
-    .registers 3
-    .param p1, "o"    # Ljava/lang/Object;
-
-    .prologue
-    .line 436
-    sget-object v0, Lrx/internal/util/RxRingBuffer;->on:Lrx/internal/operators/NotificationLite;
-
-    invoke-virtual {v0, p1}, Lrx/internal/operators/NotificationLite;->isError(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isUnsubscribed()Z
-    .registers 2
-
-    .prologue
-    .line 454
-    iget-object v0, p0, Lrx/internal/util/RxRingBuffer;->queue:Ljava/util/Queue;
-
-    if-nez v0, :cond_6
-
     const/4 v0, 0x1
 
-    :goto_5
-    return v0
-
-    :cond_6
-    const/4 v0, 0x0
-
-    goto :goto_5
-.end method
-
-.method public onCompleted()V
-    .registers 2
-
-    .prologue
-    .line 358
-    iget-object v0, p0, Lrx/internal/util/RxRingBuffer;->terminalState:Ljava/lang/Object;
-
-    if-nez v0, :cond_c
-
-    .line 359
-    sget-object v0, Lrx/internal/util/RxRingBuffer;->on:Lrx/internal/operators/NotificationLite;
-
-    invoke-virtual {v0}, Lrx/internal/operators/NotificationLite;->completed()Ljava/lang/Object;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lrx/internal/util/RxRingBuffer;->terminalState:Ljava/lang/Object;
-
-    .line 361
-    :cond_c
-    return-void
-.end method
-
-.method public onError(Ljava/lang/Throwable;)V
-    .registers 3
-    .param p1, "t"    # Ljava/lang/Throwable;
-
-    .prologue
-    .line 365
-    iget-object v0, p0, Lrx/internal/util/RxRingBuffer;->terminalState:Ljava/lang/Object;
-
-    if-nez v0, :cond_c
-
-    .line 366
-    sget-object v0, Lrx/internal/util/RxRingBuffer;->on:Lrx/internal/operators/NotificationLite;
-
-    invoke-virtual {v0, p1}, Lrx/internal/operators/NotificationLite;->error(Ljava/lang/Throwable;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lrx/internal/util/RxRingBuffer;->terminalState:Ljava/lang/Object;
-
-    .line 368
-    :cond_c
-    return-void
-.end method
-
-.method public onNext(Ljava/lang/Object;)V
-    .registers 7
-    .param p1, "o"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lrx/exceptions/MissingBackpressureException;
-        }
-    .end annotation
-
-    .prologue
-    .line 337
-    const/4 v0, 0x0
-
-    .line 338
-    .local v0, "iae":Z
     const/4 v1, 0x0
 
+    .line 337
     .line 339
-    .local v1, "mbe":Z
     monitor-enter p0
 
     .line 340
     :try_start_3
-    iget-object v2, p0, Lrx/internal/util/RxRingBuffer;->queue:Ljava/util/Queue;
+    iget-object v2, p0, Lrx/internal/util/RxRingBuffer;->g:Ljava/util/Queue;
 
     .line 341
-    .local v2, "q":Ljava/util/Queue;, "Ljava/util/Queue<Ljava/lang/Object;>;"
-    if-eqz v2, :cond_22
+    if-eqz v2, :cond_21
 
     .line 342
-    sget-object v3, Lrx/internal/util/RxRingBuffer;->on:Lrx/internal/operators/NotificationLite;
+    sget-object v3, Lrx/internal/util/RxRingBuffer;->f:Lrx/internal/operators/NotificationLite;
 
-    invoke-virtual {v3, p1}, Lrx/internal/operators/NotificationLite;->next(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3, p1}, Lrx/internal/operators/NotificationLite;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
     invoke-interface {v2, v3}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_20
-
-    const/4 v1, 0x1
+    if-nez v2, :cond_1f
 
     .line 346
-    :goto_14
+    :goto_13
     monitor-exit p0
-    :try_end_15
-    .catchall {:try_start_3 .. :try_end_15} :catchall_24
+    :try_end_14
+    .catchall {:try_start_3 .. :try_end_14} :catchall_25
 
     .line 348
-    if-eqz v0, :cond_27
+    if-eqz v1, :cond_28
 
     .line 349
-    new-instance v3, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string/jumbo v4, "This instance has been unsubscribed and the queue is no longer usable."
+    const-string/jumbo v1, "This instance has been unsubscribed and the queue is no longer usable."
 
-    invoke-direct {v3, v4}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v0
+
+    :cond_1f
+    move v0, v1
 
     .line 342
-    :cond_20
-    const/4 v1, 0x0
+    goto :goto_13
 
-    goto :goto_14
+    :cond_21
+    move v4, v1
+
+    move v1, v0
+
+    move v0, v4
 
     .line 344
-    :cond_22
-    const/4 v0, 0x1
-
-    goto :goto_14
+    goto :goto_13
 
     .line 346
-    .end local v2    # "q":Ljava/util/Queue;, "Ljava/util/Queue<Ljava/lang/Object;>;"
-    :catchall_24
-    move-exception v3
+    :catchall_25
+    move-exception v0
 
-    :try_start_25
+    :try_start_26
     monitor-exit p0
-    :try_end_26
-    .catchall {:try_start_25 .. :try_end_26} :catchall_24
+    :try_end_27
+    .catchall {:try_start_26 .. :try_end_27} :catchall_25
 
-    throw v3
+    throw v0
 
     .line 351
-    .restart local v2    # "q":Ljava/util/Queue;, "Ljava/util/Queue<Ljava/lang/Object;>;"
-    :cond_27
-    if-eqz v1, :cond_2f
+    :cond_28
+    if-eqz v0, :cond_30
 
     .line 352
-    new-instance v3, Lrx/exceptions/MissingBackpressureException;
+    new-instance v0, Lrx/exceptions/MissingBackpressureException;
 
-    invoke-direct {v3}, Lrx/exceptions/MissingBackpressureException;-><init>()V
+    invoke-direct {v0}, Lrx/exceptions/MissingBackpressureException;-><init>()V
 
-    throw v3
+    throw v0
 
     .line 354
-    :cond_2f
+    :cond_30
     return-void
 .end method
 
-.method public peek()Ljava/lang/Object;
-    .registers 5
+.method public b()V
+    .registers 1
 
     .prologue
-    .line 416
-    monitor-enter p0
+    .line 323
+    invoke-virtual {p0}, Lrx/internal/util/RxRingBuffer;->d()V
 
-    .line 417
-    :try_start_1
-    iget-object v1, p0, Lrx/internal/util/RxRingBuffer;->queue:Ljava/util/Queue;
-
-    .line 418
-    .local v1, "q":Ljava/util/Queue;, "Ljava/util/Queue<Ljava/lang/Object;>;"
-    if-nez v1, :cond_8
-
-    .line 420
-    const/4 v0, 0x0
-
-    monitor-exit p0
-
-    .line 428
-    :goto_7
-    return-object v0
-
-    .line 422
-    :cond_8
-    invoke-interface {v1}, Ljava/util/Queue;->peek()Ljava/lang/Object;
-
-    move-result-object v0
-
-    .line 423
-    .local v0, "o":Ljava/lang/Object;
-    iget-object v2, p0, Lrx/internal/util/RxRingBuffer;->terminalState:Ljava/lang/Object;
-
-    .line 424
-    .local v2, "ts":Ljava/lang/Object;
-    if-nez v0, :cond_19
-
-    if-eqz v2, :cond_19
-
-    invoke-interface {v1}, Ljava/util/Queue;->peek()Ljava/lang/Object;
-
-    move-result-object v3
-
-    if-nez v3, :cond_19
-
-    .line 425
-    move-object v0, v2
-
-    .line 427
-    :cond_19
-    monitor-exit p0
-
-    goto :goto_7
-
-    .end local v0    # "o":Ljava/lang/Object;
-    .end local v1    # "q":Ljava/util/Queue;, "Ljava/util/Queue<Ljava/lang/Object;>;"
-    .end local v2    # "ts":Ljava/lang/Object;
-    :catchall_1b
-    move-exception v3
-
-    monitor-exit p0
-    :try_end_1d
-    .catchall {:try_start_1 .. :try_end_1d} :catchall_1b
-
-    throw v3
+    .line 324
+    return-void
 .end method
 
-.method public poll()Ljava/lang/Object;
-    .registers 5
+.method public c()Z
+    .registers 2
 
     .prologue
+    .line 454
+    iget-object v0, p0, Lrx/internal/util/RxRingBuffer;->g:Ljava/util/Queue;
+
+    if-nez v0, :cond_6
+
+    const/4 v0, 0x1
+
+    :goto_5
+    return v0
+
+    :cond_6
     const/4 v0, 0x0
 
-    .line 396
-    monitor-enter p0
-
-    .line 397
-    :try_start_2
-    iget-object v1, p0, Lrx/internal/util/RxRingBuffer;->queue:Ljava/util/Queue;
-
-    .line 398
-    .local v1, "q":Ljava/util/Queue;, "Ljava/util/Queue<Ljava/lang/Object;>;"
-    if-nez v1, :cond_8
-
-    .line 400
-    monitor-exit p0
-
-    .line 411
-    :goto_7
-    return-object v0
-
-    .line 402
-    :cond_8
-    invoke-interface {v1}, Ljava/util/Queue;->poll()Ljava/lang/Object;
-
-    move-result-object v0
-
-    .line 404
-    .local v0, "o":Ljava/lang/Object;
-    iget-object v2, p0, Lrx/internal/util/RxRingBuffer;->terminalState:Ljava/lang/Object;
-
-    .line 405
-    .local v2, "ts":Ljava/lang/Object;
-    if-nez v0, :cond_1c
-
-    if-eqz v2, :cond_1c
-
-    invoke-interface {v1}, Ljava/util/Queue;->peek()Ljava/lang/Object;
-
-    move-result-object v3
-
-    if-nez v3, :cond_1c
-
-    .line 406
-    move-object v0, v2
-
-    .line 408
-    const/4 v3, 0x0
-
-    iput-object v3, p0, Lrx/internal/util/RxRingBuffer;->terminalState:Ljava/lang/Object;
-
-    .line 410
-    :cond_1c
-    monitor-exit p0
-
-    goto :goto_7
-
-    .end local v0    # "o":Ljava/lang/Object;
-    .end local v1    # "q":Ljava/util/Queue;, "Ljava/util/Queue<Ljava/lang/Object;>;"
-    .end local v2    # "ts":Ljava/lang/Object;
-    :catchall_1e
-    move-exception v3
-
-    monitor-exit p0
-    :try_end_20
-    .catchall {:try_start_2 .. :try_end_20} :catchall_1e
-
-    throw v3
+    goto :goto_5
 .end method
 
-.method public declared-synchronized release()V
+.method public declared-synchronized d()V
     .registers 4
 
     .prologue
@@ -828,28 +449,26 @@
     monitor-enter p0
 
     :try_start_1
-    iget-object v1, p0, Lrx/internal/util/RxRingBuffer;->queue:Ljava/util/Queue;
+    iget-object v0, p0, Lrx/internal/util/RxRingBuffer;->g:Ljava/util/Queue;
 
     .line 313
-    .local v1, "q":Ljava/util/Queue;, "Ljava/util/Queue<Ljava/lang/Object;>;"
-    iget-object v0, p0, Lrx/internal/util/RxRingBuffer;->pool:Lrx/internal/util/ObjectPool;
+    iget-object v1, p0, Lrx/internal/util/RxRingBuffer;->i:Lrx/internal/util/ObjectPool;
 
     .line 314
-    .local v0, "p":Lrx/internal/util/ObjectPool;, "Lrx/internal/util/ObjectPool<Ljava/util/Queue<Ljava/lang/Object;>;>;"
-    if-eqz v0, :cond_12
-
     if-eqz v1, :cond_12
 
+    if-eqz v0, :cond_12
+
     .line 315
-    invoke-interface {v1}, Ljava/util/Queue;->clear()V
+    invoke-interface {v0}, Ljava/util/Queue;->clear()V
 
     .line 316
     const/4 v2, 0x0
 
-    iput-object v2, p0, Lrx/internal/util/RxRingBuffer;->queue:Ljava/util/Queue;
+    iput-object v2, p0, Lrx/internal/util/RxRingBuffer;->g:Ljava/util/Queue;
 
     .line 317
-    invoke-virtual {v0, v1}, Lrx/internal/util/ObjectPool;->returnObject(Ljava/lang/Object;)V
+    invoke-virtual {v1, v0}, Lrx/internal/util/ObjectPool;->a(Ljava/lang/Object;)V
     :try_end_12
     .catchall {:try_start_1 .. :try_end_12} :catchall_14
 
@@ -860,23 +479,104 @@
     return-void
 
     .line 312
-    .end local v0    # "p":Lrx/internal/util/ObjectPool;, "Lrx/internal/util/ObjectPool<Ljava/util/Queue<Ljava/lang/Object;>;>;"
-    .end local v1    # "q":Ljava/util/Queue;, "Ljava/util/Queue<Ljava/lang/Object;>;"
     :catchall_14
-    move-exception v2
+    move-exception v0
 
     monitor-exit p0
 
-    throw v2
+    throw v0
 .end method
 
-.method public unsubscribe()V
-    .registers 1
+.method public e()Z
+    .registers 2
 
     .prologue
-    .line 323
-    invoke-virtual {p0}, Lrx/internal/util/RxRingBuffer;->release()V
+    .line 387
+    iget-object v0, p0, Lrx/internal/util/RxRingBuffer;->g:Ljava/util/Queue;
 
-    .line 324
-    return-void
+    .line 388
+    if-nez v0, :cond_6
+
+    .line 389
+    const/4 v0, 0x1
+
+    .line 391
+    :goto_5
+    return v0
+
+    :cond_6
+    invoke-interface {v0}, Ljava/util/Queue;->isEmpty()Z
+
+    move-result v0
+
+    goto :goto_5
+.end method
+
+.method public f()Ljava/lang/Object;
+    .registers 4
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 396
+    monitor-enter p0
+
+    .line 397
+    :try_start_2
+    iget-object v2, p0, Lrx/internal/util/RxRingBuffer;->g:Ljava/util/Queue;
+
+    .line 398
+    if-nez v2, :cond_8
+
+    .line 400
+    monitor-exit p0
+
+    .line 411
+    :goto_7
+    return-object v0
+
+    .line 402
+    :cond_8
+    invoke-interface {v2}, Ljava/util/Queue;->poll()Ljava/lang/Object;
+
+    move-result-object v1
+
+    .line 404
+    iget-object v0, p0, Lrx/internal/util/RxRingBuffer;->a:Ljava/lang/Object;
+
+    .line 405
+    if-nez v1, :cond_20
+
+    if-eqz v0, :cond_20
+
+    invoke-interface {v2}, Ljava/util/Queue;->peek()Ljava/lang/Object;
+
+    move-result-object v2
+
+    if-nez v2, :cond_20
+
+    .line 408
+    const/4 v1, 0x0
+
+    iput-object v1, p0, Lrx/internal/util/RxRingBuffer;->a:Ljava/lang/Object;
+
+    .line 410
+    :goto_1b
+    monitor-exit p0
+
+    goto :goto_7
+
+    :catchall_1d
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_1f
+    .catchall {:try_start_2 .. :try_end_1f} :catchall_1d
+
+    throw v0
+
+    :cond_20
+    move-object v0, v1
+
+    goto :goto_1b
 .end method

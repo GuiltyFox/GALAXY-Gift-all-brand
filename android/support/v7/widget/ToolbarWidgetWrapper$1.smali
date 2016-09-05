@@ -11,16 +11,11 @@
     value = Landroid/support/v7/widget/ToolbarWidgetWrapper;-><init>(Landroid/support/v7/widget/Toolbar;ZII)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final mNavItem:Landroid/support/v7/view/menu/ActionMenuItem;
+.field final a:Landroid/support/v7/view/menu/ActionMenuItem;
 
-.field final synthetic this$0:Landroid/support/v7/widget/ToolbarWidgetWrapper;
+.field final synthetic b:Landroid/support/v7/widget/ToolbarWidgetWrapper;
 
 
 # direct methods
@@ -31,14 +26,14 @@
     const/4 v2, 0x0
 
     .line 186
-    iput-object p1, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->this$0:Landroid/support/v7/widget/ToolbarWidgetWrapper;
+    iput-object p1, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->b:Landroid/support/v7/widget/ToolbarWidgetWrapper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 187
     new-instance v0, Landroid/support/v7/view/menu/ActionMenuItem;
 
-    iget-object v1, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->this$0:Landroid/support/v7/widget/ToolbarWidgetWrapper;
+    iget-object v1, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->b:Landroid/support/v7/widget/ToolbarWidgetWrapper;
 
     # getter for: Landroid/support/v7/widget/ToolbarWidgetWrapper;->mToolbar:Landroid/support/v7/widget/Toolbar;
     invoke-static {v1}, Landroid/support/v7/widget/ToolbarWidgetWrapper;->access$000(Landroid/support/v7/widget/ToolbarWidgetWrapper;)Landroid/support/v7/widget/Toolbar;
@@ -51,7 +46,7 @@
 
     const v3, 0x102002c
 
-    iget-object v4, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->this$0:Landroid/support/v7/widget/ToolbarWidgetWrapper;
+    iget-object v4, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->b:Landroid/support/v7/widget/ToolbarWidgetWrapper;
 
     # getter for: Landroid/support/v7/widget/ToolbarWidgetWrapper;->mTitle:Ljava/lang/CharSequence;
     invoke-static {v4}, Landroid/support/v7/widget/ToolbarWidgetWrapper;->access$100(Landroid/support/v7/widget/ToolbarWidgetWrapper;)Ljava/lang/CharSequence;
@@ -64,7 +59,7 @@
 
     invoke-direct/range {v0 .. v6}, Landroid/support/v7/view/menu/ActionMenuItem;-><init>(Landroid/content/Context;IIIILjava/lang/CharSequence;)V
 
-    iput-object v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->mNavItem:Landroid/support/v7/view/menu/ActionMenuItem;
+    iput-object v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->a:Landroid/support/v7/view/menu/ActionMenuItem;
 
     return-void
 .end method
@@ -73,11 +68,10 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .registers 5
-    .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 191
-    iget-object v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->this$0:Landroid/support/v7/widget/ToolbarWidgetWrapper;
+    iget-object v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->b:Landroid/support/v7/widget/ToolbarWidgetWrapper;
 
     # getter for: Landroid/support/v7/widget/ToolbarWidgetWrapper;->mWindowCallback:Landroid/view/Window$Callback;
     invoke-static {v0}, Landroid/support/v7/widget/ToolbarWidgetWrapper;->access$200(Landroid/support/v7/widget/ToolbarWidgetWrapper;)Landroid/view/Window$Callback;
@@ -86,7 +80,7 @@
 
     if-eqz v0, :cond_1c
 
-    iget-object v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->this$0:Landroid/support/v7/widget/ToolbarWidgetWrapper;
+    iget-object v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->b:Landroid/support/v7/widget/ToolbarWidgetWrapper;
 
     # getter for: Landroid/support/v7/widget/ToolbarWidgetWrapper;->mMenuPrepared:Z
     invoke-static {v0}, Landroid/support/v7/widget/ToolbarWidgetWrapper;->access$300(Landroid/support/v7/widget/ToolbarWidgetWrapper;)Z
@@ -96,7 +90,7 @@
     if-eqz v0, :cond_1c
 
     .line 192
-    iget-object v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->this$0:Landroid/support/v7/widget/ToolbarWidgetWrapper;
+    iget-object v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->b:Landroid/support/v7/widget/ToolbarWidgetWrapper;
 
     # getter for: Landroid/support/v7/widget/ToolbarWidgetWrapper;->mWindowCallback:Landroid/view/Window$Callback;
     invoke-static {v0}, Landroid/support/v7/widget/ToolbarWidgetWrapper;->access$200(Landroid/support/v7/widget/ToolbarWidgetWrapper;)Landroid/view/Window$Callback;
@@ -105,7 +99,7 @@
 
     const/4 v1, 0x0
 
-    iget-object v2, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->mNavItem:Landroid/support/v7/view/menu/ActionMenuItem;
+    iget-object v2, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->a:Landroid/support/v7/view/menu/ActionMenuItem;
 
     invoke-interface {v0, v1, v2}, Landroid/view/Window$Callback;->onMenuItemSelected(ILandroid/view/MenuItem;)Z
 

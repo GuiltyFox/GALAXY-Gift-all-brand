@@ -28,8 +28,6 @@
 
     .prologue
     .line 38
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/ContainerSerializer;, "Lcom/fasterxml/jackson/databind/ser/ContainerSerializer<TT;>;"
-    .local p1, "src":Lcom/fasterxml/jackson/databind/ser/ContainerSerializer;, "Lcom/fasterxml/jackson/databind/ser/ContainerSerializer<*>;"
     iget-object v0, p1, Lcom/fasterxml/jackson/databind/ser/ContainerSerializer;->_handledType:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -52,8 +50,6 @@
 
     .prologue
     .line 24
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/ContainerSerializer;, "Lcom/fasterxml/jackson/databind/ser/ContainerSerializer<TT;>;"
-    .local p1, "t":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/databind/ser/std/StdSerializer;-><init>(Ljava/lang/Class;)V
 
     .line 25
@@ -62,7 +58,6 @@
 
 .method protected constructor <init>(Ljava/lang/Class;Z)V
     .registers 3
-    .param p2, "dummy"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -73,8 +68,6 @@
 
     .prologue
     .line 34
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/ContainerSerializer;, "Lcom/fasterxml/jackson/databind/ser/ContainerSerializer<TT;>;"
-    .local p1, "t":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0, p1, p2}, Lcom/fasterxml/jackson/databind/ser/std/StdSerializer;-><init>(Ljava/lang/Class;Z)V
 
     .line 35
@@ -110,12 +103,9 @@
 
 .method protected hasContentTypeAnnotation(Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/BeanProperty;)Z
     .registers 6
-    .param p1, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .param p2, "property"    # Lcom/fasterxml/jackson/databind/BeanProperty;
 
     .prologue
     .line 125
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/ContainerSerializer;, "Lcom/fasterxml/jackson/databind/ser/ContainerSerializer<TT;>;"
     if-eqz p2, :cond_18
 
     .line 126
@@ -124,7 +114,6 @@
     move-result-object v0
 
     .line 127
-    .local v0, "intr":Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
     if-eqz v0, :cond_18
 
     .line 128
@@ -138,20 +127,19 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findSerializationContentType(Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/JavaType;)Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-eqz v1, :cond_18
+    if-eqz v0, :cond_18
 
     .line 129
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     .line 133
-    .end local v0    # "intr":Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
     :goto_17
-    return v1
+    return v0
 
     :cond_18
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_17
 .end method
@@ -174,7 +162,6 @@
 
 .method public withValueTypeSerializer(Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)Lcom/fasterxml/jackson/databind/ser/ContainerSerializer;
     .registers 2
-    .param p1, "vts"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -187,15 +174,12 @@
 
     .prologue
     .line 52
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/ContainerSerializer;, "Lcom/fasterxml/jackson/databind/ser/ContainerSerializer<TT;>;"
     if-nez p1, :cond_3
 
     .line 53
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/ser/ContainerSerializer;, "Lcom/fasterxml/jackson/databind/ser/ContainerSerializer<TT;>;"
     :goto_2
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/ser/ContainerSerializer;, "Lcom/fasterxml/jackson/databind/ser/ContainerSerializer<TT;>;"
     :cond_3
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/ser/ContainerSerializer;->_withValueTypeSerializer(Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)Lcom/fasterxml/jackson/databind/ser/ContainerSerializer;
 

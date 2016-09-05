@@ -3,26 +3,6 @@
 .source "NumberDeserializers.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/deser/std/NumberDeserializers$1;,
-        Lcom/fasterxml/jackson/databind/deser/std/NumberDeserializers$BigDecimalDeserializer;,
-        Lcom/fasterxml/jackson/databind/deser/std/NumberDeserializers$BigIntegerDeserializer;,
-        Lcom/fasterxml/jackson/databind/deser/std/NumberDeserializers$NumberDeserializer;,
-        Lcom/fasterxml/jackson/databind/deser/std/NumberDeserializers$DoubleDeserializer;,
-        Lcom/fasterxml/jackson/databind/deser/std/NumberDeserializers$FloatDeserializer;,
-        Lcom/fasterxml/jackson/databind/deser/std/NumberDeserializers$LongDeserializer;,
-        Lcom/fasterxml/jackson/databind/deser/std/NumberDeserializers$IntegerDeserializer;,
-        Lcom/fasterxml/jackson/databind/deser/std/NumberDeserializers$CharacterDeserializer;,
-        Lcom/fasterxml/jackson/databind/deser/std/NumberDeserializers$ShortDeserializer;,
-        Lcom/fasterxml/jackson/databind/deser/std/NumberDeserializers$ByteDeserializer;,
-        Lcom/fasterxml/jackson/databind/deser/std/NumberDeserializers$BooleanDeserializer;,
-        Lcom/fasterxml/jackson/databind/deser/std/NumberDeserializers$PrimitiveOrWrapperDeserializer;
-    }
-.end annotation
-
-
 # static fields
 .field private static final _classNames:Ljava/util/HashSet;
     .annotation system Ldalvik/annotation/Signature;
@@ -38,121 +18,111 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 7
+    .registers 5
 
     .prologue
+    const/4 v0, 0x0
+
     .line 26
-    new-instance v5, Ljava/util/HashSet;
+    new-instance v1, Ljava/util/HashSet;
 
-    invoke-direct {v5}, Ljava/util/HashSet;-><init>()V
+    invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
-    sput-object v5, Lcom/fasterxml/jackson/databind/deser/std/NumberDeserializers;->_classNames:Ljava/util/HashSet;
+    sput-object v1, Lcom/fasterxml/jackson/databind/deser/std/NumberDeserializers;->_classNames:Ljava/util/HashSet;
 
     .line 29
-    const/16 v5, 0xb
+    const/16 v1, 0xb
 
-    new-array v4, v5, [Ljava/lang/Class;
+    new-array v1, v1, [Ljava/lang/Class;
 
-    const/4 v5, 0x0
+    const-class v2, Ljava/lang/Boolean;
 
-    const-class v6, Ljava/lang/Boolean;
+    aput-object v2, v1, v0
 
-    aput-object v6, v4, v5
+    const/4 v2, 0x1
 
-    const/4 v5, 0x1
+    const-class v3, Ljava/lang/Byte;
 
-    const-class v6, Ljava/lang/Byte;
+    aput-object v3, v1, v2
 
-    aput-object v6, v4, v5
+    const/4 v2, 0x2
 
-    const/4 v5, 0x2
+    const-class v3, Ljava/lang/Short;
 
-    const-class v6, Ljava/lang/Short;
+    aput-object v3, v1, v2
 
-    aput-object v6, v4, v5
+    const/4 v2, 0x3
 
-    const/4 v5, 0x3
+    const-class v3, Ljava/lang/Character;
 
-    const-class v6, Ljava/lang/Character;
+    aput-object v3, v1, v2
 
-    aput-object v6, v4, v5
+    const/4 v2, 0x4
 
-    const/4 v5, 0x4
+    const-class v3, Ljava/lang/Integer;
 
-    const-class v6, Ljava/lang/Integer;
+    aput-object v3, v1, v2
 
-    aput-object v6, v4, v5
+    const/4 v2, 0x5
 
-    const/4 v5, 0x5
+    const-class v3, Ljava/lang/Long;
 
-    const-class v6, Ljava/lang/Long;
+    aput-object v3, v1, v2
 
-    aput-object v6, v4, v5
+    const/4 v2, 0x6
 
-    const/4 v5, 0x6
+    const-class v3, Ljava/lang/Float;
 
-    const-class v6, Ljava/lang/Float;
+    aput-object v3, v1, v2
 
-    aput-object v6, v4, v5
+    const/4 v2, 0x7
 
-    const/4 v5, 0x7
+    const-class v3, Ljava/lang/Double;
 
-    const-class v6, Ljava/lang/Double;
+    aput-object v3, v1, v2
 
-    aput-object v6, v4, v5
+    const/16 v2, 0x8
 
-    const/16 v5, 0x8
+    const-class v3, Ljava/lang/Number;
 
-    const-class v6, Ljava/lang/Number;
+    aput-object v3, v1, v2
 
-    aput-object v6, v4, v5
+    const/16 v2, 0x9
 
-    const/16 v5, 0x9
+    const-class v3, Ljava/math/BigDecimal;
 
-    const-class v6, Ljava/math/BigDecimal;
+    aput-object v3, v1, v2
 
-    aput-object v6, v4, v5
+    const/16 v2, 0xa
 
-    const/16 v5, 0xa
+    const-class v3, Ljava/math/BigInteger;
 
-    const-class v6, Ljava/math/BigInteger;
-
-    aput-object v6, v4, v5
+    aput-object v3, v1, v2
 
     .line 41
-    .local v4, "numberTypes":[Ljava/lang/Class;, "[Ljava/lang/Class<*>;"
-    move-object v0, v4
+    array-length v2, v1
 
-    .local v0, "arr$":[Ljava/lang/Class;
-    array-length v3, v0
+    :goto_46
+    if-ge v0, v2, :cond_56
 
-    .local v3, "len$":I
-    const/4 v2, 0x0
-
-    .local v2, "i$":I
-    :goto_48
-    if-ge v2, v3, :cond_58
-
-    aget-object v1, v0, v2
+    aget-object v3, v1, v0
 
     .line 42
-    .local v1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    sget-object v5, Lcom/fasterxml/jackson/databind/deser/std/NumberDeserializers;->_classNames:Ljava/util/HashSet;
+    sget-object v4, Lcom/fasterxml/jackson/databind/deser/std/NumberDeserializers;->_classNames:Ljava/util/HashSet;
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v3
 
-    invoke-virtual {v5, v6}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v3}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 41
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    goto :goto_48
+    goto :goto_46
 
     .line 44
-    .end local v1    # "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    :cond_58
+    :cond_56
     return-void
 .end method
 
@@ -169,7 +139,6 @@
 
 .method public static find(Ljava/lang/Class;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
     .registers 5
-    .param p1, "clsName"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -184,7 +153,6 @@
 
     .prologue
     .line 47
-    .local p0, "rawType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0}, Ljava/lang/Class;->isPrimitive()Z
 
     move-result v0

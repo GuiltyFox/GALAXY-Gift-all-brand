@@ -8,11 +8,6 @@
     value = Lcom/squareup/picasso/BitmapHunter;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 
 # direct methods
 .method constructor <init>()V
@@ -27,26 +22,8 @@
 
 
 # virtual methods
-.method public canHandleRequest(Lcom/squareup/picasso/Request;)Z
-    .registers 3
-    .param p1, "data"    # Lcom/squareup/picasso/Request;
-
-    .prologue
-    .line 62
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public load(Lcom/squareup/picasso/Request;I)Lcom/squareup/picasso/RequestHandler$Result;
+.method public a(Lcom/squareup/picasso/Request;I)Lcom/squareup/picasso/RequestHandler$Result;
     .registers 6
-    .param p1, "request"    # Lcom/squareup/picasso/Request;
-    .param p2, "networkPolicy"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 66
@@ -73,4 +50,14 @@
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
+.end method
+
+.method public a(Lcom/squareup/picasso/Request;)Z
+    .registers 3
+
+    .prologue
+    .line 62
+    const/4 v0, 0x1
+
+    return v0
 .end method

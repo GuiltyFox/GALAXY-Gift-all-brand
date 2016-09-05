@@ -16,52 +16,46 @@
 
 
 # virtual methods
-.method public build(Landroid/content/Context;Lcom/bumptech/glide/manager/ConnectivityMonitor$ConnectivityListener;)Lcom/bumptech/glide/manager/ConnectivityMonitor;
-    .registers 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "listener"    # Lcom/bumptech/glide/manager/ConnectivityMonitor$ConnectivityListener;
+.method public a(Landroid/content/Context;Lcom/bumptech/glide/manager/ConnectivityMonitor$ConnectivityListener;)Lcom/bumptech/glide/manager/ConnectivityMonitor;
+    .registers 4
 
     .prologue
     .line 13
-    const-string/jumbo v2, "android.permission.ACCESS_NETWORK_STATE"
+    const-string/jumbo v0, "android.permission.ACCESS_NETWORK_STATE"
 
-    invoke-virtual {p1, v2}, Landroid/content/Context;->checkCallingOrSelfPermission(Ljava/lang/String;)I
+    invoke-virtual {p1, v0}, Landroid/content/Context;->checkCallingOrSelfPermission(Ljava/lang/String;)I
 
-    move-result v1
+    move-result v0
 
     .line 14
-    .local v1, "res":I
-    if-nez v1, :cond_12
+    if-nez v0, :cond_12
 
     const/4 v0, 0x1
 
     .line 15
-    .local v0, "hasPermission":Z
     :goto_a
     if-eqz v0, :cond_14
 
     .line 16
-    new-instance v2, Lcom/bumptech/glide/manager/DefaultConnectivityMonitor;
+    new-instance v0, Lcom/bumptech/glide/manager/DefaultConnectivityMonitor;
 
-    invoke-direct {v2, p1, p2}, Lcom/bumptech/glide/manager/DefaultConnectivityMonitor;-><init>(Landroid/content/Context;Lcom/bumptech/glide/manager/ConnectivityMonitor$ConnectivityListener;)V
+    invoke-direct {v0, p1, p2}, Lcom/bumptech/glide/manager/DefaultConnectivityMonitor;-><init>(Landroid/content/Context;Lcom/bumptech/glide/manager/ConnectivityMonitor$ConnectivityListener;)V
 
     .line 18
     :goto_11
-    return-object v2
+    return-object v0
 
     .line 14
-    .end local v0    # "hasPermission":Z
     :cond_12
     const/4 v0, 0x0
 
     goto :goto_a
 
     .line 18
-    .restart local v0    # "hasPermission":Z
     :cond_14
-    new-instance v2, Lcom/bumptech/glide/manager/NullConnectivityMonitor;
+    new-instance v0, Lcom/bumptech/glide/manager/NullConnectivityMonitor;
 
-    invoke-direct {v2}, Lcom/bumptech/glide/manager/NullConnectivityMonitor;-><init>()V
+    invoke-direct {v0}, Lcom/bumptech/glide/manager/NullConnectivityMonitor;-><init>()V
 
     goto :goto_11
 .end method

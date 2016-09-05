@@ -23,7 +23,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/ObjectMapper;)V
     .registers 3
-    .param p1, "mapper"    # Lcom/fasterxml/jackson/databind/ObjectMapper;
 
     .prologue
     .line 44
@@ -101,12 +100,6 @@
 
 .method public hasFormat(Lcom/fasterxml/jackson/core/format/InputAccessor;)Lcom/fasterxml/jackson/core/format/MatchStrength;
     .registers 4
-    .param p1, "acc"    # Lcom/fasterxml/jackson/core/format/InputAccessor;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 90

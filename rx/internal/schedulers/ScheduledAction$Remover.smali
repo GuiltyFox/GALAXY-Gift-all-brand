@@ -6,42 +6,25 @@
 .implements Lrx/Subscription;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lrx/internal/schedulers/ScheduledAction;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "Remover"
-.end annotation
-
-
-# static fields
-.field private static final serialVersionUID:J = 0x36e5888d681586eL
-
-
 # instance fields
-.field final parent:Lrx/subscriptions/CompositeSubscription;
+.field final a:Lrx/internal/schedulers/ScheduledAction;
 
-.field final s:Lrx/internal/schedulers/ScheduledAction;
+.field final b:Lrx/subscriptions/CompositeSubscription;
 
 
 # direct methods
 .method public constructor <init>(Lrx/internal/schedulers/ScheduledAction;Lrx/subscriptions/CompositeSubscription;)V
     .registers 3
-    .param p1, "s"    # Lrx/internal/schedulers/ScheduledAction;
-    .param p2, "parent"    # Lrx/subscriptions/CompositeSubscription;
 
     .prologue
     .line 159
     invoke-direct {p0}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>()V
 
     .line 160
-    iput-object p1, p0, Lrx/internal/schedulers/ScheduledAction$Remover;->s:Lrx/internal/schedulers/ScheduledAction;
+    iput-object p1, p0, Lrx/internal/schedulers/ScheduledAction$Remover;->a:Lrx/internal/schedulers/ScheduledAction;
 
     .line 161
-    iput-object p2, p0, Lrx/internal/schedulers/ScheduledAction$Remover;->parent:Lrx/subscriptions/CompositeSubscription;
+    iput-object p2, p0, Lrx/internal/schedulers/ScheduledAction$Remover;->b:Lrx/subscriptions/CompositeSubscription;
 
     .line 162
     return-void
@@ -49,21 +32,7 @@
 
 
 # virtual methods
-.method public isUnsubscribed()Z
-    .registers 2
-
-    .prologue
-    .line 166
-    iget-object v0, p0, Lrx/internal/schedulers/ScheduledAction$Remover;->s:Lrx/internal/schedulers/ScheduledAction;
-
-    invoke-virtual {v0}, Lrx/internal/schedulers/ScheduledAction;->isUnsubscribed()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public unsubscribe()V
+.method public b()V
     .registers 3
 
     .prologue
@@ -79,13 +48,27 @@
     if-eqz v0, :cond_f
 
     .line 172
-    iget-object v0, p0, Lrx/internal/schedulers/ScheduledAction$Remover;->parent:Lrx/subscriptions/CompositeSubscription;
+    iget-object v0, p0, Lrx/internal/schedulers/ScheduledAction$Remover;->b:Lrx/subscriptions/CompositeSubscription;
 
-    iget-object v1, p0, Lrx/internal/schedulers/ScheduledAction$Remover;->s:Lrx/internal/schedulers/ScheduledAction;
+    iget-object v1, p0, Lrx/internal/schedulers/ScheduledAction$Remover;->a:Lrx/internal/schedulers/ScheduledAction;
 
-    invoke-virtual {v0, v1}, Lrx/subscriptions/CompositeSubscription;->remove(Lrx/Subscription;)V
+    invoke-virtual {v0, v1}, Lrx/subscriptions/CompositeSubscription;->b(Lrx/Subscription;)V
 
     .line 174
     :cond_f
     return-void
+.end method
+
+.method public c()Z
+    .registers 2
+
+    .prologue
+    .line 166
+    iget-object v0, p0, Lrx/internal/schedulers/ScheduledAction$Remover;->a:Lrx/internal/schedulers/ScheduledAction;
+
+    invoke-virtual {v0}, Lrx/internal/schedulers/ScheduledAction;->c()Z
+
+    move-result v0
+
+    return v0
 .end method

@@ -8,27 +8,21 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->doRedeemAction()V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->g()V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+.field final synthetic a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     .prologue
-    .line 2495
-    iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$24;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    .line 2590
+    iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$24;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,13 +33,11 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .registers 3
-    .param p1, "p_dialog"    # Landroid/content/DialogInterface;
-    .param p2, "id"    # I
 
     .prologue
-    .line 2497
+    .line 2592
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 2498
+    .line 2593
     return-void
 .end method

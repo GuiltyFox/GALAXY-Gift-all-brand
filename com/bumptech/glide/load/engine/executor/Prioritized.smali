@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract getPriority()I
+.method public abstract b()I
 .end method

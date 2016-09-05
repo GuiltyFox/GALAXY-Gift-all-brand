@@ -8,12 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/bzbs/lib/survey/util/LocationGPS;->isEnabledGPS(Landroid/app/Activity;)Z
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
+    value = Lcom/bzbs/lib/survey/util/LocationGPS;->a(Landroid/app/Activity;)Z
 .end annotation
 
 
@@ -32,8 +27,6 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .registers 3
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
     .prologue
     .line 35

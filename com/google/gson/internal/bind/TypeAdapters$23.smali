@@ -8,11 +8,6 @@
     value = Lcom/google/gson/internal/bind/TypeAdapters;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/google/gson/TypeAdapter",
@@ -21,20 +16,6 @@
         ">;"
     }
 .end annotation
-
-
-# static fields
-.field private static final DAY_OF_MONTH:Ljava/lang/String; = "dayOfMonth"
-
-.field private static final HOUR_OF_DAY:Ljava/lang/String; = "hourOfDay"
-
-.field private static final MINUTE:Ljava/lang/String; = "minute"
-
-.field private static final MONTH:Ljava/lang/String; = "month"
-
-.field private static final SECOND:Ljava/lang/String; = "second"
-
-.field private static final YEAR:Ljava/lang/String; = "year"
 
 
 # direct methods
@@ -50,42 +31,20 @@
 
 
 # virtual methods
-.method public bridge synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
-    .registers 3
-    .param p1, "x0"    # Lcom/google/gson/stream/JsonReader;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+.method public a(Lcom/google/gson/stream/JsonReader;)Ljava/util/Calendar;
+    .registers 11
 
     .prologue
-    .line 539
-    invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/TypeAdapters$23;->read(Lcom/google/gson/stream/JsonReader;)Ljava/util/Calendar;
+    const/4 v6, 0x0
 
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public read(Lcom/google/gson/stream/JsonReader;)Ljava/util/Calendar;
-    .registers 12
-    .param p1, "in"    # Lcom/google/gson/stream/JsonReader;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .prologue
     .line 549
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
 
     move-result-object v0
 
-    sget-object v9, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
+    sget-object v1, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
 
-    if-ne v0, v9, :cond_d
+    if-ne v0, v1, :cond_e
 
     .line 550
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextNull()V
@@ -94,47 +53,33 @@
     const/4 v0, 0x0
 
     .line 578
-    :goto_c
+    :goto_d
     return-object v0
 
     .line 553
-    :cond_d
+    :cond_e
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->beginObject()V
 
-    .line 554
-    const/4 v1, 0x0
+    move v5, v6
 
-    .line 555
-    .local v1, "year":I
-    const/4 v2, 0x0
+    move v4, v6
 
-    .line 556
-    .local v2, "month":I
-    const/4 v3, 0x0
+    move v3, v6
 
-    .line 557
-    .local v3, "dayOfMonth":I
-    const/4 v4, 0x0
+    move v2, v6
 
-    .line 558
-    .local v4, "hourOfDay":I
-    const/4 v5, 0x0
-
-    .line 559
-    .local v5, "minute":I
-    const/4 v6, 0x0
+    move v1, v6
 
     .line 560
-    .local v6, "second":I
     :cond_16
     :goto_16
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
 
     move-result-object v0
 
-    sget-object v9, Lcom/google/gson/stream/JsonToken;->END_OBJECT:Lcom/google/gson/stream/JsonToken;
+    sget-object v7, Lcom/google/gson/stream/JsonToken;->END_OBJECT:Lcom/google/gson/stream/JsonToken;
 
-    if-eq v0, v9, :cond_68
+    if-eq v0, v7, :cond_68
 
     .line 561
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextName()Ljava/lang/String;
@@ -142,104 +87,100 @@
     move-result-object v7
 
     .line 562
-    .local v7, "name":Ljava/lang/String;
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextInt()I
-
-    move-result v8
-
-    .line 563
-    .local v8, "value":I
-    const-string/jumbo v0, "year"
-
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_31
+    .line 563
+    const-string/jumbo v8, "year"
+
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v8
+
+    if-eqz v8, :cond_31
+
+    move v1, v0
 
     .line 564
-    move v1, v8
-
     goto :goto_16
 
     .line 565
     :cond_31
-    const-string/jumbo v0, "month"
+    const-string/jumbo v8, "month"
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v8
 
-    if-eqz v0, :cond_3c
+    if-eqz v8, :cond_3c
+
+    move v2, v0
 
     .line 566
-    move v2, v8
-
     goto :goto_16
 
     .line 567
     :cond_3c
-    const-string/jumbo v0, "dayOfMonth"
+    const-string/jumbo v8, "dayOfMonth"
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v8
 
-    if-eqz v0, :cond_47
+    if-eqz v8, :cond_47
+
+    move v3, v0
 
     .line 568
-    move v3, v8
-
     goto :goto_16
 
     .line 569
     :cond_47
-    const-string/jumbo v0, "hourOfDay"
+    const-string/jumbo v8, "hourOfDay"
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v8
 
-    if-eqz v0, :cond_52
+    if-eqz v8, :cond_52
+
+    move v4, v0
 
     .line 570
-    move v4, v8
-
     goto :goto_16
 
     .line 571
     :cond_52
-    const-string/jumbo v0, "minute"
+    const-string/jumbo v8, "minute"
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v8
 
-    if-eqz v0, :cond_5d
+    if-eqz v8, :cond_5d
+
+    move v5, v0
 
     .line 572
-    move v5, v8
-
     goto :goto_16
 
     .line 573
     :cond_5d
-    const-string/jumbo v0, "second"
+    const-string/jumbo v8, "second"
 
-    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v8, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v7
 
-    if-eqz v0, :cond_16
+    if-eqz v7, :cond_16
+
+    move v6, v0
 
     .line 574
-    move v6, v8
-
     goto :goto_16
 
     .line 577
-    .end local v7    # "name":Ljava/lang/String;
-    .end local v8    # "value":I
     :cond_68
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->endObject()V
 
@@ -248,38 +189,23 @@
 
     invoke-direct/range {v0 .. v6}, Ljava/util/GregorianCalendar;-><init>(IIIIII)V
 
-    goto :goto_c
+    goto :goto_d
 .end method
 
-.method public bridge synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
+.method public bridge synthetic a(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .registers 3
-    .param p1, "x0"    # Lcom/google/gson/stream/JsonWriter;
-    .param p2, "x1"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 539
     check-cast p2, Ljava/util/Calendar;
 
-    .end local p2    # "x1":Ljava/lang/Object;
-    invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/bind/TypeAdapters$23;->write(Lcom/google/gson/stream/JsonWriter;Ljava/util/Calendar;)V
+    invoke-virtual {p0, p1, p2}, Lcom/google/gson/internal/bind/TypeAdapters$23;->a(Lcom/google/gson/stream/JsonWriter;Ljava/util/Calendar;)V
 
     return-void
 .end method
 
-.method public write(Lcom/google/gson/stream/JsonWriter;Ljava/util/Calendar;)V
+.method public a(Lcom/google/gson/stream/JsonWriter;Ljava/util/Calendar;)V
     .registers 5
-    .param p1, "out"    # Lcom/google/gson/stream/JsonWriter;
-    .param p2, "value"    # Ljava/util/Calendar;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 583
@@ -396,4 +322,16 @@
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->endObject()Lcom/google/gson/stream/JsonWriter;
 
     goto :goto_5
+.end method
+
+.method public synthetic b(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+    .registers 3
+
+    .prologue
+    .line 539
+    invoke-virtual {p0, p1}, Lcom/google/gson/internal/bind/TypeAdapters$23;->a(Lcom/google/gson/stream/JsonReader;)Ljava/util/Calendar;
+
+    move-result-object v0
+
+    return-object v0
 .end method

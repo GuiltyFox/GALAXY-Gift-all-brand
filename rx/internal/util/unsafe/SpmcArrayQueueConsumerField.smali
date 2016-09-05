@@ -16,7 +16,7 @@
 
 
 # static fields
-.field protected static final C_INDEX_OFFSET:J
+.field protected static final d:J
 
 
 # instance fields
@@ -33,22 +33,20 @@
 
     const-string/jumbo v1, "consumerIndex"
 
-    invoke-static {v0, v1}, Lrx/internal/util/unsafe/UnsafeAccess;->addressOf(Ljava/lang/Class;Ljava/lang/String;)J
+    invoke-static {v0, v1}, Lrx/internal/util/unsafe/UnsafeAccess;->a(Ljava/lang/Class;Ljava/lang/String;)J
 
     move-result-wide v0
 
-    sput-wide v0, Lrx/internal/util/unsafe/SpmcArrayQueueConsumerField;->C_INDEX_OFFSET:J
+    sput-wide v0, Lrx/internal/util/unsafe/SpmcArrayQueueConsumerField;->d:J
 
     return-void
 .end method
 
 .method public constructor <init>(I)V
     .registers 2
-    .param p1, "capacity"    # I
 
     .prologue
     .line 61
-    .local p0, "this":Lrx/internal/util/unsafe/SpmcArrayQueueConsumerField;, "Lrx/internal/util/unsafe/SpmcArrayQueueConsumerField<TE;>;"
     invoke-direct {p0, p1}, Lrx/internal/util/unsafe/SpmcArrayQueueL2Pad;-><init>(I)V
 
     .line 62
@@ -57,17 +55,24 @@
 
 
 # virtual methods
-.method protected final casHead(JJ)Z
+.method protected final a()J
+    .registers 3
+
+    .prologue
+    .line 65
+    iget-wide v0, p0, Lrx/internal/util/unsafe/SpmcArrayQueueConsumerField;->consumerIndex:J
+
+    return-wide v0
+.end method
+
+.method protected final b(JJ)Z
     .registers 14
-    .param p1, "expect"    # J
-    .param p3, "newValue"    # J
 
     .prologue
     .line 69
-    .local p0, "this":Lrx/internal/util/unsafe/SpmcArrayQueueConsumerField;, "Lrx/internal/util/unsafe/SpmcArrayQueueConsumerField<TE;>;"
-    sget-object v0, Lrx/internal/util/unsafe/UnsafeAccess;->UNSAFE:Lsun/misc/Unsafe;
+    sget-object v0, Lrx/internal/util/unsafe/UnsafeAccess;->a:Lsun/misc/Unsafe;
 
-    sget-wide v2, Lrx/internal/util/unsafe/SpmcArrayQueueConsumerField;->C_INDEX_OFFSET:J
+    sget-wide v2, Lrx/internal/util/unsafe/SpmcArrayQueueConsumerField;->d:J
 
     move-object v1, p0
 
@@ -80,15 +85,4 @@
     move-result v0
 
     return v0
-.end method
-
-.method protected final lvConsumerIndex()J
-    .registers 3
-
-    .prologue
-    .line 65
-    .local p0, "this":Lrx/internal/util/unsafe/SpmcArrayQueueConsumerField;, "Lrx/internal/util/unsafe/SpmcArrayQueueConsumerField<TE;>;"
-    iget-wide v0, p0, Lrx/internal/util/unsafe/SpmcArrayQueueConsumerField;->consumerIndex:J
-
-    return-wide v0
 .end method

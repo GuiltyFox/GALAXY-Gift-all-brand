@@ -30,8 +30,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/core/io/IOContext;Ljava/io/OutputStream;)V
     .registers 5
-    .param p1, "ctxt"    # Lcom/fasterxml/jackson/core/io/IOContext;
-    .param p2, "out"    # Ljava/io/OutputStream;
 
     .prologue
     const/4 v1, 0x0
@@ -73,12 +71,6 @@
 
 .method protected static illegalSurrogate(I)V
     .registers 3
-    .param p0, "code"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 370
@@ -95,7 +87,6 @@
 
 .method protected static illegalSurrogateDesc(I)Ljava/lang/String;
     .registers 3
-    .param p0, "code"    # I
 
     .prologue
     .line 375
@@ -247,12 +238,6 @@
 # virtual methods
 .method public append(C)Ljava/io/Writer;
     .registers 2
-    .param p1, "c"    # C
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 47
@@ -264,12 +249,6 @@
 
 .method public bridge synthetic append(C)Ljava/lang/Appendable;
     .registers 3
-    .param p1, "x0"    # C
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 5
@@ -281,96 +260,79 @@
 .end method
 
 .method public close()V
-    .registers 9
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 6
 
     .prologue
-    const/4 v7, 0x0
+    const/4 v4, 0x0
 
-    const/4 v6, 0x0
+    const/4 v3, 0x0
 
     .line 55
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_out:Ljava/io/OutputStream;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_out:Ljava/io/OutputStream;
 
-    if-eqz v3, :cond_30
+    if-eqz v0, :cond_30
 
     .line 56
-    iget v3, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
 
-    if-lez v3, :cond_15
+    if-lez v0, :cond_15
 
     .line 57
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_out:Ljava/io/OutputStream;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_out:Ljava/io/OutputStream;
 
-    iget-object v4, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
 
-    iget v5, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
+    iget v2, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
 
-    invoke-virtual {v3, v4, v6, v5}, Ljava/io/OutputStream;->write([BII)V
+    invoke-virtual {v0, v1, v3, v2}, Ljava/io/OutputStream;->write([BII)V
 
     .line 58
-    iput v6, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
+    iput v3, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
 
     .line 60
     :cond_15
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_out:Ljava/io/OutputStream;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_out:Ljava/io/OutputStream;
 
     .line 61
-    .local v2, "out":Ljava/io/OutputStream;
-    iput-object v7, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_out:Ljava/io/OutputStream;
+    iput-object v4, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_out:Ljava/io/OutputStream;
 
     .line 63
-    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
 
     .line 64
-    .local v0, "buf":[B
-    if-eqz v0, :cond_24
+    if-eqz v1, :cond_24
 
     .line 65
-    iput-object v7, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
+    iput-object v4, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
 
     .line 66
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_context:Lcom/fasterxml/jackson/core/io/IOContext;
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_context:Lcom/fasterxml/jackson/core/io/IOContext;
 
-    invoke-virtual {v3, v0}, Lcom/fasterxml/jackson/core/io/IOContext;->releaseWriteEncodingBuffer([B)V
+    invoke-virtual {v2, v1}, Lcom/fasterxml/jackson/core/io/IOContext;->releaseWriteEncodingBuffer([B)V
 
     .line 69
     :cond_24
-    invoke-virtual {v2}, Ljava/io/OutputStream;->close()V
+    invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
 
     .line 74
-    iget v1, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_surrogate:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_surrogate:I
 
     .line 75
-    .local v1, "code":I
-    iput v6, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_surrogate:I
+    iput v3, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_surrogate:I
 
     .line 76
-    if-lez v1, :cond_30
+    if-lez v0, :cond_30
 
     .line 77
-    invoke-static {v1}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->illegalSurrogate(I)V
+    invoke-static {v0}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->illegalSurrogate(I)V
 
     .line 80
-    .end local v0    # "buf":[B
-    .end local v1    # "code":I
-    .end local v2    # "out":Ljava/io/OutputStream;
     :cond_30
     return-void
 .end method
 
 .method protected convertSurrogate(I)I
     .registers 6
-    .param p1, "secondPart"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     const v3, 0xdc00
@@ -379,7 +341,6 @@
     iget v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_surrogate:I
 
     .line 360
-    .local v0, "firstPart":I
     const/4 v1, 0x0
 
     iput v1, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_surrogate:I
@@ -407,37 +368,37 @@
 
     invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string/jumbo v3, ", second 0x"
+    const-string/jumbo v2, ", second 0x"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
     invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v2
 
-    const-string/jumbo v3, "; illegal combination"
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v2
+    const-string/jumbo v2, "; illegal combination"
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-direct {v1, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
     throw v1
 
@@ -447,26 +408,21 @@
 
     const v2, 0xd800
 
-    sub-int v2, v0, v2
+    sub-int/2addr v0, v2
 
-    shl-int/lit8 v2, v2, 0xa
+    shl-int/lit8 v0, v0, 0xa
 
-    add-int/2addr v1, v2
+    add-int/2addr v0, v1
 
-    sub-int v2, p1, v3
+    sub-int v1, p1, v3
 
-    add-int/2addr v1, v2
+    add-int/2addr v0, v1
 
-    return v1
+    return v0
 .end method
 
 .method public flush()V
     .registers 5
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     const/4 v3, 0x0
@@ -505,21 +461,15 @@
 .end method
 
 .method public write(I)V
-    .registers 8
-    .param p1, "c"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 6
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
     .line 203
-    iget v2, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_surrogate:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_surrogate:I
 
-    if-lez v2, :cond_2a
+    if-lez v0, :cond_2a
 
     .line 204
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->convertSurrogate(I)I
@@ -528,42 +478,42 @@
 
     .line 216
     :cond_9
-    iget v2, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
 
-    iget v3, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBufferEnd:I
+    iget v1, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBufferEnd:I
 
-    if-lt v2, v3, :cond_1a
+    if-lt v0, v1, :cond_1a
 
     .line 217
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_out:Ljava/io/OutputStream;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_out:Ljava/io/OutputStream;
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
 
-    iget v4, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
+    iget v2, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
 
-    invoke-virtual {v2, v3, v5, v4}, Ljava/io/OutputStream;->write([BII)V
+    invoke-virtual {v0, v1, v3, v2}, Ljava/io/OutputStream;->write([BII)V
 
     .line 218
-    iput v5, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
+    iput v3, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
 
     .line 221
     :cond_1a
-    const/16 v2, 0x80
+    const/16 v0, 0x80
 
-    if-ge p1, v2, :cond_3f
+    if-ge p1, v0, :cond_3f
 
     .line 222
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
 
-    iget v3, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
+    iget v1, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
 
-    add-int/lit8 v4, v3, 0x1
+    add-int/lit8 v2, v1, 0x1
 
-    iput v4, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
+    iput v2, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
 
-    int-to-byte v4, p1
+    int-to-byte v2, p1
 
-    aput-byte v4, v2, v3
+    aput-byte v2, v0, v1
 
     .line 243
     :goto_29
@@ -571,18 +521,18 @@
 
     .line 206
     :cond_2a
-    const v2, 0xd800
+    const v0, 0xd800
 
-    if-lt p1, v2, :cond_9
+    if-lt p1, v0, :cond_9
 
-    const v2, 0xdfff
+    const v0, 0xdfff
 
-    if-gt p1, v2, :cond_9
+    if-gt p1, v0, :cond_9
 
     .line 208
-    const v2, 0xdbff
+    const v0, 0xdbff
 
-    if-le p1, v2, :cond_3c
+    if-le p1, v0, :cond_3c
 
     .line 209
     invoke-static {p1}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->illegalSurrogate(I)V
@@ -598,40 +548,35 @@
     iget v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
 
     .line 225
-    .local v0, "ptr":I
-    const/16 v2, 0x800
+    const/16 v1, 0x800
 
-    if-ge p1, v2, :cond_5e
+    if-ge p1, v1, :cond_5e
 
     .line 226
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
 
-    add-int/lit8 v1, v0, 0x1
+    add-int/lit8 v2, v0, 0x1
 
-    .end local v0    # "ptr":I
-    .local v1, "ptr":I
     shr-int/lit8 v3, p1, 0x6
 
     or-int/lit16 v3, v3, 0xc0
 
     int-to-byte v3, v3
 
-    aput-byte v3, v2, v0
+    aput-byte v3, v1, v0
 
     .line 227
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
 
-    add-int/lit8 v0, v1, 0x1
+    add-int/lit8 v0, v2, 0x1
 
-    .end local v1    # "ptr":I
-    .restart local v0    # "ptr":I
     and-int/lit8 v3, p1, 0x3f
 
     or-int/lit16 v3, v3, 0x80
 
     int-to-byte v3, v3
 
-    aput-byte v3, v2, v1
+    aput-byte v3, v1, v2
 
     .line 241
     :goto_5b
@@ -641,32 +586,28 @@
 
     .line 228
     :cond_5e
-    const v2, 0xffff
+    const v1, 0xffff
 
-    if-gt p1, v2, :cond_88
+    if-gt p1, v1, :cond_87
 
     .line 229
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
 
-    add-int/lit8 v1, v0, 0x1
+    add-int/lit8 v2, v0, 0x1
 
-    .end local v0    # "ptr":I
-    .restart local v1    # "ptr":I
     shr-int/lit8 v3, p1, 0xc
 
     or-int/lit16 v3, v3, 0xe0
 
     int-to-byte v3, v3
 
-    aput-byte v3, v2, v0
+    aput-byte v3, v1, v0
 
     .line 230
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
 
-    add-int/lit8 v0, v1, 0x1
+    add-int/lit8 v1, v2, 0x1
 
-    .end local v1    # "ptr":I
-    .restart local v0    # "ptr":I
     shr-int/lit8 v3, p1, 0x6
 
     and-int/lit8 v3, v3, 0x3f
@@ -675,61 +616,51 @@
 
     int-to-byte v3, v3
 
-    aput-byte v3, v2, v1
+    aput-byte v3, v0, v2
 
     .line 231
     iget-object v2, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
 
-    add-int/lit8 v1, v0, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    .end local v0    # "ptr":I
-    .restart local v1    # "ptr":I
     and-int/lit8 v3, p1, 0x3f
 
     or-int/lit16 v3, v3, 0x80
 
     int-to-byte v3, v3
 
-    aput-byte v3, v2, v0
+    aput-byte v3, v2, v1
 
-    move v0, v1
-
-    .end local v1    # "ptr":I
-    .restart local v0    # "ptr":I
     goto :goto_5b
 
     .line 233
-    :cond_88
-    const v2, 0x10ffff
+    :cond_87
+    const v1, 0x10ffff
 
-    if-le p1, v2, :cond_90
+    if-le p1, v1, :cond_8f
 
     .line 234
     invoke-static {p1}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->illegalSurrogate(I)V
 
     .line 236
-    :cond_90
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
+    :cond_8f
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
 
-    add-int/lit8 v1, v0, 0x1
+    add-int/lit8 v2, v0, 0x1
 
-    .end local v0    # "ptr":I
-    .restart local v1    # "ptr":I
     shr-int/lit8 v3, p1, 0x12
 
     or-int/lit16 v3, v3, 0xf0
 
     int-to-byte v3, v3
 
-    aput-byte v3, v2, v0
+    aput-byte v3, v1, v0
 
     .line 237
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
 
-    add-int/lit8 v0, v1, 0x1
+    add-int/lit8 v1, v2, 0x1
 
-    .end local v1    # "ptr":I
-    .restart local v0    # "ptr":I
     shr-int/lit8 v3, p1, 0xc
 
     and-int/lit8 v3, v3, 0x3f
@@ -738,15 +669,13 @@
 
     int-to-byte v3, v3
 
-    aput-byte v3, v2, v1
+    aput-byte v3, v0, v2
 
     .line 238
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
 
-    add-int/lit8 v1, v0, 0x1
+    add-int/lit8 v2, v1, 0x1
 
-    .end local v0    # "ptr":I
-    .restart local v1    # "ptr":I
     shr-int/lit8 v3, p1, 0x6
 
     and-int/lit8 v3, v3, 0x3f
@@ -755,34 +684,26 @@
 
     int-to-byte v3, v3
 
-    aput-byte v3, v2, v0
+    aput-byte v3, v0, v1
 
     .line 239
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
 
-    add-int/lit8 v0, v1, 0x1
+    add-int/lit8 v0, v2, 0x1
 
-    .end local v1    # "ptr":I
-    .restart local v0    # "ptr":I
     and-int/lit8 v3, p1, 0x3f
 
     or-int/lit16 v3, v3, 0x80
 
     int-to-byte v3, v3
 
-    aput-byte v3, v2, v1
+    aput-byte v3, v1, v2
 
     goto :goto_5b
 .end method
 
 .method public write(Ljava/lang/String;)V
     .registers 4
-    .param p1, "str"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 248
@@ -799,475 +720,366 @@
 .end method
 
 .method public write(Ljava/lang/String;II)V
-    .registers 16
-    .param p1, "str"    # Ljava/lang/String;
-    .param p2, "off"    # I
-    .param p3, "len"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 15
 
     .prologue
-    const/16 v11, 0x80
+    const/16 v9, 0x80
+
+    const/4 v1, 0x0
 
     .line 254
-    const/4 v9, 0x2
+    const/4 v0, 0x2
 
-    if-ge p3, v9, :cond_10
+    if-ge p3, v0, :cond_11
 
     .line 255
-    const/4 v9, 0x1
+    const/4 v0, 0x1
 
-    if-ne p3, v9, :cond_f
+    if-ne p3, v0, :cond_10
 
     .line 256
     invoke-virtual {p1, p2}, Ljava/lang/String;->charAt(I)C
 
-    move-result v9
+    move-result v0
 
-    invoke-virtual {p0, v9}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->write(I)V
+    invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->write(I)V
 
     .line 345
-    :cond_f
-    :goto_f
+    :cond_10
+    :goto_10
     return-void
 
     .line 262
-    :cond_10
-    iget v9, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_surrogate:I
+    :cond_11
+    iget v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_surrogate:I
 
-    if-lez v9, :cond_24
+    if-lez v0, :cond_25
 
     .line 263
-    add-int/lit8 v3, p2, 0x1
+    add-int/lit8 v0, p2, 0x1
 
-    .end local p2    # "off":I
-    .local v3, "off":I
     invoke-virtual {p1, p2}, Ljava/lang/String;->charAt(I)C
 
-    move-result v8
+    move-result v2
 
     .line 264
-    .local v8, "second":C
     add-int/lit8 p3, p3, -0x1
 
     .line 265
-    invoke-virtual {p0, v8}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->convertSurrogate(I)I
+    invoke-virtual {p0, v2}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->convertSurrogate(I)I
 
-    move-result v9
+    move-result v2
 
-    invoke-virtual {p0, v9}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->write(I)V
+    invoke-virtual {p0, v2}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->write(I)V
 
-    move p2, v3
+    move p2, v0
 
     .line 269
-    .end local v3    # "off":I
-    .end local v8    # "second":C
-    .restart local p2    # "off":I
-    :cond_24
-    iget v6, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
+    :cond_25
+    iget v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
 
     .line 270
-    .local v6, "outPtr":I
-    iget-object v4, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
+    iget-object v5, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
 
     .line 271
-    .local v4, "outBuf":[B
-    iget v5, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBufferEnd:I
+    iget v6, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBufferEnd:I
 
     .line 274
-    .local v5, "outBufLast":I
-    add-int/2addr p3, p2
+    add-int v7, p3, p2
 
-    move v3, p2
+    move v2, p2
 
     .line 277
-    .end local p2    # "off":I
-    .restart local v3    # "off":I
-    :goto_2c
-    if-ge v3, p3, :cond_fb
+    :goto_2e
+    if-ge v2, v7, :cond_b6
 
     .line 281
-    if-lt v6, v5, :cond_37
+    if-lt v0, v6, :cond_38
 
     .line 282
-    iget-object v9, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_out:Ljava/io/OutputStream;
+    iget-object v3, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_out:Ljava/io/OutputStream;
 
-    const/4 v10, 0x0
+    invoke-virtual {v3, v5, v1, v0}, Ljava/io/OutputStream;->write([BII)V
 
-    invoke-virtual {v9, v4, v10, v6}, Ljava/io/OutputStream;->write([BII)V
-
-    .line 283
-    const/4 v6, 0x0
+    move v0, v1
 
     .line 286
-    :cond_37
-    add-int/lit8 p2, v3, 0x1
+    :cond_38
+    add-int/lit8 v3, v2, 0x1
 
-    .end local v3    # "off":I
-    .restart local p2    # "off":I
-    invoke-virtual {p1, v3}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p1, v2}, Ljava/lang/String;->charAt(I)C
 
-    move-result v0
+    move-result v2
 
     .line 288
-    .local v0, "c":I
-    if-ge v0, v11, :cond_f7
+    if-ge v2, v9, :cond_fc
 
     .line 289
-    add-int/lit8 v7, v6, 0x1
+    add-int/lit8 v4, v0, 0x1
 
-    .end local v6    # "outPtr":I
-    .local v7, "outPtr":I
-    int-to-byte v9, v0
+    int-to-byte v2, v2
 
-    aput-byte v9, v4, v6
+    aput-byte v2, v5, v0
 
     .line 291
-    sub-int v1, p3, p2
+    sub-int v2, v7, v3
 
     .line 292
-    .local v1, "maxInCount":I
-    sub-int v2, v5, v7
+    sub-int v0, v6, v4
 
     .line 294
-    .local v2, "maxOutCount":I
-    if-le v1, v2, :cond_4b
-
-    .line 295
-    move v1, v2
+    if-le v2, v0, :cond_f9
 
     .line 297
-    :cond_4b
-    add-int/2addr v1, p2
+    :goto_4b
+    add-int v8, v0, v3
 
-    move v3, p2
+    move v2, v4
+
+    move v0, v3
 
     .line 300
-    .end local p2    # "off":I
-    .restart local v3    # "off":I
-    :goto_4d
-    if-lt v3, v1, :cond_51
+    :goto_4f
+    if-lt v0, v8, :cond_55
 
-    move v6, v7
+    move v10, v2
+
+    move v2, v0
+
+    move v0, v10
 
     .line 301
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    goto :goto_2c
+    goto :goto_2e
 
     .line 303
-    .end local v6    # "outPtr":I
-    .restart local v7    # "outPtr":I
-    :cond_51
-    add-int/lit8 p2, v3, 0x1
+    :cond_55
+    add-int/lit8 v3, v0, 0x1
 
-    .end local v3    # "off":I
-    .restart local p2    # "off":I
-    invoke-virtual {p1, v3}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
     .line 304
-    if-lt v0, v11, :cond_74
+    if-lt v0, v9, :cond_78
 
-    move v3, p2
+    move v10, v0
+
+    move v0, v2
+
+    move v2, v3
+
+    move v3, v10
 
     .line 312
-    .end local v1    # "maxInCount":I
-    .end local v2    # "maxOutCount":I
-    .end local p2    # "off":I
-    .restart local v3    # "off":I
-    :goto_5a
-    const/16 v9, 0x800
+    :goto_61
+    const/16 v4, 0x800
 
-    if-ge v0, v9, :cond_7c
+    if-ge v3, v4, :cond_80
 
     .line 313
-    add-int/lit8 v6, v7, 0x1
+    add-int/lit8 v4, v0, 0x1
 
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    shr-int/lit8 v9, v0, 0x6
+    shr-int/lit8 v8, v3, 0x6
 
-    or-int/lit16 v9, v9, 0xc0
+    or-int/lit16 v8, v8, 0xc0
 
-    int-to-byte v9, v9
+    int-to-byte v8, v8
 
-    aput-byte v9, v4, v7
+    aput-byte v8, v5, v0
 
     .line 314
-    add-int/lit8 v7, v6, 0x1
+    add-int/lit8 v0, v4, 0x1
 
-    .end local v6    # "outPtr":I
-    .restart local v7    # "outPtr":I
-    and-int/lit8 v9, v0, 0x3f
+    and-int/lit8 v3, v3, 0x3f
 
-    or-int/lit16 v9, v9, 0x80
+    or-int/lit16 v3, v3, 0x80
 
-    int-to-byte v9, v9
+    int-to-byte v3, v3
 
-    aput-byte v9, v4, v6
+    aput-byte v3, v5, v4
 
-    move v6, v7
-
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    move p2, v3
-
-    .end local v3    # "off":I
-    .restart local p2    # "off":I
-    :goto_72
-    move v3, p2
-
-    .line 343
-    .end local p2    # "off":I
-    .restart local v3    # "off":I
-    goto :goto_2c
+    goto :goto_2e
 
     .line 307
-    .end local v3    # "off":I
-    .end local v6    # "outPtr":I
-    .restart local v1    # "maxInCount":I
-    .restart local v2    # "maxOutCount":I
-    .restart local v7    # "outPtr":I
-    .restart local p2    # "off":I
-    :cond_74
-    add-int/lit8 v6, v7, 0x1
+    :cond_78
+    add-int/lit8 v4, v2, 0x1
 
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    int-to-byte v9, v0
+    int-to-byte v0, v0
 
-    aput-byte v9, v4, v7
+    aput-byte v0, v5, v2
 
-    move v7, v6
+    move v2, v4
 
-    .end local v6    # "outPtr":I
-    .restart local v7    # "outPtr":I
-    move v3, p2
+    move v0, v3
 
-    .end local p2    # "off":I
-    .restart local v3    # "off":I
-    goto :goto_4d
+    goto :goto_4f
 
     .line 317
-    .end local v1    # "maxInCount":I
-    .end local v2    # "maxOutCount":I
-    :cond_7c
-    const v9, 0xd800
+    :cond_80
+    const v4, 0xd800
 
-    if-lt v0, v9, :cond_86
+    if-lt v3, v4, :cond_8a
 
-    const v9, 0xdfff
+    const v4, 0xdfff
 
-    if-le v0, v9, :cond_a4
+    if-le v3, v4, :cond_a8
 
     .line 318
-    :cond_86
-    add-int/lit8 v6, v7, 0x1
+    :cond_8a
+    add-int/lit8 v4, v0, 0x1
 
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    shr-int/lit8 v9, v0, 0xc
+    shr-int/lit8 v8, v3, 0xc
 
-    or-int/lit16 v9, v9, 0xe0
+    or-int/lit16 v8, v8, 0xe0
 
-    int-to-byte v9, v9
+    int-to-byte v8, v8
 
-    aput-byte v9, v4, v7
+    aput-byte v8, v5, v0
 
     .line 319
-    add-int/lit8 v7, v6, 0x1
+    add-int/lit8 v8, v4, 0x1
 
-    .end local v6    # "outPtr":I
-    .restart local v7    # "outPtr":I
-    shr-int/lit8 v9, v0, 0x6
+    shr-int/lit8 v0, v3, 0x6
 
-    and-int/lit8 v9, v9, 0x3f
+    and-int/lit8 v0, v0, 0x3f
 
-    or-int/lit16 v9, v9, 0x80
+    or-int/lit16 v0, v0, 0x80
 
-    int-to-byte v9, v9
+    int-to-byte v0, v0
 
-    aput-byte v9, v4, v6
+    aput-byte v0, v5, v4
 
     .line 320
-    add-int/lit8 v6, v7, 0x1
+    add-int/lit8 v0, v8, 0x1
 
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    and-int/lit8 v9, v0, 0x3f
+    and-int/lit8 v3, v3, 0x3f
 
-    or-int/lit16 v9, v9, 0x80
+    or-int/lit16 v3, v3, 0x80
 
-    int-to-byte v9, v9
+    int-to-byte v3, v3
 
-    aput-byte v9, v4, v7
+    aput-byte v3, v5, v8
 
-    goto :goto_2c
+    goto :goto_2e
 
     .line 324
-    .end local v6    # "outPtr":I
-    .restart local v7    # "outPtr":I
-    :cond_a4
-    const v9, 0xdbff
+    :cond_a8
+    const v4, 0xdbff
 
-    if-le v0, v9, :cond_ae
+    if-le v3, v4, :cond_b2
 
     .line 325
-    iput v7, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
 
     .line 326
-    invoke-static {v0}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->illegalSurrogate(I)V
+    invoke-static {v3}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->illegalSurrogate(I)V
 
     .line 328
-    :cond_ae
-    iput v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_surrogate:I
+    :cond_b2
+    iput v3, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_surrogate:I
 
     .line 330
-    if-lt v3, p3, :cond_b8
-
-    move v6, v7
-
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    move p2, v3
+    if-lt v2, v7, :cond_ba
 
     .line 344
-    .end local v0    # "c":I
-    .end local v3    # "off":I
-    .restart local p2    # "off":I
-    :goto_b4
-    iput v6, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
+    :cond_b6
+    iput v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
 
-    goto/16 :goto_f
+    goto/16 :goto_10
 
     .line 333
-    .end local v6    # "outPtr":I
-    .end local p2    # "off":I
-    .restart local v0    # "c":I
-    .restart local v3    # "off":I
-    .restart local v7    # "outPtr":I
-    :cond_b8
-    add-int/lit8 p2, v3, 0x1
+    :cond_ba
+    add-int/lit8 v3, v2, 0x1
 
-    .end local v3    # "off":I
-    .restart local p2    # "off":I
-    invoke-virtual {p1, v3}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p1, v2}, Ljava/lang/String;->charAt(I)C
 
-    move-result v9
+    move-result v2
 
-    invoke-virtual {p0, v9}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->convertSurrogate(I)I
+    invoke-virtual {p0, v2}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->convertSurrogate(I)I
 
-    move-result v0
+    move-result v2
 
     .line 334
-    const v9, 0x10ffff
+    const v4, 0x10ffff
 
-    if-le v0, v9, :cond_cc
+    if-le v2, v4, :cond_ce
 
     .line 335
-    iput v7, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
 
     .line 336
-    invoke-static {v0}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->illegalSurrogate(I)V
+    invoke-static {v2}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->illegalSurrogate(I)V
 
     .line 338
-    :cond_cc
-    add-int/lit8 v6, v7, 0x1
+    :cond_ce
+    add-int/lit8 v4, v0, 0x1
 
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    shr-int/lit8 v9, v0, 0x12
+    shr-int/lit8 v8, v2, 0x12
 
-    or-int/lit16 v9, v9, 0xf0
+    or-int/lit16 v8, v8, 0xf0
 
-    int-to-byte v9, v9
+    int-to-byte v8, v8
 
-    aput-byte v9, v4, v7
+    aput-byte v8, v5, v0
 
     .line 339
-    add-int/lit8 v7, v6, 0x1
+    add-int/lit8 v0, v4, 0x1
 
-    .end local v6    # "outPtr":I
-    .restart local v7    # "outPtr":I
-    shr-int/lit8 v9, v0, 0xc
+    shr-int/lit8 v8, v2, 0xc
 
-    and-int/lit8 v9, v9, 0x3f
+    and-int/lit8 v8, v8, 0x3f
 
-    or-int/lit16 v9, v9, 0x80
+    or-int/lit16 v8, v8, 0x80
 
-    int-to-byte v9, v9
+    int-to-byte v8, v8
 
-    aput-byte v9, v4, v6
+    aput-byte v8, v5, v4
 
     .line 340
-    add-int/lit8 v6, v7, 0x1
+    add-int/lit8 v4, v0, 0x1
 
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    shr-int/lit8 v9, v0, 0x6
+    shr-int/lit8 v8, v2, 0x6
 
-    and-int/lit8 v9, v9, 0x3f
+    and-int/lit8 v8, v8, 0x3f
 
-    or-int/lit16 v9, v9, 0x80
+    or-int/lit16 v8, v8, 0x80
 
-    int-to-byte v9, v9
+    int-to-byte v8, v8
 
-    aput-byte v9, v4, v7
+    aput-byte v8, v5, v0
 
     .line 341
-    add-int/lit8 v7, v6, 0x1
+    add-int/lit8 v0, v4, 0x1
 
-    .end local v6    # "outPtr":I
-    .restart local v7    # "outPtr":I
-    and-int/lit8 v9, v0, 0x3f
+    and-int/lit8 v2, v2, 0x3f
 
-    or-int/lit16 v9, v9, 0x80
+    or-int/lit16 v2, v2, 0x80
 
-    int-to-byte v9, v9
+    int-to-byte v2, v2
 
-    aput-byte v9, v4, v6
+    aput-byte v2, v5, v4
 
-    move v6, v7
+    move v2, v3
 
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    goto/16 :goto_72
+    goto/16 :goto_2e
 
-    :cond_f7
-    move v7, v6
+    :cond_f9
+    move v0, v2
 
-    .end local v6    # "outPtr":I
-    .restart local v7    # "outPtr":I
-    move v3, p2
+    goto/16 :goto_4b
 
-    .end local p2    # "off":I
-    .restart local v3    # "off":I
-    goto/16 :goto_5a
+    :cond_fc
+    move v10, v2
 
-    .end local v0    # "c":I
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    :cond_fb
-    move p2, v3
+    move v2, v3
 
-    .end local v3    # "off":I
-    .restart local p2    # "off":I
-    goto :goto_b4
+    move v3, v10
+
+    goto/16 :goto_61
 .end method
 
 .method public write([C)V
     .registers 4
-    .param p1, "cbuf"    # [C
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 99
@@ -1282,453 +1094,350 @@
 .end method
 
 .method public write([CII)V
-    .registers 16
-    .param p1, "cbuf"    # [C
-    .param p2, "off"    # I
-    .param p3, "len"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 15
 
     .prologue
-    const/16 v11, 0x80
+    const/16 v9, 0x80
+
+    const/4 v1, 0x0
 
     .line 106
-    const/4 v9, 0x2
+    const/4 v0, 0x2
 
-    if-ge p3, v9, :cond_e
+    if-ge p3, v0, :cond_f
 
     .line 107
-    const/4 v9, 0x1
+    const/4 v0, 0x1
 
-    if-ne p3, v9, :cond_d
+    if-ne p3, v0, :cond_e
 
     .line 108
-    aget-char v9, p1, p2
+    aget-char v0, p1, p2
 
-    invoke-virtual {p0, v9}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->write(I)V
+    invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->write(I)V
 
     .line 197
-    :cond_d
-    :goto_d
+    :cond_e
+    :goto_e
     return-void
 
     .line 114
-    :cond_e
-    iget v9, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_surrogate:I
+    :cond_f
+    iget v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_surrogate:I
 
-    if-lez v9, :cond_20
+    if-lez v0, :cond_21
 
     .line 115
-    add-int/lit8 v3, p2, 0x1
+    add-int/lit8 v0, p2, 0x1
 
-    .end local p2    # "off":I
-    .local v3, "off":I
-    aget-char v8, p1, p2
+    aget-char v2, p1, p2
 
     .line 116
-    .local v8, "second":C
     add-int/lit8 p3, p3, -0x1
 
     .line 117
-    invoke-virtual {p0, v8}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->convertSurrogate(I)I
+    invoke-virtual {p0, v2}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->convertSurrogate(I)I
 
-    move-result v9
+    move-result v2
 
-    invoke-virtual {p0, v9}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->write(I)V
+    invoke-virtual {p0, v2}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->write(I)V
 
-    move p2, v3
+    move p2, v0
 
     .line 121
-    .end local v3    # "off":I
-    .end local v8    # "second":C
-    .restart local p2    # "off":I
-    :cond_20
-    iget v6, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
+    :cond_21
+    iget v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
 
     .line 122
-    .local v6, "outPtr":I
-    iget-object v4, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
+    iget-object v5, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBuffer:[B
 
     .line 123
-    .local v4, "outBuf":[B
-    iget v5, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBufferEnd:I
+    iget v6, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outBufferEnd:I
 
     .line 126
-    .local v5, "outBufLast":I
-    add-int/2addr p3, p2
+    add-int v7, p3, p2
 
-    move v3, p2
+    move v2, p2
 
     .line 129
-    .end local p2    # "off":I
-    .restart local v3    # "off":I
-    :goto_28
-    if-ge v3, p3, :cond_f1
+    :goto_2a
+    if-ge v2, v7, :cond_ae
 
     .line 133
-    if-lt v6, v5, :cond_33
+    if-lt v0, v6, :cond_34
 
     .line 134
-    iget-object v9, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_out:Ljava/io/OutputStream;
+    iget-object v3, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_out:Ljava/io/OutputStream;
 
-    const/4 v10, 0x0
+    invoke-virtual {v3, v5, v1, v0}, Ljava/io/OutputStream;->write([BII)V
 
-    invoke-virtual {v9, v4, v10, v6}, Ljava/io/OutputStream;->write([BII)V
-
-    .line 135
-    const/4 v6, 0x0
+    move v0, v1
 
     .line 138
-    :cond_33
-    add-int/lit8 p2, v3, 0x1
+    :cond_34
+    add-int/lit8 v3, v2, 0x1
 
-    .end local v3    # "off":I
-    .restart local p2    # "off":I
-    aget-char v0, p1, v3
+    aget-char v2, p1, v2
 
     .line 140
-    .local v0, "c":I
-    if-ge v0, v11, :cond_ed
+    if-ge v2, v9, :cond_f2
 
     .line 141
-    add-int/lit8 v7, v6, 0x1
+    add-int/lit8 v4, v0, 0x1
 
-    .end local v6    # "outPtr":I
-    .local v7, "outPtr":I
-    int-to-byte v9, v0
+    int-to-byte v2, v2
 
-    aput-byte v9, v4, v6
+    aput-byte v2, v5, v0
 
     .line 143
-    sub-int v1, p3, p2
+    sub-int v2, v7, v3
 
     .line 144
-    .local v1, "maxInCount":I
-    sub-int v2, v5, v7
+    sub-int v0, v6, v4
 
     .line 146
-    .local v2, "maxOutCount":I
-    if-le v1, v2, :cond_45
-
-    .line 147
-    move v1, v2
+    if-le v2, v0, :cond_ef
 
     .line 149
-    :cond_45
-    add-int/2addr v1, p2
+    :goto_45
+    add-int v8, v0, v3
 
-    move v3, p2
+    move v2, v4
+
+    move v0, v3
 
     .line 152
-    .end local p2    # "off":I
-    .restart local v3    # "off":I
-    :goto_47
-    if-lt v3, v1, :cond_4b
+    :goto_49
+    if-lt v0, v8, :cond_4f
 
-    move v6, v7
+    move v10, v2
+
+    move v2, v0
+
+    move v0, v10
 
     .line 153
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    goto :goto_28
+    goto :goto_2a
 
     .line 155
-    .end local v6    # "outPtr":I
-    .restart local v7    # "outPtr":I
-    :cond_4b
-    add-int/lit8 p2, v3, 0x1
+    :cond_4f
+    add-int/lit8 v3, v0, 0x1
 
-    .end local v3    # "off":I
-    .restart local p2    # "off":I
-    aget-char v0, p1, v3
+    aget-char v0, p1, v0
 
     .line 156
-    if-lt v0, v11, :cond_6c
+    if-lt v0, v9, :cond_70
 
-    move v3, p2
+    move v10, v0
+
+    move v0, v2
+
+    move v2, v3
+
+    move v3, v10
 
     .line 164
-    .end local v1    # "maxInCount":I
-    .end local v2    # "maxOutCount":I
-    .end local p2    # "off":I
-    .restart local v3    # "off":I
-    :goto_52
-    const/16 v9, 0x800
+    :goto_59
+    const/16 v4, 0x800
 
-    if-ge v0, v9, :cond_74
+    if-ge v3, v4, :cond_78
 
     .line 165
-    add-int/lit8 v6, v7, 0x1
+    add-int/lit8 v4, v0, 0x1
 
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    shr-int/lit8 v9, v0, 0x6
+    shr-int/lit8 v8, v3, 0x6
 
-    or-int/lit16 v9, v9, 0xc0
+    or-int/lit16 v8, v8, 0xc0
 
-    int-to-byte v9, v9
+    int-to-byte v8, v8
 
-    aput-byte v9, v4, v7
+    aput-byte v8, v5, v0
 
     .line 166
-    add-int/lit8 v7, v6, 0x1
+    add-int/lit8 v0, v4, 0x1
 
-    .end local v6    # "outPtr":I
-    .restart local v7    # "outPtr":I
-    and-int/lit8 v9, v0, 0x3f
+    and-int/lit8 v3, v3, 0x3f
 
-    or-int/lit16 v9, v9, 0x80
+    or-int/lit16 v3, v3, 0x80
 
-    int-to-byte v9, v9
+    int-to-byte v3, v3
 
-    aput-byte v9, v4, v6
+    aput-byte v3, v5, v4
 
-    move v6, v7
-
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    move p2, v3
-
-    .end local v3    # "off":I
-    .restart local p2    # "off":I
-    :goto_6a
-    move v3, p2
-
-    .line 195
-    .end local p2    # "off":I
-    .restart local v3    # "off":I
-    goto :goto_28
+    goto :goto_2a
 
     .line 159
-    .end local v3    # "off":I
-    .end local v6    # "outPtr":I
-    .restart local v1    # "maxInCount":I
-    .restart local v2    # "maxOutCount":I
-    .restart local v7    # "outPtr":I
-    .restart local p2    # "off":I
-    :cond_6c
-    add-int/lit8 v6, v7, 0x1
+    :cond_70
+    add-int/lit8 v4, v2, 0x1
 
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    int-to-byte v9, v0
+    int-to-byte v0, v0
 
-    aput-byte v9, v4, v7
+    aput-byte v0, v5, v2
 
-    move v7, v6
+    move v2, v4
 
-    .end local v6    # "outPtr":I
-    .restart local v7    # "outPtr":I
-    move v3, p2
+    move v0, v3
 
-    .end local p2    # "off":I
-    .restart local v3    # "off":I
-    goto :goto_47
+    goto :goto_49
 
     .line 169
-    .end local v1    # "maxInCount":I
-    .end local v2    # "maxOutCount":I
-    :cond_74
-    const v9, 0xd800
+    :cond_78
+    const v4, 0xd800
 
-    if-lt v0, v9, :cond_7e
+    if-lt v3, v4, :cond_82
 
-    const v9, 0xdfff
+    const v4, 0xdfff
 
-    if-le v0, v9, :cond_9c
+    if-le v3, v4, :cond_a0
 
     .line 170
-    :cond_7e
-    add-int/lit8 v6, v7, 0x1
+    :cond_82
+    add-int/lit8 v4, v0, 0x1
 
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    shr-int/lit8 v9, v0, 0xc
+    shr-int/lit8 v8, v3, 0xc
 
-    or-int/lit16 v9, v9, 0xe0
+    or-int/lit16 v8, v8, 0xe0
 
-    int-to-byte v9, v9
+    int-to-byte v8, v8
 
-    aput-byte v9, v4, v7
+    aput-byte v8, v5, v0
 
     .line 171
-    add-int/lit8 v7, v6, 0x1
+    add-int/lit8 v8, v4, 0x1
 
-    .end local v6    # "outPtr":I
-    .restart local v7    # "outPtr":I
-    shr-int/lit8 v9, v0, 0x6
+    shr-int/lit8 v0, v3, 0x6
 
-    and-int/lit8 v9, v9, 0x3f
+    and-int/lit8 v0, v0, 0x3f
 
-    or-int/lit16 v9, v9, 0x80
+    or-int/lit16 v0, v0, 0x80
 
-    int-to-byte v9, v9
+    int-to-byte v0, v0
 
-    aput-byte v9, v4, v6
+    aput-byte v0, v5, v4
 
     .line 172
-    add-int/lit8 v6, v7, 0x1
+    add-int/lit8 v0, v8, 0x1
 
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    and-int/lit8 v9, v0, 0x3f
+    and-int/lit8 v3, v3, 0x3f
 
-    or-int/lit16 v9, v9, 0x80
+    or-int/lit16 v3, v3, 0x80
 
-    int-to-byte v9, v9
+    int-to-byte v3, v3
 
-    aput-byte v9, v4, v7
+    aput-byte v3, v5, v8
 
-    goto :goto_28
+    goto :goto_2a
 
     .line 176
-    .end local v6    # "outPtr":I
-    .restart local v7    # "outPtr":I
-    :cond_9c
-    const v9, 0xdbff
+    :cond_a0
+    const v4, 0xdbff
 
-    if-le v0, v9, :cond_a6
+    if-le v3, v4, :cond_aa
 
     .line 177
-    iput v7, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
 
     .line 178
-    invoke-static {v0}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->illegalSurrogate(I)V
+    invoke-static {v3}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->illegalSurrogate(I)V
 
     .line 180
-    :cond_a6
-    iput v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_surrogate:I
+    :cond_aa
+    iput v3, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_surrogate:I
 
     .line 182
-    if-lt v3, p3, :cond_b0
-
-    move v6, v7
-
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    move p2, v3
+    if-lt v2, v7, :cond_b2
 
     .line 196
-    .end local v0    # "c":I
-    .end local v3    # "off":I
-    .restart local p2    # "off":I
-    :goto_ac
-    iput v6, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
+    :cond_ae
+    iput v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
 
-    goto/16 :goto_d
+    goto/16 :goto_e
 
     .line 185
-    .end local v6    # "outPtr":I
-    .end local p2    # "off":I
-    .restart local v0    # "c":I
-    .restart local v3    # "off":I
-    .restart local v7    # "outPtr":I
-    :cond_b0
-    add-int/lit8 p2, v3, 0x1
+    :cond_b2
+    add-int/lit8 v3, v2, 0x1
 
-    .end local v3    # "off":I
-    .restart local p2    # "off":I
-    aget-char v9, p1, v3
+    aget-char v2, p1, v2
 
-    invoke-virtual {p0, v9}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->convertSurrogate(I)I
+    invoke-virtual {p0, v2}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->convertSurrogate(I)I
 
-    move-result v0
+    move-result v2
 
     .line 186
-    const v9, 0x10ffff
+    const v4, 0x10ffff
 
-    if-le v0, v9, :cond_c2
+    if-le v2, v4, :cond_c4
 
     .line 187
-    iput v7, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/io/UTF8Writer;->_outPtr:I
 
     .line 188
-    invoke-static {v0}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->illegalSurrogate(I)V
+    invoke-static {v2}, Lcom/fasterxml/jackson/core/io/UTF8Writer;->illegalSurrogate(I)V
 
     .line 190
-    :cond_c2
-    add-int/lit8 v6, v7, 0x1
+    :cond_c4
+    add-int/lit8 v4, v0, 0x1
 
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    shr-int/lit8 v9, v0, 0x12
+    shr-int/lit8 v8, v2, 0x12
 
-    or-int/lit16 v9, v9, 0xf0
+    or-int/lit16 v8, v8, 0xf0
 
-    int-to-byte v9, v9
+    int-to-byte v8, v8
 
-    aput-byte v9, v4, v7
+    aput-byte v8, v5, v0
 
     .line 191
-    add-int/lit8 v7, v6, 0x1
+    add-int/lit8 v0, v4, 0x1
 
-    .end local v6    # "outPtr":I
-    .restart local v7    # "outPtr":I
-    shr-int/lit8 v9, v0, 0xc
+    shr-int/lit8 v8, v2, 0xc
 
-    and-int/lit8 v9, v9, 0x3f
+    and-int/lit8 v8, v8, 0x3f
 
-    or-int/lit16 v9, v9, 0x80
+    or-int/lit16 v8, v8, 0x80
 
-    int-to-byte v9, v9
+    int-to-byte v8, v8
 
-    aput-byte v9, v4, v6
+    aput-byte v8, v5, v4
 
     .line 192
-    add-int/lit8 v6, v7, 0x1
+    add-int/lit8 v4, v0, 0x1
 
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    shr-int/lit8 v9, v0, 0x6
+    shr-int/lit8 v8, v2, 0x6
 
-    and-int/lit8 v9, v9, 0x3f
+    and-int/lit8 v8, v8, 0x3f
 
-    or-int/lit16 v9, v9, 0x80
+    or-int/lit16 v8, v8, 0x80
 
-    int-to-byte v9, v9
+    int-to-byte v8, v8
 
-    aput-byte v9, v4, v7
+    aput-byte v8, v5, v0
 
     .line 193
-    add-int/lit8 v7, v6, 0x1
+    add-int/lit8 v0, v4, 0x1
 
-    .end local v6    # "outPtr":I
-    .restart local v7    # "outPtr":I
-    and-int/lit8 v9, v0, 0x3f
+    and-int/lit8 v2, v2, 0x3f
 
-    or-int/lit16 v9, v9, 0x80
+    or-int/lit16 v2, v2, 0x80
 
-    int-to-byte v9, v9
+    int-to-byte v2, v2
 
-    aput-byte v9, v4, v6
+    aput-byte v2, v5, v4
 
-    move v6, v7
+    move v2, v3
 
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    goto/16 :goto_6a
+    goto/16 :goto_2a
 
-    :cond_ed
-    move v7, v6
+    :cond_ef
+    move v0, v2
 
-    .end local v6    # "outPtr":I
-    .restart local v7    # "outPtr":I
-    move v3, p2
+    goto/16 :goto_45
 
-    .end local p2    # "off":I
-    .restart local v3    # "off":I
-    goto/16 :goto_52
+    :cond_f2
+    move v10, v2
 
-    .end local v0    # "c":I
-    .end local v7    # "outPtr":I
-    .restart local v6    # "outPtr":I
-    :cond_f1
-    move p2, v3
+    move v2, v3
 
-    .end local v3    # "off":I
-    .restart local p2    # "off":I
-    goto :goto_ac
+    move v3, v10
+
+    goto/16 :goto_59
 .end method

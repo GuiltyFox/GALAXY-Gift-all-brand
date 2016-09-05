@@ -5,25 +5,8 @@
 .implements Lcom/google/android/gms/analytics/internal/zzac;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/gms/analytics/internal/zzac;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x409
-    name = "zza"
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/android/gms/analytics/internal/zzac$zza$zza;
-    }
-.end annotation
-
-
 # direct methods
-.method public static zzaf(Landroid/os/IBinder;)Lcom/google/android/gms/analytics/internal/zzac;
+.method public static a(Landroid/os/IBinder;)Lcom/google/android/gms/analytics/internal/zzac;
     .registers 3
 
     if-nez p0, :cond_4
@@ -62,17 +45,7 @@
 # virtual methods
 .method public onTransact(ILandroid/os/Parcel;Landroid/os/Parcel;I)Z
     .registers 12
-    .param p1, "code"    # I
-    .param p2, "data"    # Landroid/os/Parcel;
-    .param p3, "reply"    # Landroid/os/Parcel;
-    .param p4, "flags"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
 
-    .prologue
     const/4 v6, 0x1
 
     sparse-switch p1, :sswitch_data_5a
@@ -126,7 +99,7 @@
 
     move-object v0, p0
 
-    invoke-virtual/range {v0 .. v5}, Lcom/google/android/gms/analytics/internal/zzac$zza;->zza(Ljava/util/Map;JLjava/lang/String;Ljava/util/List;)V
+    invoke-virtual/range {v0 .. v5}, Lcom/google/android/gms/analytics/internal/zzac$zza;->a(Ljava/util/Map;JLjava/lang/String;Ljava/util/List;)V
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
@@ -139,7 +112,7 @@
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzac$zza;->zziK()V
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzac$zza;->a()V
 
     invoke-virtual {p3}, Landroid/os/Parcel;->writeNoException()V
 
@@ -152,7 +125,7 @@
 
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->enforceInterface(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzac$zza;->getVersion()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzac$zza;->b()Ljava/lang/String;
 
     move-result-object v0
 

@@ -47,7 +47,6 @@
 # virtual methods
 .method public addValueInstantiator(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;)Lcom/fasterxml/jackson/databind/module/SimpleValueInstantiators;
     .registers 5
-    .param p2, "inst"    # Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -61,7 +60,6 @@
 
     .prologue
     .line 37
-    .local p1, "forType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleValueInstantiators;->_classMappings:Ljava/util/HashMap;
 
     new-instance v1, Lcom/fasterxml/jackson/databind/type/ClassKey;
@@ -75,38 +73,32 @@
 .end method
 
 .method public findValueInstantiator(Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;)Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;
-    .registers 8
-    .param p1, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p2, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
-    .param p3, "defaultInstantiator"    # Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;
+    .registers 7
 
     .prologue
     .line 45
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/module/SimpleValueInstantiators;->_classMappings:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleValueInstantiators;->_classMappings:Ljava/util/HashMap;
 
-    new-instance v2, Lcom/fasterxml/jackson/databind/type/ClassKey;
+    new-instance v1, Lcom/fasterxml/jackson/databind/type/ClassKey;
 
     invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/BeanDescription;->getBeanClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-direct {v2, v3}, Lcom/fasterxml/jackson/databind/type/ClassKey;-><init>(Ljava/lang/Class;)V
+    invoke-direct {v1, v2}, Lcom/fasterxml/jackson/databind/type/ClassKey;-><init>(Ljava/lang/Class;)V
 
-    invoke-virtual {v1, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;
 
     .line 46
-    .local v0, "inst":Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;
     if-nez v0, :cond_14
 
-    .end local p3    # "defaultInstantiator":Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;
     :goto_13
     return-object p3
 
-    .restart local p3    # "defaultInstantiator":Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;
     :cond_14
     move-object p3, v0
 

@@ -19,13 +19,12 @@
 
 
 # virtual methods
-.method public addListener(Lcom/bumptech/glide/manager/LifecycleListener;)V
+.method public a(Lcom/bumptech/glide/manager/LifecycleListener;)V
     .registers 2
-    .param p1, "listener"    # Lcom/bumptech/glide/manager/LifecycleListener;
 
     .prologue
     .line 15
-    invoke-interface {p1}, Lcom/bumptech/glide/manager/LifecycleListener;->onStart()V
+    invoke-interface {p1}, Lcom/bumptech/glide/manager/LifecycleListener;->d()V
 
     .line 16
     return-void

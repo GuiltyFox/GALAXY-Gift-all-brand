@@ -10,7 +10,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/core/JsonParser;)V
     .registers 2
-    .param p1, "d"    # Lcom/fasterxml/jackson/core/JsonParser;
 
     .prologue
     .line 24
@@ -55,7 +54,6 @@
 
 .method public canUseSchema(Lcom/fasterxml/jackson/core/FormatSchema;)Z
     .registers 3
-    .param p1, "schema"    # Lcom/fasterxml/jackson/core/FormatSchema;
 
     .prologue
     .line 60
@@ -82,11 +80,6 @@
 
 .method public close()V
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 78
@@ -99,7 +92,6 @@
 
 .method public disable(Lcom/fasterxml/jackson/core/JsonParser$Feature;)Lcom/fasterxml/jackson/core/JsonParser;
     .registers 3
-    .param p1, "f"    # Lcom/fasterxml/jackson/core/JsonParser$Feature;
 
     .prologue
     .line 45
@@ -113,7 +105,6 @@
 
 .method public enable(Lcom/fasterxml/jackson/core/JsonParser$Feature;)Lcom/fasterxml/jackson/core/JsonParser;
     .registers 3
-    .param p1, "f"    # Lcom/fasterxml/jackson/core/JsonParser$Feature;
 
     .prologue
     .line 39
@@ -127,12 +118,6 @@
 
 .method public getBigIntegerValue()Ljava/math/BigInteger;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 124
@@ -147,13 +132,6 @@
 
 .method public getBinaryValue(Lcom/fasterxml/jackson/core/Base64Variant;)[B
     .registers 3
-    .param p1, "b64variant"    # Lcom/fasterxml/jackson/core/Base64Variant;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 180
@@ -168,12 +146,6 @@
 
 .method public getBooleanValue()Z
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 127
@@ -188,12 +160,6 @@
 
 .method public getByteValue()B
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 130
@@ -236,12 +202,6 @@
 
 .method public getCurrentName()Ljava/lang/String;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 90
@@ -284,12 +244,6 @@
 
 .method public getDecimalValue()Ljava/math/BigDecimal;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 136
@@ -304,12 +258,6 @@
 
 .method public getDoubleValue()D
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 139
@@ -324,12 +272,6 @@
 
 .method public getEmbeddedObject()Ljava/lang/Object;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 179
@@ -358,12 +300,6 @@
 
 .method public getFloatValue()F
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 142
@@ -392,12 +328,6 @@
 
 .method public getIntValue()I
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 145
@@ -426,12 +356,6 @@
 
 .method public getLongValue()J
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 148
@@ -446,12 +370,6 @@
 
 .method public getNumberType()Lcom/fasterxml/jackson/core/JsonParser$NumberType;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 151
@@ -466,12 +384,6 @@
 
 .method public getNumberValue()Ljava/lang/Number;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 154
@@ -486,12 +398,6 @@
 
 .method public getObjectId()Ljava/lang/Object;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 201
@@ -534,12 +440,6 @@
 
 .method public getShortValue()S
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 133
@@ -554,12 +454,6 @@
 
 .method public getText()Ljava/lang/String;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 111
@@ -574,12 +468,6 @@
 
 .method public getTextCharacters()[C
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 113
@@ -594,12 +482,6 @@
 
 .method public getTextLength()I
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 114
@@ -614,12 +496,6 @@
 
 .method public getTextOffset()I
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 115
@@ -648,12 +524,6 @@
 
 .method public getTypeId()Ljava/lang/Object;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 202
@@ -668,12 +538,6 @@
 
 .method public getValueAsBoolean()Z
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 168
@@ -688,13 +552,6 @@
 
 .method public getValueAsBoolean(Z)Z
     .registers 3
-    .param p1, "defaultValue"    # Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 169
@@ -709,12 +566,6 @@
 
 .method public getValueAsDouble()D
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 166
@@ -729,13 +580,6 @@
 
 .method public getValueAsDouble(D)D
     .registers 6
-    .param p1, "defaultValue"    # D
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 167
@@ -750,12 +594,6 @@
 
 .method public getValueAsInt()I
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 162
@@ -770,13 +608,6 @@
 
 .method public getValueAsInt(I)I
     .registers 3
-    .param p1, "defaultValue"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 163
@@ -791,12 +622,6 @@
 
 .method public getValueAsLong()J
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 164
@@ -811,13 +636,6 @@
 
 .method public getValueAsLong(J)J
     .registers 6
-    .param p1, "defaultValue"    # J
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 165
@@ -832,12 +650,6 @@
 
 .method public getValueAsString()Ljava/lang/String;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 170
@@ -852,13 +664,6 @@
 
 .method public getValueAsString(Ljava/lang/String;)Ljava/lang/String;
     .registers 3
-    .param p1, "defaultValue"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 171
@@ -915,7 +720,6 @@
 
 .method public isEnabled(Lcom/fasterxml/jackson/core/JsonParser$Feature;)Z
     .registers 3
-    .param p1, "f"    # Lcom/fasterxml/jackson/core/JsonParser$Feature;
 
     .prologue
     .line 49
@@ -944,12 +748,6 @@
 
 .method public nextToken()Lcom/fasterxml/jackson/core/JsonToken;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 183
@@ -964,12 +762,6 @@
 
 .method public nextValue()Lcom/fasterxml/jackson/core/JsonToken;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 184
@@ -984,7 +776,6 @@
 
 .method public overrideCurrentName(Ljava/lang/String;)V
     .registers 3
-    .param p1, "name"    # Ljava/lang/String;
 
     .prologue
     .line 103
@@ -997,14 +788,6 @@
 
 .method public readBinaryValue(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/OutputStream;)I
     .registers 4
-    .param p1, "b64variant"    # Lcom/fasterxml/jackson/core/Base64Variant;
-    .param p2, "out"    # Ljava/io/OutputStream;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 181
@@ -1033,7 +816,6 @@
 
 .method public setCodec(Lcom/fasterxml/jackson/core/ObjectCodec;)V
     .registers 3
-    .param p1, "c"    # Lcom/fasterxml/jackson/core/ObjectCodec;
 
     .prologue
     .line 34
@@ -1046,7 +828,6 @@
 
 .method public setFeatureMask(I)Lcom/fasterxml/jackson/core/JsonParser;
     .registers 3
-    .param p1, "mask"    # I
 
     .prologue
     .line 54
@@ -1060,7 +841,6 @@
 
 .method public setSchema(Lcom/fasterxml/jackson/core/FormatSchema;)V
     .registers 3
-    .param p1, "schema"    # Lcom/fasterxml/jackson/core/FormatSchema;
 
     .prologue
     .line 59
@@ -1073,12 +853,6 @@
 
 .method public skipChildren()Lcom/fasterxml/jackson/core/JsonParser;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 188

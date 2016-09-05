@@ -11,24 +11,18 @@
     value = Lcom/samsung/privilege/activity/MainPagerActivity;->doNotification(Landroid/view/View;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+.field final synthetic a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/MainPagerActivity;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
 
     .prologue
-    .line 1785
-    iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$26;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .line 1875
+    iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$26;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,18 +35,17 @@
     .registers 3
 
     .prologue
-    .line 1788
-    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$26;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .line 1878
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$26;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$26;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$26;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    # getter for: Lcom/samsung/privilege/activity/MainPagerActivity;->mHandler:Landroid/os/Handler;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->access$900(Lcom/samsung/privilege/activity/MainPagerActivity;)Landroid/os/Handler;
+    invoke-static {v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->g(Lcom/samsung/privilege/activity/MainPagerActivity;)Landroid/os/Handler;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/samsung/privilege/util/DialogNotification;->showDialogNotification(Landroid/content/Context;Landroid/os/Handler;)V
+    invoke-static {v0, v1}, Lcom/samsung/privilege/util/DialogNotification;->a(Landroid/content/Context;Landroid/os/Handler;)V
 
-    .line 1789
+    .line 1879
     return-void
 .end method

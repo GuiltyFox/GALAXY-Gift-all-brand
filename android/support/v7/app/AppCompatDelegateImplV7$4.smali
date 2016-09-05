@@ -8,17 +8,12 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/support/v7/app/AppCompatDelegateImplV7;->createSubDecor()Landroid/view/ViewGroup;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Landroid/support/v7/app/AppCompatDelegateImplV7;->t()Landroid/view/ViewGroup;
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Landroid/support/v7/app/AppCompatDelegateImplV7;
+.field final synthetic a:Landroid/support/v7/app/AppCompatDelegateImplV7;
 
 
 # direct methods
@@ -26,8 +21,8 @@
     .registers 2
 
     .prologue
-    .line 486
-    iput-object p1, p0, Landroid/support/v7/app/AppCompatDelegateImplV7$4;->this$0:Landroid/support/v7/app/AppCompatDelegateImplV7;
+    .line 503
+    iput-object p1, p0, Landroid/support/v7/app/AppCompatDelegateImplV7$4;->a:Landroid/support/v7/app/AppCompatDelegateImplV7;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,7 +35,7 @@
     .registers 1
 
     .prologue
-    .line 488
+    .line 505
     return-void
 .end method
 
@@ -48,12 +43,11 @@
     .registers 2
 
     .prologue
-    .line 492
-    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV7$4;->this$0:Landroid/support/v7/app/AppCompatDelegateImplV7;
+    .line 509
+    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV7$4;->a:Landroid/support/v7/app/AppCompatDelegateImplV7;
 
-    # invokes: Landroid/support/v7/app/AppCompatDelegateImplV7;->dismissPopups()V
-    invoke-static {v0}, Landroid/support/v7/app/AppCompatDelegateImplV7;->access$400(Landroid/support/v7/app/AppCompatDelegateImplV7;)V
+    invoke-static {v0}, Landroid/support/v7/app/AppCompatDelegateImplV7;->b(Landroid/support/v7/app/AppCompatDelegateImplV7;)V
 
-    .line 493
+    .line 510
     return-void
 .end method

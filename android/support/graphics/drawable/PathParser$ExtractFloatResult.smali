@@ -3,21 +3,10 @@
 .source "PathParser.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/graphics/drawable/PathParser;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "ExtractFloatResult"
-.end annotation
-
-
 # instance fields
-.field mEndPosition:I
+.field a:I
 
-.field mEndWithNegOrDot:Z
+.field b:Z
 
 
 # direct methods
@@ -33,7 +22,6 @@
 
 .method synthetic constructor <init>(Landroid/support/graphics/drawable/PathParser$1;)V
     .registers 2
-    .param p1, "x0"    # Landroid/support/graphics/drawable/PathParser$1;
 
     .prologue
     .line 181

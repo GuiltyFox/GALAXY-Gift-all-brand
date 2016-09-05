@@ -7,14 +7,6 @@
 .implements Ljava/io/Serializable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/AnnotationIntrospector$ReferenceProperty;
-    }
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -39,8 +31,6 @@
 
 .method public static pair(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
     .registers 3
-    .param p0, "a1"    # Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
-    .param p1, "a2"    # Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
     .prologue
     .line 106
@@ -92,7 +82,6 @@
 
     .prologue
     .line 141
-    .local p1, "result":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/fasterxml/jackson/databind/AnnotationIntrospector;>;"
     invoke-interface {p1, p0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     .line 142
@@ -101,7 +90,6 @@
 
 .method public findAutoDetectVisibility(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;
     .registers 3
-    .param p1, "ac"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -115,13 +103,11 @@
 
     .prologue
     .line 291
-    .local p2, "checker":Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;, "Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker<*>;"
     return-object p2
 .end method
 
 .method public findContentDeserializer(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
     .registers 3
-    .param p1, "am"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 803
@@ -132,7 +118,6 @@
 
 .method public findContentSerializer(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
     .registers 3
-    .param p1, "am"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 556
@@ -143,7 +128,6 @@
 
 .method public findDeserializationContentConverter(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Ljava/lang/Object;
     .registers 3
-    .param p1, "a"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
     .prologue
     .line 896
@@ -154,8 +138,6 @@
 
 .method public findDeserializationContentType(Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/JavaType;)Ljava/lang/Class;
     .registers 4
-    .param p1, "am"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
-    .param p2, "baseContentType"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -176,7 +158,6 @@
 
 .method public findDeserializationConverter(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
     .registers 3
-    .param p1, "a"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 874
@@ -187,8 +168,6 @@
 
 .method public findDeserializationKeyType(Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/JavaType;)Ljava/lang/Class;
     .registers 4
-    .param p1, "am"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
-    .param p2, "baseKeyType"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -209,8 +188,6 @@
 
 .method public findDeserializationType(Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/JavaType;)Ljava/lang/Class;
     .registers 4
-    .param p1, "am"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
-    .param p2, "baseType"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -231,7 +208,6 @@
 
 .method public findDeserializer(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
     .registers 3
-    .param p1, "am"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 778
@@ -253,7 +229,6 @@
 
     .prologue
     .line 761
-    .local p1, "value":Ljava/lang/Enum;, "Ljava/lang/Enum<*>;"
     invoke-virtual {p1}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v0
@@ -263,7 +238,6 @@
 
 .method public findFilterId(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
     .registers 3
-    .param p1, "ann"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 262
@@ -274,7 +248,6 @@
 
 .method public findFilterId(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Ljava/lang/Object;
     .registers 3
-    .param p1, "ac"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -289,7 +262,6 @@
 
 .method public findFormat(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
     .registers 3
-    .param p1, "memberOrClass"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 457
@@ -300,7 +272,6 @@
 
 .method public findIgnoreUnknownProperties(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Ljava/lang/Boolean;
     .registers 3
-    .param p1, "ac"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
     .prologue
     .line 234
@@ -311,7 +282,6 @@
 
 .method public findImplicitPropertyName(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Ljava/lang/String;
     .registers 3
-    .param p1, "member"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
     .prologue
     .line 517
@@ -322,7 +292,6 @@
 
 .method public findInjectableValueId(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Ljava/lang/Object;
     .registers 3
-    .param p1, "m"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
     .prologue
     .line 423
@@ -333,7 +302,6 @@
 
 .method public findKeyDeserializer(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
     .registers 3
-    .param p1, "am"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 790
@@ -344,7 +312,6 @@
 
 .method public findKeySerializer(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
     .registers 3
-    .param p1, "am"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 544
@@ -355,7 +322,6 @@
 
 .method public findNameForDeserialization(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/databind/PropertyName;
     .registers 3
-    .param p1, "a"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 967
@@ -366,7 +332,6 @@
 
 .method public findNameForSerialization(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/databind/PropertyName;
     .registers 3
-    .param p1, "a"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 736
@@ -377,7 +342,6 @@
 
 .method public findNamingStrategy(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Ljava/lang/Object;
     .registers 3
-    .param p1, "ac"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
     .prologue
     .line 275
@@ -388,7 +352,6 @@
 
 .method public findNullSerializer(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
     .registers 3
-    .param p1, "am"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 566
@@ -399,7 +362,6 @@
 
 .method public findObjectIdInfo(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
     .registers 3
-    .param p1, "ann"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 188
@@ -410,8 +372,6 @@
 
 .method public findObjectReferenceInfo(Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;)Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
     .registers 3
-    .param p1, "ann"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
-    .param p2, "objectIdInfo"    # Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
 
     .prologue
     .line 197
@@ -420,7 +380,6 @@
 
 .method public findPOJOBuilder(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Ljava/lang/Class;
     .registers 3
-    .param p1, "ac"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -440,7 +399,6 @@
 
 .method public findPOJOBuilderConfig(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Lcom/fasterxml/jackson/databind/annotation/JsonPOJOBuilder$Value;
     .registers 3
-    .param p1, "ac"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
     .prologue
     .line 935
@@ -451,7 +409,6 @@
 
 .method public findPropertiesToIgnore(Lcom/fasterxml/jackson/databind/introspect/Annotated;)[Ljava/lang/String;
     .registers 3
-    .param p1, "ac"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 228
@@ -462,8 +419,6 @@
 
 .method public findPropertyContentTypeResolver(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
     .registers 5
-    .param p2, "am"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
-    .param p3, "containerType"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -479,7 +434,6 @@
 
     .prologue
     .line 358
-    .local p1, "config":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
     const/4 v0, 0x0
 
     return-object v0
@@ -487,7 +441,6 @@
 
 .method public findPropertyDescription(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/String;
     .registers 3
-    .param p1, "ann"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 489
@@ -498,7 +451,6 @@
 
 .method public findPropertyIndex(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Integer;
     .registers 3
-    .param p1, "ann"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 502
@@ -509,8 +461,6 @@
 
 .method public findPropertyTypeResolver(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
     .registers 5
-    .param p2, "am"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
-    .param p3, "baseType"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -526,7 +476,6 @@
 
     .prologue
     .line 336
-    .local p1, "config":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
     const/4 v0, 0x0
 
     return-object v0
@@ -534,7 +483,6 @@
 
 .method public findReferenceType(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Lcom/fasterxml/jackson/databind/AnnotationIntrospector$ReferenceProperty;
     .registers 3
-    .param p1, "member"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
     .prologue
     .line 389
@@ -545,7 +493,6 @@
 
 .method public findRootName(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Lcom/fasterxml/jackson/databind/PropertyName;
     .registers 3
-    .param p1, "ac"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
     .prologue
     .line 217
@@ -556,7 +503,6 @@
 
 .method public findSerializationContentConverter(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Ljava/lang/Object;
     .registers 3
-    .param p1, "a"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
     .prologue
     .line 676
@@ -567,8 +513,6 @@
 
 .method public findSerializationContentType(Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/JavaType;)Ljava/lang/Class;
     .registers 4
-    .param p1, "am"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
-    .param p2, "baseType"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -589,7 +533,6 @@
 
 .method public findSerializationConverter(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
     .registers 3
-    .param p1, "a"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 654
@@ -600,8 +543,6 @@
 
 .method public findSerializationInclusion(Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/annotation/JsonInclude$Include;)Lcom/fasterxml/jackson/annotation/JsonInclude$Include;
     .registers 3
-    .param p1, "a"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
-    .param p2, "defValue"    # Lcom/fasterxml/jackson/annotation/JsonInclude$Include;
 
     .prologue
     .line 580
@@ -610,8 +551,6 @@
 
 .method public findSerializationKeyType(Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/JavaType;)Ljava/lang/Class;
     .registers 4
-    .param p1, "am"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
-    .param p2, "baseType"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -632,7 +571,6 @@
 
 .method public findSerializationPropertyOrder(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)[Ljava/lang/String;
     .registers 3
-    .param p1, "ac"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
     .prologue
     .line 690
@@ -643,7 +581,6 @@
 
 .method public findSerializationSortAlphabetically(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Boolean;
     .registers 3
-    .param p1, "ann"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 699
@@ -654,7 +591,6 @@
 
 .method public findSerializationSortAlphabetically(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Ljava/lang/Boolean;
     .registers 3
-    .param p1, "ac"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -667,7 +603,6 @@
 
 .method public findSerializationType(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Class;
     .registers 3
-    .param p1, "a"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -687,7 +622,6 @@
 
 .method public findSerializationTyping(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/databind/annotation/JsonSerialize$Typing;
     .registers 3
-    .param p1, "a"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 629
@@ -698,7 +632,6 @@
 
 .method public findSerializer(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/lang/Object;
     .registers 3
-    .param p1, "am"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 533
@@ -709,7 +642,6 @@
 
 .method public findSubtypes(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/util/List;
     .registers 3
-    .param p1, "a"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -731,7 +663,6 @@
 
 .method public findTypeName(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Ljava/lang/String;
     .registers 3
-    .param p1, "ac"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
     .prologue
     .line 377
@@ -742,8 +673,6 @@
 
 .method public findTypeResolver(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
     .registers 5
-    .param p2, "ac"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-    .param p3, "baseType"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -759,7 +688,6 @@
 
     .prologue
     .line 316
-    .local p1, "config":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
     const/4 v0, 0x0
 
     return-object v0
@@ -767,7 +695,6 @@
 
 .method public findUnwrappingNameTransformer(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Lcom/fasterxml/jackson/databind/util/NameTransformer;
     .registers 3
-    .param p1, "member"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
     .prologue
     .line 399
@@ -778,7 +705,6 @@
 
 .method public findValueInstantiator(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Ljava/lang/Object;
     .registers 3
-    .param p1, "ac"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
     .prologue
     .line 911
@@ -789,7 +715,6 @@
 
 .method public findViews(Lcom/fasterxml/jackson/databind/introspect/Annotated;)[Ljava/lang/Class;
     .registers 3
-    .param p1, "a"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -809,7 +734,6 @@
 
 .method public findWrapperName(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/databind/PropertyName;
     .registers 3
-    .param p1, "ann"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 477
@@ -820,7 +744,6 @@
 
 .method public hasAnyGetterAnnotation(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;)Z
     .registers 3
-    .param p1, "am"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;
 
     .prologue
     .line 993
@@ -831,7 +754,6 @@
 
 .method public hasAnySetterAnnotation(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;)Z
     .registers 3
-    .param p1, "am"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;
 
     .prologue
     .line 980
@@ -842,7 +764,6 @@
 
 .method public hasAsValueAnnotation(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;)Z
     .registers 3
-    .param p1, "am"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;
 
     .prologue
     .line 749
@@ -853,7 +774,6 @@
 
 .method public hasCreatorAnnotation(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Z
     .registers 3
-    .param p1, "a"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 1007
@@ -864,7 +784,6 @@
 
 .method public hasIgnoreMarker(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Z
     .registers 3
-    .param p1, "m"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
     .prologue
     .line 408
@@ -875,7 +794,6 @@
 
 .method public hasRequiredMarker(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Ljava/lang/Boolean;
     .registers 3
-    .param p1, "m"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
     .prologue
     .line 432
@@ -886,7 +804,6 @@
 
 .method public isAnnotationBundle(Ljava/lang/annotation/Annotation;)Z
     .registers 3
-    .param p1, "ann"    # Ljava/lang/annotation/Annotation;
 
     .prologue
     .line 168
@@ -897,7 +814,6 @@
 
 .method public isIgnorableType(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Ljava/lang/Boolean;
     .registers 3
-    .param p1, "ac"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
     .prologue
     .line 247
@@ -908,7 +824,6 @@
 
 .method public isTypeId(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Ljava/lang/Boolean;
     .registers 3
-    .param p1, "member"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
     .prologue
     .line 464

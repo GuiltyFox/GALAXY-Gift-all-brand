@@ -4,14 +4,12 @@
 
 
 # instance fields
-.field private enabled:Z
+.field private a:Z
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 13
@@ -20,7 +18,7 @@
     .line 14
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/bzbs/lib/survey/control/CustomPager;->enabled:Z
+    iput-boolean v0, p0, Lcom/bzbs/lib/survey/control/CustomPager;->a:Z
 
     .line 15
     return-void
@@ -30,11 +28,10 @@
 # virtual methods
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .registers 3
-    .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
     .line 28
-    iget-boolean v0, p0, Lcom/bzbs/lib/survey/control/CustomPager;->enabled:Z
+    iget-boolean v0, p0, Lcom/bzbs/lib/survey/control/CustomPager;->a:Z
 
     if-eqz v0, :cond_9
 
@@ -55,11 +52,10 @@
 
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .registers 3
-    .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
     .line 19
-    iget-boolean v0, p0, Lcom/bzbs/lib/survey/control/CustomPager;->enabled:Z
+    iget-boolean v0, p0, Lcom/bzbs/lib/survey/control/CustomPager;->a:Z
 
     if-eqz v0, :cond_9
 
@@ -80,11 +76,10 @@
 
 .method public setPagingEnabled(Z)V
     .registers 2
-    .param p1, "enabled"    # Z
 
     .prologue
     .line 36
-    iput-boolean p1, p0, Lcom/bzbs/lib/survey/control/CustomPager;->enabled:Z
+    iput-boolean p1, p0, Lcom/bzbs/lib/survey/control/CustomPager;->a:Z
 
     .line 37
     return-void

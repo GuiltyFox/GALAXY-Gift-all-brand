@@ -7,7 +7,7 @@
 
 
 # instance fields
-.field private mScannerView:Lme/dm7/barcodescanner/zxing/ZXingScannerView;
+.field private a:Lme/dm7/barcodescanner/zxing/ZXingScannerView;
 
 
 # direct methods
@@ -23,9 +23,8 @@
 
 
 # virtual methods
-.method public handleResult(Lcom/google/zxing/Result;)V
+.method public a(Lcom/google/zxing/Result;)V
     .registers 5
-    .param p1, "rawResult"    # Lcom/google/zxing/Result;
 
     .prologue
     .line 42
@@ -34,10 +33,9 @@
     move-result-object v0
 
     .line 43
-    .local v0, "i":Landroid/content/Intent;
     const-string/jumbo v1, "SCAN_RESULT"
 
-    invoke-virtual {p1}, Lcom/google/zxing/Result;->getText()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/google/zxing/Result;->a()Ljava/lang/String;
 
     move-result-object v2
 
@@ -57,7 +55,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .registers 3
-    .param p1, "state"    # Landroid/os/Bundle;
 
     .prologue
     .line 18
@@ -68,10 +65,10 @@
 
     invoke-direct {v0, p0}, Lme/dm7/barcodescanner/zxing/ZXingScannerView;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/bzbs/lib/survey/util/zxing/ScannerActivity;->mScannerView:Lme/dm7/barcodescanner/zxing/ZXingScannerView;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/util/zxing/ScannerActivity;->a:Lme/dm7/barcodescanner/zxing/ZXingScannerView;
 
     .line 20
-    iget-object v0, p0, Lcom/bzbs/lib/survey/util/zxing/ScannerActivity;->mScannerView:Lme/dm7/barcodescanner/zxing/ZXingScannerView;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/util/zxing/ScannerActivity;->a:Lme/dm7/barcodescanner/zxing/ZXingScannerView;
 
     invoke-virtual {p0, v0}, Lcom/bzbs/lib/survey/util/zxing/ScannerActivity;->setContentView(Landroid/view/View;)V
 
@@ -87,9 +84,9 @@
     invoke-super {p0}, Landroid/app/Activity;->onPause()V
 
     .line 33
-    iget-object v0, p0, Lcom/bzbs/lib/survey/util/zxing/ScannerActivity;->mScannerView:Lme/dm7/barcodescanner/zxing/ZXingScannerView;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/util/zxing/ScannerActivity;->a:Lme/dm7/barcodescanner/zxing/ZXingScannerView;
 
-    invoke-virtual {v0}, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->stopCamera()V
+    invoke-virtual {v0}, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->c()V
 
     .line 34
     return-void
@@ -103,14 +100,14 @@
     invoke-super {p0}, Landroid/app/Activity;->onResume()V
 
     .line 26
-    iget-object v0, p0, Lcom/bzbs/lib/survey/util/zxing/ScannerActivity;->mScannerView:Lme/dm7/barcodescanner/zxing/ZXingScannerView;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/util/zxing/ScannerActivity;->a:Lme/dm7/barcodescanner/zxing/ZXingScannerView;
 
-    invoke-virtual {v0, p0}, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->setResultHandler(Lme/dm7/barcodescanner/zxing/ZXingScannerView$ResultHandler;)V
+    invoke-virtual {v0, p0}, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->a(Lme/dm7/barcodescanner/zxing/ZXingScannerView$ResultHandler;)V
 
     .line 27
-    iget-object v0, p0, Lcom/bzbs/lib/survey/util/zxing/ScannerActivity;->mScannerView:Lme/dm7/barcodescanner/zxing/ZXingScannerView;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/util/zxing/ScannerActivity;->a:Lme/dm7/barcodescanner/zxing/ZXingScannerView;
 
-    invoke-virtual {v0}, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->startCamera()V
+    invoke-virtual {v0}, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->b()V
 
     .line 28
     return-void

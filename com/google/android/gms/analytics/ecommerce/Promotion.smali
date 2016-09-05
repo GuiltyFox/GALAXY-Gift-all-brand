@@ -2,14 +2,8 @@
 .super Ljava/lang/Object;
 
 
-# static fields
-.field public static final ACTION_CLICK:Ljava/lang/String; = "click"
-
-.field public static final ACTION_VIEW:Ljava/lang/String; = "view"
-
-
 # instance fields
-.field zzOA:Ljava/util/Map;
+.field a:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",
@@ -32,91 +26,14 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/ecommerce/Promotion;->zzOA:Ljava/util/Map;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/ecommerce/Promotion;->a:Ljava/util/Map;
 
     return-void
 .end method
 
 
 # virtual methods
-.method put(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 4
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/String;
-
-    .prologue
-    const-string/jumbo v0, "Name should be non-null"
-
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/zzx;->zzb(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lcom/google/android/gms/analytics/ecommerce/Promotion;->zzOA:Ljava/util/Map;
-
-    invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public setCreative(Ljava/lang/String;)Lcom/google/android/gms/analytics/ecommerce/Promotion;
-    .registers 3
-    .param p1, "value"    # Ljava/lang/String;
-
-    .prologue
-    const-string/jumbo v0, "cr"
-
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/analytics/ecommerce/Promotion;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public setId(Ljava/lang/String;)Lcom/google/android/gms/analytics/ecommerce/Promotion;
-    .registers 3
-    .param p1, "value"    # Ljava/lang/String;
-
-    .prologue
-    const-string/jumbo v0, "id"
-
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/analytics/ecommerce/Promotion;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public setName(Ljava/lang/String;)Lcom/google/android/gms/analytics/ecommerce/Promotion;
-    .registers 3
-    .param p1, "value"    # Ljava/lang/String;
-
-    .prologue
-    const-string/jumbo v0, "nm"
-
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/analytics/ecommerce/Promotion;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public setPosition(Ljava/lang/String;)Lcom/google/android/gms/analytics/ecommerce/Promotion;
-    .registers 3
-    .param p1, "value"    # Ljava/lang/String;
-
-    .prologue
-    const-string/jumbo v0, "ps"
-
-    invoke-virtual {p0, v0, p1}, Lcom/google/android/gms/analytics/ecommerce/Promotion;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-object p0
-.end method
-
-.method public toString()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/analytics/ecommerce/Promotion;->zzOA:Ljava/util/Map;
-
-    invoke-static {v0}, Lcom/google/android/gms/measurement/zze;->zzH(Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public zzaX(Ljava/lang/String;)Ljava/util/Map;
+.method public a(Ljava/lang/String;)Ljava/util/Map;
     .registers 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -135,7 +52,7 @@
 
     invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/ecommerce/Promotion;->zzOA:Ljava/util/Map;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/ecommerce/Promotion;->a:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
@@ -190,4 +107,16 @@
 
     :cond_3a
     return-object v2
+.end method
+
+.method public toString()Ljava/lang/String;
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/gms/analytics/ecommerce/Promotion;->a:Ljava/util/Map;
+
+    invoke-static {v0}, Lcom/google/android/gms/measurement/zze;->a(Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
 .end method

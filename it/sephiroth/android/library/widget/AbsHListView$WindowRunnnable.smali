@@ -3,21 +3,10 @@
 .source "AbsHListView.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lit/sephiroth/android/library/widget/AbsHListView;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "WindowRunnnable"
-.end annotation
-
-
 # instance fields
-.field private mOriginalAttachCount:I
+.field private a:I
 
-.field final synthetic this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+.field final synthetic c:Lit/sephiroth/android/library/widget/AbsHListView;
 
 
 # direct methods
@@ -26,7 +15,7 @@
 
     .prologue
     .line 2479
-    iput-object p1, p0, Lit/sephiroth/android/library/widget/AbsHListView$WindowRunnnable;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iput-object p1, p0, Lit/sephiroth/android/library/widget/AbsHListView$WindowRunnnable;->c:Lit/sephiroth/android/library/widget/AbsHListView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,8 +24,6 @@
 
 .method synthetic constructor <init>(Lit/sephiroth/android/library/widget/AbsHListView;Lit/sephiroth/android/library/widget/AbsHListView$1;)V
     .registers 3
-    .param p1, "x0"    # Lit/sephiroth/android/library/widget/AbsHListView;
-    .param p2, "x1"    # Lit/sephiroth/android/library/widget/AbsHListView$1;
 
     .prologue
     .line 2479
@@ -47,30 +34,29 @@
 
 
 # virtual methods
-.method public rememberWindowAttachCount()V
+.method public a()V
     .registers 2
 
     .prologue
     .line 2484
-    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$WindowRunnnable;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$WindowRunnnable;->c:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    # invokes: Lit/sephiroth/android/library/widget/AbsHListView;->getWindowAttachCount()I
-    invoke-static {v0}, Lit/sephiroth/android/library/widget/AbsHListView;->access$200(Lit/sephiroth/android/library/widget/AbsHListView;)I
+    invoke-static {v0}, Lit/sephiroth/android/library/widget/AbsHListView;->a(Lit/sephiroth/android/library/widget/AbsHListView;)I
 
     move-result v0
 
-    iput v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$WindowRunnnable;->mOriginalAttachCount:I
+    iput v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$WindowRunnnable;->a:I
 
     .line 2485
     return-void
 .end method
 
-.method public sameWindow()Z
+.method public b()Z
     .registers 3
 
     .prologue
     .line 2488
-    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$WindowRunnnable;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$WindowRunnnable;->c:Lit/sephiroth/android/library/widget/AbsHListView;
 
     invoke-virtual {v0}, Lit/sephiroth/android/library/widget/AbsHListView;->hasWindowFocus()Z
 
@@ -78,14 +64,13 @@
 
     if-eqz v0, :cond_14
 
-    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$WindowRunnnable;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$WindowRunnnable;->c:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    # invokes: Lit/sephiroth/android/library/widget/AbsHListView;->getWindowAttachCount()I
-    invoke-static {v0}, Lit/sephiroth/android/library/widget/AbsHListView;->access$300(Lit/sephiroth/android/library/widget/AbsHListView;)I
+    invoke-static {v0}, Lit/sephiroth/android/library/widget/AbsHListView;->b(Lit/sephiroth/android/library/widget/AbsHListView;)I
 
     move-result v0
 
-    iget v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$WindowRunnnable;->mOriginalAttachCount:I
+    iget v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$WindowRunnnable;->a:I
 
     if-ne v0, v1, :cond_14
 

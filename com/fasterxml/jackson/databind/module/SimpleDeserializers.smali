@@ -65,7 +65,6 @@
 
     .prologue
     .line 45
-    .local p1, "desers":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Class<*>;Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 25
@@ -103,14 +102,11 @@
 
     .prologue
     .line 51
-    .local p1, "forClass":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
-    .local p2, "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<+TT;>;"
     new-instance v0, Lcom/fasterxml/jackson/databind/type/ClassKey;
 
     invoke-direct {v0, p1}, Lcom/fasterxml/jackson/databind/type/ClassKey;-><init>(Ljava/lang/Class;)V
 
     .line 52
-    .local v0, "key":Lcom/fasterxml/jackson/databind/type/ClassKey;
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;->_classMappings:Ljava/util/HashMap;
 
     if-nez v1, :cond_10
@@ -129,14 +125,14 @@
     invoke-virtual {v1, v0, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 57
-    const-class v1, Ljava/lang/Enum;
+    const-class v0, Ljava/lang/Enum;
 
-    if-ne p1, v1, :cond_1c
+    if-ne p1, v0, :cond_1c
 
     .line 58
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    iput-boolean v1, p0, Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;->_hasEnumDeserializer:Z
+    iput-boolean v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;->_hasEnumDeserializer:Z
 
     .line 60
     :cond_1c
@@ -144,7 +140,7 @@
 .end method
 
 .method public addDeserializers(Ljava/util/Map;)V
-    .registers 7
+    .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -159,65 +155,53 @@
 
     .prologue
     .line 68
-    .local p1, "desers":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Class<*>;Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;>;"
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object v4
-
-    invoke-interface {v4}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    .local v3, "i$":Ljava/util/Iterator;
-    :goto_8
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_24
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/util/Map$Entry;
-
-    .line 69
-    .local v2, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/Class<*>;Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;>;"
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Class;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    .line 71
-    .local v0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    move-result-object v2
+
+    :goto_8
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_24
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    .line 69
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lcom/fasterxml/jackson/databind/JsonDeserializer;
+    check-cast v1, Ljava/lang/Class;
+
+    .line 71
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
     .line 72
-    .local v1, "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<Ljava/lang/Object;>;"
-    invoke-virtual {p0, v0, v1}, Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;->addDeserializer(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/JsonDeserializer;)V
+    invoke-virtual {p0, v1, v0}, Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;->addDeserializer(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/JsonDeserializer;)V
 
     goto :goto_8
 
     .line 74
-    .end local v0    # "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .end local v1    # "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<Ljava/lang/Object;>;"
-    .end local v2    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/Class<*>;Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;>;"
     :cond_24
     return-void
 .end method
 
 .method public findArrayDeserializer(Lcom/fasterxml/jackson/databind/type/ArrayType;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
     .registers 9
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/type/ArrayType;
-    .param p2, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p3, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
-    .param p4, "elementTypeDeserializer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -232,15 +216,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
     .line 88
-    .local p5, "elementDeserializer":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;->_classMappings:Ljava/util/HashMap;
 
     if-nez v0, :cond_6
@@ -272,9 +249,6 @@
 
 .method public findBeanDeserializer(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
     .registers 7
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p2, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p3, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -284,12 +258,6 @@
             ")",
             "Lcom/fasterxml/jackson/databind/JsonDeserializer",
             "<*>;"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
         }
     .end annotation
 
@@ -326,10 +294,6 @@
 
 .method public findCollectionDeserializer(Lcom/fasterxml/jackson/databind/type/CollectionType;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
     .registers 9
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/type/CollectionType;
-    .param p2, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p3, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
-    .param p4, "elementTypeDeserializer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -344,15 +308,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
     .line 106
-    .local p5, "elementDeserializer":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;->_classMappings:Ljava/util/HashMap;
 
     if-nez v0, :cond_6
@@ -384,10 +341,6 @@
 
 .method public findCollectionLikeDeserializer(Lcom/fasterxml/jackson/databind/type/CollectionLikeType;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
     .registers 9
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/type/CollectionLikeType;
-    .param p2, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p3, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
-    .param p4, "elementTypeDeserializer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -402,15 +355,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
     .line 116
-    .local p5, "elementDeserializer":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;->_classMappings:Ljava/util/HashMap;
 
     if-nez v0, :cond_6
@@ -441,9 +387,7 @@
 .end method
 
 .method public findEnumDeserializer(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
-    .registers 8
-    .param p2, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p3, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
+    .registers 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -457,18 +401,11 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
     .line 124
-    .local p1, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;->_classMappings:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;->_classMappings:Ljava/util/HashMap;
 
-    if-nez v1, :cond_6
+    if-nez v0, :cond_6
 
     .line 125
     const/4 v0, 0x0
@@ -480,20 +417,19 @@
 
     .line 127
     :cond_6
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;->_classMappings:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;->_classMappings:Ljava/util/HashMap;
 
-    new-instance v2, Lcom/fasterxml/jackson/databind/type/ClassKey;
+    new-instance v1, Lcom/fasterxml/jackson/databind/type/ClassKey;
 
-    invoke-direct {v2, p1}, Lcom/fasterxml/jackson/databind/type/ClassKey;-><init>(Ljava/lang/Class;)V
+    invoke-direct {v1, p1}, Lcom/fasterxml/jackson/databind/type/ClassKey;-><init>(Ljava/lang/Class;)V
 
-    invoke-virtual {v1, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
     .line 128
-    .local v0, "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     if-nez v0, :cond_5
 
     .line 129
@@ -508,32 +444,25 @@
     if-eqz v1, :cond_5
 
     .line 130
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;->_classMappings:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;->_classMappings:Ljava/util/HashMap;
 
-    new-instance v2, Lcom/fasterxml/jackson/databind/type/ClassKey;
+    new-instance v1, Lcom/fasterxml/jackson/databind/type/ClassKey;
 
-    const-class v3, Ljava/lang/Enum;
+    const-class v2, Ljava/lang/Enum;
 
-    invoke-direct {v2, v3}, Lcom/fasterxml/jackson/databind/type/ClassKey;-><init>(Ljava/lang/Class;)V
+    invoke-direct {v1, v2}, Lcom/fasterxml/jackson/databind/type/ClassKey;-><init>(Ljava/lang/Class;)V
 
-    invoke-virtual {v1, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .end local v0    # "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     check-cast v0, Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
-    .restart local v0    # "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     goto :goto_5
 .end method
 
 .method public findMapDeserializer(Lcom/fasterxml/jackson/databind/type/MapType;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;Lcom/fasterxml/jackson/databind/KeyDeserializer;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
     .registers 10
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/type/MapType;
-    .param p2, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p3, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
-    .param p4, "keyDeserializer"    # Lcom/fasterxml/jackson/databind/KeyDeserializer;
-    .param p5, "elementTypeDeserializer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -549,15 +478,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
     .line 144
-    .local p6, "elementDeserializer":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;->_classMappings:Ljava/util/HashMap;
 
     if-nez v0, :cond_6
@@ -589,11 +511,6 @@
 
 .method public findMapLikeDeserializer(Lcom/fasterxml/jackson/databind/type/MapLikeType;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;Lcom/fasterxml/jackson/databind/KeyDeserializer;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
     .registers 10
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/type/MapLikeType;
-    .param p2, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p3, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
-    .param p4, "keyDeserializer"    # Lcom/fasterxml/jackson/databind/KeyDeserializer;
-    .param p5, "elementTypeDeserializer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -609,15 +526,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
     .line 155
-    .local p6, "elementDeserializer":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;->_classMappings:Ljava/util/HashMap;
 
     if-nez v0, :cond_6
@@ -649,8 +559,6 @@
 
 .method public findTreeNodeDeserializer(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
     .registers 6
-    .param p2, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p3, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -666,15 +574,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
     .line 163
-    .local p1, "nodeType":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/fasterxml/jackson/databind/JsonNode;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;->_classMappings:Ljava/util/HashMap;
 
     if-nez v0, :cond_6

@@ -48,10 +48,7 @@
 .end method
 
 .method private static final _appendInt(I[BI)V
-    .registers 4
-    .param p0, "value"    # I
-    .param p1, "buffer"    # [B
-    .param p2, "offset"    # I
+    .registers 5
 
     .prologue
     .line 107
@@ -62,29 +59,29 @@
     aput-byte v0, p1, p2
 
     .line 108
-    add-int/lit8 p2, p2, 0x1
+    add-int/lit8 v0, p2, 0x1
 
-    shr-int/lit8 v0, p0, 0x10
+    shr-int/lit8 v1, p0, 0x10
 
-    int-to-byte v0, v0
+    int-to-byte v1, v1
 
-    aput-byte v0, p1, p2
+    aput-byte v1, p1, v0
 
     .line 109
-    add-int/lit8 p2, p2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    shr-int/lit8 v0, p0, 0x8
+    shr-int/lit8 v1, p0, 0x8
 
-    int-to-byte v0, v0
+    int-to-byte v1, v1
 
-    aput-byte v0, p1, p2
+    aput-byte v1, p1, v0
 
     .line 110
-    add-int/lit8 p2, p2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    int-to-byte v0, p0
+    int-to-byte v1, p0
 
-    aput-byte v0, p1, p2
+    aput-byte v1, p1, v0
 
     .line 111
     return-void
@@ -92,9 +89,6 @@
 
 .method private static _appendInt(I[CI)V
     .registers 4
-    .param p0, "bits"    # I
-    .param p1, "ch"    # [C
-    .param p2, "offset"    # I
 
     .prologue
     .line 80
@@ -112,10 +106,7 @@
 .end method
 
 .method private static _appendShort(I[CI)V
-    .registers 5
-    .param p0, "bits"    # I
-    .param p1, "ch"    # [C
-    .param p2, "offset"    # I
+    .registers 6
 
     .prologue
     .line 86
@@ -130,41 +121,41 @@
     aput-char v0, p1, p2
 
     .line 87
-    add-int/lit8 p2, p2, 0x1
+    add-int/lit8 v0, p2, 0x1
 
-    sget-object v0, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->HEX_CHARS:[C
+    sget-object v1, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->HEX_CHARS:[C
 
-    shr-int/lit8 v1, p0, 0x8
+    shr-int/lit8 v2, p0, 0x8
 
-    and-int/lit8 v1, v1, 0xf
+    and-int/lit8 v2, v2, 0xf
 
-    aget-char v0, v0, v1
+    aget-char v1, v1, v2
 
-    aput-char v0, p1, p2
+    aput-char v1, p1, v0
 
     .line 88
-    add-int/lit8 p2, p2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    sget-object v0, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->HEX_CHARS:[C
+    sget-object v1, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->HEX_CHARS:[C
 
-    shr-int/lit8 v1, p0, 0x4
+    shr-int/lit8 v2, p0, 0x4
 
-    and-int/lit8 v1, v1, 0xf
+    and-int/lit8 v2, v2, 0xf
 
-    aget-char v0, v0, v1
+    aget-char v1, v1, v2
 
-    aput-char v0, p1, p2
+    aput-char v1, p1, v0
 
     .line 89
-    add-int/lit8 p2, p2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    sget-object v0, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->HEX_CHARS:[C
+    sget-object v1, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->HEX_CHARS:[C
 
-    and-int/lit8 v1, p0, 0xf
+    and-int/lit8 v2, p0, 0xf
 
-    aget-char v0, v0, v1
+    aget-char v1, v1, v2
 
-    aput-char v0, p1, p2
+    aput-char v1, p1, v0
 
     .line 91
     return-void
@@ -172,30 +163,26 @@
 
 .method private static final _asBytes(Ljava/util/UUID;)[B
     .registers 10
-    .param p0, "uuid"    # Ljava/util/UUID;
 
     .prologue
     const/16 v8, 0x20
 
     .line 95
-    const/16 v1, 0x10
+    const/16 v0, 0x10
 
-    new-array v0, v1, [B
+    new-array v0, v0, [B
 
     .line 96
-    .local v0, "buffer":[B
     invoke-virtual {p0}, Ljava/util/UUID;->getMostSignificantBits()J
 
     move-result-wide v2
 
     .line 97
-    .local v2, "hi":J
     invoke-virtual {p0}, Ljava/util/UUID;->getLeastSignificantBits()J
 
     move-result-wide v4
 
     .line 98
-    .local v4, "lo":J
     shr-long v6, v2, v8
 
     long-to-int v1, v6
@@ -207,25 +194,25 @@
     .line 99
     long-to-int v1, v2
 
-    const/4 v6, 0x4
+    const/4 v2, 0x4
 
-    invoke-static {v1, v0, v6}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->_appendInt(I[BI)V
+    invoke-static {v1, v0, v2}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->_appendInt(I[BI)V
 
     .line 100
-    shr-long v6, v4, v8
+    shr-long v2, v4, v8
 
-    long-to-int v1, v6
+    long-to-int v1, v2
 
-    const/16 v6, 0x8
+    const/16 v2, 0x8
 
-    invoke-static {v1, v0, v6}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->_appendInt(I[BI)V
+    invoke-static {v1, v0, v2}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->_appendInt(I[BI)V
 
     .line 101
     long-to-int v1, v4
 
-    const/16 v6, 0xc
+    const/16 v2, 0xc
 
-    invoke-static {v1, v0, v6}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->_appendInt(I[BI)V
+    invoke-static {v1, v0, v2}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->_appendInt(I[BI)V
 
     .line 102
     return-object v0
@@ -235,13 +222,11 @@
 # virtual methods
 .method public bridge synthetic isEmpty(Ljava/lang/Object;)Z
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 18
     check-cast p1, Ljava/util/UUID;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->isEmpty(Ljava/util/UUID;)Z
 
     move-result v0
@@ -251,7 +236,6 @@
 
 .method public isEmpty(Ljava/util/UUID;)Z
     .registers 8
-    .param p1, "value"    # Ljava/util/UUID;
 
     .prologue
     const-wide/16 v4, 0x0
@@ -293,65 +277,46 @@
 
 .method public bridge synthetic serialize(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 4
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "x2"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 18
     check-cast p1, Ljava/util/UUID;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2, p3}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->serialize(Ljava/util/UUID;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
 
     return-void
 .end method
 
 .method public serialize(Ljava/util/UUID;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
-    .registers 16
-    .param p1, "value"    # Ljava/util/UUID;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
+    .registers 14
 
     .prologue
-    const/16 v11, 0x24
+    const/16 v9, 0x24
 
-    const/16 v10, 0x20
+    const/16 v8, 0x20
 
-    const/4 v9, 0x0
+    const/4 v7, 0x0
 
-    const/16 v8, 0x2d
+    const/16 v6, 0x2d
 
     .line 44
     invoke-virtual {p2}, Lcom/fasterxml/jackson/core/JsonGenerator;->canWriteBinaryNatively()Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_19
+    if-eqz v0, :cond_19
 
     .line 50
-    instance-of v6, p2, Lcom/fasterxml/jackson/databind/util/TokenBuffer;
+    instance-of v0, p2, Lcom/fasterxml/jackson/databind/util/TokenBuffer;
 
-    if-nez v6, :cond_19
+    if-nez v0, :cond_19
 
     .line 51
     invoke-static {p1}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->_asBytes(Ljava/util/UUID;)[B
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {p2, v6}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeBinary([B)V
+    invoke-virtual {p2, v0}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeBinary([B)V
 
     .line 76
     :goto_18
@@ -359,52 +324,49 @@
 
     .line 59
     :cond_19
-    new-array v0, v11, [C
+    new-array v0, v9, [C
 
     .line 60
-    .local v0, "ch":[C
     invoke-virtual {p1}, Ljava/util/UUID;->getMostSignificantBits()J
 
-    move-result-wide v4
+    move-result-wide v2
 
     .line 61
-    .local v4, "msb":J
-    shr-long v6, v4, v10
+    shr-long v4, v2, v8
 
-    long-to-int v6, v6
-
-    invoke-static {v6, v0, v9}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->_appendInt(I[CI)V
-
-    .line 62
-    const/16 v6, 0x8
-
-    aput-char v8, v0, v6
-
-    .line 63
     long-to-int v1, v4
 
+    invoke-static {v1, v0, v7}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->_appendInt(I[CI)V
+
+    .line 62
+    const/16 v1, 0x8
+
+    aput-char v6, v0, v1
+
+    .line 63
+    long-to-int v1, v2
+
     .line 64
-    .local v1, "i":I
-    ushr-int/lit8 v6, v1, 0x10
+    ushr-int/lit8 v2, v1, 0x10
 
-    const/16 v7, 0x9
+    const/16 v3, 0x9
 
-    invoke-static {v6, v0, v7}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->_appendShort(I[CI)V
+    invoke-static {v2, v0, v3}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->_appendShort(I[CI)V
 
     .line 65
-    const/16 v6, 0xd
+    const/16 v2, 0xd
 
-    aput-char v8, v0, v6
+    aput-char v6, v0, v2
 
     .line 66
-    const/16 v6, 0xe
+    const/16 v2, 0xe
 
-    invoke-static {v1, v0, v6}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->_appendShort(I[CI)V
+    invoke-static {v1, v0, v2}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->_appendShort(I[CI)V
 
     .line 67
-    const/16 v6, 0x12
+    const/16 v1, 0x12
 
-    aput-char v8, v0, v6
+    aput-char v6, v0, v1
 
     .line 69
     invoke-virtual {p1}, Ljava/util/UUID;->getLeastSignificantBits()J
@@ -412,40 +374,39 @@
     move-result-wide v2
 
     .line 70
-    .local v2, "lsb":J
-    const/16 v6, 0x30
+    const/16 v1, 0x30
 
-    ushr-long v6, v2, v6
+    ushr-long v4, v2, v1
 
-    long-to-int v6, v6
+    long-to-int v1, v4
 
-    const/16 v7, 0x13
+    const/16 v4, 0x13
 
-    invoke-static {v6, v0, v7}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->_appendShort(I[CI)V
+    invoke-static {v1, v0, v4}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->_appendShort(I[CI)V
 
     .line 71
-    const/16 v6, 0x17
+    const/16 v1, 0x17
 
-    aput-char v8, v0, v6
+    aput-char v6, v0, v1
 
     .line 72
-    ushr-long v6, v2, v10
+    ushr-long v4, v2, v8
 
-    long-to-int v6, v6
+    long-to-int v1, v4
 
-    const/16 v7, 0x18
+    const/16 v4, 0x18
 
-    invoke-static {v6, v0, v7}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->_appendShort(I[CI)V
+    invoke-static {v1, v0, v4}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->_appendShort(I[CI)V
 
     .line 73
-    long-to-int v6, v2
+    long-to-int v1, v2
 
-    const/16 v7, 0x1c
+    const/16 v2, 0x1c
 
-    invoke-static {v6, v0, v7}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->_appendInt(I[CI)V
+    invoke-static {v1, v0, v2}, Lcom/fasterxml/jackson/databind/ser/std/UUIDSerializer;->_appendInt(I[CI)V
 
     .line 75
-    invoke-virtual {p2, v0, v9, v11}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeString([CII)V
+    invoke-virtual {p2, v0, v7, v9}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeString([CII)V
 
     goto :goto_18
 .end method

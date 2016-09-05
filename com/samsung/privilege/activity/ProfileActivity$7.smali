@@ -8,35 +8,29 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/ProfileActivity;->initialLayout()V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/samsung/privilege/activity/ProfileActivity;->i()V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/ProfileActivity;
+.field final synthetic a:Landroid/widget/TextView;
 
-.field final synthetic val$formatterPurchase:Ljava/text/SimpleDateFormat;
+.field final synthetic b:Ljava/text/SimpleDateFormat;
 
-.field final synthetic val$textPurchase:Landroid/widget/TextView;
+.field final synthetic c:Lcom/samsung/privilege/activity/ProfileActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/ProfileActivity;Landroid/widget/TextView;Ljava/text/SimpleDateFormat;)V
     .registers 4
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/ProfileActivity;
 
     .prologue
-    .line 367
-    iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->this$0:Lcom/samsung/privilege/activity/ProfileActivity;
+    .line 373
+    iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->c:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    iput-object p2, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->val$textPurchase:Landroid/widget/TextView;
+    iput-object p2, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->a:Landroid/widget/TextView;
 
-    iput-object p3, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->val$formatterPurchase:Ljava/text/SimpleDateFormat;
+    iput-object p3, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->b:Ljava/text/SimpleDateFormat;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,37 +40,32 @@
 
 # virtual methods
 .method public onDateSet(Landroid/widget/DatePicker;III)V
-    .registers 9
-    .param p1, "view"    # Landroid/widget/DatePicker;
-    .param p2, "year"    # I
-    .param p3, "monthOfYear"    # I
-    .param p4, "dayOfMonth"    # I
+    .registers 8
 
     .prologue
-    .line 369
+    .line 375
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 370
-    .local v0, "newDate":Ljava/util/Calendar;
+    .line 376
     invoke-virtual {v0, p2, p3, p4}, Ljava/util/Calendar;->set(III)V
 
-    .line 371
-    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->val$textPurchase:Landroid/widget/TextView;
+    .line 377
+    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->a:Landroid/widget/TextView;
 
-    iget-object v2, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->val$formatterPurchase:Ljava/text/SimpleDateFormat;
+    iget-object v2, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->b:Ljava/text/SimpleDateFormat;
 
     invoke-virtual {v0}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v2, v3}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v2, v0}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 372
+    .line 378
     return-void
 .end method

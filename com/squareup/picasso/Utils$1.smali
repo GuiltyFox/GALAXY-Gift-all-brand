@@ -5,19 +5,13 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/squareup/picasso/Utils;->flushStackLocalLeaks(Landroid/os/Looper;)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
+    value = Lcom/squareup/picasso/Utils;->a(Landroid/os/Looper;)V
 .end annotation
 
 
 # direct methods
 .method constructor <init>(Landroid/os/Looper;)V
     .registers 2
-    .param p1, "x0"    # Landroid/os/Looper;
 
     .prologue
     .line 382
@@ -30,7 +24,6 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .registers 6
-    .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
     .line 384

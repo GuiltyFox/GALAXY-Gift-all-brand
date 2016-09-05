@@ -3,23 +3,6 @@
 .source "Snackbar.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/Snackbar;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x409
-    name = "Callback"
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/design/widget/Snackbar$Callback$DismissEvent;
-    }
-.end annotation
-
-
 # static fields
 .field public static final DISMISS_EVENT_ACTION:I = 0x1
 
@@ -48,8 +31,6 @@
 # virtual methods
 .method public onDismissed(Landroid/support/design/widget/Snackbar;I)V
     .registers 3
-    .param p1, "snackbar"    # Landroid/support/design/widget/Snackbar;
-    .param p2, "event"    # I
 
     .prologue
     .line 107
@@ -58,7 +39,6 @@
 
 .method public onShown(Landroid/support/design/widget/Snackbar;)V
     .registers 2
-    .param p1, "snackbar"    # Landroid/support/design/widget/Snackbar;
 
     .prologue
     .line 117

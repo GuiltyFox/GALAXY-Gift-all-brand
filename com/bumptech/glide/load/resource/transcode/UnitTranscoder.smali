@@ -20,7 +20,7 @@
 
 
 # static fields
-.field private static final UNIT_TRANSCODER:Lcom/bumptech/glide/load/resource/transcode/UnitTranscoder;
+.field private static final a:Lcom/bumptech/glide/load/resource/transcode/UnitTranscoder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/resource/transcode/UnitTranscoder",
@@ -40,7 +40,7 @@
 
     invoke-direct {v0}, Lcom/bumptech/glide/load/resource/transcode/UnitTranscoder;-><init>()V
 
-    sput-object v0, Lcom/bumptech/glide/load/resource/transcode/UnitTranscoder;->UNIT_TRANSCODER:Lcom/bumptech/glide/load/resource/transcode/UnitTranscoder;
+    sput-object v0, Lcom/bumptech/glide/load/resource/transcode/UnitTranscoder;->a:Lcom/bumptech/glide/load/resource/transcode/UnitTranscoder;
 
     return-void
 .end method
@@ -50,13 +50,12 @@
 
     .prologue
     .line 10
-    .local p0, "this":Lcom/bumptech/glide/load/resource/transcode/UnitTranscoder;, "Lcom/bumptech/glide/load/resource/transcode/UnitTranscoder<TZ;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static get()Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;
+.method public static b()Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;
     .registers 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -70,25 +69,14 @@
 
     .prologue
     .line 15
-    sget-object v0, Lcom/bumptech/glide/load/resource/transcode/UnitTranscoder;->UNIT_TRANSCODER:Lcom/bumptech/glide/load/resource/transcode/UnitTranscoder;
+    sget-object v0, Lcom/bumptech/glide/load/resource/transcode/UnitTranscoder;->a:Lcom/bumptech/glide/load/resource/transcode/UnitTranscoder;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public getId()Ljava/lang/String;
-    .registers 2
-
-    .prologue
-    .line 25
-    .local p0, "this":Lcom/bumptech/glide/load/resource/transcode/UnitTranscoder;, "Lcom/bumptech/glide/load/resource/transcode/UnitTranscoder<TZ;>;"
-    const-string/jumbo v0, ""
-
-    return-object v0
-.end method
-
-.method public transcode(Lcom/bumptech/glide/load/engine/Resource;)Lcom/bumptech/glide/load/engine/Resource;
+.method public a(Lcom/bumptech/glide/load/engine/Resource;)Lcom/bumptech/glide/load/engine/Resource;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -102,7 +90,15 @@
 
     .prologue
     .line 20
-    .local p0, "this":Lcom/bumptech/glide/load/resource/transcode/UnitTranscoder;, "Lcom/bumptech/glide/load/resource/transcode/UnitTranscoder<TZ;>;"
-    .local p1, "toTranscode":Lcom/bumptech/glide/load/engine/Resource;, "Lcom/bumptech/glide/load/engine/Resource<TZ;>;"
     return-object p1
+.end method
+
+.method public a()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 25
+    const-string/jumbo v0, ""
+
+    return-object v0
 .end method

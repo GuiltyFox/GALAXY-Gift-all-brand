@@ -49,7 +49,6 @@
 
     .prologue
     .line 25
-    .local p1, "props":Ljava/util/List;, "Ljava/util/List<Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 26
@@ -63,7 +62,6 @@
 # virtual methods
 .method public addProperty(Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;)V
     .registers 3
-    .param p1, "property"    # Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
     .prologue
     .line 30
@@ -76,159 +74,136 @@
 .end method
 
 .method public processUnwrapped(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;Lcom/fasterxml/jackson/databind/util/TokenBuffer;)Ljava/lang/Object;
-    .registers 10
-    .param p1, "originalParser"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .param p3, "bean"    # Ljava/lang/Object;
-    .param p4, "buffered"    # Lcom/fasterxml/jackson/databind/util/TokenBuffer;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
+    .registers 9
 
     .prologue
     .line 58
     const/4 v0, 0x0
 
-    .local v0, "i":I
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/deser/impl/UnwrappedPropertyHandler;->_properties:Ljava/util/List;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/impl/UnwrappedPropertyHandler;->_properties:Ljava/util/List;
 
-    invoke-interface {v4}, Ljava/util/List;->size()I
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
     move-result v2
 
-    .local v2, "len":I
-    :goto_7
-    if-ge v0, v2, :cond_1e
+    move v1, v0
+
+    :goto_8
+    if-ge v1, v2, :cond_20
 
     .line 59
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/deser/impl/UnwrappedPropertyHandler;->_properties:Ljava/util/List;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/UnwrappedPropertyHandler;->_properties:Ljava/util/List;
 
-    invoke-interface {v4, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+
+    .line 60
+    invoke-virtual {p4}, Lcom/fasterxml/jackson/databind/util/TokenBuffer;->asParser()Lcom/fasterxml/jackson/core/JsonParser;
 
     move-result-object v3
 
-    check-cast v3, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-
-    .line 60
-    .local v3, "prop":Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-    invoke-virtual {p4}, Lcom/fasterxml/jackson/databind/util/TokenBuffer;->asParser()Lcom/fasterxml/jackson/core/JsonParser;
-
-    move-result-object v1
-
     .line 61
-    .local v1, "jp":Lcom/fasterxml/jackson/core/JsonParser;
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/JsonParser;->nextToken()Lcom/fasterxml/jackson/core/JsonToken;
+    invoke-virtual {v3}, Lcom/fasterxml/jackson/core/JsonParser;->nextToken()Lcom/fasterxml/jackson/core/JsonToken;
 
     .line 62
-    invoke-virtual {v3, v1, p2, p3}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->deserializeAndSet(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;)V
+    invoke-virtual {v0, v3, p2, p3}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->deserializeAndSet(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;)V
 
     .line 58
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    goto :goto_7
+    move v1, v0
+
+    goto :goto_8
 
     .line 64
-    .end local v1    # "jp":Lcom/fasterxml/jackson/core/JsonParser;
-    .end local v3    # "prop":Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-    :cond_1e
+    :cond_20
     return-object p3
 .end method
 
 .method public renameAll(Lcom/fasterxml/jackson/databind/util/NameTransformer;)Lcom/fasterxml/jackson/databind/deser/impl/UnwrappedPropertyHandler;
-    .registers 9
-    .param p1, "transformer"    # Lcom/fasterxml/jackson/databind/util/NameTransformer;
+    .registers 7
 
     .prologue
     .line 35
-    new-instance v4, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    iget-object v6, p0, Lcom/fasterxml/jackson/databind/deser/impl/UnwrappedPropertyHandler;->_properties:Ljava/util/List;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/UnwrappedPropertyHandler;->_properties:Ljava/util/List;
 
-    invoke-interface {v6}, Ljava/util/List;->size()I
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    move-result v6
+    move-result v0
 
-    invoke-direct {v4, v6}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 36
-    .local v4, "newProps":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;>;"
-    iget-object v6, p0, Lcom/fasterxml/jackson/databind/deser/impl/UnwrappedPropertyHandler;->_properties:Ljava/util/List;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/UnwrappedPropertyHandler;->_properties:Ljava/util/List;
 
-    invoke-interface {v6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v1
+    move-result-object v2
 
-    .local v1, "i$":Ljava/util/Iterator;
     :goto_11
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_3d
+    if-eqz v0, :cond_3d
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v0
 
-    check-cast v5, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    check-cast v0, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
     .line 37
-    .local v5, "prop":Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-    invoke-virtual {v5}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->getName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v3
 
-    invoke-virtual {p1, v6}, Lcom/fasterxml/jackson/databind/util/NameTransformer;->transform(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v3}, Lcom/fasterxml/jackson/databind/util/NameTransformer;->transform(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
     .line 38
-    .local v3, "newName":Ljava/lang/String;
-    invoke-virtual {v5, v3}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->withSimpleName(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-
-    move-result-object v5
-
-    .line 39
-    invoke-virtual {v5}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->getValueDeserializer()Lcom/fasterxml/jackson/databind/JsonDeserializer;
+    invoke-virtual {v0, v3}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->withSimpleName(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
     move-result-object v0
 
+    .line 39
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->getValueDeserializer()Lcom/fasterxml/jackson/databind/JsonDeserializer;
+
+    move-result-object v3
+
     .line 40
-    .local v0, "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
-    if-eqz v0, :cond_39
+    if-eqz v3, :cond_39
 
     .line 42
-    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/databind/JsonDeserializer;->unwrappingDeserializer(Lcom/fasterxml/jackson/databind/util/NameTransformer;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
+    invoke-virtual {v3, p1}, Lcom/fasterxml/jackson/databind/JsonDeserializer;->unwrappingDeserializer(Lcom/fasterxml/jackson/databind/util/NameTransformer;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
-    move-result-object v2
+    move-result-object v4
 
     .line 44
-    .local v2, "newDeser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<Ljava/lang/Object;>;"
-    if-eq v2, v0, :cond_39
+    if-eq v4, v3, :cond_39
 
     .line 45
-    invoke-virtual {v5, v2}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->withValueDeserializer(Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    invoke-virtual {v0, v4}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->withValueDeserializer(Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
-    move-result-object v5
+    move-result-object v0
 
     .line 48
-    .end local v2    # "newDeser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<Ljava/lang/Object;>;"
     :cond_39
-    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_11
 
     .line 50
-    .end local v0    # "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
-    .end local v3    # "newName":Ljava/lang/String;
-    .end local v5    # "prop":Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
     :cond_3d
-    new-instance v6, Lcom/fasterxml/jackson/databind/deser/impl/UnwrappedPropertyHandler;
+    new-instance v0, Lcom/fasterxml/jackson/databind/deser/impl/UnwrappedPropertyHandler;
 
-    invoke-direct {v6, v4}, Lcom/fasterxml/jackson/databind/deser/impl/UnwrappedPropertyHandler;-><init>(Ljava/util/List;)V
+    invoke-direct {v0, v1}, Lcom/fasterxml/jackson/databind/deser/impl/UnwrappedPropertyHandler;-><init>(Ljava/util/List;)V
 
-    return-object v6
+    return-object v0
 .end method

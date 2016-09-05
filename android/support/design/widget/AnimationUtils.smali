@@ -3,14 +3,6 @@
 .source "AnimationUtils.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/design/widget/AnimationUtils$AnimationListenerAdapter;
-    }
-.end annotation
-
-
 # static fields
 .field static final DECELERATE_INTERPOLATOR:Landroid/view/animation/Interpolator;
 
@@ -79,9 +71,6 @@
 
 .method static lerp(FFF)F
     .registers 4
-    .param p0, "startValue"    # F
-    .param p1, "endValue"    # F
-    .param p2, "fraction"    # F
 
     .prologue
     .line 39
@@ -96,9 +85,6 @@
 
 .method static lerp(IIF)I
     .registers 4
-    .param p0, "startValue"    # I
-    .param p1, "endValue"    # I
-    .param p2, "fraction"    # F
 
     .prologue
     .line 43

@@ -14,21 +14,21 @@
 
 
 # instance fields
-.field private zzaRS:Ljava/lang/String;
+.field private a:Ljava/lang/String;
 
-.field private zzaRT:I
+.field private b:I
 
-.field private zzaRU:I
+.field private c:I
 
-.field private zzaRV:Ljava/lang/String;
+.field private d:Ljava/lang/String;
 
-.field private zzaRW:Ljava/lang/String;
+.field private e:Ljava/lang/String;
 
-.field private zzaRX:Z
+.field private f:Z
 
-.field private zzaRY:Z
+.field private g:Z
 
-.field private zzaRZ:Z
+.field private h:Z
 
 
 # direct methods
@@ -45,7 +45,7 @@
 .method public constructor <init>(Z)V
     .registers 3
 
-    invoke-static {}, Lcom/google/android/gms/internal/zzqn;->zzAl()I
+    invoke-static {}, Lcom/google/android/gms/internal/zzqn;->a()I
 
     move-result v0
 
@@ -59,16 +59,16 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/measurement/zze;-><init>()V
 
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/zzx;->zzbX(I)I
+    invoke-static {p2}, Lcom/google/android/gms/common/internal/zzx;->a(I)I
 
-    iput p2, p0, Lcom/google/android/gms/internal/zzqn;->zzaRT:I
+    iput p2, p0, Lcom/google/android/gms/internal/zzqn;->b:I
 
-    iput-boolean p1, p0, Lcom/google/android/gms/internal/zzqn;->zzaRY:Z
+    iput-boolean p1, p0, Lcom/google/android/gms/internal/zzqn;->g:Z
 
     return-void
 .end method
 
-.method static zzAl()I
+.method static a()I
     .registers 6
 
     const-wide/32 v4, 0x7fffffff
@@ -113,10 +113,10 @@
     goto :goto_f
 .end method
 
-.method private zzAp()V
+.method private e()V
     .registers 3
 
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzqn;->zzaRZ:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzqn;->h:Z
 
     if-eqz v0, :cond_d
 
@@ -134,16 +134,203 @@
 
 
 # virtual methods
-.method public setScreenName(Ljava/lang/String;)V
+.method public a(I)V
     .registers 2
-    .param p1, "screenName"    # Ljava/lang/String;
 
-    .prologue
-    invoke-direct {p0}, Lcom/google/android/gms/internal/zzqn;->zzAp()V
+    invoke-direct {p0}, Lcom/google/android/gms/internal/zzqn;->e()V
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/zzqn;->zzaRS:Ljava/lang/String;
+    iput p1, p0, Lcom/google/android/gms/internal/zzqn;->b:I
 
     return-void
+.end method
+
+.method public a(Lcom/google/android/gms/internal/zzqn;)V
+    .registers 3
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqn;->a:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_d
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqn;->a:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqn;->a(Ljava/lang/String;)V
+
+    :cond_d
+    iget v0, p0, Lcom/google/android/gms/internal/zzqn;->b:I
+
+    if-eqz v0, :cond_16
+
+    iget v0, p0, Lcom/google/android/gms/internal/zzqn;->b:I
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqn;->a(I)V
+
+    :cond_16
+    iget v0, p0, Lcom/google/android/gms/internal/zzqn;->c:I
+
+    if-eqz v0, :cond_1f
+
+    iget v0, p0, Lcom/google/android/gms/internal/zzqn;->c:I
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqn;->b(I)V
+
+    :cond_1f
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqn;->d:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_2c
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqn;->d:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqn;->b(Ljava/lang/String;)V
+
+    :cond_2c
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqn;->e:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_39
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqn;->e:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqn;->c(Ljava/lang/String;)V
+
+    :cond_39
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzqn;->f:Z
+
+    if-eqz v0, :cond_42
+
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzqn;->f:Z
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqn;->b(Z)V
+
+    :cond_42
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzqn;->g:Z
+
+    if-eqz v0, :cond_4b
+
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzqn;->g:Z
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqn;->a(Z)V
+
+    :cond_4b
+    return-void
+.end method
+
+.method public bridge synthetic a(Lcom/google/android/gms/measurement/zze;)V
+    .registers 2
+
+    check-cast p1, Lcom/google/android/gms/internal/zzqn;
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/zzqn;->a(Lcom/google/android/gms/internal/zzqn;)V
+
+    return-void
+.end method
+
+.method public a(Ljava/lang/String;)V
+    .registers 2
+
+    invoke-direct {p0}, Lcom/google/android/gms/internal/zzqn;->e()V
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/zzqn;->a:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public a(Z)V
+    .registers 2
+
+    invoke-direct {p0}, Lcom/google/android/gms/internal/zzqn;->e()V
+
+    iput-boolean p1, p0, Lcom/google/android/gms/internal/zzqn;->g:Z
+
+    return-void
+.end method
+
+.method public b()Ljava/lang/String;
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqn;->a:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public b(I)V
+    .registers 2
+
+    invoke-direct {p0}, Lcom/google/android/gms/internal/zzqn;->e()V
+
+    iput p1, p0, Lcom/google/android/gms/internal/zzqn;->c:I
+
+    return-void
+.end method
+
+.method public b(Ljava/lang/String;)V
+    .registers 2
+
+    invoke-direct {p0}, Lcom/google/android/gms/internal/zzqn;->e()V
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/zzqn;->d:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public b(Z)V
+    .registers 2
+
+    invoke-direct {p0}, Lcom/google/android/gms/internal/zzqn;->e()V
+
+    iput-boolean p1, p0, Lcom/google/android/gms/internal/zzqn;->f:Z
+
+    return-void
+.end method
+
+.method public c()I
+    .registers 2
+
+    iget v0, p0, Lcom/google/android/gms/internal/zzqn;->b:I
+
+    return v0
+.end method
+
+.method public c(Ljava/lang/String;)V
+    .registers 3
+
+    invoke-direct {p0}, Lcom/google/android/gms/internal/zzqn;->e()V
+
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_d
+
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/android/gms/internal/zzqn;->e:Ljava/lang/String;
+
+    :goto_c
+    return-void
+
+    :cond_d
+    iput-object p1, p0, Lcom/google/android/gms/internal/zzqn;->e:Ljava/lang/String;
+
+    goto :goto_c
+.end method
+
+.method public d()Ljava/lang/String;
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqn;->e:Ljava/lang/String;
+
+    return-object v0
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -155,13 +342,13 @@
 
     const-string/jumbo v1, "screenName"
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzqn;->zzaRS:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/internal/zzqn;->a:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string/jumbo v1, "interstitial"
 
-    iget-boolean v2, p0, Lcom/google/android/gms/internal/zzqn;->zzaRX:Z
+    iget-boolean v2, p0, Lcom/google/android/gms/internal/zzqn;->f:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -171,7 +358,7 @@
 
     const-string/jumbo v1, "automatic"
 
-    iget-boolean v2, p0, Lcom/google/android/gms/internal/zzqn;->zzaRY:Z
+    iget-boolean v2, p0, Lcom/google/android/gms/internal/zzqn;->g:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -181,7 +368,7 @@
 
     const-string/jumbo v1, "screenId"
 
-    iget v2, p0, Lcom/google/android/gms/internal/zzqn;->zzaRT:I
+    iget v2, p0, Lcom/google/android/gms/internal/zzqn;->b:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -191,7 +378,7 @@
 
     const-string/jumbo v1, "referrerScreenId"
 
-    iget v2, p0, Lcom/google/android/gms/internal/zzqn;->zzaRU:I
+    iget v2, p0, Lcom/google/android/gms/internal/zzqn;->c:I
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -201,208 +388,19 @@
 
     const-string/jumbo v1, "referrerScreenName"
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzqn;->zzaRV:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/internal/zzqn;->d:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string/jumbo v1, "referrerUri"
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzqn;->zzaRW:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/internal/zzqn;->e:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/zzqn;->zzE(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/internal/zzqn;->a(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public zzAm()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqn;->zzaRS:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public zzAn()I
-    .registers 2
-
-    iget v0, p0, Lcom/google/android/gms/internal/zzqn;->zzaRT:I
-
-    return v0
-.end method
-
-.method public zzAo()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqn;->zzaRW:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public zza(Lcom/google/android/gms/internal/zzqn;)V
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqn;->zzaRS:Ljava/lang/String;
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_d
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqn;->zzaRS:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqn;->setScreenName(Ljava/lang/String;)V
-
-    :cond_d
-    iget v0, p0, Lcom/google/android/gms/internal/zzqn;->zzaRT:I
-
-    if-eqz v0, :cond_16
-
-    iget v0, p0, Lcom/google/android/gms/internal/zzqn;->zzaRT:I
-
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqn;->zzit(I)V
-
-    :cond_16
-    iget v0, p0, Lcom/google/android/gms/internal/zzqn;->zzaRU:I
-
-    if-eqz v0, :cond_1f
-
-    iget v0, p0, Lcom/google/android/gms/internal/zzqn;->zzaRU:I
-
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqn;->zziu(I)V
-
-    :cond_1f
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqn;->zzaRV:Ljava/lang/String;
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_2c
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqn;->zzaRV:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqn;->zzeq(Ljava/lang/String;)V
-
-    :cond_2c
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqn;->zzaRW:Ljava/lang/String;
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_39
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqn;->zzaRW:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqn;->zzer(Ljava/lang/String;)V
-
-    :cond_39
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzqn;->zzaRX:Z
-
-    if-eqz v0, :cond_42
-
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzqn;->zzaRX:Z
-
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqn;->zzan(Z)V
-
-    :cond_42
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzqn;->zzaRY:Z
-
-    if-eqz v0, :cond_4b
-
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzqn;->zzaRY:Z
-
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqn;->zzam(Z)V
-
-    :cond_4b
-    return-void
-.end method
-
-.method public bridge synthetic zza(Lcom/google/android/gms/measurement/zze;)V
-    .registers 2
-
-    check-cast p1, Lcom/google/android/gms/internal/zzqn;
-
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/zzqn;->zza(Lcom/google/android/gms/internal/zzqn;)V
-
-    return-void
-.end method
-
-.method public zzam(Z)V
-    .registers 2
-
-    invoke-direct {p0}, Lcom/google/android/gms/internal/zzqn;->zzAp()V
-
-    iput-boolean p1, p0, Lcom/google/android/gms/internal/zzqn;->zzaRY:Z
-
-    return-void
-.end method
-
-.method public zzan(Z)V
-    .registers 2
-
-    invoke-direct {p0}, Lcom/google/android/gms/internal/zzqn;->zzAp()V
-
-    iput-boolean p1, p0, Lcom/google/android/gms/internal/zzqn;->zzaRX:Z
-
-    return-void
-.end method
-
-.method public zzeq(Ljava/lang/String;)V
-    .registers 2
-
-    invoke-direct {p0}, Lcom/google/android/gms/internal/zzqn;->zzAp()V
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/zzqn;->zzaRV:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public zzer(Ljava/lang/String;)V
-    .registers 3
-
-    invoke-direct {p0}, Lcom/google/android/gms/internal/zzqn;->zzAp()V
-
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_d
-
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcom/google/android/gms/internal/zzqn;->zzaRW:Ljava/lang/String;
-
-    :goto_c
-    return-void
-
-    :cond_d
-    iput-object p1, p0, Lcom/google/android/gms/internal/zzqn;->zzaRW:Ljava/lang/String;
-
-    goto :goto_c
-.end method
-
-.method public zzit(I)V
-    .registers 2
-
-    invoke-direct {p0}, Lcom/google/android/gms/internal/zzqn;->zzAp()V
-
-    iput p1, p0, Lcom/google/android/gms/internal/zzqn;->zzaRT:I
-
-    return-void
-.end method
-
-.method public zziu(I)V
-    .registers 2
-
-    invoke-direct {p0}, Lcom/google/android/gms/internal/zzqn;->zzAp()V
-
-    iput p1, p0, Lcom/google/android/gms/internal/zzqn;->zzaRU:I
-
-    return-void
 .end method

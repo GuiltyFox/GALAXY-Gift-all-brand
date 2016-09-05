@@ -6,17 +6,6 @@
 .implements Ljava/io/Serializable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/util/ViewMatcher;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "Multi"
-.end annotation
-
-
 # static fields
 .field private static final serialVersionUID:J = 0x1L
 
@@ -46,7 +35,6 @@
 
     .prologue
     .line 54
-    .local p1, "v":[Ljava/lang/Class;, "[Ljava/lang/Class<*>;"
     invoke-direct {p0}, Lcom/fasterxml/jackson/databind/util/ViewMatcher;-><init>()V
 
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/util/ViewMatcher$Multi;->_views:[Ljava/lang/Class;
@@ -67,54 +55,43 @@
     .end annotation
 
     .prologue
-    .line 59
-    .local p1, "activeView":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v0, 0x0
 
-    .local v0, "i":I
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/ViewMatcher$Multi;->_views:[Ljava/lang/Class;
+    .line 59
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/ViewMatcher$Multi;->_views:[Ljava/lang/Class;
 
-    array-length v1, v3
+    array-length v2, v1
 
-    .local v1, "len":I
-    :goto_4
-    if-ge v0, v1, :cond_17
+    move v1, v0
+
+    :goto_5
+    if-ge v1, v2, :cond_14
 
     .line 60
     iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/ViewMatcher$Multi;->_views:[Ljava/lang/Class;
 
-    aget-object v2, v3, v0
+    aget-object v3, v3, v1
 
     .line 61
-    .local v2, "view":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    if-eq p1, v2, :cond_12
+    if-eq p1, v3, :cond_13
 
-    invoke-virtual {v2, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    invoke-virtual {v3, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_14
+    if-eqz v3, :cond_15
 
     .line 62
-    :cond_12
-    const/4 v3, 0x1
+    :cond_13
+    const/4 v0, 0x1
 
     .line 65
-    .end local v2    # "view":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    :goto_13
-    return v3
+    :cond_14
+    return v0
 
     .line 59
-    .restart local v2    # "view":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    :cond_14
-    add-int/lit8 v0, v0, 0x1
+    :cond_15
+    add-int/lit8 v1, v1, 0x1
 
-    goto :goto_4
-
-    .line 65
-    .end local v2    # "view":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    :cond_17
-    const/4 v3, 0x0
-
-    goto :goto_13
+    goto :goto_5
 .end method

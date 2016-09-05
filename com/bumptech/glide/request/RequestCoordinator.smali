@@ -4,14 +4,14 @@
 
 
 # virtual methods
-.method public abstract canNotifyStatusChanged(Lcom/bumptech/glide/request/Request;)Z
+.method public abstract a(Lcom/bumptech/glide/request/Request;)Z
 .end method
 
-.method public abstract canSetImage(Lcom/bumptech/glide/request/Request;)Z
+.method public abstract b(Lcom/bumptech/glide/request/Request;)Z
 .end method
 
-.method public abstract isAnyResourceSet()Z
+.method public abstract c(Lcom/bumptech/glide/request/Request;)V
 .end method
 
-.method public abstract onRequestSuccess(Lcom/bumptech/glide/request/Request;)V
+.method public abstract c()Z
 .end method

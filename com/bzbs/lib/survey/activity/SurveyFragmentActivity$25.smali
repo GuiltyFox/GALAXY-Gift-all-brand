@@ -8,35 +8,29 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->setDataContinue(Landroid/widget/LinearLayout;)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->a(Landroid/widget/LinearLayout;)V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+.field final synthetic a:I
 
-.field final synthetic val$finalI:I
+.field final synthetic b:Landroid/widget/LinearLayout;
 
-.field final synthetic val$llContentRow:Landroid/widget/LinearLayout;
+.field final synthetic c:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;ILandroid/widget/LinearLayout;)V
     .registers 4
-    .param p1, "this$0"    # Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
     .prologue
     .line 4815
-    iput-object p1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$25;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iput-object p1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$25;->c:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
-    iput p2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$25;->val$finalI:I
+    iput p2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$25;->a:I
 
-    iput-object p3, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$25;->val$llContentRow:Landroid/widget/LinearLayout;
+    iput-object p3, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$25;->b:Landroid/widget/LinearLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,7 +41,6 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .registers 4
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 4818

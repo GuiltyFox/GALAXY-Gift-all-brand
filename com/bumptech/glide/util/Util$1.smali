@@ -8,14 +8,9 @@
     value = Lcom/bumptech/glide/util/Util;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
-    name = null
-.end annotation
-
 
 # static fields
-.field static final synthetic $SwitchMap$android$graphics$Bitmap$Config:[I
+.field static final synthetic a:[I
 
 
 # direct methods
@@ -32,10 +27,10 @@
 
     new-array v0, v0, [I
 
-    sput-object v0, Lcom/bumptech/glide/util/Util$1;->$SwitchMap$android$graphics$Bitmap$Config:[I
+    sput-object v0, Lcom/bumptech/glide/util/Util$1;->a:[I
 
     :try_start_9
-    sget-object v0, Lcom/bumptech/glide/util/Util$1;->$SwitchMap$android$graphics$Bitmap$Config:[I
+    sget-object v0, Lcom/bumptech/glide/util/Util$1;->a:[I
 
     sget-object v1, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
 
@@ -51,7 +46,7 @@
 
     :goto_14
     :try_start_14
-    sget-object v0, Lcom/bumptech/glide/util/Util$1;->$SwitchMap$android$graphics$Bitmap$Config:[I
+    sget-object v0, Lcom/bumptech/glide/util/Util$1;->a:[I
 
     sget-object v1, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
@@ -67,7 +62,7 @@
 
     :goto_1f
     :try_start_1f
-    sget-object v0, Lcom/bumptech/glide/util/Util$1;->$SwitchMap$android$graphics$Bitmap$Config:[I
+    sget-object v0, Lcom/bumptech/glide/util/Util$1;->a:[I
 
     sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_4444:Landroid/graphics/Bitmap$Config;
 
@@ -83,7 +78,7 @@
 
     :goto_2a
     :try_start_2a
-    sget-object v0, Lcom/bumptech/glide/util/Util$1;->$SwitchMap$android$graphics$Bitmap$Config:[I
+    sget-object v0, Lcom/bumptech/glide/util/Util$1;->a:[I
 
     sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 

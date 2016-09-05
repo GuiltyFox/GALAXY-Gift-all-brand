@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/ser/std/NumberSerializers;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x40c
-    name = "Base"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -37,8 +28,6 @@
 # direct methods
 .method protected constructor <init>(Ljava/lang/Class;Lcom/fasterxml/jackson/core/JsonParser$NumberType;Ljava/lang/String;)V
     .registers 4
-    .param p2, "numberType"    # Lcom/fasterxml/jackson/core/JsonParser$NumberType;
-    .param p3, "schemaType"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -52,8 +41,6 @@
 
     .prologue
     .line 55
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/NumberSerializers$Base;, "Lcom/fasterxml/jackson/databind/ser/std/NumberSerializers$Base<TT;>;"
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer;-><init>(Ljava/lang/Class;)V
 
     .line 56
@@ -70,23 +57,14 @@
 # virtual methods
 .method public acceptJsonFormatVisitor(Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;Lcom/fasterxml/jackson/databind/JavaType;)V
     .registers 5
-    .param p1, "visitor"    # Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;
-    .param p2, "typeHint"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
 
     .prologue
     .line 68
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/NumberSerializers$Base;, "Lcom/fasterxml/jackson/databind/ser/std/NumberSerializers$Base<TT;>;"
     invoke-interface {p1, p2}, Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;->expectIntegerFormat(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonIntegerFormatVisitor;
 
     move-result-object v0
 
     .line 69
-    .local v0, "v2":Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonIntegerFormatVisitor;
     if-eqz v0, :cond_b
 
     .line 70
@@ -100,9 +78,7 @@
 .end method
 
 .method public createContextual(Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/BeanProperty;)Lcom/fasterxml/jackson/databind/JsonSerializer;
-    .registers 6
-    .param p1, "prov"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .param p2, "property"    # Lcom/fasterxml/jackson/databind/BeanProperty;
+    .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -114,32 +90,24 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
     .line 78
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/NumberSerializers$Base;, "Lcom/fasterxml/jackson/databind/ser/std/NumberSerializers$Base<TT;>;"
     if-eqz p2, :cond_1f
 
     .line 79
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/SerializerProvider;->getAnnotationIntrospector()Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-interface {p2}, Lcom/fasterxml/jackson/databind/BeanProperty;->getMember()Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v1, v2}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findFormat(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findFormat(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
 
     move-result-object v0
 
     .line 80
-    .local v0, "format":Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
     if-eqz v0, :cond_1f
 
     .line 81
@@ -147,26 +115,22 @@
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->getShape()Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;->ordinal()I
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;->ordinal()I
 
-    move-result v2
+    move-result v0
 
-    aget v1, v1, v2
+    aget v0, v1, v0
 
-    packed-switch v1, :pswitch_data_24
+    packed-switch v0, :pswitch_data_24
 
     .line 88
-    .end local v0    # "format":Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/ser/std/NumberSerializers$Base;, "Lcom/fasterxml/jackson/databind/ser/std/NumberSerializers$Base<TT;>;"
     :cond_1f
     :goto_1f
     return-object p0
 
     .line 83
-    .restart local v0    # "format":Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/ser/std/NumberSerializers$Base;, "Lcom/fasterxml/jackson/databind/ser/std/NumberSerializers$Base<TT;>;"
     :pswitch_20
     sget-object p0, Lcom/fasterxml/jackson/databind/ser/std/ToStringSerializer;->instance:Lcom/fasterxml/jackson/databind/ser/std/ToStringSerializer;
 
@@ -183,12 +147,9 @@
 
 .method public getSchema(Lcom/fasterxml/jackson/databind/SerializerProvider;Ljava/lang/reflect/Type;)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 5
-    .param p1, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .param p2, "typeHint"    # Ljava/lang/reflect/Type;
 
     .prologue
     .line 62
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/NumberSerializers$Base;, "Lcom/fasterxml/jackson/databind/ser/std/NumberSerializers$Base<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/std/NumberSerializers$Base;->_schemaType:Ljava/lang/String;
 
     const/4 v1, 0x1

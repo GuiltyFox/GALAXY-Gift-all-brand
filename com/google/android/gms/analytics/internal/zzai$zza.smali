@@ -2,34 +2,23 @@
 .super Ljava/lang/Object;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/gms/analytics/internal/zzai;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x11
-    name = "zza"
-.end annotation
-
-
 # instance fields
-.field private final mName:Ljava/lang/String;
+.field final synthetic a:Lcom/google/android/gms/analytics/internal/zzai;
 
-.field private final zzRR:J
+.field private final b:Ljava/lang/String;
 
-.field final synthetic zzRS:Lcom/google/android/gms/analytics/internal/zzai;
+.field private final c:J
 
 
 # direct methods
 .method private constructor <init>(Lcom/google/android/gms/analytics/internal/zzai;Ljava/lang/String;J)V
     .registers 8
 
-    iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzRS:Lcom/google/android/gms/analytics/internal/zzai;
+    iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->a:Lcom/google/android/gms/analytics/internal/zzai;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p2}, Lcom/google/android/gms/common/internal/zzx;->zzcG(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/String;)Ljava/lang/String;
 
     const-wide/16 v0, 0x0
 
@@ -40,11 +29,11 @@
     const/4 v0, 0x1
 
     :goto_f
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzx;->zzab(Z)V
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzx;->a(Z)V
 
-    iput-object p2, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->mName:Ljava/lang/String;
+    iput-object p2, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->b:Ljava/lang/String;
 
-    iput-wide p3, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzRR:J
+    iput-wide p3, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->c:J
 
     return-void
 
@@ -62,22 +51,22 @@
     return-void
 .end method
 
-.method private zzlu()V
+.method private c()V
     .registers 5
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzRS:Lcom/google/android/gms/analytics/internal/zzai;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->a:Lcom/google/android/gms/analytics/internal/zzai;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzai;->zziT()Lcom/google/android/gms/internal/zznl;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzai;->n()Lcom/google/android/gms/internal/zznl;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/android/gms/internal/zznl;->currentTimeMillis()J
+    invoke-interface {v0}, Lcom/google/android/gms/internal/zznl;->a()J
 
     move-result-wide v0
 
-    iget-object v2, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzRS:Lcom/google/android/gms/analytics/internal/zzai;
+    iget-object v2, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->a:Lcom/google/android/gms/analytics/internal/zzai;
 
-    invoke-static {v2}, Lcom/google/android/gms/analytics/internal/zzai;->zza(Lcom/google/android/gms/analytics/internal/zzai;)Landroid/content/SharedPreferences;
+    invoke-static {v2}, Lcom/google/android/gms/analytics/internal/zzai;->a(Lcom/google/android/gms/analytics/internal/zzai;)Landroid/content/SharedPreferences;
 
     move-result-object v2
 
@@ -85,19 +74,19 @@
 
     move-result-object v2
 
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzlz()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->g()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-interface {v2, v3}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzlA()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->b()Ljava/lang/String;
 
     move-result-object v3
 
     invoke-interface {v2, v3}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzly()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->f()Ljava/lang/String;
 
     move-result-object v3
 
@@ -108,12 +97,12 @@
     return-void
 .end method
 
-.method private zzlv()J
+.method private d()J
     .registers 6
 
     const-wide/16 v0, 0x0
 
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzlx()J
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->e()J
 
     move-result-wide v2
 
@@ -125,13 +114,13 @@
     return-wide v0
 
     :cond_b
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzRS:Lcom/google/android/gms/analytics/internal/zzai;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->a:Lcom/google/android/gms/analytics/internal/zzai;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzai;->zziT()Lcom/google/android/gms/internal/zznl;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzai;->n()Lcom/google/android/gms/internal/zznl;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/google/android/gms/internal/zznl;->currentTimeMillis()J
+    invoke-interface {v0}, Lcom/google/android/gms/internal/zznl;->a()J
 
     move-result-wide v0
 
@@ -144,16 +133,16 @@
     goto :goto_a
 .end method
 
-.method private zzlx()J
+.method private e()J
     .registers 5
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzRS:Lcom/google/android/gms/analytics/internal/zzai;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->a:Lcom/google/android/gms/analytics/internal/zzai;
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzai;->zza(Lcom/google/android/gms/analytics/internal/zzai;)Landroid/content/SharedPreferences;
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzai;->a(Lcom/google/android/gms/analytics/internal/zzai;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzly()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->f()Ljava/lang/String;
 
     move-result-object v1
 
@@ -166,14 +155,14 @@
     return-wide v0
 .end method
 
-.method private zzly()Ljava/lang/String;
+.method private f()Ljava/lang/String;
     .registers 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->mName:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->b:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -192,14 +181,14 @@
     return-object v0
 .end method
 
-.method private zzlz()Ljava/lang/String;
+.method private g()Ljava/lang/String;
     .registers 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->mName:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->b:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -220,7 +209,101 @@
 
 
 # virtual methods
-.method public zzbn(Ljava/lang/String;)V
+.method public a()Landroid/util/Pair;
+    .registers 11
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Landroid/util/Pair",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/Long;",
+            ">;"
+        }
+    .end annotation
+
+    const-wide/16 v8, 0x0
+
+    const/4 v0, 0x0
+
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->d()J
+
+    move-result-wide v2
+
+    iget-wide v4, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->c:J
+
+    cmp-long v1, v2, v4
+
+    if-gez v1, :cond_e
+
+    :cond_d
+    :goto_d
+    return-object v0
+
+    :cond_e
+    iget-wide v4, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->c:J
+
+    const-wide/16 v6, 0x2
+
+    mul-long/2addr v4, v6
+
+    cmp-long v1, v2, v4
+
+    if-lez v1, :cond_1b
+
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->c()V
+
+    goto :goto_d
+
+    :cond_1b
+    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->a:Lcom/google/android/gms/analytics/internal/zzai;
+
+    invoke-static {v1}, Lcom/google/android/gms/analytics/internal/zzai;->a(Lcom/google/android/gms/analytics/internal/zzai;)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->b()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->a:Lcom/google/android/gms/analytics/internal/zzai;
+
+    invoke-static {v2}, Lcom/google/android/gms/analytics/internal/zzai;->a(Lcom/google/android/gms/analytics/internal/zzai;)Landroid/content/SharedPreferences;
+
+    move-result-object v2
+
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->g()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v2, v3, v8, v9}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+
+    move-result-wide v2
+
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->c()V
+
+    if-eqz v1, :cond_d
+
+    cmp-long v4, v2, v8
+
+    if-lez v4, :cond_d
+
+    new-instance v0, Landroid/util/Pair;
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v2
+
+    invoke-direct {v0, v1, v2}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    goto :goto_d
+.end method
+
+.method public a(Ljava/lang/String;)V
     .registers 12
 
     const-wide v6, 0x7fffffffffffffffL
@@ -229,7 +312,7 @@
 
     const-wide/16 v4, 0x0
 
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzlx()J
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->e()J
 
     move-result-wide v0
 
@@ -237,7 +320,7 @@
 
     if-nez v0, :cond_14
 
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzlu()V
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->c()V
 
     :cond_14
     if-nez p1, :cond_19
@@ -248,13 +331,13 @@
     monitor-enter p0
 
     :try_start_1a
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzRS:Lcom/google/android/gms/analytics/internal/zzai;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->a:Lcom/google/android/gms/analytics/internal/zzai;
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzai;->zza(Lcom/google/android/gms/analytics/internal/zzai;)Landroid/content/SharedPreferences;
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzai;->a(Lcom/google/android/gms/analytics/internal/zzai;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzlz()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->g()Ljava/lang/String;
 
     move-result-object v1
 
@@ -268,9 +351,9 @@
 
     if-gtz v0, :cond_4d
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzRS:Lcom/google/android/gms/analytics/internal/zzai;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->a:Lcom/google/android/gms/analytics/internal/zzai;
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzai;->zza(Lcom/google/android/gms/analytics/internal/zzai;)Landroid/content/SharedPreferences;
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzai;->a(Lcom/google/android/gms/analytics/internal/zzai;)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
@@ -278,13 +361,13 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzlA()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->b()Ljava/lang/String;
 
     move-result-object v1
 
     invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzlz()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->g()Ljava/lang/String;
 
     move-result-object v1
 
@@ -323,9 +406,9 @@
     const/4 v0, 0x1
 
     :goto_63
-    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzRS:Lcom/google/android/gms/analytics/internal/zzai;
+    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->a:Lcom/google/android/gms/analytics/internal/zzai;
 
-    invoke-static {v1}, Lcom/google/android/gms/analytics/internal/zzai;->zza(Lcom/google/android/gms/analytics/internal/zzai;)Landroid/content/SharedPreferences;
+    invoke-static {v1}, Lcom/google/android/gms/analytics/internal/zzai;->a(Lcom/google/android/gms/analytics/internal/zzai;)Landroid/content/SharedPreferences;
 
     move-result-object v1
 
@@ -335,14 +418,14 @@
 
     if-eqz v0, :cond_76
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzlA()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->b()Ljava/lang/String;
 
     move-result-object v0
 
     invoke-interface {v1, v0, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     :cond_76
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzlz()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->g()Ljava/lang/String;
 
     move-result-object v0
 
@@ -371,14 +454,14 @@
     goto :goto_63
 .end method
 
-.method protected zzlA()Ljava/lang/String;
+.method protected b()Ljava/lang/String;
     .registers 3
 
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->mName:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->b:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -395,98 +478,4 @@
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public zzlw()Landroid/util/Pair;
-    .registers 11
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Landroid/util/Pair",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Long;",
-            ">;"
-        }
-    .end annotation
-
-    const-wide/16 v8, 0x0
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzlv()J
-
-    move-result-wide v2
-
-    iget-wide v4, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzRR:J
-
-    cmp-long v1, v2, v4
-
-    if-gez v1, :cond_e
-
-    :cond_d
-    :goto_d
-    return-object v0
-
-    :cond_e
-    iget-wide v4, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzRR:J
-
-    const-wide/16 v6, 0x2
-
-    mul-long/2addr v4, v6
-
-    cmp-long v1, v2, v4
-
-    if-lez v1, :cond_1b
-
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzlu()V
-
-    goto :goto_d
-
-    :cond_1b
-    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzRS:Lcom/google/android/gms/analytics/internal/zzai;
-
-    invoke-static {v1}, Lcom/google/android/gms/analytics/internal/zzai;->zza(Lcom/google/android/gms/analytics/internal/zzai;)Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzlA()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-interface {v1, v2, v0}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzRS:Lcom/google/android/gms/analytics/internal/zzai;
-
-    invoke-static {v2}, Lcom/google/android/gms/analytics/internal/zzai;->zza(Lcom/google/android/gms/analytics/internal/zzai;)Landroid/content/SharedPreferences;
-
-    move-result-object v2
-
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzlz()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-interface {v2, v3, v8, v9}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
-
-    move-result-wide v2
-
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzai$zza;->zzlu()V
-
-    if-eqz v1, :cond_d
-
-    cmp-long v4, v2, v8
-
-    if-lez v4, :cond_d
-
-    new-instance v0, Landroid/util/Pair;
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v2
-
-    invoke-direct {v0, v1, v2}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    goto :goto_d
 .end method

@@ -61,8 +61,6 @@
 
 .method protected constructor <init>(Ljava/lang/Boolean;Ljava/lang/String;)V
     .registers 4
-    .param p1, "req"    # Ljava/lang/Boolean;
-    .param p2, "desc"    # Ljava/lang/String;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -77,9 +75,6 @@
 
 .method protected constructor <init>(Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/Integer;)V
     .registers 4
-    .param p1, "req"    # Ljava/lang/Boolean;
-    .param p2, "desc"    # Ljava/lang/String;
-    .param p3, "index"    # Ljava/lang/Integer;
 
     .prologue
     .line 50
@@ -100,8 +95,6 @@
 
 .method public static construct(ZLjava/lang/String;)Lcom/fasterxml/jackson/databind/PropertyMetadata;
     .registers 3
-    .param p0, "req"    # Z
-    .param p1, "desc"    # Ljava/lang/String;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -118,9 +111,6 @@
 
 .method public static construct(ZLjava/lang/String;Ljava/lang/Integer;)Lcom/fasterxml/jackson/databind/PropertyMetadata;
     .registers 4
-    .param p0, "req"    # Z
-    .param p1, "desc"    # Ljava/lang/String;
-    .param p2, "index"    # Ljava/lang/Integer;
 
     .prologue
     .line 65
@@ -129,7 +119,6 @@
     sget-object v0, Lcom/fasterxml/jackson/databind/PropertyMetadata;->STD_REQUIRED:Lcom/fasterxml/jackson/databind/PropertyMetadata;
 
     .line 66
-    .local v0, "md":Lcom/fasterxml/jackson/databind/PropertyMetadata;
     :goto_4
     if-eqz p1, :cond_a
 
@@ -152,7 +141,6 @@
     return-object v0
 
     .line 65
-    .end local v0    # "md":Lcom/fasterxml/jackson/databind/PropertyMetadata;
     :cond_11
     sget-object v0, Lcom/fasterxml/jackson/databind/PropertyMetadata;->STD_OPTIONAL:Lcom/fasterxml/jackson/databind/PropertyMetadata;
 
@@ -292,7 +280,6 @@
 
 .method public withDescription(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/PropertyMetadata;
     .registers 5
-    .param p1, "desc"    # Ljava/lang/String;
 
     .prologue
     .line 91
@@ -309,7 +296,6 @@
 
 .method public withIndex(Ljava/lang/Integer;)Lcom/fasterxml/jackson/databind/PropertyMetadata;
     .registers 5
-    .param p1, "index"    # Ljava/lang/Integer;
 
     .prologue
     .line 95
@@ -326,7 +312,6 @@
 
 .method public withRequired(Ljava/lang/Boolean;)Lcom/fasterxml/jackson/databind/PropertyMetadata;
     .registers 5
-    .param p1, "b"    # Ljava/lang/Boolean;
 
     .prologue
     .line 99
@@ -338,13 +323,11 @@
     if-nez v0, :cond_17
 
     .line 108
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/PropertyMetadata;
     :cond_6
     :goto_6
     return-object p0
 
     .line 104
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/PropertyMetadata;
     :cond_7
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/PropertyMetadata;->_required:Ljava/lang/Boolean;
 

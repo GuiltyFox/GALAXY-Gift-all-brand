@@ -88,7 +88,6 @@
 
 .method static synthetic access$000(Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;)V
     .registers 1
-    .param p0, "x0"    # Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;
 
     .prologue
     .line 28
@@ -98,110 +97,106 @@
 .end method
 
 .method private update()V
-    .registers 11
+    .registers 7
 
     .prologue
     .line 156
-    iget-boolean v3, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mIsRunning:Z
+    iget-boolean v0, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mIsRunning:Z
 
-    if-eqz v3, :cond_41
+    if-eqz v0, :cond_3f
 
     .line 158
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
 
-    move-result-wide v4
+    move-result-wide v0
 
-    iget-wide v6, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mStartTime:J
+    iget-wide v2, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mStartTime:J
 
-    sub-long v0, v4, v6
+    sub-long/2addr v0, v2
 
     .line 159
-    .local v0, "elapsed":J
-    long-to-float v3, v0
+    long-to-float v0, v0
+
+    iget v1, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mDuration:I
+
+    int-to-float v1, v1
+
+    div-float/2addr v0, v1
+
+    .line 160
+    iget-object v1, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mInterpolator:Landroid/view/animation/Interpolator;
+
+    if-eqz v1, :cond_1a
+
+    iget-object v1, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mInterpolator:Landroid/view/animation/Interpolator;
+
+    invoke-interface {v1, v0}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
+
+    move-result v0
+
+    :cond_1a
+    iput v0, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mAnimatedFraction:F
+
+    .line 165
+    iget-object v0, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mUpdateListener:Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorUpdateListenerProxy;
+
+    if-eqz v0, :cond_25
+
+    .line 166
+    iget-object v0, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mUpdateListener:Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorUpdateListenerProxy;
+
+    invoke-interface {v0}, Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorUpdateListenerProxy;->onAnimationUpdate()V
+
+    .line 170
+    :cond_25
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    move-result-wide v0
+
+    iget-wide v2, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mStartTime:J
 
     iget v4, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mDuration:I
 
-    int-to-float v4, v4
+    int-to-long v4, v4
 
-    div-float v2, v3, v4
+    add-long/2addr v2, v4
 
-    .line 160
-    .local v2, "linearFraction":F
-    iget-object v3, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mInterpolator:Landroid/view/animation/Interpolator;
+    cmp-long v0, v0, v2
 
-    if-eqz v3, :cond_1c
-
-    iget-object v3, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mInterpolator:Landroid/view/animation/Interpolator;
-
-    invoke-interface {v3, v2}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
-
-    move-result v2
-
-    .end local v2    # "linearFraction":F
-    :cond_1c
-    iput v2, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mAnimatedFraction:F
-
-    .line 165
-    iget-object v3, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mUpdateListener:Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorUpdateListenerProxy;
-
-    if-eqz v3, :cond_27
-
-    .line 166
-    iget-object v3, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mUpdateListener:Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorUpdateListenerProxy;
-
-    invoke-interface {v3}, Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorUpdateListenerProxy;->onAnimationUpdate()V
-
-    .line 170
-    :cond_27
-    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
-
-    move-result-wide v4
-
-    iget-wide v6, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mStartTime:J
-
-    iget v3, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mDuration:I
-
-    int-to-long v8, v3
-
-    add-long/2addr v6, v8
-
-    cmp-long v3, v4, v6
-
-    if-ltz v3, :cond_41
+    if-ltz v0, :cond_3f
 
     .line 171
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
-    iput-boolean v3, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mIsRunning:Z
+    iput-boolean v0, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mIsRunning:Z
 
     .line 173
-    iget-object v3, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mListener:Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorListenerProxy;
+    iget-object v0, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mListener:Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorListenerProxy;
 
-    if-eqz v3, :cond_41
+    if-eqz v0, :cond_3f
 
     .line 174
-    iget-object v3, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mListener:Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorListenerProxy;
+    iget-object v0, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mListener:Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorListenerProxy;
 
-    invoke-interface {v3}, Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorListenerProxy;->onAnimationEnd()V
+    invoke-interface {v0}, Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorListenerProxy;->onAnimationEnd()V
 
     .line 179
-    .end local v0    # "elapsed":J
-    :cond_41
-    iget-boolean v3, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mIsRunning:Z
+    :cond_3f
+    iget-boolean v0, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mIsRunning:Z
 
-    if-eqz v3, :cond_4e
+    if-eqz v0, :cond_4c
 
     .line 181
-    sget-object v3, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->sHandler:Landroid/os/Handler;
+    sget-object v0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->sHandler:Landroid/os/Handler;
 
-    iget-object v4, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mRunnable:Ljava/lang/Runnable;
+    iget-object v1, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mRunnable:Ljava/lang/Runnable;
 
-    const-wide/16 v6, 0xa
+    const-wide/16 v2, 0xa
 
-    invoke-virtual {v3, v4, v6, v7}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 183
-    :cond_4e
+    :cond_4c
     return-void
 .end method
 
@@ -260,7 +255,7 @@
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
     .line 138
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p0, Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;->mAnimatedFraction:F
 
@@ -380,7 +375,6 @@
 
 .method public setDuration(I)V
     .registers 2
-    .param p1, "duration"    # I
 
     .prologue
     .line 113
@@ -392,8 +386,6 @@
 
 .method public setFloatValues(FF)V
     .registers 5
-    .param p1, "from"    # F
-    .param p2, "to"    # F
 
     .prologue
     .line 102
@@ -416,8 +408,6 @@
 
 .method public setIntValues(II)V
     .registers 5
-    .param p1, "from"    # I
-    .param p2, "to"    # I
 
     .prologue
     .line 91
@@ -440,7 +430,6 @@
 
 .method public setInterpolator(Landroid/view/animation/Interpolator;)V
     .registers 2
-    .param p1, "interpolator"    # Landroid/view/animation/Interpolator;
 
     .prologue
     .line 76
@@ -452,7 +441,6 @@
 
 .method public setListener(Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorListenerProxy;)V
     .registers 2
-    .param p1, "listener"    # Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorListenerProxy;
 
     .prologue
     .line 81
@@ -464,7 +452,6 @@
 
 .method public setUpdateListener(Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorUpdateListenerProxy;)V
     .registers 2
-    .param p1, "updateListener"    # Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorUpdateListenerProxy;
 
     .prologue
     .line 86

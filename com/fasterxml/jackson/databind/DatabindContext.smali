@@ -34,7 +34,6 @@
 
 .method public constructSpecializedType(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 4
-    .param p1, "baseType"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -47,7 +46,6 @@
 
     .prologue
     .line 133
-    .local p2, "subclass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
 
     move-result-object v0
@@ -55,11 +53,9 @@
     if-ne v0, p2, :cond_7
 
     .line 136
-    .end local p1    # "baseType":Lcom/fasterxml/jackson/databind/JavaType;
     :goto_6
     return-object p1
 
-    .restart local p1    # "baseType":Lcom/fasterxml/jackson/databind/JavaType;
     :cond_7
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/DatabindContext;->getConfig()Lcom/fasterxml/jackson/databind/cfg/MapperConfig;
 
@@ -74,7 +70,6 @@
 
 .method public constructType(Ljava/lang/reflect/Type;)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 3
-    .param p1, "type"    # Ljava/lang/reflect/Type;
 
     .prologue
     .line 124
@@ -90,9 +85,7 @@
 .end method
 
 .method public converterInstance(Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/util/Converter;
-    .registers 10
-    .param p1, "annotated"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
-    .param p2, "converterDef"    # Ljava/lang/Object;
+    .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -107,31 +100,23 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 186
     if-nez p2, :cond_5
 
-    move-object p2, v1
+    move-object p2, v0
 
     .line 212
-    .end local p2    # "converterDef":Ljava/lang/Object;
     :goto_4
     return-object p2
 
     .line 189
-    .restart local p2    # "converterDef":Ljava/lang/Object;
     :cond_5
-    instance-of v4, p2, Lcom/fasterxml/jackson/databind/util/Converter;
+    instance-of v1, p2, Lcom/fasterxml/jackson/databind/util/Converter;
 
-    if-eqz v4, :cond_c
+    if-eqz v1, :cond_c
 
     .line 190
     check-cast p2, Lcom/fasterxml/jackson/databind/util/Converter;
@@ -140,166 +125,157 @@
 
     .line 192
     :cond_c
-    instance-of v4, p2, Ljava/lang/Class;
+    instance-of v1, p2, Ljava/lang/Class;
 
-    if-nez v4, :cond_39
+    if-nez v1, :cond_39
 
     .line 193
-    new-instance v4, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "AnnotationIntrospector returned Converter definition of type "
+    const-string/jumbo v2, "AnnotationIntrospector returned Converter definition of type "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-virtual {v6}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    const-string/jumbo v6, "; expected type Converter or Class<Converter> instead"
+    const-string/jumbo v2, "; expected type Converter or Class<Converter> instead"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-direct {v4, v5}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v4
-
-    :cond_39
-    move-object v2, p2
+    throw v0
 
     .line 196
-    check-cast v2, Ljava/lang/Class;
+    :cond_39
+    check-cast p2, Ljava/lang/Class;
 
     .line 198
-    .local v2, "converterClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    const-class v4, Lcom/fasterxml/jackson/databind/util/Converter$None;
+    const-class v1, Lcom/fasterxml/jackson/databind/util/Converter$None;
 
-    if-eq v2, v4, :cond_46
+    if-eq p2, v1, :cond_45
 
-    invoke-static {v2}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->isBogusClass(Ljava/lang/Class;)Z
+    invoke-static {p2}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->isBogusClass(Ljava/lang/Class;)Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_48
+    if-eqz v1, :cond_47
 
-    :cond_46
-    move-object p2, v1
+    :cond_45
+    move-object p2, v0
 
     .line 199
     goto :goto_4
 
     .line 201
-    :cond_48
-    const-class v4, Lcom/fasterxml/jackson/databind/util/Converter;
+    :cond_47
+    const-class v1, Lcom/fasterxml/jackson/databind/util/Converter;
 
-    invoke-virtual {v4, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    invoke-virtual {v1, p2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    move-result v4
+    move-result v1
 
-    if-nez v4, :cond_75
+    if-nez v1, :cond_74
 
     .line 202
-    new-instance v4, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "AnnotationIntrospector returned Class "
+    const-string/jumbo v2, "AnnotationIntrospector returned Class "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string/jumbo v6, "; expected Class<Converter>"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-direct {v4, v5}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v4
-
-    .line 205
-    :cond_75
-    invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/DatabindContext;->getConfig()Lcom/fasterxml/jackson/databind/cfg/MapperConfig;
-
-    move-result-object v0
-
-    .line 206
-    .local v0, "config":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getHandlerInstantiator()Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;
-
-    move-result-object v3
-
-    .line 207
-    .local v3, "hi":Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;
-    if-nez v3, :cond_8e
-
-    .line 208
-    .local v1, "conv":Lcom/fasterxml/jackson/databind/util/Converter;, "Lcom/fasterxml/jackson/databind/util/Converter<**>;"
-    :goto_7f
-    if-nez v1, :cond_8b
-
-    .line 209
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->canOverrideAccessModifiers()Z
-
-    move-result v4
-
-    invoke-static {v2, v4}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->createInstance(Ljava/lang/Class;Z)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .end local v1    # "conv":Lcom/fasterxml/jackson/databind/util/Converter;, "Lcom/fasterxml/jackson/databind/util/Converter<**>;"
-    check-cast v1, Lcom/fasterxml/jackson/databind/util/Converter;
+    invoke-virtual {p2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    .restart local v1    # "conv":Lcom/fasterxml/jackson/databind/util/Converter;, "Lcom/fasterxml/jackson/databind/util/Converter<**>;"
-    :cond_8b
-    move-object p2, v1
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "; expected Class<Converter>"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 205
+    :cond_74
+    invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/DatabindContext;->getConfig()Lcom/fasterxml/jackson/databind/cfg/MapperConfig;
+
+    move-result-object v1
+
+    .line 206
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getHandlerInstantiator()Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;
+
+    move-result-object v2
+
+    .line 207
+    if-nez v2, :cond_8d
+
+    .line 208
+    :goto_7e
+    if-nez v0, :cond_8a
+
+    .line 209
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->canOverrideAccessModifiers()Z
+
+    move-result v0
+
+    invoke-static {p2, v0}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->createInstance(Ljava/lang/Class;Z)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/fasterxml/jackson/databind/util/Converter;
+
+    :cond_8a
+    move-object p2, v0
 
     .line 212
     goto/16 :goto_4
 
     .line 207
-    .end local v1    # "conv":Lcom/fasterxml/jackson/databind/util/Converter;, "Lcom/fasterxml/jackson/databind/util/Converter<**>;"
-    :cond_8e
-    invoke-virtual {v3, v0, p1, v2}, Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;->converterInstance(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/util/Converter;
+    :cond_8d
+    invoke-virtual {v2, v1, p1, p2}, Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;->converterInstance(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/util/Converter;
 
-    move-result-object v1
+    move-result-object v0
 
-    goto :goto_7f
+    goto :goto_7e
 .end method
 
 .method public abstract getActiveView()Ljava/lang/Class;
@@ -333,7 +309,6 @@
 
 .method public final isEnabled(Lcom/fasterxml/jackson/databind/MapperFeature;)Z
     .registers 3
-    .param p1, "feature"    # Lcom/fasterxml/jackson/databind/MapperFeature;
 
     .prologue
     .line 61
@@ -349,9 +324,7 @@
 .end method
 
 .method public objectIdGeneratorInstance(Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;
-    .registers 8
-    .param p1, "annotated"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
-    .param p2, "objectIdInfo"    # Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
+    .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -363,133 +336,111 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
     .line 151
     invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;->getGeneratorType()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v1
 
     .line 152
-    .local v3, "implClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/DatabindContext;->getConfig()Lcom/fasterxml/jackson/databind/cfg/MapperConfig;
-
-    move-result-object v0
-
-    .line 153
-    .local v0, "config":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getHandlerInstantiator()Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;
 
     move-result-object v2
 
-    .line 154
-    .local v2, "hi":Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;
-    if-nez v2, :cond_24
+    .line 153
+    invoke-virtual {v2}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getHandlerInstantiator()Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;
 
-    const/4 v1, 0x0
+    move-result-object v0
+
+    .line 154
+    if-nez v0, :cond_24
+
+    const/4 v0, 0x0
 
     .line 155
-    .local v1, "gen":Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;, "Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;"
     :goto_f
-    if-nez v1, :cond_1b
+    if-nez v0, :cond_1b
 
     .line 156
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->canOverrideAccessModifiers()Z
+    invoke-virtual {v2}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->canOverrideAccessModifiers()Z
 
-    move-result v4
+    move-result v0
 
-    invoke-static {v3, v4}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->createInstance(Ljava/lang/Class;Z)Ljava/lang/Object;
+    invoke-static {v1, v0}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->createInstance(Ljava/lang/Class;Z)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    .end local v1    # "gen":Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;, "Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;"
-    check-cast v1, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;
+    check-cast v0, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;
 
     .line 159
-    .restart local v1    # "gen":Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;, "Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;"
     :cond_1b
     invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;->getScope()Ljava/lang/Class;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v1, v4}, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;->forScope(Ljava/lang/Class;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;->forScope(Ljava/lang/Class;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;
 
-    move-result-object v4
+    move-result-object v0
 
-    return-object v4
+    return-object v0
 
     .line 154
-    .end local v1    # "gen":Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;, "Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;"
     :cond_24
-    invoke-virtual {v2, v0, p1, v3}, Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;->objectIdGeneratorInstance(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Class;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;
+    invoke-virtual {v0, v2, p1, v1}, Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;->objectIdGeneratorInstance(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Class;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_f
 .end method
 
 .method public objectIdResolverInstance(Lcom/fasterxml/jackson/databind/introspect/Annotated;Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;)Lcom/fasterxml/jackson/annotation/ObjectIdResolver;
-    .registers 8
-    .param p1, "annotated"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
-    .param p2, "objectIdInfo"    # Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
+    .registers 6
 
     .prologue
     .line 164
     invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;->getResolverType()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 165
-    .local v2, "implClass":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/fasterxml/jackson/annotation/ObjectIdResolver;>;"
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/DatabindContext;->getConfig()Lcom/fasterxml/jackson/databind/cfg/MapperConfig;
+
+    move-result-object v2
+
+    .line 166
+    invoke-virtual {v2}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getHandlerInstantiator()Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;
 
     move-result-object v0
 
-    .line 166
-    .local v0, "config":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getHandlerInstantiator()Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;
-
-    move-result-object v1
-
     .line 167
-    .local v1, "hi":Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;
-    if-nez v1, :cond_1c
+    if-nez v0, :cond_1c
 
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
     .line 168
-    .local v3, "resolver":Lcom/fasterxml/jackson/annotation/ObjectIdResolver;
     :goto_f
-    if-nez v3, :cond_1b
+    if-nez v0, :cond_1b
 
     .line 169
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->canOverrideAccessModifiers()Z
+    invoke-virtual {v2}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->canOverrideAccessModifiers()Z
 
-    move-result v4
+    move-result v0
 
-    invoke-static {v2, v4}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->createInstance(Ljava/lang/Class;Z)Ljava/lang/Object;
+    invoke-static {v1, v0}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->createInstance(Ljava/lang/Class;Z)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    .end local v3    # "resolver":Lcom/fasterxml/jackson/annotation/ObjectIdResolver;
-    check-cast v3, Lcom/fasterxml/jackson/annotation/ObjectIdResolver;
+    check-cast v0, Lcom/fasterxml/jackson/annotation/ObjectIdResolver;
 
     .line 172
-    .restart local v3    # "resolver":Lcom/fasterxml/jackson/annotation/ObjectIdResolver;
     :cond_1b
-    return-object v3
+    return-object v0
 
     .line 167
-    .end local v3    # "resolver":Lcom/fasterxml/jackson/annotation/ObjectIdResolver;
     :cond_1c
-    invoke-virtual {v1, v0, p1, v2}, Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;->resolverIdGeneratorInstance(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Class;)Lcom/fasterxml/jackson/annotation/ObjectIdResolver;
+    invoke-virtual {v0, v2, p1, v1}, Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;->resolverIdGeneratorInstance(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Class;)Lcom/fasterxml/jackson/annotation/ObjectIdResolver;
 
-    move-result-object v3
+    move-result-object v0
 
     goto :goto_f
 .end method

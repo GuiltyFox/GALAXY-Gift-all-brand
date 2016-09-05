@@ -10,7 +10,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;)V
     .registers 3
-    .param p1, "br"    # Lcom/fasterxml/jackson/core/util/BufferRecycler;
 
     .prologue
     .line 21
@@ -31,7 +30,6 @@
 # virtual methods
 .method public append(C)Ljava/io/Writer;
     .registers 2
-    .param p1, "c"    # C
 
     .prologue
     .line 33
@@ -43,7 +41,6 @@
 
 .method public append(Ljava/lang/CharSequence;)Ljava/io/Writer;
     .registers 6
-    .param p1, "csq"    # Ljava/lang/CharSequence;
 
     .prologue
     .line 39
@@ -52,7 +49,6 @@
     move-result-object v0
 
     .line 40
-    .local v0, "str":Ljava/lang/String;
     iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SegmentedStringWriter;->_buffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
 
     const/4 v2, 0x0
@@ -69,22 +65,18 @@
 
 .method public append(Ljava/lang/CharSequence;II)Ljava/io/Writer;
     .registers 8
-    .param p1, "csq"    # Ljava/lang/CharSequence;
-    .param p2, "start"    # I
-    .param p3, "end"    # I
 
     .prologue
     .line 46
     invoke-interface {p1, p2, p3}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-interface {v1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+    invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     .line 47
-    .local v0, "str":Ljava/lang/String;
     iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SegmentedStringWriter;->_buffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
 
     const/4 v2, 0x0
@@ -101,12 +93,6 @@
 
 .method public bridge synthetic append(C)Ljava/lang/Appendable;
     .registers 3
-    .param p1, "x0"    # C
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 16
@@ -119,12 +105,6 @@
 
 .method public bridge synthetic append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/CharSequence;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 16
@@ -137,14 +117,6 @@
 
 .method public bridge synthetic append(Ljava/lang/CharSequence;II)Ljava/lang/Appendable;
     .registers 5
-    .param p1, "x0"    # Ljava/lang/CharSequence;
-    .param p2, "x1"    # I
-    .param p3, "x2"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 16
@@ -176,14 +148,13 @@
 
     .prologue
     .line 83
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SegmentedStringWriter;->_buffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/SegmentedStringWriter;->_buffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/util/TextBuffer;->contentsAsString()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/TextBuffer;->contentsAsString()Ljava/lang/String;
 
     move-result-object v0
 
     .line 84
-    .local v0, "result":Ljava/lang/String;
     iget-object v1, p0, Lcom/fasterxml/jackson/core/io/SegmentedStringWriter;->_buffer:Lcom/fasterxml/jackson/core/util/TextBuffer;
 
     invoke-virtual {v1}, Lcom/fasterxml/jackson/core/util/TextBuffer;->releaseBuffers()V
@@ -194,7 +165,6 @@
 
 .method public write(I)V
     .registers 4
-    .param p1, "c"    # I
 
     .prologue
     .line 61
@@ -209,7 +179,6 @@
 
 .method public write(Ljava/lang/String;)V
     .registers 5
-    .param p1, "str"    # Ljava/lang/String;
 
     .prologue
     .line 64
@@ -228,9 +197,6 @@
 
 .method public write(Ljava/lang/String;II)V
     .registers 5
-    .param p1, "str"    # Ljava/lang/String;
-    .param p2, "off"    # I
-    .param p3, "len"    # I
 
     .prologue
     .line 67
@@ -243,7 +209,6 @@
 
 .method public write([C)V
     .registers 5
-    .param p1, "cbuf"    # [C
 
     .prologue
     .line 55
@@ -260,9 +225,6 @@
 
 .method public write([CII)V
     .registers 5
-    .param p1, "cbuf"    # [C
-    .param p2, "off"    # I
-    .param p3, "len"    # I
 
     .prologue
     .line 58

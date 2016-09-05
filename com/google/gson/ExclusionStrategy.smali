@@ -4,7 +4,10 @@
 
 
 # virtual methods
-.method public abstract shouldSkipClass(Ljava/lang/Class;)Z
+.method public abstract a(Lcom/google/gson/FieldAttributes;)Z
+.end method
+
+.method public abstract a(Ljava/lang/Class;)Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -12,7 +15,4 @@
             "<*>;)Z"
         }
     .end annotation
-.end method
-
-.method public abstract shouldSkipField(Lcom/google/gson/FieldAttributes;)Z
 .end method

@@ -38,11 +38,6 @@
 .end method
 
 .method public abstract sendResponseMessage(Lcz/msebera/android/httpclient/HttpResponse;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 .end method
 
 .method public abstract sendRetryMessage(I)V

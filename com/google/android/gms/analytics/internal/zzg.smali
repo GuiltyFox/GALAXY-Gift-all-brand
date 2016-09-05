@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field private final zzPi:Landroid/content/Context;
+.field private final a:Landroid/content/Context;
 
-.field private final zzrI:Landroid/content/Context;
+.field private final b:Landroid/content/Context;
 
 
 # direct methods
@@ -14,7 +14,7 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
@@ -22,26 +22,26 @@
 
     const-string/jumbo v1, "Application context can\'t be null"
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzx;->zzb(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzg;->zzrI:Landroid/content/Context;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzg;->a:Landroid/content/Context;
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzg;->zzPi:Landroid/content/Context;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzg;->b:Landroid/content/Context;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getApplicationContext()Landroid/content/Context;
+.method public a()Landroid/content/Context;
     .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzg;->zzrI:Landroid/content/Context;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzg;->a:Landroid/content/Context;
 
     return-object v0
 .end method
 
-.method protected zza(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzu;
+.method protected a(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzu;
     .registers 3
 
     new-instance v0, Lcom/google/android/gms/analytics/internal/zzu;
@@ -51,17 +51,25 @@
     return-object v0
 .end method
 
-.method protected zzaa(Landroid/content/Context;)Lcom/google/android/gms/measurement/zzg;
+.method protected a(Landroid/content/Context;)Lcom/google/android/gms/measurement/zzg;
     .registers 3
 
-    invoke-static {p1}, Lcom/google/android/gms/measurement/zzg;->zzaT(Landroid/content/Context;)Lcom/google/android/gms/measurement/zzg;
+    invoke-static {p1}, Lcom/google/android/gms/measurement/zzg;->a(Landroid/content/Context;)Lcom/google/android/gms/measurement/zzg;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected zzb(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzk;
+.method public b()Landroid/content/Context;
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzg;->b:Landroid/content/Context;
+
+    return-object v0
+.end method
+
+.method protected b(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzk;
     .registers 3
 
     new-instance v0, Lcom/google/android/gms/analytics/internal/zzk;
@@ -71,7 +79,7 @@
     return-object v0
 .end method
 
-.method protected zzc(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zza;
+.method protected c(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zza;
     .registers 3
 
     new-instance v0, Lcom/google/android/gms/analytics/internal/zza;
@@ -81,7 +89,7 @@
     return-object v0
 .end method
 
-.method protected zzd(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzn;
+.method protected d(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzn;
     .registers 3
 
     new-instance v0, Lcom/google/android/gms/analytics/internal/zzn;
@@ -91,7 +99,7 @@
     return-object v0
 .end method
 
-.method protected zze(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzan;
+.method protected e(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzan;
     .registers 3
 
     new-instance v0, Lcom/google/android/gms/analytics/internal/zzan;
@@ -101,7 +109,7 @@
     return-object v0
 .end method
 
-.method protected zzf(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzaf;
+.method protected f(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzaf;
     .registers 3
 
     new-instance v0, Lcom/google/android/gms/analytics/internal/zzaf;
@@ -111,7 +119,7 @@
     return-object v0
 .end method
 
-.method protected zzg(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzr;
+.method protected g(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzr;
     .registers 3
 
     new-instance v0, Lcom/google/android/gms/analytics/internal/zzr;
@@ -121,17 +129,17 @@
     return-object v0
 .end method
 
-.method protected zzh(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/internal/zznl;
+.method protected h(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/internal/zznl;
     .registers 3
 
-    invoke-static {}, Lcom/google/android/gms/internal/zzno;->zzrM()Lcom/google/android/gms/internal/zznl;
+    invoke-static {}, Lcom/google/android/gms/internal/zzno;->c()Lcom/google/android/gms/internal/zznl;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected zzi(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/GoogleAnalytics;
+.method protected i(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/GoogleAnalytics;
     .registers 3
 
     new-instance v0, Lcom/google/android/gms/analytics/GoogleAnalytics;
@@ -141,7 +149,7 @@
     return-object v0
 .end method
 
-.method zzj(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzl;
+.method j(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzl;
     .registers 3
 
     new-instance v0, Lcom/google/android/gms/analytics/internal/zzl;
@@ -151,15 +159,7 @@
     return-object v0
 .end method
 
-.method public zzjg()Landroid/content/Context;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzg;->zzPi:Landroid/content/Context;
-
-    return-object v0
-.end method
-
-.method zzk(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzag;
+.method k(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzag;
     .registers 3
 
     new-instance v0, Lcom/google/android/gms/analytics/internal/zzag;
@@ -169,7 +169,7 @@
     return-object v0
 .end method
 
-.method protected zzl(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzb;
+.method protected l(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzb;
     .registers 3
 
     new-instance v0, Lcom/google/android/gms/analytics/internal/zzb;
@@ -179,7 +179,7 @@
     return-object v0
 .end method
 
-.method public zzm(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzj;
+.method public m(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzj;
     .registers 3
 
     new-instance v0, Lcom/google/android/gms/analytics/internal/zzj;
@@ -189,7 +189,7 @@
     return-object v0
 .end method
 
-.method public zzn(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzah;
+.method public n(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzah;
     .registers 3
 
     new-instance v0, Lcom/google/android/gms/analytics/internal/zzah;
@@ -199,7 +199,7 @@
     return-object v0
 .end method
 
-.method public zzo(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzi;
+.method public o(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzi;
     .registers 3
 
     new-instance v0, Lcom/google/android/gms/analytics/internal/zzi;
@@ -209,7 +209,7 @@
     return-object v0
 .end method
 
-.method public zzp(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzv;
+.method public p(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzv;
     .registers 3
 
     new-instance v0, Lcom/google/android/gms/analytics/internal/zzv;
@@ -219,7 +219,7 @@
     return-object v0
 .end method
 
-.method public zzq(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzai;
+.method public q(Lcom/google/android/gms/analytics/internal/zzf;)Lcom/google/android/gms/analytics/internal/zzai;
     .registers 3
 
     new-instance v0, Lcom/google/android/gms/analytics/internal/zzai;

@@ -3,25 +3,9 @@
 .source "RecyclableBufferedInputStream.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/resource/bitmap/RecyclableBufferedInputStream;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "InvalidMarkException"
-.end annotation
-
-
-# static fields
-.field private static final serialVersionUID:J = -0x3c350493c899b79dL
-
-
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 2
-    .param p1, "detailMessage"    # Ljava/lang/String;
 
     .prologue
     .line 413

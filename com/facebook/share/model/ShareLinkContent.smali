@@ -4,12 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/facebook/share/model/ShareLinkContent$Builder;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/facebook/share/model/ShareContent",
@@ -59,7 +53,6 @@
 
 .method constructor <init>(Landroid/os/Parcel;)V
     .registers 3
-    .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
     .line 48
@@ -100,7 +93,6 @@
 
 .method private constructor <init>(Lcom/facebook/share/model/ShareLinkContent$Builder;)V
     .registers 3
-    .param p1, "builder"    # Lcom/facebook/share/model/ShareLinkContent$Builder;
 
     .prologue
     .line 41
@@ -136,8 +128,6 @@
 
 .method synthetic constructor <init>(Lcom/facebook/share/model/ShareLinkContent$Builder;Lcom/facebook/share/model/ShareLinkContent$1;)V
     .registers 3
-    .param p1, "x0"    # Lcom/facebook/share/model/ShareLinkContent$Builder;
-    .param p2, "x1"    # Lcom/facebook/share/model/ShareLinkContent$1;
 
     .prologue
     .line 34
@@ -170,8 +160,6 @@
 
 .method public getContentTitle()Ljava/lang/String;
     .registers 2
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
 
     .prologue
     .line 69
@@ -182,8 +170,6 @@
 
 .method public getImageUrl()Landroid/net/Uri;
     .registers 2
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
 
     .prologue
     .line 78
@@ -194,8 +180,6 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .registers 5
-    .param p1, "out"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
     .prologue
     .line 86

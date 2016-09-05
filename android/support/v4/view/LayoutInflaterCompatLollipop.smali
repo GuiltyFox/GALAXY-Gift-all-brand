@@ -4,20 +4,8 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 22
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method static setFactory(Landroid/view/LayoutInflater;Landroid/support/v4/view/LayoutInflaterFactory;)V
+.method static a(Landroid/view/LayoutInflater;Landroid/support/v4/view/LayoutInflaterFactory;)V
     .registers 3
-    .param p0, "inflater"    # Landroid/view/LayoutInflater;
-    .param p1, "factory"    # Landroid/support/v4/view/LayoutInflaterFactory;
 
     .prologue
     .line 24

@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/facebook/share/model/ShareContent;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x409
-    name = "Builder"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<P:",
@@ -55,7 +46,6 @@
 
     .prologue
     .line 125
-    .local p0, "this":Lcom/facebook/share/model/ShareContent$Builder;, "Lcom/facebook/share/model/ShareContent$Builder<TP;TE;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -63,7 +53,6 @@
 
 .method static synthetic access$000(Lcom/facebook/share/model/ShareContent$Builder;)Landroid/net/Uri;
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/share/model/ShareContent$Builder;
 
     .prologue
     .line 125
@@ -74,7 +63,6 @@
 
 .method static synthetic access$100(Lcom/facebook/share/model/ShareContent$Builder;)Ljava/util/List;
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/share/model/ShareContent$Builder;
 
     .prologue
     .line 125
@@ -85,7 +73,6 @@
 
 .method static synthetic access$200(Lcom/facebook/share/model/ShareContent$Builder;)Ljava/lang/String;
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/share/model/ShareContent$Builder;
 
     .prologue
     .line 125
@@ -96,7 +83,6 @@
 
 .method static synthetic access$300(Lcom/facebook/share/model/ShareContent$Builder;)Ljava/lang/String;
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/share/model/ShareContent$Builder;
 
     .prologue
     .line 125
@@ -117,17 +103,13 @@
 
     .prologue
     .line 179
-    .local p0, "this":Lcom/facebook/share/model/ShareContent$Builder;, "Lcom/facebook/share/model/ShareContent$Builder<TP;TE;>;"
-    .local p1, "content":Lcom/facebook/share/model/ShareContent;, "TP;"
     if-nez p1, :cond_3
 
     .line 186
-    .end local p0    # "this":Lcom/facebook/share/model/ShareContent$Builder;, "Lcom/facebook/share/model/ShareContent$Builder<TP;TE;>;"
     :goto_2
     return-object p0
 
     .line 183
-    .restart local p0    # "this":Lcom/facebook/share/model/ShareContent$Builder;, "Lcom/facebook/share/model/ShareContent$Builder<TP;TE;>;"
     :cond_3
     invoke-virtual {p1}, Lcom/facebook/share/model/ShareContent;->getContentUrl()Landroid/net/Uri;
 
@@ -172,7 +154,6 @@
 
     .prologue
     .line 125
-    .local p0, "this":Lcom/facebook/share/model/ShareContent$Builder;, "Lcom/facebook/share/model/ShareContent$Builder<TP;TE;>;"
     check-cast p1, Lcom/facebook/share/model/ShareContent;
 
     invoke-virtual {p0, p1}, Lcom/facebook/share/model/ShareContent$Builder;->readFrom(Lcom/facebook/share/model/ShareContent;)Lcom/facebook/share/model/ShareContent$Builder;
@@ -184,10 +165,6 @@
 
 .method public setContentUrl(Landroid/net/Uri;)Lcom/facebook/share/model/ShareContent$Builder;
     .registers 2
-    .param p1, "contentUrl"    # Landroid/net/Uri;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -198,7 +175,6 @@
 
     .prologue
     .line 139
-    .local p0, "this":Lcom/facebook/share/model/ShareContent$Builder;, "Lcom/facebook/share/model/ShareContent$Builder<TP;TE;>;"
     iput-object p1, p0, Lcom/facebook/share/model/ShareContent$Builder;->contentUrl:Landroid/net/Uri;
 
     .line 140
@@ -207,10 +183,6 @@
 
 .method public setPeopleIds(Ljava/util/List;)Lcom/facebook/share/model/ShareContent$Builder;
     .registers 3
-    .param p1    # Ljava/util/List;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -223,8 +195,6 @@
 
     .prologue
     .line 150
-    .local p0, "this":Lcom/facebook/share/model/ShareContent$Builder;, "Lcom/facebook/share/model/ShareContent$Builder<TP;TE;>;"
-    .local p1, "peopleIds":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     if-nez p1, :cond_6
 
     const/4 v0, 0x0
@@ -246,10 +216,6 @@
 
 .method public setPlaceId(Ljava/lang/String;)Lcom/facebook/share/model/ShareContent$Builder;
     .registers 2
-    .param p1, "placeId"    # Ljava/lang/String;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -260,7 +226,6 @@
 
     .prologue
     .line 161
-    .local p0, "this":Lcom/facebook/share/model/ShareContent$Builder;, "Lcom/facebook/share/model/ShareContent$Builder<TP;TE;>;"
     iput-object p1, p0, Lcom/facebook/share/model/ShareContent$Builder;->placeId:Ljava/lang/String;
 
     .line 162
@@ -269,10 +234,6 @@
 
 .method public setRef(Ljava/lang/String;)Lcom/facebook/share/model/ShareContent$Builder;
     .registers 2
-    .param p1, "ref"    # Ljava/lang/String;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -283,7 +244,6 @@
 
     .prologue
     .line 173
-    .local p0, "this":Lcom/facebook/share/model/ShareContent$Builder;, "Lcom/facebook/share/model/ShareContent$Builder<TP;TE;>;"
     iput-object p1, p0, Lcom/facebook/share/model/ShareContent$Builder;->ref:Ljava/lang/String;
 
     .line 174

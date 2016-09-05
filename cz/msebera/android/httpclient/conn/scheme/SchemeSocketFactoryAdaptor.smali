@@ -12,20 +12,19 @@
 
 
 # instance fields
-.field private final factory:Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
+.field private final a:Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
 
 
 # direct methods
 .method constructor <init>(Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;)V
     .registers 2
-    .param p1, "factory"    # Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
 
     .prologue
     .line 48
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 49
-    iput-object p1, p0, Lcz/msebera/android/httpclient/conn/scheme/SchemeSocketFactoryAdaptor;->factory:Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
+    iput-object p1, p0, Lcz/msebera/android/httpclient/conn/scheme/SchemeSocketFactoryAdaptor;->a:Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
 
     .line 50
     return-void
@@ -35,17 +34,6 @@
 # virtual methods
 .method public connectSocket(Ljava/net/Socket;Ljava/net/InetSocketAddress;Ljava/net/InetSocketAddress;Lcz/msebera/android/httpclient/params/HttpParams;)Ljava/net/Socket;
     .registers 12
-    .param p1, "sock"    # Ljava/net/Socket;
-    .param p2, "remoteAddress"    # Ljava/net/InetSocketAddress;
-    .param p3, "localAddress"    # Ljava/net/InetSocketAddress;
-    .param p4, "params"    # Lcz/msebera/android/httpclient/params/HttpParams;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Ljava/net/UnknownHostException;,
-            Lcz/msebera/android/httpclient/conn/ConnectTimeoutException;
-        }
-    .end annotation
 
     .prologue
     .line 57
@@ -54,21 +42,17 @@
     move-result-object v2
 
     .line 58
-    .local v2, "host":Ljava/lang/String;
     invoke-virtual {p2}, Ljava/net/InetSocketAddress;->getPort()I
 
     move-result v3
 
     .line 59
-    .local v3, "port":I
     const/4 v4, 0x0
 
     .line 60
-    .local v4, "local":Ljava/net/InetAddress;
     const/4 v5, 0x0
 
     .line 61
-    .local v5, "localPort":I
     if-eqz p3, :cond_14
 
     .line 62
@@ -83,7 +67,7 @@
 
     .line 65
     :cond_14
-    iget-object v0, p0, Lcz/msebera/android/httpclient/conn/scheme/SchemeSocketFactoryAdaptor;->factory:Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/conn/scheme/SchemeSocketFactoryAdaptor;->a:Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
 
     move-object v1, p1
 
@@ -98,16 +82,10 @@
 
 .method public createSocket(Lcz/msebera/android/httpclient/params/HttpParams;)Ljava/net/Socket;
     .registers 3
-    .param p1, "params"    # Lcz/msebera/android/httpclient/params/HttpParams;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 69
-    iget-object v0, p0, Lcz/msebera/android/httpclient/conn/scheme/SchemeSocketFactoryAdaptor;->factory:Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/conn/scheme/SchemeSocketFactoryAdaptor;->a:Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
 
     invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;->createSocket()Ljava/net/Socket;
 
@@ -118,7 +96,6 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .registers 4
-    .param p1, "obj"    # Ljava/lang/Object;
 
     .prologue
     .line 82
@@ -128,12 +105,10 @@
     const/4 v0, 0x0
 
     .line 91
-    .end local p1    # "obj":Ljava/lang/Object;
     :goto_3
     return v0
 
     .line 85
-    .restart local p1    # "obj":Ljava/lang/Object;
     :cond_4
     if-ne p0, p1, :cond_8
 
@@ -149,12 +124,11 @@
     if-eqz v0, :cond_17
 
     .line 89
-    iget-object v0, p0, Lcz/msebera/android/httpclient/conn/scheme/SchemeSocketFactoryAdaptor;->factory:Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/conn/scheme/SchemeSocketFactoryAdaptor;->a:Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
 
     check-cast p1, Lcz/msebera/android/httpclient/conn/scheme/SchemeSocketFactoryAdaptor;
 
-    .end local p1    # "obj":Ljava/lang/Object;
-    iget-object v1, p1, Lcz/msebera/android/httpclient/conn/scheme/SchemeSocketFactoryAdaptor;->factory:Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
+    iget-object v1, p1, Lcz/msebera/android/httpclient/conn/scheme/SchemeSocketFactoryAdaptor;->a:Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
 
     invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
@@ -163,9 +137,8 @@
     goto :goto_3
 
     .line 91
-    .restart local p1    # "obj":Ljava/lang/Object;
     :cond_17
-    iget-object v0, p0, Lcz/msebera/android/httpclient/conn/scheme/SchemeSocketFactoryAdaptor;->factory:Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/conn/scheme/SchemeSocketFactoryAdaptor;->a:Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
 
     invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
@@ -174,22 +147,12 @@
     goto :goto_3
 .end method
 
-.method public getFactory()Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
-    .registers 2
-
-    .prologue
-    .line 77
-    iget-object v0, p0, Lcz/msebera/android/httpclient/conn/scheme/SchemeSocketFactoryAdaptor;->factory:Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
-
-    return-object v0
-.end method
-
 .method public hashCode()I
     .registers 2
 
     .prologue
     .line 97
-    iget-object v0, p0, Lcz/msebera/android/httpclient/conn/scheme/SchemeSocketFactoryAdaptor;->factory:Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/conn/scheme/SchemeSocketFactoryAdaptor;->a:Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
 
     invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
@@ -200,16 +163,10 @@
 
 .method public isSecure(Ljava/net/Socket;)Z
     .registers 3
-    .param p1, "sock"    # Ljava/net/Socket;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/IllegalArgumentException;
-        }
-    .end annotation
 
     .prologue
     .line 73
-    iget-object v0, p0, Lcz/msebera/android/httpclient/conn/scheme/SchemeSocketFactoryAdaptor;->factory:Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/conn/scheme/SchemeSocketFactoryAdaptor;->a:Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;
 
     invoke-interface {v0, p1}, Lcz/msebera/android/httpclient/conn/scheme/SocketFactory;->isSecure(Ljava/net/Socket;)Z
 

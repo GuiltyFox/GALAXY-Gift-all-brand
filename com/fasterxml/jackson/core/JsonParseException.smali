@@ -10,8 +10,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonLocation;)V
     .registers 3
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "loc"    # Lcom/fasterxml/jackson/core/JsonLocation;
 
     .prologue
     .line 17
@@ -23,9 +21,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonLocation;Ljava/lang/Throwable;)V
     .registers 4
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "loc"    # Lcom/fasterxml/jackson/core/JsonLocation;
-    .param p3, "root"    # Ljava/lang/Throwable;
 
     .prologue
     .line 21

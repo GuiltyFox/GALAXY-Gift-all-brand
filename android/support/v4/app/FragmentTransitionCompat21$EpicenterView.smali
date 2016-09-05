@@ -3,19 +3,8 @@
 .source "FragmentTransitionCompat21.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/app/FragmentTransitionCompat21;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "EpicenterView"
-.end annotation
-
-
 # instance fields
-.field public epicenter:Landroid/view/View;
+.field public a:Landroid/view/View;
 
 
 # direct methods

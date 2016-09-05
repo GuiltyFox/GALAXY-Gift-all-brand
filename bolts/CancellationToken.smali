@@ -4,44 +4,24 @@
 
 
 # instance fields
-.field private cancellationRequested:Z
+.field private final a:Ljava/lang/Object;
 
-.field private final lock:Ljava/lang/Object;
-
-
-# direct methods
-.method constructor <init>()V
-    .registers 2
-
-    .prologue
-    .line 34
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 31
-    new-instance v0, Ljava/lang/Object;
-
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    iput-object v0, p0, Lbolts/CancellationToken;->lock:Ljava/lang/Object;
-
-    .line 35
-    return-void
-.end method
+.field private b:Z
 
 
 # virtual methods
-.method public isCancellationRequested()Z
+.method public a()Z
     .registers 3
 
     .prologue
     .line 41
-    iget-object v1, p0, Lbolts/CancellationToken;->lock:Ljava/lang/Object;
+    iget-object v1, p0, Lbolts/CancellationToken;->a:Ljava/lang/Object;
 
     monitor-enter v1
 
     .line 42
     :try_start_3
-    iget-boolean v0, p0, Lbolts/CancellationToken;->cancellationRequested:Z
+    iget-boolean v0, p0, Lbolts/CancellationToken;->b:Z
 
     monitor-exit v1
 
@@ -56,53 +36,6 @@
     .catchall {:try_start_3 .. :try_end_9} :catchall_7
 
     throw v0
-.end method
-
-.method public throwIfCancellationRequested()V
-    .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/util/concurrent/CancellationException;
-        }
-    .end annotation
-
-    .prologue
-    .line 51
-    iget-object v1, p0, Lbolts/CancellationToken;->lock:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 52
-    :try_start_3
-    iget-boolean v0, p0, Lbolts/CancellationToken;->cancellationRequested:Z
-
-    if-eqz v0, :cond_10
-
-    .line 53
-    new-instance v0, Ljava/util/concurrent/CancellationException;
-
-    invoke-direct {v0}, Ljava/util/concurrent/CancellationException;-><init>()V
-
-    throw v0
-
-    .line 55
-    :catchall_d
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_f
-    .catchall {:try_start_3 .. :try_end_f} :catchall_d
-
-    throw v0
-
-    :cond_10
-    :try_start_10
-    monitor-exit v1
-    :try_end_11
-    .catchall {:try_start_10 .. :try_end_11} :catchall_d
-
-    .line 56
-    return-void
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -144,7 +77,7 @@
 
     const/4 v3, 0x2
 
-    iget-boolean v4, p0, Lbolts/CancellationToken;->cancellationRequested:Z
+    iget-boolean v4, p0, Lbolts/CancellationToken;->b:Z
 
     invoke-static {v4}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
 
@@ -157,51 +90,4 @@
     move-result-object v0
 
     return-object v0
-.end method
-
-.method tryCancel()Z
-    .registers 4
-
-    .prologue
-    const/4 v0, 0x1
-
-    .line 59
-    iget-object v1, p0, Lbolts/CancellationToken;->lock:Ljava/lang/Object;
-
-    monitor-enter v1
-
-    .line 60
-    :try_start_4
-    iget-boolean v2, p0, Lbolts/CancellationToken;->cancellationRequested:Z
-
-    if-eqz v2, :cond_b
-
-    .line 61
-    const/4 v0, 0x0
-
-    monitor-exit v1
-
-    .line 66
-    :goto_a
-    return v0
-
-    .line 64
-    :cond_b
-    const/4 v2, 0x1
-
-    iput-boolean v2, p0, Lbolts/CancellationToken;->cancellationRequested:Z
-
-    .line 65
-    monitor-exit v1
-
-    goto :goto_a
-
-    :catchall_10
-    move-exception v0
-
-    monitor-exit v1
-    :try_end_12
-    .catchall {:try_start_4 .. :try_end_12} :catchall_10
-
-    throw v0
 .end method

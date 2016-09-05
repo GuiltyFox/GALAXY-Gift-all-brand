@@ -3,86 +3,74 @@
 .source "ReviewModel.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/bzbs/marketplace/model/review/ReviewModel$BuzzebeesEntity;
-    }
-.end annotation
-
-.annotation runtime Lorg/parceler/Parcel;
-    value = .enum Lorg/parceler/Parcel$Serialization;->BEAN:Lorg/parceler/Parcel$Serialization;
-.end annotation
-
-
 # instance fields
-.field AgencyId:I
+.field public AgencyId:I
 
-.field AgencyName:Ljava/lang/String;
+.field public AgencyName:Ljava/lang/String;
 
-.field AppId:Ljava/lang/String;
+.field public AppId:Ljava/lang/String;
 
-.field BuzzKey:Ljava/lang/String;
+.field public BuzzKey:Ljava/lang/String;
 
-.field CampaignId:I
+.field public CampaignId:I
 
-.field CommentCount:I
+.field public CommentCount:I
 
-.field CreatedTime:J
+.field public CreatedTime:J
 
-.field ETag:Ljava/lang/String;
+.field public ETag:Ljava/lang/String;
 
-.field Height:I
+.field public Height:I
 
-.field ImageUrl:Ljava/lang/String;
+.field public ImageUrl:Ljava/lang/String;
 
-.field IsApproved:Z
+.field public IsApproved:Z
 
-.field IsLiked:Z
+.field public IsLiked:Z
 
-.field IsRead:Z
+.field public IsRead:Z
 
-.field IsReply:Z
+.field public IsReply:Z
 
-.field Likes:I
+.field public Likes:I
 
-.field LocationAgencyId:I
+.field public LocationAgencyId:I
 
-.field Message:Ljava/lang/String;
+.field public Message:Ljava/lang/String;
 
-.field Name:Ljava/lang/String;
+.field public Name:Ljava/lang/String;
 
-.field Os:Ljava/lang/String;
+.field public Os:Ljava/lang/String;
 
-.field PartitionKey:Ljava/lang/String;
+.field public PartitionKey:Ljava/lang/String;
 
-.field PhotoId:Ljava/lang/String;
+.field public PhotoId:Ljava/lang/String;
 
-.field PlaceId:I
+.field public PlaceId:I
 
-.field PlaceName:Ljava/lang/String;
+.field public PlaceName:Ljava/lang/String;
 
-.field PostId:Ljava/lang/String;
+.field public PostId:Ljava/lang/String;
 
-.field Rating:I
+.field public Rating:I
 
-.field RowKey:Ljava/lang/String;
+.field public RowKey:Ljava/lang/String;
 
-.field Sticker:Ljava/lang/String;
+.field public Sticker:Ljava/lang/String;
 
-.field Timestamp:I
+.field public Timestamp:I
 
-.field Type:Ljava/lang/String;
+.field public Type:Ljava/lang/String;
 
-.field UserId:Ljava/lang/String;
+.field public UserId:Ljava/lang/String;
 
-.field Width:I
+.field public Width:I
 
-.field buzzebees:Lcom/bzbs/marketplace/model/review/ReviewModel$BuzzebeesEntity;
+.field public buzzebees:Lcom/bzbs/marketplace/model/review/ReviewModel$BuzzebeesEntity;
 
-.field file:Ljava/io/File;
+.field public file:Ljava/io/File;
 
-.field header:Z
+.field public header:Z
 
 
 # direct methods
@@ -445,7 +433,6 @@
 
 .method public setAgencyId(I)V
     .registers 2
-    .param p1, "AgencyId"    # I
 
     .prologue
     .line 94
@@ -457,7 +444,6 @@
 
 .method public setAgencyName(Ljava/lang/String;)V
     .registers 2
-    .param p1, "AgencyName"    # Ljava/lang/String;
 
     .prologue
     .line 158
@@ -469,7 +455,6 @@
 
 .method public setAppId(Ljava/lang/String;)V
     .registers 2
-    .param p1, "AppId"    # Ljava/lang/String;
 
     .prologue
     .line 182
@@ -481,7 +466,6 @@
 
 .method public setBuzzKey(Ljava/lang/String;)V
     .registers 2
-    .param p1, "BuzzKey"    # Ljava/lang/String;
 
     .prologue
     .line 154
@@ -493,7 +477,6 @@
 
 .method public setBuzzebees(Lcom/bzbs/marketplace/model/review/ReviewModel$BuzzebeesEntity;)V
     .registers 2
-    .param p1, "buzzebees"    # Lcom/bzbs/marketplace/model/review/ReviewModel$BuzzebeesEntity;
 
     .prologue
     .line 350
@@ -505,7 +488,6 @@
 
 .method public setCampaignId(I)V
     .registers 2
-    .param p1, "CampaignId"    # I
 
     .prologue
     .line 138
@@ -517,7 +499,6 @@
 
 .method public setCommentCount(I)V
     .registers 2
-    .param p1, "CommentCount"    # I
 
     .prologue
     .line 198
@@ -529,7 +510,6 @@
 
 .method public setCreatedTime(J)V
     .registers 4
-    .param p1, "CreatedTime"    # J
 
     .prologue
     .line 86
@@ -541,7 +521,6 @@
 
 .method public setETag(Ljava/lang/String;)V
     .registers 2
-    .param p1, "ETag"    # Ljava/lang/String;
 
     .prologue
     .line 186
@@ -553,7 +532,6 @@
 
 .method public setFile(Ljava/io/File;)V
     .registers 2
-    .param p1, "file"    # Ljava/io/File;
 
     .prologue
     .line 346
@@ -565,7 +543,6 @@
 
 .method public setHeader(Z)V
     .registers 2
-    .param p1, "header"    # Z
 
     .prologue
     .line 338
@@ -577,7 +554,6 @@
 
 .method public setHeight(I)V
     .registers 2
-    .param p1, "Height"    # I
 
     .prologue
     .line 146
@@ -589,7 +565,6 @@
 
 .method public setImageUrl(Ljava/lang/String;)V
     .registers 2
-    .param p1, "ImageUrl"    # Ljava/lang/String;
 
     .prologue
     .line 166
@@ -601,7 +576,6 @@
 
 .method public setIsApproved(Z)V
     .registers 2
-    .param p1, "IsApproved"    # Z
 
     .prologue
     .line 126
@@ -613,7 +587,6 @@
 
 .method public setIsLiked(Z)V
     .registers 2
-    .param p1, "IsLiked"    # Z
 
     .prologue
     .line 110
@@ -625,7 +598,6 @@
 
 .method public setIsRead(Z)V
     .registers 2
-    .param p1, "IsRead"    # Z
 
     .prologue
     .line 114
@@ -637,7 +609,6 @@
 
 .method public setIsReply(Z)V
     .registers 2
-    .param p1, "IsReply"    # Z
 
     .prologue
     .line 142
@@ -649,7 +620,6 @@
 
 .method public setLikes(I)V
     .registers 2
-    .param p1, "Likes"    # I
 
     .prologue
     .line 202
@@ -661,7 +631,6 @@
 
 .method public setLocationAgencyId(I)V
     .registers 2
-    .param p1, "LocationAgencyId"    # I
 
     .prologue
     .line 206
@@ -673,7 +642,6 @@
 
 .method public setMessage(Ljava/lang/String;)V
     .registers 2
-    .param p1, "Message"    # Ljava/lang/String;
 
     .prologue
     .line 90
@@ -685,7 +653,6 @@
 
 .method public setName(Ljava/lang/String;)V
     .registers 2
-    .param p1, "Name"    # Ljava/lang/String;
 
     .prologue
     .line 122
@@ -697,7 +664,6 @@
 
 .method public setOs(Ljava/lang/String;)V
     .registers 2
-    .param p1, "Os"    # Ljava/lang/String;
 
     .prologue
     .line 98
@@ -709,7 +675,6 @@
 
 .method public setPartitionKey(Ljava/lang/String;)V
     .registers 2
-    .param p1, "PartitionKey"    # Ljava/lang/String;
 
     .prologue
     .line 194
@@ -721,7 +686,6 @@
 
 .method public setPhotoId(Ljava/lang/String;)V
     .registers 2
-    .param p1, "PhotoId"    # Ljava/lang/String;
 
     .prologue
     .line 174
@@ -733,7 +697,6 @@
 
 .method public setPlaceId(I)V
     .registers 2
-    .param p1, "PlaceId"    # I
 
     .prologue
     .line 162
@@ -745,7 +708,6 @@
 
 .method public setPlaceName(Ljava/lang/String;)V
     .registers 2
-    .param p1, "PlaceName"    # Ljava/lang/String;
 
     .prologue
     .line 130
@@ -757,7 +719,6 @@
 
 .method public setPostId(Ljava/lang/String;)V
     .registers 2
-    .param p1, "PostId"    # Ljava/lang/String;
 
     .prologue
     .line 170
@@ -769,7 +730,6 @@
 
 .method public setRating(I)V
     .registers 2
-    .param p1, "Rating"    # I
 
     .prologue
     .line 106
@@ -781,7 +741,6 @@
 
 .method public setRowKey(Ljava/lang/String;)V
     .registers 2
-    .param p1, "RowKey"    # Ljava/lang/String;
 
     .prologue
     .line 102
@@ -793,7 +752,6 @@
 
 .method public setSticker(Ljava/lang/String;)V
     .registers 2
-    .param p1, "Sticker"    # Ljava/lang/String;
 
     .prologue
     .line 134
@@ -805,7 +763,6 @@
 
 .method public setTimestamp(I)V
     .registers 2
-    .param p1, "Timestamp"    # I
 
     .prologue
     .line 118
@@ -817,7 +774,6 @@
 
 .method public setType(Ljava/lang/String;)V
     .registers 2
-    .param p1, "Type"    # Ljava/lang/String;
 
     .prologue
     .line 178
@@ -829,7 +785,6 @@
 
 .method public setUserId(Ljava/lang/String;)V
     .registers 2
-    .param p1, "UserId"    # Ljava/lang/String;
 
     .prologue
     .line 190
@@ -841,7 +796,6 @@
 
 .method public setWidth(I)V
     .registers 2
-    .param p1, "Width"    # I
 
     .prologue
     .line 150

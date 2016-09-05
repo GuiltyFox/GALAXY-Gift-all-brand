@@ -174,7 +174,7 @@
 .end method
 
 .method public final isRequired()Z
-    .registers 3
+    .registers 2
 
     .prologue
     .line 206
@@ -183,22 +183,21 @@
     move-result-object v0
 
     .line 207
-    .local v0, "md":Lcom/fasterxml/jackson/databind/PropertyMetadata;
     if-eqz v0, :cond_e
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/PropertyMetadata;->isRequired()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_e
+    if-eqz v0, :cond_e
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     :goto_d
-    return v1
+    return v0
 
     :cond_e
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_d
 .end method
@@ -218,7 +217,6 @@
 
 .method public withName(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/introspect/BeanPropertyDefinition;
     .registers 3
-    .param p1, "newName"    # Ljava/lang/String;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 

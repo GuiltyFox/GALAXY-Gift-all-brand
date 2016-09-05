@@ -8,27 +8,21 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;->closeDrawerRunnable()Ljava/lang/Runnable;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/samsung/privilege/activity/MainPagerActivity;->q()Ljava/lang/Runnable;
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+.field final synthetic a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/MainPagerActivity;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
 
     .prologue
-    .line 2048
-    iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$35;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .line 2150
+    iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$35;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,26 +32,25 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .registers 3
 
     .prologue
-    .line 2051
-    iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$35;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .line 2153
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$35;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    const v2, 0x7f10016a
+    const v1, 0x7f100183
 
-    invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v4/widget/DrawerLayout;
 
-    .line 2052
-    .local v0, "drawer_layout":Landroid/support/v4/widget/DrawerLayout;
+    .line 2154
     const/4 v1, 0x3
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/widget/DrawerLayout;->closeDrawer(I)V
+    invoke-virtual {v0, v1}, Landroid/support/v4/widget/DrawerLayout;->f(I)V
 
-    .line 2053
+    .line 2155
     return-void
 .end method

@@ -3,17 +3,6 @@
 .source "FloatingActionButtonEclairMr1.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/FloatingActionButtonEclairMr1;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "ResetElevationAnimation"
-.end annotation
-
-
 # instance fields
 .field final synthetic this$0:Landroid/support/design/widget/FloatingActionButtonEclairMr1;
 
@@ -35,8 +24,6 @@
 
 .method synthetic constructor <init>(Landroid/support/design/widget/FloatingActionButtonEclairMr1;Landroid/support/design/widget/FloatingActionButtonEclairMr1$1;)V
     .registers 3
-    .param p1, "x0"    # Landroid/support/design/widget/FloatingActionButtonEclairMr1;
-    .param p2, "x1"    # Landroid/support/design/widget/FloatingActionButtonEclairMr1$1;
 
     .prologue
     .line 253

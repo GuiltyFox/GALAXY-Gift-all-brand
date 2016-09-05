@@ -26,10 +26,6 @@
 
 .method public onFailure(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
     .registers 5
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBody"    # [B
-    .param p4, "error"    # Ljava/lang/Throwable;
 
     .prologue
     .line 23
@@ -46,8 +42,6 @@
 
 .method public onPostProcessResponse(Lcom/loopj/android/http/ResponseHandlerInterface;Lcz/msebera/android/httpclient/HttpResponse;)V
     .registers 3
-    .param p1, "instance"    # Lcom/loopj/android/http/ResponseHandlerInterface;
-    .param p2, "response"    # Lcz/msebera/android/httpclient/HttpResponse;
 
     .prologue
     .line 43
@@ -56,8 +50,6 @@
 
 .method public onPreProcessResponse(Lcom/loopj/android/http/ResponseHandlerInterface;Lcz/msebera/android/httpclient/HttpResponse;)V
     .registers 3
-    .param p1, "instance"    # Lcom/loopj/android/http/ResponseHandlerInterface;
-    .param p2, "response"    # Lcz/msebera/android/httpclient/HttpResponse;
 
     .prologue
     .line 48
@@ -66,8 +58,6 @@
 
 .method public onProgress(JJ)V
     .registers 5
-    .param p1, "bytesWritten"    # J
-    .param p3, "totalSize"    # J
 
     .prologue
     .line 28
@@ -76,7 +66,6 @@
 
 .method public onRetry(I)V
     .registers 2
-    .param p1, "retryNo"    # I
 
     .prologue
     .line 53
@@ -93,9 +82,6 @@
 
 .method public onSuccess(I[Lcz/msebera/android/httpclient/Header;[B)V
     .registers 4
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBody"    # [B
 
     .prologue
     .line 18
@@ -104,7 +90,6 @@
 
 .method public onUserException(Ljava/lang/Throwable;)V
     .registers 2
-    .param p1, "error"    # Ljava/lang/Throwable;
 
     .prologue
     .line 63

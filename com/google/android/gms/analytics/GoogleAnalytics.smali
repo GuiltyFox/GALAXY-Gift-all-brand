@@ -2,17 +2,8 @@
 .super Lcom/google/android/gms/analytics/zza;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/android/gms/analytics/GoogleAnalytics$zzb;,
-        Lcom/google/android/gms/analytics/GoogleAnalytics$zza;
-    }
-.end annotation
-
-
 # static fields
-.field private static zzNK:Ljava/util/List;
+.field private static b:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
@@ -25,9 +16,11 @@
 
 
 # instance fields
-.field private zzNL:Z
+.field private c:Z
 
-.field private zzNM:Ljava/util/Set;
+.field private d:Z
+
+.field private e:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set",
@@ -38,15 +31,11 @@
     .end annotation
 .end field
 
-.field private zzNN:Z
+.field private f:Z
 
-.field private zzNO:Z
+.field private g:Z
 
-.field private volatile zzNP:Z
-
-.field private zzNQ:Z
-
-.field private zzqh:Z
+.field private volatile h:Z
 
 
 # direct methods
@@ -57,44 +46,40 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNK:Ljava/util/List;
+    sput-object v0, Lcom/google/android/gms/analytics/GoogleAnalytics;->b:Ljava/util/List;
 
     return-void
 .end method
 
 .method public constructor <init>(Lcom/google/android/gms/analytics/internal/zzf;)V
     .registers 3
-    .param p1, "context"    # Lcom/google/android/gms/analytics/internal/zzf;
 
-    .prologue
     invoke-direct {p0, p1}, Lcom/google/android/gms/analytics/zza;-><init>(Lcom/google/android/gms/analytics/internal/zzf;)V
 
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNM:Ljava/util/Set;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->e:Ljava/util/Set;
 
     return-void
 .end method
 
-.method public static getInstance(Landroid/content/Context;)Lcom/google/android/gms/analytics/GoogleAnalytics;
+.method public static a(Landroid/content/Context;)Lcom/google/android/gms/analytics/GoogleAnalytics;
     .registers 2
-    .param p0, "context"    # Landroid/content/Context;
 
-    .prologue
-    invoke-static {p0}, Lcom/google/android/gms/analytics/internal/zzf;->zzZ(Landroid/content/Context;)Lcom/google/android/gms/analytics/internal/zzf;
+    invoke-static {p0}, Lcom/google/android/gms/analytics/internal/zzf;->a(Landroid/content/Context;)Lcom/google/android/gms/analytics/internal/zzf;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->zzji()Lcom/google/android/gms/analytics/GoogleAnalytics;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->k()Lcom/google/android/gms/analytics/GoogleAnalytics;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static zzin()V
+.method public static d()V
     .registers 3
 
     const-class v1, Lcom/google/android/gms/analytics/GoogleAnalytics;
@@ -102,11 +87,11 @@
     monitor-enter v1
 
     :try_start_3
-    sget-object v0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNK:Ljava/util/List;
+    sget-object v0, Lcom/google/android/gms/analytics/GoogleAnalytics;->b:Ljava/util/List;
 
     if-eqz v0, :cond_23
 
-    sget-object v0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNK:Ljava/util/List;
+    sget-object v0, Lcom/google/android/gms/analytics/GoogleAnalytics;->b:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -142,7 +127,7 @@
     const/4 v0, 0x0
 
     :try_start_21
-    sput-object v0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNK:Ljava/util/List;
+    sput-object v0, Lcom/google/android/gms/analytics/GoogleAnalytics;->b:Ljava/util/List;
 
     :cond_23
     monitor-exit v1
@@ -152,28 +137,28 @@
     return-void
 .end method
 
-.method private zzip()Lcom/google/android/gms/analytics/internal/zzb;
+.method private p()Lcom/google/android/gms/analytics/internal/zzb;
     .registers 2
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzif()Lcom/google/android/gms/analytics/internal/zzf;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->k()Lcom/google/android/gms/analytics/internal/zzf;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->zzip()Lcom/google/android/gms/analytics/internal/zzb;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->i()Lcom/google/android/gms/analytics/internal/zzb;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method private zziq()Lcom/google/android/gms/analytics/internal/zzan;
+.method private q()Lcom/google/android/gms/analytics/internal/zzan;
     .registers 2
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzif()Lcom/google/android/gms/analytics/internal/zzf;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->k()Lcom/google/android/gms/analytics/internal/zzf;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->zziq()Lcom/google/android/gms/analytics/internal/zzan;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->l()Lcom/google/android/gms/analytics/internal/zzan;
 
     move-result-object v0
 
@@ -182,130 +167,15 @@
 
 
 # virtual methods
-.method public dispatchLocalHits()V
-    .registers 2
-
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzip()Lcom/google/android/gms/analytics/internal/zzb;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzb;->zziL()V
-
-    return-void
-.end method
-
-.method public enableAutoActivityReports(Landroid/app/Application;)V
-    .registers 4
-    .param p1, "application"    # Landroid/app/Application;
-
-    .prologue
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0xe
-
-    if-lt v0, v1, :cond_15
-
-    iget-boolean v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNN:Z
-
-    if-nez v0, :cond_15
-
-    new-instance v0, Lcom/google/android/gms/analytics/GoogleAnalytics$zzb;
-
-    invoke-direct {v0, p0}, Lcom/google/android/gms/analytics/GoogleAnalytics$zzb;-><init>(Lcom/google/android/gms/analytics/GoogleAnalytics;)V
-
-    invoke-virtual {p1, v0}, Landroid/app/Application;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNN:Z
-
-    :cond_15
-    return-void
-.end method
-
-.method public getAppOptOut()Z
-    .registers 2
-
-    iget-boolean v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNP:Z
-
-    return v0
-.end method
-
-.method public getClientId()Ljava/lang/String;
-    .registers 2
-
-    const-string/jumbo v0, "getClientId can not be called from the main thread"
-
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzx;->zzcy(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzif()Lcom/google/android/gms/analytics/internal/zzf;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->zzjl()Lcom/google/android/gms/analytics/internal/zzn;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzn;->zzjT()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public getLogger()Lcom/google/android/gms/analytics/Logger;
-    .registers 2
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzae;->getLogger()Lcom/google/android/gms/analytics/Logger;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public isDryRunEnabled()Z
-    .registers 2
-
-    iget-boolean v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNO:Z
-
-    return v0
-.end method
-
-.method public isInitialized()Z
-    .registers 2
-
-    iget-boolean v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzqh:Z
-
-    if-eqz v0, :cond_a
-
-    iget-boolean v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNL:Z
-
-    if-nez v0, :cond_a
-
-    const/4 v0, 0x1
-
-    :goto_9
-    return v0
-
-    :cond_a
-    const/4 v0, 0x0
-
-    goto :goto_9
-.end method
-
-.method public newTracker(I)Lcom/google/android/gms/analytics/Tracker;
+.method public a(I)Lcom/google/android/gms/analytics/Tracker;
     .registers 6
-    .param p1, "configResId"    # I
 
-    .prologue
     monitor-enter p0
 
     :try_start_1
     new-instance v1, Lcom/google/android/gms/analytics/Tracker;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzif()Lcom/google/android/gms/analytics/internal/zzf;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->k()Lcom/google/android/gms/analytics/internal/zzf;
 
     move-result-object v0
 
@@ -319,13 +189,13 @@
 
     new-instance v0, Lcom/google/android/gms/analytics/internal/zzak;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzif()Lcom/google/android/gms/analytics/internal/zzf;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->k()Lcom/google/android/gms/analytics/internal/zzf;
 
     move-result-object v2
 
     invoke-direct {v0, v2}, Lcom/google/android/gms/analytics/internal/zzak;-><init>(Lcom/google/android/gms/analytics/internal/zzf;)V
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/analytics/internal/zzak;->zzah(I)Lcom/google/android/gms/analytics/internal/zzp;
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/analytics/internal/zzak;->a(I)Lcom/google/android/gms/analytics/internal/zzp;
 
     move-result-object v0
 
@@ -333,10 +203,10 @@
 
     if-eqz v0, :cond_22
 
-    invoke-virtual {v1, v0}, Lcom/google/android/gms/analytics/Tracker;->zza(Lcom/google/android/gms/analytics/internal/zzal;)V
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/analytics/Tracker;->a(Lcom/google/android/gms/analytics/internal/zzal;)V
 
     :cond_22
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/Tracker;->zza()V
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/Tracker;->E()V
 
     monitor-exit p0
 
@@ -352,202 +222,87 @@
     throw v0
 .end method
 
-.method public newTracker(Ljava/lang/String;)Lcom/google/android/gms/analytics/Tracker;
-    .registers 5
-    .param p1, "trackingId"    # Ljava/lang/String;
-
-    .prologue
-    monitor-enter p0
-
-    :try_start_1
-    new-instance v0, Lcom/google/android/gms/analytics/Tracker;
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzif()Lcom/google/android/gms/analytics/internal/zzf;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    invoke-direct {v0, v1, p1, v2}, Lcom/google/android/gms/analytics/Tracker;-><init>(Lcom/google/android/gms/analytics/internal/zzf;Ljava/lang/String;Lcom/google/android/gms/analytics/internal/zzad;)V
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/Tracker;->zza()V
-
-    monitor-exit p0
-
-    return-object v0
-
-    :catchall_10
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_12
-    .catchall {:try_start_1 .. :try_end_12} :catchall_10
-
-    throw v0
-.end method
-
-.method public reportActivityStart(Landroid/app/Activity;)V
-    .registers 3
-    .param p1, "activity"    # Landroid/app/Activity;
-
-    .prologue
-    iget-boolean v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNN:Z
-
-    if-nez v0, :cond_7
-
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzl(Landroid/app/Activity;)V
-
-    :cond_7
-    return-void
-.end method
-
-.method public reportActivityStop(Landroid/app/Activity;)V
-    .registers 3
-    .param p1, "activity"    # Landroid/app/Activity;
-
-    .prologue
-    iget-boolean v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNN:Z
-
-    if-nez v0, :cond_7
-
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzm(Landroid/app/Activity;)V
-
-    :cond_7
-    return-void
-.end method
-
-.method public setAppOptOut(Z)V
-    .registers 3
-    .param p1, "optOut"    # Z
-
-    .prologue
-    iput-boolean p1, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNP:Z
-
-    iget-boolean v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNP:Z
-
-    if-eqz v0, :cond_d
-
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzip()Lcom/google/android/gms/analytics/internal/zzb;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzb;->zziK()V
-
-    :cond_d
-    return-void
-.end method
-
-.method public setDryRun(Z)V
+.method public a()V
     .registers 2
-    .param p1, "dryRun"    # Z
 
-    .prologue
-    iput-boolean p1, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNO:Z
-
-    return-void
-.end method
-
-.method public setLocalDispatchPeriod(I)V
-    .registers 3
-    .param p1, "dispatchPeriodInSeconds"    # I
-
-    .prologue
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzip()Lcom/google/android/gms/analytics/internal/zzb;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/analytics/internal/zzb;->setLocalDispatchPeriod(I)V
-
-    return-void
-.end method
-
-.method public setLogger(Lcom/google/android/gms/analytics/Logger;)V
-    .registers 5
-    .param p1, "logger"    # Lcom/google/android/gms/analytics/Logger;
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    invoke-static {p1}, Lcom/google/android/gms/analytics/internal/zzae;->setLogger(Lcom/google/android/gms/analytics/Logger;)V
-
-    iget-boolean v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNQ:Z
-
-    if-nez v0, :cond_38
-
-    sget-object v0, Lcom/google/android/gms/analytics/internal/zzy;->zzQr:Lcom/google/android/gms/analytics/internal/zzy$zza;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzy$zza;->get()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "GoogleAnalytics.setLogger() is deprecated. To enable debug logging, please run:\nadb shell setprop log.tag."
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    sget-object v1, Lcom/google/android/gms/analytics/internal/zzy;->zzQr:Lcom/google/android/gms/analytics/internal/zzy$zza;
-
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzy$zza;->get()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string/jumbo v2, " DEBUG"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->b()V
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNQ:Z
-
-    :cond_38
-    return-void
-.end method
-
-.method public zza()V
-    .registers 2
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzim()V
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzqh:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->c:Z
 
     return-void
 .end method
 
-.method zza(Lcom/google/android/gms/analytics/GoogleAnalytics$zza;)V
+.method a(Landroid/app/Activity;)V
     .registers 4
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNM:Ljava/util/Set;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->e:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_6
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_16
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/analytics/GoogleAnalytics$zza;
+
+    invoke-interface {v0, p1}, Lcom/google/android/gms/analytics/GoogleAnalytics$zza;->a(Landroid/app/Activity;)V
+
+    goto :goto_6
+
+    :cond_16
+    return-void
+.end method
+
+.method public a(Landroid/app/Application;)V
+    .registers 4
+
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0xe
+
+    if-lt v0, v1, :cond_15
+
+    iget-boolean v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->f:Z
+
+    if-nez v0, :cond_15
+
+    new-instance v0, Lcom/google/android/gms/analytics/GoogleAnalytics$zzb;
+
+    invoke-direct {v0, p0}, Lcom/google/android/gms/analytics/GoogleAnalytics$zzb;-><init>(Lcom/google/android/gms/analytics/GoogleAnalytics;)V
+
+    invoke-virtual {p1, v0}, Landroid/app/Application;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->f:Z
+
+    :cond_15
+    return-void
+.end method
+
+.method a(Lcom/google/android/gms/analytics/GoogleAnalytics$zza;)V
+    .registers 4
+
+    iget-object v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->e:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzif()Lcom/google/android/gms/analytics/internal/zzf;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->k()Lcom/google/android/gms/analytics/internal/zzf;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->b()Landroid/content/Context;
 
     move-result-object v0
 
@@ -557,149 +312,211 @@
 
     check-cast v0, Landroid/app/Application;
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->enableAutoActivityReports(Landroid/app/Application;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->a(Landroid/app/Application;)V
 
     :cond_16
     return-void
 .end method
 
-.method zzb(Lcom/google/android/gms/analytics/GoogleAnalytics$zza;)V
+.method public a(Z)V
+    .registers 2
+
+    iput-boolean p1, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->g:Z
+
+    return-void
+.end method
+
+.method b()V
+    .registers 4
+
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->q()Lcom/google/android/gms/analytics/internal/zzan;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzan;->d()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_15
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->g()Lcom/google/android/gms/analytics/Logger;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzan;->e()I
+
+    move-result v2
+
+    invoke-interface {v1, v2}, Lcom/google/android/gms/analytics/Logger;->a(I)V
+
+    :cond_15
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzan;->h()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_22
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzan;->i()Z
+
+    move-result v1
+
+    invoke-virtual {p0, v1}, Lcom/google/android/gms/analytics/GoogleAnalytics;->a(Z)V
+
+    :cond_22
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzan;->d()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_35
+
+    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzae;->a()Lcom/google/android/gms/analytics/Logger;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_35
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzan;->e()I
+
+    move-result v0
+
+    invoke-interface {v1, v0}, Lcom/google/android/gms/analytics/Logger;->a(I)V
+
+    :cond_35
+    return-void
+.end method
+
+.method b(Landroid/app/Activity;)V
+    .registers 4
+
+    iget-object v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->e:Ljava/util/Set;
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_6
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_16
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/google/android/gms/analytics/GoogleAnalytics$zza;
+
+    invoke-interface {v0, p1}, Lcom/google/android/gms/analytics/GoogleAnalytics$zza;->b(Landroid/app/Activity;)V
+
+    goto :goto_6
+
+    :cond_16
+    return-void
+.end method
+
+.method b(Lcom/google/android/gms/analytics/GoogleAnalytics$zza;)V
     .registers 3
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNM:Ljava/util/Set;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->e:Ljava/util/Set;
 
     invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
     return-void
 .end method
 
-.method zzim()V
-    .registers 4
-
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->zziq()Lcom/google/android/gms/analytics/internal/zzan;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzan;->zzkS()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_15
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->getLogger()Lcom/google/android/gms/analytics/Logger;
-
-    move-result-object v1
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzan;->getLogLevel()I
-
-    move-result v2
-
-    invoke-interface {v1, v2}, Lcom/google/android/gms/analytics/Logger;->setLogLevel(I)V
-
-    :cond_15
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzan;->zzkW()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_22
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzan;->zzkX()Z
-
-    move-result v1
-
-    invoke-virtual {p0, v1}, Lcom/google/android/gms/analytics/GoogleAnalytics;->setDryRun(Z)V
-
-    :cond_22
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzan;->zzkS()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_35
-
-    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzae;->getLogger()Lcom/google/android/gms/analytics/Logger;
-
-    move-result-object v1
-
-    if-eqz v1, :cond_35
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzan;->getLogLevel()I
-
-    move-result v0
-
-    invoke-interface {v1, v0}, Lcom/google/android/gms/analytics/Logger;->setLogLevel(I)V
-
-    :cond_35
-    return-void
-.end method
-
-.method zzio()V
+.method public c()Z
     .registers 2
 
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzip()Lcom/google/android/gms/analytics/internal/zzb;
+    iget-boolean v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->c:Z
+
+    if-eqz v0, :cond_a
+
+    iget-boolean v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->d:Z
+
+    if-nez v0, :cond_a
+
+    const/4 v0, 0x1
+
+    :goto_9
+    return v0
+
+    :cond_a
+    const/4 v0, 0x0
+
+    goto :goto_9
+.end method
+
+.method public e()Z
+    .registers 2
+
+    iget-boolean v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->g:Z
+
+    return v0
+.end method
+
+.method public f()Z
+    .registers 2
+
+    iget-boolean v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->h:Z
+
+    return v0
+.end method
+
+.method public g()Lcom/google/android/gms/analytics/Logger;
+    .registers 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
+
+    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzae;->a()Lcom/google/android/gms/analytics/Logger;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzb;->zziM()Z
+    return-object v0
+.end method
+
+.method public h()Ljava/lang/String;
+    .registers 2
+
+    const-string/jumbo v0, "getClientId can not be called from the main thread"
+
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzx;->c(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->k()Lcom/google/android/gms/analytics/internal/zzf;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzf;->p()Lcom/google/android/gms/analytics/internal/zzn;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzn;->b()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public i()V
+    .registers 2
+
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->p()Lcom/google/android/gms/analytics/internal/zzb;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzb;->c()V
 
     return-void
 .end method
 
-.method zzl(Landroid/app/Activity;)V
-    .registers 4
+.method j()V
+    .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNM:Ljava/util/Set;
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_6
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_16
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->p()Lcom/google/android/gms/analytics/internal/zzb;
 
     move-result-object v0
 
-    check-cast v0, Lcom/google/android/gms/analytics/GoogleAnalytics$zza;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzb;->d()Z
 
-    invoke-interface {v0, p1}, Lcom/google/android/gms/analytics/GoogleAnalytics$zza;->zzn(Landroid/app/Activity;)V
-
-    goto :goto_6
-
-    :cond_16
-    return-void
-.end method
-
-.method zzm(Landroid/app/Activity;)V
-    .registers 4
-
-    iget-object v0, p0, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzNM:Ljava/util/Set;
-
-    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    :goto_6
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_16
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/google/android/gms/analytics/GoogleAnalytics$zza;
-
-    invoke-interface {v0, p1}, Lcom/google/android/gms/analytics/GoogleAnalytics$zza;->zzo(Landroid/app/Activity;)V
-
-    goto :goto_6
-
-    :cond_16
     return-void
 .end method

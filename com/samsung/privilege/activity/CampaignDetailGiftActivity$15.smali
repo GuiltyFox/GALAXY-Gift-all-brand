@@ -8,27 +8,21 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->setUI_Pager()V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->o()V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+.field final synthetic a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     .prologue
-    .line 1552
-    iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$15;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    .line 1609
+    iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$15;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,77 +32,64 @@
 
 # virtual methods
 .method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .registers 7
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/MotionEvent;
+    .registers 5
 
     .prologue
-    .line 1555
+    .line 1612
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
-    move-result-object v2
+    move-result-object v0
 
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
-    invoke-interface {v2, v3}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
+    invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 1557
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$15;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    .line 1614
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$15;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->gPagerImageCampaign:Landroid/support/v4/view/ViewPager;
-    invoke-static {v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1600(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/support/v4/view/ViewPager;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->k(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/support/v4/view/ViewPager;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Landroid/support/v4/view/ViewPager;->getCurrentItem()I
+    invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->getCurrentItem()I
+
+    .line 1616
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$15;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->l(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/Campaign;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_31
+
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$15;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->l(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/Campaign;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lcom/bzbs/bean/Campaign;->MarketGalleryView:Ljava/util/ArrayList;
+
+    if-eqz v0, :cond_31
+
+    .line 1617
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$15;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->l(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/Campaign;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lcom/bzbs/bean/Campaign;->MarketGalleryView:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 1558
-    .local v0, "IntCurrentPage":I
-    const/4 v1, 0x0
+    add-int/lit8 v0, v0, -0x1
 
-    .line 1559
-    .local v1, "intLast":I
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$15;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    .line 1623
+    :cond_31
+    const/4 v0, 0x0
 
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->paramCampaign:Lcom/bzbs/bean/Campaign;
-    invoke-static {v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1700(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/Campaign;
-
-    move-result-object v2
-
-    if-eqz v2, :cond_33
-
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$15;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->paramCampaign:Lcom/bzbs/bean/Campaign;
-    invoke-static {v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1700(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/Campaign;
-
-    move-result-object v2
-
-    iget-object v2, v2, Lcom/bzbs/bean/Campaign;->MarketGalleryView:Ljava/util/ArrayList;
-
-    if-eqz v2, :cond_33
-
-    .line 1560
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$15;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->paramCampaign:Lcom/bzbs/bean/Campaign;
-    invoke-static {v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1700(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/Campaign;
-
-    move-result-object v2
-
-    iget-object v2, v2, Lcom/bzbs/bean/Campaign;->MarketGalleryView:Ljava/util/ArrayList;
-
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
-
-    move-result v2
-
-    add-int/lit8 v1, v2, -0x1
-
-    .line 1566
-    :cond_33
-    const/4 v2, 0x0
-
-    return v2
+    return v0
 .end method

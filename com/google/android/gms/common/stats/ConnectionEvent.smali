@@ -19,29 +19,29 @@
 
 
 # instance fields
-.field final mVersionCode:I
+.field final a:I
 
-.field private final zzaln:J
+.field private final b:J
 
-.field private zzalo:I
+.field private c:I
 
-.field private final zzalp:Ljava/lang/String;
+.field private final d:Ljava/lang/String;
 
-.field private final zzalq:Ljava/lang/String;
+.field private final e:Ljava/lang/String;
 
-.field private final zzalr:Ljava/lang/String;
+.field private final f:Ljava/lang/String;
 
-.field private final zzals:Ljava/lang/String;
+.field private final g:Ljava/lang/String;
 
-.field private final zzalt:Ljava/lang/String;
+.field private final h:Ljava/lang/String;
 
-.field private final zzalu:Ljava/lang/String;
+.field private final i:Ljava/lang/String;
 
-.field private final zzalv:J
+.field private final j:J
 
-.field private final zzalw:J
+.field private final k:J
 
-.field private zzalx:J
+.field private l:J
 
 
 # direct methods
@@ -59,68 +59,45 @@
 
 .method constructor <init>(IJILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJ)V
     .registers 20
-    .param p1, "versionCode"    # I
-    .param p2, "timeMillis"    # J
-    .param p4, "eventType"    # I
-    .param p5, "callingProcess"    # Ljava/lang/String;
-    .param p6, "callingService"    # Ljava/lang/String;
-    .param p7, "targetProcess"    # Ljava/lang/String;
-    .param p8, "targetService"    # Ljava/lang/String;
-    .param p9, "stackTrace"    # Ljava/lang/String;
-    .param p10, "connKey"    # Ljava/lang/String;
-    .param p11, "elapsedRealtime"    # J
-    .param p13, "heapAlloc"    # J
 
-    .prologue
     invoke-direct {p0}, Lcom/google/android/gms/common/stats/zzf;-><init>()V
 
-    iput p1, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->mVersionCode:I
+    iput p1, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->a:I
 
-    iput-wide p2, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzaln:J
+    iput-wide p2, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->b:J
 
-    iput p4, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzalo:I
+    iput p4, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->c:I
 
-    iput-object p5, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzalp:Ljava/lang/String;
+    iput-object p5, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->d:Ljava/lang/String;
 
-    iput-object p6, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzalq:Ljava/lang/String;
+    iput-object p6, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->e:Ljava/lang/String;
 
-    iput-object p7, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzalr:Ljava/lang/String;
+    iput-object p7, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->f:Ljava/lang/String;
 
-    iput-object p8, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzals:Ljava/lang/String;
+    iput-object p8, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->g:Ljava/lang/String;
 
     const-wide/16 v2, -0x1
 
-    iput-wide v2, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzalx:J
+    iput-wide v2, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->l:J
 
-    iput-object p9, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzalt:Ljava/lang/String;
+    iput-object p9, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->h:Ljava/lang/String;
 
-    iput-object p10, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzalu:Ljava/lang/String;
+    iput-object p10, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->i:Ljava/lang/String;
 
     move-wide/from16 v0, p11
 
-    iput-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzalv:J
+    iput-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->j:J
 
     move-wide/from16 v0, p13
 
-    iput-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzalw:J
+    iput-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->k:J
 
     return-void
 .end method
 
 .method public constructor <init>(JILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JJ)V
     .registers 30
-    .param p1, "timeMillis"    # J
-    .param p3, "eventType"    # I
-    .param p4, "callingProcess"    # Ljava/lang/String;
-    .param p5, "callingService"    # Ljava/lang/String;
-    .param p6, "targetProcess"    # Ljava/lang/String;
-    .param p7, "targetService"    # Ljava/lang/String;
-    .param p8, "stackTrace"    # Ljava/lang/String;
-    .param p9, "connKey"    # Ljava/lang/String;
-    .param p10, "elapsedRealtime"    # J
-    .param p12, "heapAlloc"    # J
 
-    .prologue
     const/4 v2, 0x1
 
     move-object/from16 v1, p0
@@ -152,6 +129,38 @@
 
 
 # virtual methods
+.method public a()J
+    .registers 3
+
+    iget-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->b:J
+
+    return-wide v0
+.end method
+
+.method public b()I
+    .registers 2
+
+    iget v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->c:I
+
+    return v0
+.end method
+
+.method public c()Ljava/lang/String;
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->d:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public d()Ljava/lang/String;
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->e:Ljava/lang/String;
+
+    return-object v0
+.end method
+
 .method public describeContents()I
     .registers 2
 
@@ -160,106 +169,63 @@
     return v0
 .end method
 
-.method public getEventType()I
+.method public e()Ljava/lang/String;
     .registers 2
 
-    iget v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzalo:I
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->f:Ljava/lang/String;
 
-    return v0
+    return-object v0
 .end method
 
-.method public getTimeMillis()J
+.method public f()Ljava/lang/String;
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->g:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public g()Ljava/lang/String;
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->h:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public h()Ljava/lang/String;
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->i:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public i()J
     .registers 3
 
-    iget-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzaln:J
+    iget-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->l:J
 
     return-wide v0
 .end method
 
-.method public writeToParcel(Landroid/os/Parcel;I)V
-    .registers 3
-    .param p1, "out"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
-
-    .prologue
-    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/stats/zza;->zza(Lcom/google/android/gms/common/stats/ConnectionEvent;Landroid/os/Parcel;I)V
-
-    return-void
-.end method
-
-.method public zzrp()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzalp:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public zzrq()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzalq:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public zzrr()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzalr:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public zzrs()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzals:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public zzrt()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzalt:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public zzru()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzalu:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public zzrv()J
+.method public j()J
     .registers 3
 
-    iget-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzalx:J
+    iget-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->k:J
 
     return-wide v0
 .end method
 
-.method public zzrw()J
+.method public k()J
     .registers 3
 
-    iget-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzalw:J
+    iget-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->j:J
 
     return-wide v0
 .end method
 
-.method public zzrx()J
-    .registers 3
-
-    iget-wide v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzalv:J
-
-    return-wide v0
-.end method
-
-.method public zzry()Ljava/lang/String;
+.method public l()Ljava/lang/String;
     .registers 5
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -272,7 +238,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzrp()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->c()Ljava/lang/String;
 
     move-result-object v1
 
@@ -286,7 +252,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzrq()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->d()Ljava/lang/String;
 
     move-result-object v1
 
@@ -300,7 +266,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzrr()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->e()Ljava/lang/String;
 
     move-result-object v1
 
@@ -314,7 +280,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzrs()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->f()Ljava/lang/String;
 
     move-result-object v1
 
@@ -328,7 +294,7 @@
 
     move-result-object v1
 
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzalt:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->h:Ljava/lang/String;
 
     if-nez v0, :cond_67
 
@@ -345,7 +311,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzrw()J
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->j()J
 
     move-result-wide v2
 
@@ -360,7 +326,15 @@
     return-object v0
 
     :cond_67
-    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzalt:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->h:Ljava/lang/String;
 
     goto :goto_4f
+.end method
+
+.method public writeToParcel(Landroid/os/Parcel;I)V
+    .registers 3
+
+    invoke-static {p0, p1, p2}, Lcom/google/android/gms/common/stats/zza;->a(Lcom/google/android/gms/common/stats/ConnectionEvent;Landroid/os/Parcel;I)V
+
+    return-void
 .end method

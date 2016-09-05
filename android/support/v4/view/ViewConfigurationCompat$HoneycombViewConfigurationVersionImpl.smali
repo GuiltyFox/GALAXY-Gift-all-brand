@@ -3,17 +3,6 @@
 .source "ViewConfigurationCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/view/ViewConfigurationCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "HoneycombViewConfigurationVersionImpl"
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .registers 1
@@ -27,9 +16,8 @@
 
 
 # virtual methods
-.method public hasPermanentMenuKey(Landroid/view/ViewConfiguration;)Z
+.method public b(Landroid/view/ViewConfiguration;)Z
     .registers 3
-    .param p1, "config"    # Landroid/view/ViewConfiguration;
 
     .prologue
     .line 67

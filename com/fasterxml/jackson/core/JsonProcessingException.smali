@@ -14,7 +14,6 @@
 # direct methods
 .method protected constructor <init>(Ljava/lang/String;)V
     .registers 2
-    .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
     .line 33
@@ -26,8 +25,6 @@
 
 .method protected constructor <init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonLocation;)V
     .registers 4
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "loc"    # Lcom/fasterxml/jackson/core/JsonLocation;
 
     .prologue
     .line 37
@@ -41,9 +38,6 @@
 
 .method protected constructor <init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonLocation;Ljava/lang/Throwable;)V
     .registers 4
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "loc"    # Lcom/fasterxml/jackson/core/JsonLocation;
-    .param p3, "rootCause"    # Ljava/lang/Throwable;
 
     .prologue
     .line 25
@@ -65,8 +59,6 @@
 
 .method protected constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
     .registers 4
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "rootCause"    # Ljava/lang/Throwable;
 
     .prologue
     .line 41
@@ -80,7 +72,6 @@
 
 .method protected constructor <init>(Ljava/lang/Throwable;)V
     .registers 3
-    .param p1, "rootCause"    # Ljava/lang/Throwable;
 
     .prologue
     const/4 v0, 0x0
@@ -111,82 +102,77 @@
     .line 88
     invoke-super {p0}, Ljava/io/IOException;->getMessage()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 89
-    .local v1, "msg":Ljava/lang/String;
-    if-nez v1, :cond_9
+    if-nez v0, :cond_9
 
     .line 90
-    const-string/jumbo v1, "N/A"
+    const-string/jumbo v0, "N/A"
 
     .line 92
     :cond_9
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonProcessingException;->getLocation()Lcom/fasterxml/jackson/core/JsonLocation;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 93
-    .local v0, "loc":Lcom/fasterxml/jackson/core/JsonLocation;
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonProcessingException;->getMessageSuffix()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 95
-    .local v3, "suffix":Ljava/lang/String;
-    if-nez v0, :cond_15
+    if-nez v1, :cond_15
 
-    if-eqz v3, :cond_3c
+    if-eqz v2, :cond_3c
 
     .line 96
     :cond_15
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
     const/16 v4, 0x64
 
-    invoke-direct {v2, v4}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 97
-    .local v2, "sb":Ljava/lang/StringBuilder;
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 98
-    if-eqz v3, :cond_24
+    if-eqz v2, :cond_24
 
     .line 99
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 101
     :cond_24
-    if-eqz v0, :cond_38
+    if-eqz v1, :cond_38
 
     .line 102
-    const/16 v4, 0xa
+    const/16 v0, 0xa
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 103
-    const-string/jumbo v4, " at "
+    const-string/jumbo v0, " at "
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 104
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/JsonLocation;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/JsonLocation;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 106
     :cond_38
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 108
-    .end local v2    # "sb":Ljava/lang/StringBuilder;
     :cond_3c
-    return-object v1
+    return-object v0
 .end method
 
 .method protected getMessageSuffix()Ljava/lang/String;

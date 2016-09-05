@@ -3,17 +3,6 @@
 .source "TypeParser.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/type/TypeParser;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x18
-    name = "MyTokenizer"
-.end annotation
-
-
 # instance fields
 .field protected _index:I
 
@@ -25,7 +14,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 4
-    .param p1, "str"    # Ljava/lang/String;
 
     .prologue
     .line 101
@@ -120,15 +108,14 @@
 
     .prologue
     .line 113
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/type/TypeParser$MyTokenizer;->_pushbackToken:Ljava/lang/String;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/type/TypeParser$MyTokenizer;->_pushbackToken:Ljava/lang/String;
 
-    if-eqz v1, :cond_13
+    if-eqz v0, :cond_13
 
     .line 114
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/type/TypeParser$MyTokenizer;->_pushbackToken:Ljava/lang/String;
 
     .line 115
-    .local v0, "token":Ljava/lang/String;
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/fasterxml/jackson/databind/type/TypeParser$MyTokenizer;->_pushbackToken:Ljava/lang/String;
@@ -149,19 +136,16 @@
     return-object v0
 
     .line 117
-    .end local v0    # "token":Ljava/lang/String;
     :cond_13
     invoke-super {p0}, Ljava/util/StringTokenizer;->nextToken()Ljava/lang/String;
 
     move-result-object v0
 
-    .restart local v0    # "token":Ljava/lang/String;
     goto :goto_9
 .end method
 
 .method public pushBack(Ljava/lang/String;)V
     .registers 4
-    .param p1, "token"    # Ljava/lang/String;
 
     .prologue
     .line 124

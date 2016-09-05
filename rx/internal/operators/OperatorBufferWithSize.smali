@@ -22,20 +22,17 @@
 
 
 # instance fields
-.field final count:I
+.field final a:I
 
-.field final skip:I
+.field final b:I
 
 
 # direct methods
 .method public constructor <init>(II)V
     .registers 5
-    .param p1, "count"    # I
-    .param p2, "skip"    # I
 
     .prologue
     .line 56
-    .local p0, "this":Lrx/internal/operators/OperatorBufferWithSize;, "Lrx/internal/operators/OperatorBufferWithSize<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 57
@@ -65,10 +62,10 @@
 
     .line 63
     :cond_19
-    iput p1, p0, Lrx/internal/operators/OperatorBufferWithSize;->count:I
+    iput p1, p0, Lrx/internal/operators/OperatorBufferWithSize;->a:I
 
     .line 64
-    iput p2, p0, Lrx/internal/operators/OperatorBufferWithSize;->skip:I
+    iput p2, p0, Lrx/internal/operators/OperatorBufferWithSize;->b:I
 
     .line 65
     return-void
@@ -76,24 +73,7 @@
 
 
 # virtual methods
-.method public bridge synthetic call(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
-
-    .prologue
-    .line 42
-    .local p0, "this":Lrx/internal/operators/OperatorBufferWithSize;, "Lrx/internal/operators/OperatorBufferWithSize<TT;>;"
-    check-cast p1, Lrx/Subscriber;
-
-    .end local p1    # "x0":Ljava/lang/Object;
-    invoke-virtual {p0, p1}, Lrx/internal/operators/OperatorBufferWithSize;->call(Lrx/Subscriber;)Lrx/Subscriber;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public call(Lrx/Subscriber;)Lrx/Subscriber;
+.method public a(Lrx/Subscriber;)Lrx/Subscriber;
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -109,11 +89,9 @@
 
     .prologue
     .line 69
-    .local p0, "this":Lrx/internal/operators/OperatorBufferWithSize;, "Lrx/internal/operators/OperatorBufferWithSize<TT;>;"
-    .local p1, "child":Lrx/Subscriber;, "Lrx/Subscriber<-Ljava/util/List<TT;>;>;"
-    iget v0, p0, Lrx/internal/operators/OperatorBufferWithSize;->count:I
+    iget v0, p0, Lrx/internal/operators/OperatorBufferWithSize;->a:I
 
-    iget v1, p0, Lrx/internal/operators/OperatorBufferWithSize;->skip:I
+    iget v1, p0, Lrx/internal/operators/OperatorBufferWithSize;->b:I
 
     if-ne v0, v1, :cond_c
 
@@ -132,4 +110,18 @@
     invoke-direct {v0, p0, p1, p1}, Lrx/internal/operators/OperatorBufferWithSize$2;-><init>(Lrx/internal/operators/OperatorBufferWithSize;Lrx/Subscriber;Lrx/Subscriber;)V
 
     goto :goto_b
+.end method
+
+.method public synthetic b(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+
+    .prologue
+    .line 42
+    check-cast p1, Lrx/Subscriber;
+
+    invoke-virtual {p0, p1}, Lrx/internal/operators/OperatorBufferWithSize;->a(Lrx/Subscriber;)Lrx/Subscriber;
+
+    move-result-object v0
+
+    return-object v0
 .end method

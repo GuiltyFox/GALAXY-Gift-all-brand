@@ -8,30 +8,18 @@
     value = 0x9
 .end annotation
 
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bzbs/lib/survey/control/PullToRefreshGridView;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x10
-    name = "InternalGridViewSDK9"
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Lcom/bzbs/lib/survey/control/PullToRefreshGridView;
+.field final synthetic b:Lcom/bzbs/lib/survey/control/PullToRefreshGridView;
 
 
 # direct methods
 .method public constructor <init>(Lcom/bzbs/lib/survey/control/PullToRefreshGridView;Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 4
-    .param p1, "this$0"    # Lcom/bzbs/lib/survey/control/PullToRefreshGridView;
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 88
-    iput-object p1, p0, Lcom/bzbs/lib/survey/control/PullToRefreshGridView$InternalGridViewSDK9;->this$0:Lcom/bzbs/lib/survey/control/PullToRefreshGridView;
+    iput-object p1, p0, Lcom/bzbs/lib/survey/control/PullToRefreshGridView$InternalGridViewSDK9;->b:Lcom/bzbs/lib/survey/control/PullToRefreshGridView;
 
     .line 89
     invoke-direct {p0, p1, p2, p3}, Lcom/bzbs/lib/survey/control/PullToRefreshGridView$InternalGridView;-><init>(Lcom/bzbs/lib/survey/control/PullToRefreshGridView;Landroid/content/Context;Landroid/util/AttributeSet;)V
@@ -44,15 +32,6 @@
 # virtual methods
 .method protected overScrollBy(IIIIIIIIZ)Z
     .registers 17
-    .param p1, "deltaX"    # I
-    .param p2, "deltaY"    # I
-    .param p3, "scrollX"    # I
-    .param p4, "scrollY"    # I
-    .param p5, "scrollRangeX"    # I
-    .param p6, "scrollRangeY"    # I
-    .param p7, "maxOverScrollX"    # I
-    .param p8, "maxOverScrollY"    # I
-    .param p9, "isTouchEvent"    # Z
 
     .prologue
     .line 96
@@ -61,8 +40,7 @@
     move-result v6
 
     .line 100
-    .local v6, "returnValue":Z
-    iget-object v0, p0, Lcom/bzbs/lib/survey/control/PullToRefreshGridView$InternalGridViewSDK9;->this$0:Lcom/bzbs/lib/survey/control/PullToRefreshGridView;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/control/PullToRefreshGridView$InternalGridViewSDK9;->b:Lcom/bzbs/lib/survey/control/PullToRefreshGridView;
 
     move v1, p1
 
@@ -74,7 +52,7 @@
 
     move/from16 v5, p9
 
-    invoke-static/range {v0 .. v5}, Lcom/handmark/pulltorefresh/library/internal/OverscrollHelper;->overScrollBy(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;IIIIZ)V
+    invoke-static/range {v0 .. v5}, Lcom/handmark/pulltorefresh/library/internal/OverscrollHelper;->a(Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;IIIIZ)V
 
     .line 102
     return v6

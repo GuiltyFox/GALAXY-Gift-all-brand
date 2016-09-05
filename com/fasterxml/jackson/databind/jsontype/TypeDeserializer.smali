@@ -3,14 +3,6 @@
 .source "TypeDeserializer.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer$1;
-    }
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -25,14 +17,6 @@
 
 .method public static deserializeIfNatural(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/JavaType;)Ljava/lang/Object;
     .registers 4
-    .param p0, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p1, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .param p2, "baseType"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 139
@@ -48,9 +32,7 @@
 .end method
 
 .method public static deserializeIfNatural(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Class;)Ljava/lang/Object;
-    .registers 7
-    .param p0, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p1, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
+    .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -62,130 +44,122 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
     .prologue
-    .local p2, "base":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 145
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->getCurrentToken()Lcom/fasterxml/jackson/core/JsonToken;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 146
-    .local v0, "t":Lcom/fasterxml/jackson/core/JsonToken;
-    if-nez v0, :cond_8
+    if-nez v1, :cond_8
 
     .line 177
     :cond_7
     :goto_7
-    return-object v1
+    return-object v0
 
     .line 149
     :cond_8
     sget-object v2, Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer$1;->$SwitchMap$com$fasterxml$jackson$core$JsonToken:[I
 
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/JsonToken;->ordinal()I
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/JsonToken;->ordinal()I
 
-    move-result v3
+    move-result v1
 
-    aget v2, v2, v3
+    aget v1, v2, v1
 
-    packed-switch v2, :pswitch_data_5a
+    packed-switch v1, :pswitch_data_5a
 
     goto :goto_7
 
     .line 151
     :pswitch_14
-    const-class v2, Ljava/lang/String;
+    const-class v1, Ljava/lang/String;
 
-    invoke-virtual {p2, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    invoke-virtual {p2, v1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_7
+    if-eqz v1, :cond_7
 
     .line 152
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->getText()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_7
 
     .line 156
     :pswitch_21
-    const-class v2, Ljava/lang/Integer;
+    const-class v1, Ljava/lang/Integer;
 
-    invoke-virtual {p2, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    invoke-virtual {p2, v1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_7
+    if-eqz v1, :cond_7
 
     .line 157
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->getIntValue()I
 
-    move-result v1
+    move-result v0
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_7
 
     .line 162
     :pswitch_32
-    const-class v2, Ljava/lang/Double;
+    const-class v1, Ljava/lang/Double;
 
-    invoke-virtual {p2, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    invoke-virtual {p2, v1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_7
+    if-eqz v1, :cond_7
 
     .line 163
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->getDoubleValue()D
 
-    move-result-wide v2
+    move-result-wide v0
 
-    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_7
 
     .line 167
     :pswitch_43
-    const-class v2, Ljava/lang/Boolean;
+    const-class v1, Ljava/lang/Boolean;
 
-    invoke-virtual {p2, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    invoke-virtual {p2, v1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_7
+    if-eqz v1, :cond_7
 
     .line 168
-    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     goto :goto_7
 
     .line 172
     :pswitch_4e
-    const-class v2, Ljava/lang/Boolean;
+    const-class v1, Ljava/lang/Boolean;
 
-    invoke-virtual {p2, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    invoke-virtual {p2, v1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_7
+    if-eqz v1, :cond_7
 
     .line 173
-    sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     goto :goto_7
 
@@ -205,35 +179,15 @@
 
 # virtual methods
 .method public abstract deserializeTypedFromAny(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 .end method
 
 .method public abstract deserializeTypedFromArray(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 .end method
 
 .method public abstract deserializeTypedFromObject(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 .end method
 
 .method public abstract deserializeTypedFromScalar(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 .end method
 
 .method public abstract forProperty(Lcom/fasterxml/jackson/databind/BeanProperty;)Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;

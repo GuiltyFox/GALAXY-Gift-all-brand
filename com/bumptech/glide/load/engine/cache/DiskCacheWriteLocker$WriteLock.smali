@@ -3,21 +3,10 @@
 .source "DiskCacheWriteLocker.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/engine/cache/DiskCacheWriteLocker;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "WriteLock"
-.end annotation
-
-
 # instance fields
-.field interestedThreads:I
+.field final a:Ljava/util/concurrent/locks/Lock;
 
-.field final lock:Ljava/util/concurrent/locks/Lock;
+.field b:I
 
 
 # direct methods
@@ -33,14 +22,13 @@
 
     invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
 
-    iput-object v0, p0, Lcom/bumptech/glide/load/engine/cache/DiskCacheWriteLocker$WriteLock;->lock:Ljava/util/concurrent/locks/Lock;
+    iput-object v0, p0, Lcom/bumptech/glide/load/engine/cache/DiskCacheWriteLocker$WriteLock;->a:Ljava/util/concurrent/locks/Lock;
 
     return-void
 .end method
 
 .method synthetic constructor <init>(Lcom/bumptech/glide/load/engine/cache/DiskCacheWriteLocker$1;)V
     .registers 2
-    .param p1, "x0"    # Lcom/bumptech/glide/load/engine/cache/DiskCacheWriteLocker$1;
 
     .prologue
     .line 63

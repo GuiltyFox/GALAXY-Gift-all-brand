@@ -32,33 +32,13 @@
 .end method
 
 .method public abstract putQuotedUTF8(Ljava/nio/ByteBuffer;)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 .end method
 
 .method public abstract putUnquotedUTF8(Ljava/nio/ByteBuffer;)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 .end method
 
 .method public abstract writeQuotedUTF8(Ljava/io/OutputStream;)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 .end method
 
 .method public abstract writeUnquotedUTF8(Ljava/io/OutputStream;)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 .end method

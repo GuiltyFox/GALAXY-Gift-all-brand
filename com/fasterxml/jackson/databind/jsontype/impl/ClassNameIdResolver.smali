@@ -6,8 +6,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/type/TypeFactory;)V
     .registers 3
-    .param p1, "baseType"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p2, "typeFactory"    # Lcom/fasterxml/jackson/databind/type/TypeFactory;
 
     .prologue
     .line 20
@@ -20,8 +18,7 @@
 
 # virtual methods
 .method protected final _idFrom(Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/String;
-    .registers 11
-    .param p1, "value"    # Ljava/lang/Object;
+    .registers 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -34,21 +31,20 @@
 
     .prologue
     .line 81
-    .local p2, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    const-class v6, Ljava/lang/Enum;
+    const-class v0, Ljava/lang/Enum;
 
-    invoke-virtual {v6, p2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    invoke-virtual {v0, p2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_12
+    if-eqz v0, :cond_12
 
     .line 82
     invoke-virtual {p2}, Ljava/lang/Class;->isEnum()Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_12
+    if-nez v0, :cond_12
 
     .line 83
     invoke-virtual {p2}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
@@ -59,207 +55,189 @@
     :cond_12
     invoke-virtual {p2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
     .line 87
-    .local v4, "str":Ljava/lang/String;
-    const-string/jumbo v6, "java.util"
+    const-string/jumbo v1, "java.util"
 
-    invoke-virtual {v4, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v6
+    move-result v1
 
-    if-eqz v6, :cond_78
+    if-eqz v1, :cond_78
 
     .line 96
-    instance-of v6, p1, Ljava/util/EnumSet;
+    instance-of v1, p1, Ljava/util/EnumSet;
 
-    if-eqz v6, :cond_38
+    if-eqz v1, :cond_38
 
     .line 97
     check-cast p1, Ljava/util/EnumSet;
 
-    .end local p1    # "value":Ljava/lang/Object;
     invoke-static {p1}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->findEnumType(Ljava/util/EnumSet;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    .line 99
+    invoke-static {}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->defaultInstance()Lcom/fasterxml/jackson/databind/type/TypeFactory;
 
     move-result-object v1
 
-    .line 99
-    .local v1, "enumClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    invoke-static {}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->defaultInstance()Lcom/fasterxml/jackson/databind/type/TypeFactory;
+    const-class v2, Ljava/util/EnumSet;
 
-    move-result-object v6
+    invoke-virtual {v1, v2, v0}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->constructCollectionType(Ljava/lang/Class;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/type/CollectionType;
 
-    const-class v7, Ljava/util/EnumSet;
+    move-result-object v0
 
-    invoke-virtual {v6, v7, v1}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->constructCollectionType(Ljava/lang/Class;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/type/CollectionType;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/type/CollectionType;->toCanonical()Ljava/lang/String;
 
-    move-result-object v6
-
-    invoke-virtual {v6}, Lcom/fasterxml/jackson/databind/type/CollectionType;->toCanonical()Ljava/lang/String;
-
-    move-result-object v4
+    move-result-object v0
 
     .line 140
-    .end local v1    # "enumClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :cond_37
     :goto_37
-    return-object v4
+    return-object v0
 
     .line 100
-    .restart local p1    # "value":Ljava/lang/Object;
     :cond_38
-    instance-of v6, p1, Ljava/util/EnumMap;
+    instance-of v1, p1, Ljava/util/EnumMap;
 
-    if-eqz v6, :cond_53
+    if-eqz v1, :cond_53
 
     .line 101
     check-cast p1, Ljava/util/EnumMap;
 
-    .end local p1    # "value":Ljava/lang/Object;
     invoke-static {p1}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->findEnumType(Ljava/util/EnumMap;)Ljava/lang/Class;
-
-    move-result-object v1
-
-    .line 102
-    .restart local v1    # "enumClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    const-class v5, Ljava/lang/Object;
-
-    .line 104
-    .local v5, "valueClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    invoke-static {}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->defaultInstance()Lcom/fasterxml/jackson/databind/type/TypeFactory;
-
-    move-result-object v6
-
-    const-class v7, Ljava/util/EnumMap;
-
-    invoke-virtual {v6, v7, v1, v5}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->constructMapType(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/type/MapType;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Lcom/fasterxml/jackson/databind/type/MapType;->toCanonical()Ljava/lang/String;
-
-    move-result-object v4
-
-    .line 105
-    goto :goto_37
-
-    .line 106
-    .end local v1    # "enumClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .end local v5    # "valueClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .restart local p1    # "value":Ljava/lang/Object;
-    :cond_53
-    const/16 v6, 0x9
-
-    invoke-virtual {v4, v6}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 102
+    const-class v1, Ljava/lang/Object;
+
+    .line 104
+    invoke-static {}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->defaultInstance()Lcom/fasterxml/jackson/databind/type/TypeFactory;
+
+    move-result-object v2
+
+    const-class v3, Ljava/util/EnumMap;
+
+    invoke-virtual {v2, v3, v0, v1}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->constructMapType(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/type/MapType;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/type/MapType;->toCanonical()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_37
+
+    .line 106
+    :cond_53
+    const/16 v1, 0x9
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v1
+
     .line 107
-    .local v0, "end":Ljava/lang/String;
-    const-string/jumbo v6, ".Arrays$"
+    const-string/jumbo v2, ".Arrays$"
 
-    invoke-virtual {v0, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v6
+    move-result v2
 
-    if-nez v6, :cond_6b
+    if-nez v2, :cond_6b
 
-    const-string/jumbo v6, ".Collections$"
+    const-string/jumbo v2, ".Collections$"
 
-    invoke-virtual {v0, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v6
+    move-result v1
 
-    if-eqz v6, :cond_37
+    if-eqz v1, :cond_37
 
     :cond_6b
-    const-string/jumbo v6, "List"
+    const-string/jumbo v1, "List"
 
-    invoke-virtual {v4, v6}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+    invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
 
-    move-result v6
+    move-result v1
 
-    if-ltz v6, :cond_37
+    if-ltz v1, :cond_37
 
     .line 115
-    const-string/jumbo v4, "java.util.ArrayList"
+    const-string/jumbo v0, "java.util.ArrayList"
 
     goto :goto_37
 
     .line 118
-    .end local v0    # "end":Ljava/lang/String;
     :cond_78
-    const/16 v6, 0x24
+    const/16 v1, 0x24
 
-    invoke-virtual {v4, v6}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(I)I
 
-    move-result v6
+    move-result v1
 
-    if-ltz v6, :cond_37
+    if-ltz v1, :cond_37
 
     .line 126
     invoke-static {p2}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->getOuterClass(Ljava/lang/Class;)Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 127
-    .local v2, "outer":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    if-eqz v2, :cond_37
+    if-eqz v1, :cond_37
 
     .line 132
-    iget-object v6, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/ClassNameIdResolver;->_baseType:Lcom/fasterxml/jackson/databind/JavaType;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/ClassNameIdResolver;->_baseType:Lcom/fasterxml/jackson/databind/JavaType;
 
-    invoke-virtual {v6}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v1
 
     .line 133
-    .local v3, "staticType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    invoke-static {v3}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->getOuterClass(Ljava/lang/Class;)Ljava/lang/Class;
+    invoke-static {v1}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->getOuterClass(Ljava/lang/Class;)Ljava/lang/Class;
 
-    move-result-object v6
+    move-result-object v1
 
-    if-nez v6, :cond_37
+    if-nez v1, :cond_37
 
     .line 135
-    iget-object v6, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/ClassNameIdResolver;->_baseType:Lcom/fasterxml/jackson/databind/JavaType;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/ClassNameIdResolver;->_baseType:Lcom/fasterxml/jackson/databind/JavaType;
 
-    invoke-virtual {v6}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
 
-    move-result-object p2
+    move-result-object v0
 
     .line 136
-    invoke-virtual {p2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
     goto :goto_37
 .end method
 
 .method protected _typeFromId(Ljava/lang/String;Lcom/fasterxml/jackson/databind/type/TypeFactory;)Lcom/fasterxml/jackson/databind/JavaType;
-    .registers 9
-    .param p1, "id"    # Ljava/lang/String;
-    .param p2, "typeFactory"    # Lcom/fasterxml/jackson/databind/type/TypeFactory;
+    .registers 7
 
     .prologue
     .line 57
-    const/16 v3, 0x3c
+    const/16 v0, 0x3c
 
-    invoke-virtual {p1, v3}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual {p1, v0}, Ljava/lang/String;->indexOf(I)I
 
-    move-result v3
+    move-result v0
 
-    if-lez v3, :cond_d
+    if-lez v0, :cond_d
 
     .line 58
     invoke-virtual {p2, p1}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->constructFromCanonical(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JavaType;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 64
     :goto_c
-    return-object v2
+    return-object v0
 
     .line 63
     :cond_d
@@ -269,99 +247,94 @@
     move-result-object v0
 
     .line 64
-    .local v0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/ClassNameIdResolver;->_baseType:Lcom/fasterxml/jackson/databind/JavaType;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/ClassNameIdResolver;->_baseType:Lcom/fasterxml/jackson/databind/JavaType;
 
-    invoke-virtual {p2, v3, v0}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->constructSpecializedType(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {p2, v1, v0}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->constructSpecializedType(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/JavaType;
     :try_end_16
     .catch Ljava/lang/ClassNotFoundException; {:try_start_d .. :try_end_16} :catch_18
     .catch Ljava/lang/Exception; {:try_start_d .. :try_end_16} :catch_3a
 
-    move-result-object v2
+    move-result-object v0
 
     goto :goto_c
 
     .line 65
-    .end local v0    # "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :catch_18
-    move-exception v1
+    move-exception v0
 
     .line 66
-    .local v1, "e":Ljava/lang/ClassNotFoundException;
-    new-instance v3, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "Invalid type id \'"
+    const-string/jumbo v2, "Invalid type id \'"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    const-string/jumbo v5, "\' (for id type \'Id.class\'): no such class found"
+    const-string/jumbo v2, "\' (for id type \'Id.class\'): no such class found"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v0
 
     .line 67
-    .end local v1    # "e":Ljava/lang/ClassNotFoundException;
     :catch_3a
-    move-exception v1
+    move-exception v0
 
     .line 68
-    .local v1, "e":Ljava/lang/Exception;
-    new-instance v3, Ljava/lang/IllegalArgumentException;
+    new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "Invalid type id \'"
+    const-string/jumbo v3, "Invalid type id \'"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    const-string/jumbo v5, "\' (for id type \'Id.class\'): "
+    const-string/jumbo v3, "\' (for id type \'Id.class\'): "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-direct {v3, v4, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v2, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    throw v3
+    throw v1
 .end method
 
 .method public getMechanism()Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;
@@ -376,7 +349,6 @@
 
 .method public idFromValue(Ljava/lang/Object;)Ljava/lang/String;
     .registers 3
-    .param p1, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 32
@@ -393,7 +365,6 @@
 
 .method public idFromValueAndType(Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/String;
     .registers 4
-    .param p1, "value"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -406,7 +377,6 @@
 
     .prologue
     .line 37
-    .local p2, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0, p1, p2}, Lcom/fasterxml/jackson/databind/jsontype/impl/ClassNameIdResolver;->_idFrom(Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object v0
@@ -416,7 +386,6 @@
 
 .method public registerSubtype(Ljava/lang/Class;Ljava/lang/String;)V
     .registers 3
-    .param p2, "name"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -429,14 +398,11 @@
 
     .prologue
     .line 28
-    .local p1, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     return-void
 .end method
 
 .method public typeFromId(Lcom/fasterxml/jackson/databind/DatabindContext;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 4
-    .param p1, "context"    # Lcom/fasterxml/jackson/databind/DatabindContext;
-    .param p2, "id"    # Ljava/lang/String;
 
     .prologue
     .line 48
@@ -453,7 +419,6 @@
 
 .method public typeFromId(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 3
-    .param p1, "id"    # Ljava/lang/String;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 

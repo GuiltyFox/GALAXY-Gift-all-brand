@@ -37,7 +37,7 @@
 
     invoke-static {v0}, Lcom/jaalee/sdk/service/BeaconService;->a(Lcom/jaalee/sdk/service/BeaconService;)V
 
-    invoke-static {p1, p2, p3}, Lcom/jaalee/sdk/Utils;->beaconFromLeScan(Landroid/bluetooth/BluetoothDevice;I[B)Lcom/jaalee/sdk/Beacon;
+    invoke-static {p1, p2, p3}, Lcom/jaalee/sdk/Utils;->a(Landroid/bluetooth/BluetoothDevice;I[B)Lcom/jaalee/sdk/Beacon;
 
     move-result-object v0
 

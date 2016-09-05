@@ -7,21 +7,16 @@
     value = Lcom/google/android/gms/analytics/internal/zzi;-><init>(Lcom/google/android/gms/analytics/internal/zzf;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic zzPr:Lcom/google/android/gms/analytics/internal/zzi;
+.field final synthetic a:Lcom/google/android/gms/analytics/internal/zzi;
 
 
 # direct methods
 .method constructor <init>(Lcom/google/android/gms/analytics/internal/zzi;Lcom/google/android/gms/analytics/internal/zzf;)V
     .registers 3
 
-    iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzi$1;->zzPr:Lcom/google/android/gms/analytics/internal/zzi;
+    iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzi$1;->a:Lcom/google/android/gms/analytics/internal/zzi;
 
     invoke-direct {p0, p2}, Lcom/google/android/gms/analytics/internal/zzt;-><init>(Lcom/google/android/gms/analytics/internal/zzf;)V
 
@@ -30,12 +25,12 @@
 
 
 # virtual methods
-.method public run()V
+.method public a()V
     .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzi$1;->zzPr:Lcom/google/android/gms/analytics/internal/zzi;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzi$1;->a:Lcom/google/android/gms/analytics/internal/zzi;
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzi;->zzb(Lcom/google/android/gms/analytics/internal/zzi;)V
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzi;->b(Lcom/google/android/gms/analytics/internal/zzi;)V
 
     return-void
 .end method

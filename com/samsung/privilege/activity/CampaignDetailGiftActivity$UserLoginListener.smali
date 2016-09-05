@@ -6,19 +6,8 @@
 .implements Lcom/bzbs/event/LoginEvents$LoginListener;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "UserLoginListener"
-.end annotation
-
-
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+.field final synthetic a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
 
 # direct methods
@@ -26,8 +15,8 @@
     .registers 2
 
     .prologue
-    .line 523
-    iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    .line 539
+    iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,11 +25,9 @@
 
 .method synthetic constructor <init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$1;)V
     .registers 3
-    .param p1, "x0"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-    .param p2, "x1"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$1;
 
     .prologue
-    .line 523
+    .line 539
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;-><init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)V
 
     return-void
@@ -48,62 +35,14 @@
 
 
 # virtual methods
-.method public onAuthenOTPSuccess(Ljava/lang/String;)V
+.method public a(Ljava/lang/String;)V
     .registers 4
-    .param p1, "action"    # Ljava/lang/String;
 
     .prologue
-    .line 583
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    .line 542
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$3;
-
-    invoke-direct {v1, p0, p1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$3;-><init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 599
-    return-void
-.end method
-
-.method public onLoginDeviceSuccess(Ljava/lang/String;)V
-    .registers 4
-    .param p1, "action"    # Ljava/lang/String;
-
-    .prologue
-    .line 553
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;
-
-    invoke-direct {v1, p0, p1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;-><init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 579
-    return-void
-.end method
-
-.method public onLoginFacebookSuccess(Ljava/lang/String;)V
-    .registers 4
-    .param p1, "action"    # Ljava/lang/String;
-
-    .prologue
-    .line 526
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$1000(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->f(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
 
     move-result-object v0
 
@@ -113,6 +52,48 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 549
+    .line 575
+    return-void
+.end method
+
+.method public b(Ljava/lang/String;)V
+    .registers 4
+
+    .prologue
+    .line 579
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->f(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;
+
+    invoke-direct {v1, p0, p1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$2;-><init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 612
+    return-void
+.end method
+
+.method public c(Ljava/lang/String;)V
+    .registers 4
+
+    .prologue
+    .line 616
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->f(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$3;
+
+    invoke-direct {v1, p0, p1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener$3;-><init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$UserLoginListener;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 632
     return-void
 .end method

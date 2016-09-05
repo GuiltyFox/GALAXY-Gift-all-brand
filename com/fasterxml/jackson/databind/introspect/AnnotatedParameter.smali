@@ -18,10 +18,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/introspect/AnnotatedWithParams;Ljava/lang/reflect/Type;Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;I)V
     .registers 5
-    .param p1, "owner"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedWithParams;
-    .param p2, "type"    # Ljava/lang/reflect/Type;
-    .param p3, "annotations"    # Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
-    .param p4, "index"    # I
 
     .prologue
     .line 48
@@ -66,7 +62,6 @@
 
     .prologue
     .line 96
-    .local p1, "acls":Ljava/lang/Class;, "Ljava/lang/Class<TA;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;->_annotations:Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
     if-nez v0, :cond_6
@@ -186,7 +181,7 @@
 .end method
 
 .method public getRawType()Ljava/lang/Class;
-    .registers 4
+    .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -197,50 +192,43 @@
 
     .prologue
     .line 107
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;->_type:Ljava/lang/reflect/Type;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;->_type:Ljava/lang/reflect/Type;
 
-    instance-of v1, v1, Ljava/lang/Class;
+    instance-of v0, v0, Ljava/lang/Class;
 
-    if-eqz v1, :cond_b
+    if-eqz v0, :cond_b
 
     .line 108
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;->_type:Ljava/lang/reflect/Type;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;->_type:Ljava/lang/reflect/Type;
 
-    check-cast v1, Ljava/lang/Class;
+    check-cast v0, Ljava/lang/Class;
 
     .line 112
     :goto_a
-    return-object v1
+    return-object v0
 
     .line 111
     :cond_b
     invoke-static {}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->defaultInstance()Lcom/fasterxml/jackson/databind/type/TypeFactory;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;->_type:Ljava/lang/reflect/Type;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;->_type:Ljava/lang/reflect/Type;
 
-    invoke-virtual {v1, v2}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->constructType(Ljava/lang/reflect/Type;)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/databind/type/TypeFactory;->constructType(Ljava/lang/reflect/Type;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object v0
 
     .line 112
-    .local v0, "t":Lcom/fasterxml/jackson/databind/JavaType;
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_a
 .end method
 
 .method public getValue(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 5
-    .param p1, "pojo"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/UnsupportedOperationException;
-        }
-    .end annotation
 
     .prologue
     .line 144
@@ -279,13 +267,6 @@
 
 .method public setValue(Ljava/lang/Object;Ljava/lang/Object;)V
     .registers 6
-    .param p1, "pojo"    # Ljava/lang/Object;
-    .param p2, "value"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/UnsupportedOperationException;
-        }
-    .end annotation
 
     .prologue
     .line 137
@@ -372,7 +353,6 @@
 
 .method public bridge synthetic withAnnotations(Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;)Lcom/fasterxml/jackson/databind/introspect/Annotated;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
     .prologue
     .line 19
@@ -385,7 +365,6 @@
 
 .method public withAnnotations(Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;
     .registers 4
-    .param p1, "ann"    # Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
     .prologue
     .line 56
@@ -394,11 +373,9 @@
     if-ne p1, v0, :cond_5
 
     .line 59
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;
     :cond_5
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;->_owner:Lcom/fasterxml/jackson/databind/introspect/AnnotatedWithParams;
 

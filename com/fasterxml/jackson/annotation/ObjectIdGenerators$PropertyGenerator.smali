@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/annotation/ObjectIdGenerators;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x409
-    name = "PropertyGenerator"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$Base",
@@ -40,7 +31,6 @@
 
     .prologue
     .line 68
-    .local p1, "scope":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$Base;-><init>(Ljava/lang/Class;)V
 
     return-void
@@ -50,7 +40,6 @@
 # virtual methods
 .method public bridge synthetic canUseFor(Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;)Z
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;
 
     .prologue
     .line 65

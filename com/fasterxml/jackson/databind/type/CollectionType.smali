@@ -10,10 +10,6 @@
 # direct methods
 .method private constructor <init>(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Object;Ljava/lang/Object;Z)V
     .registers 6
-    .param p2, "elemT"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "valueHandler"    # Ljava/lang/Object;
-    .param p4, "typeHandler"    # Ljava/lang/Object;
-    .param p5, "asStatic"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -28,7 +24,6 @@
 
     .prologue
     .line 22
-    .local p1, "collT":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct/range {p0 .. p5}, Lcom/fasterxml/jackson/databind/type/CollectionLikeType;-><init>(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Object;Ljava/lang/Object;Z)V
 
     .line 23
@@ -37,7 +32,6 @@
 
 .method public static construct(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/type/CollectionType;
     .registers 8
-    .param p1, "elemT"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -50,7 +44,6 @@
     .end annotation
 
     .prologue
-    .local p0, "rawType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v3, 0x0
 
     .line 55
@@ -83,7 +76,6 @@
     .end annotation
 
     .prologue
-    .local p1, "subclass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v3, 0x0
 
     .line 27
@@ -115,7 +107,6 @@
 
     .prologue
     .line 34
-    .local p1, "contentClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/type/CollectionType;->_elementType:Lcom/fasterxml/jackson/databind/JavaType;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
@@ -125,11 +116,9 @@
     if-ne p1, v0, :cond_9
 
     .line 37
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/type/CollectionType;
     :goto_8
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/type/CollectionType;
     :cond_9
     new-instance v0, Lcom/fasterxml/jackson/databind/type/CollectionType;
 
@@ -217,7 +206,6 @@
 
     .prologue
     .line 45
-    .local p1, "contentClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/type/CollectionType;->_elementType:Lcom/fasterxml/jackson/databind/JavaType;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
@@ -227,11 +215,9 @@
     if-ne p1, v0, :cond_9
 
     .line 48
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/type/CollectionType;
     :goto_8
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/type/CollectionType;
     :cond_9
     new-instance v0, Lcom/fasterxml/jackson/databind/type/CollectionType;
 
@@ -258,7 +244,6 @@
 
 .method public bridge synthetic withContentTypeHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 8
@@ -271,7 +256,6 @@
 
 .method public bridge synthetic withContentTypeHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/type/CollectionLikeType;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 8
@@ -284,7 +268,6 @@
 
 .method public withContentTypeHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/type/CollectionType;
     .registers 8
-    .param p1, "h"    # Ljava/lang/Object;
 
     .prologue
     .line 68
@@ -311,7 +294,6 @@
 
 .method public bridge synthetic withContentValueHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 8
@@ -324,7 +306,6 @@
 
 .method public bridge synthetic withContentValueHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/type/CollectionLikeType;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 8
@@ -337,7 +318,6 @@
 
 .method public withContentValueHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/type/CollectionType;
     .registers 8
-    .param p1, "h"    # Ljava/lang/Object;
 
     .prologue
     .line 79
@@ -396,11 +376,9 @@
     if-eqz v0, :cond_5
 
     .line 88
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/type/CollectionType;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/type/CollectionType;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/type/CollectionType;
 
@@ -427,7 +405,6 @@
 
 .method public bridge synthetic withTypeHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 8
@@ -440,7 +417,6 @@
 
 .method public bridge synthetic withTypeHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/type/CollectionLikeType;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 8
@@ -453,7 +429,6 @@
 
 .method public withTypeHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/type/CollectionType;
     .registers 8
-    .param p1, "h"    # Ljava/lang/Object;
 
     .prologue
     .line 61
@@ -476,7 +451,6 @@
 
 .method public bridge synthetic withValueHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 8
@@ -489,7 +463,6 @@
 
 .method public bridge synthetic withValueHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/type/CollectionLikeType;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 8
@@ -502,7 +475,6 @@
 
 .method public withValueHandler(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/type/CollectionType;
     .registers 8
-    .param p1, "h"    # Ljava/lang/Object;
 
     .prologue
     .line 74

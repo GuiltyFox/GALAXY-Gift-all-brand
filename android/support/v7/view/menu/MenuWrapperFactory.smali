@@ -4,21 +4,8 @@
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 32
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 33
-    return-void
-.end method
-
-.method public static wrapSupportMenu(Landroid/content/Context;Landroid/support/v4/internal/view/SupportMenu;)Landroid/view/Menu;
+.method public static a(Landroid/content/Context;Landroid/support/v4/internal/view/SupportMenu;)Landroid/view/Menu;
     .registers 4
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "supportMenu"    # Landroid/support/v4/internal/view/SupportMenu;
 
     .prologue
     .line 36
@@ -44,10 +31,8 @@
     throw v0
 .end method
 
-.method public static wrapSupportMenuItem(Landroid/content/Context;Landroid/support/v4/internal/view/SupportMenuItem;)Landroid/view/MenuItem;
+.method public static a(Landroid/content/Context;Landroid/support/v4/internal/view/SupportMenuItem;)Landroid/view/MenuItem;
     .registers 4
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "supportMenuItem"    # Landroid/support/v4/internal/view/SupportMenuItem;
 
     .prologue
     .line 43
@@ -90,10 +75,8 @@
     throw v0
 .end method
 
-.method public static wrapSupportSubMenu(Landroid/content/Context;Landroid/support/v4/internal/view/SupportSubMenu;)Landroid/view/SubMenu;
+.method public static a(Landroid/content/Context;Landroid/support/v4/internal/view/SupportSubMenu;)Landroid/view/SubMenu;
     .registers 4
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "supportSubMenu"    # Landroid/support/v4/internal/view/SupportSubMenu;
 
     .prologue
     .line 52

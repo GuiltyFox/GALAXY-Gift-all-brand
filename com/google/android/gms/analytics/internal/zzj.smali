@@ -5,26 +5,18 @@
 .implements Ljava/io/Closeable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/android/gms/analytics/internal/zzj$zza;
-    }
-.end annotation
-
-
 # static fields
-.field private static final zzPx:Ljava/lang/String;
+.field private static final a:Ljava/lang/String;
 
-.field private static final zzPy:Ljava/lang/String;
+.field private static final b:Ljava/lang/String;
 
 
 # instance fields
-.field private final zzPA:Lcom/google/android/gms/analytics/internal/zzaj;
+.field private final c:Lcom/google/android/gms/analytics/internal/zzj$zza;
 
-.field private final zzPB:Lcom/google/android/gms/analytics/internal/zzaj;
+.field private final d:Lcom/google/android/gms/analytics/internal/zzaj;
 
-.field private final zzPz:Lcom/google/android/gms/analytics/internal/zzj$zza;
+.field private final e:Lcom/google/android/gms/analytics/internal/zzaj;
 
 
 # direct methods
@@ -77,7 +69,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/analytics/internal/zzj;->zzPx:Ljava/lang/String;
+    sput-object v0, Lcom/google/android/gms/analytics/internal/zzj;->a:Ljava/lang/String;
 
     const-string/jumbo v0, "SELECT MAX(%s) FROM %s WHERE 1;"
 
@@ -95,7 +87,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/analytics/internal/zzj;->zzPy:Ljava/lang/String;
+    sput-object v0, Lcom/google/android/gms/analytics/internal/zzj;->b:Ljava/lang/String;
 
     return-void
 .end method
@@ -107,42 +99,299 @@
 
     new-instance v0, Lcom/google/android/gms/analytics/internal/zzaj;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziT()Lcom/google/android/gms/internal/zznl;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->n()Lcom/google/android/gms/internal/zznl;
 
     move-result-object v1
 
     invoke-direct {v0, v1}, Lcom/google/android/gms/analytics/internal/zzaj;-><init>(Lcom/google/android/gms/internal/zznl;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj;->zzPA:Lcom/google/android/gms/analytics/internal/zzaj;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj;->d:Lcom/google/android/gms/analytics/internal/zzaj;
 
     new-instance v0, Lcom/google/android/gms/analytics/internal/zzaj;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziT()Lcom/google/android/gms/internal/zznl;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->n()Lcom/google/android/gms/internal/zznl;
 
     move-result-object v1
 
     invoke-direct {v0, v1}, Lcom/google/android/gms/analytics/internal/zzaj;-><init>(Lcom/google/android/gms/internal/zznl;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj;->zzPB:Lcom/google/android/gms/analytics/internal/zzaj;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj;->e:Lcom/google/android/gms/analytics/internal/zzaj;
 
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzjz()Ljava/lang/String;
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzj;->G()Ljava/lang/String;
 
     move-result-object v0
 
     new-instance v1, Lcom/google/android/gms/analytics/internal/zzj$zza;
 
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzf;->getContext()Landroid/content/Context;
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzf;->b()Landroid/content/Context;
 
     move-result-object v2
 
     invoke-direct {v1, p0, v2, v0}, Lcom/google/android/gms/analytics/internal/zzj$zza;-><init>(Lcom/google/android/gms/analytics/internal/zzj;Landroid/content/Context;Ljava/lang/String;)V
 
-    iput-object v1, p0, Lcom/google/android/gms/analytics/internal/zzj;->zzPz:Lcom/google/android/gms/analytics/internal/zzj$zza;
+    iput-object v1, p0, Lcom/google/android/gms/analytics/internal/zzj;->c:Lcom/google/android/gms/analytics/internal/zzj$zza;
 
     return-void
 .end method
 
-.method private static zzB(Ljava/util/Map;)Ljava/lang/String;
+.method private F()V
+    .registers 7
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->y()I
+
+    move-result v0
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->e()J
+
+    move-result-wide v2
+
+    add-int/lit8 v1, v0, -0x1
+
+    int-to-long v4, v1
+
+    cmp-long v1, v2, v4
+
+    if-lez v1, :cond_2e
+
+    int-to-long v0, v0
+
+    sub-long v0, v2, v0
+
+    const-wide/16 v2, 0x1
+
+    add-long/2addr v0, v2
+
+    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/analytics/internal/zzj;->a(J)Ljava/util/List;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "Store full, deleting hits to make room, count"
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v1, v2}, Lcom/google/android/gms/analytics/internal/zzj;->d(Ljava/lang/String;Ljava/lang/Object;)V
+
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzj;->a(Ljava/util/List;)V
+
+    :cond_2e
+    return-void
+.end method
+
+.method private G()Ljava/lang/String;
+    .registers 2
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->a()Z
+
+    move-result v0
+
+    if-nez v0, :cond_13
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->A()Ljava/lang/String;
+
+    move-result-object v0
+
+    :goto_12
+    return-object v0
+
+    :cond_13
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_26
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->A()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_12
+
+    :cond_26
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->q()Lcom/google/android/gms/analytics/internal/zzr;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->B()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :goto_12
+.end method
+
+.method private a(Ljava/lang/String;[Ljava/lang/String;)J
+    .registers 7
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->i()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    :try_start_5
+    invoke-virtual {v0, p1, p2}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1a
+
+    const/4 v0, 0x0
+
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getLong(I)J
+    :try_end_13
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_5 .. :try_end_13} :catch_23
+    .catchall {:try_start_5 .. :try_end_13} :catchall_2b
+
+    move-result-wide v2
+
+    if-eqz v1, :cond_19
+
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+
+    :cond_19
+    return-wide v2
+
+    :cond_1a
+    :try_start_1a
+    new-instance v0, Landroid/database/sqlite/SQLiteException;
+
+    const-string/jumbo v2, "Database returned empty set"
+
+    invoke-direct {v0, v2}, Landroid/database/sqlite/SQLiteException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+    :try_end_23
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_1a .. :try_end_23} :catch_23
+    .catchall {:try_start_1a .. :try_end_23} :catchall_2b
+
+    :catch_23
+    move-exception v0
+
+    :try_start_24
+    const-string/jumbo v2, "Database error"
+
+    invoke-virtual {p0, v2, p1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->d(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    throw v0
+    :try_end_2b
+    .catchall {:try_start_24 .. :try_end_2b} :catchall_2b
+
+    :catchall_2b
+    move-exception v0
+
+    if-eqz v1, :cond_31
+
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+
+    :cond_31
+    throw v0
+.end method
+
+.method private a(Ljava/lang/String;[Ljava/lang/String;J)J
+    .registers 8
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->i()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    :try_start_5
+    invoke-virtual {v0, p1, p2}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1a
+
+    const/4 v0, 0x0
+
+    invoke-interface {v1, v0}, Landroid/database/Cursor;->getLong(I)J
+    :try_end_13
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_5 .. :try_end_13} :catch_20
+    .catchall {:try_start_5 .. :try_end_13} :catchall_28
+
+    move-result-wide p3
+
+    if-eqz v1, :cond_19
+
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+
+    :cond_19
+    :goto_19
+    return-wide p3
+
+    :cond_1a
+    if-eqz v1, :cond_19
+
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+
+    goto :goto_19
+
+    :catch_20
+    move-exception v0
+
+    :try_start_21
+    const-string/jumbo v2, "Database error"
+
+    invoke-virtual {p0, v2, p1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->d(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    throw v0
+    :try_end_28
+    .catchall {:try_start_21 .. :try_end_28} :catchall_28
+
+    :catchall_28
+    move-exception v0
+
+    if-eqz v1, :cond_2e
+
+    invoke-interface {v1}, Landroid/database/Cursor;->close()V
+
+    :cond_2e
+    throw v0
+.end method
+
+.method static synthetic a(Lcom/google/android/gms/analytics/internal/zzj;)Lcom/google/android/gms/analytics/internal/zzaj;
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj;->e:Lcom/google/android/gms/analytics/internal/zzaj;
+
+    return-object v0
+.end method
+
+.method private static a(Ljava/util/Map;)Ljava/lang/String;
     .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -156,7 +405,7 @@
         }
     .end annotation
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v2, Landroid/net/Uri$Builder;
 
@@ -216,177 +465,20 @@
     return-object v0
 .end method
 
-.method private zza(Ljava/lang/String;[Ljava/lang/String;J)J
-    .registers 8
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    :try_start_5
-    invoke-virtual {v0, p1, p2}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1a
-
-    const/4 v0, 0x0
-
-    invoke-interface {v1, v0}, Landroid/database/Cursor;->getLong(I)J
-    :try_end_13
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_5 .. :try_end_13} :catch_20
-    .catchall {:try_start_5 .. :try_end_13} :catchall_28
-
-    move-result-wide p3
-
-    if-eqz v1, :cond_19
-
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    :cond_19
-    :goto_19
-    return-wide p3
-
-    :cond_1a
-    if-eqz v1, :cond_19
-
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    goto :goto_19
-
-    :catch_20
-    move-exception v0
-
-    :try_start_21
-    const-string/jumbo v2, "Database error"
-
-    invoke-virtual {p0, v2, p1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zzd(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
-
-    throw v0
-    :try_end_28
-    .catchall {:try_start_21 .. :try_end_28} :catchall_28
-
-    :catchall_28
-    move-exception v0
-
-    if-eqz v1, :cond_2e
-
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    :cond_2e
-    throw v0
-.end method
-
-.method static synthetic zza(Lcom/google/android/gms/analytics/internal/zzj;)Lcom/google/android/gms/analytics/internal/zzaj;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj;->zzPB:Lcom/google/android/gms/analytics/internal/zzaj;
-
-    return-object v0
-.end method
-
-.method private zzb(Ljava/lang/String;[Ljava/lang/String;)J
-    .registers 7
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    :try_start_5
-    invoke-virtual {v0, p1, p2}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/database/Cursor;->moveToFirst()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1a
-
-    const/4 v0, 0x0
-
-    invoke-interface {v1, v0}, Landroid/database/Cursor;->getLong(I)J
-    :try_end_13
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_5 .. :try_end_13} :catch_23
-    .catchall {:try_start_5 .. :try_end_13} :catchall_2b
-
-    move-result-wide v2
-
-    if-eqz v1, :cond_19
-
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    :cond_19
-    return-wide v2
-
-    :cond_1a
-    :try_start_1a
-    new-instance v0, Landroid/database/sqlite/SQLiteException;
-
-    const-string/jumbo v2, "Database returned empty set"
-
-    invoke-direct {v0, v2}, Landroid/database/sqlite/SQLiteException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-    :try_end_23
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_1a .. :try_end_23} :catch_23
-    .catchall {:try_start_1a .. :try_end_23} :catchall_2b
-
-    :catch_23
-    move-exception v0
-
-    :try_start_24
-    const-string/jumbo v2, "Database error"
-
-    invoke-virtual {p0, v2, p1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zzd(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
-
-    throw v0
-    :try_end_2b
-    .catchall {:try_start_24 .. :try_end_2b} :catchall_2b
-
-    :catchall_2b
-    move-exception v0
-
-    if-eqz v1, :cond_31
-
-    invoke-interface {v1}, Landroid/database/Cursor;->close()V
-
-    :cond_31
-    throw v0
-.end method
-
-.method static synthetic zzb(Lcom/google/android/gms/analytics/internal/zzj;)Ljava/lang/String;
-    .registers 2
-
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzjz()Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private zzd(Lcom/google/android/gms/analytics/internal/zzab;)Ljava/lang/String;
+.method private b(Lcom/google/android/gms/analytics/internal/zzab;)Ljava/lang/String;
     .registers 3
 
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->zzlc()Z
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->f()Z
 
     move-result v0
 
     if-eqz v0, :cond_f
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->q()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->zzko()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->o()Ljava/lang/String;
 
     move-result-object v0
 
@@ -394,27 +486,37 @@
     return-object v0
 
     :cond_f
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->q()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->zzkp()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->p()Ljava/lang/String;
 
     move-result-object v0
 
     goto :goto_e
 .end method
 
-.method private static zze(Lcom/google/android/gms/analytics/internal/zzab;)Ljava/lang/String;
+.method static synthetic b(Lcom/google/android/gms/analytics/internal/zzj;)Ljava/lang/String;
+    .registers 2
+
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzj;->G()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method private static c(Lcom/google/android/gms/analytics/internal/zzab;)Ljava/lang/String;
     .registers 6
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     new-instance v2, Landroid/net/Uri$Builder;
 
     invoke-direct {v2}, Landroid/net/Uri$Builder;-><init>()V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzab;->zzn()Ljava/util/Map;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzab;->b()Ljava/util/Map;
 
     move-result-object v0
 
@@ -497,259 +599,26 @@
     return-object v0
 .end method
 
-.method static synthetic zzjA()Ljava/lang/String;
+.method static synthetic j()Ljava/lang/String;
     .registers 1
 
-    sget-object v0, Lcom/google/android/gms/analytics/internal/zzj;->zzPx:Ljava/lang/String;
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzj;->a:Ljava/lang/String;
 
     return-object v0
-.end method
-
-.method private zzjy()V
-    .registers 7
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->zzky()I
-
-    move-result v0
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzjp()J
-
-    move-result-wide v2
-
-    add-int/lit8 v1, v0, -0x1
-
-    int-to-long v4, v1
-
-    cmp-long v1, v2, v4
-
-    if-lez v1, :cond_2e
-
-    int-to-long v0, v0
-
-    sub-long v0, v2, v0
-
-    const-wide/16 v2, 0x1
-
-    add-long/2addr v0, v2
-
-    invoke-virtual {p0, v0, v1}, Lcom/google/android/gms/analytics/internal/zzj;->zzo(J)Ljava/util/List;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "Store full, deleting hits to make room, count"
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v2
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v1, v2}, Lcom/google/android/gms/analytics/internal/zzj;->zzd(Ljava/lang/String;Ljava/lang/Object;)V
-
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zzm(Ljava/util/List;)V
-
-    :cond_2e
-    return-void
-.end method
-
-.method private zzjz()Ljava/lang/String;
-    .registers 2
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->zzka()Z
-
-    move-result v0
-
-    if-nez v0, :cond_13
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->zzkA()Ljava/lang/String;
-
-    move-result-object v0
-
-    :goto_12
-    return-object v0
-
-    :cond_13
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->zzkb()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_26
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->zzkA()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_12
-
-    :cond_26
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzr;->zzkB()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto :goto_12
 .end method
 
 
 # virtual methods
-.method public beginTransaction()V
-    .registers 2
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzje()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
-
-    return-void
-.end method
-
-.method public close()V
-    .registers 3
-
-    :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj;->zzPz:Lcom/google/android/gms/analytics/internal/zzj$zza;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzj$zza;->close()V
-    :try_end_5
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_5} :catch_6
-    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_5} :catch_e
-
-    :goto_5
-    return-void
-
-    :catch_6
-    move-exception v0
-
-    const-string/jumbo v1, "Sql error closing database"
-
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zze(Ljava/lang/String;Ljava/lang/Object;)V
-
-    goto :goto_5
-
-    :catch_e
-    move-exception v0
-
-    const-string/jumbo v1, "Error closing database"
-
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zze(Ljava/lang/String;Ljava/lang/Object;)V
-
-    goto :goto_5
-.end method
-
-.method public endTransaction()V
-    .registers 2
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzje()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
-
-    return-void
-.end method
-
-.method getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-    .registers 3
-
-    :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj;->zzPz:Lcom/google/android/gms/analytics/internal/zzj$zza;
-
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzj$zza;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-    :try_end_5
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_5} :catch_7
-
-    move-result-object v0
-
-    return-object v0
-
-    :catch_7
-    move-exception v0
-
-    const-string/jumbo v1, "Error opening database"
-
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zzd(Ljava/lang/String;Ljava/lang/Object;)V
-
-    throw v0
-.end method
-
-.method isEmpty()Z
-    .registers 5
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzjp()J
-
-    move-result-wide v0
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v0, v0, v2
-
-    if-nez v0, :cond_c
-
-    const/4 v0, 0x1
-
-    :goto_b
-    return v0
-
-    :cond_c
-    const/4 v0, 0x0
-
-    goto :goto_b
-.end method
-
-.method public setTransactionSuccessful()V
-    .registers 2
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzje()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
-
-    return-void
-.end method
-
-.method public zza(JLjava/lang/String;Ljava/lang/String;)J
+.method public a(JLjava/lang/String;Ljava/lang/String;)J
     .registers 10
 
-    invoke-static {p3}, Lcom/google/android/gms/common/internal/zzx;->zzcG(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p3}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-static {p4}, Lcom/google/android/gms/common/internal/zzx;->zzcG(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p4}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/String;)Ljava/lang/String;
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzje()V
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->D()V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziS()V
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->m()V
 
     const-string/jumbo v0, "SELECT hits_count FROM properties WHERE app_uid=? AND cid=? AND tid=?"
 
@@ -775,893 +644,14 @@
 
     const-wide/16 v2, 0x0
 
-    invoke-direct {p0, v0, v1, v2, v3}, Lcom/google/android/gms/analytics/internal/zzj;->zza(Ljava/lang/String;[Ljava/lang/String;J)J
+    invoke-direct {p0, v0, v1, v2, v3}, Lcom/google/android/gms/analytics/internal/zzj;->a(Ljava/lang/String;[Ljava/lang/String;J)J
 
     move-result-wide v0
 
     return-wide v0
 .end method
 
-.method public zza(JLjava/lang/String;)V
-    .registers 11
-
-    invoke-static {p3}, Lcom/google/android/gms/common/internal/zzx;->zzcG(Ljava/lang/String;)Ljava/lang/String;
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzje()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziS()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "properties"
-
-    const-string/jumbo v2, "app_uid=? AND cid<>?"
-
-    const/4 v3, 0x2
-
-    new-array v3, v3, [Ljava/lang/String;
-
-    const/4 v4, 0x0
-
-    invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
-
-    move-result-object v5
-
-    aput-object v5, v3, v4
-
-    const/4 v4, 0x1
-
-    aput-object p3, v3, v4
-
-    invoke-virtual {v0, v1, v2, v3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v0
-
-    if-lez v0, :cond_30
-
-    const-string/jumbo v1, "Deleted property records"
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zza(Ljava/lang/String;Ljava/lang/Object;)V
-
-    :cond_30
-    return-void
-.end method
-
-.method public zzb(Lcom/google/android/gms/analytics/internal/zzh;)V
-    .registers 8
-
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzje()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziS()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v1
-
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzh;->zzn()Ljava/util/Map;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzj;->zzB(Ljava/util/Map;)Ljava/lang/String;
-
-    move-result-object v2
-
-    new-instance v3, Landroid/content/ContentValues;
-
-    invoke-direct {v3}, Landroid/content/ContentValues;-><init>()V
-
-    const-string/jumbo v0, "app_uid"
-
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzh;->zzjm()J
-
-    move-result-wide v4
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v0, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
-
-    const-string/jumbo v0, "cid"
-
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzh;->getClientId()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v0, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string/jumbo v0, "tid"
-
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzh;->zzjn()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v0, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string/jumbo v4, "adid"
-
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzh;->zzjo()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_77
-
-    const/4 v0, 0x1
-
-    :goto_46
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    invoke-virtual {v3, v4, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    const-string/jumbo v0, "hits_count"
-
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzh;->zzjp()J
-
-    move-result-wide v4
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v0, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
-
-    const-string/jumbo v0, "params"
-
-    invoke-virtual {v3, v0, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    :try_start_61
-    const-string/jumbo v0, "properties"
-
-    const/4 v2, 0x0
-
-    const/4 v4, 0x5
-
-    invoke-virtual {v1, v0, v2, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->insertWithOnConflict(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;I)J
-
-    move-result-wide v0
-
-    const-wide/16 v2, -0x1
-
-    cmp-long v0, v0, v2
-
-    if-nez v0, :cond_76
-
-    const-string/jumbo v0, "Failed to insert/update a property (got -1)"
-
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zzbe(Ljava/lang/String;)V
-    :try_end_76
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_61 .. :try_end_76} :catch_79
-
-    :cond_76
-    :goto_76
-    return-void
-
-    :cond_77
-    const/4 v0, 0x0
-
-    goto :goto_46
-
-    :catch_79
-    move-exception v0
-
-    const-string/jumbo v1, "Error storing a property"
-
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zze(Ljava/lang/String;Ljava/lang/Object;)V
-
-    goto :goto_76
-.end method
-
-.method zzbf(Ljava/lang/String;)Ljava/util/Map;
-    .registers 7
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            ")",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-
-    const/4 v4, 0x0
-
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_d
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0, v4}, Ljava/util/HashMap;-><init>(I)V
-
-    :goto_c
-    return-object v0
-
-    :cond_d
-    :try_start_d
-    const-string/jumbo v0, "?"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_54
-
-    :goto_16
-    new-instance v0, Ljava/net/URI;
-
-    invoke-direct {v0, p1}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
-
-    const-string/jumbo v1, "UTF-8"
-
-    invoke-static {v0, v1}, Lorg/apache/http/client/utils/URLEncodedUtils;->parse(Ljava/net/URI;Ljava/lang/String;)Ljava/util/List;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/util/HashMap;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v2
-
-    invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_2f
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_69
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lorg/apache/http/NameValuePair;
-
-    invoke-interface {v0}, Lorg/apache/http/NameValuePair;->getName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-interface {v0}, Lorg/apache/http/NameValuePair;->getValue()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v1, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_46
-    .catch Ljava/net/URISyntaxException; {:try_start_d .. :try_end_46} :catch_47
-
-    goto :goto_2f
-
-    :catch_47
-    move-exception v0
-
-    const-string/jumbo v1, "Error parsing hit parameters"
-
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zze(Ljava/lang/String;Ljava/lang/Object;)V
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0, v4}, Ljava/util/HashMap;-><init>(I)V
-
-    goto :goto_c
-
-    :cond_54
-    :try_start_54
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v1, "?"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    :try_end_67
-    .catch Ljava/net/URISyntaxException; {:try_start_54 .. :try_end_67} :catch_47
-
-    move-result-object p1
-
-    goto :goto_16
-
-    :cond_69
-    move-object v0, v1
-
-    goto :goto_c
-.end method
-
-.method zzbg(Ljava/lang/String;)Ljava/util/Map;
-    .registers 7
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            ")",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-
-    const/4 v4, 0x0
-
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_d
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0, v4}, Ljava/util/HashMap;-><init>(I)V
-
-    :goto_c
-    return-object v0
-
-    :cond_d
-    :try_start_d
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v1, "?"
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/net/URI;
-
-    invoke-direct {v1, v0}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
-
-    const-string/jumbo v0, "UTF-8"
-
-    invoke-static {v1, v0}, Lorg/apache/http/client/utils/URLEncodedUtils;->parse(Ljava/net/URI;Ljava/lang/String;)Ljava/util/List;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/util/HashMap;
-
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v2
-
-    invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v2
-
-    :goto_3a
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_5f
-
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lorg/apache/http/NameValuePair;
-
-    invoke-interface {v0}, Lorg/apache/http/NameValuePair;->getName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-interface {v0}, Lorg/apache/http/NameValuePair;->getValue()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-interface {v1, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_51
-    .catch Ljava/net/URISyntaxException; {:try_start_d .. :try_end_51} :catch_52
-
-    goto :goto_3a
-
-    :catch_52
-    move-exception v0
-
-    const-string/jumbo v1, "Error parsing property parameters"
-
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zze(Ljava/lang/String;Ljava/lang/Object;)V
-
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0, v4}, Ljava/util/HashMap;-><init>(I)V
-
-    goto :goto_c
-
-    :cond_5f
-    move-object v0, v1
-
-    goto :goto_c
-.end method
-
-.method public zzc(Lcom/google/android/gms/analytics/internal/zzab;)V
-    .registers 8
-
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziS()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzje()V
-
-    invoke-static {p1}, Lcom/google/android/gms/analytics/internal/zzj;->zze(Lcom/google/android/gms/analytics/internal/zzab;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    move-result v1
-
-    const/16 v2, 0x2000
-
-    if-le v1, v2, :cond_20
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziU()Lcom/google/android/gms/analytics/internal/zzaf;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "Hit length exceeds the maximum allowed size"
-
-    invoke-virtual {v0, p1, v1}, Lcom/google/android/gms/analytics/internal/zzaf;->zza(Lcom/google/android/gms/analytics/internal/zzab;Ljava/lang/String;)V
-
-    :goto_1f
-    return-void
-
-    :cond_20
-    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzjy()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v1
-
-    new-instance v2, Landroid/content/ContentValues;
-
-    invoke-direct {v2}, Landroid/content/ContentValues;-><init>()V
-
-    const-string/jumbo v3, "hit_string"
-
-    invoke-virtual {v2, v3, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string/jumbo v0, "hit_time"
-
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->zzla()J
-
-    move-result-wide v4
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v0, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
-
-    const-string/jumbo v0, "hit_app_id"
-
-    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->zzkY()I
-
-    move-result v3
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v0, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
-
-    const-string/jumbo v0, "hit_url"
-
-    invoke-direct {p0, p1}, Lcom/google/android/gms/analytics/internal/zzj;->zzd(Lcom/google/android/gms/analytics/internal/zzab;)Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v0, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    :try_start_58
-    const-string/jumbo v0, "hits2"
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v0, v3, v2}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
-
-    move-result-wide v0
-
-    const-wide/16 v2, -0x1
-
-    cmp-long v2, v0, v2
-
-    if-nez v2, :cond_75
-
-    const-string/jumbo v0, "Failed to insert a hit (got -1)"
-
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zzbe(Ljava/lang/String;)V
-    :try_end_6c
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_58 .. :try_end_6c} :catch_6d
-
-    goto :goto_1f
-
-    :catch_6d
-    move-exception v0
-
-    const-string/jumbo v1, "Error storing a hit"
-
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zze(Ljava/lang/String;Ljava/lang/Object;)V
-
-    goto :goto_1f
-
-    :cond_75
-    :try_start_75
-    const-string/jumbo v2, "Hit saved to database. db-id, hit"
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-virtual {p0, v2, v0, p1}, Lcom/google/android/gms/analytics/internal/zzj;->zzb(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_7f
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_75 .. :try_end_7f} :catch_6d
-
-    goto :goto_1f
-.end method
-
-.method protected zzir()V
-    .registers 1
-
-    return-void
-.end method
-
-.method public zzjp()J
-    .registers 3
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziS()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzje()V
-
-    const-string/jumbo v0, "SELECT COUNT(*) FROM hits2"
-
-    const/4 v1, 0x0
-
-    invoke-direct {p0, v0, v1}, Lcom/google/android/gms/analytics/internal/zzj;->zzb(Ljava/lang/String;[Ljava/lang/String;)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public zzju()V
-    .registers 4
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziS()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzje()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "hits2"
-
-    invoke-virtual {v0, v1, v2, v2}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-
-    return-void
-.end method
-
-.method public zzjv()V
-    .registers 4
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziS()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzje()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "properties"
-
-    invoke-virtual {v0, v1, v2, v2}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-
-    return-void
-.end method
-
-.method public zzjw()I
-    .registers 8
-
-    const/4 v0, 0x0
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziS()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzje()V
-
-    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzj;->zzPA:Lcom/google/android/gms/analytics/internal/zzaj;
-
-    const-wide/32 v2, 0x5265c00
-
-    invoke-virtual {v1, v2, v3}, Lcom/google/android/gms/analytics/internal/zzaj;->zzv(J)Z
-
-    move-result v1
-
-    if-nez v1, :cond_13
-
-    :goto_12
-    return v0
-
-    :cond_13
-    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzj;->zzPA:Lcom/google/android/gms/analytics/internal/zzaj;
-
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzaj;->start()V
-
-    const-string/jumbo v1, "Deleting stale hits (if any)"
-
-    invoke-virtual {p0, v1}, Lcom/google/android/gms/analytics/internal/zzj;->zzba(Ljava/lang/String;)V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziT()Lcom/google/android/gms/internal/zznl;
-
-    move-result-object v2
-
-    invoke-interface {v2}, Lcom/google/android/gms/internal/zznl;->currentTimeMillis()J
-
-    move-result-wide v2
-
-    const-wide v4, 0x9a7ec800L
-
-    sub-long/2addr v2, v4
-
-    const-string/jumbo v4, "hits2"
-
-    const-string/jumbo v5, "hit_time < ?"
-
-    const/4 v6, 0x1
-
-    new-array v6, v6, [Ljava/lang/String;
-
-    invoke-static {v2, v3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
-
-    move-result-object v2
-
-    aput-object v2, v6, v0
-
-    invoke-virtual {v1, v4, v5, v6}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v0
-
-    const-string/jumbo v1, "Deleted stale hits, count"
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v1, v2}, Lcom/google/android/gms/analytics/internal/zzj;->zza(Ljava/lang/String;Ljava/lang/Object;)V
-
-    goto :goto_12
-.end method
-
-.method public zzjx()J
-    .registers 5
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziS()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzje()V
-
-    sget-object v0, Lcom/google/android/gms/analytics/internal/zzj;->zzPy:Ljava/lang/String;
-
-    const/4 v1, 0x0
-
-    const-wide/16 v2, 0x0
-
-    invoke-direct {p0, v0, v1, v2, v3}, Lcom/google/android/gms/analytics/internal/zzj;->zza(Ljava/lang/String;[Ljava/lang/String;J)J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public zzm(Ljava/util/List;)V
-    .registers 10
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Ljava/lang/Long;",
-            ">;)V"
-        }
-    .end annotation
-
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziS()V
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzje()V
-
-    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    :cond_f
-    :goto_f
-    return-void
-
-    :cond_10
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string/jumbo v0, "hit_id"
-
-    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    const-string/jumbo v0, " in ("
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const/4 v0, 0x0
-
-    move v1, v0
-
-    :goto_20
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result v0
-
-    if-ge v1, v0, :cond_50
-
-    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Long;
-
-    if-eqz v0, :cond_38
-
-    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v4
-
-    const-wide/16 v6, 0x0
-
-    cmp-long v3, v4, v6
-
-    if-nez v3, :cond_41
-
-    :cond_38
-    new-instance v0, Landroid/database/sqlite/SQLiteException;
-
-    const-string/jumbo v1, "Invalid hit id"
-
-    invoke-direct {v0, v1}, Landroid/database/sqlite/SQLiteException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_41
-    if-lez v1, :cond_49
-
-    const-string/jumbo v3, ","
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    :cond_49
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v0, v1, 0x1
-
-    move v1, v0
-
-    goto :goto_20
-
-    :cond_50
-    const-string/jumbo v0, ")"
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    :try_start_5a
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "Deleting dispatched hits. count"
-
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result v3
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {p0, v2, v3}, Lcom/google/android/gms/analytics/internal/zzj;->zza(Ljava/lang/String;Ljava/lang/Object;)V
-
-    const-string/jumbo v2, "hits2"
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v2, v0, v3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
-
-    move-result v1
-
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result v2
-
-    if-eq v1, v2, :cond_f
-
-    const-string/jumbo v2, "Deleted fewer hits then expected"
-
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    move-result v3
-
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {p0, v2, v3, v1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zzb(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
-    :try_end_8c
-    .catch Landroid/database/sqlite/SQLiteException; {:try_start_5a .. :try_end_8c} :catch_8d
-
-    goto :goto_f
-
-    :catch_8d
-    move-exception v0
-
-    const-string/jumbo v1, "Error deleting hits"
-
-    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zze(Ljava/lang/String;Ljava/lang/Object;)V
-
-    throw v0
-.end method
-
-.method public zzo(J)Ljava/util/List;
+.method public a(J)Ljava/util/List;
     .registers 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1675,9 +665,9 @@
 
     const/4 v10, 0x0
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziS()V
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->m()V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzje()V
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->D()V
 
     const-wide/16 v0, 0x0
 
@@ -1693,7 +683,7 @@
     return-object v0
 
     :cond_12
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->i()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
@@ -1798,7 +788,7 @@
     :try_start_64
     const-string/jumbo v2, "Error selecting hit ids"
 
-    invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zzd(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/analytics/internal/zzj;->d(Ljava/lang/String;Ljava/lang/Object;)V
     :try_end_6a
     .catchall {:try_start_64 .. :try_end_6a} :catchall_77
 
@@ -1832,7 +822,614 @@
     goto :goto_64
 .end method
 
-.method public zzp(J)Ljava/util/List;
+.method a(Ljava/lang/String;)Ljava/util/Map;
+    .registers 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    const/4 v4, 0x0
+
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_d
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0, v4}, Ljava/util/HashMap;-><init>(I)V
+
+    :goto_c
+    return-object v0
+
+    :cond_d
+    :try_start_d
+    const-string/jumbo v0, "?"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_54
+
+    :goto_16
+    new-instance v0, Ljava/net/URI;
+
+    invoke-direct {v0, p1}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
+
+    const-string/jumbo v1, "UTF-8"
+
+    invoke-static {v0, v1}, Lorg/apache/http/client/utils/URLEncodedUtils;->parse(Ljava/net/URI;Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/util/HashMap;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_2f
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_69
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/apache/http/NameValuePair;
+
+    invoke-interface {v0}, Lorg/apache/http/NameValuePair;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v0}, Lorg/apache/http/NameValuePair;->getValue()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v1, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_46
+    .catch Ljava/net/URISyntaxException; {:try_start_d .. :try_end_46} :catch_47
+
+    goto :goto_2f
+
+    :catch_47
+    move-exception v0
+
+    const-string/jumbo v1, "Error parsing hit parameters"
+
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->e(Ljava/lang/String;Ljava/lang/Object;)V
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0, v4}, Ljava/util/HashMap;-><init>(I)V
+
+    goto :goto_c
+
+    :cond_54
+    :try_start_54
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v1, "?"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :try_end_67
+    .catch Ljava/net/URISyntaxException; {:try_start_54 .. :try_end_67} :catch_47
+
+    move-result-object p1
+
+    goto :goto_16
+
+    :cond_69
+    move-object v0, v1
+
+    goto :goto_c
+.end method
+
+.method protected a()V
+    .registers 1
+
+    return-void
+.end method
+
+.method public a(JLjava/lang/String;)V
+    .registers 11
+
+    invoke-static {p3}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->D()V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->m()V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->i()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "properties"
+
+    const-string/jumbo v2, "app_uid=? AND cid<>?"
+
+    const/4 v3, 0x2
+
+    new-array v3, v3, [Ljava/lang/String;
+
+    const/4 v4, 0x0
+
+    invoke-static {p1, p2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object v5
+
+    aput-object v5, v3, v4
+
+    const/4 v4, 0x1
+
+    aput-object p3, v3, v4
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+
+    move-result v0
+
+    if-lez v0, :cond_30
+
+    const-string/jumbo v1, "Deleted property records"
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->a(Ljava/lang/String;Ljava/lang/Object;)V
+
+    :cond_30
+    return-void
+.end method
+
+.method public a(Lcom/google/android/gms/analytics/internal/zzab;)V
+    .registers 8
+
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->m()V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->D()V
+
+    invoke-static {p1}, Lcom/google/android/gms/analytics/internal/zzj;->c(Lcom/google/android/gms/analytics/internal/zzab;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    const/16 v2, 0x2000
+
+    if-le v1, v2, :cond_20
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->p()Lcom/google/android/gms/analytics/internal/zzaf;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "Hit length exceeds the maximum allowed size"
+
+    invoke-virtual {v0, p1, v1}, Lcom/google/android/gms/analytics/internal/zzaf;->a(Lcom/google/android/gms/analytics/internal/zzab;Ljava/lang/String;)V
+
+    :goto_1f
+    return-void
+
+    :cond_20
+    invoke-direct {p0}, Lcom/google/android/gms/analytics/internal/zzj;->F()V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->i()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v1
+
+    new-instance v2, Landroid/content/ContentValues;
+
+    invoke-direct {v2}, Landroid/content/ContentValues;-><init>()V
+
+    const-string/jumbo v3, "hit_string"
+
+    invoke-virtual {v2, v3, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string/jumbo v0, "hit_time"
+
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->d()J
+
+    move-result-wide v4
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v0, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+
+    const-string/jumbo v0, "hit_app_id"
+
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzab;->a()I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v0, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    const-string/jumbo v0, "hit_url"
+
+    invoke-direct {p0, p1}, Lcom/google/android/gms/analytics/internal/zzj;->b(Lcom/google/android/gms/analytics/internal/zzab;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v0, v3}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    :try_start_58
+    const-string/jumbo v0, "hits2"
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v0, v3, v2}, Landroid/database/sqlite/SQLiteDatabase;->insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
+
+    move-result-wide v0
+
+    const-wide/16 v2, -0x1
+
+    cmp-long v2, v0, v2
+
+    if-nez v2, :cond_75
+
+    const-string/jumbo v0, "Failed to insert a hit (got -1)"
+
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzj;->f(Ljava/lang/String;)V
+    :try_end_6c
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_58 .. :try_end_6c} :catch_6d
+
+    goto :goto_1f
+
+    :catch_6d
+    move-exception v0
+
+    const-string/jumbo v1, "Error storing a hit"
+
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->e(Ljava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_1f
+
+    :cond_75
+    :try_start_75
+    const-string/jumbo v2, "Hit saved to database. db-id, hit"
+
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v2, v0, p1}, Lcom/google/android/gms/analytics/internal/zzj;->b(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    :try_end_7f
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_75 .. :try_end_7f} :catch_6d
+
+    goto :goto_1f
+.end method
+
+.method public a(Lcom/google/android/gms/analytics/internal/zzh;)V
+    .registers 8
+
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->D()V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->m()V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->i()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v1
+
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzh;->f()Ljava/util/Map;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzj;->a(Ljava/util/Map;)Ljava/lang/String;
+
+    move-result-object v2
+
+    new-instance v3, Landroid/content/ContentValues;
+
+    invoke-direct {v3}, Landroid/content/ContentValues;-><init>()V
+
+    const-string/jumbo v0, "app_uid"
+
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzh;->a()J
+
+    move-result-wide v4
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v0, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+
+    const-string/jumbo v0, "cid"
+
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzh;->b()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v0, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string/jumbo v0, "tid"
+
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzh;->c()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v0, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string/jumbo v4, "adid"
+
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzh;->d()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_77
+
+    const/4 v0, 0x1
+
+    :goto_46
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    invoke-virtual {v3, v4, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
+
+    const-string/jumbo v0, "hits_count"
+
+    invoke-virtual {p1}, Lcom/google/android/gms/analytics/internal/zzh;->e()J
+
+    move-result-wide v4
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v0, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
+
+    const-string/jumbo v0, "params"
+
+    invoke-virtual {v3, v0, v2}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    :try_start_61
+    const-string/jumbo v0, "properties"
+
+    const/4 v2, 0x0
+
+    const/4 v4, 0x5
+
+    invoke-virtual {v1, v0, v2, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->insertWithOnConflict(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;I)J
+
+    move-result-wide v0
+
+    const-wide/16 v2, -0x1
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_76
+
+    const-string/jumbo v0, "Failed to insert/update a property (got -1)"
+
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzj;->f(Ljava/lang/String;)V
+    :try_end_76
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_61 .. :try_end_76} :catch_79
+
+    :cond_76
+    :goto_76
+    return-void
+
+    :cond_77
+    const/4 v0, 0x0
+
+    goto :goto_46
+
+    :catch_79
+    move-exception v0
+
+    const-string/jumbo v1, "Error storing a property"
+
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->e(Ljava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_76
+.end method
+
+.method public a(Ljava/util/List;)V
+    .registers 10
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/Long;",
+            ">;)V"
+        }
+    .end annotation
+
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->m()V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->D()V
+
+    invoke-interface {p1}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_10
+
+    :cond_f
+    :goto_f
+    return-void
+
+    :cond_10
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string/jumbo v0, "hit_id"
+
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    const-string/jumbo v0, " in ("
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    :goto_20
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    if-ge v1, v0, :cond_50
+
+    invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Long;
+
+    if-eqz v0, :cond_38
+
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v4
+
+    const-wide/16 v6, 0x0
+
+    cmp-long v3, v4, v6
+
+    if-nez v3, :cond_41
+
+    :cond_38
+    new-instance v0, Landroid/database/sqlite/SQLiteException;
+
+    const-string/jumbo v1, "Invalid hit id"
+
+    invoke-direct {v0, v1}, Landroid/database/sqlite/SQLiteException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_41
+    if-lez v1, :cond_49
+
+    const-string/jumbo v3, ","
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    :cond_49
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
+
+    goto :goto_20
+
+    :cond_50
+    const-string/jumbo v0, ")"
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :try_start_5a
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->i()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "Deleting dispatched hits. count"
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {p0, v2, v3}, Lcom/google/android/gms/analytics/internal/zzj;->a(Ljava/lang/String;Ljava/lang/Object;)V
+
+    const-string/jumbo v2, "hits2"
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v2, v0, v3}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+
+    move-result v1
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-eq v1, v2, :cond_f
+
+    const-string/jumbo v2, "Deleted fewer hits then expected"
+
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v2, v3, v1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->b(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    :try_end_8c
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_5a .. :try_end_8c} :catch_8d
+
+    goto :goto_f
+
+    :catch_8d
+    move-exception v0
+
+    const-string/jumbo v1, "Error deleting hits"
+
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->e(Ljava/lang/String;Ljava/lang/Object;)V
+
+    throw v0
+.end method
+
+.method public b(J)Ljava/util/List;
     .registers 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1857,13 +1454,13 @@
     if-ltz v2, :cond_97
 
     :goto_9
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzx;->zzab(Z)V
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzx;->a(Z)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziS()V
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->m()V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzje()V
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->D()V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->i()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
@@ -1981,11 +1578,11 @@
 
     move-result v8
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zzbf(Ljava/lang/String;)Ljava/util/Map;
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzj;->a(Ljava/lang/String;)Ljava/util/Map;
 
     move-result-object v2
 
-    invoke-static {v1}, Lcom/google/android/gms/analytics/internal/zzam;->zzbu(Ljava/lang/String;)Z
+    invoke-static {v1}, Lcom/google/android/gms/analytics/internal/zzam;->d(Ljava/lang/String;)Z
 
     move-result v5
 
@@ -2028,7 +1625,7 @@
     :try_start_9c
     const-string/jumbo v2, "Error loading hits from the database"
 
-    invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zze(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/analytics/internal/zzj;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
     throw v0
     :try_end_a3
@@ -2060,12 +1657,40 @@
     goto :goto_9c
 .end method
 
-.method public zzq(J)V
+.method public b()V
+    .registers 2
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->D()V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->i()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->beginTransaction()V
+
+    return-void
+.end method
+
+.method public c()V
+    .registers 2
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->D()V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->i()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->setTransactionSuccessful()V
+
+    return-void
+.end method
+
+.method public c(J)V
     .registers 6
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziS()V
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->m()V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzje()V
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->D()V
 
     new-instance v0, Ljava/util/ArrayList;
 
@@ -2085,14 +1710,47 @@
 
     move-result-object v2
 
-    invoke-virtual {p0, v1, v2}, Lcom/google/android/gms/analytics/internal/zzj;->zza(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v1, v2}, Lcom/google/android/gms/analytics/internal/zzj;->a(Ljava/lang/String;Ljava/lang/Object;)V
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zzm(Ljava/util/List;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzj;->a(Ljava/util/List;)V
 
     return-void
 .end method
 
-.method public zzr(J)Ljava/util/List;
+.method public close()V
+    .registers 3
+
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj;->c:Lcom/google/android/gms/analytics/internal/zzj$zza;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzj$zza;->close()V
+    :try_end_5
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_5} :catch_6
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_5} :catch_e
+
+    :goto_5
+    return-void
+
+    :catch_6
+    move-exception v0
+
+    const-string/jumbo v1, "Sql error closing database"
+
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->e(Ljava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_5
+
+    :catch_e
+    move-exception v0
+
+    const-string/jumbo v1, "Error closing database"
+
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->e(Ljava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_5
+.end method
+
+.method public d(J)Ljava/util/List;
     .registers 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -2104,11 +1762,11 @@
         }
     .end annotation
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zzje()V
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->D()V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziS()V
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->m()V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->i()Landroid/database/sqlite/SQLiteDatabase;
 
     move-result-object v0
 
@@ -2149,11 +1807,11 @@
 
     aput-object v3, v2, v1
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->q()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->zzkz()I
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzr;->z()I
 
     move-result v10
 
@@ -2239,7 +1897,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zzbg(Ljava/lang/String;)Ljava/util/Map;
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzj;->g(Ljava/lang/String;)Ljava/util/Map;
 
     move-result-object v8
 
@@ -2258,7 +1916,7 @@
     :cond_87
     const-string/jumbo v0, "Read property with empty client id or tracker id"
 
-    invoke-virtual {p0, v0, v3, v4}, Lcom/google/android/gms/analytics/internal/zzj;->zzc(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {p0, v0, v3, v4}, Lcom/google/android/gms/analytics/internal/zzj;->c(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
     :goto_8d
     invoke-interface {v9}, Landroid/database/Cursor;->moveToNext()Z
@@ -2276,7 +1934,7 @@
 
     const-string/jumbo v0, "Sending hits to too many properties. Campaign report might be incorrect"
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zzbd(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/analytics/internal/zzj;->e(Ljava/lang/String;)V
     :try_end_9f
     .catch Landroid/database/sqlite/SQLiteException; {:try_start_4f .. :try_end_9f} :catch_b1
     .catchall {:try_start_4f .. :try_end_9f} :catchall_c2
@@ -2318,7 +1976,7 @@
     :try_start_b3
     const-string/jumbo v2, "Error loading hits from the database"
 
-    invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zze(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {p0, v2, v0}, Lcom/google/android/gms/analytics/internal/zzj;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
     throw v0
     :try_end_ba
@@ -2348,4 +2006,298 @@
     move-object v1, v9
 
     goto :goto_b3
+.end method
+
+.method public d()V
+    .registers 2
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->D()V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->i()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->endTransaction()V
+
+    return-void
+.end method
+
+.method public e()J
+    .registers 3
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->m()V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->D()V
+
+    const-string/jumbo v0, "SELECT COUNT(*) FROM hits2"
+
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, v1}, Lcom/google/android/gms/analytics/internal/zzj;->a(Ljava/lang/String;[Ljava/lang/String;)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method f()Z
+    .registers 5
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->e()J
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v0, v2
+
+    if-nez v0, :cond_c
+
+    const/4 v0, 0x1
+
+    :goto_b
+    return v0
+
+    :cond_c
+    const/4 v0, 0x0
+
+    goto :goto_b
+.end method
+
+.method public g()I
+    .registers 8
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->m()V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->D()V
+
+    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzj;->d:Lcom/google/android/gms/analytics/internal/zzaj;
+
+    const-wide/32 v2, 0x5265c00
+
+    invoke-virtual {v1, v2, v3}, Lcom/google/android/gms/analytics/internal/zzaj;->a(J)Z
+
+    move-result v1
+
+    if-nez v1, :cond_13
+
+    :goto_12
+    return v0
+
+    :cond_13
+    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzj;->d:Lcom/google/android/gms/analytics/internal/zzaj;
+
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzaj;->a()V
+
+    const-string/jumbo v1, "Deleting stale hits (if any)"
+
+    invoke-virtual {p0, v1}, Lcom/google/android/gms/analytics/internal/zzj;->b(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->i()Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->n()Lcom/google/android/gms/internal/zznl;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Lcom/google/android/gms/internal/zznl;->a()J
+
+    move-result-wide v2
+
+    const-wide v4, 0x9a7ec800L
+
+    sub-long/2addr v2, v4
+
+    const-string/jumbo v4, "hits2"
+
+    const-string/jumbo v5, "hit_time < ?"
+
+    const/4 v6, 0x1
+
+    new-array v6, v6, [Ljava/lang/String;
+
+    invoke-static {v2, v3}, Ljava/lang/Long;->toString(J)Ljava/lang/String;
+
+    move-result-object v2
+
+    aput-object v2, v6, v0
+
+    invoke-virtual {v1, v4, v5, v6}, Landroid/database/sqlite/SQLiteDatabase;->delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+
+    move-result v0
+
+    const-string/jumbo v1, "Deleted stale hits, count"
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
+    invoke-virtual {p0, v1, v2}, Lcom/google/android/gms/analytics/internal/zzj;->a(Ljava/lang/String;Ljava/lang/Object;)V
+
+    goto :goto_12
+.end method
+
+.method g(Ljava/lang/String;)Ljava/util/Map;
+    .registers 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    const/4 v4, 0x0
+
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_d
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0, v4}, Ljava/util/HashMap;-><init>(I)V
+
+    :goto_c
+    return-object v0
+
+    :cond_d
+    :try_start_d
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v1, "?"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/net/URI;
+
+    invoke-direct {v1, v0}, Ljava/net/URI;-><init>(Ljava/lang/String;)V
+
+    const-string/jumbo v0, "UTF-8"
+
+    invoke-static {v1, v0}, Lorg/apache/http/client/utils/URLEncodedUtils;->parse(Ljava/net/URI;Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/util/HashMap;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    invoke-direct {v1, v2}, Ljava/util/HashMap;-><init>(I)V
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_3a
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5f
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lorg/apache/http/NameValuePair;
+
+    invoke-interface {v0}, Lorg/apache/http/NameValuePair;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-interface {v0}, Lorg/apache/http/NameValuePair;->getValue()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-interface {v1, v3, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_51
+    .catch Ljava/net/URISyntaxException; {:try_start_d .. :try_end_51} :catch_52
+
+    goto :goto_3a
+
+    :catch_52
+    move-exception v0
+
+    const-string/jumbo v1, "Error parsing property parameters"
+
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->e(Ljava/lang/String;Ljava/lang/Object;)V
+
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0, v4}, Ljava/util/HashMap;-><init>(I)V
+
+    goto :goto_c
+
+    :cond_5f
+    move-object v0, v1
+
+    goto :goto_c
+.end method
+
+.method public h()J
+    .registers 5
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->m()V
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzj;->D()V
+
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzj;->b:Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    const-wide/16 v2, 0x0
+
+    invoke-direct {p0, v0, v1, v2, v3}, Lcom/google/android/gms/analytics/internal/zzj;->a(Ljava/lang/String;[Ljava/lang/String;J)J
+
+    move-result-wide v0
+
+    return-wide v0
+.end method
+
+.method i()Landroid/database/sqlite/SQLiteDatabase;
+    .registers 3
+
+    :try_start_0
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj;->c:Lcom/google/android/gms/analytics/internal/zzj$zza;
+
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzj$zza;->getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+    :try_end_5
+    .catch Landroid/database/sqlite/SQLiteException; {:try_start_0 .. :try_end_5} :catch_7
+
+    move-result-object v0
+
+    return-object v0
+
+    :catch_7
+    move-exception v0
+
+    const-string/jumbo v1, "Error opening database"
+
+    invoke-virtual {p0, v1, v0}, Lcom/google/android/gms/analytics/internal/zzj;->d(Ljava/lang/String;Ljava/lang/Object;)V
+
+    throw v0
 .end method

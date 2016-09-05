@@ -32,7 +32,6 @@
 
 .method public constructor <init>([B)V
     .registers 2
-    .param p1, "data"    # [B
 
     .prologue
     .line 22
@@ -47,9 +46,6 @@
 
 .method public constructor <init>([BII)V
     .registers 6
-    .param p1, "data"    # [B
-    .param p2, "offset"    # I
-    .param p3, "length"    # I
 
     .prologue
     .line 27
@@ -87,7 +83,6 @@
 
 .method public static valueOf([B)Lcom/fasterxml/jackson/databind/node/BinaryNode;
     .registers 2
-    .param p0, "data"    # [B
 
     .prologue
     .line 38
@@ -122,9 +117,6 @@
 
 .method public static valueOf([BII)Lcom/fasterxml/jackson/databind/node/BinaryNode;
     .registers 4
-    .param p0, "data"    # [B
-    .param p1, "offset"    # I
-    .param p2, "length"    # I
 
     .prologue
     .line 49
@@ -199,7 +191,6 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .registers 4
-    .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
     const/4 v0, 0x0
@@ -210,13 +201,11 @@
     const/4 v0, 0x1
 
     .line 106
-    .end local p1    # "o":Ljava/lang/Object;
     :cond_4
     :goto_4
     return v0
 
     .line 102
-    .restart local p1    # "o":Ljava/lang/Object;
     :cond_5
     if-eqz p1, :cond_4
 
@@ -228,7 +217,6 @@
     .line 106
     check-cast p1, Lcom/fasterxml/jackson/databind/node/BinaryNode;
 
-    .end local p1    # "o":Ljava/lang/Object;
     iget-object v0, p1, Lcom/fasterxml/jackson/databind/node/BinaryNode;->_data:[B
 
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/node/BinaryNode;->_data:[B
@@ -274,14 +262,6 @@
 
 .method public final serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 7
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p2, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 94

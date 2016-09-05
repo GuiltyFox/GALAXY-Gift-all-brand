@@ -8,11 +8,6 @@
     value = Landroid/support/design/widget/BottomSheetDialog;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Landroid/support/design/widget/BottomSheetDialog;
@@ -35,11 +30,6 @@
 # virtual methods
 .method public onSlide(Landroid/view/View;F)V
     .registers 3
-    .param p1, "bottomSheet"    # Landroid/view/View;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2, "slideOffset"    # F
 
     .prologue
     .line 147
@@ -48,11 +38,6 @@
 
 .method public onStateChanged(Landroid/view/View;I)V
     .registers 4
-    .param p1, "bottomSheet"    # Landroid/view/View;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2, "newState"    # I
 
     .prologue
     .line 140

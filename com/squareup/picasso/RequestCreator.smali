@@ -4,33 +4,33 @@
 
 
 # static fields
-.field private static final nextId:Ljava/util/concurrent/atomic/AtomicInteger;
+.field private static final a:Ljava/util/concurrent/atomic/AtomicInteger;
 
 
 # instance fields
-.field private final data:Lcom/squareup/picasso/Request$Builder;
+.field private final b:Lcom/squareup/picasso/Picasso;
 
-.field private deferred:Z
+.field private final c:Lcom/squareup/picasso/Request$Builder;
 
-.field private errorDrawable:Landroid/graphics/drawable/Drawable;
+.field private d:Z
 
-.field private errorResId:I
+.field private e:Z
 
-.field private memoryPolicy:I
+.field private f:Z
 
-.field private networkPolicy:I
+.field private g:I
 
-.field private noFade:Z
+.field private h:I
 
-.field private final picasso:Lcom/squareup/picasso/Picasso;
+.field private i:I
 
-.field private placeholderDrawable:Landroid/graphics/drawable/Drawable;
+.field private j:I
 
-.field private placeholderResId:I
+.field private k:Landroid/graphics/drawable/Drawable;
 
-.field private setPlaceholder:Z
+.field private l:Landroid/graphics/drawable/Drawable;
 
-.field private tag:Ljava/lang/Object;
+.field private m:Ljava/lang/Object;
 
 
 # direct methods
@@ -43,7 +43,7 @@
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
 
-    sput-object v0, Lcom/squareup/picasso/RequestCreator;->nextId:Ljava/util/concurrent/atomic/AtomicInteger;
+    sput-object v0, Lcom/squareup/picasso/RequestCreator;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
     return-void
 .end method
@@ -60,10 +60,10 @@
     .line 60
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/squareup/picasso/RequestCreator;->setPlaceholder:Z
+    iput-boolean v0, p0, Lcom/squareup/picasso/RequestCreator;->f:Z
 
     .line 79
-    iput-object v2, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
+    iput-object v2, p0, Lcom/squareup/picasso/RequestCreator;->b:Lcom/squareup/picasso/Picasso;
 
     .line 80
     new-instance v0, Lcom/squareup/picasso/Request$Builder;
@@ -72,7 +72,7 @@
 
     invoke-direct {v0, v2, v1, v2}, Lcom/squareup/picasso/Request$Builder;-><init>(Landroid/net/Uri;ILandroid/graphics/Bitmap$Config;)V
 
-    iput-object v0, p0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
+    iput-object v0, p0, Lcom/squareup/picasso/RequestCreator;->c:Lcom/squareup/picasso/Request$Builder;
 
     .line 81
     return-void
@@ -80,9 +80,6 @@
 
 .method constructor <init>(Lcom/squareup/picasso/Picasso;Landroid/net/Uri;I)V
     .registers 6
-    .param p1, "picasso"    # Lcom/squareup/picasso/Picasso;
-    .param p2, "uri"    # Landroid/net/Uri;
-    .param p3, "resourceId"    # I
 
     .prologue
     .line 69
@@ -91,10 +88,10 @@
     .line 60
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/squareup/picasso/RequestCreator;->setPlaceholder:Z
+    iput-boolean v0, p0, Lcom/squareup/picasso/RequestCreator;->f:Z
 
     .line 70
-    iget-boolean v0, p1, Lcom/squareup/picasso/Picasso;->shutdown:Z
+    iget-boolean v0, p1, Lcom/squareup/picasso/Picasso;->m:Z
 
     if-eqz v0, :cond_13
 
@@ -109,146 +106,141 @@
 
     .line 74
     :cond_13
-    iput-object p1, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
+    iput-object p1, p0, Lcom/squareup/picasso/RequestCreator;->b:Lcom/squareup/picasso/Picasso;
 
     .line 75
     new-instance v0, Lcom/squareup/picasso/Request$Builder;
 
-    iget-object v1, p1, Lcom/squareup/picasso/Picasso;->defaultBitmapConfig:Landroid/graphics/Bitmap$Config;
+    iget-object v1, p1, Lcom/squareup/picasso/Picasso;->j:Landroid/graphics/Bitmap$Config;
 
     invoke-direct {v0, p2, p3, v1}, Lcom/squareup/picasso/Request$Builder;-><init>(Landroid/net/Uri;ILandroid/graphics/Bitmap$Config;)V
 
-    iput-object v0, p0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
+    iput-object v0, p0, Lcom/squareup/picasso/RequestCreator;->c:Lcom/squareup/picasso/Request$Builder;
 
     .line 76
     return-void
 .end method
 
-.method private createRequest(J)Lcom/squareup/picasso/Request;
-    .registers 12
-    .param p1, "started"    # J
+.method private a(J)Lcom/squareup/picasso/Request;
+    .registers 10
 
     .prologue
     .line 684
-    sget-object v4, Lcom/squareup/picasso/RequestCreator;->nextId:Ljava/util/concurrent/atomic/AtomicInteger;
+    sget-object v0, Lcom/squareup/picasso/RequestCreator;->a:Ljava/util/concurrent/atomic/AtomicInteger;
 
-    invoke-virtual {v4}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
 
     move-result v0
 
     .line 686
-    .local v0, "id":I
-    iget-object v4, p0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
+    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->c:Lcom/squareup/picasso/Request$Builder;
 
-    invoke-virtual {v4}, Lcom/squareup/picasso/Request$Builder;->build()Lcom/squareup/picasso/Request;
+    invoke-virtual {v1}, Lcom/squareup/picasso/Request$Builder;->c()Lcom/squareup/picasso/Request;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 687
-    .local v2, "request":Lcom/squareup/picasso/Request;
-    iput v0, v2, Lcom/squareup/picasso/Request;->id:I
+    iput v0, v1, Lcom/squareup/picasso/Request;->a:I
 
     .line 688
-    iput-wide p1, v2, Lcom/squareup/picasso/Request;->started:J
+    iput-wide p1, v1, Lcom/squareup/picasso/Request;->b:J
 
     .line 690
-    iget-object v4, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
+    iget-object v2, p0, Lcom/squareup/picasso/RequestCreator;->b:Lcom/squareup/picasso/Picasso;
 
-    iget-boolean v1, v4, Lcom/squareup/picasso/Picasso;->loggingEnabled:Z
+    iget-boolean v2, v2, Lcom/squareup/picasso/Picasso;->l:Z
 
     .line 691
-    .local v1, "loggingEnabled":Z
-    if-eqz v1, :cond_27
+    if-eqz v2, :cond_27
 
     .line 692
-    const-string/jumbo v4, "Main"
+    const-string/jumbo v3, "Main"
 
-    const-string/jumbo v5, "created"
+    const-string/jumbo v4, "created"
 
-    invoke-virtual {v2}, Lcom/squareup/picasso/Request;->plainId()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/squareup/picasso/Request;->b()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v1}, Lcom/squareup/picasso/Request;->toString()Ljava/lang/String;
 
     move-result-object v6
 
-    invoke-virtual {v2}, Lcom/squareup/picasso/Request;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v4, v5, v6, v7}, Lcom/squareup/picasso/Utils;->log(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v3, v4, v5, v6}, Lcom/squareup/picasso/Utils;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 695
     :cond_27
-    iget-object v4, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
+    iget-object v3, p0, Lcom/squareup/picasso/RequestCreator;->b:Lcom/squareup/picasso/Picasso;
 
-    invoke-virtual {v4, v2}, Lcom/squareup/picasso/Picasso;->transformRequest(Lcom/squareup/picasso/Request;)Lcom/squareup/picasso/Request;
+    invoke-virtual {v3, v1}, Lcom/squareup/picasso/Picasso;->a(Lcom/squareup/picasso/Request;)Lcom/squareup/picasso/Request;
 
     move-result-object v3
 
     .line 696
-    .local v3, "transformed":Lcom/squareup/picasso/Request;
-    if-eq v3, v2, :cond_56
+    if-eq v3, v1, :cond_56
 
     .line 698
-    iput v0, v3, Lcom/squareup/picasso/Request;->id:I
+    iput v0, v3, Lcom/squareup/picasso/Request;->a:I
 
     .line 699
-    iput-wide p1, v3, Lcom/squareup/picasso/Request;->started:J
+    iput-wide p1, v3, Lcom/squareup/picasso/Request;->b:J
 
     .line 701
-    if-eqz v1, :cond_56
+    if-eqz v2, :cond_56
 
     .line 702
-    const-string/jumbo v4, "Main"
+    const-string/jumbo v0, "Main"
 
-    const-string/jumbo v5, "changed"
+    const-string/jumbo v1, "changed"
 
-    invoke-virtual {v3}, Lcom/squareup/picasso/Request;->logId()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/squareup/picasso/Request;->a()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v2
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v8, "into "
+    const-string/jumbo v5, "into "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v4
 
-    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v4
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v4
 
-    invoke-static {v4, v5, v6, v7}, Lcom/squareup/picasso/Utils;->log(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1, v2, v4}, Lcom/squareup/picasso/Utils;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 706
     :cond_56
     return-object v3
 .end method
 
-.method private getPlaceholderDrawable()Landroid/graphics/drawable/Drawable;
+.method private b()Landroid/graphics/drawable/Drawable;
     .registers 3
 
     .prologue
     .line 675
-    iget v0, p0, Lcom/squareup/picasso/RequestCreator;->placeholderResId:I
+    iget v0, p0, Lcom/squareup/picasso/RequestCreator;->g:I
 
     if-eqz v0, :cond_13
 
     .line 676
-    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
+    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->b:Lcom/squareup/picasso/Picasso;
 
-    iget-object v0, v0, Lcom/squareup/picasso/Picasso;->context:Landroid/content/Context;
+    iget-object v0, v0, Lcom/squareup/picasso/Picasso;->c:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    iget v1, p0, Lcom/squareup/picasso/RequestCreator;->placeholderResId:I
+    iget v1, p0, Lcom/squareup/picasso/RequestCreator;->g:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -259,1525 +251,32 @@
     return-object v0
 
     :cond_13
-    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->placeholderDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->k:Landroid/graphics/drawable/Drawable;
 
     goto :goto_12
 .end method
 
-.method private performRemoteViewInto(Lcom/squareup/picasso/RemoteViewsAction;)V
-    .registers 5
-    .param p1, "action"    # Lcom/squareup/picasso/RemoteViewsAction;
-
-    .prologue
-    .line 710
-    iget v1, p0, Lcom/squareup/picasso/RequestCreator;->memoryPolicy:I
-
-    invoke-static {v1}, Lcom/squareup/picasso/MemoryPolicy;->shouldReadFromMemoryCache(I)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1a
-
-    .line 711
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    invoke-virtual {p1}, Lcom/squareup/picasso/RemoteViewsAction;->getKey()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Lcom/squareup/picasso/Picasso;->quickMemoryCacheCheck(Ljava/lang/String;)Landroid/graphics/Bitmap;
-
-    move-result-object v0
-
-    .line 712
-    .local v0, "bitmap":Landroid/graphics/Bitmap;
-    if-eqz v0, :cond_1a
-
-    .line 713
-    sget-object v1, Lcom/squareup/picasso/Picasso$LoadedFrom;->MEMORY:Lcom/squareup/picasso/Picasso$LoadedFrom;
-
-    invoke-virtual {p1, v0, v1}, Lcom/squareup/picasso/RemoteViewsAction;->complete(Landroid/graphics/Bitmap;Lcom/squareup/picasso/Picasso$LoadedFrom;)V
-
-    .line 723
-    .end local v0    # "bitmap":Landroid/graphics/Bitmap;
-    :goto_19
-    return-void
-
-    .line 718
-    :cond_1a
-    iget v1, p0, Lcom/squareup/picasso/RequestCreator;->placeholderResId:I
-
-    if-eqz v1, :cond_23
-
-    .line 719
-    iget v1, p0, Lcom/squareup/picasso/RequestCreator;->placeholderResId:I
-
-    invoke-virtual {p1, v1}, Lcom/squareup/picasso/RemoteViewsAction;->setImageResource(I)V
-
-    .line 722
-    :cond_23
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    invoke-virtual {v1, p1}, Lcom/squareup/picasso/Picasso;->enqueueAndSubmit(Lcom/squareup/picasso/Action;)V
-
-    goto :goto_19
-.end method
-
 
 # virtual methods
-.method public centerCrop()Lcom/squareup/picasso/RequestCreator;
+.method a()Lcom/squareup/picasso/RequestCreator;
     .registers 2
 
     .prologue
-    .line 229
-    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
-
-    invoke-virtual {v0}, Lcom/squareup/picasso/Request$Builder;->centerCrop()Lcom/squareup/picasso/Request$Builder;
-
-    .line 230
-    return-object p0
-.end method
-
-.method public centerInside()Lcom/squareup/picasso/RequestCreator;
-    .registers 2
-
-    .prologue
-    .line 238
-    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
-
-    invoke-virtual {v0}, Lcom/squareup/picasso/Request$Builder;->centerInside()Lcom/squareup/picasso/Request$Builder;
-
-    .line 239
-    return-object p0
-.end method
-
-.method public config(Landroid/graphics/Bitmap$Config;)Lcom/squareup/picasso/RequestCreator;
-    .registers 3
-    .param p1, "config"    # Landroid/graphics/Bitmap$Config;
-
-    .prologue
-    .line 270
-    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
-
-    invoke-virtual {v0, p1}, Lcom/squareup/picasso/Request$Builder;->config(Landroid/graphics/Bitmap$Config;)Lcom/squareup/picasso/Request$Builder;
-
-    .line 271
-    return-object p0
-.end method
-
-.method public error(I)Lcom/squareup/picasso/RequestCreator;
-    .registers 4
-    .param p1, "errorResId"    # I
-
-    .prologue
-    .line 141
-    if-nez p1, :cond_b
-
-    .line 142
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v1, "Error image resource invalid."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 144
-    :cond_b
-    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->errorDrawable:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_18
-
-    .line 145
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string/jumbo v1, "Error image already set."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 147
-    :cond_18
-    iput p1, p0, Lcom/squareup/picasso/RequestCreator;->errorResId:I
-
-    .line 148
-    return-object p0
-.end method
-
-.method public error(Landroid/graphics/drawable/Drawable;)Lcom/squareup/picasso/RequestCreator;
-    .registers 4
-    .param p1, "errorDrawable"    # Landroid/graphics/drawable/Drawable;
-
-    .prologue
-    .line 153
-    if-nez p1, :cond_b
-
-    .line 154
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v1, "Error image may not be null."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 156
-    :cond_b
-    iget v0, p0, Lcom/squareup/picasso/RequestCreator;->errorResId:I
-
-    if-eqz v0, :cond_18
-
-    .line 157
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string/jumbo v1, "Error image already set."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 159
-    :cond_18
-    iput-object p1, p0, Lcom/squareup/picasso/RequestCreator;->errorDrawable:Landroid/graphics/drawable/Drawable;
-
-    .line 160
-    return-object p0
-.end method
-
-.method public fetch()V
-    .registers 2
-
-    .prologue
-    .line 406
+    .line 205
     const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Lcom/squareup/picasso/RequestCreator;->fetch(Lcom/squareup/picasso/Callback;)V
+    iput-boolean v0, p0, Lcom/squareup/picasso/RequestCreator;->e:Z
 
-    .line 407
-    return-void
-.end method
-
-.method public fetch(Lcom/squareup/picasso/Callback;)V
-    .registers 14
-    .param p1, "callback"    # Lcom/squareup/picasso/Callback;
-
-    .prologue
-    .line 419
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
-
-    move-result-wide v10
-
-    .line 421
-    .local v10, "started":J
-    iget-boolean v1, p0, Lcom/squareup/picasso/RequestCreator;->deferred:Z
-
-    if-eqz v1, :cond_11
-
-    .line 422
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    const-string/jumbo v3, "Fit cannot be used with fetch."
-
-    invoke-direct {v1, v3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 424
-    :cond_11
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
-
-    invoke-virtual {v1}, Lcom/squareup/picasso/Request$Builder;->hasImage()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_6b
-
-    .line 426
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
-
-    invoke-virtual {v1}, Lcom/squareup/picasso/Request$Builder;->hasPriority()Z
-
-    move-result v1
-
-    if-nez v1, :cond_28
-
-    .line 427
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
-
-    sget-object v3, Lcom/squareup/picasso/Picasso$Priority;->LOW:Lcom/squareup/picasso/Picasso$Priority;
-
-    invoke-virtual {v1, v3}, Lcom/squareup/picasso/Request$Builder;->priority(Lcom/squareup/picasso/Picasso$Priority;)Lcom/squareup/picasso/Request$Builder;
-
-    .line 430
-    :cond_28
-    invoke-direct {p0, v10, v11}, Lcom/squareup/picasso/RequestCreator;->createRequest(J)Lcom/squareup/picasso/Request;
-
-    move-result-object v2
-
-    .line 431
-    .local v2, "request":Lcom/squareup/picasso/Request;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-static {v2, v1}, Lcom/squareup/picasso/Utils;->createKey(Lcom/squareup/picasso/Request;Ljava/lang/StringBuilder;)Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 432
-    .local v6, "key":Ljava/lang/String;
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    invoke-virtual {v1, v6}, Lcom/squareup/picasso/Picasso;->quickMemoryCacheCheck(Ljava/lang/String;)Landroid/graphics/Bitmap;
-
-    move-result-object v8
-
-    .line 434
-    .local v8, "bitmap":Landroid/graphics/Bitmap;
-    if-eqz v8, :cond_6c
-
-    .line 435
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    iget-boolean v1, v1, Lcom/squareup/picasso/Picasso;->loggingEnabled:Z
-
-    if-eqz v1, :cond_66
-
-    .line 436
-    const-string/jumbo v1, "Main"
-
-    const-string/jumbo v3, "completed"
-
-    invoke-virtual {v2}, Lcom/squareup/picasso/Request;->plainId()Ljava/lang/String;
-
-    move-result-object v4
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v7, "from "
-
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    sget-object v7, Lcom/squareup/picasso/Picasso$LoadedFrom;->MEMORY:Lcom/squareup/picasso/Picasso$LoadedFrom;
-
-    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v1, v3, v4, v5}, Lcom/squareup/picasso/Utils;->log(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 438
-    :cond_66
-    if-eqz p1, :cond_6b
-
-    .line 439
-    invoke-interface {p1}, Lcom/squareup/picasso/Callback;->onSuccess()V
-
-    .line 447
-    .end local v2    # "request":Lcom/squareup/picasso/Request;
-    .end local v6    # "key":Ljava/lang/String;
-    .end local v8    # "bitmap":Landroid/graphics/Bitmap;
-    :cond_6b
-    :goto_6b
-    return-void
-
-    .line 442
-    .restart local v2    # "request":Lcom/squareup/picasso/Request;
-    .restart local v6    # "key":Ljava/lang/String;
-    .restart local v8    # "bitmap":Landroid/graphics/Bitmap;
-    :cond_6c
-    new-instance v0, Lcom/squareup/picasso/FetchAction;
-
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    iget v3, p0, Lcom/squareup/picasso/RequestCreator;->memoryPolicy:I
-
-    iget v4, p0, Lcom/squareup/picasso/RequestCreator;->networkPolicy:I
-
-    iget-object v5, p0, Lcom/squareup/picasso/RequestCreator;->tag:Ljava/lang/Object;
-
-    move-object v7, p1
-
-    invoke-direct/range {v0 .. v7}, Lcom/squareup/picasso/FetchAction;-><init>(Lcom/squareup/picasso/Picasso;Lcom/squareup/picasso/Request;IILjava/lang/Object;Ljava/lang/String;Lcom/squareup/picasso/Callback;)V
-
-    .line 444
-    .local v0, "action":Lcom/squareup/picasso/Action;
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    invoke-virtual {v1, v0}, Lcom/squareup/picasso/Picasso;->submit(Lcom/squareup/picasso/Action;)V
-
-    goto :goto_6b
-.end method
-
-.method public fit()Lcom/squareup/picasso/RequestCreator;
-    .registers 2
-
-    .prologue
-    .line 199
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/squareup/picasso/RequestCreator;->deferred:Z
-
-    .line 200
+    .line 206
     return-object p0
 .end method
 
-.method public get()Landroid/graphics/Bitmap;
-    .registers 11
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .prologue
-    .line 382
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
-
-    move-result-wide v8
-
-    .line 383
-    .local v8, "started":J
-    invoke-static {}, Lcom/squareup/picasso/Utils;->checkNotMain()V
-
-    .line 385
-    iget-boolean v1, p0, Lcom/squareup/picasso/RequestCreator;->deferred:Z
-
-    if-eqz v1, :cond_14
-
-    .line 386
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    const-string/jumbo v3, "Fit cannot be used with get."
-
-    invoke-direct {v1, v3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 388
-    :cond_14
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
-
-    invoke-virtual {v1}, Lcom/squareup/picasso/Request$Builder;->hasImage()Z
-
-    move-result v1
-
-    if-nez v1, :cond_1e
-
-    .line 389
-    const/4 v1, 0x0
-
-    .line 396
-    :goto_1d
-    return-object v1
-
-    .line 392
-    :cond_1e
-    invoke-direct {p0, v8, v9}, Lcom/squareup/picasso/RequestCreator;->createRequest(J)Lcom/squareup/picasso/Request;
-
-    move-result-object v2
-
-    .line 393
-    .local v2, "finalData":Lcom/squareup/picasso/Request;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-static {v2, v1}, Lcom/squareup/picasso/Utils;->createKey(Lcom/squareup/picasso/Request;Ljava/lang/StringBuilder;)Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 395
-    .local v6, "key":Ljava/lang/String;
-    new-instance v0, Lcom/squareup/picasso/GetAction;
-
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    iget v3, p0, Lcom/squareup/picasso/RequestCreator;->memoryPolicy:I
-
-    iget v4, p0, Lcom/squareup/picasso/RequestCreator;->networkPolicy:I
-
-    iget-object v5, p0, Lcom/squareup/picasso/RequestCreator;->tag:Ljava/lang/Object;
-
-    invoke-direct/range {v0 .. v6}, Lcom/squareup/picasso/GetAction;-><init>(Lcom/squareup/picasso/Picasso;Lcom/squareup/picasso/Request;IILjava/lang/Object;Ljava/lang/String;)V
-
-    .line 396
-    .local v0, "action":Lcom/squareup/picasso/Action;
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    iget-object v3, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    iget-object v3, v3, Lcom/squareup/picasso/Picasso;->dispatcher:Lcom/squareup/picasso/Dispatcher;
-
-    iget-object v4, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    iget-object v4, v4, Lcom/squareup/picasso/Picasso;->cache:Lcom/squareup/picasso/Cache;
-
-    iget-object v5, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    iget-object v5, v5, Lcom/squareup/picasso/Picasso;->stats:Lcom/squareup/picasso/Stats;
-
-    invoke-static {v1, v3, v4, v5, v0}, Lcom/squareup/picasso/BitmapHunter;->forRequest(Lcom/squareup/picasso/Picasso;Lcom/squareup/picasso/Dispatcher;Lcom/squareup/picasso/Cache;Lcom/squareup/picasso/Stats;Lcom/squareup/picasso/Action;)Lcom/squareup/picasso/BitmapHunter;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Lcom/squareup/picasso/BitmapHunter;->hunt()Landroid/graphics/Bitmap;
-
-    move-result-object v1
-
-    goto :goto_1d
-.end method
-
-.method public into(Landroid/widget/ImageView;)V
-    .registers 3
-    .param p1, "target"    # Landroid/widget/ImageView;
-
-    .prologue
-    .line 601
-    const/4 v0, 0x0
-
-    invoke-virtual {p0, p1, v0}, Lcom/squareup/picasso/RequestCreator;->into(Landroid/widget/ImageView;Lcom/squareup/picasso/Callback;)V
-
-    .line 602
-    return-void
-.end method
-
-.method public into(Landroid/widget/ImageView;Lcom/squareup/picasso/Callback;)V
-    .registers 26
-    .param p1, "target"    # Landroid/widget/ImageView;
-    .param p2, "callback"    # Lcom/squareup/picasso/Callback;
-
-    .prologue
-    .line 614
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
-
-    move-result-wide v20
-
-    .line 615
-    .local v20, "started":J
-    invoke-static {}, Lcom/squareup/picasso/Utils;->checkMain()V
-
-    .line 617
-    if-nez p1, :cond_12
-
-    .line 618
-    new-instance v4, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v5, "Target must not be null."
-
-    invoke-direct {v4, v5}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v4
-
-    .line 621
-    :cond_12
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
-
-    invoke-virtual {v4}, Lcom/squareup/picasso/Request$Builder;->hasImage()Z
-
-    move-result v4
-
-    if-nez v4, :cond_35
-
-    .line 622
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v4, v0}, Lcom/squareup/picasso/Picasso;->cancelRequest(Landroid/widget/ImageView;)V
-
-    .line 623
-    move-object/from16 v0, p0
-
-    iget-boolean v4, v0, Lcom/squareup/picasso/RequestCreator;->setPlaceholder:Z
-
-    if-eqz v4, :cond_34
-
-    .line 624
-    invoke-direct/range {p0 .. p0}, Lcom/squareup/picasso/RequestCreator;->getPlaceholderDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v4
-
-    move-object/from16 v0, p1
-
-    invoke-static {v0, v4}, Lcom/squareup/picasso/PicassoDrawable;->setPlaceholder(Landroid/widget/ImageView;Landroid/graphics/drawable/Drawable;)V
-
-    .line 672
-    :cond_34
-    :goto_34
-    return-void
-
-    .line 629
-    :cond_35
-    move-object/from16 v0, p0
-
-    iget-boolean v4, v0, Lcom/squareup/picasso/RequestCreator;->deferred:Z
-
-    if-eqz v4, :cond_89
-
-    .line 630
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
-
-    invoke-virtual {v4}, Lcom/squareup/picasso/Request$Builder;->hasSize()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_4e
-
-    .line 631
-    new-instance v4, Ljava/lang/IllegalStateException;
-
-    const-string/jumbo v5, "Fit cannot be used with resize."
-
-    invoke-direct {v4, v5}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v4
-
-    .line 633
-    :cond_4e
-    invoke-virtual/range {p1 .. p1}, Landroid/widget/ImageView;->getWidth()I
-
-    move-result v22
-
-    .line 634
-    .local v22, "width":I
-    invoke-virtual/range {p1 .. p1}, Landroid/widget/ImageView;->getHeight()I
-
-    move-result v19
-
-    .line 635
-    .local v19, "height":I
-    if-eqz v22, :cond_5a
-
-    if-nez v19, :cond_7e
-
-    .line 636
-    :cond_5a
-    move-object/from16 v0, p0
-
-    iget-boolean v4, v0, Lcom/squareup/picasso/RequestCreator;->setPlaceholder:Z
-
-    if-eqz v4, :cond_69
-
-    .line 637
-    invoke-direct/range {p0 .. p0}, Lcom/squareup/picasso/RequestCreator;->getPlaceholderDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v4
-
-    move-object/from16 v0, p1
-
-    invoke-static {v0, v4}, Lcom/squareup/picasso/PicassoDrawable;->setPlaceholder(Landroid/widget/ImageView;Landroid/graphics/drawable/Drawable;)V
-
-    .line 639
-    :cond_69
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    new-instance v5, Lcom/squareup/picasso/DeferredRequestCreator;
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object/from16 v2, p2
-
-    invoke-direct {v5, v0, v1, v2}, Lcom/squareup/picasso/DeferredRequestCreator;-><init>(Lcom/squareup/picasso/RequestCreator;Landroid/widget/ImageView;Lcom/squareup/picasso/Callback;)V
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v4, v0, v5}, Lcom/squareup/picasso/Picasso;->defer(Landroid/widget/ImageView;Lcom/squareup/picasso/DeferredRequestCreator;)V
-
-    goto :goto_34
-
-    .line 642
-    :cond_7e
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
-
-    move/from16 v0, v22
-
-    move/from16 v1, v19
-
-    invoke-virtual {v4, v0, v1}, Lcom/squareup/picasso/Request$Builder;->resize(II)Lcom/squareup/picasso/Request$Builder;
-
-    .line 645
-    .end local v19    # "height":I
-    .end local v22    # "width":I
-    :cond_89
-    move-object/from16 v0, p0
-
-    move-wide/from16 v1, v20
-
-    invoke-direct {v0, v1, v2}, Lcom/squareup/picasso/RequestCreator;->createRequest(J)Lcom/squareup/picasso/Request;
-
-    move-result-object v10
-
-    .line 646
-    .local v10, "request":Lcom/squareup/picasso/Request;
-    invoke-static {v10}, Lcom/squareup/picasso/Utils;->createKey(Lcom/squareup/picasso/Request;)Ljava/lang/String;
-
-    move-result-object v15
-
-    .line 648
-    .local v15, "requestKey":Ljava/lang/String;
-    move-object/from16 v0, p0
-
-    iget v4, v0, Lcom/squareup/picasso/RequestCreator;->memoryPolicy:I
-
-    invoke-static {v4}, Lcom/squareup/picasso/MemoryPolicy;->shouldReadFromMemoryCache(I)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_fb
-
-    .line 649
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    invoke-virtual {v4, v15}, Lcom/squareup/picasso/Picasso;->quickMemoryCacheCheck(Ljava/lang/String;)Landroid/graphics/Bitmap;
-
-    move-result-object v6
-
-    .line 650
-    .local v6, "bitmap":Landroid/graphics/Bitmap;
-    if-eqz v6, :cond_fb
-
-    .line 651
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v4, v0}, Lcom/squareup/picasso/Picasso;->cancelRequest(Landroid/widget/ImageView;)V
-
-    .line 652
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    iget-object v5, v4, Lcom/squareup/picasso/Picasso;->context:Landroid/content/Context;
-
-    sget-object v7, Lcom/squareup/picasso/Picasso$LoadedFrom;->MEMORY:Lcom/squareup/picasso/Picasso$LoadedFrom;
-
-    move-object/from16 v0, p0
-
-    iget-boolean v8, v0, Lcom/squareup/picasso/RequestCreator;->noFade:Z
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    iget-boolean v9, v4, Lcom/squareup/picasso/Picasso;->indicatorsEnabled:Z
-
-    move-object/from16 v4, p1
-
-    invoke-static/range {v4 .. v9}, Lcom/squareup/picasso/PicassoDrawable;->setBitmap(Landroid/widget/ImageView;Landroid/content/Context;Landroid/graphics/Bitmap;Lcom/squareup/picasso/Picasso$LoadedFrom;ZZ)V
-
-    .line 653
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    iget-boolean v4, v4, Lcom/squareup/picasso/Picasso;->loggingEnabled:Z
-
-    if-eqz v4, :cond_f4
-
-    .line 654
-    const-string/jumbo v4, "Main"
-
-    const-string/jumbo v5, "completed"
-
-    invoke-virtual {v10}, Lcom/squareup/picasso/Request;->plainId()Ljava/lang/String;
-
-    move-result-object v8
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v11, "from "
-
-    invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    sget-object v11, Lcom/squareup/picasso/Picasso$LoadedFrom;->MEMORY:Lcom/squareup/picasso/Picasso$LoadedFrom;
-
-    invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-static {v4, v5, v8, v9}, Lcom/squareup/picasso/Utils;->log(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 656
-    :cond_f4
-    if-eqz p2, :cond_34
-
-    .line 657
-    invoke-interface/range {p2 .. p2}, Lcom/squareup/picasso/Callback;->onSuccess()V
-
-    goto/16 :goto_34
-
-    .line 663
-    .end local v6    # "bitmap":Landroid/graphics/Bitmap;
-    :cond_fb
-    move-object/from16 v0, p0
-
-    iget-boolean v4, v0, Lcom/squareup/picasso/RequestCreator;->setPlaceholder:Z
-
-    if-eqz v4, :cond_10a
-
-    .line 664
-    invoke-direct/range {p0 .. p0}, Lcom/squareup/picasso/RequestCreator;->getPlaceholderDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v4
-
-    move-object/from16 v0, p1
-
-    invoke-static {v0, v4}, Lcom/squareup/picasso/PicassoDrawable;->setPlaceholder(Landroid/widget/ImageView;Landroid/graphics/drawable/Drawable;)V
-
-    .line 667
-    :cond_10a
-    new-instance v7, Lcom/squareup/picasso/ImageViewAction;
-
-    move-object/from16 v0, p0
-
-    iget-object v8, v0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    move-object/from16 v0, p0
-
-    iget v11, v0, Lcom/squareup/picasso/RequestCreator;->memoryPolicy:I
-
-    move-object/from16 v0, p0
-
-    iget v12, v0, Lcom/squareup/picasso/RequestCreator;->networkPolicy:I
-
-    move-object/from16 v0, p0
-
-    iget v13, v0, Lcom/squareup/picasso/RequestCreator;->errorResId:I
-
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/squareup/picasso/RequestCreator;->errorDrawable:Landroid/graphics/drawable/Drawable;
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/squareup/picasso/RequestCreator;->tag:Ljava/lang/Object;
-
-    move-object/from16 v16, v0
-
-    move-object/from16 v0, p0
-
-    iget-boolean v0, v0, Lcom/squareup/picasso/RequestCreator;->noFade:Z
-
-    move/from16 v18, v0
-
-    move-object/from16 v9, p1
-
-    move-object/from16 v17, p2
-
-    invoke-direct/range {v7 .. v18}, Lcom/squareup/picasso/ImageViewAction;-><init>(Lcom/squareup/picasso/Picasso;Landroid/widget/ImageView;Lcom/squareup/picasso/Request;IIILandroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;Lcom/squareup/picasso/Callback;Z)V
-
-    .line 671
-    .local v7, "action":Lcom/squareup/picasso/Action;
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    invoke-virtual {v4, v7}, Lcom/squareup/picasso/Picasso;->enqueueAndSubmit(Lcom/squareup/picasso/Action;)V
-
-    goto/16 :goto_34
-.end method
-
-.method public into(Landroid/widget/RemoteViews;IILandroid/app/Notification;)V
-    .registers 19
-    .param p1, "remoteViews"    # Landroid/widget/RemoteViews;
-    .param p2, "viewId"    # I
-    .param p3, "notificationId"    # I
-    .param p4, "notification"    # Landroid/app/Notification;
-
-    .prologue
-    .line 537
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
-
-    move-result-wide v12
-
-    .line 539
-    .local v12, "started":J
-    if-nez p1, :cond_f
-
-    .line 540
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v3, "RemoteViews must not be null."
-
-    invoke-direct {v1, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 542
-    :cond_f
-    if-nez p4, :cond_1a
-
-    .line 543
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v3, "Notification must not be null."
-
-    invoke-direct {v1, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 545
-    :cond_1a
-    iget-boolean v1, p0, Lcom/squareup/picasso/RequestCreator;->deferred:Z
-
-    if-eqz v1, :cond_27
-
-    .line 546
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    const-string/jumbo v3, "Fit cannot be used with RemoteViews."
-
-    invoke-direct {v1, v3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 548
-    :cond_27
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->placeholderDrawable:Landroid/graphics/drawable/Drawable;
-
-    if-nez v1, :cond_33
-
-    iget v1, p0, Lcom/squareup/picasso/RequestCreator;->placeholderResId:I
-
-    if-nez v1, :cond_33
-
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->errorDrawable:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v1, :cond_3c
-
-    .line 549
-    :cond_33
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v3, "Cannot use placeholder or error drawables with remote views."
-
-    invoke-direct {v1, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 553
-    :cond_3c
-    invoke-direct {p0, v12, v13}, Lcom/squareup/picasso/RequestCreator;->createRequest(J)Lcom/squareup/picasso/Request;
-
-    move-result-object v2
-
-    .line 554
-    .local v2, "request":Lcom/squareup/picasso/Request;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-static {v2, v1}, Lcom/squareup/picasso/Utils;->createKey(Lcom/squareup/picasso/Request;Ljava/lang/StringBuilder;)Ljava/lang/String;
-
-    move-result-object v9
-
-    .line 556
-    .local v9, "key":Ljava/lang/String;
-    new-instance v0, Lcom/squareup/picasso/RemoteViewsAction$NotificationAction;
-
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    iget v7, p0, Lcom/squareup/picasso/RequestCreator;->memoryPolicy:I
-
-    iget v8, p0, Lcom/squareup/picasso/RequestCreator;->networkPolicy:I
-
-    iget-object v10, p0, Lcom/squareup/picasso/RequestCreator;->tag:Ljava/lang/Object;
-
-    iget v11, p0, Lcom/squareup/picasso/RequestCreator;->errorResId:I
-
-    move-object v3, p1
-
-    move/from16 v4, p2
-
-    move/from16 v5, p3
-
-    move-object/from16 v6, p4
-
-    invoke-direct/range {v0 .. v11}, Lcom/squareup/picasso/RemoteViewsAction$NotificationAction;-><init>(Lcom/squareup/picasso/Picasso;Lcom/squareup/picasso/Request;Landroid/widget/RemoteViews;IILandroid/app/Notification;IILjava/lang/String;Ljava/lang/Object;I)V
-
-    .line 560
-    .local v0, "action":Lcom/squareup/picasso/RemoteViewsAction;
-    invoke-direct {p0, v0}, Lcom/squareup/picasso/RequestCreator;->performRemoteViewInto(Lcom/squareup/picasso/RemoteViewsAction;)V
-
-    .line 561
-    return-void
-.end method
-
-.method public into(Landroid/widget/RemoteViews;I[I)V
-    .registers 18
-    .param p1, "remoteViews"    # Landroid/widget/RemoteViews;
-    .param p2, "viewId"    # I
-    .param p3, "appWidgetIds"    # [I
-
-    .prologue
-    .line 568
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
-
-    move-result-wide v12
-
-    .line 570
-    .local v12, "started":J
-    if-nez p1, :cond_f
-
-    .line 571
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v3, "remoteViews must not be null."
-
-    invoke-direct {v1, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 573
-    :cond_f
-    if-nez p3, :cond_1a
-
-    .line 574
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v3, "appWidgetIds must not be null."
-
-    invoke-direct {v1, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 576
-    :cond_1a
-    iget-boolean v1, p0, Lcom/squareup/picasso/RequestCreator;->deferred:Z
-
-    if-eqz v1, :cond_27
-
-    .line 577
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    const-string/jumbo v3, "Fit cannot be used with remote views."
-
-    invoke-direct {v1, v3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 579
-    :cond_27
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->placeholderDrawable:Landroid/graphics/drawable/Drawable;
-
-    if-nez v1, :cond_33
-
-    iget v1, p0, Lcom/squareup/picasso/RequestCreator;->placeholderResId:I
-
-    if-nez v1, :cond_33
-
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->errorDrawable:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v1, :cond_3c
-
-    .line 580
-    :cond_33
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v3, "Cannot use placeholder or error drawables with remote views."
-
-    invoke-direct {v1, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 584
-    :cond_3c
-    invoke-direct {p0, v12, v13}, Lcom/squareup/picasso/RequestCreator;->createRequest(J)Lcom/squareup/picasso/Request;
-
-    move-result-object v2
-
-    .line 585
-    .local v2, "request":Lcom/squareup/picasso/Request;
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-static {v2, v1}, Lcom/squareup/picasso/Utils;->createKey(Lcom/squareup/picasso/Request;Ljava/lang/StringBuilder;)Ljava/lang/String;
-
-    move-result-object v8
-
-    .line 587
-    .local v8, "key":Ljava/lang/String;
-    new-instance v0, Lcom/squareup/picasso/RemoteViewsAction$AppWidgetAction;
-
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    iget v6, p0, Lcom/squareup/picasso/RequestCreator;->memoryPolicy:I
-
-    iget v7, p0, Lcom/squareup/picasso/RequestCreator;->networkPolicy:I
-
-    iget-object v9, p0, Lcom/squareup/picasso/RequestCreator;->tag:Ljava/lang/Object;
-
-    iget v10, p0, Lcom/squareup/picasso/RequestCreator;->errorResId:I
-
-    move-object v3, p1
-
-    move/from16 v4, p2
-
-    move-object/from16 v5, p3
-
-    invoke-direct/range {v0 .. v10}, Lcom/squareup/picasso/RemoteViewsAction$AppWidgetAction;-><init>(Lcom/squareup/picasso/Picasso;Lcom/squareup/picasso/Request;Landroid/widget/RemoteViews;I[IIILjava/lang/String;Ljava/lang/Object;I)V
-
-    .line 591
-    .local v0, "action":Lcom/squareup/picasso/RemoteViewsAction;
-    invoke-direct {p0, v0}, Lcom/squareup/picasso/RequestCreator;->performRemoteViewInto(Lcom/squareup/picasso/RemoteViewsAction;)V
-
-    .line 592
-    return-void
-.end method
-
-.method public into(Lcom/squareup/picasso/Target;)V
-    .registers 16
-    .param p1, "target"    # Lcom/squareup/picasso/Target;
-
-    .prologue
-    const/4 v1, 0x0
-
-    .line 495
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
-
-    move-result-wide v12
-
-    .line 496
-    .local v12, "started":J
-    invoke-static {}, Lcom/squareup/picasso/Utils;->checkMain()V
-
-    .line 498
-    if-nez p1, :cond_13
-
-    .line 499
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v2, "Target must not be null."
-
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 501
-    :cond_13
-    iget-boolean v2, p0, Lcom/squareup/picasso/RequestCreator;->deferred:Z
-
-    if-eqz v2, :cond_20
-
-    .line 502
-    new-instance v1, Ljava/lang/IllegalStateException;
-
-    const-string/jumbo v2, "Fit cannot be used with a Target."
-
-    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 505
-    :cond_20
-    iget-object v2, p0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
-
-    invoke-virtual {v2}, Lcom/squareup/picasso/Request$Builder;->hasImage()Z
-
-    move-result v2
-
-    if-nez v2, :cond_39
-
-    .line 506
-    iget-object v2, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    invoke-virtual {v2, p1}, Lcom/squareup/picasso/Picasso;->cancelRequest(Lcom/squareup/picasso/Target;)V
-
-    .line 507
-    iget-boolean v2, p0, Lcom/squareup/picasso/RequestCreator;->setPlaceholder:Z
-
-    if-eqz v2, :cond_35
-
-    invoke-direct {p0}, Lcom/squareup/picasso/RequestCreator;->getPlaceholderDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    :cond_35
-    invoke-interface {p1, v1}, Lcom/squareup/picasso/Target;->onPrepareLoad(Landroid/graphics/drawable/Drawable;)V
-
-    .line 529
-    :goto_38
-    return-void
-
-    .line 511
-    :cond_39
-    invoke-direct {p0, v12, v13}, Lcom/squareup/picasso/RequestCreator;->createRequest(J)Lcom/squareup/picasso/Request;
-
-    move-result-object v3
-
-    .line 512
-    .local v3, "request":Lcom/squareup/picasso/Request;
-    invoke-static {v3}, Lcom/squareup/picasso/Utils;->createKey(Lcom/squareup/picasso/Request;)Ljava/lang/String;
-
-    move-result-object v7
-
-    .line 514
-    .local v7, "requestKey":Ljava/lang/String;
-    iget v2, p0, Lcom/squareup/picasso/RequestCreator;->memoryPolicy:I
-
-    invoke-static {v2}, Lcom/squareup/picasso/MemoryPolicy;->shouldReadFromMemoryCache(I)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_5c
-
-    .line 515
-    iget-object v2, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    invoke-virtual {v2, v7}, Lcom/squareup/picasso/Picasso;->quickMemoryCacheCheck(Ljava/lang/String;)Landroid/graphics/Bitmap;
-
-    move-result-object v10
-
-    .line 516
-    .local v10, "bitmap":Landroid/graphics/Bitmap;
-    if-eqz v10, :cond_5c
-
-    .line 517
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    invoke-virtual {v1, p1}, Lcom/squareup/picasso/Picasso;->cancelRequest(Lcom/squareup/picasso/Target;)V
-
-    .line 518
-    sget-object v1, Lcom/squareup/picasso/Picasso$LoadedFrom;->MEMORY:Lcom/squareup/picasso/Picasso$LoadedFrom;
-
-    invoke-interface {p1, v10, v1}, Lcom/squareup/picasso/Target;->onBitmapLoaded(Landroid/graphics/Bitmap;Lcom/squareup/picasso/Picasso$LoadedFrom;)V
-
-    goto :goto_38
-
-    .line 523
-    .end local v10    # "bitmap":Landroid/graphics/Bitmap;
-    :cond_5c
-    iget-boolean v2, p0, Lcom/squareup/picasso/RequestCreator;->setPlaceholder:Z
-
-    if-eqz v2, :cond_64
-
-    invoke-direct {p0}, Lcom/squareup/picasso/RequestCreator;->getPlaceholderDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v1
-
-    :cond_64
-    invoke-interface {p1, v1}, Lcom/squareup/picasso/Target;->onPrepareLoad(Landroid/graphics/drawable/Drawable;)V
-
-    .line 525
-    new-instance v0, Lcom/squareup/picasso/TargetAction;
-
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    iget v4, p0, Lcom/squareup/picasso/RequestCreator;->memoryPolicy:I
-
-    iget v5, p0, Lcom/squareup/picasso/RequestCreator;->networkPolicy:I
-
-    iget-object v6, p0, Lcom/squareup/picasso/RequestCreator;->errorDrawable:Landroid/graphics/drawable/Drawable;
-
-    iget-object v8, p0, Lcom/squareup/picasso/RequestCreator;->tag:Ljava/lang/Object;
-
-    iget v9, p0, Lcom/squareup/picasso/RequestCreator;->errorResId:I
-
-    move-object v2, p1
-
-    invoke-direct/range {v0 .. v9}, Lcom/squareup/picasso/TargetAction;-><init>(Lcom/squareup/picasso/Picasso;Lcom/squareup/picasso/Target;Lcom/squareup/picasso/Request;IILandroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;I)V
-
-    .line 528
-    .local v0, "action":Lcom/squareup/picasso/Action;
-    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    invoke-virtual {v1, v0}, Lcom/squareup/picasso/Picasso;->enqueueAndSubmit(Lcom/squareup/picasso/Action;)V
-
-    goto :goto_38
-.end method
-
-.method public varargs memoryPolicy(Lcom/squareup/picasso/MemoryPolicy;[Lcom/squareup/picasso/MemoryPolicy;)Lcom/squareup/picasso/RequestCreator;
-    .registers 8
-    .param p1, "policy"    # Lcom/squareup/picasso/MemoryPolicy;
-    .param p2, "additional"    # [Lcom/squareup/picasso/MemoryPolicy;
-
-    .prologue
-    .line 328
-    if-nez p1, :cond_b
-
-    .line 329
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v2, "Memory policy cannot be null."
-
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 331
-    :cond_b
-    iget v1, p0, Lcom/squareup/picasso/RequestCreator;->memoryPolicy:I
-
-    iget v2, p1, Lcom/squareup/picasso/MemoryPolicy;->index:I
-
-    or-int/2addr v1, v2
-
-    iput v1, p0, Lcom/squareup/picasso/RequestCreator;->memoryPolicy:I
-
-    .line 332
-    if-nez p2, :cond_1d
-
-    .line 333
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v2, "Memory policy cannot be null."
-
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 335
-    :cond_1d
-    array-length v1, p2
-
-    if-lez v1, :cond_3b
-
-    .line 336
-    array-length v2, p2
-
-    const/4 v1, 0x0
-
-    :goto_22
-    if-ge v1, v2, :cond_3b
-
-    aget-object v0, p2, v1
-
-    .line 337
-    .local v0, "memoryPolicy":Lcom/squareup/picasso/MemoryPolicy;
-    if-nez v0, :cond_31
-
-    .line 338
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v2, "Memory policy cannot be null."
-
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 340
-    :cond_31
-    iget v3, p0, Lcom/squareup/picasso/RequestCreator;->memoryPolicy:I
-
-    iget v4, v0, Lcom/squareup/picasso/MemoryPolicy;->index:I
-
-    or-int/2addr v3, v4
-
-    iput v3, p0, Lcom/squareup/picasso/RequestCreator;->memoryPolicy:I
-
-    .line 336
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_22
-
-    .line 343
-    .end local v0    # "memoryPolicy":Lcom/squareup/picasso/MemoryPolicy;
-    :cond_3b
-    return-object p0
-.end method
-
-.method public varargs networkPolicy(Lcom/squareup/picasso/NetworkPolicy;[Lcom/squareup/picasso/NetworkPolicy;)Lcom/squareup/picasso/RequestCreator;
-    .registers 8
-    .param p1, "policy"    # Lcom/squareup/picasso/NetworkPolicy;
-    .param p2, "additional"    # [Lcom/squareup/picasso/NetworkPolicy;
-
-    .prologue
-    .line 351
-    if-nez p1, :cond_b
-
-    .line 352
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v2, "Network policy cannot be null."
-
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 354
-    :cond_b
-    iget v1, p0, Lcom/squareup/picasso/RequestCreator;->networkPolicy:I
-
-    iget v2, p1, Lcom/squareup/picasso/NetworkPolicy;->index:I
-
-    or-int/2addr v1, v2
-
-    iput v1, p0, Lcom/squareup/picasso/RequestCreator;->networkPolicy:I
-
-    .line 355
-    if-nez p2, :cond_1d
-
-    .line 356
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v2, "Network policy cannot be null."
-
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 358
-    :cond_1d
-    array-length v1, p2
-
-    if-lez v1, :cond_3b
-
-    .line 359
-    array-length v2, p2
-
-    const/4 v1, 0x0
-
-    :goto_22
-    if-ge v1, v2, :cond_3b
-
-    aget-object v0, p2, v1
-
-    .line 360
-    .local v0, "networkPolicy":Lcom/squareup/picasso/NetworkPolicy;
-    if-nez v0, :cond_31
-
-    .line 361
-    new-instance v1, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v2, "Network policy cannot be null."
-
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v1
-
-    .line 363
-    :cond_31
-    iget v3, p0, Lcom/squareup/picasso/RequestCreator;->networkPolicy:I
-
-    iget v4, v0, Lcom/squareup/picasso/NetworkPolicy;->index:I
-
-    or-int/2addr v3, v4
-
-    iput v3, p0, Lcom/squareup/picasso/RequestCreator;->networkPolicy:I
-
-    .line 359
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_22
-
-    .line 366
-    .end local v0    # "networkPolicy":Lcom/squareup/picasso/NetworkPolicy;
-    :cond_3b
-    return-object p0
-.end method
-
-.method public noFade()Lcom/squareup/picasso/RequestCreator;
-    .registers 2
-
-    .prologue
-    .line 371
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/squareup/picasso/RequestCreator;->noFade:Z
-
-    .line 372
-    return-object p0
-.end method
-
-.method public noPlaceholder()Lcom/squareup/picasso/RequestCreator;
-    .registers 3
-
-    .prologue
-    .line 91
-    iget v0, p0, Lcom/squareup/picasso/RequestCreator;->placeholderResId:I
-
-    if-eqz v0, :cond_d
-
-    .line 92
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string/jumbo v1, "Placeholder resource already set."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 94
-    :cond_d
-    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->placeholderDrawable:Landroid/graphics/drawable/Drawable;
-
-    if-eqz v0, :cond_1a
-
-    .line 95
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string/jumbo v1, "Placeholder image already set."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 97
-    :cond_1a
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/squareup/picasso/RequestCreator;->setPlaceholder:Z
-
-    .line 98
-    return-object p0
-.end method
-
-.method public onlyScaleDown()Lcom/squareup/picasso/RequestCreator;
-    .registers 2
-
-    .prologue
-    .line 247
-    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
-
-    invoke-virtual {v0}, Lcom/squareup/picasso/Request$Builder;->onlyScaleDown()Lcom/squareup/picasso/Request$Builder;
-
-    .line 248
-    return-object p0
-.end method
-
-.method public placeholder(I)Lcom/squareup/picasso/RequestCreator;
+.method public a(I)Lcom/squareup/picasso/RequestCreator;
     .registers 4
-    .param p1, "placeholderResId"    # I
 
     .prologue
     .line 107
-    iget-boolean v0, p0, Lcom/squareup/picasso/RequestCreator;->setPlaceholder:Z
+    iget-boolean v0, p0, Lcom/squareup/picasso/RequestCreator;->f:Z
 
     if-nez v0, :cond_d
 
@@ -1805,7 +304,7 @@
 
     .line 113
     :cond_18
-    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->placeholderDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->k:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_25
 
@@ -1820,276 +319,518 @@
 
     .line 116
     :cond_25
-    iput p1, p0, Lcom/squareup/picasso/RequestCreator;->placeholderResId:I
+    iput p1, p0, Lcom/squareup/picasso/RequestCreator;->g:I
 
     .line 117
     return-object p0
 .end method
 
-.method public placeholder(Landroid/graphics/drawable/Drawable;)Lcom/squareup/picasso/RequestCreator;
+.method public a(II)Lcom/squareup/picasso/RequestCreator;
     .registers 4
-    .param p1, "placeholderDrawable"    # Landroid/graphics/drawable/Drawable;
-
-    .prologue
-    .line 129
-    iget-boolean v0, p0, Lcom/squareup/picasso/RequestCreator;->setPlaceholder:Z
-
-    if-nez v0, :cond_d
-
-    .line 130
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string/jumbo v1, "Already explicitly declared as no placeholder."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 132
-    :cond_d
-    iget v0, p0, Lcom/squareup/picasso/RequestCreator;->placeholderResId:I
-
-    if-eqz v0, :cond_1a
-
-    .line 133
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string/jumbo v1, "Placeholder image already set."
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 135
-    :cond_1a
-    iput-object p1, p0, Lcom/squareup/picasso/RequestCreator;->placeholderDrawable:Landroid/graphics/drawable/Drawable;
-
-    .line 136
-    return-object p0
-.end method
-
-.method public priority(Lcom/squareup/picasso/Picasso$Priority;)Lcom/squareup/picasso/RequestCreator;
-    .registers 3
-    .param p1, "priority"    # Lcom/squareup/picasso/Picasso$Priority;
-
-    .prologue
-    .line 291
-    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
-
-    invoke-virtual {v0, p1}, Lcom/squareup/picasso/Request$Builder;->priority(Lcom/squareup/picasso/Picasso$Priority;)Lcom/squareup/picasso/Request$Builder;
-
-    .line 292
-    return-object p0
-.end method
-
-.method public resize(II)Lcom/squareup/picasso/RequestCreator;
-    .registers 4
-    .param p1, "targetWidth"    # I
-    .param p2, "targetHeight"    # I
 
     .prologue
     .line 219
-    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
+    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->c:Lcom/squareup/picasso/Request$Builder;
 
-    invoke-virtual {v0, p1, p2}, Lcom/squareup/picasso/Request$Builder;->resize(II)Lcom/squareup/picasso/Request$Builder;
+    invoke-virtual {v0, p1, p2}, Lcom/squareup/picasso/Request$Builder;->a(II)Lcom/squareup/picasso/Request$Builder;
 
     .line 220
     return-object p0
 .end method
 
-.method public resizeDimen(II)Lcom/squareup/picasso/RequestCreator;
+.method public varargs a(Lcom/squareup/picasso/MemoryPolicy;[Lcom/squareup/picasso/MemoryPolicy;)Lcom/squareup/picasso/RequestCreator;
     .registers 7
-    .param p1, "targetWidthResId"    # I
-    .param p2, "targetHeightResId"    # I
 
     .prologue
-    .line 211
-    iget-object v3, p0, Lcom/squareup/picasso/RequestCreator;->picasso:Lcom/squareup/picasso/Picasso;
-
-    iget-object v3, v3, Lcom/squareup/picasso/Picasso;->context:Landroid/content/Context;
-
-    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    .line 212
-    .local v0, "resources":Landroid/content/res/Resources;
-    invoke-virtual {v0, p1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v2
-
-    .line 213
-    .local v2, "targetWidth":I
-    invoke-virtual {v0, p2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v1
-
-    .line 214
-    .local v1, "targetHeight":I
-    invoke-virtual {p0, v2, v1}, Lcom/squareup/picasso/RequestCreator;->resize(II)Lcom/squareup/picasso/RequestCreator;
-
-    move-result-object v3
-
-    return-object v3
-.end method
-
-.method public rotate(F)Lcom/squareup/picasso/RequestCreator;
-    .registers 3
-    .param p1, "degrees"    # F
-
-    .prologue
-    .line 253
-    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
-
-    invoke-virtual {v0, p1}, Lcom/squareup/picasso/Request$Builder;->rotate(F)Lcom/squareup/picasso/Request$Builder;
-
-    .line 254
-    return-object p0
-.end method
-
-.method public rotate(FFF)Lcom/squareup/picasso/RequestCreator;
-    .registers 5
-    .param p1, "degrees"    # F
-    .param p2, "pivotX"    # F
-    .param p3, "pivotY"    # F
-
-    .prologue
-    .line 259
-    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
-
-    invoke-virtual {v0, p1, p2, p3}, Lcom/squareup/picasso/Request$Builder;->rotate(FFF)Lcom/squareup/picasso/Request$Builder;
-
-    .line 260
-    return-object p0
-.end method
-
-.method public skipMemoryCache()Lcom/squareup/picasso/RequestCreator;
-    .registers 5
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    .line 320
-    sget-object v0, Lcom/squareup/picasso/MemoryPolicy;->NO_CACHE:Lcom/squareup/picasso/MemoryPolicy;
-
-    const/4 v1, 0x1
-
-    new-array v1, v1, [Lcom/squareup/picasso/MemoryPolicy;
-
-    const/4 v2, 0x0
-
-    sget-object v3, Lcom/squareup/picasso/MemoryPolicy;->NO_STORE:Lcom/squareup/picasso/MemoryPolicy;
-
-    aput-object v3, v1, v2
-
-    invoke-virtual {p0, v0, v1}, Lcom/squareup/picasso/RequestCreator;->memoryPolicy(Lcom/squareup/picasso/MemoryPolicy;[Lcom/squareup/picasso/MemoryPolicy;)Lcom/squareup/picasso/RequestCreator;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public stableKey(Ljava/lang/String;)Lcom/squareup/picasso/RequestCreator;
-    .registers 3
-    .param p1, "stableKey"    # Ljava/lang/String;
-
-    .prologue
-    .line 279
-    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
-
-    invoke-virtual {v0, p1}, Lcom/squareup/picasso/Request$Builder;->stableKey(Ljava/lang/String;)Lcom/squareup/picasso/Request$Builder;
-
-    .line 280
-    return-object p0
-.end method
-
-.method public tag(Ljava/lang/Object;)Lcom/squareup/picasso/RequestCreator;
-    .registers 4
-    .param p1, "tag"    # Ljava/lang/Object;
-
-    .prologue
-    .line 182
+    .line 328
     if-nez p1, :cond_b
 
-    .line 183
+    .line 329
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "Tag invalid."
+    const-string/jumbo v1, "Memory policy cannot be null."
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 185
+    .line 331
     :cond_b
-    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->tag:Ljava/lang/Object;
+    iget v0, p0, Lcom/squareup/picasso/RequestCreator;->i:I
 
-    if-eqz v0, :cond_18
+    iget v1, p1, Lcom/squareup/picasso/MemoryPolicy;->c:I
 
-    .line 186
+    or-int/2addr v0, v1
+
+    iput v0, p0, Lcom/squareup/picasso/RequestCreator;->i:I
+
+    .line 332
+    if-nez p2, :cond_1d
+
+    .line 333
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v1, "Memory policy cannot be null."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 335
+    :cond_1d
+    array-length v0, p2
+
+    if-lez v0, :cond_3b
+
+    .line 336
+    array-length v1, p2
+
+    const/4 v0, 0x0
+
+    :goto_22
+    if-ge v0, v1, :cond_3b
+
+    aget-object v2, p2, v0
+
+    .line 337
+    if-nez v2, :cond_31
+
+    .line 338
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v1, "Memory policy cannot be null."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 340
+    :cond_31
+    iget v3, p0, Lcom/squareup/picasso/RequestCreator;->i:I
+
+    iget v2, v2, Lcom/squareup/picasso/MemoryPolicy;->c:I
+
+    or-int/2addr v2, v3
+
+    iput v2, p0, Lcom/squareup/picasso/RequestCreator;->i:I
+
+    .line 336
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_22
+
+    .line 343
+    :cond_3b
+    return-object p0
+.end method
+
+.method public varargs a(Lcom/squareup/picasso/NetworkPolicy;[Lcom/squareup/picasso/NetworkPolicy;)Lcom/squareup/picasso/RequestCreator;
+    .registers 7
+
+    .prologue
+    .line 351
+    if-nez p1, :cond_b
+
+    .line 352
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v1, "Network policy cannot be null."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 354
+    :cond_b
+    iget v0, p0, Lcom/squareup/picasso/RequestCreator;->j:I
+
+    iget v1, p1, Lcom/squareup/picasso/NetworkPolicy;->d:I
+
+    or-int/2addr v0, v1
+
+    iput v0, p0, Lcom/squareup/picasso/RequestCreator;->j:I
+
+    .line 355
+    if-nez p2, :cond_1d
+
+    .line 356
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v1, "Network policy cannot be null."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 358
+    :cond_1d
+    array-length v0, p2
+
+    if-lez v0, :cond_3b
+
+    .line 359
+    array-length v1, p2
+
+    const/4 v0, 0x0
+
+    :goto_22
+    if-ge v0, v1, :cond_3b
+
+    aget-object v2, p2, v0
+
+    .line 360
+    if-nez v2, :cond_31
+
+    .line 361
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v1, "Network policy cannot be null."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 363
+    :cond_31
+    iget v3, p0, Lcom/squareup/picasso/RequestCreator;->j:I
+
+    iget v2, v2, Lcom/squareup/picasso/NetworkPolicy;->d:I
+
+    or-int/2addr v2, v3
+
+    iput v2, p0, Lcom/squareup/picasso/RequestCreator;->j:I
+
+    .line 359
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_22
+
+    .line 366
+    :cond_3b
+    return-object p0
+.end method
+
+.method public a(Landroid/widget/ImageView;)V
+    .registers 3
+
+    .prologue
+    .line 601
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, p1, v0}, Lcom/squareup/picasso/RequestCreator;->a(Landroid/widget/ImageView;Lcom/squareup/picasso/Callback;)V
+
+    .line 602
+    return-void
+.end method
+
+.method public a(Landroid/widget/ImageView;Lcom/squareup/picasso/Callback;)V
+    .registers 15
+
+    .prologue
+    .line 614
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
+
+    move-result-wide v0
+
+    .line 615
+    invoke-static {}, Lcom/squareup/picasso/Utils;->a()V
+
+    .line 617
+    if-nez p1, :cond_12
+
+    .line 618
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v1, "Target must not be null."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 621
+    :cond_12
+    iget-object v2, p0, Lcom/squareup/picasso/RequestCreator;->c:Lcom/squareup/picasso/Request$Builder;
+
+    invoke-virtual {v2}, Lcom/squareup/picasso/Request$Builder;->a()Z
+
+    move-result v2
+
+    if-nez v2, :cond_2b
+
+    .line 622
+    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->b:Lcom/squareup/picasso/Picasso;
+
+    invoke-virtual {v0, p1}, Lcom/squareup/picasso/Picasso;->a(Landroid/widget/ImageView;)V
+
+    .line 623
+    iget-boolean v0, p0, Lcom/squareup/picasso/RequestCreator;->f:Z
+
+    if-eqz v0, :cond_2a
+
+    .line 624
+    invoke-direct {p0}, Lcom/squareup/picasso/RequestCreator;->b()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-static {p1, v0}, Lcom/squareup/picasso/PicassoDrawable;->a(Landroid/widget/ImageView;Landroid/graphics/drawable/Drawable;)V
+
+    .line 672
+    :cond_2a
+    :goto_2a
+    return-void
+
+    .line 629
+    :cond_2b
+    iget-boolean v2, p0, Lcom/squareup/picasso/RequestCreator;->e:Z
+
+    if-eqz v2, :cond_67
+
+    .line 630
+    iget-object v2, p0, Lcom/squareup/picasso/RequestCreator;->c:Lcom/squareup/picasso/Request$Builder;
+
+    invoke-virtual {v2}, Lcom/squareup/picasso/Request$Builder;->b()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_40
+
+    .line 631
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string/jumbo v1, "Tag already set."
+    const-string/jumbo v1, "Fit cannot be used with resize."
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    .line 188
+    .line 633
+    :cond_40
+    invoke-virtual {p1}, Landroid/widget/ImageView;->getWidth()I
+
+    move-result v2
+
+    .line 634
+    invoke-virtual {p1}, Landroid/widget/ImageView;->getHeight()I
+
+    move-result v3
+
+    .line 635
+    if-eqz v2, :cond_4c
+
+    if-nez v3, :cond_62
+
+    .line 636
+    :cond_4c
+    iget-boolean v0, p0, Lcom/squareup/picasso/RequestCreator;->f:Z
+
+    if-eqz v0, :cond_57
+
+    .line 637
+    invoke-direct {p0}, Lcom/squareup/picasso/RequestCreator;->b()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-static {p1, v0}, Lcom/squareup/picasso/PicassoDrawable;->a(Landroid/widget/ImageView;Landroid/graphics/drawable/Drawable;)V
+
+    .line 639
+    :cond_57
+    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->b:Lcom/squareup/picasso/Picasso;
+
+    new-instance v1, Lcom/squareup/picasso/DeferredRequestCreator;
+
+    invoke-direct {v1, p0, p1, p2}, Lcom/squareup/picasso/DeferredRequestCreator;-><init>(Lcom/squareup/picasso/RequestCreator;Landroid/widget/ImageView;Lcom/squareup/picasso/Callback;)V
+
+    invoke-virtual {v0, p1, v1}, Lcom/squareup/picasso/Picasso;->a(Landroid/widget/ImageView;Lcom/squareup/picasso/DeferredRequestCreator;)V
+
+    goto :goto_2a
+
+    .line 642
+    :cond_62
+    iget-object v4, p0, Lcom/squareup/picasso/RequestCreator;->c:Lcom/squareup/picasso/Request$Builder;
+
+    invoke-virtual {v4, v2, v3}, Lcom/squareup/picasso/Request$Builder;->a(II)Lcom/squareup/picasso/Request$Builder;
+
+    .line 645
+    :cond_67
+    invoke-direct {p0, v0, v1}, Lcom/squareup/picasso/RequestCreator;->a(J)Lcom/squareup/picasso/Request;
+
+    move-result-object v10
+
+    .line 646
+    invoke-static {v10}, Lcom/squareup/picasso/Utils;->a(Lcom/squareup/picasso/Request;)Ljava/lang/String;
+
+    move-result-object v8
+
+    .line 648
+    iget v0, p0, Lcom/squareup/picasso/RequestCreator;->i:I
+
+    invoke-static {v0}, Lcom/squareup/picasso/MemoryPolicy;->a(I)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_c4
+
+    .line 649
+    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->b:Lcom/squareup/picasso/Picasso;
+
+    invoke-virtual {v0, v8}, Lcom/squareup/picasso/Picasso;->b(Ljava/lang/String;)Landroid/graphics/Bitmap;
+
+    move-result-object v2
+
+    .line 650
+    if-eqz v2, :cond_c4
+
+    .line 651
+    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->b:Lcom/squareup/picasso/Picasso;
+
+    invoke-virtual {v0, p1}, Lcom/squareup/picasso/Picasso;->a(Landroid/widget/ImageView;)V
+
+    .line 652
+    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->b:Lcom/squareup/picasso/Picasso;
+
+    iget-object v1, v0, Lcom/squareup/picasso/Picasso;->c:Landroid/content/Context;
+
+    sget-object v3, Lcom/squareup/picasso/Picasso$LoadedFrom;->a:Lcom/squareup/picasso/Picasso$LoadedFrom;
+
+    iget-boolean v4, p0, Lcom/squareup/picasso/RequestCreator;->d:Z
+
+    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->b:Lcom/squareup/picasso/Picasso;
+
+    iget-boolean v5, v0, Lcom/squareup/picasso/Picasso;->k:Z
+
+    move-object v0, p1
+
+    invoke-static/range {v0 .. v5}, Lcom/squareup/picasso/PicassoDrawable;->a(Landroid/widget/ImageView;Landroid/content/Context;Landroid/graphics/Bitmap;Lcom/squareup/picasso/Picasso$LoadedFrom;ZZ)V
+
+    .line 653
+    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->b:Lcom/squareup/picasso/Picasso;
+
+    iget-boolean v0, v0, Lcom/squareup/picasso/Picasso;->l:Z
+
+    if-eqz v0, :cond_bd
+
+    .line 654
+    const-string/jumbo v0, "Main"
+
+    const-string/jumbo v1, "completed"
+
+    invoke-virtual {v10}, Lcom/squareup/picasso/Request;->b()Ljava/lang/String;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "from "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    sget-object v4, Lcom/squareup/picasso/Picasso$LoadedFrom;->a:Lcom/squareup/picasso/Picasso$LoadedFrom;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v0, v1, v2, v3}, Lcom/squareup/picasso/Utils;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 656
+    :cond_bd
+    if-eqz p2, :cond_2a
+
+    .line 657
+    invoke-interface {p2}, Lcom/squareup/picasso/Callback;->a()V
+
+    goto/16 :goto_2a
+
+    .line 663
+    :cond_c4
+    iget-boolean v0, p0, Lcom/squareup/picasso/RequestCreator;->f:Z
+
+    if-eqz v0, :cond_cf
+
+    .line 664
+    invoke-direct {p0}, Lcom/squareup/picasso/RequestCreator;->b()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    invoke-static {p1, v0}, Lcom/squareup/picasso/PicassoDrawable;->a(Landroid/widget/ImageView;Landroid/graphics/drawable/Drawable;)V
+
+    .line 667
+    :cond_cf
+    new-instance v0, Lcom/squareup/picasso/ImageViewAction;
+
+    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->b:Lcom/squareup/picasso/Picasso;
+
+    iget v4, p0, Lcom/squareup/picasso/RequestCreator;->i:I
+
+    iget v5, p0, Lcom/squareup/picasso/RequestCreator;->j:I
+
+    iget v6, p0, Lcom/squareup/picasso/RequestCreator;->h:I
+
+    iget-object v7, p0, Lcom/squareup/picasso/RequestCreator;->l:Landroid/graphics/drawable/Drawable;
+
+    iget-object v9, p0, Lcom/squareup/picasso/RequestCreator;->m:Ljava/lang/Object;
+
+    iget-boolean v11, p0, Lcom/squareup/picasso/RequestCreator;->d:Z
+
+    move-object v2, p1
+
+    move-object v3, v10
+
+    move-object v10, p2
+
+    invoke-direct/range {v0 .. v11}, Lcom/squareup/picasso/ImageViewAction;-><init>(Lcom/squareup/picasso/Picasso;Landroid/widget/ImageView;Lcom/squareup/picasso/Request;IIILandroid/graphics/drawable/Drawable;Ljava/lang/String;Ljava/lang/Object;Lcom/squareup/picasso/Callback;Z)V
+
+    .line 671
+    iget-object v1, p0, Lcom/squareup/picasso/RequestCreator;->b:Lcom/squareup/picasso/Picasso;
+
+    invoke-virtual {v1, v0}, Lcom/squareup/picasso/Picasso;->a(Lcom/squareup/picasso/Action;)V
+
+    goto/16 :goto_2a
+.end method
+
+.method public b(I)Lcom/squareup/picasso/RequestCreator;
+    .registers 4
+
+    .prologue
+    .line 141
+    if-nez p1, :cond_b
+
+    .line 142
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    const-string/jumbo v1, "Error image resource invalid."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 144
+    :cond_b
+    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->l:Landroid/graphics/drawable/Drawable;
+
+    if-eqz v0, :cond_18
+
+    .line 145
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string/jumbo v1, "Error image already set."
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 147
     :cond_18
-    iput-object p1, p0, Lcom/squareup/picasso/RequestCreator;->tag:Ljava/lang/Object;
+    iput p1, p0, Lcom/squareup/picasso/RequestCreator;->h:I
 
-    .line 189
-    return-object p0
-.end method
-
-.method public transform(Lcom/squareup/picasso/Transformation;)Lcom/squareup/picasso/RequestCreator;
-    .registers 3
-    .param p1, "transformation"    # Lcom/squareup/picasso/Transformation;
-
-    .prologue
-    .line 302
-    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
-
-    invoke-virtual {v0, p1}, Lcom/squareup/picasso/Request$Builder;->transform(Lcom/squareup/picasso/Transformation;)Lcom/squareup/picasso/Request$Builder;
-
-    .line 303
-    return-object p0
-.end method
-
-.method public transform(Ljava/util/List;)Lcom/squareup/picasso/RequestCreator;
-    .registers 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<+",
-            "Lcom/squareup/picasso/Transformation;",
-            ">;)",
-            "Lcom/squareup/picasso/RequestCreator;"
-        }
-    .end annotation
-
-    .prologue
-    .line 312
-    .local p1, "transformations":Ljava/util/List;, "Ljava/util/List<+Lcom/squareup/picasso/Transformation;>;"
-    iget-object v0, p0, Lcom/squareup/picasso/RequestCreator;->data:Lcom/squareup/picasso/Request$Builder;
-
-    invoke-virtual {v0, p1}, Lcom/squareup/picasso/Request$Builder;->transform(Ljava/util/List;)Lcom/squareup/picasso/Request$Builder;
-
-    .line 313
-    return-object p0
-.end method
-
-.method unfit()Lcom/squareup/picasso/RequestCreator;
-    .registers 2
-
-    .prologue
-    .line 205
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/squareup/picasso/RequestCreator;->deferred:Z
-
-    .line 206
+    .line 148
     return-object p0
 .end method

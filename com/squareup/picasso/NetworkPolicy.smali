@@ -15,17 +15,17 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/squareup/picasso/NetworkPolicy;
+.field public static final enum a:Lcom/squareup/picasso/NetworkPolicy;
 
-.field public static final enum NO_CACHE:Lcom/squareup/picasso/NetworkPolicy;
+.field public static final enum b:Lcom/squareup/picasso/NetworkPolicy;
 
-.field public static final enum NO_STORE:Lcom/squareup/picasso/NetworkPolicy;
+.field public static final enum c:Lcom/squareup/picasso/NetworkPolicy;
 
-.field public static final enum OFFLINE:Lcom/squareup/picasso/NetworkPolicy;
+.field private static final synthetic e:[Lcom/squareup/picasso/NetworkPolicy;
 
 
 # instance fields
-.field final index:I
+.field final d:I
 
 
 # direct methods
@@ -46,7 +46,7 @@
 
     invoke-direct {v0, v1, v5, v3}, Lcom/squareup/picasso/NetworkPolicy;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/squareup/picasso/NetworkPolicy;->NO_CACHE:Lcom/squareup/picasso/NetworkPolicy;
+    sput-object v0, Lcom/squareup/picasso/NetworkPolicy;->a:Lcom/squareup/picasso/NetworkPolicy;
 
     .line 30
     new-instance v0, Lcom/squareup/picasso/NetworkPolicy;
@@ -55,7 +55,7 @@
 
     invoke-direct {v0, v1, v3, v4}, Lcom/squareup/picasso/NetworkPolicy;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/squareup/picasso/NetworkPolicy;->NO_STORE:Lcom/squareup/picasso/NetworkPolicy;
+    sput-object v0, Lcom/squareup/picasso/NetworkPolicy;->b:Lcom/squareup/picasso/NetworkPolicy;
 
     .line 33
     new-instance v0, Lcom/squareup/picasso/NetworkPolicy;
@@ -66,33 +66,32 @@
 
     invoke-direct {v0, v1, v4, v2}, Lcom/squareup/picasso/NetworkPolicy;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/squareup/picasso/NetworkPolicy;->OFFLINE:Lcom/squareup/picasso/NetworkPolicy;
+    sput-object v0, Lcom/squareup/picasso/NetworkPolicy;->c:Lcom/squareup/picasso/NetworkPolicy;
 
     .line 19
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/squareup/picasso/NetworkPolicy;
 
-    sget-object v1, Lcom/squareup/picasso/NetworkPolicy;->NO_CACHE:Lcom/squareup/picasso/NetworkPolicy;
+    sget-object v1, Lcom/squareup/picasso/NetworkPolicy;->a:Lcom/squareup/picasso/NetworkPolicy;
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lcom/squareup/picasso/NetworkPolicy;->NO_STORE:Lcom/squareup/picasso/NetworkPolicy;
+    sget-object v1, Lcom/squareup/picasso/NetworkPolicy;->b:Lcom/squareup/picasso/NetworkPolicy;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/squareup/picasso/NetworkPolicy;->OFFLINE:Lcom/squareup/picasso/NetworkPolicy;
+    sget-object v1, Lcom/squareup/picasso/NetworkPolicy;->c:Lcom/squareup/picasso/NetworkPolicy;
 
     aput-object v1, v0, v4
 
-    sput-object v0, Lcom/squareup/picasso/NetworkPolicy;->$VALUES:[Lcom/squareup/picasso/NetworkPolicy;
+    sput-object v0, Lcom/squareup/picasso/NetworkPolicy;->e:[Lcom/squareup/picasso/NetworkPolicy;
 
     return-void
 .end method
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .registers 4
-    .param p3, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
@@ -104,21 +103,68 @@
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 50
-    iput p3, p0, Lcom/squareup/picasso/NetworkPolicy;->index:I
+    iput p3, p0, Lcom/squareup/picasso/NetworkPolicy;->d:I
 
     .line 51
     return-void
 .end method
 
-.method public static isOfflineOnly(I)Z
+.method public static a(I)Z
     .registers 2
-    .param p0, "networkPolicy"    # I
+
+    .prologue
+    .line 36
+    sget-object v0, Lcom/squareup/picasso/NetworkPolicy;->a:Lcom/squareup/picasso/NetworkPolicy;
+
+    iget v0, v0, Lcom/squareup/picasso/NetworkPolicy;->d:I
+
+    and-int/2addr v0, p0
+
+    if-nez v0, :cond_9
+
+    const/4 v0, 0x1
+
+    :goto_8
+    return v0
+
+    :cond_9
+    const/4 v0, 0x0
+
+    goto :goto_8
+.end method
+
+.method public static b(I)Z
+    .registers 2
+
+    .prologue
+    .line 40
+    sget-object v0, Lcom/squareup/picasso/NetworkPolicy;->b:Lcom/squareup/picasso/NetworkPolicy;
+
+    iget v0, v0, Lcom/squareup/picasso/NetworkPolicy;->d:I
+
+    and-int/2addr v0, p0
+
+    if-nez v0, :cond_9
+
+    const/4 v0, 0x1
+
+    :goto_8
+    return v0
+
+    :cond_9
+    const/4 v0, 0x0
+
+    goto :goto_8
+.end method
+
+.method public static c(I)Z
+    .registers 2
 
     .prologue
     .line 44
-    sget-object v0, Lcom/squareup/picasso/NetworkPolicy;->OFFLINE:Lcom/squareup/picasso/NetworkPolicy;
+    sget-object v0, Lcom/squareup/picasso/NetworkPolicy;->c:Lcom/squareup/picasso/NetworkPolicy;
 
-    iget v0, v0, Lcom/squareup/picasso/NetworkPolicy;->index:I
+    iget v0, v0, Lcom/squareup/picasso/NetworkPolicy;->d:I
 
     and-int/2addr v0, p0
 
@@ -135,59 +181,8 @@
     goto :goto_8
 .end method
 
-.method public static shouldReadFromDiskCache(I)Z
-    .registers 2
-    .param p0, "networkPolicy"    # I
-
-    .prologue
-    .line 36
-    sget-object v0, Lcom/squareup/picasso/NetworkPolicy;->NO_CACHE:Lcom/squareup/picasso/NetworkPolicy;
-
-    iget v0, v0, Lcom/squareup/picasso/NetworkPolicy;->index:I
-
-    and-int/2addr v0, p0
-
-    if-nez v0, :cond_9
-
-    const/4 v0, 0x1
-
-    :goto_8
-    return v0
-
-    :cond_9
-    const/4 v0, 0x0
-
-    goto :goto_8
-.end method
-
-.method public static shouldWriteToDiskCache(I)Z
-    .registers 2
-    .param p0, "networkPolicy"    # I
-
-    .prologue
-    .line 40
-    sget-object v0, Lcom/squareup/picasso/NetworkPolicy;->NO_STORE:Lcom/squareup/picasso/NetworkPolicy;
-
-    iget v0, v0, Lcom/squareup/picasso/NetworkPolicy;->index:I
-
-    and-int/2addr v0, p0
-
-    if-nez v0, :cond_9
-
-    const/4 v0, 0x1
-
-    :goto_8
-    return v0
-
-    :cond_9
-    const/4 v0, 0x0
-
-    goto :goto_8
-.end method
-
 .method public static valueOf(Ljava/lang/String;)Lcom/squareup/picasso/NetworkPolicy;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 19
@@ -207,7 +202,7 @@
 
     .prologue
     .line 19
-    sget-object v0, Lcom/squareup/picasso/NetworkPolicy;->$VALUES:[Lcom/squareup/picasso/NetworkPolicy;
+    sget-object v0, Lcom/squareup/picasso/NetworkPolicy;->e:[Lcom/squareup/picasso/NetworkPolicy;
 
     invoke-virtual {v0}, [Lcom/squareup/picasso/NetworkPolicy;->clone()Ljava/lang/Object;
 

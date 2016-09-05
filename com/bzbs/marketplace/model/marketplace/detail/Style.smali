@@ -3,62 +3,38 @@
 .source "Style.java"
 
 
-# annotations
-.annotation runtime Lorg/parceler/Parcel;
-    value = .enum Lorg/parceler/Parcel$Serialization;->BEAN:Lorg/parceler/Parcel$Serialization;
-.end annotation
-
-
 # static fields
-.field static final FIELD_CAMPAIGN_ID:Ljava/lang/String; = "campaignId"
+.field public static final FIELD_CAMPAIGN_ID:Ljava/lang/String; = "campaignId"
 
-.field static final FIELD_NAME:Ljava/lang/String; = "name"
+.field public static final FIELD_NAME:Ljava/lang/String; = "name"
 
-.field static final FIELD_POStringS:Ljava/lang/String; = "poStrings"
+.field public static final FIELD_POStringS:Ljava/lang/String; = "poStrings"
 
-.field static final FIELD_PRICE:Ljava/lang/String; = "price"
+.field public static final FIELD_PRICE:Ljava/lang/String; = "price"
 
-.field static final FIELD_QUANTITY:Ljava/lang/String; = "quantity"
+.field public static final FIELD_QUANTITY:Ljava/lang/String; = "quantity"
 
-.field static final FIELD_SUBITEMS:Ljava/lang/String; = "subitems"
+.field public static final FIELD_SUBITEMS:Ljava/lang/String; = "subitems"
 
-.field static final FIELD_VALUE:Ljava/lang/String; = "value"
+.field public static final FIELD_VALUE:Ljava/lang/String; = "value"
 
 
 # instance fields
-.field mCampaignId:Ljava/lang/String;
+.field a:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "campaignId"
+        a = "value"
     .end annotation
 .end field
 
-.field mName:Ljava/lang/String;
+.field b:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "name"
+        a = "poStrings"
     .end annotation
 .end field
 
-.field mPoString:Ljava/lang/String;
+.field c:Ljava/util/List;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "poStrings"
-    .end annotation
-.end field
-
-.field mPrice:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "price"
-    .end annotation
-.end field
-
-.field mQuantity:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "quantity"
-    .end annotation
-.end field
-
-.field mSubitems:Ljava/util/List;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "subitems"
+        a = "subitems"
     .end annotation
 
     .annotation system Ldalvik/annotation/Signature;
@@ -71,9 +47,27 @@
     .end annotation
 .end field
 
-.field mValue:Ljava/lang/String;
+.field d:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "value"
+        a = "price"
+    .end annotation
+.end field
+
+.field e:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        a = "campaignId"
+    .end annotation
+.end field
+
+.field f:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        a = "name"
+    .end annotation
+.end field
+
+.field g:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        a = "quantity"
     .end annotation
 .end field
 
@@ -97,7 +91,7 @@
 
     .prologue
     .line 78
-    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mCampaignId:Ljava/lang/String;
+    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->e:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -107,7 +101,7 @@
 
     .prologue
     .line 86
-    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mName:Ljava/lang/String;
+    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->f:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -117,7 +111,7 @@
 
     .prologue
     .line 54
-    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mPoString:Ljava/lang/String;
+    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->b:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -127,7 +121,7 @@
 
     .prologue
     .line 70
-    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mPrice:Ljava/lang/String;
+    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->d:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -137,7 +131,7 @@
 
     .prologue
     .line 94
-    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mQuantity:Ljava/lang/String;
+    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->g:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -156,7 +150,7 @@
 
     .prologue
     .line 62
-    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mSubitems:Ljava/util/List;
+    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->c:Ljava/util/List;
 
     return-object v0
 .end method
@@ -166,18 +160,17 @@
 
     .prologue
     .line 46
-    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mValue:Ljava/lang/String;
+    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->a:Ljava/lang/String;
 
     return-object v0
 .end method
 
 .method public setCampaignId(Ljava/lang/String;)V
     .registers 2
-    .param p1, "campaignId"    # Ljava/lang/String;
 
     .prologue
     .line 74
-    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mCampaignId:Ljava/lang/String;
+    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->e:Ljava/lang/String;
 
     .line 75
     return-void
@@ -185,11 +178,10 @@
 
 .method public setName(Ljava/lang/String;)V
     .registers 2
-    .param p1, "name"    # Ljava/lang/String;
 
     .prologue
     .line 82
-    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mName:Ljava/lang/String;
+    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->f:Ljava/lang/String;
 
     .line 83
     return-void
@@ -197,11 +189,10 @@
 
 .method public setPoString(Ljava/lang/String;)V
     .registers 2
-    .param p1, "poString"    # Ljava/lang/String;
 
     .prologue
     .line 50
-    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mPoString:Ljava/lang/String;
+    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->b:Ljava/lang/String;
 
     .line 51
     return-void
@@ -209,11 +200,10 @@
 
 .method public setPrice(Ljava/lang/String;)V
     .registers 2
-    .param p1, "price"    # Ljava/lang/String;
 
     .prologue
     .line 66
-    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mPrice:Ljava/lang/String;
+    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->d:Ljava/lang/String;
 
     .line 67
     return-void
@@ -221,11 +211,10 @@
 
 .method public setQuantity(Ljava/lang/String;)V
     .registers 2
-    .param p1, "quantity"    # Ljava/lang/String;
 
     .prologue
     .line 90
-    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mQuantity:Ljava/lang/String;
+    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->g:Ljava/lang/String;
 
     .line 91
     return-void
@@ -245,8 +234,7 @@
 
     .prologue
     .line 58
-    .local p1, "subitems":Ljava/util/List;, "Ljava/util/List<Lcom/bzbs/marketplace/model/marketplace/detail/Subitem;>;"
-    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mSubitems:Ljava/util/List;
+    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->c:Ljava/util/List;
 
     .line 59
     return-void
@@ -254,11 +242,10 @@
 
 .method public setValue(Ljava/lang/String;)V
     .registers 2
-    .param p1, "value"    # Ljava/lang/String;
 
     .prologue
     .line 42
-    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mValue:Ljava/lang/String;
+    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->a:Ljava/lang/String;
 
     .line 43
     return-void
@@ -279,7 +266,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mValue:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->a:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -291,7 +278,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mPoString:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->b:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -303,7 +290,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mSubitems:Ljava/util/List;
+    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->c:Ljava/util/List;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -315,7 +302,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mPrice:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->d:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -327,7 +314,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mCampaignId:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->e:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -339,7 +326,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mName:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->f:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -351,7 +338,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->mQuantity:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/Style;->g:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

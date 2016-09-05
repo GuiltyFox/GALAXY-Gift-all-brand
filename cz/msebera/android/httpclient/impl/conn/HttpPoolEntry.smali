@@ -19,20 +19,14 @@
 
 
 # instance fields
-.field public log:Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;
+.field public a:Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;
 
-.field private final tracker:Lcz/msebera/android/httpclient/conn/routing/RouteTracker;
+.field private final b:Lcz/msebera/android/httpclient/conn/routing/RouteTracker;
 
 
 # direct methods
 .method public constructor <init>(Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;Ljava/lang/String;Lcz/msebera/android/httpclient/conn/routing/HttpRoute;Lcz/msebera/android/httpclient/conn/OperatedClientConnection;JLjava/util/concurrent/TimeUnit;)V
     .registers 15
-    .param p1, "log"    # Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;
-    .param p2, "id"    # Ljava/lang/String;
-    .param p3, "route"    # Lcz/msebera/android/httpclient/conn/routing/HttpRoute;
-    .param p4, "conn"    # Lcz/msebera/android/httpclient/conn/OperatedClientConnection;
-    .param p5, "timeToLive"    # J
-    .param p7, "tunit"    # Ljava/util/concurrent/TimeUnit;
 
     .prologue
     .line 56
@@ -51,14 +45,14 @@
     invoke-direct/range {v0 .. v6}, Lcz/msebera/android/httpclient/pool/PoolEntry;-><init>(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;JLjava/util/concurrent/TimeUnit;)V
 
     .line 57
-    iput-object p1, p0, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->log:Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;
+    iput-object p1, p0, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->a:Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;
 
     .line 58
     new-instance v0, Lcz/msebera/android/httpclient/conn/routing/RouteTracker;
 
     invoke-direct {v0, p3}, Lcz/msebera/android/httpclient/conn/routing/RouteTracker;-><init>(Lcz/msebera/android/httpclient/conn/routing/HttpRoute;)V
 
-    iput-object v0, p0, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->tracker:Lcz/msebera/android/httpclient/conn/routing/RouteTracker;
+    iput-object v0, p0, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->b:Lcz/msebera/android/httpclient/conn/routing/RouteTracker;
 
     .line 59
     return-void
@@ -66,135 +60,38 @@
 
 
 # virtual methods
-.method public close()V
-    .registers 5
-
-    .prologue
-    .line 90
-    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->getConnection()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcz/msebera/android/httpclient/conn/OperatedClientConnection;
-
-    .line 92
-    .local v0, "conn":Lcz/msebera/android/httpclient/conn/OperatedClientConnection;
-    :try_start_6
-    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/OperatedClientConnection;->close()V
-    :try_end_9
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_9} :catch_a
-
-    .line 96
-    :goto_9
-    return-void
-
-    .line 93
-    :catch_a
-    move-exception v1
-
-    .line 94
-    .local v1, "ex":Ljava/io/IOException;
-    iget-object v2, p0, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->log:Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;
-
-    const-string/jumbo v3, "I/O error closing connection"
-
-    invoke-virtual {v2, v3, v1}, Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;->debug(Ljava/lang/Object;Ljava/lang/Throwable;)V
-
-    goto :goto_9
-.end method
-
-.method getEffectiveRoute()Lcz/msebera/android/httpclient/conn/routing/HttpRoute;
-    .registers 2
-
-    .prologue
-    .line 79
-    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->tracker:Lcz/msebera/android/httpclient/conn/routing/RouteTracker;
-
-    invoke-virtual {v0}, Lcz/msebera/android/httpclient/conn/routing/RouteTracker;->toRoute()Lcz/msebera/android/httpclient/conn/routing/HttpRoute;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method getPlannedRoute()Lcz/msebera/android/httpclient/conn/routing/HttpRoute;
-    .registers 2
-
-    .prologue
-    .line 75
-    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->getRoute()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcz/msebera/android/httpclient/conn/routing/HttpRoute;
-
-    return-object v0
-.end method
-
-.method getTracker()Lcz/msebera/android/httpclient/conn/routing/RouteTracker;
+.method a()Lcz/msebera/android/httpclient/conn/routing/RouteTracker;
     .registers 2
 
     .prologue
     .line 71
-    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->tracker:Lcz/msebera/android/httpclient/conn/routing/RouteTracker;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->b:Lcz/msebera/android/httpclient/conn/routing/RouteTracker;
 
     return-object v0
 .end method
 
-.method public isClosed()Z
-    .registers 3
-
-    .prologue
-    .line 84
-    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->getConnection()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcz/msebera/android/httpclient/conn/OperatedClientConnection;
-
-    .line 85
-    .local v0, "conn":Lcz/msebera/android/httpclient/conn/OperatedClientConnection;
-    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/OperatedClientConnection;->isOpen()Z
-
-    move-result v1
-
-    if-nez v1, :cond_e
-
-    const/4 v1, 0x1
-
-    :goto_d
-    return v1
-
-    :cond_e
-    const/4 v1, 0x0
-
-    goto :goto_d
-.end method
-
-.method public isExpired(J)Z
+.method public a(J)Z
     .registers 10
-    .param p1, "now"    # J
 
     .prologue
     .line 63
-    invoke-super {p0, p1, p2}, Lcz/msebera/android/httpclient/pool/PoolEntry;->isExpired(J)Z
+    invoke-super {p0, p1, p2}, Lcz/msebera/android/httpclient/pool/PoolEntry;->a(J)Z
 
     move-result v0
 
     .line 64
-    .local v0, "expired":Z
     if-eqz v0, :cond_3b
 
-    iget-object v1, p0, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->log:Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;
+    iget-object v1, p0, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->a:Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;
 
-    invoke-virtual {v1}, Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;->isDebugEnabled()Z
+    invoke-virtual {v1}, Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;->a()Z
 
     move-result v1
 
     if-eqz v1, :cond_3b
 
     .line 65
-    iget-object v1, p0, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->log:Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;
+    iget-object v1, p0, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->a:Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -218,7 +115,7 @@
 
     new-instance v3, Ljava/util/Date;
 
-    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->getExpiry()J
+    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->h()J
 
     move-result-wide v4
 
@@ -232,9 +129,101 @@
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;->debug(Ljava/lang/Object;)V
+    invoke-virtual {v1, v2}, Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;->a(Ljava/lang/Object;)V
 
     .line 67
     :cond_3b
     return v0
+.end method
+
+.method b()Lcz/msebera/android/httpclient/conn/routing/HttpRoute;
+    .registers 2
+
+    .prologue
+    .line 75
+    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->f()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcz/msebera/android/httpclient/conn/routing/HttpRoute;
+
+    return-object v0
+.end method
+
+.method c()Lcz/msebera/android/httpclient/conn/routing/HttpRoute;
+    .registers 2
+
+    .prologue
+    .line 79
+    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->b:Lcz/msebera/android/httpclient/conn/routing/RouteTracker;
+
+    invoke-virtual {v0}, Lcz/msebera/android/httpclient/conn/routing/RouteTracker;->j()Lcz/msebera/android/httpclient/conn/routing/HttpRoute;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public d()Z
+    .registers 2
+
+    .prologue
+    .line 84
+    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->g()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcz/msebera/android/httpclient/conn/OperatedClientConnection;
+
+    .line 85
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/OperatedClientConnection;->c()Z
+
+    move-result v0
+
+    if-nez v0, :cond_e
+
+    const/4 v0, 0x1
+
+    :goto_d
+    return v0
+
+    :cond_e
+    const/4 v0, 0x0
+
+    goto :goto_d
+.end method
+
+.method public e()V
+    .registers 4
+
+    .prologue
+    .line 90
+    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->g()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcz/msebera/android/httpclient/conn/OperatedClientConnection;
+
+    .line 92
+    :try_start_6
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/OperatedClientConnection;->close()V
+    :try_end_9
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_9} :catch_a
+
+    .line 96
+    :goto_9
+    return-void
+
+    .line 93
+    :catch_a
+    move-exception v0
+
+    .line 94
+    iget-object v1, p0, Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;->a:Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;
+
+    const-string/jumbo v2, "I/O error closing connection"
+
+    invoke-virtual {v1, v2, v0}, Lcz/msebera/android/httpclient/extras/HttpClientAndroidLog;->a(Ljava/lang/Object;Ljava/lang/Throwable;)V
+
+    goto :goto_9
 .end method

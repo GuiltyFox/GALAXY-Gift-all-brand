@@ -12,7 +12,6 @@
 # direct methods
 .method private constructor <init>(Lcom/fasterxml/jackson/databind/ser/impl/JsonSerializerMap;)V
     .registers 3
-    .param p1, "map"    # Lcom/fasterxml/jackson/databind/ser/impl/JsonSerializerMap;
 
     .prologue
     .line 30
@@ -48,7 +47,6 @@
 
     .prologue
     .line 46
-    .local p0, "src":Ljava/util/HashMap;, "Ljava/util/HashMap<Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;Lcom/fasterxml/jackson/databind/JsonSerializer<Ljava/lang/Object;>;>;"
     new-instance v0, Lcom/fasterxml/jackson/databind/ser/impl/ReadOnlyClassToSerializerMap;
 
     new-instance v1, Lcom/fasterxml/jackson/databind/ser/impl/JsonSerializerMap;
@@ -78,7 +76,6 @@
 
 .method public typedValueSerializer(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JsonSerializer;
     .registers 4
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -143,7 +140,6 @@
 
     .prologue
     .line 61
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/impl/ReadOnlyClassToSerializerMap;->_cacheKey:Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;
 
     if-nez v0, :cond_15
@@ -180,7 +176,6 @@
 
 .method public untypedValueSerializer(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JsonSerializer;
     .registers 4
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -245,7 +240,6 @@
 
     .prologue
     .line 81
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/impl/ReadOnlyClassToSerializerMap;->_cacheKey:Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;
 
     if-nez v0, :cond_15

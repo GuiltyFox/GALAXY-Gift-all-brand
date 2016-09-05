@@ -17,7 +17,7 @@
 
 
 # virtual methods
-.method public abstract decode(Ljava/lang/Object;II)Lcom/bumptech/glide/load/engine/Resource;
+.method public abstract a(Ljava/lang/Object;II)Lcom/bumptech/glide/load/engine/Resource;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;II)",
@@ -25,13 +25,7 @@
             "<TZ;>;"
         }
     .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 .end method
 
-.method public abstract getId()Ljava/lang/String;
+.method public abstract a()Ljava/lang/String;
 .end method

@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/std/DateDeserializers;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "TimestampDeserializer"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/fasterxml/jackson/databind/deser/std/DateDeserializers$DateBasedDeserializer",
@@ -38,9 +29,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/deser/std/DateDeserializers$TimestampDeserializer;Ljava/text/DateFormat;Ljava/lang/String;)V
     .registers 4
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/deser/std/DateDeserializers$TimestampDeserializer;
-    .param p2, "df"    # Ljava/text/DateFormat;
-    .param p3, "formatString"    # Ljava/lang/String;
 
     .prologue
     .line 301
@@ -54,13 +42,6 @@
 # virtual methods
 .method public bridge synthetic createContextual(Lcom/fasterxml/jackson/databind/DeserializationContext;Lcom/fasterxml/jackson/databind/BeanProperty;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
     .registers 4
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/BeanProperty;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
 
     .prologue
     .line 297
@@ -73,14 +54,6 @@
 
 .method public bridge synthetic deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .registers 4
-    .param p1, "x0"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 297
@@ -93,13 +66,6 @@
 
 .method public deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/sql/Timestamp;
     .registers 7
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 312
@@ -120,8 +86,6 @@
 
 .method protected bridge synthetic withDateFormat(Ljava/text/DateFormat;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/deser/std/DateDeserializers$DateBasedDeserializer;
     .registers 4
-    .param p1, "x0"    # Ljava/text/DateFormat;
-    .param p2, "x1"    # Ljava/lang/String;
 
     .prologue
     .line 297
@@ -134,8 +98,6 @@
 
 .method protected withDateFormat(Ljava/text/DateFormat;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/deser/std/DateDeserializers$TimestampDeserializer;
     .registers 4
-    .param p1, "df"    # Ljava/text/DateFormat;
-    .param p2, "formatString"    # Ljava/lang/String;
 
     .prologue
     .line 306

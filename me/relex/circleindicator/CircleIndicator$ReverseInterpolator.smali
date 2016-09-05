@@ -6,19 +6,8 @@
 .implements Landroid/view/animation/Interpolator;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lme/relex/circleindicator/CircleIndicator;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "ReverseInterpolator"
-.end annotation
-
-
 # instance fields
-.field final synthetic this$0:Lme/relex/circleindicator/CircleIndicator;
+.field final synthetic a:Lme/relex/circleindicator/CircleIndicator;
 
 
 # direct methods
@@ -27,7 +16,7 @@
 
     .prologue
     .line 153
-    iput-object p1, p0, Lme/relex/circleindicator/CircleIndicator$ReverseInterpolator;->this$0:Lme/relex/circleindicator/CircleIndicator;
+    iput-object p1, p0, Lme/relex/circleindicator/CircleIndicator$ReverseInterpolator;->a:Lme/relex/circleindicator/CircleIndicator;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,8 +25,6 @@
 
 .method synthetic constructor <init>(Lme/relex/circleindicator/CircleIndicator;Lme/relex/circleindicator/CircleIndicator$1;)V
     .registers 3
-    .param p1, "x0"    # Lme/relex/circleindicator/CircleIndicator;
-    .param p2, "x1"    # Lme/relex/circleindicator/CircleIndicator$1;
 
     .prologue
     .line 153
@@ -50,11 +37,10 @@
 # virtual methods
 .method public getInterpolation(F)F
     .registers 3
-    .param p1, "value"    # F
 
     .prologue
     .line 156
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     sub-float/2addr v0, p1
 

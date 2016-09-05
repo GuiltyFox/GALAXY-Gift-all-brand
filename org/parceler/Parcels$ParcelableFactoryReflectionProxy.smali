@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/parceler/Parcels;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "ParcelableFactoryReflectionProxy"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -29,7 +20,7 @@
 
 
 # instance fields
-.field private final constructor:Ljava/lang/reflect/Constructor;
+.field private final a:Ljava/lang/reflect/Constructor;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/reflect/Constructor",
@@ -58,26 +49,23 @@
 
     .prologue
     .line 163
-    .local p0, "this":Lorg/parceler/Parcels$ParcelableFactoryReflectionProxy;, "Lorg/parceler/Parcels$ParcelableFactoryReflectionProxy<TT;>;"
-    .local p1, "parcelClass":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
-    .local p2, "parcelWrapperClass":Ljava/lang/Class;, "Ljava/lang/Class<+Landroid/os/Parcelable;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 165
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     :try_start_4
-    new-array v1, v1, [Ljava/lang/Class;
+    new-array v0, v0, [Ljava/lang/Class;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    aput-object p1, v1, v2
+    aput-object p1, v0, v1
 
-    invoke-virtual {p2, v1}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    invoke-virtual {p2, v0}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lorg/parceler/Parcels$ParcelableFactoryReflectionProxy;->constructor:Ljava/lang/reflect/Constructor;
+    iput-object v0, p0, Lorg/parceler/Parcels$ParcelableFactoryReflectionProxy;->a:Ljava/lang/reflect/Constructor;
     :try_end_f
     .catch Ljava/lang/NoSuchMethodException; {:try_start_4 .. :try_end_f} :catch_10
 
@@ -89,7 +77,6 @@
     move-exception v0
 
     .line 167
-    .local v0, "e":Ljava/lang/NoSuchMethodException;
     new-instance v1, Lorg/parceler/ParcelerRuntimeException;
 
     const-string/jumbo v2, "Unable to create ParcelFactory Type"
@@ -101,8 +88,8 @@
 
 
 # virtual methods
-.method public buildParcelable(Ljava/lang/Object;)Landroid/os/Parcelable;
-    .registers 6
+.method public a(Ljava/lang/Object;)Landroid/os/Parcelable;
+    .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)",
@@ -112,37 +99,34 @@
 
     .prologue
     .line 174
-    .local p0, "this":Lorg/parceler/Parcels$ParcelableFactoryReflectionProxy;, "Lorg/parceler/Parcels$ParcelableFactoryReflectionProxy<TT;>;"
-    .local p1, "input":Ljava/lang/Object;, "TT;"
     :try_start_0
-    iget-object v1, p0, Lorg/parceler/Parcels$ParcelableFactoryReflectionProxy;->constructor:Ljava/lang/reflect/Constructor;
+    iget-object v0, p0, Lorg/parceler/Parcels$ParcelableFactoryReflectionProxy;->a:Ljava/lang/reflect/Constructor;
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    new-array v2, v2, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    aput-object p1, v2, v3
+    aput-object p1, v1, v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/os/Parcelable;
+    check-cast v0, Landroid/os/Parcelable;
     :try_end_e
     .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_e} :catch_f
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_e} :catch_19
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_e} :catch_23
 
-    return-object v1
+    return-object v0
 
     .line 175
     :catch_f
     move-exception v0
 
     .line 176
-    .local v0, "e":Ljava/lang/InstantiationException;
     new-instance v1, Lorg/parceler/ParcelerRuntimeException;
 
     const-string/jumbo v2, "Unable to create ParcelFactory Type"
@@ -152,12 +136,10 @@
     throw v1
 
     .line 177
-    .end local v0    # "e":Ljava/lang/InstantiationException;
     :catch_19
     move-exception v0
 
     .line 178
-    .local v0, "e":Ljava/lang/IllegalAccessException;
     new-instance v1, Lorg/parceler/ParcelerRuntimeException;
 
     const-string/jumbo v2, "Unable to create ParcelFactory Type"
@@ -167,12 +149,10 @@
     throw v1
 
     .line 179
-    .end local v0    # "e":Ljava/lang/IllegalAccessException;
     :catch_23
     move-exception v0
 
     .line 180
-    .local v0, "e":Ljava/lang/reflect/InvocationTargetException;
     new-instance v1, Lorg/parceler/ParcelerRuntimeException;
 
     const-string/jumbo v2, "Unable to create ParcelFactory Type"

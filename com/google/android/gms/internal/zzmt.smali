@@ -3,12 +3,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/android/gms/internal/zzmt$zza;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -20,17 +14,19 @@
 
 
 # static fields
-.field private static zzahn:Lcom/google/android/gms/internal/zzmt$zza;
+.field private static final c:Ljava/lang/Object;
 
-.field private static zzaho:I
+.field private static d:Lcom/google/android/gms/internal/zzmt$zza;
 
-.field private static zzahp:Ljava/lang/String;
+.field private static e:I
 
-.field private static final zzqf:Ljava/lang/Object;
+.field private static f:Ljava/lang/String;
 
 
 # instance fields
-.field private zzRi:Ljava/lang/Object;
+.field protected final a:Ljava/lang/String;
+
+.field protected final b:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -38,9 +34,7 @@
     .end annotation
 .end field
 
-.field protected final zzuX:Ljava/lang/String;
-
-.field protected final zzuY:Ljava/lang/Object;
+.field private g:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -57,19 +51,19 @@
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/internal/zzmt;->zzqf:Ljava/lang/Object;
+    sput-object v0, Lcom/google/android/gms/internal/zzmt;->c:Ljava/lang/Object;
 
     const/4 v0, 0x0
 
-    sput-object v0, Lcom/google/android/gms/internal/zzmt;->zzahn:Lcom/google/android/gms/internal/zzmt$zza;
+    sput-object v0, Lcom/google/android/gms/internal/zzmt;->d:Lcom/google/android/gms/internal/zzmt$zza;
 
     const/4 v0, 0x0
 
-    sput v0, Lcom/google/android/gms/internal/zzmt;->zzaho:I
+    sput v0, Lcom/google/android/gms/internal/zzmt;->e:I
 
     const-string/jumbo v0, "com.google.android.providers.gsf.permission.READ_GSERVICES"
 
-    sput-object v0, Lcom/google/android/gms/internal/zzmt;->zzahp:Ljava/lang/String;
+    sput-object v0, Lcom/google/android/gms/internal/zzmt;->f:Ljava/lang/String;
 
     return-void
 .end method
@@ -88,34 +82,24 @@
 
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/zzmt;->zzRi:Ljava/lang/Object;
+    iput-object v0, p0, Lcom/google/android/gms/internal/zzmt;->g:Ljava/lang/Object;
 
-    iput-object p1, p0, Lcom/google/android/gms/internal/zzmt;->zzuX:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/internal/zzmt;->a:Ljava/lang/String;
 
-    iput-object p2, p0, Lcom/google/android/gms/internal/zzmt;->zzuY:Ljava/lang/Object;
+    iput-object p2, p0, Lcom/google/android/gms/internal/zzmt;->b:Ljava/lang/Object;
 
     return-void
 .end method
 
-.method public static isInitialized()Z
+.method public static a()I
     .registers 1
 
-    sget-object v0, Lcom/google/android/gms/internal/zzmt;->zzahn:Lcom/google/android/gms/internal/zzmt$zza;
+    sget v0, Lcom/google/android/gms/internal/zzmt;->e:I
 
-    if-eqz v0, :cond_6
-
-    const/4 v0, 0x1
-
-    :goto_5
     return v0
-
-    :cond_6
-    const/4 v0, 0x0
-
-    goto :goto_5
 .end method
 
-.method public static zza(Ljava/lang/String;Ljava/lang/Float;)Lcom/google/android/gms/internal/zzmt;
+.method public static a(Ljava/lang/String;Ljava/lang/Float;)Lcom/google/android/gms/internal/zzmt;
     .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -137,7 +121,7 @@
     return-object v0
 .end method
 
-.method public static zza(Ljava/lang/String;Ljava/lang/Integer;)Lcom/google/android/gms/internal/zzmt;
+.method public static a(Ljava/lang/String;Ljava/lang/Integer;)Lcom/google/android/gms/internal/zzmt;
     .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -159,7 +143,7 @@
     return-object v0
 .end method
 
-.method public static zza(Ljava/lang/String;Ljava/lang/Long;)Lcom/google/android/gms/internal/zzmt;
+.method public static a(Ljava/lang/String;Ljava/lang/Long;)Lcom/google/android/gms/internal/zzmt;
     .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -181,7 +165,29 @@
     return-object v0
 .end method
 
-.method public static zzg(Ljava/lang/String;Z)Lcom/google/android/gms/internal/zzmt;
+.method public static a(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/internal/zzmt;
+    .registers 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ")",
+            "Lcom/google/android/gms/internal/zzmt",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+
+    new-instance v0, Lcom/google/android/gms/internal/zzmt$5;
+
+    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/internal/zzmt$5;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public static a(Ljava/lang/String;Z)Lcom/google/android/gms/internal/zzmt;
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -206,74 +212,35 @@
     return-object v0
 .end method
 
-.method public static zzpE()I
+.method public static b()Z
     .registers 1
 
-    sget v0, Lcom/google/android/gms/internal/zzmt;->zzaho:I
+    sget-object v0, Lcom/google/android/gms/internal/zzmt;->d:Lcom/google/android/gms/internal/zzmt$zza;
 
+    if-eqz v0, :cond_6
+
+    const/4 v0, 0x1
+
+    :goto_5
     return v0
+
+    :cond_6
+    const/4 v0, 0x0
+
+    goto :goto_5
 .end method
 
-.method static synthetic zzpG()Lcom/google/android/gms/internal/zzmt$zza;
+.method static synthetic e()Lcom/google/android/gms/internal/zzmt$zza;
     .registers 1
 
-    sget-object v0, Lcom/google/android/gms/internal/zzmt;->zzahn:Lcom/google/android/gms/internal/zzmt$zza;
-
-    return-object v0
-.end method
-
-.method public static zzw(Ljava/lang/String;Ljava/lang/String;)Lcom/google/android/gms/internal/zzmt;
-    .registers 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ")",
-            "Lcom/google/android/gms/internal/zzmt",
-            "<",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-
-    new-instance v0, Lcom/google/android/gms/internal/zzmt$5;
-
-    invoke-direct {v0, p0, p1}, Lcom/google/android/gms/internal/zzmt$5;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    sget-object v0, Lcom/google/android/gms/internal/zzmt;->d:Lcom/google/android/gms/internal/zzmt$zza;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public final get()Ljava/lang/Object;
-    .registers 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TT;"
-        }
-    .end annotation
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzmt;->zzRi:Ljava/lang/Object;
-
-    if-eqz v0, :cond_7
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzmt;->zzRi:Ljava/lang/Object;
-
-    :goto_6
-    return-object v0
-
-    :cond_7
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzmt;->zzuX:Ljava/lang/String;
-
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/internal/zzmt;->zzcn(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    goto :goto_6
-.end method
-
-.method protected abstract zzcn(Ljava/lang/String;)Ljava/lang/Object;
+.method protected abstract a(Ljava/lang/String;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -283,7 +250,34 @@
     .end annotation
 .end method
 
-.method public final zzpF()Ljava/lang/Object;
+.method public final c()Ljava/lang/Object;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzmt;->g:Ljava/lang/Object;
+
+    if-eqz v0, :cond_7
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzmt;->g:Ljava/lang/Object;
+
+    :goto_6
+    return-object v0
+
+    :cond_7
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzmt;->a:Ljava/lang/String;
+
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/internal/zzmt;->a(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    goto :goto_6
+.end method
+
+.method public final d()Ljava/lang/Object;
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -296,7 +290,7 @@
     move-result-wide v0
 
     :try_start_4
-    invoke-virtual {p0}, Lcom/google/android/gms/internal/zzmt;->get()Ljava/lang/Object;
+    invoke-virtual {p0}, Lcom/google/android/gms/internal/zzmt;->c()Ljava/lang/Object;
     :try_end_7
     .catchall {:try_start_4 .. :try_end_7} :catchall_c
 

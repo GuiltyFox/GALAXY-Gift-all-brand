@@ -10,9 +10,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;Lcom/fasterxml/jackson/databind/BeanProperty;Ljava/lang/String;)V
     .registers 4
-    .param p1, "idRes"    # Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;
-    .param p2, "property"    # Lcom/fasterxml/jackson/databind/BeanProperty;
-    .param p3, "propName"    # Ljava/lang/String;
 
     .prologue
     .line 27
@@ -29,7 +26,6 @@
 # virtual methods
 .method public bridge synthetic forProperty(Lcom/fasterxml/jackson/databind/BeanProperty;)Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/BeanProperty;
 
     .prologue
     .line 20
@@ -42,7 +38,6 @@
 
 .method public bridge synthetic forProperty(Lcom/fasterxml/jackson/databind/BeanProperty;)Lcom/fasterxml/jackson/databind/jsontype/impl/AsArrayTypeSerializer;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/BeanProperty;
 
     .prologue
     .line 20
@@ -55,7 +50,6 @@
 
 .method public forProperty(Lcom/fasterxml/jackson/databind/BeanProperty;)Lcom/fasterxml/jackson/databind/jsontype/impl/AsPropertyTypeSerializer;
     .registers 5
-    .param p1, "prop"    # Lcom/fasterxml/jackson/databind/BeanProperty;
 
     .prologue
     .line 33
@@ -63,11 +57,9 @@
 
     if-ne v0, p1, :cond_5
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/jsontype/impl/AsPropertyTypeSerializer;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/jsontype/impl/AsPropertyTypeSerializer;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/jsontype/impl/AsPropertyTypeSerializer;
 
@@ -104,14 +96,6 @@
 
 .method public writeCustomTypePrefixForObject(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/String;)V
     .registers 5
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "typeId"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 94
@@ -145,14 +129,6 @@
 
 .method public writeCustomTypeSuffixForObject(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/String;)V
     .registers 4
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "typeId"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 105
@@ -164,13 +140,6 @@
 
 .method public writeTypePrefixForObject(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 5
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 45
@@ -179,7 +148,6 @@
     move-result-object v0
 
     .line 46
-    .local v0, "typeId":Ljava/lang/String;
     invoke-virtual {p2}, Lcom/fasterxml/jackson/core/JsonGenerator;->canWriteTypeId()Z
 
     move-result v1
@@ -210,8 +178,6 @@
 
 .method public writeTypePrefixForObject(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Ljava/lang/Class;)V
     .registers 6
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -222,21 +188,13 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
     .prologue
     .line 58
-    .local p3, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0, p1, p3}, Lcom/fasterxml/jackson/databind/jsontype/impl/AsPropertyTypeSerializer;->idFromValueAndType(Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object v0
 
     .line 59
-    .local v0, "typeId":Ljava/lang/String;
     invoke-virtual {p2}, Lcom/fasterxml/jackson/core/JsonGenerator;->canWriteTypeId()Z
 
     move-result v1
@@ -267,13 +225,6 @@
 
 .method public writeTypeSuffixForObject(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 3
-    .param p1, "value"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 76

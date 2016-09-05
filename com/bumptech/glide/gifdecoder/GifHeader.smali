@@ -4,15 +4,15 @@
 
 
 # instance fields
-.field bgColor:I
+.field a:[I
 
-.field bgIndex:I
+.field b:I
 
-.field currentFrame:Lcom/bumptech/glide/gifdecoder/GifFrame;
+.field c:I
 
-.field frameCount:I
+.field d:Lcom/bumptech/glide/gifdecoder/GifFrame;
 
-.field frames:Ljava/util/List;
+.field e:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
@@ -23,21 +23,21 @@
     .end annotation
 .end field
 
-.field gct:[I
+.field f:I
 
-.field gctFlag:Z
+.field g:I
 
-.field gctSize:I
+.field h:Z
 
-.field height:I
+.field i:I
 
-.field loopCount:I
+.field j:I
 
-.field pixelAspect:I
+.field k:I
 
-.field status:I
+.field l:I
 
-.field width:I
+.field m:I
 
 
 # direct methods
@@ -53,62 +53,42 @@
     .line 13
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcom/bumptech/glide/gifdecoder/GifHeader;->gct:[I
+    iput-object v0, p0, Lcom/bumptech/glide/gifdecoder/GifHeader;->a:[I
 
     .line 14
-    iput v1, p0, Lcom/bumptech/glide/gifdecoder/GifHeader;->status:I
+    iput v1, p0, Lcom/bumptech/glide/gifdecoder/GifHeader;->b:I
 
     .line 15
-    iput v1, p0, Lcom/bumptech/glide/gifdecoder/GifHeader;->frameCount:I
+    iput v1, p0, Lcom/bumptech/glide/gifdecoder/GifHeader;->c:I
 
     .line 18
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/bumptech/glide/gifdecoder/GifHeader;->frames:Ljava/util/List;
+    iput-object v0, p0, Lcom/bumptech/glide/gifdecoder/GifHeader;->e:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getHeight()I
-    .registers 2
-
-    .prologue
-    .line 40
-    iget v0, p0, Lcom/bumptech/glide/gifdecoder/GifHeader;->height:I
-
-    return v0
-.end method
-
-.method public getNumFrames()I
+.method public a()I
     .registers 2
 
     .prologue
     .line 48
-    iget v0, p0, Lcom/bumptech/glide/gifdecoder/GifHeader;->frameCount:I
+    iget v0, p0, Lcom/bumptech/glide/gifdecoder/GifHeader;->c:I
 
     return v0
 .end method
 
-.method public getStatus()I
+.method public b()I
     .registers 2
 
     .prologue
     .line 55
-    iget v0, p0, Lcom/bumptech/glide/gifdecoder/GifHeader;->status:I
-
-    return v0
-.end method
-
-.method public getWidth()I
-    .registers 2
-
-    .prologue
-    .line 44
-    iget v0, p0, Lcom/bumptech/glide/gifdecoder/GifHeader;->width:I
+    iget v0, p0, Lcom/bumptech/glide/gifdecoder/GifHeader;->b:I
 
     return v0
 .end method

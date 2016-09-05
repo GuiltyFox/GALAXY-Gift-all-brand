@@ -3,19 +3,8 @@
 .source "OnErrorThrowable.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lrx/exceptions/OnErrorThrowable$OnNextValue;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "Primitives"
-.end annotation
-
-
 # static fields
-.field static final INSTANCE:Ljava/util/Set;
+.field static final a:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set",
@@ -33,26 +22,16 @@
 
     .prologue
     .line 124
-    invoke-static {}, Lrx/exceptions/OnErrorThrowable$OnNextValue$Primitives;->create()Ljava/util/Set;
+    invoke-static {}, Lrx/exceptions/OnErrorThrowable$OnNextValue$Primitives;->a()Ljava/util/Set;
 
     move-result-object v0
 
-    sput-object v0, Lrx/exceptions/OnErrorThrowable$OnNextValue$Primitives;->INSTANCE:Ljava/util/Set;
+    sput-object v0, Lrx/exceptions/OnErrorThrowable$OnNextValue$Primitives;->a:Ljava/util/Set;
 
     return-void
 .end method
 
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 122
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method private static create()Ljava/util/Set;
+.method private static a()Ljava/util/Set;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -71,7 +50,6 @@
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     .line 128
-    .local v0, "set":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Class<*>;>;"
     const-class v1, Ljava/lang/Boolean;
 
     invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z

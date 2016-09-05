@@ -10,8 +10,6 @@
 # direct methods
 .method constructor <init>(Landroid/support/design/widget/VisibilityAwareImageButton;Landroid/support/design/widget/ShadowViewDelegate;)V
     .registers 3
-    .param p1, "view"    # Landroid/support/design/widget/VisibilityAwareImageButton;
-    .param p2, "shadowViewDelegate"    # Landroid/support/design/widget/ShadowViewDelegate;
 
     .prologue
     .line 31
@@ -23,8 +21,6 @@
 
 .method static synthetic access$002(Landroid/support/design/widget/FloatingActionButtonIcs;Z)Z
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/FloatingActionButtonIcs;
-    .param p1, "x1"    # Z
 
     .prologue
     .line 25
@@ -35,7 +31,6 @@
 
 .method private updateFromViewRotation(F)V
     .registers 4
-    .param p1, "rotation"    # F
 
     .prologue
     .line 142
@@ -72,11 +67,6 @@
 # virtual methods
 .method hide(Landroid/support/design/widget/FloatingActionButtonImpl$InternalVisibilityChangedListener;Z)V
     .registers 7
-    .param p1, "listener"    # Landroid/support/design/widget/FloatingActionButtonImpl$InternalVisibilityChangedListener;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p2, "fromUser"    # Z
 
     .prologue
     const/4 v1, 0x0
@@ -110,7 +100,7 @@
     :cond_13
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonIcs;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
 
-    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->isLaidOut(Landroid/view/View;)Z
+    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->E(Landroid/view/View;)Z
 
     move-result v0
 
@@ -219,16 +209,11 @@
 
 .method show(Landroid/support/design/widget/FloatingActionButtonImpl$InternalVisibilityChangedListener;Z)V
     .registers 7
-    .param p1, "listener"    # Landroid/support/design/widget/FloatingActionButtonImpl$InternalVisibilityChangedListener;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p2, "fromUser"    # Z
 
     .prologue
     const/4 v1, 0x0
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     .line 100
     iget-boolean v0, p0, Landroid/support/design/widget/FloatingActionButtonIcs;->mIsHiding:Z
@@ -247,7 +232,7 @@
     :cond_f
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonIcs;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
 
-    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->isLaidOut(Landroid/view/View;)Z
+    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->E(Landroid/view/View;)Z
 
     move-result v0
 

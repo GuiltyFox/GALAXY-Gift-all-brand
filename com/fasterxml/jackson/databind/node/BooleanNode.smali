@@ -41,7 +41,6 @@
 
 .method private constructor <init>(Z)V
     .registers 2
-    .param p1, "v"    # Z
 
     .prologue
     .line 24
@@ -74,7 +73,6 @@
 
 .method public static valueOf(Z)Lcom/fasterxml/jackson/databind/node/BooleanNode;
     .registers 2
-    .param p0, "b"    # Z
 
     .prologue
     .line 29
@@ -105,7 +103,6 @@
 
 .method public asBoolean(Z)Z
     .registers 3
-    .param p1, "defaultValue"    # Z
 
     .prologue
     .line 57
@@ -116,7 +113,6 @@
 
 .method public asDouble(D)D
     .registers 5
-    .param p1, "defaultValue"    # D
 
     .prologue
     .line 70
@@ -124,7 +120,7 @@
 
     if-eqz v0, :cond_7
 
-    const-wide/high16 v0, 0x3ff0000000000000L
+    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
     :goto_6
     return-wide v0
@@ -137,7 +133,6 @@
 
 .method public asInt(I)I
     .registers 3
-    .param p1, "defaultValue"    # I
 
     .prologue
     .line 62
@@ -158,7 +153,6 @@
 
 .method public asLong(J)J
     .registers 5
-    .param p1, "defaultValue"    # J
 
     .prologue
     .line 66
@@ -229,7 +223,6 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .registers 6
-    .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
     const/4 v0, 0x1
@@ -240,13 +233,11 @@
     if-ne p1, p0, :cond_5
 
     .line 92
-    .end local p1    # "o":Ljava/lang/Object;
     :cond_4
     :goto_4
     return v0
 
     .line 88
-    .restart local p1    # "o":Ljava/lang/Object;
     :cond_5
     if-nez p1, :cond_9
 
@@ -271,7 +262,6 @@
 
     check-cast p1, Lcom/fasterxml/jackson/databind/node/BooleanNode;
 
-    .end local p1    # "o":Ljava/lang/Object;
     iget-boolean v3, p1, Lcom/fasterxml/jackson/databind/node/BooleanNode;->_value:Z
 
     if-eq v2, v3, :cond_4
@@ -293,14 +283,6 @@
 
 .method public final serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 4
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p2, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 77

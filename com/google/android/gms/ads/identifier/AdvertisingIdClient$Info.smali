@@ -2,53 +2,39 @@
 .super Ljava/lang/Object;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "Info"
-.end annotation
-
-
 # instance fields
-.field private final zzoS:Ljava/lang/String;
+.field private final a:Ljava/lang/String;
 
-.field private final zzoT:Z
+.field private final b:Z
 
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Z)V
     .registers 3
-    .param p1, "advertisingId"    # Ljava/lang/String;
-    .param p2, "limitAdTrackingEnabled"    # Z
 
-    .prologue
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->zzoS:Ljava/lang/String;
+    iput-object p1, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->a:Ljava/lang/String;
 
-    iput-boolean p2, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->zzoT:Z
+    iput-boolean p2, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->b:Z
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getId()Ljava/lang/String;
+.method public a()Ljava/lang/String;
     .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->zzoS:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->a:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public isLimitAdTrackingEnabled()Z
+.method public b()Z
     .registers 2
 
-    iget-boolean v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->zzoT:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->b:Z
 
     return v0
 .end method
@@ -66,7 +52,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->zzoS:Ljava/lang/String;
+    iget-object v1, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->a:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -78,7 +64,7 @@
 
     move-result-object v0
 
-    iget-boolean v1, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->zzoT:Z
+    iget-boolean v1, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$Info;->b:Z
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 

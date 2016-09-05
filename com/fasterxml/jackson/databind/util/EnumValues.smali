@@ -48,8 +48,6 @@
 
     .prologue
     .line 24
-    .local p1, "enumClass":Ljava/lang/Class;, "Ljava/lang/Class<Ljava/lang/Enum<*>;>;"
-    .local p2, "v":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Enum<*>;Lcom/fasterxml/jackson/core/SerializableString;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 25
@@ -68,7 +66,6 @@
 
 .method public static construct(Lcom/fasterxml/jackson/databind/SerializationConfig;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/util/EnumValues;
     .registers 3
-    .param p0, "config"    # Lcom/fasterxml/jackson/databind/SerializationConfig;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -83,7 +80,6 @@
 
     .prologue
     .line 30
-    .local p1, "enumClass":Ljava/lang/Class;, "Ljava/lang/Class<Ljava/lang/Enum<*>;>;"
     sget-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_ENUMS_USING_TO_STRING:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/databind/SerializationConfig;->isEnabled(Lcom/fasterxml/jackson/databind/SerializationFeature;)Z
@@ -110,7 +106,7 @@
 .end method
 
 .method public static constructFromName(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/util/EnumValues;
-    .registers 13
+    .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -126,115 +122,97 @@
 
     .prologue
     .line 41
-    .local p0, "config":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
-    .local p1, "enumClass":Ljava/lang/Class;, "Ljava/lang/Class<Ljava/lang/Enum<*>;>;"
     invoke-static {p1}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->findEnumType(Ljava/lang/Class;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    .line 42
+    invoke-virtual {v0}, Ljava/lang/Class;->getEnumConstants()[Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Ljava/lang/Enum;
+
+    .line 43
+    if-eqz v0, :cond_2f
+
+    .line 45
+    new-instance v2, Ljava/util/HashMap;
+
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
+
+    .line 46
+    array-length v3, v0
+
+    const/4 v1, 0x0
+
+    :goto_13
+    if-ge v1, v3, :cond_29
+
+    aget-object v4, v0, v1
+
+    .line 47
+    invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getAnnotationIntrospector()Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v4}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findEnumValue(Ljava/lang/Enum;)Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 48
+    invoke-virtual {p0, v5}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->compileString(Ljava/lang/String;)Lcom/fasterxml/jackson/core/SerializableString;
+
+    move-result-object v5
+
+    invoke-interface {v2, v4, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 46
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_13
+
+    .line 50
+    :cond_29
+    new-instance v0, Lcom/fasterxml/jackson/databind/util/EnumValues;
+
+    invoke-direct {v0, p1, v2}, Lcom/fasterxml/jackson/databind/util/EnumValues;-><init>(Ljava/lang/Class;Ljava/util/Map;)V
+
+    return-object v0
+
+    .line 52
+    :cond_2f
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "Can not determine enum constants for Class "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 42
-    .local v1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<+Ljava/lang/Enum<*>;>;"
-    invoke-virtual {v1}, Ljava/lang/Class;->getEnumConstants()[Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, [Ljava/lang/Enum;
-
-    .line 43
-    .local v7, "values":[Ljava/lang/Enum;, "[Ljava/lang/Enum<*>;"
-    if-eqz v7, :cond_30
-
-    .line 45
-    new-instance v5, Ljava/util/HashMap;
-
-    invoke-direct {v5}, Ljava/util/HashMap;-><init>()V
-
-    .line 46
-    .local v5, "map":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Enum<*>;Lcom/fasterxml/jackson/core/SerializableString;>;"
-    move-object v0, v7
-
-    .local v0, "arr$":[Ljava/lang/Enum;
-    array-length v4, v0
-
-    .local v4, "len$":I
-    const/4 v3, 0x0
-
-    .local v3, "i$":I
-    :goto_14
-    if-ge v3, v4, :cond_2a
-
-    aget-object v2, v0, v3
-
-    .line 47
-    .local v2, "en":Ljava/lang/Enum;, "Ljava/lang/Enum<*>;"
-    invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getAnnotationIntrospector()Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
-
-    move-result-object v8
-
-    invoke-virtual {v8, v2}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findEnumValue(Ljava/lang/Enum;)Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 48
-    .local v6, "value":Ljava/lang/String;
-    invoke-virtual {p0, v6}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->compileString(Ljava/lang/String;)Lcom/fasterxml/jackson/core/SerializableString;
-
-    move-result-object v8
-
-    invoke-interface {v5, v2, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 46
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_14
-
-    .line 50
-    .end local v2    # "en":Ljava/lang/Enum;, "Ljava/lang/Enum<*>;"
-    .end local v6    # "value":Ljava/lang/String;
-    :cond_2a
-    new-instance v8, Lcom/fasterxml/jackson/databind/util/EnumValues;
-
-    invoke-direct {v8, p1, v5}, Lcom/fasterxml/jackson/databind/util/EnumValues;-><init>(Ljava/lang/Class;Ljava/util/Map;)V
-
-    return-object v8
-
-    .line 52
-    .end local v0    # "arr$":[Ljava/lang/Enum;
-    .end local v3    # "i$":I
-    .end local v4    # "len$":I
-    .end local v5    # "map":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Enum<*>;Lcom/fasterxml/jackson/core/SerializableString;>;"
-    :cond_30
-    new-instance v8, Ljava/lang/IllegalArgumentException;
-
-    new-instance v9, Ljava/lang/StringBuilder;
-
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v10, "Can not determine enum constants for Class "
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
     invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v2
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v1
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v1
 
-    invoke-direct {v8, v9}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v8
+    throw v0
 .end method
 
 .method public static constructFromToString(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/util/EnumValues;
-    .registers 12
+    .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -250,104 +228,88 @@
 
     .prologue
     .line 57
-    .local p0, "config":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
-    .local p1, "enumClass":Ljava/lang/Class;, "Ljava/lang/Class<Ljava/lang/Enum<*>;>;"
     invoke-static {p1}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->findEnumType(Ljava/lang/Class;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    .line 58
+    invoke-virtual {v0}, Ljava/lang/Class;->getEnumConstants()[Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, [Ljava/lang/Enum;
+
+    .line 59
+    if-eqz v0, :cond_2b
+
+    .line 61
+    new-instance v2, Ljava/util/HashMap;
+
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
+
+    .line 62
+    array-length v3, v0
+
+    const/4 v1, 0x0
+
+    :goto_13
+    if-ge v1, v3, :cond_25
+
+    aget-object v4, v0, v1
+
+    .line 63
+    invoke-virtual {v4}, Ljava/lang/Enum;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {p0, v5}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->compileString(Ljava/lang/String;)Lcom/fasterxml/jackson/core/SerializableString;
+
+    move-result-object v5
+
+    invoke-interface {v2, v4, v5}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 62
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_13
+
+    .line 65
+    :cond_25
+    new-instance v0, Lcom/fasterxml/jackson/databind/util/EnumValues;
+
+    invoke-direct {v0, p1, v2}, Lcom/fasterxml/jackson/databind/util/EnumValues;-><init>(Ljava/lang/Class;Ljava/util/Map;)V
+
+    return-object v0
+
+    .line 67
+    :cond_2b
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "Can not determine enum constants for Class "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 58
-    .local v1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<+Ljava/lang/Enum<*>;>;"
-    invoke-virtual {v1}, Ljava/lang/Class;->getEnumConstants()[Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, [Ljava/lang/Enum;
-
-    .line 59
-    .local v6, "values":[Ljava/lang/Enum;, "[Ljava/lang/Enum<*>;"
-    if-eqz v6, :cond_2c
-
-    .line 61
-    new-instance v5, Ljava/util/HashMap;
-
-    invoke-direct {v5}, Ljava/util/HashMap;-><init>()V
-
-    .line 62
-    .local v5, "map":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Enum<*>;Lcom/fasterxml/jackson/core/SerializableString;>;"
-    move-object v0, v6
-
-    .local v0, "arr$":[Ljava/lang/Enum;
-    array-length v4, v0
-
-    .local v4, "len$":I
-    const/4 v3, 0x0
-
-    .local v3, "i$":I
-    :goto_14
-    if-ge v3, v4, :cond_26
-
-    aget-object v2, v0, v3
-
-    .line 63
-    .local v2, "en":Ljava/lang/Enum;, "Ljava/lang/Enum<*>;"
-    invoke-virtual {v2}, Ljava/lang/Enum;->toString()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {p0, v7}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->compileString(Ljava/lang/String;)Lcom/fasterxml/jackson/core/SerializableString;
-
-    move-result-object v7
-
-    invoke-interface {v5, v2, v7}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 62
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_14
-
-    .line 65
-    .end local v2    # "en":Ljava/lang/Enum;, "Ljava/lang/Enum<*>;"
-    :cond_26
-    new-instance v7, Lcom/fasterxml/jackson/databind/util/EnumValues;
-
-    invoke-direct {v7, p1, v5}, Lcom/fasterxml/jackson/databind/util/EnumValues;-><init>(Ljava/lang/Class;Ljava/util/Map;)V
-
-    return-object v7
-
-    .line 67
-    .end local v0    # "arr$":[Ljava/lang/Enum;
-    .end local v3    # "i$":I
-    .end local v4    # "len$":I
-    .end local v5    # "map":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Enum<*>;Lcom/fasterxml/jackson/core/SerializableString;>;"
-    :cond_2c
-    new-instance v7, Ljava/lang/IllegalArgumentException;
-
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v9, "Can not determine enum constants for Class "
-
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v8
-
     invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v2
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v1
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v1
 
-    invoke-direct {v7, v8}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v7
+    throw v0
 .end method
 
 
@@ -403,7 +365,6 @@
 
     .prologue
     .line 70
-    .local p1, "key":Ljava/lang/Enum;, "Ljava/lang/Enum<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/EnumValues;->_values:Ljava/util/EnumMap;
 
     invoke-virtual {v0, p1}, Ljava/util/EnumMap;->get(Ljava/lang/Object;)Ljava/lang/Object;

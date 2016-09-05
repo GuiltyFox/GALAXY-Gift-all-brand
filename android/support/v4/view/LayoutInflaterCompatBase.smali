@@ -3,29 +3,9 @@
 .source "LayoutInflaterCompatBase.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/v4/view/LayoutInflaterCompatBase$FactoryWrapper;
-    }
-.end annotation
-
-
 # direct methods
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 24
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 26
-    return-void
-.end method
-
-.method static getFactory(Landroid/view/LayoutInflater;)Landroid/support/v4/view/LayoutInflaterFactory;
+.method static a(Landroid/view/LayoutInflater;)Landroid/support/v4/view/LayoutInflaterFactory;
     .registers 3
-    .param p0, "inflater"    # Landroid/view/LayoutInflater;
 
     .prologue
     .line 49
@@ -34,7 +14,6 @@
     move-result-object v0
 
     .line 50
-    .local v0, "factory":Landroid/view/LayoutInflater$Factory;
     instance-of v1, v0, Landroid/support/v4/view/LayoutInflaterCompatBase$FactoryWrapper;
 
     if-eqz v1, :cond_d
@@ -42,24 +21,20 @@
     .line 51
     check-cast v0, Landroid/support/v4/view/LayoutInflaterCompatBase$FactoryWrapper;
 
-    .end local v0    # "factory":Landroid/view/LayoutInflater$Factory;
-    iget-object v1, v0, Landroid/support/v4/view/LayoutInflaterCompatBase$FactoryWrapper;->mDelegateFactory:Landroid/support/v4/view/LayoutInflaterFactory;
+    iget-object v0, v0, Landroid/support/v4/view/LayoutInflaterCompatBase$FactoryWrapper;->a:Landroid/support/v4/view/LayoutInflaterFactory;
 
     .line 53
     :goto_c
-    return-object v1
+    return-object v0
 
-    .restart local v0    # "factory":Landroid/view/LayoutInflater$Factory;
     :cond_d
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_c
 .end method
 
-.method static setFactory(Landroid/view/LayoutInflater;Landroid/support/v4/view/LayoutInflaterFactory;)V
+.method static a(Landroid/view/LayoutInflater;Landroid/support/v4/view/LayoutInflaterFactory;)V
     .registers 3
-    .param p0, "inflater"    # Landroid/view/LayoutInflater;
-    .param p1, "factory"    # Landroid/support/v4/view/LayoutInflaterFactory;
 
     .prologue
     .line 45

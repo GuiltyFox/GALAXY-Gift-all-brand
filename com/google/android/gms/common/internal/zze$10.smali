@@ -7,11 +7,6 @@
     value = Lcom/google/android/gms/common/internal/zze;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 
 # direct methods
 .method constructor <init>()V
@@ -24,10 +19,10 @@
 
 
 # virtual methods
-.method public zza(Lcom/google/android/gms/common/internal/zze;)Lcom/google/android/gms/common/internal/zze;
+.method public a(Lcom/google/android/gms/common/internal/zze;)Lcom/google/android/gms/common/internal/zze;
     .registers 3
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -36,7 +31,15 @@
     return-object v0
 .end method
 
-.method public zzb(Ljava/lang/CharSequence;)Z
+.method public b(C)Z
+    .registers 3
+
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public b(Ljava/lang/CharSequence;)Z
     .registers 3
 
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
@@ -54,12 +57,4 @@
     const/4 v0, 0x0
 
     goto :goto_7
-.end method
-
-.method public zzd(C)Z
-    .registers 3
-
-    const/4 v0, 0x0
-
-    return v0
 .end method

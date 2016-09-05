@@ -3,21 +3,6 @@
 .source "ActionBar.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/app/ActionBar;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x409
-    name = "Tab"
-.end annotation
-
-
-# static fields
-.field public static final INVALID_POSITION:I = -0x1
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -31,57 +16,17 @@
 
 
 # virtual methods
-.method public abstract getContentDescription()Ljava/lang/CharSequence;
+.method public abstract a()Landroid/graphics/drawable/Drawable;
 .end method
 
-.method public abstract getCustomView()Landroid/view/View;
+.method public abstract b()Ljava/lang/CharSequence;
 .end method
 
-.method public abstract getIcon()Landroid/graphics/drawable/Drawable;
+.method public abstract c()Landroid/view/View;
 .end method
 
-.method public abstract getPosition()I
+.method public abstract d()V
 .end method
 
-.method public abstract getTag()Ljava/lang/Object;
-.end method
-
-.method public abstract getText()Ljava/lang/CharSequence;
-.end method
-
-.method public abstract select()V
-.end method
-
-.method public abstract setContentDescription(I)Landroid/support/v7/app/ActionBar$Tab;
-.end method
-
-.method public abstract setContentDescription(Ljava/lang/CharSequence;)Landroid/support/v7/app/ActionBar$Tab;
-.end method
-
-.method public abstract setCustomView(I)Landroid/support/v7/app/ActionBar$Tab;
-.end method
-
-.method public abstract setCustomView(Landroid/view/View;)Landroid/support/v7/app/ActionBar$Tab;
-.end method
-
-.method public abstract setIcon(I)Landroid/support/v7/app/ActionBar$Tab;
-    .param p1    # I
-        .annotation build Landroid/support/annotation/DrawableRes;
-        .end annotation
-    .end param
-.end method
-
-.method public abstract setIcon(Landroid/graphics/drawable/Drawable;)Landroid/support/v7/app/ActionBar$Tab;
-.end method
-
-.method public abstract setTabListener(Landroid/support/v7/app/ActionBar$TabListener;)Landroid/support/v7/app/ActionBar$Tab;
-.end method
-
-.method public abstract setTag(Ljava/lang/Object;)Landroid/support/v7/app/ActionBar$Tab;
-.end method
-
-.method public abstract setText(I)Landroid/support/v7/app/ActionBar$Tab;
-.end method
-
-.method public abstract setText(Ljava/lang/CharSequence;)Landroid/support/v7/app/ActionBar$Tab;
+.method public abstract e()Ljava/lang/CharSequence;
 .end method

@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/engine/DecodeJob;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = "SourceWriter"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<DataType:",
@@ -28,15 +19,9 @@
 
 
 # instance fields
-.field private final data:Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "TDataType;"
-        }
-    .end annotation
-.end field
+.field final synthetic a:Lcom/bumptech/glide/load/engine/DecodeJob;
 
-.field private final encoder:Lcom/bumptech/glide/load/Encoder;
+.field private final b:Lcom/bumptech/glide/load/Encoder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/Encoder",
@@ -45,7 +30,13 @@
     .end annotation
 .end field
 
-.field final synthetic this$0:Lcom/bumptech/glide/load/engine/DecodeJob;
+.field private final c:Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "TDataType;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
@@ -61,18 +52,15 @@
 
     .prologue
     .line 259
-    .local p0, "this":Lcom/bumptech/glide/load/engine/DecodeJob$SourceWriter;, "Lcom/bumptech/glide/load/engine/DecodeJob<TA;TT;TZ;>.SourceWriter<TDataType;>;"
-    .local p2, "encoder":Lcom/bumptech/glide/load/Encoder;, "Lcom/bumptech/glide/load/Encoder<TDataType;>;"
-    .local p3, "data":Ljava/lang/Object;, "TDataType;"
-    iput-object p1, p0, Lcom/bumptech/glide/load/engine/DecodeJob$SourceWriter;->this$0:Lcom/bumptech/glide/load/engine/DecodeJob;
+    iput-object p1, p0, Lcom/bumptech/glide/load/engine/DecodeJob$SourceWriter;->a:Lcom/bumptech/glide/load/engine/DecodeJob;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 260
-    iput-object p2, p0, Lcom/bumptech/glide/load/engine/DecodeJob$SourceWriter;->encoder:Lcom/bumptech/glide/load/Encoder;
+    iput-object p2, p0, Lcom/bumptech/glide/load/engine/DecodeJob$SourceWriter;->b:Lcom/bumptech/glide/load/Encoder;
 
     .line 261
-    iput-object p3, p0, Lcom/bumptech/glide/load/engine/DecodeJob$SourceWriter;->data:Ljava/lang/Object;
+    iput-object p3, p0, Lcom/bumptech/glide/load/engine/DecodeJob$SourceWriter;->c:Ljava/lang/Object;
 
     .line 262
     return-void
@@ -80,65 +68,59 @@
 
 
 # virtual methods
-.method public write(Ljava/io/File;)Z
+.method public a(Ljava/io/File;)Z
     .registers 7
-    .param p1, "file"    # Ljava/io/File;
 
     .prologue
     .line 266
-    .local p0, "this":Lcom/bumptech/glide/load/engine/DecodeJob$SourceWriter;, "Lcom/bumptech/glide/load/engine/DecodeJob<TA;TT;TZ;>.SourceWriter<TDataType;>;"
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     .line 267
-    .local v2, "success":Z
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     .line 269
-    .local v1, "os":Ljava/io/OutputStream;
     :try_start_2
-    iget-object v3, p0, Lcom/bumptech/glide/load/engine/DecodeJob$SourceWriter;->this$0:Lcom/bumptech/glide/load/engine/DecodeJob;
+    iget-object v1, p0, Lcom/bumptech/glide/load/engine/DecodeJob$SourceWriter;->a:Lcom/bumptech/glide/load/engine/DecodeJob;
 
-    # getter for: Lcom/bumptech/glide/load/engine/DecodeJob;->fileOpener:Lcom/bumptech/glide/load/engine/DecodeJob$FileOpener;
-    invoke-static {v3}, Lcom/bumptech/glide/load/engine/DecodeJob;->access$000(Lcom/bumptech/glide/load/engine/DecodeJob;)Lcom/bumptech/glide/load/engine/DecodeJob$FileOpener;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p1}, Lcom/bumptech/glide/load/engine/DecodeJob$FileOpener;->open(Ljava/io/File;)Ljava/io/OutputStream;
+    invoke-static {v1}, Lcom/bumptech/glide/load/engine/DecodeJob;->a(Lcom/bumptech/glide/load/engine/DecodeJob;)Lcom/bumptech/glide/load/engine/DecodeJob$FileOpener;
 
     move-result-object v1
 
+    invoke-virtual {v1, p1}, Lcom/bumptech/glide/load/engine/DecodeJob$FileOpener;->a(Ljava/io/File;)Ljava/io/OutputStream;
+
+    move-result-object v2
+
     .line 270
-    iget-object v3, p0, Lcom/bumptech/glide/load/engine/DecodeJob$SourceWriter;->encoder:Lcom/bumptech/glide/load/Encoder;
+    iget-object v1, p0, Lcom/bumptech/glide/load/engine/DecodeJob$SourceWriter;->b:Lcom/bumptech/glide/load/Encoder;
 
-    iget-object v4, p0, Lcom/bumptech/glide/load/engine/DecodeJob$SourceWriter;->data:Ljava/lang/Object;
+    iget-object v3, p0, Lcom/bumptech/glide/load/engine/DecodeJob$SourceWriter;->c:Ljava/lang/Object;
 
-    invoke-interface {v3, v4, v1}, Lcom/bumptech/glide/load/Encoder;->encode(Ljava/lang/Object;Ljava/io/OutputStream;)Z
+    invoke-interface {v1, v3, v2}, Lcom/bumptech/glide/load/Encoder;->a(Ljava/lang/Object;Ljava/io/OutputStream;)Z
     :try_end_13
     .catch Ljava/io/FileNotFoundException; {:try_start_2 .. :try_end_13} :catch_1a
     .catchall {:try_start_2 .. :try_end_13} :catchall_36
 
-    move-result v2
+    move-result v0
 
     .line 276
-    if-eqz v1, :cond_19
+    if-eqz v2, :cond_19
 
     .line 278
     :try_start_16
-    invoke-virtual {v1}, Ljava/io/OutputStream;->close()V
+    invoke-virtual {v2}, Ljava/io/OutputStream;->close()V
     :try_end_19
     .catch Ljava/io/IOException; {:try_start_16 .. :try_end_19} :catch_3d
 
     .line 284
     :cond_19
     :goto_19
-    return v2
+    return v0
 
     .line 271
     :catch_1a
-    move-exception v0
+    move-exception v1
 
     .line 272
-    .local v0, "e":Ljava/io/FileNotFoundException;
     :try_start_1b
     const-string/jumbo v3, "DecodeJob"
 
@@ -155,17 +137,17 @@
 
     const-string/jumbo v4, "Failed to find file to write to disk cache"
 
-    invoke-static {v3, v4, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v3, v4, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
     :try_end_2e
     .catchall {:try_start_1b .. :try_end_2e} :catchall_36
 
     .line 276
     :cond_2e
-    if-eqz v1, :cond_19
+    if-eqz v2, :cond_19
 
     .line 278
     :try_start_30
-    invoke-virtual {v1}, Ljava/io/OutputStream;->close()V
+    invoke-virtual {v2}, Ljava/io/OutputStream;->close()V
     :try_end_33
     .catch Ljava/io/IOException; {:try_start_30 .. :try_end_33} :catch_34
 
@@ -173,36 +155,35 @@
 
     .line 279
     :catch_34
-    move-exception v3
+    move-exception v1
 
     goto :goto_19
 
     .line 276
-    .end local v0    # "e":Ljava/io/FileNotFoundException;
     :catchall_36
-    move-exception v3
+    move-exception v0
 
-    if-eqz v1, :cond_3c
+    if-eqz v2, :cond_3c
 
     .line 278
     :try_start_39
-    invoke-virtual {v1}, Ljava/io/OutputStream;->close()V
+    invoke-virtual {v2}, Ljava/io/OutputStream;->close()V
     :try_end_3c
     .catch Ljava/io/IOException; {:try_start_39 .. :try_end_3c} :catch_3f
 
     .line 281
     :cond_3c
     :goto_3c
-    throw v3
+    throw v0
 
     .line 279
     :catch_3d
-    move-exception v3
+    move-exception v1
 
     goto :goto_19
 
     :catch_3f
-    move-exception v4
+    move-exception v1
 
     goto :goto_3c
 .end method

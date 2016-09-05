@@ -3,23 +3,9 @@
 .source "ThemeManager.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/rey/material/app/ThemeManager;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x609
-    name = "EventDispatcher"
-.end annotation
-
-
 # virtual methods
-.method public abstract dispatchThemeChanged(I)V
+.method public abstract a(Lcom/rey/material/app/ThemeManager$OnThemeChangedListener;)V
 .end method
 
-.method public abstract registerListener(Lcom/rey/material/app/ThemeManager$OnThemeChangedListener;)V
-.end method
-
-.method public abstract unregisterListener(Lcom/rey/material/app/ThemeManager$OnThemeChangedListener;)V
+.method public abstract b(Lcom/rey/material/app/ThemeManager$OnThemeChangedListener;)V
 .end method

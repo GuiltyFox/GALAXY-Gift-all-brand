@@ -6,15 +6,6 @@
 .implements Ljava/io/Serializable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/util/ViewMatcher$Multi;,
-        Lcom/fasterxml/jackson/databind/util/ViewMatcher$Single;
-    }
-.end annotation
-
-
 # static fields
 .field protected static final EMPTY:Lcom/fasterxml/jackson/databind/util/ViewMatcher;
 
@@ -60,7 +51,6 @@
 
     .prologue
     .line 17
-    .local p0, "views":[Ljava/lang/Class;, "[Ljava/lang/Class<*>;"
     if-nez p0, :cond_5
 
     .line 18
@@ -125,7 +115,6 @@
 
     .prologue
     .line 13
-    .local p1, "activeView":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v0, 0x0
 
     return v0

@@ -4,19 +4,11 @@
 
 
 # static fields
-.field private static final BYTE_ARRAY_POOL:Lcom/bumptech/glide/util/ByteArrayPool;
-
-.field private static final MAX_BYTE_ARRAY_COUNT:I = 0x20
-
-.field private static final MAX_SIZE:I = 0x20c000
-
-.field private static final TAG:Ljava/lang/String; = "ByteArrayPool"
-
-.field private static final TEMP_BYTES_SIZE:I = 0x10000
+.field private static final b:Lcom/bumptech/glide/util/ByteArrayPool;
 
 
 # instance fields
-.field private final tempQueue:Ljava/util/Queue;
+.field private final a:Ljava/util/Queue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Queue",
@@ -36,7 +28,7 @@
 
     invoke-direct {v0}, Lcom/bumptech/glide/util/ByteArrayPool;-><init>()V
 
-    sput-object v0, Lcom/bumptech/glide/util/ByteArrayPool;->BYTE_ARRAY_POOL:Lcom/bumptech/glide/util/ByteArrayPool;
+    sput-object v0, Lcom/bumptech/glide/util/ByteArrayPool;->b:Lcom/bumptech/glide/util/ByteArrayPool;
 
     return-void
 .end method
@@ -51,82 +43,108 @@
     .line 18
     const/4 v0, 0x0
 
-    invoke-static {v0}, Lcom/bumptech/glide/util/Util;->createQueue(I)Ljava/util/Queue;
+    invoke-static {v0}, Lcom/bumptech/glide/util/Util;->a(I)Ljava/util/Queue;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bumptech/glide/util/ByteArrayPool;->tempQueue:Ljava/util/Queue;
+    iput-object v0, p0, Lcom/bumptech/glide/util/ByteArrayPool;->a:Ljava/util/Queue;
 
     .line 28
     return-void
 .end method
 
-.method public static get()Lcom/bumptech/glide/util/ByteArrayPool;
+.method public static a()Lcom/bumptech/glide/util/ByteArrayPool;
     .registers 1
 
     .prologue
     .line 25
-    sget-object v0, Lcom/bumptech/glide/util/ByteArrayPool;->BYTE_ARRAY_POOL:Lcom/bumptech/glide/util/ByteArrayPool;
+    sget-object v0, Lcom/bumptech/glide/util/ByteArrayPool;->b:Lcom/bumptech/glide/util/ByteArrayPool;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public clear()V
-    .registers 3
+.method public a([B)Z
+    .registers 6
 
     .prologue
-    .line 34
-    iget-object v1, p0, Lcom/bumptech/glide/util/ByteArrayPool;->tempQueue:Ljava/util/Queue;
+    const/4 v0, 0x0
+
+    .line 64
+    array-length v1, p1
+
+    const/high16 v2, 0x10000
+
+    if-eq v1, v2, :cond_7
+
+    .line 75
+    :goto_6
+    return v0
+
+    .line 69
+    :cond_7
+    iget-object v1, p0, Lcom/bumptech/glide/util/ByteArrayPool;->a:Ljava/util/Queue;
 
     monitor-enter v1
 
-    .line 35
-    :try_start_3
-    iget-object v0, p0, Lcom/bumptech/glide/util/ByteArrayPool;->tempQueue:Ljava/util/Queue;
+    .line 70
+    :try_start_a
+    iget-object v2, p0, Lcom/bumptech/glide/util/ByteArrayPool;->a:Ljava/util/Queue;
 
-    invoke-interface {v0}, Ljava/util/Queue;->clear()V
+    invoke-interface {v2}, Ljava/util/Queue;->size()I
 
-    .line 36
+    move-result v2
+
+    const/16 v3, 0x20
+
+    if-ge v2, v3, :cond_1a
+
+    .line 71
+    const/4 v0, 0x1
+
+    .line 72
+    iget-object v2, p0, Lcom/bumptech/glide/util/ByteArrayPool;->a:Ljava/util/Queue;
+
+    invoke-interface {v2, p1}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
+
+    .line 74
+    :cond_1a
     monitor-exit v1
 
-    .line 37
-    return-void
+    goto :goto_6
 
-    .line 36
-    :catchall_a
+    :catchall_1c
     move-exception v0
 
     monitor-exit v1
-    :try_end_c
-    .catchall {:try_start_3 .. :try_end_c} :catchall_a
+    :try_end_1e
+    .catchall {:try_start_a .. :try_end_1e} :catchall_1c
 
     throw v0
 .end method
 
-.method public getBytes()[B
+.method public b()[B
     .registers 4
 
     .prologue
     .line 45
-    iget-object v2, p0, Lcom/bumptech/glide/util/ByteArrayPool;->tempQueue:Ljava/util/Queue;
+    iget-object v1, p0, Lcom/bumptech/glide/util/ByteArrayPool;->a:Ljava/util/Queue;
 
-    monitor-enter v2
+    monitor-enter v1
 
     .line 46
     :try_start_3
-    iget-object v1, p0, Lcom/bumptech/glide/util/ByteArrayPool;->tempQueue:Ljava/util/Queue;
+    iget-object v0, p0, Lcom/bumptech/glide/util/ByteArrayPool;->a:Ljava/util/Queue;
 
-    invoke-interface {v1}, Ljava/util/Queue;->poll()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Queue;->poll()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [B
 
     .line 47
-    .local v0, "result":[B
-    monitor-exit v2
+    monitor-exit v1
     :try_end_c
     .catchall {:try_start_3 .. :try_end_c} :catchall_26
 
@@ -134,9 +152,9 @@
     if-nez v0, :cond_25
 
     .line 49
-    const/high16 v1, 0x10000
+    const/high16 v0, 0x10000
 
-    new-array v0, v1, [B
+    new-array v0, v0, [B
 
     .line 50
     const-string/jumbo v1, "ByteArrayPool"
@@ -161,79 +179,13 @@
     return-object v0
 
     .line 47
-    .end local v0    # "result":[B
     :catchall_26
-    move-exception v1
+    move-exception v0
 
     :try_start_27
-    monitor-exit v2
+    monitor-exit v1
     :try_end_28
     .catchall {:try_start_27 .. :try_end_28} :catchall_26
 
-    throw v1
-.end method
-
-.method public releaseBytes([B)Z
-    .registers 6
-    .param p1, "bytes"    # [B
-
-    .prologue
-    .line 64
-    array-length v1, p1
-
-    const/high16 v2, 0x10000
-
-    if-eq v1, v2, :cond_7
-
-    .line 65
-    const/4 v0, 0x0
-
-    .line 75
-    :goto_6
-    return v0
-
-    .line 68
-    :cond_7
-    const/4 v0, 0x0
-
-    .line 69
-    .local v0, "accepted":Z
-    iget-object v2, p0, Lcom/bumptech/glide/util/ByteArrayPool;->tempQueue:Ljava/util/Queue;
-
-    monitor-enter v2
-
-    .line 70
-    :try_start_b
-    iget-object v1, p0, Lcom/bumptech/glide/util/ByteArrayPool;->tempQueue:Ljava/util/Queue;
-
-    invoke-interface {v1}, Ljava/util/Queue;->size()I
-
-    move-result v1
-
-    const/16 v3, 0x20
-
-    if-ge v1, v3, :cond_1b
-
-    .line 71
-    const/4 v0, 0x1
-
-    .line 72
-    iget-object v1, p0, Lcom/bumptech/glide/util/ByteArrayPool;->tempQueue:Ljava/util/Queue;
-
-    invoke-interface {v1, p1}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
-
-    .line 74
-    :cond_1b
-    monitor-exit v2
-
-    goto :goto_6
-
-    :catchall_1d
-    move-exception v1
-
-    monitor-exit v2
-    :try_end_1f
-    .catchall {:try_start_b .. :try_end_1f} :catchall_1d
-
-    throw v1
+    throw v0
 .end method

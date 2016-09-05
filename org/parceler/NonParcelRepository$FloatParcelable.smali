@@ -4,21 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/parceler/NonParcelRepository;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "FloatParcelable"
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lorg/parceler/NonParcelRepository$FloatParcelable$FloatParcelableCreator;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lorg/parceler/NonParcelRepository$ConverterParcelable",
@@ -30,7 +15,9 @@
 
 
 # static fields
-.field private static final CONVERTER:Lorg/parceler/converter/NullableParcelConverter;
+.field public static final CREATOR:Lorg/parceler/NonParcelRepository$FloatParcelable$FloatParcelableCreator;
+
+.field private static final a:Lorg/parceler/converter/NullableParcelConverter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lorg/parceler/converter/NullableParcelConverter",
@@ -40,8 +27,6 @@
         }
     .end annotation
 .end field
-
-.field public static final CREATOR:Lorg/parceler/NonParcelRepository$FloatParcelable$FloatParcelableCreator;
 
 
 # direct methods
@@ -54,7 +39,7 @@
 
     invoke-direct {v0}, Lorg/parceler/NonParcelRepository$FloatParcelable$1;-><init>()V
 
-    sput-object v0, Lorg/parceler/NonParcelRepository$FloatParcelable;->CONVERTER:Lorg/parceler/converter/NullableParcelConverter;
+    sput-object v0, Lorg/parceler/NonParcelRepository$FloatParcelable;->a:Lorg/parceler/converter/NullableParcelConverter;
 
     .line 886
     new-instance v0, Lorg/parceler/NonParcelRepository$FloatParcelable$FloatParcelableCreator;
@@ -70,11 +55,10 @@
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .registers 4
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
     .line 878
-    sget-object v0, Lorg/parceler/NonParcelRepository$FloatParcelable;->CONVERTER:Lorg/parceler/converter/NullableParcelConverter;
+    sget-object v0, Lorg/parceler/NonParcelRepository$FloatParcelable;->a:Lorg/parceler/converter/NullableParcelConverter;
 
     const/4 v1, 0x0
 
@@ -86,11 +70,10 @@
 
 .method public constructor <init>(Ljava/lang/Float;)V
     .registers 4
-    .param p1, "value"    # Ljava/lang/Float;
 
     .prologue
     .line 882
-    sget-object v0, Lorg/parceler/NonParcelRepository$FloatParcelable;->CONVERTER:Lorg/parceler/converter/NullableParcelConverter;
+    sget-object v0, Lorg/parceler/NonParcelRepository$FloatParcelable;->a:Lorg/parceler/converter/NullableParcelConverter;
 
     const/4 v1, 0x0
 

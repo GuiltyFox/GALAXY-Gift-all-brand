@@ -4,27 +4,27 @@
 
 
 # instance fields
-.field bufferFrameStart:I
+.field a:I
 
-.field delay:I
+.field b:I
 
-.field dispose:I
+.field c:I
 
-.field ih:I
+.field d:I
 
-.field interlace:Z
+.field e:Z
 
-.field iw:I
+.field f:Z
 
-.field ix:I
+.field g:I
 
-.field iy:I
+.field h:I
 
-.field lct:[I
+.field i:I
 
-.field transIndex:I
+.field j:I
 
-.field transparency:Z
+.field k:[I
 
 
 # direct methods

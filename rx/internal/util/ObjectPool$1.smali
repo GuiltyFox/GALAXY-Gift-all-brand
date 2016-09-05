@@ -8,17 +8,12 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lrx/internal/util/ObjectPool;->start()V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lrx/internal/util/ObjectPool;->b()V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lrx/internal/util/ObjectPool;
+.field final synthetic a:Lrx/internal/util/ObjectPool;
 
 
 # direct methods
@@ -27,8 +22,7 @@
 
     .prologue
     .line 109
-    .local p0, "this":Lrx/internal/util/ObjectPool$1;, "Lrx/internal/util/ObjectPool.1;"
-    iput-object p1, p0, Lrx/internal/util/ObjectPool$1;->this$0:Lrx/internal/util/ObjectPool;
+    iput-object p1, p0, Lrx/internal/util/ObjectPool$1;->a:Lrx/internal/util/ObjectPool;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,67 +31,59 @@
 
 
 # virtual methods
-.method public call()V
-    .registers 7
+.method public a()V
+    .registers 5
 
     .prologue
+    const/4 v0, 0x0
+
     .line 113
-    .local p0, "this":Lrx/internal/util/ObjectPool$1;, "Lrx/internal/util/ObjectPool.1;"
-    iget-object v4, p0, Lrx/internal/util/ObjectPool$1;->this$0:Lrx/internal/util/ObjectPool;
+    iget-object v1, p0, Lrx/internal/util/ObjectPool$1;->a:Lrx/internal/util/ObjectPool;
 
-    # getter for: Lrx/internal/util/ObjectPool;->pool:Ljava/util/Queue;
-    invoke-static {v4}, Lrx/internal/util/ObjectPool;->access$000(Lrx/internal/util/ObjectPool;)Ljava/util/Queue;
+    invoke-static {v1}, Lrx/internal/util/ObjectPool;->a(Lrx/internal/util/ObjectPool;)Ljava/util/Queue;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-interface {v4}, Ljava/util/Queue;->size()I
+    invoke-interface {v1}, Ljava/util/Queue;->size()I
 
     move-result v1
 
     .line 114
-    .local v1, "size":I
-    iget-object v4, p0, Lrx/internal/util/ObjectPool$1;->this$0:Lrx/internal/util/ObjectPool;
+    iget-object v2, p0, Lrx/internal/util/ObjectPool$1;->a:Lrx/internal/util/ObjectPool;
 
-    # getter for: Lrx/internal/util/ObjectPool;->minSize:I
-    invoke-static {v4}, Lrx/internal/util/ObjectPool;->access$100(Lrx/internal/util/ObjectPool;)I
+    invoke-static {v2}, Lrx/internal/util/ObjectPool;->b(Lrx/internal/util/ObjectPool;)I
 
-    move-result v4
+    move-result v2
 
-    if-ge v1, v4, :cond_2f
+    if-ge v1, v2, :cond_2f
 
     .line 115
-    iget-object v4, p0, Lrx/internal/util/ObjectPool$1;->this$0:Lrx/internal/util/ObjectPool;
+    iget-object v2, p0, Lrx/internal/util/ObjectPool$1;->a:Lrx/internal/util/ObjectPool;
 
-    # getter for: Lrx/internal/util/ObjectPool;->maxSize:I
-    invoke-static {v4}, Lrx/internal/util/ObjectPool;->access$200(Lrx/internal/util/ObjectPool;)I
+    invoke-static {v2}, Lrx/internal/util/ObjectPool;->c(Lrx/internal/util/ObjectPool;)I
 
-    move-result v4
+    move-result v2
 
-    sub-int v2, v4, v1
+    sub-int v1, v2, v1
 
     .line 116
-    .local v2, "sizeToBeAdded":I
-    const/4 v0, 0x0
-
-    .local v0, "i":I
     :goto_1b
-    if-ge v0, v2, :cond_4e
+    if-ge v0, v1, :cond_4c
 
     .line 117
-    iget-object v4, p0, Lrx/internal/util/ObjectPool$1;->this$0:Lrx/internal/util/ObjectPool;
+    iget-object v2, p0, Lrx/internal/util/ObjectPool$1;->a:Lrx/internal/util/ObjectPool;
 
-    # getter for: Lrx/internal/util/ObjectPool;->pool:Ljava/util/Queue;
-    invoke-static {v4}, Lrx/internal/util/ObjectPool;->access$000(Lrx/internal/util/ObjectPool;)Ljava/util/Queue;
+    invoke-static {v2}, Lrx/internal/util/ObjectPool;->a(Lrx/internal/util/ObjectPool;)Ljava/util/Queue;
 
-    move-result-object v4
+    move-result-object v2
 
-    iget-object v5, p0, Lrx/internal/util/ObjectPool$1;->this$0:Lrx/internal/util/ObjectPool;
+    iget-object v3, p0, Lrx/internal/util/ObjectPool$1;->a:Lrx/internal/util/ObjectPool;
 
-    invoke-virtual {v5}, Lrx/internal/util/ObjectPool;->createObject()Ljava/lang/Object;
+    invoke-virtual {v3}, Lrx/internal/util/ObjectPool;->c()Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-interface {v4, v5}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
+    invoke-interface {v2, v3}, Ljava/util/Queue;->add(Ljava/lang/Object;)Z
 
     .line 116
     add-int/lit8 v0, v0, 0x1
@@ -105,54 +91,43 @@
     goto :goto_1b
 
     .line 119
-    .end local v0    # "i":I
-    .end local v2    # "sizeToBeAdded":I
     :cond_2f
-    iget-object v4, p0, Lrx/internal/util/ObjectPool$1;->this$0:Lrx/internal/util/ObjectPool;
+    iget-object v2, p0, Lrx/internal/util/ObjectPool$1;->a:Lrx/internal/util/ObjectPool;
 
-    # getter for: Lrx/internal/util/ObjectPool;->maxSize:I
-    invoke-static {v4}, Lrx/internal/util/ObjectPool;->access$200(Lrx/internal/util/ObjectPool;)I
+    invoke-static {v2}, Lrx/internal/util/ObjectPool;->c(Lrx/internal/util/ObjectPool;)I
 
-    move-result v4
+    move-result v2
 
-    if-le v1, v4, :cond_4e
+    if-le v1, v2, :cond_4c
 
     .line 120
-    iget-object v4, p0, Lrx/internal/util/ObjectPool$1;->this$0:Lrx/internal/util/ObjectPool;
+    iget-object v2, p0, Lrx/internal/util/ObjectPool$1;->a:Lrx/internal/util/ObjectPool;
 
-    # getter for: Lrx/internal/util/ObjectPool;->maxSize:I
-    invoke-static {v4}, Lrx/internal/util/ObjectPool;->access$200(Lrx/internal/util/ObjectPool;)I
+    invoke-static {v2}, Lrx/internal/util/ObjectPool;->c(Lrx/internal/util/ObjectPool;)I
 
-    move-result v4
+    move-result v2
 
-    sub-int v3, v1, v4
+    sub-int/2addr v1, v2
 
     .line 121
-    .local v3, "sizeToBeRemoved":I
-    const/4 v0, 0x0
-
-    .restart local v0    # "i":I
-    :goto_40
-    if-ge v0, v3, :cond_4e
+    :goto_3e
+    if-ge v0, v1, :cond_4c
 
     .line 123
-    iget-object v4, p0, Lrx/internal/util/ObjectPool$1;->this$0:Lrx/internal/util/ObjectPool;
+    iget-object v2, p0, Lrx/internal/util/ObjectPool$1;->a:Lrx/internal/util/ObjectPool;
 
-    # getter for: Lrx/internal/util/ObjectPool;->pool:Ljava/util/Queue;
-    invoke-static {v4}, Lrx/internal/util/ObjectPool;->access$000(Lrx/internal/util/ObjectPool;)Ljava/util/Queue;
+    invoke-static {v2}, Lrx/internal/util/ObjectPool;->a(Lrx/internal/util/ObjectPool;)Ljava/util/Queue;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-interface {v4}, Ljava/util/Queue;->poll()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Queue;->poll()Ljava/lang/Object;
 
     .line 121
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_40
+    goto :goto_3e
 
     .line 126
-    .end local v0    # "i":I
-    .end local v3    # "sizeToBeRemoved":I
-    :cond_4e
+    :cond_4c
     return-void
 .end method

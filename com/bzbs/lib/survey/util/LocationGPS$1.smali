@@ -8,17 +8,12 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/bzbs/lib/survey/util/LocationGPS;->isEnabledGPS(Landroid/app/Activity;)Z
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
+    value = Lcom/bzbs/lib/survey/util/LocationGPS;->a(Landroid/app/Activity;)Z
 .end annotation
 
 
 # instance fields
-.field final synthetic val$activity:Landroid/app/Activity;
+.field final synthetic a:Landroid/app/Activity;
 
 
 # direct methods
@@ -27,7 +22,7 @@
 
     .prologue
     .line 23
-    iput-object p1, p0, Lcom/bzbs/lib/survey/util/LocationGPS$1;->val$activity:Landroid/app/Activity;
+    iput-object p1, p0, Lcom/bzbs/lib/survey/util/LocationGPS$1;->a:Landroid/app/Activity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,8 +33,6 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .registers 6
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
     .prologue
     .line 27
@@ -50,8 +43,7 @@
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
     .line 28
-    .local v0, "i":Landroid/content/Intent;
-    iget-object v1, p0, Lcom/bzbs/lib/survey/util/LocationGPS$1;->val$activity:Landroid/app/Activity;
+    iget-object v1, p0, Lcom/bzbs/lib/survey/util/LocationGPS$1;->a:Landroid/app/Activity;
 
     const/16 v2, 0x26b5
 

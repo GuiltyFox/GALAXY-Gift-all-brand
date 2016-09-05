@@ -9,5 +9,5 @@
 
 
 # virtual methods
-.method public abstract newInstance(Lcz/msebera/android/httpclient/params/HttpParams;)Lcz/msebera/android/httpclient/auth/AuthScheme;
+.method public abstract a(Lcz/msebera/android/httpclient/params/HttpParams;)Lcz/msebera/android/httpclient/auth/AuthScheme;
 .end method

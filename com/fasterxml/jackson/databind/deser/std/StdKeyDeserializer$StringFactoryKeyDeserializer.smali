@@ -3,17 +3,6 @@
 .source "StdKeyDeserializer.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/std/StdKeyDeserializer;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x18
-    name = "StringFactoryKeyDeserializer"
-.end annotation
-
-
 # static fields
 .field private static final serialVersionUID:J = 0x1L
 
@@ -25,7 +14,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/reflect/Method;)V
     .registers 4
-    .param p1, "fm"    # Ljava/lang/reflect/Method;
 
     .prologue
     .line 353
@@ -48,13 +36,6 @@
 # virtual methods
 .method public _parse(Ljava/lang/String;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .registers 7
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/Exception;
-        }
-    .end annotation
 
     .prologue
     .line 360

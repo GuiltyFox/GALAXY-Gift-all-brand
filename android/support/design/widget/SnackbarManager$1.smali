@@ -11,11 +11,6 @@
     value = Landroid/support/design/widget/SnackbarManager;-><init>()V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Landroid/support/design/widget/SnackbarManager;
@@ -38,7 +33,6 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)Z
     .registers 4
-    .param p1, "message"    # Landroid/os/Message;
 
     .prologue
     .line 55

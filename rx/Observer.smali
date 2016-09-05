@@ -15,16 +15,16 @@
 
 
 # virtual methods
-.method public abstract onCompleted()V
+.method public abstract a(Ljava/lang/Throwable;)V
 .end method
 
-.method public abstract onError(Ljava/lang/Throwable;)V
-.end method
-
-.method public abstract onNext(Ljava/lang/Object;)V
+.method public abstract a_(Ljava/lang/Object;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
         }
     .end annotation
+.end method
+
+.method public abstract i_()V
 .end method

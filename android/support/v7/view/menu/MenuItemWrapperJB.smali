@@ -8,18 +8,10 @@
     value = 0x10
 .end annotation
 
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/v7/view/menu/MenuItemWrapperJB$ActionProviderWrapperJB;
-    }
-.end annotation
-
 
 # direct methods
 .method constructor <init>(Landroid/content/Context;Landroid/support/v4/internal/view/SupportMenuItem;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "object"    # Landroid/support/v4/internal/view/SupportMenuItem;
 
     .prologue
     .line 35
@@ -31,15 +23,14 @@
 
 
 # virtual methods
-.method createActionProviderWrapper(Landroid/view/ActionProvider;)Landroid/support/v7/view/menu/MenuItemWrapperICS$ActionProviderWrapper;
+.method a(Landroid/view/ActionProvider;)Landroid/support/v7/view/menu/MenuItemWrapperICS$ActionProviderWrapper;
     .registers 4
-    .param p1, "provider"    # Landroid/view/ActionProvider;
 
     .prologue
     .line 40
     new-instance v0, Landroid/support/v7/view/menu/MenuItemWrapperJB$ActionProviderWrapperJB;
 
-    iget-object v1, p0, Landroid/support/v7/view/menu/MenuItemWrapperJB;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Landroid/support/v7/view/menu/MenuItemWrapperJB;->a:Landroid/content/Context;
 
     invoke-direct {v0, p0, v1, p1}, Landroid/support/v7/view/menu/MenuItemWrapperJB$ActionProviderWrapperJB;-><init>(Landroid/support/v7/view/menu/MenuItemWrapperJB;Landroid/content/Context;Landroid/view/ActionProvider;)V
 

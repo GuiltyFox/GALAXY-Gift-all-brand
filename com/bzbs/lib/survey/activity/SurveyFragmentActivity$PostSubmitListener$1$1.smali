@@ -11,28 +11,22 @@
     value = Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1;->run()V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$2:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1;
+.field final synthetic a:Ljava/lang/String;
 
-.field final synthetic val$finalUrl:Ljava/lang/String;
+.field final synthetic b:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1;
 
 
 # direct methods
 .method constructor <init>(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1;Ljava/lang/String;)V
     .registers 3
-    .param p1, "this$2"    # Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1;
 
     .prologue
     .line 3265
-    iput-object p1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1$1;->this$2:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1;
+    iput-object p1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1$1;->b:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1;
 
-    iput-object p2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1$1;->val$finalUrl:Ljava/lang/String;
+    iput-object p2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1$1;->a:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,17 +40,17 @@
 
     .prologue
     .line 3269
-    iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1$1;->this$2:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1$1;->b:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1;
 
-    iget-object v0, v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1;->this$1:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener;
+    iget-object v0, v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1;->c:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener;
 
-    iget-object v0, v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v0, v0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener;->a:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
     new-instance v1, Landroid/content/Intent;
 
     const-string/jumbo v2, "android.intent.action.VIEW"
 
-    iget-object v3, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1$1;->val$finalUrl:Ljava/lang/String;
+    iget-object v3, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$PostSubmitListener$1$1;->a:Ljava/lang/String;
 
     invoke-static {v3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 

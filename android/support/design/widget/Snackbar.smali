@@ -3,17 +3,6 @@
 .source "Snackbar.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/design/widget/Snackbar$Behavior;,
-        Landroid/support/design/widget/Snackbar$SnackbarLayout;,
-        Landroid/support/design/widget/Snackbar$Duration;,
-        Landroid/support/design/widget/Snackbar$Callback;
-    }
-.end annotation
-
-
 # static fields
 .field static final ANIMATION_DURATION:I = 0xfa
 
@@ -74,18 +63,17 @@
 
 .method private constructor <init>(Landroid/view/ViewGroup;)V
     .registers 6
-    .param p1, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
     .line 181
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 427
-    new-instance v1, Landroid/support/design/widget/Snackbar$3;
+    new-instance v0, Landroid/support/design/widget/Snackbar$3;
 
-    invoke-direct {v1, p0}, Landroid/support/design/widget/Snackbar$3;-><init>(Landroid/support/design/widget/Snackbar;)V
+    invoke-direct {v0, p0}, Landroid/support/design/widget/Snackbar$3;-><init>(Landroid/support/design/widget/Snackbar;)V
 
-    iput-object v1, p0, Landroid/support/design/widget/Snackbar;->mManagerCallback:Landroid/support/design/widget/SnackbarManager$Callback;
+    iput-object v0, p0, Landroid/support/design/widget/Snackbar;->mManagerCallback:Landroid/support/design/widget/SnackbarManager$Callback;
 
     .line 182
     iput-object p1, p0, Landroid/support/design/widget/Snackbar;->mTargetParent:Landroid/view/ViewGroup;
@@ -93,24 +81,23 @@
     .line 183
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Landroid/support/design/widget/Snackbar;->mContext:Landroid/content/Context;
+    iput-object v0, p0, Landroid/support/design/widget/Snackbar;->mContext:Landroid/content/Context;
 
     .line 185
-    iget-object v1, p0, Landroid/support/design/widget/Snackbar;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mContext:Landroid/content/Context;
 
-    invoke-static {v1}, Landroid/support/design/widget/ThemeUtils;->checkAppCompatTheme(Landroid/content/Context;)V
+    invoke-static {v0}, Landroid/support/design/widget/ThemeUtils;->checkAppCompatTheme(Landroid/content/Context;)V
 
     .line 187
-    iget-object v1, p0, Landroid/support/design/widget/Snackbar;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mContext:Landroid/content/Context;
 
-    invoke-static {v1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v0
 
     .line 188
-    .local v0, "inflater":Landroid/view/LayoutInflater;
     sget v1, Landroid/support/design/R$layout;->design_layout_snackbar:I
 
     iget-object v2, p0, Landroid/support/design/widget/Snackbar;->mTargetParent:Landroid/view/ViewGroup;
@@ -119,24 +106,24 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/support/design/widget/Snackbar$SnackbarLayout;
+    check-cast v0, Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
-    iput-object v1, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
+    iput-object v0, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
     .line 191
-    iget-object v1, p0, Landroid/support/design/widget/Snackbar;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mContext:Landroid/content/Context;
 
-    const-string/jumbo v2, "accessibility"
+    const-string/jumbo v1, "accessibility"
 
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/view/accessibility/AccessibilityManager;
+    check-cast v0, Landroid/view/accessibility/AccessibilityManager;
 
-    iput-object v1, p0, Landroid/support/design/widget/Snackbar;->mAccessibilityManager:Landroid/view/accessibility/AccessibilityManager;
+    iput-object v0, p0, Landroid/support/design/widget/Snackbar;->mAccessibilityManager:Landroid/view/accessibility/AccessibilityManager;
 
     .line 193
     return-void
@@ -144,8 +131,6 @@
 
 .method static synthetic access$000(Landroid/support/design/widget/Snackbar;I)V
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/Snackbar;
-    .param p1, "x1"    # I
 
     .prologue
     .line 68
@@ -166,7 +151,6 @@
 
 .method static synthetic access$200(Landroid/support/design/widget/Snackbar;)Landroid/support/design/widget/SnackbarManager$Callback;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/Snackbar;
 
     .prologue
     .line 68
@@ -177,8 +161,6 @@
 
 .method static synthetic access$300(Landroid/support/design/widget/Snackbar;I)V
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/Snackbar;
-    .param p1, "x1"    # I
 
     .prologue
     .line 68
@@ -189,7 +171,6 @@
 
 .method static synthetic access$400(Landroid/support/design/widget/Snackbar;)V
     .registers 1
-    .param p0, "x0"    # Landroid/support/design/widget/Snackbar;
 
     .prologue
     .line 68
@@ -200,7 +181,6 @@
 
 .method static synthetic access$500(Landroid/support/design/widget/Snackbar;)Landroid/support/design/widget/Snackbar$SnackbarLayout;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/Snackbar;
 
     .prologue
     .line 68
@@ -211,7 +191,6 @@
 
 .method static synthetic access$600(Landroid/support/design/widget/Snackbar;)Landroid/view/accessibility/AccessibilityManager;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/Snackbar;
 
     .prologue
     .line 68
@@ -222,7 +201,6 @@
 
 .method static synthetic access$700(Landroid/support/design/widget/Snackbar;)V
     .registers 1
-    .param p0, "x0"    # Landroid/support/design/widget/Snackbar;
 
     .prologue
     .line 68
@@ -232,63 +210,63 @@
 .end method
 
 .method private animateViewIn()V
-    .registers 7
+    .registers 5
 
     .prologue
-    const-wide/16 v4, 0xfa
+    const-wide/16 v2, 0xfa
 
     .line 515
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v2, 0xe
+    const/16 v1, 0xe
 
-    if-lt v1, v2, :cond_36
+    if-lt v0, v1, :cond_36
 
     .line 516
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
+
     iget-object v1, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
-    iget-object v2, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
+    invoke-virtual {v1}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getHeight()I
 
-    invoke-virtual {v2}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getHeight()I
+    move-result v1
 
-    move-result v2
+    int-to-float v1, v1
 
-    int-to-float v2, v2
-
-    invoke-static {v1, v2}, Landroid/support/v4/view/ViewCompat;->setTranslationY(Landroid/view/View;F)V
+    invoke-static {v0, v1}, Landroid/support/v4/view/ViewCompat;->b(Landroid/view/View;F)V
 
     .line 517
-    iget-object v1, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
-    invoke-static {v1}, Landroid/support/v4/view/ViewCompat;->animate(Landroid/view/View;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->r(Landroid/view/View;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    move-result-object v1
+    move-result-object v0
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->translationY(F)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+    invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->c(F)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    move-result-object v1
+    move-result-object v0
 
-    sget-object v2, Landroid/support/design/widget/AnimationUtils;->FAST_OUT_SLOW_IN_INTERPOLATOR:Landroid/view/animation/Interpolator;
+    sget-object v1, Landroid/support/design/widget/AnimationUtils;->FAST_OUT_SLOW_IN_INTERPOLATOR:Landroid/view/animation/Interpolator;
 
-    invoke-virtual {v1, v2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->setInterpolator(Landroid/view/animation/Interpolator;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+    invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a(Landroid/view/animation/Interpolator;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, v4, v5}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->setDuration(J)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+    invoke-virtual {v0, v2, v3}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a(J)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    move-result-object v1
+    move-result-object v0
 
-    new-instance v2, Landroid/support/design/widget/Snackbar$7;
+    new-instance v1, Landroid/support/design/widget/Snackbar$7;
 
-    invoke-direct {v2, p0}, Landroid/support/design/widget/Snackbar$7;-><init>(Landroid/support/design/widget/Snackbar;)V
+    invoke-direct {v1, p0}, Landroid/support/design/widget/Snackbar$7;-><init>(Landroid/support/design/widget/Snackbar;)V
 
-    invoke-virtual {v1, v2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->setListener(Landroid/support/v4/view/ViewPropertyAnimatorListener;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+    invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a(Landroid/support/v4/view/ViewPropertyAnimatorListener;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->start()V
+    invoke-virtual {v0}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->c()V
 
     .line 559
     :goto_35
@@ -296,26 +274,25 @@
 
     .line 541
     :cond_36
-    iget-object v1, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
-    invoke-virtual {v1}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    sget v2, Landroid/support/design/R$anim;->design_snackbar_in:I
+    sget v1, Landroid/support/design/R$anim;->design_snackbar_in:I
 
-    invoke-static {v1, v2}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
+    invoke-static {v0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
     move-result-object v0
 
     .line 543
-    .local v0, "anim":Landroid/view/animation/Animation;
     sget-object v1, Landroid/support/design/widget/AnimationUtils;->FAST_OUT_SLOW_IN_INTERPOLATOR:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
     .line 544
-    invoke-virtual {v0, v4, v5}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 545
     new-instance v1, Landroid/support/design/widget/Snackbar$8;
@@ -333,57 +310,56 @@
 .end method
 
 .method private animateViewOut(I)V
-    .registers 8
-    .param p1, "event"    # I
+    .registers 6
 
     .prologue
-    const-wide/16 v4, 0xfa
+    const-wide/16 v2, 0xfa
 
     .line 562
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v2, 0xe
+    const/16 v1, 0xe
 
-    if-lt v1, v2, :cond_30
+    if-lt v0, v1, :cond_30
 
     .line 563
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
+
+    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->r(Landroid/view/View;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+
+    move-result-object v0
+
     iget-object v1, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
-    invoke-static {v1}, Landroid/support/v4/view/ViewCompat;->animate(Landroid/view/View;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+    invoke-virtual {v1}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getHeight()I
 
-    move-result-object v1
+    move-result v1
 
-    iget-object v2, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
+    int-to-float v1, v1
 
-    invoke-virtual {v2}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getHeight()I
+    invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->c(F)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    move-result v2
+    move-result-object v0
 
-    int-to-float v2, v2
+    sget-object v1, Landroid/support/design/widget/AnimationUtils;->FAST_OUT_SLOW_IN_INTERPOLATOR:Landroid/view/animation/Interpolator;
 
-    invoke-virtual {v1, v2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->translationY(F)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+    invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a(Landroid/view/animation/Interpolator;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    move-result-object v1
+    move-result-object v0
 
-    sget-object v2, Landroid/support/design/widget/AnimationUtils;->FAST_OUT_SLOW_IN_INTERPOLATOR:Landroid/view/animation/Interpolator;
+    invoke-virtual {v0, v2, v3}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a(J)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    invoke-virtual {v1, v2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->setInterpolator(Landroid/view/animation/Interpolator;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+    move-result-object v0
 
-    move-result-object v1
+    new-instance v1, Landroid/support/design/widget/Snackbar$9;
 
-    invoke-virtual {v1, v4, v5}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->setDuration(J)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+    invoke-direct {v1, p0, p1}, Landroid/support/design/widget/Snackbar$9;-><init>(Landroid/support/design/widget/Snackbar;I)V
 
-    move-result-object v1
+    invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a(Landroid/support/v4/view/ViewPropertyAnimatorListener;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    new-instance v2, Landroid/support/design/widget/Snackbar$9;
+    move-result-object v0
 
-    invoke-direct {v2, p0, p1}, Landroid/support/design/widget/Snackbar$9;-><init>(Landroid/support/design/widget/Snackbar;I)V
-
-    invoke-virtual {v1, v2}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->setListener(Landroid/support/v4/view/ViewPropertyAnimatorListener;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->start()V
+    invoke-virtual {v0}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->c()V
 
     .line 604
     :goto_2f
@@ -391,26 +367,25 @@
 
     .line 587
     :cond_30
-    iget-object v1, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
-    invoke-virtual {v1}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    sget v2, Landroid/support/design/R$anim;->design_snackbar_out:I
+    sget v1, Landroid/support/design/R$anim;->design_snackbar_out:I
 
-    invoke-static {v1, v2}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
+    invoke-static {v0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
     move-result-object v0
 
     .line 588
-    .local v0, "anim":Landroid/view/animation/Animation;
     sget-object v1, Landroid/support/design/widget/AnimationUtils;->FAST_OUT_SLOW_IN_INTERPOLATOR:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setInterpolator(Landroid/view/animation/Interpolator;)V
 
     .line 589
-    invoke-virtual {v0, v4, v5}, Landroid/view/animation/Animation;->setDuration(J)V
+    invoke-virtual {v0, v2, v3}, Landroid/view/animation/Animation;->setDuration(J)V
 
     .line 590
     new-instance v1, Landroid/support/design/widget/Snackbar$10;
@@ -429,7 +404,6 @@
 
 .method private dispatchDismiss(I)V
     .registers 4
-    .param p1, "event"    # I
 
     .prologue
     .line 400
@@ -447,105 +421,89 @@
 
 .method private static findSuitableParent(Landroid/view/View;)Landroid/view/ViewGroup;
     .registers 5
-    .param p0, "view"    # Landroid/view/View;
 
     .prologue
+    const/4 v2, 0x0
+
     .line 244
-    const/4 v0, 0x0
+    move-object v1, v2
+
+    move-object v0, p0
 
     .line 246
-    .local v0, "fallback":Landroid/view/ViewGroup;
-    :cond_1
-    instance-of v2, p0, Landroid/support/design/widget/CoordinatorLayout;
+    :cond_3
+    instance-of v3, v0, Landroid/support/design/widget/CoordinatorLayout;
 
-    if-eqz v2, :cond_8
+    if-eqz v3, :cond_a
 
     .line 248
-    check-cast p0, Landroid/view/ViewGroup;
+    check-cast v0, Landroid/view/ViewGroup;
 
     .line 268
-    .end local p0    # "view":Landroid/view/View;
-    :goto_7
-    return-object p0
+    :goto_9
+    return-object v0
 
     .line 249
-    .restart local p0    # "view":Landroid/view/View;
-    :cond_8
-    instance-of v2, p0, Landroid/widget/FrameLayout;
+    :cond_a
+    instance-of v3, v0, Landroid/widget/FrameLayout;
 
-    if-eqz v2, :cond_1b
+    if-eqz v3, :cond_1d
 
     .line 250
-    invoke-virtual {p0}, Landroid/view/View;->getId()I
+    invoke-virtual {v0}, Landroid/view/View;->getId()I
 
-    move-result v2
+    move-result v1
 
     const v3, 0x1020002
 
-    if-ne v2, v3, :cond_18
+    if-ne v1, v3, :cond_1a
 
     .line 253
-    check-cast p0, Landroid/view/ViewGroup;
-
-    goto :goto_7
-
-    :cond_18
-    move-object v0, p0
-
-    .line 256
     check-cast v0, Landroid/view/ViewGroup;
 
+    goto :goto_9
+
+    :cond_1a
+    move-object v1, v0
+
+    .line 256
+    check-cast v1, Landroid/view/ViewGroup;
+
     .line 260
-    :cond_1b
-    if-eqz p0, :cond_28
+    :cond_1d
+    if-eqz v0, :cond_29
 
     .line 262
-    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 263
-    .local v1, "parent":Landroid/view/ViewParent;
-    instance-of v2, v1, Landroid/view/View;
+    instance-of v3, v0, Landroid/view/View;
 
-    if-eqz v2, :cond_2c
+    if-eqz v3, :cond_2d
 
-    check-cast v1, Landroid/view/View;
-
-    .end local v1    # "parent":Landroid/view/ViewParent;
-    move-object p0, v1
+    check-cast v0, Landroid/view/View;
 
     .line 265
-    :cond_28
-    :goto_28
-    if-nez p0, :cond_1
+    :cond_29
+    :goto_29
+    if-nez v0, :cond_3
 
-    move-object p0, v0
+    move-object v0, v1
 
     .line 268
-    goto :goto_7
+    goto :goto_9
+
+    :cond_2d
+    move-object v0, v2
 
     .line 263
-    .restart local v1    # "parent":Landroid/view/ViewParent;
-    :cond_2c
-    const/4 p0, 0x0
-
-    goto :goto_28
+    goto :goto_29
 .end method
 
 .method public static make(Landroid/view/View;II)Landroid/support/design/widget/Snackbar;
     .registers 4
-    .param p0, "view"    # Landroid/view/View;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1, "resId"    # I
-        .annotation build Landroid/support/annotation/StringRes;
-        .end annotation
-    .end param
-    .param p2, "duration"    # I
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
 
     .prologue
     .line 240
@@ -566,17 +524,6 @@
 
 .method public static make(Landroid/view/View;Ljava/lang/CharSequence;I)Landroid/support/design/widget/Snackbar;
     .registers 5
-    .param p0, "view"    # Landroid/view/View;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p1, "text"    # Ljava/lang/CharSequence;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2, "duration"    # I
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
 
     .prologue
     .line 215
@@ -589,7 +536,6 @@
     invoke-direct {v0, v1}, Landroid/support/design/widget/Snackbar;-><init>(Landroid/view/ViewGroup;)V
 
     .line 216
-    .local v0, "snackbar":Landroid/support/design/widget/Snackbar;
     invoke-virtual {v0, p1}, Landroid/support/design/widget/Snackbar;->setText(Ljava/lang/CharSequence;)Landroid/support/design/widget/Snackbar;
 
     .line 217
@@ -600,39 +546,37 @@
 .end method
 
 .method private onViewHidden(I)V
-    .registers 5
-    .param p1, "event"    # I
+    .registers 4
 
     .prologue
     .line 623
     invoke-static {}, Landroid/support/design/widget/SnackbarManager;->getInstance()Landroid/support/design/widget/SnackbarManager;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget-object v2, p0, Landroid/support/design/widget/Snackbar;->mManagerCallback:Landroid/support/design/widget/SnackbarManager$Callback;
+    iget-object v1, p0, Landroid/support/design/widget/Snackbar;->mManagerCallback:Landroid/support/design/widget/SnackbarManager$Callback;
 
-    invoke-virtual {v1, v2}, Landroid/support/design/widget/SnackbarManager;->onDismissed(Landroid/support/design/widget/SnackbarManager$Callback;)V
+    invoke-virtual {v0, v1}, Landroid/support/design/widget/SnackbarManager;->onDismissed(Landroid/support/design/widget/SnackbarManager$Callback;)V
 
     .line 625
-    iget-object v1, p0, Landroid/support/design/widget/Snackbar;->mCallback:Landroid/support/design/widget/Snackbar$Callback;
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mCallback:Landroid/support/design/widget/Snackbar$Callback;
 
-    if-eqz v1, :cond_12
+    if-eqz v0, :cond_12
 
     .line 626
-    iget-object v1, p0, Landroid/support/design/widget/Snackbar;->mCallback:Landroid/support/design/widget/Snackbar$Callback;
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mCallback:Landroid/support/design/widget/Snackbar$Callback;
 
-    invoke-virtual {v1, p0, p1}, Landroid/support/design/widget/Snackbar$Callback;->onDismissed(Landroid/support/design/widget/Snackbar;I)V
+    invoke-virtual {v0, p0, p1}, Landroid/support/design/widget/Snackbar$Callback;->onDismissed(Landroid/support/design/widget/Snackbar;I)V
 
     .line 629
     :cond_12
-    iget-object v1, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
-    invoke-virtual {v1}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {v0}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     .line 630
-    .local v0, "parent":Landroid/view/ViewParent;
     instance-of v1, v0, Landroid/view/ViewGroup;
 
     if-eqz v1, :cond_23
@@ -640,7 +584,6 @@
     .line 631
     check-cast v0, Landroid/view/ViewGroup;
 
-    .end local v0    # "parent":Landroid/view/ViewParent;
     iget-object v1, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
@@ -705,8 +648,6 @@
 
 .method public getView()Landroid/view/View;
     .registers 2
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
 
     .prologue
     .line 382
@@ -717,7 +658,6 @@
 
 .method final hideView(I)V
     .registers 3
-    .param p1, "event"    # I
 
     .prologue
     .line 607
@@ -781,13 +721,6 @@
 
 .method public setAction(ILandroid/view/View$OnClickListener;)Landroid/support/design/widget/Snackbar;
     .registers 4
-    .param p1, "resId"    # I
-        .annotation build Landroid/support/annotation/StringRes;
-        .end annotation
-    .end param
-    .param p2, "listener"    # Landroid/view/View$OnClickListener;
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
 
     .prologue
     .line 279
@@ -806,21 +739,16 @@
 
 .method public setAction(Ljava/lang/CharSequence;Landroid/view/View$OnClickListener;)Landroid/support/design/widget/Snackbar;
     .registers 5
-    .param p1, "text"    # Ljava/lang/CharSequence;
-    .param p2, "listener"    # Landroid/view/View$OnClickListener;
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
 
     .prologue
     .line 290
-    iget-object v1, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
-    invoke-virtual {v1}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getActionView()Landroid/widget/Button;
+    invoke-virtual {v0}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getActionView()Landroid/widget/Button;
 
     move-result-object v0
 
     .line 292
-    .local v0, "tv":Landroid/widget/TextView;
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -864,24 +792,17 @@
 .end method
 
 .method public setActionTextColor(I)Landroid/support/design/widget/Snackbar;
-    .registers 4
-    .param p1, "color"    # I
-        .annotation build Landroid/support/annotation/ColorInt;
-        .end annotation
-    .end param
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
+    .registers 3
 
     .prologue
     .line 327
-    iget-object v1, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
-    invoke-virtual {v1}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getActionView()Landroid/widget/Button;
+    invoke-virtual {v0}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getActionView()Landroid/widget/Button;
 
     move-result-object v0
 
     .line 328
-    .local v0, "tv":Landroid/widget/TextView;
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 329
@@ -889,21 +810,17 @@
 .end method
 
 .method public setActionTextColor(Landroid/content/res/ColorStateList;)Landroid/support/design/widget/Snackbar;
-    .registers 4
-    .param p1, "colors"    # Landroid/content/res/ColorStateList;
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
+    .registers 3
 
     .prologue
     .line 316
-    iget-object v1, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
-    invoke-virtual {v1}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getActionView()Landroid/widget/Button;
+    invoke-virtual {v0}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getActionView()Landroid/widget/Button;
 
     move-result-object v0
 
     .line 317
-    .local v0, "tv":Landroid/widget/TextView;
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
 
     .line 318
@@ -912,9 +829,6 @@
 
 .method public setCallback(Landroid/support/design/widget/Snackbar$Callback;)Landroid/support/design/widget/Snackbar;
     .registers 2
-    .param p1, "callback"    # Landroid/support/design/widget/Snackbar$Callback;
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
 
     .prologue
     .line 408
@@ -926,9 +840,6 @@
 
 .method public setDuration(I)Landroid/support/design/widget/Snackbar;
     .registers 2
-    .param p1, "duration"    # I
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
 
     .prologue
     .line 363
@@ -940,12 +851,6 @@
 
 .method public setText(I)Landroid/support/design/widget/Snackbar;
     .registers 3
-    .param p1, "resId"    # I
-        .annotation build Landroid/support/annotation/StringRes;
-        .end annotation
-    .end param
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
 
     .prologue
     .line 351
@@ -963,24 +868,17 @@
 .end method
 
 .method public setText(Ljava/lang/CharSequence;)Landroid/support/design/widget/Snackbar;
-    .registers 4
-    .param p1, "message"    # Ljava/lang/CharSequence;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
+    .registers 3
 
     .prologue
     .line 339
-    iget-object v1, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
-    invoke-virtual {v1}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getMessageView()Landroid/widget/TextView;
+    invoke-virtual {v0}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getMessageView()Landroid/widget/TextView;
 
     move-result-object v0
 
     .line 340
-    .local v0, "tv":Landroid/widget/TextView;
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 341
@@ -1007,92 +905,88 @@
 .end method
 
 .method final showView()V
-    .registers 5
+    .registers 4
 
     .prologue
     .line 440
-    iget-object v2, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
-    invoke-virtual {v2}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getParent()Landroid/view/ViewParent;
+    invoke-virtual {v0}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getParent()Landroid/view/ViewParent;
 
-    move-result-object v2
+    move-result-object v0
 
-    if-nez v2, :cond_3b
+    if-nez v0, :cond_3b
 
     .line 441
-    iget-object v2, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
-    invoke-virtual {v2}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v0}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 443
-    .local v1, "lp":Landroid/view/ViewGroup$LayoutParams;
-    instance-of v2, v1, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;
+    instance-of v1, v0, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;
 
-    if-eqz v2, :cond_34
+    if-eqz v1, :cond_34
 
     .line 446
-    new-instance v0, Landroid/support/design/widget/Snackbar$Behavior;
+    new-instance v1, Landroid/support/design/widget/Snackbar$Behavior;
 
-    invoke-direct {v0, p0}, Landroid/support/design/widget/Snackbar$Behavior;-><init>(Landroid/support/design/widget/Snackbar;)V
+    invoke-direct {v1, p0}, Landroid/support/design/widget/Snackbar$Behavior;-><init>(Landroid/support/design/widget/Snackbar;)V
 
     .line 447
-    .local v0, "behavior":Landroid/support/design/widget/Snackbar$Behavior;
-    const v2, 0x3dcccccd
+    const v2, 0x3dcccccd    # 0.1f
 
-    invoke-virtual {v0, v2}, Landroid/support/design/widget/Snackbar$Behavior;->setStartAlphaSwipeDistance(F)V
+    invoke-virtual {v1, v2}, Landroid/support/design/widget/Snackbar$Behavior;->setStartAlphaSwipeDistance(F)V
 
     .line 448
-    const v2, 0x3f19999a
+    const v2, 0x3f19999a    # 0.6f
 
-    invoke-virtual {v0, v2}, Landroid/support/design/widget/Snackbar$Behavior;->setEndAlphaSwipeDistance(F)V
+    invoke-virtual {v1, v2}, Landroid/support/design/widget/Snackbar$Behavior;->setEndAlphaSwipeDistance(F)V
 
     .line 449
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v2}, Landroid/support/design/widget/Snackbar$Behavior;->setSwipeDirection(I)V
+    invoke-virtual {v1, v2}, Landroid/support/design/widget/Snackbar$Behavior;->setSwipeDirection(I)V
 
     .line 450
     new-instance v2, Landroid/support/design/widget/Snackbar$4;
 
     invoke-direct {v2, p0}, Landroid/support/design/widget/Snackbar$4;-><init>(Landroid/support/design/widget/Snackbar;)V
 
-    invoke-virtual {v0, v2}, Landroid/support/design/widget/Snackbar$Behavior;->setListener(Landroid/support/design/widget/SwipeDismissBehavior$OnDismissListener;)V
+    invoke-virtual {v1, v2}, Landroid/support/design/widget/Snackbar$Behavior;->setListener(Landroid/support/design/widget/SwipeDismissBehavior$OnDismissListener;)V
 
     .line 472
-    check-cast v1, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;
+    check-cast v0, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;
 
-    .end local v1    # "lp":Landroid/view/ViewGroup$LayoutParams;
-    invoke-virtual {v1, v0}, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;->setBehavior(Landroid/support/design/widget/CoordinatorLayout$Behavior;)V
+    invoke-virtual {v0, v1}, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;->setBehavior(Landroid/support/design/widget/CoordinatorLayout$Behavior;)V
 
     .line 475
-    .end local v0    # "behavior":Landroid/support/design/widget/Snackbar$Behavior;
     :cond_34
-    iget-object v2, p0, Landroid/support/design/widget/Snackbar;->mTargetParent:Landroid/view/ViewGroup;
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mTargetParent:Landroid/view/ViewGroup;
 
-    iget-object v3, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
+    iget-object v1, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
-    invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 478
     :cond_3b
-    iget-object v2, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
-    new-instance v3, Landroid/support/design/widget/Snackbar$5;
+    new-instance v1, Landroid/support/design/widget/Snackbar$5;
 
-    invoke-direct {v3, p0}, Landroid/support/design/widget/Snackbar$5;-><init>(Landroid/support/design/widget/Snackbar;)V
+    invoke-direct {v1, p0}, Landroid/support/design/widget/Snackbar$5;-><init>(Landroid/support/design/widget/Snackbar;)V
 
-    invoke-virtual {v2, v3}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->setOnAttachStateChangeListener(Landroid/support/design/widget/Snackbar$SnackbarLayout$OnAttachStateChangeListener;)V
+    invoke-virtual {v0, v1}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->setOnAttachStateChangeListener(Landroid/support/design/widget/Snackbar$SnackbarLayout$OnAttachStateChangeListener;)V
 
     .line 499
-    iget-object v2, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
-    invoke-static {v2}, Landroid/support/v4/view/ViewCompat;->isLaidOut(Landroid/view/View;)Z
+    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->E(Landroid/view/View;)Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_51
+    if-eqz v0, :cond_51
 
     .line 501
     invoke-direct {p0}, Landroid/support/design/widget/Snackbar;->animateViewIn()V
@@ -1103,13 +997,13 @@
 
     .line 504
     :cond_51
-    iget-object v2, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
+    iget-object v0, p0, Landroid/support/design/widget/Snackbar;->mView:Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
-    new-instance v3, Landroid/support/design/widget/Snackbar$6;
+    new-instance v1, Landroid/support/design/widget/Snackbar$6;
 
-    invoke-direct {v3, p0}, Landroid/support/design/widget/Snackbar$6;-><init>(Landroid/support/design/widget/Snackbar;)V
+    invoke-direct {v1, p0}, Landroid/support/design/widget/Snackbar$6;-><init>(Landroid/support/design/widget/Snackbar;)V
 
-    invoke-virtual {v2, v3}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->setOnLayoutChangeListener(Landroid/support/design/widget/Snackbar$SnackbarLayout$OnLayoutChangeListener;)V
+    invoke-virtual {v0, v1}, Landroid/support/design/widget/Snackbar$SnackbarLayout;->setOnLayoutChangeListener(Landroid/support/design/widget/Snackbar$SnackbarLayout$OnLayoutChangeListener;)V
 
     goto :goto_50
 .end method

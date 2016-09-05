@@ -4,21 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/parceler/NonParcelRepository;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "CharArrayParcelable"
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lorg/parceler/NonParcelRepository$CharArrayParcelable$CharArrayParcelableCreator;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lorg/parceler/NonParcelRepository$ConverterParcelable",
@@ -28,9 +13,9 @@
 
 
 # static fields
-.field private static final CONVERTER:Lorg/parceler/converter/CharArrayParcelConverter;
-
 .field public static final CREATOR:Lorg/parceler/NonParcelRepository$CharArrayParcelable$CharArrayParcelableCreator;
+
+.field private static final a:Lorg/parceler/converter/CharArrayParcelConverter;
 
 
 # direct methods
@@ -43,7 +28,7 @@
 
     invoke-direct {v0}, Lorg/parceler/converter/CharArrayParcelConverter;-><init>()V
 
-    sput-object v0, Lorg/parceler/NonParcelRepository$CharArrayParcelable;->CONVERTER:Lorg/parceler/converter/CharArrayParcelConverter;
+    sput-object v0, Lorg/parceler/NonParcelRepository$CharArrayParcelable;->a:Lorg/parceler/converter/CharArrayParcelConverter;
 
     .line 1104
     new-instance v0, Lorg/parceler/NonParcelRepository$CharArrayParcelable$CharArrayParcelableCreator;
@@ -59,11 +44,10 @@
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .registers 4
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
     .line 1096
-    sget-object v0, Lorg/parceler/NonParcelRepository$CharArrayParcelable;->CONVERTER:Lorg/parceler/converter/CharArrayParcelConverter;
+    sget-object v0, Lorg/parceler/NonParcelRepository$CharArrayParcelable;->a:Lorg/parceler/converter/CharArrayParcelConverter;
 
     const/4 v1, 0x0
 
@@ -75,11 +59,10 @@
 
 .method public constructor <init>([C)V
     .registers 4
-    .param p1, "value"    # [C
 
     .prologue
     .line 1100
-    sget-object v0, Lorg/parceler/NonParcelRepository$CharArrayParcelable;->CONVERTER:Lorg/parceler/converter/CharArrayParcelConverter;
+    sget-object v0, Lorg/parceler/NonParcelRepository$CharArrayParcelable;->a:Lorg/parceler/converter/CharArrayParcelConverter;
 
     const/4 v1, 0x0
 

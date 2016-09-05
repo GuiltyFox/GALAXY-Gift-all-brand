@@ -4,8 +4,5 @@
 
 
 # virtual methods
-.method public abstract isRtl(Ljava/lang/CharSequence;II)Z
-.end method
-
-.method public abstract isRtl([CII)Z
+.method public abstract a(Ljava/lang/CharSequence;II)Z
 .end method

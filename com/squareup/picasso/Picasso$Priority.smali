@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/squareup/picasso/Picasso;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4019
-    name = "Priority"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum",
@@ -24,13 +15,13 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/squareup/picasso/Picasso$Priority;
+.field public static final enum a:Lcom/squareup/picasso/Picasso$Priority;
 
-.field public static final enum HIGH:Lcom/squareup/picasso/Picasso$Priority;
+.field public static final enum b:Lcom/squareup/picasso/Picasso$Priority;
 
-.field public static final enum LOW:Lcom/squareup/picasso/Picasso$Priority;
+.field public static final enum c:Lcom/squareup/picasso/Picasso$Priority;
 
-.field public static final enum NORMAL:Lcom/squareup/picasso/Picasso$Priority;
+.field private static final synthetic d:[Lcom/squareup/picasso/Picasso$Priority;
 
 
 # direct methods
@@ -51,7 +42,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/squareup/picasso/Picasso$Priority;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/squareup/picasso/Picasso$Priority;->LOW:Lcom/squareup/picasso/Picasso$Priority;
+    sput-object v0, Lcom/squareup/picasso/Picasso$Priority;->a:Lcom/squareup/picasso/Picasso$Priority;
 
     .line 104
     new-instance v0, Lcom/squareup/picasso/Picasso$Priority;
@@ -60,7 +51,7 @@
 
     invoke-direct {v0, v1, v3}, Lcom/squareup/picasso/Picasso$Priority;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/squareup/picasso/Picasso$Priority;->NORMAL:Lcom/squareup/picasso/Picasso$Priority;
+    sput-object v0, Lcom/squareup/picasso/Picasso$Priority;->b:Lcom/squareup/picasso/Picasso$Priority;
 
     .line 105
     new-instance v0, Lcom/squareup/picasso/Picasso$Priority;
@@ -69,26 +60,26 @@
 
     invoke-direct {v0, v1, v4}, Lcom/squareup/picasso/Picasso$Priority;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/squareup/picasso/Picasso$Priority;->HIGH:Lcom/squareup/picasso/Picasso$Priority;
+    sput-object v0, Lcom/squareup/picasso/Picasso$Priority;->c:Lcom/squareup/picasso/Picasso$Priority;
 
     .line 102
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/squareup/picasso/Picasso$Priority;
 
-    sget-object v1, Lcom/squareup/picasso/Picasso$Priority;->LOW:Lcom/squareup/picasso/Picasso$Priority;
+    sget-object v1, Lcom/squareup/picasso/Picasso$Priority;->a:Lcom/squareup/picasso/Picasso$Priority;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/squareup/picasso/Picasso$Priority;->NORMAL:Lcom/squareup/picasso/Picasso$Priority;
+    sget-object v1, Lcom/squareup/picasso/Picasso$Priority;->b:Lcom/squareup/picasso/Picasso$Priority;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/squareup/picasso/Picasso$Priority;->HIGH:Lcom/squareup/picasso/Picasso$Priority;
+    sget-object v1, Lcom/squareup/picasso/Picasso$Priority;->c:Lcom/squareup/picasso/Picasso$Priority;
 
     aput-object v1, v0, v4
 
-    sput-object v0, Lcom/squareup/picasso/Picasso$Priority;->$VALUES:[Lcom/squareup/picasso/Picasso$Priority;
+    sput-object v0, Lcom/squareup/picasso/Picasso$Priority;->d:[Lcom/squareup/picasso/Picasso$Priority;
 
     return-void
 .end method
@@ -110,7 +101,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/squareup/picasso/Picasso$Priority;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 102
@@ -130,7 +120,7 @@
 
     .prologue
     .line 102
-    sget-object v0, Lcom/squareup/picasso/Picasso$Priority;->$VALUES:[Lcom/squareup/picasso/Picasso$Priority;
+    sget-object v0, Lcom/squareup/picasso/Picasso$Priority;->d:[Lcom/squareup/picasso/Picasso$Priority;
 
     invoke-virtual {v0}, [Lcom/squareup/picasso/Picasso$Priority;->clone()Ljava/lang/Object;
 

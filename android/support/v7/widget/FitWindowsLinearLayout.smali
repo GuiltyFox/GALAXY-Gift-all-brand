@@ -13,7 +13,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 2
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 32
@@ -25,8 +24,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 36
@@ -40,7 +37,6 @@
 # virtual methods
 .method protected fitSystemWindows(Landroid/graphics/Rect;)Z
     .registers 3
-    .param p1, "insets"    # Landroid/graphics/Rect;
 
     .prologue
     .line 45
@@ -64,7 +60,6 @@
 
 .method public setOnFitSystemWindowsListener(Landroid/support/v7/widget/FitWindowsViewGroup$OnFitSystemWindowsListener;)V
     .registers 2
-    .param p1, "listener"    # Landroid/support/v7/widget/FitWindowsViewGroup$OnFitSystemWindowsListener;
 
     .prologue
     .line 40

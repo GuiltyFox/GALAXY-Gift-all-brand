@@ -4,12 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/bumptech/glide/load/model/ModelCache$ModelKey;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<A:",
@@ -22,12 +16,8 @@
 .end annotation
 
 
-# static fields
-.field private static final DEFAULT_SIZE:I = 0xfa
-
-
 # instance fields
-.field private final cache:Lcom/bumptech/glide/util/LruCache;
+.field private final a:Lcom/bumptech/glide/util/LruCache;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/util/LruCache",
@@ -45,7 +35,6 @@
 
     .prologue
     .line 22
-    .local p0, "this":Lcom/bumptech/glide/load/model/ModelCache;, "Lcom/bumptech/glide/load/model/ModelCache<TA;TB;>;"
     const/16 v0, 0xfa
 
     invoke-direct {p0, v0}, Lcom/bumptech/glide/load/model/ModelCache;-><init>(I)V
@@ -56,11 +45,9 @@
 
 .method public constructor <init>(I)V
     .registers 3
-    .param p1, "size"    # I
 
     .prologue
     .line 25
-    .local p0, "this":Lcom/bumptech/glide/load/model/ModelCache;, "Lcom/bumptech/glide/load/model/ModelCache<TA;TB;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 26
@@ -68,7 +55,7 @@
 
     invoke-direct {v0, p0, p1}, Lcom/bumptech/glide/load/model/ModelCache$1;-><init>(Lcom/bumptech/glide/load/model/ModelCache;I)V
 
-    iput-object v0, p0, Lcom/bumptech/glide/load/model/ModelCache;->cache:Lcom/bumptech/glide/util/LruCache;
+    iput-object v0, p0, Lcom/bumptech/glide/load/model/ModelCache;->a:Lcom/bumptech/glide/util/LruCache;
 
     .line 32
     return-void
@@ -76,10 +63,8 @@
 
 
 # virtual methods
-.method public get(Ljava/lang/Object;II)Ljava/lang/Object;
-    .registers 7
-    .param p2, "width"    # I
-    .param p3, "height"    # I
+.method public a(Ljava/lang/Object;II)Ljava/lang/Object;
+    .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TA;II)TB;"
@@ -88,32 +73,26 @@
 
     .prologue
     .line 44
-    .local p0, "this":Lcom/bumptech/glide/load/model/ModelCache;, "Lcom/bumptech/glide/load/model/ModelCache<TA;TB;>;"
-    .local p1, "model":Ljava/lang/Object;, "TA;"
-    invoke-static {p1, p2, p3}, Lcom/bumptech/glide/load/model/ModelCache$ModelKey;->get(Ljava/lang/Object;II)Lcom/bumptech/glide/load/model/ModelCache$ModelKey;
+    invoke-static {p1, p2, p3}, Lcom/bumptech/glide/load/model/ModelCache$ModelKey;->a(Ljava/lang/Object;II)Lcom/bumptech/glide/load/model/ModelCache$ModelKey;
 
     move-result-object v0
 
     .line 45
-    .local v0, "key":Lcom/bumptech/glide/load/model/ModelCache$ModelKey;, "Lcom/bumptech/glide/load/model/ModelCache$ModelKey<TA;>;"
-    iget-object v2, p0, Lcom/bumptech/glide/load/model/ModelCache;->cache:Lcom/bumptech/glide/util/LruCache;
+    iget-object v1, p0, Lcom/bumptech/glide/load/model/ModelCache;->a:Lcom/bumptech/glide/util/LruCache;
 
-    invoke-virtual {v2, v0}, Lcom/bumptech/glide/util/LruCache;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lcom/bumptech/glide/util/LruCache;->b(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
     .line 46
-    .local v1, "result":Ljava/lang/Object;, "TB;"
-    invoke-virtual {v0}, Lcom/bumptech/glide/load/model/ModelCache$ModelKey;->release()V
+    invoke-virtual {v0}, Lcom/bumptech/glide/load/model/ModelCache$ModelKey;->a()V
 
     .line 47
     return-object v1
 .end method
 
-.method public put(Ljava/lang/Object;IILjava/lang/Object;)V
+.method public a(Ljava/lang/Object;IILjava/lang/Object;)V
     .registers 7
-    .param p2, "width"    # I
-    .param p3, "height"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TA;IITB;)V"
@@ -122,18 +101,14 @@
 
     .prologue
     .line 59
-    .local p0, "this":Lcom/bumptech/glide/load/model/ModelCache;, "Lcom/bumptech/glide/load/model/ModelCache<TA;TB;>;"
-    .local p1, "model":Ljava/lang/Object;, "TA;"
-    .local p4, "value":Ljava/lang/Object;, "TB;"
-    invoke-static {p1, p2, p3}, Lcom/bumptech/glide/load/model/ModelCache$ModelKey;->get(Ljava/lang/Object;II)Lcom/bumptech/glide/load/model/ModelCache$ModelKey;
+    invoke-static {p1, p2, p3}, Lcom/bumptech/glide/load/model/ModelCache$ModelKey;->a(Ljava/lang/Object;II)Lcom/bumptech/glide/load/model/ModelCache$ModelKey;
 
     move-result-object v0
 
     .line 60
-    .local v0, "key":Lcom/bumptech/glide/load/model/ModelCache$ModelKey;, "Lcom/bumptech/glide/load/model/ModelCache$ModelKey<TA;>;"
-    iget-object v1, p0, Lcom/bumptech/glide/load/model/ModelCache;->cache:Lcom/bumptech/glide/util/LruCache;
+    iget-object v1, p0, Lcom/bumptech/glide/load/model/ModelCache;->a:Lcom/bumptech/glide/util/LruCache;
 
-    invoke-virtual {v1, v0, p4}, Lcom/bumptech/glide/util/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v0, p4}, Lcom/bumptech/glide/util/LruCache;->b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 61
     return-void

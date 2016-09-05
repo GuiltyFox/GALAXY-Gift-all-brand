@@ -7,12 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder$1;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -86,8 +80,6 @@
 # virtual methods
 .method public buildTypeDeserializer(Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/JavaType;Ljava/util/Collection;)Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
     .registers 10
-    .param p1, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p2, "baseType"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -103,7 +95,6 @@
 
     .prologue
     .line 96
-    .local p3, "subtypes":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/fasterxml/jackson/databind/jsontype/NamedType;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_idType:Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;
 
     sget-object v1, Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;->NONE:Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;
@@ -135,7 +126,6 @@
     move-result-object v2
 
     .line 101
-    .local v2, "idRes":Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;
     sget-object v0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder$1;->$SwitchMap$com$fasterxml$jackson$annotation$JsonTypeInfo$As:[I
 
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_includeAs:Lcom/fasterxml/jackson/annotation/JsonTypeInfo$As;
@@ -155,15 +145,15 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "Do not know how to construct standard type serializer for inclusion type: "
+    const-string/jumbo v2, "Do not know how to construct standard type serializer for inclusion type: "
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_includeAs:Lcom/fasterxml/jackson/annotation/JsonTypeInfo$As;
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_includeAs:Lcom/fasterxml/jackson/annotation/JsonTypeInfo$As;
 
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -252,9 +242,7 @@
 .end method
 
 .method public buildTypeSerializer(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/JavaType;Ljava/util/Collection;)Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
-    .registers 12
-    .param p1, "config"    # Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .param p2, "baseType"    # Lcom/fasterxml/jackson/databind/JavaType;
+    .registers 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -269,8 +257,7 @@
     .end annotation
 
     .prologue
-    .local p3, "subtypes":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/fasterxml/jackson/databind/jsontype/NamedType;>;"
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
     .line 74
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_idType:Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;
@@ -279,7 +266,7 @@
 
     if-ne v0, v1, :cond_9
 
-    move-object v0, v7
+    move-object v0, v6
 
     .line 85
     :goto_8
@@ -301,19 +288,18 @@
 
     invoke-virtual/range {v0 .. v5}, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->idResolver(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Ljava/util/Collection;ZZ)Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;
 
-    move-result-object v6
+    move-result-object v1
 
     .line 76
-    .local v6, "idRes":Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;
     sget-object v0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder$1;->$SwitchMap$com$fasterxml$jackson$annotation$JsonTypeInfo$As:[I
 
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_includeAs:Lcom/fasterxml/jackson/annotation/JsonTypeInfo$As;
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_includeAs:Lcom/fasterxml/jackson/annotation/JsonTypeInfo$As;
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/annotation/JsonTypeInfo$As;->ordinal()I
+    invoke-virtual {v2}, Lcom/fasterxml/jackson/annotation/JsonTypeInfo$As;->ordinal()I
 
-    move-result v1
+    move-result v2
 
-    aget v0, v0, v1
+    aget v0, v0, v2
 
     packed-switch v0, :pswitch_data_58
 
@@ -348,7 +334,7 @@
     :pswitch_3c
     new-instance v0, Lcom/fasterxml/jackson/databind/jsontype/impl/AsArrayTypeSerializer;
 
-    invoke-direct {v0, v6, v7}, Lcom/fasterxml/jackson/databind/jsontype/impl/AsArrayTypeSerializer;-><init>(Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;Lcom/fasterxml/jackson/databind/BeanProperty;)V
+    invoke-direct {v0, v1, v6}, Lcom/fasterxml/jackson/databind/jsontype/impl/AsArrayTypeSerializer;-><init>(Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;Lcom/fasterxml/jackson/databind/BeanProperty;)V
 
     goto :goto_8
 
@@ -356,9 +342,9 @@
     :pswitch_42
     new-instance v0, Lcom/fasterxml/jackson/databind/jsontype/impl/AsPropertyTypeSerializer;
 
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_typeProperty:Ljava/lang/String;
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_typeProperty:Ljava/lang/String;
 
-    invoke-direct {v0, v6, v7, v1}, Lcom/fasterxml/jackson/databind/jsontype/impl/AsPropertyTypeSerializer;-><init>(Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;Lcom/fasterxml/jackson/databind/BeanProperty;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v6, v2}, Lcom/fasterxml/jackson/databind/jsontype/impl/AsPropertyTypeSerializer;-><init>(Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;Lcom/fasterxml/jackson/databind/BeanProperty;Ljava/lang/String;)V
 
     goto :goto_8
 
@@ -366,7 +352,7 @@
     :pswitch_4a
     new-instance v0, Lcom/fasterxml/jackson/databind/jsontype/impl/AsWrapperTypeSerializer;
 
-    invoke-direct {v0, v6, v7}, Lcom/fasterxml/jackson/databind/jsontype/impl/AsWrapperTypeSerializer;-><init>(Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;Lcom/fasterxml/jackson/databind/BeanProperty;)V
+    invoke-direct {v0, v1, v6}, Lcom/fasterxml/jackson/databind/jsontype/impl/AsWrapperTypeSerializer;-><init>(Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;Lcom/fasterxml/jackson/databind/BeanProperty;)V
 
     goto :goto_8
 
@@ -374,9 +360,9 @@
     :pswitch_50
     new-instance v0, Lcom/fasterxml/jackson/databind/jsontype/impl/AsExternalTypeSerializer;
 
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_typeProperty:Ljava/lang/String;
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_typeProperty:Ljava/lang/String;
 
-    invoke-direct {v0, v6, v7, v1}, Lcom/fasterxml/jackson/databind/jsontype/impl/AsExternalTypeSerializer;-><init>(Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;Lcom/fasterxml/jackson/databind/BeanProperty;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v6, v2}, Lcom/fasterxml/jackson/databind/jsontype/impl/AsExternalTypeSerializer;-><init>(Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;Lcom/fasterxml/jackson/databind/BeanProperty;Ljava/lang/String;)V
 
     goto :goto_8
 
@@ -392,7 +378,6 @@
 
 .method public bridge synthetic defaultImpl(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Class;
 
     .prologue
     .line 17
@@ -416,7 +401,6 @@
 
     .prologue
     .line 149
-    .local p1, "defaultImpl":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_defaultImpl:Ljava/lang/Class;
 
     .line 150
@@ -452,9 +436,6 @@
 
 .method protected idResolver(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Ljava/util/Collection;ZZ)Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;
     .registers 9
-    .param p2, "baseType"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p4, "forSer"    # Z
-    .param p5, "forDeser"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -471,8 +452,6 @@
 
     .prologue
     .line 185
-    .local p1, "config":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
-    .local p3, "subtypes":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/fasterxml/jackson/databind/jsontype/NamedType;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;->_customIdResolver:Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;
 
     if-eqz v0, :cond_7
@@ -588,7 +567,6 @@
 
 .method public bridge synthetic inclusion(Lcom/fasterxml/jackson/annotation/JsonTypeInfo$As;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/annotation/JsonTypeInfo$As;
 
     .prologue
     .line 17
@@ -601,7 +579,6 @@
 
 .method public inclusion(Lcom/fasterxml/jackson/annotation/JsonTypeInfo$As;)Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;
     .registers 4
-    .param p1, "includeAs"    # Lcom/fasterxml/jackson/annotation/JsonTypeInfo$As;
 
     .prologue
     .line 126
@@ -626,8 +603,6 @@
 
 .method public bridge synthetic init(Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
     .registers 4
-    .param p1, "x0"    # Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;
 
     .prologue
     .line 17
@@ -640,8 +615,6 @@
 
 .method public init(Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;)Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;
     .registers 5
-    .param p1, "idType"    # Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;
-    .param p2, "idRes"    # Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;
 
     .prologue
     .line 59
@@ -686,7 +659,6 @@
 
 .method public bridge synthetic typeIdVisibility(Z)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
     .registers 3
-    .param p1, "x0"    # Z
 
     .prologue
     .line 17
@@ -699,7 +671,6 @@
 
 .method public typeIdVisibility(Z)Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;
     .registers 2
-    .param p1, "isVisible"    # Z
 
     .prologue
     .line 155
@@ -711,7 +682,6 @@
 
 .method public bridge synthetic typeProperty(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/String;
 
     .prologue
     .line 17
@@ -724,7 +694,6 @@
 
 .method public typeProperty(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/jsontype/impl/StdTypeResolverBuilder;
     .registers 3
-    .param p1, "typeIdPropName"    # Ljava/lang/String;
 
     .prologue
     .line 140

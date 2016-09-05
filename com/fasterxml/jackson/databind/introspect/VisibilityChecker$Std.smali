@@ -16,15 +16,6 @@
     setterVisibility = .enum Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->ANY:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 .end annotation
 
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Std"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -82,7 +73,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)V
     .registers 3
-    .param p1, "v"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .prologue
     .line 217
@@ -153,11 +143,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)V
     .registers 6
-    .param p1, "getter"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
-    .param p2, "isGetter"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
-    .param p3, "setter"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
-    .param p4, "creator"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
-    .param p5, "field"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .prologue
     .line 202
@@ -184,7 +169,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/annotation/JsonAutoDetect;)V
     .registers 3
-    .param p1, "ann"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect;
 
     .prologue
     .line 189
@@ -243,7 +227,6 @@
 # virtual methods
 .method public isCreatorVisible(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Z
     .registers 3
-    .param p1, "m"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
     .prologue
     .line 335
@@ -260,7 +243,6 @@
 
 .method public isCreatorVisible(Ljava/lang/reflect/Member;)Z
     .registers 3
-    .param p1, "m"    # Ljava/lang/reflect/Member;
 
     .prologue
     .line 330
@@ -275,7 +257,6 @@
 
 .method public isFieldVisible(Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;)Z
     .registers 3
-    .param p1, "f"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;
 
     .prologue
     .line 345
@@ -292,7 +273,6 @@
 
 .method public isFieldVisible(Ljava/lang/reflect/Field;)Z
     .registers 3
-    .param p1, "f"    # Ljava/lang/reflect/Field;
 
     .prologue
     .line 340
@@ -307,7 +287,6 @@
 
 .method public isGetterVisible(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;)Z
     .registers 3
-    .param p1, "m"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;
 
     .prologue
     .line 355
@@ -324,7 +303,6 @@
 
 .method public isGetterVisible(Ljava/lang/reflect/Method;)Z
     .registers 3
-    .param p1, "m"    # Ljava/lang/reflect/Method;
 
     .prologue
     .line 350
@@ -339,7 +317,6 @@
 
 .method public isIsGetterVisible(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;)Z
     .registers 3
-    .param p1, "m"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;
 
     .prologue
     .line 365
@@ -356,7 +333,6 @@
 
 .method public isIsGetterVisible(Ljava/lang/reflect/Method;)Z
     .registers 3
-    .param p1, "m"    # Ljava/lang/reflect/Method;
 
     .prologue
     .line 360
@@ -371,7 +347,6 @@
 
 .method public isSetterVisible(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;)Z
     .registers 3
-    .param p1, "m"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;
 
     .prologue
     .line 375
@@ -388,7 +363,6 @@
 
 .method public isSetterVisible(Ljava/lang/reflect/Method;)Z
     .registers 3
-    .param p1, "m"    # Ljava/lang/reflect/Method;
 
     .prologue
     .line 370
@@ -487,7 +461,6 @@
 
 .method public with(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
     .registers 3
-    .param p1, "v"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .prologue
     .line 258
@@ -512,22 +485,18 @@
 
 .method public with(Lcom/fasterxml/jackson/annotation/JsonAutoDetect;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
     .registers 4
-    .param p1, "ann"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect;
 
     .prologue
     .line 244
-    move-object v0, p0
-
     .line 245
-    .local v0, "curr":Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
-    if-eqz p1, :cond_2b
+    if-eqz p1, :cond_2a
 
     .line 246
     invoke-interface {p1}, Lcom/fasterxml/jackson/annotation/JsonAutoDetect;->getterVisibility()Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->withGetterVisibility(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
+    invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->withGetterVisibility(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
 
     move-result-object v0
 
@@ -565,16 +534,15 @@
 
     invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->withFieldVisibility(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
 
-    move-result-object v0
+    move-result-object p0
 
     .line 252
-    :cond_2b
-    return-object v0
+    :cond_2a
+    return-object p0
 .end method
 
 .method public bridge synthetic with(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .prologue
     .line 149
@@ -587,7 +555,6 @@
 
 .method public bridge synthetic with(Lcom/fasterxml/jackson/annotation/JsonAutoDetect;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect;
 
     .prologue
     .line 149
@@ -600,30 +567,27 @@
 
 .method public withCreatorVisibility(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
     .registers 8
-    .param p1, "v"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .prologue
     .line 310
     sget-object v0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->DEFAULT:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    if-ne p1, v0, :cond_8
+    if-ne p1, v0, :cond_1c
 
     sget-object v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->DEFAULT:Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
 
-    iget-object p1, v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->_creatorMinLevel:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    iget-object v4, v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->_creatorMinLevel:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .line 311
-    :cond_8
+    :goto_8
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->_creatorMinLevel:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    if-ne v0, p1, :cond_d
+    if-ne v0, v4, :cond_d
 
     .line 312
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
     :goto_c
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
     :cond_d
     new-instance v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
 
@@ -635,18 +599,20 @@
 
     iget-object v5, p0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->_fieldMinLevel:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    move-object v4, p1
-
     invoke-direct/range {v0 .. v5}, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;-><init>(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)V
 
     move-object p0, v0
 
     goto :goto_c
+
+    :cond_1c
+    move-object v4, p1
+
+    goto :goto_8
 .end method
 
 .method public bridge synthetic withCreatorVisibility(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .prologue
     .line 149
@@ -659,30 +625,27 @@
 
 .method public withFieldVisibility(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
     .registers 8
-    .param p1, "v"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .prologue
     .line 317
     sget-object v0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->DEFAULT:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    if-ne p1, v0, :cond_8
+    if-ne p1, v0, :cond_1c
 
     sget-object v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->DEFAULT:Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
 
-    iget-object p1, v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->_fieldMinLevel:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    iget-object v5, v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->_fieldMinLevel:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .line 318
-    :cond_8
+    :goto_8
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->_fieldMinLevel:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    if-ne v0, p1, :cond_d
+    if-ne v0, v5, :cond_d
 
     .line 319
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
     :goto_c
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
     :cond_d
     new-instance v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
 
@@ -694,18 +657,20 @@
 
     iget-object v4, p0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->_creatorMinLevel:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    move-object v5, p1
-
     invoke-direct/range {v0 .. v5}, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;-><init>(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)V
 
     move-object p0, v0
 
     goto :goto_c
+
+    :cond_1c
+    move-object v5, p1
+
+    goto :goto_8
 .end method
 
 .method public bridge synthetic withFieldVisibility(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .prologue
     .line 149
@@ -718,30 +683,27 @@
 
 .method public withGetterVisibility(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
     .registers 8
-    .param p1, "v"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .prologue
     .line 289
     sget-object v0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->DEFAULT:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    if-ne p1, v0, :cond_8
+    if-ne p1, v0, :cond_1c
 
     sget-object v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->DEFAULT:Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
 
-    iget-object p1, v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->_getterMinLevel:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    iget-object v1, v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->_getterMinLevel:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .line 290
-    :cond_8
+    :goto_8
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->_getterMinLevel:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    if-ne v0, p1, :cond_d
+    if-ne v0, v1, :cond_d
 
     .line 291
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
     :goto_c
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
     :cond_d
     new-instance v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
 
@@ -753,18 +715,20 @@
 
     iget-object v5, p0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->_fieldMinLevel:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    move-object v1, p1
-
     invoke-direct/range {v0 .. v5}, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;-><init>(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)V
 
     move-object p0, v0
 
     goto :goto_c
+
+    :cond_1c
+    move-object v1, p1
+
+    goto :goto_8
 .end method
 
 .method public bridge synthetic withGetterVisibility(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .prologue
     .line 149
@@ -777,30 +741,27 @@
 
 .method public withIsGetterVisibility(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
     .registers 8
-    .param p1, "v"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .prologue
     .line 296
     sget-object v0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->DEFAULT:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    if-ne p1, v0, :cond_8
+    if-ne p1, v0, :cond_1c
 
     sget-object v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->DEFAULT:Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
 
-    iget-object p1, v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->_isGetterMinLevel:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    iget-object v2, v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->_isGetterMinLevel:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .line 297
-    :cond_8
+    :goto_8
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->_isGetterMinLevel:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    if-ne v0, p1, :cond_d
+    if-ne v0, v2, :cond_d
 
     .line 298
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
     :goto_c
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
     :cond_d
     new-instance v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
 
@@ -812,18 +773,20 @@
 
     iget-object v5, p0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->_fieldMinLevel:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    move-object v2, p1
-
     invoke-direct/range {v0 .. v5}, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;-><init>(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)V
 
     move-object p0, v0
 
     goto :goto_c
+
+    :cond_1c
+    move-object v2, p1
+
+    goto :goto_8
 .end method
 
 .method public bridge synthetic withIsGetterVisibility(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .prologue
     .line 149
@@ -836,30 +799,27 @@
 
 .method public withSetterVisibility(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
     .registers 8
-    .param p1, "v"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .prologue
     .line 303
     sget-object v0, Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;->DEFAULT:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    if-ne p1, v0, :cond_8
+    if-ne p1, v0, :cond_1c
 
     sget-object v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->DEFAULT:Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
 
-    iget-object p1, v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->_setterMinLevel:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
+    iget-object v3, v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->_setterMinLevel:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .line 304
-    :cond_8
+    :goto_8
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->_setterMinLevel:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    if-ne v0, p1, :cond_d
+    if-ne v0, v3, :cond_d
 
     .line 305
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
     :goto_c
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
     :cond_d
     new-instance v0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
 
@@ -871,18 +831,20 @@
 
     iget-object v5, p0, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->_fieldMinLevel:Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
-    move-object v3, p1
-
     invoke-direct/range {v0 .. v5}, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;-><init>(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)V
 
     move-object p0, v0
 
     goto :goto_c
+
+    :cond_1c
+    move-object v3, p1
+
+    goto :goto_8
 .end method
 
 .method public bridge synthetic withSetterVisibility(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .prologue
     .line 149
@@ -895,8 +857,6 @@
 
 .method public withVisibility(Lcom/fasterxml/jackson/annotation/PropertyAccessor;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
     .registers 5
-    .param p1, "method"    # Lcom/fasterxml/jackson/annotation/PropertyAccessor;
-    .param p2, "v"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .prologue
     .line 267
@@ -911,12 +871,10 @@
     packed-switch v0, :pswitch_data_2a
 
     .line 283
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
     :goto_b
     return-object p0
 
     .line 269
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
     :pswitch_c
     invoke-virtual {p0, p2}, Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;->withGetterVisibility(Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker$Std;
 
@@ -978,8 +936,6 @@
 
 .method public bridge synthetic withVisibility(Lcom/fasterxml/jackson/annotation/PropertyAccessor;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;
     .registers 4
-    .param p1, "x0"    # Lcom/fasterxml/jackson/annotation/PropertyAccessor;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .prologue
     .line 149

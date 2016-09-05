@@ -15,16 +15,7 @@
 
 
 # virtual methods
-.method public abstract cancel()V
-.end method
-
-.method public abstract cleanup()V
-.end method
-
-.method public abstract getId()Ljava/lang/String;
-.end method
-
-.method public abstract loadData(Lcom/bumptech/glide/Priority;)Ljava/lang/Object;
+.method public abstract a(Lcom/bumptech/glide/Priority;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -32,10 +23,13 @@
             ")TT;"
         }
     .end annotation
+.end method
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/Exception;
-        }
-    .end annotation
+.method public abstract a()V
+.end method
+
+.method public abstract b()Ljava/lang/String;
+.end method
+
+.method public abstract c()V
 .end method

@@ -14,10 +14,6 @@
 .end annotation
 
 
-# static fields
-.field public static final GET_PARCEL:Ljava/lang/String; = "getParcel"
-
-
 # virtual methods
 .method public abstract getParcel()Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;

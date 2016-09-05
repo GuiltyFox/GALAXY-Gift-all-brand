@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/Snackbar;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x10
-    name = "Behavior"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Landroid/support/design/widget/SwipeDismissBehavior",
@@ -44,7 +35,6 @@
 # virtual methods
 .method public canSwipeDismissView(Landroid/view/View;)Z
     .registers 3
-    .param p1, "child"    # Landroid/view/View;
 
     .prologue
     .line 821
@@ -55,9 +45,6 @@
 
 .method public onInterceptTouchEvent(Landroid/support/design/widget/CoordinatorLayout;Landroid/support/design/widget/Snackbar$SnackbarLayout;Landroid/view/MotionEvent;)Z
     .registers 6
-    .param p1, "parent"    # Landroid/support/design/widget/CoordinatorLayout;
-    .param p2, "child"    # Landroid/support/design/widget/Snackbar$SnackbarLayout;
-    .param p3, "event"    # Landroid/view/MotionEvent;
 
     .prologue
     .line 829

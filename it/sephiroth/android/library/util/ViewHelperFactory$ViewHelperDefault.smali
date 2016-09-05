@@ -3,21 +3,9 @@
 .source "ViewHelperFactory.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lit/sephiroth/android/library/util/ViewHelperFactory;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "ViewHelperDefault"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
     .registers 2
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 30
@@ -29,33 +17,8 @@
 
 
 # virtual methods
-.method public isHardwareAccelerated()Z
-    .registers 2
-
-    .prologue
-    .line 46
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public postOnAnimation(Ljava/lang/Runnable;)V
-    .registers 3
-    .param p1, "action"    # Ljava/lang/Runnable;
-
-    .prologue
-    .line 35
-    iget-object v0, p0, Lit/sephiroth/android/library/util/ViewHelperFactory$ViewHelperDefault;->view:Landroid/view/View;
-
-    invoke-virtual {v0, p1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
-
-    .line 36
-    return-void
-.end method
-
-.method public setScrollX(I)V
+.method public a(I)V
     .registers 5
-    .param p1, "value"    # I
 
     .prologue
     .line 40
@@ -82,9 +45,9 @@
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 41
-    iget-object v0, p0, Lit/sephiroth/android/library/util/ViewHelperFactory$ViewHelperDefault;->view:Landroid/view/View;
+    iget-object v0, p0, Lit/sephiroth/android/library/util/ViewHelperFactory$ViewHelperDefault;->a:Landroid/view/View;
 
-    iget-object v1, p0, Lit/sephiroth/android/library/util/ViewHelperFactory$ViewHelperDefault;->view:Landroid/view/View;
+    iget-object v1, p0, Lit/sephiroth/android/library/util/ViewHelperFactory$ViewHelperDefault;->a:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getScrollY()I
 
@@ -94,4 +57,27 @@
 
     .line 42
     return-void
+.end method
+
+.method public a(Ljava/lang/Runnable;)V
+    .registers 3
+
+    .prologue
+    .line 35
+    iget-object v0, p0, Lit/sephiroth/android/library/util/ViewHelperFactory$ViewHelperDefault;->a:Landroid/view/View;
+
+    invoke-virtual {v0, p1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+
+    .line 36
+    return-void
+.end method
+
+.method public a()Z
+    .registers 2
+
+    .prologue
+    .line 46
+    const/4 v0, 0x0
+
+    return v0
 .end method

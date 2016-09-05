@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/CoordinatorLayout;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "ViewElevationComparator"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -42,48 +33,44 @@
 # virtual methods
 .method public compare(Landroid/view/View;Landroid/view/View;)I
     .registers 6
-    .param p1, "lhs"    # Landroid/view/View;
-    .param p2, "rhs"    # Landroid/view/View;
 
     .prologue
     .line 1642
-    invoke-static {p1}, Landroid/support/v4/view/ViewCompat;->getZ(Landroid/view/View;)F
+    invoke-static {p1}, Landroid/support/v4/view/ViewCompat;->F(Landroid/view/View;)F
 
     move-result v0
 
     .line 1643
-    .local v0, "lz":F
-    invoke-static {p2}, Landroid/support/v4/view/ViewCompat;->getZ(Landroid/view/View;)F
+    invoke-static {p2}, Landroid/support/v4/view/ViewCompat;->F(Landroid/view/View;)F
 
     move-result v1
 
     .line 1644
-    .local v1, "rz":F
     cmpl-float v2, v0, v1
 
     if-lez v2, :cond_e
 
     .line 1645
-    const/4 v2, -0x1
+    const/4 v0, -0x1
 
     .line 1649
     :goto_d
-    return v2
+    return v0
 
     .line 1646
     :cond_e
-    cmpg-float v2, v0, v1
+    cmpg-float v0, v0, v1
 
-    if-gez v2, :cond_14
+    if-gez v0, :cond_14
 
     .line 1647
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
     goto :goto_d
 
     .line 1649
     :cond_14
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     goto :goto_d
 .end method

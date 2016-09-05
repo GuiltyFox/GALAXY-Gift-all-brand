@@ -3,17 +3,6 @@
 .source "RequestParams.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/loopj/android/http/RequestParams;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "StreamWrapper"
-.end annotation
-
-
 # instance fields
 .field public final autoClose:Z
 
@@ -27,10 +16,6 @@
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;Ljava/lang/String;Ljava/lang/String;Z)V
     .registers 5
-    .param p1, "inputStream"    # Ljava/io/InputStream;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "contentType"    # Ljava/lang/String;
-    .param p4, "autoClose"    # Z
 
     .prologue
     .line 689
@@ -54,10 +39,6 @@
 
 .method static newInstance(Ljava/io/InputStream;Ljava/lang/String;Ljava/lang/String;Z)Lcom/loopj/android/http/RequestParams$StreamWrapper;
     .registers 5
-    .param p0, "inputStream"    # Ljava/io/InputStream;
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "contentType"    # Ljava/lang/String;
-    .param p3, "autoClose"    # Z
 
     .prologue
     .line 697
@@ -67,7 +48,6 @@
 
     const-string/jumbo p2, "application/octet-stream"
 
-    .end local p2    # "contentType":Ljava/lang/String;
     :cond_7
     invoke-direct {v0, p0, p1, p2, p3}, Lcom/loopj/android/http/RequestParams$StreamWrapper;-><init>(Ljava/io/InputStream;Ljava/lang/String;Ljava/lang/String;Z)V
 

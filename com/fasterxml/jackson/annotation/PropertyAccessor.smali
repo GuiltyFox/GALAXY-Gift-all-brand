@@ -173,7 +173,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/fasterxml/jackson/annotation/PropertyAccessor;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 13

@@ -3,21 +3,9 @@
 .source "Utils.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/squareup/picasso/Utils;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "PicassoThread"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>(Ljava/lang/Runnable;)V
     .registers 2
-    .param p1, "r"    # Ljava/lang/Runnable;
 
     .prologue
     .line 406

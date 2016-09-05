@@ -20,7 +20,7 @@
 
 
 # instance fields
-.field protected final data:Ljava/lang/Object;
+.field protected final a:Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "TT;"
@@ -40,8 +40,6 @@
 
     .prologue
     .line 15
-    .local p0, "this":Lcom/bumptech/glide/load/resource/SimpleResource;, "Lcom/bumptech/glide/load/resource/SimpleResource<TT;>;"
-    .local p1, "data":Ljava/lang/Object;, "TT;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 16
@@ -58,7 +56,7 @@
 
     .line 19
     :cond_e
-    iput-object p1, p0, Lcom/bumptech/glide/load/resource/SimpleResource;->data:Ljava/lang/Object;
+    iput-object p1, p0, Lcom/bumptech/glide/load/resource/SimpleResource;->a:Ljava/lang/Object;
 
     .line 20
     return-void
@@ -66,7 +64,7 @@
 
 
 # virtual methods
-.method public final get()Ljava/lang/Object;
+.method public final b()Ljava/lang/Object;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -76,28 +74,25 @@
 
     .prologue
     .line 24
-    .local p0, "this":Lcom/bumptech/glide/load/resource/SimpleResource;, "Lcom/bumptech/glide/load/resource/SimpleResource<TT;>;"
-    iget-object v0, p0, Lcom/bumptech/glide/load/resource/SimpleResource;->data:Ljava/lang/Object;
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/SimpleResource;->a:Ljava/lang/Object;
 
     return-object v0
 .end method
 
-.method public final getSize()I
+.method public final c()I
     .registers 2
 
     .prologue
     .line 29
-    .local p0, "this":Lcom/bumptech/glide/load/resource/SimpleResource;, "Lcom/bumptech/glide/load/resource/SimpleResource<TT;>;"
     const/4 v0, 0x1
 
     return v0
 .end method
 
-.method public recycle()V
+.method public d()V
     .registers 1
 
     .prologue
     .line 35
-    .local p0, "this":Lcom/bumptech/glide/load/resource/SimpleResource;, "Lcom/bumptech/glide/load/resource/SimpleResource<TT;>;"
     return-void
 .end method

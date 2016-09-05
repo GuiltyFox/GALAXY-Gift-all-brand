@@ -11,28 +11,22 @@
     value = Lcom/samsung/privilege/activity/AboutUsActivity;->doAdminCampaign(Landroid/view/View;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/AboutUsActivity;
+.field final synthetic a:Landroid/widget/EditText;
 
-.field final synthetic val$input:Landroid/widget/EditText;
+.field final synthetic b:Lcom/samsung/privilege/activity/AboutUsActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/AboutUsActivity;Landroid/widget/EditText;)V
     .registers 3
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/AboutUsActivity;
 
     .prologue
     .line 198
-    iput-object p1, p0, Lcom/samsung/privilege/activity/AboutUsActivity$3;->this$0:Lcom/samsung/privilege/activity/AboutUsActivity;
+    iput-object p1, p0, Lcom/samsung/privilege/activity/AboutUsActivity$3;->b:Lcom/samsung/privilege/activity/AboutUsActivity;
 
-    iput-object p2, p0, Lcom/samsung/privilege/activity/AboutUsActivity$3;->val$input:Landroid/widget/EditText;
+    iput-object p2, p0, Lcom/samsung/privilege/activity/AboutUsActivity$3;->a:Landroid/widget/EditText;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,37 +37,34 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .registers 7
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
     .prologue
     .line 201
-    iget-object v2, p0, Lcom/samsung/privilege/activity/AboutUsActivity$3;->val$input:Landroid/widget/EditText;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/AboutUsActivity$3;->a:Landroid/widget/EditText;
 
-    invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+    invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 203
-    .local v1, "result":Ljava/lang/String;
-    if-eqz v1, :cond_36
+    if-eqz v0, :cond_31
 
-    const-string/jumbo v2, ""
+    const-string/jumbo v1, ""
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_36
+    if-nez v1, :cond_31
 
     .line 204
-    new-instance v0, Landroid/content/Intent;
+    new-instance v1, Landroid/content/Intent;
 
-    iget-object v2, p0, Lcom/samsung/privilege/activity/AboutUsActivity$3;->this$0:Lcom/samsung/privilege/activity/AboutUsActivity;
+    iget-object v2, p0, Lcom/samsung/privilege/activity/AboutUsActivity$3;->b:Lcom/samsung/privilege/activity/AboutUsActivity;
 
     invoke-virtual {v2}, Lcom/samsung/privilege/activity/AboutUsActivity;->getApplicationContext()Landroid/content/Context;
 
@@ -81,30 +72,23 @@
 
     const-class v3, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    invoke-direct {v0, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 205
-    .local v0, "intent":Landroid/content/Intent;
-    const/high16 v2, 0x40000000
-
-    invoke-virtual {v0, v2}, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+    invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
     .line 206
     const-string/jumbo v2, "campaign_id"
 
-    invoke-static {v1}, Lcom/bzbs/util/BBUtil;->CTypeInteger(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static {v0}, Lcom/bzbs/util/BBUtil;->b(Ljava/lang/String;)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v0, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
+    invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
     .line 207
-    iget-object v2, p0, Lcom/samsung/privilege/activity/AboutUsActivity$3;->this$0:Lcom/samsung/privilege/activity/AboutUsActivity;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/AboutUsActivity$3;->b:Lcom/samsung/privilege/activity/AboutUsActivity;
 
-    invoke-virtual {v2, v0}, Lcom/samsung/privilege/activity/AboutUsActivity;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/AboutUsActivity;->startActivity(Landroid/content/Intent;)V
 
     .line 209
-    .end local v0    # "intent":Landroid/content/Intent;
-    :cond_36
+    :cond_31
     return-void
 .end method

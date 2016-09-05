@@ -3,17 +3,6 @@
 .source "GifBitmapWrapperResourceDecoder.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/resource/gifbitmap/GifBitmapWrapperResourceDecoder;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "BufferedStreamFactory"
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .registers 1
@@ -27,10 +16,8 @@
 
 
 # virtual methods
-.method public build(Ljava/io/InputStream;[B)Ljava/io/InputStream;
+.method public a(Ljava/io/InputStream;[B)Ljava/io/InputStream;
     .registers 4
-    .param p1, "is"    # Ljava/io/InputStream;
-    .param p2, "buffer"    # [B
 
     .prologue
     .line 140

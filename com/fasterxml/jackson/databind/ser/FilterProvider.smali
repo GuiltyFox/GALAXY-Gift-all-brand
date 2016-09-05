@@ -22,9 +22,7 @@
 .end method
 
 .method public findPropertyFilter(Ljava/lang/Object;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/ser/PropertyFilter;
-    .registers 5
-    .param p1, "filterId"    # Ljava/lang/Object;
-    .param p2, "valueToFilter"    # Ljava/lang/Object;
+    .registers 4
 
     .prologue
     .line 52
@@ -33,20 +31,19 @@
     move-result-object v0
 
     .line 53
-    .local v0, "old":Lcom/fasterxml/jackson/databind/ser/BeanPropertyFilter;
     if-nez v0, :cond_8
 
     .line 54
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 56
     :goto_7
-    return-object v1
+    return-object v0
 
     :cond_8
     invoke-static {v0}, Lcom/fasterxml/jackson/databind/ser/impl/SimpleBeanPropertyFilter;->from(Lcom/fasterxml/jackson/databind/ser/BeanPropertyFilter;)Lcom/fasterxml/jackson/databind/ser/PropertyFilter;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_7
 .end method

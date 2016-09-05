@@ -3,33 +3,21 @@
 .source "SuggestionsAdapter.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/widget/SuggestionsAdapter;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "ChildViewCache"
-.end annotation
-
-
 # instance fields
-.field public final mIcon1:Landroid/widget/ImageView;
+.field public final a:Landroid/widget/TextView;
 
-.field public final mIcon2:Landroid/widget/ImageView;
+.field public final b:Landroid/widget/TextView;
 
-.field public final mIconRefine:Landroid/widget/ImageView;
+.field public final c:Landroid/widget/ImageView;
 
-.field public final mText1:Landroid/widget/TextView;
+.field public final d:Landroid/widget/ImageView;
 
-.field public final mText2:Landroid/widget/TextView;
+.field public final e:Landroid/widget/ImageView;
 
 
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
     .registers 3
-    .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 264
@@ -44,7 +32,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;->mText1:Landroid/widget/TextView;
+    iput-object v0, p0, Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;->a:Landroid/widget/TextView;
 
     .line 266
     const v0, 0x1020015
@@ -55,7 +43,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    iput-object v0, p0, Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;->mText2:Landroid/widget/TextView;
+    iput-object v0, p0, Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;->b:Landroid/widget/TextView;
 
     .line 267
     const v0, 0x1020007
@@ -66,7 +54,7 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    iput-object v0, p0, Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;->mIcon1:Landroid/widget/ImageView;
+    iput-object v0, p0, Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;->c:Landroid/widget/ImageView;
 
     .line 268
     const v0, 0x1020008
@@ -77,7 +65,7 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    iput-object v0, p0, Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;->mIcon2:Landroid/widget/ImageView;
+    iput-object v0, p0, Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;->d:Landroid/widget/ImageView;
 
     .line 269
     sget v0, Landroid/support/v7/appcompat/R$id;->edit_query:I
@@ -88,7 +76,7 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    iput-object v0, p0, Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;->mIconRefine:Landroid/widget/ImageView;
+    iput-object v0, p0, Landroid/support/v7/widget/SuggestionsAdapter$ChildViewCache;->e:Landroid/widget/ImageView;
 
     .line 270
     return-void

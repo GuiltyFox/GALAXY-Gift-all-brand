@@ -3,19 +3,8 @@
 .source "CursorAdapter.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/widget/CursorAdapter;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "ChangeObserver"
-.end annotation
-
-
 # instance fields
-.field final synthetic this$0:Landroid/support/v4/widget/CursorAdapter;
+.field final synthetic a:Landroid/support/v4/widget/CursorAdapter;
 
 
 # direct methods
@@ -24,7 +13,7 @@
 
     .prologue
     .line 454
-    iput-object p1, p0, Landroid/support/v4/widget/CursorAdapter$ChangeObserver;->this$0:Landroid/support/v4/widget/CursorAdapter;
+    iput-object p1, p0, Landroid/support/v4/widget/CursorAdapter$ChangeObserver;->a:Landroid/support/v4/widget/CursorAdapter;
 
     .line 455
     new-instance v0, Landroid/os/Handler;
@@ -51,13 +40,12 @@
 
 .method public onChange(Z)V
     .registers 3
-    .param p1, "selfChange"    # Z
 
     .prologue
     .line 465
-    iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter$ChangeObserver;->this$0:Landroid/support/v4/widget/CursorAdapter;
+    iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter$ChangeObserver;->a:Landroid/support/v4/widget/CursorAdapter;
 
-    invoke-virtual {v0}, Landroid/support/v4/widget/CursorAdapter;->onContentChanged()V
+    invoke-virtual {v0}, Landroid/support/v4/widget/CursorAdapter;->b()V
 
     .line 466
     return-void

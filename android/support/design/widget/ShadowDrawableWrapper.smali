@@ -55,7 +55,7 @@
 
     .prologue
     .line 39
-    const-wide v0, 0x4046800000000000L
+    const-wide v0, 0x4046800000000000L    # 45.0
 
     invoke-static {v0, v1}, Ljava/lang/Math;->toRadians(D)D
 
@@ -72,11 +72,6 @@
 
 .method public constructor <init>(Landroid/content/res/Resources;Landroid/graphics/drawable/Drawable;FFF)V
     .registers 9
-    .param p1, "resources"    # Landroid/content/res/Resources;
-    .param p2, "content"    # Landroid/graphics/drawable/Drawable;
-    .param p3, "radius"    # F
-    .param p4, "shadowSize"    # F
-    .param p5, "maxShadowSize"    # F
 
     .prologue
     const/4 v0, 0x1
@@ -177,18 +172,16 @@
 
 .method private buildComponents(Landroid/graphics/Rect;)V
     .registers 8
-    .param p1, "bounds"    # Landroid/graphics/Rect;
 
     .prologue
     .line 323
-    iget v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
+    iget v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
 
-    const/high16 v2, 0x3fc00000
+    const/high16 v1, 0x3fc00000    # 1.5f
 
-    mul-float v0, v1, v2
+    mul-float/2addr v0, v1
 
     .line 324
-    .local v0, "verticalOffset":F
     iget-object v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
 
     iget v2, p1, Landroid/graphics/Rect;->left:I
@@ -217,40 +210,40 @@
 
     int-to-float v5, v5
 
-    sub-float/2addr v5, v0
+    sub-float v0, v5, v0
 
-    invoke-virtual {v1, v2, v3, v4, v5}, Landroid/graphics/RectF;->set(FFFF)V
+    invoke-virtual {v1, v2, v3, v4, v0}, Landroid/graphics/RectF;->set(FFFF)V
 
     .line 327
     invoke-virtual {p0}, Landroid/support/design/widget/ShadowDrawableWrapper;->getWrappedDrawable()Landroid/graphics/drawable/Drawable;
 
-    move-result-object v1
+    move-result-object v0
+
+    iget-object v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
+
+    iget v1, v1, Landroid/graphics/RectF;->left:F
+
+    float-to-int v1, v1
 
     iget-object v2, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
 
-    iget v2, v2, Landroid/graphics/RectF;->left:F
+    iget v2, v2, Landroid/graphics/RectF;->top:F
 
     float-to-int v2, v2
 
     iget-object v3, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
 
-    iget v3, v3, Landroid/graphics/RectF;->top:F
+    iget v3, v3, Landroid/graphics/RectF;->right:F
 
     float-to-int v3, v3
 
     iget-object v4, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
 
-    iget v4, v4, Landroid/graphics/RectF;->right:F
+    iget v4, v4, Landroid/graphics/RectF;->bottom:F
 
     float-to-int v4, v4
 
-    iget-object v5, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
-
-    iget v5, v5, Landroid/graphics/RectF;->bottom:F
-
-    float-to-int v5, v5
-
-    invoke-virtual {v1, v2, v3, v4, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 330
     invoke-direct {p0}, Landroid/support/design/widget/ShadowDrawableWrapper;->buildShadowCorners()V
@@ -260,350 +253,247 @@
 .end method
 
 .method private buildShadowCorners()V
-    .registers 18
+    .registers 15
 
     .prologue
+    const/4 v13, 0x2
+
+    const/4 v12, 0x1
+
+    const/4 v11, 0x3
+
+    const/4 v10, 0x0
+
+    const/4 v1, 0x0
+
     .line 282
-    new-instance v13, Landroid/graphics/RectF;
+    new-instance v7, Landroid/graphics/RectF;
 
-    move-object/from16 v0, p0
+    iget v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
 
-    iget v1, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
+    neg-float v0, v0
 
-    neg-float v1, v1
-
-    move-object/from16 v0, p0
-
-    iget v2, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
+    iget v2, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
 
     neg-float v2, v2
 
-    move-object/from16 v0, p0
+    iget v3, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
 
-    iget v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
+    iget v4, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
 
-    move-object/from16 v0, p0
-
-    iget v5, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
-
-    invoke-direct {v13, v1, v2, v3, v5}, Landroid/graphics/RectF;-><init>(FFFF)V
+    invoke-direct {v7, v0, v2, v3, v4}, Landroid/graphics/RectF;-><init>(FFFF)V
 
     .line 283
-    .local v13, "innerBounds":Landroid/graphics/RectF;
-    new-instance v15, Landroid/graphics/RectF;
+    new-instance v8, Landroid/graphics/RectF;
 
-    invoke-direct {v15, v13}, Landroid/graphics/RectF;-><init>(Landroid/graphics/RectF;)V
+    invoke-direct {v8, v7}, Landroid/graphics/RectF;-><init>(Landroid/graphics/RectF;)V
 
     .line 284
-    .local v15, "outerBounds":Landroid/graphics/RectF;
-    move-object/from16 v0, p0
+    iget v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowSize:F
 
-    iget v1, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowSize:F
+    neg-float v0, v0
 
-    neg-float v1, v1
-
-    move-object/from16 v0, p0
-
-    iget v2, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowSize:F
+    iget v2, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowSize:F
 
     neg-float v2, v2
 
-    invoke-virtual {v15, v1, v2}, Landroid/graphics/RectF;->inset(FF)V
+    invoke-virtual {v8, v0, v2}, Landroid/graphics/RectF;->inset(FF)V
 
     .line 286
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
 
-    iget-object v1, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
-
-    if-nez v1, :cond_10a
+    if-nez v0, :cond_c3
 
     .line 287
-    new-instance v1, Landroid/graphics/Path;
+    new-instance v0, Landroid/graphics/Path;
 
-    invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
+    invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
 
-    move-object/from16 v0, p0
-
-    iput-object v1, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
+    iput-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
 
     .line 291
-    :goto_38
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
+    :goto_2d
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
 
     sget-object v2, Landroid/graphics/Path$FillType;->EVEN_ODD:Landroid/graphics/Path$FillType;
 
-    invoke-virtual {v1, v2}, Landroid/graphics/Path;->setFillType(Landroid/graphics/Path$FillType;)V
+    invoke-virtual {v0, v2}, Landroid/graphics/Path;->setFillType(Landroid/graphics/Path$FillType;)V
 
     .line 292
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
 
-    iget-object v1, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
-
-    move-object/from16 v0, p0
-
-    iget v2, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
+    iget v2, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
 
     neg-float v2, v2
 
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v2, v3}, Landroid/graphics/Path;->moveTo(FF)V
+    invoke-virtual {v0, v2, v1}, Landroid/graphics/Path;->moveTo(FF)V
 
     .line 293
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
 
-    iget-object v1, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
-
-    move-object/from16 v0, p0
-
-    iget v2, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowSize:F
+    iget v2, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowSize:F
 
     neg-float v2, v2
 
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v2, v3}, Landroid/graphics/Path;->rLineTo(FF)V
+    invoke-virtual {v0, v2, v1}, Landroid/graphics/Path;->rLineTo(FF)V
 
     .line 295
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
 
-    iget-object v1, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
+    const/high16 v2, 0x43340000    # 180.0f
 
-    const/high16 v2, 0x43340000
+    const/high16 v3, 0x42b40000    # 90.0f
 
-    const/high16 v3, 0x42b40000
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v1, v15, v2, v3, v5}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
+    invoke-virtual {v0, v8, v2, v3, v10}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
     .line 297
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
 
-    iget-object v1, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
+    const/high16 v2, 0x43870000    # 270.0f
 
-    const/high16 v2, 0x43870000
+    const/high16 v3, -0x3d4c0000    # -90.0f
 
-    const/high16 v3, -0x3d4c0000
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v1, v13, v2, v3, v5}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
+    invoke-virtual {v0, v7, v2, v3, v10}, Landroid/graphics/Path;->arcTo(Landroid/graphics/RectF;FFZ)V
 
     .line 298
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
 
-    iget-object v1, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
-
-    invoke-virtual {v1}, Landroid/graphics/Path;->close()V
+    invoke-virtual {v0}, Landroid/graphics/Path;->close()V
 
     .line 300
-    iget v1, v15, Landroid/graphics/RectF;->top:F
+    iget v0, v8, Landroid/graphics/RectF;->top:F
 
-    neg-float v4, v1
+    neg-float v3, v0
 
     .line 301
-    .local v4, "shadowRadius":F
-    const/4 v1, 0x0
+    cmpl-float v0, v3, v1
 
-    cmpl-float v1, v4, v1
-
-    if-lez v1, :cond_cf
+    if-lez v0, :cond_99
 
     .line 302
-    move-object/from16 v0, p0
+    iget v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
 
-    iget v1, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
-
-    div-float v16, v1, v4
+    div-float v2, v0, v3
 
     .line 303
-    .local v16, "startRatio":F
-    const/high16 v1, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    sub-float v1, v1, v16
+    sub-float/2addr v0, v2
 
-    const/high16 v2, 0x40000000
+    const/high16 v4, 0x40000000    # 2.0f
 
-    div-float/2addr v1, v2
+    div-float/2addr v0, v4
 
-    add-float v14, v16, v1
+    add-float v6, v2, v0
 
     .line 304
-    .local v14, "midRatio":F
-    move-object/from16 v0, p0
+    iget-object v9, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPaint:Landroid/graphics/Paint;
 
-    iget-object v8, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPaint:Landroid/graphics/Paint;
+    new-instance v0, Landroid/graphics/RadialGradient;
 
-    new-instance v1, Landroid/graphics/RadialGradient;
+    const/4 v4, 0x4
 
-    const/4 v2, 0x0
+    new-array v4, v4, [I
 
-    const/4 v3, 0x0
+    aput v10, v4, v10
+
+    iget v5, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowStartColor:I
+
+    aput v5, v4, v12
+
+    iget v5, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowMiddleColor:I
+
+    aput v5, v4, v13
+
+    iget v5, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowEndColor:I
+
+    aput v5, v4, v11
 
     const/4 v5, 0x4
 
-    new-array v5, v5, [I
+    new-array v5, v5, [F
 
-    const/4 v6, 0x0
+    aput v1, v5, v10
 
-    const/4 v7, 0x0
+    aput v2, v5, v12
 
-    aput v7, v5, v6
+    aput v6, v5, v13
 
-    const/4 v6, 0x1
+    const/high16 v2, 0x3f800000    # 1.0f
 
-    move-object/from16 v0, p0
+    aput v2, v5, v11
 
-    iget v7, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowStartColor:I
+    sget-object v6, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
-    aput v7, v5, v6
+    move v2, v1
 
-    const/4 v6, 0x2
+    invoke-direct/range {v0 .. v6}, Landroid/graphics/RadialGradient;-><init>(FFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    move-object/from16 v0, p0
+    invoke-virtual {v9, v0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    iget v7, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowMiddleColor:I
+    .line 313
+    :cond_99
+    iget-object v9, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mEdgeShadowPaint:Landroid/graphics/Paint;
 
-    aput v7, v5, v6
+    new-instance v0, Landroid/graphics/LinearGradient;
 
-    const/4 v6, 0x3
+    iget v2, v7, Landroid/graphics/RectF;->top:F
 
-    move-object/from16 v0, p0
+    iget v4, v8, Landroid/graphics/RectF;->top:F
 
-    iget v7, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowEndColor:I
+    new-array v5, v11, [I
 
-    aput v7, v5, v6
+    iget v3, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowStartColor:I
 
-    const/4 v6, 0x4
+    aput v3, v5, v10
 
-    new-array v6, v6, [F
+    iget v3, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowMiddleColor:I
 
-    const/4 v7, 0x0
+    aput v3, v5, v12
 
-    const/4 v9, 0x0
+    iget v3, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowEndColor:I
 
-    aput v9, v6, v7
+    aput v3, v5, v13
 
-    const/4 v7, 0x1
+    new-array v6, v11, [F
 
-    aput v16, v6, v7
-
-    const/4 v7, 0x2
-
-    aput v14, v6, v7
-
-    const/4 v7, 0x3
-
-    const/high16 v9, 0x3f800000
-
-    aput v9, v6, v7
+    fill-array-data v6, :array_ca
 
     sget-object v7, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
-    invoke-direct/range {v1 .. v7}, Landroid/graphics/RadialGradient;-><init>(FFF[I[FLandroid/graphics/Shader$TileMode;)V
+    move v3, v1
 
-    invoke-virtual {v8, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+    invoke-direct/range {v0 .. v7}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    .line 313
-    .end local v14    # "midRatio":F
-    .end local v16    # "startRatio":F
-    :cond_cf
-    move-object/from16 v0, p0
-
-    iget-object v1, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mEdgeShadowPaint:Landroid/graphics/Paint;
-
-    new-instance v5, Landroid/graphics/LinearGradient;
-
-    const/4 v6, 0x0
-
-    iget v7, v13, Landroid/graphics/RectF;->top:F
-
-    const/4 v8, 0x0
-
-    iget v9, v15, Landroid/graphics/RectF;->top:F
-
-    const/4 v2, 0x3
-
-    new-array v10, v2, [I
-
-    const/4 v2, 0x0
-
-    move-object/from16 v0, p0
-
-    iget v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowStartColor:I
-
-    aput v3, v10, v2
-
-    const/4 v2, 0x1
-
-    move-object/from16 v0, p0
-
-    iget v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowMiddleColor:I
-
-    aput v3, v10, v2
-
-    const/4 v2, 0x2
-
-    move-object/from16 v0, p0
-
-    iget v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowEndColor:I
-
-    aput v3, v10, v2
-
-    const/4 v2, 0x3
-
-    new-array v11, v2, [F
-
-    fill-array-data v11, :array_114
-
-    sget-object v12, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
-
-    invoke-direct/range {v5 .. v12}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
-
-    invoke-virtual {v1, v5}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+    invoke-virtual {v9, v0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
     .line 316
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mEdgeShadowPaint:Landroid/graphics/Paint;
 
-    iget-object v1, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mEdgeShadowPaint:Landroid/graphics/Paint;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setAntiAlias(Z)V
+    invoke-virtual {v0, v10}, Landroid/graphics/Paint;->setAntiAlias(Z)V
 
     .line 317
     return-void
 
     .line 289
-    .end local v4    # "shadowRadius":F
-    :cond_10a
-    move-object/from16 v0, p0
+    :cond_c3
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
 
-    iget-object v1, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
+    invoke-virtual {v0}, Landroid/graphics/Path;->reset()V
 
-    invoke-virtual {v1}, Landroid/graphics/Path;->reset()V
-
-    goto/16 :goto_38
+    goto/16 :goto_2d
 
     .line 313
-    nop
-
-    :array_114
+    :array_ca
     .array-data 4
         0x0
-        0x3f000000
-        0x3f800000
+        0x3f000000    # 0.5f
+        0x3f800000    # 1.0f
     .end array-data
 .end method
 
 .method public static calculateHorizontalPadding(FFZ)F
     .registers 9
-    .param p0, "maxShadowSize"    # F
-    .param p1, "cornerRadius"    # F
-    .param p2, "addPaddingForCorners"    # Z
 
     .prologue
     .line 167
@@ -612,7 +502,7 @@
     .line 168
     float-to-double v0, p0
 
-    const-wide/high16 v2, 0x3ff0000000000000L
+    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
 
     sget-wide v4, Landroid/support/design/widget/ShadowDrawableWrapper;->COS_45:D
 
@@ -627,19 +517,15 @@
     double-to-float p0, v0
 
     .line 170
-    .end local p0    # "maxShadowSize":F
     :cond_c
     return p0
 .end method
 
 .method public static calculateVerticalPadding(FFZ)F
     .registers 9
-    .param p0, "maxShadowSize"    # F
-    .param p1, "cornerRadius"    # F
-    .param p2, "addPaddingForCorners"    # Z
 
     .prologue
-    const/high16 v0, 0x3fc00000
+    const/high16 v0, 0x3fc00000    # 1.5f
 
     .line 158
     if-eqz p2, :cond_10
@@ -649,7 +535,7 @@
 
     float-to-double v0, v0
 
-    const-wide/high16 v2, 0x3ff0000000000000L
+    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
 
     sget-wide v4, Landroid/support/design/widget/ShadowDrawableWrapper;->COS_45:D
 
@@ -674,635 +560,467 @@
 .end method
 
 .method private drawShadow(Landroid/graphics/Canvas;)V
-    .registers 22
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
+    .registers 16
 
     .prologue
     .line 208
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    move-result v11
+    move-result v8
 
     .line 209
-    .local v11, "rotateSaved":I
-    move-object/from16 v0, p0
+    iget v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRotation:F
 
-    iget v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRotation:F
+    iget-object v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
 
-    move-object/from16 v0, p0
+    invoke-virtual {v1}, Landroid/graphics/RectF;->centerX()F
 
-    iget-object v4, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
+    move-result v1
 
-    invoke-virtual {v4}, Landroid/graphics/RectF;->centerX()F
+    iget-object v2, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
 
-    move-result v4
+    invoke-virtual {v2}, Landroid/graphics/RectF;->centerY()F
 
-    move-object/from16 v0, p0
+    move-result v2
 
-    iget-object v6, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
+    invoke-virtual {p1, v0, v1, v2}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    invoke-virtual {v6}, Landroid/graphics/RectF;->centerY()F
+    .line 211
+    iget v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
+
+    neg-float v0, v0
+
+    iget v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowSize:F
+
+    sub-float v2, v0, v1
+
+    .line 212
+    iget v9, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
+
+    .line 213
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
+
+    invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
+
+    move-result v0
+
+    const/high16 v1, 0x40000000    # 2.0f
+
+    mul-float/2addr v1, v9
+
+    sub-float/2addr v0, v1
+
+    const/4 v1, 0x0
+
+    cmpl-float v0, v0, v1
+
+    if-lez v0, :cond_16c
+
+    const/4 v0, 0x1
+
+    move v6, v0
+
+    .line 214
+    :goto_2f
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
+
+    invoke-virtual {v0}, Landroid/graphics/RectF;->height()F
+
+    move-result v0
+
+    const/high16 v1, 0x40000000    # 2.0f
+
+    mul-float/2addr v1, v9
+
+    sub-float/2addr v0, v1
+
+    const/4 v1, 0x0
+
+    cmpl-float v0, v0, v1
+
+    if-lez v0, :cond_170
+
+    const/4 v0, 0x1
+
+    move v7, v0
+
+    .line 216
+    :goto_40
+    iget v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawShadowSize:F
+
+    iget v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawShadowSize:F
+
+    const/high16 v3, 0x3e800000    # 0.25f
+
+    mul-float/2addr v1, v3
+
+    sub-float/2addr v0, v1
+
+    .line 217
+    iget v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawShadowSize:F
+
+    iget v3, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawShadowSize:F
+
+    const/high16 v4, 0x3f000000    # 0.5f
+
+    mul-float/2addr v3, v4
+
+    sub-float/2addr v1, v3
+
+    .line 218
+    iget v3, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawShadowSize:F
+
+    iget v4, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawShadowSize:F
+
+    const/high16 v5, 0x3f800000    # 1.0f
+
+    mul-float/2addr v4, v5
+
+    sub-float/2addr v3, v4
+
+    .line 220
+    add-float/2addr v1, v9
+
+    div-float v10, v9, v1
+
+    .line 221
+    add-float/2addr v0, v9
+
+    div-float v11, v9, v0
+
+    .line 222
+    add-float v0, v9, v3
+
+    div-float v12, v9, v0
+
+    .line 225
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    move-result v13
+
+    .line 226
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
+
+    iget v0, v0, Landroid/graphics/RectF;->left:F
+
+    add-float/2addr v0, v9
+
+    iget-object v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
+
+    iget v1, v1, Landroid/graphics/RectF;->top:F
+
+    add-float/2addr v1, v9
+
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
+
+    .line 227
+    invoke-virtual {p1, v10, v11}, Landroid/graphics/Canvas;->scale(FF)V
+
+    .line 228
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
+
+    iget-object v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+
+    .line 229
+    if-eqz v6, :cond_9c
+
+    .line 231
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    div-float/2addr v0, v10
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->scale(FF)V
+
+    .line 232
+    const/4 v1, 0x0
+
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
+
+    invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
+
+    move-result v0
+
+    const/high16 v3, 0x40000000    # 2.0f
+
+    mul-float/2addr v3, v9
+
+    sub-float v3, v0, v3
+
+    iget v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
+
+    neg-float v4, v0
+
+    iget-object v5, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mEdgeShadowPaint:Landroid/graphics/Paint;
+
+    move-object v0, p1
+
+    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+
+    .line 236
+    :cond_9c
+    invoke-virtual {p1, v13}, Landroid/graphics/Canvas;->restoreToCount(I)V
+
+    .line 238
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    move-result v13
+
+    .line 239
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
+
+    iget v0, v0, Landroid/graphics/RectF;->right:F
+
+    sub-float/2addr v0, v9
+
+    iget-object v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
+
+    iget v1, v1, Landroid/graphics/RectF;->bottom:F
+
+    sub-float/2addr v1, v9
+
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
+
+    .line 240
+    invoke-virtual {p1, v10, v12}, Landroid/graphics/Canvas;->scale(FF)V
+
+    .line 241
+    const/high16 v0, 0x43340000    # 180.0f
+
+    invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->rotate(F)V
+
+    .line 242
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
+
+    iget-object v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPaint:Landroid/graphics/Paint;
+
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+
+    .line 243
+    if-eqz v6, :cond_e1
+
+    .line 245
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    div-float/2addr v0, v10
+
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->scale(FF)V
+
+    .line 246
+    const/4 v1, 0x0
+
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
+
+    invoke-virtual {v0}, Landroid/graphics/RectF;->width()F
+
+    move-result v0
+
+    const/high16 v3, 0x40000000    # 2.0f
+
+    mul-float/2addr v3, v9
+
+    sub-float v3, v0, v3
+
+    iget v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
+
+    neg-float v0, v0
+
+    iget v4, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowSize:F
+
+    add-float/2addr v4, v0
+
+    iget-object v5, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mEdgeShadowPaint:Landroid/graphics/Paint;
+
+    move-object v0, p1
+
+    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+
+    .line 250
+    :cond_e1
+    invoke-virtual {p1, v13}, Landroid/graphics/Canvas;->restoreToCount(I)V
+
+    .line 252
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v6
 
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v3, v4, v6}, Landroid/graphics/Canvas;->rotate(FFF)V
-
-    .line 211
-    move-object/from16 v0, p0
-
-    iget v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
-
-    neg-float v3, v3
-
-    move-object/from16 v0, p0
-
-    iget v4, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowSize:F
-
-    sub-float v5, v3, v4
-
-    .line 212
-    .local v5, "edgeShadowTop":F
-    move-object/from16 v0, p0
-
-    iget v13, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
-
-    .line 213
-    .local v13, "shadowOffset":F
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
-
-    invoke-virtual {v3}, Landroid/graphics/RectF;->width()F
-
-    move-result v3
-
-    const/high16 v4, 0x40000000
-
-    mul-float/2addr v4, v13
-
-    sub-float/2addr v3, v4
-
-    const/4 v4, 0x0
-
-    cmpl-float v3, v3, v4
-
-    if-lez v3, :cond_20f
-
-    const/4 v9, 0x1
-
-    .line 214
-    .local v9, "drawHorizontalEdges":Z
-    :goto_3e
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
-
-    invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
-
-    move-result v3
-
-    const/high16 v4, 0x40000000
-
-    mul-float/2addr v4, v13
-
-    sub-float/2addr v3, v4
-
-    const/4 v4, 0x0
-
-    cmpl-float v3, v3, v4
-
-    if-lez v3, :cond_212
-
-    const/4 v10, 0x1
-
-    .line 216
-    .local v10, "drawVerticalEdges":Z
-    :goto_50
-    move-object/from16 v0, p0
-
-    iget v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawShadowSize:F
-
-    move-object/from16 v0, p0
-
-    iget v4, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawShadowSize:F
-
-    const/high16 v6, 0x3e800000
-
-    mul-float/2addr v4, v6
-
-    sub-float v16, v3, v4
-
-    .line 217
-    .local v16, "shadowOffsetTop":F
-    move-object/from16 v0, p0
-
-    iget v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawShadowSize:F
-
-    move-object/from16 v0, p0
-
-    iget v4, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawShadowSize:F
-
-    const/high16 v6, 0x3f000000
-
-    mul-float/2addr v4, v6
-
-    sub-float v15, v3, v4
-
-    .line 218
-    .local v15, "shadowOffsetHorizontal":F
-    move-object/from16 v0, p0
-
-    iget v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawShadowSize:F
-
-    move-object/from16 v0, p0
-
-    iget v4, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawShadowSize:F
-
-    const/high16 v6, 0x3f800000
-
-    mul-float/2addr v4, v6
-
-    sub-float v14, v3, v4
-
-    .line 220
-    .local v14, "shadowOffsetBottom":F
-    add-float v3, v13, v15
-
-    div-float v18, v13, v3
-
-    .line 221
-    .local v18, "shadowScaleHorizontal":F
-    add-float v3, v13, v16
-
-    div-float v19, v13, v3
-
-    .line 222
-    .local v19, "shadowScaleTop":F
-    add-float v3, v13, v14
-
-    div-float v17, v13, v3
-
-    .line 225
-    .local v17, "shadowScaleBottom":F
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
-
-    move-result v12
-
-    .line 226
-    .local v12, "saved":I
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
-
-    iget v3, v3, Landroid/graphics/RectF;->left:F
-
-    add-float/2addr v3, v13
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
-
-    iget v4, v4, Landroid/graphics/RectF;->top:F
-
-    add-float/2addr v4, v13
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 227
-    move-object/from16 v0, p1
-
-    move/from16 v1, v18
-
-    move/from16 v2, v19
-
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->scale(FF)V
-
-    .line 228
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v3, v4}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
-
-    .line 229
-    if-eqz v9, :cond_d9
-
-    .line 231
-    const/high16 v3, 0x3f800000
-
-    div-float v3, v3, v18
-
-    const/high16 v4, 0x3f800000
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v3, v4}, Landroid/graphics/Canvas;->scale(FF)V
-
-    .line 232
-    const/4 v4, 0x0
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
-
-    invoke-virtual {v3}, Landroid/graphics/RectF;->width()F
-
-    move-result v3
-
-    const/high16 v6, 0x40000000
-
-    mul-float/2addr v6, v13
-
-    sub-float v6, v3, v6
-
-    move-object/from16 v0, p0
-
-    iget v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
-
-    neg-float v7, v3
-
-    move-object/from16 v0, p0
-
-    iget-object v8, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mEdgeShadowPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v3, p1
-
-    invoke-virtual/range {v3 .. v8}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
-
-    .line 236
-    :cond_d9
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v12}, Landroid/graphics/Canvas;->restoreToCount(I)V
-
-    .line 238
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
-
-    move-result v12
-
-    .line 239
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
-
-    iget v3, v3, Landroid/graphics/RectF;->right:F
-
-    sub-float/2addr v3, v13
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
-
-    iget v4, v4, Landroid/graphics/RectF;->bottom:F
-
-    sub-float/2addr v4, v13
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 240
-    move-object/from16 v0, p1
-
-    move/from16 v1, v18
-
-    move/from16 v2, v17
-
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->scale(FF)V
-
-    .line 241
-    const/high16 v3, 0x43340000
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v3}, Landroid/graphics/Canvas;->rotate(F)V
-
-    .line 242
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
-
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v3, v4}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
-
-    .line 243
-    if-eqz v9, :cond_140
-
-    .line 245
-    const/high16 v3, 0x3f800000
-
-    div-float v3, v3, v18
-
-    const/high16 v4, 0x3f800000
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v3, v4}, Landroid/graphics/Canvas;->scale(FF)V
-
-    .line 246
-    const/4 v4, 0x0
-
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
-
-    invoke-virtual {v3}, Landroid/graphics/RectF;->width()F
-
-    move-result v3
-
-    const/high16 v6, 0x40000000
-
-    mul-float/2addr v6, v13
-
-    sub-float v6, v3, v6
-
-    move-object/from16 v0, p0
-
-    iget v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
-
-    neg-float v3, v3
-
-    move-object/from16 v0, p0
-
-    iget v7, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowSize:F
-
-    add-float/2addr v7, v3
-
-    move-object/from16 v0, p0
-
-    iget-object v8, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mEdgeShadowPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v3, p1
-
-    invoke-virtual/range {v3 .. v8}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
-
-    .line 250
-    :cond_140
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v12}, Landroid/graphics/Canvas;->restoreToCount(I)V
-
-    .line 252
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
-
-    move-result v12
-
     .line 253
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
 
-    iget-object v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
+    iget v0, v0, Landroid/graphics/RectF;->left:F
 
-    iget v3, v3, Landroid/graphics/RectF;->left:F
+    add-float/2addr v0, v9
 
-    add-float/2addr v3, v13
+    iget-object v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
 
-    move-object/from16 v0, p0
+    iget v1, v1, Landroid/graphics/RectF;->bottom:F
 
-    iget-object v4, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
+    sub-float/2addr v1, v9
 
-    iget v4, v4, Landroid/graphics/RectF;->bottom:F
-
-    sub-float/2addr v4, v13
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 254
-    move-object/from16 v0, p1
-
-    move/from16 v1, v18
-
-    move/from16 v2, v17
-
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->scale(FF)V
+    invoke-virtual {p1, v10, v12}, Landroid/graphics/Canvas;->scale(FF)V
 
     .line 255
-    const/high16 v3, 0x43870000
+    const/high16 v0, 0x43870000    # 270.0f
 
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v3}, Landroid/graphics/Canvas;->rotate(F)V
+    invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->rotate(F)V
 
     .line 256
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
 
-    iget-object v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
+    iget-object v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPaint:Landroid/graphics/Paint;
 
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v3, v4}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
     .line 257
-    if-eqz v10, :cond_1a2
+    if-eqz v7, :cond_123
 
     .line 259
-    const/high16 v3, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    div-float v3, v3, v17
+    div-float/2addr v0, v12
 
-    const/high16 v4, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v3, v4}, Landroid/graphics/Canvas;->scale(FF)V
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->scale(FF)V
 
     .line 260
-    const/4 v4, 0x0
+    const/4 v1, 0x0
 
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
 
-    iget-object v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
+    invoke-virtual {v0}, Landroid/graphics/RectF;->height()F
 
-    invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
+    move-result v0
 
-    move-result v3
+    const/high16 v3, 0x40000000    # 2.0f
 
-    const/high16 v6, 0x40000000
+    mul-float/2addr v3, v9
 
-    mul-float/2addr v6, v13
+    sub-float v3, v0, v3
 
-    sub-float v6, v3, v6
+    iget v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
 
-    move-object/from16 v0, p0
+    neg-float v4, v0
 
-    iget v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
+    iget-object v5, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mEdgeShadowPaint:Landroid/graphics/Paint;
 
-    neg-float v7, v3
+    move-object v0, p1
 
-    move-object/from16 v0, p0
-
-    iget-object v8, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mEdgeShadowPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v3, p1
-
-    invoke-virtual/range {v3 .. v8}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     .line 263
-    :cond_1a2
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v12}, Landroid/graphics/Canvas;->restoreToCount(I)V
+    :cond_123
+    invoke-virtual {p1, v6}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     .line 265
-    invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    move-result v12
+    move-result v6
 
     .line 266
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
 
-    iget-object v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
+    iget v0, v0, Landroid/graphics/RectF;->right:F
 
-    iget v3, v3, Landroid/graphics/RectF;->right:F
+    sub-float/2addr v0, v9
 
-    sub-float/2addr v3, v13
+    iget-object v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
 
-    move-object/from16 v0, p0
+    iget v1, v1, Landroid/graphics/RectF;->top:F
 
-    iget-object v4, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
+    add-float/2addr v1, v9
 
-    iget v4, v4, Landroid/graphics/RectF;->top:F
-
-    add-float/2addr v4, v13
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v3, v4}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 267
-    move-object/from16 v0, p1
-
-    move/from16 v1, v18
-
-    move/from16 v2, v19
-
-    invoke-virtual {v0, v1, v2}, Landroid/graphics/Canvas;->scale(FF)V
+    invoke-virtual {p1, v10, v11}, Landroid/graphics/Canvas;->scale(FF)V
 
     .line 268
-    const/high16 v3, 0x42b40000
+    const/high16 v0, 0x42b40000    # 90.0f
 
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v3}, Landroid/graphics/Canvas;->rotate(F)V
+    invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->rotate(F)V
 
     .line 269
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
 
-    iget-object v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPath:Landroid/graphics/Path;
+    iget-object v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPaint:Landroid/graphics/Paint;
 
-    move-object/from16 v0, p0
-
-    iget-object v4, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerShadowPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v3, v4}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
     .line 270
-    if-eqz v10, :cond_204
+    if-eqz v7, :cond_165
 
     .line 272
-    const/high16 v3, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    div-float v3, v3, v19
+    div-float/2addr v0, v11
 
-    const/high16 v4, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v3, v4}, Landroid/graphics/Canvas;->scale(FF)V
+    invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->scale(FF)V
 
     .line 273
-    const/4 v4, 0x0
+    const/4 v1, 0x0
 
-    move-object/from16 v0, p0
+    iget-object v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
 
-    iget-object v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mContentBounds:Landroid/graphics/RectF;
+    invoke-virtual {v0}, Landroid/graphics/RectF;->height()F
 
-    invoke-virtual {v3}, Landroid/graphics/RectF;->height()F
+    move-result v0
 
-    move-result v3
+    const/high16 v3, 0x40000000    # 2.0f
 
-    const/high16 v6, 0x40000000
+    mul-float/2addr v3, v9
 
-    mul-float/2addr v6, v13
+    sub-float v3, v0, v3
 
-    sub-float v6, v3, v6
+    iget v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
 
-    move-object/from16 v0, p0
+    neg-float v4, v0
 
-    iget v3, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
+    iget-object v5, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mEdgeShadowPaint:Landroid/graphics/Paint;
 
-    neg-float v7, v3
+    move-object v0, p1
 
-    move-object/from16 v0, p0
-
-    iget-object v8, v0, Landroid/support/design/widget/ShadowDrawableWrapper;->mEdgeShadowPaint:Landroid/graphics/Paint;
-
-    move-object/from16 v3, p1
-
-    invoke-virtual/range {v3 .. v8}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+    invoke-virtual/range {v0 .. v5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
     .line 276
-    :cond_204
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v12}, Landroid/graphics/Canvas;->restoreToCount(I)V
+    :cond_165
+    invoke-virtual {p1, v6}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     .line 278
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v11}, Landroid/graphics/Canvas;->restoreToCount(I)V
+    invoke-virtual {p1, v8}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     .line 279
     return-void
 
     .line 213
-    .end local v9    # "drawHorizontalEdges":Z
-    .end local v10    # "drawVerticalEdges":Z
-    .end local v12    # "saved":I
-    .end local v14    # "shadowOffsetBottom":F
-    .end local v15    # "shadowOffsetHorizontal":F
-    .end local v16    # "shadowOffsetTop":F
-    .end local v17    # "shadowScaleBottom":F
-    .end local v18    # "shadowScaleHorizontal":F
-    .end local v19    # "shadowScaleTop":F
-    :cond_20f
-    const/4 v9, 0x0
+    :cond_16c
+    const/4 v0, 0x0
 
-    goto/16 :goto_3e
+    move v6, v0
+
+    goto/16 :goto_2f
 
     .line 214
-    .restart local v9    # "drawHorizontalEdges":Z
-    :cond_212
-    const/4 v10, 0x0
+    :cond_170
+    const/4 v0, 0x0
 
-    goto/16 :goto_50
+    move v7, v0
+
+    goto/16 :goto_40
 .end method
 
 .method private static toEven(F)I
     .registers 4
-    .param p0, "value"    # F
 
     .prologue
     .line 102
@@ -1311,7 +1029,6 @@
     move-result v0
 
     .line 103
-    .local v0, "i":I
     rem-int/lit8 v1, v0, 0x2
 
     const/4 v2, 0x1
@@ -1320,7 +1037,6 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    .end local v0    # "i":I
     :cond_b
     return v0
 .end method
@@ -1329,7 +1045,6 @@
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
     .registers 3
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
     .line 191
@@ -1381,77 +1096,75 @@
 .end method
 
 .method public getMinHeight()F
-    .registers 7
-
-    .prologue
-    const/high16 v5, 0x3fc00000
-
-    const/high16 v4, 0x40000000
-
-    .line 360
-    iget v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
-
-    iget v2, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
-
-    iget v3, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
-
-    mul-float/2addr v3, v5
-
-    div-float/2addr v3, v4
-
-    add-float/2addr v2, v3
-
-    invoke-static {v1, v2}, Ljava/lang/Math;->max(FF)F
-
-    move-result v1
-
-    mul-float v0, v4, v1
-
-    .line 362
-    .local v0, "content":F
-    iget v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
-
-    mul-float/2addr v1, v5
-
-    mul-float/2addr v1, v4
-
-    add-float/2addr v1, v0
-
-    return v1
-.end method
-
-.method public getMinWidth()F
     .registers 6
 
     .prologue
-    const/high16 v4, 0x40000000
+    const/high16 v4, 0x3fc00000    # 1.5f
 
-    .line 354
-    iget v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
+    const/high16 v3, 0x40000000    # 2.0f
 
-    iget v2, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
+    .line 360
+    iget v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
 
-    iget v3, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
+    iget v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
 
-    div-float/2addr v3, v4
+    iget v2, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
 
-    add-float/2addr v2, v3
+    mul-float/2addr v2, v4
 
-    invoke-static {v1, v2}, Ljava/lang/Math;->max(FF)F
+    div-float/2addr v2, v3
 
-    move-result v1
+    add-float/2addr v1, v2
 
-    mul-float v0, v4, v1
+    invoke-static {v0, v1}, Ljava/lang/Math;->max(FF)F
 
-    .line 356
-    .local v0, "content":F
+    move-result v0
+
+    mul-float/2addr v0, v3
+
+    .line 362
     iget v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
 
     mul-float/2addr v1, v4
 
-    add-float/2addr v1, v0
+    mul-float/2addr v1, v3
 
-    return v1
+    add-float/2addr v0, v1
+
+    return v0
+.end method
+
+.method public getMinWidth()F
+    .registers 5
+
+    .prologue
+    const/high16 v3, 0x40000000    # 2.0f
+
+    .line 354
+    iget v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
+
+    iget v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
+
+    iget v2, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
+
+    div-float/2addr v2, v3
+
+    add-float/2addr v1, v2
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->max(FF)F
+
+    move-result v0
+
+    mul-float/2addr v0, v3
+
+    .line 356
+    iget v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
+
+    mul-float/2addr v1, v3
+
+    add-float/2addr v0, v1
+
+    return v0
 .end method
 
 .method public getOpacity()I
@@ -1465,22 +1178,40 @@
 .end method
 
 .method public getPadding(Landroid/graphics/Rect;)Z
-    .registers 7
-    .param p1, "padding"    # Landroid/graphics/Rect;
+    .registers 6
 
     .prologue
     .line 148
-    iget v2, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
+    iget v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
 
-    iget v3, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
+    iget v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
 
-    iget-boolean v4, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mAddPaddingForCorners:Z
+    iget-boolean v2, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mAddPaddingForCorners:Z
 
-    invoke-static {v2, v3, v4}, Landroid/support/design/widget/ShadowDrawableWrapper;->calculateVerticalPadding(FFZ)F
+    invoke-static {v0, v1, v2}, Landroid/support/design/widget/ShadowDrawableWrapper;->calculateVerticalPadding(FFZ)F
 
-    move-result v2
+    move-result v0
 
-    float-to-double v2, v2
+    float-to-double v0, v0
+
+    invoke-static {v0, v1}, Ljava/lang/Math;->ceil(D)D
+
+    move-result-wide v0
+
+    double-to-int v0, v0
+
+    .line 150
+    iget v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
+
+    iget v2, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
+
+    iget-boolean v3, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mAddPaddingForCorners:Z
+
+    invoke-static {v1, v2, v3}, Landroid/support/design/widget/ShadowDrawableWrapper;->calculateHorizontalPadding(FFZ)F
+
+    move-result v1
+
+    float-to-double v2, v1
 
     invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
 
@@ -1488,34 +1219,13 @@
 
     double-to-int v1, v2
 
-    .line 150
-    .local v1, "vOffset":I
-    iget v2, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
-
-    iget v3, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
-
-    iget-boolean v4, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mAddPaddingForCorners:Z
-
-    invoke-static {v2, v3, v4}, Landroid/support/design/widget/ShadowDrawableWrapper;->calculateHorizontalPadding(FFZ)F
-
-    move-result v2
-
-    float-to-double v2, v2
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
-
-    move-result-wide v2
-
-    double-to-int v0, v2
-
     .line 152
-    .local v0, "hOffset":I
-    invoke-virtual {p1, v0, v1, v0, v1}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {p1, v1, v0, v1, v0}, Landroid/graphics/Rect;->set(IIII)V
 
     .line 153
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
-    return v2
+    return v0
 .end method
 
 .method public getShadowSize()F
@@ -1530,7 +1240,6 @@
 
 .method protected onBoundsChange(Landroid/graphics/Rect;)V
     .registers 3
-    .param p1, "bounds"    # Landroid/graphics/Rect;
 
     .prologue
     .line 120
@@ -1544,7 +1253,6 @@
 
 .method public setAddPaddingForCorners(Z)V
     .registers 2
-    .param p1, "addPaddingForCorners"    # Z
 
     .prologue
     .line 107
@@ -1559,7 +1267,6 @@
 
 .method public setAlpha(I)V
     .registers 3
-    .param p1, "alpha"    # I
 
     .prologue
     .line 113
@@ -1580,8 +1287,7 @@
 .end method
 
 .method public setCornerRadius(F)V
-    .registers 3
-    .param p1, "radius"    # F
+    .registers 4
 
     .prologue
     .line 180
@@ -1589,14 +1295,14 @@
 
     move-result v0
 
-    int-to-float p1, v0
+    int-to-float v0, v0
 
     .line 181
-    iget v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
+    iget v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
 
-    cmpl-float v0, v0, p1
+    cmpl-float v1, v1, v0
 
-    if-nez v0, :cond_c
+    if-nez v1, :cond_c
 
     .line 187
     :goto_b
@@ -1604,7 +1310,7 @@
 
     .line 184
     :cond_c
-    iput p1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
+    iput v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mCornerRadius:F
 
     .line 185
     const/4 v0, 0x1
@@ -1619,7 +1325,6 @@
 
 .method public setMaxShadowSize(F)V
     .registers 3
-    .param p1, "size"    # F
 
     .prologue
     .line 342
@@ -1633,7 +1338,6 @@
 
 .method final setRotation(F)V
     .registers 3
-    .param p1, "rotation"    # F
 
     .prologue
     .line 201
@@ -1656,7 +1360,6 @@
 
 .method public setShadowSize(F)V
     .registers 3
-    .param p1, "size"    # F
 
     .prologue
     .line 338
@@ -1669,12 +1372,10 @@
 .end method
 
 .method setShadowSize(FF)V
-    .registers 6
-    .param p1, "shadowSize"    # F
-    .param p2, "maxShadowSize"    # F
+    .registers 7
 
     .prologue
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
     const/4 v1, 0x0
 
@@ -1703,44 +1404,44 @@
 
     move-result v0
 
-    int-to-float p1, v0
+    int-to-float v0, v0
 
     .line 128
     invoke-static {p2}, Landroid/support/design/widget/ShadowDrawableWrapper;->toEven(F)I
 
-    move-result v0
+    move-result v1
 
-    int-to-float p2, v0
+    int-to-float v1, v1
 
     .line 129
-    cmpl-float v0, p1, p2
+    cmpl-float v2, v0, v1
 
-    if-lez v0, :cond_28
-
-    .line 130
-    move p1, p2
+    if-lez v2, :cond_28
 
     .line 131
     iget-boolean v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mPrintedShadowClipWarning:Z
 
-    if-nez v0, :cond_28
+    if-nez v0, :cond_27
 
     .line 132
-    iput-boolean v2, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mPrintedShadowClipWarning:Z
+    iput-boolean v3, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mPrintedShadowClipWarning:Z
+
+    :cond_27
+    move v0, v1
 
     .line 135
     :cond_28
-    iget v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawShadowSize:F
+    iget v2, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawShadowSize:F
 
-    cmpl-float v0, v0, p1
+    cmpl-float v2, v2, v0
 
-    if-nez v0, :cond_35
+    if-nez v2, :cond_35
 
-    iget v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
+    iget v2, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
 
-    cmpl-float v0, v0, p2
+    cmpl-float v2, v2, v1
 
-    if-nez v0, :cond_35
+    if-nez v2, :cond_35
 
     .line 144
     :goto_34
@@ -1748,15 +1449,15 @@
 
     .line 138
     :cond_35
-    iput p1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawShadowSize:F
+    iput v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawShadowSize:F
 
     .line 139
-    iput p2, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
+    iput v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mRawMaxShadowSize:F
 
     .line 140
-    const/high16 v0, 0x3fc00000
+    const/high16 v2, 0x3fc00000    # 1.5f
 
-    mul-float/2addr v0, p1
+    mul-float/2addr v0, v2
 
     invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
@@ -1767,10 +1468,10 @@
     iput v0, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mShadowSize:F
 
     .line 141
-    iput p2, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mMaxShadowSize:F
+    iput v1, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mMaxShadowSize:F
 
     .line 142
-    iput-boolean v2, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mDirty:Z
+    iput-boolean v3, p0, Landroid/support/design/widget/ShadowDrawableWrapper;->mDirty:Z
 
     .line 143
     invoke-virtual {p0}, Landroid/support/design/widget/ShadowDrawableWrapper;->invalidateSelf()V

@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x18
-    name = "Node"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -47,7 +38,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;I)V
     .registers 3
-    .param p2, "dataLen"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;I)V"
@@ -56,8 +46,6 @@
 
     .prologue
     .line 156
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder$Node;, "Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder$Node<TT;>;"
-    .local p1, "data":Ljava/lang/Object;, "TT;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 157
@@ -74,7 +62,6 @@
 # virtual methods
 .method public copyData(Ljava/lang/Object;I)I
     .registers 6
-    .param p2, "ptr"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;I)I"
@@ -83,8 +70,6 @@
 
     .prologue
     .line 165
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder$Node;, "Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder$Node<TT;>;"
-    .local p1, "dst":Ljava/lang/Object;, "TT;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder$Node;->_data:Ljava/lang/Object;
 
     const/4 v1, 0x0
@@ -96,10 +81,10 @@
     .line 166
     iget v0, p0, Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder$Node;->_dataLength:I
 
-    add-int/2addr p2, v0
+    add-int/2addr v0, p2
 
     .line 167
-    return p2
+    return v0
 .end method
 
 .method public getData()Ljava/lang/Object;
@@ -112,7 +97,6 @@
 
     .prologue
     .line 161
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder$Node;, "Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder$Node<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder$Node;->_data:Ljava/lang/Object;
 
     return-object v0
@@ -130,8 +114,6 @@
 
     .prologue
     .line 174
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder$Node;, "Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder$Node<TT;>;"
-    .local p1, "next":Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder$Node;, "Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder$Node<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder$Node;->_next:Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder$Node;
 
     if-eqz v0, :cond_a
@@ -163,7 +145,6 @@
 
     .prologue
     .line 170
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder$Node;, "Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder$Node<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder$Node;->_next:Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder$Node;
 
     return-object v0

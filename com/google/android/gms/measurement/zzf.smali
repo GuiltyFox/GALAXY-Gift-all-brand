@@ -14,11 +14,11 @@
 
 
 # instance fields
-.field private final zzaRu:Lcom/google/android/gms/measurement/zzg;
+.field protected final a:Lcom/google/android/gms/measurement/zzc;
 
-.field protected final zzaRv:Lcom/google/android/gms/measurement/zzc;
+.field private final b:Lcom/google/android/gms/measurement/zzg;
 
-.field private final zzaRw:Ljava/util/List;
+.field private final c:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
@@ -36,39 +36,39 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object p1, p0, Lcom/google/android/gms/measurement/zzf;->zzaRu:Lcom/google/android/gms/measurement/zzg;
+    iput-object p1, p0, Lcom/google/android/gms/measurement/zzf;->b:Lcom/google/android/gms/measurement/zzg;
 
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/measurement/zzf;->zzaRw:Ljava/util/List;
+    iput-object v0, p0, Lcom/google/android/gms/measurement/zzf;->c:Ljava/util/List;
 
     new-instance v0, Lcom/google/android/gms/measurement/zzc;
 
     invoke-direct {v0, p0, p2}, Lcom/google/android/gms/measurement/zzc;-><init>(Lcom/google/android/gms/measurement/zzf;Lcom/google/android/gms/internal/zznl;)V
 
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/zzc;->zzzO()V
+    invoke-virtual {v0}, Lcom/google/android/gms/measurement/zzc;->k()V
 
-    iput-object v0, p0, Lcom/google/android/gms/measurement/zzf;->zzaRv:Lcom/google/android/gms/measurement/zzc;
+    iput-object v0, p0, Lcom/google/android/gms/measurement/zzf;->a:Lcom/google/android/gms/measurement/zzc;
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected zza(Lcom/google/android/gms/measurement/zzc;)V
+.method protected a(Lcom/google/android/gms/measurement/zzc;)V
     .registers 2
 
     return-void
 .end method
 
-.method protected zzd(Lcom/google/android/gms/measurement/zzc;)V
+.method protected b(Lcom/google/android/gms/measurement/zzc;)V
     .registers 4
 
-    iget-object v0, p0, Lcom/google/android/gms/measurement/zzf;->zzaRw:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/zzf;->c:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -87,7 +87,7 @@
 
     check-cast v0, Lcom/google/android/gms/measurement/zzd;
 
-    invoke-interface {v0, p0, p1}, Lcom/google/android/gms/measurement/zzd;->zza(Lcom/google/android/gms/measurement/zzf;Lcom/google/android/gms/measurement/zzc;)V
+    invoke-interface {v0, p0, p1}, Lcom/google/android/gms/measurement/zzd;->a(Lcom/google/android/gms/measurement/zzf;Lcom/google/android/gms/measurement/zzc;)V
 
     goto :goto_6
 
@@ -95,37 +95,29 @@
     return-void
 .end method
 
-.method public zzig()Lcom/google/android/gms/measurement/zzc;
+.method public l()Lcom/google/android/gms/measurement/zzc;
     .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/measurement/zzf;->zzaRv:Lcom/google/android/gms/measurement/zzc;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/zzf;->a:Lcom/google/android/gms/measurement/zzc;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/zzc;->zzzE()Lcom/google/android/gms/measurement/zzc;
+    invoke-virtual {v0}, Lcom/google/android/gms/measurement/zzc;->a()Lcom/google/android/gms/measurement/zzc;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/measurement/zzf;->zzd(Lcom/google/android/gms/measurement/zzc;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/measurement/zzf;->b(Lcom/google/android/gms/measurement/zzc;)V
 
     return-object v0
 .end method
 
-.method protected zzzM()Lcom/google/android/gms/measurement/zzg;
+.method public m()Lcom/google/android/gms/measurement/zzc;
     .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/measurement/zzf;->zzaRu:Lcom/google/android/gms/measurement/zzg;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/zzf;->a:Lcom/google/android/gms/measurement/zzc;
 
     return-object v0
 .end method
 
-.method public zzzP()Lcom/google/android/gms/measurement/zzc;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/measurement/zzf;->zzaRv:Lcom/google/android/gms/measurement/zzc;
-
-    return-object v0
-.end method
-
-.method public zzzQ()Ljava/util/List;
+.method public n()Ljava/util/List;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -137,11 +129,19 @@
         }
     .end annotation
 
-    iget-object v0, p0, Lcom/google/android/gms/measurement/zzf;->zzaRv:Lcom/google/android/gms/measurement/zzc;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/zzf;->a:Lcom/google/android/gms/measurement/zzc;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/zzc;->zzzG()Ljava/util/List;
+    invoke-virtual {v0}, Lcom/google/android/gms/measurement/zzc;->c()Ljava/util/List;
 
     move-result-object v0
+
+    return-object v0
+.end method
+
+.method protected o()Lcom/google/android/gms/measurement/zzg;
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/gms/measurement/zzf;->b:Lcom/google/android/gms/measurement/zzg;
 
     return-object v0
 .end method

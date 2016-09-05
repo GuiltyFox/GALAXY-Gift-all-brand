@@ -15,18 +15,18 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/bumptech/glide/load/DecodeFormat;
-
-.field public static final enum ALWAYS_ARGB_8888:Lcom/bumptech/glide/load/DecodeFormat;
+.field public static final enum a:Lcom/bumptech/glide/load/DecodeFormat;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
 
-.field public static final DEFAULT:Lcom/bumptech/glide/load/DecodeFormat;
+.field public static final enum b:Lcom/bumptech/glide/load/DecodeFormat;
 
-.field public static final enum PREFER_ARGB_8888:Lcom/bumptech/glide/load/DecodeFormat;
+.field public static final enum c:Lcom/bumptech/glide/load/DecodeFormat;
 
-.field public static final enum PREFER_RGB_565:Lcom/bumptech/glide/load/DecodeFormat;
+.field public static final d:Lcom/bumptech/glide/load/DecodeFormat;
+
+.field private static final synthetic e:[Lcom/bumptech/glide/load/DecodeFormat;
 
 
 # direct methods
@@ -47,7 +47,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/bumptech/glide/load/DecodeFormat;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/load/DecodeFormat;->ALWAYS_ARGB_8888:Lcom/bumptech/glide/load/DecodeFormat;
+    sput-object v0, Lcom/bumptech/glide/load/DecodeFormat;->a:Lcom/bumptech/glide/load/DecodeFormat;
 
     .line 36
     new-instance v0, Lcom/bumptech/glide/load/DecodeFormat;
@@ -56,7 +56,7 @@
 
     invoke-direct {v0, v1, v3}, Lcom/bumptech/glide/load/DecodeFormat;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/load/DecodeFormat;->PREFER_ARGB_8888:Lcom/bumptech/glide/load/DecodeFormat;
+    sput-object v0, Lcom/bumptech/glide/load/DecodeFormat;->b:Lcom/bumptech/glide/load/DecodeFormat;
 
     .line 45
     new-instance v0, Lcom/bumptech/glide/load/DecodeFormat;
@@ -65,31 +65,31 @@
 
     invoke-direct {v0, v1, v4}, Lcom/bumptech/glide/load/DecodeFormat;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/load/DecodeFormat;->PREFER_RGB_565:Lcom/bumptech/glide/load/DecodeFormat;
+    sput-object v0, Lcom/bumptech/glide/load/DecodeFormat;->c:Lcom/bumptech/glide/load/DecodeFormat;
 
     .line 14
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/bumptech/glide/load/DecodeFormat;
 
-    sget-object v1, Lcom/bumptech/glide/load/DecodeFormat;->ALWAYS_ARGB_8888:Lcom/bumptech/glide/load/DecodeFormat;
+    sget-object v1, Lcom/bumptech/glide/load/DecodeFormat;->a:Lcom/bumptech/glide/load/DecodeFormat;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/bumptech/glide/load/DecodeFormat;->PREFER_ARGB_8888:Lcom/bumptech/glide/load/DecodeFormat;
+    sget-object v1, Lcom/bumptech/glide/load/DecodeFormat;->b:Lcom/bumptech/glide/load/DecodeFormat;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/bumptech/glide/load/DecodeFormat;->PREFER_RGB_565:Lcom/bumptech/glide/load/DecodeFormat;
+    sget-object v1, Lcom/bumptech/glide/load/DecodeFormat;->c:Lcom/bumptech/glide/load/DecodeFormat;
 
     aput-object v1, v0, v4
 
-    sput-object v0, Lcom/bumptech/glide/load/DecodeFormat;->$VALUES:[Lcom/bumptech/glide/load/DecodeFormat;
+    sput-object v0, Lcom/bumptech/glide/load/DecodeFormat;->e:[Lcom/bumptech/glide/load/DecodeFormat;
 
     .line 48
-    sget-object v0, Lcom/bumptech/glide/load/DecodeFormat;->PREFER_RGB_565:Lcom/bumptech/glide/load/DecodeFormat;
+    sget-object v0, Lcom/bumptech/glide/load/DecodeFormat;->c:Lcom/bumptech/glide/load/DecodeFormat;
 
-    sput-object v0, Lcom/bumptech/glide/load/DecodeFormat;->DEFAULT:Lcom/bumptech/glide/load/DecodeFormat;
+    sput-object v0, Lcom/bumptech/glide/load/DecodeFormat;->d:Lcom/bumptech/glide/load/DecodeFormat;
 
     return-void
 .end method
@@ -111,7 +111,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/bumptech/glide/load/DecodeFormat;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 14
@@ -131,7 +130,7 @@
 
     .prologue
     .line 14
-    sget-object v0, Lcom/bumptech/glide/load/DecodeFormat;->$VALUES:[Lcom/bumptech/glide/load/DecodeFormat;
+    sget-object v0, Lcom/bumptech/glide/load/DecodeFormat;->e:[Lcom/bumptech/glide/load/DecodeFormat;
 
     invoke-virtual {v0}, [Lcom/bumptech/glide/load/DecodeFormat;->clone()Ljava/lang/Object;
 

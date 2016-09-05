@@ -4,19 +4,8 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 23
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static getParentActivityIntent(Landroid/app/Activity;)Landroid/content/Intent;
+.method public static a(Landroid/app/Activity;)Landroid/content/Intent;
     .registers 2
-    .param p0, "activity"    # Landroid/app/Activity;
 
     .prologue
     .line 25
@@ -27,9 +16,8 @@
     return-object v0
 .end method
 
-.method public static getParentActivityName(Landroid/content/pm/ActivityInfo;)Ljava/lang/String;
+.method public static a(Landroid/content/pm/ActivityInfo;)Ljava/lang/String;
     .registers 2
-    .param p0, "info"    # Landroid/content/pm/ActivityInfo;
 
     .prologue
     .line 37
@@ -38,23 +26,8 @@
     return-object v0
 .end method
 
-.method public static navigateUpTo(Landroid/app/Activity;Landroid/content/Intent;)V
-    .registers 2
-    .param p0, "activity"    # Landroid/app/Activity;
-    .param p1, "upIntent"    # Landroid/content/Intent;
-
-    .prologue
-    .line 33
-    invoke-virtual {p0, p1}, Landroid/app/Activity;->navigateUpTo(Landroid/content/Intent;)Z
-
-    .line 34
-    return-void
-.end method
-
-.method public static shouldUpRecreateTask(Landroid/app/Activity;Landroid/content/Intent;)Z
+.method public static a(Landroid/app/Activity;Landroid/content/Intent;)Z
     .registers 3
-    .param p0, "activity"    # Landroid/app/Activity;
-    .param p1, "targetIntent"    # Landroid/content/Intent;
 
     .prologue
     .line 29
@@ -63,4 +36,15 @@
     move-result v0
 
     return v0
+.end method
+
+.method public static b(Landroid/app/Activity;Landroid/content/Intent;)V
+    .registers 2
+
+    .prologue
+    .line 33
+    invoke-virtual {p0, p1}, Landroid/app/Activity;->navigateUpTo(Landroid/content/Intent;)Z
+
+    .line 34
+    return-void
 .end method

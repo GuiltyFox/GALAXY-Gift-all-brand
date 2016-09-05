@@ -6,17 +6,6 @@
 .implements Lcom/fasterxml/jackson/databind/deser/ValueInstantiators;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/ValueInstantiators;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Base"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -32,9 +21,6 @@
 # virtual methods
 .method public findValueInstantiator(Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;)Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;
     .registers 4
-    .param p1, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p2, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
-    .param p3, "defaultInstantiator"    # Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;
 
     .prologue
     .line 44

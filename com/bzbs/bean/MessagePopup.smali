@@ -64,7 +64,6 @@
 
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 3
-    .param p1, "type"    # Ljava/lang/String;
 
     .prologue
     .line 21

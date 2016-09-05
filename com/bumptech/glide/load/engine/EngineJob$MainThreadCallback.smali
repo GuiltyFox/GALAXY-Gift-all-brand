@@ -6,17 +6,6 @@
 .implements Landroid/os/Handler$Callback;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/engine/EngineJob;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "MainThreadCallback"
-.end annotation
-
-
 # direct methods
 .method private constructor <init>()V
     .registers 1
@@ -30,7 +19,6 @@
 
 .method synthetic constructor <init>(Lcom/bumptech/glide/load/engine/EngineJob$1;)V
     .registers 2
-    .param p1, "x0"    # Lcom/bumptech/glide/load/engine/EngineJob$1;
 
     .prologue
     .line 195
@@ -42,22 +30,21 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)Z
-    .registers 6
-    .param p1, "message"    # Landroid/os/Message;
+    .registers 5
 
     .prologue
     const/4 v1, 0x1
 
     .line 199
+    iget v0, p1, Landroid/os/Message;->what:I
+
+    if-eq v1, v0, :cond_a
+
+    const/4 v0, 0x2
+
     iget v2, p1, Landroid/os/Message;->what:I
 
-    if-eq v1, v2, :cond_a
-
-    const/4 v2, 0x2
-
-    iget v3, p1, Landroid/os/Message;->what:I
-
-    if-ne v2, v3, :cond_1a
+    if-ne v0, v2, :cond_1b
 
     .line 200
     :cond_a
@@ -66,32 +53,29 @@
     check-cast v0, Lcom/bumptech/glide/load/engine/EngineJob;
 
     .line 201
-    .local v0, "job":Lcom/bumptech/glide/load/engine/EngineJob;
     iget v2, p1, Landroid/os/Message;->what:I
 
-    if-ne v1, v2, :cond_16
+    if-ne v1, v2, :cond_17
 
     .line 202
-    # invokes: Lcom/bumptech/glide/load/engine/EngineJob;->handleResultOnMainThread()V
-    invoke-static {v0}, Lcom/bumptech/glide/load/engine/EngineJob;->access$100(Lcom/bumptech/glide/load/engine/EngineJob;)V
+    invoke-static {v0}, Lcom/bumptech/glide/load/engine/EngineJob;->a(Lcom/bumptech/glide/load/engine/EngineJob;)V
+
+    :goto_15
+    move v0, v1
 
     .line 209
-    .end local v0    # "job":Lcom/bumptech/glide/load/engine/EngineJob;
-    :goto_15
-    return v1
+    :goto_16
+    return v0
 
     .line 204
-    .restart local v0    # "job":Lcom/bumptech/glide/load/engine/EngineJob;
-    :cond_16
-    # invokes: Lcom/bumptech/glide/load/engine/EngineJob;->handleExceptionOnMainThread()V
-    invoke-static {v0}, Lcom/bumptech/glide/load/engine/EngineJob;->access$200(Lcom/bumptech/glide/load/engine/EngineJob;)V
+    :cond_17
+    invoke-static {v0}, Lcom/bumptech/glide/load/engine/EngineJob;->b(Lcom/bumptech/glide/load/engine/EngineJob;)V
 
     goto :goto_15
 
     .line 209
-    .end local v0    # "job":Lcom/bumptech/glide/load/engine/EngineJob;
-    :cond_1a
-    const/4 v1, 0x0
+    :cond_1b
+    const/4 v0, 0x0
 
-    goto :goto_15
+    goto :goto_16
 .end method

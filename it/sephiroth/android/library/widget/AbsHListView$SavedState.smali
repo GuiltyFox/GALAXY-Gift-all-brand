@@ -3,17 +3,6 @@
 .source "AbsHListView.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lit/sephiroth/android/library/widget/AbsHListView;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "SavedState"
-.end annotation
-
-
 # static fields
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
     .annotation system Ldalvik/annotation/Signature;
@@ -28,18 +17,23 @@
 
 
 # instance fields
-.field checkIdState:Landroid/support/v4/util/LongSparseArray;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/support/v4/util/LongSparseArray",
-            "<",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field a:J
 
-.field checkState:Landroid/support/v4/util/SparseArrayCompat;
+.field b:J
+
+.field c:I
+
+.field d:I
+
+.field e:I
+
+.field f:Ljava/lang/String;
+
+.field g:Z
+
+.field h:I
+
+.field i:Landroid/support/v4/util/SparseArrayCompat;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Landroid/support/v4/util/SparseArrayCompat",
@@ -50,21 +44,16 @@
     .end annotation
 .end field
 
-.field checkedItemCount:I
-
-.field filter:Ljava/lang/String;
-
-.field firstId:J
-
-.field inActionMode:Z
-
-.field position:I
-
-.field selectedId:J
-
-.field viewLeft:I
-
-.field width:I
+.field j:Landroid/support/v4/util/LongSparseArray;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/support/v4/util/LongSparseArray",
+            "<",
+            "Ljava/lang/Integer;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
@@ -84,7 +73,6 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .registers 4
-    .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
     .line 1313
@@ -95,42 +83,42 @@
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->selectedId:J
+    iput-wide v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->a:J
 
     .line 1315
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->firstId:J
+    iput-wide v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->b:J
 
     .line 1316
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    iput v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->viewLeft:I
+    iput v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->c:I
 
     .line 1317
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    iput v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->position:I
+    iput v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->d:I
 
     .line 1318
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    iput v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->width:I
+    iput v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->e:I
 
     .line 1319
     invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->filter:Ljava/lang/String;
+    iput-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->f:Ljava/lang/String;
 
     .line 1320
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
@@ -142,28 +130,28 @@
     const/4 v0, 0x1
 
     :goto_2e
-    iput-boolean v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->inActionMode:Z
+    iput-boolean v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->g:Z
 
     .line 1321
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    iput v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->checkedItemCount:I
+    iput v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->h:I
 
     .line 1322
-    invoke-direct {p0, p1}, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->readSparseBooleanArray(Landroid/os/Parcel;)Landroid/support/v4/util/SparseArrayCompat;
+    invoke-direct {p0, p1}, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->b(Landroid/os/Parcel;)Landroid/support/v4/util/SparseArrayCompat;
 
     move-result-object v0
 
-    iput-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->checkState:Landroid/support/v4/util/SparseArrayCompat;
+    iput-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->i:Landroid/support/v4/util/SparseArrayCompat;
 
     .line 1323
-    invoke-direct {p0, p1}, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->readSparseLongArray(Landroid/os/Parcel;)Landroid/support/v4/util/LongSparseArray;
+    invoke-direct {p0, p1}, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->a(Landroid/os/Parcel;)Landroid/support/v4/util/LongSparseArray;
 
     move-result-object v0
 
-    iput-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->checkIdState:Landroid/support/v4/util/LongSparseArray;
+    iput-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->j:Landroid/support/v4/util/LongSparseArray;
 
     .line 1324
     return-void
@@ -177,8 +165,6 @@
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Lit/sephiroth/android/library/widget/AbsHListView$1;)V
     .registers 3
-    .param p1, "x0"    # Landroid/os/Parcel;
-    .param p2, "x1"    # Lit/sephiroth/android/library/widget/AbsHListView$1;
 
     .prologue
     .line 1289
@@ -189,7 +175,6 @@
 
 .method constructor <init>(Landroid/os/Parcelable;)V
     .registers 2
-    .param p1, "superState"    # Landroid/os/Parcelable;
 
     .prologue
     .line 1306
@@ -199,121 +184,8 @@
     return-void
 .end method
 
-.method private readSparseBooleanArray(Landroid/os/Parcel;)Landroid/support/v4/util/SparseArrayCompat;
+.method private a(Landroid/os/Parcel;)Landroid/support/v4/util/LongSparseArray;
     .registers 4
-    .param p1, "in"    # Landroid/os/Parcel;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/os/Parcel;",
-            ")",
-            "Landroid/support/v4/util/SparseArrayCompat",
-            "<",
-            "Ljava/lang/Boolean;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 1343
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    .line 1344
-    .local v0, "N":I
-    if-gez v0, :cond_8
-
-    .line 1345
-    const/4 v1, 0x0
-
-    .line 1349
-    :goto_7
-    return-object v1
-
-    .line 1347
-    :cond_8
-    new-instance v1, Landroid/support/v4/util/SparseArrayCompat;
-
-    invoke-direct {v1, v0}, Landroid/support/v4/util/SparseArrayCompat;-><init>(I)V
-
-    .line 1348
-    .local v1, "sa":Landroid/support/v4/util/SparseArrayCompat;, "Landroid/support/v4/util/SparseArrayCompat<Ljava/lang/Boolean;>;"
-    invoke-direct {p0, v1, p1, v0}, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->readSparseBooleanArrayInternal(Landroid/support/v4/util/SparseArrayCompat;Landroid/os/Parcel;I)V
-
-    goto :goto_7
-.end method
-
-.method private readSparseBooleanArrayInternal(Landroid/support/v4/util/SparseArrayCompat;Landroid/os/Parcel;I)V
-    .registers 8
-    .param p2, "in"    # Landroid/os/Parcel;
-    .param p3, "N"    # I
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/support/v4/util/SparseArrayCompat",
-            "<",
-            "Ljava/lang/Boolean;",
-            ">;",
-            "Landroid/os/Parcel;",
-            "I)V"
-        }
-    .end annotation
-
-    .prologue
-    .local p1, "outVal":Landroid/support/v4/util/SparseArrayCompat;, "Landroid/support/v4/util/SparseArrayCompat<Ljava/lang/Boolean;>;"
-    const/4 v2, 0x1
-
-    .line 1365
-    :goto_1
-    if-lez p3, :cond_1a
-
-    .line 1366
-    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    .line 1367
-    .local v0, "key":I
-    invoke-virtual {p2}, Landroid/os/Parcel;->readByte()B
-
-    move-result v3
-
-    if-ne v3, v2, :cond_18
-
-    move v1, v2
-
-    .line 1371
-    .local v1, "value":Z
-    :goto_e
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object v3
-
-    invoke-virtual {p1, v0, v3}, Landroid/support/v4/util/SparseArrayCompat;->append(ILjava/lang/Object;)V
-
-    .line 1372
-    add-int/lit8 p3, p3, -0x1
-
-    .line 1373
-    goto :goto_1
-
-    .line 1367
-    .end local v1    # "value":Z
-    :cond_18
-    const/4 v1, 0x0
-
-    goto :goto_e
-
-    .line 1374
-    .end local v0    # "key":I
-    :cond_1a
-    return-void
-.end method
-
-.method private readSparseLongArray(Landroid/os/Parcel;)Landroid/support/v4/util/LongSparseArray;
-    .registers 4
-    .param p1, "in"    # Landroid/os/Parcel;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -330,36 +202,102 @@
     .line 1330
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result v0
+    move-result v1
 
     .line 1331
-    .local v0, "N":I
-    if-gtz v0, :cond_8
+    if-gtz v1, :cond_8
 
     .line 1332
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 1336
     :goto_7
-    return-object v1
+    return-object v0
 
     .line 1334
     :cond_8
-    new-instance v1, Landroid/support/v4/util/LongSparseArray;
+    new-instance v0, Landroid/support/v4/util/LongSparseArray;
 
-    invoke-direct {v1, v0}, Landroid/support/v4/util/LongSparseArray;-><init>(I)V
+    invoke-direct {v0, v1}, Landroid/support/v4/util/LongSparseArray;-><init>(I)V
 
     .line 1335
-    .local v1, "array":Landroid/support/v4/util/LongSparseArray;, "Landroid/support/v4/util/LongSparseArray<Ljava/lang/Integer;>;"
-    invoke-direct {p0, v1, p1, v0}, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->readSparseLongArrayInternal(Landroid/support/v4/util/LongSparseArray;Landroid/os/Parcel;I)V
+    invoke-direct {p0, v0, p1, v1}, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->a(Landroid/support/v4/util/LongSparseArray;Landroid/os/Parcel;I)V
 
     goto :goto_7
 .end method
 
-.method private readSparseLongArrayInternal(Landroid/support/v4/util/LongSparseArray;Landroid/os/Parcel;I)V
-    .registers 8
-    .param p2, "in"    # Landroid/os/Parcel;
-    .param p3, "N"    # I
+.method private a(Landroid/support/v4/util/LongSparseArray;Landroid/os/Parcel;)V
+    .registers 9
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/support/v4/util/LongSparseArray",
+            "<",
+            "Ljava/lang/Integer;",
+            ">;",
+            "Landroid/os/Parcel;",
+            ")V"
+        }
+    .end annotation
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 1380
+    if-eqz p1, :cond_24
+
+    invoke-virtual {p1}, Landroid/support/v4/util/LongSparseArray;->b()I
+
+    move-result v0
+
+    move v1, v0
+
+    .line 1381
+    :goto_8
+    invoke-virtual {p2, v1}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 1382
+    :goto_b
+    if-ge v2, v1, :cond_26
+
+    .line 1383
+    invoke-virtual {p1, v2}, Landroid/support/v4/util/LongSparseArray;->b(I)J
+
+    move-result-wide v4
+
+    invoke-virtual {p2, v4, v5}, Landroid/os/Parcel;->writeLong(J)V
+
+    .line 1384
+    invoke-virtual {p1, v2}, Landroid/support/v4/util/LongSparseArray;->c(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    move-result v0
+
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 1382
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_b
+
+    :cond_24
+    move v1, v2
+
+    .line 1380
+    goto :goto_8
+
+    .line 1386
+    :cond_26
+    return-void
+.end method
+
+.method private a(Landroid/support/v4/util/LongSparseArray;Landroid/os/Parcel;I)V
+    .registers 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -374,7 +312,6 @@
 
     .prologue
     .line 1353
-    .local p1, "outVal":Landroid/support/v4/util/LongSparseArray;, "Landroid/support/v4/util/LongSparseArray<Ljava/lang/Integer;>;"
     :goto_0
     if-lez p3, :cond_14
 
@@ -384,18 +321,16 @@
     move-result-wide v0
 
     .line 1355
-    .local v0, "key":J
     invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
     .line 1359
-    .local v2, "value":I
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {p1, v0, v1, v3}, Landroid/support/v4/util/LongSparseArray;->put(JLjava/lang/Object;)V
+    invoke-virtual {p1, v0, v1, v2}, Landroid/support/v4/util/LongSparseArray;->b(JLjava/lang/Object;)V
 
     .line 1360
     add-int/lit8 p3, p3, -0x1
@@ -404,15 +339,12 @@
     goto :goto_0
 
     .line 1362
-    .end local v0    # "key":J
-    .end local v2    # "value":I
     :cond_14
     return-void
 .end method
 
-.method private writeSparseBooleanArray(Landroid/support/v4/util/SparseArrayCompat;Landroid/os/Parcel;)V
-    .registers 6
-    .param p2, "out"    # Landroid/os/Parcel;
+.method private a(Landroid/support/v4/util/SparseArrayCompat;Landroid/os/Parcel;)V
+    .registers 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -426,150 +358,176 @@
     .end annotation
 
     .prologue
+    const/4 v1, 0x0
+
     .line 1392
-    .local p1, "val":Landroid/support/v4/util/SparseArrayCompat;, "Landroid/support/v4/util/SparseArrayCompat<Ljava/lang/Boolean;>;"
-    if-nez p1, :cond_7
+    if-nez p1, :cond_8
 
     .line 1393
-    const/4 v2, -0x1
+    const/4 v0, -0x1
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 1404
-    :cond_6
+    :cond_7
     return-void
 
     .line 1396
-    :cond_7
-    invoke-virtual {p1}, Landroid/support/v4/util/SparseArrayCompat;->size()I
+    :cond_8
+    invoke-virtual {p1}, Landroid/support/v4/util/SparseArrayCompat;->b()I
+
+    move-result v3
+
+    .line 1397
+    invoke-virtual {p2, v3}, Landroid/os/Parcel;->writeInt(I)V
+
+    move v2, v1
+
+    .line 1399
+    :goto_10
+    if-ge v2, v3, :cond_7
+
+    .line 1400
+    invoke-virtual {p1, v2}, Landroid/support/v4/util/SparseArrayCompat;->e(I)I
 
     move-result v0
 
-    .line 1397
-    .local v0, "N":I
     invoke-virtual {p2, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1398
-    const/4 v1, 0x0
-
-    .line 1399
-    .local v1, "i":I
-    :goto_f
-    if-ge v1, v0, :cond_6
-
-    .line 1400
-    invoke-virtual {p1, v1}, Landroid/support/v4/util/SparseArrayCompat;->keyAt(I)I
-
-    move-result v2
-
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->writeInt(I)V
-
     .line 1401
-    invoke-virtual {p1, v1}, Landroid/support/v4/util/SparseArrayCompat;->valueAt(I)Ljava/lang/Object;
+    invoke-virtual {p1, v2}, Landroid/support/v4/util/SparseArrayCompat;->f(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Ljava/lang/Boolean;
+    check-cast v0, Ljava/lang/Boolean;
 
-    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_2c
+    if-eqz v0, :cond_2e
 
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
-    :goto_25
-    int-to-byte v2, v2
+    :goto_26
+    int-to-byte v0, v0
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->writeByte(B)V
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->writeByte(B)V
 
     .line 1402
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v2, 0x1
 
-    goto :goto_f
+    move v2, v0
+
+    goto :goto_10
+
+    :cond_2e
+    move v0, v1
 
     .line 1401
-    :cond_2c
-    const/4 v2, 0x0
-
-    goto :goto_25
+    goto :goto_26
 .end method
 
-.method private writeSparseLongArray(Landroid/support/v4/util/LongSparseArray;Landroid/os/Parcel;)V
+.method private a(Landroid/support/v4/util/SparseArrayCompat;Landroid/os/Parcel;I)V
     .registers 7
-    .param p2, "out"    # Landroid/os/Parcel;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Landroid/support/v4/util/LongSparseArray",
+            "Landroid/support/v4/util/SparseArrayCompat",
             "<",
-            "Ljava/lang/Integer;",
+            "Ljava/lang/Boolean;",
             ">;",
             "Landroid/os/Parcel;",
-            ")V"
+            "I)V"
         }
     .end annotation
 
     .prologue
-    .line 1380
-    .local p1, "array":Landroid/support/v4/util/LongSparseArray;, "Landroid/support/v4/util/LongSparseArray<Ljava/lang/Integer;>;"
-    if-eqz p1, :cond_23
+    const/4 v1, 0x1
 
-    invoke-virtual {p1}, Landroid/support/v4/util/LongSparseArray;->size()I
+    .line 1365
+    :goto_1
+    if-lez p3, :cond_1a
 
-    move-result v0
-
-    .line 1381
-    .local v0, "N":I
-    :goto_6
-    invoke-virtual {p2, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 1382
-    const/4 v1, 0x0
-
-    .local v1, "i":I
-    :goto_a
-    if-ge v1, v0, :cond_25
-
-    .line 1383
-    invoke-virtual {p1, v1}, Landroid/support/v4/util/LongSparseArray;->keyAt(I)J
-
-    move-result-wide v2
-
-    invoke-virtual {p2, v2, v3}, Landroid/os/Parcel;->writeLong(J)V
-
-    .line 1384
-    invoke-virtual {p1, v1}, Landroid/support/v4/util/LongSparseArray;->valueAt(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Integer;
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+    .line 1366
+    invoke-virtual {p2}, Landroid/os/Parcel;->readInt()I
 
     move-result v2
 
-    invoke-virtual {p2, v2}, Landroid/os/Parcel;->writeInt(I)V
+    .line 1367
+    invoke-virtual {p2}, Landroid/os/Parcel;->readByte()B
 
-    .line 1382
-    add-int/lit8 v1, v1, 0x1
+    move-result v0
 
-    goto :goto_a
+    if-ne v0, v1, :cond_18
 
-    .line 1380
-    .end local v0    # "N":I
-    .end local v1    # "i":I
-    :cond_23
+    move v0, v1
+
+    .line 1371
+    :goto_e
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v2, v0}, Landroid/support/v4/util/SparseArrayCompat;->c(ILjava/lang/Object;)V
+
+    .line 1372
+    add-int/lit8 p3, p3, -0x1
+
+    .line 1373
+    goto :goto_1
+
+    .line 1367
+    :cond_18
     const/4 v0, 0x0
 
-    goto :goto_6
+    goto :goto_e
 
-    .line 1386
-    .restart local v0    # "N":I
-    .restart local v1    # "i":I
-    :cond_25
+    .line 1374
+    :cond_1a
     return-void
+.end method
+
+.method private b(Landroid/os/Parcel;)Landroid/support/v4/util/SparseArrayCompat;
+    .registers 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/os/Parcel;",
+            ")",
+            "Landroid/support/v4/util/SparseArrayCompat",
+            "<",
+            "Ljava/lang/Boolean;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 1343
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v1
+
+    .line 1344
+    if-gez v1, :cond_8
+
+    .line 1345
+    const/4 v0, 0x0
+
+    .line 1349
+    :goto_7
+    return-object v0
+
+    .line 1347
+    :cond_8
+    new-instance v0, Landroid/support/v4/util/SparseArrayCompat;
+
+    invoke-direct {v0, v1}, Landroid/support/v4/util/SparseArrayCompat;-><init>(I)V
+
+    .line 1348
+    invoke-direct {p0, v0, p1, v1}, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->a(Landroid/support/v4/util/SparseArrayCompat;Landroid/os/Parcel;I)V
+
+    goto :goto_7
 .end method
 
 
@@ -607,7 +565,7 @@
 
     move-result-object v0
 
-    iget-wide v2, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->selectedId:J
+    iget-wide v2, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->a:J
 
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -619,7 +577,7 @@
 
     move-result-object v0
 
-    iget-wide v2, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->firstId:J
+    iget-wide v2, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->b:J
 
     invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
@@ -631,7 +589,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->viewLeft:I
+    iget v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->c:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -643,7 +601,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->position:I
+    iget v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->d:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -655,7 +613,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->width:I
+    iget v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->e:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -667,7 +625,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->filter:Ljava/lang/String;
+    iget-object v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->f:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -679,7 +637,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->checkState:Landroid/support/v4/util/SparseArrayCompat;
+    iget-object v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->i:Landroid/support/v4/util/SparseArrayCompat;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -700,45 +658,43 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .registers 5
-    .param p1, "out"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
     .prologue
     .line 1411
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
     .line 1412
-    iget-wide v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->selectedId:J
+    iget-wide v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->a:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
     .line 1413
-    iget-wide v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->firstId:J
+    iget-wide v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->b:J
 
     invoke-virtual {p1, v0, v1}, Landroid/os/Parcel;->writeLong(J)V
 
     .line 1414
-    iget v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->viewLeft:I
+    iget v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->c:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 1415
-    iget v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->position:I
+    iget v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->d:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 1416
-    iget v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->width:I
+    iget v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->e:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 1417
-    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->filter:Ljava/lang/String;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->f:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
 
     .line 1418
-    iget-boolean v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->inActionMode:Z
+    iget-boolean v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->g:Z
 
     if-eqz v0, :cond_3a
 
@@ -750,19 +706,19 @@
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeByte(B)V
 
     .line 1419
-    iget v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->checkedItemCount:I
+    iget v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->h:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 1426
-    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->checkState:Landroid/support/v4/util/SparseArrayCompat;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->i:Landroid/support/v4/util/SparseArrayCompat;
 
-    invoke-direct {p0, v0, p1}, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->writeSparseBooleanArray(Landroid/support/v4/util/SparseArrayCompat;Landroid/os/Parcel;)V
+    invoke-direct {p0, v0, p1}, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->a(Landroid/support/v4/util/SparseArrayCompat;Landroid/os/Parcel;)V
 
     .line 1427
-    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->checkIdState:Landroid/support/v4/util/LongSparseArray;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->j:Landroid/support/v4/util/LongSparseArray;
 
-    invoke-direct {p0, v0, p1}, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->writeSparseLongArray(Landroid/support/v4/util/LongSparseArray;Landroid/os/Parcel;)V
+    invoke-direct {p0, v0, p1}, Lit/sephiroth/android/library/widget/AbsHListView$SavedState;->a(Landroid/support/v4/util/LongSparseArray;Landroid/os/Parcel;)V
 
     .line 1428
     return-void

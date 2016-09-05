@@ -3,23 +3,23 @@
 
 
 # static fields
-.field public static LOG_LEVEL_OFF:I
+.field public static final a:Landroid/content/ComponentName;
 
-.field public static final zzalO:Landroid/content/ComponentName;
+.field public static b:I
 
-.field public static zzalP:I
+.field public static c:I
 
-.field public static zzalQ:I
+.field public static d:I
 
-.field public static zzalR:I
+.field public static e:I
 
-.field public static zzalS:I
+.field public static f:I
 
-.field public static zzalT:I
+.field public static g:I
 
-.field public static zzalU:I
+.field public static h:I
 
-.field public static zzalV:I
+.field public static i:I
 
 
 # direct methods
@@ -36,35 +36,35 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    sput-object v0, Lcom/google/android/gms/common/stats/zzd;->zzalO:Landroid/content/ComponentName;
+    sput-object v0, Lcom/google/android/gms/common/stats/zzd;->a:Landroid/content/ComponentName;
 
     const/4 v0, 0x0
 
-    sput v0, Lcom/google/android/gms/common/stats/zzd;->LOG_LEVEL_OFF:I
+    sput v0, Lcom/google/android/gms/common/stats/zzd;->b:I
 
-    sput v3, Lcom/google/android/gms/common/stats/zzd;->zzalP:I
+    sput v3, Lcom/google/android/gms/common/stats/zzd;->c:I
 
     const/4 v0, 0x2
 
-    sput v0, Lcom/google/android/gms/common/stats/zzd;->zzalQ:I
+    sput v0, Lcom/google/android/gms/common/stats/zzd;->d:I
 
     const/4 v0, 0x4
 
-    sput v0, Lcom/google/android/gms/common/stats/zzd;->zzalR:I
+    sput v0, Lcom/google/android/gms/common/stats/zzd;->e:I
 
     const/16 v0, 0x8
 
-    sput v0, Lcom/google/android/gms/common/stats/zzd;->zzalS:I
+    sput v0, Lcom/google/android/gms/common/stats/zzd;->f:I
 
     const/16 v0, 0x10
 
-    sput v0, Lcom/google/android/gms/common/stats/zzd;->zzalT:I
+    sput v0, Lcom/google/android/gms/common/stats/zzd;->g:I
 
     const/16 v0, 0x20
 
-    sput v0, Lcom/google/android/gms/common/stats/zzd;->zzalU:I
+    sput v0, Lcom/google/android/gms/common/stats/zzd;->h:I
 
-    sput v3, Lcom/google/android/gms/common/stats/zzd;->zzalV:I
+    sput v3, Lcom/google/android/gms/common/stats/zzd;->i:I
 
     return-void
 .end method

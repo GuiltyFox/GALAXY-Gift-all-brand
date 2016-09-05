@@ -8,31 +8,25 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->setRedeemButtonColor(Z)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->c(Z)V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+.field final synthetic a:Z
 
-.field final synthetic val$isRedeeming:Z
+.field final synthetic b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Z)V
     .registers 3
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     .prologue
-    .line 2448
-    iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$23;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    .line 2543
+    iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$23;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    iput-boolean p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$23;->val$isRedeeming:Z
+    iput-boolean p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$23;->a:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -45,17 +39,17 @@
     .registers 4
 
     .prologue
-    const v2, 0x7f1000cd
+    const v2, 0x7f1000d9
 
-    .line 2452
-    iget-boolean v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$23;->val$isRedeeming:Z
+    .line 2547
+    iget-boolean v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$23;->a:Z
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_19
 
-    .line 2453
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$23;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    .line 2548
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$23;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-virtual {v0, v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->findViewById(I)Landroid/view/View;
 
@@ -69,19 +63,19 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 2458
+    .line 2553
     :goto_18
     return-void
 
-    .line 2455
+    .line 2550
     :cond_19
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$23;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$23;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-virtual {v0, v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    const v1, 0x7f020351
+    const v1, 0x7f02036a
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundResource(I)V
 

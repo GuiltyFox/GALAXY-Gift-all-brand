@@ -3,17 +3,6 @@
 .source "BottomSheetBehavior.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/BottomSheetBehavior;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xc
-    name = "SavedState"
-.end annotation
-
-
 # static fields
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
     .annotation system Ldalvik/annotation/Signature;
@@ -48,7 +37,6 @@
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .registers 3
-    .param p1, "source"    # Landroid/os/Parcel;
 
     .prologue
     .line 644
@@ -67,8 +55,6 @@
 
 .method public constructor <init>(Landroid/os/Parcelable;I)V
     .registers 3
-    .param p1, "superState"    # Landroid/os/Parcelable;
-    .param p2, "state"    # I
 
     .prologue
     .line 650
@@ -85,8 +71,6 @@
 # virtual methods
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .registers 4
-    .param p1, "out"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
     .prologue
     .line 656

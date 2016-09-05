@@ -6,7 +6,7 @@
 
 
 # static fields
-.field private static final instance:Lcom/samsung/privilege/util/RxPermissionUtils$$Lambda$3;
+.field private static final a:Lcom/samsung/privilege/util/RxPermissionUtils$$Lambda$3;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     invoke-direct {v0}, Lcom/samsung/privilege/util/RxPermissionUtils$$Lambda$3;-><init>()V
 
-    sput-object v0, Lcom/samsung/privilege/util/RxPermissionUtils$$Lambda$3;->instance:Lcom/samsung/privilege/util/RxPermissionUtils$$Lambda$3;
+    sput-object v0, Lcom/samsung/privilege/util/RxPermissionUtils$$Lambda$3;->a:Lcom/samsung/privilege/util/RxPermissionUtils$$Lambda$3;
 
     return-void
 .end method
@@ -30,22 +30,22 @@
     return-void
 .end method
 
-.method public static lambdaFactory$()Lrx/functions/Action0;
+.method public static b()Lrx/functions/Action0;
     .registers 1
 
-    sget-object v0, Lcom/samsung/privilege/util/RxPermissionUtils$$Lambda$3;->instance:Lcom/samsung/privilege/util/RxPermissionUtils$$Lambda$3;
+    sget-object v0, Lcom/samsung/privilege/util/RxPermissionUtils$$Lambda$3;->a:Lcom/samsung/privilege/util/RxPermissionUtils$$Lambda$3;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public call()V
+.method public a()V
     .registers 1
     .annotation runtime Ljava/lang/invoke/LambdaForm$Hidden;
     .end annotation
 
-    invoke-static {}, Lcom/samsung/privilege/util/RxPermissionUtils;->access$lambda$2()V
+    invoke-static {}, Lcom/samsung/privilege/util/RxPermissionUtils;->b()V
 
     return-void
 .end method

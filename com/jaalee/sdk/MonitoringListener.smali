@@ -3,8 +3,8 @@
 
 
 # virtual methods
-.method public abstract onEnteredRegion(Lcom/jaalee/sdk/Region;)V
+.method public abstract a(Lcom/jaalee/sdk/Region;)V
 .end method
 
-.method public abstract onExitedRegion(Lcom/jaalee/sdk/Region;)V
+.method public abstract b(Lcom/jaalee/sdk/Region;)V
 .end method

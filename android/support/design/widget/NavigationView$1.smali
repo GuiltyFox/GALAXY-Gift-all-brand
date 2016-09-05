@@ -11,11 +11,6 @@
     value = Landroid/support/design/widget/NavigationView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Landroid/support/design/widget/NavigationView;
@@ -38,8 +33,6 @@
 # virtual methods
 .method public onMenuItemSelected(Landroid/support/v7/view/menu/MenuBuilder;Landroid/view/MenuItem;)Z
     .registers 4
-    .param p1, "menu"    # Landroid/support/v7/view/menu/MenuBuilder;
-    .param p2, "item"    # Landroid/view/MenuItem;
 
     .prologue
     .line 151
@@ -78,7 +71,6 @@
 
 .method public onMenuModeChange(Landroid/support/v7/view/menu/MenuBuilder;)V
     .registers 2
-    .param p1, "menu"    # Landroid/support/v7/view/menu/MenuBuilder;
 
     .prologue
     .line 155

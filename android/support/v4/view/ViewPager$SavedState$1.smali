@@ -11,11 +11,6 @@
     value = Landroid/support/v4/view/ViewPager$SavedState;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -40,10 +35,8 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/support/v4/view/ViewPager$SavedState;
+.method public a(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/support/v4/view/ViewPager$SavedState;
     .registers 4
-    .param p1, "in"    # Landroid/os/Parcel;
-    .param p2, "loader"    # Ljava/lang/ClassLoader;
 
     .prologue
     .line 1349
@@ -54,21 +47,8 @@
     return-object v0
 .end method
 
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
-    .registers 4
-
-    .prologue
-    .line 1346
-    invoke-virtual {p0, p1, p2}, Landroid/support/v4/view/ViewPager$SavedState$1;->createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/support/v4/view/ViewPager$SavedState;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public newArray(I)[Landroid/support/v4/view/ViewPager$SavedState;
+.method public a(I)[Landroid/support/v4/view/ViewPager$SavedState;
     .registers 3
-    .param p1, "size"    # I
 
     .prologue
     .line 1353
@@ -77,12 +57,24 @@
     return-object v0
 .end method
 
-.method public bridge synthetic newArray(I)[Ljava/lang/Object;
+.method public synthetic createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
+    .registers 4
+
+    .prologue
+    .line 1346
+    invoke-virtual {p0, p1, p2}, Landroid/support/v4/view/ViewPager$SavedState$1;->a(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/support/v4/view/ViewPager$SavedState;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic newArray(I)[Ljava/lang/Object;
     .registers 3
 
     .prologue
     .line 1346
-    invoke-virtual {p0, p1}, Landroid/support/v4/view/ViewPager$SavedState$1;->newArray(I)[Landroid/support/v4/view/ViewPager$SavedState;
+    invoke-virtual {p0, p1}, Landroid/support/v4/view/ViewPager$SavedState$1;->a(I)[Landroid/support/v4/view/ViewPager$SavedState;
 
     move-result-object v0
 

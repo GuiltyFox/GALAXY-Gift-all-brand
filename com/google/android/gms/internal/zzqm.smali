@@ -14,9 +14,9 @@
 
 
 # instance fields
-.field public zzaRR:Z
+.field public a:Ljava/lang/String;
 
-.field public zzavc:Ljava/lang/String;
+.field public b:Z
 
 
 # direct methods
@@ -30,22 +30,74 @@
 
 
 # virtual methods
-.method public getDescription()Ljava/lang/String;
+.method public a()Ljava/lang/String;
     .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqm;->zzavc:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqm;->a:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public setDescription(Ljava/lang/String;)V
-    .registers 2
-    .param p1, "description"    # Ljava/lang/String;
+.method public a(Lcom/google/android/gms/internal/zzqm;)V
+    .registers 3
 
-    .prologue
-    iput-object p1, p0, Lcom/google/android/gms/internal/zzqm;->zzavc:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqm;->a:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_d
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqm;->a:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqm;->a(Ljava/lang/String;)V
+
+    :cond_d
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzqm;->b:Z
+
+    if-eqz v0, :cond_16
+
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzqm;->b:Z
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqm;->a(Z)V
+
+    :cond_16
+    return-void
+.end method
+
+.method public bridge synthetic a(Lcom/google/android/gms/measurement/zze;)V
+    .registers 2
+
+    check-cast p1, Lcom/google/android/gms/internal/zzqm;
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/zzqm;->a(Lcom/google/android/gms/internal/zzqm;)V
 
     return-void
+.end method
+
+.method public a(Ljava/lang/String;)V
+    .registers 2
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/zzqm;->a:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public a(Z)V
+    .registers 2
+
+    iput-boolean p1, p0, Lcom/google/android/gms/internal/zzqm;->b:Z
+
+    return-void
+.end method
+
+.method public b()Z
+    .registers 2
+
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzqm;->b:Z
+
+    return v0
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -57,13 +109,13 @@
 
     const-string/jumbo v1, "description"
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzqm;->zzavc:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/internal/zzqm;->a:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string/jumbo v1, "fatal"
 
-    iget-boolean v2, p0, Lcom/google/android/gms/internal/zzqm;->zzaRR:Z
+    iget-boolean v2, p0, Lcom/google/android/gms/internal/zzqm;->b:Z
 
     invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -71,63 +123,9 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/zzqm;->zzE(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/internal/zzqm;->a(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public zzAk()Z
-    .registers 2
-
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzqm;->zzaRR:Z
-
-    return v0
-.end method
-
-.method public zza(Lcom/google/android/gms/internal/zzqm;)V
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqm;->zzavc:Ljava/lang/String;
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_d
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqm;->zzavc:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqm;->setDescription(Ljava/lang/String;)V
-
-    :cond_d
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzqm;->zzaRR:Z
-
-    if-eqz v0, :cond_16
-
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzqm;->zzaRR:Z
-
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqm;->zzal(Z)V
-
-    :cond_16
-    return-void
-.end method
-
-.method public bridge synthetic zza(Lcom/google/android/gms/measurement/zze;)V
-    .registers 2
-
-    check-cast p1, Lcom/google/android/gms/internal/zzqm;
-
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/zzqm;->zza(Lcom/google/android/gms/internal/zzqm;)V
-
-    return-void
-.end method
-
-.method public zzal(Z)V
-    .registers 2
-
-    iput-boolean p1, p0, Lcom/google/android/gms/internal/zzqm;->zzaRR:Z
-
-    return-void
 .end method

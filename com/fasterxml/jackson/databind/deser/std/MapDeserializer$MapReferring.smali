@@ -3,17 +3,6 @@
 .source "MapDeserializer.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/std/MapDeserializer;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "MapReferring"
-.end annotation
-
-
 # instance fields
 .field private final _parent:Lcom/fasterxml/jackson/databind/deser/std/MapDeserializer$MapReferringAccumulator;
 
@@ -35,9 +24,6 @@
 # direct methods
 .method private constructor <init>(Lcom/fasterxml/jackson/databind/deser/std/MapDeserializer$MapReferringAccumulator;Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;Ljava/lang/Class;Ljava/lang/Object;)V
     .registers 6
-    .param p1, "parent"    # Lcom/fasterxml/jackson/databind/deser/std/MapDeserializer$MapReferringAccumulator;
-    .param p2, "ref"    # Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;
-    .param p4, "key"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -52,7 +38,6 @@
 
     .prologue
     .line 624
-    .local p3, "valueType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0, p2, p3}, Lcom/fasterxml/jackson/databind/deser/impl/ReadableObjectId$Referring;-><init>(Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;Ljava/lang/Class;)V
 
     .line 618
@@ -74,11 +59,6 @@
 
 .method synthetic constructor <init>(Lcom/fasterxml/jackson/databind/deser/std/MapDeserializer$MapReferringAccumulator;Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;Ljava/lang/Class;Ljava/lang/Object;Lcom/fasterxml/jackson/databind/deser/std/MapDeserializer$1;)V
     .registers 6
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/deser/std/MapDeserializer$MapReferringAccumulator;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;
-    .param p3, "x2"    # Ljava/lang/Class;
-    .param p4, "x3"    # Ljava/lang/Object;
-    .param p5, "x4"    # Lcom/fasterxml/jackson/databind/deser/std/MapDeserializer$1;
 
     .prologue
     .line 615
@@ -91,13 +71,6 @@
 # virtual methods
 .method public handleResolvedForwardReference(Ljava/lang/Object;Ljava/lang/Object;)V
     .registers 4
-    .param p1, "id"    # Ljava/lang/Object;
-    .param p2, "value"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 631

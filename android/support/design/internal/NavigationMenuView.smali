@@ -9,7 +9,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 32
@@ -23,8 +22,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 36
@@ -38,9 +35,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .registers 7
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
 
     .prologue
     .line 40
@@ -75,7 +69,6 @@
 
 .method public initialize(Landroid/support/v7/view/menu/MenuBuilder;)V
     .registers 2
-    .param p1, "menu"    # Landroid/support/v7/view/menu/MenuBuilder;
 
     .prologue
     .line 47

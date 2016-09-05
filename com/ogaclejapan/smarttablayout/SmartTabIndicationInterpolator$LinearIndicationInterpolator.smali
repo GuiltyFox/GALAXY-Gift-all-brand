@@ -3,17 +3,6 @@
 .source "SmartTabIndicationInterpolator.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "LinearIndicationInterpolator"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -27,18 +16,16 @@
 
 
 # virtual methods
-.method public getLeftEdge(F)F
+.method public a(F)F
     .registers 2
-    .param p1, "offset"    # F
 
     .prologue
     .line 87
     return p1
 .end method
 
-.method public getRightEdge(F)F
+.method public b(F)F
     .registers 2
-    .param p1, "offset"    # F
 
     .prologue
     .line 92

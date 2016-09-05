@@ -3,25 +3,13 @@
 .source "ListViewCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/widget/ListViewCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "GateKeeperDrawable"
-.end annotation
-
-
 # instance fields
-.field private mEnabled:Z
+.field private a:Z
 
 
 # direct methods
 .method public constructor <init>(Landroid/graphics/drawable/Drawable;)V
     .registers 3
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 364
@@ -30,7 +18,7 @@
     .line 365
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->mEnabled:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->a:Z
 
     .line 366
     return-void
@@ -38,13 +26,23 @@
 
 
 # virtual methods
+.method a(Z)V
+    .registers 2
+
+    .prologue
+    .line 369
+    iput-boolean p1, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->a:Z
+
+    .line 370
+    return-void
+.end method
+
 .method public draw(Landroid/graphics/Canvas;)V
     .registers 3
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
     .line 382
-    iget-boolean v0, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->mEnabled:Z
+    iget-boolean v0, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->a:Z
 
     if-eqz v0, :cond_7
 
@@ -56,26 +54,12 @@
     return-void
 .end method
 
-.method setEnabled(Z)V
-    .registers 2
-    .param p1, "enabled"    # Z
-
-    .prologue
-    .line 369
-    iput-boolean p1, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->mEnabled:Z
-
-    .line 370
-    return-void
-.end method
-
 .method public setHotspot(FF)V
     .registers 4
-    .param p1, "x"    # F
-    .param p2, "y"    # F
 
     .prologue
     .line 389
-    iget-boolean v0, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->mEnabled:Z
+    iget-boolean v0, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->a:Z
 
     if-eqz v0, :cond_7
 
@@ -89,14 +73,10 @@
 
 .method public setHotspotBounds(IIII)V
     .registers 6
-    .param p1, "left"    # I
-    .param p2, "top"    # I
-    .param p3, "right"    # I
-    .param p4, "bottom"    # I
 
     .prologue
     .line 396
-    iget-boolean v0, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->mEnabled:Z
+    iget-boolean v0, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->a:Z
 
     if-eqz v0, :cond_7
 
@@ -110,11 +90,10 @@
 
 .method public setState([I)Z
     .registers 3
-    .param p1, "stateSet"    # [I
 
     .prologue
     .line 374
-    iget-boolean v0, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->mEnabled:Z
+    iget-boolean v0, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->a:Z
 
     if-eqz v0, :cond_9
 
@@ -135,12 +114,10 @@
 
 .method public setVisible(ZZ)Z
     .registers 4
-    .param p1, "visible"    # Z
-    .param p2, "restart"    # Z
 
     .prologue
     .line 403
-    iget-boolean v0, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->mEnabled:Z
+    iget-boolean v0, p0, Landroid/support/v7/widget/ListViewCompat$GateKeeperDrawable;->a:Z
 
     if-eqz v0, :cond_9
 

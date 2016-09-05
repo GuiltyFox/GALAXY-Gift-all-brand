@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/facebook/share/widget/ShareDialog$FeedHandler;,
-        Lcom/facebook/share/widget/ShareDialog$WebShareHandler;,
-        Lcom/facebook/share/widget/ShareDialog$NativeHandler;,
-        Lcom/facebook/share/widget/ShareDialog$Mode;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/facebook/internal/FacebookDialogBase",
@@ -65,7 +56,6 @@
 
 .method public constructor <init>(Landroid/app/Activity;)V
     .registers 3
-    .param p1, "activity"    # Landroid/app/Activity;
 
     .prologue
     .line 149
@@ -94,8 +84,6 @@
 
 .method constructor <init>(Landroid/app/Activity;I)V
     .registers 4
-    .param p1, "activity"    # Landroid/app/Activity;
-    .param p2, "requestCode"    # I
 
     .prologue
     .line 166
@@ -120,7 +108,6 @@
 
 .method public constructor <init>(Landroid/support/v4/app/Fragment;)V
     .registers 3
-    .param p1, "fragment"    # Landroid/support/v4/app/Fragment;
 
     .prologue
     .line 159
@@ -149,8 +136,6 @@
 
 .method constructor <init>(Landroid/support/v4/app/Fragment;I)V
     .registers 4
-    .param p1, "fragment"    # Landroid/support/v4/app/Fragment;
-    .param p2, "requestCode"    # I
 
     .prologue
     .line 173
@@ -175,7 +160,6 @@
 
 .method static synthetic access$300(Ljava/lang/Class;)Z
     .registers 2
-    .param p0, "x0"    # Ljava/lang/Class;
 
     .prologue
     .line 53
@@ -188,7 +172,6 @@
 
 .method static synthetic access$400(Lcom/facebook/share/widget/ShareDialog;)Landroid/app/Activity;
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/share/widget/ShareDialog;
 
     .prologue
     .line 53
@@ -201,10 +184,6 @@
 
 .method static synthetic access$500(Lcom/facebook/share/widget/ShareDialog;Landroid/content/Context;Lcom/facebook/share/model/ShareContent;Lcom/facebook/share/widget/ShareDialog$Mode;)V
     .registers 4
-    .param p0, "x0"    # Lcom/facebook/share/widget/ShareDialog;
-    .param p1, "x1"    # Landroid/content/Context;
-    .param p2, "x2"    # Lcom/facebook/share/model/ShareContent;
-    .param p3, "x3"    # Lcom/facebook/share/widget/ShareDialog$Mode;
 
     .prologue
     .line 53
@@ -215,7 +194,6 @@
 
 .method static synthetic access$600(Ljava/lang/Class;)Lcom/facebook/internal/DialogFeature;
     .registers 2
-    .param p0, "x0"    # Ljava/lang/Class;
 
     .prologue
     .line 53
@@ -228,7 +206,6 @@
 
 .method static synthetic access$700(Ljava/lang/Class;)Z
     .registers 2
-    .param p0, "x0"    # Ljava/lang/Class;
 
     .prologue
     .line 53
@@ -241,7 +218,6 @@
 
 .method static synthetic access$800(Lcom/facebook/share/widget/ShareDialog;)Landroid/app/Activity;
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/share/widget/ShareDialog;
 
     .prologue
     .line 53
@@ -254,7 +230,6 @@
 
 .method static synthetic access$900(Lcom/facebook/share/widget/ShareDialog;)Landroid/app/Activity;
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/share/widget/ShareDialog;
 
     .prologue
     .line 53
@@ -279,7 +254,6 @@
 
     .prologue
     .line 125
-    .local p0, "contentType":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/facebook/share/model/ShareContent;>;"
     invoke-static {p0}, Lcom/facebook/share/widget/ShareDialog;->canShowWebTypeCheck(Ljava/lang/Class;)Z
 
     move-result v0
@@ -305,7 +279,7 @@
 .end method
 
 .method private static canShowNative(Ljava/lang/Class;)Z
-    .registers 3
+    .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -318,28 +292,26 @@
 
     .prologue
     .line 129
-    .local p0, "contentType":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/facebook/share/model/ShareContent;>;"
     invoke-static {p0}, Lcom/facebook/share/widget/ShareDialog;->getFeature(Ljava/lang/Class;)Lcom/facebook/internal/DialogFeature;
 
     move-result-object v0
 
     .line 131
-    .local v0, "feature":Lcom/facebook/internal/DialogFeature;
     if-eqz v0, :cond_e
 
     invoke-static {v0}, Lcom/facebook/internal/DialogPresenter;->canPresentNativeDialogWithFeature(Lcom/facebook/internal/DialogFeature;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_e
+    if-eqz v0, :cond_e
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     :goto_d
-    return v1
+    return v0
 
     :cond_e
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_d
 .end method
@@ -358,7 +330,6 @@
 
     .prologue
     .line 140
-    .local p0, "contentType":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/facebook/share/model/ShareContent;>;"
     const-class v0, Lcom/facebook/share/model/ShareLinkContent;
 
     invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
@@ -403,7 +374,6 @@
 
     .prologue
     .line 358
-    .local p0, "contentType":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/facebook/share/model/ShareContent;>;"
     const-class v0, Lcom/facebook/share/model/ShareLinkContent;
 
     invoke-virtual {v0, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
@@ -472,165 +442,136 @@
 .end method
 
 .method private logDialogShare(Landroid/content/Context;Lcom/facebook/share/model/ShareContent;Lcom/facebook/share/widget/ShareDialog$Mode;)V
-    .registers 11
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "content"    # Lcom/facebook/share/model/ShareContent;
-    .param p3, "mode"    # Lcom/facebook/share/widget/ShareDialog$Mode;
+    .registers 9
 
     .prologue
     .line 372
-    iget-boolean v5, p0, Lcom/facebook/share/widget/ShareDialog;->isAutomaticMode:Z
+    iget-boolean v0, p0, Lcom/facebook/share/widget/ShareDialog;->isAutomaticMode:Z
 
-    if-eqz v5, :cond_6
+    if-eqz v0, :cond_6
 
     .line 373
     sget-object p3, Lcom/facebook/share/widget/ShareDialog$Mode;->AUTOMATIC:Lcom/facebook/share/widget/ShareDialog$Mode;
 
     .line 376
     :cond_6
-    sget-object v5, Lcom/facebook/share/widget/ShareDialog$1;->$SwitchMap$com$facebook$share$widget$ShareDialog$Mode:[I
+    sget-object v0, Lcom/facebook/share/widget/ShareDialog$1;->$SwitchMap$com$facebook$share$widget$ShareDialog$Mode:[I
 
     invoke-virtual {p3}, Lcom/facebook/share/widget/ShareDialog$Mode;->ordinal()I
 
-    move-result v6
+    move-result v1
 
-    aget v5, v5, v6
+    aget v0, v0, v1
 
-    packed-switch v5, :pswitch_data_68
+    packed-switch v0, :pswitch_data_68
 
     .line 387
-    const-string/jumbo v2, "unknown"
+    const-string/jumbo v0, "unknown"
 
     .line 392
-    .local v2, "displayType":Ljava/lang/String;
     :goto_14
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-static {v5}, Lcom/facebook/share/widget/ShareDialog;->getFeature(Ljava/lang/Class;)Lcom/facebook/internal/DialogFeature;
+    invoke-static {v1}, Lcom/facebook/share/widget/ShareDialog;->getFeature(Ljava/lang/Class;)Lcom/facebook/internal/DialogFeature;
 
     move-result-object v1
 
     .line 393
-    .local v1, "dialogFeature":Lcom/facebook/internal/DialogFeature;
-    sget-object v5, Lcom/facebook/share/internal/ShareDialogFeature;->SHARE_DIALOG:Lcom/facebook/share/internal/ShareDialogFeature;
+    sget-object v2, Lcom/facebook/share/internal/ShareDialogFeature;->SHARE_DIALOG:Lcom/facebook/share/internal/ShareDialogFeature;
 
-    if-ne v1, v5, :cond_4c
+    if-ne v1, v2, :cond_4c
 
     .line 394
-    const-string/jumbo v0, "status"
+    const-string/jumbo v1, "status"
 
     .line 405
-    .local v0, "contentType":Ljava/lang/String;
     :goto_23
     invoke-static {p1}, Lcom/facebook/appevents/AppEventsLogger;->newLogger(Landroid/content/Context;)Lcom/facebook/appevents/AppEventsLogger;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 406
-    .local v3, "logger":Lcom/facebook/appevents/AppEventsLogger;
-    new-instance v4, Landroid/os/Bundle;
+    new-instance v3, Landroid/os/Bundle;
 
-    invoke-direct {v4}, Landroid/os/Bundle;-><init>()V
+    invoke-direct {v3}, Landroid/os/Bundle;-><init>()V
 
     .line 407
-    .local v4, "parameters":Landroid/os/Bundle;
-    const-string/jumbo v5, "fb_share_dialog_show"
+    const-string/jumbo v4, "fb_share_dialog_show"
 
-    invoke-virtual {v4, v5, v2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v3, v4, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 411
-    const-string/jumbo v5, "fb_share_dialog_content_type"
+    const-string/jumbo v0, "fb_share_dialog_content_type"
 
-    invoke-virtual {v4, v5, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v3, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 415
-    const-string/jumbo v5, "fb_share_dialog_show"
+    const-string/jumbo v0, "fb_share_dialog_show"
 
-    const/4 v6, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {v3, v5, v6, v4}, Lcom/facebook/appevents/AppEventsLogger;->logSdkEvent(Ljava/lang/String;Ljava/lang/Double;Landroid/os/Bundle;)V
+    invoke-virtual {v2, v0, v1, v3}, Lcom/facebook/appevents/AppEventsLogger;->logSdkEvent(Ljava/lang/String;Ljava/lang/Double;Landroid/os/Bundle;)V
 
     .line 416
     return-void
 
     .line 378
-    .end local v0    # "contentType":Ljava/lang/String;
-    .end local v1    # "dialogFeature":Lcom/facebook/internal/DialogFeature;
-    .end local v2    # "displayType":Ljava/lang/String;
-    .end local v3    # "logger":Lcom/facebook/appevents/AppEventsLogger;
-    .end local v4    # "parameters":Landroid/os/Bundle;
     :pswitch_40
-    const-string/jumbo v2, "automatic"
+    const-string/jumbo v0, "automatic"
 
-    .line 379
-    .restart local v2    # "displayType":Ljava/lang/String;
     goto :goto_14
 
     .line 381
-    .end local v2    # "displayType":Ljava/lang/String;
     :pswitch_44
-    const-string/jumbo v2, "web"
+    const-string/jumbo v0, "web"
 
-    .line 382
-    .restart local v2    # "displayType":Ljava/lang/String;
     goto :goto_14
 
     .line 384
-    .end local v2    # "displayType":Ljava/lang/String;
     :pswitch_48
-    const-string/jumbo v2, "native"
+    const-string/jumbo v0, "native"
 
-    .line 385
-    .restart local v2    # "displayType":Ljava/lang/String;
     goto :goto_14
 
     .line 395
-    .restart local v1    # "dialogFeature":Lcom/facebook/internal/DialogFeature;
     :cond_4c
-    sget-object v5, Lcom/facebook/share/internal/ShareDialogFeature;->PHOTOS:Lcom/facebook/share/internal/ShareDialogFeature;
+    sget-object v2, Lcom/facebook/share/internal/ShareDialogFeature;->PHOTOS:Lcom/facebook/share/internal/ShareDialogFeature;
 
-    if-ne v1, v5, :cond_54
+    if-ne v1, v2, :cond_54
 
     .line 396
-    const-string/jumbo v0, "photo"
+    const-string/jumbo v1, "photo"
 
-    .restart local v0    # "contentType":Ljava/lang/String;
     goto :goto_23
 
     .line 397
-    .end local v0    # "contentType":Ljava/lang/String;
     :cond_54
-    sget-object v5, Lcom/facebook/share/internal/ShareDialogFeature;->VIDEO:Lcom/facebook/share/internal/ShareDialogFeature;
+    sget-object v2, Lcom/facebook/share/internal/ShareDialogFeature;->VIDEO:Lcom/facebook/share/internal/ShareDialogFeature;
 
-    if-ne v1, v5, :cond_5c
+    if-ne v1, v2, :cond_5c
 
     .line 398
-    const-string/jumbo v0, "video"
+    const-string/jumbo v1, "video"
 
-    .restart local v0    # "contentType":Ljava/lang/String;
     goto :goto_23
 
     .line 399
-    .end local v0    # "contentType":Ljava/lang/String;
     :cond_5c
-    sget-object v5, Lcom/facebook/share/internal/OpenGraphActionDialogFeature;->OG_ACTION_DIALOG:Lcom/facebook/share/internal/OpenGraphActionDialogFeature;
+    sget-object v2, Lcom/facebook/share/internal/OpenGraphActionDialogFeature;->OG_ACTION_DIALOG:Lcom/facebook/share/internal/OpenGraphActionDialogFeature;
 
-    if-ne v1, v5, :cond_64
+    if-ne v1, v2, :cond_64
 
     .line 400
-    const-string/jumbo v0, "open_graph"
+    const-string/jumbo v1, "open_graph"
 
-    .restart local v0    # "contentType":Ljava/lang/String;
     goto :goto_23
 
     .line 402
-    .end local v0    # "contentType":Ljava/lang/String;
     :cond_64
-    const-string/jumbo v0, "unknown"
+    const-string/jumbo v1, "unknown"
 
-    .restart local v0    # "contentType":Ljava/lang/String;
     goto :goto_23
 
     .line 376
@@ -644,8 +585,6 @@
 
 .method public static show(Landroid/app/Activity;Lcom/facebook/share/model/ShareContent;)V
     .registers 3
-    .param p0, "activity"    # Landroid/app/Activity;
-    .param p1, "shareContent"    # Lcom/facebook/share/model/ShareContent;
 
     .prologue
     .line 100
@@ -661,8 +600,6 @@
 
 .method public static show(Landroid/support/v4/app/Fragment;Lcom/facebook/share/model/ShareContent;)V
     .registers 3
-    .param p0, "fragment"    # Landroid/support/v4/app/Fragment;
-    .param p1, "shareContent"    # Lcom/facebook/share/model/ShareContent;
 
     .prologue
     .line 113
@@ -680,8 +617,6 @@
 # virtual methods
 .method public canShow(Lcom/facebook/share/model/ShareContent;Lcom/facebook/share/widget/ShareDialog$Mode;)Z
     .registers 4
-    .param p1, "content"    # Lcom/facebook/share/model/ShareContent;
-    .param p2, "mode"    # Lcom/facebook/share/widget/ShareDialog$Mode;
 
     .prologue
     .line 203
@@ -691,7 +626,6 @@
 
     sget-object p2, Lcom/facebook/share/widget/ShareDialog;->BASE_AUTOMATIC_MODE:Ljava/lang/Object;
 
-    .end local p2    # "mode":Lcom/facebook/share/widget/ShareDialog$Mode;
     :cond_6
     invoke-virtual {p0, p1, p2}, Lcom/facebook/share/widget/ShareDialog;->canShowImpl(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -740,7 +674,6 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 224
-    .local v0, "handlers":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/facebook/internal/FacebookDialogBase<Lcom/facebook/share/model/ShareContent;Lcom/facebook/share/Sharer$Result;>.ModeHandler;>;"
     new-instance v1, Lcom/facebook/share/widget/ShareDialog$NativeHandler;
 
     invoke-direct {v1, p0, v2}, Lcom/facebook/share/widget/ShareDialog$NativeHandler;-><init>(Lcom/facebook/share/widget/ShareDialog;Lcom/facebook/share/widget/ShareDialog$1;)V
@@ -777,7 +710,6 @@
 
 .method protected registerCallbackImpl(Lcom/facebook/internal/CallbackManagerImpl;Lcom/facebook/FacebookCallback;)V
     .registers 4
-    .param p1, "callbackManager"    # Lcom/facebook/internal/CallbackManagerImpl;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -792,7 +724,6 @@
     .prologue
     .line 182
     .line 183
-    .local p2, "callback":Lcom/facebook/FacebookCallback;, "Lcom/facebook/FacebookCallback<Lcom/facebook/share/Sharer$Result;>;"
     invoke-virtual {p0}, Lcom/facebook/share/widget/ShareDialog;->getRequestCode()I
 
     move-result v0
@@ -806,7 +737,6 @@
 
 .method public setShouldFailOnDataError(Z)V
     .registers 2
-    .param p1, "shouldFailOnDataError"    # Z
 
     .prologue
     .line 193
@@ -818,8 +748,6 @@
 
 .method public show(Lcom/facebook/share/model/ShareContent;Lcom/facebook/share/widget/ShareDialog$Mode;)V
     .registers 4
-    .param p1, "content"    # Lcom/facebook/share/model/ShareContent;
-    .param p2, "mode"    # Lcom/facebook/share/widget/ShareDialog$Mode;
 
     .prologue
     .line 211
@@ -839,7 +767,6 @@
 
     sget-object p2, Lcom/facebook/share/widget/ShareDialog;->BASE_AUTOMATIC_MODE:Ljava/lang/Object;
 
-    .end local p2    # "mode":Lcom/facebook/share/widget/ShareDialog$Mode;
     :cond_d
     invoke-virtual {p0, p1, p2}, Lcom/facebook/share/widget/ShareDialog;->showImpl(Ljava/lang/Object;Ljava/lang/Object;)V
 
@@ -847,7 +774,6 @@
     return-void
 
     .line 211
-    .restart local p2    # "mode":Lcom/facebook/share/widget/ShareDialog$Mode;
     :cond_11
     const/4 v0, 0x0
 

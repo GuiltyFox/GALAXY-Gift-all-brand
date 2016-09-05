@@ -32,9 +32,6 @@
 # direct methods
 .method protected constructor <init>(ILcom/fasterxml/jackson/core/json/JsonWriteContext;Lcom/fasterxml/jackson/core/json/DupDetector;)V
     .registers 5
-    .param p1, "type"    # I
-    .param p2, "parent"    # Lcom/fasterxml/jackson/core/json/JsonWriteContext;
-    .param p3, "dups"    # Lcom/fasterxml/jackson/core/json/DupDetector;
 
     .prologue
     .line 59
@@ -65,13 +62,6 @@
 
 .method private final _checkDup(Lcom/fasterxml/jackson/core/json/DupDetector;Ljava/lang/String;)V
     .registers 6
-    .param p1, "dd"    # Lcom/fasterxml/jackson/core/json/DupDetector;
-    .param p2, "name"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 123
@@ -134,7 +124,6 @@
 
 .method public static createRootContext(Lcom/fasterxml/jackson/core/json/DupDetector;)Lcom/fasterxml/jackson/core/json/JsonWriteContext;
     .registers 4
-    .param p0, "dd"    # Lcom/fasterxml/jackson/core/json/DupDetector;
 
     .prologue
     .line 83
@@ -153,7 +142,6 @@
 # virtual methods
 .method protected appendDesc(Ljava/lang/StringBuilder;)V
     .registers 5
-    .param p1, "sb"    # Ljava/lang/StringBuilder;
 
     .prologue
     const/16 v2, 0x22
@@ -250,48 +238,43 @@
     iget-object v0, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_child:Lcom/fasterxml/jackson/core/json/JsonWriteContext;
 
     .line 87
-    .local v0, "ctxt":Lcom/fasterxml/jackson/core/json/JsonWriteContext;
     if-nez v0, :cond_1a
 
     .line 88
-    new-instance v0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;
+    new-instance v1, Lcom/fasterxml/jackson/core/json/JsonWriteContext;
 
-    .end local v0    # "ctxt":Lcom/fasterxml/jackson/core/json/JsonWriteContext;
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_dups:Lcom/fasterxml/jackson/core/json/DupDetector;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_dups:Lcom/fasterxml/jackson/core/json/DupDetector;
 
-    if-nez v1, :cond_13
+    if-nez v0, :cond_13
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_c
-    invoke-direct {v0, v2, p0, v1}, Lcom/fasterxml/jackson/core/json/JsonWriteContext;-><init>(ILcom/fasterxml/jackson/core/json/JsonWriteContext;Lcom/fasterxml/jackson/core/json/DupDetector;)V
+    invoke-direct {v1, v2, p0, v0}, Lcom/fasterxml/jackson/core/json/JsonWriteContext;-><init>(ILcom/fasterxml/jackson/core/json/JsonWriteContext;Lcom/fasterxml/jackson/core/json/DupDetector;)V
 
-    .restart local v0    # "ctxt":Lcom/fasterxml/jackson/core/json/JsonWriteContext;
-    iput-object v0, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_child:Lcom/fasterxml/jackson/core/json/JsonWriteContext;
+    iput-object v1, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_child:Lcom/fasterxml/jackson/core/json/JsonWriteContext;
 
-    move-object v1, v0
+    move-object v0, v1
 
     .line 91
     :goto_12
-    return-object v1
+    return-object v0
 
     .line 88
-    .end local v0    # "ctxt":Lcom/fasterxml/jackson/core/json/JsonWriteContext;
     :cond_13
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_dups:Lcom/fasterxml/jackson/core/json/DupDetector;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_dups:Lcom/fasterxml/jackson/core/json/DupDetector;
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/json/DupDetector;->child()Lcom/fasterxml/jackson/core/json/DupDetector;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/json/DupDetector;->child()Lcom/fasterxml/jackson/core/json/DupDetector;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_c
 
     .line 91
-    .restart local v0    # "ctxt":Lcom/fasterxml/jackson/core/json/JsonWriteContext;
     :cond_1a
     invoke-virtual {v0, v2}, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->reset(I)Lcom/fasterxml/jackson/core/json/JsonWriteContext;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_12
 .end method
@@ -306,48 +289,43 @@
     iget-object v0, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_child:Lcom/fasterxml/jackson/core/json/JsonWriteContext;
 
     .line 96
-    .local v0, "ctxt":Lcom/fasterxml/jackson/core/json/JsonWriteContext;
     if-nez v0, :cond_1a
 
     .line 97
-    new-instance v0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;
+    new-instance v1, Lcom/fasterxml/jackson/core/json/JsonWriteContext;
 
-    .end local v0    # "ctxt":Lcom/fasterxml/jackson/core/json/JsonWriteContext;
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_dups:Lcom/fasterxml/jackson/core/json/DupDetector;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_dups:Lcom/fasterxml/jackson/core/json/DupDetector;
 
-    if-nez v1, :cond_13
+    if-nez v0, :cond_13
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_c
-    invoke-direct {v0, v2, p0, v1}, Lcom/fasterxml/jackson/core/json/JsonWriteContext;-><init>(ILcom/fasterxml/jackson/core/json/JsonWriteContext;Lcom/fasterxml/jackson/core/json/DupDetector;)V
+    invoke-direct {v1, v2, p0, v0}, Lcom/fasterxml/jackson/core/json/JsonWriteContext;-><init>(ILcom/fasterxml/jackson/core/json/JsonWriteContext;Lcom/fasterxml/jackson/core/json/DupDetector;)V
 
-    .restart local v0    # "ctxt":Lcom/fasterxml/jackson/core/json/JsonWriteContext;
-    iput-object v0, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_child:Lcom/fasterxml/jackson/core/json/JsonWriteContext;
+    iput-object v1, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_child:Lcom/fasterxml/jackson/core/json/JsonWriteContext;
 
-    move-object v1, v0
+    move-object v0, v1
 
     .line 100
     :goto_12
-    return-object v1
+    return-object v0
 
     .line 97
-    .end local v0    # "ctxt":Lcom/fasterxml/jackson/core/json/JsonWriteContext;
     :cond_13
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_dups:Lcom/fasterxml/jackson/core/json/DupDetector;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_dups:Lcom/fasterxml/jackson/core/json/DupDetector;
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/json/DupDetector;->child()Lcom/fasterxml/jackson/core/json/DupDetector;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/json/DupDetector;->child()Lcom/fasterxml/jackson/core/json/DupDetector;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_c
 
     .line 100
-    .restart local v0    # "ctxt":Lcom/fasterxml/jackson/core/json/JsonWriteContext;
     :cond_1a
     invoke-virtual {v0, v2}, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->reset(I)Lcom/fasterxml/jackson/core/json/JsonWriteContext;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_12
 .end method
@@ -386,7 +364,6 @@
 
 .method protected reset(I)Lcom/fasterxml/jackson/core/json/JsonWriteContext;
     .registers 3
-    .param p1, "type"    # I
 
     .prologue
     .line 67
@@ -433,25 +410,18 @@
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 179
-    .local v0, "sb":Ljava/lang/StringBuilder;
     invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->appendDesc(Ljava/lang/StringBuilder;)V
 
     .line 180
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public final writeFieldName(Ljava/lang/String;)I
     .registers 4
-    .param p1, "name"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     const/4 v0, 0x1
@@ -484,48 +454,47 @@
 .end method
 
 .method public final writeValue()I
-    .registers 6
+    .registers 5
 
     .prologue
-    const/4 v3, 0x2
+    const/4 v2, 0x2
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 128
-    iget v4, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_type:I
+    iget v3, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_type:I
 
-    if-ne v4, v3, :cond_11
+    if-ne v3, v2, :cond_11
 
     .line 129
-    iput-boolean v1, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_gotName:Z
+    iput-boolean v0, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_gotName:Z
 
     .line 130
-    iget v1, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_index:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_index:I
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    iput v1, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_index:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_index:I
 
-    move v1, v3
+    move v0, v2
 
     .line 144
     :cond_10
     :goto_10
-    return v1
+    return v0
 
     .line 135
     :cond_11
-    iget v3, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_type:I
+    iget v2, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_type:I
 
-    if-ne v3, v2, :cond_21
+    if-ne v2, v1, :cond_21
 
     .line 136
-    iget v0, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_index:I
+    iget v2, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_index:I
 
     .line 137
-    .local v0, "ix":I
     iget v3, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_index:I
 
     add-int/lit8 v3, v3, 0x1
@@ -533,27 +502,26 @@
     iput v3, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_index:I
 
     .line 138
-    if-ltz v0, :cond_10
+    if-ltz v2, :cond_10
 
-    move v1, v2
+    move v0, v1
 
     goto :goto_10
 
     .line 143
-    .end local v0    # "ix":I
     :cond_21
-    iget v2, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_index:I
+    iget v1, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_index:I
 
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    iput v2, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_index:I
+    iput v1, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_index:I
 
     .line 144
-    iget v2, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_index:I
+    iget v1, p0, Lcom/fasterxml/jackson/core/json/JsonWriteContext;->_index:I
 
-    if-eqz v2, :cond_10
+    if-eqz v1, :cond_10
 
-    const/4 v1, 0x3
+    const/4 v0, 0x3
 
     goto :goto_10
 .end method

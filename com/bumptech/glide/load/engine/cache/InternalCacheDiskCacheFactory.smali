@@ -6,7 +6,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 14
@@ -20,26 +19,8 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;I)V
-    .registers 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "diskCacheSize"    # I
-
-    .prologue
-    .line 18
-    const-string/jumbo v0, "image_manager_disk_cache"
-
-    invoke-direct {p0, p1, v0, p2}, Lcom/bumptech/glide/load/engine/cache/InternalCacheDiskCacheFactory;-><init>(Landroid/content/Context;Ljava/lang/String;I)V
-
-    .line 19
-    return-void
-.end method
-
 .method public constructor <init>(Landroid/content/Context;Ljava/lang/String;I)V
     .registers 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "diskCacheName"    # Ljava/lang/String;
-    .param p3, "diskCacheSize"    # I
 
     .prologue
     .line 22

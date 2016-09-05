@@ -8,51 +8,45 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->zoomTo(FFFF)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->a(FFFF)V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
+.field final synthetic a:F
 
-.field final synthetic val$centerX:F
+.field final synthetic b:J
 
-.field final synthetic val$centerY:F
+.field final synthetic c:F
 
-.field final synthetic val$durationMs:F
+.field final synthetic d:F
 
-.field final synthetic val$incrementPerMs:F
+.field final synthetic e:F
 
-.field final synthetic val$oldScale:F
+.field final synthetic f:F
 
-.field final synthetic val$startTime:J
+.field final synthetic g:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
 
 
 # direct methods
 .method constructor <init>(Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;FJFFFF)V
     .registers 10
-    .param p1, "this$0"    # Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
 
     .prologue
     .line 376
-    iput-object p1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
+    iput-object p1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->g:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
 
-    iput p2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->val$durationMs:F
+    iput p2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->a:F
 
-    iput-wide p3, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->val$startTime:J
+    iput-wide p3, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->b:J
 
-    iput p5, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->val$oldScale:F
+    iput p5, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->c:F
 
-    iput p6, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->val$incrementPerMs:F
+    iput p6, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->d:F
 
-    iput p7, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->val$centerX:F
+    iput p7, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->e:F
 
-    iput p8, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->val$centerY:F
+    iput p8, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->f:F
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -62,63 +56,60 @@
 
 # virtual methods
 .method public run()V
-    .registers 9
+    .registers 7
 
     .prologue
     .line 380
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v2
+    move-result-wide v0
 
     .line 381
-    .local v2, "now":J
-    iget v4, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->val$durationMs:F
+    iget v2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->a:F
 
-    iget-wide v6, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->val$startTime:J
+    iget-wide v4, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->b:J
 
-    sub-long v6, v2, v6
+    sub-long/2addr v0, v4
 
-    long-to-float v5, v6
+    long-to-float v0, v0
 
-    invoke-static {v4, v5}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v2, v0}, Ljava/lang/Math;->min(FF)F
 
     move-result v0
 
     .line 382
-    .local v0, "currentMs":F
-    iget v4, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->val$oldScale:F
+    iget v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->c:F
 
-    iget v5, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->val$incrementPerMs:F
+    iget v2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->d:F
 
-    mul-float/2addr v5, v0
+    mul-float/2addr v2, v0
 
-    add-float v1, v4, v5
+    add-float/2addr v1, v2
 
     .line 383
-    .local v1, "target":F
-    iget-object v4, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
+    iget-object v2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->g:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
 
-    iget v5, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->val$centerX:F
+    iget v3, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->e:F
 
-    iget v6, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->val$centerY:F
+    iget v4, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->f:F
 
-    invoke-virtual {v4, v1, v5, v6}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->zoomTo(FFF)V
+    invoke-virtual {v2, v1, v3, v4}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->b(FFF)V
 
     .line 384
-    iget v4, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->val$durationMs:F
+    iget v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->a:F
 
-    cmpg-float v4, v0, v4
+    cmpg-float v0, v0, v1
 
-    if-gez v4, :cond_2c
+    if-gez v0, :cond_2a
 
     .line 385
-    iget-object v4, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
+    iget-object v0, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$3;->g:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
 
-    iget-object v4, v4, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->mHandler:Landroid/os/Handler;
+    iget-object v0, v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->c:Landroid/os/Handler;
 
-    invoke-virtual {v4, p0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, p0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     .line 389
-    :cond_2c
+    :cond_2a
     return-void
 .end method

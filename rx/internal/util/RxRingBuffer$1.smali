@@ -8,11 +8,6 @@
     value = Lrx/internal/util/RxRingBuffer;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lrx/internal/util/ObjectPool",
@@ -38,19 +33,19 @@
 
 
 # virtual methods
-.method protected bridge synthetic createObject()Ljava/lang/Object;
+.method protected synthetic c()Ljava/lang/Object;
     .registers 2
 
     .prologue
     .line 280
-    invoke-virtual {p0}, Lrx/internal/util/RxRingBuffer$1;->createObject()Lrx/internal/util/unsafe/SpscArrayQueue;
+    invoke-virtual {p0}, Lrx/internal/util/RxRingBuffer$1;->d()Lrx/internal/util/unsafe/SpscArrayQueue;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected createObject()Lrx/internal/util/unsafe/SpscArrayQueue;
+.method protected d()Lrx/internal/util/unsafe/SpscArrayQueue;
     .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -66,7 +61,7 @@
     .line 284
     new-instance v0, Lrx/internal/util/unsafe/SpscArrayQueue;
 
-    sget v1, Lrx/internal/util/RxRingBuffer;->SIZE:I
+    sget v1, Lrx/internal/util/RxRingBuffer;->c:I
 
     invoke-direct {v0, v1}, Lrx/internal/util/unsafe/SpscArrayQueue;-><init>(I)V
 

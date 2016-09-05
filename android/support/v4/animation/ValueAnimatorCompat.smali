@@ -4,23 +4,23 @@
 
 
 # virtual methods
-.method public abstract addListener(Landroid/support/v4/animation/AnimatorListenerCompat;)V
+.method public abstract a()V
 .end method
 
-.method public abstract addUpdateListener(Landroid/support/v4/animation/AnimatorUpdateListenerCompat;)V
+.method public abstract a(J)V
 .end method
 
-.method public abstract cancel()V
+.method public abstract a(Landroid/support/v4/animation/AnimatorListenerCompat;)V
 .end method
 
-.method public abstract getAnimatedFraction()F
+.method public abstract a(Landroid/support/v4/animation/AnimatorUpdateListenerCompat;)V
 .end method
 
-.method public abstract setDuration(J)V
+.method public abstract a(Landroid/view/View;)V
 .end method
 
-.method public abstract setTarget(Landroid/view/View;)V
+.method public abstract b()V
 .end method
 
-.method public abstract start()V
+.method public abstract c()F
 .end method

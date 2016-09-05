@@ -4,20 +4,8 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 23
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method static scrollListBy(Landroid/widget/ListView;I)V
-    .registers 6
-    .param p0, "listView"    # Landroid/widget/ListView;
-    .param p1, "y"    # I
+.method static a(Landroid/widget/ListView;I)V
+    .registers 4
 
     .prologue
     .line 25
@@ -26,10 +14,9 @@
     move-result v0
 
     .line 26
-    .local v0, "firstPosition":I
-    const/4 v3, -0x1
+    const/4 v1, -0x1
 
-    if-ne v0, v3, :cond_8
+    if-ne v0, v1, :cond_8
 
     .line 37
     :cond_7
@@ -38,26 +25,24 @@
 
     .line 30
     :cond_8
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {p0, v3}, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/widget/ListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
     .line 31
-    .local v1, "firstView":Landroid/view/View;
     if-eqz v1, :cond_7
 
     .line 35
     invoke-virtual {v1}, Landroid/view/View;->getTop()I
 
-    move-result v3
+    move-result v1
 
-    sub-int v2, v3, p1
+    sub-int/2addr v1, p1
 
     .line 36
-    .local v2, "newTop":I
-    invoke-virtual {p0, v0, v2}, Landroid/widget/ListView;->setSelectionFromTop(II)V
+    invoke-virtual {p0, v0, v1}, Landroid/widget/ListView;->setSelectionFromTop(II)V
 
     goto :goto_7
 .end method

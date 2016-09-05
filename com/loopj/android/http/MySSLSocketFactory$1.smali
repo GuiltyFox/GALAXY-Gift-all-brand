@@ -11,11 +11,6 @@
     value = Lcom/loopj/android/http/MySSLSocketFactory;-><init>(Ljava/security/KeyStore;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Lcom/loopj/android/http/MySSLSocketFactory;
@@ -24,7 +19,6 @@
 # direct methods
 .method constructor <init>(Lcom/loopj/android/http/MySSLSocketFactory;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/loopj/android/http/MySSLSocketFactory;
 
     .prologue
     .line 73
@@ -39,13 +33,6 @@
 # virtual methods
 .method public checkClientTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
     .registers 3
-    .param p1, "chain"    # [Ljava/security/cert/X509Certificate;
-    .param p2, "authType"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/security/cert/CertificateException;
-        }
-    .end annotation
 
     .prologue
     .line 75
@@ -54,13 +41,6 @@
 
 .method public checkServerTrusted([Ljava/security/cert/X509Certificate;Ljava/lang/String;)V
     .registers 3
-    .param p1, "chain"    # [Ljava/security/cert/X509Certificate;
-    .param p2, "authType"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/security/cert/CertificateException;
-        }
-    .end annotation
 
     .prologue
     .line 78

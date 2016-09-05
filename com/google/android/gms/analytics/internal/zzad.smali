@@ -3,17 +3,17 @@
 
 
 # instance fields
-.field private final zzRA:Ljava/lang/String;
+.field private final a:J
 
-.field private final zzRv:J
+.field private final b:I
 
-.field private final zzRw:I
+.field private c:D
 
-.field private zzRx:D
+.field private d:J
 
-.field private zzRy:J
+.field private final e:Ljava/lang/Object;
 
-.field private final zzRz:Ljava/lang/Object;
+.field private final f:Ljava/lang/String;
 
 
 # direct methods
@@ -26,19 +26,19 @@
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzad;->zzRz:Ljava/lang/Object;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzad;->e:Ljava/lang/Object;
 
-    iput p1, p0, Lcom/google/android/gms/analytics/internal/zzad;->zzRw:I
+    iput p1, p0, Lcom/google/android/gms/analytics/internal/zzad;->b:I
 
-    iget v0, p0, Lcom/google/android/gms/analytics/internal/zzad;->zzRw:I
+    iget v0, p0, Lcom/google/android/gms/analytics/internal/zzad;->b:I
 
     int-to-double v0, v0
 
-    iput-wide v0, p0, Lcom/google/android/gms/analytics/internal/zzad;->zzRx:D
+    iput-wide v0, p0, Lcom/google/android/gms/analytics/internal/zzad;->c:D
 
-    iput-wide p2, p0, Lcom/google/android/gms/analytics/internal/zzad;->zzRv:J
+    iput-wide p2, p0, Lcom/google/android/gms/analytics/internal/zzad;->a:J
 
-    iput-object p4, p0, Lcom/google/android/gms/analytics/internal/zzad;->zzRA:Ljava/lang/String;
+    iput-object p4, p0, Lcom/google/android/gms/analytics/internal/zzad;->f:Ljava/lang/String;
 
     return-void
 .end method
@@ -57,12 +57,12 @@
 
 
 # virtual methods
-.method public zzlf()Z
+.method public a()Z
     .registers 13
 
-    const-wide/high16 v10, 0x3ff0000000000000L
+    const-wide/high16 v10, 0x3ff0000000000000L    # 1.0
 
-    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzad;->zzRz:Ljava/lang/Object;
+    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzad;->e:Ljava/lang/Object;
 
     monitor-enter v1
 
@@ -71,9 +71,9 @@
 
     move-result-wide v2
 
-    iget-wide v4, p0, Lcom/google/android/gms/analytics/internal/zzad;->zzRx:D
+    iget-wide v4, p0, Lcom/google/android/gms/analytics/internal/zzad;->c:D
 
-    iget v0, p0, Lcom/google/android/gms/analytics/internal/zzad;->zzRw:I
+    iget v0, p0, Lcom/google/android/gms/analytics/internal/zzad;->b:I
 
     int-to-double v6, v0
 
@@ -81,13 +81,13 @@
 
     if-gez v0, :cond_2d
 
-    iget-wide v4, p0, Lcom/google/android/gms/analytics/internal/zzad;->zzRy:J
+    iget-wide v4, p0, Lcom/google/android/gms/analytics/internal/zzad;->d:J
 
     sub-long v4, v2, v4
 
     long-to-double v4, v4
 
-    iget-wide v6, p0, Lcom/google/android/gms/analytics/internal/zzad;->zzRv:J
+    iget-wide v6, p0, Lcom/google/android/gms/analytics/internal/zzad;->a:J
 
     long-to-double v6, v6
 
@@ -99,11 +99,11 @@
 
     if-lez v0, :cond_2d
 
-    iget v0, p0, Lcom/google/android/gms/analytics/internal/zzad;->zzRw:I
+    iget v0, p0, Lcom/google/android/gms/analytics/internal/zzad;->b:I
 
     int-to-double v6, v0
 
-    iget-wide v8, p0, Lcom/google/android/gms/analytics/internal/zzad;->zzRx:D
+    iget-wide v8, p0, Lcom/google/android/gms/analytics/internal/zzad;->c:D
 
     add-double/2addr v4, v8
 
@@ -111,22 +111,22 @@
 
     move-result-wide v4
 
-    iput-wide v4, p0, Lcom/google/android/gms/analytics/internal/zzad;->zzRx:D
+    iput-wide v4, p0, Lcom/google/android/gms/analytics/internal/zzad;->c:D
 
     :cond_2d
-    iput-wide v2, p0, Lcom/google/android/gms/analytics/internal/zzad;->zzRy:J
+    iput-wide v2, p0, Lcom/google/android/gms/analytics/internal/zzad;->d:J
 
-    iget-wide v2, p0, Lcom/google/android/gms/analytics/internal/zzad;->zzRx:D
+    iget-wide v2, p0, Lcom/google/android/gms/analytics/internal/zzad;->c:D
 
     cmpl-double v0, v2, v10
 
     if-ltz v0, :cond_3d
 
-    iget-wide v2, p0, Lcom/google/android/gms/analytics/internal/zzad;->zzRx:D
+    iget-wide v2, p0, Lcom/google/android/gms/analytics/internal/zzad;->c:D
 
     sub-double/2addr v2, v10
 
-    iput-wide v2, p0, Lcom/google/android/gms/analytics/internal/zzad;->zzRx:D
+    iput-wide v2, p0, Lcom/google/android/gms/analytics/internal/zzad;->c:D
 
     const/4 v0, 0x1
 
@@ -146,7 +146,7 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/google/android/gms/analytics/internal/zzad;->zzRA:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/analytics/internal/zzad;->f:Ljava/lang/String;
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -162,7 +162,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->zzaH(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->c(Ljava/lang/String;)V
 
     const/4 v0, 0x0
 

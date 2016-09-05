@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xc
-    name = "FactoryBasedDeserializer"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/fasterxml/jackson/databind/deser/std/StdScalarDeserializer",
@@ -52,7 +43,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;Ljava/lang/Class;)V
     .registers 5
-    .param p2, "f"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMethod;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -66,8 +56,6 @@
 
     .prologue
     .line 173
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p3, "inputType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const-class v0, Ljava/lang/Enum;
 
     invoke-direct {p0, v0}, Lcom/fasterxml/jackson/databind/deser/std/StdScalarDeserializer;-><init>(Ljava/lang/Class;)V
@@ -92,132 +80,116 @@
 
 # virtual methods
 .method public deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
-    .registers 10
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
+    .registers 8
 
     .prologue
     .line 185
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer$FactoryBasedDeserializer;->_inputType:Ljava/lang/Class;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer$FactoryBasedDeserializer;->_inputType:Ljava/lang/Class;
 
-    if-nez v3, :cond_17
+    if-nez v0, :cond_17
 
     .line 186
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->getText()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 195
     :goto_8
     :try_start_8
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer$FactoryBasedDeserializer;->_factory:Ljava/lang/reflect/Method;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer$FactoryBasedDeserializer;->_factory:Ljava/lang/reflect/Method;
 
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer$FactoryBasedDeserializer;->_enumClass:Ljava/lang/Class;
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer$FactoryBasedDeserializer;->_enumClass:Ljava/lang/Class;
 
-    const/4 v5, 0x1
+    const/4 v3, 0x1
 
-    new-array v5, v5, [Ljava/lang/Object;
+    new-array v3, v3, [Ljava/lang/Object;
 
-    const/4 v6, 0x0
+    const/4 v4, 0x0
 
-    aput-object v2, v5, v6
+    aput-object v0, v3, v4
 
-    invoke-virtual {v3, v4, v5}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v1, v2, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_15
     .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_15} :catch_3c
 
-    move-result-object v3
+    move-result-object v0
 
-    return-object v3
+    return-object v0
 
     .line 187
     :cond_17
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer$FactoryBasedDeserializer;->_inputType:Ljava/lang/Class;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer$FactoryBasedDeserializer;->_inputType:Ljava/lang/Class;
 
-    const-class v4, Ljava/lang/Integer;
+    const-class v1, Ljava/lang/Integer;
 
-    if-ne v3, v4, :cond_26
+    if-ne v0, v1, :cond_26
 
     .line 188
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->getValueAsInt()I
 
-    move-result v3
+    move-result v0
 
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v2
+    move-result-object v0
 
-    .local v2, "value":Ljava/lang/Integer;
     goto :goto_8
 
     .line 189
-    .end local v2    # "value":Ljava/lang/Integer;
     :cond_26
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer$FactoryBasedDeserializer;->_inputType:Ljava/lang/Class;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer$FactoryBasedDeserializer;->_inputType:Ljava/lang/Class;
 
-    const-class v4, Ljava/lang/Long;
+    const-class v1, Ljava/lang/Long;
 
-    if-ne v3, v4, :cond_35
+    if-ne v0, v1, :cond_35
 
     .line 190
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->getValueAsLong()J
 
-    move-result-wide v4
+    move-result-wide v0
 
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v2
+    move-result-object v0
 
-    .local v2, "value":Ljava/lang/Long;
     goto :goto_8
 
     .line 192
-    .end local v2    # "value":Ljava/lang/Long;
     :cond_35
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer$FactoryBasedDeserializer;->_enumClass:Ljava/lang/Class;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer$FactoryBasedDeserializer;->_enumClass:Ljava/lang/Class;
 
-    invoke-virtual {p2, v3}, Lcom/fasterxml/jackson/databind/DeserializationContext;->mappingException(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/JsonMappingException;
+    invoke-virtual {p2, v0}, Lcom/fasterxml/jackson/databind/DeserializationContext;->mappingException(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/JsonMappingException;
 
-    move-result-object v3
+    move-result-object v0
 
-    throw v3
+    throw v0
 
     .line 196
     :catch_3c
     move-exception v0
 
     .line 197
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->getRootCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 198
-    .local v1, "t":Ljava/lang/Throwable;
-    instance-of v3, v1, Ljava/io/IOException;
+    instance-of v1, v0, Ljava/io/IOException;
 
-    if-eqz v3, :cond_48
+    if-eqz v1, :cond_48
 
     .line 199
-    check-cast v1, Ljava/io/IOException;
+    check-cast v0, Ljava/io/IOException;
 
-    .end local v1    # "t":Ljava/lang/Throwable;
-    throw v1
+    throw v0
 
     .line 201
-    .restart local v1    # "t":Ljava/lang/Throwable;
     :cond_48
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer$FactoryBasedDeserializer;->_enumClass:Ljava/lang/Class;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/std/EnumDeserializer$FactoryBasedDeserializer;->_enumClass:Ljava/lang/Class;
 
-    invoke-virtual {p2, v3, v1}, Lcom/fasterxml/jackson/databind/DeserializationContext;->instantiationException(Ljava/lang/Class;Ljava/lang/Throwable;)Lcom/fasterxml/jackson/databind/JsonMappingException;
+    invoke-virtual {p2, v1, v0}, Lcom/fasterxml/jackson/databind/DeserializationContext;->instantiationException(Ljava/lang/Class;Ljava/lang/Throwable;)Lcom/fasterxml/jackson/databind/JsonMappingException;
 
-    move-result-object v3
+    move-result-object v0
 
-    throw v3
+    throw v0
 .end method

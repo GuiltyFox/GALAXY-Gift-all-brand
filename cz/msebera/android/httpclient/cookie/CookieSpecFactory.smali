@@ -9,5 +9,5 @@
 
 
 # virtual methods
-.method public abstract newInstance(Lcz/msebera/android/httpclient/params/HttpParams;)Lcz/msebera/android/httpclient/cookie/CookieSpec;
+.method public abstract a(Lcz/msebera/android/httpclient/params/HttpParams;)Lcz/msebera/android/httpclient/cookie/CookieSpec;
 .end method

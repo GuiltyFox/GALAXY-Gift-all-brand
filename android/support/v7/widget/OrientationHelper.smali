@@ -20,7 +20,6 @@
 # direct methods
 .method private constructor <init>(Landroid/support/v7/widget/RecyclerView$LayoutManager;)V
     .registers 3
-    .param p1, "layoutManager"    # Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
     .prologue
     .line 44
@@ -40,8 +39,6 @@
 
 .method synthetic constructor <init>(Landroid/support/v7/widget/RecyclerView$LayoutManager;Landroid/support/v7/widget/OrientationHelper$1;)V
     .registers 3
-    .param p1, "x0"    # Landroid/support/v7/widget/RecyclerView$LayoutManager;
-    .param p2, "x1"    # Landroid/support/v7/widget/OrientationHelper$1;
 
     .prologue
     .line 32
@@ -52,7 +49,6 @@
 
 .method public static createHorizontalHelper(Landroid/support/v7/widget/RecyclerView$LayoutManager;)Landroid/support/v7/widget/OrientationHelper;
     .registers 2
-    .param p0, "layoutManager"    # Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
     .prologue
     .line 216
@@ -65,8 +61,6 @@
 
 .method public static createOrientationHelper(Landroid/support/v7/widget/RecyclerView$LayoutManager;I)Landroid/support/v7/widget/OrientationHelper;
     .registers 4
-    .param p0, "layoutManager"    # Landroid/support/v7/widget/RecyclerView$LayoutManager;
-    .param p1, "orientation"    # I
 
     .prologue
     .line 199
@@ -108,7 +102,6 @@
 
 .method public static createVerticalHelper(Landroid/support/v7/widget/RecyclerView$LayoutManager;)Landroid/support/v7/widget/OrientationHelper;
     .registers 2
-    .param p0, "layoutManager"    # Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
     .prologue
     .line 302

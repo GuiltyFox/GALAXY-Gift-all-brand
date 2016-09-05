@@ -8,15 +8,15 @@
 
 
 # instance fields
-.field public Caption:Ljava/lang/String;
+.field public a:Ljava/lang/String;
 
-.field public Content_type:Ljava/lang/String;
+.field public b:Ljava/lang/String;
 
-.field public Quality:Ljava/lang/String;
+.field public c:Ljava/lang/String;
 
-.field public Size:Ljava/lang/String;
+.field public d:Ljava/lang/String;
 
-.field public Src:Ljava/lang/String;
+.field public e:Ljava/lang/String;
 
 
 # direct methods
@@ -33,7 +33,6 @@
 
 .method public constructor <init>(Lorg/json/JSONObject;)V
     .registers 3
-    .param p1, "jsonObject"    # Lorg/json/JSONObject;
 
     .prologue
     .line 25
@@ -42,47 +41,47 @@
     .line 26
     const-string/jumbo v0, "src"
 
-    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraAdItem;->Src:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraAdItem;->a:Ljava/lang/String;
 
     .line 27
     const-string/jumbo v0, "caption"
 
-    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraAdItem;->Caption:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraAdItem;->b:Ljava/lang/String;
 
     .line 28
     const-string/jumbo v0, "content_type"
 
-    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraAdItem;->Content_type:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraAdItem;->c:Ljava/lang/String;
 
     .line 29
     const-string/jumbo v0, "size"
 
-    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraAdItem;->Size:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraAdItem;->d:Ljava/lang/String;
 
     .line 30
     const-string/jumbo v0, "quality"
 
-    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraAdItem;->Quality:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraAdItem;->e:Ljava/lang/String;
 
     .line 31
     return-void
@@ -92,11 +91,6 @@
 # virtual methods
 .method public clone()Ljava/lang/Object;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/CloneNotSupportedException;
-        }
-    .end annotation
 
     .prologue
     .line 18

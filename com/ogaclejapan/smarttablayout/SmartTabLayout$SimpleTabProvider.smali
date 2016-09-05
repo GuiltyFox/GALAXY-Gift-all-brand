@@ -6,31 +6,17 @@
 .implements Lcom/ogaclejapan/smarttablayout/SmartTabLayout$TabProvider;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "SimpleTabProvider"
-.end annotation
-
-
 # instance fields
-.field private final inflater:Landroid/view/LayoutInflater;
+.field private final a:Landroid/view/LayoutInflater;
 
-.field private final tabViewLayoutId:I
+.field private final b:I
 
-.field private final tabViewTextViewId:I
+.field private final c:I
 
 
 # direct methods
 .method private constructor <init>(Landroid/content/Context;II)V
     .registers 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "layoutResId"    # I
-    .param p3, "textViewId"    # I
 
     .prologue
     .line 527
@@ -41,13 +27,13 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$SimpleTabProvider;->inflater:Landroid/view/LayoutInflater;
+    iput-object v0, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$SimpleTabProvider;->a:Landroid/view/LayoutInflater;
 
     .line 529
-    iput p2, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$SimpleTabProvider;->tabViewLayoutId:I
+    iput p2, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$SimpleTabProvider;->b:I
 
     .line 530
-    iput p3, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$SimpleTabProvider;->tabViewTextViewId:I
+    iput p3, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$SimpleTabProvider;->c:I
 
     .line 531
     return-void
@@ -55,10 +41,6 @@
 
 .method synthetic constructor <init>(Landroid/content/Context;IILcom/ogaclejapan/smarttablayout/SmartTabLayout$1;)V
     .registers 5
-    .param p1, "x0"    # Landroid/content/Context;
-    .param p2, "x1"    # I
-    .param p3, "x2"    # I
-    .param p4, "x3"    # Lcom/ogaclejapan/smarttablayout/SmartTabLayout$1;
 
     .prologue
     .line 521
@@ -69,61 +51,51 @@
 
 
 # virtual methods
-.method public createTabView(Landroid/view/ViewGroup;ILandroid/support/v4/view/PagerAdapter;)Landroid/view/View;
-    .registers 10
-    .param p1, "container"    # Landroid/view/ViewGroup;
-    .param p2, "position"    # I
-    .param p3, "adapter"    # Landroid/support/v4/view/PagerAdapter;
+.method public a(Landroid/view/ViewGroup;ILandroid/support/v4/view/PagerAdapter;)Landroid/view/View;
+    .registers 9
 
     .prologue
-    const/4 v5, -0x1
-
-    .line 535
-    const/4 v1, 0x0
-
-    .line 536
-    .local v1, "tabView":Landroid/view/View;
     const/4 v0, 0x0
 
-    .line 538
-    .local v0, "tabTitleView":Landroid/widget/TextView;
-    iget v2, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$SimpleTabProvider;->tabViewLayoutId:I
+    const/4 v4, -0x1
 
-    if-eq v2, v5, :cond_10
+    .line 535
+    .line 538
+    iget v1, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$SimpleTabProvider;->b:I
+
+    if-eq v1, v4, :cond_34
 
     .line 539
-    iget-object v2, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$SimpleTabProvider;->inflater:Landroid/view/LayoutInflater;
+    iget-object v1, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$SimpleTabProvider;->a:Landroid/view/LayoutInflater;
 
-    iget v3, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$SimpleTabProvider;->tabViewLayoutId:I
+    iget v2, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$SimpleTabProvider;->b:I
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v2, v3, p1, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {v1, v2, p1, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v1
 
     .line 542
-    :cond_10
-    iget v2, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$SimpleTabProvider;->tabViewTextViewId:I
+    :goto_f
+    iget v2, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$SimpleTabProvider;->c:I
 
-    if-eq v2, v5, :cond_1e
+    if-eq v2, v4, :cond_1d
 
-    if-eqz v1, :cond_1e
+    if-eqz v1, :cond_1d
 
     .line 543
-    iget v2, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$SimpleTabProvider;->tabViewTextViewId:I
+    iget v0, p0, Lcom/ogaclejapan/smarttablayout/SmartTabLayout$SimpleTabProvider;->c:I
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    .end local v0    # "tabTitleView":Landroid/widget/TextView;
     check-cast v0, Landroid/widget/TextView;
 
     .line 546
-    .restart local v0    # "tabTitleView":Landroid/widget/TextView;
-    :cond_1e
-    if-nez v0, :cond_2b
+    :cond_1d
+    if-nez v0, :cond_2a
 
     const-class v2, Landroid/widget/TextView;
 
@@ -131,7 +103,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_2b
+    if-eqz v2, :cond_2a
 
     move-object v0, v1
 
@@ -139,17 +111,22 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 550
-    :cond_2b
-    if-eqz v0, :cond_34
+    :cond_2a
+    if-eqz v0, :cond_33
 
     .line 551
-    invoke-virtual {p3, p2}, Landroid/support/v4/view/PagerAdapter;->getPageTitle(I)Ljava/lang/CharSequence;
+    invoke-virtual {p3, p2}, Landroid/support/v4/view/PagerAdapter;->c(I)Ljava/lang/CharSequence;
 
     move-result-object v2
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 554
-    :cond_34
+    :cond_33
     return-object v1
+
+    :cond_34
+    move-object v1, v0
+
+    goto :goto_f
 .end method

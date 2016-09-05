@@ -138,7 +138,6 @@
 
 .method public setDuration(I)V
     .registers 6
-    .param p1, "duration"    # I
 
     .prologue
     .line 99
@@ -154,8 +153,6 @@
 
 .method public setFloatValues(FF)V
     .registers 6
-    .param p1, "from"    # F
-    .param p2, "to"    # F
 
     .prologue
     .line 89
@@ -181,8 +178,6 @@
 
 .method public setIntValues(II)V
     .registers 6
-    .param p1, "from"    # I
-    .param p2, "to"    # I
 
     .prologue
     .line 79
@@ -208,7 +203,6 @@
 
 .method public setInterpolator(Landroid/view/animation/Interpolator;)V
     .registers 3
-    .param p1, "interpolator"    # Landroid/view/animation/Interpolator;
 
     .prologue
     .line 44
@@ -222,7 +216,6 @@
 
 .method public setListener(Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorListenerProxy;)V
     .registers 4
-    .param p1, "listener"    # Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorListenerProxy;
 
     .prologue
     .line 59
@@ -240,7 +233,6 @@
 
 .method public setUpdateListener(Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorUpdateListenerProxy;)V
     .registers 4
-    .param p1, "updateListener"    # Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorUpdateListenerProxy;
 
     .prologue
     .line 49

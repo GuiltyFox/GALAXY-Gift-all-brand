@@ -88,8 +88,6 @@
 
 .method protected constructor <init>(II)V
     .registers 4
-    .param p1, "bbCount"    # I
-    .param p2, "cbCount"    # I
 
     .prologue
     .line 71
@@ -113,7 +111,6 @@
 # virtual methods
 .method public final allocByteBuffer(I)[B
     .registers 3
-    .param p1, "ix"    # I
 
     .prologue
     .line 86
@@ -127,9 +124,7 @@
 .end method
 
 .method public allocByteBuffer(II)[B
-    .registers 7
-    .param p1, "ix"    # I
-    .param p2, "minSize"    # I
+    .registers 6
 
     .prologue
     .line 90
@@ -138,54 +133,50 @@
     move-result v0
 
     .line 91
-    .local v0, "DEF_SIZE":I
     if-ge p2, v0, :cond_7
 
-    .line 92
     move p2, v0
 
     .line 94
     :cond_7
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/util/BufferRecycler;->_byteBuffers:[[B
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/util/BufferRecycler;->_byteBuffers:[[B
 
-    aget-object v1, v2, p1
+    aget-object v0, v0, p1
 
     .line 95
-    .local v1, "buffer":[B
-    if-eqz v1, :cond_10
+    if-eqz v0, :cond_10
 
-    array-length v2, v1
+    array-length v1, v0
 
-    if-ge v2, p2, :cond_19
+    if-ge v1, p2, :cond_19
 
     .line 96
     :cond_10
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/core/util/BufferRecycler;->byteBufferLength(I)I
 
-    move-result v2
+    move-result v0
 
-    invoke-virtual {p0, v2}, Lcom/fasterxml/jackson/core/util/BufferRecycler;->balloc(I)[B
+    invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/core/util/BufferRecycler;->balloc(I)[B
 
-    move-result-object v1
+    move-result-object v0
 
     .line 100
     :goto_18
-    return-object v1
+    return-object v0
 
     .line 98
     :cond_19
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/util/BufferRecycler;->_byteBuffers:[[B
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/util/BufferRecycler;->_byteBuffers:[[B
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    aput-object v3, v2, p1
+    aput-object v2, v1, p1
 
     goto :goto_18
 .end method
 
 .method public final allocCharBuffer(I)[C
     .registers 3
-    .param p1, "ix"    # I
 
     .prologue
     .line 114
@@ -199,9 +190,7 @@
 .end method
 
 .method public allocCharBuffer(II)[C
-    .registers 7
-    .param p1, "ix"    # I
-    .param p2, "minSize"    # I
+    .registers 6
 
     .prologue
     .line 118
@@ -210,50 +199,46 @@
     move-result v0
 
     .line 119
-    .local v0, "DEF_SIZE":I
     if-ge p2, v0, :cond_7
 
-    .line 120
     move p2, v0
 
     .line 122
     :cond_7
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/util/BufferRecycler;->_charBuffers:[[C
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/util/BufferRecycler;->_charBuffers:[[C
 
-    aget-object v1, v2, p1
+    aget-object v0, v0, p1
 
     .line 123
-    .local v1, "buffer":[C
-    if-eqz v1, :cond_10
+    if-eqz v0, :cond_10
 
-    array-length v2, v1
+    array-length v1, v0
 
-    if-ge v2, p2, :cond_15
+    if-ge v1, p2, :cond_15
 
     .line 124
     :cond_10
     invoke-virtual {p0, p2}, Lcom/fasterxml/jackson/core/util/BufferRecycler;->calloc(I)[C
 
-    move-result-object v1
+    move-result-object v0
 
     .line 128
     :goto_14
-    return-object v1
+    return-object v0
 
     .line 126
     :cond_15
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/util/BufferRecycler;->_charBuffers:[[C
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/util/BufferRecycler;->_charBuffers:[[C
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    aput-object v3, v2, p1
+    aput-object v2, v1, p1
 
     goto :goto_14
 .end method
 
 .method protected balloc(I)[B
     .registers 3
-    .param p1, "size"    # I
 
     .prologue
     .line 155
@@ -264,7 +249,6 @@
 
 .method protected byteBufferLength(I)I
     .registers 3
-    .param p1, "ix"    # I
 
     .prologue
     .line 142
@@ -277,7 +261,6 @@
 
 .method protected calloc(I)[C
     .registers 3
-    .param p1, "size"    # I
 
     .prologue
     .line 156
@@ -288,7 +271,6 @@
 
 .method protected charBufferLength(I)I
     .registers 3
-    .param p1, "ix"    # I
 
     .prologue
     .line 146
@@ -301,8 +283,6 @@
 
 .method public final releaseByteBuffer(I[B)V
     .registers 4
-    .param p1, "ix"    # I
-    .param p2, "buffer"    # [B
 
     .prologue
     .line 104
@@ -316,8 +296,6 @@
 
 .method public releaseCharBuffer(I[C)V
     .registers 4
-    .param p1, "ix"    # I
-    .param p2, "buffer"    # [C
 
     .prologue
     .line 132

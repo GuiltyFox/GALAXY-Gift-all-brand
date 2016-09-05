@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static final TAG:Ljava/lang/String;
+.field private static final a:Ljava/lang/String;
 
 
 # direct methods
@@ -16,7 +16,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/jaalee/sdk/Utils;->TAG:Ljava/lang/String;
+    sput-object v0, Lcom/jaalee/sdk/Utils;->a:Ljava/lang/String;
 
     return-void
 .end method
@@ -29,7 +29,82 @@
     return-void
 .end method
 
-.method public static beaconFromLeScan(Landroid/bluetooth/BluetoothDevice;I[B)Lcom/jaalee/sdk/Beacon;
+.method public static a(Lcom/jaalee/sdk/Beacon;)D
+    .registers 7
+
+    invoke-virtual {p0}, Lcom/jaalee/sdk/Beacon;->e()I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Math;->abs(I)I
+
+    move-result v0
+
+    int-to-double v2, v0
+
+    const-wide/16 v4, 0x0
+
+    cmpl-double v1, v2, v4
+
+    if-nez v1, :cond_12
+
+    const-wide/high16 v0, -0x4010000000000000L    # -1.0
+
+    :goto_11
+    return-wide v0
+
+    :cond_12
+    int-to-double v0, v0
+
+    invoke-virtual {p0}, Lcom/jaalee/sdk/Beacon;->d()I
+
+    move-result v2
+
+    int-to-double v2, v2
+
+    div-double/2addr v0, v2
+
+    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
+
+    cmpg-double v2, v0, v2
+
+    if-gez v2, :cond_26
+
+    const-wide/high16 v2, 0x4020000000000000L    # 8.0
+
+    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->pow(DD)D
+
+    move-result-wide v0
+
+    goto :goto_11
+
+    :cond_26
+    const-wide v2, 0x3fe6646f15619115L    # 0.69976
+
+    const-wide v4, 0x401ed6872b020c4aL    # 7.7095
+
+    invoke-static {v0, v1, v4, v5}, Ljava/lang/Math;->pow(DD)D
+
+    move-result-wide v0
+
+    mul-double/2addr v0, v2
+
+    const-wide v2, 0x3fbc6a7ef9db22d1L    # 0.111
+
+    add-double/2addr v0, v2
+
+    goto :goto_11
+.end method
+
+.method private static a(B)I
+    .registers 2
+
+    and-int/lit16 v0, p0, 0xff
+
+    return v0
+.end method
+
+.method public static a(Landroid/bluetooth/BluetoothDevice;I[B)Lcom/jaalee/sdk/Beacon;
     .registers 15
 
     const/16 v11, 0x1a
@@ -42,7 +117,7 @@
 
     const/4 v4, 0x0
 
-    invoke-static {p2}, Lcom/jaalee/sdk/internal/HashCode;->fromBytes([B)Lcom/jaalee/sdk/internal/HashCode;
+    invoke-static {p2}, Lcom/jaalee/sdk/internal/HashCode;->a([B)Lcom/jaalee/sdk/internal/HashCode;
 
     move-result-object v0
 
@@ -203,7 +278,7 @@
     :cond_9a
     aget-byte v2, p2, v0
 
-    invoke-static {v2}, Lcom/jaalee/sdk/Utils;->unsignedByteToInt(B)I
+    invoke-static {v2}, Lcom/jaalee/sdk/Utils;->a(B)I
 
     move-result v2
 
@@ -219,7 +294,7 @@
 
     aget-byte v3, p2, v3
 
-    invoke-static {v3}, Lcom/jaalee/sdk/Utils;->unsignedByteToInt(B)I
+    invoke-static {v3}, Lcom/jaalee/sdk/Utils;->a(B)I
 
     move-result v3
 
@@ -245,7 +320,7 @@
 
     aget-byte v3, p2, v3
 
-    invoke-static {v3}, Lcom/jaalee/sdk/Utils;->unsignedByteToInt(B)I
+    invoke-static {v3}, Lcom/jaalee/sdk/Utils;->a(B)I
 
     move-result v3
 
@@ -319,7 +394,7 @@
 
     aget-byte v3, p2, v3
 
-    invoke-static {v3}, Lcom/jaalee/sdk/Utils;->unsignedByteToInt(B)I
+    invoke-static {v3}, Lcom/jaalee/sdk/Utils;->a(B)I
 
     move-result v3
 
@@ -329,7 +404,7 @@
 
     aget-byte v4, p2, v4
 
-    invoke-static {v4}, Lcom/jaalee/sdk/Utils;->unsignedByteToInt(B)I
+    invoke-static {v4}, Lcom/jaalee/sdk/Utils;->a(B)I
 
     move-result v4
 
@@ -339,7 +414,7 @@
 
     aget-byte v3, p2, v3
 
-    invoke-static {v3}, Lcom/jaalee/sdk/Utils;->unsignedByteToInt(B)I
+    invoke-static {v3}, Lcom/jaalee/sdk/Utils;->a(B)I
 
     move-result v3
 
@@ -349,7 +424,7 @@
 
     aget-byte v5, p2, v5
 
-    invoke-static {v5}, Lcom/jaalee/sdk/Utils;->unsignedByteToInt(B)I
+    invoke-static {v5}, Lcom/jaalee/sdk/Utils;->a(B)I
 
     move-result v5
 
@@ -405,7 +480,7 @@
     goto/16 :goto_48
 
     :cond_157
-    sget-object v0, Lcom/jaalee/sdk/Utils;->TAG:Ljava/lang/String;
+    sget-object v0, Lcom/jaalee/sdk/Utils;->a:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -444,7 +519,7 @@
     goto/16 :goto_48
 
     :cond_180
-    sget-object v0, Lcom/jaalee/sdk/Utils;->TAG:Ljava/lang/String;
+    sget-object v0, Lcom/jaalee/sdk/Utils;->a:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -493,183 +568,7 @@
     goto/16 :goto_2a
 .end method
 
-.method public static computeAccuracy(Lcom/jaalee/sdk/Beacon;)D
-    .registers 7
-
-    invoke-virtual {p0}, Lcom/jaalee/sdk/Beacon;->getRssi()I
-
-    move-result v0
-
-    invoke-static {v0}, Ljava/lang/Math;->abs(I)I
-
-    move-result v0
-
-    int-to-double v2, v0
-
-    const-wide/16 v4, 0x0
-
-    cmpl-double v1, v2, v4
-
-    if-nez v1, :cond_12
-
-    const-wide/high16 v0, -0x4010000000000000L
-
-    :goto_11
-    return-wide v0
-
-    :cond_12
-    int-to-double v0, v0
-
-    invoke-virtual {p0}, Lcom/jaalee/sdk/Beacon;->getMeasuredPower()I
-
-    move-result v2
-
-    int-to-double v2, v2
-
-    div-double/2addr v0, v2
-
-    const-wide/high16 v2, 0x3ff0000000000000L
-
-    cmpg-double v2, v0, v2
-
-    if-gez v2, :cond_26
-
-    const-wide/high16 v2, 0x4020000000000000L
-
-    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->pow(DD)D
-
-    move-result-wide v0
-
-    goto :goto_11
-
-    :cond_26
-    const-wide v2, 0x3fe6646f15619115L
-
-    const-wide v4, 0x401ed6872b020c4aL
-
-    invoke-static {v0, v1, v4, v5}, Ljava/lang/Math;->pow(DD)D
-
-    move-result-wide v0
-
-    mul-double/2addr v0, v2
-
-    const-wide v2, 0x3fbc6a7ef9db22d1L
-
-    add-double/2addr v0, v2
-
-    goto :goto_11
-.end method
-
-.method public static computeProximity(Lcom/jaalee/sdk/Beacon;)I
-    .registers 3
-
-    invoke-static {p0}, Lcom/jaalee/sdk/Utils;->computeAccuracy(Lcom/jaalee/sdk/Beacon;)D
-
-    move-result-wide v0
-
-    invoke-static {v0, v1}, Lcom/jaalee/sdk/Utils;->proximityFromAccuracy(D)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static isBeaconInRegion(Lcom/jaalee/sdk/Beacon;Lcom/jaalee/sdk/Region;)Z
-    .registers 4
-
-    invoke-virtual {p1}, Lcom/jaalee/sdk/Region;->getProximityUUID()Ljava/lang/String;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_14
-
-    invoke-virtual {p0}, Lcom/jaalee/sdk/Beacon;->getProximityUUID()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1}, Lcom/jaalee/sdk/Region;->getProximityUUID()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_3e
-
-    :cond_14
-    invoke-virtual {p1}, Lcom/jaalee/sdk/Region;->getMajor()Ljava/lang/Integer;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_28
-
-    invoke-virtual {p0}, Lcom/jaalee/sdk/Beacon;->getMajor()I
-
-    move-result v0
-
-    invoke-virtual {p1}, Lcom/jaalee/sdk/Region;->getMajor()Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    if-ne v0, v1, :cond_3e
-
-    :cond_28
-    invoke-virtual {p1}, Lcom/jaalee/sdk/Region;->getMinor()Ljava/lang/Integer;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_3c
-
-    invoke-virtual {p0}, Lcom/jaalee/sdk/Beacon;->getMinor()I
-
-    move-result v0
-
-    invoke-virtual {p1}, Lcom/jaalee/sdk/Region;->getMinor()Ljava/lang/Integer;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    if-ne v0, v1, :cond_3e
-
-    :cond_3c
-    const/4 v0, 0x1
-
-    :goto_3d
-    return v0
-
-    :cond_3e
-    const/4 v0, 0x0
-
-    goto :goto_3d
-.end method
-
-.method public static normalize16BitUnsignedInt(I)I
-    .registers 3
-
-    const/4 v0, 0x1
-
-    const v1, 0xffff
-
-    invoke-static {p0, v1}, Ljava/lang/Math;->min(II)I
-
-    move-result v1
-
-    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static normalizeProximityUUID(Ljava/lang/String;)Ljava/lang/String;
+.method public static a(Ljava/lang/String;)Ljava/lang/String;
     .registers 10
 
     const/16 v8, 0x10
@@ -769,105 +668,79 @@
     goto :goto_1f
 .end method
 
-.method public static parseInt(Ljava/lang/String;)I
-    .registers 2
+.method public static a(Lcom/jaalee/sdk/Beacon;Lcom/jaalee/sdk/Region;)Z
+    .registers 4
 
-    :try_start_0
-    invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-    :try_end_3
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_3} :catch_5
+    invoke-virtual {p1}, Lcom/jaalee/sdk/Region;->b()Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_14
+
+    invoke-virtual {p0}, Lcom/jaalee/sdk/Beacon;->a()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Lcom/jaalee/sdk/Region;->b()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    :goto_4
-    return v0
+    if-eqz v0, :cond_3e
 
-    :catch_5
-    move-exception v0
+    :cond_14
+    invoke-virtual {p1}, Lcom/jaalee/sdk/Region;->c()Ljava/lang/Integer;
 
-    const/4 v0, 0x0
+    move-result-object v0
 
-    goto :goto_4
-.end method
+    if-eqz v0, :cond_28
 
-.method public static proximityFromAccuracy(D)I
-    .registers 4
+    invoke-virtual {p0}, Lcom/jaalee/sdk/Beacon;->b()I
 
-    const-wide/16 v0, 0x0
+    move-result v0
 
-    cmpg-double v0, p0, v0
+    invoke-virtual {p1}, Lcom/jaalee/sdk/Region;->c()Ljava/lang/Integer;
 
-    if-gez v0, :cond_8
+    move-result-object v1
 
-    const/4 v0, 0x0
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
-    :goto_7
-    return v0
+    move-result v1
 
-    :cond_8
-    const-wide/high16 v0, 0x3fe0000000000000L
+    if-ne v0, v1, :cond_3e
 
-    cmpg-double v0, p0, v0
+    :cond_28
+    invoke-virtual {p1}, Lcom/jaalee/sdk/Region;->d()Ljava/lang/Integer;
 
-    if-gez v0, :cond_10
+    move-result-object v0
 
+    if-eqz v0, :cond_3c
+
+    invoke-virtual {p0}, Lcom/jaalee/sdk/Beacon;->c()I
+
+    move-result v0
+
+    invoke-virtual {p1}, Lcom/jaalee/sdk/Region;->d()Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    if-ne v0, v1, :cond_3e
+
+    :cond_3c
     const/4 v0, 0x1
 
-    goto :goto_7
-
-    :cond_10
-    const-wide/high16 v0, 0x4008000000000000L
-
-    cmpg-double v0, p0, v0
-
-    if-gtz v0, :cond_18
-
-    const/4 v0, 0x2
-
-    goto :goto_7
-
-    :cond_18
-    const/4 v0, 0x3
-
-    goto :goto_7
-.end method
-
-.method public static restartBluetooth(Landroid/content/Context;Lcom/jaalee/sdk/RestartCompletedListener;)V
-    .registers 5
-
-    const-string/jumbo v0, "bluetooth"
-
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/bluetooth/BluetoothManager;
-
-    invoke-virtual {v0}, Landroid/bluetooth/BluetoothManager;->getAdapter()Landroid/bluetooth/BluetoothAdapter;
-
-    move-result-object v0
-
-    new-instance v1, Landroid/content/IntentFilter;
-
-    const-string/jumbo v2, "android.bluetooth.adapter.action.STATE_CHANGED"
-
-    invoke-direct {v1, v2}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
-
-    new-instance v2, Lcom/jaalee/sdk/f;
-
-    invoke-direct {v2, v0, p1}, Lcom/jaalee/sdk/f;-><init>(Landroid/bluetooth/BluetoothAdapter;Lcom/jaalee/sdk/RestartCompletedListener;)V
-
-    invoke-virtual {p0, v2, v1}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
-
-    invoke-virtual {v0}, Landroid/bluetooth/BluetoothAdapter;->disable()Z
-
-    return-void
-.end method
-
-.method private static unsignedByteToInt(B)I
-    .registers 2
-
-    and-int/lit16 v0, p0, 0xff
-
+    :goto_3d
     return v0
+
+    :cond_3e
+    const/4 v0, 0x0
+
+    goto :goto_3d
 .end method

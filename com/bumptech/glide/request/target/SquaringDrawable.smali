@@ -3,27 +3,17 @@
 .source "SquaringDrawable.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/bumptech/glide/request/target/SquaringDrawable$State;
-    }
-.end annotation
-
-
 # instance fields
-.field private mutated:Z
+.field private a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
-.field private state:Lcom/bumptech/glide/request/target/SquaringDrawable$State;
+.field private b:Lcom/bumptech/glide/request/target/SquaringDrawable$State;
 
-.field private wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+.field private c:Z
 
 
 # direct methods
 .method public constructor <init>(Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;I)V
     .registers 5
-    .param p1, "wrapped"    # Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
-    .param p2, "side"    # I
 
     .prologue
     .line 26
@@ -45,16 +35,13 @@
 
 .method constructor <init>(Lcom/bumptech/glide/request/target/SquaringDrawable$State;Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;Landroid/content/res/Resources;)V
     .registers 5
-    .param p1, "state"    # Lcom/bumptech/glide/request/target/SquaringDrawable$State;
-    .param p2, "wrapped"    # Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
-    .param p3, "res"    # Landroid/content/res/Resources;
 
     .prologue
     .line 29
     invoke-direct {p0}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;-><init>()V
 
     .line 30
-    iput-object p1, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->state:Lcom/bumptech/glide/request/target/SquaringDrawable$State;
+    iput-object p1, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->b:Lcom/bumptech/glide/request/target/SquaringDrawable$State;
 
     .line 31
     if-nez p2, :cond_23
@@ -63,8 +50,7 @@
     if-eqz p3, :cond_16
 
     .line 33
-    # getter for: Lcom/bumptech/glide/request/target/SquaringDrawable$State;->wrapped:Landroid/graphics/drawable/Drawable$ConstantState;
-    invoke-static {p1}, Lcom/bumptech/glide/request/target/SquaringDrawable$State;->access$000(Lcom/bumptech/glide/request/target/SquaringDrawable$State;)Landroid/graphics/drawable/Drawable$ConstantState;
+    invoke-static {p1}, Lcom/bumptech/glide/request/target/SquaringDrawable$State;->a(Lcom/bumptech/glide/request/target/SquaringDrawable$State;)Landroid/graphics/drawable/Drawable$ConstantState;
 
     move-result-object v0
 
@@ -74,7 +60,7 @@
 
     check-cast v0, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
-    iput-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iput-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     .line 40
     :goto_15
@@ -82,8 +68,7 @@
 
     .line 35
     :cond_16
-    # getter for: Lcom/bumptech/glide/request/target/SquaringDrawable$State;->wrapped:Landroid/graphics/drawable/Drawable$ConstantState;
-    invoke-static {p1}, Lcom/bumptech/glide/request/target/SquaringDrawable$State;->access$000(Lcom/bumptech/glide/request/target/SquaringDrawable$State;)Landroid/graphics/drawable/Drawable$ConstantState;
+    invoke-static {p1}, Lcom/bumptech/glide/request/target/SquaringDrawable$State;->a(Lcom/bumptech/glide/request/target/SquaringDrawable$State;)Landroid/graphics/drawable/Drawable$ConstantState;
 
     move-result-object v0
 
@@ -93,25 +78,52 @@
 
     check-cast v0, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
-    iput-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iput-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     goto :goto_15
 
     .line 38
     :cond_23
-    iput-object p2, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iput-object p2, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     goto :goto_15
 .end method
 
 
 # virtual methods
+.method public a(I)V
+    .registers 3
+
+    .prologue
+    .line 176
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+
+    invoke-virtual {v0, p1}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->a(I)V
+
+    .line 177
+    return-void
+.end method
+
+.method public a()Z
+    .registers 2
+
+    .prologue
+    .line 171
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+
+    invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->a()Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public clearColorFilter()V
     .registers 2
 
     .prologue
     .line 93
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->clearColorFilter()V
 
@@ -121,11 +133,10 @@
 
 .method public draw(Landroid/graphics/Canvas;)V
     .registers 3
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
     .line 151
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0, p1}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->draw(Landroid/graphics/Canvas;)V
 
@@ -141,7 +152,7 @@
 
     .prologue
     .line 83
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->getAlpha()I
 
@@ -158,7 +169,7 @@
 
     .prologue
     .line 77
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->getCallback()Landroid/graphics/drawable/Drawable$Callback;
 
@@ -172,7 +183,7 @@
 
     .prologue
     .line 61
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->getChangingConfigurations()I
 
@@ -186,7 +197,7 @@
 
     .prologue
     .line 206
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->state:Lcom/bumptech/glide/request/target/SquaringDrawable$State;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->b:Lcom/bumptech/glide/request/target/SquaringDrawable$State;
 
     return-object v0
 .end method
@@ -196,7 +207,7 @@
 
     .prologue
     .line 98
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->getCurrent()Landroid/graphics/drawable/Drawable;
 
@@ -210,10 +221,9 @@
 
     .prologue
     .line 113
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->state:Lcom/bumptech/glide/request/target/SquaringDrawable$State;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->b:Lcom/bumptech/glide/request/target/SquaringDrawable$State;
 
-    # getter for: Lcom/bumptech/glide/request/target/SquaringDrawable$State;->side:I
-    invoke-static {v0}, Lcom/bumptech/glide/request/target/SquaringDrawable$State;->access$100(Lcom/bumptech/glide/request/target/SquaringDrawable$State;)I
+    invoke-static {v0}, Lcom/bumptech/glide/request/target/SquaringDrawable$State;->b(Lcom/bumptech/glide/request/target/SquaringDrawable$State;)I
 
     move-result v0
 
@@ -225,10 +235,9 @@
 
     .prologue
     .line 108
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->state:Lcom/bumptech/glide/request/target/SquaringDrawable$State;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->b:Lcom/bumptech/glide/request/target/SquaringDrawable$State;
 
-    # getter for: Lcom/bumptech/glide/request/target/SquaringDrawable$State;->side:I
-    invoke-static {v0}, Lcom/bumptech/glide/request/target/SquaringDrawable$State;->access$100(Lcom/bumptech/glide/request/target/SquaringDrawable$State;)I
+    invoke-static {v0}, Lcom/bumptech/glide/request/target/SquaringDrawable$State;->b(Lcom/bumptech/glide/request/target/SquaringDrawable$State;)I
 
     move-result v0
 
@@ -240,7 +249,7 @@
 
     .prologue
     .line 123
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->getMinimumHeight()I
 
@@ -254,7 +263,7 @@
 
     .prologue
     .line 118
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->getMinimumWidth()I
 
@@ -268,7 +277,7 @@
 
     .prologue
     .line 166
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->getOpacity()I
 
@@ -279,11 +288,10 @@
 
 .method public getPadding(Landroid/graphics/Rect;)Z
     .registers 3
-    .param p1, "padding"    # Landroid/graphics/Rect;
 
     .prologue
     .line 128
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0, p1}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->getPadding(Landroid/graphics/Rect;)Z
 
@@ -300,7 +308,7 @@
     invoke-super {p0}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->invalidateSelf()V
 
     .line 134
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->invalidateSelf()V
 
@@ -308,26 +316,12 @@
     return-void
 .end method
 
-.method public isAnimated()Z
-    .registers 2
-
-    .prologue
-    .line 171
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
-
-    invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->isAnimated()Z
-
-    move-result v0
-
-    return v0
-.end method
-
 .method public isRunning()Z
     .registers 2
 
     .prologue
     .line 191
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->isRunning()Z
 
@@ -341,7 +335,7 @@
 
     .prologue
     .line 196
-    iget-boolean v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->mutated:Z
+    iget-boolean v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->c:Z
 
     if-nez v0, :cond_20
 
@@ -352,7 +346,7 @@
     if-ne v0, p0, :cond_20
 
     .line 197
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->mutate()Landroid/graphics/drawable/Drawable;
 
@@ -360,21 +354,21 @@
 
     check-cast v0, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
-    iput-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iput-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     .line 198
     new-instance v0, Lcom/bumptech/glide/request/target/SquaringDrawable$State;
 
-    iget-object v1, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->state:Lcom/bumptech/glide/request/target/SquaringDrawable$State;
+    iget-object v1, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->b:Lcom/bumptech/glide/request/target/SquaringDrawable$State;
 
     invoke-direct {v0, v1}, Lcom/bumptech/glide/request/target/SquaringDrawable$State;-><init>(Lcom/bumptech/glide/request/target/SquaringDrawable$State;)V
 
-    iput-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->state:Lcom/bumptech/glide/request/target/SquaringDrawable$State;
+    iput-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->b:Lcom/bumptech/glide/request/target/SquaringDrawable$State;
 
     .line 199
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->mutated:Z
+    iput-boolean v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->c:Z
 
     .line 201
     :cond_20
@@ -383,15 +377,13 @@
 
 .method public scheduleSelf(Ljava/lang/Runnable;J)V
     .registers 6
-    .param p1, "what"    # Ljava/lang/Runnable;
-    .param p2, "when"    # J
 
     .prologue
     .line 145
     invoke-super {p0, p1, p2, p3}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->scheduleSelf(Ljava/lang/Runnable;J)V
 
     .line 146
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0, p1, p2, p3}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->scheduleSelf(Ljava/lang/Runnable;J)V
 
@@ -401,11 +393,10 @@
 
 .method public setAlpha(I)V
     .registers 3
-    .param p1, "i"    # I
 
     .prologue
     .line 156
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0, p1}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->setAlpha(I)V
 
@@ -415,17 +406,13 @@
 
 .method public setBounds(IIII)V
     .registers 6
-    .param p1, "left"    # I
-    .param p2, "top"    # I
-    .param p3, "right"    # I
-    .param p4, "bottom"    # I
 
     .prologue
     .line 44
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->setBounds(IIII)V
 
     .line 45
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->setBounds(IIII)V
 
@@ -435,14 +422,13 @@
 
 .method public setBounds(Landroid/graphics/Rect;)V
     .registers 3
-    .param p1, "bounds"    # Landroid/graphics/Rect;
 
     .prologue
     .line 50
     invoke-super {p0, p1}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->setBounds(Landroid/graphics/Rect;)V
 
     .line 51
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0, p1}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->setBounds(Landroid/graphics/Rect;)V
 
@@ -452,11 +438,10 @@
 
 .method public setChangingConfigurations(I)V
     .registers 3
-    .param p1, "configs"    # I
 
     .prologue
     .line 56
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0, p1}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->setChangingConfigurations(I)V
 
@@ -466,12 +451,10 @@
 
 .method public setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
     .registers 4
-    .param p1, "color"    # I
-    .param p2, "mode"    # Landroid/graphics/PorterDuff$Mode;
 
     .prologue
     .line 88
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0, p1, p2}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
 
@@ -481,11 +464,10 @@
 
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .registers 3
-    .param p1, "colorFilter"    # Landroid/graphics/ColorFilter;
 
     .prologue
     .line 161
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0, p1}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
@@ -495,11 +477,10 @@
 
 .method public setDither(Z)V
     .registers 3
-    .param p1, "dither"    # Z
 
     .prologue
     .line 66
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0, p1}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->setDither(Z)V
 
@@ -509,11 +490,10 @@
 
 .method public setFilterBitmap(Z)V
     .registers 3
-    .param p1, "filter"    # Z
 
     .prologue
     .line 71
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0, p1}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->setFilterBitmap(Z)V
 
@@ -521,28 +501,12 @@
     return-void
 .end method
 
-.method public setLoopCount(I)V
-    .registers 3
-    .param p1, "loopCount"    # I
-
-    .prologue
-    .line 176
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
-
-    invoke-virtual {v0, p1}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->setLoopCount(I)V
-
-    .line 177
-    return-void
-.end method
-
 .method public setVisible(ZZ)Z
     .registers 4
-    .param p1, "visible"    # Z
-    .param p2, "restart"    # Z
 
     .prologue
     .line 103
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0, p1, p2}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->setVisible(ZZ)Z
 
@@ -556,7 +520,7 @@
 
     .prologue
     .line 181
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->start()V
 
@@ -569,7 +533,7 @@
 
     .prologue
     .line 186
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->stop()V
 
@@ -579,14 +543,13 @@
 
 .method public unscheduleSelf(Ljava/lang/Runnable;)V
     .registers 3
-    .param p1, "what"    # Ljava/lang/Runnable;
 
     .prologue
     .line 139
     invoke-super {p0, p1}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->unscheduleSelf(Ljava/lang/Runnable;)V
 
     .line 140
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->wrapped:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/SquaringDrawable;->a:Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0, p1}, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;->unscheduleSelf(Ljava/lang/Runnable;)V
 

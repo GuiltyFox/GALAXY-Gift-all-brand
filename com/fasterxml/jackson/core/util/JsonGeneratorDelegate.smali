@@ -12,7 +12,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 3
-    .param p1, "d"    # Lcom/fasterxml/jackson/core/JsonGenerator;
 
     .prologue
     .line 32
@@ -26,8 +25,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/core/JsonGenerator;Z)V
     .registers 3
-    .param p1, "d"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p2, "delegateCopyMethods"    # Z
 
     .prologue
     .line 40
@@ -61,7 +58,6 @@
 
 .method public canUseSchema(Lcom/fasterxml/jackson/core/FormatSchema;)Z
     .registers 3
-    .param p1, "schema"    # Lcom/fasterxml/jackson/core/FormatSchema;
 
     .prologue
     .line 78
@@ -118,11 +114,6 @@
 
 .method public close()V
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 388
@@ -135,12 +126,6 @@
 
 .method public copyCurrentEvent(Lcom/fasterxml/jackson/core/JsonParser;)V
     .registers 3
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 363
@@ -165,12 +150,6 @@
 
 .method public copyCurrentStructure(Lcom/fasterxml/jackson/core/JsonParser;)V
     .registers 3
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 369
@@ -195,7 +174,6 @@
 
 .method public disable(Lcom/fasterxml/jackson/core/JsonGenerator$Feature;)Lcom/fasterxml/jackson/core/JsonGenerator;
     .registers 3
-    .param p1, "f"    # Lcom/fasterxml/jackson/core/JsonGenerator$Feature;
 
     .prologue
     .line 106
@@ -209,7 +187,6 @@
 
 .method public enable(Lcom/fasterxml/jackson/core/JsonGenerator$Feature;)Lcom/fasterxml/jackson/core/JsonGenerator;
     .registers 3
-    .param p1, "f"    # Lcom/fasterxml/jackson/core/JsonGenerator$Feature;
 
     .prologue
     .line 100
@@ -223,11 +200,6 @@
 
 .method public flush()V
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 387
@@ -376,7 +348,6 @@
 
 .method public isEnabled(Lcom/fasterxml/jackson/core/JsonGenerator$Feature;)Z
     .registers 3
-    .param p1, "f"    # Lcom/fasterxml/jackson/core/JsonGenerator$Feature;
 
     .prologue
     .line 111
@@ -391,7 +362,6 @@
 
 .method public setCharacterEscapes(Lcom/fasterxml/jackson/core/io/CharacterEscapes;)Lcom/fasterxml/jackson/core/JsonGenerator;
     .registers 3
-    .param p1, "esc"    # Lcom/fasterxml/jackson/core/io/CharacterEscapes;
 
     .prologue
     .line 155
@@ -405,7 +375,6 @@
 
 .method public setCodec(Lcom/fasterxml/jackson/core/ObjectCodec;)Lcom/fasterxml/jackson/core/JsonGenerator;
     .registers 3
-    .param p1, "oc"    # Lcom/fasterxml/jackson/core/ObjectCodec;
 
     .prologue
     .line 62
@@ -419,7 +388,6 @@
 
 .method public setFeatureMask(I)Lcom/fasterxml/jackson/core/JsonGenerator;
     .registers 3
-    .param p1, "mask"    # I
 
     .prologue
     .line 121
@@ -433,7 +401,6 @@
 
 .method public setHighestNonEscapedChar(I)Lcom/fasterxml/jackson/core/JsonGenerator;
     .registers 3
-    .param p1, "charCode"    # I
 
     .prologue
     .line 145
@@ -447,7 +414,6 @@
 
 .method public setPrettyPrinter(Lcom/fasterxml/jackson/core/PrettyPrinter;)Lcom/fasterxml/jackson/core/JsonGenerator;
     .registers 3
-    .param p1, "pp"    # Lcom/fasterxml/jackson/core/PrettyPrinter;
 
     .prologue
     .line 133
@@ -461,7 +427,6 @@
 
 .method public setRootValueSeparator(Lcom/fasterxml/jackson/core/SerializableString;)Lcom/fasterxml/jackson/core/JsonGenerator;
     .registers 3
-    .param p1, "sep"    # Lcom/fasterxml/jackson/core/SerializableString;
 
     .prologue
     .line 159
@@ -475,7 +440,6 @@
 
 .method public setSchema(Lcom/fasterxml/jackson/core/FormatSchema;)V
     .registers 3
-    .param p1, "schema"    # Lcom/fasterxml/jackson/core/FormatSchema;
 
     .prologue
     .line 66
@@ -515,14 +479,6 @@
 
 .method public writeBinary(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/InputStream;I)I
     .registers 5
-    .param p1, "b64variant"    # Lcom/fasterxml/jackson/core/Base64Variant;
-    .param p2, "data"    # Ljava/io/InputStream;
-    .param p3, "dataLength"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 244
@@ -537,15 +493,6 @@
 
 .method public writeBinary(Lcom/fasterxml/jackson/core/Base64Variant;[BII)V
     .registers 6
-    .param p1, "b64variant"    # Lcom/fasterxml/jackson/core/Base64Variant;
-    .param p2, "data"    # [B
-    .param p3, "offset"    # I
-    .param p4, "len"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 241
@@ -558,12 +505,6 @@
 
 .method public writeBoolean(Z)V
     .registers 3
-    .param p1, "state"    # Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 277
@@ -576,11 +517,6 @@
 
 .method public writeEndArray()V
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 175
@@ -593,11 +529,6 @@
 
 .method public writeEndObject()V
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 181
@@ -610,12 +541,6 @@
 
 .method public writeFieldName(Lcom/fasterxml/jackson/core/SerializableString;)V
     .registers 3
-    .param p1, "name"    # Lcom/fasterxml/jackson/core/SerializableString;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 187
@@ -628,12 +553,6 @@
 
 .method public writeFieldName(Ljava/lang/String;)V
     .registers 3
-    .param p1, "name"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 184
@@ -646,11 +565,6 @@
 
 .method public writeNull()V
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 280
@@ -663,12 +577,6 @@
 
 .method public writeNumber(D)V
     .registers 4
-    .param p1, "v"    # D
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 265
@@ -681,12 +589,6 @@
 
 .method public writeNumber(F)V
     .registers 3
-    .param p1, "v"    # F
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 268
@@ -699,12 +601,6 @@
 
 .method public writeNumber(I)V
     .registers 3
-    .param p1, "v"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 256
@@ -717,12 +613,6 @@
 
 .method public writeNumber(J)V
     .registers 4
-    .param p1, "v"    # J
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 259
@@ -735,13 +625,6 @@
 
 .method public writeNumber(Ljava/lang/String;)V
     .registers 3
-    .param p1, "encodedValue"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Ljava/lang/UnsupportedOperationException;
-        }
-    .end annotation
 
     .prologue
     .line 274
@@ -754,12 +637,6 @@
 
 .method public writeNumber(Ljava/math/BigDecimal;)V
     .registers 3
-    .param p1, "v"    # Ljava/math/BigDecimal;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 271
@@ -772,12 +649,6 @@
 
 .method public writeNumber(Ljava/math/BigInteger;)V
     .registers 3
-    .param p1, "v"    # Ljava/math/BigInteger;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 262
@@ -790,12 +661,6 @@
 
 .method public writeNumber(S)V
     .registers 3
-    .param p1, "v"    # S
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 253
@@ -808,13 +673,6 @@
 
 .method public writeObject(Ljava/lang/Object;)V
     .registers 3
-    .param p1, "pojo"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 314
@@ -866,12 +724,6 @@
 
 .method public writeObjectId(Ljava/lang/Object;)V
     .registers 3
-    .param p1, "id"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 298
@@ -884,12 +736,6 @@
 
 .method public writeObjectRef(Ljava/lang/Object;)V
     .registers 3
-    .param p1, "id"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 301
@@ -902,12 +748,6 @@
 
 .method public writeOmittedField(Ljava/lang/String;)V
     .registers 3
-    .param p1, "fieldName"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 289
@@ -920,12 +760,6 @@
 
 .method public writeRaw(C)V
     .registers 3
-    .param p1, "c"    # C
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 229
@@ -938,12 +772,6 @@
 
 .method public writeRaw(Lcom/fasterxml/jackson/core/SerializableString;)V
     .registers 3
-    .param p1, "raw"    # Lcom/fasterxml/jackson/core/SerializableString;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 223
@@ -956,12 +784,6 @@
 
 .method public writeRaw(Ljava/lang/String;)V
     .registers 3
-    .param p1, "text"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 217
@@ -974,14 +796,6 @@
 
 .method public writeRaw(Ljava/lang/String;II)V
     .registers 5
-    .param p1, "text"    # Ljava/lang/String;
-    .param p2, "offset"    # I
-    .param p3, "len"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 220
@@ -994,14 +808,6 @@
 
 .method public writeRaw([CII)V
     .registers 5
-    .param p1, "text"    # [C
-    .param p2, "offset"    # I
-    .param p3, "len"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 226
@@ -1014,14 +820,6 @@
 
 .method public writeRawUTF8String([BII)V
     .registers 5
-    .param p1, "text"    # [B
-    .param p2, "offset"    # I
-    .param p3, "length"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 205
@@ -1034,12 +832,6 @@
 
 .method public writeRawValue(Ljava/lang/String;)V
     .registers 3
-    .param p1, "text"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 232
@@ -1052,14 +844,6 @@
 
 .method public writeRawValue(Ljava/lang/String;II)V
     .registers 5
-    .param p1, "text"    # Ljava/lang/String;
-    .param p2, "offset"    # I
-    .param p3, "len"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 235
@@ -1072,14 +856,6 @@
 
 .method public writeRawValue([CII)V
     .registers 5
-    .param p1, "text"    # [C
-    .param p2, "offset"    # I
-    .param p3, "len"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 238
@@ -1092,11 +868,6 @@
 
 .method public writeStartArray()V
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 169
@@ -1109,12 +880,6 @@
 
 .method public writeStartArray(I)V
     .registers 3
-    .param p1, "size"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 172
@@ -1127,11 +892,6 @@
 
 .method public writeStartObject()V
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 178
@@ -1144,12 +904,6 @@
 
 .method public writeString(Lcom/fasterxml/jackson/core/SerializableString;)V
     .registers 3
-    .param p1, "text"    # Lcom/fasterxml/jackson/core/SerializableString;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 202
@@ -1162,12 +916,6 @@
 
 .method public writeString(Ljava/lang/String;)V
     .registers 3
-    .param p1, "text"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 196
@@ -1180,14 +928,6 @@
 
 .method public writeString([CII)V
     .registers 5
-    .param p1, "text"    # [C
-    .param p2, "offset"    # I
-    .param p3, "len"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 199
@@ -1200,12 +940,6 @@
 
 .method public writeTree(Lcom/fasterxml/jackson/core/TreeNode;)V
     .registers 4
-    .param p1, "rootNode"    # Lcom/fasterxml/jackson/core/TreeNode;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 332
@@ -1261,12 +995,6 @@
 
 .method public writeTypeId(Ljava/lang/Object;)V
     .registers 3
-    .param p1, "id"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 304
@@ -1279,14 +1007,6 @@
 
 .method public writeUTF8String([BII)V
     .registers 5
-    .param p1, "text"    # [B
-    .param p2, "offset"    # I
-    .param p3, "length"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 208

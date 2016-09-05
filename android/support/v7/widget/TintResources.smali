@@ -1,44 +1,37 @@
-.class public Landroid/support/v7/widget/TintResources;
-.super Landroid/content/res/Resources;
+.class Landroid/support/v7/widget/TintResources;
+.super Landroid/support/v7/widget/ResourcesWrapper;
 .source "TintResources.java"
 
 
 # instance fields
-.field private final mContext:Landroid/content/Context;
+.field private final a:Ljava/lang/ref/WeakReference;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/lang/ref/WeakReference",
+            "<",
+            "Landroid/content/Context;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/content/res/Resources;)V
-    .registers 6
-    .param p1, "context"    # Landroid/content/Context;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2, "res"    # Landroid/content/res/Resources;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
+    .registers 4
 
     .prologue
-    .line 33
-    invoke-virtual {p2}, Landroid/content/res/Resources;->getAssets()Landroid/content/res/AssetManager;
-
-    move-result-object v0
-
-    invoke-virtual {p2}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    move-result-object v1
-
-    invoke-virtual {p2}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    move-result-object v2
-
-    invoke-direct {p0, v0, v1, v2}, Landroid/content/res/Resources;-><init>(Landroid/content/res/AssetManager;Landroid/util/DisplayMetrics;Landroid/content/res/Configuration;)V
-
     .line 34
-    iput-object p1, p0, Landroid/support/v7/widget/TintResources;->mContext:Landroid/content/Context;
+    invoke-direct {p0, p2}, Landroid/support/v7/widget/ResourcesWrapper;-><init>(Landroid/content/res/Resources;)V
 
     .line 35
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    iput-object v0, p0, Landroid/support/v7/widget/TintResources;->a:Ljava/lang/ref/WeakReference;
+
+    .line 36
     return-void
 .end method
 
@@ -46,37 +39,33 @@
 # virtual methods
 .method public getDrawable(I)Landroid/graphics/drawable/Drawable;
     .registers 4
-    .param p1, "id"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/content/res/Resources$NotFoundException;
-        }
-    .end annotation
 
     .prologue
-    .line 44
+    .line 45
+    invoke-super {p0, p1}, Landroid/support/v7/widget/ResourcesWrapper;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    .line 46
+    iget-object v0, p0, Landroid/support/v7/widget/TintResources;->a:Ljava/lang/ref/WeakReference;
+
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/content/Context;
+
+    .line 47
+    if-eqz v1, :cond_16
+
+    if-eqz v0, :cond_16
+
+    .line 48
     invoke-static {}, Landroid/support/v7/widget/AppCompatDrawableManager;->get()Landroid/support/v7/widget/AppCompatDrawableManager;
 
-    move-result-object v0
+    invoke-static {v0, p1, v1}, Landroid/support/v7/widget/AppCompatDrawableManager;->tintDrawableUsingColorFilter(Landroid/content/Context;ILandroid/graphics/drawable/Drawable;)Z
 
-    iget-object v1, p0, Landroid/support/v7/widget/TintResources;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v0, v1, p0, p1}, Landroid/support/v7/widget/AppCompatDrawableManager;->onDrawableLoadedFromResources(Landroid/content/Context;Landroid/support/v7/widget/TintResources;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method final superGetDrawable(I)Landroid/graphics/drawable/Drawable;
-    .registers 3
-    .param p1, "id"    # I
-
-    .prologue
-    .line 48
-    invoke-super {p0, p1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    return-object v0
+    .line 50
+    :cond_16
+    return-object v1
 .end method

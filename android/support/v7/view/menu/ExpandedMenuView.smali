@@ -9,13 +9,13 @@
 
 
 # static fields
-.field private static final TINT_ATTRS:[I
+.field private static final a:[I
 
 
 # instance fields
-.field private mAnimations:I
+.field private b:Landroid/support/v7/view/menu/MenuBuilder;
 
-.field private mMenu:Landroid/support/v7/view/menu/MenuBuilder;
+.field private c:I
 
 
 # direct methods
@@ -30,7 +30,7 @@
 
     fill-array-data v0, :array_a
 
-    sput-object v0, Landroid/support/v7/view/menu/ExpandedMenuView;->TINT_ATTRS:[I
+    sput-object v0, Landroid/support/v7/view/menu/ExpandedMenuView;->a:[I
 
     return-void
 
@@ -45,8 +45,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 48
@@ -60,9 +58,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .registers 8
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
 
     .prologue
     const/4 v3, 0x1
@@ -76,14 +71,13 @@
     invoke-virtual {p0, p0}, Landroid/support/v7/view/menu/ExpandedMenuView;->setOnItemClickListener(Landroid/widget/AdapterView$OnItemClickListener;)V
 
     .line 55
-    sget-object v1, Landroid/support/v7/view/menu/ExpandedMenuView;->TINT_ATTRS:[I
+    sget-object v0, Landroid/support/v7/view/menu/ExpandedMenuView;->a:[I
 
-    invoke-static {p1, p2, v1, p3, v2}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroid/support/v7/widget/TintTypedArray;
+    invoke-static {p1, p2, v0, p3, v2}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroid/support/v7/widget/TintTypedArray;
 
     move-result-object v0
 
     .line 57
-    .local v0, "a":Landroid/support/v7/widget/TintTypedArray;
     invoke-virtual {v0, v2}, Landroid/support/v7/widget/TintTypedArray;->hasValue(I)Z
 
     move-result v1
@@ -127,18 +121,17 @@
 
     .prologue
     .line 92
-    iget v0, p0, Landroid/support/v7/view/menu/ExpandedMenuView;->mAnimations:I
+    iget v0, p0, Landroid/support/v7/view/menu/ExpandedMenuView;->c:I
 
     return v0
 .end method
 
 .method public initialize(Landroid/support/v7/view/menu/MenuBuilder;)V
     .registers 2
-    .param p1, "menu"    # Landroid/support/v7/view/menu/MenuBuilder;
 
     .prologue
     .line 68
-    iput-object p1, p0, Landroid/support/v7/view/menu/ExpandedMenuView;->mMenu:Landroid/support/v7/view/menu/MenuBuilder;
+    iput-object p1, p0, Landroid/support/v7/view/menu/ExpandedMenuView;->b:Landroid/support/v7/view/menu/MenuBuilder;
 
     .line 69
     return-void
@@ -146,11 +139,10 @@
 
 .method public invokeItem(Landroid/support/v7/view/menu/MenuItemImpl;)Z
     .registers 4
-    .param p1, "item"    # Landroid/support/v7/view/menu/MenuItemImpl;
 
     .prologue
     .line 81
-    iget-object v0, p0, Landroid/support/v7/view/menu/ExpandedMenuView;->mMenu:Landroid/support/v7/view/menu/MenuBuilder;
+    iget-object v0, p0, Landroid/support/v7/view/menu/ExpandedMenuView;->b:Landroid/support/v7/view/menu/MenuBuilder;
 
     const/4 v1, 0x0
 
@@ -179,10 +171,6 @@
 
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .registers 7
-    .param p1, "parent"    # Landroid/widget/AdapterView;
-    .param p2, "v"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
 
     .prologue
     .line 87

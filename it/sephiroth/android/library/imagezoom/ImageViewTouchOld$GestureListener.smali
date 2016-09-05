@@ -3,29 +3,17 @@
 .source "ImageViewTouchOld.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = "GestureListener"
-.end annotation
-
-
 # instance fields
-.field final synthetic this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
+.field final synthetic a:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
 
 
 # direct methods
 .method constructor <init>(Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;)V
     .registers 2
-    .param p1, "this$0"    # Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
 
     .prologue
     .line 82
-    iput-object p1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
+    iput-object p1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->a:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
 
     invoke-direct {p0}, Landroid/view/GestureDetector$SimpleOnGestureListener;-><init>()V
 
@@ -35,204 +23,188 @@
 
 # virtual methods
 .method public onDoubleTap(Landroid/view/MotionEvent;)Z
-    .registers 8
-    .param p1, "e"    # Landroid/view/MotionEvent;
+    .registers 7
 
     .prologue
     .line 86
-    iget-object v2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
+    iget-object v0, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->a:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
 
-    invoke-virtual {v2}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->getScale()F
+    invoke-virtual {v0}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->getScale()F
 
     move-result v0
 
-    .line 87
-    .local v0, "scale":F
-    move v1, v0
-
     .line 88
-    .local v1, "targetScale":F
-    iget-object v2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
+    iget-object v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->a:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
 
-    iget-object v3, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
-
-    invoke-virtual {v3}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->getMaxZoom()F
-
-    move-result v3
-
-    invoke-virtual {v2, v0, v3}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->onDoubleTapPost(FF)F
-
-    move-result v1
-
-    .line 89
-    iget-object v2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
+    iget-object v2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->a:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
 
     invoke-virtual {v2}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->getMaxZoom()F
 
     move-result v2
 
-    const v3, 0x3f666666
+    invoke-virtual {v1, v0, v2}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->e(FF)F
 
-    invoke-static {v1, v3}, Ljava/lang/Math;->max(FF)F
+    move-result v0
 
-    move-result v3
+    .line 89
+    iget-object v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->a:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
 
-    invoke-static {v2, v3}, Ljava/lang/Math;->min(FF)F
+    invoke-virtual {v1}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->getMaxZoom()F
 
     move-result v1
 
-    .line 90
-    iget-object v2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
+    const v2, 0x3f666666    # 0.9f
 
-    iput v1, v2, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->mCurrentScaleFactor:F
+    invoke-static {v0, v2}, Ljava/lang/Math;->max(FF)F
+
+    move-result v0
+
+    invoke-static {v1, v0}, Ljava/lang/Math;->min(FF)F
+
+    move-result v0
+
+    .line 90
+    iget-object v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->a:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
+
+    iput v0, v1, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->o:F
 
     .line 91
-    iget-object v2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
+    iget-object v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->a:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
-    move-result v3
+    move-result v2
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
-    move-result v4
+    move-result v3
 
-    const/high16 v5, 0x43480000
+    const/high16 v4, 0x43480000    # 200.0f
 
-    invoke-virtual {v2, v1, v3, v4, v5}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->zoomTo(FFFF)V
+    invoke-virtual {v1, v0, v2, v3, v4}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->a(FFFF)V
 
     .line 92
-    iget-object v2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
+    iget-object v0, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->a:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
 
-    invoke-virtual {v2}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->invalidate()V
+    invoke-virtual {v0}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->invalidate()V
 
     .line 93
     invoke-super {p0, p1}, Landroid/view/GestureDetector$SimpleOnGestureListener;->onDoubleTap(Landroid/view/MotionEvent;)Z
 
-    move-result v2
+    move-result v0
 
-    return v2
+    return v0
 .end method
 
 .method public onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
-    .registers 12
-    .param p1, "e1"    # Landroid/view/MotionEvent;
-    .param p2, "e2"    # Landroid/view/MotionEvent;
-    .param p3, "velocityX"    # F
-    .param p4, "velocityY"    # F
+    .registers 10
 
     .prologue
-    const/4 v6, 0x1
+    const/4 v2, 0x1
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    const/high16 v5, 0x44480000
+    const/high16 v4, 0x44480000    # 800.0f
 
-    const/high16 v4, 0x40000000
+    const/high16 v3, 0x40000000    # 2.0f
 
     .line 113
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getPointerCount()I
 
-    move-result v3
+    move-result v1
 
-    if-gt v3, v6, :cond_12
+    if-gt v1, v2, :cond_12
 
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getPointerCount()I
 
-    move-result v3
+    move-result v1
 
-    if-le v3, v6, :cond_13
+    if-le v1, v2, :cond_13
 
     .line 125
     :cond_12
     :goto_12
-    return v2
+    return v0
 
     .line 115
     :cond_13
-    iget-object v3, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
+    iget-object v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->a:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
 
-    iget-object v3, v3, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->mScaleDetector:Landroid/view/ScaleGestureDetector;
+    iget-object v1, v1, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->l:Landroid/view/ScaleGestureDetector;
 
-    invoke-virtual {v3}, Landroid/view/ScaleGestureDetector;->isInProgress()Z
+    invoke-virtual {v1}, Landroid/view/ScaleGestureDetector;->isInProgress()Z
 
-    move-result v3
+    move-result v1
 
-    if-nez v3, :cond_12
+    if-nez v1, :cond_12
 
     .line 118
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
 
-    move-result v2
+    move-result v0
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
-    move-result v3
+    move-result v1
 
-    sub-float v0, v2, v3
+    sub-float/2addr v0, v1
 
     .line 119
-    .local v0, "diffX":F
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
 
-    move-result v2
+    move-result v1
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
-    move-result v3
+    move-result v2
 
-    sub-float v1, v2, v3
+    sub-float/2addr v1, v2
 
     .line 121
-    .local v1, "diffY":F
     invoke-static {p3}, Ljava/lang/Math;->abs(F)F
 
     move-result v2
 
-    cmpl-float v2, v2, v5
+    cmpl-float v2, v2, v4
 
-    if-gtz v2, :cond_41
+    if-gtz v2, :cond_3f
 
     invoke-static {p4}, Ljava/lang/Math;->abs(F)F
 
     move-result v2
 
-    cmpl-float v2, v2, v5
+    cmpl-float v2, v2, v4
 
-    if-lez v2, :cond_51
+    if-lez v2, :cond_4d
 
     .line 122
-    :cond_41
-    iget-object v2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
+    :cond_3f
+    iget-object v2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->a:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
 
-    div-float v3, v0, v4
+    div-float/2addr v0, v3
 
-    div-float v4, v1, v4
+    div-float/2addr v1, v3
 
-    const/high16 v5, 0x43960000
+    const/high16 v3, 0x43960000    # 300.0f
 
-    invoke-virtual {v2, v3, v4, v5}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->scrollBy(FFF)V
+    invoke-virtual {v2, v0, v1, v3}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->c(FFF)V
 
     .line 123
-    iget-object v2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
+    iget-object v0, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->a:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
 
-    invoke-virtual {v2}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->invalidate()V
+    invoke-virtual {v0}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->invalidate()V
 
     .line 125
-    :cond_51
+    :cond_4d
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/GestureDetector$SimpleOnGestureListener;->onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
 
-    move-result v2
+    move-result v0
 
     goto :goto_12
 .end method
 
 .method public onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
     .registers 8
-    .param p1, "e1"    # Landroid/view/MotionEvent;
-    .param p2, "e2"    # Landroid/view/MotionEvent;
-    .param p3, "distanceX"    # F
-    .param p4, "distanceY"    # F
 
     .prologue
     const/4 v2, 0x1
@@ -264,9 +236,9 @@
     if-gt v1, v2, :cond_6
 
     .line 102
-    iget-object v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
+    iget-object v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->a:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
 
-    iget-object v1, v1, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->mScaleDetector:Landroid/view/ScaleGestureDetector;
+    iget-object v1, v1, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->l:Landroid/view/ScaleGestureDetector;
 
     invoke-virtual {v1}, Landroid/view/ScaleGestureDetector;->isInProgress()Z
 
@@ -275,29 +247,29 @@
     if-nez v1, :cond_6
 
     .line 104
-    iget-object v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
+    iget-object v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->a:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
 
     invoke-virtual {v1}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->getScale()F
 
     move-result v1
 
-    const/high16 v2, 0x3f800000
+    const/high16 v2, 0x3f800000    # 1.0f
 
     cmpl-float v1, v1, v2
 
     if-eqz v1, :cond_6
 
     .line 106
-    iget-object v0, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
+    iget-object v0, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->a:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
 
     neg-float v1, p3
 
     neg-float v2, p4
 
-    invoke-virtual {v0, v1, v2}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->scrollBy(FF)V
+    invoke-virtual {v0, v1, v2}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->c(FF)V
 
     .line 107
-    iget-object v0, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
+    iget-object v0, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld$GestureListener;->a:Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;
 
     invoke-virtual {v0}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchOld;->invalidate()V
 

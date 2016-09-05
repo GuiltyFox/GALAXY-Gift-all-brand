@@ -3,17 +3,6 @@
 .source "NameTransformer.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/util/NameTransformer;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Chained"
-.end annotation
-
-
 # instance fields
 .field protected final _t1:Lcom/fasterxml/jackson/databind/util/NameTransformer;
 
@@ -23,8 +12,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/util/NameTransformer;Lcom/fasterxml/jackson/databind/util/NameTransformer;)V
     .registers 3
-    .param p1, "t1"    # Lcom/fasterxml/jackson/databind/util/NameTransformer;
-    .param p2, "t2"    # Lcom/fasterxml/jackson/databind/util/NameTransformer;
 
     .prologue
     .line 113
@@ -43,8 +30,7 @@
 
 # virtual methods
 .method public reverse(Ljava/lang/String;)Ljava/lang/String;
-    .registers 3
-    .param p1, "transformed"    # Ljava/lang/String;
+    .registers 4
 
     .prologue
     .line 125
@@ -52,21 +38,21 @@
 
     invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/databind/util/NameTransformer;->reverse(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
     .line 126
-    if-eqz p1, :cond_e
+    if-eqz v0, :cond_e
 
     .line 127
-    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/NameTransformer$Chained;->_t2:Lcom/fasterxml/jackson/databind/util/NameTransformer;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/NameTransformer$Chained;->_t2:Lcom/fasterxml/jackson/databind/util/NameTransformer;
 
-    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/databind/util/NameTransformer;->reverse(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1, v0}, Lcom/fasterxml/jackson/databind/util/NameTransformer;->reverse(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object p1
+    move-result-object v0
 
     .line 129
     :cond_e
-    return-object p1
+    return-object v0
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -117,7 +103,6 @@
 
 .method public transform(Ljava/lang/String;)Ljava/lang/String;
     .registers 4
-    .param p1, "name"    # Ljava/lang/String;
 
     .prologue
     .line 120

@@ -4,21 +4,17 @@
 
 
 # annotations
-.annotation build Lcz/msebera/android/httpclient/annotation/Immutable;
-.end annotation
-
 .annotation runtime Ljava/lang/Deprecated;
 .end annotation
 
 
 # instance fields
-.field private final lenStrategy:Lcz/msebera/android/httpclient/entity/ContentLengthStrategy;
+.field private final a:Lcz/msebera/android/httpclient/entity/ContentLengthStrategy;
 
 
 # direct methods
 .method public constructor <init>(Lcz/msebera/android/httpclient/entity/ContentLengthStrategy;)V
     .registers 3
-    .param p1, "lenStrategy"    # Lcz/msebera/android/httpclient/entity/ContentLengthStrategy;
 
     .prologue
     .line 68
@@ -27,13 +23,13 @@
     .line 69
     const-string/jumbo v0, "Content length strategy"
 
-    invoke-static {p1, v0}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcz/msebera/android/httpclient/util/Args;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcz/msebera/android/httpclient/entity/ContentLengthStrategy;
 
-    iput-object v0, p0, Lcz/msebera/android/httpclient/impl/entity/EntitySerializer;->lenStrategy:Lcz/msebera/android/httpclient/entity/ContentLengthStrategy;
+    iput-object v0, p0, Lcz/msebera/android/httpclient/impl/entity/EntitySerializer;->a:Lcz/msebera/android/httpclient/entity/ContentLengthStrategy;
 
     .line 70
     return-void
@@ -41,101 +37,82 @@
 
 
 # virtual methods
-.method protected doSerialize(Lcz/msebera/android/httpclient/io/SessionOutputBuffer;Lcz/msebera/android/httpclient/HttpMessage;)Ljava/io/OutputStream;
+.method protected a(Lcz/msebera/android/httpclient/io/SessionOutputBuffer;Lcz/msebera/android/httpclient/HttpMessage;)Ljava/io/OutputStream;
     .registers 7
-    .param p1, "outbuffer"    # Lcz/msebera/android/httpclient/io/SessionOutputBuffer;
-    .param p2, "message"    # Lcz/msebera/android/httpclient/HttpMessage;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcz/msebera/android/httpclient/HttpException;,
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 89
-    iget-object v2, p0, Lcz/msebera/android/httpclient/impl/entity/EntitySerializer;->lenStrategy:Lcz/msebera/android/httpclient/entity/ContentLengthStrategy;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/entity/EntitySerializer;->a:Lcz/msebera/android/httpclient/entity/ContentLengthStrategy;
 
-    invoke-interface {v2, p2}, Lcz/msebera/android/httpclient/entity/ContentLengthStrategy;->determineLength(Lcz/msebera/android/httpclient/HttpMessage;)J
+    invoke-interface {v0, p2}, Lcz/msebera/android/httpclient/entity/ContentLengthStrategy;->a(Lcz/msebera/android/httpclient/HttpMessage;)J
 
-    move-result-wide v0
+    move-result-wide v2
 
     .line 90
-    .local v0, "len":J
-    const-wide/16 v2, -0x2
+    const-wide/16 v0, -0x2
 
-    cmp-long v2, v0, v2
+    cmp-long v0, v2, v0
 
-    if-nez v2, :cond_12
+    if-nez v0, :cond_12
 
     .line 91
-    new-instance v2, Lcz/msebera/android/httpclient/impl/io/ChunkedOutputStream;
+    new-instance v0, Lcz/msebera/android/httpclient/impl/io/ChunkedOutputStream;
 
-    invoke-direct {v2, p1}, Lcz/msebera/android/httpclient/impl/io/ChunkedOutputStream;-><init>(Lcz/msebera/android/httpclient/io/SessionOutputBuffer;)V
+    invoke-direct {v0, p1}, Lcz/msebera/android/httpclient/impl/io/ChunkedOutputStream;-><init>(Lcz/msebera/android/httpclient/io/SessionOutputBuffer;)V
 
     .line 95
     :goto_11
-    return-object v2
+    return-object v0
 
     .line 92
     :cond_12
-    const-wide/16 v2, -0x1
+    const-wide/16 v0, -0x1
 
-    cmp-long v2, v0, v2
+    cmp-long v0, v2, v0
 
-    if-nez v2, :cond_1e
+    if-nez v0, :cond_1e
 
     .line 93
-    new-instance v2, Lcz/msebera/android/httpclient/impl/io/IdentityOutputStream;
+    new-instance v0, Lcz/msebera/android/httpclient/impl/io/IdentityOutputStream;
 
-    invoke-direct {v2, p1}, Lcz/msebera/android/httpclient/impl/io/IdentityOutputStream;-><init>(Lcz/msebera/android/httpclient/io/SessionOutputBuffer;)V
+    invoke-direct {v0, p1}, Lcz/msebera/android/httpclient/impl/io/IdentityOutputStream;-><init>(Lcz/msebera/android/httpclient/io/SessionOutputBuffer;)V
 
     goto :goto_11
 
     .line 95
     :cond_1e
-    new-instance v2, Lcz/msebera/android/httpclient/impl/io/ContentLengthOutputStream;
+    new-instance v0, Lcz/msebera/android/httpclient/impl/io/ContentLengthOutputStream;
 
-    invoke-direct {v2, p1, v0, v1}, Lcz/msebera/android/httpclient/impl/io/ContentLengthOutputStream;-><init>(Lcz/msebera/android/httpclient/io/SessionOutputBuffer;J)V
+    invoke-direct {v0, p1, v2, v3}, Lcz/msebera/android/httpclient/impl/io/ContentLengthOutputStream;-><init>(Lcz/msebera/android/httpclient/io/SessionOutputBuffer;J)V
 
     goto :goto_11
 .end method
 
-.method public serialize(Lcz/msebera/android/httpclient/io/SessionOutputBuffer;Lcz/msebera/android/httpclient/HttpMessage;Lcz/msebera/android/httpclient/HttpEntity;)V
-    .registers 6
-    .param p1, "outbuffer"    # Lcz/msebera/android/httpclient/io/SessionOutputBuffer;
-    .param p2, "message"    # Lcz/msebera/android/httpclient/HttpMessage;
-    .param p3, "entity"    # Lcz/msebera/android/httpclient/HttpEntity;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcz/msebera/android/httpclient/HttpException;,
-            Ljava/io/IOException;
-        }
-    .end annotation
+.method public a(Lcz/msebera/android/httpclient/io/SessionOutputBuffer;Lcz/msebera/android/httpclient/HttpMessage;Lcz/msebera/android/httpclient/HttpEntity;)V
+    .registers 5
 
     .prologue
     .line 113
-    const-string/jumbo v1, "Session output buffer"
+    const-string/jumbo v0, "Session output buffer"
 
-    invoke-static {p1, v1}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcz/msebera/android/httpclient/util/Args;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 114
-    const-string/jumbo v1, "HTTP message"
+    const-string/jumbo v0, "HTTP message"
 
-    invoke-static {p2, v1}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lcz/msebera/android/httpclient/util/Args;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 115
-    const-string/jumbo v1, "HTTP entity"
+    const-string/jumbo v0, "HTTP entity"
 
-    invoke-static {p3, v1}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p3, v0}, Lcz/msebera/android/httpclient/util/Args;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 116
-    invoke-virtual {p0, p1, p2}, Lcz/msebera/android/httpclient/impl/entity/EntitySerializer;->doSerialize(Lcz/msebera/android/httpclient/io/SessionOutputBuffer;Lcz/msebera/android/httpclient/HttpMessage;)Ljava/io/OutputStream;
+    invoke-virtual {p0, p1, p2}, Lcz/msebera/android/httpclient/impl/entity/EntitySerializer;->a(Lcz/msebera/android/httpclient/io/SessionOutputBuffer;Lcz/msebera/android/httpclient/HttpMessage;)Ljava/io/OutputStream;
 
     move-result-object v0
 
     .line 117
-    .local v0, "outstream":Ljava/io/OutputStream;
     invoke-interface {p3, v0}, Lcz/msebera/android/httpclient/HttpEntity;->writeTo(Ljava/io/OutputStream;)V
 
     .line 118

@@ -6,17 +6,6 @@
 .implements Ljava/io/Serializable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "IdKey"
-.end annotation
-
-
 # static fields
 .field private static final serialVersionUID:J = 0x1L
 
@@ -47,8 +36,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/Object;)V
-    .registers 7
-    .param p3, "key"    # Ljava/lang/Object;
+    .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -63,8 +51,6 @@
 
     .prologue
     .line 120
-    .local p1, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p2, "scope":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 121
@@ -79,21 +65,20 @@
     .line 125
     invoke-virtual {p3}, Ljava/lang/Object;->hashCode()I
 
-    move-result v1
+    move-result v0
 
     invoke-virtual {p1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
-    move-result v2
+    move-result v1
 
-    add-int v0, v1, v2
+    add-int/2addr v0, v1
 
     .line 126
-    .local v0, "h":I
-    if-eqz p2, :cond_22
+    if-eqz p2, :cond_21
 
     .line 127
     invoke-virtual {p2}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -107,7 +92,7 @@
     xor-int/2addr v0, v1
 
     .line 129
-    :cond_22
+    :cond_21
     iput v0, p0, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;->hashCode:I
 
     .line 130
@@ -117,13 +102,12 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
-    .param p1, "o"    # Ljava/lang/Object;
+    .registers 6
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 138
     if-ne p1, p0, :cond_5
@@ -131,13 +115,13 @@
     .line 142
     :cond_4
     :goto_4
-    return v1
+    return v0
 
     .line 139
     :cond_5
     if-nez p1, :cond_9
 
-    move v1, v2
+    move v0, v1
 
     goto :goto_4
 
@@ -145,50 +129,47 @@
     :cond_9
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v2
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v4
+    move-result-object v3
 
-    if-eq v3, v4, :cond_15
+    if-eq v2, v3, :cond_15
 
-    move v1, v2
+    move v0, v1
 
     goto :goto_4
 
-    :cond_15
-    move-object v0, p1
-
     .line 141
-    check-cast v0, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;
+    :cond_15
+    check-cast p1, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;
 
     .line 142
-    .local v0, "other":Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;
-    iget-object v3, v0, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;->key:Ljava/lang/Object;
+    iget-object v2, p1, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;->key:Ljava/lang/Object;
 
-    iget-object v4, p0, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;->key:Ljava/lang/Object;
+    iget-object v3, p0, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;->key:Ljava/lang/Object;
 
-    invoke-virtual {v3, v4}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_2e
+    if-eqz v2, :cond_2d
 
-    iget-object v3, v0, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;->type:Ljava/lang/Class;
+    iget-object v2, p1, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;->type:Ljava/lang/Class;
 
-    iget-object v4, p0, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;->type:Ljava/lang/Class;
+    iget-object v3, p0, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;->type:Ljava/lang/Class;
 
-    if-ne v3, v4, :cond_2e
+    if-ne v2, v3, :cond_2d
 
-    iget-object v3, v0, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;->scope:Ljava/lang/Class;
+    iget-object v2, p1, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;->scope:Ljava/lang/Class;
 
-    iget-object v4, p0, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;->scope:Ljava/lang/Class;
+    iget-object v3, p0, Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;->scope:Ljava/lang/Class;
 
-    if-eq v3, v4, :cond_4
+    if-eq v2, v3, :cond_4
 
-    :cond_2e
-    move v1, v2
+    :cond_2d
+    move v0, v1
 
     goto :goto_4
 .end method

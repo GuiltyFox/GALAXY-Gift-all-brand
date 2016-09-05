@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/facebook/share/model/ShareMedia;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x409
-    name = "Builder"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<M:",
@@ -40,7 +31,6 @@
 
     .prologue
     .line 62
-    .local p0, "this":Lcom/facebook/share/model/ShareMedia$Builder;, "Lcom/facebook/share/model/ShareMedia$Builder<TM;TB;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 64
@@ -55,7 +45,6 @@
 
 .method static synthetic access$000(Lcom/facebook/share/model/ShareMedia$Builder;)Landroid/os/Bundle;
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/share/model/ShareMedia$Builder;
 
     .prologue
     .line 62
@@ -76,16 +65,12 @@
 
     .prologue
     .line 86
-    .local p0, "this":Lcom/facebook/share/model/ShareMedia$Builder;, "Lcom/facebook/share/model/ShareMedia$Builder<TM;TB;>;"
-    .local p1, "model":Lcom/facebook/share/model/ShareMedia;, "TM;"
     if-nez p1, :cond_3
 
     .line 89
-    .end local p0    # "this":Lcom/facebook/share/model/ShareMedia$Builder;, "Lcom/facebook/share/model/ShareMedia$Builder<TM;TB;>;"
     :goto_2
     return-object p0
 
-    .restart local p0    # "this":Lcom/facebook/share/model/ShareMedia$Builder;, "Lcom/facebook/share/model/ShareMedia$Builder<TM;TB;>;"
     :cond_3
     invoke-virtual {p1}, Lcom/facebook/share/model/ShareMedia;->getParameters()Landroid/os/Bundle;
 
@@ -103,7 +88,6 @@
 
     .prologue
     .line 62
-    .local p0, "this":Lcom/facebook/share/model/ShareMedia$Builder;, "Lcom/facebook/share/model/ShareMedia$Builder<TM;TB;>;"
     check-cast p1, Lcom/facebook/share/model/ShareMedia;
 
     invoke-virtual {p0, p1}, Lcom/facebook/share/model/ShareMedia$Builder;->readFrom(Lcom/facebook/share/model/ShareMedia;)Lcom/facebook/share/model/ShareMedia$Builder;
@@ -115,8 +99,6 @@
 
 .method public setParameter(Ljava/lang/String;Ljava/lang/String;)Lcom/facebook/share/model/ShareMedia$Builder;
     .registers 4
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -131,7 +113,6 @@
 
     .prologue
     .line 71
-    .local p0, "this":Lcom/facebook/share/model/ShareMedia$Builder;, "Lcom/facebook/share/model/ShareMedia$Builder<TM;TB;>;"
     iget-object v0, p0, Lcom/facebook/share/model/ShareMedia$Builder;->params:Landroid/os/Bundle;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
@@ -142,7 +123,6 @@
 
 .method public setParameters(Landroid/os/Bundle;)Lcom/facebook/share/model/ShareMedia$Builder;
     .registers 3
-    .param p1, "parameters"    # Landroid/os/Bundle;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -156,7 +136,6 @@
 
     .prologue
     .line 80
-    .local p0, "this":Lcom/facebook/share/model/ShareMedia$Builder;, "Lcom/facebook/share/model/ShareMedia$Builder<TM;TB;>;"
     iget-object v0, p0, Lcom/facebook/share/model/ShareMedia$Builder;->params:Landroid/os/Bundle;
 
     invoke-virtual {v0, p1}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V

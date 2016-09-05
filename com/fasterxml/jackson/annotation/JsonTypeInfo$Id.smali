@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/annotation/JsonTypeInfo;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4019
-    name = "Id"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum",
@@ -143,7 +134,6 @@
 
 .method private constructor <init>(Ljava/lang/String;ILjava/lang/String;)V
     .registers 4
-    .param p3, "defProp"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -165,7 +155,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/fasterxml/jackson/annotation/JsonTypeInfo$Id;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 68

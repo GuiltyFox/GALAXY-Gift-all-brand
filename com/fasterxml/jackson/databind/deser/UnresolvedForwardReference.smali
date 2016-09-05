@@ -25,7 +25,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 3
-    .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
     .line 30
@@ -44,9 +43,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonLocation;Lcom/fasterxml/jackson/databind/deser/impl/ReadableObjectId;)V
     .registers 4
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "loc"    # Lcom/fasterxml/jackson/core/JsonLocation;
-    .param p3, "roid"    # Lcom/fasterxml/jackson/databind/deser/impl/ReadableObjectId;
 
     .prologue
     .line 24
@@ -63,8 +59,6 @@
 # virtual methods
 .method public addUnresolvedId(Ljava/lang/Object;Ljava/lang/Class;Lcom/fasterxml/jackson/core/JsonLocation;)V
     .registers 6
-    .param p1, "id"    # Ljava/lang/Object;
-    .param p3, "where"    # Lcom/fasterxml/jackson/core/JsonLocation;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -78,7 +72,6 @@
 
     .prologue
     .line 47
-    .local p2, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;->_unresolvedIds:Ljava/util/List;
 
     new-instance v1, Lcom/fasterxml/jackson/databind/deser/UnresolvedId;
@@ -92,90 +85,83 @@
 .end method
 
 .method public getMessage()Ljava/lang/String;
-    .registers 6
+    .registers 4
 
     .prologue
     .line 57
     invoke-super {p0}, Lcom/fasterxml/jackson/databind/JsonMappingException;->getMessage()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 58
-    .local v1, "msg":Ljava/lang/String;
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;->_unresolvedIds:Ljava/util/List;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;->_unresolvedIds:Ljava/util/List;
 
-    if-nez v4, :cond_9
+    if-nez v1, :cond_9
 
     .line 72
-    .end local v1    # "msg":Ljava/lang/String;
     :goto_8
-    return-object v1
+    return-object v0
 
     .line 62
-    .restart local v1    # "msg":Ljava/lang/String;
     :cond_9
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 63
-    .local v2, "sb":Ljava/lang/StringBuilder;
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;->_unresolvedIds:Ljava/util/List;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;->_unresolvedIds:Ljava/util/List;
 
-    invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    .line 64
+    :cond_14
+    :goto_14
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_34
+
+    .line 65
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 64
-    .local v0, "iterator":Ljava/util/Iterator;, "Ljava/util/Iterator<Lcom/fasterxml/jackson/databind/deser/UnresolvedId;>;"
-    :cond_14
-    :goto_14
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_34
-
-    .line 65
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/fasterxml/jackson/databind/deser/UnresolvedId;
+    check-cast v0, Lcom/fasterxml/jackson/databind/deser/UnresolvedId;
 
     .line 66
-    .local v3, "unresolvedId":Lcom/fasterxml/jackson/databind/deser/UnresolvedId;
-    invoke-virtual {v3}, Lcom/fasterxml/jackson/databind/deser/UnresolvedId;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/deser/UnresolvedId;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 67
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v0
 
-    if-eqz v4, :cond_14
+    if-eqz v0, :cond_14
 
     .line 68
-    const-string/jumbo v4, ", "
+    const-string/jumbo v0, ", "
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_14
 
     .line 71
-    .end local v3    # "unresolvedId":Lcom/fasterxml/jackson/databind/deser/UnresolvedId;
     :cond_34
-    const/16 v4, 0x2e
+    const/16 v0, 0x2e
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 72
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_8
 .end method

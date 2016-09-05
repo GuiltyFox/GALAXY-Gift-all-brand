@@ -3,7 +3,41 @@
 
 
 # direct methods
-.method public static zzj(Landroid/content/Context;Ljava/lang/String;)Z
+.method public static a()Z
+    .registers 2
+
+    sget-boolean v0, Lcom/google/android/gms/common/internal/zzd;->a:Z
+
+    if-eqz v0, :cond_16
+
+    invoke-static {}, Lcom/google/android/gms/internal/zzmt;->b()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_16
+
+    invoke-static {}, Lcom/google/android/gms/internal/zzmt;->a()I
+
+    move-result v0
+
+    invoke-static {}, Landroid/os/Process;->myUid()I
+
+    move-result v1
+
+    if-ne v0, v1, :cond_16
+
+    const/4 v0, 0x1
+
+    :goto_15
+    return v0
+
+    :cond_16
+    const/4 v0, 0x0
+
+    goto :goto_15
+.end method
+
+.method public static a(Landroid/content/Context;Ljava/lang/String;)Z
     .registers 5
 
     const/4 v0, 0x0
@@ -39,38 +73,4 @@
     move-exception v1
 
     goto :goto_12
-.end method
-
-.method public static zzka()Z
-    .registers 2
-
-    sget-boolean v0, Lcom/google/android/gms/common/internal/zzd;->zzaiU:Z
-
-    if-eqz v0, :cond_16
-
-    invoke-static {}, Lcom/google/android/gms/internal/zzmt;->isInitialized()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_16
-
-    invoke-static {}, Lcom/google/android/gms/internal/zzmt;->zzpE()I
-
-    move-result v0
-
-    invoke-static {}, Landroid/os/Process;->myUid()I
-
-    move-result v1
-
-    if-ne v0, v1, :cond_16
-
-    const/4 v0, 0x1
-
-    :goto_15
-    return v0
-
-    :cond_16
-    const/4 v0, 0x0
-
-    goto :goto_15
 .end method

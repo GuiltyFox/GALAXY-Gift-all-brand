@@ -23,7 +23,6 @@
 
     .prologue
     .line 23
-    .local p0, "this":Lorg/parceler/converter/ArrayListParcelConverter;, "Lorg/parceler/converter/ArrayListParcelConverter<TT;>;"
     invoke-direct {p0}, Lorg/parceler/converter/CollectionParcelConverter;-><init>()V
 
     return-void
@@ -31,7 +30,7 @@
 
 
 # virtual methods
-.method public createCollection()Ljava/util/ArrayList;
+.method public a()Ljava/util/ArrayList;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -43,7 +42,6 @@
 
     .prologue
     .line 26
-    .local p0, "this":Lorg/parceler/converter/ArrayListParcelConverter;, "Lorg/parceler/converter/ArrayListParcelConverter<TT;>;"
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -51,13 +49,12 @@
     return-object v0
 .end method
 
-.method public bridge synthetic createCollection()Ljava/util/Collection;
+.method public synthetic b()Ljava/util/Collection;
     .registers 2
 
     .prologue
     .line 23
-    .local p0, "this":Lorg/parceler/converter/ArrayListParcelConverter;, "Lorg/parceler/converter/ArrayListParcelConverter<TT;>;"
-    invoke-virtual {p0}, Lorg/parceler/converter/ArrayListParcelConverter;->createCollection()Ljava/util/ArrayList;
+    invoke-virtual {p0}, Lorg/parceler/converter/ArrayListParcelConverter;->a()Ljava/util/ArrayList;
 
     move-result-object v0
 

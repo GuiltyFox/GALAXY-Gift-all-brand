@@ -19,16 +19,14 @@
 
 
 # instance fields
-.field private final bitmap:Landroid/graphics/Bitmap;
+.field private final a:Landroid/graphics/Bitmap;
 
-.field private final bitmapPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+.field private final b:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
 
 
 # direct methods
 .method public constructor <init>(Landroid/graphics/Bitmap;Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;)V
     .registers 5
-    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
-    .param p2, "bitmapPool"    # Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
 
     .prologue
     .line 31
@@ -61,19 +59,17 @@
 
     .line 38
     :cond_19
-    iput-object p1, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;->bitmap:Landroid/graphics/Bitmap;
+    iput-object p1, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;->a:Landroid/graphics/Bitmap;
 
     .line 39
-    iput-object p2, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;->bitmapPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+    iput-object p2, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;->b:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
 
     .line 40
     return-void
 .end method
 
-.method public static obtain(Landroid/graphics/Bitmap;Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;)Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;
+.method public static a(Landroid/graphics/Bitmap;Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;)Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;
     .registers 3
-    .param p0, "bitmap"    # Landroid/graphics/Bitmap;
-    .param p1, "bitmapPool"    # Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
 
     .prologue
     .line 24
@@ -96,59 +92,59 @@
 
 
 # virtual methods
-.method public get()Landroid/graphics/Bitmap;
+.method public a()Landroid/graphics/Bitmap;
     .registers 2
 
     .prologue
     .line 44
-    iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;->bitmap:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;->a:Landroid/graphics/Bitmap;
 
     return-object v0
 .end method
 
-.method public bridge synthetic get()Ljava/lang/Object;
+.method public synthetic b()Ljava/lang/Object;
     .registers 2
 
     .prologue
     .line 12
-    invoke-virtual {p0}, Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;->get()Landroid/graphics/Bitmap;
+    invoke-virtual {p0}, Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;->a()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getSize()I
+.method public c()I
     .registers 2
 
     .prologue
     .line 49
-    iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;->bitmap:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;->a:Landroid/graphics/Bitmap;
 
-    invoke-static {v0}, Lcom/bumptech/glide/util/Util;->getBitmapByteSize(Landroid/graphics/Bitmap;)I
+    invoke-static {v0}, Lcom/bumptech/glide/util/Util;->a(Landroid/graphics/Bitmap;)I
 
     move-result v0
 
     return v0
 .end method
 
-.method public recycle()V
+.method public d()V
     .registers 3
 
     .prologue
     .line 54
-    iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;->bitmapPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;->b:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
 
-    iget-object v1, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;->bitmap:Landroid/graphics/Bitmap;
+    iget-object v1, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;->a:Landroid/graphics/Bitmap;
 
-    invoke-interface {v0, v1}, Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;->put(Landroid/graphics/Bitmap;)Z
+    invoke-interface {v0, v1}, Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;->a(Landroid/graphics/Bitmap;)Z
 
     move-result v0
 
     if-nez v0, :cond_f
 
     .line 55
-    iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;->bitmap:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;->a:Landroid/graphics/Bitmap;
 
     invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 

@@ -11,11 +11,6 @@
     value = Landroid/support/design/widget/FloatingActionButton$Behavior;->updateFabTranslationForSnackbar(Landroid/support/design/widget/CoordinatorLayout;Landroid/support/design/widget/FloatingActionButton;Landroid/view/View;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Landroid/support/design/widget/FloatingActionButton$Behavior;
@@ -42,7 +37,6 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/support/design/widget/ValueAnimatorCompat;)V
     .registers 4
-    .param p1, "animator"    # Landroid/support/design/widget/ValueAnimatorCompat;
 
     .prologue
     .line 531
@@ -52,7 +46,7 @@
 
     move-result v1
 
-    invoke-static {v0, v1}, Landroid/support/v4/view/ViewCompat;->setTranslationY(Landroid/view/View;F)V
+    invoke-static {v0, v1}, Landroid/support/v4/view/ViewCompat;->b(Landroid/view/View;F)V
 
     .line 533
     return-void

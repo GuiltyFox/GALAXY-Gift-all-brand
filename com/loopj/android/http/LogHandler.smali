@@ -35,9 +35,6 @@
 
 .method private checkedWtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     .registers 4
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "msg"    # Ljava/lang/String;
-    .param p3, "t"    # Ljava/lang/Throwable;
     .annotation build Landroid/annotation/TargetApi;
         value = 0x8
     .end annotation
@@ -54,8 +51,6 @@
 # virtual methods
 .method public d(Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "msg"    # Ljava/lang/String;
 
     .prologue
     .line 87
@@ -69,9 +64,6 @@
 
 .method public d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     .registers 5
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "msg"    # Ljava/lang/String;
-    .param p3, "t"    # Ljava/lang/Throwable;
 
     .prologue
     .line 92
@@ -85,8 +77,6 @@
 
 .method public e(Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "msg"    # Ljava/lang/String;
 
     .prologue
     .line 117
@@ -100,9 +90,6 @@
 
 .method public e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     .registers 5
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "msg"    # Ljava/lang/String;
-    .param p3, "t"    # Ljava/lang/Throwable;
 
     .prologue
     .line 122
@@ -126,8 +113,6 @@
 
 .method public i(Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "msg"    # Ljava/lang/String;
 
     .prologue
     .line 97
@@ -141,9 +126,6 @@
 
 .method public i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     .registers 5
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "msg"    # Ljava/lang/String;
-    .param p3, "t"    # Ljava/lang/Throwable;
 
     .prologue
     .line 102
@@ -167,9 +149,6 @@
 
 .method public log(ILjava/lang/String;Ljava/lang/String;)V
     .registers 5
-    .param p1, "logLevel"    # I
-    .param p2, "tag"    # Ljava/lang/String;
-    .param p3, "msg"    # Ljava/lang/String;
 
     .prologue
     .line 38
@@ -183,10 +162,6 @@
 
 .method public logWithThrowable(ILjava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     .registers 7
-    .param p1, "logLevel"    # I
-    .param p2, "tag"    # Ljava/lang/String;
-    .param p3, "msg"    # Ljava/lang/String;
-    .param p4, "t"    # Ljava/lang/Throwable;
 
     .prologue
     .line 42
@@ -283,7 +258,6 @@
 
 .method public setLoggingEnabled(Z)V
     .registers 2
-    .param p1, "loggingEnabled"    # Z
 
     .prologue
     .line 19
@@ -295,7 +269,6 @@
 
 .method public setLoggingLevel(I)V
     .registers 2
-    .param p1, "loggingLevel"    # I
 
     .prologue
     .line 29
@@ -307,7 +280,6 @@
 
 .method public shouldLog(I)Z
     .registers 3
-    .param p1, "logLevel"    # I
 
     .prologue
     .line 34
@@ -328,8 +300,6 @@
 
 .method public v(Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "msg"    # Ljava/lang/String;
 
     .prologue
     .line 77
@@ -343,9 +313,6 @@
 
 .method public v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     .registers 5
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "msg"    # Ljava/lang/String;
-    .param p3, "t"    # Ljava/lang/Throwable;
 
     .prologue
     .line 82
@@ -359,8 +326,6 @@
 
 .method public w(Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "msg"    # Ljava/lang/String;
 
     .prologue
     .line 107
@@ -374,9 +339,6 @@
 
 .method public w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     .registers 5
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "msg"    # Ljava/lang/String;
-    .param p3, "t"    # Ljava/lang/Throwable;
 
     .prologue
     .line 112
@@ -390,8 +352,6 @@
 
 .method public wtf(Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "msg"    # Ljava/lang/String;
 
     .prologue
     .line 127
@@ -405,9 +365,6 @@
 
 .method public wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     .registers 5
-    .param p1, "tag"    # Ljava/lang/String;
-    .param p2, "msg"    # Ljava/lang/String;
-    .param p3, "t"    # Ljava/lang/Throwable;
 
     .prologue
     .line 132

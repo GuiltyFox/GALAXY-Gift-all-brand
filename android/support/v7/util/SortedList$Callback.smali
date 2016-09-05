@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/util/SortedList;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x409
-    name = "Callback"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T2:",
@@ -34,7 +25,6 @@
 
     .prologue
     .line 684
-    .local p0, "this":Landroid/support/v7/util/SortedList$Callback;, "Landroid/support/v7/util/SortedList$Callback<TT2;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

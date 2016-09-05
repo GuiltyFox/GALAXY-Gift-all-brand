@@ -4,43 +4,40 @@
 
 
 # static fields
-.field private static final TAG:Ljava/lang/String; = "ICUCompatIcs"
-
-.field private static sAddLikelySubtagsMethod:Ljava/lang/reflect/Method;
+.field private static a:Ljava/lang/reflect/Method;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .registers 5
 
     .prologue
     .line 34
     :try_start_0
-    const-string/jumbo v2, "libcore.icu.ICU"
+    const-string/jumbo v0, "libcore.icu.ICU"
 
-    invoke-static {v2}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
 
     move-result-object v0
 
     .line 35
-    .local v0, "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    const-string/jumbo v2, "addLikelySubtags"
+    const-string/jumbo v1, "addLikelySubtags"
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    new-array v3, v3, [Ljava/lang/Class;
+    new-array v2, v2, [Ljava/lang/Class;
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    const-class v5, Ljava/util/Locale;
+    const-class v4, Ljava/util/Locale;
 
-    aput-object v5, v3, v4
+    aput-object v4, v2, v3
 
-    invoke-virtual {v0, v2, v3}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    move-result-object v2
+    move-result-object v0
 
-    sput-object v2, Landroid/support/v4/text/ICUCompatApi23;->sAddLikelySubtagsMethod:Ljava/lang/reflect/Method;
+    sput-object v0, Landroid/support/v4/text/ICUCompatApi23;->a:Ljava/lang/reflect/Method;
     :try_end_18
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_19
 
@@ -49,94 +46,77 @@
 
     .line 37
     :catch_19
-    move-exception v1
+    move-exception v0
 
     .line 38
-    .local v1, "e":Ljava/lang/Exception;
-    new-instance v2, Ljava/lang/IllegalStateException;
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    invoke-direct {v2, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/Throwable;)V
 
-    throw v2
+    throw v1
 .end method
 
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 25
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static maximizeAndGetScript(Ljava/util/Locale;)Ljava/lang/String;
-    .registers 5
-    .param p0, "locale"    # Ljava/util/Locale;
+.method public static a(Ljava/util/Locale;)Ljava/lang/String;
+    .registers 4
 
     .prologue
     .line 45
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
     :try_start_1
-    new-array v0, v2, [Ljava/lang/Object;
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object p0, v0, v1
+
+    .line 46
+    sget-object v1, Landroid/support/v4/text/ICUCompatApi23;->a:Ljava/lang/reflect/Method;
 
     const/4 v2, 0x0
 
-    aput-object p0, v0, v2
+    invoke-virtual {v1, v2, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 46
-    .local v0, "args":[Ljava/lang/Object;
-    sget-object v2, Landroid/support/v4/text/ICUCompatApi23;->sAddLikelySubtagsMethod:Ljava/lang/reflect/Method;
+    move-result-object v0
 
-    const/4 v3, 0x0
+    check-cast v0, Ljava/util/Locale;
 
-    invoke-virtual {v2, v3, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/util/Locale;
-
-    invoke-virtual {v2}, Ljava/util/Locale;->getScript()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/util/Locale;->getScript()Ljava/lang/String;
     :try_end_12
     .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_1 .. :try_end_12} :catch_14
     .catch Ljava/lang/IllegalAccessException; {:try_start_1 .. :try_end_12} :catch_20
 
-    move-result-object v2
+    move-result-object v0
 
     .line 53
-    .end local v0    # "args":[Ljava/lang/Object;
     :goto_13
-    return-object v2
+    return-object v0
 
     .line 47
     :catch_14
-    move-exception v1
+    move-exception v0
 
     .line 48
-    .local v1, "e":Ljava/lang/reflect/InvocationTargetException;
-    const-string/jumbo v2, "ICUCompatIcs"
+    const-string/jumbo v1, "ICUCompatIcs"
 
-    invoke-static {v2, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 53
-    .end local v1    # "e":Ljava/lang/reflect/InvocationTargetException;
     :goto_1b
     invoke-virtual {p0}, Ljava/util/Locale;->getScript()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
     goto :goto_13
 
     .line 49
     :catch_20
-    move-exception v1
+    move-exception v0
 
     .line 50
-    .local v1, "e":Ljava/lang/IllegalAccessException;
-    const-string/jumbo v2, "ICUCompatIcs"
+    const-string/jumbo v1, "ICUCompatIcs"
 
-    invoke-static {v2, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_1b
 .end method

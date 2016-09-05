@@ -26,136 +26,112 @@
     return-void
 .end method
 
-.method static zza(Lcom/google/android/gms/common/stats/ConnectionEvent;Landroid/os/Parcel;I)V
+.method static a(Lcom/google/android/gms/common/stats/ConnectionEvent;Landroid/os/Parcel;I)V
     .registers 8
 
     const/4 v4, 0x0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzav(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;)I
 
     move-result v0
 
     const/4 v1, 0x1
 
-    iget v2, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->mVersionCode:I
+    iget v2, p0, Lcom/google/android/gms/common/stats/ConnectionEvent;->a:I
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;II)V
 
     const/4 v1, 0x2
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->getTimeMillis()J
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->a()J
 
     move-result-wide v2
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;IJ)V
 
     const/4 v1, 0x4
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzrp()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->c()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     const/4 v1, 0x5
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzrq()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->d()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     const/4 v1, 0x6
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzrr()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->e()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     const/4 v1, 0x7
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzrs()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->f()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     const/16 v1, 0x8
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzrt()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->g()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     const/16 v1, 0xa
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzrx()J
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->k()J
 
     move-result-wide v2
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;IJ)V
 
     const/16 v1, 0xb
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzrw()J
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->j()J
 
     move-result-wide v2
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;IJ)V
 
     const/16 v1, 0xc
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->getEventType()I
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->b()I
 
     move-result v2
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;II)V
 
     const/16 v1, 0xd
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->zzru()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/ConnectionEvent;->h()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzI(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 3
-    .param p1, "x0"    # Landroid/os/Parcel;
-
-    .prologue
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/stats/zza;->zzaF(Landroid/os/Parcel;)Lcom/google/android/gms/common/stats/ConnectionEvent;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic newArray(I)[Ljava/lang/Object;
-    .registers 3
-    .param p1, "x0"    # I
-
-    .prologue
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/stats/zza;->zzcn(I)[Lcom/google/android/gms/common/stats/ConnectionEvent;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public zzaF(Landroid/os/Parcel;)Lcom/google/android/gms/common/stats/ConnectionEvent;
+.method public a(Landroid/os/Parcel;)Lcom/google/android/gms/common/stats/ConnectionEvent;
     .registers 21
 
-    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzau(Landroid/os/Parcel;)I
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->b(Landroid/os/Parcel;)I
 
     move-result v2
 
@@ -188,11 +164,11 @@
 
     if-ge v3, v2, :cond_76
 
-    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzat(Landroid/os/Parcel;)I
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->a(Landroid/os/Parcel;)I
 
     move-result v3
 
-    invoke-static {v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzcc(I)I
+    invoke-static {v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->a(I)I
 
     move-result v18
 
@@ -201,14 +177,14 @@
     :pswitch_23
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzb(Landroid/os/Parcel;I)V
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->b(Landroid/os/Parcel;I)V
 
     goto :goto_12
 
     :pswitch_29
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzg(Landroid/os/Parcel;I)I
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->c(Landroid/os/Parcel;I)I
 
     move-result v4
 
@@ -217,7 +193,7 @@
     :pswitch_30
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzi(Landroid/os/Parcel;I)J
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->d(Landroid/os/Parcel;I)J
 
     move-result-wide v5
 
@@ -226,7 +202,7 @@
     :pswitch_37
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzp(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->f(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v8
 
@@ -235,7 +211,7 @@
     :pswitch_3e
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzp(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->f(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v9
 
@@ -244,7 +220,7 @@
     :pswitch_45
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzp(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->f(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v10
 
@@ -253,7 +229,7 @@
     :pswitch_4c
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzp(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->f(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v11
 
@@ -262,7 +238,7 @@
     :pswitch_53
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzp(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->f(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v12
 
@@ -271,7 +247,7 @@
     :pswitch_5a
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzi(Landroid/os/Parcel;I)J
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->d(Landroid/os/Parcel;I)J
 
     move-result-wide v14
 
@@ -280,7 +256,7 @@
     :pswitch_61
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzi(Landroid/os/Parcel;I)J
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->d(Landroid/os/Parcel;I)J
 
     move-result-wide v16
 
@@ -289,7 +265,7 @@
     :pswitch_68
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzg(Landroid/os/Parcel;I)I
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->c(Landroid/os/Parcel;I)I
 
     move-result v7
 
@@ -298,7 +274,7 @@
     :pswitch_6f
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzp(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->f(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v13
 
@@ -362,10 +338,30 @@
     .end packed-switch
 .end method
 
-.method public zzcn(I)[Lcom/google/android/gms/common/stats/ConnectionEvent;
+.method public a(I)[Lcom/google/android/gms/common/stats/ConnectionEvent;
     .registers 3
 
     new-array v0, p1, [Lcom/google/android/gms/common/stats/ConnectionEvent;
+
+    return-object v0
+.end method
+
+.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .registers 3
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/stats/zza;->a(Landroid/os/Parcel;)Lcom/google/android/gms/common/stats/ConnectionEvent;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic newArray(I)[Ljava/lang/Object;
+    .registers 3
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/stats/zza;->a(I)[Lcom/google/android/gms/common/stats/ConnectionEvent;
+
+    move-result-object v0
 
     return-object v0
 .end method

@@ -153,12 +153,11 @@
 
 .method public constructor <init>(Landroid/view/View;)V
     .registers 4
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     const/16 v1, 0x10
 
-    const/high16 v0, 0x41700000
+    const/high16 v0, 0x41700000    # 15.0f
 
     .line 105
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -213,279 +212,166 @@
 .end method
 
 .method private static blendColors(IIF)I
-    .registers 12
-    .param p0, "color1"    # I
-    .param p1, "color2"    # I
-    .param p2, "ratio"    # F
+    .registers 8
 
     .prologue
     .line 632
-    const/high16 v5, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    sub-float v3, v5, p2
+    sub-float/2addr v0, p2
 
     .line 633
-    .local v3, "inverseRatio":F
     invoke-static {p0}, Landroid/graphics/Color;->alpha(I)I
 
-    move-result v5
+    move-result v1
 
-    int-to-float v5, v5
+    int-to-float v1, v1
 
-    mul-float/2addr v5, v3
+    mul-float/2addr v1, v0
 
     invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
 
-    move-result v6
+    move-result v2
 
-    int-to-float v6, v6
+    int-to-float v2, v2
 
-    mul-float/2addr v6, p2
+    mul-float/2addr v2, p2
 
-    add-float v0, v5, v6
+    add-float/2addr v1, v2
 
     .line 634
-    .local v0, "a":F
     invoke-static {p0}, Landroid/graphics/Color;->red(I)I
-
-    move-result v5
-
-    int-to-float v5, v5
-
-    mul-float/2addr v5, v3
-
-    invoke-static {p1}, Landroid/graphics/Color;->red(I)I
-
-    move-result v6
-
-    int-to-float v6, v6
-
-    mul-float/2addr v6, p2
-
-    add-float v4, v5, v6
-
-    .line 635
-    .local v4, "r":F
-    invoke-static {p0}, Landroid/graphics/Color;->green(I)I
-
-    move-result v5
-
-    int-to-float v5, v5
-
-    mul-float/2addr v5, v3
-
-    invoke-static {p1}, Landroid/graphics/Color;->green(I)I
-
-    move-result v6
-
-    int-to-float v6, v6
-
-    mul-float/2addr v6, p2
-
-    add-float v2, v5, v6
-
-    .line 636
-    .local v2, "g":F
-    invoke-static {p0}, Landroid/graphics/Color;->blue(I)I
-
-    move-result v5
-
-    int-to-float v5, v5
-
-    mul-float/2addr v5, v3
-
-    invoke-static {p1}, Landroid/graphics/Color;->blue(I)I
-
-    move-result v6
-
-    int-to-float v6, v6
-
-    mul-float/2addr v6, p2
-
-    add-float v1, v5, v6
-
-    .line 637
-    .local v1, "b":F
-    float-to-int v5, v0
-
-    float-to-int v6, v4
-
-    float-to-int v7, v2
-
-    float-to-int v8, v1
-
-    invoke-static {v5, v6, v7, v8}, Landroid/graphics/Color;->argb(IIII)I
-
-    move-result v5
-
-    return v5
-.end method
-
-.method private calculateBaseOffsets()V
-    .registers 14
-
-    .prologue
-    const/4 v8, 0x1
-
-    const/4 v6, 0x0
-
-    const/4 v9, 0x0
-
-    const/high16 v12, 0x40000000
-
-    .line 343
-    iget v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCurrentTextSize:F
-
-    .line 346
-    .local v1, "currentTextSize":F
-    iget v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedTextSize:F
-
-    invoke-direct {p0, v7}, Landroid/support/design/widget/CollapsingTextHelper;->calculateUsingTextSize(F)V
-
-    .line 347
-    iget-object v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
-
-    if-eqz v7, :cond_b7
-
-    iget-object v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
-
-    iget-object v10, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
-
-    iget-object v11, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
-
-    invoke-interface {v11}, Ljava/lang/CharSequence;->length()I
-
-    move-result v11
-
-    invoke-virtual {v7, v10, v9, v11}, Landroid/text/TextPaint;->measureText(Ljava/lang/CharSequence;II)F
-
-    move-result v5
-
-    .line 349
-    .local v5, "width":F
-    :goto_1e
-    iget v10, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedTextGravity:I
-
-    iget-boolean v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mIsRtl:Z
-
-    if-eqz v7, :cond_ba
-
-    move v7, v8
-
-    :goto_25
-    invoke-static {v10, v7}, Landroid/support/v4/view/GravityCompat;->getAbsoluteGravity(II)I
-
-    move-result v0
-
-    .line 351
-    .local v0, "collapsedAbsGravity":I
-    and-int/lit8 v7, v0, 0x70
-
-    sparse-switch v7, :sswitch_data_11e
-
-    .line 360
-    iget-object v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v7}, Landroid/text/TextPaint;->descent()F
-
-    move-result v7
-
-    iget-object v10, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v10}, Landroid/text/TextPaint;->ascent()F
-
-    move-result v10
-
-    sub-float v3, v7, v10
-
-    .line 361
-    .local v3, "textHeight":F
-    div-float v7, v3, v12
-
-    iget-object v10, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v10}, Landroid/text/TextPaint;->descent()F
-
-    move-result v10
-
-    sub-float v4, v7, v10
-
-    .line 362
-    .local v4, "textOffset":F
-    iget-object v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedBounds:Landroid/graphics/Rect;
-
-    invoke-virtual {v7}, Landroid/graphics/Rect;->centerY()I
-
-    move-result v7
-
-    int-to-float v7, v7
-
-    add-float/2addr v7, v4
-
-    iput v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedDrawY:F
-
-    .line 365
-    .end local v3    # "textHeight":F
-    .end local v4    # "textOffset":F
-    :goto_50
-    and-int/lit8 v7, v0, 0x7
-
-    sparse-switch v7, :sswitch_data_128
-
-    .line 374
-    iget-object v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedBounds:Landroid/graphics/Rect;
-
-    iget v7, v7, Landroid/graphics/Rect;->left:I
-
-    int-to-float v7, v7
-
-    iput v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedDrawX:F
-
-    .line 378
-    :goto_5c
-    iget v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTextSize:F
-
-    invoke-direct {p0, v7}, Landroid/support/design/widget/CollapsingTextHelper;->calculateUsingTextSize(F)V
-
-    .line 379
-    iget-object v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
-
-    if-eqz v7, :cond_ed
-
-    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
-
-    iget-object v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
-
-    iget-object v10, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
-
-    invoke-interface {v10}, Ljava/lang/CharSequence;->length()I
-
-    move-result v10
-
-    invoke-virtual {v6, v7, v9, v10}, Landroid/text/TextPaint;->measureText(Ljava/lang/CharSequence;II)F
-
-    move-result v5
-
-    .line 381
-    :goto_73
-    iget v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTextGravity:I
-
-    iget-boolean v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mIsRtl:Z
-
-    if-eqz v7, :cond_ef
-
-    :goto_79
-    invoke-static {v6, v8}, Landroid/support/v4/view/GravityCompat;->getAbsoluteGravity(II)I
 
     move-result v2
 
-    .line 383
-    .local v2, "expandedAbsGravity":I
+    int-to-float v2, v2
+
+    mul-float/2addr v2, v0
+
+    invoke-static {p1}, Landroid/graphics/Color;->red(I)I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    mul-float/2addr v3, p2
+
+    add-float/2addr v2, v3
+
+    .line 635
+    invoke-static {p0}, Landroid/graphics/Color;->green(I)I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    mul-float/2addr v3, v0
+
+    invoke-static {p1}, Landroid/graphics/Color;->green(I)I
+
+    move-result v4
+
+    int-to-float v4, v4
+
+    mul-float/2addr v4, p2
+
+    add-float/2addr v3, v4
+
+    .line 636
+    invoke-static {p0}, Landroid/graphics/Color;->blue(I)I
+
+    move-result v4
+
+    int-to-float v4, v4
+
+    mul-float/2addr v0, v4
+
+    invoke-static {p1}, Landroid/graphics/Color;->blue(I)I
+
+    move-result v4
+
+    int-to-float v4, v4
+
+    mul-float/2addr v4, p2
+
+    add-float/2addr v0, v4
+
+    .line 637
+    float-to-int v1, v1
+
+    float-to-int v2, v2
+
+    float-to-int v3, v3
+
+    float-to-int v0, v0
+
+    invoke-static {v1, v2, v3, v0}, Landroid/graphics/Color;->argb(IIII)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method private calculateBaseOffsets()V
+    .registers 10
+
+    .prologue
+    const/4 v3, 0x1
+
+    const/4 v1, 0x0
+
+    const/4 v4, 0x0
+
+    const/high16 v8, 0x40000000    # 2.0f
+
+    .line 343
+    iget v5, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCurrentTextSize:F
+
+    .line 346
+    iget v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedTextSize:F
+
+    invoke-direct {p0, v0}, Landroid/support/design/widget/CollapsingTextHelper;->calculateUsingTextSize(F)V
+
+    .line 347
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
+
+    if-eqz v0, :cond_b1
+
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
+
+    iget-object v2, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
+
+    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
+
+    invoke-interface {v6}, Ljava/lang/CharSequence;->length()I
+
+    move-result v6
+
+    invoke-virtual {v0, v2, v4, v6}, Landroid/text/TextPaint;->measureText(Ljava/lang/CharSequence;II)F
+
+    move-result v0
+
+    .line 349
+    :goto_1e
+    iget v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedTextGravity:I
+
+    iget-boolean v2, p0, Landroid/support/design/widget/CollapsingTextHelper;->mIsRtl:Z
+
+    if-eqz v2, :cond_b4
+
+    move v2, v3
+
+    :goto_25
+    invoke-static {v6, v2}, Landroid/support/v4/view/GravityCompat;->a(II)I
+
+    move-result v2
+
+    .line 351
     and-int/lit8 v6, v2, 0x70
 
-    sparse-switch v6, :sswitch_data_132
+    sparse-switch v6, :sswitch_data_116
 
-    .line 392
+    .line 360
     iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v6}, Landroid/text/TextPaint;->descent()F
@@ -498,11 +384,10 @@
 
     move-result v7
 
-    sub-float v3, v6, v7
+    sub-float/2addr v6, v7
 
-    .line 393
-    .restart local v3    # "textHeight":F
-    div-float v6, v3, v12
+    .line 361
+    div-float/2addr v6, v8
 
     iget-object v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
 
@@ -510,158 +395,170 @@
 
     move-result v7
 
-    sub-float v4, v6, v7
+    sub-float/2addr v6, v7
 
-    .line 394
-    .restart local v4    # "textOffset":F
-    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedBounds:Landroid/graphics/Rect;
-
-    invoke-virtual {v6}, Landroid/graphics/Rect;->centerY()I
-
-    move-result v6
-
-    int-to-float v6, v6
-
-    add-float/2addr v6, v4
-
-    iput v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedDrawY:F
-
-    .line 397
-    .end local v3    # "textHeight":F
-    .end local v4    # "textOffset":F
-    :goto_a4
-    and-int/lit8 v6, v2, 0x7
-
-    sparse-switch v6, :sswitch_data_13c
-
-    .line 406
-    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedBounds:Landroid/graphics/Rect;
-
-    iget v6, v6, Landroid/graphics/Rect;->left:I
-
-    int-to-float v6, v6
-
-    iput v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedDrawX:F
-
-    .line 411
-    :goto_b0
-    invoke-direct {p0}, Landroid/support/design/widget/CollapsingTextHelper;->clearTexture()V
-
-    .line 413
-    invoke-direct {p0, v1}, Landroid/support/design/widget/CollapsingTextHelper;->setInterpolatedTextSize(F)V
-
-    .line 414
-    return-void
-
-    .end local v0    # "collapsedAbsGravity":I
-    .end local v2    # "expandedAbsGravity":I
-    .end local v5    # "width":F
-    :cond_b7
-    move v5, v6
-
-    .line 347
-    goto/16 :goto_1e
-
-    .restart local v5    # "width":F
-    :cond_ba
-    move v7, v9
-
-    .line 349
-    goto/16 :goto_25
-
-    .line 353
-    .restart local v0    # "collapsedAbsGravity":I
-    :sswitch_bd
+    .line 362
     iget-object v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedBounds:Landroid/graphics/Rect;
 
-    iget v7, v7, Landroid/graphics/Rect;->bottom:I
-
-    int-to-float v7, v7
-
-    iput v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedDrawY:F
-
-    goto :goto_50
-
-    .line 356
-    :sswitch_c5
-    iget-object v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedBounds:Landroid/graphics/Rect;
-
-    iget v7, v7, Landroid/graphics/Rect;->top:I
-
-    int-to-float v7, v7
-
-    iget-object v10, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
-
-    invoke-virtual {v10}, Landroid/text/TextPaint;->ascent()F
-
-    move-result v10
-
-    sub-float/2addr v7, v10
-
-    iput v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedDrawY:F
-
-    goto/16 :goto_50
-
-    .line 367
-    :sswitch_d5
-    iget-object v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedBounds:Landroid/graphics/Rect;
-
-    invoke-virtual {v7}, Landroid/graphics/Rect;->centerX()I
+    invoke-virtual {v7}, Landroid/graphics/Rect;->centerY()I
 
     move-result v7
 
     int-to-float v7, v7
 
-    div-float v10, v5, v12
+    add-float/2addr v6, v7
 
-    sub-float/2addr v7, v10
+    iput v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedDrawY:F
 
-    iput v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedDrawX:F
+    .line 365
+    :goto_4d
+    and-int/lit8 v2, v2, 0x7
 
-    goto/16 :goto_5c
+    sparse-switch v2, :sswitch_data_120
 
-    .line 370
-    :sswitch_e3
-    iget-object v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedBounds:Landroid/graphics/Rect;
+    .line 374
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedBounds:Landroid/graphics/Rect;
 
-    iget v7, v7, Landroid/graphics/Rect;->right:I
+    iget v0, v0, Landroid/graphics/Rect;->left:I
 
-    int-to-float v7, v7
+    int-to-float v0, v0
 
-    sub-float/2addr v7, v5
+    iput v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedDrawX:F
 
-    iput v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedDrawX:F
+    .line 378
+    :goto_59
+    iget v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTextSize:F
 
-    goto/16 :goto_5c
-
-    :cond_ed
-    move v5, v6
+    invoke-direct {p0, v0}, Landroid/support/design/widget/CollapsingTextHelper;->calculateUsingTextSize(F)V
 
     .line 379
-    goto :goto_73
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
 
-    :cond_ef
-    move v8, v9
+    if-eqz v0, :cond_70
+
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
+
+    iget-object v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
+
+    iget-object v2, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
+
+    invoke-interface {v2}, Ljava/lang/CharSequence;->length()I
+
+    move-result v2
+
+    invoke-virtual {v0, v1, v4, v2}, Landroid/text/TextPaint;->measureText(Ljava/lang/CharSequence;II)F
+
+    move-result v1
 
     .line 381
-    goto :goto_79
+    :cond_70
+    iget v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTextGravity:I
 
-    .line 385
-    .restart local v2    # "expandedAbsGravity":I
-    :sswitch_f1
-    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedBounds:Landroid/graphics/Rect;
+    iget-boolean v2, p0, Landroid/support/design/widget/CollapsingTextHelper;->mIsRtl:Z
+
+    if-eqz v2, :cond_e7
+
+    :goto_76
+    invoke-static {v0, v3}, Landroid/support/v4/view/GravityCompat;->a(II)I
+
+    move-result v0
+
+    .line 383
+    and-int/lit8 v2, v0, 0x70
+
+    sparse-switch v2, :sswitch_data_12a
+
+    .line 392
+    iget-object v2, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
+
+    invoke-virtual {v2}, Landroid/text/TextPaint;->descent()F
+
+    move-result v2
+
+    iget-object v3, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
+
+    invoke-virtual {v3}, Landroid/text/TextPaint;->ascent()F
+
+    move-result v3
+
+    sub-float/2addr v2, v3
+
+    .line 393
+    div-float/2addr v2, v8
+
+    iget-object v3, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
+
+    invoke-virtual {v3}, Landroid/text/TextPaint;->descent()F
+
+    move-result v3
+
+    sub-float/2addr v2, v3
+
+    .line 394
+    iget-object v3, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v3}, Landroid/graphics/Rect;->centerY()I
+
+    move-result v3
+
+    int-to-float v3, v3
+
+    add-float/2addr v2, v3
+
+    iput v2, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedDrawY:F
+
+    .line 397
+    :goto_9e
+    and-int/lit8 v0, v0, 0x7
+
+    sparse-switch v0, :sswitch_data_134
+
+    .line 406
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedBounds:Landroid/graphics/Rect;
+
+    iget v0, v0, Landroid/graphics/Rect;->left:I
+
+    int-to-float v0, v0
+
+    iput v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedDrawX:F
+
+    .line 411
+    :goto_aa
+    invoke-direct {p0}, Landroid/support/design/widget/CollapsingTextHelper;->clearTexture()V
+
+    .line 413
+    invoke-direct {p0, v5}, Landroid/support/design/widget/CollapsingTextHelper;->setInterpolatedTextSize(F)V
+
+    .line 414
+    return-void
+
+    :cond_b1
+    move v0, v1
+
+    .line 347
+    goto/16 :goto_1e
+
+    :cond_b4
+    move v2, v4
+
+    .line 349
+    goto/16 :goto_25
+
+    .line 353
+    :sswitch_b7
+    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedBounds:Landroid/graphics/Rect;
 
     iget v6, v6, Landroid/graphics/Rect;->bottom:I
 
     int-to-float v6, v6
 
-    iput v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedDrawY:F
+    iput v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedDrawY:F
 
-    goto :goto_a4
+    goto :goto_4d
 
-    .line 388
-    :sswitch_f9
-    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedBounds:Landroid/graphics/Rect;
+    .line 356
+    :sswitch_bf
+    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedBounds:Landroid/graphics/Rect;
 
     iget v6, v6, Landroid/graphics/Rect;->top:I
 
@@ -675,68 +572,140 @@
 
     sub-float/2addr v6, v7
 
-    iput v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedDrawY:F
+    iput v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedDrawY:F
 
-    goto :goto_a4
+    goto :goto_4d
+
+    .line 367
+    :sswitch_ce
+    iget-object v2, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedBounds:Landroid/graphics/Rect;
+
+    invoke-virtual {v2}, Landroid/graphics/Rect;->centerX()I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    div-float/2addr v0, v8
+
+    sub-float v0, v2, v0
+
+    iput v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedDrawX:F
+
+    goto/16 :goto_59
+
+    .line 370
+    :sswitch_dc
+    iget-object v2, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedBounds:Landroid/graphics/Rect;
+
+    iget v2, v2, Landroid/graphics/Rect;->right:I
+
+    int-to-float v2, v2
+
+    sub-float v0, v2, v0
+
+    iput v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedDrawX:F
+
+    goto/16 :goto_59
+
+    :cond_e7
+    move v3, v4
+
+    .line 381
+    goto :goto_76
+
+    .line 385
+    :sswitch_e9
+    iget-object v2, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedBounds:Landroid/graphics/Rect;
+
+    iget v2, v2, Landroid/graphics/Rect;->bottom:I
+
+    int-to-float v2, v2
+
+    iput v2, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedDrawY:F
+
+    goto :goto_9e
+
+    .line 388
+    :sswitch_f1
+    iget-object v2, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedBounds:Landroid/graphics/Rect;
+
+    iget v2, v2, Landroid/graphics/Rect;->top:I
+
+    int-to-float v2, v2
+
+    iget-object v3, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
+
+    invoke-virtual {v3}, Landroid/text/TextPaint;->ascent()F
+
+    move-result v3
+
+    sub-float/2addr v2, v3
+
+    iput v2, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedDrawY:F
+
+    goto :goto_9e
 
     .line 399
-    :sswitch_108
-    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedBounds:Landroid/graphics/Rect;
+    :sswitch_100
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedBounds:Landroid/graphics/Rect;
 
-    invoke-virtual {v6}, Landroid/graphics/Rect;->centerX()I
+    invoke-virtual {v0}, Landroid/graphics/Rect;->centerX()I
 
-    move-result v6
+    move-result v0
 
-    int-to-float v6, v6
+    int-to-float v0, v0
 
-    div-float v7, v5, v12
+    div-float/2addr v1, v8
 
-    sub-float/2addr v6, v7
+    sub-float/2addr v0, v1
 
-    iput v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedDrawX:F
+    iput v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedDrawX:F
 
-    goto :goto_b0
+    goto :goto_aa
 
     .line 402
-    :sswitch_115
-    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedBounds:Landroid/graphics/Rect;
+    :sswitch_10c
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedBounds:Landroid/graphics/Rect;
 
-    iget v6, v6, Landroid/graphics/Rect;->right:I
+    iget v0, v0, Landroid/graphics/Rect;->right:I
 
-    int-to-float v6, v6
+    int-to-float v0, v0
 
-    sub-float/2addr v6, v5
+    sub-float/2addr v0, v1
 
-    iput v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedDrawX:F
+    iput v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedDrawX:F
 
-    goto :goto_b0
+    goto :goto_aa
 
     .line 351
-    :sswitch_data_11e
+    nop
+
+    :sswitch_data_116
     .sparse-switch
-        0x30 -> :sswitch_c5
-        0x50 -> :sswitch_bd
+        0x30 -> :sswitch_bf
+        0x50 -> :sswitch_b7
     .end sparse-switch
 
     .line 365
-    :sswitch_data_128
+    :sswitch_data_120
     .sparse-switch
-        0x1 -> :sswitch_d5
-        0x5 -> :sswitch_e3
+        0x1 -> :sswitch_ce
+        0x5 -> :sswitch_dc
     .end sparse-switch
 
     .line 383
-    :sswitch_data_132
+    :sswitch_data_12a
     .sparse-switch
-        0x30 -> :sswitch_f9
-        0x50 -> :sswitch_f1
+        0x30 -> :sswitch_f1
+        0x50 -> :sswitch_e9
     .end sparse-switch
 
     .line 397
-    :sswitch_data_13c
+    :sswitch_data_134
     .sparse-switch
-        0x1 -> :sswitch_108
-        0x5 -> :sswitch_115
+        0x1 -> :sswitch_100
+        0x5 -> :sswitch_10c
     .end sparse-switch
 .end method
 
@@ -754,59 +723,54 @@
 .end method
 
 .method private calculateIsRtl(Ljava/lang/CharSequence;)Z
-    .registers 6
-    .param p1, "text"    # Ljava/lang/CharSequence;
+    .registers 5
 
     .prologue
     const/4 v0, 0x1
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 472
-    iget-object v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mView:Landroid/view/View;
+    iget-object v2, p0, Landroid/support/design/widget/CollapsingTextHelper;->mView:Landroid/view/View;
 
-    invoke-static {v1}, Landroid/support/v4/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+    invoke-static {v2}, Landroid/support/v4/view/ViewCompat;->h(Landroid/view/View;)I
 
-    move-result v1
+    move-result v2
 
-    if-ne v1, v0, :cond_17
+    if-ne v2, v0, :cond_17
 
     .line 474
-    .local v0, "defaultIsRtl":Z
     :goto_a
     if-eqz v0, :cond_19
 
-    sget-object v1, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->FIRSTSTRONG_RTL:Landroid/support/v4/text/TextDirectionHeuristicCompat;
+    sget-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->d:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
     :goto_e
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
-    move-result v3
+    move-result v2
 
-    invoke-interface {v1, p1, v2, v3}, Landroid/support/v4/text/TextDirectionHeuristicCompat;->isRtl(Ljava/lang/CharSequence;II)Z
+    invoke-interface {v0, p1, v1, v2}, Landroid/support/v4/text/TextDirectionHeuristicCompat;->a(Ljava/lang/CharSequence;II)Z
 
-    move-result v1
+    move-result v0
 
-    return v1
+    return v0
 
-    .end local v0    # "defaultIsRtl":Z
     :cond_17
-    move v0, v2
+    move v0, v1
 
     .line 472
     goto :goto_a
 
     .line 474
-    .restart local v0    # "defaultIsRtl":Z
     :cond_19
-    sget-object v1, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->FIRSTSTRONG_LTR:Landroid/support/v4/text/TextDirectionHeuristicCompat;
+    sget-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->c:Landroid/support/v4/text/TextDirectionHeuristicCompat;
 
     goto :goto_e
 .end method
 
 .method private calculateOffsets(F)V
     .registers 8
-    .param p1, "fraction"    # F
 
     .prologue
     const/4 v5, 0x0
@@ -914,7 +878,7 @@
     .line 339
     iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mView:Landroid/view/View;
 
-    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->postInvalidateOnAnimation(Landroid/view/View;)V
+    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->d(Landroid/view/View;)V
 
     .line 340
     return-void
@@ -931,243 +895,245 @@
 .end method
 
 .method private calculateUsingTextSize(F)V
-    .registers 11
-    .param p1, "textSize"    # F
+    .registers 9
 
     .prologue
-    const/4 v5, 0x1
+    const/high16 v6, 0x3f800000    # 1.0f
 
-    const/4 v4, 0x0
+    const/4 v1, 0x1
 
-    const/high16 v8, 0x3f800000
+    const/4 v2, 0x0
 
     .line 494
-    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mText:Ljava/lang/CharSequence;
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mText:Ljava/lang/CharSequence;
 
-    if-nez v6, :cond_9
+    if-nez v0, :cond_9
 
     .line 545
     :cond_8
     :goto_8
     return-void
 
-    .line 498
-    :cond_9
-    const/4 v3, 0x0
-
     .line 500
-    .local v3, "updateDrawText":Z
-    iget v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedTextSize:F
+    :cond_9
+    iget v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedTextSize:F
 
-    invoke-static {p1, v6}, Landroid/support/design/widget/CollapsingTextHelper;->isClose(FF)Z
+    invoke-static {p1, v0}, Landroid/support/design/widget/CollapsingTextHelper;->isClose(FF)Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_7a
+    if-eqz v0, :cond_7b
 
     .line 501
-    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedBounds:Landroid/graphics/Rect;
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedBounds:Landroid/graphics/Rect;
 
-    invoke-virtual {v6}, Landroid/graphics/Rect;->width()I
+    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
 
-    move-result v6
+    move-result v0
 
-    int-to-float v0, v6
+    int-to-float v3, v0
 
     .line 502
-    .local v0, "availableWidth":F
-    iget v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedTextSize:F
+    iget v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedTextSize:F
 
     .line 503
-    .local v1, "newTextSize":F
-    iput v8, p0, Landroid/support/design/widget/CollapsingTextHelper;->mScale:F
+    iput v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mScale:F
 
     .line 504
-    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCurrentTypeface:Landroid/graphics/Typeface;
+    iget-object v4, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCurrentTypeface:Landroid/graphics/Typeface;
 
-    iget-object v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedTypeface:Landroid/graphics/Typeface;
+    iget-object v5, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedTypeface:Landroid/graphics/Typeface;
 
-    if-eq v6, v7, :cond_28
+    if-eq v4, v5, :cond_a7
 
     .line 505
-    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedTypeface:Landroid/graphics/Typeface;
+    iget-object v4, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedTypeface:Landroid/graphics/Typeface;
 
-    iput-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCurrentTypeface:Landroid/graphics/Typeface;
+    iput-object v4, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCurrentTypeface:Landroid/graphics/Typeface;
 
-    .line 506
-    const/4 v3, 0x1
+    move v4, v3
+
+    move v3, v0
+
+    move v0, v1
 
     .line 525
-    :cond_28
-    :goto_28
-    const/4 v6, 0x0
+    :goto_29
+    const/4 v5, 0x0
 
-    cmpl-float v6, v0, v6
+    cmpl-float v5, v4, v5
 
-    if-lez v6, :cond_3e
+    if-lez v5, :cond_3f
 
     .line 526
-    iget v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCurrentTextSize:F
+    iget v5, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCurrentTextSize:F
 
-    cmpl-float v6, v6, v1
+    cmpl-float v5, v5, v3
 
-    if-nez v6, :cond_39
+    if-nez v5, :cond_3a
 
-    iget-boolean v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mBoundsChanged:Z
+    iget-boolean v5, p0, Landroid/support/design/widget/CollapsingTextHelper;->mBoundsChanged:Z
 
-    if-nez v6, :cond_39
+    if-nez v5, :cond_3a
 
-    if-eqz v3, :cond_a0
+    if-eqz v0, :cond_a1
 
-    :cond_39
-    move v3, v5
+    :cond_3a
+    move v0, v1
 
     .line 527
-    :goto_3a
-    iput v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCurrentTextSize:F
+    :goto_3b
+    iput v3, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCurrentTextSize:F
 
     .line 528
-    iput-boolean v4, p0, Landroid/support/design/widget/CollapsingTextHelper;->mBoundsChanged:Z
+    iput-boolean v2, p0, Landroid/support/design/widget/CollapsingTextHelper;->mBoundsChanged:Z
 
     .line 531
-    :cond_3e
-    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
+    :cond_3f
+    iget-object v3, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
 
-    if-eqz v6, :cond_44
+    if-eqz v3, :cond_45
 
-    if-eqz v3, :cond_8
+    if-eqz v0, :cond_8
 
     .line 532
-    :cond_44
-    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
+    :cond_45
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
 
-    iget v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCurrentTextSize:F
+    iget v3, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCurrentTextSize:F
 
-    invoke-virtual {v6, v7}, Landroid/text/TextPaint;->setTextSize(F)V
+    invoke-virtual {v0, v3}, Landroid/text/TextPaint;->setTextSize(F)V
 
     .line 533
-    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
 
-    iget-object v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCurrentTypeface:Landroid/graphics/Typeface;
+    iget-object v3, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCurrentTypeface:Landroid/graphics/Typeface;
 
-    invoke-virtual {v6, v7}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
+    invoke-virtual {v0, v3}, Landroid/text/TextPaint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
     .line 535
-    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
 
-    iget v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mScale:F
+    iget v3, p0, Landroid/support/design/widget/CollapsingTextHelper;->mScale:F
 
-    cmpl-float v7, v7, v8
+    cmpl-float v3, v3, v6
 
-    if-eqz v7, :cond_a2
+    if-eqz v3, :cond_a3
 
-    :goto_5a
-    invoke-virtual {v6, v5}, Landroid/text/TextPaint;->setLinearText(Z)V
+    :goto_5b
+    invoke-virtual {v0, v1}, Landroid/text/TextPaint;->setLinearText(Z)V
 
     .line 538
-    iget-object v4, p0, Landroid/support/design/widget/CollapsingTextHelper;->mText:Ljava/lang/CharSequence;
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mText:Ljava/lang/CharSequence;
 
-    iget-object v5, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
+    iget-object v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
 
-    sget-object v6, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
+    sget-object v2, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
-    invoke-static {v4, v5, v0, v6}, Landroid/text/TextUtils;->ellipsize(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLandroid/text/TextUtils$TruncateAt;)Ljava/lang/CharSequence;
+    invoke-static {v0, v1, v4, v2}, Landroid/text/TextUtils;->ellipsize(Ljava/lang/CharSequence;Landroid/text/TextPaint;FLandroid/text/TextUtils$TruncateAt;)Ljava/lang/CharSequence;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 540
-    .local v2, "title":Ljava/lang/CharSequence;
-    iget-object v4, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
+    iget-object v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
 
-    invoke-static {v2, v4}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    invoke-static {v0, v1}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
-    move-result v4
+    move-result v1
 
-    if-nez v4, :cond_8
+    if-nez v1, :cond_8
 
     .line 541
-    iput-object v2, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
+    iput-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
 
     .line 542
-    iget-object v4, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
 
-    invoke-direct {p0, v4}, Landroid/support/design/widget/CollapsingTextHelper;->calculateIsRtl(Ljava/lang/CharSequence;)Z
+    invoke-direct {p0, v0}, Landroid/support/design/widget/CollapsingTextHelper;->calculateIsRtl(Ljava/lang/CharSequence;)Z
 
-    move-result v4
+    move-result v0
 
-    iput-boolean v4, p0, Landroid/support/design/widget/CollapsingTextHelper;->mIsRtl:Z
+    iput-boolean v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mIsRtl:Z
 
     goto :goto_8
 
     .line 509
-    .end local v0    # "availableWidth":F
-    .end local v1    # "newTextSize":F
-    .end local v2    # "title":Ljava/lang/CharSequence;
-    :cond_7a
-    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedBounds:Landroid/graphics/Rect;
+    :cond_7b
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedBounds:Landroid/graphics/Rect;
 
-    invoke-virtual {v6}, Landroid/graphics/Rect;->width()I
+    invoke-virtual {v0}, Landroid/graphics/Rect;->width()I
 
-    move-result v6
+    move-result v0
 
-    int-to-float v0, v6
+    int-to-float v4, v0
 
     .line 510
-    .restart local v0    # "availableWidth":F
-    iget v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTextSize:F
+    iget v3, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTextSize:F
 
     .line 511
-    .restart local v1    # "newTextSize":F
-    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCurrentTypeface:Landroid/graphics/Typeface;
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCurrentTypeface:Landroid/graphics/Typeface;
 
-    iget-object v7, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTypeface:Landroid/graphics/Typeface;
+    iget-object v5, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTypeface:Landroid/graphics/Typeface;
 
-    if-eq v6, v7, :cond_8e
+    if-eq v0, v5, :cond_a5
 
     .line 512
-    iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTypeface:Landroid/graphics/Typeface;
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTypeface:Landroid/graphics/Typeface;
 
-    iput-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCurrentTypeface:Landroid/graphics/Typeface;
+    iput-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCurrentTypeface:Landroid/graphics/Typeface;
 
-    .line 513
-    const/4 v3, 0x1
+    move v0, v1
 
     .line 516
-    :cond_8e
-    iget v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTextSize:F
+    :goto_8f
+    iget v5, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTextSize:F
 
-    invoke-static {p1, v6}, Landroid/support/design/widget/CollapsingTextHelper;->isClose(FF)Z
+    invoke-static {p1, v5}, Landroid/support/design/widget/CollapsingTextHelper;->isClose(FF)Z
 
-    move-result v6
+    move-result v5
 
-    if-eqz v6, :cond_99
+    if-eqz v5, :cond_9a
 
     .line 518
-    iput v8, p0, Landroid/support/design/widget/CollapsingTextHelper;->mScale:F
-
-    goto :goto_28
-
-    .line 521
-    :cond_99
-    iget v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTextSize:F
-
-    div-float v6, p1, v6
-
     iput v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mScale:F
 
-    goto :goto_28
+    goto :goto_29
 
-    :cond_a0
-    move v3, v4
+    .line 521
+    :cond_9a
+    iget v5, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTextSize:F
+
+    div-float v5, p1, v5
+
+    iput v5, p0, Landroid/support/design/widget/CollapsingTextHelper;->mScale:F
+
+    goto :goto_29
+
+    :cond_a1
+    move v0, v2
 
     .line 526
-    goto :goto_3a
+    goto :goto_3b
 
-    :cond_a2
-    move v5, v4
+    :cond_a3
+    move v1, v2
 
     .line 535
-    goto :goto_5a
+    goto :goto_5b
+
+    :cond_a5
+    move v0, v2
+
+    goto :goto_8f
+
+    :cond_a7
+    move v4, v3
+
+    move v3, v0
+
+    move v0, v2
+
+    goto/16 :goto_29
 .end method
 
 .method private clearTexture()V
@@ -1195,7 +1161,7 @@
 .end method
 
 .method private ensureExpandedTexture()V
-    .registers 10
+    .registers 8
 
     .prologue
     const/4 v2, 0x0
@@ -1203,25 +1169,25 @@
     const/4 v4, 0x0
 
     .line 548
-    iget-object v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTitleTexture:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTitleTexture:Landroid/graphics/Bitmap;
 
-    if-nez v1, :cond_16
+    if-nez v0, :cond_16
 
-    iget-object v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedBounds:Landroid/graphics/Rect;
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedBounds:Landroid/graphics/Rect;
 
-    invoke-virtual {v1}, Landroid/graphics/Rect;->isEmpty()Z
+    invoke-virtual {v0}, Landroid/graphics/Rect;->isEmpty()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_16
+    if-nez v0, :cond_16
 
-    iget-object v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
 
-    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_17
+    if-eqz v0, :cond_17
 
     .line 573
     :cond_16
@@ -1233,44 +1199,43 @@
     invoke-direct {p0, v4}, Landroid/support/design/widget/CollapsingTextHelper;->calculateOffsets(F)V
 
     .line 554
-    iget-object v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v1}, Landroid/text/TextPaint;->ascent()F
+    invoke-virtual {v0}, Landroid/text/TextPaint;->ascent()F
 
-    move-result v1
+    move-result v0
 
-    iput v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextureAscent:F
+    iput v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextureAscent:F
 
     .line 555
-    iget-object v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v1}, Landroid/text/TextPaint;->descent()F
+    invoke-virtual {v0}, Landroid/text/TextPaint;->descent()F
 
-    move-result v1
+    move-result v0
 
-    iput v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextureDescent:F
+    iput v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextureDescent:F
 
     .line 557
-    iget-object v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
+
+    iget-object v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
 
     iget-object v3, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
 
-    iget-object v5, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
+    invoke-interface {v3}, Ljava/lang/CharSequence;->length()I
 
-    invoke-interface {v5}, Ljava/lang/CharSequence;->length()I
+    move-result v3
 
-    move-result v5
+    invoke-virtual {v0, v1, v2, v3}, Landroid/text/TextPaint;->measureText(Ljava/lang/CharSequence;II)F
 
-    invoke-virtual {v1, v3, v2, v5}, Landroid/text/TextPaint;->measureText(Ljava/lang/CharSequence;II)F
+    move-result v0
 
-    move-result v1
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
-    invoke-static {v1}, Ljava/lang/Math;->round(F)I
-
-    move-result v8
+    move-result v0
 
     .line 558
-    .local v8, "w":I
     iget v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextureDescent:F
 
     iget v3, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextureAscent:F
@@ -1279,22 +1244,21 @@
 
     invoke-static {v1}, Ljava/lang/Math;->round(F)I
 
-    move-result v7
+    move-result v5
 
     .line 560
-    .local v7, "h":I
-    if-lez v8, :cond_16
+    if-lez v0, :cond_16
 
-    if-lez v7, :cond_16
+    if-lez v5, :cond_16
 
     .line 564
     sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-static {v8, v7, v1}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-static {v0, v5, v1}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTitleTexture:Landroid/graphics/Bitmap;
+    iput-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTitleTexture:Landroid/graphics/Bitmap;
 
     .line 566
     new-instance v0, Landroid/graphics/Canvas;
@@ -1304,7 +1268,6 @@
     invoke-direct {v0, v1}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
     .line 567
-    .local v0, "c":Landroid/graphics/Canvas;
     iget-object v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
 
     iget-object v3, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
@@ -1313,7 +1276,7 @@
 
     move-result v3
 
-    int-to-float v5, v7
+    int-to-float v5, v5
 
     iget-object v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
 
@@ -1328,25 +1291,24 @@
     invoke-virtual/range {v0 .. v6}, Landroid/graphics/Canvas;->drawText(Ljava/lang/CharSequence;IIFFLandroid/graphics/Paint;)V
 
     .line 569
-    iget-object v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTexturePaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTexturePaint:Landroid/graphics/Paint;
 
-    if-nez v1, :cond_16
+    if-nez v0, :cond_16
 
     .line 571
-    new-instance v1, Landroid/graphics/Paint;
+    new-instance v0, Landroid/graphics/Paint;
 
-    const/4 v2, 0x3
+    const/4 v1, 0x3
 
-    invoke-direct {v1, v2}, Landroid/graphics/Paint;-><init>(I)V
+    invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
-    iput-object v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTexturePaint:Landroid/graphics/Paint;
+    iput-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTexturePaint:Landroid/graphics/Paint;
 
     goto :goto_16
 .end method
 
 .method private interpolateBounds(F)V
     .registers 6
-    .param p1, "fraction"    # F
 
     .prologue
     .line 417
@@ -1439,8 +1401,6 @@
 
 .method private static isClose(FF)Z
     .registers 4
-    .param p0, "value"    # F
-    .param p1, "targetValue"    # F
 
     .prologue
     .line 614
@@ -1450,7 +1410,7 @@
 
     move-result v0
 
-    const v1, 0x3a83126f
+    const v1, 0x3a83126f    # 0.001f
 
     cmpg-float v0, v0, v1
 
@@ -1469,10 +1429,6 @@
 
 .method private static lerp(FFFLandroid/view/animation/Interpolator;)F
     .registers 5
-    .param p0, "startValue"    # F
-    .param p1, "endValue"    # F
-    .param p2, "fraction"    # F
-    .param p3, "interpolator"    # Landroid/view/animation/Interpolator;
 
     .prologue
     .line 642
@@ -1493,86 +1449,77 @@
 .end method
 
 .method private readFontFamilyTypeface(I)Landroid/graphics/Typeface;
-    .registers 8
-    .param p1, "resId"    # I
+    .registers 6
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
     .line 243
-    iget-object v2, p0, Landroid/support/design/widget/CollapsingTextHelper;->mView:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mView:Landroid/view/View;
 
-    invoke-virtual {v2}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    const/4 v3, 0x1
-
-    new-array v3, v3, [I
-
-    const v4, 0x10103ac
-
-    aput v4, v3, v5
-
-    invoke-virtual {v2, p1, v3}, Landroid/content/Context;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
+    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 246
-    .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v2, 0x0
+    const/4 v1, 0x1
 
-    :try_start_14
-    invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+    new-array v1, v1, [I
+
+    const v2, 0x10103ac
+
+    aput v2, v1, v3
+
+    invoke-virtual {v0, p1, v1}, Landroid/content/Context;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
 
     move-result-object v1
 
+    .line 246
+    const/4 v0, 0x0
+
+    :try_start_14
+    invoke-virtual {v1, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+
+    move-result-object v0
+
     .line 247
-    .local v1, "family":Ljava/lang/String;
-    if-eqz v1, :cond_23
+    if-eqz v0, :cond_23
 
     .line 248
     const/4 v2, 0x0
 
-    invoke-static {v1, v2}, Landroid/graphics/Typeface;->create(Ljava/lang/String;I)Landroid/graphics/Typeface;
+    invoke-static {v0, v2}, Landroid/graphics/Typeface;->create(Ljava/lang/String;I)Landroid/graphics/Typeface;
     :try_end_1e
     .catchall {:try_start_14 .. :try_end_1e} :catchall_28
 
-    move-result-object v2
+    move-result-object v0
 
     .line 251
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 253
     :goto_22
-    return-object v2
+    return-object v0
 
     .line 251
     :cond_23
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 253
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     goto :goto_22
 
     .line 251
-    .end local v1    # "family":Ljava/lang/String;
     :catchall_28
-    move-exception v2
+    move-exception v0
 
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    throw v2
+    throw v0
 .end method
 
 .method private static rectEquals(Landroid/graphics/Rect;IIII)Z
     .registers 6
-    .param p0, "r"    # Landroid/graphics/Rect;
-    .param p1, "left"    # I
-    .param p2, "top"    # I
-    .param p3, "right"    # I
-    .param p4, "bottom"    # I
 
     .prologue
     .line 649
@@ -1605,7 +1552,6 @@
 
 .method private setInterpolatedTextSize(F)V
     .registers 4
-    .param p1, "textSize"    # F
 
     .prologue
     .line 480
@@ -1618,7 +1564,7 @@
 
     iget v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mScale:F
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     cmpl-float v0, v0, v1
 
@@ -1641,7 +1587,7 @@
     :cond_19
     iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mView:Landroid/view/View;
 
-    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->postInvalidateOnAnimation(Landroid/view/View;)V
+    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->d(Landroid/view/View;)V
 
     .line 491
     return-void
@@ -1656,8 +1602,7 @@
 
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
-    .registers 13
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
+    .registers 10
 
     .prologue
     const/4 v2, 0x0
@@ -1665,85 +1610,81 @@
     .line 428
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    move-result v10
+    move-result v7
 
     .line 430
-    .local v10, "saveCount":I
     iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
 
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_42
 
     iget-boolean v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mDrawTitle:Z
 
-    if-eqz v0, :cond_43
+    if-eqz v0, :cond_42
 
     .line 431
     iget v4, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCurrentDrawX:F
 
     .line 432
-    .local v4, "x":F
     iget v5, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCurrentDrawY:F
 
     .line 434
-    .local v5, "y":F
     iget-boolean v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mUseTexture:Z
 
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_46
 
     iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTitleTexture:Landroid/graphics/Bitmap;
 
-    if-eqz v0, :cond_47
+    if-eqz v0, :cond_46
 
-    const/4 v9, 0x1
+    const/4 v0, 0x1
+
+    move v1, v0
 
     .line 438
-    .local v9, "drawTexture":Z
-    :goto_1a
-    if-eqz v9, :cond_49
+    :goto_1b
+    if-eqz v1, :cond_48
 
     .line 439
     iget v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextureAscent:F
 
-    iget v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mScale:F
+    iget v3, p0, Landroid/support/design/widget/CollapsingTextHelper;->mScale:F
 
-    mul-float v7, v0, v1
+    mul-float/2addr v0, v3
 
     .line 440
-    .local v7, "ascent":F
-    iget v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextureDescent:F
+    iget v3, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextureDescent:F
 
-    iget v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mScale:F
+    iget v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mScale:F
 
-    mul-float v8, v0, v1
+    mul-float/2addr v3, v6
 
     .line 452
-    .local v8, "descent":F
-    :goto_28
-    if-eqz v9, :cond_2b
+    :goto_27
+    if-eqz v1, :cond_2a
 
     .line 453
-    add-float/2addr v5, v7
+    add-float/2addr v5, v0
 
     .line 456
-    :cond_2b
+    :cond_2a
     iget v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mScale:F
 
-    const/high16 v1, 0x3f800000
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    cmpl-float v0, v0, v1
+    cmpl-float v0, v0, v3
 
-    if-eqz v0, :cond_3a
+    if-eqz v0, :cond_39
 
     .line 457
     iget v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mScale:F
 
-    iget v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mScale:F
+    iget v3, p0, Landroid/support/design/widget/CollapsingTextHelper;->mScale:F
 
-    invoke-virtual {p1, v0, v1, v4, v5}, Landroid/graphics/Canvas;->scale(FFFF)V
+    invoke-virtual {p1, v0, v3, v4, v5}, Landroid/graphics/Canvas;->scale(FFFF)V
 
     .line 460
-    :cond_3a
-    if-eqz v9, :cond_5e
+    :cond_39
+    if-eqz v1, :cond_5b
 
     .line 462
     iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTitleTexture:Landroid/graphics/Bitmap;
@@ -1753,56 +1694,46 @@
     invoke-virtual {p1, v0, v4, v5, v1}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
     .line 468
-    .end local v4    # "x":F
-    .end local v5    # "y":F
-    .end local v7    # "ascent":F
-    .end local v8    # "descent":F
-    .end local v9    # "drawTexture":Z
-    :cond_43
-    :goto_43
-    invoke-virtual {p1, v10}, Landroid/graphics/Canvas;->restoreToCount(I)V
+    :cond_42
+    :goto_42
+    invoke-virtual {p1, v7}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     .line 469
     return-void
 
-    .restart local v4    # "x":F
-    .restart local v5    # "y":F
-    :cond_47
-    move v9, v2
+    :cond_46
+    move v1, v2
 
     .line 434
-    goto :goto_1a
+    goto :goto_1b
 
     .line 442
-    .restart local v9    # "drawTexture":Z
-    :cond_49
+    :cond_48
     iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v0}, Landroid/text/TextPaint;->ascent()F
 
     move-result v0
 
-    iget v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mScale:F
+    iget v3, p0, Landroid/support/design/widget/CollapsingTextHelper;->mScale:F
 
-    mul-float v7, v0, v1
+    mul-float/2addr v0, v3
 
     .line 443
-    .restart local v7    # "ascent":F
-    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
+    iget-object v3, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextPaint:Landroid/text/TextPaint;
 
-    invoke-virtual {v0}, Landroid/text/TextPaint;->descent()F
+    invoke-virtual {v3}, Landroid/text/TextPaint;->descent()F
 
-    move-result v0
+    move-result v3
 
-    iget v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mScale:F
+    iget v6, p0, Landroid/support/design/widget/CollapsingTextHelper;->mScale:F
 
-    mul-float v8, v0, v1
+    mul-float/2addr v3, v6
 
-    .restart local v8    # "descent":F
-    goto :goto_28
+    goto :goto_27
 
     .line 464
-    :cond_5e
+    :cond_5b
     iget-object v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
 
     iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mTextToDraw:Ljava/lang/CharSequence;
@@ -1817,7 +1748,7 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/graphics/Canvas;->drawText(Ljava/lang/CharSequence;IIFFLandroid/graphics/Paint;)V
 
-    goto :goto_43
+    goto :goto_42
 .end method
 
 .method getCollapsedTextColor()I
@@ -2026,10 +1957,6 @@
 
 .method setCollapsedBounds(IIII)V
     .registers 6
-    .param p1, "left"    # I
-    .param p2, "top"    # I
-    .param p3, "right"    # I
-    .param p4, "bottom"    # I
 
     .prologue
     .line 162
@@ -2061,26 +1988,24 @@
 
 .method setCollapsedTextAppearance(I)V
     .registers 6
-    .param p1, "resId"    # I
 
     .prologue
     const/4 v3, 0x0
 
     .line 197
-    iget-object v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mView:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mView:Landroid/view/View;
 
-    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    sget-object v2, Landroid/support/design/R$styleable;->TextAppearance:[I
+    sget-object v1, Landroid/support/design/R$styleable;->TextAppearance:[I
 
-    invoke-virtual {v1, p1, v2}, Landroid/content/Context;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
+    invoke-virtual {v0, p1, v1}, Landroid/content/Context;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
     .line 198
-    .local v0, "a":Landroid/content/res/TypedArray;
     sget v1, Landroid/support/design/R$styleable;->TextAppearance_android_textColor:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
@@ -2168,18 +2093,18 @@
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 212
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v2, 0x10
+    const/16 v1, 0x10
 
-    if-lt v1, v2, :cond_63
+    if-lt v0, v1, :cond_63
 
     .line 213
     invoke-direct {p0, p1}, Landroid/support/design/widget/CollapsingTextHelper;->readFontFamilyTypeface(I)Landroid/graphics/Typeface;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedTypeface:Landroid/graphics/Typeface;
+    iput-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mCollapsedTypeface:Landroid/graphics/Typeface;
 
     .line 216
     :cond_63
@@ -2191,7 +2116,6 @@
 
 .method setCollapsedTextColor(I)V
     .registers 3
-    .param p1, "textColor"    # I
 
     .prologue
     .line 140
@@ -2212,7 +2136,6 @@
 
 .method setCollapsedTextGravity(I)V
     .registers 3
-    .param p1, "gravity"    # I
 
     .prologue
     .line 186
@@ -2233,7 +2156,6 @@
 
 .method setCollapsedTextSize(F)V
     .registers 3
-    .param p1, "textSize"    # F
 
     .prologue
     .line 133
@@ -2256,7 +2178,6 @@
 
 .method setCollapsedTypeface(Landroid/graphics/Typeface;)V
     .registers 3
-    .param p1, "typeface"    # Landroid/graphics/Typeface;
 
     .prologue
     .line 257
@@ -2277,10 +2198,6 @@
 
 .method setExpandedBounds(IIII)V
     .registers 6
-    .param p1, "left"    # I
-    .param p2, "top"    # I
-    .param p3, "right"    # I
-    .param p4, "bottom"    # I
 
     .prologue
     .line 154
@@ -2312,26 +2229,24 @@
 
 .method setExpandedTextAppearance(I)V
     .registers 6
-    .param p1, "resId"    # I
 
     .prologue
     const/4 v3, 0x0
 
     .line 220
-    iget-object v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mView:Landroid/view/View;
+    iget-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mView:Landroid/view/View;
 
-    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    sget-object v2, Landroid/support/design/R$styleable;->TextAppearance:[I
+    sget-object v1, Landroid/support/design/R$styleable;->TextAppearance:[I
 
-    invoke-virtual {v1, p1, v2}, Landroid/content/Context;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
+    invoke-virtual {v0, p1, v1}, Landroid/content/Context;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
     .line 221
-    .local v0, "a":Landroid/content/res/TypedArray;
     sget v1, Landroid/support/design/R$styleable;->TextAppearance_android_textColor:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
@@ -2419,18 +2334,18 @@
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 235
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v2, 0x10
+    const/16 v1, 0x10
 
-    if-lt v1, v2, :cond_63
+    if-lt v0, v1, :cond_63
 
     .line 236
     invoke-direct {p0, p1}, Landroid/support/design/widget/CollapsingTextHelper;->readFontFamilyTypeface(I)Landroid/graphics/Typeface;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTypeface:Landroid/graphics/Typeface;
+    iput-object v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedTypeface:Landroid/graphics/Typeface;
 
     .line 239
     :cond_63
@@ -2442,7 +2357,6 @@
 
 .method setExpandedTextColor(I)V
     .registers 3
-    .param p1, "textColor"    # I
 
     .prologue
     .line 147
@@ -2463,7 +2377,6 @@
 
 .method setExpandedTextGravity(I)V
     .registers 3
-    .param p1, "gravity"    # I
 
     .prologue
     .line 175
@@ -2484,7 +2397,6 @@
 
 .method setExpandedTextSize(F)V
     .registers 3
-    .param p1, "textSize"    # F
 
     .prologue
     .line 126
@@ -2507,7 +2419,6 @@
 
 .method setExpandedTypeface(Landroid/graphics/Typeface;)V
     .registers 3
-    .param p1, "typeface"    # Landroid/graphics/Typeface;
 
     .prologue
     .line 264
@@ -2528,27 +2439,26 @@
 
 .method setExpansionFraction(F)V
     .registers 4
-    .param p1, "fraction"    # F
 
     .prologue
     .line 291
     const/4 v0, 0x0
 
-    const/high16 v1, 0x3f800000
+    const/high16 v1, 0x3f800000    # 1.0f
 
     invoke-static {p1, v0, v1}, Landroid/support/design/widget/MathUtils;->constrain(FFF)F
 
-    move-result p1
+    move-result v0
 
     .line 293
-    iget v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedFraction:F
+    iget v1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedFraction:F
 
-    cmpl-float v0, p1, v0
+    cmpl-float v1, v0, v1
 
-    if-eqz v0, :cond_12
+    if-eqz v1, :cond_12
 
     .line 294
-    iput p1, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedFraction:F
+    iput v0, p0, Landroid/support/design/widget/CollapsingTextHelper;->mExpandedFraction:F
 
     .line 295
     invoke-direct {p0}, Landroid/support/design/widget/CollapsingTextHelper;->calculateCurrentOffsets()V
@@ -2560,7 +2470,6 @@
 
 .method setPositionInterpolator(Landroid/view/animation/Interpolator;)V
     .registers 2
-    .param p1, "interpolator"    # Landroid/view/animation/Interpolator;
 
     .prologue
     .line 121
@@ -2575,7 +2484,6 @@
 
 .method setText(Ljava/lang/CharSequence;)V
     .registers 3
-    .param p1, "text"    # Ljava/lang/CharSequence;
 
     .prologue
     .line 590
@@ -2611,7 +2519,6 @@
 
 .method setTextSizeInterpolator(Landroid/view/animation/Interpolator;)V
     .registers 2
-    .param p1, "interpolator"    # Landroid/view/animation/Interpolator;
 
     .prologue
     .line 116
@@ -2626,7 +2533,6 @@
 
 .method setTypefaces(Landroid/graphics/Typeface;)V
     .registers 2
-    .param p1, "typeface"    # Landroid/graphics/Typeface;
 
     .prologue
     .line 271

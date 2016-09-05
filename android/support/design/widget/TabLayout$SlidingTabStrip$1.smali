@@ -11,11 +11,6 @@
     value = Landroid/support/design/widget/TabLayout$SlidingTabStrip;->animateIndicatorToPosition(II)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$1:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
@@ -54,7 +49,6 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/support/design/widget/ValueAnimatorCompat;)V
     .registers 7
-    .param p1, "animator"    # Landroid/support/design/widget/ValueAnimatorCompat;
 
     .prologue
     .line 1837
@@ -63,7 +57,6 @@
     move-result v0
 
     .line 1838
-    .local v0, "fraction":F
     iget-object v1, p0, Landroid/support/design/widget/TabLayout$SlidingTabStrip$1;->this$1:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
     iget v2, p0, Landroid/support/design/widget/TabLayout$SlidingTabStrip$1;->val$startLeft:I
@@ -80,10 +73,10 @@
 
     invoke-static {v3, v4, v0}, Landroid/support/design/widget/AnimationUtils;->lerp(IIF)I
 
-    move-result v3
+    move-result v0
 
     # invokes: Landroid/support/design/widget/TabLayout$SlidingTabStrip;->setIndicatorPosition(II)V
-    invoke-static {v1, v2, v3}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->access$2300(Landroid/support/design/widget/TabLayout$SlidingTabStrip;II)V
+    invoke-static {v1, v2, v0}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->access$2300(Landroid/support/design/widget/TabLayout$SlidingTabStrip;II)V
 
     .line 1841
     return-void

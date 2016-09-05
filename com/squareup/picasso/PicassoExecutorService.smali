@@ -3,18 +3,6 @@
 .source "PicassoExecutorService.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/squareup/picasso/PicassoExecutorService$PicassoFutureTask;
-    }
-.end annotation
-
-
-# static fields
-.field private static final DEFAULT_THREAD_COUNT:I = 0x3
-
-
 # direct methods
 .method constructor <init>()V
     .registers 10
@@ -45,9 +33,8 @@
     return-void
 .end method
 
-.method private setThreadCount(I)V
+.method private a(I)V
     .registers 2
-    .param p1, "threadCount"    # I
 
     .prologue
     .line 81
@@ -62,9 +49,8 @@
 
 
 # virtual methods
-.method adjustThreadCount(Landroid/net/NetworkInfo;)V
+.method a(Landroid/net/NetworkInfo;)V
     .registers 4
-    .param p1, "info"    # Landroid/net/NetworkInfo;
 
     .prologue
     const/4 v1, 0x3
@@ -80,7 +66,7 @@
 
     .line 44
     :cond_9
-    invoke-direct {p0, v1}, Lcom/squareup/picasso/PicassoExecutorService;->setThreadCount(I)V
+    invoke-direct {p0, v1}, Lcom/squareup/picasso/PicassoExecutorService;->a(I)V
 
     .line 78
     :goto_c
@@ -95,7 +81,7 @@
     sparse-switch v0, :sswitch_data_36
 
     .line 76
-    invoke-direct {p0, v1}, Lcom/squareup/picasso/PicassoExecutorService;->setThreadCount(I)V
+    invoke-direct {p0, v1}, Lcom/squareup/picasso/PicassoExecutorService;->a(I)V
 
     goto :goto_c
 
@@ -103,7 +89,7 @@
     :sswitch_18
     const/4 v0, 0x4
 
-    invoke-direct {p0, v0}, Lcom/squareup/picasso/PicassoExecutorService;->setThreadCount(I)V
+    invoke-direct {p0, v0}, Lcom/squareup/picasso/PicassoExecutorService;->a(I)V
 
     goto :goto_c
 
@@ -117,13 +103,13 @@
 
     .line 72
     :pswitch_24
-    invoke-direct {p0, v1}, Lcom/squareup/picasso/PicassoExecutorService;->setThreadCount(I)V
+    invoke-direct {p0, v1}, Lcom/squareup/picasso/PicassoExecutorService;->a(I)V
 
     goto :goto_c
 
     .line 58
     :pswitch_28
-    invoke-direct {p0, v1}, Lcom/squareup/picasso/PicassoExecutorService;->setThreadCount(I)V
+    invoke-direct {p0, v1}, Lcom/squareup/picasso/PicassoExecutorService;->a(I)V
 
     goto :goto_c
 
@@ -131,7 +117,7 @@
     :pswitch_2c
     const/4 v0, 0x2
 
-    invoke-direct {p0, v0}, Lcom/squareup/picasso/PicassoExecutorService;->setThreadCount(I)V
+    invoke-direct {p0, v0}, Lcom/squareup/picasso/PicassoExecutorService;->a(I)V
 
     goto :goto_c
 
@@ -139,7 +125,7 @@
     :pswitch_31
     const/4 v0, 0x1
 
-    invoke-direct {p0, v0}, Lcom/squareup/picasso/PicassoExecutorService;->setThreadCount(I)V
+    invoke-direct {p0, v0}, Lcom/squareup/picasso/PicassoExecutorService;->a(I)V
 
     goto :goto_c
 
@@ -175,7 +161,6 @@
 
 .method public submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
     .registers 3
-    .param p1, "task"    # Ljava/lang/Runnable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -192,11 +177,9 @@
 
     check-cast p1, Lcom/squareup/picasso/BitmapHunter;
 
-    .end local p1    # "task":Ljava/lang/Runnable;
     invoke-direct {v0, p1}, Lcom/squareup/picasso/PicassoExecutorService$PicassoFutureTask;-><init>(Lcom/squareup/picasso/BitmapHunter;)V
 
     .line 88
-    .local v0, "ftask":Lcom/squareup/picasso/PicassoExecutorService$PicassoFutureTask;
     invoke-virtual {p0, v0}, Lcom/squareup/picasso/PicassoExecutorService;->execute(Ljava/lang/Runnable;)V
 
     .line 89

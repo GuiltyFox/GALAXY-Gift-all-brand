@@ -8,11 +8,6 @@
     value = Landroid/support/design/widget/ValueAnimatorCompatImplHoneycombMr1;->setListener(Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorListenerProxy;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Landroid/support/design/widget/ValueAnimatorCompatImplHoneycombMr1;
@@ -39,7 +34,6 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 3
-    .param p1, "animator"    # Landroid/animation/Animator;
 
     .prologue
     .line 72
@@ -53,7 +47,6 @@
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 3
-    .param p1, "animator"    # Landroid/animation/Animator;
 
     .prologue
     .line 67
@@ -67,7 +60,6 @@
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .registers 3
-    .param p1, "animator"    # Landroid/animation/Animator;
 
     .prologue
     .line 62

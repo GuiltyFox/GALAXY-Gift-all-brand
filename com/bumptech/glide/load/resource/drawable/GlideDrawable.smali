@@ -6,12 +6,6 @@
 .implements Landroid/graphics/drawable/Animatable;
 
 
-# static fields
-.field public static final LOOP_FOREVER:I = -0x1
-
-.field public static final LOOP_INTRINSIC:I
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -25,8 +19,8 @@
 
 
 # virtual methods
-.method public abstract isAnimated()Z
+.method public abstract a(I)V
 .end method
 
-.method public abstract setLoopCount(I)V
+.method public abstract a()Z
 .end method

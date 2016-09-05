@@ -3,17 +3,6 @@
 .source "PropertyValue.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/impl/PropertyValue;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x18
-    name = "Any"
-.end annotation
-
-
 # instance fields
 .field final _property:Lcom/fasterxml/jackson/databind/deser/SettableAnyProperty;
 
@@ -23,10 +12,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/deser/impl/PropertyValue;Ljava/lang/Object;Lcom/fasterxml/jackson/databind/deser/SettableAnyProperty;Ljava/lang/String;)V
     .registers 5
-    .param p1, "next"    # Lcom/fasterxml/jackson/databind/deser/impl/PropertyValue;
-    .param p2, "value"    # Ljava/lang/Object;
-    .param p3, "prop"    # Lcom/fasterxml/jackson/databind/deser/SettableAnyProperty;
-    .param p4, "propName"    # Ljava/lang/String;
 
     .prologue
     .line 82
@@ -46,13 +31,6 @@
 # virtual methods
 .method public assign(Ljava/lang/Object;)V
     .registers 5
-    .param p1, "bean"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 91

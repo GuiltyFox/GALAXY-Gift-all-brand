@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract getDescription(Ljava/lang/String;Ljava/lang/Throwable;)Ljava/lang/String;
+.method public abstract a(Ljava/lang/String;Ljava/lang/Throwable;)Ljava/lang/String;
 .end method

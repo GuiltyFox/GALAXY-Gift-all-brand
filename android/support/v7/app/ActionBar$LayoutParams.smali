@@ -3,17 +3,6 @@
 .source "ActionBar.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/app/ActionBar;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "LayoutParams"
-.end annotation
-
-
 # instance fields
 .field public gravity:I
 
@@ -21,7 +10,6 @@
 # direct methods
 .method public constructor <init>(I)V
     .registers 4
-    .param p1, "gravity"    # I
 
     .prologue
     .line 1352
@@ -37,8 +25,6 @@
 
 .method public constructor <init>(II)V
     .registers 4
-    .param p1, "width"    # I
-    .param p2, "height"    # I
 
     .prologue
     .line 1342
@@ -60,9 +46,6 @@
 
 .method public constructor <init>(III)V
     .registers 5
-    .param p1, "width"    # I
-    .param p2, "height"    # I
-    .param p3, "gravity"    # I
 
     .prologue
     .line 1347
@@ -82,11 +65,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 6
-    .param p1, "c"    # Landroid/content/Context;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     const/4 v2, 0x0
@@ -98,14 +76,13 @@
     iput v2, p0, Landroid/support/v7/app/ActionBar$LayoutParams;->gravity:I
 
     .line 1336
-    sget-object v1, Landroid/support/v7/appcompat/R$styleable;->ActionBarLayout:[I
+    sget-object v0, Landroid/support/v7/appcompat/R$styleable;->ActionBarLayout:[I
 
-    invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
     .line 1337
-    .local v0, "a":Landroid/content/res/TypedArray;
     sget v1, Landroid/support/v7/appcompat/R$styleable;->ActionBarLayout_android_layout_gravity:I
 
     invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getInt(II)I
@@ -123,7 +100,6 @@
 
 .method public constructor <init>(Landroid/support/v7/app/ActionBar$LayoutParams;)V
     .registers 3
-    .param p1, "source"    # Landroid/support/v7/app/ActionBar$LayoutParams;
 
     .prologue
     .line 1356
@@ -145,7 +121,6 @@
 
 .method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
     .registers 3
-    .param p1, "source"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
     .line 1362

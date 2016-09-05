@@ -4,36 +4,22 @@
 
 
 # virtual methods
-.method public abstract authenticate(Lcz/msebera/android/httpclient/auth/Credentials;Lcz/msebera/android/httpclient/HttpRequest;)Lcz/msebera/android/httpclient/Header;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcz/msebera/android/httpclient/auth/AuthenticationException;
-        }
-    .end annotation
-
+.method public abstract a(Lcz/msebera/android/httpclient/auth/Credentials;Lcz/msebera/android/httpclient/HttpRequest;)Lcz/msebera/android/httpclient/Header;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end method
 
-.method public abstract getParameter(Ljava/lang/String;)Ljava/lang/String;
+.method public abstract a()Ljava/lang/String;
 .end method
 
-.method public abstract getRealm()Ljava/lang/String;
+.method public abstract a(Lcz/msebera/android/httpclient/Header;)V
 .end method
 
-.method public abstract getSchemeName()Ljava/lang/String;
+.method public abstract b()Ljava/lang/String;
 .end method
 
-.method public abstract isComplete()Z
+.method public abstract c()Z
 .end method
 
-.method public abstract isConnectionBased()Z
-.end method
-
-.method public abstract processChallenge(Lcz/msebera/android/httpclient/Header;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcz/msebera/android/httpclient/auth/MalformedChallengeException;
-        }
-    .end annotation
+.method public abstract d()Z
 .end method

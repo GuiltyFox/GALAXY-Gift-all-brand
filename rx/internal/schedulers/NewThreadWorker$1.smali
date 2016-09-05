@@ -8,12 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lrx/internal/schedulers/NewThreadWorker;->registerExecutor(Ljava/util/concurrent/ScheduledThreadPoolExecutor;)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
+    value = Lrx/internal/schedulers/NewThreadWorker;->a(Ljava/util/concurrent/ScheduledThreadPoolExecutor;)V
 .end annotation
 
 
@@ -35,7 +30,7 @@
 
     .prologue
     .line 80
-    invoke-static {}, Lrx/internal/schedulers/NewThreadWorker;->purgeExecutors()V
+    invoke-static {}, Lrx/internal/schedulers/NewThreadWorker;->d()V
 
     .line 81
     return-void

@@ -4,21 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/parceler/NonParcelRepository;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "SetParcelable"
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lorg/parceler/NonParcelRepository$SetParcelable$SetParcelableCreator;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lorg/parceler/NonParcelRepository$ConverterParcelable",
@@ -30,9 +15,9 @@
 
 
 # static fields
-.field private static final CONVERTER:Lorg/parceler/converter/HashSetParcelConverter;
-
 .field public static final CREATOR:Lorg/parceler/NonParcelRepository$SetParcelable$SetParcelableCreator;
+
+.field private static final a:Lorg/parceler/converter/HashSetParcelConverter;
 
 
 # direct methods
@@ -45,7 +30,7 @@
 
     invoke-direct {v0}, Lorg/parceler/NonParcelRepository$SetParcelable$1;-><init>()V
 
-    sput-object v0, Lorg/parceler/NonParcelRepository$SetParcelable;->CONVERTER:Lorg/parceler/converter/HashSetParcelConverter;
+    sput-object v0, Lorg/parceler/NonParcelRepository$SetParcelable;->a:Lorg/parceler/converter/HashSetParcelConverter;
 
     .line 526
     new-instance v0, Lorg/parceler/NonParcelRepository$SetParcelable$SetParcelableCreator;
@@ -61,11 +46,10 @@
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .registers 4
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
     .line 518
-    sget-object v0, Lorg/parceler/NonParcelRepository$SetParcelable;->CONVERTER:Lorg/parceler/converter/HashSetParcelConverter;
+    sget-object v0, Lorg/parceler/NonParcelRepository$SetParcelable;->a:Lorg/parceler/converter/HashSetParcelConverter;
 
     const/4 v1, 0x0
 
@@ -77,11 +61,10 @@
 
 .method public constructor <init>(Ljava/util/Set;)V
     .registers 4
-    .param p1, "value"    # Ljava/util/Set;
 
     .prologue
     .line 522
-    sget-object v0, Lorg/parceler/NonParcelRepository$SetParcelable;->CONVERTER:Lorg/parceler/converter/HashSetParcelConverter;
+    sget-object v0, Lorg/parceler/NonParcelRepository$SetParcelable;->a:Lorg/parceler/converter/HashSetParcelConverter;
 
     const/4 v1, 0x0
 

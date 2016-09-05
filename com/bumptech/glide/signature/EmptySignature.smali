@@ -7,7 +7,7 @@
 
 
 # static fields
-.field private static final EMPTY_KEY:Lcom/bumptech/glide/signature/EmptySignature;
+.field private static final a:Lcom/bumptech/glide/signature/EmptySignature;
 
 
 # direct methods
@@ -20,7 +20,7 @@
 
     invoke-direct {v0}, Lcom/bumptech/glide/signature/EmptySignature;-><init>()V
 
-    sput-object v0, Lcom/bumptech/glide/signature/EmptySignature;->EMPTY_KEY:Lcom/bumptech/glide/signature/EmptySignature;
+    sput-object v0, Lcom/bumptech/glide/signature/EmptySignature;->a:Lcom/bumptech/glide/signature/EmptySignature;
 
     return-void
 .end method
@@ -36,26 +36,20 @@
     return-void
 .end method
 
-.method public static obtain()Lcom/bumptech/glide/signature/EmptySignature;
+.method public static a()Lcom/bumptech/glide/signature/EmptySignature;
     .registers 1
 
     .prologue
     .line 15
-    sget-object v0, Lcom/bumptech/glide/signature/EmptySignature;->EMPTY_KEY:Lcom/bumptech/glide/signature/EmptySignature;
+    sget-object v0, Lcom/bumptech/glide/signature/EmptySignature;->a:Lcom/bumptech/glide/signature/EmptySignature;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public updateDiskCacheKey(Ljava/security/MessageDigest;)V
+.method public a(Ljava/security/MessageDigest;)V
     .registers 2
-    .param p1, "messageDigest"    # Ljava/security/MessageDigest;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/UnsupportedEncodingException;
-        }
-    .end annotation
 
     .prologue
     .line 25

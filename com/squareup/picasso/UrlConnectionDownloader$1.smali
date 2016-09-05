@@ -8,11 +8,6 @@
     value = Lcom/squareup/picasso/UrlConnectionDownloader;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/ThreadLocal",
@@ -36,19 +31,7 @@
 
 
 # virtual methods
-.method protected bridge synthetic initialValue()Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 41
-    invoke-virtual {p0}, Lcom/squareup/picasso/UrlConnectionDownloader$1;->initialValue()Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method protected initialValue()Ljava/lang/StringBuilder;
+.method protected a()Ljava/lang/StringBuilder;
     .registers 2
 
     .prologue
@@ -56,6 +39,18 @@
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    return-object v0
+.end method
+
+.method protected synthetic initialValue()Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 41
+    invoke-virtual {p0}, Lcom/squareup/picasso/UrlConnectionDownloader$1;->a()Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     return-object v0
 .end method

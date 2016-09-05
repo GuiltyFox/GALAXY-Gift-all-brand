@@ -19,9 +19,19 @@
 .method abstract dispatchFragmentsOnCreateView(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
 .end method
 
+.method onBackPressedNotHandled()V
+    .registers 1
+
+    .prologue
+    .line 59
+    invoke-virtual {p0}, Landroid/support/v4/app/BaseFragmentActivityDonut;->finish()V
+
+    .line 60
+    return-void
+.end method
+
 .method protected onCreate(Landroid/os/Bundle;)V
     .registers 4
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
     .line 33
@@ -57,21 +67,17 @@
 .end method
 
 .method public onCreateView(Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
-    .registers 6
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "attrs"    # Landroid/util/AttributeSet;
+    .registers 5
 
     .prologue
     .line 44
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    invoke-virtual {p0, v1, p1, p2, p3}, Landroid/support/v4/app/BaseFragmentActivityDonut;->dispatchFragmentsOnCreateView(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
+    invoke-virtual {p0, v0, p1, p2, p3}, Landroid/support/v4/app/BaseFragmentActivityDonut;->dispatchFragmentsOnCreateView(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
 
     move-result-object v0
 
     .line 45
-    .local v0, "v":Landroid/view/View;
     if-nez v0, :cond_b
 
     .line 46
@@ -80,7 +86,6 @@
     move-result-object v0
 
     .line 48
-    .end local v0    # "v":Landroid/view/View;
     :cond_b
     return-object v0
 .end method

@@ -8,16 +8,10 @@
     value = Lcom/squareup/picasso/Picasso;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 
 # direct methods
 .method constructor <init>(Landroid/os/Looper;)V
     .registers 2
-    .param p1, "x0"    # Landroid/os/Looper;
 
     .prologue
     .line 109
@@ -29,174 +23,162 @@
 
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
-    .registers 12
-    .param p1, "msg"    # Landroid/os/Message;
+    .registers 7
 
     .prologue
-    .line 111
-    iget v6, p1, Landroid/os/Message;->what:I
+    const/4 v1, 0x0
 
-    sparse-switch v6, :sswitch_data_7c
+    .line 111
+    iget v0, p1, Landroid/os/Message;->what:I
+
+    sparse-switch v0, :sswitch_data_7e
 
     .line 138
-    new-instance v6, Ljava/lang/AssertionError;
+    new-instance v0, Ljava/lang/AssertionError;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v8, "Unknown handler message received: "
+    const-string/jumbo v2, "Unknown handler message received: "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v1
 
-    iget v8, p1, Landroid/os/Message;->what:I
+    iget v2, p1, Landroid/os/Message;->what:I
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-direct {v6, v7}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v0, v1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
 
-    throw v6
+    throw v0
 
     .line 113
-    :sswitch_21
-    iget-object v2, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    :sswitch_22
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
-    check-cast v2, Ljava/util/List;
+    check-cast v0, Ljava/util/List;
 
     .line 115
-    .local v2, "batch":Ljava/util/List;, "Ljava/util/List<Lcom/squareup/picasso/BitmapHunter;>;"
-    const/4 v4, 0x0
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    .local v4, "i":I
-    invoke-interface {v2}, Ljava/util/List;->size()I
+    move-result v3
 
-    move-result v5
+    move v2, v1
 
-    .local v5, "n":I
-    :goto_2a
-    if-ge v4, v5, :cond_61
+    :goto_2b
+    if-ge v2, v3, :cond_63
 
     .line 116
-    invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v1
 
-    check-cast v3, Lcom/squareup/picasso/BitmapHunter;
+    check-cast v1, Lcom/squareup/picasso/BitmapHunter;
 
     .line 117
-    .local v3, "hunter":Lcom/squareup/picasso/BitmapHunter;
-    iget-object v6, v3, Lcom/squareup/picasso/BitmapHunter;->picasso:Lcom/squareup/picasso/Picasso;
+    iget-object v4, v1, Lcom/squareup/picasso/BitmapHunter;->b:Lcom/squareup/picasso/Picasso;
 
-    invoke-virtual {v6, v3}, Lcom/squareup/picasso/Picasso;->complete(Lcom/squareup/picasso/BitmapHunter;)V
+    invoke-virtual {v4, v1}, Lcom/squareup/picasso/Picasso;->a(Lcom/squareup/picasso/BitmapHunter;)V
 
     .line 115
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v1, v2, 0x1
 
-    goto :goto_2a
+    move v2, v1
+
+    goto :goto_2b
 
     .line 122
-    .end local v2    # "batch":Ljava/util/List;, "Ljava/util/List<Lcom/squareup/picasso/BitmapHunter;>;"
-    .end local v3    # "hunter":Lcom/squareup/picasso/BitmapHunter;
-    .end local v4    # "i":I
-    .end local v5    # "n":I
-    :sswitch_3a
+    :sswitch_3c
     iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
 
     check-cast v0, Lcom/squareup/picasso/Action;
 
     .line 123
-    .local v0, "action":Lcom/squareup/picasso/Action;
-    invoke-virtual {v0}, Lcom/squareup/picasso/Action;->getPicasso()Lcom/squareup/picasso/Picasso;
+    invoke-virtual {v0}, Lcom/squareup/picasso/Action;->j()Lcom/squareup/picasso/Picasso;
 
-    move-result-object v6
+    move-result-object v1
 
-    iget-boolean v6, v6, Lcom/squareup/picasso/Picasso;->loggingEnabled:Z
+    iget-boolean v1, v1, Lcom/squareup/picasso/Picasso;->l:Z
 
-    if-eqz v6, :cond_58
+    if-eqz v1, :cond_5a
 
     .line 124
-    const-string/jumbo v6, "Main"
+    const-string/jumbo v1, "Main"
 
-    const-string/jumbo v7, "canceled"
+    const-string/jumbo v2, "canceled"
 
-    iget-object v8, v0, Lcom/squareup/picasso/Action;->request:Lcom/squareup/picasso/Request;
+    iget-object v3, v0, Lcom/squareup/picasso/Action;->b:Lcom/squareup/picasso/Request;
 
-    invoke-virtual {v8}, Lcom/squareup/picasso/Request;->logId()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/squareup/picasso/Request;->a()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v3
 
-    const-string/jumbo v9, "target got garbage collected"
+    const-string/jumbo v4, "target got garbage collected"
 
-    invoke-static {v6, v7, v8, v9}, Lcom/squareup/picasso/Utils;->log(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v2, v3, v4}, Lcom/squareup/picasso/Utils;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 126
-    :cond_58
-    iget-object v6, v0, Lcom/squareup/picasso/Action;->picasso:Lcom/squareup/picasso/Picasso;
+    :cond_5a
+    iget-object v1, v0, Lcom/squareup/picasso/Action;->a:Lcom/squareup/picasso/Picasso;
 
-    invoke-virtual {v0}, Lcom/squareup/picasso/Action;->getTarget()Ljava/lang/Object;
-
-    move-result-object v7
-
-    # invokes: Lcom/squareup/picasso/Picasso;->cancelExistingRequest(Ljava/lang/Object;)V
-    invoke-static {v6, v7}, Lcom/squareup/picasso/Picasso;->access$000(Lcom/squareup/picasso/Picasso;Ljava/lang/Object;)V
-
-    .line 140
-    .end local v0    # "action":Lcom/squareup/picasso/Action;
-    :cond_61
-    return-void
-
-    .line 130
-    :sswitch_62
-    iget-object v1, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    check-cast v1, Ljava/util/List;
-
-    .line 132
-    .local v1, "batch":Ljava/util/List;, "Ljava/util/List<Lcom/squareup/picasso/Action;>;"
-    const/4 v4, 0x0
-
-    .restart local v4    # "i":I
-    invoke-interface {v1}, Ljava/util/List;->size()I
-
-    move-result v5
-
-    .restart local v5    # "n":I
-    :goto_6b
-    if-ge v4, v5, :cond_61
-
-    .line 133
-    invoke-interface {v1, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/squareup/picasso/Action;->d()Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lcom/squareup/picasso/Action;
+    invoke-static {v1, v0}, Lcom/squareup/picasso/Picasso;->a(Lcom/squareup/picasso/Picasso;Ljava/lang/Object;)V
 
-    .line 134
-    .restart local v0    # "action":Lcom/squareup/picasso/Action;
-    iget-object v6, v0, Lcom/squareup/picasso/Action;->picasso:Lcom/squareup/picasso/Picasso;
+    .line 140
+    :cond_63
+    return-void
 
-    invoke-virtual {v6, v0}, Lcom/squareup/picasso/Picasso;->resumeAction(Lcom/squareup/picasso/Action;)V
+    .line 130
+    :sswitch_64
+    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+
+    check-cast v0, Ljava/util/List;
 
     .line 132
-    add-int/lit8 v4, v4, 0x1
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    goto :goto_6b
+    move-result v3
+
+    move v2, v1
+
+    :goto_6d
+    if-ge v2, v3, :cond_63
+
+    .line 133
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/squareup/picasso/Action;
+
+    .line 134
+    iget-object v4, v1, Lcom/squareup/picasso/Action;->a:Lcom/squareup/picasso/Picasso;
+
+    invoke-virtual {v4, v1}, Lcom/squareup/picasso/Picasso;->c(Lcom/squareup/picasso/Action;)V
+
+    .line 132
+    add-int/lit8 v1, v2, 0x1
+
+    move v2, v1
+
+    goto :goto_6d
 
     .line 111
-    nop
-
-    :sswitch_data_7c
+    :sswitch_data_7e
     .sparse-switch
-        0x3 -> :sswitch_3a
-        0x8 -> :sswitch_21
-        0xd -> :sswitch_62
+        0x3 -> :sswitch_3c
+        0x8 -> :sswitch_22
+        0xd -> :sswitch_64
     .end sparse-switch
 .end method

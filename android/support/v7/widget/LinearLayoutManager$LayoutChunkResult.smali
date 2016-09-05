@@ -3,17 +3,6 @@
 .source "LinearLayoutManager.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/widget/LinearLayoutManager;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xc
-    name = "LayoutChunkResult"
-.end annotation
-
-
 # instance fields
 .field public mConsumed:I
 
@@ -29,7 +18,7 @@
     .registers 1
 
     .prologue
-    .line 2223
+    .line 2229
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,18 +32,18 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 2230
+    .line 2236
     iput v0, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mConsumed:I
 
-    .line 2231
+    .line 2237
     iput-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mFinished:Z
 
-    .line 2232
+    .line 2238
     iput-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mIgnoreConsumed:Z
 
-    .line 2233
+    .line 2239
     iput-boolean v0, p0, Landroid/support/v7/widget/LinearLayoutManager$LayoutChunkResult;->mFocusable:Z
 
-    .line 2234
+    .line 2240
     return-void
 .end method

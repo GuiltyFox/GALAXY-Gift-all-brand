@@ -3,17 +3,6 @@
 .source "JsonFormat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/annotation/JsonFormat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Value"
-.end annotation
-
-
 # instance fields
 .field private _timezone:Ljava/util/TimeZone;
 
@@ -48,7 +37,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/annotation/JsonFormat;)V
     .registers 6
-    .param p1, "ann"    # Lcom/fasterxml/jackson/annotation/JsonFormat;
 
     .prologue
     .line 207
@@ -76,10 +64,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;Ljava/lang/String;Ljava/lang/String;)V
     .registers 11
-    .param p1, "p"    # Ljava/lang/String;
-    .param p2, "sh"    # Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;
-    .param p3, "localeStr"    # Ljava/lang/String;
-    .param p4, "tzStr"    # Ljava/lang/String;
 
     .prologue
     const/4 v5, 0x0
@@ -152,11 +136,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;Ljava/util/Locale;Ljava/lang/String;Ljava/util/TimeZone;)V
     .registers 6
-    .param p1, "p"    # Ljava/lang/String;
-    .param p2, "sh"    # Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;
-    .param p3, "l"    # Ljava/util/Locale;
-    .param p4, "tzStr"    # Ljava/lang/String;
-    .param p5, "tz"    # Ljava/util/TimeZone;
 
     .prologue
     .line 237
@@ -183,10 +162,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;Ljava/util/Locale;Ljava/util/TimeZone;)V
     .registers 6
-    .param p1, "p"    # Ljava/lang/String;
-    .param p2, "sh"    # Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;
-    .param p3, "l"    # Ljava/util/Locale;
-    .param p4, "tz"    # Ljava/util/TimeZone;
 
     .prologue
     .line 225
@@ -246,42 +221,38 @@
 .end method
 
 .method public getTimeZone()Ljava/util/TimeZone;
-    .registers 3
+    .registers 2
 
     .prologue
     .line 292
     iget-object v0, p0, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->_timezone:Ljava/util/TimeZone;
 
     .line 293
-    .local v0, "tz":Ljava/util/TimeZone;
-    if-nez v0, :cond_12
+    if-nez v0, :cond_9
 
     .line 294
-    iget-object v1, p0, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->timezoneStr:Ljava/lang/String;
+    iget-object v0, p0, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->timezoneStr:Ljava/lang/String;
 
-    if-nez v1, :cond_a
+    if-nez v0, :cond_a
 
     .line 295
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 299
+    :cond_9
     :goto_9
-    return-object v1
+    return-object v0
 
     .line 297
     :cond_a
-    iget-object v1, p0, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->timezoneStr:Ljava/lang/String;
+    iget-object v0, p0, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->timezoneStr:Ljava/lang/String;
 
-    invoke-static {v1}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
+    invoke-static {v0}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/fasterxml/jackson/annotation/JsonFormat$Value;->_timezone:Ljava/util/TimeZone;
 
-    :cond_12
-    move-object v1, v0
-
-    .line 299
     goto :goto_9
 .end method
 
@@ -416,7 +387,6 @@
 
 .method public withLocale(Ljava/util/Locale;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
     .registers 8
-    .param p1, "l"    # Ljava/util/Locale;
 
     .prologue
     .line 263
@@ -439,7 +409,6 @@
 
 .method public withPattern(Ljava/lang/String;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
     .registers 8
-    .param p1, "p"    # Ljava/lang/String;
 
     .prologue
     .line 249
@@ -462,7 +431,6 @@
 
 .method public withShape(Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
     .registers 8
-    .param p1, "s"    # Lcom/fasterxml/jackson/annotation/JsonFormat$Shape;
 
     .prologue
     .line 256
@@ -485,7 +453,6 @@
 
 .method public withTimeZone(Ljava/util/TimeZone;)Lcom/fasterxml/jackson/annotation/JsonFormat$Value;
     .registers 8
-    .param p1, "tz"    # Ljava/util/TimeZone;
 
     .prologue
     .line 270

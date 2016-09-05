@@ -9,32 +9,7 @@
 
 
 # virtual methods
-.method public abstract getChallenges(Lcz/msebera/android/httpclient/HttpResponse;Lcz/msebera/android/httpclient/protocol/HttpContext;)Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Lcz/msebera/android/httpclient/HttpResponse;",
-            "Lcz/msebera/android/httpclient/protocol/HttpContext;",
-            ")",
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Lcz/msebera/android/httpclient/Header;",
-            ">;"
-        }
-    .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcz/msebera/android/httpclient/auth/MalformedChallengeException;
-        }
-    .end annotation
-.end method
-
-.method public abstract isAuthenticationRequested(Lcz/msebera/android/httpclient/HttpResponse;Lcz/msebera/android/httpclient/protocol/HttpContext;)Z
-.end method
-
-.method public abstract selectScheme(Ljava/util/Map;Lcz/msebera/android/httpclient/HttpResponse;Lcz/msebera/android/httpclient/protocol/HttpContext;)Lcz/msebera/android/httpclient/auth/AuthScheme;
+.method public abstract a(Ljava/util/Map;Lcz/msebera/android/httpclient/HttpResponse;Lcz/msebera/android/httpclient/protocol/HttpContext;)Lcz/msebera/android/httpclient/auth/AuthScheme;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -49,10 +24,23 @@
             "Lcz/msebera/android/httpclient/auth/AuthScheme;"
         }
     .end annotation
+.end method
 
-    .annotation system Ldalvik/annotation/Throws;
+.method public abstract a(Lcz/msebera/android/httpclient/HttpResponse;Lcz/msebera/android/httpclient/protocol/HttpContext;)Z
+.end method
+
+.method public abstract b(Lcz/msebera/android/httpclient/HttpResponse;Lcz/msebera/android/httpclient/protocol/HttpContext;)Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
         value = {
-            Lcz/msebera/android/httpclient/auth/AuthenticationException;
+            "(",
+            "Lcz/msebera/android/httpclient/HttpResponse;",
+            "Lcz/msebera/android/httpclient/protocol/HttpContext;",
+            ")",
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Lcz/msebera/android/httpclient/Header;",
+            ">;"
         }
     .end annotation
 .end method

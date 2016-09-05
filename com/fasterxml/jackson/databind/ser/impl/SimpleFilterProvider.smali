@@ -45,7 +45,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/Map;)V
-    .registers 5
+    .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -58,50 +58,46 @@
 
     .prologue
     .line 56
-    .local p1, "mapping":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;*>;"
     invoke-direct {p0}, Lcom/fasterxml/jackson/databind/ser/FilterProvider;-><init>()V
 
     .line 39
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
-    iput-boolean v2, p0, Lcom/fasterxml/jackson/databind/ser/impl/SimpleFilterProvider;->_cfgFailOnUnknownId:Z
+    iput-boolean v0, p0, Lcom/fasterxml/jackson/databind/ser/impl/SimpleFilterProvider;->_cfgFailOnUnknownId:Z
 
     .line 61
     invoke-interface {p1}, Ljava/util/Map;->values()Ljava/util/Collection;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-interface {v2}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .local v0, "i$":Ljava/util/Iterator;
     :cond_e
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_23
+    if-eqz v1, :cond_23
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v1
 
     .line 62
-    .local v1, "ob":Ljava/lang/Object;
-    instance-of v2, v1, Lcom/fasterxml/jackson/databind/ser/PropertyFilter;
+    instance-of v1, v1, Lcom/fasterxml/jackson/databind/ser/PropertyFilter;
 
-    if-nez v2, :cond_e
+    if-nez v1, :cond_e
 
     .line 63
     invoke-static {p1}, Lcom/fasterxml/jackson/databind/ser/impl/SimpleFilterProvider;->_convert(Ljava/util/Map;)Ljava/util/Map;
 
-    move-result-object v2
+    move-result-object v0
 
-    iput-object v2, p0, Lcom/fasterxml/jackson/databind/ser/impl/SimpleFilterProvider;->_filtersById:Ljava/util/Map;
+    iput-object v0, p0, Lcom/fasterxml/jackson/databind/ser/impl/SimpleFilterProvider;->_filtersById:Ljava/util/Map;
 
     .line 68
-    .end local v1    # "ob":Ljava/lang/Object;
     :goto_22
     return-void
 
@@ -114,7 +110,6 @@
 
 .method private static final _convert(Lcom/fasterxml/jackson/databind/ser/BeanPropertyFilter;)Lcom/fasterxml/jackson/databind/ser/PropertyFilter;
     .registers 2
-    .param p0, "f"    # Lcom/fasterxml/jackson/databind/ser/BeanPropertyFilter;
 
     .prologue
     .line 89
@@ -126,7 +121,7 @@
 .end method
 
 .method private static final _convert(Ljava/util/Map;)Ljava/util/Map;
-    .registers 8
+    .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -144,136 +139,125 @@
 
     .prologue
     .line 73
-    .local p0, "filters":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;*>;"
-    new-instance v3, Ljava/util/HashMap;
+    new-instance v2, Ljava/util/HashMap;
 
-    invoke-direct {v3}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v2}, Ljava/util/HashMap;-><init>()V
 
     .line 74
-    .local v3, "result":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/String;Lcom/fasterxml/jackson/databind/ser/PropertyFilter;>;"
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-interface {v4}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v2
+    move-result-object v3
 
-    .local v2, "i$":Ljava/util/Iterator;
     :goto_d
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v0
 
-    if-eqz v4, :cond_66
+    if-eqz v0, :cond_67
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Map$Entry;
 
     .line 75
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;*>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
     .line 76
-    .local v1, "f":Ljava/lang/Object;
     instance-of v4, v1, Lcom/fasterxml/jackson/databind/ser/PropertyFilter;
 
-    if-eqz v4, :cond_2b
+    if-eqz v4, :cond_2c
 
     .line 77
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v4
 
-    check-cast v1, Lcom/fasterxml/jackson/databind/ser/PropertyFilter;
+    move-object v0, v1
 
-    .end local v1    # "f":Ljava/lang/Object;
-    invoke-virtual {v3, v4, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v0, Lcom/fasterxml/jackson/databind/ser/PropertyFilter;
+
+    invoke-virtual {v2, v4, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_d
 
     .line 78
-    .restart local v1    # "f":Ljava/lang/Object;
-    :cond_2b
+    :cond_2c
     instance-of v4, v1, Lcom/fasterxml/jackson/databind/ser/BeanPropertyFilter;
 
-    if-eqz v4, :cond_3d
+    if-eqz v4, :cond_3e
 
     .line 79
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v0
 
     check-cast v1, Lcom/fasterxml/jackson/databind/ser/BeanPropertyFilter;
 
-    .end local v1    # "f":Ljava/lang/Object;
     invoke-static {v1}, Lcom/fasterxml/jackson/databind/ser/impl/SimpleFilterProvider;->_convert(Lcom/fasterxml/jackson/databind/ser/BeanPropertyFilter;)Lcom/fasterxml/jackson/databind/ser/PropertyFilter;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v3, v4, v5}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, v0, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_d
 
     .line 81
-    .restart local v1    # "f":Ljava/lang/Object;
-    :cond_3d
-    new-instance v4, Ljava/lang/IllegalArgumentException;
+    :cond_3e
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "Unrecognized filter type ("
+    const-string/jumbo v3, "Unrecognized filter type ("
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v2
 
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {v6}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    const-string/jumbo v6, ")"
+    const-string/jumbo v2, ")"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-direct {v4, v5}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v4
+    throw v0
 
     .line 84
-    .end local v0    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;*>;"
-    .end local v1    # "f":Ljava/lang/Object;
-    :cond_66
-    return-object v3
+    :cond_67
+    return-object v2
 .end method
 
 
 # virtual methods
 .method public addFilter(Ljava/lang/String;Lcom/fasterxml/jackson/databind/ser/BeanPropertyFilter;)Lcom/fasterxml/jackson/databind/ser/impl/SimpleFilterProvider;
     .registers 5
-    .param p1, "id"    # Ljava/lang/String;
-    .param p2, "filter"    # Lcom/fasterxml/jackson/databind/ser/BeanPropertyFilter;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -293,8 +277,6 @@
 
 .method public addFilter(Ljava/lang/String;Lcom/fasterxml/jackson/databind/ser/PropertyFilter;)Lcom/fasterxml/jackson/databind/ser/impl/SimpleFilterProvider;
     .registers 4
-    .param p1, "id"    # Ljava/lang/String;
-    .param p2, "filter"    # Lcom/fasterxml/jackson/databind/ser/PropertyFilter;
 
     .prologue
     .line 145
@@ -308,8 +290,6 @@
 
 .method public addFilter(Ljava/lang/String;Lcom/fasterxml/jackson/databind/ser/impl/SimpleBeanPropertyFilter;)Lcom/fasterxml/jackson/databind/ser/impl/SimpleFilterProvider;
     .registers 4
-    .param p1, "id"    # Ljava/lang/String;
-    .param p2, "filter"    # Lcom/fasterxml/jackson/databind/ser/impl/SimpleBeanPropertyFilter;
 
     .prologue
     .line 153
@@ -323,7 +303,6 @@
 
 .method public findFilter(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/ser/BeanPropertyFilter;
     .registers 4
-    .param p1, "filterId"    # Ljava/lang/Object;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -339,22 +318,19 @@
 .end method
 
 .method public findPropertyFilter(Ljava/lang/Object;Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/ser/PropertyFilter;
-    .registers 7
-    .param p1, "filterId"    # Ljava/lang/Object;
-    .param p2, "valueToFilter"    # Ljava/lang/Object;
+    .registers 6
 
     .prologue
     .line 177
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/ser/impl/SimpleFilterProvider;->_filtersById:Ljava/util/Map;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/impl/SimpleFilterProvider;->_filtersById:Ljava/util/Map;
 
-    invoke-interface {v1, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/fasterxml/jackson/databind/ser/PropertyFilter;
 
     .line 178
-    .local v0, "f":Lcom/fasterxml/jackson/databind/ser/PropertyFilter;
     if-nez v0, :cond_46
 
     .line 179
@@ -368,53 +344,53 @@
     if-eqz v1, :cond_46
 
     .line 181
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "No filter configured with id \'"
+    const-string/jumbo v2, "No filter configured with id \'"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string/jumbo v3, "\' (type "
+    const-string/jumbo v2, "\' (type "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v2
 
-    const-string/jumbo v3, ")"
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    move-result-object v2
+    const-string/jumbo v2, ")"
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    throw v1
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
 
     .line 185
     :cond_46
@@ -433,7 +409,6 @@
 
 .method public removeFilter(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/ser/PropertyFilter;
     .registers 3
-    .param p1, "id"    # Ljava/lang/String;
 
     .prologue
     .line 158
@@ -450,7 +425,6 @@
 
 .method public setDefaultFilter(Lcom/fasterxml/jackson/databind/ser/BeanPropertyFilter;)Lcom/fasterxml/jackson/databind/ser/impl/SimpleFilterProvider;
     .registers 3
-    .param p1, "f"    # Lcom/fasterxml/jackson/databind/ser/BeanPropertyFilter;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -468,7 +442,6 @@
 
 .method public setDefaultFilter(Lcom/fasterxml/jackson/databind/ser/PropertyFilter;)Lcom/fasterxml/jackson/databind/ser/impl/SimpleFilterProvider;
     .registers 2
-    .param p1, "f"    # Lcom/fasterxml/jackson/databind/ser/PropertyFilter;
 
     .prologue
     .line 109
@@ -480,7 +453,6 @@
 
 .method public setDefaultFilter(Lcom/fasterxml/jackson/databind/ser/impl/SimpleBeanPropertyFilter;)Lcom/fasterxml/jackson/databind/ser/impl/SimpleFilterProvider;
     .registers 2
-    .param p1, "f"    # Lcom/fasterxml/jackson/databind/ser/impl/SimpleBeanPropertyFilter;
 
     .prologue
     .line 118
@@ -492,7 +464,6 @@
 
 .method public setFailOnUnknownId(Z)Lcom/fasterxml/jackson/databind/ser/impl/SimpleFilterProvider;
     .registers 2
-    .param p1, "state"    # Z
 
     .prologue
     .line 127

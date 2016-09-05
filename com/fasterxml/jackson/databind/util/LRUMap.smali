@@ -37,18 +37,15 @@
 
 # direct methods
 .method public constructor <init>(II)V
-    .registers 6
-    .param p1, "initialEntries"    # I
-    .param p2, "maxEntries"    # I
+    .registers 5
 
     .prologue
     .line 36
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/LRUMap;, "Lcom/fasterxml/jackson/databind/util/LRUMap<TK;TV;>;"
-    const v1, 0x3f4ccccd
+    const v0, 0x3f4ccccd    # 0.8f
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    invoke-direct {p0, p1, v1, v2}, Ljava/util/LinkedHashMap;-><init>(IFZ)V
+    invoke-direct {p0, p1, v0, v1}, Ljava/util/LinkedHashMap;-><init>(IFZ)V
 
     .line 37
     iput p2, p0, Lcom/fasterxml/jackson/databind/util/LRUMap;->_maxEntries:I
@@ -59,7 +56,6 @@
     invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;-><init>()V
 
     .line 39
-    .local v0, "rwl":Ljava/util/concurrent/locks/ReentrantReadWriteLock;
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->readLock()Ljava/util/concurrent/locks/ReentrantReadWriteLock$ReadLock;
 
     move-result-object v1
@@ -69,9 +65,9 @@
     .line 40
     invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->writeLock()Ljava/util/concurrent/locks/ReentrantReadWriteLock$WriteLock;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lcom/fasterxml/jackson/databind/util/LRUMap;->_writeLock:Ljava/util/concurrent/locks/Lock;
+    iput-object v0, p0, Lcom/fasterxml/jackson/databind/util/LRUMap;->_writeLock:Ljava/util/concurrent/locks/Lock;
 
     .line 41
     return-void
@@ -79,16 +75,9 @@
 
 .method private readObject(Ljava/io/ObjectInputStream;)V
     .registers 3
-    .param p1, "in"    # Ljava/io/ObjectInputStream;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 99
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/LRUMap;, "Lcom/fasterxml/jackson/databind/util/LRUMap<TK;TV;>;"
     invoke-virtual {p1}, Ljava/io/ObjectInputStream;->readInt()I
 
     move-result v0
@@ -101,16 +90,9 @@
 
 .method private writeObject(Ljava/io/ObjectOutputStream;)V
     .registers 3
-    .param p1, "out"    # Ljava/io/ObjectOutputStream;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 103
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/LRUMap;, "Lcom/fasterxml/jackson/databind/util/LRUMap<TK;TV;>;"
     iget v0, p0, Lcom/fasterxml/jackson/databind/util/LRUMap;->_jdkSerializeMaxEntries:I
 
     invoke-virtual {p1, v0}, Ljava/io/ObjectOutputStream;->writeInt(I)V
@@ -123,7 +105,6 @@
 # virtual methods
 .method public get(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
-    .param p1, "key"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -134,7 +115,6 @@
 
     .prologue
     .line 56
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/LRUMap;, "Lcom/fasterxml/jackson/databind/util/LRUMap<TK;TV;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/LRUMap;->_readLock:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
@@ -174,9 +154,6 @@
 
     .prologue
     .line 66
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/LRUMap;, "Lcom/fasterxml/jackson/databind/util/LRUMap<TK;TV;>;"
-    .local p1, "key":Ljava/lang/Object;, "TK;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/LRUMap;->_writeLock:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
@@ -211,7 +188,6 @@
 
     .prologue
     .line 107
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/LRUMap;, "Lcom/fasterxml/jackson/databind/util/LRUMap<TK;TV;>;"
     new-instance v0, Lcom/fasterxml/jackson/databind/util/LRUMap;
 
     iget v1, p0, Lcom/fasterxml/jackson/databind/util/LRUMap;->_jdkSerializeMaxEntries:I
@@ -225,7 +201,6 @@
 
 .method public remove(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
-    .param p1, "key"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -236,7 +211,6 @@
 
     .prologue
     .line 76
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/LRUMap;, "Lcom/fasterxml/jackson/databind/util/LRUMap<TK;TV;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/LRUMap;->_writeLock:Ljava/util/concurrent/locks/Lock;
 
     invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->lock()V
@@ -278,8 +252,6 @@
 
     .prologue
     .line 45
-    .local p0, "this":Lcom/fasterxml/jackson/databind/util/LRUMap;, "Lcom/fasterxml/jackson/databind/util/LRUMap<TK;TV;>;"
-    .local p1, "eldest":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TK;TV;>;"
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/util/LRUMap;->size()I
 
     move-result v0

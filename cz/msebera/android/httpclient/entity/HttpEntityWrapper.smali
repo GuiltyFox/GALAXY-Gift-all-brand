@@ -6,11 +6,6 @@
 .implements Lcz/msebera/android/httpclient/HttpEntity;
 
 
-# annotations
-.annotation build Lcz/msebera/android/httpclient/annotation/NotThreadSafe;
-.end annotation
-
-
 # instance fields
 .field protected wrappedEntity:Lcz/msebera/android/httpclient/HttpEntity;
 
@@ -18,7 +13,6 @@
 # direct methods
 .method public constructor <init>(Lcz/msebera/android/httpclient/HttpEntity;)V
     .registers 3
-    .param p1, "wrappedEntity"    # Lcz/msebera/android/httpclient/HttpEntity;
 
     .prologue
     .line 58
@@ -27,7 +21,7 @@
     .line 59
     const-string/jumbo v0, "Wrapped entity"
 
-    invoke-static {p1, v0}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcz/msebera/android/httpclient/util/Args;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -43,12 +37,6 @@
 # virtual methods
 .method public consumeContent()V
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -64,11 +52,6 @@
 
 .method public getContent()Ljava/io/InputStream;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 84
@@ -167,12 +150,6 @@
 
 .method public writeTo(Ljava/io/OutputStream;)V
     .registers 3
-    .param p1, "outstream"    # Ljava/io/OutputStream;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 89

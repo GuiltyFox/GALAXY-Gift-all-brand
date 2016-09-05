@@ -18,7 +18,6 @@
 # virtual methods
 .method protected _at(Lcom/fasterxml/jackson/core/JsonPointer;)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 3
-    .param p1, "ptr"    # Lcom/fasterxml/jackson/core/JsonPointer;
 
     .prologue
     .line 25
@@ -49,7 +48,6 @@
 
 .method public bridge synthetic findParent(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/String;
 
     .prologue
     .line 16
@@ -62,7 +60,6 @@
 
 .method public final findParent(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/node/ObjectNode;
     .registers 3
-    .param p1, "fieldName"    # Ljava/lang/String;
 
     .prologue
     .line 101
@@ -73,7 +70,6 @@
 
 .method public final findParents(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
     .registers 3
-    .param p1, "fieldName"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -91,13 +87,11 @@
 
     .prologue
     .line 116
-    .local p2, "foundSoFar":Ljava/util/List;, "Ljava/util/List<Lcom/fasterxml/jackson/databind/JsonNode;>;"
     return-object p2
 .end method
 
 .method public final findValue(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 3
-    .param p1, "fieldName"    # Ljava/lang/String;
 
     .prologue
     .line 95
@@ -108,7 +102,6 @@
 
 .method public final findValues(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
     .registers 3
-    .param p1, "fieldName"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -126,13 +119,11 @@
 
     .prologue
     .line 106
-    .local p2, "foundSoFar":Ljava/util/List;, "Ljava/util/List<Lcom/fasterxml/jackson/databind/JsonNode;>;"
     return-object p2
 .end method
 
 .method public final findValuesAsText(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
     .registers 3
-    .param p1, "fieldName"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -150,13 +141,11 @@
 
     .prologue
     .line 111
-    .local p2, "foundSoFar":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     return-object p2
 .end method
 
 .method public bridge synthetic get(I)Lcom/fasterxml/jackson/core/TreeNode;
     .registers 3
-    .param p1, "x0"    # I
 
     .prologue
     .line 16
@@ -169,7 +158,6 @@
 
 .method public bridge synthetic get(Ljava/lang/String;)Lcom/fasterxml/jackson/core/TreeNode;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/String;
 
     .prologue
     .line 16
@@ -182,7 +170,6 @@
 
 .method public final get(I)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 64
@@ -193,7 +180,6 @@
 
 .method public final get(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 3
-    .param p1, "fieldName"    # Ljava/lang/String;
 
     .prologue
     .line 76
@@ -204,7 +190,6 @@
 
 .method public final has(I)Z
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 70
@@ -215,7 +200,6 @@
 
 .method public final has(Ljava/lang/String;)Z
     .registers 3
-    .param p1, "fieldName"    # Ljava/lang/String;
 
     .prologue
     .line 82
@@ -226,7 +210,6 @@
 
 .method public final hasNonNull(I)Z
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 73
@@ -237,7 +220,6 @@
 
 .method public final hasNonNull(Ljava/lang/String;)Z
     .registers 3
-    .param p1, "fieldName"    # Ljava/lang/String;
 
     .prologue
     .line 85
@@ -248,7 +230,6 @@
 
 .method public bridge synthetic path(I)Lcom/fasterxml/jackson/core/TreeNode;
     .registers 3
-    .param p1, "x0"    # I
 
     .prologue
     .line 16
@@ -261,7 +242,6 @@
 
 .method public bridge synthetic path(Ljava/lang/String;)Lcom/fasterxml/jackson/core/TreeNode;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/String;
 
     .prologue
     .line 16
@@ -274,7 +254,6 @@
 
 .method public final path(I)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 67
@@ -287,7 +266,6 @@
 
 .method public final path(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 3
-    .param p1, "fieldName"    # Ljava/lang/String;
 
     .prologue
     .line 79
@@ -300,15 +278,6 @@
 
 .method public serializeWithType(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)V
     .registers 4
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p2, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .param p3, "typeSer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 43

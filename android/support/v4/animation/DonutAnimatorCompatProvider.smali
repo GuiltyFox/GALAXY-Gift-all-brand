@@ -6,14 +6,6 @@
 .implements Landroid/support/v4/animation/AnimatorProvider;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/v4/animation/DonutAnimatorCompatProvider$DonutFloatValueAnimator;
-    }
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .registers 1
@@ -28,16 +20,7 @@
 
 
 # virtual methods
-.method public clearInterpolator(Landroid/view/View;)V
-    .registers 2
-    .param p1, "view"    # Landroid/view/View;
-
-    .prologue
-    .line 154
-    return-void
-.end method
-
-.method public emptyValueAnimator()Landroid/support/v4/animation/ValueAnimatorCompat;
+.method public a()Landroid/support/v4/animation/ValueAnimatorCompat;
     .registers 2
 
     .prologue
@@ -47,4 +30,12 @@
     invoke-direct {v0}, Landroid/support/v4/animation/DonutAnimatorCompatProvider$DonutFloatValueAnimator;-><init>()V
 
     return-object v0
+.end method
+
+.method public a(Landroid/view/View;)V
+    .registers 2
+
+    .prologue
+    .line 154
+    return-void
 .end method

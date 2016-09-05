@@ -7,12 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/bumptech/glide/load/resource/gif/GifFrameModelLoader$GifFrameDataFetcher;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -39,11 +33,8 @@
 
 
 # virtual methods
-.method public getResourceFetcher(Lcom/bumptech/glide/gifdecoder/GifDecoder;II)Lcom/bumptech/glide/load/data/DataFetcher;
+.method public a(Lcom/bumptech/glide/gifdecoder/GifDecoder;II)Lcom/bumptech/glide/load/data/DataFetcher;
     .registers 5
-    .param p1, "model"    # Lcom/bumptech/glide/gifdecoder/GifDecoder;
-    .param p2, "width"    # I
-    .param p3, "height"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -65,18 +56,14 @@
     return-object v0
 .end method
 
-.method public bridge synthetic getResourceFetcher(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
+.method public bridge synthetic a(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
     .registers 5
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # I
-    .param p3, "x2"    # I
 
     .prologue
     .line 8
     check-cast p1, Lcom/bumptech/glide/gifdecoder/GifDecoder;
 
-    .end local p1    # "x0":Ljava/lang/Object;
-    invoke-virtual {p0, p1, p2, p3}, Lcom/bumptech/glide/load/resource/gif/GifFrameModelLoader;->getResourceFetcher(Lcom/bumptech/glide/gifdecoder/GifDecoder;II)Lcom/bumptech/glide/load/data/DataFetcher;
+    invoke-virtual {p0, p1, p2, p3}, Lcom/bumptech/glide/load/resource/gif/GifFrameModelLoader;->a(Lcom/bumptech/glide/gifdecoder/GifDecoder;II)Lcom/bumptech/glide/load/data/DataFetcher;
 
     move-result-object v0
 

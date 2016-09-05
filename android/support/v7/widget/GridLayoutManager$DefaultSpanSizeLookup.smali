@@ -3,17 +3,6 @@
 .source "GridLayoutManager.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/widget/GridLayoutManager;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "DefaultSpanSizeLookup"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -29,8 +18,6 @@
 # virtual methods
 .method public getSpanIndex(II)I
     .registers 4
-    .param p1, "position"    # I
-    .param p2, "spanCount"    # I
 
     .prologue
     .line 1064
@@ -41,7 +28,6 @@
 
 .method public getSpanSize(I)I
     .registers 3
-    .param p1, "position"    # I
 
     .prologue
     .line 1059

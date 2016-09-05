@@ -11,16 +11,11 @@
     value = Landroid/support/v7/widget/ActionBarContextView;->initForMode(Landroid/support/v7/view/ActionMode;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Landroid/support/v7/widget/ActionBarContextView;
+.field final synthetic a:Landroid/support/v7/view/ActionMode;
 
-.field final synthetic val$mode:Landroid/support/v7/view/ActionMode;
+.field final synthetic b:Landroid/support/v7/widget/ActionBarContextView;
 
 
 # direct methods
@@ -29,9 +24,9 @@
 
     .prologue
     .line 165
-    iput-object p1, p0, Landroid/support/v7/widget/ActionBarContextView$1;->this$0:Landroid/support/v7/widget/ActionBarContextView;
+    iput-object p1, p0, Landroid/support/v7/widget/ActionBarContextView$1;->b:Landroid/support/v7/widget/ActionBarContextView;
 
-    iput-object p2, p0, Landroid/support/v7/widget/ActionBarContextView$1;->val$mode:Landroid/support/v7/view/ActionMode;
+    iput-object p2, p0, Landroid/support/v7/widget/ActionBarContextView$1;->a:Landroid/support/v7/view/ActionMode;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,13 +37,12 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .registers 3
-    .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 167
-    iget-object v0, p0, Landroid/support/v7/widget/ActionBarContextView$1;->val$mode:Landroid/support/v7/view/ActionMode;
+    iget-object v0, p0, Landroid/support/v7/widget/ActionBarContextView$1;->a:Landroid/support/v7/view/ActionMode;
 
-    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->finish()V
+    invoke-virtual {v0}, Landroid/support/v7/view/ActionMode;->c()V
 
     .line 168
     return-void

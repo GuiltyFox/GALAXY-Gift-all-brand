@@ -4,11 +4,11 @@
 
 
 # static fields
-.field private static final GET_KEY:Lcom/bumptech/glide/util/MultiClassKey;
+.field private static final a:Lcom/bumptech/glide/util/MultiClassKey;
 
 
 # instance fields
-.field private final factories:Ljava/util/Map;
+.field private final b:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",
@@ -31,7 +31,7 @@
 
     invoke-direct {v0}, Lcom/bumptech/glide/util/MultiClassKey;-><init>()V
 
-    sput-object v0, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;->GET_KEY:Lcom/bumptech/glide/util/MultiClassKey;
+    sput-object v0, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;->a:Lcom/bumptech/glide/util/MultiClassKey;
 
     return-void
 .end method
@@ -48,15 +48,15 @@
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
-    iput-object v0, p0, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;->factories:Ljava/util/Map;
+    iput-object v0, p0, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;->b:Ljava/util/Map;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public get(Ljava/lang/Class;Ljava/lang/Class;)Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;
-    .registers 7
+.method public a(Ljava/lang/Class;Ljava/lang/Class;)Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;
+    .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Z:",
@@ -75,16 +75,14 @@
 
     .prologue
     .line 43
-    .local p1, "decodedClass":Ljava/lang/Class;, "Ljava/lang/Class<TZ;>;"
-    .local p2, "transcodedClass":Ljava/lang/Class;, "Ljava/lang/Class<TR;>;"
     invoke-virtual {p1, p2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_b
+    if-eqz v0, :cond_b
 
     .line 45
-    invoke-static {}, Lcom/bumptech/glide/load/resource/transcode/UnitTranscoder;->get()Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;
+    invoke-static {}, Lcom/bumptech/glide/load/resource/transcode/UnitTranscoder;->b()Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;
 
     move-result-object v0
 
@@ -94,30 +92,29 @@
 
     .line 48
     :cond_b
-    sget-object v2, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;->GET_KEY:Lcom/bumptech/glide/util/MultiClassKey;
+    sget-object v1, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;->a:Lcom/bumptech/glide/util/MultiClassKey;
 
-    monitor-enter v2
+    monitor-enter v1
 
     .line 49
     :try_start_e
-    sget-object v1, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;->GET_KEY:Lcom/bumptech/glide/util/MultiClassKey;
+    sget-object v0, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;->a:Lcom/bumptech/glide/util/MultiClassKey;
 
-    invoke-virtual {v1, p1, p2}, Lcom/bumptech/glide/util/MultiClassKey;->set(Ljava/lang/Class;Ljava/lang/Class;)V
+    invoke-virtual {v0, p1, p2}, Lcom/bumptech/glide/util/MultiClassKey;->a(Ljava/lang/Class;Ljava/lang/Class;)V
 
     .line 50
-    iget-object v1, p0, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;->factories:Ljava/util/Map;
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;->b:Ljava/util/Map;
 
-    sget-object v3, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;->GET_KEY:Lcom/bumptech/glide/util/MultiClassKey;
+    sget-object v2, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;->a:Lcom/bumptech/glide/util/MultiClassKey;
 
-    invoke-interface {v1, v3}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, v2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;
 
     .line 51
-    .local v0, "result":Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;, "Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder<**>;"
-    monitor-exit v2
+    monitor-exit v1
     :try_end_1e
     .catchall {:try_start_e .. :try_end_1e} :catchall_45
 
@@ -125,54 +122,53 @@
     if-nez v0, :cond_a
 
     .line 53
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "No transcoder registered for "
+    const-string/jumbo v2, "No transcoder registered for "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    const-string/jumbo v3, " and "
+    const-string/jumbo v2, " and "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     .line 51
-    .end local v0    # "result":Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;, "Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder<**>;"
     :catchall_45
-    move-exception v1
+    move-exception v0
 
     :try_start_46
-    monitor-exit v2
+    monitor-exit v1
     :try_end_47
     .catchall {:try_start_46 .. :try_end_47} :catchall_45
 
-    throw v1
+    throw v0
 .end method
 
-.method public register(Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;)V
+.method public a(Ljava/lang/Class;Ljava/lang/Class;Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;)V
     .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -192,10 +188,7 @@
 
     .prologue
     .line 29
-    .local p1, "decodedClass":Ljava/lang/Class;, "Ljava/lang/Class<TZ;>;"
-    .local p2, "transcodedClass":Ljava/lang/Class;, "Ljava/lang/Class<TR;>;"
-    .local p3, "transcoder":Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;, "Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder<TZ;TR;>;"
-    iget-object v0, p0, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;->factories:Ljava/util/Map;
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/transcode/TranscoderRegistry;->b:Ljava/util/Map;
 
     new-instance v1, Lcom/bumptech/glide/util/MultiClassKey;
 

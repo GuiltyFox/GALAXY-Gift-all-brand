@@ -8,31 +8,25 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;->showDialogErrorPermissions(Ljava/lang/String;)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/samsung/privilege/activity/MainPagerActivity;->d(Ljava/lang/String;)V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+.field final synthetic a:Landroid/app/Dialog;
 
-.field final synthetic val$dialogError:Landroid/app/Dialog;
+.field final synthetic b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/MainPagerActivity;Landroid/app/Dialog;)V
     .registers 3
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
 
     .prologue
-    .line 348
-    iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$3;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .line 373
+    iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$3;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    iput-object p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$3;->val$dialogError:Landroid/app/Dialog;
+    iput-object p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$3;->a:Landroid/app/Dialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,19 +37,18 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .registers 3
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 350
-    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$3;->val$dialogError:Landroid/app/Dialog;
+    .line 375
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$3;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 351
-    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$3;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .line 376
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$3;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->finish()V
 
-    .line 352
+    .line 377
     return-void
 .end method

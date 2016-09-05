@@ -3,21 +3,9 @@
 .source "NavigationMenuPresenter.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/internal/NavigationMenuPresenter;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "HeaderViewHolder"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
     .registers 2
-    .param p1, "itemView"    # Landroid/view/View;
 
     .prologue
     .line 303

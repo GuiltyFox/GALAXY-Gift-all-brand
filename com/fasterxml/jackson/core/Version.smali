@@ -11,11 +11,11 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
+        "Ljava/io/Serializable;",
         "Ljava/lang/Comparable",
         "<",
         "Lcom/fasterxml/jackson/core/Version;",
-        ">;",
-        "Ljava/io/Serializable;"
+        ">;"
     }
 .end annotation
 
@@ -69,10 +69,6 @@
 
 .method public constructor <init>(IIILjava/lang/String;)V
     .registers 12
-    .param p1, "major"    # I
-    .param p2, "minor"    # I
-    .param p3, "patchLevel"    # I
-    .param p4, "snapshotInfo"    # Ljava/lang/String;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -100,12 +96,6 @@
 
 .method public constructor <init>(IIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .registers 7
-    .param p1, "major"    # I
-    .param p2, "minor"    # I
-    .param p3, "patchLevel"    # I
-    .param p4, "snapshotInfo"    # Ljava/lang/String;
-    .param p5, "groupId"    # Ljava/lang/String;
-    .param p6, "artifactId"    # Ljava/lang/String;
 
     .prologue
     .line 52
@@ -128,7 +118,6 @@
 
     const-string/jumbo p5, ""
 
-    .end local p5    # "groupId":Ljava/lang/String;
     :cond_10
     iput-object p5, p0, Lcom/fasterxml/jackson/core/Version;->_groupId:Ljava/lang/String;
 
@@ -137,7 +126,6 @@
 
     const-string/jumbo p6, ""
 
-    .end local p6    # "artifactId":Ljava/lang/String;
     :cond_17
     iput-object p6, p0, Lcom/fasterxml/jackson/core/Version;->_artifactId:Ljava/lang/String;
 
@@ -158,8 +146,7 @@
 
 # virtual methods
 .method public compareTo(Lcom/fasterxml/jackson/core/Version;)I
-    .registers 5
-    .param p1, "other"    # Lcom/fasterxml/jackson/core/Version;
+    .registers 4
 
     .prologue
     .line 114
@@ -174,24 +161,23 @@
 
     .line 116
     :cond_4
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/Version;->_groupId:Ljava/lang/String;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/Version;->_groupId:Ljava/lang/String;
 
-    iget-object v2, p1, Lcom/fasterxml/jackson/core/Version;->_groupId:Ljava/lang/String;
+    iget-object v1, p1, Lcom/fasterxml/jackson/core/Version;->_groupId:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+    invoke-virtual {v0, v1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 
     move-result v0
 
     .line 117
-    .local v0, "diff":I
     if-nez v0, :cond_3
 
     .line 118
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/Version;->_artifactId:Ljava/lang/String;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/Version;->_artifactId:Ljava/lang/String;
 
-    iget-object v2, p1, Lcom/fasterxml/jackson/core/Version;->_artifactId:Ljava/lang/String;
+    iget-object v1, p1, Lcom/fasterxml/jackson/core/Version;->_artifactId:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+    invoke-virtual {v0, v1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
 
     move-result v0
 
@@ -199,44 +185,42 @@
     if-nez v0, :cond_3
 
     .line 120
-    iget v1, p0, Lcom/fasterxml/jackson/core/Version;->_majorVersion:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/Version;->_majorVersion:I
 
-    iget v2, p1, Lcom/fasterxml/jackson/core/Version;->_majorVersion:I
+    iget v1, p1, Lcom/fasterxml/jackson/core/Version;->_majorVersion:I
 
-    sub-int v0, v1, v2
+    sub-int/2addr v0, v1
 
     .line 121
     if-nez v0, :cond_3
 
     .line 122
-    iget v1, p0, Lcom/fasterxml/jackson/core/Version;->_minorVersion:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/Version;->_minorVersion:I
 
-    iget v2, p1, Lcom/fasterxml/jackson/core/Version;->_minorVersion:I
+    iget v1, p1, Lcom/fasterxml/jackson/core/Version;->_minorVersion:I
 
-    sub-int v0, v1, v2
+    sub-int/2addr v0, v1
 
     .line 123
     if-nez v0, :cond_3
 
     .line 124
-    iget v1, p0, Lcom/fasterxml/jackson/core/Version;->_patchLevel:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/Version;->_patchLevel:I
 
-    iget v2, p1, Lcom/fasterxml/jackson/core/Version;->_patchLevel:I
+    iget v1, p1, Lcom/fasterxml/jackson/core/Version;->_patchLevel:I
 
-    sub-int v0, v1, v2
+    sub-int/2addr v0, v1
 
     goto :goto_3
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 16
     check-cast p1, Lcom/fasterxml/jackson/core/Version;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/core/Version;->compareTo(Lcom/fasterxml/jackson/core/Version;)I
 
     move-result v0
@@ -245,13 +229,12 @@
 .end method
 
 .method public equals(Ljava/lang/Object;)Z
-    .registers 7
-    .param p1, "o"    # Ljava/lang/Object;
+    .registers 6
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 99
     if-ne p1, p0, :cond_5
@@ -259,13 +242,13 @@
     .line 103
     :cond_4
     :goto_4
-    return v1
+    return v0
 
     .line 100
     :cond_5
     if-nez p1, :cond_9
 
-    move v1, v2
+    move v0, v1
 
     goto :goto_4
 
@@ -273,66 +256,63 @@
     :cond_9
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v2
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v4
+    move-result-object v3
 
-    if-eq v3, v4, :cond_15
+    if-eq v2, v3, :cond_15
 
-    move v1, v2
+    move v0, v1
 
     goto :goto_4
 
-    :cond_15
-    move-object v0, p1
-
     .line 102
-    check-cast v0, Lcom/fasterxml/jackson/core/Version;
+    :cond_15
+    check-cast p1, Lcom/fasterxml/jackson/core/Version;
 
     .line 103
-    .local v0, "other":Lcom/fasterxml/jackson/core/Version;
-    iget v3, v0, Lcom/fasterxml/jackson/core/Version;->_majorVersion:I
+    iget v2, p1, Lcom/fasterxml/jackson/core/Version;->_majorVersion:I
 
-    iget v4, p0, Lcom/fasterxml/jackson/core/Version;->_majorVersion:I
+    iget v3, p0, Lcom/fasterxml/jackson/core/Version;->_majorVersion:I
 
-    if-ne v3, v4, :cond_3e
+    if-ne v2, v3, :cond_3d
 
-    iget v3, v0, Lcom/fasterxml/jackson/core/Version;->_minorVersion:I
+    iget v2, p1, Lcom/fasterxml/jackson/core/Version;->_minorVersion:I
 
-    iget v4, p0, Lcom/fasterxml/jackson/core/Version;->_minorVersion:I
+    iget v3, p0, Lcom/fasterxml/jackson/core/Version;->_minorVersion:I
 
-    if-ne v3, v4, :cond_3e
+    if-ne v2, v3, :cond_3d
 
-    iget v3, v0, Lcom/fasterxml/jackson/core/Version;->_patchLevel:I
+    iget v2, p1, Lcom/fasterxml/jackson/core/Version;->_patchLevel:I
 
-    iget v4, p0, Lcom/fasterxml/jackson/core/Version;->_patchLevel:I
+    iget v3, p0, Lcom/fasterxml/jackson/core/Version;->_patchLevel:I
 
-    if-ne v3, v4, :cond_3e
+    if-ne v2, v3, :cond_3d
 
-    iget-object v3, v0, Lcom/fasterxml/jackson/core/Version;->_artifactId:Ljava/lang/String;
+    iget-object v2, p1, Lcom/fasterxml/jackson/core/Version;->_artifactId:Ljava/lang/String;
 
-    iget-object v4, p0, Lcom/fasterxml/jackson/core/Version;->_artifactId:Ljava/lang/String;
+    iget-object v3, p0, Lcom/fasterxml/jackson/core/Version;->_artifactId:Ljava/lang/String;
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_3e
+    if-eqz v2, :cond_3d
 
-    iget-object v3, v0, Lcom/fasterxml/jackson/core/Version;->_groupId:Ljava/lang/String;
+    iget-object v2, p1, Lcom/fasterxml/jackson/core/Version;->_groupId:Ljava/lang/String;
 
-    iget-object v4, p0, Lcom/fasterxml/jackson/core/Version;->_groupId:Ljava/lang/String;
+    iget-object v3, p0, Lcom/fasterxml/jackson/core/Version;->_groupId:Ljava/lang/String;
 
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_4
+    if-nez v2, :cond_4
 
-    :cond_3e
-    move v1, v2
+    :cond_3d
+    move v0, v1
 
     goto :goto_4
 .end method
@@ -527,7 +507,6 @@
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 83
-    .local v0, "sb":Ljava/lang/StringBuilder;
     iget v1, p0, Lcom/fasterxml/jackson/core/Version;->_majorVersion:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
@@ -572,7 +551,7 @@
     :cond_2f
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method

@@ -3,7 +3,7 @@
 
 
 # direct methods
-.method public static version()I
+.method public static a()I
     .registers 2
 
     :try_start_0
@@ -25,14 +25,14 @@
 
     sget-object v1, Landroid/os/Build$VERSION;->SDK:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/analytics/internal/zzae;->zzf(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/analytics/internal/zzae;->a(Ljava/lang/String;Ljava/lang/Object;)V
 
     const/4 v0, 0x0
 
     goto :goto_6
 .end method
 
-.method public static zzbl(Ljava/lang/String;)Z
+.method public static a(Ljava/lang/String;)Z
     .registers 5
 
     const/4 v1, 0x1
@@ -41,7 +41,7 @@
 
     const/16 v2, 0x9
 
-    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzx;->version()I
+    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzx;->a()I
 
     move-result v3
 

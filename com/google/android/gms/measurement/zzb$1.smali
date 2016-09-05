@@ -7,12 +7,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/gms/measurement/zzb;->zzb(Lcom/google/android/gms/measurement/zzc;)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/google/android/gms/measurement/zzb;->a(Lcom/google/android/gms/measurement/zzc;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
@@ -27,14 +22,14 @@
 
 
 # instance fields
-.field final synthetic zzaRj:Lcom/google/android/gms/measurement/zzb;
+.field final synthetic a:Lcom/google/android/gms/measurement/zzb;
 
 
 # direct methods
 .method constructor <init>(Lcom/google/android/gms/measurement/zzb;)V
     .registers 2
 
-    iput-object p1, p0, Lcom/google/android/gms/measurement/zzb$1;->zzaRj:Lcom/google/android/gms/measurement/zzb;
+    iput-object p1, p0, Lcom/google/android/gms/measurement/zzb$1;->a:Lcom/google/android/gms/measurement/zzb;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,26 +38,7 @@
 
 
 # virtual methods
-.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .registers 4
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Ljava/lang/Object;
-
-    .prologue
-    check-cast p1, Lcom/google/android/gms/measurement/zze;
-
-    .end local p1    # "x0":Ljava/lang/Object;
-    check-cast p2, Lcom/google/android/gms/measurement/zze;
-
-    .end local p2    # "x1":Ljava/lang/Object;
-    invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/measurement/zzb$1;->zza(Lcom/google/android/gms/measurement/zze;Lcom/google/android/gms/measurement/zze;)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public zza(Lcom/google/android/gms/measurement/zze;Lcom/google/android/gms/measurement/zze;)I
+.method public a(Lcom/google/android/gms/measurement/zze;Lcom/google/android/gms/measurement/zze;)I
     .registers 5
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -82,6 +58,20 @@
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+    .registers 4
+
+    check-cast p1, Lcom/google/android/gms/measurement/zze;
+
+    check-cast p2, Lcom/google/android/gms/measurement/zze;
+
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/measurement/zzb$1;->a(Lcom/google/android/gms/measurement/zze;Lcom/google/android/gms/measurement/zze;)I
 
     move-result v0
 

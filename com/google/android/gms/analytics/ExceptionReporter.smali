@@ -6,25 +6,21 @@
 
 
 # instance fields
-.field private final mContext:Landroid/content/Context;
+.field private final a:Ljava/lang/Thread$UncaughtExceptionHandler;
 
-.field private final zzNG:Ljava/lang/Thread$UncaughtExceptionHandler;
+.field private final b:Lcom/google/android/gms/analytics/Tracker;
 
-.field private final zzNH:Lcom/google/android/gms/analytics/Tracker;
+.field private final c:Landroid/content/Context;
 
-.field private zzNI:Lcom/google/android/gms/analytics/ExceptionParser;
+.field private d:Lcom/google/android/gms/analytics/ExceptionParser;
 
-.field private zzNJ:Lcom/google/android/gms/analytics/GoogleAnalytics;
+.field private e:Lcom/google/android/gms/analytics/GoogleAnalytics;
 
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/gms/analytics/Tracker;Ljava/lang/Thread$UncaughtExceptionHandler;Landroid/content/Context;)V
     .registers 6
-    .param p1, "tracker"    # Lcom/google/android/gms/analytics/Tracker;
-    .param p2, "originalHandler"    # Ljava/lang/Thread$UncaughtExceptionHandler;
-    .param p3, "context"    # Landroid/content/Context;
 
-    .prologue
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     if-nez p1, :cond_e
@@ -49,9 +45,9 @@
     throw v0
 
     :cond_19
-    iput-object p2, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->zzNG:Ljava/lang/Thread$UncaughtExceptionHandler;
+    iput-object p2, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->a:Ljava/lang/Thread$UncaughtExceptionHandler;
 
-    iput-object p1, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->zzNH:Lcom/google/android/gms/analytics/Tracker;
+    iput-object p1, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->b:Lcom/google/android/gms/analytics/Tracker;
 
     new-instance v0, Lcom/google/android/gms/analytics/StandardExceptionParser;
 
@@ -61,13 +57,13 @@
 
     invoke-direct {v0, p3, v1}, Lcom/google/android/gms/analytics/StandardExceptionParser;-><init>(Landroid/content/Context;Ljava/util/Collection;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->zzNI:Lcom/google/android/gms/analytics/ExceptionParser;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->d:Lcom/google/android/gms/analytics/ExceptionParser;
 
     invoke-virtual {p3}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->mContext:Landroid/content/Context;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->c:Landroid/content/Context;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -92,7 +88,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->v(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->b(Ljava/lang/String;)V
 
     return-void
 
@@ -110,33 +106,41 @@
 
 
 # virtual methods
-.method public getExceptionParser()Lcom/google/android/gms/analytics/ExceptionParser;
+.method a()Lcom/google/android/gms/analytics/GoogleAnalytics;
     .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->zzNI:Lcom/google/android/gms/analytics/ExceptionParser;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->e:Lcom/google/android/gms/analytics/GoogleAnalytics;
+
+    if-nez v0, :cond_c
+
+    iget-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->c:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->a(Landroid/content/Context;)Lcom/google/android/gms/analytics/GoogleAnalytics;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->e:Lcom/google/android/gms/analytics/GoogleAnalytics;
+
+    :cond_c
+    iget-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->e:Lcom/google/android/gms/analytics/GoogleAnalytics;
 
     return-object v0
 .end method
 
-.method public setExceptionParser(Lcom/google/android/gms/analytics/ExceptionParser;)V
+.method b()Ljava/lang/Thread$UncaughtExceptionHandler;
     .registers 2
-    .param p1, "exceptionParser"    # Lcom/google/android/gms/analytics/ExceptionParser;
 
-    .prologue
-    iput-object p1, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->zzNI:Lcom/google/android/gms/analytics/ExceptionParser;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->a:Ljava/lang/Thread$UncaughtExceptionHandler;
 
-    return-void
+    return-object v0
 .end method
 
 .method public uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
     .registers 6
-    .param p1, "t"    # Ljava/lang/Thread;
-    .param p2, "e"    # Ljava/lang/Throwable;
 
-    .prologue
     const-string/jumbo v0, "UncaughtException"
 
-    iget-object v1, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->zzNI:Lcom/google/android/gms/analytics/ExceptionParser;
+    iget-object v1, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->d:Lcom/google/android/gms/analytics/ExceptionParser;
 
     if-eqz v1, :cond_13
 
@@ -147,9 +151,9 @@
     move-result-object v0
 
     :goto_d
-    iget-object v1, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->zzNI:Lcom/google/android/gms/analytics/ExceptionParser;
+    iget-object v1, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->d:Lcom/google/android/gms/analytics/ExceptionParser;
 
-    invoke-interface {v1, v0, p2}, Lcom/google/android/gms/analytics/ExceptionParser;->getDescription(Ljava/lang/String;Ljava/lang/Throwable;)Ljava/lang/String;
+    invoke-interface {v1, v0, p2}, Lcom/google/android/gms/analytics/ExceptionParser;->a(Ljava/lang/String;Ljava/lang/Throwable;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -172,47 +176,47 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/google/android/gms/analytics/internal/zzae;->v(Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/google/android/gms/analytics/internal/zzae;->b(Ljava/lang/String;)V
 
-    iget-object v1, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->zzNH:Lcom/google/android/gms/analytics/Tracker;
+    iget-object v1, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->b:Lcom/google/android/gms/analytics/Tracker;
 
     new-instance v2, Lcom/google/android/gms/analytics/HitBuilders$ExceptionBuilder;
 
     invoke-direct {v2}, Lcom/google/android/gms/analytics/HitBuilders$ExceptionBuilder;-><init>()V
 
-    invoke-virtual {v2, v0}, Lcom/google/android/gms/analytics/HitBuilders$ExceptionBuilder;->setDescription(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$ExceptionBuilder;
+    invoke-virtual {v2, v0}, Lcom/google/android/gms/analytics/HitBuilders$ExceptionBuilder;->a(Ljava/lang/String;)Lcom/google/android/gms/analytics/HitBuilders$ExceptionBuilder;
 
     move-result-object v0
 
     const/4 v2, 0x1
 
-    invoke-virtual {v0, v2}, Lcom/google/android/gms/analytics/HitBuilders$ExceptionBuilder;->setFatal(Z)Lcom/google/android/gms/analytics/HitBuilders$ExceptionBuilder;
+    invoke-virtual {v0, v2}, Lcom/google/android/gms/analytics/HitBuilders$ExceptionBuilder;->a(Z)Lcom/google/android/gms/analytics/HitBuilders$ExceptionBuilder;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/HitBuilders$ExceptionBuilder;->build()Ljava/util/Map;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/HitBuilders$ExceptionBuilder;->a()Ljava/util/Map;
 
     move-result-object v0
 
-    invoke-virtual {v1, v0}, Lcom/google/android/gms/analytics/Tracker;->send(Ljava/util/Map;)V
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/analytics/Tracker;->a(Ljava/util/Map;)V
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/ExceptionReporter;->zzik()Lcom/google/android/gms/analytics/GoogleAnalytics;
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/ExceptionReporter;->a()Lcom/google/android/gms/analytics/GoogleAnalytics;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->dispatchLocalHits()V
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->i()V
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->zzio()V
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->j()V
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->zzNG:Ljava/lang/Thread$UncaughtExceptionHandler;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->a:Ljava/lang/Thread$UncaughtExceptionHandler;
 
     if-eqz v0, :cond_5a
 
     const-string/jumbo v0, "Passing exception to the original handler"
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->v(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->b(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->zzNG:Ljava/lang/Thread$UncaughtExceptionHandler;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->a:Ljava/lang/Thread$UncaughtExceptionHandler;
 
     invoke-interface {v0, p1, p2}, Ljava/lang/Thread$UncaughtExceptionHandler;->uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
 
@@ -223,33 +227,4 @@
     const/4 v0, 0x0
 
     goto :goto_d
-.end method
-
-.method zzik()Lcom/google/android/gms/analytics/GoogleAnalytics;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->zzNJ:Lcom/google/android/gms/analytics/GoogleAnalytics;
-
-    if-nez v0, :cond_c
-
-    iget-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->mContext:Landroid/content/Context;
-
-    invoke-static {v0}, Lcom/google/android/gms/analytics/GoogleAnalytics;->getInstance(Landroid/content/Context;)Lcom/google/android/gms/analytics/GoogleAnalytics;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->zzNJ:Lcom/google/android/gms/analytics/GoogleAnalytics;
-
-    :cond_c
-    iget-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->zzNJ:Lcom/google/android/gms/analytics/GoogleAnalytics;
-
-    return-object v0
-.end method
-
-.method zzil()Ljava/lang/Thread$UncaughtExceptionHandler;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/analytics/ExceptionReporter;->zzNG:Ljava/lang/Thread$UncaughtExceptionHandler;
-
-    return-object v0
 .end method

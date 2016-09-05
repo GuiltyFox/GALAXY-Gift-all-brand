@@ -6,7 +6,7 @@
 
 
 # static fields
-.field private static zzamk:Lcom/google/android/gms/internal/zzno;
+.field private static a:Lcom/google/android/gms/internal/zzno;
 
 
 # direct methods
@@ -18,7 +18,7 @@
     return-void
 .end method
 
-.method public static declared-synchronized zzrM()Lcom/google/android/gms/internal/zznl;
+.method public static declared-synchronized c()Lcom/google/android/gms/internal/zznl;
     .registers 2
 
     const-class v1, Lcom/google/android/gms/internal/zzno;
@@ -26,7 +26,7 @@
     monitor-enter v1
 
     :try_start_3
-    sget-object v0, Lcom/google/android/gms/internal/zzno;->zzamk:Lcom/google/android/gms/internal/zzno;
+    sget-object v0, Lcom/google/android/gms/internal/zzno;->a:Lcom/google/android/gms/internal/zzno;
 
     if-nez v0, :cond_e
 
@@ -34,10 +34,10 @@
 
     invoke-direct {v0}, Lcom/google/android/gms/internal/zzno;-><init>()V
 
-    sput-object v0, Lcom/google/android/gms/internal/zzno;->zzamk:Lcom/google/android/gms/internal/zzno;
+    sput-object v0, Lcom/google/android/gms/internal/zzno;->a:Lcom/google/android/gms/internal/zzno;
 
     :cond_e
-    sget-object v0, Lcom/google/android/gms/internal/zzno;->zzamk:Lcom/google/android/gms/internal/zzno;
+    sget-object v0, Lcom/google/android/gms/internal/zzno;->a:Lcom/google/android/gms/internal/zzno;
     :try_end_10
     .catchall {:try_start_3 .. :try_end_10} :catchall_12
 
@@ -55,7 +55,7 @@
 
 
 # virtual methods
-.method public currentTimeMillis()J
+.method public a()J
     .registers 3
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -65,20 +65,10 @@
     return-wide v0
 .end method
 
-.method public elapsedRealtime()J
+.method public b()J
     .registers 3
 
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
-
-    move-result-wide v0
-
-    return-wide v0
-.end method
-
-.method public nanoTime()J
-    .registers 3
-
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     move-result-wide v0
 

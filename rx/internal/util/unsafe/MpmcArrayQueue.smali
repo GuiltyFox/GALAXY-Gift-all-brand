@@ -15,46 +15,12 @@
 .end annotation
 
 
-# instance fields
-.field p30:J
-
-.field p31:J
-
-.field p32:J
-
-.field p33:J
-
-.field p34:J
-
-.field p35:J
-
-.field p36:J
-
-.field p37:J
-
-.field p40:J
-
-.field p41:J
-
-.field p42:J
-
-.field p43:J
-
-.field p44:J
-
-.field p45:J
-
-.field p46:J
-
-
 # direct methods
 .method public constructor <init>(I)V
     .registers 3
-    .param p1, "capacity"    # I
 
     .prologue
     .line 102
-    .local p0, "this":Lrx/internal/util/unsafe/MpmcArrayQueue;, "Lrx/internal/util/unsafe/MpmcArrayQueue<TE;>;"
     const/4 v0, 0x2
 
     invoke-static {v0, p1}, Ljava/lang/Math;->max(II)I
@@ -74,12 +40,11 @@
 
     .prologue
     .line 236
-    .local p0, "this":Lrx/internal/util/unsafe/MpmcArrayQueue;, "Lrx/internal/util/unsafe/MpmcArrayQueue<TE;>;"
-    invoke-virtual {p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->lvConsumerIndex()J
+    invoke-virtual {p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->a()J
 
     move-result-wide v0
 
-    invoke-virtual {p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->lvProducerIndex()J
+    invoke-virtual {p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->b()J
 
     move-result-wide v2
 
@@ -99,7 +64,7 @@
 .end method
 
 .method public offer(Ljava/lang/Object;)Z
-    .registers 26
+    .registers 16
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TE;)Z"
@@ -108,148 +73,129 @@
 
     .prologue
     .line 107
-    .local p0, "this":Lrx/internal/util/unsafe/MpmcArrayQueue;, "Lrx/internal/util/unsafe/MpmcArrayQueue<TE;>;"
-    .local p1, "e":Ljava/lang/Object;, "TE;"
     if-nez p1, :cond_b
 
     .line 108
-    new-instance v4, Ljava/lang/NullPointerException;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string/jumbo v8, "Null is not a valid element"
+    const-string/jumbo v1, "Null is not a valid element"
 
-    invoke-direct {v4, v8}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    throw v4
+    throw v0
 
     .line 112
     :cond_b
-    move-object/from16 v0, p0
+    iget-wide v0, p0, Lrx/internal/util/unsafe/MpmcArrayQueue;->b:J
 
-    iget-wide v8, v0, Lrx/internal/util/unsafe/MpmcArrayQueue;->mask:J
+    const-wide/16 v2, 0x1
 
-    const-wide/16 v22, 0x1
-
-    add-long v12, v8, v22
+    add-long v6, v0, v2
 
     .line 113
-    .local v12, "capacity":J
-    move-object/from16 v0, p0
-
-    iget-object v5, v0, Lrx/internal/util/unsafe/MpmcArrayQueue;->sequenceBuffer:[J
+    iget-object v1, p0, Lrx/internal/util/unsafe/MpmcArrayQueue;->d:[J
 
     .line 116
-    .local v5, "lSequenceBuffer":[J
-    const-wide v10, 0x7fffffffffffffffL
+    const-wide v2, 0x7fffffffffffffffL
+
+    move-wide v4, v2
 
     .line 118
-    .local v10, "cIndex":J
-    :cond_1c
-    invoke-virtual/range {p0 .. p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->lvProducerIndex()J
+    :goto_19
+    invoke-virtual {p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->b()J
 
-    move-result-wide v14
+    move-result-wide v8
 
     .line 119
-    .local v14, "currentProducerIndex":J
-    move-object/from16 v0, p0
+    invoke-virtual {p0, v8, v9}, Lrx/internal/util/unsafe/MpmcArrayQueue;->d(J)J
 
-    invoke-virtual {v0, v14, v15}, Lrx/internal/util/unsafe/MpmcArrayQueue;->calcSequenceOffset(J)J
-
-    move-result-wide v6
+    move-result-wide v2
 
     .line 120
-    .local v6, "seqOffset":J
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v5, v6, v7}, Lrx/internal/util/unsafe/MpmcArrayQueue;->lvSequence([JJ)J
-
-    move-result-wide v20
-
-    .line 121
-    .local v20, "seq":J
-    sub-long v16, v20, v14
-
-    .line 123
-    .local v16, "delta":J
-    const-wide/16 v8, 0x0
-
-    cmp-long v4, v16, v8
-
-    if-nez v4, :cond_58
-
-    .line 125
-    const-wide/16 v8, 0x1
-
-    add-long/2addr v8, v14
-
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v14, v15, v8, v9}, Lrx/internal/util/unsafe/MpmcArrayQueue;->casProducerIndex(JJ)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_1c
-
-    .line 141
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v14, v15}, Lrx/internal/util/unsafe/MpmcArrayQueue;->calcElementOffset(J)J
-
-    move-result-wide v18
-
-    .line 142
-    .local v18, "elementOffset":J
-    move-object/from16 v0, p0
-
-    move-wide/from16 v1, v18
-
-    move-object/from16 v3, p1
-
-    invoke-virtual {v0, v1, v2, v3}, Lrx/internal/util/unsafe/MpmcArrayQueue;->spElement(JLjava/lang/Object;)V
-
-    .line 146
-    const-wide/16 v8, 0x1
-
-    add-long/2addr v8, v14
-
-    move-object/from16 v4, p0
-
-    invoke-virtual/range {v4 .. v9}, Lrx/internal/util/unsafe/MpmcArrayQueue;->soSequence([JJJ)V
-
-    .line 148
-    const/4 v4, 0x1
-
-    .end local v18    # "elementOffset":J
-    :goto_57
-    return v4
-
-    .line 130
-    :cond_58
-    const-wide/16 v8, 0x0
-
-    cmp-long v4, v16, v8
-
-    if-gez v4, :cond_1c
-
-    sub-long v8, v14, v12
-
-    cmp-long v4, v8, v10
-
-    if-gtz v4, :cond_1c
-
-    sub-long v8, v14, v12
-
-    invoke-virtual/range {p0 .. p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->lvConsumerIndex()J
+    invoke-virtual {p0, v1, v2, v3}, Lrx/internal/util/unsafe/MpmcArrayQueue;->a([JJ)J
 
     move-result-wide v10
 
-    cmp-long v4, v8, v10
+    .line 121
+    sub-long/2addr v10, v8
 
-    if-gtz v4, :cond_1c
+    .line 123
+    const-wide/16 v12, 0x0
+
+    cmp-long v0, v10, v12
+
+    if-nez v0, :cond_45
+
+    .line 125
+    const-wide/16 v10, 0x1
+
+    add-long/2addr v10, v8
+
+    invoke-virtual {p0, v8, v9, v10, v11}, Lrx/internal/util/unsafe/MpmcArrayQueue;->c(JJ)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5d
+
+    .line 141
+    invoke-virtual {p0, v8, v9}, Lrx/internal/util/unsafe/MpmcArrayQueue;->a(J)J
+
+    move-result-wide v4
+
+    .line 142
+    invoke-virtual {p0, v4, v5, p1}, Lrx/internal/util/unsafe/MpmcArrayQueue;->a(JLjava/lang/Object;)V
+
+    .line 146
+    const-wide/16 v4, 0x1
+
+    add-long/2addr v4, v8
+
+    move-object v0, p0
+
+    invoke-virtual/range {v0 .. v5}, Lrx/internal/util/unsafe/MpmcArrayQueue;->a([JJJ)V
+
+    .line 148
+    const/4 v0, 0x1
+
+    :goto_44
+    return v0
+
+    .line 130
+    :cond_45
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v10, v2
+
+    if-gez v0, :cond_5d
+
+    sub-long v2, v8, v6
+
+    cmp-long v0, v2, v4
+
+    if-gtz v0, :cond_5d
+
+    sub-long v2, v8, v6
+
+    invoke-virtual {p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->a()J
+
+    move-result-wide v4
+
+    cmp-long v0, v2, v4
+
+    if-gtz v0, :cond_5d
 
     .line 134
-    const/4 v4, 0x0
+    const/4 v0, 0x0
 
-    goto :goto_57
+    goto :goto_44
+
+    :cond_5d
+    move-wide v2, v4
+
+    move-wide v4, v2
+
+    .line 138
+    goto :goto_19
 .end method
 
 .method public peek()Ljava/lang/Object;
@@ -262,33 +208,30 @@
 
     .prologue
     .line 203
-    .local p0, "this":Lrx/internal/util/unsafe/MpmcArrayQueue;, "Lrx/internal/util/unsafe/MpmcArrayQueue<TE;>;"
     :cond_0
-    invoke-virtual {p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->lvConsumerIndex()J
+    invoke-virtual {p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->a()J
 
     move-result-wide v0
 
     .line 205
-    .local v0, "currConsumerIndex":J
-    invoke-virtual {p0, v0, v1}, Lrx/internal/util/unsafe/MpmcArrayQueue;->calcElementOffset(J)J
+    invoke-virtual {p0, v0, v1}, Lrx/internal/util/unsafe/MpmcArrayQueue;->a(J)J
 
-    move-result-wide v4
+    move-result-wide v2
 
-    invoke-virtual {p0, v4, v5}, Lrx/internal/util/unsafe/MpmcArrayQueue;->lpElement(J)Ljava/lang/Object;
+    invoke-virtual {p0, v2, v3}, Lrx/internal/util/unsafe/MpmcArrayQueue;->b(J)Ljava/lang/Object;
 
     move-result-object v2
 
     .line 207
-    .local v2, "e":Ljava/lang/Object;, "TE;"
     if-nez v2, :cond_16
 
-    invoke-virtual {p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->lvProducerIndex()J
+    invoke-virtual {p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->b()J
 
     move-result-wide v4
 
-    cmp-long v3, v0, v4
+    cmp-long v0, v0, v4
 
-    if-nez v3, :cond_0
+    if-nez v0, :cond_0
 
     .line 208
     :cond_16
@@ -296,7 +239,7 @@
 .end method
 
 .method public poll()Ljava/lang/Object;
-    .registers 23
+    .registers 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TE;"
@@ -305,173 +248,157 @@
 
     .prologue
     .line 160
-    .local p0, "this":Lrx/internal/util/unsafe/MpmcArrayQueue;, "Lrx/internal/util/unsafe/MpmcArrayQueue<TE;>;"
-    move-object/from16 v0, p0
-
-    iget-object v3, v0, Lrx/internal/util/unsafe/MpmcArrayQueue;->sequenceBuffer:[J
+    iget-object v1, p0, Lrx/internal/util/unsafe/MpmcArrayQueue;->d:[J
 
     .line 163
-    .local v3, "lSequenceBuffer":[J
-    const-wide/16 v16, -0x1
+    const-wide/16 v2, -0x1
+
+    move-wide v4, v2
 
     .line 165
-    .local v16, "pIndex":J
-    :cond_6
-    invoke-virtual/range {p0 .. p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->lvConsumerIndex()J
+    :goto_5
+    invoke-virtual {p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->a()J
 
     move-result-wide v8
 
     .line 166
-    .local v8, "currentConsumerIndex":J
-    move-object/from16 v0, p0
+    invoke-virtual {p0, v8, v9}, Lrx/internal/util/unsafe/MpmcArrayQueue;->d(J)J
 
-    invoke-virtual {v0, v8, v9}, Lrx/internal/util/unsafe/MpmcArrayQueue;->calcSequenceOffset(J)J
-
-    move-result-wide v4
+    move-result-wide v2
 
     .line 167
-    .local v4, "seqOffset":J
-    move-object/from16 v0, p0
+    invoke-virtual {p0, v1, v2, v3}, Lrx/internal/util/unsafe/MpmcArrayQueue;->a([JJ)J
 
-    invoke-virtual {v0, v3, v4, v5}, Lrx/internal/util/unsafe/MpmcArrayQueue;->lvSequence([JJ)J
-
-    move-result-wide v18
+    move-result-wide v6
 
     .line 168
-    .local v18, "seq":J
-    const-wide/16 v6, 0x1
+    const-wide/16 v10, 0x1
 
-    add-long/2addr v6, v8
+    add-long/2addr v10, v8
 
-    sub-long v10, v18, v6
+    sub-long/2addr v6, v10
 
     .line 170
-    .local v10, "delta":J
-    const-wide/16 v6, 0x0
+    const-wide/16 v10, 0x0
 
-    cmp-long v2, v10, v6
+    cmp-long v0, v6, v10
 
-    if-nez v2, :cond_4d
+    if-nez v0, :cond_3c
 
     .line 171
     const-wide/16 v6, 0x1
 
     add-long/2addr v6, v8
 
-    move-object/from16 v0, p0
+    invoke-virtual {p0, v8, v9, v6, v7}, Lrx/internal/util/unsafe/MpmcArrayQueue;->b(JJ)Z
 
-    invoke-virtual {v0, v8, v9, v6, v7}, Lrx/internal/util/unsafe/MpmcArrayQueue;->casConsumerIndex(JJ)Z
+    move-result v0
 
-    move-result v2
-
-    if-eqz v2, :cond_6
+    if-eqz v0, :cond_50
 
     .line 187
-    move-object/from16 v0, p0
+    invoke-virtual {p0, v8, v9}, Lrx/internal/util/unsafe/MpmcArrayQueue;->a(J)J
 
-    invoke-virtual {v0, v8, v9}, Lrx/internal/util/unsafe/MpmcArrayQueue;->calcElementOffset(J)J
-
-    move-result-wide v14
+    move-result-wide v4
 
     .line 188
-    .local v14, "offset":J
-    move-object/from16 v0, p0
+    invoke-virtual {p0, v4, v5}, Lrx/internal/util/unsafe/MpmcArrayQueue;->b(J)Ljava/lang/Object;
 
-    invoke-virtual {v0, v14, v15}, Lrx/internal/util/unsafe/MpmcArrayQueue;->lpElement(J)Ljava/lang/Object;
-
-    move-result-object v12
+    move-result-object v6
 
     .line 189
-    .local v12, "e":Ljava/lang/Object;, "TE;"
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    move-object/from16 v0, p0
-
-    invoke-virtual {v0, v14, v15, v2}, Lrx/internal/util/unsafe/MpmcArrayQueue;->spElement(JLjava/lang/Object;)V
+    invoke-virtual {p0, v4, v5, v0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->a(JLjava/lang/Object;)V
 
     .line 193
-    move-object/from16 v0, p0
+    iget-wide v4, p0, Lrx/internal/util/unsafe/MpmcArrayQueue;->b:J
 
-    iget-wide v6, v0, Lrx/internal/util/unsafe/MpmcArrayQueue;->mask:J
+    add-long/2addr v4, v8
 
-    add-long/2addr v6, v8
+    const-wide/16 v8, 0x1
 
-    const-wide/16 v20, 0x1
+    add-long/2addr v4, v8
 
-    add-long v6, v6, v20
+    move-object v0, p0
 
-    move-object/from16 v2, p0
+    invoke-virtual/range {v0 .. v5}, Lrx/internal/util/unsafe/MpmcArrayQueue;->a([JJJ)V
 
-    invoke-virtual/range {v2 .. v7}, Lrx/internal/util/unsafe/MpmcArrayQueue;->soSequence([JJJ)V
+    move-object v0, v6
 
     .line 195
-    .end local v12    # "e":Ljava/lang/Object;, "TE;"
-    .end local v14    # "offset":J
-    :goto_4c
-    return-object v12
+    :goto_3b
+    return-object v0
 
     .line 176
-    :cond_4d
-    const-wide/16 v6, 0x0
+    :cond_3c
+    const-wide/16 v2, 0x0
 
-    cmp-long v2, v10, v6
+    cmp-long v0, v6, v2
 
-    if-gez v2, :cond_6
+    if-gez v0, :cond_50
 
-    cmp-long v2, v8, v16
+    cmp-long v0, v8, v4
 
-    if-ltz v2, :cond_6
+    if-ltz v0, :cond_50
 
-    invoke-virtual/range {p0 .. p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->lvProducerIndex()J
+    invoke-virtual {p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->b()J
 
-    move-result-wide v16
+    move-result-wide v4
 
-    cmp-long v2, v8, v16
+    cmp-long v0, v8, v4
 
-    if-nez v2, :cond_6
+    if-nez v0, :cond_50
 
     .line 180
-    const/4 v12, 0x0
+    const/4 v0, 0x0
 
-    goto :goto_4c
+    goto :goto_3b
+
+    :cond_50
+    move-wide v2, v4
+
+    move-wide v4, v2
+
+    .line 184
+    goto :goto_5
 .end method
 
 .method public size()I
-    .registers 9
+    .registers 7
 
     .prologue
     .line 219
-    .local p0, "this":Lrx/internal/util/unsafe/MpmcArrayQueue;, "Lrx/internal/util/unsafe/MpmcArrayQueue<TE;>;"
-    invoke-virtual {p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->lvConsumerIndex()J
+    invoke-virtual {p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->a()J
 
     move-result-wide v0
 
-    .line 221
-    .local v0, "after":J
-    :cond_4
-    move-wide v2, v0
-
     .line 222
-    .local v2, "before":J
-    invoke-virtual {p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->lvProducerIndex()J
+    :goto_4
+    invoke-virtual {p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->b()J
 
     move-result-wide v4
 
     .line 223
-    .local v4, "currentProducerIndex":J
-    invoke-virtual {p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->lvConsumerIndex()J
+    invoke-virtual {p0}, Lrx/internal/util/unsafe/MpmcArrayQueue;->a()J
 
-    move-result-wide v0
+    move-result-wide v2
 
     .line 224
-    cmp-long v6, v2, v0
+    cmp-long v0, v0, v2
 
-    if-nez v6, :cond_4
+    if-nez v0, :cond_14
 
     .line 225
-    sub-long v6, v4, v0
+    sub-long v0, v4, v2
 
-    long-to-int v6, v6
+    long-to-int v0, v0
 
-    return v6
+    return v0
+
+    :cond_14
+    move-wide v0, v2
+
+    .line 227
+    goto :goto_4
 .end method

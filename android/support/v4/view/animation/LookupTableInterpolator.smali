@@ -7,27 +7,26 @@
 
 
 # instance fields
-.field private final mStepSize:F
+.field private final a:[F
 
-.field private final mValues:[F
+.field private final b:F
 
 
 # direct methods
 .method public constructor <init>([F)V
     .registers 4
-    .param p1, "values"    # [F
 
     .prologue
     .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 31
-    iput-object p1, p0, Landroid/support/v4/view/animation/LookupTableInterpolator;->mValues:[F
+    iput-object p1, p0, Landroid/support/v4/view/animation/LookupTableInterpolator;->a:[F
 
     .line 32
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    iget-object v1, p0, Landroid/support/v4/view/animation/LookupTableInterpolator;->mValues:[F
+    iget-object v1, p0, Landroid/support/v4/view/animation/LookupTableInterpolator;->a:[F
 
     array-length v1, v1
 
@@ -37,7 +36,7 @@
 
     div-float/2addr v0, v1
 
-    iput v0, p0, Landroid/support/v4/view/animation/LookupTableInterpolator;->mStepSize:F
+    iput v0, p0, Landroid/support/v4/view/animation/LookupTableInterpolator;->b:F
 
     .line 33
     return-void
@@ -46,97 +45,92 @@
 
 # virtual methods
 .method public getInterpolation(F)F
-    .registers 9
-    .param p1, "input"    # F
+    .registers 7
 
     .prologue
-    const/high16 v4, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    const/4 v5, 0x0
+    const/4 v1, 0x0
 
     .line 37
-    cmpl-float v6, p1, v4
+    cmpl-float v2, p1, v0
 
-    if-ltz v6, :cond_8
+    if-ltz v2, :cond_8
 
     .line 54
     :goto_7
-    return v4
+    return v0
 
     .line 40
     :cond_8
-    cmpg-float v4, p1, v5
+    cmpg-float v0, p1, v1
 
-    if-gtz v4, :cond_e
+    if-gtz v0, :cond_e
 
-    move v4, v5
+    move v0, v1
 
     .line 41
     goto :goto_7
 
     .line 46
     :cond_e
-    iget-object v4, p0, Landroid/support/v4/view/animation/LookupTableInterpolator;->mValues:[F
+    iget-object v0, p0, Landroid/support/v4/view/animation/LookupTableInterpolator;->a:[F
 
-    array-length v4, v4
+    array-length v0, v0
 
-    add-int/lit8 v4, v4, -0x1
+    add-int/lit8 v0, v0, -0x1
 
-    int-to-float v4, v4
+    int-to-float v0, v0
 
-    mul-float/2addr v4, p1
+    mul-float/2addr v0, p1
 
-    float-to-int v4, v4
+    float-to-int v0, v0
 
-    iget-object v5, p0, Landroid/support/v4/view/animation/LookupTableInterpolator;->mValues:[F
+    iget-object v1, p0, Landroid/support/v4/view/animation/LookupTableInterpolator;->a:[F
 
-    array-length v5, v5
+    array-length v1, v1
 
-    add-int/lit8 v5, v5, -0x2
+    add-int/lit8 v1, v1, -0x2
 
-    invoke-static {v4, v5}, Ljava/lang/Math;->min(II)I
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
-    move-result v1
+    move-result v0
 
     .line 49
-    .local v1, "position":I
-    int-to-float v4, v1
+    int-to-float v1, v0
 
-    iget v5, p0, Landroid/support/v4/view/animation/LookupTableInterpolator;->mStepSize:F
+    iget v2, p0, Landroid/support/v4/view/animation/LookupTableInterpolator;->b:F
 
-    mul-float v2, v4, v5
+    mul-float/2addr v1, v2
 
     .line 50
-    .local v2, "quantized":F
-    sub-float v0, p1, v2
+    sub-float v1, p1, v1
 
     .line 51
-    .local v0, "diff":F
-    iget v4, p0, Landroid/support/v4/view/animation/LookupTableInterpolator;->mStepSize:F
+    iget v2, p0, Landroid/support/v4/view/animation/LookupTableInterpolator;->b:F
 
-    div-float v3, v0, v4
+    div-float/2addr v1, v2
 
     .line 54
-    .local v3, "weight":F
-    iget-object v4, p0, Landroid/support/v4/view/animation/LookupTableInterpolator;->mValues:[F
+    iget-object v2, p0, Landroid/support/v4/view/animation/LookupTableInterpolator;->a:[F
 
-    aget v4, v4, v1
+    aget v2, v2, v0
 
-    iget-object v5, p0, Landroid/support/v4/view/animation/LookupTableInterpolator;->mValues:[F
+    iget-object v3, p0, Landroid/support/v4/view/animation/LookupTableInterpolator;->a:[F
 
-    add-int/lit8 v6, v1, 0x1
+    add-int/lit8 v4, v0, 0x1
 
-    aget v5, v5, v6
+    aget v3, v3, v4
 
-    iget-object v6, p0, Landroid/support/v4/view/animation/LookupTableInterpolator;->mValues:[F
+    iget-object v4, p0, Landroid/support/v4/view/animation/LookupTableInterpolator;->a:[F
 
-    aget v6, v6, v1
+    aget v0, v4, v0
 
-    sub-float/2addr v5, v6
+    sub-float v0, v3, v0
 
-    mul-float/2addr v5, v3
+    mul-float/2addr v0, v1
 
-    add-float/2addr v4, v5
+    add-float/2addr v0, v2
 
     goto :goto_7
 .end method

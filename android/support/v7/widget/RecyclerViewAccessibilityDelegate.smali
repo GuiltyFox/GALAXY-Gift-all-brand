@@ -12,7 +12,6 @@
 # direct methods
 .method public constructor <init>(Landroid/support/v7/widget/RecyclerView;)V
     .registers 3
-    .param p1, "recyclerView"    # Landroid/support/v7/widget/RecyclerView;
 
     .prologue
     .line 34
@@ -34,7 +33,6 @@
 
 .method static synthetic access$000(Landroid/support/v7/widget/RecyclerViewAccessibilityDelegate;)Z
     .registers 2
-    .param p0, "x0"    # Landroid/support/v7/widget/RecyclerViewAccessibilityDelegate;
 
     .prologue
     .line 30
@@ -72,64 +70,56 @@
 .end method
 
 .method public onInitializeAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
-    .registers 5
-    .param p1, "host"    # Landroid/view/View;
-    .param p2, "event"    # Landroid/view/accessibility/AccessibilityEvent;
+    .registers 4
 
     .prologue
     .line 65
     invoke-super {p0, p1, p2}, Landroid/support/v4/view/AccessibilityDelegateCompat;->onInitializeAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
 
     .line 66
-    const-class v1, Landroid/support/v7/widget/RecyclerView;
+    const-class v0, Landroid/support/v7/widget/RecyclerView;
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {p2, v1}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
+    invoke-virtual {p2, v0}, Landroid/view/accessibility/AccessibilityEvent;->setClassName(Ljava/lang/CharSequence;)V
 
     .line 67
-    instance-of v1, p1, Landroid/support/v7/widget/RecyclerView;
+    instance-of v0, p1, Landroid/support/v7/widget/RecyclerView;
 
-    if-eqz v1, :cond_26
+    if-eqz v0, :cond_25
 
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerViewAccessibilityDelegate;->shouldIgnore()Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_26
-
-    move-object v0, p1
+    if-nez v0, :cond_25
 
     .line 68
-    check-cast v0, Landroid/support/v7/widget/RecyclerView;
+    check-cast p1, Landroid/support/v7/widget/RecyclerView;
 
     .line 69
-    .local v0, "rv":Landroid/support/v7/widget/RecyclerView;
-    invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView;->getLayoutManager()Landroid/support/v7/widget/RecyclerView$LayoutManager;
+    invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView;->getLayoutManager()Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-eqz v1, :cond_26
+    if-eqz v0, :cond_25
 
     .line 70
-    invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView;->getLayoutManager()Landroid/support/v7/widget/RecyclerView$LayoutManager;
+    invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView;->getLayoutManager()Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, p2}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+    invoke-virtual {v0, p2}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
 
     .line 73
-    .end local v0    # "rv":Landroid/support/v7/widget/RecyclerView;
-    :cond_26
+    :cond_25
     return-void
 .end method
 
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;)V
     .registers 4
-    .param p1, "host"    # Landroid/view/View;
-    .param p2, "info"    # Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
 
     .prologue
     .line 56
@@ -142,7 +132,7 @@
 
     move-result-object v0
 
-    invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->setClassName(Ljava/lang/CharSequence;)V
+    invoke-virtual {p2, v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->b(Ljava/lang/CharSequence;)V
 
     .line 58
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerViewAccessibilityDelegate;->shouldIgnore()Z
@@ -175,9 +165,6 @@
 
 .method public performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
     .registers 5
-    .param p1, "host"    # Landroid/view/View;
-    .param p2, "action"    # I
-    .param p3, "args"    # Landroid/os/Bundle;
 
     .prologue
     .line 44

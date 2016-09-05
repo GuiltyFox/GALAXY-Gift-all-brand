@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/facebook/share/model/ShareLinkContent;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "Builder"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/facebook/share/model/ShareContent$Builder",
@@ -45,7 +36,6 @@
 
 .method static synthetic access$000(Lcom/facebook/share/model/ShareLinkContent$Builder;)Ljava/lang/String;
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/share/model/ShareLinkContent$Builder;
 
     .prologue
     .line 107
@@ -56,7 +46,6 @@
 
 .method static synthetic access$100(Lcom/facebook/share/model/ShareLinkContent$Builder;)Ljava/lang/String;
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/share/model/ShareLinkContent$Builder;
 
     .prologue
     .line 107
@@ -67,7 +56,6 @@
 
 .method static synthetic access$200(Lcom/facebook/share/model/ShareLinkContent$Builder;)Landroid/net/Uri;
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/share/model/ShareLinkContent$Builder;
 
     .prologue
     .line 107
@@ -120,7 +108,6 @@
 
 .method public readFrom(Landroid/os/Parcel;)Lcom/facebook/share/model/ShareLinkContent$Builder;
     .registers 3
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
     .line 164
@@ -148,19 +135,16 @@
 
 .method public readFrom(Lcom/facebook/share/model/ShareLinkContent;)Lcom/facebook/share/model/ShareLinkContent$Builder;
     .registers 4
-    .param p1, "model"    # Lcom/facebook/share/model/ShareLinkContent;
 
     .prologue
     .line 151
     if-nez p1, :cond_3
 
     .line 158
-    .end local p0    # "this":Lcom/facebook/share/model/ShareLinkContent$Builder;
     :goto_2
     return-object p0
 
     .line 155
-    .restart local p0    # "this":Lcom/facebook/share/model/ShareLinkContent$Builder;
     :cond_3
     invoke-super {p0, p1}, Lcom/facebook/share/model/ShareContent$Builder;->readFrom(Lcom/facebook/share/model/ShareContent;)Lcom/facebook/share/model/ShareContent$Builder;
 
@@ -226,10 +210,6 @@
 
 .method public setContentDescription(Ljava/lang/String;)Lcom/facebook/share/model/ShareLinkContent$Builder;
     .registers 2
-    .param p1, "contentDescription"    # Ljava/lang/String;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
 
     .prologue
     .line 120
@@ -241,10 +221,6 @@
 
 .method public setContentTitle(Ljava/lang/String;)Lcom/facebook/share/model/ShareLinkContent$Builder;
     .registers 2
-    .param p1, "contentTitle"    # Ljava/lang/String;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
 
     .prologue
     .line 130
@@ -256,10 +232,6 @@
 
 .method public setImageUrl(Landroid/net/Uri;)Lcom/facebook/share/model/ShareLinkContent$Builder;
     .registers 2
-    .param p1, "imageUrl"    # Landroid/net/Uri;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
 
     .prologue
     .line 140

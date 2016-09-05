@@ -16,17 +16,17 @@
 
 
 # static fields
-.field private static final MAX_LOOK_AHEAD_STEP:Ljava/lang/Integer;
+.field private static final g:Ljava/lang/Integer;
 
 
 # instance fields
-.field final consumerIndex:Ljava/util/concurrent/atomic/AtomicLong;
+.field final c:Ljava/util/concurrent/atomic/AtomicLong;
 
-.field final lookAheadStep:I
+.field protected d:J
 
-.field final producerIndex:Ljava/util/concurrent/atomic/AtomicLong;
+.field final e:Ljava/util/concurrent/atomic/AtomicLong;
 
-.field protected producerLookAhead:J
+.field final f:I
 
 
 # direct methods
@@ -43,18 +43,16 @@
 
     move-result-object v0
 
-    sput-object v0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->MAX_LOOK_AHEAD_STEP:Ljava/lang/Integer;
+    sput-object v0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->g:Ljava/lang/Integer;
 
     return-void
 .end method
 
 .method public constructor <init>(I)V
     .registers 4
-    .param p1, "capacity"    # I
 
     .prologue
     .line 42
-    .local p0, "this":Lrx/internal/util/atomic/SpscAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscAtomicArrayQueue<TE;>;"
     invoke-direct {p0, p1}, Lrx/internal/util/atomic/AtomicReferenceArrayQueue;-><init>(I)V
 
     .line 43
@@ -62,19 +60,19 @@
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicLong;-><init>()V
 
-    iput-object v0, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->producerIndex:Ljava/util/concurrent/atomic/AtomicLong;
+    iput-object v0, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->c:Ljava/util/concurrent/atomic/AtomicLong;
 
     .line 44
     new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicLong;-><init>()V
 
-    iput-object v0, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->consumerIndex:Ljava/util/concurrent/atomic/AtomicLong;
+    iput-object v0, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->e:Ljava/util/concurrent/atomic/AtomicLong;
 
     .line 45
     div-int/lit8 v0, p1, 0x4
 
-    sget-object v1, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->MAX_LOOK_AHEAD_STEP:Ljava/lang/Integer;
+    sget-object v1, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->g:Ljava/lang/Integer;
 
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
@@ -84,19 +82,18 @@
 
     move-result v0
 
-    iput v0, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->lookAheadStep:I
+    iput v0, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->f:I
 
     .line 46
     return-void
 .end method
 
-.method private lvConsumerIndex()J
+.method private a()J
     .registers 3
 
     .prologue
     .line 119
-    .local p0, "this":Lrx/internal/util/atomic/SpscAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscAtomicArrayQueue<TE;>;"
-    iget-object v0, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->consumerIndex:Ljava/util/concurrent/atomic/AtomicLong;
+    iget-object v0, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->e:Ljava/util/concurrent/atomic/AtomicLong;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
@@ -105,13 +102,12 @@
     return-wide v0
 .end method
 
-.method private lvProducerIndex()J
+.method private b()J
     .registers 3
 
     .prologue
     .line 122
-    .local p0, "this":Lrx/internal/util/atomic/SpscAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscAtomicArrayQueue<TE;>;"
-    iget-object v0, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->producerIndex:Ljava/util/concurrent/atomic/AtomicLong;
+    iget-object v0, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->c:Ljava/util/concurrent/atomic/AtomicLong;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
@@ -120,33 +116,29 @@
     return-wide v0
 .end method
 
-.method private soConsumerIndex(J)V
+.method private b(J)V
     .registers 4
-    .param p1, "newIndex"    # J
-
-    .prologue
-    .line 115
-    .local p0, "this":Lrx/internal/util/atomic/SpscAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscAtomicArrayQueue<TE;>;"
-    iget-object v0, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->consumerIndex:Ljava/util/concurrent/atomic/AtomicLong;
-
-    invoke-virtual {v0, p1, p2}, Ljava/util/concurrent/atomic/AtomicLong;->lazySet(J)V
-
-    .line 116
-    return-void
-.end method
-
-.method private soProducerIndex(J)V
-    .registers 4
-    .param p1, "newIndex"    # J
 
     .prologue
     .line 111
-    .local p0, "this":Lrx/internal/util/atomic/SpscAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscAtomicArrayQueue<TE;>;"
-    iget-object v0, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->producerIndex:Ljava/util/concurrent/atomic/AtomicLong;
+    iget-object v0, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->c:Ljava/util/concurrent/atomic/AtomicLong;
 
     invoke-virtual {v0, p1, p2}, Ljava/util/concurrent/atomic/AtomicLong;->lazySet(J)V
 
     .line 112
+    return-void
+.end method
+
+.method private c(J)V
+    .registers 4
+
+    .prologue
+    .line 115
+    iget-object v0, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->e:Ljava/util/concurrent/atomic/AtomicLong;
+
+    invoke-virtual {v0, p1, p2}, Ljava/util/concurrent/atomic/AtomicLong;->lazySet(J)V
+
+    .line 116
     return-void
 .end method
 
@@ -157,7 +149,6 @@
 
     .prologue
     .line 35
-    .local p0, "this":Lrx/internal/util/atomic/SpscAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscAtomicArrayQueue<TE;>;"
     invoke-super {p0}, Lrx/internal/util/atomic/AtomicReferenceArrayQueue;->clear()V
 
     return-void
@@ -168,7 +159,6 @@
 
     .prologue
     .line 35
-    .local p0, "this":Lrx/internal/util/atomic/SpscAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscAtomicArrayQueue<TE;>;"
     invoke-super {p0}, Lrx/internal/util/atomic/AtomicReferenceArrayQueue;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -186,104 +176,95 @@
 
     .prologue
     .line 50
-    .local p0, "this":Lrx/internal/util/atomic/SpscAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscAtomicArrayQueue<TE;>;"
-    .local p1, "e":Ljava/lang/Object;, "TE;"
     if-nez p1, :cond_b
 
     .line 51
-    new-instance v6, Ljava/lang/NullPointerException;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    const-string/jumbo v7, "Null is not a valid element"
+    const-string/jumbo v1, "Null is not a valid element"
 
-    invoke-direct {v6, v7}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
-    throw v6
+    throw v0
 
     .line 54
     :cond_b
-    iget-object v0, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->buffer:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    iget-object v0, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->a:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     .line 55
-    .local v0, "buffer":Ljava/util/concurrent/atomic/AtomicReferenceArray;, "Ljava/util/concurrent/atomic/AtomicReferenceArray<TE;>;"
-    iget v1, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->mask:I
+    iget v1, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->b:I
 
     .line 56
-    .local v1, "mask":I
-    iget-object v6, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->producerIndex:Ljava/util/concurrent/atomic/AtomicLong;
+    iget-object v2, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->c:Ljava/util/concurrent/atomic/AtomicLong;
 
-    invoke-virtual {v6}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
+    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     move-result-wide v2
 
     .line 57
-    .local v2, "index":J
-    invoke-virtual {p0, v2, v3, v1}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->calcElementOffset(JI)I
+    invoke-virtual {p0, v2, v3, v1}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->a(JI)I
 
     move-result v4
 
     .line 58
-    .local v4, "offset":I
-    iget-wide v6, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->producerLookAhead:J
+    iget-wide v6, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->d:J
 
-    cmp-long v6, v2, v6
+    cmp-long v5, v2, v6
 
-    if-ltz v6, :cond_31
+    if-ltz v5, :cond_31
 
     .line 59
-    iget v5, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->lookAheadStep:I
+    iget v5, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->f:I
 
     .line 60
-    .local v5, "step":I
     int-to-long v6, v5
 
     add-long/2addr v6, v2
 
-    invoke-virtual {p0, v6, v7, v1}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->calcElementOffset(JI)I
+    invoke-virtual {p0, v6, v7, v1}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->a(JI)I
 
-    move-result v6
+    move-result v1
 
-    invoke-virtual {p0, v0, v6}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->lvElement(Ljava/util/concurrent/atomic/AtomicReferenceArray;I)Ljava/lang/Object;
+    invoke-virtual {p0, v0, v1}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->a(Ljava/util/concurrent/atomic/AtomicReferenceArray;I)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v1
 
-    if-nez v6, :cond_3c
+    if-nez v1, :cond_3c
 
     .line 61
     int-to-long v6, v5
 
     add-long/2addr v6, v2
 
-    iput-wide v6, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->producerLookAhead:J
+    iput-wide v6, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->d:J
 
     .line 67
-    .end local v5    # "step":I
     :cond_31
     const-wide/16 v6, 0x1
 
-    add-long/2addr v6, v2
+    add-long/2addr v2, v6
 
-    invoke-direct {p0, v6, v7}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->soProducerIndex(J)V
+    invoke-direct {p0, v2, v3}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->b(J)V
 
     .line 68
-    invoke-virtual {p0, v0, v4, p1}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->soElement(Ljava/util/concurrent/atomic/AtomicReferenceArray;ILjava/lang/Object;)V
+    invoke-virtual {p0, v0, v4, p1}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->a(Ljava/util/concurrent/atomic/AtomicReferenceArray;ILjava/lang/Object;)V
 
     .line 69
-    const/4 v6, 0x1
+    const/4 v0, 0x1
 
     :goto_3b
-    return v6
+    return v0
 
     .line 63
-    .restart local v5    # "step":I
     :cond_3c
-    invoke-virtual {p0, v0, v4}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->lvElement(Ljava/util/concurrent/atomic/AtomicReferenceArray;I)Ljava/lang/Object;
+    invoke-virtual {p0, v0, v4}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->a(Ljava/util/concurrent/atomic/AtomicReferenceArray;I)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v1
 
-    if-eqz v6, :cond_31
+    if-eqz v1, :cond_31
 
     .line 64
-    const/4 v6, 0x0
+    const/4 v0, 0x0
 
     goto :goto_3b
 .end method
@@ -298,18 +279,17 @@
 
     .prologue
     .line 89
-    .local p0, "this":Lrx/internal/util/atomic/SpscAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscAtomicArrayQueue<TE;>;"
-    iget-object v0, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->consumerIndex:Ljava/util/concurrent/atomic/AtomicLong;
+    iget-object v0, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->e:Ljava/util/concurrent/atomic/AtomicLong;
 
     invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     move-result-wide v0
 
-    invoke-virtual {p0, v0, v1}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->calcElementOffset(J)I
+    invoke-virtual {p0, v0, v1}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->a(J)I
 
     move-result v0
 
-    invoke-virtual {p0, v0}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->lvElement(I)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->a(I)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -325,94 +305,87 @@
     .end annotation
 
     .prologue
-    .local p0, "this":Lrx/internal/util/atomic/SpscAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscAtomicArrayQueue<TE;>;"
-    const/4 v5, 0x0
+    const/4 v0, 0x0
 
     .line 74
-    iget-object v6, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->consumerIndex:Ljava/util/concurrent/atomic/AtomicLong;
+    iget-object v1, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->e:Ljava/util/concurrent/atomic/AtomicLong;
 
-    invoke-virtual {v6}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicLong;->get()J
 
     move-result-wide v2
 
     .line 75
-    .local v2, "index":J
-    invoke-virtual {p0, v2, v3}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->calcElementOffset(J)I
+    invoke-virtual {p0, v2, v3}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->a(J)I
 
     move-result v4
 
     .line 77
-    .local v4, "offset":I
-    iget-object v1, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->buffer:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+    iget-object v5, p0, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->a:Ljava/util/concurrent/atomic/AtomicReferenceArray;
 
     .line 78
-    .local v1, "lElementBuffer":Ljava/util/concurrent/atomic/AtomicReferenceArray;, "Ljava/util/concurrent/atomic/AtomicReferenceArray<TE;>;"
-    invoke-virtual {p0, v1, v4}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->lvElement(Ljava/util/concurrent/atomic/AtomicReferenceArray;I)Ljava/lang/Object;
+    invoke-virtual {p0, v5, v4}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->a(Ljava/util/concurrent/atomic/AtomicReferenceArray;I)Ljava/lang/Object;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 79
-    .local v0, "e":Ljava/lang/Object;, "TE;"
-    if-nez v0, :cond_15
-
-    move-object v0, v5
+    if-nez v1, :cond_14
 
     .line 84
-    .end local v0    # "e":Ljava/lang/Object;, "TE;"
-    :goto_14
+    :goto_13
     return-object v0
 
     .line 82
-    .restart local v0    # "e":Ljava/lang/Object;, "TE;"
-    :cond_15
+    :cond_14
     const-wide/16 v6, 0x1
 
-    add-long/2addr v6, v2
+    add-long/2addr v2, v6
 
-    invoke-direct {p0, v6, v7}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->soConsumerIndex(J)V
+    invoke-direct {p0, v2, v3}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->c(J)V
 
     .line 83
-    invoke-virtual {p0, v1, v4, v5}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->soElement(Ljava/util/concurrent/atomic/AtomicReferenceArray;ILjava/lang/Object;)V
+    invoke-virtual {p0, v5, v4, v0}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->a(Ljava/util/concurrent/atomic/AtomicReferenceArray;ILjava/lang/Object;)V
 
-    goto :goto_14
+    move-object v0, v1
+
+    .line 84
+    goto :goto_13
 .end method
 
 .method public size()I
-    .registers 9
+    .registers 7
 
     .prologue
     .line 99
-    .local p0, "this":Lrx/internal/util/atomic/SpscAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscAtomicArrayQueue<TE;>;"
-    invoke-direct {p0}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->lvConsumerIndex()J
+    invoke-direct {p0}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->a()J
 
     move-result-wide v0
 
-    .line 101
-    .local v0, "after":J
-    :cond_4
-    move-wide v2, v0
-
     .line 102
-    .local v2, "before":J
-    invoke-direct {p0}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->lvProducerIndex()J
+    :goto_4
+    invoke-direct {p0}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->b()J
 
     move-result-wide v4
 
     .line 103
-    .local v4, "currentProducerIndex":J
-    invoke-direct {p0}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->lvConsumerIndex()J
+    invoke-direct {p0}, Lrx/internal/util/atomic/SpscAtomicArrayQueue;->a()J
 
-    move-result-wide v0
+    move-result-wide v2
 
     .line 104
-    cmp-long v6, v2, v0
+    cmp-long v0, v0, v2
 
-    if-nez v6, :cond_4
+    if-nez v0, :cond_14
 
     .line 105
-    sub-long v6, v4, v0
+    sub-long v0, v4, v2
 
-    long-to-int v6, v6
+    long-to-int v0, v0
 
-    return v6
+    return v0
+
+    :cond_14
+    move-wide v0, v2
+
+    .line 107
+    goto :goto_4
 .end method

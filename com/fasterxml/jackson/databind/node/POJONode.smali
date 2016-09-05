@@ -10,7 +10,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/Object;)V
     .registers 2
-    .param p1, "v"    # Ljava/lang/Object;
 
     .prologue
     .line 19
@@ -25,7 +24,6 @@
 # virtual methods
 .method protected _pojoEquals(Lcom/fasterxml/jackson/databind/node/POJONode;)Z
     .registers 4
-    .param p1, "other"    # Lcom/fasterxml/jackson/databind/node/POJONode;
 
     .prologue
     .line 148
@@ -65,7 +63,6 @@
 
 .method public asBoolean(Z)Z
     .registers 3
-    .param p1, "defaultValue"    # Z
 
     .prologue
     .line 65
@@ -89,14 +86,12 @@
     move-result p1
 
     .line 68
-    .end local p1    # "defaultValue":Z
     :cond_12
     return p1
 .end method
 
 .method public asDouble(D)D
     .registers 4
-    .param p1, "defaultValue"    # D
 
     .prologue
     .line 92
@@ -116,14 +111,12 @@
     move-result-wide p1
 
     .line 95
-    .end local p1    # "defaultValue":D
     :cond_e
     return-wide p1
 .end method
 
 .method public asInt(I)I
     .registers 3
-    .param p1, "defaultValue"    # I
 
     .prologue
     .line 74
@@ -143,14 +136,12 @@
     move-result p1
 
     .line 77
-    .end local p1    # "defaultValue":I
     :cond_e
     return p1
 .end method
 
 .method public asLong(J)J
     .registers 4
-    .param p1, "defaultValue"    # J
 
     .prologue
     .line 83
@@ -170,7 +161,6 @@
     move-result-wide p1
 
     .line 86
-    .end local p1    # "defaultValue":J
     :cond_e
     return-wide p1
 .end method
@@ -201,7 +191,6 @@
 
 .method public asText(Ljava/lang/String;)Ljava/lang/String;
     .registers 3
-    .param p1, "defaultValue"    # Ljava/lang/String;
 
     .prologue
     .line 59
@@ -209,11 +198,9 @@
 
     if-nez v0, :cond_5
 
-    .end local p1    # "defaultValue":Ljava/lang/String;
     :goto_4
     return-object p1
 
-    .restart local p1    # "defaultValue":Ljava/lang/String;
     :cond_5
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/node/POJONode;->_value:Ljava/lang/Object;
 
@@ -236,11 +223,6 @@
 
 .method public binaryValue()[B
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 43
@@ -271,7 +253,6 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .registers 4
-    .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
     const/4 v0, 0x0
@@ -282,13 +263,11 @@
     const/4 v0, 0x1
 
     .line 140
-    .end local p1    # "o":Ljava/lang/Object;
     :cond_4
     :goto_4
     return v0
 
     .line 136
-    .restart local p1    # "o":Ljava/lang/Object;
     :cond_5
     if-eqz p1, :cond_4
 
@@ -300,7 +279,6 @@
     .line 138
     check-cast p1, Lcom/fasterxml/jackson/databind/node/POJONode;
 
-    .end local p1    # "o":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/node/POJONode;->_pojoEquals(Lcom/fasterxml/jackson/databind/node/POJONode;)Z
 
     move-result v0
@@ -344,14 +322,6 @@
 
 .method public final serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 4
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p2, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 108

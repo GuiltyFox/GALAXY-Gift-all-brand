@@ -24,9 +24,6 @@
 
 .method static synthetic access$000(Lcom/facebook/internal/FacebookDialogFragment;Landroid/os/Bundle;Lcom/facebook/FacebookException;)V
     .registers 3
-    .param p0, "x0"    # Lcom/facebook/internal/FacebookDialogFragment;
-    .param p1, "x1"    # Landroid/os/Bundle;
-    .param p2, "x2"    # Lcom/facebook/FacebookException;
 
     .prologue
     .line 40
@@ -37,8 +34,6 @@
 
 .method static synthetic access$100(Lcom/facebook/internal/FacebookDialogFragment;Landroid/os/Bundle;)V
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/internal/FacebookDialogFragment;
-    .param p1, "x1"    # Landroid/os/Bundle;
 
     .prologue
     .line 40
@@ -48,55 +43,48 @@
 .end method
 
 .method private onCompleteWebDialog(Landroid/os/Bundle;Lcom/facebook/FacebookException;)V
-    .registers 7
-    .param p1, "values"    # Landroid/os/Bundle;
-    .param p2, "error"    # Lcom/facebook/FacebookException;
+    .registers 6
 
     .prologue
     .line 139
     invoke-virtual {p0}, Lcom/facebook/internal/FacebookDialogFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 142
-    .local v0, "fragmentActivity":Landroid/support/v4/app/FragmentActivity;
-    invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->getIntent()Landroid/content/Intent;
+    invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getIntent()Landroid/content/Intent;
 
-    move-result-object v3
+    move-result-object v0
 
     .line 141
-    invoke-static {v3, p1, p2}, Lcom/facebook/internal/NativeProtocol;->createProtocolResultIntent(Landroid/content/Intent;Landroid/os/Bundle;Lcom/facebook/FacebookException;)Landroid/content/Intent;
+    invoke-static {v0, p1, p2}, Lcom/facebook/internal/NativeProtocol;->createProtocolResultIntent(Landroid/content/Intent;Landroid/os/Bundle;Lcom/facebook/FacebookException;)Landroid/content/Intent;
 
     move-result-object v2
 
     .line 146
-    .local v2, "resultIntent":Landroid/content/Intent;
     if-nez p2, :cond_16
 
-    const/4 v1, -0x1
+    const/4 v0, -0x1
 
     .line 148
-    .local v1, "resultCode":I
     :goto_f
-    invoke-virtual {v0, v1, v2}, Landroid/support/v4/app/FragmentActivity;->setResult(ILandroid/content/Intent;)V
+    invoke-virtual {v1, v0, v2}, Landroid/support/v4/app/FragmentActivity;->setResult(ILandroid/content/Intent;)V
 
     .line 149
-    invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->finish()V
+    invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->finish()V
 
     .line 150
     return-void
 
     .line 146
-    .end local v1    # "resultCode":I
     :cond_16
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_f
 .end method
 
 .method private onCompleteWebFallbackDialog(Landroid/os/Bundle;)V
     .registers 5
-    .param p1, "values"    # Landroid/os/Bundle;
 
     .prologue
     .line 153
@@ -105,18 +93,15 @@
     move-result-object v0
 
     .line 155
-    .local v0, "fragmentActivity":Landroid/support/v4/app/FragmentActivity;
     new-instance v1, Landroid/content/Intent;
 
     invoke-direct {v1}, Landroid/content/Intent;-><init>()V
 
     .line 156
-    .local v1, "resultIntent":Landroid/content/Intent;
     if-nez p1, :cond_10
 
     new-instance p1, Landroid/os/Bundle;
 
-    .end local p1    # "values":Landroid/os/Bundle;
     invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
 
     :cond_10
@@ -138,7 +123,6 @@
 # virtual methods
 .method public onConfigurationChanged(Landroid/content/res/Configuration;)V
     .registers 3
-    .param p1, "newConfig"    # Landroid/content/res/Configuration;
 
     .prologue
     .line 123
@@ -164,19 +148,18 @@
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .registers 15
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
+    .registers 8
 
     .prologue
-    const/4 v12, 0x0
+    const/4 v5, 0x0
 
     .line 55
     invoke-super {p0, p1}, Landroid/support/v4/app/DialogFragment;->onCreate(Landroid/os/Bundle;)V
 
     .line 57
-    iget-object v9, p0, Lcom/facebook/internal/FacebookDialogFragment;->dialog:Landroid/app/Dialog;
+    iget-object v0, p0, Lcom/facebook/internal/FacebookDialogFragment;->dialog:Landroid/app/Dialog;
 
-    if-nez v9, :cond_3d
+    if-nez v0, :cond_3d
 
     .line 58
     invoke-virtual {p0}, Lcom/facebook/internal/FacebookDialogFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -184,131 +167,108 @@
     move-result-object v1
 
     .line 59
-    .local v1, "activity":Landroid/support/v4/app/FragmentActivity;
     invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->getIntent()Landroid/content/Intent;
-
-    move-result-object v2
-
-    .line 60
-    .local v2, "intent":Landroid/content/Intent;
-    invoke-static {v2}, Lcom/facebook/internal/NativeProtocol;->getMethodArgumentsFromIntent(Landroid/content/Intent;)Landroid/os/Bundle;
-
-    move-result-object v4
-
-    .line 62
-    .local v4, "params":Landroid/os/Bundle;
-    const-string/jumbo v9, "is_fallback"
-
-    invoke-virtual {v4, v9, v12}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v3
-
-    .line 64
-    .local v3, "isWebFallback":Z
-    if-nez v3, :cond_53
-
-    .line 65
-    const-string/jumbo v9, "action"
-
-    invoke-virtual {v4, v9}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
+    .line 60
+    invoke-static {v0}, Lcom/facebook/internal/NativeProtocol;->getMethodArgumentsFromIntent(Landroid/content/Intent;)Landroid/os/Bundle;
+
+    move-result-object v0
+
+    .line 62
+    const-string/jumbo v2, "is_fallback"
+
+    invoke-virtual {v0, v2, v5}, Landroid/os/Bundle;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v2
+
+    .line 64
+    if-nez v2, :cond_53
+
+    .line 65
+    const-string/jumbo v2, "action"
+
+    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
     .line 66
-    .local v0, "actionName":Ljava/lang/String;
-    const-string/jumbo v9, "params"
+    const-string/jumbo v3, "params"
 
-    invoke-virtual {v4, v9}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
+    invoke-virtual {v0, v3}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
-    move-result-object v8
+    move-result-object v0
 
     .line 67
-    .local v8, "webParams":Landroid/os/Bundle;
-    invoke-static {v0}, Lcom/facebook/internal/Utility;->isNullOrEmpty(Ljava/lang/String;)Z
+    invoke-static {v2}, Lcom/facebook/internal/Utility;->isNullOrEmpty(Ljava/lang/String;)Z
 
-    move-result v9
+    move-result v3
 
-    if-eqz v9, :cond_3e
+    if-eqz v3, :cond_3e
 
     .line 68
-    const-string/jumbo v9, "FacebookDialogFragment"
+    const-string/jumbo v0, "FacebookDialogFragment"
 
-    const-string/jumbo v10, "Cannot start a WebDialog with an empty/missing \'actionName\'"
+    const-string/jumbo v2, "Cannot start a WebDialog with an empty/missing \'actionName\'"
 
-    invoke-static {v9, v10}, Lcom/facebook/internal/Utility;->logd(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/facebook/internal/Utility;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 71
     invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->finish()V
 
     .line 108
-    .end local v0    # "actionName":Ljava/lang/String;
-    .end local v1    # "activity":Landroid/support/v4/app/FragmentActivity;
-    .end local v2    # "intent":Landroid/content/Intent;
-    .end local v3    # "isWebFallback":Z
-    .end local v4    # "params":Landroid/os/Bundle;
-    .end local v8    # "webParams":Landroid/os/Bundle;
     :cond_3d
     :goto_3d
     return-void
 
     .line 75
-    .restart local v0    # "actionName":Ljava/lang/String;
-    .restart local v1    # "activity":Landroid/support/v4/app/FragmentActivity;
-    .restart local v2    # "intent":Landroid/content/Intent;
-    .restart local v3    # "isWebFallback":Z
-    .restart local v4    # "params":Landroid/os/Bundle;
-    .restart local v8    # "webParams":Landroid/os/Bundle;
     :cond_3e
-    new-instance v9, Lcom/facebook/internal/WebDialog$Builder;
+    new-instance v3, Lcom/facebook/internal/WebDialog$Builder;
 
-    invoke-direct {v9, v1, v0, v8}, Lcom/facebook/internal/WebDialog$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)V
+    invoke-direct {v3, v1, v2, v0}, Lcom/facebook/internal/WebDialog$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;Landroid/os/Bundle;)V
 
-    new-instance v10, Lcom/facebook/internal/FacebookDialogFragment$1;
+    new-instance v0, Lcom/facebook/internal/FacebookDialogFragment$1;
 
-    invoke-direct {v10, p0}, Lcom/facebook/internal/FacebookDialogFragment$1;-><init>(Lcom/facebook/internal/FacebookDialogFragment;)V
+    invoke-direct {v0, p0}, Lcom/facebook/internal/FacebookDialogFragment$1;-><init>(Lcom/facebook/internal/FacebookDialogFragment;)V
 
     .line 76
-    invoke-virtual {v9, v10}, Lcom/facebook/internal/WebDialog$Builder;->setOnCompleteListener(Lcom/facebook/internal/WebDialog$OnCompleteListener;)Lcom/facebook/internal/WebDialog$Builder;
+    invoke-virtual {v3, v0}, Lcom/facebook/internal/WebDialog$Builder;->setOnCompleteListener(Lcom/facebook/internal/WebDialog$OnCompleteListener;)Lcom/facebook/internal/WebDialog$Builder;
 
-    move-result-object v9
+    move-result-object v0
 
     .line 82
-    invoke-virtual {v9}, Lcom/facebook/internal/WebDialog$Builder;->build()Lcom/facebook/internal/WebDialog;
+    invoke-virtual {v0}, Lcom/facebook/internal/WebDialog$Builder;->build()Lcom/facebook/internal/WebDialog;
 
-    move-result-object v7
+    move-result-object v0
 
     .line 106
-    .end local v0    # "actionName":Ljava/lang/String;
-    .end local v8    # "webParams":Landroid/os/Bundle;
-    .local v7, "webDialog":Lcom/facebook/internal/WebDialog;
     :goto_50
-    iput-object v7, p0, Lcom/facebook/internal/FacebookDialogFragment;->dialog:Landroid/app/Dialog;
+    iput-object v0, p0, Lcom/facebook/internal/FacebookDialogFragment;->dialog:Landroid/app/Dialog;
 
     goto :goto_3d
 
     .line 84
-    .end local v7    # "webDialog":Lcom/facebook/internal/WebDialog;
     :cond_53
-    const-string/jumbo v9, "url"
+    const-string/jumbo v2, "url"
 
-    invoke-virtual {v4, v9}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v2}, Landroid/os/Bundle;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v2
 
     .line 85
-    .local v6, "url":Ljava/lang/String;
-    invoke-static {v6}, Lcom/facebook/internal/Utility;->isNullOrEmpty(Ljava/lang/String;)Z
+    invoke-static {v2}, Lcom/facebook/internal/Utility;->isNullOrEmpty(Ljava/lang/String;)Z
 
-    move-result v9
+    move-result v0
 
-    if-eqz v9, :cond_6d
+    if-eqz v0, :cond_6d
 
     .line 86
-    const-string/jumbo v9, "FacebookDialogFragment"
+    const-string/jumbo v0, "FacebookDialogFragment"
 
-    const-string/jumbo v10, "Cannot start a fallback WebDialog with an empty/missing \'url\'"
+    const-string/jumbo v2, "Cannot start a fallback WebDialog with an empty/missing \'url\'"
 
-    invoke-static {v9, v10}, Lcom/facebook/internal/Utility;->logd(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v2}, Lcom/facebook/internal/Utility;->logd(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 89
     invoke-virtual {v1}, Landroid/support/v4/app/FragmentActivity;->finish()V
@@ -317,45 +277,40 @@
 
     .line 93
     :cond_6d
-    const-string/jumbo v9, "fb%s://bridge/"
+    const-string/jumbo v0, "fb%s://bridge/"
 
-    const/4 v10, 0x1
+    const/4 v3, 0x1
 
-    new-array v10, v10, [Ljava/lang/Object;
+    new-array v3, v3, [Ljava/lang/Object;
 
     .line 94
     invoke-static {}, Lcom/facebook/FacebookSdk;->getApplicationId()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v4
 
-    aput-object v11, v10, v12
+    aput-object v4, v3, v5
 
-    invoke-static {v9, v10}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v3
 
     .line 95
-    .local v5, "redirectUrl":Ljava/lang/String;
-    new-instance v7, Lcom/facebook/internal/FacebookWebFallbackDialog;
+    new-instance v0, Lcom/facebook/internal/FacebookWebFallbackDialog;
 
-    invoke-direct {v7, v1, v6, v5}, Lcom/facebook/internal/FacebookWebFallbackDialog;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2, v3}, Lcom/facebook/internal/FacebookWebFallbackDialog;-><init>(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 96
-    .restart local v7    # "webDialog":Lcom/facebook/internal/WebDialog;
-    new-instance v9, Lcom/facebook/internal/FacebookDialogFragment$2;
+    new-instance v1, Lcom/facebook/internal/FacebookDialogFragment$2;
 
-    invoke-direct {v9, p0}, Lcom/facebook/internal/FacebookDialogFragment$2;-><init>(Lcom/facebook/internal/FacebookDialogFragment;)V
+    invoke-direct {v1, p0}, Lcom/facebook/internal/FacebookDialogFragment$2;-><init>(Lcom/facebook/internal/FacebookDialogFragment;)V
 
-    invoke-virtual {v7, v9}, Lcom/facebook/internal/WebDialog;->setOnCompleteListener(Lcom/facebook/internal/WebDialog$OnCompleteListener;)V
+    invoke-virtual {v0, v1}, Lcom/facebook/internal/WebDialog;->setOnCompleteListener(Lcom/facebook/internal/WebDialog$OnCompleteListener;)V
 
     goto :goto_50
 .end method
 
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .registers 4
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
 
     .prologue
     const/4 v1, 0x0
@@ -416,7 +371,6 @@
 
 .method public setDialog(Landroid/app/Dialog;)V
     .registers 2
-    .param p1, "dialog"    # Landroid/app/Dialog;
 
     .prologue
     .line 50

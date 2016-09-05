@@ -11,14 +11,9 @@
     value = Landroid/support/v7/app/ToolbarActionBar;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Landroid/support/v7/app/ToolbarActionBar;
+.field final synthetic a:Landroid/support/v7/app/ToolbarActionBar;
 
 
 # direct methods
@@ -27,7 +22,7 @@
 
     .prologue
     .line 66
-    iput-object p1, p0, Landroid/support/v7/app/ToolbarActionBar$2;->this$0:Landroid/support/v7/app/ToolbarActionBar;
+    iput-object p1, p0, Landroid/support/v7/app/ToolbarActionBar$2;->a:Landroid/support/v7/app/ToolbarActionBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,14 +33,12 @@
 # virtual methods
 .method public onMenuItemClick(Landroid/view/MenuItem;)Z
     .registers 4
-    .param p1, "item"    # Landroid/view/MenuItem;
 
     .prologue
     .line 69
-    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$2;->this$0:Landroid/support/v7/app/ToolbarActionBar;
+    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$2;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    # getter for: Landroid/support/v7/app/ToolbarActionBar;->mWindowCallback:Landroid/view/Window$Callback;
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->access$000(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
+    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
 
     move-result-object v0
 

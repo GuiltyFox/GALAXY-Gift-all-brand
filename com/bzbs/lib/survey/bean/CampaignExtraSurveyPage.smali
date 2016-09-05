@@ -8,9 +8,19 @@
 
 
 # instance fields
-.field public answer:Ljava/lang/String;
+.field public a:Ljava/lang/String;
 
-.field public fields:Ljava/util/ArrayList;
+.field public b:Ljava/lang/String;
+
+.field public c:Ljava/lang/String;
+
+.field public d:Ljava/lang/String;
+
+.field public e:Z
+
+.field public f:Ljava/lang/String;
+
+.field public g:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
@@ -21,11 +31,7 @@
     .end annotation
 .end field
 
-.field public force_correct_answer:Z
-
-.field public html_question:Ljava/lang/String;
-
-.field public inputs:Ljava/util/ArrayList;
+.field public h:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
@@ -36,288 +42,263 @@
     .end annotation
 .end field
 
-.field public order_by:Ljava/lang/String;
-
-.field public title:Ljava/lang/String;
-
-.field public type:Ljava/lang/String;
-
-.field public user_answer:Ljava/lang/String;
+.field public i:Ljava/lang/String;
 
 
 # direct methods
 .method public constructor <init>(Lorg/json/JSONObject;)V
-    .registers 12
-    .param p1, "jsonObject"    # Lorg/json/JSONObject;
+    .registers 7
 
     .prologue
+    const/4 v1, 0x0
+
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 15
-    const-string/jumbo v7, ""
+    const-string/jumbo v0, ""
 
-    iput-object v7, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->title:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->a:Ljava/lang/String;
 
     .line 16
-    const-string/jumbo v7, ""
+    const-string/jumbo v0, ""
 
-    iput-object v7, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->html_question:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->b:Ljava/lang/String;
 
     .line 17
-    const-string/jumbo v7, ""
+    const-string/jumbo v0, ""
 
-    iput-object v7, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->type:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->c:Ljava/lang/String;
 
     .line 18
-    const-string/jumbo v7, ""
+    const-string/jumbo v0, ""
 
-    iput-object v7, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->answer:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->d:Ljava/lang/String;
 
     .line 19
-    const/4 v7, 0x0
-
-    iput-boolean v7, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->force_correct_answer:Z
+    iput-boolean v1, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->e:Z
 
     .line 20
-    const-string/jumbo v7, ""
+    const-string/jumbo v0, ""
 
-    iput-object v7, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->order_by:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->f:Ljava/lang/String;
 
     .line 22
-    new-instance v7, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v7, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->fields:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->g:Ljava/util/ArrayList;
 
     .line 23
-    new-instance v7, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v7}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v7, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->inputs:Ljava/util/ArrayList;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->h:Ljava/util/ArrayList;
 
     .line 25
-    const-string/jumbo v7, ""
+    const-string/jumbo v0, ""
 
-    iput-object v7, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->user_answer:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->i:Ljava/lang/String;
 
     .line 32
-    const-string/jumbo v7, "title"
+    const-string/jumbo v0, "title"
 
-    invoke-static {p1, v7}, Lcom/bzbs/lib/survey/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v0
 
-    iput-object v7, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->title:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->a:Ljava/lang/String;
 
     .line 33
-    const-string/jumbo v7, "html_question"
+    const-string/jumbo v0, "html_question"
 
-    invoke-static {p1, v7}, Lcom/bzbs/lib/survey/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v0
 
-    iput-object v7, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->html_question:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->b:Ljava/lang/String;
 
     .line 34
-    const-string/jumbo v7, "type"
+    const-string/jumbo v0, "type"
 
-    invoke-static {p1, v7}, Lcom/bzbs/lib/survey/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v0
 
-    iput-object v7, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->type:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->c:Ljava/lang/String;
 
     .line 35
-    const-string/jumbo v7, "answer"
+    const-string/jumbo v0, "answer"
 
-    invoke-static {p1, v7}, Lcom/bzbs/lib/survey/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v0
 
-    iput-object v7, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->answer:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->d:Ljava/lang/String;
 
     .line 36
-    const-string/jumbo v7, "force_correct_answer"
+    const-string/jumbo v0, "force_correct_answer"
 
-    invoke-static {p1, v7}, Lcom/bzbs/lib/survey/util/JsonUtil;->getBoolean(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
+    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->d(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-virtual {v7}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v7
+    move-result v0
 
-    iput-boolean v7, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->force_correct_answer:Z
+    iput-boolean v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->e:Z
 
     .line 37
-    const-string/jumbo v7, "order_by"
+    const-string/jumbo v0, "order_by"
 
-    invoke-static {p1, v7}, Lcom/bzbs/lib/survey/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v0
 
-    iput-object v7, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->order_by:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->f:Ljava/lang/String;
 
     .line 40
     :try_start_6c
-    const-string/jumbo v7, "fields"
+    const-string/jumbo v0, "fields"
 
-    invoke-virtual {p1, v7}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
-
-    move-result-object v4
-
-    .line 42
-    .local v4, "jsonFields":Lorg/json/JSONArray;
-    const/4 v3, 0x0
-
-    .local v3, "i":I
-    :goto_74
-    invoke-virtual {v4}, Lorg/json/JSONArray;->length()I
-
-    move-result v7
-
-    if-ge v3, v7, :cond_a5
-
-    .line 43
-    invoke-virtual {v4, v3}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v2
 
-    .line 44
-    .local v2, "field":Ljava/lang/String;
-    iget-object v7, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->fields:Ljava/util/ArrayList;
+    move v0, v1
 
-    invoke-virtual {v7, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    .line 42
+    :goto_74
+    invoke-virtual {v2}, Lorg/json/JSONArray;->length()I
+
+    move-result v3
+
+    if-ge v0, v3, :cond_a5
+
+    .line 43
+    invoke-virtual {v2, v0}, Lorg/json/JSONArray;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 44
+    iget-object v4, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->g:Ljava/util/ArrayList;
+
+    invoke-virtual {v4, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_83
     .catch Lorg/json/JSONException; {:try_start_6c .. :try_end_83} :catch_86
 
     .line 42
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_74
 
     .line 46
-    .end local v2    # "field":Ljava/lang/String;
-    .end local v3    # "i":I
-    .end local v4    # "jsonFields":Lorg/json/JSONArray;
     :catch_86
-    move-exception v1
+    move-exception v0
 
     .line 47
-    .local v1, "e":Lorg/json/JSONException;
-    const-string/jumbo v7, "MyLog"
+    const-string/jumbo v2, "MyLog"
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v9, "(JSONException):"
+    const-string/jumbo v4, "(JSONException):"
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v3
 
-    invoke-virtual {v1}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v0
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v0
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v0
 
-    invoke-static {v7, v8}, Lcom/bzbs/lib/survey/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v0}, Lcom/bzbs/lib/survey/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 51
-    .end local v1    # "e":Lorg/json/JSONException;
     :cond_a5
     :try_start_a5
-    const-string/jumbo v7, "inputs"
+    const-string/jumbo v0, "inputs"
 
-    invoke-virtual {p1, v7}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
-    move-result-object v6
+    move-result-object v2
+
+    move v0, v1
 
     .line 53
-    .local v6, "jsonInputs":Lorg/json/JSONArray;
-    const/4 v3, 0x0
-
-    .restart local v3    # "i":I
     :goto_ad
-    invoke-virtual {v6}, Lorg/json/JSONArray;->length()I
+    invoke-virtual {v2}, Lorg/json/JSONArray;->length()I
 
-    move-result v7
+    move-result v1
 
-    if-ge v3, v7, :cond_e3
+    if-ge v0, v1, :cond_e3
 
     .line 54
-    invoke-virtual {v6, v3}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
+    invoke-virtual {v2, v0}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
-    move-result-object v5
+    move-result-object v1
 
     .line 55
-    .local v5, "jsonInput":Lorg/json/JSONObject;
-    new-instance v0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPageInput;
+    new-instance v3, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPageInput;
 
-    invoke-direct {v0, v5}, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPageInput;-><init>(Lorg/json/JSONObject;)V
+    invoke-direct {v3, v1}, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPageInput;-><init>(Lorg/json/JSONObject;)V
 
     .line 56
-    .local v0, "campaignExtraSurveyPageInput":Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPageInput;
-    iget-object v7, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->inputs:Ljava/util/ArrayList;
+    iget-object v1, p0, Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPage;->h:Ljava/util/ArrayList;
 
-    invoke-virtual {v7, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_c1
     .catch Lorg/json/JSONException; {:try_start_a5 .. :try_end_c1} :catch_c4
 
     .line 53
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_ad
 
     .line 58
-    .end local v0    # "campaignExtraSurveyPageInput":Lcom/bzbs/lib/survey/bean/CampaignExtraSurveyPageInput;
-    .end local v3    # "i":I
-    .end local v5    # "jsonInput":Lorg/json/JSONObject;
-    .end local v6    # "jsonInputs":Lorg/json/JSONArray;
     :catch_c4
-    move-exception v1
+    move-exception v0
 
     .line 59
-    .restart local v1    # "e":Lorg/json/JSONException;
-    const-string/jumbo v7, "MyLog"
+    const-string/jumbo v1, "MyLog"
 
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v9, "(JSONException):"
+    const-string/jumbo v3, "(JSONException):"
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v2
 
-    invoke-virtual {v1}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Lorg/json/JSONException;->getMessage()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v0
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v8
+    move-result-object v0
 
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v0
 
-    invoke-static {v7, v8}, Lcom/bzbs/lib/survey/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1, v0}, Lcom/bzbs/lib/survey/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 63
-    .end local v1    # "e":Lorg/json/JSONException;
     :cond_e3
     return-void
 .end method
@@ -326,11 +307,6 @@
 # virtual methods
 .method public clone()Ljava/lang/Object;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/CloneNotSupportedException;
-        }
-    .end annotation
 
     .prologue
     .line 28

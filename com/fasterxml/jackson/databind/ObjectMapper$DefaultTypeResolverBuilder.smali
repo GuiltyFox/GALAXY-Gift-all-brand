@@ -6,17 +6,6 @@
 .implements Ljava/io/Serializable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/ObjectMapper;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "DefaultTypeResolverBuilder"
-.end annotation
-
-
 # static fields
 .field private static final serialVersionUID:J = 0x1L
 
@@ -28,7 +17,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/ObjectMapper$DefaultTyping;)V
     .registers 2
-    .param p1, "t"    # Lcom/fasterxml/jackson/databind/ObjectMapper$DefaultTyping;
 
     .prologue
     .line 141
@@ -45,8 +33,6 @@
 # virtual methods
 .method public buildTypeDeserializer(Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/JavaType;Ljava/util/Collection;)Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
     .registers 5
-    .param p1, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p2, "baseType"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -62,7 +48,6 @@
 
     .prologue
     .line 149
-    .local p3, "subtypes":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/fasterxml/jackson/databind/jsontype/NamedType;>;"
     invoke-virtual {p0, p2}, Lcom/fasterxml/jackson/databind/ObjectMapper$DefaultTypeResolverBuilder;->useForType(Lcom/fasterxml/jackson/databind/JavaType;)Z
 
     move-result v0
@@ -84,8 +69,6 @@
 
 .method public buildTypeSerializer(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/JavaType;Ljava/util/Collection;)Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
     .registers 5
-    .param p1, "config"    # Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .param p2, "baseType"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -101,7 +84,6 @@
 
     .prologue
     .line 156
-    .local p3, "subtypes":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/fasterxml/jackson/databind/jsontype/NamedType;>;"
     invoke-virtual {p0, p2}, Lcom/fasterxml/jackson/databind/ObjectMapper$DefaultTypeResolverBuilder;->useForType(Lcom/fasterxml/jackson/databind/JavaType;)Z
 
     move-result v0
@@ -123,7 +105,6 @@
 
 .method public useForType(Lcom/fasterxml/jackson/databind/JavaType;)Z
     .registers 6
-    .param p1, "t"    # Lcom/fasterxml/jackson/databind/JavaType;
 
     .prologue
     const/4 v1, 0x1

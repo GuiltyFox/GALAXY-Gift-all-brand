@@ -6,17 +6,6 @@
 .implements Lcom/samsung/privilege/control/imagecropper/MonitoredActivity$LifeCycleListener;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/samsung/privilege/control/imagecropper/MonitoredActivity;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "LifeCycleAdapter"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -30,54 +19,32 @@
 
 
 # virtual methods
-.method public onActivityCreated(Lcom/samsung/privilege/control/imagecropper/MonitoredActivity;)V
+.method public a(Lcom/samsung/privilege/control/imagecropper/MonitoredActivity;)V
     .registers 2
-    .param p1, "activity"    # Lcom/samsung/privilege/control/imagecropper/MonitoredActivity;
 
     .prologue
     .line 48
     return-void
 .end method
 
-.method public onActivityDestroyed(Lcom/samsung/privilege/control/imagecropper/MonitoredActivity;)V
+.method public b(Lcom/samsung/privilege/control/imagecropper/MonitoredActivity;)V
     .registers 2
-    .param p1, "activity"    # Lcom/samsung/privilege/control/imagecropper/MonitoredActivity;
 
     .prologue
     .line 52
     return-void
 .end method
 
-.method public onActivityPaused(Lcom/samsung/privilege/control/imagecropper/MonitoredActivity;)V
+.method public c(Lcom/samsung/privilege/control/imagecropper/MonitoredActivity;)V
     .registers 2
-    .param p1, "activity"    # Lcom/samsung/privilege/control/imagecropper/MonitoredActivity;
-
-    .prologue
-    .line 56
-    return-void
-.end method
-
-.method public onActivityResumed(Lcom/samsung/privilege/control/imagecropper/MonitoredActivity;)V
-    .registers 2
-    .param p1, "activity"    # Lcom/samsung/privilege/control/imagecropper/MonitoredActivity;
-
-    .prologue
-    .line 60
-    return-void
-.end method
-
-.method public onActivityStarted(Lcom/samsung/privilege/control/imagecropper/MonitoredActivity;)V
-    .registers 2
-    .param p1, "activity"    # Lcom/samsung/privilege/control/imagecropper/MonitoredActivity;
 
     .prologue
     .line 64
     return-void
 .end method
 
-.method public onActivityStopped(Lcom/samsung/privilege/control/imagecropper/MonitoredActivity;)V
+.method public d(Lcom/samsung/privilege/control/imagecropper/MonitoredActivity;)V
     .registers 2
-    .param p1, "activity"    # Lcom/samsung/privilege/control/imagecropper/MonitoredActivity;
 
     .prologue
     .line 68

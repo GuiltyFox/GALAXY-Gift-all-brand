@@ -6,17 +6,6 @@
 .implements Landroid/support/design/widget/TabLayout$OnTabSelectedListener;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/TabLayout;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "ViewPagerOnTabSelectedListener"
-.end annotation
-
-
 # instance fields
 .field private final mViewPager:Landroid/support/v4/view/ViewPager;
 
@@ -24,7 +13,6 @@
 # direct methods
 .method public constructor <init>(Landroid/support/v4/view/ViewPager;)V
     .registers 2
-    .param p1, "viewPager"    # Landroid/support/v4/view/ViewPager;
 
     .prologue
     .line 1985
@@ -41,7 +29,6 @@
 # virtual methods
 .method public onTabReselected(Landroid/support/design/widget/TabLayout$Tab;)V
     .registers 2
-    .param p1, "tab"    # Landroid/support/design/widget/TabLayout$Tab;
 
     .prologue
     .line 2002
@@ -50,7 +37,6 @@
 
 .method public onTabSelected(Landroid/support/design/widget/TabLayout$Tab;)V
     .registers 4
-    .param p1, "tab"    # Landroid/support/design/widget/TabLayout$Tab;
 
     .prologue
     .line 1991
@@ -68,7 +54,6 @@
 
 .method public onTabUnselected(Landroid/support/design/widget/TabLayout$Tab;)V
     .registers 2
-    .param p1, "tab"    # Landroid/support/design/widget/TabLayout$Tab;
 
     .prologue
     .line 1997

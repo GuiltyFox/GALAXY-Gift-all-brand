@@ -51,15 +51,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;Lcom/fasterxml/jackson/databind/type/TypeFactory;Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;Ljava/text/DateFormat;Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;Ljava/util/Locale;Ljava/util/TimeZone;Lcom/fasterxml/jackson/core/Base64Variant;)V
     .registers 12
-    .param p1, "ci"    # Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector;
-    .param p2, "ai"    # Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
-    .param p4, "pns"    # Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;
-    .param p5, "tf"    # Lcom/fasterxml/jackson/databind/type/TypeFactory;
-    .param p7, "dateFormat"    # Ljava/text/DateFormat;
-    .param p8, "hi"    # Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;
-    .param p9, "locale"    # Ljava/util/Locale;
-    .param p10, "tz"    # Ljava/util/TimeZone;
-    .param p11, "defaultBase64"    # Lcom/fasterxml/jackson/core/Base64Variant;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -82,8 +73,6 @@
 
     .prologue
     .line 140
-    .local p3, "vc":Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;, "Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker<*>;"
-    .local p6, "typer":Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;, "Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 141
@@ -251,7 +240,6 @@
 
 .method public with(Lcom/fasterxml/jackson/core/Base64Variant;)Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     .registers 14
-    .param p1, "base64"    # Lcom/fasterxml/jackson/core/Base64Variant;
 
     .prologue
     .line 285
@@ -260,11 +248,9 @@
     if-ne p1, v0, :cond_5
 
     .line 288
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
@@ -299,7 +285,6 @@
 
 .method public with(Ljava/util/Locale;)Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     .registers 14
-    .param p1, "l"    # Ljava/util/Locale;
 
     .prologue
     .line 249
@@ -308,11 +293,9 @@
     if-ne v0, p1, :cond_5
 
     .line 252
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
@@ -347,7 +330,6 @@
 
 .method public with(Ljava/util/TimeZone;)Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     .registers 14
-    .param p1, "tz"    # Ljava/util/TimeZone;
 
     .prologue
     .line 264
@@ -362,24 +344,21 @@
 
     .line 267
     :cond_8
-    iget-object v7, p0, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;->_dateFormat:Ljava/text/DateFormat;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;->_dateFormat:Ljava/text/DateFormat;
 
     .line 268
-    .local v7, "df":Ljava/text/DateFormat;
-    instance-of v0, v7, Lcom/fasterxml/jackson/databind/util/StdDateFormat;
+    instance-of v1, v0, Lcom/fasterxml/jackson/databind/util/StdDateFormat;
 
-    if-eqz v0, :cond_2d
+    if-eqz v1, :cond_2d
 
     .line 269
-    check-cast v7, Lcom/fasterxml/jackson/databind/util/StdDateFormat;
+    check-cast v0, Lcom/fasterxml/jackson/databind/util/StdDateFormat;
 
-    .end local v7    # "df":Ljava/text/DateFormat;
-    invoke-virtual {v7, p1}, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->withTimeZone(Ljava/util/TimeZone;)Lcom/fasterxml/jackson/databind/util/StdDateFormat;
+    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/databind/util/StdDateFormat;->withTimeZone(Ljava/util/TimeZone;)Lcom/fasterxml/jackson/databind/util/StdDateFormat;
 
     move-result-object v7
 
     .line 275
-    .restart local v7    # "df":Ljava/text/DateFormat;
     :goto_14
     new-instance v0, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
@@ -409,23 +388,22 @@
 
     .line 272
     :cond_2d
-    invoke-virtual {v7}, Ljava/text/DateFormat;->clone()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/text/DateFormat;->clone()Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v0
 
-    .end local v7    # "df":Ljava/text/DateFormat;
-    check-cast v7, Ljava/text/DateFormat;
+    check-cast v0, Ljava/text/DateFormat;
 
     .line 273
-    .restart local v7    # "df":Ljava/text/DateFormat;
-    invoke-virtual {v7, p1}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
+    invoke-virtual {v0, p1}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
+
+    move-object v7, v0
 
     goto :goto_14
 .end method
 
 .method public withAnnotationIntrospector(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     .registers 14
-    .param p1, "ai"    # Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
     .prologue
     .line 170
@@ -434,11 +412,9 @@
     if-ne v0, p1, :cond_5
 
     .line 173
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
@@ -473,7 +449,6 @@
 
 .method public withAppendedAnnotationIntrospector(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     .registers 3
-    .param p1, "ai"    # Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
     .prologue
     .line 183
@@ -492,7 +467,6 @@
 
 .method public withClassIntrospector(Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector;)Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     .registers 14
-    .param p1, "ci"    # Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector;
 
     .prologue
     .line 161
@@ -501,11 +475,9 @@
     if-ne v0, p1, :cond_5
 
     .line 164
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
@@ -540,7 +512,6 @@
 
 .method public withDateFormat(Ljava/text/DateFormat;)Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     .registers 14
-    .param p1, "df"    # Ljava/text/DateFormat;
 
     .prologue
     .line 231
@@ -549,11 +520,9 @@
     if-ne v0, p1, :cond_5
 
     .line 234
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
@@ -588,7 +557,6 @@
 
 .method public withHandlerInstantiator(Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;)Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     .registers 14
-    .param p1, "hi"    # Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;
 
     .prologue
     .line 240
@@ -597,11 +565,9 @@
     if-ne v0, p1, :cond_5
 
     .line 243
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
@@ -636,7 +602,6 @@
 
 .method public withInsertedAnnotationIntrospector(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     .registers 3
-    .param p1, "ai"    # Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
     .prologue
     .line 179
@@ -655,7 +620,6 @@
 
 .method public withPropertyNamingStrategy(Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;)Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     .registers 14
-    .param p1, "pns"    # Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;
 
     .prologue
     .line 204
@@ -664,11 +628,9 @@
     if-ne v0, p1, :cond_5
 
     .line 207
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
@@ -703,7 +665,6 @@
 
 .method public withTypeFactory(Lcom/fasterxml/jackson/databind/type/TypeFactory;)Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     .registers 14
-    .param p1, "tf"    # Lcom/fasterxml/jackson/databind/type/TypeFactory;
 
     .prologue
     .line 213
@@ -712,11 +673,9 @@
     if-ne v0, p1, :cond_5
 
     .line 216
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
@@ -762,17 +721,14 @@
 
     .prologue
     .line 222
-    .local p1, "typer":Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;, "Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;->_typeResolverBuilder:Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
 
     if-ne v0, p1, :cond_5
 
     .line 225
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
@@ -807,8 +763,6 @@
 
 .method public withVisibility(Lcom/fasterxml/jackson/annotation/PropertyAccessor;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     .registers 15
-    .param p1, "forMethod"    # Lcom/fasterxml/jackson/annotation/PropertyAccessor;
-    .param p2, "visibility"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .prologue
     .line 196
@@ -858,17 +812,14 @@
 
     .prologue
     .line 187
-    .local p1, "vc":Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;, "Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;->_visibilityChecker:Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;
 
     if-ne v0, p1, :cond_5
 
     .line 190
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 

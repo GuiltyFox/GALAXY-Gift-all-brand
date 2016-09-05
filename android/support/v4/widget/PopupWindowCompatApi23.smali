@@ -4,46 +4,19 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
+.method static a(Landroid/widget/PopupWindow;I)V
+    .registers 2
 
     .prologue
-    .line 21
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 32
+    invoke-virtual {p0, p1}, Landroid/widget/PopupWindow;->setWindowLayoutType(I)V
 
+    .line 33
     return-void
 .end method
 
-.method static getOverlapAnchor(Landroid/widget/PopupWindow;)Z
+.method static a(Landroid/widget/PopupWindow;Z)V
     .registers 2
-    .param p0, "popupWindow"    # Landroid/widget/PopupWindow;
-
-    .prologue
-    .line 28
-    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getOverlapAnchor()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method static getWindowLayoutType(Landroid/widget/PopupWindow;)I
-    .registers 2
-    .param p0, "popupWindow"    # Landroid/widget/PopupWindow;
-
-    .prologue
-    .line 36
-    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getWindowLayoutType()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method static setOverlapAnchor(Landroid/widget/PopupWindow;Z)V
-    .registers 2
-    .param p0, "popupWindow"    # Landroid/widget/PopupWindow;
-    .param p1, "overlapAnchor"    # Z
 
     .prologue
     .line 24
@@ -53,15 +26,14 @@
     return-void
 .end method
 
-.method static setWindowLayoutType(Landroid/widget/PopupWindow;I)V
+.method static a(Landroid/widget/PopupWindow;)Z
     .registers 2
-    .param p0, "popupWindow"    # Landroid/widget/PopupWindow;
-    .param p1, "layoutType"    # I
 
     .prologue
-    .line 32
-    invoke-virtual {p0, p1}, Landroid/widget/PopupWindow;->setWindowLayoutType(I)V
+    .line 28
+    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getOverlapAnchor()Z
 
-    .line 33
-    return-void
+    move-result v0
+
+    return v0
 .end method

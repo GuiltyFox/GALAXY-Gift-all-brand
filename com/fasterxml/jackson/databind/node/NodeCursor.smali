@@ -3,16 +3,6 @@
 .source "NodeCursor.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/node/NodeCursor$Object;,
-        Lcom/fasterxml/jackson/databind/node/NodeCursor$Array;,
-        Lcom/fasterxml/jackson/databind/node/NodeCursor$RootValue;
-    }
-.end annotation
-
-
 # instance fields
 .field protected _currentName:Ljava/lang/String;
 
@@ -22,8 +12,6 @@
 # direct methods
 .method public constructor <init>(ILcom/fasterxml/jackson/databind/node/NodeCursor;)V
     .registers 4
-    .param p1, "contextType"    # I
-    .param p2, "p"    # Lcom/fasterxml/jackson/databind/node/NodeCursor;
 
     .prologue
     .line 29
@@ -94,55 +82,54 @@
     .line 75
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/node/NodeCursor;->currentNode()Lcom/fasterxml/jackson/databind/JsonNode;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 76
-    .local v0, "n":Lcom/fasterxml/jackson/databind/JsonNode;
-    if-nez v0, :cond_f
+    if-nez v1, :cond_f
 
-    new-instance v1, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string/jumbo v2, "No current node"
+    const-string/jumbo v1, "No current node"
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     .line 77
     :cond_f
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JsonNode;->isArray()Z
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/JsonNode;->isArray()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_1b
+    if-eqz v0, :cond_1b
 
     .line 78
-    new-instance v1, Lcom/fasterxml/jackson/databind/node/NodeCursor$Array;
+    new-instance v0, Lcom/fasterxml/jackson/databind/node/NodeCursor$Array;
 
-    invoke-direct {v1, v0, p0}, Lcom/fasterxml/jackson/databind/node/NodeCursor$Array;-><init>(Lcom/fasterxml/jackson/databind/JsonNode;Lcom/fasterxml/jackson/databind/node/NodeCursor;)V
+    invoke-direct {v0, v1, p0}, Lcom/fasterxml/jackson/databind/node/NodeCursor$Array;-><init>(Lcom/fasterxml/jackson/databind/JsonNode;Lcom/fasterxml/jackson/databind/node/NodeCursor;)V
 
     .line 81
     :goto_1a
-    return-object v1
+    return-object v0
 
     .line 80
     :cond_1b
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JsonNode;->isObject()Z
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/JsonNode;->isObject()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_27
+    if-eqz v0, :cond_27
 
     .line 81
-    new-instance v1, Lcom/fasterxml/jackson/databind/node/NodeCursor$Object;
+    new-instance v0, Lcom/fasterxml/jackson/databind/node/NodeCursor$Object;
 
-    invoke-direct {v1, v0, p0}, Lcom/fasterxml/jackson/databind/node/NodeCursor$Object;-><init>(Lcom/fasterxml/jackson/databind/JsonNode;Lcom/fasterxml/jackson/databind/node/NodeCursor;)V
+    invoke-direct {v0, v1, p0}, Lcom/fasterxml/jackson/databind/node/NodeCursor$Object;-><init>(Lcom/fasterxml/jackson/databind/JsonNode;Lcom/fasterxml/jackson/databind/node/NodeCursor;)V
 
     goto :goto_1a
 
     .line 83
     :cond_27
-    new-instance v1, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -154,25 +141,25 @@
 
     move-result-object v2
 
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 .end method
 
 .method public abstract nextToken()Lcom/fasterxml/jackson/core/JsonToken;
@@ -183,7 +170,6 @@
 
 .method public overrideCurrentName(Ljava/lang/String;)V
     .registers 2
-    .param p1, "name"    # Ljava/lang/String;
 
     .prologue
     .line 54

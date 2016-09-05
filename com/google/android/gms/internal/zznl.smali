@@ -3,11 +3,8 @@
 
 
 # virtual methods
-.method public abstract currentTimeMillis()J
+.method public abstract a()J
 .end method
 
-.method public abstract elapsedRealtime()J
-.end method
-
-.method public abstract nanoTime()J
+.method public abstract b()J
 .end method

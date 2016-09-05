@@ -20,20 +20,19 @@
 
 
 # instance fields
-.field private final bitmapPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+.field private final a:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
 
 
 # direct methods
 .method public constructor <init>(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;)V
     .registers 2
-    .param p1, "bitmapPool"    # Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
 
     .prologue
     .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 15
-    iput-object p1, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameResourceDecoder;->bitmapPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+    iput-object p1, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameResourceDecoder;->a:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
 
     .line 16
     return-void
@@ -41,11 +40,8 @@
 
 
 # virtual methods
-.method public decode(Lcom/bumptech/glide/gifdecoder/GifDecoder;II)Lcom/bumptech/glide/load/engine/Resource;
+.method public a(Lcom/bumptech/glide/gifdecoder/GifDecoder;II)Lcom/bumptech/glide/load/engine/Resource;
     .registers 6
-    .param p1, "source"    # Lcom/bumptech/glide/gifdecoder/GifDecoder;
-    .param p2, "width"    # I
-    .param p3, "height"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -60,45 +56,35 @@
 
     .prologue
     .line 20
-    invoke-virtual {p1}, Lcom/bumptech/glide/gifdecoder/GifDecoder;->getNextFrame()Landroid/graphics/Bitmap;
+    invoke-virtual {p1}, Lcom/bumptech/glide/gifdecoder/GifDecoder;->f()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     .line 21
-    .local v0, "bitmap":Landroid/graphics/Bitmap;
-    iget-object v1, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameResourceDecoder;->bitmapPool:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
+    iget-object v1, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameResourceDecoder;->a:Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
 
-    invoke-static {v0, v1}, Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;->obtain(Landroid/graphics/Bitmap;Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;)Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;
-
-    move-result-object v1
-
-    return-object v1
-.end method
-
-.method public bridge synthetic decode(Ljava/lang/Object;II)Lcom/bumptech/glide/load/engine/Resource;
-    .registers 5
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # I
-    .param p3, "x2"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .prologue
-    .line 11
-    check-cast p1, Lcom/bumptech/glide/gifdecoder/GifDecoder;
-
-    .end local p1    # "x0":Ljava/lang/Object;
-    invoke-virtual {p0, p1, p2, p3}, Lcom/bumptech/glide/load/resource/gif/GifFrameResourceDecoder;->decode(Lcom/bumptech/glide/gifdecoder/GifDecoder;II)Lcom/bumptech/glide/load/engine/Resource;
+    invoke-static {v0, v1}, Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;->a(Landroid/graphics/Bitmap;Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;)Lcom/bumptech/glide/load/resource/bitmap/BitmapResource;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getId()Ljava/lang/String;
+.method public bridge synthetic a(Ljava/lang/Object;II)Lcom/bumptech/glide/load/engine/Resource;
+    .registers 5
+
+    .prologue
+    .line 11
+    check-cast p1, Lcom/bumptech/glide/gifdecoder/GifDecoder;
+
+    invoke-virtual {p0, p1, p2, p3}, Lcom/bumptech/glide/load/resource/gif/GifFrameResourceDecoder;->a(Lcom/bumptech/glide/gifdecoder/GifDecoder;II)Lcom/bumptech/glide/load/engine/Resource;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public a()Ljava/lang/String;
     .registers 2
 
     .prologue

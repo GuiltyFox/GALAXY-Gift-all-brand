@@ -3,17 +3,6 @@
 .source "SerializerCache.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/ser/SerializerCache;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "TypeKey"
-.end annotation
-
-
 # instance fields
 .field protected _class:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
@@ -34,8 +23,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/JavaType;Z)V
     .registers 4
-    .param p1, "key"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p2, "typed"    # Z
 
     .prologue
     .line 216
@@ -65,7 +52,6 @@
 
 .method public constructor <init>(Ljava/lang/Class;Z)V
     .registers 4
-    .param p2, "typed"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -76,7 +62,6 @@
 
     .prologue
     .line 209
-    .local p1, "key":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 210
@@ -102,20 +87,17 @@
 .end method
 
 .method private static final hash(Lcom/fasterxml/jackson/databind/JavaType;Z)I
-    .registers 4
-    .param p0, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p1, "typed"    # Z
+    .registers 3
 
     .prologue
     .line 232
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/JavaType;->hashCode()I
 
-    move-result v1
+    move-result v0
 
-    add-int/lit8 v0, v1, -0x1
+    add-int/lit8 v0, v0, -0x1
 
     .line 233
-    .local v0, "hash":I
     if-eqz p1, :cond_a
 
     .line 234
@@ -127,8 +109,7 @@
 .end method
 
 .method private static final hash(Ljava/lang/Class;Z)I
-    .registers 4
-    .param p1, "typed"    # Z
+    .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -139,17 +120,15 @@
 
     .prologue
     .line 224
-    .local p0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
 
     .line 225
-    .local v0, "hash":I
     if-eqz p1, :cond_c
 
     .line 226
@@ -163,13 +142,12 @@
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .registers 7
-    .param p1, "o"    # Ljava/lang/Object;
+    .registers 6
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 279
     if-nez p1, :cond_5
@@ -177,13 +155,13 @@
     .line 291
     :cond_4
     :goto_4
-    return v2
+    return v1
 
     .line 280
     :cond_5
     if-ne p1, p0, :cond_9
 
-    move v2, v1
+    move v1, v0
 
     goto :goto_4
 
@@ -191,58 +169,55 @@
     :cond_9
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v2
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v4
+    move-result-object v3
 
-    if-ne v3, v4, :cond_4
-
-    move-object v0, p1
+    if-ne v2, v3, :cond_4
 
     .line 284
-    check-cast v0, Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;
+    check-cast p1, Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;
 
     .line 285
-    .local v0, "other":Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;
-    iget-boolean v3, v0, Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;->_isTyped:Z
+    iget-boolean v2, p1, Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;->_isTyped:Z
 
-    iget-boolean v4, p0, Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;->_isTyped:Z
+    iget-boolean v3, p0, Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;->_isTyped:Z
 
-    if-ne v3, v4, :cond_4
+    if-ne v2, v3, :cond_4
 
     .line 286
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;->_class:Ljava/lang/Class;
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;->_class:Ljava/lang/Class;
 
-    if-eqz v3, :cond_2a
+    if-eqz v2, :cond_29
 
     .line 287
-    iget-object v3, v0, Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;->_class:Ljava/lang/Class;
+    iget-object v2, p1, Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;->_class:Ljava/lang/Class;
 
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;->_class:Ljava/lang/Class;
+    iget-object v3, p0, Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;->_class:Ljava/lang/Class;
 
-    if-ne v3, v4, :cond_28
+    if-ne v2, v3, :cond_27
 
-    :goto_26
-    move v2, v1
+    :goto_25
+    move v1, v0
 
     goto :goto_4
 
-    :cond_28
-    move v1, v2
+    :cond_27
+    move v0, v1
 
-    goto :goto_26
+    goto :goto_25
 
     .line 289
-    :cond_2a
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;->_type:Lcom/fasterxml/jackson/databind/JavaType;
+    :cond_29
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;->_type:Lcom/fasterxml/jackson/databind/JavaType;
 
-    iget-object v2, v0, Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;->_type:Lcom/fasterxml/jackson/databind/JavaType;
+    iget-object v1, p1, Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;->_type:Lcom/fasterxml/jackson/databind/JavaType;
 
-    invoke-virtual {v1, v2}, Lcom/fasterxml/jackson/databind/JavaType;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/databind/JavaType;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
     goto :goto_4
 .end method
@@ -259,7 +234,6 @@
 
 .method public resetTyped(Lcom/fasterxml/jackson/databind/JavaType;)V
     .registers 4
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
 
     .prologue
     const/4 v1, 0x1
@@ -297,7 +271,6 @@
     .end annotation
 
     .prologue
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v1, 0x1
 
     .line 240
@@ -324,7 +297,6 @@
 
 .method public resetUntyped(Lcom/fasterxml/jackson/databind/JavaType;)V
     .registers 4
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
 
     .prologue
     const/4 v1, 0x0
@@ -362,7 +334,6 @@
     .end annotation
 
     .prologue
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v1, 0x0
 
     .line 247

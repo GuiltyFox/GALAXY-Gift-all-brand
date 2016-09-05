@@ -3,29 +3,18 @@
 .source "TwilightManager.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/app/TwilightManager;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "TwilightState"
-.end annotation
-
-
 # instance fields
-.field isNight:Z
+.field a:Z
 
-.field nextUpdate:J
+.field b:J
 
-.field todaySunrise:J
+.field c:J
 
-.field todaySunset:J
+.field d:J
 
-.field tomorrowSunrise:J
+.field e:J
 
-.field yesterdaySunset:J
+.field f:J
 
 
 # direct methods
@@ -41,7 +30,6 @@
 
 .method synthetic constructor <init>(Landroid/support/v7/app/TwilightManager$1;)V
     .registers 2
-    .param p1, "x0"    # Landroid/support/v7/app/TwilightManager$1;
 
     .prologue
     .line 173

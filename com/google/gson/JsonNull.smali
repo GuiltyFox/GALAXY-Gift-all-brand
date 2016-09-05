@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final INSTANCE:Lcom/google/gson/JsonNull;
+.field public static final a:Lcom/google/gson/JsonNull;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     invoke-direct {v0}, Lcom/google/gson/JsonNull;-><init>()V
 
-    sput-object v0, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
+    sput-object v0, Lcom/google/gson/JsonNull;->a:Lcom/google/gson/JsonNull;
 
     return-void
 .end method
@@ -37,31 +37,8 @@
 
 
 # virtual methods
-.method bridge synthetic deepCopy()Lcom/google/gson/JsonElement;
-    .registers 2
-
-    .prologue
-    .line 26
-    invoke-virtual {p0}, Lcom/google/gson/JsonNull;->deepCopy()Lcom/google/gson/JsonNull;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method deepCopy()Lcom/google/gson/JsonNull;
-    .registers 2
-
-    .prologue
-    .line 45
-    sget-object v0, Lcom/google/gson/JsonNull;->INSTANCE:Lcom/google/gson/JsonNull;
-
-    return-object v0
-.end method
-
 .method public equals(Ljava/lang/Object;)Z
     .registers 3
-    .param p1, "other"    # Ljava/lang/Object;
 
     .prologue
     .line 61

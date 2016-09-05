@@ -4,21 +4,8 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .registers 2
-    .param p1, "context"    # Landroid/content/Context;
-
-    .prologue
-    .line 17
-    invoke-direct {p0, p1}, Lcom/bumptech/glide/load/resource/bitmap/BitmapTransformation;-><init>(Landroid/content/Context;)V
-
-    .line 18
-    return-void
-.end method
-
 .method public constructor <init>(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;)V
     .registers 2
-    .param p1, "bitmapPool"    # Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
 
     .prologue
     .line 21
@@ -30,53 +17,37 @@
 
 
 # virtual methods
-.method public getId()Ljava/lang/String;
-    .registers 2
-
-    .prologue
-    .line 39
-    const-string/jumbo v0, "CenterCrop.com.bumptech.glide.load.resource.bitmap"
-
-    return-object v0
-.end method
-
-.method protected transform(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
+.method protected a(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
     .registers 8
-    .param p1, "pool"    # Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
-    .param p2, "toTransform"    # Landroid/graphics/Bitmap;
-    .param p3, "outWidth"    # I
-    .param p4, "outHeight"    # I
 
     .prologue
     .line 28
     invoke-virtual {p2}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
-    move-result-object v2
+    move-result-object v0
 
-    if-eqz v2, :cond_20
+    if-eqz v0, :cond_20
 
     invoke-virtual {p2}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
-    move-result-object v2
+    move-result-object v0
 
     :goto_a
-    invoke-interface {p1, p3, p4, v2}, Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;->get(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-interface {p1, p3, p4, v0}, Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;->a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     .line 30
-    .local v0, "toReuse":Landroid/graphics/Bitmap;
-    invoke-static {v0, p2, p3, p4}, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->centerCrop(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
+    invoke-static {v0, p2, p3, p4}, Lcom/bumptech/glide/load/resource/bitmap/TransformationUtils;->a(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;II)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
     .line 31
-    .local v1, "transformed":Landroid/graphics/Bitmap;
     if-eqz v0, :cond_1f
 
     if-eq v0, v1, :cond_1f
 
-    invoke-interface {p1, v0}, Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;->put(Landroid/graphics/Bitmap;)Z
+    invoke-interface {p1, v0}, Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;->a(Landroid/graphics/Bitmap;)Z
 
     move-result v2
 
@@ -90,10 +61,18 @@
     return-object v1
 
     .line 28
-    .end local v0    # "toReuse":Landroid/graphics/Bitmap;
-    .end local v1    # "transformed":Landroid/graphics/Bitmap;
     :cond_20
-    sget-object v2, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+    sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     goto :goto_a
+.end method
+
+.method public a()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 39
+    const-string/jumbo v0, "CenterCrop.com.bumptech.glide.load.resource.bitmap"
+
+    return-object v0
 .end method

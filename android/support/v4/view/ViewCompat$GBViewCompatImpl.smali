@@ -3,17 +3,6 @@
 .source "ViewCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/view/ViewCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "GBViewCompatImpl"
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .registers 1
@@ -27,28 +16,14 @@
 
 
 # virtual methods
-.method public getOverScrollMode(Landroid/view/View;)I
+.method public a(Landroid/view/View;)I
     .registers 3
-    .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 1086
-    invoke-static {p1}, Landroid/support/v4/view/ViewCompatGingerbread;->getOverScrollMode(Landroid/view/View;)I
+    invoke-static {p1}, Landroid/support/v4/view/ViewCompatGingerbread;->a(Landroid/view/View;)I
 
     move-result v0
 
     return v0
-.end method
-
-.method public setOverScrollMode(Landroid/view/View;I)V
-    .registers 3
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "mode"    # I
-
-    .prologue
-    .line 1090
-    invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatGingerbread;->setOverScrollMode(Landroid/view/View;I)V
-
-    .line 1091
-    return-void
 .end method

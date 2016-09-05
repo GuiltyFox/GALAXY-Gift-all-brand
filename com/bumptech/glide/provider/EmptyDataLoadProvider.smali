@@ -22,7 +22,7 @@
 
 
 # static fields
-.field private static final EMPTY_DATA_LOAD_PROVIDER:Lcom/bumptech/glide/provider/DataLoadProvider;
+.field private static final a:Lcom/bumptech/glide/provider/DataLoadProvider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/provider/DataLoadProvider",
@@ -42,7 +42,7 @@
 
     invoke-direct {v0}, Lcom/bumptech/glide/provider/EmptyDataLoadProvider;-><init>()V
 
-    sput-object v0, Lcom/bumptech/glide/provider/EmptyDataLoadProvider;->EMPTY_DATA_LOAD_PROVIDER:Lcom/bumptech/glide/provider/DataLoadProvider;
+    sput-object v0, Lcom/bumptech/glide/provider/EmptyDataLoadProvider;->a:Lcom/bumptech/glide/provider/DataLoadProvider;
 
     return-void
 .end method
@@ -52,13 +52,12 @@
 
     .prologue
     .line 15
-    .local p0, "this":Lcom/bumptech/glide/provider/EmptyDataLoadProvider;, "Lcom/bumptech/glide/provider/EmptyDataLoadProvider<TT;TZ;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static get()Lcom/bumptech/glide/provider/DataLoadProvider;
+.method public static e()Lcom/bumptech/glide/provider/DataLoadProvider;
     .registers 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -74,14 +73,14 @@
 
     .prologue
     .line 20
-    sget-object v0, Lcom/bumptech/glide/provider/EmptyDataLoadProvider;->EMPTY_DATA_LOAD_PROVIDER:Lcom/bumptech/glide/provider/DataLoadProvider;
+    sget-object v0, Lcom/bumptech/glide/provider/EmptyDataLoadProvider;->a:Lcom/bumptech/glide/provider/DataLoadProvider;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public getCacheDecoder()Lcom/bumptech/glide/load/ResourceDecoder;
+.method public a()Lcom/bumptech/glide/load/ResourceDecoder;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -95,31 +94,12 @@
 
     .prologue
     .line 25
-    .local p0, "this":Lcom/bumptech/glide/provider/EmptyDataLoadProvider;, "Lcom/bumptech/glide/provider/EmptyDataLoadProvider<TT;TZ;>;"
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
-.method public getEncoder()Lcom/bumptech/glide/load/ResourceEncoder;
-    .registers 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/bumptech/glide/load/ResourceEncoder",
-            "<TZ;>;"
-        }
-    .end annotation
-
-    .prologue
-    .line 40
-    .local p0, "this":Lcom/bumptech/glide/provider/EmptyDataLoadProvider;, "Lcom/bumptech/glide/provider/EmptyDataLoadProvider<TT;TZ;>;"
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public getSourceDecoder()Lcom/bumptech/glide/load/ResourceDecoder;
+.method public b()Lcom/bumptech/glide/load/ResourceDecoder;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -131,13 +111,12 @@
 
     .prologue
     .line 30
-    .local p0, "this":Lcom/bumptech/glide/provider/EmptyDataLoadProvider;, "Lcom/bumptech/glide/provider/EmptyDataLoadProvider<TT;TZ;>;"
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
-.method public getSourceEncoder()Lcom/bumptech/glide/load/Encoder;
+.method public c()Lcom/bumptech/glide/load/Encoder;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -149,7 +128,23 @@
 
     .prologue
     .line 35
-    .local p0, "this":Lcom/bumptech/glide/provider/EmptyDataLoadProvider;, "Lcom/bumptech/glide/provider/EmptyDataLoadProvider<TT;TZ;>;"
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public d()Lcom/bumptech/glide/load/ResourceEncoder;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/bumptech/glide/load/ResourceEncoder",
+            "<TZ;>;"
+        }
+    .end annotation
+
+    .prologue
+    .line 40
     const/4 v0, 0x0
 
     return-object v0

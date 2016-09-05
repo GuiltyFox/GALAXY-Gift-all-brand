@@ -3,17 +3,6 @@
 .source "PropertySerializerMap.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/ser/impl/PropertySerializerMap;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "SerializerAndMapResult"
-.end annotation
-
-
 # instance fields
 .field public final map:Lcom/fasterxml/jackson/databind/ser/impl/PropertySerializerMap;
 
@@ -32,7 +21,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/JsonSerializer;Lcom/fasterxml/jackson/databind/ser/impl/PropertySerializerMap;)V
     .registers 3
-    .param p2, "map"    # Lcom/fasterxml/jackson/databind/ser/impl/PropertySerializerMap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -47,7 +35,6 @@
 
     .prologue
     .line 130
-    .local p1, "serializer":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<Ljava/lang/Object;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 131

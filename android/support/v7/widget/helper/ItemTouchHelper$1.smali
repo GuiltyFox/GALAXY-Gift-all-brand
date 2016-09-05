@@ -11,14 +11,9 @@
     value = Landroid/support/v7/widget/helper/ItemTouchHelper;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Landroid/support/v7/widget/helper/ItemTouchHelper;
+.field final synthetic a:Landroid/support/v7/widget/helper/ItemTouchHelper;
 
 
 # direct methods
@@ -27,7 +22,7 @@
 
     .prologue
     .line 254
-    iput-object p1, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$1;->this$0:Landroid/support/v7/widget/helper/ItemTouchHelper;
+    iput-object p1, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$1;->a:Landroid/support/v7/widget/helper/ItemTouchHelper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,13 +36,13 @@
 
     .prologue
     .line 257
-    iget-object v0, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$1;->this$0:Landroid/support/v7/widget/helper/ItemTouchHelper;
+    iget-object v0, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$1;->a:Landroid/support/v7/widget/helper/ItemTouchHelper;
 
     iget-object v0, v0, Landroid/support/v7/widget/helper/ItemTouchHelper;->mSelected:Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     if-eqz v0, :cond_35
 
-    iget-object v0, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$1;->this$0:Landroid/support/v7/widget/helper/ItemTouchHelper;
+    iget-object v0, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$1;->a:Landroid/support/v7/widget/helper/ItemTouchHelper;
 
     # invokes: Landroid/support/v7/widget/helper/ItemTouchHelper;->scrollIfNecessary()Z
     invoke-static {v0}, Landroid/support/v7/widget/helper/ItemTouchHelper;->access$000(Landroid/support/v7/widget/helper/ItemTouchHelper;)Z
@@ -57,16 +52,16 @@
     if-eqz v0, :cond_35
 
     .line 258
-    iget-object v0, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$1;->this$0:Landroid/support/v7/widget/helper/ItemTouchHelper;
+    iget-object v0, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$1;->a:Landroid/support/v7/widget/helper/ItemTouchHelper;
 
     iget-object v0, v0, Landroid/support/v7/widget/helper/ItemTouchHelper;->mSelected:Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     if-eqz v0, :cond_1d
 
     .line 259
-    iget-object v0, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$1;->this$0:Landroid/support/v7/widget/helper/ItemTouchHelper;
+    iget-object v0, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$1;->a:Landroid/support/v7/widget/helper/ItemTouchHelper;
 
-    iget-object v1, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$1;->this$0:Landroid/support/v7/widget/helper/ItemTouchHelper;
+    iget-object v1, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$1;->a:Landroid/support/v7/widget/helper/ItemTouchHelper;
 
     iget-object v1, v1, Landroid/support/v7/widget/helper/ItemTouchHelper;->mSelected:Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
@@ -75,14 +70,14 @@
 
     .line 261
     :cond_1d
-    iget-object v0, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$1;->this$0:Landroid/support/v7/widget/helper/ItemTouchHelper;
+    iget-object v0, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$1;->a:Landroid/support/v7/widget/helper/ItemTouchHelper;
 
     # getter for: Landroid/support/v7/widget/helper/ItemTouchHelper;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
     invoke-static {v0}, Landroid/support/v7/widget/helper/ItemTouchHelper;->access$300(Landroid/support/v7/widget/helper/ItemTouchHelper;)Landroid/support/v7/widget/RecyclerView;
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$1;->this$0:Landroid/support/v7/widget/helper/ItemTouchHelper;
+    iget-object v1, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$1;->a:Landroid/support/v7/widget/helper/ItemTouchHelper;
 
     # getter for: Landroid/support/v7/widget/helper/ItemTouchHelper;->mScrollRunnable:Ljava/lang/Runnable;
     invoke-static {v1}, Landroid/support/v7/widget/helper/ItemTouchHelper;->access$200(Landroid/support/v7/widget/helper/ItemTouchHelper;)Ljava/lang/Runnable;
@@ -92,14 +87,14 @@
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->removeCallbacks(Ljava/lang/Runnable;)Z
 
     .line 262
-    iget-object v0, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$1;->this$0:Landroid/support/v7/widget/helper/ItemTouchHelper;
+    iget-object v0, p0, Landroid/support/v7/widget/helper/ItemTouchHelper$1;->a:Landroid/support/v7/widget/helper/ItemTouchHelper;
 
     # getter for: Landroid/support/v7/widget/helper/ItemTouchHelper;->mRecyclerView:Landroid/support/v7/widget/RecyclerView;
     invoke-static {v0}, Landroid/support/v7/widget/helper/ItemTouchHelper;->access$300(Landroid/support/v7/widget/helper/ItemTouchHelper;)Landroid/support/v7/widget/RecyclerView;
 
     move-result-object v0
 
-    invoke-static {v0, p0}, Landroid/support/v4/view/ViewCompat;->postOnAnimation(Landroid/view/View;Ljava/lang/Runnable;)V
+    invoke-static {v0, p0}, Landroid/support/v4/view/ViewCompat;->a(Landroid/view/View;Ljava/lang/Runnable;)V
 
     .line 264
     :cond_35

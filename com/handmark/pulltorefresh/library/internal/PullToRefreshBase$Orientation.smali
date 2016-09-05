@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4019
-    name = "Orientation"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum",
@@ -24,11 +15,11 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+.field public static final enum a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
-.field public static final enum HORIZONTAL:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+.field public static final enum b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
-.field public static final enum VERTICAL:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+.field private static final synthetic c:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
 
 # direct methods
@@ -47,7 +38,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->VERTICAL:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
     new-instance v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
@@ -55,22 +46,22 @@
 
     invoke-direct {v0, v1, v3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->HORIZONTAL:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
     .line 1517
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->VERTICAL:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->HORIZONTAL:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
     aput-object v1, v0, v3
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->$VALUES:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->c:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
     return-void
 .end method
@@ -92,7 +83,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 1517
@@ -112,7 +102,7 @@
 
     .prologue
     .line 1517
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->$VALUES:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->c:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
     invoke-virtual {v0}, [Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->clone()Ljava/lang/Object;
 

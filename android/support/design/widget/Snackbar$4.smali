@@ -11,11 +11,6 @@
     value = Landroid/support/design/widget/Snackbar;->showView()V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Landroid/support/design/widget/Snackbar;
@@ -38,7 +33,6 @@
 # virtual methods
 .method public onDismiss(Landroid/view/View;)V
     .registers 4
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 453
@@ -60,7 +54,6 @@
 
 .method public onDragStateChanged(I)V
     .registers 4
-    .param p1, "state"    # I
 
     .prologue
     .line 459

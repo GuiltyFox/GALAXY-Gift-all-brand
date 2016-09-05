@@ -3,15 +3,6 @@
 .source "DataFormatReaders.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/deser/DataFormatReaders$Match;,
-        Lcom/fasterxml/jackson/databind/deser/DataFormatReaders$AccessorForReader;
-    }
-.end annotation
-
-
 # static fields
 .field public static final DEFAULT_MAX_INPUT_LOOKAHEAD:I = 0x40
 
@@ -41,7 +32,6 @@
 
     .prologue
     .line 70
-    .local p1, "detectors":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/fasterxml/jackson/databind/ObjectReader;>;"
     invoke-interface {p1}, Ljava/util/Collection;->size()I
 
     move-result v0
@@ -62,7 +52,6 @@
 
 .method public varargs constructor <init>([Lcom/fasterxml/jackson/databind/ObjectReader;)V
     .registers 5
-    .param p1, "detectors"    # [Lcom/fasterxml/jackson/databind/ObjectReader;
 
     .prologue
     .line 65
@@ -80,10 +69,6 @@
 
 .method private constructor <init>([Lcom/fasterxml/jackson/databind/ObjectReader;Lcom/fasterxml/jackson/core/format/MatchStrength;Lcom/fasterxml/jackson/core/format/MatchStrength;I)V
     .registers 5
-    .param p1, "detectors"    # [Lcom/fasterxml/jackson/databind/ObjectReader;
-    .param p2, "optMatch"    # Lcom/fasterxml/jackson/core/format/MatchStrength;
-    .param p3, "minMatch"    # Lcom/fasterxml/jackson/core/format/MatchStrength;
-    .param p4, "maxInputLookahead"    # I
 
     .prologue
     .line 76
@@ -107,55 +92,45 @@
 
 .method private _findFormat(Lcom/fasterxml/jackson/databind/deser/DataFormatReaders$AccessorForReader;)Lcom/fasterxml/jackson/databind/deser/DataFormatReaders$Match;
     .registers 11
-    .param p1, "acc"    # Lcom/fasterxml/jackson/databind/deser/DataFormatReaders$AccessorForReader;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
-    .line 217
     const/4 v1, 0x0
 
-    .line 218
-    .local v1, "bestMatch":Lcom/fasterxml/jackson/databind/ObjectReader;
-    const/4 v2, 0x0
-
+    .line 217
     .line 219
-    .local v2, "bestMatchStrength":Lcom/fasterxml/jackson/core/format/MatchStrength;
-    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_readers:[Lcom/fasterxml/jackson/databind/ObjectReader;
+    iget-object v5, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_readers:[Lcom/fasterxml/jackson/databind/ObjectReader;
 
-    .local v0, "arr$":[Lcom/fasterxml/jackson/databind/ObjectReader;
-    array-length v5, v0
+    array-length v6, v5
 
-    .local v5, "len$":I
-    const/4 v4, 0x0
+    const/4 v0, 0x0
 
-    .local v4, "i$":I
-    :goto_6
-    if-ge v4, v5, :cond_40
+    move v4, v0
 
-    aget-object v3, v0, v4
+    move-object v2, v1
+
+    move-object v0, v1
+
+    :goto_8
+    if-ge v4, v6, :cond_4c
+
+    aget-object v3, v5, v4
 
     .line 220
-    .local v3, "f":Lcom/fasterxml/jackson/databind/ObjectReader;
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders$AccessorForReader;->reset()V
 
     .line 221
     invoke-virtual {v3}, Lcom/fasterxml/jackson/databind/ObjectReader;->getFactory()Lcom/fasterxml/jackson/core/JsonFactory;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-virtual {v7, p1}, Lcom/fasterxml/jackson/core/JsonFactory;->hasFormat(Lcom/fasterxml/jackson/core/format/InputAccessor;)Lcom/fasterxml/jackson/core/format/MatchStrength;
+    invoke-virtual {v1, p1}, Lcom/fasterxml/jackson/core/JsonFactory;->hasFormat(Lcom/fasterxml/jackson/core/format/InputAccessor;)Lcom/fasterxml/jackson/core/format/MatchStrength;
 
-    move-result-object v6
+    move-result-object v1
 
     .line 223
-    .local v6, "strength":Lcom/fasterxml/jackson/core/format/MatchStrength;
-    if-eqz v6, :cond_23
+    if-eqz v1, :cond_4a
 
-    invoke-virtual {v6}, Lcom/fasterxml/jackson/core/format/MatchStrength;->ordinal()I
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/format/MatchStrength;->ordinal()I
 
     move-result v7
 
@@ -165,70 +140,86 @@
 
     move-result v8
 
-    if-ge v7, v8, :cond_26
+    if-ge v7, v8, :cond_2b
+
+    move-object v1, v2
 
     .line 219
-    :cond_23
-    add-int/lit8 v4, v4, 0x1
+    :goto_26
+    add-int/lit8 v2, v4, 0x1
 
-    goto :goto_6
+    move v4, v2
+
+    move-object v2, v1
+
+    goto :goto_8
 
     .line 227
-    :cond_26
-    if-eqz v1, :cond_32
+    :cond_2b
+    if-eqz v2, :cond_39
 
     .line 228
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/core/format/MatchStrength;->ordinal()I
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/format/MatchStrength;->ordinal()I
 
     move-result v7
 
-    invoke-virtual {v6}, Lcom/fasterxml/jackson/core/format/MatchStrength;->ordinal()I
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/format/MatchStrength;->ordinal()I
 
     move-result v8
 
-    if-ge v7, v8, :cond_23
+    if-lt v7, v8, :cond_39
 
-    .line 233
-    :cond_32
-    move-object v1, v3
+    move-object v1, v2
 
-    .line 234
-    move-object v2, v6
+    .line 229
+    goto :goto_26
 
     .line 235
-    invoke-virtual {v6}, Lcom/fasterxml/jackson/core/format/MatchStrength;->ordinal()I
+    :cond_39
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/format/MatchStrength;->ordinal()I
 
-    move-result v7
+    move-result v0
 
-    iget-object v8, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_optimalMatch:Lcom/fasterxml/jackson/core/format/MatchStrength;
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_optimalMatch:Lcom/fasterxml/jackson/core/format/MatchStrength;
 
-    invoke-virtual {v8}, Lcom/fasterxml/jackson/core/format/MatchStrength;->ordinal()I
+    invoke-virtual {v2}, Lcom/fasterxml/jackson/core/format/MatchStrength;->ordinal()I
 
-    move-result v8
+    move-result v2
 
-    if-lt v7, v8, :cond_23
+    if-lt v0, v2, :cond_4f
 
     .line 239
-    .end local v3    # "f":Lcom/fasterxml/jackson/databind/ObjectReader;
-    .end local v6    # "strength":Lcom/fasterxml/jackson/core/format/MatchStrength;
-    :cond_40
-    invoke-virtual {p1, v1, v2}, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders$AccessorForReader;->createMatcher(Lcom/fasterxml/jackson/databind/ObjectReader;Lcom/fasterxml/jackson/core/format/MatchStrength;)Lcom/fasterxml/jackson/databind/deser/DataFormatReaders$Match;
+    :goto_45
+    invoke-virtual {p1, v3, v1}, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders$AccessorForReader;->createMatcher(Lcom/fasterxml/jackson/databind/ObjectReader;Lcom/fasterxml/jackson/core/format/MatchStrength;)Lcom/fasterxml/jackson/databind/deser/DataFormatReaders$Match;
 
-    move-result-object v7
+    move-result-object v0
 
-    return-object v7
+    return-object v0
+
+    :cond_4a
+    move-object v1, v2
+
+    goto :goto_26
+
+    :cond_4c
+    move-object v1, v0
+
+    move-object v3, v2
+
+    goto :goto_45
+
+    :cond_4f
+    move-object v0, v1
+
+    move-object v1, v3
+
+    goto :goto_26
 .end method
 
 
 # virtual methods
 .method public findFormat(Ljava/io/InputStream;)Lcom/fasterxml/jackson/databind/deser/DataFormatReaders$Match;
     .registers 4
-    .param p1, "in"    # Ljava/io/InputStream;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 157
@@ -249,12 +240,6 @@
 
 .method public findFormat([B)Lcom/fasterxml/jackson/databind/deser/DataFormatReaders$Match;
     .registers 3
-    .param p1, "fullInputData"    # [B
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 169
@@ -271,14 +256,6 @@
 
 .method public findFormat([BII)Lcom/fasterxml/jackson/databind/deser/DataFormatReaders$Match;
     .registers 5
-    .param p1, "fullInputData"    # [B
-    .param p2, "offset"    # I
-    .param p3, "len"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 183
@@ -294,57 +271,54 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 6
+    .registers 5
 
     .prologue
     .line 195
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 196
-    .local v2, "sb":Ljava/lang/StringBuilder;
-    const/16 v3, 0x5b
+    const/16 v0, 0x5b
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 197
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_readers:[Lcom/fasterxml/jackson/databind/ObjectReader;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_readers:[Lcom/fasterxml/jackson/databind/ObjectReader;
 
-    array-length v1, v3
+    array-length v2, v0
 
     .line 198
-    .local v1, "len":I
-    if-lez v1, :cond_3a
+    if-lez v2, :cond_3a
 
     .line 199
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_readers:[Lcom/fasterxml/jackson/databind/ObjectReader;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_readers:[Lcom/fasterxml/jackson/databind/ObjectReader;
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    aget-object v3, v3, v4
+    aget-object v0, v0, v3
 
-    invoke-virtual {v3}, Lcom/fasterxml/jackson/databind/ObjectReader;->getFactory()Lcom/fasterxml/jackson/core/JsonFactory;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/ObjectReader;->getFactory()Lcom/fasterxml/jackson/core/JsonFactory;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v3}, Lcom/fasterxml/jackson/core/JsonFactory;->getFormatName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/JsonFactory;->getFormatName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 200
     const/4 v0, 0x1
 
-    .local v0, "i":I
     :goto_20
-    if-ge v0, v1, :cond_3a
+    if-ge v0, v2, :cond_3a
 
     .line 201
     const-string/jumbo v3, ", "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 202
     iget-object v3, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_readers:[Lcom/fasterxml/jackson/databind/ObjectReader;
@@ -359,7 +333,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 200
     add-int/lit8 v0, v0, 0x1
@@ -367,39 +341,34 @@
     goto :goto_20
 
     .line 205
-    .end local v0    # "i":I
     :cond_3a
-    const/16 v3, 0x5d
+    const/16 v0, 0x5d
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 206
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    return-object v3
+    return-object v0
 .end method
 
 .method public with(Lcom/fasterxml/jackson/databind/DeserializationConfig;)Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
-    .registers 9
-    .param p1, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
+    .registers 7
 
     .prologue
     .line 123
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_readers:[Lcom/fasterxml/jackson/databind/ObjectReader;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_readers:[Lcom/fasterxml/jackson/databind/ObjectReader;
 
-    array-length v1, v3
+    array-length v1, v0
 
     .line 124
-    .local v1, "len":I
     new-array v2, v1, [Lcom/fasterxml/jackson/databind/ObjectReader;
 
     .line 125
-    .local v2, "r":[Lcom/fasterxml/jackson/databind/ObjectReader;
     const/4 v0, 0x0
 
-    .local v0, "i":I
     :goto_6
     if-ge v0, v1, :cond_15
 
@@ -421,22 +390,21 @@
 
     .line 128
     :cond_15
-    new-instance v3, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
+    new-instance v0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
 
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_optimalMatch:Lcom/fasterxml/jackson/core/format/MatchStrength;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_optimalMatch:Lcom/fasterxml/jackson/core/format/MatchStrength;
 
-    iget-object v5, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_minimalMatch:Lcom/fasterxml/jackson/core/format/MatchStrength;
+    iget-object v3, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_minimalMatch:Lcom/fasterxml/jackson/core/format/MatchStrength;
 
-    iget v6, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_maxInputLookahead:I
+    iget v4, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_maxInputLookahead:I
 
-    invoke-direct {v3, v2, v4, v5, v6}, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;-><init>([Lcom/fasterxml/jackson/databind/ObjectReader;Lcom/fasterxml/jackson/core/format/MatchStrength;Lcom/fasterxml/jackson/core/format/MatchStrength;I)V
+    invoke-direct {v0, v2, v1, v3, v4}, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;-><init>([Lcom/fasterxml/jackson/databind/ObjectReader;Lcom/fasterxml/jackson/core/format/MatchStrength;Lcom/fasterxml/jackson/core/format/MatchStrength;I)V
 
-    return-object v3
+    return-object v0
 .end method
 
 .method public with([Lcom/fasterxml/jackson/databind/ObjectReader;)Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
     .registers 6
-    .param p1, "readers"    # [Lcom/fasterxml/jackson/databind/ObjectReader;
 
     .prologue
     .line 104
@@ -455,7 +423,6 @@
 
 .method public withMaxInputLookahead(I)Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
     .registers 6
-    .param p1, "lookaheadBytes"    # I
 
     .prologue
     .line 109
@@ -464,11 +431,9 @@
     if-ne p1, v0, :cond_5
 
     .line 112
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
 
@@ -487,7 +452,6 @@
 
 .method public withMinimalMatch(Lcom/fasterxml/jackson/core/format/MatchStrength;)Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
     .registers 6
-    .param p1, "minMatch"    # Lcom/fasterxml/jackson/core/format/MatchStrength;
 
     .prologue
     .line 97
@@ -496,11 +460,9 @@
     if-ne p1, v0, :cond_5
 
     .line 100
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
 
@@ -519,7 +481,6 @@
 
 .method public withOptimalMatch(Lcom/fasterxml/jackson/core/format/MatchStrength;)Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
     .registers 6
-    .param p1, "optMatch"    # Lcom/fasterxml/jackson/core/format/MatchStrength;
 
     .prologue
     .line 90
@@ -528,11 +489,9 @@
     if-ne p1, v0, :cond_5
 
     .line 93
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
 
@@ -550,24 +509,20 @@
 .end method
 
 .method public withType(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
-    .registers 9
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
+    .registers 7
 
     .prologue
     .line 133
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_readers:[Lcom/fasterxml/jackson/databind/ObjectReader;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_readers:[Lcom/fasterxml/jackson/databind/ObjectReader;
 
-    array-length v1, v3
+    array-length v1, v0
 
     .line 134
-    .local v1, "len":I
     new-array v2, v1, [Lcom/fasterxml/jackson/databind/ObjectReader;
 
     .line 135
-    .local v2, "r":[Lcom/fasterxml/jackson/databind/ObjectReader;
     const/4 v0, 0x0
 
-    .local v0, "i":I
     :goto_6
     if-ge v0, v1, :cond_15
 
@@ -589,15 +544,15 @@
 
     .line 138
     :cond_15
-    new-instance v3, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
+    new-instance v0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
 
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_optimalMatch:Lcom/fasterxml/jackson/core/format/MatchStrength;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_optimalMatch:Lcom/fasterxml/jackson/core/format/MatchStrength;
 
-    iget-object v5, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_minimalMatch:Lcom/fasterxml/jackson/core/format/MatchStrength;
+    iget-object v3, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_minimalMatch:Lcom/fasterxml/jackson/core/format/MatchStrength;
 
-    iget v6, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_maxInputLookahead:I
+    iget v4, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;->_maxInputLookahead:I
 
-    invoke-direct {v3, v2, v4, v5, v6}, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;-><init>([Lcom/fasterxml/jackson/databind/ObjectReader;Lcom/fasterxml/jackson/core/format/MatchStrength;Lcom/fasterxml/jackson/core/format/MatchStrength;I)V
+    invoke-direct {v0, v2, v1, v3, v4}, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;-><init>([Lcom/fasterxml/jackson/databind/ObjectReader;Lcom/fasterxml/jackson/core/format/MatchStrength;Lcom/fasterxml/jackson/core/format/MatchStrength;I)V
 
-    return-object v3
+    return-object v0
 .end method

@@ -8,57 +8,51 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->scrollBy(FFF)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->c(FFF)V
 .end annotation
 
 
 # instance fields
-.field old_x:F
+.field a:F
 
-.field old_y:F
+.field b:F
 
-.field final synthetic this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
+.field final synthetic c:F
 
-.field final synthetic val$durationMs:F
+.field final synthetic d:J
 
-.field final synthetic val$dx:F
+.field final synthetic e:F
 
-.field final synthetic val$dy:F
+.field final synthetic f:F
 
-.field final synthetic val$startTime:J
+.field final synthetic g:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
 
 
 # direct methods
 .method constructor <init>(Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;FJFF)V
     .registers 8
-    .param p1, "this$0"    # Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
 
     .prologue
     const/4 v0, 0x0
 
     .line 346
-    iput-object p1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
+    iput-object p1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->g:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
 
-    iput p2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->val$durationMs:F
+    iput p2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->c:F
 
-    iput-wide p3, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->val$startTime:J
+    iput-wide p3, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->d:J
 
-    iput p5, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->val$dx:F
+    iput p5, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->e:F
 
-    iput p6, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->val$dy:F
+    iput p6, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->f:F
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 348
-    iput v0, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->old_x:F
+    iput v0, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->a:F
 
     .line 349
-    iput v0, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->old_y:F
+    iput v0, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->b:F
 
     return-void
 .end method
@@ -66,121 +60,116 @@
 
 # virtual methods
 .method public run()V
-    .registers 13
+    .registers 9
 
     .prologue
-    const/4 v11, 0x1
+    const/4 v7, 0x1
 
-    const/4 v10, 0x0
+    const/4 v6, 0x0
 
     .line 353
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v2
+    move-result-wide v0
 
     .line 354
-    .local v2, "now":J
-    iget v6, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->val$durationMs:F
+    iget v2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->c:F
 
-    iget-wide v8, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->val$startTime:J
+    iget-wide v4, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->d:J
 
-    sub-long v8, v2, v8
+    sub-long/2addr v0, v4
 
-    long-to-float v7, v8
+    long-to-float v0, v0
 
-    invoke-static {v6, v7}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v2, v0}, Ljava/lang/Math;->min(FF)F
+
+    move-result v0
+
+    .line 355
+    iget v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->e:F
+
+    iget v2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->c:F
+
+    invoke-static {v0, v6, v1, v2}, Lit/sephiroth/android/library/imagezoom/Cubic;->a(FFFF)F
 
     move-result v1
 
-    .line 355
-    .local v1, "currentMs":F
-    iget v6, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->val$dx:F
-
-    iget v7, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->val$durationMs:F
-
-    invoke-static {v1, v10, v6, v7}, Lit/sephiroth/android/library/imagezoom/Cubic;->easeOut(FFFF)F
-
-    move-result v4
-
     .line 356
-    .local v4, "x":F
-    iget v6, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->val$dy:F
+    iget v2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->f:F
 
-    iget v7, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->val$durationMs:F
+    iget v3, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->c:F
 
-    invoke-static {v1, v10, v6, v7}, Lit/sephiroth/android/library/imagezoom/Cubic;->easeOut(FFFF)F
+    invoke-static {v0, v6, v2, v3}, Lit/sephiroth/android/library/imagezoom/Cubic;->a(FFFF)F
 
-    move-result v5
+    move-result v2
 
     .line 357
-    .local v5, "y":F
-    iget-object v6, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
+    iget-object v3, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->g:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
 
-    iget v7, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->old_x:F
+    iget v4, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->a:F
 
-    sub-float v7, v4, v7
+    sub-float v4, v1, v4
 
-    iget v8, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->old_y:F
+    iget v5, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->b:F
 
-    sub-float v8, v5, v8
+    sub-float v5, v2, v5
 
-    invoke-virtual {v6, v7, v8}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->panBy(FF)V
+    invoke-virtual {v3, v4, v5}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->d(FF)V
 
     .line 358
-    iput v4, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->old_x:F
+    iput v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->a:F
 
     .line 359
-    iput v5, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->old_y:F
+    iput v2, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->b:F
 
     .line 360
-    iget v6, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->val$durationMs:F
+    iget v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->c:F
 
-    cmpg-float v6, v1, v6
+    cmpg-float v0, v0, v1
 
-    if-gez v6, :cond_40
+    if-gez v0, :cond_3f
 
     .line 361
-    iget-object v6, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
+    iget-object v0, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->g:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
 
-    iget-object v6, v6, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->mHandler:Landroid/os/Handler;
+    iget-object v0, v0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->c:Landroid/os/Handler;
 
-    invoke-virtual {v6, p0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, p0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     .line 366
-    :cond_3f
-    :goto_3f
+    :cond_3e
+    :goto_3e
     return-void
 
     .line 363
-    :cond_40
-    iget-object v6, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
+    :cond_3f
+    iget-object v0, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->g:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
 
-    invoke-virtual {v6, v11, v11}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->getCenter(ZZ)Landroid/graphics/RectF;
+    invoke-virtual {v0, v7, v7}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->b(ZZ)Landroid/graphics/RectF;
 
     move-result-object v0
 
     .line 364
-    .local v0, "centerRect":Landroid/graphics/RectF;
-    iget v6, v0, Landroid/graphics/RectF;->left:F
+    iget v1, v0, Landroid/graphics/RectF;->left:F
 
-    cmpl-float v6, v6, v10
+    cmpl-float v1, v1, v6
 
-    if-nez v6, :cond_52
+    if-nez v1, :cond_51
 
-    iget v6, v0, Landroid/graphics/RectF;->top:F
+    iget v1, v0, Landroid/graphics/RectF;->top:F
 
-    cmpl-float v6, v6, v10
+    cmpl-float v1, v1, v6
 
-    if-eqz v6, :cond_3f
+    if-eqz v1, :cond_3e
 
-    :cond_52
-    iget-object v6, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->this$0:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
+    :cond_51
+    iget-object v1, p0, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase$2;->g:Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;
 
-    iget v7, v0, Landroid/graphics/RectF;->left:F
+    iget v2, v0, Landroid/graphics/RectF;->left:F
 
-    iget v8, v0, Landroid/graphics/RectF;->top:F
+    iget v0, v0, Landroid/graphics/RectF;->top:F
 
-    invoke-virtual {v6, v7, v8}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->scrollBy(FF)V
+    invoke-virtual {v1, v2, v0}, Lit/sephiroth/android/library/imagezoom/ImageViewTouchBase;->c(FF)V
 
-    goto :goto_3f
+    goto :goto_3e
 .end method

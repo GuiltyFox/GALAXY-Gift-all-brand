@@ -6,21 +6,10 @@
 .implements Landroid/support/v7/view/menu/MenuPresenter$Callback;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/app/ToolbarActionBar;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x12
-    name = "ActionMenuPresenterCallback"
-.end annotation
-
-
 # instance fields
-.field private mClosingActionMenu:Z
+.field final synthetic a:Landroid/support/v7/app/ToolbarActionBar;
 
-.field final synthetic this$0:Landroid/support/v7/app/ToolbarActionBar;
+.field private b:Z
 
 
 # direct methods
@@ -29,7 +18,7 @@
 
     .prologue
     .line 598
-    iput-object p1, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->this$0:Landroid/support/v7/app/ToolbarActionBar;
+    iput-object p1, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,8 +27,6 @@
 
 .method synthetic constructor <init>(Landroid/support/v7/app/ToolbarActionBar;Landroid/support/v7/app/ToolbarActionBar$1;)V
     .registers 3
-    .param p1, "x0"    # Landroid/support/v7/app/ToolbarActionBar;
-    .param p2, "x1"    # Landroid/support/v7/app/ToolbarActionBar$1;
 
     .prologue
     .line 598
@@ -52,12 +39,10 @@
 # virtual methods
 .method public onCloseMenu(Landroid/support/v7/view/menu/MenuBuilder;Z)V
     .registers 5
-    .param p1, "menu"    # Landroid/support/v7/view/menu/MenuBuilder;
-    .param p2, "allMenusAreClosing"    # Z
 
     .prologue
     .line 612
-    iget-boolean v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->mClosingActionMenu:Z
+    iget-boolean v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->b:Z
 
     if-eqz v0, :cond_5
 
@@ -69,33 +54,30 @@
     :cond_5
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->mClosingActionMenu:Z
+    iput-boolean v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->b:Z
 
     .line 617
-    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->this$0:Landroid/support/v7/app/ToolbarActionBar;
+    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    # getter for: Landroid/support/v7/app/ToolbarActionBar;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->access$300(Landroid/support/v7/app/ToolbarActionBar;)Landroid/support/v7/widget/DecorToolbar;
+    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->c(Landroid/support/v7/app/ToolbarActionBar;)Landroid/support/v7/widget/DecorToolbar;
 
     move-result-object v0
 
     invoke-interface {v0}, Landroid/support/v7/widget/DecorToolbar;->dismissPopupMenus()V
 
     .line 618
-    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->this$0:Landroid/support/v7/app/ToolbarActionBar;
+    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    # getter for: Landroid/support/v7/app/ToolbarActionBar;->mWindowCallback:Landroid/view/Window$Callback;
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->access$000(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
+    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
 
     move-result-object v0
 
     if-eqz v0, :cond_24
 
     .line 619
-    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->this$0:Landroid/support/v7/app/ToolbarActionBar;
+    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    # getter for: Landroid/support/v7/app/ToolbarActionBar;->mWindowCallback:Landroid/view/Window$Callback;
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->access$000(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
+    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
 
     move-result-object v0
 
@@ -107,31 +89,28 @@
     :cond_24
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->mClosingActionMenu:Z
+    iput-boolean v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->b:Z
 
     goto :goto_4
 .end method
 
 .method public onOpenSubMenu(Landroid/support/v7/view/menu/MenuBuilder;)Z
     .registers 4
-    .param p1, "subMenu"    # Landroid/support/v7/view/menu/MenuBuilder;
 
     .prologue
     .line 603
-    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->this$0:Landroid/support/v7/app/ToolbarActionBar;
+    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    # getter for: Landroid/support/v7/app/ToolbarActionBar;->mWindowCallback:Landroid/view/Window$Callback;
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->access$000(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
+    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
 
     move-result-object v0
 
     if-eqz v0, :cond_15
 
     .line 604
-    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->this$0:Landroid/support/v7/app/ToolbarActionBar;
+    iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar$ActionMenuPresenterCallback;->a:Landroid/support/v7/app/ToolbarActionBar;
 
-    # getter for: Landroid/support/v7/app/ToolbarActionBar;->mWindowCallback:Landroid/view/Window$Callback;
-    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->access$000(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
+    invoke-static {v0}, Landroid/support/v7/app/ToolbarActionBar;->a(Landroid/support/v7/app/ToolbarActionBar;)Landroid/view/Window$Callback;
 
     move-result-object v0
 

@@ -28,9 +28,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;Ljava/lang/Object;Z)V
     .registers 5
-    .param p1, "br"    # Lcom/fasterxml/jackson/core/util/BufferRecycler;
-    .param p2, "sourceRef"    # Ljava/lang/Object;
-    .param p3, "managedResource"    # Z
 
     .prologue
     const/4 v0, 0x0
@@ -87,7 +84,6 @@
 # virtual methods
 .method protected _verifyAlloc(Ljava/lang/Object;)V
     .registers 4
-    .param p1, "buffer"    # Ljava/lang/Object;
 
     .prologue
     .line 261
@@ -108,8 +104,6 @@
 
 .method protected _verifyRelease([B[B)V
     .registers 5
-    .param p1, "toRelease"    # [B
-    .param p2, "src"    # [B
 
     .prologue
     .line 265
@@ -134,8 +128,6 @@
 
 .method protected _verifyRelease([C[C)V
     .registers 5
-    .param p1, "toRelease"    # [C
-    .param p2, "src"    # [C
 
     .prologue
     .line 269
@@ -206,7 +198,6 @@
 
 .method public allocNameCopyBuffer(I)[C
     .registers 4
-    .param p1, "minSize"    # I
 
     .prologue
     .line 190
@@ -253,7 +244,6 @@
 
 .method public allocReadIOBuffer(I)[B
     .registers 4
-    .param p1, "minSize"    # I
 
     .prologue
     .line 146
@@ -300,7 +290,6 @@
 
 .method public allocTokenBuffer(I)[C
     .registers 4
-    .param p1, "minSize"    # I
 
     .prologue
     .line 180
@@ -347,7 +336,6 @@
 
 .method public allocWriteEncodingBuffer(I)[B
     .registers 4
-    .param p1, "minSize"    # I
 
     .prologue
     .line 159
@@ -415,7 +403,6 @@
 
 .method public releaseBase64Buffer([B)V
     .registers 4
-    .param p1, "buf"    # [B
 
     .prologue
     .line 221
@@ -445,7 +432,6 @@
 
 .method public releaseConcatBuffer([C)V
     .registers 4
-    .param p1, "buf"    # [C
 
     .prologue
     .line 237
@@ -475,7 +461,6 @@
 
 .method public releaseNameCopyBuffer([C)V
     .registers 4
-    .param p1, "buf"    # [C
 
     .prologue
     .line 246
@@ -505,7 +490,6 @@
 
 .method public releaseReadIOBuffer([B)V
     .registers 4
-    .param p1, "buf"    # [B
 
     .prologue
     .line 199
@@ -535,7 +519,6 @@
 
 .method public releaseTokenBuffer([C)V
     .registers 4
-    .param p1, "buf"    # [C
 
     .prologue
     .line 229
@@ -565,7 +548,6 @@
 
 .method public releaseWriteEncodingBuffer([B)V
     .registers 4
-    .param p1, "buf"    # [B
 
     .prologue
     .line 210
@@ -595,7 +577,6 @@
 
 .method public setEncoding(Lcom/fasterxml/jackson/core/JsonEncoding;)V
     .registers 2
-    .param p1, "enc"    # Lcom/fasterxml/jackson/core/JsonEncoding;
 
     .prologue
     .line 109

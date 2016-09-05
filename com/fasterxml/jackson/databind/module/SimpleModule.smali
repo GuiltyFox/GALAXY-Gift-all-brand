@@ -139,7 +139,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/core/Version;)V
     .registers 3
-    .param p1, "version"    # Lcom/fasterxml/jackson/core/Version;
 
     .prologue
     const/4 v0, 0x0
@@ -196,7 +195,6 @@
 
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 3
-    .param p1, "name"    # Ljava/lang/String;
 
     .prologue
     .line 107
@@ -212,8 +210,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/Version;)V
     .registers 4
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "version"    # Lcom/fasterxml/jackson/core/Version;
 
     .prologue
     const/4 v0, 0x0
@@ -266,8 +262,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/Version;Ljava/util/List;)V
     .registers 5
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "version"    # Lcom/fasterxml/jackson/core/Version;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -282,7 +276,6 @@
 
     .prologue
     .line 146
-    .local p3, "serializers":Ljava/util/List;, "Ljava/util/List<Lcom/fasterxml/jackson/databind/JsonSerializer<*>;>;"
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, v0, p3}, Lcom/fasterxml/jackson/databind/module/SimpleModule;-><init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/Version;Ljava/util/Map;Ljava/util/List;)V
@@ -293,8 +286,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/Version;Ljava/util/Map;)V
     .registers 5
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "version"    # Lcom/fasterxml/jackson/core/Version;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -311,7 +302,6 @@
 
     .prologue
     .line 138
-    .local p3, "deserializers":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Class<*>;Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;>;"
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/fasterxml/jackson/databind/module/SimpleModule;-><init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/Version;Ljava/util/Map;Ljava/util/List;)V
@@ -322,8 +312,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/Version;Ljava/util/Map;Ljava/util/List;)V
     .registers 6
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "version"    # Lcom/fasterxml/jackson/core/Version;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -343,8 +331,6 @@
     .end annotation
 
     .prologue
-    .local p3, "deserializers":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/Class<*>;Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;>;"
-    .local p4, "serializers":Ljava/util/List;, "Ljava/util/List<Lcom/fasterxml/jackson/databind/JsonSerializer<*>;>;"
     const/4 v0, 0x0
 
     .line 155
@@ -434,8 +420,6 @@
 
     .prologue
     .line 297
-    .local p1, "superType":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
-    .local p2, "subType":Ljava/lang/Class;, "Ljava/lang/Class<+TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_abstractTypes:Lcom/fasterxml/jackson/databind/module/SimpleAbstractTypeResolver;
 
     if-nez v0, :cond_b
@@ -478,8 +462,6 @@
 
     .prologue
     .line 273
-    .local p1, "type":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
-    .local p2, "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<+TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_deserializers:Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;
 
     if-nez v0, :cond_b
@@ -503,7 +485,6 @@
 
 .method public addKeyDeserializer(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/KeyDeserializer;)Lcom/fasterxml/jackson/databind/module/SimpleModule;
     .registers 4
-    .param p2, "deser"    # Lcom/fasterxml/jackson/databind/KeyDeserializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -517,7 +498,6 @@
 
     .prologue
     .line 282
-    .local p1, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_keyDeserializers:Lcom/fasterxml/jackson/databind/module/SimpleKeyDeserializers;
 
     if-nez v0, :cond_b
@@ -556,8 +536,6 @@
 
     .prologue
     .line 264
-    .local p1, "type":Ljava/lang/Class;, "Ljava/lang/Class<+TT;>;"
-    .local p2, "ser":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_keySerializers:Lcom/fasterxml/jackson/databind/module/SimpleSerializers;
 
     if-nez v0, :cond_b
@@ -592,7 +570,6 @@
 
     .prologue
     .line 246
-    .local p1, "ser":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_serializers:Lcom/fasterxml/jackson/databind/module/SimpleSerializers;
 
     if-nez v0, :cond_b
@@ -631,8 +608,6 @@
 
     .prologue
     .line 255
-    .local p1, "type":Ljava/lang/Class;, "Ljava/lang/Class<+TT;>;"
-    .local p2, "ser":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_serializers:Lcom/fasterxml/jackson/databind/module/SimpleSerializers;
 
     if-nez v0, :cond_b
@@ -656,7 +631,6 @@
 
 .method public addValueInstantiator(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;)Lcom/fasterxml/jackson/databind/module/SimpleModule;
     .registers 4
-    .param p2, "inst"    # Lcom/fasterxml/jackson/databind/deser/ValueInstantiator;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -670,7 +644,6 @@
 
     .prologue
     .line 314
-    .local p1, "beanType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_valueInstantiators:Lcom/fasterxml/jackson/databind/module/SimpleValueInstantiators;
 
     if-nez v0, :cond_b
@@ -707,65 +680,57 @@
 .end method
 
 .method public varargs registerSubtypes([Lcom/fasterxml/jackson/databind/jsontype/NamedType;)Lcom/fasterxml/jackson/databind/module/SimpleModule;
-    .registers 9
-    .param p1, "subtypes"    # [Lcom/fasterxml/jackson/databind/jsontype/NamedType;
+    .registers 6
 
     .prologue
     .line 344
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_subtypes:Ljava/util/LinkedHashSet;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_subtypes:Ljava/util/LinkedHashSet;
 
-    if-nez v4, :cond_12
+    if-nez v0, :cond_12
 
     .line 345
-    new-instance v4, Ljava/util/LinkedHashSet;
+    new-instance v0, Ljava/util/LinkedHashSet;
 
-    const/16 v5, 0x10
+    const/16 v1, 0x10
 
-    array-length v6, p1
+    array-length v2, p1
 
-    invoke-static {v5, v6}, Ljava/lang/Math;->max(II)I
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
 
-    move-result v5
+    move-result v1
 
-    invoke-direct {v4, v5}, Ljava/util/LinkedHashSet;-><init>(I)V
+    invoke-direct {v0, v1}, Ljava/util/LinkedHashSet;-><init>(I)V
 
-    iput-object v4, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_subtypes:Ljava/util/LinkedHashSet;
+    iput-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_subtypes:Ljava/util/LinkedHashSet;
 
     .line 347
     :cond_12
-    move-object v0, p1
+    array-length v1, p1
 
-    .local v0, "arr$":[Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    array-length v2, v0
+    const/4 v0, 0x0
 
-    .local v2, "len$":I
-    const/4 v1, 0x0
+    :goto_14
+    if-ge v0, v1, :cond_20
 
-    .local v1, "i$":I
-    :goto_15
-    if-ge v1, v2, :cond_21
-
-    aget-object v3, v0, v1
+    aget-object v2, p1, v0
 
     .line 348
-    .local v3, "subtype":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_subtypes:Ljava/util/LinkedHashSet;
+    iget-object v3, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_subtypes:Ljava/util/LinkedHashSet;
 
-    invoke-virtual {v4, v3}, Ljava/util/LinkedHashSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v2}, Ljava/util/LinkedHashSet;->add(Ljava/lang/Object;)Z
 
     .line 347
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    goto :goto_15
+    goto :goto_14
 
     .line 350
-    .end local v3    # "subtype":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    :cond_21
+    :cond_20
     return-object p0
 .end method
 
 .method public varargs registerSubtypes([Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/module/SimpleModule;
-    .registers 9
+    .registers 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([",
@@ -777,66 +742,57 @@
 
     .prologue
     .line 328
-    .local p1, "subtypes":[Ljava/lang/Class;, "[Ljava/lang/Class<*>;"
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_subtypes:Ljava/util/LinkedHashSet;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_subtypes:Ljava/util/LinkedHashSet;
 
-    if-nez v4, :cond_12
+    if-nez v0, :cond_12
 
     .line 329
-    new-instance v4, Ljava/util/LinkedHashSet;
+    new-instance v0, Ljava/util/LinkedHashSet;
 
-    const/16 v5, 0x10
+    const/16 v1, 0x10
 
-    array-length v6, p1
+    array-length v2, p1
 
-    invoke-static {v5, v6}, Ljava/lang/Math;->max(II)I
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
 
-    move-result v5
+    move-result v1
 
-    invoke-direct {v4, v5}, Ljava/util/LinkedHashSet;-><init>(I)V
+    invoke-direct {v0, v1}, Ljava/util/LinkedHashSet;-><init>(I)V
 
-    iput-object v4, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_subtypes:Ljava/util/LinkedHashSet;
+    iput-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_subtypes:Ljava/util/LinkedHashSet;
 
     .line 331
     :cond_12
-    move-object v0, p1
+    array-length v1, p1
 
-    .local v0, "arr$":[Ljava/lang/Class;
-    array-length v2, v0
+    const/4 v0, 0x0
 
-    .local v2, "len$":I
-    const/4 v1, 0x0
+    :goto_14
+    if-ge v0, v1, :cond_25
 
-    .local v1, "i$":I
-    :goto_15
-    if-ge v1, v2, :cond_26
-
-    aget-object v3, v0, v1
+    aget-object v2, p1, v0
 
     .line 332
-    .local v3, "subtype":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_subtypes:Ljava/util/LinkedHashSet;
+    iget-object v3, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_subtypes:Ljava/util/LinkedHashSet;
 
-    new-instance v5, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
+    new-instance v4, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
 
-    invoke-direct {v5, v3}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;-><init>(Ljava/lang/Class;)V
+    invoke-direct {v4, v2}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;-><init>(Ljava/lang/Class;)V
 
-    invoke-virtual {v4, v5}, Ljava/util/LinkedHashSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Ljava/util/LinkedHashSet;->add(Ljava/lang/Object;)Z
 
     .line 331
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    goto :goto_15
+    goto :goto_14
 
     .line 334
-    .end local v3    # "subtype":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    :cond_26
+    :cond_25
     return-object p0
 .end method
 
 .method public setAbstractTypes(Lcom/fasterxml/jackson/databind/module/SimpleAbstractTypeResolver;)V
     .registers 2
-    .param p1, "atr"    # Lcom/fasterxml/jackson/databind/module/SimpleAbstractTypeResolver;
 
     .prologue
     .line 204
@@ -848,7 +804,6 @@
 
 .method public setDeserializerModifier(Lcom/fasterxml/jackson/databind/deser/BeanDeserializerModifier;)Lcom/fasterxml/jackson/databind/module/SimpleModule;
     .registers 2
-    .param p1, "mod"    # Lcom/fasterxml/jackson/databind/deser/BeanDeserializerModifier;
 
     .prologue
     .line 218
@@ -860,7 +815,6 @@
 
 .method public setDeserializers(Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;)V
     .registers 2
-    .param p1, "d"    # Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;
 
     .prologue
     .line 183
@@ -872,7 +826,6 @@
 
 .method public setKeyDeserializers(Lcom/fasterxml/jackson/databind/module/SimpleKeyDeserializers;)V
     .registers 2
-    .param p1, "kd"    # Lcom/fasterxml/jackson/databind/module/SimpleKeyDeserializers;
 
     .prologue
     .line 197
@@ -884,7 +837,6 @@
 
 .method public setKeySerializers(Lcom/fasterxml/jackson/databind/module/SimpleSerializers;)V
     .registers 2
-    .param p1, "ks"    # Lcom/fasterxml/jackson/databind/module/SimpleSerializers;
 
     .prologue
     .line 190
@@ -909,8 +861,6 @@
 
     .prologue
     .line 363
-    .local p1, "targetType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p2, "mixinClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_mixins:Ljava/util/HashMap;
 
     if-nez v0, :cond_b
@@ -934,7 +884,6 @@
 
 .method protected setNamingStrategy(Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;)Lcom/fasterxml/jackson/databind/module/SimpleModule;
     .registers 2
-    .param p1, "naming"    # Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;
 
     .prologue
     .line 234
@@ -946,7 +895,6 @@
 
 .method public setSerializerModifier(Lcom/fasterxml/jackson/databind/ser/BeanSerializerModifier;)Lcom/fasterxml/jackson/databind/module/SimpleModule;
     .registers 2
-    .param p1, "mod"    # Lcom/fasterxml/jackson/databind/ser/BeanSerializerModifier;
 
     .prologue
     .line 226
@@ -958,7 +906,6 @@
 
 .method public setSerializers(Lcom/fasterxml/jackson/databind/module/SimpleSerializers;)V
     .registers 2
-    .param p1, "s"    # Lcom/fasterxml/jackson/databind/module/SimpleSerializers;
 
     .prologue
     .line 176
@@ -970,7 +917,6 @@
 
 .method public setValueInstantiators(Lcom/fasterxml/jackson/databind/module/SimpleValueInstantiators;)V
     .registers 2
-    .param p1, "svi"    # Lcom/fasterxml/jackson/databind/module/SimpleValueInstantiators;
 
     .prologue
     .line 211
@@ -981,193 +927,188 @@
 .end method
 
 .method public setupModule(Lcom/fasterxml/jackson/databind/Module$SetupContext;)V
-    .registers 6
-    .param p1, "context"    # Lcom/fasterxml/jackson/databind/Module$SetupContext;
+    .registers 5
 
     .prologue
     .line 391
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_serializers:Lcom/fasterxml/jackson/databind/module/SimpleSerializers;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_serializers:Lcom/fasterxml/jackson/databind/module/SimpleSerializers;
 
-    if-eqz v2, :cond_9
+    if-eqz v0, :cond_9
 
     .line 392
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_serializers:Lcom/fasterxml/jackson/databind/module/SimpleSerializers;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_serializers:Lcom/fasterxml/jackson/databind/module/SimpleSerializers;
 
-    invoke-interface {p1, v2}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->addSerializers(Lcom/fasterxml/jackson/databind/ser/Serializers;)V
+    invoke-interface {p1, v0}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->addSerializers(Lcom/fasterxml/jackson/databind/ser/Serializers;)V
 
     .line 394
     :cond_9
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_deserializers:Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_deserializers:Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;
 
-    if-eqz v2, :cond_12
+    if-eqz v0, :cond_12
 
     .line 395
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_deserializers:Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_deserializers:Lcom/fasterxml/jackson/databind/module/SimpleDeserializers;
 
-    invoke-interface {p1, v2}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->addDeserializers(Lcom/fasterxml/jackson/databind/deser/Deserializers;)V
+    invoke-interface {p1, v0}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->addDeserializers(Lcom/fasterxml/jackson/databind/deser/Deserializers;)V
 
     .line 397
     :cond_12
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_keySerializers:Lcom/fasterxml/jackson/databind/module/SimpleSerializers;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_keySerializers:Lcom/fasterxml/jackson/databind/module/SimpleSerializers;
 
-    if-eqz v2, :cond_1b
+    if-eqz v0, :cond_1b
 
     .line 398
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_keySerializers:Lcom/fasterxml/jackson/databind/module/SimpleSerializers;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_keySerializers:Lcom/fasterxml/jackson/databind/module/SimpleSerializers;
 
-    invoke-interface {p1, v2}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->addKeySerializers(Lcom/fasterxml/jackson/databind/ser/Serializers;)V
+    invoke-interface {p1, v0}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->addKeySerializers(Lcom/fasterxml/jackson/databind/ser/Serializers;)V
 
     .line 400
     :cond_1b
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_keyDeserializers:Lcom/fasterxml/jackson/databind/module/SimpleKeyDeserializers;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_keyDeserializers:Lcom/fasterxml/jackson/databind/module/SimpleKeyDeserializers;
 
-    if-eqz v2, :cond_24
+    if-eqz v0, :cond_24
 
     .line 401
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_keyDeserializers:Lcom/fasterxml/jackson/databind/module/SimpleKeyDeserializers;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_keyDeserializers:Lcom/fasterxml/jackson/databind/module/SimpleKeyDeserializers;
 
-    invoke-interface {p1, v2}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->addKeyDeserializers(Lcom/fasterxml/jackson/databind/deser/KeyDeserializers;)V
+    invoke-interface {p1, v0}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->addKeyDeserializers(Lcom/fasterxml/jackson/databind/deser/KeyDeserializers;)V
 
     .line 403
     :cond_24
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_abstractTypes:Lcom/fasterxml/jackson/databind/module/SimpleAbstractTypeResolver;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_abstractTypes:Lcom/fasterxml/jackson/databind/module/SimpleAbstractTypeResolver;
 
-    if-eqz v2, :cond_2d
+    if-eqz v0, :cond_2d
 
     .line 404
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_abstractTypes:Lcom/fasterxml/jackson/databind/module/SimpleAbstractTypeResolver;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_abstractTypes:Lcom/fasterxml/jackson/databind/module/SimpleAbstractTypeResolver;
 
-    invoke-interface {p1, v2}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->addAbstractTypeResolver(Lcom/fasterxml/jackson/databind/AbstractTypeResolver;)V
+    invoke-interface {p1, v0}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->addAbstractTypeResolver(Lcom/fasterxml/jackson/databind/AbstractTypeResolver;)V
 
     .line 406
     :cond_2d
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_valueInstantiators:Lcom/fasterxml/jackson/databind/module/SimpleValueInstantiators;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_valueInstantiators:Lcom/fasterxml/jackson/databind/module/SimpleValueInstantiators;
 
-    if-eqz v2, :cond_36
+    if-eqz v0, :cond_36
 
     .line 407
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_valueInstantiators:Lcom/fasterxml/jackson/databind/module/SimpleValueInstantiators;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_valueInstantiators:Lcom/fasterxml/jackson/databind/module/SimpleValueInstantiators;
 
-    invoke-interface {p1, v2}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->addValueInstantiators(Lcom/fasterxml/jackson/databind/deser/ValueInstantiators;)V
+    invoke-interface {p1, v0}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->addValueInstantiators(Lcom/fasterxml/jackson/databind/deser/ValueInstantiators;)V
 
     .line 409
     :cond_36
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_deserializerModifier:Lcom/fasterxml/jackson/databind/deser/BeanDeserializerModifier;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_deserializerModifier:Lcom/fasterxml/jackson/databind/deser/BeanDeserializerModifier;
 
-    if-eqz v2, :cond_3f
+    if-eqz v0, :cond_3f
 
     .line 410
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_deserializerModifier:Lcom/fasterxml/jackson/databind/deser/BeanDeserializerModifier;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_deserializerModifier:Lcom/fasterxml/jackson/databind/deser/BeanDeserializerModifier;
 
-    invoke-interface {p1, v2}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->addBeanDeserializerModifier(Lcom/fasterxml/jackson/databind/deser/BeanDeserializerModifier;)V
+    invoke-interface {p1, v0}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->addBeanDeserializerModifier(Lcom/fasterxml/jackson/databind/deser/BeanDeserializerModifier;)V
 
     .line 412
     :cond_3f
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_serializerModifier:Lcom/fasterxml/jackson/databind/ser/BeanSerializerModifier;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_serializerModifier:Lcom/fasterxml/jackson/databind/ser/BeanSerializerModifier;
 
-    if-eqz v2, :cond_48
+    if-eqz v0, :cond_48
 
     .line 413
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_serializerModifier:Lcom/fasterxml/jackson/databind/ser/BeanSerializerModifier;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_serializerModifier:Lcom/fasterxml/jackson/databind/ser/BeanSerializerModifier;
 
-    invoke-interface {p1, v2}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->addBeanSerializerModifier(Lcom/fasterxml/jackson/databind/ser/BeanSerializerModifier;)V
+    invoke-interface {p1, v0}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->addBeanSerializerModifier(Lcom/fasterxml/jackson/databind/ser/BeanSerializerModifier;)V
 
     .line 415
     :cond_48
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_subtypes:Ljava/util/LinkedHashSet;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_subtypes:Ljava/util/LinkedHashSet;
 
-    if-eqz v2, :cond_67
+    if-eqz v0, :cond_67
 
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_subtypes:Ljava/util/LinkedHashSet;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_subtypes:Ljava/util/LinkedHashSet;
 
-    invoke-virtual {v2}, Ljava/util/LinkedHashSet;->size()I
+    invoke-virtual {v0}, Ljava/util/LinkedHashSet;->size()I
 
-    move-result v2
+    move-result v0
 
-    if-lez v2, :cond_67
+    if-lez v0, :cond_67
 
     .line 416
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_subtypes:Ljava/util/LinkedHashSet;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_subtypes:Ljava/util/LinkedHashSet;
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_subtypes:Ljava/util/LinkedHashSet;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_subtypes:Ljava/util/LinkedHashSet;
 
-    invoke-virtual {v3}, Ljava/util/LinkedHashSet;->size()I
+    invoke-virtual {v1}, Ljava/util/LinkedHashSet;->size()I
 
-    move-result v3
+    move-result v1
 
-    new-array v3, v3, [Lcom/fasterxml/jackson/databind/jsontype/NamedType;
+    new-array v1, v1, [Lcom/fasterxml/jackson/databind/jsontype/NamedType;
 
-    invoke-virtual {v2, v3}, Ljava/util/LinkedHashSet;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/LinkedHashSet;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, [Lcom/fasterxml/jackson/databind/jsontype/NamedType;
+    check-cast v0, [Lcom/fasterxml/jackson/databind/jsontype/NamedType;
 
-    invoke-interface {p1, v2}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->registerSubtypes([Lcom/fasterxml/jackson/databind/jsontype/NamedType;)V
+    invoke-interface {p1, v0}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->registerSubtypes([Lcom/fasterxml/jackson/databind/jsontype/NamedType;)V
 
     .line 418
     :cond_67
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_namingStrategy:Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_namingStrategy:Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;
 
-    if-eqz v2, :cond_70
+    if-eqz v0, :cond_70
 
     .line 419
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_namingStrategy:Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_namingStrategy:Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;
 
-    invoke-interface {p1, v2}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->setNamingStrategy(Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;)V
+    invoke-interface {p1, v0}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->setNamingStrategy(Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;)V
 
     .line 421
     :cond_70
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_mixins:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_mixins:Ljava/util/HashMap;
 
-    if-eqz v2, :cond_9a
+    if-eqz v0, :cond_9a
 
     .line 422
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_mixins:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleModule;->_mixins:Ljava/util/HashMap;
 
-    invoke-virtual {v2}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
+    invoke-virtual {v0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v1
-
-    .local v1, "i$":Ljava/util/Iterator;
     :goto_7e
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_9a
+    if-eqz v0, :cond_9a
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Map$Entry;
 
     .line 423
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/Class<*>;Ljava/lang/Class<*>;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Ljava/lang/Class;
+    check-cast v1, Ljava/lang/Class;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Ljava/lang/Class;
+    check-cast v0, Ljava/lang/Class;
 
-    invoke-interface {p1, v2, v3}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->setMixInAnnotations(Ljava/lang/Class;Ljava/lang/Class;)V
+    invoke-interface {p1, v1, v0}, Lcom/fasterxml/jackson/databind/Module$SetupContext;->setMixInAnnotations(Ljava/lang/Class;Ljava/lang/Class;)V
 
     goto :goto_7e
 
     .line 426
-    .end local v0    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/Class<*>;Ljava/lang/Class<*>;>;"
-    .end local v1    # "i$":Ljava/util/Iterator;
     :cond_9a
     return-void
 .end method

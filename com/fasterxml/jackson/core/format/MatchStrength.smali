@@ -135,7 +135,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/fasterxml/jackson/core/format/MatchStrength;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 10

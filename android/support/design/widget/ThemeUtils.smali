@@ -39,49 +39,46 @@
 .end method
 
 .method static checkAppCompatTheme(Landroid/content/Context;)V
-    .registers 5
-    .param p0, "context"    # Landroid/content/Context;
+    .registers 4
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 28
-    sget-object v2, Landroid/support/design/widget/ThemeUtils;->APPCOMPAT_CHECK_ATTRS:[I
+    sget-object v1, Landroid/support/design/widget/ThemeUtils;->APPCOMPAT_CHECK_ATTRS:[I
 
-    invoke-virtual {p0, v2}, Landroid/content/Context;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;
+    invoke-virtual {p0, v1}, Landroid/content/Context;->obtainStyledAttributes([I)Landroid/content/res/TypedArray;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 29
-    .local v0, "a":Landroid/content/res/TypedArray;
-    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {v1, v0}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
     move-result v2
 
     if-nez v2, :cond_e
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     .line 30
-    .local v1, "failed":Z
     :cond_e
-    if-eqz v0, :cond_13
+    if-eqz v1, :cond_13
 
     .line 31
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 33
     :cond_13
-    if-eqz v1, :cond_1e
+    if-eqz v0, :cond_1e
 
     .line 34
-    new-instance v2, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v3, "You need to use a Theme.AppCompat theme (or descendant) with the design library."
+    const-string/jumbo v1, "You need to use a Theme.AppCompat theme (or descendant) with the design library."
 
-    invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v2
+    throw v0
 
     .line 37
     :cond_1e

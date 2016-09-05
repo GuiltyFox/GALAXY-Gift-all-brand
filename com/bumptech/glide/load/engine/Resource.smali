@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract get()Ljava/lang/Object;
+.method public abstract b()Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TZ;"
@@ -23,8 +23,8 @@
     .end annotation
 .end method
 
-.method public abstract getSize()I
+.method public abstract c()I
 .end method
 
-.method public abstract recycle()V
+.method public abstract d()V
 .end method

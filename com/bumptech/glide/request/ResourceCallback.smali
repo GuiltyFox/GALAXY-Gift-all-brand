@@ -4,10 +4,7 @@
 
 
 # virtual methods
-.method public abstract onException(Ljava/lang/Exception;)V
-.end method
-
-.method public abstract onResourceReady(Lcom/bumptech/glide/load/engine/Resource;)V
+.method public abstract a(Lcom/bumptech/glide/load/engine/Resource;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -15,4 +12,7 @@
             "<*>;)V"
         }
     .end annotation
+.end method
+
+.method public abstract a(Ljava/lang/Exception;)V
 .end method

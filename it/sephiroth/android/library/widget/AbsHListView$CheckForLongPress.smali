@@ -6,19 +6,8 @@
 .implements Ljava/lang/Runnable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lit/sephiroth/android/library/widget/AbsHListView;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "CheckForLongPress"
-.end annotation
-
-
 # instance fields
-.field final synthetic this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+.field final synthetic a:Lit/sephiroth/android/library/widget/AbsHListView;
 
 
 # direct methods
@@ -27,7 +16,7 @@
 
     .prologue
     .line 2517
-    iput-object p1, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iput-object p1, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
     const/4 v0, 0x0
 
@@ -38,8 +27,6 @@
 
 .method synthetic constructor <init>(Lit/sephiroth/android/library/widget/AbsHListView;Lit/sephiroth/android/library/widget/AbsHListView$1;)V
     .registers 3
-    .param p1, "x0"    # Lit/sephiroth/android/library/widget/AbsHListView;
-    .param p2, "x1"    # Lit/sephiroth/android/library/widget/AbsHListView$1;
 
     .prologue
     .line 2517
@@ -51,115 +38,106 @@
 
 # virtual methods
 .method public run()V
-    .registers 10
+    .registers 7
 
     .prologue
-    const/4 v8, 0x0
-
-    .line 2521
-    iget-object v6, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
-
-    iget v5, v6, Lit/sephiroth/android/library/widget/AbsHListView;->mMotionPosition:I
-
-    .line 2522
-    .local v5, "motionPosition":I
-    iget-object v6, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
-
-    iget-object v7, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
-
-    iget v7, v7, Lit/sephiroth/android/library/widget/AbsHListView;->mFirstPosition:I
-
-    sub-int v7, v5, v7
-
-    invoke-virtual {v6, v7}, Lit/sephiroth/android/library/widget/AbsHListView;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    .line 2523
-    .local v0, "child":Landroid/view/View;
-    if-eqz v0, :cond_45
-
-    .line 2524
-    iget-object v6, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
-
-    iget v4, v6, Lit/sephiroth/android/library/widget/AbsHListView;->mMotionPosition:I
-
-    .line 2525
-    .local v4, "longPressPosition":I
-    iget-object v6, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
-
-    iget-object v6, v6, Lit/sephiroth/android/library/widget/AbsHListView;->mAdapter:Landroid/widget/ListAdapter;
-
-    iget-object v7, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
-
-    iget v7, v7, Lit/sephiroth/android/library/widget/AbsHListView;->mMotionPosition:I
-
-    invoke-interface {v6, v7}, Landroid/widget/ListAdapter;->getItemId(I)J
-
-    move-result-wide v2
-
-    .line 2527
-    .local v2, "longPressId":J
     const/4 v1, 0x0
 
+    .line 2521
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->a:Lit/sephiroth/android/library/widget/AbsHListView;
+
+    iget v0, v0, Lit/sephiroth/android/library/widget/AbsHListView;->A:I
+
+    .line 2522
+    iget-object v2, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->a:Lit/sephiroth/android/library/widget/AbsHListView;
+
+    iget-object v3, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->a:Lit/sephiroth/android/library/widget/AbsHListView;
+
+    iget v3, v3, Lit/sephiroth/android/library/widget/AbsHListView;->V:I
+
+    sub-int/2addr v0, v3
+
+    invoke-virtual {v2, v0}, Lit/sephiroth/android/library/widget/AbsHListView;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v2
+
+    .line 2523
+    if-eqz v2, :cond_43
+
+    .line 2524
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->a:Lit/sephiroth/android/library/widget/AbsHListView;
+
+    iget v0, v0, Lit/sephiroth/android/library/widget/AbsHListView;->A:I
+
+    .line 2525
+    iget-object v3, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->a:Lit/sephiroth/android/library/widget/AbsHListView;
+
+    iget-object v3, v3, Lit/sephiroth/android/library/widget/AbsHListView;->j:Landroid/widget/ListAdapter;
+
+    iget-object v4, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->a:Lit/sephiroth/android/library/widget/AbsHListView;
+
+    iget v4, v4, Lit/sephiroth/android/library/widget/AbsHListView;->A:I
+
+    invoke-interface {v3, v4}, Landroid/widget/ListAdapter;->getItemId(I)J
+
+    move-result-wide v4
+
     .line 2528
-    .local v1, "handled":Z
-    invoke-virtual {p0}, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->sameWindow()Z
+    invoke-virtual {p0}, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->b()Z
 
-    move-result v6
+    move-result v3
 
-    if-eqz v6, :cond_36
+    if-eqz v3, :cond_4a
 
-    iget-object v6, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v3, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iget-boolean v6, v6, Lit/sephiroth/android/library/widget/AbsHListView;->mDataChanged:Z
+    iget-boolean v3, v3, Lit/sephiroth/android/library/widget/AbsHListView;->aj:Z
 
-    if-nez v6, :cond_36
+    if-nez v3, :cond_4a
 
     .line 2529
-    iget-object v6, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v3, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    invoke-virtual {v6, v0, v4, v2, v3}, Lit/sephiroth/android/library/widget/AbsHListView;->performLongPress(Landroid/view/View;IJ)Z
+    invoke-virtual {v3, v2, v0, v4, v5}, Lit/sephiroth/android/library/widget/AbsHListView;->c(Landroid/view/View;IJ)Z
 
-    move-result v1
+    move-result v0
 
     .line 2531
-    :cond_36
-    if-eqz v1, :cond_46
+    :goto_34
+    if-eqz v0, :cond_44
 
     .line 2532
-    iget-object v6, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    const/4 v7, -0x1
+    const/4 v3, -0x1
 
-    iput v7, v6, Lit/sephiroth/android/library/widget/AbsHListView;->mTouchMode:I
+    iput v3, v0, Lit/sephiroth/android/library/widget/AbsHListView;->F:I
 
     .line 2533
-    iget-object v6, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    invoke-virtual {v6, v8}, Lit/sephiroth/android/library/widget/AbsHListView;->setPressed(Z)V
+    invoke-virtual {v0, v1}, Lit/sephiroth/android/library/widget/AbsHListView;->setPressed(Z)V
 
     .line 2534
-    invoke-virtual {v0, v8}, Landroid/view/View;->setPressed(Z)V
+    invoke-virtual {v2, v1}, Landroid/view/View;->setPressed(Z)V
 
     .line 2539
-    .end local v1    # "handled":Z
-    .end local v2    # "longPressId":J
-    .end local v4    # "longPressPosition":I
-    :cond_45
-    :goto_45
+    :cond_43
+    :goto_43
     return-void
 
     .line 2536
-    .restart local v1    # "handled":Z
-    .restart local v2    # "longPressId":J
-    .restart local v4    # "longPressPosition":I
-    :cond_46
-    iget-object v6, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    :cond_44
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    const/4 v7, 0x2
+    const/4 v1, 0x2
 
-    iput v7, v6, Lit/sephiroth/android/library/widget/AbsHListView;->mTouchMode:I
+    iput v1, v0, Lit/sephiroth/android/library/widget/AbsHListView;->F:I
 
-    goto :goto_45
+    goto :goto_43
+
+    :cond_4a
+    move v0, v1
+
+    goto :goto_34
 .end method

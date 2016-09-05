@@ -22,31 +22,19 @@
     return-void
 .end method
 
-.method public static zzE(Ljava/lang/Object;)Ljava/lang/String;
+.method public static a(Ljava/lang/Object;)Ljava/lang/String;
     .registers 2
 
     const/4 v0, 0x0
 
-    invoke-static {p0, v0}, Lcom/google/android/gms/measurement/zze;->zza(Ljava/lang/Object;I)Ljava/lang/String;
+    invoke-static {p0, v0}, Lcom/google/android/gms/measurement/zze;->a(Ljava/lang/Object;I)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public static zzH(Ljava/util/Map;)Ljava/lang/String;
-    .registers 2
-
-    const/4 v0, 0x1
-
-    invoke-static {p0, v0}, Lcom/google/android/gms/measurement/zze;->zza(Ljava/lang/Object;I)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method private static zza(Ljava/lang/Object;I)Ljava/lang/String;
+.method private static a(Ljava/lang/Object;I)Ljava/lang/String;
     .registers 9
 
     const/4 v0, 0x0
@@ -255,7 +243,7 @@
     :cond_b6
     add-int/lit8 v4, p1, 0x1
 
-    invoke-static {v3, v4}, Lcom/google/android/gms/measurement/zze;->zza(Ljava/lang/Object;I)Ljava/lang/String;
+    invoke-static {v3, v4}, Lcom/google/android/gms/measurement/zze;->a(Ljava/lang/Object;I)Ljava/lang/String;
 
     move-result-object v3
 
@@ -324,7 +312,7 @@
 
     add-int/lit8 v6, p1, 0x1
 
-    invoke-static {v5, v6}, Lcom/google/android/gms/measurement/zze;->zza(Ljava/lang/Object;I)Ljava/lang/String;
+    invoke-static {v5, v6}, Lcom/google/android/gms/measurement/zze;->a(Ljava/lang/Object;I)Ljava/lang/String;
 
     move-result-object v5
 
@@ -398,9 +386,21 @@
     goto/16 :goto_8
 .end method
 
+.method public static a(Ljava/util/Map;)Ljava/lang/String;
+    .registers 2
+
+    const/4 v0, 0x1
+
+    invoke-static {p0, v0}, Lcom/google/android/gms/measurement/zze;->a(Ljava/lang/Object;I)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 
 # virtual methods
-.method public abstract zza(Lcom/google/android/gms/measurement/zze;)V
+.method public abstract a(Lcom/google/android/gms/measurement/zze;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"

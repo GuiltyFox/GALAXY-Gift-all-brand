@@ -33,7 +33,6 @@
 # direct methods
 .method public constructor <init>(Lorg/json/JSONObject;)V
     .registers 6
-    .param p1, "jsonObject"    # Lorg/json/JSONObject;
 
     .prologue
     const/16 v3, 0x19
@@ -76,12 +75,12 @@
     iput v3, p0, Lcom/bzbs/bean/BeaconBzbs;->Beacon_Waiting:I
 
     .line 18
-    sget v0, Lcom/bzbs/data/AppSetting;->BEACON_TIMEOUT_DEFAULT:I
+    sget v0, Lcom/bzbs/data/AppSetting;->ab:I
 
     iput v0, p0, Lcom/bzbs/bean/BeaconBzbs;->StepIn_TimeOut:I
 
     .line 19
-    sget v0, Lcom/bzbs/data/AppSetting;->BEACON_TIMEOUT_DEFAULT:I
+    sget v0, Lcom/bzbs/data/AppSetting;->ab:I
 
     iput v0, p0, Lcom/bzbs/bean/BeaconBzbs;->StepOut_TimeOut:I
 
@@ -91,7 +90,7 @@
     .line 24
     const-string/jumbo v0, "AgencyId"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
     move-result v0
 
@@ -100,7 +99,7 @@
     .line 25
     const-string/jumbo v0, "Identifier"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -109,7 +108,7 @@
     .line 26
     const-string/jumbo v0, "Major"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
     move-result v0
 
@@ -118,7 +117,7 @@
     .line 27
     const-string/jumbo v0, "Minor"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
     move-result v0
 
@@ -127,7 +126,7 @@
     .line 28
     const-string/jumbo v0, "NFCToken_StepIn"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -136,7 +135,7 @@
     .line 29
     const-string/jumbo v0, "NFCToken_StepOut"
 
-    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -145,7 +144,7 @@
     .line 30
     const-string/jumbo v0, "Beacon_Scanning"
 
-    invoke-static {p1, v0, v1}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;I)I
+    invoke-static {p1, v0, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;I)I
 
     move-result v0
 
@@ -154,7 +153,7 @@
     .line 31
     const-string/jumbo v0, "Beacon_Waiting"
 
-    invoke-static {p1, v0, v3}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;I)I
+    invoke-static {p1, v0, v3}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;I)I
 
     move-result v0
 
@@ -163,9 +162,9 @@
     .line 32
     const-string/jumbo v0, "StepIn_TimeOut"
 
-    sget v1, Lcom/bzbs/data/AppSetting;->BEACON_TIMEOUT_DEFAULT:I
+    sget v1, Lcom/bzbs/data/AppSetting;->ab:I
 
-    invoke-static {p1, v0, v1}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;I)I
+    invoke-static {p1, v0, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;I)I
 
     move-result v0
 
@@ -174,9 +173,9 @@
     .line 33
     const-string/jumbo v0, "StepOut_TimeOut"
 
-    sget v1, Lcom/bzbs/data/AppSetting;->BEACON_TIMEOUT_DEFAULT:I
+    sget v1, Lcom/bzbs/data/AppSetting;->ab:I
 
-    invoke-static {p1, v0, v1}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;I)I
+    invoke-static {p1, v0, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;I)I
 
     move-result v0
 

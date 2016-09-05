@@ -3,17 +3,6 @@
 .source "DefaultSerializerProvider.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/ser/DefaultSerializerProvider;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "Impl"
-.end annotation
-
-
 # static fields
 .field private static final serialVersionUID:J = 0x1L
 
@@ -31,9 +20,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/ser/SerializerFactory;)V
     .registers 4
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .param p2, "config"    # Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .param p3, "f"    # Lcom/fasterxml/jackson/databind/ser/SerializerFactory;
 
     .prologue
     .line 497
@@ -47,8 +33,6 @@
 # virtual methods
 .method public createInstance(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/ser/SerializerFactory;)Lcom/fasterxml/jackson/databind/ser/DefaultSerializerProvider$Impl;
     .registers 4
-    .param p1, "config"    # Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .param p2, "jsf"    # Lcom/fasterxml/jackson/databind/ser/SerializerFactory;
 
     .prologue
     .line 502
@@ -61,8 +45,6 @@
 
 .method public bridge synthetic createInstance(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/ser/SerializerFactory;)Lcom/fasterxml/jackson/databind/ser/DefaultSerializerProvider;
     .registers 4
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/ser/SerializerFactory;
 
     .prologue
     .line 491

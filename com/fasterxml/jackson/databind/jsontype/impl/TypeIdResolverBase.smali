@@ -28,8 +28,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/type/TypeFactory;)V
     .registers 3
-    .param p1, "baseType"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p2, "typeFactory"    # Lcom/fasterxml/jackson/databind/type/TypeFactory;
 
     .prologue
     .line 32
@@ -69,7 +67,6 @@
 
 .method public init(Lcom/fasterxml/jackson/databind/JavaType;)V
     .registers 2
-    .param p1, "bt"    # Lcom/fasterxml/jackson/databind/JavaType;
 
     .prologue
     .line 39
@@ -78,8 +75,6 @@
 
 .method public typeFromId(Lcom/fasterxml/jackson/databind/DatabindContext;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 4
-    .param p1, "context"    # Lcom/fasterxml/jackson/databind/DatabindContext;
-    .param p2, "id"    # Ljava/lang/String;
 
     .prologue
     .line 69

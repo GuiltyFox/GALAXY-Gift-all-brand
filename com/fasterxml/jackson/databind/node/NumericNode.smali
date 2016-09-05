@@ -30,7 +30,6 @@
 
 .method public final asDouble(D)D
     .registers 5
-    .param p1, "defaultValue"    # D
 
     .prologue
     .line 70
@@ -55,7 +54,6 @@
 
 .method public final asInt(I)I
     .registers 3
-    .param p1, "defaultValue"    # I
 
     .prologue
     .line 52
@@ -80,7 +78,6 @@
 
 .method public final asLong(J)J
     .registers 5
-    .param p1, "defaultValue"    # J
 
     .prologue
     .line 61

@@ -3,17 +3,6 @@
 .source "R.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/R;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "layout"
-.end annotation
-
-
 # static fields
 .field public static final abc_action_bar_title_item:I = 0x7f040000
 
@@ -65,53 +54,53 @@
 
 .field public static final abc_select_dialog_material:I = 0x7f040018
 
-.field public static final design_bottom_sheet_dialog:I = 0x7f0400eb
+.field public static final design_bottom_sheet_dialog:I = 0x7f0400f3
 
-.field public static final design_layout_snackbar:I = 0x7f0400ec
+.field public static final design_layout_snackbar:I = 0x7f0400f4
 
-.field public static final design_layout_snackbar_include:I = 0x7f0400ed
+.field public static final design_layout_snackbar_include:I = 0x7f0400f5
 
-.field public static final design_layout_tab_icon:I = 0x7f0400ee
+.field public static final design_layout_tab_icon:I = 0x7f0400f6
 
-.field public static final design_layout_tab_text:I = 0x7f0400ef
+.field public static final design_layout_tab_text:I = 0x7f0400f7
 
-.field public static final design_menu_item_action_area:I = 0x7f0400f0
+.field public static final design_menu_item_action_area:I = 0x7f0400f8
 
-.field public static final design_navigation_item:I = 0x7f0400f1
+.field public static final design_navigation_item:I = 0x7f0400f9
 
-.field public static final design_navigation_item_header:I = 0x7f0400f2
+.field public static final design_navigation_item_header:I = 0x7f0400fa
 
-.field public static final design_navigation_item_separator:I = 0x7f0400f3
+.field public static final design_navigation_item_separator:I = 0x7f0400fb
 
-.field public static final design_navigation_item_subheader:I = 0x7f0400f4
+.field public static final design_navigation_item_subheader:I = 0x7f0400fc
 
-.field public static final design_navigation_menu:I = 0x7f0400f5
+.field public static final design_navigation_menu:I = 0x7f0400fd
 
-.field public static final design_navigation_menu_item:I = 0x7f0400f6
+.field public static final design_navigation_menu_item:I = 0x7f0400fe
 
-.field public static final notification_media_action:I = 0x7f040152
+.field public static final notification_media_action:I = 0x7f040162
 
-.field public static final notification_media_cancel_action:I = 0x7f040153
+.field public static final notification_media_cancel_action:I = 0x7f040163
 
-.field public static final notification_template_big_media:I = 0x7f040154
+.field public static final notification_template_big_media:I = 0x7f040164
 
-.field public static final notification_template_big_media_narrow:I = 0x7f040155
+.field public static final notification_template_big_media_narrow:I = 0x7f040165
 
-.field public static final notification_template_lines:I = 0x7f040156
+.field public static final notification_template_lines:I = 0x7f040166
 
-.field public static final notification_template_media:I = 0x7f040157
+.field public static final notification_template_media:I = 0x7f040167
 
-.field public static final notification_template_part_chronometer:I = 0x7f040158
+.field public static final notification_template_part_chronometer:I = 0x7f040168
 
-.field public static final notification_template_part_time:I = 0x7f040159
+.field public static final notification_template_part_time:I = 0x7f040169
 
-.field public static final select_dialog_item_material:I = 0x7f04015b
+.field public static final select_dialog_item_material:I = 0x7f04016c
 
-.field public static final select_dialog_multichoice_material:I = 0x7f04015c
+.field public static final select_dialog_multichoice_material:I = 0x7f04016d
 
-.field public static final select_dialog_singlechoice_material:I = 0x7f04015d
+.field public static final select_dialog_singlechoice_material:I = 0x7f04016e
 
-.field public static final support_simple_spinner_dropdown_item:I = 0x7f04015f
+.field public static final support_simple_spinner_dropdown_item:I = 0x7f040171
 
 
 # direct methods
@@ -119,7 +108,7 @@
     .registers 1
 
     .prologue
-    .line 730
+    .line 720
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

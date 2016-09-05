@@ -2,17 +2,6 @@
 .super Ljava/lang/Thread;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/gms/measurement/zzg;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "zzc"
-.end annotation
-
-
 # direct methods
 .method constructor <init>(Ljava/lang/Runnable;Ljava/lang/String;)V
     .registers 3

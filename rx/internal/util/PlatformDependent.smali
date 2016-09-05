@@ -4,11 +4,9 @@
 
 
 # static fields
-.field private static final ANDROID_API_VERSION:I
+.field private static final a:I
 
-.field public static final ANDROID_API_VERSION_IS_NOT_ANDROID:I
-
-.field private static final IS_ANDROID:Z
+.field private static final b:Z
 
 
 # direct methods
@@ -17,21 +15,21 @@
 
     .prologue
     .line 33
-    invoke-static {}, Lrx/internal/util/PlatformDependent;->resolveAndroidApiVersion()I
+    invoke-static {}, Lrx/internal/util/PlatformDependent;->d()I
 
     move-result v0
 
-    sput v0, Lrx/internal/util/PlatformDependent;->ANDROID_API_VERSION:I
+    sput v0, Lrx/internal/util/PlatformDependent;->a:I
 
     .line 35
-    sget v0, Lrx/internal/util/PlatformDependent;->ANDROID_API_VERSION:I
+    sget v0, Lrx/internal/util/PlatformDependent;->a:I
 
     if-eqz v0, :cond_e
 
     const/4 v0, 0x1
 
     :goto_b
-    sput-boolean v0, Lrx/internal/util/PlatformDependent;->IS_ANDROID:Z
+    sput-boolean v0, Lrx/internal/util/PlatformDependent;->b:Z
 
     return-void
 
@@ -41,27 +39,27 @@
     goto :goto_b
 .end method
 
-.method public constructor <init>()V
+.method public static a()Z
     .registers 1
 
     .prologue
-    .line 26
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static getAndroidApiVersion()I
-    .registers 1
-
-    .prologue
-    .line 51
-    sget v0, Lrx/internal/util/PlatformDependent;->ANDROID_API_VERSION:I
+    .line 41
+    sget-boolean v0, Lrx/internal/util/PlatformDependent;->b:Z
 
     return v0
 .end method
 
-.method static getSystemClassLoader()Ljava/lang/ClassLoader;
+.method public static b()I
+    .registers 1
+
+    .prologue
+    .line 51
+    sget v0, Lrx/internal/util/PlatformDependent;->a:I
+
+    return v0
+.end method
+
+.method static c()Ljava/lang/ClassLoader;
     .registers 1
 
     .prologue
@@ -95,67 +93,54 @@
     goto :goto_a
 .end method
 
-.method public static isAndroid()Z
-    .registers 1
-
-    .prologue
-    .line 41
-    sget-boolean v0, Lrx/internal/util/PlatformDependent;->IS_ANDROID:Z
-
-    return v0
-.end method
-
-.method private static resolveAndroidApiVersion()I
-    .registers 4
+.method private static d()I
+    .registers 3
 
     .prologue
     .line 63
     :try_start_0
-    const-string/jumbo v1, "android.os.Build$VERSION"
+    const-string/jumbo v0, "android.os.Build$VERSION"
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    invoke-static {}, Lrx/internal/util/PlatformDependent;->getSystemClassLoader()Ljava/lang/ClassLoader;
+    invoke-static {}, Lrx/internal/util/PlatformDependent;->c()Ljava/lang/ClassLoader;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-static {v1, v2, v3}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+    invoke-static {v0, v1, v2}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string/jumbo v2, "SDK_INT"
+    const-string/jumbo v1, "SDK_INT"
 
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->getField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
-    move-result-object v1
+    move-result-object v0
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {v1, v2}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Ljava/lang/Integer;
+    check-cast v0, Ljava/lang/Integer;
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
     :try_end_1d
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_1d} :catch_1f
 
-    move-result v1
+    move-result v0
 
     .line 70
-    .local v0, "e":Ljava/lang/Exception;
     :goto_1e
-    return v1
+    return v0
 
     .line 67
-    .end local v0    # "e":Ljava/lang/Exception;
     :catch_1f
     move-exception v0
 
     .line 70
-    .restart local v0    # "e":Ljava/lang/Exception;
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_1e
 .end method

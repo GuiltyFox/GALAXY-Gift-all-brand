@@ -11,16 +11,11 @@
     value = Lcom/bumptech/glide/load/engine/cache/InternalCacheDiskCacheFactory;-><init>(Landroid/content/Context;Ljava/lang/String;I)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic val$context:Landroid/content/Context;
+.field final synthetic a:Landroid/content/Context;
 
-.field final synthetic val$diskCacheName:Ljava/lang/String;
+.field final synthetic b:Ljava/lang/String;
 
 
 # direct methods
@@ -29,9 +24,9 @@
 
     .prologue
     .line 22
-    iput-object p1, p0, Lcom/bumptech/glide/load/engine/cache/InternalCacheDiskCacheFactory$1;->val$context:Landroid/content/Context;
+    iput-object p1, p0, Lcom/bumptech/glide/load/engine/cache/InternalCacheDiskCacheFactory$1;->a:Landroid/content/Context;
 
-    iput-object p2, p0, Lcom/bumptech/glide/load/engine/cache/InternalCacheDiskCacheFactory$1;->val$diskCacheName:Ljava/lang/String;
+    iput-object p2, p0, Lcom/bumptech/glide/load/engine/cache/InternalCacheDiskCacheFactory$1;->b:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,45 +35,45 @@
 
 
 # virtual methods
-.method public getCacheDirectory()Ljava/io/File;
+.method public a()Ljava/io/File;
     .registers 4
 
     .prologue
     .line 25
-    iget-object v1, p0, Lcom/bumptech/glide/load/engine/cache/InternalCacheDiskCacheFactory$1;->val$context:Landroid/content/Context;
+    iget-object v0, p0, Lcom/bumptech/glide/load/engine/cache/InternalCacheDiskCacheFactory$1;->a:Landroid/content/Context;
 
-    invoke-virtual {v1}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
+    invoke-virtual {v0}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 26
-    .local v0, "cacheDirectory":Ljava/io/File;
-    if-nez v0, :cond_a
+    if-nez v1, :cond_a
 
     .line 27
     const/4 v0, 0x0
 
     .line 32
-    .end local v0    # "cacheDirectory":Ljava/io/File;
-    :cond_9
     :goto_9
     return-object v0
 
     .line 29
-    .restart local v0    # "cacheDirectory":Ljava/io/File;
     :cond_a
-    iget-object v1, p0, Lcom/bumptech/glide/load/engine/cache/InternalCacheDiskCacheFactory$1;->val$diskCacheName:Ljava/lang/String;
+    iget-object v0, p0, Lcom/bumptech/glide/load/engine/cache/InternalCacheDiskCacheFactory$1;->b:Ljava/lang/String;
 
-    if-eqz v1, :cond_9
+    if-eqz v0, :cond_16
 
     .line 30
-    new-instance v1, Ljava/io/File;
+    new-instance v0, Ljava/io/File;
 
-    iget-object v2, p0, Lcom/bumptech/glide/load/engine/cache/InternalCacheDiskCacheFactory$1;->val$diskCacheName:Ljava/lang/String;
+    iget-object v2, p0, Lcom/bumptech/glide/load/engine/cache/InternalCacheDiskCacheFactory$1;->b:Ljava/lang/String;
 
-    invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
+    goto :goto_9
+
+    :cond_16
     move-object v0, v1
 
+    .line 32
     goto :goto_9
 .end method

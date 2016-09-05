@@ -11,11 +11,6 @@
     value = Landroid/support/design/widget/NavigationView$SavedState;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -42,8 +37,6 @@
 # virtual methods
 .method public createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Landroid/support/design/widget/NavigationView$SavedState;
     .registers 4
-    .param p1, "parcel"    # Landroid/os/Parcel;
-    .param p2, "loader"    # Ljava/lang/ClassLoader;
 
     .prologue
     .line 469
@@ -68,7 +61,6 @@
 
 .method public newArray(I)[Landroid/support/design/widget/NavigationView$SavedState;
     .registers 3
-    .param p1, "size"    # I
 
     .prologue
     .line 474

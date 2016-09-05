@@ -9,8 +9,8 @@
 # annotations
 .annotation system Ldalvik/annotation/AnnotationDefault;
     value = .subannotation Lcom/google/gson/annotations/Expose;
-        deserialize = true
-        serialize = true
+        a = true
+        b = true
     .end subannotation
 .end annotation
 
@@ -26,8 +26,8 @@
 
 
 # virtual methods
-.method public abstract deserialize()Z
+.method public abstract a()Z
 .end method
 
-.method public abstract serialize()Z
+.method public abstract b()Z
 .end method

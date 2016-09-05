@@ -4,21 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/parceler/NonParcelRepository;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "BooleanArrayParcelable"
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lorg/parceler/NonParcelRepository$BooleanArrayParcelable$BooleanArrayParcelableCreator;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lorg/parceler/NonParcelRepository$ConverterParcelable",
@@ -28,9 +13,9 @@
 
 
 # static fields
-.field private static final CONVERTER:Lorg/parceler/converter/BooleanArrayParcelConverter;
-
 .field public static final CREATOR:Lorg/parceler/NonParcelRepository$BooleanArrayParcelable$BooleanArrayParcelableCreator;
+
+.field private static final a:Lorg/parceler/converter/BooleanArrayParcelConverter;
 
 
 # direct methods
@@ -43,7 +28,7 @@
 
     invoke-direct {v0}, Lorg/parceler/converter/BooleanArrayParcelConverter;-><init>()V
 
-    sput-object v0, Lorg/parceler/NonParcelRepository$BooleanArrayParcelable;->CONVERTER:Lorg/parceler/converter/BooleanArrayParcelConverter;
+    sput-object v0, Lorg/parceler/NonParcelRepository$BooleanArrayParcelable;->a:Lorg/parceler/converter/BooleanArrayParcelConverter;
 
     .line 1035
     new-instance v0, Lorg/parceler/NonParcelRepository$BooleanArrayParcelable$BooleanArrayParcelableCreator;
@@ -59,11 +44,10 @@
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .registers 4
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
     .line 1027
-    sget-object v0, Lorg/parceler/NonParcelRepository$BooleanArrayParcelable;->CONVERTER:Lorg/parceler/converter/BooleanArrayParcelConverter;
+    sget-object v0, Lorg/parceler/NonParcelRepository$BooleanArrayParcelable;->a:Lorg/parceler/converter/BooleanArrayParcelConverter;
 
     const/4 v1, 0x0
 
@@ -75,11 +59,10 @@
 
 .method public constructor <init>([Z)V
     .registers 4
-    .param p1, "value"    # [Z
 
     .prologue
     .line 1031
-    sget-object v0, Lorg/parceler/NonParcelRepository$BooleanArrayParcelable;->CONVERTER:Lorg/parceler/converter/BooleanArrayParcelConverter;
+    sget-object v0, Lorg/parceler/NonParcelRepository$BooleanArrayParcelable;->a:Lorg/parceler/converter/BooleanArrayParcelConverter;
 
     const/4 v1, 0x0
 

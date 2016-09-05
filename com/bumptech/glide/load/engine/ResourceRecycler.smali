@@ -3,19 +3,10 @@
 .source "ResourceRecycler.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/bumptech/glide/load/engine/ResourceRecycler$1;,
-        Lcom/bumptech/glide/load/engine/ResourceRecycler$ResourceRecyclerCallback;
-    }
-.end annotation
-
-
 # instance fields
-.field private final handler:Landroid/os/Handler;
+.field private a:Z
 
-.field private isRecycling:Z
+.field private final b:Landroid/os/Handler;
 
 
 # direct methods
@@ -41,7 +32,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
 
-    iput-object v0, p0, Lcom/bumptech/glide/load/engine/ResourceRecycler;->handler:Landroid/os/Handler;
+    iput-object v0, p0, Lcom/bumptech/glide/load/engine/ResourceRecycler;->b:Landroid/os/Handler;
 
     .line 30
     return-void
@@ -49,7 +40,7 @@
 
 
 # virtual methods
-.method public recycle(Lcom/bumptech/glide/load/engine/Resource;)V
+.method public a(Lcom/bumptech/glide/load/engine/Resource;)V
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -60,19 +51,18 @@
     .end annotation
 
     .prologue
-    .local p1, "resource":Lcom/bumptech/glide/load/engine/Resource;, "Lcom/bumptech/glide/load/engine/Resource<*>;"
     const/4 v1, 0x1
 
     .line 17
-    invoke-static {}, Lcom/bumptech/glide/util/Util;->assertMainThread()V
+    invoke-static {}, Lcom/bumptech/glide/util/Util;->a()V
 
     .line 19
-    iget-boolean v0, p0, Lcom/bumptech/glide/load/engine/ResourceRecycler;->isRecycling:Z
+    iget-boolean v0, p0, Lcom/bumptech/glide/load/engine/ResourceRecycler;->a:Z
 
     if-eqz v0, :cond_12
 
     .line 22
-    iget-object v0, p0, Lcom/bumptech/glide/load/engine/ResourceRecycler;->handler:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/bumptech/glide/load/engine/ResourceRecycler;->b:Landroid/os/Handler;
 
     invoke-virtual {v0, v1, p1}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
@@ -86,15 +76,15 @@
 
     .line 24
     :cond_12
-    iput-boolean v1, p0, Lcom/bumptech/glide/load/engine/ResourceRecycler;->isRecycling:Z
+    iput-boolean v1, p0, Lcom/bumptech/glide/load/engine/ResourceRecycler;->a:Z
 
     .line 25
-    invoke-interface {p1}, Lcom/bumptech/glide/load/engine/Resource;->recycle()V
+    invoke-interface {p1}, Lcom/bumptech/glide/load/engine/Resource;->d()V
 
     .line 26
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/bumptech/glide/load/engine/ResourceRecycler;->isRecycling:Z
+    iput-boolean v0, p0, Lcom/bumptech/glide/load/engine/ResourceRecycler;->a:Z
 
     goto :goto_11
 .end method

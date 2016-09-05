@@ -23,7 +23,6 @@
 
     .prologue
     .line 23
-    .local p0, "this":Lorg/parceler/converter/LinkedHashSetParcelConverter;, "Lorg/parceler/converter/LinkedHashSetParcelConverter<TT;>;"
     invoke-direct {p0}, Lorg/parceler/converter/CollectionParcelConverter;-><init>()V
 
     return-void
@@ -31,20 +30,7 @@
 
 
 # virtual methods
-.method public bridge synthetic createCollection()Ljava/util/Collection;
-    .registers 2
-
-    .prologue
-    .line 23
-    .local p0, "this":Lorg/parceler/converter/LinkedHashSetParcelConverter;, "Lorg/parceler/converter/LinkedHashSetParcelConverter<TT;>;"
-    invoke-virtual {p0}, Lorg/parceler/converter/LinkedHashSetParcelConverter;->createCollection()Ljava/util/LinkedHashSet;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public createCollection()Ljava/util/LinkedHashSet;
+.method public a()Ljava/util/LinkedHashSet;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -56,10 +42,21 @@
 
     .prologue
     .line 26
-    .local p0, "this":Lorg/parceler/converter/LinkedHashSetParcelConverter;, "Lorg/parceler/converter/LinkedHashSetParcelConverter<TT;>;"
     new-instance v0, Ljava/util/LinkedHashSet;
 
     invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
+
+    return-object v0
+.end method
+
+.method public synthetic b()Ljava/util/Collection;
+    .registers 2
+
+    .prologue
+    .line 23
+    invoke-virtual {p0}, Lorg/parceler/converter/LinkedHashSetParcelConverter;->a()Ljava/util/LinkedHashSet;
+
+    move-result-object v0
 
     return-object v0
 .end method

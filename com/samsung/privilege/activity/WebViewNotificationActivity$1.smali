@@ -8,24 +8,18 @@
     value = Lcom/samsung/privilege/activity/WebViewNotificationActivity;->onCreate(Landroid/os/Bundle;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/WebViewNotificationActivity;
+.field final synthetic a:Lcom/samsung/privilege/activity/WebViewNotificationActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/WebViewNotificationActivity;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/WebViewNotificationActivity;
 
     .prologue
     .line 94
-    iput-object p1, p0, Lcom/samsung/privilege/activity/WebViewNotificationActivity$1;->this$0:Lcom/samsung/privilege/activity/WebViewNotificationActivity;
+    iput-object p1, p0, Lcom/samsung/privilege/activity/WebViewNotificationActivity$1;->a:Lcom/samsung/privilege/activity/WebViewNotificationActivity;
 
     invoke-direct {p0}, Landroid/webkit/WebChromeClient;-><init>()V
 
@@ -36,12 +30,10 @@
 # virtual methods
 .method public onProgressChanged(Landroid/webkit/WebView;I)V
     .registers 5
-    .param p1, "view"    # Landroid/webkit/WebView;
-    .param p2, "progress"    # I
 
     .prologue
     .line 98
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewNotificationActivity$1;->this$0:Lcom/samsung/privilege/activity/WebViewNotificationActivity;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewNotificationActivity$1;->a:Lcom/samsung/privilege/activity/WebViewNotificationActivity;
 
     mul-int/lit16 v1, p2, 0x3e8
 

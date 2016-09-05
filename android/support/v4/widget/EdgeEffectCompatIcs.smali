@@ -4,67 +4,8 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 28
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static draw(Ljava/lang/Object;Landroid/graphics/Canvas;)Z
-    .registers 3
-    .param p0, "edgeEffect"    # Ljava/lang/Object;
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
-
-    .prologue
-    .line 62
-    check-cast p0, Landroid/widget/EdgeEffect;
-
-    .end local p0    # "edgeEffect":Ljava/lang/Object;
-    invoke-virtual {p0, p1}, Landroid/widget/EdgeEffect;->draw(Landroid/graphics/Canvas;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static finish(Ljava/lang/Object;)V
-    .registers 1
-    .param p0, "edgeEffect"    # Ljava/lang/Object;
-
-    .prologue
-    .line 42
-    check-cast p0, Landroid/widget/EdgeEffect;
-
-    .end local p0    # "edgeEffect":Ljava/lang/Object;
-    invoke-virtual {p0}, Landroid/widget/EdgeEffect;->finish()V
-
-    .line 43
-    return-void
-.end method
-
-.method public static isFinished(Ljava/lang/Object;)Z
+.method public static a(Landroid/content/Context;)Ljava/lang/Object;
     .registers 2
-    .param p0, "edgeEffect"    # Ljava/lang/Object;
-
-    .prologue
-    .line 38
-    check-cast p0, Landroid/widget/EdgeEffect;
-
-    .end local p0    # "edgeEffect":Ljava/lang/Object;
-    invoke-virtual {p0}, Landroid/widget/EdgeEffect;->isFinished()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static newEdgeEffect(Landroid/content/Context;)Ljava/lang/Object;
-    .registers 2
-    .param p0, "context"    # Landroid/content/Context;
 
     .prologue
     .line 30
@@ -75,34 +16,40 @@
     return-object v0
 .end method
 
-.method public static onAbsorb(Ljava/lang/Object;I)Z
+.method public static a(Ljava/lang/Object;II)V
     .registers 3
-    .param p0, "edgeEffect"    # Ljava/lang/Object;
-    .param p1, "velocity"    # I
 
     .prologue
-    .line 57
+    .line 34
     check-cast p0, Landroid/widget/EdgeEffect;
 
-    .end local p0    # "edgeEffect":Ljava/lang/Object;
-    invoke-virtual {p0, p1}, Landroid/widget/EdgeEffect;->onAbsorb(I)V
+    invoke-virtual {p0, p1, p2}, Landroid/widget/EdgeEffect;->setSize(II)V
 
-    .line 58
-    const/4 v0, 0x1
+    .line 35
+    return-void
+.end method
+
+.method public static a(Ljava/lang/Object;)Z
+    .registers 2
+
+    .prologue
+    .line 38
+    check-cast p0, Landroid/widget/EdgeEffect;
+
+    invoke-virtual {p0}, Landroid/widget/EdgeEffect;->isFinished()Z
+
+    move-result v0
 
     return v0
 .end method
 
-.method public static onPull(Ljava/lang/Object;F)Z
+.method public static a(Ljava/lang/Object;F)Z
     .registers 3
-    .param p0, "edgeEffect"    # Ljava/lang/Object;
-    .param p1, "deltaDistance"    # F
 
     .prologue
     .line 46
     check-cast p0, Landroid/widget/EdgeEffect;
 
-    .end local p0    # "edgeEffect":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Landroid/widget/EdgeEffect;->onPull(F)V
 
     .line 47
@@ -111,41 +58,62 @@
     return v0
 .end method
 
-.method public static onRelease(Ljava/lang/Object;)Z
+.method public static a(Ljava/lang/Object;I)Z
     .registers 3
-    .param p0, "edgeEffect"    # Ljava/lang/Object;
+
+    .prologue
+    .line 57
+    check-cast p0, Landroid/widget/EdgeEffect;
+
+    invoke-virtual {p0, p1}, Landroid/widget/EdgeEffect;->onAbsorb(I)V
+
+    .line 58
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public static a(Ljava/lang/Object;Landroid/graphics/Canvas;)Z
+    .registers 3
+
+    .prologue
+    .line 62
+    check-cast p0, Landroid/widget/EdgeEffect;
+
+    invoke-virtual {p0, p1}, Landroid/widget/EdgeEffect;->draw(Landroid/graphics/Canvas;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public static b(Ljava/lang/Object;)V
+    .registers 1
+
+    .prologue
+    .line 42
+    check-cast p0, Landroid/widget/EdgeEffect;
+
+    invoke-virtual {p0}, Landroid/widget/EdgeEffect;->finish()V
+
+    .line 43
+    return-void
+.end method
+
+.method public static c(Ljava/lang/Object;)Z
+    .registers 2
 
     .prologue
     .line 51
-    move-object v0, p0
-
-    check-cast v0, Landroid/widget/EdgeEffect;
-
-    .line 52
-    .local v0, "eff":Landroid/widget/EdgeEffect;
-    invoke-virtual {v0}, Landroid/widget/EdgeEffect;->onRelease()V
-
-    .line 53
-    invoke-virtual {v0}, Landroid/widget/EdgeEffect;->isFinished()Z
-
-    move-result v1
-
-    return v1
-.end method
-
-.method public static setSize(Ljava/lang/Object;II)V
-    .registers 3
-    .param p0, "edgeEffect"    # Ljava/lang/Object;
-    .param p1, "width"    # I
-    .param p2, "height"    # I
-
-    .prologue
-    .line 34
     check-cast p0, Landroid/widget/EdgeEffect;
 
-    .end local p0    # "edgeEffect":Ljava/lang/Object;
-    invoke-virtual {p0, p1, p2}, Landroid/widget/EdgeEffect;->setSize(II)V
+    .line 52
+    invoke-virtual {p0}, Landroid/widget/EdgeEffect;->onRelease()V
 
-    .line 35
-    return-void
+    .line 53
+    invoke-virtual {p0}, Landroid/widget/EdgeEffect;->isFinished()Z
+
+    move-result v0
+
+    return v0
 .end method

@@ -6,17 +6,6 @@
 .implements Ljava/lang/Runnable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/HeaderBehavior;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "FlingRunnable"
-.end annotation
-
-
 # instance fields
 .field private final mLayout:Landroid/view/View;
     .annotation system Ldalvik/annotation/Signature;
@@ -34,7 +23,6 @@
 # direct methods
 .method constructor <init>(Landroid/support/design/widget/HeaderBehavior;Landroid/support/design/widget/CoordinatorLayout;Landroid/view/View;)V
     .registers 4
-    .param p2, "parent"    # Landroid/support/design/widget/CoordinatorLayout;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -45,8 +33,6 @@
 
     .prologue
     .line 292
-    .local p0, "this":Landroid/support/design/widget/HeaderBehavior$FlingRunnable;, "Landroid/support/design/widget/HeaderBehavior<TV;>.FlingRunnable;"
-    .local p3, "layout":Landroid/view/View;, "TV;"
     iput-object p1, p0, Landroid/support/design/widget/HeaderBehavior$FlingRunnable;->this$0:Landroid/support/design/widget/HeaderBehavior;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -68,7 +54,6 @@
 
     .prologue
     .line 299
-    .local p0, "this":Landroid/support/design/widget/HeaderBehavior$FlingRunnable;, "Landroid/support/design/widget/HeaderBehavior<TV;>.FlingRunnable;"
     iget-object v0, p0, Landroid/support/design/widget/HeaderBehavior$FlingRunnable;->mLayout:Landroid/view/View;
 
     if-eqz v0, :cond_30
@@ -90,7 +75,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/support/v4/widget/ScrollerCompat;->computeScrollOffset()Z
+    invoke-virtual {v0}, Landroid/support/v4/widget/ScrollerCompat;->g()Z
 
     move-result v0
 
@@ -110,7 +95,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v3}, Landroid/support/v4/widget/ScrollerCompat;->getCurrY()I
+    invoke-virtual {v3}, Landroid/support/v4/widget/ScrollerCompat;->c()I
 
     move-result v3
 
@@ -119,7 +104,7 @@
     .line 303
     iget-object v0, p0, Landroid/support/design/widget/HeaderBehavior$FlingRunnable;->mLayout:Landroid/view/View;
 
-    invoke-static {v0, p0}, Landroid/support/v4/view/ViewCompat;->postOnAnimation(Landroid/view/View;Ljava/lang/Runnable;)V
+    invoke-static {v0, p0}, Landroid/support/v4/view/ViewCompat;->a(Landroid/view/View;Ljava/lang/Runnable;)V
 
     .line 308
     :cond_30

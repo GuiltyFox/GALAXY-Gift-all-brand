@@ -17,10 +17,7 @@
 
 
 # virtual methods
-.method public abstract getId()Ljava/lang/String;
-.end method
-
-.method public abstract transcode(Lcom/bumptech/glide/load/engine/Resource;)Lcom/bumptech/glide/load/engine/Resource;
+.method public abstract a(Lcom/bumptech/glide/load/engine/Resource;)Lcom/bumptech/glide/load/engine/Resource;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -30,4 +27,7 @@
             "<TR;>;"
         }
     .end annotation
+.end method
+
+.method public abstract a()Ljava/lang/String;
 .end method

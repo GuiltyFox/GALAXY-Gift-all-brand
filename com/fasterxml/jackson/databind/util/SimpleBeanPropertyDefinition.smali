@@ -14,7 +14,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)V
     .registers 4
-    .param p1, "member"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -34,8 +33,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;Ljava/lang/String;)V
     .registers 4
-    .param p1, "member"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
-    .param p2, "name"    # Ljava/lang/String;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -51,9 +48,6 @@
 
 .method private constructor <init>(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;Ljava/lang/String;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)V
     .registers 4
-    .param p1, "member"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "intr"    # Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
     .prologue
     .line 52
@@ -74,7 +68,6 @@
 
 .method public static construct(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Lcom/fasterxml/jackson/databind/util/SimpleBeanPropertyDefinition;
     .registers 5
-    .param p1, "member"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -88,7 +81,6 @@
 
     .prologue
     .line 63
-    .local p0, "config":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
     new-instance v1, Lcom/fasterxml/jackson/databind/util/SimpleBeanPropertyDefinition;
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;->getName()Ljava/lang/String;
@@ -114,8 +106,6 @@
 
 .method public static construct(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/util/SimpleBeanPropertyDefinition;
     .registers 5
-    .param p1, "member"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
-    .param p2, "name"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -130,7 +120,6 @@
 
     .prologue
     .line 72
-    .local p0, "config":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
     new-instance v1, Lcom/fasterxml/jackson/databind/util/SimpleBeanPropertyDefinition;
 
     if-nez p0, :cond_9
@@ -162,7 +151,6 @@
     move-result-object v0
 
     .line 189
-    .local v0, "acc":Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
     if-nez v0, :cond_a
 
     .line 190
@@ -305,7 +293,6 @@
     move-result-object v0
 
     .line 203
-    .local v0, "acc":Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
     if-nez v0, :cond_10
 
     .line 204
@@ -346,7 +333,6 @@
     move-result-object v0
 
     .line 215
-    .local v0, "acc":Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
     if-nez v0, :cond_a
 
     .line 216
@@ -523,7 +509,6 @@
 
 .method public bridge synthetic withName(Lcom/fasterxml/jackson/databind/PropertyName;)Lcom/fasterxml/jackson/databind/introspect/BeanPropertyDefinition;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/PropertyName;
 
     .prologue
     .line 15
@@ -536,7 +521,6 @@
 
 .method public bridge synthetic withName(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/introspect/BeanPropertyDefinition;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/String;
 
     .prologue
     .line 15
@@ -549,7 +533,6 @@
 
 .method public withName(Lcom/fasterxml/jackson/databind/PropertyName;)Lcom/fasterxml/jackson/databind/util/SimpleBeanPropertyDefinition;
     .registers 3
-    .param p1, "newName"    # Lcom/fasterxml/jackson/databind/PropertyName;
 
     .prologue
     .line 98
@@ -566,7 +549,6 @@
 
 .method public withName(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/util/SimpleBeanPropertyDefinition;
     .registers 3
-    .param p1, "newName"    # Ljava/lang/String;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -581,7 +563,6 @@
 
 .method public bridge synthetic withSimpleName(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/introspect/BeanPropertyDefinition;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/String;
 
     .prologue
     .line 15
@@ -594,7 +575,6 @@
 
 .method public withSimpleName(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/util/SimpleBeanPropertyDefinition;
     .registers 5
-    .param p1, "newName"    # Ljava/lang/String;
 
     .prologue
     .line 90
@@ -607,11 +587,9 @@
     if-eqz v0, :cond_9
 
     .line 93
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/util/SimpleBeanPropertyDefinition;
     :goto_8
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/util/SimpleBeanPropertyDefinition;
     :cond_9
     new-instance v0, Lcom/fasterxml/jackson/databind/util/SimpleBeanPropertyDefinition;
 

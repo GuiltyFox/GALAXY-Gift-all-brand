@@ -10,7 +10,6 @@
 # direct methods
 .method public constructor <init>(Ljava/nio/ByteBuffer;)V
     .registers 2
-    .param p1, "buf"    # Ljava/nio/ByteBuffer;
 
     .prologue
     .line 14
@@ -39,11 +38,6 @@
 
 .method public read()I
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 19
@@ -73,15 +67,7 @@
 .end method
 
 .method public read([BII)I
-    .registers 5
-    .param p1, "bytes"    # [B
-    .param p2, "off"    # I
-    .param p3, "len"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 6
 
     .prologue
     .line 23
@@ -109,15 +95,12 @@
 
     invoke-static {p3, v0}, Ljava/lang/Math;->min(II)I
 
-    move-result p3
+    move-result v0
 
     .line 25
-    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/ByteBufferBackedInputStream;->_b:Ljava/nio/ByteBuffer;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/ByteBufferBackedInputStream;->_b:Ljava/nio/ByteBuffer;
 
-    invoke-virtual {v0, p1, p2, p3}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
+    invoke-virtual {v1, p1, p2, v0}, Ljava/nio/ByteBuffer;->get([BII)Ljava/nio/ByteBuffer;
 
-    move v0, p3
-
-    .line 26
     goto :goto_9
 .end method

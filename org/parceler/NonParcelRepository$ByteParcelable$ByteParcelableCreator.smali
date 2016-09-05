@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/parceler/NonParcelRepository$ByteParcelable;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "ByteParcelableCreator"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -40,7 +31,6 @@
 
 .method synthetic constructor <init>(Lorg/parceler/NonParcelRepository$1;)V
     .registers 2
-    .param p1, "x0"    # Lorg/parceler/NonParcelRepository$1;
 
     .prologue
     .line 928
@@ -51,21 +41,8 @@
 
 
 # virtual methods
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public a(Landroid/os/Parcel;)Lorg/parceler/NonParcelRepository$ByteParcelable;
     .registers 3
-
-    .prologue
-    .line 928
-    invoke-virtual {p0, p1}, Lorg/parceler/NonParcelRepository$ByteParcelable$ByteParcelableCreator;->createFromParcel(Landroid/os/Parcel;)Lorg/parceler/NonParcelRepository$ByteParcelable;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public createFromParcel(Landroid/os/Parcel;)Lorg/parceler/NonParcelRepository$ByteParcelable;
-    .registers 3
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
     .line 932
@@ -76,25 +53,36 @@
     return-object v0
 .end method
 
-.method public bridge synthetic newArray(I)[Ljava/lang/Object;
+.method public a(I)[Lorg/parceler/NonParcelRepository$ByteParcelable;
+    .registers 3
+
+    .prologue
+    .line 937
+    new-array v0, p1, [Lorg/parceler/NonParcelRepository$ByteParcelable;
+
+    return-object v0
+.end method
+
+.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .registers 3
 
     .prologue
     .line 928
-    invoke-virtual {p0, p1}, Lorg/parceler/NonParcelRepository$ByteParcelable$ByteParcelableCreator;->newArray(I)[Lorg/parceler/NonParcelRepository$ByteParcelable;
+    invoke-virtual {p0, p1}, Lorg/parceler/NonParcelRepository$ByteParcelable$ByteParcelableCreator;->a(Landroid/os/Parcel;)Lorg/parceler/NonParcelRepository$ByteParcelable;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public newArray(I)[Lorg/parceler/NonParcelRepository$ByteParcelable;
+.method public synthetic newArray(I)[Ljava/lang/Object;
     .registers 3
-    .param p1, "size"    # I
 
     .prologue
-    .line 937
-    new-array v0, p1, [Lorg/parceler/NonParcelRepository$ByteParcelable;
+    .line 928
+    invoke-virtual {p0, p1}, Lorg/parceler/NonParcelRepository$ByteParcelable$ByteParcelableCreator;->a(I)[Lorg/parceler/NonParcelRepository$ByteParcelable;
+
+    move-result-object v0
 
     return-object v0
 .end method

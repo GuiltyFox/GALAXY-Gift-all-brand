@@ -16,7 +16,6 @@
 
 .method private static final _int(Ljava/lang/Object;)I
     .registers 2
-    .param p0, "o"    # Ljava/lang/Object;
 
     .prologue
     .line 56
@@ -24,15 +23,12 @@
 
     const/4 v0, 0x0
 
-    .end local p0    # "o":Ljava/lang/Object;
     :goto_3
     return v0
 
-    .restart local p0    # "o":Ljava/lang/Object;
     :cond_4
     check-cast p0, Ljava/lang/Number;
 
-    .end local p0    # "o":Ljava/lang/Object;
     invoke-virtual {p0}, Ljava/lang/Number;->intValue()I
 
     move-result v0
@@ -42,7 +38,6 @@
 
 .method private static final _long(Ljava/lang/Object;)J
     .registers 3
-    .param p0, "o"    # Ljava/lang/Object;
 
     .prologue
     .line 52
@@ -50,15 +45,12 @@
 
     const-wide/16 v0, 0x0
 
-    .end local p0    # "o":Ljava/lang/Object;
     :goto_4
     return-wide v0
 
-    .restart local p0    # "o":Ljava/lang/Object;
     :cond_5
     check-cast p0, Ljava/lang/Number;
 
-    .end local p0    # "o":Ljava/lang/Object;
     invoke-virtual {p0}, Ljava/lang/Number;->longValue()J
 
     move-result-wide v0
@@ -68,9 +60,6 @@
 
 .method private static creatorProp(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;I)Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
     .registers 13
-    .param p0, "name"    # Ljava/lang/String;
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p2, "index"    # I
 
     .prologue
     const/4 v3, 0x0
@@ -115,8 +104,6 @@
 
 .method public createFromObjectWith(Lcom/fasterxml/jackson/databind/DeserializationContext;[Ljava/lang/Object;)Ljava/lang/Object;
     .registers 11
-    .param p1, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .param p2, "args"    # [Ljava/lang/Object;
 
     .prologue
     .line 47
@@ -165,7 +152,6 @@
 
 .method public getFromObjectArguments(Lcom/fasterxml/jackson/databind/DeserializationConfig;)[Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
     .registers 12
-    .param p1, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
 
     .prologue
     const/4 v9, 0x4
@@ -179,22 +165,20 @@
     const/4 v5, 0x0
 
     .line 29
-    sget-object v2, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    invoke-virtual {p1, v2}, Lcom/fasterxml/jackson/databind/DeserializationConfig;->constructType(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {p1, v0}, Lcom/fasterxml/jackson/databind/DeserializationConfig;->constructType(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object v0
 
     .line 30
-    .local v0, "intType":Lcom/fasterxml/jackson/databind/JavaType;
-    sget-object v2, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    sget-object v1, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
-    invoke-virtual {p1, v2}, Lcom/fasterxml/jackson/databind/DeserializationConfig;->constructType(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {p1, v1}, Lcom/fasterxml/jackson/databind/DeserializationConfig;->constructType(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object v1
 
     .line 31
-    .local v1, "longType":Lcom/fasterxml/jackson/databind/JavaType;
     const/4 v2, 0x5
 
     new-array v2, v2, [Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
@@ -225,32 +209,31 @@
 
     invoke-static {v3, v1, v7}, Lcom/fasterxml/jackson/databind/deser/std/JsonLocationInstantiator;->creatorProp(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;I)Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
 
-    move-result-object v3
+    move-result-object v1
 
-    aput-object v3, v2, v7
+    aput-object v1, v2, v7
 
-    const-string/jumbo v3, "lineNr"
+    const-string/jumbo v1, "lineNr"
 
-    invoke-static {v3, v0, v8}, Lcom/fasterxml/jackson/databind/deser/std/JsonLocationInstantiator;->creatorProp(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;I)Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
+    invoke-static {v1, v0, v8}, Lcom/fasterxml/jackson/databind/deser/std/JsonLocationInstantiator;->creatorProp(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;I)Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
 
-    move-result-object v3
+    move-result-object v1
 
-    aput-object v3, v2, v8
+    aput-object v1, v2, v8
 
-    const-string/jumbo v3, "columnNr"
+    const-string/jumbo v1, "columnNr"
 
-    invoke-static {v3, v0, v9}, Lcom/fasterxml/jackson/databind/deser/std/JsonLocationInstantiator;->creatorProp(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;I)Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
+    invoke-static {v1, v0, v9}, Lcom/fasterxml/jackson/databind/deser/std/JsonLocationInstantiator;->creatorProp(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;I)Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
 
-    move-result-object v3
+    move-result-object v0
 
-    aput-object v3, v2, v9
+    aput-object v0, v2, v9
 
     return-object v2
 .end method
 
 .method public bridge synthetic getFromObjectArguments(Lcom/fasterxml/jackson/databind/DeserializationConfig;)[Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
 
     .prologue
     .line 17

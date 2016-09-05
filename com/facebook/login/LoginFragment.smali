@@ -36,8 +36,6 @@
 
 .method static synthetic access$000(Lcom/facebook/login/LoginFragment;Lcom/facebook/login/LoginClient$Result;)V
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/login/LoginFragment;
-    .param p1, "x1"    # Lcom/facebook/login/LoginClient$Result;
 
     .prologue
     .line 43
@@ -47,8 +45,7 @@
 .end method
 
 .method private initializeCallingPackage(Landroid/app/Activity;)V
-    .registers 4
-    .param p1, "activity"    # Landroid/app/Activity;
+    .registers 3
 
     .prologue
     .line 173
@@ -57,7 +54,6 @@
     move-result-object v0
 
     .line 174
-    .local v0, "componentName":Landroid/content/ComponentName;
     if-nez v0, :cond_7
 
     .line 178
@@ -68,44 +64,41 @@
     :cond_7
     invoke-virtual {v0}, Landroid/content/ComponentName;->getPackageName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Lcom/facebook/login/LoginFragment;->callingPackage:Ljava/lang/String;
+    iput-object v0, p0, Lcom/facebook/login/LoginFragment;->callingPackage:Ljava/lang/String;
 
     goto :goto_6
 .end method
 
 .method private onLoginClientCompleted(Lcom/facebook/login/LoginClient$Result;)V
-    .registers 7
-    .param p1, "outcome"    # Lcom/facebook/login/LoginClient$Result;
+    .registers 5
 
     .prologue
     .line 117
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
-    iput-object v3, p0, Lcom/facebook/login/LoginFragment;->request:Lcom/facebook/login/LoginClient$Request;
+    iput-object v0, p0, Lcom/facebook/login/LoginFragment;->request:Lcom/facebook/login/LoginClient$Request;
 
     .line 119
-    iget-object v3, p1, Lcom/facebook/login/LoginClient$Result;->code:Lcom/facebook/login/LoginClient$Result$Code;
+    iget-object v0, p1, Lcom/facebook/login/LoginClient$Result;->code:Lcom/facebook/login/LoginClient$Result$Code;
 
-    sget-object v4, Lcom/facebook/login/LoginClient$Result$Code;->CANCEL:Lcom/facebook/login/LoginClient$Result$Code;
+    sget-object v1, Lcom/facebook/login/LoginClient$Result$Code;->CANCEL:Lcom/facebook/login/LoginClient$Result$Code;
 
-    if-ne v3, v4, :cond_32
+    if-ne v0, v1, :cond_32
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 122
-    .local v1, "resultCode":I
     :goto_a
-    new-instance v0, Landroid/os/Bundle;
+    new-instance v1, Landroid/os/Bundle;
 
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
     .line 123
-    .local v0, "bundle":Landroid/os/Bundle;
-    const-string/jumbo v3, "com.facebook.LoginFragment:Result"
+    const-string/jumbo v2, "com.facebook.LoginFragment:Result"
 
-    invoke-virtual {v0, v3, p1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
+    invoke-virtual {v1, v2, p1}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     .line 125
     new-instance v2, Landroid/content/Intent;
@@ -113,40 +106,36 @@
     invoke-direct {v2}, Landroid/content/Intent;-><init>()V
 
     .line 126
-    .local v2, "resultIntent":Landroid/content/Intent;
-    invoke-virtual {v2, v0}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
+    invoke-virtual {v2, v1}, Landroid/content/Intent;->putExtras(Landroid/os/Bundle;)Landroid/content/Intent;
 
     .line 129
     invoke-virtual {p0}, Lcom/facebook/login/LoginFragment;->isAdded()Z
 
-    move-result v3
+    move-result v1
 
-    if-eqz v3, :cond_31
+    if-eqz v1, :cond_31
 
     .line 130
     invoke-virtual {p0}, Lcom/facebook/login/LoginFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v3, v1, v2}, Landroid/support/v4/app/FragmentActivity;->setResult(ILandroid/content/Intent;)V
+    invoke-virtual {v1, v0, v2}, Landroid/support/v4/app/FragmentActivity;->setResult(ILandroid/content/Intent;)V
 
     .line 131
     invoke-virtual {p0}, Lcom/facebook/login/LoginFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v3}, Landroid/support/v4/app/FragmentActivity;->finish()V
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->finish()V
 
     .line 133
     :cond_31
     return-void
 
     .line 119
-    .end local v0    # "bundle":Landroid/os/Bundle;
-    .end local v1    # "resultCode":I
-    .end local v2    # "resultIntent":Landroid/content/Intent;
     :cond_32
-    const/4 v1, -0x1
+    const/4 v0, -0x1
 
     goto :goto_a
 .end method
@@ -155,9 +144,6 @@
 # virtual methods
 .method public onActivityResult(IILandroid/content/Intent;)V
     .registers 5
-    .param p1, "requestCode"    # I
-    .param p2, "resultCode"    # I
-    .param p3, "data"    # Landroid/content/Intent;
 
     .prologue
     .line 161
@@ -173,8 +159,7 @@
 .end method
 
 .method public onCreate(Landroid/os/Bundle;)V
-    .registers 5
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
+    .registers 4
 
     .prologue
     .line 59
@@ -184,30 +169,30 @@
     if-eqz p1, :cond_26
 
     .line 62
-    const-string/jumbo v1, "loginClient"
+    const-string/jumbo v0, "loginClient"
 
-    invoke-virtual {p1, v1}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
+    invoke-virtual {p1, v0}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;)Landroid/os/Parcelable;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Lcom/facebook/login/LoginClient;
+    check-cast v0, Lcom/facebook/login/LoginClient;
 
-    iput-object v1, p0, Lcom/facebook/login/LoginFragment;->loginClient:Lcom/facebook/login/LoginClient;
+    iput-object v0, p0, Lcom/facebook/login/LoginFragment;->loginClient:Lcom/facebook/login/LoginClient;
 
     .line 63
-    iget-object v1, p0, Lcom/facebook/login/LoginFragment;->loginClient:Lcom/facebook/login/LoginClient;
+    iget-object v0, p0, Lcom/facebook/login/LoginFragment;->loginClient:Lcom/facebook/login/LoginClient;
 
-    invoke-virtual {v1, p0}, Lcom/facebook/login/LoginClient;->setFragment(Landroid/support/v4/app/Fragment;)V
+    invoke-virtual {v0, p0}, Lcom/facebook/login/LoginClient;->setFragment(Landroid/support/v4/app/Fragment;)V
 
     .line 68
     :goto_15
-    iget-object v1, p0, Lcom/facebook/login/LoginFragment;->loginClient:Lcom/facebook/login/LoginClient;
+    iget-object v0, p0, Lcom/facebook/login/LoginFragment;->loginClient:Lcom/facebook/login/LoginClient;
 
-    new-instance v2, Lcom/facebook/login/LoginFragment$1;
+    new-instance v1, Lcom/facebook/login/LoginFragment$1;
 
-    invoke-direct {v2, p0}, Lcom/facebook/login/LoginFragment$1;-><init>(Lcom/facebook/login/LoginFragment;)V
+    invoke-direct {v1, p0}, Lcom/facebook/login/LoginFragment$1;-><init>(Lcom/facebook/login/LoginFragment;)V
 
-    invoke-virtual {v1, v2}, Lcom/facebook/login/LoginClient;->setOnCompletedListener(Lcom/facebook/login/LoginClient$OnCompletedListener;)V
+    invoke-virtual {v0, v1}, Lcom/facebook/login/LoginClient;->setOnCompletedListener(Lcom/facebook/login/LoginClient$OnCompletedListener;)V
 
     .line 75
     invoke-virtual {p0}, Lcom/facebook/login/LoginFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -215,7 +200,6 @@
     move-result-object v0
 
     .line 76
-    .local v0, "activity":Landroid/app/Activity;
     if-nez v0, :cond_2e
 
     .line 85
@@ -224,18 +208,16 @@
     return-void
 
     .line 65
-    .end local v0    # "activity":Landroid/app/Activity;
     :cond_26
-    new-instance v1, Lcom/facebook/login/LoginClient;
+    new-instance v0, Lcom/facebook/login/LoginClient;
 
-    invoke-direct {v1, p0}, Lcom/facebook/login/LoginClient;-><init>(Landroid/support/v4/app/Fragment;)V
+    invoke-direct {v0, p0}, Lcom/facebook/login/LoginClient;-><init>(Landroid/support/v4/app/Fragment;)V
 
-    iput-object v1, p0, Lcom/facebook/login/LoginFragment;->loginClient:Lcom/facebook/login/LoginClient;
+    iput-object v0, p0, Lcom/facebook/login/LoginFragment;->loginClient:Lcom/facebook/login/LoginClient;
 
     goto :goto_15
 
     .line 80
-    .restart local v0    # "activity":Landroid/app/Activity;
     :cond_2e
     invoke-direct {p0, v0}, Lcom/facebook/login/LoginFragment;->initializeCallingPackage(Landroid/app/Activity;)V
 
@@ -249,45 +231,35 @@
     .line 83
     invoke-virtual {v0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string/jumbo v2, "request"
+    const-string/jumbo v1, "request"
 
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Lcom/facebook/login/LoginClient$Request;
+    check-cast v0, Lcom/facebook/login/LoginClient$Request;
 
-    iput-object v1, p0, Lcom/facebook/login/LoginFragment;->request:Lcom/facebook/login/LoginClient$Request;
+    iput-object v0, p0, Lcom/facebook/login/LoginFragment;->request:Lcom/facebook/login/LoginClient$Request;
 
     goto :goto_25
 .end method
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .registers 7
-    .param p1, "inflater"    # Landroid/view/LayoutInflater;
-    .param p2, "container"    # Landroid/view/ViewGroup;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p3, "savedInstanceState"    # Landroid/os/Bundle;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
 
     .prologue
     .line 96
-    sget v1, Lcom/facebook/R$layout;->com_facebook_login_fragment:I
+    sget v0, Lcom/facebook/R$layout;->com_facebook_login_fragment:I
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {p1, v1, p2, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
     .line 98
-    .local v0, "view":Landroid/view/View;
     iget-object v1, p0, Lcom/facebook/login/LoginFragment;->loginClient:Lcom/facebook/login/LoginClient;
 
     new-instance v2, Lcom/facebook/login/LoginFragment$2;
@@ -385,7 +357,6 @@
 
 .method public onSaveInstanceState(Landroid/os/Bundle;)V
     .registers 4
-    .param p1, "outState"    # Landroid/os/Bundle;
 
     .prologue
     .line 167

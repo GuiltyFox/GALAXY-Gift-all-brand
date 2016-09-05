@@ -112,40 +112,35 @@
 
 .method private _appendByte(IILcom/fasterxml/jackson/core/util/ByteArrayBuilder;I)I
     .registers 8
-    .param p1, "ch"    # I
-    .param p2, "esc"    # I
-    .param p3, "bb"    # Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
-    .param p4, "ptr"    # I
 
     .prologue
-    const/16 v2, 0x30
+    const/16 v1, 0x30
 
     .line 360
     invoke-virtual {p3, p4}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->setCurrentSegmentLength(I)V
 
     .line 361
-    const/16 v1, 0x5c
+    const/16 v0, 0x5c
 
-    invoke-virtual {p3, v1}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->append(I)V
+    invoke-virtual {p3, v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->append(I)V
 
     .line 362
     if-gez p2, :cond_49
 
     .line 363
-    const/16 v1, 0x75
+    const/16 v0, 0x75
 
-    invoke-virtual {p3, v1}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->append(I)V
+    invoke-virtual {p3, v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->append(I)V
 
     .line 364
-    const/16 v1, 0xff
+    const/16 v0, 0xff
 
-    if-le p1, v1, :cond_42
+    if-le p1, v0, :cond_42
 
     .line 365
     shr-int/lit8 v0, p1, 0x8
 
     .line 366
-    .local v0, "hi":I
     sget-object v1, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->HB:[B
 
     shr-int/lit8 v2, v0, 0x4
@@ -157,65 +152,62 @@
     .line 367
     sget-object v1, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->HB:[B
 
-    and-int/lit8 v2, v0, 0xf
+    and-int/lit8 v0, v0, 0xf
 
-    aget-byte v1, v1, v2
+    aget-byte v0, v1, v0
 
-    invoke-virtual {p3, v1}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->append(I)V
+    invoke-virtual {p3, v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->append(I)V
 
     .line 368
     and-int/lit16 p1, p1, 0xff
 
     .line 373
-    .end local v0    # "hi":I
     :goto_2b
-    sget-object v1, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->HB:[B
+    sget-object v0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->HB:[B
 
-    shr-int/lit8 v2, p1, 0x4
+    shr-int/lit8 v1, p1, 0x4
 
-    aget-byte v1, v1, v2
+    aget-byte v0, v0, v1
 
-    invoke-virtual {p3, v1}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->append(I)V
+    invoke-virtual {p3, v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->append(I)V
 
     .line 374
-    sget-object v1, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->HB:[B
+    sget-object v0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->HB:[B
 
-    and-int/lit8 v2, p1, 0xf
+    and-int/lit8 v1, p1, 0xf
 
-    aget-byte v1, v1, v2
+    aget-byte v0, v0, v1
 
-    invoke-virtual {p3, v1}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->append(I)V
+    invoke-virtual {p3, v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->append(I)V
 
     .line 378
     :goto_3d
     invoke-virtual {p3}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->getCurrentSegmentLength()I
 
-    move-result v1
+    move-result v0
 
-    return v1
+    return v0
 
     .line 370
     :cond_42
-    invoke-virtual {p3, v2}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->append(I)V
+    invoke-virtual {p3, v1}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->append(I)V
 
     .line 371
-    invoke-virtual {p3, v2}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->append(I)V
+    invoke-virtual {p3, v1}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->append(I)V
 
     goto :goto_2b
 
     .line 376
     :cond_49
-    int-to-byte v1, p2
+    int-to-byte v0, p2
 
-    invoke-virtual {p3, v1}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->append(I)V
+    invoke-virtual {p3, v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->append(I)V
 
     goto :goto_3d
 .end method
 
 .method private _appendNamed(I[C)I
     .registers 5
-    .param p1, "esc"    # I
-    .param p2, "qbuf"    # [C
 
     .prologue
     .line 354
@@ -233,8 +225,6 @@
 
 .method private _appendNumeric(I[C)I
     .registers 6
-    .param p1, "value"    # I
-    .param p2, "qbuf"    # [C
 
     .prologue
     .line 346
@@ -274,8 +264,6 @@
 
 .method private static _convert(II)I
     .registers 5
-    .param p0, "p1"    # I
-    .param p1, "p2"    # I
 
     .prologue
     const v2, 0xdc00
@@ -358,7 +346,6 @@
 
 .method private static _illegal(I)V
     .registers 3
-    .param p0, "c"    # I
 
     .prologue
     .line 390
@@ -374,59 +361,52 @@
 .end method
 
 .method public static getInstance()Lcom/fasterxml/jackson/core/io/JsonStringEncoder;
-    .registers 4
+    .registers 3
 
     .prologue
     .line 75
-    sget-object v2, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_threadEncoder:Ljava/lang/ThreadLocal;
+    sget-object v0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_threadEncoder:Ljava/lang/ThreadLocal;
 
-    invoke-virtual {v2}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Ljava/lang/ref/SoftReference;
+    check-cast v0, Ljava/lang/ref/SoftReference;
 
     .line 76
-    .local v1, "ref":Ljava/lang/ref/SoftReference;, "Ljava/lang/ref/SoftReference<Lcom/fasterxml/jackson/core/io/JsonStringEncoder;>;"
-    if-nez v1, :cond_1d
+    if-nez v0, :cond_1d
 
     const/4 v0, 0x0
 
     .line 78
-    .local v0, "enc":Lcom/fasterxml/jackson/core/io/JsonStringEncoder;
     :goto_b
     if-nez v0, :cond_1c
 
     .line 79
     new-instance v0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;
 
-    .end local v0    # "enc":Lcom/fasterxml/jackson/core/io/JsonStringEncoder;
     invoke-direct {v0}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;-><init>()V
 
     .line 80
-    .restart local v0    # "enc":Lcom/fasterxml/jackson/core/io/JsonStringEncoder;
-    sget-object v2, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_threadEncoder:Ljava/lang/ThreadLocal;
+    sget-object v1, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_threadEncoder:Ljava/lang/ThreadLocal;
 
-    new-instance v3, Ljava/lang/ref/SoftReference;
+    new-instance v2, Ljava/lang/ref/SoftReference;
 
-    invoke-direct {v3, v0}, Ljava/lang/ref/SoftReference;-><init>(Ljava/lang/Object;)V
+    invoke-direct {v2, v0}, Ljava/lang/ref/SoftReference;-><init>(Ljava/lang/Object;)V
 
-    invoke-virtual {v2, v3}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+    invoke-virtual {v1, v2}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
     .line 82
     :cond_1c
     return-object v0
 
     .line 76
-    .end local v0    # "enc":Lcom/fasterxml/jackson/core/io/JsonStringEncoder;
     :cond_1d
-    invoke-virtual {v1}, Ljava/lang/ref/SoftReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/SoftReference;->get()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;
-
-    move-object v0, v2
+    check-cast v0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;
 
     goto :goto_b
 .end method
@@ -434,1221 +414,944 @@
 
 # virtual methods
 .method public encodeAsUTF8(Ljava/lang/String;)[B
-    .registers 12
-    .param p1, "text"    # Ljava/lang/String;
+    .registers 13
 
     .prologue
+    const/4 v4, 0x0
+
     .line 255
     iget-object v0, p0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_bytes:Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
 
     .line 256
-    .local v0, "byteBuilder":Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
-    if-nez v0, :cond_c
+    if-nez v0, :cond_d
 
     .line 258
     new-instance v0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
 
-    .end local v0    # "byteBuilder":Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
-    const/4 v9, 0x0
+    const/4 v1, 0x0
 
-    invoke-direct {v0, v9}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;-><init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;)V
+    invoke-direct {v0, v1}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;-><init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;)V
 
-    .restart local v0    # "byteBuilder":Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
     iput-object v0, p0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_bytes:Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
 
-    .line 260
-    :cond_c
-    const/4 v3, 0x0
-
     .line 261
-    .local v3, "inputPtr":I
+    :cond_d
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v2
-
-    .line 262
-    .local v2, "inputEnd":I
-    const/4 v7, 0x0
+    move-result v9
 
     .line 263
-    .local v7, "outputPtr":I
     invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->resetAndGetFirstSegment()[B
 
-    move-result-object v5
+    move-result-object v3
 
     .line 264
-    .local v5, "outputBuffer":[B
-    array-length v6, v5
+    array-length v2, v3
 
-    .local v6, "outputEnd":I
-    move v4, v3
+    move v1, v4
+
+    move v6, v4
 
     .line 267
-    .end local v3    # "inputPtr":I
-    .local v4, "inputPtr":I
     :goto_18
-    if-ge v4, v2, :cond_f0
+    if-ge v6, v9, :cond_f6
 
     .line 268
-    add-int/lit8 v3, v4, 0x1
+    add-int/lit8 v7, v6, 0x1
 
-    .end local v4    # "inputPtr":I
-    .restart local v3    # "inputPtr":I
-    invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p1, v6}, Ljava/lang/String;->charAt(I)C
 
-    move-result v1
+    move-result v6
 
-    .local v1, "c":I
-    move v4, v3
+    move v10, v2
+
+    move-object v2, v3
+
+    move v3, v1
+
+    move v1, v10
 
     .line 271
-    .end local v3    # "inputPtr":I
-    .restart local v4    # "inputPtr":I
-    :goto_21
-    const/16 v9, 0x7f
+    :goto_24
+    const/16 v5, 0x7f
 
-    if-gt v1, v9, :cond_46
+    if-gt v6, v5, :cond_48
 
     .line 272
-    if-lt v7, v6, :cond_2d
+    if-lt v3, v1, :cond_30
 
     .line 273
     invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->finishCurrentSegment()[B
 
-    move-result-object v5
+    move-result-object v2
 
     .line 274
-    array-length v6, v5
+    array-length v1, v2
 
-    .line 275
-    const/4 v7, 0x0
-
-    .line 277
-    :cond_2d
-    add-int/lit8 v8, v7, 0x1
-
-    .end local v7    # "outputPtr":I
-    .local v8, "outputPtr":I
-    int-to-byte v9, v1
-
-    aput-byte v9, v5, v7
-
-    .line 278
-    if-lt v4, v2, :cond_3d
-
-    move v7, v8
-
-    .end local v8    # "outputPtr":I
-    .restart local v7    # "outputPtr":I
     move v3, v4
 
+    .line 277
+    :cond_30
+    add-int/lit8 v5, v3, 0x1
+
+    int-to-byte v6, v6
+
+    aput-byte v6, v2, v3
+
+    .line 278
+    if-lt v7, v9, :cond_3f
+
+    move v0, v5
+
     .line 336
-    .end local v1    # "c":I
-    .end local v4    # "inputPtr":I
-    .restart local v3    # "inputPtr":I
-    :goto_36
-    iget-object v9, p0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_bytes:Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
+    :goto_38
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_bytes:Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
 
-    invoke-virtual {v9, v7}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->completeAndCoalesce(I)[B
+    invoke-virtual {v1, v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->completeAndCoalesce(I)[B
 
-    move-result-object v9
+    move-result-object v0
 
-    return-object v9
+    return-object v0
 
     .line 281
-    .end local v3    # "inputPtr":I
-    .end local v7    # "outputPtr":I
-    .restart local v1    # "c":I
-    .restart local v4    # "inputPtr":I
-    .restart local v8    # "outputPtr":I
-    :cond_3d
-    add-int/lit8 v3, v4, 0x1
+    :cond_3f
+    add-int/lit8 v3, v7, 0x1
 
-    .end local v4    # "inputPtr":I
-    .restart local v3    # "inputPtr":I
-    invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p1, v7}, Ljava/lang/String;->charAt(I)C
 
-    move-result v1
+    move-result v6
 
-    move v7, v8
+    move v7, v3
 
-    .end local v8    # "outputPtr":I
-    .restart local v7    # "outputPtr":I
-    move v4, v3
+    move v3, v5
 
-    .end local v3    # "inputPtr":I
-    .restart local v4    # "inputPtr":I
-    goto :goto_21
+    goto :goto_24
 
     .line 285
-    :cond_46
-    if-lt v7, v6, :cond_ed
+    :cond_48
+    if-lt v3, v1, :cond_f3
 
     .line 286
     invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->finishCurrentSegment()[B
 
-    move-result-object v5
+    move-result-object v2
 
     .line 287
-    array-length v6, v5
+    array-length v1, v2
 
-    .line 288
-    const/4 v7, 0x0
-
-    move v8, v7
+    move v5, v4
 
     .line 290
-    .end local v7    # "outputPtr":I
-    .restart local v8    # "outputPtr":I
-    :goto_4f
-    const/16 v9, 0x800
+    :goto_50
+    const/16 v3, 0x800
 
-    if-ge v1, v9, :cond_71
+    if-ge v6, v3, :cond_74
 
     .line 291
-    add-int/lit8 v7, v8, 0x1
+    add-int/lit8 v3, v5, 0x1
 
-    .end local v8    # "outputPtr":I
-    .restart local v7    # "outputPtr":I
-    shr-int/lit8 v9, v1, 0x6
+    shr-int/lit8 v8, v6, 0x6
 
-    or-int/lit16 v9, v9, 0xc0
+    or-int/lit16 v8, v8, 0xc0
 
-    int-to-byte v9, v9
+    int-to-byte v8, v8
 
-    aput-byte v9, v5, v8
+    aput-byte v8, v2, v5
 
-    move v3, v4
+    move v5, v6
+
+    move v6, v7
 
     .line 329
-    .end local v4    # "inputPtr":I
-    .restart local v3    # "inputPtr":I
-    :goto_5d
-    if-lt v7, v6, :cond_65
+    :goto_5f
+    if-lt v3, v1, :cond_67
 
     .line 330
     invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->finishCurrentSegment()[B
 
-    move-result-object v5
+    move-result-object v2
 
     .line 331
-    array-length v6, v5
+    array-length v1, v2
 
-    .line 332
-    const/4 v7, 0x0
+    move v3, v4
 
     .line 334
-    :cond_65
-    add-int/lit8 v8, v7, 0x1
+    :cond_67
+    add-int/lit8 v7, v3, 0x1
 
-    .end local v7    # "outputPtr":I
-    .restart local v8    # "outputPtr":I
-    and-int/lit8 v9, v1, 0x3f
+    and-int/lit8 v5, v5, 0x3f
 
-    or-int/lit16 v9, v9, 0x80
+    or-int/lit16 v5, v5, 0x80
 
-    int-to-byte v9, v9
+    int-to-byte v5, v5
 
-    aput-byte v9, v5, v7
+    aput-byte v5, v2, v3
 
-    move v7, v8
+    move-object v3, v2
 
-    .end local v8    # "outputPtr":I
-    .restart local v7    # "outputPtr":I
-    move v4, v3
+    move v2, v1
+
+    move v1, v7
 
     .line 335
-    .end local v3    # "inputPtr":I
-    .restart local v4    # "inputPtr":I
     goto :goto_18
 
     .line 294
-    .end local v7    # "outputPtr":I
-    .restart local v8    # "outputPtr":I
-    :cond_71
-    const v9, 0xd800
+    :cond_74
+    const v3, 0xd800
 
-    if-lt v1, v9, :cond_7b
+    if-lt v6, v3, :cond_7e
 
-    const v9, 0xdfff
+    const v3, 0xdfff
 
-    if-le v1, v9, :cond_9a
+    if-le v6, v3, :cond_9e
 
     .line 295
-    :cond_7b
-    add-int/lit8 v7, v8, 0x1
+    :cond_7e
+    add-int/lit8 v3, v5, 0x1
 
-    .end local v8    # "outputPtr":I
-    .restart local v7    # "outputPtr":I
-    shr-int/lit8 v9, v1, 0xc
+    shr-int/lit8 v8, v6, 0xc
 
-    or-int/lit16 v9, v9, 0xe0
+    or-int/lit16 v8, v8, 0xe0
 
-    int-to-byte v9, v9
+    int-to-byte v8, v8
 
-    aput-byte v9, v5, v8
+    aput-byte v8, v2, v5
 
     .line 296
-    if-lt v7, v6, :cond_8c
+    if-lt v3, v1, :cond_8f
 
     .line 297
     invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->finishCurrentSegment()[B
 
-    move-result-object v5
+    move-result-object v2
 
     .line 298
-    array-length v6, v5
+    array-length v1, v2
 
-    .line 299
-    const/4 v7, 0x0
-
-    .line 301
-    :cond_8c
-    add-int/lit8 v8, v7, 0x1
-
-    .end local v7    # "outputPtr":I
-    .restart local v8    # "outputPtr":I
-    shr-int/lit8 v9, v1, 0x6
-
-    and-int/lit8 v9, v9, 0x3f
-
-    or-int/lit16 v9, v9, 0x80
-
-    int-to-byte v9, v9
-
-    aput-byte v9, v5, v7
-
-    move v7, v8
-
-    .end local v8    # "outputPtr":I
-    .restart local v7    # "outputPtr":I
     move v3, v4
 
-    .end local v4    # "inputPtr":I
-    .restart local v3    # "inputPtr":I
-    goto :goto_5d
+    .line 301
+    :cond_8f
+    add-int/lit8 v5, v3, 0x1
+
+    shr-int/lit8 v8, v6, 0x6
+
+    and-int/lit8 v8, v8, 0x3f
+
+    or-int/lit16 v8, v8, 0x80
+
+    int-to-byte v8, v8
+
+    aput-byte v8, v2, v3
+
+    move v3, v5
+
+    move v5, v6
+
+    move v6, v7
+
+    goto :goto_5f
 
     .line 303
-    .end local v3    # "inputPtr":I
-    .end local v7    # "outputPtr":I
-    .restart local v4    # "inputPtr":I
-    .restart local v8    # "outputPtr":I
-    :cond_9a
-    const v9, 0xdbff
+    :cond_9e
+    const v3, 0xdbff
 
-    if-le v1, v9, :cond_a2
+    if-le v6, v3, :cond_a6
 
     .line 304
-    invoke-static {v1}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_illegal(I)V
+    invoke-static {v6}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_illegal(I)V
 
     .line 307
-    :cond_a2
-    if-lt v4, v2, :cond_a7
+    :cond_a6
+    if-lt v7, v9, :cond_ab
 
     .line 308
-    invoke-static {v1}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_illegal(I)V
+    invoke-static {v6}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_illegal(I)V
 
     .line 310
-    :cond_a7
-    add-int/lit8 v3, v4, 0x1
+    :cond_ab
+    add-int/lit8 v8, v7, 0x1
 
-    .end local v4    # "inputPtr":I
-    .restart local v3    # "inputPtr":I
-    invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p1, v7}, Ljava/lang/String;->charAt(I)C
 
-    move-result v9
+    move-result v3
 
-    invoke-static {v1, v9}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_convert(II)I
+    invoke-static {v6, v3}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_convert(II)I
 
-    move-result v1
+    move-result v6
 
     .line 311
-    const v9, 0x10ffff
+    const v3, 0x10ffff
 
-    if-le v1, v9, :cond_b9
+    if-le v6, v3, :cond_bd
 
     .line 312
-    invoke-static {v1}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_illegal(I)V
+    invoke-static {v6}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_illegal(I)V
 
     .line 314
-    :cond_b9
-    add-int/lit8 v7, v8, 0x1
+    :cond_bd
+    add-int/lit8 v3, v5, 0x1
 
-    .end local v8    # "outputPtr":I
-    .restart local v7    # "outputPtr":I
-    shr-int/lit8 v9, v1, 0x12
+    shr-int/lit8 v7, v6, 0x12
 
-    or-int/lit16 v9, v9, 0xf0
+    or-int/lit16 v7, v7, 0xf0
 
-    int-to-byte v9, v9
+    int-to-byte v7, v7
 
-    aput-byte v9, v5, v8
+    aput-byte v7, v2, v5
 
     .line 315
-    if-lt v7, v6, :cond_ca
+    if-lt v3, v1, :cond_ce
 
     .line 316
     invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->finishCurrentSegment()[B
 
-    move-result-object v5
+    move-result-object v2
 
     .line 317
-    array-length v6, v5
+    array-length v1, v2
 
-    .line 318
-    const/4 v7, 0x0
+    move v3, v4
 
     .line 320
-    :cond_ca
-    add-int/lit8 v8, v7, 0x1
+    :cond_ce
+    add-int/lit8 v5, v3, 0x1
 
-    .end local v7    # "outputPtr":I
-    .restart local v8    # "outputPtr":I
-    shr-int/lit8 v9, v1, 0xc
+    shr-int/lit8 v7, v6, 0xc
 
-    and-int/lit8 v9, v9, 0x3f
+    and-int/lit8 v7, v7, 0x3f
 
-    or-int/lit16 v9, v9, 0x80
+    or-int/lit16 v7, v7, 0x80
 
-    int-to-byte v9, v9
+    int-to-byte v7, v7
 
-    aput-byte v9, v5, v7
+    aput-byte v7, v2, v3
 
     .line 321
-    if-lt v8, v6, :cond_eb
+    if-lt v5, v1, :cond_f1
 
     .line 322
     invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->finishCurrentSegment()[B
 
-    move-result-object v5
+    move-result-object v2
 
     .line 323
-    array-length v6, v5
+    array-length v1, v2
 
-    .line 324
-    const/4 v7, 0x0
-
-    .line 326
-    .end local v8    # "outputPtr":I
-    .restart local v7    # "outputPtr":I
-    :goto_dd
-    add-int/lit8 v8, v7, 0x1
-
-    .end local v7    # "outputPtr":I
-    .restart local v8    # "outputPtr":I
-    shr-int/lit8 v9, v1, 0x6
-
-    and-int/lit8 v9, v9, 0x3f
-
-    or-int/lit16 v9, v9, 0x80
-
-    int-to-byte v9, v9
-
-    aput-byte v9, v5, v7
-
-    move v7, v8
-
-    .end local v8    # "outputPtr":I
-    .restart local v7    # "outputPtr":I
-    goto/16 :goto_5d
-
-    .end local v7    # "outputPtr":I
-    .restart local v8    # "outputPtr":I
-    :cond_eb
-    move v7, v8
-
-    .end local v8    # "outputPtr":I
-    .restart local v7    # "outputPtr":I
-    goto :goto_dd
-
-    .end local v3    # "inputPtr":I
-    .restart local v4    # "inputPtr":I
-    :cond_ed
-    move v8, v7
-
-    .end local v7    # "outputPtr":I
-    .restart local v8    # "outputPtr":I
-    goto/16 :goto_4f
-
-    .end local v1    # "c":I
-    .end local v8    # "outputPtr":I
-    .restart local v7    # "outputPtr":I
-    :cond_f0
     move v3, v4
 
-    .end local v4    # "inputPtr":I
-    .restart local v3    # "inputPtr":I
-    goto/16 :goto_36
+    .line 326
+    :goto_e1
+    add-int/lit8 v5, v3, 0x1
+
+    shr-int/lit8 v7, v6, 0x6
+
+    and-int/lit8 v7, v7, 0x3f
+
+    or-int/lit16 v7, v7, 0x80
+
+    int-to-byte v7, v7
+
+    aput-byte v7, v2, v3
+
+    move v3, v5
+
+    move v5, v6
+
+    move v6, v8
+
+    goto/16 :goto_5f
+
+    :cond_f1
+    move v3, v5
+
+    goto :goto_e1
+
+    :cond_f3
+    move v5, v3
+
+    goto/16 :goto_50
+
+    :cond_f6
+    move v0, v1
+
+    goto/16 :goto_38
 .end method
 
 .method public quoteAsString(Ljava/lang/String;)[C
-    .registers 21
-    .param p1, "input"    # Ljava/lang/String;
+    .registers 13
 
     .prologue
+    const/4 v5, 0x0
+
     .line 97
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_text:Lcom/fasterxml/jackson/core/util/TextBuffer;
-
-    move-object/from16 v16, v0
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_text:Lcom/fasterxml/jackson/core/util/TextBuffer;
 
     .line 98
-    .local v16, "textBuffer":Lcom/fasterxml/jackson/core/util/TextBuffer;
-    if-nez v16, :cond_15
+    if-nez v0, :cond_d
 
     .line 100
-    new-instance v16, Lcom/fasterxml/jackson/core/util/TextBuffer;
+    new-instance v0, Lcom/fasterxml/jackson/core/util/TextBuffer;
 
-    .end local v16    # "textBuffer":Lcom/fasterxml/jackson/core/util/TextBuffer;
-    const/16 v17, 0x0
+    const/4 v1, 0x0
 
-    invoke-direct/range {v16 .. v17}, Lcom/fasterxml/jackson/core/util/TextBuffer;-><init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;)V
+    invoke-direct {v0, v1}, Lcom/fasterxml/jackson/core/util/TextBuffer;-><init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;)V
 
-    .restart local v16    # "textBuffer":Lcom/fasterxml/jackson/core/util/TextBuffer;
-    move-object/from16 v0, v16
-
-    move-object/from16 v1, p0
-
-    iput-object v0, v1, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_text:Lcom/fasterxml/jackson/core/util/TextBuffer;
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_text:Lcom/fasterxml/jackson/core/util/TextBuffer;
 
     .line 102
-    :cond_15
-    invoke-virtual/range {v16 .. v16}, Lcom/fasterxml/jackson/core/util/TextBuffer;->emptyAndGetCurrentSegment()[C
+    :cond_d
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/TextBuffer;->emptyAndGetCurrentSegment()[C
 
-    move-result-object v14
+    move-result-object v3
 
     .line 103
-    .local v14, "outputBuffer":[C
     invoke-static {}, Lcom/fasterxml/jackson/core/io/CharTypes;->get7BitOutputEscapes()[I
 
     move-result-object v6
 
     .line 104
-    .local v6, "escCodes":[I
-    array-length v5, v6
-
-    .line 105
-    .local v5, "escCodeCount":I
-    const/4 v8, 0x0
+    array-length v7, v6
 
     .line 106
-    .local v8, "inPtr":I
-    invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->length()I
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v10
+    move-result v8
 
-    .line 107
-    .local v10, "inputLen":I
-    const/4 v12, 0x0
+    move v1, v5
+
+    move v2, v5
 
     .line 110
-    .local v12, "outPtr":I
-    :goto_24
-    if-ge v8, v10, :cond_9a
+    :goto_1c
+    if-ge v2, v8, :cond_63
 
     .line 113
-    :goto_26
-    move-object/from16 v0, p1
+    :cond_1e
+    invoke-virtual {p1, v2}, Ljava/lang/String;->charAt(I)C
 
-    invoke-virtual {v0, v8}, Ljava/lang/String;->charAt(I)C
+    move-result v9
+
+    .line 114
+    if-ge v9, v7, :cond_53
+
+    aget v4, v6, v9
+
+    if-eqz v4, :cond_53
+
+    .line 127
+    add-int/lit8 v4, v2, 0x1
+
+    invoke-virtual {p1, v2}, Ljava/lang/String;->charAt(I)C
 
     move-result v2
 
-    .line 114
-    .local v2, "c":C
-    if-ge v2, v5, :cond_85
-
-    aget v17, v6, v2
-
-    if-eqz v17, :cond_85
-
-    .line 127
-    add-int/lit8 v9, v8, 0x1
-
-    .end local v8    # "inPtr":I
-    .local v9, "inPtr":I
-    move-object/from16 v0, p1
-
-    invoke-virtual {v0, v8}, Ljava/lang/String;->charAt(I)C
-
-    move-result v3
-
     .line 128
-    .local v3, "d":C
-    aget v4, v6, v3
+    aget v9, v6, v2
 
     .line 129
-    .local v4, "escCode":I
-    if-gez v4, :cond_a6
+    if-gez v9, :cond_6b
 
-    move-object/from16 v0, p0
+    iget-object v9, p0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_qbuf:[C
 
-    iget-object v0, v0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_qbuf:[C
+    invoke-direct {p0, v2, v9}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_appendNumeric(I[C)I
 
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v17
-
-    invoke-direct {v0, v3, v1}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_appendNumeric(I[C)I
-
-    move-result v11
+    move-result v2
 
     .line 133
-    .local v11, "length":I
-    :goto_4c
-    add-int v17, v12, v11
+    :goto_38
+    add-int v9, v1, v2
 
-    array-length v0, v14
+    array-length v10, v3
 
-    move/from16 v18, v0
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-le v0, v1, :cond_b5
+    if-le v9, v10, :cond_72
 
     .line 134
-    array-length v0, v14
+    array-length v9, v3
 
-    move/from16 v17, v0
-
-    sub-int v7, v17, v12
+    sub-int/2addr v9, v1
 
     .line 135
-    .local v7, "first":I
-    if-lez v7, :cond_6d
+    if-lez v9, :cond_46
 
     .line 136
-    move-object/from16 v0, p0
+    iget-object v10, p0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_qbuf:[C
 
-    iget-object v0, v0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_qbuf:[C
-
-    move-object/from16 v17, v0
-
-    const/16 v18, 0x0
-
-    move-object/from16 v0, v17
-
-    move/from16 v1, v18
-
-    invoke-static {v0, v1, v14, v12, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v10, v5, v3, v1, v9}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 138
-    :cond_6d
-    invoke-virtual/range {v16 .. v16}, Lcom/fasterxml/jackson/core/util/TextBuffer;->finishCurrentSegment()[C
+    :cond_46
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/TextBuffer;->finishCurrentSegment()[C
 
-    move-result-object v14
+    move-result-object v3
 
     .line 139
-    sub-int v15, v11, v7
+    sub-int v1, v2, v9
 
     .line 140
-    .local v15, "second":I
-    move-object/from16 v0, p0
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_qbuf:[C
 
-    iget-object v0, v0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_qbuf:[C
+    invoke-static {v2, v9, v3, v5, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    move-object/from16 v17, v0
-
-    const/16 v18, 0x0
-
-    move-object/from16 v0, v17
-
-    move/from16 v1, v18
-
-    invoke-static {v0, v7, v14, v1, v15}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 141
-    move v12, v15
-
-    .end local v7    # "first":I
-    .end local v15    # "second":I
-    :goto_83
-    move v8, v9
+    :goto_51
+    move v2, v4
 
     .line 146
-    .end local v9    # "inPtr":I
-    .restart local v8    # "inPtr":I
-    goto :goto_24
+    goto :goto_1c
 
     .line 117
-    .end local v3    # "d":C
-    .end local v4    # "escCode":I
-    .end local v11    # "length":I
-    :cond_85
-    array-length v0, v14
+    :cond_53
+    array-length v4, v3
 
-    move/from16 v17, v0
-
-    move/from16 v0, v17
-
-    if-lt v12, v0, :cond_91
+    if-lt v1, v4, :cond_79
 
     .line 118
-    invoke-virtual/range {v16 .. v16}, Lcom/fasterxml/jackson/core/util/TextBuffer;->finishCurrentSegment()[C
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/TextBuffer;->finishCurrentSegment()[C
 
-    move-result-object v14
+    move-result-object v3
 
-    .line 119
-    const/4 v12, 0x0
+    move v4, v5
 
     .line 121
-    :cond_91
-    add-int/lit8 v13, v12, 0x1
+    :goto_5b
+    add-int/lit8 v1, v4, 0x1
 
-    .end local v12    # "outPtr":I
-    .local v13, "outPtr":I
-    aput-char v2, v14, v12
+    aput-char v9, v3, v4
 
     .line 122
-    add-int/lit8 v8, v8, 0x1
+    add-int/lit8 v2, v2, 0x1
 
-    if-lt v8, v10, :cond_a4
-
-    move v12, v13
+    if-lt v2, v8, :cond_1e
 
     .line 147
-    .end local v2    # "c":C
-    .end local v13    # "outPtr":I
-    .restart local v12    # "outPtr":I
-    :cond_9a
-    move-object/from16 v0, v16
-
-    invoke-virtual {v0, v12}, Lcom/fasterxml/jackson/core/util/TextBuffer;->setCurrentLength(I)V
+    :cond_63
+    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/core/util/TextBuffer;->setCurrentLength(I)V
 
     .line 148
-    invoke-virtual/range {v16 .. v16}, Lcom/fasterxml/jackson/core/util/TextBuffer;->contentsAsArray()[C
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/TextBuffer;->contentsAsArray()[C
 
-    move-result-object v17
+    move-result-object v0
 
-    return-object v17
-
-    .end local v12    # "outPtr":I
-    .restart local v2    # "c":C
-    .restart local v13    # "outPtr":I
-    :cond_a4
-    move v12, v13
-
-    .line 125
-    .end local v13    # "outPtr":I
-    .restart local v12    # "outPtr":I
-    goto :goto_26
+    return-object v0
 
     .line 129
-    .end local v8    # "inPtr":I
-    .restart local v3    # "d":C
-    .restart local v4    # "escCode":I
-    .restart local v9    # "inPtr":I
-    :cond_a6
-    move-object/from16 v0, p0
+    :cond_6b
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_qbuf:[C
 
-    iget-object v0, v0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_qbuf:[C
+    invoke-direct {p0, v9, v2}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_appendNamed(I[C)I
 
-    move-object/from16 v17, v0
+    move-result v2
 
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, v17
-
-    invoke-direct {v0, v4, v1}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_appendNamed(I[C)I
-
-    move-result v11
-
-    goto :goto_4c
+    goto :goto_38
 
     .line 143
-    .restart local v11    # "length":I
-    :cond_b5
-    move-object/from16 v0, p0
+    :cond_72
+    iget-object v9, p0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_qbuf:[C
 
-    iget-object v0, v0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_qbuf:[C
-
-    move-object/from16 v17, v0
-
-    const/16 v18, 0x0
-
-    move-object/from16 v0, v17
-
-    move/from16 v1, v18
-
-    invoke-static {v0, v1, v14, v12, v11}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v9, v5, v3, v1, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 144
-    add-int/2addr v12, v11
+    add-int/2addr v1, v2
 
-    goto :goto_83
+    goto :goto_51
+
+    :cond_79
+    move v4, v1
+
+    goto :goto_5b
 .end method
 
 .method public quoteAsUTF8(Ljava/lang/String;)[B
-    .registers 14
-    .param p1, "text"    # Ljava/lang/String;
+    .registers 13
 
     .prologue
-    const/16 v11, 0x7f
+    const/16 v9, 0x7f
+
+    const/4 v5, 0x0
 
     .line 158
     iget-object v0, p0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_bytes:Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
 
     .line 159
-    .local v0, "bb":Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
-    if-nez v0, :cond_e
+    if-nez v0, :cond_f
 
     .line 161
     new-instance v0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
 
-    .end local v0    # "bb":Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
-    const/4 v10, 0x0
+    const/4 v1, 0x0
 
-    invoke-direct {v0, v10}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;-><init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;)V
+    invoke-direct {v0, v1}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;-><init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;)V
 
-    .restart local v0    # "bb":Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
     iput-object v0, p0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_bytes:Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
 
-    .line 163
-    :cond_e
-    const/4 v5, 0x0
-
     .line 164
-    .local v5, "inputPtr":I
+    :cond_f
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
-    move-result v4
-
-    .line 165
-    .local v4, "inputEnd":I
-    const/4 v8, 0x0
+    move-result v7
 
     .line 166
-    .local v8, "outputPtr":I
     invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->resetAndGetFirstSegment()[B
 
-    move-result-object v7
+    move-result-object v1
+
+    move v2, v5
+
+    move v3, v5
 
     .line 169
-    .local v7, "outputBuffer":[B
-    :goto_18
-    if-ge v5, v4, :cond_56
+    :goto_19
+    if-ge v3, v7, :cond_56
 
     .line 170
     invoke-static {}, Lcom/fasterxml/jackson/core/io/CharTypes;->get7BitOutputEscapes()[I
 
-    move-result-object v2
+    move-result-object v6
 
     .line 174
-    .local v2, "escCodes":[I
-    :goto_1e
-    invoke-virtual {p1, v5}, Ljava/lang/String;->charAt(I)C
+    :cond_1f
+    invoke-virtual {p1, v3}, Ljava/lang/String;->charAt(I)C
 
-    move-result v1
+    move-result v8
 
     .line 175
-    .local v1, "ch":I
-    if-gt v1, v11, :cond_28
+    if-gt v8, v9, :cond_29
 
-    aget v10, v2, v1
+    aget v4, v6, v8
 
-    if-eqz v10, :cond_44
+    if-eqz v4, :cond_45
 
     .line 187
-    :cond_28
-    array-length v10, v7
+    :cond_29
+    array-length v4, v1
 
-    if-lt v8, v10, :cond_30
+    if-lt v2, v4, :cond_31
 
     .line 188
     invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->finishCurrentSegment()[B
 
-    move-result-object v7
+    move-result-object v1
 
-    .line 189
-    const/4 v8, 0x0
+    move v2, v5
 
     .line 192
-    :cond_30
-    add-int/lit8 v6, v5, 0x1
+    :cond_31
+    add-int/lit8 v4, v3, 0x1
 
-    .end local v5    # "inputPtr":I
-    .local v6, "inputPtr":I
-    invoke-virtual {p1, v5}, Ljava/lang/String;->charAt(I)C
-
-    move-result v1
-
-    .line 193
-    if-gt v1, v11, :cond_5f
-
-    .line 194
-    aget v3, v2, v1
-
-    .line 196
-    .local v3, "escape":I
-    invoke-direct {p0, v1, v3, v0, v8}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_appendByte(IILcom/fasterxml/jackson/core/util/ByteArrayBuilder;I)I
+    invoke-virtual {p1, v3}, Ljava/lang/String;->charAt(I)C
 
     move-result v8
+
+    .line 193
+    if-gt v8, v9, :cond_5d
+
+    .line 194
+    aget v1, v6, v8
+
+    .line 196
+    invoke-direct {p0, v8, v1, v0, v2}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_appendByte(IILcom/fasterxml/jackson/core/util/ByteArrayBuilder;I)I
+
+    move-result v2
 
     .line 197
     invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->getCurrentSegment()[B
 
-    move-result-object v7
+    move-result-object v1
 
-    move v5, v6
+    move v3, v4
 
     .line 198
-    .end local v6    # "inputPtr":I
-    .restart local v5    # "inputPtr":I
-    goto :goto_18
+    goto :goto_19
 
     .line 178
-    .end local v3    # "escape":I
-    :cond_44
-    array-length v10, v7
+    :cond_45
+    array-length v4, v1
 
-    if-lt v8, v10, :cond_4c
+    if-lt v2, v4, :cond_10e
 
     .line 179
     invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->finishCurrentSegment()[B
 
-    move-result-object v7
+    move-result-object v1
 
-    .line 180
-    const/4 v8, 0x0
+    move v4, v5
 
     .line 182
-    :cond_4c
-    add-int/lit8 v9, v8, 0x1
+    :goto_4d
+    add-int/lit8 v2, v4, 0x1
 
-    .end local v8    # "outputPtr":I
-    .local v9, "outputPtr":I
-    int-to-byte v10, v1
+    int-to-byte v8, v8
 
-    aput-byte v10, v7, v8
+    aput-byte v8, v1, v4
 
     .line 183
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v3, v3, 0x1
 
-    if-lt v5, v4, :cond_5d
-
-    move v8, v9
+    if-lt v3, v7, :cond_1f
 
     .line 245
-    .end local v1    # "ch":I
-    .end local v2    # "escCodes":[I
-    .end local v9    # "outputPtr":I
-    .restart local v8    # "outputPtr":I
     :cond_56
-    iget-object v10, p0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_bytes:Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_bytes:Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
 
-    invoke-virtual {v10, v8}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->completeAndCoalesce(I)[B
+    invoke-virtual {v0, v2}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->completeAndCoalesce(I)[B
 
-    move-result-object v10
+    move-result-object v0
 
-    return-object v10
-
-    .end local v8    # "outputPtr":I
-    .restart local v1    # "ch":I
-    .restart local v2    # "escCodes":[I
-    .restart local v9    # "outputPtr":I
-    :cond_5d
-    move v8, v9
-
-    .line 186
-    .end local v9    # "outputPtr":I
-    .restart local v8    # "outputPtr":I
-    goto :goto_1e
+    return-object v0
 
     .line 200
-    .end local v5    # "inputPtr":I
-    .restart local v6    # "inputPtr":I
-    :cond_5f
-    const/16 v10, 0x7ff
+    :cond_5d
+    const/16 v3, 0x7ff
 
-    if-gt v1, v10, :cond_81
+    if-gt v8, v3, :cond_82
 
     .line 201
-    add-int/lit8 v9, v8, 0x1
+    add-int/lit8 v3, v2, 0x1
 
-    .end local v8    # "outputPtr":I
-    .restart local v9    # "outputPtr":I
-    shr-int/lit8 v10, v1, 0x6
+    shr-int/lit8 v6, v8, 0x6
 
-    or-int/lit16 v10, v10, 0xc0
+    or-int/lit16 v6, v6, 0xc0
 
-    int-to-byte v10, v10
+    int-to-byte v6, v6
 
-    aput-byte v10, v7, v8
+    aput-byte v6, v1, v2
 
     .line 202
-    and-int/lit8 v10, v1, 0x3f
+    and-int/lit8 v2, v8, 0x3f
 
-    or-int/lit16 v1, v10, 0x80
+    or-int/lit16 v2, v2, 0x80
 
-    move v8, v9
+    move v10, v2
 
-    .end local v9    # "outputPtr":I
-    .restart local v8    # "outputPtr":I
-    move v5, v6
+    move-object v2, v1
+
+    move v1, v10
 
     .line 239
-    .end local v6    # "inputPtr":I
-    .restart local v5    # "inputPtr":I
-    :goto_72
-    array-length v10, v7
+    :goto_71
+    array-length v6, v2
 
-    if-lt v8, v10, :cond_7a
+    if-lt v3, v6, :cond_79
 
     .line 240
     invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->finishCurrentSegment()[B
 
-    move-result-object v7
+    move-result-object v2
 
-    .line 241
-    const/4 v8, 0x0
+    move v3, v5
 
     .line 243
-    :cond_7a
-    add-int/lit8 v9, v8, 0x1
+    :cond_79
+    add-int/lit8 v6, v3, 0x1
 
-    .end local v8    # "outputPtr":I
-    .restart local v9    # "outputPtr":I
-    int-to-byte v10, v1
+    int-to-byte v1, v1
 
-    aput-byte v10, v7, v8
+    aput-byte v1, v2, v3
 
-    move v8, v9
+    move-object v1, v2
+
+    move v3, v4
+
+    move v2, v6
 
     .line 244
-    .end local v9    # "outputPtr":I
-    .restart local v8    # "outputPtr":I
-    goto :goto_18
+    goto :goto_19
 
     .line 205
-    .end local v5    # "inputPtr":I
-    .restart local v6    # "inputPtr":I
-    :cond_81
-    const v10, 0xd800
+    :cond_82
+    const v3, 0xd800
 
-    if-lt v1, v10, :cond_8b
+    if-lt v8, v3, :cond_8c
 
-    const v10, 0xdfff
+    const v3, 0xdfff
 
-    if-le v1, v10, :cond_ae
+    if-le v8, v3, :cond_b0
 
     .line 206
-    :cond_8b
-    add-int/lit8 v9, v8, 0x1
+    :cond_8c
+    add-int/lit8 v3, v2, 0x1
 
-    .end local v8    # "outputPtr":I
-    .restart local v9    # "outputPtr":I
-    shr-int/lit8 v10, v1, 0xc
+    shr-int/lit8 v6, v8, 0xc
 
-    or-int/lit16 v10, v10, 0xe0
+    or-int/lit16 v6, v6, 0xe0
 
-    int-to-byte v10, v10
+    int-to-byte v6, v6
 
-    aput-byte v10, v7, v8
+    aput-byte v6, v1, v2
 
     .line 207
-    array-length v10, v7
+    array-length v2, v1
 
-    if-lt v9, v10, :cond_107
+    if-lt v3, v2, :cond_10c
 
     .line 208
     invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->finishCurrentSegment()[B
 
-    move-result-object v7
+    move-result-object v1
 
-    .line 209
-    const/4 v8, 0x0
+    move v2, v5
 
     .line 211
-    .end local v9    # "outputPtr":I
-    .restart local v8    # "outputPtr":I
-    :goto_9c
-    add-int/lit8 v9, v8, 0x1
+    :goto_9d
+    add-int/lit8 v3, v2, 0x1
 
-    .end local v8    # "outputPtr":I
-    .restart local v9    # "outputPtr":I
-    shr-int/lit8 v10, v1, 0x6
+    shr-int/lit8 v6, v8, 0x6
 
-    and-int/lit8 v10, v10, 0x3f
+    and-int/lit8 v6, v6, 0x3f
 
-    or-int/lit16 v10, v10, 0x80
+    or-int/lit16 v6, v6, 0x80
 
-    int-to-byte v10, v10
+    int-to-byte v6, v6
 
-    aput-byte v10, v7, v8
+    aput-byte v6, v1, v2
 
     .line 212
-    and-int/lit8 v10, v1, 0x3f
+    and-int/lit8 v2, v8, 0x3f
 
-    or-int/lit16 v1, v10, 0x80
+    or-int/lit16 v2, v2, 0x80
 
-    move v8, v9
+    move v10, v2
 
-    .end local v9    # "outputPtr":I
-    .restart local v8    # "outputPtr":I
-    move v5, v6
+    move-object v2, v1
 
-    .end local v6    # "inputPtr":I
-    .restart local v5    # "inputPtr":I
-    goto :goto_72
+    move v1, v10
+
+    goto :goto_71
 
     .line 214
-    .end local v5    # "inputPtr":I
-    .restart local v6    # "inputPtr":I
-    :cond_ae
-    const v10, 0xdbff
+    :cond_b0
+    const v3, 0xdbff
 
-    if-le v1, v10, :cond_b6
+    if-le v8, v3, :cond_b8
 
     .line 215
-    invoke-static {v1}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_illegal(I)V
+    invoke-static {v8}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_illegal(I)V
 
     .line 218
-    :cond_b6
-    if-lt v6, v4, :cond_bb
+    :cond_b8
+    if-lt v4, v7, :cond_bd
 
     .line 219
-    invoke-static {v1}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_illegal(I)V
+    invoke-static {v8}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_illegal(I)V
 
     .line 221
-    :cond_bb
-    add-int/lit8 v5, v6, 0x1
+    :cond_bd
+    add-int/lit8 v6, v4, 0x1
 
-    .end local v6    # "inputPtr":I
-    .restart local v5    # "inputPtr":I
-    invoke-virtual {p1, v6}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
 
-    move-result v10
+    move-result v3
 
-    invoke-static {v1, v10}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_convert(II)I
+    invoke-static {v8, v3}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_convert(II)I
 
-    move-result v1
+    move-result v4
 
     .line 222
-    const v10, 0x10ffff
+    const v3, 0x10ffff
 
-    if-le v1, v10, :cond_cd
+    if-le v4, v3, :cond_cf
 
     .line 223
-    invoke-static {v1}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_illegal(I)V
+    invoke-static {v4}, Lcom/fasterxml/jackson/core/io/JsonStringEncoder;->_illegal(I)V
 
     .line 225
-    :cond_cd
-    add-int/lit8 v9, v8, 0x1
+    :cond_cf
+    add-int/lit8 v3, v2, 0x1
 
-    .end local v8    # "outputPtr":I
-    .restart local v9    # "outputPtr":I
-    shr-int/lit8 v10, v1, 0x12
+    shr-int/lit8 v8, v4, 0x12
 
-    or-int/lit16 v10, v10, 0xf0
+    or-int/lit16 v8, v8, 0xf0
 
-    int-to-byte v10, v10
+    int-to-byte v8, v8
 
-    aput-byte v10, v7, v8
+    aput-byte v8, v1, v2
 
     .line 226
-    array-length v10, v7
+    array-length v2, v1
 
-    if-lt v9, v10, :cond_105
+    if-lt v3, v2, :cond_10a
 
     .line 227
     invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->finishCurrentSegment()[B
 
-    move-result-object v7
+    move-result-object v1
 
-    .line 228
-    const/4 v8, 0x0
+    move v2, v5
 
     .line 230
-    .end local v9    # "outputPtr":I
-    .restart local v8    # "outputPtr":I
-    :goto_de
-    add-int/lit8 v9, v8, 0x1
+    :goto_e0
+    add-int/lit8 v3, v2, 0x1
 
-    .end local v8    # "outputPtr":I
-    .restart local v9    # "outputPtr":I
-    shr-int/lit8 v10, v1, 0xc
+    shr-int/lit8 v8, v4, 0xc
 
-    and-int/lit8 v10, v10, 0x3f
+    and-int/lit8 v8, v8, 0x3f
 
-    or-int/lit16 v10, v10, 0x80
+    or-int/lit16 v8, v8, 0x80
 
-    int-to-byte v10, v10
+    int-to-byte v8, v8
 
-    aput-byte v10, v7, v8
+    aput-byte v8, v1, v2
 
     .line 231
-    array-length v10, v7
+    array-length v2, v1
 
-    if-lt v9, v10, :cond_103
+    if-lt v3, v2, :cond_108
 
     .line 232
     invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->finishCurrentSegment()[B
 
-    move-result-object v7
+    move-result-object v1
 
-    .line 233
-    const/4 v8, 0x0
+    move v2, v5
 
     .line 235
-    .end local v9    # "outputPtr":I
-    .restart local v8    # "outputPtr":I
-    :goto_f1
-    add-int/lit8 v9, v8, 0x1
+    :goto_f3
+    add-int/lit8 v3, v2, 0x1
 
-    .end local v8    # "outputPtr":I
-    .restart local v9    # "outputPtr":I
-    shr-int/lit8 v10, v1, 0x6
+    shr-int/lit8 v8, v4, 0x6
 
-    and-int/lit8 v10, v10, 0x3f
+    and-int/lit8 v8, v8, 0x3f
 
-    or-int/lit16 v10, v10, 0x80
+    or-int/lit16 v8, v8, 0x80
 
-    int-to-byte v10, v10
+    int-to-byte v8, v8
 
-    aput-byte v10, v7, v8
+    aput-byte v8, v1, v2
 
     .line 236
-    and-int/lit8 v10, v1, 0x3f
+    and-int/lit8 v2, v4, 0x3f
 
-    or-int/lit16 v1, v10, 0x80
+    or-int/lit16 v2, v2, 0x80
 
-    move v8, v9
+    move v4, v6
 
-    .end local v9    # "outputPtr":I
-    .restart local v8    # "outputPtr":I
-    goto/16 :goto_72
+    move-object v10, v1
 
-    .end local v8    # "outputPtr":I
-    .restart local v9    # "outputPtr":I
-    :cond_103
-    move v8, v9
+    move v1, v2
 
-    .end local v9    # "outputPtr":I
-    .restart local v8    # "outputPtr":I
-    goto :goto_f1
+    move-object v2, v10
 
-    .end local v8    # "outputPtr":I
-    .restart local v9    # "outputPtr":I
-    :cond_105
-    move v8, v9
+    goto/16 :goto_71
 
-    .end local v9    # "outputPtr":I
-    .restart local v8    # "outputPtr":I
-    goto :goto_de
+    :cond_108
+    move v2, v3
 
-    .end local v5    # "inputPtr":I
-    .end local v8    # "outputPtr":I
-    .restart local v6    # "inputPtr":I
-    .restart local v9    # "outputPtr":I
-    :cond_107
-    move v8, v9
+    goto :goto_f3
 
-    .end local v9    # "outputPtr":I
-    .restart local v8    # "outputPtr":I
-    goto :goto_9c
+    :cond_10a
+    move v2, v3
+
+    goto :goto_e0
+
+    :cond_10c
+    move v2, v3
+
+    goto :goto_9d
+
+    :cond_10e
+    move v4, v2
+
+    goto/16 :goto_4d
 .end method

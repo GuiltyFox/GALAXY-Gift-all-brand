@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "KeyPool"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/bumptech/glide/load/engine/bitmap_recycle/BaseKeyPool",
@@ -36,7 +27,7 @@
 
 
 # virtual methods
-.method protected create()Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;
+.method protected a()Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;
     .registers 2
 
     .prologue
@@ -48,36 +39,32 @@
     return-object v0
 .end method
 
-.method protected bridge synthetic create()Lcom/bumptech/glide/load/engine/bitmap_recycle/Poolable;
-    .registers 2
-
-    .prologue
-    .line 61
-    invoke-virtual {p0}, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$KeyPool;->create()Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public get(IILandroid/graphics/Bitmap$Config;)Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;
+.method public a(IILandroid/graphics/Bitmap$Config;)Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;
     .registers 5
-    .param p1, "width"    # I
-    .param p2, "height"    # I
-    .param p3, "config"    # Landroid/graphics/Bitmap$Config;
 
     .prologue
     .line 63
-    invoke-virtual {p0}, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$KeyPool;->get()Lcom/bumptech/glide/load/engine/bitmap_recycle/Poolable;
+    invoke-virtual {p0}, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$KeyPool;->c()Lcom/bumptech/glide/load/engine/bitmap_recycle/Poolable;
 
     move-result-object v0
 
     check-cast v0, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;
 
     .line 64
-    .local v0, "result":Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;
-    invoke-virtual {v0, p1, p2, p3}, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->init(IILandroid/graphics/Bitmap$Config;)V
+    invoke-virtual {v0, p1, p2, p3}, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;->a(IILandroid/graphics/Bitmap$Config;)V
 
     .line 65
+    return-object v0
+.end method
+
+.method protected synthetic b()Lcom/bumptech/glide/load/engine/bitmap_recycle/Poolable;
+    .registers 2
+
+    .prologue
+    .line 61
+    invoke-virtual {p0}, Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$KeyPool;->a()Lcom/bumptech/glide/load/engine/bitmap_recycle/AttributeStrategy$Key;
+
+    move-result-object v0
+
     return-object v0
 .end method

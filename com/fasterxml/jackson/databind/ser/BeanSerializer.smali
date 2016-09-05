@@ -6,10 +6,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/ser/BeanSerializerBuilder;[Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;[Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;)V
     .registers 5
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p2, "builder"    # Lcom/fasterxml/jackson/databind/ser/BeanSerializerBuilder;
-    .param p3, "properties"    # [Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
-    .param p4, "filteredProperties"    # [Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
 
     .prologue
     .line 43
@@ -21,7 +17,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/ser/std/BeanSerializerBase;)V
     .registers 2
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/ser/std/BeanSerializerBase;
 
     .prologue
     .line 52
@@ -33,8 +28,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/ser/std/BeanSerializerBase;Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;)V
     .registers 3
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/ser/std/BeanSerializerBase;
-    .param p2, "objectIdWriter"    # Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;
 
     .prologue
     .line 57
@@ -46,9 +39,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/ser/std/BeanSerializerBase;Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;Ljava/lang/Object;)V
     .registers 4
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/ser/std/BeanSerializerBase;
-    .param p2, "objectIdWriter"    # Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;
-    .param p3, "filterId"    # Ljava/lang/Object;
 
     .prologue
     .line 62
@@ -60,8 +50,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/ser/std/BeanSerializerBase;[Ljava/lang/String;)V
     .registers 3
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/ser/std/BeanSerializerBase;
-    .param p2, "toIgnore"    # [Ljava/lang/String;
 
     .prologue
     .line 66
@@ -73,7 +61,6 @@
 
 .method public static createDummy(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/ser/BeanSerializer;
     .registers 4
-    .param p0, "forType"    # Lcom/fasterxml/jackson/databind/JavaType;
 
     .prologue
     const/4 v2, 0x0
@@ -115,22 +102,12 @@
     move-object p0, v0
 
     .line 126
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/ser/BeanSerializer;
     :cond_12
     return-object p0
 .end method
 
 .method public final serialize(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 5
-    .param p1, "bean"    # Ljava/lang/Object;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 144
@@ -208,7 +185,6 @@
 
 .method public unwrappingSerializer(Lcom/fasterxml/jackson/databind/util/NameTransformer;)Lcom/fasterxml/jackson/databind/JsonSerializer;
     .registers 3
-    .param p1, "unwrapper"    # Lcom/fasterxml/jackson/databind/util/NameTransformer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -232,7 +208,6 @@
 
 .method protected withFilterId(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/ser/std/BeanSerializerBase;
     .registers 4
-    .param p1, "filterId"    # Ljava/lang/Object;
 
     .prologue
     .line 96
@@ -247,7 +222,6 @@
 
 .method protected withIgnorals([Ljava/lang/String;)Lcom/fasterxml/jackson/databind/ser/std/BeanSerializerBase;
     .registers 3
-    .param p1, "toIgnore"    # [Ljava/lang/String;
 
     .prologue
     .line 101
@@ -260,7 +234,6 @@
 
 .method public withObjectIdWriter(Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;)Lcom/fasterxml/jackson/databind/ser/std/BeanSerializerBase;
     .registers 4
-    .param p1, "objectIdWriter"    # Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;
 
     .prologue
     .line 91

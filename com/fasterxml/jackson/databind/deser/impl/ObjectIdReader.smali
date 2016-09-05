@@ -43,9 +43,6 @@
 # direct methods
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/PropertyName;Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;Lcom/fasterxml/jackson/databind/JsonDeserializer;Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;)V
     .registers 13
-    .param p1, "t"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p2, "propName"    # Lcom/fasterxml/jackson/databind/PropertyName;
-    .param p5, "idProp"    # Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -65,8 +62,6 @@
 
     .prologue
     .line 66
-    .local p3, "gen":Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;, "Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;"
-    .local p4, "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     new-instance v6, Lcom/fasterxml/jackson/annotation/SimpleObjectIdResolver;
 
     invoke-direct {v6}, Lcom/fasterxml/jackson/annotation/SimpleObjectIdResolver;-><init>()V
@@ -91,10 +86,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/PropertyName;Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;Lcom/fasterxml/jackson/databind/JsonDeserializer;Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;Lcom/fasterxml/jackson/annotation/ObjectIdResolver;)V
     .registers 7
-    .param p1, "t"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p2, "propName"    # Lcom/fasterxml/jackson/databind/PropertyName;
-    .param p5, "idProp"    # Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-    .param p6, "resolver"    # Lcom/fasterxml/jackson/annotation/ObjectIdResolver;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -112,8 +103,6 @@
 
     .prologue
     .line 53
-    .local p3, "gen":Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;, "Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;"
-    .local p4, "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 54
@@ -140,9 +129,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/String;Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;Lcom/fasterxml/jackson/databind/JsonDeserializer;Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;)V
     .registers 12
-    .param p1, "t"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p2, "propName"    # Ljava/lang/String;
-    .param p5, "idProp"    # Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -162,8 +148,6 @@
 
     .prologue
     .line 73
-    .local p3, "gen":Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;, "Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;"
-    .local p4, "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     new-instance v2, Lcom/fasterxml/jackson/databind/PropertyName;
 
     invoke-direct {v2, p2}, Lcom/fasterxml/jackson/databind/PropertyName;-><init>(Ljava/lang/String;)V
@@ -186,9 +170,6 @@
 
 .method public static construct(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/PropertyName;Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;Lcom/fasterxml/jackson/databind/JsonDeserializer;Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;)Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;
     .registers 11
-    .param p0, "idType"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p1, "propName"    # Lcom/fasterxml/jackson/databind/PropertyName;
-    .param p4, "idProp"    # Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -209,8 +190,6 @@
 
     .prologue
     .line 93
-    .local p2, "generator":Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;, "Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;"
-    .local p3, "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     new-instance v5, Lcom/fasterxml/jackson/annotation/SimpleObjectIdResolver;
 
     invoke-direct {v5}, Lcom/fasterxml/jackson/annotation/SimpleObjectIdResolver;-><init>()V
@@ -234,10 +213,6 @@
 
 .method public static construct(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/PropertyName;Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;Lcom/fasterxml/jackson/databind/JsonDeserializer;Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;Lcom/fasterxml/jackson/annotation/ObjectIdResolver;)Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;
     .registers 13
-    .param p0, "idType"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p1, "propName"    # Lcom/fasterxml/jackson/databind/PropertyName;
-    .param p4, "idProp"    # Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-    .param p5, "resolver"    # Lcom/fasterxml/jackson/annotation/ObjectIdResolver;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -256,8 +231,6 @@
 
     .prologue
     .line 85
-    .local p2, "generator":Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;, "Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;"
-    .local p3, "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     new-instance v0, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;
 
     move-object v1, p0
@@ -279,9 +252,6 @@
 
 .method public static construct(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/String;Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;Lcom/fasterxml/jackson/databind/JsonDeserializer;Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;)Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;
     .registers 6
-    .param p0, "idType"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p1, "propName"    # Ljava/lang/String;
-    .param p4, "idProp"    # Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -302,8 +272,6 @@
 
     .prologue
     .line 101
-    .local p2, "generator":Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;, "Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;"
-    .local p3, "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     new-instance v0, Lcom/fasterxml/jackson/databind/PropertyName;
 
     invoke-direct {v0, p1}, Lcom/fasterxml/jackson/databind/PropertyName;-><init>(Ljava/lang/String;)V
@@ -348,14 +316,6 @@
 
 .method public readObjectReference(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .registers 4
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 127

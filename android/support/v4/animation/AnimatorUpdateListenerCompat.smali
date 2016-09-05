@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract onAnimationUpdate(Landroid/support/v4/animation/ValueAnimatorCompat;)V
+.method public abstract a(Landroid/support/v4/animation/ValueAnimatorCompat;)V
 .end method

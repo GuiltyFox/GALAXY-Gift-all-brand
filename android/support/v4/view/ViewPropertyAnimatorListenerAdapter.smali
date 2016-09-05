@@ -21,7 +21,6 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/view/View;)V
     .registers 2
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 48
@@ -30,7 +29,6 @@
 
 .method public onAnimationEnd(Landroid/view/View;)V
     .registers 2
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 41
@@ -39,7 +37,6 @@
 
 .method public onAnimationStart(Landroid/view/View;)V
     .registers 2
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 34

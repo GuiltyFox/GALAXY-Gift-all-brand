@@ -36,9 +36,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/core/io/IOContext;ILcom/fasterxml/jackson/core/ObjectCodec;)V
     .registers 5
-    .param p1, "ctxt"    # Lcom/fasterxml/jackson/core/io/IOContext;
-    .param p2, "features"    # I
-    .param p3, "codec"    # Lcom/fasterxml/jackson/core/ObjectCodec;
 
     .prologue
     .line 95
@@ -100,7 +97,6 @@
 
 .method public setCharacterEscapes(Lcom/fasterxml/jackson/core/io/CharacterEscapes;)Lcom/fasterxml/jackson/core/JsonGenerator;
     .registers 3
-    .param p1, "esc"    # Lcom/fasterxml/jackson/core/io/CharacterEscapes;
 
     .prologue
     .line 122
@@ -131,7 +127,6 @@
 
 .method public setHighestNonEscapedChar(I)Lcom/fasterxml/jackson/core/JsonGenerator;
     .registers 2
-    .param p1, "charCode"    # I
 
     .prologue
     .line 110
@@ -139,7 +134,6 @@
 
     const/4 p1, 0x0
 
-    .end local p1    # "charCode":I
     :cond_3
     iput p1, p0, Lcom/fasterxml/jackson/core/json/JsonGeneratorImpl;->_maximumNonEscapedChar:I
 
@@ -149,7 +143,6 @@
 
 .method public setRootValueSeparator(Lcom/fasterxml/jackson/core/SerializableString;)Lcom/fasterxml/jackson/core/JsonGenerator;
     .registers 2
-    .param p1, "sep"    # Lcom/fasterxml/jackson/core/SerializableString;
 
     .prologue
     .line 142
@@ -177,14 +170,6 @@
 
 .method public final writeStringField(Ljava/lang/String;Ljava/lang/String;)V
     .registers 3
-    .param p1, "fieldName"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 169

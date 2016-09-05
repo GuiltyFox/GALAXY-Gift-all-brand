@@ -4,9 +4,9 @@
 
 
 # static fields
-.field private static TAG:Ljava/lang/String;
+.field private static a:Ljava/lang/String;
 
-.field private static client:Lcom/loopj/android/http/AsyncHttpClient;
+.field private static b:Lcom/loopj/android/http/AsyncHttpClient;
 
 
 # direct methods
@@ -21,14 +21,14 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/bzbs/lib/survey/util/http/BuzzbeesRestClient;->TAG:Ljava/lang/String;
+    sput-object v0, Lcom/bzbs/lib/survey/util/http/BuzzbeesRestClient;->a:Ljava/lang/String;
 
     .line 16
     new-instance v0, Lcom/loopj/android/http/AsyncHttpClient;
 
     invoke-direct {v0}, Lcom/loopj/android/http/AsyncHttpClient;-><init>()V
 
-    sput-object v0, Lcom/bzbs/lib/survey/util/http/BuzzbeesRestClient;->client:Lcom/loopj/android/http/AsyncHttpClient;
+    sput-object v0, Lcom/bzbs/lib/survey/util/http/BuzzbeesRestClient;->b:Lcom/loopj/android/http/AsyncHttpClient;
 
     return-void
 .end method
@@ -43,129 +43,17 @@
     return-void
 .end method
 
-.method public static cancelRequests(Landroid/content/Context;Z)V
-    .registers 3
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "mayInterruptIfRunning"    # Z
-
-    .prologue
-    .line 95
-    sget-object v0, Lcom/bzbs/lib/survey/util/http/BuzzbeesRestClient;->client:Lcom/loopj/android/http/AsyncHttpClient;
-
-    invoke-virtual {v0, p0, p1}, Lcom/loopj/android/http/AsyncHttpClient;->cancelRequests(Landroid/content/Context;Z)V
-
-    .line 96
-    return-void
-.end method
-
-.method public static delete(Ljava/lang/String;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
-    .registers 5
-    .param p0, "url"    # Ljava/lang/String;
-    .param p1, "responseHandler"    # Lcom/loopj/android/http/AsyncHttpResponseHandler;
-
-    .prologue
-    .line 80
-    move-object v0, p0
-
-    .line 82
-    .local v0, "url_encode":Ljava/lang/String;
-    const-string/jumbo v1, " "
-
-    const-string/jumbo v2, "%20"
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 83
-    const-string/jumbo v1, "\""
-
-    const-string/jumbo v2, "%22"
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 84
-    const-string/jumbo v1, "#"
-
-    const-string/jumbo v2, "%23"
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 85
-    const-string/jumbo v1, "{"
-
-    const-string/jumbo v2, "%7B"
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 86
-    const-string/jumbo v1, "}"
-
-    const-string/jumbo v2, "%7D"
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 87
-    const-string/jumbo v1, "<"
-
-    const-string/jumbo v2, "%3C"
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 88
-    const-string/jumbo v1, ">"
-
-    const-string/jumbo v2, "%3E"
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 89
-    const-string/jumbo v1, "|"
-
-    const-string/jumbo v2, "%7C"
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 91
-    sget-object v1, Lcom/bzbs/lib/survey/util/http/BuzzbeesRestClient;->client:Lcom/loopj/android/http/AsyncHttpClient;
-
-    invoke-virtual {v1, v0, p1}, Lcom/loopj/android/http/AsyncHttpClient;->delete(Ljava/lang/String;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
-
-    .line 92
-    return-void
-.end method
-
-.method public static get(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
+.method public static a(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
     .registers 6
-    .param p0, "url"    # Ljava/lang/String;
-    .param p1, "params"    # Lcom/loopj/android/http/RequestParams;
-    .param p2, "responseHandler"    # Lcom/loopj/android/http/AsyncHttpResponseHandler;
 
     .prologue
     .line 21
-    move-object v0, p0
-
     .line 23
-    .local v0, "url_encode":Ljava/lang/String;
-    const-string/jumbo v1, " "
+    const-string/jumbo v0, " "
 
-    const-string/jumbo v2, "%20"
+    const-string/jumbo v1, "%20"
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -233,7 +121,7 @@
     move-result-object v0
 
     .line 32
-    sget-object v1, Lcom/bzbs/lib/survey/util/http/BuzzbeesRestClient;->client:Lcom/loopj/android/http/AsyncHttpClient;
+    sget-object v1, Lcom/bzbs/lib/survey/util/http/BuzzbeesRestClient;->b:Lcom/loopj/android/http/AsyncHttpClient;
 
     invoke-virtual {v1, v0, p1, p2}, Lcom/loopj/android/http/AsyncHttpClient;->get(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
 
@@ -241,114 +129,17 @@
     return-void
 .end method
 
-.method public static get_cache(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/AsyncHttpResponseHandler;Ljava/lang/String;)V
-    .registers 7
-    .param p0, "url"    # Ljava/lang/String;
-    .param p1, "params"    # Lcom/loopj/android/http/RequestParams;
-    .param p2, "responseHandler"    # Lcom/loopj/android/http/AsyncHttpResponseHandler;
-    .param p3, "cache_name"    # Ljava/lang/String;
-
-    .prologue
-    .line 37
-    move-object v0, p0
-
-    .line 39
-    .local v0, "url_encode":Ljava/lang/String;
-    const-string/jumbo v1, " "
-
-    const-string/jumbo v2, "%20"
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 40
-    const-string/jumbo v1, "\""
-
-    const-string/jumbo v2, "%22"
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 41
-    const-string/jumbo v1, "#"
-
-    const-string/jumbo v2, "%23"
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 42
-    const-string/jumbo v1, "{"
-
-    const-string/jumbo v2, "%7B"
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 43
-    const-string/jumbo v1, "}"
-
-    const-string/jumbo v2, "%7D"
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 44
-    const-string/jumbo v1, "<"
-
-    const-string/jumbo v2, "%3C"
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 45
-    const-string/jumbo v1, ">"
-
-    const-string/jumbo v2, "%3E"
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 46
-    const-string/jumbo v1, "|"
-
-    const-string/jumbo v2, "%7C"
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 57
-    invoke-static {v0, p1, p2}, Lcom/bzbs/lib/survey/util/http/BuzzbeesRestClient;->get(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
-
-    .line 58
-    return-void
-.end method
-
-.method public static post(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
+.method public static b(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/AsyncHttpResponseHandler;)V
     .registers 6
-    .param p0, "url"    # Ljava/lang/String;
-    .param p1, "params"    # Lcom/loopj/android/http/RequestParams;
-    .param p2, "responseHandler"    # Lcom/loopj/android/http/AsyncHttpResponseHandler;
 
     .prologue
     .line 63
-    move-object v0, p0
-
     .line 65
-    .local v0, "url_encode":Ljava/lang/String;
-    const-string/jumbo v1, " "
+    const-string/jumbo v0, " "
 
-    const-string/jumbo v2, "%20"
+    const-string/jumbo v1, "%20"
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -416,7 +207,7 @@
     move-result-object v0
 
     .line 75
-    sget-object v1, Lcom/bzbs/lib/survey/util/http/BuzzbeesRestClient;->client:Lcom/loopj/android/http/AsyncHttpClient;
+    sget-object v1, Lcom/bzbs/lib/survey/util/http/BuzzbeesRestClient;->b:Lcom/loopj/android/http/AsyncHttpClient;
 
     invoke-virtual {v1, v0, p1, p2}, Lcom/loopj/android/http/AsyncHttpClient;->post(Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
 

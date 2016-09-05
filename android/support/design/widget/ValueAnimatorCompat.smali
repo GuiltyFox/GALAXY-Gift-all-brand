@@ -3,18 +3,6 @@
 .source "ValueAnimatorCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/design/widget/ValueAnimatorCompat$Impl;,
-        Landroid/support/design/widget/ValueAnimatorCompat$Creator;,
-        Landroid/support/design/widget/ValueAnimatorCompat$AnimatorListenerAdapter;,
-        Landroid/support/design/widget/ValueAnimatorCompat$AnimatorListener;,
-        Landroid/support/design/widget/ValueAnimatorCompat$AnimatorUpdateListener;
-    }
-.end annotation
-
-
 # instance fields
 .field private final mImpl:Landroid/support/design/widget/ValueAnimatorCompat$Impl;
 
@@ -22,7 +10,6 @@
 # direct methods
 .method constructor <init>(Landroid/support/design/widget/ValueAnimatorCompat$Impl;)V
     .registers 2
-    .param p1, "impl"    # Landroid/support/design/widget/ValueAnimatorCompat$Impl;
 
     .prologue
     .line 112
@@ -135,7 +122,6 @@
 
 .method public setDuration(I)V
     .registers 3
-    .param p1, "duration"    # I
 
     .prologue
     .line 181
@@ -149,8 +135,6 @@
 
 .method public setFloatValues(FF)V
     .registers 4
-    .param p1, "from"    # F
-    .param p2, "to"    # F
 
     .prologue
     .line 173
@@ -164,8 +148,6 @@
 
 .method public setIntValues(II)V
     .registers 4
-    .param p1, "from"    # I
-    .param p2, "to"    # I
 
     .prologue
     .line 165
@@ -179,7 +161,6 @@
 
 .method public setInterpolator(Landroid/view/animation/Interpolator;)V
     .registers 3
-    .param p1, "interpolator"    # Landroid/view/animation/Interpolator;
 
     .prologue
     .line 125
@@ -193,7 +174,6 @@
 
 .method public setListener(Landroid/support/design/widget/ValueAnimatorCompat$AnimatorListener;)V
     .registers 4
-    .param p1, "listener"    # Landroid/support/design/widget/ValueAnimatorCompat$AnimatorListener;
 
     .prologue
     .line 142
@@ -225,7 +205,6 @@
 
 .method public setUpdateListener(Landroid/support/design/widget/ValueAnimatorCompat$AnimatorUpdateListener;)V
     .registers 4
-    .param p1, "updateListener"    # Landroid/support/design/widget/ValueAnimatorCompat$AnimatorUpdateListener;
 
     .prologue
     .line 129

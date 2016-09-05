@@ -11,14 +11,9 @@
     value = Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$1:Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;
+.field final synthetic a:Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;
 
 
 # direct methods
@@ -26,8 +21,8 @@
     .registers 2
 
     .prologue
-    .line 1995
-    iput-object p1, p0, Landroid/support/v4/widget/DrawerLayout$ViewDragCallback$1;->this$1:Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;
+    .line 2000
+    iput-object p1, p0, Landroid/support/v4/widget/DrawerLayout$ViewDragCallback$1;->a:Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,12 +35,11 @@
     .registers 2
 
     .prologue
-    .line 1997
-    iget-object v0, p0, Landroid/support/v4/widget/DrawerLayout$ViewDragCallback$1;->this$1:Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;
+    .line 2002
+    iget-object v0, p0, Landroid/support/v4/widget/DrawerLayout$ViewDragCallback$1;->a:Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;
 
-    # invokes: Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;->peekDrawer()V
-    invoke-static {v0}, Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;->access$300(Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;)V
+    invoke-static {v0}, Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;->a(Landroid/support/v4/widget/DrawerLayout$ViewDragCallback;)V
 
-    .line 1998
+    .line 2003
     return-void
 .end method

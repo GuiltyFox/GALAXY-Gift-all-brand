@@ -9,5 +9,5 @@
 
 
 # virtual methods
-.method public abstract getMaxForRoute(Lcz/msebera/android/httpclient/conn/routing/HttpRoute;)I
+.method public abstract a(Lcz/msebera/android/httpclient/conn/routing/HttpRoute;)I
 .end method

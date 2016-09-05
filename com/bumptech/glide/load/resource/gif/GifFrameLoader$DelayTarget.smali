@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/resource/gif/GifFrameLoader;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "DelayTarget"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/bumptech/glide/request/target/SimpleTarget",
@@ -24,65 +15,60 @@
 
 
 # instance fields
-.field private final handler:Landroid/os/Handler;
+.field private final a:Landroid/os/Handler;
 
-.field private final index:I
+.field private final b:I
 
-.field private resource:Landroid/graphics/Bitmap;
+.field private final c:J
 
-.field private final targetTime:J
+.field private d:Landroid/graphics/Bitmap;
 
 
 # direct methods
 .method public constructor <init>(Landroid/os/Handler;IJ)V
     .registers 6
-    .param p1, "handler"    # Landroid/os/Handler;
-    .param p2, "index"    # I
-    .param p3, "targetTime"    # J
 
     .prologue
     .line 152
     invoke-direct {p0}, Lcom/bumptech/glide/request/target/SimpleTarget;-><init>()V
 
     .line 153
-    iput-object p1, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;->handler:Landroid/os/Handler;
+    iput-object p1, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;->a:Landroid/os/Handler;
 
     .line 154
-    iput p2, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;->index:I
+    iput p2, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;->b:I
 
     .line 155
-    iput-wide p3, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;->targetTime:J
+    iput-wide p3, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;->c:J
 
     .line 156
     return-void
 .end method
 
-.method static synthetic access$100(Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;)I
+.method static synthetic a(Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;)I
     .registers 2
-    .param p0, "x0"    # Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;
 
     .prologue
     .line 146
-    iget v0, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;->index:I
+    iget v0, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;->b:I
 
     return v0
 .end method
 
 
 # virtual methods
-.method public getResource()Landroid/graphics/Bitmap;
+.method public a()Landroid/graphics/Bitmap;
     .registers 2
 
     .prologue
     .line 159
-    iget-object v0, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;->resource:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;->d:Landroid/graphics/Bitmap;
 
     return-object v0
 .end method
 
-.method public onResourceReady(Landroid/graphics/Bitmap;Lcom/bumptech/glide/request/animation/GlideAnimation;)V
+.method public a(Landroid/graphics/Bitmap;Lcom/bumptech/glide/request/animation/GlideAnimation;)V
     .registers 7
-    .param p1, "resource"    # Landroid/graphics/Bitmap;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -96,23 +82,21 @@
 
     .prologue
     .line 164
-    .local p2, "glideAnimation":Lcom/bumptech/glide/request/animation/GlideAnimation;, "Lcom/bumptech/glide/request/animation/GlideAnimation<-Landroid/graphics/Bitmap;>;"
-    iput-object p1, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;->resource:Landroid/graphics/Bitmap;
+    iput-object p1, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;->d:Landroid/graphics/Bitmap;
 
     .line 165
-    iget-object v1, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;->handler:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;->a:Landroid/os/Handler;
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    invoke-virtual {v1, v2, p0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+    invoke-virtual {v0, v1, p0}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v0
 
     .line 166
-    .local v0, "msg":Landroid/os/Message;
-    iget-object v1, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;->handler:Landroid/os/Handler;
+    iget-object v1, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;->a:Landroid/os/Handler;
 
-    iget-wide v2, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;->targetTime:J
+    iget-wide v2, p0, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;->c:J
 
     invoke-virtual {v1, v0, v2, v3}, Landroid/os/Handler;->sendMessageAtTime(Landroid/os/Message;J)Z
 
@@ -120,17 +104,14 @@
     return-void
 .end method
 
-.method public bridge synthetic onResourceReady(Ljava/lang/Object;Lcom/bumptech/glide/request/animation/GlideAnimation;)V
+.method public bridge synthetic a(Ljava/lang/Object;Lcom/bumptech/glide/request/animation/GlideAnimation;)V
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Lcom/bumptech/glide/request/animation/GlideAnimation;
 
     .prologue
     .line 146
     check-cast p1, Landroid/graphics/Bitmap;
 
-    .end local p1    # "x0":Ljava/lang/Object;
-    invoke-virtual {p0, p1, p2}, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;->onResourceReady(Landroid/graphics/Bitmap;Lcom/bumptech/glide/request/animation/GlideAnimation;)V
+    invoke-virtual {p0, p1, p2}, Lcom/bumptech/glide/load/resource/gif/GifFrameLoader$DelayTarget;->a(Landroid/graphics/Bitmap;Lcom/bumptech/glide/request/animation/GlideAnimation;)V
 
     return-void
 .end method

@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4019
-    name = "PendingAction"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum",
@@ -24,13 +15,13 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
+.field public static final enum a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
-.field public static final enum NONE:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
+.field public static final enum b:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
-.field public static final enum POST_PHOTO:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
+.field public static final enum c:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
-.field public static final enum POST_STATUS_UPDATE:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
+.field private static final synthetic d:[Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
 
 # direct methods
@@ -51,7 +42,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->NONE:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
+    sput-object v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
     .line 576
     new-instance v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
@@ -60,7 +51,7 @@
 
     invoke-direct {v0, v1, v3}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->POST_PHOTO:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
+    sput-object v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->b:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
     .line 577
     new-instance v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
@@ -69,26 +60,26 @@
 
     invoke-direct {v0, v1, v4}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->POST_STATUS_UPDATE:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
+    sput-object v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->c:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
     .line 574
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
-    sget-object v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->NONE:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
+    sget-object v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->POST_PHOTO:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
+    sget-object v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->b:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->POST_STATUS_UPDATE:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
+    sget-object v1, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->c:Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
     aput-object v1, v0, v4
 
-    sput-object v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->$VALUES:[Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
+    sput-object v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->d:[Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
     return-void
 .end method
@@ -110,7 +101,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 574
@@ -130,7 +120,7 @@
 
     .prologue
     .line 574
-    sget-object v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->$VALUES:[Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
+    sget-object v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->d:[Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;
 
     invoke-virtual {v0}, [Lcom/bzbs/marketplace/base/BaseAppCompatActivity$PendingAction;->clone()Ljava/lang/Object;
 

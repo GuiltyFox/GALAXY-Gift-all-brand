@@ -9,44 +9,32 @@
 
 
 # virtual methods
-.method public abstract copy()Lcz/msebera/android/httpclient/params/HttpParams;
+.method public abstract a(Ljava/lang/String;I)I
 .end method
 
-.method public abstract getBooleanParameter(Ljava/lang/String;Z)Z
+.method public abstract a(Ljava/lang/String;J)J
 .end method
 
-.method public abstract getDoubleParameter(Ljava/lang/String;D)D
+.method public abstract a(Ljava/lang/String;Ljava/lang/Object;)Lcz/msebera/android/httpclient/params/HttpParams;
 .end method
 
-.method public abstract getIntParameter(Ljava/lang/String;I)I
+.method public abstract a(Ljava/lang/String;)Ljava/lang/Object;
 .end method
 
-.method public abstract getLongParameter(Ljava/lang/String;J)J
+.method public abstract a(Ljava/lang/String;Z)Z
 .end method
 
-.method public abstract getParameter(Ljava/lang/String;)Ljava/lang/Object;
+.method public abstract b(Ljava/lang/String;I)Lcz/msebera/android/httpclient/params/HttpParams;
 .end method
 
-.method public abstract isParameterFalse(Ljava/lang/String;)Z
+.method public abstract b(Ljava/lang/String;J)Lcz/msebera/android/httpclient/params/HttpParams;
 .end method
 
-.method public abstract isParameterTrue(Ljava/lang/String;)Z
+.method public abstract b(Ljava/lang/String;Z)Lcz/msebera/android/httpclient/params/HttpParams;
 .end method
 
-.method public abstract removeParameter(Ljava/lang/String;)Z
+.method public abstract b(Ljava/lang/String;)Z
 .end method
 
-.method public abstract setBooleanParameter(Ljava/lang/String;Z)Lcz/msebera/android/httpclient/params/HttpParams;
-.end method
-
-.method public abstract setDoubleParameter(Ljava/lang/String;D)Lcz/msebera/android/httpclient/params/HttpParams;
-.end method
-
-.method public abstract setIntParameter(Ljava/lang/String;I)Lcz/msebera/android/httpclient/params/HttpParams;
-.end method
-
-.method public abstract setLongParameter(Ljava/lang/String;J)Lcz/msebera/android/httpclient/params/HttpParams;
-.end method
-
-.method public abstract setParameter(Ljava/lang/String;Ljava/lang/Object;)Lcz/msebera/android/httpclient/params/HttpParams;
+.method public abstract c(Ljava/lang/String;)Z
 .end method

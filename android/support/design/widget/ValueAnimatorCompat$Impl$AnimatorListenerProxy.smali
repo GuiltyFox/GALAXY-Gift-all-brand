@@ -3,17 +3,6 @@
 .source "ValueAnimatorCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/ValueAnimatorCompat$Impl;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x608
-    name = "AnimatorListenerProxy"
-.end annotation
-
-
 # virtual methods
 .method public abstract onAnimationCancel()V
 .end method

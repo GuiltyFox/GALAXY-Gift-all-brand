@@ -6,21 +6,12 @@
 .implements Lcz/msebera/android/httpclient/HttpEntity;
 
 
-# annotations
-.annotation build Lcz/msebera/android/httpclient/annotation/NotThreadSafe;
-.end annotation
-
-
-# static fields
-.field protected static final OUTPUT_BUFFER_SIZE:I = 0x1000
-
-
 # instance fields
-.field protected chunked:Z
+.field protected a:Lcz/msebera/android/httpclient/Header;
 
-.field protected contentEncoding:Lcz/msebera/android/httpclient/Header;
+.field protected b:Lcz/msebera/android/httpclient/Header;
 
-.field protected contentType:Lcz/msebera/android/httpclient/Header;
+.field protected c:Z
 
 
 # direct methods
@@ -37,14 +28,66 @@
 
 
 # virtual methods
+.method public a(Lcz/msebera/android/httpclient/Header;)V
+    .registers 2
+
+    .prologue
+    .line 113
+    iput-object p1, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->a:Lcz/msebera/android/httpclient/Header;
+
+    .line 114
+    return-void
+.end method
+
+.method public a(Ljava/lang/String;)V
+    .registers 4
+
+    .prologue
+    .line 125
+    const/4 v0, 0x0
+
+    .line 126
+    if-eqz p1, :cond_b
+
+    .line 127
+    new-instance v0, Lcz/msebera/android/httpclient/message/BasicHeader;
+
+    const-string/jumbo v1, "Content-Type"
+
+    invoke-direct {v0, v1, p1}, Lcz/msebera/android/httpclient/message/BasicHeader;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 129
+    :cond_b
+    invoke-virtual {p0, v0}, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->a(Lcz/msebera/android/httpclient/Header;)V
+
+    .line 130
+    return-void
+.end method
+
+.method public a(Z)V
+    .registers 2
+
+    .prologue
+    .line 177
+    iput-boolean p1, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->c:Z
+
+    .line 178
+    return-void
+.end method
+
+.method public b(Lcz/msebera/android/httpclient/Header;)V
+    .registers 2
+
+    .prologue
+    .line 142
+    iput-object p1, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->b:Lcz/msebera/android/httpclient/Header;
+
+    .line 143
+    return-void
+.end method
+
 .method public consumeContent()V
     .registers 1
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -58,7 +101,7 @@
 
     .prologue
     .line 89
-    iget-object v0, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->contentEncoding:Lcz/msebera/android/httpclient/Header;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->b:Lcz/msebera/android/httpclient/Header;
 
     return-object v0
 .end method
@@ -68,7 +111,7 @@
 
     .prologue
     .line 77
-    iget-object v0, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->contentType:Lcz/msebera/android/httpclient/Header;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->a:Lcz/msebera/android/httpclient/Header;
 
     return-object v0
 .end method
@@ -78,103 +121,9 @@
 
     .prologue
     .line 100
-    iget-boolean v0, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->chunked:Z
+    iget-boolean v0, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->c:Z
 
     return v0
-.end method
-
-.method public setChunked(Z)V
-    .registers 2
-    .param p1, "b"    # Z
-
-    .prologue
-    .line 177
-    iput-boolean p1, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->chunked:Z
-
-    .line 178
-    return-void
-.end method
-
-.method public setContentEncoding(Lcz/msebera/android/httpclient/Header;)V
-    .registers 2
-    .param p1, "contentEncoding"    # Lcz/msebera/android/httpclient/Header;
-
-    .prologue
-    .line 142
-    iput-object p1, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->contentEncoding:Lcz/msebera/android/httpclient/Header;
-
-    .line 143
-    return-void
-.end method
-
-.method public setContentEncoding(Ljava/lang/String;)V
-    .registers 4
-    .param p1, "ceString"    # Ljava/lang/String;
-
-    .prologue
-    .line 154
-    const/4 v0, 0x0
-
-    .line 155
-    .local v0, "h":Lcz/msebera/android/httpclient/Header;
-    if-eqz p1, :cond_b
-
-    .line 156
-    new-instance v0, Lcz/msebera/android/httpclient/message/BasicHeader;
-
-    .end local v0    # "h":Lcz/msebera/android/httpclient/Header;
-    const-string/jumbo v1, "Content-Encoding"
-
-    invoke-direct {v0, v1, p1}, Lcz/msebera/android/httpclient/message/BasicHeader;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 158
-    .restart local v0    # "h":Lcz/msebera/android/httpclient/Header;
-    :cond_b
-    invoke-virtual {p0, v0}, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->setContentEncoding(Lcz/msebera/android/httpclient/Header;)V
-
-    .line 159
-    return-void
-.end method
-
-.method public setContentType(Lcz/msebera/android/httpclient/Header;)V
-    .registers 2
-    .param p1, "contentType"    # Lcz/msebera/android/httpclient/Header;
-
-    .prologue
-    .line 113
-    iput-object p1, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->contentType:Lcz/msebera/android/httpclient/Header;
-
-    .line 114
-    return-void
-.end method
-
-.method public setContentType(Ljava/lang/String;)V
-    .registers 4
-    .param p1, "ctString"    # Ljava/lang/String;
-
-    .prologue
-    .line 125
-    const/4 v0, 0x0
-
-    .line 126
-    .local v0, "h":Lcz/msebera/android/httpclient/Header;
-    if-eqz p1, :cond_b
-
-    .line 127
-    new-instance v0, Lcz/msebera/android/httpclient/message/BasicHeader;
-
-    .end local v0    # "h":Lcz/msebera/android/httpclient/Header;
-    const-string/jumbo v1, "Content-Type"
-
-    invoke-direct {v0, v1, p1}, Lcz/msebera/android/httpclient/message/BasicHeader;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 129
-    .restart local v0    # "h":Lcz/msebera/android/httpclient/Header;
-    :cond_b
-    invoke-virtual {p0, v0}, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->setContentType(Lcz/msebera/android/httpclient/Header;)V
-
-    .line 130
-    return-void
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -184,106 +133,104 @@
     const/16 v6, 0x2c
 
     .line 193
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 194
-    .local v2, "sb":Ljava/lang/StringBuilder;
-    const/16 v3, 0x5b
+    const/16 v1, 0x5b
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 195
-    iget-object v3, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->contentType:Lcz/msebera/android/httpclient/Header;
+    iget-object v1, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->a:Lcz/msebera/android/httpclient/Header;
 
-    if-eqz v3, :cond_22
+    if-eqz v1, :cond_22
 
     .line 196
-    const-string/jumbo v3, "Content-Type: "
+    const-string/jumbo v1, "Content-Type: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 197
-    iget-object v3, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->contentType:Lcz/msebera/android/httpclient/Header;
+    iget-object v1, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->a:Lcz/msebera/android/httpclient/Header;
 
-    invoke-interface {v3}, Lcz/msebera/android/httpclient/Header;->getValue()Ljava/lang/String;
+    invoke-interface {v1}, Lcz/msebera/android/httpclient/Header;->d()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 198
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 200
     :cond_22
-    iget-object v3, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->contentEncoding:Lcz/msebera/android/httpclient/Header;
+    iget-object v1, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->b:Lcz/msebera/android/httpclient/Header;
 
-    if-eqz v3, :cond_38
+    if-eqz v1, :cond_38
 
     .line 201
-    const-string/jumbo v3, "Content-Encoding: "
+    const-string/jumbo v1, "Content-Encoding: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 202
-    iget-object v3, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->contentEncoding:Lcz/msebera/android/httpclient/Header;
+    iget-object v1, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->b:Lcz/msebera/android/httpclient/Header;
 
-    invoke-interface {v3}, Lcz/msebera/android/httpclient/Header;->getValue()Ljava/lang/String;
+    invoke-interface {v1}, Lcz/msebera/android/httpclient/Header;->d()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 203
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 205
     :cond_38
     invoke-virtual {p0}, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->getContentLength()J
 
-    move-result-wide v0
+    move-result-wide v2
 
     .line 206
-    .local v0, "len":J
     const-wide/16 v4, 0x0
 
-    cmp-long v3, v0, v4
+    cmp-long v1, v2, v4
 
-    if-ltz v3, :cond_4e
+    if-ltz v1, :cond_4e
 
     .line 207
-    const-string/jumbo v3, "Content-Length: "
+    const-string/jumbo v1, "Content-Length: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 208
-    invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     .line 209
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 211
     :cond_4e
-    const-string/jumbo v3, "Chunked: "
+    const-string/jumbo v1, "Chunked: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 212
-    iget-boolean v3, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->chunked:Z
+    iget-boolean v1, p0, Lcz/msebera/android/httpclient/entity/AbstractHttpEntity;->c:Z
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     .line 213
-    const/16 v3, 0x5d
+    const/16 v1, 0x5d
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 214
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    return-object v3
+    return-object v0
 .end method

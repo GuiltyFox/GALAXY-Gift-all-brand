@@ -3,15 +3,6 @@
 .source "SnackbarManager.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/design/widget/SnackbarManager$SnackbarRecord;,
-        Landroid/support/design/widget/SnackbarManager$Callback;
-    }
-.end annotation
-
-
 # static fields
 .field private static final LONG_DURATION_MS:I = 0xabe
 
@@ -68,8 +59,6 @@
 
 .method static synthetic access$000(Landroid/support/design/widget/SnackbarManager;Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)V
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/SnackbarManager;
-    .param p1, "x1"    # Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
     .prologue
     .line 28
@@ -80,24 +69,21 @@
 
 .method private cancelSnackbarLocked(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;I)Z
     .registers 5
-    .param p1, "record"    # Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
-    .param p2, "event"    # I
 
     .prologue
     .line 198
     # getter for: Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->callback:Ljava/lang/ref/WeakReference;
     invoke-static {p1}, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->access$200(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)Ljava/lang/ref/WeakReference;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/design/widget/SnackbarManager$Callback;
 
     .line 199
-    .local v0, "callback":Landroid/support/design/widget/SnackbarManager$Callback;
     if-eqz v0, :cond_16
 
     .line 201
@@ -109,14 +95,14 @@
     invoke-interface {v0, p2}, Landroid/support/design/widget/SnackbarManager$Callback;->dismiss(I)V
 
     .line 203
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     .line 205
     :goto_15
-    return v1
+    return v0
 
     :cond_16
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_15
 .end method
@@ -146,7 +132,6 @@
 
 .method private handleTimeout(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)V
     .registers 4
-    .param p1, "record"    # Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
     .prologue
     .line 233
@@ -190,7 +175,6 @@
 
 .method private isCurrentSnackbarLocked(Landroid/support/design/widget/SnackbarManager$Callback;)Z
     .registers 3
-    .param p1, "callback"    # Landroid/support/design/widget/SnackbarManager$Callback;
 
     .prologue
     .line 209
@@ -219,7 +203,6 @@
 
 .method private isNextSnackbarLocked(Landroid/support/design/widget/SnackbarManager$Callback;)Z
     .registers 3
-    .param p1, "callback"    # Landroid/support/design/widget/SnackbarManager$Callback;
 
     .prologue
     .line 213
@@ -248,18 +231,17 @@
 
 .method private scheduleTimeoutLocked(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)V
     .registers 8
-    .param p1, "r"    # Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
     .prologue
     .line 217
     # getter for: Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->duration:I
     invoke-static {p1}, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->access$100(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)I
 
-    move-result v1
+    move-result v0
 
-    const/4 v2, -0x2
+    const/4 v1, -0x2
 
-    if-ne v1, v2, :cond_8
+    if-ne v0, v1, :cond_8
 
     .line 230
     :goto_7
@@ -270,7 +252,6 @@
     const/16 v0, 0xabe
 
     .line 223
-    .local v0, "durationMs":I
     # getter for: Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->duration:I
     invoke-static {p1}, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->access$100(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)I
 
@@ -326,55 +307,52 @@
 .end method
 
 .method private showNextSnackbarLocked()V
-    .registers 4
+    .registers 3
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 183
-    iget-object v1, p0, Landroid/support/design/widget/SnackbarManager;->mNextSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
+    iget-object v0, p0, Landroid/support/design/widget/SnackbarManager;->mNextSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
-    if-eqz v1, :cond_1c
+    if-eqz v0, :cond_1c
 
     .line 184
-    iget-object v1, p0, Landroid/support/design/widget/SnackbarManager;->mNextSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
+    iget-object v0, p0, Landroid/support/design/widget/SnackbarManager;->mNextSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
-    iput-object v1, p0, Landroid/support/design/widget/SnackbarManager;->mCurrentSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
+    iput-object v0, p0, Landroid/support/design/widget/SnackbarManager;->mCurrentSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
     .line 185
-    iput-object v2, p0, Landroid/support/design/widget/SnackbarManager;->mNextSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
+    iput-object v1, p0, Landroid/support/design/widget/SnackbarManager;->mNextSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
     .line 187
-    iget-object v1, p0, Landroid/support/design/widget/SnackbarManager;->mCurrentSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
+    iget-object v0, p0, Landroid/support/design/widget/SnackbarManager;->mCurrentSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
     # getter for: Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->callback:Ljava/lang/ref/WeakReference;
-    invoke-static {v1}, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->access$200(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)Ljava/lang/ref/WeakReference;
+    invoke-static {v0}, Landroid/support/design/widget/SnackbarManager$SnackbarRecord;->access$200(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)Ljava/lang/ref/WeakReference;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/design/widget/SnackbarManager$Callback;
 
     .line 188
-    .local v0, "callback":Landroid/support/design/widget/SnackbarManager$Callback;
     if-eqz v0, :cond_1d
 
     .line 189
     invoke-interface {v0}, Landroid/support/design/widget/SnackbarManager$Callback;->show()V
 
     .line 195
-    .end local v0    # "callback":Landroid/support/design/widget/SnackbarManager$Callback;
     :cond_1c
     :goto_1c
     return-void
 
     .line 192
-    .restart local v0    # "callback":Landroid/support/design/widget/SnackbarManager$Callback;
     :cond_1d
-    iput-object v2, p0, Landroid/support/design/widget/SnackbarManager;->mCurrentSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
+    iput-object v1, p0, Landroid/support/design/widget/SnackbarManager;->mCurrentSnackbar:Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
     goto :goto_1c
 .end method
@@ -383,7 +361,6 @@
 # virtual methods
 .method public cancelTimeout(Landroid/support/design/widget/SnackbarManager$Callback;)V
     .registers 5
-    .param p1, "callback"    # Landroid/support/design/widget/SnackbarManager$Callback;
 
     .prologue
     .line 141
@@ -426,8 +403,6 @@
 
 .method public dismiss(Landroid/support/design/widget/SnackbarManager$Callback;I)V
     .registers 5
-    .param p1, "callback"    # Landroid/support/design/widget/SnackbarManager$Callback;
-    .param p2, "event"    # I
 
     .prologue
     .line 103
@@ -484,7 +459,6 @@
 
 .method public isCurrent(Landroid/support/design/widget/SnackbarManager$Callback;)Z
     .registers 4
-    .param p1, "callback"    # Landroid/support/design/widget/SnackbarManager$Callback;
 
     .prologue
     .line 157
@@ -515,7 +489,6 @@
 
 .method public isCurrentOrNext(Landroid/support/design/widget/SnackbarManager$Callback;)Z
     .registers 4
-    .param p1, "callback"    # Landroid/support/design/widget/SnackbarManager$Callback;
 
     .prologue
     .line 163
@@ -563,7 +536,6 @@
 
 .method public onDismissed(Landroid/support/design/widget/SnackbarManager$Callback;)V
     .registers 4
-    .param p1, "callback"    # Landroid/support/design/widget/SnackbarManager$Callback;
 
     .prologue
     .line 117
@@ -612,7 +584,6 @@
 
 .method public onShown(Landroid/support/design/widget/SnackbarManager$Callback;)V
     .registers 4
-    .param p1, "callback"    # Landroid/support/design/widget/SnackbarManager$Callback;
 
     .prologue
     .line 133
@@ -653,7 +624,6 @@
 
 .method public restoreTimeout(Landroid/support/design/widget/SnackbarManager$Callback;)V
     .registers 4
-    .param p1, "callback"    # Landroid/support/design/widget/SnackbarManager$Callback;
 
     .prologue
     .line 149
@@ -694,8 +664,6 @@
 
 .method public show(ILandroid/support/design/widget/SnackbarManager$Callback;)V
     .registers 6
-    .param p1, "duration"    # I
-    .param p2, "callback"    # Landroid/support/design/widget/SnackbarManager$Callback;
 
     .prologue
     .line 71

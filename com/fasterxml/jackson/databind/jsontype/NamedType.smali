@@ -38,7 +38,6 @@
 
     .prologue
     .line 16
-    .local p1, "c":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v0, 0x0
 
     invoke-direct {p0, p1, v0}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
@@ -48,7 +47,6 @@
 
 .method public constructor <init>(Ljava/lang/Class;Ljava/lang/String;)V
     .registers 4
-    .param p2, "name"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -61,7 +59,6 @@
 
     .prologue
     .line 18
-    .local p1, "c":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 19
@@ -89,7 +86,6 @@
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
     .registers 6
-    .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
     const/4 v0, 0x1
@@ -100,13 +96,11 @@
     if-ne p1, p0, :cond_5
 
     .line 38
-    .end local p1    # "o":Ljava/lang/Object;
     :cond_4
     :goto_4
     return v0
 
     .line 36
-    .restart local p1    # "o":Ljava/lang/Object;
     :cond_5
     if-nez p1, :cond_9
 
@@ -136,7 +130,6 @@
 
     check-cast p1, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
 
-    .end local p1    # "o":Ljava/lang/Object;
     iget-object v3, p1, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->_class:Ljava/lang/Class;
 
     if-eq v2, v3, :cond_4
@@ -205,7 +198,6 @@
 
 .method public setName(Ljava/lang/String;)V
     .registers 3
-    .param p1, "name"    # Ljava/lang/String;
 
     .prologue
     .line 26
@@ -220,7 +212,6 @@
     :cond_8
     const/4 p1, 0x0
 
-    .end local p1    # "name":Ljava/lang/String;
     :cond_9
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->_name:Ljava/lang/String;
 

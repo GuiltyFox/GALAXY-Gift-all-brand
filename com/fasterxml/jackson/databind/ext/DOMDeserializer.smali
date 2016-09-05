@@ -4,13 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/ext/DOMDeserializer$DocumentDeserializer;,
-        Lcom/fasterxml/jackson/databind/ext/DOMDeserializer$NodeDeserializer;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -63,8 +56,6 @@
 
     .prologue
     .line 30
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ext/DOMDeserializer;, "Lcom/fasterxml/jackson/databind/ext/DOMDeserializer<TT;>;"
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/databind/deser/std/FromStringDeserializer;-><init>(Ljava/lang/Class;)V
 
     return-void
@@ -85,45 +76,37 @@
 
 .method protected final parse(Ljava/lang/String;)Lorg/w3c/dom/Document;
     .registers 6
-    .param p1, "value"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/IllegalArgumentException;
-        }
-    .end annotation
 
     .prologue
     .line 37
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ext/DOMDeserializer;, "Lcom/fasterxml/jackson/databind/ext/DOMDeserializer<TT;>;"
     :try_start_0
-    sget-object v1, Lcom/fasterxml/jackson/databind/ext/DOMDeserializer;->_parserFactory:Ljavax/xml/parsers/DocumentBuilderFactory;
+    sget-object v0, Lcom/fasterxml/jackson/databind/ext/DOMDeserializer;->_parserFactory:Ljavax/xml/parsers/DocumentBuilderFactory;
 
-    invoke-virtual {v1}, Ljavax/xml/parsers/DocumentBuilderFactory;->newDocumentBuilder()Ljavax/xml/parsers/DocumentBuilder;
+    invoke-virtual {v0}, Ljavax/xml/parsers/DocumentBuilderFactory;->newDocumentBuilder()Ljavax/xml/parsers/DocumentBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    new-instance v2, Lorg/xml/sax/InputSource;
+    new-instance v1, Lorg/xml/sax/InputSource;
 
-    new-instance v3, Ljava/io/StringReader;
+    new-instance v2, Ljava/io/StringReader;
 
-    invoke-direct {v3, p1}, Ljava/io/StringReader;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, p1}, Ljava/io/StringReader;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v2, v3}, Lorg/xml/sax/InputSource;-><init>(Ljava/io/Reader;)V
+    invoke-direct {v1, v2}, Lorg/xml/sax/InputSource;-><init>(Ljava/io/Reader;)V
 
-    invoke-virtual {v1, v2}, Ljavax/xml/parsers/DocumentBuilder;->parse(Lorg/xml/sax/InputSource;)Lorg/w3c/dom/Document;
+    invoke-virtual {v0, v1}, Ljavax/xml/parsers/DocumentBuilder;->parse(Lorg/xml/sax/InputSource;)Lorg/w3c/dom/Document;
     :try_end_13
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_13} :catch_15
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     .line 38
     :catch_15
     move-exception v0
 
     .line 39
-    .local v0, "e":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;

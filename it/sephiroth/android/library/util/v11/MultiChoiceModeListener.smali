@@ -13,5 +13,5 @@
 
 
 # virtual methods
-.method public abstract onItemCheckedStateChanged(Landroid/view/ActionMode;IJZ)V
+.method public abstract a(Landroid/view/ActionMode;IJZ)V
 .end method

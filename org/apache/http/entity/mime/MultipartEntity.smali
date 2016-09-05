@@ -12,13 +12,13 @@
 
 
 # static fields
-.field private static final MULTIPART_CHARS:[C
+.field private static final a:[C
 
 
 # instance fields
-.field private final builder:Lorg/apache/http/entity/mime/MultipartEntityBuilder;
+.field private final b:Lorg/apache/http/entity/mime/MultipartEntityBuilder;
 
-.field private volatile entity:Lorg/apache/http/entity/mime/MultipartFormEntity;
+.field private volatile c:Lorg/apache/http/entity/mime/MultipartFormEntity;
 
 
 # direct methods
@@ -33,7 +33,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lorg/apache/http/entity/mime/MultipartEntity;->MULTIPART_CHARS:[C
+    sput-object v0, Lorg/apache/http/entity/mime/MultipartEntity;->a:[C
 
     return-void
 .end method
@@ -45,7 +45,7 @@
     const/4 v1, 0x0
 
     .line 91
-    sget-object v0, Lorg/apache/http/entity/mime/HttpMultipartMode;->STRICT:Lorg/apache/http/entity/mime/HttpMultipartMode;
+    sget-object v0, Lorg/apache/http/entity/mime/HttpMultipartMode;->a:Lorg/apache/http/entity/mime/HttpMultipartMode;
 
     invoke-direct {p0, v0, v1, v1}, Lorg/apache/http/entity/mime/MultipartEntity;-><init>(Lorg/apache/http/entity/mime/HttpMultipartMode;Ljava/lang/String;Ljava/nio/charset/Charset;)V
 
@@ -53,25 +53,8 @@
     return-void
 .end method
 
-.method public constructor <init>(Lorg/apache/http/entity/mime/HttpMultipartMode;)V
-    .registers 3
-    .param p1, "mode"    # Lorg/apache/http/entity/mime/HttpMultipartMode;
-
-    .prologue
-    const/4 v0, 0x0
-
-    .line 84
-    invoke-direct {p0, p1, v0, v0}, Lorg/apache/http/entity/mime/MultipartEntity;-><init>(Lorg/apache/http/entity/mime/HttpMultipartMode;Ljava/lang/String;Ljava/nio/charset/Charset;)V
-
-    .line 85
-    return-void
-.end method
-
 .method public constructor <init>(Lorg/apache/http/entity/mime/HttpMultipartMode;Ljava/lang/String;Ljava/nio/charset/Charset;)V
     .registers 5
-    .param p1, "mode"    # Lorg/apache/http/entity/mime/HttpMultipartMode;
-    .param p2, "boundary"    # Ljava/lang/String;
-    .param p3, "charset"    # Ljava/nio/charset/Charset;
 
     .prologue
     .line 70
@@ -82,60 +65,58 @@
 
     invoke-direct {v0}, Lorg/apache/http/entity/mime/MultipartEntityBuilder;-><init>()V
 
-    invoke-virtual {v0, p1}, Lorg/apache/http/entity/mime/MultipartEntityBuilder;->setMode(Lorg/apache/http/entity/mime/HttpMultipartMode;)Lorg/apache/http/entity/mime/MultipartEntityBuilder;
+    invoke-virtual {v0, p1}, Lorg/apache/http/entity/mime/MultipartEntityBuilder;->a(Lorg/apache/http/entity/mime/HttpMultipartMode;)Lorg/apache/http/entity/mime/MultipartEntityBuilder;
 
     move-result-object v0
 
-    invoke-virtual {v0, p3}, Lorg/apache/http/entity/mime/MultipartEntityBuilder;->setCharset(Ljava/nio/charset/Charset;)Lorg/apache/http/entity/mime/MultipartEntityBuilder;
+    invoke-virtual {v0, p3}, Lorg/apache/http/entity/mime/MultipartEntityBuilder;->a(Ljava/nio/charset/Charset;)Lorg/apache/http/entity/mime/MultipartEntityBuilder;
 
     move-result-object v0
 
-    invoke-virtual {v0, p2}, Lorg/apache/http/entity/mime/MultipartEntityBuilder;->setBoundary(Ljava/lang/String;)Lorg/apache/http/entity/mime/MultipartEntityBuilder;
+    invoke-virtual {v0, p2}, Lorg/apache/http/entity/mime/MultipartEntityBuilder;->a(Ljava/lang/String;)Lorg/apache/http/entity/mime/MultipartEntityBuilder;
 
     move-result-object v0
 
-    iput-object v0, p0, Lorg/apache/http/entity/mime/MultipartEntity;->builder:Lorg/apache/http/entity/mime/MultipartEntityBuilder;
+    iput-object v0, p0, Lorg/apache/http/entity/mime/MultipartEntity;->b:Lorg/apache/http/entity/mime/MultipartEntityBuilder;
 
     .line 75
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lorg/apache/http/entity/mime/MultipartEntity;->entity:Lorg/apache/http/entity/mime/MultipartFormEntity;
+    iput-object v0, p0, Lorg/apache/http/entity/mime/MultipartEntity;->c:Lorg/apache/http/entity/mime/MultipartFormEntity;
 
     .line 76
     return-void
 .end method
 
-.method private getEntity()Lorg/apache/http/entity/mime/MultipartFormEntity;
+.method private a()Lorg/apache/http/entity/mime/MultipartFormEntity;
     .registers 2
 
     .prologue
     .line 118
-    iget-object v0, p0, Lorg/apache/http/entity/mime/MultipartEntity;->entity:Lorg/apache/http/entity/mime/MultipartFormEntity;
+    iget-object v0, p0, Lorg/apache/http/entity/mime/MultipartEntity;->c:Lorg/apache/http/entity/mime/MultipartFormEntity;
 
     if-nez v0, :cond_c
 
     .line 119
-    iget-object v0, p0, Lorg/apache/http/entity/mime/MultipartEntity;->builder:Lorg/apache/http/entity/mime/MultipartEntityBuilder;
+    iget-object v0, p0, Lorg/apache/http/entity/mime/MultipartEntity;->b:Lorg/apache/http/entity/mime/MultipartEntityBuilder;
 
-    invoke-virtual {v0}, Lorg/apache/http/entity/mime/MultipartEntityBuilder;->buildEntity()Lorg/apache/http/entity/mime/MultipartFormEntity;
+    invoke-virtual {v0}, Lorg/apache/http/entity/mime/MultipartEntityBuilder;->a()Lorg/apache/http/entity/mime/MultipartFormEntity;
 
     move-result-object v0
 
-    iput-object v0, p0, Lorg/apache/http/entity/mime/MultipartEntity;->entity:Lorg/apache/http/entity/mime/MultipartFormEntity;
+    iput-object v0, p0, Lorg/apache/http/entity/mime/MultipartEntity;->c:Lorg/apache/http/entity/mime/MultipartFormEntity;
 
     .line 121
     :cond_c
-    iget-object v0, p0, Lorg/apache/http/entity/mime/MultipartEntity;->entity:Lorg/apache/http/entity/mime/MultipartFormEntity;
+    iget-object v0, p0, Lorg/apache/http/entity/mime/MultipartEntity;->c:Lorg/apache/http/entity/mime/MultipartFormEntity;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public addPart(Ljava/lang/String;Lorg/apache/http/entity/mime/content/ContentBody;)V
+.method public a(Ljava/lang/String;Lorg/apache/http/entity/mime/content/ContentBody;)V
     .registers 4
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "contentBody"    # Lorg/apache/http/entity/mime/content/ContentBody;
 
     .prologue
     .line 130
@@ -143,26 +124,25 @@
 
     invoke-direct {v0, p1, p2}, Lorg/apache/http/entity/mime/FormBodyPart;-><init>(Ljava/lang/String;Lorg/apache/http/entity/mime/content/ContentBody;)V
 
-    invoke-virtual {p0, v0}, Lorg/apache/http/entity/mime/MultipartEntity;->addPart(Lorg/apache/http/entity/mime/FormBodyPart;)V
+    invoke-virtual {p0, v0}, Lorg/apache/http/entity/mime/MultipartEntity;->a(Lorg/apache/http/entity/mime/FormBodyPart;)V
 
     .line 131
     return-void
 .end method
 
-.method public addPart(Lorg/apache/http/entity/mime/FormBodyPart;)V
+.method public a(Lorg/apache/http/entity/mime/FormBodyPart;)V
     .registers 3
-    .param p1, "bodyPart"    # Lorg/apache/http/entity/mime/FormBodyPart;
 
     .prologue
     .line 125
-    iget-object v0, p0, Lorg/apache/http/entity/mime/MultipartEntity;->builder:Lorg/apache/http/entity/mime/MultipartEntityBuilder;
+    iget-object v0, p0, Lorg/apache/http/entity/mime/MultipartEntity;->b:Lorg/apache/http/entity/mime/MultipartEntityBuilder;
 
-    invoke-virtual {v0, p1}, Lorg/apache/http/entity/mime/MultipartEntityBuilder;->addPart(Lorg/apache/http/entity/mime/FormBodyPart;)Lorg/apache/http/entity/mime/MultipartEntityBuilder;
+    invoke-virtual {v0, p1}, Lorg/apache/http/entity/mime/MultipartEntityBuilder;->a(Lorg/apache/http/entity/mime/FormBodyPart;)Lorg/apache/http/entity/mime/MultipartEntityBuilder;
 
     .line 126
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lorg/apache/http/entity/mime/MultipartEntity;->entity:Lorg/apache/http/entity/mime/MultipartFormEntity;
+    iput-object v0, p0, Lorg/apache/http/entity/mime/MultipartEntity;->c:Lorg/apache/http/entity/mime/MultipartFormEntity;
 
     .line 127
     return-void
@@ -170,12 +150,6 @@
 
 .method public consumeContent()V
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Ljava/lang/UnsupportedOperationException;
-        }
-    .end annotation
 
     .prologue
     .line 159
@@ -199,120 +173,8 @@
     return-void
 .end method
 
-.method protected generateBoundary()Ljava/lang/String;
-    .registers 7
-
-    .prologue
-    .line 108
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 109
-    .local v0, "buffer":Ljava/lang/StringBuilder;
-    new-instance v3, Ljava/util/Random;
-
-    invoke-direct {v3}, Ljava/util/Random;-><init>()V
-
-    .line 110
-    .local v3, "rand":Ljava/util/Random;
-    const/16 v4, 0xb
-
-    invoke-virtual {v3, v4}, Ljava/util/Random;->nextInt(I)I
-
-    move-result v4
-
-    add-int/lit8 v1, v4, 0x1e
-
-    .line 111
-    .local v1, "count":I
-    const/4 v2, 0x0
-
-    .local v2, "i":I
-    :goto_13
-    if-ge v2, v1, :cond_26
-
-    .line 112
-    sget-object v4, Lorg/apache/http/entity/mime/MultipartEntity;->MULTIPART_CHARS:[C
-
-    sget-object v5, Lorg/apache/http/entity/mime/MultipartEntity;->MULTIPART_CHARS:[C
-
-    array-length v5, v5
-
-    invoke-virtual {v3, v5}, Ljava/util/Random;->nextInt(I)I
-
-    move-result v5
-
-    aget-char v4, v4, v5
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 111
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_13
-
-    .line 114
-    :cond_26
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    return-object v4
-.end method
-
-.method protected generateContentType(Ljava/lang/String;Ljava/nio/charset/Charset;)Ljava/lang/String;
-    .registers 5
-    .param p1, "boundary"    # Ljava/lang/String;
-    .param p2, "charset"    # Ljava/nio/charset/Charset;
-
-    .prologue
-    .line 97
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 98
-    .local v0, "buffer":Ljava/lang/StringBuilder;
-    const-string/jumbo v1, "multipart/form-data; boundary="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 99
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 100
-    if-eqz p2, :cond_1d
-
-    .line 101
-    const-string/jumbo v1, "; charset="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 102
-    invoke-virtual {p2}, Ljava/nio/charset/Charset;->name()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 104
-    :cond_1d
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    return-object v1
-.end method
-
 .method public getContent()Ljava/io/InputStream;
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Ljava/lang/UnsupportedOperationException;
-        }
-    .end annotation
 
     .prologue
     .line 166
@@ -330,7 +192,7 @@
 
     .prologue
     .line 154
-    invoke-direct {p0}, Lorg/apache/http/entity/mime/MultipartEntity;->getEntity()Lorg/apache/http/entity/mime/MultipartFormEntity;
+    invoke-direct {p0}, Lorg/apache/http/entity/mime/MultipartEntity;->a()Lorg/apache/http/entity/mime/MultipartFormEntity;
 
     move-result-object v0
 
@@ -346,7 +208,7 @@
 
     .prologue
     .line 146
-    invoke-direct {p0}, Lorg/apache/http/entity/mime/MultipartEntity;->getEntity()Lorg/apache/http/entity/mime/MultipartFormEntity;
+    invoke-direct {p0}, Lorg/apache/http/entity/mime/MultipartEntity;->a()Lorg/apache/http/entity/mime/MultipartFormEntity;
 
     move-result-object v0
 
@@ -362,7 +224,7 @@
 
     .prologue
     .line 150
-    invoke-direct {p0}, Lorg/apache/http/entity/mime/MultipartEntity;->getEntity()Lorg/apache/http/entity/mime/MultipartFormEntity;
+    invoke-direct {p0}, Lorg/apache/http/entity/mime/MultipartEntity;->a()Lorg/apache/http/entity/mime/MultipartFormEntity;
 
     move-result-object v0
 
@@ -378,7 +240,7 @@
 
     .prologue
     .line 138
-    invoke-direct {p0}, Lorg/apache/http/entity/mime/MultipartEntity;->getEntity()Lorg/apache/http/entity/mime/MultipartFormEntity;
+    invoke-direct {p0}, Lorg/apache/http/entity/mime/MultipartEntity;->a()Lorg/apache/http/entity/mime/MultipartFormEntity;
 
     move-result-object v0
 
@@ -394,7 +256,7 @@
 
     .prologue
     .line 134
-    invoke-direct {p0}, Lorg/apache/http/entity/mime/MultipartEntity;->getEntity()Lorg/apache/http/entity/mime/MultipartFormEntity;
+    invoke-direct {p0}, Lorg/apache/http/entity/mime/MultipartEntity;->a()Lorg/apache/http/entity/mime/MultipartFormEntity;
 
     move-result-object v0
 
@@ -410,7 +272,7 @@
 
     .prologue
     .line 142
-    invoke-direct {p0}, Lorg/apache/http/entity/mime/MultipartEntity;->getEntity()Lorg/apache/http/entity/mime/MultipartFormEntity;
+    invoke-direct {p0}, Lorg/apache/http/entity/mime/MultipartEntity;->a()Lorg/apache/http/entity/mime/MultipartFormEntity;
 
     move-result-object v0
 
@@ -423,16 +285,10 @@
 
 .method public writeTo(Ljava/io/OutputStream;)V
     .registers 3
-    .param p1, "outstream"    # Ljava/io/OutputStream;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 171
-    invoke-direct {p0}, Lorg/apache/http/entity/mime/MultipartEntity;->getEntity()Lorg/apache/http/entity/mime/MultipartFormEntity;
+    invoke-direct {p0}, Lorg/apache/http/entity/mime/MultipartEntity;->a()Lorg/apache/http/entity/mime/MultipartFormEntity;
 
     move-result-object v0
 

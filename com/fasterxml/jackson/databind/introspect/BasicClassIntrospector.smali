@@ -28,14 +28,13 @@
     const/4 v2, 0x0
 
     .line 26
-    const-class v1, Ljava/lang/String;
+    const-class v0, Ljava/lang/String;
 
-    invoke-static {v1, v2, v2}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->constructWithoutSuperTypes(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
+    invoke-static {v0, v2, v2}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->constructWithoutSuperTypes(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
     move-result-object v0
 
     .line 27
-    .local v0, "ac":Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
     const-class v1, Ljava/lang/String;
 
     invoke-static {v1}, Lcom/fasterxml/jackson/databind/type/SimpleType;->constructUnsafe(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/type/SimpleType;
@@ -44,14 +43,14 @@
 
     invoke-static {v2, v1, v0}, Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;->forOtherUse(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
-    move-result-object v1
+    move-result-object v0
 
-    sput-object v1, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->STRING_DESC:Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
+    sput-object v0, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->STRING_DESC:Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
     .line 31
-    sget-object v1, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
-    invoke-static {v1, v2, v2}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->constructWithoutSuperTypes(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
+    invoke-static {v0, v2, v2}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->constructWithoutSuperTypes(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
     move-result-object v0
 
@@ -64,14 +63,14 @@
 
     invoke-static {v2, v1, v0}, Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;->forOtherUse(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
-    move-result-object v1
+    move-result-object v0
 
-    sput-object v1, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->BOOLEAN_DESC:Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
+    sput-object v0, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->BOOLEAN_DESC:Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
     .line 36
-    sget-object v1, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    invoke-static {v1, v2, v2}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->constructWithoutSuperTypes(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
+    invoke-static {v0, v2, v2}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->constructWithoutSuperTypes(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
     move-result-object v0
 
@@ -84,14 +83,14 @@
 
     invoke-static {v2, v1, v0}, Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;->forOtherUse(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
-    move-result-object v1
+    move-result-object v0
 
-    sput-object v1, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->INT_DESC:Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
+    sput-object v0, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->INT_DESC:Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
     .line 41
-    sget-object v1, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
-    invoke-static {v1, v2, v2}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->constructWithoutSuperTypes(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
+    invoke-static {v0, v2, v2}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->constructWithoutSuperTypes(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
     move-result-object v0
 
@@ -104,16 +103,16 @@
 
     invoke-static {v2, v1, v0}, Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;->forOtherUse(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
-    move-result-object v1
+    move-result-object v0
 
-    sput-object v1, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->LONG_DESC:Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
+    sput-object v0, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->LONG_DESC:Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
     .line 51
-    new-instance v1, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;
+    new-instance v0, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;
 
-    invoke-direct {v1}, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;-><init>()V
+    invoke-direct {v0}, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;-><init>()V
 
-    sput-object v1, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->instance:Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;
+    sput-object v0, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->instance:Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;
 
     return-void
 .end method
@@ -132,7 +131,6 @@
 # virtual methods
 .method protected _findCachedDesc(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
     .registers 4
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
 
     .prologue
     .line 172
@@ -141,17 +139,16 @@
     move-result-object v0
 
     .line 173
-    .local v0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const-class v1, Ljava/lang/String;
 
     if-ne v0, v1, :cond_b
 
     .line 174
-    sget-object v1, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->STRING_DESC:Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
+    sget-object v0, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->STRING_DESC:Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
     .line 185
     :goto_a
-    return-object v1
+    return-object v0
 
     .line 176
     :cond_b
@@ -160,7 +157,7 @@
     if-ne v0, v1, :cond_12
 
     .line 177
-    sget-object v1, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->BOOLEAN_DESC:Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
+    sget-object v0, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->BOOLEAN_DESC:Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
     goto :goto_a
 
@@ -171,7 +168,7 @@
     if-ne v0, v1, :cond_19
 
     .line 180
-    sget-object v1, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->INT_DESC:Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
+    sget-object v0, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->INT_DESC:Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
     goto :goto_a
 
@@ -182,23 +179,19 @@
     if-ne v0, v1, :cond_20
 
     .line 183
-    sget-object v1, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->LONG_DESC:Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
+    sget-object v0, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->LONG_DESC:Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
     goto :goto_a
 
     .line 185
     :cond_20
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_a
 .end method
 
 .method protected collectProperties(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;ZLjava/lang/String;)Lcom/fasterxml/jackson/databind/introspect/POJOPropertiesCollector;
-    .registers 13
-    .param p2, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "r"    # Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;
-    .param p4, "forSerialization"    # Z
-    .param p5, "mutatorPrefix"    # Ljava/lang/String;
+    .registers 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -215,18 +208,16 @@
 
     .prologue
     .line 139
-    .local p1, "config":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->isAnnotationProcessingEnabled()Z
 
-    move-result v6
+    move-result v0
 
     .line 140
-    .local v6, "useAnnotations":Z
     invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
 
     move-result-object v1
 
-    if-eqz v6, :cond_20
+    if-eqz v0, :cond_20
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getAnnotationIntrospector()Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
@@ -237,7 +228,6 @@
 
     move-result-object v2
 
-    .local v2, "ac":Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
     move-object v0, p0
 
     move-object v1, p1
@@ -260,7 +250,6 @@
     return-object v0
 
     .line 140
-    .end local v2    # "ac":Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
     :cond_20
     const/4 v0, 0x0
 
@@ -268,10 +257,7 @@
 .end method
 
 .method protected collectPropertiesWithBuilder(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;Z)Lcom/fasterxml/jackson/databind/introspect/POJOPropertiesCollector;
-    .registers 14
-    .param p2, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "r"    # Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;
-    .param p4, "forSerialization"    # Z
+    .registers 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -285,48 +271,40 @@
     .end annotation
 
     .prologue
-    .local p1, "config":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     .line 148
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->isAnnotationProcessingEnabled()Z
 
-    move-result v8
+    move-result v0
 
     .line 149
-    .local v8, "useAnnotations":Z
-    if-eqz v8, :cond_28
+    if-eqz v0, :cond_27
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getAnnotationIntrospector()Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
-    move-result-object v6
+    move-result-object v0
 
     .line 150
-    .local v6, "ai":Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
     :goto_b
     invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-static {v1, v6, p3}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->construct(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
+    invoke-static {v2, v0, p3}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->construct(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
     move-result-object v2
 
     .line 151
-    .local v2, "ac":Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-    if-nez v6, :cond_2a
-
-    move-object v7, v0
+    if-nez v0, :cond_29
 
     .line 152
-    .local v7, "builderConfig":Lcom/fasterxml/jackson/databind/annotation/JsonPOJOBuilder$Value;
-    :goto_16
-    if-nez v7, :cond_2f
+    :goto_15
+    if-nez v1, :cond_2e
 
     const-string/jumbo v5, "with"
 
-    .local v5, "mutatorPrefix":Ljava/lang/String;
-    :goto_1b
+    :goto_1a
     move-object v0, p0
 
     move-object v1, p1
@@ -346,40 +324,29 @@
 
     return-object v0
 
-    .end local v2    # "ac":Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-    .end local v5    # "mutatorPrefix":Ljava/lang/String;
-    .end local v6    # "ai":Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
-    .end local v7    # "builderConfig":Lcom/fasterxml/jackson/databind/annotation/JsonPOJOBuilder$Value;
-    :cond_28
-    move-object v6, v0
+    :cond_27
+    move-object v0, v1
 
     .line 149
     goto :goto_b
 
     .line 151
-    .restart local v2    # "ac":Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-    .restart local v6    # "ai":Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
-    :cond_2a
-    invoke-virtual {v6, v2}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findPOJOBuilderConfig(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Lcom/fasterxml/jackson/databind/annotation/JsonPOJOBuilder$Value;
+    :cond_29
+    invoke-virtual {v0, v2}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findPOJOBuilderConfig(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Lcom/fasterxml/jackson/databind/annotation/JsonPOJOBuilder$Value;
 
-    move-result-object v7
+    move-result-object v1
 
-    goto :goto_16
+    goto :goto_15
 
     .line 152
-    .restart local v7    # "builderConfig":Lcom/fasterxml/jackson/databind/annotation/JsonPOJOBuilder$Value;
-    :cond_2f
-    iget-object v5, v7, Lcom/fasterxml/jackson/databind/annotation/JsonPOJOBuilder$Value;->withPrefix:Ljava/lang/String;
+    :cond_2e
+    iget-object v5, v1, Lcom/fasterxml/jackson/databind/annotation/JsonPOJOBuilder$Value;->withPrefix:Ljava/lang/String;
 
-    goto :goto_1b
+    goto :goto_1a
 .end method
 
 .method protected constructPropertyCollector(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;Lcom/fasterxml/jackson/databind/JavaType;ZLjava/lang/String;)Lcom/fasterxml/jackson/databind/introspect/POJOPropertiesCollector;
     .registers 12
-    .param p2, "ac"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-    .param p3, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p4, "forSerialization"    # Z
-    .param p5, "mutatorPrefix"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -396,7 +363,6 @@
 
     .prologue
     .line 163
-    .local p1, "config":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
     new-instance v0, Lcom/fasterxml/jackson/databind/introspect/POJOPropertiesCollector;
 
     move-object v1, p1
@@ -416,9 +382,6 @@
 
 .method public bridge synthetic forClassAnnotations(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/BeanDescription;
     .registers 5
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/cfg/MapperConfig;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "x2"    # Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;
 
     .prologue
     .line 11
@@ -430,9 +393,7 @@
 .end method
 
 .method public forClassAnnotations(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
-    .registers 8
-    .param p2, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "r"    # Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;
+    .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -447,49 +408,42 @@
 
     .prologue
     .line 112
-    .local p1, "cfg":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->isAnnotationProcessingEnabled()Z
 
-    move-result v1
+    move-result v0
 
     .line 113
-    .local v1, "useAnnotations":Z
     invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v1
 
-    if-eqz v1, :cond_17
+    if-eqz v0, :cond_17
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getAnnotationIntrospector()Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
-    move-result-object v2
+    move-result-object v0
 
     :goto_e
-    invoke-static {v3, v2, p3}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->construct(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
+    invoke-static {v1, v0, p3}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->construct(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
     move-result-object v0
 
     .line 115
-    .local v0, "ac":Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
     invoke-static {p1, p2, v0}, Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;->forOtherUse(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
-    move-result-object v2
+    move-result-object v0
 
-    return-object v2
+    return-object v0
 
     .line 113
-    .end local v0    # "ac":Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
     :cond_17
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     goto :goto_e
 .end method
 
 .method public bridge synthetic forCreation(Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/BeanDescription;
     .registers 5
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "x2"    # Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;
 
     .prologue
     .line 11
@@ -501,20 +455,16 @@
 .end method
 
 .method public forCreation(Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
-    .registers 11
-    .param p1, "cfg"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p2, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "r"    # Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;
+    .registers 10
 
     .prologue
     .line 100
     invoke-virtual {p0, p2}, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->_findCachedDesc(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
-    move-result-object v6
+    move-result-object v0
 
     .line 101
-    .local v6, "desc":Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
-    if-nez v6, :cond_16
+    if-nez v0, :cond_16
 
     .line 102
     const/4 v4, 0x0
@@ -535,18 +485,15 @@
 
     invoke-static {v0}, Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;->forDeserialization(Lcom/fasterxml/jackson/databind/introspect/POJOPropertiesCollector;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
-    move-result-object v6
+    move-result-object v0
 
     .line 105
     :cond_16
-    return-object v6
+    return-object v0
 .end method
 
 .method public bridge synthetic forDeserialization(Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/BeanDescription;
     .registers 5
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "x2"    # Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;
 
     .prologue
     .line 11
@@ -558,20 +505,16 @@
 .end method
 
 .method public forDeserialization(Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
-    .registers 11
-    .param p1, "cfg"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p2, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "r"    # Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;
+    .registers 10
 
     .prologue
     .line 79
     invoke-virtual {p0, p2}, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->_findCachedDesc(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
-    move-result-object v6
+    move-result-object v0
 
     .line 80
-    .local v6, "desc":Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
-    if-nez v6, :cond_16
+    if-nez v0, :cond_16
 
     .line 81
     const/4 v4, 0x0
@@ -592,18 +535,15 @@
 
     invoke-static {v0}, Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;->forDeserialization(Lcom/fasterxml/jackson/databind/introspect/POJOPropertiesCollector;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
-    move-result-object v6
+    move-result-object v0
 
     .line 84
     :cond_16
-    return-object v6
+    return-object v0
 .end method
 
 .method public bridge synthetic forDeserializationWithBuilder(Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/BeanDescription;
     .registers 5
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "x2"    # Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;
 
     .prologue
     .line 11
@@ -616,9 +556,6 @@
 
 .method public forDeserializationWithBuilder(Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
     .registers 5
-    .param p1, "cfg"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p2, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "r"    # Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;
 
     .prologue
     .line 92
@@ -637,9 +574,6 @@
 
 .method public bridge synthetic forDirectClassAnnotations(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/BeanDescription;
     .registers 5
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/cfg/MapperConfig;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "x2"    # Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;
 
     .prologue
     .line 11
@@ -651,9 +585,7 @@
 .end method
 
 .method public forDirectClassAnnotations(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
-    .registers 8
-    .param p2, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "r"    # Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;
+    .registers 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -668,53 +600,43 @@
 
     .prologue
     .line 122
-    .local p1, "cfg":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->isAnnotationProcessingEnabled()Z
 
-    move-result v2
+    move-result v1
 
     .line 123
-    .local v2, "useAnnotations":Z
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getAnnotationIntrospector()Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 124
-    .local v1, "ai":Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
     invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v2
 
-    if-eqz v2, :cond_17
+    if-eqz v1, :cond_17
 
-    .end local v1    # "ai":Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
     :goto_e
-    invoke-static {v3, v1, p3}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->constructWithoutSuperTypes(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
+    invoke-static {v2, v0, p3}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->constructWithoutSuperTypes(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
     move-result-object v0
 
     .line 126
-    .local v0, "ac":Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
     invoke-static {p1, p2, v0}, Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;->forOtherUse(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
-    move-result-object v3
+    move-result-object v0
 
-    return-object v3
+    return-object v0
 
     .line 124
-    .end local v0    # "ac":Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-    .restart local v1    # "ai":Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
     :cond_17
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_e
 .end method
 
 .method public bridge synthetic forSerialization(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/BeanDescription;
     .registers 5
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "x2"    # Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;
 
     .prologue
     .line 11
@@ -726,20 +648,16 @@
 .end method
 
 .method public forSerialization(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
-    .registers 11
-    .param p1, "cfg"    # Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .param p2, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "r"    # Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;
+    .registers 10
 
     .prologue
     .line 66
     invoke-virtual {p0, p2}, Lcom/fasterxml/jackson/databind/introspect/BasicClassIntrospector;->_findCachedDesc(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
-    move-result-object v6
+    move-result-object v0
 
     .line 67
-    .local v6, "desc":Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
-    if-nez v6, :cond_16
+    if-nez v0, :cond_16
 
     .line 68
     const/4 v4, 0x1
@@ -760,9 +678,9 @@
 
     invoke-static {v0}, Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;->forSerialization(Lcom/fasterxml/jackson/databind/introspect/POJOPropertiesCollector;)Lcom/fasterxml/jackson/databind/introspect/BasicBeanDescription;
 
-    move-result-object v6
+    move-result-object v0
 
     .line 71
     :cond_16
-    return-object v6
+    return-object v0
 .end method

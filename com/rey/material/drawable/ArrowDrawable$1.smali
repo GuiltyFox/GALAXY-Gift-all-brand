@@ -11,14 +11,9 @@
     value = Lcom/rey/material/drawable/ArrowDrawable;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Lcom/rey/material/drawable/ArrowDrawable;
+.field final synthetic a:Lcom/rey/material/drawable/ArrowDrawable;
 
 
 # direct methods
@@ -27,7 +22,7 @@
 
     .prologue
     .line 204
-    iput-object p1, p0, Lcom/rey/material/drawable/ArrowDrawable$1;->this$0:Lcom/rey/material/drawable/ArrowDrawable;
+    iput-object p1, p0, Lcom/rey/material/drawable/ArrowDrawable$1;->a:Lcom/rey/material/drawable/ArrowDrawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,10 +36,9 @@
 
     .prologue
     .line 208
-    iget-object v0, p0, Lcom/rey/material/drawable/ArrowDrawable$1;->this$0:Lcom/rey/material/drawable/ArrowDrawable;
+    iget-object v0, p0, Lcom/rey/material/drawable/ArrowDrawable$1;->a:Lcom/rey/material/drawable/ArrowDrawable;
 
-    # invokes: Lcom/rey/material/drawable/ArrowDrawable;->update()V
-    invoke-static {v0}, Lcom/rey/material/drawable/ArrowDrawable;->access$000(Lcom/rey/material/drawable/ArrowDrawable;)V
+    invoke-static {v0}, Lcom/rey/material/drawable/ArrowDrawable;->a(Lcom/rey/material/drawable/ArrowDrawable;)V
 
     .line 209
     return-void

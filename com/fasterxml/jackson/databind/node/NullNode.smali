@@ -56,7 +56,6 @@
 
 .method public asText(Ljava/lang/String;)Ljava/lang/String;
     .registers 2
-    .param p1, "defaultValue"    # Ljava/lang/String;
 
     .prologue
     .line 32
@@ -75,7 +74,6 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .registers 3
-    .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
     .line 54
@@ -104,14 +102,6 @@
 
 .method public final serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 3
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p2, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 48

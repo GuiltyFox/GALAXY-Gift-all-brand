@@ -3,17 +3,6 @@
 .source "DefaultDeserializationContext.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/DefaultDeserializationContext;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "Impl"
-.end annotation
-
-
 # static fields
 .field private static final serialVersionUID:J = 0x1L
 
@@ -21,10 +10,6 @@
 # direct methods
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/deser/DefaultDeserializationContext$Impl;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/InjectableValues;)V
     .registers 5
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/deser/DefaultDeserializationContext$Impl;
-    .param p2, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p3, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p4, "values"    # Lcom/fasterxml/jackson/databind/InjectableValues;
 
     .prologue
     .line 263
@@ -36,8 +21,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/deser/DefaultDeserializationContext$Impl;Lcom/fasterxml/jackson/databind/deser/DeserializerFactory;)V
     .registers 3
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/deser/DefaultDeserializationContext$Impl;
-    .param p2, "factory"    # Lcom/fasterxml/jackson/databind/deser/DeserializerFactory;
 
     .prologue
     .line 267
@@ -49,7 +32,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/deser/DeserializerFactory;)V
     .registers 3
-    .param p1, "df"    # Lcom/fasterxml/jackson/databind/deser/DeserializerFactory;
 
     .prologue
     .line 258
@@ -65,9 +47,6 @@
 # virtual methods
 .method public createInstance(Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/InjectableValues;)Lcom/fasterxml/jackson/databind/deser/DefaultDeserializationContext;
     .registers 5
-    .param p1, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p2, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p3, "values"    # Lcom/fasterxml/jackson/databind/InjectableValues;
 
     .prologue
     .line 273
@@ -80,7 +59,6 @@
 
 .method public with(Lcom/fasterxml/jackson/databind/deser/DeserializerFactory;)Lcom/fasterxml/jackson/databind/deser/DefaultDeserializationContext;
     .registers 3
-    .param p1, "factory"    # Lcom/fasterxml/jackson/databind/deser/DeserializerFactory;
 
     .prologue
     .line 278

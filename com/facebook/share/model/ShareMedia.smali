@@ -6,14 +6,6 @@
 .implements Lcom/facebook/share/model/ShareModel;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/facebook/share/model/ShareMedia$Builder;
-    }
-.end annotation
-
-
 # instance fields
 .field private final params:Landroid/os/Bundle;
 
@@ -21,7 +13,6 @@
 # direct methods
 .method constructor <init>(Landroid/os/Parcel;)V
     .registers 3
-    .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
     .line 37
@@ -40,7 +31,6 @@
 
 .method protected constructor <init>(Lcom/facebook/share/model/ShareMedia$Builder;)V
     .registers 4
-    .param p1, "builder"    # Lcom/facebook/share/model/ShareMedia$Builder;
 
     .prologue
     .line 33
@@ -92,8 +82,6 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .registers 4
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
     .prologue
     .line 56

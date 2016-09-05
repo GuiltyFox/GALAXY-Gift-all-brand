@@ -8,11 +8,6 @@
     value = Lcom/fasterxml/jackson/databind/introspect/NopAnnotationIntrospector;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 
 # static fields
 .field private static final serialVersionUID:J = 0x1L

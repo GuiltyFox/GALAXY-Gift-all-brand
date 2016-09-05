@@ -17,7 +17,7 @@
 
 
 # virtual methods
-.method public abstract getResourceFetcher(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
+.method public abstract a(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;II)",

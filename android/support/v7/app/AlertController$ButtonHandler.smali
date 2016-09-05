@@ -3,23 +3,8 @@
 .source "AlertController.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/app/AlertController;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "ButtonHandler"
-.end annotation
-
-
-# static fields
-.field private static final MSG_DISMISS_DIALOG:I = 0x1
-
-
 # instance fields
-.field private mDialog:Ljava/lang/ref/WeakReference;
+.field private a:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference",
@@ -34,7 +19,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/DialogInterface;)V
     .registers 3
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
 
     .prologue
     .line 146
@@ -45,7 +29,7 @@
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object v0, p0, Landroid/support/v7/app/AlertController$ButtonHandler;->mDialog:Ljava/lang/ref/WeakReference;
+    iput-object v0, p0, Landroid/support/v7/app/AlertController$ButtonHandler;->a:Ljava/lang/ref/WeakReference;
 
     .line 148
     return-void
@@ -55,7 +39,6 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .registers 5
-    .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
     .line 152
@@ -74,7 +57,7 @@
 
     check-cast v0, Landroid/content/DialogInterface$OnClickListener;
 
-    iget-object v1, p0, Landroid/support/v7/app/AlertController$ButtonHandler;->mDialog:Ljava/lang/ref/WeakReference;
+    iget-object v1, p0, Landroid/support/v7/app/AlertController$ButtonHandler;->a:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v1}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 

@@ -3,100 +3,94 @@
 .source "MarketPlaceListModel.java"
 
 
-# annotations
-.annotation runtime Lorg/parceler/Parcel;
-    value = .enum Lorg/parceler/Parcel$Serialization;->BEAN:Lorg/parceler/Parcel$Serialization;
-.end annotation
-
-
 # instance fields
-.field AgencyId:I
+.field public AgencyId:I
 
-.field AgencyName:Ljava/lang/String;
+.field public AgencyName:Ljava/lang/String;
 
-.field Caption:Ljava/lang/String;
+.field public Caption:Ljava/lang/String;
 
-.field CategoryId:I
+.field public CategoryId:I
 
-.field CategoryName:Ljava/lang/String;
+.field public CategoryName:Ljava/lang/String;
 
-.field CategorySequence:I
+.field public CategorySequence:I
 
-.field CrossAppCampaignId:Z
+.field public CrossAppCampaignId:Z
 
-.field CurrentDate:I
+.field public CurrentDate:I
 
-.field DayProceed:I
+.field public DayProceed:I
 
-.field DayRemain:I
+.field public DayRemain:I
 
-.field Discount:D
+.field public Discount:D
 
-.field ExpireDate:F
+.field public ExpireDate:F
 
-.field Extra:Ljava/lang/String;
+.field public Extra:Ljava/lang/String;
 
-.field FullImageUrl:Ljava/lang/String;
+.field public FullImageUrl:Ljava/lang/String;
 
-.field HasCrossApp:Z
+.field public HasCrossApp:Z
 
-.field ID:Ljava/lang/String;
+.field public ID:Ljava/lang/String;
 
-.field IsCheckUserCampaignPermission:Z
+.field public IsCheckUserCampaignPermission:Z
 
-.field IsConditionPass:Z
+.field public IsConditionPass:Z
 
-.field IsSponsor:Z
+.field public IsSponsor:Z
 
-.field Like:I
+.field public Like:I
 
-.field MasterCampaignId:Z
+.field public MasterCampaignId:Z
 
-.field ModifyDate:I
+.field public ModifyDate:I
 
-.field Name:Ljava/lang/String;
+.field public Name:Ljava/lang/String;
 
-.field NextRedeemDate:Z
+.field public NextRedeemDate:Z
 
-.field OriginalPrice:D
+.field public OriginalPrice:D
 
-.field OtherPointPerUnit:D
+.field public OtherPointPerUnit:D
 
-.field ParentCategoryId:Z
+.field public ParentCategoryId:Z
 
-.field PointPerUnit:D
+.field public PointPerUnit:D
 
-.field PointType:Ljava/lang/String;
+.field public PointType:Ljava/lang/String;
 
-.field PricePerUnit:D
+.field public PricePerUnit:D
 
-.field Qty:D
+.field public Qty:D
 
-.field RankVote:Ljava/lang/String;
+.field public RankVote:Ljava/lang/String;
 
-.field Rating:Z
+.field public Rating:D
 
-.field RedeemCount:Z
+.field public RedeemCount:Z
 
-.field RedeemMedia:I
+.field public RedeemMedia:I
 
-.field RedeemMostPerPerson:D
+.field public RedeemMostPerPerson:D
 
-.field TracesJson:Z
+.field public TracesJson:Z
 
-.field Type:Ljava/lang/String;
+.field public Type:Ljava/lang/String;
 
-.field UserLevel:Z
+.field public UserLevel:Z
 
-.field UserVisibility:Z
+.field public UserVisibility:Z
 
-.field Vote:I
+.field public Vote:I
 
-.field Website:Ljava/lang/String;
+.field public Website:Ljava/lang/String;
 
-.field footer:Z
+.field public footer:Z
 
-.field header:Z
+.field public header:Z
 
 
 # direct methods
@@ -440,14 +434,14 @@
     return-object v0
 .end method
 
-.method public getRating()Z
-    .registers 2
+.method public getRating()D
+    .registers 3
 
     .prologue
     .line 337
-    iget-boolean v0, p0, Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;->Rating:Z
+    iget-wide v0, p0, Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;->Rating:D
 
-    return v0
+    return-wide v0
 .end method
 
 .method public getRedeemCount()Z
@@ -562,7 +556,6 @@
 
 .method public setAgencyId(I)V
     .registers 2
-    .param p1, "AgencyId"    # I
 
     .prologue
     .line 125
@@ -574,7 +567,6 @@
 
 .method public setAgencyName(Ljava/lang/String;)V
     .registers 2
-    .param p1, "AgencyName"    # Ljava/lang/String;
 
     .prologue
     .line 129
@@ -586,7 +578,6 @@
 
 .method public setCaption(Ljava/lang/String;)V
     .registers 2
-    .param p1, "Caption"    # Ljava/lang/String;
 
     .prologue
     .line 201
@@ -598,7 +589,6 @@
 
 .method public setCategoryId(I)V
     .registers 2
-    .param p1, "CategoryId"    # I
 
     .prologue
     .line 245
@@ -610,7 +600,6 @@
 
 .method public setCategoryName(Ljava/lang/String;)V
     .registers 2
-    .param p1, "CategoryName"    # Ljava/lang/String;
 
     .prologue
     .line 249
@@ -622,7 +611,6 @@
 
 .method public setCategorySequence(I)V
     .registers 2
-    .param p1, "CategorySequence"    # I
 
     .prologue
     .line 253
@@ -634,7 +622,6 @@
 
 .method public setCrossAppCampaignId(Z)V
     .registers 2
-    .param p1, "CrossAppCampaignId"    # Z
 
     .prologue
     .line 237
@@ -646,7 +633,6 @@
 
 .method public setCurrentDate(I)V
     .registers 2
-    .param p1, "CurrentDate"    # I
 
     .prologue
     .line 157
@@ -658,7 +644,6 @@
 
 .method public setDayProceed(I)V
     .registers 2
-    .param p1, "DayProceed"    # I
 
     .prologue
     .line 137
@@ -670,7 +655,6 @@
 
 .method public setDayRemain(I)V
     .registers 2
-    .param p1, "DayRemain"    # I
 
     .prologue
     .line 141
@@ -682,7 +666,6 @@
 
 .method public setDiscount(D)V
     .registers 4
-    .param p1, "Discount"    # D
 
     .prologue
     .line 189
@@ -694,7 +677,6 @@
 
 .method public setExpireDate(F)V
     .registers 2
-    .param p1, "ExpireDate"    # F
 
     .prologue
     .line 217
@@ -706,7 +688,6 @@
 
 .method public setExtra(Ljava/lang/String;)V
     .registers 2
-    .param p1, "Extra"    # Ljava/lang/String;
 
     .prologue
     .line 221
@@ -718,7 +699,6 @@
 
 .method public setFooter(Z)V
     .registers 2
-    .param p1, "footer"    # Z
 
     .prologue
     .line 113
@@ -730,7 +710,6 @@
 
 .method public setFullImageUrl(Ljava/lang/String;)V
     .registers 2
-    .param p1, "FullImageUrl"    # Ljava/lang/String;
 
     .prologue
     .line 213
@@ -742,7 +721,6 @@
 
 .method public setHasCrossApp(Z)V
     .registers 2
-    .param p1, "HasCrossApp"    # Z
 
     .prologue
     .line 241
@@ -754,7 +732,6 @@
 
 .method public setHeader(Z)V
     .registers 2
-    .param p1, "header"    # Z
 
     .prologue
     .line 105
@@ -766,7 +743,6 @@
 
 .method public setID(Ljava/lang/String;)V
     .registers 2
-    .param p1, "ID"    # Ljava/lang/String;
 
     .prologue
     .line 117
@@ -778,7 +754,6 @@
 
 .method public setIsCheckUserCampaignPermission(Z)V
     .registers 2
-    .param p1, "IsCheckUserCampaignPermission"    # Z
 
     .prologue
     .line 229
@@ -790,7 +765,6 @@
 
 .method public setIsConditionPass(Z)V
     .registers 2
-    .param p1, "IsConditionPass"    # Z
 
     .prologue
     .line 133
@@ -802,7 +776,6 @@
 
 .method public setIsSponsor(Z)V
     .registers 2
-    .param p1, "IsSponsor"    # Z
 
     .prologue
     .line 209
@@ -814,7 +787,6 @@
 
 .method public setLike(I)V
     .registers 2
-    .param p1, "Like"    # I
 
     .prologue
     .line 273
@@ -826,7 +798,6 @@
 
 .method public setMasterCampaignId(Z)V
     .registers 2
-    .param p1, "MasterCampaignId"    # Z
 
     .prologue
     .line 261
@@ -838,7 +809,6 @@
 
 .method public setModifyDate(I)V
     .registers 2
-    .param p1, "ModifyDate"    # I
 
     .prologue
     .line 193
@@ -850,7 +820,6 @@
 
 .method public setName(Ljava/lang/String;)V
     .registers 2
-    .param p1, "Name"    # Ljava/lang/String;
 
     .prologue
     .line 121
@@ -862,7 +831,6 @@
 
 .method public setNextRedeemDate(Z)V
     .registers 2
-    .param p1, "NextRedeemDate"    # Z
 
     .prologue
     .line 161
@@ -874,7 +842,6 @@
 
 .method public setOriginalPrice(D)V
     .registers 4
-    .param p1, "OriginalPrice"    # D
 
     .prologue
     .line 225
@@ -886,7 +853,6 @@
 
 .method public setOtherPointPerUnit(D)V
     .registers 4
-    .param p1, "OtherPointPerUnit"    # D
 
     .prologue
     .line 277
@@ -898,7 +864,6 @@
 
 .method public setParentCategoryId(Z)V
     .registers 2
-    .param p1, "ParentCategoryId"    # Z
 
     .prologue
     .line 257
@@ -910,7 +875,6 @@
 
 .method public setPointPerUnit(D)V
     .registers 4
-    .param p1, "PointPerUnit"    # D
 
     .prologue
     .line 181
@@ -922,7 +886,6 @@
 
 .method public setPointType(Ljava/lang/String;)V
     .registers 2
-    .param p1, "PointType"    # Ljava/lang/String;
 
     .prologue
     .line 233
@@ -934,7 +897,6 @@
 
 .method public setPricePerUnit(D)V
     .registers 4
-    .param p1, "PricePerUnit"    # D
 
     .prologue
     .line 185
@@ -946,7 +908,6 @@
 
 .method public setQty(D)V
     .registers 4
-    .param p1, "Qty"    # D
 
     .prologue
     .line 145
@@ -958,7 +919,6 @@
 
 .method public setRankVote(Ljava/lang/String;)V
     .registers 2
-    .param p1, "RankVote"    # Ljava/lang/String;
 
     .prologue
     .line 265
@@ -968,13 +928,12 @@
     return-void
 .end method
 
-.method public setRating(Z)V
-    .registers 2
-    .param p1, "Rating"    # Z
+.method public setRating(D)V
+    .registers 4
 
     .prologue
     .line 169
-    iput-boolean p1, p0, Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;->Rating:Z
+    iput-wide p1, p0, Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;->Rating:D
 
     .line 170
     return-void
@@ -982,7 +941,6 @@
 
 .method public setRedeemCount(Z)V
     .registers 2
-    .param p1, "RedeemCount"    # Z
 
     .prologue
     .line 153
@@ -994,7 +952,6 @@
 
 .method public setRedeemMedia(I)V
     .registers 2
-    .param p1, "RedeemMedia"    # I
 
     .prologue
     .line 205
@@ -1006,7 +963,6 @@
 
 .method public setRedeemMostPerPerson(D)V
     .registers 4
-    .param p1, "RedeemMostPerPerson"    # D
 
     .prologue
     .line 149
@@ -1018,7 +974,6 @@
 
 .method public setTracesJson(Z)V
     .registers 2
-    .param p1, "TracesJson"    # Z
 
     .prologue
     .line 165
@@ -1030,7 +985,6 @@
 
 .method public setType(Ljava/lang/String;)V
     .registers 2
-    .param p1, "Type"    # Ljava/lang/String;
 
     .prologue
     .line 197
@@ -1042,7 +996,6 @@
 
 .method public setUserLevel(Z)V
     .registers 2
-    .param p1, "UserLevel"    # Z
 
     .prologue
     .line 173
@@ -1054,7 +1007,6 @@
 
 .method public setUserVisibility(Z)V
     .registers 2
-    .param p1, "UserVisibility"    # Z
 
     .prologue
     .line 177
@@ -1066,7 +1018,6 @@
 
 .method public setVote(I)V
     .registers 2
-    .param p1, "Vote"    # I
 
     .prologue
     .line 269
@@ -1078,7 +1029,6 @@
 
 .method public setWebsite(Ljava/lang/String;)V
     .registers 2
-    .param p1, "Website"    # Ljava/lang/String;
 
     .prologue
     .line 281

@@ -6,17 +6,6 @@
 .implements Ljava/io/Serializable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "Serialization"
-.end annotation
-
-
 # static fields
 .field private static final serialVersionUID:J = 0x1L
 
@@ -37,7 +26,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/reflect/Field;)V
     .registers 3
-    .param p1, "f"    # Ljava/lang/reflect/Field;
 
     .prologue
     .line 180

@@ -4,32 +4,21 @@
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 20
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static handleException(Ljava/lang/Throwable;)V
-    .registers 3
-    .param p0, "e"    # Ljava/lang/Throwable;
+.method public static a(Ljava/lang/Throwable;)V
+    .registers 2
 
     .prologue
     .line 24
     :try_start_0
-    invoke-static {}, Lrx/plugins/RxJavaPlugins;->getInstance()Lrx/plugins/RxJavaPlugins;
+    invoke-static {}, Lrx/plugins/RxJavaPlugins;->a()Lrx/plugins/RxJavaPlugins;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Lrx/plugins/RxJavaPlugins;->getErrorHandler()Lrx/plugins/RxJavaErrorHandler;
+    invoke-virtual {v0}, Lrx/plugins/RxJavaPlugins;->b()Lrx/plugins/RxJavaErrorHandler;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, p0}, Lrx/plugins/RxJavaErrorHandler;->handleError(Ljava/lang/Throwable;)V
+    invoke-virtual {v0, p0}, Lrx/plugins/RxJavaErrorHandler;->a(Ljava/lang/Throwable;)V
     :try_end_b
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_b} :catch_c
 
@@ -42,15 +31,13 @@
     move-exception v0
 
     .line 26
-    .local v0, "pluginException":Ljava/lang/Throwable;
-    invoke-static {v0}, Lrx/internal/util/RxJavaPluginUtils;->handlePluginException(Ljava/lang/Throwable;)V
+    invoke-static {v0}, Lrx/internal/util/RxJavaPluginUtils;->b(Ljava/lang/Throwable;)V
 
     goto :goto_b
 .end method
 
-.method private static handlePluginException(Ljava/lang/Throwable;)V
+.method private static b(Ljava/lang/Throwable;)V
     .registers 4
-    .param p0, "pluginException"    # Ljava/lang/Throwable;
 
     .prologue
     .line 36

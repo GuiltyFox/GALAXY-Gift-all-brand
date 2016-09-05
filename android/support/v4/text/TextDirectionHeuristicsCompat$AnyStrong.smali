@@ -6,25 +6,14 @@
 .implements Landroid/support/v4/text/TextDirectionHeuristicsCompat$TextDirectionAlgorithm;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/text/TextDirectionHeuristicsCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "AnyStrong"
-.end annotation
-
-
 # static fields
-.field public static final INSTANCE_LTR:Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;
+.field public static final a:Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;
 
-.field public static final INSTANCE_RTL:Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;
+.field public static final b:Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;
 
 
 # instance fields
-.field private final mLookForRtl:Z
+.field private final c:Z
 
 
 # direct methods
@@ -39,7 +28,7 @@
 
     invoke-direct {v0, v1}, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;-><init>(Z)V
 
-    sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->INSTANCE_RTL:Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;
+    sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->a:Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;
 
     .line 236
     new-instance v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;
@@ -48,21 +37,20 @@
 
     invoke-direct {v0, v1}, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;-><init>(Z)V
 
-    sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->INSTANCE_LTR:Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;
+    sput-object v0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->b:Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;
 
     return-void
 .end method
 
 .method private constructor <init>(Z)V
     .registers 2
-    .param p1, "lookForRtl"    # Z
 
     .prologue
     .line 231
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 232
-    iput-boolean p1, p0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->mLookForRtl:Z
+    iput-boolean p1, p0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->c:Z
 
     .line 233
     return-void
@@ -70,108 +58,99 @@
 
 
 # virtual methods
-.method public checkRtl(Ljava/lang/CharSequence;II)I
-    .registers 10
-    .param p1, "cs"    # Ljava/lang/CharSequence;
-    .param p2, "start"    # I
-    .param p3, "count"    # I
+.method public a(Ljava/lang/CharSequence;II)I
+    .registers 9
 
     .prologue
-    const/4 v3, 0x1
+    const/4 v2, 0x0
 
-    const/4 v4, 0x0
+    const/4 v1, 0x1
 
     .line 206
-    const/4 v1, 0x0
-
     .line 207
-    .local v1, "haveUnlookedFor":Z
-    move v2, p2
+    add-int v3, p2, p3
 
-    .local v2, "i":I
-    add-int v0, p2, p3
+    move v0, v2
 
-    .local v0, "e":I
-    :goto_6
-    if-ge v2, v0, :cond_28
+    :goto_5
+    if-ge p2, v3, :cond_27
 
     .line 208
-    invoke-interface {p1, v2}, Ljava/lang/CharSequence;->charAt(I)C
+    invoke-interface {p1, p2}, Ljava/lang/CharSequence;->charAt(I)C
 
-    move-result v5
+    move-result v4
 
-    invoke-static {v5}, Ljava/lang/Character;->getDirectionality(C)B
+    invoke-static {v4}, Ljava/lang/Character;->getDirectionality(C)B
 
-    move-result v5
+    move-result v4
 
-    # invokes: Landroid/support/v4/text/TextDirectionHeuristicsCompat;->isRtlText(I)I
-    invoke-static {v5}, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->access$200(I)I
+    invoke-static {v4}, Landroid/support/v4/text/TextDirectionHeuristicsCompat;->b(I)I
 
-    move-result v5
+    move-result v4
 
-    packed-switch v5, :pswitch_data_32
+    packed-switch v4, :pswitch_data_32
 
     .line 207
-    :goto_17
-    add-int/lit8 v2, v2, 0x1
+    :goto_16
+    add-int/lit8 p2, p2, 0x1
 
-    goto :goto_6
+    goto :goto_5
 
     .line 210
-    :pswitch_1a
-    iget-boolean v5, p0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->mLookForRtl:Z
+    :pswitch_19
+    iget-boolean v0, p0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->c:Z
 
-    if-eqz v5, :cond_20
+    if-eqz v0, :cond_1f
 
-    move v3, v4
+    move v1, v2
 
     .line 228
-    :cond_1f
-    :goto_1f
-    return v3
+    :cond_1e
+    :goto_1e
+    return v1
 
-    .line 213
-    :cond_20
-    const/4 v1, 0x1
+    :cond_1f
+    move v0, v1
 
     .line 214
-    goto :goto_17
+    goto :goto_16
 
     .line 216
-    :pswitch_22
-    iget-boolean v5, p0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->mLookForRtl:Z
+    :pswitch_21
+    iget-boolean v0, p0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->c:Z
 
-    if-eqz v5, :cond_1f
+    if-eqz v0, :cond_1e
 
-    .line 219
-    const/4 v1, 0x1
+    move v0, v1
 
     .line 220
-    goto :goto_17
+    goto :goto_16
 
     .line 225
-    :cond_28
-    if-eqz v1, :cond_30
+    :cond_27
+    if-eqz v0, :cond_2f
 
     .line 226
-    iget-boolean v5, p0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->mLookForRtl:Z
+    iget-boolean v0, p0, Landroid/support/v4/text/TextDirectionHeuristicsCompat$AnyStrong;->c:Z
 
-    if-nez v5, :cond_1f
+    if-nez v0, :cond_1e
 
-    move v3, v4
+    move v1, v2
 
-    goto :goto_1f
+    goto :goto_1e
 
     .line 228
-    :cond_30
-    const/4 v3, 0x2
+    :cond_2f
+    const/4 v1, 0x2
 
-    goto :goto_1f
+    goto :goto_1e
 
     .line 208
+    nop
+
     :pswitch_data_32
     .packed-switch 0x0
-        :pswitch_1a
-        :pswitch_22
+        :pswitch_19
+        :pswitch_21
     .end packed-switch
 .end method

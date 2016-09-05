@@ -8,31 +8,25 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->stepEnd(ZZZ)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;->a(ZZZ)V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+.field final synthetic a:Ljava/lang/String;
 
-.field final synthetic val$finalUrl:Ljava/lang/String;
+.field final synthetic b:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;Ljava/lang/String;)V
     .registers 3
-    .param p1, "this$0"    # Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
     .prologue
     .line 4339
-    iput-object p1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$19;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iput-object p1, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$19;->b:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
-    iput-object p2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$19;->val$finalUrl:Ljava/lang/String;
+    iput-object p2, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$19;->a:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,13 +40,13 @@
 
     .prologue
     .line 4343
-    iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$19;->this$0:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
+    iget-object v0, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$19;->b:Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity;
 
     new-instance v1, Landroid/content/Intent;
 
     const-string/jumbo v2, "android.intent.action.VIEW"
 
-    iget-object v3, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$19;->val$finalUrl:Ljava/lang/String;
+    iget-object v3, p0, Lcom/bzbs/lib/survey/activity/SurveyFragmentActivity$19;->a:Ljava/lang/String;
 
     invoke-static {v3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 

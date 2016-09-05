@@ -3,5 +3,5 @@
 
 
 # virtual methods
-.method public abstract onServiceReady()V
+.method public abstract a()V
 .end method

@@ -39,8 +39,6 @@
 
     .prologue
     .line 75
-    .local p0, "this":Lcom/loopj/android/http/SaxAsyncHttpResponseHandler;, "Lcom/loopj/android/http/SaxAsyncHttpResponseHandler<TT;>;"
-    .local p1, "t":Lorg/xml/sax/helpers/DefaultHandler;, "TT;"
     invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
 
     .line 66
@@ -71,17 +69,12 @@
 
 # virtual methods
 .method protected getResponseData(Lcz/msebera/android/httpclient/HttpEntity;)[B
-    .registers 12
-    .param p1, "entity"    # Lcz/msebera/android/httpclient/HttpEntity;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 9
 
     .prologue
+    const/4 v2, 0x0
+
     .line 92
-    .local p0, "this":Lcom/loopj/android/http/SaxAsyncHttpResponseHandler;, "Lcom/loopj/android/http/SaxAsyncHttpResponseHandler<TT;>;"
     if-eqz p1, :cond_33
 
     .line 93
@@ -89,108 +82,90 @@
 
     move-result-object v3
 
-    .line 94
-    .local v3, "instream":Ljava/io/InputStream;
-    const/4 v1, 0x0
-
     .line 95
-    .local v1, "inputStreamReader":Ljava/io/InputStreamReader;
     if-eqz v3, :cond_33
 
     .line 97
     :try_start_9
     invoke-static {}, Ljavax/xml/parsers/SAXParserFactory;->newInstance()Ljavax/xml/parsers/SAXParserFactory;
 
-    move-result-object v5
+    move-result-object v0
 
     .line 98
-    .local v5, "sfactory":Ljavax/xml/parsers/SAXParserFactory;
-    invoke-virtual {v5}, Ljavax/xml/parsers/SAXParserFactory;->newSAXParser()Ljavax/xml/parsers/SAXParser;
+    invoke-virtual {v0}, Ljavax/xml/parsers/SAXParserFactory;->newSAXParser()Ljavax/xml/parsers/SAXParser;
 
-    move-result-object v6
+    move-result-object v0
 
     .line 99
-    .local v6, "sparser":Ljavax/xml/parsers/SAXParser;
-    invoke-virtual {v6}, Ljavax/xml/parsers/SAXParser;->getXMLReader()Lorg/xml/sax/XMLReader;
+    invoke-virtual {v0}, Ljavax/xml/parsers/SAXParser;->getXMLReader()Lorg/xml/sax/XMLReader;
 
-    move-result-object v4
+    move-result-object v0
 
     .line 100
-    .local v4, "rssReader":Lorg/xml/sax/XMLReader;
-    iget-object v7, p0, Lcom/loopj/android/http/SaxAsyncHttpResponseHandler;->handler:Lorg/xml/sax/helpers/DefaultHandler;
+    iget-object v1, p0, Lcom/loopj/android/http/SaxAsyncHttpResponseHandler;->handler:Lorg/xml/sax/helpers/DefaultHandler;
 
-    invoke-interface {v4, v7}, Lorg/xml/sax/XMLReader;->setContentHandler(Lorg/xml/sax/ContentHandler;)V
+    invoke-interface {v0, v1}, Lorg/xml/sax/XMLReader;->setContentHandler(Lorg/xml/sax/ContentHandler;)V
 
     .line 101
-    new-instance v2, Ljava/io/InputStreamReader;
+    new-instance v1, Ljava/io/InputStreamReader;
 
     invoke-virtual {p0}, Lcom/loopj/android/http/SaxAsyncHttpResponseHandler;->getCharset()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v4
 
-    invoke-direct {v2, v3, v7}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/lang/String;)V
+    invoke-direct {v1, v3, v4}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/lang/String;)V
     :try_end_23
-    .catch Lorg/xml/sax/SAXException; {:try_start_9 .. :try_end_23} :catch_35
+    .catch Lorg/xml/sax/SAXException; {:try_start_9 .. :try_end_23} :catch_34
     .catch Ljavax/xml/parsers/ParserConfigurationException; {:try_start_9 .. :try_end_23} :catch_4c
-    .catchall {:try_start_9 .. :try_end_23} :catchall_63
+    .catchall {:try_start_9 .. :try_end_23} :catchall_64
 
     .line 102
-    .end local v1    # "inputStreamReader":Ljava/io/InputStreamReader;
-    .local v2, "inputStreamReader":Ljava/io/InputStreamReader;
     :try_start_23
-    new-instance v7, Lorg/xml/sax/InputSource;
+    new-instance v4, Lorg/xml/sax/InputSource;
 
-    invoke-direct {v7, v2}, Lorg/xml/sax/InputSource;-><init>(Ljava/io/Reader;)V
+    invoke-direct {v4, v1}, Lorg/xml/sax/InputSource;-><init>(Ljava/io/Reader;)V
 
-    invoke-interface {v4, v7}, Lorg/xml/sax/XMLReader;->parse(Lorg/xml/sax/InputSource;)V
+    invoke-interface {v0, v4}, Lorg/xml/sax/XMLReader;->parse(Lorg/xml/sax/InputSource;)V
     :try_end_2b
     .catch Lorg/xml/sax/SAXException; {:try_start_23 .. :try_end_2b} :catch_77
-    .catch Ljavax/xml/parsers/ParserConfigurationException; {:try_start_23 .. :try_end_2b} :catch_74
-    .catchall {:try_start_23 .. :try_end_2b} :catchall_71
+    .catch Ljavax/xml/parsers/ParserConfigurationException; {:try_start_23 .. :try_end_2b} :catch_75
+    .catchall {:try_start_23 .. :try_end_2b} :catchall_73
 
     .line 108
     invoke-static {v3}, Lcom/loopj/android/http/AsyncHttpClient;->silentCloseInputStream(Ljava/io/InputStream;)V
 
     .line 109
-    if-eqz v2, :cond_33
+    if-eqz v1, :cond_33
 
     .line 111
     :try_start_30
-    invoke-virtual {v2}, Ljava/io/InputStreamReader;->close()V
+    invoke-virtual {v1}, Ljava/io/InputStreamReader;->close()V
     :try_end_33
-    .catch Ljava/io/IOException; {:try_start_30 .. :try_end_33} :catch_6d
+    .catch Ljava/io/IOException; {:try_start_30 .. :try_end_33} :catch_6f
 
     .line 117
-    .end local v2    # "inputStreamReader":Ljava/io/InputStreamReader;
-    .end local v3    # "instream":Ljava/io/InputStream;
-    .end local v4    # "rssReader":Lorg/xml/sax/XMLReader;
-    .end local v5    # "sfactory":Ljavax/xml/parsers/SAXParserFactory;
-    .end local v6    # "sparser":Ljavax/xml/parsers/SAXParser;
     :cond_33
     :goto_33
-    const/4 v7, 0x0
-
-    return-object v7
+    return-object v2
 
     .line 103
-    .restart local v1    # "inputStreamReader":Ljava/io/InputStreamReader;
-    .restart local v3    # "instream":Ljava/io/InputStream;
-    :catch_35
+    :catch_34
     move-exception v0
 
+    move-object v1, v2
+
     .line 104
-    .local v0, "e":Lorg/xml/sax/SAXException;
     :goto_36
     :try_start_36
-    sget-object v7, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
+    sget-object v4, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
 
-    const-string/jumbo v8, "SaxAsyncHttpRH"
+    const-string/jumbo v5, "SaxAsyncHttpRH"
 
-    const-string/jumbo v9, "getResponseData exception"
+    const-string/jumbo v6, "getResponseData exception"
 
-    invoke-interface {v7, v8, v9, v0}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-interface {v4, v5, v6, v0}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
     :try_end_41
-    .catchall {:try_start_36 .. :try_end_41} :catchall_63
+    .catchall {:try_start_36 .. :try_end_41} :catchall_73
 
     .line 108
     invoke-static {v3}, Lcom/loopj/android/http/AsyncHttpClient;->silentCloseInputStream(Ljava/io/InputStream;)V
@@ -208,28 +183,28 @@
 
     .line 112
     :catch_4a
-    move-exception v7
+    move-exception v0
 
     goto :goto_33
 
     .line 105
-    .end local v0    # "e":Lorg/xml/sax/SAXException;
     :catch_4c
     move-exception v0
 
+    move-object v1, v2
+
     .line 106
-    .local v0, "e":Ljavax/xml/parsers/ParserConfigurationException;
-    :goto_4d
-    :try_start_4d
-    sget-object v7, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
+    :goto_4e
+    :try_start_4e
+    sget-object v4, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
 
-    const-string/jumbo v8, "SaxAsyncHttpRH"
+    const-string/jumbo v5, "SaxAsyncHttpRH"
 
-    const-string/jumbo v9, "getResponseData exception"
+    const-string/jumbo v6, "getResponseData exception"
 
-    invoke-interface {v7, v8, v9, v0}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
-    :try_end_58
-    .catchall {:try_start_4d .. :try_end_58} :catchall_63
+    invoke-interface {v4, v5, v6, v0}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    :try_end_59
+    .catchall {:try_start_4e .. :try_end_59} :catchall_73
 
     .line 108
     invoke-static {v3}, Lcom/loopj/android/http/AsyncHttpClient;->silentCloseInputStream(Ljava/io/InputStream;)V
@@ -238,98 +213,68 @@
     if-eqz v1, :cond_33
 
     .line 111
-    :try_start_5d
+    :try_start_5e
     invoke-virtual {v1}, Ljava/io/InputStreamReader;->close()V
-    :try_end_60
-    .catch Ljava/io/IOException; {:try_start_5d .. :try_end_60} :catch_61
+    :try_end_61
+    .catch Ljava/io/IOException; {:try_start_5e .. :try_end_61} :catch_62
 
     goto :goto_33
 
     .line 112
-    :catch_61
-    move-exception v7
+    :catch_62
+    move-exception v0
 
     goto :goto_33
 
     .line 108
-    .end local v0    # "e":Ljavax/xml/parsers/ParserConfigurationException;
-    :catchall_63
-    move-exception v7
+    :catchall_64
+    move-exception v0
 
-    :goto_64
+    move-object v1, v2
+
+    :goto_66
     invoke-static {v3}, Lcom/loopj/android/http/AsyncHttpClient;->silentCloseInputStream(Ljava/io/InputStream;)V
 
     .line 109
-    if-eqz v1, :cond_6c
+    if-eqz v1, :cond_6e
 
     .line 111
-    :try_start_69
+    :try_start_6b
     invoke-virtual {v1}, Ljava/io/InputStreamReader;->close()V
-    :try_end_6c
-    .catch Ljava/io/IOException; {:try_start_69 .. :try_end_6c} :catch_6f
+    :try_end_6e
+    .catch Ljava/io/IOException; {:try_start_6b .. :try_end_6e} :catch_71
 
     .line 112
-    :cond_6c
-    :goto_6c
-    throw v7
+    :cond_6e
+    :goto_6e
+    throw v0
 
-    .end local v1    # "inputStreamReader":Ljava/io/InputStreamReader;
-    .restart local v2    # "inputStreamReader":Ljava/io/InputStreamReader;
-    .restart local v4    # "rssReader":Lorg/xml/sax/XMLReader;
-    .restart local v5    # "sfactory":Ljavax/xml/parsers/SAXParserFactory;
-    .restart local v6    # "sparser":Ljavax/xml/parsers/SAXParser;
-    :catch_6d
-    move-exception v7
+    :catch_6f
+    move-exception v0
 
     goto :goto_33
 
-    .end local v2    # "inputStreamReader":Ljava/io/InputStreamReader;
-    .end local v4    # "rssReader":Lorg/xml/sax/XMLReader;
-    .end local v5    # "sfactory":Ljavax/xml/parsers/SAXParserFactory;
-    .end local v6    # "sparser":Ljavax/xml/parsers/SAXParser;
-    .restart local v1    # "inputStreamReader":Ljava/io/InputStreamReader;
-    :catch_6f
-    move-exception v8
+    :catch_71
+    move-exception v1
 
-    goto :goto_6c
+    goto :goto_6e
 
     .line 108
-    .end local v1    # "inputStreamReader":Ljava/io/InputStreamReader;
-    .restart local v2    # "inputStreamReader":Ljava/io/InputStreamReader;
-    .restart local v4    # "rssReader":Lorg/xml/sax/XMLReader;
-    .restart local v5    # "sfactory":Ljavax/xml/parsers/SAXParserFactory;
-    .restart local v6    # "sparser":Ljavax/xml/parsers/SAXParser;
-    :catchall_71
-    move-exception v7
-
-    move-object v1, v2
-
-    .end local v2    # "inputStreamReader":Ljava/io/InputStreamReader;
-    .restart local v1    # "inputStreamReader":Ljava/io/InputStreamReader;
-    goto :goto_64
-
-    .line 105
-    .end local v1    # "inputStreamReader":Ljava/io/InputStreamReader;
-    .restart local v2    # "inputStreamReader":Ljava/io/InputStreamReader;
-    :catch_74
+    :catchall_73
     move-exception v0
 
-    move-object v1, v2
+    goto :goto_66
 
-    .end local v2    # "inputStreamReader":Ljava/io/InputStreamReader;
-    .restart local v1    # "inputStreamReader":Ljava/io/InputStreamReader;
-    goto :goto_4d
+    .line 105
+    :catch_75
+    move-exception v0
+
+    goto :goto_4e
 
     .line 103
-    .end local v1    # "inputStreamReader":Ljava/io/InputStreamReader;
-    .restart local v2    # "inputStreamReader":Ljava/io/InputStreamReader;
     :catch_77
     move-exception v0
 
-    move-object v1, v2
-
-    .end local v2    # "inputStreamReader":Ljava/io/InputStreamReader;
-    .restart local v1    # "inputStreamReader":Ljava/io/InputStreamReader;
     goto :goto_36
 .end method
 
@@ -345,14 +290,9 @@
 
 .method public onFailure(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
     .registers 6
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBody"    # [B
-    .param p4, "error"    # Ljava/lang/Throwable;
 
     .prologue
     .line 146
-    .local p0, "this":Lcom/loopj/android/http/SaxAsyncHttpResponseHandler;, "Lcom/loopj/android/http/SaxAsyncHttpResponseHandler<TT;>;"
     iget-object v0, p0, Lcom/loopj/android/http/SaxAsyncHttpResponseHandler;->handler:Lorg/xml/sax/helpers/DefaultHandler;
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/loopj/android/http/SaxAsyncHttpResponseHandler;->onFailure(I[Lcz/msebera/android/httpclient/Header;Lorg/xml/sax/helpers/DefaultHandler;)V
@@ -373,13 +313,9 @@
 
 .method public onSuccess(I[Lcz/msebera/android/httpclient/Header;[B)V
     .registers 5
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBody"    # [B
 
     .prologue
     .line 131
-    .local p0, "this":Lcom/loopj/android/http/SaxAsyncHttpResponseHandler;, "Lcom/loopj/android/http/SaxAsyncHttpResponseHandler<TT;>;"
     iget-object v0, p0, Lcom/loopj/android/http/SaxAsyncHttpResponseHandler;->handler:Lorg/xml/sax/helpers/DefaultHandler;
 
     invoke-virtual {p0, p1, p2, v0}, Lcom/loopj/android/http/SaxAsyncHttpResponseHandler;->onSuccess(I[Lcz/msebera/android/httpclient/Header;Lorg/xml/sax/helpers/DefaultHandler;)V

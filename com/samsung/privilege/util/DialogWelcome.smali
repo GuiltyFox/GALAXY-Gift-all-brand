@@ -3,22 +3,14 @@
 .source "DialogWelcome.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/samsung/privilege/util/DialogWelcome$QTPagerAdapter;
-    }
-.end annotation
-
-
 # static fields
-.field private static TAG:Ljava/lang/String;
+.field private static a:Ljava/lang/String;
 
-.field private static arrImg:[Ljava/lang/Integer;
+.field private static b:Landroid/content/Context;
 
-.field private static gActivityContext:Landroid/content/Context;
+.field private static c:[Ljava/lang/Integer;
 
-.field private static gDialogMyPoint:Landroid/app/Dialog;
+.field private static d:Landroid/app/Dialog;
 
 
 # direct methods
@@ -26,14 +18,14 @@
     .registers 1
 
     .prologue
-    .line 24
+    .line 25
     const-class v0, Lcom/samsung/privilege/util/DialogWelcome;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    sput-object v0, Lcom/samsung/privilege/util/DialogWelcome;->TAG:Ljava/lang/String;
+    sput-object v0, Lcom/samsung/privilege/util/DialogWelcome;->a:Ljava/lang/String;
 
     return-void
 .end method
@@ -42,397 +34,423 @@
     .registers 1
 
     .prologue
-    .line 22
+    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static GetPixelFromDips(Landroid/content/Context;F)I
-    .registers 5
-    .param p0, "activityContext"    # Landroid/content/Context;
-    .param p1, "pixels"    # F
+.method public static a(Landroid/content/Context;F)I
+    .registers 4
 
     .prologue
-    .line 192
+    .line 193
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget v0, v1, Landroid/util/DisplayMetrics;->density:F
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
-    .line 194
-    .local v0, "scale":F
-    mul-float v1, p1, v0
+    .line 195
+    mul-float/2addr v0, p1
 
-    const/high16 v2, 0x3f000000
+    const/high16 v1, 0x3f000000    # 0.5f
 
-    add-float/2addr v1, v2
+    add-float/2addr v0, v1
 
-    float-to-int v1, v1
+    float-to-int v0, v0
 
-    return v1
+    return v0
 .end method
 
-.method static synthetic access$000()[Ljava/lang/Integer;
-    .registers 1
+.method public static a(Landroid/content/Context;Landroid/os/Handler;)V
+    .registers 11
 
     .prologue
-    .line 22
-    sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->arrImg:[Ljava/lang/Integer;
+    const/high16 v3, 0x41200000    # 10.0f
 
-    return-object v0
-.end method
+    const/4 v2, 0x0
 
-.method static synthetic access$100()Landroid/app/Dialog;
-    .registers 1
-
-    .prologue
-    .line 22
-    sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->gDialogMyPoint:Landroid/app/Dialog;
-
-    return-object v0
-.end method
-
-.method public static showDialogWelcome(Landroid/content/Context;Landroid/os/Handler;)V
-    .registers 15
-    .param p0, "activityContext"    # Landroid/content/Context;
-    .param p1, "objHandler"    # Landroid/os/Handler;
-
-    .prologue
-    const/high16 v11, 0x41200000
-
-    const/high16 v12, 0x40400000
-
-    .line 32
-    move-object v9, p0
-
-    check-cast v9, Landroid/app/Activity;
-
-    invoke-virtual {v9}, Landroid/app/Activity;->isFinishing()Z
-
-    move-result v9
-
-    if-nez v9, :cond_113
+    const/high16 v6, 0x40400000    # 3.0f
 
     .line 33
-    sput-object p0, Lcom/samsung/privilege/util/DialogWelcome;->gActivityContext:Landroid/content/Context;
+    move-object v0, p0
 
-    .line 35
-    invoke-static {p0}, Lcom/bzbs/util/LanguageSetting;->SetLanguage(Landroid/content/Context;)V
+    check-cast v0, Landroid/app/Activity;
 
-    .line 38
-    :try_start_12
-    sget-object v9, Lcom/samsung/privilege/util/DialogWelcome;->gDialogMyPoint:Landroid/app/Dialog;
-
-    if-eqz v9, :cond_1b
-
-    .line 39
-    sget-object v9, Lcom/samsung/privilege/util/DialogWelcome;->gDialogMyPoint:Landroid/app/Dialog;
-
-    invoke-virtual {v9}, Landroid/app/Dialog;->dismiss()V
-    :try_end_1b
-    .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_1b} :catch_114
-
-    .line 45
-    :cond_1b
-    :goto_1b
-    new-instance v9, Landroid/app/Dialog;
-
-    const v10, 0x7f0d00fb
-
-    invoke-direct {v9, p0, v10}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
-
-    sput-object v9, Lcom/samsung/privilege/util/DialogWelcome;->gDialogMyPoint:Landroid/app/Dialog;
-
-    .line 47
-    sget-object v9, Lcom/samsung/privilege/util/DialogWelcome;->gDialogMyPoint:Landroid/app/Dialog;
-
-    const v10, 0x7f040121
-
-    invoke-virtual {v9, v10}, Landroid/app/Dialog;->setContentView(I)V
-
-    .line 49
-    sget-object v9, Lcom/samsung/privilege/util/DialogWelcome;->gDialogMyPoint:Landroid/app/Dialog;
-
-    const v10, 0x7f10020e
-
-    invoke-virtual {v9, v10}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/widget/LinearLayout;
-
-    .line 51
-    .local v2, "contentQT":Landroid/widget/LinearLayout;
-    const/4 v9, 0x0
-
-    invoke-virtual {v2, v9}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 54
-    sget-object v9, Lcom/samsung/privilege/util/DialogWelcome;->gDialogMyPoint:Landroid/app/Dialog;
-
-    const v10, 0x7f100210
-
-    invoke-virtual {v9, v10}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/widget/LinearLayout;
-
-    .line 70
-    .local v5, "linCircle":Landroid/widget/LinearLayout;
-    new-instance v8, Landroid/widget/LinearLayout$LayoutParams;
-
-    invoke-static {p0, v11}, Lcom/samsung/privilege/util/DialogWelcome;->GetPixelFromDips(Landroid/content/Context;F)I
-
-    move-result v9
-
-    invoke-static {p0, v11}, Lcom/samsung/privilege/util/DialogWelcome;->GetPixelFromDips(Landroid/content/Context;F)I
-
-    move-result v10
-
-    invoke-direct {v8, v9, v10}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
-
-    .line 71
-    .local v8, "params_circle":Landroid/widget/LinearLayout$LayoutParams;
-    invoke-static {p0, v12}, Lcom/samsung/privilege/util/DialogWelcome;->GetPixelFromDips(Landroid/content/Context;F)I
-
-    move-result v9
-
-    invoke-static {p0, v12}, Lcom/samsung/privilege/util/DialogWelcome;->GetPixelFromDips(Landroid/content/Context;F)I
-
-    move-result v10
-
-    invoke-static {p0, v12}, Lcom/samsung/privilege/util/DialogWelcome;->GetPixelFromDips(Landroid/content/Context;F)I
-
-    move-result v11
-
-    invoke-static {p0, v12}, Lcom/samsung/privilege/util/DialogWelcome;->GetPixelFromDips(Landroid/content/Context;F)I
-
-    move-result v12
-
-    invoke-virtual {v8, v9, v10, v11, v12}, Landroid/widget/LinearLayout$LayoutParams;->setMargins(IIII)V
-
-    .line 105
-    const/4 v6, 0x2
-
-    .line 106
-    .local v6, "numPage":I
-    new-array v9, v6, [Ljava/lang/Integer;
-
-    sput-object v9, Lcom/samsung/privilege/util/DialogWelcome;->arrImg:[Ljava/lang/Integer;
-
-    .line 107
-    const/4 v3, 0x0
-
-    .local v3, "i":I
-    :goto_6d
-    const/4 v9, 0x2
-
-    if-ge v3, v9, :cond_a0
-
-    .line 108
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v9
-
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    invoke-direct {v10}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v11, "qt_img_"
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    add-int/lit8 v11, v3, 0x1
-
-    invoke-virtual {v10, v11}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v10
-
-    const-string/jumbo v11, "drawable"
-
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-virtual {v9, v10, v11, v12}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+    invoke-virtual {v0}, Landroid/app/Activity;->isFinishing()Z
 
     move-result v0
 
-    .line 112
-    .local v0, "ResID":I
-    sget-object v9, Lcom/samsung/privilege/util/DialogWelcome;->arrImg:[Ljava/lang/Integer;
+    if-nez v0, :cond_145
 
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 34
+    sput-object p0, Lcom/samsung/privilege/util/DialogWelcome;->b:Landroid/content/Context;
 
-    move-result-object v10
+    .line 36
+    invoke-static {p0}, Lcom/bzbs/util/LanguageSetting;->a(Landroid/content/Context;)V
 
-    aput-object v10, v9, v3
+    .line 39
+    :try_start_13
+    sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
+
+    if-eqz v0, :cond_1c
+
+    .line 40
+    sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
+
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
+    :try_end_1c
+    .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_1c} :catch_146
+
+    .line 46
+    :cond_1c
+    :goto_1c
+    new-instance v0, Landroid/app/Dialog;
+
+    const v1, 0x7f0d00fe
+
+    invoke-direct {v0, p0, v1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
+
+    sput-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
+
+    .line 48
+    sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
+
+    const v1, 0x7f04012f
+
+    invoke-virtual {v0, v1}, Landroid/app/Dialog;->setContentView(I)V
+
+    .line 50
+    sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
+
+    const v1, 0x7f100254
+
+    invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/LinearLayout;
+
+    .line 52
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 55
+    sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
+
+    const v1, 0x7f100256
+
+    invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/LinearLayout;
+
+    .line 71
+    new-instance v4, Landroid/widget/LinearLayout$LayoutParams;
+
+    invoke-static {p0, v3}, Lcom/samsung/privilege/util/DialogWelcome;->a(Landroid/content/Context;F)I
+
+    move-result v1
+
+    invoke-static {p0, v3}, Lcom/samsung/privilege/util/DialogWelcome;->a(Landroid/content/Context;F)I
+
+    move-result v3
+
+    invoke-direct {v4, v1, v3}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+
+    .line 72
+    invoke-static {p0, v6}, Lcom/samsung/privilege/util/DialogWelcome;->a(Landroid/content/Context;F)I
+
+    move-result v1
+
+    invoke-static {p0, v6}, Lcom/samsung/privilege/util/DialogWelcome;->a(Landroid/content/Context;F)I
+
+    move-result v3
+
+    invoke-static {p0, v6}, Lcom/samsung/privilege/util/DialogWelcome;->a(Landroid/content/Context;F)I
+
+    move-result v5
+
+    invoke-static {p0, v6}, Lcom/samsung/privilege/util/DialogWelcome;->a(Landroid/content/Context;F)I
+
+    move-result v6
+
+    invoke-virtual {v4, v1, v3, v5, v6}, Landroid/widget/LinearLayout$LayoutParams;->setMargins(IIII)V
+
+    .line 106
+    const/4 v5, 0x4
 
     .line 107
-    add-int/lit8 v3, v3, 0x1
+    new-array v1, v5, [Ljava/lang/Integer;
 
-    goto :goto_6d
+    sput-object v1, Lcom/samsung/privilege/util/DialogWelcome;->c:[Ljava/lang/Integer;
 
-    .line 115
-    .end local v0    # "ResID":I
-    :cond_a0
-    sget-object v9, Lcom/samsung/privilege/util/DialogWelcome;->arrImg:[Ljava/lang/Integer;
+    move v3, v2
 
-    array-length v9, v9
+    .line 108
+    :goto_6e
+    if-ge v3, v5, :cond_d3
 
-    add-int/lit8 v9, v9, 0x1
-
-    new-array v4, v9, [Landroid/widget/ImageView;
-
-    .line 116
-    .local v4, "imgCircle":[Landroid/widget/ImageView;
-    const/4 v3, 0x0
-
-    :goto_a8
-    sget-object v9, Lcom/samsung/privilege/util/DialogWelcome;->arrImg:[Ljava/lang/Integer;
-
-    array-length v9, v9
-
-    add-int/lit8 v9, v9, 0x1
-
-    if-ge v3, v9, :cond_d6
-
-    .line 117
-    new-instance v9, Landroid/widget/ImageView;
-
-    invoke-direct {v9, p0}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
-
-    aput-object v9, v4, v3
-
-    .line 118
-    aget-object v9, v4, v3
-
-    invoke-virtual {v9, v8}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 119
-    if-nez v3, :cond_cd
-
-    .line 120
-    aget-object v9, v4, v3
-
-    const v10, 0x7f020336
-
-    invoke-virtual {v9, v10}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    .line 124
-    :goto_c5
-    aget-object v9, v4, v3
-
-    invoke-virtual {v5, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
-
-    .line 116
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_a8
-
-    .line 122
-    :cond_cd
-    aget-object v9, v4, v3
-
-    const v10, 0x7f020335
-
-    invoke-virtual {v9, v10}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    goto :goto_c5
-
-    .line 127
-    :cond_d6
-    sget-object v9, Lcom/samsung/privilege/util/DialogWelcome;->gDialogMyPoint:Landroid/app/Dialog;
-
-    const v10, 0x7f10020f
-
-    invoke-virtual {v9, v10}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v7
-
-    check-cast v7, Landroid/support/v4/view/ViewPager;
-
-    .line 128
-    .local v7, "pager":Landroid/support/v4/view/ViewPager;
-    const/4 v9, 0x0
-
-    invoke-virtual {v7, v9}, Landroid/support/v4/view/ViewPager;->setOffscreenPageLimit(I)V
-
-    .line 129
-    new-instance v9, Lcom/samsung/privilege/util/DialogWelcome$QTPagerAdapter;
-
-    sget-object v10, Lcom/samsung/privilege/util/DialogWelcome;->arrImg:[Ljava/lang/Integer;
-
-    invoke-direct {v9, p0, v10}, Lcom/samsung/privilege/util/DialogWelcome$QTPagerAdapter;-><init>(Landroid/content/Context;[Ljava/lang/Integer;)V
-
-    invoke-virtual {v7, v9}, Landroid/support/v4/view/ViewPager;->setAdapter(Landroid/support/v4/view/PagerAdapter;)V
-
-    .line 131
-    new-instance v9, Lcom/samsung/privilege/util/DialogWelcome$1;
-
-    invoke-direct {v9, p1, p0, v4}, Lcom/samsung/privilege/util/DialogWelcome$1;-><init>(Landroid/os/Handler;Landroid/content/Context;[Landroid/widget/ImageView;)V
-
-    invoke-virtual {v7, v9}, Landroid/support/v4/view/ViewPager;->setOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
-
-    .line 182
-    sget-object v9, Lcom/samsung/privilege/util/DialogWelcome;->gDialogMyPoint:Landroid/app/Dialog;
-
-    invoke-virtual {v9}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+    .line 109
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
 
-    .line 183
-    .local v1, "WMLP":Landroid/view/WindowManager$LayoutParams;
-    const/16 v9, 0x11
+    new-instance v6, Ljava/lang/StringBuilder;
 
-    iput v9, v1, Landroid/view/WindowManager$LayoutParams;->gravity:I
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v7, "qt_img_en"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    add-int/lit8 v7, v3, 0x1
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string/jumbo v7, "drawable"
+
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v1, v6, v7, v8}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+
+    .line 110
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string/jumbo v7, "1054"
+
+    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_c7
+
+    .line 111
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v7, "qt_img_th"
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    add-int/lit8 v7, v3, 0x1
+
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    const-string/jumbo v7, "drawable"
+
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v1, v6, v7, v8}, Landroid/content/res/Resources;->getIdentifier(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v1
+
+    .line 113
+    :cond_c7
+    sget-object v6, Lcom/samsung/privilege/util/DialogWelcome;->c:[Ljava/lang/Integer;
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    aput-object v1, v6, v3
+
+    .line 108
+    add-int/lit8 v1, v3, 0x1
+
+    move v3, v1
+
+    goto :goto_6e
+
+    .line 116
+    :cond_d3
+    sget-object v1, Lcom/samsung/privilege/util/DialogWelcome;->c:[Ljava/lang/Integer;
+
+    array-length v1, v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    new-array v3, v1, [Landroid/widget/ImageView;
+
+    move v1, v2
+
+    .line 117
+    :goto_db
+    sget-object v5, Lcom/samsung/privilege/util/DialogWelcome;->c:[Ljava/lang/Integer;
+
+    array-length v5, v5
+
+    add-int/lit8 v5, v5, 0x1
+
+    if-ge v1, v5, :cond_109
+
+    .line 118
+    new-instance v5, Landroid/widget/ImageView;
+
+    invoke-direct {v5, p0}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+
+    aput-object v5, v3, v1
+
+    .line 119
+    aget-object v5, v3, v1
+
+    invoke-virtual {v5, v4}, Landroid/widget/ImageView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 120
+    if-nez v1, :cond_100
+
+    .line 121
+    aget-object v5, v3, v1
+
+    const v6, 0x7f020342
+
+    invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    .line 125
+    :goto_f8
+    aget-object v5, v3, v1
+
+    invoke-virtual {v0, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 117
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_db
+
+    .line 123
+    :cond_100
+    aget-object v5, v3, v1
+
+    const v6, 0x7f020340
+
+    invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    goto :goto_f8
+
+    .line 128
+    :cond_109
+    sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
+
+    const v1, 0x7f100255
+
+    invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/v4/view/ViewPager;
+
+    .line 129
+    invoke-virtual {v0, v2}, Landroid/support/v4/view/ViewPager;->setOffscreenPageLimit(I)V
+
+    .line 130
+    new-instance v1, Lcom/samsung/privilege/util/DialogWelcome$QTPagerAdapter;
+
+    sget-object v2, Lcom/samsung/privilege/util/DialogWelcome;->c:[Ljava/lang/Integer;
+
+    invoke-direct {v1, p0, v2}, Lcom/samsung/privilege/util/DialogWelcome$QTPagerAdapter;-><init>(Landroid/content/Context;[Ljava/lang/Integer;)V
+
+    invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->a(Landroid/support/v4/view/PagerAdapter;)V
+
+    .line 132
+    new-instance v1, Lcom/samsung/privilege/util/DialogWelcome$1;
+
+    invoke-direct {v1, p1, p0, v3}, Lcom/samsung/privilege/util/DialogWelcome$1;-><init>(Landroid/os/Handler;Landroid/content/Context;[Landroid/widget/ImageView;)V
+
+    invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->a(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
+
+    .line 183
+    sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
+
+    invoke-virtual {v0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+
+    move-result-object v0
 
     .line 184
-    sget-object v9, Lcom/samsung/privilege/util/DialogWelcome;->gDialogMyPoint:Landroid/app/Dialog;
+    const/16 v1, 0x11
 
-    invoke-virtual {v9}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+    iput v1, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    move-result-object v9
+    .line 185
+    sget-object v1, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
 
-    invoke-virtual {v9, v1}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+    invoke-virtual {v1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
-    .line 186
-    sget-object v9, Lcom/samsung/privilege/util/DialogWelcome;->gDialogMyPoint:Landroid/app/Dialog;
+    move-result-object v1
 
-    invoke-virtual {v9}, Landroid/app/Dialog;->show()V
+    invoke-virtual {v1, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 188
-    .end local v1    # "WMLP":Landroid/view/WindowManager$LayoutParams;
-    .end local v2    # "contentQT":Landroid/widget/LinearLayout;
-    .end local v3    # "i":I
-    .end local v4    # "imgCircle":[Landroid/widget/ImageView;
-    .end local v5    # "linCircle":Landroid/widget/LinearLayout;
-    .end local v6    # "numPage":I
-    .end local v7    # "pager":Landroid/support/v4/view/ViewPager;
-    .end local v8    # "params_circle":Landroid/widget/LinearLayout$LayoutParams;
-    :cond_113
+    .line 187
+    sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
+
+    invoke-virtual {v0}, Landroid/app/Dialog;->show()V
+
+    .line 189
+    :cond_145
     return-void
 
-    .line 41
-    :catch_114
-    move-exception v9
+    .line 42
+    :catch_146
+    move-exception v0
 
-    goto/16 :goto_1b
+    goto/16 :goto_1c
+.end method
+
+.method static synthetic a()[Ljava/lang/Integer;
+    .registers 1
+
+    .prologue
+    .line 23
+    sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->c:[Ljava/lang/Integer;
+
+    return-object v0
+.end method
+
+.method static synthetic b()Landroid/app/Dialog;
+    .registers 1
+
+    .prologue
+    .line 23
+    sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
+
+    return-object v0
 .end method

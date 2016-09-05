@@ -28,8 +28,6 @@
 
     .prologue
     .line 19
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer;, "Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer<TT;>;"
-    .local p1, "t":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/databind/ser/std/StdSerializer;-><init>(Ljava/lang/Class;)V
 
     .line 20
@@ -38,7 +36,6 @@
 
 .method protected constructor <init>(Ljava/lang/Class;Z)V
     .registers 3
-    .param p2, "dummy"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -49,8 +46,6 @@
 
     .prologue
     .line 28
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer;, "Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer<TT;>;"
-    .local p1, "t":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/databind/ser/std/StdSerializer;-><init>(Ljava/lang/Class;)V
 
     .line 29
@@ -61,17 +56,9 @@
 # virtual methods
 .method public acceptJsonFormatVisitor(Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;Lcom/fasterxml/jackson/databind/JavaType;)V
     .registers 3
-    .param p1, "visitor"    # Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitorWrapper;
-    .param p2, "typeHint"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
 
     .prologue
     .line 59
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer;, "Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer<TT;>;"
     if-eqz p1, :cond_5
 
     .line 62
@@ -84,17 +71,9 @@
 
 .method public getSchema(Lcom/fasterxml/jackson/databind/SerializerProvider;Ljava/lang/reflect/Type;)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 5
-    .param p1, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .param p2, "typeHint"    # Ljava/lang/reflect/Type;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
 
     .prologue
     .line 52
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer;, "Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer<TT;>;"
     const-string/jumbo v0, "string"
 
     const/4 v1, 0x1
@@ -108,9 +87,6 @@
 
 .method public serializeWithType(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)V
     .registers 5
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .param p4, "typeSer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -121,17 +97,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
-
     .prologue
     .line 43
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer;, "Lcom/fasterxml/jackson/databind/ser/std/StdScalarSerializer<TT;>;"
-    .local p1, "value":Ljava/lang/Object;, "TT;"
     invoke-virtual {p4, p1, p2}, Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;->writeTypePrefixForScalar(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;)V
 
     .line 44

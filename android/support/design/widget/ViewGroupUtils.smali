@@ -3,17 +3,6 @@
 .source "ViewGroupUtils.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/design/widget/ViewGroupUtils$1;,
-        Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImplHoneycomb;,
-        Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImplBase;,
-        Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImpl;
-    }
-.end annotation
-
-
 # static fields
 .field private static final IMPL:Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImpl;
 
@@ -29,17 +18,16 @@
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     .line 52
-    .local v0, "version":I
     const/16 v1, 0xb
 
     if-lt v0, v1, :cond_f
 
     .line 53
-    new-instance v1, Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImplHoneycomb;
+    new-instance v0, Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImplHoneycomb;
 
-    invoke-direct {v1, v2}, Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImplHoneycomb;-><init>(Landroid/support/design/widget/ViewGroupUtils$1;)V
+    invoke-direct {v0, v2}, Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImplHoneycomb;-><init>(Landroid/support/design/widget/ViewGroupUtils$1;)V
 
-    sput-object v1, Landroid/support/design/widget/ViewGroupUtils;->IMPL:Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImpl;
+    sput-object v0, Landroid/support/design/widget/ViewGroupUtils;->IMPL:Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImpl;
 
     .line 57
     :goto_e
@@ -47,11 +35,11 @@
 
     .line 55
     :cond_f
-    new-instance v1, Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImplBase;
+    new-instance v0, Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImplBase;
 
-    invoke-direct {v1, v2}, Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImplBase;-><init>(Landroid/support/design/widget/ViewGroupUtils$1;)V
+    invoke-direct {v0, v2}, Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImplBase;-><init>(Landroid/support/design/widget/ViewGroupUtils$1;)V
 
-    sput-object v1, Landroid/support/design/widget/ViewGroupUtils;->IMPL:Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImpl;
+    sput-object v0, Landroid/support/design/widget/ViewGroupUtils;->IMPL:Landroid/support/design/widget/ViewGroupUtils$ViewGroupUtilsImpl;
 
     goto :goto_e
 .end method
@@ -69,9 +57,6 @@
 
 .method static getDescendantRect(Landroid/view/ViewGroup;Landroid/view/View;Landroid/graphics/Rect;)V
     .registers 6
-    .param p0, "parent"    # Landroid/view/ViewGroup;
-    .param p1, "descendant"    # Landroid/view/View;
-    .param p2, "out"    # Landroid/graphics/Rect;
 
     .prologue
     const/4 v2, 0x0
@@ -96,9 +81,6 @@
 
 .method static offsetDescendantRect(Landroid/view/ViewGroup;Landroid/view/View;Landroid/graphics/Rect;)V
     .registers 4
-    .param p0, "parent"    # Landroid/view/ViewGroup;
-    .param p1, "descendant"    # Landroid/view/View;
-    .param p2, "rect"    # Landroid/graphics/Rect;
 
     .prologue
     .line 69

@@ -2,19 +2,8 @@
 .super Lcom/google/android/gms/common/zzc$zza;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/gms/common/zzc;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x408
-    name = "zzc"
-.end annotation
-
-
 # static fields
-.field private static final zzaec:Ljava/lang/ref/WeakReference;
+.field private static final b:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference",
@@ -25,7 +14,7 @@
 
 
 # instance fields
-.field private zzaeb:Ljava/lang/ref/WeakReference;
+.field private a:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference",
@@ -45,7 +34,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    sput-object v0, Lcom/google/android/gms/common/zzc$zzc;->zzaec:Ljava/lang/ref/WeakReference;
+    sput-object v0, Lcom/google/android/gms/common/zzc$zzc;->b:Ljava/lang/ref/WeakReference;
 
     return-void
 .end method
@@ -55,22 +44,22 @@
 
     invoke-direct {p0, p1}, Lcom/google/android/gms/common/zzc$zza;-><init>([B)V
 
-    sget-object v0, Lcom/google/android/gms/common/zzc$zzc;->zzaec:Ljava/lang/ref/WeakReference;
+    sget-object v0, Lcom/google/android/gms/common/zzc$zzc;->b:Ljava/lang/ref/WeakReference;
 
-    iput-object v0, p0, Lcom/google/android/gms/common/zzc$zzc;->zzaeb:Ljava/lang/ref/WeakReference;
+    iput-object v0, p0, Lcom/google/android/gms/common/zzc$zzc;->a:Ljava/lang/ref/WeakReference;
 
     return-void
 .end method
 
 
 # virtual methods
-.method getBytes()[B
+.method a()[B
     .registers 3
 
     monitor-enter p0
 
     :try_start_1
-    iget-object v0, p0, Lcom/google/android/gms/common/zzc$zzc;->zzaeb:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Lcom/google/android/gms/common/zzc$zzc;->a:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -80,7 +69,7 @@
 
     if-nez v0, :cond_16
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/zzc$zzc;->zzou()[B
+    invoke-virtual {p0}, Lcom/google/android/gms/common/zzc$zzc;->b()[B
 
     move-result-object v0
 
@@ -88,7 +77,7 @@
 
     invoke-direct {v1, v0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object v1, p0, Lcom/google/android/gms/common/zzc$zzc;->zzaeb:Ljava/lang/ref/WeakReference;
+    iput-object v1, p0, Lcom/google/android/gms/common/zzc$zzc;->a:Ljava/lang/ref/WeakReference;
 
     :cond_16
     monitor-exit p0
@@ -105,5 +94,5 @@
     throw v0
 .end method
 
-.method protected abstract zzou()[B
+.method protected abstract b()[B
 .end method

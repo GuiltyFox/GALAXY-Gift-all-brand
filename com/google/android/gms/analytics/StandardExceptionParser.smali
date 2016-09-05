@@ -6,7 +6,7 @@
 
 
 # instance fields
-.field private final zzNX:Ljava/util/TreeSet;
+.field private final a:Ljava/util/TreeSet;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/TreeSet",
@@ -21,7 +21,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Ljava/util/Collection;)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -33,155 +32,46 @@
         }
     .end annotation
 
-    .prologue
-    .local p2, "additionalPackages":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/lang/String;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     new-instance v0, Ljava/util/TreeSet;
 
     invoke-direct {v0}, Ljava/util/TreeSet;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/StandardExceptionParser;->zzNX:Ljava/util/TreeSet;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/StandardExceptionParser;->a:Ljava/util/TreeSet;
 
-    invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/analytics/StandardExceptionParser;->setIncludedPackages(Landroid/content/Context;Ljava/util/Collection;)V
+    invoke-virtual {p0, p1, p2}, Lcom/google/android/gms/analytics/StandardExceptionParser;->a(Landroid/content/Context;Ljava/util/Collection;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected getBestStackTraceElement(Ljava/lang/Throwable;)Ljava/lang/StackTraceElement;
-    .registers 10
-    .param p1, "t"    # Ljava/lang/Throwable;
-
-    .prologue
-    const/4 v3, 0x0
-
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getStackTrace()[Ljava/lang/StackTraceElement;
-
-    move-result-object v4
-
-    if-eqz v4, :cond_a
-
-    array-length v0, v4
-
-    if-nez v0, :cond_c
-
-    :cond_a
-    const/4 v0, 0x0
-
-    :goto_b
-    return-object v0
-
-    :cond_c
-    array-length v5, v4
-
-    move v2, v3
-
-    :goto_e
-    if-ge v2, v5, :cond_34
-
-    aget-object v1, v4, v2
-
-    invoke-virtual {v1}, Ljava/lang/StackTraceElement;->getClassName()Ljava/lang/String;
-
-    move-result-object v6
-
-    iget-object v0, p0, Lcom/google/android/gms/analytics/StandardExceptionParser;->zzNX:Ljava/util/TreeSet;
-
-    invoke-virtual {v0}, Ljava/util/TreeSet;->iterator()Ljava/util/Iterator;
-
-    move-result-object v7
-
-    :cond_1c
-    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_30
-
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/String;
-
-    invoke-virtual {v6, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1c
-
-    move-object v0, v1
-
-    goto :goto_b
-
-    :cond_30
-    add-int/lit8 v0, v2, 0x1
-
-    move v2, v0
-
-    goto :goto_e
-
-    :cond_34
-    aget-object v0, v4, v3
-
-    goto :goto_b
-.end method
-
-.method protected getCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
-    .registers 3
-
-    .prologue
-    :goto_0
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_b
-
-    invoke-virtual {p1}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    :cond_b
-    return-object p1
-.end method
-
-.method public getDescription(Ljava/lang/String;Ljava/lang/Throwable;)Ljava/lang/String;
+.method public a(Ljava/lang/String;Ljava/lang/Throwable;)Ljava/lang/String;
     .registers 5
-    .param p1, "threadName"    # Ljava/lang/String;
-    .param p2, "t"    # Ljava/lang/Throwable;
 
-    .prologue
-    invoke-virtual {p0, p2}, Lcom/google/android/gms/analytics/StandardExceptionParser;->getCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-virtual {p0, p2}, Lcom/google/android/gms/analytics/StandardExceptionParser;->a(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     move-result-object v0
 
-    invoke-virtual {p0, p2}, Lcom/google/android/gms/analytics/StandardExceptionParser;->getCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-virtual {p0, p2}, Lcom/google/android/gms/analytics/StandardExceptionParser;->a(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
     move-result-object v1
 
-    invoke-virtual {p0, v1}, Lcom/google/android/gms/analytics/StandardExceptionParser;->getBestStackTraceElement(Ljava/lang/Throwable;)Ljava/lang/StackTraceElement;
+    invoke-virtual {p0, v1}, Lcom/google/android/gms/analytics/StandardExceptionParser;->b(Ljava/lang/Throwable;)Ljava/lang/StackTraceElement;
 
     move-result-object v1
 
-    invoke-virtual {p0, v0, v1, p1}, Lcom/google/android/gms/analytics/StandardExceptionParser;->getDescription(Ljava/lang/Throwable;Ljava/lang/StackTraceElement;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, v0, v1, p1}, Lcom/google/android/gms/analytics/StandardExceptionParser;->a(Ljava/lang/Throwable;Ljava/lang/StackTraceElement;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method protected getDescription(Ljava/lang/Throwable;Ljava/lang/StackTraceElement;Ljava/lang/String;)Ljava/lang/String;
+.method protected a(Ljava/lang/Throwable;Ljava/lang/StackTraceElement;Ljava/lang/String;)Ljava/lang/String;
     .registers 11
-    .param p1, "cause"    # Ljava/lang/Throwable;
-    .param p2, "element"    # Ljava/lang/StackTraceElement;
-    .param p3, "threadName"    # Ljava/lang/String;
 
-    .prologue
     const/4 v6, 0x1
 
     const/4 v5, 0x0
@@ -282,9 +172,28 @@
     return-object v0
 .end method
 
-.method public setIncludedPackages(Landroid/content/Context;Ljava/util/Collection;)V
+.method protected a(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    .registers 3
+
+    :goto_0
+    invoke-virtual {p1}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_b
+
+    invoke-virtual {p1}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    :cond_b
+    return-object p1
+.end method
+
+.method public a(Landroid/content/Context;Ljava/util/Collection;)V
     .registers 11
-    .param p1, "context"    # Landroid/content/Context;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -296,13 +205,11 @@
         }
     .end annotation
 
-    .prologue
-    .local p2, "additionalPackages":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/lang/String;>;"
     const/4 v3, 0x1
 
     const/4 v4, 0x0
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/StandardExceptionParser;->zzNX:Ljava/util/TreeSet;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/StandardExceptionParser;->a:Ljava/util/TreeSet;
 
     invoke-virtual {v0}, Ljava/util/TreeSet;->clear()V
 
@@ -326,7 +233,7 @@
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/google/android/gms/analytics/StandardExceptionParser;->zzNX:Ljava/util/TreeSet;
+    iget-object v2, p0, Lcom/google/android/gms/analytics/StandardExceptionParser;->a:Ljava/util/TreeSet;
 
     invoke-virtual {v2, v0}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
 
@@ -372,7 +279,7 @@
 
     const-string/jumbo v0, "No package found"
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->zzaG(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzae;->a(Ljava/lang/String;)V
 
     :cond_46
     invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
@@ -393,7 +300,7 @@
 
     check-cast v0, Ljava/lang/String;
 
-    iget-object v1, p0, Lcom/google/android/gms/analytics/StandardExceptionParser;->zzNX:Ljava/util/TreeSet;
+    iget-object v1, p0, Lcom/google/android/gms/analytics/StandardExceptionParser;->a:Ljava/util/TreeSet;
 
     invoke-virtual {v1}, Ljava/util/TreeSet;->iterator()Ljava/util/Iterator;
 
@@ -426,14 +333,14 @@
 
     if-eqz v6, :cond_7a
 
-    iget-object v6, p0, Lcom/google/android/gms/analytics/StandardExceptionParser;->zzNX:Ljava/util/TreeSet;
+    iget-object v6, p0, Lcom/google/android/gms/analytics/StandardExceptionParser;->a:Ljava/util/TreeSet;
 
     invoke-virtual {v6, v1}, Ljava/util/TreeSet;->remove(Ljava/lang/Object;)Z
 
     :cond_7a
     if-eqz v2, :cond_4a
 
-    iget-object v1, p0, Lcom/google/android/gms/analytics/StandardExceptionParser;->zzNX:Ljava/util/TreeSet;
+    iget-object v1, p0, Lcom/google/android/gms/analytics/StandardExceptionParser;->a:Ljava/util/TreeSet;
 
     invoke-virtual {v1, v0}, Ljava/util/TreeSet;->add(Ljava/lang/Object;)Z
 
@@ -446,4 +353,81 @@
 
     :cond_84
     return-void
+.end method
+
+.method protected b(Ljava/lang/Throwable;)Ljava/lang/StackTraceElement;
+    .registers 10
+
+    const/4 v3, 0x0
+
+    invoke-virtual {p1}, Ljava/lang/Throwable;->getStackTrace()[Ljava/lang/StackTraceElement;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_a
+
+    array-length v0, v4
+
+    if-nez v0, :cond_c
+
+    :cond_a
+    const/4 v0, 0x0
+
+    :goto_b
+    return-object v0
+
+    :cond_c
+    array-length v5, v4
+
+    move v2, v3
+
+    :goto_e
+    if-ge v2, v5, :cond_34
+
+    aget-object v1, v4, v2
+
+    invoke-virtual {v1}, Ljava/lang/StackTraceElement;->getClassName()Ljava/lang/String;
+
+    move-result-object v6
+
+    iget-object v0, p0, Lcom/google/android/gms/analytics/StandardExceptionParser;->a:Ljava/util/TreeSet;
+
+    invoke-virtual {v0}, Ljava/util/TreeSet;->iterator()Ljava/util/Iterator;
+
+    move-result-object v7
+
+    :cond_1c
+    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_30
+
+    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-virtual {v6, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1c
+
+    move-object v0, v1
+
+    goto :goto_b
+
+    :cond_30
+    add-int/lit8 v0, v2, 0x1
+
+    move v2, v0
+
+    goto :goto_e
+
+    :cond_34
+    aget-object v0, v4, v3
+
+    goto :goto_b
 .end method

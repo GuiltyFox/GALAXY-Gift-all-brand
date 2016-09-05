@@ -6,17 +6,6 @@
 .implements Lcom/fasterxml/jackson/core/format/InputAccessor;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/core/format/InputAccessor;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Std"
-.end annotation
-
-
 # instance fields
 .field protected final _buffer:[B
 
@@ -32,8 +21,6 @@
 # direct methods
 .method public constructor <init>(Ljava/io/InputStream;[B)V
     .registers 4
-    .param p1, "in"    # Ljava/io/InputStream;
-    .param p2, "buffer"    # [B
 
     .prologue
     const/4 v0, 0x0
@@ -62,7 +49,6 @@
 
 .method public constructor <init>([B)V
     .registers 3
-    .param p1, "inputDocument"    # [B
 
     .prologue
     .line 78
@@ -92,9 +78,6 @@
 
 .method public constructor <init>([BII)V
     .registers 5
-    .param p1, "inputDocument"    # [B
-    .param p2, "start"    # I
-    .param p3, "len"    # I
 
     .prologue
     .line 93
@@ -127,8 +110,6 @@
 # virtual methods
 .method public createMatcher(Lcom/fasterxml/jackson/core/JsonFactory;Lcom/fasterxml/jackson/core/format/MatchStrength;)Lcom/fasterxml/jackson/core/format/DataFormatMatcher;
     .registers 10
-    .param p1, "match"    # Lcom/fasterxml/jackson/core/JsonFactory;
-    .param p2, "matchStrength"    # Lcom/fasterxml/jackson/core/format/MatchStrength;
 
     .prologue
     .line 147
@@ -156,98 +137,86 @@
 .end method
 
 .method public hasMoreBytes()Z
-    .registers 8
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 7
 
     .prologue
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     .line 104
-    iget v4, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_ptr:I
+    iget v2, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_ptr:I
 
-    iget v5, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_bufferedEnd:I
+    iget v3, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_bufferedEnd:I
 
-    if-ge v4, v5, :cond_9
+    if-ge v2, v3, :cond_9
 
     .line 119
     :goto_8
-    return v2
+    return v0
 
     .line 107
     :cond_9
-    iget-object v4, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_in:Ljava/io/InputStream;
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_in:Ljava/io/InputStream;
 
-    if-nez v4, :cond_f
+    if-nez v2, :cond_f
 
-    move v2, v3
+    move v0, v1
 
     .line 108
     goto :goto_8
 
     .line 110
     :cond_f
-    iget-object v4, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_buffer:[B
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_buffer:[B
 
-    array-length v4, v4
+    array-length v2, v2
 
-    iget v5, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_ptr:I
+    iget v3, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_ptr:I
 
-    sub-int v0, v4, v5
+    sub-int/2addr v2, v3
 
     .line 111
-    .local v0, "amount":I
-    if-ge v0, v2, :cond_1a
+    if-ge v2, v0, :cond_19
 
-    move v2, v3
+    move v0, v1
 
     .line 112
     goto :goto_8
 
     .line 114
-    :cond_1a
-    iget-object v4, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_in:Ljava/io/InputStream;
+    :cond_19
+    iget-object v3, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_in:Ljava/io/InputStream;
 
-    iget-object v5, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_buffer:[B
+    iget-object v4, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_buffer:[B
 
-    iget v6, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_ptr:I
+    iget v5, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_ptr:I
 
-    invoke-virtual {v4, v5, v6, v0}, Ljava/io/InputStream;->read([BII)I
+    invoke-virtual {v3, v4, v5, v2}, Ljava/io/InputStream;->read([BII)I
 
-    move-result v1
+    move-result v2
 
     .line 115
-    .local v1, "count":I
-    if-gtz v1, :cond_28
+    if-gtz v2, :cond_27
 
-    move v2, v3
+    move v0, v1
 
     .line 116
     goto :goto_8
 
     .line 118
-    :cond_28
-    iget v3, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_bufferedEnd:I
+    :cond_27
+    iget v1, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_bufferedEnd:I
 
-    add-int/2addr v3, v1
+    add-int/2addr v1, v2
 
-    iput v3, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_bufferedEnd:I
+    iput v1, p0, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->_bufferedEnd:I
 
     goto :goto_8
 .end method
 
 .method public nextByte()B
     .registers 4
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 126

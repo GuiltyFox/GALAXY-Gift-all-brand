@@ -20,7 +20,7 @@
 
 
 # instance fields
-.field private final cacheDecoder:Lcom/bumptech/glide/load/ResourceDecoder;
+.field private final a:Lcom/bumptech/glide/load/ResourceDecoder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/ResourceDecoder",
@@ -32,11 +32,11 @@
     .end annotation
 .end field
 
-.field private final encoder:Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;
+.field private final b:Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDecoder;
 
-.field private final sourceDecoder:Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDecoder;
+.field private final c:Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;
 
-.field private final sourceEncoder:Lcom/bumptech/glide/load/Encoder;
+.field private final d:Lcom/bumptech/glide/load/Encoder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/Encoder",
@@ -51,8 +51,6 @@
 # direct methods
 .method public constructor <init>(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Lcom/bumptech/glide/load/DecodeFormat;)V
     .registers 5
-    .param p1, "bitmapPool"    # Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
-    .param p2, "decodeFormat"    # Lcom/bumptech/glide/load/DecodeFormat;
 
     .prologue
     .line 27
@@ -67,28 +65,28 @@
 
     invoke-direct {v0, v1}, Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;-><init>(Lcom/bumptech/glide/load/ResourceDecoder;)V
 
-    iput-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDataLoadProvider;->cacheDecoder:Lcom/bumptech/glide/load/ResourceDecoder;
+    iput-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDataLoadProvider;->a:Lcom/bumptech/glide/load/ResourceDecoder;
 
     .line 29
     new-instance v0, Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDecoder;
 
     invoke-direct {v0, p1, p2}, Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDecoder;-><init>(Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;Lcom/bumptech/glide/load/DecodeFormat;)V
 
-    iput-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDataLoadProvider;->sourceDecoder:Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDecoder;
+    iput-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDataLoadProvider;->b:Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDecoder;
 
     .line 30
     new-instance v0, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;
 
     invoke-direct {v0}, Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;-><init>()V
 
-    iput-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDataLoadProvider;->encoder:Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;
+    iput-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDataLoadProvider;->c:Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;
 
     .line 31
-    invoke-static {}, Lcom/bumptech/glide/load/resource/NullEncoder;->get()Lcom/bumptech/glide/load/Encoder;
+    invoke-static {}, Lcom/bumptech/glide/load/resource/NullEncoder;->b()Lcom/bumptech/glide/load/Encoder;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDataLoadProvider;->sourceEncoder:Lcom/bumptech/glide/load/Encoder;
+    iput-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDataLoadProvider;->d:Lcom/bumptech/glide/load/Encoder;
 
     .line 32
     return-void
@@ -96,7 +94,7 @@
 
 
 # virtual methods
-.method public getCacheDecoder()Lcom/bumptech/glide/load/ResourceDecoder;
+.method public a()Lcom/bumptech/glide/load/ResourceDecoder;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -111,31 +109,12 @@
 
     .prologue
     .line 36
-    iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDataLoadProvider;->cacheDecoder:Lcom/bumptech/glide/load/ResourceDecoder;
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDataLoadProvider;->a:Lcom/bumptech/glide/load/ResourceDecoder;
 
     return-object v0
 .end method
 
-.method public getEncoder()Lcom/bumptech/glide/load/ResourceEncoder;
-    .registers 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lcom/bumptech/glide/load/ResourceEncoder",
-            "<",
-            "Landroid/graphics/Bitmap;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 51
-    iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDataLoadProvider;->encoder:Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;
-
-    return-object v0
-.end method
-
-.method public getSourceDecoder()Lcom/bumptech/glide/load/ResourceDecoder;
+.method public b()Lcom/bumptech/glide/load/ResourceDecoder;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -150,12 +129,12 @@
 
     .prologue
     .line 41
-    iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDataLoadProvider;->sourceDecoder:Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDecoder;
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDataLoadProvider;->b:Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDecoder;
 
     return-object v0
 .end method
 
-.method public getSourceEncoder()Lcom/bumptech/glide/load/Encoder;
+.method public c()Lcom/bumptech/glide/load/Encoder;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -169,7 +148,26 @@
 
     .prologue
     .line 46
-    iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDataLoadProvider;->sourceEncoder:Lcom/bumptech/glide/load/Encoder;
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDataLoadProvider;->d:Lcom/bumptech/glide/load/Encoder;
+
+    return-object v0
+.end method
+
+.method public d()Lcom/bumptech/glide/load/ResourceEncoder;
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lcom/bumptech/glide/load/ResourceEncoder",
+            "<",
+            "Landroid/graphics/Bitmap;",
+            ">;"
+        }
+    .end annotation
+
+    .prologue
+    .line 51
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/bitmap/FileDescriptorBitmapDataLoadProvider;->c:Lcom/bumptech/glide/load/resource/bitmap/BitmapEncoder;
 
     return-object v0
 .end method

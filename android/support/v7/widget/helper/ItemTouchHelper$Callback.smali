@@ -3,17 +3,6 @@
 .source "ItemTouchHelper.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/widget/helper/ItemTouchHelper;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x409
-    name = "Callback"
-.end annotation
-
-
 # static fields
 .field private static final ABS_HORIZONTAL_DIR_FLAGS:I = 0xc0c0c
 
@@ -118,14 +107,6 @@
 
 .method static synthetic access$1300(Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;Ljava/util/List;IFF)V
     .registers 8
-    .param p0, "x0"    # Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;
-    .param p1, "x1"    # Landroid/graphics/Canvas;
-    .param p2, "x2"    # Landroid/support/v7/widget/RecyclerView;
-    .param p3, "x3"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
-    .param p4, "x4"    # Ljava/util/List;
-    .param p5, "x5"    # I
-    .param p6, "x6"    # F
-    .param p7, "x7"    # F
 
     .prologue
     .line 1356
@@ -136,14 +117,6 @@
 
 .method static synthetic access$1400(Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;Ljava/util/List;IFF)V
     .registers 8
-    .param p0, "x0"    # Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;
-    .param p1, "x1"    # Landroid/graphics/Canvas;
-    .param p2, "x2"    # Landroid/support/v7/widget/RecyclerView;
-    .param p3, "x3"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
-    .param p4, "x4"    # Ljava/util/List;
-    .param p5, "x5"    # I
-    .param p6, "x6"    # F
-    .param p7, "x7"    # F
 
     .prologue
     .line 1356
@@ -154,9 +127,6 @@
 
 .method static synthetic access$2100(Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;)Z
     .registers 4
-    .param p0, "x0"    # Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;
-    .param p1, "x1"    # Landroid/support/v7/widget/RecyclerView;
-    .param p2, "x2"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     .prologue
     .line 1356
@@ -169,9 +139,6 @@
 
 .method static synthetic access$2200(Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;)Z
     .registers 4
-    .param p0, "x0"    # Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;
-    .param p1, "x1"    # Landroid/support/v7/widget/RecyclerView;
-    .param p2, "x2"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     .prologue
     .line 1356
@@ -183,18 +150,15 @@
 .end method
 
 .method public static convertToRelativeDirection(II)I
-    .registers 6
-    .param p0, "flags"    # I
-    .param p1, "layoutDirection"    # I
+    .registers 7
 
     .prologue
-    const v3, 0xc0c0c
+    const v4, 0xc0c0c
 
     .line 1458
-    and-int v0, p0, v3
+    and-int v0, p0, v4
 
     .line 1459
-    .local v0, "masked":I
     if-nez v0, :cond_8
 
     .line 1473
@@ -205,37 +169,37 @@
     :cond_8
     xor-int/lit8 v1, v0, -0x1
 
-    and-int/2addr p0, v1
+    and-int/2addr v1, p0
 
     .line 1463
-    if-nez p1, :cond_11
+    if-nez p1, :cond_12
 
     .line 1465
-    shl-int/lit8 v1, v0, 0x2
+    shl-int/lit8 v0, v0, 0x2
 
-    or-int/2addr p0, v1
+    or-int p0, v1, v0
 
     .line 1466
     goto :goto_7
 
     .line 1469
-    :cond_11
-    shl-int/lit8 v1, v0, 0x1
+    :cond_12
+    shl-int/lit8 v2, v0, 0x1
 
-    const v2, -0xc0c0d
+    const v3, -0xc0c0d
 
-    and-int/2addr v1, v2
+    and-int/2addr v2, v3
 
-    or-int/2addr p0, v1
+    or-int/2addr v1, v2
 
     .line 1471
-    shl-int/lit8 v1, v0, 0x1
+    shl-int/lit8 v0, v0, 0x1
 
-    and-int/2addr v1, v3
+    and-int/2addr v0, v4
 
-    shl-int/lit8 v1, v1, 0x2
+    shl-int/lit8 v0, v0, 0x2
 
-    or-int/2addr p0, v1
+    or-int p0, v1, v0
 
     .line 1473
     goto :goto_7
@@ -253,7 +217,6 @@
 
 .method private getMaxDragScroll(Landroid/support/v7/widget/RecyclerView;)I
     .registers 4
-    .param p1, "recyclerView"    # Landroid/support/v7/widget/RecyclerView;
 
     .prologue
     .line 1868
@@ -285,8 +248,6 @@
 
 .method private hasDragFlag(Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;)Z
     .registers 5
-    .param p1, "recyclerView"    # Landroid/support/v7/widget/RecyclerView;
-    .param p2, "viewHolder"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     .prologue
     .line 1572
@@ -295,28 +256,25 @@
     move-result v0
 
     .line 1573
-    .local v0, "flags":I
     const/high16 v1, 0xff0000
 
-    and-int/2addr v1, v0
+    and-int/2addr v0, v1
 
-    if-eqz v1, :cond_b
+    if-eqz v0, :cond_b
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     :goto_a
-    return v1
+    return v0
 
     :cond_b
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_a
 .end method
 
 .method private hasSwipeFlag(Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;)Z
     .registers 5
-    .param p1, "recyclerView"    # Landroid/support/v7/widget/RecyclerView;
-    .param p2, "viewHolder"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     .prologue
     .line 1578
@@ -325,28 +283,25 @@
     move-result v0
 
     .line 1579
-    .local v0, "flags":I
     const v1, 0xff00
 
-    and-int/2addr v1, v0
+    and-int/2addr v0, v1
 
-    if-eqz v1, :cond_c
+    if-eqz v0, :cond_c
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     :goto_b
-    return v1
+    return v0
 
     :cond_c
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_b
 .end method
 
 .method public static makeFlag(II)I
     .registers 3
-    .param p0, "actionState"    # I
-    .param p1, "directions"    # I
 
     .prologue
     .line 1504
@@ -359,8 +314,6 @@
 
 .method public static makeMovementFlags(II)I
     .registers 4
-    .param p0, "dragFlags"    # I
-    .param p1, "swipeFlags"    # I
 
     .prologue
     .line 1488
@@ -392,13 +345,7 @@
 .end method
 
 .method private onDraw(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;Ljava/util/List;IFF)V
-    .registers 21
-    .param p1, "c"    # Landroid/graphics/Canvas;
-    .param p2, "parent"    # Landroid/support/v7/widget/RecyclerView;
-    .param p3, "selected"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
-    .param p5, "actionState"    # I
-    .param p6, "dX"    # F
-    .param p7, "dY"    # F
+    .registers 19
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -414,31 +361,27 @@
 
     .prologue
     .line 1945
-    .local p4, "recoverAnimationList":Ljava/util/List;, "Ljava/util/List<Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;>;"
-    invoke-interface/range {p4 .. p4}, Ljava/util/List;->size()I
+    invoke-interface {p4}, Ljava/util/List;->size()I
 
-    move-result v12
+    move-result v9
 
     .line 1946
-    .local v12, "recoverAnimSize":I
-    const/4 v11, 0x0
+    const/4 v0, 0x0
 
-    .local v11, "i":I
-    :goto_5
-    if-ge v11, v12, :cond_2b
+    move v8, v0
+
+    :goto_6
+    if-ge v8, v9, :cond_2b
 
     .line 1947
-    move-object/from16 v0, p4
+    invoke-interface {p4, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-interface {v0, v11}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v9
-
-    check-cast v9, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;
+    check-cast v0, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;
 
     .line 1948
-    .local v9, "anim":Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;
-    invoke-virtual {v9}, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->update()V
+    invoke-virtual {v0}, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->c()V
 
     .line 1949
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
@@ -446,81 +389,72 @@
     move-result v10
 
     .line 1950
-    .local v10, "count":I
-    iget-object v4, v9, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->mViewHolder:Landroid/support/v7/widget/RecyclerView$ViewHolder;
+    iget-object v3, v0, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->h:Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
-    iget v5, v9, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->mX:F
+    iget v4, v0, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->k:F
 
-    iget v6, v9, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->mY:F
+    iget v5, v0, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->l:F
 
-    iget v7, v9, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->mActionState:I
+    iget v6, v0, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->i:I
 
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
-    move-object v1, p0
+    move-object v0, p0
 
-    move-object v2, p1
+    move-object v1, p1
 
-    move-object v3, p2
+    move-object v2, p2
 
-    invoke-virtual/range {v1 .. v8}, Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;->onChildDraw(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;FFIZ)V
+    invoke-virtual/range {v0 .. v7}, Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;->onChildDraw(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;FFIZ)V
 
     .line 1952
     invoke-virtual {p1, v10}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     .line 1946
-    add-int/lit8 v11, v11, 0x1
+    add-int/lit8 v0, v8, 0x1
 
-    goto :goto_5
+    move v8, v0
+
+    goto :goto_6
 
     .line 1954
-    .end local v9    # "anim":Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;
-    .end local v10    # "count":I
     :cond_2b
-    if-eqz p3, :cond_43
+    if-eqz p3, :cond_42
 
     .line 1955
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    move-result v10
+    move-result v8
 
     .line 1956
-    .restart local v10    # "count":I
-    const/4 v8, 0x1
+    const/4 v7, 0x1
 
-    move-object v1, p0
+    move-object v0, p0
 
-    move-object v2, p1
+    move-object v1, p1
 
-    move-object v3, p2
+    move-object v2, p2
 
-    move-object/from16 v4, p3
+    move-object v3, p3
 
-    move/from16 v5, p6
+    move/from16 v4, p6
 
-    move/from16 v6, p7
+    move/from16 v5, p7
 
-    move/from16 v7, p5
+    move/from16 v6, p5
 
-    invoke-virtual/range {v1 .. v8}, Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;->onChildDraw(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;FFIZ)V
+    invoke-virtual/range {v0 .. v7}, Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;->onChildDraw(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;FFIZ)V
 
     .line 1957
-    invoke-virtual {p1, v10}, Landroid/graphics/Canvas;->restoreToCount(I)V
+    invoke-virtual {p1, v8}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     .line 1959
-    .end local v10    # "count":I
-    :cond_43
+    :cond_42
     return-void
 .end method
 
 .method private onDrawOver(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;Ljava/util/List;IFF)V
-    .registers 22
-    .param p1, "c"    # Landroid/graphics/Canvas;
-    .param p2, "parent"    # Landroid/support/v7/widget/RecyclerView;
-    .param p3, "selected"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
-    .param p5, "actionState"    # I
-    .param p6, "dX"    # F
-    .param p7, "dY"    # F
+    .registers 19
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -536,176 +470,169 @@
 
     .prologue
     .line 1964
-    .local p4, "recoverAnimationList":Ljava/util/List;, "Ljava/util/List<Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;>;"
-    invoke-interface/range {p4 .. p4}, Ljava/util/List;->size()I
+    invoke-interface {p4}, Ljava/util/List;->size()I
 
-    move-result v13
+    move-result v9
 
     .line 1965
-    .local v13, "recoverAnimSize":I
-    const/4 v12, 0x0
+    const/4 v0, 0x0
 
-    .local v12, "i":I
-    :goto_5
-    if-ge v12, v13, :cond_29
+    move v8, v0
+
+    :goto_6
+    if-ge v8, v9, :cond_28
 
     .line 1966
-    move-object/from16 v0, p4
+    invoke-interface {p4, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-interface {v0, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v9
-
-    check-cast v9, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;
+    check-cast v0, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;
 
     .line 1967
-    .local v9, "anim":Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v10
 
     .line 1968
-    .local v10, "count":I
-    iget-object v4, v9, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->mViewHolder:Landroid/support/v7/widget/RecyclerView$ViewHolder;
+    iget-object v3, v0, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->h:Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
-    iget v5, v9, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->mX:F
+    iget v4, v0, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->k:F
 
-    iget v6, v9, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->mY:F
+    iget v5, v0, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->l:F
 
-    iget v7, v9, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->mActionState:I
+    iget v6, v0, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->i:I
 
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
-    move-object v1, p0
+    move-object v0, p0
 
-    move-object v2, p1
+    move-object v1, p1
 
-    move-object/from16 v3, p2
+    move-object v2, p2
 
-    invoke-virtual/range {v1 .. v8}, Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;->onChildDrawOver(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;FFIZ)V
+    invoke-virtual/range {v0 .. v7}, Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;->onChildDrawOver(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;FFIZ)V
 
     .line 1970
     invoke-virtual {p1, v10}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     .line 1965
-    add-int/lit8 v12, v12, 0x1
+    add-int/lit8 v0, v8, 0x1
 
-    goto :goto_5
+    move v8, v0
+
+    goto :goto_6
 
     .line 1972
-    .end local v9    # "anim":Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;
-    .end local v10    # "count":I
-    :cond_29
-    if-eqz p3, :cond_42
+    :cond_28
+    if-eqz p3, :cond_3f
 
     .line 1973
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    move-result v10
+    move-result v8
 
     .line 1974
-    .restart local v10    # "count":I
-    const/4 v8, 0x1
+    const/4 v7, 0x1
 
-    move-object v1, p0
+    move-object v0, p0
 
-    move-object v2, p1
+    move-object v1, p1
 
-    move-object/from16 v3, p2
+    move-object v2, p2
 
-    move-object/from16 v4, p3
+    move-object v3, p3
 
-    move/from16 v5, p6
+    move/from16 v4, p6
 
-    move/from16 v6, p7
+    move/from16 v5, p7
 
-    move/from16 v7, p5
+    move/from16 v6, p5
 
-    invoke-virtual/range {v1 .. v8}, Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;->onChildDrawOver(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;FFIZ)V
+    invoke-virtual/range {v0 .. v7}, Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;->onChildDrawOver(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;FFIZ)V
 
     .line 1975
-    invoke-virtual {p1, v10}, Landroid/graphics/Canvas;->restoreToCount(I)V
+    invoke-virtual {p1, v8}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     .line 1977
-    .end local v10    # "count":I
-    :cond_42
-    const/4 v11, 0x0
+    :cond_3f
+    const/4 v1, 0x0
 
     .line 1978
-    .local v11, "hasRunningAnimation":Z
-    add-int/lit8 v12, v13, -0x1
+    add-int/lit8 v0, v9, -0x1
 
-    :goto_45
-    if-ltz v12, :cond_69
+    move v2, v0
+
+    :goto_43
+    if-ltz v2, :cond_66
 
     .line 1979
-    move-object/from16 v0, p4
+    invoke-interface {p4, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-interface {v0, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v9
-
-    check-cast v9, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;
+    check-cast v0, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;
 
     .line 1980
-    .restart local v9    # "anim":Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;
-    # getter for: Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->mEnded:Z
-    invoke-static {v9}, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->access$1900(Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;)Z
+    invoke-static {v0}, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->a(Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;)Z
 
-    move-result v1
+    move-result v3
 
-    if-eqz v1, :cond_61
+    if-eqz v3, :cond_5e
 
-    iget-boolean v1, v9, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->mIsPendingCleanup:Z
+    iget-boolean v3, v0, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->j:Z
 
-    if-nez v1, :cond_61
+    if-nez v3, :cond_5e
 
     .line 1981
-    move-object/from16 v0, p4
+    invoke-interface {p4, v2}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    invoke-interface {v0, v12}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+    move v0, v1
 
     .line 1978
-    :cond_5e
-    :goto_5e
-    add-int/lit8 v12, v12, -0x1
+    :goto_59
+    add-int/lit8 v1, v2, -0x1
 
-    goto :goto_45
+    move v2, v1
+
+    move v1, v0
+
+    goto :goto_43
 
     .line 1982
-    :cond_61
-    # getter for: Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->mEnded:Z
-    invoke-static {v9}, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->access$1900(Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;)Z
+    :cond_5e
+    invoke-static {v0}, Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;->a(Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;)Z
 
-    move-result v1
+    move-result v0
 
-    if-nez v1, :cond_5e
+    if-nez v0, :cond_6c
 
     .line 1983
-    const/4 v11, 0x1
+    const/4 v0, 0x1
 
-    goto :goto_5e
+    goto :goto_59
 
     .line 1986
-    .end local v9    # "anim":Landroid/support/v7/widget/helper/ItemTouchHelper$RecoverAnimation;
-    :cond_69
-    if-eqz v11, :cond_6e
+    :cond_66
+    if-eqz v1, :cond_6b
 
     .line 1987
-    invoke-virtual/range {p2 .. p2}, Landroid/support/v7/widget/RecyclerView;->invalidate()V
+    invoke-virtual {p2}, Landroid/support/v7/widget/RecyclerView;->invalidate()V
 
     .line 1989
-    :cond_6e
+    :cond_6b
     return-void
+
+    :cond_6c
+    move v0, v1
+
+    goto :goto_59
 .end method
 
 
 # virtual methods
 .method public canDropOver(Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;Landroid/support/v7/widget/RecyclerView$ViewHolder;)Z
     .registers 5
-    .param p1, "recyclerView"    # Landroid/support/v7/widget/RecyclerView;
-    .param p2, "current"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
-    .param p3, "target"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     .prologue
     .line 1599
@@ -716,9 +643,6 @@
 
 .method public chooseDropTarget(Landroid/support/v7/widget/RecyclerView$ViewHolder;Ljava/util/List;II)Landroid/support/v7/widget/RecyclerView$ViewHolder;
     .registers 18
-    .param p1, "selected"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
-    .param p3, "curX"    # I
-    .param p4, "curY"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -733,282 +657,275 @@
 
     .prologue
     .line 1769
-    .local p2, "dropTargets":Ljava/util/List;, "Ljava/util/List<Landroid/support/v7/widget/RecyclerView$ViewHolder;>;"
-    iget-object v11, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v0, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-virtual {v11}, Landroid/view/View;->getWidth()I
+    invoke-virtual {v0}, Landroid/view/View;->getWidth()I
 
-    move-result v11
+    move-result v0
 
-    add-int v5, p3, v11
+    add-int v5, p3, v0
 
     .line 1770
-    .local v5, "right":I
-    iget-object v11, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v0, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-virtual {v11}, Landroid/view/View;->getHeight()I
+    invoke-virtual {v0}, Landroid/view/View;->getHeight()I
 
-    move-result v11
+    move-result v0
 
-    add-int v0, p4, v11
+    add-int v6, p4, v0
 
     .line 1771
-    .local v0, "bottom":I
-    const/4 v9, 0x0
+    const/4 v2, 0x0
 
     .line 1772
-    .local v9, "winner":Landroid/support/v7/widget/RecyclerView$ViewHolder;
-    const/4 v10, -0x1
+    const/4 v1, -0x1
 
     .line 1773
-    .local v10, "winnerScore":I
-    iget-object v11, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v0, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-virtual {v11}, Landroid/view/View;->getLeft()I
+    invoke-virtual {v0}, Landroid/view/View;->getLeft()I
 
-    move-result v11
+    move-result v0
 
-    sub-int v2, p3, v11
+    sub-int v7, p3, v0
 
     .line 1774
-    .local v2, "dx":I
-    iget-object v11, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v0, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-virtual {v11}, Landroid/view/View;->getTop()I
+    invoke-virtual {v0}, Landroid/view/View;->getTop()I
 
-    move-result v11
+    move-result v0
 
-    sub-int v3, p4, v11
+    sub-int v8, p4, v0
 
     .line 1775
-    .local v3, "dy":I
     invoke-interface {p2}, Ljava/util/List;->size()I
 
-    move-result v8
+    move-result v9
 
     .line 1776
-    .local v8, "targetsSize":I
-    const/4 v4, 0x0
+    const/4 v0, 0x0
 
-    .local v4, "i":I
-    :goto_27
-    if-ge v4, v8, :cond_bb
+    move v4, v0
+
+    :goto_28
+    if-ge v4, v9, :cond_bc
 
     .line 1777
     invoke-interface {p2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v0
 
-    check-cast v7, Landroid/support/v7/widget/RecyclerView$ViewHolder;
+    check-cast v0, Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     .line 1778
-    .local v7, "target":Landroid/support/v7/widget/RecyclerView$ViewHolder;
-    if-lez v2, :cond_51
+    if-lez v7, :cond_bd
 
     .line 1779
-    iget-object v11, v7, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v3, v0, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-virtual {v11}, Landroid/view/View;->getRight()I
+    invoke-virtual {v3}, Landroid/view/View;->getRight()I
 
-    move-result v11
+    move-result v3
 
-    sub-int v1, v11, v5
+    sub-int/2addr v3, v5
 
     .line 1780
-    .local v1, "diff":I
-    if-gez v1, :cond_51
+    if-gez v3, :cond_bd
 
-    iget-object v11, v7, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v10, v0, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+
+    invoke-virtual {v10}, Landroid/view/View;->getRight()I
+
+    move-result v10
+
+    iget-object v11, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v11}, Landroid/view/View;->getRight()I
 
     move-result v11
 
-    iget-object v12, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
-
-    invoke-virtual {v12}, Landroid/view/View;->getRight()I
-
-    move-result v12
-
-    if-le v11, v12, :cond_51
+    if-le v10, v11, :cond_bd
 
     .line 1781
-    invoke-static {v1}, Ljava/lang/Math;->abs(I)I
+    invoke-static {v3}, Ljava/lang/Math;->abs(I)I
 
-    move-result v6
+    move-result v3
 
     .line 1782
-    .local v6, "score":I
-    if-le v6, v10, :cond_51
+    if-le v3, v1, :cond_bd
 
-    .line 1783
-    move v10, v6
+    move v2, v3
 
-    .line 1784
-    move-object v9, v7
+    move-object v3, v0
 
     .line 1788
-    .end local v1    # "diff":I
-    .end local v6    # "score":I
-    :cond_51
-    if-gez v2, :cond_73
+    :goto_51
+    if-gez v7, :cond_c5
 
     .line 1789
-    iget-object v11, v7, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v1, v0, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-virtual {v11}, Landroid/view/View;->getLeft()I
+    invoke-virtual {v1}, Landroid/view/View;->getLeft()I
 
-    move-result v11
+    move-result v1
 
-    sub-int v1, v11, p3
+    sub-int v1, v1, p3
 
     .line 1790
-    .restart local v1    # "diff":I
-    if-lez v1, :cond_73
+    if-lez v1, :cond_c5
 
-    iget-object v11, v7, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v10, v0, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+
+    invoke-virtual {v10}, Landroid/view/View;->getLeft()I
+
+    move-result v10
+
+    iget-object v11, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v11}, Landroid/view/View;->getLeft()I
 
     move-result v11
 
-    iget-object v12, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
-
-    invoke-virtual {v12}, Landroid/view/View;->getLeft()I
-
-    move-result v12
-
-    if-ge v11, v12, :cond_73
+    if-ge v10, v11, :cond_c5
 
     .line 1791
     invoke-static {v1}, Ljava/lang/Math;->abs(I)I
 
-    move-result v6
+    move-result v1
 
     .line 1792
-    .restart local v6    # "score":I
-    if-le v6, v10, :cond_73
+    if-le v1, v2, :cond_c5
 
-    .line 1793
-    move v10, v6
-
-    .line 1794
-    move-object v9, v7
+    move-object v3, v0
 
     .line 1798
-    .end local v1    # "diff":I
-    .end local v6    # "score":I
-    :cond_73
-    if-gez v3, :cond_95
+    :goto_72
+    if-gez v8, :cond_c3
 
     .line 1799
-    iget-object v11, v7, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v2, v0, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-virtual {v11}, Landroid/view/View;->getTop()I
+    invoke-virtual {v2}, Landroid/view/View;->getTop()I
 
-    move-result v11
+    move-result v2
 
-    sub-int v1, v11, p4
+    sub-int v2, v2, p4
 
     .line 1800
-    .restart local v1    # "diff":I
-    if-lez v1, :cond_95
+    if-lez v2, :cond_c3
 
-    iget-object v11, v7, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v10, v0, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+
+    invoke-virtual {v10}, Landroid/view/View;->getTop()I
+
+    move-result v10
+
+    iget-object v11, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v11}, Landroid/view/View;->getTop()I
 
     move-result v11
 
-    iget-object v12, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
-
-    invoke-virtual {v12}, Landroid/view/View;->getTop()I
-
-    move-result v12
-
-    if-ge v11, v12, :cond_95
+    if-ge v10, v11, :cond_c3
 
     .line 1801
-    invoke-static {v1}, Ljava/lang/Math;->abs(I)I
+    invoke-static {v2}, Ljava/lang/Math;->abs(I)I
 
-    move-result v6
+    move-result v2
 
     .line 1802
-    .restart local v6    # "score":I
-    if-le v6, v10, :cond_95
+    if-le v2, v1, :cond_c3
 
-    .line 1803
-    move v10, v6
-
-    .line 1804
-    move-object v9, v7
+    move-object v3, v0
 
     .line 1809
-    .end local v1    # "diff":I
-    .end local v6    # "score":I
-    :cond_95
-    if-lez v3, :cond_b7
+    :goto_93
+    if-lez v8, :cond_c0
 
     .line 1810
-    iget-object v11, v7, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v1, v0, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-virtual {v11}, Landroid/view/View;->getBottom()I
+    invoke-virtual {v1}, Landroid/view/View;->getBottom()I
 
-    move-result v11
+    move-result v1
 
-    sub-int v1, v11, v0
+    sub-int/2addr v1, v6
 
     .line 1811
-    .restart local v1    # "diff":I
-    if-gez v1, :cond_b7
+    if-gez v1, :cond_c0
 
-    iget-object v11, v7, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v10, v0, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+
+    invoke-virtual {v10}, Landroid/view/View;->getBottom()I
+
+    move-result v10
+
+    iget-object v11, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {v11}, Landroid/view/View;->getBottom()I
 
     move-result v11
 
-    iget-object v12, p1, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
-
-    invoke-virtual {v12}, Landroid/view/View;->getBottom()I
-
-    move-result v12
-
-    if-le v11, v12, :cond_b7
+    if-le v10, v11, :cond_c0
 
     .line 1812
     invoke-static {v1}, Ljava/lang/Math;->abs(I)I
 
-    move-result v6
+    move-result v1
 
     .line 1813
-    .restart local v6    # "score":I
-    if-le v6, v10, :cond_b7
+    if-le v1, v2, :cond_c0
 
-    .line 1814
-    move v10, v6
+    move v12, v1
 
-    .line 1815
-    move-object v9, v7
+    move-object v1, v0
+
+    move v0, v12
 
     .line 1776
-    .end local v1    # "diff":I
-    .end local v6    # "score":I
-    :cond_b7
-    add-int/lit8 v4, v4, 0x1
+    :goto_b5
+    add-int/lit8 v2, v4, 0x1
 
-    goto/16 :goto_27
+    move v4, v2
+
+    move-object v2, v1
+
+    move v1, v0
+
+    goto/16 :goto_28
 
     .line 1820
-    .end local v7    # "target":Landroid/support/v7/widget/RecyclerView$ViewHolder;
-    :cond_bb
-    return-object v9
+    :cond_bc
+    return-object v2
+
+    :cond_bd
+    move-object v3, v2
+
+    move v2, v1
+
+    goto :goto_51
+
+    :cond_c0
+    move v0, v2
+
+    move-object v1, v3
+
+    goto :goto_b5
+
+    :cond_c3
+    move v2, v1
+
+    goto :goto_93
+
+    :cond_c5
+    move v1, v2
+
+    goto :goto_72
 .end method
 
 .method public clearView(Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;)V
     .registers 5
-    .param p1, "recyclerView"    # Landroid/support/v7/widget/RecyclerView;
-    .param p2, "viewHolder"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     .prologue
     .line 2005
@@ -1024,83 +941,62 @@
 
 .method public convertToAbsoluteDirection(II)I
     .registers 8
-    .param p1, "flags"    # I
-    .param p2, "layoutDirection"    # I
 
     .prologue
     const v4, 0x303030
 
     .line 1547
-    and-int v1, p1, v4
+    and-int v0, p1, v4
 
     .line 1548
-    .local v1, "masked":I
-    if-nez v1, :cond_9
-
-    move v0, p1
+    if-nez v0, :cond_8
 
     .line 1562
-    .end local p1    # "flags":I
-    .local v0, "flags":I
-    :goto_8
-    return v0
+    :goto_7
+    return p1
 
     .line 1551
-    .end local v0    # "flags":I
-    .restart local p1    # "flags":I
-    :cond_9
-    xor-int/lit8 v2, v1, -0x1
+    :cond_8
+    xor-int/lit8 v1, v0, -0x1
 
-    and-int/2addr p1, v2
+    and-int/2addr v1, p1
 
     .line 1552
-    if-nez p2, :cond_13
+    if-nez p2, :cond_12
 
     .line 1554
-    shr-int/lit8 v2, v1, 0x2
+    shr-int/lit8 v0, v0, 0x2
 
-    or-int/2addr p1, v2
-
-    move v0, p1
+    or-int p1, v1, v0
 
     .line 1555
-    .end local p1    # "flags":I
-    .restart local v0    # "flags":I
-    goto :goto_8
+    goto :goto_7
 
     .line 1558
-    .end local v0    # "flags":I
-    .restart local p1    # "flags":I
-    :cond_13
-    shr-int/lit8 v2, v1, 0x1
+    :cond_12
+    shr-int/lit8 v2, v0, 0x1
 
     const v3, -0x303031
 
     and-int/2addr v2, v3
 
-    or-int/2addr p1, v2
+    or-int/2addr v1, v2
 
     .line 1560
-    shr-int/lit8 v2, v1, 0x1
+    shr-int/lit8 v0, v0, 0x1
 
-    and-int/2addr v2, v4
+    and-int/2addr v0, v4
 
-    shr-int/lit8 v2, v2, 0x2
+    shr-int/lit8 v0, v0, 0x2
 
-    or-int/2addr p1, v2
-
-    move v0, p1
+    or-int p1, v1, v0
 
     .line 1562
-    .end local p1    # "flags":I
-    .restart local v0    # "flags":I
-    goto :goto_8
+    goto :goto_7
 .end method
 
 .method final getAbsoluteMovementFlags(Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;)I
     .registers 5
-    .param p1, "recyclerView"    # Landroid/support/v7/widget/RecyclerView;
-    .param p2, "viewHolder"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     .prologue
     .line 1567
@@ -1109,24 +1005,19 @@
     move-result v0
 
     .line 1568
-    .local v0, "flags":I
-    invoke-static {p1}, Landroid/support/v4/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+    invoke-static {p1}, Landroid/support/v4/view/ViewCompat;->h(Landroid/view/View;)I
 
     move-result v1
 
     invoke-virtual {p0, v0, v1}, Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;->convertToAbsoluteDirection(II)I
 
-    move-result v1
+    move-result v0
 
-    return v1
+    return v0
 .end method
 
 .method public getAnimationDuration(Landroid/support/v7/widget/RecyclerView;IFF)J
-    .registers 9
-    .param p1, "recyclerView"    # Landroid/support/v7/widget/RecyclerView;
-    .param p2, "animationType"    # I
-    .param p3, "animateDx"    # F
-    .param p4, "animateDy"    # F
+    .registers 7
 
     .prologue
     const/16 v1, 0x8
@@ -1137,21 +1028,20 @@
     move-result-object v0
 
     .line 2099
-    .local v0, "itemAnimator":Landroid/support/v7/widget/RecyclerView$ItemAnimator;
     if-nez v0, :cond_10
 
     .line 2100
     if-ne p2, v1, :cond_d
 
-    const-wide/16 v2, 0xc8
+    const-wide/16 v0, 0xc8
 
     .line 2103
     :goto_c
-    return-wide v2
+    return-wide v0
 
     .line 2100
     :cond_d
-    const-wide/16 v2, 0xfa
+    const-wide/16 v0, 0xfa
 
     goto :goto_c
 
@@ -1161,14 +1051,14 @@
 
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView$ItemAnimator;->getMoveDuration()J
 
-    move-result-wide v2
+    move-result-wide v0
 
     goto :goto_c
 
     :cond_17
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView$ItemAnimator;->getRemoveDuration()J
 
-    move-result-wide v2
+    move-result-wide v0
 
     goto :goto_c
 .end method
@@ -1185,11 +1075,10 @@
 
 .method public getMoveThreshold(Landroid/support/v7/widget/RecyclerView$ViewHolder;)F
     .registers 3
-    .param p1, "viewHolder"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     .prologue
     .line 1690
-    const/high16 v0, 0x3f000000
+    const/high16 v0, 0x3f000000    # 0.5f
 
     return v0
 .end method
@@ -1199,7 +1088,6 @@
 
 .method public getSwipeEscapeVelocity(F)F
     .registers 2
-    .param p1, "defaultValue"    # F
 
     .prologue
     .line 1715
@@ -1208,18 +1096,16 @@
 
 .method public getSwipeThreshold(Landroid/support/v7/widget/RecyclerView$ViewHolder;)F
     .registers 3
-    .param p1, "viewHolder"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
 
     .prologue
     .line 1677
-    const/high16 v0, 0x3f000000
+    const/high16 v0, 0x3f000000    # 0.5f
 
     return v0
 .end method
 
 .method public getSwipeVelocityThreshold(F)F
     .registers 2
-    .param p1, "defaultValue"    # F
 
     .prologue
     .line 1738
@@ -1227,137 +1113,107 @@
 .end method
 
 .method public interpolateOutOfBoundsScroll(Landroid/support/v7/widget/RecyclerView;IIIJ)I
-    .registers 20
-    .param p1, "recyclerView"    # Landroid/support/v7/widget/RecyclerView;
-    .param p2, "viewSize"    # I
-    .param p3, "viewSizeOutOfBounds"    # I
-    .param p4, "totalSize"    # I
-    .param p5, "msSinceStartScroll"    # J
+    .registers 12
 
     .prologue
+    const/high16 v0, 0x3f800000    # 1.0f
+
     .line 2131
     invoke-direct {p0, p1}, Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;->getMaxDragScroll(Landroid/support/v7/widget/RecyclerView;)I
 
-    move-result v5
+    move-result v1
 
     .line 2132
-    .local v5, "maxScroll":I
-    invoke-static/range {p3 .. p3}, Ljava/lang/Math;->abs(I)I
+    invoke-static {p3}, Ljava/lang/Math;->abs(I)I
 
     move-result v2
 
     .line 2133
-    .local v2, "absOutOfBounds":I
-    move/from16 v0, p3
+    int-to-float v3, p3
 
-    int-to-float v9, v0
+    invoke-static {v3}, Ljava/lang/Math;->signum(F)F
 
-    invoke-static {v9}, Ljava/lang/Math;->signum(F)F
+    move-result v3
 
-    move-result v9
-
-    float-to-int v4, v9
+    float-to-int v3, v3
 
     .line 2135
-    .local v4, "direction":I
-    const/high16 v9, 0x3f800000
+    int-to-float v2, v2
 
-    const/high16 v10, 0x3f800000
+    mul-float/2addr v2, v0
 
-    int-to-float v11, v2
+    int-to-float v4, p2
 
-    mul-float/2addr v10, v11
+    div-float/2addr v2, v4
 
-    int-to-float v11, p2
+    invoke-static {v0, v2}, Ljava/lang/Math;->min(FF)F
 
-    div-float/2addr v10, v11
-
-    invoke-static {v9, v10}, Ljava/lang/Math;->min(FF)F
-
-    move-result v6
+    move-result v2
 
     .line 2136
-    .local v6, "outOfBoundsRatio":F
-    mul-int v9, v4, v5
+    mul-int/2addr v1, v3
 
-    int-to-float v9, v9
+    int-to-float v1, v1
 
-    sget-object v10, Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;->sDragViewScrollCapInterpolator:Landroid/view/animation/Interpolator;
+    sget-object v3, Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;->sDragViewScrollCapInterpolator:Landroid/view/animation/Interpolator;
 
-    invoke-interface {v10, v6}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
+    invoke-interface {v3, v2}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
 
-    move-result v10
+    move-result v2
 
-    mul-float/2addr v9, v10
+    mul-float/2addr v1, v2
 
-    float-to-int v3, v9
+    float-to-int v1, v1
 
     .line 2139
-    .local v3, "cappedScroll":I
-    const-wide/16 v10, 0x7d0
+    const-wide/16 v2, 0x7d0
 
-    cmp-long v9, p5, v10
+    cmp-long v2, p5, v2
 
-    if-lez v9, :cond_3e
-
-    .line 2140
-    const/high16 v7, 0x3f800000
+    if-lez v2, :cond_37
 
     .line 2144
-    .local v7, "timeRatio":F
-    :goto_2f
-    int-to-float v9, v3
+    :goto_28
+    int-to-float v1, v1
 
-    sget-object v10, Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;->sDragScrollInterpolator:Landroid/view/animation/Interpolator;
+    sget-object v2, Landroid/support/v7/widget/helper/ItemTouchHelper$Callback;->sDragScrollInterpolator:Landroid/view/animation/Interpolator;
 
-    invoke-interface {v10, v7}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
+    invoke-interface {v2, v0}, Landroid/view/animation/Interpolator;->getInterpolation(F)F
 
-    move-result v10
+    move-result v0
 
-    mul-float/2addr v9, v10
+    mul-float/2addr v0, v1
 
-    float-to-int v8, v9
+    float-to-int v0, v0
 
     .line 2146
-    .local v8, "value":I
-    if-nez v8, :cond_48
+    if-nez v0, :cond_36
 
     .line 2147
-    if-lez p3, :cond_46
+    if-lez p3, :cond_3c
 
-    const/4 v9, 0x1
+    const/4 v0, 0x1
 
     .line 2149
-    :goto_3d
-    return v9
+    :cond_36
+    :goto_36
+    return v0
 
     .line 2142
-    .end local v7    # "timeRatio":F
-    .end local v8    # "value":I
-    :cond_3e
-    move-wide/from16 v0, p5
+    :cond_37
+    long-to-float v0, p5
 
-    long-to-float v9, v0
+    const/high16 v2, 0x44fa0000    # 2000.0f
 
-    const/high16 v10, 0x44fa0000
+    div-float/2addr v0, v2
 
-    div-float v7, v9, v10
-
-    .restart local v7    # "timeRatio":F
-    goto :goto_2f
+    goto :goto_28
 
     .line 2147
-    .restart local v8    # "value":I
-    :cond_46
-    const/4 v9, -0x1
+    :cond_3c
+    const/4 v0, -0x1
 
-    goto :goto_3d
-
-    :cond_48
-    move v9, v8
-
-    .line 2149
-    goto :goto_3d
+    goto :goto_36
 .end method
 
 .method public isItemViewSwipeEnabled()Z
@@ -1382,13 +1238,6 @@
 
 .method public onChildDraw(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;FFIZ)V
     .registers 16
-    .param p1, "c"    # Landroid/graphics/Canvas;
-    .param p2, "recyclerView"    # Landroid/support/v7/widget/RecyclerView;
-    .param p3, "viewHolder"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
-    .param p4, "dX"    # F
-    .param p5, "dY"    # F
-    .param p6, "actionState"    # I
-    .param p7, "isCurrentlyActive"    # Z
 
     .prologue
     .line 2038
@@ -1416,13 +1265,6 @@
 
 .method public onChildDrawOver(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;FFIZ)V
     .registers 16
-    .param p1, "c"    # Landroid/graphics/Canvas;
-    .param p2, "recyclerView"    # Landroid/support/v7/widget/RecyclerView;
-    .param p3, "viewHolder"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
-    .param p4, "dX"    # F
-    .param p5, "dY"    # F
-    .param p6, "actionState"    # I
-    .param p7, "isCurrentlyActive"    # Z
 
     .prologue
     .line 2072
@@ -1452,14 +1294,7 @@
 .end method
 
 .method public onMoved(Landroid/support/v7/widget/RecyclerView;Landroid/support/v7/widget/RecyclerView$ViewHolder;ILandroid/support/v7/widget/RecyclerView$ViewHolder;III)V
-    .registers 15
-    .param p1, "recyclerView"    # Landroid/support/v7/widget/RecyclerView;
-    .param p2, "viewHolder"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
-    .param p3, "fromPos"    # I
-    .param p4, "target"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
-    .param p5, "toPos"    # I
-    .param p6, "x"    # I
-    .param p7, "y"    # I
+    .registers 12
 
     .prologue
     .line 1911
@@ -1468,20 +1303,18 @@
     move-result-object v0
 
     .line 1912
-    .local v0, "layoutManager":Landroid/support/v7/widget/RecyclerView$LayoutManager;
-    instance-of v5, v0, Landroid/support/v7/widget/helper/ItemTouchHelper$ViewDropHandler;
+    instance-of v1, v0, Landroid/support/v7/widget/helper/ItemTouchHelper$ViewDropHandler;
 
-    if-eqz v5, :cond_12
+    if-eqz v1, :cond_12
 
     .line 1913
     check-cast v0, Landroid/support/v7/widget/helper/ItemTouchHelper$ViewDropHandler;
 
-    .end local v0    # "layoutManager":Landroid/support/v7/widget/RecyclerView$LayoutManager;
-    iget-object v5, p2, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v1, p2, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    iget-object v6, p4, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v2, p4, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-interface {v0, v5, v6, p6, p7}, Landroid/support/v7/widget/helper/ItemTouchHelper$ViewDropHandler;->prepareForDrop(Landroid/view/View;Landroid/view/View;II)V
+    invoke-interface {v0, v1, v2, p6, p7}, Landroid/support/v7/widget/helper/ItemTouchHelper$ViewDropHandler;->prepareForDrop(Landroid/view/View;Landroid/view/View;II)V
 
     .line 1940
     :cond_11
@@ -1489,106 +1322,99 @@
     return-void
 
     .line 1919
-    .restart local v0    # "layoutManager":Landroid/support/v7/widget/RecyclerView$LayoutManager;
     :cond_12
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->canScrollHorizontally()Z
 
-    move-result v5
+    move-result v1
 
-    if-eqz v5, :cond_3b
+    if-eqz v1, :cond_3b
 
     .line 1920
-    iget-object v5, p4, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v1, p4, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-virtual {v0, v5}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->getDecoratedLeft(Landroid/view/View;)I
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->getDecoratedLeft(Landroid/view/View;)I
 
-    move-result v3
+    move-result v1
 
     .line 1921
-    .local v3, "minLeft":I
     invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView;->getPaddingLeft()I
 
-    move-result v5
+    move-result v2
 
-    if-gt v3, v5, :cond_27
+    if-gt v1, v2, :cond_27
 
     .line 1922
     invoke-virtual {p1, p5}, Landroid/support/v7/widget/RecyclerView;->scrollToPosition(I)V
 
     .line 1924
     :cond_27
-    iget-object v5, p4, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v1, p4, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-virtual {v0, v5}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->getDecoratedRight(Landroid/view/View;)I
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->getDecoratedRight(Landroid/view/View;)I
+
+    move-result v1
+
+    .line 1925
+    invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView;->getWidth()I
 
     move-result v2
 
-    .line 1925
-    .local v2, "maxRight":I
-    invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView;->getWidth()I
-
-    move-result v5
-
     invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView;->getPaddingRight()I
 
-    move-result v6
+    move-result v3
 
-    sub-int/2addr v5, v6
+    sub-int/2addr v2, v3
 
-    if-lt v2, v5, :cond_3b
+    if-lt v1, v2, :cond_3b
 
     .line 1926
     invoke-virtual {p1, p5}, Landroid/support/v7/widget/RecyclerView;->scrollToPosition(I)V
 
     .line 1930
-    .end local v2    # "maxRight":I
-    .end local v3    # "minLeft":I
     :cond_3b
     invoke-virtual {v0}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->canScrollVertically()Z
 
-    move-result v5
+    move-result v1
 
-    if-eqz v5, :cond_11
+    if-eqz v1, :cond_11
 
     .line 1931
-    iget-object v5, p4, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v1, p4, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-virtual {v0, v5}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->getDecoratedTop(Landroid/view/View;)I
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->getDecoratedTop(Landroid/view/View;)I
 
-    move-result v4
+    move-result v1
 
     .line 1932
-    .local v4, "minTop":I
     invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView;->getPaddingTop()I
 
-    move-result v5
+    move-result v2
 
-    if-gt v4, v5, :cond_50
+    if-gt v1, v2, :cond_50
 
     .line 1933
     invoke-virtual {p1, p5}, Landroid/support/v7/widget/RecyclerView;->scrollToPosition(I)V
 
     .line 1935
     :cond_50
-    iget-object v5, p4, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
+    iget-object v1, p4, Landroid/support/v7/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    invoke-virtual {v0, v5}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->getDecoratedBottom(Landroid/view/View;)I
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView$LayoutManager;->getDecoratedBottom(Landroid/view/View;)I
+
+    move-result v0
+
+    .line 1936
+    invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView;->getHeight()I
 
     move-result v1
 
-    .line 1936
-    .local v1, "maxBottom":I
-    invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView;->getHeight()I
-
-    move-result v5
-
     invoke-virtual {p1}, Landroid/support/v7/widget/RecyclerView;->getPaddingBottom()I
 
-    move-result v6
+    move-result v2
 
-    sub-int/2addr v5, v6
+    sub-int/2addr v1, v2
 
-    if-lt v1, v5, :cond_11
+    if-lt v0, v1, :cond_11
 
     .line 1937
     invoke-virtual {p1, p5}, Landroid/support/v7/widget/RecyclerView;->scrollToPosition(I)V
@@ -1598,8 +1424,6 @@
 
 .method public onSelectedChanged(Landroid/support/v7/widget/RecyclerView$ViewHolder;I)V
     .registers 5
-    .param p1, "viewHolder"    # Landroid/support/v7/widget/RecyclerView$ViewHolder;
-    .param p2, "actionState"    # I
 
     .prologue
     .line 1862

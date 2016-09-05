@@ -3,51 +3,19 @@
 .source "MultiDex.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/multidex/MultiDex;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "V4"
-.end annotation
-
-
 # direct methods
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 469
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method static synthetic access$200(Ljava/lang/ClassLoader;Ljava/util/List;)V
+.method static synthetic a(Ljava/lang/ClassLoader;Ljava/util/List;)V
     .registers 2
-    .param p0, "x0"    # Ljava/lang/ClassLoader;
-    .param p1, "x1"    # Ljava/util/List;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/IllegalArgumentException;,
-            Ljava/lang/IllegalAccessException;,
-            Ljava/lang/NoSuchFieldException;,
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 469
-    invoke-static {p0, p1}, Landroid/support/multidex/MultiDex$V4;->install(Ljava/lang/ClassLoader;Ljava/util/List;)V
+    invoke-static {p0, p1}, Landroid/support/multidex/MultiDex$V4;->b(Ljava/lang/ClassLoader;Ljava/util/List;)V
 
     return-void
 .end method
 
-.method private static install(Ljava/lang/ClassLoader;Ljava/util/List;)V
-    .registers 15
-    .param p0, "loader"    # Ljava/lang/ClassLoader;
+.method private static b(Ljava/lang/ClassLoader;Ljava/util/List;)V
+    .registers 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -59,179 +27,150 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/IllegalArgumentException;,
-            Ljava/lang/IllegalAccessException;,
-            Ljava/lang/NoSuchFieldException;,
-            Ljava/io/IOException;
-        }
-    .end annotation
-
     .prologue
     .line 478
-    .local p1, "additionalClassPathEntries":Ljava/util/List;, "Ljava/util/List<Ljava/io/File;>;"
     invoke-interface {p1}, Ljava/util/List;->size()I
 
-    move-result v5
+    move-result v1
 
     .line 480
-    .local v5, "extraSize":I
-    const-string/jumbo v11, "path"
+    const-string/jumbo v0, "path"
 
-    # invokes: Landroid/support/multidex/MultiDex;->findField(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/reflect/Field;
-    invoke-static {p0, v11}, Landroid/support/multidex/MultiDex;->access$300(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-static {p0, v0}, Landroid/support/multidex/MultiDex;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/reflect/Field;
 
-    move-result-object v10
+    move-result-object v2
 
     .line 482
-    .local v10, "pathField":Ljava/lang/reflect/Field;
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-virtual {v10, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v11
+    move-result-object v0
 
-    check-cast v11, Ljava/lang/String;
+    check-cast v0, Ljava/lang/String;
 
-    invoke-direct {v9, v11}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 483
-    .local v9, "path":Ljava/lang/StringBuilder;
-    new-array v4, v5, [Ljava/lang/String;
+    new-array v4, v1, [Ljava/lang/String;
 
     .line 484
-    .local v4, "extraPaths":[Ljava/lang/String;
-    new-array v3, v5, [Ljava/io/File;
+    new-array v5, v1, [Ljava/io/File;
 
     .line 485
-    .local v3, "extraFiles":[Ljava/io/File;
-    new-array v6, v5, [Ljava/util/zip/ZipFile;
+    new-array v6, v1, [Ljava/util/zip/ZipFile;
 
     .line 486
-    .local v6, "extraZips":[Ljava/util/zip/ZipFile;
-    new-array v2, v5, [Ldalvik/system/DexFile;
+    new-array v1, v1, [Ldalvik/system/DexFile;
 
     .line 487
-    .local v2, "extraDexs":[Ldalvik/system/DexFile;
     invoke-interface {p1}, Ljava/util/List;->listIterator()Ljava/util/ListIterator;
 
-    move-result-object v8
+    move-result-object v7
 
     .line 488
-    .local v8, "iterator":Ljava/util/ListIterator;, "Ljava/util/ListIterator<Ljava/io/File;>;"
     :goto_22
-    invoke-interface {v8}, Ljava/util/ListIterator;->hasNext()Z
+    invoke-interface {v7}, Ljava/util/ListIterator;->hasNext()Z
 
-    move-result v11
+    move-result v0
 
-    if-eqz v11, :cond_66
+    if-eqz v0, :cond_66
 
     .line 489
-    invoke-interface {v8}, Ljava/util/ListIterator;->next()Ljava/lang/Object;
+    invoke-interface {v7}, Ljava/util/ListIterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/io/File;
 
     .line 490
-    .local v0, "additionalEntry":Ljava/io/File;
     invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v8
 
     .line 491
-    .local v1, "entryPath":Ljava/lang/String;
-    const/16 v11, 0x3a
+    const/16 v9, 0x3a
 
-    invoke-virtual {v9, v11}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    move-result-object v11
+    move-result-object v9
 
-    invoke-virtual {v11, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v9, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 492
-    invoke-interface {v8}, Ljava/util/ListIterator;->previousIndex()I
+    invoke-interface {v7}, Ljava/util/ListIterator;->previousIndex()I
 
-    move-result v7
+    move-result v9
 
     .line 493
-    .local v7, "index":I
-    aput-object v1, v4, v7
+    aput-object v8, v4, v9
 
     .line 494
-    aput-object v0, v3, v7
+    aput-object v0, v5, v9
 
     .line 495
-    new-instance v11, Ljava/util/zip/ZipFile;
+    new-instance v10, Ljava/util/zip/ZipFile;
 
-    invoke-direct {v11, v0}, Ljava/util/zip/ZipFile;-><init>(Ljava/io/File;)V
+    invoke-direct {v10, v0}, Ljava/util/zip/ZipFile;-><init>(Ljava/io/File;)V
 
-    aput-object v11, v6, v7
+    aput-object v10, v6, v9
 
     .line 496
-    new-instance v11, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v11}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v11, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v11
+    move-result-object v0
 
-    const-string/jumbo v12, ".dex"
+    const-string/jumbo v10, ".dex"
 
-    invoke-virtual {v11, v12}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v11
+    move-result-object v0
 
-    invoke-virtual {v11}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v0
 
-    const/4 v12, 0x0
+    const/4 v10, 0x0
 
-    invoke-static {v1, v11, v12}, Ldalvik/system/DexFile;->loadDex(Ljava/lang/String;Ljava/lang/String;I)Ldalvik/system/DexFile;
+    invoke-static {v8, v0, v10}, Ldalvik/system/DexFile;->loadDex(Ljava/lang/String;Ljava/lang/String;I)Ldalvik/system/DexFile;
 
-    move-result-object v11
+    move-result-object v0
 
-    aput-object v11, v2, v7
+    aput-object v0, v1, v9
 
     goto :goto_22
 
     .line 499
-    .end local v0    # "additionalEntry":Ljava/io/File;
-    .end local v1    # "entryPath":Ljava/lang/String;
-    .end local v7    # "index":I
     :cond_66
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v0
 
-    invoke-virtual {v10, p0, v11}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {v2, p0, v0}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 500
-    const-string/jumbo v11, "mPaths"
+    const-string/jumbo v0, "mPaths"
 
-    # invokes: Landroid/support/multidex/MultiDex;->expandFieldArray(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
-    invoke-static {p0, v11, v4}, Landroid/support/multidex/MultiDex;->access$400(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {p0, v0, v4}, Landroid/support/multidex/MultiDex;->a(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 501
-    const-string/jumbo v11, "mFiles"
+    const-string/jumbo v0, "mFiles"
 
-    # invokes: Landroid/support/multidex/MultiDex;->expandFieldArray(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
-    invoke-static {p0, v11, v3}, Landroid/support/multidex/MultiDex;->access$400(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {p0, v0, v5}, Landroid/support/multidex/MultiDex;->a(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 502
-    const-string/jumbo v11, "mZips"
+    const-string/jumbo v0, "mZips"
 
-    # invokes: Landroid/support/multidex/MultiDex;->expandFieldArray(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
-    invoke-static {p0, v11, v6}, Landroid/support/multidex/MultiDex;->access$400(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {p0, v0, v6}, Landroid/support/multidex/MultiDex;->a(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 503
-    const-string/jumbo v11, "mDexs"
+    const-string/jumbo v0, "mDexs"
 
-    # invokes: Landroid/support/multidex/MultiDex;->expandFieldArray(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
-    invoke-static {p0, v11, v2}, Landroid/support/multidex/MultiDex;->access$400(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
+    invoke-static {p0, v0, v1}, Landroid/support/multidex/MultiDex;->a(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
 
     .line 504
     return-void

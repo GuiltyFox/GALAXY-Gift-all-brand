@@ -3,17 +3,6 @@
 .source "TokenBuffer.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/util/TokenBuffer;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1c
-    name = "Parser"
-.end annotation
-
-
 # instance fields
 .field protected transient _byteBuilder:Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
 
@@ -39,8 +28,6 @@
 # direct methods
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;Lcom/fasterxml/jackson/core/ObjectCodec;)V
     .registers 4
-    .param p1, "firstSeg"    # Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
-    .param p2, "codec"    # Lcom/fasterxml/jackson/core/ObjectCodec;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -56,10 +43,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;Lcom/fasterxml/jackson/core/ObjectCodec;ZZ)V
     .registers 7
-    .param p1, "firstSeg"    # Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
-    .param p2, "codec"    # Lcom/fasterxml/jackson/core/ObjectCodec;
-    .param p3, "hasNativeTypeIds"    # Z
-    .param p4, "hasNativeObjectIds"    # Z
 
     .prologue
     const/4 v1, 0x0
@@ -109,11 +92,6 @@
 # virtual methods
 .method protected final _checkIsNumber()V
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 1516
@@ -186,11 +164,6 @@
 
 .method protected _handleEOF()V
     .registers 1
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 1523
@@ -222,11 +195,6 @@
 
 .method public close()V
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 1182
@@ -245,13 +213,7 @@
 .end method
 
 .method public getBigIntegerValue()Ljava/math/BigInteger;
-    .registers 5
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
+    .registers 4
 
     .prologue
     .line 1328
@@ -260,7 +222,6 @@
     move-result-object v0
 
     .line 1329
-    .local v0, "n":Ljava/lang/Number;
     instance-of v1, v0, Ljava/math/BigInteger;
 
     if-eqz v1, :cond_b
@@ -269,12 +230,10 @@
     check-cast v0, Ljava/math/BigInteger;
 
     .line 1336
-    .end local v0    # "n":Ljava/lang/Number;
     :goto_a
     return-object v0
 
     .line 1332
-    .restart local v0    # "n":Ljava/lang/Number;
     :cond_b
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->getNumberType()Lcom/fasterxml/jackson/core/JsonParser$NumberType;
 
@@ -287,7 +246,6 @@
     .line 1333
     check-cast v0, Ljava/math/BigDecimal;
 
-    .end local v0    # "n":Ljava/lang/Number;
     invoke-virtual {v0}, Ljava/math/BigDecimal;->toBigInteger()Ljava/math/BigInteger;
 
     move-result-object v0
@@ -295,13 +253,12 @@
     goto :goto_a
 
     .line 1336
-    .restart local v0    # "n":Ljava/lang/Number;
     :cond_1a
     invoke-virtual {v0}, Ljava/lang/Number;->longValue()J
 
-    move-result-wide v2
+    move-result-wide v0
 
-    invoke-static {v2, v3}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
+    invoke-static {v0, v1}, Ljava/math/BigInteger;->valueOf(J)Ljava/math/BigInteger;
 
     move-result-object v0
 
@@ -309,97 +266,87 @@
 .end method
 
 .method public getBinaryValue(Lcom/fasterxml/jackson/core/Base64Variant;)[B
-    .registers 7
-    .param p1, "b64variant"    # Lcom/fasterxml/jackson/core/Base64Variant;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
+    .registers 5
 
     .prologue
     .line 1441
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    sget-object v4, Lcom/fasterxml/jackson/core/JsonToken;->VALUE_EMBEDDED_OBJECT:Lcom/fasterxml/jackson/core/JsonToken;
+    sget-object v1, Lcom/fasterxml/jackson/core/JsonToken;->VALUE_EMBEDDED_OBJECT:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-ne v3, v4, :cond_13
+    if-ne v0, v1, :cond_13
 
     .line 1443
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currentObject()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 1444
-    .local v1, "ob":Ljava/lang/Object;
-    instance-of v3, v1, [B
+    instance-of v1, v0, [B
 
-    if-eqz v3, :cond_13
+    if-eqz v1, :cond_13
 
     .line 1445
-    check-cast v1, [B
+    check-cast v0, [B
 
-    .end local v1    # "ob":Ljava/lang/Object;
-    check-cast v1, [B
+    check-cast v0, [B
 
     .line 1463
     :goto_12
-    return-object v1
+    return-object v0
 
     .line 1449
     :cond_13
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    sget-object v4, Lcom/fasterxml/jackson/core/JsonToken;->VALUE_STRING:Lcom/fasterxml/jackson/core/JsonToken;
+    sget-object v1, Lcom/fasterxml/jackson/core/JsonToken;->VALUE_STRING:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-eq v3, v4, :cond_3b
+    if-eq v0, v1, :cond_3b
 
     .line 1450
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "Current token ("
+    const-string/jumbo v1, "Current token ("
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v0
 
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v0
 
-    const-string/jumbo v4, ") not VALUE_STRING (or VALUE_EMBEDDED_OBJECT with byte[]), can not access as binary"
+    const-string/jumbo v1, ") not VALUE_STRING (or VALUE_EMBEDDED_OBJECT with byte[]), can not access as binary"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {p0, v3}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_constructError(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonParseException;
+    invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_constructError(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonParseException;
 
-    move-result-object v3
+    move-result-object v0
 
-    throw v3
+    throw v0
 
     .line 1452
     :cond_3b
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->getText()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 1453
-    .local v2, "str":Ljava/lang/String;
-    if-nez v2, :cond_43
+    if-nez v1, :cond_43
 
     .line 1454
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_12
 
@@ -408,36 +355,33 @@
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_byteBuilder:Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
 
     .line 1457
-    .local v0, "builder":Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
     if-nez v0, :cond_58
 
     .line 1458
     new-instance v0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
 
-    .end local v0    # "builder":Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
-    const/16 v3, 0x64
+    const/16 v2, 0x64
 
-    invoke-direct {v0, v3}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;-><init>(I)V
+    invoke-direct {v0, v2}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;-><init>(I)V
 
-    .restart local v0    # "builder":Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
     iput-object v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_byteBuilder:Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
 
     .line 1462
     :goto_50
-    invoke-virtual {p0, v2, v0, p1}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_decodeBase64(Ljava/lang/String;Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;Lcom/fasterxml/jackson/core/Base64Variant;)V
+    invoke-virtual {p0, v1, v0, p1}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_decodeBase64(Ljava/lang/String;Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;Lcom/fasterxml/jackson/core/Base64Variant;)V
 
     .line 1463
     invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->toByteArray()[B
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_12
 
     .line 1460
     :cond_58
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_byteBuilder:Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_byteBuilder:Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
 
-    invoke-virtual {v3}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->reset()V
+    invoke-virtual {v2}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->reset()V
 
     goto :goto_50
 .end method
@@ -487,13 +431,7 @@
 .end method
 
 .method public getDecimalValue()Ljava/math/BigDecimal;
-    .registers 5
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
+    .registers 4
 
     .prologue
     .line 1342
@@ -502,7 +440,6 @@
     move-result-object v0
 
     .line 1343
-    .local v0, "n":Ljava/lang/Number;
     instance-of v1, v0, Ljava/math/BigDecimal;
 
     if-eqz v1, :cond_b
@@ -511,12 +448,10 @@
     check-cast v0, Ljava/math/BigDecimal;
 
     .line 1355
-    .end local v0    # "n":Ljava/lang/Number;
     :goto_a
     return-object v0
 
     .line 1346
-    .restart local v0    # "n":Ljava/lang/Number;
     :cond_b
     sget-object v1, Lcom/fasterxml/jackson/databind/util/TokenBuffer$1;->$SwitchMap$com$fasterxml$jackson$core$JsonParser$NumberType:[I
 
@@ -536,9 +471,9 @@
     :pswitch_1a
     invoke-virtual {v0}, Ljava/lang/Number;->doubleValue()D
 
-    move-result-wide v2
+    move-result-wide v0
 
-    invoke-static {v2, v3}, Ljava/math/BigDecimal;->valueOf(D)Ljava/math/BigDecimal;
+    invoke-static {v0, v1}, Ljava/math/BigDecimal;->valueOf(D)Ljava/math/BigDecimal;
 
     move-result-object v0
 
@@ -548,9 +483,9 @@
     :pswitch_23
     invoke-virtual {v0}, Ljava/lang/Number;->longValue()J
 
-    move-result-wide v2
+    move-result-wide v0
 
-    invoke-static {v2, v3}, Ljava/math/BigDecimal;->valueOf(J)Ljava/math/BigDecimal;
+    invoke-static {v0, v1}, Ljava/math/BigDecimal;->valueOf(J)Ljava/math/BigDecimal;
 
     move-result-object v0
 
@@ -562,7 +497,6 @@
 
     check-cast v0, Ljava/math/BigInteger;
 
-    .end local v0    # "n":Ljava/lang/Number;
     invoke-direct {v1, v0}, Ljava/math/BigDecimal;-><init>(Ljava/math/BigInteger;)V
 
     move-object v0, v1
@@ -584,12 +518,6 @@
 
 .method public getDoubleValue()D
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 1360
@@ -632,12 +560,6 @@
 
 .method public getFloatValue()F
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 1365
@@ -654,12 +576,6 @@
 
 .method public getIntValue()I
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 1372
@@ -698,12 +614,6 @@
 
 .method public getLongValue()J
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 1380
@@ -720,12 +630,6 @@
 
 .method public getNumberType()Lcom/fasterxml/jackson/core/JsonParser$NumberType;
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 1386
@@ -734,16 +638,15 @@
     move-result-object v0
 
     .line 1387
-    .local v0, "n":Ljava/lang/Number;
     instance-of v1, v0, Ljava/lang/Integer;
 
     if-eqz v1, :cond_b
 
-    sget-object v1, Lcom/fasterxml/jackson/core/JsonParser$NumberType;->INT:Lcom/fasterxml/jackson/core/JsonParser$NumberType;
+    sget-object v0, Lcom/fasterxml/jackson/core/JsonParser$NumberType;->INT:Lcom/fasterxml/jackson/core/JsonParser$NumberType;
 
     .line 1394
     :goto_a
-    return-object v1
+    return-object v0
 
     .line 1388
     :cond_b
@@ -751,7 +654,7 @@
 
     if-eqz v1, :cond_12
 
-    sget-object v1, Lcom/fasterxml/jackson/core/JsonParser$NumberType;->LONG:Lcom/fasterxml/jackson/core/JsonParser$NumberType;
+    sget-object v0, Lcom/fasterxml/jackson/core/JsonParser$NumberType;->LONG:Lcom/fasterxml/jackson/core/JsonParser$NumberType;
 
     goto :goto_a
 
@@ -761,7 +664,7 @@
 
     if-eqz v1, :cond_19
 
-    sget-object v1, Lcom/fasterxml/jackson/core/JsonParser$NumberType;->DOUBLE:Lcom/fasterxml/jackson/core/JsonParser$NumberType;
+    sget-object v0, Lcom/fasterxml/jackson/core/JsonParser$NumberType;->DOUBLE:Lcom/fasterxml/jackson/core/JsonParser$NumberType;
 
     goto :goto_a
 
@@ -771,7 +674,7 @@
 
     if-eqz v1, :cond_20
 
-    sget-object v1, Lcom/fasterxml/jackson/core/JsonParser$NumberType;->BIG_DECIMAL:Lcom/fasterxml/jackson/core/JsonParser$NumberType;
+    sget-object v0, Lcom/fasterxml/jackson/core/JsonParser$NumberType;->BIG_DECIMAL:Lcom/fasterxml/jackson/core/JsonParser$NumberType;
 
     goto :goto_a
 
@@ -781,7 +684,7 @@
 
     if-eqz v1, :cond_27
 
-    sget-object v1, Lcom/fasterxml/jackson/core/JsonParser$NumberType;->BIG_INTEGER:Lcom/fasterxml/jackson/core/JsonParser$NumberType;
+    sget-object v0, Lcom/fasterxml/jackson/core/JsonParser$NumberType;->BIG_INTEGER:Lcom/fasterxml/jackson/core/JsonParser$NumberType;
 
     goto :goto_a
 
@@ -791,35 +694,29 @@
 
     if-eqz v1, :cond_2e
 
-    sget-object v1, Lcom/fasterxml/jackson/core/JsonParser$NumberType;->FLOAT:Lcom/fasterxml/jackson/core/JsonParser$NumberType;
+    sget-object v0, Lcom/fasterxml/jackson/core/JsonParser$NumberType;->FLOAT:Lcom/fasterxml/jackson/core/JsonParser$NumberType;
 
     goto :goto_a
 
     .line 1393
     :cond_2e
-    instance-of v1, v0, Ljava/lang/Short;
+    instance-of v0, v0, Ljava/lang/Short;
 
-    if-eqz v1, :cond_35
+    if-eqz v0, :cond_35
 
-    sget-object v1, Lcom/fasterxml/jackson/core/JsonParser$NumberType;->INT:Lcom/fasterxml/jackson/core/JsonParser$NumberType;
+    sget-object v0, Lcom/fasterxml/jackson/core/JsonParser$NumberType;->INT:Lcom/fasterxml/jackson/core/JsonParser$NumberType;
 
     goto :goto_a
 
     .line 1394
     :cond_35
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_a
 .end method
 
 .method public final getNumberValue()Ljava/lang/Number;
-    .registers 6
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
+    .registers 5
 
     .prologue
     .line 1399
@@ -828,110 +725,103 @@
     .line 1400
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currentObject()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 1401
-    .local v1, "value":Ljava/lang/Object;
-    instance-of v2, v1, Ljava/lang/Number;
+    instance-of v1, v0, Ljava/lang/Number;
 
-    if-eqz v2, :cond_e
+    if-eqz v1, :cond_e
 
     .line 1402
-    check-cast v1, Ljava/lang/Number;
+    check-cast v0, Ljava/lang/Number;
 
     .line 1415
-    .end local v1    # "value":Ljava/lang/Object;
     :goto_d
-    return-object v1
+    return-object v0
 
     .line 1407
-    .restart local v1    # "value":Ljava/lang/Object;
     :cond_e
-    instance-of v2, v1, Ljava/lang/String;
+    instance-of v1, v0, Ljava/lang/String;
 
-    if-eqz v2, :cond_2f
-
-    move-object v0, v1
+    if-eqz v1, :cond_2e
 
     .line 1408
     check-cast v0, Ljava/lang/String;
 
     .line 1409
-    .local v0, "str":Ljava/lang/String;
-    const/16 v2, 0x2e
+    const/16 v1, 0x2e
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(I)I
 
-    move-result v2
+    move-result v1
 
-    if-ltz v2, :cond_26
+    if-ltz v1, :cond_25
 
     .line 1410
     invoke-static {v0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
-    move-result-wide v2
+    move-result-wide v0
 
-    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_d
 
     .line 1412
-    :cond_26
+    :cond_25
     invoke-static {v0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
 
-    move-result-wide v2
+    move-result-wide v0
 
-    invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_d
 
     .line 1414
-    .end local v0    # "str":Ljava/lang/String;
-    :cond_2f
-    if-nez v1, :cond_33
+    :cond_2e
+    if-nez v0, :cond_32
 
     .line 1415
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_d
 
     .line 1417
-    :cond_33
-    new-instance v2, Ljava/lang/IllegalStateException;
+    :cond_32
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "Internal error: entry should be a Number, but is of type "
+    const-string/jumbo v3, "Internal error: entry should be a Number, but is of type "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-direct {v2, v3}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v2
+    throw v1
 .end method
 
 .method public getObjectId()Ljava/lang/Object;
@@ -961,23 +851,23 @@
 .end method
 
 .method public getText()Ljava/lang/String;
-    .registers 5
+    .registers 4
 
     .prologue
     const/4 v1, 0x0
 
     .line 1277
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    sget-object v3, Lcom/fasterxml/jackson/core/JsonToken;->VALUE_STRING:Lcom/fasterxml/jackson/core/JsonToken;
+    sget-object v2, Lcom/fasterxml/jackson/core/JsonToken;->VALUE_STRING:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-eq v2, v3, :cond_d
+    if-eq v0, v2, :cond_d
 
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    sget-object v3, Lcom/fasterxml/jackson/core/JsonToken;->FIELD_NAME:Lcom/fasterxml/jackson/core/JsonToken;
+    sget-object v2, Lcom/fasterxml/jackson/core/JsonToken;->FIELD_NAME:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-ne v2, v3, :cond_20
+    if-ne v0, v2, :cond_23
 
     .line 1279
     :cond_d
@@ -986,7 +876,6 @@
     move-result-object v0
 
     .line 1280
-    .local v0, "ob":Ljava/lang/Object;
     instance-of v2, v0, Ljava/lang/String;
 
     if-eqz v2, :cond_19
@@ -994,7 +883,6 @@
     .line 1281
     check-cast v0, Ljava/lang/String;
 
-    .end local v0    # "ob":Ljava/lang/Object;
     move-object v1, v0
 
     .line 1294
@@ -1003,53 +891,58 @@
     return-object v1
 
     .line 1283
-    .restart local v0    # "ob":Ljava/lang/Object;
     :cond_19
-    if-eqz v0, :cond_18
+    if-nez v0, :cond_1e
 
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    move-object v0, v1
 
-    move-result-object v1
+    :goto_1c
+    move-object v1, v0
 
     goto :goto_18
 
-    .line 1285
-    .end local v0    # "ob":Ljava/lang/Object;
-    :cond_20
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    :cond_1e
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    if-eqz v2, :cond_18
+    move-result-object v0
+
+    goto :goto_1c
+
+    .line 1285
+    :cond_23
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+
+    if-eqz v0, :cond_18
 
     .line 1288
-    sget-object v2, Lcom/fasterxml/jackson/databind/util/TokenBuffer$1;->$SwitchMap$com$fasterxml$jackson$core$JsonToken:[I
+    sget-object v0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$1;->$SwitchMap$com$fasterxml$jackson$core$JsonToken:[I
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    invoke-virtual {v3}, Lcom/fasterxml/jackson/core/JsonToken;->ordinal()I
+    invoke-virtual {v2}, Lcom/fasterxml/jackson/core/JsonToken;->ordinal()I
 
-    move-result v3
+    move-result v2
 
-    aget v2, v2, v3
+    aget v0, v0, v2
 
-    packed-switch v2, :pswitch_data_44
+    packed-switch v0, :pswitch_data_46
 
     .line 1294
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/JsonToken;->asString()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/JsonToken;->asString()Ljava/lang/String;
 
     move-result-object v1
 
     goto :goto_18
 
     .line 1291
-    :pswitch_38
+    :pswitch_3b
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currentObject()Ljava/lang/Object;
 
     move-result-object v0
 
     .line 1292
-    .restart local v0    # "ob":Ljava/lang/Object;
     if-eqz v0, :cond_18
 
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -1059,17 +952,15 @@
     goto :goto_18
 
     .line 1288
-    nop
-
-    :pswitch_data_44
+    :pswitch_data_46
     .packed-switch 0x7
-        :pswitch_38
-        :pswitch_38
+        :pswitch_3b
+        :pswitch_3b
     .end packed-switch
 .end method
 
 .method public getTextCharacters()[C
-    .registers 3
+    .registers 2
 
     .prologue
     .line 1300
@@ -1078,24 +969,23 @@
     move-result-object v0
 
     .line 1301
-    .local v0, "str":Ljava/lang/String;
     if-nez v0, :cond_8
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_7
-    return-object v1
+    return-object v0
 
     :cond_8
     invoke-virtual {v0}, Ljava/lang/String;->toCharArray()[C
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_7
 .end method
 
 .method public getTextLength()I
-    .registers 3
+    .registers 2
 
     .prologue
     .line 1306
@@ -1104,18 +994,17 @@
     move-result-object v0
 
     .line 1307
-    .local v0, "str":Ljava/lang/String;
     if-nez v0, :cond_8
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_7
-    return v1
+    return v0
 
     :cond_8
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v0
 
     goto :goto_7
 .end method
@@ -1179,222 +1068,206 @@
 .end method
 
 .method public nextToken()Lcom/fasterxml/jackson/core/JsonToken;
-    .registers 7
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
+    .registers 5
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    const/4 v5, -0x1
+    const/4 v3, -0x1
 
     .line 1197
-    iget-boolean v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_closed:Z
+    iget-boolean v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_closed:Z
 
-    if-nez v3, :cond_a
+    if-nez v1, :cond_a
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segment:Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segment:Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
 
-    if-nez v3, :cond_b
+    if-nez v1, :cond_b
 
     .line 1226
     :cond_a
     :goto_a
-    return-object v2
+    return-object v0
 
     .line 1200
     :cond_b
-    iget v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segmentPtr:I
+    iget v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segmentPtr:I
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    iput v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segmentPtr:I
+    iput v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segmentPtr:I
 
-    const/16 v4, 0x10
+    const/16 v2, 0x10
 
-    if-lt v3, v4, :cond_24
+    if-lt v1, v2, :cond_24
 
     .line 1201
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    iput v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segmentPtr:I
+    iput v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segmentPtr:I
 
     .line 1202
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segment:Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segment:Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
 
-    invoke-virtual {v3}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->next()Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->next()Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
 
-    move-result-object v3
+    move-result-object v1
 
-    iput-object v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segment:Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
+    iput-object v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segment:Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
 
     .line 1203
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segment:Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segment:Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
 
-    if-eqz v3, :cond_a
+    if-eqz v1, :cond_a
 
     .line 1207
     :cond_24
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segment:Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segment:Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
 
-    iget v4, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segmentPtr:I
+    iget v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segmentPtr:I
 
-    invoke-virtual {v3, v4}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->type(I)Lcom/fasterxml/jackson/core/JsonToken;
+    invoke-virtual {v1, v2}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->type(I)Lcom/fasterxml/jackson/core/JsonToken;
 
-    move-result-object v3
+    move-result-object v1
 
-    iput-object v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    iput-object v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
     .line 1209
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    sget-object v4, Lcom/fasterxml/jackson/core/JsonToken;->FIELD_NAME:Lcom/fasterxml/jackson/core/JsonToken;
+    sget-object v2, Lcom/fasterxml/jackson/core/JsonToken;->FIELD_NAME:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-ne v3, v4, :cond_4c
+    if-ne v1, v2, :cond_4b
 
     .line 1210
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currentObject()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 1211
-    .local v1, "ob":Ljava/lang/Object;
-    instance-of v2, v1, Ljava/lang/String;
+    instance-of v1, v0, Ljava/lang/String;
 
-    if-eqz v2, :cond_47
+    if-eqz v1, :cond_46
 
-    check-cast v1, Ljava/lang/String;
-
-    .end local v1    # "ob":Ljava/lang/Object;
-    move-object v0, v1
+    check-cast v0, Ljava/lang/String;
 
     .line 1212
-    .local v0, "name":Ljava/lang/String;
-    :goto_3f
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
+    :goto_3e
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
-    invoke-virtual {v2, v0}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->setCurrentName(Ljava/lang/String;)V
+    invoke-virtual {v1, v0}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->setCurrentName(Ljava/lang/String;)V
 
     .line 1226
-    .end local v0    # "name":Ljava/lang/String;
-    :cond_44
-    :goto_44
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    :cond_43
+    :goto_43
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
     goto :goto_a
 
     .line 1211
-    .restart local v1    # "ob":Ljava/lang/Object;
-    :cond_47
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    :cond_46
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    goto :goto_3f
+    goto :goto_3e
 
     .line 1213
-    .end local v1    # "ob":Ljava/lang/Object;
-    :cond_4c
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    :cond_4b
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    sget-object v4, Lcom/fasterxml/jackson/core/JsonToken;->START_OBJECT:Lcom/fasterxml/jackson/core/JsonToken;
+    sget-object v2, Lcom/fasterxml/jackson/core/JsonToken;->START_OBJECT:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-ne v3, v4, :cond_5b
+    if-ne v1, v2, :cond_5a
 
     .line 1214
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
-    invoke-virtual {v2, v5, v5}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->createChildObjectContext(II)Lcom/fasterxml/jackson/core/json/JsonReadContext;
+    invoke-virtual {v0, v3, v3}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->createChildObjectContext(II)Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
-    move-result-object v2
+    move-result-object v0
 
-    iput-object v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
+    iput-object v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
-    goto :goto_44
+    goto :goto_43
 
     .line 1215
-    :cond_5b
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    :cond_5a
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    sget-object v4, Lcom/fasterxml/jackson/core/JsonToken;->START_ARRAY:Lcom/fasterxml/jackson/core/JsonToken;
+    sget-object v2, Lcom/fasterxml/jackson/core/JsonToken;->START_ARRAY:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-ne v3, v4, :cond_6a
+    if-ne v1, v2, :cond_69
 
     .line 1216
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
-    invoke-virtual {v2, v5, v5}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->createChildArrayContext(II)Lcom/fasterxml/jackson/core/json/JsonReadContext;
+    invoke-virtual {v0, v3, v3}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->createChildArrayContext(II)Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
-    move-result-object v2
+    move-result-object v0
 
-    iput-object v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
+    iput-object v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
-    goto :goto_44
+    goto :goto_43
 
     .line 1217
-    :cond_6a
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    :cond_69
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    sget-object v4, Lcom/fasterxml/jackson/core/JsonToken;->END_OBJECT:Lcom/fasterxml/jackson/core/JsonToken;
+    sget-object v2, Lcom/fasterxml/jackson/core/JsonToken;->END_OBJECT:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-eq v3, v4, :cond_76
+    if-eq v1, v2, :cond_75
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    sget-object v4, Lcom/fasterxml/jackson/core/JsonToken;->END_ARRAY:Lcom/fasterxml/jackson/core/JsonToken;
+    sget-object v2, Lcom/fasterxml/jackson/core/JsonToken;->END_ARRAY:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-ne v3, v4, :cond_44
+    if-ne v1, v2, :cond_43
 
     .line 1220
-    :cond_76
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
+    :cond_75
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
-    invoke-virtual {v3}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->getParent()Lcom/fasterxml/jackson/core/json/JsonReadContext;
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->getParent()Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
-    move-result-object v3
+    move-result-object v1
 
-    iput-object v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
+    iput-object v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
     .line 1222
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
-    if-nez v3, :cond_44
+    if-nez v1, :cond_43
 
     .line 1223
-    invoke-static {v2}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->createRootContext(Lcom/fasterxml/jackson/core/json/DupDetector;)Lcom/fasterxml/jackson/core/json/JsonReadContext;
+    invoke-static {v0}, Lcom/fasterxml/jackson/core/json/JsonReadContext;->createRootContext(Lcom/fasterxml/jackson/core/json/DupDetector;)Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
-    move-result-object v2
+    move-result-object v0
 
-    iput-object v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
+    iput-object v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
-    goto :goto_44
+    goto :goto_43
 .end method
 
 .method public overrideCurrentName(Ljava/lang/String;)V
-    .registers 6
-    .param p1, "name"    # Ljava/lang/String;
+    .registers 5
 
     .prologue
     .line 1256
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_parsingContext:Lcom/fasterxml/jackson/core/json/JsonReadContext;
 
     .line 1257
-    .local v0, "ctxt":Lcom/fasterxml/jackson/core/json/JsonReadContext;
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    sget-object v3, Lcom/fasterxml/jackson/core/JsonToken;->START_OBJECT:Lcom/fasterxml/jackson/core/JsonToken;
+    sget-object v2, Lcom/fasterxml/jackson/core/JsonToken;->START_OBJECT:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-eq v2, v3, :cond_e
+    if-eq v1, v2, :cond_e
 
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    sget-object v3, Lcom/fasterxml/jackson/core/JsonToken;->START_ARRAY:Lcom/fasterxml/jackson/core/JsonToken;
+    sget-object v2, Lcom/fasterxml/jackson/core/JsonToken;->START_ARRAY:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-ne v2, v3, :cond_12
+    if-ne v1, v2, :cond_12
 
     .line 1258
     :cond_e
@@ -1414,122 +1287,114 @@
 
     .line 1262
     :catch_16
-    move-exception v1
+    move-exception v0
 
     .line 1263
-    .local v1, "e":Ljava/io/IOException;
-    new-instance v2, Ljava/lang/RuntimeException;
+    new-instance v1, Ljava/lang/RuntimeException;
 
-    invoke-direct {v2, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
-    throw v2
+    throw v1
 .end method
 
 .method public peekNextToken()Lcom/fasterxml/jackson/core/JsonToken;
-    .registers 5
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 1164
-    iget-boolean v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_closed:Z
-
-    if-eqz v3, :cond_6
-
-    .line 1171
-    :cond_5
-    :goto_5
-    return-object v2
-
-    .line 1165
-    :cond_6
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segment:Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
-
-    .line 1166
-    .local v1, "seg":Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
-    iget v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segmentPtr:I
-
-    add-int/lit8 v0, v3, 0x1
-
-    .line 1167
-    .local v0, "ptr":I
-    const/16 v3, 0x10
-
-    if-lt v0, v3, :cond_14
-
-    .line 1168
-    const/4 v0, 0x0
-
-    .line 1169
-    if-nez v1, :cond_1b
-
-    move-object v1, v2
-
-    .line 1171
-    :cond_14
-    :goto_14
-    if-eqz v1, :cond_5
-
-    invoke-virtual {v1, v0}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->type(I)Lcom/fasterxml/jackson/core/JsonToken;
-
-    move-result-object v2
-
-    goto :goto_5
-
-    .line 1169
-    :cond_1b
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->next()Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
-
-    move-result-object v1
-
-    goto :goto_14
-.end method
-
-.method public readBinaryValue(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/OutputStream;)I
     .registers 6
-    .param p1, "b64variant"    # Lcom/fasterxml/jackson/core/Base64Variant;
-    .param p2, "out"    # Ljava/io/OutputStream;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     const/4 v1, 0x0
 
-    .line 1470
-    invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->getBinaryValue(Lcom/fasterxml/jackson/core/Base64Variant;)[B
+    .line 1164
+    iget-boolean v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_closed:Z
+
+    if-eqz v0, :cond_6
+
+    .line 1171
+    :cond_5
+    :goto_5
+    return-object v1
+
+    .line 1165
+    :cond_6
+    iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segment:Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
+
+    .line 1166
+    iget v0, p0, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->_segmentPtr:I
+
+    add-int/lit8 v0, v0, 0x1
+
+    .line 1167
+    const/16 v2, 0x10
+
+    if-lt v0, v2, :cond_23
+
+    .line 1168
+    const/4 v2, 0x0
+
+    .line 1169
+    if-nez v3, :cond_1e
+
+    move-object v0, v1
+
+    :goto_14
+    move v4, v2
+
+    move-object v2, v0
+
+    move v0, v4
+
+    .line 1171
+    :goto_17
+    if-eqz v2, :cond_5
+
+    invoke-virtual {v2, v0}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->type(I)Lcom/fasterxml/jackson/core/JsonToken;
+
+    move-result-object v1
+
+    goto :goto_5
+
+    .line 1169
+    :cond_1e
+    invoke-virtual {v3}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;->next()Lcom/fasterxml/jackson/databind/util/TokenBuffer$Segment;
 
     move-result-object v0
 
+    goto :goto_14
+
+    :cond_23
+    move-object v2, v3
+
+    goto :goto_17
+.end method
+
+.method public readBinaryValue(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/OutputStream;)I
+    .registers 6
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 1470
+    invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/util/TokenBuffer$Parser;->getBinaryValue(Lcom/fasterxml/jackson/core/Base64Variant;)[B
+
+    move-result-object v1
+
     .line 1471
-    .local v0, "data":[B
-    if-eqz v0, :cond_c
+    if-eqz v1, :cond_c
 
     .line 1472
-    array-length v2, v0
+    array-length v2, v1
 
-    invoke-virtual {p2, v0, v1, v2}, Ljava/io/OutputStream;->write([BII)V
+    invoke-virtual {p2, v1, v0, v2}, Ljava/io/OutputStream;->write([BII)V
 
     .line 1473
-    array-length v1, v0
+    array-length v0, v1
 
     .line 1475
     :cond_c
-    return v1
+    return v0
 .end method
 
 .method public setCodec(Lcom/fasterxml/jackson/core/ObjectCodec;)V
     .registers 2
-    .param p1, "c"    # Lcom/fasterxml/jackson/core/ObjectCodec;
 
     .prologue
     .line 1147
@@ -1540,7 +1405,6 @@
 
 .method public setLocation(Lcom/fasterxml/jackson/core/JsonLocation;)V
     .registers 2
-    .param p1, "l"    # Lcom/fasterxml/jackson/core/JsonLocation;
 
     .prologue
     .line 1140

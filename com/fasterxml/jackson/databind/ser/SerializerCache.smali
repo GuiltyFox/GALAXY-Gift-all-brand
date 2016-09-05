@@ -3,14 +3,6 @@
 .source "SerializerCache.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;
-    }
-.end annotation
-
-
 # instance fields
 .field private volatile _readOnlyMap:Lcom/fasterxml/jackson/databind/ser/impl/ReadOnlyClassToSerializerMap;
 
@@ -59,8 +51,6 @@
 # virtual methods
 .method public addAndResolveNonTypedSerializer(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/JsonSerializer;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 7
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -74,15 +64,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
     .line 157
-    .local p2, "ser":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<Ljava/lang/Object;>;"
     monitor-enter p0
 
     .line 158
@@ -115,7 +98,6 @@
     .line 170
     check-cast p2, Lcom/fasterxml/jackson/databind/ser/ResolvableSerializer;
 
-    .end local p2    # "ser":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<Ljava/lang/Object;>;"
     invoke-interface {p2, p3}, Lcom/fasterxml/jackson/databind/ser/ResolvableSerializer;->resolve(Lcom/fasterxml/jackson/databind/SerializerProvider;)V
 
     .line 172
@@ -138,7 +120,6 @@
 
 .method public addAndResolveNonTypedSerializer(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/JsonSerializer;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 7
-    .param p3, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -153,16 +134,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
-
     .prologue
     .line 135
-    .local p1, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p2, "ser":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<Ljava/lang/Object;>;"
     monitor-enter p0
 
     .line 136
@@ -195,7 +168,6 @@
     .line 148
     check-cast p2, Lcom/fasterxml/jackson/databind/ser/ResolvableSerializer;
 
-    .end local p2    # "ser":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<Ljava/lang/Object;>;"
     invoke-interface {p2, p3}, Lcom/fasterxml/jackson/databind/ser/ResolvableSerializer;->resolve(Lcom/fasterxml/jackson/databind/SerializerProvider;)V
 
     .line 150
@@ -218,7 +190,6 @@
 
 .method public addTypedSerializer(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/JsonSerializer;)V
     .registers 6
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -232,7 +203,6 @@
 
     .prologue
     .line 113
-    .local p2, "ser":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<Ljava/lang/Object;>;"
     monitor-enter p0
 
     .line 114
@@ -290,8 +260,6 @@
 
     .prologue
     .line 123
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p2, "ser":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<Ljava/lang/Object;>;"
     monitor-enter p0
 
     .line 124
@@ -362,14 +330,13 @@
 .end method
 
 .method public getReadOnlyLookupMap()Lcom/fasterxml/jackson/databind/ser/impl/ReadOnlyClassToSerializerMap;
-    .registers 3
+    .registers 2
 
     .prologue
     .line 46
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/SerializerCache;->_readOnlyMap:Lcom/fasterxml/jackson/databind/ser/impl/ReadOnlyClassToSerializerMap;
 
     .line 47
-    .local v0, "m":Lcom/fasterxml/jackson/databind/ser/impl/ReadOnlyClassToSerializerMap;
     if-nez v0, :cond_12
 
     .line 48
@@ -383,9 +350,9 @@
     if-nez v0, :cond_11
 
     .line 51
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/ser/SerializerCache;->_sharedMap:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/SerializerCache;->_sharedMap:Ljava/util/HashMap;
 
-    invoke-static {v1}, Lcom/fasterxml/jackson/databind/ser/impl/ReadOnlyClassToSerializerMap;->from(Ljava/util/HashMap;)Lcom/fasterxml/jackson/databind/ser/impl/ReadOnlyClassToSerializerMap;
+    invoke-static {v0}, Lcom/fasterxml/jackson/databind/ser/impl/ReadOnlyClassToSerializerMap;->from(Ljava/util/HashMap;)Lcom/fasterxml/jackson/databind/ser/impl/ReadOnlyClassToSerializerMap;
 
     move-result-object v0
 
@@ -401,20 +368,20 @@
     :cond_12
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/ser/impl/ReadOnlyClassToSerializerMap;->instance()Lcom/fasterxml/jackson/databind/ser/impl/ReadOnlyClassToSerializerMap;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     .line 53
     :catchall_17
-    move-exception v1
+    move-exception v0
 
     :try_start_18
     monitor-exit p0
     :try_end_19
     .catchall {:try_start_18 .. :try_end_19} :catchall_17
 
-    throw v1
+    throw v0
 .end method
 
 .method public declared-synchronized size()I
@@ -447,7 +414,6 @@
 
 .method public typedValueSerializer(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JsonSerializer;
     .registers 5
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -511,7 +477,6 @@
 
     .prologue
     .line 95
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     monitor-enter p0
 
     .line 96
@@ -547,7 +512,6 @@
 
 .method public untypedValueSerializer(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JsonSerializer;
     .registers 5
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -611,7 +575,6 @@
 
     .prologue
     .line 74
-    .local p1, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     monitor-enter p0
 
     .line 75

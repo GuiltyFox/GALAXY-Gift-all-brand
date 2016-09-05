@@ -25,7 +25,6 @@
 
     .prologue
     .line 24
-    .local p0, "this":Lorg/parceler/converter/LinkedHashMapParcelConverter;, "Lorg/parceler/converter/LinkedHashMapParcelConverter<TK;TV;>;"
     invoke-direct {p0}, Lorg/parceler/converter/MapParcelConverter;-><init>()V
 
     return-void
@@ -33,7 +32,7 @@
 
 
 # virtual methods
-.method public createMap()Ljava/util/LinkedHashMap;
+.method public a()Ljava/util/LinkedHashMap;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -45,7 +44,6 @@
 
     .prologue
     .line 28
-    .local p0, "this":Lorg/parceler/converter/LinkedHashMapParcelConverter;, "Lorg/parceler/converter/LinkedHashMapParcelConverter<TK;TV;>;"
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
@@ -53,13 +51,12 @@
     return-object v0
 .end method
 
-.method public bridge synthetic createMap()Ljava/util/Map;
+.method public synthetic b()Ljava/util/Map;
     .registers 2
 
     .prologue
     .line 24
-    .local p0, "this":Lorg/parceler/converter/LinkedHashMapParcelConverter;, "Lorg/parceler/converter/LinkedHashMapParcelConverter<TK;TV;>;"
-    invoke-virtual {p0}, Lorg/parceler/converter/LinkedHashMapParcelConverter;->createMap()Ljava/util/LinkedHashMap;
+    invoke-virtual {p0}, Lorg/parceler/converter/LinkedHashMapParcelConverter;->a()Ljava/util/LinkedHashMap;
 
     move-result-object v0
 

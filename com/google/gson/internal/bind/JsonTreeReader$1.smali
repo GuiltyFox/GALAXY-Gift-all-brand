@@ -8,11 +8,6 @@
     value = Lcom/google/gson/internal/bind/JsonTreeReader;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 
 # direct methods
 .method constructor <init>()V
@@ -29,11 +24,6 @@
 # virtual methods
 .method public close()V
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 45
@@ -46,14 +36,6 @@
 
 .method public read([CII)I
     .registers 5
-    .param p1, "buffer"    # [C
-    .param p2, "offset"    # I
-    .param p3, "count"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 42

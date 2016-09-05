@@ -16,18 +16,8 @@
 
 
 # virtual methods
-.method public buildKey(Ljava/lang/String;Lcom/bumptech/glide/load/Key;IILcom/bumptech/glide/load/ResourceDecoder;Lcom/bumptech/glide/load/ResourceDecoder;Lcom/bumptech/glide/load/Transformation;Lcom/bumptech/glide/load/ResourceEncoder;Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;Lcom/bumptech/glide/load/Encoder;)Lcom/bumptech/glide/load/engine/EngineKey;
+.method public a(Ljava/lang/String;Lcom/bumptech/glide/load/Key;IILcom/bumptech/glide/load/ResourceDecoder;Lcom/bumptech/glide/load/ResourceDecoder;Lcom/bumptech/glide/load/Transformation;Lcom/bumptech/glide/load/ResourceEncoder;Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;Lcom/bumptech/glide/load/Encoder;)Lcom/bumptech/glide/load/engine/EngineKey;
     .registers 22
-    .param p1, "id"    # Ljava/lang/String;
-    .param p2, "signature"    # Lcom/bumptech/glide/load/Key;
-    .param p3, "width"    # I
-    .param p4, "height"    # I
-    .param p5, "cacheDecoder"    # Lcom/bumptech/glide/load/ResourceDecoder;
-    .param p6, "sourceDecoder"    # Lcom/bumptech/glide/load/ResourceDecoder;
-    .param p7, "transformation"    # Lcom/bumptech/glide/load/Transformation;
-    .param p8, "encoder"    # Lcom/bumptech/glide/load/ResourceEncoder;
-    .param p9, "transcoder"    # Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;
-    .param p10, "sourceEncoder"    # Lcom/bumptech/glide/load/Encoder;
 
     .prologue
     .line 16

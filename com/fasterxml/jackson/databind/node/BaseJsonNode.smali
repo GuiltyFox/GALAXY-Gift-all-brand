@@ -24,7 +24,6 @@
 
 .method public final findPath(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 3
-    .param p1, "fieldName"    # Ljava/lang/String;
 
     .prologue
     .line 33
@@ -33,7 +32,6 @@
     move-result-object v0
 
     .line 34
-    .local v0, "value":Lcom/fasterxml/jackson/databind/JsonNode;
     if-nez v0, :cond_a
 
     .line 35
@@ -42,7 +40,6 @@
     move-result-object v0
 
     .line 37
-    .end local v0    # "value":Lcom/fasterxml/jackson/databind/JsonNode;
     :cond_a
     return-object v0
 .end method
@@ -58,21 +55,9 @@
 .end method
 
 .method public abstract serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 .end method
 
 .method public abstract serializeWithType(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 .end method
 
 .method public traverse()Lcom/fasterxml/jackson/core/JsonParser;
@@ -89,7 +74,6 @@
 
 .method public traverse(Lcom/fasterxml/jackson/core/ObjectCodec;)Lcom/fasterxml/jackson/core/JsonParser;
     .registers 3
-    .param p1, "codec"    # Lcom/fasterxml/jackson/core/ObjectCodec;
 
     .prologue
     .line 53

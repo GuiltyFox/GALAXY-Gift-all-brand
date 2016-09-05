@@ -11,11 +11,6 @@
     value = Lcom/loopj/android/http/AsyncHttpClient;->cancelRequests(Landroid/content/Context;Z)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Lcom/loopj/android/http/AsyncHttpClient;
@@ -28,7 +23,6 @@
 # direct methods
 .method constructor <init>(Lcom/loopj/android/http/AsyncHttpClient;Ljava/util/List;Z)V
     .registers 4
-    .param p1, "this$0"    # Lcom/loopj/android/http/AsyncHttpClient;
 
     .prologue
     .line 895

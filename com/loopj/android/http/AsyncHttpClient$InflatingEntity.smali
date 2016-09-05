@@ -3,17 +3,6 @@
 .source "AsyncHttpClient.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/loopj/android/http/AsyncHttpClient;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "InflatingEntity"
-.end annotation
-
-
 # instance fields
 .field gzippedStream:Ljava/util/zip/GZIPInputStream;
 
@@ -25,7 +14,6 @@
 # direct methods
 .method public constructor <init>(Lcz/msebera/android/httpclient/HttpEntity;)V
     .registers 2
-    .param p1, "wrapped"    # Lcz/msebera/android/httpclient/HttpEntity;
 
     .prologue
     .line 1609
@@ -39,11 +27,6 @@
 # virtual methods
 .method public consumeContent()V
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 1631
@@ -70,11 +53,6 @@
 
 .method public getContent()Ljava/io/InputStream;
     .registers 4
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 1614

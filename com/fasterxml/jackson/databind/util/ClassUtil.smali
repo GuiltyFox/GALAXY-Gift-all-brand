@@ -3,14 +3,6 @@
 .source "ClassUtil.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/util/ClassUtil$EnumTypeLocator;
-    }
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -24,8 +16,7 @@
 .end method
 
 .method private static _addSuperTypes(Ljava/lang/Class;Ljava/lang/Class;Ljava/util/Collection;Z)V
-    .registers 10
-    .param p3, "addClassItself"    # Z
+    .registers 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -41,19 +32,16 @@
     .end annotation
 
     .prologue
-    .local p0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p1, "endBefore":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p2, "result":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/lang/Class<*>;>;"
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
     .line 38
     if-eq p0, p1, :cond_9
 
     if-eqz p0, :cond_9
 
-    const-class v4, Ljava/lang/Object;
+    const-class v0, Ljava/lang/Object;
 
-    if-ne p0, v4, :cond_a
+    if-ne p0, v0, :cond_a
 
     .line 49
     :cond_9
@@ -67,9 +55,9 @@
     .line 40
     invoke-interface {p2, p0}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
 
-    move-result v4
+    move-result v0
 
-    if-nez v4, :cond_9
+    if-nez v0, :cond_9
 
     .line 43
     invoke-interface {p2, p0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
@@ -78,37 +66,32 @@
     :cond_15
     invoke-virtual {p0}, Ljava/lang/Class;->getInterfaces()[Ljava/lang/Class;
 
-    move-result-object v0
+    move-result-object v1
 
-    .local v0, "arr$":[Ljava/lang/Class;
-    array-length v3, v0
+    array-length v2, v1
 
-    .local v3, "len$":I
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    .local v1, "i$":I
     :goto_1b
-    if-ge v1, v3, :cond_25
+    if-ge v0, v2, :cond_25
 
-    aget-object v2, v0, v1
+    aget-object v3, v1, v0
 
     .line 46
-    .local v2, "intCls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    invoke-static {v2, p1, p2, v5}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->_addSuperTypes(Ljava/lang/Class;Ljava/lang/Class;Ljava/util/Collection;Z)V
+    invoke-static {v3, p1, p2, v4}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->_addSuperTypes(Ljava/lang/Class;Ljava/lang/Class;Ljava/util/Collection;Z)V
 
     .line 45
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_1b
 
     .line 48
-    .end local v2    # "intCls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :cond_25
     invoke-virtual {p0}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-static {v4, p1, p2, v5}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->_addSuperTypes(Ljava/lang/Class;Ljava/lang/Class;Ljava/util/Collection;Z)V
+    invoke-static {v0, p1, p2, v4}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->_addSuperTypes(Ljava/lang/Class;Ljava/lang/Class;Ljava/util/Collection;Z)V
 
     goto :goto_9
 .end method
@@ -126,7 +109,6 @@
 
     .prologue
     .line 64
-    .local p0, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0}, Ljava/lang/Class;->isAnnotation()Z
 
     move-result v0
@@ -187,8 +169,7 @@
 .end method
 
 .method public static checkAndFixAccess(Ljava/lang/reflect/Member;)V
-    .registers 7
-    .param p0, "member"    # Ljava/lang/reflect/Member;
+    .registers 6
 
     .prologue
     .line 489
@@ -197,11 +178,10 @@
     check-cast v0, Ljava/lang/reflect/AccessibleObject;
 
     .line 497
-    .local v0, "ao":Ljava/lang/reflect/AccessibleObject;
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
     :try_start_4
-    invoke-virtual {v0, v3}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
+    invoke-virtual {v0, v1}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
     :try_end_7
     .catch Ljava/lang/SecurityException; {:try_start_4 .. :try_end_7} :catch_8
 
@@ -211,79 +191,76 @@
 
     .line 498
     :catch_8
-    move-exception v2
+    move-exception v1
 
     .line 503
-    .local v2, "se":Ljava/lang/SecurityException;
     invoke-virtual {v0}, Ljava/lang/reflect/AccessibleObject;->isAccessible()Z
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_7
+    if-nez v0, :cond_7
 
     .line 504
     invoke-interface {p0}, Ljava/lang/reflect/Member;->getDeclaringClass()Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 505
-    .local v1, "declClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    new-instance v3, Ljava/lang/IllegalArgumentException;
+    new-instance v2, Ljava/lang/IllegalArgumentException;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "Can not access "
+    const-string/jumbo v4, "Can not access "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v3
 
-    const-string/jumbo v5, " (from class "
+    const-string/jumbo v4, " (from class "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    const-string/jumbo v5, "; failed to set access: "
+    const-string/jumbo v3, "; failed to set access: "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/SecurityException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/SecurityException;->getMessage()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v2
 .end method
 
 .method public static createInstance(Ljava/lang/Class;Z)Ljava/lang/Object;
-    .registers 7
-    .param p1, "canFixAccess"    # Z
+    .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -294,121 +271,112 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/IllegalArgumentException;
-        }
-    .end annotation
-
     .prologue
     .line 368
-    .local p0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     invoke-static {p0, p1}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->findConstructor(Ljava/lang/Class;Z)Ljava/lang/reflect/Constructor;
 
     move-result-object v0
 
     .line 369
-    .local v0, "ctor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<TT;>;"
     if-nez v0, :cond_2b
 
     .line 370
-    new-instance v2, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "Class "
+    const-string/jumbo v2, "Class "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
-    const-string/jumbo v4, " has no default (no arg) constructor"
+    const-string/jumbo v2, " has no default (no arg) constructor"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v2
+    throw v0
 
     .line 373
     :cond_2b
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     :try_start_2c
-    new-array v2, v2, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
-    invoke-virtual {v0, v2}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_31
     .catch Ljava/lang/Exception; {:try_start_2c .. :try_end_31} :catch_33
 
-    move-result-object v2
+    move-result-object v0
 
     .line 376
     :goto_32
-    return-object v2
+    return-object v0
 
     .line 374
     :catch_33
-    move-exception v1
+    move-exception v0
 
     .line 375
-    .local v1, "e":Ljava/lang/Exception;
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "Failed to instantiate class "
+    const-string/jumbo v2, "Failed to instantiate class "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, ", problem: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object v2
 
-    const-string/jumbo v3, ", problem: "
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    move-result-object v2
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->unwrapAndThrowAsIAE(Ljava/lang/Throwable;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->unwrapAndThrowAsIAE(Ljava/lang/Throwable;Ljava/lang/String;)V
 
     .line 376
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     goto :goto_32
 .end method
@@ -425,7 +393,6 @@
     .end annotation
 
     .prologue
-    .local p0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v1, 0x0
 
     .line 414
@@ -575,8 +542,7 @@
 .end method
 
 .method public static findClass(Ljava/lang/String;)Ljava/lang/Class;
-    .registers 6
-    .param p0, "className"    # Ljava/lang/String;
+    .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -587,176 +553,168 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/ClassNotFoundException;
-        }
-    .end annotation
-
     .prologue
     .line 208
-    const/16 v3, 0x2e
+    const/16 v0, 0x2e
 
-    invoke-virtual {p0, v3}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual {p0, v0}, Ljava/lang/String;->indexOf(I)I
 
-    move-result v3
+    move-result v0
 
-    if-gez v3, :cond_74
+    if-gez v0, :cond_74
 
     .line 209
-    const-string/jumbo v3, "int"
+    const-string/jumbo v0, "int"
 
-    invoke-virtual {v3, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_14
+    if-eqz v0, :cond_14
 
-    sget-object v3, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
     .line 231
     :goto_13
-    return-object v3
+    return-object v0
 
     .line 210
     :cond_14
-    const-string/jumbo v3, "long"
+    const-string/jumbo v0, "long"
 
-    invoke-virtual {v3, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_20
+    if-eqz v0, :cond_20
 
-    sget-object v3, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Long;->TYPE:Ljava/lang/Class;
 
     goto :goto_13
 
     .line 211
     :cond_20
-    const-string/jumbo v3, "float"
+    const-string/jumbo v0, "float"
 
-    invoke-virtual {v3, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_2c
+    if-eqz v0, :cond_2c
 
-    sget-object v3, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Float;->TYPE:Ljava/lang/Class;
 
     goto :goto_13
 
     .line 212
     :cond_2c
-    const-string/jumbo v3, "double"
+    const-string/jumbo v0, "double"
 
-    invoke-virtual {v3, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_38
+    if-eqz v0, :cond_38
 
-    sget-object v3, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Double;->TYPE:Ljava/lang/Class;
 
     goto :goto_13
 
     .line 213
     :cond_38
-    const-string/jumbo v3, "boolean"
+    const-string/jumbo v0, "boolean"
 
-    invoke-virtual {v3, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_44
+    if-eqz v0, :cond_44
 
-    sget-object v3, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
     goto :goto_13
 
     .line 214
     :cond_44
-    const-string/jumbo v3, "byte"
+    const-string/jumbo v0, "byte"
 
-    invoke-virtual {v3, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_50
+    if-eqz v0, :cond_50
 
-    sget-object v3, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Byte;->TYPE:Ljava/lang/Class;
 
     goto :goto_13
 
     .line 215
     :cond_50
-    const-string/jumbo v3, "char"
+    const-string/jumbo v0, "char"
 
-    invoke-virtual {v3, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_5c
+    if-eqz v0, :cond_5c
 
-    sget-object v3, Ljava/lang/Character;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Character;->TYPE:Ljava/lang/Class;
 
     goto :goto_13
 
     .line 216
     :cond_5c
-    const-string/jumbo v3, "short"
+    const-string/jumbo v0, "short"
 
-    invoke-virtual {v3, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_68
+    if-eqz v0, :cond_68
 
-    sget-object v3, Ljava/lang/Short;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Short;->TYPE:Ljava/lang/Class;
 
     goto :goto_13
 
     .line 217
     :cond_68
-    const-string/jumbo v3, "void"
+    const-string/jumbo v0, "void"
 
-    invoke-virtual {v3, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_74
+    if-eqz v0, :cond_74
 
-    sget-object v3, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
+    sget-object v0, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
 
     goto :goto_13
 
     .line 220
     :cond_74
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     .line 221
-    .local v2, "prob":Ljava/lang/Throwable;
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v3}, Ljava/lang/Thread;->getContextClassLoader()Ljava/lang/ClassLoader;
+    invoke-virtual {v1}, Ljava/lang/Thread;->getContextClassLoader()Ljava/lang/ClassLoader;
 
     move-result-object v1
 
     .line 223
-    .local v1, "loader":Ljava/lang/ClassLoader;
     if-eqz v1, :cond_8a
 
     .line 225
-    const/4 v3, 0x1
+    const/4 v0, 0x1
 
     :try_start_80
-    invoke-static {p0, v3, v1}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+    invoke-static {p0, v0, v1}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
     :try_end_83
     .catch Ljava/lang/Exception; {:try_start_80 .. :try_end_83} :catch_85
 
-    move-result-object v3
+    move-result-object v0
 
     goto :goto_13
 
@@ -765,65 +723,59 @@
     move-exception v0
 
     .line 227
-    .local v0, "e":Ljava/lang/Exception;
     invoke-static {v0}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->getRootCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 231
-    .end local v0    # "e":Ljava/lang/Exception;
     :cond_8a
     :try_start_8a
     invoke-static {p0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
     :try_end_8d
     .catch Ljava/lang/Exception; {:try_start_8a .. :try_end_8d} :catch_8f
 
-    move-result-object v3
+    move-result-object v0
 
     goto :goto_13
 
     .line 232
     :catch_8f
-    move-exception v0
+    move-exception v1
 
     .line 233
-    .restart local v0    # "e":Ljava/lang/Exception;
-    if-nez v2, :cond_96
+    if-nez v0, :cond_96
 
     .line 234
-    invoke-static {v0}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->getRootCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    invoke-static {v1}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->getRootCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 237
     :cond_96
-    instance-of v3, v2, Ljava/lang/RuntimeException;
+    instance-of v1, v0, Ljava/lang/RuntimeException;
 
-    if-eqz v3, :cond_9d
+    if-eqz v1, :cond_9d
 
     .line 238
-    check-cast v2, Ljava/lang/RuntimeException;
+    check-cast v0, Ljava/lang/RuntimeException;
 
-    .end local v2    # "prob":Ljava/lang/Throwable;
-    throw v2
+    throw v0
 
     .line 240
-    .restart local v2    # "prob":Ljava/lang/Throwable;
     :cond_9d
-    new-instance v3, Ljava/lang/ClassNotFoundException;
+    new-instance v1, Ljava/lang/ClassNotFoundException;
 
-    invoke-virtual {v2}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-direct {v3, v4, v2}, Ljava/lang/ClassNotFoundException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v2, v0}, Ljava/lang/ClassNotFoundException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    throw v3
+    throw v1
 .end method
 
 .method public static findConstructor(Ljava/lang/Class;Z)Ljava/lang/reflect/Constructor;
-    .registers 7
-    .param p1, "canFixAccess"    # Z
+    .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -836,92 +788,81 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/IllegalArgumentException;
-        }
-    .end annotation
-
     .prologue
     .line 384
-    .local p0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     :try_start_1
-    new-array v2, v2, [Ljava/lang/Class;
+    new-array v0, v0, [Ljava/lang/Class;
 
-    invoke-virtual {p0, v2}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    invoke-virtual {p0, v0}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
     move-result-object v0
 
     .line 385
-    .local v0, "ctor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<TT;>;"
     if-eqz p1, :cond_d
 
     .line 386
     invoke-static {v0}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->checkAndFixAccess(Ljava/lang/reflect/Member;)V
 
     .line 399
-    .end local v0    # "ctor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<TT;>;"
     :cond_c
     :goto_c
     return-object v0
 
     .line 389
-    .restart local v0    # "ctor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<TT;>;"
     :cond_d
     invoke-virtual {v0}, Ljava/lang/reflect/Constructor;->getModifiers()I
 
-    move-result v2
+    move-result v1
 
-    invoke-static {v2}, Ljava/lang/reflect/Modifier;->isPublic(I)Z
+    invoke-static {v1}, Ljava/lang/reflect/Modifier;->isPublic(I)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_c
+    if-nez v1, :cond_c
 
     .line 390
-    new-instance v2, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "Default constructor for "
+    const-string/jumbo v2, "Default constructor for "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
-    const-string/jumbo v4, " is not accessible (non-public?): not allowed to try modify access via Reflection: can not instantiate type"
+    const-string/jumbo v2, " is not accessible (non-public?): not allowed to try modify access via Reflection: can not instantiate type"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v2
+    throw v0
     :try_end_3c
     .catch Ljava/lang/NoSuchMethodException; {:try_start_1 .. :try_end_3c} :catch_3c
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_3c} :catch_3f
 
     .line 394
-    .end local v0    # "ctor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<TT;>;"
     :catch_3c
-    move-exception v2
+    move-exception v0
 
     .line 399
     :goto_3d
@@ -931,47 +872,46 @@
 
     .line 396
     :catch_3f
-    move-exception v1
+    move-exception v0
 
     .line 397
-    .local v1, "e":Ljava/lang/Exception;
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "Failed to find default constructor of class "
+    const-string/jumbo v2, "Failed to find default constructor of class "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, ", problem: "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object v2
 
-    const-string/jumbo v3, ", problem: "
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    move-result-object v2
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->unwrapAndThrowAsIAE(Ljava/lang/Throwable;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->unwrapAndThrowAsIAE(Ljava/lang/Throwable;Ljava/lang/String;)V
 
     goto :goto_3d
 .end method
@@ -992,7 +932,6 @@
 
     .prologue
     .line 575
-    .local p0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
     move-result-object v0
@@ -1027,13 +966,11 @@
 
     .prologue
     .line 558
-    .local p0, "en":Ljava/lang/Enum;, "Ljava/lang/Enum<*>;"
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v0
 
     .line 559
-    .local v0, "ec":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {v0}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
     move-result-object v1
@@ -1068,7 +1005,6 @@
 
     .prologue
     .line 541
-    .local p0, "m":Ljava/util/EnumMap;, "Ljava/util/EnumMap<**>;"
     invoke-virtual {p0}, Ljava/util/EnumMap;->isEmpty()Z
 
     move-result v0
@@ -1124,7 +1060,6 @@
 
     .prologue
     .line 526
-    .local p0, "s":Ljava/util/EnumSet;, "Ljava/util/EnumSet<*>;"
     invoke-virtual {p0}, Ljava/util/EnumSet;->isEmpty()Z
 
     move-result v0
@@ -1178,8 +1113,6 @@
 
     .prologue
     .line 29
-    .local p0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p1, "endBefore":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0x8
@@ -1215,9 +1148,6 @@
 
     .prologue
     .line 33
-    .local p0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p1, "endBefore":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p2, "result":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Class<*>;>;"
     const/4 v0, 0x0
 
     invoke-static {p0, p1, p2, v0}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->_addSuperTypes(Ljava/lang/Class;Ljava/lang/Class;Ljava/util/Collection;Z)V
@@ -1227,53 +1157,42 @@
 .end method
 
 .method public static getClassDescription(Ljava/lang/Object;)Ljava/lang/String;
-    .registers 3
-    .param p0, "classOrInstance"    # Ljava/lang/Object;
+    .registers 2
 
     .prologue
     .line 191
     if-nez p0, :cond_6
 
     .line 192
-    const-string/jumbo v1, "unknown"
+    const-string/jumbo v0, "unknown"
 
     .line 196
-    .end local p0    # "classOrInstance":Ljava/lang/Object;
     :goto_5
-    return-object v1
+    return-object v0
 
     .line 194
-    .restart local p0    # "classOrInstance":Ljava/lang/Object;
     :cond_6
-    instance-of v1, p0, Ljava/lang/Class;
+    instance-of v0, p0, Ljava/lang/Class;
 
-    if-eqz v1, :cond_12
+    if-eqz v0, :cond_11
 
     check-cast p0, Ljava/lang/Class;
 
-    .end local p0    # "classOrInstance":Ljava/lang/Object;
-    move-object v0, p0
-
     .line 196
-    .local v0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .restart local p0    # "classOrInstance":Ljava/lang/Object;
-    :goto_d
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    :goto_c
+    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    .end local p0    # "classOrInstance":Ljava/lang/Object;
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_5
 
     .line 194
-    .end local v0    # "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .restart local p0    # "classOrInstance":Ljava/lang/Object;
-    :cond_12
+    :cond_11
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v0
+    move-result-object p0
 
-    goto :goto_d
+    goto :goto_c
 .end method
 
 .method public static getOuterClass(Ljava/lang/Class;)Ljava/lang/Class;
@@ -1289,7 +1208,6 @@
     .end annotation
 
     .prologue
-    .local p0, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v0, 0x0
 
     .line 118
@@ -1342,7 +1260,6 @@
 
 .method public static getRootCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
     .registers 2
-    .param p0, "t"    # Ljava/lang/Throwable;
 
     .prologue
     .line 280
@@ -1366,54 +1283,52 @@
 .end method
 
 .method public static hasGetterSignature(Ljava/lang/reflect/Method;)Z
-    .registers 5
-    .param p0, "m"    # Ljava/lang/reflect/Method;
+    .registers 4
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 252
     invoke-virtual {p0}, Ljava/lang/reflect/Method;->getModifiers()I
 
-    move-result v2
+    move-result v1
 
-    invoke-static {v2}, Ljava/lang/reflect/Modifier;->isStatic(I)Z
+    invoke-static {v1}, Ljava/lang/reflect/Modifier;->isStatic(I)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_c
+    if-eqz v1, :cond_c
 
     .line 265
     :cond_b
     :goto_b
-    return v1
+    return v0
 
     .line 256
     :cond_c
     invoke-virtual {p0}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 257
-    .local v0, "pts":[Ljava/lang/Class;, "[Ljava/lang/Class<*>;"
-    if-eqz v0, :cond_15
+    if-eqz v1, :cond_15
 
-    array-length v2, v0
+    array-length v1, v1
 
-    if-nez v2, :cond_b
+    if-nez v1, :cond_b
 
     .line 261
     :cond_15
-    sget-object v2, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
+    sget-object v1, Ljava/lang/Void;->TYPE:Ljava/lang/Class;
 
     invoke-virtual {p0}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v2
 
-    if-eq v2, v3, :cond_b
+    if-eq v1, v2, :cond_b
 
     .line 265
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     goto :goto_b
 .end method
@@ -1430,7 +1345,6 @@
 
     .prologue
     .line 604
-    .local p0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const-class v0, Ljava/lang/Void;
 
     if-eq p0, v0, :cond_c
@@ -1466,7 +1380,6 @@
     .end annotation
 
     .prologue
-    .local p0, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const/4 v0, 0x1
 
     .line 172
@@ -1507,7 +1420,7 @@
 .end method
 
 .method public static isConcrete(Ljava/lang/Class;)Z
-    .registers 3
+    .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1518,31 +1431,28 @@
 
     .prologue
     .line 160
-    .local p0, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0}, Ljava/lang/Class;->getModifiers()I
 
     move-result v0
 
     .line 161
-    .local v0, "mod":I
-    and-int/lit16 v1, v0, 0x600
+    and-int/lit16 v0, v0, 0x600
 
-    if-nez v1, :cond_a
+    if-nez v0, :cond_a
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     :goto_9
-    return v1
+    return v0
 
     :cond_a
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_9
 .end method
 
 .method public static isConcrete(Ljava/lang/reflect/Member;)Z
-    .registers 3
-    .param p0, "member"    # Ljava/lang/reflect/Member;
+    .registers 2
 
     .prologue
     .line 166
@@ -1551,18 +1461,17 @@
     move-result v0
 
     .line 167
-    .local v0, "mod":I
-    and-int/lit16 v1, v0, 0x600
+    and-int/lit16 v0, v0, 0x600
 
-    if-nez v1, :cond_a
+    if-nez v0, :cond_a
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     :goto_9
-    return v1
+    return v0
 
     :cond_a
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_9
 .end method
@@ -1579,7 +1488,6 @@
 
     .prologue
     .line 599
-    .local p0, "implClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     const-class v0, Lcom/fasterxml/jackson/databind/annotation/JacksonStdImpl;
 
     invoke-virtual {p0, v0}, Ljava/lang/Class;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
@@ -1601,7 +1509,6 @@
 
 .method public static isJacksonStdImpl(Ljava/lang/Object;)Z
     .registers 2
-    .param p0, "impl"    # Ljava/lang/Object;
 
     .prologue
     .line 595
@@ -1630,7 +1537,6 @@
 
 .method public static isLocalType(Ljava/lang/Class;Z)Ljava/lang/String;
     .registers 3
-    .param p1, "allowNonStatic"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1642,7 +1548,6 @@
 
     .prologue
     .line 89
-    .local p0, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :try_start_0
     invoke-virtual {p0}, Ljava/lang/Class;->getEnclosingMethod()Ljava/lang/reflect/Method;
 
@@ -1717,13 +1622,11 @@
 
     .prologue
     .line 144
-    .local p0, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v0
 
     .line 146
-    .local v0, "name":Ljava/lang/String;
     const-string/jumbo v1, "net.sf.cglib.proxy."
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -1736,27 +1639,26 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_18
+    if-eqz v0, :cond_18
 
     .line 148
     :cond_16
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     .line 151
     :goto_17
-    return v1
+    return v0
 
     :cond_18
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_17
 .end method
 
 .method public static throwAsIAE(Ljava/lang/Throwable;)V
     .registers 2
-    .param p0, "t"    # Ljava/lang/Throwable;
 
     .prologue
     .line 307
@@ -1772,8 +1674,6 @@
 
 .method public static throwAsIAE(Ljava/lang/Throwable;Ljava/lang/String;)V
     .registers 3
-    .param p0, "t"    # Ljava/lang/Throwable;
-    .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
     .line 317
@@ -1784,11 +1684,9 @@
     .line 318
     check-cast p0, Ljava/lang/RuntimeException;
 
-    .end local p0    # "t":Ljava/lang/Throwable;
     throw p0
 
     .line 320
-    .restart local p0    # "t":Ljava/lang/Throwable;
     :cond_7
     instance-of v0, p0, Ljava/lang/Error;
 
@@ -1797,11 +1695,9 @@
     .line 321
     check-cast p0, Ljava/lang/Error;
 
-    .end local p0    # "t":Ljava/lang/Throwable;
     throw p0
 
     .line 323
-    .restart local p0    # "t":Ljava/lang/Throwable;
     :cond_e
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -1811,43 +1707,33 @@
 .end method
 
 .method public static throwRootCause(Ljava/lang/Throwable;)V
-    .registers 2
-    .param p0, "t"    # Ljava/lang/Throwable;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/Exception;
-        }
-    .end annotation
+    .registers 3
 
     .prologue
     .line 294
     invoke-static {p0}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->getRootCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
 
-    move-result-object p0
+    move-result-object v0
 
     .line 295
-    instance-of v0, p0, Ljava/lang/Exception;
+    instance-of v1, v0, Ljava/lang/Exception;
 
-    if-eqz v0, :cond_b
+    if-eqz v1, :cond_b
 
     .line 296
-    check-cast p0, Ljava/lang/Exception;
+    check-cast v0, Ljava/lang/Exception;
 
-    .end local p0    # "t":Ljava/lang/Throwable;
-    throw p0
+    throw v0
 
     .line 298
-    .restart local p0    # "t":Ljava/lang/Throwable;
     :cond_b
-    check-cast p0, Ljava/lang/Error;
+    check-cast v0, Ljava/lang/Error;
 
-    .end local p0    # "t":Ljava/lang/Throwable;
-    throw p0
+    throw v0
 .end method
 
 .method public static unwrapAndThrowAsIAE(Ljava/lang/Throwable;)V
     .registers 2
-    .param p0, "t"    # Ljava/lang/Throwable;
 
     .prologue
     .line 333
@@ -1863,8 +1749,6 @@
 
 .method public static unwrapAndThrowAsIAE(Ljava/lang/Throwable;Ljava/lang/String;)V
     .registers 3
-    .param p0, "t"    # Ljava/lang/Throwable;
-    .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
     .line 343
@@ -1892,7 +1776,6 @@
 
     .prologue
     .line 447
-    .local p0, "primitiveType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
     if-ne p0, v0, :cond_7

@@ -3,14 +3,6 @@
 .source "ClassIntrospector.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;
-    }
-.end annotation
-
-
 # direct methods
 .method protected constructor <init>()V
     .registers 1

@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/annotation/JsonAutoDetect;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4019
-    name = "Visibility"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum",
@@ -163,7 +154,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 43
@@ -198,7 +188,6 @@
 # virtual methods
 .method public isVisible(Ljava/lang/reflect/Member;)Z
     .registers 6
-    .param p1, "m"    # Ljava/lang/reflect/Member;
 
     .prologue
     const/4 v0, 0x1

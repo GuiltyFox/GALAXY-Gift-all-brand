@@ -13,15 +13,6 @@
     .end subannotation
 .end annotation
 
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/annotation/JsonSubTypes;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2609
-    name = "Type"
-.end annotation
-
 
 # virtual methods
 .method public abstract name()Ljava/lang/String;

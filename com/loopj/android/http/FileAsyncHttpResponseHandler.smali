@@ -20,7 +20,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     const/4 v1, 0x0
@@ -47,7 +46,6 @@
 
 .method public constructor <init>(Ljava/io/File;)V
     .registers 3
-    .param p1, "file"    # Ljava/io/File;
 
     .prologue
     .line 45
@@ -61,8 +59,6 @@
 
 .method public constructor <init>(Ljava/io/File;Z)V
     .registers 4
-    .param p1, "file"    # Ljava/io/File;
-    .param p2, "append"    # Z
 
     .prologue
     .line 55
@@ -76,9 +72,6 @@
 
 .method public constructor <init>(Ljava/io/File;ZZ)V
     .registers 5
-    .param p1, "file"    # Ljava/io/File;
-    .param p2, "append"    # Z
-    .param p3, "renameTargetFileIfExists"    # Z
 
     .prologue
     .line 66
@@ -92,10 +85,6 @@
 
 .method public constructor <init>(Ljava/io/File;ZZZ)V
     .registers 8
-    .param p1, "file"    # Ljava/io/File;
-    .param p2, "append"    # Z
-    .param p3, "renameTargetFileIfExists"    # Z
-    .param p4, "usePoolThread"    # Z
 
     .prologue
     .line 79
@@ -248,66 +237,53 @@
 .end method
 
 .method protected getResponseData(Lcz/msebera/android/httpclient/HttpEntity;)[B
-    .registers 12
-    .param p1, "entity"    # Lcz/msebera/android/httpclient/HttpEntity;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 10
 
     .prologue
+    const/4 v0, 0x0
+
     .line 217
     if-eqz p1, :cond_4b
 
     .line 218
     invoke-interface {p1}, Lcz/msebera/android/httpclient/HttpEntity;->getContent()Ljava/io/InputStream;
 
-    move-result-object v4
+    move-result-object v1
 
     .line 219
-    .local v4, "instream":Ljava/io/InputStream;
     invoke-interface {p1}, Lcz/msebera/android/httpclient/HttpEntity;->getContentLength()J
 
     move-result-wide v2
 
     .line 220
-    .local v2, "contentLength":J
-    new-instance v0, Ljava/io/FileOutputStream;
+    new-instance v4, Ljava/io/FileOutputStream;
 
     invoke-virtual {p0}, Lcom/loopj/android/http/FileAsyncHttpResponseHandler;->getTargetFile()Ljava/io/File;
 
-    move-result-object v7
+    move-result-object v5
 
-    iget-boolean v8, p0, Lcom/loopj/android/http/FileAsyncHttpResponseHandler;->append:Z
+    iget-boolean v6, p0, Lcom/loopj/android/http/FileAsyncHttpResponseHandler;->append:Z
 
-    invoke-direct {v0, v7, v8}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;Z)V
+    invoke-direct {v4, v5, v6}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;Z)V
 
     .line 221
-    .local v0, "buffer":Ljava/io/FileOutputStream;
-    if-eqz v4, :cond_4b
+    if-eqz v1, :cond_4b
 
     .line 223
-    const/16 v7, 0x1000
+    const/16 v5, 0x1000
 
-    :try_start_19
-    new-array v6, v7, [B
-
-    .line 224
-    .local v6, "tmp":[B
-    const/4 v1, 0x0
+    :try_start_1a
+    new-array v5, v5, [B
 
     .line 226
-    .local v1, "count":I
     :goto_1c
-    invoke-virtual {v4, v6}, Ljava/io/InputStream;->read([B)I
+    invoke-virtual {v1, v5}, Ljava/io/InputStream;->read([B)I
 
-    move-result v5
+    move-result v6
 
-    .local v5, "l":I
     const/4 v7, -0x1
 
-    if-eq v5, v7, :cond_42
+    if-eq v6, v7, :cond_42
 
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
@@ -320,63 +296,51 @@
     if-nez v7, :cond_42
 
     .line 227
-    add-int/2addr v1, v5
+    add-int/2addr v0, v6
 
     .line 228
     const/4 v7, 0x0
 
-    invoke-virtual {v0, v6, v7, v5}, Ljava/io/FileOutputStream;->write([BII)V
+    invoke-virtual {v4, v5, v7, v6}, Ljava/io/FileOutputStream;->write([BII)V
 
     .line 229
-    int-to-long v8, v1
+    int-to-long v6, v0
 
-    invoke-virtual {p0, v8, v9, v2, v3}, Lcom/loopj/android/http/FileAsyncHttpResponseHandler;->sendProgressMessage(JJ)V
+    invoke-virtual {p0, v6, v7, v2, v3}, Lcom/loopj/android/http/FileAsyncHttpResponseHandler;->sendProgressMessage(JJ)V
     :try_end_36
-    .catchall {:try_start_19 .. :try_end_36} :catchall_37
+    .catchall {:try_start_1a .. :try_end_36} :catchall_37
 
     goto :goto_1c
 
     .line 232
-    .end local v1    # "count":I
-    .end local v5    # "l":I
-    .end local v6    # "tmp":[B
     :catchall_37
-    move-exception v7
+    move-exception v0
 
-    invoke-static {v4}, Lcom/loopj/android/http/AsyncHttpClient;->silentCloseInputStream(Ljava/io/InputStream;)V
+    invoke-static {v1}, Lcom/loopj/android/http/AsyncHttpClient;->silentCloseInputStream(Ljava/io/InputStream;)V
 
     .line 233
-    invoke-virtual {v0}, Ljava/io/FileOutputStream;->flush()V
+    invoke-virtual {v4}, Ljava/io/FileOutputStream;->flush()V
 
     .line 234
-    invoke-static {v0}, Lcom/loopj/android/http/AsyncHttpClient;->silentCloseOutputStream(Ljava/io/OutputStream;)V
+    invoke-static {v4}, Lcom/loopj/android/http/AsyncHttpClient;->silentCloseOutputStream(Ljava/io/OutputStream;)V
 
-    throw v7
+    throw v0
 
     .line 232
-    .restart local v1    # "count":I
-    .restart local v5    # "l":I
-    .restart local v6    # "tmp":[B
     :cond_42
-    invoke-static {v4}, Lcom/loopj/android/http/AsyncHttpClient;->silentCloseInputStream(Ljava/io/InputStream;)V
+    invoke-static {v1}, Lcom/loopj/android/http/AsyncHttpClient;->silentCloseInputStream(Ljava/io/InputStream;)V
 
     .line 233
-    invoke-virtual {v0}, Ljava/io/FileOutputStream;->flush()V
+    invoke-virtual {v4}, Ljava/io/FileOutputStream;->flush()V
 
     .line 234
-    invoke-static {v0}, Lcom/loopj/android/http/AsyncHttpClient;->silentCloseOutputStream(Ljava/io/OutputStream;)V
+    invoke-static {v4}, Lcom/loopj/android/http/AsyncHttpClient;->silentCloseOutputStream(Ljava/io/OutputStream;)V
 
     .line 238
-    .end local v0    # "buffer":Ljava/io/FileOutputStream;
-    .end local v1    # "count":I
-    .end local v2    # "contentLength":J
-    .end local v4    # "instream":Ljava/io/InputStream;
-    .end local v5    # "l":I
-    .end local v6    # "tmp":[B
     :cond_4b
-    const/4 v7, 0x0
+    const/4 v0, 0x0
 
-    return-object v7
+    return-object v0
 .end method
 
 .method public getTargetFile()Ljava/io/File;
@@ -422,280 +386,250 @@
 .end method
 
 .method protected getTargetFileByParsingURL()Ljava/io/File;
-    .registers 12
+    .registers 9
 
     .prologue
-    const/16 v10, 0x2e
+    const/16 v5, 0x2e
 
-    const/4 v7, 0x1
+    const/4 v1, 0x1
 
-    const/4 v8, 0x0
+    const/4 v2, 0x0
 
     .line 162
     invoke-virtual {p0}, Lcom/loopj/android/http/FileAsyncHttpResponseHandler;->getOriginalFile()Ljava/io/File;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {v6}, Ljava/io/File;->isDirectory()Z
+    invoke-virtual {v0}, Ljava/io/File;->isDirectory()Z
 
-    move-result v6
+    move-result v0
 
-    const-string/jumbo v9, "Target file is not a directory, cannot proceed"
+    const-string/jumbo v3, "Target file is not a directory, cannot proceed"
 
-    invoke-static {v6, v9}, Lcom/loopj/android/http/Utils;->asserts(ZLjava/lang/String;)V
+    invoke-static {v0, v3}, Lcom/loopj/android/http/Utils;->asserts(ZLjava/lang/String;)V
 
     .line 163
     invoke-virtual {p0}, Lcom/loopj/android/http/FileAsyncHttpResponseHandler;->getRequestURI()Ljava/net/URI;
 
-    move-result-object v6
+    move-result-object v0
 
-    if-eqz v6, :cond_85
+    if-eqz v0, :cond_85
 
-    move v6, v7
+    move v0, v1
 
     :goto_19
-    const-string/jumbo v9, "RequestURI is null, cannot proceed"
+    const-string/jumbo v3, "RequestURI is null, cannot proceed"
 
-    invoke-static {v6, v9}, Lcom/loopj/android/http/Utils;->asserts(ZLjava/lang/String;)V
+    invoke-static {v0, v3}, Lcom/loopj/android/http/Utils;->asserts(ZLjava/lang/String;)V
 
     .line 164
     invoke-virtual {p0}, Lcom/loopj/android/http/FileAsyncHttpResponseHandler;->getRequestURI()Ljava/net/URI;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {v6}, Ljava/net/URI;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 165
-    .local v3, "requestURL":Ljava/lang/String;
-    const/16 v6, 0x2f
-
-    invoke-virtual {v3, v6}, Ljava/lang/String;->lastIndexOf(I)I
-
-    move-result v6
-
-    add-int/lit8 v6, v6, 0x1
-
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v9
-
-    invoke-virtual {v3, v6, v9}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/net/URI;->toString()Ljava/lang/String;
 
     move-result-object v0
 
+    .line 165
+    const/16 v3, 0x2f
+
+    invoke-virtual {v0, v3}, Ljava/lang/String;->lastIndexOf(I)I
+
+    move-result v3
+
+    add-int/lit8 v3, v3, 0x1
+
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    invoke-virtual {v0, v3, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v3
+
     .line 166
-    .local v0, "filename":Ljava/lang/String;
-    new-instance v4, Ljava/io/File;
+    new-instance v0, Ljava/io/File;
 
     invoke-virtual {p0}, Lcom/loopj/android/http/FileAsyncHttpResponseHandler;->getOriginalFile()Ljava/io/File;
 
-    move-result-object v6
+    move-result-object v4
 
-    invoke-direct {v4, v6, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v0, v4, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     .line 167
-    .local v4, "targetFileRtn":Ljava/io/File;
-    invoke-virtual {v4}, Ljava/io/File;->exists()Z
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
-    move-result v6
+    move-result v4
 
-    if-eqz v6, :cond_b7
+    if-eqz v4, :cond_84
 
-    iget-boolean v6, p0, Lcom/loopj/android/http/FileAsyncHttpResponseHandler;->renameIfExists:Z
+    iget-boolean v4, p0, Lcom/loopj/android/http/FileAsyncHttpResponseHandler;->renameIfExists:Z
 
-    if-eqz v6, :cond_b7
+    if-eqz v4, :cond_84
 
     .line 169
-    const-string/jumbo v6, "."
+    const-string/jumbo v0, "."
 
-    invoke-virtual {v0, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v3, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_87
+    if-nez v0, :cond_87
 
     .line 170
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v0
 
-    const-string/jumbo v9, " (%d)"
+    const-string/jumbo v3, " (%d)"
 
-    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    .line 174
-    .local v1, "format":Ljava/lang/String;
     :goto_67
-    const/4 v2, 0x0
+    move v3, v2
 
     .line 176
-    .local v2, "index":I
     :goto_68
     new-instance v4, Ljava/io/File;
 
-    .end local v4    # "targetFileRtn":Ljava/io/File;
     invoke-virtual {p0}, Lcom/loopj/android/http/FileAsyncHttpResponseHandler;->getOriginalFile()Ljava/io/File;
+
+    move-result-object v5
+
+    new-array v6, v1, [Ljava/lang/Object;
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v7
+
+    aput-object v7, v6, v2
+
+    invoke-static {v0, v6}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v6
 
-    new-array v9, v7, [Ljava/lang/Object;
-
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v10
-
-    aput-object v10, v9, v8
-
-    invoke-static {v1, v9}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-direct {v4, v6, v9}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v4, v5, v6}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     .line 177
-    .restart local v4    # "targetFileRtn":Ljava/io/File;
     invoke-virtual {v4}, Ljava/io/File;->exists()Z
 
-    move-result v6
+    move-result v5
 
-    if-nez v6, :cond_b4
+    if-nez v5, :cond_b4
 
-    move-object v5, v4
+    move-object v0, v4
 
     .line 182
-    .end local v1    # "format":Ljava/lang/String;
-    .end local v2    # "index":I
-    .end local v4    # "targetFileRtn":Ljava/io/File;
-    .local v5, "targetFileRtn":Ljava/lang/Object;
-    :goto_84
-    return-object v5
+    :cond_84
+    return-object v0
 
-    .end local v0    # "filename":Ljava/lang/String;
-    .end local v3    # "requestURL":Ljava/lang/String;
-    .end local v5    # "targetFileRtn":Ljava/lang/Object;
     :cond_85
-    move v6, v8
+    move v0, v2
 
     .line 163
     goto :goto_19
 
     .line 172
-    .restart local v0    # "filename":Ljava/lang/String;
-    .restart local v3    # "requestURL":Ljava/lang/String;
-    .restart local v4    # "targetFileRtn":Ljava/io/File;
     :cond_87
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v0, v10}, Ljava/lang/String;->lastIndexOf(I)I
+    invoke-virtual {v3, v5}, Ljava/lang/String;->lastIndexOf(I)I
 
-    move-result v9
+    move-result v4
 
-    invoke-virtual {v0, v8, v9}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v3, v2, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v4
 
-    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v0
 
-    const-string/jumbo v9, " (%d)"
+    const-string/jumbo v4, " (%d)"
 
-    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {v0, v10}, Ljava/lang/String;->lastIndexOf(I)I
+    invoke-virtual {v3, v5}, Ljava/lang/String;->lastIndexOf(I)I
 
-    move-result v9
+    move-result v4
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    move-result v10
+    move-result v5
 
-    invoke-virtual {v0, v9, v10}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v3, v4, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v3
 
-    invoke-virtual {v6, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    .restart local v1    # "format":Ljava/lang/String;
     goto :goto_67
 
     .line 179
-    .restart local v2    # "index":I
     :cond_b4
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v3, v3, 0x1
 
     goto :goto_68
-
-    .end local v1    # "format":Ljava/lang/String;
-    .end local v2    # "index":I
-    :cond_b7
-    move-object v5, v4
-
-    .line 182
-    .restart local v5    # "targetFileRtn":Ljava/lang/Object;
-    goto :goto_84
 .end method
 
 .method protected getTemporaryFile(Landroid/content/Context;)Ljava/io/File;
     .registers 6
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 122
     if-eqz p1, :cond_18
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     :goto_3
-    const-string/jumbo v2, "Tried creating temporary file without having Context"
+    const-string/jumbo v1, "Tried creating temporary file without having Context"
 
-    invoke-static {v1, v2}, Lcom/loopj/android/http/Utils;->asserts(ZLjava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/loopj/android/http/Utils;->asserts(ZLjava/lang/String;)V
 
     .line 124
     :try_start_9
-    const-string/jumbo v1, "temp_"
+    const-string/jumbo v0, "temp_"
 
-    const-string/jumbo v2, "_handled"
+    const-string/jumbo v1, "_handled"
 
     invoke-virtual {p1}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-static {v1, v2, v3}, Ljava/io/File;->createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;
+    invoke-static {v0, v1, v2}, Ljava/io/File;->createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;
     :try_end_16
     .catch Ljava/io/IOException; {:try_start_9 .. :try_end_16} :catch_1a
 
-    move-result-object v1
+    move-result-object v0
 
     .line 128
     :goto_17
-    return-object v1
+    return-object v0
 
     .line 122
     :cond_18
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_3
 
@@ -704,7 +638,6 @@
     move-exception v0
 
     .line 126
-    .local v0, "e":Ljava/io/IOException;
     sget-object v1, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
 
     const-string/jumbo v2, "FileAsyncHttpRH"
@@ -714,7 +647,7 @@
     invoke-interface {v1, v2, v3, v0}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 128
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_17
 .end method
@@ -724,10 +657,6 @@
 
 .method public final onFailure(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
     .registers 6
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBytes"    # [B
-    .param p4, "throwable"    # Ljava/lang/Throwable;
 
     .prologue
     .line 187
@@ -746,9 +675,6 @@
 
 .method public final onSuccess(I[Lcz/msebera/android/httpclient/Header;[B)V
     .registers 5
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBytes"    # [B
 
     .prologue
     .line 203

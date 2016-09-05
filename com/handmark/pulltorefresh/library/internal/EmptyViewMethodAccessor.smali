@@ -4,8 +4,5 @@
 
 
 # virtual methods
-.method public abstract setEmptyView(Landroid/view/View;)V
-.end method
-
-.method public abstract setEmptyViewInternal(Landroid/view/View;)V
+.method public abstract a(Landroid/view/View;)V
 .end method

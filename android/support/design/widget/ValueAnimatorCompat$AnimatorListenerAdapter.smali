@@ -6,17 +6,6 @@
 .implements Landroid/support/design/widget/ValueAnimatorCompat$AnimatorListener;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/ValueAnimatorCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "AnimatorListenerAdapter"
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .registers 1
@@ -32,7 +21,6 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/support/design/widget/ValueAnimatorCompat;)V
     .registers 2
-    .param p1, "animator"    # Landroid/support/design/widget/ValueAnimatorCompat;
 
     .prologue
     .line 76
@@ -41,7 +29,6 @@
 
 .method public onAnimationEnd(Landroid/support/design/widget/ValueAnimatorCompat;)V
     .registers 2
-    .param p1, "animator"    # Landroid/support/design/widget/ValueAnimatorCompat;
 
     .prologue
     .line 72
@@ -50,7 +37,6 @@
 
 .method public onAnimationStart(Landroid/support/design/widget/ValueAnimatorCompat;)V
     .registers 2
-    .param p1, "animator"    # Landroid/support/design/widget/ValueAnimatorCompat;
 
     .prologue
     .line 68

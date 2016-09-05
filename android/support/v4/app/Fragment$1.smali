@@ -8,14 +8,9 @@
     value = Landroid/support/v4/app/Fragment;->instantiateChildFragmentManager()V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Landroid/support/v4/app/Fragment;
+.field final synthetic a:Landroid/support/v4/app/Fragment;
 
 
 # direct methods
@@ -24,7 +19,7 @@
 
     .prologue
     .line 1928
-    iput-object p1, p0, Landroid/support/v4/app/Fragment$1;->this$0:Landroid/support/v4/app/Fragment;
+    iput-object p1, p0, Landroid/support/v4/app/Fragment$1;->a:Landroid/support/v4/app/Fragment;
 
     invoke-direct {p0}, Landroid/support/v4/app/FragmentContainer;-><init>()V
 
@@ -33,15 +28,12 @@
 
 
 # virtual methods
-.method public onFindViewById(I)Landroid/view/View;
+.method public a(I)Landroid/view/View;
     .registers 4
-    .param p1, "id"    # I
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
 
     .prologue
     .line 1932
-    iget-object v0, p0, Landroid/support/v4/app/Fragment$1;->this$0:Landroid/support/v4/app/Fragment;
+    iget-object v0, p0, Landroid/support/v4/app/Fragment$1;->a:Landroid/support/v4/app/Fragment;
 
     iget-object v0, v0, Landroid/support/v4/app/Fragment;->mView:Landroid/view/View;
 
@@ -58,7 +50,7 @@
 
     .line 1935
     :cond_f
-    iget-object v0, p0, Landroid/support/v4/app/Fragment$1;->this$0:Landroid/support/v4/app/Fragment;
+    iget-object v0, p0, Landroid/support/v4/app/Fragment$1;->a:Landroid/support/v4/app/Fragment;
 
     iget-object v0, v0, Landroid/support/v4/app/Fragment;->mView:Landroid/view/View;
 
@@ -69,12 +61,12 @@
     return-object v0
 .end method
 
-.method public onHasView()Z
+.method public a()Z
     .registers 2
 
     .prologue
     .line 1940
-    iget-object v0, p0, Landroid/support/v4/app/Fragment$1;->this$0:Landroid/support/v4/app/Fragment;
+    iget-object v0, p0, Landroid/support/v4/app/Fragment$1;->a:Landroid/support/v4/app/Fragment;
 
     iget-object v0, v0, Landroid/support/v4/app/Fragment;->mView:Landroid/view/View;
 

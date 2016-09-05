@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract addListener(Lcom/bumptech/glide/manager/LifecycleListener;)V
+.method public abstract a(Lcom/bumptech/glide/manager/LifecycleListener;)V
 .end method

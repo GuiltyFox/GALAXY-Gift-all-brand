@@ -3,17 +3,6 @@
 .source "DrawableCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/graphics/drawable/DrawableCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "HoneycombDrawableImpl"
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .registers 1
@@ -27,25 +16,23 @@
 
 
 # virtual methods
-.method public jumpToCurrentState(Landroid/graphics/drawable/Drawable;)V
+.method public a(Landroid/graphics/drawable/Drawable;)V
     .registers 2
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 160
-    invoke-static {p1}, Landroid/support/v4/graphics/drawable/DrawableCompatHoneycomb;->jumpToCurrentState(Landroid/graphics/drawable/Drawable;)V
+    invoke-static {p1}, Landroid/support/v4/graphics/drawable/DrawableCompatHoneycomb;->a(Landroid/graphics/drawable/Drawable;)V
 
     .line 161
     return-void
 .end method
 
-.method public wrap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+.method public c(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
     .registers 3
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 165
-    invoke-static {p1}, Landroid/support/v4/graphics/drawable/DrawableCompatHoneycomb;->wrapForTinting(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p1}, Landroid/support/v4/graphics/drawable/DrawableCompatHoneycomb;->b(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 

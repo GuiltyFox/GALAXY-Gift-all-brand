@@ -17,7 +17,7 @@
 
 
 # virtual methods
-.method public abstract onException(Ljava/lang/Exception;Ljava/lang/Object;Lcom/bumptech/glide/request/target/Target;Z)Z
+.method public abstract a(Ljava/lang/Exception;Ljava/lang/Object;Lcom/bumptech/glide/request/target/Target;Z)Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -29,7 +29,7 @@
     .end annotation
 .end method
 
-.method public abstract onResourceReady(Ljava/lang/Object;Ljava/lang/Object;Lcom/bumptech/glide/request/target/Target;ZZ)Z
+.method public abstract a(Ljava/lang/Object;Ljava/lang/Object;Lcom/bumptech/glide/request/target/Target;ZZ)Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TR;TT;",

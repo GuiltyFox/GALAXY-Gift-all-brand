@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/annotation/ObjectIdGenerators;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "IntSequenceGenerator"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$Base",
@@ -48,7 +39,6 @@
 
 .method public constructor <init>(Ljava/lang/Class;I)V
     .registers 3
-    .param p2, "fv"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -59,7 +49,6 @@
 
     .prologue
     .line 83
-    .local p1, "scope":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$Base;-><init>(Ljava/lang/Class;)V
 
     .line 84
@@ -73,7 +62,6 @@
 # virtual methods
 .method public bridge synthetic canUseFor(Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;)Z
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;
 
     .prologue
     .line 75
@@ -100,16 +88,13 @@
 
     .prologue
     .line 91
-    .local p1, "scope":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$IntSequenceGenerator;->_scope:Ljava/lang/Class;
 
     if-ne v0, p1, :cond_5
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$IntSequenceGenerator;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$IntSequenceGenerator;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$IntSequenceGenerator;
 
@@ -124,14 +109,12 @@
 
 .method public generateId(Ljava/lang/Object;)Ljava/lang/Integer;
     .registers 4
-    .param p1, "forPojo"    # Ljava/lang/Object;
 
     .prologue
     .line 106
     iget v0, p0, Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$IntSequenceGenerator;->_nextValue:I
 
     .line 107
-    .local v0, "id":I
     iget v1, p0, Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$IntSequenceGenerator;->_nextValue:I
 
     add-int/lit8 v1, v1, 0x1
@@ -141,14 +124,13 @@
     .line 108
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public bridge synthetic generateId(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 75
@@ -171,7 +153,6 @@
 
 .method public key(Ljava/lang/Object;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;
     .registers 5
-    .param p1, "key"    # Ljava/lang/Object;
 
     .prologue
     .line 101
@@ -190,7 +171,6 @@
 
 .method public newForSerialization(Ljava/lang/Object;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;
     .registers 5
-    .param p1, "context"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

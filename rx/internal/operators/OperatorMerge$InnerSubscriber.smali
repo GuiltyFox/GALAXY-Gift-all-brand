@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lrx/internal/operators/OperatorMerge;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x18
-    name = "InnerSubscriber"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -25,17 +16,11 @@
 
 
 # static fields
-.field static final limit:I
+.field static final f:I
 
 
 # instance fields
-.field volatile done:Z
-
-.field final id:J
-
-.field outstanding:I
-
-.field final parent:Lrx/internal/operators/OperatorMerge$MergeSubscriber;
+.field final a:Lrx/internal/operators/OperatorMerge$MergeSubscriber;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lrx/internal/operators/OperatorMerge$MergeSubscriber",
@@ -44,7 +29,13 @@
     .end annotation
 .end field
 
-.field volatile queue:Lrx/internal/util/RxRingBuffer;
+.field final b:J
+
+.field volatile c:Z
+
+.field volatile d:Lrx/internal/util/RxRingBuffer;
+
+.field e:I
 
 
 # direct methods
@@ -53,18 +44,17 @@
 
     .prologue
     .line 791
-    sget v0, Lrx/internal/util/RxRingBuffer;->SIZE:I
+    sget v0, Lrx/internal/util/RxRingBuffer;->c:I
 
     div-int/lit8 v0, v0, 0x4
 
-    sput v0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->limit:I
+    sput v0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->f:I
 
     return-void
 .end method
 
 .method public constructor <init>(Lrx/internal/operators/OperatorMerge$MergeSubscriber;J)V
     .registers 4
-    .param p2, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -75,15 +65,13 @@
 
     .prologue
     .line 793
-    .local p0, "this":Lrx/internal/operators/OperatorMerge$InnerSubscriber;, "Lrx/internal/operators/OperatorMerge$InnerSubscriber<TT;>;"
-    .local p1, "parent":Lrx/internal/operators/OperatorMerge$MergeSubscriber;, "Lrx/internal/operators/OperatorMerge$MergeSubscriber<TT;>;"
     invoke-direct {p0}, Lrx/Subscriber;-><init>()V
 
     .line 794
-    iput-object p1, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->parent:Lrx/internal/operators/OperatorMerge$MergeSubscriber;
+    iput-object p1, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->a:Lrx/internal/operators/OperatorMerge$MergeSubscriber;
 
     .line 795
-    iput-wide p2, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->id:J
+    iput-wide p2, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->b:J
 
     .line 796
     return-void
@@ -91,55 +79,34 @@
 
 
 # virtual methods
-.method public onCompleted()V
-    .registers 2
-
-    .prologue
-    .line 814
-    .local p0, "this":Lrx/internal/operators/OperatorMerge$InnerSubscriber;, "Lrx/internal/operators/OperatorMerge$InnerSubscriber<TT;>;"
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->done:Z
-
-    .line 815
-    iget-object v0, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->parent:Lrx/internal/operators/OperatorMerge$MergeSubscriber;
-
-    invoke-virtual {v0}, Lrx/internal/operators/OperatorMerge$MergeSubscriber;->emit()V
-
-    .line 816
-    return-void
-.end method
-
-.method public onError(Ljava/lang/Throwable;)V
+.method public a(Ljava/lang/Throwable;)V
     .registers 3
-    .param p1, "e"    # Ljava/lang/Throwable;
 
     .prologue
     .line 808
-    .local p0, "this":Lrx/internal/operators/OperatorMerge$InnerSubscriber;, "Lrx/internal/operators/OperatorMerge$InnerSubscriber<TT;>;"
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->done:Z
+    iput-boolean v0, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->c:Z
 
     .line 809
-    iget-object v0, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->parent:Lrx/internal/operators/OperatorMerge$MergeSubscriber;
+    iget-object v0, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->a:Lrx/internal/operators/OperatorMerge$MergeSubscriber;
 
-    invoke-virtual {v0}, Lrx/internal/operators/OperatorMerge$MergeSubscriber;->getOrCreateErrorQueue()Ljava/util/Queue;
+    invoke-virtual {v0}, Lrx/internal/operators/OperatorMerge$MergeSubscriber;->e()Ljava/util/Queue;
 
     move-result-object v0
 
     invoke-interface {v0, p1}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
 
     .line 810
-    iget-object v0, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->parent:Lrx/internal/operators/OperatorMerge$MergeSubscriber;
+    iget-object v0, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->a:Lrx/internal/operators/OperatorMerge$MergeSubscriber;
 
-    invoke-virtual {v0}, Lrx/internal/operators/OperatorMerge$MergeSubscriber;->emit()V
+    invoke-virtual {v0}, Lrx/internal/operators/OperatorMerge$MergeSubscriber;->g()V
 
     .line 811
     return-void
 .end method
 
-.method public onNext(Ljava/lang/Object;)V
+.method public a_(Ljava/lang/Object;)V
     .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -149,83 +116,94 @@
 
     .prologue
     .line 804
-    .local p0, "this":Lrx/internal/operators/OperatorMerge$InnerSubscriber;, "Lrx/internal/operators/OperatorMerge$InnerSubscriber<TT;>;"
-    .local p1, "t":Ljava/lang/Object;, "TT;"
-    iget-object v0, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->parent:Lrx/internal/operators/OperatorMerge$MergeSubscriber;
+    iget-object v0, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->a:Lrx/internal/operators/OperatorMerge$MergeSubscriber;
 
-    invoke-virtual {v0, p0, p1}, Lrx/internal/operators/OperatorMerge$MergeSubscriber;->tryEmit(Lrx/internal/operators/OperatorMerge$InnerSubscriber;Ljava/lang/Object;)V
+    invoke-virtual {v0, p0, p1}, Lrx/internal/operators/OperatorMerge$MergeSubscriber;->a(Lrx/internal/operators/OperatorMerge$InnerSubscriber;Ljava/lang/Object;)V
 
     .line 805
     return-void
 .end method
 
-.method public onStart()V
+.method public b(J)V
+    .registers 6
+
+    .prologue
+    .line 818
+    iget v0, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->e:I
+
+    long-to-int v1, p1
+
+    sub-int/2addr v0, v1
+
+    .line 819
+    sget v1, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->f:I
+
+    if-le v0, v1, :cond_b
+
+    .line 820
+    iput v0, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->e:I
+
+    .line 828
+    :cond_a
+    :goto_a
+    return-void
+
+    .line 823
+    :cond_b
+    sget v1, Lrx/internal/util/RxRingBuffer;->c:I
+
+    iput v1, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->e:I
+
+    .line 824
+    sget v1, Lrx/internal/util/RxRingBuffer;->c:I
+
+    sub-int v0, v1, v0
+
+    .line 825
+    if-lez v0, :cond_a
+
+    .line 826
+    int-to-long v0, v0
+
+    invoke-virtual {p0, v0, v1}, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->a(J)V
+
+    goto :goto_a
+.end method
+
+.method public d()V
     .registers 3
 
     .prologue
     .line 799
-    .local p0, "this":Lrx/internal/operators/OperatorMerge$InnerSubscriber;, "Lrx/internal/operators/OperatorMerge$InnerSubscriber<TT;>;"
-    sget v0, Lrx/internal/util/RxRingBuffer;->SIZE:I
+    sget v0, Lrx/internal/util/RxRingBuffer;->c:I
 
-    iput v0, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->outstanding:I
+    iput v0, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->e:I
 
     .line 800
-    sget v0, Lrx/internal/util/RxRingBuffer;->SIZE:I
+    sget v0, Lrx/internal/util/RxRingBuffer;->c:I
 
     int-to-long v0, v0
 
-    invoke-virtual {p0, v0, v1}, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->request(J)V
+    invoke-virtual {p0, v0, v1}, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->a(J)V
 
     .line 801
     return-void
 .end method
 
-.method public requestMore(J)V
-    .registers 8
-    .param p1, "n"    # J
+.method public i_()V
+    .registers 2
 
     .prologue
-    .line 818
-    .local p0, "this":Lrx/internal/operators/OperatorMerge$InnerSubscriber;, "Lrx/internal/operators/OperatorMerge$InnerSubscriber<TT;>;"
-    iget v2, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->outstanding:I
+    .line 814
+    const/4 v0, 0x1
 
-    long-to-int v3, p1
+    iput-boolean v0, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->c:Z
 
-    sub-int v1, v2, v3
+    .line 815
+    iget-object v0, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->a:Lrx/internal/operators/OperatorMerge$MergeSubscriber;
 
-    .line 819
-    .local v1, "r":I
-    sget v2, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->limit:I
+    invoke-virtual {v0}, Lrx/internal/operators/OperatorMerge$MergeSubscriber;->g()V
 
-    if-le v1, v2, :cond_c
-
-    .line 820
-    iput v1, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->outstanding:I
-
-    .line 828
-    :cond_b
-    :goto_b
+    .line 816
     return-void
-
-    .line 823
-    :cond_c
-    sget v2, Lrx/internal/util/RxRingBuffer;->SIZE:I
-
-    iput v2, p0, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->outstanding:I
-
-    .line 824
-    sget v2, Lrx/internal/util/RxRingBuffer;->SIZE:I
-
-    sub-int v0, v2, v1
-
-    .line 825
-    .local v0, "k":I
-    if-lez v0, :cond_b
-
-    .line 826
-    int-to-long v2, v0
-
-    invoke-virtual {p0, v2, v3}, Lrx/internal/operators/OperatorMerge$InnerSubscriber;->request(J)V
-
-    goto :goto_b
 .end method

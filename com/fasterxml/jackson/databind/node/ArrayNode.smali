@@ -30,7 +30,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;)V
     .registers 3
-    .param p1, "nc"    # Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
 
     .prologue
     .line 25
@@ -51,7 +50,6 @@
 # virtual methods
 .method protected _add(Lcom/fasterxml/jackson/databind/JsonNode;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 3
-    .param p1, "node"    # Lcom/fasterxml/jackson/databind/JsonNode;
 
     .prologue
     .line 762
@@ -65,7 +63,6 @@
 
 .method protected _at(Lcom/fasterxml/jackson/core/JsonPointer;)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 3
-    .param p1, "ptr"    # Lcom/fasterxml/jackson/core/JsonPointer;
 
     .prologue
     .line 29
@@ -82,7 +79,6 @@
 
 .method protected _childrenEqual(Lcom/fasterxml/jackson/databind/node/ArrayNode;)Z
     .registers 4
-    .param p1, "other"    # Lcom/fasterxml/jackson/databind/node/ArrayNode;
 
     .prologue
     .line 731
@@ -99,8 +95,6 @@
 
 .method protected _insert(ILcom/fasterxml/jackson/databind/JsonNode;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 5
-    .param p1, "index"    # I
-    .param p2, "node"    # Lcom/fasterxml/jackson/databind/JsonNode;
 
     .prologue
     .line 768
@@ -145,7 +139,6 @@
 
 .method public add(D)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 4
-    .param p1, "v"    # D
 
     .prologue
     .line 424
@@ -162,7 +155,6 @@
 
 .method public add(F)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 3
-    .param p1, "v"    # F
 
     .prologue
     .line 402
@@ -179,7 +171,6 @@
 
 .method public add(I)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 3
-    .param p1, "v"    # I
 
     .prologue
     .line 359
@@ -195,7 +186,6 @@
 
 .method public add(J)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 4
-    .param p1, "v"    # J
 
     .prologue
     .line 381
@@ -212,7 +202,6 @@
 
 .method public add(Lcom/fasterxml/jackson/databind/JsonNode;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 2
-    .param p1, "value"    # Lcom/fasterxml/jackson/databind/JsonNode;
 
     .prologue
     .line 214
@@ -233,7 +222,6 @@
 
 .method public add(Ljava/lang/Boolean;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 3
-    .param p1, "value"    # Ljava/lang/Boolean;
 
     .prologue
     .line 480
@@ -266,7 +254,6 @@
 
 .method public add(Ljava/lang/Double;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 4
-    .param p1, "value"    # Ljava/lang/Double;
 
     .prologue
     .line 434
@@ -299,7 +286,6 @@
 
 .method public add(Ljava/lang/Float;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 3
-    .param p1, "value"    # Ljava/lang/Float;
 
     .prologue
     .line 412
@@ -332,7 +318,6 @@
 
 .method public add(Ljava/lang/Integer;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 3
-    .param p1, "value"    # Ljava/lang/Integer;
 
     .prologue
     .line 370
@@ -365,7 +350,6 @@
 
 .method public add(Ljava/lang/Long;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 4
-    .param p1, "value"    # Ljava/lang/Long;
 
     .prologue
     .line 390
@@ -398,7 +382,6 @@
 
 .method public add(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 3
-    .param p1, "v"    # Ljava/lang/String;
 
     .prologue
     .line 458
@@ -427,7 +410,6 @@
 
 .method public add(Ljava/math/BigDecimal;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 3
-    .param p1, "v"    # Ljava/math/BigDecimal;
 
     .prologue
     .line 446
@@ -456,7 +438,6 @@
 
 .method public add(Z)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 3
-    .param p1, "v"    # Z
 
     .prologue
     .line 470
@@ -473,7 +454,6 @@
 
 .method public add([B)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 3
-    .param p1, "v"    # [B
 
     .prologue
     .line 493
@@ -502,7 +482,6 @@
 
 .method public addAll(Lcom/fasterxml/jackson/databind/node/ArrayNode;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 4
-    .param p1, "other"    # Lcom/fasterxml/jackson/databind/node/ArrayNode;
 
     .prologue
     .line 231
@@ -531,7 +510,6 @@
 
     .prologue
     .line 244
-    .local p1, "nodes":Ljava/util/Collection;, "Ljava/util/Collection<+Lcom/fasterxml/jackson/databind/JsonNode;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
@@ -550,7 +528,6 @@
     move-result-object v0
 
     .line 309
-    .local v0, "n":Lcom/fasterxml/jackson/databind/node/ArrayNode;
     invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_add(Lcom/fasterxml/jackson/databind/JsonNode;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
 
     .line 310
@@ -582,7 +559,6 @@
     move-result-object v0
 
     .line 322
-    .local v0, "n":Lcom/fasterxml/jackson/databind/node/ObjectNode;
     invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_add(Lcom/fasterxml/jackson/databind/JsonNode;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
 
     .line 323
@@ -591,7 +567,6 @@
 
 .method public addPOJO(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 3
-    .param p1, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 334
@@ -638,54 +613,50 @@
 .end method
 
 .method public deepCopy()Lcom/fasterxml/jackson/databind/node/ArrayNode;
-    .registers 6
+    .registers 5
 
     .prologue
     .line 37
-    new-instance v2, Lcom/fasterxml/jackson/databind/node/ArrayNode;
+    new-instance v1, Lcom/fasterxml/jackson/databind/node/ArrayNode;
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_nodeFactory:Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_nodeFactory:Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
 
-    invoke-direct {v2, v3}, Lcom/fasterxml/jackson/databind/node/ArrayNode;-><init>(Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;)V
+    invoke-direct {v1, v0}, Lcom/fasterxml/jackson/databind/node/ArrayNode;-><init>(Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;)V
 
     .line 39
-    .local v2, "ret":Lcom/fasterxml/jackson/databind/node/ArrayNode;
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
 
-    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v1
+    move-result-object v2
 
-    .local v1, "i$":Ljava/util/Iterator;
     :goto_d
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_23
+    if-eqz v0, :cond_23
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/fasterxml/jackson/databind/JsonNode;
 
     .line 40
-    .local v0, "element":Lcom/fasterxml/jackson/databind/JsonNode;
-    iget-object v3, v2, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
+    iget-object v3, v1, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JsonNode;->deepCopy()Lcom/fasterxml/jackson/databind/JsonNode;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-interface {v3, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_d
 
     .line 42
-    .end local v0    # "element":Lcom/fasterxml/jackson/databind/JsonNode;
     :cond_23
-    return-object v2
+    return-object v1
 .end method
 
 .method public elements()Ljava/util/Iterator;
@@ -713,7 +684,6 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .registers 4
-    .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
     const/4 v0, 0x0
@@ -724,13 +694,11 @@
     const/4 v0, 0x1
 
     .line 724
-    .end local p1    # "o":Ljava/lang/Object;
     :cond_4
     :goto_4
     return v0
 
     .line 720
-    .restart local p1    # "o":Ljava/lang/Object;
     :cond_5
     if-eqz p1, :cond_4
 
@@ -744,7 +712,6 @@
 
     check-cast p1, Lcom/fasterxml/jackson/databind/node/ArrayNode;
 
-    .end local p1    # "o":Ljava/lang/Object;
     iget-object v1, p1, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
 
     invoke-interface {v0, v1}, Ljava/util/List;->equals(Ljava/lang/Object;)Z
@@ -756,7 +723,6 @@
 
 .method public bridge synthetic findParent(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/String;
 
     .prologue
     .line 20
@@ -768,59 +734,52 @@
 .end method
 
 .method public findParent(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/node/ObjectNode;
-    .registers 6
-    .param p1, "fieldName"    # Ljava/lang/String;
+    .registers 4
 
     .prologue
     .line 161
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
 
-    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, "i$":Ljava/util/Iterator;
-    :cond_6
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_1b
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    check-cast v1, Lcom/fasterxml/jackson/databind/JsonNode;
+    :cond_6
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1b
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/fasterxml/jackson/databind/JsonNode;
 
     .line 162
-    .local v1, "node":Lcom/fasterxml/jackson/databind/JsonNode;
-    invoke-virtual {v1, p1}, Lcom/fasterxml/jackson/databind/JsonNode;->findParent(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonNode;
+    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/databind/JsonNode;->findParent(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonNode;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 163
-    .local v2, "parent":Lcom/fasterxml/jackson/databind/JsonNode;
-    if-eqz v2, :cond_6
+    if-eqz v0, :cond_6
 
     .line 164
-    check-cast v2, Lcom/fasterxml/jackson/databind/node/ObjectNode;
+    check-cast v0, Lcom/fasterxml/jackson/databind/node/ObjectNode;
 
     .line 167
-    .end local v1    # "node":Lcom/fasterxml/jackson/databind/JsonNode;
-    .end local v2    # "parent":Lcom/fasterxml/jackson/databind/JsonNode;
     :goto_1a
-    return-object v2
+    return-object v0
 
     :cond_1b
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     goto :goto_1a
 .end method
 
 .method public findParents(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
-    .registers 6
-    .param p1, "fieldName"    # Ljava/lang/String;
+    .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -838,93 +797,81 @@
 
     .prologue
     .line 173
-    .local p2, "foundSoFar":Ljava/util/List;, "Ljava/util/List<Lcom/fasterxml/jackson/databind/JsonNode;>;"
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
 
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, "i$":Ljava/util/Iterator;
-    :goto_6
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_17
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    check-cast v1, Lcom/fasterxml/jackson/databind/JsonNode;
+    :goto_6
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_17
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/fasterxml/jackson/databind/JsonNode;
 
     .line 174
-    .local v1, "node":Lcom/fasterxml/jackson/databind/JsonNode;
-    invoke-virtual {v1, p1, p2}, Lcom/fasterxml/jackson/databind/JsonNode;->findParents(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
+    invoke-virtual {v0, p1, p2}, Lcom/fasterxml/jackson/databind/JsonNode;->findParents(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
 
     move-result-object p2
 
-    .line 175
     goto :goto_6
 
     .line 176
-    .end local v1    # "node":Lcom/fasterxml/jackson/databind/JsonNode;
     :cond_17
     return-object p2
 .end method
 
 .method public findValue(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonNode;
-    .registers 6
-    .param p1, "fieldName"    # Ljava/lang/String;
+    .registers 4
 
     .prologue
     .line 131
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
 
-    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, "i$":Ljava/util/Iterator;
-    :cond_6
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_19
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    check-cast v1, Lcom/fasterxml/jackson/databind/JsonNode;
+    :cond_6
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_19
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/fasterxml/jackson/databind/JsonNode;
 
     .line 132
-    .local v1, "node":Lcom/fasterxml/jackson/databind/JsonNode;
-    invoke-virtual {v1, p1}, Lcom/fasterxml/jackson/databind/JsonNode;->findValue(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonNode;
+    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/databind/JsonNode;->findValue(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonNode;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 133
-    .local v2, "value":Lcom/fasterxml/jackson/databind/JsonNode;
-    if-eqz v2, :cond_6
+    if-eqz v0, :cond_6
 
     .line 137
-    .end local v1    # "node":Lcom/fasterxml/jackson/databind/JsonNode;
-    .end local v2    # "value":Lcom/fasterxml/jackson/databind/JsonNode;
     :goto_18
-    return-object v2
+    return-object v0
 
     :cond_19
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     goto :goto_18
 .end method
 
 .method public findValues(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
-    .registers 6
-    .param p1, "fieldName"    # Ljava/lang/String;
+    .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -942,45 +889,39 @@
 
     .prologue
     .line 143
-    .local p2, "foundSoFar":Ljava/util/List;, "Ljava/util/List<Lcom/fasterxml/jackson/databind/JsonNode;>;"
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
 
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, "i$":Ljava/util/Iterator;
-    :goto_6
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_17
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    check-cast v1, Lcom/fasterxml/jackson/databind/JsonNode;
+    :goto_6
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_17
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/fasterxml/jackson/databind/JsonNode;
 
     .line 144
-    .local v1, "node":Lcom/fasterxml/jackson/databind/JsonNode;
-    invoke-virtual {v1, p1, p2}, Lcom/fasterxml/jackson/databind/JsonNode;->findValues(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
+    invoke-virtual {v0, p1, p2}, Lcom/fasterxml/jackson/databind/JsonNode;->findValues(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
 
     move-result-object p2
 
-    .line 145
     goto :goto_6
 
     .line 146
-    .end local v1    # "node":Lcom/fasterxml/jackson/databind/JsonNode;
     :cond_17
     return-object p2
 .end method
 
 .method public findValuesAsText(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
-    .registers 6
-    .param p1, "fieldName"    # Ljava/lang/String;
+    .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -998,45 +939,39 @@
 
     .prologue
     .line 152
-    .local p2, "foundSoFar":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
 
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, "i$":Ljava/util/Iterator;
-    :goto_6
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_17
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    check-cast v1, Lcom/fasterxml/jackson/databind/JsonNode;
+    :goto_6
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_17
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/fasterxml/jackson/databind/JsonNode;
 
     .line 153
-    .local v1, "node":Lcom/fasterxml/jackson/databind/JsonNode;
-    invoke-virtual {v1, p1, p2}, Lcom/fasterxml/jackson/databind/JsonNode;->findValuesAsText(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
+    invoke-virtual {v0, p1, p2}, Lcom/fasterxml/jackson/databind/JsonNode;->findValuesAsText(Ljava/lang/String;Ljava/util/List;)Ljava/util/List;
 
     move-result-object p2
 
-    .line 154
     goto :goto_6
 
     .line 155
-    .end local v1    # "node":Lcom/fasterxml/jackson/databind/JsonNode;
     :cond_17
     return-object p2
 .end method
 
 .method public bridge synthetic get(I)Lcom/fasterxml/jackson/core/TreeNode;
     .registers 3
-    .param p1, "x0"    # I
 
     .prologue
     .line 20
@@ -1049,7 +984,6 @@
 
 .method public bridge synthetic get(Ljava/lang/String;)Lcom/fasterxml/jackson/core/TreeNode;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/String;
 
     .prologue
     .line 20
@@ -1062,7 +996,6 @@
 
 .method public get(I)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 70
@@ -1097,7 +1030,6 @@
 
 .method public get(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 3
-    .param p1, "fieldName"    # Ljava/lang/String;
 
     .prologue
     .line 77
@@ -1132,8 +1064,6 @@
 
 .method public insert(ID)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 6
-    .param p1, "index"    # I
-    .param p2, "v"    # D
 
     .prologue
     .line 631
@@ -1150,8 +1080,6 @@
 
 .method public insert(IF)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "v"    # F
 
     .prologue
     .line 608
@@ -1168,8 +1096,6 @@
 
 .method public insert(II)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "v"    # I
 
     .prologue
     .line 559
@@ -1185,8 +1111,6 @@
 
 .method public insert(IJ)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 6
-    .param p1, "index"    # I
-    .param p2, "v"    # J
 
     .prologue
     .line 585
@@ -1203,8 +1127,6 @@
 
 .method public insert(ILcom/fasterxml/jackson/databind/JsonNode;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 3
-    .param p1, "index"    # I
-    .param p2, "value"    # Lcom/fasterxml/jackson/databind/JsonNode;
 
     .prologue
     .line 259
@@ -1225,8 +1147,6 @@
 
 .method public insert(ILjava/lang/Boolean;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "value"    # Ljava/lang/Boolean;
 
     .prologue
     .line 690
@@ -1259,8 +1179,6 @@
 
 .method public insert(ILjava/lang/Double;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 5
-    .param p1, "index"    # I
-    .param p2, "value"    # Ljava/lang/Double;
 
     .prologue
     .line 641
@@ -1293,8 +1211,6 @@
 
 .method public insert(ILjava/lang/Float;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "value"    # Ljava/lang/Float;
 
     .prologue
     .line 618
@@ -1327,8 +1243,6 @@
 
 .method public insert(ILjava/lang/Integer;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "value"    # Ljava/lang/Integer;
 
     .prologue
     .line 570
@@ -1358,8 +1272,6 @@
 
 .method public insert(ILjava/lang/Long;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 5
-    .param p1, "index"    # I
-    .param p2, "value"    # Ljava/lang/Long;
 
     .prologue
     .line 595
@@ -1392,8 +1304,6 @@
 
 .method public insert(ILjava/lang/String;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "v"    # Ljava/lang/String;
 
     .prologue
     .line 667
@@ -1422,8 +1332,6 @@
 
 .method public insert(ILjava/math/BigDecimal;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "v"    # Ljava/math/BigDecimal;
 
     .prologue
     .line 654
@@ -1452,8 +1360,6 @@
 
 .method public insert(IZ)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "v"    # Z
 
     .prologue
     .line 680
@@ -1470,8 +1376,6 @@
 
 .method public insert(I[B)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "v"    # [B
 
     .prologue
     .line 704
@@ -1500,7 +1404,6 @@
 
 .method public insertArray(I)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 507
@@ -1509,7 +1412,6 @@
     move-result-object v0
 
     .line 508
-    .local v0, "n":Lcom/fasterxml/jackson/databind/node/ArrayNode;
     invoke-virtual {p0, p1, v0}, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_insert(ILcom/fasterxml/jackson/databind/JsonNode;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
 
     .line 509
@@ -1518,7 +1420,6 @@
 
 .method public insertNull(I)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 548
@@ -1534,7 +1435,6 @@
 
 .method public insertObject(I)Lcom/fasterxml/jackson/databind/node/ObjectNode;
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 521
@@ -1543,7 +1443,6 @@
     move-result-object v0
 
     .line 522
-    .local v0, "n":Lcom/fasterxml/jackson/databind/node/ObjectNode;
     invoke-virtual {p0, p1, v0}, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_insert(ILcom/fasterxml/jackson/databind/JsonNode;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
 
     .line 523
@@ -1552,8 +1451,6 @@
 
 .method public insertPOJO(ILjava/lang/Object;)Lcom/fasterxml/jackson/databind/node/ArrayNode;
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 534
@@ -1582,7 +1479,6 @@
 
 .method public bridge synthetic path(I)Lcom/fasterxml/jackson/core/TreeNode;
     .registers 3
-    .param p1, "x0"    # I
 
     .prologue
     .line 20
@@ -1595,7 +1491,6 @@
 
 .method public bridge synthetic path(Ljava/lang/String;)Lcom/fasterxml/jackson/core/TreeNode;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/String;
 
     .prologue
     .line 20
@@ -1608,7 +1503,6 @@
 
 .method public path(I)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 84
@@ -1645,7 +1539,6 @@
 
 .method public path(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 3
-    .param p1, "fieldName"    # Ljava/lang/String;
 
     .prologue
     .line 80
@@ -1658,7 +1551,6 @@
 
 .method public remove(I)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 275
@@ -1717,47 +1609,36 @@
 .end method
 
 .method public serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
-    .registers 6
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p2, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
+    .registers 5
 
     .prologue
     .line 99
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonGenerator;->writeStartArray()V
 
     .line 100
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
 
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, "i$":Ljava/util/Iterator;
-    :goto_9
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1b
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    check-cast v1, Lcom/fasterxml/jackson/databind/JsonNode;
+    :goto_9
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1b
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/fasterxml/jackson/databind/JsonNode;
 
     .line 106
-    .local v1, "n":Lcom/fasterxml/jackson/databind/JsonNode;
-    check-cast v1, Lcom/fasterxml/jackson/databind/node/BaseJsonNode;
+    check-cast v0, Lcom/fasterxml/jackson/databind/node/BaseJsonNode;
 
-    .end local v1    # "n":Lcom/fasterxml/jackson/databind/JsonNode;
-    invoke-virtual {v1, p1, p2}, Lcom/fasterxml/jackson/databind/node/BaseJsonNode;->serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
+    invoke-virtual {v0, p1, p2}, Lcom/fasterxml/jackson/databind/node/BaseJsonNode;->serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
 
     goto :goto_9
 
@@ -1770,48 +1651,36 @@
 .end method
 
 .method public serializeWithType(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)V
-    .registers 7
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p2, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .param p3, "typeSer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
+    .registers 6
 
     .prologue
     .line 115
     invoke-virtual {p3, p0, p1}, Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;->writeTypePrefixForArray(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;)V
 
     .line 116
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
 
-    invoke-interface {v2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    .local v0, "i$":Ljava/util/Iterator;
-    :goto_9
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_1b
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    check-cast v1, Lcom/fasterxml/jackson/databind/JsonNode;
+    :goto_9
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1b
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/fasterxml/jackson/databind/JsonNode;
 
     .line 117
-    .local v1, "n":Lcom/fasterxml/jackson/databind/JsonNode;
-    check-cast v1, Lcom/fasterxml/jackson/databind/node/BaseJsonNode;
+    check-cast v0, Lcom/fasterxml/jackson/databind/node/BaseJsonNode;
 
-    .end local v1    # "n":Lcom/fasterxml/jackson/databind/JsonNode;
-    invoke-virtual {v1, p1, p2}, Lcom/fasterxml/jackson/databind/node/BaseJsonNode;->serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
+    invoke-virtual {v0, p1, p2}, Lcom/fasterxml/jackson/databind/node/BaseJsonNode;->serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
 
     goto :goto_9
 
@@ -1825,8 +1694,6 @@
 
 .method public set(ILcom/fasterxml/jackson/databind/JsonNode;)Lcom/fasterxml/jackson/databind/JsonNode;
     .registers 6
-    .param p1, "index"    # I
-    .param p2, "value"    # Lcom/fasterxml/jackson/databind/JsonNode;
 
     .prologue
     .line 198
@@ -1925,73 +1792,74 @@
 
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/node/ArrayNode;->size()I
 
-    move-result v3
+    move-result v0
 
-    shl-int/lit8 v3, v3, 0x4
+    shl-int/lit8 v0, v0, 0x4
 
-    add-int/lit8 v3, v3, 0x10
+    add-int/lit8 v0, v0, 0x10
 
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v2, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 744
-    .local v2, "sb":Ljava/lang/StringBuilder;
-    const/16 v3, 0x5b
+    const/16 v0, 0x5b
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 745
     const/4 v0, 0x0
 
-    .local v0, "i":I
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
 
-    invoke-interface {v3}, Ljava/util/List;->size()I
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    move-result v1
+    move-result v3
 
-    .local v1, "len":I
-    :goto_19
-    if-ge v0, v1, :cond_34
+    move v1, v0
+
+    :goto_1a
+    if-ge v1, v3, :cond_36
 
     .line 746
-    if-lez v0, :cond_22
+    if-lez v1, :cond_23
 
     .line 747
-    const/16 v3, 0x2c
+    const/16 v0, 0x2c
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 749
-    :cond_22
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
+    :cond_23
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/node/ArrayNode;->_children:Ljava/util/List;
 
-    invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Lcom/fasterxml/jackson/databind/JsonNode;
+    check-cast v0, Lcom/fasterxml/jackson/databind/JsonNode;
 
-    invoke-virtual {v3}, Lcom/fasterxml/jackson/databind/JsonNode;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JsonNode;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 745
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    goto :goto_19
+    move v1, v0
+
+    goto :goto_1a
 
     .line 751
-    :cond_34
-    const/16 v3, 0x5d
+    :cond_36
+    const/16 v0, 0x5d
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 752
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    return-object v3
+    return-object v0
 .end method

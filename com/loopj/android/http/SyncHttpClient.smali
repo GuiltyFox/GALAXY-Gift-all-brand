@@ -23,7 +23,6 @@
 
 .method public constructor <init>(I)V
     .registers 4
-    .param p1, "httpPort"    # I
 
     .prologue
     .line 48
@@ -39,8 +38,6 @@
 
 .method public constructor <init>(II)V
     .registers 4
-    .param p1, "httpPort"    # I
-    .param p2, "httpsPort"    # I
 
     .prologue
     .line 58
@@ -54,7 +51,6 @@
 
 .method public constructor <init>(Lcz/msebera/android/httpclient/conn/scheme/SchemeRegistry;)V
     .registers 2
-    .param p1, "schemeRegistry"    # Lcz/msebera/android/httpclient/conn/scheme/SchemeRegistry;
 
     .prologue
     .line 78
@@ -66,9 +62,6 @@
 
 .method public constructor <init>(ZII)V
     .registers 4
-    .param p1, "fixNoHttpResponseException"    # Z
-    .param p2, "httpPort"    # I
-    .param p3, "httpsPort"    # I
 
     .prologue
     .line 69
@@ -82,12 +75,6 @@
 # virtual methods
 .method protected sendRequest(Lcz/msebera/android/httpclient/impl/client/DefaultHttpClient;Lcz/msebera/android/httpclient/protocol/HttpContext;Lcz/msebera/android/httpclient/client/methods/HttpUriRequest;Ljava/lang/String;Lcom/loopj/android/http/ResponseHandlerInterface;Landroid/content/Context;)Lcom/loopj/android/http/RequestHandle;
     .registers 9
-    .param p1, "client"    # Lcz/msebera/android/httpclient/impl/client/DefaultHttpClient;
-    .param p2, "httpContext"    # Lcz/msebera/android/httpclient/protocol/HttpContext;
-    .param p3, "uriRequest"    # Lcz/msebera/android/httpclient/client/methods/HttpUriRequest;
-    .param p4, "contentType"    # Ljava/lang/String;
-    .param p5, "responseHandler"    # Lcom/loopj/android/http/ResponseHandlerInterface;
-    .param p6, "context"    # Landroid/content/Context;
 
     .prologue
     .line 86

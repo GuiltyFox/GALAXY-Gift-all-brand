@@ -1,4 +1,4 @@
-.class final Lcom/google/zxing/client/android/AmbientLightManager;
+.class public final Lcom/google/zxing/client/android/AmbientLightManager;
 .super Ljava/lang/Object;
 .source "AmbientLightManager.java"
 
@@ -6,199 +6,209 @@
 .implements Landroid/hardware/SensorEventListener;
 
 
-# static fields
-.field private static final BRIGHT_ENOUGH_LUX:F = 450.0f
-
-.field private static final TOO_DARK_LUX:F = 45.0f
-
-
 # instance fields
-.field private cameraManager:Lcom/google/zxing/client/android/camera/CameraManager;
+.field private a:Lcom/journeyapps/barcodescanner/camera/CameraManager;
 
-.field private final context:Landroid/content/Context;
+.field private b:Lcom/journeyapps/barcodescanner/camera/CameraSettings;
 
-.field private lightSensor:Landroid/hardware/Sensor;
+.field private c:Landroid/hardware/Sensor;
+
+.field private d:Landroid/content/Context;
+
+.field private e:Landroid/os/Handler;
 
 
 # direct methods
-.method constructor <init>(Landroid/content/Context;)V
-    .registers 2
-    .param p1, "context"    # Landroid/content/Context;
+.method public constructor <init>(Landroid/content/Context;Lcom/journeyapps/barcodescanner/camera/CameraManager;Lcom/journeyapps/barcodescanner/camera/CameraSettings;)V
+    .registers 5
 
     .prologue
-    .line 44
+    .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 45
-    iput-object p1, p0, Lcom/google/zxing/client/android/AmbientLightManager;->context:Landroid/content/Context;
+    .line 48
+    iput-object p1, p0, Lcom/google/zxing/client/android/AmbientLightManager;->d:Landroid/content/Context;
 
-    .line 46
+    .line 49
+    iput-object p2, p0, Lcom/google/zxing/client/android/AmbientLightManager;->a:Lcom/journeyapps/barcodescanner/camera/CameraManager;
+
+    .line 50
+    iput-object p3, p0, Lcom/google/zxing/client/android/AmbientLightManager;->b:Lcom/journeyapps/barcodescanner/camera/CameraSettings;
+
+    .line 52
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
+
+    iput-object v0, p0, Lcom/google/zxing/client/android/AmbientLightManager;->e:Landroid/os/Handler;
+
+    .line 53
+    return-void
+.end method
+
+.method static synthetic a(Lcom/google/zxing/client/android/AmbientLightManager;)Lcom/journeyapps/barcodescanner/camera/CameraManager;
+    .registers 2
+
+    .prologue
+    .line 35
+    iget-object v0, p0, Lcom/google/zxing/client/android/AmbientLightManager;->a:Lcom/journeyapps/barcodescanner/camera/CameraManager;
+
+    return-object v0
+.end method
+
+.method private a(Z)V
+    .registers 4
+
+    .prologue
+    .line 74
+    iget-object v0, p0, Lcom/google/zxing/client/android/AmbientLightManager;->e:Landroid/os/Handler;
+
+    new-instance v1, Lcom/google/zxing/client/android/AmbientLightManager$1;
+
+    invoke-direct {v1, p0, p1}, Lcom/google/zxing/client/android/AmbientLightManager$1;-><init>(Lcom/google/zxing/client/android/AmbientLightManager;Z)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 80
     return-void
 .end method
 
 
 # virtual methods
-.method public onAccuracyChanged(Landroid/hardware/Sensor;I)V
-    .registers 3
-    .param p1, "sensor"    # Landroid/hardware/Sensor;
-    .param p2, "accuracy"    # I
+.method public a()V
+    .registers 4
 
     .prologue
-    .line 84
+    .line 56
+    iget-object v0, p0, Lcom/google/zxing/client/android/AmbientLightManager;->b:Lcom/journeyapps/barcodescanner/camera/CameraSettings;
+
+    invoke-virtual {v0}, Lcom/journeyapps/barcodescanner/camera/CameraSettings;->h()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_24
+
+    .line 57
+    iget-object v0, p0, Lcom/google/zxing/client/android/AmbientLightManager;->d:Landroid/content/Context;
+
+    const-string/jumbo v1, "sensor"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/hardware/SensorManager;
+
+    .line 58
+    const/4 v1, 0x5
+
+    invoke-virtual {v0, v1}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lcom/google/zxing/client/android/AmbientLightManager;->c:Landroid/hardware/Sensor;
+
+    .line 59
+    iget-object v1, p0, Lcom/google/zxing/client/android/AmbientLightManager;->c:Landroid/hardware/Sensor;
+
+    if-eqz v1, :cond_24
+
+    .line 60
+    iget-object v1, p0, Lcom/google/zxing/client/android/AmbientLightManager;->c:Landroid/hardware/Sensor;
+
+    const/4 v2, 0x3
+
+    invoke-virtual {v0, p0, v1, v2}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
+
+    .line 63
+    :cond_24
+    return-void
+.end method
+
+.method public b()V
+    .registers 3
+
+    .prologue
+    .line 66
+    iget-object v0, p0, Lcom/google/zxing/client/android/AmbientLightManager;->c:Landroid/hardware/Sensor;
+
+    if-eqz v0, :cond_15
+
+    .line 67
+    iget-object v0, p0, Lcom/google/zxing/client/android/AmbientLightManager;->d:Landroid/content/Context;
+
+    const-string/jumbo v1, "sensor"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/hardware/SensorManager;
+
+    .line 68
+    invoke-virtual {v0, p0}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;)V
+
+    .line 69
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcom/google/zxing/client/android/AmbientLightManager;->c:Landroid/hardware/Sensor;
+
+    .line 71
+    :cond_15
+    return-void
+.end method
+
+.method public onAccuracyChanged(Landroid/hardware/Sensor;I)V
+    .registers 3
+
+    .prologue
+    .line 97
     return-void
 .end method
 
 .method public onSensorChanged(Landroid/hardware/SensorEvent;)V
     .registers 5
-    .param p1, "sensorEvent"    # Landroid/hardware/SensorEvent;
 
     .prologue
     const/4 v2, 0x0
 
-    .line 71
-    iget-object v1, p1, Landroid/hardware/SensorEvent;->values:[F
+    .line 84
+    iget-object v0, p1, Landroid/hardware/SensorEvent;->values:[F
 
-    aget v0, v1, v2
+    aget v0, v0, v2
 
-    .line 72
-    .local v0, "ambientLightLux":F
-    iget-object v1, p0, Lcom/google/zxing/client/android/AmbientLightManager;->cameraManager:Lcom/google/zxing/client/android/camera/CameraManager;
+    .line 85
+    iget-object v1, p0, Lcom/google/zxing/client/android/AmbientLightManager;->a:Lcom/journeyapps/barcodescanner/camera/CameraManager;
 
-    if-eqz v1, :cond_15
+    if-eqz v1, :cond_13
 
-    .line 73
-    const/high16 v1, 0x42340000
+    .line 86
+    const/high16 v1, 0x42340000    # 45.0f
 
     cmpg-float v1, v0, v1
 
-    if-gtz v1, :cond_16
+    if-gtz v1, :cond_14
 
-    .line 74
-    iget-object v1, p0, Lcom/google/zxing/client/android/AmbientLightManager;->cameraManager:Lcom/google/zxing/client/android/camera/CameraManager;
+    .line 87
+    const/4 v0, 0x1
 
-    const/4 v2, 0x1
+    invoke-direct {p0, v0}, Lcom/google/zxing/client/android/AmbientLightManager;->a(Z)V
 
-    invoke-virtual {v1, v2}, Lcom/google/zxing/client/android/camera/CameraManager;->setTorch(Z)V
-
-    .line 79
-    :cond_15
-    :goto_15
+    .line 92
+    :cond_13
+    :goto_13
     return-void
 
-    .line 75
-    :cond_16
-    const/high16 v1, 0x43e10000
+    .line 88
+    :cond_14
+    const/high16 v1, 0x43e10000    # 450.0f
 
-    cmpl-float v1, v0, v1
+    cmpl-float v0, v0, v1
 
-    if-ltz v1, :cond_15
+    if-ltz v0, :cond_13
 
-    .line 76
-    iget-object v1, p0, Lcom/google/zxing/client/android/AmbientLightManager;->cameraManager:Lcom/google/zxing/client/android/camera/CameraManager;
+    .line 89
+    invoke-direct {p0, v2}, Lcom/google/zxing/client/android/AmbientLightManager;->a(Z)V
 
-    invoke-virtual {v1, v2}, Lcom/google/zxing/client/android/camera/CameraManager;->setTorch(Z)V
-
-    goto :goto_15
-.end method
-
-.method start(Lcom/google/zxing/client/android/camera/CameraManager;)V
-    .registers 6
-    .param p1, "cameraManager"    # Lcom/google/zxing/client/android/camera/CameraManager;
-
-    .prologue
-    .line 49
-    iput-object p1, p0, Lcom/google/zxing/client/android/AmbientLightManager;->cameraManager:Lcom/google/zxing/client/android/camera/CameraManager;
-
-    .line 50
-    iget-object v2, p0, Lcom/google/zxing/client/android/AmbientLightManager;->context:Landroid/content/Context;
-
-    invoke-static {v2}, Landroid/preference/PreferenceManager;->getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    .line 51
-    .local v1, "sharedPrefs":Landroid/content/SharedPreferences;
-    invoke-static {v1}, Lcom/google/zxing/client/android/camera/FrontLightMode;->readPref(Landroid/content/SharedPreferences;)Lcom/google/zxing/client/android/camera/FrontLightMode;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/google/zxing/client/android/camera/FrontLightMode;->AUTO:Lcom/google/zxing/client/android/camera/FrontLightMode;
-
-    if-ne v2, v3, :cond_2c
-
-    .line 52
-    iget-object v2, p0, Lcom/google/zxing/client/android/AmbientLightManager;->context:Landroid/content/Context;
-
-    const-string/jumbo v3, "sensor"
-
-    invoke-virtual {v2, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/SensorManager;
-
-    .line 53
-    .local v0, "sensorManager":Landroid/hardware/SensorManager;
-    const/4 v2, 0x5
-
-    invoke-virtual {v0, v2}, Landroid/hardware/SensorManager;->getDefaultSensor(I)Landroid/hardware/Sensor;
-
-    move-result-object v2
-
-    iput-object v2, p0, Lcom/google/zxing/client/android/AmbientLightManager;->lightSensor:Landroid/hardware/Sensor;
-
-    .line 54
-    iget-object v2, p0, Lcom/google/zxing/client/android/AmbientLightManager;->lightSensor:Landroid/hardware/Sensor;
-
-    if-eqz v2, :cond_2c
-
-    .line 55
-    iget-object v2, p0, Lcom/google/zxing/client/android/AmbientLightManager;->lightSensor:Landroid/hardware/Sensor;
-
-    const/4 v3, 0x3
-
-    invoke-virtual {v0, p0, v2, v3}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
-
-    .line 58
-    .end local v0    # "sensorManager":Landroid/hardware/SensorManager;
-    :cond_2c
-    return-void
-.end method
-
-.method stop()V
-    .registers 5
-
-    .prologue
-    const/4 v3, 0x0
-
-    .line 61
-    iget-object v1, p0, Lcom/google/zxing/client/android/AmbientLightManager;->lightSensor:Landroid/hardware/Sensor;
-
-    if-eqz v1, :cond_17
-
-    .line 62
-    iget-object v1, p0, Lcom/google/zxing/client/android/AmbientLightManager;->context:Landroid/content/Context;
-
-    const-string/jumbo v2, "sensor"
-
-    invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/hardware/SensorManager;
-
-    .line 63
-    .local v0, "sensorManager":Landroid/hardware/SensorManager;
-    invoke-virtual {v0, p0}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;)V
-
-    .line 64
-    iput-object v3, p0, Lcom/google/zxing/client/android/AmbientLightManager;->cameraManager:Lcom/google/zxing/client/android/camera/CameraManager;
-
-    .line 65
-    iput-object v3, p0, Lcom/google/zxing/client/android/AmbientLightManager;->lightSensor:Landroid/hardware/Sensor;
-
-    .line 67
-    .end local v0    # "sensorManager":Landroid/hardware/SensorManager;
-    :cond_17
-    return-void
+    goto :goto_13
 .end method

@@ -40,9 +40,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .registers 7
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
 
     .prologue
     const/4 v2, 0x0
@@ -51,14 +48,13 @@
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 46
-    sget-object v1, Landroid/support/v7/appcompat/R$styleable;->PopupWindow:[I
+    sget-object v0, Landroid/support/v7/appcompat/R$styleable;->PopupWindow:[I
 
-    invoke-static {p1, p2, v1, p3, v2}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroid/support/v7/widget/TintTypedArray;
+    invoke-static {p1, p2, v0, p3, v2}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroid/support/v7/widget/TintTypedArray;
 
     move-result-object v0
 
     .line 48
-    .local v0, "a":Landroid/support/v7/widget/TintTypedArray;
     sget v1, Landroid/support/v7/appcompat/R$styleable;->PopupWindow_overlapAnchor:I
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/TintTypedArray;->hasValue(I)Z
@@ -90,11 +86,11 @@
     invoke-virtual {v0}, Landroid/support/v7/widget/TintTypedArray;->recycle()V
 
     .line 55
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v2, 0xe
+    const/16 v1, 0xe
 
-    if-ge v1, v2, :cond_30
+    if-ge v0, v1, :cond_30
 
     .line 58
     invoke-static {p0}, Landroid/support/v7/widget/AppCompatPopupWindow;->wrapOnScrollChangedListener(Landroid/widget/PopupWindow;)V
@@ -105,62 +101,55 @@
 .end method
 
 .method private static wrapOnScrollChangedListener(Landroid/widget/PopupWindow;)V
-    .registers 7
-    .param p0, "popup"    # Landroid/widget/PopupWindow;
+    .registers 5
 
     .prologue
     .line 92
     :try_start_0
-    const-class v4, Landroid/widget/PopupWindow;
+    const-class v0, Landroid/widget/PopupWindow;
 
-    const-string/jumbo v5, "mAnchor"
+    const-string/jumbo v1, "mAnchor"
 
-    invoke-virtual {v4, v5}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v1
 
     .line 93
-    .local v1, "fieldAnchor":Ljava/lang/reflect/Field;
-    const/4 v4, 0x1
+    const/4 v0, 0x1
 
-    invoke-virtual {v1, v4}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    invoke-virtual {v1, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
     .line 95
-    const-class v4, Landroid/widget/PopupWindow;
+    const-class v0, Landroid/widget/PopupWindow;
 
-    const-string/jumbo v5, "mOnScrollChangedListener"
+    const-string/jumbo v2, "mOnScrollChangedListener"
 
-    invoke-virtual {v4, v5}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     move-result-object v2
 
     .line 97
-    .local v2, "fieldListener":Ljava/lang/reflect/Field;
-    const/4 v4, 0x1
+    const/4 v0, 0x1
 
-    invoke-virtual {v2, v4}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    invoke-virtual {v2, v0}, Ljava/lang/reflect/Field;->setAccessible(Z)V
 
     .line 99
     invoke-virtual {v2, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Landroid/view/ViewTreeObserver$OnScrollChangedListener;
+    check-cast v0, Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
     .line 104
-    .local v3, "originalListener":Landroid/view/ViewTreeObserver$OnScrollChangedListener;
-    new-instance v4, Landroid/support/v7/widget/AppCompatPopupWindow$1;
+    new-instance v3, Landroid/support/v7/widget/AppCompatPopupWindow$1;
 
-    invoke-direct {v4, v1, p0, v3}, Landroid/support/v7/widget/AppCompatPopupWindow$1;-><init>(Ljava/lang/reflect/Field;Landroid/widget/PopupWindow;Landroid/view/ViewTreeObserver$OnScrollChangedListener;)V
+    invoke-direct {v3, v1, p0, v0}, Landroid/support/v7/widget/AppCompatPopupWindow$1;-><init>(Ljava/lang/reflect/Field;Landroid/widget/PopupWindow;Landroid/view/ViewTreeObserver$OnScrollChangedListener;)V
 
-    invoke-virtual {v2, p0, v4}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {v2, p0, v3}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
     :try_end_28
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_28} :catch_29
 
     .line 122
-    .end local v1    # "fieldAnchor":Ljava/lang/reflect/Field;
-    .end local v2    # "fieldListener":Ljava/lang/reflect/Field;
-    .end local v3    # "originalListener":Landroid/view/ViewTreeObserver$OnScrollChangedListener;
     :goto_28
     return-void
 
@@ -169,12 +158,11 @@
     move-exception v0
 
     .line 120
-    .local v0, "e":Ljava/lang/Exception;
-    const-string/jumbo v4, "AppCompatPopupWindow"
+    const-string/jumbo v1, "AppCompatPopupWindow"
 
-    const-string/jumbo v5, "Exception while installing workaround OnScrollChangedListener"
+    const-string/jumbo v2, "Exception while installing workaround OnScrollChangedListener"
 
-    invoke-static {v4, v5, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_28
 .end method
@@ -198,7 +186,7 @@
     return v0
 
     :cond_7
-    invoke-static {p0}, Landroid/support/v4/widget/PopupWindowCompat;->getOverlapAnchor(Landroid/widget/PopupWindow;)Z
+    invoke-static {p0}, Landroid/support/v4/widget/PopupWindowCompat;->a(Landroid/widget/PopupWindow;)Z
 
     move-result v0
 
@@ -207,7 +195,6 @@
 
 .method public setSupportOverlapAnchor(Z)V
     .registers 3
-    .param p1, "overlapAnchor"    # Z
 
     .prologue
     .line 128
@@ -224,16 +211,13 @@
 
     .line 131
     :cond_7
-    invoke-static {p0, p1}, Landroid/support/v4/widget/PopupWindowCompat;->setOverlapAnchor(Landroid/widget/PopupWindow;Z)V
+    invoke-static {p0, p1}, Landroid/support/v4/widget/PopupWindowCompat;->a(Landroid/widget/PopupWindow;Z)V
 
     goto :goto_6
 .end method
 
 .method public showAsDropDown(Landroid/view/View;II)V
     .registers 5
-    .param p1, "anchor"    # Landroid/view/View;
-    .param p2, "xoff"    # I
-    .param p3, "yoff"    # I
 
     .prologue
     .line 64
@@ -262,10 +246,6 @@
 
 .method public showAsDropDown(Landroid/view/View;III)V
     .registers 6
-    .param p1, "anchor"    # Landroid/view/View;
-    .param p2, "xoff"    # I
-    .param p3, "yoff"    # I
-    .param p4, "gravity"    # I
     .annotation build Landroid/annotation/TargetApi;
         value = 0x13
     .end annotation
@@ -296,22 +276,17 @@
 .end method
 
 .method public update(Landroid/view/View;IIII)V
-    .registers 7
-    .param p1, "anchor"    # Landroid/view/View;
-    .param p2, "xoff"    # I
-    .param p3, "yoff"    # I
-    .param p4, "width"    # I
-    .param p5, "height"    # I
+    .registers 12
 
     .prologue
     .line 83
     sget-boolean v0, Landroid/support/v7/widget/AppCompatPopupWindow;->COMPAT_OVERLAP_ANCHOR:Z
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_17
 
     iget-boolean v0, p0, Landroid/support/v7/widget/AppCompatPopupWindow;->mOverlapAnchor:Z
 
-    if-eqz v0, :cond_d
+    if-eqz v0, :cond_17
 
     .line 85
     invoke-virtual {p1}, Landroid/view/View;->getHeight()I
@@ -320,10 +295,27 @@
 
     sub-int/2addr p3, v0
 
+    move v3, p3
+
+    :goto_e
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move v2, p2
+
+    move v4, p4
+
+    move v5, p5
+
     .line 87
-    :cond_d
-    invoke-super/range {p0 .. p5}, Landroid/widget/PopupWindow;->update(Landroid/view/View;IIII)V
+    invoke-super/range {v0 .. v5}, Landroid/widget/PopupWindow;->update(Landroid/view/View;IIII)V
 
     .line 88
     return-void
+
+    :cond_17
+    move v3, p3
+
+    goto :goto_e
 .end method

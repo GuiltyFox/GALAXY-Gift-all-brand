@@ -9,14 +9,8 @@
 
 
 # virtual methods
-.method public abstract abortRequest()V
+.method public abstract a(JLjava/util/concurrent/TimeUnit;)Lcz/msebera/android/httpclient/conn/ManagedClientConnection;
 .end method
 
-.method public abstract getConnection(JLjava/util/concurrent/TimeUnit;)Lcz/msebera/android/httpclient/conn/ManagedClientConnection;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/InterruptedException;,
-            Lcz/msebera/android/httpclient/conn/ConnectionPoolTimeoutException;
-        }
-    .end annotation
+.method public abstract a()V
 .end method

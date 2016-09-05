@@ -6,23 +6,12 @@
 .implements Ljava/lang/Runnable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lit/sephiroth/android/library/widget/HListView;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "FocusSelector"
-.end annotation
-
-
 # instance fields
-.field private mPosition:I
+.field final synthetic a:Lit/sephiroth/android/library/widget/HListView;
 
-.field private mPositionLeft:I
+.field private b:I
 
-.field final synthetic this$0:Lit/sephiroth/android/library/widget/HListView;
+.field private c:I
 
 
 # direct methods
@@ -31,7 +20,7 @@
 
     .prologue
     .line 1079
-    iput-object p1, p0, Lit/sephiroth/android/library/widget/HListView$FocusSelector;->this$0:Lit/sephiroth/android/library/widget/HListView;
+    iput-object p1, p0, Lit/sephiroth/android/library/widget/HListView$FocusSelector;->a:Lit/sephiroth/android/library/widget/HListView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,8 +29,6 @@
 
 .method synthetic constructor <init>(Lit/sephiroth/android/library/widget/HListView;Lit/sephiroth/android/library/widget/HListView$1;)V
     .registers 3
-    .param p1, "x0"    # Lit/sephiroth/android/library/widget/HListView;
-    .param p2, "x1"    # Lit/sephiroth/android/library/widget/HListView$1;
 
     .prologue
     .line 1079
@@ -52,35 +39,33 @@
 
 
 # virtual methods
+.method public a(II)Lit/sephiroth/android/library/widget/HListView$FocusSelector;
+    .registers 3
+
+    .prologue
+    .line 1085
+    iput p1, p0, Lit/sephiroth/android/library/widget/HListView$FocusSelector;->b:I
+
+    .line 1086
+    iput p2, p0, Lit/sephiroth/android/library/widget/HListView$FocusSelector;->c:I
+
+    .line 1087
+    return-object p0
+.end method
+
 .method public run()V
     .registers 4
 
     .prologue
     .line 1092
-    iget-object v0, p0, Lit/sephiroth/android/library/widget/HListView$FocusSelector;->this$0:Lit/sephiroth/android/library/widget/HListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/HListView$FocusSelector;->a:Lit/sephiroth/android/library/widget/HListView;
 
-    iget v1, p0, Lit/sephiroth/android/library/widget/HListView$FocusSelector;->mPosition:I
+    iget v1, p0, Lit/sephiroth/android/library/widget/HListView$FocusSelector;->b:I
 
-    iget v2, p0, Lit/sephiroth/android/library/widget/HListView$FocusSelector;->mPositionLeft:I
+    iget v2, p0, Lit/sephiroth/android/library/widget/HListView$FocusSelector;->c:I
 
     invoke-virtual {v0, v1, v2}, Lit/sephiroth/android/library/widget/HListView;->setSelectionFromLeft(II)V
 
     .line 1093
     return-void
-.end method
-
-.method public setup(II)Lit/sephiroth/android/library/widget/HListView$FocusSelector;
-    .registers 3
-    .param p1, "position"    # I
-    .param p2, "left"    # I
-
-    .prologue
-    .line 1085
-    iput p1, p0, Lit/sephiroth/android/library/widget/HListView$FocusSelector;->mPosition:I
-
-    .line 1086
-    iput p2, p0, Lit/sephiroth/android/library/widget/HListView$FocusSelector;->mPositionLeft:I
-
-    .line 1087
-    return-object p0
 .end method

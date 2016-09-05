@@ -3,17 +3,6 @@
 .source "Spinner.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/rey/material/widget/Spinner;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "SavedState"
-.end annotation
-
-
 # static fields
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
     .annotation system Ldalvik/annotation/Signature;
@@ -28,9 +17,9 @@
 
 
 # instance fields
-.field position:I
+.field a:I
 
-.field showDropdown:Z
+.field b:Z
 
 
 # direct methods
@@ -50,7 +39,6 @@
 
 .method constructor <init>(Landroid/os/Parcel;)V
     .registers 3
-    .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
     .line 984
@@ -61,7 +49,7 @@
 
     move-result v0
 
-    iput v0, p0, Lcom/rey/material/widget/Spinner$SavedState;->position:I
+    iput v0, p0, Lcom/rey/material/widget/Spinner$SavedState;->a:I
 
     .line 986
     invoke-virtual {p1}, Landroid/os/Parcel;->readByte()B
@@ -73,7 +61,7 @@
     const/4 v0, 0x1
 
     :goto_10
-    iput-boolean v0, p0, Lcom/rey/material/widget/Spinner$SavedState;->showDropdown:Z
+    iput-boolean v0, p0, Lcom/rey/material/widget/Spinner$SavedState;->b:Z
 
     .line 987
     return-void
@@ -87,7 +75,6 @@
 
 .method constructor <init>(Landroid/os/Parcelable;)V
     .registers 2
-    .param p1, "superState"    # Landroid/os/Parcelable;
 
     .prologue
     .line 977
@@ -132,7 +119,7 @@
 
     move-result-object v0
 
-    iget v1, p0, Lcom/rey/material/widget/Spinner$SavedState;->position:I
+    iget v1, p0, Lcom/rey/material/widget/Spinner$SavedState;->a:I
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -144,7 +131,7 @@
 
     move-result-object v0
 
-    iget-boolean v1, p0, Lcom/rey/material/widget/Spinner$SavedState;->showDropdown:Z
+    iget-boolean v1, p0, Lcom/rey/material/widget/Spinner$SavedState;->b:Z
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -165,23 +152,18 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .registers 4
-    .param p1, "out"    # Landroid/os/Parcel;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2, "flags"    # I
 
     .prologue
     .line 991
     invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
     .line 992
-    iget v0, p0, Lcom/rey/material/widget/Spinner$SavedState;->position:I
+    iget v0, p0, Lcom/rey/material/widget/Spinner$SavedState;->a:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 993
-    iget-boolean v0, p0, Lcom/rey/material/widget/Spinner$SavedState;->showDropdown:Z
+    iget-boolean v0, p0, Lcom/rey/material/widget/Spinner$SavedState;->b:Z
 
     if-eqz v0, :cond_12
 

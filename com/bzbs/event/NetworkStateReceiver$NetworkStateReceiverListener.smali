@@ -3,20 +3,9 @@
 .source "NetworkStateReceiver.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bzbs/event/NetworkStateReceiver;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x609
-    name = "NetworkStateReceiverListener"
-.end annotation
-
-
 # virtual methods
-.method public abstract networkAvailable()V
+.method public abstract a_()V
 .end method
 
-.method public abstract networkUnavailable()V
+.method public abstract b_()V
 .end method

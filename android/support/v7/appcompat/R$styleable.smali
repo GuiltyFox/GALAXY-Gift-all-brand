@@ -3,17 +3,6 @@
 .source "R.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/appcompat/R;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "styleable"
-.end annotation
-
-
 # static fields
 .field public static final ActionBar:[I
 
@@ -1225,9 +1214,6 @@
         0x101011f
         0x1010220
         0x1010264
-        0x7f010253
-        0x7f010254
-        0x7f010255
         0x7f010256
         0x7f010257
         0x7f010258
@@ -1238,6 +1224,9 @@
         0x7f01025d
         0x7f01025e
         0x7f01025f
+        0x7f010260
+        0x7f010261
+        0x7f010262
     .end array-data
 
     .line 1213
@@ -1251,9 +1240,6 @@
         0x101017b
         0x1010262
         0x7f010093
-        0x7f0102a9
-        0x7f0102aa
-        0x7f0102ab
         0x7f0102ac
         0x7f0102ad
         0x7f0102ae
@@ -1272,6 +1258,9 @@
         0x7f0102bb
         0x7f0102bc
         0x7f0102bd
+        0x7f0102be
+        0x7f0102bf
+        0x7f0102c0
     .end array-data
 
     .line 1219
@@ -1280,13 +1269,13 @@
         0x1010124
         0x1010125
         0x1010142
-        0x7f0102c6
-        0x7f0102c7
-        0x7f0102c8
         0x7f0102c9
         0x7f0102ca
         0x7f0102cb
         0x7f0102cc
+        0x7f0102cd
+        0x7f0102ce
+        0x7f0102cf
     .end array-data
 
     .line 1230
@@ -1325,9 +1314,6 @@
         0x7f010090
         0x7f010091
         0x7f010093
-        0x7f01030c
-        0x7f01030d
-        0x7f01030e
         0x7f01030f
         0x7f010310
         0x7f010311
@@ -1340,6 +1326,9 @@
         0x7f010318
         0x7f010319
         0x7f01031a
+        0x7f01031b
+        0x7f01031c
+        0x7f01031d
     .end array-data
 
     .line 1266
@@ -1373,17 +1362,17 @@
         0x1010440
         0x101046b
         0x101046c
-        0x7f01031b
-        0x7f01031c
-        0x7f01031d
+        0x7f01031e
+        0x7f01031f
+        0x7f010320
     .end array-data
 
     .line 1267
     :array_3fc
     .array-data 4
         0x10100d4
-        0x7f01031e
-        0x7f01031f
+        0x7f010321
+        0x7f010322
     .end array-data
 
     .line 1271
@@ -1393,14 +1382,4 @@
         0x10100f2
         0x10100f3
     .end array-data
-.end method
-
-.method public constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 953
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
 .end method

@@ -3,17 +3,6 @@
 .source "R.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/appcompat/R;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "attr"
-.end annotation
-
-
 # static fields
 .field public static final actionBarDivider:I = 0x7f0100b6
 
@@ -105,9 +94,9 @@
 
 .field public static final backgroundStacked:I = 0x7f010085
 
-.field public static final backgroundTint:I = 0x7f01031e
+.field public static final backgroundTint:I = 0x7f010321
 
-.field public static final backgroundTintMode:I = 0x7f01031f
+.field public static final backgroundTintMode:I = 0x7f010322
 
 .field public static final barLength:I = 0x7f0101a3
 
@@ -137,13 +126,13 @@
 
 .field public static final checkedTextViewStyle:I = 0x7f010106
 
-.field public static final closeIcon:I = 0x7f010257
+.field public static final closeIcon:I = 0x7f01025a
 
 .field public static final closeItemLayout:I = 0x7f010094
 
-.field public static final collapseContentDescription:I = 0x7f010315
+.field public static final collapseContentDescription:I = 0x7f010318
 
-.field public static final collapseIcon:I = 0x7f010314
+.field public static final collapseIcon:I = 0x7f010317
 
 .field public static final color:I = 0x7f01019d
 
@@ -163,7 +152,7 @@
 
 .field public static final colorSwitchThumbNormal:I = 0x7f0100f8
 
-.field public static final commitIcon:I = 0x7f01025c
+.field public static final commitIcon:I = 0x7f01025f
 
 .field public static final contentInsetEnd:I = 0x7f01008f
 
@@ -177,7 +166,7 @@
 
 .field public static final customNavigationLayout:I = 0x7f010087
 
-.field public static final defaultQueryHint:I = 0x7f010256
+.field public static final defaultQueryHint:I = 0x7f010259
 
 .field public static final dialogPreferredPadding:I = 0x7f0100ca
 
@@ -213,7 +202,7 @@
 
 .field public static final gapBetweenBars:I = 0x7f0101a0
 
-.field public static final goIcon:I = 0x7f010258
+.field public static final goIcon:I = 0x7f01025b
 
 .field public static final height:I = 0x7f010038
 
@@ -225,7 +214,7 @@
 
 .field public static final icon:I = 0x7f010081
 
-.field public static final iconifiedByDefault:I = 0x7f010254
+.field public static final iconifiedByDefault:I = 0x7f010257
 
 .field public static final imageButtonStyle:I = 0x7f0100df
 
@@ -237,7 +226,7 @@
 
 .field public static final itemPadding:I = 0x7f01008c
 
-.field public static final layout:I = 0x7f010253
+.field public static final layout:I = 0x7f010256
 
 .field public static final listChoiceBackgroundIndicator:I = 0x7f0100f0
 
@@ -261,25 +250,25 @@
 
 .field public static final logo:I = 0x7f010082
 
-.field public static final logoDescription:I = 0x7f010318
+.field public static final logoDescription:I = 0x7f01031b
 
-.field public static final maxButtonHeight:I = 0x7f010313
+.field public static final maxButtonHeight:I = 0x7f010316
 
 .field public static final measureWithLargestChild:I = 0x7f0101ef
 
 .field public static final multiChoiceItemLayout:I = 0x7f010099
 
-.field public static final navigationContentDescription:I = 0x7f010317
+.field public static final navigationContentDescription:I = 0x7f01031a
 
-.field public static final navigationIcon:I = 0x7f010316
+.field public static final navigationIcon:I = 0x7f010319
 
 .field public static final navigationMode:I = 0x7f01007c
 
 .field public static final overlapAnchor:I = 0x7f010210
 
-.field public static final paddingEnd:I = 0x7f01031c
+.field public static final paddingEnd:I = 0x7f01031f
 
-.field public static final paddingStart:I = 0x7f01031b
+.field public static final paddingStart:I = 0x7f01031e
 
 .field public static final panelBackground:I = 0x7f0100ed
 
@@ -299,9 +288,9 @@
 
 .field public static final progressBarStyle:I = 0x7f010089
 
-.field public static final queryBackground:I = 0x7f01025e
+.field public static final queryBackground:I = 0x7f010261
 
-.field public static final queryHint:I = 0x7f010255
+.field public static final queryHint:I = 0x7f010258
 
 .field public static final radioButtonStyle:I = 0x7f010108
 
@@ -311,9 +300,9 @@
 
 .field public static final ratingBarStyleSmall:I = 0x7f01010b
 
-.field public static final searchHintIcon:I = 0x7f01025a
+.field public static final searchHintIcon:I = 0x7f01025d
 
-.field public static final searchIcon:I = 0x7f010259
+.field public static final searchIcon:I = 0x7f01025c
 
 .field public static final searchViewStyle:I = 0x7f0100e3
 
@@ -327,7 +316,7 @@
 
 .field public static final showDividers:I = 0x7f0101f0
 
-.field public static final showText:I = 0x7f0102cc
+.field public static final showText:I = 0x7f0102cf
 
 .field public static final singleChoiceItemLayout:I = 0x7f01009a
 
@@ -337,31 +326,31 @@
 
 .field public static final spinnerStyle:I = 0x7f01010d
 
-.field public static final splitTrack:I = 0x7f0102cb
+.field public static final splitTrack:I = 0x7f0102ce
 
 .field public static final srcCompat:I = 0x7f01009f
 
 .field public static final state_above_anchor:I = 0x7f010211
 
-.field public static final submitBackground:I = 0x7f01025f
+.field public static final submitBackground:I = 0x7f010262
 
 .field public static final subtitle:I = 0x7f01007e
 
-.field public static final subtitleTextAppearance:I = 0x7f01030d
+.field public static final subtitleTextAppearance:I = 0x7f010310
 
-.field public static final subtitleTextColor:I = 0x7f01031a
+.field public static final subtitleTextColor:I = 0x7f01031d
 
 .field public static final subtitleTextStyle:I = 0x7f010080
 
-.field public static final suggestionRowLayout:I = 0x7f01025d
+.field public static final suggestionRowLayout:I = 0x7f010260
 
-.field public static final switchMinWidth:I = 0x7f0102c9
+.field public static final switchMinWidth:I = 0x7f0102cc
 
-.field public static final switchPadding:I = 0x7f0102ca
+.field public static final switchPadding:I = 0x7f0102cd
 
 .field public static final switchStyle:I = 0x7f01010e
 
-.field public static final switchTextAppearance:I = 0x7f0102c8
+.field public static final switchTextAppearance:I = 0x7f0102cb
 
 .field public static final textAllCaps:I = 0x7f0100a0
 
@@ -381,27 +370,27 @@
 
 .field public static final textColorSearchUrl:I = 0x7f0100e2
 
-.field public static final theme:I = 0x7f01031d
+.field public static final theme:I = 0x7f010320
 
 .field public static final thickness:I = 0x7f0101a4
 
-.field public static final thumbTextPadding:I = 0x7f0102c7
+.field public static final thumbTextPadding:I = 0x7f0102ca
 
 .field public static final title:I = 0x7f010078
 
-.field public static final titleMarginBottom:I = 0x7f010312
+.field public static final titleMarginBottom:I = 0x7f010315
 
-.field public static final titleMarginEnd:I = 0x7f010310
+.field public static final titleMarginEnd:I = 0x7f010313
 
-.field public static final titleMarginStart:I = 0x7f01030f
+.field public static final titleMarginStart:I = 0x7f010312
 
-.field public static final titleMarginTop:I = 0x7f010311
+.field public static final titleMarginTop:I = 0x7f010314
 
-.field public static final titleMargins:I = 0x7f01030e
+.field public static final titleMargins:I = 0x7f010311
 
-.field public static final titleTextAppearance:I = 0x7f01030c
+.field public static final titleTextAppearance:I = 0x7f01030f
 
-.field public static final titleTextColor:I = 0x7f010319
+.field public static final titleTextColor:I = 0x7f01031c
 
 .field public static final titleTextStyle:I = 0x7f01007f
 
@@ -409,9 +398,9 @@
 
 .field public static final toolbarStyle:I = 0x7f0100d9
 
-.field public static final track:I = 0x7f0102c6
+.field public static final track:I = 0x7f0102c9
 
-.field public static final voiceIcon:I = 0x7f01025b
+.field public static final voiceIcon:I = 0x7f01025e
 
 .field public static final windowActionBar:I = 0x7f0100a1
 
@@ -432,15 +421,3 @@
 .field public static final windowMinWidthMinor:I = 0x7f0100aa
 
 .field public static final windowNoTitle:I = 0x7f0100a2
-
-
-# direct methods
-.method public constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 22
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method

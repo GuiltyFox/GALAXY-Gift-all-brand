@@ -5,12 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/gson/Gson;->doubleAdapter(Z)Lcom/google/gson/TypeAdapter;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/google/gson/Gson;->a(Z)Lcom/google/gson/TypeAdapter;
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
@@ -24,7 +19,7 @@
 
 
 # instance fields
-.field final synthetic this$0:Lcom/google/gson/Gson;
+.field final synthetic a:Lcom/google/gson/Gson;
 
 
 # direct methods
@@ -33,7 +28,7 @@
 
     .prologue
     .line 254
-    iput-object p1, p0, Lcom/google/gson/Gson$3;->this$0:Lcom/google/gson/Gson;
+    iput-object p1, p0, Lcom/google/gson/Gson$3;->a:Lcom/google/gson/Gson;
 
     invoke-direct {p0}, Lcom/google/gson/TypeAdapter;-><init>()V
 
@@ -42,14 +37,8 @@
 
 
 # virtual methods
-.method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Double;
+.method public a(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Double;
     .registers 4
-    .param p1, "in"    # Lcom/google/gson/stream/JsonReader;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 256
@@ -83,33 +72,8 @@
     goto :goto_c
 .end method
 
-.method public bridge synthetic read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
-    .registers 3
-    .param p1, "x0"    # Lcom/google/gson/stream/JsonReader;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .prologue
-    .line 254
-    invoke-virtual {p0, p1}, Lcom/google/gson/Gson$3;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Double;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Number;)V
+.method public a(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Number;)V
     .registers 6
-    .param p1, "out"    # Lcom/google/gson/stream/JsonWriter;
-    .param p2, "value"    # Ljava/lang/Number;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 263
@@ -129,11 +93,9 @@
     move-result-wide v0
 
     .line 268
-    .local v0, "doubleValue":D
-    iget-object v2, p0, Lcom/google/gson/Gson$3;->this$0:Lcom/google/gson/Gson;
+    iget-object v2, p0, Lcom/google/gson/Gson$3;->a:Lcom/google/gson/Gson;
 
-    # invokes: Lcom/google/gson/Gson;->checkValidFloatingPoint(D)V
-    invoke-static {v2, v0, v1}, Lcom/google/gson/Gson;->access$000(Lcom/google/gson/Gson;D)V
+    invoke-static {v2, v0, v1}, Lcom/google/gson/Gson;->a(Lcom/google/gson/Gson;D)V
 
     .line 269
     invoke-virtual {p1, p2}, Lcom/google/gson/stream/JsonWriter;->value(Ljava/lang/Number;)Lcom/google/gson/stream/JsonWriter;
@@ -141,22 +103,26 @@
     goto :goto_5
 .end method
 
-.method public bridge synthetic write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
+.method public bridge synthetic a(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .registers 3
-    .param p1, "x0"    # Lcom/google/gson/stream/JsonWriter;
-    .param p2, "x1"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 254
     check-cast p2, Ljava/lang/Number;
 
-    .end local p2    # "x1":Ljava/lang/Object;
-    invoke-virtual {p0, p1, p2}, Lcom/google/gson/Gson$3;->write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Number;)V
+    invoke-virtual {p0, p1, p2}, Lcom/google/gson/Gson$3;->a(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Number;)V
 
     return-void
+.end method
+
+.method public synthetic b(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+    .registers 3
+
+    .prologue
+    .line 254
+    invoke-virtual {p0, p1}, Lcom/google/gson/Gson$3;->a(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Double;
+
+    move-result-object v0
+
+    return-object v0
 .end method

@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4019
-    name = "DualCacheRAMMode"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum",
@@ -24,15 +15,15 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
+.field public static final enum a:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
 
-.field public static final enum DISABLE:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
+.field public static final enum b:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
 
-.field public static final enum ENABLE_WITH_CUSTOM_SERIALIZER:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
+.field public static final enum c:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
 
-.field public static final enum ENABLE_WITH_DEFAULT_SERIALIZER:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
+.field public static final enum d:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
 
-.field public static final enum ENABLE_WITH_REFERENCE:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
+.field private static final synthetic e:[Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
 
 
 # direct methods
@@ -55,7 +46,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->ENABLE_WITH_DEFAULT_SERIALIZER:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
+    sput-object v0, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->a:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
 
     .line 53
     new-instance v0, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
@@ -64,7 +55,7 @@
 
     invoke-direct {v0, v1, v3}, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->ENABLE_WITH_CUSTOM_SERIALIZER:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
+    sput-object v0, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->b:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
 
     .line 58
     new-instance v0, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
@@ -73,7 +64,7 @@
 
     invoke-direct {v0, v1, v4}, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->ENABLE_WITH_REFERENCE:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
+    sput-object v0, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->c:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
 
     .line 63
     new-instance v0, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
@@ -82,30 +73,30 @@
 
     invoke-direct {v0, v1, v5}, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->DISABLE:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
+    sput-object v0, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->d:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
 
     .line 42
     const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
 
-    sget-object v1, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->ENABLE_WITH_DEFAULT_SERIALIZER:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
+    sget-object v1, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->a:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->ENABLE_WITH_CUSTOM_SERIALIZER:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
+    sget-object v1, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->b:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->ENABLE_WITH_REFERENCE:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
+    sget-object v1, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->c:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->DISABLE:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
+    sget-object v1, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->d:Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
 
     aput-object v1, v0, v5
 
-    sput-object v0, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->$VALUES:[Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
+    sput-object v0, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->e:[Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
 
     return-void
 .end method
@@ -127,7 +118,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 42
@@ -147,7 +137,7 @@
 
     .prologue
     .line 42
-    sget-object v0, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->$VALUES:[Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
+    sget-object v0, Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->e:[Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;
 
     invoke-virtual {v0}, [Lcom/vincentbrison/openlibraries/android/dualcache/lib/DualCache$DualCacheRAMMode;->clone()Ljava/lang/Object;
 

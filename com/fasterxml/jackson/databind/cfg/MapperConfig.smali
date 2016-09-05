@@ -33,12 +33,9 @@
 # direct methods
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/cfg/BaseSettings;I)V
     .registers 3
-    .param p1, "base"    # Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
-    .param p2, "mapperFeatures"    # I
 
     .prologue
     .line 58
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 59
@@ -63,8 +60,6 @@
 
     .prologue
     .line 64
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
-    .local p1, "src":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 65
@@ -96,61 +91,65 @@
     .end annotation
 
     .prologue
-    .line 75
-    .local p0, "enumClass":Ljava/lang/Class;, "Ljava/lang/Class<TF;>;"
     const/4 v1, 0x0
 
+    .line 75
     .line 76
-    .local v1, "flags":I
     invoke-virtual {p0}, Ljava/lang/Class;->getEnumConstants()[Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [Ljava/lang/Enum;
 
-    .local v0, "arr$":[Ljava/lang/Enum;
-    array-length v3, v0
+    array-length v5, v0
 
-    .local v3, "len$":I
-    const/4 v2, 0x0
+    move v4, v1
 
-    .local v2, "i$":I
-    :goto_9
-    if-ge v2, v3, :cond_20
+    move v3, v1
 
-    aget-object v4, v0, v2
+    :goto_a
+    if-ge v4, v5, :cond_23
 
-    .local v4, "value":Ljava/lang/Enum;, "TF;"
-    move-object v5, v4
+    aget-object v2, v0, v4
+
+    move-object v1, v2
 
     .line 77
-    check-cast v5, Lcom/fasterxml/jackson/databind/cfg/ConfigFeature;
+    check-cast v1, Lcom/fasterxml/jackson/databind/cfg/ConfigFeature;
 
-    invoke-interface {v5}, Lcom/fasterxml/jackson/databind/cfg/ConfigFeature;->enabledByDefault()Z
+    invoke-interface {v1}, Lcom/fasterxml/jackson/databind/cfg/ConfigFeature;->enabledByDefault()Z
 
-    move-result v5
+    move-result v1
 
-    if-eqz v5, :cond_1d
+    if-eqz v1, :cond_24
 
     .line 78
-    check-cast v4, Lcom/fasterxml/jackson/databind/cfg/ConfigFeature;
+    check-cast v2, Lcom/fasterxml/jackson/databind/cfg/ConfigFeature;
 
-    .end local v4    # "value":Ljava/lang/Enum;, "TF;"
-    invoke-interface {v4}, Lcom/fasterxml/jackson/databind/cfg/ConfigFeature;->getMask()I
+    invoke-interface {v2}, Lcom/fasterxml/jackson/databind/cfg/ConfigFeature;->getMask()I
 
-    move-result v5
+    move-result v1
 
-    or-int/2addr v1, v5
+    or-int/2addr v1, v3
 
     .line 76
-    :cond_1d
-    add-int/lit8 v2, v2, 0x1
+    :goto_1e
+    add-int/lit8 v2, v4, 0x1
 
-    goto :goto_9
+    move v4, v2
+
+    move v3, v1
+
+    goto :goto_a
 
     .line 81
-    :cond_20
-    return v1
+    :cond_23
+    return v3
+
+    :cond_24
+    move v1, v3
+
+    goto :goto_1e
 .end method
 
 
@@ -160,7 +159,6 @@
 
     .prologue
     .line 153
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
     sget-object v0, Lcom/fasterxml/jackson/databind/MapperFeature;->CAN_OVERRIDE_ACCESS_MODIFIERS:Lcom/fasterxml/jackson/databind/MapperFeature;
 
     invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->isEnabled(Lcom/fasterxml/jackson/databind/MapperFeature;)Z
@@ -172,11 +170,9 @@
 
 .method public compileString(Ljava/lang/String;)Lcom/fasterxml/jackson/core/SerializableString;
     .registers 3
-    .param p1, "src"    # Ljava/lang/String;
 
     .prologue
     .line 193
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
     new-instance v0, Lcom/fasterxml/jackson/core/io/SerializedString;
 
     invoke-direct {v0, p1}, Lcom/fasterxml/jackson/core/io/SerializedString;-><init>(Ljava/lang/String;)V
@@ -186,7 +182,6 @@
 
 .method public constructSpecializedType(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 4
-    .param p1, "baseType"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -199,8 +194,6 @@
 
     .prologue
     .line 284
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
-    .local p2, "subclass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getTypeFactory()Lcom/fasterxml/jackson/databind/type/TypeFactory;
 
     move-result-object v0
@@ -225,8 +218,6 @@
 
     .prologue
     .line 280
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
-    .local p1, "valueTypeRef":Lcom/fasterxml/jackson/core/type/TypeReference;, "Lcom/fasterxml/jackson/core/type/TypeReference<*>;"
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getTypeFactory()Lcom/fasterxml/jackson/databind/type/TypeFactory;
 
     move-result-object v1
@@ -259,8 +250,6 @@
 
     .prologue
     .line 268
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getTypeFactory()Lcom/fasterxml/jackson/databind/type/TypeFactory;
 
     move-result-object v1
@@ -291,7 +280,6 @@
 
     .prologue
     .line 213
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_base:Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;->getAnnotationIntrospector()Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
@@ -309,7 +297,6 @@
 
     .prologue
     .line 373
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_base:Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;->getBase64Variant()Lcom/fasterxml/jackson/core/Base64Variant;
@@ -324,7 +311,6 @@
 
     .prologue
     .line 203
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_base:Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;->getClassIntrospector()Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector;
@@ -339,7 +325,6 @@
 
     .prologue
     .line 344
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_base:Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;->getDateFormat()Ljava/text/DateFormat;
@@ -351,7 +336,6 @@
 
 .method public final getDefaultTyper(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
     .registers 3
-    .param p1, "baseType"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -364,7 +348,6 @@
 
     .prologue
     .line 250
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_base:Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;->getTypeResolverBuilder()Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
@@ -386,7 +369,6 @@
 
     .prologue
     .line 226
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_base:Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;->getVisibilityChecker()Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;
@@ -401,7 +383,6 @@
 
     .prologue
     .line 234
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_base:Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;->getHandlerInstantiator()Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;
@@ -416,7 +397,6 @@
 
     .prologue
     .line 351
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_base:Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;->getLocale()Ljava/util/Locale;
@@ -431,7 +411,6 @@
 
     .prologue
     .line 230
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_base:Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;->getPropertyNamingStrategy()Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;
@@ -449,7 +428,6 @@
 
     .prologue
     .line 358
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_base:Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;->getTimeZone()Ljava/util/TimeZone;
@@ -464,7 +442,6 @@
 
     .prologue
     .line 256
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_base:Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;->getTypeFactory()Lcom/fasterxml/jackson/databind/type/TypeFactory;
@@ -476,11 +453,9 @@
 
 .method public final hasMapperFeatures(I)Z
     .registers 3
-    .param p1, "featureMask"    # I
 
     .prologue
     .line 128
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
     iget v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_mapperFeatures:I
 
     and-int/2addr v0, p1
@@ -514,8 +489,6 @@
 
     .prologue
     .line 298
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->constructType(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object v0
@@ -543,8 +516,6 @@
 
     .prologue
     .line 313
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->constructType(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/JavaType;
 
     move-result-object v0
@@ -561,7 +532,6 @@
 
     .prologue
     .line 138
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
     sget-object v0, Lcom/fasterxml/jackson/databind/MapperFeature;->USE_ANNOTATIONS:Lcom/fasterxml/jackson/databind/MapperFeature;
 
     invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->isEnabled(Lcom/fasterxml/jackson/databind/MapperFeature;)Z
@@ -573,11 +543,9 @@
 
 .method public final isEnabled(Lcom/fasterxml/jackson/databind/MapperFeature;)Z
     .registers 4
-    .param p1, "f"    # Lcom/fasterxml/jackson/databind/MapperFeature;
 
     .prologue
     .line 118
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
     iget v0, p0, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->_mapperFeatures:I
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/MapperFeature;->getMask()I
@@ -604,7 +572,6 @@
 
     .prologue
     .line 161
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
     sget-object v0, Lcom/fasterxml/jackson/databind/MapperFeature;->SORT_PROPERTIES_ALPHABETICALLY:Lcom/fasterxml/jackson/databind/MapperFeature;
 
     invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->isEnabled(Lcom/fasterxml/jackson/databind/MapperFeature;)Z
@@ -615,8 +582,7 @@
 .end method
 
 .method public typeIdResolverInstance(Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;
-    .registers 6
-    .param p1, "annotated"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
+    .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -631,49 +597,41 @@
 
     .prologue
     .line 415
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
-    .local p2, "resolverClass":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;>;"
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getHandlerInstantiator()Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 416
-    .local v1, "hi":Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;
-    if-eqz v1, :cond_d
+    if-eqz v0, :cond_d
 
     .line 417
-    invoke-virtual {v1, p0, p1, p2}, Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;->typeIdResolverInstance(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;
+    invoke-virtual {v0, p0, p1, p2}, Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;->typeIdResolverInstance(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;
 
     move-result-object v0
 
     .line 418
-    .local v0, "builder":Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;
     if-eqz v0, :cond_d
 
     .line 422
-    .end local v0    # "builder":Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;
     :goto_c
     return-object v0
 
     :cond_d
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->canOverrideAccessModifiers()Z
 
-    move-result v2
+    move-result v0
 
-    invoke-static {p2, v2}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->createInstance(Ljava/lang/Class;Z)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->createInstance(Ljava/lang/Class;Z)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;
-
-    move-object v0, v2
+    check-cast v0, Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;
 
     goto :goto_c
 .end method
 
 .method public typeResolverBuilderInstance(Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
-    .registers 6
-    .param p1, "annotated"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
+    .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -689,42 +647,35 @@
 
     .prologue
     .line 398
-    .local p0, "this":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<TT;>;"
-    .local p2, "builderClass":Ljava/lang/Class;, "Ljava/lang/Class<+Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder<*>;>;"
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->getHandlerInstantiator()Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 399
-    .local v1, "hi":Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;
-    if-eqz v1, :cond_d
+    if-eqz v0, :cond_d
 
     .line 400
-    invoke-virtual {v1, p0, p1, p2}, Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;->typeResolverBuilderInstance(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
+    invoke-virtual {v0, p0, p1, p2}, Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;->typeResolverBuilderInstance(Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/introspect/Annotated;Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
 
     move-result-object v0
 
     .line 401
-    .local v0, "builder":Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;, "Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder<*>;"
     if-eqz v0, :cond_d
 
     .line 405
-    .end local v0    # "builder":Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;, "Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder<*>;"
     :goto_c
     return-object v0
 
     :cond_d
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/cfg/MapperConfig;->canOverrideAccessModifiers()Z
 
-    move-result v2
+    move-result v0
 
-    invoke-static {p2, v2}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->createInstance(Ljava/lang/Class;Z)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->createInstance(Ljava/lang/Class;Z)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
-
-    move-object v0, v2
+    check-cast v0, Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
 
     goto :goto_c
 .end method

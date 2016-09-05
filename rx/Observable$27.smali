@@ -5,12 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lrx/Observable;->subscribe(Lrx/functions/Action1;)Lrx/Subscription;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lrx/Observable;->a(Lrx/functions/Action1;)Lrx/Subscription;
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
@@ -22,9 +17,9 @@
 
 
 # instance fields
-.field final synthetic this$0:Lrx/Observable;
+.field final synthetic a:Lrx/functions/Action1;
 
-.field final synthetic val$onNext:Lrx/functions/Action1;
+.field final synthetic b:Lrx/Observable;
 
 
 # direct methods
@@ -33,10 +28,9 @@
 
     .prologue
     .line 7914
-    .local p0, "this":Lrx/Observable$27;, "Lrx/Observable.27;"
-    iput-object p1, p0, Lrx/Observable$27;->this$0:Lrx/Observable;
+    iput-object p1, p0, Lrx/Observable$27;->b:Lrx/Observable;
 
-    iput-object p2, p0, Lrx/Observable$27;->val$onNext:Lrx/functions/Action1;
+    iput-object p2, p0, Lrx/Observable$27;->a:Lrx/functions/Action1;
 
     invoke-direct {p0}, Lrx/Subscriber;-><init>()V
 
@@ -45,22 +39,11 @@
 
 
 # virtual methods
-.method public final onCompleted()V
-    .registers 1
-
-    .prologue
-    .line 7919
-    .local p0, "this":Lrx/Observable$27;, "Lrx/Observable.27;"
-    return-void
-.end method
-
-.method public final onError(Ljava/lang/Throwable;)V
+.method public final a(Ljava/lang/Throwable;)V
     .registers 3
-    .param p1, "e"    # Ljava/lang/Throwable;
 
     .prologue
     .line 7923
-    .local p0, "this":Lrx/Observable$27;, "Lrx/Observable.27;"
     new-instance v0, Lrx/exceptions/OnErrorNotImplementedException;
 
     invoke-direct {v0, p1}, Lrx/exceptions/OnErrorNotImplementedException;-><init>(Ljava/lang/Throwable;)V
@@ -68,7 +51,7 @@
     throw v0
 .end method
 
-.method public final onNext(Ljava/lang/Object;)V
+.method public final a_(Ljava/lang/Object;)V
     .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -78,12 +61,18 @@
 
     .prologue
     .line 7928
-    .local p0, "this":Lrx/Observable$27;, "Lrx/Observable.27;"
-    .local p1, "args":Ljava/lang/Object;, "TT;"
-    iget-object v0, p0, Lrx/Observable$27;->val$onNext:Lrx/functions/Action1;
+    iget-object v0, p0, Lrx/Observable$27;->a:Lrx/functions/Action1;
 
-    invoke-interface {v0, p1}, Lrx/functions/Action1;->call(Ljava/lang/Object;)V
+    invoke-interface {v0, p1}, Lrx/functions/Action1;->a(Ljava/lang/Object;)V
 
     .line 7929
+    return-void
+.end method
+
+.method public final i_()V
+    .registers 1
+
+    .prologue
+    .line 7919
     return-void
 .end method

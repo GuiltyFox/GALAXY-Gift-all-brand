@@ -5,99 +5,86 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/support/v7/app/AlertController$AlertParams;->createListView(Landroid/support/v7/app/AlertController;)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Landroid/support/v7/app/AlertController$AlertParams;->b(Landroid/support/v7/app/AlertController;)V
 .end annotation
 
 
 # instance fields
-.field private final mIsCheckedIndex:I
+.field final synthetic a:Landroid/widget/ListView;
 
-.field private final mLabelIndex:I
+.field final synthetic b:Landroid/support/v7/app/AlertController;
 
-.field final synthetic this$0:Landroid/support/v7/app/AlertController$AlertParams;
+.field final synthetic c:Landroid/support/v7/app/AlertController$AlertParams;
 
-.field final synthetic val$dialog:Landroid/support/v7/app/AlertController;
+.field private final d:I
 
-.field final synthetic val$listView:Landroid/widget/ListView;
+.field private final e:I
 
 
 # direct methods
 .method constructor <init>(Landroid/support/v7/app/AlertController$AlertParams;Landroid/content/Context;Landroid/database/Cursor;ZLandroid/widget/ListView;Landroid/support/v7/app/AlertController;)V
     .registers 9
-    .param p2, "x0"    # Landroid/content/Context;
-    .param p3, "x1"    # Landroid/database/Cursor;
-    .param p4, "x2"    # Z
 
     .prologue
-    .line 899
-    iput-object p1, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->this$0:Landroid/support/v7/app/AlertController$AlertParams;
+    .line 900
+    iput-object p1, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->c:Landroid/support/v7/app/AlertController$AlertParams;
 
-    iput-object p5, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->val$listView:Landroid/widget/ListView;
+    iput-object p5, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->a:Landroid/widget/ListView;
 
-    iput-object p6, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->val$dialog:Landroid/support/v7/app/AlertController;
+    iput-object p6, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->b:Landroid/support/v7/app/AlertController;
 
     invoke-direct {p0, p2, p3, p4}, Landroid/widget/CursorAdapter;-><init>(Landroid/content/Context;Landroid/database/Cursor;Z)V
 
-    .line 904
+    .line 905
     invoke-virtual {p0}, Landroid/support/v7/app/AlertController$AlertParams$2;->getCursor()Landroid/database/Cursor;
 
     move-result-object v0
 
-    .line 905
-    .local v0, "cursor":Landroid/database/Cursor;
-    iget-object v1, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->this$0:Landroid/support/v7/app/AlertController$AlertParams;
-
-    iget-object v1, v1, Landroid/support/v7/app/AlertController$AlertParams;->mLabelColumn:Ljava/lang/String;
-
-    invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
-
-    move-result v1
-
-    iput v1, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->mLabelIndex:I
-
     .line 906
-    iget-object v1, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->this$0:Landroid/support/v7/app/AlertController$AlertParams;
+    iget-object v1, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->c:Landroid/support/v7/app/AlertController$AlertParams;
 
-    iget-object v1, v1, Landroid/support/v7/app/AlertController$AlertParams;->mIsCheckedColumn:Ljava/lang/String;
+    iget-object v1, v1, Landroid/support/v7/app/AlertController$AlertParams;->I:Ljava/lang/String;
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
 
     move-result v1
 
-    iput v1, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->mIsCheckedIndex:I
+    iput v1, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->d:I
 
     .line 907
+    iget-object v1, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->c:Landroid/support/v7/app/AlertController$AlertParams;
+
+    iget-object v1, v1, Landroid/support/v7/app/AlertController$AlertParams;->J:Ljava/lang/String;
+
+    invoke-interface {v0, v1}, Landroid/database/Cursor;->getColumnIndexOrThrow(Ljava/lang/String;)I
+
+    move-result v0
+
+    iput v0, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->e:I
+
+    .line 908
     return-void
 .end method
 
 
 # virtual methods
 .method public bindView(Landroid/view/View;Landroid/content/Context;Landroid/database/Cursor;)V
-    .registers 9
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "context"    # Landroid/content/Context;
-    .param p3, "cursor"    # Landroid/database/Cursor;
+    .registers 8
 
     .prologue
     const/4 v1, 0x1
 
-    .line 911
-    const v2, 0x1020014
+    .line 912
+    const v0, 0x1020014
 
-    invoke-virtual {p1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/CheckedTextView;
 
-    .line 913
-    .local v0, "text":Landroid/widget/CheckedTextView;
-    iget v2, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->mLabelIndex:I
+    .line 914
+    iget v2, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->d:I
 
     invoke-interface {p3, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
 
@@ -105,50 +92,48 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/CheckedTextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 914
-    iget-object v2, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->val$listView:Landroid/widget/ListView;
+    .line 915
+    iget-object v2, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->a:Landroid/widget/ListView;
 
     invoke-interface {p3}, Landroid/database/Cursor;->getPosition()I
 
     move-result v3
 
-    iget v4, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->mIsCheckedIndex:I
+    iget v0, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->e:I
 
-    invoke-interface {p3, v4}, Landroid/database/Cursor;->getInt(I)I
+    invoke-interface {p3, v0}, Landroid/database/Cursor;->getInt(I)I
 
-    move-result v4
+    move-result v0
 
-    if-ne v4, v1, :cond_25
+    if-ne v0, v1, :cond_26
 
-    :goto_21
-    invoke-virtual {v2, v3, v1}, Landroid/widget/ListView;->setItemChecked(IZ)V
+    move v0, v1
 
-    .line 916
+    :goto_22
+    invoke-virtual {v2, v3, v0}, Landroid/widget/ListView;->setItemChecked(IZ)V
+
+    .line 917
     return-void
 
-    .line 914
-    :cond_25
-    const/4 v1, 0x0
+    .line 915
+    :cond_26
+    const/4 v0, 0x0
 
-    goto :goto_21
+    goto :goto_22
 .end method
 
 .method public newView(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
     .registers 7
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "cursor"    # Landroid/database/Cursor;
-    .param p3, "parent"    # Landroid/view/ViewGroup;
 
     .prologue
-    .line 920
-    iget-object v0, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->this$0:Landroid/support/v7/app/AlertController$AlertParams;
+    .line 921
+    iget-object v0, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->c:Landroid/support/v7/app/AlertController$AlertParams;
 
-    iget-object v0, v0, Landroid/support/v7/app/AlertController$AlertParams;->mInflater:Landroid/view/LayoutInflater;
+    iget-object v0, v0, Landroid/support/v7/app/AlertController$AlertParams;->b:Landroid/view/LayoutInflater;
 
-    iget-object v1, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->val$dialog:Landroid/support/v7/app/AlertController;
+    iget-object v1, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->b:Landroid/support/v7/app/AlertController;
 
-    # getter for: Landroid/support/v7/app/AlertController;->mMultiChoiceItemLayout:I
-    invoke-static {v1}, Landroid/support/v7/app/AlertController;->access$1200(Landroid/support/v7/app/AlertController;)I
+    invoke-static {v1}, Landroid/support/v7/app/AlertController;->l(Landroid/support/v7/app/AlertController;)I
 
     move-result v1
 

@@ -3,38 +3,6 @@
 .source "ActionBar.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/v7/app/ActionBar$LayoutParams;,
-        Landroid/support/v7/app/ActionBar$TabListener;,
-        Landroid/support/v7/app/ActionBar$Tab;,
-        Landroid/support/v7/app/ActionBar$OnMenuVisibilityListener;,
-        Landroid/support/v7/app/ActionBar$OnNavigationListener;,
-        Landroid/support/v7/app/ActionBar$DisplayOptions;,
-        Landroid/support/v7/app/ActionBar$NavigationMode;
-    }
-.end annotation
-
-
-# static fields
-.field public static final DISPLAY_HOME_AS_UP:I = 0x4
-
-.field public static final DISPLAY_SHOW_CUSTOM:I = 0x10
-
-.field public static final DISPLAY_SHOW_HOME:I = 0x2
-
-.field public static final DISPLAY_SHOW_TITLE:I = 0x8
-
-.field public static final DISPLAY_USE_LOGO:I = 0x1
-
-.field public static final NAVIGATION_MODE_LIST:I = 0x1
-
-.field public static final NAVIGATION_MODE_STANDARD:I = 0x0
-
-.field public static final NAVIGATION_MODE_TABS:I = 0x2
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -49,272 +17,21 @@
 
 
 # virtual methods
-.method public abstract addOnMenuVisibilityListener(Landroid/support/v7/app/ActionBar$OnMenuVisibilityListener;)V
+.method public abstract a()I
 .end method
 
-.method public abstract addTab(Landroid/support/v7/app/ActionBar$Tab;)V
-.end method
-
-.method public abstract addTab(Landroid/support/v7/app/ActionBar$Tab;I)V
-.end method
-
-.method public abstract addTab(Landroid/support/v7/app/ActionBar$Tab;IZ)V
-.end method
-
-.method public abstract addTab(Landroid/support/v7/app/ActionBar$Tab;Z)V
-.end method
-
-.method public collapseActionView()Z
-    .registers 2
+.method public a(Landroid/support/v7/view/ActionMode$Callback;)Landroid/support/v7/view/ActionMode;
+    .registers 3
 
     .prologue
-    .line 1061
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public dispatchMenuVisibilityChanged(Z)V
-    .registers 2
-    .param p1, "visible"    # Z
-
-    .prologue
-    .line 1032
-    return-void
-.end method
-
-.method public abstract getCustomView()Landroid/view/View;
-.end method
-
-.method public abstract getDisplayOptions()I
-.end method
-
-.method public getElevation()F
-    .registers 2
-
-    .prologue
-    .line 1015
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public abstract getHeight()I
-.end method
-
-.method public getHideOffset()I
-    .registers 2
-
-    .prologue
-    .line 972
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public abstract getNavigationItemCount()I
-.end method
-
-.method public abstract getNavigationMode()I
-.end method
-
-.method public abstract getSelectedNavigationIndex()I
-.end method
-
-.method public abstract getSelectedTab()Landroid/support/v7/app/ActionBar$Tab;
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
-.end method
-
-.method public abstract getSubtitle()Ljava/lang/CharSequence;
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
-.end method
-
-.method public abstract getTabAt(I)Landroid/support/v7/app/ActionBar$Tab;
-.end method
-
-.method public abstract getTabCount()I
-.end method
-
-.method public getThemedContext()Landroid/content/Context;
-    .registers 2
-
-    .prologue
-    .line 839
+    .line 1036
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
-.method public abstract getTitle()Ljava/lang/CharSequence;
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
-.end method
-
-.method public abstract hide()V
-.end method
-
-.method public invalidateOptionsMenu()Z
-    .registers 2
-
-    .prologue
-    .line 1046
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public isHideOnContentScrollEnabled()Z
-    .registers 2
-
-    .prologue
-    .line 959
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public abstract isShowing()Z
-.end method
-
-.method public isTitleTruncated()Z
-    .registers 2
-
-    .prologue
-    .line 849
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public abstract newTab()Landroid/support/v7/app/ActionBar$Tab;
-.end method
-
-.method public onConfigurationChanged(Landroid/content/res/Configuration;)V
-    .registers 2
-    .param p1, "config"    # Landroid/content/res/Configuration;
-
-    .prologue
-    .line 1028
-    return-void
-.end method
-
-.method onDestroy()V
-    .registers 1
-
-    .prologue
-    .line 1081
-    return-void
-.end method
-
-.method public onKeyShortcut(ILandroid/view/KeyEvent;)Z
+.method public a(F)V
     .registers 4
-    .param p1, "keyCode"    # I
-    .param p2, "ev"    # Landroid/view/KeyEvent;
-
-    .prologue
-    .line 1056
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public onMenuKeyEvent(Landroid/view/KeyEvent;)Z
-    .registers 3
-    .param p1, "event"    # Landroid/view/KeyEvent;
-
-    .prologue
-    .line 1051
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public openOptionsMenu()Z
-    .registers 2
-
-    .prologue
-    .line 1041
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public abstract removeAllTabs()V
-.end method
-
-.method public abstract removeOnMenuVisibilityListener(Landroid/support/v7/app/ActionBar$OnMenuVisibilityListener;)V
-.end method
-
-.method public abstract removeTab(Landroid/support/v7/app/ActionBar$Tab;)V
-.end method
-
-.method public abstract removeTabAt(I)V
-.end method
-
-.method requestFocus()Z
-    .registers 2
-
-    .prologue
-    .line 1074
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public abstract selectTab(Landroid/support/v7/app/ActionBar$Tab;)V
-.end method
-
-.method public abstract setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-    .param p1    # Landroid/graphics/drawable/Drawable;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
-.end method
-
-.method public abstract setCustomView(I)V
-.end method
-
-.method public abstract setCustomView(Landroid/view/View;)V
-.end method
-
-.method public abstract setCustomView(Landroid/view/View;Landroid/support/v7/app/ActionBar$LayoutParams;)V
-.end method
-
-.method public setDefaultDisplayHomeAsUpEnabled(Z)V
-    .registers 2
-    .param p1, "enabled"    # Z
-
-    .prologue
-    .line 1020
-    return-void
-.end method
-
-.method public abstract setDisplayHomeAsUpEnabled(Z)V
-.end method
-
-.method public abstract setDisplayOptions(I)V
-.end method
-
-.method public abstract setDisplayOptions(II)V
-.end method
-
-.method public abstract setDisplayShowCustomEnabled(Z)V
-.end method
-
-.method public abstract setDisplayShowHomeEnabled(Z)V
-.end method
-
-.method public abstract setDisplayShowTitleEnabled(Z)V
-.end method
-
-.method public abstract setDisplayUseLogoEnabled(Z)V
-.end method
-
-.method public setElevation(F)V
-    .registers 4
-    .param p1, "elevation"    # F
 
     .prologue
     .line 1000
@@ -338,31 +55,51 @@
     return-void
 .end method
 
-.method public setHideOffset(I)V
-    .registers 4
-    .param p1, "offset"    # I
+.method public a(Landroid/content/res/Configuration;)V
+    .registers 2
 
     .prologue
-    .line 985
-    if-eqz p1, :cond_b
-
-    .line 986
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string/jumbo v1, "Setting an explicit action bar hide offset is not supported in this action bar configuration."
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    .line 989
-    :cond_b
+    .line 1028
     return-void
 .end method
 
-.method public setHideOnContentScrollEnabled(Z)V
+.method public abstract a(Ljava/lang/CharSequence;)V
+.end method
+
+.method public abstract a(Z)V
+.end method
+
+.method public a(ILandroid/view/KeyEvent;)Z
     .registers 4
-    .param p1, "hideOnContentScroll"    # Z
+
+    .prologue
+    .line 1056
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public abstract b()I
+.end method
+
+.method public b(Ljava/lang/CharSequence;)V
+    .registers 2
+
+    .prologue
+    .line 1066
+    return-void
+.end method
+
+.method public b(Z)V
+    .registers 2
+
+    .prologue
+    .line 827
+    return-void
+.end method
+
+.method public c(Z)V
+    .registers 4
 
     .prologue
     .line 945
@@ -382,154 +119,87 @@
     return-void
 .end method
 
-.method public setHomeActionContentDescription(I)V
+.method public abstract c()Z
+.end method
+
+.method public d()Landroid/content/Context;
     .registers 2
-    .param p1, "resId"    # I
-        .annotation build Landroid/support/annotation/StringRes;
-        .end annotation
-    .end param
 
     .prologue
-    .line 929
+    .line 839
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public d(Z)V
+    .registers 2
+
+    .prologue
+    .line 1020
     return-void
 .end method
 
-.method public setHomeActionContentDescription(Ljava/lang/CharSequence;)V
+.method public e()I
     .registers 2
-    .param p1, "description"    # Ljava/lang/CharSequence;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
 
     .prologue
-    .line 909
-    return-void
+    .line 972
+    const/4 v0, 0x0
+
+    return v0
 .end method
 
-.method public setHomeAsUpIndicator(I)V
+.method public e(Z)V
     .registers 2
-    .param p1, "resId"    # I
-        .annotation build Landroid/support/annotation/DrawableRes;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 890
-    return-void
-.end method
-
-.method public setHomeAsUpIndicator(Landroid/graphics/drawable/Drawable;)V
-    .registers 2
-    .param p1, "indicator"    # Landroid/graphics/drawable/Drawable;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
-
-    .prologue
-    .line 869
-    return-void
-.end method
-
-.method public setHomeButtonEnabled(Z)V
-    .registers 2
-    .param p1, "enabled"    # Z
-
-    .prologue
-    .line 827
-    return-void
-.end method
-
-.method public abstract setIcon(I)V
-    .param p1    # I
-        .annotation build Landroid/support/annotation/DrawableRes;
-        .end annotation
-    .end param
-.end method
-
-.method public abstract setIcon(Landroid/graphics/drawable/Drawable;)V
-.end method
-
-.method public abstract setListNavigationCallbacks(Landroid/widget/SpinnerAdapter;Landroid/support/v7/app/ActionBar$OnNavigationListener;)V
-.end method
-
-.method public abstract setLogo(I)V
-    .param p1    # I
-        .annotation build Landroid/support/annotation/DrawableRes;
-        .end annotation
-    .end param
-.end method
-
-.method public abstract setLogo(Landroid/graphics/drawable/Drawable;)V
-.end method
-
-.method public abstract setNavigationMode(I)V
-.end method
-
-.method public abstract setSelectedNavigationItem(I)V
-.end method
-
-.method public setShowHideAnimationEnabled(Z)V
-    .registers 2
-    .param p1, "enabled"    # Z
 
     .prologue
     .line 1024
     return-void
 .end method
 
-.method public setSplitBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+.method public f(Z)V
     .registers 2
-    .param p1, "d"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 528
+    .line 1032
     return-void
 .end method
 
-.method public setStackedBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+.method public f()Z
     .registers 2
-    .param p1, "d"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 518
-    return-void
-.end method
-
-.method public abstract setSubtitle(I)V
-.end method
-
-.method public abstract setSubtitle(Ljava/lang/CharSequence;)V
-.end method
-
-.method public abstract setTitle(I)V
-    .param p1    # I
-        .annotation build Landroid/support/annotation/StringRes;
-        .end annotation
-    .end param
-.end method
-
-.method public abstract setTitle(Ljava/lang/CharSequence;)V
-.end method
-
-.method public setWindowTitle(Ljava/lang/CharSequence;)V
-    .registers 2
-    .param p1, "title"    # Ljava/lang/CharSequence;
-
-    .prologue
-    .line 1066
-    return-void
-.end method
-
-.method public abstract show()V
-.end method
-
-.method public startActionMode(Landroid/support/v7/view/ActionMode$Callback;)Landroid/support/v7/view/ActionMode;
-    .registers 3
-    .param p1, "callback"    # Landroid/support/v7/view/ActionMode$Callback;
-
-    .prologue
-    .line 1036
+    .line 1046
     const/4 v0, 0x0
 
-    return-object v0
+    return v0
+.end method
+
+.method public g()Z
+    .registers 2
+
+    .prologue
+    .line 1061
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method h()Z
+    .registers 2
+
+    .prologue
+    .line 1074
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method i()V
+    .registers 1
+
+    .prologue
+    .line 1081
+    return-void
 .end method

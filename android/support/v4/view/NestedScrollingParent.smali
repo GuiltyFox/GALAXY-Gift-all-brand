@@ -4,9 +4,6 @@
 
 
 # virtual methods
-.method public abstract getNestedScrollAxes()I
-.end method
-
 .method public abstract onNestedFling(Landroid/view/View;FFZ)Z
 .end method
 

@@ -10,11 +10,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/PropertyName;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/util/Annotations;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;Ljava/lang/Object;)V
     .registers 13
-    .param p1, "propName"    # Lcom/fasterxml/jackson/databind/PropertyName;
-    .param p2, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "contextAnnotations"    # Lcom/fasterxml/jackson/databind/util/Annotations;
-    .param p4, "mutator"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
-    .param p5, "valueId"    # Ljava/lang/Object;
 
     .prologue
     .line 31
@@ -43,11 +38,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/util/Annotations;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;Ljava/lang/Object;)V
     .registers 12
-    .param p1, "propName"    # Ljava/lang/String;
-    .param p2, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "contextAnnotations"    # Lcom/fasterxml/jackson/databind/util/Annotations;
-    .param p4, "mutator"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
-    .param p5, "valueId"    # Ljava/lang/Object;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -77,8 +67,6 @@
 # virtual methods
 .method public findValue(Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
-    .param p1, "context"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .param p2, "beanInstance"    # Ljava/lang/Object;
 
     .prologue
     .line 46
@@ -93,13 +81,6 @@
 
 .method public inject(Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;)V
     .registers 5
-    .param p1, "context"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .param p2, "beanInstance"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 52

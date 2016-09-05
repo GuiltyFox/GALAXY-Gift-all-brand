@@ -14,7 +14,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;)V
     .registers 3
-    .param p1, "objectIdReader"    # Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -30,8 +29,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;Lcom/fasterxml/jackson/databind/PropertyMetadata;)V
     .registers 6
-    .param p1, "objectIdReader"    # Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;
-    .param p2, "metadata"    # Lcom/fasterxml/jackson/databind/PropertyMetadata;
 
     .prologue
     .line 32
@@ -56,7 +53,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdValueProperty;Lcom/fasterxml/jackson/databind/JsonDeserializer;)V
     .registers 4
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdValueProperty;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -68,7 +64,6 @@
 
     .prologue
     .line 39
-    .local p2, "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     invoke-direct {p0, p1, p2}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;-><init>(Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;Lcom/fasterxml/jackson/databind/JsonDeserializer;)V
 
     .line 40
@@ -82,8 +77,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdValueProperty;Lcom/fasterxml/jackson/databind/PropertyName;)V
     .registers 4
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdValueProperty;
-    .param p2, "newName"    # Lcom/fasterxml/jackson/databind/PropertyName;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -102,8 +95,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdValueProperty;Ljava/lang/String;)V
     .registers 4
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdValueProperty;
-    .param p2, "newName"    # Ljava/lang/String;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -123,15 +114,6 @@
 # virtual methods
 .method public deserializeAndSet(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;)V
     .registers 4
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .param p3, "instance"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 84
@@ -142,50 +124,38 @@
 .end method
 
 .method public deserializeSetAndReturn(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 9
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .param p3, "instance"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
+    .registers 7
 
     .prologue
     .line 93
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdValueProperty;->_valueDeserializer:Lcom/fasterxml/jackson/databind/JsonDeserializer;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdValueProperty;->_valueDeserializer:Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
-    invoke-virtual {v3, p1, p2}, Lcom/fasterxml/jackson/databind/JsonDeserializer;->deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
+    invoke-virtual {v0, p1, p2}, Lcom/fasterxml/jackson/databind/JsonDeserializer;->deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
 
     move-result-object v0
 
     .line 94
-    .local v0, "id":Ljava/lang/Object;
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdValueProperty;->_objectIdReader:Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdValueProperty;->_objectIdReader:Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;
 
-    iget-object v3, v3, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;->generator:Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;
+    iget-object v1, v1, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;->generator:Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;
 
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdValueProperty;->_objectIdReader:Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdValueProperty;->_objectIdReader:Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;
 
-    iget-object v4, v4, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;->resolver:Lcom/fasterxml/jackson/annotation/ObjectIdResolver;
+    iget-object v2, v2, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;->resolver:Lcom/fasterxml/jackson/annotation/ObjectIdResolver;
 
-    invoke-virtual {p2, v0, v3, v4}, Lcom/fasterxml/jackson/databind/DeserializationContext;->findObjectId(Ljava/lang/Object;Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;Lcom/fasterxml/jackson/annotation/ObjectIdResolver;)Lcom/fasterxml/jackson/databind/deser/impl/ReadableObjectId;
+    invoke-virtual {p2, v0, v1, v2}, Lcom/fasterxml/jackson/databind/DeserializationContext;->findObjectId(Ljava/lang/Object;Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;Lcom/fasterxml/jackson/annotation/ObjectIdResolver;)Lcom/fasterxml/jackson/databind/deser/impl/ReadableObjectId;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 95
-    .local v2, "roid":Lcom/fasterxml/jackson/databind/deser/impl/ReadableObjectId;
-    invoke-virtual {v2, p3}, Lcom/fasterxml/jackson/databind/deser/impl/ReadableObjectId;->bindItem(Ljava/lang/Object;)V
+    invoke-virtual {v1, p3}, Lcom/fasterxml/jackson/databind/deser/impl/ReadableObjectId;->bindItem(Ljava/lang/Object;)V
 
     .line 97
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdValueProperty;->_objectIdReader:Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdValueProperty;->_objectIdReader:Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;
 
-    iget-object v1, v3, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;->idProperty:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    iget-object v1, v1, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;->idProperty:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
     .line 98
-    .local v1, "idProp":Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
     if-eqz v1, :cond_1f
 
     .line 99
@@ -194,7 +164,6 @@
     move-result-object p3
 
     .line 101
-    .end local p3    # "instance":Ljava/lang/Object;
     :cond_1f
     return-object p3
 .end method
@@ -213,7 +182,6 @@
 
     .prologue
     .line 68
-    .local p1, "acls":Ljava/lang/Class;, "Ljava/lang/Class<TA;>;"
     const/4 v0, 0x0
 
     return-object v0
@@ -231,13 +199,6 @@
 
 .method public set(Ljava/lang/Object;Ljava/lang/Object;)V
     .registers 3
-    .param p1, "instance"    # Ljava/lang/Object;
-    .param p2, "value"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 106
@@ -248,46 +209,37 @@
 .end method
 
 .method public setAndReturn(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 6
-    .param p1, "instance"    # Ljava/lang/Object;
-    .param p2, "value"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 5
 
     .prologue
     .line 113
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdValueProperty;->_objectIdReader:Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdValueProperty;->_objectIdReader:Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;
 
-    iget-object v0, v1, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;->idProperty:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    iget-object v0, v0, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdReader;->idProperty:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
     .line 114
-    .local v0, "idProp":Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
     if-nez v0, :cond_f
 
     .line 115
-    new-instance v1, Ljava/lang/UnsupportedOperationException;
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
 
-    const-string/jumbo v2, "Should not call set() on ObjectIdProperty that has no SettableBeanProperty"
+    const-string/jumbo v1, "Should not call set() on ObjectIdProperty that has no SettableBeanProperty"
 
-    invoke-direct {v1, v2}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     .line 118
     :cond_f
     invoke-virtual {v0, p1, p2}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->setAndReturn(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public bridge synthetic withName(Lcom/fasterxml/jackson/databind/PropertyName;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/PropertyName;
 
     .prologue
     .line 17
@@ -300,7 +252,6 @@
 
 .method public withName(Lcom/fasterxml/jackson/databind/PropertyName;)Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdValueProperty;
     .registers 3
-    .param p1, "newName"    # Lcom/fasterxml/jackson/databind/PropertyName;
 
     .prologue
     .line 56
@@ -313,7 +264,6 @@
 
 .method public bridge synthetic withValueDeserializer(Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
     .prologue
     .line 17
@@ -337,7 +287,6 @@
 
     .prologue
     .line 61
-    .local p1, "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     new-instance v0, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdValueProperty;
 
     invoke-direct {v0, p0, p1}, Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdValueProperty;-><init>(Lcom/fasterxml/jackson/databind/deser/impl/ObjectIdValueProperty;Lcom/fasterxml/jackson/databind/JsonDeserializer;)V

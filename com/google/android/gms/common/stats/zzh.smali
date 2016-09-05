@@ -26,152 +26,128 @@
     return-void
 .end method
 
-.method static zza(Lcom/google/android/gms/common/stats/WakeLockEvent;Landroid/os/Parcel;I)V
+.method static a(Lcom/google/android/gms/common/stats/WakeLockEvent;Landroid/os/Parcel;I)V
     .registers 8
 
     const/4 v4, 0x0
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzav(Landroid/os/Parcel;)I
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;)I
 
     move-result v0
 
     const/4 v1, 0x1
 
-    iget v2, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->mVersionCode:I
+    iget v2, p0, Lcom/google/android/gms/common/stats/WakeLockEvent;->a:I
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;II)V
 
     const/4 v1, 0x2
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->getTimeMillis()J
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->a()J
 
     move-result-wide v2
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;IJ)V
 
     const/4 v1, 0x4
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzrB()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->c()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     const/4 v1, 0x5
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzrD()I
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->e()I
 
     move-result v2
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;II)V
 
     const/4 v1, 0x6
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzrE()Ljava/util/List;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->f()Ljava/util/List;
 
     move-result-object v2
 
-    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzb(Landroid/os/Parcel;ILjava/util/List;Z)V
+    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;ILjava/util/List;Z)V
 
     const/16 v1, 0x8
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzrx()J
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->h()J
 
     move-result-wide v2
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;IJ)V
 
     const/16 v1, 0xa
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzrC()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->d()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     const/16 v1, 0xb
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->getEventType()I
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->b()I
 
     move-result v2
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;II)V
 
     const/16 v1, 0xc
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzru()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->g()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     const/16 v1, 0xd
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzrG()Ljava/lang/String;
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->k()Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;ILjava/lang/String;Z)V
+    invoke-static {p1, v1, v2, v4}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;ILjava/lang/String;Z)V
 
     const/16 v1, 0xe
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzrF()I
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->j()I
 
     move-result v2
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzc(Landroid/os/Parcel;II)V
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;II)V
 
     const/16 v1, 0xf
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzrH()F
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->m()F
 
     move-result v2
 
-    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IF)V
+    invoke-static {p1, v1, v2}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;IF)V
 
     const/16 v1, 0x10
 
-    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->zzrI()J
+    invoke-virtual {p0}, Lcom/google/android/gms/common/stats/WakeLockEvent;->n()J
 
     move-result-wide v2
 
-    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zza(Landroid/os/Parcel;IJ)V
+    invoke-static {p1, v1, v2, v3}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;IJ)V
 
-    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->zzI(Landroid/os/Parcel;I)V
+    invoke-static {p1, v0}, Lcom/google/android/gms/common/internal/safeparcel/zzb;->a(Landroid/os/Parcel;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 3
-    .param p1, "x0"    # Landroid/os/Parcel;
-
-    .prologue
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/stats/zzh;->zzaG(Landroid/os/Parcel;)Lcom/google/android/gms/common/stats/WakeLockEvent;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public synthetic newArray(I)[Ljava/lang/Object;
-    .registers 3
-    .param p1, "x0"    # I
-
-    .prologue
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/stats/zzh;->zzco(I)[Lcom/google/android/gms/common/stats/WakeLockEvent;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public zzaG(Landroid/os/Parcel;)Lcom/google/android/gms/common/stats/WakeLockEvent;
+.method public a(Landroid/os/Parcel;)Lcom/google/android/gms/common/stats/WakeLockEvent;
     .registers 23
 
-    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzau(Landroid/os/Parcel;)I
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->b(Landroid/os/Parcel;)I
 
     move-result v2
 
@@ -208,11 +184,11 @@
 
     if-ge v3, v2, :cond_88
 
-    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzat(Landroid/os/Parcel;)I
+    invoke-static/range {p1 .. p1}, Lcom/google/android/gms/common/internal/safeparcel/zza;->a(Landroid/os/Parcel;)I
 
     move-result v3
 
-    invoke-static {v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzcc(I)I
+    invoke-static {v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->a(I)I
 
     move-result v20
 
@@ -221,14 +197,14 @@
     :pswitch_27
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzb(Landroid/os/Parcel;I)V
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->b(Landroid/os/Parcel;I)V
 
     goto :goto_16
 
     :pswitch_2d
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzg(Landroid/os/Parcel;I)I
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->c(Landroid/os/Parcel;I)I
 
     move-result v4
 
@@ -237,7 +213,7 @@
     :pswitch_34
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzi(Landroid/os/Parcel;I)J
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->d(Landroid/os/Parcel;I)J
 
     move-result-wide v5
 
@@ -246,7 +222,7 @@
     :pswitch_3b
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzp(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->f(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v8
 
@@ -255,7 +231,7 @@
     :pswitch_42
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzg(Landroid/os/Parcel;I)I
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->c(Landroid/os/Parcel;I)I
 
     move-result v9
 
@@ -264,7 +240,7 @@
     :pswitch_49
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzD(Landroid/os/Parcel;I)Ljava/util/ArrayList;
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->g(Landroid/os/Parcel;I)Ljava/util/ArrayList;
 
     move-result-object v10
 
@@ -273,7 +249,7 @@
     :pswitch_50
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzi(Landroid/os/Parcel;I)J
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->d(Landroid/os/Parcel;I)J
 
     move-result-wide v12
 
@@ -282,7 +258,7 @@
     :pswitch_57
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzp(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->f(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v15
 
@@ -291,7 +267,7 @@
     :pswitch_5e
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzg(Landroid/os/Parcel;I)I
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->c(Landroid/os/Parcel;I)I
 
     move-result v7
 
@@ -300,7 +276,7 @@
     :pswitch_65
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzp(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->f(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v11
 
@@ -309,7 +285,7 @@
     :pswitch_6c
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzp(Landroid/os/Parcel;I)Ljava/lang/String;
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->f(Landroid/os/Parcel;I)Ljava/lang/String;
 
     move-result-object v16
 
@@ -318,7 +294,7 @@
     :pswitch_73
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzg(Landroid/os/Parcel;I)I
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->c(Landroid/os/Parcel;I)I
 
     move-result v14
 
@@ -327,7 +303,7 @@
     :pswitch_7a
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzl(Landroid/os/Parcel;I)F
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->e(Landroid/os/Parcel;I)F
 
     move-result v17
 
@@ -336,7 +312,7 @@
     :pswitch_81
     move-object/from16 v0, p1
 
-    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->zzi(Landroid/os/Parcel;I)J
+    invoke-static {v0, v3}, Lcom/google/android/gms/common/internal/safeparcel/zza;->d(Landroid/os/Parcel;I)J
 
     move-result-wide v18
 
@@ -403,10 +379,30 @@
     .end packed-switch
 .end method
 
-.method public zzco(I)[Lcom/google/android/gms/common/stats/WakeLockEvent;
+.method public a(I)[Lcom/google/android/gms/common/stats/WakeLockEvent;
     .registers 3
 
     new-array v0, p1, [Lcom/google/android/gms/common/stats/WakeLockEvent;
+
+    return-object v0
+.end method
+
+.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .registers 3
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/stats/zzh;->a(Landroid/os/Parcel;)Lcom/google/android/gms/common/stats/WakeLockEvent;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic newArray(I)[Ljava/lang/Object;
+    .registers 3
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/common/stats/zzh;->a(I)[Lcom/google/android/gms/common/stats/WakeLockEvent;
+
+    move-result-object v0
 
     return-object v0
 .end method

@@ -15,10 +15,7 @@
 
 
 # virtual methods
-.method public abstract getId()Ljava/lang/String;
-.end method
-
-.method public abstract transform(Lcom/bumptech/glide/load/engine/Resource;II)Lcom/bumptech/glide/load/engine/Resource;
+.method public abstract a(Lcom/bumptech/glide/load/engine/Resource;II)Lcom/bumptech/glide/load/engine/Resource;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -28,4 +25,7 @@
             "<TT;>;"
         }
     .end annotation
+.end method
+
+.method public abstract a()Ljava/lang/String;
 .end method

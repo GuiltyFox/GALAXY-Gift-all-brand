@@ -20,90 +20,75 @@
 
 # virtual methods
 .method public process(Lcz/msebera/android/httpclient/HttpRequest;Lcz/msebera/android/httpclient/protocol/HttpContext;)V
-    .registers 10
-    .param p1, "request"    # Lcz/msebera/android/httpclient/HttpRequest;
-    .param p2, "context"    # Lcz/msebera/android/httpclient/protocol/HttpContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcz/msebera/android/httpclient/HttpException;,
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 8
 
     .prologue
     .line 39
-    const-string/jumbo v5, "http.auth.target-scope"
+    const-string/jumbo v0, "http.auth.target-scope"
 
-    invoke-interface {p2, v5}, Lcz/msebera/android/httpclient/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {p2, v0}, Lcz/msebera/android/httpclient/protocol/HttpContext;->a(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcz/msebera/android/httpclient/auth/AuthState;
+
+    .line 40
+    const-string/jumbo v1, "http.auth.credentials-provider"
+
+    invoke-interface {p2, v1}, Lcz/msebera/android/httpclient/protocol/HttpContext;->a(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lcz/msebera/android/httpclient/auth/AuthState;
-
-    .line 40
-    .local v1, "authState":Lcz/msebera/android/httpclient/auth/AuthState;
-    const-string/jumbo v5, "http.auth.credentials-provider"
-
-    invoke-interface {p2, v5}, Lcz/msebera/android/httpclient/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcz/msebera/android/httpclient/client/CredentialsProvider;
+    check-cast v1, Lcz/msebera/android/httpclient/client/CredentialsProvider;
 
     .line 42
-    .local v3, "credsProvider":Lcz/msebera/android/httpclient/client/CredentialsProvider;
-    const-string/jumbo v5, "http.target_host"
+    const-string/jumbo v2, "http.target_host"
 
-    invoke-interface {p2, v5}, Lcz/msebera/android/httpclient/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lcz/msebera/android/httpclient/HttpHost;
-
-    .line 44
-    .local v4, "targetHost":Lcz/msebera/android/httpclient/HttpHost;
-    invoke-virtual {v1}, Lcz/msebera/android/httpclient/auth/AuthState;->getAuthScheme()Lcz/msebera/android/httpclient/auth/AuthScheme;
-
-    move-result-object v5
-
-    if-nez v5, :cond_3f
-
-    .line 45
-    new-instance v0, Lcz/msebera/android/httpclient/auth/AuthScope;
-
-    invoke-virtual {v4}, Lcz/msebera/android/httpclient/HttpHost;->getHostName()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4}, Lcz/msebera/android/httpclient/HttpHost;->getPort()I
-
-    move-result v6
-
-    invoke-direct {v0, v5, v6}, Lcz/msebera/android/httpclient/auth/AuthScope;-><init>(Ljava/lang/String;I)V
-
-    .line 46
-    .local v0, "authScope":Lcz/msebera/android/httpclient/auth/AuthScope;
-    invoke-interface {v3, v0}, Lcz/msebera/android/httpclient/client/CredentialsProvider;->getCredentials(Lcz/msebera/android/httpclient/auth/AuthScope;)Lcz/msebera/android/httpclient/auth/Credentials;
+    invoke-interface {p2, v2}, Lcz/msebera/android/httpclient/protocol/HttpContext;->a(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v2
 
+    check-cast v2, Lcz/msebera/android/httpclient/HttpHost;
+
+    .line 44
+    invoke-virtual {v0}, Lcz/msebera/android/httpclient/auth/AuthState;->c()Lcz/msebera/android/httpclient/auth/AuthScheme;
+
+    move-result-object v3
+
+    if-nez v3, :cond_3f
+
+    .line 45
+    new-instance v3, Lcz/msebera/android/httpclient/auth/AuthScope;
+
+    invoke-virtual {v2}, Lcz/msebera/android/httpclient/HttpHost;->a()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v2}, Lcz/msebera/android/httpclient/HttpHost;->b()I
+
+    move-result v2
+
+    invoke-direct {v3, v4, v2}, Lcz/msebera/android/httpclient/auth/AuthScope;-><init>(Ljava/lang/String;I)V
+
+    .line 46
+    invoke-interface {v1, v3}, Lcz/msebera/android/httpclient/client/CredentialsProvider;->a(Lcz/msebera/android/httpclient/auth/AuthScope;)Lcz/msebera/android/httpclient/auth/Credentials;
+
+    move-result-object v1
+
     .line 47
-    .local v2, "creds":Lcz/msebera/android/httpclient/auth/Credentials;
-    if-eqz v2, :cond_3f
+    if-eqz v1, :cond_3f
 
     .line 48
-    new-instance v5, Lcz/msebera/android/httpclient/impl/auth/BasicScheme;
+    new-instance v2, Lcz/msebera/android/httpclient/impl/auth/BasicScheme;
 
-    invoke-direct {v5}, Lcz/msebera/android/httpclient/impl/auth/BasicScheme;-><init>()V
+    invoke-direct {v2}, Lcz/msebera/android/httpclient/impl/auth/BasicScheme;-><init>()V
 
-    invoke-virtual {v1, v5}, Lcz/msebera/android/httpclient/auth/AuthState;->setAuthScheme(Lcz/msebera/android/httpclient/auth/AuthScheme;)V
+    invoke-virtual {v0, v2}, Lcz/msebera/android/httpclient/auth/AuthState;->a(Lcz/msebera/android/httpclient/auth/AuthScheme;)V
 
     .line 49
-    invoke-virtual {v1, v2}, Lcz/msebera/android/httpclient/auth/AuthState;->setCredentials(Lcz/msebera/android/httpclient/auth/Credentials;)V
+    invoke-virtual {v0, v1}, Lcz/msebera/android/httpclient/auth/AuthState;->a(Lcz/msebera/android/httpclient/auth/Credentials;)V
 
     .line 52
-    .end local v0    # "authScope":Lcz/msebera/android/httpclient/auth/AuthScope;
-    .end local v2    # "creds":Lcz/msebera/android/httpclient/auth/Credentials;
     :cond_3f
     return-void
 .end method

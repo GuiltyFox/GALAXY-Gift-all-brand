@@ -10,7 +10,6 @@
 # direct methods
 .method public constructor <init>(F)V
     .registers 2
-    .param p1, "v"    # F
 
     .prologue
     .line 27
@@ -23,7 +22,6 @@
 
 .method public static valueOf(F)Lcom/fasterxml/jackson/databind/node/FloatNode;
     .registers 2
-    .param p0, "v"    # F
 
     .prologue
     .line 29
@@ -172,61 +170,54 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .registers 6
-    .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 105
     if-ne p1, p0, :cond_5
 
     .line 113
-    .end local p1    # "o":Ljava/lang/Object;
     :cond_4
     :goto_4
-    return v1
+    return v0
 
     .line 106
-    .restart local p1    # "o":Ljava/lang/Object;
     :cond_5
     if-nez p1, :cond_9
 
-    move v1, v2
+    move v0, v1
 
     goto :goto_4
 
     .line 107
     :cond_9
-    instance-of v3, p1, Lcom/fasterxml/jackson/databind/node/FloatNode;
+    instance-of v2, p1, Lcom/fasterxml/jackson/databind/node/FloatNode;
 
-    if-eqz v3, :cond_1b
+    if-eqz v2, :cond_1b
 
     .line 110
     check-cast p1, Lcom/fasterxml/jackson/databind/node/FloatNode;
 
-    .end local p1    # "o":Ljava/lang/Object;
-    iget v0, p1, Lcom/fasterxml/jackson/databind/node/FloatNode;->_value:F
+    iget v2, p1, Lcom/fasterxml/jackson/databind/node/FloatNode;->_value:F
 
     .line 111
-    .local v0, "otherValue":F
     iget v3, p0, Lcom/fasterxml/jackson/databind/node/FloatNode;->_value:F
 
-    invoke-static {v3, v0}, Ljava/lang/Float;->compare(FF)I
+    invoke-static {v3, v2}, Ljava/lang/Float;->compare(FF)I
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_4
+    if-eqz v2, :cond_4
 
-    move v1, v2
+    move v0, v1
 
     goto :goto_4
 
-    .end local v0    # "otherValue":F
-    .restart local p1    # "o":Ljava/lang/Object;
     :cond_1b
-    move v1, v2
+    move v0, v1
 
     .line 113
     goto :goto_4
@@ -326,14 +317,6 @@
 
 .method public final serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 4
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p2, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 99

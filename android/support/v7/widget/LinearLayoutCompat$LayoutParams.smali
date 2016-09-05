@@ -3,17 +3,6 @@
 .source "LinearLayoutCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/widget/LinearLayoutCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "LayoutParams"
-.end annotation
-
-
 # instance fields
 .field public gravity:I
 
@@ -23,8 +12,6 @@
 # direct methods
 .method public constructor <init>(II)V
     .registers 4
-    .param p1, "width"    # I
-    .param p2, "height"    # I
 
     .prologue
     .line 1789
@@ -46,9 +33,6 @@
 
 .method public constructor <init>(IIF)V
     .registers 5
-    .param p1, "width"    # I
-    .param p2, "height"    # I
-    .param p3, "weight"    # F
 
     .prologue
     .line 1804
@@ -68,8 +52,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 7
-    .param p1, "c"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     const/4 v3, -0x1
@@ -81,14 +63,13 @@
     iput v3, p0, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->gravity:I
 
     .line 1776
-    sget-object v1, Landroid/support/v7/appcompat/R$styleable;->LinearLayoutCompat_Layout:[I
+    sget-object v0, Landroid/support/v7/appcompat/R$styleable;->LinearLayoutCompat_Layout:[I
 
-    invoke-virtual {p1, p2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v0}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
     .line 1779
-    .local v0, "a":Landroid/content/res/TypedArray;
     sget v1, Landroid/support/v7/appcompat/R$styleable;->LinearLayoutCompat_Layout_android_layout_weight:I
 
     const/4 v2, 0x0
@@ -117,7 +98,6 @@
 
 .method public constructor <init>(Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;)V
     .registers 3
-    .param p1, "source"    # Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;
 
     .prologue
     .line 1829
@@ -144,7 +124,6 @@
 
 .method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
     .registers 3
-    .param p1, "p"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
     .line 1812
@@ -161,7 +140,6 @@
 
 .method public constructor <init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
     .registers 3
-    .param p1, "source"    # Landroid/view/ViewGroup$MarginLayoutParams;
 
     .prologue
     .line 1819

@@ -12,8 +12,6 @@
 # direct methods
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/type/TypeFactory;)V
     .registers 7
-    .param p1, "baseType"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p2, "typeFactory"    # Lcom/fasterxml/jackson/databind/type/TypeFactory;
 
     .prologue
     const/4 v3, 0x0
@@ -24,33 +22,31 @@
     .line 25
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v0
 
     .line 26
-    .local v0, "base":Ljava/lang/String;
-    const/16 v2, 0x2e
+    const/16 v1, 0x2e
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->lastIndexOf(I)I
+    invoke-virtual {v0, v1}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v1
 
     .line 27
-    .local v1, "ix":I
     if-gez v1, :cond_1f
 
     .line 28
-    const-string/jumbo v2, ""
+    const-string/jumbo v0, ""
 
-    iput-object v2, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/MinimalClassNameIdResolver;->_basePackageName:Ljava/lang/String;
+    iput-object v0, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/MinimalClassNameIdResolver;->_basePackageName:Ljava/lang/String;
 
     .line 29
-    const-string/jumbo v2, "."
+    const-string/jumbo v0, "."
 
-    iput-object v2, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/MinimalClassNameIdResolver;->_basePackagePrefix:Ljava/lang/String;
+    iput-object v0, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/MinimalClassNameIdResolver;->_basePackagePrefix:Ljava/lang/String;
 
     .line 34
     :goto_1e
@@ -69,9 +65,9 @@
     .line 32
     invoke-virtual {v0, v3, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    iput-object v2, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/MinimalClassNameIdResolver;->_basePackageName:Ljava/lang/String;
+    iput-object v0, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/MinimalClassNameIdResolver;->_basePackageName:Ljava/lang/String;
 
     goto :goto_1e
 .end method
@@ -80,18 +76,16 @@
 # virtual methods
 .method protected _typeFromId(Ljava/lang/String;Lcom/fasterxml/jackson/databind/type/TypeFactory;)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 6
-    .param p1, "id"    # Ljava/lang/String;
-    .param p2, "typeFactory"    # Lcom/fasterxml/jackson/databind/type/TypeFactory;
 
     .prologue
     .line 53
-    const-string/jumbo v1, "."
+    const-string/jumbo v0, "."
 
-    invoke-virtual {p1, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_2d
+    if-eqz v0, :cond_2d
 
     .line 54
     new-instance v0, Ljava/lang/StringBuilder;
@@ -111,7 +105,6 @@
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 55
-    .local v0, "sb":Ljava/lang/StringBuilder;
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/MinimalClassNameIdResolver;->_basePackageName:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
@@ -136,16 +129,14 @@
     move-result-object p1
 
     .line 64
-    .end local v0    # "sb":Ljava/lang/StringBuilder;
     :cond_2d
     invoke-super {p0, p1, p2}, Lcom/fasterxml/jackson/databind/jsontype/impl/ClassNameIdResolver;->_typeFromId(Ljava/lang/String;Lcom/fasterxml/jackson/databind/type/TypeFactory;)Lcom/fasterxml/jackson/databind/JavaType;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     .line 60
-    .restart local v0    # "sb":Ljava/lang/StringBuilder;
     :cond_32
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/MinimalClassNameIdResolver;->_basePackageName:Ljava/lang/String;
 
@@ -170,20 +161,18 @@
 
 .method public idFromValue(Ljava/lang/Object;)Ljava/lang/String;
     .registers 4
-    .param p1, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 42
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v0
 
     .line 43
-    .local v0, "n":Ljava/lang/String;
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/MinimalClassNameIdResolver;->_basePackagePrefix:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
@@ -206,7 +195,6 @@
     move-result-object v0
 
     .line 47
-    .end local v0    # "n":Ljava/lang/String;
     :cond_1c
     return-object v0
 .end method

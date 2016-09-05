@@ -7,12 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder$FileOpener;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -28,13 +22,11 @@
 
 
 # static fields
-.field private static final DEFAULT_FILE_OPENER:Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder$FileOpener;
+.field private static final a:Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder$FileOpener;
 
 
 # instance fields
-.field private final fileOpener:Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder$FileOpener;
-
-.field private streamDecoder:Lcom/bumptech/glide/load/ResourceDecoder;
+.field private b:Lcom/bumptech/glide/load/ResourceDecoder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/ResourceDecoder",
@@ -44,6 +36,8 @@
         }
     .end annotation
 .end field
+
+.field private final c:Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder$FileOpener;
 
 
 # direct methods
@@ -56,7 +50,7 @@
 
     invoke-direct {v0}, Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder$FileOpener;-><init>()V
 
-    sput-object v0, Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;->DEFAULT_FILE_OPENER:Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder$FileOpener;
+    sput-object v0, Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;->a:Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder$FileOpener;
 
     return-void
 .end method
@@ -75,9 +69,7 @@
 
     .prologue
     .line 24
-    .local p0, "this":Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;, "Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder<TT;>;"
-    .local p1, "streamDecoder":Lcom/bumptech/glide/load/ResourceDecoder;, "Lcom/bumptech/glide/load/ResourceDecoder<Ljava/io/InputStream;TT;>;"
-    sget-object v0, Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;->DEFAULT_FILE_OPENER:Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder$FileOpener;
+    sget-object v0, Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;->a:Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder$FileOpener;
 
     invoke-direct {p0, p1, v0}, Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;-><init>(Lcom/bumptech/glide/load/ResourceDecoder;Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder$FileOpener;)V
 
@@ -87,7 +79,6 @@
 
 .method constructor <init>(Lcom/bumptech/glide/load/ResourceDecoder;Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder$FileOpener;)V
     .registers 3
-    .param p2, "fileOpener"    # Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder$FileOpener;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -102,15 +93,13 @@
 
     .prologue
     .line 28
-    .local p0, "this":Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;, "Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder<TT;>;"
-    .local p1, "streamDecoder":Lcom/bumptech/glide/load/ResourceDecoder;, "Lcom/bumptech/glide/load/ResourceDecoder<Ljava/io/InputStream;TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 29
-    iput-object p1, p0, Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;->streamDecoder:Lcom/bumptech/glide/load/ResourceDecoder;
+    iput-object p1, p0, Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;->b:Lcom/bumptech/glide/load/ResourceDecoder;
 
     .line 30
-    iput-object p2, p0, Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;->fileOpener:Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder$FileOpener;
+    iput-object p2, p0, Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;->c:Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder$FileOpener;
 
     .line 31
     return-void
@@ -118,11 +107,8 @@
 
 
 # virtual methods
-.method public decode(Ljava/io/File;II)Lcom/bumptech/glide/load/engine/Resource;
-    .registers 8
-    .param p1, "source"    # Ljava/io/File;
-    .param p2, "width"    # I
-    .param p3, "height"    # I
+.method public a(Ljava/io/File;II)Lcom/bumptech/glide/load/engine/Resource;
+    .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -133,112 +119,89 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
     .prologue
     .line 35
-    .local p0, "this":Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;, "Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder<TT;>;"
-    const/4 v0, 0x0
-
-    .line 36
-    .local v0, "is":Ljava/io/InputStream;
     const/4 v1, 0x0
 
     .line 38
-    .local v1, "result":Lcom/bumptech/glide/load/engine/Resource;, "Lcom/bumptech/glide/load/engine/Resource<TT;>;"
-    :try_start_2
-    iget-object v2, p0, Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;->fileOpener:Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder$FileOpener;
+    :try_start_1
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;->c:Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder$FileOpener;
 
-    invoke-virtual {v2, p1}, Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder$FileOpener;->open(Ljava/io/File;)Ljava/io/InputStream;
-
-    move-result-object v0
-
-    .line 39
-    iget-object v2, p0, Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;->streamDecoder:Lcom/bumptech/glide/load/ResourceDecoder;
-
-    invoke-interface {v2, v0, p2, p3}, Lcom/bumptech/glide/load/ResourceDecoder;->decode(Ljava/lang/Object;II)Lcom/bumptech/glide/load/engine/Resource;
-    :try_end_d
-    .catchall {:try_start_2 .. :try_end_d} :catchall_14
+    invoke-virtual {v0, p1}, Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder$FileOpener;->a(Ljava/io/File;)Ljava/io/InputStream;
 
     move-result-object v1
 
+    .line 39
+    iget-object v0, p0, Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;->b:Lcom/bumptech/glide/load/ResourceDecoder;
+
+    invoke-interface {v0, v1, p2, p3}, Lcom/bumptech/glide/load/ResourceDecoder;->a(Ljava/lang/Object;II)Lcom/bumptech/glide/load/engine/Resource;
+    :try_end_c
+    .catchall {:try_start_1 .. :try_end_c} :catchall_13
+
+    move-result-object v0
+
     .line 41
-    if-eqz v0, :cond_13
+    if-eqz v1, :cond_12
 
     .line 43
-    :try_start_10
-    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
-    :try_end_13
-    .catch Ljava/io/IOException; {:try_start_10 .. :try_end_13} :catch_1b
+    :try_start_f
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
+    :try_end_12
+    .catch Ljava/io/IOException; {:try_start_f .. :try_end_12} :catch_1a
 
     .line 49
-    :cond_13
-    :goto_13
-    return-object v1
+    :cond_12
+    :goto_12
+    return-object v0
 
     .line 41
-    :catchall_14
-    move-exception v2
+    :catchall_13
+    move-exception v0
 
-    if-eqz v0, :cond_1a
+    if-eqz v1, :cond_19
 
     .line 43
-    :try_start_17
-    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
-    :try_end_1a
-    .catch Ljava/io/IOException; {:try_start_17 .. :try_end_1a} :catch_1d
+    :try_start_16
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
+    :try_end_19
+    .catch Ljava/io/IOException; {:try_start_16 .. :try_end_19} :catch_1c
 
     .line 46
-    :cond_1a
-    :goto_1a
-    throw v2
+    :cond_19
+    :goto_19
+    throw v0
 
     .line 44
-    :catch_1b
-    move-exception v2
+    :catch_1a
+    move-exception v1
 
-    goto :goto_13
+    goto :goto_12
 
-    :catch_1d
-    move-exception v3
+    :catch_1c
+    move-exception v1
 
-    goto :goto_1a
+    goto :goto_19
 .end method
 
-.method public bridge synthetic decode(Ljava/lang/Object;II)Lcom/bumptech/glide/load/engine/Resource;
+.method public bridge synthetic a(Ljava/lang/Object;II)Lcom/bumptech/glide/load/engine/Resource;
     .registers 5
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # I
-    .param p3, "x2"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 17
-    .local p0, "this":Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;, "Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder<TT;>;"
     check-cast p1, Ljava/io/File;
 
-    .end local p1    # "x0":Ljava/lang/Object;
-    invoke-virtual {p0, p1, p2, p3}, Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;->decode(Ljava/io/File;II)Lcom/bumptech/glide/load/engine/Resource;
+    invoke-virtual {p0, p1, p2, p3}, Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;->a(Ljava/io/File;II)Lcom/bumptech/glide/load/engine/Resource;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getId()Ljava/lang/String;
+.method public a()Ljava/lang/String;
     .registers 2
 
     .prologue
     .line 54
-    .local p0, "this":Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;, "Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder<TT;>;"
     const-string/jumbo v0, ""
 
     return-object v0

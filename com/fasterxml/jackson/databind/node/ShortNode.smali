@@ -10,7 +10,6 @@
 # direct methods
 .method public constructor <init>(S)V
     .registers 2
-    .param p1, "v"    # S
 
     .prologue
     .line 26
@@ -23,7 +22,6 @@
 
 .method public static valueOf(S)Lcom/fasterxml/jackson/databind/node/ShortNode;
     .registers 2
-    .param p0, "l"    # S
 
     .prologue
     .line 28
@@ -38,7 +36,6 @@
 # virtual methods
 .method public asBoolean(Z)Z
     .registers 3
-    .param p1, "defaultValue"    # Z
 
     .prologue
     .line 84
@@ -147,7 +144,6 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .registers 6
-    .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
     const/4 v0, 0x1
@@ -158,13 +154,11 @@
     if-ne p1, p0, :cond_5
 
     .line 102
-    .end local p1    # "o":Ljava/lang/Object;
     :cond_4
     :goto_4
     return v0
 
     .line 98
-    .restart local p1    # "o":Ljava/lang/Object;
     :cond_5
     if-nez p1, :cond_9
 
@@ -181,7 +175,6 @@
     .line 100
     check-cast p1, Lcom/fasterxml/jackson/databind/node/ShortNode;
 
-    .end local p1    # "o":Ljava/lang/Object;
     iget-short v2, p1, Lcom/fasterxml/jackson/databind/node/ShortNode;->_value:S
 
     iget-short v3, p0, Lcom/fasterxml/jackson/databind/node/ShortNode;->_value:S
@@ -192,7 +185,6 @@
 
     goto :goto_4
 
-    .restart local p1    # "o":Ljava/lang/Object;
     :cond_17
     move v0, v1
 
@@ -290,14 +282,6 @@
 
 .method public final serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 4
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p2, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 91

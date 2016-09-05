@@ -4,21 +4,8 @@
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 23
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 24
-    return-void
-.end method
-
-.method public static setMotionEventSplittingEnabled(Landroid/view/ViewGroup;Z)V
+.method public static a(Landroid/view/ViewGroup;Z)V
     .registers 2
-    .param p0, "group"    # Landroid/view/ViewGroup;
-    .param p1, "split"    # Z
 
     .prologue
     .line 27

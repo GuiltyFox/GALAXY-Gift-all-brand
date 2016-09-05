@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/parceler/Parcels$NullParcelable;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "NullParcelableCreator"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -40,7 +31,6 @@
 
 .method synthetic constructor <init>(Lorg/parceler/Parcels$1;)V
     .registers 2
-    .param p1, "x0"    # Lorg/parceler/Parcels$1;
 
     .prologue
     .line 129
@@ -51,21 +41,8 @@
 
 
 # virtual methods
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 3
-
-    .prologue
-    .line 129
-    invoke-virtual {p0, p1}, Lorg/parceler/Parcels$NullParcelable$NullParcelableCreator;->createFromParcel(Landroid/os/Parcel;)Lorg/parceler/Parcels$NullParcelable;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public createFromParcel(Landroid/os/Parcel;)Lorg/parceler/Parcels$NullParcelable;
+.method public a(Landroid/os/Parcel;)Lorg/parceler/Parcels$NullParcelable;
     .registers 4
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
     .line 133
@@ -78,25 +55,36 @@
     return-object v0
 .end method
 
-.method public bridge synthetic newArray(I)[Ljava/lang/Object;
+.method public a(I)[Lorg/parceler/Parcels$NullParcelable;
+    .registers 3
+
+    .prologue
+    .line 138
+    new-array v0, p1, [Lorg/parceler/Parcels$NullParcelable;
+
+    return-object v0
+.end method
+
+.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .registers 3
 
     .prologue
     .line 129
-    invoke-virtual {p0, p1}, Lorg/parceler/Parcels$NullParcelable$NullParcelableCreator;->newArray(I)[Lorg/parceler/Parcels$NullParcelable;
+    invoke-virtual {p0, p1}, Lorg/parceler/Parcels$NullParcelable$NullParcelableCreator;->a(Landroid/os/Parcel;)Lorg/parceler/Parcels$NullParcelable;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public newArray(I)[Lorg/parceler/Parcels$NullParcelable;
+.method public synthetic newArray(I)[Ljava/lang/Object;
     .registers 3
-    .param p1, "size"    # I
 
     .prologue
-    .line 138
-    new-array v0, p1, [Lorg/parceler/Parcels$NullParcelable;
+    .line 129
+    invoke-virtual {p0, p1}, Lorg/parceler/Parcels$NullParcelable$NullParcelableCreator;->a(I)[Lorg/parceler/Parcels$NullParcelable;
+
+    move-result-object v0
 
     return-object v0
 .end method

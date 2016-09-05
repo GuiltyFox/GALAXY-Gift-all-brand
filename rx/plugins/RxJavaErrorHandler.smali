@@ -3,10 +3,6 @@
 .source "RxJavaErrorHandler.java"
 
 
-# static fields
-.field protected static final ERROR_IN_RENDERING_SUFFIX:Ljava/lang/String; = ".errorRendering"
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -20,100 +16,84 @@
 
 
 # virtual methods
-.method public handleError(Ljava/lang/Throwable;)V
-    .registers 2
-    .param p1, "e"    # Ljava/lang/Throwable;
-
-    .prologue
-    .line 48
-    return-void
-.end method
-
-.method public final handleOnNextValueRendering(Ljava/lang/Object;)Ljava/lang/String;
-    .registers 6
-    .param p1, "item"    # Ljava/lang/Object;
-    .annotation build Lrx/annotations/Beta;
-    .end annotation
+.method public final a(Ljava/lang/Object;)Ljava/lang/String;
+    .registers 4
 
     .prologue
     .line 73
     :try_start_0
-    invoke-virtual {p0, p1}, Lrx/plugins/RxJavaErrorHandler;->render(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Lrx/plugins/RxJavaErrorHandler;->b(Ljava/lang/Object;)Ljava/lang/String;
     :try_end_3
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_3} :catch_5
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_3} :catch_2a
 
-    move-result-object v2
+    move-result-object v0
 
     .line 79
     :goto_4
-    return-object v2
+    return-object v0
 
     .line 74
     :catch_5
     move-exception v0
 
     .line 75
-    .local v0, "e":Ljava/lang/InterruptedException;
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/Thread;->interrupt()V
+    invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
 
     .line 79
-    .end local v0    # "e":Ljava/lang/InterruptedException;
     :goto_d
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string/jumbo v3, ".errorRendering"
+    const-string/jumbo v1, ".errorRendering"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
     goto :goto_4
 
     .line 76
     :catch_2a
-    move-exception v1
+    move-exception v0
 
     .line 77
-    .local v1, "t":Ljava/lang/Throwable;
-    invoke-static {v1}, Lrx/exceptions/Exceptions;->throwIfFatal(Ljava/lang/Throwable;)V
+    invoke-static {v0}, Lrx/exceptions/Exceptions;->a(Ljava/lang/Throwable;)V
 
     goto :goto_d
 .end method
 
-.method protected render(Ljava/lang/Object;)Ljava/lang/String;
-    .registers 3
-    .param p1, "item"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/InterruptedException;
-        }
-    .end annotation
+.method public a(Ljava/lang/Throwable;)V
+    .registers 2
 
-    .annotation build Lrx/annotations/Beta;
-    .end annotation
+    .prologue
+    .line 48
+    return-void
+.end method
+
+.method protected b(Ljava/lang/Object;)Ljava/lang/String;
+    .registers 3
 
     .prologue
     .line 103

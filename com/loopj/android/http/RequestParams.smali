@@ -6,15 +6,6 @@
 .implements Ljava/io/Serializable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/loopj/android/http/RequestParams$StreamWrapper;,
-        Lcom/loopj/android/http/RequestParams$FileWrapper;
-    }
-.end annotation
-
-
 # static fields
 .field public static final APPLICATION_JSON:Ljava/lang/String; = "application/json"
 
@@ -117,8 +108,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/String;
 
     .prologue
     .line 143
@@ -133,7 +122,7 @@
 .end method
 
 .method public constructor <init>(Ljava/util/Map;)V
-    .registers 6
+    .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -147,7 +136,112 @@
 
     .prologue
     .line 127
-    .local p1, "source":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 102
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/loopj/android/http/RequestParams;->urlParams:Ljava/util/concurrent/ConcurrentHashMap;
+
+    .line 103
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/loopj/android/http/RequestParams;->streamParams:Ljava/util/concurrent/ConcurrentHashMap;
+
+    .line 104
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/loopj/android/http/RequestParams;->fileParams:Ljava/util/concurrent/ConcurrentHashMap;
+
+    .line 105
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/loopj/android/http/RequestParams;->fileArrayParams:Ljava/util/concurrent/ConcurrentHashMap;
+
+    .line 106
+    new-instance v0, Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
+
+    iput-object v0, p0, Lcom/loopj/android/http/RequestParams;->urlParamsWithObjects:Ljava/util/concurrent/ConcurrentHashMap;
+
+    .line 108
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/loopj/android/http/RequestParams;->forceMultipartEntity:Z
+
+    .line 110
+    const-string/jumbo v0, "_elapsed"
+
+    iput-object v0, p0, Lcom/loopj/android/http/RequestParams;->elapsedFieldInJsonStreamer:Ljava/lang/String;
+
+    .line 112
+    const-string/jumbo v0, "UTF-8"
+
+    iput-object v0, p0, Lcom/loopj/android/http/RequestParams;->contentEncoding:Ljava/lang/String;
+
+    .line 128
+    if-eqz p1, :cond_59
+
+    .line 129
+    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_3d
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_59
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    .line 130
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/String;
+
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    invoke-virtual {p0, v1, v0}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_3d
+
+    .line 133
+    :cond_59
+    return-void
+.end method
+
+.method public varargs constructor <init>([Ljava/lang/Object;)V
+    .registers 6
+
+    .prologue
+    const/4 v0, 0x0
+
+    .line 156
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 102
@@ -186,9 +280,7 @@
     iput-object v1, p0, Lcom/loopj/android/http/RequestParams;->urlParamsWithObjects:Ljava/util/concurrent/ConcurrentHashMap;
 
     .line 108
-    const/4 v1, 0x0
-
-    iput-boolean v1, p0, Lcom/loopj/android/http/RequestParams;->forceMultipartEntity:Z
+    iput-boolean v0, p0, Lcom/loopj/android/http/RequestParams;->forceMultipartEntity:Z
 
     .line 110
     const-string/jumbo v1, "_elapsed"
@@ -200,169 +292,54 @@
 
     iput-object v1, p0, Lcom/loopj/android/http/RequestParams;->contentEncoding:Ljava/lang/String;
 
-    .line 128
-    if-eqz p1, :cond_59
-
-    .line 129
-    invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v3
-
-    :goto_3d
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_59
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/util/Map$Entry;
-
-    .line 130
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/String;
-
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/String;
-
-    invoke-virtual {p0, v1, v2}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_3d
-
-    .line 133
-    .end local v0    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
-    :cond_59
-    return-void
-.end method
-
-.method public varargs constructor <init>([Ljava/lang/Object;)V
-    .registers 8
-    .param p1, "keysAndValues"    # [Ljava/lang/Object;
-
-    .prologue
-    .line 156
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 102
-    new-instance v4, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {v4}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
-
-    iput-object v4, p0, Lcom/loopj/android/http/RequestParams;->urlParams:Ljava/util/concurrent/ConcurrentHashMap;
-
-    .line 103
-    new-instance v4, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {v4}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
-
-    iput-object v4, p0, Lcom/loopj/android/http/RequestParams;->streamParams:Ljava/util/concurrent/ConcurrentHashMap;
-
-    .line 104
-    new-instance v4, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {v4}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
-
-    iput-object v4, p0, Lcom/loopj/android/http/RequestParams;->fileParams:Ljava/util/concurrent/ConcurrentHashMap;
-
-    .line 105
-    new-instance v4, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {v4}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
-
-    iput-object v4, p0, Lcom/loopj/android/http/RequestParams;->fileArrayParams:Ljava/util/concurrent/ConcurrentHashMap;
-
-    .line 106
-    new-instance v4, Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-direct {v4}, Ljava/util/concurrent/ConcurrentHashMap;-><init>()V
-
-    iput-object v4, p0, Lcom/loopj/android/http/RequestParams;->urlParamsWithObjects:Ljava/util/concurrent/ConcurrentHashMap;
-
-    .line 108
-    const/4 v4, 0x0
-
-    iput-boolean v4, p0, Lcom/loopj/android/http/RequestParams;->forceMultipartEntity:Z
-
-    .line 110
-    const-string/jumbo v4, "_elapsed"
-
-    iput-object v4, p0, Lcom/loopj/android/http/RequestParams;->elapsedFieldInJsonStreamer:Ljava/lang/String;
-
-    .line 112
-    const-string/jumbo v4, "UTF-8"
-
-    iput-object v4, p0, Lcom/loopj/android/http/RequestParams;->contentEncoding:Ljava/lang/String;
-
     .line 157
-    array-length v2, p1
+    array-length v1, p1
 
     .line 158
-    .local v2, "len":I
-    rem-int/lit8 v4, v2, 0x2
+    rem-int/lit8 v2, v1, 0x2
 
-    if-eqz v4, :cond_41
+    if-eqz v2, :cond_41
 
     .line 159
-    new-instance v4, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v5, "Supplied arguments must be even"
+    const-string/jumbo v1, "Supplied arguments must be even"
 
-    invoke-direct {v4, v5}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v4
+    throw v0
 
     .line 160
     :cond_41
-    const/4 v0, 0x0
-
-    .local v0, "i":I
-    :goto_42
-    if-ge v0, v2, :cond_58
+    :goto_41
+    if-ge v0, v1, :cond_57
 
     .line 161
-    aget-object v4, p1, v0
+    aget-object v2, p1, v0
 
-    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 162
-    .local v1, "key":Ljava/lang/String;
-    add-int/lit8 v4, v0, 0x1
+    add-int/lit8 v3, v0, 0x1
 
-    aget-object v4, p1, v4
+    aget-object v3, p1, v3
 
-    invoke-static {v4}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v3
 
     .line 163
-    .local v3, "val":Ljava/lang/String;
-    invoke-virtual {p0, v1, v3}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p0, v2, v3}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 160
     add-int/lit8 v0, v0, 0x2
 
-    goto :goto_42
+    goto :goto_41
 
     .line 165
-    .end local v1    # "key":Ljava/lang/String;
-    .end local v3    # "val":Ljava/lang/String;
-    :cond_58
+    :cond_57
     return-void
 .end method
 
@@ -372,28 +349,27 @@
     .prologue
     .line 566
     :try_start_0
-    new-instance v1, Lcz/msebera/android/httpclient/client/entity/UrlEncodedFormEntity;
+    new-instance v0, Lcz/msebera/android/httpclient/client/entity/UrlEncodedFormEntity;
 
     invoke-virtual {p0}, Lcom/loopj/android/http/RequestParams;->getParamsList()Ljava/util/List;
 
-    move-result-object v2
+    move-result-object v1
 
-    iget-object v3, p0, Lcom/loopj/android/http/RequestParams;->contentEncoding:Ljava/lang/String;
+    iget-object v2, p0, Lcom/loopj/android/http/RequestParams;->contentEncoding:Ljava/lang/String;
 
-    invoke-direct {v1, v2, v3}, Lcz/msebera/android/httpclient/client/entity/UrlEncodedFormEntity;-><init>(Ljava/util/List;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Lcz/msebera/android/httpclient/client/entity/UrlEncodedFormEntity;-><init>(Ljava/util/List;Ljava/lang/String;)V
     :try_end_b
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_0 .. :try_end_b} :catch_c
 
     .line 569
     :goto_b
-    return-object v1
+    return-object v0
 
     .line 567
     :catch_c
     move-exception v0
 
     .line 568
-    .local v0, "e":Ljava/io/UnsupportedEncodingException;
     sget-object v1, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
 
     const-string/jumbo v2, "RequestParams"
@@ -403,627 +379,514 @@
     invoke-interface {v1, v2, v3, v0}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 569
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_b
 .end method
 
 .method private createJsonStreamerEntity(Lcom/loopj/android/http/ResponseHandlerInterface;)Lcz/msebera/android/httpclient/HttpEntity;
-    .registers 14
-    .param p1, "progressHandler"    # Lcom/loopj/android/http/ResponseHandlerInterface;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 9
 
     .prologue
     .line 527
-    new-instance v0, Lcom/loopj/android/http/JsonStreamerEntity;
+    new-instance v2, Lcom/loopj/android/http/JsonStreamerEntity;
 
-    iget-object v6, p0, Lcom/loopj/android/http/RequestParams;->fileParams:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v0, p0, Lcom/loopj/android/http/RequestParams;->fileParams:Ljava/util/concurrent/ConcurrentHashMap;
 
     .line 529
-    invoke-virtual {v6}, Ljava/util/concurrent/ConcurrentHashMap;->isEmpty()Z
+    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->isEmpty()Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_12
+    if-eqz v0, :cond_12
 
-    iget-object v6, p0, Lcom/loopj/android/http/RequestParams;->streamParams:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v0, p0, Lcom/loopj/android/http/RequestParams;->streamParams:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v6}, Ljava/util/concurrent/ConcurrentHashMap;->isEmpty()Z
+    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->isEmpty()Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_3c
+    if-nez v0, :cond_3c
 
     :cond_12
-    const/4 v6, 0x1
+    const/4 v0, 0x1
 
     :goto_13
-    iget-object v7, p0, Lcom/loopj/android/http/RequestParams;->elapsedFieldInJsonStreamer:Ljava/lang/String;
+    iget-object v1, p0, Lcom/loopj/android/http/RequestParams;->elapsedFieldInJsonStreamer:Ljava/lang/String;
 
-    invoke-direct {v0, p1, v6, v7}, Lcom/loopj/android/http/JsonStreamerEntity;-><init>(Lcom/loopj/android/http/ResponseHandlerInterface;ZLjava/lang/String;)V
+    invoke-direct {v2, p1, v0, v1}, Lcom/loopj/android/http/JsonStreamerEntity;-><init>(Lcom/loopj/android/http/ResponseHandlerInterface;ZLjava/lang/String;)V
 
     .line 533
-    .local v0, "entity":Lcom/loopj/android/http/JsonStreamerEntity;
-    iget-object v6, p0, Lcom/loopj/android/http/RequestParams;->urlParams:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v0, p0, Lcom/loopj/android/http/RequestParams;->urlParams:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v6}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
+    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-interface {v6}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v7
+    move-result-object v3
 
     :goto_22
-    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_3e
+    if-eqz v0, :cond_3e
 
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v0
 
-    check-cast v4, Ljava/util/Map$Entry;
+    check-cast v0, Ljava/util/Map$Entry;
 
     .line 534
-    .local v4, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
-    invoke-interface {v4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v1
 
-    check-cast v6, Ljava/lang/String;
+    check-cast v1, Ljava/lang/String;
 
-    invoke-interface {v4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v0
 
-    invoke-virtual {v0, v6, v8}, Lcom/loopj/android/http/JsonStreamerEntity;->addPart(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {v2, v1, v0}, Lcom/loopj/android/http/JsonStreamerEntity;->addPart(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_22
 
     .line 529
-    .end local v0    # "entity":Lcom/loopj/android/http/JsonStreamerEntity;
-    .end local v4    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
     :cond_3c
-    const/4 v6, 0x0
+    const/4 v0, 0x0
 
     goto :goto_13
 
     .line 538
-    .restart local v0    # "entity":Lcom/loopj/android/http/JsonStreamerEntity;
     :cond_3e
-    iget-object v6, p0, Lcom/loopj/android/http/RequestParams;->urlParamsWithObjects:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v0, p0, Lcom/loopj/android/http/RequestParams;->urlParamsWithObjects:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v6}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
+    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-interface {v6}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v7
-
-    :goto_48
-    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_62
-
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    check-cast v3, Ljava/util/Map$Entry;
+    :goto_48
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_62
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
 
     .line 539
-    .local v3, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Object;>;"
-    invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v1
 
-    check-cast v6, Ljava/lang/String;
+    check-cast v1, Ljava/lang/String;
 
-    invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v0
 
-    invoke-virtual {v0, v6, v8}, Lcom/loopj/android/http/JsonStreamerEntity;->addPart(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {v2, v1, v0}, Lcom/loopj/android/http/JsonStreamerEntity;->addPart(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_48
 
     .line 543
-    .end local v3    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/Object;>;"
     :cond_62
-    iget-object v6, p0, Lcom/loopj/android/http/RequestParams;->fileParams:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v0, p0, Lcom/loopj/android/http/RequestParams;->fileParams:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v6}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
+    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-interface {v6}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v7
+    move-result-object v3
 
     :goto_6c
-    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_86
+    if-eqz v0, :cond_86
 
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    .line 544
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Ljava/util/Map$Entry;
+    check-cast v1, Ljava/lang/String;
 
-    .line 544
-    .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/loopj/android/http/RequestParams$FileWrapper;>;"
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v0
 
-    check-cast v6, Ljava/lang/String;
-
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    move-result-object v8
-
-    invoke-virtual {v0, v6, v8}, Lcom/loopj/android/http/JsonStreamerEntity;->addPart(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {v2, v1, v0}, Lcom/loopj/android/http/JsonStreamerEntity;->addPart(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_6c
 
     .line 548
-    .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/loopj/android/http/RequestParams$FileWrapper;>;"
     :cond_86
-    iget-object v6, p0, Lcom/loopj/android/http/RequestParams;->streamParams:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v0, p0, Lcom/loopj/android/http/RequestParams;->streamParams:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v6}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
+    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-interface {v6}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v7
+    move-result-object v3
 
     :cond_90
     :goto_90
-    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_bc
+    if-eqz v0, :cond_bc
 
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Ljava/util/Map$Entry;
+    check-cast v0, Ljava/util/Map$Entry;
 
     .line 549
-    .local v2, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/loopj/android/http/RequestParams$StreamWrapper;>;"
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v1
 
-    check-cast v5, Lcom/loopj/android/http/RequestParams$StreamWrapper;
+    check-cast v1, Lcom/loopj/android/http/RequestParams$StreamWrapper;
 
     .line 550
-    .local v5, "stream":Lcom/loopj/android/http/RequestParams$StreamWrapper;
-    iget-object v6, v5, Lcom/loopj/android/http/RequestParams$StreamWrapper;->inputStream:Ljava/io/InputStream;
+    iget-object v4, v1, Lcom/loopj/android/http/RequestParams$StreamWrapper;->inputStream:Ljava/io/InputStream;
 
-    if-eqz v6, :cond_90
+    if-eqz v4, :cond_90
 
     .line 551
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v0
 
-    check-cast v6, Ljava/lang/String;
+    check-cast v0, Ljava/lang/String;
 
-    iget-object v8, v5, Lcom/loopj/android/http/RequestParams$StreamWrapper;->inputStream:Ljava/io/InputStream;
+    iget-object v4, v1, Lcom/loopj/android/http/RequestParams$StreamWrapper;->inputStream:Ljava/io/InputStream;
 
-    iget-object v9, v5, Lcom/loopj/android/http/RequestParams$StreamWrapper;->name:Ljava/lang/String;
+    iget-object v5, v1, Lcom/loopj/android/http/RequestParams$StreamWrapper;->name:Ljava/lang/String;
 
-    iget-object v10, v5, Lcom/loopj/android/http/RequestParams$StreamWrapper;->contentType:Ljava/lang/String;
+    iget-object v6, v1, Lcom/loopj/android/http/RequestParams$StreamWrapper;->contentType:Ljava/lang/String;
 
-    iget-boolean v11, v5, Lcom/loopj/android/http/RequestParams$StreamWrapper;->autoClose:Z
+    iget-boolean v1, v1, Lcom/loopj/android/http/RequestParams$StreamWrapper;->autoClose:Z
 
     .line 552
-    invoke-static {v8, v9, v10, v11}, Lcom/loopj/android/http/RequestParams$StreamWrapper;->newInstance(Ljava/io/InputStream;Ljava/lang/String;Ljava/lang/String;Z)Lcom/loopj/android/http/RequestParams$StreamWrapper;
+    invoke-static {v4, v5, v6, v1}, Lcom/loopj/android/http/RequestParams$StreamWrapper;->newInstance(Ljava/io/InputStream;Ljava/lang/String;Ljava/lang/String;Z)Lcom/loopj/android/http/RequestParams$StreamWrapper;
 
-    move-result-object v8
+    move-result-object v1
 
     .line 551
-    invoke-virtual {v0, v6, v8}, Lcom/loopj/android/http/JsonStreamerEntity;->addPart(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {v2, v0, v1}, Lcom/loopj/android/http/JsonStreamerEntity;->addPart(Ljava/lang/String;Ljava/lang/Object;)V
 
     goto :goto_90
 
     .line 561
-    .end local v2    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/loopj/android/http/RequestParams$StreamWrapper;>;"
-    .end local v5    # "stream":Lcom/loopj/android/http/RequestParams$StreamWrapper;
     :cond_bc
-    return-object v0
+    return-object v2
 .end method
 
 .method private createMultipartEntity(Lcom/loopj/android/http/ResponseHandlerInterface;)Lcz/msebera/android/httpclient/HttpEntity;
-    .registers 22
-    .param p1, "progressHandler"    # Lcom/loopj/android/http/ResponseHandlerInterface;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 10
 
     .prologue
     .line 574
     new-instance v3, Lcom/loopj/android/http/SimpleMultipartEntity;
 
-    move-object/from16 v0, p1
-
-    invoke-direct {v3, v0}, Lcom/loopj/android/http/SimpleMultipartEntity;-><init>(Lcom/loopj/android/http/ResponseHandlerInterface;)V
+    invoke-direct {v3, p1}, Lcom/loopj/android/http/SimpleMultipartEntity;-><init>(Lcom/loopj/android/http/ResponseHandlerInterface;)V
 
     .line 575
-    .local v3, "entity":Lcom/loopj/android/http/SimpleMultipartEntity;
-    move-object/from16 v0, p0
+    iget-boolean v0, p0, Lcom/loopj/android/http/RequestParams;->isRepeatable:Z
 
-    iget-boolean v14, v0, Lcom/loopj/android/http/RequestParams;->isRepeatable:Z
-
-    invoke-virtual {v3, v14}, Lcom/loopj/android/http/SimpleMultipartEntity;->setIsRepeatable(Z)V
+    invoke-virtual {v3, v0}, Lcom/loopj/android/http/SimpleMultipartEntity;->setIsRepeatable(Z)V
 
     .line 578
-    move-object/from16 v0, p0
+    iget-object v0, p0, Lcom/loopj/android/http/RequestParams;->urlParams:Ljava/util/concurrent/ConcurrentHashMap;
 
-    iget-object v14, v0, Lcom/loopj/android/http/RequestParams;->urlParams:Ljava/util/concurrent/ConcurrentHashMap;
+    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
 
-    invoke-virtual {v14}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
+    move-result-object v0
 
-    move-result-object v14
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    invoke-interface {v14}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    move-result-object v2
 
-    move-result-object v16
+    :goto_14
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    :goto_1a
-    invoke-interface/range {v16 .. v16}, Ljava/util/Iterator;->hasNext()Z
+    move-result v0
 
-    move-result v14
+    if-eqz v0, :cond_32
 
-    if-eqz v14, :cond_3e
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-interface/range {v16 .. v16}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v6
-
-    check-cast v6, Ljava/util/Map$Entry;
+    check-cast v0, Ljava/util/Map$Entry;
 
     .line 579
-    .local v6, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
-    invoke-interface {v6}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v14
+    move-result-object v1
 
-    check-cast v14, Ljava/lang/String;
+    check-cast v1, Ljava/lang/String;
 
-    invoke-interface {v6}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v15
+    move-result-object v0
 
-    check-cast v15, Ljava/lang/String;
+    check-cast v0, Ljava/lang/String;
 
-    move-object/from16 v0, p0
+    iget-object v4, p0, Lcom/loopj/android/http/RequestParams;->contentEncoding:Ljava/lang/String;
 
-    iget-object v0, v0, Lcom/loopj/android/http/RequestParams;->contentEncoding:Ljava/lang/String;
+    invoke-virtual {v3, v1, v0, v4}, Lcom/loopj/android/http/SimpleMultipartEntity;->addPartWithCharset(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, v17
-
-    invoke-virtual {v3, v14, v15, v0}, Lcom/loopj/android/http/SimpleMultipartEntity;->addPartWithCharset(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_1a
+    goto :goto_14
 
     .line 583
-    .end local v6    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
-    :cond_3e
-    const/4 v14, 0x0
+    :cond_32
+    const/4 v0, 0x0
 
-    move-object/from16 v0, p0
+    iget-object v1, p0, Lcom/loopj/android/http/RequestParams;->urlParamsWithObjects:Ljava/util/concurrent/ConcurrentHashMap;
 
-    iget-object v15, v0, Lcom/loopj/android/http/RequestParams;->urlParamsWithObjects:Ljava/util/concurrent/ConcurrentHashMap;
+    invoke-direct {p0, v0, v1}, Lcom/loopj/android/http/RequestParams;->getParamsList(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/List;
 
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v14, v15}, Lcom/loopj/android/http/RequestParams;->getParamsList(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v12
+    move-result-object v0
 
     .line 584
-    .local v12, "params":Ljava/util/List;, "Ljava/util/List<Lcz/msebera/android/httpclient/message/BasicNameValuePair;>;"
-    invoke-interface {v12}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v14
+    move-result-object v1
 
-    :goto_4d
-    invoke-interface {v14}, Ljava/util/Iterator;->hasNext()Z
+    :goto_3d
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v15
+    move-result v0
 
-    if-eqz v15, :cond_6f
+    if-eqz v0, :cond_57
 
-    invoke-interface {v14}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v11
+    move-result-object v0
 
-    check-cast v11, Lcz/msebera/android/httpclient/message/BasicNameValuePair;
+    check-cast v0, Lcz/msebera/android/httpclient/message/BasicNameValuePair;
 
     .line 585
-    .local v11, "kv":Lcz/msebera/android/httpclient/message/BasicNameValuePair;
-    invoke-virtual {v11}, Lcz/msebera/android/httpclient/message/BasicNameValuePair;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcz/msebera/android/httpclient/message/BasicNameValuePair;->a()Ljava/lang/String;
 
-    move-result-object v15
+    move-result-object v2
 
-    invoke-virtual {v11}, Lcz/msebera/android/httpclient/message/BasicNameValuePair;->getValue()Ljava/lang/String;
+    invoke-virtual {v0}, Lcz/msebera/android/httpclient/message/BasicNameValuePair;->b()Ljava/lang/String;
 
-    move-result-object v16
+    move-result-object v0
 
-    move-object/from16 v0, p0
+    iget-object v4, p0, Lcom/loopj/android/http/RequestParams;->contentEncoding:Ljava/lang/String;
 
-    iget-object v0, v0, Lcom/loopj/android/http/RequestParams;->contentEncoding:Ljava/lang/String;
+    invoke-virtual {v3, v2, v0, v4}, Lcom/loopj/android/http/SimpleMultipartEntity;->addPartWithCharset(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, v16
-
-    move-object/from16 v1, v17
-
-    invoke-virtual {v3, v15, v0, v1}, Lcom/loopj/android/http/SimpleMultipartEntity;->addPartWithCharset(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_4d
+    goto :goto_3d
 
     .line 589
-    .end local v11    # "kv":Lcz/msebera/android/httpclient/message/BasicNameValuePair;
-    :cond_6f
-    move-object/from16 v0, p0
+    :cond_57
+    iget-object v0, p0, Lcom/loopj/android/http/RequestParams;->streamParams:Ljava/util/concurrent/ConcurrentHashMap;
 
-    iget-object v14, v0, Lcom/loopj/android/http/RequestParams;->streamParams:Ljava/util/concurrent/ConcurrentHashMap;
+    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
 
-    invoke-virtual {v14}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
+    move-result-object v0
 
-    move-result-object v14
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    invoke-interface {v14}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    move-result-object v2
 
-    move-result-object v15
+    :cond_61
+    :goto_61
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    :cond_7b
-    :goto_7b
-    invoke-interface {v15}, Ljava/util/Iterator;->hasNext()Z
+    move-result v0
 
-    move-result v14
+    if-eqz v0, :cond_87
 
-    if-eqz v14, :cond_ad
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-interface {v15}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v5
-
-    check-cast v5, Ljava/util/Map$Entry;
+    check-cast v0, Ljava/util/Map$Entry;
 
     .line 590
-    .local v5, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/loopj/android/http/RequestParams$StreamWrapper;>;"
-    invoke-interface {v5}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v13
+    move-result-object v1
 
-    check-cast v13, Lcom/loopj/android/http/RequestParams$StreamWrapper;
+    check-cast v1, Lcom/loopj/android/http/RequestParams$StreamWrapper;
 
     .line 591
-    .local v13, "stream":Lcom/loopj/android/http/RequestParams$StreamWrapper;
-    iget-object v14, v13, Lcom/loopj/android/http/RequestParams$StreamWrapper;->inputStream:Ljava/io/InputStream;
+    iget-object v4, v1, Lcom/loopj/android/http/RequestParams$StreamWrapper;->inputStream:Ljava/io/InputStream;
 
-    if-eqz v14, :cond_7b
+    if-eqz v4, :cond_61
 
     .line 592
-    invoke-interface {v5}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v14
+    move-result-object v0
 
-    check-cast v14, Ljava/lang/String;
+    check-cast v0, Ljava/lang/String;
 
-    iget-object v0, v13, Lcom/loopj/android/http/RequestParams$StreamWrapper;->name:Ljava/lang/String;
+    iget-object v4, v1, Lcom/loopj/android/http/RequestParams$StreamWrapper;->name:Ljava/lang/String;
 
-    move-object/from16 v16, v0
+    iget-object v5, v1, Lcom/loopj/android/http/RequestParams$StreamWrapper;->inputStream:Ljava/io/InputStream;
 
-    iget-object v0, v13, Lcom/loopj/android/http/RequestParams$StreamWrapper;->inputStream:Ljava/io/InputStream;
+    iget-object v1, v1, Lcom/loopj/android/http/RequestParams$StreamWrapper;->contentType:Ljava/lang/String;
 
-    move-object/from16 v17, v0
+    invoke-virtual {v3, v0, v4, v5, v1}, Lcom/loopj/android/http/SimpleMultipartEntity;->addPart(Ljava/lang/String;Ljava/lang/String;Ljava/io/InputStream;Ljava/lang/String;)V
 
-    iget-object v0, v13, Lcom/loopj/android/http/RequestParams$StreamWrapper;->contentType:Ljava/lang/String;
-
-    move-object/from16 v18, v0
-
-    move-object/from16 v0, v16
-
-    move-object/from16 v1, v17
-
-    move-object/from16 v2, v18
-
-    invoke-virtual {v3, v14, v0, v1, v2}, Lcom/loopj/android/http/SimpleMultipartEntity;->addPart(Ljava/lang/String;Ljava/lang/String;Ljava/io/InputStream;Ljava/lang/String;)V
-
-    goto :goto_7b
+    goto :goto_61
 
     .line 598
-    .end local v5    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/loopj/android/http/RequestParams$StreamWrapper;>;"
-    .end local v13    # "stream":Lcom/loopj/android/http/RequestParams$StreamWrapper;
-    :cond_ad
-    move-object/from16 v0, p0
+    :cond_87
+    iget-object v0, p0, Lcom/loopj/android/http/RequestParams;->fileParams:Ljava/util/concurrent/ConcurrentHashMap;
 
-    iget-object v14, v0, Lcom/loopj/android/http/RequestParams;->fileParams:Ljava/util/concurrent/ConcurrentHashMap;
+    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
 
-    invoke-virtual {v14}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
+    move-result-object v0
 
-    move-result-object v14
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    invoke-interface {v14}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    move-result-object v2
 
-    move-result-object v15
+    :goto_91
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    :goto_b9
-    invoke-interface {v15}, Ljava/util/Iterator;->hasNext()Z
+    move-result v0
 
-    move-result v14
+    if-eqz v0, :cond_b3
 
-    if-eqz v14, :cond_e7
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-interface {v15}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
+
+    .line 599
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/loopj/android/http/RequestParams$FileWrapper;
+
+    .line 600
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
+
+    iget-object v4, v1, Lcom/loopj/android/http/RequestParams$FileWrapper;->file:Ljava/io/File;
+
+    iget-object v5, v1, Lcom/loopj/android/http/RequestParams$FileWrapper;->contentType:Ljava/lang/String;
+
+    iget-object v1, v1, Lcom/loopj/android/http/RequestParams$FileWrapper;->customFileName:Ljava/lang/String;
+
+    invoke-virtual {v3, v0, v4, v5, v1}, Lcom/loopj/android/http/SimpleMultipartEntity;->addPart(Ljava/lang/String;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_91
+
+    .line 604
+    :cond_b3
+    iget-object v0, p0, Lcom/loopj/android/http/RequestParams;->fileArrayParams:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
 
-    check-cast v4, Ljava/util/Map$Entry;
+    :cond_bd
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
-    .line 599
-    .local v4, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/loopj/android/http/RequestParams$FileWrapper;>;"
-    invoke-interface {v4}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    move-result v0
 
-    move-result-object v8
+    if-eqz v0, :cond_ef
 
-    check-cast v8, Lcom/loopj/android/http/RequestParams$FileWrapper;
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    .line 600
-    .local v8, "fileWrapper":Lcom/loopj/android/http/RequestParams$FileWrapper;
-    invoke-interface {v4}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v14
-
-    check-cast v14, Ljava/lang/String;
-
-    iget-object v0, v8, Lcom/loopj/android/http/RequestParams$FileWrapper;->file:Ljava/io/File;
-
-    move-object/from16 v16, v0
-
-    iget-object v0, v8, Lcom/loopj/android/http/RequestParams$FileWrapper;->contentType:Ljava/lang/String;
-
-    move-object/from16 v17, v0
-
-    iget-object v0, v8, Lcom/loopj/android/http/RequestParams$FileWrapper;->customFileName:Ljava/lang/String;
-
-    move-object/from16 v18, v0
-
-    move-object/from16 v0, v16
-
-    move-object/from16 v1, v17
-
-    move-object/from16 v2, v18
-
-    invoke-virtual {v3, v14, v0, v1, v2}, Lcom/loopj/android/http/SimpleMultipartEntity;->addPart(Ljava/lang/String;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_b9
-
-    .line 604
-    .end local v4    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/loopj/android/http/RequestParams$FileWrapper;>;"
-    .end local v8    # "fileWrapper":Lcom/loopj/android/http/RequestParams$FileWrapper;
-    :cond_e7
-    move-object/from16 v0, p0
-
-    iget-object v14, v0, Lcom/loopj/android/http/RequestParams;->fileArrayParams:Ljava/util/concurrent/ConcurrentHashMap;
-
-    invoke-virtual {v14}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
-
-    move-result-object v14
-
-    invoke-interface {v14}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v15
-
-    :cond_f3
-    invoke-interface {v15}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v14
-
-    if-eqz v14, :cond_131
-
-    invoke-interface {v15}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v7
-
-    check-cast v7, Ljava/util/Map$Entry;
+    check-cast v0, Ljava/util/Map$Entry;
 
     .line 605
-    .local v7, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/List<Lcom/loopj/android/http/RequestParams$FileWrapper;>;>;"
-    invoke-interface {v7}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v9
+    move-result-object v1
 
-    check-cast v9, Ljava/util/List;
+    check-cast v1, Ljava/util/List;
 
     .line 606
-    .local v9, "fileWrapper":Ljava/util/List;, "Ljava/util/List<Lcom/loopj/android/http/RequestParams$FileWrapper;>;"
-    invoke-interface {v9}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v16
+    move-result-object v5
 
-    :goto_109
-    invoke-interface/range {v16 .. v16}, Ljava/util/Iterator;->hasNext()Z
+    :goto_d3
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v14
+    move-result v1
 
-    if-eqz v14, :cond_f3
+    if-eqz v1, :cond_bd
 
-    invoke-interface/range {v16 .. v16}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v10
+    move-result-object v1
 
-    check-cast v10, Lcom/loopj/android/http/RequestParams$FileWrapper;
+    check-cast v1, Lcom/loopj/android/http/RequestParams$FileWrapper;
 
     .line 607
-    .local v10, "fw":Lcom/loopj/android/http/RequestParams$FileWrapper;
-    invoke-interface {v7}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v14
+    move-result-object v2
 
-    check-cast v14, Ljava/lang/String;
+    check-cast v2, Ljava/lang/String;
 
-    iget-object v0, v10, Lcom/loopj/android/http/RequestParams$FileWrapper;->file:Ljava/io/File;
+    iget-object v6, v1, Lcom/loopj/android/http/RequestParams$FileWrapper;->file:Ljava/io/File;
 
-    move-object/from16 v17, v0
+    iget-object v7, v1, Lcom/loopj/android/http/RequestParams$FileWrapper;->contentType:Ljava/lang/String;
 
-    iget-object v0, v10, Lcom/loopj/android/http/RequestParams$FileWrapper;->contentType:Ljava/lang/String;
+    iget-object v1, v1, Lcom/loopj/android/http/RequestParams$FileWrapper;->customFileName:Ljava/lang/String;
 
-    move-object/from16 v18, v0
+    invoke-virtual {v3, v2, v6, v7, v1}, Lcom/loopj/android/http/SimpleMultipartEntity;->addPart(Ljava/lang/String;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V
 
-    iget-object v0, v10, Lcom/loopj/android/http/RequestParams$FileWrapper;->customFileName:Ljava/lang/String;
-
-    move-object/from16 v19, v0
-
-    move-object/from16 v0, v17
-
-    move-object/from16 v1, v18
-
-    move-object/from16 v2, v19
-
-    invoke-virtual {v3, v14, v0, v1, v2}, Lcom/loopj/android/http/SimpleMultipartEntity;->addPart(Ljava/lang/String;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_109
+    goto :goto_d3
 
     .line 611
-    .end local v7    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/List<Lcom/loopj/android/http/RequestParams$FileWrapper;>;>;"
-    .end local v9    # "fileWrapper":Ljava/util/List;, "Ljava/util/List<Lcom/loopj/android/http/RequestParams$FileWrapper;>;"
-    .end local v10    # "fw":Lcom/loopj/android/http/RequestParams$FileWrapper;
-    :cond_131
+    :cond_ef
     return-object v3
 .end method
 
 .method private getParamsList(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/List;
-    .registers 20
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/Object;
+    .registers 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -1038,349 +901,275 @@
     .end annotation
 
     .prologue
-    .line 627
-    new-instance v10, Ljava/util/LinkedList;
+    const/4 v9, 0x2
 
-    invoke-direct {v10}, Ljava/util/LinkedList;-><init>()V
+    const/4 v8, 0x1
+
+    const/4 v1, 0x0
+
+    .line 627
+    new-instance v2, Ljava/util/LinkedList;
+
+    invoke-direct {v2}, Ljava/util/LinkedList;-><init>()V
 
     .line 628
-    .local v10, "params":Ljava/util/List;, "Ljava/util/List<Lcz/msebera/android/httpclient/message/BasicNameValuePair;>;"
-    move-object/from16 v0, p2
+    instance-of v0, p2, Ljava/util/Map;
 
-    instance-of v12, v0, Ljava/util/Map;
-
-    if-eqz v12, :cond_65
-
-    move-object/from16 v6, p2
+    if-eqz v0, :cond_5c
 
     .line 629
-    check-cast v6, Ljava/util/Map;
+    check-cast p2, Ljava/util/Map;
 
     .line 630
-    .local v6, "map":Ljava/util/Map;
-    new-instance v4, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-interface {v6}, Ljava/util/Map;->keySet()Ljava/util/Set;
+    invoke-interface {p2}, Ljava/util/Map;->keySet()Ljava/util/Set;
 
-    move-result-object v12
+    move-result-object v3
 
-    invoke-direct {v4, v12}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    invoke-direct {v0, v3}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
     .line 632
-    .local v4, "list":Ljava/util/List;
-    invoke-interface {v4}, Ljava/util/List;->size()I
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    move-result v12
+    move-result v3
 
-    if-lez v12, :cond_2a
+    if-lez v3, :cond_28
 
-    const/4 v12, 0x0
+    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    invoke-interface {v4, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-result-object v3
 
-    move-result-object v12
+    instance-of v3, v3, Ljava/lang/Comparable;
 
-    instance-of v12, v12, Ljava/lang/Comparable;
-
-    if-eqz v12, :cond_2a
+    if-eqz v3, :cond_28
 
     .line 633
-    invoke-static {v4}, Ljava/util/Collections;->sort(Ljava/util/List;)V
+    invoke-static {v0}, Ljava/util/Collections;->sort(Ljava/util/List;)V
 
     .line 635
-    :cond_2a
-    invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    :cond_28
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v12
+    move-result-object v3
 
-    :cond_2e
-    :goto_2e
-    invoke-interface {v12}, Ljava/util/Iterator;->hasNext()Z
+    :cond_2c
+    :goto_2c
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v13
+    move-result v0
 
-    if-eqz v13, :cond_102
+    if-eqz v0, :cond_dd
 
-    invoke-interface {v12}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v0
 
     .line 636
-    .local v7, "nestedKey":Ljava/lang/Object;
-    instance-of v13, v7, Ljava/lang/String;
+    instance-of v4, v0, Ljava/lang/String;
 
-    if-eqz v13, :cond_2e
+    if-eqz v4, :cond_2c
 
     .line 637
-    invoke-interface {v6, v7}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v4
 
     .line 638
-    .local v8, "nestedValue":Ljava/lang/Object;
-    if-eqz v8, :cond_2e
+    if-eqz v4, :cond_2c
 
     .line 639
-    if-nez p1, :cond_50
+    if-nez p1, :cond_4c
 
-    check-cast v7, Ljava/lang/String;
+    check-cast v0, Ljava/lang/String;
 
-    .end local v7    # "nestedKey":Ljava/lang/Object;
-    :goto_46
-    move-object/from16 v0, p0
+    :goto_44
+    invoke-direct {p0, v0, v4}, Lcom/loopj/android/http/RequestParams;->getParamsList(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/List;
 
-    invoke-direct {v0, v7, v8}, Lcom/loopj/android/http/RequestParams;->getParamsList(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/List;
+    move-result-object v0
 
-    move-result-object v13
+    invoke-interface {v2, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    invoke-interface {v10, v13}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+    goto :goto_2c
 
-    goto :goto_2e
+    :cond_4c
+    sget-object v5, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    .restart local v7    # "nestedKey":Ljava/lang/Object;
-    :cond_50
-    sget-object v13, Ljava/util/Locale;->US:Ljava/util/Locale;
+    const-string/jumbo v6, "%s[%s]"
 
-    const-string/jumbo v14, "%s[%s]"
+    new-array v7, v9, [Ljava/lang/Object;
 
-    const/4 v15, 0x2
+    aput-object p1, v7, v1
 
-    new-array v15, v15, [Ljava/lang/Object;
+    aput-object v0, v7, v8
 
-    const/16 v16, 0x0
+    invoke-static {v5, v6, v7}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    aput-object p1, v15, v16
+    move-result-object v0
 
-    const/16 v16, 0x1
+    goto :goto_44
 
-    aput-object v7, v15, v16
+    .line 644
+    :cond_5c
+    instance-of v0, p2, Ljava/util/List;
 
-    invoke-static {v13, v14, v15}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    if-eqz v0, :cond_8a
+
+    .line 645
+    check-cast p2, Ljava/util/List;
+
+    .line 646
+    invoke-interface {p2}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    move v0, v1
+
+    .line 647
+    :goto_67
+    if-ge v0, v3, :cond_dd
+
+    .line 648
+    sget-object v4, Ljava/util/Locale;->US:Ljava/util/Locale;
+
+    const-string/jumbo v5, "%s[%d]"
+
+    new-array v6, v9, [Ljava/lang/Object;
+
+    aput-object p1, v6, v1
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
 
-    goto :goto_46
+    aput-object v7, v6, v8
 
-    .line 644
-    .end local v4    # "list":Ljava/util/List;
-    .end local v6    # "map":Ljava/util/Map;
-    .end local v7    # "nestedKey":Ljava/lang/Object;
-    .end local v8    # "nestedValue":Ljava/lang/Object;
-    :cond_65
-    move-object/from16 v0, p2
+    invoke-static {v4, v5, v6}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    instance-of v12, v0, Ljava/util/List;
+    move-result-object v4
 
-    if-eqz v12, :cond_9c
+    invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-object/from16 v4, p2
+    move-result-object v5
 
-    .line 645
-    check-cast v4, Ljava/util/List;
+    invoke-direct {p0, v4, v5}, Lcom/loopj/android/http/RequestParams;->getParamsList(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/List;
 
-    .line 646
-    .restart local v4    # "list":Ljava/util/List;
-    invoke-interface {v4}, Ljava/util/List;->size()I
+    move-result-object v4
 
-    move-result v5
+    invoke-interface {v2, v4}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
     .line 647
-    .local v5, "listSize":I
-    const/4 v9, 0x0
+    add-int/lit8 v0, v0, 0x1
 
-    .local v9, "nestedValueIndex":I
-    :goto_74
-    if-ge v9, v5, :cond_102
-
-    .line 648
-    sget-object v12, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    const-string/jumbo v13, "%s[%d]"
-
-    const/4 v14, 0x2
-
-    new-array v14, v14, [Ljava/lang/Object;
-
-    const/4 v15, 0x0
-
-    aput-object p1, v14, v15
-
-    const/4 v15, 0x1
-
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v16
-
-    aput-object v16, v14, v15
-
-    invoke-static {v12, v13, v14}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-interface {v4, v9}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v13
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v12, v13}, Lcom/loopj/android/http/RequestParams;->getParamsList(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v12
-
-    invoke-interface {v10, v12}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
-
-    .line 647
-    add-int/lit8 v9, v9, 0x1
-
-    goto :goto_74
+    goto :goto_67
 
     .line 650
-    .end local v4    # "list":Ljava/util/List;
-    .end local v5    # "listSize":I
-    .end local v9    # "nestedValueIndex":I
-    :cond_9c
-    move-object/from16 v0, p2
+    :cond_8a
+    instance-of v0, p2, [Ljava/lang/Object;
 
-    instance-of v12, v0, [Ljava/lang/Object;
-
-    if-eqz v12, :cond_d0
+    if-eqz v0, :cond_b5
 
     .line 651
     check-cast p2, [Ljava/lang/Object;
 
-    .end local p2    # "value":Ljava/lang/Object;
-    move-object/from16 v2, p2
-
-    check-cast v2, [Ljava/lang/Object;
+    check-cast p2, [Ljava/lang/Object;
 
     .line 652
-    .local v2, "array":[Ljava/lang/Object;
-    array-length v3, v2
+    array-length v3, p2
+
+    move v0, v1
 
     .line 653
-    .local v3, "arrayLength":I
-    const/4 v9, 0x0
-
-    .restart local v9    # "nestedValueIndex":I
-    :goto_aa
-    if-ge v9, v3, :cond_102
+    :goto_94
+    if-ge v0, v3, :cond_dd
 
     .line 654
-    sget-object v12, Ljava/util/Locale;->US:Ljava/util/Locale;
+    sget-object v4, Ljava/util/Locale;->US:Ljava/util/Locale;
 
-    const-string/jumbo v13, "%s[%d]"
+    const-string/jumbo v5, "%s[%d]"
 
-    const/4 v14, 0x2
+    new-array v6, v9, [Ljava/lang/Object;
 
-    new-array v14, v14, [Ljava/lang/Object;
+    aput-object p1, v6, v1
 
-    const/4 v15, 0x0
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    aput-object p1, v14, v15
+    move-result-object v7
 
-    const/4 v15, 0x1
+    aput-object v7, v6, v8
 
-    invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {v4, v5, v6}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v16
+    move-result-object v4
 
-    aput-object v16, v14, v15
+    aget-object v5, p2, v0
 
-    invoke-static {v12, v13, v14}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-direct {p0, v4, v5}, Lcom/loopj/android/http/RequestParams;->getParamsList(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/List;
 
-    move-result-object v12
+    move-result-object v4
 
-    aget-object v13, v2, v9
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v12, v13}, Lcom/loopj/android/http/RequestParams;->getParamsList(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v12
-
-    invoke-interface {v10, v12}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+    invoke-interface {v2, v4}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
     .line 653
-    add-int/lit8 v9, v9, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    goto :goto_aa
+    goto :goto_94
 
     .line 656
-    .end local v2    # "array":[Ljava/lang/Object;
-    .end local v3    # "arrayLength":I
-    .end local v9    # "nestedValueIndex":I
-    .restart local p2    # "value":Ljava/lang/Object;
-    :cond_d0
-    move-object/from16 v0, p2
+    :cond_b5
+    instance-of v0, p2, Ljava/util/Set;
 
-    instance-of v12, v0, Ljava/util/Set;
-
-    if-eqz v12, :cond_f4
-
-    move-object/from16 v11, p2
+    if-eqz v0, :cond_d1
 
     .line 657
-    check-cast v11, Ljava/util/Set;
+    check-cast p2, Ljava/util/Set;
 
     .line 658
-    .local v11, "set":Ljava/util/Set;
-    invoke-interface {v11}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {p2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v12
+    move-result-object v0
 
-    :goto_de
-    invoke-interface {v12}, Ljava/util/Iterator;->hasNext()Z
+    :goto_bf
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v13
+    move-result v1
 
-    if-eqz v13, :cond_102
+    if-eqz v1, :cond_dd
 
-    invoke-interface {v12}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v1
 
     .line 659
-    .restart local v8    # "nestedValue":Ljava/lang/Object;
-    move-object/from16 v0, p0
+    invoke-direct {p0, p1, v1}, Lcom/loopj/android/http/RequestParams;->getParamsList(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/List;
 
-    move-object/from16 v1, p1
+    move-result-object v1
 
-    invoke-direct {v0, v1, v8}, Lcom/loopj/android/http/RequestParams;->getParamsList(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/List;
+    invoke-interface {v2, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    move-result-object v13
-
-    invoke-interface {v10, v13}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
-
-    goto :goto_de
+    goto :goto_bf
 
     .line 662
-    .end local v8    # "nestedValue":Ljava/lang/Object;
-    .end local v11    # "set":Ljava/util/Set;
-    :cond_f4
-    new-instance v12, Lcz/msebera/android/httpclient/message/BasicNameValuePair;
+    :cond_d1
+    new-instance v0, Lcz/msebera/android/httpclient/message/BasicNameValuePair;
 
-    invoke-virtual/range {p2 .. p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {p2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v1
 
-    move-object/from16 v0, p1
+    invoke-direct {v0, p1, v1}, Lcz/msebera/android/httpclient/message/BasicNameValuePair;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-direct {v12, v0, v13}, Lcz/msebera/android/httpclient/message/BasicNameValuePair;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-interface {v10, v12}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 664
-    .end local p2    # "value":Ljava/lang/Object;
-    :cond_102
-    return-object v10
+    :cond_dd
+    return-object v2
 .end method
 
 
 # virtual methods
 .method public add(Ljava/lang/String;Ljava/lang/String;)V
     .registers 5
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/String;
 
     .prologue
     .line 383
@@ -1389,28 +1178,24 @@
     if-eqz p2, :cond_1d
 
     .line 384
-    iget-object v1, p0, Lcom/loopj/android/http/RequestParams;->urlParamsWithObjects:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v0, p0, Lcom/loopj/android/http/RequestParams;->urlParamsWithObjects:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v1, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
 
     .line 385
-    .local v0, "params":Ljava/lang/Object;
     if-nez v0, :cond_14
 
     .line 387
     new-instance v0, Ljava/util/HashSet;
 
-    .end local v0    # "params":Ljava/lang/Object;
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     .line 388
-    .local v0, "params":Ljava/util/HashSet;
     invoke-virtual {p0, p1, v0}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 390
-    .end local v0    # "params":Ljava/util/HashSet;
     :cond_14
     instance-of v1, v0, Ljava/util/List;
 
@@ -1442,12 +1227,6 @@
 
 .method public getEntity(Lcom/loopj/android/http/ResponseHandlerInterface;)Lcz/msebera/android/httpclient/HttpEntity;
     .registers 3
-    .param p1, "progressHandler"    # Lcom/loopj/android/http/ResponseHandlerInterface;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 517
@@ -1521,7 +1300,7 @@
 
     iget-object v1, p0, Lcom/loopj/android/http/RequestParams;->contentEncoding:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lcz/msebera/android/httpclient/client/utils/URLEncodedUtils;->format(Ljava/util/List;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1}, Lcz/msebera/android/httpclient/client/utils/URLEncodedUtils;->a(Ljava/util/List;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1529,7 +1308,7 @@
 .end method
 
 .method protected getParamsList()Ljava/util/List;
-    .registers 7
+    .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1542,77 +1321,73 @@
 
     .prologue
     .line 615
-    new-instance v1, Ljava/util/LinkedList;
+    new-instance v2, Ljava/util/LinkedList;
 
-    invoke-direct {v1}, Ljava/util/LinkedList;-><init>()V
+    invoke-direct {v2}, Ljava/util/LinkedList;-><init>()V
 
     .line 617
-    .local v1, "lparams":Ljava/util/List;, "Ljava/util/List<Lcz/msebera/android/httpclient/message/BasicNameValuePair;>;"
-    iget-object v2, p0, Lcom/loopj/android/http/RequestParams;->urlParams:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v0, p0, Lcom/loopj/android/http/RequestParams;->urlParams:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v2}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
+    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-interface {v2}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v4
+    move-result-object v3
 
     :goto_f
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_30
+    if-eqz v0, :cond_30
 
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Map$Entry;
 
     .line 618
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
-    new-instance v5, Lcz/msebera/android/httpclient/message/BasicNameValuePair;
+    new-instance v4, Lcz/msebera/android/httpclient/message/BasicNameValuePair;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v1
 
-    check-cast v2, Ljava/lang/String;
+    check-cast v1, Ljava/lang/String;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Ljava/lang/String;
+    check-cast v0, Ljava/lang/String;
 
-    invoke-direct {v5, v2, v3}, Lcz/msebera/android/httpclient/message/BasicNameValuePair;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v4, v1, v0}, Lcz/msebera/android/httpclient/message/BasicNameValuePair;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
-    invoke-interface {v1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     goto :goto_f
 
     .line 621
-    .end local v0    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
     :cond_30
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    iget-object v3, p0, Lcom/loopj/android/http/RequestParams;->urlParamsWithObjects:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v1, p0, Lcom/loopj/android/http/RequestParams;->urlParamsWithObjects:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-direct {p0, v2, v3}, Lcom/loopj/android/http/RequestParams;->getParamsList(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/List;
+    invoke-direct {p0, v0, v1}, Lcom/loopj/android/http/RequestParams;->getParamsList(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/List;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-interface {v1, v2}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+    invoke-interface {v2, v0}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
     .line 623
-    return-object v1
+    return-object v2
 .end method
 
 .method public has(Ljava/lang/String;)Z
     .registers 3
-    .param p1, "key"    # Ljava/lang/String;
 
     .prologue
     .line 418
@@ -1674,8 +1449,6 @@
 
 .method public put(Ljava/lang/String;I)V
     .registers 5
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # I
 
     .prologue
     .line 359
@@ -1697,8 +1470,6 @@
 
 .method public put(Ljava/lang/String;J)V
     .registers 6
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # J
 
     .prologue
     .line 371
@@ -1720,13 +1491,6 @@
 
 .method public put(Ljava/lang/String;Ljava/io/File;)V
     .registers 4
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "file"    # Ljava/io/File;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/FileNotFoundException;
-        }
-    .end annotation
 
     .prologue
     const/4 v0, 0x0
@@ -1740,14 +1504,6 @@
 
 .method public put(Ljava/lang/String;Ljava/io/File;Ljava/lang/String;)V
     .registers 5
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "file"    # Ljava/io/File;
-    .param p3, "contentType"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/FileNotFoundException;
-        }
-    .end annotation
 
     .prologue
     .line 271
@@ -1761,15 +1517,6 @@
 
 .method public put(Ljava/lang/String;Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V
     .registers 7
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "file"    # Ljava/io/File;
-    .param p3, "contentType"    # Ljava/lang/String;
-    .param p4, "customFileName"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/FileNotFoundException;
-        }
-    .end annotation
 
     .prologue
     .line 284
@@ -1809,8 +1556,6 @@
 
 .method public put(Ljava/lang/String;Ljava/io/InputStream;)V
     .registers 4
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "stream"    # Ljava/io/InputStream;
 
     .prologue
     .line 299
@@ -1824,9 +1569,6 @@
 
 .method public put(Ljava/lang/String;Ljava/io/InputStream;Ljava/lang/String;)V
     .registers 5
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "stream"    # Ljava/io/InputStream;
-    .param p3, "name"    # Ljava/lang/String;
 
     .prologue
     .line 310
@@ -1840,10 +1582,6 @@
 
 .method public put(Ljava/lang/String;Ljava/io/InputStream;Ljava/lang/String;Ljava/lang/String;)V
     .registers 11
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "stream"    # Ljava/io/InputStream;
-    .param p3, "name"    # Ljava/lang/String;
-    .param p4, "contentType"    # Ljava/lang/String;
 
     .prologue
     .line 322
@@ -1867,11 +1605,6 @@
 
 .method public put(Ljava/lang/String;Ljava/io/InputStream;Ljava/lang/String;Ljava/lang/String;Z)V
     .registers 8
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "stream"    # Ljava/io/InputStream;
-    .param p3, "name"    # Ljava/lang/String;
-    .param p4, "contentType"    # Ljava/lang/String;
-    .param p5, "autoClose"    # Z
 
     .prologue
     .line 335
@@ -1895,8 +1628,6 @@
 
 .method public put(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 4
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 347
@@ -1916,8 +1647,6 @@
 
 .method public put(Ljava/lang/String;Ljava/lang/String;)V
     .registers 4
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/String;
 
     .prologue
     .line 200
@@ -1937,14 +1666,6 @@
 
 .method public put(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)V
     .registers 5
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "customFileName"    # Ljava/lang/String;
-    .param p3, "file"    # Ljava/io/File;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/FileNotFoundException;
-        }
-    .end annotation
 
     .prologue
     .line 259
@@ -1958,13 +1679,6 @@
 
 .method public put(Ljava/lang/String;[Ljava/io/File;)V
     .registers 4
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "files"    # [Ljava/io/File;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/FileNotFoundException;
-        }
-    .end annotation
 
     .prologue
     const/4 v0, 0x0
@@ -1978,15 +1692,6 @@
 
 .method public put(Ljava/lang/String;[Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V
     .registers 10
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "files"    # [Ljava/io/File;
-    .param p3, "contentType"    # Ljava/lang/String;
-    .param p4, "customFileName"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/FileNotFoundException;
-        }
-    .end annotation
 
     .prologue
     .line 227
@@ -1998,21 +1703,19 @@
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     .line 229
-    .local v1, "fileWrappers":Ljava/util/List;, "Ljava/util/List<Lcom/loopj/android/http/RequestParams$FileWrapper;>;"
-    array-length v3, p2
+    array-length v2, p2
 
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     :goto_9
-    if-ge v2, v3, :cond_26
+    if-ge v0, v2, :cond_26
 
-    aget-object v0, p2, v2
+    aget-object v3, p2, v0
 
     .line 230
-    .local v0, "file":Ljava/io/File;
-    if-eqz v0, :cond_15
+    if-eqz v3, :cond_15
 
-    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+    invoke-virtual {v3}, Ljava/io/File;->exists()Z
 
     move-result v4
 
@@ -2020,41 +1723,38 @@
 
     .line 231
     :cond_15
-    new-instance v2, Ljava/io/FileNotFoundException;
+    new-instance v0, Ljava/io/FileNotFoundException;
 
-    invoke-direct {v2}, Ljava/io/FileNotFoundException;-><init>()V
+    invoke-direct {v0}, Ljava/io/FileNotFoundException;-><init>()V
 
-    throw v2
+    throw v0
 
     .line 233
     :cond_1b
     new-instance v4, Lcom/loopj/android/http/RequestParams$FileWrapper;
 
-    invoke-direct {v4, v0, p3, p4}, Lcom/loopj/android/http/RequestParams$FileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v4, v3, p3, p4}, Lcom/loopj/android/http/RequestParams$FileWrapper;-><init>(Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)V
 
     invoke-interface {v1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 229
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_9
 
     .line 235
-    .end local v0    # "file":Ljava/io/File;
     :cond_26
-    iget-object v2, p0, Lcom/loopj/android/http/RequestParams;->fileArrayParams:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v0, p0, Lcom/loopj/android/http/RequestParams;->fileArrayParams:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v2, p1, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 237
-    .end local v1    # "fileWrappers":Ljava/util/List;, "Ljava/util/List<Lcom/loopj/android/http/RequestParams$FileWrapper;>;"
     :cond_2b
     return-void
 .end method
 
 .method public remove(Ljava/lang/String;)V
     .registers 3
-    .param p1, "key"    # Ljava/lang/String;
 
     .prologue
     .line 404
@@ -2088,7 +1788,6 @@
 
 .method public setAutoCloseInputStreams(Z)V
     .registers 2
-    .param p1, "flag"    # Z
 
     .prologue
     .line 505
@@ -2100,7 +1799,6 @@
 
 .method public setContentEncoding(Ljava/lang/String;)V
     .registers 5
-    .param p1, "encoding"    # Ljava/lang/String;
 
     .prologue
     .line 174
@@ -2128,7 +1826,6 @@
 
 .method public setElapsedFieldInJsonStreamer(Ljava/lang/String;)V
     .registers 2
-    .param p1, "value"    # Ljava/lang/String;
 
     .prologue
     .line 495
@@ -2140,7 +1837,6 @@
 
 .method public setForceMultipartEntityContentType(Z)V
     .registers 2
-    .param p1, "force"    # Z
 
     .prologue
     .line 190
@@ -2152,7 +1848,6 @@
 
 .method public setHttpEntityIsRepeatable(Z)V
     .registers 2
-    .param p1, "flag"    # Z
 
     .prologue
     .line 478
@@ -2164,7 +1859,6 @@
 
 .method public setUseJsonStreamer(Z)V
     .registers 2
-    .param p1, "flag"    # Z
 
     .prologue
     .line 482
@@ -2175,352 +1869,340 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 11
+    .registers 5
 
     .prologue
     .line 427
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 428
-    .local v6, "result":Ljava/lang/StringBuilder;
-    iget-object v7, p0, Lcom/loopj/android/http/RequestParams;->urlParams:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v0, p0, Lcom/loopj/android/http/RequestParams;->urlParams:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v7}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
+    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-interface {v7}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v8
+    move-result-object v3
 
     :goto_f
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v7
+    move-result v0
 
-    if-eqz v7, :cond_40
+    if-eqz v0, :cond_40
 
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Ljava/util/Map$Entry;
+    check-cast v0, Ljava/util/Map$Entry;
 
     .line 429
-    .local v2, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->length()I
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
-    move-result v7
+    move-result v1
 
-    if-lez v7, :cond_27
+    if-lez v1, :cond_27
 
     .line 430
-    const-string/jumbo v7, "&"
+    const-string/jumbo v1, "&"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 432
     :cond_27
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v1
 
-    check-cast v7, Ljava/lang/String;
+    check-cast v1, Ljava/lang/String;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 433
-    const-string/jumbo v7, "="
+    const-string/jumbo v1, "="
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 434
-    invoke-interface {v2}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v0
 
-    check-cast v7, Ljava/lang/String;
+    check-cast v0, Ljava/lang/String;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_f
 
     .line 437
-    .end local v2    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/lang/String;>;"
     :cond_40
-    iget-object v7, p0, Lcom/loopj/android/http/RequestParams;->streamParams:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v0, p0, Lcom/loopj/android/http/RequestParams;->streamParams:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v7}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
+    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-interface {v7}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v8
-
-    :goto_4a
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_78
-
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    check-cast v1, Ljava/util/Map$Entry;
+    :goto_4a
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_78
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
 
     .line 438
-    .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/loopj/android/http/RequestParams$StreamWrapper;>;"
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->length()I
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
-    move-result v7
+    move-result v3
 
-    if-lez v7, :cond_62
+    if-lez v3, :cond_62
 
     .line 439
-    const-string/jumbo v7, "&"
+    const-string/jumbo v3, "&"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 441
     :cond_62
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v0
 
-    check-cast v7, Ljava/lang/String;
+    check-cast v0, Ljava/lang/String;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 442
-    const-string/jumbo v7, "="
+    const-string/jumbo v0, "="
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 443
-    const-string/jumbo v7, "STREAM"
+    const-string/jumbo v0, "STREAM"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_4a
 
     .line 446
-    .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/loopj/android/http/RequestParams$StreamWrapper;>;"
     :cond_78
-    iget-object v7, p0, Lcom/loopj/android/http/RequestParams;->fileParams:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v0, p0, Lcom/loopj/android/http/RequestParams;->fileParams:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v7}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
+    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-interface {v7}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v8
+    move-result-object v1
 
     :goto_82
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v7
+    move-result v0
 
-    if-eqz v7, :cond_b0
+    if-eqz v0, :cond_b0
 
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/Map$Entry;
 
     .line 447
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/loopj/android/http/RequestParams$FileWrapper;>;"
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->length()I
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
-    move-result v7
+    move-result v3
 
-    if-lez v7, :cond_9a
+    if-lez v3, :cond_9a
 
     .line 448
-    const-string/jumbo v7, "&"
+    const-string/jumbo v3, "&"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 450
     :cond_9a
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v0
 
-    check-cast v7, Ljava/lang/String;
+    check-cast v0, Ljava/lang/String;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 451
-    const-string/jumbo v7, "="
+    const-string/jumbo v0, "="
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 452
-    const-string/jumbo v7, "FILE"
+    const-string/jumbo v0, "FILE"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_82
 
     .line 455
-    .end local v0    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Lcom/loopj/android/http/RequestParams$FileWrapper;>;"
     :cond_b0
-    iget-object v7, p0, Lcom/loopj/android/http/RequestParams;->fileArrayParams:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v0, p0, Lcom/loopj/android/http/RequestParams;->fileArrayParams:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-virtual {v7}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
+    invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentHashMap;->entrySet()Ljava/util/Set;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-interface {v7}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
-    move-result-object v8
-
-    :goto_ba
-    invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v7
-
-    if-eqz v7, :cond_fd
-
-    invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    check-cast v3, Ljava/util/Map$Entry;
+    :goto_ba
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_fd
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/util/Map$Entry;
 
     .line 456
-    .local v3, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/List<Lcom/loopj/android/http/RequestParams$FileWrapper;>;>;"
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->length()I
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
-    move-result v7
+    move-result v1
 
-    if-lez v7, :cond_d2
+    if-lez v1, :cond_d2
 
     .line 457
-    const-string/jumbo v7, "&"
+    const-string/jumbo v1, "&"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 459
     :cond_d2
-    invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v1
 
-    check-cast v7, Ljava/lang/String;
+    check-cast v1, Ljava/lang/String;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 460
-    const-string/jumbo v7, "="
+    const-string/jumbo v1, "="
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 461
-    const-string/jumbo v7, "FILES(SIZE="
+    const-string/jumbo v1, "FILES(SIZE="
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v9
+    move-result-object v1
 
-    invoke-interface {v3}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v0
 
-    check-cast v7, Ljava/util/List;
+    check-cast v0, Ljava/util/List;
 
-    invoke-interface {v7}, Ljava/util/List;->size()I
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    move-result v7
+    move-result v0
 
-    invoke-virtual {v9, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v0
 
-    const-string/jumbo v9, ")"
+    const-string/jumbo v1, ")"
 
-    invoke-virtual {v7, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_ba
 
     .line 464
-    .end local v3    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/List<Lcom/loopj/android/http/RequestParams$FileWrapper;>;>;"
     :cond_fd
-    const/4 v7, 0x0
+    const/4 v0, 0x0
 
-    iget-object v8, p0, Lcom/loopj/android/http/RequestParams;->urlParamsWithObjects:Ljava/util/concurrent/ConcurrentHashMap;
+    iget-object v1, p0, Lcom/loopj/android/http/RequestParams;->urlParamsWithObjects:Ljava/util/concurrent/ConcurrentHashMap;
 
-    invoke-direct {p0, v7, v8}, Lcom/loopj/android/http/RequestParams;->getParamsList(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/List;
+    invoke-direct {p0, v0, v1}, Lcom/loopj/android/http/RequestParams;->getParamsList(Ljava/lang/String;Ljava/lang/Object;)Ljava/util/List;
 
-    move-result-object v5
+    move-result-object v0
 
     .line 465
-    .local v5, "params":Ljava/util/List;, "Ljava/util/List<Lcz/msebera/android/httpclient/message/BasicNameValuePair;>;"
-    invoke-interface {v5}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
-    move-result-object v7
+    move-result-object v1
 
     :goto_108
-    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v8
+    move-result v0
 
-    if-eqz v8, :cond_135
+    if-eqz v0, :cond_135
 
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v0
 
-    check-cast v4, Lcz/msebera/android/httpclient/message/BasicNameValuePair;
+    check-cast v0, Lcz/msebera/android/httpclient/message/BasicNameValuePair;
 
     .line 466
-    .local v4, "kv":Lcz/msebera/android/httpclient/message/BasicNameValuePair;
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->length()I
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->length()I
 
-    move-result v8
+    move-result v3
 
-    if-lez v8, :cond_120
+    if-lez v3, :cond_120
 
     .line 467
-    const-string/jumbo v8, "&"
+    const-string/jumbo v3, "&"
 
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 469
     :cond_120
-    invoke-virtual {v4}, Lcz/msebera/android/httpclient/message/BasicNameValuePair;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcz/msebera/android/httpclient/message/BasicNameValuePair;->a()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v3
 
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 470
-    const-string/jumbo v8, "="
+    const-string/jumbo v3, "="
 
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 471
-    invoke-virtual {v4}, Lcz/msebera/android/httpclient/message/BasicNameValuePair;->getValue()Ljava/lang/String;
+    invoke-virtual {v0}, Lcz/msebera/android/httpclient/message/BasicNameValuePair;->b()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v0
 
-    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     goto :goto_108
 
     .line 474
-    .end local v4    # "kv":Lcz/msebera/android/httpclient/message/BasicNameValuePair;
     :cond_135
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v0
 
-    return-object v7
+    return-object v0
 .end method

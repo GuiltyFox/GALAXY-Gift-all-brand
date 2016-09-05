@@ -4,64 +4,49 @@
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 11
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static createFile(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
-    .registers 5
-    .param p0, "path"    # Ljava/lang/String;
-    .param p1, "fileName"    # Ljava/lang/String;
+.method public static a(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
+    .registers 4
 
     .prologue
     .line 44
-    new-instance v1, Ljava/io/File;
+    new-instance v0, Ljava/io/File;
 
-    invoke-static {p0}, Lcn/aigestudio/downloader/utils/FileUtil;->makeDir(Ljava/lang/String;)Ljava/io/File;
+    invoke-static {p0}, Lcn/aigestudio/downloader/utils/FileUtil;->b(Ljava/lang/String;)Ljava/io/File;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-direct {v1, v2, p1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v0, v1, p1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     .line 45
-    .local v1, "file":Ljava/io/File;
-    invoke-static {v1}, Lcn/aigestudio/downloader/utils/FileUtil;->isExist(Ljava/io/File;)Z
+    invoke-static {v0}, Lcn/aigestudio/downloader/utils/FileUtil;->a(Ljava/io/File;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_12
+    if-nez v1, :cond_12
 
     .line 47
     :try_start_f
-    invoke-virtual {v1}, Ljava/io/File;->createNewFile()Z
+    invoke-virtual {v0}, Ljava/io/File;->createNewFile()Z
     :try_end_12
     .catch Ljava/io/IOException; {:try_start_f .. :try_end_12} :catch_13
 
     .line 52
     :cond_12
     :goto_12
-    return-object v1
+    return-object v0
 
     .line 48
     :catch_13
-    move-exception v0
+    move-exception v1
 
     .line 49
-    .local v0, "e":Ljava/io/IOException;
-    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
 
     goto :goto_12
 .end method
 
-.method public static getFileNameFromUrl(Ljava/lang/String;)Ljava/lang/String;
+.method public static a(Ljava/lang/String;)Ljava/lang/String;
     .registers 2
-    .param p0, "url"    # Ljava/lang/String;
 
     .prologue
     .line 19
@@ -78,9 +63,8 @@
     return-object v0
 .end method
 
-.method public static isExist(Ljava/io/File;)Z
+.method public static a(Ljava/io/File;)Z
     .registers 2
-    .param p0, "file"    # Ljava/io/File;
 
     .prologue
     .line 62
@@ -91,9 +75,8 @@
     return v0
 .end method
 
-.method public static makeDir(Ljava/lang/String;)Ljava/io/File;
+.method public static b(Ljava/lang/String;)Ljava/io/File;
     .registers 3
-    .param p0, "path"    # Ljava/lang/String;
 
     .prologue
     .line 29
@@ -102,8 +85,7 @@
     invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     .line 30
-    .local v0, "dir":Ljava/io/File;
-    invoke-static {v0}, Lcn/aigestudio/downloader/utils/FileUtil;->isExist(Ljava/io/File;)Z
+    invoke-static {v0}, Lcn/aigestudio/downloader/utils/FileUtil;->a(Ljava/io/File;)Z
 
     move-result v1
 

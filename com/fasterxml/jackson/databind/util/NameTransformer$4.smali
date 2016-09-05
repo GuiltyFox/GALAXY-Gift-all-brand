@@ -8,11 +8,6 @@
     value = Lcom/fasterxml/jackson/databind/util/NameTransformer;->simpleTransformer(Ljava/lang/String;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/util/NameTransformer;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic val$suffix:Ljava/lang/String;
@@ -35,7 +30,6 @@
 # virtual methods
 .method public reverse(Ljava/lang/String;)Ljava/lang/String;
     .registers 5
-    .param p1, "transformed"    # Ljava/lang/String;
 
     .prologue
     .line 76
@@ -112,7 +106,6 @@
 
 .method public transform(Ljava/lang/String;)Ljava/lang/String;
     .registers 4
-    .param p1, "name"    # Ljava/lang/String;
 
     .prologue
     .line 73

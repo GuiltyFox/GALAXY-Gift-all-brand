@@ -11,11 +11,6 @@
     value = Lrx/Observable$EmptyHolder;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -40,21 +35,19 @@
 
 
 # virtual methods
-.method public bridge synthetic call(Ljava/lang/Object;)V
+.method public bridge synthetic a(Ljava/lang/Object;)V
     .registers 2
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 1070
     check-cast p1, Lrx/Subscriber;
 
-    .end local p1    # "x0":Ljava/lang/Object;
-    invoke-virtual {p0, p1}, Lrx/Observable$EmptyHolder$1;->call(Lrx/Subscriber;)V
+    invoke-virtual {p0, p1}, Lrx/Observable$EmptyHolder$1;->a(Lrx/Subscriber;)V
 
     return-void
 .end method
 
-.method public call(Lrx/Subscriber;)V
+.method public a(Lrx/Subscriber;)V
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -68,8 +61,7 @@
 
     .prologue
     .line 1073
-    .local p1, "subscriber":Lrx/Subscriber;, "Lrx/Subscriber<-Ljava/lang/Object;>;"
-    invoke-virtual {p1}, Lrx/Subscriber;->onCompleted()V
+    invoke-virtual {p1}, Lrx/Subscriber;->i_()V
 
     .line 1074
     return-void

@@ -3,43 +3,46 @@
 .source "ZipUtil.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/multidex/ZipUtil$CentralDirectory;
-    }
-.end annotation
-
-
-# static fields
-.field private static final BUFFER_SIZE:I = 0x4000
-
-.field private static final ENDHDR:I = 0x16
-
-.field private static final ENDSIG:I = 0x6054b50
-
-
 # direct methods
-.method constructor <init>()V
-    .registers 1
+.method static a(Ljava/io/File;)J
+    .registers 5
 
     .prologue
-    .line 32
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 55
+    new-instance v1, Ljava/io/RandomAccessFile;
 
-    .line 33
-    return-void
+    const-string/jumbo v0, "r"
+
+    invoke-direct {v1, p0, v0}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    .line 57
+    :try_start_8
+    invoke-static {v1}, Landroid/support/multidex/ZipUtil;->a(Ljava/io/RandomAccessFile;)Landroid/support/multidex/ZipUtil$CentralDirectory;
+
+    move-result-object v0
+
+    .line 59
+    invoke-static {v1, v0}, Landroid/support/multidex/ZipUtil;->a(Ljava/io/RandomAccessFile;Landroid/support/multidex/ZipUtil$CentralDirectory;)J
+    :try_end_f
+    .catchall {:try_start_8 .. :try_end_f} :catchall_14
+
+    move-result-wide v2
+
+    .line 61
+    invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
+
+    return-wide v2
+
+    :catchall_14
+    move-exception v0
+
+    invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
+
+    throw v0
 .end method
 
-.method static computeCrcOfCentralDir(Ljava/io/RandomAccessFile;Landroid/support/multidex/ZipUtil$CentralDirectory;)J
+.method static a(Ljava/io/RandomAccessFile;Landroid/support/multidex/ZipUtil$CentralDirectory;)J
     .registers 14
-    .param p0, "raf"    # Ljava/io/RandomAccessFile;
-    .param p1, "dir"    # Landroid/support/multidex/ZipUtil$CentralDirectory;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     const-wide/16 v10, 0x4000
@@ -52,192 +55,171 @@
     invoke-direct {v1}, Ljava/util/zip/CRC32;-><init>()V
 
     .line 109
-    .local v1, "crc":Ljava/util/zip/CRC32;
-    iget-wide v4, p1, Landroid/support/multidex/ZipUtil$CentralDirectory;->size:J
+    iget-wide v2, p1, Landroid/support/multidex/ZipUtil$CentralDirectory;->b:J
 
     .line 110
-    .local v4, "stillToRead":J
-    iget-wide v6, p1, Landroid/support/multidex/ZipUtil$CentralDirectory;->offset:J
+    iget-wide v4, p1, Landroid/support/multidex/ZipUtil$CentralDirectory;->a:J
 
-    invoke-virtual {p0, v6, v7}, Ljava/io/RandomAccessFile;->seek(J)V
+    invoke-virtual {p0, v4, v5}, Ljava/io/RandomAccessFile;->seek(J)V
 
     .line 111
-    invoke-static {v10, v11, v4, v5}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v10, v11, v2, v3}, Ljava/lang/Math;->min(JJ)J
 
-    move-result-wide v6
+    move-result-wide v4
 
-    long-to-int v2, v6
+    long-to-int v0, v4
 
     .line 112
-    .local v2, "length":I
-    const/16 v3, 0x4000
+    const/16 v4, 0x4000
 
-    new-array v0, v3, [B
+    new-array v4, v4, [B
 
     .line 113
-    .local v0, "buffer":[B
-    invoke-virtual {p0, v0, v8, v2}, Ljava/io/RandomAccessFile;->read([BII)I
+    invoke-virtual {p0, v4, v8, v0}, Ljava/io/RandomAccessFile;->read([BII)I
 
-    move-result v2
+    move-result v0
 
     .line 114
     :goto_1c
-    const/4 v3, -0x1
+    const/4 v5, -0x1
 
-    if-eq v2, v3, :cond_2a
+    if-eq v0, v5, :cond_2a
 
     .line 115
-    invoke-virtual {v1, v0, v8, v2}, Ljava/util/zip/CRC32;->update([BII)V
+    invoke-virtual {v1, v4, v8, v0}, Ljava/util/zip/CRC32;->update([BII)V
 
     .line 116
-    int-to-long v6, v2
+    int-to-long v6, v0
 
-    sub-long/2addr v4, v6
+    sub-long/2addr v2, v6
 
     .line 117
     const-wide/16 v6, 0x0
 
-    cmp-long v3, v4, v6
+    cmp-long v0, v2, v6
 
-    if-nez v3, :cond_2f
+    if-nez v0, :cond_2f
 
     .line 123
     :cond_2a
     invoke-virtual {v1}, Ljava/util/zip/CRC32;->getValue()J
 
-    move-result-wide v6
+    move-result-wide v0
 
-    return-wide v6
+    return-wide v0
 
     .line 120
     :cond_2f
-    invoke-static {v10, v11, v4, v5}, Ljava/lang/Math;->min(JJ)J
+    invoke-static {v10, v11, v2, v3}, Ljava/lang/Math;->min(JJ)J
 
     move-result-wide v6
 
-    long-to-int v2, v6
+    long-to-int v0, v6
 
     .line 121
-    invoke-virtual {p0, v0, v8, v2}, Ljava/io/RandomAccessFile;->read([BII)I
+    invoke-virtual {p0, v4, v8, v0}, Ljava/io/RandomAccessFile;->read([BII)I
 
-    move-result v2
+    move-result v0
 
     goto :goto_1c
 .end method
 
-.method static findCentralDirectory(Ljava/io/RandomAccessFile;)Landroid/support/multidex/ZipUtil$CentralDirectory;
+.method static a(Ljava/io/RandomAccessFile;)Landroid/support/multidex/ZipUtil$CentralDirectory;
     .registers 11
-    .param p0, "raf"    # Ljava/io/RandomAccessFile;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Ljava/util/zip/ZipException;
-        }
-    .end annotation
 
     .prologue
+    const-wide v8, 0xffffffffL
+
+    const-wide/16 v0, 0x0
+
+    const/4 v7, 0x2
+
     .line 68
     invoke-virtual {p0}, Ljava/io/RandomAccessFile;->length()J
 
-    move-result-wide v6
+    move-result-wide v2
 
-    const-wide/16 v8, 0x16
+    const-wide/16 v4, 0x16
 
-    sub-long v2, v6, v8
+    sub-long v4, v2, v4
 
     .line 69
-    .local v2, "scanOffset":J
-    const-wide/16 v6, 0x0
+    cmp-long v2, v4, v0
 
-    cmp-long v6, v2, v6
-
-    if-gez v6, :cond_2c
+    if-gez v2, :cond_32
 
     .line 70
-    new-instance v6, Ljava/util/zip/ZipException;
+    new-instance v0, Ljava/util/zip/ZipException;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v8, "File too short to be a zip file: "
+    const-string/jumbo v2, "File too short to be a zip file: "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v1
 
     invoke-virtual {p0}, Ljava/io/RandomAccessFile;->length()J
 
-    move-result-wide v8
+    move-result-wide v2
 
-    invoke-virtual {v7, v8, v9}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-direct {v6, v7}, Ljava/util/zip/ZipException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/util/zip/ZipException;-><init>(Ljava/lang/String;)V
 
-    throw v6
+    throw v0
 
     .line 73
-    :cond_2c
-    const-wide/32 v6, 0x10000
+    :cond_32
+    const-wide/32 v2, 0x10000
 
-    sub-long v4, v2, v6
+    sub-long v2, v4, v2
 
     .line 74
-    .local v4, "stopOffset":J
-    const-wide/16 v6, 0x0
+    cmp-long v6, v2, v0
 
-    cmp-long v6, v4, v6
-
-    if-gez v6, :cond_39
-
-    .line 75
-    const-wide/16 v4, 0x0
+    if-gez v6, :cond_86
 
     .line 78
-    :cond_39
-    const v6, 0x6054b50
+    :goto_3b
+    const v2, 0x6054b50
 
-    invoke-static {v6}, Ljava/lang/Integer;->reverseBytes(I)I
+    invoke-static {v2}, Ljava/lang/Integer;->reverseBytes(I)I
 
-    move-result v1
+    move-result v6
+
+    move-wide v2, v4
 
     .line 80
-    .local v1, "endSig":I
-    :cond_40
+    :cond_43
     invoke-virtual {p0, v2, v3}, Ljava/io/RandomAccessFile;->seek(J)V
 
     .line 81
     invoke-virtual {p0}, Ljava/io/RandomAccessFile;->readInt()I
 
-    move-result v6
+    move-result v4
 
-    if-ne v6, v1, :cond_81
+    if-ne v4, v6, :cond_76
 
     .line 95
-    const/4 v6, 0x2
-
-    invoke-virtual {p0, v6}, Ljava/io/RandomAccessFile;->skipBytes(I)I
+    invoke-virtual {p0, v7}, Ljava/io/RandomAccessFile;->skipBytes(I)I
 
     .line 96
-    const/4 v6, 0x2
-
-    invoke-virtual {p0, v6}, Ljava/io/RandomAccessFile;->skipBytes(I)I
+    invoke-virtual {p0, v7}, Ljava/io/RandomAccessFile;->skipBytes(I)I
 
     .line 97
-    const/4 v6, 0x2
-
-    invoke-virtual {p0, v6}, Ljava/io/RandomAccessFile;->skipBytes(I)I
+    invoke-virtual {p0, v7}, Ljava/io/RandomAccessFile;->skipBytes(I)I
 
     .line 98
-    const/4 v6, 0x2
-
-    invoke-virtual {p0, v6}, Ljava/io/RandomAccessFile;->skipBytes(I)I
+    invoke-virtual {p0, v7}, Ljava/io/RandomAccessFile;->skipBytes(I)I
 
     .line 99
     new-instance v0, Landroid/support/multidex/ZipUtil$CentralDirectory;
@@ -245,107 +227,60 @@
     invoke-direct {v0}, Landroid/support/multidex/ZipUtil$CentralDirectory;-><init>()V
 
     .line 100
-    .local v0, "dir":Landroid/support/multidex/ZipUtil$CentralDirectory;
     invoke-virtual {p0}, Ljava/io/RandomAccessFile;->readInt()I
 
-    move-result v6
+    move-result v1
 
-    invoke-static {v6}, Ljava/lang/Integer;->reverseBytes(I)I
+    invoke-static {v1}, Ljava/lang/Integer;->reverseBytes(I)I
 
-    move-result v6
+    move-result v1
 
-    int-to-long v6, v6
+    int-to-long v2, v1
 
-    const-wide v8, 0xffffffffL
+    and-long/2addr v2, v8
 
-    and-long/2addr v6, v8
-
-    iput-wide v6, v0, Landroid/support/multidex/ZipUtil$CentralDirectory;->size:J
+    iput-wide v2, v0, Landroid/support/multidex/ZipUtil$CentralDirectory;->b:J
 
     .line 101
     invoke-virtual {p0}, Ljava/io/RandomAccessFile;->readInt()I
 
-    move-result v6
+    move-result v1
 
-    invoke-static {v6}, Ljava/lang/Integer;->reverseBytes(I)I
+    invoke-static {v1}, Ljava/lang/Integer;->reverseBytes(I)I
 
-    move-result v6
+    move-result v1
 
-    int-to-long v6, v6
+    int-to-long v2, v1
 
-    const-wide v8, 0xffffffffL
+    and-long/2addr v2, v8
 
-    and-long/2addr v6, v8
-
-    iput-wide v6, v0, Landroid/support/multidex/ZipUtil$CentralDirectory;->offset:J
+    iput-wide v2, v0, Landroid/support/multidex/ZipUtil$CentralDirectory;->a:J
 
     .line 102
     return-object v0
 
     .line 85
-    .end local v0    # "dir":Landroid/support/multidex/ZipUtil$CentralDirectory;
-    :cond_81
-    const-wide/16 v6, 0x1
+    :cond_76
+    const-wide/16 v4, 0x1
 
-    sub-long/2addr v2, v6
+    sub-long/2addr v2, v4
 
     .line 86
-    cmp-long v6, v2, v4
+    cmp-long v4, v2, v0
 
-    if-gez v6, :cond_40
+    if-gez v4, :cond_43
 
     .line 87
-    new-instance v6, Ljava/util/zip/ZipException;
+    new-instance v0, Ljava/util/zip/ZipException;
 
-    const-string/jumbo v7, "End Of Central Directory signature not found"
+    const-string/jumbo v1, "End Of Central Directory signature not found"
 
-    invoke-direct {v6, v7}, Ljava/util/zip/ZipException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/util/zip/ZipException;-><init>(Ljava/lang/String;)V
 
-    throw v6
-.end method
+    throw v0
 
-.method static getZipCrc(Ljava/io/File;)J
-    .registers 5
-    .param p0, "apk"    # Ljava/io/File;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    :cond_86
+    move-wide v0, v2
 
-    .prologue
-    .line 55
-    new-instance v1, Ljava/io/RandomAccessFile;
-
-    const-string/jumbo v2, "r"
-
-    invoke-direct {v1, p0, v2}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    .line 57
-    .local v1, "raf":Ljava/io/RandomAccessFile;
-    :try_start_8
-    invoke-static {v1}, Landroid/support/multidex/ZipUtil;->findCentralDirectory(Ljava/io/RandomAccessFile;)Landroid/support/multidex/ZipUtil$CentralDirectory;
-
-    move-result-object v0
-
-    .line 59
-    .local v0, "dir":Landroid/support/multidex/ZipUtil$CentralDirectory;
-    invoke-static {v1, v0}, Landroid/support/multidex/ZipUtil;->computeCrcOfCentralDir(Ljava/io/RandomAccessFile;Landroid/support/multidex/ZipUtil$CentralDirectory;)J
-    :try_end_f
-    .catchall {:try_start_8 .. :try_end_f} :catchall_14
-
-    move-result-wide v2
-
-    .line 61
-    invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
-
-    return-wide v2
-
-    .end local v0    # "dir":Landroid/support/multidex/ZipUtil$CentralDirectory;
-    :catchall_14
-    move-exception v2
-
-    invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
-
-    throw v2
+    goto :goto_3b
 .end method

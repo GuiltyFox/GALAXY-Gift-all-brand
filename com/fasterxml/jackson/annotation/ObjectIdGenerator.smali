@@ -7,12 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -30,7 +24,6 @@
 
     .prologue
     .line 12
-    .local p0, "this":Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;, "Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 95

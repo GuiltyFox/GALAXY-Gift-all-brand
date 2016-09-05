@@ -3,31 +3,31 @@
 
 
 # static fields
-.field private static DEBUG:Z
+.field private static a:Ljava/lang/String;
 
-.field private static TAG:Ljava/lang/String;
+.field private static b:Ljava/lang/String;
 
-.field private static zzbce:Ljava/lang/String;
+.field private static c:Z
 
 
 # instance fields
-.field private final mContext:Landroid/content/Context;
+.field private final d:Landroid/os/PowerManager$WakeLock;
 
-.field private final zzalZ:Ljava/lang/String;
+.field private e:Landroid/os/WorkSource;
 
-.field private final zzbcf:Landroid/os/PowerManager$WakeLock;
+.field private final f:I
 
-.field private zzbcg:Landroid/os/WorkSource;
+.field private final g:Ljava/lang/String;
 
-.field private final zzbch:I
+.field private final h:Ljava/lang/String;
 
-.field private final zzbci:Ljava/lang/String;
+.field private final i:Landroid/content/Context;
 
-.field private zzbcj:Z
+.field private j:Z
 
-.field private zzbck:I
+.field private k:I
 
-.field private zzbcl:I
+.field private l:I
 
 
 # direct methods
@@ -36,15 +36,15 @@
 
     const-string/jumbo v0, "WakeLock"
 
-    sput-object v0, Lcom/google/android/gms/internal/zzse;->TAG:Ljava/lang/String;
+    sput-object v0, Lcom/google/android/gms/internal/zzse;->a:Ljava/lang/String;
 
     const-string/jumbo v0, "*gcore*:"
 
-    sput-object v0, Lcom/google/android/gms/internal/zzse;->zzbce:Ljava/lang/String;
+    sput-object v0, Lcom/google/android/gms/internal/zzse;->b:Ljava/lang/String;
 
     const/4 v0, 0x0
 
-    sput-boolean v0, Lcom/google/android/gms/internal/zzse;->DEBUG:Z
+    sput-boolean v0, Lcom/google/android/gms/internal/zzse;->c:Z
 
     return-void
 .end method
@@ -76,23 +76,23 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcj:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/internal/zzse;->j:Z
 
     const-string/jumbo v0, "Wake lock name can NOT be empty"
 
-    invoke-static {p3, v0}, Lcom/google/android/gms/common/internal/zzx;->zzh(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {p3, v0}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
 
-    iput p2, p0, Lcom/google/android/gms/internal/zzse;->zzbch:I
+    iput p2, p0, Lcom/google/android/gms/internal/zzse;->f:I
 
-    iput-object p4, p0, Lcom/google/android/gms/internal/zzse;->zzbci:Ljava/lang/String;
+    iput-object p4, p0, Lcom/google/android/gms/internal/zzse;->h:Ljava/lang/String;
 
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/zzse;->mContext:Landroid/content/Context;
+    iput-object v0, p0, Lcom/google/android/gms/internal/zzse;->i:Landroid/content/Context;
 
-    invoke-static {p5}, Lcom/google/android/gms/internal/zzob;->zzcP(Ljava/lang/String;)Z
+    invoke-static {p5}, Lcom/google/android/gms/internal/zzob;->a(Ljava/lang/String;)Z
 
     move-result v0
 
@@ -106,7 +106,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/google/android/gms/internal/zzse;->zzbce:Ljava/lang/String;
+    sget-object v1, Lcom/google/android/gms/internal/zzse;->b:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -120,7 +120,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/zzse;->zzalZ:Ljava/lang/String;
+    iput-object v0, p0, Lcom/google/android/gms/internal/zzse;->g:Ljava/lang/String;
 
     :goto_36
     const-string/jumbo v0, "power"
@@ -135,33 +135,33 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcf:Landroid/os/PowerManager$WakeLock;
+    iput-object v0, p0, Lcom/google/android/gms/internal/zzse;->d:Landroid/os/PowerManager$WakeLock;
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->i:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/zzoc;->zzaz(Landroid/content/Context;)Z
+    invoke-static {v0}, Lcom/google/android/gms/internal/zzoc;->a(Landroid/content/Context;)Z
 
     move-result v0
 
     if-eqz v0, :cond_92
 
-    invoke-static {p5}, Lcom/google/android/gms/internal/zzob;->zzcP(Ljava/lang/String;)Z
+    invoke-static {p5}, Lcom/google/android/gms/internal/zzob;->a(Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_87
 
-    sget-boolean v0, Lcom/google/android/gms/common/internal/zzd;->zzaiU:Z
+    sget-boolean v0, Lcom/google/android/gms/common/internal/zzd;->a:Z
 
     if-eqz v0, :cond_96
 
-    invoke-static {}, Lcom/google/android/gms/internal/zzmt;->isInitialized()Z
+    invoke-static {}, Lcom/google/android/gms/internal/zzmt;->b()Z
 
     move-result v0
 
     if-eqz v0, :cond_96
 
-    sget-object v0, Lcom/google/android/gms/internal/zzse;->TAG:Ljava/lang/String;
+    sget-object v0, Lcom/google/android/gms/internal/zzse;->a:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -173,7 +173,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzse;->zzalZ:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/internal/zzse;->g:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -199,21 +199,21 @@
 
     :cond_87
     :goto_87
-    invoke-static {p1, p5}, Lcom/google/android/gms/internal/zzoc;->zzk(Landroid/content/Context;Ljava/lang/String;)Landroid/os/WorkSource;
+    invoke-static {p1, p5}, Lcom/google/android/gms/internal/zzoc;->a(Landroid/content/Context;Ljava/lang/String;)Landroid/os/WorkSource;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcg:Landroid/os/WorkSource;
+    iput-object v0, p0, Lcom/google/android/gms/internal/zzse;->e:Landroid/os/WorkSource;
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcg:Landroid/os/WorkSource;
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->e:Landroid/os/WorkSource;
 
-    invoke-virtual {p0, v0}, Lcom/google/android/gms/internal/zzse;->zzc(Landroid/os/WorkSource;)V
+    invoke-virtual {p0, v0}, Lcom/google/android/gms/internal/zzse;->a(Landroid/os/WorkSource;)V
 
     :cond_92
     return-void
 
     :cond_93
-    iput-object p3, p0, Lcom/google/android/gms/internal/zzse;->zzalZ:Ljava/lang/String;
+    iput-object p3, p0, Lcom/google/android/gms/internal/zzse;->g:Ljava/lang/String;
 
     goto :goto_36
 
@@ -225,22 +225,45 @@
     goto :goto_87
 .end method
 
-.method private zzeV(Ljava/lang/String;)V
+.method private a(Ljava/lang/String;Z)Ljava/lang/String;
+    .registers 4
+
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzse;->j:Z
+
+    if-eqz v0, :cond_a
+
+    if-eqz p2, :cond_7
+
+    :goto_6
+    return-object p1
+
+    :cond_7
+    iget-object p1, p0, Lcom/google/android/gms/internal/zzse;->h:Ljava/lang/String;
+
+    goto :goto_6
+
+    :cond_a
+    iget-object p1, p0, Lcom/google/android/gms/internal/zzse;->h:Ljava/lang/String;
+
+    goto :goto_6
+.end method
+
+.method private a(Ljava/lang/String;)V
     .registers 10
 
-    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/zzse;->zzeW(Ljava/lang/String;)Z
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/zzse;->b(Ljava/lang/String;)Z
 
     move-result v0
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/zzse;->zzj(Ljava/lang/String;Z)Ljava/lang/String;
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/zzse;->a(Ljava/lang/String;Z)Ljava/lang/String;
 
     move-result-object v5
 
-    sget-boolean v1, Lcom/google/android/gms/internal/zzse;->DEBUG:Z
+    sget-boolean v1, Lcom/google/android/gms/internal/zzse;->c:Z
 
     if-eqz v1, :cond_6f
 
-    sget-object v1, Lcom/google/android/gms/internal/zzse;->TAG:Ljava/lang/String;
+    sget-object v1, Lcom/google/android/gms/internal/zzse;->a:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -252,7 +275,7 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/google/android/gms/internal/zzse;->zzalZ:Ljava/lang/String;
+    iget-object v3, p0, Lcom/google/android/gms/internal/zzse;->g:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -264,7 +287,7 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/google/android/gms/internal/zzse;->zzbci:Ljava/lang/String;
+    iget-object v3, p0, Lcom/google/android/gms/internal/zzse;->h:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -276,7 +299,7 @@
 
     move-result-object v2
 
-    iget-boolean v3, p0, Lcom/google/android/gms/internal/zzse;->zzbcj:Z
+    iget-boolean v3, p0, Lcom/google/android/gms/internal/zzse;->j:Z
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -298,7 +321,7 @@
 
     move-result-object v2
 
-    iget v3, p0, Lcom/google/android/gms/internal/zzse;->zzbcl:I
+    iget v3, p0, Lcom/google/android/gms/internal/zzse;->l:I
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -334,63 +357,63 @@
     monitor-enter p0
 
     :try_start_70
-    iget-boolean v1, p0, Lcom/google/android/gms/internal/zzse;->zzbcj:Z
+    iget-boolean v1, p0, Lcom/google/android/gms/internal/zzse;->j:Z
 
     if-eqz v1, :cond_7e
 
-    iget v1, p0, Lcom/google/android/gms/internal/zzse;->zzbck:I
+    iget v1, p0, Lcom/google/android/gms/internal/zzse;->k:I
 
     add-int/lit8 v1, v1, -0x1
 
-    iput v1, p0, Lcom/google/android/gms/internal/zzse;->zzbck:I
+    iput v1, p0, Lcom/google/android/gms/internal/zzse;->k:I
 
     if-eqz v1, :cond_87
 
     if-nez v0, :cond_87
 
     :cond_7e
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcj:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzse;->j:Z
 
     if-nez v0, :cond_a8
 
-    iget v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcl:I
+    iget v0, p0, Lcom/google/android/gms/internal/zzse;->l:I
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_a8
 
     :cond_87
-    invoke-static {}, Lcom/google/android/gms/common/stats/zzi;->zzrJ()Lcom/google/android/gms/common/stats/zzi;
+    invoke-static {}, Lcom/google/android/gms/common/stats/zzi;->a()Lcom/google/android/gms/common/stats/zzi;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/zzse;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/google/android/gms/internal/zzse;->i:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzse;->zzbcf:Landroid/os/PowerManager$WakeLock;
+    iget-object v2, p0, Lcom/google/android/gms/internal/zzse;->d:Landroid/os/PowerManager$WakeLock;
 
-    invoke-static {v2, v5}, Lcom/google/android/gms/common/stats/zzg;->zza(Landroid/os/PowerManager$WakeLock;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v5}, Lcom/google/android/gms/common/stats/zzg;->a(Landroid/os/PowerManager$WakeLock;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
     const/16 v3, 0x8
 
-    iget-object v4, p0, Lcom/google/android/gms/internal/zzse;->zzalZ:Ljava/lang/String;
+    iget-object v4, p0, Lcom/google/android/gms/internal/zzse;->g:Ljava/lang/String;
 
-    iget v6, p0, Lcom/google/android/gms/internal/zzse;->zzbch:I
+    iget v6, p0, Lcom/google/android/gms/internal/zzse;->f:I
 
-    iget-object v7, p0, Lcom/google/android/gms/internal/zzse;->zzbcg:Landroid/os/WorkSource;
+    iget-object v7, p0, Lcom/google/android/gms/internal/zzse;->e:Landroid/os/WorkSource;
 
-    invoke-static {v7}, Lcom/google/android/gms/internal/zzoc;->zzb(Landroid/os/WorkSource;)Ljava/util/List;
+    invoke-static {v7}, Lcom/google/android/gms/internal/zzoc;->b(Landroid/os/WorkSource;)Ljava/util/List;
 
     move-result-object v7
 
-    invoke-virtual/range {v0 .. v7}, Lcom/google/android/gms/common/stats/zzi;->zza(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/util/List;)V
+    invoke-virtual/range {v0 .. v7}, Lcom/google/android/gms/common/stats/zzi;->a(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/util/List;)V
 
-    iget v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcl:I
+    iget v0, p0, Lcom/google/android/gms/internal/zzse;->l:I
 
     add-int/lit8 v0, v0, -0x1
 
-    iput v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcl:I
+    iput v0, p0, Lcom/google/android/gms/internal/zzse;->l:I
 
     :cond_a8
     monitor-exit p0
@@ -407,73 +430,22 @@
     throw v0
 .end method
 
-.method private zzeW(Ljava/lang/String;)Z
-    .registers 3
-
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_10
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->zzbci:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_10
-
-    const/4 v0, 0x1
-
-    :goto_f
-    return v0
-
-    :cond_10
-    const/4 v0, 0x0
-
-    goto :goto_f
-.end method
-
-.method private zzj(Ljava/lang/String;Z)Ljava/lang/String;
-    .registers 4
-
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcj:Z
-
-    if-eqz v0, :cond_a
-
-    if-eqz p2, :cond_7
-
-    :goto_6
-    return-object p1
-
-    :cond_7
-    iget-object p1, p0, Lcom/google/android/gms/internal/zzse;->zzbci:Ljava/lang/String;
-
-    goto :goto_6
-
-    :cond_a
-    iget-object p1, p0, Lcom/google/android/gms/internal/zzse;->zzbci:Ljava/lang/String;
-
-    goto :goto_6
-.end method
-
-.method private zzj(Ljava/lang/String;J)V
+.method private a(Ljava/lang/String;J)V
     .registers 14
 
-    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/zzse;->zzeW(Ljava/lang/String;)Z
+    invoke-direct {p0, p1}, Lcom/google/android/gms/internal/zzse;->b(Ljava/lang/String;)Z
 
     move-result v0
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/zzse;->zzj(Ljava/lang/String;Z)Ljava/lang/String;
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/internal/zzse;->a(Ljava/lang/String;Z)Ljava/lang/String;
 
     move-result-object v5
 
-    sget-boolean v1, Lcom/google/android/gms/internal/zzse;->DEBUG:Z
+    sget-boolean v1, Lcom/google/android/gms/internal/zzse;->c:Z
 
     if-eqz v1, :cond_7a
 
-    sget-object v1, Lcom/google/android/gms/internal/zzse;->TAG:Ljava/lang/String;
+    sget-object v1, Lcom/google/android/gms/internal/zzse;->a:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -485,7 +457,7 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/google/android/gms/internal/zzse;->zzalZ:Ljava/lang/String;
+    iget-object v3, p0, Lcom/google/android/gms/internal/zzse;->g:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -497,7 +469,7 @@
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/google/android/gms/internal/zzse;->zzbci:Ljava/lang/String;
+    iget-object v3, p0, Lcom/google/android/gms/internal/zzse;->h:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -509,7 +481,7 @@
 
     move-result-object v2
 
-    iget-boolean v3, p0, Lcom/google/android/gms/internal/zzse;->zzbcj:Z
+    iget-boolean v3, p0, Lcom/google/android/gms/internal/zzse;->j:Z
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -531,7 +503,7 @@
 
     move-result-object v2
 
-    iget v3, p0, Lcom/google/android/gms/internal/zzse;->zzbcl:I
+    iget v3, p0, Lcom/google/android/gms/internal/zzse;->l:I
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -577,63 +549,63 @@
     monitor-enter p0
 
     :try_start_7b
-    iget-boolean v1, p0, Lcom/google/android/gms/internal/zzse;->zzbcj:Z
+    iget-boolean v1, p0, Lcom/google/android/gms/internal/zzse;->j:Z
 
     if-eqz v1, :cond_89
 
-    iget v1, p0, Lcom/google/android/gms/internal/zzse;->zzbck:I
+    iget v1, p0, Lcom/google/android/gms/internal/zzse;->k:I
 
     add-int/lit8 v2, v1, 0x1
 
-    iput v2, p0, Lcom/google/android/gms/internal/zzse;->zzbck:I
+    iput v2, p0, Lcom/google/android/gms/internal/zzse;->k:I
 
     if-eqz v1, :cond_91
 
     if-nez v0, :cond_91
 
     :cond_89
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcj:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzse;->j:Z
 
     if-nez v0, :cond_b2
 
-    iget v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcl:I
+    iget v0, p0, Lcom/google/android/gms/internal/zzse;->l:I
 
     if-nez v0, :cond_b2
 
     :cond_91
-    invoke-static {}, Lcom/google/android/gms/common/stats/zzi;->zzrJ()Lcom/google/android/gms/common/stats/zzi;
+    invoke-static {}, Lcom/google/android/gms/common/stats/zzi;->a()Lcom/google/android/gms/common/stats/zzi;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/zzse;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lcom/google/android/gms/internal/zzse;->i:Landroid/content/Context;
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzse;->zzbcf:Landroid/os/PowerManager$WakeLock;
+    iget-object v2, p0, Lcom/google/android/gms/internal/zzse;->d:Landroid/os/PowerManager$WakeLock;
 
-    invoke-static {v2, v5}, Lcom/google/android/gms/common/stats/zzg;->zza(Landroid/os/PowerManager$WakeLock;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v5}, Lcom/google/android/gms/common/stats/zzg;->a(Landroid/os/PowerManager$WakeLock;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
     const/4 v3, 0x7
 
-    iget-object v4, p0, Lcom/google/android/gms/internal/zzse;->zzalZ:Ljava/lang/String;
+    iget-object v4, p0, Lcom/google/android/gms/internal/zzse;->g:Ljava/lang/String;
 
-    iget v6, p0, Lcom/google/android/gms/internal/zzse;->zzbch:I
+    iget v6, p0, Lcom/google/android/gms/internal/zzse;->f:I
 
-    iget-object v7, p0, Lcom/google/android/gms/internal/zzse;->zzbcg:Landroid/os/WorkSource;
+    iget-object v7, p0, Lcom/google/android/gms/internal/zzse;->e:Landroid/os/WorkSource;
 
-    invoke-static {v7}, Lcom/google/android/gms/internal/zzoc;->zzb(Landroid/os/WorkSource;)Ljava/util/List;
+    invoke-static {v7}, Lcom/google/android/gms/internal/zzoc;->b(Landroid/os/WorkSource;)Ljava/util/List;
 
     move-result-object v7
 
     move-wide v8, p2
 
-    invoke-virtual/range {v0 .. v9}, Lcom/google/android/gms/common/stats/zzi;->zza(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/util/List;J)V
+    invoke-virtual/range {v0 .. v9}, Lcom/google/android/gms/common/stats/zzi;->a(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILjava/util/List;J)V
 
-    iget v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcl:I
+    iget v0, p0, Lcom/google/android/gms/internal/zzse;->l:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcl:I
+    iput v0, p0, Lcom/google/android/gms/internal/zzse;->l:I
 
     :cond_b2
     monitor-exit p0
@@ -650,24 +622,64 @@
     throw v0
 .end method
 
+.method private b(Ljava/lang/String;)Z
+    .registers 3
+
+    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_10
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->h:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_10
+
+    const/4 v0, 0x1
+
+    :goto_f
+    return v0
+
+    :cond_10
+    const/4 v0, 0x0
+
+    goto :goto_f
+.end method
+
 
 # virtual methods
-.method public acquire(J)V
-    .registers 6
-    .param p1, "timeout"    # J
+.method public a()V
+    .registers 2
 
-    .prologue
-    invoke-static {}, Lcom/google/android/gms/internal/zznx;->zzrQ()Z
+    const/4 v0, 0x0
+
+    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/zzse;->a(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->d:Landroid/os/PowerManager$WakeLock;
+
+    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
+
+    return-void
+.end method
+
+.method public a(J)V
+    .registers 6
+
+    invoke-static {}, Lcom/google/android/gms/internal/zznx;->a()Z
 
     move-result v0
 
     if-nez v0, :cond_25
 
-    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcj:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/internal/zzse;->j:Z
 
     if-eqz v0, :cond_25
 
-    sget-object v0, Lcom/google/android/gms/internal/zzse;->TAG:Ljava/lang/String;
+    sget-object v0, Lcom/google/android/gms/internal/zzse;->a:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -679,7 +691,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzse;->zzalZ:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/internal/zzse;->g:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -694,61 +706,21 @@
     :cond_25
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0, p1, p2}, Lcom/google/android/gms/internal/zzse;->zzj(Ljava/lang/String;J)V
+    invoke-direct {p0, v0, p1, p2}, Lcom/google/android/gms/internal/zzse;->a(Ljava/lang/String;J)V
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcf:Landroid/os/PowerManager$WakeLock;
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->d:Landroid/os/PowerManager$WakeLock;
 
     invoke-virtual {v0, p1, p2}, Landroid/os/PowerManager$WakeLock;->acquire(J)V
 
     return-void
 .end method
 
-.method public isHeld()Z
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcf:Landroid/os/PowerManager$WakeLock;
-
-    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public release()V
-    .registers 2
-
-    const/4 v0, 0x0
-
-    invoke-direct {p0, v0}, Lcom/google/android/gms/internal/zzse;->zzeV(Ljava/lang/String;)V
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcf:Landroid/os/PowerManager$WakeLock;
-
-    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->release()V
-
-    return-void
-.end method
-
-.method public setReferenceCounted(Z)V
-    .registers 3
-    .param p1, "value"    # Z
-
-    .prologue
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcf:Landroid/os/PowerManager$WakeLock;
-
-    invoke-virtual {v0, p1}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
-
-    iput-boolean p1, p0, Lcom/google/android/gms/internal/zzse;->zzbcj:Z
-
-    return-void
-.end method
-
-.method public zzc(Landroid/os/WorkSource;)V
+.method public a(Landroid/os/WorkSource;)V
     .registers 4
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->i:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/zzoc;->zzaz(Landroid/content/Context;)Z
+    invoke-static {v0}, Lcom/google/android/gms/internal/zzoc;->a(Landroid/content/Context;)Z
 
     move-result v0
 
@@ -756,18 +728,18 @@
 
     if-eqz p1, :cond_1a
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcg:Landroid/os/WorkSource;
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->e:Landroid/os/WorkSource;
 
     if-eqz v0, :cond_1b
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcg:Landroid/os/WorkSource;
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->e:Landroid/os/WorkSource;
 
     invoke-virtual {v0, p1}, Landroid/os/WorkSource;->add(Landroid/os/WorkSource;)Z
 
     :goto_13
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->zzbcf:Landroid/os/PowerManager$WakeLock;
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->d:Landroid/os/PowerManager$WakeLock;
 
-    iget-object v1, p0, Lcom/google/android/gms/internal/zzse;->zzbcg:Landroid/os/WorkSource;
+    iget-object v1, p0, Lcom/google/android/gms/internal/zzse;->e:Landroid/os/WorkSource;
 
     invoke-virtual {v0, v1}, Landroid/os/PowerManager$WakeLock;->setWorkSource(Landroid/os/WorkSource;)V
 
@@ -775,7 +747,31 @@
     return-void
 
     :cond_1b
-    iput-object p1, p0, Lcom/google/android/gms/internal/zzse;->zzbcg:Landroid/os/WorkSource;
+    iput-object p1, p0, Lcom/google/android/gms/internal/zzse;->e:Landroid/os/WorkSource;
 
     goto :goto_13
+.end method
+
+.method public a(Z)V
+    .registers 3
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->d:Landroid/os/PowerManager$WakeLock;
+
+    invoke-virtual {v0, p1}, Landroid/os/PowerManager$WakeLock;->setReferenceCounted(Z)V
+
+    iput-boolean p1, p0, Lcom/google/android/gms/internal/zzse;->j:Z
+
+    return-void
+.end method
+
+.method public b()Z
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzse;->d:Landroid/os/PowerManager$WakeLock;
+
+    invoke-virtual {v0}, Landroid/os/PowerManager$WakeLock;->isHeld()Z
+
+    move-result v0
+
+    return v0
 .end method

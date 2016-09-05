@@ -2,26 +2,15 @@
 .super Landroid/database/sqlite/SQLiteOpenHelper;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/gms/analytics/internal/zzj;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = "zza"
-.end annotation
-
-
 # instance fields
-.field final synthetic zzPC:Lcom/google/android/gms/analytics/internal/zzj;
+.field final synthetic a:Lcom/google/android/gms/analytics/internal/zzj;
 
 
 # direct methods
 .method constructor <init>(Lcom/google/android/gms/analytics/internal/zzj;Landroid/content/Context;Ljava/lang/String;)V
     .registers 6
 
-    iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->zzPC:Lcom/google/android/gms/analytics/internal/zzj;
+    iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->a:Lcom/google/android/gms/analytics/internal/zzj;
 
     const/4 v0, 0x0
 
@@ -32,7 +21,7 @@
     return-void
 .end method
 
-.method private zza(Landroid/database/sqlite/SQLiteDatabase;)V
+.method private a(Landroid/database/sqlite/SQLiteDatabase;)V
     .registers 10
 
     const/4 v0, 0x1
@@ -41,7 +30,7 @@
 
     const-string/jumbo v2, "hits2"
 
-    invoke-direct {p0, p1, v2}, Lcom/google/android/gms/analytics/internal/zzj$zza;->zzb(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Ljava/util/Set;
+    invoke-direct {p0, p1, v2}, Lcom/google/android/gms/analytics/internal/zzj$zza;->b(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Ljava/util/Set;
 
     move-result-object v3
 
@@ -153,7 +142,7 @@
     return-void
 .end method
 
-.method private zza(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Z
+.method private a(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Z
     .registers 13
 
     const/4 v8, 0x0
@@ -221,11 +210,11 @@
 
     :goto_2b
     :try_start_2b
-    iget-object v2, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->zzPC:Lcom/google/android/gms/analytics/internal/zzj;
+    iget-object v2, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->a:Lcom/google/android/gms/analytics/internal/zzj;
 
     const-string/jumbo v3, "Error querying for table"
 
-    invoke-virtual {v2, v3, p2, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zzc(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {v2, v3, p2, v0}, Lcom/google/android/gms/analytics/internal/zzj;->c(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
     :try_end_33
     .catchall {:try_start_2b .. :try_end_33} :catchall_41
 
@@ -262,7 +251,7 @@
     goto :goto_2b
 .end method
 
-.method private zzb(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Ljava/util/Set;
+.method private b(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Ljava/util/Set;
     .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -346,14 +335,14 @@
     throw v0
 .end method
 
-.method private zzb(Landroid/database/sqlite/SQLiteDatabase;)V
+.method private b(Landroid/database/sqlite/SQLiteDatabase;)V
     .registers 8
 
     const/4 v0, 0x0
 
     const-string/jumbo v1, "properties"
 
-    invoke-direct {p0, p1, v1}, Lcom/google/android/gms/analytics/internal/zzj$zza;->zzb(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Ljava/util/Set;
+    invoke-direct {p0, p1, v1}, Lcom/google/android/gms/analytics/internal/zzj$zza;->b(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Ljava/util/Set;
 
     move-result-object v1
 
@@ -461,15 +450,15 @@
 .method public getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
     .registers 5
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->zzPC:Lcom/google/android/gms/analytics/internal/zzj;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->a:Lcom/google/android/gms/analytics/internal/zzj;
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzj;->zza(Lcom/google/android/gms/analytics/internal/zzj;)Lcom/google/android/gms/analytics/internal/zzaj;
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzj;->a(Lcom/google/android/gms/analytics/internal/zzj;)Lcom/google/android/gms/analytics/internal/zzaj;
 
     move-result-object v0
 
     const-wide/32 v2, 0x36ee80
 
-    invoke-virtual {v0, v2, v3}, Lcom/google/android/gms/analytics/internal/zzaj;->zzv(J)Z
+    invoke-virtual {v0, v2, v3}, Lcom/google/android/gms/analytics/internal/zzaj;->a(J)Z
 
     move-result v0
 
@@ -497,29 +486,29 @@
     :catch_1d
     move-exception v0
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->zzPC:Lcom/google/android/gms/analytics/internal/zzj;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->a:Lcom/google/android/gms/analytics/internal/zzj;
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzj;->zza(Lcom/google/android/gms/analytics/internal/zzj;)Lcom/google/android/gms/analytics/internal/zzaj;
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzj;->a(Lcom/google/android/gms/analytics/internal/zzj;)Lcom/google/android/gms/analytics/internal/zzaj;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzaj;->start()V
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzaj;->a()V
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->zzPC:Lcom/google/android/gms/analytics/internal/zzj;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->a:Lcom/google/android/gms/analytics/internal/zzj;
 
     const-string/jumbo v1, "Opening the database failed, dropping the table and recreating it"
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/analytics/internal/zzj;->zzbe(Ljava/lang/String;)V
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/analytics/internal/zzj;->f(Ljava/lang/String;)V
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->zzPC:Lcom/google/android/gms/analytics/internal/zzj;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->a:Lcom/google/android/gms/analytics/internal/zzj;
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzj;->zzb(Lcom/google/android/gms/analytics/internal/zzj;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzj;->b(Lcom/google/android/gms/analytics/internal/zzj;)Ljava/lang/String;
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->zzPC:Lcom/google/android/gms/analytics/internal/zzj;
+    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->a:Lcom/google/android/gms/analytics/internal/zzj;
 
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzj;->getContext()Landroid/content/Context;
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzj;->o()Landroid/content/Context;
 
     move-result-object v1
 
@@ -534,13 +523,13 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->zzPC:Lcom/google/android/gms/analytics/internal/zzj;
+    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->a:Lcom/google/android/gms/analytics/internal/zzj;
 
-    invoke-static {v1}, Lcom/google/android/gms/analytics/internal/zzj;->zza(Lcom/google/android/gms/analytics/internal/zzj;)Lcom/google/android/gms/analytics/internal/zzaj;
+    invoke-static {v1}, Lcom/google/android/gms/analytics/internal/zzj;->a(Lcom/google/android/gms/analytics/internal/zzj;)Lcom/google/android/gms/analytics/internal/zzaj;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzaj;->clear()V
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzaj;->b()V
     :try_end_4f
     .catch Landroid/database/sqlite/SQLiteException; {:try_start_42 .. :try_end_4f} :catch_50
 
@@ -549,34 +538,30 @@
     :catch_50
     move-exception v0
 
-    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->zzPC:Lcom/google/android/gms/analytics/internal/zzj;
+    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzj$zza;->a:Lcom/google/android/gms/analytics/internal/zzj;
 
     const-string/jumbo v2, "Failed to open freshly created database"
 
-    invoke-virtual {v1, v2, v0}, Lcom/google/android/gms/analytics/internal/zzj;->zze(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {v1, v2, v0}, Lcom/google/android/gms/analytics/internal/zzj;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
     throw v0
 .end method
 
 .method public onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
     .registers 3
-    .param p1, "database"    # Landroid/database/sqlite/SQLiteDatabase;
 
-    .prologue
     invoke-virtual {p1}, Landroid/database/sqlite/SQLiteDatabase;->getPath()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzx;->zzbl(Ljava/lang/String;)Z
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzx;->a(Ljava/lang/String;)Z
 
     return-void
 .end method
 
 .method public onOpen(Landroid/database/sqlite/SQLiteDatabase;)V
     .registers 4
-    .param p1, "database"    # Landroid/database/sqlite/SQLiteDatabase;
 
-    .prologue
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0xf
@@ -601,13 +586,13 @@
     :cond_14
     const-string/jumbo v0, "hits2"
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/analytics/internal/zzj$zza;->zza(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Z
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/analytics/internal/zzj$zza;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Z
 
     move-result v0
 
     if-nez v0, :cond_39
 
-    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzj;->zzjA()Ljava/lang/String;
+    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzj;->j()Ljava/lang/String;
 
     move-result-object v0
 
@@ -616,7 +601,7 @@
     :goto_24
     const-string/jumbo v0, "properties"
 
-    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/analytics/internal/zzj$zza;->zza(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Z
+    invoke-direct {p0, p1, v0}, Lcom/google/android/gms/analytics/internal/zzj$zza;->a(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Z
 
     move-result v0
 
@@ -637,22 +622,18 @@
     throw v1
 
     :cond_39
-    invoke-direct {p0, p1}, Lcom/google/android/gms/analytics/internal/zzj$zza;->zza(Landroid/database/sqlite/SQLiteDatabase;)V
+    invoke-direct {p0, p1}, Lcom/google/android/gms/analytics/internal/zzj$zza;->a(Landroid/database/sqlite/SQLiteDatabase;)V
 
     goto :goto_24
 
     :cond_3d
-    invoke-direct {p0, p1}, Lcom/google/android/gms/analytics/internal/zzj$zza;->zzb(Landroid/database/sqlite/SQLiteDatabase;)V
+    invoke-direct {p0, p1}, Lcom/google/android/gms/analytics/internal/zzj$zza;->b(Landroid/database/sqlite/SQLiteDatabase;)V
 
     goto :goto_33
 .end method
 
 .method public onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
     .registers 4
-    .param p1, "database"    # Landroid/database/sqlite/SQLiteDatabase;
-    .param p2, "oldVersion"    # I
-    .param p3, "newVersion"    # I
 
-    .prologue
     return-void
 .end method

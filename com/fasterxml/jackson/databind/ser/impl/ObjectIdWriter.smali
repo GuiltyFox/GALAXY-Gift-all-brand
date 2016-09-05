@@ -34,9 +34,6 @@
 # direct methods
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/core/SerializableString;Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;Lcom/fasterxml/jackson/databind/JsonSerializer;Z)V
     .registers 6
-    .param p1, "t"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p2, "propName"    # Lcom/fasterxml/jackson/core/SerializableString;
-    .param p5, "alwaysAsId"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -51,8 +48,6 @@
 
     .prologue
     .line 52
-    .local p3, "gen":Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;, "Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;"
-    .local p4, "ser":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 53
@@ -75,10 +70,7 @@
 .end method
 
 .method public static construct(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/PropertyName;Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;Z)Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;
-    .registers 6
-    .param p0, "idType"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p1, "propName"    # Lcom/fasterxml/jackson/databind/PropertyName;
-    .param p3, "alwaysAsId"    # Z
+    .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -92,22 +84,19 @@
 
     .prologue
     .line 70
-    .local p2, "generator":Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;, "Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;"
     if-nez p1, :cond_8
 
     const/4 v0, 0x0
 
     .line 71
-    .local v0, "simpleName":Ljava/lang/String;
     :goto_3
     invoke-static {p0, v0, p2, p3}, Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;->construct(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/String;Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;Z)Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     .line 70
-    .end local v0    # "simpleName":Ljava/lang/String;
     :cond_8
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/PropertyName;->getSimpleName()Ljava/lang/String;
 
@@ -118,9 +107,6 @@
 
 .method public static construct(Lcom/fasterxml/jackson/databind/JavaType;Ljava/lang/String;Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;Z)Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;
     .registers 10
-    .param p0, "idType"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p1, "propName"    # Ljava/lang/String;
-    .param p3, "alwaysAsId"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -136,7 +122,6 @@
     .end annotation
 
     .prologue
-    .local p2, "generator":Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;, "Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;"
     const/4 v4, 0x0
 
     .line 78
@@ -145,7 +130,6 @@
     move-object v2, v4
 
     .line 79
-    .local v2, "serName":Lcom/fasterxml/jackson/core/SerializableString;
     :goto_4
     new-instance v0, Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;
 
@@ -160,7 +144,6 @@
     return-object v0
 
     .line 78
-    .end local v2    # "serName":Lcom/fasterxml/jackson/core/SerializableString;
     :cond_d
     new-instance v2, Lcom/fasterxml/jackson/core/io/SerializedString;
 
@@ -173,7 +156,6 @@
 # virtual methods
 .method public withAlwaysAsId(Z)Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;
     .registers 8
-    .param p1, "newState"    # Z
 
     .prologue
     .line 90
@@ -182,11 +164,9 @@
     if-ne p1, v0, :cond_5
 
     .line 93
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;
 
@@ -220,7 +200,6 @@
 
     .prologue
     .line 83
-    .local p1, "ser":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<*>;"
     new-instance v0, Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;
 
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;->idType:Lcom/fasterxml/jackson/databind/JavaType;

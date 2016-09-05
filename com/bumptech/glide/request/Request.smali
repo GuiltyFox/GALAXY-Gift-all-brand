@@ -4,32 +4,26 @@
 
 
 # virtual methods
-.method public abstract begin()V
+.method public abstract a()V
 .end method
 
-.method public abstract clear()V
+.method public abstract b()V
 .end method
 
-.method public abstract isCancelled()Z
+.method public abstract d()V
 .end method
 
-.method public abstract isComplete()Z
+.method public abstract e()V
 .end method
 
-.method public abstract isFailed()Z
+.method public abstract f()Z
 .end method
 
-.method public abstract isPaused()Z
+.method public abstract g()Z
 .end method
 
-.method public abstract isResourceSet()Z
+.method public abstract h()Z
 .end method
 
-.method public abstract isRunning()Z
-.end method
-
-.method public abstract pause()V
-.end method
-
-.method public abstract recycle()V
+.method public abstract i()Z
 .end method

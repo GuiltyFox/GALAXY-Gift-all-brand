@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4019
-    name = "Mode"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum",
@@ -24,25 +15,25 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+.field public static final enum a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-.field public static final enum BOTH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+.field public static final enum b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-.field public static final enum DISABLED:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+.field public static final enum c:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-.field public static final enum MANUAL_REFRESH_ONLY:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+.field public static final enum d:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-.field public static PULL_DOWN_TO_REFRESH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+.field public static final enum e:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-.field public static final enum PULL_FROM_END:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+.field public static f:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-.field public static final enum PULL_FROM_START:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+.field public static g:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-.field public static PULL_UP_TO_REFRESH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+.field private static final synthetic i:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
 
 # instance fields
-.field private mIntValue:I
+.field private h:I
 
 
 # direct methods
@@ -67,7 +58,7 @@
 
     invoke-direct {v0, v1, v2, v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->DISABLED:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     .line 1344
     new-instance v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
@@ -76,7 +67,7 @@
 
     invoke-direct {v0, v1, v3, v3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_START:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     .line 1351
     new-instance v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
@@ -85,7 +76,7 @@
 
     invoke-direct {v0, v1, v4, v4}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_END:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->c:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     .line 1356
     new-instance v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
@@ -94,7 +85,7 @@
 
     invoke-direct {v0, v1, v5, v5}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->BOTH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->d:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     .line 1363
     new-instance v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
@@ -103,51 +94,50 @@
 
     invoke-direct {v0, v1, v6, v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->MANUAL_REFRESH_ONLY:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->e:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     .line 1332
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->DISABLED:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_START:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_END:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->c:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->BOTH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->d:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->MANUAL_REFRESH_ONLY:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->e:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     aput-object v1, v0, v6
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->$VALUES:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->i:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     .line 1368
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_START:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_DOWN_TO_REFRESH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->f:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     .line 1373
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_END:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->c:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_UP_TO_REFRESH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->g:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     return-void
 .end method
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .registers 4
-    .param p3, "modeInt"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
@@ -159,25 +149,24 @@
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 1402
-    iput p3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->mIntValue:I
+    iput p3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->h:I
 
     .line 1403
     return-void
 .end method
 
-.method static getDefault()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+.method static a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
     .registers 1
 
     .prologue
     .line 1395
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_START:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     return-object v0
 .end method
 
-.method static mapIntToValue(I)Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+.method static a(I)Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
     .registers 6
-    .param p0, "modeInt"    # I
 
     .prologue
     .line 1384
@@ -187,46 +176,45 @@
 
     array-length v3, v2
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    :goto_6
-    if-ge v1, v3, :cond_14
+    move v1, v0
+
+    :goto_7
+    if-ge v1, v3, :cond_16
 
     aget-object v0, v2, v1
 
     .line 1385
-    .local v0, "value":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->getIntValue()I
+    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->e()I
 
     move-result v4
 
-    if-ne p0, v4, :cond_11
+    if-ne p0, v4, :cond_12
 
     .line 1391
-    .end local v0    # "value":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-    :goto_10
+    :goto_11
     return-object v0
 
     .line 1384
-    .restart local v0    # "value":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-    :cond_11
-    add-int/lit8 v1, v1, 0x1
+    :cond_12
+    add-int/lit8 v0, v1, 0x1
 
-    goto :goto_6
+    move v1, v0
+
+    goto :goto_7
 
     .line 1391
-    .end local v0    # "value":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-    :cond_14
-    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->getDefault()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    :cond_16
+    invoke-static {}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     move-result-object v0
 
-    goto :goto_10
+    goto :goto_11
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 1332
@@ -246,7 +234,7 @@
 
     .prologue
     .line 1332
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->$VALUES:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->i:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     invoke-virtual {v0}, [Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->clone()Ljava/lang/Object;
 
@@ -259,26 +247,16 @@
 
 
 # virtual methods
-.method getIntValue()I
-    .registers 2
-
-    .prologue
-    .line 1427
-    iget v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->mIntValue:I
-
-    return v0
-.end method
-
-.method permitsPullToRefresh()Z
+.method b()Z
     .registers 2
 
     .prologue
     .line 1409
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->DISABLED:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     if-eq p0, v0, :cond_a
 
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->MANUAL_REFRESH_ONLY:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->e:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     if-eq p0, v0, :cond_a
 
@@ -293,20 +271,45 @@
     goto :goto_9
 .end method
 
-.method public showFooterLoadingLayout()Z
+.method public c()Z
+    .registers 2
+
+    .prologue
+    .line 1416
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    if-eq p0, v0, :cond_8
+
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->d:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+
+    if-ne p0, v0, :cond_a
+
+    :cond_8
+    const/4 v0, 0x1
+
+    :goto_9
+    return v0
+
+    :cond_a
+    const/4 v0, 0x0
+
+    goto :goto_9
+.end method
+
+.method public d()Z
     .registers 2
 
     .prologue
     .line 1423
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_END:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->c:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     if-eq p0, v0, :cond_c
 
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->BOTH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->d:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     if-eq p0, v0, :cond_c
 
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->MANUAL_REFRESH_ONLY:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->e:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     if-ne p0, v0, :cond_e
 
@@ -322,27 +325,12 @@
     goto :goto_d
 .end method
 
-.method public showHeaderLoadingLayout()Z
+.method e()I
     .registers 2
 
     .prologue
-    .line 1416
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_START:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    .line 1427
+    iget v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->h:I
 
-    if-eq p0, v0, :cond_8
-
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->BOTH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-
-    if-ne p0, v0, :cond_a
-
-    :cond_8
-    const/4 v0, 0x1
-
-    :goto_9
     return v0
-
-    :cond_a
-    const/4 v0, 0x0
-
-    goto :goto_9
 .end method

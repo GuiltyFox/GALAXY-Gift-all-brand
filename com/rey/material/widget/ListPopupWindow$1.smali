@@ -8,17 +8,12 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/rey/material/widget/ListPopupWindow;->show()V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/rey/material/widget/ListPopupWindow;->f()V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/rey/material/widget/ListPopupWindow;
+.field final synthetic a:Lcom/rey/material/widget/ListPopupWindow;
 
 
 # direct methods
@@ -27,7 +22,7 @@
 
     .prologue
     .line 668
-    iput-object p1, p0, Lcom/rey/material/widget/ListPopupWindow$1;->this$0:Lcom/rey/material/widget/ListPopupWindow;
+    iput-object p1, p0, Lcom/rey/material/widget/ListPopupWindow$1;->a:Lcom/rey/material/widget/ListPopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,106 +32,94 @@
 
 # virtual methods
 .method public onPreDraw()Z
-    .registers 7
+    .registers 9
 
     .prologue
+    const/4 v1, 0x0
+
     .line 672
-    iget-object v4, p0, Lcom/rey/material/widget/ListPopupWindow$1;->this$0:Lcom/rey/material/widget/ListPopupWindow;
+    iget-object v0, p0, Lcom/rey/material/widget/ListPopupWindow$1;->a:Lcom/rey/material/widget/ListPopupWindow;
 
-    # getter for: Lcom/rey/material/widget/ListPopupWindow;->mPopup:Lcom/rey/material/widget/PopupWindow;
-    invoke-static {v4}, Lcom/rey/material/widget/ListPopupWindow;->access$500(Lcom/rey/material/widget/ListPopupWindow;)Lcom/rey/material/widget/PopupWindow;
+    invoke-static {v0}, Lcom/rey/material/widget/ListPopupWindow;->a(Lcom/rey/material/widget/ListPopupWindow;)Lcom/rey/material/widget/PopupWindow;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4}, Lcom/rey/material/widget/PopupWindow;->getContentView()Landroid/view/View;
+    invoke-virtual {v0}, Lcom/rey/material/widget/PopupWindow;->getContentView()Landroid/view/View;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
+    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
     .line 673
-    const/4 v2, 0x0
+    iget-object v0, p0, Lcom/rey/material/widget/ListPopupWindow$1;->a:Lcom/rey/material/widget/ListPopupWindow;
 
-    .local v2, "i":I
-    iget-object v4, p0, Lcom/rey/material/widget/ListPopupWindow$1;->this$0:Lcom/rey/material/widget/ListPopupWindow;
+    invoke-static {v0}, Lcom/rey/material/widget/ListPopupWindow;->b(Lcom/rey/material/widget/ListPopupWindow;)Lcom/rey/material/widget/ListPopupWindow$DropDownListView;
 
-    # getter for: Lcom/rey/material/widget/ListPopupWindow;->mDropDownList:Lcom/rey/material/widget/ListPopupWindow$DropDownListView;
-    invoke-static {v4}, Lcom/rey/material/widget/ListPopupWindow;->access$600(Lcom/rey/material/widget/ListPopupWindow;)Lcom/rey/material/widget/ListPopupWindow$DropDownListView;
+    move-result-object v0
 
-    move-result-object v4
+    invoke-virtual {v0}, Lcom/rey/material/widget/ListPopupWindow$DropDownListView;->getChildCount()I
 
-    invoke-virtual {v4}, Lcom/rey/material/widget/ListPopupWindow$DropDownListView;->getChildCount()I
+    move-result v2
 
-    move-result v1
+    move v0, v1
 
-    .local v1, "count":I
-    :goto_1c
-    if-ge v2, v1, :cond_49
+    :goto_1d
+    if-ge v0, v2, :cond_4a
 
     .line 674
-    iget-object v4, p0, Lcom/rey/material/widget/ListPopupWindow$1;->this$0:Lcom/rey/material/widget/ListPopupWindow;
+    iget-object v3, p0, Lcom/rey/material/widget/ListPopupWindow$1;->a:Lcom/rey/material/widget/ListPopupWindow;
 
-    # getter for: Lcom/rey/material/widget/ListPopupWindow;->mDropDownList:Lcom/rey/material/widget/ListPopupWindow$DropDownListView;
-    invoke-static {v4}, Lcom/rey/material/widget/ListPopupWindow;->access$600(Lcom/rey/material/widget/ListPopupWindow;)Lcom/rey/material/widget/ListPopupWindow$DropDownListView;
+    invoke-static {v3}, Lcom/rey/material/widget/ListPopupWindow;->b(Lcom/rey/material/widget/ListPopupWindow;)Lcom/rey/material/widget/ListPopupWindow$DropDownListView;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4, v2}, Lcom/rey/material/widget/ListPopupWindow$DropDownListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v3, v0}, Lcom/rey/material/widget/ListPopupWindow$DropDownListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
 
     .line 676
-    .local v3, "v":Landroid/view/View;
-    iget-object v4, p0, Lcom/rey/material/widget/ListPopupWindow$1;->this$0:Lcom/rey/material/widget/ListPopupWindow;
+    iget-object v4, p0, Lcom/rey/material/widget/ListPopupWindow$1;->a:Lcom/rey/material/widget/ListPopupWindow;
 
-    # getter for: Lcom/rey/material/widget/ListPopupWindow;->mContext:Landroid/content/Context;
-    invoke-static {v4}, Lcom/rey/material/widget/ListPopupWindow;->access$700(Lcom/rey/material/widget/ListPopupWindow;)Landroid/content/Context;
+    invoke-static {v4}, Lcom/rey/material/widget/ListPopupWindow;->c(Lcom/rey/material/widget/ListPopupWindow;)Landroid/content/Context;
 
     move-result-object v4
 
-    iget-object v5, p0, Lcom/rey/material/widget/ListPopupWindow$1;->this$0:Lcom/rey/material/widget/ListPopupWindow;
+    iget-object v5, p0, Lcom/rey/material/widget/ListPopupWindow$1;->a:Lcom/rey/material/widget/ListPopupWindow;
 
-    # getter for: Lcom/rey/material/widget/ListPopupWindow;->mItemAnimationId:I
-    invoke-static {v5}, Lcom/rey/material/widget/ListPopupWindow;->access$800(Lcom/rey/material/widget/ListPopupWindow;)I
+    invoke-static {v5}, Lcom/rey/material/widget/ListPopupWindow;->d(Lcom/rey/material/widget/ListPopupWindow;)I
 
     move-result v5
 
     invoke-static {v4, v5}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
-    move-result-object v0
+    move-result-object v4
 
     .line 677
-    .local v0, "anim":Landroid/view/animation/Animation;
-    iget-object v4, p0, Lcom/rey/material/widget/ListPopupWindow$1;->this$0:Lcom/rey/material/widget/ListPopupWindow;
+    iget-object v5, p0, Lcom/rey/material/widget/ListPopupWindow$1;->a:Lcom/rey/material/widget/ListPopupWindow;
 
-    # getter for: Lcom/rey/material/widget/ListPopupWindow;->mItemAnimationOffset:I
-    invoke-static {v4}, Lcom/rey/material/widget/ListPopupWindow;->access$900(Lcom/rey/material/widget/ListPopupWindow;)I
+    invoke-static {v5}, Lcom/rey/material/widget/ListPopupWindow;->e(Lcom/rey/material/widget/ListPopupWindow;)I
 
-    move-result v4
+    move-result v5
 
-    mul-int/2addr v4, v2
+    mul-int/2addr v5, v0
 
-    int-to-long v4, v4
+    int-to-long v6, v5
 
-    invoke-virtual {v0, v4, v5}, Landroid/view/animation/Animation;->setStartOffset(J)V
+    invoke-virtual {v4, v6, v7}, Landroid/view/animation/Animation;->setStartOffset(J)V
 
     .line 678
-    invoke-virtual {v3, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
+    invoke-virtual {v3, v4}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
     .line 673
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1c
+    goto :goto_1d
 
     .line 680
-    .end local v0    # "anim":Landroid/view/animation/Animation;
-    .end local v3    # "v":Landroid/view/View;
-    :cond_49
-    const/4 v4, 0x0
-
-    return v4
+    :cond_4a
+    return v1
 .end method

@@ -2,19 +2,8 @@
 .super Ljava/lang/Object;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/gms/common/zzc;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x408
-    name = "zza"
-.end annotation
-
-
 # instance fields
-.field private zzadZ:I
+.field private a:I
 
 
 # direct methods
@@ -34,13 +23,13 @@
     :goto_9
     const-string/jumbo v1, "cert hash data has incorrect length"
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzx;->zzb(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzx;->b(ZLjava/lang/Object;)V
 
     invoke-static {p1}, Ljava/util/Arrays;->hashCode([B)I
 
     move-result v0
 
-    iput v0, p0, Lcom/google/android/gms/common/zzc$zza;->zzadZ:I
+    iput v0, p0, Lcom/google/android/gms/common/zzc$zza;->a:I
 
     return-void
 
@@ -50,7 +39,7 @@
     goto :goto_9
 .end method
 
-.method protected static zzcm(Ljava/lang/String;)[B
+.method protected static a(Ljava/lang/String;)[B
     .registers 3
 
     :try_start_0
@@ -76,11 +65,12 @@
 
 
 # virtual methods
+.method abstract a()[B
+.end method
+
 .method public equals(Ljava/lang/Object;)Z
     .registers 4
-    .param p1, "other"    # Ljava/lang/Object;
 
-    .prologue
     if-eqz p1, :cond_6
 
     instance-of v0, p1, Lcom/google/android/gms/common/zzc$zza;
@@ -90,20 +80,17 @@
     :cond_6
     const/4 v0, 0x0
 
-    .end local p1    # "other":Ljava/lang/Object;
     :goto_7
     return v0
 
-    .restart local p1    # "other":Ljava/lang/Object;
     :cond_8
     check-cast p1, Lcom/google/android/gms/common/zzc$zza;
 
-    .end local p1    # "other":Ljava/lang/Object;
-    invoke-virtual {p0}, Lcom/google/android/gms/common/zzc$zza;->getBytes()[B
+    invoke-virtual {p0}, Lcom/google/android/gms/common/zzc$zza;->a()[B
 
     move-result-object v0
 
-    invoke-virtual {p1}, Lcom/google/android/gms/common/zzc$zza;->getBytes()[B
+    invoke-virtual {p1}, Lcom/google/android/gms/common/zzc$zza;->a()[B
 
     move-result-object v1
 
@@ -114,13 +101,10 @@
     goto :goto_7
 .end method
 
-.method abstract getBytes()[B
-.end method
-
 .method public hashCode()I
     .registers 2
 
-    iget v0, p0, Lcom/google/android/gms/common/zzc$zza;->zzadZ:I
+    iget v0, p0, Lcom/google/android/gms/common/zzc$zza;->a:I
 
     return v0
 .end method

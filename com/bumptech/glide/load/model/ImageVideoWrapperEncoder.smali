@@ -19,7 +19,18 @@
 
 
 # instance fields
-.field private final fileDescriptorEncoder:Lcom/bumptech/glide/load/Encoder;
+.field private final a:Lcom/bumptech/glide/load/Encoder;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/bumptech/glide/load/Encoder",
+            "<",
+            "Ljava/io/InputStream;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final b:Lcom/bumptech/glide/load/Encoder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/Encoder",
@@ -30,18 +41,7 @@
     .end annotation
 .end field
 
-.field private id:Ljava/lang/String;
-
-.field private final streamEncoder:Lcom/bumptech/glide/load/Encoder;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/bumptech/glide/load/Encoder",
-            "<",
-            "Ljava/io/InputStream;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private c:Ljava/lang/String;
 
 
 # direct methods
@@ -63,15 +63,13 @@
 
     .prologue
     .line 21
-    .local p1, "streamEncoder":Lcom/bumptech/glide/load/Encoder;, "Lcom/bumptech/glide/load/Encoder<Ljava/io/InputStream;>;"
-    .local p2, "fileDescriptorEncoder":Lcom/bumptech/glide/load/Encoder;, "Lcom/bumptech/glide/load/Encoder<Landroid/os/ParcelFileDescriptor;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 22
-    iput-object p1, p0, Lcom/bumptech/glide/load/model/ImageVideoWrapperEncoder;->streamEncoder:Lcom/bumptech/glide/load/Encoder;
+    iput-object p1, p0, Lcom/bumptech/glide/load/model/ImageVideoWrapperEncoder;->a:Lcom/bumptech/glide/load/Encoder;
 
     .line 23
-    iput-object p2, p0, Lcom/bumptech/glide/load/model/ImageVideoWrapperEncoder;->fileDescriptorEncoder:Lcom/bumptech/glide/load/Encoder;
+    iput-object p2, p0, Lcom/bumptech/glide/load/model/ImageVideoWrapperEncoder;->b:Lcom/bumptech/glide/load/Encoder;
 
     .line 24
     return-void
@@ -79,71 +77,12 @@
 
 
 # virtual methods
-.method public encode(Lcom/bumptech/glide/load/model/ImageVideoWrapper;Ljava/io/OutputStream;)Z
-    .registers 5
-    .param p1, "data"    # Lcom/bumptech/glide/load/model/ImageVideoWrapper;
-    .param p2, "os"    # Ljava/io/OutputStream;
-
-    .prologue
-    .line 28
-    invoke-virtual {p1}, Lcom/bumptech/glide/load/model/ImageVideoWrapper;->getStream()Ljava/io/InputStream;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_11
-
-    .line 29
-    iget-object v0, p0, Lcom/bumptech/glide/load/model/ImageVideoWrapperEncoder;->streamEncoder:Lcom/bumptech/glide/load/Encoder;
-
-    invoke-virtual {p1}, Lcom/bumptech/glide/load/model/ImageVideoWrapper;->getStream()Ljava/io/InputStream;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1, p2}, Lcom/bumptech/glide/load/Encoder;->encode(Ljava/lang/Object;Ljava/io/OutputStream;)Z
-
-    move-result v0
-
-    .line 31
-    :goto_10
-    return v0
-
-    :cond_11
-    iget-object v0, p0, Lcom/bumptech/glide/load/model/ImageVideoWrapperEncoder;->fileDescriptorEncoder:Lcom/bumptech/glide/load/Encoder;
-
-    invoke-virtual {p1}, Lcom/bumptech/glide/load/model/ImageVideoWrapper;->getFileDescriptor()Landroid/os/ParcelFileDescriptor;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1, p2}, Lcom/bumptech/glide/load/Encoder;->encode(Ljava/lang/Object;Ljava/io/OutputStream;)Z
-
-    move-result v0
-
-    goto :goto_10
-.end method
-
-.method public bridge synthetic encode(Ljava/lang/Object;Ljava/io/OutputStream;)Z
-    .registers 4
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Ljava/io/OutputStream;
-
-    .prologue
-    .line 15
-    check-cast p1, Lcom/bumptech/glide/load/model/ImageVideoWrapper;
-
-    .end local p1    # "x0":Ljava/lang/Object;
-    invoke-virtual {p0, p1, p2}, Lcom/bumptech/glide/load/model/ImageVideoWrapperEncoder;->encode(Lcom/bumptech/glide/load/model/ImageVideoWrapper;Ljava/io/OutputStream;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getId()Ljava/lang/String;
+.method public a()Ljava/lang/String;
     .registers 3
 
     .prologue
     .line 37
-    iget-object v0, p0, Lcom/bumptech/glide/load/model/ImageVideoWrapperEncoder;->id:Ljava/lang/String;
+    iget-object v0, p0, Lcom/bumptech/glide/load/model/ImageVideoWrapperEncoder;->c:Ljava/lang/String;
 
     if-nez v0, :cond_23
 
@@ -152,9 +91,9 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, Lcom/bumptech/glide/load/model/ImageVideoWrapperEncoder;->streamEncoder:Lcom/bumptech/glide/load/Encoder;
+    iget-object v1, p0, Lcom/bumptech/glide/load/model/ImageVideoWrapperEncoder;->a:Lcom/bumptech/glide/load/Encoder;
 
-    invoke-interface {v1}, Lcom/bumptech/glide/load/Encoder;->getId()Ljava/lang/String;
+    invoke-interface {v1}, Lcom/bumptech/glide/load/Encoder;->a()Ljava/lang/String;
 
     move-result-object v1
 
@@ -162,9 +101,9 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/bumptech/glide/load/model/ImageVideoWrapperEncoder;->fileDescriptorEncoder:Lcom/bumptech/glide/load/Encoder;
+    iget-object v1, p0, Lcom/bumptech/glide/load/model/ImageVideoWrapperEncoder;->b:Lcom/bumptech/glide/load/Encoder;
 
-    invoke-interface {v1}, Lcom/bumptech/glide/load/Encoder;->getId()Ljava/lang/String;
+    invoke-interface {v1}, Lcom/bumptech/glide/load/Encoder;->a()Ljava/lang/String;
 
     move-result-object v1
 
@@ -176,11 +115,65 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bumptech/glide/load/model/ImageVideoWrapperEncoder;->id:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bumptech/glide/load/model/ImageVideoWrapperEncoder;->c:Ljava/lang/String;
 
     .line 40
     :cond_23
-    iget-object v0, p0, Lcom/bumptech/glide/load/model/ImageVideoWrapperEncoder;->id:Ljava/lang/String;
+    iget-object v0, p0, Lcom/bumptech/glide/load/model/ImageVideoWrapperEncoder;->c:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public a(Lcom/bumptech/glide/load/model/ImageVideoWrapper;Ljava/io/OutputStream;)Z
+    .registers 5
+
+    .prologue
+    .line 28
+    invoke-virtual {p1}, Lcom/bumptech/glide/load/model/ImageVideoWrapper;->a()Ljava/io/InputStream;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_11
+
+    .line 29
+    iget-object v0, p0, Lcom/bumptech/glide/load/model/ImageVideoWrapperEncoder;->a:Lcom/bumptech/glide/load/Encoder;
+
+    invoke-virtual {p1}, Lcom/bumptech/glide/load/model/ImageVideoWrapper;->a()Ljava/io/InputStream;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1, p2}, Lcom/bumptech/glide/load/Encoder;->a(Ljava/lang/Object;Ljava/io/OutputStream;)Z
+
+    move-result v0
+
+    .line 31
+    :goto_10
+    return v0
+
+    :cond_11
+    iget-object v0, p0, Lcom/bumptech/glide/load/model/ImageVideoWrapperEncoder;->b:Lcom/bumptech/glide/load/Encoder;
+
+    invoke-virtual {p1}, Lcom/bumptech/glide/load/model/ImageVideoWrapper;->b()Landroid/os/ParcelFileDescriptor;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1, p2}, Lcom/bumptech/glide/load/Encoder;->a(Ljava/lang/Object;Ljava/io/OutputStream;)Z
+
+    move-result v0
+
+    goto :goto_10
+.end method
+
+.method public bridge synthetic a(Ljava/lang/Object;Ljava/io/OutputStream;)Z
+    .registers 4
+
+    .prologue
+    .line 15
+    check-cast p1, Lcom/bumptech/glide/load/model/ImageVideoWrapper;
+
+    invoke-virtual {p0, p1, p2}, Lcom/bumptech/glide/load/model/ImageVideoWrapperEncoder;->a(Lcom/bumptech/glide/load/model/ImageVideoWrapper;Ljava/io/OutputStream;)Z
+
+    move-result v0
+
+    return v0
 .end method

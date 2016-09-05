@@ -11,11 +11,6 @@
     value = Landroid/support/design/internal/ScrimInsetsFrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Landroid/support/design/internal/ScrimInsetsFrameLayout;
@@ -38,8 +33,6 @@
 # virtual methods
 .method public onApplyWindowInsets(Landroid/view/View;Landroid/support/v4/view/WindowInsetsCompat;)Landroid/support/v4/view/WindowInsetsCompat;
     .registers 8
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "insets"    # Landroid/support/v4/view/WindowInsetsCompat;
 
     .prologue
     .line 66
@@ -71,19 +64,19 @@
 
     move-result-object v0
 
-    invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->getSystemWindowInsetLeft()I
+    invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->a()I
 
     move-result v1
 
-    invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->getSystemWindowInsetTop()I
+    invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->b()I
 
     move-result v2
 
-    invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->getSystemWindowInsetRight()I
+    invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->c()I
 
     move-result v3
 
-    invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->getSystemWindowInsetBottom()I
+    invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->d()I
 
     move-result v4
 
@@ -135,10 +128,10 @@
     .line 75
     iget-object v0, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;->this$0:Landroid/support/design/internal/ScrimInsetsFrameLayout;
 
-    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->postInvalidateOnAnimation(Landroid/view/View;)V
+    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->d(Landroid/view/View;)V
 
     .line 76
-    invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->consumeSystemWindowInsets()Landroid/support/v4/view/WindowInsetsCompat;
+    invoke-virtual {p2}, Landroid/support/v4/view/WindowInsetsCompat;->f()Landroid/support/v4/view/WindowInsetsCompat;
 
     move-result-object v0
 

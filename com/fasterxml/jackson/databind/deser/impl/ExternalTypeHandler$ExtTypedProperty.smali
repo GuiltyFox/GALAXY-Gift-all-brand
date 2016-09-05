@@ -3,17 +3,6 @@
 .source "ExternalTypeHandler.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/impl/ExternalTypeHandler;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "ExtTypedProperty"
-.end annotation
-
-
 # instance fields
 .field private final _property:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
@@ -25,8 +14,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;)V
     .registers 4
-    .param p1, "property"    # Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-    .param p2, "typeDeser"    # Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
 
     .prologue
     .line 288
@@ -55,22 +42,21 @@
     .registers 4
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 303
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/deser/impl/ExternalTypeHandler$ExtTypedProperty;->_typeDeserializer:Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/impl/ExternalTypeHandler$ExtTypedProperty;->_typeDeserializer:Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
 
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;->getDefaultImpl()Ljava/lang/Class;
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;->getDefaultImpl()Ljava/lang/Class;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 304
-    .local v0, "defaultType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    if-nez v0, :cond_a
+    if-nez v1, :cond_a
 
     .line 307
     :goto_9
-    return-object v1
+    return-object v0
 
     :cond_a
     iget-object v2, p0, Lcom/fasterxml/jackson/databind/deser/impl/ExternalTypeHandler$ExtTypedProperty;->_typeDeserializer:Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
@@ -79,9 +65,9 @@
 
     move-result-object v2
 
-    invoke-interface {v2, v1, v0}, Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;->idFromValueAndType(Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/String;
+    invoke-interface {v2, v0, v1}, Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;->idFromValueAndType(Ljava/lang/Object;Ljava/lang/Class;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_9
 .end method
@@ -132,7 +118,6 @@
 
 .method public hasTypePropertyName(Ljava/lang/String;)Z
     .registers 3
-    .param p1, "n"    # Ljava/lang/String;
 
     .prologue
     .line 295

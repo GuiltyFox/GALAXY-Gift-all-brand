@@ -15,33 +15,33 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/google/zxing/EncodeHintType;
+.field public static final enum a:Lcom/google/zxing/EncodeHintType;
 
-.field public static final enum AZTEC_LAYERS:Lcom/google/zxing/EncodeHintType;
+.field public static final enum b:Lcom/google/zxing/EncodeHintType;
 
-.field public static final enum CHARACTER_SET:Lcom/google/zxing/EncodeHintType;
+.field public static final enum c:Lcom/google/zxing/EncodeHintType;
 
-.field public static final enum DATA_MATRIX_SHAPE:Lcom/google/zxing/EncodeHintType;
-
-.field public static final enum ERROR_CORRECTION:Lcom/google/zxing/EncodeHintType;
-
-.field public static final enum MARGIN:Lcom/google/zxing/EncodeHintType;
-
-.field public static final enum MAX_SIZE:Lcom/google/zxing/EncodeHintType;
+.field public static final enum d:Lcom/google/zxing/EncodeHintType;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
 
-.field public static final enum MIN_SIZE:Lcom/google/zxing/EncodeHintType;
+.field public static final enum e:Lcom/google/zxing/EncodeHintType;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
 
-.field public static final enum PDF417_COMPACT:Lcom/google/zxing/EncodeHintType;
+.field public static final enum f:Lcom/google/zxing/EncodeHintType;
 
-.field public static final enum PDF417_COMPACTION:Lcom/google/zxing/EncodeHintType;
+.field public static final enum g:Lcom/google/zxing/EncodeHintType;
 
-.field public static final enum PDF417_DIMENSIONS:Lcom/google/zxing/EncodeHintType;
+.field public static final enum h:Lcom/google/zxing/EncodeHintType;
+
+.field public static final enum i:Lcom/google/zxing/EncodeHintType;
+
+.field public static final enum j:Lcom/google/zxing/EncodeHintType;
+
+.field private static final synthetic k:[Lcom/google/zxing/EncodeHintType;
 
 
 # direct methods
@@ -66,7 +66,7 @@
 
     invoke-direct {v0, v1, v3}, Lcom/google/zxing/EncodeHintType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/EncodeHintType;->ERROR_CORRECTION:Lcom/google/zxing/EncodeHintType;
+    sput-object v0, Lcom/google/zxing/EncodeHintType;->a:Lcom/google/zxing/EncodeHintType;
 
     .line 38
     new-instance v0, Lcom/google/zxing/EncodeHintType;
@@ -75,7 +75,7 @@
 
     invoke-direct {v0, v1, v4}, Lcom/google/zxing/EncodeHintType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/EncodeHintType;->CHARACTER_SET:Lcom/google/zxing/EncodeHintType;
+    sput-object v0, Lcom/google/zxing/EncodeHintType;->b:Lcom/google/zxing/EncodeHintType;
 
     .line 43
     new-instance v0, Lcom/google/zxing/EncodeHintType;
@@ -84,7 +84,7 @@
 
     invoke-direct {v0, v1, v5}, Lcom/google/zxing/EncodeHintType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/EncodeHintType;->DATA_MATRIX_SHAPE:Lcom/google/zxing/EncodeHintType;
+    sput-object v0, Lcom/google/zxing/EncodeHintType;->c:Lcom/google/zxing/EncodeHintType;
 
     .line 51
     new-instance v0, Lcom/google/zxing/EncodeHintType;
@@ -93,7 +93,7 @@
 
     invoke-direct {v0, v1, v6}, Lcom/google/zxing/EncodeHintType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/EncodeHintType;->MIN_SIZE:Lcom/google/zxing/EncodeHintType;
+    sput-object v0, Lcom/google/zxing/EncodeHintType;->d:Lcom/google/zxing/EncodeHintType;
 
     .line 59
     new-instance v0, Lcom/google/zxing/EncodeHintType;
@@ -102,7 +102,7 @@
 
     invoke-direct {v0, v1, v7}, Lcom/google/zxing/EncodeHintType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/EncodeHintType;->MAX_SIZE:Lcom/google/zxing/EncodeHintType;
+    sput-object v0, Lcom/google/zxing/EncodeHintType;->e:Lcom/google/zxing/EncodeHintType;
 
     .line 67
     new-instance v0, Lcom/google/zxing/EncodeHintType;
@@ -113,7 +113,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/EncodeHintType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/EncodeHintType;->MARGIN:Lcom/google/zxing/EncodeHintType;
+    sput-object v0, Lcom/google/zxing/EncodeHintType;->f:Lcom/google/zxing/EncodeHintType;
 
     .line 72
     new-instance v0, Lcom/google/zxing/EncodeHintType;
@@ -124,7 +124,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/EncodeHintType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/EncodeHintType;->PDF417_COMPACT:Lcom/google/zxing/EncodeHintType;
+    sput-object v0, Lcom/google/zxing/EncodeHintType;->g:Lcom/google/zxing/EncodeHintType;
 
     .line 78
     new-instance v0, Lcom/google/zxing/EncodeHintType;
@@ -135,7 +135,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/EncodeHintType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/EncodeHintType;->PDF417_COMPACTION:Lcom/google/zxing/EncodeHintType;
+    sput-object v0, Lcom/google/zxing/EncodeHintType;->h:Lcom/google/zxing/EncodeHintType;
 
     .line 84
     new-instance v0, Lcom/google/zxing/EncodeHintType;
@@ -146,7 +146,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/EncodeHintType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/EncodeHintType;->PDF417_DIMENSIONS:Lcom/google/zxing/EncodeHintType;
+    sput-object v0, Lcom/google/zxing/EncodeHintType;->i:Lcom/google/zxing/EncodeHintType;
 
     .line 92
     new-instance v0, Lcom/google/zxing/EncodeHintType;
@@ -157,64 +157,64 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/zxing/EncodeHintType;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/zxing/EncodeHintType;->AZTEC_LAYERS:Lcom/google/zxing/EncodeHintType;
+    sput-object v0, Lcom/google/zxing/EncodeHintType;->j:Lcom/google/zxing/EncodeHintType;
 
     .line 24
     const/16 v0, 0xa
 
     new-array v0, v0, [Lcom/google/zxing/EncodeHintType;
 
-    sget-object v1, Lcom/google/zxing/EncodeHintType;->ERROR_CORRECTION:Lcom/google/zxing/EncodeHintType;
+    sget-object v1, Lcom/google/zxing/EncodeHintType;->a:Lcom/google/zxing/EncodeHintType;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/google/zxing/EncodeHintType;->CHARACTER_SET:Lcom/google/zxing/EncodeHintType;
+    sget-object v1, Lcom/google/zxing/EncodeHintType;->b:Lcom/google/zxing/EncodeHintType;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/google/zxing/EncodeHintType;->DATA_MATRIX_SHAPE:Lcom/google/zxing/EncodeHintType;
+    sget-object v1, Lcom/google/zxing/EncodeHintType;->c:Lcom/google/zxing/EncodeHintType;
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lcom/google/zxing/EncodeHintType;->MIN_SIZE:Lcom/google/zxing/EncodeHintType;
+    sget-object v1, Lcom/google/zxing/EncodeHintType;->d:Lcom/google/zxing/EncodeHintType;
 
     aput-object v1, v0, v6
 
-    sget-object v1, Lcom/google/zxing/EncodeHintType;->MAX_SIZE:Lcom/google/zxing/EncodeHintType;
+    sget-object v1, Lcom/google/zxing/EncodeHintType;->e:Lcom/google/zxing/EncodeHintType;
 
     aput-object v1, v0, v7
 
     const/4 v1, 0x5
 
-    sget-object v2, Lcom/google/zxing/EncodeHintType;->MARGIN:Lcom/google/zxing/EncodeHintType;
+    sget-object v2, Lcom/google/zxing/EncodeHintType;->f:Lcom/google/zxing/EncodeHintType;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x6
 
-    sget-object v2, Lcom/google/zxing/EncodeHintType;->PDF417_COMPACT:Lcom/google/zxing/EncodeHintType;
+    sget-object v2, Lcom/google/zxing/EncodeHintType;->g:Lcom/google/zxing/EncodeHintType;
 
     aput-object v2, v0, v1
 
     const/4 v1, 0x7
 
-    sget-object v2, Lcom/google/zxing/EncodeHintType;->PDF417_COMPACTION:Lcom/google/zxing/EncodeHintType;
+    sget-object v2, Lcom/google/zxing/EncodeHintType;->h:Lcom/google/zxing/EncodeHintType;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x8
 
-    sget-object v2, Lcom/google/zxing/EncodeHintType;->PDF417_DIMENSIONS:Lcom/google/zxing/EncodeHintType;
+    sget-object v2, Lcom/google/zxing/EncodeHintType;->i:Lcom/google/zxing/EncodeHintType;
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x9
 
-    sget-object v2, Lcom/google/zxing/EncodeHintType;->AZTEC_LAYERS:Lcom/google/zxing/EncodeHintType;
+    sget-object v2, Lcom/google/zxing/EncodeHintType;->j:Lcom/google/zxing/EncodeHintType;
 
     aput-object v2, v0, v1
 
-    sput-object v0, Lcom/google/zxing/EncodeHintType;->$VALUES:[Lcom/google/zxing/EncodeHintType;
+    sput-object v0, Lcom/google/zxing/EncodeHintType;->k:[Lcom/google/zxing/EncodeHintType;
 
     return-void
 .end method
@@ -236,7 +236,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/google/zxing/EncodeHintType;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 24
@@ -256,7 +255,7 @@
 
     .prologue
     .line 24
-    sget-object v0, Lcom/google/zxing/EncodeHintType;->$VALUES:[Lcom/google/zxing/EncodeHintType;
+    sget-object v0, Lcom/google/zxing/EncodeHintType;->k:[Lcom/google/zxing/EncodeHintType;
 
     invoke-virtual {v0}, [Lcom/google/zxing/EncodeHintType;->clone()Ljava/lang/Object;
 

@@ -3,26 +3,8 @@
 .source "CompositeException.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lrx/exceptions/CompositeException$1;,
-        Lrx/exceptions/CompositeException$CompositeExceptionCausalChain;,
-        Lrx/exceptions/CompositeException$WrappedPrintWriter;,
-        Lrx/exceptions/CompositeException$WrappedPrintStream;,
-        Lrx/exceptions/CompositeException$PrintStreamOrWriter;
-    }
-.end annotation
-
-
-# static fields
-.field private static final serialVersionUID:J = 0x29ffcc6947b49592L
-
-
 # instance fields
-.field private cause:Ljava/lang/Throwable;
-
-.field private final exceptions:Ljava/util/List;
+.field private final a:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
@@ -33,13 +15,14 @@
     .end annotation
 .end field
 
-.field private final message:Ljava/lang/String;
+.field private final b:Ljava/lang/String;
+
+.field private c:Ljava/lang/Throwable;
 
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/util/Collection;)V
-    .registers 9
-    .param p1, "messagePrefix"    # Ljava/lang/String;
+    .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -53,13 +36,12 @@
 
     .prologue
     .line 49
-    .local p2, "errors":Ljava/util/Collection;, "Ljava/util/Collection<+Ljava/lang/Throwable;>;"
     invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
 
     .line 90
-    const/4 v4, 0x0
+    const/4 v0, 0x0
 
-    iput-object v4, p0, Lrx/exceptions/CompositeException;->cause:Ljava/lang/Throwable;
+    iput-object v0, p0, Lrx/exceptions/CompositeException;->c:Ljava/lang/Throwable;
 
     .line 50
     new-instance v1, Ljava/util/LinkedHashSet;
@@ -67,13 +49,11 @@
     invoke-direct {v1}, Ljava/util/LinkedHashSet;-><init>()V
 
     .line 51
-    .local v1, "deDupedExceptions":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Throwable;>;"
-    new-instance v0, Ljava/util/ArrayList;
+    new-instance v2, Ljava/util/ArrayList;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     .line 52
-    .local v0, "_exceptions":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Throwable;>;"
     if-eqz p2, :cond_3f
 
     .line 53
@@ -81,105 +61,99 @@
 
     move-result-object v3
 
-    .local v3, "i$":Ljava/util/Iterator;
     :goto_16
     invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v4
+    move-result v0
 
-    if-eqz v4, :cond_47
+    if-eqz v0, :cond_47
 
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Ljava/lang/Throwable;
+    check-cast v0, Ljava/lang/Throwable;
 
     .line 54
-    .local v2, "ex":Ljava/lang/Throwable;
-    instance-of v4, v2, Lrx/exceptions/CompositeException;
+    instance-of v4, v0, Lrx/exceptions/CompositeException;
 
     if-eqz v4, :cond_30
 
     .line 55
-    check-cast v2, Lrx/exceptions/CompositeException;
+    check-cast v0, Lrx/exceptions/CompositeException;
 
-    .end local v2    # "ex":Ljava/lang/Throwable;
-    invoke-virtual {v2}, Lrx/exceptions/CompositeException;->getExceptions()Ljava/util/List;
+    invoke-virtual {v0}, Lrx/exceptions/CompositeException;->a()Ljava/util/List;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-interface {v1, v4}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
+    invoke-interface {v1, v0}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
 
     goto :goto_16
 
     .line 57
-    .restart local v2    # "ex":Ljava/lang/Throwable;
     :cond_30
-    if-eqz v2, :cond_36
+    if-eqz v0, :cond_36
 
     .line 58
-    invoke-interface {v1, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     goto :goto_16
 
     .line 60
     :cond_36
-    new-instance v4, Ljava/lang/NullPointerException;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    invoke-direct {v4}, Ljava/lang/NullPointerException;-><init>()V
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
-    invoke-interface {v1, v4}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     goto :goto_16
 
     .line 64
-    .end local v2    # "ex":Ljava/lang/Throwable;
-    .end local v3    # "i$":Ljava/util/Iterator;
     :cond_3f
-    new-instance v4, Ljava/lang/NullPointerException;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    invoke-direct {v4}, Ljava/lang/NullPointerException;-><init>()V
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
-    invoke-interface {v1, v4}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     .line 67
     :cond_47
-    invoke-interface {v0, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
+    invoke-interface {v2, v1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
     .line 68
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+    invoke-static {v2}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
-    move-result-object v4
+    move-result-object v0
 
-    iput-object v4, p0, Lrx/exceptions/CompositeException;->exceptions:Ljava/util/List;
+    iput-object v0, p0, Lrx/exceptions/CompositeException;->a:Ljava/util/List;
 
     .line 69
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v5, p0, Lrx/exceptions/CompositeException;->exceptions:Ljava/util/List;
+    iget-object v1, p0, Lrx/exceptions/CompositeException;->a:Ljava/util/List;
 
-    invoke-interface {v5}, Ljava/util/List;->size()I
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    move-result v5
+    move-result v1
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    const-string/jumbo v5, " exceptions occurred. "
+    const-string/jumbo v1, " exceptions occurred. "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    iput-object v4, p0, Lrx/exceptions/CompositeException;->message:Ljava/lang/String;
+    iput-object v0, p0, Lrx/exceptions/CompositeException;->b:Ljava/lang/String;
 
     .line 70
     return-void
@@ -199,7 +173,6 @@
 
     .prologue
     .line 73
-    .local p1, "errors":Ljava/util/Collection;, "Ljava/util/Collection<+Ljava/lang/Throwable;>;"
     const/4 v0, 0x0
 
     invoke-direct {p0, v0, p1}, Lrx/exceptions/CompositeException;-><init>(Ljava/lang/String;Ljava/util/Collection;)V
@@ -208,95 +181,8 @@
     return-void
 .end method
 
-.method private appendStackTrace(Ljava/lang/StringBuilder;Ljava/lang/Throwable;Ljava/lang/String;)V
-    .registers 10
-    .param p1, "bldr"    # Ljava/lang/StringBuilder;
-    .param p2, "ex"    # Ljava/lang/Throwable;
-    .param p3, "prefix"    # Ljava/lang/String;
-
-    .prologue
-    .line 183
-    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string/jumbo v5, "\n"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 184
-    invoke-virtual {p2}, Ljava/lang/Throwable;->getStackTrace()[Ljava/lang/StackTraceElement;
-
-    move-result-object v0
-
-    .local v0, "arr$":[Ljava/lang/StackTraceElement;
-    array-length v2, v0
-
-    .local v2, "len$":I
-    const/4 v1, 0x0
-
-    .local v1, "i$":I
-    :goto_14
-    if-ge v1, v2, :cond_2c
-
-    aget-object v3, v0, v1
-
-    .line 185
-    .local v3, "stackElement":Ljava/lang/StackTraceElement;
-    const-string/jumbo v4, "\t\tat "
-
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string/jumbo v5, "\n"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 184
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_14
-
-    .line 187
-    .end local v3    # "stackElement":Ljava/lang/StackTraceElement;
-    :cond_2c
-    invoke-virtual {p2}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
-
-    move-result-object v4
-
-    if-eqz v4, :cond_42
-
-    .line 188
-    const-string/jumbo v4, "\tCaused by: "
-
-    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 189
-    invoke-virtual {p2}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
-
-    move-result-object v4
-
-    const-string/jumbo v5, ""
-
-    invoke-direct {p0, p1, v4, v5}, Lrx/exceptions/CompositeException;->appendStackTrace(Ljava/lang/StringBuilder;Ljava/lang/Throwable;Ljava/lang/String;)V
-
-    .line 191
-    :cond_42
-    return-void
-.end method
-
-.method private final getListOfCauses(Ljava/lang/Throwable;)Ljava/util/List;
+.method private final a(Ljava/lang/Throwable;)Ljava/util/List;
     .registers 5
-    .param p1, "ex"    # Ljava/lang/Throwable;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -311,384 +197,273 @@
 
     .prologue
     .line 251
-    new-instance v0, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     .line 252
-    .local v0, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Throwable;>;"
     invoke-virtual {p1}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 253
-    .local v1, "root":Ljava/lang/Throwable;
-    if-nez v1, :cond_10
+    if-nez v0, :cond_11
+
+    move-object v0, v1
 
     .line 259
-    :goto_b
+    :goto_c
     return-object v0
 
     .line 261
-    :cond_c
-    invoke-virtual {v1}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
+    :cond_d
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 257
-    :cond_10
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :cond_11
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 258
-    invoke-virtual {v1}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
 
     move-result-object v2
 
-    if-nez v2, :cond_c
+    if-nez v2, :cond_d
 
-    goto :goto_b
+    move-object v0, v1
+
+    .line 259
+    goto :goto_c
 .end method
 
-.method private printStackTrace(Lrx/exceptions/CompositeException$PrintStreamOrWriter;)V
-    .registers 11
-    .param p1, "s"    # Lrx/exceptions/CompositeException$PrintStreamOrWriter;
+.method private a(Ljava/lang/StringBuilder;Ljava/lang/Throwable;Ljava/lang/String;)V
+    .registers 9
+
+    .prologue
+    .line 183
+    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "\n"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 184
+    invoke-virtual {p2}, Ljava/lang/Throwable;->getStackTrace()[Ljava/lang/StackTraceElement;
+
+    move-result-object v1
+
+    array-length v2, v1
+
+    const/4 v0, 0x0
+
+    :goto_14
+    if-ge v0, v2, :cond_2c
+
+    aget-object v3, v1, v0
+
+    .line 185
+    const-string/jumbo v4, "\t\tat "
+
+    invoke-virtual {p1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string/jumbo v4, "\n"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 184
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_14
+
+    .line 187
+    :cond_2c
+    invoke-virtual {p2}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_42
+
+    .line 188
+    const-string/jumbo v0, "\tCaused by: "
+
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 189
+    invoke-virtual {p2}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
+
+    move-result-object v0
+
+    const-string/jumbo v1, ""
+
+    invoke-direct {p0, p1, v0, v1}, Lrx/exceptions/CompositeException;->a(Ljava/lang/StringBuilder;Ljava/lang/Throwable;Ljava/lang/String;)V
+
+    .line 191
+    :cond_42
+    return-void
+.end method
+
+.method private a(Lrx/exceptions/CompositeException$PrintStreamOrWriter;)V
+    .registers 8
 
     .prologue
     .line 166
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 167
-    .local v1, "bldr":Ljava/lang/StringBuilder;
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v0
 
-    const-string/jumbo v8, "\n"
+    const-string/jumbo v1, "\n"
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 168
     invoke-virtual {p0}, Lrx/exceptions/CompositeException;->getStackTrace()[Ljava/lang/StackTraceElement;
 
-    move-result-object v0
+    move-result-object v1
 
-    .local v0, "arr$":[Ljava/lang/StackTraceElement;
-    array-length v5, v0
+    array-length v3, v1
 
-    .local v5, "len$":I
-    const/4 v4, 0x0
+    const/4 v0, 0x0
 
-    .local v4, "i$":I
     :goto_15
-    if-ge v4, v5, :cond_2d
+    if-ge v0, v3, :cond_2d
 
-    aget-object v6, v0, v4
+    aget-object v4, v1, v0
 
     .line 169
-    .local v6, "myStackElement":Ljava/lang/StackTraceElement;
-    const-string/jumbo v7, "\tat "
+    const-string/jumbo v5, "\tat "
 
-    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v5
 
-    invoke-virtual {v7, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v4
 
-    const-string/jumbo v8, "\n"
+    const-string/jumbo v5, "\n"
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 168
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_15
 
     .line 171
-    .end local v6    # "myStackElement":Ljava/lang/StackTraceElement;
     :cond_2d
-    const/4 v3, 0x1
+    const/4 v0, 0x1
 
     .line 172
-    .local v3, "i":I
-    iget-object v7, p0, Lrx/exceptions/CompositeException;->exceptions:Ljava/util/List;
+    iget-object v1, p0, Lrx/exceptions/CompositeException;->a:Ljava/util/List;
 
-    invoke-interface {v7}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v3
+
+    move v1, v0
+
+    :goto_35
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_63
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Throwable;
+
+    .line 173
+    const-string/jumbo v4, "  ComposedException "
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v4
 
-    .local v4, "i$":Ljava/util/Iterator;
-    :goto_34
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result v7
+    move-result-object v4
 
-    if-eqz v7, :cond_61
+    const-string/jumbo v5, " :"
 
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v4
 
-    check-cast v2, Ljava/lang/Throwable;
+    const-string/jumbo v5, "\n"
 
-    .line 173
-    .local v2, "ex":Ljava/lang/Throwable;
-    const-string/jumbo v7, "  ComposedException "
-
-    invoke-virtual {v1, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string/jumbo v8, " :"
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v7
-
-    const-string/jumbo v8, "\n"
-
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 174
-    const-string/jumbo v7, "\t"
+    const-string/jumbo v4, "\t"
 
-    invoke-direct {p0, v1, v2, v7}, Lrx/exceptions/CompositeException;->appendStackTrace(Ljava/lang/StringBuilder;Ljava/lang/Throwable;Ljava/lang/String;)V
+    invoke-direct {p0, v2, v0, v4}, Lrx/exceptions/CompositeException;->a(Ljava/lang/StringBuilder;Ljava/lang/Throwable;Ljava/lang/String;)V
 
     .line 175
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
 
     .line 176
-    goto :goto_34
+    goto :goto_35
 
     .line 177
-    .end local v2    # "ex":Ljava/lang/Throwable;
-    :cond_61
-    invoke-virtual {p1}, Lrx/exceptions/CompositeException$PrintStreamOrWriter;->lock()Ljava/lang/Object;
+    :cond_63
+    invoke-virtual {p1}, Lrx/exceptions/CompositeException$PrintStreamOrWriter;->a()Ljava/lang/Object;
 
-    move-result-object v8
+    move-result-object v1
 
-    monitor-enter v8
+    monitor-enter v1
 
     .line 178
-    :try_start_66
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :try_start_68
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-virtual {p1, v7}, Lrx/exceptions/CompositeException$PrintStreamOrWriter;->println(Ljava/lang/Object;)V
+    invoke-virtual {p1, v0}, Lrx/exceptions/CompositeException$PrintStreamOrWriter;->a(Ljava/lang/Object;)V
 
     .line 179
-    monitor-exit v8
+    monitor-exit v1
 
     .line 180
     return-void
 
     .line 179
-    :catchall_6f
-    move-exception v7
+    :catchall_71
+    move-exception v0
 
-    monitor-exit v8
-    :try_end_71
-    .catchall {:try_start_66 .. :try_end_71} :catchall_6f
+    monitor-exit v1
+    :try_end_73
+    .catchall {:try_start_68 .. :try_end_73} :catchall_71
 
-    throw v7
+    throw v0
 .end method
 
 
 # virtual methods
-.method public declared-synchronized getCause()Ljava/lang/Throwable;
-    .registers 10
-
-    .prologue
-    .line 94
-    monitor-enter p0
-
-    :try_start_1
-    iget-object v8, p0, Lrx/exceptions/CompositeException;->cause:Ljava/lang/Throwable;
-
-    if-nez v8, :cond_5f
-
-    .line 96
-    new-instance v0, Lrx/exceptions/CompositeException$CompositeExceptionCausalChain;
-
-    invoke-direct {v0}, Lrx/exceptions/CompositeException$CompositeExceptionCausalChain;-><init>()V
-
-    .line 97
-    .local v0, "_cause":Lrx/exceptions/CompositeException$CompositeExceptionCausalChain;
-    new-instance v7, Ljava/util/HashSet;
-
-    invoke-direct {v7}, Ljava/util/HashSet;-><init>()V
-
-    .line 99
-    .local v7, "seenCauses":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Throwable;>;"
-    move-object v1, v0
-
-    .line 100
-    .local v1, "chain":Ljava/lang/Throwable;
-    iget-object v8, p0, Lrx/exceptions/CompositeException;->exceptions:Ljava/util/List;
-
-    invoke-interface {v8}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v4
-
-    :cond_16
-    :goto_16
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v8
-
-    if-eqz v8, :cond_5d
-
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Ljava/lang/Throwable;
-
-    .line 101
-    .local v3, "e":Ljava/lang/Throwable;
-    invoke-interface {v7, v3}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-nez v8, :cond_16
-
-    .line 105
-    invoke-interface {v7, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    .line 107
-    invoke-direct {p0, v3}, Lrx/exceptions/CompositeException;->getListOfCauses(Ljava/lang/Throwable;)Ljava/util/List;
-
-    move-result-object v6
-
-    .line 109
-    .local v6, "listOfCauses":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Throwable;>;"
-    invoke-interface {v6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v5
-
-    .local v5, "i$":Ljava/util/Iterator;
-    :goto_33
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v8
-
-    if-eqz v8, :cond_55
-
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Ljava/lang/Throwable;
-
-    .line 110
-    .local v2, "child":Ljava/lang/Throwable;
-    invoke-interface {v7, v2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_4e
-
-    .line 112
-    new-instance v3, Ljava/lang/RuntimeException;
-
-    .end local v3    # "e":Ljava/lang/Throwable;
-    const-string/jumbo v8, "Duplicate found in causal chain so cropping to prevent loop ..."
-
-    invoke-direct {v3, v8}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    .line 113
-    .restart local v3    # "e":Ljava/lang/Throwable;
-    goto :goto_33
-
-    .line 115
-    :cond_4e
-    invoke-interface {v7, v2}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-    :try_end_51
-    .catchall {:try_start_1 .. :try_end_51} :catchall_52
-
-    goto :goto_33
-
-    .line 94
-    .end local v0    # "_cause":Lrx/exceptions/CompositeException$CompositeExceptionCausalChain;
-    .end local v1    # "chain":Ljava/lang/Throwable;
-    .end local v2    # "child":Ljava/lang/Throwable;
-    .end local v3    # "e":Ljava/lang/Throwable;
-    .end local v5    # "i$":Ljava/util/Iterator;
-    .end local v6    # "listOfCauses":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Throwable;>;"
-    .end local v7    # "seenCauses":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Throwable;>;"
-    :catchall_52
-    move-exception v8
-
-    monitor-exit p0
-
-    throw v8
-
-    .line 120
-    .restart local v0    # "_cause":Lrx/exceptions/CompositeException$CompositeExceptionCausalChain;
-    .restart local v1    # "chain":Ljava/lang/Throwable;
-    .restart local v3    # "e":Ljava/lang/Throwable;
-    .restart local v5    # "i$":Ljava/util/Iterator;
-    .restart local v6    # "listOfCauses":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Throwable;>;"
-    .restart local v7    # "seenCauses":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Throwable;>;"
-    :cond_55
-    :try_start_55
-    invoke-virtual {v1, v3}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
-    :try_end_58
-    .catch Ljava/lang/Throwable; {:try_start_55 .. :try_end_58} :catch_63
-    .catchall {:try_start_55 .. :try_end_58} :catchall_52
-
-    .line 126
-    :goto_58
-    :try_start_58
-    invoke-virtual {v1}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
-
-    move-result-object v1
-
-    .line 127
-    goto :goto_16
-
-    .line 128
-    .end local v3    # "e":Ljava/lang/Throwable;
-    .end local v5    # "i$":Ljava/util/Iterator;
-    .end local v6    # "listOfCauses":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Throwable;>;"
-    :cond_5d
-    iput-object v0, p0, Lrx/exceptions/CompositeException;->cause:Ljava/lang/Throwable;
-
-    .line 130
-    .end local v0    # "_cause":Lrx/exceptions/CompositeException$CompositeExceptionCausalChain;
-    .end local v1    # "chain":Ljava/lang/Throwable;
-    .end local v7    # "seenCauses":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Throwable;>;"
-    :cond_5f
-    iget-object v8, p0, Lrx/exceptions/CompositeException;->cause:Ljava/lang/Throwable;
-    :try_end_61
-    .catchall {:try_start_58 .. :try_end_61} :catchall_52
-
-    monitor-exit p0
-
-    return-object v8
-
-    .line 121
-    .restart local v0    # "_cause":Lrx/exceptions/CompositeException$CompositeExceptionCausalChain;
-    .restart local v1    # "chain":Ljava/lang/Throwable;
-    .restart local v3    # "e":Ljava/lang/Throwable;
-    .restart local v5    # "i$":Ljava/util/Iterator;
-    .restart local v6    # "listOfCauses":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Throwable;>;"
-    .restart local v7    # "seenCauses":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/Throwable;>;"
-    :catch_63
-    move-exception v8
-
-    goto :goto_58
-.end method
-
-.method public getExceptions()Ljava/util/List;
+.method public a()Ljava/util/List;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -702,9 +477,165 @@
 
     .prologue
     .line 82
-    iget-object v0, p0, Lrx/exceptions/CompositeException;->exceptions:Ljava/util/List;
+    iget-object v0, p0, Lrx/exceptions/CompositeException;->a:Ljava/util/List;
 
     return-object v0
+.end method
+
+.method public declared-synchronized getCause()Ljava/lang/Throwable;
+    .registers 9
+
+    .prologue
+    .line 94
+    monitor-enter p0
+
+    :try_start_1
+    iget-object v0, p0, Lrx/exceptions/CompositeException;->c:Ljava/lang/Throwable;
+
+    if-nez v0, :cond_62
+
+    .line 96
+    new-instance v3, Lrx/exceptions/CompositeException$CompositeExceptionCausalChain;
+
+    invoke-direct {v3}, Lrx/exceptions/CompositeException$CompositeExceptionCausalChain;-><init>()V
+
+    .line 97
+    new-instance v4, Ljava/util/HashSet;
+
+    invoke-direct {v4}, Ljava/util/HashSet;-><init>()V
+
+    .line 100
+    iget-object v0, p0, Lrx/exceptions/CompositeException;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v5
+
+    move-object v2, v3
+
+    :cond_16
+    :goto_16
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_60
+
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Throwable;
+
+    .line 101
+    invoke-interface {v4, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_16
+
+    .line 105
+    invoke-interface {v4, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+    .line 107
+    invoke-direct {p0, v0}, Lrx/exceptions/CompositeException;->a(Ljava/lang/Throwable;)Ljava/util/List;
+
+    move-result-object v1
+
+    .line 109
+    invoke-interface {v1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v6
+
+    move-object v1, v0
+
+    :goto_34
+    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_57
+
+    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Throwable;
+
+    .line 110
+    invoke-interface {v4, v0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_50
+
+    .line 112
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    const-string/jumbo v1, "Duplicate found in causal chain so cropping to prevent loop ..."
+
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    move-object v1, v0
+
+    .line 113
+    goto :goto_34
+
+    .line 115
+    :cond_50
+    invoke-interface {v4, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+    :try_end_53
+    .catchall {:try_start_1 .. :try_end_53} :catchall_54
+
+    goto :goto_34
+
+    .line 94
+    :catchall_54
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+
+    .line 120
+    :cond_57
+    :try_start_57
+    invoke-virtual {v2, v1}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    :try_end_5a
+    .catch Ljava/lang/Throwable; {:try_start_57 .. :try_end_5a} :catch_66
+    .catchall {:try_start_57 .. :try_end_5a} :catchall_54
+
+    .line 126
+    :goto_5a
+    :try_start_5a
+    invoke-virtual {v2}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
+
+    move-result-object v0
+
+    move-object v2, v0
+
+    .line 127
+    goto :goto_16
+
+    .line 128
+    :cond_60
+    iput-object v3, p0, Lrx/exceptions/CompositeException;->c:Ljava/lang/Throwable;
+
+    .line 130
+    :cond_62
+    iget-object v0, p0, Lrx/exceptions/CompositeException;->c:Ljava/lang/Throwable;
+    :try_end_64
+    .catchall {:try_start_5a .. :try_end_64} :catchall_54
+
+    monitor-exit p0
+
+    return-object v0
+
+    .line 121
+    :catch_66
+    move-exception v0
+
+    goto :goto_5a
 .end method
 
 .method public getMessage()Ljava/lang/String;
@@ -712,7 +643,7 @@
 
     .prologue
     .line 87
-    iget-object v0, p0, Lrx/exceptions/CompositeException;->message:Ljava/lang/String;
+    iget-object v0, p0, Lrx/exceptions/CompositeException;->b:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -732,7 +663,6 @@
 
 .method public printStackTrace(Ljava/io/PrintStream;)V
     .registers 3
-    .param p1, "s"    # Ljava/io/PrintStream;
 
     .prologue
     .line 150
@@ -740,7 +670,7 @@
 
     invoke-direct {v0, p1}, Lrx/exceptions/CompositeException$WrappedPrintStream;-><init>(Ljava/io/PrintStream;)V
 
-    invoke-direct {p0, v0}, Lrx/exceptions/CompositeException;->printStackTrace(Lrx/exceptions/CompositeException$PrintStreamOrWriter;)V
+    invoke-direct {p0, v0}, Lrx/exceptions/CompositeException;->a(Lrx/exceptions/CompositeException$PrintStreamOrWriter;)V
 
     .line 151
     return-void
@@ -748,7 +678,6 @@
 
 .method public printStackTrace(Ljava/io/PrintWriter;)V
     .registers 3
-    .param p1, "s"    # Ljava/io/PrintWriter;
 
     .prologue
     .line 155
@@ -756,7 +685,7 @@
 
     invoke-direct {v0, p1}, Lrx/exceptions/CompositeException$WrappedPrintWriter;-><init>(Ljava/io/PrintWriter;)V
 
-    invoke-direct {p0, v0}, Lrx/exceptions/CompositeException;->printStackTrace(Lrx/exceptions/CompositeException$PrintStreamOrWriter;)V
+    invoke-direct {p0, v0}, Lrx/exceptions/CompositeException;->a(Lrx/exceptions/CompositeException$PrintStreamOrWriter;)V
 
     .line 156
     return-void

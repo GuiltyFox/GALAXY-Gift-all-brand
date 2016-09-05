@@ -20,14 +20,6 @@
 # direct methods
 .method constructor <init>(Ljava/lang/String;IIIII[II)V
     .registers 9
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "hash"    # I
-    .param p3, "q1"    # I
-    .param p4, "q2"    # I
-    .param p5, "q3"    # I
-    .param p6, "q4"    # I
-    .param p7, "quads"    # [I
-    .param p8, "quadLen"    # I
 
     .prologue
     .line 17
@@ -56,60 +48,52 @@
 .end method
 
 .method private final _equals2([I)Z
-    .registers 6
-    .param p1, "quads"    # [I
+    .registers 7
 
     .prologue
-    .line 88
-    iget v2, p0, Lcom/fasterxml/jackson/core/sym/NameN;->qlen:I
+    const/4 v0, 0x0
 
-    add-int/lit8 v0, v2, -0x4
+    .line 88
+    iget v1, p0, Lcom/fasterxml/jackson/core/sym/NameN;->qlen:I
+
+    add-int/lit8 v2, v1, -0x4
+
+    move v1, v0
 
     .line 89
-    .local v0, "end":I
-    const/4 v1, 0x0
-
-    .local v1, "i":I
-    :goto_5
-    if-ge v1, v0, :cond_16
+    :goto_6
+    if-ge v1, v2, :cond_16
 
     .line 90
-    add-int/lit8 v2, v1, 0x4
+    add-int/lit8 v3, v1, 0x4
 
-    aget v2, p1, v2
+    aget v3, p1, v3
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/sym/NameN;->q:[I
+    iget-object v4, p0, Lcom/fasterxml/jackson/core/sym/NameN;->q:[I
 
-    aget v3, v3, v1
+    aget v4, v4, v1
 
-    if-eq v2, v3, :cond_13
-
-    .line 91
-    const/4 v2, 0x0
+    if-eq v3, v4, :cond_13
 
     .line 94
     :goto_12
-    return v2
+    return v0
 
     .line 89
     :cond_13
     add-int/lit8 v1, v1, 0x1
 
-    goto :goto_5
+    goto :goto_6
 
     .line 94
     :cond_16
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
     goto :goto_12
 .end method
 
 .method public static construct(Ljava/lang/String;I[II)Lcom/fasterxml/jackson/core/sym/NameN;
-    .registers 14
-    .param p0, "name"    # Ljava/lang/String;
-    .param p1, "hash"    # I
-    .param p2, "q"    # [I
-    .param p3, "qlen"    # I
+    .registers 13
 
     .prologue
     const/4 v1, 0x4
@@ -131,30 +115,25 @@
     aget v3, p2, v0
 
     .line 35
-    .local v3, "q1":I
     const/4 v0, 0x1
 
     aget v4, p2, v0
 
     .line 36
-    .local v4, "q2":I
     const/4 v0, 0x2
 
     aget v5, p2, v0
 
     .line 37
-    .local v5, "q3":I
     const/4 v0, 0x3
 
     aget v6, p2, v0
 
     .line 39
-    .local v6, "q4":I
-    add-int/lit8 v9, p3, -0x4
+    add-int/lit8 v0, p3, -0x4
 
     .line 43
-    .local v9, "rem":I
-    if-lez v9, :cond_26
+    if-lez v0, :cond_26
 
     .line 44
     invoke-static {p2, v1, p3}, Ljava/util/Arrays;->copyOfRange([III)[I
@@ -162,7 +141,6 @@
     move-result-object v7
 
     .line 48
-    .local v7, "buf":[I
     :goto_1d
     new-instance v0, Lcom/fasterxml/jackson/core/sym/NameN;
 
@@ -177,11 +155,9 @@
     return-object v0
 
     .line 46
-    .end local v7    # "buf":[I
     :cond_26
     const/4 v7, 0x0
 
-    .restart local v7    # "buf":[I
     goto :goto_1d
 .end method
 
@@ -189,7 +165,6 @@
 # virtual methods
 .method public equals(I)Z
     .registers 3
-    .param p1, "quad"    # I
 
     .prologue
     .line 54
@@ -200,8 +175,6 @@
 
 .method public equals(II)Z
     .registers 4
-    .param p1, "quad1"    # I
-    .param p2, "quad2"    # I
 
     .prologue
     .line 58
@@ -212,8 +185,6 @@
 
 .method public equals([II)Z
     .registers 9
-    .param p1, "quads"    # [I
-    .param p2, "len"    # I
 
     .prologue
     const/4 v5, 0x3

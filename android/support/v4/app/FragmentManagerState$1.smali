@@ -11,11 +11,6 @@
     value = Landroid/support/v4/app/FragmentManagerState;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -40,9 +35,8 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/app/FragmentManagerState;
+.method public a(Landroid/os/Parcel;)Landroid/support/v4/app/FragmentManagerState;
     .registers 3
-    .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
     .line 393
@@ -53,21 +47,8 @@
     return-object v0
 .end method
 
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public a(I)[Landroid/support/v4/app/FragmentManagerState;
     .registers 3
-
-    .prologue
-    .line 391
-    invoke-virtual {p0, p1}, Landroid/support/v4/app/FragmentManagerState$1;->createFromParcel(Landroid/os/Parcel;)Landroid/support/v4/app/FragmentManagerState;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public newArray(I)[Landroid/support/v4/app/FragmentManagerState;
-    .registers 3
-    .param p1, "size"    # I
 
     .prologue
     .line 397
@@ -76,12 +57,24 @@
     return-object v0
 .end method
 
-.method public bridge synthetic newArray(I)[Ljava/lang/Object;
+.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .registers 3
 
     .prologue
     .line 391
-    invoke-virtual {p0, p1}, Landroid/support/v4/app/FragmentManagerState$1;->newArray(I)[Landroid/support/v4/app/FragmentManagerState;
+    invoke-virtual {p0, p1}, Landroid/support/v4/app/FragmentManagerState$1;->a(Landroid/os/Parcel;)Landroid/support/v4/app/FragmentManagerState;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic newArray(I)[Ljava/lang/Object;
+    .registers 3
+
+    .prologue
+    .line 391
+    invoke-virtual {p0, p1}, Landroid/support/v4/app/FragmentManagerState$1;->a(I)[Landroid/support/v4/app/FragmentManagerState;
 
     move-result-object v0
 

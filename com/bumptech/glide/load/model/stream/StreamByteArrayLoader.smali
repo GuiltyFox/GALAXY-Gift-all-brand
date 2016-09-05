@@ -7,12 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/bumptech/glide/load/model/stream/StreamByteArrayLoader$Factory;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -23,7 +17,7 @@
 
 
 # instance fields
-.field private final id:Ljava/lang/String;
+.field private final a:Ljava/lang/String;
 
 
 # direct methods
@@ -42,7 +36,6 @@
 
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 2
-    .param p1, "id"    # Ljava/lang/String;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -51,7 +44,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 30
-    iput-object p1, p0, Lcom/bumptech/glide/load/model/stream/StreamByteArrayLoader;->id:Ljava/lang/String;
+    iput-object p1, p0, Lcom/bumptech/glide/load/model/stream/StreamByteArrayLoader;->a:Ljava/lang/String;
 
     .line 31
     return-void
@@ -59,29 +52,22 @@
 
 
 # virtual methods
-.method public bridge synthetic getResourceFetcher(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
+.method public bridge synthetic a(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
     .registers 5
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # I
-    .param p3, "x2"    # I
 
     .prologue
     .line 17
     check-cast p1, [B
 
-    .end local p1    # "x0":Ljava/lang/Object;
-    invoke-virtual {p0, p1, p2, p3}, Lcom/bumptech/glide/load/model/stream/StreamByteArrayLoader;->getResourceFetcher([BII)Lcom/bumptech/glide/load/data/DataFetcher;
+    invoke-virtual {p0, p1, p2, p3}, Lcom/bumptech/glide/load/model/stream/StreamByteArrayLoader;->a([BII)Lcom/bumptech/glide/load/data/DataFetcher;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getResourceFetcher([BII)Lcom/bumptech/glide/load/data/DataFetcher;
+.method public a([BII)Lcom/bumptech/glide/load/data/DataFetcher;
     .registers 6
-    .param p1, "model"    # [B
-    .param p2, "width"    # I
-    .param p3, "height"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([BII)",
@@ -96,7 +82,7 @@
     .line 35
     new-instance v0, Lcom/bumptech/glide/load/data/ByteArrayFetcher;
 
-    iget-object v1, p0, Lcom/bumptech/glide/load/model/stream/StreamByteArrayLoader;->id:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bumptech/glide/load/model/stream/StreamByteArrayLoader;->a:Ljava/lang/String;
 
     invoke-direct {v0, p1, v1}, Lcom/bumptech/glide/load/data/ByteArrayFetcher;-><init>([BLjava/lang/String;)V
 

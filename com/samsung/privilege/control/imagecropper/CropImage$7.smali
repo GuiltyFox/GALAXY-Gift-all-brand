@@ -11,215 +11,388 @@
     value = Lcom/samsung/privilege/control/imagecropper/CropImage;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field mFaces:[Landroid/media/FaceDetector$Face;
+.field a:F
 
-.field mImageMatrix:Landroid/graphics/Matrix;
+.field b:Landroid/graphics/Matrix;
 
-.field mNumFaces:I
+.field c:[Landroid/media/FaceDetector$Face;
 
-.field mScale:F
+.field d:I
 
-.field final synthetic this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
+.field final synthetic e:Lcom/samsung/privilege/control/imagecropper/CropImage;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/control/imagecropper/CropImage;)V
     .registers 3
-    .param p1, "this$0"    # Lcom/samsung/privilege/control/imagecropper/CropImage;
 
     .prologue
-    .line 496
-    iput-object p1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
+    .line 486
+    iput-object p1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 497
-    const/high16 v0, 0x3f800000
+    .line 487
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    iput v0, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->mScale:F
+    iput v0, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->a:F
 
-    .line 500
+    .line 490
     const/4 v0, 0x3
 
     new-array v0, v0, [Landroid/media/FaceDetector$Face;
 
-    iput-object v0, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->mFaces:[Landroid/media/FaceDetector$Face;
+    iput-object v0, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->c:[Landroid/media/FaceDetector$Face;
 
     return-void
 .end method
 
-.method static synthetic access$1000(Lcom/samsung/privilege/control/imagecropper/CropImage$7;)V
-    .registers 1
-    .param p0, "x0"    # Lcom/samsung/privilege/control/imagecropper/CropImage$7;
+.method private a()V
+    .registers 11
 
     .prologue
-    .line 496
-    invoke-direct {p0}, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->makeDefault()V
+    const/4 v5, 0x0
 
-    return-void
-.end method
-
-.method static synthetic access$900(Lcom/samsung/privilege/control/imagecropper/CropImage$7;Landroid/media/FaceDetector$Face;)V
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/control/imagecropper/CropImage$7;
-    .param p1, "x1"    # Landroid/media/FaceDetector$Face;
-
-    .prologue
-    .line 496
-    invoke-direct {p0, p1}, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->handleFace(Landroid/media/FaceDetector$Face;)V
-
-    return-void
-.end method
-
-.method private handleFace(Landroid/media/FaceDetector$Face;)V
-    .registers 15
-    .param p1, "f"    # Landroid/media/FaceDetector$Face;
-
-    .prologue
-    .line 506
-    new-instance v7, Landroid/graphics/PointF;
-
-    invoke-direct {v7}, Landroid/graphics/PointF;-><init>()V
-
-    .line 508
-    .local v7, "midPoint":Landroid/graphics/PointF;
-    invoke-virtual {p1}, Landroid/media/FaceDetector$Face;->eyesDistance()F
-
-    move-result v1
-
-    iget v4, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->mScale:F
-
-    mul-float/2addr v1, v4
-
-    float-to-int v1, v1
-
-    mul-int/lit8 v10, v1, 0x2
-
-    .line 509
-    .local v10, "r":I
-    invoke-virtual {p1, v7}, Landroid/media/FaceDetector$Face;->getMidPoint(Landroid/graphics/PointF;)V
-
-    .line 510
-    iget v1, v7, Landroid/graphics/PointF;->x:F
-
-    iget v4, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->mScale:F
-
-    mul-float/2addr v1, v4
-
-    iput v1, v7, Landroid/graphics/PointF;->x:F
-
-    .line 511
-    iget v1, v7, Landroid/graphics/PointF;->y:F
-
-    iget v4, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->mScale:F
-
-    mul-float/2addr v1, v4
-
-    iput v1, v7, Landroid/graphics/PointF;->y:F
-
-    .line 513
-    iget v1, v7, Landroid/graphics/PointF;->x:F
-
-    float-to-int v8, v1
-
-    .line 514
-    .local v8, "midX":I
-    iget v1, v7, Landroid/graphics/PointF;->y:F
-
-    float-to-int v9, v1
-
-    .line 516
-    .local v9, "midY":I
+    .line 539
     new-instance v0, Lcom/samsung/privilege/control/imagecropper/HighlightView;
 
-    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
+    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
 
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mImageView:Lcom/samsung/privilege/control/imagecropper/CropImageView;
-    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$200(Lcom/samsung/privilege/control/imagecropper/CropImage;)Lcom/samsung/privilege/control/imagecropper/CropImageView;
+    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->c(Lcom/samsung/privilege/control/imagecropper/CropImage;)Lcom/samsung/privilege/control/imagecropper/CropImageView;
 
     move-result-object v1
 
     invoke-direct {v0, v1}, Lcom/samsung/privilege/control/imagecropper/HighlightView;-><init>(Landroid/view/View;)V
 
-    .line 518
-    .local v0, "hv":Lcom/samsung/privilege/control/imagecropper/HighlightView;
-    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
+    .line 541
+    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
 
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mBitmap:Landroid/graphics/Bitmap;
-    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$100(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
+    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->b(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
 
-    move-result v11
+    move-result v6
 
-    .line 519
-    .local v11, "width":I
-    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
+    .line 542
+    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
 
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mBitmap:Landroid/graphics/Bitmap;
-    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$100(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
+    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->b(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
 
     move-result-object v1
 
     invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
 
-    move-result v6
+    move-result v7
 
-    .line 521
-    .local v6, "height":I
+    .line 544
     new-instance v2, Landroid/graphics/Rect;
 
-    const/4 v1, 0x0
+    invoke-direct {v2, v5, v5, v6, v7}, Landroid/graphics/Rect;-><init>(IIII)V
 
-    const/4 v4, 0x0
+    .line 547
+    invoke-static {v6, v7}, Ljava/lang/Math;->min(II)I
 
-    invoke-direct {v2, v1, v4, v11, v6}, Landroid/graphics/Rect;-><init>(IIII)V
+    move-result v1
 
-    .line 523
-    .local v2, "imageRect":Landroid/graphics/Rect;
+    mul-int/lit8 v1, v1, 0x4
+
+    div-int/lit8 v3, v1, 0x5
+
+    .line 550
+    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
+
+    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->f(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
+
+    move-result v1
+
+    if-eqz v1, :cond_af
+
+    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
+
+    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->g(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
+
+    move-result v1
+
+    if-eqz v1, :cond_af
+
+    .line 552
+    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
+
+    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->f(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
+
+    move-result v1
+
+    iget-object v4, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
+
+    invoke-static {v4}, Lcom/samsung/privilege/control/imagecropper/CropImage;->g(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
+
+    move-result v4
+
+    if-le v1, v4, :cond_9e
+
+    .line 554
+    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
+
+    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->g(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
+
+    move-result v1
+
+    mul-int/2addr v1, v3
+
+    iget-object v4, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
+
+    invoke-static {v4}, Lcom/samsung/privilege/control/imagecropper/CropImage;->f(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
+
+    move-result v4
+
+    div-int/2addr v1, v4
+
+    move v4, v3
+
+    .line 561
+    :goto_5a
+    sub-int v3, v6, v4
+
+    div-int/lit8 v6, v3, 0x2
+
+    .line 562
+    sub-int v3, v7, v1
+
+    div-int/lit8 v7, v3, 0x2
+
+    .line 564
     new-instance v3, Landroid/graphics/RectF;
 
-    int-to-float v1, v8
+    int-to-float v8, v6
 
-    int-to-float v4, v9
+    int-to-float v9, v7
 
-    int-to-float v5, v8
-
-    int-to-float v12, v9
-
-    invoke-direct {v3, v1, v4, v5, v12}, Landroid/graphics/RectF;-><init>(FFFF)V
-
-    .line 524
-    .local v3, "faceRect":Landroid/graphics/RectF;
-    neg-int v1, v10
-
-    int-to-float v1, v1
-
-    neg-int v4, v10
+    add-int/2addr v4, v6
 
     int-to-float v4, v4
 
-    invoke-virtual {v3, v1, v4}, Landroid/graphics/RectF;->inset(FF)V
+    add-int/2addr v1, v7
 
-    .line 525
+    int-to-float v1, v1
+
+    invoke-direct {v3, v8, v9, v4, v1}, Landroid/graphics/RectF;-><init>(FFFF)V
+
+    .line 565
+    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->b:Landroid/graphics/Matrix;
+
+    iget-object v4, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
+
+    invoke-static {v4}, Lcom/samsung/privilege/control/imagecropper/CropImage;->e(Lcom/samsung/privilege/control/imagecropper/CropImage;)Z
+
+    move-result v4
+
+    iget-object v6, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
+
+    invoke-static {v6}, Lcom/samsung/privilege/control/imagecropper/CropImage;->f(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
+
+    move-result v6
+
+    if-eqz v6, :cond_86
+
+    iget-object v6, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
+
+    invoke-static {v6}, Lcom/samsung/privilege/control/imagecropper/CropImage;->g(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
+
+    move-result v6
+
+    if-eqz v6, :cond_86
+
+    const/4 v5, 0x1
+
+    :cond_86
+    invoke-virtual/range {v0 .. v5}, Lcom/samsung/privilege/control/imagecropper/HighlightView;->a(Landroid/graphics/Matrix;Landroid/graphics/Rect;Landroid/graphics/RectF;ZZ)V
+
+    .line 567
+    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
+
+    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->c(Lcom/samsung/privilege/control/imagecropper/CropImage;)Lcom/samsung/privilege/control/imagecropper/CropImageView;
+
+    move-result-object v1
+
+    iget-object v1, v1, Lcom/samsung/privilege/control/imagecropper/CropImageView;->a:Ljava/util/ArrayList;
+
+    invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
+
+    .line 569
+    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
+
+    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->c(Lcom/samsung/privilege/control/imagecropper/CropImage;)Lcom/samsung/privilege/control/imagecropper/CropImageView;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Lcom/samsung/privilege/control/imagecropper/CropImageView;->a(Lcom/samsung/privilege/control/imagecropper/HighlightView;)V
+
+    .line 570
+    return-void
+
+    .line 557
+    :cond_9e
+    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
+
+    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->f(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
+
+    move-result v1
+
+    mul-int/2addr v1, v3
+
+    iget-object v4, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
+
+    invoke-static {v4}, Lcom/samsung/privilege/control/imagecropper/CropImage;->g(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
+
+    move-result v4
+
+    div-int/2addr v1, v4
+
+    move v4, v1
+
+    move v1, v3
+
+    goto :goto_5a
+
+    :cond_af
+    move v1, v3
+
+    move v4, v3
+
+    goto :goto_5a
+.end method
+
+.method private a(Landroid/media/FaceDetector$Face;)V
+    .registers 12
+
+    .prologue
+    const/4 v9, 0x0
+
+    const/4 v5, 0x0
+
+    .line 496
+    new-instance v0, Landroid/graphics/PointF;
+
+    invoke-direct {v0}, Landroid/graphics/PointF;-><init>()V
+
+    .line 498
+    invoke-virtual {p1}, Landroid/media/FaceDetector$Face;->eyesDistance()F
+
+    move-result v1
+
+    iget v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->a:F
+
+    mul-float/2addr v1, v2
+
+    float-to-int v1, v1
+
+    mul-int/lit8 v1, v1, 0x2
+
+    .line 499
+    invoke-virtual {p1, v0}, Landroid/media/FaceDetector$Face;->getMidPoint(Landroid/graphics/PointF;)V
+
+    .line 500
+    iget v2, v0, Landroid/graphics/PointF;->x:F
+
+    iget v3, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->a:F
+
+    mul-float/2addr v2, v3
+
+    iput v2, v0, Landroid/graphics/PointF;->x:F
+
+    .line 501
+    iget v2, v0, Landroid/graphics/PointF;->y:F
+
+    iget v3, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->a:F
+
+    mul-float/2addr v2, v3
+
+    iput v2, v0, Landroid/graphics/PointF;->y:F
+
+    .line 503
+    iget v2, v0, Landroid/graphics/PointF;->x:F
+
+    float-to-int v4, v2
+
+    .line 504
+    iget v0, v0, Landroid/graphics/PointF;->y:F
+
+    float-to-int v6, v0
+
+    .line 506
+    new-instance v0, Lcom/samsung/privilege/control/imagecropper/HighlightView;
+
+    iget-object v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
+
+    invoke-static {v2}, Lcom/samsung/privilege/control/imagecropper/CropImage;->c(Lcom/samsung/privilege/control/imagecropper/CropImage;)Lcom/samsung/privilege/control/imagecropper/CropImageView;
+
+    move-result-object v2
+
+    invoke-direct {v0, v2}, Lcom/samsung/privilege/control/imagecropper/HighlightView;-><init>(Landroid/view/View;)V
+
+    .line 508
+    iget-object v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
+
+    invoke-static {v2}, Lcom/samsung/privilege/control/imagecropper/CropImage;->b(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v3
+
+    .line 509
+    iget-object v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
+
+    invoke-static {v2}, Lcom/samsung/privilege/control/imagecropper/CropImage;->b(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v7
+
+    .line 511
+    new-instance v2, Landroid/graphics/Rect;
+
+    invoke-direct {v2, v5, v5, v3, v7}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    .line 513
+    new-instance v3, Landroid/graphics/RectF;
+
+    int-to-float v7, v4
+
+    int-to-float v8, v6
+
+    int-to-float v4, v4
+
+    int-to-float v6, v6
+
+    invoke-direct {v3, v7, v8, v4, v6}, Landroid/graphics/RectF;-><init>(FFFF)V
+
+    .line 514
+    neg-int v4, v1
+
+    int-to-float v4, v4
+
+    neg-int v1, v1
+
+    int-to-float v1, v1
+
+    invoke-virtual {v3, v4, v1}, Landroid/graphics/RectF;->inset(FF)V
+
+    .line 515
     iget v1, v3, Landroid/graphics/RectF;->left:F
 
-    const/4 v4, 0x0
+    cmpg-float v1, v1, v9
 
-    cmpg-float v1, v1, v4
+    if-gez v1, :cond_6b
 
-    if-gez v1, :cond_6c
-
-    .line 526
+    .line 516
     iget v1, v3, Landroid/graphics/RectF;->left:F
 
     neg-float v1, v1
@@ -230,17 +403,15 @@
 
     invoke-virtual {v3, v1, v4}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 529
-    :cond_6c
+    .line 519
+    :cond_6b
     iget v1, v3, Landroid/graphics/RectF;->top:F
 
-    const/4 v4, 0x0
+    cmpg-float v1, v1, v9
 
-    cmpg-float v1, v1, v4
+    if-gez v1, :cond_7a
 
-    if-gez v1, :cond_7c
-
-    .line 530
+    .line 520
     iget v1, v3, Landroid/graphics/RectF;->top:F
 
     neg-float v1, v1
@@ -251,8 +422,8 @@
 
     invoke-virtual {v3, v1, v4}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 533
-    :cond_7c
+    .line 523
+    :cond_7a
     iget v1, v3, Landroid/graphics/RectF;->right:F
 
     iget v4, v2, Landroid/graphics/Rect;->right:I
@@ -261,9 +432,9 @@
 
     cmpl-float v1, v1, v4
 
-    if-lez v1, :cond_94
+    if-lez v1, :cond_92
 
-    .line 534
+    .line 524
     iget v1, v3, Landroid/graphics/RectF;->right:F
 
     iget v4, v2, Landroid/graphics/Rect;->right:I
@@ -274,16 +445,16 @@
 
     iget v4, v3, Landroid/graphics/RectF;->right:F
 
-    iget v5, v2, Landroid/graphics/Rect;->right:I
+    iget v6, v2, Landroid/graphics/Rect;->right:I
 
-    int-to-float v5, v5
+    int-to-float v6, v6
 
-    sub-float/2addr v4, v5
+    sub-float/2addr v4, v6
 
     invoke-virtual {v3, v1, v4}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 537
-    :cond_94
+    .line 527
+    :cond_92
     iget v1, v3, Landroid/graphics/RectF;->bottom:F
 
     iget v4, v2, Landroid/graphics/Rect;->bottom:I
@@ -292,9 +463,9 @@
 
     cmpl-float v1, v1, v4
 
-    if-lez v1, :cond_ac
+    if-lez v1, :cond_aa
 
-    .line 538
+    .line 528
     iget v1, v3, Landroid/graphics/RectF;->bottom:F
 
     iget v4, v2, Landroid/graphics/Rect;->bottom:I
@@ -305,333 +476,105 @@
 
     iget v4, v3, Landroid/graphics/RectF;->bottom:F
 
-    iget v5, v2, Landroid/graphics/Rect;->bottom:I
+    iget v6, v2, Landroid/graphics/Rect;->bottom:I
 
-    int-to-float v5, v5
+    int-to-float v6, v6
 
-    sub-float/2addr v4, v5
+    sub-float/2addr v4, v6
 
     invoke-virtual {v3, v1, v4}, Landroid/graphics/RectF;->inset(FF)V
 
-    .line 541
-    :cond_ac
-    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->mImageMatrix:Landroid/graphics/Matrix;
+    .line 531
+    :cond_aa
+    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->b:Landroid/graphics/Matrix;
 
-    iget-object v4, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
+    iget-object v4, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
 
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mCircleCrop:Z
-    invoke-static {v4}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$500(Lcom/samsung/privilege/control/imagecropper/CropImage;)Z
+    invoke-static {v4}, Lcom/samsung/privilege/control/imagecropper/CropImage;->e(Lcom/samsung/privilege/control/imagecropper/CropImage;)Z
 
     move-result v4
 
-    iget-object v5, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
+    iget-object v6, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
 
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mAspectX:I
-    invoke-static {v5}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$600(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
+    invoke-static {v6}, Lcom/samsung/privilege/control/imagecropper/CropImage;->f(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_d2
+    if-eqz v6, :cond_c3
 
-    iget-object v5, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
+    iget-object v6, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
 
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mAspectY:I
-    invoke-static {v5}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$700(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
+    invoke-static {v6}, Lcom/samsung/privilege/control/imagecropper/CropImage;->g(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
 
-    move-result v5
+    move-result v6
 
-    if-eqz v5, :cond_d2
+    if-eqz v6, :cond_c3
 
     const/4 v5, 0x1
 
-    :goto_c5
-    invoke-virtual/range {v0 .. v5}, Lcom/samsung/privilege/control/imagecropper/HighlightView;->setup(Landroid/graphics/Matrix;Landroid/graphics/Rect;Landroid/graphics/RectF;ZZ)V
+    :cond_c3
+    invoke-virtual/range {v0 .. v5}, Lcom/samsung/privilege/control/imagecropper/HighlightView;->a(Landroid/graphics/Matrix;Landroid/graphics/Rect;Landroid/graphics/RectF;ZZ)V
 
-    .line 543
-    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
+    .line 533
+    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
 
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mImageView:Lcom/samsung/privilege/control/imagecropper/CropImageView;
-    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$200(Lcom/samsung/privilege/control/imagecropper/CropImage;)Lcom/samsung/privilege/control/imagecropper/CropImageView;
+    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->c(Lcom/samsung/privilege/control/imagecropper/CropImage;)Lcom/samsung/privilege/control/imagecropper/CropImageView;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Lcom/samsung/privilege/control/imagecropper/CropImageView;->add(Lcom/samsung/privilege/control/imagecropper/HighlightView;)V
+    invoke-virtual {v1, v0}, Lcom/samsung/privilege/control/imagecropper/CropImageView;->a(Lcom/samsung/privilege/control/imagecropper/HighlightView;)V
 
-    .line 544
+    .line 534
     return-void
-
-    .line 541
-    :cond_d2
-    const/4 v5, 0x0
-
-    goto :goto_c5
 .end method
 
-.method private makeDefault()V
-    .registers 15
+.method static synthetic a(Lcom/samsung/privilege/control/imagecropper/CropImage$7;)V
+    .registers 1
 
     .prologue
-    const/4 v5, 0x0
+    .line 486
+    invoke-direct {p0}, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->a()V
 
-    .line 549
-    new-instance v0, Lcom/samsung/privilege/control/imagecropper/HighlightView;
-
-    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
-
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mImageView:Lcom/samsung/privilege/control/imagecropper/CropImageView;
-    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$200(Lcom/samsung/privilege/control/imagecropper/CropImage;)Lcom/samsung/privilege/control/imagecropper/CropImageView;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/samsung/privilege/control/imagecropper/HighlightView;-><init>(Landroid/view/View;)V
-
-    .line 551
-    .local v0, "hv":Lcom/samsung/privilege/control/imagecropper/HighlightView;
-    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
-
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mBitmap:Landroid/graphics/Bitmap;
-    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$100(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v9
-
-    .line 552
-    .local v9, "width":I
-    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
-
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mBitmap:Landroid/graphics/Bitmap;
-    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$100(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v8
-
-    .line 554
-    .local v8, "height":I
-    new-instance v2, Landroid/graphics/Rect;
-
-    invoke-direct {v2, v5, v5, v9, v8}, Landroid/graphics/Rect;-><init>(IIII)V
-
-    .line 557
-    .local v2, "imageRect":Landroid/graphics/Rect;
-    invoke-static {v9, v8}, Ljava/lang/Math;->min(II)I
-
-    move-result v1
-
-    mul-int/lit8 v1, v1, 0x4
-
-    div-int/lit8 v7, v1, 0x5
-
-    .line 558
-    .local v7, "cropWidth":I
-    move v6, v7
-
-    .line 560
-    .local v6, "cropHeight":I
-    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
-
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mAspectX:I
-    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$600(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
-
-    move-result v1
-
-    if-eqz v1, :cond_5b
-
-    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
-
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mAspectY:I
-    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$700(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
-
-    move-result v1
-
-    if-eqz v1, :cond_5b
-
-    .line 562
-    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
-
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mAspectX:I
-    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$600(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
-
-    move-result v1
-
-    iget-object v4, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
-
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mAspectY:I
-    invoke-static {v4}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$700(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
-
-    move-result v4
-
-    if-le v1, v4, :cond_a1
-
-    .line 564
-    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
-
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mAspectY:I
-    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$700(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
-
-    move-result v1
-
-    mul-int/2addr v1, v7
-
-    iget-object v4, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
-
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mAspectX:I
-    invoke-static {v4}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$600(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
-
-    move-result v4
-
-    div-int v6, v1, v4
-
-    .line 571
-    :cond_5b
-    :goto_5b
-    sub-int v1, v9, v7
-
-    div-int/lit8 v10, v1, 0x2
-
-    .line 572
-    .local v10, "x":I
-    sub-int v1, v8, v6
-
-    div-int/lit8 v11, v1, 0x2
-
-    .line 574
-    .local v11, "y":I
-    new-instance v3, Landroid/graphics/RectF;
-
-    int-to-float v1, v10
-
-    int-to-float v4, v11
-
-    add-int v12, v10, v7
-
-    int-to-float v12, v12
-
-    add-int v13, v11, v6
-
-    int-to-float v13, v13
-
-    invoke-direct {v3, v1, v4, v12, v13}, Landroid/graphics/RectF;-><init>(FFFF)V
-
-    .line 575
-    .local v3, "cropRect":Landroid/graphics/RectF;
-    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->mImageMatrix:Landroid/graphics/Matrix;
-
-    iget-object v4, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
-
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mCircleCrop:Z
-    invoke-static {v4}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$500(Lcom/samsung/privilege/control/imagecropper/CropImage;)Z
-
-    move-result v4
-
-    iget-object v12, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
-
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mAspectX:I
-    invoke-static {v12}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$600(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
-
-    move-result v12
-
-    if-eqz v12, :cond_89
-
-    iget-object v12, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
-
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mAspectY:I
-    invoke-static {v12}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$700(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
-
-    move-result v12
-
-    if-eqz v12, :cond_89
-
-    const/4 v5, 0x1
-
-    :cond_89
-    invoke-virtual/range {v0 .. v5}, Lcom/samsung/privilege/control/imagecropper/HighlightView;->setup(Landroid/graphics/Matrix;Landroid/graphics/Rect;Landroid/graphics/RectF;ZZ)V
-
-    .line 577
-    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
-
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mImageView:Lcom/samsung/privilege/control/imagecropper/CropImageView;
-    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$200(Lcom/samsung/privilege/control/imagecropper/CropImage;)Lcom/samsung/privilege/control/imagecropper/CropImageView;
-
-    move-result-object v1
-
-    iget-object v1, v1, Lcom/samsung/privilege/control/imagecropper/CropImageView;->mHighlightViews:Ljava/util/ArrayList;
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
-
-    .line 579
-    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
-
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mImageView:Lcom/samsung/privilege/control/imagecropper/CropImageView;
-    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$200(Lcom/samsung/privilege/control/imagecropper/CropImage;)Lcom/samsung/privilege/control/imagecropper/CropImageView;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Lcom/samsung/privilege/control/imagecropper/CropImageView;->add(Lcom/samsung/privilege/control/imagecropper/HighlightView;)V
-
-    .line 580
     return-void
-
-    .line 567
-    .end local v3    # "cropRect":Landroid/graphics/RectF;
-    .end local v10    # "x":I
-    .end local v11    # "y":I
-    :cond_a1
-    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
-
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mAspectX:I
-    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$600(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
-
-    move-result v1
-
-    mul-int/2addr v1, v6
-
-    iget-object v4, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
-
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mAspectY:I
-    invoke-static {v4}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$700(Lcom/samsung/privilege/control/imagecropper/CropImage;)I
-
-    move-result v4
-
-    div-int v7, v1, v4
-
-    goto :goto_5b
 .end method
 
-.method private prepareBitmap()Landroid/graphics/Bitmap;
+.method static synthetic a(Lcom/samsung/privilege/control/imagecropper/CropImage$7;Landroid/media/FaceDetector$Face;)V
+    .registers 2
+
+    .prologue
+    .line 486
+    invoke-direct {p0, p1}, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->a(Landroid/media/FaceDetector$Face;)V
+
+    return-void
+.end method
+
+.method private b()Landroid/graphics/Bitmap;
     .registers 8
 
     .prologue
     const/4 v1, 0x0
 
-    .line 585
-    iget-object v0, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
+    .line 575
+    iget-object v0, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
 
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mBitmap:Landroid/graphics/Bitmap;
-    invoke-static {v0}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$100(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
+    invoke-static {v0}, Lcom/samsung/privilege/control/imagecropper/CropImage;->b(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
     if-nez v0, :cond_b
 
-    .line 587
+    .line 577
     const/4 v0, 0x0
 
-    .line 597
+    .line 587
     :goto_a
     return-object v0
 
-    .line 591
+    .line 581
     :cond_b
-    iget-object v0, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
+    iget-object v0, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
 
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mBitmap:Landroid/graphics/Bitmap;
-    invoke-static {v0}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$100(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
+    invoke-static {v0}, Lcom/samsung/privilege/control/imagecropper/CropImage;->b(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
@@ -643,13 +586,12 @@
 
     if-le v0, v2, :cond_29
 
-    .line 593
-    const/high16 v0, 0x43800000
+    .line 583
+    const/high16 v0, 0x43800000    # 256.0f
 
-    iget-object v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
+    iget-object v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
 
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mBitmap:Landroid/graphics/Bitmap;
-    invoke-static {v2}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$100(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
+    invoke-static {v2}, Lcom/samsung/privilege/control/imagecropper/CropImage;->b(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
@@ -661,34 +603,31 @@
 
     div-float/2addr v0, v2
 
-    iput v0, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->mScale:F
+    iput v0, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->a:F
 
-    .line 595
+    .line 585
     :cond_29
     new-instance v5, Landroid/graphics/Matrix;
 
     invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
 
-    .line 596
-    .local v5, "matrix":Landroid/graphics/Matrix;
-    iget v0, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->mScale:F
+    .line 586
+    iget v0, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->a:F
 
-    iget v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->mScale:F
+    iget v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->a:F
 
     invoke-virtual {v5, v0, v2}, Landroid/graphics/Matrix;->setScale(FF)V
 
-    .line 597
-    iget-object v0, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
+    .line 587
+    iget-object v0, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
 
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mBitmap:Landroid/graphics/Bitmap;
-    invoke-static {v0}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$100(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
+    invoke-static {v0}, Lcom/samsung/privilege/control/imagecropper/CropImage;->b(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    iget-object v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
+    iget-object v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
 
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mBitmap:Landroid/graphics/Bitmap;
-    invoke-static {v2}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$100(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
+    invoke-static {v2}, Lcom/samsung/privilege/control/imagecropper/CropImage;->b(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
@@ -696,10 +635,9 @@
 
     move-result v3
 
-    iget-object v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
+    iget-object v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
 
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mBitmap:Landroid/graphics/Bitmap;
-    invoke-static {v2}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$100(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
+    invoke-static {v2}, Lcom/samsung/privilege/control/imagecropper/CropImage;->b(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
 
     move-result-object v2
 
@@ -724,113 +662,106 @@
     .registers 6
 
     .prologue
-    .line 602
-    iget-object v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
+    .line 592
+    iget-object v0, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
 
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mImageView:Lcom/samsung/privilege/control/imagecropper/CropImageView;
-    invoke-static {v2}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$200(Lcom/samsung/privilege/control/imagecropper/CropImage;)Lcom/samsung/privilege/control/imagecropper/CropImageView;
+    invoke-static {v0}, Lcom/samsung/privilege/control/imagecropper/CropImage;->c(Lcom/samsung/privilege/control/imagecropper/CropImage;)Lcom/samsung/privilege/control/imagecropper/CropImageView;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Lcom/samsung/privilege/control/imagecropper/CropImageView;->getImageMatrix()Landroid/graphics/Matrix;
+    invoke-virtual {v0}, Lcom/samsung/privilege/control/imagecropper/CropImageView;->getImageMatrix()Landroid/graphics/Matrix;
 
-    move-result-object v2
+    move-result-object v0
 
-    iput-object v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->mImageMatrix:Landroid/graphics/Matrix;
+    iput-object v0, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->b:Landroid/graphics/Matrix;
 
-    .line 603
-    invoke-direct {p0}, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->prepareBitmap()Landroid/graphics/Bitmap;
+    .line 593
+    invoke-direct {p0}, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->b()Landroid/graphics/Bitmap;
 
-    move-result-object v1
+    move-result-object v0
 
-    .line 605
-    .local v1, "faceBitmap":Landroid/graphics/Bitmap;
-    const/high16 v2, 0x3f800000
+    .line 595
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    iget v3, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->mScale:F
+    iget v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->a:F
 
-    div-float/2addr v2, v3
+    div-float/2addr v1, v2
 
-    iput v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->mScale:F
+    iput v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->a:F
 
-    .line 606
+    .line 596
+    if-eqz v0, :cond_39
+
+    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
+
+    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->h(Lcom/samsung/privilege/control/imagecropper/CropImage;)Z
+
+    move-result v1
+
     if-eqz v1, :cond_39
 
-    iget-object v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
+    .line 597
+    new-instance v1, Landroid/media/FaceDetector;
 
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mDoFaceDetection:Z
-    invoke-static {v2}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$800(Lcom/samsung/privilege/control/imagecropper/CropImage;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_39
-
-    .line 607
-    new-instance v0, Landroid/media/FaceDetector;
-
-    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getWidth()I
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
 
     move-result v2
 
-    invoke-virtual {v1}, Landroid/graphics/Bitmap;->getHeight()I
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
     move-result v3
 
-    iget-object v4, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->mFaces:[Landroid/media/FaceDetector$Face;
+    iget-object v4, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->c:[Landroid/media/FaceDetector$Face;
 
     array-length v4, v4
 
-    invoke-direct {v0, v2, v3, v4}, Landroid/media/FaceDetector;-><init>(III)V
+    invoke-direct {v1, v2, v3, v4}, Landroid/media/FaceDetector;-><init>(III)V
 
-    .line 608
-    .local v0, "detector":Landroid/media/FaceDetector;
-    iget-object v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->mFaces:[Landroid/media/FaceDetector$Face;
+    .line 598
+    iget-object v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->c:[Landroid/media/FaceDetector$Face;
 
-    invoke-virtual {v0, v1, v2}, Landroid/media/FaceDetector;->findFaces(Landroid/graphics/Bitmap;[Landroid/media/FaceDetector$Face;)I
+    invoke-virtual {v1, v0, v2}, Landroid/media/FaceDetector;->findFaces(Landroid/graphics/Bitmap;[Landroid/media/FaceDetector$Face;)I
 
-    move-result v2
+    move-result v1
 
-    iput v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->mNumFaces:I
+    iput v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->d:I
 
-    .line 611
-    .end local v0    # "detector":Landroid/media/FaceDetector;
+    .line 601
     :cond_39
+    if-eqz v0, :cond_4c
+
+    iget-object v1, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
+
+    invoke-static {v1}, Lcom/samsung/privilege/control/imagecropper/CropImage;->b(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
+
+    move-result-object v1
+
+    if-eq v0, v1, :cond_4c
+
+    .line 602
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->isRecycled()Z
+
+    move-result v1
+
     if-eqz v1, :cond_4c
 
-    iget-object v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
+    .line 603
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
 
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mBitmap:Landroid/graphics/Bitmap;
-    invoke-static {v2}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$100(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/graphics/Bitmap;
-
-    move-result-object v2
-
-    if-eq v1, v2, :cond_4c
-
-    .line 612
-    invoke-virtual {v1}, Landroid/graphics/Bitmap;->isRecycled()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4c
-
-    .line 613
-    invoke-virtual {v1}, Landroid/graphics/Bitmap;->recycle()V
-
-    .line 617
+    .line 607
     :cond_4c
-    iget-object v2, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->this$0:Lcom/samsung/privilege/control/imagecropper/CropImage;
+    iget-object v0, p0, Lcom/samsung/privilege/control/imagecropper/CropImage$7;->e:Lcom/samsung/privilege/control/imagecropper/CropImage;
 
-    # getter for: Lcom/samsung/privilege/control/imagecropper/CropImage;->mHandler:Landroid/os/Handler;
-    invoke-static {v2}, Lcom/samsung/privilege/control/imagecropper/CropImage;->access$300(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/samsung/privilege/control/imagecropper/CropImage;->d(Lcom/samsung/privilege/control/imagecropper/CropImage;)Landroid/os/Handler;
 
-    move-result-object v2
+    move-result-object v0
 
-    new-instance v3, Lcom/samsung/privilege/control/imagecropper/CropImage$7$1;
+    new-instance v1, Lcom/samsung/privilege/control/imagecropper/CropImage$7$1;
 
-    invoke-direct {v3, p0}, Lcom/samsung/privilege/control/imagecropper/CropImage$7$1;-><init>(Lcom/samsung/privilege/control/imagecropper/CropImage$7;)V
+    invoke-direct {v1, p0}, Lcom/samsung/privilege/control/imagecropper/CropImage$7$1;-><init>(Lcom/samsung/privilege/control/imagecropper/CropImage$7;)V
 
-    invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 639
+    .line 629
     return-void
 .end method

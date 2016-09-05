@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "IteratorImpl"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -37,8 +28,7 @@
 
 # direct methods
 .method public constructor <init>([Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;)V
-    .registers 7
-    .param p1, "buckets"    # [Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    .registers 6
 
     .prologue
     .line 378
@@ -51,59 +41,43 @@
     const/4 v1, 0x0
 
     .line 382
-    .local v1, "i":I
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$IteratorImpl;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$IteratorImpl;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    array-length v3, v4
+    array-length v2, v0
 
-    .local v3, "len":I
-    move v2, v1
-
-    .end local v1    # "i":I
-    .local v2, "i":I
-    :goto_a
-    if-ge v2, v3, :cond_1b
+    :goto_9
+    if-ge v1, v2, :cond_1a
 
     .line 383
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$IteratorImpl;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    iget-object v3, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$IteratorImpl;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    add-int/lit8 v1, v2, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    .end local v2    # "i":I
-    .restart local v1    # "i":I
-    aget-object v0, v4, v2
+    aget-object v1, v3, v1
 
     .line 384
-    .local v0, "b":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    if-eqz v0, :cond_19
+    if-eqz v1, :cond_18
 
     .line 385
-    iput-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$IteratorImpl;->_currentBucket:Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    iput-object v1, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$IteratorImpl;->_currentBucket:Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
     .line 389
-    .end local v0    # "b":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    :goto_16
-    iput v1, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$IteratorImpl;->_nextBucketIndex:I
+    :goto_15
+    iput v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$IteratorImpl;->_nextBucketIndex:I
 
     .line 390
     return-void
 
-    .restart local v0    # "b":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    :cond_19
-    move v2, v1
+    :cond_18
+    move v1, v0
 
     .line 388
-    .end local v1    # "i":I
-    .restart local v2    # "i":I
-    goto :goto_a
+    goto :goto_9
 
-    .end local v0    # "b":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    :cond_1b
-    move v1, v2
+    :cond_1a
+    move v0, v1
 
-    .end local v2    # "i":I
-    .restart local v1    # "i":I
-    goto :goto_16
+    goto :goto_15
 .end method
 
 
@@ -129,29 +103,27 @@
 .end method
 
 .method public next()Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-    .registers 6
+    .registers 5
 
     .prologue
     .line 400
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$IteratorImpl;->_currentBucket:Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
     .line 401
-    .local v1, "curr":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
     if-nez v1, :cond_a
 
     .line 402
-    new-instance v2, Ljava/util/NoSuchElementException;
+    new-instance v0, Ljava/util/NoSuchElementException;
 
-    invoke-direct {v2}, Ljava/util/NoSuchElementException;-><init>()V
+    invoke-direct {v0}, Ljava/util/NoSuchElementException;-><init>()V
 
-    throw v2
+    throw v0
 
     .line 405
     :cond_a
     iget-object v0, v1, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->next:Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
     .line 406
-    .local v0, "b":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
     :goto_c
     if-nez v0, :cond_20
 
@@ -164,15 +136,15 @@
     if-ge v2, v3, :cond_20
 
     .line 407
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$IteratorImpl;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$IteratorImpl;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    iget v3, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$IteratorImpl;->_nextBucketIndex:I
+    iget v2, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$IteratorImpl;->_nextBucketIndex:I
 
-    add-int/lit8 v4, v3, 0x1
+    add-int/lit8 v3, v2, 0x1
 
-    iput v4, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$IteratorImpl;->_nextBucketIndex:I
+    iput v3, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$IteratorImpl;->_nextBucketIndex:I
 
-    aget-object v0, v2, v3
+    aget-object v0, v0, v2
 
     goto :goto_c
 
@@ -181,9 +153,9 @@
     iput-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$IteratorImpl;->_currentBucket:Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
     .line 410
-    iget-object v2, v1, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->value:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    iget-object v0, v1, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->value:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
-    return-object v2
+    return-object v0
 .end method
 
 .method public bridge synthetic next()Ljava/lang/Object;

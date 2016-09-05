@@ -2,19 +2,8 @@
 .super Lcom/google/android/gms/common/internal/zze;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/gms/common/internal/zze;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "zza"
-.end annotation
-
-
 # instance fields
-.field zzajq:Ljava/util/List;
+.field p:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
@@ -41,23 +30,23 @@
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/zze;-><init>()V
 
-    iput-object p1, p0, Lcom/google/android/gms/common/internal/zze$zza;->zzajq:Ljava/util/List;
+    iput-object p1, p0, Lcom/google/android/gms/common/internal/zze$zza;->p:Ljava/util/List;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public zza(Lcom/google/android/gms/common/internal/zze;)Lcom/google/android/gms/common/internal/zze;
+.method public a(Lcom/google/android/gms/common/internal/zze;)Lcom/google/android/gms/common/internal/zze;
     .registers 4
 
     new-instance v0, Ljava/util/ArrayList;
 
-    iget-object v1, p0, Lcom/google/android/gms/common/internal/zze$zza;->zzajq:Ljava/util/List;
+    iget-object v1, p0, Lcom/google/android/gms/common/internal/zze$zza;->p:Ljava/util/List;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v1
 
@@ -70,10 +59,10 @@
     return-object v1
 .end method
 
-.method public zzd(C)Z
+.method public b(C)Z
     .registers 4
 
-    iget-object v0, p0, Lcom/google/android/gms/common/internal/zze$zza;->zzajq:Ljava/util/List;
+    iget-object v0, p0, Lcom/google/android/gms/common/internal/zze$zza;->p:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
@@ -92,7 +81,7 @@
 
     check-cast v0, Lcom/google/android/gms/common/internal/zze;
 
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/common/internal/zze;->zzd(C)Z
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/common/internal/zze;->b(C)Z
 
     move-result v0
 

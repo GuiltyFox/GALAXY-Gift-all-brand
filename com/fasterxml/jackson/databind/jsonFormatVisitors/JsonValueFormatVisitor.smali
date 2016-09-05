@@ -3,14 +3,6 @@
 .source "JsonValueFormatVisitor.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonValueFormatVisitor$Base;
-    }
-.end annotation
-
-
 # virtual methods
 .method public abstract enumTypes(Ljava/util/Set;)V
     .annotation system Ldalvik/annotation/Signature;

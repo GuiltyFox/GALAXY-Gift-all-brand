@@ -6,21 +6,10 @@
 .implements Ljava/lang/Runnable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lit/sephiroth/android/library/widget/AbsHListView;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "PerformClick"
-.end annotation
-
-
 # instance fields
-.field mClickMotionPosition:I
+.field a:I
 
-.field final synthetic this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+.field final synthetic b:Lit/sephiroth/android/library/widget/AbsHListView;
 
 
 # direct methods
@@ -29,7 +18,7 @@
 
     .prologue
     .line 2492
-    iput-object p1, p0, Lit/sephiroth/android/library/widget/AbsHListView$PerformClick;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iput-object p1, p0, Lit/sephiroth/android/library/widget/AbsHListView$PerformClick;->b:Lit/sephiroth/android/library/widget/AbsHListView;
 
     const/4 v0, 0x0
 
@@ -40,8 +29,6 @@
 
 .method synthetic constructor <init>(Lit/sephiroth/android/library/widget/AbsHListView;Lit/sephiroth/android/library/widget/AbsHListView$1;)V
     .registers 3
-    .param p1, "x0"    # Lit/sephiroth/android/library/widget/AbsHListView;
-    .param p2, "x1"    # Lit/sephiroth/android/library/widget/AbsHListView$1;
 
     .prologue
     .line 2492
@@ -57,11 +44,11 @@
 
     .prologue
     .line 2500
-    iget-object v3, p0, Lit/sephiroth/android/library/widget/AbsHListView$PerformClick;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$PerformClick;->b:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iget-boolean v3, v3, Lit/sephiroth/android/library/widget/AbsHListView;->mDataChanged:Z
+    iget-boolean v0, v0, Lit/sephiroth/android/library/widget/AbsHListView;->aj:Z
 
-    if-eqz v3, :cond_7
+    if-eqz v0, :cond_7
 
     .line 2514
     :cond_6
@@ -70,65 +57,62 @@
 
     .line 2502
     :cond_7
-    iget-object v3, p0, Lit/sephiroth/android/library/widget/AbsHListView$PerformClick;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$PerformClick;->b:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iget-object v0, v3, Lit/sephiroth/android/library/widget/AbsHListView;->mAdapter:Landroid/widget/ListAdapter;
+    iget-object v0, v0, Lit/sephiroth/android/library/widget/AbsHListView;->j:Landroid/widget/ListAdapter;
 
     .line 2503
-    .local v0, "adapter":Landroid/widget/ListAdapter;
-    iget v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$PerformClick;->mClickMotionPosition:I
+    iget v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$PerformClick;->a:I
 
     .line 2504
-    .local v1, "motionPosition":I
     if-eqz v0, :cond_6
 
-    iget-object v3, p0, Lit/sephiroth/android/library/widget/AbsHListView$PerformClick;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v2, p0, Lit/sephiroth/android/library/widget/AbsHListView$PerformClick;->b:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iget v3, v3, Lit/sephiroth/android/library/widget/AbsHListView;->mItemCount:I
+    iget v2, v2, Lit/sephiroth/android/library/widget/AbsHListView;->ao:I
 
-    if-lez v3, :cond_6
+    if-lez v2, :cond_6
 
-    const/4 v3, -0x1
+    const/4 v2, -0x1
 
-    if-eq v1, v3, :cond_6
+    if-eq v1, v2, :cond_6
 
     invoke-interface {v0}, Landroid/widget/ListAdapter;->getCount()I
 
-    move-result v3
+    move-result v2
 
-    if-ge v1, v3, :cond_6
+    if-ge v1, v2, :cond_6
 
-    invoke-virtual {p0}, Lit/sephiroth/android/library/widget/AbsHListView$PerformClick;->sameWindow()Z
+    invoke-virtual {p0}, Lit/sephiroth/android/library/widget/AbsHListView$PerformClick;->b()Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_6
+    if-eqz v2, :cond_6
 
     .line 2507
-    iget-object v3, p0, Lit/sephiroth/android/library/widget/AbsHListView$PerformClick;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v2, p0, Lit/sephiroth/android/library/widget/AbsHListView$PerformClick;->b:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iget-object v4, p0, Lit/sephiroth/android/library/widget/AbsHListView$PerformClick;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v3, p0, Lit/sephiroth/android/library/widget/AbsHListView$PerformClick;->b:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iget v4, v4, Lit/sephiroth/android/library/widget/AbsHListView;->mFirstPosition:I
+    iget v3, v3, Lit/sephiroth/android/library/widget/AbsHListView;->V:I
 
-    sub-int v4, v1, v4
+    sub-int v3, v1, v3
 
-    invoke-virtual {v3, v4}, Lit/sephiroth/android/library/widget/AbsHListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v2, v3}, Lit/sephiroth/android/library/widget/AbsHListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
     .line 2510
-    .local v2, "view":Landroid/view/View;
     if-eqz v2, :cond_6
 
     .line 2511
-    iget-object v3, p0, Lit/sephiroth/android/library/widget/AbsHListView$PerformClick;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v3, p0, Lit/sephiroth/android/library/widget/AbsHListView$PerformClick;->b:Lit/sephiroth/android/library/widget/AbsHListView;
 
     invoke-interface {v0, v1}, Landroid/widget/ListAdapter;->getItemId(I)J
 
     move-result-wide v4
 
-    invoke-virtual {v3, v2, v1, v4, v5}, Lit/sephiroth/android/library/widget/AbsHListView;->performItemClick(Landroid/view/View;IJ)Z
+    invoke-virtual {v3, v2, v1, v4, v5}, Lit/sephiroth/android/library/widget/AbsHListView;->a(Landroid/view/View;IJ)Z
 
     goto :goto_6
 .end method

@@ -41,7 +41,6 @@
 # direct methods
 .method public constructor <init>(I)V
     .registers 3
-    .param p1, "bufSize"    # I
 
     .prologue
     .line 46
@@ -59,8 +58,7 @@
 .end method
 
 .method private _buildList(Z)Ljava/util/List;
-    .registers 7
-    .param p1, "isComplete"    # Z
+    .registers 6
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)",
@@ -72,103 +70,96 @@
     .end annotation
 
     .prologue
+    const/16 v2, 0x14
+
+    const/4 v0, 0x2
+
     .line 186
-    iget v3, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
+    iget v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
 
-    iget v4, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
+    iget v3, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
 
-    sub-int v0, v3, v4
+    sub-int/2addr v1, v3
 
     .line 187
-    .local v0, "currLen":I
     if-eqz p1, :cond_21
 
     .line 188
-    const/4 v3, 0x2
-
-    if-ge v0, v3, :cond_c
-
-    .line 189
-    const/4 v0, 0x2
+    if-ge v1, v0, :cond_36
 
     .line 200
-    :cond_c
     :goto_c
-    new-instance v2, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v2, v0}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 201
-    .local v2, "l":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Object;>;"
-    iget v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
+    iget v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
 
-    .local v1, "i":I
     :goto_13
-    iget v3, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
+    iget v2, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
 
-    if-ge v1, v3, :cond_34
+    if-ge v0, v2, :cond_31
 
     .line 202
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->b:[Ljava/lang/Object;
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->b:[Ljava/lang/Object;
 
-    aget-object v3, v3, v1
+    aget-object v2, v2, v0
 
-    invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 201
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_13
 
     .line 192
-    .end local v1    # "i":I
-    .end local v2    # "l":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Object;>;"
     :cond_21
-    const/16 v3, 0x14
+    if-ge v1, v2, :cond_25
 
-    if-ge v0, v3, :cond_28
+    move v0, v2
 
     .line 193
-    const/16 v0, 0x14
-
     goto :goto_c
 
     .line 194
-    :cond_28
-    const/16 v3, 0x3e8
+    :cond_25
+    const/16 v0, 0x3e8
 
-    if-ge v0, v3, :cond_30
+    if-ge v1, v0, :cond_2d
 
     .line 195
-    shr-int/lit8 v3, v0, 0x1
+    shr-int/lit8 v0, v1, 0x1
 
-    add-int/2addr v0, v3
+    add-int/2addr v0, v1
 
     goto :goto_c
 
     .line 197
-    :cond_30
-    shr-int/lit8 v3, v0, 0x2
+    :cond_2d
+    shr-int/lit8 v0, v1, 0x2
 
-    add-int/2addr v0, v3
+    add-int/2addr v0, v1
 
     goto :goto_c
 
     .line 204
-    .restart local v1    # "i":I
-    .restart local v2    # "l":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Object;>;"
-    :cond_34
-    iget v3, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
+    :cond_31
+    iget v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
 
-    iput v3, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
+    iput v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
 
     .line 205
-    return-object v2
+    return-object v1
+
+    :cond_36
+    move v0, v1
+
+    goto :goto_c
 .end method
 
 .method private _buildMap(Z)Ljava/util/Map;
-    .registers 8
-    .param p1, "isComplete"    # Z
+    .registers 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(Z)",
@@ -182,138 +173,134 @@
 
     .prologue
     .line 221
-    iget v3, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
+    iget v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
 
-    iget v4, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
+    iget v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
 
-    sub-int/2addr v3, v4
+    sub-int/2addr v0, v1
 
-    shr-int/lit8 v2, v3, 0x1
+    shr-int/lit8 v0, v0, 0x1
 
     .line 222
-    .local v2, "size":I
-    if-eqz p1, :cond_3c
+    if-eqz p1, :cond_3e
 
     .line 223
-    const/4 v3, 0x3
+    const/4 v1, 0x3
 
-    if-gt v2, v3, :cond_2d
+    if-gt v0, v1, :cond_2f
 
     .line 224
-    const/4 v2, 0x4
+    const/4 v0, 0x4
 
     .line 239
     :goto_d
-    new-instance v1, Ljava/util/LinkedHashMap;
+    new-instance v2, Ljava/util/LinkedHashMap;
 
-    const v3, 0x3f4ccccd
+    const v1, 0x3f4ccccd    # 0.8f
 
-    invoke-direct {v1, v2, v3}, Ljava/util/LinkedHashMap;-><init>(IF)V
+    invoke-direct {v2, v0, v1}, Ljava/util/LinkedHashMap;-><init>(IF)V
 
     .line 240
-    .local v1, "m":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
     iget v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
 
-    .local v0, "i":I
-    :goto_17
-    iget v3, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
+    move v1, v0
 
-    if-ge v0, v3, :cond_4f
+    :goto_18
+    iget v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
+
+    if-ge v1, v0, :cond_51
 
     .line 241
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->b:[Ljava/lang/Object;
+
+    aget-object v0, v0, v1
+
+    check-cast v0, Ljava/lang/String;
+
     iget-object v3, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->b:[Ljava/lang/Object;
 
-    aget-object v3, v3, v0
+    add-int/lit8 v4, v1, 0x1
 
-    check-cast v3, Ljava/lang/String;
+    aget-object v3, v3, v4
 
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->b:[Ljava/lang/Object;
-
-    add-int/lit8 v5, v0, 0x1
-
-    aget-object v4, v4, v5
-
-    invoke-interface {v1, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v2, v0, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 240
-    add-int/lit8 v0, v0, 0x2
+    add-int/lit8 v0, v1, 0x2
 
-    goto :goto_17
+    move v1, v0
+
+    goto :goto_18
 
     .line 225
-    .end local v0    # "i":I
-    .end local v1    # "m":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
-    :cond_2d
-    const/16 v3, 0x28
+    :cond_2f
+    const/16 v1, 0x28
 
-    if-gt v2, v3, :cond_35
+    if-gt v0, v1, :cond_37
 
     .line 226
-    shr-int/lit8 v3, v2, 0x1
+    shr-int/lit8 v1, v0, 0x1
 
-    add-int/2addr v2, v3
+    add-int/2addr v0, v1
 
     goto :goto_d
 
     .line 228
-    :cond_35
-    shr-int/lit8 v3, v2, 0x2
+    :cond_37
+    shr-int/lit8 v1, v0, 0x2
 
-    shr-int/lit8 v4, v2, 0x4
+    shr-int/lit8 v2, v0, 0x4
 
-    add-int/2addr v3, v4
+    add-int/2addr v1, v2
 
-    add-int/2addr v2, v3
+    add-int/2addr v0, v1
 
     goto :goto_d
 
     .line 231
-    :cond_3c
-    const/16 v3, 0xa
+    :cond_3e
+    const/16 v1, 0xa
 
-    if-ge v2, v3, :cond_43
+    if-ge v0, v1, :cond_45
 
     .line 232
-    const/16 v2, 0x10
+    const/16 v0, 0x10
 
     goto :goto_d
 
     .line 233
-    :cond_43
-    const/16 v3, 0x3e8
+    :cond_45
+    const/16 v1, 0x3e8
 
-    if-ge v2, v3, :cond_4b
+    if-ge v0, v1, :cond_4d
 
     .line 234
-    shr-int/lit8 v3, v2, 0x1
+    shr-int/lit8 v1, v0, 0x1
 
-    add-int/2addr v2, v3
+    add-int/2addr v0, v1
 
     goto :goto_d
 
     .line 236
-    :cond_4b
-    div-int/lit8 v3, v2, 0x3
+    :cond_4d
+    div-int/lit8 v1, v0, 0x3
 
-    add-int/2addr v2, v3
+    add-int/2addr v0, v1
 
     goto :goto_d
 
     .line 243
-    .restart local v0    # "i":I
-    .restart local v1    # "m":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
-    :cond_4f
-    iget v3, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
+    :cond_51
+    iget v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
 
-    iput v3, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
+    iput v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
 
     .line 244
-    return-object v1
+    return-object v2
 .end method
 
 .method private _expandList(Ljava/lang/Object;)V
     .registers 5
-    .param p1, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 175
@@ -375,8 +362,6 @@
 
 .method private _expandMap(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 6
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 209
@@ -451,7 +436,6 @@
 # virtual methods
 .method public add(Ljava/lang/Object;)V
     .registers 5
-    .param p1, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 94
@@ -535,28 +519,26 @@
 .end method
 
 .method public finishArray(I)[Ljava/lang/Object;
-    .registers 6
-    .param p1, "prevStart"    # I
+    .registers 5
 
     .prologue
     .line 129
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->list:Ljava/util/List;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->list:Ljava/util/List;
 
-    if-nez v1, :cond_11
+    if-nez v0, :cond_11
 
     .line 130
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->b:[Ljava/lang/Object;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->b:[Ljava/lang/Object;
 
-    iget v2, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
+    iget v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
 
-    iget v3, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
+    iget v2, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
 
-    invoke-static {v1, v2, v3}, Ljava/util/Arrays;->copyOfRange([Ljava/lang/Object;II)[Ljava/lang/Object;
+    invoke-static {v0, v1, v2}, Ljava/util/Arrays;->copyOfRange([Ljava/lang/Object;II)[Ljava/lang/Object;
 
     move-result-object v0
 
     .line 135
-    .local v0, "result":[Ljava/lang/Object;
     :goto_e
     iput p1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
 
@@ -564,24 +546,22 @@
     return-object v0
 
     .line 132
-    .end local v0    # "result":[Ljava/lang/Object;
     :cond_11
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->list:Ljava/util/List;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->list:Ljava/util/List;
 
-    iget v2, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
+    iget v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
 
-    iget v3, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
+    iget v2, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
 
-    sub-int/2addr v2, v3
+    sub-int/2addr v1, v2
 
-    new-array v2, v2, [Ljava/lang/Object;
+    new-array v1, v1, [Ljava/lang/Object;
 
-    invoke-interface {v1, v2}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-interface {v0, v1}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
 
     .line 133
-    .restart local v0    # "result":[Ljava/lang/Object;
     const/4 v1, 0x0
 
     iput-object v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->list:Ljava/util/List;
@@ -591,7 +571,6 @@
 
 .method public finishArray(ILjava/lang/Class;)[Ljava/lang/Object;
     .registers 8
-    .param p1, "prevStart"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -605,30 +584,25 @@
 
     .prologue
     .line 141
-    .local p2, "elemType":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
-    iget v2, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
+    iget v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
 
-    iget v3, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
+    iget v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
 
-    sub-int v1, v2, v3
+    sub-int v1, v0, v1
 
     .line 143
-    .local v1, "size":I
     invoke-static {p2, v1}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, [Ljava/lang/Object;
-
-    move-object v0, v2
+    check-cast v0, [Ljava/lang/Object;
 
     check-cast v0, [Ljava/lang/Object;
 
     .line 145
-    .local v0, "result":[Ljava/lang/Object;, "[TT;"
     iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->list:Ljava/util/List;
 
-    if-nez v2, :cond_1e
+    if-nez v2, :cond_1d
 
     .line 146
     iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->b:[Ljava/lang/Object;
@@ -640,31 +614,30 @@
     invoke-static {v2, v3, v0, v4, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 151
-    :goto_1b
+    :goto_1a
     iput p1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
 
     .line 152
     return-object v0
 
     .line 148
-    :cond_1e
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->list:Ljava/util/List;
+    :cond_1d
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->list:Ljava/util/List;
 
-    invoke-interface {v2, v0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-interface {v1, v0}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
 
     .line 149
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    iput-object v2, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->list:Ljava/util/List;
+    iput-object v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->list:Ljava/util/List;
 
-    goto :goto_1b
+    goto :goto_1a
 .end method
 
 .method public finishList(I)Ljava/util/List;
     .registers 4
-    .param p1, "prevStart"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -680,13 +653,12 @@
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->list:Ljava/util/List;
 
     .line 117
-    .local v0, "l":Ljava/util/List;, "Ljava/util/List<Ljava/lang/Object;>;"
     if-nez v0, :cond_c
 
     .line 118
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    invoke-direct {p0, v1}, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->_buildList(Z)Ljava/util/List;
+    invoke-direct {p0, v0}, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->_buildList(Z)Ljava/util/List;
 
     move-result-object v0
 
@@ -708,7 +680,6 @@
 
 .method public finishMap(I)Ljava/util/Map;
     .registers 4
-    .param p1, "prevStart"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)",
@@ -725,13 +696,12 @@
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->map:Ljava/util/Map;
 
     .line 159
-    .local v0, "m":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/Object;>;"
     if-nez v0, :cond_c
 
     .line 160
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    invoke-direct {p0, v1}, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->_buildMap(Z)Ljava/util/Map;
+    invoke-direct {p0, v0}, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->_buildMap(Z)Ljava/util/Map;
 
     move-result-object v0
 
@@ -753,8 +723,6 @@
 
 .method public put(Ljava/lang/String;Ljava/lang/Object;)V
     .registers 6
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 104
@@ -819,28 +787,27 @@
 
     .prologue
     .line 65
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->list:Ljava/util/List;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->list:Ljava/util/List;
 
-    if-nez v1, :cond_8
+    if-nez v0, :cond_8
 
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->map:Ljava/util/Map;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->map:Ljava/util/Map;
 
-    if-eqz v1, :cond_e
+    if-eqz v0, :cond_e
 
     .line 66
     :cond_8
-    new-instance v1, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-direct {v1}, Ljava/lang/IllegalStateException;-><init>()V
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
-    throw v1
+    throw v0
 
     .line 68
     :cond_e
     iget v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
 
     .line 69
-    .local v0, "prevStart":I
     iget v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
 
     iput v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
@@ -851,32 +818,30 @@
 
 .method public startList(Ljava/lang/Object;)I
     .registers 4
-    .param p1, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 74
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->list:Ljava/util/List;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->list:Ljava/util/List;
 
-    if-nez v1, :cond_8
+    if-nez v0, :cond_8
 
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->map:Ljava/util/Map;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->map:Ljava/util/Map;
 
-    if-eqz v1, :cond_e
+    if-eqz v0, :cond_e
 
     .line 75
     :cond_8
-    new-instance v1, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-direct {v1}, Ljava/lang/IllegalStateException;-><init>()V
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
-    throw v1
+    throw v0
 
     .line 77
     :cond_e
     iget v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
 
     .line 78
-    .local v0, "prevStart":I
     iget v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
 
     iput v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
@@ -890,33 +855,30 @@
 
 .method public startMap(Ljava/lang/String;Ljava/lang/Object;)I
     .registers 5
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/Object;
 
     .prologue
     .line 84
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->list:Ljava/util/List;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->list:Ljava/util/List;
 
-    if-nez v1, :cond_8
+    if-nez v0, :cond_8
 
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->map:Ljava/util/Map;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->map:Ljava/util/Map;
 
-    if-eqz v1, :cond_e
+    if-eqz v0, :cond_e
 
     .line 85
     :cond_8
-    new-instance v1, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
-    invoke-direct {v1}, Ljava/lang/IllegalStateException;-><init>()V
+    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
 
-    throw v1
+    throw v0
 
     .line 87
     :cond_e
     iget v0, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I
 
     .line 88
-    .local v0, "prevStart":I
     iget v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->tail:I
 
     iput v1, p0, Lcom/fasterxml/jackson/databind/util/ContainerBuilder;->start:I

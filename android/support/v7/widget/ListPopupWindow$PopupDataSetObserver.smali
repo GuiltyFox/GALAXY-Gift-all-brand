@@ -3,19 +3,8 @@
 .source "ListPopupWindow.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/widget/ListPopupWindow;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "PopupDataSetObserver"
-.end annotation
-
-
 # instance fields
-.field final synthetic this$0:Landroid/support/v7/widget/ListPopupWindow;
+.field final synthetic a:Landroid/support/v7/widget/ListPopupWindow;
 
 
 # direct methods
@@ -24,7 +13,7 @@
 
     .prologue
     .line 1766
-    iput-object p1, p0, Landroid/support/v7/widget/ListPopupWindow$PopupDataSetObserver;->this$0:Landroid/support/v7/widget/ListPopupWindow;
+    iput-object p1, p0, Landroid/support/v7/widget/ListPopupWindow$PopupDataSetObserver;->a:Landroid/support/v7/widget/ListPopupWindow;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
 
@@ -33,8 +22,6 @@
 
 .method synthetic constructor <init>(Landroid/support/v7/widget/ListPopupWindow;Landroid/support/v7/widget/ListPopupWindow$1;)V
     .registers 3
-    .param p1, "x0"    # Landroid/support/v7/widget/ListPopupWindow;
-    .param p2, "x1"    # Landroid/support/v7/widget/ListPopupWindow$1;
 
     .prologue
     .line 1766
@@ -50,7 +37,7 @@
 
     .prologue
     .line 1769
-    iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$PopupDataSetObserver;->this$0:Landroid/support/v7/widget/ListPopupWindow;
+    iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$PopupDataSetObserver;->a:Landroid/support/v7/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ListPopupWindow;->isShowing()Z
 
@@ -59,7 +46,7 @@
     if-eqz v0, :cond_d
 
     .line 1771
-    iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$PopupDataSetObserver;->this$0:Landroid/support/v7/widget/ListPopupWindow;
+    iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$PopupDataSetObserver;->a:Landroid/support/v7/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ListPopupWindow;->show()V
 
@@ -73,7 +60,7 @@
 
     .prologue
     .line 1777
-    iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$PopupDataSetObserver;->this$0:Landroid/support/v7/widget/ListPopupWindow;
+    iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$PopupDataSetObserver;->a:Landroid/support/v7/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ListPopupWindow;->dismiss()V
 

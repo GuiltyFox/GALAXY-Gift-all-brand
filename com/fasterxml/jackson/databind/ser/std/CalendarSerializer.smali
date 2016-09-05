@@ -50,8 +50,6 @@
 
 .method public constructor <init>(Ljava/lang/Boolean;Ljava/text/DateFormat;)V
     .registers 4
-    .param p1, "useTimestamp"    # Ljava/lang/Boolean;
-    .param p2, "customFormat"    # Ljava/text/DateFormat;
 
     .prologue
     .line 26
@@ -67,13 +65,11 @@
 # virtual methods
 .method protected bridge synthetic _timestamp(Ljava/lang/Object;)J
     .registers 4
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 17
     check-cast p1, Ljava/util/Calendar;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/ser/std/CalendarSerializer;->_timestamp(Ljava/util/Calendar;)J
 
     move-result-wide v0
@@ -83,7 +79,6 @@
 
 .method protected _timestamp(Ljava/util/Calendar;)J
     .registers 4
-    .param p1, "value"    # Ljava/util/Calendar;
 
     .prologue
     .line 36
@@ -104,21 +99,11 @@
 
 .method public bridge synthetic serialize(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 4
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "x2"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 17
     check-cast p1, Ljava/util/Calendar;
 
-    .end local p1    # "x0":Ljava/lang/Object;
     invoke-virtual {p0, p1, p2, p3}, Lcom/fasterxml/jackson/databind/ser/std/CalendarSerializer;->serialize(Ljava/util/Calendar;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
 
     return-void
@@ -126,15 +111,6 @@
 
 .method public serialize(Ljava/util/Calendar;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 7
-    .param p1, "value"    # Ljava/util/Calendar;
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 43
@@ -207,8 +183,6 @@
 
 .method public withFormat(Ljava/lang/Boolean;Ljava/text/DateFormat;)Lcom/fasterxml/jackson/databind/ser/std/CalendarSerializer;
     .registers 4
-    .param p1, "timestamp"    # Ljava/lang/Boolean;
-    .param p2, "customFormat"    # Ljava/text/DateFormat;
 
     .prologue
     .line 31
@@ -221,8 +195,6 @@
 
 .method public bridge synthetic withFormat(Ljava/lang/Boolean;Ljava/text/DateFormat;)Lcom/fasterxml/jackson/databind/ser/std/DateTimeSerializerBase;
     .registers 4
-    .param p1, "x0"    # Ljava/lang/Boolean;
-    .param p2, "x1"    # Ljava/text/DateFormat;
 
     .prologue
     .line 17

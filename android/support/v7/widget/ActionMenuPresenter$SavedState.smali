@@ -6,17 +6,6 @@
 .implements Landroid/os/Parcelable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/widget/ActionMenuPresenter;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "SavedState"
-.end annotation
-
-
 # static fields
 .field public static final CREATOR:Landroid/os/Parcelable$Creator;
     .annotation system Ldalvik/annotation/Signature;
@@ -31,7 +20,7 @@
 
 
 # instance fields
-.field public openSubMenuId:I
+.field public a:I
 
 
 # direct methods
@@ -39,7 +28,7 @@
     .registers 1
 
     .prologue
-    .line 594
+    .line 598
     new-instance v0, Landroid/support/v7/widget/ActionMenuPresenter$SavedState$1;
 
     invoke-direct {v0}, Landroid/support/v7/widget/ActionMenuPresenter$SavedState$1;-><init>()V
@@ -53,29 +42,28 @@
     .registers 1
 
     .prologue
-    .line 577
+    .line 581
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 578
+    .line 582
     return-void
 .end method
 
 .method constructor <init>(Landroid/os/Parcel;)V
     .registers 3
-    .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
-    .line 580
+    .line 584
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 581
+    .line 585
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
-    iput v0, p0, Landroid/support/v7/widget/ActionMenuPresenter$SavedState;->openSubMenuId:I
+    iput v0, p0, Landroid/support/v7/widget/ActionMenuPresenter$SavedState;->a:I
 
-    .line 582
+    .line 586
     return-void
 .end method
 
@@ -85,7 +73,7 @@
     .registers 2
 
     .prologue
-    .line 586
+    .line 590
     const/4 v0, 0x0
 
     return v0
@@ -93,15 +81,13 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .registers 4
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
     .prologue
-    .line 591
-    iget v0, p0, Landroid/support/v7/widget/ActionMenuPresenter$SavedState;->openSubMenuId:I
+    .line 595
+    iget v0, p0, Landroid/support/v7/widget/ActionMenuPresenter$SavedState;->a:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 592
+    .line 596
     return-void
 .end method

@@ -6,17 +6,6 @@
 .implements Lcom/bumptech/glide/load/engine/bitmap_recycle/LruBitmapPool$BitmapTracker;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/engine/bitmap_recycle/LruBitmapPool;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "NullBitmapTracker"
-.end annotation
-
-
 # direct methods
 .method private constructor <init>()V
     .registers 1
@@ -30,7 +19,6 @@
 
 .method synthetic constructor <init>(Lcom/bumptech/glide/load/engine/bitmap_recycle/LruBitmapPool$1;)V
     .registers 2
-    .param p1, "x0"    # Lcom/bumptech/glide/load/engine/bitmap_recycle/LruBitmapPool$1;
 
     .prologue
     .line 260
@@ -41,18 +29,16 @@
 
 
 # virtual methods
-.method public add(Landroid/graphics/Bitmap;)V
+.method public a(Landroid/graphics/Bitmap;)V
     .registers 2
-    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
     .line 264
     return-void
 .end method
 
-.method public remove(Landroid/graphics/Bitmap;)V
+.method public b(Landroid/graphics/Bitmap;)V
     .registers 2
-    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
 
     .prologue
     .line 269

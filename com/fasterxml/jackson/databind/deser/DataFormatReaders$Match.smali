@@ -3,17 +3,6 @@
 .source "DataFormatReaders.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/DataFormatReaders;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Match"
-.end annotation
-
-
 # instance fields
 .field protected final _bufferedData:[B
 
@@ -31,12 +20,6 @@
 # direct methods
 .method protected constructor <init>(Ljava/io/InputStream;[BIILcom/fasterxml/jackson/databind/ObjectReader;Lcom/fasterxml/jackson/core/format/MatchStrength;)V
     .registers 7
-    .param p1, "in"    # Ljava/io/InputStream;
-    .param p2, "buffered"    # [B
-    .param p3, "bufferedStart"    # I
-    .param p4, "bufferedLength"    # I
-    .param p5, "match"    # Lcom/fasterxml/jackson/databind/ObjectReader;
-    .param p6, "strength"    # Lcom/fasterxml/jackson/core/format/MatchStrength;
 
     .prologue
     .line 305
@@ -68,35 +51,29 @@
 # virtual methods
 .method public createParserWithMatch()Lcom/fasterxml/jackson/core/JsonParser;
     .registers 5
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 363
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders$Match;->_match:Lcom/fasterxml/jackson/databind/ObjectReader;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders$Match;->_match:Lcom/fasterxml/jackson/databind/ObjectReader;
 
-    if-nez v1, :cond_6
+    if-nez v0, :cond_6
 
     .line 364
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 370
     :goto_5
-    return-object v1
+    return-object v0
 
     .line 366
     :cond_6
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders$Match;->_match:Lcom/fasterxml/jackson/databind/ObjectReader;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders$Match;->_match:Lcom/fasterxml/jackson/databind/ObjectReader;
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/ObjectReader;->getFactory()Lcom/fasterxml/jackson/core/JsonFactory;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/ObjectReader;->getFactory()Lcom/fasterxml/jackson/core/JsonFactory;
 
     move-result-object v0
 
     .line 367
-    .local v0, "jf":Lcom/fasterxml/jackson/core/JsonFactory;
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/DataFormatReaders$Match;->_originalStream:Ljava/io/InputStream;
 
     if-nez v1, :cond_1b
@@ -110,7 +87,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Lcom/fasterxml/jackson/core/JsonFactory;->createParser([BII)Lcom/fasterxml/jackson/core/JsonParser;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_5
 
@@ -122,7 +99,7 @@
 
     invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/core/JsonFactory;->createParser(Ljava/io/InputStream;)Lcom/fasterxml/jackson/core/JsonParser;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_5
 .end method

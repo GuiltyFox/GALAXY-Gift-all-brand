@@ -3,17 +3,6 @@
 .source "JsonSerializerMap.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/ser/impl/JsonSerializerMap;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "Bucket"
-.end annotation
-
-
 # instance fields
 .field public final key:Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;
 
@@ -34,8 +23,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/ser/impl/JsonSerializerMap$Bucket;Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;Lcom/fasterxml/jackson/databind/JsonSerializer;)V
     .registers 4
-    .param p1, "next"    # Lcom/fasterxml/jackson/databind/ser/impl/JsonSerializerMap$Bucket;
-    .param p2, "key"    # Lcom/fasterxml/jackson/databind/ser/SerializerCache$TypeKey;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -50,7 +37,6 @@
 
     .prologue
     .line 85
-    .local p3, "value":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<Ljava/lang/Object;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 86

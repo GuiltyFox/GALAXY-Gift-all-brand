@@ -2,9 +2,6 @@
 .super Ljava/lang/Object;
 .source "ObjectPool.java"
 
-# interfaces
-.implements Lrx/internal/schedulers/SchedulerLifecycle;
-
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
@@ -12,18 +9,13 @@
         "<T:",
         "Ljava/lang/Object;",
         ">",
-        "Ljava/lang/Object;",
-        "Lrx/internal/schedulers/SchedulerLifecycle;"
+        "Ljava/lang/Object;"
     }
 .end annotation
 
 
 # instance fields
-.field private final maxSize:I
-
-.field private final minSize:I
-
-.field private pool:Ljava/util/Queue;
+.field private a:Ljava/util/Queue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Queue",
@@ -32,7 +24,13 @@
     .end annotation
 .end field
 
-.field private final schedulerWorker:Ljava/util/concurrent/atomic/AtomicReference;
+.field private final b:I
+
+.field private final c:I
+
+.field private final d:J
+
+.field private final e:Ljava/util/concurrent/atomic/AtomicReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/atomic/AtomicReference",
@@ -43,15 +41,12 @@
     .end annotation
 .end field
 
-.field private final validationInterval:J
-
 
 # direct methods
 .method public constructor <init>()V
     .registers 4
 
     .prologue
-    .local p0, "this":Lrx/internal/util/ObjectPool;, "Lrx/internal/util/ObjectPool<TT;>;"
     const/4 v2, 0x0
 
     .line 39
@@ -65,114 +60,84 @@
 
 .method private constructor <init>(IIJ)V
     .registers 6
-    .param p1, "min"    # I
-    .param p2, "max"    # I
-    .param p3, "validationInterval"    # J
 
     .prologue
     .line 54
-    .local p0, "this":Lrx/internal/util/ObjectPool;, "Lrx/internal/util/ObjectPool<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 55
-    iput p1, p0, Lrx/internal/util/ObjectPool;->minSize:I
+    iput p1, p0, Lrx/internal/util/ObjectPool;->b:I
 
     .line 56
-    iput p2, p0, Lrx/internal/util/ObjectPool;->maxSize:I
+    iput p2, p0, Lrx/internal/util/ObjectPool;->c:I
 
     .line 57
-    iput-wide p3, p0, Lrx/internal/util/ObjectPool;->validationInterval:J
+    iput-wide p3, p0, Lrx/internal/util/ObjectPool;->d:J
 
     .line 58
     new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
-    iput-object v0, p0, Lrx/internal/util/ObjectPool;->schedulerWorker:Ljava/util/concurrent/atomic/AtomicReference;
+    iput-object v0, p0, Lrx/internal/util/ObjectPool;->e:Ljava/util/concurrent/atomic/AtomicReference;
 
     .line 60
-    invoke-direct {p0, p1}, Lrx/internal/util/ObjectPool;->initialize(I)V
+    invoke-direct {p0, p1}, Lrx/internal/util/ObjectPool;->a(I)V
 
     .line 62
-    invoke-virtual {p0}, Lrx/internal/util/ObjectPool;->start()V
+    invoke-virtual {p0}, Lrx/internal/util/ObjectPool;->b()V
 
     .line 63
     return-void
 .end method
 
-.method static synthetic access$000(Lrx/internal/util/ObjectPool;)Ljava/util/Queue;
+.method static synthetic a(Lrx/internal/util/ObjectPool;)Ljava/util/Queue;
     .registers 2
-    .param p0, "x0"    # Lrx/internal/util/ObjectPool;
 
     .prologue
     .line 30
-    iget-object v0, p0, Lrx/internal/util/ObjectPool;->pool:Ljava/util/Queue;
+    iget-object v0, p0, Lrx/internal/util/ObjectPool;->a:Ljava/util/Queue;
 
     return-object v0
 .end method
 
-.method static synthetic access$100(Lrx/internal/util/ObjectPool;)I
-    .registers 2
-    .param p0, "x0"    # Lrx/internal/util/ObjectPool;
-
-    .prologue
-    .line 30
-    iget v0, p0, Lrx/internal/util/ObjectPool;->minSize:I
-
-    return v0
-.end method
-
-.method static synthetic access$200(Lrx/internal/util/ObjectPool;)I
-    .registers 2
-    .param p0, "x0"    # Lrx/internal/util/ObjectPool;
-
-    .prologue
-    .line 30
-    iget v0, p0, Lrx/internal/util/ObjectPool;->maxSize:I
-
-    return v0
-.end method
-
-.method private initialize(I)V
-    .registers 6
-    .param p1, "min"    # I
+.method private a(I)V
+    .registers 5
 
     .prologue
     .line 142
-    .local p0, "this":Lrx/internal/util/ObjectPool;, "Lrx/internal/util/ObjectPool<TT;>;"
-    invoke-static {}, Lrx/internal/util/unsafe/UnsafeAccess;->isUnsafeAvailable()Z
+    invoke-static {}, Lrx/internal/util/unsafe/UnsafeAccess;->a()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_24
+
+    .line 143
+    new-instance v0, Lrx/internal/util/unsafe/MpmcArrayQueue;
+
+    iget v1, p0, Lrx/internal/util/ObjectPool;->c:I
+
+    const/16 v2, 0x400
+
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
 
     move-result v1
 
-    if-eqz v1, :cond_24
+    invoke-direct {v0, v1}, Lrx/internal/util/unsafe/MpmcArrayQueue;-><init>(I)V
 
-    .line 143
-    new-instance v1, Lrx/internal/util/unsafe/MpmcArrayQueue;
-
-    iget v2, p0, Lrx/internal/util/ObjectPool;->maxSize:I
-
-    const/16 v3, 0x400
-
-    invoke-static {v2, v3}, Ljava/lang/Math;->max(II)I
-
-    move-result v2
-
-    invoke-direct {v1, v2}, Lrx/internal/util/unsafe/MpmcArrayQueue;-><init>(I)V
-
-    iput-object v1, p0, Lrx/internal/util/ObjectPool;->pool:Ljava/util/Queue;
+    iput-object v0, p0, Lrx/internal/util/ObjectPool;->a:Ljava/util/Queue;
 
     .line 148
     :goto_15
     const/4 v0, 0x0
 
-    .local v0, "i":I
     :goto_16
     if-ge v0, p1, :cond_2c
 
     .line 149
-    iget-object v1, p0, Lrx/internal/util/ObjectPool;->pool:Ljava/util/Queue;
+    iget-object v1, p0, Lrx/internal/util/ObjectPool;->a:Ljava/util/Queue;
 
-    invoke-virtual {p0}, Lrx/internal/util/ObjectPool;->createObject()Ljava/lang/Object;
+    invoke-virtual {p0}, Lrx/internal/util/ObjectPool;->c()Ljava/lang/Object;
 
     move-result-object v2
 
@@ -184,26 +149,44 @@
     goto :goto_16
 
     .line 145
-    .end local v0    # "i":I
     :cond_24
-    new-instance v1, Ljava/util/concurrent/ConcurrentLinkedQueue;
+    new-instance v0, Ljava/util/concurrent/ConcurrentLinkedQueue;
 
-    invoke-direct {v1}, Ljava/util/concurrent/ConcurrentLinkedQueue;-><init>()V
+    invoke-direct {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;-><init>()V
 
-    iput-object v1, p0, Lrx/internal/util/ObjectPool;->pool:Ljava/util/Queue;
+    iput-object v0, p0, Lrx/internal/util/ObjectPool;->a:Ljava/util/Queue;
 
     goto :goto_15
 
     .line 151
-    .restart local v0    # "i":I
     :cond_2c
     return-void
 .end method
 
+.method static synthetic b(Lrx/internal/util/ObjectPool;)I
+    .registers 2
+
+    .prologue
+    .line 30
+    iget v0, p0, Lrx/internal/util/ObjectPool;->b:I
+
+    return v0
+.end method
+
+.method static synthetic c(Lrx/internal/util/ObjectPool;)I
+    .registers 2
+
+    .prologue
+    .line 30
+    iget v0, p0, Lrx/internal/util/ObjectPool;->c:I
+
+    return v0
+.end method
+
 
 # virtual methods
-.method public borrowObject()Ljava/lang/Object;
-    .registers 3
+.method public a()Ljava/lang/Object;
+    .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -212,18 +195,16 @@
 
     .prologue
     .line 73
-    .local p0, "this":Lrx/internal/util/ObjectPool;, "Lrx/internal/util/ObjectPool<TT;>;"
-    iget-object v1, p0, Lrx/internal/util/ObjectPool;->pool:Ljava/util/Queue;
+    iget-object v0, p0, Lrx/internal/util/ObjectPool;->a:Ljava/util/Queue;
 
-    invoke-interface {v1}, Ljava/util/Queue;->poll()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Queue;->poll()Ljava/lang/Object;
 
     move-result-object v0
 
-    .local v0, "object":Ljava/lang/Object;, "TT;"
     if-nez v0, :cond_c
 
     .line 74
-    invoke-virtual {p0}, Lrx/internal/util/ObjectPool;->createObject()Ljava/lang/Object;
+    invoke-virtual {p0}, Lrx/internal/util/ObjectPool;->c()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -232,15 +213,7 @@
     return-object v0
 .end method
 
-.method protected abstract createObject()Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TT;"
-        }
-    .end annotation
-.end method
-
-.method public returnObject(Ljava/lang/Object;)V
+.method public a(Ljava/lang/Object;)V
     .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -250,8 +223,6 @@
 
     .prologue
     .line 87
-    .local p0, "this":Lrx/internal/util/ObjectPool;, "Lrx/internal/util/ObjectPool<TT;>;"
-    .local p1, "object":Ljava/lang/Object;, "TT;"
     if-nez p1, :cond_3
 
     .line 92
@@ -260,58 +231,28 @@
 
     .line 91
     :cond_3
-    iget-object v0, p0, Lrx/internal/util/ObjectPool;->pool:Ljava/util/Queue;
+    iget-object v0, p0, Lrx/internal/util/ObjectPool;->a:Ljava/util/Queue;
 
     invoke-interface {v0, p1}, Ljava/util/Queue;->offer(Ljava/lang/Object;)Z
 
     goto :goto_2
 .end method
 
-.method public shutdown()V
-    .registers 4
-
-    .prologue
-    .line 99
-    .local p0, "this":Lrx/internal/util/ObjectPool;, "Lrx/internal/util/ObjectPool<TT;>;"
-    iget-object v1, p0, Lrx/internal/util/ObjectPool;->schedulerWorker:Ljava/util/concurrent/atomic/AtomicReference;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lrx/Scheduler$Worker;
-
-    .line 100
-    .local v0, "w":Lrx/Scheduler$Worker;
-    if-eqz v0, :cond_e
-
-    .line 101
-    invoke-virtual {v0}, Lrx/Scheduler$Worker;->unsubscribe()V
-
-    .line 103
-    :cond_e
-    return-void
-.end method
-
-.method public start()V
+.method public b()V
     .registers 8
 
     .prologue
     .line 107
-    .local p0, "this":Lrx/internal/util/ObjectPool;, "Lrx/internal/util/ObjectPool<TT;>;"
-    invoke-static {}, Lrx/schedulers/Schedulers;->computation()Lrx/Scheduler;
+    invoke-static {}, Lrx/schedulers/Schedulers;->a()Lrx/Scheduler;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Lrx/Scheduler;->createWorker()Lrx/Scheduler$Worker;
+    invoke-virtual {v0}, Lrx/Scheduler;->a()Lrx/Scheduler$Worker;
 
     move-result-object v0
 
     .line 108
-    .local v0, "w":Lrx/Scheduler$Worker;
-    iget-object v1, p0, Lrx/internal/util/ObjectPool;->schedulerWorker:Ljava/util/concurrent/atomic/AtomicReference;
+    iget-object v1, p0, Lrx/internal/util/ObjectPool;->e:Ljava/util/concurrent/atomic/AtomicReference;
 
     const/4 v2, 0x0
 
@@ -326,13 +267,13 @@
 
     invoke-direct {v1, p0}, Lrx/internal/util/ObjectPool$1;-><init>(Lrx/internal/util/ObjectPool;)V
 
-    iget-wide v2, p0, Lrx/internal/util/ObjectPool;->validationInterval:J
+    iget-wide v2, p0, Lrx/internal/util/ObjectPool;->d:J
 
-    iget-wide v4, p0, Lrx/internal/util/ObjectPool;->validationInterval:J
+    iget-wide v4, p0, Lrx/internal/util/ObjectPool;->d:J
 
     sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-virtual/range {v0 .. v6}, Lrx/Scheduler$Worker;->schedulePeriodically(Lrx/functions/Action0;JJLjava/util/concurrent/TimeUnit;)Lrx/Subscription;
+    invoke-virtual/range {v0 .. v6}, Lrx/Scheduler$Worker;->a(Lrx/functions/Action0;JJLjava/util/concurrent/TimeUnit;)Lrx/Subscription;
 
     .line 132
     :goto_1f
@@ -340,7 +281,15 @@
 
     .line 130
     :cond_20
-    invoke-virtual {v0}, Lrx/Scheduler$Worker;->unsubscribe()V
+    invoke-virtual {v0}, Lrx/Scheduler$Worker;->b()V
 
     goto :goto_1f
+.end method
+
+.method protected abstract c()Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TT;"
+        }
+    .end annotation
 .end method

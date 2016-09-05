@@ -11,14 +11,9 @@
     value = Lcom/rey/material/drawable/DividerDrawable;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Lcom/rey/material/drawable/DividerDrawable;
+.field final synthetic a:Lcom/rey/material/drawable/DividerDrawable;
 
 
 # direct methods
@@ -27,7 +22,7 @@
 
     .prologue
     .line 231
-    iput-object p1, p0, Lcom/rey/material/drawable/DividerDrawable$1;->this$0:Lcom/rey/material/drawable/DividerDrawable;
+    iput-object p1, p0, Lcom/rey/material/drawable/DividerDrawable$1;->a:Lcom/rey/material/drawable/DividerDrawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,10 +36,9 @@
 
     .prologue
     .line 235
-    iget-object v0, p0, Lcom/rey/material/drawable/DividerDrawable$1;->this$0:Lcom/rey/material/drawable/DividerDrawable;
+    iget-object v0, p0, Lcom/rey/material/drawable/DividerDrawable$1;->a:Lcom/rey/material/drawable/DividerDrawable;
 
-    # invokes: Lcom/rey/material/drawable/DividerDrawable;->update()V
-    invoke-static {v0}, Lcom/rey/material/drawable/DividerDrawable;->access$000(Lcom/rey/material/drawable/DividerDrawable;)V
+    invoke-static {v0}, Lcom/rey/material/drawable/DividerDrawable;->a(Lcom/rey/material/drawable/DividerDrawable;)V
 
     .line 236
     return-void

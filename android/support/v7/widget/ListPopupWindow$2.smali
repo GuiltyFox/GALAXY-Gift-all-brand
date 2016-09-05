@@ -11,14 +11,9 @@
     value = Landroid/support/v7/widget/ListPopupWindow;->buildDropDown()I
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Landroid/support/v7/widget/ListPopupWindow;
+.field final synthetic a:Landroid/support/v7/widget/ListPopupWindow;
 
 
 # direct methods
@@ -27,7 +22,7 @@
 
     .prologue
     .line 1086
-    iput-object p1, p0, Landroid/support/v7/widget/ListPopupWindow$2;->this$0:Landroid/support/v7/widget/ListPopupWindow;
+    iput-object p1, p0, Landroid/support/v7/widget/ListPopupWindow$2;->a:Landroid/support/v7/widget/ListPopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,30 +32,29 @@
 
 # virtual methods
 .method public run()V
-    .registers 3
+    .registers 2
 
     .prologue
     .line 1089
-    iget-object v1, p0, Landroid/support/v7/widget/ListPopupWindow$2;->this$0:Landroid/support/v7/widget/ListPopupWindow;
+    iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$2;->a:Landroid/support/v7/widget/ListPopupWindow;
 
-    invoke-virtual {v1}, Landroid/support/v7/widget/ListPopupWindow;->getAnchorView()Landroid/view/View;
+    invoke-virtual {v0}, Landroid/support/v7/widget/ListPopupWindow;->getAnchorView()Landroid/view/View;
 
     move-result-object v0
 
     .line 1090
-    .local v0, "view":Landroid/view/View;
     if-eqz v0, :cond_13
 
     invoke-virtual {v0}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-eqz v1, :cond_13
+    if-eqz v0, :cond_13
 
     .line 1091
-    iget-object v1, p0, Landroid/support/v7/widget/ListPopupWindow$2;->this$0:Landroid/support/v7/widget/ListPopupWindow;
+    iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$2;->a:Landroid/support/v7/widget/ListPopupWindow;
 
-    invoke-virtual {v1}, Landroid/support/v7/widget/ListPopupWindow;->show()V
+    invoke-virtual {v0}, Landroid/support/v7/widget/ListPopupWindow;->show()V
 
     .line 1093
     :cond_13

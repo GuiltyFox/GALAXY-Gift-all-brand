@@ -15,9 +15,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;Landroid/support/v7/view/menu/MenuBuilder;Landroid/support/v7/view/menu/MenuItemImpl;)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "parentMenu"    # Landroid/support/v7/view/menu/MenuBuilder;
-    .param p3, "item"    # Landroid/support/v7/view/menu/MenuItemImpl;
 
     .prologue
     .line 38
@@ -37,7 +34,6 @@
 # virtual methods
 .method public collapseItemActionView(Landroid/support/v7/view/menu/MenuItemImpl;)Z
     .registers 3
-    .param p1, "item"    # Landroid/support/v7/view/menu/MenuItemImpl;
 
     .prologue
     .line 130
@@ -52,8 +48,6 @@
 
 .method dispatchMenuItemSelected(Landroid/support/v7/view/menu/MenuBuilder;Landroid/view/MenuItem;)Z
     .registers 4
-    .param p1, "menu"    # Landroid/support/v7/view/menu/MenuBuilder;
-    .param p2, "item"    # Landroid/view/MenuItem;
 
     .prologue
     .line 84
@@ -85,7 +79,6 @@
 
 .method public expandItemActionView(Landroid/support/v7/view/menu/MenuItemImpl;)Z
     .registers 3
-    .param p1, "item"    # Landroid/support/v7/view/menu/MenuItemImpl;
 
     .prologue
     .line 125
@@ -103,37 +96,34 @@
 
     .prologue
     .line 135
-    iget-object v1, p0, Landroid/support/v7/view/menu/SubMenuBuilder;->mItem:Landroid/support/v7/view/menu/MenuItemImpl;
+    iget-object v0, p0, Landroid/support/v7/view/menu/SubMenuBuilder;->mItem:Landroid/support/v7/view/menu/MenuItemImpl;
 
-    if-eqz v1, :cond_e
+    if-eqz v0, :cond_e
 
-    iget-object v1, p0, Landroid/support/v7/view/menu/SubMenuBuilder;->mItem:Landroid/support/v7/view/menu/MenuItemImpl;
+    iget-object v0, p0, Landroid/support/v7/view/menu/SubMenuBuilder;->mItem:Landroid/support/v7/view/menu/MenuItemImpl;
 
-    invoke-virtual {v1}, Landroid/support/v7/view/menu/MenuItemImpl;->getItemId()I
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->getItemId()I
 
     move-result v0
 
     .line 136
-    .local v0, "itemId":I
     :goto_a
     if-nez v0, :cond_10
 
     .line 137
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 139
     :goto_d
-    return-object v1
+    return-object v0
 
     .line 135
-    .end local v0    # "itemId":I
     :cond_e
     const/4 v0, 0x0
 
     goto :goto_a
 
     .line 139
-    .restart local v0    # "itemId":I
     :cond_10
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -155,11 +145,11 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_d
 .end method
@@ -224,7 +214,6 @@
 
 .method public setCallback(Landroid/support/v7/view/menu/MenuBuilder$Callback;)V
     .registers 3
-    .param p1, "callback"    # Landroid/support/v7/view/menu/MenuBuilder$Callback;
 
     .prologue
     .line 74
@@ -238,7 +227,6 @@
 
 .method public setHeaderIcon(I)Landroid/view/SubMenu;
     .registers 3
-    .param p1, "iconRes"    # I
 
     .prologue
     .line 104
@@ -246,7 +234,7 @@
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Landroid/support/v4/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, p1}, Landroid/support/v4/content/ContextCompat;->a(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -258,7 +246,6 @@
 
 .method public setHeaderIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/SubMenu;
     .registers 2
-    .param p1, "icon"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 99
@@ -270,7 +257,6 @@
 
 .method public setHeaderTitle(I)Landroid/view/SubMenu;
     .registers 3
-    .param p1, "titleRes"    # I
 
     .prologue
     .line 114
@@ -294,7 +280,6 @@
 
 .method public setHeaderTitle(Ljava/lang/CharSequence;)Landroid/view/SubMenu;
     .registers 2
-    .param p1, "title"    # Ljava/lang/CharSequence;
 
     .prologue
     .line 109
@@ -306,7 +291,6 @@
 
 .method public setHeaderView(Landroid/view/View;)Landroid/view/SubMenu;
     .registers 2
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 119
@@ -318,7 +302,6 @@
 
 .method public setIcon(I)Landroid/view/SubMenu;
     .registers 3
-    .param p1, "iconRes"    # I
 
     .prologue
     .line 94
@@ -332,7 +315,6 @@
 
 .method public setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/SubMenu;
     .registers 3
-    .param p1, "icon"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 89
@@ -346,7 +328,6 @@
 
 .method public setQwertyMode(Z)V
     .registers 3
-    .param p1, "isQwerty"    # Z
 
     .prologue
     .line 46
@@ -360,7 +341,6 @@
 
 .method public setShortcutsVisible(Z)V
     .registers 3
-    .param p1, "shortcutsVisible"    # Z
 
     .prologue
     .line 56

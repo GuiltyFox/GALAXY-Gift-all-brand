@@ -46,7 +46,6 @@
 # virtual methods
 .method public addDeserializer(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/KeyDeserializer;)Lcom/fasterxml/jackson/databind/module/SimpleKeyDeserializers;
     .registers 5
-    .param p2, "deser"    # Lcom/fasterxml/jackson/databind/KeyDeserializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -60,7 +59,6 @@
 
     .prologue
     .line 39
-    .local p1, "forClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/module/SimpleKeyDeserializers;->_classMappings:Ljava/util/HashMap;
 
     if-nez v0, :cond_b
@@ -88,9 +86,6 @@
 
 .method public findKeyDeserializer(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/BeanDescription;)Lcom/fasterxml/jackson/databind/KeyDeserializer;
     .registers 7
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p2, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p3, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
 
     .prologue
     .line 56

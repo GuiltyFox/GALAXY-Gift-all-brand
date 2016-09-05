@@ -3,38 +3,25 @@
 .source "RequestHandler.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/squareup/picasso/RequestHandler;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "Result"
-.end annotation
-
-
 # instance fields
-.field private final bitmap:Landroid/graphics/Bitmap;
+.field private final a:Lcom/squareup/picasso/Picasso$LoadedFrom;
 
-.field private final exifOrientation:I
+.field private final b:Landroid/graphics/Bitmap;
 
-.field private final loadedFrom:Lcom/squareup/picasso/Picasso$LoadedFrom;
+.field private final c:Ljava/io/InputStream;
 
-.field private final stream:Ljava/io/InputStream;
+.field private final d:I
 
 
 # direct methods
 .method public constructor <init>(Landroid/graphics/Bitmap;Lcom/squareup/picasso/Picasso$LoadedFrom;)V
     .registers 6
-    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
-    .param p2, "loadedFrom"    # Lcom/squareup/picasso/Picasso$LoadedFrom;
 
     .prologue
     .line 58
     const-string/jumbo v0, "bitmap == null"
 
-    invoke-static {p1, v0}, Lcom/squareup/picasso/Utils;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/squareup/picasso/Utils;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -52,10 +39,6 @@
 
 .method constructor <init>(Landroid/graphics/Bitmap;Ljava/io/InputStream;Lcom/squareup/picasso/Picasso$LoadedFrom;I)V
     .registers 8
-    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
-    .param p2, "stream"    # Ljava/io/InputStream;
-    .param p3, "loadedFrom"    # Lcom/squareup/picasso/Picasso$LoadedFrom;
-    .param p4, "exifOrientation"    # I
 
     .prologue
     const/4 v0, 0x1
@@ -98,24 +81,24 @@
 
     .line 69
     :cond_17
-    iput-object p1, p0, Lcom/squareup/picasso/RequestHandler$Result;->bitmap:Landroid/graphics/Bitmap;
+    iput-object p1, p0, Lcom/squareup/picasso/RequestHandler$Result;->b:Landroid/graphics/Bitmap;
 
     .line 70
-    iput-object p2, p0, Lcom/squareup/picasso/RequestHandler$Result;->stream:Ljava/io/InputStream;
+    iput-object p2, p0, Lcom/squareup/picasso/RequestHandler$Result;->c:Ljava/io/InputStream;
 
     .line 71
     const-string/jumbo v0, "loadedFrom == null"
 
-    invoke-static {p3, v0}, Lcom/squareup/picasso/Utils;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p3, v0}, Lcom/squareup/picasso/Utils;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/squareup/picasso/Picasso$LoadedFrom;
 
-    iput-object v0, p0, Lcom/squareup/picasso/RequestHandler$Result;->loadedFrom:Lcom/squareup/picasso/Picasso$LoadedFrom;
+    iput-object v0, p0, Lcom/squareup/picasso/RequestHandler$Result;->a:Lcom/squareup/picasso/Picasso$LoadedFrom;
 
     .line 72
-    iput p4, p0, Lcom/squareup/picasso/RequestHandler$Result;->exifOrientation:I
+    iput p4, p0, Lcom/squareup/picasso/RequestHandler$Result;->d:I
 
     .line 73
     return-void
@@ -123,8 +106,6 @@
 
 .method public constructor <init>(Ljava/io/InputStream;Lcom/squareup/picasso/Picasso$LoadedFrom;)V
     .registers 6
-    .param p1, "stream"    # Ljava/io/InputStream;
-    .param p2, "loadedFrom"    # Lcom/squareup/picasso/Picasso$LoadedFrom;
 
     .prologue
     .line 62
@@ -132,7 +113,7 @@
 
     const-string/jumbo v0, "stream == null"
 
-    invoke-static {p1, v0}, Lcom/squareup/picasso/Utils;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcom/squareup/picasso/Utils;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
@@ -148,42 +129,42 @@
 
 
 # virtual methods
-.method public getBitmap()Landroid/graphics/Bitmap;
+.method public a()Landroid/graphics/Bitmap;
     .registers 2
 
     .prologue
     .line 77
-    iget-object v0, p0, Lcom/squareup/picasso/RequestHandler$Result;->bitmap:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Lcom/squareup/picasso/RequestHandler$Result;->b:Landroid/graphics/Bitmap;
 
     return-object v0
 .end method
 
-.method getExifOrientation()I
-    .registers 2
-
-    .prologue
-    .line 98
-    iget v0, p0, Lcom/squareup/picasso/RequestHandler$Result;->exifOrientation:I
-
-    return v0
-.end method
-
-.method public getLoadedFrom()Lcom/squareup/picasso/Picasso$LoadedFrom;
-    .registers 2
-
-    .prologue
-    .line 90
-    iget-object v0, p0, Lcom/squareup/picasso/RequestHandler$Result;->loadedFrom:Lcom/squareup/picasso/Picasso$LoadedFrom;
-
-    return-object v0
-.end method
-
-.method public getStream()Ljava/io/InputStream;
+.method public b()Ljava/io/InputStream;
     .registers 2
 
     .prologue
     .line 82
-    iget-object v0, p0, Lcom/squareup/picasso/RequestHandler$Result;->stream:Ljava/io/InputStream;
+    iget-object v0, p0, Lcom/squareup/picasso/RequestHandler$Result;->c:Ljava/io/InputStream;
 
     return-object v0
+.end method
+
+.method public c()Lcom/squareup/picasso/Picasso$LoadedFrom;
+    .registers 2
+
+    .prologue
+    .line 90
+    iget-object v0, p0, Lcom/squareup/picasso/RequestHandler$Result;->a:Lcom/squareup/picasso/Picasso$LoadedFrom;
+
+    return-object v0
+.end method
+
+.method d()I
+    .registers 2
+
+    .prologue
+    .line 98
+    iget v0, p0, Lcom/squareup/picasso/RequestHandler$Result;->d:I
+
+    return v0
 .end method

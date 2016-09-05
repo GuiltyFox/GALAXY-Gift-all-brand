@@ -61,7 +61,6 @@
 
 .method public constructor <init>(I)V
     .registers 3
-    .param p1, "firstBlockSize"    # I
 
     .prologue
     .line 48
@@ -74,7 +73,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;)V
     .registers 3
-    .param p1, "br"    # Lcom/fasterxml/jackson/core/util/BufferRecycler;
 
     .prologue
     .line 47
@@ -87,8 +85,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/core/util/BufferRecycler;I)V
     .registers 4
-    .param p1, "br"    # Lcom/fasterxml/jackson/core/util/BufferRecycler;
-    .param p2, "firstBlockSize"    # I
 
     .prologue
     .line 50
@@ -130,6 +126,8 @@
     .registers 4
 
     .prologue
+    const/high16 v0, 0x40000
+
     .line 225
     iget v1, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_pastLen:I
 
@@ -150,19 +148,13 @@
 
     invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
 
-    move-result v0
+    move-result v1
 
     .line 235
-    .local v0, "newSize":I
-    const/high16 v1, 0x40000
-
-    if-le v0, v1, :cond_18
-
-    .line 236
-    const/high16 v0, 0x40000
+    if-le v1, v0, :cond_25
 
     .line 238
-    :cond_18
+    :goto_16
     iget-object v1, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_pastBlocks:Ljava/util/LinkedList;
 
     iget-object v2, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlock:[B
@@ -170,24 +162,28 @@
     invoke-virtual {v1, v2}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
     .line 239
-    new-array v1, v0, [B
+    new-array v0, v0, [B
 
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlock:[B
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlock:[B
 
     .line 240
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    iput v1, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
+    iput v0, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
 
     .line 241
     return-void
+
+    :cond_25
+    move v0, v1
+
+    goto :goto_16
 .end method
 
 
 # virtual methods
 .method public append(I)V
     .registers 5
-    .param p1, "i"    # I
 
     .prologue
     .line 78
@@ -222,7 +218,6 @@
 
 .method public appendThreeBytes(I)V
     .registers 5
-    .param p1, "b24"    # I
 
     .prologue
     .line 95
@@ -302,7 +297,6 @@
 
 .method public appendTwoBytes(I)V
     .registers 5
-    .param p1, "b16"    # I
 
     .prologue
     .line 85
@@ -370,7 +364,6 @@
 
 .method public completeAndCoalesce(I)[B
     .registers 3
-    .param p1, "lastBlockLength"    # I
 
     .prologue
     .line 173
@@ -506,7 +499,6 @@
 
 .method public setCurrentSegmentLength(I)V
     .registers 2
-    .param p1, "len"    # I
 
     .prologue
     .line 178
@@ -516,152 +508,147 @@
 .end method
 
 .method public toByteArray()[B
-    .registers 10
+    .registers 8
 
     .prologue
-    const/4 v8, 0x0
+    const/4 v2, 0x0
 
     .line 112
-    iget v6, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_pastLen:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_pastLen:I
 
-    iget v7, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
+    iget v1, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
 
-    add-int v5, v6, v7
+    add-int v4, v0, v1
 
     .line 114
-    .local v5, "totalLen":I
-    if-nez v5, :cond_c
+    if-nez v4, :cond_c
 
     .line 115
-    sget-object v4, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->NO_BYTES:[B
+    sget-object v0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->NO_BYTES:[B
 
     .line 135
-    :cond_b
     :goto_b
-    return-object v4
+    return-object v0
 
     .line 118
     :cond_c
-    new-array v4, v5, [B
-
-    .line 119
-    .local v4, "result":[B
-    const/4 v3, 0x0
+    new-array v3, v4, [B
 
     .line 121
-    .local v3, "offset":I
-    iget-object v6, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_pastBlocks:Ljava/util/LinkedList;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_pastBlocks:Ljava/util/LinkedList;
 
-    invoke-virtual {v6}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
 
-    move-result-object v1
+    move-result-object v5
 
-    .local v1, "i$":Ljava/util/Iterator;
+    move v1, v2
+
     :goto_15
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_27
+    if-eqz v0, :cond_29
 
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [B
 
     .line 122
-    .local v0, "block":[B
-    array-length v2, v0
+    array-length v6, v0
 
     .line 123
-    .local v2, "len":I
-    invoke-static {v0, v8, v4, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0, v2, v3, v1, v6}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 124
-    add-int/2addr v3, v2
+    add-int v0, v1, v6
+
+    move v1, v0
 
     .line 125
     goto :goto_15
 
     .line 126
-    .end local v0    # "block":[B
-    .end local v2    # "len":I
-    :cond_27
-    iget-object v6, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlock:[B
+    :cond_29
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlock:[B
 
-    iget v7, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
+    iget v5, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
 
-    invoke-static {v6, v8, v4, v3, v7}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0, v2, v3, v1, v5}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 127
-    iget v6, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
+    iget v0, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
 
-    add-int/2addr v3, v6
+    add-int/2addr v0, v1
 
     .line 128
-    if-eq v3, v5, :cond_5f
+    if-eq v0, v4, :cond_61
 
     .line 129
-    new-instance v6, Ljava/lang/RuntimeException;
+    new-instance v1, Ljava/lang/RuntimeException;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v8, "Internal error: total len assumed to be "
+    const-string/jumbo v3, "Internal error: total len assumed to be "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v2
 
-    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v2
 
-    const-string/jumbo v8, ", copied "
+    const-string/jumbo v3, ", copied "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v2
 
-    invoke-virtual {v7, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v0
 
-    const-string/jumbo v8, " bytes"
+    const-string/jumbo v2, " bytes"
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-direct {v6, v7}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    throw v6
+    throw v1
 
     .line 132
-    :cond_5f
-    iget-object v6, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_pastBlocks:Ljava/util/LinkedList;
+    :cond_61
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_pastBlocks:Ljava/util/LinkedList;
 
-    invoke-virtual {v6}, Ljava/util/LinkedList;->isEmpty()Z
+    invoke-virtual {v0}, Ljava/util/LinkedList;->isEmpty()Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_b
+    if-nez v0, :cond_6c
 
     .line 133
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->reset()V
 
+    :cond_6c
+    move-object v0, v3
+
+    .line 135
     goto :goto_b
 .end method
 
 .method public write(I)V
     .registers 2
-    .param p1, "b"    # I
 
     .prologue
     .line 211
@@ -673,7 +660,6 @@
 
 .method public write([B)V
     .registers 4
-    .param p1, "b"    # [B
 
     .prologue
     .line 189
@@ -688,61 +674,56 @@
 .end method
 
 .method public write([BII)V
-    .registers 8
-    .param p1, "b"    # [B
-    .param p2, "off"    # I
-    .param p3, "len"    # I
+    .registers 7
 
     .prologue
     .line 196
     :goto_0
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlock:[B
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlock:[B
 
-    array-length v2, v2
+    array-length v0, v0
 
-    iget v3, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
+    iget v1, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
 
-    sub-int v0, v2, v3
+    sub-int/2addr v0, v1
 
     .line 197
-    .local v0, "max":I
     invoke-static {v0, p3}, Ljava/lang/Math;->min(II)I
 
-    move-result v1
+    move-result v0
 
     .line 198
-    .local v1, "toCopy":I
-    if-lez v1, :cond_1b
+    if-lez v0, :cond_1a
 
     .line 199
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlock:[B
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlock:[B
 
-    iget v3, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
-
-    invoke-static {p1, p2, v2, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 200
-    add-int/2addr p2, v1
-
-    .line 201
     iget v2, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
 
-    add-int/2addr v2, v1
+    invoke-static {p1, p2, v1, v2, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    iput v2, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
+    .line 200
+    add-int/2addr p2, v0
+
+    .line 201
+    iget v1, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
+
+    add-int/2addr v1, v0
+
+    iput v1, p0, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_currBlockPtr:I
 
     .line 202
-    sub-int/2addr p3, v1
+    sub-int/2addr p3, v0
 
     .line 204
-    :cond_1b
-    if-gtz p3, :cond_1e
+    :cond_1a
+    if-gtz p3, :cond_1d
 
     .line 207
     return-void
 
     .line 205
-    :cond_1e
+    :cond_1d
     invoke-direct {p0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->_allocMore()V
 
     goto :goto_0

@@ -3,15 +3,6 @@
 .source "FilteredBeanPropertyWriter.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/ser/impl/FilteredBeanPropertyWriter$MultiView;,
-        Lcom/fasterxml/jackson/databind/ser/impl/FilteredBeanPropertyWriter$SingleView;
-    }
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -26,7 +17,6 @@
 
 .method public static constructViewBased(Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;[Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
     .registers 4
-    .param p0, "base"    # Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -40,7 +30,6 @@
 
     .prologue
     .line 17
-    .local p1, "viewsToIncludeIn":[Ljava/lang/Class;, "[Ljava/lang/Class<*>;"
     array-length v0, p1
 
     const/4 v1, 0x1

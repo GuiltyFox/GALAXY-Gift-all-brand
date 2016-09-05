@@ -3,17 +3,6 @@
 .source "CollectionDeserializer.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/std/CollectionDeserializer;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "CollectionReferring"
-.end annotation
-
-
 # instance fields
 .field private final _parent:Lcom/fasterxml/jackson/databind/deser/std/CollectionDeserializer$CollectionReferringAccumulator;
 
@@ -32,8 +21,6 @@
 # direct methods
 .method private constructor <init>(Lcom/fasterxml/jackson/databind/deser/std/CollectionDeserializer$CollectionReferringAccumulator;Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;Ljava/lang/Class;)V
     .registers 5
-    .param p1, "parent"    # Lcom/fasterxml/jackson/databind/deser/std/CollectionDeserializer$CollectionReferringAccumulator;
-    .param p2, "reference"    # Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -46,7 +33,6 @@
 
     .prologue
     .line 358
-    .local p3, "contentType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0, p2, p3}, Lcom/fasterxml/jackson/databind/deser/impl/ReadableObjectId$Referring;-><init>(Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;Ljava/lang/Class;)V
 
     .line 353
@@ -65,10 +51,6 @@
 
 .method synthetic constructor <init>(Lcom/fasterxml/jackson/databind/deser/std/CollectionDeserializer$CollectionReferringAccumulator;Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;Ljava/lang/Class;Lcom/fasterxml/jackson/databind/deser/std/CollectionDeserializer$1;)V
     .registers 5
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/deser/std/CollectionDeserializer$CollectionReferringAccumulator;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;
-    .param p3, "x2"    # Ljava/lang/Class;
-    .param p4, "x3"    # Lcom/fasterxml/jackson/databind/deser/std/CollectionDeserializer$1;
 
     .prologue
     .line 351
@@ -81,13 +63,6 @@
 # virtual methods
 .method public handleResolvedForwardReference(Ljava/lang/Object;Ljava/lang/Object;)V
     .registers 4
-    .param p1, "id"    # Ljava/lang/Object;
-    .param p2, "value"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 364

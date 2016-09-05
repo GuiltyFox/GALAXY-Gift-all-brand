@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/parceler/NonParcelRepository;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "IBinderParcelableFactory"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -40,7 +31,6 @@
 
 .method synthetic constructor <init>(Lorg/parceler/NonParcelRepository$1;)V
     .registers 2
-    .param p1, "x0"    # Lorg/parceler/NonParcelRepository$1;
 
     .prologue
     .line 124
@@ -51,9 +41,8 @@
 
 
 # virtual methods
-.method public buildParcelable(Landroid/os/IBinder;)Landroid/os/Parcelable;
+.method public a(Landroid/os/IBinder;)Landroid/os/Parcelable;
     .registers 3
-    .param p1, "input"    # Landroid/os/IBinder;
 
     .prologue
     .line 128
@@ -64,14 +53,14 @@
     return-object v0
 .end method
 
-.method public bridge synthetic buildParcelable(Ljava/lang/Object;)Landroid/os/Parcelable;
+.method public bridge synthetic a(Ljava/lang/Object;)Landroid/os/Parcelable;
     .registers 3
 
     .prologue
     .line 124
     check-cast p1, Landroid/os/IBinder;
 
-    invoke-virtual {p0, p1}, Lorg/parceler/NonParcelRepository$IBinderParcelableFactory;->buildParcelable(Landroid/os/IBinder;)Landroid/os/Parcelable;
+    invoke-virtual {p0, p1}, Lorg/parceler/NonParcelRepository$IBinderParcelableFactory;->a(Landroid/os/IBinder;)Landroid/os/Parcelable;
 
     move-result-object v0
 

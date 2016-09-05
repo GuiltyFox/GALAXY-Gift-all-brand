@@ -11,11 +11,6 @@
     value = Lrx/internal/producers/ProducerArbiter;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 
 # direct methods
 .method constructor <init>()V
@@ -30,9 +25,8 @@
 
 
 # virtual methods
-.method public request(J)V
+.method public a(J)V
     .registers 3
-    .param p1, "n"    # J
 
     .prologue
     .line 37

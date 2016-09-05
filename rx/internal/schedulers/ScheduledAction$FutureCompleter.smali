@@ -6,19 +6,10 @@
 .implements Lrx/Subscription;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lrx/internal/schedulers/ScheduledAction;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x12
-    name = "FutureCompleter"
-.end annotation
-
-
 # instance fields
-.field private final f:Ljava/util/concurrent/Future;
+.field final synthetic a:Lrx/internal/schedulers/ScheduledAction;
+
+.field private final b:Ljava/util/concurrent/Future;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/Future",
@@ -26,8 +17,6 @@
         }
     .end annotation
 .end field
-
-.field final synthetic this$0:Lrx/internal/schedulers/ScheduledAction;
 
 
 # direct methods
@@ -43,13 +32,12 @@
 
     .prologue
     .line 134
-    .local p2, "f":Ljava/util/concurrent/Future;, "Ljava/util/concurrent/Future<*>;"
-    iput-object p1, p0, Lrx/internal/schedulers/ScheduledAction$FutureCompleter;->this$0:Lrx/internal/schedulers/ScheduledAction;
+    iput-object p1, p0, Lrx/internal/schedulers/ScheduledAction$FutureCompleter;->a:Lrx/internal/schedulers/ScheduledAction;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 135
-    iput-object p2, p0, Lrx/internal/schedulers/ScheduledAction$FutureCompleter;->f:Ljava/util/concurrent/Future;
+    iput-object p2, p0, Lrx/internal/schedulers/ScheduledAction$FutureCompleter;->b:Ljava/util/concurrent/Future;
 
     .line 136
     return-void
@@ -57,9 +45,6 @@
 
 .method synthetic constructor <init>(Lrx/internal/schedulers/ScheduledAction;Ljava/util/concurrent/Future;Lrx/internal/schedulers/ScheduledAction$1;)V
     .registers 4
-    .param p1, "x0"    # Lrx/internal/schedulers/ScheduledAction;
-    .param p2, "x1"    # Ljava/util/concurrent/Future;
-    .param p3, "x2"    # Lrx/internal/schedulers/ScheduledAction$1;
 
     .prologue
     .line 131
@@ -70,26 +55,12 @@
 
 
 # virtual methods
-.method public isUnsubscribed()Z
-    .registers 2
-
-    .prologue
-    .line 148
-    iget-object v0, p0, Lrx/internal/schedulers/ScheduledAction$FutureCompleter;->f:Ljava/util/concurrent/Future;
-
-    invoke-interface {v0}, Ljava/util/concurrent/Future;->isCancelled()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public unsubscribe()V
+.method public b()V
     .registers 3
 
     .prologue
     .line 140
-    iget-object v0, p0, Lrx/internal/schedulers/ScheduledAction$FutureCompleter;->this$0:Lrx/internal/schedulers/ScheduledAction;
+    iget-object v0, p0, Lrx/internal/schedulers/ScheduledAction$FutureCompleter;->a:Lrx/internal/schedulers/ScheduledAction;
 
     invoke-virtual {v0}, Lrx/internal/schedulers/ScheduledAction;->get()Ljava/lang/Object;
 
@@ -102,7 +73,7 @@
     if-eq v0, v1, :cond_13
 
     .line 141
-    iget-object v0, p0, Lrx/internal/schedulers/ScheduledAction$FutureCompleter;->f:Ljava/util/concurrent/Future;
+    iget-object v0, p0, Lrx/internal/schedulers/ScheduledAction$FutureCompleter;->b:Ljava/util/concurrent/Future;
 
     const/4 v1, 0x1
 
@@ -114,11 +85,25 @@
 
     .line 143
     :cond_13
-    iget-object v0, p0, Lrx/internal/schedulers/ScheduledAction$FutureCompleter;->f:Ljava/util/concurrent/Future;
+    iget-object v0, p0, Lrx/internal/schedulers/ScheduledAction$FutureCompleter;->b:Ljava/util/concurrent/Future;
 
     const/4 v1, 0x0
 
     invoke-interface {v0, v1}, Ljava/util/concurrent/Future;->cancel(Z)Z
 
     goto :goto_12
+.end method
+
+.method public c()Z
+    .registers 2
+
+    .prologue
+    .line 148
+    iget-object v0, p0, Lrx/internal/schedulers/ScheduledAction$FutureCompleter;->b:Ljava/util/concurrent/Future;
+
+    invoke-interface {v0}, Ljava/util/concurrent/Future;->isCancelled()Z
+
+    move-result v0
+
+    return v0
 .end method

@@ -7,12 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/facebook/internal/FacebookDialogBase$ModeHandler;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<CONTENT:",
@@ -73,12 +67,9 @@
 
 .method protected constructor <init>(Landroid/app/Activity;I)V
     .registers 4
-    .param p1, "activity"    # Landroid/app/Activity;
-    .param p2, "requestCode"    # I
 
     .prologue
     .line 52
-    .local p0, "this":Lcom/facebook/internal/FacebookDialogBase;, "Lcom/facebook/internal/FacebookDialogBase<TCONTENT;TRESULT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 53
@@ -103,12 +94,9 @@
 
 .method protected constructor <init>(Landroid/support/v4/app/Fragment;I)V
     .registers 5
-    .param p1, "fragment"    # Landroid/support/v4/app/Fragment;
-    .param p2, "requestCode"    # I
 
     .prologue
     .line 59
-    .local p0, "this":Lcom/facebook/internal/FacebookDialogBase;, "Lcom/facebook/internal/FacebookDialogBase<TCONTENT;TRESULT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 60
@@ -164,7 +152,6 @@
 
     .prologue
     .line 206
-    .local p0, "this":Lcom/facebook/internal/FacebookDialogBase;, "Lcom/facebook/internal/FacebookDialogBase<TCONTENT;TRESULT;>;"
     iget-object v0, p0, Lcom/facebook/internal/FacebookDialogBase;->modeHandlers:Ljava/util/List;
 
     if-nez v0, :cond_a
@@ -184,8 +171,7 @@
 .end method
 
 .method private createAppCallForMode(Ljava/lang/Object;Ljava/lang/Object;)Lcom/facebook/internal/AppCall;
-    .registers 9
-    .param p2, "mode"    # Ljava/lang/Object;
+    .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TCONTENT;",
@@ -197,115 +183,111 @@
 
     .prologue
     .line 177
-    .local p0, "this":Lcom/facebook/internal/FacebookDialogBase;, "Lcom/facebook/internal/FacebookDialogBase<TCONTENT;TRESULT;>;"
-    .local p1, "content":Ljava/lang/Object;, "TCONTENT;"
-    sget-object v4, Lcom/facebook/internal/FacebookDialogBase;->BASE_AUTOMATIC_MODE:Ljava/lang/Object;
+    sget-object v0, Lcom/facebook/internal/FacebookDialogBase;->BASE_AUTOMATIC_MODE:Ljava/lang/Object;
 
-    if-ne p2, v4, :cond_3a
+    if-ne p2, v0, :cond_3b
 
     const/4 v0, 0x1
 
+    move v1, v0
+
     .line 179
-    .local v0, "anyModeAllowed":Z
-    :goto_5
-    const/4 v1, 0x0
+    :goto_6
+    const/4 v2, 0x0
 
     .line 180
-    .local v1, "appCall":Lcom/facebook/internal/AppCall;
     invoke-direct {p0}, Lcom/facebook/internal/FacebookDialogBase;->cachedModeHandlers()Ljava/util/List;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v4
-
-    :cond_e
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v5
-
-    if-eqz v5, :cond_30
-
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    check-cast v3, Lcom/facebook/internal/FacebookDialogBase$ModeHandler;
+    :cond_f
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_47
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/facebook/internal/FacebookDialogBase$ModeHandler;
 
     .line 181
-    .local v3, "handler":Lcom/facebook/internal/FacebookDialogBase$ModeHandler;, "Lcom/facebook/internal/FacebookDialogBase<TCONTENT;TRESULT;>.ModeHandler;"
-    if-nez v0, :cond_26
+    if-nez v1, :cond_27
 
-    invoke-virtual {v3}, Lcom/facebook/internal/FacebookDialogBase$ModeHandler;->getMode()Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/facebook/internal/FacebookDialogBase$ModeHandler;->getMode()Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-static {v5, p2}, Lcom/facebook/internal/Utility;->areObjectsEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v4, p2}, Lcom/facebook/internal/Utility;->areObjectsEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_e
+    if-eqz v4, :cond_f
 
     .line 184
-    :cond_26
-    invoke-virtual {v3, p1}, Lcom/facebook/internal/FacebookDialogBase$ModeHandler;->canShow(Ljava/lang/Object;)Z
+    :cond_27
+    invoke-virtual {v0, p1}, Lcom/facebook/internal/FacebookDialogBase$ModeHandler;->canShow(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_e
+    if-eqz v4, :cond_f
 
     .line 189
-    :try_start_2c
-    invoke-virtual {v3, p1}, Lcom/facebook/internal/FacebookDialogBase$ModeHandler;->createAppCall(Ljava/lang/Object;)Lcom/facebook/internal/AppCall;
-    :try_end_2f
-    .catch Lcom/facebook/FacebookException; {:try_start_2c .. :try_end_2f} :catch_3c
+    :try_start_2d
+    invoke-virtual {v0, p1}, Lcom/facebook/internal/FacebookDialogBase$ModeHandler;->createAppCall(Ljava/lang/Object;)Lcom/facebook/internal/AppCall;
+    :try_end_30
+    .catch Lcom/facebook/FacebookException; {:try_start_2d .. :try_end_30} :catch_3e
 
-    move-result-object v1
+    move-result-object v0
 
     .line 197
-    .end local v3    # "handler":Lcom/facebook/internal/FacebookDialogBase$ModeHandler;, "Lcom/facebook/internal/FacebookDialogBase<TCONTENT;TRESULT;>.ModeHandler;"
-    :cond_30
-    :goto_30
-    if-nez v1, :cond_39
+    :goto_31
+    if-nez v0, :cond_3a
 
     .line 198
     invoke-virtual {p0}, Lcom/facebook/internal/FacebookDialogBase;->createBaseAppCall()Lcom/facebook/internal/AppCall;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 199
-    invoke-static {v1}, Lcom/facebook/internal/DialogPresenter;->setupAppCallForCannotShowError(Lcom/facebook/internal/AppCall;)V
+    invoke-static {v0}, Lcom/facebook/internal/DialogPresenter;->setupAppCallForCannotShowError(Lcom/facebook/internal/AppCall;)V
 
     .line 202
-    :cond_39
-    return-object v1
+    :cond_3a
+    return-object v0
 
     .line 177
-    .end local v0    # "anyModeAllowed":Z
-    .end local v1    # "appCall":Lcom/facebook/internal/AppCall;
-    :cond_3a
+    :cond_3b
     const/4 v0, 0x0
 
-    goto :goto_5
+    move v1, v0
+
+    goto :goto_6
 
     .line 190
-    .restart local v0    # "anyModeAllowed":Z
-    .restart local v1    # "appCall":Lcom/facebook/internal/AppCall;
-    .restart local v3    # "handler":Lcom/facebook/internal/FacebookDialogBase$ModeHandler;, "Lcom/facebook/internal/FacebookDialogBase<TCONTENT;TRESULT;>.ModeHandler;"
-    :catch_3c
-    move-exception v2
+    :catch_3e
+    move-exception v1
 
     .line 191
-    .local v2, "e":Lcom/facebook/FacebookException;
     invoke-virtual {p0}, Lcom/facebook/internal/FacebookDialogBase;->createBaseAppCall()Lcom/facebook/internal/AppCall;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 192
-    invoke-static {v1, v2}, Lcom/facebook/internal/DialogPresenter;->setupAppCallForValidationError(Lcom/facebook/internal/AppCall;Lcom/facebook/FacebookException;)V
+    invoke-static {v0, v1}, Lcom/facebook/internal/DialogPresenter;->setupAppCallForValidationError(Lcom/facebook/internal/AppCall;Lcom/facebook/FacebookException;)V
 
-    goto :goto_30
+    goto :goto_31
+
+    :cond_47
+    move-object v0, v2
+
+    goto :goto_31
 .end method
 
 
@@ -320,8 +302,6 @@
 
     .prologue
     .line 121
-    .local p0, "this":Lcom/facebook/internal/FacebookDialogBase;, "Lcom/facebook/internal/FacebookDialogBase<TCONTENT;TRESULT;>;"
-    .local p1, "content":Ljava/lang/Object;, "TCONTENT;"
     sget-object v0, Lcom/facebook/internal/FacebookDialogBase;->BASE_AUTOMATIC_MODE:Ljava/lang/Object;
 
     invoke-virtual {p0, p1, v0}, Lcom/facebook/internal/FacebookDialogBase;->canShowImpl(Ljava/lang/Object;Ljava/lang/Object;)Z
@@ -333,7 +313,6 @@
 
 .method protected canShowImpl(Ljava/lang/Object;Ljava/lang/Object;)Z
     .registers 9
-    .param p2, "mode"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TCONTENT;",
@@ -343,48 +322,44 @@
     .end annotation
 
     .prologue
-    .local p0, "this":Lcom/facebook/internal/FacebookDialogBase;, "Lcom/facebook/internal/FacebookDialogBase<TCONTENT;TRESULT;>;"
-    .local p1, "content":Ljava/lang/Object;, "TCONTENT;"
     const/4 v2, 0x1
 
     const/4 v3, 0x0
 
     .line 126
-    sget-object v4, Lcom/facebook/internal/FacebookDialogBase;->BASE_AUTOMATIC_MODE:Ljava/lang/Object;
+    sget-object v0, Lcom/facebook/internal/FacebookDialogBase;->BASE_AUTOMATIC_MODE:Ljava/lang/Object;
 
-    if-ne p2, v4, :cond_2e
+    if-ne p2, v0, :cond_2e
 
-    move v0, v2
+    move v1, v2
 
     .line 128
-    .local v0, "anyModeAllowed":Z
     :goto_7
     invoke-direct {p0}, Lcom/facebook/internal/FacebookDialogBase;->cachedModeHandlers()Ljava/util/List;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
 
     :cond_f
     invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v5
+    move-result v0
 
-    if-eqz v5, :cond_30
+    if-eqz v0, :cond_30
 
     invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Lcom/facebook/internal/FacebookDialogBase$ModeHandler;
+    check-cast v0, Lcom/facebook/internal/FacebookDialogBase$ModeHandler;
 
     .line 129
-    .local v1, "handler":Lcom/facebook/internal/FacebookDialogBase$ModeHandler;, "Lcom/facebook/internal/FacebookDialogBase<TCONTENT;TRESULT;>.ModeHandler;"
-    if-nez v0, :cond_27
+    if-nez v1, :cond_27
 
-    invoke-virtual {v1}, Lcom/facebook/internal/FacebookDialogBase$ModeHandler;->getMode()Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/facebook/internal/FacebookDialogBase$ModeHandler;->getMode()Ljava/lang/Object;
 
     move-result-object v5
 
@@ -396,25 +371,22 @@
 
     .line 132
     :cond_27
-    invoke-virtual {v1, p1}, Lcom/facebook/internal/FacebookDialogBase$ModeHandler;->canShow(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Lcom/facebook/internal/FacebookDialogBase$ModeHandler;->canShow(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v0
 
-    if-eqz v5, :cond_f
+    if-eqz v0, :cond_f
 
     .line 137
-    .end local v1    # "handler":Lcom/facebook/internal/FacebookDialogBase$ModeHandler;, "Lcom/facebook/internal/FacebookDialogBase<TCONTENT;TRESULT;>.ModeHandler;"
     :goto_2d
     return v2
 
-    .end local v0    # "anyModeAllowed":Z
     :cond_2e
-    move v0, v3
+    move v1, v3
 
     .line 126
     goto :goto_7
 
-    .restart local v0    # "anyModeAllowed":Z
     :cond_30
     move v2, v3
 
@@ -430,7 +402,6 @@
 
     .prologue
     .line 165
-    .local p0, "this":Lcom/facebook/internal/FacebookDialogBase;, "Lcom/facebook/internal/FacebookDialogBase<TCONTENT;TRESULT;>;"
     iget-object v0, p0, Lcom/facebook/internal/FacebookDialogBase;->activity:Landroid/app/Activity;
 
     if-eqz v0, :cond_7
@@ -483,7 +454,6 @@
 
     .prologue
     .line 116
-    .local p0, "this":Lcom/facebook/internal/FacebookDialogBase;, "Lcom/facebook/internal/FacebookDialogBase<TCONTENT;TRESULT;>;"
     iget v0, p0, Lcom/facebook/internal/FacebookDialogBase;->requestCode:I
 
     return v0
@@ -491,7 +461,6 @@
 
 .method public final registerCallback(Lcom/facebook/CallbackManager;Lcom/facebook/FacebookCallback;)V
     .registers 5
-    .param p1, "callbackManager"    # Lcom/facebook/CallbackManager;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -505,8 +474,6 @@
 
     .prologue
     .line 75
-    .local p0, "this":Lcom/facebook/internal/FacebookDialogBase;, "Lcom/facebook/internal/FacebookDialogBase<TCONTENT;TRESULT;>;"
-    .local p2, "callback":Lcom/facebook/FacebookCallback;, "Lcom/facebook/FacebookCallback<TRESULT;>;"
     instance-of v0, p1, Lcom/facebook/internal/CallbackManagerImpl;
 
     if-nez v0, :cond_d
@@ -524,7 +491,6 @@
     :cond_d
     check-cast p1, Lcom/facebook/internal/CallbackManagerImpl;
 
-    .end local p1    # "callbackManager":Lcom/facebook/CallbackManager;
     invoke-virtual {p0, p1, p2}, Lcom/facebook/internal/FacebookDialogBase;->registerCallbackImpl(Lcom/facebook/internal/CallbackManagerImpl;Lcom/facebook/FacebookCallback;)V
 
     .line 80
@@ -533,8 +499,6 @@
 
 .method public final registerCallback(Lcom/facebook/CallbackManager;Lcom/facebook/FacebookCallback;I)V
     .registers 4
-    .param p1, "callbackManager"    # Lcom/facebook/CallbackManager;
-    .param p3, "requestCode"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -548,8 +512,6 @@
 
     .prologue
     .line 87
-    .local p0, "this":Lcom/facebook/internal/FacebookDialogBase;, "Lcom/facebook/internal/FacebookDialogBase<TCONTENT;TRESULT;>;"
-    .local p2, "callback":Lcom/facebook/FacebookCallback;, "Lcom/facebook/FacebookCallback<TRESULT;>;"
     invoke-virtual {p0, p3}, Lcom/facebook/internal/FacebookDialogBase;->setRequestCode(I)V
 
     .line 88
@@ -574,11 +536,9 @@
 
 .method protected setRequestCode(I)V
     .registers 5
-    .param p1, "requestCode"    # I
 
     .prologue
     .line 103
-    .local p0, "this":Lcom/facebook/internal/FacebookDialogBase;, "Lcom/facebook/internal/FacebookDialogBase<TCONTENT;TRESULT;>;"
     invoke-static {p1}, Lcom/facebook/FacebookSdk;->isFacebookRequestCode(I)Z
 
     move-result v0
@@ -634,8 +594,6 @@
 
     .prologue
     .line 142
-    .local p0, "this":Lcom/facebook/internal/FacebookDialogBase;, "Lcom/facebook/internal/FacebookDialogBase<TCONTENT;TRESULT;>;"
-    .local p1, "content":Ljava/lang/Object;, "TCONTENT;"
     sget-object v0, Lcom/facebook/internal/FacebookDialogBase;->BASE_AUTOMATIC_MODE:Ljava/lang/Object;
 
     invoke-virtual {p0, p1, v0}, Lcom/facebook/internal/FacebookDialogBase;->showImpl(Ljava/lang/Object;Ljava/lang/Object;)V
@@ -645,8 +603,7 @@
 .end method
 
 .method protected showImpl(Ljava/lang/Object;Ljava/lang/Object;)V
-    .registers 6
-    .param p2, "mode"    # Ljava/lang/Object;
+    .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TCONTENT;",
@@ -657,25 +614,22 @@
 
     .prologue
     .line 147
-    .local p0, "this":Lcom/facebook/internal/FacebookDialogBase;, "Lcom/facebook/internal/FacebookDialogBase<TCONTENT;TRESULT;>;"
-    .local p1, "content":Ljava/lang/Object;, "TCONTENT;"
     invoke-direct {p0, p1, p2}, Lcom/facebook/internal/FacebookDialogBase;->createAppCallForMode(Ljava/lang/Object;Ljava/lang/Object;)Lcom/facebook/internal/AppCall;
 
     move-result-object v0
 
     .line 148
-    .local v0, "appCall":Lcom/facebook/internal/AppCall;
     if-eqz v0, :cond_16
 
     .line 149
-    iget-object v2, p0, Lcom/facebook/internal/FacebookDialogBase;->fragment:Landroid/support/v4/app/Fragment;
+    iget-object v1, p0, Lcom/facebook/internal/FacebookDialogBase;->fragment:Landroid/support/v4/app/Fragment;
 
-    if-eqz v2, :cond_10
+    if-eqz v1, :cond_10
 
     .line 150
-    iget-object v2, p0, Lcom/facebook/internal/FacebookDialogBase;->fragment:Landroid/support/v4/app/Fragment;
+    iget-object v1, p0, Lcom/facebook/internal/FacebookDialogBase;->fragment:Landroid/support/v4/app/Fragment;
 
-    invoke-static {v0, v2}, Lcom/facebook/internal/DialogPresenter;->present(Lcom/facebook/internal/AppCall;Landroid/support/v4/app/Fragment;)V
+    invoke-static {v0, v1}, Lcom/facebook/internal/DialogPresenter;->present(Lcom/facebook/internal/AppCall;Landroid/support/v4/app/Fragment;)V
 
     .line 162
     :cond_f
@@ -684,33 +638,32 @@
 
     .line 152
     :cond_10
-    iget-object v2, p0, Lcom/facebook/internal/FacebookDialogBase;->activity:Landroid/app/Activity;
+    iget-object v1, p0, Lcom/facebook/internal/FacebookDialogBase;->activity:Landroid/app/Activity;
 
-    invoke-static {v0, v2}, Lcom/facebook/internal/DialogPresenter;->present(Lcom/facebook/internal/AppCall;Landroid/app/Activity;)V
+    invoke-static {v0, v1}, Lcom/facebook/internal/DialogPresenter;->present(Lcom/facebook/internal/AppCall;Landroid/app/Activity;)V
 
     goto :goto_f
 
     .line 156
     :cond_16
-    const-string/jumbo v1, "No code path should ever result in a null appCall"
+    const-string/jumbo v0, "No code path should ever result in a null appCall"
 
     .line 157
-    .local v1, "errorMessage":Ljava/lang/String;
-    const-string/jumbo v2, "FacebookDialog"
+    const-string/jumbo v1, "FacebookDialog"
 
-    invoke-static {v2, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 158
     invoke-static {}, Lcom/facebook/FacebookSdk;->isDebugEnabled()Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_f
+    if-eqz v1, :cond_f
 
     .line 159
-    new-instance v2, Ljava/lang/IllegalStateException;
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    invoke-direct {v2, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    throw v2
+    throw v1
 .end method

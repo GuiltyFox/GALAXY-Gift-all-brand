@@ -4,25 +4,13 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 24
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static getCurrVelocity(Ljava/lang/Object;)F
+.method public static a(Ljava/lang/Object;)F
     .registers 2
-    .param p0, "scroller"    # Ljava/lang/Object;
 
     .prologue
     .line 26
     check-cast p0, Landroid/widget/OverScroller;
 
-    .end local p0    # "scroller":Ljava/lang/Object;
     invoke-virtual {p0}, Landroid/widget/OverScroller;->getCurrVelocity()F
 
     move-result v0

@@ -16,21 +16,19 @@
 
 
 # instance fields
-.field private final context:Landroid/content/Context;
+.field private final a:Landroid/content/Context;
 
 
 # direct methods
 .method protected constructor <init>(Landroid/content/Context;)V
     .registers 2
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 26
-    .local p0, "this":Lcom/ogaclejapan/smarttablayout/utils/PagerItems;, "Lcom/ogaclejapan/smarttablayout/utils/PagerItems<TT;>;"
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
     .line 27
-    iput-object p1, p0, Lcom/ogaclejapan/smarttablayout/utils/PagerItems;->context:Landroid/content/Context;
+    iput-object p1, p0, Lcom/ogaclejapan/smarttablayout/utils/PagerItems;->a:Landroid/content/Context;
 
     .line 28
     return-void
@@ -38,13 +36,12 @@
 
 
 # virtual methods
-.method public getContext()Landroid/content/Context;
+.method public a()Landroid/content/Context;
     .registers 2
 
     .prologue
     .line 31
-    .local p0, "this":Lcom/ogaclejapan/smarttablayout/utils/PagerItems;, "Lcom/ogaclejapan/smarttablayout/utils/PagerItems<TT;>;"
-    iget-object v0, p0, Lcom/ogaclejapan/smarttablayout/utils/PagerItems;->context:Landroid/content/Context;
+    iget-object v0, p0, Lcom/ogaclejapan/smarttablayout/utils/PagerItems;->a:Landroid/content/Context;
 
     return-object v0
 .end method

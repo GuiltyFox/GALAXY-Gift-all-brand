@@ -10,10 +10,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;Ljava/lang/String;ZLjava/lang/Class;)V
     .registers 6
-    .param p1, "bt"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p2, "idRes"    # Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;
-    .param p3, "typePropertyName"    # Ljava/lang/String;
-    .param p4, "typeIdVisible"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -28,7 +24,6 @@
 
     .prologue
     .line 25
-    .local p5, "defaultImpl":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct/range {p0 .. p5}, Lcom/fasterxml/jackson/databind/jsontype/impl/AsArrayTypeDeserializer;-><init>(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/jsontype/TypeIdResolver;Ljava/lang/String;ZLjava/lang/Class;)V
 
     .line 26
@@ -37,8 +32,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/jsontype/impl/AsExternalTypeDeserializer;Lcom/fasterxml/jackson/databind/BeanProperty;)V
     .registers 3
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/jsontype/impl/AsExternalTypeDeserializer;
-    .param p2, "property"    # Lcom/fasterxml/jackson/databind/BeanProperty;
 
     .prologue
     .line 29
@@ -52,7 +45,6 @@
 # virtual methods
 .method public forProperty(Lcom/fasterxml/jackson/databind/BeanProperty;)Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
     .registers 3
-    .param p1, "prop"    # Lcom/fasterxml/jackson/databind/BeanProperty;
 
     .prologue
     .line 34
@@ -61,11 +53,9 @@
     if-ne p1, v0, :cond_5
 
     .line 37
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/jsontype/impl/AsExternalTypeDeserializer;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/jsontype/impl/AsExternalTypeDeserializer;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/jsontype/impl/AsExternalTypeDeserializer;
 

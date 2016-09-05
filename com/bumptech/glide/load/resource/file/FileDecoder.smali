@@ -32,11 +32,8 @@
 
 
 # virtual methods
-.method public decode(Ljava/io/File;II)Lcom/bumptech/glide/load/engine/Resource;
+.method public a(Ljava/io/File;II)Lcom/bumptech/glide/load/engine/Resource;
     .registers 5
-    .param p1, "source"    # Ljava/io/File;
-    .param p2, "width"    # I
-    .param p3, "height"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -58,30 +55,21 @@
     return-object v0
 .end method
 
-.method public bridge synthetic decode(Ljava/lang/Object;II)Lcom/bumptech/glide/load/engine/Resource;
+.method public bridge synthetic a(Ljava/lang/Object;II)Lcom/bumptech/glide/load/engine/Resource;
     .registers 5
-    .param p1, "x0"    # Ljava/lang/Object;
-    .param p2, "x1"    # I
-    .param p3, "x2"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 11
     check-cast p1, Ljava/io/File;
 
-    .end local p1    # "x0":Ljava/lang/Object;
-    invoke-virtual {p0, p1, p2, p3}, Lcom/bumptech/glide/load/resource/file/FileDecoder;->decode(Ljava/io/File;II)Lcom/bumptech/glide/load/engine/Resource;
+    invoke-virtual {p0, p1, p2, p3}, Lcom/bumptech/glide/load/resource/file/FileDecoder;->a(Ljava/io/File;II)Lcom/bumptech/glide/load/engine/Resource;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public getId()Ljava/lang/String;
+.method public a()Ljava/lang/String;
     .registers 2
 
     .prologue

@@ -4,35 +4,116 @@
 
 
 # direct methods
-.method private constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 113
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method static getEnd(Landroid/view/View;)I
+.method static a(Landroid/view/View;)I
     .registers 2
-    .param p0, "v"    # Landroid/view/View;
 
     .prologue
-    .line 50
+    .line 27
+    if-nez p0, :cond_4
+
     const/4 v0, 0x0
 
-    invoke-static {p0, v0}, Lcom/ogaclejapan/smarttablayout/Utils;->getEnd(Landroid/view/View;Z)I
+    :goto_3
+    return v0
+
+    :cond_4
+    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
 
-    return v0
+    goto :goto_3
 .end method
 
-.method static getEnd(Landroid/view/View;Z)I
+.method static a(Landroid/view/View;Z)I
     .registers 4
-    .param p0, "v"    # Landroid/view/View;
-    .param p1, "withoutPadding"    # Z
+
+    .prologue
+    .line 39
+    if-nez p0, :cond_4
+
+    .line 40
+    const/4 v0, 0x0
+
+    .line 45
+    :goto_3
+    return v0
+
+    .line 42
+    :cond_4
+    invoke-static {p0}, Lcom/ogaclejapan/smarttablayout/Utils;->k(Landroid/view/View;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1b
+
+    .line 43
+    if-eqz p1, :cond_16
+
+    invoke-virtual {p0}, Landroid/view/View;->getRight()I
+
+    move-result v0
+
+    invoke-static {p0}, Lcom/ogaclejapan/smarttablayout/Utils;->e(Landroid/view/View;)I
+
+    move-result v1
+
+    sub-int/2addr v0, v1
+
+    goto :goto_3
+
+    :cond_16
+    invoke-virtual {p0}, Landroid/view/View;->getRight()I
+
+    move-result v0
+
+    goto :goto_3
+
+    .line 45
+    :cond_1b
+    if-eqz p1, :cond_27
+
+    invoke-virtual {p0}, Landroid/view/View;->getLeft()I
+
+    move-result v0
+
+    invoke-static {p0}, Lcom/ogaclejapan/smarttablayout/Utils;->e(Landroid/view/View;)I
+
+    move-result v1
+
+    add-int/2addr v0, v1
+
+    goto :goto_3
+
+    :cond_27
+    invoke-virtual {p0}, Landroid/view/View;->getLeft()I
+
+    move-result v0
+
+    goto :goto_3
+.end method
+
+.method static b(Landroid/view/View;)I
+    .registers 2
+
+    .prologue
+    .line 31
+    if-nez p0, :cond_4
+
+    const/4 v0, 0x0
+
+    :goto_3
+    return v0
+
+    :cond_4
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+
+    move-result v0
+
+    goto :goto_3
+.end method
+
+.method static b(Landroid/view/View;Z)I
+    .registers 4
 
     .prologue
     .line 54
@@ -47,7 +128,7 @@
 
     .line 57
     :cond_4
-    invoke-static {p0}, Lcom/ogaclejapan/smarttablayout/Utils;->isLayoutRtl(Landroid/view/View;)Z
+    invoke-static {p0}, Lcom/ogaclejapan/smarttablayout/Utils;->k(Landroid/view/View;)Z
 
     move-result v0
 
@@ -60,7 +141,7 @@
 
     move-result v0
 
-    invoke-static {p0}, Lcom/ogaclejapan/smarttablayout/Utils;->getPaddingEnd(Landroid/view/View;)I
+    invoke-static {p0}, Lcom/ogaclejapan/smarttablayout/Utils;->f(Landroid/view/View;)I
 
     move-result v1
 
@@ -83,7 +164,7 @@
 
     move-result v0
 
-    invoke-static {p0}, Lcom/ogaclejapan/smarttablayout/Utils;->getPaddingEnd(Landroid/view/View;)I
+    invoke-static {p0}, Lcom/ogaclejapan/smarttablayout/Utils;->f(Landroid/view/View;)I
 
     move-result v1
 
@@ -99,132 +180,58 @@
     goto :goto_3
 .end method
 
-.method static getMarginEnd(Landroid/view/View;)I
-    .registers 3
-    .param p0, "v"    # Landroid/view/View;
-
-    .prologue
-    .line 94
-    if-nez p0, :cond_4
-
-    .line 95
-    const/4 v1, 0x0
-
-    .line 98
-    :goto_3
-    return v1
-
-    .line 97
-    :cond_4
-    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
-
-    .line 98
-    .local v0, "lp":Landroid/view/ViewGroup$MarginLayoutParams;
-    invoke-static {v0}, Landroid/support/v4/view/MarginLayoutParamsCompat;->getMarginEnd(Landroid/view/ViewGroup$MarginLayoutParams;)I
-
-    move-result v1
-
-    goto :goto_3
-.end method
-
-.method static getMarginHorizontally(Landroid/view/View;)I
-    .registers 4
-    .param p0, "v"    # Landroid/view/View;
-
-    .prologue
-    .line 102
-    if-nez p0, :cond_4
-
-    .line 103
-    const/4 v1, 0x0
-
-    .line 106
-    :goto_3
-    return v1
-
-    .line 105
-    :cond_4
-    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
-
-    .line 106
-    .local v0, "lp":Landroid/view/ViewGroup$MarginLayoutParams;
-    invoke-static {v0}, Landroid/support/v4/view/MarginLayoutParamsCompat;->getMarginStart(Landroid/view/ViewGroup$MarginLayoutParams;)I
-
-    move-result v1
-
-    invoke-static {v0}, Landroid/support/v4/view/MarginLayoutParamsCompat;->getMarginEnd(Landroid/view/ViewGroup$MarginLayoutParams;)I
-
-    move-result v2
-
-    add-int/2addr v1, v2
-
-    goto :goto_3
-.end method
-
-.method static getMarginStart(Landroid/view/View;)I
-    .registers 3
-    .param p0, "v"    # Landroid/view/View;
-
-    .prologue
-    .line 86
-    if-nez p0, :cond_4
-
-    .line 87
-    const/4 v1, 0x0
-
-    .line 90
-    :goto_3
-    return v1
-
-    .line 89
-    :cond_4
-    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
-
-    .line 90
-    .local v0, "lp":Landroid/view/ViewGroup$MarginLayoutParams;
-    invoke-static {v0}, Landroid/support/v4/view/MarginLayoutParamsCompat;->getMarginStart(Landroid/view/ViewGroup$MarginLayoutParams;)I
-
-    move-result v1
-
-    goto :goto_3
-.end method
-
-.method static getMeasuredWidth(Landroid/view/View;)I
+.method static c(Landroid/view/View;)I
     .registers 2
-    .param p0, "v"    # Landroid/view/View;
 
     .prologue
-    .line 27
-    if-nez p0, :cond_4
-
+    .line 35
     const/4 v0, 0x0
 
+    invoke-static {p0, v0}, Lcom/ogaclejapan/smarttablayout/Utils;->a(Landroid/view/View;Z)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static d(Landroid/view/View;)I
+    .registers 2
+
+    .prologue
+    .line 50
+    const/4 v0, 0x0
+
+    invoke-static {p0, v0}, Lcom/ogaclejapan/smarttablayout/Utils;->b(Landroid/view/View;Z)I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method static e(Landroid/view/View;)I
+    .registers 2
+
+    .prologue
+    .line 65
+    if-nez p0, :cond_4
+
+    .line 66
+    const/4 v0, 0x0
+
+    .line 68
     :goto_3
     return v0
 
     :cond_4
-    invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
+    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->l(Landroid/view/View;)I
 
     move-result v0
 
     goto :goto_3
 .end method
 
-.method static getPaddingEnd(Landroid/view/View;)I
+.method static f(Landroid/view/View;)I
     .registers 2
-    .param p0, "v"    # Landroid/view/View;
 
     .prologue
     .line 72
@@ -238,16 +245,15 @@
     return v0
 
     :cond_4
-    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->getPaddingEnd(Landroid/view/View;)I
+    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->m(Landroid/view/View;)I
 
     move-result v0
 
     goto :goto_3
 .end method
 
-.method static getPaddingHorizontally(Landroid/view/View;)I
+.method static g(Landroid/view/View;)I
     .registers 3
-    .param p0, "v"    # Landroid/view/View;
 
     .prologue
     .line 79
@@ -274,144 +280,110 @@
     goto :goto_3
 .end method
 
-.method static getPaddingStart(Landroid/view/View;)I
+.method static h(Landroid/view/View;)I
     .registers 2
-    .param p0, "v"    # Landroid/view/View;
 
     .prologue
-    .line 65
+    .line 86
     if-nez p0, :cond_4
 
-    .line 66
+    .line 87
     const/4 v0, 0x0
 
-    .line 68
+    .line 90
     :goto_3
     return v0
 
+    .line 89
     :cond_4
-    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->getPaddingStart(Landroid/view/View;)I
+    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
+
+    .line 90
+    invoke-static {v0}, Landroid/support/v4/view/MarginLayoutParamsCompat;->a(Landroid/view/ViewGroup$MarginLayoutParams;)I
 
     move-result v0
 
     goto :goto_3
 .end method
 
-.method static getStart(Landroid/view/View;)I
+.method static i(Landroid/view/View;)I
     .registers 2
-    .param p0, "v"    # Landroid/view/View;
 
     .prologue
-    .line 35
-    const/4 v0, 0x0
-
-    invoke-static {p0, v0}, Lcom/ogaclejapan/smarttablayout/Utils;->getStart(Landroid/view/View;Z)I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method static getStart(Landroid/view/View;Z)I
-    .registers 4
-    .param p0, "v"    # Landroid/view/View;
-    .param p1, "withoutPadding"    # Z
-
-    .prologue
-    .line 39
+    .line 94
     if-nez p0, :cond_4
 
-    .line 40
+    .line 95
     const/4 v0, 0x0
 
-    .line 45
+    .line 98
     :goto_3
     return v0
 
-    .line 42
+    .line 97
     :cond_4
-    invoke-static {p0}, Lcom/ogaclejapan/smarttablayout/Utils;->isLayoutRtl(Landroid/view/View;)Z
+    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result v0
+    move-result-object v0
 
-    if-eqz v0, :cond_1b
+    check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .line 43
-    if-eqz p1, :cond_16
-
-    invoke-virtual {p0}, Landroid/view/View;->getRight()I
-
-    move-result v0
-
-    invoke-static {p0}, Lcom/ogaclejapan/smarttablayout/Utils;->getPaddingStart(Landroid/view/View;)I
-
-    move-result v1
-
-    sub-int/2addr v0, v1
-
-    goto :goto_3
-
-    :cond_16
-    invoke-virtual {p0}, Landroid/view/View;->getRight()I
+    .line 98
+    invoke-static {v0}, Landroid/support/v4/view/MarginLayoutParamsCompat;->b(Landroid/view/ViewGroup$MarginLayoutParams;)I
 
     move-result v0
 
     goto :goto_3
+.end method
 
-    .line 45
-    :cond_1b
-    if-eqz p1, :cond_27
+.method static j(Landroid/view/View;)I
+    .registers 3
 
-    invoke-virtual {p0}, Landroid/view/View;->getLeft()I
+    .prologue
+    .line 102
+    if-nez p0, :cond_4
 
-    move-result v0
+    .line 103
+    const/4 v0, 0x0
 
-    invoke-static {p0}, Lcom/ogaclejapan/smarttablayout/Utils;->getPaddingStart(Landroid/view/View;)I
+    .line 106
+    :goto_3
+    return v0
+
+    .line 105
+    :cond_4
+    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
+
+    .line 106
+    invoke-static {v0}, Landroid/support/v4/view/MarginLayoutParamsCompat;->a(Landroid/view/ViewGroup$MarginLayoutParams;)I
 
     move-result v1
+
+    invoke-static {v0}, Landroid/support/v4/view/MarginLayoutParamsCompat;->b(Landroid/view/ViewGroup$MarginLayoutParams;)I
+
+    move-result v0
 
     add-int/2addr v0, v1
 
     goto :goto_3
-
-    :cond_27
-    invoke-virtual {p0}, Landroid/view/View;->getLeft()I
-
-    move-result v0
-
-    goto :goto_3
 .end method
 
-.method static getWidth(Landroid/view/View;)I
-    .registers 2
-    .param p0, "v"    # Landroid/view/View;
-
-    .prologue
-    .line 31
-    if-nez p0, :cond_4
-
-    const/4 v0, 0x0
-
-    :goto_3
-    return v0
-
-    :cond_4
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
-
-    move-result v0
-
-    goto :goto_3
-.end method
-
-.method static isLayoutRtl(Landroid/view/View;)Z
+.method static k(Landroid/view/View;)Z
     .registers 3
-    .param p0, "v"    # Landroid/view/View;
 
     .prologue
     const/4 v0, 0x1
 
     .line 110
-    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->getLayoutDirection(Landroid/view/View;)I
+    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->h(Landroid/view/View;)I
 
     move-result v1
 

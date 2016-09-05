@@ -16,7 +16,7 @@
 
 
 # static fields
-.field protected static final C_INDEX_OFFSET:J
+.field protected static final e:J
 
 
 # instance fields
@@ -33,22 +33,20 @@
 
     const-string/jumbo v1, "consumerIndex"
 
-    invoke-static {v0, v1}, Lrx/internal/util/unsafe/UnsafeAccess;->addressOf(Ljava/lang/Class;Ljava/lang/String;)J
+    invoke-static {v0, v1}, Lrx/internal/util/unsafe/UnsafeAccess;->a(Ljava/lang/Class;Ljava/lang/String;)J
 
     move-result-wide v0
 
-    sput-wide v0, Lrx/internal/util/unsafe/SpscArrayQueueConsumerField;->C_INDEX_OFFSET:J
+    sput-wide v0, Lrx/internal/util/unsafe/SpscArrayQueueConsumerField;->e:J
 
     return-void
 .end method
 
 .method public constructor <init>(I)V
     .registers 2
-    .param p1, "capacity"    # I
 
     .prologue
     .line 61
-    .local p0, "this":Lrx/internal/util/unsafe/SpscArrayQueueConsumerField;, "Lrx/internal/util/unsafe/SpscArrayQueueConsumerField<TE;>;"
     invoke-direct {p0, p1}, Lrx/internal/util/unsafe/SpscArrayQueueL2Pad;-><init>(I)V
 
     .line 62

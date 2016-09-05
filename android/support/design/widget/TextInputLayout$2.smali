@@ -8,11 +8,6 @@
     value = Landroid/support/design/widget/TextInputLayout;->setError(Ljava/lang/CharSequence;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Landroid/support/design/widget/TextInputLayout;
@@ -35,7 +30,6 @@
 # virtual methods
 .method public onAnimationStart(Landroid/view/View;)V
     .registers 3
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 569

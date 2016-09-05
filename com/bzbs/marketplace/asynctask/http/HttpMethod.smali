@@ -15,17 +15,17 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
+.field public static final enum a:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
-.field public static final enum DELETE:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
+.field public static final enum b:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
-.field public static final enum GET:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
+.field public static final enum c:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
-.field public static final enum POST:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
+.field public static final enum d:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
-.field public static final enum POST_IMAGE:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
+.field public static final enum e:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
-.field public static final enum PUT:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
+.field private static final synthetic f:[Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
 
 # direct methods
@@ -50,7 +50,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->GET:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
+    sput-object v0, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->a:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
     .line 8
     new-instance v0, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
@@ -59,7 +59,7 @@
 
     invoke-direct {v0, v1, v3}, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->POST:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
+    sput-object v0, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->b:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
     .line 9
     new-instance v0, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
@@ -68,7 +68,7 @@
 
     invoke-direct {v0, v1, v4}, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->DELETE:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
+    sput-object v0, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->c:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
     .line 10
     new-instance v0, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
@@ -77,7 +77,7 @@
 
     invoke-direct {v0, v1, v5}, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->PUT:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
+    sput-object v0, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->d:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
     .line 11
     new-instance v0, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
@@ -86,34 +86,34 @@
 
     invoke-direct {v0, v1, v6}, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->POST_IMAGE:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
+    sput-object v0, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->e:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
     .line 6
     const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
-    sget-object v1, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->GET:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
+    sget-object v1, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->a:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->POST:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
+    sget-object v1, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->b:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->DELETE:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
+    sget-object v1, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->c:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->PUT:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
+    sget-object v1, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->d:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->POST_IMAGE:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
+    sget-object v1, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->e:Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
     aput-object v1, v0, v6
 
-    sput-object v0, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->$VALUES:[Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
+    sput-object v0, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->f:[Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
     return-void
 .end method
@@ -135,7 +135,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 6
@@ -155,7 +154,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->$VALUES:[Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
+    sget-object v0, Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->f:[Lcom/bzbs/marketplace/asynctask/http/HttpMethod;
 
     invoke-virtual {v0}, [Lcom/bzbs/marketplace/asynctask/http/HttpMethod;->clone()Ljava/lang/Object;
 

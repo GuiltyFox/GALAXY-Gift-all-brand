@@ -3,17 +3,6 @@
 .source "FloatingActionButtonEclairMr1.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/FloatingActionButtonEclairMr1;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x402
-    name = "BaseShadowAnimation"
-.end annotation
-
-
 # instance fields
 .field private mShadowSizeDiff:F
 
@@ -37,8 +26,6 @@
 
 .method synthetic constructor <init>(Landroid/support/design/widget/FloatingActionButtonEclairMr1;Landroid/support/design/widget/FloatingActionButtonEclairMr1$1;)V
     .registers 3
-    .param p1, "x0"    # Landroid/support/design/widget/FloatingActionButtonEclairMr1;
-    .param p2, "x1"    # Landroid/support/design/widget/FloatingActionButtonEclairMr1$1;
 
     .prologue
     .line 230
@@ -51,8 +38,6 @@
 # virtual methods
 .method protected applyTransformation(FLandroid/view/animation/Transformation;)V
     .registers 6
-    .param p1, "interpolatedTime"    # F
-    .param p2, "t"    # Landroid/view/animation/Transformation;
 
     .prologue
     .line 244

@@ -4,19 +4,8 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 24
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static getScaledPagingTouchSlop(Landroid/view/ViewConfiguration;)I
+.method public static a(Landroid/view/ViewConfiguration;)I
     .registers 2
-    .param p0, "config"    # Landroid/view/ViewConfiguration;
 
     .prologue
     .line 26

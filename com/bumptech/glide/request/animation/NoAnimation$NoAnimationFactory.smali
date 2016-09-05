@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/request/animation/NoAnimation;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "NoAnimationFactory"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<R:",
@@ -34,7 +25,6 @@
 
     .prologue
     .line 16
-    .local p0, "this":Lcom/bumptech/glide/request/animation/NoAnimation$NoAnimationFactory;, "Lcom/bumptech/glide/request/animation/NoAnimation$NoAnimationFactory<TR;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -42,10 +32,8 @@
 
 
 # virtual methods
-.method public build(ZZ)Lcom/bumptech/glide/request/animation/GlideAnimation;
+.method public a(ZZ)Lcom/bumptech/glide/request/animation/GlideAnimation;
     .registers 4
-    .param p1, "isFromMemoryCache"    # Z
-    .param p2, "isFirstResource"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(ZZ)",
@@ -56,9 +44,7 @@
 
     .prologue
     .line 20
-    .local p0, "this":Lcom/bumptech/glide/request/animation/NoAnimation$NoAnimationFactory;, "Lcom/bumptech/glide/request/animation/NoAnimation$NoAnimationFactory<TR;>;"
-    # getter for: Lcom/bumptech/glide/request/animation/NoAnimation;->NO_ANIMATION:Lcom/bumptech/glide/request/animation/NoAnimation;
-    invoke-static {}, Lcom/bumptech/glide/request/animation/NoAnimation;->access$000()Lcom/bumptech/glide/request/animation/NoAnimation;
+    invoke-static {}, Lcom/bumptech/glide/request/animation/NoAnimation;->c()Lcom/bumptech/glide/request/animation/NoAnimation;
 
     move-result-object v0
 

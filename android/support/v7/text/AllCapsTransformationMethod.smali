@@ -7,13 +7,12 @@
 
 
 # instance fields
-.field private mLocale:Ljava/util/Locale;
+.field private a:Ljava/util/Locale;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 32
@@ -30,7 +29,7 @@
 
     iget-object v0, v0, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
-    iput-object v0, p0, Landroid/support/v7/text/AllCapsTransformationMethod;->mLocale:Ljava/util/Locale;
+    iput-object v0, p0, Landroid/support/v7/text/AllCapsTransformationMethod;->a:Ljava/util/Locale;
 
     .line 34
     return-void
@@ -40,8 +39,6 @@
 # virtual methods
 .method public getTransformation(Ljava/lang/CharSequence;Landroid/view/View;)Ljava/lang/CharSequence;
     .registers 5
-    .param p1, "source"    # Ljava/lang/CharSequence;
-    .param p2, "view"    # Landroid/view/View;
 
     .prologue
     .line 38
@@ -51,7 +48,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Landroid/support/v7/text/AllCapsTransformationMethod;->mLocale:Ljava/util/Locale;
+    iget-object v1, p0, Landroid/support/v7/text/AllCapsTransformationMethod;->a:Ljava/util/Locale;
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
 
@@ -68,11 +65,6 @@
 
 .method public onFocusChanged(Landroid/view/View;Ljava/lang/CharSequence;ZILandroid/graphics/Rect;)V
     .registers 6
-    .param p1, "view"    # Landroid/view/View;
-    .param p2, "sourceText"    # Ljava/lang/CharSequence;
-    .param p3, "focused"    # Z
-    .param p4, "direction"    # I
-    .param p5, "previouslyFocusedRect"    # Landroid/graphics/Rect;
 
     .prologue
     .line 44

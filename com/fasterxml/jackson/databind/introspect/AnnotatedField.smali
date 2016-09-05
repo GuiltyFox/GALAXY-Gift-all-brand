@@ -6,14 +6,6 @@
 .implements Ljava/io/Serializable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/introspect/AnnotatedField$Serialization;
-    }
-.end annotation
-
-
 # static fields
 .field private static final serialVersionUID:J = 0x6633b4850c53b6dfL
 
@@ -27,7 +19,6 @@
 # direct methods
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/introspect/AnnotatedField$Serialization;)V
     .registers 3
-    .param p1, "ser"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedField$Serialization;
 
     .prologue
     const/4 v0, 0x0
@@ -47,8 +38,6 @@
 
 .method public constructor <init>(Ljava/lang/reflect/Field;Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;)V
     .registers 3
-    .param p1, "field"    # Ljava/lang/reflect/Field;
-    .param p2, "annMap"    # Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
     .prologue
     .line 41
@@ -99,7 +88,6 @@
 
     .prologue
     .line 78
-    .local p1, "acls":Ljava/lang/Class;, "Ljava/lang/Class<TA;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;->_annotations:Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
     if-nez v0, :cond_6
@@ -271,32 +259,25 @@
 
 .method public getValue(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 6
-    .param p1, "pojo"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/IllegalArgumentException;
-        }
-    .end annotation
 
     .prologue
     .line 118
     :try_start_0
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;->_field:Ljava/lang/reflect/Field;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;->_field:Ljava/lang/reflect/Field;
 
-    invoke-virtual {v1, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_5
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_5} :catch_7
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     .line 119
     :catch_7
     move-exception v0
 
     .line 120
-    .local v0, "e":Ljava/lang/IllegalAccessException;
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -341,114 +322,103 @@
 .end method
 
 .method readResolve()Ljava/lang/Object;
-    .registers 7
+    .registers 5
 
     .prologue
     .line 154
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;->_serialization:Lcom/fasterxml/jackson/databind/introspect/AnnotatedField$Serialization;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;->_serialization:Lcom/fasterxml/jackson/databind/introspect/AnnotatedField$Serialization;
 
-    iget-object v0, v3, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField$Serialization;->clazz:Ljava/lang/Class;
+    iget-object v0, v0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField$Serialization;->clazz:Ljava/lang/Class;
 
     .line 156
-    .local v0, "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :try_start_4
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;->_serialization:Lcom/fasterxml/jackson/databind/introspect/AnnotatedField$Serialization;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;->_serialization:Lcom/fasterxml/jackson/databind/introspect/AnnotatedField$Serialization;
 
-    iget-object v3, v3, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField$Serialization;->name:Ljava/lang/String;
+    iget-object v1, v1, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField$Serialization;->name:Ljava/lang/String;
 
-    invoke-virtual {v0, v3}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 158
-    .local v2, "f":Ljava/lang/reflect/Field;
-    invoke-virtual {v2}, Ljava/lang/reflect/Field;->isAccessible()Z
+    invoke-virtual {v1}, Ljava/lang/reflect/Field;->isAccessible()Z
 
-    move-result v3
+    move-result v2
 
-    if-nez v3, :cond_15
+    if-nez v2, :cond_15
 
     .line 159
-    invoke-static {v2}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->checkAndFixAccess(Ljava/lang/reflect/Member;)V
+    invoke-static {v1}, Lcom/fasterxml/jackson/databind/util/ClassUtil;->checkAndFixAccess(Ljava/lang/reflect/Member;)V
 
     .line 161
     :cond_15
-    new-instance v3, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;
+    new-instance v2, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    invoke-direct {v3, v2, v4}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;-><init>(Ljava/lang/reflect/Field;Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;)V
+    invoke-direct {v2, v1, v3}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;-><init>(Ljava/lang/reflect/Field;Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;)V
     :try_end_1b
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_1b} :catch_1c
 
-    return-object v3
+    return-object v2
 
     .line 162
-    .end local v2    # "f":Ljava/lang/reflect/Field;
     :catch_1c
     move-exception v1
 
     .line 163
-    .local v1, "e":Ljava/lang/Exception;
-    new-instance v3, Ljava/lang/IllegalArgumentException;
+    new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "Could not find method \'"
+    const-string/jumbo v3, "Could not find method \'"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    iget-object v5, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;->_serialization:Lcom/fasterxml/jackson/databind/introspect/AnnotatedField$Serialization;
+    iget-object v3, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;->_serialization:Lcom/fasterxml/jackson/databind/introspect/AnnotatedField$Serialization;
 
-    iget-object v5, v5, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField$Serialization;->name:Ljava/lang/String;
+    iget-object v3, v3, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField$Serialization;->name:Ljava/lang/String;
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    const-string/jumbo v5, "\' from Class \'"
+    const-string/jumbo v3, "\' from Class \'"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v1
 .end method
 
 .method public setValue(Ljava/lang/Object;Ljava/lang/Object;)V
     .registers 7
-    .param p1, "pojo"    # Ljava/lang/Object;
-    .param p2, "value"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/IllegalArgumentException;
-        }
-    .end annotation
 
     .prologue
     .line 107
     :try_start_0
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;->_field:Ljava/lang/reflect/Field;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;->_field:Ljava/lang/reflect/Field;
 
-    invoke-virtual {v1, p1, p2}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {v0, p1, p2}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
     :try_end_5
     .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_5} :catch_6
 
@@ -460,7 +430,6 @@
     move-exception v0
 
     .line 109
-    .local v0, "e":Ljava/lang/IllegalAccessException;
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -542,7 +511,6 @@
 
 .method public bridge synthetic withAnnotations(Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;)Lcom/fasterxml/jackson/databind/introspect/Annotated;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
     .prologue
     .line 14
@@ -555,7 +523,6 @@
 
 .method public withAnnotations(Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedField;
     .registers 4
-    .param p1, "ann"    # Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
     .prologue
     .line 47

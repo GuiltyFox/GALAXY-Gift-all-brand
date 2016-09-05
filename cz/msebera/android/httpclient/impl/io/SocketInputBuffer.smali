@@ -7,189 +7,165 @@
 
 
 # annotations
-.annotation build Lcz/msebera/android/httpclient/annotation/NotThreadSafe;
-.end annotation
-
 .annotation runtime Ljava/lang/Deprecated;
 .end annotation
 
 
 # instance fields
-.field private eof:Z
+.field private final a:Ljava/net/Socket;
 
-.field private final socket:Ljava/net/Socket;
+.field private b:Z
 
 
 # direct methods
 .method public constructor <init>(Ljava/net/Socket;ILcz/msebera/android/httpclient/params/HttpParams;)V
     .registers 6
-    .param p1, "socket"    # Ljava/net/Socket;
-    .param p2, "buffersize"    # I
-    .param p3, "params"    # Lcz/msebera/android/httpclient/params/HttpParams;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
+    const/16 v0, 0x400
+
     .line 68
     invoke-direct {p0}, Lcz/msebera/android/httpclient/impl/io/AbstractSessionInputBuffer;-><init>()V
 
     .line 69
     const-string/jumbo v1, "Socket"
 
-    invoke-static {p1, v1}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v1}, Lcz/msebera/android/httpclient/util/Args;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 70
-    iput-object p1, p0, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->socket:Ljava/net/Socket;
+    iput-object p1, p0, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->a:Ljava/net/Socket;
 
     .line 71
     const/4 v1, 0x0
 
-    iput-boolean v1, p0, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->eof:Z
-
-    .line 72
-    move v0, p2
+    iput-boolean v1, p0, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->b:Z
 
     .line 73
-    .local v0, "n":I
-    if-gez v0, :cond_15
+    if-gez p2, :cond_22
 
     .line 74
     invoke-virtual {p1}, Ljava/net/Socket;->getReceiveBufferSize()I
 
-    move-result v0
+    move-result v1
 
     .line 76
-    :cond_15
-    const/16 v1, 0x400
-
-    if-ge v0, v1, :cond_1b
-
-    .line 77
-    const/16 v0, 0x400
+    :goto_16
+    if-ge v1, v0, :cond_20
 
     .line 79
-    :cond_1b
+    :goto_18
     invoke-virtual {p1}, Ljava/net/Socket;->getInputStream()Ljava/io/InputStream;
 
     move-result-object v1
 
-    invoke-virtual {p0, v1, v0, p3}, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->init(Ljava/io/InputStream;ILcz/msebera/android/httpclient/params/HttpParams;)V
+    invoke-virtual {p0, v1, v0, p3}, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->a(Ljava/io/InputStream;ILcz/msebera/android/httpclient/params/HttpParams;)V
 
     .line 80
     return-void
+
+    :cond_20
+    move v0, v1
+
+    goto :goto_18
+
+    :cond_22
+    move v1, p2
+
+    goto :goto_16
 .end method
 
 
 # virtual methods
-.method protected fillBuffer()I
-    .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .prologue
-    .line 84
-    invoke-super {p0}, Lcz/msebera/android/httpclient/impl/io/AbstractSessionInputBuffer;->fillBuffer()I
-
-    move-result v0
-
-    .line 85
-    .local v0, "i":I
-    const/4 v1, -0x1
-
-    if-ne v0, v1, :cond_b
-
-    const/4 v1, 0x1
-
-    :goto_8
-    iput-boolean v1, p0, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->eof:Z
-
-    .line 86
-    return v0
-
-    .line 85
-    :cond_b
-    const/4 v1, 0x0
-
-    goto :goto_8
-.end method
-
-.method public isDataAvailable(I)Z
-    .registers 6
-    .param p1, "timeout"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+.method public a(I)Z
+    .registers 5
 
     .prologue
     .line 90
-    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->hasBufferedData()Z
-
-    move-result v1
-
-    .line 91
-    .local v1, "result":Z
-    if-nez v1, :cond_1d
-
-    .line 92
-    iget-object v2, p0, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->socket:Ljava/net/Socket;
-
-    invoke-virtual {v2}, Ljava/net/Socket;->getSoTimeout()I
+    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->g()Z
 
     move-result v0
 
-    .line 94
-    .local v0, "oldtimeout":I
-    :try_start_c
-    iget-object v2, p0, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->socket:Ljava/net/Socket;
+    .line 91
+    if-nez v0, :cond_1d
 
-    invoke-virtual {v2, p1}, Ljava/net/Socket;->setSoTimeout(I)V
+    .line 92
+    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->a:Ljava/net/Socket;
 
-    .line 95
-    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->fillBuffer()I
-
-    .line 96
-    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->hasBufferedData()Z
-    :try_end_17
-    .catchall {:try_start_c .. :try_end_17} :catchall_1e
+    invoke-virtual {v0}, Ljava/net/Socket;->getSoTimeout()I
 
     move-result v1
 
-    .line 98
-    iget-object v2, p0, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->socket:Ljava/net/Socket;
+    .line 94
+    :try_start_c
+    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->a:Ljava/net/Socket;
 
-    invoke-virtual {v2, v0}, Ljava/net/Socket;->setSoTimeout(I)V
+    invoke-virtual {v0, p1}, Ljava/net/Socket;->setSoTimeout(I)V
+
+    .line 95
+    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->f()I
+
+    .line 96
+    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->g()Z
+    :try_end_17
+    .catchall {:try_start_c .. :try_end_17} :catchall_1e
+
+    move-result v0
+
+    .line 98
+    iget-object v2, p0, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->a:Ljava/net/Socket;
+
+    invoke-virtual {v2, v1}, Ljava/net/Socket;->setSoTimeout(I)V
 
     .line 101
-    .end local v0    # "oldtimeout":I
     :cond_1d
-    return v1
+    return v0
 
     .line 98
-    .restart local v0    # "oldtimeout":I
     :catchall_1e
-    move-exception v2
+    move-exception v0
 
-    iget-object v3, p0, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->socket:Ljava/net/Socket;
+    iget-object v2, p0, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->a:Ljava/net/Socket;
 
-    invoke-virtual {v3, v0}, Ljava/net/Socket;->setSoTimeout(I)V
+    invoke-virtual {v2, v1}, Ljava/net/Socket;->setSoTimeout(I)V
 
-    throw v2
+    throw v0
 .end method
 
-.method public isEof()Z
+.method public c()Z
     .registers 2
 
     .prologue
     .line 105
-    iget-boolean v0, p0, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->eof:Z
+    iget-boolean v0, p0, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->b:Z
 
     return v0
+.end method
+
+.method protected f()I
+    .registers 3
+
+    .prologue
+    .line 84
+    invoke-super {p0}, Lcz/msebera/android/httpclient/impl/io/AbstractSessionInputBuffer;->f()I
+
+    move-result v1
+
+    .line 85
+    const/4 v0, -0x1
+
+    if-ne v1, v0, :cond_b
+
+    const/4 v0, 0x1
+
+    :goto_8
+    iput-boolean v0, p0, Lcz/msebera/android/httpclient/impl/io/SocketInputBuffer;->b:Z
+
+    .line 86
+    return v1
+
+    .line 85
+    :cond_b
+    const/4 v0, 0x0
+
+    goto :goto_8
 .end method

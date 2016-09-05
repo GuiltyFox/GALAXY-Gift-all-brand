@@ -4,13 +4,13 @@
 
 
 # instance fields
-.field public mHasTintList:Z
+.field public a:Landroid/content/res/ColorStateList;
 
-.field public mHasTintMode:Z
+.field public b:Landroid/graphics/PorterDuff$Mode;
 
-.field public mTintList:Landroid/content/res/ColorStateList;
+.field public c:Z
 
-.field public mTintMode:Landroid/graphics/PorterDuff$Mode;
+.field public d:Z
 
 
 # direct methods
@@ -26,7 +26,7 @@
 
 
 # virtual methods
-.method clear()V
+.method a()V
     .registers 3
 
     .prologue
@@ -35,16 +35,16 @@
     const/4 v0, 0x0
 
     .line 29
-    iput-object v1, p0, Landroid/support/v7/widget/TintInfo;->mTintList:Landroid/content/res/ColorStateList;
+    iput-object v1, p0, Landroid/support/v7/widget/TintInfo;->a:Landroid/content/res/ColorStateList;
 
     .line 30
-    iput-boolean v0, p0, Landroid/support/v7/widget/TintInfo;->mHasTintList:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/TintInfo;->d:Z
 
     .line 31
-    iput-object v1, p0, Landroid/support/v7/widget/TintInfo;->mTintMode:Landroid/graphics/PorterDuff$Mode;
+    iput-object v1, p0, Landroid/support/v7/widget/TintInfo;->b:Landroid/graphics/PorterDuff$Mode;
 
     .line 32
-    iput-boolean v0, p0, Landroid/support/v7/widget/TintInfo;->mHasTintMode:Z
+    iput-boolean v0, p0, Landroid/support/v7/widget/TintInfo;->c:Z
 
     .line 33
     return-void

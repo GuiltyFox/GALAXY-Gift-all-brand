@@ -16,9 +16,8 @@
 
 
 # virtual methods
-.method public buildTarget(Landroid/widget/ImageView;Ljava/lang/Class;)Lcom/bumptech/glide/request/target/Target;
+.method public a(Landroid/widget/ImageView;Ljava/lang/Class;)Lcom/bumptech/glide/request/target/Target;
     .registers 6
-    .param p1, "view"    # Landroid/widget/ImageView;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<Z:",
@@ -34,7 +33,6 @@
 
     .prologue
     .line 17
-    .local p2, "clazz":Ljava/lang/Class;, "Ljava/lang/Class<TZ;>;"
     const-class v0, Lcom/bumptech/glide/load/resource/drawable/GlideDrawable;
 
     invoke-virtual {v0, p2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z

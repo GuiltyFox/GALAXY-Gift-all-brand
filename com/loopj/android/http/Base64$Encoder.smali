@@ -3,17 +3,6 @@
 .source "Base64.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/loopj/android/http/Base64;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "Encoder"
-.end annotation
-
-
 # static fields
 .field private static final ENCODE:[B
 
@@ -204,8 +193,6 @@
 
 .method public constructor <init>(I[B)V
     .registers 6
-    .param p1, "flags"    # I
-    .param p2, "output"    # [B
 
     .prologue
     const/4 v1, 0x1
@@ -314,7 +301,6 @@
 # virtual methods
 .method public maxOutputSize(I)I
     .registers 3
-    .param p1, "len"    # I
 
     .prologue
     .line 574
@@ -328,891 +314,733 @@
 .end method
 
 .method public process([BIIZ)Z
-    .registers 19
-    .param p1, "input"    # [B
-    .param p2, "offset"    # I
-    .param p3, "len"    # I
-    .param p4, "finish"    # Z
+    .registers 15
 
     .prologue
     .line 579
-    iget-object v1, p0, Lcom/loopj/android/http/Base64$Encoder;->alphabet:[B
+    iget-object v6, p0, Lcom/loopj/android/http/Base64$Encoder;->alphabet:[B
 
     .line 580
-    .local v1, "alphabet":[B
-    iget-object v5, p0, Lcom/loopj/android/http/Base64$Encoder;->output:[B
+    iget-object v7, p0, Lcom/loopj/android/http/Base64$Encoder;->output:[B
 
     .line 581
-    .local v5, "output":[B
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     .line 582
-    .local v3, "op":I
-    iget v2, p0, Lcom/loopj/android/http/Base64$Encoder;->count:I
-
-    .line 584
-    .local v2, "count":I
-    move/from16 v6, p2
+    iget v0, p0, Lcom/loopj/android/http/Base64$Encoder;->count:I
 
     .line 585
-    .local v6, "p":I
-    add-int p3, p3, p2
+    add-int v8, p3, p2
 
     .line 586
-    const/4 v10, -0x1
+    const/4 v2, -0x1
 
     .line 592
-    .local v10, "v":I
-    iget v11, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
+    iget v3, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
 
-    packed-switch v11, :pswitch_data_232
+    packed-switch v3, :pswitch_data_228
+
+    :cond_f
+    move v3, p2
 
     .line 619
-    :cond_11
-    :goto_11
-    :pswitch_11
-    const/4 v11, -0x1
+    :goto_10
+    const/4 v4, -0x1
 
-    if-eq v10, v11, :cond_22e
+    if-eq v2, v4, :cond_220
 
     .line 620
-    add-int/lit8 v4, v3, 0x1
+    const/4 v4, 0x1
 
-    .end local v3    # "op":I
-    .local v4, "op":I
-    shr-int/lit8 v11, v10, 0x12
+    shr-int/lit8 v5, v2, 0x12
 
-    and-int/lit8 v11, v11, 0x3f
+    and-int/lit8 v5, v5, 0x3f
 
-    aget-byte v11, v1, v11
+    aget-byte v5, v6, v5
 
-    aput-byte v11, v5, v3
+    aput-byte v5, v7, v1
 
     .line 621
-    add-int/lit8 v3, v4, 0x1
+    const/4 v1, 0x2
 
-    .end local v4    # "op":I
-    .restart local v3    # "op":I
-    shr-int/lit8 v11, v10, 0xc
+    shr-int/lit8 v5, v2, 0xc
 
-    and-int/lit8 v11, v11, 0x3f
+    and-int/lit8 v5, v5, 0x3f
 
-    aget-byte v11, v1, v11
+    aget-byte v5, v6, v5
 
-    aput-byte v11, v5, v4
+    aput-byte v5, v7, v4
 
     .line 622
-    add-int/lit8 v4, v3, 0x1
+    const/4 v4, 0x3
 
-    .end local v3    # "op":I
-    .restart local v4    # "op":I
-    shr-int/lit8 v11, v10, 0x6
+    shr-int/lit8 v5, v2, 0x6
 
-    and-int/lit8 v11, v11, 0x3f
+    and-int/lit8 v5, v5, 0x3f
 
-    aget-byte v11, v1, v11
+    aget-byte v5, v6, v5
 
-    aput-byte v11, v5, v3
+    aput-byte v5, v7, v1
 
     .line 623
-    add-int/lit8 v3, v4, 0x1
+    const/4 v1, 0x4
 
-    .end local v4    # "op":I
-    .restart local v3    # "op":I
-    and-int/lit8 v11, v10, 0x3f
+    and-int/lit8 v2, v2, 0x3f
 
-    aget-byte v11, v1, v11
+    aget-byte v2, v6, v2
 
-    aput-byte v11, v5, v4
+    aput-byte v2, v7, v4
 
     .line 624
-    add-int/lit8 v2, v2, -0x1
+    add-int/lit8 v0, v0, -0x1
 
-    if-nez v2, :cond_22e
+    if-nez v0, :cond_220
 
     .line 625
-    iget-boolean v11, p0, Lcom/loopj/android/http/Base64$Encoder;->do_cr:Z
+    iget-boolean v0, p0, Lcom/loopj/android/http/Base64$Encoder;->do_cr:Z
 
-    if-eqz v11, :cond_49
+    if-eqz v0, :cond_224
 
-    add-int/lit8 v4, v3, 0x1
+    const/4 v0, 0x5
 
-    .end local v3    # "op":I
-    .restart local v4    # "op":I
-    const/16 v11, 0xd
+    const/16 v2, 0xd
 
-    aput-byte v11, v5, v3
-
-    move v3, v4
+    aput-byte v2, v7, v1
 
     .line 626
-    .end local v4    # "op":I
-    .restart local v3    # "op":I
-    :cond_49
-    add-int/lit8 v4, v3, 0x1
+    :goto_42
+    add-int/lit8 v1, v0, 0x1
 
-    .end local v3    # "op":I
-    .restart local v4    # "op":I
-    const/16 v11, 0xa
+    const/16 v2, 0xa
 
-    aput-byte v11, v5, v3
+    aput-byte v2, v7, v0
 
     .line 627
-    const/16 v2, 0x13
+    const/16 v0, 0x13
 
-    move v7, v6
+    move v5, v0
+
+    move v4, v1
 
     .line 636
-    .end local v6    # "p":I
-    .local v7, "p":I
-    :goto_52
-    add-int/lit8 v11, v7, 0x3
+    :goto_4c
+    add-int/lit8 v0, v3, 0x3
 
-    move/from16 v0, p3
-
-    if-gt v11, v0, :cond_fc
+    if-gt v0, v8, :cond_f0
 
     .line 637
-    aget-byte v11, p1, v7
+    aget-byte v0, p1, v3
 
-    and-int/lit16 v11, v11, 0xff
+    and-int/lit16 v0, v0, 0xff
 
-    shl-int/lit8 v11, v11, 0x10
+    shl-int/lit8 v0, v0, 0x10
 
-    add-int/lit8 v12, v7, 0x1
+    add-int/lit8 v1, v3, 0x1
 
-    aget-byte v12, p1, v12
+    aget-byte v1, p1, v1
 
-    and-int/lit16 v12, v12, 0xff
+    and-int/lit16 v1, v1, 0xff
 
-    shl-int/lit8 v12, v12, 0x8
+    shl-int/lit8 v1, v1, 0x8
 
-    or-int/2addr v11, v12
+    or-int/2addr v0, v1
 
-    add-int/lit8 v12, v7, 0x2
+    add-int/lit8 v1, v3, 0x2
 
-    aget-byte v12, p1, v12
+    aget-byte v1, p1, v1
 
-    and-int/lit16 v12, v12, 0xff
+    and-int/lit16 v1, v1, 0xff
 
-    or-int v10, v11, v12
+    or-int/2addr v0, v1
 
     .line 640
-    shr-int/lit8 v11, v10, 0x12
+    shr-int/lit8 v1, v0, 0x12
 
-    and-int/lit8 v11, v11, 0x3f
+    and-int/lit8 v1, v1, 0x3f
 
-    aget-byte v11, v1, v11
+    aget-byte v1, v6, v1
 
-    aput-byte v11, v5, v4
+    aput-byte v1, v7, v4
 
     .line 641
-    add-int/lit8 v11, v4, 0x1
+    add-int/lit8 v1, v4, 0x1
 
-    shr-int/lit8 v12, v10, 0xc
+    shr-int/lit8 v2, v0, 0xc
 
-    and-int/lit8 v12, v12, 0x3f
+    and-int/lit8 v2, v2, 0x3f
 
-    aget-byte v12, v1, v12
+    aget-byte v2, v6, v2
 
-    aput-byte v12, v5, v11
+    aput-byte v2, v7, v1
 
     .line 642
-    add-int/lit8 v11, v4, 0x2
+    add-int/lit8 v1, v4, 0x2
 
-    shr-int/lit8 v12, v10, 0x6
+    shr-int/lit8 v2, v0, 0x6
 
-    and-int/lit8 v12, v12, 0x3f
+    and-int/lit8 v2, v2, 0x3f
 
-    aget-byte v12, v1, v12
+    aget-byte v2, v6, v2
 
-    aput-byte v12, v5, v11
+    aput-byte v2, v7, v1
 
     .line 643
-    add-int/lit8 v11, v4, 0x3
+    add-int/lit8 v1, v4, 0x3
 
-    and-int/lit8 v12, v10, 0x3f
+    and-int/lit8 v0, v0, 0x3f
 
-    aget-byte v12, v1, v12
+    aget-byte v0, v6, v0
 
-    aput-byte v12, v5, v11
+    aput-byte v0, v7, v1
 
     .line 644
-    add-int/lit8 v6, v7, 0x3
+    add-int/lit8 v3, v3, 0x3
 
     .line 645
-    .end local v7    # "p":I
-    .restart local v6    # "p":I
-    add-int/lit8 v3, v4, 0x4
+    add-int/lit8 v1, v4, 0x4
 
     .line 646
-    .end local v4    # "op":I
-    .restart local v3    # "op":I
-    add-int/lit8 v2, v2, -0x1
+    add-int/lit8 v0, v5, -0x1
 
-    if-nez v2, :cond_22e
+    if-nez v0, :cond_220
 
     .line 647
-    iget-boolean v11, p0, Lcom/loopj/android/http/Base64$Encoder;->do_cr:Z
+    iget-boolean v0, p0, Lcom/loopj/android/http/Base64$Encoder;->do_cr:Z
 
-    if-eqz v11, :cond_a6
+    if-eqz v0, :cond_21d
 
-    add-int/lit8 v4, v3, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    .end local v3    # "op":I
-    .restart local v4    # "op":I
-    const/16 v11, 0xd
+    const/16 v2, 0xd
 
-    aput-byte v11, v5, v3
-
-    move v3, v4
+    aput-byte v2, v7, v1
 
     .line 648
-    .end local v4    # "op":I
-    .restart local v3    # "op":I
-    :cond_a6
-    add-int/lit8 v4, v3, 0x1
+    :goto_9c
+    add-int/lit8 v1, v0, 0x1
 
-    .end local v3    # "op":I
-    .restart local v4    # "op":I
-    const/16 v11, 0xa
+    const/16 v2, 0xa
 
-    aput-byte v11, v5, v3
+    aput-byte v2, v7, v0
 
     .line 649
-    const/16 v2, 0x13
+    const/16 v0, 0x13
 
-    move v7, v6
+    move v5, v0
 
-    .end local v6    # "p":I
-    .restart local v7    # "p":I
-    goto :goto_52
+    move v4, v1
+
+    goto :goto_4c
+
+    :pswitch_a7
+    move v3, p2
+
+    .line 595
+    goto/16 :goto_10
 
     .line 598
-    .end local v4    # "op":I
-    .end local v7    # "p":I
-    .restart local v3    # "op":I
-    .restart local v6    # "p":I
-    :pswitch_b0
-    add-int/lit8 v11, v6, 0x2
+    :pswitch_aa
+    add-int/lit8 v3, p2, 0x2
 
-    move/from16 v0, p3
-
-    if-gt v11, v0, :cond_11
+    if-gt v3, v8, :cond_f
 
     .line 601
-    iget-object v11, p0, Lcom/loopj/android/http/Base64$Encoder;->tail:[B
+    iget-object v2, p0, Lcom/loopj/android/http/Base64$Encoder;->tail:[B
 
-    const/4 v12, 0x0
+    const/4 v3, 0x0
 
-    aget-byte v11, v11, v12
+    aget-byte v2, v2, v3
 
-    and-int/lit16 v11, v11, 0xff
+    and-int/lit16 v2, v2, 0xff
 
-    shl-int/lit8 v11, v11, 0x10
+    shl-int/lit8 v2, v2, 0x10
 
-    add-int/lit8 v7, v6, 0x1
+    add-int/lit8 v3, p2, 0x1
 
-    .end local v6    # "p":I
-    .restart local v7    # "p":I
-    aget-byte v12, p1, v6
+    aget-byte v4, p1, p2
 
-    and-int/lit16 v12, v12, 0xff
+    and-int/lit16 v4, v4, 0xff
 
-    shl-int/lit8 v12, v12, 0x8
+    shl-int/lit8 v4, v4, 0x8
 
-    or-int/2addr v11, v12
+    or-int/2addr v2, v4
 
-    add-int/lit8 v6, v7, 0x1
+    add-int/lit8 p2, v3, 0x1
 
-    .end local v7    # "p":I
-    .restart local v6    # "p":I
-    aget-byte v12, p1, v7
+    aget-byte v3, p1, v3
 
-    and-int/lit16 v12, v12, 0xff
+    and-int/lit16 v3, v3, 0xff
 
-    or-int v10, v11, v12
+    or-int/2addr v2, v3
 
     .line 604
-    const/4 v11, 0x0
+    const/4 v3, 0x0
 
-    iput v11, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
+    iput v3, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
 
-    goto/16 :goto_11
+    move v3, p2
+
+    goto/16 :goto_10
 
     .line 609
-    :pswitch_d5
-    add-int/lit8 v11, v6, 0x1
+    :pswitch_cd
+    add-int/lit8 v3, p2, 0x1
 
-    move/from16 v0, p3
-
-    if-gt v11, v0, :cond_11
+    if-gt v3, v8, :cond_f
 
     .line 611
-    iget-object v11, p0, Lcom/loopj/android/http/Base64$Encoder;->tail:[B
+    iget-object v2, p0, Lcom/loopj/android/http/Base64$Encoder;->tail:[B
 
-    const/4 v12, 0x0
+    const/4 v3, 0x0
 
-    aget-byte v11, v11, v12
+    aget-byte v2, v2, v3
 
-    and-int/lit16 v11, v11, 0xff
+    and-int/lit16 v2, v2, 0xff
 
-    shl-int/lit8 v11, v11, 0x10
+    shl-int/lit8 v2, v2, 0x10
 
-    iget-object v12, p0, Lcom/loopj/android/http/Base64$Encoder;->tail:[B
+    iget-object v3, p0, Lcom/loopj/android/http/Base64$Encoder;->tail:[B
 
-    const/4 v13, 0x1
+    const/4 v4, 0x1
 
-    aget-byte v12, v12, v13
+    aget-byte v3, v3, v4
 
-    and-int/lit16 v12, v12, 0xff
+    and-int/lit16 v3, v3, 0xff
 
-    shl-int/lit8 v12, v12, 0x8
+    shl-int/lit8 v3, v3, 0x8
 
-    or-int/2addr v11, v12
+    or-int/2addr v2, v3
 
-    add-int/lit8 v7, v6, 0x1
+    add-int/lit8 v3, p2, 0x1
 
-    .end local v6    # "p":I
-    .restart local v7    # "p":I
-    aget-byte v12, p1, v6
+    aget-byte v4, p1, p2
 
-    and-int/lit16 v12, v12, 0xff
+    and-int/lit16 v4, v4, 0xff
 
-    or-int v10, v11, v12
+    or-int/2addr v2, v4
 
     .line 614
-    const/4 v11, 0x0
+    const/4 v4, 0x0
 
-    iput v11, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
+    iput v4, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
 
-    move v6, v7
-
-    .end local v7    # "p":I
-    .restart local v6    # "p":I
-    goto/16 :goto_11
+    goto/16 :goto_10
 
     .line 653
-    .end local v3    # "op":I
-    .end local v6    # "p":I
-    .restart local v4    # "op":I
-    .restart local v7    # "p":I
-    :cond_fc
-    if-eqz p4, :cond_1f6
+    :cond_f0
+    if-eqz p4, :cond_1e7
 
     .line 659
-    iget v11, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
+    iget v0, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
 
-    sub-int v11, v7, v11
+    sub-int v0, v3, v0
 
-    add-int/lit8 v12, p3, -0x1
+    add-int/lit8 v1, v8, -0x1
 
-    if-ne v11, v12, :cond_160
+    if-ne v0, v1, :cond_152
 
     .line 660
-    const/4 v8, 0x0
+    const/4 v2, 0x0
 
     .line 661
-    .local v8, "t":I
-    iget v11, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
+    iget v0, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
 
-    if-lez v11, :cond_15b
+    if-lez v0, :cond_14c
 
-    iget-object v11, p0, Lcom/loopj/android/http/Base64$Encoder;->tail:[B
+    iget-object v0, p0, Lcom/loopj/android/http/Base64$Encoder;->tail:[B
 
-    add-int/lit8 v9, v8, 0x1
+    const/4 v1, 0x1
 
-    .end local v8    # "t":I
-    .local v9, "t":I
-    aget-byte v11, v11, v8
+    aget-byte v0, v0, v2
 
-    move v8, v9
+    :goto_104
+    and-int/lit16 v0, v0, 0xff
 
-    .end local v9    # "t":I
-    .restart local v8    # "t":I
-    move v6, v7
-
-    .end local v7    # "p":I
-    .restart local v6    # "p":I
-    :goto_113
-    and-int/lit16 v11, v11, 0xff
-
-    shl-int/lit8 v10, v11, 0x4
+    shl-int/lit8 v2, v0, 0x4
 
     .line 662
-    iget v11, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
+    iget v0, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
 
-    sub-int/2addr v11, v8
+    sub-int/2addr v0, v1
 
-    iput v11, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
+    iput v0, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
 
     .line 663
-    add-int/lit8 v3, v4, 0x1
+    add-int/lit8 v1, v4, 0x1
 
-    .end local v4    # "op":I
-    .restart local v3    # "op":I
-    shr-int/lit8 v11, v10, 0x6
+    shr-int/lit8 v0, v2, 0x6
 
-    and-int/lit8 v11, v11, 0x3f
+    and-int/lit8 v0, v0, 0x3f
 
-    aget-byte v11, v1, v11
+    aget-byte v0, v6, v0
 
-    aput-byte v11, v5, v4
+    aput-byte v0, v7, v4
 
     .line 664
-    add-int/lit8 v4, v3, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    .end local v3    # "op":I
-    .restart local v4    # "op":I
-    and-int/lit8 v11, v10, 0x3f
+    and-int/lit8 v2, v2, 0x3f
 
-    aget-byte v11, v1, v11
+    aget-byte v2, v6, v2
 
-    aput-byte v11, v5, v3
+    aput-byte v2, v7, v1
 
     .line 665
-    iget-boolean v11, p0, Lcom/loopj/android/http/Base64$Encoder;->do_padding:Z
+    iget-boolean v1, p0, Lcom/loopj/android/http/Base64$Encoder;->do_padding:Z
 
-    if-eqz v11, :cond_13e
+    if-eqz v1, :cond_12f
 
     .line 666
-    add-int/lit8 v3, v4, 0x1
+    add-int/lit8 v1, v0, 0x1
 
-    .end local v4    # "op":I
-    .restart local v3    # "op":I
-    const/16 v11, 0x3d
+    const/16 v2, 0x3d
 
-    aput-byte v11, v5, v4
+    aput-byte v2, v7, v0
 
     .line 667
-    add-int/lit8 v4, v3, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    .end local v3    # "op":I
-    .restart local v4    # "op":I
-    const/16 v11, 0x3d
+    const/16 v2, 0x3d
 
-    aput-byte v11, v5, v3
-
-    :cond_13e
-    move v3, v4
+    aput-byte v2, v7, v1
 
     .line 669
-    .end local v4    # "op":I
-    .restart local v3    # "op":I
-    iget-boolean v11, p0, Lcom/loopj/android/http/Base64$Encoder;->do_newline:Z
+    :cond_12f
+    iget-boolean v1, p0, Lcom/loopj/android/http/Base64$Encoder;->do_newline:Z
 
-    if-eqz v11, :cond_155
+    if-eqz v1, :cond_145
 
     .line 670
-    iget-boolean v11, p0, Lcom/loopj/android/http/Base64$Encoder;->do_cr:Z
+    iget-boolean v1, p0, Lcom/loopj/android/http/Base64$Encoder;->do_cr:Z
 
-    if-eqz v11, :cond_14e
+    if-eqz v1, :cond_13e
 
-    add-int/lit8 v4, v3, 0x1
+    add-int/lit8 v1, v0, 0x1
 
-    .end local v3    # "op":I
-    .restart local v4    # "op":I
-    const/16 v11, 0xd
+    const/16 v2, 0xd
 
-    aput-byte v11, v5, v3
+    aput-byte v2, v7, v0
 
-    move v3, v4
+    move v0, v1
 
     .line 671
-    .end local v4    # "op":I
-    .restart local v3    # "op":I
-    :cond_14e
-    add-int/lit8 v4, v3, 0x1
+    :cond_13e
+    add-int/lit8 v1, v0, 0x1
 
-    .end local v3    # "op":I
-    .restart local v4    # "op":I
-    const/16 v11, 0xa
+    const/16 v2, 0xa
 
-    aput-byte v11, v5, v3
+    aput-byte v2, v7, v0
 
-    :goto_154
-    move v3, v4
+    move v0, v1
+
+    :cond_145
+    move v4, v0
 
     .line 708
-    .end local v4    # "op":I
-    .end local v8    # "t":I
-    .restart local v3    # "op":I
-    :cond_155
-    :goto_155
-    iput v3, p0, Lcom/loopj/android/http/Base64$Encoder;->op:I
+    :cond_146
+    :goto_146
+    iput v4, p0, Lcom/loopj/android/http/Base64$Encoder;->op:I
 
     .line 709
-    iput v2, p0, Lcom/loopj/android/http/Base64$Encoder;->count:I
+    iput v5, p0, Lcom/loopj/android/http/Base64$Encoder;->count:I
 
     .line 711
-    const/4 v11, 0x1
+    const/4 v0, 0x1
 
-    return v11
+    return v0
 
     .line 661
-    .end local v3    # "op":I
-    .end local v6    # "p":I
-    .restart local v4    # "op":I
-    .restart local v7    # "p":I
-    .restart local v8    # "t":I
-    :cond_15b
-    add-int/lit8 v6, v7, 0x1
+    :cond_14c
+    add-int/lit8 v0, v3, 0x1
 
-    .end local v7    # "p":I
-    .restart local v6    # "p":I
-    aget-byte v11, p1, v7
+    aget-byte v0, p1, v3
 
-    goto :goto_113
+    move v1, v2
+
+    goto :goto_104
 
     .line 673
-    .end local v6    # "p":I
-    .end local v8    # "t":I
-    .restart local v7    # "p":I
-    :cond_160
-    iget v11, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
+    :cond_152
+    iget v0, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
 
-    sub-int v11, v7, v11
+    sub-int v0, v3, v0
 
-    add-int/lit8 v12, p3, -0x2
+    add-int/lit8 v1, v8, -0x2
 
-    if-ne v11, v12, :cond_1d8
+    if-ne v0, v1, :cond_1cb
 
     .line 674
-    const/4 v8, 0x0
+    const/4 v2, 0x0
 
     .line 675
-    .restart local v8    # "t":I
-    iget v11, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
+    iget v0, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
 
-    const/4 v12, 0x1
+    const/4 v1, 0x1
 
-    if-le v11, v12, :cond_1cd
+    if-le v0, v1, :cond_1be
 
-    iget-object v11, p0, Lcom/loopj/android/http/Base64$Encoder;->tail:[B
+    iget-object v0, p0, Lcom/loopj/android/http/Base64$Encoder;->tail:[B
 
-    add-int/lit8 v9, v8, 0x1
+    const/4 v1, 0x1
 
-    .end local v8    # "t":I
-    .restart local v9    # "t":I
-    aget-byte v11, v11, v8
+    aget-byte v0, v0, v2
 
-    move v8, v9
+    move v2, v3
 
-    .end local v9    # "t":I
-    .restart local v8    # "t":I
-    move v6, v7
+    :goto_166
+    and-int/lit16 v0, v0, 0xff
 
-    .end local v7    # "p":I
-    .restart local v6    # "p":I
-    :goto_176
-    and-int/lit16 v11, v11, 0xff
+    shl-int/lit8 v3, v0, 0xa
 
-    shl-int/lit8 v12, v11, 0xa
+    iget v0, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
 
-    iget v11, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
+    if-lez v0, :cond_1c6
 
-    if-lez v11, :cond_1d2
+    iget-object v0, p0, Lcom/loopj/android/http/Base64$Encoder;->tail:[B
 
-    iget-object v11, p0, Lcom/loopj/android/http/Base64$Encoder;->tail:[B
+    add-int/lit8 v2, v1, 0x1
 
-    add-int/lit8 v9, v8, 0x1
+    aget-byte v0, v0, v1
 
-    .end local v8    # "t":I
-    .restart local v9    # "t":I
-    aget-byte v11, v11, v8
+    move v1, v2
 
-    move v8, v9
+    :goto_175
+    and-int/lit16 v0, v0, 0xff
 
-    .end local v9    # "t":I
-    .restart local v8    # "t":I
-    :goto_185
-    and-int/lit16 v11, v11, 0xff
+    shl-int/lit8 v0, v0, 0x2
 
-    shl-int/lit8 v11, v11, 0x2
-
-    or-int v10, v12, v11
+    or-int/2addr v0, v3
 
     .line 677
-    iget v11, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
+    iget v2, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
 
-    sub-int/2addr v11, v8
+    sub-int v1, v2, v1
 
-    iput v11, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
+    iput v1, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
 
     .line 678
-    add-int/lit8 v3, v4, 0x1
+    add-int/lit8 v1, v4, 0x1
 
-    .end local v4    # "op":I
-    .restart local v3    # "op":I
-    shr-int/lit8 v11, v10, 0xc
+    shr-int/lit8 v2, v0, 0xc
 
-    and-int/lit8 v11, v11, 0x3f
+    and-int/lit8 v2, v2, 0x3f
 
-    aget-byte v11, v1, v11
+    aget-byte v2, v6, v2
 
-    aput-byte v11, v5, v4
+    aput-byte v2, v7, v4
 
     .line 679
-    add-int/lit8 v4, v3, 0x1
+    add-int/lit8 v2, v1, 0x1
 
-    .end local v3    # "op":I
-    .restart local v4    # "op":I
-    shr-int/lit8 v11, v10, 0x6
+    shr-int/lit8 v3, v0, 0x6
 
-    and-int/lit8 v11, v11, 0x3f
+    and-int/lit8 v3, v3, 0x3f
 
-    aget-byte v11, v1, v11
+    aget-byte v3, v6, v3
 
-    aput-byte v11, v5, v3
+    aput-byte v3, v7, v1
 
     .line 680
-    add-int/lit8 v3, v4, 0x1
+    add-int/lit8 v1, v2, 0x1
 
-    .end local v4    # "op":I
-    .restart local v3    # "op":I
-    and-int/lit8 v11, v10, 0x3f
+    and-int/lit8 v0, v0, 0x3f
 
-    aget-byte v11, v1, v11
+    aget-byte v0, v6, v0
 
-    aput-byte v11, v5, v4
+    aput-byte v0, v7, v2
 
     .line 681
-    iget-boolean v11, p0, Lcom/loopj/android/http/Base64$Encoder;->do_padding:Z
+    iget-boolean v0, p0, Lcom/loopj/android/http/Base64$Encoder;->do_padding:Z
 
-    if-eqz v11, :cond_1b7
+    if-eqz v0, :cond_21b
 
     .line 682
-    add-int/lit8 v4, v3, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    .end local v3    # "op":I
-    .restart local v4    # "op":I
-    const/16 v11, 0x3d
+    const/16 v2, 0x3d
 
-    aput-byte v11, v5, v3
-
-    move v3, v4
+    aput-byte v2, v7, v1
 
     .line 684
-    .end local v4    # "op":I
-    .restart local v3    # "op":I
-    :cond_1b7
-    iget-boolean v11, p0, Lcom/loopj/android/http/Base64$Encoder;->do_newline:Z
+    :goto_1a6
+    iget-boolean v1, p0, Lcom/loopj/android/http/Base64$Encoder;->do_newline:Z
 
-    if-eqz v11, :cond_155
+    if-eqz v1, :cond_1bc
 
     .line 685
-    iget-boolean v11, p0, Lcom/loopj/android/http/Base64$Encoder;->do_cr:Z
+    iget-boolean v1, p0, Lcom/loopj/android/http/Base64$Encoder;->do_cr:Z
 
-    if-eqz v11, :cond_1c6
+    if-eqz v1, :cond_1b5
 
-    add-int/lit8 v4, v3, 0x1
+    add-int/lit8 v1, v0, 0x1
 
-    .end local v3    # "op":I
-    .restart local v4    # "op":I
-    const/16 v11, 0xd
+    const/16 v2, 0xd
 
-    aput-byte v11, v5, v3
+    aput-byte v2, v7, v0
 
-    move v3, v4
+    move v0, v1
 
     .line 686
-    .end local v4    # "op":I
-    .restart local v3    # "op":I
-    :cond_1c6
-    add-int/lit8 v4, v3, 0x1
+    :cond_1b5
+    add-int/lit8 v1, v0, 0x1
 
-    .end local v3    # "op":I
-    .restart local v4    # "op":I
-    const/16 v11, 0xa
+    const/16 v2, 0xa
 
-    aput-byte v11, v5, v3
+    aput-byte v2, v7, v0
 
-    goto :goto_154
+    move v0, v1
 
-    .line 675
-    .end local v6    # "p":I
-    .restart local v7    # "p":I
-    :cond_1cd
-    add-int/lit8 v6, v7, 0x1
-
-    .end local v7    # "p":I
-    .restart local v6    # "p":I
-    aget-byte v11, p1, v7
-
-    goto :goto_176
-
-    :cond_1d2
-    add-int/lit8 v7, v6, 0x1
-
-    .end local v6    # "p":I
-    .restart local v7    # "p":I
-    aget-byte v11, p1, v6
-
-    move v6, v7
-
-    .end local v7    # "p":I
-    .restart local v6    # "p":I
-    goto :goto_185
+    :cond_1bc
+    move v4, v0
 
     .line 688
-    .end local v6    # "p":I
-    .end local v8    # "t":I
-    .restart local v7    # "p":I
-    :cond_1d8
-    iget-boolean v11, p0, Lcom/loopj/android/http/Base64$Encoder;->do_newline:Z
+    goto :goto_146
 
-    if-eqz v11, :cond_228
+    .line 675
+    :cond_1be
+    add-int/lit8 v1, v3, 0x1
 
-    if-lez v4, :cond_228
+    aget-byte v0, p1, v3
 
-    const/16 v11, 0x13
+    move v9, v2
 
-    if-eq v2, v11, :cond_228
+    move v2, v1
+
+    move v1, v9
+
+    goto :goto_166
+
+    :cond_1c6
+    add-int/lit8 v0, v2, 0x1
+
+    aget-byte v0, p1, v2
+
+    goto :goto_175
+
+    .line 688
+    :cond_1cb
+    iget-boolean v0, p0, Lcom/loopj/android/http/Base64$Encoder;->do_newline:Z
+
+    if-eqz v0, :cond_146
+
+    if-lez v4, :cond_146
+
+    const/16 v0, 0x13
+
+    if-eq v5, v0, :cond_146
 
     .line 689
-    iget-boolean v11, p0, Lcom/loopj/android/http/Base64$Encoder;->do_cr:Z
+    iget-boolean v0, p0, Lcom/loopj/android/http/Base64$Encoder;->do_cr:Z
 
-    if-eqz v11, :cond_22c
+    if-eqz v0, :cond_219
 
-    add-int/lit8 v3, v4, 0x1
+    add-int/lit8 v0, v4, 0x1
 
-    .end local v4    # "op":I
-    .restart local v3    # "op":I
-    const/16 v11, 0xd
+    const/16 v1, 0xd
 
-    aput-byte v11, v5, v4
+    aput-byte v1, v7, v4
 
     .line 690
-    :goto_1ec
-    add-int/lit8 v4, v3, 0x1
+    :goto_1df
+    add-int/lit8 v4, v0, 0x1
 
-    .end local v3    # "op":I
-    .restart local v4    # "op":I
-    const/16 v11, 0xa
+    const/16 v1, 0xa
 
-    aput-byte v11, v5, v3
+    aput-byte v1, v7, v0
 
-    move v6, v7
-
-    .end local v7    # "p":I
-    .restart local v6    # "p":I
-    move v3, v4
-
-    .end local v4    # "op":I
-    .restart local v3    # "op":I
-    goto/16 :goto_155
+    goto/16 :goto_146
 
     .line 700
-    .end local v3    # "op":I
-    .end local v6    # "p":I
-    .restart local v4    # "op":I
-    .restart local v7    # "p":I
-    :cond_1f6
-    add-int/lit8 v11, p3, -0x1
+    :cond_1e7
+    add-int/lit8 v0, v8, -0x1
 
-    if-ne v7, v11, :cond_20a
+    if-ne v3, v0, :cond_1f9
 
     .line 701
-    iget-object v11, p0, Lcom/loopj/android/http/Base64$Encoder;->tail:[B
+    iget-object v0, p0, Lcom/loopj/android/http/Base64$Encoder;->tail:[B
 
-    iget v12, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
+    iget v1, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
 
-    add-int/lit8 v13, v12, 0x1
+    add-int/lit8 v2, v1, 0x1
 
-    iput v13, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
+    iput v2, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
 
-    aget-byte v13, p1, v7
+    aget-byte v2, p1, v3
 
-    aput-byte v13, v11, v12
+    aput-byte v2, v0, v1
 
-    move v6, v7
-
-    .end local v7    # "p":I
-    .restart local v6    # "p":I
-    move v3, v4
-
-    .end local v4    # "op":I
-    .restart local v3    # "op":I
-    goto/16 :goto_155
+    goto/16 :goto_146
 
     .line 702
-    .end local v3    # "op":I
-    .end local v6    # "p":I
-    .restart local v4    # "op":I
-    .restart local v7    # "p":I
-    :cond_20a
-    add-int/lit8 v11, p3, -0x2
+    :cond_1f9
+    add-int/lit8 v0, v8, -0x2
 
-    if-ne v7, v11, :cond_228
+    if-ne v3, v0, :cond_146
 
     .line 703
-    iget-object v11, p0, Lcom/loopj/android/http/Base64$Encoder;->tail:[B
+    iget-object v0, p0, Lcom/loopj/android/http/Base64$Encoder;->tail:[B
 
-    iget v12, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
+    iget v1, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
 
-    add-int/lit8 v13, v12, 0x1
+    add-int/lit8 v2, v1, 0x1
 
-    iput v13, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
+    iput v2, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
 
-    aget-byte v13, p1, v7
+    aget-byte v2, p1, v3
 
-    aput-byte v13, v11, v12
+    aput-byte v2, v0, v1
 
     .line 704
-    iget-object v11, p0, Lcom/loopj/android/http/Base64$Encoder;->tail:[B
+    iget-object v0, p0, Lcom/loopj/android/http/Base64$Encoder;->tail:[B
 
-    iget v12, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
+    iget v1, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
 
-    add-int/lit8 v13, v12, 0x1
+    add-int/lit8 v2, v1, 0x1
 
-    iput v13, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
+    iput v2, p0, Lcom/loopj/android/http/Base64$Encoder;->tailLen:I
 
-    add-int/lit8 v13, v7, 0x1
+    add-int/lit8 v2, v3, 0x1
 
-    aget-byte v13, p1, v13
+    aget-byte v2, p1, v2
 
-    aput-byte v13, v11, v12
+    aput-byte v2, v0, v1
 
-    :cond_228
-    move v6, v7
+    goto/16 :goto_146
 
-    .end local v7    # "p":I
-    .restart local v6    # "p":I
-    move v3, v4
+    :cond_219
+    move v0, v4
 
-    .end local v4    # "op":I
-    .restart local v3    # "op":I
-    goto/16 :goto_155
+    goto :goto_1df
 
-    .end local v3    # "op":I
-    .end local v6    # "p":I
-    .restart local v4    # "op":I
-    .restart local v7    # "p":I
-    :cond_22c
-    move v3, v4
+    :cond_21b
+    move v0, v1
 
-    .end local v4    # "op":I
-    .restart local v3    # "op":I
-    goto :goto_1ec
+    goto :goto_1a6
 
-    .end local v7    # "p":I
-    .restart local v6    # "p":I
-    :cond_22e
-    move v7, v6
+    :cond_21d
+    move v0, v1
 
-    .end local v6    # "p":I
-    .restart local v7    # "p":I
-    move v4, v3
+    goto/16 :goto_9c
 
-    .end local v3    # "op":I
-    .restart local v4    # "op":I
-    goto/16 :goto_52
+    :cond_220
+    move v5, v0
+
+    move v4, v1
+
+    goto/16 :goto_4c
+
+    :cond_224
+    move v0, v1
+
+    goto/16 :goto_42
 
     .line 592
-    :pswitch_data_232
+    nop
+
+    :pswitch_data_228
     .packed-switch 0x0
-        :pswitch_11
-        :pswitch_b0
-        :pswitch_d5
+        :pswitch_a7
+        :pswitch_aa
+        :pswitch_cd
     .end packed-switch
 .end method

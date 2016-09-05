@@ -55,10 +55,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;Ljava/lang/String;)V
     .registers 11
-    .param p1, "pMediaType"    # Ljava/lang/String;
-    .param p2, "nfcPlan"    # Lcom/bzbs/bean/NFCPlan;
-    .param p3, "nfcResult"    # Lcom/bzbs/bean/NFCResult;
-    .param p4, "app_id"    # Ljava/lang/String;
 
     .prologue
     const/4 v1, 0x0
@@ -476,8 +472,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .registers 6
-    .param p1, "pMediaType"    # Ljava/lang/String;
-    .param p2, "pActionName"    # Ljava/lang/String;
 
     .prologue
     const/4 v2, 0x0
@@ -584,8 +578,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Lorg/json/JSONObject;)V
     .registers 6
-    .param p1, "pMediaType"    # Ljava/lang/String;
-    .param p2, "jsonObject"    # Lorg/json/JSONObject;
 
     .prologue
     const/4 v2, 0x0
@@ -686,7 +678,7 @@
     .line 52
     const-string/jumbo v0, "ActionName"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -695,7 +687,7 @@
     .line 53
     const-string/jumbo v0, "ActionName"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -710,7 +702,7 @@
     .line 54
     const-string/jumbo v0, "AN"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -720,7 +712,7 @@
     :cond_79
     const-string/jumbo v0, "Status_Message"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -729,7 +721,7 @@
     .line 59
     const-string/jumbo v0, "Share_app_id"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -738,7 +730,7 @@
     .line 60
     const-string/jumbo v0, "Share_name"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -747,7 +739,7 @@
     .line 61
     const-string/jumbo v0, "Share_caption"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -756,7 +748,7 @@
     .line 62
     const-string/jumbo v0, "Share_picture"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -765,7 +757,7 @@
     .line 63
     const-string/jumbo v0, "Share_link"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -774,7 +766,7 @@
     .line 64
     const-string/jumbo v0, "Share_description"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -783,7 +775,7 @@
     .line 65
     const-string/jumbo v0, "Share_RequireForReDeem"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getBoolean(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
 
     move-result-object v0
 
@@ -796,7 +788,7 @@
     .line 67
     const-string/jumbo v0, "CheckIn_PlaceID"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -805,7 +797,7 @@
     .line 68
     const-string/jumbo v0, "CheckIn_Message"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -814,7 +806,7 @@
     .line 69
     const-string/jumbo v0, "CheckIn_Latitude"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getDouble(Lorg/json/JSONObject;Ljava/lang/String;)D
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->f(Lorg/json/JSONObject;Ljava/lang/String;)D
 
     move-result-wide v0
 
@@ -827,7 +819,7 @@
     .line 70
     const-string/jumbo v0, "CheckIn_Longitude"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getDouble(Lorg/json/JSONObject;Ljava/lang/String;)D
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->f(Lorg/json/JSONObject;Ljava/lang/String;)D
 
     move-result-wide v0
 
@@ -840,7 +832,7 @@
     .line 72
     const-string/jumbo v0, "ReDeem_CampaignID"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
     move-result v0
 
@@ -849,7 +841,7 @@
     .line 73
     const-string/jumbo v0, "ReDeem_CampaignID"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -864,7 +856,7 @@
     .line 74
     const-string/jumbo v0, "RC"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
     move-result v0
 
@@ -874,7 +866,7 @@
     :cond_113
     const-string/jumbo v0, "ReDeem_Auto"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getBoolean(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
 
     move-result-object v0
 
@@ -887,7 +879,7 @@
     .line 78
     const-string/jumbo v0, "ReDeem_Auto"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -902,7 +894,7 @@
     .line 79
     const-string/jumbo v0, "RA"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getBoolean(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
 
     move-result-object v0
 
@@ -916,7 +908,7 @@
     :cond_13d
     const-string/jumbo v0, "ReDeem_WriteBack"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getBoolean(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
 
     move-result-object v0
 
@@ -929,7 +921,7 @@
     .line 83
     const-string/jumbo v0, "ReDeem_WriteBack"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -944,7 +936,7 @@
     .line 84
     const-string/jumbo v0, "RW"
 
-    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->getBoolean(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
+    invoke-static {p2, v0}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
 
     move-result-object v0
 
@@ -963,32 +955,29 @@
 # virtual methods
 .method public parseNextNFCTag(Ljava/lang/String;Lcom/bzbs/bean/NFCPlan;Ljava/lang/String;)V
     .registers 10
-    .param p1, "pMediaType"    # Ljava/lang/String;
-    .param p2, "nfcPlan"    # Lcom/bzbs/bean/NFCPlan;
-    .param p3, "app_id"    # Ljava/lang/String;
 
     .prologue
     const-wide/16 v4, 0x0
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     .line 139
     iput-object p1, p0, Lcom/bzbs/bean/NFCTag;->MediaType:Ljava/lang/String;
 
     .line 140
-    iget-object v1, p2, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
+    iget-object v0, p2, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string/jumbo v2, "redeem"
+    const-string/jumbo v1, "redeem"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_28
+    if-eqz v0, :cond_28
 
     .line 141
     new-instance v0, Lcom/bzbs/bean/NFCTag;
@@ -998,7 +987,6 @@
     invoke-direct {v0, p1, v1}, Lcom/bzbs/bean/NFCTag;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 142
-    .local v0, "objNextNFCTag":Lcom/bzbs/bean/NFCTag;
     iget v1, p2, Lcom/bzbs/bean/NFCPlan;->CampaignId:I
 
     iput v1, v0, Lcom/bzbs/bean/NFCTag;->ReDeem_CampaignID:I
@@ -1009,32 +997,31 @@
     iput-boolean v1, v0, Lcom/bzbs/bean/NFCTag;->ReDeem_Auto:Z
 
     .line 144
-    iput-boolean v3, v0, Lcom/bzbs/bean/NFCTag;->ReDeem_WriteBack:Z
+    iput-boolean v2, v0, Lcom/bzbs/bean/NFCTag;->ReDeem_WriteBack:Z
 
     .line 145
     iput-object v0, p0, Lcom/bzbs/bean/NFCTag;->NextNFCTag:Lcom/bzbs/bean/NFCTag;
 
     .line 174
-    .end local v0    # "objNextNFCTag":Lcom/bzbs/bean/NFCTag;
     :cond_27
     :goto_27
     return-void
 
     .line 146
     :cond_28
-    iget-object v1, p2, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
+    iget-object v0, p2, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string/jumbo v2, "campaign"
+    const-string/jumbo v1, "campaign"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_4a
+    if-eqz v0, :cond_4a
 
     .line 147
     new-instance v0, Lcom/bzbs/bean/NFCTag;
@@ -1044,16 +1031,15 @@
     invoke-direct {v0, p1, v1}, Lcom/bzbs/bean/NFCTag;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 148
-    .restart local v0    # "objNextNFCTag":Lcom/bzbs/bean/NFCTag;
     iget v1, p2, Lcom/bzbs/bean/NFCPlan;->CampaignId:I
 
     iput v1, v0, Lcom/bzbs/bean/NFCTag;->ReDeem_CampaignID:I
 
     .line 149
-    iput-boolean v3, v0, Lcom/bzbs/bean/NFCTag;->ReDeem_Auto:Z
+    iput-boolean v2, v0, Lcom/bzbs/bean/NFCTag;->ReDeem_Auto:Z
 
     .line 150
-    iput-boolean v3, v0, Lcom/bzbs/bean/NFCTag;->ReDeem_WriteBack:Z
+    iput-boolean v2, v0, Lcom/bzbs/bean/NFCTag;->ReDeem_WriteBack:Z
 
     .line 151
     iput-object v0, p0, Lcom/bzbs/bean/NFCTag;->NextNFCTag:Lcom/bzbs/bean/NFCTag;
@@ -1061,21 +1047,20 @@
     goto :goto_27
 
     .line 152
-    .end local v0    # "objNextNFCTag":Lcom/bzbs/bean/NFCTag;
     :cond_4a
-    iget-object v1, p2, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
+    iget-object v0, p2, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string/jumbo v2, "checkin"
+    const-string/jumbo v1, "checkin"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_78
+    if-eqz v0, :cond_78
 
     .line 153
     new-instance v0, Lcom/bzbs/bean/NFCTag;
@@ -1085,7 +1070,6 @@
     invoke-direct {v0, p1, v1}, Lcom/bzbs/bean/NFCTag;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 154
-    .restart local v0    # "objNextNFCTag":Lcom/bzbs/bean/NFCTag;
     iget-object v1, p2, Lcom/bzbs/bean/NFCPlan;->Place:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/bzbs/bean/NFCTag;->CheckIn_PlaceID:Ljava/lang/String;
@@ -1115,21 +1099,20 @@
     goto :goto_27
 
     .line 159
-    .end local v0    # "objNextNFCTag":Lcom/bzbs/bean/NFCTag;
     :cond_78
-    iget-object v1, p2, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
+    iget-object v0, p2, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string/jumbo v2, "post"
+    const-string/jumbo v1, "post"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_96
+    if-eqz v0, :cond_96
 
     .line 160
     new-instance v0, Lcom/bzbs/bean/NFCTag;
@@ -1139,7 +1122,6 @@
     invoke-direct {v0, p1, v1}, Lcom/bzbs/bean/NFCTag;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 161
-    .restart local v0    # "objNextNFCTag":Lcom/bzbs/bean/NFCTag;
     iget-object v1, p2, Lcom/bzbs/bean/NFCPlan;->Message:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/bzbs/bean/NFCTag;->Status_Message:Ljava/lang/String;
@@ -1150,21 +1132,20 @@
     goto :goto_27
 
     .line 163
-    .end local v0    # "objNextNFCTag":Lcom/bzbs/bean/NFCTag;
     :cond_96
-    iget-object v1, p2, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
+    iget-object v0, p2, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string/jumbo v2, "share"
+    const-string/jumbo v1, "share"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_27
+    if-eqz v0, :cond_27
 
     .line 164
     new-instance v0, Lcom/bzbs/bean/NFCTag;
@@ -1174,7 +1155,6 @@
     invoke-direct {v0, p1, v1}, Lcom/bzbs/bean/NFCTag;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 165
-    .restart local v0    # "objNextNFCTag":Lcom/bzbs/bean/NFCTag;
     iput-object p3, v0, Lcom/bzbs/bean/NFCTag;->Share_app_id:Ljava/lang/String;
 
     .line 166

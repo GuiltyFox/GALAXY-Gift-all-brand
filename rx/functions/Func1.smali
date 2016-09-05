@@ -2,9 +2,6 @@
 .super Ljava/lang/Object;
 .source "Func1.java"
 
-# interfaces
-.implements Lrx/functions/Function;
-
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
@@ -14,14 +11,13 @@
         "R:",
         "Ljava/lang/Object;",
         ">",
-        "Ljava/lang/Object;",
-        "Lrx/functions/Function;"
+        "Ljava/lang/Object;"
     }
 .end annotation
 
 
 # virtual methods
-.method public abstract call(Ljava/lang/Object;)Ljava/lang/Object;
+.method public abstract b(Ljava/lang/Object;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)TR;"

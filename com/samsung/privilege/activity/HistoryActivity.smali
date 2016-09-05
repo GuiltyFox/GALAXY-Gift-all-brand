@@ -3,37 +3,30 @@
 .source "HistoryActivity.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;,
-        Lcom/samsung/privilege/activity/HistoryActivity$PurchaseItemListener;
-    }
-.end annotation
-
-
 # instance fields
-.field private TAG:Ljava/lang/String;
+.field private a:Ljava/lang/String;
 
-.field private gDialog:Landroid/app/ProgressDialog;
+.field private b:Landroid/os/Handler;
 
-.field private loading:Z
+.field private c:Landroid/app/ProgressDialog;
 
-.field private mHandler:Landroid/os/Handler;
+.field private d:Landroid/support/v7/widget/RecyclerView;
 
-.field private mHistoryAdapter:Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;
+.field private e:Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
-.field private mLayoutManager:Landroid/support/v7/widget/RecyclerView$LayoutManager;
+.field private f:Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;
 
-.field private mRecyclerHistory:Landroid/support/v7/widget/RecyclerView;
+.field private g:Z
 
-.field private out_of_data:Z
+.field private h:Z
 
-.field private pastVisiblesItems:I
+.field private i:I
 
-.field private totalItemCount:I
+.field private j:I
 
-.field private visibleItemCount:I
+.field private k:I
+
+.field private l:J
 
 
 # direct methods
@@ -43,463 +36,807 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 61
+    .line 65
     invoke-direct {p0}, Landroid/support/v7/app/AppCompatActivity;-><init>()V
 
-    .line 63
+    .line 67
     const-class v0, Lcom/samsung/privilege/activity/HistoryActivity;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->TAG:Ljava/lang/String;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->a:Ljava/lang/String;
 
-    .line 72
-    iput-boolean v1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->loading:Z
+    .line 76
+    iput-boolean v1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->g:Z
 
-    .line 73
-    iput-boolean v1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->out_of_data:Z
+    .line 77
+    iput-boolean v1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->h:Z
 
-    return-void
-.end method
+    .line 125
+    const-wide/16 v0, 0x0
 
-.method static synthetic access$000(Lcom/samsung/privilege/activity/HistoryActivity;I)V
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-    .param p1, "x1"    # I
-
-    .prologue
-    .line 61
-    invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/HistoryActivity;->loadHistory(I)V
+    iput-wide v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->l:J
 
     return-void
 .end method
 
-.method static synthetic access$100(Lcom/samsung/privilege/activity/HistoryActivity;)I
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
+.method static synthetic a(Lcom/samsung/privilege/activity/HistoryActivity;J)J
+    .registers 4
 
     .prologue
-    .line 61
-    iget v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->visibleItemCount:I
+    .line 65
+    iput-wide p1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->l:J
 
-    return v0
+    return-wide p1
 .end method
 
-.method static synthetic access$1000(Lcom/samsung/privilege/activity/HistoryActivity;)Ljava/lang/String;
+.method static synthetic a(Lcom/samsung/privilege/activity/HistoryActivity;Landroid/app/ProgressDialog;)Landroid/app/ProgressDialog;
     .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
 
     .prologue
-    .line 61
-    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->TAG:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic access$102(Lcom/samsung/privilege/activity/HistoryActivity;I)I
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-    .param p1, "x1"    # I
-
-    .prologue
-    .line 61
-    iput p1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->visibleItemCount:I
-
-    return p1
-.end method
-
-.method static synthetic access$1100(Lcom/samsung/privilege/activity/HistoryActivity;Ljava/lang/String;)V
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-    .param p1, "x1"    # Ljava/lang/String;
-
-    .prologue
-    .line 61
-    invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/HistoryActivity;->showToast(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method static synthetic access$1200(Lcom/samsung/privilege/activity/HistoryActivity;)Landroid/app/ProgressDialog;
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-
-    .prologue
-    .line 61
-    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->gDialog:Landroid/app/ProgressDialog;
-
-    return-object v0
-.end method
-
-.method static synthetic access$1202(Lcom/samsung/privilege/activity/HistoryActivity;Landroid/app/ProgressDialog;)Landroid/app/ProgressDialog;
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-    .param p1, "x1"    # Landroid/app/ProgressDialog;
-
-    .prologue
-    .line 61
-    iput-object p1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->gDialog:Landroid/app/ProgressDialog;
+    .line 65
+    iput-object p1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->c:Landroid/app/ProgressDialog;
 
     return-object p1
 .end method
 
-.method static synthetic access$1300(Lcom/samsung/privilege/activity/HistoryActivity;)Landroid/os/Handler;
+.method static synthetic a(Lcom/samsung/privilege/activity/HistoryActivity;)Landroid/support/v7/widget/RecyclerView$LayoutManager;
     .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
 
     .prologue
-    .line 61
-    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->mHandler:Landroid/os/Handler;
+    .line 65
+    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->e:Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
     return-object v0
 .end method
 
-.method static synthetic access$1400(Lcom/samsung/privilege/activity/HistoryActivity;Lcom/bzbs/bean/Purchasing;Z)V
-    .registers 3
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-    .param p1, "x1"    # Lcom/bzbs/bean/Purchasing;
-    .param p2, "x2"    # Z
-
-    .prologue
-    .line 61
-    invoke-direct {p0, p1, p2}, Lcom/samsung/privilege/activity/HistoryActivity;->getPurchaseItem(Lcom/bzbs/bean/Purchasing;Z)V
-
-    return-void
-.end method
-
-.method static synthetic access$1500(Lcom/samsung/privilege/activity/HistoryActivity;Lcom/bzbs/bean/Purchasing;Z)V
-    .registers 3
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-    .param p1, "x1"    # Lcom/bzbs/bean/Purchasing;
-    .param p2, "x2"    # Z
-
-    .prologue
-    .line 61
-    invoke-direct {p0, p1, p2}, Lcom/samsung/privilege/activity/HistoryActivity;->getWinnerData(Lcom/bzbs/bean/Purchasing;Z)V
-
-    return-void
-.end method
-
-.method static synthetic access$1700(Lcom/samsung/privilege/activity/HistoryActivity;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 3
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-    .param p1, "x1"    # Ljava/lang/String;
-    .param p2, "x2"    # Ljava/lang/String;
-
-    .prologue
-    .line 61
-    invoke-direct {p0, p1, p2}, Lcom/samsung/privilege/activity/HistoryActivity;->goBookingHistory(Ljava/lang/String;Ljava/lang/String;)V
-
-    return-void
-.end method
-
-.method static synthetic access$1900(Lcom/samsung/privilege/activity/HistoryActivity;)Landroid/support/v7/widget/RecyclerView;
+.method static synthetic a(Lcom/samsung/privilege/activity/HistoryActivity;Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;)Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;
     .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
 
     .prologue
-    .line 61
-    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->mRecyclerHistory:Landroid/support/v7/widget/RecyclerView;
-
-    return-object v0
-.end method
-
-.method static synthetic access$200(Lcom/samsung/privilege/activity/HistoryActivity;)Landroid/support/v7/widget/RecyclerView$LayoutManager;
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-
-    .prologue
-    .line 61
-    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->mLayoutManager:Landroid/support/v7/widget/RecyclerView$LayoutManager;
-
-    return-object v0
-.end method
-
-.method static synthetic access$300(Lcom/samsung/privilege/activity/HistoryActivity;)I
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-
-    .prologue
-    .line 61
-    iget v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->totalItemCount:I
-
-    return v0
-.end method
-
-.method static synthetic access$302(Lcom/samsung/privilege/activity/HistoryActivity;I)I
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-    .param p1, "x1"    # I
-
-    .prologue
-    .line 61
-    iput p1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->totalItemCount:I
-
-    return p1
-.end method
-
-.method static synthetic access$400(Lcom/samsung/privilege/activity/HistoryActivity;)Z
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-
-    .prologue
-    .line 61
-    iget-boolean v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->loading:Z
-
-    return v0
-.end method
-
-.method static synthetic access$402(Lcom/samsung/privilege/activity/HistoryActivity;Z)Z
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-    .param p1, "x1"    # Z
-
-    .prologue
-    .line 61
-    iput-boolean p1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->loading:Z
-
-    return p1
-.end method
-
-.method static synthetic access$500(Lcom/samsung/privilege/activity/HistoryActivity;)Z
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-
-    .prologue
-    .line 61
-    iget-boolean v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->out_of_data:Z
-
-    return v0
-.end method
-
-.method static synthetic access$502(Lcom/samsung/privilege/activity/HistoryActivity;Z)Z
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-    .param p1, "x1"    # Z
-
-    .prologue
-    .line 61
-    iput-boolean p1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->out_of_data:Z
-
-    return p1
-.end method
-
-.method static synthetic access$600(Lcom/samsung/privilege/activity/HistoryActivity;)I
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-
-    .prologue
-    .line 61
-    iget v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->pastVisiblesItems:I
-
-    return v0
-.end method
-
-.method static synthetic access$602(Lcom/samsung/privilege/activity/HistoryActivity;I)I
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-    .param p1, "x1"    # I
-
-    .prologue
-    .line 61
-    iput p1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->pastVisiblesItems:I
-
-    return p1
-.end method
-
-.method static synthetic access$700(Lcom/samsung/privilege/activity/HistoryActivity;)Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-
-    .prologue
-    .line 61
-    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->mHistoryAdapter:Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;
-
-    return-object v0
-.end method
-
-.method static synthetic access$702(Lcom/samsung/privilege/activity/HistoryActivity;Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;)Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-    .param p1, "x1"    # Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;
-
-    .prologue
-    .line 61
-    iput-object p1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->mHistoryAdapter:Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;
+    .line 65
+    iput-object p1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->f:Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;
 
     return-object p1
 .end method
 
-.method static synthetic access$800(Lcom/samsung/privilege/activity/HistoryActivity;Lcom/bzbs/bean/Purchasing;Z)V
-    .registers 3
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-    .param p1, "x1"    # Lcom/bzbs/bean/Purchasing;
-    .param p2, "x2"    # Z
+.method private a(I)V
+    .registers 7
 
     .prologue
-    .line 61
-    invoke-direct {p0, p1, p2}, Lcom/samsung/privilege/activity/HistoryActivity;->getPurchaseItemOldApi(Lcom/bzbs/bean/Purchasing;Z)V
+    const/4 v4, 0x1
+
+    .line 741
+    iget-boolean v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->g:Z
+
+    if-ne v0, v4, :cond_6
+
+    .line 837
+    :goto_5
+    return-void
+
+    .line 745
+    :cond_6
+    const-string/jumbo v0, ""
+
+    const v1, 0x7f090280
+
+    invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {p0, v0, v1, v4, v4}, Landroid/app/ProgressDialog;->show(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)Landroid/app/ProgressDialog;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->c:Landroid/app/ProgressDialog;
+
+    .line 748
+    :try_start_16
+    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->c:Landroid/app/ProgressDialog;
+
+    const v1, 0x102000b
+
+    invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/TextView;
+
+    .line 749
+    if-eqz v0, :cond_41
+
+    .line 750
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getAssets()Landroid/content/res/AssetManager;
+
+    move-result-object v1
+
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/bzbs/data/AppSetting;->b(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
+
+    move-result-object v1
+
+    .line 751
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    .line 752
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/bzbs/data/AppSetting;->c(Landroid/content/Context;)F
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextSize(F)V
+    :try_end_41
+    .catch Ljava/lang/Exception; {:try_start_16 .. :try_end_41} :catch_bf
+
+    .line 763
+    :cond_41
+    :goto_41
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "api/redeem?config=purchase&byConfig=true"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 765
+    if-lez p1, :cond_71
+
+    .line 766
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "&$skip="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 769
+    :cond_71
+    iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->a:Ljava/lang/String;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "url="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 770
+    iput-boolean v4, p0, Lcom/samsung/privilege/activity/HistoryActivity;->g:Z
+
+    .line 771
+    new-instance v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
+
+    invoke-direct {v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;-><init>()V
+
+    .line 772
+    invoke-virtual {v1, p0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Landroid/app/Activity;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
+
+    move-result-object v1
+
+    sget-boolean v2, Lcom/bzbs/data/AppSetting;->Q:Z
+
+    .line 773
+    invoke-virtual {v1, v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
+
+    move-result-object v1
+
+    .line 774
+    invoke-virtual {v1, v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Ljava/lang/String;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
+
+    move-result-object v0
+
+    .line 775
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->b(Ljava/lang/String;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;->a:Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;
+
+    .line 776
+    invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/samsung/privilege/activity/HistoryActivity$6;
+
+    invoke-direct {v1, p0, p1}, Lcom/samsung/privilege/activity/HistoryActivity$6;-><init>(Lcom/samsung/privilege/activity/HistoryActivity;I)V
+
+    .line 777
+    invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/ResponseListener;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
+
+    move-result-object v0
+
+    .line 836
+    invoke-virtual {v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a()Lcom/bzbs/lib/http/okhttp/HttpRequest;
+
+    goto/16 :goto_5
+
+    .line 754
+    :catch_bf
+    move-exception v0
+
+    goto :goto_41
+.end method
+
+.method private a(Lcom/bzbs/bean/Purchasing;Z)V
+    .registers 8
+
+    .prologue
+    const/4 v4, 0x1
+
+    .line 484
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 485
+    if-eqz v0, :cond_75
+
+    const-string/jumbo v1, ""
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_75
+
+    .line 486
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v2, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "api/redeem/"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p1, Lcom/bzbs/bean/Purchasing;->RedeemKey:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "?token="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 487
+    iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->a:Ljava/lang/String;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "(getPurchaseItem) url="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 489
+    new-instance v1, Lcom/loopj/android/http/AsyncHttpClient;
+
+    invoke-direct {v1}, Lcom/loopj/android/http/AsyncHttpClient;-><init>()V
+
+    .line 490
+    const-string/jumbo v2, ""
+
+    const v3, 0x7f090280
+
+    invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {p0, v2, v3, v4, v4}, Landroid/app/ProgressDialog;->show(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)Landroid/app/ProgressDialog;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/samsung/privilege/activity/HistoryActivity;->c:Landroid/app/ProgressDialog;
+
+    .line 491
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    new-instance v3, Lcom/samsung/privilege/activity/HistoryActivity$PurchaseItemListener;
+
+    invoke-direct {v3, p0, p1, p2}, Lcom/samsung/privilege/activity/HistoryActivity$PurchaseItemListener;-><init>(Lcom/samsung/privilege/activity/HistoryActivity;Lcom/bzbs/bean/Purchasing;Z)V
+
+    invoke-virtual {v1, v2, v0, v3}, Lcom/loopj/android/http/AsyncHttpClient;->get(Landroid/content/Context;Ljava/lang/String;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
+
+    .line 493
+    :cond_75
+    return-void
+.end method
+
+.method static synthetic a(Lcom/samsung/privilege/activity/HistoryActivity;I)V
+    .registers 2
+
+    .prologue
+    .line 65
+    invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/HistoryActivity;->a(I)V
 
     return-void
 .end method
 
-.method static synthetic access$900(Lcom/samsung/privilege/activity/HistoryActivity;Ljava/lang/String;)Z
+.method static synthetic a(Lcom/samsung/privilege/activity/HistoryActivity;Lcom/bzbs/bean/Purchasing;Z)V
     .registers 3
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/HistoryActivity;
-    .param p1, "x1"    # Ljava/lang/String;
 
     .prologue
-    .line 61
-    invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/HistoryActivity;->appInstalledOrNot(Ljava/lang/String;)Z
+    .line 65
+    invoke-direct {p0, p1, p2}, Lcom/samsung/privilege/activity/HistoryActivity;->a(Lcom/bzbs/bean/Purchasing;Z)V
+
+    return-void
+.end method
+
+.method static synthetic a(Lcom/samsung/privilege/activity/HistoryActivity;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 3
+
+    .prologue
+    .line 65
+    invoke-direct {p0, p1, p2}, Lcom/samsung/privilege/activity/HistoryActivity;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method private a(Ljava/lang/String;)V
+    .registers 4
+
+    .prologue
+    .line 104
+    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->b:Landroid/os/Handler;
+
+    new-instance v1, Lcom/samsung/privilege/activity/HistoryActivity$1;
+
+    invoke-direct {v1, p0, p1}, Lcom/samsung/privilege/activity/HistoryActivity$1;-><init>(Lcom/samsung/privilege/activity/HistoryActivity;Ljava/lang/String;)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 111
+    return-void
+.end method
+
+.method private a(Ljava/lang/String;Ljava/lang/String;)V
+    .registers 7
+
+    .prologue
+    .line 709
+    if-eqz p1, :cond_ab
+
+    const-string/jumbo v0, ""
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_ab
+
+    .line 714
+    :try_start_b
+    new-instance v0, Lcom/bzbs/util/DeviceHelper;
+
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lcom/bzbs/util/DeviceHelper;-><init>(Landroid/content/Context;)V
+
+    .line 715
+    const-string/jumbo v1, "<deviceId>"
+
+    invoke-virtual {v0}, Lcom/bzbs/util/DeviceHelper;->d()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v1, v0}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 716
+    const-string/jumbo v0, "<uid>"
+
+    invoke-static {}, Lcom/facebook/Profile;->getCurrentProfile()Lcom/facebook/Profile;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/facebook/Profile;->getId()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    :try_end_2d
+    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_2d} :catch_ac
+
+    move-result-object v0
+
+    .line 721
+    :goto_2e
+    :try_start_2e
+    const-string/jumbo v1, "https://"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_54
+
+    const-string/jumbo v1, "http://"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_54
+
+    .line 722
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "http://"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 724
+    :cond_54
+    const-string/jumbo v1, "?"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_af
+
+    .line 725
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "&redeem_key="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "&token="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "&return_url=bzbs_return_url&cancel_url=bzbs_cancel_url"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 730
+    :goto_8f
+    new-instance v1, Landroid/content/Intent;
+
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v2
+
+    const-class v3, Lcom/samsung/privilege/activity/WebViewBookingActivity;
+
+    invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 731
+    const-string/jumbo v2, "url"
+
+    invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 732
+    const-string/jumbo v0, "enable_webview_back"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
+
+    .line 733
+    const/4 v0, 0x0
+
+    invoke-virtual {p0, v1, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->startActivityForResult(Landroid/content/Intent;I)V
+
+    .line 738
+    :cond_ab
+    :goto_ab
+    return-void
+
+    .line 717
+    :catch_ac
+    move-exception v0
+
+    move-object v0, p1
+
+    goto :goto_2e
+
+    .line 727
+    :cond_af
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "?redeem_key="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "&token="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "&return_url=bzbs_return_url&cancel_url=bzbs_cancel_url"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :try_end_e0
+    .catch Ljava/lang/Exception; {:try_start_2e .. :try_end_e0} :catch_e2
+
+    move-result-object v0
+
+    goto :goto_8f
+
+    .line 734
+    :catch_e2
+    move-exception v0
+
+    goto :goto_ab
+.end method
+
+.method static synthetic a(Lcom/samsung/privilege/activity/HistoryActivity;Ljava/lang/String;)Z
+    .registers 3
+
+    .prologue
+    .line 65
+    invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/HistoryActivity;->b(Ljava/lang/String;)Z
 
     move-result v0
 
     return v0
 .end method
 
-.method private appInstalledOrNot(Ljava/lang/String;)Z
-    .registers 6
-    .param p1, "uri"    # Ljava/lang/String;
+.method static synthetic a(Lcom/samsung/privilege/activity/HistoryActivity;Z)Z
+    .registers 2
 
     .prologue
-    .line 456
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getPackageManager()Landroid/content/pm/PackageManager;
+    .line 65
+    iput-boolean p1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->h:Z
 
-    move-result-object v2
-
-    .line 457
-    .local v2, "pm":Landroid/content/pm/PackageManager;
-    const/4 v0, 0x0
-
-    .line 459
-    .local v0, "app_installed":Z
-    const/4 v3, 0x1
-
-    :try_start_6
-    invoke-virtual {v2, p1, v3}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
-    :try_end_9
-    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_6 .. :try_end_9} :catch_b
-
-    .line 460
-    const/4 v0, 0x1
-
-    .line 464
-    :goto_a
-    return v0
-
-    .line 461
-    :catch_b
-    move-exception v1
-
-    .line 462
-    .local v1, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
-    const/4 v0, 0x0
-
-    goto :goto_a
+    return p1
 .end method
 
-.method private bindingEvent()V
-    .registers 5
+.method static synthetic b(Lcom/samsung/privilege/activity/HistoryActivity;I)I
+    .registers 2
 
     .prologue
-    .line 122
-    const v1, 0x7f100107
+    .line 65
+    iput p1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->j:I
 
-    invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/HistoryActivity;->findViewById(I)Landroid/view/View;
+    return p1
+.end method
+
+.method private b(Lcom/bzbs/bean/Purchasing;Z)V
+    .registers 9
+
+    .prologue
+    const/4 v5, 0x1
+
+    .line 496
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    check-cast v0, Landroid/support/v4/widget/SwipeRefreshLayout;
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
 
-    .line 123
-    .local v0, "swipeRefreshLayout":Landroid/support/v4/widget/SwipeRefreshLayout;
-    new-instance v1, Lcom/samsung/privilege/activity/HistoryActivity$2;
+    move-result-object v0
 
-    invoke-direct {v1, p0}, Lcom/samsung/privilege/activity/HistoryActivity$2;-><init>(Lcom/samsung/privilege/activity/HistoryActivity;)V
+    .line 497
+    if-eqz v0, :cond_7c
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/widget/SwipeRefreshLayout;->setOnRefreshListener(Landroid/support/v4/widget/SwipeRefreshLayout$OnRefreshListener;)V
+    const-string/jumbo v1, ""
 
-    .line 130
-    iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->mRecyclerHistory:Landroid/support/v7/widget/RecyclerView;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    new-instance v2, Lcom/samsung/privilege/activity/HistoryActivity$3;
+    move-result v1
 
-    invoke-direct {v2, p0}, Lcom/samsung/privilege/activity/HistoryActivity$3;-><init>(Lcom/samsung/privilege/activity/HistoryActivity;)V
+    if-nez v1, :cond_7c
 
-    invoke-virtual {v1, v2}, Landroid/support/v7/widget/RecyclerView;->addOnScrollListener(Landroid/support/v7/widget/RecyclerView$OnScrollListener;)V
+    .line 498
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    .line 146
-    iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->mRecyclerHistory:Landroid/support/v7/widget/RecyclerView;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-instance v2, Lcom/bzbs/event/RecyclerItemClickListener;
+    sget-object v2, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
 
-    new-instance v3, Lcom/samsung/privilege/activity/HistoryActivity$4;
-
-    invoke-direct {v3, p0}, Lcom/samsung/privilege/activity/HistoryActivity$4;-><init>(Lcom/samsung/privilege/activity/HistoryActivity;)V
-
-    invoke-direct {v2, p0, v3}, Lcom/bzbs/event/RecyclerItemClickListener;-><init>(Landroid/content/Context;Lcom/bzbs/event/RecyclerItemClickListener$OnItemClickListener;)V
-
-    invoke-virtual {v1, v2}, Landroid/support/v7/widget/RecyclerView;->addOnItemTouchListener(Landroid/support/v7/widget/RecyclerView$OnItemTouchListener;)V
-
-    .line 453
-    return-void
-.end method
-
-.method private getPurchaseItem(Lcom/bzbs/bean/Purchasing;Z)V
-    .registers 10
-    .param p1, "purchasing"    # Lcom/bzbs/bean/Purchasing;
-    .param p2, "isRefreshData"    # Z
-
-    .prologue
-    const/4 v6, 0x1
-
-    .line 480
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/bzbs/data/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    .line 481
-    .local v1, "strTokenBuzzeBees":Ljava/lang/String;
-    if-eqz v1, :cond_76
+    const-string/jumbo v2, "api/redeem/"
 
-    const-string/jumbo v3, ""
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v1
 
-    move-result v3
+    iget-object v2, p1, Lcom/bzbs/bean/Purchasing;->RedeemKey:Ljava/lang/String;
 
-    if-nez v3, :cond_76
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 483
+    move-result-object v1
+
+    const-string/jumbo v2, "/use"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 499
+    iget-object v2, p0, Lcom/samsung/privilege/activity/HistoryActivity;->a:Ljava/lang/String;
+
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v4, Lcom/bzbs/data/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "api/redeem/"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p1, Lcom/bzbs/bean/Purchasing;->RedeemKey:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "/use?token="
+    const-string/jumbo v4, "(getPurchaseItem) url="
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -511,185 +848,41 @@
 
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    .line 484
-    .local v2, "url":Ljava/lang/String;
-    iget-object v3, p0, Lcom/samsung/privilege/activity/HistoryActivity;->TAG:Ljava/lang/String;
+    invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    .line 501
+    new-instance v2, Lcom/loopj/android/http/RequestParams;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Lcom/loopj/android/http/RequestParams;-><init>()V
 
-    const-string/jumbo v5, "(getPurchaseItem) url="
+    .line 502
+    const-string/jumbo v3, "token"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3, v0}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result-object v4
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 488
+    .line 506
     new-instance v0, Lcom/loopj/android/http/AsyncHttpClient;
 
     invoke-direct {v0}, Lcom/loopj/android/http/AsyncHttpClient;-><init>()V
 
-    .line 489
-    .local v0, "client":Lcom/loopj/android/http/AsyncHttpClient;
+    .line 507
     const-string/jumbo v3, ""
 
-    const v4, 0x7f09026f
+    const v4, 0x7f090280
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-static {p0, v3, v4, v6, v6}, Landroid/app/ProgressDialog;->show(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)Landroid/app/ProgressDialog;
+    invoke-static {p0, v3, v4, v5, v5}, Landroid/app/ProgressDialog;->show(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)Landroid/app/ProgressDialog;
 
     move-result-object v3
 
-    iput-object v3, p0, Lcom/samsung/privilege/activity/HistoryActivity;->gDialog:Landroid/app/ProgressDialog;
+    iput-object v3, p0, Lcom/samsung/privilege/activity/HistoryActivity;->c:Landroid/app/ProgressDialog;
 
-    .line 490
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    new-instance v5, Lcom/samsung/privilege/activity/HistoryActivity$PurchaseItemListener;
-
-    invoke-direct {v5, p0, p1, p2}, Lcom/samsung/privilege/activity/HistoryActivity$PurchaseItemListener;-><init>(Lcom/samsung/privilege/activity/HistoryActivity;Lcom/bzbs/bean/Purchasing;Z)V
-
-    invoke-virtual {v0, v3, v2, v4, v5}, Lcom/loopj/android/http/AsyncHttpClient;->post(Landroid/content/Context;Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
-
-    .line 492
-    .end local v0    # "client":Lcom/loopj/android/http/AsyncHttpClient;
-    .end local v2    # "url":Ljava/lang/String;
-    :cond_76
-    return-void
-.end method
-
-.method private getPurchaseItemOldApi(Lcom/bzbs/bean/Purchasing;Z)V
-    .registers 10
-    .param p1, "purchasing"    # Lcom/bzbs/bean/Purchasing;
-    .param p2, "isRefreshData"    # Z
-
-    .prologue
-    const/4 v6, 0x1
-
-    .line 468
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/bzbs/data/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 469
-    .local v1, "strTokenBuzzeBees":Ljava/lang/String;
-    if-eqz v1, :cond_75
-
-    const-string/jumbo v3, ""
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_75
-
-    .line 470
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    sget-object v4, Lcom/bzbs/data/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "api/redeem/"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p1, Lcom/bzbs/bean/Purchasing;->RedeemKey:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "?token="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 471
-    .local v2, "url":Ljava/lang/String;
-    iget-object v3, p0, Lcom/samsung/privilege/activity/HistoryActivity;->TAG:Ljava/lang/String;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v5, "(getPurchaseItem) url="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 473
-    new-instance v0, Lcom/loopj/android/http/AsyncHttpClient;
-
-    invoke-direct {v0}, Lcom/loopj/android/http/AsyncHttpClient;-><init>()V
-
-    .line 474
-    .local v0, "client":Lcom/loopj/android/http/AsyncHttpClient;
-    const-string/jumbo v3, ""
-
-    const v4, 0x7f09026f
-
-    invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {p0, v3, v4, v6, v6}, Landroid/app/ProgressDialog;->show(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)Landroid/app/ProgressDialog;
-
-    move-result-object v3
-
-    iput-object v3, p0, Lcom/samsung/privilege/activity/HistoryActivity;->gDialog:Landroid/app/ProgressDialog;
-
-    .line 475
+    .line 508
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v3
@@ -698,411 +891,328 @@
 
     invoke-direct {v4, p0, p1, p2}, Lcom/samsung/privilege/activity/HistoryActivity$PurchaseItemListener;-><init>(Lcom/samsung/privilege/activity/HistoryActivity;Lcom/bzbs/bean/Purchasing;Z)V
 
-    invoke-virtual {v0, v3, v2, v4}, Lcom/loopj/android/http/AsyncHttpClient;->get(Landroid/content/Context;Ljava/lang/String;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
+    invoke-virtual {v0, v3, v1, v2, v4}, Lcom/loopj/android/http/AsyncHttpClient;->post(Landroid/content/Context;Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
 
-    .line 477
-    .end local v0    # "client":Lcom/loopj/android/http/AsyncHttpClient;
-    .end local v2    # "url":Ljava/lang/String;
-    :cond_75
+    .line 510
+    :cond_7c
     return-void
 .end method
 
-.method private getWinnerData(Lcom/bzbs/bean/Purchasing;Z)V
-    .registers 10
-    .param p1, "purchasing"    # Lcom/bzbs/bean/Purchasing;
-    .param p2, "isRefreshData"    # Z
-
-    .prologue
-    const/4 v6, 0x1
-
-    .line 619
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/bzbs/data/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 620
-    .local v1, "strTokenBuzzeBees":Ljava/lang/String;
-    if-eqz v1, :cond_76
-
-    const-string/jumbo v3, ""
-
-    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_76
-
-    .line 622
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    sget-object v4, Lcom/bzbs/data/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "api/campaign/"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    iget-object v4, p1, Lcom/bzbs/bean/Purchasing;->ID:Ljava/lang/String;
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "/winner?token="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 623
-    .local v2, "url":Ljava/lang/String;
-    iget-object v3, p0, Lcom/samsung/privilege/activity/HistoryActivity;->TAG:Ljava/lang/String;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v5, "(getWinnerData) url="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {v3, v4}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 625
-    new-instance v0, Lcom/loopj/android/http/AsyncHttpClient;
-
-    invoke-direct {v0}, Lcom/loopj/android/http/AsyncHttpClient;-><init>()V
-
-    .line 626
-    .local v0, "client":Lcom/loopj/android/http/AsyncHttpClient;
-    const-string/jumbo v3, ""
-
-    const v4, 0x7f09026f
-
-    invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {p0, v3, v4, v6, v6}, Landroid/app/ProgressDialog;->show(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)Landroid/app/ProgressDialog;
-
-    move-result-object v3
-
-    iput-object v3, p0, Lcom/samsung/privilege/activity/HistoryActivity;->gDialog:Landroid/app/ProgressDialog;
-
-    .line 627
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    const/4 v4, 0x0
-
-    new-instance v5, Lcom/samsung/privilege/activity/HistoryActivity$5;
-
-    invoke-direct {v5, p0, p1, p2}, Lcom/samsung/privilege/activity/HistoryActivity$5;-><init>(Lcom/samsung/privilege/activity/HistoryActivity;Lcom/bzbs/bean/Purchasing;Z)V
-
-    invoke-virtual {v0, v3, v2, v4, v5}, Lcom/loopj/android/http/AsyncHttpClient;->post(Landroid/content/Context;Ljava/lang/String;Lcom/loopj/android/http/RequestParams;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
-
-    .line 687
-    .end local v0    # "client":Lcom/loopj/android/http/AsyncHttpClient;
-    .end local v2    # "url":Ljava/lang/String;
-    :cond_76
-    return-void
-.end method
-
-.method private goBookingHistory(Ljava/lang/String;Ljava/lang/String;)V
-    .registers 8
-    .param p1, "urlWebsite"    # Ljava/lang/String;
-    .param p2, "redeem_key"    # Ljava/lang/String;
-
-    .prologue
-    .line 690
-    if-eqz p1, :cond_ac
-
-    const-string/jumbo v3, ""
-
-    invoke-virtual {p1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_ac
-
-    .line 692
-    move-object v2, p1
-
-    .line 695
-    .local v2, "url":Ljava/lang/String;
-    :try_start_c
-    new-instance v0, Lcom/bzbs/util/DeviceHelper;
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    invoke-direct {v0, v3}, Lcom/bzbs/util/DeviceHelper;-><init>(Landroid/content/Context;)V
-
-    .line 696
-    .local v0, "deviceHelper":Lcom/bzbs/util/DeviceHelper;
-    const-string/jumbo v3, "<deviceId>"
-
-    invoke-static {}, Lcheat/FoxCore;->ranImei()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v3, v4}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 697
-    const-string/jumbo v3, "<uid>"
-
-    invoke-static {}, Lcom/facebook/Profile;->getCurrentProfile()Lcom/facebook/Profile;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Lcom/facebook/Profile;->getId()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v2, v3, v4}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    :try_end_2e
-    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_2e} :catch_e2
-
-    move-result-object v2
-
-    .line 702
-    .end local v0    # "deviceHelper":Lcom/bzbs/util/DeviceHelper;
-    :goto_2f
-    :try_start_2f
-    const-string/jumbo v3, "https://"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_55
-
-    const-string/jumbo v3, "http://"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v3
-
-    if-nez v3, :cond_55
-
-    .line 703
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "http://"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 705
-    :cond_55
-    const-string/jumbo v3, "?"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_ad
-
-    .line 706
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "&redeem_key="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "&token="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/bzbs/data/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "&return_url=bzbs_return_url&cancel_url=bzbs_cancel_url"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 711
-    :goto_90
-    new-instance v1, Landroid/content/Intent;
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v3
-
-    const-class v4, Lcom/samsung/privilege/activity/WebViewBookingActivity;
-
-    invoke-direct {v1, v3, v4}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 712
-    .local v1, "intent":Landroid/content/Intent;
-    const-string/jumbo v3, "url"
-
-    invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 713
-    const-string/jumbo v3, "enable_webview_back"
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v1, v3, v4}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
-
-    .line 714
-    const/4 v3, 0x0
-
-    invoke-virtual {p0, v1, v3}, Lcom/samsung/privilege/activity/HistoryActivity;->startActivityForResult(Landroid/content/Intent;I)V
-
-    .line 719
-    .end local v1    # "intent":Landroid/content/Intent;
-    .end local v2    # "url":Ljava/lang/String;
-    :cond_ac
-    :goto_ac
-    return-void
-
-    .line 708
-    .restart local v2    # "url":Ljava/lang/String;
-    :cond_ad
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "?redeem_key="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "&token="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/bzbs/data/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    const-string/jumbo v4, "&return_url=bzbs_return_url&cancel_url=bzbs_cancel_url"
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-    :try_end_de
-    .catch Ljava/lang/Exception; {:try_start_2f .. :try_end_de} :catch_e0
-
-    move-result-object v2
-
-    goto :goto_90
-
-    .line 715
-    :catch_e0
-    move-exception v3
-
-    goto :goto_ac
-
-    .line 698
-    :catch_e2
-    move-exception v3
-
-    goto/16 :goto_2f
-.end method
-
-.method private initialLayout()V
+.method static synthetic b(Lcom/samsung/privilege/activity/HistoryActivity;Lcom/bzbs/bean/Purchasing;Z)V
     .registers 3
 
     .prologue
-    .line 110
-    const v0, 0x7f10014d
+    .line 65
+    invoke-direct {p0, p1, p2}, Lcom/samsung/privilege/activity/HistoryActivity;->b(Lcom/bzbs/bean/Purchasing;Z)V
+
+    return-void
+.end method
+
+.method static synthetic b(Lcom/samsung/privilege/activity/HistoryActivity;Ljava/lang/String;)V
+    .registers 2
+
+    .prologue
+    .line 65
+    invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/HistoryActivity;->a(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+.method static synthetic b(Lcom/samsung/privilege/activity/HistoryActivity;)Z
+    .registers 2
+
+    .prologue
+    .line 65
+    iget-boolean v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->g:Z
+
+    return v0
+.end method
+
+.method static synthetic b(Lcom/samsung/privilege/activity/HistoryActivity;Z)Z
+    .registers 2
+
+    .prologue
+    .line 65
+    iput-boolean p1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->g:Z
+
+    return p1
+.end method
+
+.method private b(Ljava/lang/String;)Z
+    .registers 5
+
+    .prologue
+    const/4 v0, 0x1
+
+    .line 472
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v1
+
+    .line 475
+    const/4 v2, 0x1
+
+    :try_start_6
+    invoke-virtual {v1, p1, v2}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+    :try_end_9
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_6 .. :try_end_9} :catch_a
+
+    .line 480
+    :goto_9
+    return v0
+
+    .line 477
+    :catch_a
+    move-exception v0
+
+    .line 478
+    const/4 v0, 0x0
+
+    goto :goto_9
+.end method
+
+.method static synthetic c(Lcom/samsung/privilege/activity/HistoryActivity;I)I
+    .registers 2
+
+    .prologue
+    .line 65
+    iput p1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->k:I
+
+    return p1
+.end method
+
+.method private c(Lcom/bzbs/bean/Purchasing;Z)V
+    .registers 8
+
+    .prologue
+    const/4 v4, 0x1
+
+    .line 633
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 634
+    if-eqz v0, :cond_9a
+
+    const-string/jumbo v1, ""
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_9a
+
+    .line 636
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "api/campaign/"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p1, Lcom/bzbs/bean/Purchasing;->ID:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "/winner"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 637
+    iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->a:Ljava/lang/String;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "(getWinnerData) url="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 639
+    new-instance v1, Lcom/bzbs/lib/http/okhttp/HttpParams;
+
+    invoke-direct {v1}, Lcom/bzbs/lib/http/okhttp/HttpParams;-><init>()V
+
+    .line 642
+    const-string/jumbo v2, ""
+
+    const v3, 0x7f090280
+
+    invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {p0, v2, v3, v4, v4}, Landroid/app/ProgressDialog;->show(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)Landroid/app/ProgressDialog;
+
+    move-result-object v2
+
+    iput-object v2, p0, Lcom/samsung/privilege/activity/HistoryActivity;->c:Landroid/app/ProgressDialog;
+
+    .line 643
+    new-instance v2, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
+
+    invoke-direct {v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;-><init>()V
+
+    .line 644
+    invoke-virtual {v2, p0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Landroid/app/Activity;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
+
+    move-result-object v2
+
+    sget-boolean v3, Lcom/bzbs/data/AppSetting;->Q:Z
+
+    .line 645
+    invoke-virtual {v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
+
+    move-result-object v2
+
+    .line 646
+    invoke-virtual {v2, v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Ljava/lang/String;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
+
+    move-result-object v0
+
+    .line 647
+    invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpParams;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
+
+    move-result-object v0
+
+    .line 648
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->b(Ljava/lang/String;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;->b:Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;
+
+    .line 649
+    invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/samsung/privilege/activity/HistoryActivity$5;
+
+    invoke-direct {v1, p0, p1, p2}, Lcom/samsung/privilege/activity/HistoryActivity$5;-><init>(Lcom/samsung/privilege/activity/HistoryActivity;Lcom/bzbs/bean/Purchasing;Z)V
+
+    .line 650
+    invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/ResponseListener;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
+
+    move-result-object v0
+
+    .line 704
+    invoke-virtual {v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a()Lcom/bzbs/lib/http/okhttp/HttpRequest;
+
+    .line 706
+    :cond_9a
+    return-void
+.end method
+
+.method static synthetic c(Lcom/samsung/privilege/activity/HistoryActivity;Lcom/bzbs/bean/Purchasing;Z)V
+    .registers 3
+
+    .prologue
+    .line 65
+    invoke-direct {p0, p1, p2}, Lcom/samsung/privilege/activity/HistoryActivity;->c(Lcom/bzbs/bean/Purchasing;Z)V
+
+    return-void
+.end method
+
+.method static synthetic c(Lcom/samsung/privilege/activity/HistoryActivity;)Z
+    .registers 2
+
+    .prologue
+    .line 65
+    iget-boolean v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->h:Z
+
+    return v0
+.end method
+
+.method static synthetic d(Lcom/samsung/privilege/activity/HistoryActivity;)I
+    .registers 2
+
+    .prologue
+    .line 65
+    iget v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->j:I
+
+    return v0
+.end method
+
+.method static synthetic d(Lcom/samsung/privilege/activity/HistoryActivity;I)I
+    .registers 2
+
+    .prologue
+    .line 65
+    iput p1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->i:I
+
+    return p1
+.end method
+
+.method static synthetic e(Lcom/samsung/privilege/activity/HistoryActivity;)I
+    .registers 2
+
+    .prologue
+    .line 65
+    iget v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->i:I
+
+    return v0
+.end method
+
+.method static synthetic f(Lcom/samsung/privilege/activity/HistoryActivity;)I
+    .registers 2
+
+    .prologue
+    .line 65
+    iget v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->k:I
+
+    return v0
+.end method
+
+.method private f()V
+    .registers 3
+
+    .prologue
+    .line 114
+    const v0, 0x7f100160
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->findViewById(I)Landroid/view/View;
 
@@ -1110,357 +1220,173 @@
 
     check-cast v0, Landroid/support/v7/widget/RecyclerView;
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->mRecyclerHistory:Landroid/support/v7/widget/RecyclerView;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->d:Landroid/support/v7/widget/RecyclerView;
 
-    .line 111
-    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->mRecyclerHistory:Landroid/support/v7/widget/RecyclerView;
+    .line 115
+    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->d:Landroid/support/v7/widget/RecyclerView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setHasFixedSize(Z)V
 
-    .line 113
+    .line 117
     new-instance v0, Landroid/support/v7/widget/LinearLayoutManager;
 
     invoke-direct {v0, p0}, Landroid/support/v7/widget/LinearLayoutManager;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->mLayoutManager:Landroid/support/v7/widget/RecyclerView$LayoutManager;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->e:Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
-    .line 114
-    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->mRecyclerHistory:Landroid/support/v7/widget/RecyclerView;
+    .line 118
+    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->d:Landroid/support/v7/widget/RecyclerView;
 
-    iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->mLayoutManager:Landroid/support/v7/widget/RecyclerView$LayoutManager;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->e:Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setLayoutManager(Landroid/support/v7/widget/RecyclerView$LayoutManager;)V
 
-    .line 115
+    .line 119
     return-void
 .end method
 
-.method private loadHistory(I)V
-    .registers 10
-    .param p1, "skip"    # I
+.method static synthetic g(Lcom/samsung/privilege/activity/HistoryActivity;)J
+    .registers 3
 
     .prologue
-    const/4 v7, 0x1
+    .line 65
+    iget-wide v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->l:J
 
-    .line 722
-    iget-boolean v4, p0, Lcom/samsung/privilege/activity/HistoryActivity;->loading:Z
-
-    if-ne v4, v7, :cond_6
-
-    .line 816
-    :goto_5
-    return-void
-
-    .line 726
-    :cond_6
-    const-string/jumbo v4, ""
-
-    const v5, 0x7f09026f
-
-    invoke-virtual {p0, v5}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {p0, v4, v5, v7, v7}, Landroid/app/ProgressDialog;->show(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)Landroid/app/ProgressDialog;
-
-    move-result-object v4
-
-    iput-object v4, p0, Lcom/samsung/privilege/activity/HistoryActivity;->gDialog:Landroid/app/ProgressDialog;
-
-    .line 729
-    :try_start_16
-    iget-object v4, p0, Lcom/samsung/privilege/activity/HistoryActivity;->gDialog:Landroid/app/ProgressDialog;
-
-    const v5, 0x102000b
-
-    invoke-virtual {v4, v5}, Landroid/app/ProgressDialog;->findViewById(I)Landroid/view/View;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/widget/TextView;
-
-    .line 730
-    .local v2, "mMessageView":Landroid/widget/TextView;
-    if-eqz v2, :cond_41
-
-    .line 731
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getAssets()Landroid/content/res/AssetManager;
-
-    move-result-object v4
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v5
-
-    invoke-static {v5}, Lcom/bzbs/data/AppSetting;->FONTS_DEFAULT(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
-
-    move-result-object v1
-
-    .line 732
-    .local v1, "font":Landroid/graphics/Typeface;
-    invoke-virtual {v2, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 733
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/bzbs/data/AppSetting;->FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-
-    move-result v4
-
-    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setTextSize(F)V
-    :try_end_41
-    .catch Ljava/lang/Exception; {:try_start_16 .. :try_end_41} :catch_f3
-
-    .line 739
-    .end local v1    # "font":Landroid/graphics/Typeface;
-    .end local v2    # "mMessageView":Landroid/widget/TextView;
-    :cond_41
-    :goto_41
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    sget-object v5, Lcom/bzbs/data/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string/jumbo v5, "api/redeem"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 740
-    .local v3, "url":Ljava/lang/String;
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string/jumbo v5, "?sponsorId="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v5
-
-    invoke-static {v5}, Lcom/bzbs/data/AppSetting;->SPONSOR_ID(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 741
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string/jumbo v5, "&mode=gift2&format=json&type=list2"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 742
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string/jumbo v5, "&token="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v5
-
-    invoke-static {v5}, Lcom/bzbs/data/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 746
-    if-lez p1, :cond_c5
-
-    .line 747
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string/jumbo v5, "&$skip="
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 750
-    :cond_c5
-    new-instance v0, Lcom/loopj/android/http/AsyncHttpClient;
-
-    invoke-direct {v0}, Lcom/loopj/android/http/AsyncHttpClient;-><init>()V
-
-    .line 751
-    .local v0, "client":Lcom/loopj/android/http/AsyncHttpClient;
-    iget-object v4, p0, Lcom/samsung/privilege/activity/HistoryActivity;->TAG:Ljava/lang/String;
-
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v6, "url="
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v4, v5}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 752
-    iput-boolean v7, p0, Lcom/samsung/privilege/activity/HistoryActivity;->loading:Z
-
-    .line 753
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    new-instance v5, Lcom/samsung/privilege/activity/HistoryActivity$6;
-
-    invoke-direct {v5, p0, p1}, Lcom/samsung/privilege/activity/HistoryActivity$6;-><init>(Lcom/samsung/privilege/activity/HistoryActivity;I)V
-
-    invoke-virtual {v0, v4, v3, v5}, Lcom/loopj/android/http/AsyncHttpClient;->get(Landroid/content/Context;Ljava/lang/String;Lcom/loopj/android/http/ResponseHandlerInterface;)Lcom/loopj/android/http/RequestHandle;
-
-    goto/16 :goto_5
-
-    .line 735
-    .end local v0    # "client":Lcom/loopj/android/http/AsyncHttpClient;
-    .end local v3    # "url":Ljava/lang/String;
-    :catch_f3
-    move-exception v4
-
-    goto/16 :goto_41
+    return-wide v0
 .end method
 
-.method private showToast(Ljava/lang/String;)V
+.method private g()V
     .registers 4
-    .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
-    .line 100
-    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->mHandler:Landroid/os/Handler;
+    .line 127
+    const v0, 0x7f100111
 
-    new-instance v1, Lcom/samsung/privilege/activity/HistoryActivity$1;
+    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->findViewById(I)Landroid/view/View;
 
-    invoke-direct {v1, p0, p1}, Lcom/samsung/privilege/activity/HistoryActivity$1;-><init>(Lcom/samsung/privilege/activity/HistoryActivity;Ljava/lang/String;)V
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    check-cast v0, Landroid/support/v4/widget/SwipeRefreshLayout;
 
-    .line 107
+    .line 128
+    new-instance v1, Lcom/samsung/privilege/activity/HistoryActivity$2;
+
+    invoke-direct {v1, p0}, Lcom/samsung/privilege/activity/HistoryActivity$2;-><init>(Lcom/samsung/privilege/activity/HistoryActivity;)V
+
+    invoke-virtual {v0, v1}, Landroid/support/v4/widget/SwipeRefreshLayout;->a(Landroid/support/v4/widget/SwipeRefreshLayout$OnRefreshListener;)V
+
+    .line 135
+    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->d:Landroid/support/v7/widget/RecyclerView;
+
+    new-instance v1, Lcom/samsung/privilege/activity/HistoryActivity$3;
+
+    invoke-direct {v1, p0}, Lcom/samsung/privilege/activity/HistoryActivity$3;-><init>(Lcom/samsung/privilege/activity/HistoryActivity;)V
+
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->addOnScrollListener(Landroid/support/v7/widget/RecyclerView$OnScrollListener;)V
+
+    .line 151
+    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->d:Landroid/support/v7/widget/RecyclerView;
+
+    new-instance v1, Lcom/bzbs/event/RecyclerItemClickListener;
+
+    new-instance v2, Lcom/samsung/privilege/activity/HistoryActivity$4;
+
+    invoke-direct {v2, p0}, Lcom/samsung/privilege/activity/HistoryActivity$4;-><init>(Lcom/samsung/privilege/activity/HistoryActivity;)V
+
+    invoke-direct {v1, p0, v2}, Lcom/bzbs/event/RecyclerItemClickListener;-><init>(Landroid/content/Context;Lcom/bzbs/event/RecyclerItemClickListener$OnItemClickListener;)V
+
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->addOnItemTouchListener(Landroid/support/v7/widget/RecyclerView$OnItemTouchListener;)V
+
+    .line 469
     return-void
+.end method
+
+.method static synthetic h(Lcom/samsung/privilege/activity/HistoryActivity;)Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;
+    .registers 2
+
+    .prologue
+    .line 65
+    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->f:Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;
+
+    return-object v0
+.end method
+
+.method static synthetic i(Lcom/samsung/privilege/activity/HistoryActivity;)Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 65
+    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->a:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method static synthetic j(Lcom/samsung/privilege/activity/HistoryActivity;)Landroid/app/ProgressDialog;
+    .registers 2
+
+    .prologue
+    .line 65
+    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->c:Landroid/app/ProgressDialog;
+
+    return-object v0
+.end method
+
+.method static synthetic k(Lcom/samsung/privilege/activity/HistoryActivity;)Landroid/os/Handler;
+    .registers 2
+
+    .prologue
+    .line 65
+    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->b:Landroid/os/Handler;
+
+    return-object v0
+.end method
+
+.method static synthetic l(Lcom/samsung/privilege/activity/HistoryActivity;)Landroid/support/v7/widget/RecyclerView;
+    .registers 2
+
+    .prologue
+    .line 65
+    iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->d:Landroid/support/v7/widget/RecyclerView;
+
+    return-object v0
 .end method
 
 
 # virtual methods
 .method public doBack(Landroid/view/View;)V
     .registers 2
-    .param p1, "v"    # Landroid/view/View;
 
     .prologue
-    .line 118
+    .line 122
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->finish()V
 
-    .line 119
+    .line 123
     return-void
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .registers 5
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 78
+    .line 82
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 79
-    const v0, 0x7f040030
+    .line 83
+    const v0, 0x7f040034
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->setContentView(I)V
 
-    .line 81
+    .line 85
     new-instance v0, Landroid/os/Handler;
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->mHandler:Landroid/os/Handler;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->b:Landroid/os/Handler;
 
-    .line 84
-    const v0, 0x7f1000b6
+    .line 88
+    const v0, 0x7f1000b5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->findViewById(I)Landroid/view/View;
 
@@ -1476,7 +1402,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/bzbs/data/AppSetting;->FONTS_DEFAULT(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/bzbs/data/AppSetting;->b(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -1486,18 +1412,18 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 86
-    invoke-direct {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->initialLayout()V
+    .line 90
+    invoke-direct {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->f()V
 
-    .line 87
-    invoke-direct {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->bindingEvent()V
+    .line 91
+    invoke-direct {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->g()V
 
-    .line 89
+    .line 93
     const-string/jumbo v0, "History"
 
-    invoke-static {v0}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsScreen(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;)V
 
-    .line 90
+    .line 94
     return-void
 .end method
 
@@ -1505,14 +1431,14 @@
     .registers 2
 
     .prologue
-    .line 94
+    .line 98
     invoke-super {p0}, Landroid/support/v7/app/AppCompatActivity;->onResume()V
 
-    .line 96
+    .line 100
     const/4 v0, 0x0
 
-    invoke-direct {p0, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->loadHistory(I)V
+    invoke-direct {p0, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->a(I)V
 
-    .line 97
+    .line 101
     return-void
 .end method

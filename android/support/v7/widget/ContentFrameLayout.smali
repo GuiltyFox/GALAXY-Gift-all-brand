@@ -3,14 +3,6 @@
 .source "ContentFrameLayout.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/v7/widget/ContentFrameLayout$OnAttachListener;
-    }
-.end annotation
-
-
 # instance fields
 .field private mAttachListener:Landroid/support/v7/widget/ContentFrameLayout$OnAttachListener;
 
@@ -32,7 +24,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 53
@@ -46,8 +37,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 57
@@ -61,9 +50,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .registers 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
 
     .prologue
     .line 61
@@ -84,7 +70,6 @@
 # virtual methods
 .method public dispatchFitSystemWindows(Landroid/graphics/Rect;)V
     .registers 2
-    .param p1, "insets"    # Landroid/graphics/Rect;
 
     .prologue
     .line 69
@@ -271,618 +256,383 @@
 .end method
 
 .method protected onMeasure(II)V
-    .registers 22
-    .param p1, "widthMeasureSpec"    # I
-    .param p2, "heightMeasureSpec"    # I
+    .registers 15
 
     .prologue
+    const/4 v11, 0x5
+
+    const/4 v1, 0x1
+
+    const/high16 v10, -0x80000000
+
+    const/high16 v9, 0x40000000    # 2.0f
+
+    const/4 v2, 0x0
+
     .line 91
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/ContentFrameLayout;->getContext()Landroid/content/Context;
+    invoke-virtual {p0}, Landroid/support/v7/widget/ContentFrameLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v17
+    move-result-object v0
 
-    invoke-virtual/range {v17 .. v17}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v17
+    move-result-object v0
 
-    invoke-virtual/range {v17 .. v17}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result-object v8
+    move-result-object v5
 
     .line 92
-    .local v8, "metrics":Landroid/util/DisplayMetrics;
-    iget v0, v8, Landroid/util/DisplayMetrics;->widthPixels:I
+    iget v0, v5, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    move/from16 v17, v0
+    iget v3, v5, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    iget v0, v8, Landroid/util/DisplayMetrics;->heightPixels:I
+    if-ge v0, v3, :cond_b8
 
-    move/from16 v18, v0
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-ge v0, v1, :cond_138
-
-    const/4 v6, 0x1
+    move v0, v1
 
     .line 94
-    .local v6, "isPortrait":Z
-    :goto_1b
-    invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
+    :goto_1a
+    invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
-    move-result v15
+    move-result v6
 
     .line 95
-    .local v15, "widthMode":I
-    invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
+    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
+
+    move-result v7
+
+    .line 98
+    if-ne v6, v10, :cond_100
+
+    .line 99
+    if-eqz v0, :cond_bb
+
+    iget-object v3, p0, Landroid/support/v7/widget/ContentFrameLayout;->mFixedWidthMinor:Landroid/util/TypedValue;
+
+    .line 100
+    :goto_28
+    if-eqz v3, :cond_100
+
+    iget v4, v3, Landroid/util/TypedValue;->type:I
+
+    if-eqz v4, :cond_100
+
+    .line 102
+    iget v4, v3, Landroid/util/TypedValue;->type:I
+
+    if-ne v4, v11, :cond_bf
+
+    .line 103
+    invoke-virtual {v3, v5}, Landroid/util/TypedValue;->getDimension(Landroid/util/DisplayMetrics;)F
+
+    move-result v3
+
+    float-to-int v3, v3
+
+    .line 107
+    :goto_37
+    if-lez v3, :cond_100
+
+    .line 108
+    iget-object v4, p0, Landroid/support/v7/widget/ContentFrameLayout;->mDecorPadding:Landroid/graphics/Rect;
+
+    iget v4, v4, Landroid/graphics/Rect;->left:I
+
+    iget-object v8, p0, Landroid/support/v7/widget/ContentFrameLayout;->mDecorPadding:Landroid/graphics/Rect;
+
+    iget v8, v8, Landroid/graphics/Rect;->right:I
+
+    add-int/2addr v4, v8
+
+    sub-int/2addr v3, v4
+
+    .line 109
+    invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v4
 
-    .line 97
-    .local v4, "heightMode":I
-    const/4 v2, 0x0
-
-    .line 98
-    .local v2, "fixedWidth":Z
-    const/high16 v17, -0x80000000
-
-    move/from16 v0, v17
-
-    if-ne v15, v0, :cond_7b
-
-    .line 99
-    if-eqz v6, :cond_13b
-
-    move-object/from16 v0, p0
-
-    iget-object v12, v0, Landroid/support/v7/widget/ContentFrameLayout;->mFixedWidthMinor:Landroid/util/TypedValue;
-
-    .line 100
-    .local v12, "tvw":Landroid/util/TypedValue;
-    :goto_30
-    if-eqz v12, :cond_7b
-
-    iget v0, v12, Landroid/util/TypedValue;->type:I
-
-    move/from16 v17, v0
-
-    if-eqz v17, :cond_7b
-
-    .line 101
-    const/4 v13, 0x0
-
-    .line 102
-    .local v13, "w":I
-    iget v0, v12, Landroid/util/TypedValue;->type:I
-
-    move/from16 v17, v0
-
-    const/16 v18, 0x5
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-ne v0, v1, :cond_141
-
-    .line 103
-    invoke-virtual {v12, v8}, Landroid/util/TypedValue;->getDimension(Landroid/util/DisplayMetrics;)F
-
-    move-result v17
-
-    move/from16 v0, v17
-
-    float-to-int v13, v0
-
-    .line 107
-    :cond_4c
-    :goto_4c
-    if-lez v13, :cond_7b
-
-    .line 108
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v7/widget/ContentFrameLayout;->mDecorPadding:Landroid/graphics/Rect;
-
-    move-object/from16 v17, v0
-
-    move-object/from16 v0, v17
-
-    iget v0, v0, Landroid/graphics/Rect;->left:I
-
-    move/from16 v17, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v7/widget/ContentFrameLayout;->mDecorPadding:Landroid/graphics/Rect;
-
-    move-object/from16 v18, v0
-
-    move-object/from16 v0, v18
-
-    iget v0, v0, Landroid/graphics/Rect;->right:I
-
-    move/from16 v18, v0
-
-    add-int v17, v17, v18
-
-    sub-int v13, v13, v17
-
-    .line 109
-    invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
-
-    move-result v16
-
     .line 110
-    .local v16, "widthSize":I
-    move/from16 v0, v16
+    invoke-static {v3, v4}, Ljava/lang/Math;->min(II)I
 
-    invoke-static {v13, v0}, Ljava/lang/Math;->min(II)I
+    move-result v3
 
-    move-result v17
-
-    const/high16 v18, 0x40000000
-
-    invoke-static/range {v17 .. v18}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v3, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p1
 
-    .line 112
-    const/4 v2, 0x1
+    move v4, v1
 
     .line 117
-    .end local v12    # "tvw":Landroid/util/TypedValue;
-    .end local v13    # "w":I
-    .end local v16    # "widthSize":I
-    :cond_7b
-    const/high16 v17, -0x80000000
-
-    move/from16 v0, v17
-
-    if-ne v4, v0, :cond_cf
+    :goto_50
+    if-ne v7, v10, :cond_7d
 
     .line 118
-    if-eqz v6, :cond_16c
+    if-eqz v0, :cond_d1
 
-    move-object/from16 v0, p0
-
-    iget-object v11, v0, Landroid/support/v7/widget/ContentFrameLayout;->mFixedHeightMajor:Landroid/util/TypedValue;
+    iget-object v3, p0, Landroid/support/v7/widget/ContentFrameLayout;->mFixedHeightMajor:Landroid/util/TypedValue;
 
     .line 119
-    .local v11, "tvh":Landroid/util/TypedValue;
-    :goto_87
-    if-eqz v11, :cond_cf
+    :goto_56
+    if-eqz v3, :cond_7d
 
-    iget v0, v11, Landroid/util/TypedValue;->type:I
+    iget v7, v3, Landroid/util/TypedValue;->type:I
 
-    move/from16 v17, v0
-
-    if-eqz v17, :cond_cf
-
-    .line 120
-    const/4 v3, 0x0
+    if-eqz v7, :cond_7d
 
     .line 121
-    .local v3, "h":I
-    iget v0, v11, Landroid/util/TypedValue;->type:I
+    iget v7, v3, Landroid/util/TypedValue;->type:I
 
-    move/from16 v17, v0
-
-    const/16 v18, 0x5
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-ne v0, v1, :cond_172
+    if-ne v7, v11, :cond_d4
 
     .line 122
-    invoke-virtual {v11, v8}, Landroid/util/TypedValue;->getDimension(Landroid/util/DisplayMetrics;)F
+    invoke-virtual {v3, v5}, Landroid/util/TypedValue;->getDimension(Landroid/util/DisplayMetrics;)F
 
-    move-result v17
+    move-result v3
 
-    move/from16 v0, v17
-
-    float-to-int v3, v0
+    float-to-int v3, v3
 
     .line 126
-    :cond_a3
-    :goto_a3
-    if-lez v3, :cond_cf
+    :goto_65
+    if-lez v3, :cond_7d
 
     .line 127
-    move-object/from16 v0, p0
+    iget-object v7, p0, Landroid/support/v7/widget/ContentFrameLayout;->mDecorPadding:Landroid/graphics/Rect;
 
-    iget-object v0, v0, Landroid/support/v7/widget/ContentFrameLayout;->mDecorPadding:Landroid/graphics/Rect;
+    iget v7, v7, Landroid/graphics/Rect;->top:I
 
-    move-object/from16 v17, v0
+    iget-object v8, p0, Landroid/support/v7/widget/ContentFrameLayout;->mDecorPadding:Landroid/graphics/Rect;
 
-    move-object/from16 v0, v17
+    iget v8, v8, Landroid/graphics/Rect;->bottom:I
 
-    iget v0, v0, Landroid/graphics/Rect;->top:I
+    add-int/2addr v7, v8
 
-    move/from16 v17, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v7/widget/ContentFrameLayout;->mDecorPadding:Landroid/graphics/Rect;
-
-    move-object/from16 v18, v0
-
-    move-object/from16 v0, v18
-
-    iget v0, v0, Landroid/graphics/Rect;->bottom:I
-
-    move/from16 v18, v0
-
-    add-int v17, v17, v18
-
-    sub-int v3, v3, v17
+    sub-int/2addr v3, v7
 
     .line 128
-    invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
+    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-    move-result v5
+    move-result v7
 
     .line 129
-    .local v5, "heightSize":I
-    invoke-static {v3, v5}, Ljava/lang/Math;->min(II)I
+    invoke-static {v3, v7}, Ljava/lang/Math;->min(II)I
 
-    move-result v17
+    move-result v3
 
-    const/high16 v18, 0x40000000
-
-    invoke-static/range {v17 .. v18}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v3, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
 
     .line 135
-    .end local v3    # "h":I
-    .end local v5    # "heightSize":I
-    .end local v11    # "tvh":Landroid/util/TypedValue;
-    :cond_cf
-    invoke-super/range {p0 .. p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
+    :cond_7d
+    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     .line 137
-    invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/ContentFrameLayout;->getMeasuredWidth()I
+    invoke-virtual {p0}, Landroid/support/v7/widget/ContentFrameLayout;->getMeasuredWidth()I
 
-    move-result v14
-
-    .line 138
-    .local v14, "width":I
-    const/4 v7, 0x0
+    move-result v7
 
     .line 140
-    .local v7, "measure":Z
-    const/high16 v17, 0x40000000
+    invoke-static {v7, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    move/from16 v0, v17
-
-    invoke-static {v14, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result p1
+    move-result v3
 
     .line 142
-    if-nez v2, :cond_132
+    if-nez v4, :cond_f9
 
-    const/high16 v17, -0x80000000
-
-    move/from16 v0, v17
-
-    if-ne v15, v0, :cond_132
+    if-ne v6, v10, :cond_f9
 
     .line 143
-    if-eqz v6, :cond_19d
+    if-eqz v0, :cond_e5
 
-    move-object/from16 v0, p0
-
-    iget-object v10, v0, Landroid/support/v7/widget/ContentFrameLayout;->mMinWidthMinor:Landroid/util/TypedValue;
+    iget-object v0, p0, Landroid/support/v7/widget/ContentFrameLayout;->mMinWidthMinor:Landroid/util/TypedValue;
 
     .line 144
-    .local v10, "tv":Landroid/util/TypedValue;
-    :goto_ed
-    if-eqz v10, :cond_132
+    :goto_90
+    if-eqz v0, :cond_f9
 
-    iget v0, v10, Landroid/util/TypedValue;->type:I
+    iget v4, v0, Landroid/util/TypedValue;->type:I
 
-    move/from16 v17, v0
-
-    if-eqz v17, :cond_132
-
-    .line 145
-    const/4 v9, 0x0
+    if-eqz v4, :cond_f9
 
     .line 146
-    .local v9, "min":I
-    iget v0, v10, Landroid/util/TypedValue;->type:I
+    iget v4, v0, Landroid/util/TypedValue;->type:I
 
-    move/from16 v17, v0
-
-    const/16 v18, 0x5
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-ne v0, v1, :cond_1a3
+    if-ne v4, v11, :cond_e8
 
     .line 147
-    invoke-virtual {v10, v8}, Landroid/util/TypedValue;->getDimension(Landroid/util/DisplayMetrics;)F
+    invoke-virtual {v0, v5}, Landroid/util/TypedValue;->getDimension(Landroid/util/DisplayMetrics;)F
 
-    move-result v17
+    move-result v0
 
-    move/from16 v0, v17
-
-    float-to-int v9, v0
+    float-to-int v0, v0
 
     .line 151
-    :cond_109
-    :goto_109
-    if-lez v9, :cond_127
+    :goto_9f
+    if-lez v0, :cond_ab
 
     .line 152
-    move-object/from16 v0, p0
+    iget-object v4, p0, Landroid/support/v7/widget/ContentFrameLayout;->mDecorPadding:Landroid/graphics/Rect;
 
-    iget-object v0, v0, Landroid/support/v7/widget/ContentFrameLayout;->mDecorPadding:Landroid/graphics/Rect;
+    iget v4, v4, Landroid/graphics/Rect;->left:I
 
-    move-object/from16 v17, v0
+    iget-object v5, p0, Landroid/support/v7/widget/ContentFrameLayout;->mDecorPadding:Landroid/graphics/Rect;
 
-    move-object/from16 v0, v17
+    iget v5, v5, Landroid/graphics/Rect;->right:I
 
-    iget v0, v0, Landroid/graphics/Rect;->left:I
+    add-int/2addr v4, v5
 
-    move/from16 v17, v0
-
-    move-object/from16 v0, p0
-
-    iget-object v0, v0, Landroid/support/v7/widget/ContentFrameLayout;->mDecorPadding:Landroid/graphics/Rect;
-
-    move-object/from16 v18, v0
-
-    move-object/from16 v0, v18
-
-    iget v0, v0, Landroid/graphics/Rect;->right:I
-
-    move/from16 v18, v0
-
-    add-int v17, v17, v18
-
-    sub-int v9, v9, v17
+    sub-int/2addr v0, v4
 
     .line 154
-    :cond_127
-    if-ge v14, v9, :cond_132
+    :cond_ab
+    if-ge v7, v0, :cond_f9
 
     .line 155
-    const/high16 v17, 0x40000000
+    invoke-static {v0, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    move/from16 v0, v17
+    move-result v0
 
-    invoke-static {v9, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result p1
-
-    .line 156
-    const/4 v7, 0x1
+    move v2, v1
 
     .line 161
-    .end local v9    # "min":I
-    .end local v10    # "tv":Landroid/util/TypedValue;
-    :cond_132
-    if-eqz v7, :cond_137
+    :goto_b2
+    if-eqz v2, :cond_b7
 
     .line 162
-    invoke-super/range {p0 .. p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
+    invoke-super {p0, v0, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     .line 164
-    :cond_137
+    :cond_b7
     return-void
 
-    .line 92
-    .end local v2    # "fixedWidth":Z
-    .end local v4    # "heightMode":I
-    .end local v6    # "isPortrait":Z
-    .end local v7    # "measure":Z
-    .end local v14    # "width":I
-    .end local v15    # "widthMode":I
-    :cond_138
-    const/4 v6, 0x0
+    :cond_b8
+    move v0, v2
 
-    goto/16 :goto_1b
+    .line 92
+    goto/16 :goto_1a
 
     .line 99
-    .restart local v2    # "fixedWidth":Z
-    .restart local v4    # "heightMode":I
-    .restart local v6    # "isPortrait":Z
-    .restart local v15    # "widthMode":I
-    :cond_13b
-    move-object/from16 v0, p0
+    :cond_bb
+    iget-object v3, p0, Landroid/support/v7/widget/ContentFrameLayout;->mFixedWidthMajor:Landroid/util/TypedValue;
 
-    iget-object v12, v0, Landroid/support/v7/widget/ContentFrameLayout;->mFixedWidthMajor:Landroid/util/TypedValue;
-
-    goto/16 :goto_30
+    goto/16 :goto_28
 
     .line 104
-    .restart local v12    # "tvw":Landroid/util/TypedValue;
-    .restart local v13    # "w":I
-    :cond_141
-    iget v0, v12, Landroid/util/TypedValue;->type:I
+    :cond_bf
+    iget v4, v3, Landroid/util/TypedValue;->type:I
 
-    move/from16 v17, v0
+    const/4 v8, 0x6
 
-    const/16 v18, 0x6
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-ne v0, v1, :cond_4c
+    if-ne v4, v8, :cond_103
 
     .line 105
-    iget v0, v8, Landroid/util/DisplayMetrics;->widthPixels:I
+    iget v4, v5, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    move/from16 v17, v0
+    int-to-float v4, v4
 
-    move/from16 v0, v17
+    iget v8, v5, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    int-to-float v0, v0
+    int-to-float v8, v8
 
-    move/from16 v17, v0
+    invoke-virtual {v3, v4, v8}, Landroid/util/TypedValue;->getFraction(FF)F
 
-    iget v0, v8, Landroid/util/DisplayMetrics;->widthPixels:I
+    move-result v3
 
-    move/from16 v18, v0
+    float-to-int v3, v3
 
-    move/from16 v0, v18
-
-    int-to-float v0, v0
-
-    move/from16 v18, v0
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    invoke-virtual {v12, v0, v1}, Landroid/util/TypedValue;->getFraction(FF)F
-
-    move-result v17
-
-    move/from16 v0, v17
-
-    float-to-int v13, v0
-
-    goto/16 :goto_4c
+    goto/16 :goto_37
 
     .line 118
-    .end local v12    # "tvw":Landroid/util/TypedValue;
-    .end local v13    # "w":I
-    :cond_16c
-    move-object/from16 v0, p0
+    :cond_d1
+    iget-object v3, p0, Landroid/support/v7/widget/ContentFrameLayout;->mFixedHeightMinor:Landroid/util/TypedValue;
 
-    iget-object v11, v0, Landroid/support/v7/widget/ContentFrameLayout;->mFixedHeightMinor:Landroid/util/TypedValue;
-
-    goto/16 :goto_87
+    goto :goto_56
 
     .line 123
-    .restart local v3    # "h":I
-    .restart local v11    # "tvh":Landroid/util/TypedValue;
-    :cond_172
-    iget v0, v11, Landroid/util/TypedValue;->type:I
+    :cond_d4
+    iget v7, v3, Landroid/util/TypedValue;->type:I
 
-    move/from16 v17, v0
+    const/4 v8, 0x6
 
-    const/16 v18, 0x6
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-ne v0, v1, :cond_a3
+    if-ne v7, v8, :cond_fd
 
     .line 124
-    iget v0, v8, Landroid/util/DisplayMetrics;->heightPixels:I
+    iget v7, v5, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    move/from16 v17, v0
+    int-to-float v7, v7
 
-    move/from16 v0, v17
+    iget v8, v5, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    int-to-float v0, v0
+    int-to-float v8, v8
 
-    move/from16 v17, v0
+    invoke-virtual {v3, v7, v8}, Landroid/util/TypedValue;->getFraction(FF)F
 
-    iget v0, v8, Landroid/util/DisplayMetrics;->heightPixels:I
+    move-result v3
 
-    move/from16 v18, v0
+    float-to-int v3, v3
 
-    move/from16 v0, v18
-
-    int-to-float v0, v0
-
-    move/from16 v18, v0
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    invoke-virtual {v11, v0, v1}, Landroid/util/TypedValue;->getFraction(FF)F
-
-    move-result v17
-
-    move/from16 v0, v17
-
-    float-to-int v3, v0
-
-    goto/16 :goto_a3
+    goto :goto_65
 
     .line 143
-    .end local v3    # "h":I
-    .end local v11    # "tvh":Landroid/util/TypedValue;
-    .restart local v7    # "measure":Z
-    .restart local v14    # "width":I
-    :cond_19d
-    move-object/from16 v0, p0
+    :cond_e5
+    iget-object v0, p0, Landroid/support/v7/widget/ContentFrameLayout;->mMinWidthMajor:Landroid/util/TypedValue;
 
-    iget-object v10, v0, Landroid/support/v7/widget/ContentFrameLayout;->mMinWidthMajor:Landroid/util/TypedValue;
-
-    goto/16 :goto_ed
+    goto :goto_90
 
     .line 148
-    .restart local v9    # "min":I
-    .restart local v10    # "tv":Landroid/util/TypedValue;
-    :cond_1a3
-    iget v0, v10, Landroid/util/TypedValue;->type:I
+    :cond_e8
+    iget v4, v0, Landroid/util/TypedValue;->type:I
 
-    move/from16 v17, v0
+    const/4 v6, 0x6
 
-    const/16 v18, 0x6
-
-    move/from16 v0, v17
-
-    move/from16 v1, v18
-
-    if-ne v0, v1, :cond_109
+    if-ne v4, v6, :cond_fb
 
     .line 149
-    iget v0, v8, Landroid/util/DisplayMetrics;->widthPixels:I
+    iget v4, v5, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    move/from16 v17, v0
+    int-to-float v4, v4
 
-    move/from16 v0, v17
+    iget v5, v5, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    int-to-float v0, v0
+    int-to-float v5, v5
 
-    move/from16 v17, v0
+    invoke-virtual {v0, v4, v5}, Landroid/util/TypedValue;->getFraction(FF)F
 
-    iget v0, v8, Landroid/util/DisplayMetrics;->widthPixels:I
+    move-result v0
 
-    move/from16 v18, v0
+    float-to-int v0, v0
 
-    move/from16 v0, v18
+    goto :goto_9f
 
-    int-to-float v0, v0
+    :cond_f9
+    move v0, v3
 
-    move/from16 v18, v0
+    goto :goto_b2
 
-    move/from16 v0, v17
+    :cond_fb
+    move v0, v2
 
-    move/from16 v1, v18
+    goto :goto_9f
 
-    invoke-virtual {v10, v0, v1}, Landroid/util/TypedValue;->getFraction(FF)F
+    :cond_fd
+    move v3, v2
 
-    move-result v17
+    goto/16 :goto_65
 
-    move/from16 v0, v17
+    :cond_100
+    move v4, v2
 
-    float-to-int v9, v0
+    goto/16 :goto_50
 
-    goto/16 :goto_109
+    :cond_103
+    move v3, v2
+
+    goto/16 :goto_37
 .end method
 
 .method public setAttachListener(Landroid/support/v7/widget/ContentFrameLayout$OnAttachListener;)V
     .registers 2
-    .param p1, "attachListener"    # Landroid/support/v7/widget/ContentFrameLayout$OnAttachListener;
 
     .prologue
     .line 73
@@ -894,10 +644,6 @@
 
 .method public setDecorPadding(IIII)V
     .registers 6
-    .param p1, "left"    # I
-    .param p2, "top"    # I
-    .param p3, "right"    # I
-    .param p4, "bottom"    # I
 
     .prologue
     .line 83
@@ -906,7 +652,7 @@
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/graphics/Rect;->set(IIII)V
 
     .line 84
-    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->isLaidOut(Landroid/view/View;)Z
+    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->E(Landroid/view/View;)Z
 
     move-result v0
 

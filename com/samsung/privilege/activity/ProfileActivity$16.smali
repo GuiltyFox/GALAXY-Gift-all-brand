@@ -11,24 +11,18 @@
     value = Lcom/samsung/privilege/activity/ProfileActivity;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/ProfileActivity;
+.field final synthetic a:Lcom/samsung/privilege/activity/ProfileActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/ProfileActivity;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/ProfileActivity;
 
     .prologue
-    .line 790
-    iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$16;->this$0:Lcom/samsung/privilege/activity/ProfileActivity;
+    .line 796
+    iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$16;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,39 +33,33 @@
 # virtual methods
 .method public onDateSet(Landroid/widget/DatePicker;III)V
     .registers 12
-    .param p1, "view"    # Landroid/widget/DatePicker;
-    .param p2, "year"    # I
-    .param p3, "monthOfYear"    # I
-    .param p4, "dayOfMonth"    # I
 
     .prologue
     const/4 v6, 0x0
 
     const/4 v5, 0x1
 
-    .line 792
-    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$16;->this$0:Lcom/samsung/privilege/activity/ProfileActivity;
+    .line 798
+    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$16;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    # getter for: Lcom/samsung/privilege/activity/ProfileActivity;->gIsSelectStartDateTime:Z
-    invoke-static {v1}, Lcom/samsung/privilege/activity/ProfileActivity;->access$000(Lcom/samsung/privilege/activity/ProfileActivity;)Z
+    invoke-static {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->a(Lcom/samsung/privilege/activity/ProfileActivity;)Z
 
-    move-result v1
+    move-result v0
 
-    if-ne v1, v5, :cond_6a
+    if-ne v0, v5, :cond_6a
 
-    .line 793
-    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$16;->this$0:Lcom/samsung/privilege/activity/ProfileActivity;
+    .line 799
+    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$16;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    const v2, 0x7f1001b5
+    const v1, 0x7f1001ce
 
-    invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 794
-    .local v0, "textBirthday":Landroid/widget/TextView;
+    .line 800
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -150,8 +138,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 796
-    .end local v0    # "textBirthday":Landroid/widget/TextView;
+    .line 802
     :cond_6a
     return-void
 .end method

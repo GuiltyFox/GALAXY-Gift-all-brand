@@ -18,7 +18,6 @@
 # virtual methods
 .method public getOutline(Landroid/graphics/Outline;)V
     .registers 3
-    .param p1, "outline"    # Landroid/graphics/Outline;
 
     .prologue
     .line 28

@@ -11,28 +11,22 @@
     value = Lcom/squareup/picasso/Dispatcher$DispatcherHandler;->handleMessage(Landroid/os/Message;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Lcom/squareup/picasso/Dispatcher$DispatcherHandler;
+.field final synthetic a:Landroid/os/Message;
 
-.field final synthetic val$msg:Landroid/os/Message;
+.field final synthetic b:Lcom/squareup/picasso/Dispatcher$DispatcherHandler;
 
 
 # direct methods
 .method constructor <init>(Lcom/squareup/picasso/Dispatcher$DispatcherHandler;Landroid/os/Message;)V
     .registers 3
-    .param p1, "this$0"    # Lcom/squareup/picasso/Dispatcher$DispatcherHandler;
 
     .prologue
     .line 529
-    iput-object p1, p0, Lcom/squareup/picasso/Dispatcher$DispatcherHandler$1;->this$0:Lcom/squareup/picasso/Dispatcher$DispatcherHandler;
+    iput-object p1, p0, Lcom/squareup/picasso/Dispatcher$DispatcherHandler$1;->b:Lcom/squareup/picasso/Dispatcher$DispatcherHandler;
 
-    iput-object p2, p0, Lcom/squareup/picasso/Dispatcher$DispatcherHandler$1;->val$msg:Landroid/os/Message;
+    iput-object p2, p0, Lcom/squareup/picasso/Dispatcher$DispatcherHandler$1;->a:Landroid/os/Message;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -58,7 +52,7 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/squareup/picasso/Dispatcher$DispatcherHandler$1;->val$msg:Landroid/os/Message;
+    iget-object v2, p0, Lcom/squareup/picasso/Dispatcher$DispatcherHandler$1;->a:Landroid/os/Message;
 
     iget v2, v2, Landroid/os/Message;->what:I
 

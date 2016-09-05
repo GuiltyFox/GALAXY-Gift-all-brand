@@ -8,11 +8,6 @@
     value = Lorg/parceler/NonParcelRepository$IntegerParcelable;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lorg/parceler/converter/NullableParcelConverter",
@@ -36,9 +31,8 @@
 
 
 # virtual methods
-.method public nullSafeFromParcel(Landroid/os/Parcel;)Ljava/lang/Integer;
+.method public a(Landroid/os/Parcel;)Ljava/lang/Integer;
     .registers 3
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
     .line 748
@@ -53,22 +47,8 @@
     return-object v0
 .end method
 
-.method public bridge synthetic nullSafeFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 3
-
-    .prologue
-    .line 744
-    invoke-virtual {p0, p1}, Lorg/parceler/NonParcelRepository$IntegerParcelable$1;->nullSafeFromParcel(Landroid/os/Parcel;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public nullSafeToParcel(Ljava/lang/Integer;Landroid/os/Parcel;)V
+.method public a(Ljava/lang/Integer;Landroid/os/Parcel;)V
     .registers 4
-    .param p1, "input"    # Ljava/lang/Integer;
-    .param p2, "parcel"    # Landroid/os/Parcel;
 
     .prologue
     .line 753
@@ -82,14 +62,26 @@
     return-void
 .end method
 
-.method public bridge synthetic nullSafeToParcel(Ljava/lang/Object;Landroid/os/Parcel;)V
+.method public bridge synthetic a(Ljava/lang/Object;Landroid/os/Parcel;)V
     .registers 3
 
     .prologue
     .line 744
     check-cast p1, Ljava/lang/Integer;
 
-    invoke-virtual {p0, p1, p2}, Lorg/parceler/NonParcelRepository$IntegerParcelable$1;->nullSafeToParcel(Ljava/lang/Integer;Landroid/os/Parcel;)V
+    invoke-virtual {p0, p1, p2}, Lorg/parceler/NonParcelRepository$IntegerParcelable$1;->a(Ljava/lang/Integer;Landroid/os/Parcel;)V
 
     return-void
+.end method
+
+.method public synthetic b(Landroid/os/Parcel;)Ljava/lang/Object;
+    .registers 3
+
+    .prologue
+    .line 744
+    invoke-virtual {p0, p1}, Lorg/parceler/NonParcelRepository$IntegerParcelable$1;->a(Landroid/os/Parcel;)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    return-object v0
 .end method

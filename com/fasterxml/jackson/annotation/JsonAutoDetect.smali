@@ -20,13 +20,6 @@
     .end subannotation
 .end annotation
 
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/annotation/JsonAutoDetect$1;,
-        Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
-    }
-.end annotation
-
 .annotation runtime Ljava/lang/annotation/Retention;
     value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
 .end annotation

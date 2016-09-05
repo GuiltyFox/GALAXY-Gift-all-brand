@@ -4,21 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/parceler/NonParcelRepository;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "ByteArrayParcelable"
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lorg/parceler/NonParcelRepository$ByteArrayParcelable$ByteArrayParcelableCreator;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lorg/parceler/NonParcelRepository$ConverterParcelable",
@@ -28,7 +13,9 @@
 
 
 # static fields
-.field private static final CONVERTER:Lorg/parceler/converter/NullableParcelConverter;
+.field public static final CREATOR:Lorg/parceler/NonParcelRepository$ByteArrayParcelable$ByteArrayParcelableCreator;
+
+.field private static final a:Lorg/parceler/converter/NullableParcelConverter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lorg/parceler/converter/NullableParcelConverter",
@@ -36,8 +23,6 @@
         }
     .end annotation
 .end field
-
-.field public static final CREATOR:Lorg/parceler/NonParcelRepository$ByteArrayParcelable$ByteArrayParcelableCreator;
 
 
 # direct methods
@@ -50,7 +35,7 @@
 
     invoke-direct {v0}, Lorg/parceler/NonParcelRepository$ByteArrayParcelable$1;-><init>()V
 
-    sput-object v0, Lorg/parceler/NonParcelRepository$ByteArrayParcelable;->CONVERTER:Lorg/parceler/converter/NullableParcelConverter;
+    sput-object v0, Lorg/parceler/NonParcelRepository$ByteArrayParcelable;->a:Lorg/parceler/converter/NullableParcelConverter;
 
     .line 1006
     new-instance v0, Lorg/parceler/NonParcelRepository$ByteArrayParcelable$ByteArrayParcelableCreator;
@@ -66,11 +51,10 @@
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .registers 4
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
     .line 998
-    sget-object v0, Lorg/parceler/NonParcelRepository$ByteArrayParcelable;->CONVERTER:Lorg/parceler/converter/NullableParcelConverter;
+    sget-object v0, Lorg/parceler/NonParcelRepository$ByteArrayParcelable;->a:Lorg/parceler/converter/NullableParcelConverter;
 
     const/4 v1, 0x0
 
@@ -82,11 +66,10 @@
 
 .method public constructor <init>([B)V
     .registers 4
-    .param p1, "value"    # [B
 
     .prologue
     .line 1002
-    sget-object v0, Lorg/parceler/NonParcelRepository$ByteArrayParcelable;->CONVERTER:Lorg/parceler/converter/NullableParcelConverter;
+    sget-object v0, Lorg/parceler/NonParcelRepository$ByteArrayParcelable;->a:Lorg/parceler/converter/NullableParcelConverter;
 
     const/4 v1, 0x0
 

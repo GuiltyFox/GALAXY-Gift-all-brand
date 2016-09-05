@@ -25,17 +25,12 @@
 .end annotation
 
 
-# static fields
-.field private static final NULL:I = -0x1
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
 
     .prologue
     .line 27
-    .local p0, "this":Lorg/parceler/converter/MapParcelConverter;, "Lorg/parceler/converter/MapParcelConverter<TK;TV;TM;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,96 +38,7 @@
 
 
 # virtual methods
-.method public abstract createMap()Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()TM;"
-        }
-    .end annotation
-.end method
-
-.method public bridge synthetic fromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .registers 3
-
-    .prologue
-    .line 27
-    .local p0, "this":Lorg/parceler/converter/MapParcelConverter;, "Lorg/parceler/converter/MapParcelConverter<TK;TV;TM;>;"
-    invoke-virtual {p0, p1}, Lorg/parceler/converter/MapParcelConverter;->fromParcel(Landroid/os/Parcel;)Ljava/util/Map;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public fromParcel(Landroid/os/Parcel;)Ljava/util/Map;
-    .registers 8
-    .param p1, "parcel"    # Landroid/os/Parcel;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/os/Parcel;",
-            ")TM;"
-        }
-    .end annotation
-
-    .prologue
-    .line 47
-    .local p0, "this":Lorg/parceler/converter/MapParcelConverter;, "Lorg/parceler/converter/MapParcelConverter<TK;TV;TM;>;"
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v3
-
-    .line 48
-    .local v3, "size":I
-    const/4 v5, -0x1
-
-    if-ne v3, v5, :cond_9
-
-    .line 49
-    const/4 v2, 0x0
-
-    .line 58
-    .local v2, "map":Ljava/util/Map;, "TM;"
-    :cond_8
-    return-object v2
-
-    .line 51
-    .end local v2    # "map":Ljava/util/Map;, "TM;"
-    :cond_9
-    invoke-virtual {p0}, Lorg/parceler/converter/MapParcelConverter;->createMap()Ljava/util/Map;
-
-    move-result-object v2
-
-    .line 52
-    .restart local v2    # "map":Ljava/util/Map;, "TM;"
-    const/4 v0, 0x0
-
-    .local v0, "i":I
-    :goto_e
-    if-ge v0, v3, :cond_8
-
-    .line 53
-    invoke-virtual {p0, p1}, Lorg/parceler/converter/MapParcelConverter;->mapKeyFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    .line 54
-    .local v1, "key":Ljava/lang/Object;, "TK;"
-    invoke-virtual {p0, p1}, Lorg/parceler/converter/MapParcelConverter;->mapValueFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    .line 55
-    .local v4, "value":Ljava/lang/Object;, "TV;"
-    invoke-interface {v2, v1, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 52
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_e
-.end method
-
-.method public abstract mapKeyFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public abstract a(Landroid/os/Parcel;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -142,7 +48,7 @@
     .end annotation
 .end method
 
-.method public abstract mapKeyToParcel(Ljava/lang/Object;Landroid/os/Parcel;)V
+.method public abstract a(Ljava/lang/Object;Landroid/os/Parcel;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TK;",
@@ -152,42 +58,8 @@
     .end annotation
 .end method
 
-.method public abstract mapValueFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/os/Parcel;",
-            ")TV;"
-        }
-    .end annotation
-.end method
-
-.method public abstract mapValueToParcel(Ljava/lang/Object;Landroid/os/Parcel;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TV;",
-            "Landroid/os/Parcel;",
-            ")V"
-        }
-    .end annotation
-.end method
-
-.method public bridge synthetic toParcel(Ljava/lang/Object;Landroid/os/Parcel;)V
-    .registers 3
-
-    .prologue
-    .line 27
-    .local p0, "this":Lorg/parceler/converter/MapParcelConverter;, "Lorg/parceler/converter/MapParcelConverter<TK;TV;TM;>;"
-    check-cast p1, Ljava/util/Map;
-
-    invoke-virtual {p0, p1, p2}, Lorg/parceler/converter/MapParcelConverter;->toParcel(Ljava/util/Map;Landroid/os/Parcel;)V
-
-    return-void
-.end method
-
-.method public toParcel(Ljava/util/Map;Landroid/os/Parcel;)V
+.method public a(Ljava/util/Map;Landroid/os/Parcel;)V
     .registers 6
-    .param p2, "parcel"    # Landroid/os/Parcel;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -200,14 +72,12 @@
 
     .prologue
     .line 33
-    .local p0, "this":Lorg/parceler/converter/MapParcelConverter;, "Lorg/parceler/converter/MapParcelConverter<TK;TV;TM;>;"
-    .local p1, "input":Ljava/util/Map;, "Ljava/util/Map<TK;TV;>;"
     if-nez p1, :cond_7
 
     .line 34
-    const/4 v1, -0x1
+    const/4 v0, -0x1
 
-    invoke-virtual {p2, v1}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 42
     :cond_6
@@ -217,25 +87,25 @@
     :cond_7
     invoke-interface {p1}, Ljava/util/Map;->size()I
 
-    move-result v1
+    move-result v0
 
-    invoke-virtual {p2, v1}, Landroid/os/Parcel;->writeInt(I)V
+    invoke-virtual {p2, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 37
     invoke-interface {p1}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-interface {v1}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
     :goto_16
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_6
+    if-eqz v0, :cond_6
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -244,19 +114,129 @@
     check-cast v0, Ljava/util/Map$Entry;
 
     .line 38
-    .local v0, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<TK;TV;>;"
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v2
 
-    invoke-virtual {p0, v2, p2}, Lorg/parceler/converter/MapParcelConverter;->mapKeyToParcel(Ljava/lang/Object;Landroid/os/Parcel;)V
+    invoke-virtual {p0, v2, p2}, Lorg/parceler/converter/MapParcelConverter;->a(Ljava/lang/Object;Landroid/os/Parcel;)V
 
     .line 39
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {p0, v2, p2}, Lorg/parceler/converter/MapParcelConverter;->mapValueToParcel(Ljava/lang/Object;Landroid/os/Parcel;)V
+    invoke-virtual {p0, v0, p2}, Lorg/parceler/converter/MapParcelConverter;->b(Ljava/lang/Object;Landroid/os/Parcel;)V
 
     goto :goto_16
+.end method
+
+.method public abstract b(Landroid/os/Parcel;)Ljava/lang/Object;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/os/Parcel;",
+            ")TV;"
+        }
+    .end annotation
+.end method
+
+.method public abstract b()Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()TM;"
+        }
+    .end annotation
+.end method
+
+.method public abstract b(Ljava/lang/Object;Landroid/os/Parcel;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TV;",
+            "Landroid/os/Parcel;",
+            ")V"
+        }
+    .end annotation
+.end method
+
+.method public synthetic c(Landroid/os/Parcel;)Ljava/lang/Object;
+    .registers 3
+
+    .prologue
+    .line 27
+    invoke-virtual {p0, p1}, Lorg/parceler/converter/MapParcelConverter;->d(Landroid/os/Parcel;)Ljava/util/Map;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic c(Ljava/lang/Object;Landroid/os/Parcel;)V
+    .registers 3
+
+    .prologue
+    .line 27
+    check-cast p1, Ljava/util/Map;
+
+    invoke-virtual {p0, p1, p2}, Lorg/parceler/converter/MapParcelConverter;->a(Ljava/util/Map;Landroid/os/Parcel;)V
+
+    return-void
+.end method
+
+.method public d(Landroid/os/Parcel;)Ljava/util/Map;
+    .registers 7
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/os/Parcel;",
+            ")TM;"
+        }
+    .end annotation
+
+    .prologue
+    .line 47
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    move-result v2
+
+    .line 48
+    const/4 v0, -0x1
+
+    if-ne v2, v0, :cond_9
+
+    .line 49
+    const/4 v0, 0x0
+
+    .line 58
+    :cond_8
+    return-object v0
+
+    .line 51
+    :cond_9
+    invoke-virtual {p0}, Lorg/parceler/converter/MapParcelConverter;->b()Ljava/util/Map;
+
+    move-result-object v0
+
+    .line 52
+    const/4 v1, 0x0
+
+    :goto_e
+    if-ge v1, v2, :cond_8
+
+    .line 53
+    invoke-virtual {p0, p1}, Lorg/parceler/converter/MapParcelConverter;->a(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    .line 54
+    invoke-virtual {p0, p1}, Lorg/parceler/converter/MapParcelConverter;->b(Landroid/os/Parcel;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    .line 55
+    invoke-interface {v0, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 52
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_e
 .end method

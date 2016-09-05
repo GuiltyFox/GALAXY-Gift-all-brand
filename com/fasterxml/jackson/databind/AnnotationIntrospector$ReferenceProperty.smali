@@ -3,23 +3,6 @@
 .source "AnnotationIntrospector.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "ReferenceProperty"
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/AnnotationIntrospector$ReferenceProperty$Type;
-    }
-.end annotation
-
-
 # instance fields
 .field private final _name:Ljava/lang/String;
 
@@ -29,8 +12,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/AnnotationIntrospector$ReferenceProperty$Type;Ljava/lang/String;)V
     .registers 3
-    .param p1, "t"    # Lcom/fasterxml/jackson/databind/AnnotationIntrospector$ReferenceProperty$Type;
-    .param p2, "n"    # Ljava/lang/String;
 
     .prologue
     .line 75
@@ -48,7 +29,6 @@
 
 .method public static back(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/AnnotationIntrospector$ReferenceProperty;
     .registers 3
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 81
@@ -63,7 +43,6 @@
 
 .method public static managed(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/AnnotationIntrospector$ReferenceProperty;
     .registers 3
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 80

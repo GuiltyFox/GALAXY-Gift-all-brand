@@ -12,8 +12,6 @@
 # direct methods
 .method protected constructor <init>(Ljava/lang/String;I)V
     .registers 3
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "hashCode"    # I
 
     .prologue
     .line 16
@@ -39,7 +37,6 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .registers 3
-    .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
     .line 48

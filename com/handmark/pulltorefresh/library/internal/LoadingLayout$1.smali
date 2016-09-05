@@ -8,16 +8,11 @@
     value = Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
-    name = null
-.end annotation
-
 
 # static fields
-.field static final synthetic $SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
+.field static final synthetic a:[I
 
-.field static final synthetic $SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
+.field static final synthetic b:[I
 
 
 # direct methods
@@ -34,12 +29,12 @@
 
     new-array v0, v0, [I
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->b:[I
 
     :try_start_9
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->b:[I
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_END:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->c:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
 
@@ -53,9 +48,9 @@
 
     :goto_14
     :try_start_14
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->b:[I
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->PULL_FROM_START:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
 
@@ -77,12 +72,12 @@
 
     new-array v0, v0, [I
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->a:[I
 
     :try_start_28
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->a:[I
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->HORIZONTAL:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
     invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->ordinal()I
 
@@ -96,9 +91,9 @@
 
     :goto_33
     :try_start_33
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->a:[I
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->VERTICAL:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
     invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->ordinal()I
 

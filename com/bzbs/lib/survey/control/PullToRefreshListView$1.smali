@@ -8,14 +8,9 @@
     value = Lcom/bzbs/lib/survey/control/PullToRefreshListView;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
-    name = null
-.end annotation
-
 
 # static fields
-.field static final synthetic $SwitchMap$com$bzbs$lib$survey$control$PullToRefreshListView$State:[I
+.field static final synthetic a:[I
 
 
 # direct methods
@@ -32,12 +27,12 @@
 
     new-array v0, v0, [I
 
-    sput-object v0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$1;->$SwitchMap$com$bzbs$lib$survey$control$PullToRefreshListView$State:[I
+    sput-object v0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$1;->a:[I
 
     :try_start_9
-    sget-object v0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$1;->$SwitchMap$com$bzbs$lib$survey$control$PullToRefreshListView$State:[I
+    sget-object v0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$1;->a:[I
 
-    sget-object v1, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->RELEASE_TO_REFRESH:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
+    sget-object v1, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->b:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
 
     invoke-virtual {v1}, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->ordinal()I
 
@@ -51,9 +46,9 @@
 
     :goto_14
     :try_start_14
-    sget-object v0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$1;->$SwitchMap$com$bzbs$lib$survey$control$PullToRefreshListView$State:[I
+    sget-object v0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$1;->a:[I
 
-    sget-object v1, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->PULL_TO_REFRESH:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
+    sget-object v1, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->a:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
 
     invoke-virtual {v1}, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->ordinal()I
 
@@ -67,9 +62,9 @@
 
     :goto_1f
     :try_start_1f
-    sget-object v0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$1;->$SwitchMap$com$bzbs$lib$survey$control$PullToRefreshListView$State:[I
+    sget-object v0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$1;->a:[I
 
-    sget-object v1, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->REFRESHING:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
+    sget-object v1, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->c:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
 
     invoke-virtual {v1}, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->ordinal()I
 

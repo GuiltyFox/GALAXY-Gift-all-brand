@@ -6,17 +6,6 @@
 .implements Lcom/fasterxml/jackson/databind/BeanProperty;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/BeanProperty;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Std"
-.end annotation
-
-
 # instance fields
 .field protected final _contextAnnotations:Lcom/fasterxml/jackson/databind/util/Annotations;
 
@@ -34,12 +23,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/PropertyName;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/PropertyName;Lcom/fasterxml/jackson/databind/util/Annotations;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;Lcom/fasterxml/jackson/databind/PropertyMetadata;)V
     .registers 7
-    .param p1, "name"    # Lcom/fasterxml/jackson/databind/PropertyName;
-    .param p2, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "wrapperName"    # Lcom/fasterxml/jackson/databind/PropertyName;
-    .param p4, "contextAnnotations"    # Lcom/fasterxml/jackson/databind/util/Annotations;
-    .param p5, "member"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
-    .param p6, "metadata"    # Lcom/fasterxml/jackson/databind/PropertyMetadata;
 
     .prologue
     .line 144
@@ -69,12 +52,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/PropertyName;Lcom/fasterxml/jackson/databind/util/Annotations;Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;Z)V
     .registers 14
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "wrapperName"    # Lcom/fasterxml/jackson/databind/PropertyName;
-    .param p4, "contextAnnotations"    # Lcom/fasterxml/jackson/databind/util/Annotations;
-    .param p5, "member"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
-    .param p6, "isRequired"    # Z
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -115,7 +92,6 @@
 # virtual methods
 .method public depositSchemaProperty(Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonObjectFormatVisitor;)V
     .registers 5
-    .param p1, "objectVisitor"    # Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonObjectFormatVisitor;
 
     .prologue
     .line 193
@@ -172,7 +148,6 @@
 
     .prologue
     .line 169
-    .local p1, "acls":Ljava/lang/Class;, "Ljava/lang/Class<TA;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/BeanProperty$Std;->_member:Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
     if-nez v0, :cond_6
@@ -206,7 +181,6 @@
 
     .prologue
     .line 174
-    .local p1, "acls":Ljava/lang/Class;, "Ljava/lang/Class<TA;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/BeanProperty$Std;->_contextAnnotations:Lcom/fasterxml/jackson/databind/util/Annotations;
 
     if-nez v0, :cond_6
@@ -306,7 +280,6 @@
 
 .method public withType(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/BeanProperty$Std;
     .registers 9
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
 
     .prologue
     .line 164

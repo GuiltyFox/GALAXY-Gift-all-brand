@@ -3,17 +3,6 @@
 .source "ViewGroupCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/view/ViewGroupCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "ViewGroupCompatHCImpl"
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .registers 1
@@ -27,14 +16,12 @@
 
 
 # virtual methods
-.method public setMotionEventSplittingEnabled(Landroid/view/ViewGroup;Z)V
+.method public a(Landroid/view/ViewGroup;Z)V
     .registers 3
-    .param p1, "group"    # Landroid/view/ViewGroup;
-    .param p2, "split"    # Z
 
     .prologue
     .line 98
-    invoke-static {p1, p2}, Landroid/support/v4/view/ViewGroupCompatHC;->setMotionEventSplittingEnabled(Landroid/view/ViewGroup;Z)V
+    invoke-static {p1, p2}, Landroid/support/v4/view/ViewGroupCompatHC;->a(Landroid/view/ViewGroup;Z)V
 
     .line 99
     return-void

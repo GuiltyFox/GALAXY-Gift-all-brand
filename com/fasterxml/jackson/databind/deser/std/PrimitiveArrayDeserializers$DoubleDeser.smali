@@ -7,15 +7,6 @@
 .annotation runtime Lcom/fasterxml/jackson/databind/annotation/JacksonStdImpl;
 .end annotation
 
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/std/PrimitiveArrayDeserializers;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x18
-    name = "DoubleDeser"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/fasterxml/jackson/databind/deser/std/PrimitiveArrayDeserializers",
@@ -43,14 +34,6 @@
 
 .method private final handleNonArray(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)[D
     .registers 7
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 502
@@ -128,14 +111,6 @@
 # virtual methods
 .method public bridge synthetic deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)Ljava/lang/Object;
     .registers 4
-    .param p1, "x0"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 468
@@ -148,111 +123,98 @@
 
 .method public deserialize(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)[D
     .registers 11
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
+    const/4 v1, 0x0
+
     .line 480
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->isExpectedStartArrayToken()Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_b
+    if-nez v0, :cond_c
 
     .line 481
     invoke-direct {p0, p1, p2}, Lcom/fasterxml/jackson/databind/deser/std/PrimitiveArrayDeserializers$DoubleDeser;->handleNonArray(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)[D
 
-    move-result-object v6
+    move-result-object v0
 
     .line 495
-    :goto_a
-    return-object v6
+    :goto_b
+    return-object v0
 
     .line 483
-    :cond_b
+    :cond_c
     invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/DeserializationContext;->getArrayBuilders()Lcom/fasterxml/jackson/databind/util/ArrayBuilders;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders;->getDoubleBuilder()Lcom/fasterxml/jackson/databind/util/ArrayBuilders$DoubleBuilder;
 
     move-result-object v0
 
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders;->getDoubleBuilder()Lcom/fasterxml/jackson/databind/util/ArrayBuilders$DoubleBuilder;
+
+    move-result-object v4
+
     .line 484
-    .local v0, "builder":Lcom/fasterxml/jackson/databind/util/ArrayBuilders$DoubleBuilder;
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders$DoubleBuilder;->resetAndStart()Ljava/lang/Object;
+    invoke-virtual {v4}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders$DoubleBuilder;->resetAndStart()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, [D
+    check-cast v0, [D
 
-    .line 485
-    .local v1, "chunk":[D
-    const/4 v2, 0x0
+    move-object v2, v0
+
+    move v0, v1
 
     .line 487
-    .local v2, "ix":I
-    :goto_1a
+    :goto_1c
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/JsonParser;->nextToken()Lcom/fasterxml/jackson/core/JsonToken;
 
-    move-result-object v6
+    move-result-object v3
 
-    sget-object v7, Lcom/fasterxml/jackson/core/JsonToken;->END_ARRAY:Lcom/fasterxml/jackson/core/JsonToken;
+    sget-object v5, Lcom/fasterxml/jackson/core/JsonToken;->END_ARRAY:Lcom/fasterxml/jackson/core/JsonToken;
 
-    if-eq v6, v7, :cond_36
+    if-eq v3, v5, :cond_38
 
     .line 488
     invoke-virtual {p0, p1, p2}, Lcom/fasterxml/jackson/databind/deser/std/PrimitiveArrayDeserializers$DoubleDeser;->_parseDoublePrimitive(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;)D
 
-    move-result-wide v4
+    move-result-wide v6
 
     .line 489
-    .local v4, "value":D
-    array-length v6, v1
+    array-length v3, v2
 
-    if-lt v2, v6, :cond_30
+    if-lt v0, v3, :cond_3f
 
     .line 490
-    invoke-virtual {v0, v1, v2}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders$DoubleBuilder;->appendCompletedChunk(Ljava/lang/Object;I)Ljava/lang/Object;
+    invoke-virtual {v4, v2, v0}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders$DoubleBuilder;->appendCompletedChunk(Ljava/lang/Object;I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    .end local v1    # "chunk":[D
-    check-cast v1, [D
+    check-cast v0, [D
 
-    .line 491
-    .restart local v1    # "chunk":[D
-    const/4 v2, 0x0
+    move v3, v1
+
+    move-object v2, v0
 
     .line 493
-    :cond_30
-    add-int/lit8 v3, v2, 0x1
+    :goto_33
+    add-int/lit8 v0, v3, 0x1
 
-    .end local v2    # "ix":I
-    .local v3, "ix":I
-    aput-wide v4, v1, v2
+    aput-wide v6, v2, v3
 
-    move v2, v3
-
-    .line 494
-    .end local v3    # "ix":I
-    .restart local v2    # "ix":I
-    goto :goto_1a
+    goto :goto_1c
 
     .line 495
-    .end local v4    # "value":D
-    :cond_36
-    invoke-virtual {v0, v1, v2}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders$DoubleBuilder;->completeAndClearBuffer(Ljava/lang/Object;I)Ljava/lang/Object;
+    :cond_38
+    invoke-virtual {v4, v2, v0}, Lcom/fasterxml/jackson/databind/util/ArrayBuilders$DoubleBuilder;->completeAndClearBuffer(Ljava/lang/Object;I)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v0
 
-    check-cast v6, [D
+    check-cast v0, [D
 
-    goto :goto_a
+    goto :goto_b
+
+    :cond_3f
+    move v3, v0
+
+    goto :goto_33
 .end method

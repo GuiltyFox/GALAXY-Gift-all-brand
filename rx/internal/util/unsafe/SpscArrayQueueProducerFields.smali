@@ -16,13 +16,11 @@
 
 
 # static fields
-.field protected static final P_INDEX_OFFSET:J
+.field protected static final f:J
 
 
 # instance fields
 .field protected producerIndex:J
-
-.field protected producerLookAhead:J
 
 
 # direct methods
@@ -35,22 +33,20 @@
 
     const-string/jumbo v1, "producerIndex"
 
-    invoke-static {v0, v1}, Lrx/internal/util/unsafe/UnsafeAccess;->addressOf(Ljava/lang/Class;Ljava/lang/String;)J
+    invoke-static {v0, v1}, Lrx/internal/util/unsafe/UnsafeAccess;->a(Ljava/lang/Class;Ljava/lang/String;)J
 
     move-result-wide v0
 
-    sput-wide v0, Lrx/internal/util/unsafe/SpscArrayQueueProducerFields;->P_INDEX_OFFSET:J
+    sput-wide v0, Lrx/internal/util/unsafe/SpscArrayQueueProducerFields;->f:J
 
     return-void
 .end method
 
 .method public constructor <init>(I)V
     .registers 2
-    .param p1, "capacity"    # I
 
     .prologue
     .line 44
-    .local p0, "this":Lrx/internal/util/unsafe/SpscArrayQueueProducerFields;, "Lrx/internal/util/unsafe/SpscArrayQueueProducerFields<TE;>;"
     invoke-direct {p0, p1}, Lrx/internal/util/unsafe/SpscArrayQueueL1Pad;-><init>(I)V
 
     .line 45

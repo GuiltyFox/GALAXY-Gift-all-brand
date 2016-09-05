@@ -3,34 +3,21 @@
 .source "SimpleDiskCache.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/anupcowkur/reservoir/SimpleDiskCache;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "CacheOutputStream"
-.end annotation
-
-
 # instance fields
-.field private final editor:Lcom/jakewharton/disklrucache/DiskLruCache$Editor;
+.field final synthetic a:Lcom/anupcowkur/reservoir/SimpleDiskCache;
 
-.field private failed:Z
+.field private final b:Lcom/jakewharton/disklrucache/DiskLruCache$Editor;
 
-.field final synthetic this$0:Lcom/anupcowkur/reservoir/SimpleDiskCache;
+.field private c:Z
 
 
 # direct methods
 .method private constructor <init>(Lcom/anupcowkur/reservoir/SimpleDiskCache;Ljava/io/OutputStream;Lcom/jakewharton/disklrucache/DiskLruCache$Editor;)V
     .registers 5
-    .param p2, "os"    # Ljava/io/OutputStream;
-    .param p3, "editor"    # Lcom/jakewharton/disklrucache/DiskLruCache$Editor;
 
     .prologue
     .line 146
-    iput-object p1, p0, Lcom/anupcowkur/reservoir/SimpleDiskCache$CacheOutputStream;->this$0:Lcom/anupcowkur/reservoir/SimpleDiskCache;
+    iput-object p1, p0, Lcom/anupcowkur/reservoir/SimpleDiskCache$CacheOutputStream;->a:Lcom/anupcowkur/reservoir/SimpleDiskCache;
 
     .line 147
     invoke-direct {p0, p2}, Ljava/io/FilterOutputStream;-><init>(Ljava/io/OutputStream;)V
@@ -38,10 +25,10 @@
     .line 144
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/anupcowkur/reservoir/SimpleDiskCache$CacheOutputStream;->failed:Z
+    iput-boolean v0, p0, Lcom/anupcowkur/reservoir/SimpleDiskCache$CacheOutputStream;->c:Z
 
     .line 148
-    iput-object p3, p0, Lcom/anupcowkur/reservoir/SimpleDiskCache$CacheOutputStream;->editor:Lcom/jakewharton/disklrucache/DiskLruCache$Editor;
+    iput-object p3, p0, Lcom/anupcowkur/reservoir/SimpleDiskCache$CacheOutputStream;->b:Lcom/jakewharton/disklrucache/DiskLruCache$Editor;
 
     .line 149
     return-void
@@ -49,10 +36,6 @@
 
 .method synthetic constructor <init>(Lcom/anupcowkur/reservoir/SimpleDiskCache;Ljava/io/OutputStream;Lcom/jakewharton/disklrucache/DiskLruCache$Editor;Lcom/anupcowkur/reservoir/SimpleDiskCache$1;)V
     .registers 5
-    .param p1, "x0"    # Lcom/anupcowkur/reservoir/SimpleDiskCache;
-    .param p2, "x1"    # Ljava/io/OutputStream;
-    .param p3, "x2"    # Lcom/jakewharton/disklrucache/DiskLruCache$Editor;
-    .param p4, "x3"    # Lcom/anupcowkur/reservoir/SimpleDiskCache$1;
 
     .prologue
     .line 141
@@ -64,73 +47,57 @@
 
 # virtual methods
 .method public close()V
-    .registers 4
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 3
 
     .prologue
     .line 153
     const/4 v0, 0x0
 
     .line 155
-    .local v0, "closeException":Ljava/io/IOException;
     :try_start_1
     invoke-super {p0}, Ljava/io/FilterOutputStream;->close()V
     :try_end_4
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_4} :catch_10
+    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_4} :catch_16
 
     .line 160
     :goto_4
-    iget-boolean v2, p0, Lcom/anupcowkur/reservoir/SimpleDiskCache$CacheOutputStream;->failed:Z
+    iget-boolean v1, p0, Lcom/anupcowkur/reservoir/SimpleDiskCache$CacheOutputStream;->c:Z
 
-    if-eqz v2, :cond_13
+    if-eqz v1, :cond_10
 
     .line 161
-    iget-object v2, p0, Lcom/anupcowkur/reservoir/SimpleDiskCache$CacheOutputStream;->editor:Lcom/jakewharton/disklrucache/DiskLruCache$Editor;
+    iget-object v1, p0, Lcom/anupcowkur/reservoir/SimpleDiskCache$CacheOutputStream;->b:Lcom/jakewharton/disklrucache/DiskLruCache$Editor;
 
-    invoke-virtual {v2}, Lcom/jakewharton/disklrucache/DiskLruCache$Editor;->abort()V
+    invoke-virtual {v1}, Lcom/jakewharton/disklrucache/DiskLruCache$Editor;->b()V
 
     .line 166
     :goto_d
-    if-eqz v0, :cond_19
+    if-eqz v0, :cond_18
 
     .line 167
     throw v0
 
-    .line 156
-    :catch_10
-    move-exception v1
-
-    .line 157
-    .local v1, "e":Ljava/io/IOException;
-    move-object v0, v1
-
-    goto :goto_4
-
     .line 163
-    .end local v1    # "e":Ljava/io/IOException;
-    :cond_13
-    iget-object v2, p0, Lcom/anupcowkur/reservoir/SimpleDiskCache$CacheOutputStream;->editor:Lcom/jakewharton/disklrucache/DiskLruCache$Editor;
+    :cond_10
+    iget-object v1, p0, Lcom/anupcowkur/reservoir/SimpleDiskCache$CacheOutputStream;->b:Lcom/jakewharton/disklrucache/DiskLruCache$Editor;
 
-    invoke-virtual {v2}, Lcom/jakewharton/disklrucache/DiskLruCache$Editor;->commit()V
+    invoke-virtual {v1}, Lcom/jakewharton/disklrucache/DiskLruCache$Editor;->a()V
 
     goto :goto_d
 
+    .line 156
+    :catch_16
+    move-exception v0
+
+    goto :goto_4
+
     .line 168
-    :cond_19
+    :cond_18
     return-void
 .end method
 
 .method public flush()V
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 173
@@ -147,10 +114,9 @@
     move-exception v0
 
     .line 175
-    .local v0, "e":Ljava/io/IOException;
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Lcom/anupcowkur/reservoir/SimpleDiskCache$CacheOutputStream;->failed:Z
+    iput-boolean v1, p0, Lcom/anupcowkur/reservoir/SimpleDiskCache$CacheOutputStream;->c:Z
 
     .line 176
     throw v0
@@ -158,12 +124,6 @@
 
 .method public write(I)V
     .registers 4
-    .param p1, "oneByte"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 183
@@ -180,10 +140,9 @@
     move-exception v0
 
     .line 185
-    .local v0, "e":Ljava/io/IOException;
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Lcom/anupcowkur/reservoir/SimpleDiskCache$CacheOutputStream;->failed:Z
+    iput-boolean v1, p0, Lcom/anupcowkur/reservoir/SimpleDiskCache$CacheOutputStream;->c:Z
 
     .line 186
     throw v0
@@ -191,12 +150,6 @@
 
 .method public write([B)V
     .registers 4
-    .param p1, "buffer"    # [B
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 193
@@ -213,10 +166,9 @@
     move-exception v0
 
     .line 195
-    .local v0, "e":Ljava/io/IOException;
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Lcom/anupcowkur/reservoir/SimpleDiskCache$CacheOutputStream;->failed:Z
+    iput-boolean v1, p0, Lcom/anupcowkur/reservoir/SimpleDiskCache$CacheOutputStream;->c:Z
 
     .line 196
     throw v0
@@ -224,14 +176,6 @@
 
 .method public write([BII)V
     .registers 6
-    .param p1, "buffer"    # [B
-    .param p2, "offset"    # I
-    .param p3, "length"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 203
@@ -248,10 +192,9 @@
     move-exception v0
 
     .line 205
-    .local v0, "e":Ljava/io/IOException;
     const/4 v1, 0x1
 
-    iput-boolean v1, p0, Lcom/anupcowkur/reservoir/SimpleDiskCache$CacheOutputStream;->failed:Z
+    iput-boolean v1, p0, Lcom/anupcowkur/reservoir/SimpleDiskCache$CacheOutputStream;->c:Z
 
     .line 206
     throw v0

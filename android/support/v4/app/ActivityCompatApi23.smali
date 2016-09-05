@@ -3,31 +3,9 @@
 .source "ActivityCompat23.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/v4/app/ActivityCompatApi23$RequestPermissionsRequestCodeValidator;
-    }
-.end annotation
-
-
 # direct methods
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 21
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 22
-    return-void
-.end method
-
-.method public static requestPermissions(Landroid/app/Activity;[Ljava/lang/String;I)V
+.method public static a(Landroid/app/Activity;[Ljava/lang/String;I)V
     .registers 4
-    .param p0, "activity"    # Landroid/app/Activity;
-    .param p1, "permissions"    # [Ljava/lang/String;
-    .param p2, "requestCode"    # I
 
     .prologue
     .line 28
@@ -50,10 +28,8 @@
     return-void
 .end method
 
-.method public static shouldShowRequestPermissionRationale(Landroid/app/Activity;Ljava/lang/String;)Z
+.method public static a(Landroid/app/Activity;Ljava/lang/String;)Z
     .registers 3
-    .param p0, "activity"    # Landroid/app/Activity;
-    .param p1, "permission"    # Ljava/lang/String;
 
     .prologue
     .line 37

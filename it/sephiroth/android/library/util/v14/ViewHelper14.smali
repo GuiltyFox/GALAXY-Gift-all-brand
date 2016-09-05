@@ -6,7 +6,6 @@
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
     .registers 2
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 12
@@ -18,7 +17,23 @@
 
 
 # virtual methods
-.method public isHardwareAccelerated()Z
+.method public a(I)V
+    .registers 3
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0xe
+    .end annotation
+
+    .prologue
+    .line 18
+    iget-object v0, p0, Lit/sephiroth/android/library/util/v14/ViewHelper14;->a:Landroid/view/View;
+
+    invoke-virtual {v0, p1}, Landroid/view/View;->setScrollX(I)V
+
+    .line 19
+    return-void
+.end method
+
+.method public a()Z
     .registers 2
     .annotation build Landroid/annotation/TargetApi;
         value = 0xb
@@ -26,28 +41,11 @@
 
     .prologue
     .line 24
-    iget-object v0, p0, Lit/sephiroth/android/library/util/v14/ViewHelper14;->view:Landroid/view/View;
+    iget-object v0, p0, Lit/sephiroth/android/library/util/v14/ViewHelper14;->a:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->isHardwareAccelerated()Z
 
     move-result v0
 
     return v0
-.end method
-
-.method public setScrollX(I)V
-    .registers 3
-    .param p1, "value"    # I
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0xe
-    .end annotation
-
-    .prologue
-    .line 18
-    iget-object v0, p0, Lit/sephiroth/android/library/util/v14/ViewHelper14;->view:Landroid/view/View;
-
-    invoke-virtual {v0, p1}, Landroid/view/View;->setScrollX(I)V
-
-    .line 19
-    return-void
 .end method

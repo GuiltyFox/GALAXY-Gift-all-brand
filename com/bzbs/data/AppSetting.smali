@@ -4,105 +4,103 @@
 
 
 # static fields
-.field public static API_URL_BUZZEBEES:Ljava/lang/String; = null
+.field public static A:Ljava/lang/String;
 
-.field public static API_URL_BZBS_BLOB:Ljava/lang/String; = null
+.field public static B:Ljava/lang/String;
 
-.field public static final API_URL_FACEBOOK:Ljava/lang/String; = "https://graph.facebook.com/"
+.field public static C:Ljava/lang/String;
 
-.field public static API_URL_WALLET:Ljava/lang/String; = null
+.field public static D:Ljava/lang/String;
 
-.field public static APP_CONTEXT:Landroid/content/Context; = null
+.field public static E:Ljava/lang/String;
 
-.field public static final APP_ID_GIFT_CAMBODIA:Ljava/lang/String; = "1525635597652592"
+.field public static F:Ljava/lang/String;
 
-.field public static final APP_ID_GIFT_LAOS:Ljava/lang/String; = "768830479847872"
+.field public static G:Ljava/lang/String;
 
-.field public static final APP_ID_GIFT_MYANMAR:Ljava/lang/String; = "517155661760483"
+.field public static H:Ljava/lang/String;
 
-.field public static final APP_ID_GIFT_THAILAND:Ljava/lang/String; = "402705486466922"
+.field public static I:Ljava/lang/String;
 
-.field public static APP_NOTIFICATION_ID:Ljava/lang/String; = null
+.field public static J:Ljava/lang/String;
 
-.field public static AUTH_BUZZEBEES_PREFIX_CAMB:Ljava/lang/String; = null
+.field public static K:Ljava/lang/String;
 
-.field public static AUTH_BUZZEBEES_PREFIX_LAOS:Ljava/lang/String; = null
+.field public static L:I
 
-.field public static AUTH_BUZZEBEES_PREFIX_MYAN:Ljava/lang/String; = null
+.field public static M:Ljava/lang/String;
 
-.field public static AUTH_BUZZEBEES_PREFIX_THAI:Ljava/lang/String; = null
+.field public static N:Ljava/lang/String;
 
-.field public static BEACON_TIMEOUT_DEFAULT:I = 0x0
+.field public static O:Ljava/lang/String;
 
-.field public static CAT_WINNER:I = 0x0
+.field public static P:Ljava/lang/String;
 
-.field public static CAT_WINNER_CONFIG:Ljava/lang/String; = null
+.field public static Q:Z
 
-.field public static COLOR_BLACK:I = 0x0
+.field public static R:Ljava/lang/String;
 
-.field public static COLOR_NIGHTBLUE:I = 0x0
+.field public static S:Ljava/lang/String;
 
-.field public static COLOR_RED:I = 0x0
+.field public static T:Ljava/lang/String;
 
-.field public static COLOR_WHITE:I = 0x0
+.field public static U:Ljava/lang/String;
 
-.field public static CONFIG_PAGER_KEEP_MEMORY_ALL:Z = false
+.field public static V:Ljava/lang/String;
 
-.field public static DASHBOARD_KEY_CAMB:Ljava/lang/String; = null
+.field public static W:Ljava/lang/String;
 
-.field public static DASHBOARD_KEY_LAOS:Ljava/lang/String; = null
+.field public static X:Ljava/lang/String;
 
-.field public static DASHBOARD_KEY_MYAN:Ljava/lang/String; = null
+.field public static Y:I
 
-.field public static DASHBOARD_KEY_THAI:Ljava/lang/String; = null
+.field public static Z:I
 
-.field public static EMAIL_PARTNER_CAMB:Ljava/lang/String; = null
+.field public static a:Landroid/app/Activity;
 
-.field public static EMAIL_PARTNER_LAOS:Ljava/lang/String; = null
+.field public static aa:I
 
-.field public static EMAIL_PARTNER_MYAN:Ljava/lang/String; = null
+.field public static ab:I
 
-.field public static EMAIL_PARTNER_THAI:Ljava/lang/String; = null
+.field public static ac:Z
 
-.field public static EMAIL_PROBLEM_CAMB:Ljava/lang/String; = null
+.field public static ad:Ljava/lang/String;
 
-.field public static EMAIL_PROBLEM_LAOS:Ljava/lang/String; = null
+.field public static ae:Ljava/lang/String;
 
-.field public static EMAIL_PROBLEM_MYAN:Ljava/lang/String; = null
+.field public static af:I
 
-.field public static EMAIL_PROBLEM_THAI:Ljava/lang/String; = null
+.field public static ag:I
 
-.field public static final IMEI_INVALID:Ljava/lang/String; = "004999010640000"
+.field public static ah:I
 
-.field public static IS_AUTO_GOTO_HISTORY:Z = false
+.field public static ai:I
 
-.field public static final IS_DISPLAY_LOG:Z = false
+.field public static aj:I
 
-.field public static IS_PRODUCTION:Z = false
+.field public static ak:I
 
-.field public static IS_SERVER_PRODUCTION:Z = false
+.field public static al:I
 
-.field public static MISC_URL_BUZZEBEES:Ljava/lang/String; = null
+.field public static am:I
 
-.field public static MODE_DEBUG_MEM:Z = false
+.field public static an:I
 
-.field public static MODE_IMAGE_ROUNDED:Z = false
+.field public static ao:I
 
-.field public static M_ACTIVITY:Landroid/app/Activity; = null
+.field public static ap:I
 
-.field public static NOTIFICATION_ID_CAMB:Ljava/lang/String; = null
+.field public static aq:J
 
-.field public static NOTIFICATION_ID_LAOS:Ljava/lang/String; = null
+.field public static ar:Z
 
-.field public static NOTIFICATION_ID_MYAN:Ljava/lang/String; = null
+.field public static as:Z
 
-.field public static NOTIFICATION_ID_THAI:Ljava/lang/String; = null
+.field public static at:I
 
-.field public static PATH_ROOT_BUZZEBEES:Ljava/lang/String; = null
+.field public static au:[Ljava/lang/String;
 
-.field public static Permissons_BzBs_Read:[Ljava/lang/String; = null
-
-.field public static Permissons_BzBs_Read_List:Ljava/util/List; = null
+.field public static av:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
@@ -113,74 +111,70 @@
     .end annotation
 .end field
 
-.field public static RESUME_TIME:I = 0x0
+.field public static aw:I
 
-.field public static final SAVE_CATCH_MODE:Ljava/lang/String; = "PREF"
+.field public static ax:I
 
-.field public static SPONSOR_ID_CAMB:Ljava/lang/String;
+.field public static ay:I
 
-.field public static SPONSOR_ID_LAOS:Ljava/lang/String;
+.field public static b:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-.field public static SPONSOR_ID_MYAN:Ljava/lang/String;
+.field public static c:I
 
-.field public static SPONSOR_ID_THAI:Ljava/lang/String;
+.field public static d:I
 
-.field public static SPONSOR_PAGES:Ljava/lang/String;
+.field public static e:I
 
-.field public static URL_MY_POINT_EN:Ljava/lang/String;
+.field public static f:I
 
-.field public static URL_MY_POINT_TH:Ljava/lang/String;
+.field public static g:Ljava/lang/String;
 
-.field public static UriPlayStore:Ljava/lang/String;
+.field public static h:Ljava/lang/String;
 
-.field public static UriPlayStoreGift:Ljava/lang/String;
+.field public static i:Z
 
-.field public static WALL_DISK_CACHE_SIZE:I
+.field public static j:Ljava/lang/String;
 
-.field public static WALL_IMAGE_FADEIN:I
+.field public static k:Ljava/lang/String;
 
-.field public static WALL_MEM_CACHE_SIZE:I
+.field public static l:Z
 
-.field public static WALL_QUERY_OLD:I
+.field public static m:Ljava/lang/String;
 
-.field public static WEB_IMAGE_CACHE_MEMORY:I
+.field public static n:Ljava/lang/String;
 
-.field public static WEB_IMAGE_CONNECT_TIMEOUT:I
+.field public static o:Ljava/lang/String;
 
-.field public static WEB_IMAGE_READ_TIMEOUT:I
+.field public static p:Ljava/lang/String;
 
-.field public static WEB_IMAGE_RETRY_NUMBER:I
+.field public static q:Ljava/lang/String;
 
-.field public static WEB_IMAGE_SAMPLE_SIZE:I
+.field public static r:Ljava/lang/String;
 
-.field public static WEB_IMAGE_SAVE_QUALITY:I
+.field public static s:Ljava/lang/String;
 
-.field public static WEB_IMAGE_TEMP_STORAGE:I
+.field public static t:Ljava/lang/String;
 
-.field public static WEB_URL_BUZZEBEES:Ljava/lang/String;
+.field public static u:Ljava/lang/String;
 
-.field public static dpi:I
+.field public static v:Ljava/lang/String;
 
-.field public static gCardsUsedActivity:Lcom/samsung/privilege/activity/CardsUsedActivity;
+.field public static w:Ljava/lang/String;
 
-.field public static gIntDifferenceInXMoreThanInY:I
+.field public static x:Ljava/lang/String;
 
-.field public static gNotification_Number:I
+.field public static y:Ljava/lang/String;
 
-.field public static gPREF_FILE_NAME:Ljava/lang/String;
-
-.field public static screenHeight:I
-
-.field public static screenWidth:I
-
-.field public static wall_last_created_time:J
+.field public static z:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 6
+    .registers 7
 
     .prologue
+    const/16 v6, 0x3840
+
     const/16 v5, 0x3c
 
     const/16 v1, 0xff
@@ -194,21 +188,21 @@
 
     move-result v0
 
-    sput v0, Lcom/bzbs/data/AppSetting;->COLOR_BLACK:I
+    sput v0, Lcom/bzbs/data/AppSetting;->c:I
 
     .line 31
     invoke-static {v1, v1, v1}, Landroid/graphics/Color;->rgb(III)I
 
     move-result v0
 
-    sput v0, Lcom/bzbs/data/AppSetting;->COLOR_WHITE:I
+    sput v0, Lcom/bzbs/data/AppSetting;->d:I
 
     .line 32
     invoke-static {v1, v3, v3}, Landroid/graphics/Color;->rgb(III)I
 
     move-result v0
 
-    sput v0, Lcom/bzbs/data/AppSetting;->COLOR_RED:I
+    sput v0, Lcom/bzbs/data/AppSetting;->e:I
 
     .line 33
     const/4 v0, 0x7
@@ -221,283 +215,309 @@
 
     move-result v0
 
-    sput v0, Lcom/bzbs/data/AppSetting;->COLOR_NIGHTBLUE:I
+    sput v0, Lcom/bzbs/data/AppSetting;->f:I
 
-    .line 249
+    .line 261
     const-string/jumbo v0, ""
 
-    sput-object v0, Lcom/bzbs/data/AppSetting;->APP_NOTIFICATION_ID:Ljava/lang/String;
+    sput-object v0, Lcom/bzbs/data/AppSetting;->g:Ljava/lang/String;
 
-    .line 268
+    .line 280
     const-string/jumbo v0, "BuzzeBees_IsAutoLogin"
 
-    sput-object v0, Lcom/bzbs/data/AppSetting;->gPREF_FILE_NAME:Ljava/lang/String;
+    sput-object v0, Lcom/bzbs/data/AppSetting;->h:Ljava/lang/String;
 
-    .line 272
-    sput-boolean v3, Lcom/bzbs/data/AppSetting;->IS_AUTO_GOTO_HISTORY:Z
-
-    .line 295
-    const-string/jumbo v0, ""
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->SPONSOR_PAGES:Ljava/lang/String;
-
-    .line 297
-    sput-boolean v4, Lcom/bzbs/data/AppSetting;->IS_SERVER_PRODUCTION:Z
-
-    .line 300
-    const-string/jumbo v0, "com.samsung.privilege"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->UriPlayStoreGift:Ljava/lang/String;
-
-    .line 303
-    sput-boolean v4, Lcom/bzbs/data/AppSetting;->IS_PRODUCTION:Z
-
-    .line 304
-    const-string/jumbo v0, "android_gift"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->AUTH_BUZZEBEES_PREFIX_THAI:Ljava/lang/String;
-
-    .line 305
-    const-string/jumbo v0, "android_gift_laos"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->AUTH_BUZZEBEES_PREFIX_LAOS:Ljava/lang/String;
-
-    .line 306
-    const-string/jumbo v0, "android_gift_cambodia"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->AUTH_BUZZEBEES_PREFIX_CAMB:Ljava/lang/String;
+    .line 284
+    sput-boolean v3, Lcom/bzbs/data/AppSetting;->i:Z
 
     .line 307
-    const-string/jumbo v0, "android_gift_myanmar"
+    const-string/jumbo v0, ""
 
-    sput-object v0, Lcom/bzbs/data/AppSetting;->AUTH_BUZZEBEES_PREFIX_MYAN:Ljava/lang/String;
+    sput-object v0, Lcom/bzbs/data/AppSetting;->j:Ljava/lang/String;
 
-    .line 312
-    const-string/jumbo v0, "70"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->SPONSOR_ID_THAI:Ljava/lang/String;
-
-    .line 313
-    const-string/jumbo v0, "5605"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->SPONSOR_ID_LAOS:Ljava/lang/String;
-
-    .line 314
-    const-string/jumbo v0, "5606"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->SPONSOR_ID_CAMB:Ljava/lang/String;
-
-    .line 315
-    const-string/jumbo v0, "6363"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->SPONSOR_ID_MYAN:Ljava/lang/String;
-
-    .line 316
-    const-string/jumbo v0, "samsunggift"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->DASHBOARD_KEY_THAI:Ljava/lang/String;
-
-    .line 317
-    const-string/jumbo v0, "samsunggift_laos"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->DASHBOARD_KEY_LAOS:Ljava/lang/String;
-
-    .line 318
-    const-string/jumbo v0, "samsunggift_cambodia"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->DASHBOARD_KEY_CAMB:Ljava/lang/String;
-
-    .line 319
-    const-string/jumbo v0, "samsunggift_myanmar"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->DASHBOARD_KEY_MYAN:Ljava/lang/String;
-
-    .line 320
-    const-string/jumbo v0, "123844944339"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->NOTIFICATION_ID_THAI:Ljava/lang/String;
-
-    .line 321
-    const-string/jumbo v0, "956853005078"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->NOTIFICATION_ID_LAOS:Ljava/lang/String;
-
-    .line 322
-    const-string/jumbo v0, "899168542020"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->NOTIFICATION_ID_CAMB:Ljava/lang/String;
-
-    .line 323
-    const-string/jumbo v0, "228227059976"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->NOTIFICATION_ID_MYAN:Ljava/lang/String;
-
-    .line 328
-    const-string/jumbo v0, "samsungthailandapps@gmail.com"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->EMAIL_PROBLEM_THAI:Ljava/lang/String;
-
-    .line 329
-    const-string/jumbo v0, "galaxylaosclub@gmail.com"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->EMAIL_PROBLEM_LAOS:Ljava/lang/String;
-
-    .line 330
-    const-string/jumbo v0, "samsungthailandapps@gmail.com"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->EMAIL_PROBLEM_CAMB:Ljava/lang/String;
-
-    .line 331
-    const-string/jumbo v0, "samsungmyanmarapps@gmail.com"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->EMAIL_PROBLEM_MYAN:Ljava/lang/String;
-
-    .line 332
-    const-string/jumbo v0, "galaxygiftthailand@gmail.com"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->EMAIL_PARTNER_THAI:Ljava/lang/String;
-
-    .line 333
-    const-string/jumbo v0, "galaxylaosclub@gmail.com"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->EMAIL_PARTNER_LAOS:Ljava/lang/String;
-
-    .line 334
-    const-string/jumbo v0, "galaxygiftthailand@gmail.com"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->EMAIL_PARTNER_CAMB:Ljava/lang/String;
-
-    .line 335
-    const-string/jumbo v0, "galaxygiftmyanmar@gmail.com"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->EMAIL_PARTNER_MYAN:Ljava/lang/String;
-
-    .line 338
-    const-string/jumbo v0, "campaign_gift"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->CAT_WINNER_CONFIG:Ljava/lang/String;
-
-    .line 339
-    const/16 v0, 0x9e
-
-    sput v0, Lcom/bzbs/data/AppSetting;->CAT_WINNER:I
-
-    .line 342
-    const-string/jumbo v0, "https://api.buzzebees.com/"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
-
-    .line 343
-    const-string/jumbo v0, "http://buzzebees.blob.core.windows.net/"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->API_URL_BZBS_BLOB:Ljava/lang/String;
-
-    .line 344
-    const-string/jumbo v0, "https://www.buzzebees.com/"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->WEB_URL_BUZZEBEES:Ljava/lang/String;
-
-    .line 345
-    const-string/jumbo v0, "https://misc.buzzebees.com/"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->MISC_URL_BUZZEBEES:Ljava/lang/String;
-
-    .line 346
-    const-string/jumbo v0, "http://prd-api-ewallet.cloudapp.net/"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->API_URL_WALLET:Ljava/lang/String;
-
-    .line 347
-    const-string/jumbo v0, "https://misc.buzzebees.com/gift/point_eng.html"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->URL_MY_POINT_EN:Ljava/lang/String;
-
-    .line 348
-    const-string/jumbo v0, "https://misc.buzzebees.com/gift/point_th.html"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->URL_MY_POINT_TH:Ljava/lang/String;
-
-    .line 349
-    const/16 v0, 0x3840
-
-    sput v0, Lcom/bzbs/data/AppSetting;->RESUME_TIME:I
-
-    .line 350
-    sput v5, Lcom/bzbs/data/AppSetting;->BEACON_TIMEOUT_DEFAULT:I
-
-    .line 355
-    sput-boolean v3, Lcom/bzbs/data/AppSetting;->CONFIG_PAGER_KEEP_MEMORY_ALL:Z
-
-    .line 428
-    const-string/jumbo v0, "GalaxyGift"
-
-    sput-object v0, Lcom/bzbs/data/AppSetting;->PATH_ROOT_BUZZEBEES:Ljava/lang/String;
-
-    .line 470
+    .line 311
     const-string/jumbo v0, "com.samsung.privilege"
 
-    sput-object v0, Lcom/bzbs/data/AppSetting;->UriPlayStore:Ljava/lang/String;
+    sput-object v0, Lcom/bzbs/data/AppSetting;->k:Ljava/lang/String;
+
+    .line 314
+    sput-boolean v4, Lcom/bzbs/data/AppSetting;->l:Z
+
+    .line 315
+    const-string/jumbo v0, "android_gift"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->m:Ljava/lang/String;
+
+    .line 316
+    const-string/jumbo v0, "android_gift_laos"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->n:Ljava/lang/String;
+
+    .line 317
+    const-string/jumbo v0, "android_gift_cambodia"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->o:Ljava/lang/String;
+
+    .line 318
+    const-string/jumbo v0, "android_gift_myanmar"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->p:Ljava/lang/String;
+
+    .line 319
+    const-string/jumbo v0, "70"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->q:Ljava/lang/String;
+
+    .line 320
+    const-string/jumbo v0, "5605"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->r:Ljava/lang/String;
+
+    .line 321
+    const-string/jumbo v0, "5606"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->s:Ljava/lang/String;
+
+    .line 322
+    const-string/jumbo v0, "6363"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->t:Ljava/lang/String;
+
+    .line 323
+    const-string/jumbo v0, "samsunggift"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->u:Ljava/lang/String;
+
+    .line 324
+    const-string/jumbo v0, "samsunggift_laos"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->v:Ljava/lang/String;
+
+    .line 325
+    const-string/jumbo v0, "samsunggift_cambodia"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->w:Ljava/lang/String;
+
+    .line 326
+    const-string/jumbo v0, "samsunggift_myanmar"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->x:Ljava/lang/String;
+
+    .line 327
+    const-string/jumbo v0, "123844944339"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->y:Ljava/lang/String;
+
+    .line 328
+    const-string/jumbo v0, "956853005078"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->z:Ljava/lang/String;
+
+    .line 329
+    const-string/jumbo v0, "899168542020"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->A:Ljava/lang/String;
+
+    .line 330
+    const-string/jumbo v0, "228227059976"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->B:Ljava/lang/String;
+
+    .line 331
+    const-string/jumbo v0, "samsungthailandapps@gmail.com"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->C:Ljava/lang/String;
+
+    .line 332
+    const-string/jumbo v0, "galaxylaosclub@gmail.com"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->D:Ljava/lang/String;
+
+    .line 333
+    const-string/jumbo v0, "samsungthailandapps@gmail.com"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->E:Ljava/lang/String;
+
+    .line 334
+    const-string/jumbo v0, "samsungmyanmarapps@gmail.com"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->F:Ljava/lang/String;
+
+    .line 335
+    const-string/jumbo v0, "galaxygiftthailand@gmail.com"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->G:Ljava/lang/String;
+
+    .line 336
+    const-string/jumbo v0, "galaxylaosclub@gmail.com"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->H:Ljava/lang/String;
+
+    .line 337
+    const-string/jumbo v0, "galaxygiftthailand@gmail.com"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->I:Ljava/lang/String;
+
+    .line 338
+    const-string/jumbo v0, "galaxygiftmyanmar@gmail.com"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->J:Ljava/lang/String;
+
+    .line 339
+    const-string/jumbo v0, "campaign_gift"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->K:Ljava/lang/String;
+
+    .line 340
+    const/16 v0, 0x9e
+
+    sput v0, Lcom/bzbs/data/AppSetting;->L:I
+
+    .line 341
+    const-string/jumbo v0, "gift_welcome_popup"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->M:Ljava/lang/String;
+
+    .line 342
+    const-string/jumbo v0, "gift_laos_welcome_popup"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->N:Ljava/lang/String;
+
+    .line 343
+    const-string/jumbo v0, ""
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->O:Ljava/lang/String;
+
+    .line 344
+    const-string/jumbo v0, ""
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->P:Ljava/lang/String;
+
+    .line 345
+    sput-boolean v4, Lcom/bzbs/data/AppSetting;->Q:Z
+
+    .line 346
+    const-string/jumbo v0, "https://api.buzzebees.com/"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+
+    .line 347
+    const-string/jumbo v0, "https://buzzebees.blob.core.windows.net/"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->S:Ljava/lang/String;
+
+    .line 348
+    const-string/jumbo v0, "https://www.buzzebees.com/"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->T:Ljava/lang/String;
+
+    .line 349
+    const-string/jumbo v0, "https://misc.buzzebees.com/"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->U:Ljava/lang/String;
+
+    .line 351
+    const-string/jumbo v0, "https://wallet.buzzebees.com/"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->V:Ljava/lang/String;
+
+    .line 352
+    const-string/jumbo v0, "https://misc.buzzebees.com/gift/point_eng.html"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
+
+    .line 353
+    const-string/jumbo v0, "https://misc.buzzebees.com/gift/point_th.html"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->X:Ljava/lang/String;
+
+    .line 354
+    sput v6, Lcom/bzbs/data/AppSetting;->Y:I
+
+    .line 355
+    const/16 v0, 0xe10
+
+    sput v0, Lcom/bzbs/data/AppSetting;->Z:I
+
+    .line 356
+    sput v6, Lcom/bzbs/data/AppSetting;->aa:I
+
+    .line 357
+    sput v5, Lcom/bzbs/data/AppSetting;->ab:I
+
+    .line 360
+    sput-boolean v3, Lcom/bzbs/data/AppSetting;->ac:Z
+
+    .line 427
+    const-string/jumbo v0, "GalaxyGift"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->ad:Ljava/lang/String;
+
+    .line 469
+    const-string/jumbo v0, "com.samsung.privilege"
+
+    sput-object v0, Lcom/bzbs/data/AppSetting;->ae:Ljava/lang/String;
+
+    .line 472
+    sput v3, Lcom/bzbs/data/AppSetting;->af:I
 
     .line 473
-    sput v3, Lcom/bzbs/data/AppSetting;->WEB_IMAGE_CACHE_MEMORY:I
+    sput v3, Lcom/bzbs/data/AppSetting;->ag:I
 
     .line 474
-    sput v3, Lcom/bzbs/data/AppSetting;->WEB_IMAGE_RETRY_NUMBER:I
-
-    .line 475
     const/16 v0, 0x1388
 
-    sput v0, Lcom/bzbs/data/AppSetting;->WEB_IMAGE_CONNECT_TIMEOUT:I
+    sput v0, Lcom/bzbs/data/AppSetting;->ah:I
 
-    .line 476
+    .line 475
     const/16 v0, 0x2710
 
-    sput v0, Lcom/bzbs/data/AppSetting;->WEB_IMAGE_READ_TIMEOUT:I
+    sput v0, Lcom/bzbs/data/AppSetting;->ai:I
+
+    .line 476
+    sput v4, Lcom/bzbs/data/AppSetting;->aj:I
 
     .line 477
-    sput v4, Lcom/bzbs/data/AppSetting;->WEB_IMAGE_SAMPLE_SIZE:I
-
-    .line 478
     const/16 v0, 0x200
 
-    sput v0, Lcom/bzbs/data/AppSetting;->WEB_IMAGE_TEMP_STORAGE:I
+    sput v0, Lcom/bzbs/data/AppSetting;->ak:I
 
-    .line 479
-    sput v5, Lcom/bzbs/data/AppSetting;->WEB_IMAGE_SAVE_QUALITY:I
+    .line 478
+    sput v5, Lcom/bzbs/data/AppSetting;->al:I
+
+    .line 480
+    sput v3, Lcom/bzbs/data/AppSetting;->am:I
 
     .line 481
-    sput v3, Lcom/bzbs/data/AppSetting;->WALL_QUERY_OLD:I
+    sput v3, Lcom/bzbs/data/AppSetting;->an:I
 
     .line 482
-    sput v3, Lcom/bzbs/data/AppSetting;->WALL_IMAGE_FADEIN:I
-
-    .line 483
     const/16 v0, 0x19
 
-    sput v0, Lcom/bzbs/data/AppSetting;->WALL_MEM_CACHE_SIZE:I
+    sput v0, Lcom/bzbs/data/AppSetting;->ao:I
 
-    .line 484
+    .line 483
     const/16 v0, 0x32
 
-    sput v0, Lcom/bzbs/data/AppSetting;->WALL_DISK_CACHE_SIZE:I
+    sput v0, Lcom/bzbs/data/AppSetting;->ap:I
 
-    .line 486
+    .line 485
     const-wide/16 v0, 0x0
 
-    sput-wide v0, Lcom/bzbs/data/AppSetting;->wall_last_created_time:J
+    sput-wide v0, Lcom/bzbs/data/AppSetting;->aq:J
+
+    .line 489
+    sput-boolean v3, Lcom/bzbs/data/AppSetting;->ar:Z
 
     .line 490
-    sput-boolean v3, Lcom/bzbs/data/AppSetting;->MODE_DEBUG_MEM:Z
+    sput-boolean v4, Lcom/bzbs/data/AppSetting;->as:Z
 
-    .line 491
-    sput-boolean v4, Lcom/bzbs/data/AppSetting;->MODE_IMAGE_ROUNDED:Z
-
-    .line 493
+    .line 492
     const/16 v0, 0x1e
 
-    sput v0, Lcom/bzbs/data/AppSetting;->gIntDifferenceInXMoreThanInY:I
+    sput v0, Lcom/bzbs/data/AppSetting;->at:I
 
-    .line 526
+    .line 525
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/String;
@@ -516,223 +536,370 @@
 
     aput-object v2, v0, v1
 
-    sput-object v0, Lcom/bzbs/data/AppSetting;->Permissons_BzBs_Read:[Ljava/lang/String;
+    sput-object v0, Lcom/bzbs/data/AppSetting;->au:[Ljava/lang/String;
 
-    .line 552
-    sget-object v0, Lcom/bzbs/data/AppSetting;->Permissons_BzBs_Read:[Ljava/lang/String;
+    .line 551
+    sget-object v0, Lcom/bzbs/data/AppSetting;->au:[Ljava/lang/String;
 
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
-    sput-object v0, Lcom/bzbs/data/AppSetting;->Permissons_BzBs_Read_List:Ljava/util/List;
+    sput-object v0, Lcom/bzbs/data/AppSetting;->av:Ljava/util/List;
+
+    .line 554
+    sput v3, Lcom/bzbs/data/AppSetting;->aw:I
 
     .line 555
-    sput v3, Lcom/bzbs/data/AppSetting;->screenWidth:I
+    sput v3, Lcom/bzbs/data/AppSetting;->ax:I
 
-    .line 556
-    sput v3, Lcom/bzbs/data/AppSetting;->screenHeight:I
-
-    .line 558
-    sput v3, Lcom/bzbs/data/AppSetting;->dpi:I
+    .line 557
+    sput v3, Lcom/bzbs/data/AppSetting;->ay:I
 
     return-void
 .end method
 
-.method public constructor <init>()V
-    .registers 1
+.method public static a(Landroid/content/Context;)Ljava/lang/String;
+    .registers 3
 
     .prologue
-    .line 21
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 60
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
 
-    return-void
+    move-result-object v0
+
+    const-string/jumbo v1, "1054"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_11
+
+    .line 61
+    const-string/jumbo v0, "fonts/kit55p.ttf"
+
+    .line 67
+    :goto_10
+    return-object v0
+
+    .line 62
+    :cond_11
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "1108"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_22
+
+    .line 63
+    const-string/jumbo v0, "fonts/phetsarath_ot.ttf"
+
+    goto :goto_10
+
+    .line 64
+    :cond_22
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "1109"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_33
+
+    .line 65
+    const-string/jumbo v0, "fonts/zawgyi_one.ttf"
+
+    goto :goto_10
+
+    .line 67
+    :cond_33
+    const-string/jumbo v0, "fonts/kit55p.ttf"
+
+    goto :goto_10
 .end method
 
-.method public static ANDROID_PATH(Landroid/content/Context;)Ljava/lang/String;
-    .registers 4
-    .param p0, "appContext"    # Landroid/content/Context;
+.method public static b(Landroid/content/Context;)Ljava/lang/String;
+    .registers 3
 
     .prologue
-    .line 431
-    const-string/jumbo v1, "mounted"
+    .line 86
+    if-eqz p0, :cond_39
 
-    invoke-static {}, Landroid/os/Environment;->getExternalStorageState()Ljava/lang/String;
+    .line 87
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "1054"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_13
+
+    .line 88
+    const-string/jumbo v0, "fonts/kit55p.ttf"
+
+    .line 97
+    :goto_12
+    return-object v0
+
+    .line 89
+    :cond_13
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "1108"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_24
+
+    .line 90
+    const-string/jumbo v0, "fonts/phetsarath_ot.ttf"
+
+    goto :goto_12
+
+    .line 91
+    :cond_24
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "1109"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_35
+
+    .line 92
+    const-string/jumbo v0, "fonts/zawgyi_one.ttf"
+
+    goto :goto_12
+
+    .line 94
+    :cond_35
+    const-string/jumbo v0, "fonts/kit55p.ttf"
+
+    goto :goto_12
+
+    .line 97
+    :cond_39
+    const-string/jumbo v0, "fonts/kit55p.ttf"
+
+    goto :goto_12
+.end method
+
+.method public static c(Landroid/content/Context;)F
+    .registers 5
+
+    .prologue
+    const/high16 v0, 0x41c00000    # 24.0f
+
+    const/high16 v1, 0x41800000    # 16.0f
+
+    .line 118
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    const-string/jumbo v3, "1054"
 
-    move-result v1
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    if-nez v1, :cond_13
+    move-result v2
 
-    invoke-static {}, Lcom/bzbs/data/AppSetting;->isExternalStorageRemovable()Z
+    if-eqz v2, :cond_12
 
-    move-result v1
+    .line 125
+    :cond_11
+    :goto_11
+    return v0
 
-    if-nez v1, :cond_1c
+    .line 120
+    :cond_12
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
 
-    :cond_13
-    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->getExternalCacheDir(Landroid/content/Context;)Ljava/io/File;
+    move-result-object v2
 
-    move-result-object v1
+    const-string/jumbo v3, "1108"
 
-    invoke-virtual {v1}, Ljava/io/File;->getPath()Ljava/lang/String;
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v0
+    move-result v2
 
-    .line 432
-    .local v0, "androidPath":Ljava/lang/String;
-    :goto_1b
-    return-object v0
+    if-eqz v2, :cond_21
 
-    .line 431
-    .end local v0    # "androidPath":Ljava/lang/String;
-    :cond_1c
-    invoke-virtual {p0}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
+    move v0, v1
 
-    move-result-object v1
+    .line 121
+    goto :goto_11
 
-    invoke-virtual {v1}, Ljava/io/File;->getPath()Ljava/lang/String;
+    .line 122
+    :cond_21
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v2
 
-    goto :goto_1b
+    const-string/jumbo v3, "1109"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_11
+
+    move v0, v1
+
+    .line 123
+    goto :goto_11
 .end method
 
-.method public static APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
+.method public static d(Landroid/content/Context;)Ljava/lang/String;
     .registers 4
-    .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
     .line 137
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetUserCarrier(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->x(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     .line 145
-    .local v0, "carrier":Ljava/lang/String;
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
     .line 146
-    .local v1, "tokenBzBs":Ljava/lang/String;
     if-eqz v1, :cond_7c
 
     const-string/jumbo v2, ""
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_7c
+    if-nez v1, :cond_7c
 
     .line 152
     :goto_13
     if-eqz v0, :cond_11e
 
-    const-string/jumbo v2, ""
+    const-string/jumbo v1, ""
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_11e
+    if-nez v1, :cond_11e
 
     .line 153
-    const-string/jumbo v2, "45608"
+    const-string/jumbo v1, "45608"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_78
+    if-nez v1, :cond_78
 
-    const-string/jumbo v2, "45601"
+    const-string/jumbo v1, "45601"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_78
+    if-nez v1, :cond_78
 
-    const-string/jumbo v2, "45602"
+    const-string/jumbo v1, "45602"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_78
+    if-nez v1, :cond_78
 
-    const-string/jumbo v2, "45605"
+    const-string/jumbo v1, "45605"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_78
+    if-nez v1, :cond_78
 
-    const-string/jumbo v2, "45606"
+    const-string/jumbo v1, "45606"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_78
+    if-nez v1, :cond_78
 
-    const-string/jumbo v2, "45609"
+    const-string/jumbo v1, "45609"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_78
+    if-nez v1, :cond_78
 
-    const-string/jumbo v2, "45604"
+    const-string/jumbo v1, "45604"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_78
+    if-nez v1, :cond_78
 
-    const-string/jumbo v2, "45611"
+    const-string/jumbo v1, "45611"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_78
+    if-nez v1, :cond_78
 
-    const-string/jumbo v2, "45204"
+    const-string/jumbo v1, "45204"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_78
+    if-nez v1, :cond_78
 
-    const-string/jumbo v2, "45603"
+    const-string/jumbo v1, "45603"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_81
+    if-eqz v1, :cond_81
 
     .line 154
     :cond_78
-    const-string/jumbo v2, "1525635597652592"
+    const-string/jumbo v0, "1525635597652592"
 
     .line 164
     :goto_7b
-    return-object v2
+    return-object v0
 
     .line 149
     :cond_7c
-    invoke-static {p0}, Lcom/bzbs/util/PhoneManagerUtil;->GetSimOperatorDual(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/util/PhoneManagerUtil;->b(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -740,175 +907,173 @@
 
     .line 155
     :cond_81
-    const-string/jumbo v2, "45701"
+    const-string/jumbo v1, "45701"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_a5
+    if-nez v1, :cond_a5
 
-    const-string/jumbo v2, "45708"
+    const-string/jumbo v1, "45708"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_a5
+    if-nez v1, :cond_a5
 
-    const-string/jumbo v2, "45703"
+    const-string/jumbo v1, "45703"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_a5
+    if-nez v1, :cond_a5
 
-    const-string/jumbo v2, "45702"
+    const-string/jumbo v1, "45702"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_a9
+    if-eqz v1, :cond_a9
 
     .line 156
     :cond_a5
-    const-string/jumbo v2, "768830479847872"
+    const-string/jumbo v0, "768830479847872"
 
     goto :goto_7b
 
     .line 157
     :cond_a9
-    const-string/jumbo v2, "41405"
+    const-string/jumbo v1, "41405"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_c4
+    if-nez v1, :cond_c4
 
-    const-string/jumbo v2, "41401"
+    const-string/jumbo v1, "41401"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_c4
+    if-nez v1, :cond_c4
 
-    const-string/jumbo v2, "41406"
+    const-string/jumbo v1, "41406"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-eqz v2, :cond_c8
+    if-eqz v1, :cond_c8
 
     .line 158
     :cond_c4
-    const-string/jumbo v2, "517155661760483"
+    const-string/jumbo v0, "517155661760483"
 
     goto :goto_7b
 
     .line 159
     :cond_c8
-    const-string/jumbo v2, "52003"
+    const-string/jumbo v1, "52003"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_119
+    if-nez v1, :cond_119
 
-    const-string/jumbo v2, "52023"
+    const-string/jumbo v1, "52023"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_119
+    if-nez v1, :cond_119
 
-    const-string/jumbo v2, "52001"
+    const-string/jumbo v1, "52001"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_119
+    if-nez v1, :cond_119
 
-    const-string/jumbo v2, "52018"
+    const-string/jumbo v1, "52018"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_119
+    if-nez v1, :cond_119
 
-    const-string/jumbo v2, "52005"
+    const-string/jumbo v1, "52005"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_119
+    if-nez v1, :cond_119
 
-    const-string/jumbo v2, "52099"
+    const-string/jumbo v1, "52099"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_119
+    if-nez v1, :cond_119
 
-    const-string/jumbo v2, "52004"
+    const-string/jumbo v1, "52004"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_119
+    if-nez v1, :cond_119
 
-    const-string/jumbo v2, "52000"
+    const-string/jumbo v1, "52000"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_119
+    if-nez v1, :cond_119
 
-    const-string/jumbo v2, "52015"
+    const-string/jumbo v1, "52015"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_11e
+    if-eqz v0, :cond_11e
 
     .line 160
     :cond_119
-    const-string/jumbo v2, "402705486466922"
+    const-string/jumbo v0, "402705486466922"
 
     goto/16 :goto_7b
 
     .line 164
     :cond_11e
-    const-string/jumbo v2, "402705486466922"
+    const-string/jumbo v0, "402705486466922"
 
     goto/16 :goto_7b
 .end method
 
-.method public static APP_ID_FACEBOOK_BY_CARRIER(Landroid/content/Context;)Ljava/lang/String;
+.method public static e(Landroid/content/Context;)Ljava/lang/String;
     .registers 3
-    .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
     .line 172
-    invoke-static {p0}, Lcom/bzbs/util/PhoneManagerUtil;->GetSimOperatorDual(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/util/PhoneManagerUtil;->b(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     .line 174
-    .local v0, "carrier":Ljava/lang/String;
     if-eqz v0, :cond_10a
 
     const-string/jumbo v1, ""
@@ -1002,11 +1167,11 @@
 
     .line 176
     :cond_69
-    const-string/jumbo v1, "1525635597652592"
+    const-string/jumbo v0, "1525635597652592"
 
     .line 186
     :goto_6c
-    return-object v1
+    return-object v0
 
     .line 177
     :cond_6d
@@ -1044,7 +1209,7 @@
 
     .line 178
     :cond_91
-    const-string/jumbo v1, "768830479847872"
+    const-string/jumbo v0, "768830479847872"
 
     goto :goto_6c
 
@@ -1076,7 +1241,7 @@
 
     .line 180
     :cond_b0
-    const-string/jumbo v1, "517155661760483"
+    const-string/jumbo v0, "517155661760483"
 
     goto :goto_6c
 
@@ -1150,862 +1315,29 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_10a
+    if-eqz v0, :cond_10a
 
     .line 182
     :cond_105
-    const-string/jumbo v1, "402705486466922"
+    const-string/jumbo v0, "402705486466922"
 
     goto/16 :goto_6c
 
     .line 186
     :cond_10a
-    const-string/jumbo v1, "402705486466922"
+    const-string/jumbo v0, "402705486466922"
 
     goto/16 :goto_6c
 .end method
 
-.method public static AUTH_BUZZEBEES_PREFIX(Landroid/content/Context;)Ljava/lang/String;
+.method public static f(Landroid/content/Context;)Ljava/lang/String;
     .registers 3
-    .param p0, "appContext"    # Landroid/content/Context;
-
-    .prologue
-    .line 226
-    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "768830479847872"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    .line 227
-    sget-object v0, Lcom/bzbs/data/AppSetting;->AUTH_BUZZEBEES_PREFIX_LAOS:Ljava/lang/String;
-
-    .line 233
-    :goto_f
-    return-object v0
-
-    .line 228
-    :cond_10
-    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "1525635597652592"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_20
-
-    .line 229
-    sget-object v0, Lcom/bzbs/data/AppSetting;->AUTH_BUZZEBEES_PREFIX_CAMB:Ljava/lang/String;
-
-    goto :goto_f
-
-    .line 230
-    :cond_20
-    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "517155661760483"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_30
-
-    .line 231
-    sget-object v0, Lcom/bzbs/data/AppSetting;->AUTH_BUZZEBEES_PREFIX_MYAN:Ljava/lang/String;
-
-    goto :goto_f
-
-    .line 233
-    :cond_30
-    sget-object v0, Lcom/bzbs/data/AppSetting;->AUTH_BUZZEBEES_PREFIX_THAI:Ljava/lang/String;
-
-    goto :goto_f
-.end method
-
-.method public static DASHBOARD_KEY(Landroid/content/Context;)Ljava/lang/String;
-    .registers 3
-    .param p0, "appContext"    # Landroid/content/Context;
-
-    .prologue
-    .line 214
-    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "768830479847872"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    .line 215
-    sget-object v0, Lcom/bzbs/data/AppSetting;->DASHBOARD_KEY_LAOS:Ljava/lang/String;
-
-    .line 221
-    :goto_f
-    return-object v0
-
-    .line 216
-    :cond_10
-    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "1525635597652592"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_20
-
-    .line 217
-    sget-object v0, Lcom/bzbs/data/AppSetting;->DASHBOARD_KEY_CAMB:Ljava/lang/String;
-
-    goto :goto_f
-
-    .line 218
-    :cond_20
-    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "517155661760483"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_30
-
-    .line 219
-    sget-object v0, Lcom/bzbs/data/AppSetting;->DASHBOARD_KEY_MYAN:Ljava/lang/String;
-
-    goto :goto_f
-
-    .line 221
-    :cond_30
-    sget-object v0, Lcom/bzbs/data/AppSetting;->DASHBOARD_KEY_THAI:Ljava/lang/String;
-
-    goto :goto_f
-.end method
-
-.method public static FONTS_DEFAULT(Landroid/content/Context;)Ljava/lang/String;
-    .registers 3
-    .param p0, "appContext"    # Landroid/content/Context;
-
-    .prologue
-    .line 86
-    if-eqz p0, :cond_39
-
-    .line 87
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "1054"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_13
-
-    .line 88
-    const-string/jumbo v0, "fonts/kit55p.ttf"
-
-    .line 97
-    :goto_12
-    return-object v0
-
-    .line 89
-    :cond_13
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "1108"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_24
-
-    .line 90
-    const-string/jumbo v0, "fonts/phetsarath_ot.ttf"
-
-    goto :goto_12
-
-    .line 91
-    :cond_24
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "1109"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_35
-
-    .line 92
-    const-string/jumbo v0, "fonts/zawgyi_one.ttf"
-
-    goto :goto_12
-
-    .line 94
-    :cond_35
-    const-string/jumbo v0, "fonts/kit55p.ttf"
-
-    goto :goto_12
-
-    .line 97
-    :cond_39
-    const-string/jumbo v0, "fonts/kit55p.ttf"
-
-    goto :goto_12
-.end method
-
-.method public static FONTS_DEFAULT_HEADER(Landroid/content/Context;)Ljava/lang/String;
-    .registers 3
-    .param p0, "appContext"    # Landroid/content/Context;
-
-    .prologue
-    .line 60
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "1054"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_11
-
-    .line 61
-    const-string/jumbo v0, "fonts/kit55p.ttf"
-
-    .line 67
-    :goto_10
-    return-object v0
-
-    .line 62
-    :cond_11
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "1108"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_22
-
-    .line 63
-    const-string/jumbo v0, "fonts/phetsarath_ot.ttf"
-
-    goto :goto_10
-
-    .line 64
-    :cond_22
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "1109"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_33
-
-    .line 65
-    const-string/jumbo v0, "fonts/zawgyi_one.ttf"
-
-    goto :goto_10
-
-    .line 67
-    :cond_33
-    const-string/jumbo v0, "fonts/kit55p.ttf"
-
-    goto :goto_10
-.end method
-
-.method public static FONTS_DEFAULT_LOGO(Landroid/content/Context;)Ljava/lang/String;
-    .registers 3
-    .param p0, "appContext"    # Landroid/content/Context;
-
-    .prologue
-    .line 36
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "1054"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_11
-
-    .line 37
-    const-string/jumbo v0, "fonts/kit55p.ttf"
-
-    .line 43
-    :goto_10
-    return-object v0
-
-    .line 38
-    :cond_11
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "1108"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_22
-
-    .line 39
-    const-string/jumbo v0, "fonts/phetsarath_ot.ttf"
-
-    goto :goto_10
-
-    .line 40
-    :cond_22
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "1109"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_33
-
-    .line 41
-    const-string/jumbo v0, "fonts/zawgyi_one.ttf"
-
-    goto :goto_10
-
-    .line 43
-    :cond_33
-    const-string/jumbo v0, "fonts/kit55p.ttf"
-
-    goto :goto_10
-.end method
-
-.method public static FONTS_DEFAULT_SCALE(Landroid/content/Context;)D
-    .registers 7
-    .param p0, "appContext"    # Landroid/content/Context;
-
-    .prologue
-    const-wide v0, 0x3feb333333333333L
-
-    const-wide v2, 0x3fe6666666666666L
-
-    .line 102
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v4
-
-    const-string/jumbo v5, "1054"
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_18
-
-    .line 113
-    :cond_17
-    :goto_17
-    return-wide v0
-
-    .line 105
-    :cond_18
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v4
-
-    const-string/jumbo v5, "1108"
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_27
-
-    move-wide v0, v2
-
-    .line 107
-    goto :goto_17
-
-    .line 108
-    :cond_27
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v4
-
-    const-string/jumbo v5, "1109"
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_17
-
-    move-wide v0, v2
-
-    .line 110
-    goto :goto_17
-.end method
-
-.method public static FONTS_DEFAULT_SIZE(Landroid/content/Context;)F
-    .registers 5
-    .param p0, "appContext"    # Landroid/content/Context;
-
-    .prologue
-    const/high16 v0, 0x41c00000
-
-    const/high16 v1, 0x41800000
-
-    .line 118
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "1054"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_12
-
-    .line 125
-    :cond_11
-    :goto_11
-    return v0
-
-    .line 120
-    :cond_12
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "1108"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_21
-
-    move v0, v1
-
-    .line 121
-    goto :goto_11
-
-    .line 122
-    :cond_21
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "1109"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_11
-
-    move v0, v1
-
-    .line 123
-    goto :goto_11
-.end method
-
-.method public static FONTS_HEADER_SIZE(Landroid/content/Context;)F
-    .registers 5
-    .param p0, "appContext"    # Landroid/content/Context;
-
-    .prologue
-    const/high16 v0, 0x41f00000
-
-    const/high16 v1, 0x41b00000
-
-    .line 72
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "1054"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_12
-
-    .line 79
-    :cond_11
-    :goto_11
-    return v0
-
-    .line 74
-    :cond_12
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "1108"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_21
-
-    move v0, v1
-
-    .line 75
-    goto :goto_11
-
-    .line 76
-    :cond_21
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "1109"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_11
-
-    move v0, v1
-
-    .line 77
-    goto :goto_11
-.end method
-
-.method public static FONTS_LOGO_SIZE(Landroid/content/Context;)F
-    .registers 5
-    .param p0, "appContext"    # Landroid/content/Context;
-
-    .prologue
-    const/high16 v0, 0x41f00000
-
-    const/high16 v1, 0x41b00000
-
-    .line 48
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "1054"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_12
-
-    .line 55
-    :cond_11
-    :goto_11
-    return v0
-
-    .line 50
-    :cond_12
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "1108"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_21
-
-    move v0, v1
-
-    .line 51
-    goto :goto_11
-
-    .line 52
-    :cond_21
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "1109"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_11
-
-    move v0, v1
-
-    .line 53
-    goto :goto_11
-.end method
-
-.method public static GetIsAutoLogin(Landroid/content/Context;)Z
-    .registers 5
-    .param p0, "context"    # Landroid/content/Context;
-
-    .prologue
-    .line 281
-    const/4 v0, 0x1
-
-    .line 282
-    .local v0, "IsAutoLogin":Z
-    sget-object v2, Lcom/bzbs/data/AppSetting;->gPREF_FILE_NAME:Ljava/lang/String;
-
-    const/4 v3, 0x0
-
-    invoke-virtual {p0, v2, v3}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    .line 283
-    .local v1, "savedSession":Landroid/content/SharedPreferences;
-    const-string/jumbo v2, "IsAutoLogin"
-
-    const/4 v3, 0x1
-
-    invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result v0
-
-    .line 284
-    return v0
-.end method
-
-.method public static InitialLibBuzzebeesConfig(Landroid/content/Context;)V
-    .registers 4
-    .param p0, "appContext"    # Landroid/content/Context;
-
-    .prologue
-    const/4 v2, 0x0
-
-    .line 562
-    sget-object v0, Lcom/bzbs/data/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
-
-    sput-object v0, Lcom/bzbs/lib/survey/LibConst;->API_URL_BUZZEBEES:Ljava/lang/String;
-
-    .line 563
-    sget-object v0, Lcom/bzbs/data/AppSetting;->API_URL_BZBS_BLOB:Ljava/lang/String;
-
-    sput-object v0, Lcom/bzbs/lib/survey/LibConst;->API_URL_BZBS_BLOB:Ljava/lang/String;
-
-    .line 564
-    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->SetAppId(Landroid/content/Context;Ljava/lang/String;)Z
-
-    .line 565
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetTokenBuzzeBees(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->SetTokenBuzzeBees(Landroid/content/Context;Ljava/lang/String;)Z
-
-    .line 566
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetUserId(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->SetUserId(Landroid/content/Context;Ljava/lang/String;)Z
-
-    .line 567
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetFacebookUID(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->SetFacebookUID(Landroid/content/Context;Ljava/lang/String;)Z
-
-    .line 568
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetPoints(Landroid/content/Context;)J
-
-    move-result-wide v0
-
-    invoke-static {p0, v0, v1}, Lcom/bzbs/lib/survey/LibUserLogin;->SetPoints(Landroid/content/Context;J)Z
-
-    .line 569
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->SetLocale(Landroid/content/Context;Ljava/lang/String;)Z
-
-    .line 571
-    invoke-static {p0, v2}, Lcom/bzbs/lib/survey/LibUserLogin;->SetIsShowConditionInMarket(Landroid/content/Context;Z)Z
-
-    .line 572
-    invoke-static {p0, v2}, Lcom/bzbs/lib/survey/LibUserLogin;->SetIsShowUseDialogInMarket(Landroid/content/Context;Z)Z
-
-    .line 573
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->GetIsShowShoppingBasket(Landroid/content/Context;)Z
-
-    move-result v0
-
-    invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->SetIsShowShoppingBasket(Landroid/content/Context;Z)Z
-
-    .line 574
-    return-void
-.end method
-
-.method public static LOGIN_OTP(Landroid/content/Context;)Z
-    .registers 3
-    .param p0, "context"    # Landroid/content/Context;
-
-    .prologue
-    .line 288
-    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK_BY_CARRIER(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "402705486466922"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_f
-
-    .line 289
-    const/4 v0, 0x1
-
-    .line 291
-    :goto_e
-    return v0
-
-    :cond_f
-    const/4 v0, 0x0
-
-    goto :goto_e
-.end method
-
-.method public static NOTIFICATION_ID(Landroid/content/Context;)Ljava/lang/String;
-    .registers 3
-    .param p0, "appContext"    # Landroid/content/Context;
-
-    .prologue
-    .line 251
-    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "768830479847872"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_10
-
-    .line 252
-    sget-object v0, Lcom/bzbs/data/AppSetting;->NOTIFICATION_ID_LAOS:Ljava/lang/String;
-
-    .line 258
-    :goto_f
-    return-object v0
-
-    .line 253
-    :cond_10
-    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "1525635597652592"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_20
-
-    .line 254
-    sget-object v0, Lcom/bzbs/data/AppSetting;->NOTIFICATION_ID_CAMB:Ljava/lang/String;
-
-    goto :goto_f
-
-    .line 255
-    :cond_20
-    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "517155661760483"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_30
-
-    .line 256
-    sget-object v0, Lcom/bzbs/data/AppSetting;->NOTIFICATION_ID_MYAN:Ljava/lang/String;
-
-    goto :goto_f
-
-    .line 258
-    :cond_30
-    sget-object v0, Lcom/bzbs/data/AppSetting;->NOTIFICATION_ID_THAI:Ljava/lang/String;
-
-    goto :goto_f
-.end method
-
-.method public static SPONSOR_ID(Landroid/content/Context;)Ljava/lang/String;
-    .registers 3
-    .param p0, "appContext"    # Landroid/content/Context;
 
     .prologue
     .line 202
-    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->d(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -2018,7 +1350,7 @@
     if-eqz v0, :cond_10
 
     .line 203
-    sget-object v0, Lcom/bzbs/data/AppSetting;->SPONSOR_ID_LAOS:Ljava/lang/String;
+    sget-object v0, Lcom/bzbs/data/AppSetting;->r:Ljava/lang/String;
 
     .line 209
     :goto_f
@@ -2026,7 +1358,7 @@
 
     .line 204
     :cond_10
-    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->d(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -2039,13 +1371,13 @@
     if-eqz v0, :cond_20
 
     .line 205
-    sget-object v0, Lcom/bzbs/data/AppSetting;->SPONSOR_ID_CAMB:Ljava/lang/String;
+    sget-object v0, Lcom/bzbs/data/AppSetting;->s:Ljava/lang/String;
 
     goto :goto_f
 
     .line 206
     :cond_20
-    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->APP_ID_FACEBOOK(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->d(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -2058,162 +1390,394 @@
     if-eqz v0, :cond_30
 
     .line 207
-    sget-object v0, Lcom/bzbs/data/AppSetting;->SPONSOR_ID_MYAN:Ljava/lang/String;
+    sget-object v0, Lcom/bzbs/data/AppSetting;->t:Ljava/lang/String;
 
     goto :goto_f
 
     .line 209
     :cond_30
-    sget-object v0, Lcom/bzbs/data/AppSetting;->SPONSOR_ID_THAI:Ljava/lang/String;
+    sget-object v0, Lcom/bzbs/data/AppSetting;->q:Ljava/lang/String;
 
     goto :goto_f
 .end method
 
-.method public static SetIsAutoLogin(Landroid/content/Context;Z)Z
-    .registers 5
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "pIsAutoLogin"    # Z
+.method public static g(Landroid/content/Context;)Ljava/lang/String;
+    .registers 3
 
     .prologue
-    .line 275
-    sget-object v1, Lcom/bzbs/data/AppSetting;->gPREF_FILE_NAME:Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {p0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    move-result-object v1
-
-    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+    .line 214
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->d(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 276
-    .local v0, "editor":Landroid/content/SharedPreferences$Editor;
-    const-string/jumbo v1, "IsAutoLogin"
+    const-string/jumbo v1, "768830479847872"
 
-    invoke-interface {v0, v1, p1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 277
-    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
+    move-result v0
 
-    move-result v1
+    if-eqz v0, :cond_10
 
-    return v1
-.end method
+    .line 215
+    sget-object v0, Lcom/bzbs/data/AppSetting;->v:Ljava/lang/String;
 
-.method public static getExternalCacheDir(Landroid/content/Context;)Ljava/io/File;
-    .registers 5
-    .param p0, "context"    # Landroid/content/Context;
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0x8
-    .end annotation
+    .line 221
+    :goto_f
+    return-object v0
 
-    .prologue
-    .line 457
-    invoke-static {}, Lcom/bzbs/util/VersionUtils;->hasFroyo()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_b
-
-    .line 458
-    invoke-virtual {p0}, Landroid/content/Context;->getExternalCacheDir()Ljava/io/File;
-
-    move-result-object v1
-
-    .line 463
-    :goto_a
-    return-object v1
-
-    .line 462
-    :cond_b
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "/Android/data/"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "/cache/"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 216
+    :cond_10
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->d(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 463
-    .local v0, "cacheDir":Ljava/lang/String;
-    new-instance v1, Ljava/io/File;
+    const-string/jumbo v1, "1525635597652592"
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    move-result v0
 
-    invoke-static {}, Landroid/os/Environment;->getExternalStorageDirectory()Ljava/io/File;
+    if-eqz v0, :cond_20
 
-    move-result-object v3
+    .line 217
+    sget-object v0, Lcom/bzbs/data/AppSetting;->w:Ljava/lang/String;
 
-    invoke-virtual {v3}, Ljava/io/File;->getPath()Ljava/lang/String;
+    goto :goto_f
 
-    move-result-object v3
+    .line 218
+    :cond_20
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->d(Landroid/content/Context;)Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v2
+    const-string/jumbo v1, "517155661760483"
 
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result-object v2
+    move-result v0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-eqz v0, :cond_30
 
-    move-result-object v2
+    .line 219
+    sget-object v0, Lcom/bzbs/data/AppSetting;->x:Ljava/lang/String;
 
-    invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    goto :goto_f
 
-    goto :goto_a
+    .line 221
+    :cond_30
+    sget-object v0, Lcom/bzbs/data/AppSetting;->u:Ljava/lang/String;
+
+    goto :goto_f
 .end method
 
-.method public static isExternalStorageRemovable()Z
-    .registers 1
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0x9
-    .end annotation
+.method public static h(Landroid/content/Context;)Ljava/lang/String;
+    .registers 3
 
     .prologue
-    .line 443
-    invoke-static {}, Lcom/bzbs/util/VersionUtils;->hasGingerbread()Z
+    .line 226
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->d(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "768830479847872"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_10
 
-    .line 444
-    invoke-static {}, Landroid/os/Environment;->isExternalStorageRemovable()Z
+    .line 227
+    sget-object v0, Lcom/bzbs/data/AppSetting;->N:Ljava/lang/String;
+
+    .line 233
+    :goto_f
+    return-object v0
+
+    .line 228
+    :cond_10
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->d(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "1525635597652592"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    .line 446
-    :goto_a
-    return v0
+    if-eqz v0, :cond_20
 
-    :cond_b
+    .line 229
+    sget-object v0, Lcom/bzbs/data/AppSetting;->O:Ljava/lang/String;
+
+    goto :goto_f
+
+    .line 230
+    :cond_20
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->d(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "517155661760483"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_30
+
+    .line 231
+    sget-object v0, Lcom/bzbs/data/AppSetting;->P:Ljava/lang/String;
+
+    goto :goto_f
+
+    .line 233
+    :cond_30
+    sget-object v0, Lcom/bzbs/data/AppSetting;->M:Ljava/lang/String;
+
+    goto :goto_f
+.end method
+
+.method public static i(Landroid/content/Context;)Ljava/lang/String;
+    .registers 3
+
+    .prologue
+    .line 238
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->d(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "768830479847872"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_10
+
+    .line 239
+    sget-object v0, Lcom/bzbs/data/AppSetting;->n:Ljava/lang/String;
+
+    .line 245
+    :goto_f
+    return-object v0
+
+    .line 240
+    :cond_10
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->d(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "1525635597652592"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_20
+
+    .line 241
+    sget-object v0, Lcom/bzbs/data/AppSetting;->o:Ljava/lang/String;
+
+    goto :goto_f
+
+    .line 242
+    :cond_20
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->d(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "517155661760483"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_30
+
+    .line 243
+    sget-object v0, Lcom/bzbs/data/AppSetting;->p:Ljava/lang/String;
+
+    goto :goto_f
+
+    .line 245
+    :cond_30
+    sget-object v0, Lcom/bzbs/data/AppSetting;->m:Ljava/lang/String;
+
+    goto :goto_f
+.end method
+
+.method public static j(Landroid/content/Context;)Ljava/lang/String;
+    .registers 3
+
+    .prologue
+    .line 263
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->d(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "768830479847872"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_10
+
+    .line 264
+    sget-object v0, Lcom/bzbs/data/AppSetting;->z:Ljava/lang/String;
+
+    .line 270
+    :goto_f
+    return-object v0
+
+    .line 265
+    :cond_10
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->d(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "1525635597652592"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_20
+
+    .line 266
+    sget-object v0, Lcom/bzbs/data/AppSetting;->A:Ljava/lang/String;
+
+    goto :goto_f
+
+    .line 267
+    :cond_20
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->d(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "517155661760483"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_30
+
+    .line 268
+    sget-object v0, Lcom/bzbs/data/AppSetting;->B:Ljava/lang/String;
+
+    goto :goto_f
+
+    .line 270
+    :cond_30
+    sget-object v0, Lcom/bzbs/data/AppSetting;->y:Ljava/lang/String;
+
+    goto :goto_f
+.end method
+
+.method public static k(Landroid/content/Context;)Z
+    .registers 3
+
+    .prologue
+    .line 300
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->e(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "402705486466922"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_f
+
+    .line 301
     const/4 v0, 0x1
 
-    goto :goto_a
+    .line 303
+    :goto_e
+    return v0
+
+    :cond_f
+    const/4 v0, 0x0
+
+    goto :goto_e
+.end method
+
+.method public static l(Landroid/content/Context;)V
+    .registers 4
+
+    .prologue
+    const/4 v2, 0x0
+
+    .line 561
+    sget-object v0, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
+
+    sput-object v0, Lcom/bzbs/lib/survey/LibConst;->e:Ljava/lang/String;
+
+    .line 562
+    sget-object v0, Lcom/bzbs/data/AppSetting;->S:Ljava/lang/String;
+
+    sput-object v0, Lcom/bzbs/lib/survey/LibConst;->f:Ljava/lang/String;
+
+    .line 563
+    invoke-static {p0}, Lcom/bzbs/data/AppSetting;->d(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->a(Landroid/content/Context;Ljava/lang/String;)Z
+
+    .line 564
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->c(Landroid/content/Context;Ljava/lang/String;)Z
+
+    .line 565
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->b(Landroid/content/Context;Ljava/lang/String;)Z
+
+    .line 566
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->o(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->d(Landroid/content/Context;Ljava/lang/String;)Z
+
+    .line 567
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)J
+
+    move-result-wide v0
+
+    invoke-static {p0, v0, v1}, Lcom/bzbs/lib/survey/LibUserLogin;->a(Landroid/content/Context;J)Z
+
+    .line 568
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->e(Landroid/content/Context;Ljava/lang/String;)Z
+
+    .line 570
+    invoke-static {p0, v2}, Lcom/bzbs/lib/survey/LibUserLogin;->a(Landroid/content/Context;Z)Z
+
+    .line 571
+    invoke-static {p0, v2}, Lcom/bzbs/lib/survey/LibUserLogin;->b(Landroid/content/Context;Z)Z
+
+    .line 572
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->G(Landroid/content/Context;)Z
+
+    move-result v0
+
+    invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->c(Landroid/content/Context;Z)Z
+
+    .line 573
+    return-void
 .end method

@@ -12,11 +12,5 @@
 
 
 # virtual methods
-.method public abstract getRoute()Lcz/msebera/android/httpclient/conn/routing/HttpRoute;
-.end method
-
-.method public abstract getSSLSession()Ljavax/net/ssl/SSLSession;
-.end method
-
-.method public abstract isSecure()Z
+.method public abstract h()Lcz/msebera/android/httpclient/conn/routing/HttpRoute;
 .end method

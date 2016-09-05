@@ -20,7 +20,7 @@
 
 
 # virtual methods
-.method public abstract value()Ljava/lang/Class;
+.method public abstract a()Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

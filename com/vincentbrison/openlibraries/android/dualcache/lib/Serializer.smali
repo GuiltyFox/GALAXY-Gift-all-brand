@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract fromString(Ljava/lang/String;)Ljava/lang/Object;
+.method public abstract a(Ljava/lang/String;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -25,7 +25,7 @@
     .end annotation
 .end method
 
-.method public abstract toString(Ljava/lang/Object;)Ljava/lang/String;
+.method public abstract a(Ljava/lang/Object;)Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)",

@@ -14,13 +14,13 @@
 
 
 # instance fields
-.field private mCategory:Ljava/lang/String;
+.field private a:Ljava/lang/String;
 
-.field private zzRA:Ljava/lang/String;
+.field private b:Ljava/lang/String;
 
-.field private zzaBq:J
+.field private c:Ljava/lang/String;
 
-.field private zzaRQ:Ljava/lang/String;
+.field private d:J
 
 
 # direct methods
@@ -34,26 +34,134 @@
 
 
 # virtual methods
-.method public getAction()Ljava/lang/String;
+.method public a()Ljava/lang/String;
     .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzql;->zzRA:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzql;->a:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public getLabel()Ljava/lang/String;
+.method public a(J)V
+    .registers 4
+
+    iput-wide p1, p0, Lcom/google/android/gms/internal/zzql;->d:J
+
+    return-void
+.end method
+
+.method public a(Lcom/google/android/gms/internal/zzql;)V
+    .registers 6
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzql;->a:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_d
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzql;->a:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzql;->a(Ljava/lang/String;)V
+
+    :cond_d
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzql;->b:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1a
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzql;->b:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzql;->b(Ljava/lang/String;)V
+
+    :cond_1a
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzql;->c:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_27
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzql;->c:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzql;->c(Ljava/lang/String;)V
+
+    :cond_27
+    iget-wide v0, p0, Lcom/google/android/gms/internal/zzql;->d:J
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v0, v2
+
+    if-eqz v0, :cond_34
+
+    iget-wide v0, p0, Lcom/google/android/gms/internal/zzql;->d:J
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/internal/zzql;->a(J)V
+
+    :cond_34
+    return-void
+.end method
+
+.method public bridge synthetic a(Lcom/google/android/gms/measurement/zze;)V
     .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzql;->zzaRQ:Ljava/lang/String;
+    check-cast p1, Lcom/google/android/gms/internal/zzql;
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/zzql;->a(Lcom/google/android/gms/internal/zzql;)V
+
+    return-void
+.end method
+
+.method public a(Ljava/lang/String;)V
+    .registers 2
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/zzql;->a:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public b()Ljava/lang/String;
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzql;->b:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public getValue()J
+.method public b(Ljava/lang/String;)V
+    .registers 2
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/zzql;->b:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public c()Ljava/lang/String;
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzql;->c:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public c(Ljava/lang/String;)V
+    .registers 2
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/zzql;->c:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public d()J
     .registers 3
 
-    iget-wide v0, p0, Lcom/google/android/gms/internal/zzql;->zzaBq:J
+    iget-wide v0, p0, Lcom/google/android/gms/internal/zzql;->d:J
 
     return-wide v0
 .end method
@@ -67,25 +175,25 @@
 
     const-string/jumbo v1, "category"
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzql;->mCategory:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/internal/zzql;->a:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string/jumbo v1, "action"
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzql;->zzRA:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/internal/zzql;->b:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string/jumbo v1, "label"
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzql;->zzaRQ:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/internal/zzql;->c:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string/jumbo v1, "value"
 
-    iget-wide v2, p0, Lcom/google/android/gms/internal/zzql;->zzaBq:J
+    iget-wide v2, p0, Lcom/google/android/gms/internal/zzql;->d:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -93,117 +201,9 @@
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/zzql;->zzE(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/internal/zzql;->a(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public zzAj()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzql;->mCategory:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public zzN(J)V
-    .registers 4
-
-    iput-wide p1, p0, Lcom/google/android/gms/internal/zzql;->zzaBq:J
-
-    return-void
-.end method
-
-.method public zza(Lcom/google/android/gms/internal/zzql;)V
-    .registers 6
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzql;->mCategory:Ljava/lang/String;
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_d
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzql;->mCategory:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzql;->zzen(Ljava/lang/String;)V
-
-    :cond_d
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzql;->zzRA:Ljava/lang/String;
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1a
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzql;->zzRA:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzql;->zzeo(Ljava/lang/String;)V
-
-    :cond_1a
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzql;->zzaRQ:Ljava/lang/String;
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_27
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzql;->zzaRQ:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzql;->zzep(Ljava/lang/String;)V
-
-    :cond_27
-    iget-wide v0, p0, Lcom/google/android/gms/internal/zzql;->zzaBq:J
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v0, v0, v2
-
-    if-eqz v0, :cond_34
-
-    iget-wide v0, p0, Lcom/google/android/gms/internal/zzql;->zzaBq:J
-
-    invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/internal/zzql;->zzN(J)V
-
-    :cond_34
-    return-void
-.end method
-
-.method public bridge synthetic zza(Lcom/google/android/gms/measurement/zze;)V
-    .registers 2
-
-    check-cast p1, Lcom/google/android/gms/internal/zzql;
-
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/zzql;->zza(Lcom/google/android/gms/internal/zzql;)V
-
-    return-void
-.end method
-
-.method public zzen(Ljava/lang/String;)V
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/zzql;->mCategory:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public zzeo(Ljava/lang/String;)V
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/zzql;->zzRA:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public zzep(Ljava/lang/String;)V
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/zzql;->zzaRQ:Ljava/lang/String;
-
-    return-void
 .end method

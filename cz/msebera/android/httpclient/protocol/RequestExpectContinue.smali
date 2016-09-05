@@ -6,13 +6,8 @@
 .implements Lcz/msebera/android/httpclient/HttpRequestInterceptor;
 
 
-# annotations
-.annotation build Lcz/msebera/android/httpclient/annotation/Immutable;
-.end annotation
-
-
 # instance fields
-.field private final activeByDefault:Z
+.field private final a:Z
 
 
 # direct methods
@@ -33,14 +28,13 @@
 
 .method public constructor <init>(Z)V
     .registers 2
-    .param p1, "activeByDefault"    # Z
 
     .prologue
     .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 69
-    iput-boolean p1, p0, Lcz/msebera/android/httpclient/protocol/RequestExpectContinue;->activeByDefault:Z
+    iput-boolean p1, p0, Lcz/msebera/android/httpclient/protocol/RequestExpectContinue;->a:Z
 
     .line 70
     return-void
@@ -49,106 +43,92 @@
 
 # virtual methods
 .method public process(Lcz/msebera/android/httpclient/HttpRequest;Lcz/msebera/android/httpclient/protocol/HttpContext;)V
-    .registers 11
-    .param p1, "request"    # Lcz/msebera/android/httpclient/HttpRequest;
-    .param p2, "context"    # Lcz/msebera/android/httpclient/protocol/HttpContext;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcz/msebera/android/httpclient/HttpException;,
-            Ljava/io/IOException;
-        }
-    .end annotation
+    .registers 9
 
     .prologue
     .line 74
-    const-string/jumbo v3, "HTTP request"
+    const-string/jumbo v0, "HTTP request"
 
-    invoke-static {p1, v3}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcz/msebera/android/httpclient/util/Args;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 76
-    const-string/jumbo v3, "Expect"
+    const-string/jumbo v0, "Expect"
 
-    invoke-interface {p1, v3}, Lcz/msebera/android/httpclient/HttpRequest;->containsHeader(Ljava/lang/String;)Z
+    invoke-interface {p1, v0}, Lcz/msebera/android/httpclient/HttpRequest;->containsHeader(Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_4e
+    if-nez v0, :cond_4e
 
     .line 77
-    instance-of v3, p1, Lcz/msebera/android/httpclient/HttpEntityEnclosingRequest;
+    instance-of v0, p1, Lcz/msebera/android/httpclient/HttpEntityEnclosingRequest;
 
-    if-eqz v3, :cond_4e
+    if-eqz v0, :cond_4e
 
     .line 78
     invoke-interface {p1}, Lcz/msebera/android/httpclient/HttpRequest;->getRequestLine()Lcz/msebera/android/httpclient/RequestLine;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-interface {v3}, Lcz/msebera/android/httpclient/RequestLine;->getProtocolVersion()Lcz/msebera/android/httpclient/ProtocolVersion;
-
-    move-result-object v2
-
-    .local v2, "ver":Lcz/msebera/android/httpclient/ProtocolVersion;
-    move-object v3, p1
-
-    .line 79
-    check-cast v3, Lcz/msebera/android/httpclient/HttpEntityEnclosingRequest;
-
-    invoke-interface {v3}, Lcz/msebera/android/httpclient/HttpEntityEnclosingRequest;->getEntity()Lcz/msebera/android/httpclient/HttpEntity;
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/RequestLine;->b()Lcz/msebera/android/httpclient/ProtocolVersion;
 
     move-result-object v1
 
+    move-object v0, p1
+
+    .line 79
+    check-cast v0, Lcz/msebera/android/httpclient/HttpEntityEnclosingRequest;
+
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/HttpEntityEnclosingRequest;->getEntity()Lcz/msebera/android/httpclient/HttpEntity;
+
+    move-result-object v0
+
     .line 81
-    .local v1, "entity":Lcz/msebera/android/httpclient/HttpEntity;
-    if-eqz v1, :cond_4e
+    if-eqz v0, :cond_4e
 
     .line 82
-    invoke-interface {v1}, Lcz/msebera/android/httpclient/HttpEntity;->getContentLength()J
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/HttpEntity;->getContentLength()J
 
-    move-result-wide v4
+    move-result-wide v2
 
-    const-wide/16 v6, 0x0
+    const-wide/16 v4, 0x0
 
-    cmp-long v3, v4, v6
+    cmp-long v0, v2, v4
 
-    if-eqz v3, :cond_4e
+    if-eqz v0, :cond_4e
 
-    sget-object v3, Lcz/msebera/android/httpclient/HttpVersion;->HTTP_1_0:Lcz/msebera/android/httpclient/HttpVersion;
+    sget-object v0, Lcz/msebera/android/httpclient/HttpVersion;->b:Lcz/msebera/android/httpclient/HttpVersion;
 
-    invoke-virtual {v2, v3}, Lcz/msebera/android/httpclient/ProtocolVersion;->lessEquals(Lcz/msebera/android/httpclient/ProtocolVersion;)Z
+    invoke-virtual {v1, v0}, Lcz/msebera/android/httpclient/ProtocolVersion;->c(Lcz/msebera/android/httpclient/ProtocolVersion;)Z
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_4e
+    if-nez v0, :cond_4e
 
     .line 83
     invoke-interface {p1}, Lcz/msebera/android/httpclient/HttpRequest;->getParams()Lcz/msebera/android/httpclient/params/HttpParams;
 
-    move-result-object v3
+    move-result-object v0
 
-    const-string/jumbo v4, "http.protocol.expect-continue"
+    const-string/jumbo v1, "http.protocol.expect-continue"
 
-    iget-boolean v5, p0, Lcz/msebera/android/httpclient/protocol/RequestExpectContinue;->activeByDefault:Z
+    iget-boolean v2, p0, Lcz/msebera/android/httpclient/protocol/RequestExpectContinue;->a:Z
 
-    invoke-interface {v3, v4, v5}, Lcz/msebera/android/httpclient/params/HttpParams;->getBooleanParameter(Ljava/lang/String;Z)Z
+    invoke-interface {v0, v1, v2}, Lcz/msebera/android/httpclient/params/HttpParams;->a(Ljava/lang/String;Z)Z
 
     move-result v0
 
     .line 85
-    .local v0, "active":Z
     if-eqz v0, :cond_4e
 
     .line 86
-    const-string/jumbo v3, "Expect"
+    const-string/jumbo v0, "Expect"
 
-    const-string/jumbo v4, "100-continue"
+    const-string/jumbo v1, "100-continue"
 
-    invoke-interface {p1, v3, v4}, Lcz/msebera/android/httpclient/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {p1, v0, v1}, Lcz/msebera/android/httpclient/HttpRequest;->addHeader(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 91
-    .end local v0    # "active":Z
-    .end local v1    # "entity":Lcz/msebera/android/httpclient/HttpEntity;
-    .end local v2    # "ver":Lcz/msebera/android/httpclient/ProtocolVersion;
     :cond_4e
     return-void
 .end method

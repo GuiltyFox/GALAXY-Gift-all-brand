@@ -4,15 +4,8 @@
 
 
 # annotations
-.annotation build Lcz/msebera/android/httpclient/annotation/ThreadSafe;
-.end annotation
-
 .annotation runtime Ljava/lang/Deprecated;
 .end annotation
-
-
-# static fields
-.field private static final serialVersionUID:J = 0x4ac56f4476f17222L
 
 
 # direct methods
@@ -29,25 +22,51 @@
 
 
 # virtual methods
-.method public declared-synchronized clear()V
-    .registers 2
+.method public declared-synchronized a(Ljava/lang/String;Ljava/lang/Object;)Lcz/msebera/android/httpclient/params/HttpParams;
+    .registers 4
 
     .prologue
-    .line 81
+    .line 56
     monitor-enter p0
 
     :try_start_1
-    invoke-super {p0}, Lcz/msebera/android/httpclient/params/BasicHttpParams;->clear()V
+    invoke-super {p0, p1, p2}, Lcz/msebera/android/httpclient/params/BasicHttpParams;->a(Ljava/lang/String;Ljava/lang/Object;)Lcz/msebera/android/httpclient/params/HttpParams;
     :try_end_4
-    .catchall {:try_start_1 .. :try_end_4} :catchall_6
+    .catchall {:try_start_1 .. :try_end_4} :catchall_7
 
-    .line 82
+    move-result-object v0
+
     monitor-exit p0
 
-    return-void
+    return-object v0
 
-    .line 81
-    :catchall_6
+    :catchall_7
+    move-exception v0
+
+    monitor-exit p0
+
+    throw v0
+.end method
+
+.method public declared-synchronized a(Ljava/lang/String;)Ljava/lang/Object;
+    .registers 3
+
+    .prologue
+    .line 61
+    monitor-enter p0
+
+    :try_start_1
+    invoke-super {p0, p1}, Lcz/msebera/android/httpclient/params/BasicHttpParams;->a(Ljava/lang/String;)Ljava/lang/Object;
+    :try_end_4
+    .catchall {:try_start_1 .. :try_end_4} :catchall_7
+
+    move-result-object v0
+
+    monitor-exit p0
+
+    return-object v0
+
+    :catchall_7
     move-exception v0
 
     monitor-exit p0
@@ -57,11 +76,6 @@
 
 .method public declared-synchronized clone()Ljava/lang/Object;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/CloneNotSupportedException;
-        }
-    .end annotation
 
     .prologue
     .line 86
@@ -79,170 +93,6 @@
     return-object v0
 
     :catchall_7
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized getParameter(Ljava/lang/String;)Ljava/lang/Object;
-    .registers 3
-    .param p1, "name"    # Ljava/lang/String;
-
-    .prologue
-    .line 61
-    monitor-enter p0
-
-    :try_start_1
-    invoke-super {p0, p1}, Lcz/msebera/android/httpclient/params/BasicHttpParams;->getParameter(Ljava/lang/String;)Ljava/lang/Object;
-    :try_end_4
-    .catchall {:try_start_1 .. :try_end_4} :catchall_7
-
-    move-result-object v0
-
-    monitor-exit p0
-
-    return-object v0
-
-    :catchall_7
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized isParameterSet(Ljava/lang/String;)Z
-    .registers 3
-    .param p1, "name"    # Ljava/lang/String;
-
-    .prologue
-    .line 66
-    monitor-enter p0
-
-    :try_start_1
-    invoke-super {p0, p1}, Lcz/msebera/android/httpclient/params/BasicHttpParams;->isParameterSet(Ljava/lang/String;)Z
-    :try_end_4
-    .catchall {:try_start_1 .. :try_end_4} :catchall_7
-
-    move-result v0
-
-    monitor-exit p0
-
-    return v0
-
-    :catchall_7
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized isParameterSetLocally(Ljava/lang/String;)Z
-    .registers 3
-    .param p1, "name"    # Ljava/lang/String;
-
-    .prologue
-    .line 71
-    monitor-enter p0
-
-    :try_start_1
-    invoke-super {p0, p1}, Lcz/msebera/android/httpclient/params/BasicHttpParams;->isParameterSetLocally(Ljava/lang/String;)Z
-    :try_end_4
-    .catchall {:try_start_1 .. :try_end_4} :catchall_7
-
-    move-result v0
-
-    monitor-exit p0
-
-    return v0
-
-    :catchall_7
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized removeParameter(Ljava/lang/String;)Z
-    .registers 3
-    .param p1, "name"    # Ljava/lang/String;
-
-    .prologue
-    .line 51
-    monitor-enter p0
-
-    :try_start_1
-    invoke-super {p0, p1}, Lcz/msebera/android/httpclient/params/BasicHttpParams;->removeParameter(Ljava/lang/String;)Z
-    :try_end_4
-    .catchall {:try_start_1 .. :try_end_4} :catchall_7
-
-    move-result v0
-
-    monitor-exit p0
-
-    return v0
-
-    :catchall_7
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized setParameter(Ljava/lang/String;Ljava/lang/Object;)Lcz/msebera/android/httpclient/params/HttpParams;
-    .registers 4
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/Object;
-
-    .prologue
-    .line 56
-    monitor-enter p0
-
-    :try_start_1
-    invoke-super {p0, p1, p2}, Lcz/msebera/android/httpclient/params/BasicHttpParams;->setParameter(Ljava/lang/String;Ljava/lang/Object;)Lcz/msebera/android/httpclient/params/HttpParams;
-    :try_end_4
-    .catchall {:try_start_1 .. :try_end_4} :catchall_7
-
-    move-result-object v0
-
-    monitor-exit p0
-
-    return-object v0
-
-    :catchall_7
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized setParameters([Ljava/lang/String;Ljava/lang/Object;)V
-    .registers 4
-    .param p1, "names"    # [Ljava/lang/String;
-    .param p2, "value"    # Ljava/lang/Object;
-
-    .prologue
-    .line 76
-    monitor-enter p0
-
-    :try_start_1
-    invoke-super {p0, p1, p2}, Lcz/msebera/android/httpclient/params/BasicHttpParams;->setParameters([Ljava/lang/String;Ljava/lang/Object;)V
-    :try_end_4
-    .catchall {:try_start_1 .. :try_end_4} :catchall_6
-
-    .line 77
-    monitor-exit p0
-
-    return-void
-
-    .line 76
-    :catchall_6
     move-exception v0
 
     monitor-exit p0

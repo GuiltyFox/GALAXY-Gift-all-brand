@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/model/stream/StreamStringLoader;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Factory"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -41,10 +32,8 @@
 
 
 # virtual methods
-.method public build(Landroid/content/Context;Lcom/bumptech/glide/load/model/GenericLoaderFactory;)Lcom/bumptech/glide/load/model/ModelLoader;
+.method public a(Landroid/content/Context;Lcom/bumptech/glide/load/model/GenericLoaderFactory;)Lcom/bumptech/glide/load/model/ModelLoader;
     .registers 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "factories"    # Lcom/bumptech/glide/load/model/GenericLoaderFactory;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -67,7 +56,7 @@
 
     const-class v2, Ljava/io/InputStream;
 
-    invoke-virtual {p2, v1, v2}, Lcom/bumptech/glide/load/model/GenericLoaderFactory;->buildModelLoader(Ljava/lang/Class;Ljava/lang/Class;)Lcom/bumptech/glide/load/model/ModelLoader;
+    invoke-virtual {p2, v1, v2}, Lcom/bumptech/glide/load/model/GenericLoaderFactory;->a(Ljava/lang/Class;Ljava/lang/Class;)Lcom/bumptech/glide/load/model/ModelLoader;
 
     move-result-object v1
 
@@ -76,7 +65,7 @@
     return-object v0
 .end method
 
-.method public teardown()V
+.method public a()V
     .registers 1
 
     .prologue

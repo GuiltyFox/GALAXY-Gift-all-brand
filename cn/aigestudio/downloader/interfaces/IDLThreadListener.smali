@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract onThreadProgress(I)V
+.method public abstract a(I)V
 .end method

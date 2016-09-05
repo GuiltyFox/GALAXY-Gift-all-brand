@@ -3,17 +3,6 @@
 .source "ActionMenuItemView.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/view/menu/ActionMenuItemView;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x409
-    name = "PopupCallback"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -27,5 +16,5 @@
 
 
 # virtual methods
-.method public abstract getPopup()Landroid/support/v7/widget/ListPopupWindow;
+.method public abstract a()Landroid/support/v7/widget/ListPopupWindow;
 .end method

@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/engine/EngineRunnable;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x401a
-    name = "Stage"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum",
@@ -24,11 +15,11 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
+.field public static final enum a:Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
 
-.field public static final enum CACHE:Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
+.field public static final enum b:Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
 
-.field public static final enum SOURCE:Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
+.field private static final synthetic c:[Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
 
 
 # direct methods
@@ -47,7 +38,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;->CACHE:Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
+    sput-object v0, Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;->a:Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
 
     .line 134
     new-instance v0, Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
@@ -56,22 +47,22 @@
 
     invoke-direct {v0, v1, v3}, Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;->SOURCE:Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
+    sput-object v0, Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;->b:Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
 
     .line 130
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
 
-    sget-object v1, Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;->CACHE:Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
+    sget-object v1, Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;->a:Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;->SOURCE:Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
+    sget-object v1, Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;->b:Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
 
     aput-object v1, v0, v3
 
-    sput-object v0, Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;->$VALUES:[Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
+    sput-object v0, Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;->c:[Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
 
     return-void
 .end method
@@ -93,7 +84,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 130
@@ -113,7 +103,7 @@
 
     .prologue
     .line 130
-    sget-object v0, Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;->$VALUES:[Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
+    sget-object v0, Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;->c:[Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;
 
     invoke-virtual {v0}, [Lcom/bumptech/glide/load/engine/EngineRunnable$Stage;->clone()Ljava/lang/Object;
 

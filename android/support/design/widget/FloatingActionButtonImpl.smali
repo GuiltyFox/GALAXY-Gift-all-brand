@@ -3,14 +3,6 @@
 .source "FloatingActionButtonImpl.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/design/widget/FloatingActionButtonImpl$InternalVisibilityChangedListener;
-    }
-.end annotation
-
-
 # static fields
 .field static final EMPTY_STATE_SET:[I
 
@@ -92,8 +84,6 @@
 
 .method constructor <init>(Landroid/support/design/widget/VisibilityAwareImageButton;Landroid/support/design/widget/ShadowViewDelegate;)V
     .registers 4
-    .param p1, "view"    # Landroid/support/design/widget/VisibilityAwareImageButton;
-    .param p2, "shadowViewDelegate"    # Landroid/support/design/widget/ShadowViewDelegate;
 
     .prologue
     .line 60
@@ -141,61 +131,57 @@
 # virtual methods
 .method createBorderDrawable(ILandroid/content/res/ColorStateList;)Landroid/support/design/widget/CircularBorderDrawable;
     .registers 9
-    .param p1, "borderWidth"    # I
-    .param p2, "backgroundTint"    # Landroid/content/res/ColorStateList;
 
     .prologue
     .line 138
-    iget-object v2, p0, Landroid/support/design/widget/FloatingActionButtonImpl;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
+    iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonImpl;->mView:Landroid/support/design/widget/VisibilityAwareImageButton;
 
-    invoke-virtual {v2}, Landroid/support/design/widget/VisibilityAwareImageButton;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    .line 139
-    .local v1, "resources":Landroid/content/res/Resources;
-    invoke-virtual {p0}, Landroid/support/design/widget/FloatingActionButtonImpl;->newCircularDrawable()Landroid/support/design/widget/CircularBorderDrawable;
+    invoke-virtual {v0}, Landroid/support/design/widget/VisibilityAwareImageButton;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
+    .line 139
+    invoke-virtual {p0}, Landroid/support/design/widget/FloatingActionButtonImpl;->newCircularDrawable()Landroid/support/design/widget/CircularBorderDrawable;
+
+    move-result-object v1
+
     .line 140
-    .local v0, "borderDrawable":Landroid/support/design/widget/CircularBorderDrawable;
     sget v2, Landroid/support/design/R$color;->design_fab_stroke_top_outer_color:I
 
-    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getColor(I)I
+    invoke-virtual {v0, v2}, Landroid/content/res/Resources;->getColor(I)I
 
     move-result v2
 
     sget v3, Landroid/support/design/R$color;->design_fab_stroke_top_inner_color:I
 
-    invoke-virtual {v1, v3}, Landroid/content/res/Resources;->getColor(I)I
+    invoke-virtual {v0, v3}, Landroid/content/res/Resources;->getColor(I)I
 
     move-result v3
 
     sget v4, Landroid/support/design/R$color;->design_fab_stroke_end_inner_color:I
 
-    invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getColor(I)I
+    invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getColor(I)I
 
     move-result v4
 
     sget v5, Landroid/support/design/R$color;->design_fab_stroke_end_outer_color:I
 
-    invoke-virtual {v1, v5}, Landroid/content/res/Resources;->getColor(I)I
+    invoke-virtual {v0, v5}, Landroid/content/res/Resources;->getColor(I)I
 
-    move-result v5
+    move-result v0
 
-    invoke-virtual {v0, v2, v3, v4, v5}, Landroid/support/design/widget/CircularBorderDrawable;->setGradientColors(IIII)V
+    invoke-virtual {v1, v2, v3, v4, v0}, Landroid/support/design/widget/CircularBorderDrawable;->setGradientColors(IIII)V
 
     .line 145
-    int-to-float v2, p1
+    int-to-float v0, p1
 
-    invoke-virtual {v0, v2}, Landroid/support/design/widget/CircularBorderDrawable;->setBorderWidth(F)V
+    invoke-virtual {v1, v0}, Landroid/support/design/widget/CircularBorderDrawable;->setBorderWidth(F)V
 
     .line 146
-    invoke-virtual {v0, p2}, Landroid/support/design/widget/CircularBorderDrawable;->setBorderTint(Landroid/content/res/ColorStateList;)V
+    invoke-virtual {v1, p2}, Landroid/support/design/widget/CircularBorderDrawable;->setBorderTint(Landroid/content/res/ColorStateList;)V
 
     .line 147
-    return-object v0
+    return-object v1
 .end method
 
 .method createShapeDrawable()Landroid/graphics/drawable/GradientDrawable;
@@ -208,7 +194,6 @@
     invoke-direct {v0}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
 
     .line 171
-    .local v0, "d":Landroid/graphics/drawable/GradientDrawable;
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/graphics/drawable/GradientDrawable;->setShape(I)V
@@ -239,10 +224,6 @@
 .end method
 
 .method abstract hide(Landroid/support/design/widget/FloatingActionButtonImpl$InternalVisibilityChangedListener;Z)V
-    .param p1    # Landroid/support/design/widget/FloatingActionButtonImpl$InternalVisibilityChangedListener;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
 .end method
 
 .method abstract jumpDrawableToCurrentState()V
@@ -331,7 +312,6 @@
 
 .method onPaddingUpdated(Landroid/graphics/Rect;)V
     .registers 2
-    .param p1, "padding"    # Landroid/graphics/Rect;
 
     .prologue
     .line 117
@@ -370,7 +350,6 @@
 
 .method final setElevation(F)V
     .registers 3
-    .param p1, "elevation"    # F
 
     .prologue
     .line 75
@@ -393,7 +372,6 @@
 
 .method final setPressedTranslationZ(F)V
     .registers 3
-    .param p1, "translationZ"    # F
 
     .prologue
     .line 84
@@ -418,21 +396,16 @@
 .end method
 
 .method abstract show(Landroid/support/design/widget/FloatingActionButtonImpl$InternalVisibilityChangedListener;Z)V
-    .param p1    # Landroid/support/design/widget/FloatingActionButtonImpl$InternalVisibilityChangedListener;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
 .end method
 
 .method final updatePadding()V
-    .registers 7
+    .registers 6
 
     .prologue
     .line 109
     iget-object v0, p0, Landroid/support/design/widget/FloatingActionButtonImpl;->mTmpRect:Landroid/graphics/Rect;
 
     .line 110
-    .local v0, "rect":Landroid/graphics/Rect;
     invoke-virtual {p0, v0}, Landroid/support/design/widget/FloatingActionButtonImpl;->getPadding(Landroid/graphics/Rect;)V
 
     .line 111
@@ -447,9 +420,9 @@
 
     iget v4, v0, Landroid/graphics/Rect;->right:I
 
-    iget v5, v0, Landroid/graphics/Rect;->bottom:I
+    iget v0, v0, Landroid/graphics/Rect;->bottom:I
 
-    invoke-interface {v1, v2, v3, v4, v5}, Landroid/support/design/widget/ShadowViewDelegate;->setShadowPadding(IIII)V
+    invoke-interface {v1, v2, v3, v4, v0}, Landroid/support/design/widget/ShadowViewDelegate;->setShadowPadding(IIII)V
 
     .line 113
     return-void

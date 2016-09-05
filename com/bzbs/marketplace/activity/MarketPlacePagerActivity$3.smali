@@ -8,27 +8,21 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->initWidget()V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->h()V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
+.field final synthetic a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     .prologue
     .line 182
-    iput-object p1, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
+    iput-object p1, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,213 +31,202 @@
 
 
 # virtual methods
-.method public createTabView(Landroid/view/ViewGroup;ILandroid/support/v4/view/PagerAdapter;)Landroid/view/View;
-    .registers 13
-    .param p1, "container"    # Landroid/view/ViewGroup;
-    .param p2, "position"    # I
-    .param p3, "adapter"    # Landroid/support/v4/view/PagerAdapter;
+.method public a(Landroid/view/ViewGroup;ILandroid/support/v4/view/PagerAdapter;)Landroid/view/View;
+    .registers 10
 
     .prologue
     .line 185
-    iget-object v6, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
+    iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
-    invoke-virtual {v6}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->getLayoutInflater()Landroid/view/LayoutInflater;
+    invoke-virtual {v0}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->getLayoutInflater()Landroid/view/LayoutInflater;
 
-    move-result-object v6
+    move-result-object v0
 
-    const v7, 0x7f040161
+    const v1, 0x7f040173
 
-    const/4 v8, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {v6, v7, p1, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object v5
-
-    .line 186
-    .local v5, "view":Landroid/view/View;
-    const v6, 0x7f10067b
-
-    invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/widget/ImageView;
-
-    .line 187
-    .local v2, "imageIcon":Landroid/widget/ImageView;
-    const v6, 0x7f100103
-
-    invoke-virtual {v5, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v4
 
-    check-cast v4, Landroid/widget/TextView;
+    .line 186
+    const v0, 0x7f1006bf
 
-    .line 191
-    .local v4, "textTitle":Landroid/widget/TextView;
-    sget v6, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->gScreenWidth:I
+    invoke-virtual {v4, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
-    div-int/lit8 v6, v6, 0x4
+    move-result-object v0
 
-    invoke-virtual {v4, v6}, Landroid/widget/TextView;->setMinWidth(I)V
+    check-cast v0, Landroid/widget/ImageView;
 
-    .line 193
-    iget-object v6, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
+    .line 187
+    const v1, 0x7f10010d
 
-    invoke-virtual {v6}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->getAssets()Landroid/content/res/AssetManager;
-
-    move-result-object v6
-
-    iget-object v7, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
-
-    invoke-virtual {v7}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v7
-
-    invoke-static {v7}, Lcom/bzbs/data/AppSetting;->FONTS_DEFAULT(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-static {v6, v7}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
+    invoke-virtual {v4, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
+    check-cast v1, Landroid/widget/TextView;
+
+    .line 191
+    sget v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->z:I
+
+    div-int/lit8 v2, v2, 0x4
+
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setMinWidth(I)V
+
+    .line 193
+    iget-object v2, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
+
+    invoke-virtual {v2}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->getAssets()Landroid/content/res/AssetManager;
+
+    move-result-object v2
+
+    iget-object v3, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
+
+    invoke-virtual {v3}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/bzbs/data/AppSetting;->b(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v2, v3}, Landroid/graphics/Typeface;->createFromAsset(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/Typeface;
+
+    move-result-object v2
+
     .line 194
-    .local v1, "font":Landroid/graphics/Typeface;
-    invoke-virtual {v4, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 196
     if-nez p2, :cond_4d
 
     .line 198
-    const v6, 0x7f090371
+    const v2, 0x7f0903b4
 
-    invoke-virtual {v4, v6}, Landroid/widget/TextView;->setText(I)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
     .line 199
-    const v6, 0x7f02029d
+    const v1, 0x7f02029a
 
-    invoke-virtual {v2, v6}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 217
     :goto_4c
-    return-object v5
+    return-object v4
 
     .line 202
     :cond_4d
-    iget-object v6, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
+    iget-object v2, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
-    iget-object v6, v6, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->listData:Ljava/util/ArrayList;
+    iget-object v2, v2, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->b:Ljava/util/ArrayList;
 
-    invoke-virtual {v6, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v2, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/bzbs/marketplace/model/marketplace/menu/MarketPlaceMenuModel;
+
+    .line 204
+    iget-object v3, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
+
+    invoke-static {v3}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->d(Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;)Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string/jumbo v5, "1054"
+
+    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_be
+
+    .line 205
+    iget-object v3, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
+
+    iget-object v3, v3, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->b:Ljava/util/ArrayList;
+
+    invoke-virtual {v3, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lcom/bzbs/marketplace/model/marketplace/menu/MarketPlaceMenuModel;
 
-    .line 204
-    .local v3, "objCat":Lcom/bzbs/marketplace/model/marketplace/menu/MarketPlaceMenuModel;
-    iget-object v6, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
+    invoke-virtual {v3}, Lcom/bzbs/marketplace/model/marketplace/menu/MarketPlaceMenuModel;->getName_th()Ljava/lang/String;
 
-    # getter for: Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->mActivity:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
-    invoke-static {v6}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->access$300(Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;)Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+    move-result-object v3
 
-    move-result-object v6
-
-    invoke-static {v6}, Lcom/bzbs/data/UserLogin;->GetLocale(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v6
-
-    const-string/jumbo v7, "1054"
-
-    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_be
-
-    .line 205
-    iget-object v6, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
-
-    iget-object v6, v6, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->listData:Ljava/util/ArrayList;
-
-    invoke-virtual {v6, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lcom/bzbs/marketplace/model/marketplace/menu/MarketPlaceMenuModel;
-
-    invoke-virtual {v6}, Lcom/bzbs/marketplace/model/marketplace/menu/MarketPlaceMenuModel;->getName_th()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v4, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 208
     :goto_7b
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v7, Lcom/bzbs/data/AppSetting;->API_URL_BZBS_BLOB:Ljava/lang/String;
+    sget-object v3, Lcom/bzbs/data/AppSetting;->S:Ljava/lang/String;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v1
 
-    const-string/jumbo v7, "campaigncat/"
+    const-string/jumbo v3, "campaigncat/"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {v3}, Lcom/bzbs/marketplace/model/marketplace/menu/MarketPlaceMenuModel;->getId()Ljava/lang/String;
+    invoke-virtual {v2}, Lcom/bzbs/marketplace/model/marketplace/menu/MarketPlaceMenuModel;->getId()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v2
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v1
 
-    const-string/jumbo v7, "_gift_inactive"
+    const-string/jumbo v2, "_gift_inactive"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 210
-    .local v0, "cat_img_url":Ljava/lang/String;
     :try_start_a0
-    iget-object v6, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
+    iget-object v2, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
-    # getter for: Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->mActivity:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
-    invoke-static {v6}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->access$400(Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;)Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
+    invoke-static {v2}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->e(Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;)Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-static {v6}, Lcom/bumptech/glide/Glide;->with(Landroid/support/v4/app/FragmentActivity;)Lcom/bumptech/glide/RequestManager;
+    invoke-static {v2}, Lcom/bumptech/glide/Glide;->a(Landroid/support/v4/app/FragmentActivity;)Lcom/bumptech/glide/RequestManager;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-virtual {v6, v0}, Lcom/bumptech/glide/RequestManager;->load(Ljava/lang/String;)Lcom/bumptech/glide/DrawableTypeRequest;
+    invoke-virtual {v2, v1}, Lcom/bumptech/glide/RequestManager;->a(Ljava/lang/String;)Lcom/bumptech/glide/DrawableTypeRequest;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {v6}, Lcom/bumptech/glide/DrawableTypeRequest;->fitCenter()Lcom/bumptech/glide/DrawableRequestBuilder;
+    invoke-virtual {v1}, Lcom/bumptech/glide/DrawableTypeRequest;->b()Lcom/bumptech/glide/DrawableRequestBuilder;
 
-    move-result-object v6
+    move-result-object v1
 
-    sget-object v7, Lcom/bumptech/glide/load/engine/DiskCacheStrategy;->ALL:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
+    sget-object v2, Lcom/bumptech/glide/load/engine/DiskCacheStrategy;->a:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
 
-    invoke-virtual {v6, v7}, Lcom/bumptech/glide/DrawableRequestBuilder;->diskCacheStrategy(Lcom/bumptech/glide/load/engine/DiskCacheStrategy;)Lcom/bumptech/glide/DrawableRequestBuilder;
+    invoke-virtual {v1, v2}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Lcom/bumptech/glide/load/engine/DiskCacheStrategy;)Lcom/bumptech/glide/DrawableRequestBuilder;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {v6, v2}, Lcom/bumptech/glide/DrawableRequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
+    invoke-virtual {v1, v0}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
     :try_end_bb
     .catch Ljava/lang/Exception; {:try_start_a0 .. :try_end_bb} :catch_bc
 
@@ -251,28 +234,27 @@
 
     .line 211
     :catch_bc
-    move-exception v6
+    move-exception v0
 
     goto :goto_4c
 
     .line 206
-    .end local v0    # "cat_img_url":Ljava/lang/String;
     :cond_be
-    iget-object v6, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->this$0:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
+    iget-object v3, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity$3;->a:Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;
 
-    iget-object v6, v6, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->listData:Ljava/util/ArrayList;
+    iget-object v3, v3, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->b:Ljava/util/ArrayList;
 
-    invoke-virtual {v6, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v3, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v6
+    move-result-object v3
 
-    check-cast v6, Lcom/bzbs/marketplace/model/marketplace/menu/MarketPlaceMenuModel;
+    check-cast v3, Lcom/bzbs/marketplace/model/marketplace/menu/MarketPlaceMenuModel;
 
-    invoke-virtual {v6}, Lcom/bzbs/marketplace/model/marketplace/menu/MarketPlaceMenuModel;->getName_en()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/bzbs/marketplace/model/marketplace/menu/MarketPlaceMenuModel;->getName_en()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v3
 
-    invoke-virtual {v4, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_7b
 .end method

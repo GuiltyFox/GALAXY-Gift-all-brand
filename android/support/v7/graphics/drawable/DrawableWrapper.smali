@@ -13,7 +13,6 @@
 # direct methods
 .method public constructor <init>(Landroid/graphics/drawable/Drawable;)V
     .registers 2
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 41
@@ -30,7 +29,6 @@
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
     .registers 3
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
     .line 47
@@ -142,7 +140,6 @@
 
 .method public getPadding(Landroid/graphics/Rect;)Z
     .registers 3
-    .param p1, "padding"    # Landroid/graphics/Rect;
 
     .prologue
     .line 146
@@ -195,7 +192,6 @@
 
 .method public invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
     .registers 2
-    .param p1, "who"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 153
@@ -212,7 +208,7 @@
     .line 182
     iget-object v0, p0, Landroid/support/v7/graphics/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {v0}, Landroid/support/v4/graphics/drawable/DrawableCompat;->isAutoMirrored(Landroid/graphics/drawable/Drawable;)Z
+    invoke-static {v0}, Landroid/support/v4/graphics/drawable/DrawableCompat;->b(Landroid/graphics/drawable/Drawable;)Z
 
     move-result v0
 
@@ -240,7 +236,7 @@
     .line 101
     iget-object v0, p0, Landroid/support/v7/graphics/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {v0}, Landroid/support/v4/graphics/drawable/DrawableCompat;->jumpToCurrentState(Landroid/graphics/drawable/Drawable;)V
+    invoke-static {v0}, Landroid/support/v4/graphics/drawable/DrawableCompat;->a(Landroid/graphics/drawable/Drawable;)V
 
     .line 102
     return-void
@@ -248,7 +244,6 @@
 
 .method protected onBoundsChange(Landroid/graphics/Rect;)V
     .registers 3
-    .param p1, "bounds"    # Landroid/graphics/Rect;
 
     .prologue
     .line 52
@@ -262,7 +257,6 @@
 
 .method protected onLevelChange(I)Z
     .registers 3
-    .param p1, "level"    # I
 
     .prologue
     .line 172
@@ -277,9 +271,6 @@
 
 .method public scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
     .registers 6
-    .param p1, "who"    # Landroid/graphics/drawable/Drawable;
-    .param p2, "what"    # Ljava/lang/Runnable;
-    .param p3, "when"    # J
 
     .prologue
     .line 160
@@ -291,7 +282,6 @@
 
 .method public setAlpha(I)V
     .registers 3
-    .param p1, "alpha"    # I
 
     .prologue
     .line 77
@@ -305,13 +295,12 @@
 
 .method public setAutoMirrored(Z)V
     .registers 3
-    .param p1, "mirrored"    # Z
 
     .prologue
     .line 177
     iget-object v0, p0, Landroid/support/v7/graphics/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {v0, p1}, Landroid/support/v4/graphics/drawable/DrawableCompat;->setAutoMirrored(Landroid/graphics/drawable/Drawable;Z)V
+    invoke-static {v0, p1}, Landroid/support/v4/graphics/drawable/DrawableCompat;->a(Landroid/graphics/drawable/Drawable;Z)V
 
     .line 178
     return-void
@@ -319,7 +308,6 @@
 
 .method public setChangingConfigurations(I)V
     .registers 3
-    .param p1, "configs"    # I
 
     .prologue
     .line 57
@@ -333,7 +321,6 @@
 
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .registers 3
-    .param p1, "cf"    # Landroid/graphics/ColorFilter;
 
     .prologue
     .line 82
@@ -347,7 +334,6 @@
 
 .method public setDither(Z)V
     .registers 3
-    .param p1, "dither"    # Z
 
     .prologue
     .line 67
@@ -361,7 +347,6 @@
 
 .method public setFilterBitmap(Z)V
     .registers 3
-    .param p1, "filter"    # Z
 
     .prologue
     .line 72
@@ -375,14 +360,12 @@
 
 .method public setHotspot(FF)V
     .registers 4
-    .param p1, "x"    # F
-    .param p2, "y"    # F
 
     .prologue
     .line 202
     iget-object v0, p0, Landroid/support/v7/graphics/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {v0, p1, p2}, Landroid/support/v4/graphics/drawable/DrawableCompat;->setHotspot(Landroid/graphics/drawable/Drawable;FF)V
+    invoke-static {v0, p1, p2}, Landroid/support/v4/graphics/drawable/DrawableCompat;->a(Landroid/graphics/drawable/Drawable;FF)V
 
     .line 203
     return-void
@@ -390,16 +373,12 @@
 
 .method public setHotspotBounds(IIII)V
     .registers 6
-    .param p1, "left"    # I
-    .param p2, "top"    # I
-    .param p3, "right"    # I
-    .param p4, "bottom"    # I
 
     .prologue
     .line 207
     iget-object v0, p0, Landroid/support/v7/graphics/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {v0, p1, p2, p3, p4}, Landroid/support/v4/graphics/drawable/DrawableCompat;->setHotspotBounds(Landroid/graphics/drawable/Drawable;IIII)V
+    invoke-static {v0, p1, p2, p3, p4}, Landroid/support/v4/graphics/drawable/DrawableCompat;->a(Landroid/graphics/drawable/Drawable;IIII)V
 
     .line 208
     return-void
@@ -407,7 +386,6 @@
 
 .method public setState([I)Z
     .registers 3
-    .param p1, "stateSet"    # [I
 
     .prologue
     .line 92
@@ -422,13 +400,12 @@
 
 .method public setTint(I)V
     .registers 3
-    .param p1, "tint"    # I
 
     .prologue
     .line 187
     iget-object v0, p0, Landroid/support/v7/graphics/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {v0, p1}, Landroid/support/v4/graphics/drawable/DrawableCompat;->setTint(Landroid/graphics/drawable/Drawable;I)V
+    invoke-static {v0, p1}, Landroid/support/v4/graphics/drawable/DrawableCompat;->a(Landroid/graphics/drawable/Drawable;I)V
 
     .line 188
     return-void
@@ -436,13 +413,12 @@
 
 .method public setTintList(Landroid/content/res/ColorStateList;)V
     .registers 3
-    .param p1, "tint"    # Landroid/content/res/ColorStateList;
 
     .prologue
     .line 192
     iget-object v0, p0, Landroid/support/v7/graphics/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {v0, p1}, Landroid/support/v4/graphics/drawable/DrawableCompat;->setTintList(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
+    invoke-static {v0, p1}, Landroid/support/v4/graphics/drawable/DrawableCompat;->a(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
 
     .line 193
     return-void
@@ -450,13 +426,12 @@
 
 .method public setTintMode(Landroid/graphics/PorterDuff$Mode;)V
     .registers 3
-    .param p1, "tintMode"    # Landroid/graphics/PorterDuff$Mode;
 
     .prologue
     .line 197
     iget-object v0, p0, Landroid/support/v7/graphics/drawable/DrawableWrapper;->mDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-static {v0, p1}, Landroid/support/v4/graphics/drawable/DrawableCompat;->setTintMode(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
+    invoke-static {v0, p1}, Landroid/support/v4/graphics/drawable/DrawableCompat;->a(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
 
     .line 198
     return-void
@@ -464,8 +439,6 @@
 
 .method public setVisible(ZZ)Z
     .registers 4
-    .param p1, "visible"    # Z
-    .param p2, "restart"    # Z
 
     .prologue
     .line 111
@@ -497,7 +470,6 @@
 
 .method public setWrappedDrawable(Landroid/graphics/drawable/Drawable;)V
     .registers 4
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 215
@@ -529,8 +501,6 @@
 
 .method public unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
     .registers 3
-    .param p1, "who"    # Landroid/graphics/drawable/Drawable;
-    .param p2, "what"    # Ljava/lang/Runnable;
 
     .prologue
     .line 167

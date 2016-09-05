@@ -3,17 +3,6 @@
 .source "NodeCursor.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/node/NodeCursor;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1c
-    name = "RootValue"
-.end annotation
-
-
 # instance fields
 .field protected _done:Z
 
@@ -23,8 +12,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/JsonNode;Lcom/fasterxml/jackson/databind/node/NodeCursor;)V
     .registers 4
-    .param p1, "n"    # Lcom/fasterxml/jackson/databind/JsonNode;
-    .param p2, "p"    # Lcom/fasterxml/jackson/databind/node/NodeCursor;
 
     .prologue
     const/4 v0, 0x0
@@ -134,7 +121,6 @@
 
 .method public overrideCurrentName(Ljava/lang/String;)V
     .registers 2
-    .param p1, "name"    # Ljava/lang/String;
 
     .prologue
     .line 112

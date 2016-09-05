@@ -6,17 +6,6 @@
 .implements Lcom/bumptech/glide/load/data/HttpUrlFetcher$HttpUrlConnectionFactory;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/data/HttpUrlFetcher;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "DefaultHttpUrlConnectionFactory"
-.end annotation
-
-
 # direct methods
 .method private constructor <init>()V
     .registers 1
@@ -30,7 +19,6 @@
 
 .method synthetic constructor <init>(Lcom/bumptech/glide/load/data/HttpUrlFetcher$1;)V
     .registers 2
-    .param p1, "x0"    # Lcom/bumptech/glide/load/data/HttpUrlFetcher$1;
 
     .prologue
     .line 138
@@ -41,14 +29,8 @@
 
 
 # virtual methods
-.method public build(Ljava/net/URL;)Ljava/net/HttpURLConnection;
+.method public a(Ljava/net/URL;)Ljava/net/HttpURLConnection;
     .registers 3
-    .param p1, "url"    # Ljava/net/URL;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 141

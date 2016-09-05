@@ -3,17 +3,6 @@
 .source "Base64.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/loopj/android/http/Base64;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x408
-    name = "Coder"
-.end annotation
-
-
 # instance fields
 .field public op:I
 

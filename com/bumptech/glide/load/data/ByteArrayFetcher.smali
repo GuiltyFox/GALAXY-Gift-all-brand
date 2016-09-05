@@ -19,26 +19,24 @@
 
 
 # instance fields
-.field private final bytes:[B
+.field private final a:[B
 
-.field private final id:Ljava/lang/String;
+.field private final b:Ljava/lang/String;
 
 
 # direct methods
 .method public constructor <init>([BLjava/lang/String;)V
     .registers 3
-    .param p1, "bytes"    # [B
-    .param p2, "id"    # Ljava/lang/String;
 
     .prologue
     .line 16
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 17
-    iput-object p1, p0, Lcom/bumptech/glide/load/data/ByteArrayFetcher;->bytes:[B
+    iput-object p1, p0, Lcom/bumptech/glide/load/data/ByteArrayFetcher;->a:[B
 
     .line 18
-    iput-object p2, p0, Lcom/bumptech/glide/load/data/ByteArrayFetcher;->id:Ljava/lang/String;
+    iput-object p2, p0, Lcom/bumptech/glide/load/data/ByteArrayFetcher;->b:Ljava/lang/String;
 
     .line 19
     return-void
@@ -46,15 +44,19 @@
 
 
 # virtual methods
-.method public cancel()V
-    .registers 1
+.method public synthetic a(Lcom/bumptech/glide/Priority;)Ljava/lang/Object;
+    .registers 3
 
     .prologue
-    .line 39
-    return-void
+    .line 12
+    invoke-virtual {p0, p1}, Lcom/bumptech/glide/load/data/ByteArrayFetcher;->b(Lcom/bumptech/glide/Priority;)Ljava/io/InputStream;
+
+    move-result-object v0
+
+    return-object v0
 .end method
 
-.method public cleanup()V
+.method public a()V
     .registers 1
 
     .prologue
@@ -62,45 +64,34 @@
     return-void
 .end method
 
-.method public getId()Ljava/lang/String;
-    .registers 2
-
-    .prologue
-    .line 33
-    iget-object v0, p0, Lcom/bumptech/glide/load/data/ByteArrayFetcher;->id:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public loadData(Lcom/bumptech/glide/Priority;)Ljava/io/InputStream;
+.method public b(Lcom/bumptech/glide/Priority;)Ljava/io/InputStream;
     .registers 4
-    .param p1, "priority"    # Lcom/bumptech/glide/Priority;
 
     .prologue
     .line 23
     new-instance v0, Ljava/io/ByteArrayInputStream;
 
-    iget-object v1, p0, Lcom/bumptech/glide/load/data/ByteArrayFetcher;->bytes:[B
+    iget-object v1, p0, Lcom/bumptech/glide/load/data/ByteArrayFetcher;->a:[B
 
     invoke-direct {v0, v1}, Ljava/io/ByteArrayInputStream;-><init>([B)V
 
     return-object v0
 .end method
 
-.method public bridge synthetic loadData(Lcom/bumptech/glide/Priority;)Ljava/lang/Object;
-    .registers 3
-    .param p1, "x0"    # Lcom/bumptech/glide/Priority;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/Exception;
-        }
-    .end annotation
+.method public b()Ljava/lang/String;
+    .registers 2
 
     .prologue
-    .line 12
-    invoke-virtual {p0, p1}, Lcom/bumptech/glide/load/data/ByteArrayFetcher;->loadData(Lcom/bumptech/glide/Priority;)Ljava/io/InputStream;
-
-    move-result-object v0
+    .line 33
+    iget-object v0, p0, Lcom/bumptech/glide/load/data/ByteArrayFetcher;->b:Ljava/lang/String;
 
     return-object v0
+.end method
+
+.method public c()V
+    .registers 1
+
+    .prologue
+    .line 39
+    return-void
 .end method

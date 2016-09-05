@@ -4,12 +4,12 @@
 
 
 # static fields
-.field public static final DEFAULT:Lcom/bumptech/glide/load/model/Headers;
-
-.field public static final NONE:Lcom/bumptech/glide/load/model/Headers;
+.field public static final a:Lcom/bumptech/glide/load/model/Headers;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
+
+.field public static final b:Lcom/bumptech/glide/load/model/Headers;
 
 
 # direct methods
@@ -22,25 +22,25 @@
 
     invoke-direct {v0}, Lcom/bumptech/glide/load/model/Headers$1;-><init>()V
 
-    sput-object v0, Lcom/bumptech/glide/load/model/Headers;->NONE:Lcom/bumptech/glide/load/model/Headers;
+    sput-object v0, Lcom/bumptech/glide/load/model/Headers;->a:Lcom/bumptech/glide/load/model/Headers;
 
     .line 29
     new-instance v0, Lcom/bumptech/glide/load/model/LazyHeaders$Builder;
 
     invoke-direct {v0}, Lcom/bumptech/glide/load/model/LazyHeaders$Builder;-><init>()V
 
-    invoke-virtual {v0}, Lcom/bumptech/glide/load/model/LazyHeaders$Builder;->build()Lcom/bumptech/glide/load/model/LazyHeaders;
+    invoke-virtual {v0}, Lcom/bumptech/glide/load/model/LazyHeaders$Builder;->a()Lcom/bumptech/glide/load/model/LazyHeaders;
 
     move-result-object v0
 
-    sput-object v0, Lcom/bumptech/glide/load/model/Headers;->DEFAULT:Lcom/bumptech/glide/load/model/Headers;
+    sput-object v0, Lcom/bumptech/glide/load/model/Headers;->b:Lcom/bumptech/glide/load/model/Headers;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract getHeaders()Ljava/util/Map;
+.method public abstract a()Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

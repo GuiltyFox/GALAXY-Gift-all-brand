@@ -3,48 +3,37 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/android/gms/analytics/Logger$LogLevel;
-    }
-.end annotation
-
 .annotation runtime Ljava/lang/Deprecated;
 .end annotation
 
 
 # virtual methods
-.method public abstract error(Ljava/lang/Exception;)V
+.method public abstract a()I
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end method
 
-.method public abstract error(Ljava/lang/String;)V
+.method public abstract a(I)V
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end method
 
-.method public abstract getLogLevel()I
+.method public abstract a(Ljava/lang/String;)V
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end method
 
-.method public abstract info(Ljava/lang/String;)V
+.method public abstract b(Ljava/lang/String;)V
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end method
 
-.method public abstract setLogLevel(I)V
+.method public abstract c(Ljava/lang/String;)V
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end method
 
-.method public abstract verbose(Ljava/lang/String;)V
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-.end method
-
-.method public abstract warn(Ljava/lang/String;)V
+.method public abstract d(Ljava/lang/String;)V
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end method

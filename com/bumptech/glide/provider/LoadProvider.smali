@@ -26,7 +26,7 @@
 
 
 # virtual methods
-.method public abstract getModelLoader()Lcom/bumptech/glide/load/model/ModelLoader;
+.method public abstract e()Lcom/bumptech/glide/load/model/ModelLoader;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -36,7 +36,7 @@
     .end annotation
 .end method
 
-.method public abstract getTranscoder()Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;
+.method public abstract f()Lcom/bumptech/glide/load/resource/transcode/ResourceTranscoder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",

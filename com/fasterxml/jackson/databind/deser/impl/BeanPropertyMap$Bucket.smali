@@ -6,17 +6,6 @@
 .implements Ljava/io/Serializable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "Bucket"
-.end annotation
-
-
 # static fields
 .field private static final serialVersionUID:J = 0x1L
 
@@ -34,10 +23,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;Ljava/lang/String;Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;I)V
     .registers 5
-    .param p1, "next"    # Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    .param p2, "key"    # Ljava/lang/String;
-    .param p3, "value"    # Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-    .param p4, "index"    # I
 
     .prologue
     .line 352

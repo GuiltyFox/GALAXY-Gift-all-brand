@@ -8,23 +8,18 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lbolts/Task;->completeAfterTask(Lbolts/Task$TaskCompletionSource;Lbolts/Continuation;Lbolts/Task;Ljava/util/concurrent/Executor;Lbolts/CancellationToken;)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
+    value = Lbolts/Task;->d(Lbolts/Task$TaskCompletionSource;Lbolts/Continuation;Lbolts/Task;Ljava/util/concurrent/Executor;Lbolts/CancellationToken;)V
 .end annotation
 
 
 # instance fields
-.field final synthetic val$continuation:Lbolts/Continuation;
+.field final synthetic a:Lbolts/CancellationToken;
 
-.field final synthetic val$ct:Lbolts/CancellationToken;
+.field final synthetic b:Lbolts/Task$TaskCompletionSource;
 
-.field final synthetic val$task:Lbolts/Task;
+.field final synthetic c:Lbolts/Continuation;
 
-.field final synthetic val$tcs:Lbolts/Task$TaskCompletionSource;
+.field final synthetic d:Lbolts/Task;
 
 
 # direct methods
@@ -33,13 +28,13 @@
 
     .prologue
     .line 787
-    iput-object p1, p0, Lbolts/Task$14;->val$ct:Lbolts/CancellationToken;
+    iput-object p1, p0, Lbolts/Task$14;->a:Lbolts/CancellationToken;
 
-    iput-object p2, p0, Lbolts/Task$14;->val$tcs:Lbolts/Task$TaskCompletionSource;
+    iput-object p2, p0, Lbolts/Task$14;->b:Lbolts/Task$TaskCompletionSource;
 
-    iput-object p3, p0, Lbolts/Task$14;->val$continuation:Lbolts/Continuation;
+    iput-object p3, p0, Lbolts/Task$14;->c:Lbolts/Continuation;
 
-    iput-object p4, p0, Lbolts/Task$14;->val$task:Lbolts/Task;
+    iput-object p4, p0, Lbolts/Task$14;->d:Lbolts/Task;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -49,26 +44,26 @@
 
 # virtual methods
 .method public run()V
-    .registers 5
+    .registers 3
 
     .prologue
     .line 790
-    iget-object v2, p0, Lbolts/Task$14;->val$ct:Lbolts/CancellationToken;
+    iget-object v0, p0, Lbolts/Task$14;->a:Lbolts/CancellationToken;
 
-    if-eqz v2, :cond_12
+    if-eqz v0, :cond_12
 
-    iget-object v2, p0, Lbolts/Task$14;->val$ct:Lbolts/CancellationToken;
+    iget-object v0, p0, Lbolts/Task$14;->a:Lbolts/CancellationToken;
 
-    invoke-virtual {v2}, Lbolts/CancellationToken;->isCancellationRequested()Z
+    invoke-virtual {v0}, Lbolts/CancellationToken;->a()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_12
+    if-eqz v0, :cond_12
 
     .line 791
-    iget-object v2, p0, Lbolts/Task$14;->val$tcs:Lbolts/Task$TaskCompletionSource;
+    iget-object v0, p0, Lbolts/Task$14;->b:Lbolts/Task$TaskCompletionSource;
 
-    invoke-virtual {v2}, Lbolts/Task$TaskCompletionSource;->setCancelled()V
+    invoke-virtual {v0}, Lbolts/Task$TaskCompletionSource;->c()V
 
     .line 824
     :goto_11
@@ -77,26 +72,25 @@
     .line 796
     :cond_12
     :try_start_12
-    iget-object v2, p0, Lbolts/Task$14;->val$continuation:Lbolts/Continuation;
+    iget-object v0, p0, Lbolts/Task$14;->c:Lbolts/Continuation;
 
-    iget-object v3, p0, Lbolts/Task$14;->val$task:Lbolts/Task;
+    iget-object v1, p0, Lbolts/Task$14;->d:Lbolts/Task;
 
-    invoke-interface {v2, v3}, Lbolts/Continuation;->then(Lbolts/Task;)Ljava/lang/Object;
+    invoke-interface {v0, v1}, Lbolts/Continuation;->then(Lbolts/Task;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Lbolts/Task;
+    check-cast v0, Lbolts/Task;
 
     .line 797
-    .local v1, "result":Lbolts/Task;, "Lbolts/Task<TTContinuationResult;>;"
-    if-nez v1, :cond_2c
+    if-nez v0, :cond_2c
 
     .line 798
-    iget-object v2, p0, Lbolts/Task$14;->val$tcs:Lbolts/Task$TaskCompletionSource;
+    iget-object v0, p0, Lbolts/Task$14;->b:Lbolts/Task$TaskCompletionSource;
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {v2, v3}, Lbolts/Task$TaskCompletionSource;->setResult(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Lbolts/Task$TaskCompletionSource;->b(Ljava/lang/Object;)V
     :try_end_24
     .catch Ljava/util/concurrent/CancellationException; {:try_start_12 .. :try_end_24} :catch_25
     .catch Ljava/lang/Exception; {:try_start_12 .. :try_end_24} :catch_35
@@ -104,28 +98,24 @@
     goto :goto_11
 
     .line 819
-    .end local v1    # "result":Lbolts/Task;, "Lbolts/Task<TTContinuationResult;>;"
     :catch_25
     move-exception v0
 
     .line 820
-    .local v0, "e":Ljava/util/concurrent/CancellationException;
-    iget-object v2, p0, Lbolts/Task$14;->val$tcs:Lbolts/Task$TaskCompletionSource;
+    iget-object v0, p0, Lbolts/Task$14;->b:Lbolts/Task$TaskCompletionSource;
 
-    invoke-virtual {v2}, Lbolts/Task$TaskCompletionSource;->setCancelled()V
+    invoke-virtual {v0}, Lbolts/Task$TaskCompletionSource;->c()V
 
     goto :goto_11
 
     .line 800
-    .end local v0    # "e":Ljava/util/concurrent/CancellationException;
-    .restart local v1    # "result":Lbolts/Task;, "Lbolts/Task<TTContinuationResult;>;"
     :cond_2c
     :try_start_2c
-    new-instance v2, Lbolts/Task$14$1;
+    new-instance v1, Lbolts/Task$14$1;
 
-    invoke-direct {v2, p0}, Lbolts/Task$14$1;-><init>(Lbolts/Task$14;)V
+    invoke-direct {v1, p0}, Lbolts/Task$14$1;-><init>(Lbolts/Task$14;)V
 
-    invoke-virtual {v1, v2}, Lbolts/Task;->continueWith(Lbolts/Continuation;)Lbolts/Task;
+    invoke-virtual {v0, v1}, Lbolts/Task;->a(Lbolts/Continuation;)Lbolts/Task;
     :try_end_34
     .catch Ljava/util/concurrent/CancellationException; {:try_start_2c .. :try_end_34} :catch_25
     .catch Ljava/lang/Exception; {:try_start_2c .. :try_end_34} :catch_35
@@ -133,15 +123,13 @@
     goto :goto_11
 
     .line 821
-    .end local v1    # "result":Lbolts/Task;, "Lbolts/Task<TTContinuationResult;>;"
     :catch_35
     move-exception v0
 
     .line 822
-    .local v0, "e":Ljava/lang/Exception;
-    iget-object v2, p0, Lbolts/Task$14;->val$tcs:Lbolts/Task$TaskCompletionSource;
+    iget-object v1, p0, Lbolts/Task$14;->b:Lbolts/Task$TaskCompletionSource;
 
-    invoke-virtual {v2, v0}, Lbolts/Task$TaskCompletionSource;->setError(Ljava/lang/Exception;)V
+    invoke-virtual {v1, v0}, Lbolts/Task$TaskCompletionSource;->b(Ljava/lang/Exception;)V
 
     goto :goto_11
 .end method

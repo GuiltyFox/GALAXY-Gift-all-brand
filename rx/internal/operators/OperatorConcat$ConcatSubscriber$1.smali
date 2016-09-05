@@ -11,14 +11,9 @@
     value = Lrx/internal/operators/OperatorConcat$ConcatSubscriber;-><init>(Lrx/Subscriber;Lrx/subscriptions/SerialSubscription;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Lrx/internal/operators/OperatorConcat$ConcatSubscriber;
+.field final synthetic a:Lrx/internal/operators/OperatorConcat$ConcatSubscriber;
 
 
 # direct methods
@@ -27,8 +22,7 @@
 
     .prologue
     .line 99
-    .local p0, "this":Lrx/internal/operators/OperatorConcat$ConcatSubscriber$1;, "Lrx/internal/operators/OperatorConcat$ConcatSubscriber.1;"
-    iput-object p1, p0, Lrx/internal/operators/OperatorConcat$ConcatSubscriber$1;->this$0:Lrx/internal/operators/OperatorConcat$ConcatSubscriber;
+    iput-object p1, p0, Lrx/internal/operators/OperatorConcat$ConcatSubscriber$1;->a:Lrx/internal/operators/OperatorConcat$ConcatSubscriber;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,15 +31,14 @@
 
 
 # virtual methods
-.method public call()V
+.method public a()V
     .registers 2
 
     .prologue
     .line 102
-    .local p0, "this":Lrx/internal/operators/OperatorConcat$ConcatSubscriber$1;, "Lrx/internal/operators/OperatorConcat$ConcatSubscriber.1;"
-    iget-object v0, p0, Lrx/internal/operators/OperatorConcat$ConcatSubscriber$1;->this$0:Lrx/internal/operators/OperatorConcat$ConcatSubscriber;
+    iget-object v0, p0, Lrx/internal/operators/OperatorConcat$ConcatSubscriber$1;->a:Lrx/internal/operators/OperatorConcat$ConcatSubscriber;
 
-    iget-object v0, v0, Lrx/internal/operators/OperatorConcat$ConcatSubscriber;->queue:Ljava/util/concurrent/ConcurrentLinkedQueue;
+    iget-object v0, v0, Lrx/internal/operators/OperatorConcat$ConcatSubscriber;->b:Ljava/util/concurrent/ConcurrentLinkedQueue;
 
     invoke-virtual {v0}, Ljava/util/concurrent/ConcurrentLinkedQueue;->clear()V
 

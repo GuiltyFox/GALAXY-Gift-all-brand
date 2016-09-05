@@ -8,11 +8,6 @@
     value = Lcom/fasterxml/jackson/databind/deser/BeanDeserializer;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
-    name = null
-.end annotation
-
 
 # static fields
 .field static final synthetic $SwitchMap$com$fasterxml$jackson$core$JsonToken:[I

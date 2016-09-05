@@ -3,36 +3,18 @@
 .source "SubCampaignStyle.java"
 
 
-# annotations
-.annotation runtime Lorg/parceler/Parcel;
-    value = .enum Lorg/parceler/Parcel$Serialization;->BEAN:Lorg/parceler/Parcel$Serialization;
-.end annotation
-
-
 # static fields
-.field static final FIELD_HAS_STYLE:Ljava/lang/String; = "hasStyle"
+.field public static final FIELD_HAS_STYLE:Ljava/lang/String; = "hasStyle"
 
-.field static final FIELD_MASTER_CAMPAIGN_ID:Ljava/lang/String; = "masterCampaignId"
+.field public static final FIELD_MASTER_CAMPAIGN_ID:Ljava/lang/String; = "masterCampaignId"
 
-.field static final FIELD_STYLES:Ljava/lang/String; = "styles"
+.field public static final FIELD_STYLES:Ljava/lang/String; = "styles"
 
 
 # instance fields
-.field mHasStyle:Z
+.field a:Ljava/util/List;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "hasStyle"
-    .end annotation
-.end field
-
-.field mMasterCampaignId:Ljava/lang/String;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "masterCampaignId"
-    .end annotation
-.end field
-
-.field mStyles:Ljava/util/List;
-    .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "styles"
+        a = "styles"
     .end annotation
 
     .annotation system Ldalvik/annotation/Signature;
@@ -42,6 +24,18 @@
             "Lcom/bzbs/marketplace/model/marketplace/detail/Style;",
             ">;"
         }
+    .end annotation
+.end field
+
+.field b:Ljava/lang/String;
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        a = "masterCampaignId"
+    .end annotation
+.end field
+
+.field c:Z
+    .annotation runtime Lcom/google/gson/annotations/SerializedName;
+        a = "hasStyle"
     .end annotation
 .end field
 
@@ -65,7 +59,7 @@
 
     .prologue
     .line 42
-    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;->mMasterCampaignId:Ljava/lang/String;
+    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;->b:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -84,7 +78,7 @@
 
     .prologue
     .line 34
-    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;->mStyles:Ljava/util/List;
+    iget-object v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;->a:Ljava/util/List;
 
     return-object v0
 .end method
@@ -94,18 +88,17 @@
 
     .prologue
     .line 50
-    iget-boolean v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;->mHasStyle:Z
+    iget-boolean v0, p0, Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;->c:Z
 
     return v0
 .end method
 
 .method public setHasStyle(Z)V
     .registers 2
-    .param p1, "hasStyle"    # Z
 
     .prologue
     .line 46
-    iput-boolean p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;->mHasStyle:Z
+    iput-boolean p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;->c:Z
 
     .line 47
     return-void
@@ -113,11 +106,10 @@
 
 .method public setMasterCampaignId(Ljava/lang/String;)V
     .registers 2
-    .param p1, "masterCampaignId"    # Ljava/lang/String;
 
     .prologue
     .line 38
-    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;->mMasterCampaignId:Ljava/lang/String;
+    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;->b:Ljava/lang/String;
 
     .line 39
     return-void
@@ -137,8 +129,7 @@
 
     .prologue
     .line 30
-    .local p1, "styles":Ljava/util/List;, "Ljava/util/List<Lcom/bzbs/marketplace/model/marketplace/detail/Style;>;"
-    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;->mStyles:Ljava/util/List;
+    iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;->a:Ljava/util/List;
 
     .line 31
     return-void
@@ -159,7 +150,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;->mStyles:Ljava/util/List;
+    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;->a:Ljava/util/List;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -171,7 +162,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;->mMasterCampaignId:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;->b:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -183,7 +174,7 @@
 
     move-result-object v0
 
-    iget-boolean v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;->mHasStyle:Z
+    iget-boolean v1, p0, Lcom/bzbs/marketplace/model/marketplace/detail/SubCampaignStyle;->c:Z
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 

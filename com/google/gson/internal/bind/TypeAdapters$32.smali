@@ -8,14 +8,9 @@
     value = Lcom/google/gson/internal/bind/TypeAdapters;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1008
-    name = null
-.end annotation
-
 
 # static fields
-.field static final synthetic $SwitchMap$com$google$gson$stream$JsonToken:[I
+.field static final synthetic a:[I
 
 
 # direct methods
@@ -32,10 +27,10 @@
 
     new-array v0, v0, [I
 
-    sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->$SwitchMap$com$google$gson$stream$JsonToken:[I
+    sput-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->a:[I
 
     :try_start_9
-    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->$SwitchMap$com$google$gson$stream$JsonToken:[I
+    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->a:[I
 
     sget-object v1, Lcom/google/gson/stream/JsonToken;->NUMBER:Lcom/google/gson/stream/JsonToken;
 
@@ -51,7 +46,7 @@
 
     :goto_14
     :try_start_14
-    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->$SwitchMap$com$google$gson$stream$JsonToken:[I
+    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->a:[I
 
     sget-object v1, Lcom/google/gson/stream/JsonToken;->BOOLEAN:Lcom/google/gson/stream/JsonToken;
 
@@ -67,7 +62,7 @@
 
     :goto_1f
     :try_start_1f
-    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->$SwitchMap$com$google$gson$stream$JsonToken:[I
+    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->a:[I
 
     sget-object v1, Lcom/google/gson/stream/JsonToken;->STRING:Lcom/google/gson/stream/JsonToken;
 
@@ -83,7 +78,7 @@
 
     :goto_2a
     :try_start_2a
-    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->$SwitchMap$com$google$gson$stream$JsonToken:[I
+    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->a:[I
 
     sget-object v1, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
 
@@ -99,7 +94,7 @@
 
     :goto_35
     :try_start_35
-    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->$SwitchMap$com$google$gson$stream$JsonToken:[I
+    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->a:[I
 
     sget-object v1, Lcom/google/gson/stream/JsonToken;->BEGIN_ARRAY:Lcom/google/gson/stream/JsonToken;
 
@@ -115,7 +110,7 @@
 
     :goto_40
     :try_start_40
-    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->$SwitchMap$com$google$gson$stream$JsonToken:[I
+    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->a:[I
 
     sget-object v1, Lcom/google/gson/stream/JsonToken;->BEGIN_OBJECT:Lcom/google/gson/stream/JsonToken;
 
@@ -131,7 +126,7 @@
 
     :goto_4b
     :try_start_4b
-    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->$SwitchMap$com$google$gson$stream$JsonToken:[I
+    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->a:[I
 
     sget-object v1, Lcom/google/gson/stream/JsonToken;->END_DOCUMENT:Lcom/google/gson/stream/JsonToken;
 
@@ -147,7 +142,7 @@
 
     :goto_56
     :try_start_56
-    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->$SwitchMap$com$google$gson$stream$JsonToken:[I
+    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->a:[I
 
     sget-object v1, Lcom/google/gson/stream/JsonToken;->NAME:Lcom/google/gson/stream/JsonToken;
 
@@ -163,7 +158,7 @@
 
     :goto_62
     :try_start_62
-    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->$SwitchMap$com$google$gson$stream$JsonToken:[I
+    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->a:[I
 
     sget-object v1, Lcom/google/gson/stream/JsonToken;->END_OBJECT:Lcom/google/gson/stream/JsonToken;
 
@@ -179,7 +174,7 @@
 
     :goto_6e
     :try_start_6e
-    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->$SwitchMap$com$google$gson$stream$JsonToken:[I
+    sget-object v0, Lcom/google/gson/internal/bind/TypeAdapters$32;->a:[I
 
     sget-object v1, Lcom/google/gson/stream/JsonToken;->END_ARRAY:Lcom/google/gson/stream/JsonToken;
 

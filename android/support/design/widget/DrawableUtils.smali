@@ -28,8 +28,6 @@
 
 .method static setContainerConstantState(Landroid/graphics/drawable/DrawableContainer;Landroid/graphics/drawable/Drawable$ConstantState;)Z
     .registers 4
-    .param p0, "drawable"    # Landroid/graphics/drawable/DrawableContainer;
-    .param p1, "constantState"    # Landroid/graphics/drawable/Drawable$ConstantState;
 
     .prologue
     .line 44
@@ -57,202 +55,190 @@
 .end method
 
 .method private static setContainerConstantStateV7(Landroid/graphics/drawable/DrawableContainer;Landroid/graphics/drawable/Drawable$ConstantState;)Z
-    .registers 6
-    .param p0, "drawable"    # Landroid/graphics/drawable/DrawableContainer;
-    .param p1, "constantState"    # Landroid/graphics/drawable/Drawable$ConstantState;
+    .registers 5
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     .line 78
-    sget-boolean v2, Landroid/support/design/widget/DrawableUtils;->sDrawableContainerStateFieldFetched:Z
+    sget-boolean v1, Landroid/support/design/widget/DrawableUtils;->sDrawableContainerStateFieldFetched:Z
 
-    if-nez v2, :cond_18
+    if-nez v1, :cond_18
 
     .line 80
     :try_start_5
-    const-class v2, Landroid/graphics/drawable/DrawableContainer;
+    const-class v1, Landroid/graphics/drawable/DrawableContainer;
 
-    const-string/jumbo v3, "mDrawableContainerStateField"
+    const-string/jumbo v2, "mDrawableContainerStateField"
 
-    invoke-virtual {v2, v3}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
-    move-result-object v2
+    move-result-object v1
 
-    sput-object v2, Landroid/support/design/widget/DrawableUtils;->sDrawableContainerStateField:Ljava/lang/reflect/Field;
+    sput-object v1, Landroid/support/design/widget/DrawableUtils;->sDrawableContainerStateField:Ljava/lang/reflect/Field;
 
     .line 82
-    sget-object v2, Landroid/support/design/widget/DrawableUtils;->sDrawableContainerStateField:Ljava/lang/reflect/Field;
+    sget-object v1, Landroid/support/design/widget/DrawableUtils;->sDrawableContainerStateField:Ljava/lang/reflect/Field;
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    invoke-virtual {v2, v3}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    invoke-virtual {v1, v2}, Ljava/lang/reflect/Field;->setAccessible(Z)V
     :try_end_16
     .catch Ljava/lang/NoSuchFieldException; {:try_start_5 .. :try_end_16} :catch_22
 
     .line 86
     :goto_16
-    sput-boolean v1, Landroid/support/design/widget/DrawableUtils;->sDrawableContainerStateFieldFetched:Z
+    sput-boolean v0, Landroid/support/design/widget/DrawableUtils;->sDrawableContainerStateFieldFetched:Z
 
     .line 88
     :cond_18
-    sget-object v2, Landroid/support/design/widget/DrawableUtils;->sDrawableContainerStateField:Ljava/lang/reflect/Field;
+    sget-object v1, Landroid/support/design/widget/DrawableUtils;->sDrawableContainerStateField:Ljava/lang/reflect/Field;
 
-    if-eqz v2, :cond_37
+    if-eqz v1, :cond_37
 
     .line 90
     :try_start_1c
-    sget-object v2, Landroid/support/design/widget/DrawableUtils;->sDrawableContainerStateField:Ljava/lang/reflect/Field;
+    sget-object v1, Landroid/support/design/widget/DrawableUtils;->sDrawableContainerStateField:Ljava/lang/reflect/Field;
 
-    invoke-virtual {v2, p0, p1}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-virtual {v1, p0, p1}, Ljava/lang/reflect/Field;->set(Ljava/lang/Object;Ljava/lang/Object;)V
     :try_end_21
     .catch Ljava/lang/Exception; {:try_start_1c .. :try_end_21} :catch_2d
 
     .line 96
     :goto_21
-    return v1
+    return v0
 
     .line 83
     :catch_22
-    move-exception v0
+    move-exception v1
 
     .line 84
-    .local v0, "e":Ljava/lang/NoSuchFieldException;
-    const-string/jumbo v2, "DrawableUtils"
+    const-string/jumbo v1, "DrawableUtils"
 
-    const-string/jumbo v3, "Could not fetch mDrawableContainerStateField. Oh well."
+    const-string/jumbo v2, "Could not fetch mDrawableContainerStateField. Oh well."
 
-    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_16
 
     .line 92
-    .end local v0    # "e":Ljava/lang/NoSuchFieldException;
     :catch_2d
     move-exception v0
 
     .line 93
-    .local v0, "e":Ljava/lang/Exception;
-    const-string/jumbo v1, "DrawableUtils"
+    const-string/jumbo v0, "DrawableUtils"
 
-    const-string/jumbo v2, "Could not set mDrawableContainerStateField. Oh well."
+    const-string/jumbo v1, "Could not set mDrawableContainerStateField. Oh well."
 
-    invoke-static {v1, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 96
-    .end local v0    # "e":Ljava/lang/Exception;
     :cond_37
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_21
 .end method
 
 .method private static setContainerConstantStateV9(Landroid/graphics/drawable/DrawableContainer;Landroid/graphics/drawable/Drawable$ConstantState;)Z
-    .registers 10
-    .param p0, "drawable"    # Landroid/graphics/drawable/DrawableContainer;
-    .param p1, "constantState"    # Landroid/graphics/drawable/Drawable$ConstantState;
+    .registers 9
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     .line 55
-    sget-boolean v3, Landroid/support/design/widget/DrawableUtils;->sSetConstantStateMethodFetched:Z
+    sget-boolean v2, Landroid/support/design/widget/DrawableUtils;->sSetConstantStateMethodFetched:Z
 
-    if-nez v3, :cond_21
+    if-nez v2, :cond_21
 
     .line 57
     :try_start_6
-    const-class v3, Landroid/graphics/drawable/DrawableContainer;
+    const-class v2, Landroid/graphics/drawable/DrawableContainer;
 
-    const-string/jumbo v4, "setConstantState"
-
-    const/4 v5, 0x1
-
-    new-array v5, v5, [Ljava/lang/Class;
-
-    const/4 v6, 0x0
-
-    const-class v7, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;
-
-    aput-object v7, v5, v6
-
-    invoke-virtual {v3, v4, v5}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    move-result-object v3
-
-    sput-object v3, Landroid/support/design/widget/DrawableUtils;->sSetConstantStateMethod:Ljava/lang/reflect/Method;
-
-    .line 59
-    sget-object v3, Landroid/support/design/widget/DrawableUtils;->sSetConstantStateMethod:Ljava/lang/reflect/Method;
+    const-string/jumbo v3, "setConstantState"
 
     const/4 v4, 0x1
 
-    invoke-virtual {v3, v4}, Ljava/lang/reflect/Method;->setAccessible(Z)V
+    new-array v4, v4, [Ljava/lang/Class;
+
+    const/4 v5, 0x0
+
+    const-class v6, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;
+
+    aput-object v6, v4, v5
+
+    invoke-virtual {v2, v3, v4}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    move-result-object v2
+
+    sput-object v2, Landroid/support/design/widget/DrawableUtils;->sSetConstantStateMethod:Ljava/lang/reflect/Method;
+
+    .line 59
+    sget-object v2, Landroid/support/design/widget/DrawableUtils;->sSetConstantStateMethod:Ljava/lang/reflect/Method;
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v2, v3}, Ljava/lang/reflect/Method;->setAccessible(Z)V
     :try_end_1f
     .catch Ljava/lang/NoSuchMethodException; {:try_start_6 .. :try_end_1f} :catch_31
 
     .line 63
     :goto_1f
-    sput-boolean v1, Landroid/support/design/widget/DrawableUtils;->sSetConstantStateMethodFetched:Z
+    sput-boolean v0, Landroid/support/design/widget/DrawableUtils;->sSetConstantStateMethodFetched:Z
 
     .line 65
     :cond_21
-    sget-object v3, Landroid/support/design/widget/DrawableUtils;->sSetConstantStateMethod:Ljava/lang/reflect/Method;
+    sget-object v2, Landroid/support/design/widget/DrawableUtils;->sSetConstantStateMethod:Ljava/lang/reflect/Method;
 
-    if-eqz v3, :cond_46
+    if-eqz v2, :cond_46
 
     .line 67
     :try_start_25
-    sget-object v3, Landroid/support/design/widget/DrawableUtils;->sSetConstantStateMethod:Ljava/lang/reflect/Method;
+    sget-object v2, Landroid/support/design/widget/DrawableUtils;->sSetConstantStateMethod:Ljava/lang/reflect/Method;
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    new-array v4, v4, [Ljava/lang/Object;
+    new-array v3, v3, [Ljava/lang/Object;
 
-    const/4 v5, 0x0
+    const/4 v4, 0x0
 
-    aput-object p1, v4, v5
+    aput-object p1, v3, v4
 
-    invoke-virtual {v3, p0, v4}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, p0, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_30
     .catch Ljava/lang/Exception; {:try_start_25 .. :try_end_30} :catch_3c
 
     .line 73
     :goto_30
-    return v1
+    return v0
 
     .line 60
     :catch_31
-    move-exception v0
+    move-exception v2
 
     .line 61
-    .local v0, "e":Ljava/lang/NoSuchMethodException;
-    const-string/jumbo v3, "DrawableUtils"
+    const-string/jumbo v2, "DrawableUtils"
 
-    const-string/jumbo v4, "Could not fetch setConstantState(). Oh well."
+    const-string/jumbo v3, "Could not fetch setConstantState(). Oh well."
 
-    invoke-static {v3, v4}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_1f
 
     .line 69
-    .end local v0    # "e":Ljava/lang/NoSuchMethodException;
     :catch_3c
     move-exception v0
 
     .line 70
-    .local v0, "e":Ljava/lang/Exception;
-    const-string/jumbo v1, "DrawableUtils"
+    const-string/jumbo v0, "DrawableUtils"
 
-    const-string/jumbo v3, "Could not invoke setConstantState(). Oh well."
+    const-string/jumbo v2, "Could not invoke setConstantState(). Oh well."
 
-    invoke-static {v1, v3}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v2}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    .end local v0    # "e":Ljava/lang/Exception;
     :cond_46
-    move v1, v2
+    move v0, v1
 
     .line 73
     goto :goto_30

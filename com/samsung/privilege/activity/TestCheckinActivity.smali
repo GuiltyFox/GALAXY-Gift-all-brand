@@ -4,11 +4,11 @@
 
 
 # static fields
-.field private static TAG:Ljava/lang/String;
+.field private static b:Ljava/lang/String;
 
 
 # instance fields
-.field mHandler:Landroid/os/Handler;
+.field a:Landroid/os/Handler;
 
 
 # direct methods
@@ -23,7 +23,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/samsung/privilege/activity/TestCheckinActivity;->TAG:Ljava/lang/String;
+    sput-object v0, Lcom/samsung/privilege/activity/TestCheckinActivity;->b:Ljava/lang/String;
 
     return-void
 .end method
@@ -38,25 +38,22 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/samsung/privilege/activity/TestCheckinActivity;Ljava/lang/String;)V
+.method static synthetic a(Lcom/samsung/privilege/activity/TestCheckinActivity;Ljava/lang/String;)V
     .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/TestCheckinActivity;
-    .param p1, "x1"    # Ljava/lang/String;
 
     .prologue
     .line 19
-    invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/TestCheckinActivity;->showToast(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/TestCheckinActivity;->a(Ljava/lang/String;)V
 
     return-void
 .end method
 
-.method private showToast(Ljava/lang/String;)V
+.method private a(Ljava/lang/String;)V
     .registers 4
-    .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
     .line 38
-    iget-object v0, p0, Lcom/samsung/privilege/activity/TestCheckinActivity;->mHandler:Landroid/os/Handler;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/TestCheckinActivity;->a:Landroid/os/Handler;
 
     new-instance v1, Lcom/samsung/privilege/activity/TestCheckinActivity$1;
 
@@ -72,11 +69,10 @@
 # virtual methods
 .method public doCheckinAPI(Landroid/view/View;)V
     .registers 8
-    .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 63
-    sget-object v0, Lcom/samsung/privilege/activity/TestCheckinActivity;->TAG:Ljava/lang/String;
+    sget-object v0, Lcom/samsung/privilege/activity/TestCheckinActivity;->b:Ljava/lang/String;
 
     invoke-static {}, Lcom/facebook/AccessToken;->getCurrentAccessToken()Lcom/facebook/AccessToken;
 
@@ -90,7 +86,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 65
     new-instance v3, Landroid/os/Bundle;
@@ -98,7 +94,6 @@
     invoke-direct {v3}, Landroid/os/Bundle;-><init>()V
 
     .line 66
-    .local v3, "params":Landroid/os/Bundle;
     const-string/jumbo v0, "message"
 
     const-string/jumbo v1, "Nanyang Polytechnic def"
@@ -145,8 +140,7 @@
 .end method
 
 .method public doCheckinDialog(Landroid/view/View;)V
-    .registers 6
-    .param p1, "v"    # Landroid/view/View;
+    .registers 5
 
     .prologue
     .line 48
@@ -155,81 +149,77 @@
     invoke-direct {v1, p0}, Lcom/facebook/share/widget/ShareDialog;-><init>(Landroid/app/Activity;)V
 
     .line 50
-    .local v1, "shareDialog":Lcom/facebook/share/widget/ShareDialog;
-    const-class v2, Lcom/facebook/share/model/ShareLinkContent;
+    const-class v0, Lcom/facebook/share/model/ShareLinkContent;
 
-    invoke-static {v2}, Lcom/facebook/share/widget/ShareDialog;->canShow(Ljava/lang/Class;)Z
+    invoke-static {v0}, Lcom/facebook/share/widget/ShareDialog;->canShow(Ljava/lang/Class;)Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_3d
+    if-eqz v0, :cond_3d
 
     .line 51
-    new-instance v2, Lcom/facebook/share/model/ShareLinkContent$Builder;
+    new-instance v0, Lcom/facebook/share/model/ShareLinkContent$Builder;
 
-    invoke-direct {v2}, Lcom/facebook/share/model/ShareLinkContent$Builder;-><init>()V
+    invoke-direct {v0}, Lcom/facebook/share/model/ShareLinkContent$Builder;-><init>()V
 
-    const-string/jumbo v3, "Nanyang Polytechnic 123"
+    const-string/jumbo v2, "Nanyang Polytechnic 123"
 
     .line 52
-    invoke-virtual {v2, v3}, Lcom/facebook/share/model/ShareLinkContent$Builder;->setContentTitle(Ljava/lang/String;)Lcom/facebook/share/model/ShareLinkContent$Builder;
+    invoke-virtual {v0, v2}, Lcom/facebook/share/model/ShareLinkContent$Builder;->setContentTitle(Ljava/lang/String;)Lcom/facebook/share/model/ShareLinkContent$Builder;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string/jumbo v3, "104999729569954"
+    const-string/jumbo v2, "104999729569954"
 
     .line 53
-    invoke-virtual {v2, v3}, Lcom/facebook/share/model/ShareLinkContent$Builder;->setPlaceId(Ljava/lang/String;)Lcom/facebook/share/model/ShareContent$Builder;
+    invoke-virtual {v0, v2}, Lcom/facebook/share/model/ShareLinkContent$Builder;->setPlaceId(Ljava/lang/String;)Lcom/facebook/share/model/ShareContent$Builder;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Lcom/facebook/share/model/ShareLinkContent$Builder;
+    check-cast v0, Lcom/facebook/share/model/ShareLinkContent$Builder;
 
-    const-string/jumbo v3, "Nanyang Polytechnic Nanyang Polytechnic Nanyang Polytechnic Nanyang Polytechnic Nanyang Polytechnic"
+    const-string/jumbo v2, "Nanyang Polytechnic Nanyang Polytechnic Nanyang Polytechnic Nanyang Polytechnic Nanyang Polytechnic"
 
     .line 54
-    invoke-virtual {v2, v3}, Lcom/facebook/share/model/ShareLinkContent$Builder;->setContentDescription(Ljava/lang/String;)Lcom/facebook/share/model/ShareLinkContent$Builder;
+    invoke-virtual {v0, v2}, Lcom/facebook/share/model/ShareLinkContent$Builder;->setContentDescription(Ljava/lang/String;)Lcom/facebook/share/model/ShareLinkContent$Builder;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string/jumbo v3, "http://developers.facebook.com/android"
+    const-string/jumbo v2, "http://developers.facebook.com/android"
 
     .line 55
-    invoke-static {v3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v3
-
-    invoke-virtual {v2, v3}, Lcom/facebook/share/model/ShareLinkContent$Builder;->setContentUrl(Landroid/net/Uri;)Lcom/facebook/share/model/ShareContent$Builder;
+    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v2
 
-    check-cast v2, Lcom/facebook/share/model/ShareLinkContent$Builder;
+    invoke-virtual {v0, v2}, Lcom/facebook/share/model/ShareLinkContent$Builder;->setContentUrl(Landroid/net/Uri;)Lcom/facebook/share/model/ShareContent$Builder;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/facebook/share/model/ShareLinkContent$Builder;
 
     .line 56
-    invoke-virtual {v2}, Lcom/facebook/share/model/ShareLinkContent$Builder;->build()Lcom/facebook/share/model/ShareLinkContent;
+    invoke-virtual {v0}, Lcom/facebook/share/model/ShareLinkContent$Builder;->build()Lcom/facebook/share/model/ShareLinkContent;
 
     move-result-object v0
 
     .line 58
-    .local v0, "linkContent":Lcom/facebook/share/model/ShareLinkContent;
     invoke-virtual {v1, v0}, Lcom/facebook/share/widget/ShareDialog;->show(Ljava/lang/Object;)V
 
     .line 60
-    .end local v0    # "linkContent":Lcom/facebook/share/model/ShareLinkContent;
     :cond_3d
     return-void
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
     .registers 3
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
     .line 27
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 28
-    const v0, 0x7f04004f
+    const v0, 0x7f040053
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/TestCheckinActivity;->setContentView(I)V
 
@@ -238,7 +228,7 @@
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/TestCheckinActivity;->mHandler:Landroid/os/Handler;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/TestCheckinActivity;->a:Landroid/os/Handler;
 
     .line 35
     return-void

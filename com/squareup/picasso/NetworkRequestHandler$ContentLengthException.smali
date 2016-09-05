@@ -3,21 +3,9 @@
 .source "NetworkRequestHandler.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/squareup/picasso/NetworkRequestHandler;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "ContentLengthException"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 2
-    .param p1, "message"    # Ljava/lang/String;
 
     .prologue
     .line 89

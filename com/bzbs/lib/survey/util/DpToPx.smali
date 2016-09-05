@@ -4,42 +4,29 @@
 
 
 # direct methods
-.method public constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 8
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static GetPixelFromDips(Landroid/app/Activity;F)I
-    .registers 5
-    .param p0, "activity"    # Landroid/app/Activity;
-    .param p1, "pixels"    # F
+.method public static a(Landroid/app/Activity;F)I
+    .registers 4
 
     .prologue
     .line 11
     invoke-virtual {p0}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
 
-    move-result-object v1
+    move-result-object v0
 
-    iget v0, v1, Landroid/util/DisplayMetrics;->density:F
+    iget v0, v0, Landroid/util/DisplayMetrics;->density:F
 
     .line 13
-    .local v0, "scale":F
-    mul-float v1, p1, v0
+    mul-float/2addr v0, p1
 
-    const/high16 v2, 0x3f000000
+    const/high16 v1, 0x3f000000    # 0.5f
 
-    add-float/2addr v1, v2
+    add-float/2addr v0, v1
 
-    float-to-int v1, v1
+    float-to-int v0, v0
 
-    return v1
+    return v0
 .end method

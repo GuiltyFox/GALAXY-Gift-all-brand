@@ -4,28 +4,23 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/gms/common/internal/zze;->zza(Ljava/lang/CharSequence;)Lcom/google/android/gms/common/internal/zze;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
+    value = Lcom/google/android/gms/common/internal/zze;->a(Ljava/lang/CharSequence;)Lcom/google/android/gms/common/internal/zze;
 .end annotation
 
 
 # instance fields
-.field final synthetic zzajk:C
+.field final synthetic p:C
 
-.field final synthetic zzajl:C
+.field final synthetic q:C
 
 
 # direct methods
 .method constructor <init>(CC)V
     .registers 3
 
-    iput-char p1, p0, Lcom/google/android/gms/common/internal/zze$2;->zzajk:C
+    iput-char p1, p0, Lcom/google/android/gms/common/internal/zze$2;->p:C
 
-    iput-char p2, p0, Lcom/google/android/gms/common/internal/zze$2;->zzajl:C
+    iput-char p2, p0, Lcom/google/android/gms/common/internal/zze$2;->q:C
 
     invoke-direct {p0}, Lcom/google/android/gms/common/internal/zze;-><init>()V
 
@@ -34,14 +29,14 @@
 
 
 # virtual methods
-.method public zzd(C)Z
+.method public b(C)Z
     .registers 3
 
-    iget-char v0, p0, Lcom/google/android/gms/common/internal/zze$2;->zzajk:C
+    iget-char v0, p0, Lcom/google/android/gms/common/internal/zze$2;->p:C
 
     if-eq p1, v0, :cond_8
 
-    iget-char v0, p0, Lcom/google/android/gms/common/internal/zze$2;->zzajl:C
+    iget-char v0, p0, Lcom/google/android/gms/common/internal/zze$2;->q:C
 
     if-ne p1, v0, :cond_a
 

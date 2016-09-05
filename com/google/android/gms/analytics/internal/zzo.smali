@@ -14,11 +14,11 @@
 
 
 # static fields
-.field public static final enum zzQa:Lcom/google/android/gms/analytics/internal/zzo;
+.field public static final enum a:Lcom/google/android/gms/analytics/internal/zzo;
 
-.field public static final enum zzQb:Lcom/google/android/gms/analytics/internal/zzo;
+.field public static final enum b:Lcom/google/android/gms/analytics/internal/zzo;
 
-.field private static final synthetic zzQc:[Lcom/google/android/gms/analytics/internal/zzo;
+.field private static final synthetic c:[Lcom/google/android/gms/analytics/internal/zzo;
 
 
 # direct methods
@@ -35,7 +35,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/google/android/gms/analytics/internal/zzo;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/android/gms/analytics/internal/zzo;->zzQa:Lcom/google/android/gms/analytics/internal/zzo;
+    sput-object v0, Lcom/google/android/gms/analytics/internal/zzo;->a:Lcom/google/android/gms/analytics/internal/zzo;
 
     new-instance v0, Lcom/google/android/gms/analytics/internal/zzo;
 
@@ -43,21 +43,21 @@
 
     invoke-direct {v0, v1, v3}, Lcom/google/android/gms/analytics/internal/zzo;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/google/android/gms/analytics/internal/zzo;->zzQb:Lcom/google/android/gms/analytics/internal/zzo;
+    sput-object v0, Lcom/google/android/gms/analytics/internal/zzo;->b:Lcom/google/android/gms/analytics/internal/zzo;
 
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/google/android/gms/analytics/internal/zzo;
 
-    sget-object v1, Lcom/google/android/gms/analytics/internal/zzo;->zzQa:Lcom/google/android/gms/analytics/internal/zzo;
+    sget-object v1, Lcom/google/android/gms/analytics/internal/zzo;->a:Lcom/google/android/gms/analytics/internal/zzo;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/google/android/gms/analytics/internal/zzo;->zzQb:Lcom/google/android/gms/analytics/internal/zzo;
+    sget-object v1, Lcom/google/android/gms/analytics/internal/zzo;->b:Lcom/google/android/gms/analytics/internal/zzo;
 
     aput-object v1, v0, v3
 
-    sput-object v0, Lcom/google/android/gms/analytics/internal/zzo;->zzQc:[Lcom/google/android/gms/analytics/internal/zzo;
+    sput-object v0, Lcom/google/android/gms/analytics/internal/zzo;->c:[Lcom/google/android/gms/analytics/internal/zzo;
 
     return-void
 .end method
@@ -75,11 +75,31 @@
     return-void
 .end method
 
+.method public static a(Ljava/lang/String;)Lcom/google/android/gms/analytics/internal/zzo;
+    .registers 2
+
+    const-string/jumbo v0, "GZIP"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_c
+
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzo;->b:Lcom/google/android/gms/analytics/internal/zzo;
+
+    :goto_b
+    return-object v0
+
+    :cond_c
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzo;->a:Lcom/google/android/gms/analytics/internal/zzo;
+
+    goto :goto_b
+.end method
+
 .method public static valueOf(Ljava/lang/String;)Lcom/google/android/gms/analytics/internal/zzo;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
-    .prologue
     const-class v0, Lcom/google/android/gms/analytics/internal/zzo;
 
     invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
@@ -94,7 +114,7 @@
 .method public static values()[Lcom/google/android/gms/analytics/internal/zzo;
     .registers 1
 
-    sget-object v0, Lcom/google/android/gms/analytics/internal/zzo;->zzQc:[Lcom/google/android/gms/analytics/internal/zzo;
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzo;->c:[Lcom/google/android/gms/analytics/internal/zzo;
 
     invoke-virtual {v0}, [Lcom/google/android/gms/analytics/internal/zzo;->clone()Ljava/lang/Object;
 
@@ -103,26 +123,4 @@
     check-cast v0, [Lcom/google/android/gms/analytics/internal/zzo;
 
     return-object v0
-.end method
-
-.method public static zzbk(Ljava/lang/String;)Lcom/google/android/gms/analytics/internal/zzo;
-    .registers 2
-
-    const-string/jumbo v0, "GZIP"
-
-    invoke-virtual {v0, p0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_c
-
-    sget-object v0, Lcom/google/android/gms/analytics/internal/zzo;->zzQb:Lcom/google/android/gms/analytics/internal/zzo;
-
-    :goto_b
-    return-object v0
-
-    :cond_c
-    sget-object v0, Lcom/google/android/gms/analytics/internal/zzo;->zzQa:Lcom/google/android/gms/analytics/internal/zzo;
-
-    goto :goto_b
 .end method

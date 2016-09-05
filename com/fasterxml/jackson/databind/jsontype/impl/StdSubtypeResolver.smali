@@ -37,10 +37,7 @@
 
 # virtual methods
 .method protected _collectAndResolve(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;Lcom/fasterxml/jackson/databind/jsontype/NamedType;Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Ljava/util/HashMap;)V
-    .registers 21
-    .param p1, "annotatedType"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-    .param p2, "namedType"    # Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    .param p4, "ai"    # Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
+    .registers 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -59,205 +56,154 @@
 
     .prologue
     .line 128
-    .local p3, "config":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
-    .local p5, "collectedSubtypes":Ljava/util/HashMap;, "Ljava/util/HashMap<Lcom/fasterxml/jackson/databind/jsontype/NamedType;Lcom/fasterxml/jackson/databind/jsontype/NamedType;>;"
-    invoke-virtual/range {p2 .. p2}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->hasName()Z
+    invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->hasName()Z
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_1b
+    if-nez v0, :cond_16
 
     .line 129
-    move-object/from16 v0, p4
+    invoke-virtual {p4, p1}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findTypeName(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Ljava/lang/String;
 
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findTypeName(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Ljava/lang/String;
-
-    move-result-object v10
+    move-result-object v1
 
     .line 130
-    .local v10, "name":Ljava/lang/String;
-    if-eqz v10, :cond_1b
+    if-eqz v1, :cond_16
 
     .line 131
-    new-instance v11, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
+    new-instance v0, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
 
-    invoke-virtual/range {p2 .. p2}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->getType()Ljava/lang/Class;
+    invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->getType()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-direct {v11, v3, v10}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-direct {v0, v2, v1}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
-    .end local p2    # "namedType":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    .local v11, "namedType":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    move-object/from16 p2, v11
+    move-object p2, v0
 
     .line 136
-    .end local v10    # "name":Ljava/lang/String;
-    .end local v11    # "namedType":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    .restart local p2    # "namedType":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    :cond_1b
-    move-object/from16 v0, p5
+    :cond_16
+    invoke-virtual {p5, p2}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
-    move-object/from16 v1, p2
+    move-result v0
 
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
-
-    move-result v3
-
-    if-eqz v3, :cond_45
+    if-eqz v0, :cond_32
 
     .line 138
-    invoke-virtual/range {p2 .. p2}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->hasName()Z
+    invoke-virtual {p2}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->hasName()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_44
+    if-eqz v0, :cond_31
 
     .line 139
-    move-object/from16 v0, p5
+    invoke-virtual {p5, p2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-object/from16 v1, p2
+    move-result-object v0
 
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v12
-
-    check-cast v12, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
+    check-cast v0, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
 
     .line 140
-    .local v12, "prev":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    invoke-virtual {v12}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->hasName()Z
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->hasName()Z
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_44
+    if-nez v0, :cond_31
 
     .line 141
-    move-object/from16 v0, p5
-
-    move-object/from16 v1, p2
-
-    move-object/from16 v2, p2
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p5, p2, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 159
-    .end local v12    # "prev":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    :cond_44
+    :cond_31
     return-void
 
     .line 147
-    :cond_45
-    move-object/from16 v0, p5
-
-    move-object/from16 v1, p2
-
-    move-object/from16 v2, p2
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :cond_32
+    invoke-virtual {p5, p2, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 148
-    move-object/from16 v0, p4
+    invoke-virtual {p4, p1}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findSubtypes(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/util/List;
 
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findSubtypes(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/util/List;
-
-    move-result-object v13
+    move-result-object v0
 
     .line 149
-    .local v13, "st":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/fasterxml/jackson/databind/jsontype/NamedType;>;"
-    if-eqz v13, :cond_44
+    if-eqz v0, :cond_31
 
-    invoke-interface {v13}, Ljava/util/Collection;->isEmpty()Z
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
 
-    move-result v3
+    move-result v1
 
-    if-nez v3, :cond_44
+    if-nez v1, :cond_31
 
     .line 150
-    invoke-interface {v13}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    move-result-object v9
-
-    .local v9, "i$":Ljava/util/Iterator;
-    :goto_62
-    invoke-interface {v9}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v3
-
-    if-eqz v3, :cond_44
-
-    invoke-interface {v9}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v5
-
-    check-cast v5, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-
-    .line 151
-    .local v5, "subtype":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    invoke-virtual {v5}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->getType()Ljava/lang/Class;
-
-    move-result-object v3
-
-    move-object/from16 v0, p4
-
-    move-object/from16 v1, p3
-
-    invoke-static {v3, v0, v1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->constructWithoutSuperTypes(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-
-    move-result-object v4
-
-    .line 153
-    .local v4, "subtypeClass":Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-    invoke-virtual {v5}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->hasName()Z
-
-    move-result v3
-
-    if-nez v3, :cond_90
-
-    .line 154
-    new-instance v14, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-
-    invoke-virtual {v5}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->getType()Ljava/lang/Class;
-
-    move-result-object v3
-
-    move-object/from16 v0, p4
-
-    invoke-virtual {v0, v4}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findTypeName(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Ljava/lang/String;
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
 
-    invoke-direct {v14, v3, v6}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+    :goto_45
+    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
-    .end local v5    # "subtype":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    .local v14, "subtype":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    move-object v5, v14
+    move-result v0
 
-    .end local v14    # "subtype":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    .restart local v5    # "subtype":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    :cond_90
-    move-object v3, p0
+    if-eqz v0, :cond_31
 
-    move-object/from16 v6, p3
+    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-object/from16 v7, p4
+    move-result-object v0
 
-    move-object/from16 v8, p5
+    check-cast v0, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
+
+    .line 151
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->getType()Ljava/lang/Class;
+
+    move-result-object v1
+
+    invoke-static {v1, p4, p3}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->constructWithoutSuperTypes(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
+
+    move-result-object v1
+
+    .line 153
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->hasName()Z
+
+    move-result v2
+
+    if-nez v2, :cond_74
+
+    .line 154
+    new-instance v2, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
+
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->getType()Ljava/lang/Class;
+
+    move-result-object v0
+
+    invoke-virtual {p4, v1}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findTypeName(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v2, v0, v3}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+
+    :goto_6c
+    move-object v0, p0
+
+    move-object v3, p3
+
+    move-object v4, p4
+
+    move-object v5, p5
 
     .line 156
-    invoke-virtual/range {v3 .. v8}, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_collectAndResolve(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;Lcom/fasterxml/jackson/databind/jsontype/NamedType;Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Ljava/util/HashMap;)V
+    invoke-virtual/range {v0 .. v5}, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_collectAndResolve(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;Lcom/fasterxml/jackson/databind/jsontype/NamedType;Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Ljava/util/HashMap;)V
 
-    goto :goto_62
+    goto :goto_45
+
+    :cond_74
+    move-object v2, v0
+
+    goto :goto_6c
 .end method
 
 .method public collectAndResolveSubtypes(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Ljava/util/Collection;
-    .registers 20
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-    .param p3, "ai"    # Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
+    .registers 12
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -275,133 +221,109 @@
 
     .prologue
     .line 97
-    .local p2, "config":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
-    new-instance v7, Ljava/util/HashMap;
+    new-instance v5, Ljava/util/HashMap;
 
-    invoke-direct {v7}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v5}, Ljava/util/HashMap;-><init>()V
 
     .line 99
-    .local v7, "subtypes":Ljava/util/HashMap;, "Ljava/util/HashMap<Lcom/fasterxml/jackson/databind/jsontype/NamedType;Lcom/fasterxml/jackson/databind/jsontype/NamedType;>;"
-    move-object/from16 v0, p0
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_registeredSubtypes:Ljava/util/LinkedHashSet;
 
-    iget-object v2, v0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_registeredSubtypes:Ljava/util/LinkedHashSet;
-
-    if-eqz v2, :cond_43
+    if-eqz v0, :cond_38
 
     .line 100
-    invoke-virtual/range {p1 .. p1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->getRawType()Ljava/lang/Class;
+    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->getRawType()Ljava/lang/Class;
 
-    move-result-object v15
+    move-result-object v6
 
     .line 101
-    .local v15, "rawBase":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    move-object/from16 v0, p0
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_registeredSubtypes:Ljava/util/LinkedHashSet;
 
-    iget-object v2, v0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_registeredSubtypes:Ljava/util/LinkedHashSet;
+    invoke-virtual {v0}, Ljava/util/LinkedHashSet;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v2}, Ljava/util/LinkedHashSet;->iterator()Ljava/util/Iterator;
+    move-result-object v7
 
-    move-result-object v14
+    :cond_13
+    :goto_13
+    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
-    .local v14, "i$":Ljava/util/Iterator;
-    :cond_17
-    :goto_17
-    invoke-interface {v14}, Ljava/util/Iterator;->hasNext()Z
+    move-result v0
 
-    move-result v2
+    if-eqz v0, :cond_38
 
-    if-eqz v2, :cond_43
+    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-interface {v14}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v4
-
-    check-cast v4, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
+    check-cast v2, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
 
     .line 103
-    .local v4, "subtype":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    invoke-virtual {v4}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->getType()Ljava/lang/Class;
+    invoke-virtual {v2}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->getType()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v15, v2}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    invoke-virtual {v6, v0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_17
+    if-eqz v0, :cond_13
 
     .line 104
-    invoke-virtual {v4}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->getType()Ljava/lang/Class;
+    invoke-virtual {v2}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->getType()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v0
 
-    move-object/from16 v0, p3
+    invoke-static {v0, p3, p2}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->constructWithoutSuperTypes(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
-    move-object/from16 v1, p2
+    move-result-object v1
 
-    invoke-static {v2, v0, v1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->constructWithoutSuperTypes(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
+    move-object v0, p0
 
-    move-result-object v3
+    move-object v3, p2
 
-    .local v3, "curr":Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-    move-object/from16 v2, p0
-
-    move-object/from16 v5, p2
-
-    move-object/from16 v6, p3
+    move-object v4, p3
 
     .line 105
-    invoke-virtual/range {v2 .. v7}, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_collectAndResolve(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;Lcom/fasterxml/jackson/databind/jsontype/NamedType;Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Ljava/util/HashMap;)V
+    invoke-virtual/range {v0 .. v5}, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_collectAndResolve(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;Lcom/fasterxml/jackson/databind/jsontype/NamedType;Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Ljava/util/HashMap;)V
 
-    goto :goto_17
+    goto :goto_13
 
     .line 110
-    .end local v3    # "curr":Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-    .end local v4    # "subtype":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    .end local v14    # "i$":Ljava/util/Iterator;
-    .end local v15    # "rawBase":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    :cond_43
-    new-instance v10, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
+    :cond_38
+    new-instance v2, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
 
-    invoke-virtual/range {p1 .. p1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->getRawType()Ljava/lang/Class;
+    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->getRawType()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v0
 
-    const/4 v5, 0x0
+    const/4 v1, 0x0
 
-    invoke-direct {v10, v2, v5}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-direct {v2, v0, v1}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
-    .local v10, "rootType":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    move-object/from16 v8, p0
+    move-object v0, p0
 
-    move-object/from16 v9, p1
+    move-object v1, p1
 
-    move-object/from16 v11, p2
+    move-object v3, p2
 
-    move-object/from16 v12, p3
-
-    move-object v13, v7
+    move-object v4, p3
 
     .line 111
-    invoke-virtual/range {v8 .. v13}, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_collectAndResolve(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;Lcom/fasterxml/jackson/databind/jsontype/NamedType;Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Ljava/util/HashMap;)V
+    invoke-virtual/range {v0 .. v5}, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_collectAndResolve(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;Lcom/fasterxml/jackson/databind/jsontype/NamedType;Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Ljava/util/HashMap;)V
 
     .line 112
-    new-instance v2, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-virtual {v7}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+    invoke-virtual {v5}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-direct {v2, v5}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    return-object v2
+    return-object v0
 .end method
 
 .method public collectAndResolveSubtypes(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/JavaType;)Ljava/util/Collection;
-    .registers 26
-    .param p1, "property"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
-    .param p3, "ai"    # Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
-    .param p4, "baseType"    # Lcom/fasterxml/jackson/databind/JavaType;
+    .registers 13
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -420,265 +342,207 @@
 
     .prologue
     .line 62
-    .local p2, "config":Lcom/fasterxml/jackson/databind/cfg/MapperConfig;, "Lcom/fasterxml/jackson/databind/cfg/MapperConfig<*>;"
-    if-nez p4, :cond_47
+    if-nez p4, :cond_3b
 
-    invoke-virtual/range {p1 .. p1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;->getRawType()Ljava/lang/Class;
+    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;->getRawType()Ljava/lang/Class;
 
-    move-result-object v19
+    move-result-object v0
+
+    move-object v6, v0
 
     .line 64
-    .local v19, "rawBase":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    :goto_6
-    new-instance v8, Ljava/util/HashMap;
+    :goto_7
+    new-instance v5, Ljava/util/HashMap;
 
-    invoke-direct {v8}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v5}, Ljava/util/HashMap;-><init>()V
 
     .line 66
-    .local v8, "collected":Ljava/util/HashMap;, "Ljava/util/HashMap<Lcom/fasterxml/jackson/databind/jsontype/NamedType;Lcom/fasterxml/jackson/databind/jsontype/NamedType;>;"
-    move-object/from16 v0, p0
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_registeredSubtypes:Ljava/util/LinkedHashSet;
 
-    iget-object v3, v0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_registeredSubtypes:Ljava/util/LinkedHashSet;
-
-    if-eqz v3, :cond_4c
+    if-eqz v0, :cond_41
 
     .line 67
-    move-object/from16 v0, p0
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_registeredSubtypes:Ljava/util/LinkedHashSet;
 
-    iget-object v3, v0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_registeredSubtypes:Ljava/util/LinkedHashSet;
+    invoke-virtual {v0}, Ljava/util/LinkedHashSet;->iterator()Ljava/util/Iterator;
 
-    invoke-virtual {v3}, Ljava/util/LinkedHashSet;->iterator()Ljava/util/Iterator;
+    move-result-object v7
 
-    move-result-object v18
+    :cond_16
+    :goto_16
+    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
-    .local v18, "i$":Ljava/util/Iterator;
-    :cond_19
-    :goto_19
-    invoke-interface/range {v18 .. v18}, Ljava/util/Iterator;->hasNext()Z
+    move-result v0
 
-    move-result v3
+    if-eqz v0, :cond_41
 
-    if-eqz v3, :cond_4c
+    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    invoke-interface/range {v18 .. v18}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object v2
 
-    move-result-object v5
-
-    check-cast v5, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
+    check-cast v2, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
 
     .line 69
-    .local v5, "subtype":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    invoke-virtual {v5}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->getType()Ljava/lang/Class;
+    invoke-virtual {v2}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->getType()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v0
 
-    move-object/from16 v0, v19
+    invoke-virtual {v6, v0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    invoke-virtual {v0, v3}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    move-result v0
 
-    move-result v3
-
-    if-eqz v3, :cond_19
+    if-eqz v0, :cond_16
 
     .line 70
-    invoke-virtual {v5}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->getType()Ljava/lang/Class;
+    invoke-virtual {v2}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->getType()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v0
 
-    move-object/from16 v0, p3
+    invoke-static {v0, p3, p2}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->constructWithoutSuperTypes(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
-    move-object/from16 v1, p2
+    move-result-object v1
 
-    invoke-static {v3, v0, v1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->constructWithoutSuperTypes(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
+    move-object v0, p0
 
-    move-result-object v4
+    move-object v3, p2
 
-    .local v4, "curr":Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-    move-object/from16 v3, p0
-
-    move-object/from16 v6, p2
-
-    move-object/from16 v7, p3
+    move-object v4, p3
 
     .line 71
-    invoke-virtual/range {v3 .. v8}, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_collectAndResolve(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;Lcom/fasterxml/jackson/databind/jsontype/NamedType;Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Ljava/util/HashMap;)V
+    invoke-virtual/range {v0 .. v5}, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_collectAndResolve(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;Lcom/fasterxml/jackson/databind/jsontype/NamedType;Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Ljava/util/HashMap;)V
 
-    goto :goto_19
+    goto :goto_16
 
     .line 62
-    .end local v4    # "curr":Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-    .end local v5    # "subtype":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    .end local v8    # "collected":Ljava/util/HashMap;, "Ljava/util/HashMap<Lcom/fasterxml/jackson/databind/jsontype/NamedType;Lcom/fasterxml/jackson/databind/jsontype/NamedType;>;"
-    .end local v18    # "i$":Ljava/util/Iterator;
-    .end local v19    # "rawBase":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    :cond_47
-    invoke-virtual/range {p4 .. p4}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
+    :cond_3b
+    invoke-virtual {p4}, Lcom/fasterxml/jackson/databind/JavaType;->getRawClass()Ljava/lang/Class;
 
-    move-result-object v19
+    move-result-object v0
 
-    goto :goto_6
+    move-object v6, v0
+
+    goto :goto_7
 
     .line 77
-    .restart local v8    # "collected":Ljava/util/HashMap;, "Ljava/util/HashMap<Lcom/fasterxml/jackson/databind/jsontype/NamedType;Lcom/fasterxml/jackson/databind/jsontype/NamedType;>;"
-    .restart local v19    # "rawBase":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    :cond_4c
-    move-object/from16 v0, p3
+    :cond_41
+    invoke-virtual {p3, p1}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findSubtypes(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/util/List;
 
-    move-object/from16 v1, p1
-
-    invoke-virtual {v0, v1}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findSubtypes(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Ljava/util/List;
-
-    move-result-object v20
+    move-result-object v0
 
     .line 78
-    .local v20, "st":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/fasterxml/jackson/databind/jsontype/NamedType;>;"
-    if-eqz v20, :cond_7d
+    if-eqz v0, :cond_66
 
     .line 79
-    invoke-interface/range {v20 .. v20}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
-    move-result-object v18
+    move-result-object v7
 
-    .restart local v18    # "i$":Ljava/util/Iterator;
-    :goto_5a
-    invoke-interface/range {v18 .. v18}, Ljava/util/Iterator;->hasNext()Z
+    :goto_4b
+    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_7d
+    if-eqz v0, :cond_66
 
-    invoke-interface/range {v18 .. v18}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v11
+    move-result-object v2
 
-    check-cast v11, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
+    check-cast v2, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
 
     .line 80
-    .local v11, "nt":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    invoke-virtual {v11}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->getType()Ljava/lang/Class;
+    invoke-virtual {v2}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;->getType()Ljava/lang/Class;
 
-    move-result-object v3
+    move-result-object v0
 
-    move-object/from16 v0, p3
+    invoke-static {v0, p3, p2}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->constructWithoutSuperTypes(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
-    move-object/from16 v1, p2
+    move-result-object v1
 
-    invoke-static {v3, v0, v1}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->constructWithoutSuperTypes(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
+    move-object v0, p0
 
-    move-result-object v10
+    move-object v3, p2
 
-    .local v10, "ac":Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-    move-object/from16 v9, p0
-
-    move-object/from16 v12, p2
-
-    move-object/from16 v13, p3
-
-    move-object v14, v8
+    move-object v4, p3
 
     .line 81
-    invoke-virtual/range {v9 .. v14}, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_collectAndResolve(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;Lcom/fasterxml/jackson/databind/jsontype/NamedType;Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Ljava/util/HashMap;)V
+    invoke-virtual/range {v0 .. v5}, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_collectAndResolve(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;Lcom/fasterxml/jackson/databind/jsontype/NamedType;Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Ljava/util/HashMap;)V
 
-    goto :goto_5a
+    goto :goto_4b
 
     .line 85
-    .end local v10    # "ac":Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-    .end local v11    # "nt":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    .end local v18    # "i$":Ljava/util/Iterator;
-    :cond_7d
-    new-instance v14, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
+    :cond_66
+    new-instance v2, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
 
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
-    move-object/from16 v0, v19
-
-    invoke-direct {v14, v0, v3}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
+    invoke-direct {v2, v6, v0}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     .line 86
-    .local v14, "rootType":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    move-object/from16 v0, v19
+    invoke-static {v6, p3, p2}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->constructWithoutSuperTypes(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
 
-    move-object/from16 v1, p3
+    move-result-object v1
 
-    move-object/from16 v2, p2
+    move-object v0, p0
 
-    invoke-static {v0, v1, v2}, Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;->constructWithoutSuperTypes(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector$MixInResolver;)Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
+    move-object v3, p2
 
-    move-result-object v10
-
-    .restart local v10    # "ac":Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;
-    move-object/from16 v12, p0
-
-    move-object v13, v10
-
-    move-object/from16 v15, p2
-
-    move-object/from16 v16, p3
-
-    move-object/from16 v17, v8
+    move-object v4, p3
 
     .line 89
-    invoke-virtual/range {v12 .. v17}, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_collectAndResolve(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;Lcom/fasterxml/jackson/databind/jsontype/NamedType;Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Ljava/util/HashMap;)V
+    invoke-virtual/range {v0 .. v5}, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_collectAndResolve(Lcom/fasterxml/jackson/databind/introspect/AnnotatedClass;Lcom/fasterxml/jackson/databind/jsontype/NamedType;Lcom/fasterxml/jackson/databind/cfg/MapperConfig;Lcom/fasterxml/jackson/databind/AnnotationIntrospector;Ljava/util/HashMap;)V
 
     .line 90
-    new-instance v3, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-virtual {v8}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+    invoke-virtual {v5}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-direct {v3, v6}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    return-object v3
+    return-object v0
 .end method
 
 .method public varargs registerSubtypes([Lcom/fasterxml/jackson/databind/jsontype/NamedType;)V
-    .registers 7
-    .param p1, "types"    # [Lcom/fasterxml/jackson/databind/jsontype/NamedType;
+    .registers 6
 
     .prologue
     .line 33
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_registeredSubtypes:Ljava/util/LinkedHashSet;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_registeredSubtypes:Ljava/util/LinkedHashSet;
 
-    if-nez v4, :cond_b
+    if-nez v0, :cond_b
 
     .line 34
-    new-instance v4, Ljava/util/LinkedHashSet;
+    new-instance v0, Ljava/util/LinkedHashSet;
 
-    invoke-direct {v4}, Ljava/util/LinkedHashSet;-><init>()V
+    invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
 
-    iput-object v4, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_registeredSubtypes:Ljava/util/LinkedHashSet;
+    iput-object v0, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_registeredSubtypes:Ljava/util/LinkedHashSet;
 
     .line 36
     :cond_b
-    move-object v0, p1
+    array-length v1, p1
 
-    .local v0, "arr$":[Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    array-length v2, v0
+    const/4 v0, 0x0
 
-    .local v2, "len$":I
-    const/4 v1, 0x0
+    :goto_d
+    if-ge v0, v1, :cond_19
 
-    .local v1, "i$":I
-    :goto_e
-    if-ge v1, v2, :cond_1a
-
-    aget-object v3, v0, v1
+    aget-object v2, p1, v0
 
     .line 37
-    .local v3, "type":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    iget-object v4, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_registeredSubtypes:Ljava/util/LinkedHashSet;
+    iget-object v3, p0, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->_registeredSubtypes:Ljava/util/LinkedHashSet;
 
-    invoke-virtual {v4, v3}, Ljava/util/LinkedHashSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v2}, Ljava/util/LinkedHashSet;->add(Ljava/lang/Object;)Z
 
     .line 36
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    goto :goto_e
+    goto :goto_d
 
     .line 39
-    .end local v3    # "type":Lcom/fasterxml/jackson/databind/jsontype/NamedType;
-    :cond_1a
+    :cond_19
     return-void
 .end method
 
@@ -694,21 +558,17 @@
 
     .prologue
     .line 43
-    .local p1, "classes":[Ljava/lang/Class;, "[Ljava/lang/Class<*>;"
-    array-length v3, p1
+    array-length v0, p1
 
-    new-array v2, v3, [Lcom/fasterxml/jackson/databind/jsontype/NamedType;
+    new-array v1, v0, [Lcom/fasterxml/jackson/databind/jsontype/NamedType;
 
     .line 44
-    .local v2, "types":[Lcom/fasterxml/jackson/databind/jsontype/NamedType;
     const/4 v0, 0x0
 
-    .local v0, "i":I
-    array-length v1, p1
+    array-length v2, p1
 
-    .local v1, "len":I
     :goto_5
-    if-ge v0, v1, :cond_13
+    if-ge v0, v2, :cond_13
 
     .line 45
     new-instance v3, Lcom/fasterxml/jackson/databind/jsontype/NamedType;
@@ -717,7 +577,7 @@
 
     invoke-direct {v3, v4}, Lcom/fasterxml/jackson/databind/jsontype/NamedType;-><init>(Ljava/lang/Class;)V
 
-    aput-object v3, v2, v0
+    aput-object v3, v1, v0
 
     .line 44
     add-int/lit8 v0, v0, 0x1
@@ -726,7 +586,7 @@
 
     .line 47
     :cond_13
-    invoke-virtual {p0, v2}, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->registerSubtypes([Lcom/fasterxml/jackson/databind/jsontype/NamedType;)V
+    invoke-virtual {p0, v1}, Lcom/fasterxml/jackson/databind/jsontype/impl/StdSubtypeResolver;->registerSubtypes([Lcom/fasterxml/jackson/databind/jsontype/NamedType;)V
 
     .line 48
     return-void

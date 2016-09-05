@@ -18,11 +18,11 @@
 
 
 # static fields
-.field public static final FACTORY:Lcom/google/gson/TypeAdapterFactory;
+.field public static final a:Lcom/google/gson/TypeAdapterFactory;
 
 
 # instance fields
-.field private final componentType:Ljava/lang/Class;
+.field private final b:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/Class",
@@ -31,7 +31,7 @@
     .end annotation
 .end field
 
-.field private final componentTypeAdapter:Lcom/google/gson/TypeAdapter;
+.field private final c:Lcom/google/gson/TypeAdapter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/google/gson/TypeAdapter",
@@ -51,14 +51,13 @@
 
     invoke-direct {v0}, Lcom/google/gson/internal/bind/ArrayTypeAdapter$1;-><init>()V
 
-    sput-object v0, Lcom/google/gson/internal/bind/ArrayTypeAdapter;->FACTORY:Lcom/google/gson/TypeAdapterFactory;
+    sput-object v0, Lcom/google/gson/internal/bind/ArrayTypeAdapter;->a:Lcom/google/gson/TypeAdapterFactory;
 
     return-void
 .end method
 
 .method public constructor <init>(Lcom/google/gson/Gson;Lcom/google/gson/TypeAdapter;Ljava/lang/Class;)V
     .registers 5
-    .param p1, "context"    # Lcom/google/gson/Gson;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -72,9 +71,6 @@
 
     .prologue
     .line 57
-    .local p0, "this":Lcom/google/gson/internal/bind/ArrayTypeAdapter;, "Lcom/google/gson/internal/bind/ArrayTypeAdapter<TE;>;"
-    .local p2, "componentTypeAdapter":Lcom/google/gson/TypeAdapter;, "Lcom/google/gson/TypeAdapter<TE;>;"
-    .local p3, "componentType":Ljava/lang/Class;, "Ljava/lang/Class<TE;>;"
     invoke-direct {p0}, Lcom/google/gson/TypeAdapter;-><init>()V
 
     .line 58
@@ -82,10 +78,10 @@
 
     invoke-direct {v0, p1, p2, p3}, Lcom/google/gson/internal/bind/TypeAdapterRuntimeTypeWrapper;-><init>(Lcom/google/gson/Gson;Lcom/google/gson/TypeAdapter;Ljava/lang/reflect/Type;)V
 
-    iput-object v0, p0, Lcom/google/gson/internal/bind/ArrayTypeAdapter;->componentTypeAdapter:Lcom/google/gson/TypeAdapter;
+    iput-object v0, p0, Lcom/google/gson/internal/bind/ArrayTypeAdapter;->c:Lcom/google/gson/TypeAdapter;
 
     .line 60
-    iput-object p3, p0, Lcom/google/gson/internal/bind/ArrayTypeAdapter;->componentType:Ljava/lang/Class;
+    iput-object p3, p0, Lcom/google/gson/internal/bind/ArrayTypeAdapter;->b:Ljava/lang/Class;
 
     .line 61
     return-void
@@ -93,121 +89,11 @@
 
 
 # virtual methods
-.method public read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
-    .registers 8
-    .param p1, "in"    # Lcom/google/gson/stream/JsonReader;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-
-    .prologue
-    .line 64
-    .local p0, "this":Lcom/google/gson/internal/bind/ArrayTypeAdapter;, "Lcom/google/gson/internal/bind/ArrayTypeAdapter<TE;>;"
-    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
-
-    move-result-object v4
-
-    sget-object v5, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
-
-    if-ne v4, v5, :cond_d
-
-    .line 65
-    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextNull()V
-
-    .line 66
-    const/4 v0, 0x0
-
-    .line 80
-    :cond_c
-    return-object v0
-
-    .line 69
-    :cond_d
-    new-instance v3, Ljava/util/ArrayList;
-
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
-
-    .line 70
-    .local v3, "list":Ljava/util/List;, "Ljava/util/List<TE;>;"
-    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->beginArray()V
-
-    .line 71
-    :goto_15
-    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_25
-
-    .line 72
-    iget-object v4, p0, Lcom/google/gson/internal/bind/ArrayTypeAdapter;->componentTypeAdapter:Lcom/google/gson/TypeAdapter;
-
-    invoke-virtual {v4, p1}, Lcom/google/gson/TypeAdapter;->read(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
-
-    move-result-object v2
-
-    .line 73
-    .local v2, "instance":Ljava/lang/Object;, "TE;"
-    invoke-interface {v3, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_15
-
-    .line 75
-    .end local v2    # "instance":Ljava/lang/Object;, "TE;"
-    :cond_25
-    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->endArray()V
-
-    .line 76
-    iget-object v4, p0, Lcom/google/gson/internal/bind/ArrayTypeAdapter;->componentType:Ljava/lang/Class;
-
-    invoke-interface {v3}, Ljava/util/List;->size()I
-
-    move-result v5
-
-    invoke-static {v4, v5}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
-
-    move-result-object v0
-
-    .line 77
-    .local v0, "array":Ljava/lang/Object;
-    const/4 v1, 0x0
-
-    .local v1, "i":I
-    :goto_33
-    invoke-interface {v3}, Ljava/util/List;->size()I
-
-    move-result v4
-
-    if-ge v1, v4, :cond_c
-
-    .line 78
-    invoke-interface {v3, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    invoke-static {v0, v1, v4}, Ljava/lang/reflect/Array;->set(Ljava/lang/Object;ILjava/lang/Object;)V
-
-    .line 77
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_33
-.end method
-
-.method public write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
+.method public a(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
     .registers 7
-    .param p1, "out"    # Lcom/google/gson/stream/JsonWriter;
-    .param p2, "array"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 85
-    .local p0, "this":Lcom/google/gson/internal/bind/ArrayTypeAdapter;, "Lcom/google/gson/internal/bind/ArrayTypeAdapter<TE;>;"
     if-nez p2, :cond_6
 
     .line 86
@@ -224,12 +110,10 @@
     .line 91
     const/4 v0, 0x0
 
-    .local v0, "i":I
     invoke-static {p2}, Ljava/lang/reflect/Array;->getLength(Ljava/lang/Object;)I
 
     move-result v1
 
-    .local v1, "length":I
     :goto_e
     if-ge v0, v1, :cond_1c
 
@@ -239,10 +123,9 @@
     move-result-object v2
 
     .line 93
-    .local v2, "value":Ljava/lang/Object;, "TE;"
-    iget-object v3, p0, Lcom/google/gson/internal/bind/ArrayTypeAdapter;->componentTypeAdapter:Lcom/google/gson/TypeAdapter;
+    iget-object v3, p0, Lcom/google/gson/internal/bind/ArrayTypeAdapter;->c:Lcom/google/gson/TypeAdapter;
 
-    invoke-virtual {v3, p1, v2}, Lcom/google/gson/TypeAdapter;->write(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
+    invoke-virtual {v3, p1, v2}, Lcom/google/gson/TypeAdapter;->a(Lcom/google/gson/stream/JsonWriter;Ljava/lang/Object;)V
 
     .line 91
     add-int/lit8 v0, v0, 0x1
@@ -250,9 +133,104 @@
     goto :goto_e
 
     .line 95
-    .end local v2    # "value":Ljava/lang/Object;, "TE;"
     :cond_1c
     invoke-virtual {p1}, Lcom/google/gson/stream/JsonWriter;->endArray()Lcom/google/gson/stream/JsonWriter;
 
     goto :goto_5
+.end method
+
+.method public b(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+    .registers 6
+
+    .prologue
+    .line 64
+    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->peek()Lcom/google/gson/stream/JsonToken;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/google/gson/stream/JsonToken;->NULL:Lcom/google/gson/stream/JsonToken;
+
+    if-ne v0, v1, :cond_d
+
+    .line 65
+    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->nextNull()V
+
+    .line 66
+    const/4 v0, 0x0
+
+    .line 80
+    :goto_c
+    return-object v0
+
+    .line 69
+    :cond_d
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 70
+    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->beginArray()V
+
+    .line 71
+    :goto_15
+    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_25
+
+    .line 72
+    iget-object v0, p0, Lcom/google/gson/internal/bind/ArrayTypeAdapter;->c:Lcom/google/gson/TypeAdapter;
+
+    invoke-virtual {v0, p1}, Lcom/google/gson/TypeAdapter;->b(Lcom/google/gson/stream/JsonReader;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    .line 73
+    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_15
+
+    .line 75
+    :cond_25
+    invoke-virtual {p1}, Lcom/google/gson/stream/JsonReader;->endArray()V
+
+    .line 76
+    iget-object v0, p0, Lcom/google/gson/internal/bind/ArrayTypeAdapter;->b:Ljava/lang/Class;
+
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v1
+
+    invoke-static {v0, v1}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
+
+    move-result-object v1
+
+    .line 77
+    const/4 v0, 0x0
+
+    :goto_33
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    if-ge v0, v3, :cond_43
+
+    .line 78
+    invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-static {v1, v0, v3}, Ljava/lang/reflect/Array;->set(Ljava/lang/Object;ILjava/lang/Object;)V
+
+    .line 77
+    add-int/lit8 v0, v0, 0x1
+
+    goto :goto_33
+
+    :cond_43
+    move-object v0, v1
+
+    .line 80
+    goto :goto_c
 .end method

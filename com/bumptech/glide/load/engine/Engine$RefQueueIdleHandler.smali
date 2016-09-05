@@ -6,19 +6,8 @@
 .implements Landroid/os/MessageQueue$IdleHandler;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/engine/Engine;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "RefQueueIdleHandler"
-.end annotation
-
-
 # instance fields
-.field private final activeResources:Ljava/util/Map;
+.field private final a:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",
@@ -32,7 +21,7 @@
     .end annotation
 .end field
 
-.field private final queue:Ljava/lang/ref/ReferenceQueue;
+.field private final b:Ljava/lang/ref/ReferenceQueue;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/ReferenceQueue",
@@ -66,15 +55,13 @@
 
     .prologue
     .line 350
-    .local p1, "activeResources":Ljava/util/Map;, "Ljava/util/Map<Lcom/bumptech/glide/load/Key;Ljava/lang/ref/WeakReference<Lcom/bumptech/glide/load/engine/EngineResource<*>;>;>;"
-    .local p2, "queue":Ljava/lang/ref/ReferenceQueue;, "Ljava/lang/ref/ReferenceQueue<Lcom/bumptech/glide/load/engine/EngineResource<*>;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 351
-    iput-object p1, p0, Lcom/bumptech/glide/load/engine/Engine$RefQueueIdleHandler;->activeResources:Ljava/util/Map;
+    iput-object p1, p0, Lcom/bumptech/glide/load/engine/Engine$RefQueueIdleHandler;->a:Ljava/util/Map;
 
     .line 352
-    iput-object p2, p0, Lcom/bumptech/glide/load/engine/Engine$RefQueueIdleHandler;->queue:Ljava/lang/ref/ReferenceQueue;
+    iput-object p2, p0, Lcom/bumptech/glide/load/engine/Engine$RefQueueIdleHandler;->b:Ljava/lang/ref/ReferenceQueue;
 
     .line 353
     return-void
@@ -83,35 +70,33 @@
 
 # virtual methods
 .method public queueIdle()Z
-    .registers 4
+    .registers 3
 
     .prologue
     .line 357
-    iget-object v1, p0, Lcom/bumptech/glide/load/engine/Engine$RefQueueIdleHandler;->queue:Ljava/lang/ref/ReferenceQueue;
+    iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine$RefQueueIdleHandler;->b:Ljava/lang/ref/ReferenceQueue;
 
-    invoke-virtual {v1}, Ljava/lang/ref/ReferenceQueue;->poll()Ljava/lang/ref/Reference;
+    invoke-virtual {v0}, Ljava/lang/ref/ReferenceQueue;->poll()Ljava/lang/ref/Reference;
 
     move-result-object v0
 
     check-cast v0, Lcom/bumptech/glide/load/engine/Engine$ResourceWeakReference;
 
     .line 358
-    .local v0, "ref":Lcom/bumptech/glide/load/engine/Engine$ResourceWeakReference;
     if-eqz v0, :cond_13
 
     .line 359
-    iget-object v1, p0, Lcom/bumptech/glide/load/engine/Engine$RefQueueIdleHandler;->activeResources:Ljava/util/Map;
+    iget-object v1, p0, Lcom/bumptech/glide/load/engine/Engine$RefQueueIdleHandler;->a:Ljava/util/Map;
 
-    # getter for: Lcom/bumptech/glide/load/engine/Engine$ResourceWeakReference;->key:Lcom/bumptech/glide/load/Key;
-    invoke-static {v0}, Lcom/bumptech/glide/load/engine/Engine$ResourceWeakReference;->access$000(Lcom/bumptech/glide/load/engine/Engine$ResourceWeakReference;)Lcom/bumptech/glide/load/Key;
+    invoke-static {v0}, Lcom/bumptech/glide/load/engine/Engine$ResourceWeakReference;->a(Lcom/bumptech/glide/load/engine/Engine$ResourceWeakReference;)Lcom/bumptech/glide/load/Key;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-interface {v1, v2}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v1, v0}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 362
     :cond_13
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    return v1
+    return v0
 .end method

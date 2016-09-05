@@ -3,17 +3,6 @@
 .source "ButterKnife.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lbutterknife/ButterKnife$Setter;,
-        Lbutterknife/ButterKnife$Action;,
-        Lbutterknife/ButterKnife$Injector;,
-        Lbutterknife/ButterKnife$Finder;
-    }
-.end annotation
-
-
 # static fields
 .field static final INJECTORS:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
@@ -112,29 +101,24 @@
 
     .prologue
     .line 372
-    .local p0, "list":Ljava/util/List;, "Ljava/util/List<TT;>;"
-    .local p1, "setter":Landroid/util/Property;, "Landroid/util/Property<-TT;TV;>;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    .local v1, "i":I
     invoke-interface {p0}, Ljava/util/List;->size()I
 
-    move-result v0
+    move-result v1
 
-    .local v0, "count":I
     :goto_5
-    if-ge v1, v0, :cond_11
+    if-ge v0, v1, :cond_11
 
     .line 373
-    invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     invoke-virtual {p1, v2, p2}, Landroid/util/Property;->set(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 372
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_5
 
@@ -159,35 +143,35 @@
 
     .prologue
     .line 353
-    .local p0, "list":Ljava/util/List;, "Ljava/util/List<TT;>;"
-    .local p1, "action":Lbutterknife/ButterKnife$Action;, "Lbutterknife/ButterKnife$Action<-TT;>;"
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    .local v1, "i":I
     invoke-interface {p0}, Ljava/util/List;->size()I
 
-    move-result v0
+    move-result v2
 
-    .local v0, "count":I
-    :goto_5
-    if-ge v1, v0, :cond_13
+    move v1, v0
+
+    :goto_6
+    if-ge v1, v2, :cond_15
 
     .line 354
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Landroid/view/View;
+    check-cast v0, Landroid/view/View;
 
-    invoke-interface {p1, v2, v1}, Lbutterknife/ButterKnife$Action;->apply(Landroid/view/View;I)V
+    invoke-interface {p1, v0, v1}, Lbutterknife/ButterKnife$Action;->apply(Landroid/view/View;I)V
 
     .line 353
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    goto :goto_5
+    move v1, v0
+
+    goto :goto_6
 
     .line 356
-    :cond_13
+    :cond_15
     return-void
 .end method
 
@@ -209,43 +193,40 @@
 
     .prologue
     .line 360
-    .local p0, "list":Ljava/util/List;, "Ljava/util/List<TT;>;"
-    .local p1, "setter":Lbutterknife/ButterKnife$Setter;, "Lbutterknife/ButterKnife$Setter<-TT;TV;>;"
-    .local p2, "value":Ljava/lang/Object;, "TV;"
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    .local v1, "i":I
     invoke-interface {p0}, Ljava/util/List;->size()I
 
-    move-result v0
+    move-result v2
 
-    .local v0, "count":I
-    :goto_5
-    if-ge v1, v0, :cond_13
+    move v1, v0
+
+    :goto_6
+    if-ge v1, v2, :cond_15
 
     .line 361
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Landroid/view/View;
+    check-cast v0, Landroid/view/View;
 
-    invoke-interface {p1, v2, p2, v1}, Lbutterknife/ButterKnife$Setter;->set(Landroid/view/View;Ljava/lang/Object;I)V
+    invoke-interface {p1, v0, p2, v1}, Lbutterknife/ButterKnife$Setter;->set(Landroid/view/View;Ljava/lang/Object;I)V
 
     .line 360
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    goto :goto_5
+    move v1, v0
+
+    goto :goto_6
 
     .line 363
-    :cond_13
+    :cond_15
     return-void
 .end method
 
 .method public static findById(Landroid/app/Activity;I)Landroid/view/View;
     .registers 3
-    .param p0, "activity"    # Landroid/app/Activity;
-    .param p1, "id"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -267,8 +248,6 @@
 
 .method public static findById(Landroid/app/Dialog;I)Landroid/view/View;
     .registers 3
-    .param p0, "dialog"    # Landroid/app/Dialog;
-    .param p1, "id"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -290,8 +269,6 @@
 
 .method public static findById(Landroid/view/View;I)Landroid/view/View;
     .registers 3
-    .param p0, "view"    # Landroid/view/View;
-    .param p1, "id"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -312,7 +289,7 @@
 .end method
 
 .method private static findInjectorForClass(Ljava/lang/Class;)Lbutterknife/ButterKnife$Injector;
-    .registers 9
+    .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -325,207 +302,184 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/IllegalAccessException;,
-            Ljava/lang/InstantiationException;
-        }
-    .end annotation
-
     .prologue
     .line 328
-    .local p0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    sget-object v5, Lbutterknife/ButterKnife;->INJECTORS:Ljava/util/Map;
+    sget-object v0, Lbutterknife/ButterKnife;->INJECTORS:Ljava/util/Map;
 
-    invoke-interface {v5, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
-    move-result-object v3
-
-    check-cast v3, Lbutterknife/ButterKnife$Injector;
-
-    .line 329
-    .local v3, "injector":Lbutterknife/ButterKnife$Injector;, "Lbutterknife/ButterKnife$Injector<Ljava/lang/Object;>;"
-    if-eqz v3, :cond_19
-
-    .line 330
-    sget-boolean v5, Lbutterknife/ButterKnife;->debug:Z
-
-    if-eqz v5, :cond_17
-
-    const-string/jumbo v5, "ButterKnife"
-
-    const-string/jumbo v6, "HIT: Cached in injector map."
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    :cond_17
-    move-object v5, v3
-
-    .line 348
-    :goto_18
-    return-object v5
-
-    .line 333
-    :cond_19
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 334
-    .local v1, "clsName":Ljava/lang/String;
-    const-string/jumbo v5, "android."
-
-    invoke-virtual {v1, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_2f
-
-    const-string/jumbo v5, "java."
-
-    invoke-virtual {v1, v5}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_3f
-
-    .line 335
-    :cond_2f
-    sget-boolean v5, Lbutterknife/ButterKnife;->debug:Z
-
-    if-eqz v5, :cond_3c
-
-    const-string/jumbo v5, "ButterKnife"
-
-    const-string/jumbo v6, "MISS: Reached framework class. Abandoning search."
-
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 336
-    :cond_3c
-    sget-object v5, Lbutterknife/ButterKnife;->NOP_INJECTOR:Lbutterknife/ButterKnife$Injector;
-
-    goto :goto_18
-
-    .line 339
-    :cond_3f
-    :try_start_3f
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string/jumbo v6, "$$ViewInjector"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-static {v5}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    move-result-object v4
-
-    .line 341
-    .local v4, "injectorClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    invoke-virtual {v4}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
-
-    move-result-object v5
-
-    move-object v0, v5
+    move-result-object v0
 
     check-cast v0, Lbutterknife/ButterKnife$Injector;
 
-    move-object v3, v0
+    .line 329
+    if-eqz v0, :cond_18
 
-    .line 342
-    sget-boolean v5, Lbutterknife/ButterKnife;->debug:Z
+    .line 330
+    sget-boolean v1, Lbutterknife/ButterKnife;->debug:Z
 
-    if-eqz v5, :cond_6c
+    if-eqz v1, :cond_17
 
-    const-string/jumbo v5, "ButterKnife"
+    const-string/jumbo v1, "ButterKnife"
 
-    const-string/jumbo v6, "HIT: Class loaded injection class."
+    const-string/jumbo v2, "HIT: Cached in injector map."
 
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_6c
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_3f .. :try_end_6c} :catch_73
-
-    .line 347
-    .end local v4    # "injectorClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    :cond_6c
-    :goto_6c
-    sget-object v5, Lbutterknife/ButterKnife;->INJECTORS:Ljava/util/Map;
-
-    invoke-interface {v5, p0, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-object v5, v3
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 348
-    goto :goto_18
+    :cond_17
+    :goto_17
+    return-object v0
+
+    .line 333
+    :cond_18
+    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 334
+    const-string/jumbo v1, "android."
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_2e
+
+    const-string/jumbo v1, "java."
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_3e
+
+    .line 335
+    :cond_2e
+    sget-boolean v0, Lbutterknife/ButterKnife;->debug:Z
+
+    if-eqz v0, :cond_3b
+
+    const-string/jumbo v0, "ButterKnife"
+
+    const-string/jumbo v1, "MISS: Reached framework class. Abandoning search."
+
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 336
+    :cond_3b
+    sget-object v0, Lbutterknife/ButterKnife;->NOP_INJECTOR:Lbutterknife/ButterKnife$Injector;
+
+    goto :goto_17
+
+    .line 339
+    :cond_3e
+    :try_start_3e
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "$$ViewInjector"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    move-result-object v0
+
+    .line 341
+    invoke-virtual {v0}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lbutterknife/ButterKnife$Injector;
+
+    .line 342
+    sget-boolean v1, Lbutterknife/ButterKnife;->debug:Z
+
+    if-eqz v1, :cond_69
+
+    const-string/jumbo v1, "ButterKnife"
+
+    const-string/jumbo v2, "HIT: Class loaded injection class."
+
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_69
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_3e .. :try_end_69} :catch_6f
+
+    .line 347
+    :cond_69
+    :goto_69
+    sget-object v1, Lbutterknife/ButterKnife;->INJECTORS:Ljava/util/Map;
+
+    invoke-interface {v1, p0, v0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    goto :goto_17
 
     .line 343
-    :catch_73
-    move-exception v2
+    :catch_6f
+    move-exception v0
 
     .line 344
-    .local v2, "e":Ljava/lang/ClassNotFoundException;
-    sget-boolean v5, Lbutterknife/ButterKnife;->debug:Z
+    sget-boolean v0, Lbutterknife/ButterKnife;->debug:Z
 
-    if-eqz v5, :cond_9a
+    if-eqz v0, :cond_96
 
-    const-string/jumbo v5, "ButterKnife"
+    const-string/jumbo v0, "ButterKnife"
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v7, "Not found. Trying superclass "
+    const-string/jumbo v2, "Not found. Trying superclass "
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v1
 
     invoke-virtual {p0}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
-    move-result-object v7
+    move-result-object v2
 
-    invoke-virtual {v7}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v2
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 345
-    :cond_9a
+    :cond_96
     invoke-virtual {p0}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
 
-    move-result-object v5
+    move-result-object v0
 
-    invoke-static {v5}, Lbutterknife/ButterKnife;->findInjectorForClass(Ljava/lang/Class;)Lbutterknife/ButterKnife$Injector;
+    invoke-static {v0}, Lbutterknife/ButterKnife;->findInjectorForClass(Ljava/lang/Class;)Lbutterknife/ButterKnife$Injector;
 
-    move-result-object v3
+    move-result-object v0
 
-    goto :goto_6c
+    goto :goto_69
 .end method
 
 .method public static inject(Landroid/app/Activity;)V
     .registers 2
-    .param p0, "target"    # Landroid/app/Activity;
 
     .prologue
     .line 232
@@ -539,7 +493,6 @@
 
 .method public static inject(Landroid/app/Dialog;)V
     .registers 2
-    .param p0, "target"    # Landroid/app/Dialog;
 
     .prologue
     .line 252
@@ -553,7 +506,6 @@
 
 .method public static inject(Landroid/view/View;)V
     .registers 2
-    .param p0, "target"    # Landroid/view/View;
 
     .prologue
     .line 242
@@ -567,8 +519,6 @@
 
 .method public static inject(Ljava/lang/Object;Landroid/app/Activity;)V
     .registers 3
-    .param p0, "target"    # Ljava/lang/Object;
-    .param p1, "source"    # Landroid/app/Activity;
 
     .prologue
     .line 263
@@ -582,8 +532,6 @@
 
 .method public static inject(Ljava/lang/Object;Landroid/app/Dialog;)V
     .registers 3
-    .param p0, "target"    # Ljava/lang/Object;
-    .param p1, "source"    # Landroid/app/Dialog;
 
     .prologue
     .line 285
@@ -597,8 +545,6 @@
 
 .method public static inject(Ljava/lang/Object;Landroid/view/View;)V
     .registers 3
-    .param p0, "target"    # Ljava/lang/Object;
-    .param p1, "source"    # Landroid/view/View;
 
     .prologue
     .line 274
@@ -611,62 +557,57 @@
 .end method
 
 .method static inject(Ljava/lang/Object;Ljava/lang/Object;Lbutterknife/ButterKnife$Finder;)V
-    .registers 9
-    .param p0, "target"    # Ljava/lang/Object;
-    .param p1, "source"    # Ljava/lang/Object;
-    .param p2, "finder"    # Lbutterknife/ButterKnife$Finder;
+    .registers 7
 
     .prologue
     .line 312
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 314
-    .local v2, "targetClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :try_start_4
-    sget-boolean v3, Lbutterknife/ButterKnife;->debug:Z
+    sget-boolean v1, Lbutterknife/ButterKnife;->debug:Z
 
-    if-eqz v3, :cond_26
+    if-eqz v1, :cond_26
 
-    const-string/jumbo v3, "ButterKnife"
+    const-string/jumbo v1, "ButterKnife"
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "Looking up view injector for "
+    const-string/jumbo v3, "Looking up view injector for "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 315
     :cond_26
-    invoke-static {v2}, Lbutterknife/ButterKnife;->findInjectorForClass(Ljava/lang/Class;)Lbutterknife/ButterKnife$Injector;
+    invoke-static {v0}, Lbutterknife/ButterKnife;->findInjectorForClass(Ljava/lang/Class;)Lbutterknife/ButterKnife$Injector;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 316
-    .local v1, "injector":Lbutterknife/ButterKnife$Injector;, "Lbutterknife/ButterKnife$Injector<Ljava/lang/Object;>;"
-    if-eqz v1, :cond_2f
+    if-eqz v0, :cond_2f
 
     .line 317
-    invoke-interface {v1, p2, p0, p1}, Lbutterknife/ButterKnife$Injector;->inject(Lbutterknife/ButterKnife$Finder;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-interface {v0, p2, p0, p1}, Lbutterknife/ButterKnife$Injector;->inject(Lbutterknife/ButterKnife$Finder;Ljava/lang/Object;Ljava/lang/Object;)V
     :try_end_2f
     .catch Ljava/lang/RuntimeException; {:try_start_4 .. :try_end_2f} :catch_30
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_2f} :catch_32
@@ -676,101 +617,94 @@
     return-void
 
     .line 319
-    .end local v1    # "injector":Lbutterknife/ButterKnife$Injector;, "Lbutterknife/ButterKnife$Injector<Ljava/lang/Object;>;"
     :catch_30
     move-exception v0
 
     .line 320
-    .local v0, "e":Ljava/lang/RuntimeException;
     throw v0
 
     .line 321
-    .end local v0    # "e":Ljava/lang/RuntimeException;
     :catch_32
     move-exception v0
 
     .line 322
-    .local v0, "e":Ljava/lang/Exception;
-    new-instance v3, Ljava/lang/RuntimeException;
+    new-instance v1, Ljava/lang/RuntimeException;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "Unable to inject views for "
+    const-string/jumbo v3, "Unable to inject views for "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-direct {v3, v4, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    throw v3
+    throw v1
 .end method
 
 .method public static reset(Ljava/lang/Object;)V
-    .registers 7
-    .param p0, "target"    # Ljava/lang/Object;
+    .registers 5
 
     .prologue
     .line 297
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 299
-    .local v2, "targetClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :try_start_4
-    sget-boolean v3, Lbutterknife/ButterKnife;->debug:Z
+    sget-boolean v1, Lbutterknife/ButterKnife;->debug:Z
 
-    if-eqz v3, :cond_26
+    if-eqz v1, :cond_26
 
-    const-string/jumbo v3, "ButterKnife"
+    const-string/jumbo v1, "ButterKnife"
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "Looking up view injector for "
+    const-string/jumbo v3, "Looking up view injector for "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v2}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-static {v3, v4}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 300
     :cond_26
-    invoke-static {v2}, Lbutterknife/ButterKnife;->findInjectorForClass(Ljava/lang/Class;)Lbutterknife/ButterKnife$Injector;
+    invoke-static {v0}, Lbutterknife/ButterKnife;->findInjectorForClass(Ljava/lang/Class;)Lbutterknife/ButterKnife$Injector;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 301
-    .local v1, "injector":Lbutterknife/ButterKnife$Injector;, "Lbutterknife/ButterKnife$Injector<Ljava/lang/Object;>;"
-    if-eqz v1, :cond_2f
+    if-eqz v0, :cond_2f
 
     .line 302
-    invoke-interface {v1, p0}, Lbutterknife/ButterKnife$Injector;->reset(Ljava/lang/Object;)V
+    invoke-interface {v0, p0}, Lbutterknife/ButterKnife$Injector;->reset(Ljava/lang/Object;)V
     :try_end_2f
     .catch Ljava/lang/RuntimeException; {:try_start_4 .. :try_end_2f} :catch_30
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_2f} :catch_32
@@ -780,49 +714,44 @@
     return-void
 
     .line 304
-    .end local v1    # "injector":Lbutterknife/ButterKnife$Injector;, "Lbutterknife/ButterKnife$Injector<Ljava/lang/Object;>;"
     :catch_30
     move-exception v0
 
     .line 305
-    .local v0, "e":Ljava/lang/RuntimeException;
     throw v0
 
     .line 306
-    .end local v0    # "e":Ljava/lang/RuntimeException;
     :catch_32
     move-exception v0
 
     .line 307
-    .local v0, "e":Ljava/lang/Exception;
-    new-instance v3, Ljava/lang/RuntimeException;
+    new-instance v1, Ljava/lang/RuntimeException;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "Unable to reset views for "
+    const-string/jumbo v3, "Unable to reset views for "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-direct {v3, v4, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    throw v3
+    throw v1
 .end method
 
 .method public static setDebug(Z)V
     .registers 1
-    .param p0, "debug"    # Z
 
     .prologue
     .line 222

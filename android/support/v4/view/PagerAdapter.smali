@@ -3,16 +3,10 @@
 .source "PagerAdapter.java"
 
 
-# static fields
-.field public static final POSITION_NONE:I = -0x2
-
-.field public static final POSITION_UNCHANGED:I = -0x1
-
-
 # instance fields
-.field private final mObservable:Landroid/database/DataSetObservable;
+.field private final a:Landroid/database/DataSetObservable;
 
-.field private mViewPagerObserver:Landroid/database/DataSetObserver;
+.field private b:Landroid/database/DataSetObserver;
 
 
 # direct methods
@@ -28,71 +22,15 @@
 
     invoke-direct {v0}, Landroid/database/DataSetObservable;-><init>()V
 
-    iput-object v0, p0, Landroid/support/v4/view/PagerAdapter;->mObservable:Landroid/database/DataSetObservable;
+    iput-object v0, p0, Landroid/support/v4/view/PagerAdapter;->a:Landroid/database/DataSetObservable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public destroyItem(Landroid/view/View;ILjava/lang/Object;)V
-    .registers 6
-    .param p1, "container"    # Landroid/view/View;
-    .param p2, "position"    # I
-    .param p3, "object"    # Ljava/lang/Object;
-
-    .prologue
-    .line 193
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    const-string/jumbo v1, "Required method destroyItem was not overridden"
-
-    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-.end method
-
-.method public destroyItem(Landroid/view/ViewGroup;ILjava/lang/Object;)V
-    .registers 4
-    .param p1, "container"    # Landroid/view/ViewGroup;
-    .param p2, "position"    # I
-    .param p3, "object"    # Ljava/lang/Object;
-
-    .prologue
-    .line 125
-    invoke-virtual {p0, p1, p2, p3}, Landroid/support/v4/view/PagerAdapter;->destroyItem(Landroid/view/View;ILjava/lang/Object;)V
-
-    .line 126
-    return-void
-.end method
-
-.method public finishUpdate(Landroid/view/View;)V
-    .registers 2
-    .param p1, "container"    # Landroid/view/View;
-
-    .prologue
-    .line 220
-    return-void
-.end method
-
-.method public finishUpdate(Landroid/view/ViewGroup;)V
-    .registers 2
-    .param p1, "container"    # Landroid/view/ViewGroup;
-
-    .prologue
-    .line 149
-    invoke-virtual {p0, p1}, Landroid/support/v4/view/PagerAdapter;->finishUpdate(Landroid/view/View;)V
-
-    .line 150
-    return-void
-.end method
-
-.method public abstract getCount()I
-.end method
-
-.method public getItemPosition(Ljava/lang/Object;)I
+.method public a(Ljava/lang/Object;)I
     .registers 3
-    .param p1, "object"    # Ljava/lang/Object;
 
     .prologue
     .line 269
@@ -101,32 +39,18 @@
     return v0
 .end method
 
-.method public getPageTitle(I)Ljava/lang/CharSequence;
-    .registers 3
-    .param p1, "position"    # I
+.method public a()Landroid/os/Parcelable;
+    .registers 2
 
     .prologue
-    .line 319
+    .line 240
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
-.method public getPageWidth(I)F
-    .registers 3
-    .param p1, "position"    # I
-
-    .prologue
-    .line 330
-    const/high16 v0, 0x3f800000
-
-    return v0
-.end method
-
-.method public instantiateItem(Landroid/view/View;I)Ljava/lang/Object;
+.method public a(Landroid/view/View;I)Ljava/lang/Object;
     .registers 5
-    .param p1, "container"    # Landroid/view/View;
-    .param p2, "position"    # I
 
     .prologue
     .line 176
@@ -139,24 +63,151 @@
     throw v0
 .end method
 
-.method public instantiateItem(Landroid/view/ViewGroup;I)Ljava/lang/Object;
+.method public a(Landroid/view/ViewGroup;I)Ljava/lang/Object;
     .registers 4
-    .param p1, "container"    # Landroid/view/ViewGroup;
-    .param p2, "position"    # I
 
     .prologue
     .line 111
-    invoke-virtual {p0, p1, p2}, Landroid/support/v4/view/PagerAdapter;->instantiateItem(Landroid/view/View;I)Ljava/lang/Object;
+    invoke-virtual {p0, p1, p2}, Landroid/support/v4/view/PagerAdapter;->a(Landroid/view/View;I)Ljava/lang/Object;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public abstract isViewFromObject(Landroid/view/View;Ljava/lang/Object;)Z
+.method public a(Landroid/database/DataSetObserver;)V
+    .registers 3
+
+    .prologue
+    .line 291
+    iget-object v0, p0, Landroid/support/v4/view/PagerAdapter;->a:Landroid/database/DataSetObservable;
+
+    invoke-virtual {v0, p1}, Landroid/database/DataSetObservable;->registerObserver(Ljava/lang/Object;)V
+
+    .line 292
+    return-void
 .end method
 
-.method public notifyDataSetChanged()V
+.method public a(Landroid/os/Parcelable;Ljava/lang/ClassLoader;)V
+    .registers 3
+
+    .prologue
+    .line 251
+    return-void
+.end method
+
+.method public a(Landroid/view/View;)V
+    .registers 2
+
+    .prologue
+    .line 160
+    return-void
+.end method
+
+.method public a(Landroid/view/View;ILjava/lang/Object;)V
+    .registers 6
+
+    .prologue
+    .line 193
+    new-instance v0, Ljava/lang/UnsupportedOperationException;
+
+    const-string/jumbo v1, "Required method destroyItem was not overridden"
+
+    invoke-direct {v0, v1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+.end method
+
+.method public a(Landroid/view/ViewGroup;)V
+    .registers 2
+
+    .prologue
+    .line 96
+    invoke-virtual {p0, p1}, Landroid/support/v4/view/PagerAdapter;->a(Landroid/view/View;)V
+
+    .line 97
+    return-void
+.end method
+
+.method public a(Landroid/view/ViewGroup;ILjava/lang/Object;)V
+    .registers 4
+
+    .prologue
+    .line 125
+    invoke-virtual {p0, p1, p2, p3}, Landroid/support/v4/view/PagerAdapter;->a(Landroid/view/View;ILjava/lang/Object;)V
+
+    .line 126
+    return-void
+.end method
+
+.method public abstract a(Landroid/view/View;Ljava/lang/Object;)Z
+.end method
+
+.method public abstract b()I
+.end method
+
+.method public b(Landroid/database/DataSetObserver;)V
+    .registers 3
+
+    .prologue
+    .line 300
+    iget-object v0, p0, Landroid/support/v4/view/PagerAdapter;->a:Landroid/database/DataSetObservable;
+
+    invoke-virtual {v0, p1}, Landroid/database/DataSetObservable;->unregisterObserver(Ljava/lang/Object;)V
+
+    .line 301
+    return-void
+.end method
+
+.method public b(Landroid/view/View;)V
+    .registers 2
+
+    .prologue
+    .line 220
+    return-void
+.end method
+
+.method public b(Landroid/view/View;ILjava/lang/Object;)V
+    .registers 4
+
+    .prologue
+    .line 208
+    return-void
+.end method
+
+.method public b(Landroid/view/ViewGroup;)V
+    .registers 2
+
+    .prologue
+    .line 149
+    invoke-virtual {p0, p1}, Landroid/support/v4/view/PagerAdapter;->b(Landroid/view/View;)V
+
+    .line 150
+    return-void
+.end method
+
+.method public b(Landroid/view/ViewGroup;ILjava/lang/Object;)V
+    .registers 4
+
+    .prologue
+    .line 138
+    invoke-virtual {p0, p1, p2, p3}, Landroid/support/v4/view/PagerAdapter;->b(Landroid/view/View;ILjava/lang/Object;)V
+
+    .line 139
+    return-void
+.end method
+
+.method public c(I)Ljava/lang/CharSequence;
+    .registers 3
+
+    .prologue
+    .line 319
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public c()V
     .registers 2
 
     .prologue
@@ -165,12 +216,12 @@
 
     .line 278
     :try_start_1
-    iget-object v0, p0, Landroid/support/v4/view/PagerAdapter;->mViewPagerObserver:Landroid/database/DataSetObserver;
+    iget-object v0, p0, Landroid/support/v4/view/PagerAdapter;->b:Landroid/database/DataSetObserver;
 
     if-eqz v0, :cond_a
 
     .line 279
-    iget-object v0, p0, Landroid/support/v4/view/PagerAdapter;->mViewPagerObserver:Landroid/database/DataSetObserver;
+    iget-object v0, p0, Landroid/support/v4/view/PagerAdapter;->b:Landroid/database/DataSetObserver;
 
     invoke-virtual {v0}, Landroid/database/DataSetObserver;->onChanged()V
 
@@ -181,7 +232,7 @@
     .catchall {:try_start_1 .. :try_end_b} :catchall_11
 
     .line 282
-    iget-object v0, p0, Landroid/support/v4/view/PagerAdapter;->mObservable:Landroid/database/DataSetObservable;
+    iget-object v0, p0, Landroid/support/v4/view/PagerAdapter;->a:Landroid/database/DataSetObservable;
 
     invoke-virtual {v0}, Landroid/database/DataSetObservable;->notifyChanged()V
 
@@ -200,68 +251,8 @@
     throw v0
 .end method
 
-.method public registerDataSetObserver(Landroid/database/DataSetObserver;)V
+.method c(Landroid/database/DataSetObserver;)V
     .registers 3
-    .param p1, "observer"    # Landroid/database/DataSetObserver;
-
-    .prologue
-    .line 291
-    iget-object v0, p0, Landroid/support/v4/view/PagerAdapter;->mObservable:Landroid/database/DataSetObservable;
-
-    invoke-virtual {v0, p1}, Landroid/database/DataSetObservable;->registerObserver(Ljava/lang/Object;)V
-
-    .line 292
-    return-void
-.end method
-
-.method public restoreState(Landroid/os/Parcelable;Ljava/lang/ClassLoader;)V
-    .registers 3
-    .param p1, "state"    # Landroid/os/Parcelable;
-    .param p2, "loader"    # Ljava/lang/ClassLoader;
-
-    .prologue
-    .line 251
-    return-void
-.end method
-
-.method public saveState()Landroid/os/Parcelable;
-    .registers 2
-
-    .prologue
-    .line 240
-    const/4 v0, 0x0
-
-    return-object v0
-.end method
-
-.method public setPrimaryItem(Landroid/view/View;ILjava/lang/Object;)V
-    .registers 4
-    .param p1, "container"    # Landroid/view/View;
-    .param p2, "position"    # I
-    .param p3, "object"    # Ljava/lang/Object;
-
-    .prologue
-    .line 208
-    return-void
-.end method
-
-.method public setPrimaryItem(Landroid/view/ViewGroup;ILjava/lang/Object;)V
-    .registers 4
-    .param p1, "container"    # Landroid/view/ViewGroup;
-    .param p2, "position"    # I
-    .param p3, "object"    # Ljava/lang/Object;
-
-    .prologue
-    .line 138
-    invoke-virtual {p0, p1, p2, p3}, Landroid/support/v4/view/PagerAdapter;->setPrimaryItem(Landroid/view/View;ILjava/lang/Object;)V
-
-    .line 139
-    return-void
-.end method
-
-.method setViewPagerObserver(Landroid/database/DataSetObserver;)V
-    .registers 3
-    .param p1, "observer"    # Landroid/database/DataSetObserver;
 
     .prologue
     .line 304
@@ -269,7 +260,7 @@
 
     .line 305
     :try_start_1
-    iput-object p1, p0, Landroid/support/v4/view/PagerAdapter;->mViewPagerObserver:Landroid/database/DataSetObserver;
+    iput-object p1, p0, Landroid/support/v4/view/PagerAdapter;->b:Landroid/database/DataSetObserver;
 
     .line 306
     monitor-exit p0
@@ -288,37 +279,12 @@
     throw v0
 .end method
 
-.method public startUpdate(Landroid/view/View;)V
-    .registers 2
-    .param p1, "container"    # Landroid/view/View;
-
-    .prologue
-    .line 160
-    return-void
-.end method
-
-.method public startUpdate(Landroid/view/ViewGroup;)V
-    .registers 2
-    .param p1, "container"    # Landroid/view/ViewGroup;
-
-    .prologue
-    .line 96
-    invoke-virtual {p0, p1}, Landroid/support/v4/view/PagerAdapter;->startUpdate(Landroid/view/View;)V
-
-    .line 97
-    return-void
-.end method
-
-.method public unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
+.method public d(I)F
     .registers 3
-    .param p1, "observer"    # Landroid/database/DataSetObserver;
 
     .prologue
-    .line 300
-    iget-object v0, p0, Landroid/support/v4/view/PagerAdapter;->mObservable:Landroid/database/DataSetObservable;
+    .line 330
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    invoke-virtual {v0, p1}, Landroid/database/DataSetObservable;->unregisterObserver(Ljava/lang/Object;)V
-
-    .line 301
-    return-void
+    return v0
 .end method

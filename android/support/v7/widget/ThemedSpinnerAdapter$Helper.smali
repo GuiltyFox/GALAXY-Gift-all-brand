@@ -3,17 +3,6 @@
 .source "ThemedSpinnerAdapter.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/widget/ThemedSpinnerAdapter;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "Helper"
-.end annotation
-
-
 # instance fields
 .field private final mContext:Landroid/content/Context;
 
@@ -25,10 +14,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
 
     .prologue
     .line 110
@@ -52,8 +37,6 @@
 # virtual methods
 .method public getDropDownViewInflater()Landroid/view/LayoutInflater;
     .registers 2
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
 
     .prologue
     .line 151
@@ -74,8 +57,6 @@
 
 .method public getDropDownViewTheme()Landroid/content/res/Resources$Theme;
     .registers 2
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
 
     .prologue
     .line 139
@@ -104,19 +85,15 @@
 
 .method public setDropDownViewTheme(Landroid/content/res/Resources$Theme;)V
     .registers 4
-    .param p1, "theme"    # Landroid/content/res/Resources$Theme;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
 
     .prologue
     .line 123
     if-nez p1, :cond_6
 
     .line 124
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    iput-object v1, p0, Landroid/support/v7/widget/ThemedSpinnerAdapter$Helper;->mDropDownInflater:Landroid/view/LayoutInflater;
+    iput-object v0, p0, Landroid/support/v7/widget/ThemedSpinnerAdapter$Helper;->mDropDownInflater:Landroid/view/LayoutInflater;
 
     .line 131
     :goto_5
@@ -124,18 +101,18 @@
 
     .line 125
     :cond_6
-    iget-object v1, p0, Landroid/support/v7/widget/ThemedSpinnerAdapter$Helper;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Landroid/support/v7/widget/ThemedSpinnerAdapter$Helper;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+    invoke-virtual {v0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
-    move-result-object v1
+    move-result-object v0
 
-    if-ne p1, v1, :cond_13
+    if-ne p1, v0, :cond_13
 
     .line 126
-    iget-object v1, p0, Landroid/support/v7/widget/ThemedSpinnerAdapter$Helper;->mInflater:Landroid/view/LayoutInflater;
+    iget-object v0, p0, Landroid/support/v7/widget/ThemedSpinnerAdapter$Helper;->mInflater:Landroid/view/LayoutInflater;
 
-    iput-object v1, p0, Landroid/support/v7/widget/ThemedSpinnerAdapter$Helper;->mDropDownInflater:Landroid/view/LayoutInflater;
+    iput-object v0, p0, Landroid/support/v7/widget/ThemedSpinnerAdapter$Helper;->mDropDownInflater:Landroid/view/LayoutInflater;
 
     goto :goto_5
 
@@ -148,12 +125,11 @@
     invoke-direct {v0, v1, p1}, Landroid/support/v7/view/ContextThemeWrapper;-><init>(Landroid/content/Context;Landroid/content/res/Resources$Theme;)V
 
     .line 129
-    .local v0, "context":Landroid/content/Context;
     invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    move-result-object v1
+    move-result-object v0
 
-    iput-object v1, p0, Landroid/support/v7/widget/ThemedSpinnerAdapter$Helper;->mDropDownInflater:Landroid/view/LayoutInflater;
+    iput-object v0, p0, Landroid/support/v7/widget/ThemedSpinnerAdapter$Helper;->mDropDownInflater:Landroid/view/LayoutInflater;
 
     goto :goto_5
 .end method

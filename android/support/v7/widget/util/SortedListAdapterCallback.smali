@@ -22,11 +22,9 @@
 # direct methods
 .method public constructor <init>(Landroid/support/v7/widget/RecyclerView$Adapter;)V
     .registers 2
-    .param p1, "adapter"    # Landroid/support/v7/widget/RecyclerView$Adapter;
 
     .prologue
     .line 36
-    .local p0, "this":Landroid/support/v7/widget/util/SortedListAdapterCallback;, "Landroid/support/v7/widget/util/SortedListAdapterCallback<TT2;>;"
     invoke-direct {p0}, Landroid/support/v7/util/SortedList$Callback;-><init>()V
 
     .line 37
@@ -40,12 +38,9 @@
 # virtual methods
 .method public onChanged(II)V
     .registers 4
-    .param p1, "position"    # I
-    .param p2, "count"    # I
 
     .prologue
     .line 57
-    .local p0, "this":Landroid/support/v7/widget/util/SortedListAdapterCallback;, "Landroid/support/v7/widget/util/SortedListAdapterCallback<TT2;>;"
     iget-object v0, p0, Landroid/support/v7/widget/util/SortedListAdapterCallback;->mAdapter:Landroid/support/v7/widget/RecyclerView$Adapter;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/widget/RecyclerView$Adapter;->notifyItemRangeChanged(II)V
@@ -56,12 +51,9 @@
 
 .method public onInserted(II)V
     .registers 4
-    .param p1, "position"    # I
-    .param p2, "count"    # I
 
     .prologue
     .line 42
-    .local p0, "this":Landroid/support/v7/widget/util/SortedListAdapterCallback;, "Landroid/support/v7/widget/util/SortedListAdapterCallback<TT2;>;"
     iget-object v0, p0, Landroid/support/v7/widget/util/SortedListAdapterCallback;->mAdapter:Landroid/support/v7/widget/RecyclerView$Adapter;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
@@ -72,12 +64,9 @@
 
 .method public onMoved(II)V
     .registers 4
-    .param p1, "fromPosition"    # I
-    .param p2, "toPosition"    # I
 
     .prologue
     .line 52
-    .local p0, "this":Landroid/support/v7/widget/util/SortedListAdapterCallback;, "Landroid/support/v7/widget/util/SortedListAdapterCallback<TT2;>;"
     iget-object v0, p0, Landroid/support/v7/widget/util/SortedListAdapterCallback;->mAdapter:Landroid/support/v7/widget/RecyclerView$Adapter;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/widget/RecyclerView$Adapter;->notifyItemMoved(II)V
@@ -88,12 +77,9 @@
 
 .method public onRemoved(II)V
     .registers 4
-    .param p1, "position"    # I
-    .param p2, "count"    # I
 
     .prologue
     .line 47
-    .local p0, "this":Landroid/support/v7/widget/util/SortedListAdapterCallback;, "Landroid/support/v7/widget/util/SortedListAdapterCallback<TT2;>;"
     iget-object v0, p0, Landroid/support/v7/widget/util/SortedListAdapterCallback;->mAdapter:Landroid/support/v7/widget/RecyclerView$Adapter;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V

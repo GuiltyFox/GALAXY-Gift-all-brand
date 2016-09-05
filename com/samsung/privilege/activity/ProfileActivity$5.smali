@@ -8,39 +8,33 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/ProfileActivity;->initialLayout()V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/samsung/privilege/activity/ProfileActivity;->i()V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/ProfileActivity;
+.field final synthetic a:Landroid/widget/ArrayAdapter;
 
-.field final synthetic val$adapterGender:Landroid/widget/ArrayAdapter;
+.field final synthetic b:Landroid/widget/TextView;
 
-.field final synthetic val$itemsGender:[Ljava/lang/String;
+.field final synthetic c:[Ljava/lang/String;
 
-.field final synthetic val$textGender:Landroid/widget/TextView;
+.field final synthetic d:Lcom/samsung/privilege/activity/ProfileActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/ProfileActivity;Landroid/widget/ArrayAdapter;Landroid/widget/TextView;[Ljava/lang/String;)V
     .registers 5
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/ProfileActivity;
 
     .prologue
-    .line 306
-    iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$5;->this$0:Lcom/samsung/privilege/activity/ProfileActivity;
+    .line 312
+    iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$5;->d:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    iput-object p2, p0, Lcom/samsung/privilege/activity/ProfileActivity$5;->val$adapterGender:Landroid/widget/ArrayAdapter;
+    iput-object p2, p0, Lcom/samsung/privilege/activity/ProfileActivity$5;->a:Landroid/widget/ArrayAdapter;
 
-    iput-object p3, p0, Lcom/samsung/privilege/activity/ProfileActivity$5;->val$textGender:Landroid/widget/TextView;
+    iput-object p3, p0, Lcom/samsung/privilege/activity/ProfileActivity$5;->b:Landroid/widget/TextView;
 
-    iput-object p4, p0, Lcom/samsung/privilege/activity/ProfileActivity$5;->val$itemsGender:[Ljava/lang/String;
+    iput-object p4, p0, Lcom/samsung/privilege/activity/ProfileActivity$5;->c:[Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -50,91 +44,86 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 7
-    .param p1, "v"    # Landroid/view/View;
+    .registers 5
 
     .prologue
-    .line 310
+    .line 316
     :try_start_0
-    iget-object v2, p0, Lcom/samsung/privilege/activity/ProfileActivity$5;->this$0:Lcom/samsung/privilege/activity/ProfileActivity;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$5;->d:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    invoke-virtual {v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getCurrentFocus()Landroid/view/View;
+    invoke-virtual {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->getCurrentFocus()Landroid/view/View;
 
     move-result-object v1
 
-    .line 311
-    .local v1, "view":Landroid/view/View;
+    .line 317
     if-eqz v1, :cond_1b
 
-    .line 312
-    iget-object v2, p0, Lcom/samsung/privilege/activity/ProfileActivity$5;->this$0:Lcom/samsung/privilege/activity/ProfileActivity;
+    .line 318
+    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$5;->d:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    const-string/jumbo v3, "input_method"
+    const-string/jumbo v2, "input_method"
 
-    invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/ProfileActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 313
-    .local v0, "imm":Landroid/view/inputmethod/InputMethodManager;
+    .line 319
     invoke-virtual {v1}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
 
-    move-result-object v2
+    move-result-object v1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v2, v3}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
+    invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
     :try_end_1b
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_1b} :catch_42
 
-    .line 319
-    .end local v0    # "imm":Landroid/view/inputmethod/InputMethodManager;
-    .end local v1    # "view":Landroid/view/View;
+    .line 325
     :cond_1b
     :goto_1b
-    new-instance v2, Landroid/app/AlertDialog$Builder;
+    new-instance v0, Landroid/app/AlertDialog$Builder;
 
-    iget-object v3, p0, Lcom/samsung/privilege/activity/ProfileActivity$5;->this$0:Lcom/samsung/privilege/activity/ProfileActivity;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$5;->d:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    invoke-direct {v2, v3}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    iget-object v3, p0, Lcom/samsung/privilege/activity/ProfileActivity$5;->this$0:Lcom/samsung/privilege/activity/ProfileActivity;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$5;->d:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    const v4, 0x7f0902c1
+    const v2, 0x7f0902d2
 
-    invoke-virtual {v3, v4}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v2, v3}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    move-result-object v2
+    move-result-object v0
 
-    iget-object v3, p0, Lcom/samsung/privilege/activity/ProfileActivity$5;->val$adapterGender:Landroid/widget/ArrayAdapter;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$5;->a:Landroid/widget/ArrayAdapter;
 
-    new-instance v4, Lcom/samsung/privilege/activity/ProfileActivity$5$1;
+    new-instance v2, Lcom/samsung/privilege/activity/ProfileActivity$5$1;
 
-    invoke-direct {v4, p0}, Lcom/samsung/privilege/activity/ProfileActivity$5$1;-><init>(Lcom/samsung/privilege/activity/ProfileActivity$5;)V
+    invoke-direct {v2, p0}, Lcom/samsung/privilege/activity/ProfileActivity$5$1;-><init>(Lcom/samsung/privilege/activity/ProfileActivity$5;)V
 
-    invoke-virtual {v2, v3, v4}, Landroid/app/AlertDialog$Builder;->setAdapter(Landroid/widget/ListAdapter;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setAdapter(Landroid/widget/ListAdapter;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    move-result-object v2
+    move-result-object v0
 
-    .line 325
-    invoke-virtual {v2}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+    .line 331
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Landroid/app/AlertDialog;->show()V
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 326
+    .line 332
     return-void
 
-    .line 315
+    .line 321
     :catch_42
-    move-exception v2
+    move-exception v0
 
     goto :goto_1b
 .end method

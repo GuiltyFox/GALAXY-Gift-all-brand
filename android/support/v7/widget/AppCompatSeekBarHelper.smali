@@ -4,11 +4,11 @@
 
 
 # static fields
-.field private static final TINT_ATTRS:[I
+.field private static final b:[I
 
 
 # instance fields
-.field private final mView:Landroid/widget/SeekBar;
+.field private final c:Landroid/widget/SeekBar;
 
 
 # direct methods
@@ -27,22 +27,20 @@
 
     aput v2, v0, v1
 
-    sput-object v0, Landroid/support/v7/widget/AppCompatSeekBarHelper;->TINT_ATTRS:[I
+    sput-object v0, Landroid/support/v7/widget/AppCompatSeekBarHelper;->b:[I
 
     return-void
 .end method
 
 .method constructor <init>(Landroid/widget/SeekBar;Landroid/support/v7/widget/AppCompatDrawableManager;)V
     .registers 3
-    .param p1, "view"    # Landroid/widget/SeekBar;
-    .param p2, "drawableManager"    # Landroid/support/v7/widget/AppCompatDrawableManager;
 
     .prologue
     .line 32
     invoke-direct {p0, p1, p2}, Landroid/support/v7/widget/AppCompatProgressBarHelper;-><init>(Landroid/widget/ProgressBar;Landroid/support/v7/widget/AppCompatDrawableManager;)V
 
     .line 33
-    iput-object p1, p0, Landroid/support/v7/widget/AppCompatSeekBarHelper;->mView:Landroid/widget/SeekBar;
+    iput-object p1, p0, Landroid/support/v7/widget/AppCompatSeekBarHelper;->c:Landroid/widget/SeekBar;
 
     .line 34
     return-void
@@ -50,42 +48,38 @@
 
 
 # virtual methods
-.method loadFromAttributes(Landroid/util/AttributeSet;I)V
-    .registers 8
-    .param p1, "attrs"    # Landroid/util/AttributeSet;
-    .param p2, "defStyleAttr"    # I
+.method a(Landroid/util/AttributeSet;I)V
+    .registers 6
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
     .line 37
-    invoke-super {p0, p1, p2}, Landroid/support/v7/widget/AppCompatProgressBarHelper;->loadFromAttributes(Landroid/util/AttributeSet;I)V
+    invoke-super {p0, p1, p2}, Landroid/support/v7/widget/AppCompatProgressBarHelper;->a(Landroid/util/AttributeSet;I)V
 
     .line 39
-    iget-object v2, p0, Landroid/support/v7/widget/AppCompatSeekBarHelper;->mView:Landroid/widget/SeekBar;
+    iget-object v0, p0, Landroid/support/v7/widget/AppCompatSeekBarHelper;->c:Landroid/widget/SeekBar;
 
-    invoke-virtual {v2}, Landroid/widget/SeekBar;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Landroid/widget/SeekBar;->getContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v0
 
-    sget-object v3, Landroid/support/v7/widget/AppCompatSeekBarHelper;->TINT_ATTRS:[I
+    sget-object v1, Landroid/support/v7/widget/AppCompatSeekBarHelper;->b:[I
 
-    invoke-static {v2, p1, v3, p2, v4}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroid/support/v7/widget/TintTypedArray;
+    invoke-static {v0, p1, v1, p2, v2}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroid/support/v7/widget/TintTypedArray;
 
     move-result-object v0
 
     .line 41
-    .local v0, "a":Landroid/support/v7/widget/TintTypedArray;
-    invoke-virtual {v0, v4}, Landroid/support/v7/widget/TintTypedArray;->getDrawableIfKnown(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0, v2}, Landroid/support/v7/widget/TintTypedArray;->getDrawableIfKnown(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     .line 42
-    .local v1, "drawable":Landroid/graphics/drawable/Drawable;
     if-eqz v1, :cond_1b
 
     .line 43
-    iget-object v2, p0, Landroid/support/v7/widget/AppCompatSeekBarHelper;->mView:Landroid/widget/SeekBar;
+    iget-object v2, p0, Landroid/support/v7/widget/AppCompatSeekBarHelper;->c:Landroid/widget/SeekBar;
 
     invoke-virtual {v2, v1}, Landroid/widget/SeekBar;->setThumb(Landroid/graphics/drawable/Drawable;)V
 

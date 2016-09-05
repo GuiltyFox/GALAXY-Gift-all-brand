@@ -70,7 +70,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->d(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->b(Ljava/lang/String;)V
 
     :goto_27
     return-void
@@ -185,7 +185,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->d(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->b(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/jaalee/sdk/service/i;->a:Lcom/jaalee/sdk/service/h;
 
@@ -226,7 +226,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->d(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/jaalee/sdk/utils/L;->b(Ljava/lang/String;)V
 
     iget-object v0, p0, Lcom/jaalee/sdk/service/i;->a:Lcom/jaalee/sdk/service/h;
 

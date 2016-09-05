@@ -3,17 +3,6 @@
 .source "ClassUtil.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/util/ClassUtil;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "EnumTypeLocator"
-.end annotation
-
-
 # static fields
 .field static final instance:Lcom/fasterxml/jackson/databind/util/ClassUtil$EnumTypeLocator;
 
@@ -78,8 +67,6 @@
 
 .method private get(Ljava/lang/Object;Ljava/lang/reflect/Field;)Ljava/lang/Object;
     .registers 5
-    .param p1, "bean"    # Ljava/lang/Object;
-    .param p2, "field"    # Ljava/lang/reflect/Field;
 
     .prologue
     .line 654
@@ -88,16 +75,15 @@
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_3} :catch_5
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     .line 655
     :catch_5
     move-exception v0
 
     .line 656
-    .local v0, "e":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/Throwable;)V
@@ -107,7 +93,6 @@
 
 .method private static locateField(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/reflect/Field;
     .registers 10
-    .param p1, "expectedName"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -121,36 +106,28 @@
     .end annotation
 
     .prologue
-    .line 662
-    .local p0, "fromClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p2, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
+    const/4 v1, 0x0
+
+    .line 662
     .line 664
-    .local v3, "found":Ljava/lang/reflect/Field;
     invoke-virtual {p0}, Ljava/lang/Class;->getDeclaredFields()[Ljava/lang/reflect/Field;
 
-    move-result-object v2
+    move-result-object v4
 
     .line 665
-    .local v2, "fields":[Ljava/lang/reflect/Field;
-    move-object v0, v2
+    array-length v5, v4
 
-    .local v0, "arr$":[Ljava/lang/reflect/Field;
-    array-length v5, v0
+    move v3, v1
 
-    .local v5, "len$":I
-    const/4 v4, 0x0
-
-    .local v4, "i$":I
     :goto_8
-    if-ge v4, v5, :cond_1d
+    if-ge v3, v5, :cond_43
 
-    aget-object v1, v0, v4
+    aget-object v0, v4, v3
 
     .line 666
-    .local v1, "f":Ljava/lang/reflect/Field;
-    invoke-virtual {v1}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
 
     move-result-object v6
 
@@ -158,94 +135,95 @@
 
     move-result v6
 
-    if-eqz v6, :cond_30
+    if-eqz v6, :cond_2f
 
-    invoke-virtual {v1}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
 
     move-result-object v6
 
-    if-ne v6, p2, :cond_30
-
-    .line 667
-    move-object v3, v1
+    if-ne v6, p2, :cond_2f
 
     .line 672
-    .end local v1    # "f":Ljava/lang/reflect/Field;
-    :cond_1d
-    if-nez v3, :cond_37
+    :goto_1c
+    if-nez v0, :cond_3a
 
     .line 673
-    move-object v0, v2
+    array-length v5, v4
 
-    array-length v5, v0
+    move v3, v1
 
-    const/4 v4, 0x0
+    move-object v1, v0
 
-    :goto_22
-    if-ge v4, v5, :cond_37
+    :goto_21
+    if-ge v3, v5, :cond_39
 
-    aget-object v1, v0, v4
+    aget-object v0, v4, v3
 
     .line 674
-    .restart local v1    # "f":Ljava/lang/reflect/Field;
-    invoke-virtual {v1}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/lang/reflect/Field;->getType()Ljava/lang/Class;
 
     move-result-object v6
 
-    if-ne v6, p2, :cond_34
+    if-ne v6, p2, :cond_33
 
     .line 676
-    if-eqz v3, :cond_33
+    if-eqz v1, :cond_34
 
-    const/4 v6, 0x0
+    move-object v0, v2
 
     .line 686
-    .end local v1    # "f":Ljava/lang/reflect/Field;
-    :goto_2f
-    return-object v6
+    :cond_2e
+    :goto_2e
+    return-object v0
 
     .line 665
-    .restart local v1    # "f":Ljava/lang/reflect/Field;
-    :cond_30
-    add-int/lit8 v4, v4, 0x1
+    :cond_2f
+    add-int/lit8 v0, v3, 0x1
+
+    move v3, v0
 
     goto :goto_8
 
-    .line 677
     :cond_33
-    move-object v3, v1
+    move-object v0, v1
 
     .line 673
     :cond_34
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v1, v3, 0x1
 
-    goto :goto_22
+    move v3, v1
+
+    move-object v1, v0
+
+    goto :goto_21
+
+    :cond_39
+    move-object v0, v1
 
     .line 681
-    .end local v1    # "f":Ljava/lang/reflect/Field;
-    :cond_37
-    if-eqz v3, :cond_3d
+    :cond_3a
+    if-eqz v0, :cond_2e
 
     .line 683
-    const/4 v6, 0x1
+    const/4 v1, 0x1
 
-    :try_start_3a
-    invoke-virtual {v3, v6}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-    :try_end_3d
-    .catch Ljava/lang/Throwable; {:try_start_3a .. :try_end_3d} :catch_3f
+    :try_start_3d
+    invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    :try_end_40
+    .catch Ljava/lang/Throwable; {:try_start_3d .. :try_end_40} :catch_41
 
-    :cond_3d
-    :goto_3d
-    move-object v6, v3
-
-    .line 686
-    goto :goto_2f
+    goto :goto_2e
 
     .line 684
-    :catch_3f
-    move-exception v6
+    :catch_41
+    move-exception v1
 
-    goto :goto_3d
+    goto :goto_2e
+
+    :cond_43
+    move-object v0, v2
+
+    goto :goto_1c
 .end method
 
 
@@ -266,7 +244,6 @@
 
     .prologue
     .line 645
-    .local p1, "set":Ljava/util/EnumMap;, "Ljava/util/EnumMap<**>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/ClassUtil$EnumTypeLocator;->enumMapTypeField:Ljava/lang/reflect/Field;
 
     if-eqz v0, :cond_d
@@ -309,7 +286,6 @@
 
     .prologue
     .line 636
-    .local p1, "set":Ljava/util/EnumSet;, "Ljava/util/EnumSet<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/ClassUtil$EnumTypeLocator;->enumSetTypeField:Ljava/lang/reflect/Field;
 
     if-eqz v0, :cond_d

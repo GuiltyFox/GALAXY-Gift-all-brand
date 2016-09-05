@@ -4,15 +4,15 @@
 
 
 # static fields
-.field private static final TINT_ATTRS:[I
+.field private static final b:[I
 
 
 # instance fields
-.field final mDrawableManager:Landroid/support/v7/widget/AppCompatDrawableManager;
+.field final a:Landroid/support/v7/widget/AppCompatDrawableManager;
 
-.field private mSampleTile:Landroid/graphics/Bitmap;
+.field private final c:Landroid/widget/ProgressBar;
 
-.field private final mView:Landroid/widget/ProgressBar;
+.field private d:Landroid/graphics/Bitmap;
 
 
 # direct methods
@@ -27,7 +27,7 @@
 
     fill-array-data v0, :array_a
 
-    sput-object v0, Landroid/support/v7/widget/AppCompatProgressBarHelper;->TINT_ATTRS:[I
+    sput-object v0, Landroid/support/v7/widget/AppCompatProgressBarHelper;->b:[I
 
     return-void
 
@@ -42,38 +42,320 @@
 
 .method constructor <init>(Landroid/widget/ProgressBar;Landroid/support/v7/widget/AppCompatDrawableManager;)V
     .registers 3
-    .param p1, "view"    # Landroid/widget/ProgressBar;
-    .param p2, "drawableManager"    # Landroid/support/v7/widget/AppCompatDrawableManager;
 
     .prologue
     .line 47
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 48
-    iput-object p1, p0, Landroid/support/v7/widget/AppCompatProgressBarHelper;->mView:Landroid/widget/ProgressBar;
+    iput-object p1, p0, Landroid/support/v7/widget/AppCompatProgressBarHelper;->c:Landroid/widget/ProgressBar;
 
     .line 49
-    iput-object p2, p0, Landroid/support/v7/widget/AppCompatProgressBarHelper;->mDrawableManager:Landroid/support/v7/widget/AppCompatDrawableManager;
+    iput-object p2, p0, Landroid/support/v7/widget/AppCompatProgressBarHelper;->a:Landroid/support/v7/widget/AppCompatDrawableManager;
 
     .line 50
     return-void
 .end method
 
-.method private getDrawableShape()Landroid/graphics/drawable/shapes/Shape;
+.method private a(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    .registers 8
+
+    .prologue
+    const/16 v5, 0x2710
+
+    .line 123
+    instance-of v0, p1, Landroid/graphics/drawable/AnimationDrawable;
+
+    if-eqz v0, :cond_35
+
+    .line 124
+    check-cast p1, Landroid/graphics/drawable/AnimationDrawable;
+
+    .line 125
+    invoke-virtual {p1}, Landroid/graphics/drawable/AnimationDrawable;->getNumberOfFrames()I
+
+    move-result v2
+
+    .line 126
+    new-instance v0, Landroid/graphics/drawable/AnimationDrawable;
+
+    invoke-direct {v0}, Landroid/graphics/drawable/AnimationDrawable;-><init>()V
+
+    .line 127
+    invoke-virtual {p1}, Landroid/graphics/drawable/AnimationDrawable;->isOneShot()Z
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/AnimationDrawable;->setOneShot(Z)V
+
+    .line 129
+    const/4 v1, 0x0
+
+    :goto_19
+    if-ge v1, v2, :cond_31
+
+    .line 130
+    invoke-virtual {p1, v1}, Landroid/graphics/drawable/AnimationDrawable;->getFrame(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v3
+
+    const/4 v4, 0x1
+
+    invoke-direct {p0, v3, v4}, Landroid/support/v7/widget/AppCompatProgressBarHelper;->a(Landroid/graphics/drawable/Drawable;Z)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v3
+
+    .line 131
+    invoke-virtual {v3, v5}, Landroid/graphics/drawable/Drawable;->setLevel(I)Z
+
+    .line 132
+    invoke-virtual {p1, v1}, Landroid/graphics/drawable/AnimationDrawable;->getDuration(I)I
+
+    move-result v4
+
+    invoke-virtual {v0, v3, v4}, Landroid/graphics/drawable/AnimationDrawable;->addFrame(Landroid/graphics/drawable/Drawable;I)V
+
+    .line 129
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_19
+
+    .line 134
+    :cond_31
+    invoke-virtual {v0, v5}, Landroid/graphics/drawable/AnimationDrawable;->setLevel(I)Z
+
+    move-object p1, v0
+
+    .line 137
+    :cond_35
+    return-object p1
+.end method
+
+.method private a(Landroid/graphics/drawable/Drawable;Z)Landroid/graphics/drawable/Drawable;
+    .registers 11
+
+    .prologue
+    const/4 v2, 0x1
+
+    const/4 v1, 0x0
+
+    .line 74
+    instance-of v0, p1, Landroid/support/v4/graphics/drawable/DrawableWrapper;
+
+    if-eqz v0, :cond_1b
+
+    move-object v0, p1
+
+    .line 75
+    check-cast v0, Landroid/support/v4/graphics/drawable/DrawableWrapper;
+
+    invoke-interface {v0}, Landroid/support/v4/graphics/drawable/DrawableWrapper;->a()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    .line 76
+    if-eqz v0, :cond_19
+
+    .line 77
+    invoke-direct {p0, v0, p2}, Landroid/support/v7/widget/AppCompatProgressBarHelper;->a(Landroid/graphics/drawable/Drawable;Z)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v1
+
+    move-object v0, p1
+
+    .line 78
+    check-cast v0, Landroid/support/v4/graphics/drawable/DrawableWrapper;
+
+    invoke-interface {v0, v1}, Landroid/support/v4/graphics/drawable/DrawableWrapper;->a(Landroid/graphics/drawable/Drawable;)V
+
+    :cond_19
+    move-object v0, p1
+
+    .line 114
+    :cond_1a
+    :goto_1a
+    return-object v0
+
+    .line 80
+    :cond_1b
+    instance-of v0, p1, Landroid/graphics/drawable/LayerDrawable;
+
+    if-eqz v0, :cond_5a
+
+    .line 81
+    check-cast p1, Landroid/graphics/drawable/LayerDrawable;
+
+    .line 82
+    invoke-virtual {p1}, Landroid/graphics/drawable/LayerDrawable;->getNumberOfLayers()I
+
+    move-result v4
+
+    .line 83
+    new-array v5, v4, [Landroid/graphics/drawable/Drawable;
+
+    move v3, v1
+
+    .line 85
+    :goto_28
+    if-ge v3, v4, :cond_49
+
+    .line 86
+    invoke-virtual {p1, v3}, Landroid/graphics/drawable/LayerDrawable;->getId(I)I
+
+    move-result v0
+
+    .line 87
+    invoke-virtual {p1, v3}, Landroid/graphics/drawable/LayerDrawable;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v6
+
+    const v7, 0x102000d
+
+    if-eq v0, v7, :cond_3c
+
+    const v7, 0x102000f
+
+    if-ne v0, v7, :cond_47
+
+    :cond_3c
+    move v0, v2
+
+    :goto_3d
+    invoke-direct {p0, v6, v0}, Landroid/support/v7/widget/AppCompatProgressBarHelper;->a(Landroid/graphics/drawable/Drawable;Z)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    aput-object v0, v5, v3
+
+    .line 85
+    add-int/lit8 v0, v3, 0x1
+
+    move v3, v0
+
+    goto :goto_28
+
+    :cond_47
+    move v0, v1
+
+    .line 87
+    goto :goto_3d
+
+    .line 90
+    :cond_49
+    new-instance v0, Landroid/graphics/drawable/LayerDrawable;
+
+    invoke-direct {v0, v5}, Landroid/graphics/drawable/LayerDrawable;-><init>([Landroid/graphics/drawable/Drawable;)V
+
+    .line 92
+    :goto_4e
+    if-ge v1, v4, :cond_1a
+
+    .line 93
+    invoke-virtual {p1, v1}, Landroid/graphics/drawable/LayerDrawable;->getId(I)I
+
+    move-result v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/drawable/LayerDrawable;->setId(II)V
+
+    .line 92
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_4e
+
+    .line 98
+    :cond_5a
+    instance-of v0, p1, Landroid/graphics/drawable/BitmapDrawable;
+
+    if-eqz v0, :cond_19
+
+    .line 99
+    check-cast p1, Landroid/graphics/drawable/BitmapDrawable;
+
+    .line 100
+    invoke-virtual {p1}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    .line 101
+    iget-object v1, p0, Landroid/support/v7/widget/AppCompatProgressBarHelper;->d:Landroid/graphics/Bitmap;
+
+    if-nez v1, :cond_6a
+
+    .line 102
+    iput-object v0, p0, Landroid/support/v7/widget/AppCompatProgressBarHelper;->d:Landroid/graphics/Bitmap;
+
+    .line 105
+    :cond_6a
+    new-instance v1, Landroid/graphics/drawable/ShapeDrawable;
+
+    invoke-direct {p0}, Landroid/support/v7/widget/AppCompatProgressBarHelper;->b()Landroid/graphics/drawable/shapes/Shape;
+
+    move-result-object v3
+
+    invoke-direct {v1, v3}, Landroid/graphics/drawable/ShapeDrawable;-><init>(Landroid/graphics/drawable/shapes/Shape;)V
+
+    .line 106
+    new-instance v3, Landroid/graphics/BitmapShader;
+
+    sget-object v4, Landroid/graphics/Shader$TileMode;->REPEAT:Landroid/graphics/Shader$TileMode;
+
+    sget-object v5, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
+
+    invoke-direct {v3, v0, v4, v5}, Landroid/graphics/BitmapShader;-><init>(Landroid/graphics/Bitmap;Landroid/graphics/Shader$TileMode;Landroid/graphics/Shader$TileMode;)V
+
+    .line 108
+    invoke-virtual {v1}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+
+    .line 109
+    invoke-virtual {v1}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
+
+    move-result-object v0
+
+    invoke-virtual {p1}, Landroid/graphics/drawable/BitmapDrawable;->getPaint()Landroid/graphics/Paint;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/graphics/Paint;->getColorFilter()Landroid/graphics/ColorFilter;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
+
+    .line 110
+    if-eqz p2, :cond_9b
+
+    new-instance v0, Landroid/graphics/drawable/ClipDrawable;
+
+    const/4 v3, 0x3
+
+    invoke-direct {v0, v1, v3, v2}, Landroid/graphics/drawable/ClipDrawable;-><init>(Landroid/graphics/drawable/Drawable;II)V
+
+    goto :goto_1a
+
+    :cond_9b
+    move-object v0, v1
+
+    goto/16 :goto_1a
+.end method
+
+.method private b()Landroid/graphics/drawable/shapes/Shape;
     .registers 4
 
     .prologue
     const/4 v2, 0x0
 
     .line 141
-    const/16 v1, 0x8
+    const/16 v0, 0x8
 
-    new-array v0, v1, [F
+    new-array v0, v0, [F
 
     fill-array-data v0, :array_e
 
     .line 142
-    .local v0, "roundedCorners":[F
     new-instance v1, Landroid/graphics/drawable/shapes/RoundRectShape;
 
     invoke-direct {v1, v0, v2, v2}, Landroid/graphics/drawable/shapes/RoundRectShape;-><init>([FLandroid/graphics/RectF;[F)V
@@ -83,404 +365,70 @@
     .line 141
     :array_e
     .array-data 4
-        0x40a00000
-        0x40a00000
-        0x40a00000
-        0x40a00000
-        0x40a00000
-        0x40a00000
-        0x40a00000
-        0x40a00000
+        0x40a00000    # 5.0f
+        0x40a00000    # 5.0f
+        0x40a00000    # 5.0f
+        0x40a00000    # 5.0f
+        0x40a00000    # 5.0f
+        0x40a00000    # 5.0f
+        0x40a00000    # 5.0f
+        0x40a00000    # 5.0f
     .end array-data
-.end method
-
-.method private tileify(Landroid/graphics/drawable/Drawable;Z)Landroid/graphics/drawable/Drawable;
-    .registers 18
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
-    .param p2, "clip"    # Z
-
-    .prologue
-    .line 74
-    move-object/from16 v0, p1
-
-    instance-of v12, v0, Landroid/support/v4/graphics/drawable/DrawableWrapper;
-
-    if-eqz v12, :cond_20
-
-    move-object/from16 v12, p1
-
-    .line 75
-    check-cast v12, Landroid/support/v4/graphics/drawable/DrawableWrapper;
-
-    invoke-interface {v12}, Landroid/support/v4/graphics/drawable/DrawableWrapper;->getWrappedDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v7
-
-    .line 76
-    .local v7, "inner":Landroid/graphics/drawable/Drawable;
-    if-eqz v7, :cond_1d
-
-    .line 77
-    move/from16 v0, p2
-
-    invoke-direct {p0, v7, v0}, Landroid/support/v7/widget/AppCompatProgressBarHelper;->tileify(Landroid/graphics/drawable/Drawable;Z)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v7
-
-    move-object/from16 v12, p1
-
-    .line 78
-    check-cast v12, Landroid/support/v4/graphics/drawable/DrawableWrapper;
-
-    invoke-interface {v12, v7}, Landroid/support/v4/graphics/drawable/DrawableWrapper;->setWrappedDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .end local v7    # "inner":Landroid/graphics/drawable/Drawable;
-    :cond_1d
-    move-object/from16 v8, p1
-
-    .line 114
-    :cond_1f
-    :goto_1f
-    return-object v8
-
-    .line 80
-    :cond_20
-    move-object/from16 v0, p1
-
-    instance-of v12, v0, Landroid/graphics/drawable/LayerDrawable;
-
-    if-eqz v12, :cond_63
-
-    move-object/from16 v2, p1
-
-    .line 81
-    check-cast v2, Landroid/graphics/drawable/LayerDrawable;
-
-    .line 82
-    .local v2, "background":Landroid/graphics/drawable/LayerDrawable;
-    invoke-virtual {v2}, Landroid/graphics/drawable/LayerDrawable;->getNumberOfLayers()I
-
-    move-result v1
-
-    .line 83
-    .local v1, "N":I
-    new-array v9, v1, [Landroid/graphics/drawable/Drawable;
-
-    .line 85
-    .local v9, "outDrawables":[Landroid/graphics/drawable/Drawable;
-    const/4 v5, 0x0
-
-    .local v5, "i":I
-    :goto_31
-    if-ge v5, v1, :cond_51
-
-    .line 86
-    invoke-virtual {v2, v5}, Landroid/graphics/drawable/LayerDrawable;->getId(I)I
-
-    move-result v6
-
-    .line 87
-    .local v6, "id":I
-    invoke-virtual {v2, v5}, Landroid/graphics/drawable/LayerDrawable;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v13
-
-    const v12, 0x102000d
-
-    if-eq v6, v12, :cond_45
-
-    const v12, 0x102000f
-
-    if-ne v6, v12, :cond_4f
-
-    :cond_45
-    const/4 v12, 0x1
-
-    :goto_46
-    invoke-direct {p0, v13, v12}, Landroid/support/v7/widget/AppCompatProgressBarHelper;->tileify(Landroid/graphics/drawable/Drawable;Z)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v12
-
-    aput-object v12, v9, v5
-
-    .line 85
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_31
-
-    .line 87
-    :cond_4f
-    const/4 v12, 0x0
-
-    goto :goto_46
-
-    .line 90
-    .end local v6    # "id":I
-    :cond_51
-    new-instance v8, Landroid/graphics/drawable/LayerDrawable;
-
-    invoke-direct {v8, v9}, Landroid/graphics/drawable/LayerDrawable;-><init>([Landroid/graphics/drawable/Drawable;)V
-
-    .line 92
-    .local v8, "newBg":Landroid/graphics/drawable/LayerDrawable;
-    const/4 v5, 0x0
-
-    :goto_57
-    if-ge v5, v1, :cond_1f
-
-    .line 93
-    invoke-virtual {v2, v5}, Landroid/graphics/drawable/LayerDrawable;->getId(I)I
-
-    move-result v12
-
-    invoke-virtual {v8, v5, v12}, Landroid/graphics/drawable/LayerDrawable;->setId(II)V
-
-    .line 92
-    add-int/lit8 v5, v5, 0x1
-
-    goto :goto_57
-
-    .line 98
-    .end local v1    # "N":I
-    .end local v2    # "background":Landroid/graphics/drawable/LayerDrawable;
-    .end local v5    # "i":I
-    .end local v8    # "newBg":Landroid/graphics/drawable/LayerDrawable;
-    .end local v9    # "outDrawables":[Landroid/graphics/drawable/Drawable;
-    :cond_63
-    move-object/from16 v0, p1
-
-    instance-of v12, v0, Landroid/graphics/drawable/BitmapDrawable;
-
-    if-eqz v12, :cond_1d
-
-    move-object/from16 v3, p1
-
-    .line 99
-    check-cast v3, Landroid/graphics/drawable/BitmapDrawable;
-
-    .line 100
-    .local v3, "bitmapDrawable":Landroid/graphics/drawable/BitmapDrawable;
-    invoke-virtual {v3}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
-
-    move-result-object v11
-
-    .line 101
-    .local v11, "tileBitmap":Landroid/graphics/Bitmap;
-    iget-object v12, p0, Landroid/support/v7/widget/AppCompatProgressBarHelper;->mSampleTile:Landroid/graphics/Bitmap;
-
-    if-nez v12, :cond_77
-
-    .line 102
-    iput-object v11, p0, Landroid/support/v7/widget/AppCompatProgressBarHelper;->mSampleTile:Landroid/graphics/Bitmap;
-
-    .line 105
-    :cond_77
-    new-instance v10, Landroid/graphics/drawable/ShapeDrawable;
-
-    invoke-direct {p0}, Landroid/support/v7/widget/AppCompatProgressBarHelper;->getDrawableShape()Landroid/graphics/drawable/shapes/Shape;
-
-    move-result-object v12
-
-    invoke-direct {v10, v12}, Landroid/graphics/drawable/ShapeDrawable;-><init>(Landroid/graphics/drawable/shapes/Shape;)V
-
-    .line 106
-    .local v10, "shapeDrawable":Landroid/graphics/drawable/ShapeDrawable;
-    new-instance v4, Landroid/graphics/BitmapShader;
-
-    sget-object v12, Landroid/graphics/Shader$TileMode;->REPEAT:Landroid/graphics/Shader$TileMode;
-
-    sget-object v13, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
-
-    invoke-direct {v4, v11, v12, v13}, Landroid/graphics/BitmapShader;-><init>(Landroid/graphics/Bitmap;Landroid/graphics/Shader$TileMode;Landroid/graphics/Shader$TileMode;)V
-
-    .line 108
-    .local v4, "bitmapShader":Landroid/graphics/BitmapShader;
-    invoke-virtual {v10}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
-
-    move-result-object v12
-
-    invoke-virtual {v12, v4}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
-
-    .line 109
-    invoke-virtual {v10}, Landroid/graphics/drawable/ShapeDrawable;->getPaint()Landroid/graphics/Paint;
-
-    move-result-object v12
-
-    invoke-virtual {v3}, Landroid/graphics/drawable/BitmapDrawable;->getPaint()Landroid/graphics/Paint;
-
-    move-result-object v13
-
-    invoke-virtual {v13}, Landroid/graphics/Paint;->getColorFilter()Landroid/graphics/ColorFilter;
-
-    move-result-object v13
-
-    invoke-virtual {v12, v13}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
-
-    .line 110
-    if-eqz p2, :cond_a9
-
-    new-instance v12, Landroid/graphics/drawable/ClipDrawable;
-
-    const/4 v13, 0x3
-
-    const/4 v14, 0x1
-
-    invoke-direct {v12, v10, v13, v14}, Landroid/graphics/drawable/ClipDrawable;-><init>(Landroid/graphics/drawable/Drawable;II)V
-
-    move-object v10, v12
-
-    .end local v10    # "shapeDrawable":Landroid/graphics/drawable/ShapeDrawable;
-    :cond_a9
-    move-object v8, v10
-
-    goto/16 :goto_1f
-.end method
-
-.method private tileifyIndeterminate(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
-    .registers 10
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
-
-    .prologue
-    const/16 v7, 0x2710
-
-    .line 123
-    instance-of v5, p1, Landroid/graphics/drawable/AnimationDrawable;
-
-    if-eqz v5, :cond_36
-
-    move-object v1, p1
-
-    .line 124
-    check-cast v1, Landroid/graphics/drawable/AnimationDrawable;
-
-    .line 125
-    .local v1, "background":Landroid/graphics/drawable/AnimationDrawable;
-    invoke-virtual {v1}, Landroid/graphics/drawable/AnimationDrawable;->getNumberOfFrames()I
-
-    move-result v0
-
-    .line 126
-    .local v0, "N":I
-    new-instance v4, Landroid/graphics/drawable/AnimationDrawable;
-
-    invoke-direct {v4}, Landroid/graphics/drawable/AnimationDrawable;-><init>()V
-
-    .line 127
-    .local v4, "newBg":Landroid/graphics/drawable/AnimationDrawable;
-    invoke-virtual {v1}, Landroid/graphics/drawable/AnimationDrawable;->isOneShot()Z
-
-    move-result v5
-
-    invoke-virtual {v4, v5}, Landroid/graphics/drawable/AnimationDrawable;->setOneShot(Z)V
-
-    .line 129
-    const/4 v3, 0x0
-
-    .local v3, "i":I
-    :goto_1a
-    if-ge v3, v0, :cond_32
-
-    .line 130
-    invoke-virtual {v1, v3}, Landroid/graphics/drawable/AnimationDrawable;->getFrame(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v5
-
-    const/4 v6, 0x1
-
-    invoke-direct {p0, v5, v6}, Landroid/support/v7/widget/AppCompatProgressBarHelper;->tileify(Landroid/graphics/drawable/Drawable;Z)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
-
-    .line 131
-    .local v2, "frame":Landroid/graphics/drawable/Drawable;
-    invoke-virtual {v2, v7}, Landroid/graphics/drawable/Drawable;->setLevel(I)Z
-
-    .line 132
-    invoke-virtual {v1, v3}, Landroid/graphics/drawable/AnimationDrawable;->getDuration(I)I
-
-    move-result v5
-
-    invoke-virtual {v4, v2, v5}, Landroid/graphics/drawable/AnimationDrawable;->addFrame(Landroid/graphics/drawable/Drawable;I)V
-
-    .line 129
-    add-int/lit8 v3, v3, 0x1
-
-    goto :goto_1a
-
-    .line 134
-    .end local v2    # "frame":Landroid/graphics/drawable/Drawable;
-    :cond_32
-    invoke-virtual {v4, v7}, Landroid/graphics/drawable/AnimationDrawable;->setLevel(I)Z
-
-    .line 135
-    move-object p1, v4
-
-    .line 137
-    .end local v0    # "N":I
-    .end local v1    # "background":Landroid/graphics/drawable/AnimationDrawable;
-    .end local v3    # "i":I
-    .end local v4    # "newBg":Landroid/graphics/drawable/AnimationDrawable;
-    :cond_36
-    return-object p1
 .end method
 
 
 # virtual methods
-.method getSampleTime()Landroid/graphics/Bitmap;
+.method a()Landroid/graphics/Bitmap;
     .registers 2
 
     .prologue
     .line 146
-    iget-object v0, p0, Landroid/support/v7/widget/AppCompatProgressBarHelper;->mSampleTile:Landroid/graphics/Bitmap;
+    iget-object v0, p0, Landroid/support/v7/widget/AppCompatProgressBarHelper;->d:Landroid/graphics/Bitmap;
 
     return-object v0
 .end method
 
-.method loadFromAttributes(Landroid/util/AttributeSet;I)V
-    .registers 8
-    .param p1, "attrs"    # Landroid/util/AttributeSet;
-    .param p2, "defStyleAttr"    # I
+.method a(Landroid/util/AttributeSet;I)V
+    .registers 7
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
     .line 53
-    iget-object v2, p0, Landroid/support/v7/widget/AppCompatProgressBarHelper;->mView:Landroid/widget/ProgressBar;
+    iget-object v0, p0, Landroid/support/v7/widget/AppCompatProgressBarHelper;->c:Landroid/widget/ProgressBar;
 
-    invoke-virtual {v2}, Landroid/widget/ProgressBar;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Landroid/widget/ProgressBar;->getContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v0
 
-    sget-object v3, Landroid/support/v7/widget/AppCompatProgressBarHelper;->TINT_ATTRS:[I
+    sget-object v1, Landroid/support/v7/widget/AppCompatProgressBarHelper;->b:[I
 
-    invoke-static {v2, p1, v3, p2, v4}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroid/support/v7/widget/TintTypedArray;
+    invoke-static {v0, p1, v1, p2, v3}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroid/support/v7/widget/TintTypedArray;
 
     move-result-object v0
 
     .line 56
-    .local v0, "a":Landroid/support/v7/widget/TintTypedArray;
-    invoke-virtual {v0, v4}, Landroid/support/v7/widget/TintTypedArray;->getDrawableIfKnown(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0, v3}, Landroid/support/v7/widget/TintTypedArray;->getDrawableIfKnown(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     .line 57
-    .local v1, "drawable":Landroid/graphics/drawable/Drawable;
     if-eqz v1, :cond_1c
 
     .line 58
-    iget-object v2, p0, Landroid/support/v7/widget/AppCompatProgressBarHelper;->mView:Landroid/widget/ProgressBar;
+    iget-object v2, p0, Landroid/support/v7/widget/AppCompatProgressBarHelper;->c:Landroid/widget/ProgressBar;
 
-    invoke-direct {p0, v1}, Landroid/support/v7/widget/AppCompatProgressBarHelper;->tileifyIndeterminate(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    invoke-direct {p0, v1}, Landroid/support/v7/widget/AppCompatProgressBarHelper;->a(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v2, v3}, Landroid/widget/ProgressBar;->setIndeterminateDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v2, v1}, Landroid/widget/ProgressBar;->setIndeterminateDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 61
     :cond_1c
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    invoke-virtual {v0, v2}, Landroid/support/v7/widget/TintTypedArray;->getDrawableIfKnown(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/TintTypedArray;->getDrawableIfKnown(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
@@ -488,13 +436,13 @@
     if-eqz v1, :cond_2c
 
     .line 63
-    iget-object v2, p0, Landroid/support/v7/widget/AppCompatProgressBarHelper;->mView:Landroid/widget/ProgressBar;
+    iget-object v2, p0, Landroid/support/v7/widget/AppCompatProgressBarHelper;->c:Landroid/widget/ProgressBar;
 
-    invoke-direct {p0, v1, v4}, Landroid/support/v7/widget/AppCompatProgressBarHelper;->tileify(Landroid/graphics/drawable/Drawable;Z)Landroid/graphics/drawable/Drawable;
+    invoke-direct {p0, v1, v3}, Landroid/support/v7/widget/AppCompatProgressBarHelper;->a(Landroid/graphics/drawable/Drawable;Z)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v2, v3}, Landroid/widget/ProgressBar;->setProgressDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v2, v1}, Landroid/widget/ProgressBar;->setProgressDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 66
     :cond_2c

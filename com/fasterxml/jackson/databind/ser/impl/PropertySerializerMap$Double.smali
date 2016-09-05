@@ -3,17 +3,6 @@
 .source "PropertySerializerMap.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/ser/impl/PropertySerializerMap;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "Double"
-.end annotation
-
-
 # instance fields
 .field private final _serializer1:Lcom/fasterxml/jackson/databind/JsonSerializer;
     .annotation system Ldalvik/annotation/Signature;
@@ -79,10 +68,6 @@
 
     .prologue
     .line 213
-    .local p1, "type1":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p2, "serializer1":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<Ljava/lang/Object;>;"
-    .local p3, "type2":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p4, "serializer2":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<Ljava/lang/Object;>;"
     invoke-direct {p0}, Lcom/fasterxml/jackson/databind/ser/impl/PropertySerializerMap;-><init>()V
 
     .line 214
@@ -120,14 +105,11 @@
 
     .prologue
     .line 235
-    .local p1, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p2, "serializer":Lcom/fasterxml/jackson/databind/JsonSerializer;, "Lcom/fasterxml/jackson/databind/JsonSerializer<Ljava/lang/Object;>;"
-    const/4 v1, 0x2
+    const/4 v0, 0x2
 
-    new-array v0, v1, [Lcom/fasterxml/jackson/databind/ser/impl/PropertySerializerMap$TypeAndSerializer;
+    new-array v0, v0, [Lcom/fasterxml/jackson/databind/ser/impl/PropertySerializerMap$TypeAndSerializer;
 
     .line 236
-    .local v0, "ts":[Lcom/fasterxml/jackson/databind/ser/impl/PropertySerializerMap$TypeAndSerializer;
     const/4 v1, 0x0
 
     new-instance v2, Lcom/fasterxml/jackson/databind/ser/impl/PropertySerializerMap$TypeAndSerializer;
@@ -177,7 +159,6 @@
 
     .prologue
     .line 223
-    .local p1, "type":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/impl/PropertySerializerMap$Double;->_type1:Ljava/lang/Class;
 
     if-ne p1, v0, :cond_7

@@ -3,14 +3,6 @@
 .source "TreeTraversingParser.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/node/TreeTraversingParser$1;
-    }
-.end annotation
-
-
 # instance fields
 .field protected _closed:Z
 
@@ -26,7 +18,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/JsonNode;)V
     .registers 3
-    .param p1, "n"    # Lcom/fasterxml/jackson/databind/JsonNode;
 
     .prologue
     .line 65
@@ -39,8 +30,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/JsonNode;Lcom/fasterxml/jackson/core/ObjectCodec;)V
     .registers 5
-    .param p1, "n"    # Lcom/fasterxml/jackson/databind/JsonNode;
-    .param p2, "codec"    # Lcom/fasterxml/jackson/core/ObjectCodec;
 
     .prologue
     const/4 v1, 0x0
@@ -113,11 +102,6 @@
 # virtual methods
 .method protected _handleEOF()V
     .registers 1
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 406
@@ -129,11 +113,6 @@
 
 .method public close()V
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     const/4 v1, 0x0
@@ -191,12 +170,7 @@
 .end method
 
 .method protected currentNumericNode()Lcom/fasterxml/jackson/databind/JsonNode;
-    .registers 5
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
+    .registers 4
 
     .prologue
     .line 396
@@ -205,60 +179,57 @@
     move-result-object v0
 
     .line 397
-    .local v0, "n":Lcom/fasterxml/jackson/databind/JsonNode;
     if-eqz v0, :cond_c
 
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JsonNode;->isNumber()Z
 
-    move-result v2
+    move-result v1
 
-    if-nez v2, :cond_34
+    if-nez v1, :cond_34
 
     .line 398
     :cond_c
     if-nez v0, :cond_2f
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 399
-    .local v1, "t":Lcom/fasterxml/jackson/core/JsonToken;
     :goto_f
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "Current token ("
+    const-string/jumbo v2, "Current token ("
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string/jumbo v3, ") not numeric, can not use numeric value accessors"
+    const-string/jumbo v1, ") not numeric, can not use numeric value accessors"
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {p0, v2}, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->_constructError(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonParseException;
+    invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->_constructError(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonParseException;
 
-    move-result-object v2
+    move-result-object v0
 
-    throw v2
+    throw v0
 
     .line 398
-    .end local v1    # "t":Lcom/fasterxml/jackson/core/JsonToken;
     :cond_2f
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JsonNode;->asToken()Lcom/fasterxml/jackson/core/JsonToken;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_f
 
@@ -269,12 +240,6 @@
 
 .method public getBigIntegerValue()Ljava/math/BigInteger;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 287
@@ -290,80 +255,63 @@
 .end method
 
 .method public getBinaryValue(Lcom/fasterxml/jackson/core/Base64Variant;)[B
-    .registers 6
-    .param p1, "b64variant"    # Lcom/fasterxml/jackson/core/Base64Variant;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
+    .registers 4
 
     .prologue
     .line 348
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->currentNode()Lcom/fasterxml/jackson/databind/JsonNode;
 
-    move-result-object v1
-
-    .line 349
-    .local v1, "n":Lcom/fasterxml/jackson/databind/JsonNode;
-    if-eqz v1, :cond_23
-
-    .line 350
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/JsonNode;->binaryValue()[B
-
     move-result-object v0
 
+    .line 349
+    if-eqz v0, :cond_23
+
+    .line 350
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JsonNode;->binaryValue()[B
+
+    move-result-object v1
+
     .line 352
-    .local v0, "data":[B
-    if-eqz v0, :cond_d
+    if-eqz v1, :cond_e
+
+    move-object v0, v1
 
     .line 364
-    .end local v0    # "data":[B
-    .end local v1    # "n":Lcom/fasterxml/jackson/databind/JsonNode;
-    :goto_c
+    :goto_d
     return-object v0
 
     .line 356
-    .restart local v0    # "data":[B
-    .restart local v1    # "n":Lcom/fasterxml/jackson/databind/JsonNode;
-    :cond_d
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/JsonNode;->isPojo()Z
+    :cond_e
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JsonNode;->isPojo()Z
 
-    move-result v3
+    move-result v1
 
-    if-eqz v3, :cond_23
+    if-eqz v1, :cond_23
 
     .line 357
-    check-cast v1, Lcom/fasterxml/jackson/databind/node/POJONode;
+    check-cast v0, Lcom/fasterxml/jackson/databind/node/POJONode;
 
-    .end local v1    # "n":Lcom/fasterxml/jackson/databind/JsonNode;
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/node/POJONode;->getPojo()Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/node/POJONode;->getPojo()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 358
-    .local v2, "ob":Ljava/lang/Object;
-    instance-of v3, v2, [B
+    instance-of v1, v0, [B
 
-    if-eqz v3, :cond_23
+    if-eqz v1, :cond_23
 
     .line 359
-    check-cast v2, [B
+    check-cast v0, [B
 
-    .end local v2    # "ob":Ljava/lang/Object;
-    check-cast v2, [B
+    check-cast v0, [B
 
-    move-object v0, v2
-
-    goto :goto_c
+    goto :goto_d
 
     .line 364
-    .end local v0    # "data":[B
     :cond_23
     const/4 v0, 0x0
 
-    goto :goto_c
+    goto :goto_d
 .end method
 
 .method public getCodec()Lcom/fasterxml/jackson/core/ObjectCodec;
@@ -412,12 +360,6 @@
 
 .method public getDecimalValue()Ljava/math/BigDecimal;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 292
@@ -434,12 +376,6 @@
 
 .method public getDoubleValue()D
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 297
@@ -459,9 +395,9 @@
 
     .prologue
     .line 323
-    iget-boolean v1, p0, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->_closed:Z
+    iget-boolean v0, p0, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->_closed:Z
 
-    if-nez v1, :cond_24
+    if-nez v0, :cond_24
 
     .line 324
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->currentNode()Lcom/fasterxml/jackson/databind/JsonNode;
@@ -469,7 +405,6 @@
     move-result-object v0
 
     .line 325
-    .local v0, "n":Lcom/fasterxml/jackson/databind/JsonNode;
     if-eqz v0, :cond_24
 
     .line 326
@@ -482,17 +417,15 @@
     .line 327
     check-cast v0, Lcom/fasterxml/jackson/databind/node/POJONode;
 
-    .end local v0    # "n":Lcom/fasterxml/jackson/databind/JsonNode;
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/node/POJONode;->getPojo()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 334
     :goto_16
-    return-object v1
+    return-object v0
 
     .line 329
-    .restart local v0    # "n":Lcom/fasterxml/jackson/databind/JsonNode;
     :cond_17
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JsonNode;->isBinary()Z
 
@@ -503,28 +436,21 @@
     .line 330
     check-cast v0, Lcom/fasterxml/jackson/databind/node/BinaryNode;
 
-    .end local v0    # "n":Lcom/fasterxml/jackson/databind/JsonNode;
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/node/BinaryNode;->binaryValue()[B
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_16
 
     .line 334
     :cond_24
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_16
 .end method
 
 .method public getFloatValue()F
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 302
@@ -543,12 +469,6 @@
 
 .method public getIntValue()I
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 312
@@ -565,12 +485,6 @@
 
 .method public getLongValue()J
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 307
@@ -586,13 +500,7 @@
 .end method
 
 .method public getNumberType()Lcom/fasterxml/jackson/core/JsonParser$NumberType;
-    .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
+    .registers 2
 
     .prologue
     .line 280
@@ -601,30 +509,23 @@
     move-result-object v0
 
     .line 281
-    .local v0, "n":Lcom/fasterxml/jackson/databind/JsonNode;
     if-nez v0, :cond_8
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_7
-    return-object v1
+    return-object v0
 
     :cond_8
     invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JsonNode;->numberType()Lcom/fasterxml/jackson/core/JsonParser$NumberType;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_7
 .end method
 
 .method public getNumberValue()Ljava/lang/Number;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 317
@@ -650,56 +551,56 @@
 .end method
 
 .method public getText()Ljava/lang/String;
-    .registers 5
+    .registers 4
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 226
-    iget-boolean v2, p0, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->_closed:Z
+    iget-boolean v1, p0, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->_closed:Z
 
-    if-eqz v2, :cond_6
+    if-eqz v1, :cond_6
 
     .line 245
     :cond_5
     :goto_5
-    return-object v1
+    return-object v0
 
     .line 230
     :cond_6
-    sget-object v2, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser$1;->$SwitchMap$com$fasterxml$jackson$core$JsonToken:[I
+    sget-object v1, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser$1;->$SwitchMap$com$fasterxml$jackson$core$JsonToken:[I
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    invoke-virtual {v3}, Lcom/fasterxml/jackson/core/JsonToken;->ordinal()I
+    invoke-virtual {v2}, Lcom/fasterxml/jackson/core/JsonToken;->ordinal()I
 
-    move-result v3
+    move-result v2
 
-    aget v2, v2, v3
+    aget v1, v1, v2
 
-    packed-switch v2, :pswitch_data_4c
+    packed-switch v1, :pswitch_data_4c
 
     .line 245
     :cond_13
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
-
-    if-eqz v2, :cond_5
-
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/JsonToken;->asString()Ljava/lang/String;
+    if-eqz v1, :cond_5
 
-    move-result-object v1
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->_currToken:Lcom/fasterxml/jackson/core/JsonToken;
+
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/JsonToken;->asString()Ljava/lang/String;
+
+    move-result-object v0
 
     goto :goto_5
 
     .line 232
     :pswitch_1e
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->_nodeCursor:Lcom/fasterxml/jackson/databind/node/NodeCursor;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->_nodeCursor:Lcom/fasterxml/jackson/databind/node/NodeCursor;
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/node/NodeCursor;->getCurrentName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/node/NodeCursor;->getCurrentName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_5
 
@@ -707,11 +608,11 @@
     :pswitch_25
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->currentNode()Lcom/fasterxml/jackson/databind/JsonNode;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/JsonNode;->textValue()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JsonNode;->textValue()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_5
 
@@ -719,15 +620,15 @@
     :pswitch_2e
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->currentNode()Lcom/fasterxml/jackson/databind/JsonNode;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/JsonNode;->numberValue()Ljava/lang/Number;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JsonNode;->numberValue()Ljava/lang/Number;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_5
 
@@ -735,22 +636,21 @@
     :pswitch_3b
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->currentNode()Lcom/fasterxml/jackson/databind/JsonNode;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 240
-    .local v0, "n":Lcom/fasterxml/jackson/databind/JsonNode;
-    if-eqz v0, :cond_13
+    if-eqz v1, :cond_13
 
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JsonNode;->isBinary()Z
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/JsonNode;->isBinary()Z
 
     move-result v2
 
     if-eqz v2, :cond_13
 
     .line 242
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/JsonNode;->asText()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/JsonNode;->asText()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_5
 
@@ -767,12 +667,6 @@
 
 .method public getTextCharacters()[C
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 251
@@ -789,12 +683,6 @@
 
 .method public getTextLength()I
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 256
@@ -811,12 +699,6 @@
 
 .method public getTextOffset()I
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     .line 261
@@ -857,12 +739,6 @@
 
 .method public nextToken()Lcom/fasterxml/jackson/core/JsonToken;
     .registers 4
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     const/4 v0, 0x0
@@ -1050,7 +926,6 @@
 
 .method public overrideCurrentName(Ljava/lang/String;)V
     .registers 3
-    .param p1, "name"    # Ljava/lang/String;
 
     .prologue
     .line 197
@@ -1070,43 +945,33 @@
 
 .method public readBinaryValue(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/io/OutputStream;)I
     .registers 6
-    .param p1, "b64variant"    # Lcom/fasterxml/jackson/core/Base64Variant;
-    .param p2, "out"    # Ljava/io/OutputStream;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 372
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/node/TreeTraversingParser;->getBinaryValue(Lcom/fasterxml/jackson/core/Base64Variant;)[B
 
-    move-result-object v0
+    move-result-object v1
 
     .line 373
-    .local v0, "data":[B
-    if-eqz v0, :cond_c
+    if-eqz v1, :cond_c
 
     .line 374
-    array-length v2, v0
+    array-length v2, v1
 
-    invoke-virtual {p2, v0, v1, v2}, Ljava/io/OutputStream;->write([BII)V
+    invoke-virtual {p2, v1, v0, v2}, Ljava/io/OutputStream;->write([BII)V
 
     .line 375
-    array-length v1, v0
+    array-length v0, v1
 
     .line 377
     :cond_c
-    return v1
+    return v0
 .end method
 
 .method public setCodec(Lcom/fasterxml/jackson/core/ObjectCodec;)V
     .registers 2
-    .param p1, "c"    # Lcom/fasterxml/jackson/core/ObjectCodec;
 
     .prologue
     .line 84
@@ -1118,12 +983,6 @@
 
 .method public skipChildren()Lcom/fasterxml/jackson/core/JsonParser;
     .registers 4
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonParseException;
-        }
-    .end annotation
 
     .prologue
     const/4 v2, 0x0

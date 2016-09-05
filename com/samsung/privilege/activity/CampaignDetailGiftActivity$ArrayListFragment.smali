@@ -3,19 +3,8 @@
 .source "CampaignDetailGiftActivity.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "ArrayListFragment"
-.end annotation
-
-
 # instance fields
-.field image_url:Ljava/lang/String;
+.field a:Ljava/lang/String;
 
 
 # direct methods
@@ -23,35 +12,32 @@
     .registers 1
 
     .prologue
-    .line 1677
+    .line 1734
     invoke-direct {p0}, Landroid/support/v4/app/Fragment;-><init>()V
 
     return-void
 .end method
 
-.method static newInstance(Ljava/lang/String;)Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;
+.method static a(Ljava/lang/String;)Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;
     .registers 7
-    .param p0, "image_url"    # Ljava/lang/String;
 
     .prologue
-    .line 1685
-    new-instance v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;
+    .line 1742
+    new-instance v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;
 
-    invoke-direct {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;-><init>()V
+    invoke-direct {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;-><init>()V
 
-    .line 1688
-    .local v1, "f":Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;
-    new-instance v0, Landroid/os/Bundle;
+    .line 1745
+    new-instance v1, Landroid/os/Bundle;
 
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 1689
-    .local v0, "args":Landroid/os/Bundle;
+    .line 1746
     const-string/jumbo v2, "image_url"
 
-    invoke-virtual {v0, v2, p0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1, v2, p0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1690
+    .line 1747
     const-string/jumbo v2, "time"
 
     new-instance v3, Ljava/util/Date;
@@ -62,26 +48,25 @@
 
     move-result-wide v4
 
-    invoke-virtual {v0, v2, v4, v5}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
+    invoke-virtual {v1, v2, v4, v5}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 1691
-    invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;->setArguments(Landroid/os/Bundle;)V
+    .line 1748
+    invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;->setArguments(Landroid/os/Bundle;)V
 
-    .line 1693
-    return-object v1
+    .line 1750
+    return-object v0
 .end method
 
 
 # virtual methods
 .method public onCreate(Landroid/os/Bundle;)V
     .registers 4
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 1701
+    .line 1758
     invoke-super {p0, p1}, Landroid/support/v4/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 1702
+    .line 1759
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
@@ -99,12 +84,12 @@
     move-result-object v0
 
     :goto_14
-    iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;->image_url:Ljava/lang/String;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;->a:Ljava/lang/String;
 
-    .line 1703
+    .line 1760
     return-void
 
-    .line 1702
+    .line 1759
     :cond_17
     const-string/jumbo v0, ""
 
@@ -113,60 +98,55 @@
 
 .method public onCreateView(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;
     .registers 8
-    .param p1, "inflater"    # Landroid/view/LayoutInflater;
-    .param p2, "container"    # Landroid/view/ViewGroup;
-    .param p3, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
-    .line 1711
-    const v2, 0x7f040124
+    .line 1768
+    const v0, 0x7f040132
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {p1, v2, p2, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {p1, v0, p2, v1}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v1
 
-    .line 1713
-    .local v1, "v":Landroid/view/View;
-    const v2, 0x7f1005dd
+    .line 1770
+    const v0, 0x7f100618
 
-    invoke-virtual {v1, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 1715
-    .local v0, "ivCampaign":Landroid/widget/ImageView;
+    .line 1772
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/bumptech/glide/Glide;->with(Landroid/support/v4/app/FragmentActivity;)Lcom/bumptech/glide/RequestManager;
+    invoke-static {v2}, Lcom/bumptech/glide/Glide;->a(Landroid/support/v4/app/FragmentActivity;)Lcom/bumptech/glide/RequestManager;
 
     move-result-object v2
 
-    iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;->image_url:Ljava/lang/String;
+    iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;->a:Ljava/lang/String;
 
-    invoke-virtual {v2, v3}, Lcom/bumptech/glide/RequestManager;->load(Ljava/lang/String;)Lcom/bumptech/glide/DrawableTypeRequest;
-
-    move-result-object v2
-
-    const v3, 0x7f0202cd
-
-    invoke-virtual {v2, v3}, Lcom/bumptech/glide/DrawableTypeRequest;->placeholder(I)Lcom/bumptech/glide/DrawableRequestBuilder;
+    invoke-virtual {v2, v3}, Lcom/bumptech/glide/RequestManager;->a(Ljava/lang/String;)Lcom/bumptech/glide/DrawableTypeRequest;
 
     move-result-object v2
 
-    sget-object v3, Lcom/bumptech/glide/load/engine/DiskCacheStrategy;->ALL:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
+    const v3, 0x7f0202d2
 
-    invoke-virtual {v2, v3}, Lcom/bumptech/glide/DrawableRequestBuilder;->diskCacheStrategy(Lcom/bumptech/glide/load/engine/DiskCacheStrategy;)Lcom/bumptech/glide/DrawableRequestBuilder;
+    invoke-virtual {v2, v3}, Lcom/bumptech/glide/DrawableTypeRequest;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 
     move-result-object v2
 
-    invoke-virtual {v2, v0}, Lcom/bumptech/glide/DrawableRequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
+    sget-object v3, Lcom/bumptech/glide/load/engine/DiskCacheStrategy;->a:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
 
-    .line 1717
+    invoke-virtual {v2, v3}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Lcom/bumptech/glide/load/engine/DiskCacheStrategy;)Lcom/bumptech/glide/DrawableRequestBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
+
+    .line 1774
     return-object v1
 .end method

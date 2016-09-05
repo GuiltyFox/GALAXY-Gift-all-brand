@@ -67,7 +67,6 @@
 
 .method public getType(Lcom/fasterxml/jackson/databind/type/TypeBindings;)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 3
-    .param p1, "context"    # Lcom/fasterxml/jackson/databind/type/TypeBindings;
 
     .prologue
     .line 60
@@ -96,7 +95,6 @@
 
     .prologue
     .line 23
-    .local p1, "acls":Ljava/lang/Class;, "Ljava/lang/Class<TA;>;"
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/databind/introspect/Annotated;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
 
     move-result-object v0
@@ -135,7 +133,6 @@
 
 .method public final withFallBackAnnotationsFrom(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/databind/introspect/Annotated;
     .registers 4
-    .param p1, "annotated"    # Lcom/fasterxml/jackson/databind/introspect/Annotated;
 
     .prologue
     .line 37

@@ -3,17 +3,6 @@
 .source "PropertyValue.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/impl/PropertyValue;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x18
-    name = "Map"
-.end annotation
-
-
 # instance fields
 .field final _key:Ljava/lang/Object;
 
@@ -21,9 +10,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/deser/impl/PropertyValue;Ljava/lang/Object;Ljava/lang/Object;)V
     .registers 4
-    .param p1, "next"    # Lcom/fasterxml/jackson/databind/deser/impl/PropertyValue;
-    .param p2, "value"    # Ljava/lang/Object;
-    .param p3, "key"    # Ljava/lang/Object;
 
     .prologue
     .line 106
@@ -40,19 +26,11 @@
 # virtual methods
 .method public assign(Ljava/lang/Object;)V
     .registers 4
-    .param p1, "bean"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 115
     check-cast p1, Ljava/util/Map;
 
-    .end local p1    # "bean":Ljava/lang/Object;
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/PropertyValue$Map;->_key:Ljava/lang/Object;
 
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/impl/PropertyValue$Map;->value:Ljava/lang/Object;

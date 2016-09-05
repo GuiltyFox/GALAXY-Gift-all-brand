@@ -3,19 +3,8 @@
 .source "CampaignGroupModel.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/bzbs/marketplace/model/marketplace/menu/CampaignGroupModel$CampaignsEntity;
-    }
-.end annotation
-
-.annotation runtime Lorg/parceler/Parcel;
-.end annotation
-
-
 # instance fields
-.field campaigns:Ljava/util/ArrayList;
+.field public campaigns:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList",
@@ -26,17 +15,17 @@
     .end annotation
 .end field
 
-.field id:I
+.field public id:I
 
-.field image_url:Ljava/lang/String;
+.field public image_url:Ljava/lang/String;
 
-.field mode:Ljava/lang/String;
+.field public mode:Ljava/lang/String;
 
-.field name:Ljava/lang/String;
+.field public name:Ljava/lang/String;
 
-.field name_en:Ljava/lang/String;
+.field public name_en:Ljava/lang/String;
 
-.field name_th:Ljava/lang/String;
+.field public name_th:Ljava/lang/String;
 
 
 # direct methods
@@ -145,7 +134,6 @@
 
     .prologue
     .line 50
-    .local p1, "campaigns":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/bzbs/marketplace/model/marketplace/list/MarketPlaceListModel;>;"
     iput-object p1, p0, Lcom/bzbs/marketplace/model/marketplace/menu/CampaignGroupModel;->campaigns:Ljava/util/ArrayList;
 
     .line 51
@@ -154,7 +142,6 @@
 
 .method public setId(I)V
     .registers 2
-    .param p1, "id"    # I
 
     .prologue
     .line 34
@@ -166,7 +153,6 @@
 
 .method public setImage_url(Ljava/lang/String;)V
     .registers 2
-    .param p1, "image_url"    # Ljava/lang/String;
 
     .prologue
     .line 38
@@ -178,7 +164,6 @@
 
 .method public setMode(Ljava/lang/String;)V
     .registers 2
-    .param p1, "mode"    # Ljava/lang/String;
 
     .prologue
     .line 58
@@ -190,7 +175,6 @@
 
 .method public setName(Ljava/lang/String;)V
     .registers 2
-    .param p1, "name"    # Ljava/lang/String;
 
     .prologue
     .line 46
@@ -202,7 +186,6 @@
 
 .method public setName_en(Ljava/lang/String;)V
     .registers 2
-    .param p1, "name_en"    # Ljava/lang/String;
 
     .prologue
     .line 42
@@ -214,7 +197,6 @@
 
 .method public setName_th(Ljava/lang/String;)V
     .registers 2
-    .param p1, "name_th"    # Ljava/lang/String;
 
     .prologue
     .line 54

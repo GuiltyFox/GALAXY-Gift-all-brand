@@ -51,7 +51,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/BeanDescription;)V
     .registers 2
-    .param p1, "beanDesc"    # Lcom/fasterxml/jackson/databind/BeanDescription;
 
     .prologue
     .line 76
@@ -66,7 +65,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/ser/BeanSerializerBuilder;)V
     .registers 3
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/ser/BeanSerializerBuilder;
 
     .prologue
     .line 83
@@ -115,41 +113,40 @@
 
     .prologue
     .line 175
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/ser/BeanSerializerBuilder;->_properties:Ljava/util/List;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/BeanSerializerBuilder;->_properties:Ljava/util/List;
 
-    if-eqz v1, :cond_c
+    if-eqz v0, :cond_c
 
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/ser/BeanSerializerBuilder;->_properties:Ljava/util/List;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/BeanSerializerBuilder;->_properties:Ljava/util/List;
 
-    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_26
+    if-eqz v0, :cond_27
 
     .line 176
     :cond_c
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/ser/BeanSerializerBuilder;->_anyGetter:Lcom/fasterxml/jackson/databind/ser/AnyGetterWriter;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/BeanSerializerBuilder;->_anyGetter:Lcom/fasterxml/jackson/databind/ser/AnyGetterWriter;
 
-    if-nez v1, :cond_16
+    if-nez v0, :cond_16
 
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/ser/BeanSerializerBuilder;->_objectIdWriter:Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/BeanSerializerBuilder;->_objectIdWriter:Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;
 
-    if-nez v1, :cond_16
+    if-nez v0, :cond_16
 
     .line 177
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 183
     :goto_15
-    return-object v1
+    return-object v0
 
     .line 179
     :cond_16
     sget-object v0, Lcom/fasterxml/jackson/databind/ser/BeanSerializerBuilder;->NO_PROPERTIES:[Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
 
     .line 183
-    .local v0, "properties":[Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
     :goto_18
     new-instance v1, Lcom/fasterxml/jackson/databind/ser/BeanSerializer;
 
@@ -163,28 +160,28 @@
 
     invoke-direct {v1, v2, p0, v0, v3}, Lcom/fasterxml/jackson/databind/ser/BeanSerializer;-><init>(Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/ser/BeanSerializerBuilder;[Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;[Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;)V
 
+    move-object v0, v1
+
     goto :goto_15
 
     .line 181
-    .end local v0    # "properties":[Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
-    :cond_26
+    :cond_27
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/BeanSerializerBuilder;->_properties:Ljava/util/List;
+
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/ser/BeanSerializerBuilder;->_properties:Ljava/util/List;
 
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/ser/BeanSerializerBuilder;->_properties:Ljava/util/List;
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    invoke-interface {v2}, Ljava/util/List;->size()I
+    move-result v1
 
-    move-result v2
+    new-array v1, v1, [Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
 
-    new-array v2, v2, [Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
-
-    invoke-interface {v1, v2}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-interface {v0, v1}, Ljava/util/List;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, [Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
 
-    .restart local v0    # "properties":[Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
     goto :goto_18
 .end method
 
@@ -329,7 +326,6 @@
 
 .method public setAnyGetter(Lcom/fasterxml/jackson/databind/ser/AnyGetterWriter;)V
     .registers 2
-    .param p1, "anyGetter"    # Lcom/fasterxml/jackson/databind/ser/AnyGetterWriter;
 
     .prologue
     .line 113
@@ -341,7 +337,6 @@
 
 .method protected setConfig(Lcom/fasterxml/jackson/databind/SerializationConfig;)V
     .registers 2
-    .param p1, "config"    # Lcom/fasterxml/jackson/databind/SerializationConfig;
 
     .prologue
     .line 101
@@ -353,7 +348,6 @@
 
 .method public setFilterId(Ljava/lang/Object;)V
     .registers 2
-    .param p1, "filterId"    # Ljava/lang/Object;
 
     .prologue
     .line 117
@@ -365,7 +359,6 @@
 
 .method public setFilteredProperties([Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;)V
     .registers 2
-    .param p1, "properties"    # [Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
 
     .prologue
     .line 109
@@ -377,7 +370,6 @@
 
 .method public setObjectIdWriter(Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;)V
     .registers 2
-    .param p1, "w"    # Lcom/fasterxml/jackson/databind/ser/impl/ObjectIdWriter;
 
     .prologue
     .line 129
@@ -401,7 +393,6 @@
 
     .prologue
     .line 105
-    .local p1, "properties":Ljava/util/List;, "Ljava/util/List<Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;>;"
     iput-object p1, p0, Lcom/fasterxml/jackson/databind/ser/BeanSerializerBuilder;->_properties:Ljava/util/List;
 
     .line 106
@@ -410,7 +401,6 @@
 
 .method public setTypeId(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)V
     .registers 5
-    .param p1, "idProp"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
     .prologue
     .line 122

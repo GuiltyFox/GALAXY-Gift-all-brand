@@ -20,7 +20,7 @@
 
 
 # static fields
-.field private static final NULL_ENCODER:Lcom/bumptech/glide/load/resource/NullEncoder;
+.field private static final a:Lcom/bumptech/glide/load/resource/NullEncoder;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/resource/NullEncoder",
@@ -40,7 +40,7 @@
 
     invoke-direct {v0}, Lcom/bumptech/glide/load/resource/NullEncoder;-><init>()V
 
-    sput-object v0, Lcom/bumptech/glide/load/resource/NullEncoder;->NULL_ENCODER:Lcom/bumptech/glide/load/resource/NullEncoder;
+    sput-object v0, Lcom/bumptech/glide/load/resource/NullEncoder;->a:Lcom/bumptech/glide/load/resource/NullEncoder;
 
     return-void
 .end method
@@ -50,13 +50,12 @@
 
     .prologue
     .line 12
-    .local p0, "this":Lcom/bumptech/glide/load/resource/NullEncoder;, "Lcom/bumptech/glide/load/resource/NullEncoder<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static get()Lcom/bumptech/glide/load/Encoder;
+.method public static b()Lcom/bumptech/glide/load/Encoder;
     .registers 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -70,16 +69,25 @@
 
     .prologue
     .line 22
-    sget-object v0, Lcom/bumptech/glide/load/resource/NullEncoder;->NULL_ENCODER:Lcom/bumptech/glide/load/resource/NullEncoder;
+    sget-object v0, Lcom/bumptech/glide/load/resource/NullEncoder;->a:Lcom/bumptech/glide/load/resource/NullEncoder;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public encode(Ljava/lang/Object;Ljava/io/OutputStream;)Z
+.method public a()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 33
+    const-string/jumbo v0, ""
+
+    return-object v0
+.end method
+
+.method public a(Ljava/lang/Object;Ljava/io/OutputStream;)Z
     .registers 4
-    .param p2, "os"    # Ljava/io/OutputStream;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -90,20 +98,7 @@
 
     .prologue
     .line 28
-    .local p0, "this":Lcom/bumptech/glide/load/resource/NullEncoder;, "Lcom/bumptech/glide/load/resource/NullEncoder<TT;>;"
-    .local p1, "data":Ljava/lang/Object;, "TT;"
     const/4 v0, 0x0
 
     return v0
-.end method
-
-.method public getId()Ljava/lang/String;
-    .registers 2
-
-    .prologue
-    .line 33
-    .local p0, "this":Lcom/bumptech/glide/load/resource/NullEncoder;, "Lcom/bumptech/glide/load/resource/NullEncoder<TT;>;"
-    const-string/jumbo v0, ""
-
-    return-object v0
 .end method

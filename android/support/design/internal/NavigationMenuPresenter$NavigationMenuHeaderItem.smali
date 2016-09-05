@@ -6,17 +6,6 @@
 .implements Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuItem;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/internal/NavigationMenuPresenter;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "NavigationMenuHeaderItem"
-.end annotation
-
-
 # direct methods
 .method private constructor <init>()V
     .registers 1
@@ -30,7 +19,6 @@
 
 .method synthetic constructor <init>(Landroid/support/design/internal/NavigationMenuPresenter$1;)V
     .registers 2
-    .param p1, "x0"    # Landroid/support/design/internal/NavigationMenuPresenter$1;
 
     .prologue
     .line 647

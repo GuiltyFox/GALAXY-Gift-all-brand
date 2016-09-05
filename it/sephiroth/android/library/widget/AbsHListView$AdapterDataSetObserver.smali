@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lit/sephiroth/android/library/widget/AbsHListView;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
-    name = "AdapterDataSetObserver"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lit/sephiroth/android/library/widget/AdapterView",
@@ -24,7 +15,7 @@
 
 
 # instance fields
-.field final synthetic this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+.field final synthetic a:Lit/sephiroth/android/library/widget/AbsHListView;
 
 
 # direct methods
@@ -33,7 +24,7 @@
 
     .prologue
     .line 5359
-    iput-object p1, p0, Lit/sephiroth/android/library/widget/AbsHListView$AdapterDataSetObserver;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iput-object p1, p0, Lit/sephiroth/android/library/widget/AbsHListView$AdapterDataSetObserver;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
     invoke-direct {p0, p1}, Lit/sephiroth/android/library/widget/AdapterView$AdapterDataSetObserver;-><init>(Lit/sephiroth/android/library/widget/AdapterView;)V
 
@@ -42,16 +33,6 @@
 
 
 # virtual methods
-.method public bridge synthetic clearSavedState()V
-    .registers 1
-
-    .prologue
-    .line 5359
-    invoke-super {p0}, Lit/sephiroth/android/library/widget/AdapterView$AdapterDataSetObserver;->clearSavedState()V
-
-    return-void
-.end method
-
 .method public onChanged()V
     .registers 1
 

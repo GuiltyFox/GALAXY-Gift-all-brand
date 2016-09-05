@@ -34,7 +34,7 @@
 
 .field public CategoryID:Ljava/lang/String;
     .annotation runtime Lcom/google/gson/annotations/SerializedName;
-        value = "CategoryID"
+        a = "CategoryID"
     .end annotation
 .end field
 
@@ -165,6 +165,8 @@
 
 .field public Website:Ljava/lang/String;
 
+.field a:Ljava/lang/String;
+
 .field public campaignExtra:Lcom/bzbs/bean/CampaignExtra;
 
 .field public campaignExtra_video_download_uri:Ljava/lang/String;
@@ -176,8 +178,6 @@
 .field public id:I
 
 .field public isFromNoti:Z
-
-.field jsonExtra:Ljava/lang/String;
 
 .field public link:Ljava/lang/String;
 
@@ -291,7 +291,7 @@
     .line 119
     const-string/jumbo v0, ""
 
-    iput-object v0, p0, Lcom/bzbs/bean/CampaignView;->jsonExtra:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/bean/CampaignView;->a:Ljava/lang/String;
 
     .line 235
     new-instance v0, Ljava/util/ArrayList;
@@ -305,1028 +305,1013 @@
 .end method
 
 .method public constructor <init>(Lorg/json/JSONObject;)V
-    .registers 10
-    .param p1, "jsonObject"    # Lorg/json/JSONObject;
+    .registers 8
 
     .prologue
-    const/4 v6, 0x0
+    const/4 v0, 0x0
 
     .line 313
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 30
-    const-string/jumbo v5, ""
+    const-string/jumbo v1, ""
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->CategoryDashboardSize:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->CategoryDashboardSize:Ljava/lang/String;
 
     .line 74
-    iput-boolean v6, p0, Lcom/bzbs/bean/CampaignView;->isFromNoti:Z
+    iput-boolean v0, p0, Lcom/bzbs/bean/CampaignView;->isFromNoti:Z
 
     .line 75
-    iput v6, p0, Lcom/bzbs/bean/CampaignView;->ItemRemain:I
+    iput v0, p0, Lcom/bzbs/bean/CampaignView;->ItemRemain:I
 
     .line 83
-    const-string/jumbo v5, ""
+    const-string/jumbo v1, ""
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->ConditionAlert:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->ConditionAlert:Ljava/lang/String;
 
     .line 92
-    iput v6, p0, Lcom/bzbs/bean/CampaignView;->RedeemMedia:I
+    iput v0, p0, Lcom/bzbs/bean/CampaignView;->RedeemMedia:I
 
     .line 93
-    iput v6, p0, Lcom/bzbs/bean/CampaignView;->ConditionAlertID:I
+    iput v0, p0, Lcom/bzbs/bean/CampaignView;->ConditionAlertID:I
 
     .line 94
-    const-string/jumbo v5, ""
+    const-string/jumbo v1, ""
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->Barcode:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->Barcode:Ljava/lang/String;
 
     .line 95
-    iput v6, p0, Lcom/bzbs/bean/CampaignView;->MinutesValidAfterUsed:I
+    iput v0, p0, Lcom/bzbs/bean/CampaignView;->MinutesValidAfterUsed:I
 
     .line 96
-    const-string/jumbo v5, ""
+    const-string/jumbo v1, ""
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->FullImageUrl:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->FullImageUrl:Ljava/lang/String;
 
     .line 98
-    const-string/jumbo v5, ""
+    const-string/jumbo v1, ""
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->CustomCaption:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->CustomCaption:Ljava/lang/String;
 
     .line 102
-    const/4 v5, 0x0
+    const/4 v1, 0x0
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->campaignExtra:Lcom/bzbs/bean/CampaignExtra;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->campaignExtra:Lcom/bzbs/bean/CampaignExtra;
 
     .line 103
-    const-string/jumbo v5, ""
+    const-string/jumbo v1, ""
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->campaignExtra_video_download_uri:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->campaignExtra_video_download_uri:Ljava/lang/String;
 
     .line 104
-    const-string/jumbo v5, ""
+    const-string/jumbo v1, ""
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->InterfaceDisplay:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->InterfaceDisplay:Ljava/lang/String;
 
     .line 105
-    const-string/jumbo v5, ""
+    const-string/jumbo v1, ""
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->PointType:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->PointType:Ljava/lang/String;
 
     .line 110
-    const-string/jumbo v5, ""
+    const-string/jumbo v1, ""
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->icon:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->icon:Ljava/lang/String;
 
     .line 111
-    const-string/jumbo v5, ""
+    const-string/jumbo v1, ""
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->title:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->title:Ljava/lang/String;
 
     .line 112
-    const-string/jumbo v5, ""
+    const-string/jumbo v1, ""
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->price:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->price:Ljava/lang/String;
 
     .line 113
-    const-string/jumbo v5, ""
+    const-string/jumbo v1, ""
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->description:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->description:Ljava/lang/String;
 
     .line 114
-    const-string/jumbo v5, ""
+    const-string/jumbo v1, ""
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->link:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->link:Ljava/lang/String;
 
     .line 115
-    const-string/jumbo v5, ""
+    const-string/jumbo v1, ""
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->promotion_price:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->promotion_price:Ljava/lang/String;
 
     .line 119
-    const-string/jumbo v5, ""
+    const-string/jumbo v1, ""
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->jsonExtra:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->a:Ljava/lang/String;
 
     .line 235
-    new-instance v5, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->MarketGalleryView:Ljava/util/ArrayList;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->MarketGalleryView:Ljava/util/ArrayList;
 
     .line 314
-    const-string/jumbo v5, "AgencyName"
+    const-string/jumbo v1, "AgencyName"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->AgencyName:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->AgencyName:Ljava/lang/String;
 
     .line 315
-    const-string/jumbo v5, "ID"
+    const-string/jumbo v1, "ID"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->ID:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->ID:Ljava/lang/String;
 
     .line 316
-    const-string/jumbo v5, "AgencyID"
+    const-string/jumbo v1, "AgencyID"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->AgencyID:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->AgencyID:Ljava/lang/String;
 
     .line 317
-    const-string/jumbo v5, "Name"
+    const-string/jumbo v1, "Name"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->Name:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->Name:Ljava/lang/String;
 
     .line 318
-    const-string/jumbo v5, "Detail"
+    const-string/jumbo v1, "Detail"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->Detail:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->Detail:Ljava/lang/String;
 
     .line 319
-    const-string/jumbo v5, "Condition"
+    const-string/jumbo v1, "Condition"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->Condition:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->Condition:Ljava/lang/String;
 
     .line 320
-    const-string/jumbo v5, "ReferenceCode"
+    const-string/jumbo v1, "ReferenceCode"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->ReferenceCode:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->ReferenceCode:Ljava/lang/String;
 
     .line 321
-    const-string/jumbo v5, "CategoryID"
+    const-string/jumbo v1, "CategoryID"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->CategoryID:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->CategoryID:Ljava/lang/String;
 
     .line 322
-    iget-object v5, p0, Lcom/bzbs/bean/CampaignView;->CategoryID:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->CategoryID:Ljava/lang/String;
 
-    const-string/jumbo v6, ""
+    const-string/jumbo v2, ""
 
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v1
 
-    if-nez v5, :cond_ba
+    if-nez v1, :cond_ba
 
-    iget-object v5, p0, Lcom/bzbs/bean/CampaignView;->CategoryID:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->CategoryID:Ljava/lang/String;
 
-    if-nez v5, :cond_c3
+    if-nez v1, :cond_c3
 
     .line 323
     :cond_ba
-    const-string/jumbo v5, "CategoryId"
+    const-string/jumbo v1, "CategoryId"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->CategoryID:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->CategoryID:Ljava/lang/String;
 
     .line 325
     :cond_c3
-    const-string/jumbo v5, "CategoryName"
+    const-string/jumbo v1, "CategoryName"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->CategoryName:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->CategoryName:Ljava/lang/String;
 
     .line 326
-    const-string/jumbo v5, "CategoryDashboardSize"
+    const-string/jumbo v1, "CategoryDashboardSize"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->CategoryDashboardSize:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->CategoryDashboardSize:Ljava/lang/String;
 
     .line 327
-    const-string/jumbo v5, "StartDate"
+    const-string/jumbo v1, "StartDate"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->StartDate:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->StartDate:Ljava/lang/String;
 
     .line 328
-    const-string/jumbo v5, "ExpireDate"
+    const-string/jumbo v1, "ExpireDate"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->ExpireDate:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->ExpireDate:Ljava/lang/String;
 
     .line 329
-    const-string/jumbo v5, "CurrentDate"
+    const-string/jumbo v1, "CurrentDate"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->CurrentDate:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->CurrentDate:Ljava/lang/String;
 
     .line 330
-    const-string/jumbo v5, "Location"
+    const-string/jumbo v1, "Location"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->Location:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->Location:Ljava/lang/String;
 
     .line 331
-    const-string/jumbo v5, "Website"
+    const-string/jumbo v1, "Website"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->Website:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->Website:Ljava/lang/String;
 
     .line 332
-    const-string/jumbo v5, "Discount"
+    const-string/jumbo v1, "Discount"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->Discount:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->Discount:Ljava/lang/String;
 
     .line 333
-    const-string/jumbo v5, "OriginalPrice"
+    const-string/jumbo v1, "OriginalPrice"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->OriginalPrice:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->OriginalPrice:Ljava/lang/String;
 
     .line 334
-    const-string/jumbo v5, "PricePerUnit"
+    const-string/jumbo v1, "PricePerUnit"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->PricePerUnit:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->PricePerUnit:Ljava/lang/String;
 
     .line 335
-    const-string/jumbo v5, "PointPerUnit"
+    const-string/jumbo v1, "PointPerUnit"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->PointPerUnit:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->PointPerUnit:Ljava/lang/String;
 
     .line 336
-    const-string/jumbo v5, "Rating"
+    const-string/jumbo v1, "Rating"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->Rating:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->Rating:Ljava/lang/String;
 
     .line 337
-    const-string/jumbo v5, "UserLevel"
+    const-string/jumbo v1, "UserLevel"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->UserLevel:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->UserLevel:Ljava/lang/String;
 
     .line 338
-    const-string/jumbo v5, "Quantity"
+    const-string/jumbo v1, "Quantity"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
-    move-result v5
+    move-result v1
 
-    iput v5, p0, Lcom/bzbs/bean/CampaignView;->Quantity:I
+    iput v1, p0, Lcom/bzbs/bean/CampaignView;->Quantity:I
 
     .line 339
-    const-string/jumbo v5, "RedeemMostPerPerson"
+    const-string/jumbo v1, "RedeemMostPerPerson"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
-    move-result v5
+    move-result v1
 
-    iput v5, p0, Lcom/bzbs/bean/CampaignView;->RedeemMostPerPerson:I
+    iput v1, p0, Lcom/bzbs/bean/CampaignView;->RedeemMostPerPerson:I
 
     .line 340
-    const-string/jumbo v5, "PeopleLike"
+    const-string/jumbo v1, "PeopleLike"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
-    move-result v5
+    move-result v1
 
-    iput v5, p0, Lcom/bzbs/bean/CampaignView;->PeopleLike:I
+    iput v1, p0, Lcom/bzbs/bean/CampaignView;->PeopleLike:I
 
     .line 341
-    const-string/jumbo v5, "PeopleDislike"
+    const-string/jumbo v1, "PeopleDislike"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
-    move-result v5
+    move-result v1
 
-    iput v5, p0, Lcom/bzbs/bean/CampaignView;->PeopleDislike:I
+    iput v1, p0, Lcom/bzbs/bean/CampaignView;->PeopleDislike:I
 
     .line 342
-    const-string/jumbo v5, "ItemCountSold"
+    const-string/jumbo v1, "ItemCountSold"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
-    move-result v5
+    move-result v1
 
-    iput v5, p0, Lcom/bzbs/bean/CampaignView;->ItemCountSold:I
+    iput v1, p0, Lcom/bzbs/bean/CampaignView;->ItemCountSold:I
 
     .line 343
-    const-string/jumbo v5, "Under18"
+    const-string/jumbo v1, "Under18"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->Under18:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->Under18:Ljava/lang/String;
 
     .line 344
-    const-string/jumbo v5, "Delivered"
+    const-string/jumbo v1, "Delivered"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->Delivered:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->Delivered:Ljava/lang/String;
 
     .line 345
-    const-string/jumbo v5, "StatusID"
+    const-string/jumbo v1, "StatusID"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->StatusID:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->StatusID:Ljava/lang/String;
 
     .line 346
-    const-string/jumbo v5, "TermsAndConditions"
+    const-string/jumbo v1, "TermsAndConditions"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->TermsAndConditions:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->TermsAndConditions:Ljava/lang/String;
 
     .line 347
-    const-string/jumbo v5, "CreateDate"
+    const-string/jumbo v1, "CreateDate"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->CreateDate:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->CreateDate:Ljava/lang/String;
 
     .line 348
-    const-string/jumbo v5, "CreateBy"
+    const-string/jumbo v1, "CreateBy"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->CreateBy:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->CreateBy:Ljava/lang/String;
 
     .line 349
-    const-string/jumbo v5, "ModifyDate"
+    const-string/jumbo v1, "ModifyDate"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->ModifyDate:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->ModifyDate:Ljava/lang/String;
 
     .line 350
-    const-string/jumbo v5, "ModifyBy"
+    const-string/jumbo v1, "ModifyBy"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->ModifyBy:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->ModifyBy:Ljava/lang/String;
 
     .line 351
-    const-string/jumbo v5, "Buzz"
+    const-string/jumbo v1, "Buzz"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
-    move-result v5
+    move-result v1
 
-    iput v5, p0, Lcom/bzbs/bean/CampaignView;->Buzz:I
+    iput v1, p0, Lcom/bzbs/bean/CampaignView;->Buzz:I
 
     .line 352
-    const-string/jumbo v5, "Score"
+    const-string/jumbo v1, "Score"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->Score:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->Score:Ljava/lang/String;
 
     .line 353
-    const-string/jumbo v5, "Type"
+    const-string/jumbo v1, "Type"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->Type:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->Type:Ljava/lang/String;
 
     .line 354
-    const-string/jumbo v5, "AgencyAddress"
+    const-string/jumbo v1, "AgencyAddress"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->AgencyAddress:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->AgencyAddress:Ljava/lang/String;
 
     .line 355
-    const-string/jumbo v5, "AgencyCity"
+    const-string/jumbo v1, "AgencyCity"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->AgencyCity:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->AgencyCity:Ljava/lang/String;
 
     .line 356
-    const-string/jumbo v5, "AgencyCountry"
+    const-string/jumbo v1, "AgencyCountry"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->AgencyCountry:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->AgencyCountry:Ljava/lang/String;
 
     .line 357
-    const-string/jumbo v5, "AgencyZipCode"
+    const-string/jumbo v1, "AgencyZipCode"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->AgencyZipCode:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->AgencyZipCode:Ljava/lang/String;
 
     .line 358
-    const-string/jumbo v5, "AgencyTel"
+    const-string/jumbo v1, "AgencyTel"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->AgencyTel:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->AgencyTel:Ljava/lang/String;
 
     .line 359
-    const-string/jumbo v5, "AgencyWebsite"
+    const-string/jumbo v1, "AgencyWebsite"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->AgencyWebsite:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->AgencyWebsite:Ljava/lang/String;
 
     .line 360
-    const-string/jumbo v5, "DayRemain"
+    const-string/jumbo v1, "DayRemain"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->DayRemain:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->DayRemain:Ljava/lang/String;
 
     .line 362
-    const-string/jumbo v5, "TracesJson"
+    const-string/jumbo v1, "TracesJson"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->TracesJson:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->TracesJson:Ljava/lang/String;
 
     .line 363
-    const-string/jumbo v5, "IsConditionPass"
+    const-string/jumbo v1, "IsConditionPass"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getBoolean(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v5
+    move-result v1
 
-    iput-boolean v5, p0, Lcom/bzbs/bean/CampaignView;->IsConditionPass:Z
+    iput-boolean v1, p0, Lcom/bzbs/bean/CampaignView;->IsConditionPass:Z
 
     .line 365
-    const-string/jumbo v5, "DayProceed"
+    const-string/jumbo v1, "DayProceed"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
-    move-result v5
+    move-result v1
 
-    iput v5, p0, Lcom/bzbs/bean/CampaignView;->DayProceed:I
+    iput v1, p0, Lcom/bzbs/bean/CampaignView;->DayProceed:I
 
     .line 367
-    const-string/jumbo v5, "Caption"
+    const-string/jumbo v1, "Caption"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->Caption:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->Caption:Ljava/lang/String;
 
     .line 369
-    const-string/jumbo v5, "FanPageId"
+    const-string/jumbo v1, "FanPageId"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->FanPageId:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->FanPageId:Ljava/lang/String;
 
     .line 370
-    const-string/jumbo v5, "ExpireIn"
+    const-string/jumbo v1, "ExpireIn"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->c(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v6
+    move-result-wide v2
 
-    iput-wide v6, p0, Lcom/bzbs/bean/CampaignView;->ExpireIn:J
+    iput-wide v2, p0, Lcom/bzbs/bean/CampaignView;->ExpireIn:J
 
     .line 371
-    const-string/jumbo v5, "IsSpecificPrintVoucher"
+    const-string/jumbo v1, "IsSpecificPrintVoucher"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getBoolean(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v5
+    move-result v1
 
-    iput-boolean v5, p0, Lcom/bzbs/bean/CampaignView;->IsSpecificPrintVoucher:Z
+    iput-boolean v1, p0, Lcom/bzbs/bean/CampaignView;->IsSpecificPrintVoucher:Z
 
     .line 372
-    const-string/jumbo v5, "VoucherExpireDate"
+    const-string/jumbo v1, "VoucherExpireDate"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->c(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v6
+    move-result-wide v2
 
-    iput-wide v6, p0, Lcom/bzbs/bean/CampaignView;->VoucherExpireDate:J
+    iput-wide v2, p0, Lcom/bzbs/bean/CampaignView;->VoucherExpireDate:J
 
     .line 373
-    const-string/jumbo v5, "LocationAgencyId"
+    const-string/jumbo v1, "LocationAgencyId"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->LocationAgencyId:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->LocationAgencyId:Ljava/lang/String;
 
     .line 374
-    const-string/jumbo v5, "NextRedeemDate"
+    const-string/jumbo v1, "NextRedeemDate"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->c(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v6
+    move-result-wide v2
 
-    iput-wide v6, p0, Lcom/bzbs/bean/CampaignView;->NextRedeemDate:J
+    iput-wide v2, p0, Lcom/bzbs/bean/CampaignView;->NextRedeemDate:J
 
     .line 375
-    const-string/jumbo v5, "RedeemCount"
+    const-string/jumbo v1, "RedeemCount"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
-    move-result v5
+    move-result v1
 
-    iput v5, p0, Lcom/bzbs/bean/CampaignView;->RedeemCount:I
+    iput v1, p0, Lcom/bzbs/bean/CampaignView;->RedeemCount:I
 
     .line 377
-    const-string/jumbo v5, "ConditionAlert"
+    const-string/jumbo v1, "ConditionAlert"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->ConditionAlert:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->ConditionAlert:Ljava/lang/String;
 
     .line 379
-    const-string/jumbo v5, "IsLike"
+    const-string/jumbo v1, "IsLike"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getBoolean(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v5
+    move-result v1
 
-    iput-boolean v5, p0, Lcom/bzbs/bean/CampaignView;->IsLike:Z
+    iput-boolean v1, p0, Lcom/bzbs/bean/CampaignView;->IsLike:Z
 
     .line 381
-    const-string/jumbo v5, "Qty"
+    const-string/jumbo v1, "Qty"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
-    move-result v5
+    move-result v1
 
-    iput v5, p0, Lcom/bzbs/bean/CampaignView;->Qty:I
+    iput v1, p0, Lcom/bzbs/bean/CampaignView;->Qty:I
 
     .line 383
-    const-string/jumbo v5, "RedeemMedia"
+    const-string/jumbo v1, "RedeemMedia"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
-    move-result v5
+    move-result v1
 
-    iput v5, p0, Lcom/bzbs/bean/CampaignView;->RedeemMedia:I
+    iput v1, p0, Lcom/bzbs/bean/CampaignView;->RedeemMedia:I
 
     .line 384
-    const-string/jumbo v5, "ConditionAlertID"
+    const-string/jumbo v1, "ConditionAlertID"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
-    move-result v5
+    move-result v1
 
-    iput v5, p0, Lcom/bzbs/bean/CampaignView;->ConditionAlertID:I
+    iput v1, p0, Lcom/bzbs/bean/CampaignView;->ConditionAlertID:I
 
     .line 385
-    const-string/jumbo v5, "Barcode"
+    const-string/jumbo v1, "Barcode"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->Barcode:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->Barcode:Ljava/lang/String;
 
     .line 386
-    const-string/jumbo v5, "MinutesValidAfterUsed"
+    const-string/jumbo v1, "MinutesValidAfterUsed"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
-    move-result v5
+    move-result v1
 
-    iput v5, p0, Lcom/bzbs/bean/CampaignView;->MinutesValidAfterUsed:I
+    iput v1, p0, Lcom/bzbs/bean/CampaignView;->MinutesValidAfterUsed:I
 
     .line 387
-    const-string/jumbo v5, "FullImageUrl"
+    const-string/jumbo v1, "FullImageUrl"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->FullImageUrl:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->FullImageUrl:Ljava/lang/String;
 
     .line 388
-    const-string/jumbo v5, "CustomInput"
+    const-string/jumbo v1, "CustomInput"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->CustomInput:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->CustomInput:Ljava/lang/String;
 
     .line 389
-    const-string/jumbo v5, "CustomCaption"
+    const-string/jumbo v1, "CustomCaption"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->CustomCaption:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->CustomCaption:Ljava/lang/String;
 
     .line 391
-    const-string/jumbo v5, "InterfaceDisplay"
+    const-string/jumbo v1, "InterfaceDisplay"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->InterfaceDisplay:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->InterfaceDisplay:Ljava/lang/String;
 
     .line 392
-    const-string/jumbo v5, "PointType"
+    const-string/jumbo v1, "PointType"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->PointType:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->PointType:Ljava/lang/String;
 
     .line 394
-    const-string/jumbo v5, "SoldOutDate"
+    const-string/jumbo v1, "SoldOutDate"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->c(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v6
+    move-result-wide v2
 
-    iput-wide v6, p0, Lcom/bzbs/bean/CampaignView;->SoldOutDate:J
+    iput-wide v2, p0, Lcom/bzbs/bean/CampaignView;->SoldOutDate:J
 
     .line 396
-    const-string/jumbo v5, "Extra"
+    const-string/jumbo v1, "Extra"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->jsonExtra:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->a:Ljava/lang/String;
 
     .line 397
-    iget-object v5, p0, Lcom/bzbs/bean/CampaignView;->jsonExtra:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->a:Ljava/lang/String;
 
-    if-eqz v5, :cond_311
+    if-eqz v1, :cond_311
 
-    iget-object v5, p0, Lcom/bzbs/bean/CampaignView;->jsonExtra:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->a:Ljava/lang/String;
 
-    const-string/jumbo v6, ""
+    const-string/jumbo v2, ""
 
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v1
 
-    if-nez v5, :cond_311
+    if-nez v1, :cond_311
 
     .line 399
     :try_start_303
-    new-instance v5, Lcom/bzbs/bean/CampaignExtra;
+    new-instance v1, Lcom/bzbs/bean/CampaignExtra;
 
-    new-instance v6, Lorg/json/JSONObject;
+    new-instance v2, Lorg/json/JSONObject;
 
-    iget-object v7, p0, Lcom/bzbs/bean/CampaignView;->jsonExtra:Ljava/lang/String;
+    iget-object v3, p0, Lcom/bzbs/bean/CampaignView;->a:Ljava/lang/String;
 
-    invoke-direct {v6, v7}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+    invoke-direct {v2, v3}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v5, v6}, Lcom/bzbs/bean/CampaignExtra;-><init>(Lorg/json/JSONObject;)V
+    invoke-direct {v1, v2}, Lcom/bzbs/bean/CampaignExtra;-><init>(Lorg/json/JSONObject;)V
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->campaignExtra:Lcom/bzbs/bean/CampaignExtra;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->campaignExtra:Lcom/bzbs/bean/CampaignExtra;
     :try_end_311
-    .catch Lorg/json/JSONException; {:try_start_303 .. :try_end_311} :catch_3c3
+    .catch Lorg/json/JSONException; {:try_start_303 .. :try_end_311} :catch_3c2
 
     .line 406
     :cond_311
     :goto_311
     :try_start_311
-    const-string/jumbo v5, "Pictures"
+    const-string/jumbo v1, "Pictures"
 
-    invoke-virtual {p1, v5}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v2
 
     .line 408
-    .local v2, "jsonPictures":Lorg/json/JSONArray;
-    new-instance v5, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->MarketGalleryView:Ljava/util/ArrayList;
+    iput-object v1, p0, Lcom/bzbs/bean/CampaignView;->MarketGalleryView:Ljava/util/ArrayList;
+
+    move v1, v0
 
     .line 409
-    const/4 v0, 0x0
-
-    .local v0, "i":I
     :goto_320
     invoke-virtual {v2}, Lorg/json/JSONArray;->length()I
 
-    move-result v5
+    move-result v3
 
-    if-ge v0, v5, :cond_338
+    if-ge v1, v3, :cond_338
 
     .line 410
-    invoke-virtual {v2, v0}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
+    invoke-virtual {v2, v1}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
-    move-result-object v1
+    move-result-object v3
 
     .line 411
-    .local v1, "jsonPicture":Lorg/json/JSONObject;
-    iget-object v5, p0, Lcom/bzbs/bean/CampaignView;->MarketGalleryView:Ljava/util/ArrayList;
+    iget-object v4, p0, Lcom/bzbs/bean/CampaignView;->MarketGalleryView:Ljava/util/ArrayList;
 
-    new-instance v6, Lcom/bzbs/bean/MarketGalleryView;
+    new-instance v5, Lcom/bzbs/bean/MarketGalleryView;
 
-    invoke-direct {v6, v1}, Lcom/bzbs/bean/MarketGalleryView;-><init>(Lorg/json/JSONObject;)V
+    invoke-direct {v5, v3}, Lcom/bzbs/bean/MarketGalleryView;-><init>(Lorg/json/JSONObject;)V
 
-    invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_334
     .catch Lorg/json/JSONException; {:try_start_311 .. :try_end_334} :catch_337
 
     .line 409
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_320
 
     .line 413
-    .end local v0    # "i":I
-    .end local v1    # "jsonPicture":Lorg/json/JSONObject;
-    .end local v2    # "jsonPictures":Lorg/json/JSONArray;
     :catch_337
-    move-exception v5
+    move-exception v1
 
     .line 417
     :cond_338
-    iget-object v5, p0, Lcom/bzbs/bean/CampaignView;->TracesJson:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->TracesJson:Ljava/lang/String;
 
-    if-eqz v5, :cond_383
+    if-eqz v1, :cond_382
 
-    iget-object v5, p0, Lcom/bzbs/bean/CampaignView;->TracesJson:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->TracesJson:Ljava/lang/String;
 
-    const-string/jumbo v6, "<null>"
+    const-string/jumbo v2, "<null>"
 
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v1
 
-    if-nez v5, :cond_383
+    if-nez v1, :cond_382
 
-    iget-object v5, p0, Lcom/bzbs/bean/CampaignView;->TracesJson:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->TracesJson:Ljava/lang/String;
 
-    const-string/jumbo v6, ""
+    const-string/jumbo v2, ""
 
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v1
 
-    if-nez v5, :cond_383
+    if-nez v1, :cond_382
 
     .line 419
     :try_start_352
-    new-instance v4, Lorg/json/JSONArray;
+    new-instance v1, Lorg/json/JSONArray;
 
-    iget-object v5, p0, Lcom/bzbs/bean/CampaignView;->TracesJson:Ljava/lang/String;
+    iget-object v2, p0, Lcom/bzbs/bean/CampaignView;->TracesJson:Ljava/lang/String;
 
-    invoke-direct {v4, v5}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v2}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
 
     .line 420
-    .local v4, "jsonTracesJsonArray":Lorg/json/JSONArray;
-    const/4 v0, 0x0
+    :goto_359
+    invoke-virtual {v1}, Lorg/json/JSONArray;->length()I
 
-    .restart local v0    # "i":I
-    :goto_35a
-    invoke-virtual {v4}, Lorg/json/JSONArray;->length()I
+    move-result v2
 
-    move-result v5
-
-    if-ge v0, v5, :cond_383
+    if-ge v0, v2, :cond_382
 
     .line 421
-    invoke-virtual {v4, v0}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
+    invoke-virtual {v1, v0}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
+
+    move-result-object v2
+
+    .line 423
+    const-string/jumbo v3, "TracePlanId"
+
+    invoke-static {v2, v3}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 423
-    .local v3, "jsonTraceJsonObject":Lorg/json/JSONObject;
-    const-string/jumbo v5, "TracePlanId"
-
-    invoke-static {v3, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->TracePlanId:Ljava/lang/String;
+    iput-object v3, p0, Lcom/bzbs/bean/CampaignView;->TracePlanId:Ljava/lang/String;
 
     .line 424
-    const-string/jumbo v5, "Value"
+    const-string/jumbo v3, "Value"
 
-    invoke-static {v3, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v3}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v3
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->Value:Ljava/lang/String;
+    iput-object v3, p0, Lcom/bzbs/bean/CampaignView;->Value:Ljava/lang/String;
 
     .line 425
-    const-string/jumbo v5, "Caption"
+    const-string/jumbo v3, "Caption"
 
-    invoke-static {v3, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v2, v3}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v2
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->Caption:Ljava/lang/String;
-    :try_end_37f
-    .catch Lorg/json/JSONException; {:try_start_352 .. :try_end_37f} :catch_382
+    iput-object v2, p0, Lcom/bzbs/bean/CampaignView;->Caption:Ljava/lang/String;
+    :try_end_37e
+    .catch Lorg/json/JSONException; {:try_start_352 .. :try_end_37e} :catch_381
 
     .line 420
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_35a
+    goto :goto_359
 
     .line 427
-    .end local v0    # "i":I
-    .end local v3    # "jsonTraceJsonObject":Lorg/json/JSONObject;
-    .end local v4    # "jsonTracesJsonArray":Lorg/json/JSONArray;
-    :catch_382
-    move-exception v5
+    :catch_381
+    move-exception v0
 
     .line 435
-    :cond_383
-    const-string/jumbo v5, "id"
+    :cond_382
+    const-string/jumbo v0, "id"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
-    move-result v5
+    move-result v0
 
-    iput v5, p0, Lcom/bzbs/bean/CampaignView;->id:I
+    iput v0, p0, Lcom/bzbs/bean/CampaignView;->id:I
 
     .line 436
-    const-string/jumbo v5, "icon"
+    const-string/jumbo v0, "icon"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->icon:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/bean/CampaignView;->icon:Ljava/lang/String;
 
     .line 437
-    const-string/jumbo v5, "title"
+    const-string/jumbo v0, "title"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->title:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/bean/CampaignView;->title:Ljava/lang/String;
 
     .line 438
-    const-string/jumbo v5, "price"
+    const-string/jumbo v0, "price"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->price:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/bean/CampaignView;->price:Ljava/lang/String;
 
     .line 439
-    const-string/jumbo v5, "description"
+    const-string/jumbo v0, "description"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->description:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/bean/CampaignView;->description:Ljava/lang/String;
 
     .line 440
-    const-string/jumbo v5, "link"
+    const-string/jumbo v0, "link"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->link:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/bean/CampaignView;->link:Ljava/lang/String;
 
     .line 441
-    const-string/jumbo v5, "promotion_price"
+    const-string/jumbo v0, "promotion_price"
 
-    invoke-static {p1, v5}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/bzbs/bean/CampaignView;->promotion_price:Ljava/lang/String;
+    iput-object v0, p0, Lcom/bzbs/bean/CampaignView;->promotion_price:Ljava/lang/String;
 
     .line 445
     return-void
 
     .line 400
-    :catch_3c3
-    move-exception v5
+    :catch_3c2
+    move-exception v1
 
     goto/16 :goto_311
 .end method
@@ -1368,7 +1353,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1432,7 +1417,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1504,7 +1489,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1576,7 +1561,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v1, Lcom/bzbs/data/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
+    sget-object v1, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -1623,7 +1608,6 @@
     invoke-direct {v0}, Lcom/bzbs/bean/CampaignView;-><init>()V
 
     .line 159
-    .local v0, "newCampaign":Lcom/bzbs/bean/CampaignView;
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->AgencyName:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/bzbs/bean/CampaignView;->AgencyName:Ljava/lang/String;
@@ -1954,11 +1938,6 @@
 
 .method public bridge synthetic clone()Ljava/lang/Object;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/CloneNotSupportedException;
-        }
-    .end annotation
 
     .prologue
     .line 16
@@ -1979,272 +1958,271 @@
     invoke-direct {v0}, Lcom/bzbs/lib/survey/bean/Campaign;-><init>()V
 
     .line 243
-    .local v0, "newCampaign":Lcom/bzbs/lib/survey/bean/Campaign;
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->AgencyName:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->AgencyName:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->a:Ljava/lang/String;
 
     .line 244
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->ID:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->ID:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->b:Ljava/lang/String;
 
     .line 245
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->AgencyID:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->AgencyID:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->c:Ljava/lang/String;
 
     .line 246
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->Name:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->Name:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->d:Ljava/lang/String;
 
     .line 247
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->Detail:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->Detail:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->e:Ljava/lang/String;
 
     .line 248
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->Condition:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->Condition:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->f:Ljava/lang/String;
 
     .line 249
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->ReferenceCode:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->ReferenceCode:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->g:Ljava/lang/String;
 
     .line 250
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->CategoryID:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->CategoryID:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->h:Ljava/lang/String;
 
     .line 251
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->CategoryName:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->CategoryName:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->i:Ljava/lang/String;
 
     .line 252
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->StartDate:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->StartDate:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->j:Ljava/lang/String;
 
     .line 253
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->ExpireDate:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->ExpireDate:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->k:Ljava/lang/String;
 
     .line 254
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->Location:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->Location:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->l:Ljava/lang/String;
 
     .line 255
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->Website:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->Website:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->m:Ljava/lang/String;
 
     .line 256
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->Discount:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->Discount:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->n:Ljava/lang/String;
 
     .line 257
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->OriginalPrice:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->OriginalPrice:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->o:Ljava/lang/String;
 
     .line 258
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->PricePerUnit:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->PricePerUnit:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->p:Ljava/lang/String;
 
     .line 259
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->PointPerUnit:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->PointPerUnit:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->q:Ljava/lang/String;
 
     .line 260
     iget v1, p0, Lcom/bzbs/bean/CampaignView;->PeopleLike:I
 
-    iput v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->PeopleLike:I
+    iput v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->t:I
 
     .line 261
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->Under18:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->Under18:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->w:Ljava/lang/String;
 
     .line 262
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->Delivered:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->Delivered:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->x:Ljava/lang/String;
 
     .line 263
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->StatusID:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->StatusID:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->y:Ljava/lang/String;
 
     .line 264
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->TermsAndConditions:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->TermsAndConditions:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->z:Ljava/lang/String;
 
     .line 265
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->CreateDate:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->CreateDate:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->A:Ljava/lang/String;
 
     .line 267
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->CreateBy:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->CreateBy:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->B:Ljava/lang/String;
 
     .line 268
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->ModifyDate:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->ModifyDate:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->C:Ljava/lang/String;
 
     .line 269
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->ModifyBy:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->ModifyBy:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->D:Ljava/lang/String;
 
     .line 270
     iget v1, p0, Lcom/bzbs/bean/CampaignView;->Buzz:I
 
-    iput v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->Buzz:I
+    iput v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->E:I
 
     .line 271
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->Score:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->Score:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->F:Ljava/lang/String;
 
     .line 272
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->Type:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->Type:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->G:Ljava/lang/String;
 
     .line 273
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->AgencyAddress:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->AgencyAddress:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->I:Ljava/lang/String;
 
     .line 274
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->AgencyCity:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->AgencyCity:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->J:Ljava/lang/String;
 
     .line 275
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->AgencyCountry:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->AgencyCountry:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->K:Ljava/lang/String;
 
     .line 276
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->AgencyZipCode:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->AgencyZipCode:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->L:Ljava/lang/String;
 
     .line 277
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->AgencyTel:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->AgencyTel:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->M:Ljava/lang/String;
 
     .line 278
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->AgencyWebsite:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->AgencyWebsite:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->N:Ljava/lang/String;
 
     .line 279
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->DayRemain:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->DayRemain:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->O:Ljava/lang/String;
 
     .line 281
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->TracesJson:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->TracesJson:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->P:Ljava/lang/String;
 
     .line 282
     iget-boolean v1, p0, Lcom/bzbs/bean/CampaignView;->IsConditionPass:Z
 
-    iput-boolean v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->IsConditionPass:Z
+    iput-boolean v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->Q:Z
 
     .line 283
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->TracePlanId:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->TracePlanId:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->R:Ljava/lang/String;
 
     .line 284
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->Value:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->Value:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->S:Ljava/lang/String;
 
     .line 286
     iget-boolean v1, p0, Lcom/bzbs/bean/CampaignView;->isFromNoti:Z
 
-    iput-boolean v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->isFromNoti:Z
+    iput-boolean v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->V:Z
 
     .line 287
     iget v1, p0, Lcom/bzbs/bean/CampaignView;->ItemRemain:I
 
-    iput v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->ItemRemain:I
+    iput v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->W:I
 
     .line 289
     iget v1, p0, Lcom/bzbs/bean/CampaignView;->DayProceed:I
 
-    iput v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->DayProceed:I
+    iput v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->X:I
 
     .line 290
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->FanPageId:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->FanPageId:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->U:Ljava/lang/String;
 
     .line 293
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->ConditionAlert:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->ConditionAlert:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->ad:Ljava/lang/String;
 
     .line 295
     iget-boolean v1, p0, Lcom/bzbs/bean/CampaignView;->IsLike:Z
 
-    iput-boolean v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->IsLike:Z
+    iput-boolean v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->Y:Z
 
     .line 297
     iget v1, p0, Lcom/bzbs/bean/CampaignView;->Qty:I
 
     int-to-long v2, v1
 
-    iput-wide v2, v0, Lcom/bzbs/lib/survey/bean/Campaign;->Qty:J
+    iput-wide v2, v0, Lcom/bzbs/lib/survey/bean/Campaign;->ac:J
 
     .line 303
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->FullImageUrl:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->FullImageUrl:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->av:Ljava/lang/String;
 
     .line 304
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->CustomInput:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->CustomInput:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->aj:Ljava/lang/String;
 
     .line 305
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->CustomCaption:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->CustomCaption:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->ak:Ljava/lang/String;
 
     .line 307
-    iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->jsonExtra:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->a:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->jsonExtra:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->aw:Ljava/lang/String;
 
     .line 308
-    iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->jsonExtra:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->a:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Lcom/bzbs/lib/survey/bean/Campaign;->convertJsonExtra(Ljava/lang/String;)Lcom/bzbs/lib/survey/bean/CampaignExtra;
+    invoke-virtual {v0, v1}, Lcom/bzbs/lib/survey/bean/Campaign;->a(Ljava/lang/String;)Lcom/bzbs/lib/survey/bean/CampaignExtra;
 
     .line 309
     iget-object v1, p0, Lcom/bzbs/bean/CampaignView;->campaignExtra_video_download_uri:Ljava/lang/String;
 
-    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->campaignExtra_video_download_uri:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/lib/survey/bean/Campaign;->ar:Ljava/lang/String;
 
     .line 310
     return-object v0

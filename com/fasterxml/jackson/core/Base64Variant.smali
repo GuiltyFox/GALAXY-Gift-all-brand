@@ -37,9 +37,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/lang/String;I)V
     .registers 10
-    .param p1, "base"    # Lcom/fasterxml/jackson/core/Base64Variant;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "maxLineLength"    # I
 
     .prologue
     .line 146
@@ -62,37 +59,32 @@
 .end method
 
 .method public constructor <init>(Lcom/fasterxml/jackson/core/Base64Variant;Ljava/lang/String;ZCI)V
-    .registers 12
-    .param p1, "base"    # Lcom/fasterxml/jackson/core/Base64Variant;
-    .param p2, "name"    # Ljava/lang/String;
-    .param p3, "usesPadding"    # Z
-    .param p4, "paddingChar"    # C
-    .param p5, "maxLineLength"    # I
+    .registers 10
 
     .prologue
-    const/16 v4, 0x40
+    const/16 v1, 0x40
 
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
     .line 155
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 55
-    const/16 v3, 0x80
+    const/16 v0, 0x80
 
-    new-array v3, v3, [I
+    new-array v0, v0, [I
 
-    iput-object v3, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
 
     .line 61
-    new-array v3, v4, [C
+    new-array v0, v1, [C
 
-    iput-object v3, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
 
     .line 67
-    new-array v3, v4, [B
+    new-array v0, v1, [B
 
-    iput-object v3, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
 
     .line 156
     iput-object p2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_name:Ljava/lang/String;
@@ -101,34 +93,31 @@
     iget-object v0, p1, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
 
     .line 158
-    .local v0, "srcB":[B
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
 
-    array-length v4, v0
+    array-length v2, v0
 
-    invoke-static {v0, v5, v3, v5, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 159
-    iget-object v1, p1, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
+    iget-object v0, p1, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
 
     .line 160
-    .local v1, "srcC":[C
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
 
-    array-length v4, v1
+    array-length v2, v0
 
-    invoke-static {v1, v5, v3, v5, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 161
-    iget-object v2, p1, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
+    iget-object v0, p1, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
 
     .line 162
-    .local v2, "srcV":[I
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
 
-    array-length v4, v2
+    array-length v2, v0
 
-    invoke-static {v2, v5, v3, v5, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 164
     iput-boolean p3, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_usesPadding:Z
@@ -144,37 +133,32 @@
 .end method
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;ZCI)V
-    .registers 12
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "base64Alphabet"    # Ljava/lang/String;
-    .param p3, "usesPadding"    # Z
-    .param p4, "paddingChar"    # C
-    .param p5, "maxLineLength"    # I
+    .registers 11
 
     .prologue
-    const/4 v5, 0x0
+    const/16 v2, 0x40
 
-    const/16 v4, 0x40
+    const/4 v0, 0x0
 
     .line 110
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 55
-    const/16 v3, 0x80
+    const/16 v1, 0x80
 
-    new-array v3, v3, [I
+    new-array v1, v1, [I
 
-    iput-object v3, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
+    iput-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
 
     .line 61
-    new-array v3, v4, [C
+    new-array v1, v2, [C
 
-    iput-object v3, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
+    iput-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
 
     .line 67
-    new-array v3, v4, [B
+    new-array v1, v2, [B
 
-    iput-object v3, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
+    iput-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
 
     .line 111
     iput-object p1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_name:Ljava/lang/String;
@@ -194,97 +178,91 @@
     move-result v1
 
     .line 120
-    .local v1, "alphaLen":I
-    if-eq v1, v4, :cond_43
+    if-eq v1, v2, :cond_43
 
     .line 121
-    new-instance v3, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "Base64Alphabet length must be exactly 64 (was "
+    const-string/jumbo v3, "Base64Alphabet length must be exactly 64 (was "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    const-string/jumbo v5, ")"
+    const-string/jumbo v2, ")"
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v0
 
     .line 125
     :cond_43
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
 
-    invoke-virtual {p2, v5, v1, v3, v5}, Ljava/lang/String;->getChars(II[CI)V
+    invoke-virtual {p2, v0, v1, v2, v0}, Ljava/lang/String;->getChars(II[CI)V
 
     .line 126
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
 
-    const/4 v4, -0x1
+    const/4 v3, -0x1
 
-    invoke-static {v3, v4}, Ljava/util/Arrays;->fill([II)V
+    invoke-static {v2, v3}, Ljava/util/Arrays;->fill([II)V
 
     .line 127
-    const/4 v2, 0x0
-
-    .local v2, "i":I
-    :goto_4f
-    if-ge v2, v1, :cond_61
+    :goto_4e
+    if-ge v0, v1, :cond_60
 
     .line 128
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
 
-    aget-char v0, v3, v2
+    aget-char v2, v2, v0
 
     .line 129
-    .local v0, "alpha":C
     iget-object v3, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
 
-    int-to-byte v4, v0
+    int-to-byte v4, v2
 
-    aput-byte v4, v3, v2
+    aput-byte v4, v3, v0
 
     .line 130
     iget-object v3, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
 
-    aput v2, v3, v0
+    aput v0, v3, v2
 
     .line 127
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    goto :goto_4f
+    goto :goto_4e
 
     .line 134
-    .end local v0    # "alpha":C
-    :cond_61
-    if-eqz p3, :cond_68
+    :cond_60
+    if-eqz p3, :cond_67
 
     .line 135
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
 
-    const/4 v4, -0x2
+    const/4 v1, -0x2
 
-    aput v4, v3, p4
+    aput v1, v0, p4
 
     .line 137
-    :cond_68
+    :cond_67
     return-void
 .end method
 
@@ -292,11 +270,6 @@
 # virtual methods
 .method protected _reportBase64EOF()V
     .registers 3
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/IllegalArgumentException;
-        }
-    .end annotation
 
     .prologue
     .line 590
@@ -310,65 +283,56 @@
 .end method
 
 .method protected _reportInvalidBase64(CILjava/lang/String;)V
-    .registers 7
-    .param p1, "ch"    # C
-    .param p2, "bindex"    # I
-    .param p3, "msg"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/IllegalArgumentException;
-        }
-    .end annotation
+    .registers 6
 
     .prologue
     .line 573
-    const/16 v1, 0x20
+    const/16 v0, 0x20
 
-    if-gt p1, v1, :cond_50
+    if-gt p1, v0, :cond_50
 
     .line 574
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "Illegal white space character (code 0x"
+    const-string/jumbo v1, "Illegal white space character (code 0x"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     move-result-object v1
 
-    const-string/jumbo v2, ") as character #"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    const-string/jumbo v1, ") as character #"
 
-    add-int/lit8 v2, p2, 0x1
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    add-int/lit8 v1, p2, 0x1
 
-    const-string/jumbo v2, " of 4-char base64 unit: can only used between units"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v0
 
-    move-result-object v1
+    const-string/jumbo v1, " of 4-char base64 unit: can only used between units"
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
     .line 583
-    .local v0, "base":Ljava/lang/String;
     :goto_30
     if-eqz p3, :cond_4a
 
@@ -379,19 +343,19 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string/jumbo v2, ": "
+    const-string/jumbo v1, ": "
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
@@ -404,482 +368,422 @@
     throw v1
 
     .line 575
-    .end local v0    # "base":Ljava/lang/String;
     :cond_50
     invoke-virtual {p0, p1}, Lcom/fasterxml/jackson/core/Base64Variant;->usesPaddingChar(C)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_83
+    if-eqz v0, :cond_83
 
     .line 576
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "Unexpected padding character (\'"
+    const-string/jumbo v1, "Unexpected padding character (\'"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/Base64Variant;->getPaddingChar()C
 
-    move-result v2
+    move-result v1
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "\') as character #"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    add-int/lit8 v2, p2, 0x1
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string/jumbo v2, " of 4-char base64 unit: padding only legal as 3rd or 4th character"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .restart local v0    # "base":Ljava/lang/String;
+    const-string/jumbo v1, "\') as character #"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    add-int/lit8 v1, p2, 0x1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, " of 4-char base64 unit: padding only legal as 3rd or 4th character"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
     goto :goto_30
 
     .line 577
-    .end local v0    # "base":Ljava/lang/String;
     :cond_83
     invoke-static {p1}, Ljava/lang/Character;->isDefined(C)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_8f
+    if-eqz v0, :cond_8f
 
     invoke-static {p1}, Ljava/lang/Character;->isISOControl(C)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_af
+    if-eqz v0, :cond_af
 
     .line 579
     :cond_8f
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "Illegal character (code 0x"
+    const-string/jumbo v1, "Illegal character (code 0x"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string/jumbo v2, ") in base64 content"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .restart local v0    # "base":Ljava/lang/String;
+    invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, ") in base64 content"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
     goto :goto_30
 
     .line 581
-    .end local v0    # "base":Ljava/lang/String;
     :cond_af
-    new-instance v1, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "Illegal character \'"
+    const-string/jumbo v1, "Illegal character \'"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "\' (code 0x"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string/jumbo v2, ") in base64 content"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v0
 
-    .restart local v0    # "base":Ljava/lang/String;
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "\' (code 0x"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, ") in base64 content"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
     goto/16 :goto_30
 .end method
 
 .method public decode(Ljava/lang/String;Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;)V
-    .registers 14
-    .param p1, "str"    # Ljava/lang/String;
-    .param p2, "builder"    # Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/IllegalArgumentException;
-        }
-    .end annotation
+    .registers 13
 
     .prologue
-    const/4 v10, 0x3
+    const/4 v9, 0x3
 
-    const/4 v9, -0x2
+    const/4 v2, 0x0
 
-    const/4 v8, 0x0
+    const/4 v8, -0x2
+
+    const/4 v7, 0x0
 
     .line 452
-    const/4 v4, 0x0
-
     .line 453
-    .local v4, "ptr":I
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v3
 
+    move v0, v2
+
     .line 456
-    .local v3, "len":I
-    :goto_8
-    if-ge v4, v3, :cond_13
+    :goto_9
+    if-ge v0, v3, :cond_13
 
     .line 460
-    :goto_a
-    add-int/lit8 v5, v4, 0x1
+    :goto_b
+    add-int/lit8 v1, v0, 0x1
 
-    .end local v4    # "ptr":I
-    .local v5, "ptr":I
-    invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
-    move-result v1
+    move-result v0
 
     .line 461
-    .local v1, "ch":C
-    if-lt v5, v3, :cond_14
-
-    move v4, v5
+    if-lt v1, v3, :cond_14
 
     .line 537
-    .end local v1    # "ch":C
-    .end local v5    # "ptr":I
-    .restart local v4    # "ptr":I
     :cond_13
     :goto_13
     return-void
 
     .line 464
-    .end local v4    # "ptr":I
-    .restart local v1    # "ch":C
-    .restart local v5    # "ptr":I
     :cond_14
-    const/16 v6, 0x20
+    const/16 v4, 0x20
 
-    if-le v1, v6, :cond_d1
+    if-le v0, v4, :cond_cc
 
     .line 465
-    invoke-virtual {p0, v1}, Lcom/fasterxml/jackson/core/Base64Variant;->decodeBase64Char(C)I
+    invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/core/Base64Variant;->decodeBase64Char(C)I
 
-    move-result v0
+    move-result v4
 
     .line 466
-    .local v0, "bits":I
-    if-gez v0, :cond_22
+    if-gez v4, :cond_21
 
     .line 467
-    const/4 v6, 0x0
-
-    invoke-virtual {p0, v1, v6, v8}, Lcom/fasterxml/jackson/core/Base64Variant;->_reportInvalidBase64(CILjava/lang/String;)V
-
-    .line 469
-    :cond_22
-    move v2, v0
+    invoke-virtual {p0, v0, v2, v7}, Lcom/fasterxml/jackson/core/Base64Variant;->_reportInvalidBase64(CILjava/lang/String;)V
 
     .line 471
-    .local v2, "decodedData":I
-    if-lt v5, v3, :cond_28
+    :cond_21
+    if-lt v1, v3, :cond_26
 
     .line 472
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/Base64Variant;->_reportBase64EOF()V
 
     .line 474
-    :cond_28
-    add-int/lit8 v4, v5, 0x1
+    :cond_26
+    add-int/lit8 v0, v1, 0x1
 
-    .end local v5    # "ptr":I
-    .restart local v4    # "ptr":I
-    invoke-virtual {p1, v5}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result v1
 
     .line 475
     invoke-virtual {p0, v1}, Lcom/fasterxml/jackson/core/Base64Variant;->decodeBase64Char(C)I
 
-    move-result v0
+    move-result v5
 
     .line 476
-    if-gez v0, :cond_38
+    if-gez v5, :cond_36
 
     .line 477
     const/4 v6, 0x1
 
-    invoke-virtual {p0, v1, v6, v8}, Lcom/fasterxml/jackson/core/Base64Variant;->_reportInvalidBase64(CILjava/lang/String;)V
+    invoke-virtual {p0, v1, v6, v7}, Lcom/fasterxml/jackson/core/Base64Variant;->_reportInvalidBase64(CILjava/lang/String;)V
 
     .line 479
-    :cond_38
-    shl-int/lit8 v6, v2, 0x6
+    :cond_36
+    shl-int/lit8 v1, v4, 0x6
 
-    or-int v2, v6, v0
+    or-int/2addr v1, v5
 
     .line 481
-    if-lt v4, v3, :cond_4d
+    if-lt v0, v3, :cond_4a
 
     .line 483
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/Base64Variant;->usesPadding()Z
 
-    move-result v6
+    move-result v4
 
-    if-nez v6, :cond_4a
+    if-nez v4, :cond_47
 
     .line 484
-    shr-int/lit8 v2, v2, 0x4
+    shr-int/lit8 v0, v1, 0x4
 
     .line 485
-    invoke-virtual {p2, v2}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->append(I)V
+    invoke-virtual {p2, v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->append(I)V
 
     goto :goto_13
 
     .line 488
-    :cond_4a
+    :cond_47
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/Base64Variant;->_reportBase64EOF()V
 
     .line 490
-    :cond_4d
-    add-int/lit8 v5, v4, 0x1
+    :cond_4a
+    add-int/lit8 v4, v0, 0x1
 
-    .end local v4    # "ptr":I
-    .restart local v5    # "ptr":I
-    invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
-
-    move-result v1
-
-    .line 491
-    invoke-virtual {p0, v1}, Lcom/fasterxml/jackson/core/Base64Variant;->decodeBase64Char(C)I
+    invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
     move-result v0
 
+    .line 491
+    invoke-virtual {p0, v0}, Lcom/fasterxml/jackson/core/Base64Variant;->decodeBase64Char(C)I
+
+    move-result v5
+
     .line 494
-    if-gez v0, :cond_99
+    if-gez v5, :cond_96
 
     .line 495
-    if-eq v0, v9, :cond_5f
+    if-eq v5, v8, :cond_5c
 
     .line 496
-    const/4 v6, 0x2
+    const/4 v5, 0x2
 
-    invoke-virtual {p0, v1, v6, v8}, Lcom/fasterxml/jackson/core/Base64Variant;->_reportInvalidBase64(CILjava/lang/String;)V
+    invoke-virtual {p0, v0, v5, v7}, Lcom/fasterxml/jackson/core/Base64Variant;->_reportInvalidBase64(CILjava/lang/String;)V
 
     .line 499
-    :cond_5f
-    if-lt v5, v3, :cond_64
+    :cond_5c
+    if-lt v4, v3, :cond_61
 
     .line 500
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/Base64Variant;->_reportBase64EOF()V
 
     .line 502
-    :cond_64
-    add-int/lit8 v4, v5, 0x1
+    :cond_61
+    add-int/lit8 v0, v4, 0x1
 
-    .end local v5    # "ptr":I
-    .restart local v4    # "ptr":I
-    invoke-virtual {p1, v5}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
 
-    move-result v1
+    move-result v4
 
     .line 503
-    invoke-virtual {p0, v1}, Lcom/fasterxml/jackson/core/Base64Variant;->usesPaddingChar(C)Z
+    invoke-virtual {p0, v4}, Lcom/fasterxml/jackson/core/Base64Variant;->usesPaddingChar(C)Z
 
-    move-result v6
+    move-result v5
 
-    if-nez v6, :cond_92
+    if-nez v5, :cond_8f
 
     .line 504
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v5, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v7, "expected padding character \'"
+    const-string/jumbo v6, "expected padding character \'"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/Base64Variant;->getPaddingChar()C
 
-    move-result v7
+    move-result v6
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    const-string/jumbo v7, "\'"
+    const-string/jumbo v6, "\'"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {p0, v1, v10, v6}, Lcom/fasterxml/jackson/core/Base64Variant;->_reportInvalidBase64(CILjava/lang/String;)V
+    invoke-virtual {p0, v4, v9, v5}, Lcom/fasterxml/jackson/core/Base64Variant;->_reportInvalidBase64(CILjava/lang/String;)V
 
     .line 507
-    :cond_92
-    shr-int/lit8 v2, v2, 0x4
+    :cond_8f
+    shr-int/lit8 v1, v1, 0x4
 
     .line 508
-    invoke-virtual {p2, v2}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->append(I)V
+    invoke-virtual {p2, v1}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->append(I)V
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
     .line 512
-    .end local v4    # "ptr":I
-    .restart local v5    # "ptr":I
-    :cond_99
-    shl-int/lit8 v6, v2, 0x6
+    :cond_96
+    shl-int/lit8 v0, v1, 0x6
 
-    or-int v2, v6, v0
+    or-int v1, v0, v5
 
     .line 514
-    if-lt v5, v3, :cond_b0
+    if-lt v4, v3, :cond_ac
 
     .line 516
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/Base64Variant;->usesPadding()Z
 
-    move-result v6
+    move-result v0
 
-    if-nez v6, :cond_ad
+    if-nez v0, :cond_a9
 
     .line 517
-    shr-int/lit8 v2, v2, 0x2
+    shr-int/lit8 v0, v1, 0x2
 
     .line 518
-    invoke-virtual {p2, v2}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->appendTwoBytes(I)V
+    invoke-virtual {p2, v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->appendTwoBytes(I)V
 
-    move v4, v5
-
-    .line 519
-    .end local v5    # "ptr":I
-    .restart local v4    # "ptr":I
     goto/16 :goto_13
 
     .line 521
-    .end local v4    # "ptr":I
-    .restart local v5    # "ptr":I
-    :cond_ad
+    :cond_a9
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/Base64Variant;->_reportBase64EOF()V
 
     .line 523
-    :cond_b0
-    add-int/lit8 v4, v5, 0x1
+    :cond_ac
+    add-int/lit8 v0, v4, 0x1
 
-    .end local v5    # "ptr":I
-    .restart local v4    # "ptr":I
-    invoke-virtual {p1, v5}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
 
-    move-result v1
+    move-result v4
 
     .line 524
-    invoke-virtual {p0, v1}, Lcom/fasterxml/jackson/core/Base64Variant;->decodeBase64Char(C)I
+    invoke-virtual {p0, v4}, Lcom/fasterxml/jackson/core/Base64Variant;->decodeBase64Char(C)I
 
-    move-result v0
+    move-result v5
 
     .line 525
-    if-gez v0, :cond_c8
+    if-gez v5, :cond_c4
 
     .line 526
-    if-eq v0, v9, :cond_c1
+    if-eq v5, v8, :cond_bd
 
     .line 527
-    invoke-virtual {p0, v1, v10, v8}, Lcom/fasterxml/jackson/core/Base64Variant;->_reportInvalidBase64(CILjava/lang/String;)V
+    invoke-virtual {p0, v4, v9, v7}, Lcom/fasterxml/jackson/core/Base64Variant;->_reportInvalidBase64(CILjava/lang/String;)V
 
     .line 529
-    :cond_c1
-    shr-int/lit8 v2, v2, 0x2
+    :cond_bd
+    shr-int/lit8 v1, v1, 0x2
 
     .line 530
-    invoke-virtual {p2, v2}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->appendTwoBytes(I)V
+    invoke-virtual {p2, v1}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->appendTwoBytes(I)V
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
     .line 533
-    :cond_c8
-    shl-int/lit8 v6, v2, 0x6
+    :cond_c4
+    shl-int/lit8 v1, v1, 0x6
 
-    or-int v2, v6, v0
+    or-int/2addr v1, v5
 
     .line 534
-    invoke-virtual {p2, v2}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->appendThreeBytes(I)V
+    invoke-virtual {p2, v1}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->appendThreeBytes(I)V
 
-    goto/16 :goto_8
+    goto/16 :goto_9
 
-    .end local v0    # "bits":I
-    .end local v2    # "decodedData":I
-    .end local v4    # "ptr":I
-    .restart local v5    # "ptr":I
-    :cond_d1
-    move v4, v5
+    :cond_cc
+    move v0, v1
 
-    .end local v5    # "ptr":I
-    .restart local v4    # "ptr":I
-    goto/16 :goto_a
+    goto/16 :goto_b
 .end method
 
 .method public decode(Ljava/lang/String;)[B
-    .registers 4
-    .param p1, "input"    # Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/IllegalArgumentException;
-        }
-    .end annotation
+    .registers 3
 
     .prologue
     .line 432
@@ -888,74 +792,64 @@
     invoke-direct {v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;-><init>()V
 
     .line 433
-    .local v0, "b":Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;
     invoke-virtual {p0, p1, v0}, Lcom/fasterxml/jackson/core/Base64Variant;->decode(Ljava/lang/String;Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;)V
 
     .line 434
     invoke-virtual {v0}, Lcom/fasterxml/jackson/core/util/ByteArrayBuilder;->toByteArray()[B
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public decodeBase64Byte(B)I
-    .registers 4
-    .param p1, "b"    # B
+    .registers 3
 
     .prologue
     .line 221
-    move v0, p1
-
     .line 222
-    .local v0, "ch":I
-    const/16 v1, 0x7f
+    const/16 v0, 0x7f
 
-    if-gt v0, v1, :cond_a
+    if-gt p1, v0, :cond_9
 
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
 
-    aget v1, v1, v0
+    aget v0, v0, p1
 
-    :goto_9
-    return v1
+    :goto_8
+    return v0
 
-    :cond_a
-    const/4 v1, -0x1
+    :cond_9
+    const/4 v0, -0x1
 
-    goto :goto_9
+    goto :goto_8
 .end method
 
 .method public decodeBase64Char(C)I
-    .registers 4
-    .param p1, "c"    # C
+    .registers 3
 
     .prologue
     .line 210
-    move v0, p1
-
     .line 211
-    .local v0, "ch":I
-    const/16 v1, 0x7f
+    const/16 v0, 0x7f
 
-    if-gt v0, v1, :cond_a
+    if-gt p1, v0, :cond_9
 
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_asciiToBase64:[I
 
-    aget v1, v1, v0
+    aget v0, v0, p1
 
-    :goto_9
-    return v1
+    :goto_8
+    return v0
 
-    :cond_a
-    const/4 v1, -0x1
+    :cond_9
+    const/4 v0, -0x1
 
-    goto :goto_9
+    goto :goto_8
 .end method
 
 .method public decodeBase64Char(I)I
     .registers 3
-    .param p1, "ch"    # I
 
     .prologue
     .line 216
@@ -978,7 +872,6 @@
 
 .method public encode([B)Ljava/lang/String;
     .registers 3
-    .param p1, "input"    # [B
 
     .prologue
     .line 359
@@ -992,205 +885,166 @@
 .end method
 
 .method public encode([BZ)Ljava/lang/String;
-    .registers 15
-    .param p1, "input"    # [B
-    .param p2, "addQuotes"    # Z
+    .registers 11
 
     .prologue
-    const/16 v11, 0x22
+    const/16 v7, 0x22
 
     .line 372
-    array-length v2, p1
+    array-length v3, p1
 
     .line 376
-    .local v2, "inputEnd":I
-    shr-int/lit8 v9, v2, 0x2
+    shr-int/lit8 v0, v3, 0x2
 
-    add-int/2addr v9, v2
+    add-int/2addr v0, v3
 
-    shr-int/lit8 v10, v2, 0x3
+    shr-int/lit8 v1, v3, 0x3
 
-    add-int v6, v9, v10
+    add-int/2addr v0, v1
 
     .line 377
-    .local v6, "outputLen":I
-    new-instance v8, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v8, v6}, Ljava/lang/StringBuilder;-><init>(I)V
+    invoke-direct {v4, v0}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 379
-    .local v8, "sb":Ljava/lang/StringBuilder;
-    if-eqz p2, :cond_14
+    if-eqz p2, :cond_13
 
     .line 380
-    invoke-virtual {v8, v11}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 383
-    :cond_14
+    :cond_13
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/Base64Variant;->getMaxLineLength()I
 
-    move-result v9
+    move-result v0
 
-    shr-int/lit8 v1, v9, 0x2
+    shr-int/lit8 v1, v0, 0x2
 
     .line 386
-    .local v1, "chunksBeforeLF":I
-    const/4 v4, 0x0
+    const/4 v0, 0x0
 
     .line 387
-    .local v4, "inputPtr":I
-    add-int/lit8 v7, v2, -0x3
+    add-int/lit8 v5, v3, -0x3
 
-    .local v7, "safeInputEnd":I
-    move v5, v4
+    move v2, v1
 
     .line 389
-    .end local v4    # "inputPtr":I
-    .local v5, "inputPtr":I
-    :goto_1e
-    if-gt v5, v7, :cond_50
+    :goto_1d
+    if-gt v0, v5, :cond_4f
 
     .line 391
-    add-int/lit8 v4, v5, 0x1
+    add-int/lit8 v1, v0, 0x1
 
-    .end local v5    # "inputPtr":I
-    .restart local v4    # "inputPtr":I
-    aget-byte v9, p1, v5
+    aget-byte v0, p1, v0
 
-    shl-int/lit8 v0, v9, 0x8
+    shl-int/lit8 v0, v0, 0x8
 
     .line 392
-    .local v0, "b24":I
-    add-int/lit8 v5, v4, 0x1
+    add-int/lit8 v6, v1, 0x1
 
-    .end local v4    # "inputPtr":I
-    .restart local v5    # "inputPtr":I
-    aget-byte v9, p1, v4
+    aget-byte v1, p1, v1
 
-    and-int/lit16 v9, v9, 0xff
+    and-int/lit16 v1, v1, 0xff
 
-    or-int/2addr v0, v9
+    or-int/2addr v0, v1
 
     .line 393
-    shl-int/lit8 v9, v0, 0x8
+    shl-int/lit8 v0, v0, 0x8
 
-    add-int/lit8 v4, v5, 0x1
+    add-int/lit8 v1, v6, 0x1
 
-    .end local v5    # "inputPtr":I
-    .restart local v4    # "inputPtr":I
-    aget-byte v10, p1, v5
+    aget-byte v6, p1, v6
 
-    and-int/lit16 v10, v10, 0xff
+    and-int/lit16 v6, v6, 0xff
 
-    or-int v0, v9, v10
+    or-int/2addr v0, v6
 
     .line 394
-    invoke-virtual {p0, v8, v0}, Lcom/fasterxml/jackson/core/Base64Variant;->encodeBase64Chunk(Ljava/lang/StringBuilder;I)V
+    invoke-virtual {p0, v4, v0}, Lcom/fasterxml/jackson/core/Base64Variant;->encodeBase64Chunk(Ljava/lang/StringBuilder;I)V
 
     .line 395
-    add-int/lit8 v1, v1, -0x1
+    add-int/lit8 v0, v2, -0x1
 
-    if-gtz v1, :cond_4e
+    if-gtz v0, :cond_4c
 
     .line 397
-    const/16 v9, 0x5c
+    const/16 v0, 0x5c
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 398
-    const/16 v9, 0x6e
+    const/16 v0, 0x6e
 
-    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 399
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/Base64Variant;->getMaxLineLength()I
 
-    move-result v9
+    move-result v0
 
-    shr-int/lit8 v1, v9, 0x2
+    shr-int/lit8 v0, v0, 0x2
 
-    :cond_4e
-    move v5, v4
+    :cond_4c
+    move v2, v0
+
+    move v0, v1
 
     .line 401
-    .end local v4    # "inputPtr":I
-    .restart local v5    # "inputPtr":I
-    goto :goto_1e
+    goto :goto_1d
 
     .line 404
-    .end local v0    # "b24":I
-    :cond_50
-    sub-int v3, v2, v5
+    :cond_4f
+    sub-int v1, v3, v0
 
     .line 405
-    .local v3, "inputLeft":I
-    if-lez v3, :cond_74
+    if-lez v1, :cond_68
 
     .line 406
-    add-int/lit8 v4, v5, 0x1
+    add-int/lit8 v2, v0, 0x1
 
-    .end local v5    # "inputPtr":I
-    .restart local v4    # "inputPtr":I
-    aget-byte v9, p1, v5
+    aget-byte v0, p1, v0
 
-    shl-int/lit8 v0, v9, 0x10
+    shl-int/lit8 v0, v0, 0x10
 
     .line 407
-    .restart local v0    # "b24":I
-    const/4 v9, 0x2
+    const/4 v3, 0x2
 
-    if-ne v3, v9, :cond_67
+    if-ne v1, v3, :cond_65
 
     .line 408
-    add-int/lit8 v5, v4, 0x1
+    add-int/lit8 v3, v2, 0x1
 
-    .end local v4    # "inputPtr":I
-    .restart local v5    # "inputPtr":I
-    aget-byte v9, p1, v4
+    aget-byte v2, p1, v2
 
-    and-int/lit16 v9, v9, 0xff
+    and-int/lit16 v2, v2, 0xff
 
-    shl-int/lit8 v9, v9, 0x8
+    shl-int/lit8 v2, v2, 0x8
 
-    or-int/2addr v0, v9
-
-    move v4, v5
+    or-int/2addr v0, v2
 
     .line 410
-    .end local v5    # "inputPtr":I
-    .restart local v4    # "inputPtr":I
-    :cond_67
-    invoke-virtual {p0, v8, v0, v3}, Lcom/fasterxml/jackson/core/Base64Variant;->encodeBase64Partial(Ljava/lang/StringBuilder;II)V
+    :cond_65
+    invoke-virtual {p0, v4, v0, v1}, Lcom/fasterxml/jackson/core/Base64Variant;->encodeBase64Partial(Ljava/lang/StringBuilder;II)V
 
     .line 413
-    .end local v0    # "b24":I
-    :goto_6a
-    if-eqz p2, :cond_6f
+    :cond_68
+    if-eqz p2, :cond_6d
 
     .line 414
-    invoke-virtual {v8, v11}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 416
-    :cond_6f
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :cond_6d
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v0
 
-    return-object v9
-
-    .end local v4    # "inputPtr":I
-    .restart local v5    # "inputPtr":I
-    :cond_74
-    move v4, v5
-
-    .end local v5    # "inputPtr":I
-    .restart local v4    # "inputPtr":I
-    goto :goto_6a
+    return-object v0
 .end method
 
 .method public encodeBase64BitsAsByte(I)B
     .registers 3
-    .param p1, "value"    # I
 
     .prologue
     .line 302
@@ -1203,7 +1057,6 @@
 
 .method public encodeBase64BitsAsChar(I)C
     .registers 3
-    .param p1, "value"    # I
 
     .prologue
     .line 236
@@ -1215,17 +1068,12 @@
 .end method
 
 .method public encodeBase64Chunk(I[BI)I
-    .registers 7
-    .param p1, "b24"    # I
-    .param p2, "buffer"    # [B
-    .param p3, "ptr"    # I
+    .registers 8
 
     .prologue
     .line 311
     add-int/lit8 v0, p3, 0x1
 
-    .end local p3    # "ptr":I
-    .local v0, "ptr":I
     iget-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
 
     shr-int/lit8 v2, p1, 0x12
@@ -1237,64 +1085,53 @@
     aput-byte v1, p2, p3
 
     .line 312
-    add-int/lit8 p3, v0, 0x1
+    add-int/lit8 v1, v0, 0x1
 
-    .end local v0    # "ptr":I
-    .restart local p3    # "ptr":I
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
 
-    shr-int/lit8 v2, p1, 0xc
+    shr-int/lit8 v3, p1, 0xc
 
-    and-int/lit8 v2, v2, 0x3f
+    and-int/lit8 v3, v3, 0x3f
 
-    aget-byte v1, v1, v2
+    aget-byte v2, v2, v3
 
-    aput-byte v1, p2, v0
+    aput-byte v2, p2, v0
 
     .line 313
-    add-int/lit8 v0, p3, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    .end local p3    # "ptr":I
-    .restart local v0    # "ptr":I
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
 
-    shr-int/lit8 v2, p1, 0x6
+    shr-int/lit8 v3, p1, 0x6
 
-    and-int/lit8 v2, v2, 0x3f
+    and-int/lit8 v3, v3, 0x3f
 
-    aget-byte v1, v1, v2
+    aget-byte v2, v2, v3
 
-    aput-byte v1, p2, p3
+    aput-byte v2, p2, v1
 
     .line 314
-    add-int/lit8 p3, v0, 0x1
+    add-int/lit8 v1, v0, 0x1
 
-    .end local v0    # "ptr":I
-    .restart local p3    # "ptr":I
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
 
-    and-int/lit8 v2, p1, 0x3f
+    and-int/lit8 v3, p1, 0x3f
 
-    aget-byte v1, v1, v2
+    aget-byte v2, v2, v3
 
-    aput-byte v1, p2, v0
+    aput-byte v2, p2, v0
 
     .line 315
-    return p3
+    return v1
 .end method
 
 .method public encodeBase64Chunk(I[CI)I
-    .registers 7
-    .param p1, "b24"    # I
-    .param p2, "buffer"    # [C
-    .param p3, "ptr"    # I
+    .registers 8
 
     .prologue
     .line 245
     add-int/lit8 v0, p3, 0x1
 
-    .end local p3    # "ptr":I
-    .local v0, "ptr":I
     iget-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
 
     shr-int/lit8 v2, p1, 0x12
@@ -1306,56 +1143,48 @@
     aput-char v1, p2, p3
 
     .line 246
-    add-int/lit8 p3, v0, 0x1
+    add-int/lit8 v1, v0, 0x1
 
-    .end local v0    # "ptr":I
-    .restart local p3    # "ptr":I
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
 
-    shr-int/lit8 v2, p1, 0xc
+    shr-int/lit8 v3, p1, 0xc
 
-    and-int/lit8 v2, v2, 0x3f
+    and-int/lit8 v3, v3, 0x3f
 
-    aget-char v1, v1, v2
+    aget-char v2, v2, v3
 
-    aput-char v1, p2, v0
+    aput-char v2, p2, v0
 
     .line 247
-    add-int/lit8 v0, p3, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    .end local p3    # "ptr":I
-    .restart local v0    # "ptr":I
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
 
-    shr-int/lit8 v2, p1, 0x6
+    shr-int/lit8 v3, p1, 0x6
 
-    and-int/lit8 v2, v2, 0x3f
+    and-int/lit8 v3, v3, 0x3f
 
-    aget-char v1, v1, v2
+    aget-char v2, v2, v3
 
-    aput-char v1, p2, p3
+    aput-char v2, p2, v1
 
     .line 248
-    add-int/lit8 p3, v0, 0x1
+    add-int/lit8 v1, v0, 0x1
 
-    .end local v0    # "ptr":I
-    .restart local p3    # "ptr":I
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
 
-    and-int/lit8 v2, p1, 0x3f
+    and-int/lit8 v3, p1, 0x3f
 
-    aget-char v1, v1, v2
+    aget-char v2, v2, v3
 
-    aput-char v1, p2, v0
+    aput-char v2, p2, v0
 
     .line 249
-    return p3
+    return v1
 .end method
 
 .method public encodeBase64Chunk(Ljava/lang/StringBuilder;I)V
     .registers 5
-    .param p1, "sb"    # Ljava/lang/StringBuilder;
-    .param p2, "b24"    # I
 
     .prologue
     .line 254
@@ -1406,10 +1235,6 @@
 
 .method public encodeBase64Partial(II[BI)I
     .registers 10
-    .param p1, "bits"    # I
-    .param p2, "outputBytes"    # I
-    .param p3, "buffer"    # [B
-    .param p4, "outPtr"    # I
 
     .prologue
     const/4 v4, 0x2
@@ -1417,128 +1242,104 @@
     .line 328
     add-int/lit8 v0, p4, 0x1
 
-    .end local p4    # "outPtr":I
-    .local v0, "outPtr":I
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
 
-    shr-int/lit8 v3, p1, 0x12
+    shr-int/lit8 v2, p1, 0x12
 
-    and-int/lit8 v3, v3, 0x3f
+    and-int/lit8 v2, v2, 0x3f
 
-    aget-byte v2, v2, v3
+    aget-byte v1, v1, v2
 
-    aput-byte v2, p3, p4
+    aput-byte v1, p3, p4
 
     .line 329
-    add-int/lit8 p4, v0, 0x1
+    add-int/lit8 v2, v0, 0x1
 
-    .end local v0    # "outPtr":I
-    .restart local p4    # "outPtr":I
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
 
     shr-int/lit8 v3, p1, 0xc
 
     and-int/lit8 v3, v3, 0x3f
 
-    aget-byte v2, v2, v3
+    aget-byte v1, v1, v3
 
-    aput-byte v2, p3, v0
-
-    .line 330
-    iget-boolean v2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_usesPadding:Z
-
-    if-eqz v2, :cond_35
-
-    .line 331
-    iget-char v2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_paddingChar:C
-
-    int-to-byte v1, v2
-
-    .line 332
-    .local v1, "pb":B
-    add-int/lit8 v0, p4, 0x1
-
-    .end local p4    # "outPtr":I
-    .restart local v0    # "outPtr":I
-    if-ne p2, v4, :cond_33
-
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
-
-    shr-int/lit8 v3, p1, 0x6
-
-    and-int/lit8 v3, v3, 0x3f
-
-    aget-byte v2, v2, v3
-
-    :goto_2c
-    aput-byte v2, p3, p4
-
-    .line 334
-    add-int/lit8 p4, v0, 0x1
-
-    .end local v0    # "outPtr":I
-    .restart local p4    # "outPtr":I
     aput-byte v1, p3, v0
 
-    .line 340
-    .end local v1    # "pb":B
-    :cond_32
-    :goto_32
-    return p4
+    .line 330
+    iget-boolean v0, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_usesPadding:Z
 
-    .end local p4    # "outPtr":I
-    .restart local v0    # "outPtr":I
-    .restart local v1    # "pb":B
+    if-eqz v0, :cond_35
+
+    .line 331
+    iget-char v0, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_paddingChar:C
+
+    int-to-byte v1, v0
+
+    .line 332
+    add-int/lit8 v3, v2, 0x1
+
+    if-ne p2, v4, :cond_33
+
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
+
+    shr-int/lit8 v4, p1, 0x6
+
+    and-int/lit8 v4, v4, 0x3f
+
+    aget-byte v0, v0, v4
+
+    :goto_2c
+    aput-byte v0, p3, v2
+
+    .line 334
+    add-int/lit8 v0, v3, 0x1
+
+    aput-byte v1, p3, v3
+
+    .line 340
+    :goto_32
+    return v0
+
     :cond_33
-    move v2, v1
+    move v0, v1
 
     .line 332
     goto :goto_2c
 
     .line 336
-    .end local v0    # "outPtr":I
-    .end local v1    # "pb":B
-    .restart local p4    # "outPtr":I
     :cond_35
-    if-ne p2, v4, :cond_32
+    if-ne p2, v4, :cond_44
 
     .line 337
-    add-int/lit8 v0, p4, 0x1
+    add-int/lit8 v0, v2, 0x1
 
-    .end local p4    # "outPtr":I
-    .restart local v0    # "outPtr":I
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
+    iget-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiB:[B
 
     shr-int/lit8 v3, p1, 0x6
 
     and-int/lit8 v3, v3, 0x3f
 
-    aget-byte v2, v2, v3
+    aget-byte v1, v1, v3
 
-    aput-byte v2, p3, p4
+    aput-byte v1, p3, v2
 
-    move p4, v0
+    goto :goto_32
 
-    .end local v0    # "outPtr":I
-    .restart local p4    # "outPtr":I
+    :cond_44
+    move v0, v2
+
     goto :goto_32
 .end method
 
 .method public encodeBase64Partial(II[CI)I
-    .registers 9
-    .param p1, "bits"    # I
-    .param p2, "outputBytes"    # I
-    .param p3, "buffer"    # [C
-    .param p4, "outPtr"    # I
+    .registers 10
 
     .prologue
-    const/4 v3, 0x2
+    const/4 v4, 0x2
 
     .line 270
     add-int/lit8 v0, p4, 0x1
 
-    .end local p4    # "outPtr":I
-    .local v0, "outPtr":I
     iget-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
 
     shr-int/lit8 v2, p1, 0x12
@@ -1550,98 +1351,83 @@
     aput-char v1, p3, p4
 
     .line 271
-    add-int/lit8 p4, v0, 0x1
+    add-int/lit8 v1, v0, 0x1
 
-    .end local v0    # "outPtr":I
-    .restart local p4    # "outPtr":I
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
 
-    shr-int/lit8 v2, p1, 0xc
+    shr-int/lit8 v3, p1, 0xc
 
-    and-int/lit8 v2, v2, 0x3f
+    and-int/lit8 v3, v3, 0x3f
 
-    aget-char v1, v1, v2
+    aget-char v2, v2, v3
 
-    aput-char v1, p3, v0
+    aput-char v2, p3, v0
 
     .line 272
-    iget-boolean v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_usesPadding:Z
+    iget-boolean v0, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_usesPadding:Z
 
-    if-eqz v1, :cond_35
+    if-eqz v0, :cond_35
 
     .line 273
-    add-int/lit8 v0, p4, 0x1
+    add-int/lit8 v2, v1, 0x1
 
-    .end local p4    # "outPtr":I
-    .restart local v0    # "outPtr":I
-    if-ne p2, v3, :cond_32
+    if-ne p2, v4, :cond_32
 
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
 
-    shr-int/lit8 v2, p1, 0x6
+    shr-int/lit8 v3, p1, 0x6
 
-    and-int/lit8 v2, v2, 0x3f
+    and-int/lit8 v3, v3, 0x3f
 
-    aget-char v1, v1, v2
+    aget-char v0, v0, v3
 
     :goto_29
-    aput-char v1, p3, p4
+    aput-char v0, p3, v1
 
     .line 275
-    add-int/lit8 p4, v0, 0x1
+    add-int/lit8 v0, v2, 0x1
 
-    .end local v0    # "outPtr":I
-    .restart local p4    # "outPtr":I
     iget-char v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_paddingChar:C
 
-    aput-char v1, p3, v0
+    aput-char v1, p3, v2
 
     .line 281
-    :cond_31
     :goto_31
-    return p4
+    return v0
 
     .line 273
-    .end local p4    # "outPtr":I
-    .restart local v0    # "outPtr":I
     :cond_32
-    iget-char v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_paddingChar:C
+    iget-char v0, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_paddingChar:C
 
     goto :goto_29
 
     .line 277
-    .end local v0    # "outPtr":I
-    .restart local p4    # "outPtr":I
     :cond_35
-    if-ne p2, v3, :cond_31
+    if-ne p2, v4, :cond_44
 
     .line 278
-    add-int/lit8 v0, p4, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    .end local p4    # "outPtr":I
-    .restart local v0    # "outPtr":I
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/Base64Variant;->_base64ToAsciiC:[C
 
-    shr-int/lit8 v2, p1, 0x6
+    shr-int/lit8 v3, p1, 0x6
 
-    and-int/lit8 v2, v2, 0x3f
+    and-int/lit8 v3, v3, 0x3f
 
-    aget-char v1, v1, v2
+    aget-char v2, v2, v3
 
-    aput-char v1, p3, p4
+    aput-char v2, p3, v1
 
-    move p4, v0
+    goto :goto_31
 
-    .end local v0    # "outPtr":I
-    .restart local p4    # "outPtr":I
+    :cond_44
+    move v0, v1
+
     goto :goto_31
 .end method
 
 .method public encodeBase64Partial(Ljava/lang/StringBuilder;II)V
     .registers 7
-    .param p1, "sb"    # Ljava/lang/StringBuilder;
-    .param p2, "bits"    # I
-    .param p3, "outputBytes"    # I
 
     .prologue
     const/4 v2, 0x2
@@ -1723,7 +1509,6 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .registers 3
-    .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
     .line 551
@@ -1832,7 +1617,6 @@
 
 .method public usesPaddingChar(C)Z
     .registers 3
-    .param p1, "c"    # C
 
     .prologue
     .line 192
@@ -1853,7 +1637,6 @@
 
 .method public usesPaddingChar(I)Z
     .registers 3
-    .param p1, "ch"    # I
 
     .prologue
     .line 193

@@ -8,21 +8,14 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$IteratorImpl;,
-        Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
+        "Ljava/io/Serializable;",
         "Ljava/lang/Iterable",
         "<",
         "Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;",
-        ">;",
-        "Ljava/io/Serializable;"
+        ">;"
     }
 .end annotation
 
@@ -43,7 +36,7 @@
 
 # direct methods
 .method public constructor <init>(Ljava/util/Collection;)V
-    .registers 12
+    .registers 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -56,96 +49,86 @@
 
     .prologue
     .line 42
-    .local p1, "properties":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 39
-    const/4 v6, 0x0
+    const/4 v0, 0x0
 
-    iput v6, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_nextBucketIndex:I
+    iput v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_nextBucketIndex:I
 
     .line 43
     invoke-interface {p1}, Ljava/util/Collection;->size()I
 
-    move-result v6
+    move-result v0
 
-    iput v6, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_size:I
+    iput v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_size:I
 
     .line 44
-    iget v6, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_size:I
+    iget v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_size:I
 
-    invoke-static {v6}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->findSize(I)I
+    invoke-static {v0}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->findSize(I)I
 
     move-result v0
 
     .line 45
-    .local v0, "bucketCount":I
-    add-int/lit8 v6, v0, -0x1
+    add-int/lit8 v1, v0, -0x1
 
-    iput v6, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_hashMask:I
+    iput v1, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_hashMask:I
 
     .line 46
     new-array v1, v0, [Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
     .line 47
-    .local v1, "buckets":[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
     invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    .local v2, "i$":Ljava/util/Iterator;
     :goto_1c
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_44
+    if-eqz v0, :cond_43
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v0
 
-    check-cast v5, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    check-cast v0, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
     .line 48
-    .local v5, "property":Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-    invoke-virtual {v5}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->getName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
     .line 49
-    .local v4, "key":Ljava/lang/String;
-    invoke-virtual {v4}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
 
-    move-result v6
+    move-result v4
 
-    iget v7, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_hashMask:I
+    iget v5, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_hashMask:I
 
-    and-int v3, v6, v7
+    and-int/2addr v4, v5
 
     .line 50
-    .local v3, "index":I
-    new-instance v6, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    new-instance v5, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    aget-object v7, v1, v3
+    aget-object v6, v1, v4
 
-    iget v8, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_nextBucketIndex:I
+    iget v7, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_nextBucketIndex:I
 
-    add-int/lit8 v9, v8, 0x1
+    add-int/lit8 v8, v7, 0x1
 
-    iput v9, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_nextBucketIndex:I
+    iput v8, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_nextBucketIndex:I
 
-    invoke-direct {v6, v7, v4, v5, v8}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;-><init>(Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;Ljava/lang/String;Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;I)V
+    invoke-direct {v5, v6, v3, v0, v7}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;-><init>(Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;Ljava/lang/String;Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;I)V
 
-    aput-object v6, v1, v3
+    aput-object v5, v1, v4
 
     goto :goto_1c
 
     .line 52
-    .end local v3    # "index":I
-    .end local v4    # "key":Ljava/lang/String;
-    .end local v5    # "property":Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-    :cond_44
+    :cond_43
     iput-object v1, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
     .line 53
@@ -154,9 +137,6 @@
 
 .method private constructor <init>([Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;II)V
     .registers 5
-    .param p1, "buckets"    # [Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    .param p2, "size"    # I
-    .param p3, "index"    # I
 
     .prologue
     .line 56
@@ -189,17 +169,14 @@
 
 .method private _findWithEquals(Ljava/lang/String;I)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
     .registers 5
-    .param p1, "key"    # Ljava/lang/String;
-    .param p2, "index"    # I
 
     .prologue
     .line 321
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    aget-object v0, v1, p2
+    aget-object v0, v0, p2
 
     .line 322
-    .local v0, "bucket":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
     :goto_4
     if-eqz v0, :cond_14
 
@@ -213,11 +190,11 @@
     if-eqz v1, :cond_11
 
     .line 324
-    iget-object v1, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->value:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    iget-object v0, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->value:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
     .line 328
     :goto_10
-    return-object v1
+    return-object v0
 
     .line 326
     :cond_11
@@ -227,32 +204,29 @@
 
     .line 328
     :cond_14
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_10
 .end method
 
 .method private static final findSize(I)I
-    .registers 4
-    .param p0, "size"    # I
+    .registers 3
 
     .prologue
     .line 142
-    const/16 v2, 0x20
+    const/16 v0, 0x20
 
-    if-gt p0, v2, :cond_b
+    if-gt p0, v0, :cond_b
 
     add-int v0, p0, p0
 
     .line 143
-    .local v0, "needed":I
     :goto_6
     const/4 v1, 0x2
 
     .line 144
-    .local v1, "result":I
     :goto_7
-    if-ge v1, v0, :cond_10
+    if-ge v1, v0, :cond_f
 
     .line 145
     add-int/2addr v1, v1
@@ -260,19 +234,15 @@
     goto :goto_7
 
     .line 142
-    .end local v0    # "needed":I
-    .end local v1    # "result":I
     :cond_b
-    shr-int/lit8 v2, p0, 0x2
+    shr-int/lit8 v0, p0, 0x2
 
-    add-int v0, p0, v2
+    add-int/2addr v0, p0
 
     goto :goto_6
 
     .line 147
-    .restart local v0    # "needed":I
-    .restart local v1    # "result":I
-    :cond_10
+    :cond_f
     return v1
 .end method
 
@@ -282,266 +252,239 @@
     .registers 8
 
     .prologue
+    const/4 v0, 0x0
+
     .line 129
-    const/4 v3, 0x0
-
     .line 130
-    .local v3, "index":I
-    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    iget-object v4, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    .local v0, "arr$":[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    array-length v5, v0
+    array-length v5, v4
 
-    .local v5, "len$":I
-    const/4 v2, 0x0
+    move v3, v0
 
-    .local v2, "i$":I
-    :goto_5
-    if-ge v2, v5, :cond_1b
+    move v1, v0
 
-    aget-object v1, v0, v2
+    :goto_6
+    if-ge v3, v5, :cond_1b
 
-    .local v1, "bucket":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    move v4, v3
+    aget-object v0, v4, v3
 
     .line 131
-    .end local v3    # "index":I
-    .local v4, "index":I
     :goto_a
-    if-eqz v1, :cond_17
+    if-eqz v0, :cond_17
 
     .line 132
-    iget-object v6, v1, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->value:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    iget-object v6, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->value:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
-    add-int/lit8 v3, v4, 0x1
+    add-int/lit8 v2, v1, 0x1
 
-    .end local v4    # "index":I
-    .restart local v3    # "index":I
-    invoke-virtual {v6, v4}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->assignIndex(I)V
+    invoke-virtual {v6, v1}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->assignIndex(I)V
 
     .line 133
-    iget-object v1, v1, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->next:Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    iget-object v0, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->next:Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    move v4, v3
+    move v1, v2
 
-    .end local v3    # "index":I
-    .restart local v4    # "index":I
     goto :goto_a
 
     .line 130
     :cond_17
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v3, 0x1
 
-    move v3, v4
+    move v3, v0
 
-    .end local v4    # "index":I
-    .restart local v3    # "index":I
-    goto :goto_5
+    goto :goto_6
 
     .line 136
-    .end local v1    # "bucket":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
     :cond_1b
     return-object p0
 .end method
 
 .method public find(I)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
     .registers 6
-    .param p1, "propertyIndex"    # I
 
     .prologue
     .line 243
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    .local v2, "i":I
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    array-length v1, v3
+    array-length v2, v1
 
-    .local v1, "end":I
-    :goto_4
-    if-ge v2, v1, :cond_19
+    move v1, v0
+
+    :goto_5
+    if-ge v1, v2, :cond_1b
 
     .line 244
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    aget-object v0, v3, v2
+    aget-object v0, v0, v1
 
-    .local v0, "bucket":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    :goto_a
-    if-eqz v0, :cond_16
+    :goto_b
+    if-eqz v0, :cond_17
 
     .line 245
     iget v3, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->index:I
 
-    if-ne v3, p1, :cond_13
+    if-ne v3, p1, :cond_14
 
     .line 246
-    iget-object v3, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->value:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    iget-object v0, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->value:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
     .line 250
-    .end local v0    # "bucket":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    :goto_12
-    return-object v3
+    :goto_13
+    return-object v0
 
     .line 244
-    .restart local v0    # "bucket":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    :cond_13
+    :cond_14
     iget-object v0, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->next:Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    goto :goto_a
+    goto :goto_b
 
     .line 243
-    :cond_16
-    add-int/lit8 v2, v2, 0x1
+    :cond_17
+    add-int/lit8 v0, v1, 0x1
 
-    goto :goto_4
+    move v1, v0
+
+    goto :goto_5
 
     .line 250
-    .end local v0    # "bucket":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    :cond_19
-    const/4 v3, 0x0
+    :cond_1b
+    const/4 v0, 0x0
 
-    goto :goto_12
+    goto :goto_13
 .end method
 
 .method public find(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-    .registers 6
-    .param p1, "key"    # Ljava/lang/String;
+    .registers 5
 
     .prologue
     .line 216
     if-nez p1, :cond_b
 
     .line 217
-    new-instance v2, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v3, "Can not pass null property name"
+    const-string/jumbo v1, "Can not pass null property name"
 
-    invoke-direct {v2, v3}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v2
+    throw v0
 
     .line 219
     :cond_b
     invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
 
-    move-result v2
+    move-result v0
 
-    iget v3, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_hashMask:I
+    iget v1, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_hashMask:I
 
-    and-int v1, v2, v3
+    and-int/2addr v1, v0
 
     .line 220
-    .local v1, "index":I
-    iget-object v2, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    aget-object v0, v2, v1
+    aget-object v0, v0, v1
 
     .line 222
-    .local v0, "bucket":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_1a
 
     .line 223
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     .line 235
-    :goto_1a
-    return-object v2
+    :goto_19
+    return-object v0
 
     .line 226
-    :cond_1b
+    :cond_1a
     iget-object v2, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->key:Ljava/lang/String;
 
-    if-ne v2, p1, :cond_22
+    if-ne v2, p1, :cond_21
 
     .line 227
-    iget-object v2, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->value:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    iget-object v0, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->value:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
-    goto :goto_1a
+    goto :goto_19
 
     .line 229
-    :cond_22
+    :cond_21
     iget-object v0, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->next:Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    if-eqz v0, :cond_2d
+    if-eqz v0, :cond_2c
 
     .line 230
     iget-object v2, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->key:Ljava/lang/String;
 
-    if-ne v2, p1, :cond_22
+    if-ne v2, p1, :cond_21
 
     .line 231
-    iget-object v2, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->value:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    iget-object v0, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->value:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
-    goto :goto_1a
+    goto :goto_19
 
     .line 235
-    :cond_2d
+    :cond_2c
     invoke-direct {p0, p1, v1}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_findWithEquals(Ljava/lang/String;I)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
-    move-result-object v2
+    move-result-object v0
 
-    goto :goto_1a
+    goto :goto_19
 .end method
 
 .method public getPropertiesInInsertionOrder()[Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-    .registers 10
+    .registers 8
 
     .prologue
     .line 196
-    iget v3, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_nextBucketIndex:I
+    iget v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_nextBucketIndex:I
 
     .line 197
-    .local v3, "len":I
-    new-array v5, v3, [Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    new-array v2, v0, [Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
     .line 198
-    .local v5, "result":[Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    iget-object v3, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    .local v0, "arr$":[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    array-length v4, v0
+    array-length v4, v3
 
-    .local v4, "len$":I
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    .local v2, "i$":I
-    :goto_8
-    if-ge v2, v4, :cond_1b
+    move v1, v0
 
-    aget-object v6, v0, v2
+    :goto_9
+    if-ge v1, v4, :cond_1c
+
+    aget-object v0, v3, v1
 
     .line 199
-    .local v6, "root":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    move-object v1, v6
-
-    .local v1, "bucket":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
     :goto_d
-    if-eqz v1, :cond_18
+    if-eqz v0, :cond_18
 
     .line 200
-    iget v7, v1, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->index:I
+    iget v5, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->index:I
 
-    iget-object v8, v1, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->value:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    iget-object v6, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->value:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
-    aput-object v8, v5, v7
+    aput-object v6, v2, v5
 
     .line 199
-    iget-object v1, v1, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->next:Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    iget-object v0, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->next:Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
     goto :goto_d
 
     .line 198
     :cond_18
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    goto :goto_8
+    move v1, v0
+
+    goto :goto_9
 
     .line 203
-    .end local v1    # "bucket":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    .end local v6    # "root":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    :cond_1b
-    return-object v5
+    :cond_1c
+    return-object v2
 .end method
 
 .method public iterator()Ljava/util/Iterator;
@@ -569,383 +512,345 @@
 
 .method public remove(Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;)V
     .registers 11
-    .param p1, "property"    # Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
     .prologue
     .line 294
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
     .line 295
-    .local v3, "name":Ljava/lang/String;
-    invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v4}, Ljava/lang/String;->hashCode()I
 
-    move-result v6
+    move-result v0
 
-    iget-object v7, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    array-length v7, v7
+    array-length v1, v1
 
-    add-int/lit8 v7, v7, -0x1
+    add-int/lit8 v1, v1, -0x1
 
-    and-int v2, v6, v7
+    and-int v5, v0, v1
 
     .line 296
-    .local v2, "index":I
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
     .line 297
-    .local v4, "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
     const/4 v1, 0x0
 
     .line 299
-    .local v1, "found":Z
-    iget-object v6, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    aget-object v0, v6, v2
+    aget-object v0, v0, v5
 
-    .local v0, "bucket":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    move-object v5, v4
+    move-object v3, v0
 
-    .end local v4    # "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    .local v5, "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    :goto_16
-    if-eqz v0, :cond_34
+    move v0, v1
+
+    move-object v1, v2
+
+    :goto_18
+    if-eqz v3, :cond_36
 
     .line 301
-    if-nez v1, :cond_28
+    if-nez v0, :cond_29
 
-    iget-object v6, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->key:Ljava/lang/String;
+    iget-object v2, v3, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->key:Ljava/lang/String;
 
-    invoke-virtual {v6, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v2
 
-    if-eqz v6, :cond_28
+    if-eqz v2, :cond_29
 
     .line 302
-    const/4 v1, 0x1
-
-    move-object v4, v5
+    const/4 v0, 0x1
 
     .line 299
-    .end local v5    # "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    .restart local v4    # "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    :goto_24
-    iget-object v0, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->next:Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    :goto_25
+    iget-object v2, v3, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->next:Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    move-object v5, v4
+    move-object v3, v2
 
-    .end local v4    # "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    .restart local v5    # "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    goto :goto_16
+    goto :goto_18
 
     .line 304
-    :cond_28
-    new-instance v4, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    :cond_29
+    new-instance v2, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    iget-object v6, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->key:Ljava/lang/String;
+    iget-object v6, v3, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->key:Ljava/lang/String;
 
-    iget-object v7, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->value:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    iget-object v7, v3, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->value:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
-    iget v8, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->index:I
+    iget v8, v3, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->index:I
 
-    invoke-direct {v4, v5, v6, v7, v8}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;-><init>(Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;Ljava/lang/String;Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;I)V
+    invoke-direct {v2, v1, v6, v7, v8}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;-><init>(Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;Ljava/lang/String;Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;I)V
 
-    .end local v5    # "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    .restart local v4    # "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    goto :goto_24
+    move-object v1, v2
+
+    goto :goto_25
 
     .line 307
-    .end local v4    # "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    .restart local v5    # "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    :cond_34
-    if-nez v1, :cond_57
+    :cond_36
+    if-nez v0, :cond_59
 
     .line 308
-    new-instance v6, Ljava/util/NoSuchElementException;
+    new-instance v0, Ljava/util/NoSuchElementException;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v8, "No entry \'"
+    const-string/jumbo v2, "No entry \'"
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-virtual {v7, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v1
 
-    const-string/jumbo v8, "\' found, can\'t remove"
+    const-string/jumbo v2, "\' found, can\'t remove"
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-direct {v6, v7}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
 
-    throw v6
+    throw v0
 
     .line 310
-    :cond_57
-    iget-object v6, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    :cond_59
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    aput-object v5, v6, v2
+    aput-object v1, v0, v5
 
     .line 311
     return-void
 .end method
 
 .method public renameAll(Lcom/fasterxml/jackson/databind/util/NameTransformer;)Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;
-    .registers 9
-    .param p1, "transformer"    # Lcom/fasterxml/jackson/databind/util/NameTransformer;
+    .registers 7
 
     .prologue
     .line 102
     if-eqz p1, :cond_6
 
-    sget-object v6, Lcom/fasterxml/jackson/databind/util/NameTransformer;->NOP:Lcom/fasterxml/jackson/databind/util/NameTransformer;
+    sget-object v0, Lcom/fasterxml/jackson/databind/util/NameTransformer;->NOP:Lcom/fasterxml/jackson/databind/util/NameTransformer;
 
-    if-ne p1, v6, :cond_7
+    if-ne p1, v0, :cond_7
 
     .line 123
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;
     :cond_6
     :goto_6
     return-object p0
 
     .line 105
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;
     :cond_7
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
     .line 106
-    .local v1, "it":Ljava/util/Iterator;, "Ljava/util/Iterator<Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;>;"
-    new-instance v4, Ljava/util/ArrayList;
+    new-instance v2, Ljava/util/ArrayList;
 
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     .line 107
-    .local v4, "newProps":Ljava/util/ArrayList;, "Ljava/util/ArrayList<Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;>;"
     :goto_10
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_3c
+    if-eqz v0, :cond_3c
 
     .line 108
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v5
+    move-result-object v0
 
-    check-cast v5, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    check-cast v0, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
     .line 109
-    .local v5, "prop":Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-    invoke-virtual {v5}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->getName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->getName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v3
 
-    invoke-virtual {p1, v6}, Lcom/fasterxml/jackson/databind/util/NameTransformer;->transform(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v3}, Lcom/fasterxml/jackson/databind/util/NameTransformer;->transform(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
     .line 110
-    .local v3, "newName":Ljava/lang/String;
-    invoke-virtual {v5, v3}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->withSimpleName(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-
-    move-result-object v5
-
-    .line 111
-    invoke-virtual {v5}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->getValueDeserializer()Lcom/fasterxml/jackson/databind/JsonDeserializer;
+    invoke-virtual {v0, v3}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->withSimpleName(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
     move-result-object v0
 
+    .line 111
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->getValueDeserializer()Lcom/fasterxml/jackson/databind/JsonDeserializer;
+
+    move-result-object v3
+
     .line 112
-    .local v0, "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
-    if-eqz v0, :cond_38
+    if-eqz v3, :cond_38
 
     .line 114
-    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/databind/JsonDeserializer;->unwrappingDeserializer(Lcom/fasterxml/jackson/databind/util/NameTransformer;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
+    invoke-virtual {v3, p1}, Lcom/fasterxml/jackson/databind/JsonDeserializer;->unwrappingDeserializer(Lcom/fasterxml/jackson/databind/util/NameTransformer;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
-    move-result-object v2
+    move-result-object v4
 
     .line 116
-    .local v2, "newDeser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<Ljava/lang/Object;>;"
-    if-eq v2, v0, :cond_38
+    if-eq v4, v3, :cond_38
 
     .line 117
-    invoke-virtual {v5, v2}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->withValueDeserializer(Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    invoke-virtual {v0, v4}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->withValueDeserializer(Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
-    move-result-object v5
+    move-result-object v0
 
     .line 120
-    .end local v2    # "newDeser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<Ljava/lang/Object;>;"
     :cond_38
-    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_10
 
     .line 123
-    .end local v0    # "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
-    .end local v3    # "newName":Ljava/lang/String;
-    .end local v5    # "prop":Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
     :cond_3c
     new-instance p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;
-    invoke-direct {p0, v4}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;-><init>(Ljava/util/Collection;)V
+    invoke-direct {p0, v2}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;-><init>(Ljava/util/Collection;)V
 
     goto :goto_6
 .end method
 
 .method public replace(Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;)V
     .registers 11
-    .param p1, "property"    # Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
     .prologue
     .line 260
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->getName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v4
 
     .line 261
-    .local v3, "name":Ljava/lang/String;
-    invoke-virtual {v3}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v4}, Ljava/lang/String;->hashCode()I
 
-    move-result v6
+    move-result v0
 
-    iget-object v7, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    iget-object v1, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    array-length v7, v7
+    array-length v1, v1
 
-    add-int/lit8 v7, v7, -0x1
+    add-int/lit8 v1, v1, -0x1
 
-    and-int v2, v6, v7
+    and-int v5, v0, v1
 
     .line 266
-    .local v2, "index":I
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
     .line 267
-    .local v4, "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
     const/4 v1, -0x1
 
     .line 269
-    .local v1, "foundIndex":I
-    iget-object v6, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    aget-object v0, v6, v2
+    aget-object v0, v0, v5
 
-    .local v0, "bucket":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    move-object v5, v4
+    move-object v3, v0
 
-    .end local v4    # "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    .local v5, "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    :goto_16
-    if-eqz v0, :cond_35
+    move v0, v1
+
+    move-object v1, v2
+
+    :goto_18
+    if-eqz v3, :cond_37
 
     .line 271
-    if-gez v1, :cond_29
+    if-gez v0, :cond_2a
 
-    iget-object v6, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->key:Ljava/lang/String;
+    iget-object v2, v3, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->key:Ljava/lang/String;
 
-    invoke-virtual {v6, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v2
 
-    if-eqz v6, :cond_29
+    if-eqz v2, :cond_2a
 
     .line 272
-    iget v1, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->index:I
-
-    move-object v4, v5
+    iget v0, v3, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->index:I
 
     .line 269
-    .end local v5    # "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    .restart local v4    # "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    :goto_25
-    iget-object v0, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->next:Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    :goto_26
+    iget-object v2, v3, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->next:Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    move-object v5, v4
+    move-object v3, v2
 
-    .end local v4    # "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    .restart local v5    # "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    goto :goto_16
+    goto :goto_18
 
     .line 274
-    :cond_29
-    new-instance v4, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    :cond_2a
+    new-instance v2, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    iget-object v6, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->key:Ljava/lang/String;
+    iget-object v6, v3, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->key:Ljava/lang/String;
 
-    iget-object v7, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->value:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    iget-object v7, v3, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->value:Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
-    iget v8, v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->index:I
+    iget v8, v3, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;->index:I
 
-    invoke-direct {v4, v5, v6, v7, v8}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;-><init>(Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;Ljava/lang/String;Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;I)V
+    invoke-direct {v2, v1, v6, v7, v8}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;-><init>(Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;Ljava/lang/String;Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;I)V
 
-    .end local v5    # "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    .restart local v4    # "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    goto :goto_25
+    move-object v1, v2
+
+    goto :goto_26
 
     .line 278
-    .end local v4    # "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    .restart local v5    # "tail":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    :cond_35
-    if-gez v1, :cond_58
+    :cond_37
+    if-gez v0, :cond_5a
 
     .line 279
-    new-instance v6, Ljava/util/NoSuchElementException;
+    new-instance v0, Ljava/util/NoSuchElementException;
 
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v8, "No entry \'"
+    const-string/jumbo v2, "No entry \'"
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-virtual {v7, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v1
 
-    const-string/jumbo v8, "\' found, can\'t replace"
+    const-string/jumbo v2, "\' found, can\'t replace"
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-direct {v6, v7}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
 
-    throw v6
+    throw v0
 
     .line 284
-    :cond_58
-    iget-object v6, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    :cond_5a
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    new-instance v7, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    new-instance v3, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    invoke-direct {v7, v5, v3, p1, v1}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;-><init>(Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;Ljava/lang/String;Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;I)V
+    invoke-direct {v3, v1, v4, p1, v0}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;-><init>(Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;Ljava/lang/String;Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;I)V
 
-    aput-object v7, v6, v2
+    aput-object v3, v2, v5
 
     .line 285
     return-void
@@ -962,213 +867,185 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 9
+    .registers 8
 
     .prologue
-    .line 159
-    new-instance v6, Ljava/lang/StringBuilder;
+    const/4 v0, 0x0
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    .line 159
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 160
-    .local v6, "sb":Ljava/lang/StringBuilder;
-    const-string/jumbo v7, "Properties=["
+    const-string/jumbo v1, "Properties=["
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 161
-    const/4 v1, 0x0
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 162
-    .local v1, "count":I
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->getPropertiesInInsertionOrder()[Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+
+    move-result-object v4
+
+    array-length v5, v4
+
+    move v2, v0
+
+    :goto_12
+    if-ge v2, v5, :cond_40
+
+    aget-object v6, v4, v2
+
+    .line 163
+    if-nez v6, :cond_1c
+
+    .line 162
+    :goto_18
+    add-int/lit8 v1, v2, 0x1
+
+    move v2, v1
+
+    goto :goto_12
+
+    .line 166
+    :cond_1c
+    add-int/lit8 v1, v0, 0x1
+
+    if-lez v0, :cond_26
+
+    .line 167
+    const-string/jumbo v0, ", "
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 169
+    :cond_26
+    invoke-virtual {v6}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    .local v0, "arr$":[Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-    array-length v4, v0
-
-    .local v4, "len$":I
-    const/4 v3, 0x0
-
-    .local v3, "i$":I
-    move v2, v1
-
-    .end local v1    # "count":I
-    .local v2, "count":I
-    :goto_13
-    if-ge v3, v4, :cond_41
-
-    aget-object v5, v0, v3
-
-    .line 163
-    .local v5, "prop":Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-    if-nez v5, :cond_1e
-
-    move v1, v2
-
-    .line 162
-    .end local v2    # "count":I
-    .restart local v1    # "count":I
-    :goto_1a
-    add-int/lit8 v3, v3, 0x1
-
-    move v2, v1
-
-    .end local v1    # "count":I
-    .restart local v2    # "count":I
-    goto :goto_13
-
-    .line 166
-    :cond_1e
-    add-int/lit8 v1, v2, 0x1
-
-    .end local v2    # "count":I
-    .restart local v1    # "count":I
-    if-lez v2, :cond_28
-
-    .line 167
-    const-string/jumbo v7, ", "
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 169
-    :cond_28
-    invoke-virtual {v5}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->getName()Ljava/lang/String;
-
-    move-result-object v7
-
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 170
-    const/16 v7, 0x28
+    const/16 v0, 0x28
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 171
-    invoke-virtual {v5}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->getType()Lcom/fasterxml/jackson/databind/JavaType;
+    invoke-virtual {v6}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->getType()Lcom/fasterxml/jackson/databind/JavaType;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 172
-    const/16 v7, 0x29
+    const/16 v0, 0x29
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    goto :goto_1a
+    move v0, v1
+
+    goto :goto_18
 
     .line 174
-    .end local v1    # "count":I
-    .end local v5    # "prop":Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-    .restart local v2    # "count":I
-    :cond_41
-    const/16 v7, 0x5d
+    :cond_40
+    const/16 v0, 0x5d
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 175
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v0
 
-    return-object v7
+    return-object v0
 .end method
 
 .method public withProperty(Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;)Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;
-    .registers 12
-    .param p1, "newProperty"    # Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    .registers 9
 
     .prologue
-    const/4 v7, 0x0
+    const/4 v3, 0x0
 
     .line 75
-    iget-object v6, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    array-length v0, v6
+    array-length v1, v0
 
     .line 76
-    .local v0, "bcount":I
-    new-array v2, v0, [Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    new-array v2, v1, [Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
     .line 77
-    .local v2, "newBuckets":[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
-    iget-object v6, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_buckets:[Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    invoke-static {v6, v7, v2, v7, v0}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+    invoke-static {v0, v3, v2, v3, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
     .line 78
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->getName()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
     .line 80
-    .local v5, "propName":Ljava/lang/String;
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;->getName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v3
 
-    invoke-virtual {p0, v6}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->find(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
+    invoke-virtual {p0, v3}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->find(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
-    move-result-object v4
+    move-result-object v3
 
     .line 81
-    .local v4, "oldProp":Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
-    if-nez v4, :cond_3c
+    if-nez v3, :cond_3b
 
     .line 85
-    invoke-virtual {v5}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
-    move-result v6
+    move-result v1
 
-    iget v7, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_hashMask:I
+    iget v3, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_hashMask:I
 
-    and-int v1, v6, v7
+    and-int/2addr v1, v3
 
     .line 86
-    .local v1, "index":I
-    new-instance v6, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
+    new-instance v3, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;
 
-    aget-object v7, v2, v1
+    aget-object v4, v2, v1
 
-    iget v8, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_nextBucketIndex:I
+    iget v5, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_nextBucketIndex:I
 
-    add-int/lit8 v9, v8, 0x1
+    add-int/lit8 v6, v5, 0x1
 
-    iput v9, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_nextBucketIndex:I
+    iput v6, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_nextBucketIndex:I
 
-    invoke-direct {v6, v7, v5, p1, v8}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;-><init>(Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;Ljava/lang/String;Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;I)V
+    invoke-direct {v3, v4, v0, p1, v5}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;-><init>(Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;Ljava/lang/String;Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;I)V
 
-    aput-object v6, v2, v1
+    aput-object v3, v2, v1
 
     .line 88
-    new-instance v3, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;
+    new-instance v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;
 
-    iget v6, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_size:I
+    iget v1, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_size:I
 
-    add-int/lit8 v6, v6, 0x1
+    add-int/lit8 v1, v1, 0x1
 
-    iget v7, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_nextBucketIndex:I
+    iget v3, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_nextBucketIndex:I
 
-    invoke-direct {v3, v2, v6, v7}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;-><init>([Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;II)V
+    invoke-direct {v0, v2, v1, v3}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;-><init>([Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;II)V
 
     .line 93
-    .end local v1    # "index":I
-    :goto_3b
-    return-object v3
+    :goto_3a
+    return-object v0
 
     .line 91
-    :cond_3c
-    new-instance v3, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;
+    :cond_3b
+    new-instance v0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;
 
-    iget v6, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_nextBucketIndex:I
+    iget v3, p0, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->_nextBucketIndex:I
 
-    invoke-direct {v3, v2, v0, v6}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;-><init>([Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;II)V
+    invoke-direct {v0, v2, v1, v3}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;-><init>([Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap$Bucket;II)V
 
     .line 92
-    .local v3, "newMap":Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;
-    invoke-virtual {v3, p1}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->replace(Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;)V
+    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/databind/deser/impl/BeanPropertyMap;->replace(Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;)V
 
-    goto :goto_3b
+    goto :goto_3a
 .end method

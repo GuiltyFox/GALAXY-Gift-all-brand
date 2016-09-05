@@ -16,51 +16,44 @@
 
 
 # virtual methods
-.method public onConnect(ILjava/lang/String;)Z
-    .registers 4
-    .param p1, "type"    # I
-    .param p2, "msg"    # Ljava/lang/String;
-
-    .prologue
-    .line 30
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public onError(Ljava/lang/String;)V
+.method public a(I)V
     .registers 2
-    .param p1, "error"    # Ljava/lang/String;
-
-    .prologue
-    .line 68
-    return-void
-.end method
-
-.method public onFinish(Ljava/io/File;)V
-    .registers 2
-    .param p1, "file"    # Ljava/io/File;
-
-    .prologue
-    .line 59
-    return-void
-.end method
-
-.method public onProgress(I)V
-    .registers 2
-    .param p1, "progress"    # I
 
     .prologue
     .line 41
     return-void
 .end method
 
-.method public onStart(Ljava/lang/String;Ljava/lang/String;)V
+.method public a(Ljava/io/File;)V
+    .registers 2
+
+    .prologue
+    .line 59
+    return-void
+.end method
+
+.method public a(Ljava/lang/String;)V
+    .registers 2
+
+    .prologue
+    .line 68
+    return-void
+.end method
+
+.method public a(Ljava/lang/String;Ljava/lang/String;)V
     .registers 3
-    .param p1, "fileName"    # Ljava/lang/String;
-    .param p2, "url"    # Ljava/lang/String;
 
     .prologue
     .line 19
     return-void
+.end method
+
+.method public a(ILjava/lang/String;)Z
+    .registers 4
+
+    .prologue
+    .line 30
+    const/4 v0, 0x1
+
+    return v0
 .end method

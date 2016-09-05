@@ -16,17 +16,15 @@
 
 
 # instance fields
-.field private volatile producerIndexCache:J
+.field private volatile f:J
 
 
 # direct methods
 .method public constructor <init>(I)V
     .registers 2
-    .param p1, "capacity"    # I
 
     .prologue
     .line 88
-    .local p0, "this":Lrx/internal/util/unsafe/SpmcArrayQueueProducerIndexCacheField;, "Lrx/internal/util/unsafe/SpmcArrayQueueProducerIndexCacheField<TE;>;"
     invoke-direct {p0, p1}, Lrx/internal/util/unsafe/SpmcArrayQueueMidPad;-><init>(I)V
 
     .line 89
@@ -35,25 +33,22 @@
 
 
 # virtual methods
-.method protected final lvProducerIndexCache()J
+.method protected final c()J
     .registers 3
 
     .prologue
     .line 92
-    .local p0, "this":Lrx/internal/util/unsafe/SpmcArrayQueueProducerIndexCacheField;, "Lrx/internal/util/unsafe/SpmcArrayQueueProducerIndexCacheField<TE;>;"
-    iget-wide v0, p0, Lrx/internal/util/unsafe/SpmcArrayQueueProducerIndexCacheField;->producerIndexCache:J
+    iget-wide v0, p0, Lrx/internal/util/unsafe/SpmcArrayQueueProducerIndexCacheField;->f:J
 
     return-wide v0
 .end method
 
-.method protected final svProducerIndexCache(J)V
+.method protected final e(J)V
     .registers 4
-    .param p1, "v"    # J
 
     .prologue
     .line 96
-    .local p0, "this":Lrx/internal/util/unsafe/SpmcArrayQueueProducerIndexCacheField;, "Lrx/internal/util/unsafe/SpmcArrayQueueProducerIndexCacheField<TE;>;"
-    iput-wide p1, p0, Lrx/internal/util/unsafe/SpmcArrayQueueProducerIndexCacheField;->producerIndexCache:J
+    iput-wide p1, p0, Lrx/internal/util/unsafe/SpmcArrayQueueProducerIndexCacheField;->f:J
 
     .line 97
     return-void

@@ -6,17 +6,6 @@
 .implements Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonValueFormatVisitor;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonValueFormatVisitor;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Base"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -44,13 +33,11 @@
 
     .prologue
     .line 26
-    .local p1, "enums":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     return-void
 .end method
 
 .method public format(Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonValueFormat;)V
     .registers 2
-    .param p1, "format"    # Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonValueFormat;
 
     .prologue
     .line 24

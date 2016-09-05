@@ -6,17 +6,16 @@
 .implements Lcz/msebera/android/httpclient/client/HttpRequestRetryHandler;
 
 
-# annotations
-.annotation build Lcz/msebera/android/httpclient/annotation/Immutable;
-.end annotation
-
-
 # static fields
-.field public static final INSTANCE:Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;
+.field public static final a:Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;
 
 
 # instance fields
-.field private final nonRetriableClasses:Ljava/util/Set;
+.field private final b:I
+
+.field private final c:Z
+
+.field private final d:Ljava/util/Set;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Set",
@@ -29,10 +28,6 @@
     .end annotation
 .end field
 
-.field private final requestSentRetryEnabled:Z
-
-.field private final retryCount:I
-
 
 # direct methods
 .method static constructor <clinit>()V
@@ -44,7 +39,7 @@
 
     invoke-direct {v0}, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;-><init>()V
 
-    sput-object v0, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->INSTANCE:Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;
+    sput-object v0, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->a:Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;
 
     return-void
 .end method
@@ -66,8 +61,6 @@
 
 .method public constructor <init>(IZ)V
     .registers 6
-    .param p1, "retryCount"    # I
-    .param p2, "requestSentRetryEnabled"    # Z
 
     .prologue
     .line 103
@@ -111,8 +104,6 @@
 
 .method protected constructor <init>(IZLjava/util/Collection;)V
     .registers 7
-    .param p1, "retryCount"    # I
-    .param p2, "requestSentRetryEnabled"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(IZ",
@@ -127,21 +118,20 @@
 
     .prologue
     .line 80
-    .local p3, "clazzes":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/lang/Class<+Ljava/io/IOException;>;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 81
-    iput p1, p0, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->retryCount:I
+    iput p1, p0, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->b:I
 
     .line 82
-    iput-boolean p2, p0, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->requestSentRetryEnabled:Z
+    iput-boolean p2, p0, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->c:Z
 
     .line 83
-    new-instance v1, Ljava/util/HashSet;
+    new-instance v0, Ljava/util/HashSet;
 
-    invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
-    iput-object v1, p0, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->nonRetriableClasses:Ljava/util/Set;
+    iput-object v0, p0, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->d:Ljava/util/Set;
 
     .line 84
     invoke-interface {p3}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
@@ -151,9 +141,9 @@
     :goto_12
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_24
+    if-eqz v0, :cond_24
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -162,34 +152,21 @@
     check-cast v0, Ljava/lang/Class;
 
     .line 85
-    .local v0, "clazz":Ljava/lang/Class;, "Ljava/lang/Class<+Ljava/io/IOException;>;"
-    iget-object v2, p0, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->nonRetriableClasses:Ljava/util/Set;
+    iget-object v2, p0, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->d:Ljava/util/Set;
 
     invoke-interface {v2, v0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     goto :goto_12
 
     .line 87
-    .end local v0    # "clazz":Ljava/lang/Class;, "Ljava/lang/Class<+Ljava/io/IOException;>;"
     :cond_24
     return-void
 .end method
 
 
 # virtual methods
-.method public getRetryCount()I
-    .registers 2
-
-    .prologue
-    .line 179
-    iget v0, p0, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->retryCount:I
-
-    return v0
-.end method
-
-.method protected handleAsIdempotent(Lcz/msebera/android/httpclient/HttpRequest;)Z
+.method protected a(Lcz/msebera/android/httpclient/HttpRequest;)Z
     .registers 3
-    .param p1, "request"    # Lcz/msebera/android/httpclient/HttpRequest;
 
     .prologue
     .line 186
@@ -208,189 +185,193 @@
     goto :goto_5
 .end method
 
-.method public isRequestSentRetryEnabled()Z
-    .registers 2
-
-    .prologue
-    .line 172
-    iget-boolean v0, p0, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->requestSentRetryEnabled:Z
-
-    return v0
-.end method
-
-.method protected requestIsAborted(Lcz/msebera/android/httpclient/HttpRequest;)Z
+.method protected b(Lcz/msebera/android/httpclient/HttpRequest;)Z
     .registers 4
-    .param p1, "request"    # Lcz/msebera/android/httpclient/HttpRequest;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
     .prologue
     .line 196
-    move-object v0, p1
-
     .line 197
-    .local v0, "req":Lcz/msebera/android/httpclient/HttpRequest;
-    instance-of v1, p1, Lcz/msebera/android/httpclient/impl/client/RequestWrapper;
+    instance-of v0, p1, Lcz/msebera/android/httpclient/impl/client/RequestWrapper;
 
-    if-eqz v1, :cond_b
+    if-eqz v0, :cond_1a
 
     .line 198
     check-cast p1, Lcz/msebera/android/httpclient/impl/client/RequestWrapper;
 
-    .end local p1    # "request":Lcz/msebera/android/httpclient/HttpRequest;
-    invoke-virtual {p1}, Lcz/msebera/android/httpclient/impl/client/RequestWrapper;->getOriginal()Lcz/msebera/android/httpclient/HttpRequest;
+    invoke-virtual {p1}, Lcz/msebera/android/httpclient/impl/client/RequestWrapper;->c()Lcz/msebera/android/httpclient/HttpRequest;
 
     move-result-object v0
 
     .line 200
-    :cond_b
+    :goto_a
     instance-of v1, v0, Lcz/msebera/android/httpclient/client/methods/HttpUriRequest;
 
-    if-eqz v1, :cond_19
+    if-eqz v1, :cond_18
 
     check-cast v0, Lcz/msebera/android/httpclient/client/methods/HttpUriRequest;
 
-    .end local v0    # "req":Lcz/msebera/android/httpclient/HttpRequest;
     invoke-interface {v0}, Lcz/msebera/android/httpclient/client/methods/HttpUriRequest;->isAborted()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_19
+    if-eqz v0, :cond_18
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    :goto_18
-    return v1
+    :goto_17
+    return v0
 
-    :cond_19
-    const/4 v1, 0x0
+    :cond_18
+    const/4 v0, 0x0
 
-    goto :goto_18
+    goto :goto_17
+
+    :cond_1a
+    move-object v0, p1
+
+    goto :goto_a
 .end method
 
 .method public retryRequest(Ljava/io/IOException;ILcz/msebera/android/httpclient/protocol/HttpContext;)Z
-    .registers 11
-    .param p1, "exception"    # Ljava/io/IOException;
-    .param p2, "executionCount"    # I
-    .param p3, "context"    # Lcz/msebera/android/httpclient/protocol/HttpContext;
+    .registers 9
 
     .prologue
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     .line 131
-    const-string/jumbo v5, "Exception parameter"
+    const-string/jumbo v0, "Exception parameter"
 
-    invoke-static {p1, v5}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcz/msebera/android/httpclient/util/Args;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 132
-    const-string/jumbo v5, "HTTP context"
+    const-string/jumbo v0, "HTTP context"
 
-    invoke-static {p3, v5}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p3, v0}, Lcz/msebera/android/httpclient/util/Args;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 133
-    iget v5, p0, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->retryCount:I
+    iget v0, p0, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->b:I
 
-    if-le p2, v5, :cond_13
+    if-le p2, v0, :cond_14
+
+    move v0, v1
 
     .line 164
-    :cond_12
-    :goto_12
-    return v3
+    :goto_13
+    return v0
 
     .line 137
-    :cond_13
-    iget-object v5, p0, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->nonRetriableClasses:Ljava/util/Set;
+    :cond_14
+    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->d:Ljava/util/Set;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v6
+    move-result-object v3
 
-    invoke-interface {v5, v6}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    invoke-interface {v0, v3}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
-    move-result v5
+    move-result v0
 
-    if-nez v5, :cond_12
+    if-eqz v0, :cond_22
+
+    move v0, v1
+
+    .line 138
+    goto :goto_13
 
     .line 140
-    iget-object v5, p0, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->nonRetriableClasses:Ljava/util/Set;
+    :cond_22
+    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->d:Ljava/util/Set;
 
-    invoke-interface {v5}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
-    move-result-object v5
+    move-result-object v3
 
-    :cond_25
-    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+    :cond_28
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_38
+    if-eqz v0, :cond_3c
 
-    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Ljava/lang/Class;
+    check-cast v0, Ljava/lang/Class;
 
     .line 141
-    .local v1, "rejectException":Ljava/lang/Class;, "Ljava/lang/Class<+Ljava/io/IOException;>;"
-    invoke-virtual {v1, p1}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
+    invoke-virtual {v0, p1}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
 
-    move-result v6
+    move-result v0
 
-    if-eqz v6, :cond_25
+    if-eqz v0, :cond_28
 
-    goto :goto_12
+    move v0, v1
+
+    .line 142
+    goto :goto_13
 
     .line 146
-    .end local v1    # "rejectException":Ljava/lang/Class;, "Ljava/lang/Class<+Ljava/io/IOException;>;"
-    :cond_38
-    invoke-static {p3}, Lcz/msebera/android/httpclient/client/protocol/HttpClientContext;->adapt(Lcz/msebera/android/httpclient/protocol/HttpContext;)Lcz/msebera/android/httpclient/client/protocol/HttpClientContext;
+    :cond_3c
+    invoke-static {p3}, Lcz/msebera/android/httpclient/client/protocol/HttpClientContext;->a(Lcz/msebera/android/httpclient/protocol/HttpContext;)Lcz/msebera/android/httpclient/client/protocol/HttpClientContext;
 
     move-result-object v0
 
     .line 147
-    .local v0, "clientContext":Lcz/msebera/android/httpclient/client/protocol/HttpClientContext;
-    invoke-virtual {v0}, Lcz/msebera/android/httpclient/client/protocol/HttpClientContext;->getRequest()Lcz/msebera/android/httpclient/HttpRequest;
+    invoke-virtual {v0}, Lcz/msebera/android/httpclient/client/protocol/HttpClientContext;->m()Lcz/msebera/android/httpclient/HttpRequest;
 
-    move-result-object v2
+    move-result-object v3
 
     .line 149
-    .local v2, "request":Lcz/msebera/android/httpclient/HttpRequest;
-    invoke-virtual {p0, v2}, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->requestIsAborted(Lcz/msebera/android/httpclient/HttpRequest;)Z
+    invoke-virtual {p0, v3}, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->b(Lcz/msebera/android/httpclient/HttpRequest;)Z
 
-    move-result v5
+    move-result v4
 
-    if-nez v5, :cond_12
+    if-eqz v4, :cond_4c
+
+    move v0, v1
+
+    .line 150
+    goto :goto_13
 
     .line 153
-    invoke-virtual {p0, v2}, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->handleAsIdempotent(Lcz/msebera/android/httpclient/HttpRequest;)Z
+    :cond_4c
+    invoke-virtual {p0, v3}, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->a(Lcz/msebera/android/httpclient/HttpRequest;)Z
 
-    move-result v5
+    move-result v3
 
-    if-eqz v5, :cond_4e
+    if-eqz v3, :cond_54
 
-    move v3, v4
+    move v0, v2
 
     .line 155
-    goto :goto_12
+    goto :goto_13
 
     .line 158
-    :cond_4e
-    invoke-virtual {v0}, Lcz/msebera/android/httpclient/client/protocol/HttpClientContext;->isRequestSent()Z
+    :cond_54
+    invoke-virtual {v0}, Lcz/msebera/android/httpclient/client/protocol/HttpClientContext;->n()Z
 
-    move-result v5
+    move-result v0
 
-    if-eqz v5, :cond_58
+    if-eqz v0, :cond_5e
 
-    iget-boolean v5, p0, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->requestSentRetryEnabled:Z
+    iget-boolean v0, p0, Lcz/msebera/android/httpclient/impl/client/DefaultHttpRequestRetryHandler;->c:Z
 
-    if-eqz v5, :cond_12
+    if-eqz v0, :cond_60
 
-    :cond_58
-    move v3, v4
+    :cond_5e
+    move v0, v2
 
     .line 161
-    goto :goto_12
+    goto :goto_13
+
+    :cond_60
+    move v0, v1
+
+    .line 164
+    goto :goto_13
 .end method

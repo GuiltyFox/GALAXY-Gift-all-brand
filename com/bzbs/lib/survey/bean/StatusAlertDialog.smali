@@ -15,11 +15,11 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
+.field public static final enum a:Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
 
-.field public static final enum BADGE:Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
+.field public static final enum b:Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
 
-.field public static final enum MISSION:Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
+.field private static final synthetic c:[Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
 
 
 # direct methods
@@ -38,7 +38,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/bzbs/lib/survey/bean/StatusAlertDialog;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bzbs/lib/survey/bean/StatusAlertDialog;->MISSION:Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
+    sput-object v0, Lcom/bzbs/lib/survey/bean/StatusAlertDialog;->a:Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
 
     new-instance v0, Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
 
@@ -46,22 +46,22 @@
 
     invoke-direct {v0, v1, v3}, Lcom/bzbs/lib/survey/bean/StatusAlertDialog;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bzbs/lib/survey/bean/StatusAlertDialog;->BADGE:Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
+    sput-object v0, Lcom/bzbs/lib/survey/bean/StatusAlertDialog;->b:Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
 
     .line 6
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
 
-    sget-object v1, Lcom/bzbs/lib/survey/bean/StatusAlertDialog;->MISSION:Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
+    sget-object v1, Lcom/bzbs/lib/survey/bean/StatusAlertDialog;->a:Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/bzbs/lib/survey/bean/StatusAlertDialog;->BADGE:Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
+    sget-object v1, Lcom/bzbs/lib/survey/bean/StatusAlertDialog;->b:Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
 
     aput-object v1, v0, v3
 
-    sput-object v0, Lcom/bzbs/lib/survey/bean/StatusAlertDialog;->$VALUES:[Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
+    sput-object v0, Lcom/bzbs/lib/survey/bean/StatusAlertDialog;->c:[Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
 
     return-void
 .end method
@@ -83,7 +83,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 6
@@ -103,7 +102,7 @@
 
     .prologue
     .line 6
-    sget-object v0, Lcom/bzbs/lib/survey/bean/StatusAlertDialog;->$VALUES:[Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
+    sget-object v0, Lcom/bzbs/lib/survey/bean/StatusAlertDialog;->c:[Lcom/bzbs/lib/survey/bean/StatusAlertDialog;
 
     invoke-virtual {v0}, [Lcom/bzbs/lib/survey/bean/StatusAlertDialog;->clone()Ljava/lang/Object;
 

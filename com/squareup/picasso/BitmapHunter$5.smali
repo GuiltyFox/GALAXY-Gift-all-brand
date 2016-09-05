@@ -8,17 +8,12 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/squareup/picasso/BitmapHunter;->applyCustomTransformations(Ljava/util/List;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
+    value = Lcom/squareup/picasso/BitmapHunter;->a(Ljava/util/List;Landroid/graphics/Bitmap;)Landroid/graphics/Bitmap;
 .end annotation
 
 
 # instance fields
-.field final synthetic val$transformation:Lcom/squareup/picasso/Transformation;
+.field final synthetic a:Lcom/squareup/picasso/Transformation;
 
 
 # direct methods
@@ -27,7 +22,7 @@
 
     .prologue
     .line 459
-    iput-object p1, p0, Lcom/squareup/picasso/BitmapHunter$5;->val$transformation:Lcom/squareup/picasso/Transformation;
+    iput-object p1, p0, Lcom/squareup/picasso/BitmapHunter$5;->a:Lcom/squareup/picasso/Transformation;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -53,10 +48,10 @@
 
     move-result-object v1
 
-    iget-object v2, p0, Lcom/squareup/picasso/BitmapHunter$5;->val$transformation:Lcom/squareup/picasso/Transformation;
+    iget-object v2, p0, Lcom/squareup/picasso/BitmapHunter$5;->a:Lcom/squareup/picasso/Transformation;
 
     .line 462
-    invoke-interface {v2}, Lcom/squareup/picasso/Transformation;->key()Ljava/lang/String;
+    invoke-interface {v2}, Lcom/squareup/picasso/Transformation;->a()Ljava/lang/String;
 
     move-result-object v2
 

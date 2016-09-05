@@ -2,10 +2,7 @@
 .super Ljava/lang/Object;
 .source "Action0.java"
 
-# interfaces
-.implements Lrx/functions/Action;
-
 
 # virtual methods
-.method public abstract call()V
+.method public abstract a()V
 .end method

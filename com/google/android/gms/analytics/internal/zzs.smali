@@ -6,9 +6,9 @@
 
 
 # instance fields
-.field private zzNQ:Z
+.field private a:I
 
-.field private zzQh:I
+.field private b:Z
 
 
 # direct methods
@@ -19,59 +19,33 @@
 
     const/4 v0, 0x2
 
-    iput v0, p0, Lcom/google/android/gms/analytics/internal/zzs;->zzQh:I
+    iput v0, p0, Lcom/google/android/gms/analytics/internal/zzs;->a:I
 
     return-void
 .end method
 
 
 # virtual methods
-.method public error(Ljava/lang/Exception;)V
-    .registers 2
-    .param p1, "exception"    # Ljava/lang/Exception;
-
-    .prologue
-    return-void
-.end method
-
-.method public error(Ljava/lang/String;)V
-    .registers 2
-    .param p1, "msg"    # Ljava/lang/String;
-
-    .prologue
-    return-void
-.end method
-
-.method public getLogLevel()I
+.method public a()I
     .registers 2
 
-    iget v0, p0, Lcom/google/android/gms/analytics/internal/zzs;->zzQh:I
+    iget v0, p0, Lcom/google/android/gms/analytics/internal/zzs;->a:I
 
     return v0
 .end method
 
-.method public info(Ljava/lang/String;)V
-    .registers 2
-    .param p1, "msg"    # Ljava/lang/String;
-
-    .prologue
-    return-void
-.end method
-
-.method public setLogLevel(I)V
+.method public a(I)V
     .registers 5
-    .param p1, "level"    # I
 
-    .prologue
-    iput p1, p0, Lcom/google/android/gms/analytics/internal/zzs;->zzQh:I
+    iput p1, p0, Lcom/google/android/gms/analytics/internal/zzs;->a:I
 
-    iget-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzs;->zzNQ:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzs;->b:Z
 
     if-nez v0, :cond_37
 
-    sget-object v0, Lcom/google/android/gms/analytics/internal/zzy;->zzQr:Lcom/google/android/gms/analytics/internal/zzy$zza;
+    sget-object v0, Lcom/google/android/gms/analytics/internal/zzy;->c:Lcom/google/android/gms/analytics/internal/zzy$zza;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzy$zza;->get()Ljava/lang/Object;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzy$zza;->a()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -87,9 +61,9 @@
 
     move-result-object v2
 
-    sget-object v1, Lcom/google/android/gms/analytics/internal/zzy;->zzQr:Lcom/google/android/gms/analytics/internal/zzy$zza;
+    sget-object v1, Lcom/google/android/gms/analytics/internal/zzy;->c:Lcom/google/android/gms/analytics/internal/zzy$zza;
 
-    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzy$zza;->get()Ljava/lang/Object;
+    invoke-virtual {v1}, Lcom/google/android/gms/analytics/internal/zzy$zza;->a()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -113,24 +87,32 @@
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzs;->zzNQ:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzs;->b:Z
 
     :cond_37
     return-void
 .end method
 
-.method public verbose(Ljava/lang/String;)V
+.method public a(Ljava/lang/String;)V
     .registers 2
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .prologue
     return-void
 .end method
 
-.method public warn(Ljava/lang/String;)V
+.method public b(Ljava/lang/String;)V
     .registers 2
-    .param p1, "msg"    # Ljava/lang/String;
 
-    .prologue
+    return-void
+.end method
+
+.method public c(Ljava/lang/String;)V
+    .registers 2
+
+    return-void
+.end method
+
+.method public d(Ljava/lang/String;)V
+    .registers 2
+
     return-void
 .end method

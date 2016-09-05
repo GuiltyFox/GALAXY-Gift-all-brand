@@ -3,22 +3,6 @@
 .source "StdArraySerializers.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/ser/std/StdArraySerializers$DoubleArraySerializer;,
-        Lcom/fasterxml/jackson/databind/ser/std/StdArraySerializers$FloatArraySerializer;,
-        Lcom/fasterxml/jackson/databind/ser/std/StdArraySerializers$LongArraySerializer;,
-        Lcom/fasterxml/jackson/databind/ser/std/StdArraySerializers$IntArraySerializer;,
-        Lcom/fasterxml/jackson/databind/ser/std/StdArraySerializers$CharArraySerializer;,
-        Lcom/fasterxml/jackson/databind/ser/std/StdArraySerializers$ShortArraySerializer;,
-        Lcom/fasterxml/jackson/databind/ser/std/StdArraySerializers$ByteArraySerializer;,
-        Lcom/fasterxml/jackson/databind/ser/std/StdArraySerializers$BooleanArraySerializer;,
-        Lcom/fasterxml/jackson/databind/ser/std/StdArraySerializers$TypedPrimitiveArraySerializer;
-    }
-.end annotation
-
-
 # static fields
 .field protected static final _arraySerializers:Ljava/util/HashMap;
     .annotation system Ldalvik/annotation/Signature;
@@ -193,7 +177,6 @@
 
     .prologue
     .line 46
-    .local p0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     sget-object v0, Lcom/fasterxml/jackson/databind/ser/std/StdArraySerializers;->_arraySerializers:Ljava/util/HashMap;
 
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;

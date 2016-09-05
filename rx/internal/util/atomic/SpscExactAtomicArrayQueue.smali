@@ -21,7 +21,7 @@
 
 
 # static fields
-.field static final CONSUMER_INDEX:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+.field static final e:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/atomic/AtomicLongFieldUpdater",
@@ -32,7 +32,7 @@
     .end annotation
 .end field
 
-.field static final PRODUCER_INDEX:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+.field static final f:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/concurrent/atomic/AtomicLongFieldUpdater",
@@ -42,18 +42,16 @@
         }
     .end annotation
 .end field
-
-.field private static final serialVersionUID:J = 0x5631d997036b8b85L
 
 
 # instance fields
-.field final capacitySkip:I
+.field final a:I
 
-.field volatile consumerIndex:J
+.field final b:I
 
-.field final mask:I
+.field volatile c:J
 
-.field volatile producerIndex:J
+.field volatile d:J
 
 
 # direct methods
@@ -64,40 +62,38 @@
     .line 39
     const-class v0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;
 
-    const-string/jumbo v1, "producerIndex"
+    const-string/jumbo v1, "c"
 
     invoke-static {v0, v1}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object v0
 
-    sput-object v0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->PRODUCER_INDEX:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    sput-object v0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->e:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     .line 42
     const-class v0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;
 
-    const-string/jumbo v1, "consumerIndex"
+    const-string/jumbo v1, "d"
 
     invoke-static {v0, v1}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     move-result-object v0
 
-    sput-object v0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->CONSUMER_INDEX:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    sput-object v0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->f:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     return-void
 .end method
 
 .method public constructor <init>(I)V
     .registers 4
-    .param p1, "capacity"    # I
 
     .prologue
     .line 46
-    .local p0, "this":Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscExactAtomicArrayQueue<TT;>;"
-    invoke-static {p1}, Lrx/internal/util/unsafe/Pow2;->roundToPowerOfTwo(I)I
+    invoke-static {p1}, Lrx/internal/util/unsafe/Pow2;->a(I)I
 
-    move-result v1
+    move-result v0
 
-    invoke-direct {p0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;-><init>(I)V
+    invoke-direct {p0, v0}, Ljava/util/concurrent/atomic/AtomicReferenceArray;-><init>(I)V
 
     .line 47
     invoke-virtual {p0}, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->length()I
@@ -105,15 +101,14 @@
     move-result v0
 
     .line 48
-    .local v0, "len":I
     add-int/lit8 v1, v0, -0x1
 
-    iput v1, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->mask:I
+    iput v1, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->a:I
 
     .line 49
-    sub-int v1, v0, p1
+    sub-int/2addr v0, p1
 
-    iput v1, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->capacitySkip:I
+    iput v0, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->b:I
 
     .line 50
     return-void
@@ -131,8 +126,6 @@
 
     .prologue
     .line 156
-    .local p0, "this":Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscExactAtomicArrayQueue<TT;>;"
-    .local p1, "e":Ljava/lang/Object;, "TT;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -152,8 +145,6 @@
 
     .prologue
     .line 141
-    .local p0, "this":Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscExactAtomicArrayQueue<TT;>;"
-    .local p1, "c":Ljava/util/Collection;, "Ljava/util/Collection<+TT;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -166,7 +157,6 @@
 
     .prologue
     .line 89
-    .local p0, "this":Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscExactAtomicArrayQueue<TT;>;"
     :cond_0
     invoke-virtual {p0}, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->poll()Ljava/lang/Object;
 
@@ -186,11 +176,9 @@
 
 .method public contains(Ljava/lang/Object;)Z
     .registers 3
-    .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
     .line 111
-    .local p0, "this":Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscExactAtomicArrayQueue<TT;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -210,8 +198,6 @@
 
     .prologue
     .line 136
-    .local p0, "this":Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscExactAtomicArrayQueue<TT;>;"
-    .local p1, "c":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -229,7 +215,6 @@
 
     .prologue
     .line 166
-    .local p0, "this":Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscExactAtomicArrayQueue<TT;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -242,10 +227,9 @@
 
     .prologue
     .line 93
-    .local p0, "this":Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscExactAtomicArrayQueue<TT;>;"
-    iget-wide v0, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->producerIndex:J
+    iget-wide v0, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->c:J
 
-    iget-wide v2, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->consumerIndex:J
+    iget-wide v2, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->d:J
 
     cmp-long v0, v0, v2
 
@@ -274,7 +258,6 @@
 
     .prologue
     .line 116
-    .local p0, "this":Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscExactAtomicArrayQueue<TT;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -283,7 +266,7 @@
 .end method
 
 .method public offer(Ljava/lang/Object;)Z
-    .registers 10
+    .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)Z"
@@ -292,75 +275,69 @@
 
     .prologue
     .line 55
-    .local p0, "this":Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscExactAtomicArrayQueue<TT;>;"
-    .local p1, "value":Ljava/lang/Object;, "TT;"
     if-nez p1, :cond_8
 
     .line 56
-    new-instance v3, Ljava/lang/NullPointerException;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    invoke-direct {v3}, Ljava/lang/NullPointerException;-><init>()V
+    invoke-direct {v0}, Ljava/lang/NullPointerException;-><init>()V
 
-    throw v3
+    throw v0
 
     .line 59
     :cond_8
-    iget-wide v4, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->producerIndex:J
+    iget-wide v0, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->c:J
 
     .line 60
-    .local v4, "pi":J
-    iget v1, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->mask:I
+    iget v2, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->a:I
 
     .line 62
-    .local v1, "m":I
-    iget v3, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->capacitySkip:I
+    iget v3, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->b:I
 
-    int-to-long v6, v3
+    int-to-long v4, v3
 
-    add-long/2addr v6, v4
+    add-long/2addr v4, v0
 
-    long-to-int v3, v6
+    long-to-int v3, v4
 
-    and-int v0, v3, v1
+    and-int/2addr v3, v2
 
     .line 63
-    .local v0, "fullCheck":I
-    invoke-virtual {p0, v0}, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->get(I)Ljava/lang/Object;
+    invoke-virtual {p0, v3}, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
-    if-eqz v3, :cond_1b
+    if-eqz v3, :cond_1a
 
     .line 64
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
     .line 69
-    :goto_1a
-    return v3
+    :goto_19
+    return v0
 
     .line 66
-    :cond_1b
-    long-to-int v3, v4
+    :cond_1a
+    long-to-int v3, v0
 
-    and-int v2, v3, v1
+    and-int/2addr v2, v3
 
     .line 67
-    .local v2, "offset":I
-    sget-object v3, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->PRODUCER_INDEX:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    sget-object v3, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->e:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
-    const-wide/16 v6, 0x1
+    const-wide/16 v4, 0x1
 
-    add-long/2addr v6, v4
+    add-long/2addr v0, v4
 
-    invoke-virtual {v3, p0, v6, v7}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->lazySet(Ljava/lang/Object;J)V
+    invoke-virtual {v3, p0, v0, v1}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->lazySet(Ljava/lang/Object;J)V
 
     .line 68
     invoke-virtual {p0, v2, p1}, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->lazySet(ILjava/lang/Object;)V
 
     .line 69
-    const/4 v3, 0x1
+    const/4 v0, 0x1
 
-    goto :goto_1a
+    goto :goto_19
 .end method
 
 .method public peek()Ljava/lang/Object;
@@ -373,12 +350,11 @@
 
     .prologue
     .line 85
-    .local p0, "this":Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscExactAtomicArrayQueue<TT;>;"
-    iget-wide v0, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->consumerIndex:J
+    iget-wide v0, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->d:J
 
     long-to-int v0, v0
 
-    iget v1, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->mask:I
+    iget v1, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->a:I
 
     and-int/2addr v0, v1
 
@@ -398,52 +374,47 @@
     .end annotation
 
     .prologue
-    .local p0, "this":Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscExactAtomicArrayQueue<TT;>;"
-    const/4 v4, 0x0
+    const/4 v0, 0x0
 
     .line 73
-    iget-wide v0, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->consumerIndex:J
+    iget-wide v2, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->d:J
 
     .line 74
-    .local v0, "ci":J
-    long-to-int v5, v0
+    long-to-int v1, v2
 
-    iget v6, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->mask:I
+    iget v4, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->a:I
 
-    and-int v2, v5, v6
+    and-int/2addr v4, v1
 
     .line 75
-    .local v2, "offset":I
-    invoke-virtual {p0, v2}, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->get(I)Ljava/lang/Object;
+    invoke-virtual {p0, v4}, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v1
 
     .line 76
-    .local v3, "value":Ljava/lang/Object;, "TT;"
-    if-nez v3, :cond_10
-
-    move-object v3, v4
+    if-nez v1, :cond_e
 
     .line 81
-    .end local v3    # "value":Ljava/lang/Object;, "TT;"
-    :goto_f
-    return-object v3
+    :goto_d
+    return-object v0
 
     .line 79
-    .restart local v3    # "value":Ljava/lang/Object;, "TT;"
-    :cond_10
-    sget-object v5, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->CONSUMER_INDEX:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    :cond_e
+    sget-object v5, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->f:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     const-wide/16 v6, 0x1
 
-    add-long/2addr v6, v0
+    add-long/2addr v2, v6
 
-    invoke-virtual {v5, p0, v6, v7}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->lazySet(Ljava/lang/Object;J)V
+    invoke-virtual {v5, p0, v2, v3}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->lazySet(Ljava/lang/Object;J)V
 
     .line 80
-    invoke-virtual {p0, v2, v4}, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->lazySet(ILjava/lang/Object;)V
+    invoke-virtual {p0, v4, v0}, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->lazySet(ILjava/lang/Object;)V
 
-    goto :goto_f
+    move-object v0, v1
+
+    .line 81
+    goto :goto_d
 .end method
 
 .method public remove()Ljava/lang/Object;
@@ -456,7 +427,6 @@
 
     .prologue
     .line 161
-    .local p0, "this":Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscExactAtomicArrayQueue<TT;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -466,11 +436,9 @@
 
 .method public remove(Ljava/lang/Object;)Z
     .registers 3
-    .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
     .line 131
-    .local p0, "this":Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscExactAtomicArrayQueue<TT;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -490,8 +458,6 @@
 
     .prologue
     .line 146
-    .local p0, "this":Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscExactAtomicArrayQueue<TT;>;"
-    .local p1, "c":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -511,8 +477,6 @@
 
     .prologue
     .line 151
-    .local p0, "this":Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscExactAtomicArrayQueue<TT;>;"
-    .local p1, "c":Ljava/util/Collection;, "Ljava/util/Collection<*>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -521,36 +485,31 @@
 .end method
 
 .method public size()I
-    .registers 9
+    .registers 7
 
     .prologue
     .line 98
-    .local p0, "this":Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscExactAtomicArrayQueue<TT;>;"
-    iget-wide v0, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->consumerIndex:J
+    iget-wide v0, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->d:J
 
     .line 100
-    .local v0, "ci":J
     :goto_2
-    iget-wide v4, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->producerIndex:J
+    iget-wide v4, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->c:J
 
     .line 101
-    .local v4, "pi":J
-    iget-wide v2, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->consumerIndex:J
+    iget-wide v2, p0, Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;->d:J
 
     .line 102
-    .local v2, "ci2":J
-    cmp-long v6, v0, v2
+    cmp-long v0, v0, v2
 
-    if-nez v6, :cond_e
+    if-nez v0, :cond_e
 
     .line 103
-    sub-long v6, v4, v2
+    sub-long v0, v4, v2
 
-    long-to-int v6, v6
+    long-to-int v0, v0
 
-    return v6
+    return v0
 
-    .line 105
     :cond_e
     move-wide v0, v2
 
@@ -563,7 +522,6 @@
 
     .prologue
     .line 121
-    .local p0, "this":Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscExactAtomicArrayQueue<TT;>;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V
@@ -583,8 +541,6 @@
 
     .prologue
     .line 126
-    .local p0, "this":Lrx/internal/util/atomic/SpscExactAtomicArrayQueue;, "Lrx/internal/util/atomic/SpscExactAtomicArrayQueue<TT;>;"
-    .local p1, "a":[Ljava/lang/Object;, "[TE;"
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     invoke-direct {v0}, Ljava/lang/UnsupportedOperationException;-><init>()V

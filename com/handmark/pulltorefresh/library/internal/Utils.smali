@@ -3,25 +3,9 @@
 .source "Utils.java"
 
 
-# static fields
-.field static final LOG_TAG:Ljava/lang/String; = "PullToRefresh"
-
-
 # direct methods
-.method public constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static warnDeprecation(Ljava/lang/String;Ljava/lang/String;)V
+.method public static a(Ljava/lang/String;Ljava/lang/String;)V
     .registers 5
-    .param p0, "depreacted"    # Ljava/lang/String;
-    .param p1, "replacement"    # Ljava/lang/String;
 
     .prologue
     .line 10

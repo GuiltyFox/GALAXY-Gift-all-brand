@@ -16,12 +16,8 @@
 
 
 # virtual methods
-.method public onCache(Ljava/lang/String;JJJ)V
+.method public a(Ljava/lang/String;JJJ)V
     .registers 8
-    .param p1, "cache"    # Ljava/lang/String;
-    .param p2, "start"    # J
-    .param p4, "end"    # J
-    .param p6, "time"    # J
 
     .prologue
     .line 9

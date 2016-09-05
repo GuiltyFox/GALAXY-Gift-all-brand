@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/util/Pools;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x609
-    name = "Pool"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -24,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract acquire()Ljava/lang/Object;
+.method public abstract a()Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
@@ -32,7 +23,7 @@
     .end annotation
 .end method
 
-.method public abstract release(Ljava/lang/Object;)Z
+.method public abstract a(Ljava/lang/Object;)Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)Z"

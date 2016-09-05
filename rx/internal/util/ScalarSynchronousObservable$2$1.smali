@@ -5,12 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lrx/internal/util/ScalarSynchronousObservable$2;->call(Lrx/Subscriber;)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lrx/internal/util/ScalarSynchronousObservable$2;->a(Lrx/Subscriber;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
@@ -22,9 +17,9 @@
 
 
 # instance fields
-.field final synthetic this$1:Lrx/internal/util/ScalarSynchronousObservable$2;
+.field final synthetic a:Lrx/Subscriber;
 
-.field final synthetic val$child:Lrx/Subscriber;
+.field final synthetic b:Lrx/internal/util/ScalarSynchronousObservable$2;
 
 
 # direct methods
@@ -33,11 +28,9 @@
 
     .prologue
     .line 133
-    .local p0, "this":Lrx/internal/util/ScalarSynchronousObservable$2$1;, "Lrx/internal/util/ScalarSynchronousObservable$2.1;"
-    .local p2, "x0":Lrx/Subscriber;, "Lrx/Subscriber<*>;"
-    iput-object p1, p0, Lrx/internal/util/ScalarSynchronousObservable$2$1;->this$1:Lrx/internal/util/ScalarSynchronousObservable$2;
+    iput-object p1, p0, Lrx/internal/util/ScalarSynchronousObservable$2$1;->b:Lrx/internal/util/ScalarSynchronousObservable$2;
 
-    iput-object p3, p0, Lrx/internal/util/ScalarSynchronousObservable$2$1;->val$child:Lrx/Subscriber;
+    iput-object p3, p0, Lrx/internal/util/ScalarSynchronousObservable$2$1;->a:Lrx/Subscriber;
 
     invoke-direct {p0, p2}, Lrx/Subscriber;-><init>(Lrx/Subscriber;)V
 
@@ -46,36 +39,20 @@
 
 
 # virtual methods
-.method public onCompleted()V
-    .registers 2
-
-    .prologue
-    .line 144
-    .local p0, "this":Lrx/internal/util/ScalarSynchronousObservable$2$1;, "Lrx/internal/util/ScalarSynchronousObservable$2.1;"
-    iget-object v0, p0, Lrx/internal/util/ScalarSynchronousObservable$2$1;->val$child:Lrx/Subscriber;
-
-    invoke-virtual {v0}, Lrx/Subscriber;->onCompleted()V
-
-    .line 145
-    return-void
-.end method
-
-.method public onError(Ljava/lang/Throwable;)V
+.method public a(Ljava/lang/Throwable;)V
     .registers 3
-    .param p1, "e"    # Ljava/lang/Throwable;
 
     .prologue
     .line 140
-    .local p0, "this":Lrx/internal/util/ScalarSynchronousObservable$2$1;, "Lrx/internal/util/ScalarSynchronousObservable$2.1;"
-    iget-object v0, p0, Lrx/internal/util/ScalarSynchronousObservable$2$1;->val$child:Lrx/Subscriber;
+    iget-object v0, p0, Lrx/internal/util/ScalarSynchronousObservable$2$1;->a:Lrx/Subscriber;
 
-    invoke-virtual {v0, p1}, Lrx/Subscriber;->onError(Ljava/lang/Throwable;)V
+    invoke-virtual {v0, p1}, Lrx/Subscriber;->a(Ljava/lang/Throwable;)V
 
     .line 141
     return-void
 .end method
 
-.method public onNext(Ljava/lang/Object;)V
+.method public a_(Ljava/lang/Object;)V
     .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -85,12 +62,23 @@
 
     .prologue
     .line 136
-    .local p0, "this":Lrx/internal/util/ScalarSynchronousObservable$2$1;, "Lrx/internal/util/ScalarSynchronousObservable$2.1;"
-    .local p1, "v":Ljava/lang/Object;, "TR;"
-    iget-object v0, p0, Lrx/internal/util/ScalarSynchronousObservable$2$1;->val$child:Lrx/Subscriber;
+    iget-object v0, p0, Lrx/internal/util/ScalarSynchronousObservable$2$1;->a:Lrx/Subscriber;
 
-    invoke-virtual {v0, p1}, Lrx/Subscriber;->onNext(Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Lrx/Subscriber;->a_(Ljava/lang/Object;)V
 
     .line 137
+    return-void
+.end method
+
+.method public i_()V
+    .registers 2
+
+    .prologue
+    .line 144
+    iget-object v0, p0, Lrx/internal/util/ScalarSynchronousObservable$2$1;->a:Lrx/Subscriber;
+
+    invoke-virtual {v0}, Lrx/Subscriber;->i_()V
+
+    .line 145
     return-void
 .end method

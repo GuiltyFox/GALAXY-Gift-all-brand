@@ -10,7 +10,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 3
-    .param p1, "msg"    # Ljava/lang/String;
 
     .prologue
     .line 25
@@ -26,8 +25,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/Throwable;)V
     .registers 4
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "rootCause"    # Ljava/lang/Throwable;
 
     .prologue
     .line 30
@@ -41,7 +38,6 @@
 
 .method public constructor <init>(Ljava/lang/Throwable;)V
     .registers 2
-    .param p1, "rootCause"    # Ljava/lang/Throwable;
 
     .prologue
     .line 20

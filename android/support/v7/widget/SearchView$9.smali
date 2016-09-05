@@ -11,14 +11,9 @@
     value = Landroid/support/v7/widget/SearchView;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Landroid/support/v7/widget/SearchView;
+.field final synthetic a:Landroid/support/v7/widget/SearchView;
 
 
 # direct methods
@@ -27,7 +22,7 @@
 
     .prologue
     .line 1130
-    iput-object p1, p0, Landroid/support/v7/widget/SearchView$9;->this$0:Landroid/support/v7/widget/SearchView;
+    iput-object p1, p0, Landroid/support/v7/widget/SearchView$9;->a:Landroid/support/v7/widget/SearchView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,13 +33,10 @@
 # virtual methods
 .method public onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
     .registers 5
-    .param p1, "v"    # Landroid/widget/TextView;
-    .param p2, "actionId"    # I
-    .param p3, "event"    # Landroid/view/KeyEvent;
 
     .prologue
     .line 1136
-    iget-object v0, p0, Landroid/support/v7/widget/SearchView$9;->this$0:Landroid/support/v7/widget/SearchView;
+    iget-object v0, p0, Landroid/support/v7/widget/SearchView$9;->a:Landroid/support/v7/widget/SearchView;
 
     # invokes: Landroid/support/v7/widget/SearchView;->onSubmitQuery()V
     invoke-static {v0}, Landroid/support/v7/widget/SearchView;->access$900(Landroid/support/v7/widget/SearchView;)V

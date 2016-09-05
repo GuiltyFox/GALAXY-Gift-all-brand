@@ -3,14 +3,6 @@
 .source "RequestHandler.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/squareup/picasso/RequestHandler$Result;
-    }
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -23,21 +15,14 @@
     return-void
 .end method
 
-.method static calculateInSampleSize(IIIILandroid/graphics/BitmapFactory$Options;Lcom/squareup/picasso/Request;)V
-    .registers 12
-    .param p0, "reqWidth"    # I
-    .param p1, "reqHeight"    # I
-    .param p2, "width"    # I
-    .param p3, "height"    # I
-    .param p4, "options"    # Landroid/graphics/BitmapFactory$Options;
-    .param p5, "request"    # Lcom/squareup/picasso/Request;
+.method static a(IIIILandroid/graphics/BitmapFactory$Options;Lcom/squareup/picasso/Request;)V
+    .registers 10
 
     .prologue
     .line 157
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     .line 158
-    .local v1, "sampleSize":I
     if-gt p3, p1, :cond_5
 
     if-le p2, p0, :cond_10
@@ -47,29 +32,29 @@
     if-nez p1, :cond_16
 
     .line 162
-    int-to-float v3, p2
+    int-to-float v0, p2
 
-    int-to-float v4, p0
+    int-to-float v1, p0
 
-    div-float/2addr v3, v4
+    div-float/2addr v0, v1
 
-    float-to-double v4, v3
+    float-to-double v0, v0
 
-    invoke-static {v4, v5}, Ljava/lang/Math;->floor(D)D
+    invoke-static {v0, v1}, Ljava/lang/Math;->floor(D)D
 
-    move-result-wide v4
+    move-result-wide v0
 
-    double-to-int v1, v4
+    double-to-int v0, v0
 
     .line 173
     :cond_10
     :goto_10
-    iput v1, p4, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
+    iput v0, p4, Landroid/graphics/BitmapFactory$Options;->inSampleSize:I
 
     .line 174
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
-    iput-boolean v3, p4, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
+    iput-boolean v0, p4, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
 
     .line 175
     return-void
@@ -79,83 +64,76 @@
     if-nez p0, :cond_22
 
     .line 164
-    int-to-float v3, p3
+    int-to-float v0, p3
 
-    int-to-float v4, p1
+    int-to-float v1, p1
 
-    div-float/2addr v3, v4
+    div-float/2addr v0, v1
 
-    float-to-double v4, v3
+    float-to-double v0, v0
 
-    invoke-static {v4, v5}, Ljava/lang/Math;->floor(D)D
+    invoke-static {v0, v1}, Ljava/lang/Math;->floor(D)D
 
-    move-result-wide v4
+    move-result-wide v0
 
-    double-to-int v1, v4
+    double-to-int v0, v0
 
     goto :goto_10
 
     .line 166
     :cond_22
-    int-to-float v3, p3
+    int-to-float v0, p3
 
-    int-to-float v4, p1
+    int-to-float v1, p1
 
-    div-float/2addr v3, v4
+    div-float/2addr v0, v1
 
-    float-to-double v4, v3
+    float-to-double v0, v0
 
-    invoke-static {v4, v5}, Ljava/lang/Math;->floor(D)D
+    invoke-static {v0, v1}, Ljava/lang/Math;->floor(D)D
 
-    move-result-wide v4
+    move-result-wide v0
 
-    double-to-int v0, v4
+    double-to-int v0, v0
 
     .line 167
-    .local v0, "heightRatio":I
-    int-to-float v3, p2
+    int-to-float v1, p2
 
-    int-to-float v4, p0
+    int-to-float v2, p0
 
-    div-float/2addr v3, v4
+    div-float/2addr v1, v2
 
-    float-to-double v4, v3
+    float-to-double v2, v1
 
-    invoke-static {v4, v5}, Ljava/lang/Math;->floor(D)D
+    invoke-static {v2, v3}, Ljava/lang/Math;->floor(D)D
 
-    move-result-wide v4
+    move-result-wide v2
 
-    double-to-int v2, v4
+    double-to-int v1, v2
 
     .line 168
-    .local v2, "widthRatio":I
-    iget-boolean v3, p5, Lcom/squareup/picasso/Request;->centerInside:Z
+    iget-boolean v2, p5, Lcom/squareup/picasso/Request;->k:Z
 
-    if-eqz v3, :cond_3d
+    if-eqz v2, :cond_3d
 
     .line 169
-    invoke-static {v0, v2}, Ljava/lang/Math;->max(II)I
+    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
 
-    move-result v1
+    move-result v0
 
-    .line 170
-    :goto_3c
     goto :goto_10
 
+    .line 170
     :cond_3d
-    invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
-    move-result v1
+    move-result v0
 
-    goto :goto_3c
+    goto :goto_10
 .end method
 
-.method static calculateInSampleSize(IILandroid/graphics/BitmapFactory$Options;Lcom/squareup/picasso/Request;)V
+.method static a(IILandroid/graphics/BitmapFactory$Options;Lcom/squareup/picasso/Request;)V
     .registers 10
-    .param p0, "reqWidth"    # I
-    .param p1, "reqHeight"    # I
-    .param p2, "options"    # Landroid/graphics/BitmapFactory$Options;
-    .param p3, "request"    # Lcom/squareup/picasso/Request;
 
     .prologue
     .line 151
@@ -171,76 +149,14 @@
 
     move-object v5, p3
 
-    invoke-static/range {v0 .. v5}, Lcom/squareup/picasso/RequestHandler;->calculateInSampleSize(IIIILandroid/graphics/BitmapFactory$Options;Lcom/squareup/picasso/Request;)V
+    invoke-static/range {v0 .. v5}, Lcom/squareup/picasso/RequestHandler;->a(IIIILandroid/graphics/BitmapFactory$Options;Lcom/squareup/picasso/Request;)V
 
     .line 153
     return-void
 .end method
 
-.method static createBitmapOptions(Lcom/squareup/picasso/Request;)Landroid/graphics/BitmapFactory$Options;
-    .registers 5
-    .param p0, "data"    # Lcom/squareup/picasso/Request;
-
-    .prologue
-    .line 132
-    invoke-virtual {p0}, Lcom/squareup/picasso/Request;->hasSize()Z
-
-    move-result v1
-
-    .line 133
-    .local v1, "justBounds":Z
-    iget-object v3, p0, Lcom/squareup/picasso/Request;->config:Landroid/graphics/Bitmap$Config;
-
-    if-eqz v3, :cond_1c
-
-    const/4 v0, 0x1
-
-    .line 134
-    .local v0, "hasConfig":Z
-    :goto_9
-    const/4 v2, 0x0
-
-    .line 135
-    .local v2, "options":Landroid/graphics/BitmapFactory$Options;
-    if-nez v1, :cond_e
-
-    if-eqz v0, :cond_1b
-
-    .line 136
-    :cond_e
-    new-instance v2, Landroid/graphics/BitmapFactory$Options;
-
-    .end local v2    # "options":Landroid/graphics/BitmapFactory$Options;
-    invoke-direct {v2}, Landroid/graphics/BitmapFactory$Options;-><init>()V
-
-    .line 137
-    .restart local v2    # "options":Landroid/graphics/BitmapFactory$Options;
-    iput-boolean v1, v2, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
-
-    .line 138
-    if-eqz v0, :cond_1b
-
-    .line 139
-    iget-object v3, p0, Lcom/squareup/picasso/Request;->config:Landroid/graphics/Bitmap$Config;
-
-    iput-object v3, v2, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
-
-    .line 142
-    :cond_1b
-    return-object v2
-
-    .line 133
-    .end local v0    # "hasConfig":Z
-    .end local v2    # "options":Landroid/graphics/BitmapFactory$Options;
-    :cond_1c
-    const/4 v0, 0x0
-
-    goto :goto_9
-.end method
-
-.method static requiresInSampleSize(Landroid/graphics/BitmapFactory$Options;)Z
+.method static a(Landroid/graphics/BitmapFactory$Options;)Z
     .registers 2
-    .param p0, "options"    # Landroid/graphics/BitmapFactory$Options;
 
     .prologue
     .line 146
@@ -261,12 +177,66 @@
     goto :goto_7
 .end method
 
+.method static c(Lcom/squareup/picasso/Request;)Landroid/graphics/BitmapFactory$Options;
+    .registers 4
 
-# virtual methods
-.method public abstract canHandleRequest(Lcom/squareup/picasso/Request;)Z
+    .prologue
+    .line 132
+    invoke-virtual {p0}, Lcom/squareup/picasso/Request;->d()Z
+
+    move-result v2
+
+    .line 133
+    iget-object v0, p0, Lcom/squareup/picasso/Request;->q:Landroid/graphics/Bitmap$Config;
+
+    if-eqz v0, :cond_1d
+
+    const/4 v0, 0x1
+
+    move v1, v0
+
+    .line 134
+    :goto_a
+    const/4 v0, 0x0
+
+    .line 135
+    if-nez v2, :cond_f
+
+    if-eqz v1, :cond_1c
+
+    .line 136
+    :cond_f
+    new-instance v0, Landroid/graphics/BitmapFactory$Options;
+
+    invoke-direct {v0}, Landroid/graphics/BitmapFactory$Options;-><init>()V
+
+    .line 137
+    iput-boolean v2, v0, Landroid/graphics/BitmapFactory$Options;->inJustDecodeBounds:Z
+
+    .line 138
+    if-eqz v1, :cond_1c
+
+    .line 139
+    iget-object v1, p0, Lcom/squareup/picasso/Request;->q:Landroid/graphics/Bitmap$Config;
+
+    iput-object v1, v0, Landroid/graphics/BitmapFactory$Options;->inPreferredConfig:Landroid/graphics/Bitmap$Config;
+
+    .line 142
+    :cond_1c
+    return-object v0
+
+    .line 133
+    :cond_1d
+    const/4 v0, 0x0
+
+    move v1, v0
+
+    goto :goto_a
 .end method
 
-.method getRetryCount()I
+
+# virtual methods
+.method a()I
     .registers 2
 
     .prologue
@@ -276,18 +246,14 @@
     return v0
 .end method
 
-.method public abstract load(Lcom/squareup/picasso/Request;I)Lcom/squareup/picasso/RequestHandler$Result;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+.method public abstract a(Lcom/squareup/picasso/Request;I)Lcom/squareup/picasso/RequestHandler$Result;
 .end method
 
-.method shouldRetry(ZLandroid/net/NetworkInfo;)Z
+.method public abstract a(Lcom/squareup/picasso/Request;)Z
+.end method
+
+.method a(ZLandroid/net/NetworkInfo;)Z
     .registers 4
-    .param p1, "airplaneMode"    # Z
-    .param p2, "info"    # Landroid/net/NetworkInfo;
 
     .prologue
     .line 120
@@ -296,7 +262,7 @@
     return v0
 .end method
 
-.method supportsReplay()Z
+.method b()Z
     .registers 2
 
     .prologue

@@ -3,17 +3,6 @@
 .source "PropertyNamingStrategy.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "LowerCaseStrategy"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -29,7 +18,6 @@
 # virtual methods
 .method public translate(Ljava/lang/String;)Ljava/lang/String;
     .registers 3
-    .param p1, "input"    # Ljava/lang/String;
 
     .prologue
     .line 322

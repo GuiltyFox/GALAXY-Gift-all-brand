@@ -4,26 +4,28 @@
 
 
 # direct methods
-.method private constructor <init>()V
+.method public static a(I)I
     .registers 3
 
     .prologue
-    .line 20
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 32
+    const/4 v0, 0x1
 
-    .line 21
-    new-instance v0, Ljava/lang/IllegalStateException;
+    add-int/lit8 v1, p0, -0x1
 
-    const-string/jumbo v1, "No instances!"
+    invoke-static {v1}, Ljava/lang/Integer;->numberOfLeadingZeros(I)I
 
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    move-result v1
 
-    throw v0
+    rsub-int/lit8 v1, v1, 0x20
+
+    shl-int/2addr v0, v1
+
+    return v0
 .end method
 
-.method public static isPowerOfTwo(I)Z
+.method public static b(I)Z
     .registers 2
-    .param p0, "value"    # I
 
     .prologue
     .line 42
@@ -42,25 +44,4 @@
     const/4 v0, 0x0
 
     goto :goto_6
-.end method
-
-.method public static roundToPowerOfTwo(I)I
-    .registers 3
-    .param p0, "value"    # I
-
-    .prologue
-    .line 32
-    const/4 v0, 0x1
-
-    add-int/lit8 v1, p0, -0x1
-
-    invoke-static {v1}, Ljava/lang/Integer;->numberOfLeadingZeros(I)I
-
-    move-result v1
-
-    rsub-int/lit8 v1, v1, 0x20
-
-    shl-int/2addr v0, v1
-
-    return v0
 .end method

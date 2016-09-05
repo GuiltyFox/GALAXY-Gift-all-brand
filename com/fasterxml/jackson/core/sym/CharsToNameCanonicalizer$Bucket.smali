@@ -3,17 +3,6 @@
 .source "CharsToNameCanonicalizer.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x18
-    name = "Bucket"
-.end annotation
-
-
 # instance fields
 .field private final length:I
 
@@ -25,8 +14,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;)V
     .registers 4
-    .param p1, "s"    # Ljava/lang/String;
-    .param p2, "n"    # Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;
 
     .prologue
     .line 766
@@ -60,7 +47,6 @@
 
 .method static synthetic access$000(Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;)I
     .registers 2
-    .param p0, "x0"    # Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;
 
     .prologue
     .line 760
@@ -71,7 +57,6 @@
 
 .method static synthetic access$100(Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;)Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;
     .registers 2
-    .param p0, "x0"    # Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;
 
     .prologue
     .line 760
@@ -82,7 +67,6 @@
 
 .method static synthetic access$200(Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;)Ljava/lang/String;
     .registers 2
-    .param p0, "x0"    # Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;
 
     .prologue
     .line 760
@@ -95,34 +79,31 @@
 # virtual methods
 .method public has([CII)Ljava/lang/String;
     .registers 8
-    .param p1, "buf"    # [C
-    .param p2, "start"    # I
-    .param p3, "len"    # I
 
     .prologue
     const/4 v1, 0x0
 
     .line 773
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;->symbol:Ljava/lang/String;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;->symbol:Ljava/lang/String;
 
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    move-result v2
+    move-result v0
 
-    if-eq v2, p3, :cond_a
+    if-eq v0, p3, :cond_b
+
+    move-object v0, v1
 
     .line 782
-    :cond_9
-    :goto_9
-    return-object v1
+    :goto_a
+    return-object v0
 
     .line 776
-    :cond_a
+    :cond_b
     const/4 v0, 0x0
 
     .line 778
-    .local v0, "i":I
-    :cond_b
+    :cond_c
     iget-object v2, p0, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;->symbol:Ljava/lang/String;
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->charAt(I)C
@@ -133,15 +114,21 @@
 
     aget-char v3, p1, v3
 
-    if-ne v2, v3, :cond_9
+    if-eq v2, v3, :cond_1a
+
+    move-object v0, v1
+
+    .line 779
+    goto :goto_a
 
     .line 781
+    :cond_1a
     add-int/lit8 v0, v0, 0x1
 
-    if-lt v0, p3, :cond_b
+    if-lt v0, p3, :cond_c
 
     .line 782
-    iget-object v1, p0, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;->symbol:Ljava/lang/String;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/sym/CharsToNameCanonicalizer$Bucket;->symbol:Ljava/lang/String;
 
-    goto :goto_9
+    goto :goto_a
 .end method

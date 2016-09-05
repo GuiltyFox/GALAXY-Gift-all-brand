@@ -3,17 +3,6 @@
 .source "GridLayoutManager.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/widget/GridLayoutManager;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "LayoutParams"
-.end annotation
-
-
 # static fields
 .field public static final INVALID_SPAN_ID:I = -0x1
 
@@ -27,8 +16,6 @@
 # direct methods
 .method public constructor <init>(II)V
     .registers 4
-    .param p1, "width"    # I
-    .param p2, "height"    # I
 
     .prologue
     .line 1091
@@ -50,8 +37,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 4
-    .param p1, "c"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 1087
@@ -73,7 +58,6 @@
 
 .method public constructor <init>(Landroid/support/v7/widget/RecyclerView$LayoutParams;)V
     .registers 3
-    .param p1, "source"    # Landroid/support/v7/widget/RecyclerView$LayoutParams;
 
     .prologue
     .line 1103
@@ -95,7 +79,6 @@
 
 .method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
     .registers 3
-    .param p1, "source"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
     .line 1099
@@ -117,7 +100,6 @@
 
 .method public constructor <init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
     .registers 3
-    .param p1, "source"    # Landroid/view/ViewGroup$MarginLayoutParams;
 
     .prologue
     .line 1095
@@ -139,7 +121,6 @@
 
 .method static synthetic access$000(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
 
     .prologue
     .line 1075
@@ -150,8 +131,6 @@
 
 .method static synthetic access$002(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;I)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
-    .param p1, "x1"    # I
 
     .prologue
     .line 1075
@@ -162,7 +141,6 @@
 
 .method static synthetic access$100(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
 
     .prologue
     .line 1075
@@ -173,8 +151,6 @@
 
 .method static synthetic access$102(Landroid/support/v7/widget/GridLayoutManager$LayoutParams;I)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/v7/widget/GridLayoutManager$LayoutParams;
-    .param p1, "x1"    # I
 
     .prologue
     .line 1075

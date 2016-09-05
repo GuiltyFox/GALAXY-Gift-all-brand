@@ -3,17 +3,6 @@
 .source "AppOpsManagerCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/app/AppOpsManagerCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "AppOpsManagerImpl"
-.end annotation
-
-
 # direct methods
 .method private constructor <init>()V
     .registers 1
@@ -27,7 +16,6 @@
 
 .method synthetic constructor <init>(Landroid/support/v4/app/AppOpsManagerCompat$1;)V
     .registers 2
-    .param p1, "x0"    # Landroid/support/v4/app/AppOpsManagerCompat$1;
 
     .prologue
     .line 50
@@ -38,25 +26,8 @@
 
 
 # virtual methods
-.method public noteOp(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;)I
-    .registers 6
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "op"    # Ljava/lang/String;
-    .param p3, "uid"    # I
-    .param p4, "packageName"    # Ljava/lang/String;
-
-    .prologue
-    .line 56
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method public noteProxyOp(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)I
+.method public a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)I
     .registers 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "op"    # Ljava/lang/String;
-    .param p3, "proxiedPackageName"    # Ljava/lang/String;
 
     .prologue
     .line 60
@@ -65,9 +36,8 @@
     return v0
 .end method
 
-.method public permissionToOp(Ljava/lang/String;)Ljava/lang/String;
+.method public a(Ljava/lang/String;)Ljava/lang/String;
     .registers 3
-    .param p1, "permission"    # Ljava/lang/String;
 
     .prologue
     .line 52

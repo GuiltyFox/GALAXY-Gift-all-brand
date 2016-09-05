@@ -4,21 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/parceler/NonParcelRepository;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "TreeMapParcelable"
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lorg/parceler/NonParcelRepository$TreeMapParcelable$TreeMapParcelableCreator;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lorg/parceler/NonParcelRepository$ConverterParcelable",
@@ -30,9 +15,9 @@
 
 
 # static fields
-.field private static final CONVERTER:Lorg/parceler/converter/TreeMapParcelConverter;
-
 .field public static final CREATOR:Lorg/parceler/NonParcelRepository$TreeMapParcelable$TreeMapParcelableCreator;
+
+.field private static final a:Lorg/parceler/converter/TreeMapParcelConverter;
 
 
 # direct methods
@@ -45,7 +30,7 @@
 
     invoke-direct {v0}, Lorg/parceler/NonParcelRepository$TreeMapParcelable$1;-><init>()V
 
-    sput-object v0, Lorg/parceler/NonParcelRepository$TreeMapParcelable;->CONVERTER:Lorg/parceler/converter/TreeMapParcelConverter;
+    sput-object v0, Lorg/parceler/NonParcelRepository$TreeMapParcelable;->a:Lorg/parceler/converter/TreeMapParcelConverter;
 
     .line 485
     new-instance v0, Lorg/parceler/NonParcelRepository$TreeMapParcelable$TreeMapParcelableCreator;
@@ -61,11 +46,10 @@
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .registers 4
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
     .line 477
-    sget-object v0, Lorg/parceler/NonParcelRepository$TreeMapParcelable;->CONVERTER:Lorg/parceler/converter/TreeMapParcelConverter;
+    sget-object v0, Lorg/parceler/NonParcelRepository$TreeMapParcelable;->a:Lorg/parceler/converter/TreeMapParcelConverter;
 
     const/4 v1, 0x0
 
@@ -77,11 +61,10 @@
 
 .method public constructor <init>(Ljava/util/Map;)V
     .registers 4
-    .param p1, "value"    # Ljava/util/Map;
 
     .prologue
     .line 481
-    sget-object v0, Lorg/parceler/NonParcelRepository$TreeMapParcelable;->CONVERTER:Lorg/parceler/converter/TreeMapParcelConverter;
+    sget-object v0, Lorg/parceler/NonParcelRepository$TreeMapParcelable;->a:Lorg/parceler/converter/TreeMapParcelConverter;
 
     const/4 v1, 0x0
 

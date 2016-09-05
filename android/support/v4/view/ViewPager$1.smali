@@ -11,11 +11,6 @@
     value = Landroid/support/v4/view/ViewPager;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -40,23 +35,21 @@
 
 
 # virtual methods
-.method public compare(Landroid/support/v4/view/ViewPager$ItemInfo;Landroid/support/v4/view/ViewPager$ItemInfo;)I
+.method public a(Landroid/support/v4/view/ViewPager$ItemInfo;Landroid/support/v4/view/ViewPager$ItemInfo;)I
     .registers 5
-    .param p1, "lhs"    # Landroid/support/v4/view/ViewPager$ItemInfo;
-    .param p2, "rhs"    # Landroid/support/v4/view/ViewPager$ItemInfo;
 
     .prologue
     .line 126
-    iget v0, p1, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
+    iget v0, p1, Landroid/support/v4/view/ViewPager$ItemInfo;->b:I
 
-    iget v1, p2, Landroid/support/v4/view/ViewPager$ItemInfo;->position:I
+    iget v1, p2, Landroid/support/v4/view/ViewPager$ItemInfo;->b:I
 
     sub-int/2addr v0, v1
 
     return v0
 .end method
 
-.method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .registers 4
 
     .prologue
@@ -65,7 +58,7 @@
 
     check-cast p2, Landroid/support/v4/view/ViewPager$ItemInfo;
 
-    invoke-virtual {p0, p1, p2}, Landroid/support/v4/view/ViewPager$1;->compare(Landroid/support/v4/view/ViewPager$ItemInfo;Landroid/support/v4/view/ViewPager$ItemInfo;)I
+    invoke-virtual {p0, p1, p2}, Landroid/support/v4/view/ViewPager$1;->a(Landroid/support/v4/view/ViewPager$ItemInfo;Landroid/support/v4/view/ViewPager$ItemInfo;)I
 
     move-result v0
 

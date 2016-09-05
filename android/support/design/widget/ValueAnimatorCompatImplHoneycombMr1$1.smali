@@ -11,11 +11,6 @@
     value = Landroid/support/design/widget/ValueAnimatorCompatImplHoneycombMr1;->setUpdateListener(Landroid/support/design/widget/ValueAnimatorCompat$Impl$AnimatorUpdateListenerProxy;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Landroid/support/design/widget/ValueAnimatorCompatImplHoneycombMr1;
@@ -42,7 +37,6 @@
 # virtual methods
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .registers 3
-    .param p1, "valueAnimator"    # Landroid/animation/ValueAnimator;
 
     .prologue
     .line 52

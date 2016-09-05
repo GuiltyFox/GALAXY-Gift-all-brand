@@ -3,22 +3,6 @@
 .source "TabLayout.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/design/widget/TabLayout$PagerAdapterObserver;,
-        Landroid/support/design/widget/TabLayout$ViewPagerOnTabSelectedListener;,
-        Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;,
-        Landroid/support/design/widget/TabLayout$SlidingTabStrip;,
-        Landroid/support/design/widget/TabLayout$TabView;,
-        Landroid/support/design/widget/TabLayout$Tab;,
-        Landroid/support/design/widget/TabLayout$OnTabSelectedListener;,
-        Landroid/support/design/widget/TabLayout$TabGravity;,
-        Landroid/support/design/widget/TabLayout$Mode;
-    }
-.end annotation
-
-
 # static fields
 .field private static final ANIMATION_DURATION:I = 0x12c
 
@@ -147,7 +131,6 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 257
@@ -161,8 +144,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 261
@@ -175,310 +156,303 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .registers 13
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
+    .registers 10
 
     .prologue
-    const/4 v8, -0x1
+    const/4 v5, -0x1
 
-    const/4 v7, 0x0
+    const/4 v4, 0x0
 
     .line 265
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/HorizontalScrollView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 217
-    new-instance v4, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v4, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
+    iput-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
 
     .line 234
-    const v4, 0x7fffffff
+    const v0, 0x7fffffff
 
-    iput v4, p0, Landroid/support/design/widget/TabLayout;->mTabMaxWidth:I
+    iput v0, p0, Landroid/support/design/widget/TabLayout;->mTabMaxWidth:I
 
     .line 254
-    new-instance v4, Landroid/support/v4/util/Pools$SimplePool;
+    new-instance v0, Landroid/support/v4/util/Pools$SimplePool;
 
-    const/16 v5, 0xc
+    const/16 v1, 0xc
 
-    invoke-direct {v4, v5}, Landroid/support/v4/util/Pools$SimplePool;-><init>(I)V
+    invoke-direct {v0, v1}, Landroid/support/v4/util/Pools$SimplePool;-><init>(I)V
 
-    iput-object v4, p0, Landroid/support/design/widget/TabLayout;->mTabViewPool:Landroid/support/v4/util/Pools$Pool;
+    iput-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabViewPool:Landroid/support/v4/util/Pools$Pool;
 
     .line 267
     invoke-static {p1}, Landroid/support/design/widget/ThemeUtils;->checkAppCompatTheme(Landroid/content/Context;)V
 
     .line 270
-    invoke-virtual {p0, v7}, Landroid/support/design/widget/TabLayout;->setHorizontalScrollBarEnabled(Z)V
+    invoke-virtual {p0, v4}, Landroid/support/design/widget/TabLayout;->setHorizontalScrollBarEnabled(Z)V
 
     .line 273
-    new-instance v4, Landroid/support/design/widget/TabLayout$SlidingTabStrip;
+    new-instance v0, Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
-    invoke-direct {v4, p0, p1}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;-><init>(Landroid/support/design/widget/TabLayout;Landroid/content/Context;)V
+    invoke-direct {v0, p0, p1}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;-><init>(Landroid/support/design/widget/TabLayout;Landroid/content/Context;)V
 
-    iput-object v4, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
+    iput-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
     .line 274
-    iget-object v4, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
-    new-instance v5, Landroid/widget/FrameLayout$LayoutParams;
+    new-instance v1, Landroid/widget/FrameLayout$LayoutParams;
 
-    const/4 v6, -0x2
+    const/4 v2, -0x2
 
-    invoke-direct {v5, v6, v8}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
+    invoke-direct {v1, v2, v5}, Landroid/widget/FrameLayout$LayoutParams;-><init>(II)V
 
-    invoke-super {p0, v4, v7, v5}, Landroid/widget/HorizontalScrollView;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+    invoke-super {p0, v0, v4, v1}, Landroid/widget/HorizontalScrollView;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
     .line 277
-    sget-object v4, Landroid/support/design/R$styleable;->TabLayout:[I
+    sget-object v0, Landroid/support/design/R$styleable;->TabLayout:[I
 
-    sget v5, Landroid/support/design/R$style;->Widget_Design_TabLayout:I
+    sget v1, Landroid/support/design/R$style;->Widget_Design_TabLayout:I
 
-    invoke-virtual {p1, p2, v4, p3, v5}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v0, p3, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
     .line 280
-    .local v0, "a":Landroid/content/res/TypedArray;
-    iget-object v4, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
+    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
-    sget v5, Landroid/support/design/R$styleable;->TabLayout_tabIndicatorHeight:I
+    sget v2, Landroid/support/design/R$styleable;->TabLayout_tabIndicatorHeight:I
 
-    invoke-virtual {v0, v5, v7}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    move-result v5
+    move-result v2
 
-    invoke-virtual {v4, v5}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->setSelectedIndicatorHeight(I)V
+    invoke-virtual {v1, v2}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->setSelectedIndicatorHeight(I)V
 
     .line 282
-    iget-object v4, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
+    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
-    sget v5, Landroid/support/design/R$styleable;->TabLayout_tabIndicatorColor:I
+    sget v2, Landroid/support/design/R$styleable;->TabLayout_tabIndicatorColor:I
 
-    invoke-virtual {v0, v5, v7}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getColor(II)I
 
-    move-result v5
+    move-result v2
 
-    invoke-virtual {v4, v5}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->setSelectedIndicatorColor(I)V
+    invoke-virtual {v1, v2}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->setSelectedIndicatorColor(I)V
 
     .line 284
-    sget v4, Landroid/support/design/R$styleable;->TabLayout_tabPadding:I
+    sget v1, Landroid/support/design/R$styleable;->TabLayout_tabPadding:I
 
-    invoke-virtual {v0, v4, v7}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v0, v1, v4}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    move-result v4
+    move-result v1
 
-    iput v4, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingBottom:I
+    iput v1, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingBottom:I
 
-    iput v4, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingEnd:I
+    iput v1, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingEnd:I
 
-    iput v4, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingTop:I
+    iput v1, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingTop:I
 
-    iput v4, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingStart:I
+    iput v1, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingStart:I
 
     .line 286
-    sget v4, Landroid/support/design/R$styleable;->TabLayout_tabPaddingStart:I
+    sget v1, Landroid/support/design/R$styleable;->TabLayout_tabPaddingStart:I
 
-    iget v5, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingStart:I
+    iget v2, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingStart:I
 
-    invoke-virtual {v0, v4, v5}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    move-result v4
+    move-result v1
 
-    iput v4, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingStart:I
+    iput v1, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingStart:I
 
     .line 288
-    sget v4, Landroid/support/design/R$styleable;->TabLayout_tabPaddingTop:I
+    sget v1, Landroid/support/design/R$styleable;->TabLayout_tabPaddingTop:I
 
-    iget v5, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingTop:I
+    iget v2, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingTop:I
 
-    invoke-virtual {v0, v4, v5}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    move-result v4
+    move-result v1
 
-    iput v4, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingTop:I
+    iput v1, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingTop:I
 
     .line 290
-    sget v4, Landroid/support/design/R$styleable;->TabLayout_tabPaddingEnd:I
+    sget v1, Landroid/support/design/R$styleable;->TabLayout_tabPaddingEnd:I
 
-    iget v5, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingEnd:I
+    iget v2, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingEnd:I
 
-    invoke-virtual {v0, v4, v5}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    move-result v4
+    move-result v1
 
-    iput v4, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingEnd:I
+    iput v1, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingEnd:I
 
     .line 292
-    sget v4, Landroid/support/design/R$styleable;->TabLayout_tabPaddingBottom:I
+    sget v1, Landroid/support/design/R$styleable;->TabLayout_tabPaddingBottom:I
 
-    iget v5, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingBottom:I
+    iget v2, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingBottom:I
 
-    invoke-virtual {v0, v4, v5}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    move-result v4
+    move-result v1
 
-    iput v4, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingBottom:I
+    iput v1, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingBottom:I
 
     .line 295
-    sget v4, Landroid/support/design/R$styleable;->TabLayout_tabTextAppearance:I
+    sget v1, Landroid/support/design/R$styleable;->TabLayout_tabTextAppearance:I
 
-    sget v5, Landroid/support/design/R$style;->TextAppearance_Design_Tab:I
+    sget v2, Landroid/support/design/R$style;->TextAppearance_Design_Tab:I
 
-    invoke-virtual {v0, v4, v5}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    move-result v4
+    move-result v1
 
-    iput v4, p0, Landroid/support/design/widget/TabLayout;->mTabTextAppearance:I
+    iput v1, p0, Landroid/support/design/widget/TabLayout;->mTabTextAppearance:I
 
     .line 299
-    iget v4, p0, Landroid/support/design/widget/TabLayout;->mTabTextAppearance:I
+    iget v1, p0, Landroid/support/design/widget/TabLayout;->mTabTextAppearance:I
 
-    sget-object v5, Landroid/support/design/R$styleable;->TextAppearance:[I
+    sget-object v2, Landroid/support/design/R$styleable;->TextAppearance:[I
 
-    invoke-virtual {p1, v4, v5}, Landroid/content/Context;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, v1, v2}, Landroid/content/Context;->obtainStyledAttributes(I[I)Landroid/content/res/TypedArray;
 
-    move-result-object v3
+    move-result-object v1
 
     .line 302
-    .local v3, "ta":Landroid/content/res/TypedArray;
     :try_start_98
-    sget v4, Landroid/support/design/R$styleable;->TextAppearance_android_textSize:I
+    sget v2, Landroid/support/design/R$styleable;->TextAppearance_android_textSize:I
 
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v3, v4, v5}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v1, v2, v3}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    move-result v4
+    move-result v2
 
-    int-to-float v4, v4
+    int-to-float v2, v2
 
-    iput v4, p0, Landroid/support/design/widget/TabLayout;->mTabTextSize:F
+    iput v2, p0, Landroid/support/design/widget/TabLayout;->mTabTextSize:F
 
     .line 303
-    sget v4, Landroid/support/design/R$styleable;->TextAppearance_android_textColor:I
+    sget v2, Landroid/support/design/R$styleable;->TextAppearance_android_textColor:I
 
-    invoke-virtual {v3, v4}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+    invoke-virtual {v1, v2}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
-    move-result-object v4
+    move-result-object v2
 
-    iput-object v4, p0, Landroid/support/design/widget/TabLayout;->mTabTextColors:Landroid/content/res/ColorStateList;
+    iput-object v2, p0, Landroid/support/design/widget/TabLayout;->mTabTextColors:Landroid/content/res/ColorStateList;
     :try_end_aa
     .catchall {:try_start_98 .. :try_end_aa} :catchall_124
 
     .line 305
-    invoke-virtual {v3}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 308
-    sget v4, Landroid/support/design/R$styleable;->TabLayout_tabTextColor:I
+    sget v1, Landroid/support/design/R$styleable;->TabLayout_tabTextColor:I
 
-    invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_bd
+    if-eqz v1, :cond_bd
 
     .line 310
-    sget v4, Landroid/support/design/R$styleable;->TabLayout_tabTextColor:I
+    sget v1, Landroid/support/design/R$styleable;->TabLayout_tabTextColor:I
 
-    invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
-    move-result-object v4
+    move-result-object v1
 
-    iput-object v4, p0, Landroid/support/design/widget/TabLayout;->mTabTextColors:Landroid/content/res/ColorStateList;
+    iput-object v1, p0, Landroid/support/design/widget/TabLayout;->mTabTextColors:Landroid/content/res/ColorStateList;
 
     .line 313
     :cond_bd
-    sget v4, Landroid/support/design/R$styleable;->TabLayout_tabSelectedTextColor:I
+    sget v1, Landroid/support/design/R$styleable;->TabLayout_tabSelectedTextColor:I
 
-    invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v4
+    move-result v1
 
-    if-eqz v4, :cond_d7
+    if-eqz v1, :cond_d7
 
     .line 317
-    sget v4, Landroid/support/design/R$styleable;->TabLayout_tabSelectedTextColor:I
+    sget v1, Landroid/support/design/R$styleable;->TabLayout_tabSelectedTextColor:I
 
-    invoke-virtual {v0, v4, v7}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-virtual {v0, v1, v4}, Landroid/content/res/TypedArray;->getColor(II)I
+
+    move-result v1
+
+    .line 318
+    iget-object v2, p0, Landroid/support/design/widget/TabLayout;->mTabTextColors:Landroid/content/res/ColorStateList;
+
+    invoke-virtual {v2}, Landroid/content/res/ColorStateList;->getDefaultColor()I
 
     move-result v2
 
-    .line 318
-    .local v2, "selected":I
-    iget-object v4, p0, Landroid/support/design/widget/TabLayout;->mTabTextColors:Landroid/content/res/ColorStateList;
+    invoke-static {v2, v1}, Landroid/support/design/widget/TabLayout;->createColorStateList(II)Landroid/content/res/ColorStateList;
 
-    invoke-virtual {v4}, Landroid/content/res/ColorStateList;->getDefaultColor()I
+    move-result-object v1
 
-    move-result v4
-
-    invoke-static {v4, v2}, Landroid/support/design/widget/TabLayout;->createColorStateList(II)Landroid/content/res/ColorStateList;
-
-    move-result-object v4
-
-    iput-object v4, p0, Landroid/support/design/widget/TabLayout;->mTabTextColors:Landroid/content/res/ColorStateList;
+    iput-object v1, p0, Landroid/support/design/widget/TabLayout;->mTabTextColors:Landroid/content/res/ColorStateList;
 
     .line 321
-    .end local v2    # "selected":I
     :cond_d7
-    sget v4, Landroid/support/design/R$styleable;->TabLayout_tabMinWidth:I
+    sget v1, Landroid/support/design/R$styleable;->TabLayout_tabMinWidth:I
 
-    invoke-virtual {v0, v4, v8}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v0, v1, v5}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    move-result v4
+    move-result v1
 
-    iput v4, p0, Landroid/support/design/widget/TabLayout;->mRequestedTabMinWidth:I
+    iput v1, p0, Landroid/support/design/widget/TabLayout;->mRequestedTabMinWidth:I
 
     .line 323
-    sget v4, Landroid/support/design/R$styleable;->TabLayout_tabMaxWidth:I
+    sget v1, Landroid/support/design/R$styleable;->TabLayout_tabMaxWidth:I
 
-    invoke-virtual {v0, v4, v8}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v0, v1, v5}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    move-result v4
+    move-result v1
 
-    iput v4, p0, Landroid/support/design/widget/TabLayout;->mRequestedTabMaxWidth:I
+    iput v1, p0, Landroid/support/design/widget/TabLayout;->mRequestedTabMaxWidth:I
 
     .line 325
-    sget v4, Landroid/support/design/R$styleable;->TabLayout_tabBackground:I
+    sget v1, Landroid/support/design/R$styleable;->TabLayout_tabBackground:I
 
-    invoke-virtual {v0, v4, v7}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {v0, v1, v4}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    move-result v4
+    move-result v1
 
-    iput v4, p0, Landroid/support/design/widget/TabLayout;->mTabBackgroundResId:I
+    iput v1, p0, Landroid/support/design/widget/TabLayout;->mTabBackgroundResId:I
 
     .line 326
-    sget v4, Landroid/support/design/R$styleable;->TabLayout_tabContentStart:I
+    sget v1, Landroid/support/design/R$styleable;->TabLayout_tabContentStart:I
 
-    invoke-virtual {v0, v4, v7}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v0, v1, v4}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    move-result v4
+    move-result v1
 
-    iput v4, p0, Landroid/support/design/widget/TabLayout;->mContentInsetStart:I
+    iput v1, p0, Landroid/support/design/widget/TabLayout;->mContentInsetStart:I
 
     .line 327
-    sget v4, Landroid/support/design/R$styleable;->TabLayout_tabMode:I
+    sget v1, Landroid/support/design/R$styleable;->TabLayout_tabMode:I
 
-    const/4 v5, 0x1
+    const/4 v2, 0x1
 
-    invoke-virtual {v0, v4, v5}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    move-result v4
+    move-result v1
 
-    iput v4, p0, Landroid/support/design/widget/TabLayout;->mMode:I
+    iput v1, p0, Landroid/support/design/widget/TabLayout;->mMode:I
 
     .line 328
-    sget v4, Landroid/support/design/R$styleable;->TabLayout_tabGravity:I
+    sget v1, Landroid/support/design/R$styleable;->TabLayout_tabGravity:I
 
-    invoke-virtual {v0, v4, v7}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v0, v1, v4}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    move-result v4
+    move-result v1
 
-    iput v4, p0, Landroid/support/design/widget/TabLayout;->mTabGravity:I
+    iput v1, p0, Landroid/support/design/widget/TabLayout;->mTabGravity:I
 
     .line 329
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
@@ -486,28 +460,27 @@
     .line 332
     invoke-virtual {p0}, Landroid/support/design/widget/TabLayout;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 333
-    .local v1, "res":Landroid/content/res/Resources;
-    sget v4, Landroid/support/design/R$dimen;->design_tab_text_size_2line:I
+    sget v1, Landroid/support/design/R$dimen;->design_tab_text_size_2line:I
 
-    invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v4
+    move-result v1
 
-    int-to-float v4, v4
+    int-to-float v1, v1
 
-    iput v4, p0, Landroid/support/design/widget/TabLayout;->mTabTextMultiLineSize:F
+    iput v1, p0, Landroid/support/design/widget/TabLayout;->mTabTextMultiLineSize:F
 
     .line 334
-    sget v4, Landroid/support/design/R$dimen;->design_tab_scrollable_min_width:I
+    sget v1, Landroid/support/design/R$dimen;->design_tab_scrollable_min_width:I
 
-    invoke-virtual {v1, v4}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
-    move-result v4
+    move-result v0
 
-    iput v4, p0, Landroid/support/design/widget/TabLayout;->mScrollableTabMinWidth:I
+    iput v0, p0, Landroid/support/design/widget/TabLayout;->mScrollableTabMinWidth:I
 
     .line 337
     invoke-direct {p0}, Landroid/support/design/widget/TabLayout;->applyModeAndGravity()V
@@ -516,18 +489,16 @@
     return-void
 
     .line 305
-    .end local v1    # "res":Landroid/content/res/Resources;
     :catchall_124
-    move-exception v4
+    move-exception v0
 
-    invoke-virtual {v3}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    throw v4
+    throw v0
 .end method
 
 .method static synthetic access$1000(Landroid/support/design/widget/TabLayout;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout;
 
     .prologue
     .line 124
@@ -538,7 +509,6 @@
 
 .method static synthetic access$1100(Landroid/support/design/widget/TabLayout;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout;
 
     .prologue
     .line 124
@@ -549,7 +519,6 @@
 
 .method static synthetic access$1200(Landroid/support/design/widget/TabLayout;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout;
 
     .prologue
     .line 124
@@ -560,7 +529,6 @@
 
 .method static synthetic access$1300(Landroid/support/design/widget/TabLayout;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout;
 
     .prologue
     .line 124
@@ -573,7 +541,6 @@
 
 .method static synthetic access$1400(Landroid/support/design/widget/TabLayout;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout;
 
     .prologue
     .line 124
@@ -584,7 +551,6 @@
 
 .method static synthetic access$1500(Landroid/support/design/widget/TabLayout;)F
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout;
 
     .prologue
     .line 124
@@ -595,7 +561,6 @@
 
 .method static synthetic access$1600(Landroid/support/design/widget/TabLayout;)F
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout;
 
     .prologue
     .line 124
@@ -606,7 +571,6 @@
 
 .method static synthetic access$1700(Landroid/support/design/widget/TabLayout;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout;
 
     .prologue
     .line 124
@@ -617,7 +581,6 @@
 
 .method static synthetic access$1800(Landroid/support/design/widget/TabLayout;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout;
 
     .prologue
     .line 124
@@ -628,7 +591,6 @@
 
 .method static synthetic access$1900(Landroid/support/design/widget/TabLayout;)Landroid/content/res/ColorStateList;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout;
 
     .prologue
     .line 124
@@ -639,8 +601,6 @@
 
 .method static synthetic access$2000(Landroid/support/design/widget/TabLayout;I)I
     .registers 3
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout;
-    .param p1, "x1"    # I
 
     .prologue
     .line 124
@@ -653,7 +613,6 @@
 
 .method static synthetic access$2100(Landroid/support/design/widget/TabLayout;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout;
 
     .prologue
     .line 124
@@ -664,8 +623,6 @@
 
 .method static synthetic access$2102(Landroid/support/design/widget/TabLayout;I)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout;
-    .param p1, "x1"    # I
 
     .prologue
     .line 124
@@ -676,8 +633,6 @@
 
 .method static synthetic access$2200(Landroid/support/design/widget/TabLayout;Z)V
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout;
-    .param p1, "x1"    # Z
 
     .prologue
     .line 124
@@ -688,11 +643,6 @@
 
 .method static synthetic access$2600(Landroid/support/design/widget/TabLayout;IFZZ)V
     .registers 5
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout;
-    .param p1, "x1"    # I
-    .param p2, "x2"    # F
-    .param p3, "x3"    # Z
-    .param p4, "x4"    # Z
 
     .prologue
     .line 124
@@ -703,7 +653,6 @@
 
 .method static synthetic access$2700(Landroid/support/design/widget/TabLayout;)V
     .registers 1
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout;
 
     .prologue
     .line 124
@@ -714,7 +663,6 @@
 
 .method static synthetic access$800(Landroid/support/design/widget/TabLayout;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout;
 
     .prologue
     .line 124
@@ -725,7 +673,6 @@
 
 .method static synthetic access$900(Landroid/support/design/widget/TabLayout;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout;
 
     .prologue
     .line 124
@@ -736,10 +683,6 @@
 
 .method private addTabFromItemView(Landroid/support/design/widget/TabItem;)V
     .registers 4
-    .param p1, "item"    # Landroid/support/design/widget/TabItem;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
 
     .prologue
     .line 463
@@ -748,7 +691,6 @@
     move-result-object v0
 
     .line 464
-    .local v0, "tab":Landroid/support/design/widget/TabLayout$Tab;
     iget-object v1, p1, Landroid/support/design/widget/TabItem;->mText:Ljava/lang/CharSequence;
 
     if-eqz v1, :cond_d
@@ -790,9 +732,6 @@
 
 .method private addTabView(Landroid/support/design/widget/TabLayout$Tab;IZ)V
     .registers 7
-    .param p1, "tab"    # Landroid/support/design/widget/TabLayout$Tab;
-    .param p2, "position"    # I
-    .param p3, "setSelected"    # Z
 
     .prologue
     .line 823
@@ -802,7 +741,6 @@
     move-result-object v0
 
     .line 824
-    .local v0, "tabView":Landroid/support/design/widget/TabLayout$TabView;
     iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
     invoke-direct {p0}, Landroid/support/design/widget/TabLayout;->createLayoutParamsForTabs()Landroid/widget/LinearLayout$LayoutParams;
@@ -826,8 +764,6 @@
 
 .method private addTabView(Landroid/support/design/widget/TabLayout$Tab;Z)V
     .registers 6
-    .param p1, "tab"    # Landroid/support/design/widget/TabLayout$Tab;
-    .param p2, "setSelected"    # Z
 
     .prologue
     .line 815
@@ -837,7 +773,6 @@
     move-result-object v0
 
     .line 816
-    .local v0, "tabView":Landroid/support/design/widget/TabLayout$TabView;
     iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
     invoke-direct {p0}, Landroid/support/design/widget/TabLayout;->createLayoutParamsForTabs()Landroid/widget/LinearLayout$LayoutParams;
@@ -861,7 +796,6 @@
 
 .method private addViewInternal(Landroid/view/View;)V
     .registers 4
-    .param p1, "child"    # Landroid/view/View;
 
     .prologue
     .line 851
@@ -872,14 +806,12 @@
     .line 852
     check-cast p1, Landroid/support/design/widget/TabItem;
 
-    .end local p1    # "child":Landroid/view/View;
     invoke-direct {p0, p1}, Landroid/support/design/widget/TabLayout;->addTabFromItemView(Landroid/support/design/widget/TabItem;)V
 
     .line 856
     return-void
 
     .line 854
-    .restart local p1    # "child":Landroid/view/View;
     :cond_a
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -892,17 +824,16 @@
 
 .method private animateToTab(I)V
     .registers 7
-    .param p1, "newPosition"    # I
 
     .prologue
     const/16 v4, 0x12c
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     .line 947
-    const/4 v2, -0x1
+    const/4 v0, -0x1
 
-    if-ne p1, v2, :cond_7
+    if-ne p1, v0, :cond_7
 
     .line 981
     :goto_6
@@ -912,29 +843,29 @@
     :cond_7
     invoke-virtual {p0}, Landroid/support/design/widget/TabLayout;->getWindowToken()Landroid/os/IBinder;
 
-    move-result-object v2
+    move-result-object v0
 
-    if-eqz v2, :cond_1b
+    if-eqz v0, :cond_1b
 
-    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->isLaidOut(Landroid/view/View;)Z
+    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->E(Landroid/view/View;)Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_1b
+    if-eqz v0, :cond_1b
 
-    iget-object v2, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
-    invoke-virtual {v2}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->childrenNeedLayout()Z
+    invoke-virtual {v0}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->childrenNeedLayout()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_20
+    if-eqz v0, :cond_20
 
     .line 955
     :cond_1b
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
-    invoke-virtual {p0, p1, v3, v2}, Landroid/support/design/widget/TabLayout;->setScrollPosition(IFZ)V
+    invoke-virtual {p0, p1, v1, v0}, Landroid/support/design/widget/TabLayout;->setScrollPosition(IFZ)V
 
     goto :goto_6
 
@@ -945,13 +876,11 @@
     move-result v0
 
     .line 960
-    .local v0, "startScrollX":I
-    invoke-direct {p0, p1, v3}, Landroid/support/design/widget/TabLayout;->calculateScrollXForTab(IF)I
+    invoke-direct {p0, p1, v1}, Landroid/support/design/widget/TabLayout;->calculateScrollXForTab(IF)I
 
     move-result v1
 
     .line 962
-    .local v1, "targetScrollX":I
     if-eq v0, v1, :cond_54
 
     .line 963
@@ -994,309 +923,293 @@
     invoke-virtual {v2, v0, v1}, Landroid/support/design/widget/ValueAnimatorCompat;->setIntValues(II)V
 
     .line 976
-    iget-object v2, p0, Landroid/support/design/widget/TabLayout;->mScrollAnimator:Landroid/support/design/widget/ValueAnimatorCompat;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mScrollAnimator:Landroid/support/design/widget/ValueAnimatorCompat;
 
-    invoke-virtual {v2}, Landroid/support/design/widget/ValueAnimatorCompat;->start()V
+    invoke-virtual {v0}, Landroid/support/design/widget/ValueAnimatorCompat;->start()V
 
     .line 980
     :cond_54
-    iget-object v2, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
-    invoke-virtual {v2, p1, v4}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->animateIndicatorToPosition(II)V
+    invoke-virtual {v0, p1, v4}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->animateIndicatorToPosition(II)V
 
     goto :goto_6
 .end method
 
 .method private applyModeAndGravity()V
-    .registers 6
+    .registers 5
 
     .prologue
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     .line 1047
-    const/4 v0, 0x0
-
     .line 1048
-    .local v0, "paddingStart":I
-    iget v1, p0, Landroid/support/design/widget/TabLayout;->mMode:I
+    iget v0, p0, Landroid/support/design/widget/TabLayout;->mMode:I
 
-    if-nez v1, :cond_10
+    if-nez v0, :cond_2c
 
     .line 1050
-    iget v1, p0, Landroid/support/design/widget/TabLayout;->mContentInsetStart:I
+    iget v0, p0, Landroid/support/design/widget/TabLayout;->mContentInsetStart:I
 
     iget v2, p0, Landroid/support/design/widget/TabLayout;->mTabPaddingStart:I
 
-    sub-int/2addr v1, v2
+    sub-int/2addr v0, v2
 
-    invoke-static {v3, v1}, Ljava/lang/Math;->max(II)I
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
     .line 1052
-    :cond_10
-    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
+    :goto_f
+    iget-object v2, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
-    invoke-static {v1, v0, v3, v3, v3}, Landroid/support/v4/view/ViewCompat;->setPaddingRelative(Landroid/view/View;IIII)V
+    invoke-static {v2, v0, v1, v1, v1}, Landroid/support/v4/view/ViewCompat;->a(Landroid/view/View;IIII)V
 
     .line 1054
-    iget v1, p0, Landroid/support/design/widget/TabLayout;->mMode:I
+    iget v0, p0, Landroid/support/design/widget/TabLayout;->mMode:I
 
-    packed-switch v1, :pswitch_data_2e
+    packed-switch v0, :pswitch_data_2e
 
     .line 1063
-    :goto_1a
-    invoke-direct {p0, v4}, Landroid/support/design/widget/TabLayout;->updateTabViews(Z)V
+    :goto_19
+    invoke-direct {p0, v3}, Landroid/support/design/widget/TabLayout;->updateTabViews(Z)V
 
     .line 1064
     return-void
 
     .line 1056
-    :pswitch_1e
-    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
+    :pswitch_1d
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
-    invoke-virtual {v1, v4}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->setGravity(I)V
+    invoke-virtual {v0, v3}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->setGravity(I)V
 
-    goto :goto_1a
+    goto :goto_19
 
     .line 1059
-    :pswitch_24
-    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
+    :pswitch_23
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
-    const v2, 0x800003
+    const v1, 0x800003
 
-    invoke-virtual {v1, v2}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->setGravity(I)V
+    invoke-virtual {v0, v1}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->setGravity(I)V
 
-    goto :goto_1a
+    goto :goto_19
+
+    :cond_2c
+    move v0, v1
+
+    goto :goto_f
 
     .line 1054
-    nop
-
     :pswitch_data_2e
     .packed-switch 0x0
-        :pswitch_24
-        :pswitch_1e
+        :pswitch_23
+        :pswitch_1d
     .end packed-switch
 .end method
 
 .method private calculateScrollXForTab(IF)I
-    .registers 10
-    .param p1, "position"    # I
-    .param p2, "positionOffset"    # F
+    .registers 7
 
     .prologue
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 1030
-    iget v4, p0, Landroid/support/design/widget/TabLayout;->mMode:I
+    iget v1, p0, Landroid/support/design/widget/TabLayout;->mMode:I
 
-    if-nez v4, :cond_45
+    if-nez v1, :cond_44
 
     .line 1031
-    iget-object v4, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
+    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
-    invoke-virtual {v4, p1}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v1, p1}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v2
+    move-result-object v3
 
     .line 1032
-    .local v2, "selectedChild":Landroid/view/View;
-    add-int/lit8 v4, p1, 0x1
+    add-int/lit8 v1, p1, 0x1
 
-    iget-object v5, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
+    iget-object v2, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
-    invoke-virtual {v5}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->getChildCount()I
+    invoke-virtual {v2}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->getChildCount()I
 
-    move-result v5
+    move-result v2
 
-    if-ge v4, v5, :cond_46
+    if-ge v1, v2, :cond_45
 
-    iget-object v4, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
+    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
-    add-int/lit8 v5, p1, 0x1
+    add-int/lit8 v2, p1, 0x1
 
-    invoke-virtual {v4, v5}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v1, v2}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v0
+    move-result-object v1
+
+    move-object v2, v1
 
     .line 1035
-    .local v0, "nextChild":Landroid/view/View;
-    :goto_1d
-    if-eqz v2, :cond_48
+    :goto_1e
+    if-eqz v3, :cond_48
 
-    invoke-virtual {v2}, Landroid/view/View;->getWidth()I
-
-    move-result v3
-
-    .line 1036
-    .local v3, "selectedWidth":I
-    :goto_23
-    if-eqz v0, :cond_29
-
-    invoke-virtual {v0}, Landroid/view/View;->getWidth()I
+    invoke-virtual {v3}, Landroid/view/View;->getWidth()I
 
     move-result v1
 
-    .line 1038
-    .local v1, "nextWidth":I
-    :cond_29
-    invoke-virtual {v2}, Landroid/view/View;->getLeft()I
-
-    move-result v4
-
-    add-int v5, v3, v1
-
-    int-to-float v5, v5
-
-    mul-float/2addr v5, p2
-
-    const/high16 v6, 0x3f000000
-
-    mul-float/2addr v5, v6
-
-    float-to-int v5, v5
-
-    add-int/2addr v4, v5
+    .line 1036
+    :goto_24
+    if-eqz v2, :cond_2a
 
     invoke-virtual {v2}, Landroid/view/View;->getWidth()I
 
-    move-result v5
+    move-result v0
 
-    div-int/lit8 v5, v5, 0x2
+    .line 1038
+    :cond_2a
+    invoke-virtual {v3}, Landroid/view/View;->getLeft()I
 
-    add-int/2addr v4, v5
+    move-result v2
+
+    add-int/2addr v0, v1
+
+    int-to-float v0, v0
+
+    mul-float/2addr v0, p2
+
+    const/high16 v1, 0x3f000000    # 0.5f
+
+    mul-float/2addr v0, v1
+
+    float-to-int v0, v0
+
+    add-int/2addr v0, v2
+
+    invoke-virtual {v3}, Landroid/view/View;->getWidth()I
+
+    move-result v1
+
+    div-int/lit8 v1, v1, 0x2
+
+    add-int/2addr v0, v1
 
     invoke-virtual {p0}, Landroid/support/design/widget/TabLayout;->getWidth()I
 
-    move-result v5
+    move-result v1
 
-    div-int/lit8 v5, v5, 0x2
+    div-int/lit8 v1, v1, 0x2
 
-    sub-int v1, v4, v5
+    sub-int/2addr v0, v1
 
     .line 1043
-    .end local v0    # "nextChild":Landroid/view/View;
-    .end local v1    # "nextWidth":I
-    .end local v2    # "selectedChild":Landroid/view/View;
-    .end local v3    # "selectedWidth":I
-    :cond_45
-    return v1
+    :cond_44
+    return v0
 
     .line 1032
-    .restart local v2    # "selectedChild":Landroid/view/View;
-    :cond_46
-    const/4 v0, 0x0
+    :cond_45
+    const/4 v1, 0x0
 
-    goto :goto_1d
+    move-object v2, v1
 
-    .restart local v0    # "nextChild":Landroid/view/View;
+    goto :goto_1e
+
     :cond_48
-    move v3, v1
+    move v1, v0
 
     .line 1035
-    goto :goto_23
+    goto :goto_24
 .end method
 
 .method private configureTab(Landroid/support/design/widget/TabLayout$Tab;I)V
     .registers 6
-    .param p1, "tab"    # Landroid/support/design/widget/TabLayout$Tab;
-    .param p2, "position"    # I
 
     .prologue
     .line 805
     invoke-virtual {p1, p2}, Landroid/support/design/widget/TabLayout$Tab;->setPosition(I)V
 
     .line 806
-    iget-object v2, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
 
-    invoke-virtual {v2, p2, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+    invoke-virtual {v0, p2, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
     .line 808
-    iget-object v2, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    move-result v0
+    move-result v2
 
     .line 809
-    .local v0, "count":I
-    add-int/lit8 v1, p2, 0x1
+    add-int/lit8 v0, p2, 0x1
 
-    .local v1, "i":I
-    :goto_10
-    if-ge v1, v0, :cond_20
+    move v1, v0
+
+    :goto_11
+    if-ge v1, v2, :cond_22
 
     .line 810
-    iget-object v2, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
 
-    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Landroid/support/design/widget/TabLayout$Tab;
+    check-cast v0, Landroid/support/design/widget/TabLayout$Tab;
 
-    invoke-virtual {v2, v1}, Landroid/support/design/widget/TabLayout$Tab;->setPosition(I)V
+    invoke-virtual {v0, v1}, Landroid/support/design/widget/TabLayout$Tab;->setPosition(I)V
 
     .line 809
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    goto :goto_10
+    move v1, v0
+
+    goto :goto_11
 
     .line 812
-    :cond_20
+    :cond_22
     return-void
 .end method
 
 .method private static createColorStateList(II)Landroid/content/res/ColorStateList;
     .registers 6
-    .param p0, "defaultColor"    # I
-    .param p1, "selectedColor"    # I
 
     .prologue
-    const/4 v3, 0x2
+    const/4 v1, 0x2
 
     .line 1867
-    new-array v2, v3, [[I
+    new-array v0, v1, [[I
 
     .line 1868
-    .local v2, "states":[[I
-    new-array v0, v3, [I
+    new-array v1, v1, [I
 
     .line 1869
-    .local v0, "colors":[I
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     .line 1871
-    .local v1, "i":I
     sget-object v3, Landroid/support/design/widget/TabLayout;->SELECTED_STATE_SET:[I
 
-    aput-object v3, v2, v1
+    aput-object v3, v0, v2
 
     .line 1872
-    aput p1, v0, v1
+    aput p1, v1, v2
 
     .line 1873
-    add-int/lit8 v1, v1, 0x1
+    const/4 v2, 0x1
 
     .line 1876
     sget-object v3, Landroid/support/design/widget/TabLayout;->EMPTY_STATE_SET:[I
 
-    aput-object v3, v2, v1
+    aput-object v3, v0, v2
 
     .line 1877
-    aput p0, v0, v1
-
-    .line 1878
-    add-int/lit8 v1, v1, 0x1
+    aput p0, v1, v2
 
     .line 1880
-    new-instance v3, Landroid/content/res/ColorStateList;
+    new-instance v2, Landroid/content/res/ColorStateList;
 
-    invoke-direct {v3, v2, v0}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
+    invoke-direct {v2, v0, v1}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
 
-    return-object v3
+    return-object v2
 .end method
 
 .method private createLayoutParamsForTabs()Landroid/widget/LinearLayout$LayoutParams;
@@ -1313,7 +1226,6 @@
     invoke-direct {v0, v1, v2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
     .line 861
-    .local v0, "lp":Landroid/widget/LinearLayout$LayoutParams;
     invoke-direct {p0, v0}, Landroid/support/design/widget/TabLayout;->updateTabViewLayoutParams(Landroid/widget/LinearLayout$LayoutParams;)V
 
     .line 862
@@ -1322,36 +1234,28 @@
 
 .method private createTabView(Landroid/support/design/widget/TabLayout$Tab;)Landroid/support/design/widget/TabLayout$TabView;
     .registers 4
-    .param p1, "tab"    # Landroid/support/design/widget/TabLayout$Tab;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
 
     .prologue
     .line 794
-    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mTabViewPool:Landroid/support/v4/util/Pools$Pool;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabViewPool:Landroid/support/v4/util/Pools$Pool;
 
-    if-eqz v1, :cond_27
+    if-eqz v0, :cond_26
 
-    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mTabViewPool:Landroid/support/v4/util/Pools$Pool;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabViewPool:Landroid/support/v4/util/Pools$Pool;
 
-    invoke-interface {v1}, Landroid/support/v4/util/Pools$Pool;->acquire()Ljava/lang/Object;
+    invoke-interface {v0}, Landroid/support/v4/util/Pools$Pool;->a()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/support/design/widget/TabLayout$TabView;
-
-    move-object v0, v1
+    check-cast v0, Landroid/support/design/widget/TabLayout$TabView;
 
     .line 795
-    .local v0, "tabView":Landroid/support/design/widget/TabLayout$TabView;
-    :goto_d
-    if-nez v0, :cond_18
+    :goto_c
+    if-nez v0, :cond_17
 
     .line 796
     new-instance v0, Landroid/support/design/widget/TabLayout$TabView;
 
-    .end local v0    # "tabView":Landroid/support/design/widget/TabLayout$TabView;
     invoke-virtual {p0}, Landroid/support/design/widget/TabLayout;->getContext()Landroid/content/Context;
 
     move-result-object v1
@@ -1359,8 +1263,7 @@
     invoke-direct {v0, p0, v1}, Landroid/support/design/widget/TabLayout$TabView;-><init>(Landroid/support/design/widget/TabLayout;Landroid/content/Context;)V
 
     .line 798
-    .restart local v0    # "tabView":Landroid/support/design/widget/TabLayout$TabView;
-    :cond_18
+    :cond_17
     # invokes: Landroid/support/design/widget/TabLayout$TabView;->setTab(Landroid/support/design/widget/TabLayout$Tab;)V
     invoke-static {v0, p1}, Landroid/support/design/widget/TabLayout$TabView;->access$600(Landroid/support/design/widget/TabLayout$TabView;Landroid/support/design/widget/TabLayout$Tab;)V
 
@@ -1380,16 +1283,14 @@
     return-object v0
 
     .line 794
-    .end local v0    # "tabView":Landroid/support/design/widget/TabLayout$TabView;
-    :cond_27
+    :cond_26
     const/4 v0, 0x0
 
-    goto :goto_d
+    goto :goto_c
 .end method
 
 .method private dpToPx(I)I
     .registers 4
-    .param p1, "dps"    # I
 
     .prologue
     .line 876
@@ -1418,79 +1319,79 @@
     .registers 6
 
     .prologue
-    .line 1884
     const/4 v1, 0x0
 
+    .line 1884
     .line 1885
-    .local v1, "hasIconAndText":Z
-    const/4 v2, 0x0
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
 
-    .local v2, "i":I
-    iget-object v4, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+    move-result v3
 
-    move-result v0
+    move v2, v1
 
-    .local v0, "count":I
     :goto_8
-    if-ge v2, v0, :cond_25
+    if-ge v2, v3, :cond_31
 
     .line 1886
-    iget-object v4, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
 
-    invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Landroid/support/design/widget/TabLayout$Tab;
+    check-cast v0, Landroid/support/design/widget/TabLayout$Tab;
 
     .line 1887
-    .local v3, "tab":Landroid/support/design/widget/TabLayout$Tab;
-    if-eqz v3, :cond_2a
+    if-eqz v0, :cond_2a
 
-    invoke-virtual {v3}, Landroid/support/design/widget/TabLayout$Tab;->getIcon()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Landroid/support/design/widget/TabLayout$Tab;->getIcon()Landroid/graphics/drawable/Drawable;
 
     move-result-object v4
 
     if-eqz v4, :cond_2a
 
-    invoke-virtual {v3}, Landroid/support/design/widget/TabLayout$Tab;->getText()Ljava/lang/CharSequence;
+    invoke-virtual {v0}, Landroid/support/design/widget/TabLayout$Tab;->getText()Ljava/lang/CharSequence;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v4
+    move-result v0
 
-    if-nez v4, :cond_2a
+    if-nez v0, :cond_2a
 
     .line 1888
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     .line 1892
-    .end local v3    # "tab":Landroid/support/design/widget/TabLayout$Tab;
-    :cond_25
-    if-eqz v1, :cond_2d
+    :goto_25
+    if-eqz v0, :cond_2e
 
-    const/16 v4, 0x48
+    const/16 v0, 0x48
 
     :goto_29
-    return v4
+    return v0
 
     .line 1885
-    .restart local v3    # "tab":Landroid/support/design/widget/TabLayout$Tab;
     :cond_2a
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v2, 0x1
+
+    move v2, v0
 
     goto :goto_8
 
     .line 1892
-    .end local v3    # "tab":Landroid/support/design/widget/TabLayout$Tab;
-    :cond_2d
-    const/16 v4, 0x30
+    :cond_2e
+    const/16 v0, 0x30
 
     goto :goto_29
+
+    :cond_31
+    move v0, v1
+
+    goto :goto_25
 .end method
 
 .method private getScrollPosition()F
@@ -1592,28 +1493,28 @@
     .registers 6
 
     .prologue
+    const/4 v1, 0x0
+
     .line 767
     invoke-virtual {p0}, Landroid/support/design/widget/TabLayout;->removeAllTabs()V
 
     .line 769
-    iget-object v3, p0, Landroid/support/design/widget/TabLayout;->mPagerAdapter:Landroid/support/v4/view/PagerAdapter;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mPagerAdapter:Landroid/support/v4/view/PagerAdapter;
 
-    if-eqz v3, :cond_45
+    if-eqz v0, :cond_45
 
     .line 770
-    iget-object v3, p0, Landroid/support/design/widget/TabLayout;->mPagerAdapter:Landroid/support/v4/view/PagerAdapter;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mPagerAdapter:Landroid/support/v4/view/PagerAdapter;
 
-    invoke-virtual {v3}, Landroid/support/v4/view/PagerAdapter;->getCount()I
+    invoke-virtual {v0}, Landroid/support/v4/view/PagerAdapter;->b()I
 
-    move-result v0
+    move-result v2
+
+    move v0, v1
 
     .line 771
-    .local v0, "adapterCount":I
-    const/4 v2, 0x0
-
-    .local v2, "i":I
-    :goto_e
-    if-ge v2, v0, :cond_25
+    :goto_f
+    if-ge v0, v2, :cond_25
 
     .line 772
     invoke-virtual {p0}, Landroid/support/design/widget/TabLayout;->newTab()Landroid/support/design/widget/TabLayout$Tab;
@@ -1622,7 +1523,7 @@
 
     iget-object v4, p0, Landroid/support/design/widget/TabLayout;->mPagerAdapter:Landroid/support/v4/view/PagerAdapter;
 
-    invoke-virtual {v4, v2}, Landroid/support/v4/view/PagerAdapter;->getPageTitle(I)Ljava/lang/CharSequence;
+    invoke-virtual {v4, v0}, Landroid/support/v4/view/PagerAdapter;->c(I)Ljava/lang/CharSequence;
 
     move-result-object v4
 
@@ -1630,55 +1531,49 @@
 
     move-result-object v3
 
-    const/4 v4, 0x0
-
-    invoke-virtual {p0, v3, v4}, Landroid/support/design/widget/TabLayout;->addTab(Landroid/support/design/widget/TabLayout$Tab;Z)V
+    invoke-virtual {p0, v3, v1}, Landroid/support/design/widget/TabLayout;->addTab(Landroid/support/design/widget/TabLayout$Tab;Z)V
 
     .line 771
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    goto :goto_e
+    goto :goto_f
 
     .line 776
     :cond_25
-    iget-object v3, p0, Landroid/support/design/widget/TabLayout;->mViewPager:Landroid/support/v4/view/ViewPager;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mViewPager:Landroid/support/v4/view/ViewPager;
 
-    if-eqz v3, :cond_44
+    if-eqz v0, :cond_44
 
-    if-lez v0, :cond_44
+    if-lez v2, :cond_44
 
     .line 777
-    iget-object v3, p0, Landroid/support/design/widget/TabLayout;->mViewPager:Landroid/support/v4/view/ViewPager;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mViewPager:Landroid/support/v4/view/ViewPager;
 
-    invoke-virtual {v3}, Landroid/support/v4/view/ViewPager;->getCurrentItem()I
+    invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->getCurrentItem()I
+
+    move-result v0
+
+    .line 778
+    invoke-virtual {p0}, Landroid/support/design/widget/TabLayout;->getSelectedTabPosition()I
 
     move-result v1
 
-    .line 778
-    .local v1, "curItem":I
-    invoke-virtual {p0}, Landroid/support/design/widget/TabLayout;->getSelectedTabPosition()I
-
-    move-result v3
-
-    if-eq v1, v3, :cond_44
+    if-eq v0, v1, :cond_44
 
     invoke-virtual {p0}, Landroid/support/design/widget/TabLayout;->getTabCount()I
 
-    move-result v3
+    move-result v1
 
-    if-ge v1, v3, :cond_44
+    if-ge v0, v1, :cond_44
 
     .line 779
-    invoke-virtual {p0, v1}, Landroid/support/design/widget/TabLayout;->getTabAt(I)Landroid/support/design/widget/TabLayout$Tab;
+    invoke-virtual {p0, v0}, Landroid/support/design/widget/TabLayout;->getTabAt(I)Landroid/support/design/widget/TabLayout$Tab;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {p0, v3}, Landroid/support/design/widget/TabLayout;->selectTab(Landroid/support/design/widget/TabLayout$Tab;)V
+    invoke-virtual {p0, v0}, Landroid/support/design/widget/TabLayout;->selectTab(Landroid/support/design/widget/TabLayout$Tab;)V
 
     .line 785
-    .end local v0    # "adapterCount":I
-    .end local v1    # "curItem":I
-    .end local v2    # "i":I
     :cond_44
     :goto_44
     return-void
@@ -1692,20 +1587,18 @@
 
 .method private removeTabViewAt(I)V
     .registers 4
-    .param p1, "position"    # I
 
     .prologue
     .line 937
-    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
-    invoke-virtual {v1, p1}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, p1}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/design/widget/TabLayout$TabView;
 
     .line 938
-    .local v0, "view":Landroid/support/design/widget/TabLayout$TabView;
     iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
     invoke-virtual {v1, p1}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->removeViewAt(I)V
@@ -1720,7 +1613,7 @@
     .line 941
     iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mTabViewPool:Landroid/support/v4/util/Pools$Pool;
 
-    invoke-interface {v1, v0}, Landroid/support/v4/util/Pools$Pool;->release(Ljava/lang/Object;)Z
+    invoke-interface {v1, v0}, Landroid/support/v4/util/Pools$Pool;->a(Ljava/lang/Object;)Z
 
     .line 943
     :cond_17
@@ -1732,11 +1625,6 @@
 
 .method private setPagerAdapter(Landroid/support/v4/view/PagerAdapter;Z)V
     .registers 5
-    .param p1, "adapter"    # Landroid/support/v4/view/PagerAdapter;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
-    .param p2, "addObserver"    # Z
 
     .prologue
     .line 747
@@ -1753,7 +1641,7 @@
 
     iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mPagerAdapterObserver:Landroid/database/DataSetObserver;
 
-    invoke-virtual {v0, v1}, Landroid/support/v4/view/PagerAdapter;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
+    invoke-virtual {v0, v1}, Landroid/support/v4/view/PagerAdapter;->b(Landroid/database/DataSetObserver;)V
 
     .line 752
     :cond_f
@@ -1782,7 +1670,7 @@
     :cond_21
     iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mPagerAdapterObserver:Landroid/database/DataSetObserver;
 
-    invoke-virtual {p1, v0}, Landroid/support/v4/view/PagerAdapter;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
+    invoke-virtual {p1, v0}, Landroid/support/v4/view/PagerAdapter;->a(Landroid/database/DataSetObserver;)V
 
     .line 763
     :cond_26
@@ -1794,23 +1682,18 @@
 
 .method private setScrollPosition(IFZZ)V
     .registers 8
-    .param p1, "position"    # I
-    .param p2, "positionOffset"    # F
-    .param p3, "updateSelectedText"    # Z
-    .param p4, "updateIndicatorPosition"    # Z
 
     .prologue
     .line 378
-    int-to-float v1, p1
+    int-to-float v0, p1
 
-    add-float/2addr v1, p2
+    add-float/2addr v0, p2
 
-    invoke-static {v1}, Ljava/lang/Math;->round(F)I
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
 
     move-result v0
 
     .line 379
-    .local v0, "roundedPosition":I
     if-ltz v0, :cond_10
 
     iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
@@ -1874,71 +1757,69 @@
 .end method
 
 .method private setSelectedTabView(I)V
-    .registers 6
-    .param p1, "position"    # I
+    .registers 7
 
     .prologue
+    const/4 v1, 0x0
+
     .line 984
-    iget-object v3, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
-    invoke-virtual {v3}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->getChildCount()I
-
-    move-result v2
-
-    .line 985
-    .local v2, "tabCount":I
-    if-ge p1, v2, :cond_28
-
-    iget-object v3, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
-
-    invoke-virtual {v3, p1}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Landroid/view/View;->isSelected()Z
+    invoke-virtual {v0}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->getChildCount()I
 
     move-result v3
 
-    if-nez v3, :cond_28
+    .line 985
+    if-ge p1, v3, :cond_2a
 
-    .line 986
-    const/4 v1, 0x0
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
-    .local v1, "i":I
-    :goto_15
-    if-ge v1, v2, :cond_28
-
-    .line 987
-    iget-object v3, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
-
-    invoke-virtual {v3, v1}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, p1}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 988
-    .local v0, "child":Landroid/view/View;
-    if-ne v1, p1, :cond_26
+    invoke-virtual {v0}, Landroid/view/View;->isSelected()Z
 
-    const/4 v3, 0x1
+    move-result v0
 
-    :goto_20
-    invoke-virtual {v0, v3}, Landroid/view/View;->setSelected(Z)V
+    if-nez v0, :cond_2a
+
+    move v2, v1
 
     .line 986
-    add-int/lit8 v1, v1, 0x1
+    :goto_16
+    if-ge v2, v3, :cond_2a
 
-    goto :goto_15
+    .line 987
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
+
+    invoke-virtual {v0, v2}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v4
 
     .line 988
-    :cond_26
-    const/4 v3, 0x0
+    if-ne v2, p1, :cond_28
 
-    goto :goto_20
+    const/4 v0, 0x1
+
+    :goto_21
+    invoke-virtual {v4, v0}, Landroid/view/View;->setSelected(Z)V
+
+    .line 986
+    add-int/lit8 v0, v2, 0x1
+
+    move v2, v0
+
+    goto :goto_16
+
+    :cond_28
+    move v0, v1
+
+    .line 988
+    goto :goto_21
 
     .line 991
-    .end local v0    # "child":Landroid/view/View;
-    .end local v1    # "i":I
-    :cond_28
+    :cond_2a
     return-void
 .end method
 
@@ -1949,42 +1830,43 @@
     .line 788
     const/4 v0, 0x0
 
-    .local v0, "i":I
-    iget-object v2, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
+    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
 
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
-    move-result v1
+    move-result v2
 
-    .local v1, "z":I
-    :goto_7
-    if-ge v0, v1, :cond_17
+    move v1, v0
+
+    :goto_8
+    if-ge v1, v2, :cond_19
 
     .line 789
-    iget-object v2, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
 
-    invoke-virtual {v2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Landroid/support/design/widget/TabLayout$Tab;
+    check-cast v0, Landroid/support/design/widget/TabLayout$Tab;
 
     # invokes: Landroid/support/design/widget/TabLayout$Tab;->updateView()V
-    invoke-static {v2}, Landroid/support/design/widget/TabLayout$Tab;->access$500(Landroid/support/design/widget/TabLayout$Tab;)V
+    invoke-static {v0}, Landroid/support/design/widget/TabLayout$Tab;->access$500(Landroid/support/design/widget/TabLayout$Tab;)V
 
     .line 788
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    goto :goto_7
+    move v1, v0
+
+    goto :goto_8
 
     .line 791
-    :cond_17
+    :cond_19
     return-void
 .end method
 
 .method private updateTabViewLayoutParams(Landroid/widget/LinearLayout$LayoutParams;)V
     .registers 4
-    .param p1, "lp"    # Landroid/widget/LinearLayout$LayoutParams;
 
     .prologue
     .line 866
@@ -2004,7 +1886,7 @@
     iput v0, p1, Landroid/widget/LinearLayout$LayoutParams;->width:I
 
     .line 868
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     iput v0, p1, Landroid/widget/LinearLayout$LayoutParams;->weight:F
 
@@ -2028,61 +1910,61 @@
 
 .method private updateTabViews(Z)V
     .registers 5
-    .param p1, "requestLayout"    # Z
 
     .prologue
     .line 1067
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    .local v1, "i":I
-    :goto_1
-    iget-object v2, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
+    move v1, v0
 
-    invoke-virtual {v2}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->getChildCount()I
+    :goto_2
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
-    move-result v2
+    invoke-virtual {v0}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->getChildCount()I
 
-    if-ge v1, v2, :cond_27
+    move-result v0
+
+    if-ge v1, v0, :cond_29
 
     .line 1068
-    iget-object v2, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
-    invoke-virtual {v2, v1}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    .line 1069
-    .local v0, "child":Landroid/view/View;
-    invoke-direct {p0}, Landroid/support/design/widget/TabLayout;->getTabMinWidth()I
-
-    move-result v2
-
-    invoke-virtual {v0, v2}, Landroid/view/View;->setMinimumWidth(I)V
-
-    .line 1070
-    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v0, v1}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    check-cast v2, Landroid/widget/LinearLayout$LayoutParams;
+    .line 1069
+    invoke-direct {p0}, Landroid/support/design/widget/TabLayout;->getTabMinWidth()I
 
-    invoke-direct {p0, v2}, Landroid/support/design/widget/TabLayout;->updateTabViewLayoutParams(Landroid/widget/LinearLayout$LayoutParams;)V
+    move-result v0
+
+    invoke-virtual {v2, v0}, Landroid/view/View;->setMinimumWidth(I)V
+
+    .line 1070
+    invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/widget/LinearLayout$LayoutParams;
+
+    invoke-direct {p0, v0}, Landroid/support/design/widget/TabLayout;->updateTabViewLayoutParams(Landroid/widget/LinearLayout$LayoutParams;)V
 
     .line 1071
-    if-eqz p1, :cond_24
+    if-eqz p1, :cond_25
 
     .line 1072
-    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
+    invoke-virtual {v2}, Landroid/view/View;->requestLayout()V
 
     .line 1067
-    :cond_24
-    add-int/lit8 v1, v1, 0x1
+    :cond_25
+    add-int/lit8 v0, v1, 0x1
 
-    goto :goto_1
+    move v1, v0
+
+    goto :goto_2
 
     .line 1075
-    .end local v0    # "child":Landroid/view/View;
-    :cond_27
+    :cond_29
     return-void
 .end method
 
@@ -2090,10 +1972,6 @@
 # virtual methods
 .method public addTab(Landroid/support/design/widget/TabLayout$Tab;)V
     .registers 3
-    .param p1, "tab"    # Landroid/support/design/widget/TabLayout$Tab;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
 
     .prologue
     .line 411
@@ -2111,11 +1989,6 @@
 
 .method public addTab(Landroid/support/design/widget/TabLayout$Tab;I)V
     .registers 4
-    .param p1, "tab"    # Landroid/support/design/widget/TabLayout$Tab;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2, "position"    # I
 
     .prologue
     .line 422
@@ -2133,12 +2006,6 @@
 
 .method public addTab(Landroid/support/design/widget/TabLayout$Tab;IZ)V
     .registers 6
-    .param p1, "tab"    # Landroid/support/design/widget/TabLayout$Tab;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2, "position"    # I
-    .param p3, "setSelected"    # Z
 
     .prologue
     .line 451
@@ -2178,11 +2045,6 @@
 
 .method public addTab(Landroid/support/design/widget/TabLayout$Tab;Z)V
     .registers 5
-    .param p1, "tab"    # Landroid/support/design/widget/TabLayout$Tab;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
-    .param p2, "setSelected"    # Z
 
     .prologue
     .line 432
@@ -2228,7 +2090,6 @@
 
 .method public addView(Landroid/view/View;)V
     .registers 2
-    .param p1, "child"    # Landroid/view/View;
 
     .prologue
     .line 832
@@ -2240,8 +2101,6 @@
 
 .method public addView(Landroid/view/View;I)V
     .registers 3
-    .param p1, "child"    # Landroid/view/View;
-    .param p2, "index"    # I
 
     .prologue
     .line 837
@@ -2253,9 +2112,6 @@
 
 .method public addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
     .registers 4
-    .param p1, "child"    # Landroid/view/View;
-    .param p2, "index"    # I
-    .param p3, "params"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
     .line 847
@@ -2267,8 +2123,6 @@
 
 .method public addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
     .registers 3
-    .param p1, "child"    # Landroid/view/View;
-    .param p2, "params"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
     .line 842
@@ -2292,7 +2146,6 @@
 
 .method public generateLayoutParams(Landroid/util/AttributeSet;)Landroid/widget/FrameLayout$LayoutParams;
     .registers 3
-    .param p1, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 1910
@@ -2329,9 +2182,6 @@
 
 .method public getTabAt(I)Landroid/support/design/widget/TabLayout$Tab;
     .registers 3
-    .param p1, "index"    # I
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
 
     .prologue
     .line 517
@@ -2382,8 +2232,6 @@
 
 .method public getTabTextColors()Landroid/content/res/ColorStateList;
     .registers 2
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
 
     .prologue
     .line 661
@@ -2394,31 +2242,26 @@
 
 .method public newTab()Landroid/support/design/widget/TabLayout$Tab;
     .registers 3
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
 
     .prologue
     .line 495
-    sget-object v1, Landroid/support/design/widget/TabLayout;->sTabPool:Landroid/support/v4/util/Pools$Pool;
+    sget-object v0, Landroid/support/design/widget/TabLayout;->sTabPool:Landroid/support/v4/util/Pools$Pool;
 
-    invoke-interface {v1}, Landroid/support/v4/util/Pools$Pool;->acquire()Ljava/lang/Object;
+    invoke-interface {v0}, Landroid/support/v4/util/Pools$Pool;->a()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/design/widget/TabLayout$Tab;
 
     .line 496
-    .local v0, "tab":Landroid/support/design/widget/TabLayout$Tab;
     if-nez v0, :cond_f
 
     .line 497
     new-instance v0, Landroid/support/design/widget/TabLayout$Tab;
 
-    .end local v0    # "tab":Landroid/support/design/widget/TabLayout$Tab;
     invoke-direct {v0, p0}, Landroid/support/design/widget/TabLayout$Tab;-><init>(Landroid/support/design/widget/TabLayout;)V
 
     .line 499
-    .restart local v0    # "tab":Landroid/support/design/widget/TabLayout$Tab;
     :cond_f
     invoke-direct {p0, v0}, Landroid/support/design/widget/TabLayout;->createTabView(Landroid/support/design/widget/TabLayout$Tab;)Landroid/support/design/widget/TabLayout$TabView;
 
@@ -2432,261 +2275,239 @@
 .end method
 
 .method protected onMeasure(II)V
-    .registers 14
-    .param p1, "widthMeasureSpec"    # I
-    .param p2, "heightMeasureSpec"    # I
+    .registers 9
 
     .prologue
-    const/high16 v10, 0x40000000
+    const/high16 v5, 0x40000000    # 2.0f
 
-    const/4 v7, 0x1
+    const/4 v1, 0x1
 
-    const/4 v8, 0x0
+    const/4 v2, 0x0
 
     .line 883
     invoke-direct {p0}, Landroid/support/design/widget/TabLayout;->getDefaultHeight()I
 
-    move-result v6
+    move-result v0
 
-    invoke-direct {p0, v6}, Landroid/support/design/widget/TabLayout;->dpToPx(I)I
+    invoke-direct {p0, v0}, Landroid/support/design/widget/TabLayout;->dpToPx(I)I
 
-    move-result v6
+    move-result v0
 
     invoke-virtual {p0}, Landroid/support/design/widget/TabLayout;->getPaddingTop()I
 
-    move-result v9
+    move-result v3
 
-    add-int/2addr v6, v9
+    add-int/2addr v0, v3
 
     invoke-virtual {p0}, Landroid/support/design/widget/TabLayout;->getPaddingBottom()I
 
-    move-result v9
+    move-result v3
 
-    add-int v3, v6, v9
+    add-int/2addr v0, v3
 
     .line 884
-    .local v3, "idealHeight":I
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
-    move-result v6
+    move-result v3
 
-    sparse-switch v6, :sswitch_data_9c
+    sparse-switch v3, :sswitch_data_9a
 
     .line 895
-    :goto_1e
+    :goto_1d
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-    move-result v5
+    move-result v0
 
     .line 896
-    .local v5, "specWidth":I
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
-    move-result v6
+    move-result v3
 
-    if-eqz v6, :cond_30
+    if-eqz v3, :cond_2f
 
     .line 899
-    iget v6, p0, Landroid/support/design/widget/TabLayout;->mRequestedTabMaxWidth:I
+    iget v3, p0, Landroid/support/design/widget/TabLayout;->mRequestedTabMaxWidth:I
 
-    if-lez v6, :cond_76
+    if-lez v3, :cond_75
 
-    iget v6, p0, Landroid/support/design/widget/TabLayout;->mRequestedTabMaxWidth:I
+    iget v0, p0, Landroid/support/design/widget/TabLayout;->mRequestedTabMaxWidth:I
 
-    :goto_2e
-    iput v6, p0, Landroid/support/design/widget/TabLayout;->mTabMaxWidth:I
+    :goto_2d
+    iput v0, p0, Landroid/support/design/widget/TabLayout;->mTabMaxWidth:I
 
     .line 905
-    :cond_30
+    :cond_2f
     invoke-super {p0, p1, p2}, Landroid/widget/HorizontalScrollView;->onMeasure(II)V
 
     .line 907
     invoke-virtual {p0}, Landroid/support/design/widget/TabLayout;->getChildCount()I
 
-    move-result v6
+    move-result v0
 
-    if-ne v6, v7, :cond_63
+    if-ne v0, v1, :cond_62
 
     .line 910
-    invoke-virtual {p0, v8}, Landroid/support/design/widget/TabLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Landroid/support/design/widget/TabLayout;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v0
-
-    .line 911
-    .local v0, "child":Landroid/view/View;
-    const/4 v4, 0x0
+    move-result-object v3
 
     .line 913
-    .local v4, "remeasure":Z
-    iget v6, p0, Landroid/support/design/widget/TabLayout;->mMode:I
+    iget v0, p0, Landroid/support/design/widget/TabLayout;->mMode:I
 
-    packed-switch v6, :pswitch_data_a6
+    packed-switch v0, :pswitch_data_a4
+
+    move v0, v2
 
     .line 925
-    :goto_43
-    if-eqz v4, :cond_63
+    :goto_42
+    if-eqz v0, :cond_62
 
     .line 927
     invoke-virtual {p0}, Landroid/support/design/widget/TabLayout;->getPaddingTop()I
 
-    move-result v6
+    move-result v0
 
     invoke-virtual {p0}, Landroid/support/design/widget/TabLayout;->getPaddingBottom()I
 
-    move-result v7
+    move-result v1
 
-    add-int/2addr v6, v7
+    add-int/2addr v0, v1
 
-    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v7
+    move-result-object v1
 
-    iget v7, v7, Landroid/view/ViewGroup$LayoutParams;->height:I
+    iget v1, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    invoke-static {p2, v6, v7}, Landroid/support/design/widget/TabLayout;->getChildMeasureSpec(III)I
+    invoke-static {p2, v0, v1}, Landroid/support/design/widget/TabLayout;->getChildMeasureSpec(III)I
+
+    move-result v0
+
+    .line 929
+    invoke-virtual {p0}, Landroid/support/design/widget/TabLayout;->getMeasuredWidth()I
 
     move-result v1
 
-    .line 929
-    .local v1, "childHeightMeasureSpec":I
-    invoke-virtual {p0}, Landroid/support/design/widget/TabLayout;->getMeasuredWidth()I
+    invoke-static {v1, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
-    move-result v6
-
-    invoke-static {v6, v10}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result v2
+    move-result v1
 
     .line 931
-    .local v2, "childWidthMeasureSpec":I
-    invoke-virtual {v0, v2, v1}, Landroid/view/View;->measure(II)V
+    invoke-virtual {v3, v1, v0}, Landroid/view/View;->measure(II)V
 
     .line 934
-    .end local v0    # "child":Landroid/view/View;
-    .end local v1    # "childHeightMeasureSpec":I
-    .end local v2    # "childWidthMeasureSpec":I
-    .end local v4    # "remeasure":Z
-    :cond_63
+    :cond_62
     return-void
 
     .line 886
-    .end local v5    # "specWidth":I
-    :sswitch_64
+    :sswitch_63
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-    move-result v6
+    move-result v3
 
-    invoke-static {v3, v6}, Ljava/lang/Math;->min(II)I
+    invoke-static {v0, v3}, Ljava/lang/Math;->min(II)I
 
-    move-result v6
+    move-result v0
 
-    invoke-static {v6, v10}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    invoke-static {v0, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
 
-    .line 889
-    goto :goto_1e
+    goto :goto_1d
 
     .line 891
-    :sswitch_71
-    invoke-static {v3, v10}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    :sswitch_70
+    invoke-static {v0, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
 
-    goto :goto_1e
+    goto :goto_1d
 
     .line 899
-    .restart local v5    # "specWidth":I
-    :cond_76
-    const/16 v6, 0x38
+    :cond_75
+    const/16 v3, 0x38
 
-    invoke-direct {p0, v6}, Landroid/support/design/widget/TabLayout;->dpToPx(I)I
+    invoke-direct {p0, v3}, Landroid/support/design/widget/TabLayout;->dpToPx(I)I
 
-    move-result v6
+    move-result v3
 
-    sub-int v6, v5, v6
+    sub-int/2addr v0, v3
 
-    goto :goto_2e
+    goto :goto_2d
 
     .line 917
-    .restart local v0    # "child":Landroid/view/View;
-    .restart local v4    # "remeasure":Z
-    :pswitch_7f
-    invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
+    :pswitch_7d
+    invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
 
-    move-result v6
+    move-result v0
 
     invoke-virtual {p0}, Landroid/support/design/widget/TabLayout;->getMeasuredWidth()I
 
-    move-result v9
+    move-result v4
 
-    if-ge v6, v9, :cond_8b
+    if-ge v0, v4, :cond_89
 
-    move v4, v7
+    move v0, v1
 
-    .line 918
-    :goto_8a
-    goto :goto_43
+    goto :goto_42
 
-    :cond_8b
-    move v4, v8
+    :cond_89
+    move v0, v2
 
-    .line 917
-    goto :goto_8a
+    goto :goto_42
 
     .line 921
-    :pswitch_8d
-    invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
+    :pswitch_8b
+    invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
 
-    move-result v6
+    move-result v0
 
     invoke-virtual {p0}, Landroid/support/design/widget/TabLayout;->getMeasuredWidth()I
 
-    move-result v9
+    move-result v4
 
-    if-eq v6, v9, :cond_99
+    if-eq v0, v4, :cond_97
 
-    move v4, v7
+    :goto_95
+    move v0, v1
 
-    :goto_98
-    goto :goto_43
+    goto :goto_42
 
-    :cond_99
-    move v4, v8
+    :cond_97
+    move v1, v2
 
-    goto :goto_98
+    goto :goto_95
 
     .line 884
     nop
 
-    :sswitch_data_9c
+    :sswitch_data_9a
     .sparse-switch
-        -0x80000000 -> :sswitch_64
-        0x0 -> :sswitch_71
+        -0x80000000 -> :sswitch_63
+        0x0 -> :sswitch_70
     .end sparse-switch
 
     .line 913
-    :pswitch_data_a6
+    :pswitch_data_a4
     .packed-switch 0x0
-        :pswitch_7f
-        :pswitch_8d
+        :pswitch_7d
+        :pswitch_8b
     .end packed-switch
 .end method
 
 .method public removeAllTabs()V
-    .registers 5
+    .registers 4
 
     .prologue
     .line 574
-    iget-object v3, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabStrip:Landroid/support/design/widget/TabLayout$SlidingTabStrip;
 
-    invoke-virtual {v3}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->getChildCount()I
+    invoke-virtual {v0}, Landroid/support/design/widget/TabLayout$SlidingTabStrip;->getChildCount()I
 
-    move-result v3
+    move-result v0
 
-    add-int/lit8 v0, v3, -0x1
+    add-int/lit8 v0, v0, -0x1
 
-    .local v0, "i":I
     :goto_8
     if-ltz v0, :cond_10
 
@@ -2700,48 +2521,45 @@
 
     .line 578
     :cond_10
-    iget-object v3, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
 
-    invoke-virtual {v3}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
 
-    .local v1, "i":Ljava/util/Iterator;, "Ljava/util/Iterator<Landroid/support/design/widget/TabLayout$Tab;>;"
     :goto_16
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_2e
+    if-eqz v0, :cond_2e
 
     .line 579
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Landroid/support/design/widget/TabLayout$Tab;
+    check-cast v0, Landroid/support/design/widget/TabLayout$Tab;
 
     .line 580
-    .local v2, "tab":Landroid/support/design/widget/TabLayout$Tab;
     invoke-interface {v1}, Ljava/util/Iterator;->remove()V
 
     .line 581
     # invokes: Landroid/support/design/widget/TabLayout$Tab;->reset()V
-    invoke-static {v2}, Landroid/support/design/widget/TabLayout$Tab;->access$200(Landroid/support/design/widget/TabLayout$Tab;)V
+    invoke-static {v0}, Landroid/support/design/widget/TabLayout$Tab;->access$200(Landroid/support/design/widget/TabLayout$Tab;)V
 
     .line 582
-    sget-object v3, Landroid/support/design/widget/TabLayout;->sTabPool:Landroid/support/v4/util/Pools$Pool;
+    sget-object v2, Landroid/support/design/widget/TabLayout;->sTabPool:Landroid/support/v4/util/Pools$Pool;
 
-    invoke-interface {v3, v2}, Landroid/support/v4/util/Pools$Pool;->release(Ljava/lang/Object;)Z
+    invoke-interface {v2, v0}, Landroid/support/v4/util/Pools$Pool;->a(Ljava/lang/Object;)Z
 
     goto :goto_16
 
     .line 585
-    .end local v2    # "tab":Landroid/support/design/widget/TabLayout$Tab;
     :cond_2e
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
-    iput-object v3, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
+    iput-object v0, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
 
     .line 586
     return-void
@@ -2749,7 +2567,6 @@
 
 .method public removeTab(Landroid/support/design/widget/TabLayout$Tab;)V
     .registers 4
-    .param p1, "tab"    # Landroid/support/design/widget/TabLayout$Tab;
 
     .prologue
     .line 536
@@ -2782,140 +2599,130 @@
 .end method
 
 .method public removeTabAt(I)V
-    .registers 9
-    .param p1, "position"    # I
+    .registers 7
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v2, 0x0
 
     .line 550
-    iget-object v4, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
 
-    if-eqz v4, :cond_37
+    if-eqz v0, :cond_39
 
-    iget-object v4, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
 
-    invoke-virtual {v4}, Landroid/support/design/widget/TabLayout$Tab;->getPosition()I
+    invoke-virtual {v0}, Landroid/support/design/widget/TabLayout$Tab;->getPosition()I
 
-    move-result v3
+    move-result v0
+
+    move v1, v0
 
     .line 551
-    .local v3, "selectedTabPosition":I
-    :goto_b
+    :goto_c
     invoke-direct {p0, p1}, Landroid/support/design/widget/TabLayout;->removeTabViewAt(I)V
 
     .line 553
-    iget-object v4, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
 
-    invoke-virtual {v4, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    move-result-object v2
+    move-result-object v0
 
-    check-cast v2, Landroid/support/design/widget/TabLayout$Tab;
+    check-cast v0, Landroid/support/design/widget/TabLayout$Tab;
 
     .line 554
-    .local v2, "removedTab":Landroid/support/design/widget/TabLayout$Tab;
-    if-eqz v2, :cond_20
+    if-eqz v0, :cond_21
 
     .line 555
     # invokes: Landroid/support/design/widget/TabLayout$Tab;->reset()V
-    invoke-static {v2}, Landroid/support/design/widget/TabLayout$Tab;->access$200(Landroid/support/design/widget/TabLayout$Tab;)V
+    invoke-static {v0}, Landroid/support/design/widget/TabLayout$Tab;->access$200(Landroid/support/design/widget/TabLayout$Tab;)V
 
     .line 556
-    sget-object v4, Landroid/support/design/widget/TabLayout;->sTabPool:Landroid/support/v4/util/Pools$Pool;
+    sget-object v3, Landroid/support/design/widget/TabLayout;->sTabPool:Landroid/support/v4/util/Pools$Pool;
 
-    invoke-interface {v4, v2}, Landroid/support/v4/util/Pools$Pool;->release(Ljava/lang/Object;)Z
+    invoke-interface {v3, v0}, Landroid/support/v4/util/Pools$Pool;->a(Ljava/lang/Object;)Z
 
     .line 559
-    :cond_20
-    iget-object v4, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
+    :cond_21
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
 
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
-
-    move-result v1
-
-    .line 560
-    .local v1, "newTabCount":I
-    move v0, p1
-
-    .local v0, "i":I
-    :goto_27
-    if-ge v0, v1, :cond_39
-
-    .line 561
-    iget-object v4, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
-
-    invoke-virtual {v4, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/support/design/widget/TabLayout$Tab;
-
-    invoke-virtual {v4, v0}, Landroid/support/design/widget/TabLayout$Tab;->setPosition(I)V
-
-    .line 560
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_27
-
-    .end local v0    # "i":I
-    .end local v1    # "newTabCount":I
-    .end local v2    # "removedTab":Landroid/support/design/widget/TabLayout$Tab;
-    .end local v3    # "selectedTabPosition":I
-    :cond_37
-    move v3, v5
-
-    .line 550
-    goto :goto_b
-
-    .line 564
-    .restart local v0    # "i":I
-    .restart local v1    # "newTabCount":I
-    .restart local v2    # "removedTab":Landroid/support/design/widget/TabLayout$Tab;
-    .restart local v3    # "selectedTabPosition":I
-    :cond_39
-    if-ne v3, p1, :cond_47
-
-    .line 565
-    iget-object v4, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
-
-    invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
-    if-eqz v4, :cond_48
+    move v3, p1
 
-    const/4 v4, 0x0
+    .line 560
+    :goto_28
+    if-ge v3, v4, :cond_3b
 
-    :goto_44
-    invoke-virtual {p0, v4}, Landroid/support/design/widget/TabLayout;->selectTab(Landroid/support/design/widget/TabLayout$Tab;)V
+    .line 561
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/design/widget/TabLayout$Tab;
+
+    invoke-virtual {v0, v3}, Landroid/support/design/widget/TabLayout$Tab;->setPosition(I)V
+
+    .line 560
+    add-int/lit8 v0, v3, 0x1
+
+    move v3, v0
+
+    goto :goto_28
+
+    :cond_39
+    move v1, v2
+
+    .line 550
+    goto :goto_c
+
+    .line 564
+    :cond_3b
+    if-ne v1, p1, :cond_49
+
+    .line 565
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_4a
+
+    const/4 v0, 0x0
+
+    :goto_46
+    invoke-virtual {p0, v0}, Landroid/support/design/widget/TabLayout;->selectTab(Landroid/support/design/widget/TabLayout$Tab;)V
 
     .line 567
-    :cond_47
+    :cond_49
     return-void
 
     .line 565
-    :cond_48
-    iget-object v4, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
+    :cond_4a
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mTabs:Ljava/util/ArrayList;
 
-    add-int/lit8 v6, p1, -0x1
+    add-int/lit8 v1, p1, -0x1
 
-    invoke-static {v5, v6}, Ljava/lang/Math;->max(II)I
+    invoke-static {v2, v1}, Ljava/lang/Math;->max(II)I
 
-    move-result v5
+    move-result v1
 
-    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v0
 
-    check-cast v4, Landroid/support/design/widget/TabLayout$Tab;
+    check-cast v0, Landroid/support/design/widget/TabLayout$Tab;
 
-    goto :goto_44
+    goto :goto_46
 .end method
 
 .method selectTab(Landroid/support/design/widget/TabLayout$Tab;)V
     .registers 3
-    .param p1, "tab"    # Landroid/support/design/widget/TabLayout$Tab;
 
     .prologue
     .line 994
@@ -2929,41 +2736,39 @@
 
 .method selectTab(Landroid/support/design/widget/TabLayout$Tab;Z)V
     .registers 6
-    .param p1, "tab"    # Landroid/support/design/widget/TabLayout$Tab;
-    .param p2, "updateIndicator"    # Z
 
     .prologue
     const/4 v1, -0x1
 
     .line 998
-    iget-object v2, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
 
-    if-ne v2, p1, :cond_1c
+    if-ne v0, p1, :cond_1c
 
     .line 999
-    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
 
-    if-eqz v1, :cond_1b
+    if-eqz v0, :cond_1b
 
     .line 1000
-    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mOnTabSelectedListener:Landroid/support/design/widget/TabLayout$OnTabSelectedListener;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mOnTabSelectedListener:Landroid/support/design/widget/TabLayout$OnTabSelectedListener;
 
-    if-eqz v1, :cond_14
+    if-eqz v0, :cond_14
 
     .line 1001
-    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mOnTabSelectedListener:Landroid/support/design/widget/TabLayout$OnTabSelectedListener;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mOnTabSelectedListener:Landroid/support/design/widget/TabLayout$OnTabSelectedListener;
 
-    iget-object v2, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
+    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
 
-    invoke-interface {v1, v2}, Landroid/support/design/widget/TabLayout$OnTabSelectedListener;->onTabReselected(Landroid/support/design/widget/TabLayout$Tab;)V
+    invoke-interface {v0, v1}, Landroid/support/design/widget/TabLayout$OnTabSelectedListener;->onTabReselected(Landroid/support/design/widget/TabLayout$Tab;)V
 
     .line 1003
     :cond_14
     invoke-virtual {p1}, Landroid/support/design/widget/TabLayout$Tab;->getPosition()I
 
-    move-result v1
+    move-result v0
 
-    invoke-direct {p0, v1}, Landroid/support/design/widget/TabLayout;->animateToTab(I)V
+    invoke-direct {p0, v0}, Landroid/support/design/widget/TabLayout;->animateToTab(I)V
 
     .line 1027
     :cond_1b
@@ -2982,7 +2787,6 @@
     move-result v0
 
     .line 1008
-    .local v0, "newPosition":I
     :goto_24
     if-eq v0, v1, :cond_29
 
@@ -3014,43 +2818,42 @@
     invoke-virtual {p0, v0, v1, v2}, Landroid/support/design/widget/TabLayout;->setScrollPosition(IFZ)V
 
     .line 1019
-    .end local v0    # "newPosition":I
     :cond_3c
     :goto_3c
-    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
 
-    if-eqz v1, :cond_4b
+    if-eqz v0, :cond_4b
 
-    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mOnTabSelectedListener:Landroid/support/design/widget/TabLayout$OnTabSelectedListener;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mOnTabSelectedListener:Landroid/support/design/widget/TabLayout$OnTabSelectedListener;
 
-    if-eqz v1, :cond_4b
+    if-eqz v0, :cond_4b
 
     .line 1020
-    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mOnTabSelectedListener:Landroid/support/design/widget/TabLayout$OnTabSelectedListener;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mOnTabSelectedListener:Landroid/support/design/widget/TabLayout$OnTabSelectedListener;
 
-    iget-object v2, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
+    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
 
-    invoke-interface {v1, v2}, Landroid/support/design/widget/TabLayout$OnTabSelectedListener;->onTabUnselected(Landroid/support/design/widget/TabLayout$Tab;)V
+    invoke-interface {v0, v1}, Landroid/support/design/widget/TabLayout$OnTabSelectedListener;->onTabUnselected(Landroid/support/design/widget/TabLayout$Tab;)V
 
     .line 1022
     :cond_4b
     iput-object p1, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
 
     .line 1023
-    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
 
-    if-eqz v1, :cond_1b
+    if-eqz v0, :cond_1b
 
-    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mOnTabSelectedListener:Landroid/support/design/widget/TabLayout$OnTabSelectedListener;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mOnTabSelectedListener:Landroid/support/design/widget/TabLayout$OnTabSelectedListener;
 
-    if-eqz v1, :cond_1b
+    if-eqz v0, :cond_1b
 
     .line 1024
-    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mOnTabSelectedListener:Landroid/support/design/widget/TabLayout$OnTabSelectedListener;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mOnTabSelectedListener:Landroid/support/design/widget/TabLayout$OnTabSelectedListener;
 
-    iget-object v2, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
+    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mSelectedTab:Landroid/support/design/widget/TabLayout$Tab;
 
-    invoke-interface {v1, v2}, Landroid/support/design/widget/TabLayout$OnTabSelectedListener;->onTabSelected(Landroid/support/design/widget/TabLayout$Tab;)V
+    invoke-interface {v0, v1}, Landroid/support/design/widget/TabLayout$OnTabSelectedListener;->onTabSelected(Landroid/support/design/widget/TabLayout$Tab;)V
 
     goto :goto_1b
 
@@ -3061,7 +2864,6 @@
     goto :goto_24
 
     .line 1016
-    .restart local v0    # "newPosition":I
     :cond_5f
     invoke-direct {p0, v0}, Landroid/support/design/widget/TabLayout;->animateToTab(I)V
 
@@ -3070,7 +2872,6 @@
 
 .method public setOnTabSelectedListener(Landroid/support/design/widget/TabLayout$OnTabSelectedListener;)V
     .registers 2
-    .param p1, "onTabSelectedListener"    # Landroid/support/design/widget/TabLayout$OnTabSelectedListener;
 
     .prologue
     .line 483
@@ -3082,9 +2883,6 @@
 
 .method public setScrollPosition(IFZ)V
     .registers 5
-    .param p1, "position"    # I
-    .param p2, "positionOffset"    # F
-    .param p3, "updateSelectedText"    # Z
 
     .prologue
     .line 373
@@ -3098,10 +2896,6 @@
 
 .method public setSelectedTabIndicatorColor(I)V
     .registers 3
-    .param p1, "color"    # I
-        .annotation build Landroid/support/annotation/ColorInt;
-        .end annotation
-    .end param
 
     .prologue
     .line 348
@@ -3115,7 +2909,6 @@
 
 .method public setSelectedTabIndicatorHeight(I)V
     .registers 3
-    .param p1, "height"    # I
 
     .prologue
     .line 359
@@ -3129,7 +2922,6 @@
 
 .method public setTabGravity(I)V
     .registers 3
-    .param p1, "gravity"    # I
 
     .prologue
     .line 628
@@ -3150,7 +2942,6 @@
 
 .method public setTabMode(I)V
     .registers 3
-    .param p1, "mode"    # I
 
     .prologue
     .line 604
@@ -3171,8 +2962,6 @@
 
 .method public setTabTextColors(II)V
     .registers 4
-    .param p1, "normalColor"    # I
-    .param p2, "selectedColor"    # I
 
     .prologue
     .line 671
@@ -3188,10 +2977,6 @@
 
 .method public setTabTextColors(Landroid/content/res/ColorStateList;)V
     .registers 3
-    .param p1, "textColor"    # Landroid/content/res/ColorStateList;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
 
     .prologue
     .line 650
@@ -3212,10 +2997,6 @@
 
 .method public setTabsFromPagerAdapter(Landroid/support/v4/view/PagerAdapter;)V
     .registers 3
-    .param p1, "adapter"    # Landroid/support/v4/view/PagerAdapter;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -3230,54 +3011,49 @@
 .end method
 
 .method public setupWithViewPager(Landroid/support/v4/view/ViewPager;)V
-    .registers 7
-    .param p1, "viewPager"    # Landroid/support/v4/view/ViewPager;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
+    .registers 6
 
     .prologue
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     .line 691
-    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mViewPager:Landroid/support/v4/view/ViewPager;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mViewPager:Landroid/support/v4/view/ViewPager;
 
-    if-eqz v1, :cond_11
+    if-eqz v0, :cond_11
+
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mPageChangeListener:Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;
+
+    if-eqz v0, :cond_11
+
+    .line 693
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout;->mViewPager:Landroid/support/v4/view/ViewPager;
 
     iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mPageChangeListener:Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;
 
-    if-eqz v1, :cond_11
-
-    .line 693
-    iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mViewPager:Landroid/support/v4/view/ViewPager;
-
-    iget-object v2, p0, Landroid/support/design/widget/TabLayout;->mPageChangeListener:Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;
-
-    invoke-virtual {v1, v2}, Landroid/support/v4/view/ViewPager;->removeOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
+    invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPager;->c(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
 
     .line 696
     :cond_11
     if-eqz p1, :cond_45
 
     .line 697
-    invoke-virtual {p1}, Landroid/support/v4/view/ViewPager;->getAdapter()Landroid/support/v4/view/PagerAdapter;
+    invoke-virtual {p1}, Landroid/support/v4/view/ViewPager;->b()Landroid/support/v4/view/PagerAdapter;
 
     move-result-object v0
 
     .line 698
-    .local v0, "adapter":Landroid/support/v4/view/PagerAdapter;
     if-nez v0, :cond_22
 
     .line 699
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v2, "ViewPager does not have a PagerAdapter set"
+    const-string/jumbo v1, "ViewPager does not have a PagerAdapter set"
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     .line 702
     :cond_22
@@ -3305,7 +3081,7 @@
     .line 709
     iget-object v1, p0, Landroid/support/design/widget/TabLayout;->mPageChangeListener:Landroid/support/design/widget/TabLayout$TabLayoutOnPageChangeListener;
 
-    invoke-virtual {p1, v1}, Landroid/support/v4/view/ViewPager;->addOnPageChangeListener(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
+    invoke-virtual {p1, v1}, Landroid/support/v4/view/ViewPager;->b(Landroid/support/v4/view/ViewPager$OnPageChangeListener;)V
 
     .line 712
     new-instance v1, Landroid/support/design/widget/TabLayout$ViewPagerOnTabSelectedListener;
@@ -3315,22 +3091,21 @@
     invoke-virtual {p0, v1}, Landroid/support/design/widget/TabLayout;->setOnTabSelectedListener(Landroid/support/design/widget/TabLayout$OnTabSelectedListener;)V
 
     .line 715
-    invoke-direct {p0, v0, v4}, Landroid/support/design/widget/TabLayout;->setPagerAdapter(Landroid/support/v4/view/PagerAdapter;Z)V
+    invoke-direct {p0, v0, v3}, Landroid/support/design/widget/TabLayout;->setPagerAdapter(Landroid/support/v4/view/PagerAdapter;Z)V
 
     .line 723
-    .end local v0    # "adapter":Landroid/support/v4/view/PagerAdapter;
     :goto_44
     return-void
 
     .line 719
     :cond_45
-    iput-object v3, p0, Landroid/support/design/widget/TabLayout;->mViewPager:Landroid/support/v4/view/ViewPager;
+    iput-object v2, p0, Landroid/support/design/widget/TabLayout;->mViewPager:Landroid/support/v4/view/ViewPager;
 
     .line 720
-    invoke-virtual {p0, v3}, Landroid/support/design/widget/TabLayout;->setOnTabSelectedListener(Landroid/support/design/widget/TabLayout$OnTabSelectedListener;)V
+    invoke-virtual {p0, v2}, Landroid/support/design/widget/TabLayout;->setOnTabSelectedListener(Landroid/support/design/widget/TabLayout$OnTabSelectedListener;)V
 
     .line 721
-    invoke-direct {p0, v3, v4}, Landroid/support/design/widget/TabLayout;->setPagerAdapter(Landroid/support/v4/view/PagerAdapter;Z)V
+    invoke-direct {p0, v2, v3}, Landroid/support/design/widget/TabLayout;->setPagerAdapter(Landroid/support/v4/view/PagerAdapter;Z)V
 
     goto :goto_44
 .end method

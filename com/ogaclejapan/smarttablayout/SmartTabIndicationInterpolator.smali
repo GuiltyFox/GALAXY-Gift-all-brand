@@ -3,23 +3,10 @@
 .source "SmartTabIndicationInterpolator.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator$LinearIndicationInterpolator;,
-        Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator$SmartIndicationInterpolator;
-    }
-.end annotation
-
-
 # static fields
-.field static final ID_LINEAR:I = 0x1
+.field public static final a:Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;
 
-.field static final ID_SMART:I
-
-.field public static final LINEAR:Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;
-
-.field public static final SMART:Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;
+.field public static final b:Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;
 
 
 # direct methods
@@ -32,14 +19,14 @@
 
     invoke-direct {v0}, Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator$SmartIndicationInterpolator;-><init>()V
 
-    sput-object v0, Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;->SMART:Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;
+    sput-object v0, Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;->a:Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;
 
     .line 26
     new-instance v0, Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator$LinearIndicationInterpolator;
 
     invoke-direct {v0}, Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator$LinearIndicationInterpolator;-><init>()V
 
-    sput-object v0, Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;->LINEAR:Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;
+    sput-object v0, Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;->b:Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;
 
     return-void
 .end method
@@ -55,9 +42,8 @@
     return-void
 .end method
 
-.method public static of(I)Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;
+.method public static a(I)Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;
     .registers 4
-    .param p0, "id"    # I
 
     .prologue
     .line 32
@@ -90,14 +76,14 @@
 
     .line 34
     :pswitch_1d
-    sget-object v0, Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;->SMART:Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;
+    sget-object v0, Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;->a:Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;
 
     .line 36
     :goto_1f
     return-object v0
 
     :pswitch_20
-    sget-object v0, Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;->LINEAR:Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;
+    sget-object v0, Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;->b:Lcom/ogaclejapan/smarttablayout/SmartTabIndicationInterpolator;
 
     goto :goto_1f
 
@@ -113,19 +99,18 @@
 
 
 # virtual methods
-.method public abstract getLeftEdge(F)F
+.method public abstract a(F)F
 .end method
 
-.method public abstract getRightEdge(F)F
+.method public abstract b(F)F
 .end method
 
-.method public getThickness(F)F
+.method public c(F)F
     .registers 3
-    .param p1, "offset"    # F
 
     .prologue
     .line 47
-    const/high16 v0, 0x3f800000
+    const/high16 v0, 0x3f800000    # 1.0f
 
     return v0
 .end method

@@ -1,5 +1,5 @@
 .class Lcom/samsung/privilege/activity/LoginActivity$3;
-.super Lcom/loopj/android/http/AsyncHttpResponseHandler;
+.super Lcom/bzbs/lib/http/okhttp/ResponseListener;
 .source "LoginActivity.java"
 
 
@@ -8,215 +8,147 @@
     value = Lcom/samsung/privilege/activity/LoginActivity;->doLoginDevice(Landroid/view/View;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/LoginActivity;
+.field final synthetic a:Lcom/samsung/privilege/activity/LoginActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/LoginActivity;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/LoginActivity;
 
     .prologue
-    .line 341
-    iput-object p1, p0, Lcom/samsung/privilege/activity/LoginActivity$3;->this$0:Lcom/samsung/privilege/activity/LoginActivity;
+    .line 345
+    iput-object p1, p0, Lcom/samsung/privilege/activity/LoginActivity$3;->a:Lcom/samsung/privilege/activity/LoginActivity;
 
-    invoke-direct {p0}, Lcom/loopj/android/http/AsyncHttpResponseHandler;-><init>()V
+    invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onFailure(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
-    .registers 10
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBody"    # [B
-    .param p4, "error"    # Ljava/lang/Throwable;
+.method public failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
+    .registers 8
 
     .prologue
-    .line 355
-    :try_start_0
-    new-instance v1, Ljava/lang/String;
+    .line 357
+    invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    invoke-direct {v1, p3}, Ljava/lang/String;-><init>([B)V
+    .line 359
+    iget-object v0, p0, Lcom/samsung/privilege/activity/LoginActivity$3;->a:Lcom/samsung/privilege/activity/LoginActivity;
 
-    .line 356
-    .local v1, "response_text":Ljava/lang/String;
-    iget-object v2, p0, Lcom/samsung/privilege/activity/LoginActivity$3;->this$0:Lcom/samsung/privilege/activity/LoginActivity;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/LoginActivity;->a(Lcom/samsung/privilege/activity/LoginActivity;)Ljava/lang/String;
 
-    # getter for: Lcom/samsung/privilege/activity/LoginActivity;->TAG:Ljava/lang/String;
-    invoke-static {v2}, Lcom/samsung/privilege/activity/LoginActivity;->access$100(Lcom/samsung/privilege/activity/LoginActivity;)Ljava/lang/String;
+    move-result-object v0
 
-    move-result-object v2
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    const-string/jumbo v2, "(doLoginDevice|onFailure)response_code="
 
-    const-string/jumbo v4, "(doLoginDevice|onFailure)response_code="
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    move-result-object v3
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    move-result-object v3
+    const-string/jumbo v2, ",response="
 
-    const-string/jumbo v4, ",response="
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    move-result-object v3
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v1
 
-    move-result-object v3
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v1
 
-    move-result-object v3
-
-    invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->LogE(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_2d
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_2d} :catch_3f
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 361
-    .end local v1    # "response_text":Ljava/lang/String;
-    :goto_2d
-    iget-object v2, p0, Lcom/samsung/privilege/activity/LoginActivity$3;->this$0:Lcom/samsung/privilege/activity/LoginActivity;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/LoginActivity$3;->a:Lcom/samsung/privilege/activity/LoginActivity;
 
-    # getter for: Lcom/samsung/privilege/activity/LoginActivity;->gDialog:Landroid/app/ProgressDialog;
-    invoke-static {v2}, Lcom/samsung/privilege/activity/LoginActivity;->access$200(Lcom/samsung/privilege/activity/LoginActivity;)Landroid/app/ProgressDialog;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/LoginActivity;->b(Lcom/samsung/privilege/activity/LoginActivity;)Landroid/app/ProgressDialog;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Landroid/app/ProgressDialog;->dismiss()V
+    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
     .line 363
-    iget-object v2, p0, Lcom/samsung/privilege/activity/LoginActivity$3;->this$0:Lcom/samsung/privilege/activity/LoginActivity;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/LoginActivity$3;->a:Lcom/samsung/privilege/activity/LoginActivity;
 
-    const-string/jumbo v3, "Authentication with BuzzeBees Fail!!!"
+    const-string/jumbo v1, "Authentication with BuzzeBees Fail!!!"
 
-    # invokes: Lcom/samsung/privilege/activity/LoginActivity;->showToast(Ljava/lang/String;)V
-    invoke-static {v2, v3}, Lcom/samsung/privilege/activity/LoginActivity;->access$000(Lcom/samsung/privilege/activity/LoginActivity;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/LoginActivity;->a(Lcom/samsung/privilege/activity/LoginActivity;Ljava/lang/String;)V
 
     .line 364
     return-void
-
-    .line 357
-    :catch_3f
-    move-exception v0
-
-    .line 358
-    .local v0, "ex":Ljava/lang/Exception;
-    iget-object v2, p0, Lcom/samsung/privilege/activity/LoginActivity$3;->this$0:Lcom/samsung/privilege/activity/LoginActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/LoginActivity;->TAG:Ljava/lang/String;
-    invoke-static {v2}, Lcom/samsung/privilege/activity/LoginActivity;->access$100(Lcom/samsung/privilege/activity/LoginActivity;)Ljava/lang/String;
-
-    move-result-object v2
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v4, "(doLoginDevice|onFailure)response_code="
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->LogE(Ljava/lang/String;Ljava/lang/String;)V
-
-    goto :goto_2d
 .end method
 
-.method public onSuccess(I[Lcz/msebera/android/httpclient/Header;[B)V
+.method public successfully(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
     .registers 8
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBody"    # [B
 
     .prologue
-    .line 344
-    new-instance v0, Ljava/lang/String;
+    .line 348
+    iget-object v0, p0, Lcom/samsung/privilege/activity/LoginActivity$3;->a:Lcom/samsung/privilege/activity/LoginActivity;
 
-    invoke-direct {v0, p3}, Ljava/lang/String;-><init>([B)V
+    invoke-static {v0}, Lcom/samsung/privilege/activity/LoginActivity;->a(Lcom/samsung/privilege/activity/LoginActivity;)Ljava/lang/String;
 
-    .line 345
-    .local v0, "response_text":Ljava/lang/String;
-    iget-object v1, p0, Lcom/samsung/privilege/activity/LoginActivity$3;->this$0:Lcom/samsung/privilege/activity/LoginActivity;
+    move-result-object v0
 
-    # getter for: Lcom/samsung/privilege/activity/LoginActivity;->TAG:Ljava/lang/String;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/LoginActivity;->access$100(Lcom/samsung/privilege/activity/LoginActivity;)Ljava/lang/String;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    move-result-object v1
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    const-string/jumbo v2, "(doLoginDevice|onComplete)response_code="
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "(doLoginDevice|onComplete)response_code="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    const-string/jumbo v3, ",response="
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->LogI(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 347
-    iget-object v1, p0, Lcom/samsung/privilege/activity/LoginActivity$3;->this$0:Lcom/samsung/privilege/activity/LoginActivity;
-
-    # getter for: Lcom/samsung/privilege/activity/LoginActivity;->gDialog:Landroid/app/ProgressDialog;
-    invoke-static {v1}, Lcom/samsung/privilege/activity/LoginActivity;->access$200(Lcom/samsung/privilege/activity/LoginActivity;)Landroid/app/ProgressDialog;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/app/ProgressDialog;->dismiss()V
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 349
-    iget-object v1, p0, Lcom/samsung/privilege/activity/LoginActivity$3;->this$0:Lcom/samsung/privilege/activity/LoginActivity;
+    move-result-object v1
 
-    const-string/jumbo v2, "2"
+    const-string/jumbo v2, ",response="
 
-    # invokes: Lcom/samsung/privilege/activity/LoginActivity;->processJsonAuth(Ljava/lang/String;Ljava/lang/String;)V
-    invoke-static {v1, v0, v2}, Lcom/samsung/privilege/activity/LoginActivity;->access$300(Lcom/samsung/privilege/activity/LoginActivity;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 350
+    iget-object v0, p0, Lcom/samsung/privilege/activity/LoginActivity$3;->a:Lcom/samsung/privilege/activity/LoginActivity;
+
+    invoke-static {v0}, Lcom/samsung/privilege/activity/LoginActivity;->b(Lcom/samsung/privilege/activity/LoginActivity;)Landroid/app/ProgressDialog;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
+
+    .line 352
+    iget-object v0, p0, Lcom/samsung/privilege/activity/LoginActivity$3;->a:Lcom/samsung/privilege/activity/LoginActivity;
+
+    const-string/jumbo v1, "2"
+
+    invoke-static {v0, p4, v1}, Lcom/samsung/privilege/activity/LoginActivity;->a(Lcom/samsung/privilege/activity/LoginActivity;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 353
     return-void
 .end method

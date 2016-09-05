@@ -6,17 +6,6 @@
 .implements Ljava/io/Serializable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/ser/impl/SimpleBeanPropertyFilter;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "FilterExceptFilter"
-.end annotation
-
-
 # static fields
 .field private static final serialVersionUID:J = 0x1L
 
@@ -49,7 +38,6 @@
 
     .prologue
     .line 235
-    .local p1, "properties":Ljava/util/Set;, "Ljava/util/Set<Ljava/lang/String;>;"
     invoke-direct {p0}, Lcom/fasterxml/jackson/databind/ser/impl/SimpleBeanPropertyFilter;-><init>()V
 
     .line 236
@@ -63,7 +51,6 @@
 # virtual methods
 .method protected include(Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;)Z
     .registers 4
-    .param p1, "writer"    # Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
 
     .prologue
     .line 241
@@ -82,7 +69,6 @@
 
 .method protected include(Lcom/fasterxml/jackson/databind/ser/PropertyWriter;)Z
     .registers 4
-    .param p1, "writer"    # Lcom/fasterxml/jackson/databind/ser/PropertyWriter;
 
     .prologue
     .line 246

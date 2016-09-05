@@ -4,21 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/samsung/privilege/activity/CampaignReviewActivity;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
-    name = "ReviewAdapter"
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Landroid/support/v7/widget/RecyclerView$Adapter",
@@ -30,7 +15,7 @@
 
 
 # instance fields
-.field reviews:Ljava/util/List;
+.field a:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
@@ -41,13 +26,12 @@
     .end annotation
 .end field
 
-.field final synthetic this$0:Lcom/samsung/privilege/activity/CampaignReviewActivity;
+.field final synthetic b:Lcom/samsung/privilege/activity/CampaignReviewActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/CampaignReviewActivity;Ljava/util/List;)V
     .registers 3
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/CampaignReviewActivity;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -59,188 +43,145 @@
     .end annotation
 
     .prologue
-    .line 433
-    .local p2, "persons":Ljava/util/List;, "Ljava/util/List<Lcom/bzbs/bean/CampaignReview;>;"
-    iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignReviewActivity;
+    .line 438
+    iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->b:Lcom/samsung/privilege/activity/CampaignReviewActivity;
 
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$Adapter;-><init>()V
 
-    .line 434
-    iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->reviews:Ljava/util/List;
+    .line 439
+    iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->a:Ljava/util/List;
 
-    .line 435
+    .line 440
     return-void
 .end method
 
 
 # virtual methods
-.method public addAll(Ljava/util/List;)V
+.method public a(I)Lcom/bzbs/bean/CampaignReview;
     .registers 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lcom/bzbs/bean/CampaignReview;",
-            ">;)V"
-        }
-    .end annotation
 
     .prologue
-    .line 446
-    .local p1, "new_items":Ljava/util/List;, "Ljava/util/List<Lcom/bzbs/bean/CampaignReview;>;"
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->reviews:Ljava/util/List;
-
-    invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
-
-    .line 447
-    return-void
-.end method
-
-.method public getItem(I)Lcom/bzbs/bean/CampaignReview;
-    .registers 4
-    .param p1, "position"    # I
-
-    .prologue
-    .line 439
+    .line 444
     :try_start_0
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->reviews:Ljava/util/List;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->a:Ljava/util/List;
 
-    invoke-interface {v1, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Lcom/bzbs/bean/CampaignReview;
+    check-cast v0, Lcom/bzbs/bean/CampaignReview;
     :try_end_8
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_8} :catch_9
 
-    .line 441
+    .line 446
     :goto_8
-    return-object v1
+    return-object v0
 
-    .line 440
+    .line 445
     :catch_9
     move-exception v0
 
-    .line 441
-    .local v0, "ex":Ljava/lang/Exception;
-    const/4 v1, 0x0
+    .line 446
+    const/4 v0, 0x0
 
     goto :goto_8
 .end method
 
-.method public getItemCount()I
-    .registers 2
+.method public a(Landroid/view/ViewGroup;I)Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;
+    .registers 6
 
     .prologue
-    .line 683
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->reviews:Ljava/util/List;
+    .line 456
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    move-result-object v0
 
-    move-result v0
+    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    return v0
-.end method
+    move-result-object v0
 
-.method public onAttachedToRecyclerView(Landroid/support/v7/widget/RecyclerView;)V
-    .registers 2
-    .param p1, "recyclerView"    # Landroid/support/v7/widget/RecyclerView;
+    const v1, 0x7f04002c
 
-    .prologue
-    .line 688
-    invoke-super {p0, p1}, Landroid/support/v7/widget/RecyclerView$Adapter;->onAttachedToRecyclerView(Landroid/support/v7/widget/RecyclerView;)V
+    const/4 v2, 0x0
 
-    .line 689
-    return-void
-.end method
+    invoke-virtual {v0, v1, p1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-.method public bridge synthetic onBindViewHolder(Landroid/support/v7/widget/RecyclerView$ViewHolder;I)V
-    .registers 3
+    move-result-object v0
 
-    .prologue
-    .line 429
-    check-cast p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;
+    .line 457
+    new-instance v1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->onBindViewHolder(Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;I)V
-
-    return-void
-.end method
-
-.method public onBindViewHolder(Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;I)V
-    .registers 15
-    .param p1, "holder"    # Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;
-    .param p2, "position"    # I
-
-    .prologue
-    const/16 v11, 0x64
-
-    const/16 v10, 0x8
-
-    const/4 v9, 0x1
-
-    const/4 v8, 0x0
+    invoke-direct {v1, p0, v0}, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;-><init>(Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;Landroid/view/View;)V
 
     .line 458
-    iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignReviewActivity;
+    return-object v1
+.end method
 
-    # setter for: Lcom/samsung/privilege/activity/CampaignReviewActivity;->pastVisiblesItems:I
-    invoke-static {v4, p2}, Lcom/samsung/privilege/activity/CampaignReviewActivity;->access$602(Lcom/samsung/privilege/activity/CampaignReviewActivity;I)I
+.method public a(Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;I)V
+    .registers 12
 
-    .line 459
-    iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->reviews:Ljava/util/List;
+    .prologue
+    const/16 v8, 0x64
 
-    invoke-interface {v4, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    const/16 v7, 0x8
 
-    move-result-object v3
+    const/4 v2, 0x1
 
-    check-cast v3, Lcom/bzbs/bean/CampaignReview;
-
-    .line 461
-    .local v3, "review":Lcom/bzbs/bean/CampaignReview;
-    const/4 v1, 0x0
-
-    .line 462
-    .local v1, "isPhotoLayout":Z
-    iget-object v4, v3, Lcom/bzbs/bean/CampaignReview;->ImageUrl:Ljava/lang/String;
-
-    const-string/jumbo v5, ""
-
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_20
+    const/4 v3, 0x0
 
     .line 463
-    const/4 v1, 0x1
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->b:Lcom/samsung/privilege/activity/CampaignReviewActivity;
 
-    .line 466
-    :cond_20
-    if-ne v1, v9, :cond_144
+    invoke-static {v0, p2}, Lcom/samsung/privilege/activity/CampaignReviewActivity;->d(Lcom/samsung/privilege/activity/CampaignReviewActivity;I)I
+
+    .line 464
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->a:Ljava/util/List;
+
+    invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/bzbs/bean/CampaignReview;
 
     .line 467
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->tvTempForPhoto:Landroid/widget/TextView;
+    iget-object v1, v0, Lcom/bzbs/bean/CampaignReview;->ImageUrl:Ljava/lang/String;
 
-    invoke-virtual {v4, v8}, Landroid/widget/TextView;->setVisibility(I)V
+    const-string/jumbo v4, ""
 
-    .line 468
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->layoutPhoto:Landroid/widget/RelativeLayout;
+    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v4, v8}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+    move-result v1
 
-    .line 469
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->layoutCreateTime:Landroid/widget/RelativeLayout;
+    if-nez v1, :cond_1ae
 
-    invoke-virtual {v4, v10}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+    move v1, v2
 
-    .line 476
-    :goto_31
+    .line 471
+    :goto_1f
+    if-ne v1, v2, :cond_143
+
+    .line 472
+    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->a:Landroid/widget/TextView;
+
+    invoke-virtual {v4, v3}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 473
+    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->e:Landroid/widget/RelativeLayout;
+
+    invoke-virtual {v4, v3}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+
+    .line 474
+    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->k:Landroid/widget/RelativeLayout;
+
+    invoke-virtual {v4, v7}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+
+    .line 481
+    :goto_30
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget-object v5, Lcom/bzbs/data/AppSetting;->API_URL_BUZZEBEES:Ljava/lang/String;
+    sget-object v5, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -252,7 +193,7 @@
 
     move-result-object v4
 
-    iget-object v5, v3, Lcom/bzbs/bean/CampaignReview;->UserId:Ljava/lang/String;
+    iget-object v5, v0, Lcom/bzbs/bean/CampaignReview;->UserId:Ljava/lang/String;
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -266,53 +207,52 @@
 
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
-
-    .line 479
-    .local v2, "profile_src":Ljava/lang/String;
-    iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignReviewActivity;
-
-    invoke-static {v4}, Lcom/bumptech/glide/Glide;->with(Landroid/support/v4/app/FragmentActivity;)Lcom/bumptech/glide/RequestManager;
-
     move-result-object v4
-
-    invoke-virtual {v4, v2}, Lcom/bumptech/glide/RequestManager;->load(Ljava/lang/String;)Lcom/bumptech/glide/DrawableTypeRequest;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Lcom/bumptech/glide/DrawableTypeRequest;->fitCenter()Lcom/bumptech/glide/DrawableRequestBuilder;
-
-    move-result-object v4
-
-    sget-object v5, Lcom/bumptech/glide/load/engine/DiskCacheStrategy;->ALL:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
-
-    invoke-virtual {v4, v5}, Lcom/bumptech/glide/DrawableRequestBuilder;->diskCacheStrategy(Lcom/bumptech/glide/load/engine/DiskCacheStrategy;)Lcom/bumptech/glide/DrawableRequestBuilder;
-
-    move-result-object v4
-
-    iget-object v5, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->imgProfile:Landroid/widget/ImageView;
-
-    invoke-virtual {v4, v5}, Lcom/bumptech/glide/DrawableRequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
-
-    .line 481
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->tvDisplayName:Landroid/widget/TextView;
-
-    iget-object v5, v3, Lcom/bzbs/bean/CampaignReview;->Name:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 483
-    if-ne v1, v9, :cond_155
 
     .line 484
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->tvLocationNamePhoto:Landroid/widget/TextView;
+    iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->b:Lcom/samsung/privilege/activity/CampaignReviewActivity;
 
-    iget-object v5, v3, Lcom/bzbs/bean/CampaignReview;->PlaceName:Ljava/lang/String;
+    invoke-static {v5}, Lcom/bumptech/glide/Glide;->a(Landroid/support/v4/app/FragmentActivity;)Lcom/bumptech/glide/RequestManager;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v4}, Lcom/bumptech/glide/RequestManager;->a(Ljava/lang/String;)Lcom/bumptech/glide/DrawableTypeRequest;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/bumptech/glide/DrawableTypeRequest;->b()Lcom/bumptech/glide/DrawableRequestBuilder;
+
+    move-result-object v4
+
+    sget-object v5, Lcom/bumptech/glide/load/engine/DiskCacheStrategy;->a:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
+
+    invoke-virtual {v4, v5}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Lcom/bumptech/glide/load/engine/DiskCacheStrategy;)Lcom/bumptech/glide/DrawableRequestBuilder;
+
+    move-result-object v4
+
+    iget-object v5, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->c:Landroid/widget/ImageView;
+
+    invoke-virtual {v4, v5}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
+
+    .line 486
+    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->d:Landroid/widget/TextView;
+
+    iget-object v5, v0, Lcom/bzbs/bean/CampaignReview;->Name:Ljava/lang/String;
 
     invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 485
-    iget-object v4, v3, Lcom/bzbs/bean/CampaignReview;->ImageUrl:Ljava/lang/String;
+    .line 488
+    if-ne v1, v2, :cond_154
+
+    .line 489
+    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->h:Landroid/widget/TextView;
+
+    iget-object v5, v0, Lcom/bzbs/bean/CampaignReview;->PlaceName:Ljava/lang/String;
+
+    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 490
+    iget-object v4, v0, Lcom/bzbs/bean/CampaignReview;->ImageUrl:Ljava/lang/String;
 
     const-string/jumbo v5, "https:"
 
@@ -320,36 +260,35 @@
 
     invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v4
 
-    .line 487
-    .local v0, "imageUrl":Ljava/lang/String;
-    iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->this$0:Lcom/samsung/privilege/activity/CampaignReviewActivity;
+    .line 492
+    iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->b:Lcom/samsung/privilege/activity/CampaignReviewActivity;
 
-    invoke-static {v4}, Lcom/bumptech/glide/Glide;->with(Landroid/support/v4/app/FragmentActivity;)Lcom/bumptech/glide/RequestManager;
+    invoke-static {v5}, Lcom/bumptech/glide/Glide;->a(Landroid/support/v4/app/FragmentActivity;)Lcom/bumptech/glide/RequestManager;
+
+    move-result-object v5
+
+    invoke-virtual {v5, v4}, Lcom/bumptech/glide/RequestManager;->a(Ljava/lang/String;)Lcom/bumptech/glide/DrawableTypeRequest;
 
     move-result-object v4
 
-    invoke-virtual {v4, v0}, Lcom/bumptech/glide/RequestManager;->load(Ljava/lang/String;)Lcom/bumptech/glide/DrawableTypeRequest;
+    invoke-virtual {v4}, Lcom/bumptech/glide/DrawableTypeRequest;->b()Lcom/bumptech/glide/DrawableRequestBuilder;
 
     move-result-object v4
 
-    invoke-virtual {v4}, Lcom/bumptech/glide/DrawableTypeRequest;->fitCenter()Lcom/bumptech/glide/DrawableRequestBuilder;
+    sget-object v5, Lcom/bumptech/glide/load/engine/DiskCacheStrategy;->a:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
+
+    invoke-virtual {v4, v5}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Lcom/bumptech/glide/load/engine/DiskCacheStrategy;)Lcom/bumptech/glide/DrawableRequestBuilder;
 
     move-result-object v4
 
-    sget-object v5, Lcom/bumptech/glide/load/engine/DiskCacheStrategy;->ALL:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
+    iget-object v5, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->g:Landroid/widget/ImageView;
 
-    invoke-virtual {v4, v5}, Lcom/bumptech/glide/DrawableRequestBuilder;->diskCacheStrategy(Lcom/bumptech/glide/load/engine/DiskCacheStrategy;)Lcom/bumptech/glide/DrawableRequestBuilder;
+    invoke-virtual {v4, v5}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
 
-    move-result-object v4
-
-    iget-object v5, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->imgPhotoSmart:Landroid/widget/ImageView;
-
-    invoke-virtual {v4, v5}, Lcom/bumptech/glide/DrawableRequestBuilder;->into(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
-
-    .line 488
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->imgPhotoSmart:Landroid/widget/ImageView;
+    .line 493
+    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->g:Landroid/widget/ImageView;
 
     new-instance v5, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$1;
 
@@ -357,330 +296,357 @@
 
     invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 497
-    .end local v0    # "imageUrl":Ljava/lang/String;
-    :goto_ac
-    if-ne v1, v9, :cond_15d
-
-    .line 498
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->tvCreateTimePhoto:Landroid/widget/TextView;
-
-    iget-wide v6, v3, Lcom/bzbs/bean/CampaignReview;->CreatedTime:J
-
-    invoke-static {v6, v7}, Lcom/bzbs/util/BBUtil;->CDateToTime(J)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    .line 502
+    :goto_ab
+    if-ne v1, v2, :cond_15c
 
     .line 503
-    :goto_b9
-    iget-object v4, v3, Lcom/bzbs/bean/CampaignReview;->Message:Ljava/lang/String;
+    iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->j:Landroid/widget/TextView;
 
-    const-string/jumbo v5, ""
+    iget-wide v4, v0, Lcom/bzbs/bean/CampaignReview;->CreatedTime:J
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v4
-
-    if-nez v4, :cond_180
-
-    .line 504
-    iget-object v4, v3, Lcom/bzbs/bean/CampaignReview;->Message:Ljava/lang/String;
-
-    iput-object v4, v3, Lcom/bzbs/bean/CampaignReview;->text_show_all:Ljava/lang/String;
-
-    .line 505
-    iget-object v4, v3, Lcom/bzbs/bean/CampaignReview;->Message:Ljava/lang/String;
-
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
-
-    move-result v4
-
-    if-le v4, v11, :cond_16a
-
-    .line 506
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v5, v3, Lcom/bzbs/bean/CampaignReview;->Message:Ljava/lang/String;
-
-    invoke-virtual {v5, v8, v11}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4, v5}, Lcom/bzbs/util/BBUtil;->a(J)Ljava/lang/String;
 
     move-result-object v4
 
-    const-string/jumbo v5, "..."
+    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 508
+    :goto_b8
+    iget-object v1, v0, Lcom/bzbs/bean/CampaignReview;->Message:Ljava/lang/String;
+
+    const-string/jumbo v4, ""
+
+    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_17f
+
+    .line 509
+    iget-object v1, v0, Lcom/bzbs/bean/CampaignReview;->Message:Ljava/lang/String;
+
+    iput-object v1, v0, Lcom/bzbs/bean/CampaignReview;->text_show_all:Ljava/lang/String;
+
+    .line 510
+    iget-object v1, v0, Lcom/bzbs/bean/CampaignReview;->Message:Ljava/lang/String;
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-le v1, v8, :cond_169
+
+    .line 511
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v4, v0, Lcom/bzbs/bean/CampaignReview;->Message:Ljava/lang/String;
+
+    invoke-virtual {v4, v3, v8}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v4
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    iput-object v4, v3, Lcom/bzbs/bean/CampaignReview;->text_show_trim:Ljava/lang/String;
+    const-string/jumbo v4, "..."
 
-    .line 512
-    :goto_ec
-    iget-boolean v4, v3, Lcom/bzbs/bean/CampaignReview;->is_text_show_all:Z
+    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    if-ne v4, v9, :cond_172
+    move-result-object v1
 
-    .line 513
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->tvStatus:Landroid/widget/TextView;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    iget-object v5, v3, Lcom/bzbs/bean/CampaignReview;->text_show_all:Ljava/lang/String;
+    move-result-object v1
 
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    iput-object v1, v0, Lcom/bzbs/bean/CampaignReview;->text_show_trim:Ljava/lang/String;
 
-    .line 514
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->layoutSeeMore:Landroid/widget/RelativeLayout;
+    .line 517
+    :goto_eb
+    iget-boolean v1, v0, Lcom/bzbs/bean/CampaignReview;->is_text_show_all:Z
 
-    invoke-virtual {v4, v10}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+    if-ne v1, v2, :cond_171
+
+    .line 518
+    iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->o:Landroid/widget/TextView;
+
+    iget-object v4, v0, Lcom/bzbs/bean/CampaignReview;->text_show_all:Ljava/lang/String;
+
+    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 519
-    :goto_fc
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->tvStatus:Landroid/widget/TextView;
+    iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->q:Landroid/widget/RelativeLayout;
 
-    invoke-virtual {v4, v8}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v1, v7}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 529
-    :goto_101
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->layoutSeeMore:Landroid/widget/RelativeLayout;
+    .line 524
+    :goto_fb
+    iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->o:Landroid/widget/TextView;
+
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 534
+    :goto_100
+    iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->q:Landroid/widget/RelativeLayout;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v4, v5}, Landroid/widget/RelativeLayout;->setTag(Ljava/lang/Object;)V
+    invoke-virtual {v1, v4}, Landroid/widget/RelativeLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 531
-    iget v4, v3, Lcom/bzbs/bean/CampaignReview;->Likes:I
+    .line 536
+    iget v1, v0, Lcom/bzbs/bean/CampaignReview;->Likes:I
 
-    if-gez v4, :cond_110
-
-    .line 532
-    iput v8, v3, Lcom/bzbs/bean/CampaignReview;->Likes:I
-
-    .line 535
-    :cond_110
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->tvLike:Landroid/widget/TextView;
-
-    iget v5, v3, Lcom/bzbs/bean/CampaignReview;->Likes:I
-
-    invoke-static {v5}, Lcom/bzbs/util/BBUtil;->formatK(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    if-gez v1, :cond_10f
 
     .line 537
-    iget-boolean v4, v3, Lcom/bzbs/bean/CampaignReview;->IsLiked:Z
+    iput v3, v0, Lcom/bzbs/bean/CampaignReview;->Likes:I
 
-    if-ne v4, v9, :cond_19e
+    .line 540
+    :cond_10f
+    iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->v:Landroid/widget/TextView;
 
-    .line 538
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->imgLike:Landroid/widget/ImageView;
+    iget v3, v0, Lcom/bzbs/bean/CampaignReview;->Likes:I
 
-    const v5, 0x7f0202da
+    invoke-static {v3}, Lcom/bzbs/util/BBUtil;->a(I)Ljava/lang/String;
 
-    invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setImageResource(I)V
+    move-result-object v3
 
-    .line 539
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->tvLike:Landroid/widget/TextView;
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const v5, 0x7f020050
+    .line 542
+    iget-boolean v1, v0, Lcom/bzbs/bean/CampaignReview;->IsLiked:Z
 
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setBackgroundResource(I)V
+    if-ne v1, v2, :cond_19d
 
-    .line 585
-    :goto_12f
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->layoutSeeMore:Landroid/widget/RelativeLayout;
+    .line 543
+    iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->u:Landroid/widget/ImageView;
 
-    new-instance v5, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$2;
+    const v2, 0x7f0202df
 
-    invoke-direct {v5, p0, v3}, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$2;-><init>(Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;Lcom/bzbs/bean/CampaignReview;)V
+    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    invoke-virtual {v4, v5}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    .line 544
+    iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->v:Landroid/widget/TextView;
 
-    .line 596
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->layoutLike:Landroid/widget/RelativeLayout;
+    const v2, 0x7f020054
 
-    new-instance v5, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$3;
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
-    invoke-direct {v5, p0, v3}, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$3;-><init>(Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;Lcom/bzbs/bean/CampaignReview;)V
+    .line 590
+    :goto_12e
+    iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->q:Landroid/widget/RelativeLayout;
 
-    invoke-virtual {v4, v5}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    new-instance v2, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$2;
 
-    .line 679
+    invoke-direct {v2, p0, v0}, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$2;-><init>(Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;Lcom/bzbs/bean/CampaignReview;)V
+
+    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 601
+    iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->s:Landroid/widget/RelativeLayout;
+
+    new-instance v2, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$3;
+
+    invoke-direct {v2, p0, v0}, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$3;-><init>(Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;Lcom/bzbs/bean/CampaignReview;)V
+
+    invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 686
     return-void
 
-    .line 471
-    .end local v2    # "profile_src":Ljava/lang/String;
-    :cond_144
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->tvTempForPhoto:Landroid/widget/TextView;
+    .line 476
+    :cond_143
+    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->a:Landroid/widget/TextView;
 
-    invoke-virtual {v4, v10}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v4, v7}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 472
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->layoutPhoto:Landroid/widget/RelativeLayout;
+    .line 477
+    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->e:Landroid/widget/RelativeLayout;
 
-    invoke-virtual {v4, v10}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+    invoke-virtual {v4, v7}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 473
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->layoutCreateTime:Landroid/widget/RelativeLayout;
+    .line 478
+    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->k:Landroid/widget/RelativeLayout;
 
-    invoke-virtual {v4, v8}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+    invoke-virtual {v4, v3}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    goto/16 :goto_31
+    goto/16 :goto_30
 
-    .line 494
-    .restart local v2    # "profile_src":Ljava/lang/String;
-    :cond_155
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->imgPhotoSmart:Landroid/widget/ImageView;
+    .line 499
+    :cond_154
+    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->g:Landroid/widget/ImageView;
 
     const/4 v5, 0x0
 
     invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    goto/16 :goto_ac
+    goto/16 :goto_ab
 
-    .line 500
-    :cond_15d
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->tvCreateTime:Landroid/widget/TextView;
+    .line 505
+    :cond_15c
+    iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->m:Landroid/widget/TextView;
 
-    iget-wide v6, v3, Lcom/bzbs/bean/CampaignReview;->CreatedTime:J
+    iget-wide v4, v0, Lcom/bzbs/bean/CampaignReview;->CreatedTime:J
 
-    invoke-static {v6, v7}, Lcom/bzbs/util/BBUtil;->CDateToTime(J)Ljava/lang/String;
+    invoke-static {v4, v5}, Lcom/bzbs/util/BBUtil;->a(J)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_b9
+    goto/16 :goto_b8
 
-    .line 508
-    :cond_16a
-    iget-object v4, v3, Lcom/bzbs/bean/CampaignReview;->Message:Ljava/lang/String;
+    .line 513
+    :cond_169
+    iget-object v1, v0, Lcom/bzbs/bean/CampaignReview;->Message:Ljava/lang/String;
 
-    iput-object v4, v3, Lcom/bzbs/bean/CampaignReview;->text_show_trim:Ljava/lang/String;
+    iput-object v1, v0, Lcom/bzbs/bean/CampaignReview;->text_show_trim:Ljava/lang/String;
 
-    .line 509
-    iput-boolean v9, v3, Lcom/bzbs/bean/CampaignReview;->is_text_show_all:Z
+    .line 514
+    iput-boolean v2, v0, Lcom/bzbs/bean/CampaignReview;->is_text_show_all:Z
 
-    goto/16 :goto_ec
-
-    .line 516
-    :cond_172
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->tvStatus:Landroid/widget/TextView;
-
-    iget-object v5, v3, Lcom/bzbs/bean/CampaignReview;->text_show_trim:Ljava/lang/String;
-
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 517
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->layoutSeeMore:Landroid/widget/RelativeLayout;
-
-    invoke-virtual {v4, v8}, Landroid/widget/RelativeLayout;->setVisibility(I)V
-
-    goto/16 :goto_fc
+    goto/16 :goto_eb
 
     .line 521
-    :cond_180
-    const-string/jumbo v4, ""
+    :cond_171
+    iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->o:Landroid/widget/TextView;
 
-    iput-object v4, v3, Lcom/bzbs/bean/CampaignReview;->text_show_all:Ljava/lang/String;
+    iget-object v4, v0, Lcom/bzbs/bean/CampaignReview;->text_show_trim:Ljava/lang/String;
+
+    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 522
-    const-string/jumbo v4, ""
+    iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->q:Landroid/widget/RelativeLayout;
 
-    iput-object v4, v3, Lcom/bzbs/bean/CampaignReview;->text_show_trim:Ljava/lang/String;
+    invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 524
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->tvStatus:Landroid/widget/TextView;
-
-    const-string/jumbo v5, ""
-
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 525
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->tvStatus:Landroid/widget/TextView;
-
-    invoke-virtual {v4, v10}, Landroid/widget/TextView;->setVisibility(I)V
+    goto/16 :goto_fb
 
     .line 526
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->layoutSeeMore:Landroid/widget/RelativeLayout;
+    :cond_17f
+    const-string/jumbo v1, ""
 
-    invoke-virtual {v4, v10}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+    iput-object v1, v0, Lcom/bzbs/bean/CampaignReview;->text_show_all:Ljava/lang/String;
 
-    goto/16 :goto_101
+    .line 527
+    const-string/jumbo v1, ""
 
-    .line 541
-    :cond_19e
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->imgLike:Landroid/widget/ImageView;
+    iput-object v1, v0, Lcom/bzbs/bean/CampaignReview;->text_show_trim:Ljava/lang/String;
 
-    const v5, 0x7f0202db
+    .line 529
+    iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->o:Landroid/widget/TextView;
 
-    invoke-virtual {v4, v5}, Landroid/widget/ImageView;->setImageResource(I)V
+    const-string/jumbo v4, ""
 
-    .line 542
-    iget-object v4, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->tvLike:Landroid/widget/TextView;
+    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const v5, 0x7f020051
+    .line 530
+    iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->o:Landroid/widget/TextView;
 
-    invoke-virtual {v4, v5}, Landroid/widget/TextView;->setBackgroundResource(I)V
+    invoke-virtual {v1, v7}, Landroid/widget/TextView;->setVisibility(I)V
 
-    goto :goto_12f
+    .line 531
+    iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->q:Landroid/widget/RelativeLayout;
+
+    invoke-virtual {v1, v7}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+
+    goto/16 :goto_100
+
+    .line 546
+    :cond_19d
+    iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->u:Landroid/widget/ImageView;
+
+    const v2, 0x7f0202e0
+
+    invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    .line 547
+    iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->v:Landroid/widget/TextView;
+
+    const v2, 0x7f020055
+
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setBackgroundResource(I)V
+
+    goto :goto_12e
+
+    :cond_1ae
+    move v1, v3
+
+    goto/16 :goto_1f
 .end method
 
-.method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroid/support/v7/widget/RecyclerView$ViewHolder;
-    .registers 4
-
-    .prologue
-    .line 429
-    invoke-virtual {p0, p1, p2}, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public onCreateViewHolder(Landroid/view/ViewGroup;I)Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;
-    .registers 8
-    .param p1, "parent"    # Landroid/view/ViewGroup;
-    .param p2, "viewType"    # I
+.method public a(Ljava/util/List;)V
+    .registers 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List",
+            "<",
+            "Lcom/bzbs/bean/CampaignReview;",
+            ">;)V"
+        }
+    .end annotation
 
     .prologue
     .line 451
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->a:Ljava/util/List;
 
-    move-result-object v2
-
-    invoke-static {v2}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
-
-    move-result-object v2
-
-    const v3, 0x7f040028
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v2, v3, p1, v4}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
-
-    move-result-object v1
+    invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
     .line 452
-    .local v1, "v":Landroid/view/View;
-    new-instance v0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;
+    return-void
+.end method
 
-    invoke-direct {v0, p0, v1}, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;-><init>(Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;Landroid/view/View;)V
+.method public getItemCount()I
+    .registers 2
 
-    .line 453
-    .local v0, "pvh":Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;
+    .prologue
+    .line 690
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->a:Ljava/util/List;
+
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public onAttachedToRecyclerView(Landroid/support/v7/widget/RecyclerView;)V
+    .registers 2
+
+    .prologue
+    .line 695
+    invoke-super {p0, p1}, Landroid/support/v7/widget/RecyclerView$Adapter;->onAttachedToRecyclerView(Landroid/support/v7/widget/RecyclerView;)V
+
+    .line 696
+    return-void
+.end method
+
+.method public synthetic onBindViewHolder(Landroid/support/v7/widget/RecyclerView$ViewHolder;I)V
+    .registers 3
+
+    .prologue
+    .line 434
+    check-cast p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;
+
+    invoke-virtual {p0, p1, p2}, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->a(Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;I)V
+
+    return-void
+.end method
+
+.method public synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroid/support/v7/widget/RecyclerView$ViewHolder;
+    .registers 4
+
+    .prologue
+    .line 434
+    invoke-virtual {p0, p1, p2}, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter;->a(Landroid/view/ViewGroup;I)Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;
+
+    move-result-object v0
+
     return-object v0
 .end method

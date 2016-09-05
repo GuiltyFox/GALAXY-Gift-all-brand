@@ -59,114 +59,109 @@
 .end method
 
 .method public constructor <init>(Lorg/json/JSONObject;)V
-    .registers 8
-    .param p1, "jsonObject"    # Lorg/json/JSONObject;
+    .registers 7
 
     .prologue
+    const/4 v0, 0x0
+
     .line 31
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 15
-    const/4 v3, 0x0
-
-    iput v3, p0, Lcom/bzbs/bean/CardsList;->Order:I
+    iput v0, p0, Lcom/bzbs/bean/CardsList;->Order:I
 
     .line 21
-    new-instance v3, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v3, p0, Lcom/bzbs/bean/CardsList;->historyCardsList:Ljava/util/ArrayList;
+    iput-object v1, p0, Lcom/bzbs/bean/CardsList;->historyCardsList:Ljava/util/ArrayList;
 
     .line 32
-    const-string/jumbo v3, "amount"
+    const-string/jumbo v1, "amount"
 
-    invoke-static {p1, v3}, Lcom/bzbs/util/JsonUtil;->getDouble(Lorg/json/JSONObject;Ljava/lang/String;)D
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->f(Lorg/json/JSONObject;Ljava/lang/String;)D
 
-    move-result-wide v4
+    move-result-wide v2
 
-    iput-wide v4, p0, Lcom/bzbs/bean/CardsList;->Amount:D
+    iput-wide v2, p0, Lcom/bzbs/bean/CardsList;->Amount:D
 
     .line 33
-    const-string/jumbo v3, "order"
+    const-string/jumbo v1, "order"
 
-    invoke-static {p1, v3}, Lcom/bzbs/util/JsonUtil;->getInt(Lorg/json/JSONObject;Ljava/lang/String;)I
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
-    move-result v3
+    move-result v1
 
-    iput v3, p0, Lcom/bzbs/bean/CardsList;->Order:I
+    iput v1, p0, Lcom/bzbs/bean/CardsList;->Order:I
 
     .line 34
-    const-string/jumbo v3, "issuer"
+    const-string/jumbo v1, "issuer"
 
-    invoke-static {p1, v3}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    iput-object v3, p0, Lcom/bzbs/bean/CardsList;->Issuer:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CardsList;->Issuer:Ljava/lang/String;
 
     .line 35
-    const-string/jumbo v3, "imageUrl"
+    const-string/jumbo v1, "imageUrl"
 
-    invoke-static {p1, v3}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    iput-object v3, p0, Lcom/bzbs/bean/CardsList;->ImageUrl:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CardsList;->ImageUrl:Ljava/lang/String;
 
     .line 36
-    const-string/jumbo v3, "owner"
+    const-string/jumbo v1, "owner"
 
-    invoke-static {p1, v3}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    iput-object v3, p0, Lcom/bzbs/bean/CardsList;->Owner:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CardsList;->Owner:Ljava/lang/String;
 
     .line 37
-    const-string/jumbo v3, "timestamp"
+    const-string/jumbo v1, "timestamp"
 
-    invoke-static {p1, v3}, Lcom/bzbs/util/JsonUtil;->getLong(Lorg/json/JSONObject;Ljava/lang/String;)J
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->c(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    move-result-wide v4
+    move-result-wide v2
 
-    iput-wide v4, p0, Lcom/bzbs/bean/CardsList;->Timestamp:J
+    iput-wide v2, p0, Lcom/bzbs/bean/CardsList;->Timestamp:J
 
     .line 38
-    const-string/jumbo v3, "cardId"
+    const-string/jumbo v1, "cardId"
 
-    invoke-static {p1, v3}, Lcom/bzbs/util/JsonUtil;->getString(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v1
 
-    iput-object v3, p0, Lcom/bzbs/bean/CardsList;->cardId:Ljava/lang/String;
+    iput-object v1, p0, Lcom/bzbs/bean/CardsList;->cardId:Ljava/lang/String;
 
     .line 41
     :try_start_4c
-    const-string/jumbo v3, "history"
+    const-string/jumbo v1, "history"
 
-    invoke-virtual {p1, v3}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v1
 
     .line 43
-    .local v1, "jsHistory":Lorg/json/JSONArray;
-    new-instance v3, Ljava/util/ArrayList;
+    new-instance v2, Ljava/util/ArrayList;
 
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v3, p0, Lcom/bzbs/bean/CardsList;->historyCardsList:Ljava/util/ArrayList;
+    iput-object v2, p0, Lcom/bzbs/bean/CardsList;->historyCardsList:Ljava/util/ArrayList;
 
     .line 44
-    const/4 v0, 0x0
-
-    .local v0, "i":I
-    :goto_5b
+    :goto_5a
     invoke-virtual {v1}, Lorg/json/JSONArray;->length()I
 
-    move-result v3
+    move-result v2
 
-    if-ge v0, v3, :cond_73
+    if-ge v0, v2, :cond_72
 
     .line 45
     invoke-virtual {v1, v0}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
@@ -174,7 +169,6 @@
     move-result-object v2
 
     .line 46
-    .local v2, "jsObj":Lorg/json/JSONObject;
     iget-object v3, p0, Lcom/bzbs/bean/CardsList;->historyCardsList:Ljava/util/ArrayList;
 
     new-instance v4, Lcom/bzbs/bean/HistoryCardsList;
@@ -182,23 +176,20 @@
     invoke-direct {v4, v2}, Lcom/bzbs/bean/HistoryCardsList;-><init>(Lorg/json/JSONObject;)V
 
     invoke-virtual {v3, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-    :try_end_6f
-    .catch Lorg/json/JSONException; {:try_start_4c .. :try_end_6f} :catch_72
+    :try_end_6e
+    .catch Lorg/json/JSONException; {:try_start_4c .. :try_end_6e} :catch_71
 
     .line 44
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_5b
+    goto :goto_5a
 
     .line 48
-    .end local v0    # "i":I
-    .end local v1    # "jsHistory":Lorg/json/JSONArray;
-    .end local v2    # "jsObj":Lorg/json/JSONObject;
-    :catch_72
-    move-exception v3
+    :catch_71
+    move-exception v0
 
     .line 52
-    :cond_73
+    :cond_72
     return-void
 .end method
 
@@ -206,11 +197,6 @@
 # virtual methods
 .method public clone()Ljava/lang/Object;
     .registers 2
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/CloneNotSupportedException;
-        }
-    .end annotation
 
     .prologue
     .line 28

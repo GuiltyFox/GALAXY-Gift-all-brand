@@ -3,17 +3,6 @@
 .source "ReadableObjectId.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/deser/impl/ReadableObjectId;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x409
-    name = "Referring"
-.end annotation
-
-
 # instance fields
 .field private final _beanType:Ljava/lang/Class;
     .annotation system Ldalvik/annotation/Signature;
@@ -30,7 +19,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;Ljava/lang/Class;)V
     .registers 3
-    .param p1, "ref"    # Lcom/fasterxml/jackson/databind/deser/UnresolvedForwardReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -42,7 +30,6 @@
 
     .prologue
     .line 102
-    .local p2, "beanType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 103
@@ -89,16 +76,10 @@
 .end method
 
 .method public abstract handleResolvedForwardReference(Ljava/lang/Object;Ljava/lang/Object;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 .end method
 
 .method public hasId(Ljava/lang/Object;)Z
     .registers 3
-    .param p1, "id"    # Ljava/lang/Object;
 
     .prologue
     .line 112

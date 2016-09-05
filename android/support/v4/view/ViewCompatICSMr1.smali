@@ -4,19 +4,8 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 28
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public static hasOnClickListeners(Landroid/view/View;)Z
+.method public static a(Landroid/view/View;)Z
     .registers 2
-    .param p0, "v"    # Landroid/view/View;
 
     .prologue
     .line 30

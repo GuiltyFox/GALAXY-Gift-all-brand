@@ -32,8 +32,6 @@
 
     .prologue
     .line 36
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase<TT;>;"
-    .local p1, "src":Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase<*>;"
     iget-object v0, p1, Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase;->_handledType:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -51,7 +49,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase;Lcom/fasterxml/jackson/databind/BeanProperty;)V
     .registers 5
-    .param p2, "property"    # Lcom/fasterxml/jackson/databind/BeanProperty;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -64,8 +61,6 @@
 
     .prologue
     .line 42
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase<TT;>;"
-    .local p1, "src":Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase<*>;"
     iget-object v0, p1, Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase;->_handledType:Ljava/lang/Class;
 
     const/4 v1, 0x0
@@ -91,8 +86,6 @@
 
     .prologue
     .line 24
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase<TT;>;"
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/databind/ser/ContainerSerializer;-><init>(Ljava/lang/Class;)V
 
     .line 25
@@ -106,7 +99,6 @@
 
 .method protected constructor <init>(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/BeanProperty;)V
     .registers 3
-    .param p2, "property"    # Lcom/fasterxml/jackson/databind/BeanProperty;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -119,8 +111,6 @@
 
     .prologue
     .line 30
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase<TT;>;"
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<TT;>;"
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/databind/ser/ContainerSerializer;-><init>(Ljava/lang/Class;)V
 
     .line 31
@@ -134,8 +124,6 @@
 # virtual methods
 .method public final serialize(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 5
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -145,17 +133,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
-
     .prologue
     .line 51
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase<TT;>;"
-    .local p1, "value":Ljava/lang/Object;, "TT;"
     sget-object v0, Lcom/fasterxml/jackson/databind/SerializationFeature;->WRITE_SINGLE_ELEM_ARRAYS_UNWRAPPED:Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     invoke-virtual {p3, v0}, Lcom/fasterxml/jackson/databind/SerializerProvider;->isEnabled(Lcom/fasterxml/jackson/databind/SerializationFeature;)Z
@@ -199,20 +178,10 @@
             ")V"
         }
     .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 .end method
 
 .method public final serializeWithType(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;)V
     .registers 5
-    .param p2, "jgen"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p3, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .param p4, "typeSer"    # Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -223,17 +192,8 @@
         }
     .end annotation
 
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
-
     .prologue
     .line 67
-    .local p0, "this":Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase;, "Lcom/fasterxml/jackson/databind/ser/std/ArraySerializerBase<TT;>;"
-    .local p1, "value":Ljava/lang/Object;, "TT;"
     invoke-virtual {p4, p1, p2}, Lcom/fasterxml/jackson/databind/jsontype/TypeSerializer;->writeTypePrefixForArray(Ljava/lang/Object;Lcom/fasterxml/jackson/core/JsonGenerator;)V
 
     .line 68

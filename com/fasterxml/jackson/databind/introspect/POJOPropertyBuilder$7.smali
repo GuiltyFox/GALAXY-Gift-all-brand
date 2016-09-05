@@ -11,11 +11,6 @@
     value = Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder;->findObjectIdInfo()Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -48,20 +43,18 @@
 # virtual methods
 .method public withMember(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
     .registers 4
-    .param p1, "member"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
     .prologue
     .line 509
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder$7;->this$0:Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder$7;->this$0:Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder;
 
-    iget-object v1, v1, Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder;->_annotationIntrospector:Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
+    iget-object v0, v0, Lcom/fasterxml/jackson/databind/introspect/POJOPropertyBuilder;->_annotationIntrospector:Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
-    invoke-virtual {v1, p1}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findObjectIdInfo(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
+    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/databind/AnnotationIntrospector;->findObjectIdInfo(Lcom/fasterxml/jackson/databind/introspect/Annotated;)Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
 
     move-result-object v0
 
     .line 510
-    .local v0, "info":Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
     if-eqz v0, :cond_12
 
     .line 511
@@ -80,7 +73,6 @@
 
 .method public bridge synthetic withMember(Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;)Ljava/lang/Object;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedMember;
 
     .prologue
     .line 506

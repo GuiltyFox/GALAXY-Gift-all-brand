@@ -2,17 +2,6 @@
 .super Ljava/lang/RuntimeException;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/gms/common/internal/safeparcel/zza;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "zza"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Landroid/os/Parcel;)V
     .registers 5

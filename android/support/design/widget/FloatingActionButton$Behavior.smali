@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/FloatingActionButton;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Behavior"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Landroid/support/design/widget/CoordinatorLayout$Behavior",
@@ -71,87 +62,90 @@
 .end method
 
 .method private getFabTranslationYForSnackbar(Landroid/support/design/widget/CoordinatorLayout;Landroid/support/design/widget/FloatingActionButton;)F
-    .registers 10
-    .param p1, "parent"    # Landroid/support/design/widget/CoordinatorLayout;
-    .param p2, "fab"    # Landroid/support/design/widget/FloatingActionButton;
+    .registers 9
 
     .prologue
     .line 548
-    const/4 v2, 0x0
-
-    .line 549
-    .local v2, "minOffset":F
-    invoke-virtual {p1, p2}, Landroid/support/design/widget/CoordinatorLayout;->getDependencies(Landroid/view/View;)Ljava/util/List;
-
-    move-result-object v0
-
-    .line 550
-    .local v0, "dependencies":Ljava/util/List;, "Ljava/util/List<Landroid/view/View;>;"
     const/4 v1, 0x0
 
-    .local v1, "i":I
-    invoke-interface {v0}, Ljava/util/List;->size()I
-
-    move-result v4
-
-    .local v4, "z":I
-    :goto_a
-    if-ge v1, v4, :cond_2d
-
-    .line 551
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    .line 549
+    invoke-virtual {p1, p2}, Landroid/support/design/widget/CoordinatorLayout;->getDependencies(Landroid/view/View;)Ljava/util/List;
 
     move-result-object v3
 
-    check-cast v3, Landroid/view/View;
+    .line 550
+    const/4 v0, 0x0
+
+    invoke-interface {v3}, Ljava/util/List;->size()I
+
+    move-result v4
+
+    move v2, v0
+
+    :goto_b
+    if-ge v2, v4, :cond_31
+
+    .line 551
+    invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/View;
 
     .line 552
-    .local v3, "view":Landroid/view/View;
-    instance-of v5, v3, Landroid/support/design/widget/Snackbar$SnackbarLayout;
+    instance-of v5, v0, Landroid/support/design/widget/Snackbar$SnackbarLayout;
 
-    if-eqz v5, :cond_2a
+    if-eqz v5, :cond_32
 
-    invoke-virtual {p1, p2, v3}, Landroid/support/design/widget/CoordinatorLayout;->doViewsOverlap(Landroid/view/View;Landroid/view/View;)Z
+    invoke-virtual {p1, p2, v0}, Landroid/support/design/widget/CoordinatorLayout;->doViewsOverlap(Landroid/view/View;Landroid/view/View;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_2a
+    if-eqz v5, :cond_32
 
     .line 553
-    invoke-static {v3}, Landroid/support/v4/view/ViewCompat;->getTranslationY(Landroid/view/View;)F
+    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->o(Landroid/view/View;)F
 
     move-result v5
 
-    invoke-virtual {v3}, Landroid/view/View;->getHeight()I
+    invoke-virtual {v0}, Landroid/view/View;->getHeight()I
 
-    move-result v6
+    move-result v0
 
-    int-to-float v6, v6
+    int-to-float v0, v0
 
-    sub-float/2addr v5, v6
+    sub-float v0, v5, v0
 
-    invoke-static {v2, v5}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v1, v0}, Ljava/lang/Math;->min(FF)F
 
-    move-result v2
+    move-result v0
 
     .line 550
-    :cond_2a
-    add-int/lit8 v1, v1, 0x1
+    :goto_2c
+    add-int/lit8 v1, v2, 0x1
 
-    goto :goto_a
+    move v2, v1
+
+    move v1, v0
+
+    goto :goto_b
 
     .line 558
-    .end local v3    # "view":Landroid/view/View;
-    :cond_2d
-    return v2
+    :cond_31
+    return v1
+
+    :cond_32
+    move v0, v1
+
+    goto :goto_2c
 .end method
 
 .method private offsetIfNeeded(Landroid/support/design/widget/CoordinatorLayout;Landroid/support/design/widget/FloatingActionButton;)V
     .registers 10
-    .param p1, "parent"    # Landroid/support/design/widget/CoordinatorLayout;
-    .param p2, "fab"    # Landroid/support/design/widget/FloatingActionButton;
 
     .prologue
+    const/4 v2, 0x0
+
     .line 586
     # getter for: Landroid/support/design/widget/FloatingActionButton;->mShadowPadding:Landroid/graphics/Rect;
     invoke-static {p2}, Landroid/support/design/widget/FloatingActionButton;->access$200(Landroid/support/design/widget/FloatingActionButton;)Landroid/graphics/Rect;
@@ -159,20 +153,19 @@
     move-result-object v3
 
     .line 588
-    .local v3, "padding":Landroid/graphics/Rect;
-    if-eqz v3, :cond_3e
+    if-eqz v3, :cond_3d
 
     invoke-virtual {v3}, Landroid/graphics/Rect;->centerX()I
 
-    move-result v4
+    move-result v0
 
-    if-lez v4, :cond_3e
+    if-lez v0, :cond_3d
 
     invoke-virtual {v3}, Landroid/graphics/Rect;->centerY()I
 
-    move-result v4
+    move-result v0
 
-    if-lez v4, :cond_3e
+    if-lez v0, :cond_3d
 
     .line 589
     invoke-virtual {p2}, Landroid/support/design/widget/FloatingActionButton;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -181,35 +174,26 @@
 
     check-cast v0, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;
 
-    .line 592
-    .local v0, "lp":Landroid/support/design/widget/CoordinatorLayout$LayoutParams;
-    const/4 v2, 0x0
-
-    .local v2, "offsetTB":I
-    const/4 v1, 0x0
-
     .line 594
-    .local v1, "offsetLR":I
     invoke-virtual {p2}, Landroid/support/design/widget/FloatingActionButton;->getRight()I
 
-    move-result v4
+    move-result v1
 
     invoke-virtual {p1}, Landroid/support/design/widget/CoordinatorLayout;->getWidth()I
 
-    move-result v5
+    move-result v4
 
-    iget v6, v0, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;->rightMargin:I
+    iget v5, v0, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;->rightMargin:I
 
-    sub-int/2addr v5, v6
+    sub-int/2addr v4, v5
 
-    if-lt v4, v5, :cond_3f
+    if-lt v1, v4, :cond_3e
 
     .line 596
     iget v1, v3, Landroid/graphics/Rect;->right:I
 
     .line 601
-    :cond_29
-    :goto_29
+    :goto_28
     invoke-virtual {p2}, Landroid/support/design/widget/FloatingActionButton;->getBottom()I
 
     move-result v4
@@ -222,83 +206,78 @@
 
     sub-int/2addr v5, v6
 
-    if-lt v4, v5, :cond_4b
+    if-lt v4, v5, :cond_4a
 
     .line 603
     iget v2, v3, Landroid/graphics/Rect;->bottom:I
 
     .line 609
-    :cond_38
-    :goto_38
+    :cond_37
+    :goto_37
     invoke-virtual {p2, v2}, Landroid/support/design/widget/FloatingActionButton;->offsetTopAndBottom(I)V
 
     .line 610
     invoke-virtual {p2, v1}, Landroid/support/design/widget/FloatingActionButton;->offsetLeftAndRight(I)V
 
     .line 612
-    .end local v0    # "lp":Landroid/support/design/widget/CoordinatorLayout$LayoutParams;
-    .end local v1    # "offsetLR":I
-    .end local v2    # "offsetTB":I
-    :cond_3e
+    :cond_3d
     return-void
 
     .line 597
-    .restart local v0    # "lp":Landroid/support/design/widget/CoordinatorLayout$LayoutParams;
-    .restart local v1    # "offsetLR":I
-    .restart local v2    # "offsetTB":I
-    :cond_3f
+    :cond_3e
     invoke-virtual {p2}, Landroid/support/design/widget/FloatingActionButton;->getLeft()I
 
-    move-result v4
+    move-result v1
 
-    iget v5, v0, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;->leftMargin:I
+    iget v4, v0, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;->leftMargin:I
 
-    if-gt v4, v5, :cond_29
+    if-gt v1, v4, :cond_56
 
     .line 599
-    iget v4, v3, Landroid/graphics/Rect;->left:I
+    iget v1, v3, Landroid/graphics/Rect;->left:I
 
-    neg-int v1, v4
+    neg-int v1, v1
 
-    goto :goto_29
+    goto :goto_28
 
     .line 604
-    :cond_4b
+    :cond_4a
     invoke-virtual {p2}, Landroid/support/design/widget/FloatingActionButton;->getTop()I
 
     move-result v4
 
-    iget v5, v0, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;->topMargin:I
+    iget v0, v0, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;->topMargin:I
 
-    if-gt v4, v5, :cond_38
+    if-gt v4, v0, :cond_37
 
     .line 606
-    iget v4, v3, Landroid/graphics/Rect;->top:I
+    iget v0, v3, Landroid/graphics/Rect;->top:I
 
-    neg-int v2, v4
+    neg-int v2, v0
 
-    goto :goto_38
+    goto :goto_37
+
+    :cond_56
+    move v1, v2
+
+    goto :goto_28
 .end method
 
 .method private updateFabTranslationForSnackbar(Landroid/support/design/widget/CoordinatorLayout;Landroid/support/design/widget/FloatingActionButton;Landroid/view/View;)V
     .registers 9
-    .param p1, "parent"    # Landroid/support/design/widget/CoordinatorLayout;
-    .param p2, "fab"    # Landroid/support/design/widget/FloatingActionButton;
-    .param p3, "snackbar"    # Landroid/view/View;
 
     .prologue
     .line 506
     invoke-direct {p0, p1, p2}, Landroid/support/design/widget/FloatingActionButton$Behavior;->getFabTranslationYForSnackbar(Landroid/support/design/widget/CoordinatorLayout;Landroid/support/design/widget/FloatingActionButton;)F
 
-    move-result v1
+    move-result v0
 
     .line 507
-    .local v1, "targetTransY":F
-    iget v2, p0, Landroid/support/design/widget/FloatingActionButton$Behavior;->mFabTranslationY:F
+    iget v1, p0, Landroid/support/design/widget/FloatingActionButton$Behavior;->mFabTranslationY:F
 
-    cmpl-float v2, v2, v1
+    cmpl-float v1, v1, v0
 
-    if-nez v2, :cond_b
+    if-nez v1, :cond_b
 
     .line 544
     :goto_a
@@ -306,12 +285,11 @@
 
     .line 512
     :cond_b
-    invoke-static {p2}, Landroid/support/v4/view/ViewCompat;->getTranslationY(Landroid/view/View;)F
+    invoke-static {p2}, Landroid/support/v4/view/ViewCompat;->o(Landroid/view/View;)F
 
-    move-result v0
+    move-result v1
 
     .line 515
-    .local v0, "currentTransY":F
     iget-object v2, p0, Landroid/support/design/widget/FloatingActionButton$Behavior;->mFabTranslationYAnimator:Landroid/support/design/widget/ValueAnimatorCompat;
 
     if-eqz v2, :cond_20
@@ -337,7 +315,7 @@
 
     if-eqz v2, :cond_61
 
-    sub-float v2, v0, v1
+    sub-float v2, v1, v0
 
     invoke-static {v2}, Ljava/lang/Math;->abs(F)F
 
@@ -349,7 +327,7 @@
 
     int-to-float v3, v3
 
-    const v4, 0x3f2ac083
+    const v4, 0x3f2ac083    # 0.667f
 
     mul-float/2addr v3, v4
 
@@ -389,36 +367,33 @@
     :cond_54
     iget-object v2, p0, Landroid/support/design/widget/FloatingActionButton$Behavior;->mFabTranslationYAnimator:Landroid/support/design/widget/ValueAnimatorCompat;
 
-    invoke-virtual {v2, v0, v1}, Landroid/support/design/widget/ValueAnimatorCompat;->setFloatValues(FF)V
+    invoke-virtual {v2, v1, v0}, Landroid/support/design/widget/ValueAnimatorCompat;->setFloatValues(FF)V
 
     .line 537
-    iget-object v2, p0, Landroid/support/design/widget/FloatingActionButton$Behavior;->mFabTranslationYAnimator:Landroid/support/design/widget/ValueAnimatorCompat;
+    iget-object v1, p0, Landroid/support/design/widget/FloatingActionButton$Behavior;->mFabTranslationYAnimator:Landroid/support/design/widget/ValueAnimatorCompat;
 
-    invoke-virtual {v2}, Landroid/support/design/widget/ValueAnimatorCompat;->start()V
+    invoke-virtual {v1}, Landroid/support/design/widget/ValueAnimatorCompat;->start()V
 
     .line 543
     :goto_5e
-    iput v1, p0, Landroid/support/design/widget/FloatingActionButton$Behavior;->mFabTranslationY:F
+    iput v0, p0, Landroid/support/design/widget/FloatingActionButton$Behavior;->mFabTranslationY:F
 
     goto :goto_a
 
     .line 540
     :cond_61
-    invoke-static {p2, v1}, Landroid/support/v4/view/ViewCompat;->setTranslationY(Landroid/view/View;F)V
+    invoke-static {p2, v0}, Landroid/support/v4/view/ViewCompat;->b(Landroid/view/View;F)V
 
     goto :goto_5e
 .end method
 
 .method private updateFabVisibility(Landroid/support/design/widget/CoordinatorLayout;Landroid/support/design/widget/AppBarLayout;Landroid/support/design/widget/FloatingActionButton;)Z
-    .registers 10
-    .param p1, "parent"    # Landroid/support/design/widget/CoordinatorLayout;
-    .param p2, "appBarLayout"    # Landroid/support/design/widget/AppBarLayout;
-    .param p3, "child"    # Landroid/support/design/widget/FloatingActionButton;
+    .registers 8
 
     .prologue
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 473
     invoke-virtual {p3}, Landroid/support/design/widget/FloatingActionButton;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -428,84 +403,86 @@
     check-cast v0, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;
 
     .line 475
-    .local v0, "lp":Landroid/support/design/widget/CoordinatorLayout$LayoutParams;
     invoke-virtual {v0}, Landroid/support/design/widget/CoordinatorLayout$LayoutParams;->getAnchorId()I
 
-    move-result v3
+    move-result v0
 
     invoke-virtual {p2}, Landroid/support/design/widget/AppBarLayout;->getId()I
 
-    move-result v4
+    move-result v2
 
-    if-eq v3, v4, :cond_13
+    if-eq v0, v2, :cond_14
+
+    move v0, v1
 
     .line 501
-    :cond_12
-    :goto_12
-    return v2
+    :goto_13
+    return v0
 
     .line 481
-    :cond_13
+    :cond_14
     invoke-virtual {p3}, Landroid/support/design/widget/FloatingActionButton;->getUserSetVisibility()I
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_12
+    if-eqz v0, :cond_1c
+
+    move v0, v1
+
+    .line 483
+    goto :goto_13
 
     .line 486
-    iget-object v3, p0, Landroid/support/design/widget/FloatingActionButton$Behavior;->mTmpRect:Landroid/graphics/Rect;
+    :cond_1c
+    iget-object v0, p0, Landroid/support/design/widget/FloatingActionButton$Behavior;->mTmpRect:Landroid/graphics/Rect;
 
-    if-nez v3, :cond_24
+    if-nez v0, :cond_27
 
     .line 487
-    new-instance v3, Landroid/graphics/Rect;
+    new-instance v0, Landroid/graphics/Rect;
 
-    invoke-direct {v3}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object v3, p0, Landroid/support/design/widget/FloatingActionButton$Behavior;->mTmpRect:Landroid/graphics/Rect;
+    iput-object v0, p0, Landroid/support/design/widget/FloatingActionButton$Behavior;->mTmpRect:Landroid/graphics/Rect;
 
     .line 491
-    :cond_24
-    iget-object v1, p0, Landroid/support/design/widget/FloatingActionButton$Behavior;->mTmpRect:Landroid/graphics/Rect;
+    :cond_27
+    iget-object v0, p0, Landroid/support/design/widget/FloatingActionButton$Behavior;->mTmpRect:Landroid/graphics/Rect;
 
     .line 492
-    .local v1, "rect":Landroid/graphics/Rect;
-    invoke-static {p1, p2, v1}, Landroid/support/design/widget/ViewGroupUtils;->getDescendantRect(Landroid/view/ViewGroup;Landroid/view/View;Landroid/graphics/Rect;)V
+    invoke-static {p1, p2, v0}, Landroid/support/design/widget/ViewGroupUtils;->getDescendantRect(Landroid/view/ViewGroup;Landroid/view/View;Landroid/graphics/Rect;)V
 
     .line 494
-    iget v3, v1, Landroid/graphics/Rect;->bottom:I
+    iget v0, v0, Landroid/graphics/Rect;->bottom:I
 
     invoke-virtual {p2}, Landroid/support/design/widget/AppBarLayout;->getMinimumHeightForVisibleOverlappingContent()I
 
-    move-result v4
+    move-result v2
 
-    if-gt v3, v4, :cond_36
+    if-gt v0, v2, :cond_39
 
     .line 496
     # invokes: Landroid/support/design/widget/FloatingActionButton;->hide(Landroid/support/design/widget/FloatingActionButton$OnVisibilityChangedListener;Z)V
-    invoke-static {p3, v5, v2}, Landroid/support/design/widget/FloatingActionButton;->access$000(Landroid/support/design/widget/FloatingActionButton;Landroid/support/design/widget/FloatingActionButton$OnVisibilityChangedListener;Z)V
+    invoke-static {p3, v3, v1}, Landroid/support/design/widget/FloatingActionButton;->access$000(Landroid/support/design/widget/FloatingActionButton;Landroid/support/design/widget/FloatingActionButton$OnVisibilityChangedListener;Z)V
 
     .line 501
-    :goto_34
-    const/4 v2, 0x1
+    :goto_37
+    const/4 v0, 0x1
 
-    goto :goto_12
+    goto :goto_13
 
     .line 499
-    :cond_36
+    :cond_39
     # invokes: Landroid/support/design/widget/FloatingActionButton;->show(Landroid/support/design/widget/FloatingActionButton$OnVisibilityChangedListener;Z)V
-    invoke-static {p3, v5, v2}, Landroid/support/design/widget/FloatingActionButton;->access$100(Landroid/support/design/widget/FloatingActionButton;Landroid/support/design/widget/FloatingActionButton$OnVisibilityChangedListener;Z)V
+    invoke-static {p3, v3, v1}, Landroid/support/design/widget/FloatingActionButton;->access$100(Landroid/support/design/widget/FloatingActionButton;Landroid/support/design/widget/FloatingActionButton$OnVisibilityChangedListener;Z)V
 
-    goto :goto_34
+    goto :goto_37
 .end method
 
 
 # virtual methods
 .method public layoutDependsOn(Landroid/support/design/widget/CoordinatorLayout;Landroid/support/design/widget/FloatingActionButton;Landroid/view/View;)Z
     .registers 5
-    .param p1, "parent"    # Landroid/support/design/widget/CoordinatorLayout;
-    .param p2, "child"    # Landroid/support/design/widget/FloatingActionButton;
-    .param p3, "dependency"    # Landroid/view/View;
 
     .prologue
     .line 455
@@ -544,9 +521,6 @@
 
 .method public onDependentViewChanged(Landroid/support/design/widget/CoordinatorLayout;Landroid/support/design/widget/FloatingActionButton;Landroid/view/View;)Z
     .registers 5
-    .param p1, "parent"    # Landroid/support/design/widget/CoordinatorLayout;
-    .param p2, "child"    # Landroid/support/design/widget/FloatingActionButton;
-    .param p3, "dependency"    # Landroid/view/View;
 
     .prologue
     .line 461
@@ -558,7 +532,6 @@
     invoke-direct {p0, p1, p2, p3}, Landroid/support/design/widget/FloatingActionButton$Behavior;->updateFabTranslationForSnackbar(Landroid/support/design/widget/CoordinatorLayout;Landroid/support/design/widget/FloatingActionButton;Landroid/view/View;)V
 
     .line 468
-    .end local p3    # "dependency":Landroid/view/View;
     :cond_7
     :goto_7
     const/4 v0, 0x0
@@ -566,7 +539,6 @@
     return v0
 
     .line 463
-    .restart local p3    # "dependency":Landroid/view/View;
     :cond_9
     instance-of v0, p3, Landroid/support/design/widget/AppBarLayout;
 
@@ -575,7 +547,6 @@
     .line 466
     check-cast p3, Landroid/support/design/widget/AppBarLayout;
 
-    .end local p3    # "dependency":Landroid/view/View;
     invoke-direct {p0, p1, p3, p2}, Landroid/support/design/widget/FloatingActionButton$Behavior;->updateFabVisibility(Landroid/support/design/widget/CoordinatorLayout;Landroid/support/design/widget/AppBarLayout;Landroid/support/design/widget/FloatingActionButton;)Z
 
     goto :goto_7
@@ -597,68 +568,64 @@
 
 .method public onLayoutChild(Landroid/support/design/widget/CoordinatorLayout;Landroid/support/design/widget/FloatingActionButton;I)Z
     .registers 9
-    .param p1, "parent"    # Landroid/support/design/widget/CoordinatorLayout;
-    .param p2, "child"    # Landroid/support/design/widget/FloatingActionButton;
-    .param p3, "layoutDirection"    # I
 
     .prologue
     .line 565
     invoke-virtual {p1, p2}, Landroid/support/design/widget/CoordinatorLayout;->getDependencies(Landroid/view/View;)Ljava/util/List;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 566
-    .local v1, "dependencies":Ljava/util/List;, "Ljava/util/List<Landroid/view/View;>;"
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
-    .local v3, "i":I
-    invoke-interface {v1}, Ljava/util/List;->size()I
+    invoke-interface {v2}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    move v1, v0
+
+    :goto_a
+    if-ge v1, v3, :cond_1e
+
+    .line 567
+    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/View;
+
+    .line 568
+    instance-of v4, v0, Landroid/support/design/widget/AppBarLayout;
+
+    if-eqz v4, :cond_26
+
+    check-cast v0, Landroid/support/design/widget/AppBarLayout;
+
+    invoke-direct {p0, p1, v0, p2}, Landroid/support/design/widget/FloatingActionButton$Behavior;->updateFabVisibility(Landroid/support/design/widget/CoordinatorLayout;Landroid/support/design/widget/AppBarLayout;Landroid/support/design/widget/FloatingActionButton;)Z
 
     move-result v0
 
-    .local v0, "count":I
-    :goto_9
-    if-ge v3, v0, :cond_1d
-
-    .line 567
-    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/view/View;
-
-    .line 568
-    .local v2, "dependency":Landroid/view/View;
-    instance-of v4, v2, Landroid/support/design/widget/AppBarLayout;
-
-    if-eqz v4, :cond_25
-
-    check-cast v2, Landroid/support/design/widget/AppBarLayout;
-
-    .end local v2    # "dependency":Landroid/view/View;
-    invoke-direct {p0, p1, v2, p2}, Landroid/support/design/widget/FloatingActionButton$Behavior;->updateFabVisibility(Landroid/support/design/widget/CoordinatorLayout;Landroid/support/design/widget/AppBarLayout;Landroid/support/design/widget/FloatingActionButton;)Z
-
-    move-result v4
-
-    if-eqz v4, :cond_25
+    if-eqz v0, :cond_26
 
     .line 574
-    :cond_1d
+    :cond_1e
     invoke-virtual {p1, p2, p3}, Landroid/support/design/widget/CoordinatorLayout;->onLayoutChild(Landroid/view/View;I)V
 
     .line 576
     invoke-direct {p0, p1, p2}, Landroid/support/design/widget/FloatingActionButton$Behavior;->offsetIfNeeded(Landroid/support/design/widget/CoordinatorLayout;Landroid/support/design/widget/FloatingActionButton;)V
 
     .line 577
-    const/4 v4, 0x1
+    const/4 v0, 0x1
 
-    return v4
+    return v0
 
     .line 566
-    :cond_25
-    add-int/lit8 v3, v3, 0x1
+    :cond_26
+    add-int/lit8 v0, v1, 0x1
 
-    goto :goto_9
+    move v1, v0
+
+    goto :goto_a
 .end method
 
 .method public bridge synthetic onLayoutChild(Landroid/support/design/widget/CoordinatorLayout;Landroid/view/View;I)Z

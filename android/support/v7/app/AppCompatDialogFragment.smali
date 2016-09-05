@@ -18,7 +18,6 @@
 # virtual methods
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .registers 5
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
     .line 36
@@ -39,14 +38,12 @@
 
 .method public setupDialog(Landroid/app/Dialog;I)V
     .registers 6
-    .param p1, "dialog"    # Landroid/app/Dialog;
-    .param p2, "style"    # I
 
     .prologue
     .line 42
-    instance-of v1, p1, Landroid/support/v7/app/AppCompatDialog;
+    instance-of v0, p1, Landroid/support/v7/app/AppCompatDialog;
 
-    if-eqz v1, :cond_19
+    if-eqz v0, :cond_19
 
     move-object v0, p1
 
@@ -54,16 +51,13 @@
     check-cast v0, Landroid/support/v7/app/AppCompatDialog;
 
     .line 45
-    .local v0, "acd":Landroid/support/v7/app/AppCompatDialog;
     packed-switch p2, :pswitch_data_1e
 
     .line 59
-    .end local v0    # "acd":Landroid/support/v7/app/AppCompatDialog;
     :goto_a
     return-void
 
     .line 47
-    .restart local v0    # "acd":Landroid/support/v7/app/AppCompatDialog;
     :pswitch_b
     invoke-virtual {p1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
@@ -82,7 +76,6 @@
     goto :goto_a
 
     .line 57
-    .end local v0    # "acd":Landroid/support/v7/app/AppCompatDialog;
     :cond_19
     invoke-super {p0, p1, p2}, Landroid/support/v4/app/DialogFragment;->setupDialog(Landroid/app/Dialog;I)V
 

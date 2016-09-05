@@ -3,17 +3,6 @@
 .source "MotionEventCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/view/MotionEventCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "GingerbreadMotionEventVersionImpl"
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .registers 1
@@ -27,13 +16,12 @@
 
 
 # virtual methods
-.method public getSource(Landroid/view/MotionEvent;)I
+.method public b(Landroid/view/MotionEvent;)I
     .registers 3
-    .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
     .line 128
-    invoke-static {p1}, Landroid/support/v4/view/MotionEventCompatGingerbread;->getSource(Landroid/view/MotionEvent;)I
+    invoke-static {p1}, Landroid/support/v4/view/MotionEventCompatGingerbread;->a(Landroid/view/MotionEvent;)I
 
     move-result v0
 

@@ -11,11 +11,6 @@
     value = Lcom/squareup/picasso/Picasso$RequestTransformer;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 
 # direct methods
 .method constructor <init>()V
@@ -30,9 +25,8 @@
 
 
 # virtual methods
-.method public transformRequest(Lcom/squareup/picasso/Request;)Lcom/squareup/picasso/Request;
+.method public a(Lcom/squareup/picasso/Request;)Lcom/squareup/picasso/Request;
     .registers 2
-    .param p1, "request"    # Lcom/squareup/picasso/Request;
 
     .prologue
     .line 92

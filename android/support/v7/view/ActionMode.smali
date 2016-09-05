@@ -3,18 +3,10 @@
 .source "ActionMode.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/v7/view/ActionMode$Callback;
-    }
-.end annotation
-
-
 # instance fields
-.field private mTag:Ljava/lang/Object;
+.field private a:Ljava/lang/Object;
 
-.field private mTitleOptionalHint:Z
+.field private b:Z
 
 
 # direct methods
@@ -31,48 +23,62 @@
 
 
 # virtual methods
-.method public abstract finish()V
+.method public abstract a()Landroid/view/MenuInflater;
 .end method
 
-.method public abstract getCustomView()Landroid/view/View;
+.method public abstract a(I)V
 .end method
 
-.method public abstract getMenu()Landroid/view/Menu;
+.method public abstract a(Landroid/view/View;)V
 .end method
 
-.method public abstract getMenuInflater()Landroid/view/MenuInflater;
+.method public abstract a(Ljava/lang/CharSequence;)V
 .end method
 
-.method public abstract getSubtitle()Ljava/lang/CharSequence;
-.end method
-
-.method public getTag()Ljava/lang/Object;
+.method public a(Ljava/lang/Object;)V
     .registers 2
 
     .prologue
-    .line 67
-    iget-object v0, p0, Landroid/support/v7/view/ActionMode;->mTag:Ljava/lang/Object;
+    .line 53
+    iput-object p1, p0, Landroid/support/v7/view/ActionMode;->a:Ljava/lang/Object;
 
-    return-object v0
+    .line 54
+    return-void
 .end method
 
-.method public abstract getTitle()Ljava/lang/CharSequence;
-.end method
-
-.method public getTitleOptionalHint()Z
+.method public a(Z)V
     .registers 2
 
     .prologue
-    .line 141
-    iget-boolean v0, p0, Landroid/support/v7/view/ActionMode;->mTitleOptionalHint:Z
+    .line 130
+    iput-boolean p1, p0, Landroid/support/v7/view/ActionMode;->b:Z
 
-    return v0
+    .line 131
+    return-void
 .end method
 
-.method public abstract invalidate()V
+.method public abstract b()Landroid/view/Menu;
 .end method
 
-.method public isTitleOptional()Z
+.method public abstract b(I)V
+.end method
+
+.method public abstract b(Ljava/lang/CharSequence;)V
+.end method
+
+.method public abstract c()V
+.end method
+
+.method public abstract d()V
+.end method
+
+.method public abstract f()Ljava/lang/CharSequence;
+.end method
+
+.method public abstract g()Ljava/lang/CharSequence;
+.end method
+
+.method public h()Z
     .registers 2
 
     .prologue
@@ -82,51 +88,25 @@
     return v0
 .end method
 
-.method public isUiFocusable()Z
+.method public abstract i()Landroid/view/View;
+.end method
+
+.method public j()Ljava/lang/Object;
     .registers 2
 
     .prologue
-    .line 220
-    const/4 v0, 0x1
+    .line 67
+    iget-object v0, p0, Landroid/support/v7/view/ActionMode;->a:Ljava/lang/Object;
+
+    return-object v0
+.end method
+
+.method public k()Z
+    .registers 2
+
+    .prologue
+    .line 141
+    iget-boolean v0, p0, Landroid/support/v7/view/ActionMode;->b:Z
 
     return v0
-.end method
-
-.method public abstract setCustomView(Landroid/view/View;)V
-.end method
-
-.method public abstract setSubtitle(I)V
-.end method
-
-.method public abstract setSubtitle(Ljava/lang/CharSequence;)V
-.end method
-
-.method public setTag(Ljava/lang/Object;)V
-    .registers 2
-    .param p1, "tag"    # Ljava/lang/Object;
-
-    .prologue
-    .line 53
-    iput-object p1, p0, Landroid/support/v7/view/ActionMode;->mTag:Ljava/lang/Object;
-
-    .line 54
-    return-void
-.end method
-
-.method public abstract setTitle(I)V
-.end method
-
-.method public abstract setTitle(Ljava/lang/CharSequence;)V
-.end method
-
-.method public setTitleOptionalHint(Z)V
-    .registers 2
-    .param p1, "titleOptional"    # Z
-
-    .prologue
-    .line 130
-    iput-boolean p1, p0, Landroid/support/v7/view/ActionMode;->mTitleOptionalHint:Z
-
-    .line 131
-    return-void
 .end method

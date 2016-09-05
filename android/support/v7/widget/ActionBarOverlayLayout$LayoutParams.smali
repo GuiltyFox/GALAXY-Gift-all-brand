@@ -3,22 +3,9 @@
 .source "ActionBarOverlayLayout.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/widget/ActionBarOverlayLayout;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "LayoutParams"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>(II)V
     .registers 3
-    .param p1, "width"    # I
-    .param p2, "height"    # I
 
     .prologue
     .line 739
@@ -30,8 +17,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 3
-    .param p1, "c"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 735
@@ -43,7 +28,6 @@
 
 .method public constructor <init>(Landroid/view/ViewGroup$LayoutParams;)V
     .registers 2
-    .param p1, "source"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
     .line 743
@@ -55,7 +39,6 @@
 
 .method public constructor <init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
     .registers 2
-    .param p1, "source"    # Landroid/view/ViewGroup$MarginLayoutParams;
 
     .prologue
     .line 747

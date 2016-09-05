@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bzbs/lib/survey/control/PullToRefreshListView;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x401a
-    name = "State"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum",
@@ -24,13 +15,13 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
+.field public static final enum a:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
 
-.field public static final enum PULL_TO_REFRESH:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
+.field public static final enum b:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
 
-.field public static final enum REFRESHING:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
+.field public static final enum c:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
 
-.field public static final enum RELEASE_TO_REFRESH:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
+.field private static final synthetic d:[Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
 
 
 # direct methods
@@ -51,7 +42,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->PULL_TO_REFRESH:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
+    sput-object v0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->a:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
 
     new-instance v0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
 
@@ -59,7 +50,7 @@
 
     invoke-direct {v0, v1, v3}, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->RELEASE_TO_REFRESH:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
+    sput-object v0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->b:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
 
     new-instance v0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
 
@@ -67,26 +58,26 @@
 
     invoke-direct {v0, v1, v4}, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->REFRESHING:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
+    sput-object v0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->c:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
 
     .line 65
     const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
 
-    sget-object v1, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->PULL_TO_REFRESH:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
+    sget-object v1, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->a:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->RELEASE_TO_REFRESH:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
+    sget-object v1, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->b:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->REFRESHING:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
+    sget-object v1, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->c:Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
 
     aput-object v1, v0, v4
 
-    sput-object v0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->$VALUES:[Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
+    sput-object v0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->d:[Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
 
     return-void
 .end method
@@ -108,7 +99,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 65
@@ -128,7 +118,7 @@
 
     .prologue
     .line 65
-    sget-object v0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->$VALUES:[Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
+    sget-object v0, Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->d:[Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;
 
     invoke-virtual {v0}, [Lcom/bzbs/lib/survey/control/PullToRefreshListView$State;->clone()Ljava/lang/Object;
 

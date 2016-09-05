@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract onSizeReady(II)V
+.method public abstract a(II)V
 .end method

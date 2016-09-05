@@ -11,24 +11,18 @@
     value = Lcom/samsung/privilege/activity/MainPagerActivity;->onCreate(Landroid/os/Bundle;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+.field final synthetic a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/MainPagerActivity;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
 
     .prologue
-    .line 274
-    iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$2;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .line 272
+    iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$2;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,44 +31,39 @@
 
 
 # virtual methods
-.method public onDrawerClosed(Landroid/view/View;)V
+.method public a(I)V
     .registers 2
-    .param p1, "drawerView"    # Landroid/view/View;
 
     .prologue
-    .line 288
+    .line 291
     return-void
 .end method
 
-.method public onDrawerOpened(Landroid/view/View;)V
+.method public a(Landroid/view/View;)V
     .registers 3
-    .param p1, "drawerView"    # Landroid/view/View;
 
     .prologue
-    .line 282
+    .line 280
     const-string/jumbo v0, "Menu"
 
-    invoke-static {v0}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsScreen(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;)V
 
-    .line 283
+    .line 281
     return-void
 .end method
 
-.method public onDrawerSlide(Landroid/view/View;F)V
+.method public a(Landroid/view/View;F)V
     .registers 3
-    .param p1, "drawerView"    # Landroid/view/View;
-    .param p2, "slideOffset"    # F
 
     .prologue
-    .line 278
+    .line 276
     return-void
 .end method
 
-.method public onDrawerStateChanged(I)V
+.method public b(Landroid/view/View;)V
     .registers 2
-    .param p1, "newState"    # I
 
     .prologue
-    .line 293
+    .line 286
     return-void
 .end method

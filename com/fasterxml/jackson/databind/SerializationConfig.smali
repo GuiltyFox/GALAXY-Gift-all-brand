@@ -34,9 +34,6 @@
 # direct methods
 .method private constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;II)V
     .registers 5
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .param p2, "mapperFeatures"    # I
-    .param p3, "serFeatures"    # I
 
     .prologue
     .line 90
@@ -66,8 +63,6 @@
 
 .method private constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/annotation/JsonInclude$Include;)V
     .registers 4
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .param p2, "incl"    # Lcom/fasterxml/jackson/annotation/JsonInclude$Include;
 
     .prologue
     .line 122
@@ -97,8 +92,6 @@
 
 .method private constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/cfg/BaseSettings;)V
     .registers 4
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .param p2, "base"    # Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
     .prologue
     .line 98
@@ -130,8 +123,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/cfg/ContextAttributes;)V
     .registers 4
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .param p2, "attrs"    # Lcom/fasterxml/jackson/databind/cfg/ContextAttributes;
 
     .prologue
     .line 152
@@ -163,8 +154,6 @@
 
 .method private constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/jsontype/SubtypeResolver;)V
     .registers 4
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .param p2, "str"    # Lcom/fasterxml/jackson/databind/jsontype/SubtypeResolver;
 
     .prologue
     .line 82
@@ -196,8 +185,6 @@
 
 .method private constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/ser/FilterProvider;)V
     .registers 4
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .param p2, "filters"    # Lcom/fasterxml/jackson/databind/ser/FilterProvider;
 
     .prologue
     .line 106
@@ -227,7 +214,6 @@
 
 .method private constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;Ljava/lang/Class;)V
     .registers 4
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/SerializationConfig;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -239,7 +225,6 @@
 
     .prologue
     .line 114
-    .local p2, "view":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0, p1, p2}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;-><init>(Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;Ljava/lang/Class;)V
 
     .line 55
@@ -268,8 +253,6 @@
 
 .method private constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;Ljava/lang/String;)V
     .registers 4
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .param p2, "rootName"    # Ljava/lang/String;
 
     .prologue
     .line 130
@@ -301,7 +284,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/SerializationConfig;Ljava/util/Map;)V
     .registers 4
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/SerializationConfig;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -316,7 +298,6 @@
 
     .prologue
     .line 141
-    .local p2, "mixins":Ljava/util/Map;, "Ljava/util/Map<Lcom/fasterxml/jackson/databind/type/ClassKey;Ljava/lang/Class<*>;>;"
     invoke-direct {p0, p1, p2}, Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;-><init>(Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;Ljava/util/Map;)V
 
     .line 55
@@ -345,8 +326,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/cfg/BaseSettings;Lcom/fasterxml/jackson/databind/jsontype/SubtypeResolver;Ljava/util/Map;)V
     .registers 6
-    .param p1, "base"    # Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
-    .param p2, "str"    # Lcom/fasterxml/jackson/databind/jsontype/SubtypeResolver;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -361,7 +340,6 @@
     .end annotation
 
     .prologue
-    .local p3, "mixins":Ljava/util/Map;, "Ljava/util/Map<Lcom/fasterxml/jackson/databind/type/ClassKey;Ljava/lang/Class<*>;>;"
     const/4 v1, 0x0
 
     .line 75
@@ -388,7 +366,6 @@
 
 .method private final _withBase(Lcom/fasterxml/jackson/databind/cfg/BaseSettings;)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 3
-    .param p1, "newBase"    # Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
     .prologue
     .line 317
@@ -396,11 +373,9 @@
 
     if-ne v0, p1, :cond_5
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/SerializationConfig;
 
@@ -460,7 +435,6 @@
     move-result-object v0
 
     .line 462
-    .local v0, "vchecker":Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;, "Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker<*>;"
     sget-object v1, Lcom/fasterxml/jackson/databind/MapperFeature;->AUTO_DETECT_GETTERS:Lcom/fasterxml/jackson/databind/MapperFeature;
 
     invoke-virtual {p0, v1}, Lcom/fasterxml/jackson/databind/SerializationConfig;->isEnabled(Lcom/fasterxml/jackson/databind/MapperFeature;)Z
@@ -559,7 +533,6 @@
 
 .method public final hasSerializationFeatures(I)Z
     .registers 3
-    .param p1, "featureMask"    # I
 
     .prologue
     .line 492
@@ -582,7 +555,6 @@
 
 .method public introspect(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/BeanDescription;
     .registers 3
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
@@ -608,7 +580,6 @@
 
 .method public introspectClassAnnotations(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/BeanDescription;
     .registers 3
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
 
     .prologue
     .line 445
@@ -625,7 +596,6 @@
 
 .method public introspectDirectClassAnnotations(Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/BeanDescription;
     .registers 3
-    .param p1, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
 
     .prologue
     .line 455
@@ -642,7 +612,6 @@
 
 .method public final isEnabled(Lcom/fasterxml/jackson/databind/SerializationFeature;)Z
     .registers 4
-    .param p1, "f"    # Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     .prologue
     .line 482
@@ -748,7 +717,6 @@
 
 .method public with(Lcom/fasterxml/jackson/core/Base64Variant;)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 3
-    .param p1, "base64"    # Lcom/fasterxml/jackson/core/Base64Variant;
 
     .prologue
     .line 308
@@ -767,7 +735,6 @@
 
 .method public with(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 3
-    .param p1, "ai"    # Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
     .prologue
     .line 209
@@ -786,52 +753,45 @@
 
 .method public with(Lcom/fasterxml/jackson/databind/MapperFeature;Z)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 6
-    .param p1, "feature"    # Lcom/fasterxml/jackson/databind/MapperFeature;
-    .param p2, "state"    # Z
 
     .prologue
     .line 198
-    if-eqz p2, :cond_f
+    if-eqz p2, :cond_e
 
     .line 199
-    iget v1, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
+    iget v0, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/MapperFeature;->getMask()I
 
-    move-result v2
+    move-result v1
 
-    or-int v0, v1, v2
+    or-int/2addr v0, v1
 
     .line 203
-    .local v0, "newMapperFlags":I
-    :goto_a
+    :goto_9
     iget v1, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
 
-    if-ne v0, v1, :cond_1a
+    if-ne v0, v1, :cond_18
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
-    :goto_e
+    :goto_d
     return-object p0
 
     .line 201
-    .end local v0    # "newMapperFlags":I
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
-    :cond_f
-    iget v1, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
+    :cond_e
+    iget v0, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/MapperFeature;->getMask()I
 
-    move-result v2
+    move-result v1
 
-    xor-int/lit8 v2, v2, -0x1
+    xor-int/lit8 v1, v1, -0x1
 
-    and-int v0, v1, v2
+    and-int/2addr v0, v1
 
-    .restart local v0    # "newMapperFlags":I
-    goto :goto_a
+    goto :goto_9
 
     .line 203
-    :cond_1a
+    :cond_18
     new-instance v1, Lcom/fasterxml/jackson/databind/SerializationConfig;
 
     iget v2, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
@@ -840,12 +800,11 @@
 
     move-object p0, v1
 
-    goto :goto_e
+    goto :goto_d
 .end method
 
 .method public with(Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 3
-    .param p1, "pns"    # Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;
 
     .prologue
     .line 251
@@ -864,112 +823,95 @@
 
 .method public with(Lcom/fasterxml/jackson/databind/SerializationFeature;)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 5
-    .param p1, "feature"    # Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     .prologue
     .line 332
-    iget v1, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
+    iget v0, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/SerializationFeature;->getMask()I
 
-    move-result v2
+    move-result v1
 
-    or-int v0, v1, v2
+    or-int/2addr v1, v0
 
     .line 333
-    .local v0, "newSerFeatures":I
-    iget v1, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
+    iget v0, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
 
-    if-ne v0, v1, :cond_d
+    if-ne v1, v0, :cond_c
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
-    :goto_c
+    :goto_b
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
-    :cond_d
-    new-instance v1, Lcom/fasterxml/jackson/databind/SerializationConfig;
+    :cond_c
+    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationConfig;
 
     iget v2, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
 
-    invoke-direct {v1, p0, v2, v0}, Lcom/fasterxml/jackson/databind/SerializationConfig;-><init>(Lcom/fasterxml/jackson/databind/SerializationConfig;II)V
+    invoke-direct {v0, p0, v2, v1}, Lcom/fasterxml/jackson/databind/SerializationConfig;-><init>(Lcom/fasterxml/jackson/databind/SerializationConfig;II)V
 
-    move-object p0, v1
+    move-object p0, v0
 
-    goto :goto_c
+    goto :goto_b
 .end method
 
 .method public varargs with(Lcom/fasterxml/jackson/databind/SerializationFeature;[Lcom/fasterxml/jackson/databind/SerializationFeature;)Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .registers 10
-    .param p1, "first"    # Lcom/fasterxml/jackson/databind/SerializationFeature;
-    .param p2, "features"    # [Lcom/fasterxml/jackson/databind/SerializationFeature;
+    .registers 7
 
     .prologue
     .line 343
-    iget v5, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
+    iget v0, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/SerializationFeature;->getMask()I
 
-    move-result v6
+    move-result v1
 
-    or-int v4, v5, v6
+    or-int/2addr v1, v0
 
     .line 344
-    .local v4, "newSerFeatures":I
-    move-object v0, p2
+    array-length v2, p2
 
-    .local v0, "arr$":[Lcom/fasterxml/jackson/databind/SerializationFeature;
-    array-length v3, v0
+    const/4 v0, 0x0
 
-    .local v3, "len$":I
-    const/4 v2, 0x0
+    :goto_9
+    if-ge v0, v2, :cond_15
 
-    .local v2, "i$":I
-    :goto_b
-    if-ge v2, v3, :cond_17
-
-    aget-object v1, v0, v2
+    aget-object v3, p2, v0
 
     .line 345
-    .local v1, "f":Lcom/fasterxml/jackson/databind/SerializationFeature;
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/SerializationFeature;->getMask()I
+    invoke-virtual {v3}, Lcom/fasterxml/jackson/databind/SerializationFeature;->getMask()I
 
-    move-result v5
+    move-result v3
 
-    or-int/2addr v4, v5
+    or-int/2addr v1, v3
 
     .line 344
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    goto :goto_b
+    goto :goto_9
 
     .line 347
-    .end local v1    # "f":Lcom/fasterxml/jackson/databind/SerializationFeature;
-    :cond_17
-    iget v5, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
+    :cond_15
+    iget v0, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
 
-    if-ne v4, v5, :cond_1c
+    if-ne v1, v0, :cond_1a
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
-    :goto_1b
+    :goto_19
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
-    :cond_1c
-    new-instance v5, Lcom/fasterxml/jackson/databind/SerializationConfig;
+    :cond_1a
+    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationConfig;
 
-    iget v6, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
+    iget v2, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
 
-    invoke-direct {v5, p0, v6, v4}, Lcom/fasterxml/jackson/databind/SerializationConfig;-><init>(Lcom/fasterxml/jackson/databind/SerializationConfig;II)V
+    invoke-direct {v0, p0, v2, v1}, Lcom/fasterxml/jackson/databind/SerializationConfig;-><init>(Lcom/fasterxml/jackson/databind/SerializationConfig;II)V
 
-    move-object p0, v5
+    move-object p0, v0
 
-    goto :goto_1b
+    goto :goto_19
 .end method
 
 .method public with(Lcom/fasterxml/jackson/databind/cfg/ContextAttributes;)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 3
-    .param p1, "attrs"    # Lcom/fasterxml/jackson/databind/cfg/ContextAttributes;
 
     .prologue
     .line 313
@@ -977,11 +919,9 @@
 
     if-ne p1, v0, :cond_5
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/SerializationConfig;
 
@@ -994,7 +934,6 @@
 
 .method public with(Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 3
-    .param p1, "hi"    # Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;
 
     .prologue
     .line 246
@@ -1013,7 +952,6 @@
 
 .method public with(Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector;)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 3
-    .param p1, "ci"    # Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector;
 
     .prologue
     .line 224
@@ -1043,7 +981,6 @@
 
     .prologue
     .line 288
-    .local p1, "vc":Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;, "Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_base:Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
     invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;->withVisibilityChecker(Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;)Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
@@ -1059,7 +996,6 @@
 
 .method public with(Lcom/fasterxml/jackson/databind/jsontype/SubtypeResolver;)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 3
-    .param p1, "str"    # Lcom/fasterxml/jackson/databind/jsontype/SubtypeResolver;
 
     .prologue
     .line 268
@@ -1067,11 +1003,9 @@
 
     if-ne p1, v0, :cond_5
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/SerializationConfig;
 
@@ -1095,7 +1029,6 @@
 
     .prologue
     .line 278
-    .local p1, "trb":Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;, "Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_base:Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
 
     invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/databind/cfg/BaseSettings;->withTypeResolverBuilder(Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;)Lcom/fasterxml/jackson/databind/cfg/BaseSettings;
@@ -1111,7 +1044,6 @@
 
 .method public with(Lcom/fasterxml/jackson/databind/type/TypeFactory;)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 3
-    .param p1, "tf"    # Lcom/fasterxml/jackson/databind/type/TypeFactory;
 
     .prologue
     .line 273
@@ -1130,7 +1062,6 @@
 
 .method public with(Ljava/text/DateFormat;)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 4
-    .param p1, "df"    # Ljava/text/DateFormat;
 
     .prologue
     .line 234
@@ -1145,7 +1076,6 @@
     invoke-direct {v0, p0, v1}, Lcom/fasterxml/jackson/databind/SerializationConfig;-><init>(Lcom/fasterxml/jackson/databind/SerializationConfig;Lcom/fasterxml/jackson/databind/cfg/BaseSettings;)V
 
     .line 236
-    .local v0, "cfg":Lcom/fasterxml/jackson/databind/SerializationConfig;
     if-nez p1, :cond_14
 
     .line 237
@@ -1172,7 +1102,6 @@
 
 .method public with(Ljava/util/Locale;)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 3
-    .param p1, "l"    # Ljava/util/Locale;
 
     .prologue
     .line 298
@@ -1191,7 +1120,6 @@
 
 .method public with(Ljava/util/TimeZone;)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 3
-    .param p1, "tz"    # Ljava/util/TimeZone;
 
     .prologue
     .line 303
@@ -1209,70 +1137,57 @@
 .end method
 
 .method public varargs with([Lcom/fasterxml/jackson/databind/MapperFeature;)Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .registers 9
-    .param p1, "features"    # [Lcom/fasterxml/jackson/databind/MapperFeature;
+    .registers 6
 
     .prologue
     .line 171
-    iget v4, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
+    iget v1, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
 
     .line 172
-    .local v4, "newMapperFlags":I
-    move-object v0, p1
+    array-length v2, p1
 
-    .local v0, "arr$":[Lcom/fasterxml/jackson/databind/MapperFeature;
-    array-length v3, v0
+    const/4 v0, 0x0
 
-    .local v3, "len$":I
-    const/4 v2, 0x0
+    :goto_4
+    if-ge v0, v2, :cond_10
 
-    .local v2, "i$":I
-    :goto_5
-    if-ge v2, v3, :cond_11
-
-    aget-object v1, v0, v2
+    aget-object v3, p1, v0
 
     .line 173
-    .local v1, "f":Lcom/fasterxml/jackson/databind/MapperFeature;
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/MapperFeature;->getMask()I
+    invoke-virtual {v3}, Lcom/fasterxml/jackson/databind/MapperFeature;->getMask()I
 
-    move-result v5
+    move-result v3
 
-    or-int/2addr v4, v5
+    or-int/2addr v1, v3
 
     .line 172
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    goto :goto_5
+    goto :goto_4
 
     .line 175
-    .end local v1    # "f":Lcom/fasterxml/jackson/databind/MapperFeature;
-    :cond_11
-    iget v5, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
+    :cond_10
+    iget v0, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
 
-    if-ne v4, v5, :cond_16
+    if-ne v1, v0, :cond_15
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
-    :goto_15
+    :goto_14
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
-    :cond_16
-    new-instance v5, Lcom/fasterxml/jackson/databind/SerializationConfig;
+    :cond_15
+    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationConfig;
 
-    iget v6, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
+    iget v2, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
 
-    invoke-direct {v5, p0, v4, v6}, Lcom/fasterxml/jackson/databind/SerializationConfig;-><init>(Lcom/fasterxml/jackson/databind/SerializationConfig;II)V
+    invoke-direct {v0, p0, v1, v2}, Lcom/fasterxml/jackson/databind/SerializationConfig;-><init>(Lcom/fasterxml/jackson/databind/SerializationConfig;II)V
 
-    move-object p0, v5
+    move-object p0, v0
 
-    goto :goto_15
+    goto :goto_14
 .end method
 
 .method public bridge synthetic with(Lcom/fasterxml/jackson/databind/MapperFeature;Z)Lcom/fasterxml/jackson/databind/cfg/MapperConfig;
     .registers 4
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/MapperFeature;
-    .param p2, "x1"    # Z
 
     .prologue
     .line 36
@@ -1285,7 +1200,6 @@
 
 .method public bridge synthetic with([Lcom/fasterxml/jackson/databind/MapperFeature;)Lcom/fasterxml/jackson/databind/cfg/MapperConfig;
     .registers 3
-    .param p1, "x0"    # [Lcom/fasterxml/jackson/databind/MapperFeature;
 
     .prologue
     .line 36
@@ -1298,7 +1212,6 @@
 
 .method public bridge synthetic with(Lcom/fasterxml/jackson/core/Base64Variant;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/core/Base64Variant;
 
     .prologue
     .line 36
@@ -1311,7 +1224,6 @@
 
 .method public bridge synthetic with(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
     .prologue
     .line 36
@@ -1324,7 +1236,6 @@
 
 .method public bridge synthetic with(Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;
 
     .prologue
     .line 36
@@ -1337,7 +1248,6 @@
 
 .method public bridge synthetic with(Lcom/fasterxml/jackson/databind/cfg/ContextAttributes;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/cfg/ContextAttributes;
 
     .prologue
     .line 36
@@ -1350,7 +1260,6 @@
 
 .method public bridge synthetic with(Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/cfg/HandlerInstantiator;
 
     .prologue
     .line 36
@@ -1363,7 +1272,6 @@
 
 .method public bridge synthetic with(Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/introspect/ClassIntrospector;
 
     .prologue
     .line 36
@@ -1376,7 +1284,6 @@
 
 .method public bridge synthetic with(Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/introspect/VisibilityChecker;
 
     .prologue
     .line 36
@@ -1389,7 +1296,6 @@
 
 .method public bridge synthetic with(Lcom/fasterxml/jackson/databind/jsontype/SubtypeResolver;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/jsontype/SubtypeResolver;
 
     .prologue
     .line 36
@@ -1402,7 +1308,6 @@
 
 .method public bridge synthetic with(Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/jsontype/TypeResolverBuilder;
 
     .prologue
     .line 36
@@ -1415,7 +1320,6 @@
 
 .method public bridge synthetic with(Lcom/fasterxml/jackson/databind/type/TypeFactory;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/type/TypeFactory;
 
     .prologue
     .line 36
@@ -1428,7 +1332,6 @@
 
 .method public bridge synthetic with(Ljava/text/DateFormat;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
     .registers 3
-    .param p1, "x0"    # Ljava/text/DateFormat;
 
     .prologue
     .line 36
@@ -1441,7 +1344,6 @@
 
 .method public bridge synthetic with(Ljava/util/Locale;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
     .registers 3
-    .param p1, "x0"    # Ljava/util/Locale;
 
     .prologue
     .line 36
@@ -1454,7 +1356,6 @@
 
 .method public bridge synthetic with(Ljava/util/TimeZone;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
     .registers 3
-    .param p1, "x0"    # Ljava/util/TimeZone;
 
     .prologue
     .line 36
@@ -1467,7 +1368,6 @@
 
 .method public withAppendedAnnotationIntrospector(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 3
-    .param p1, "ai"    # Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
     .prologue
     .line 214
@@ -1486,7 +1386,6 @@
 
 .method public bridge synthetic withAppendedAnnotationIntrospector(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
     .prologue
     .line 36
@@ -1498,69 +1397,57 @@
 .end method
 
 .method public varargs withFeatures([Lcom/fasterxml/jackson/databind/SerializationFeature;)Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .registers 9
-    .param p1, "features"    # [Lcom/fasterxml/jackson/databind/SerializationFeature;
+    .registers 6
 
     .prologue
     .line 357
-    iget v4, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
+    iget v1, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
 
     .line 358
-    .local v4, "newSerFeatures":I
-    move-object v0, p1
+    array-length v2, p1
 
-    .local v0, "arr$":[Lcom/fasterxml/jackson/databind/SerializationFeature;
-    array-length v3, v0
+    const/4 v0, 0x0
 
-    .local v3, "len$":I
-    const/4 v2, 0x0
+    :goto_4
+    if-ge v0, v2, :cond_10
 
-    .local v2, "i$":I
-    :goto_5
-    if-ge v2, v3, :cond_11
-
-    aget-object v1, v0, v2
+    aget-object v3, p1, v0
 
     .line 359
-    .local v1, "f":Lcom/fasterxml/jackson/databind/SerializationFeature;
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/SerializationFeature;->getMask()I
+    invoke-virtual {v3}, Lcom/fasterxml/jackson/databind/SerializationFeature;->getMask()I
 
-    move-result v5
+    move-result v3
 
-    or-int/2addr v4, v5
+    or-int/2addr v1, v3
 
     .line 358
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    goto :goto_5
+    goto :goto_4
 
     .line 361
-    .end local v1    # "f":Lcom/fasterxml/jackson/databind/SerializationFeature;
-    :cond_11
-    iget v5, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
+    :cond_10
+    iget v0, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
 
-    if-ne v4, v5, :cond_16
+    if-ne v1, v0, :cond_15
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
-    :goto_15
+    :goto_14
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
-    :cond_16
-    new-instance v5, Lcom/fasterxml/jackson/databind/SerializationConfig;
+    :cond_15
+    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationConfig;
 
-    iget v6, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
+    iget v2, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
 
-    invoke-direct {v5, p0, v6, v4}, Lcom/fasterxml/jackson/databind/SerializationConfig;-><init>(Lcom/fasterxml/jackson/databind/SerializationConfig;II)V
+    invoke-direct {v0, p0, v2, v1}, Lcom/fasterxml/jackson/databind/SerializationConfig;-><init>(Lcom/fasterxml/jackson/databind/SerializationConfig;II)V
 
-    move-object p0, v5
+    move-object p0, v0
 
-    goto :goto_15
+    goto :goto_14
 .end method
 
 .method public withFilters(Lcom/fasterxml/jackson/databind/ser/FilterProvider;)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 3
-    .param p1, "filterProvider"    # Lcom/fasterxml/jackson/databind/ser/FilterProvider;
 
     .prologue
     .line 405
@@ -1568,11 +1455,9 @@
 
     if-ne p1, v0, :cond_5
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/SerializationConfig;
 
@@ -1585,7 +1470,6 @@
 
 .method public withInsertedAnnotationIntrospector(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 3
-    .param p1, "ai"    # Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
     .prologue
     .line 219
@@ -1604,7 +1488,6 @@
 
 .method public bridge synthetic withInsertedAnnotationIntrospector(Lcom/fasterxml/jackson/databind/AnnotationIntrospector;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/AnnotationIntrospector;
 
     .prologue
     .line 36
@@ -1617,7 +1500,6 @@
 
 .method public withRootName(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 3
-    .param p1, "rootName"    # Ljava/lang/String;
 
     .prologue
     .line 256
@@ -1629,13 +1511,11 @@
     if-nez v0, :cond_f
 
     .line 263
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
     :cond_6
     :goto_6
     return-object p0
 
     .line 260
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
     :cond_7
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_rootName:Ljava/lang/String;
 
@@ -1658,7 +1538,6 @@
 
 .method public bridge synthetic withRootName(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/String;
 
     .prologue
     .line 36
@@ -1671,7 +1550,6 @@
 
 .method public withSerializationInclusion(Lcom/fasterxml/jackson/annotation/JsonInclude$Include;)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 3
-    .param p1, "incl"    # Lcom/fasterxml/jackson/annotation/JsonInclude$Include;
 
     .prologue
     .line 409
@@ -1679,11 +1557,9 @@
 
     if-ne v0, p1, :cond_5
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/SerializationConfig;
 
@@ -1707,16 +1583,13 @@
 
     .prologue
     .line 283
-    .local p1, "view":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_view:Ljava/lang/Class;
 
     if-ne v0, p1, :cond_5
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/SerializationConfig;
 
@@ -1729,7 +1602,6 @@
 
 .method public bridge synthetic withView(Ljava/lang/Class;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/Class;
 
     .prologue
     .line 36
@@ -1742,8 +1614,6 @@
 
 .method public withVisibility(Lcom/fasterxml/jackson/annotation/PropertyAccessor;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 4
-    .param p1, "forMethod"    # Lcom/fasterxml/jackson/annotation/PropertyAccessor;
-    .param p2, "visibility"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .prologue
     .line 293
@@ -1762,8 +1632,6 @@
 
 .method public bridge synthetic withVisibility(Lcom/fasterxml/jackson/annotation/PropertyAccessor;Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;)Lcom/fasterxml/jackson/databind/cfg/MapperConfigBase;
     .registers 4
-    .param p1, "x0"    # Lcom/fasterxml/jackson/annotation/PropertyAccessor;
-    .param p2, "x1"    # Lcom/fasterxml/jackson/annotation/JsonAutoDetect$Visibility;
 
     .prologue
     .line 36
@@ -1776,181 +1644,153 @@
 
 .method public without(Lcom/fasterxml/jackson/databind/SerializationFeature;)Lcom/fasterxml/jackson/databind/SerializationConfig;
     .registers 5
-    .param p1, "feature"    # Lcom/fasterxml/jackson/databind/SerializationFeature;
 
     .prologue
     .line 371
-    iget v1, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
+    iget v0, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/SerializationFeature;->getMask()I
 
-    move-result v2
+    move-result v1
 
-    xor-int/lit8 v2, v2, -0x1
+    xor-int/lit8 v1, v1, -0x1
 
-    and-int v0, v1, v2
+    and-int/2addr v1, v0
 
     .line 372
-    .local v0, "newSerFeatures":I
-    iget v1, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
+    iget v0, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
 
-    if-ne v0, v1, :cond_f
+    if-ne v1, v0, :cond_e
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
-    :goto_e
+    :goto_d
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
-    :cond_f
-    new-instance v1, Lcom/fasterxml/jackson/databind/SerializationConfig;
+    :cond_e
+    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationConfig;
 
     iget v2, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
 
-    invoke-direct {v1, p0, v2, v0}, Lcom/fasterxml/jackson/databind/SerializationConfig;-><init>(Lcom/fasterxml/jackson/databind/SerializationConfig;II)V
+    invoke-direct {v0, p0, v2, v1}, Lcom/fasterxml/jackson/databind/SerializationConfig;-><init>(Lcom/fasterxml/jackson/databind/SerializationConfig;II)V
 
-    move-object p0, v1
+    move-object p0, v0
 
-    goto :goto_e
+    goto :goto_d
 .end method
 
 .method public varargs without(Lcom/fasterxml/jackson/databind/SerializationFeature;[Lcom/fasterxml/jackson/databind/SerializationFeature;)Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .registers 10
-    .param p1, "first"    # Lcom/fasterxml/jackson/databind/SerializationFeature;
-    .param p2, "features"    # [Lcom/fasterxml/jackson/databind/SerializationFeature;
+    .registers 7
 
     .prologue
     .line 382
-    iget v5, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
+    iget v0, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
 
     invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/SerializationFeature;->getMask()I
 
-    move-result v6
+    move-result v1
 
-    xor-int/lit8 v6, v6, -0x1
+    xor-int/lit8 v1, v1, -0x1
 
-    and-int v4, v5, v6
+    and-int/2addr v1, v0
 
     .line 383
-    .local v4, "newSerFeatures":I
-    move-object v0, p2
+    array-length v2, p2
 
-    .local v0, "arr$":[Lcom/fasterxml/jackson/databind/SerializationFeature;
-    array-length v3, v0
+    const/4 v0, 0x0
 
-    .local v3, "len$":I
-    const/4 v2, 0x0
+    :goto_b
+    if-ge v0, v2, :cond_19
 
-    .local v2, "i$":I
-    :goto_d
-    if-ge v2, v3, :cond_1b
-
-    aget-object v1, v0, v2
+    aget-object v3, p2, v0
 
     .line 384
-    .local v1, "f":Lcom/fasterxml/jackson/databind/SerializationFeature;
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/SerializationFeature;->getMask()I
+    invoke-virtual {v3}, Lcom/fasterxml/jackson/databind/SerializationFeature;->getMask()I
 
-    move-result v5
+    move-result v3
 
-    xor-int/lit8 v5, v5, -0x1
+    xor-int/lit8 v3, v3, -0x1
 
-    and-int/2addr v4, v5
+    and-int/2addr v1, v3
 
     .line 383
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    goto :goto_d
+    goto :goto_b
 
     .line 386
-    .end local v1    # "f":Lcom/fasterxml/jackson/databind/SerializationFeature;
-    :cond_1b
-    iget v5, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
+    :cond_19
+    iget v0, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
 
-    if-ne v4, v5, :cond_20
+    if-ne v1, v0, :cond_1e
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
-    :goto_1f
+    :goto_1d
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
-    :cond_20
-    new-instance v5, Lcom/fasterxml/jackson/databind/SerializationConfig;
+    :cond_1e
+    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationConfig;
 
-    iget v6, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
+    iget v2, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
 
-    invoke-direct {v5, p0, v6, v4}, Lcom/fasterxml/jackson/databind/SerializationConfig;-><init>(Lcom/fasterxml/jackson/databind/SerializationConfig;II)V
+    invoke-direct {v0, p0, v2, v1}, Lcom/fasterxml/jackson/databind/SerializationConfig;-><init>(Lcom/fasterxml/jackson/databind/SerializationConfig;II)V
 
-    move-object p0, v5
+    move-object p0, v0
 
-    goto :goto_1f
+    goto :goto_1d
 .end method
 
 .method public varargs without([Lcom/fasterxml/jackson/databind/MapperFeature;)Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .registers 9
-    .param p1, "features"    # [Lcom/fasterxml/jackson/databind/MapperFeature;
+    .registers 6
 
     .prologue
     .line 186
-    iget v4, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
+    iget v1, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
 
     .line 187
-    .local v4, "newMapperFlags":I
-    move-object v0, p1
+    array-length v2, p1
 
-    .local v0, "arr$":[Lcom/fasterxml/jackson/databind/MapperFeature;
-    array-length v3, v0
+    const/4 v0, 0x0
 
-    .local v3, "len$":I
-    const/4 v2, 0x0
+    :goto_4
+    if-ge v0, v2, :cond_12
 
-    .local v2, "i$":I
-    :goto_5
-    if-ge v2, v3, :cond_13
-
-    aget-object v1, v0, v2
+    aget-object v3, p1, v0
 
     .line 188
-    .local v1, "f":Lcom/fasterxml/jackson/databind/MapperFeature;
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/MapperFeature;->getMask()I
+    invoke-virtual {v3}, Lcom/fasterxml/jackson/databind/MapperFeature;->getMask()I
 
-    move-result v5
+    move-result v3
 
-    xor-int/lit8 v5, v5, -0x1
+    xor-int/lit8 v3, v3, -0x1
 
-    and-int/2addr v4, v5
+    and-int/2addr v1, v3
 
     .line 187
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    goto :goto_5
+    goto :goto_4
 
     .line 190
-    .end local v1    # "f":Lcom/fasterxml/jackson/databind/MapperFeature;
-    :cond_13
-    iget v5, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
+    :cond_12
+    iget v0, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
 
-    if-ne v4, v5, :cond_18
+    if-ne v1, v0, :cond_17
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
-    :goto_17
+    :goto_16
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
-    :cond_18
-    new-instance v5, Lcom/fasterxml/jackson/databind/SerializationConfig;
+    :cond_17
+    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationConfig;
 
-    iget v6, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
+    iget v2, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
 
-    invoke-direct {v5, p0, v4, v6}, Lcom/fasterxml/jackson/databind/SerializationConfig;-><init>(Lcom/fasterxml/jackson/databind/SerializationConfig;II)V
+    invoke-direct {v0, p0, v1, v2}, Lcom/fasterxml/jackson/databind/SerializationConfig;-><init>(Lcom/fasterxml/jackson/databind/SerializationConfig;II)V
 
-    move-object p0, v5
+    move-object p0, v0
 
-    goto :goto_17
+    goto :goto_16
 .end method
 
 .method public bridge synthetic without([Lcom/fasterxml/jackson/databind/MapperFeature;)Lcom/fasterxml/jackson/databind/cfg/MapperConfig;
     .registers 3
-    .param p1, "x0"    # [Lcom/fasterxml/jackson/databind/MapperFeature;
 
     .prologue
     .line 36
@@ -1962,64 +1802,53 @@
 .end method
 
 .method public varargs withoutFeatures([Lcom/fasterxml/jackson/databind/SerializationFeature;)Lcom/fasterxml/jackson/databind/SerializationConfig;
-    .registers 9
-    .param p1, "features"    # [Lcom/fasterxml/jackson/databind/SerializationFeature;
+    .registers 6
 
     .prologue
     .line 396
-    iget v4, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
+    iget v1, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
 
     .line 397
-    .local v4, "newSerFeatures":I
-    move-object v0, p1
+    array-length v2, p1
 
-    .local v0, "arr$":[Lcom/fasterxml/jackson/databind/SerializationFeature;
-    array-length v3, v0
+    const/4 v0, 0x0
 
-    .local v3, "len$":I
-    const/4 v2, 0x0
+    :goto_4
+    if-ge v0, v2, :cond_12
 
-    .local v2, "i$":I
-    :goto_5
-    if-ge v2, v3, :cond_13
-
-    aget-object v1, v0, v2
+    aget-object v3, p1, v0
 
     .line 398
-    .local v1, "f":Lcom/fasterxml/jackson/databind/SerializationFeature;
-    invoke-virtual {v1}, Lcom/fasterxml/jackson/databind/SerializationFeature;->getMask()I
+    invoke-virtual {v3}, Lcom/fasterxml/jackson/databind/SerializationFeature;->getMask()I
 
-    move-result v5
+    move-result v3
 
-    xor-int/lit8 v5, v5, -0x1
+    xor-int/lit8 v3, v3, -0x1
 
-    and-int/2addr v4, v5
+    and-int/2addr v1, v3
 
     .line 397
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    goto :goto_5
+    goto :goto_4
 
     .line 400
-    .end local v1    # "f":Lcom/fasterxml/jackson/databind/SerializationFeature;
-    :cond_13
-    iget v5, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
+    :cond_12
+    iget v0, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_serFeatures:I
 
-    if-ne v4, v5, :cond_18
+    if-ne v1, v0, :cond_17
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
-    :goto_17
+    :goto_16
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/SerializationConfig;
-    :cond_18
-    new-instance v5, Lcom/fasterxml/jackson/databind/SerializationConfig;
+    :cond_17
+    new-instance v0, Lcom/fasterxml/jackson/databind/SerializationConfig;
 
-    iget v6, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
+    iget v2, p0, Lcom/fasterxml/jackson/databind/SerializationConfig;->_mapperFeatures:I
 
-    invoke-direct {v5, p0, v6, v4}, Lcom/fasterxml/jackson/databind/SerializationConfig;-><init>(Lcom/fasterxml/jackson/databind/SerializationConfig;II)V
+    invoke-direct {v0, p0, v2, v1}, Lcom/fasterxml/jackson/databind/SerializationConfig;-><init>(Lcom/fasterxml/jackson/databind/SerializationConfig;II)V
 
-    move-object p0, v5
+    move-object p0, v0
 
-    goto :goto_17
+    goto :goto_16
 .end method

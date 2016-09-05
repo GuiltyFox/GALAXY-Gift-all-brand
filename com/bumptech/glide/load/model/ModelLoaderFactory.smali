@@ -17,7 +17,7 @@
 
 
 # virtual methods
-.method public abstract build(Landroid/content/Context;Lcom/bumptech/glide/load/model/GenericLoaderFactory;)Lcom/bumptech/glide/load/model/ModelLoader;
+.method public abstract a(Landroid/content/Context;Lcom/bumptech/glide/load/model/GenericLoaderFactory;)Lcom/bumptech/glide/load/model/ModelLoader;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -30,5 +30,5 @@
     .end annotation
 .end method
 
-.method public abstract teardown()V
+.method public abstract a()V
 .end method

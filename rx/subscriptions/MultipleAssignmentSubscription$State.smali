@@ -3,38 +3,25 @@
 .source "MultipleAssignmentSubscription.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lrx/subscriptions/MultipleAssignmentSubscription;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1a
-    name = "State"
-.end annotation
-
-
 # instance fields
-.field final isUnsubscribed:Z
+.field final a:Z
 
-.field final subscription:Lrx/Subscription;
+.field final b:Lrx/Subscription;
 
 
 # direct methods
 .method constructor <init>(ZLrx/Subscription;)V
     .registers 3
-    .param p1, "u"    # Z
-    .param p2, "s"    # Lrx/Subscription;
 
     .prologue
     .line 35
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 36
-    iput-boolean p1, p0, Lrx/subscriptions/MultipleAssignmentSubscription$State;->isUnsubscribed:Z
+    iput-boolean p1, p0, Lrx/subscriptions/MultipleAssignmentSubscription$State;->a:Z
 
     .line 37
-    iput-object p2, p0, Lrx/subscriptions/MultipleAssignmentSubscription$State;->subscription:Lrx/Subscription;
+    iput-object p2, p0, Lrx/subscriptions/MultipleAssignmentSubscription$State;->b:Lrx/Subscription;
 
     .line 38
     return-void
@@ -42,22 +29,7 @@
 
 
 # virtual methods
-.method set(Lrx/Subscription;)Lrx/subscriptions/MultipleAssignmentSubscription$State;
-    .registers 4
-    .param p1, "s"    # Lrx/Subscription;
-
-    .prologue
-    .line 45
-    new-instance v0, Lrx/subscriptions/MultipleAssignmentSubscription$State;
-
-    iget-boolean v1, p0, Lrx/subscriptions/MultipleAssignmentSubscription$State;->isUnsubscribed:Z
-
-    invoke-direct {v0, v1, p1}, Lrx/subscriptions/MultipleAssignmentSubscription$State;-><init>(ZLrx/Subscription;)V
-
-    return-object v0
-.end method
-
-.method unsubscribe()Lrx/subscriptions/MultipleAssignmentSubscription$State;
+.method a()Lrx/subscriptions/MultipleAssignmentSubscription$State;
     .registers 4
 
     .prologue
@@ -66,9 +38,23 @@
 
     const/4 v1, 0x1
 
-    iget-object v2, p0, Lrx/subscriptions/MultipleAssignmentSubscription$State;->subscription:Lrx/Subscription;
+    iget-object v2, p0, Lrx/subscriptions/MultipleAssignmentSubscription$State;->b:Lrx/Subscription;
 
     invoke-direct {v0, v1, v2}, Lrx/subscriptions/MultipleAssignmentSubscription$State;-><init>(ZLrx/Subscription;)V
+
+    return-object v0
+.end method
+
+.method a(Lrx/Subscription;)Lrx/subscriptions/MultipleAssignmentSubscription$State;
+    .registers 4
+
+    .prologue
+    .line 45
+    new-instance v0, Lrx/subscriptions/MultipleAssignmentSubscription$State;
+
+    iget-boolean v1, p0, Lrx/subscriptions/MultipleAssignmentSubscription$State;->a:Z
+
+    invoke-direct {v0, v1, p1}, Lrx/subscriptions/MultipleAssignmentSubscription$State;-><init>(ZLrx/Subscription;)V
 
     return-object v0
 .end method

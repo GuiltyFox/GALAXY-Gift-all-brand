@@ -8,11 +8,6 @@
     value = Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonValueFormat;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4008
-    name = null
-.end annotation
-
 
 # direct methods
 .method constructor <init>(Ljava/lang/String;I)V

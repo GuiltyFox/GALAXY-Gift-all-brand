@@ -7,12 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/facebook/share/model/ShareContent$Builder;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<P:",
@@ -48,11 +42,9 @@
 # direct methods
 .method protected constructor <init>(Landroid/os/Parcel;)V
     .registers 3
-    .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
     .line 50
-    .local p0, "this":Lcom/facebook/share/model/ShareContent;, "Lcom/facebook/share/model/ShareContent<TP;TE;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 51
@@ -97,11 +89,9 @@
 
 .method protected constructor <init>(Lcom/facebook/share/model/ShareContent$Builder;)V
     .registers 3
-    .param p1, "builder"    # Lcom/facebook/share/model/ShareContent$Builder;
 
     .prologue
     .line 43
-    .local p0, "this":Lcom/facebook/share/model/ShareContent;, "Lcom/facebook/share/model/ShareContent<TP;TE;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 44
@@ -142,7 +132,6 @@
 
 .method private readUnmodifiableStringList(Landroid/os/Parcel;)Ljava/util/List;
     .registers 4
-    .param p1, "in"    # Landroid/os/Parcel;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -157,13 +146,11 @@
 
     .prologue
     .line 117
-    .local p0, "this":Lcom/facebook/share/model/ShareContent;, "Lcom/facebook/share/model/ShareContent<TP;TE;>;"
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 118
-    .local v0, "list":Ljava/util/List;, "Ljava/util/List<Ljava/lang/String;>;"
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->readStringList(Ljava/util/List;)V
 
     .line 119
@@ -173,15 +160,15 @@
 
     if-nez v1, :cond_10
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     :goto_f
-    return-object v1
+    return-object v0
 
     :cond_10
     invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_f
 .end method
@@ -193,7 +180,6 @@
 
     .prologue
     .line 106
-    .local p0, "this":Lcom/facebook/share/model/ShareContent;, "Lcom/facebook/share/model/ShareContent<TP;TE;>;"
     const/4 v0, 0x0
 
     return v0
@@ -201,12 +187,9 @@
 
 .method public getContentUrl()Landroid/net/Uri;
     .registers 2
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
 
     .prologue
     .line 67
-    .local p0, "this":Lcom/facebook/share/model/ShareContent;, "Lcom/facebook/share/model/ShareContent<TP;TE;>;"
     iget-object v0, p0, Lcom/facebook/share/model/ShareContent;->contentUrl:Landroid/net/Uri;
 
     return-object v0
@@ -214,9 +197,6 @@
 
 .method public getPeopleIds()Ljava/util/List;
     .registers 2
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
-
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -229,7 +209,6 @@
 
     .prologue
     .line 81
-    .local p0, "this":Lcom/facebook/share/model/ShareContent;, "Lcom/facebook/share/model/ShareContent<TP;TE;>;"
     iget-object v0, p0, Lcom/facebook/share/model/ShareContent;->peopleIds:Ljava/util/List;
 
     return-object v0
@@ -237,12 +216,9 @@
 
 .method public getPlaceId()Ljava/lang/String;
     .registers 2
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
 
     .prologue
     .line 91
-    .local p0, "this":Lcom/facebook/share/model/ShareContent;, "Lcom/facebook/share/model/ShareContent<TP;TE;>;"
     iget-object v0, p0, Lcom/facebook/share/model/ShareContent;->placeId:Ljava/lang/String;
 
     return-object v0
@@ -250,12 +226,9 @@
 
 .method public getRef()Ljava/lang/String;
     .registers 2
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
 
     .prologue
     .line 102
-    .local p0, "this":Lcom/facebook/share/model/ShareContent;, "Lcom/facebook/share/model/ShareContent<TP;TE;>;"
     iget-object v0, p0, Lcom/facebook/share/model/ShareContent;->ref:Ljava/lang/String;
 
     return-object v0
@@ -263,12 +236,9 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .registers 5
-    .param p1, "out"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
     .prologue
     .line 110
-    .local p0, "this":Lcom/facebook/share/model/ShareContent;, "Lcom/facebook/share/model/ShareContent<TP;TE;>;"
     iget-object v0, p0, Lcom/facebook/share/model/ShareContent;->contentUrl:Landroid/net/Uri;
 
     const/4 v1, 0x0

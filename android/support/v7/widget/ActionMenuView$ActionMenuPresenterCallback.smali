@@ -6,19 +6,8 @@
 .implements Landroid/support/v7/view/menu/MenuPresenter$Callback;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/widget/ActionMenuView;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "ActionMenuPresenterCallback"
-.end annotation
-
-
 # instance fields
-.field final synthetic this$0:Landroid/support/v7/widget/ActionMenuView;
+.field final synthetic a:Landroid/support/v7/widget/ActionMenuView;
 
 
 # direct methods
@@ -27,7 +16,7 @@
 
     .prologue
     .line 772
-    iput-object p1, p0, Landroid/support/v7/widget/ActionMenuView$ActionMenuPresenterCallback;->this$0:Landroid/support/v7/widget/ActionMenuView;
+    iput-object p1, p0, Landroid/support/v7/widget/ActionMenuView$ActionMenuPresenterCallback;->a:Landroid/support/v7/widget/ActionMenuView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,8 +25,6 @@
 
 .method synthetic constructor <init>(Landroid/support/v7/widget/ActionMenuView;Landroid/support/v7/widget/ActionMenuView$1;)V
     .registers 3
-    .param p1, "x0"    # Landroid/support/v7/widget/ActionMenuView;
-    .param p2, "x1"    # Landroid/support/v7/widget/ActionMenuView$1;
 
     .prologue
     .line 772
@@ -50,8 +37,6 @@
 # virtual methods
 .method public onCloseMenu(Landroid/support/v7/view/menu/MenuBuilder;Z)V
     .registers 3
-    .param p1, "menu"    # Landroid/support/v7/view/menu/MenuBuilder;
-    .param p2, "allMenusAreClosing"    # Z
 
     .prologue
     .line 775
@@ -60,7 +45,6 @@
 
 .method public onOpenSubMenu(Landroid/support/v7/view/menu/MenuBuilder;)Z
     .registers 3
-    .param p1, "subMenu"    # Landroid/support/v7/view/menu/MenuBuilder;
 
     .prologue
     .line 779

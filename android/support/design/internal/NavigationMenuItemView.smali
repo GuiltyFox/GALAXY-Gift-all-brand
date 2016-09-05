@@ -45,7 +45,6 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 56
@@ -59,8 +58,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 60
@@ -74,9 +71,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
     .registers 7
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
 
     .prologue
     const/4 v2, 0x1
@@ -132,7 +126,7 @@
 .end method
 
 .method private createDefaultBackground()Landroid/graphics/drawable/StateListDrawable;
-    .registers 6
+    .registers 5
 
     .prologue
     .line 110
@@ -141,24 +135,23 @@
     invoke-direct {v1}, Landroid/util/TypedValue;-><init>()V
 
     .line 111
-    .local v1, "value":Landroid/util/TypedValue;
     invoke-virtual {p0}, Landroid/support/design/internal/NavigationMenuItemView;->getContext()Landroid/content/Context;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
+    invoke-virtual {v0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
-    move-result-object v2
+    move-result-object v0
 
-    sget v3, Landroid/support/design/R$attr;->colorControlHighlight:I
+    sget v2, Landroid/support/design/R$attr;->colorControlHighlight:I
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    invoke-virtual {v2, v3, v1, v4}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
+    invoke-virtual {v0, v2, v1, v3}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_33
+    if-eqz v0, :cond_33
 
     .line 112
     new-instance v0, Landroid/graphics/drawable/StateListDrawable;
@@ -166,30 +159,28 @@
     invoke-direct {v0}, Landroid/graphics/drawable/StateListDrawable;-><init>()V
 
     .line 113
-    .local v0, "drawable":Landroid/graphics/drawable/StateListDrawable;
     sget-object v2, Landroid/support/design/internal/NavigationMenuItemView;->CHECKED_STATE_SET:[I
 
     new-instance v3, Landroid/graphics/drawable/ColorDrawable;
 
-    iget v4, v1, Landroid/util/TypedValue;->data:I
+    iget v1, v1, Landroid/util/TypedValue;->data:I
 
-    invoke-direct {v3, v4}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
+    invoke-direct {v3, v1}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
     invoke-virtual {v0, v2, v3}, Landroid/graphics/drawable/StateListDrawable;->addState([ILandroid/graphics/drawable/Drawable;)V
 
     .line 114
-    sget-object v2, Landroid/support/design/internal/NavigationMenuItemView;->EMPTY_STATE_SET:[I
+    sget-object v1, Landroid/support/design/internal/NavigationMenuItemView;->EMPTY_STATE_SET:[I
 
-    new-instance v3, Landroid/graphics/drawable/ColorDrawable;
+    new-instance v2, Landroid/graphics/drawable/ColorDrawable;
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    invoke-direct {v3, v4}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
+    invoke-direct {v2, v3}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
-    invoke-virtual {v0, v2, v3}, Landroid/graphics/drawable/StateListDrawable;->addState([ILandroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v1, v2}, Landroid/graphics/drawable/StateListDrawable;->addState([ILandroid/graphics/drawable/Drawable;)V
 
     .line 117
-    .end local v0    # "drawable":Landroid/graphics/drawable/StateListDrawable;
     :goto_32
     return-object v0
 
@@ -201,7 +192,6 @@
 
 .method private setActionView(Landroid/view/View;)V
     .registers 3
-    .param p1, "actionView"    # Landroid/view/View;
 
     .prologue
     .line 99
@@ -259,8 +249,6 @@
 
 .method public initialize(Landroid/support/v7/view/menu/MenuItemImpl;I)V
     .registers 4
-    .param p1, "itemData"    # Landroid/support/v7/view/menu/MenuItemImpl;
-    .param p2, "menuType"    # I
 
     .prologue
     .line 75
@@ -347,18 +335,16 @@
 
 .method protected onCreateDrawableState(I)[I
     .registers 4
-    .param p1, "extraSpace"    # I
 
     .prologue
     .line 168
-    add-int/lit8 v1, p1, 0x1
+    add-int/lit8 v0, p1, 0x1
 
-    invoke-super {p0, v1}, Landroid/support/design/internal/ForegroundLinearLayout;->onCreateDrawableState(I)[I
+    invoke-super {p0, v0}, Landroid/support/design/internal/ForegroundLinearLayout;->onCreateDrawableState(I)[I
 
     move-result-object v0
 
     .line 169
-    .local v0, "drawableState":[I
     iget-object v1, p0, Landroid/support/design/internal/NavigationMenuItemView;->mItemData:Landroid/support/v7/view/menu/MenuItemImpl;
 
     if-eqz v1, :cond_1f
@@ -427,7 +413,6 @@
 
 .method public setCheckable(Z)V
     .registers 2
-    .param p1, "checkable"    # Z
 
     .prologue
     .line 132
@@ -439,7 +424,6 @@
 
 .method public setChecked(Z)V
     .registers 3
-    .param p1, "checked"    # Z
 
     .prologue
     .line 137
@@ -455,13 +439,12 @@
 .end method
 
 .method public setIcon(Landroid/graphics/drawable/Drawable;)V
-    .registers 7
-    .param p1, "icon"    # Landroid/graphics/drawable/Drawable;
+    .registers 6
 
     .prologue
-    const/4 v4, 0x0
-
     const/4 v3, 0x0
+
+    const/4 v2, 0x0
 
     .line 147
     if-eqz p1, :cond_1e
@@ -472,44 +455,39 @@
     move-result-object v0
 
     .line 149
-    .local v0, "state":Landroid/graphics/drawable/Drawable$ConstantState;
     if-nez v0, :cond_24
 
-    .end local p1    # "icon":Landroid/graphics/drawable/Drawable;
     :goto_a
-    invoke-static {p1}, Landroid/support/v4/graphics/drawable/DrawableCompat;->wrap(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p1}, Landroid/support/v4/graphics/drawable/DrawableCompat;->f(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
     .line 150
-    .restart local p1    # "icon":Landroid/graphics/drawable/Drawable;
+    iget v0, p0, Landroid/support/design/internal/NavigationMenuItemView;->mIconSize:I
+
     iget v1, p0, Landroid/support/design/internal/NavigationMenuItemView;->mIconSize:I
 
-    iget v2, p0, Landroid/support/design/internal/NavigationMenuItemView;->mIconSize:I
-
-    invoke-virtual {p1, v4, v4, v1, v2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {p1, v3, v3, v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 151
-    iget-object v1, p0, Landroid/support/design/internal/NavigationMenuItemView;->mIconTintList:Landroid/content/res/ColorStateList;
+    iget-object v0, p0, Landroid/support/design/internal/NavigationMenuItemView;->mIconTintList:Landroid/content/res/ColorStateList;
 
-    invoke-static {p1, v1}, Landroid/support/v4/graphics/drawable/DrawableCompat;->setTintList(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
+    invoke-static {p1, v0}, Landroid/support/v4/graphics/drawable/DrawableCompat;->a(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
 
     .line 153
-    .end local v0    # "state":Landroid/graphics/drawable/Drawable$ConstantState;
     :cond_1e
-    iget-object v1, p0, Landroid/support/design/internal/NavigationMenuItemView;->mTextView:Landroid/widget/CheckedTextView;
+    iget-object v0, p0, Landroid/support/design/internal/NavigationMenuItemView;->mTextView:Landroid/widget/CheckedTextView;
 
-    invoke-static {v1, p1, v3, v3, v3}, Landroid/support/v4/widget/TextViewCompat;->setCompoundDrawablesRelative(Landroid/widget/TextView;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    invoke-static {v0, p1, v2, v2, v2}, Landroid/support/v4/widget/TextViewCompat;->a(Landroid/widget/TextView;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     .line 154
     return-void
 
     .line 149
-    .restart local v0    # "state":Landroid/graphics/drawable/Drawable$ConstantState;
     :cond_24
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable()Landroid/graphics/drawable/Drawable;
 
@@ -520,7 +498,6 @@
 
 .method setIconTintList(Landroid/content/res/ColorStateList;)V
     .registers 3
-    .param p1, "tintList"    # Landroid/content/res/ColorStateList;
 
     .prologue
     .line 176
@@ -547,8 +524,6 @@
 
 .method public setShortcut(ZC)V
     .registers 3
-    .param p1, "showShortcut"    # Z
-    .param p2, "shortcutKey"    # C
 
     .prologue
     .line 143
@@ -557,8 +532,6 @@
 
 .method public setTextAppearance(Landroid/content/Context;I)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "textAppearance"    # I
 
     .prologue
     .line 184
@@ -572,7 +545,6 @@
 
 .method public setTextColor(Landroid/content/res/ColorStateList;)V
     .registers 3
-    .param p1, "colors"    # Landroid/content/res/ColorStateList;
 
     .prologue
     .line 188
@@ -586,7 +558,6 @@
 
 .method public setTitle(Ljava/lang/CharSequence;)V
     .registers 3
-    .param p1, "title"    # Ljava/lang/CharSequence;
 
     .prologue
     .line 127

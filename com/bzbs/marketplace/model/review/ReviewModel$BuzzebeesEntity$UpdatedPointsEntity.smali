@@ -3,24 +3,10 @@
 .source "ReviewModel.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bzbs/marketplace/model/review/ReviewModel$BuzzebeesEntity;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "UpdatedPointsEntity"
-.end annotation
-
-.annotation runtime Lorg/parceler/Parcel;
-.end annotation
-
-
 # instance fields
-.field points:I
+.field public points:I
 
-.field time:I
+.field public time:I
 
 
 # direct methods
@@ -58,7 +44,6 @@
 
 .method public setPoints(I)V
     .registers 2
-    .param p1, "points"    # I
 
     .prologue
     .line 398
@@ -70,7 +55,6 @@
 
 .method public setTime(I)V
     .registers 2
-    .param p1, "time"    # I
 
     .prologue
     .line 402

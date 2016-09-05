@@ -2,9 +2,6 @@
 .super Ljava/lang/Object;
 .source "Action1.java"
 
-# interfaces
-.implements Lrx/functions/Action;
-
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
@@ -12,14 +9,13 @@
         "<T:",
         "Ljava/lang/Object;",
         ">",
-        "Ljava/lang/Object;",
-        "Lrx/functions/Action;"
+        "Ljava/lang/Object;"
     }
 .end annotation
 
 
 # virtual methods
-.method public abstract call(Ljava/lang/Object;)V
+.method public abstract a(Ljava/lang/Object;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"

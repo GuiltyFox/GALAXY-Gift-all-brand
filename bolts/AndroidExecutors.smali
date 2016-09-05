@@ -3,29 +3,18 @@
 .source "AndroidExecutors.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lbolts/AndroidExecutors$1;,
-        Lbolts/AndroidExecutors$UIThreadExecutor;
-    }
-.end annotation
-
-
 # static fields
-.field static final CORE_POOL_SIZE:I
+.field static final a:I
 
-.field private static final CPU_COUNT:I
+.field static final b:I
 
-.field private static final INSTANCE:Lbolts/AndroidExecutors;
+.field private static final c:Lbolts/AndroidExecutors;
 
-.field static final KEEP_ALIVE_TIME:J = 0x1L
-
-.field static final MAX_POOL_SIZE:I
+.field private static final e:I
 
 
 # instance fields
-.field private final uiThread:Ljava/util/concurrent/Executor;
+.field private final d:Ljava/util/concurrent/Executor;
 
 
 # direct methods
@@ -38,7 +27,7 @@
 
     invoke-direct {v0}, Lbolts/AndroidExecutors;-><init>()V
 
-    sput-object v0, Lbolts/AndroidExecutors;->INSTANCE:Lbolts/AndroidExecutors;
+    sput-object v0, Lbolts/AndroidExecutors;->c:Lbolts/AndroidExecutors;
 
     .line 58
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
@@ -49,23 +38,23 @@
 
     move-result v0
 
-    sput v0, Lbolts/AndroidExecutors;->CPU_COUNT:I
+    sput v0, Lbolts/AndroidExecutors;->e:I
 
     .line 59
-    sget v0, Lbolts/AndroidExecutors;->CPU_COUNT:I
+    sget v0, Lbolts/AndroidExecutors;->e:I
 
     add-int/lit8 v0, v0, 0x1
 
-    sput v0, Lbolts/AndroidExecutors;->CORE_POOL_SIZE:I
+    sput v0, Lbolts/AndroidExecutors;->a:I
 
     .line 60
-    sget v0, Lbolts/AndroidExecutors;->CPU_COUNT:I
+    sget v0, Lbolts/AndroidExecutors;->e:I
 
     mul-int/lit8 v0, v0, 0x2
 
     add-int/lit8 v0, v0, 0x1
 
-    sput v0, Lbolts/AndroidExecutors;->MAX_POOL_SIZE:I
+    sput v0, Lbolts/AndroidExecutors;->b:I
 
     return-void
 .end method
@@ -84,16 +73,44 @@
 
     invoke-direct {v0, v1}, Lbolts/AndroidExecutors$UIThreadExecutor;-><init>(Lbolts/AndroidExecutors$1;)V
 
-    iput-object v0, p0, Lbolts/AndroidExecutors;->uiThread:Ljava/util/concurrent/Executor;
+    iput-object v0, p0, Lbolts/AndroidExecutors;->d:Ljava/util/concurrent/Executor;
 
     .line 46
     return-void
 .end method
 
-.method public static allowCoreThreadTimeout(Ljava/util/concurrent/ThreadPoolExecutor;Z)V
+.method public static a()Ljava/util/concurrent/ExecutorService;
+    .registers 8
+
+    .prologue
+    .line 74
+    new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    sget v2, Lbolts/AndroidExecutors;->a:I
+
+    sget v3, Lbolts/AndroidExecutors;->b:I
+
+    const-wide/16 v4, 0x1
+
+    sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    new-instance v7, Ljava/util/concurrent/LinkedBlockingQueue;
+
+    invoke-direct {v7}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
+
+    invoke-direct/range {v1 .. v7}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;)V
+
+    .line 80
+    const/4 v0, 0x1
+
+    invoke-static {v1, v0}, Lbolts/AndroidExecutors;->a(Ljava/util/concurrent/ThreadPoolExecutor;Z)V
+
+    .line 82
+    return-object v1
+.end method
+
+.method public static a(Ljava/util/concurrent/ThreadPoolExecutor;Z)V
     .registers 4
-    .param p0, "executor"    # Ljava/util/concurrent/ThreadPoolExecutor;
-    .param p1, "value"    # Z
     .annotation build Landroid/annotation/SuppressLint;
         value = {
             "NewApi"
@@ -116,79 +133,14 @@
     return-void
 .end method
 
-.method public static newCachedThreadPool()Ljava/util/concurrent/ExecutorService;
-    .registers 8
-
-    .prologue
-    .line 74
-    new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
-
-    sget v2, Lbolts/AndroidExecutors;->CORE_POOL_SIZE:I
-
-    sget v3, Lbolts/AndroidExecutors;->MAX_POOL_SIZE:I
-
-    const-wide/16 v4, 0x1
-
-    sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    new-instance v7, Ljava/util/concurrent/LinkedBlockingQueue;
-
-    invoke-direct {v7}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
-
-    invoke-direct/range {v1 .. v7}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;)V
-
-    .line 80
-    .local v1, "executor":Ljava/util/concurrent/ThreadPoolExecutor;
-    const/4 v0, 0x1
-
-    invoke-static {v1, v0}, Lbolts/AndroidExecutors;->allowCoreThreadTimeout(Ljava/util/concurrent/ThreadPoolExecutor;Z)V
-
-    .line 82
-    return-object v1
-.end method
-
-.method public static newCachedThreadPool(Ljava/util/concurrent/ThreadFactory;)Ljava/util/concurrent/ExecutorService;
-    .registers 10
-    .param p0, "threadFactory"    # Ljava/util/concurrent/ThreadFactory;
-
-    .prologue
-    .line 97
-    new-instance v1, Ljava/util/concurrent/ThreadPoolExecutor;
-
-    sget v2, Lbolts/AndroidExecutors;->CORE_POOL_SIZE:I
-
-    sget v3, Lbolts/AndroidExecutors;->MAX_POOL_SIZE:I
-
-    const-wide/16 v4, 0x1
-
-    sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    new-instance v7, Ljava/util/concurrent/LinkedBlockingQueue;
-
-    invoke-direct {v7}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
-
-    move-object v8, p0
-
-    invoke-direct/range {v1 .. v8}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;)V
-
-    .line 104
-    .local v1, "executor":Ljava/util/concurrent/ThreadPoolExecutor;
-    const/4 v0, 0x1
-
-    invoke-static {v1, v0}, Lbolts/AndroidExecutors;->allowCoreThreadTimeout(Ljava/util/concurrent/ThreadPoolExecutor;Z)V
-
-    .line 106
-    return-object v1
-.end method
-
-.method public static uiThread()Ljava/util/concurrent/Executor;
+.method public static b()Ljava/util/concurrent/Executor;
     .registers 1
 
     .prologue
     .line 129
-    sget-object v0, Lbolts/AndroidExecutors;->INSTANCE:Lbolts/AndroidExecutors;
+    sget-object v0, Lbolts/AndroidExecutors;->c:Lbolts/AndroidExecutors;
 
-    iget-object v0, v0, Lbolts/AndroidExecutors;->uiThread:Ljava/util/concurrent/Executor;
+    iget-object v0, v0, Lbolts/AndroidExecutors;->d:Ljava/util/concurrent/Executor;
 
     return-object v0
 .end method

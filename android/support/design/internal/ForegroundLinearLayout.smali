@@ -20,7 +20,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 48
@@ -34,8 +33,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 52
@@ -48,72 +45,67 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .registers 9
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyle"    # I
+    .registers 8
 
     .prologue
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    const/4 v3, 0x0
+    const/4 v1, 0x0
 
     .line 56
     invoke-direct {p0, p1, p2, p3}, Landroid/support/v7/widget/LinearLayoutCompat;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 37
-    new-instance v2, Landroid/graphics/Rect;
+    new-instance v0, Landroid/graphics/Rect;
 
-    invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object v2, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mSelfBounds:Landroid/graphics/Rect;
+    iput-object v0, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mSelfBounds:Landroid/graphics/Rect;
 
     .line 39
-    new-instance v2, Landroid/graphics/Rect;
+    new-instance v0, Landroid/graphics/Rect;
 
-    invoke-direct {v2}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object v2, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mOverlayBounds:Landroid/graphics/Rect;
+    iput-object v0, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mOverlayBounds:Landroid/graphics/Rect;
 
     .line 41
-    const/16 v2, 0x77
+    const/16 v0, 0x77
 
-    iput v2, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundGravity:I
+    iput v0, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundGravity:I
 
     .line 43
-    iput-boolean v4, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundInPadding:Z
+    iput-boolean v3, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundInPadding:Z
 
     .line 45
-    iput-boolean v3, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundBoundsChanged:Z
+    iput-boolean v1, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundBoundsChanged:Z
 
     .line 58
-    sget-object v2, Landroid/support/design/R$styleable;->ForegroundLinearLayout:[I
+    sget-object v0, Landroid/support/design/R$styleable;->ForegroundLinearLayout:[I
 
-    invoke-virtual {p1, p2, v2, p3, v3}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v0, p3, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
     .line 61
-    .local v0, "a":Landroid/content/res/TypedArray;
-    sget v2, Landroid/support/design/R$styleable;->ForegroundLinearLayout_android_foregroundGravity:I
+    sget v1, Landroid/support/design/R$styleable;->ForegroundLinearLayout_android_foregroundGravity:I
 
-    iget v3, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundGravity:I
+    iget v2, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundGravity:I
 
-    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    move-result v2
+    move-result v1
 
-    iput v2, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundGravity:I
+    iput v1, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundGravity:I
 
     .line 64
-    sget v2, Landroid/support/design/R$styleable;->ForegroundLinearLayout_android_foreground:I
+    sget v1, Landroid/support/design/R$styleable;->ForegroundLinearLayout_android_foreground:I
 
-    invoke-virtual {v0, v2}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     .line 65
-    .local v1, "d":Landroid/graphics/drawable/Drawable;
     if-eqz v1, :cond_36
 
     .line 66
@@ -121,13 +113,13 @@
 
     .line 69
     :cond_36
-    sget v2, Landroid/support/design/R$styleable;->ForegroundLinearLayout_foregroundInsidePadding:I
+    sget v1, Landroid/support/design/R$styleable;->ForegroundLinearLayout_foregroundInsidePadding:I
 
-    invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
-    move-result v2
+    move-result v1
 
-    iput-boolean v2, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundInPadding:Z
+    iput-boolean v1, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundInPadding:Z
 
     .line 72
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
@@ -139,112 +131,93 @@
 
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
-    .registers 11
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
+    .registers 10
 
     .prologue
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
     .line 192
     invoke-super {p0, p1}, Landroid/support/v7/widget/LinearLayoutCompat;->draw(Landroid/graphics/Canvas;)V
 
     .line 194
-    iget-object v5, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForeground:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v5, :cond_42
+    if-eqz v0, :cond_40
 
     .line 195
     iget-object v0, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
     .line 197
-    .local v0, "foreground":Landroid/graphics/drawable/Drawable;
-    iget-boolean v5, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundBoundsChanged:Z
+    iget-boolean v1, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundBoundsChanged:Z
 
-    if-eqz v5, :cond_3f
+    if-eqz v1, :cond_3d
 
     .line 198
-    iput-boolean v7, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundBoundsChanged:Z
+    iput-boolean v6, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundBoundsChanged:Z
 
     .line 199
-    iget-object v3, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mSelfBounds:Landroid/graphics/Rect;
+    iget-object v1, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mSelfBounds:Landroid/graphics/Rect;
 
     .line 200
-    .local v3, "selfBounds":Landroid/graphics/Rect;
     iget-object v2, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mOverlayBounds:Landroid/graphics/Rect;
 
     .line 202
-    .local v2, "overlayBounds":Landroid/graphics/Rect;
     invoke-virtual {p0}, Landroid/support/design/internal/ForegroundLinearLayout;->getRight()I
 
-    move-result v5
+    move-result v3
 
     invoke-virtual {p0}, Landroid/support/design/internal/ForegroundLinearLayout;->getLeft()I
 
-    move-result v6
+    move-result v4
 
-    sub-int v4, v5, v6
+    sub-int/2addr v3, v4
 
     .line 203
-    .local v4, "w":I
     invoke-virtual {p0}, Landroid/support/design/internal/ForegroundLinearLayout;->getBottom()I
 
-    move-result v5
+    move-result v4
 
     invoke-virtual {p0}, Landroid/support/design/internal/ForegroundLinearLayout;->getTop()I
 
-    move-result v6
+    move-result v5
 
-    sub-int v1, v5, v6
+    sub-int/2addr v4, v5
 
     .line 205
-    .local v1, "h":I
     iget-boolean v5, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundInPadding:Z
 
-    if-eqz v5, :cond_43
+    if-eqz v5, :cond_41
 
     .line 206
-    invoke-virtual {v3, v7, v7, v4, v1}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {v1, v6, v6, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
 
     .line 212
-    :goto_2f
-    iget v5, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundGravity:I
+    :goto_2d
+    iget v3, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundGravity:I
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
-    move-result v6
+    move-result v4
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
-    move-result v7
+    move-result v5
 
-    invoke-static {v5, v6, v7, v3, v2}, Landroid/view/Gravity;->apply(IIILandroid/graphics/Rect;Landroid/graphics/Rect;)V
+    invoke-static {v3, v4, v5, v1, v2}, Landroid/view/Gravity;->apply(IIILandroid/graphics/Rect;Landroid/graphics/Rect;)V
 
     .line 214
     invoke-virtual {v0, v2}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
     .line 217
-    .end local v1    # "h":I
-    .end local v2    # "overlayBounds":Landroid/graphics/Rect;
-    .end local v3    # "selfBounds":Landroid/graphics/Rect;
-    .end local v4    # "w":I
-    :cond_3f
+    :cond_3d
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     .line 219
-    .end local v0    # "foreground":Landroid/graphics/drawable/Drawable;
-    :cond_42
+    :cond_40
     return-void
 
     .line 208
-    .restart local v0    # "foreground":Landroid/graphics/drawable/Drawable;
-    .restart local v1    # "h":I
-    .restart local v2    # "overlayBounds":Landroid/graphics/Rect;
-    .restart local v3    # "selfBounds":Landroid/graphics/Rect;
-    .restart local v4    # "w":I
-    :cond_43
+    :cond_41
     invoke-virtual {p0}, Landroid/support/design/internal/ForegroundLinearLayout;->getPaddingLeft()I
 
     move-result v5
@@ -257,23 +230,21 @@
 
     move-result v7
 
-    sub-int v7, v4, v7
+    sub-int/2addr v3, v7
 
     invoke-virtual {p0}, Landroid/support/design/internal/ForegroundLinearLayout;->getPaddingBottom()I
 
-    move-result v8
+    move-result v7
 
-    sub-int v8, v1, v8
+    sub-int/2addr v4, v7
 
-    invoke-virtual {v3, v5, v6, v7, v8}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {v1, v5, v6, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    goto :goto_2f
+    goto :goto_2d
 .end method
 
 .method public drawableHotspotChanged(FF)V
     .registers 4
-    .param p1, "x"    # F
-    .param p2, "y"    # F
 
     .prologue
     .line 223
@@ -372,11 +343,6 @@
 
 .method protected onLayout(ZIIII)V
     .registers 7
-    .param p1, "changed"    # Z
-    .param p2, "left"    # I
-    .param p3, "top"    # I
-    .param p4, "right"    # I
-    .param p5, "bottom"    # I
 
     .prologue
     .line 180
@@ -395,10 +361,6 @@
 
 .method protected onSizeChanged(IIII)V
     .registers 6
-    .param p1, "w"    # I
-    .param p2, "h"    # I
-    .param p3, "oldw"    # I
-    .param p4, "oldh"    # I
 
     .prologue
     .line 186
@@ -414,31 +376,30 @@
 .end method
 
 .method public setForeground(Landroid/graphics/drawable/Drawable;)V
-    .registers 5
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
+    .registers 4
 
     .prologue
     .line 142
-    iget-object v1, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForeground:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
-    if-eq v1, p1, :cond_3f
+    if-eq v0, p1, :cond_3f
 
     .line 143
-    iget-object v1, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForeground:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v1, :cond_13
+    if-eqz v0, :cond_13
 
     .line 144
-    iget-object v1, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForeground:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {v1, v2}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
     .line 145
-    iget-object v1, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForeground:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {p0, v1}, Landroid/support/design/internal/ForegroundLinearLayout;->unscheduleDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p0, v0}, Landroid/support/design/internal/ForegroundLinearLayout;->unscheduleDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 148
     :cond_13
@@ -448,9 +409,9 @@
     if-eqz p1, :cond_40
 
     .line 151
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    invoke-virtual {p0, v1}, Landroid/support/design/internal/ForegroundLinearLayout;->setWillNotDraw(Z)V
+    invoke-virtual {p0, v0}, Landroid/support/design/internal/ForegroundLinearLayout;->setWillNotDraw(Z)V
 
     .line 152
     invoke-virtual {p1, p0}, Landroid/graphics/drawable/Drawable;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
@@ -458,24 +419,24 @@
     .line 153
     invoke-virtual {p1}, Landroid/graphics/drawable/Drawable;->isStateful()Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_2b
+    if-eqz v0, :cond_2b
 
     .line 154
     invoke-virtual {p0}, Landroid/support/design/internal/ForegroundLinearLayout;->getDrawableState()[I
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {p1, v1}, Landroid/graphics/drawable/Drawable;->setState([I)Z
+    invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setState([I)Z
 
     .line 156
     :cond_2b
-    iget v1, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundGravity:I
+    iget v0, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundGravity:I
 
-    const/16 v2, 0x77
+    const/16 v1, 0x77
 
-    if-ne v1, v2, :cond_39
+    if-ne v0, v1, :cond_39
 
     .line 157
     new-instance v0, Landroid/graphics/Rect;
@@ -483,11 +444,9 @@
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     .line 158
-    .local v0, "padding":Landroid/graphics/Rect;
     invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
     .line 163
-    .end local v0    # "padding":Landroid/graphics/Rect;
     :cond_39
     :goto_39
     invoke-virtual {p0}, Landroid/support/design/internal/ForegroundLinearLayout;->requestLayout()V
@@ -501,58 +460,57 @@
 
     .line 161
     :cond_40
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    invoke-virtual {p0, v1}, Landroid/support/design/internal/ForegroundLinearLayout;->setWillNotDraw(Z)V
+    invoke-virtual {p0, v0}, Landroid/support/design/internal/ForegroundLinearLayout;->setWillNotDraw(Z)V
 
     goto :goto_39
 .end method
 
 .method public setForegroundGravity(I)V
-    .registers 5
-    .param p1, "foregroundGravity"    # I
+    .registers 4
 
     .prologue
     .line 92
-    iget v1, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundGravity:I
+    iget v0, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundGravity:I
 
-    if-eq v1, p1, :cond_2d
+    if-eq v0, p1, :cond_2d
 
     .line 93
-    const v1, 0x800007
+    const v0, 0x800007
 
-    and-int/2addr v1, p1
+    and-int/2addr v0, p1
 
-    if-nez v1, :cond_e
+    if-nez v0, :cond_2e
 
     .line 94
-    const v1, 0x800003
+    const v0, 0x800003
 
-    or-int/2addr p1, v1
+    or-int/2addr v0, p1
 
     .line 97
-    :cond_e
-    and-int/lit8 v1, p1, 0x70
+    :goto_e
+    and-int/lit8 v1, v0, 0x70
 
     if-nez v1, :cond_14
 
     .line 98
-    or-int/lit8 p1, p1, 0x30
+    or-int/lit8 v0, v0, 0x30
 
     .line 101
     :cond_14
-    iput p1, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundGravity:I
+    iput v0, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundGravity:I
 
     .line 103
-    iget v1, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundGravity:I
+    iget v0, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForegroundGravity:I
 
-    const/16 v2, 0x77
+    const/16 v1, 0x77
 
-    if-ne v1, v2, :cond_2a
+    if-ne v0, v1, :cond_2a
 
-    iget-object v1, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForeground:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v1, :cond_2a
+    if-eqz v0, :cond_2a
 
     .line 104
     new-instance v0, Landroid/graphics/Rect;
@@ -560,24 +518,26 @@
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     .line 105
-    .local v0, "padding":Landroid/graphics/Rect;
     iget-object v1, p0, Landroid/support/design/internal/ForegroundLinearLayout;->mForeground:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
     .line 108
-    .end local v0    # "padding":Landroid/graphics/Rect;
     :cond_2a
     invoke-virtual {p0}, Landroid/support/design/internal/ForegroundLinearLayout;->requestLayout()V
 
     .line 110
     :cond_2d
     return-void
+
+    :cond_2e
+    move v0, p1
+
+    goto :goto_e
 .end method
 
 .method protected verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
     .registers 3
-    .param p1, "who"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 114

@@ -46,7 +46,6 @@
 
 .method public constructor <init>(Ljava/lang/String;[Ljava/lang/Class;)V
     .registers 3
-    .param p1, "name"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -59,7 +58,6 @@
 
     .prologue
     .line 29
-    .local p2, "argTypes":[Ljava/lang/Class;, "[Ljava/lang/Class<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 30
@@ -70,7 +68,6 @@
 
     sget-object p2, Lcom/fasterxml/jackson/databind/introspect/MemberKey;->NO_CLASSES:[Ljava/lang/Class;
 
-    .end local p2    # "argTypes":[Ljava/lang/Class;, "[Ljava/lang/Class<*>;"
     :cond_9
     iput-object p2, p0, Lcom/fasterxml/jackson/databind/introspect/MemberKey;->_argTypes:[Ljava/lang/Class;
 
@@ -90,7 +87,6 @@
 
     .prologue
     .line 25
-    .local p1, "ctor":Ljava/lang/reflect/Constructor;, "Ljava/lang/reflect/Constructor<*>;"
     const-string/jumbo v0, ""
 
     invoke-virtual {p1}, Ljava/lang/reflect/Constructor;->getParameterTypes()[Ljava/lang/Class;
@@ -105,7 +101,6 @@
 
 .method public constructor <init>(Ljava/lang/reflect/Method;)V
     .registers 4
-    .param p1, "m"    # Ljava/lang/reflect/Method;
 
     .prologue
     .line 20
@@ -126,13 +121,12 @@
 
 # virtual methods
 .method public equals(Ljava/lang/Object;)Z
-    .registers 12
-    .param p1, "o"    # Ljava/lang/Object;
+    .registers 10
 
     .prologue
-    const/4 v6, 0x1
+    const/4 v0, 0x1
 
-    const/4 v7, 0x0
+    const/4 v1, 0x0
 
     .line 48
     if-ne p1, p0, :cond_5
@@ -140,13 +134,13 @@
     .line 81
     :cond_4
     :goto_4
-    return v6
+    return v0
 
     .line 49
     :cond_5
     if-nez p1, :cond_9
 
-    move v6, v7
+    move v0, v1
 
     goto :goto_4
 
@@ -154,105 +148,97 @@
     :cond_9
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v8
+    move-result-object v2
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v9
+    move-result-object v3
 
-    if-eq v8, v9, :cond_15
+    if-eq v2, v3, :cond_15
 
-    move v6, v7
+    move v0, v1
 
     .line 51
     goto :goto_4
 
-    :cond_15
-    move-object v2, p1
-
     .line 53
-    check-cast v2, Lcom/fasterxml/jackson/databind/introspect/MemberKey;
+    :cond_15
+    check-cast p1, Lcom/fasterxml/jackson/databind/introspect/MemberKey;
 
     .line 54
-    .local v2, "other":Lcom/fasterxml/jackson/databind/introspect/MemberKey;
-    iget-object v8, p0, Lcom/fasterxml/jackson/databind/introspect/MemberKey;->_name:Ljava/lang/String;
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/introspect/MemberKey;->_name:Ljava/lang/String;
 
-    iget-object v9, v2, Lcom/fasterxml/jackson/databind/introspect/MemberKey;->_name:Ljava/lang/String;
+    iget-object v3, p1, Lcom/fasterxml/jackson/databind/introspect/MemberKey;->_name:Ljava/lang/String;
 
-    invoke-virtual {v8, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v8
+    move-result v2
 
-    if-nez v8, :cond_24
+    if-nez v2, :cond_23
 
-    move v6, v7
+    move v0, v1
 
     .line 55
     goto :goto_4
 
     .line 57
-    :cond_24
-    iget-object v3, v2, Lcom/fasterxml/jackson/databind/introspect/MemberKey;->_argTypes:[Ljava/lang/Class;
+    :cond_23
+    iget-object v3, p1, Lcom/fasterxml/jackson/databind/introspect/MemberKey;->_argTypes:[Ljava/lang/Class;
 
     .line 58
-    .local v3, "otherArgs":[Ljava/lang/Class;, "[Ljava/lang/Class<*>;"
-    iget-object v8, p0, Lcom/fasterxml/jackson/databind/introspect/MemberKey;->_argTypes:[Ljava/lang/Class;
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/introspect/MemberKey;->_argTypes:[Ljava/lang/Class;
 
-    array-length v1, v8
+    array-length v4, v2
 
     .line 59
-    .local v1, "len":I
-    array-length v8, v3
+    array-length v2, v3
 
-    if-eq v8, v1, :cond_2e
+    if-eq v2, v4, :cond_2d
 
-    move v6, v7
+    move v0, v1
 
     .line 60
     goto :goto_4
 
-    .line 62
-    :cond_2e
-    const/4 v0, 0x0
+    :cond_2d
+    move v2, v1
 
-    .local v0, "i":I
-    :goto_2f
-    if-ge v0, v1, :cond_4
+    .line 62
+    :goto_2e
+    if-ge v2, v4, :cond_4
 
     .line 63
-    aget-object v4, v3, v0
+    aget-object v5, v3, v2
 
     .line 64
-    .local v4, "type1":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    iget-object v8, p0, Lcom/fasterxml/jackson/databind/introspect/MemberKey;->_argTypes:[Ljava/lang/Class;
+    iget-object v6, p0, Lcom/fasterxml/jackson/databind/introspect/MemberKey;->_argTypes:[Ljava/lang/Class;
 
-    aget-object v5, v8, v0
+    aget-object v6, v6, v2
 
     .line 65
-    .local v5, "type2":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    if-ne v4, v5, :cond_3c
+    if-ne v5, v6, :cond_3b
 
     .line 62
-    :cond_39
-    add-int/lit8 v0, v0, 0x1
+    :cond_38
+    add-int/lit8 v2, v2, 0x1
 
-    goto :goto_2f
+    goto :goto_2e
 
     .line 76
-    :cond_3c
-    invoke-virtual {v4, v5}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    :cond_3b
+    invoke-virtual {v5, v6}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    move-result v8
+    move-result v7
 
-    if-nez v8, :cond_39
+    if-nez v7, :cond_38
 
-    invoke-virtual {v5, v4}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    invoke-virtual {v6, v5}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
-    move-result v8
+    move-result v5
 
-    if-nez v8, :cond_39
+    if-nez v5, :cond_38
 
-    move v6, v7
+    move v0, v1
 
     .line 79
     goto :goto_4

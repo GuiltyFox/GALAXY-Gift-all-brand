@@ -3,23 +3,12 @@
 .source "HListView.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lit/sephiroth/android/library/widget/HListView;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "FixedViewInfo"
-.end annotation
-
-
 # instance fields
-.field public data:Ljava/lang/Object;
+.field public a:Landroid/view/View;
 
-.field public isSelectable:Z
+.field public b:Ljava/lang/Object;
 
-.field public view:Landroid/view/View;
+.field public c:Z
 
 
 # direct methods

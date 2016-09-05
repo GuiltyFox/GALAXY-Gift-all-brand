@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4019
-    name = "State"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum",
@@ -24,23 +15,23 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+.field public static final enum a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-.field public static final enum MANUAL_REFRESHING:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+.field public static final enum b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-.field public static final enum OVERSCROLLING:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+.field public static final enum c:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-.field public static final enum PULL_TO_REFRESH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+.field public static final enum d:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-.field public static final enum REFRESHING:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+.field public static final enum e:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-.field public static final enum RELEASE_TO_REFRESH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+.field public static final enum f:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-.field public static final enum RESET:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+.field private static final synthetic h:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
 
 # instance fields
-.field private mIntValue:I
+.field private g:I
 
 
 # direct methods
@@ -65,7 +56,7 @@
 
     invoke-direct {v0, v1, v4, v4}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->RESET:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     .line 1533
     new-instance v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
@@ -74,7 +65,7 @@
 
     invoke-direct {v0, v1, v5, v5}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->PULL_TO_REFRESH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     .line 1539
     new-instance v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
@@ -83,7 +74,7 @@
 
     invoke-direct {v0, v1, v6, v6}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->RELEASE_TO_REFRESH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->c:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     .line 1544
     new-instance v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
@@ -94,7 +85,7 @@
 
     invoke-direct {v0, v1, v7, v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->REFRESHING:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->d:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     .line 1550
     new-instance v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
@@ -105,7 +96,7 @@
 
     invoke-direct {v0, v1, v8, v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->MANUAL_REFRESHING:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->e:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     .line 1556
     new-instance v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
@@ -118,47 +109,46 @@
 
     invoke-direct {v0, v1, v2, v3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->OVERSCROLLING:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->f:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     .line 1521
     const/4 v0, 0x6
 
     new-array v0, v0, [Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->RESET:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     aput-object v1, v0, v4
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->PULL_TO_REFRESH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     aput-object v1, v0, v5
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->RELEASE_TO_REFRESH:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->c:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     aput-object v1, v0, v6
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->REFRESHING:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->d:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     aput-object v1, v0, v7
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->MANUAL_REFRESHING:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->e:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     aput-object v1, v0, v8
 
     const/4 v1, 0x5
 
-    sget-object v2, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->OVERSCROLLING:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v2, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->f:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     aput-object v2, v0, v1
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->$VALUES:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->h:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     return-void
 .end method
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .registers 4
-    .param p3, "intValue"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
@@ -170,15 +160,14 @@
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 1578
-    iput p3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->mIntValue:I
+    iput p3, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->g:I
 
     .line 1579
     return-void
 .end method
 
-.method static mapIntToValue(I)Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+.method static a(I)Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
     .registers 6
-    .param p0, "stateInt"    # I
 
     .prologue
     .line 1565
@@ -188,44 +177,43 @@
 
     array-length v3, v2
 
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    :goto_6
-    if-ge v1, v3, :cond_14
+    move v1, v0
+
+    :goto_7
+    if-ge v1, v3, :cond_16
 
     aget-object v0, v2, v1
 
     .line 1566
-    .local v0, "value":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
-    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->getIntValue()I
+    invoke-virtual {v0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->a()I
 
     move-result v4
 
-    if-ne p0, v4, :cond_11
+    if-ne p0, v4, :cond_12
 
     .line 1572
-    .end local v0    # "value":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
-    :goto_10
+    :goto_11
     return-object v0
 
     .line 1565
-    .restart local v0    # "value":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
-    :cond_11
-    add-int/lit8 v1, v1, 0x1
+    :cond_12
+    add-int/lit8 v0, v1, 0x1
 
-    goto :goto_6
+    move v1, v0
+
+    goto :goto_7
 
     .line 1572
-    .end local v0    # "value":Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
-    :cond_14
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->RESET:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    :cond_16
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
-    goto :goto_10
+    goto :goto_11
 .end method
 
 .method public static valueOf(Ljava/lang/String;)Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 1521
@@ -245,7 +233,7 @@
 
     .prologue
     .line 1521
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->$VALUES:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->h:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;
 
     invoke-virtual {v0}, [Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->clone()Ljava/lang/Object;
 
@@ -258,12 +246,12 @@
 
 
 # virtual methods
-.method getIntValue()I
+.method a()I
     .registers 2
 
     .prologue
     .line 1582
-    iget v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->mIntValue:I
+    iget v0, p0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$State;->g:I
 
     return v0
 .end method

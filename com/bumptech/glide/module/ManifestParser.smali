@@ -3,33 +3,27 @@
 .source "ManifestParser.java"
 
 
-# static fields
-.field private static final GLIDE_MODULE_VALUE:Ljava/lang/String; = "GlideModule"
-
-
 # instance fields
-.field private final context:Landroid/content/Context;
+.field private final a:Landroid/content/Context;
 
 
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 2
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 19
-    iput-object p1, p0, Lcom/bumptech/glide/module/ManifestParser;->context:Landroid/content/Context;
+    iput-object p1, p0, Lcom/bumptech/glide/module/ManifestParser;->a:Landroid/content/Context;
 
     .line 20
     return-void
 .end method
 
-.method private static parseModule(Ljava/lang/String;)Lcom/bumptech/glide/module/GlideModule;
-    .registers 7
-    .param p0, "className"    # Ljava/lang/String;
+.method private static a(Ljava/lang/String;)Lcom/bumptech/glide/module/GlideModule;
+    .registers 6
 
     .prologue
     .line 44
@@ -41,139 +35,126 @@
     move-result-object v0
 
     .line 51
-    .local v0, "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :try_start_4
     invoke-virtual {v0}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
     :try_end_7
     .catch Ljava/lang/InstantiationException; {:try_start_4 .. :try_end_7} :catch_30
     .catch Ljava/lang/IllegalAccessException; {:try_start_4 .. :try_end_7} :catch_4b
 
-    move-result-object v2
+    move-result-object v0
 
     .line 58
-    .local v2, "module":Ljava/lang/Object;
-    instance-of v3, v2, Lcom/bumptech/glide/module/GlideModule;
+    instance-of v1, v0, Lcom/bumptech/glide/module/GlideModule;
 
-    if-nez v3, :cond_66
+    if-nez v1, :cond_66
 
     .line 59
-    new-instance v3, Ljava/lang/RuntimeException;
+    new-instance v1, Ljava/lang/RuntimeException;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "Expected instanceof GlideModule, but found: "
+    const-string/jumbo v3, "Expected instanceof GlideModule, but found: "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v3, v4}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v1
 
     .line 45
-    .end local v0    # "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .end local v2    # "module":Ljava/lang/Object;
     :catch_26
-    move-exception v1
+    move-exception v0
 
     .line 46
-    .local v1, "e":Ljava/lang/ClassNotFoundException;
-    new-instance v3, Ljava/lang/IllegalArgumentException;
+    new-instance v1, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v4, "Unable to find GlideModule implementation"
+    const-string/jumbo v2, "Unable to find GlideModule implementation"
 
-    invoke-direct {v3, v4, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v2, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    throw v3
+    throw v1
 
     .line 52
-    .end local v1    # "e":Ljava/lang/ClassNotFoundException;
-    .restart local v0    # "clazz":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :catch_30
     move-exception v1
 
     .line 53
-    .local v1, "e":Ljava/lang/InstantiationException;
-    new-instance v3, Ljava/lang/RuntimeException;
+    new-instance v2, Ljava/lang/RuntimeException;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "Unable to instantiate GlideModule implementation for "
+    const-string/jumbo v4, "Unable to instantiate GlideModule implementation for "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v3, v4, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v2, v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    throw v3
+    throw v2
 
     .line 54
-    .end local v1    # "e":Ljava/lang/InstantiationException;
     :catch_4b
     move-exception v1
 
     .line 55
-    .local v1, "e":Ljava/lang/IllegalAccessException;
-    new-instance v3, Ljava/lang/RuntimeException;
+    new-instance v2, Ljava/lang/RuntimeException;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "Unable to instantiate GlideModule implementation for "
+    const-string/jumbo v4, "Unable to instantiate GlideModule implementation for "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-direct {v3, v4, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v2, v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    throw v3
+    throw v2
 
     .line 61
-    .end local v1    # "e":Ljava/lang/IllegalAccessException;
-    .restart local v2    # "module":Ljava/lang/Object;
     :cond_66
-    check-cast v2, Lcom/bumptech/glide/module/GlideModule;
+    check-cast v0, Lcom/bumptech/glide/module/GlideModule;
 
-    .end local v2    # "module":Ljava/lang/Object;
-    return-object v2
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public parse()Ljava/util/List;
-    .registers 9
+.method public a()Ljava/util/List;
+    .registers 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -186,110 +167,100 @@
 
     .prologue
     .line 23
-    new-instance v4, Ljava/util/ArrayList;
+    new-instance v1, Ljava/util/ArrayList;
 
-    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     .line 25
-    .local v4, "modules":Ljava/util/List;, "Ljava/util/List<Lcom/bumptech/glide/module/GlideModule;>;"
     :try_start_5
-    iget-object v5, p0, Lcom/bumptech/glide/module/ManifestParser;->context:Landroid/content/Context;
+    iget-object v0, p0, Lcom/bumptech/glide/module/ManifestParser;->a:Landroid/content/Context;
 
-    invoke-virtual {v5}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v5
-
-    iget-object v6, p0, Lcom/bumptech/glide/module/ManifestParser;->context:Landroid/content/Context;
-
-    invoke-virtual {v6}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v6
-
-    const/16 v7, 0x80
-
-    invoke-virtual {v5, v6, v7}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v0
 
-    .line 27
-    .local v0, "appInfo":Landroid/content/pm/ApplicationInfo;
-    iget-object v5, v0, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;
+    iget-object v2, p0, Lcom/bumptech/glide/module/ManifestParser;->a:Landroid/content/Context;
 
-    if-eqz v5, :cond_52
-
-    .line 28
-    iget-object v5, v0, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;
-
-    invoke-virtual {v5}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
-
-    move-result-object v5
-
-    invoke-interface {v5}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v2
 
-    .local v2, "i$":Ljava/util/Iterator;
-    :cond_25
-    :goto_25
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    const/16 v3, 0x80
 
-    move-result v5
+    invoke-virtual {v0, v2, v3}, Landroid/content/pm/PackageManager;->getApplicationInfo(Ljava/lang/String;I)Landroid/content/pm/ApplicationInfo;
 
-    if-eqz v5, :cond_52
+    move-result-object v2
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .line 27
+    iget-object v0, v2, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;
+
+    if-eqz v0, :cond_52
+
+    .line 28
+    iget-object v0, v2, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;
+
+    invoke-virtual {v0}, Landroid/os/Bundle;->keySet()Ljava/util/Set;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
 
-    check-cast v3, Ljava/lang/String;
+    :cond_25
+    :goto_25
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_52
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/String;
 
     .line 29
-    .local v3, "key":Ljava/lang/String;
-    const-string/jumbo v5, "GlideModule"
+    const-string/jumbo v4, "GlideModule"
 
-    iget-object v6, v0, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;
+    iget-object v5, v2, Landroid/content/pm/ApplicationInfo;->metaData:Landroid/os/Bundle;
 
-    invoke-virtual {v6, v3}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_25
-
-    .line 30
-    invoke-static {v3}, Lcom/bumptech/glide/module/ManifestParser;->parseModule(Ljava/lang/String;)Lcom/bumptech/glide/module/GlideModule;
+    invoke-virtual {v5, v0}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v5
 
-    invoke-interface {v4, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :cond_25
+
+    .line 30
+    invoke-static {v0}, Lcom/bumptech/glide/module/ManifestParser;->a(Ljava/lang/String;)Lcom/bumptech/glide/module/GlideModule;
+
+    move-result-object v0
+
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
     :try_end_47
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_5 .. :try_end_47} :catch_48
 
     goto :goto_25
 
     .line 34
-    .end local v0    # "appInfo":Landroid/content/pm/ApplicationInfo;
-    .end local v2    # "i$":Ljava/util/Iterator;
-    .end local v3    # "key":Ljava/lang/String;
     :catch_48
-    move-exception v1
+    move-exception v0
 
     .line 35
-    .local v1, "e":Landroid/content/pm/PackageManager$NameNotFoundException;
-    new-instance v5, Ljava/lang/RuntimeException;
+    new-instance v1, Ljava/lang/RuntimeException;
 
-    const-string/jumbo v6, "Unable to find metadata to parse GlideModules"
+    const-string/jumbo v2, "Unable to find metadata to parse GlideModules"
 
-    invoke-direct {v5, v6, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-direct {v1, v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    throw v5
+    throw v1
 
     .line 38
-    .end local v1    # "e":Landroid/content/pm/PackageManager$NameNotFoundException;
-    .restart local v0    # "appInfo":Landroid/content/pm/ApplicationInfo;
     :cond_52
-    return-object v4
+    return-object v1
 .end method

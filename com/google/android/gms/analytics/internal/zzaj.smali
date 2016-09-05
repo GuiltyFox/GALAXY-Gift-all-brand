@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field private zzBv:J
+.field private final a:Lcom/google/android/gms/internal/zznl;
 
-.field private final zzqD:Lcom/google/android/gms/internal/zznl;
+.field private b:J
 
 
 # direct methods
@@ -14,9 +14,9 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzaj;->zzqD:Lcom/google/android/gms/internal/zznl;
+    iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzaj;->a:Lcom/google/android/gms/internal/zznl;
 
     return-void
 .end method
@@ -26,47 +26,37 @@
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzaj;->zzqD:Lcom/google/android/gms/internal/zznl;
+    iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzaj;->a:Lcom/google/android/gms/internal/zznl;
 
-    iput-wide p2, p0, Lcom/google/android/gms/analytics/internal/zzaj;->zzBv:J
+    iput-wide p2, p0, Lcom/google/android/gms/analytics/internal/zzaj;->b:J
 
     return-void
 .end method
 
 
 # virtual methods
-.method public clear()V
+.method public a()V
     .registers 3
 
-    const-wide/16 v0, 0x0
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzaj;->a:Lcom/google/android/gms/internal/zznl;
 
-    iput-wide v0, p0, Lcom/google/android/gms/analytics/internal/zzaj;->zzBv:J
-
-    return-void
-.end method
-
-.method public start()V
-    .registers 3
-
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzaj;->zzqD:Lcom/google/android/gms/internal/zznl;
-
-    invoke-interface {v0}, Lcom/google/android/gms/internal/zznl;->elapsedRealtime()J
+    invoke-interface {v0}, Lcom/google/android/gms/internal/zznl;->b()J
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lcom/google/android/gms/analytics/internal/zzaj;->zzBv:J
+    iput-wide v0, p0, Lcom/google/android/gms/analytics/internal/zzaj;->b:J
 
     return-void
 .end method
 
-.method public zzv(J)Z
+.method public a(J)Z
     .registers 10
 
     const/4 v0, 0x1
 
-    iget-wide v2, p0, Lcom/google/android/gms/analytics/internal/zzaj;->zzBv:J
+    iget-wide v2, p0, Lcom/google/android/gms/analytics/internal/zzaj;->b:J
 
     const-wide/16 v4, 0x0
 
@@ -79,13 +69,13 @@
     return v0
 
     :cond_a
-    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzaj;->zzqD:Lcom/google/android/gms/internal/zznl;
+    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzaj;->a:Lcom/google/android/gms/internal/zznl;
 
-    invoke-interface {v1}, Lcom/google/android/gms/internal/zznl;->elapsedRealtime()J
+    invoke-interface {v1}, Lcom/google/android/gms/internal/zznl;->b()J
 
     move-result-wide v2
 
-    iget-wide v4, p0, Lcom/google/android/gms/analytics/internal/zzaj;->zzBv:J
+    iget-wide v4, p0, Lcom/google/android/gms/analytics/internal/zzaj;->b:J
 
     sub-long/2addr v2, v4
 
@@ -96,4 +86,14 @@
     const/4 v0, 0x0
 
     goto :goto_9
+.end method
+
+.method public b()V
+    .registers 3
+
+    const-wide/16 v0, 0x0
+
+    iput-wide v0, p0, Lcom/google/android/gms/analytics/internal/zzaj;->b:J
+
+    return-void
 .end method

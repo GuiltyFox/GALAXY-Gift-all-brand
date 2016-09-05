@@ -20,7 +20,7 @@
 
 
 # static fields
-.field private static final TRANSFORMATION:Lcom/bumptech/glide/load/Transformation;
+.field private static final a:Lcom/bumptech/glide/load/Transformation;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/Transformation",
@@ -40,7 +40,7 @@
 
     invoke-direct {v0}, Lcom/bumptech/glide/load/resource/UnitTransformation;-><init>()V
 
-    sput-object v0, Lcom/bumptech/glide/load/resource/UnitTransformation;->TRANSFORMATION:Lcom/bumptech/glide/load/Transformation;
+    sput-object v0, Lcom/bumptech/glide/load/resource/UnitTransformation;->a:Lcom/bumptech/glide/load/Transformation;
 
     return-void
 .end method
@@ -50,13 +50,12 @@
 
     .prologue
     .line 11
-    .local p0, "this":Lcom/bumptech/glide/load/resource/UnitTransformation;, "Lcom/bumptech/glide/load/resource/UnitTransformation<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
-.method public static get()Lcom/bumptech/glide/load/resource/UnitTransformation;
+.method public static b()Lcom/bumptech/glide/load/resource/UnitTransformation;
     .registers 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -70,7 +69,7 @@
 
     .prologue
     .line 21
-    sget-object v0, Lcom/bumptech/glide/load/resource/UnitTransformation;->TRANSFORMATION:Lcom/bumptech/glide/load/Transformation;
+    sget-object v0, Lcom/bumptech/glide/load/resource/UnitTransformation;->a:Lcom/bumptech/glide/load/Transformation;
 
     check-cast v0, Lcom/bumptech/glide/load/resource/UnitTransformation;
 
@@ -79,21 +78,8 @@
 
 
 # virtual methods
-.method public getId()Ljava/lang/String;
-    .registers 2
-
-    .prologue
-    .line 31
-    .local p0, "this":Lcom/bumptech/glide/load/resource/UnitTransformation;, "Lcom/bumptech/glide/load/resource/UnitTransformation<TT;>;"
-    const-string/jumbo v0, ""
-
-    return-object v0
-.end method
-
-.method public transform(Lcom/bumptech/glide/load/engine/Resource;II)Lcom/bumptech/glide/load/engine/Resource;
+.method public a(Lcom/bumptech/glide/load/engine/Resource;II)Lcom/bumptech/glide/load/engine/Resource;
     .registers 4
-    .param p2, "outWidth"    # I
-    .param p3, "outHeight"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -106,7 +92,15 @@
 
     .prologue
     .line 26
-    .local p0, "this":Lcom/bumptech/glide/load/resource/UnitTransformation;, "Lcom/bumptech/glide/load/resource/UnitTransformation<TT;>;"
-    .local p1, "resource":Lcom/bumptech/glide/load/engine/Resource;, "Lcom/bumptech/glide/load/engine/Resource<TT;>;"
     return-object p1
+.end method
+
+.method public a()Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 31
+    const-string/jumbo v0, ""
+
+    return-object v0
 .end method

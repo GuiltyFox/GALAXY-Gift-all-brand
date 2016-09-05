@@ -8,12 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lrx/subjects/PublishSubject;->create()Lrx/subjects/PublishSubject;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
+    value = Lrx/subjects/PublishSubject;->c()Lrx/subjects/PublishSubject;
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
@@ -28,7 +23,7 @@
 
 
 # instance fields
-.field final synthetic val$state:Lrx/subjects/SubjectSubscriptionManager;
+.field final synthetic a:Lrx/subjects/SubjectSubscriptionManager;
 
 
 # direct methods
@@ -37,7 +32,7 @@
 
     .prologue
     .line 62
-    iput-object p1, p0, Lrx/subjects/PublishSubject$1;->val$state:Lrx/subjects/SubjectSubscriptionManager;
+    iput-object p1, p0, Lrx/subjects/PublishSubject$1;->a:Lrx/subjects/SubjectSubscriptionManager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -46,21 +41,19 @@
 
 
 # virtual methods
-.method public bridge synthetic call(Ljava/lang/Object;)V
+.method public bridge synthetic a(Ljava/lang/Object;)V
     .registers 2
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 62
     check-cast p1, Lrx/subjects/SubjectSubscriptionManager$SubjectObserver;
 
-    .end local p1    # "x0":Ljava/lang/Object;
-    invoke-virtual {p0, p1}, Lrx/subjects/PublishSubject$1;->call(Lrx/subjects/SubjectSubscriptionManager$SubjectObserver;)V
+    invoke-virtual {p0, p1}, Lrx/subjects/PublishSubject$1;->a(Lrx/subjects/SubjectSubscriptionManager$SubjectObserver;)V
 
     return-void
 .end method
 
-.method public call(Lrx/subjects/SubjectSubscriptionManager$SubjectObserver;)V
+.method public a(Lrx/subjects/SubjectSubscriptionManager$SubjectObserver;)V
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -72,18 +65,17 @@
 
     .prologue
     .line 66
-    .local p1, "o":Lrx/subjects/SubjectSubscriptionManager$SubjectObserver;, "Lrx/subjects/SubjectSubscriptionManager$SubjectObserver<TT;>;"
-    iget-object v0, p0, Lrx/subjects/PublishSubject$1;->val$state:Lrx/subjects/SubjectSubscriptionManager;
+    iget-object v0, p0, Lrx/subjects/PublishSubject$1;->a:Lrx/subjects/SubjectSubscriptionManager;
 
-    invoke-virtual {v0}, Lrx/subjects/SubjectSubscriptionManager;->getLatest()Ljava/lang/Object;
+    invoke-virtual {v0}, Lrx/subjects/SubjectSubscriptionManager;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    iget-object v1, p0, Lrx/subjects/PublishSubject$1;->val$state:Lrx/subjects/SubjectSubscriptionManager;
+    iget-object v1, p0, Lrx/subjects/PublishSubject$1;->a:Lrx/subjects/SubjectSubscriptionManager;
 
-    iget-object v1, v1, Lrx/subjects/SubjectSubscriptionManager;->nl:Lrx/internal/operators/NotificationLite;
+    iget-object v1, v1, Lrx/subjects/SubjectSubscriptionManager;->f:Lrx/internal/operators/NotificationLite;
 
-    invoke-virtual {p1, v0, v1}, Lrx/subjects/SubjectSubscriptionManager$SubjectObserver;->emitFirst(Ljava/lang/Object;Lrx/internal/operators/NotificationLite;)V
+    invoke-virtual {p1, v0, v1}, Lrx/subjects/SubjectSubscriptionManager$SubjectObserver;->b(Ljava/lang/Object;Lrx/internal/operators/NotificationLite;)V
 
     .line 67
     return-void

@@ -8,20 +8,13 @@
 .end annotation
 
 
-# static fields
-.field private static final serialVersionUID:J = -0x5c4c0a13728d6ef5L
-
-
 # instance fields
-.field private final httphost:Lcz/msebera/android/httpclient/HttpHost;
+.field private final a:Lcz/msebera/android/httpclient/HttpHost;
 
 
 # direct methods
 .method public constructor <init>(Lcz/msebera/android/httpclient/HttpHost;Ljava/net/InetAddress;I)V
     .registers 5
-    .param p1, "httphost"    # Lcz/msebera/android/httpclient/HttpHost;
-    .param p2, "addr"    # Ljava/net/InetAddress;
-    .param p3, "port"    # I
 
     .prologue
     .line 51
@@ -30,10 +23,10 @@
     .line 52
     const-string/jumbo v0, "HTTP host"
 
-    invoke-static {p1, v0}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p1, v0}, Lcz/msebera/android/httpclient/util/Args;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 53
-    iput-object p1, p0, Lcz/msebera/android/httpclient/conn/HttpInetSocketAddress;->httphost:Lcz/msebera/android/httpclient/HttpHost;
+    iput-object p1, p0, Lcz/msebera/android/httpclient/conn/HttpInetSocketAddress;->a:Lcz/msebera/android/httpclient/HttpHost;
 
     .line 54
     return-void
@@ -41,12 +34,12 @@
 
 
 # virtual methods
-.method public getHttpHost()Lcz/msebera/android/httpclient/HttpHost;
+.method public a()Lcz/msebera/android/httpclient/HttpHost;
     .registers 2
 
     .prologue
     .line 57
-    iget-object v0, p0, Lcz/msebera/android/httpclient/conn/HttpInetSocketAddress;->httphost:Lcz/msebera/android/httpclient/HttpHost;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/conn/HttpInetSocketAddress;->a:Lcz/msebera/android/httpclient/HttpHost;
 
     return-object v0
 .end method
@@ -60,9 +53,9 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    iget-object v1, p0, Lcz/msebera/android/httpclient/conn/HttpInetSocketAddress;->httphost:Lcz/msebera/android/httpclient/HttpHost;
+    iget-object v1, p0, Lcz/msebera/android/httpclient/conn/HttpInetSocketAddress;->a:Lcz/msebera/android/httpclient/HttpHost;
 
-    invoke-virtual {v1}, Lcz/msebera/android/httpclient/HttpHost;->getHostName()Ljava/lang/String;
+    invoke-virtual {v1}, Lcz/msebera/android/httpclient/HttpHost;->a()Ljava/lang/String;
 
     move-result-object v1
 

@@ -3,17 +3,6 @@
 .source "FileToStreamDecoder.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/resource/file/FileToStreamDecoder;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "FileOpener"
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .registers 1
@@ -27,14 +16,8 @@
 
 
 # virtual methods
-.method public open(Ljava/io/File;)Ljava/io/InputStream;
+.method public a(Ljava/io/File;)Ljava/io/InputStream;
     .registers 3
-    .param p1, "file"    # Ljava/io/File;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/FileNotFoundException;
-        }
-    .end annotation
 
     .prologue
     .line 60

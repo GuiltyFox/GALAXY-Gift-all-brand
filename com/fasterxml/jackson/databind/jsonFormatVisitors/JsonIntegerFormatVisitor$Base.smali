@@ -6,17 +6,6 @@
 .implements Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonIntegerFormatVisitor;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonIntegerFormatVisitor;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Base"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -32,7 +21,6 @@
 # virtual methods
 .method public numberType(Lcom/fasterxml/jackson/core/JsonParser$NumberType;)V
     .registers 2
-    .param p1, "type"    # Lcom/fasterxml/jackson/core/JsonParser$NumberType;
 
     .prologue
     .line 23

@@ -8,27 +8,21 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;->checkNFC()V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/samsung/privilege/activity/MainPagerActivity;->t()V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+.field final synthetic a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/MainPagerActivity;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
 
     .prologue
-    .line 2649
-    iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$39;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .line 2752
+    iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$39;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,20 +33,18 @@
 # virtual methods
 .method public onClick(Landroid/content/DialogInterface;I)V
     .registers 6
-    .param p1, "dialog"    # Landroid/content/DialogInterface;
-    .param p2, "which"    # I
 
     .prologue
-    .line 2652
+    .line 2755
     packed-switch p2, :pswitch_data_12
 
-    .line 2663
+    .line 2766
     :goto_3
     return-void
 
-    .line 2657
+    .line 2760
     :pswitch_4
-    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$39;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$39;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     new-instance v1, Landroid/content/Intent;
 
@@ -64,7 +56,7 @@
 
     goto :goto_3
 
-    .line 2652
+    .line 2755
     :pswitch_data_12
     .packed-switch -0x1
         :pswitch_4

@@ -2,9 +2,6 @@
 .super Landroid/widget/FrameLayout;
 .source "LoadingLayout.java"
 
-# interfaces
-.implements Lcom/handmark/pulltorefresh/library/internal/ILoadingLayout;
-
 
 # annotations
 .annotation build Landroid/annotation/SuppressLint;
@@ -15,33 +12,31 @@
 
 
 # static fields
-.field static final ANIMATION_INTERPOLATOR:Landroid/view/animation/Interpolator;
-
-.field static final LOG_TAG:Ljava/lang/String; = "PullToRefresh-LoadingLayout"
+.field static final a:Landroid/view/animation/Interpolator;
 
 
 # instance fields
-.field protected final mHeaderImage:Landroid/widget/ImageView;
+.field protected final b:Landroid/widget/ImageView;
 
-.field protected final mHeaderProgress:Landroid/widget/ProgressBar;
+.field protected final c:Landroid/widget/ProgressBar;
 
-.field private final mHeaderText:Landroid/widget/TextView;
+.field protected final d:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
-.field private mInnerLayout:Landroid/widget/FrameLayout;
+.field protected final e:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
-.field protected final mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+.field private f:Landroid/widget/FrameLayout;
 
-.field private mPullLabel:Ljava/lang/CharSequence;
+.field private g:Z
 
-.field private mRefreshingLabel:Ljava/lang/CharSequence;
+.field private final h:Landroid/widget/TextView;
 
-.field private mReleaseLabel:Ljava/lang/CharSequence;
+.field private final i:Landroid/widget/TextView;
 
-.field protected final mScrollDirection:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+.field private j:Ljava/lang/CharSequence;
 
-.field private final mSubHeaderText:Landroid/widget/TextView;
+.field private k:Ljava/lang/CharSequence;
 
-.field private mUseIntrinsicAnimation:Z
+.field private l:Ljava/lang/CharSequence;
 
 
 # direct methods
@@ -54,512 +49,492 @@
 
     invoke-direct {v0}, Landroid/view/animation/LinearInterpolator;-><init>()V
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->ANIMATION_INTERPOLATOR:Landroid/view/animation/Interpolator;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a:Landroid/view/animation/Interpolator;
 
     return-void
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;Landroid/content/res/TypedArray;)V
-    .registers 12
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "mode"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-    .param p3, "scrollDirection"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
-    .param p4, "attrs"    # Landroid/content/res/TypedArray;
+    .registers 8
 
     .prologue
     .line 67
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     .line 68
-    iput-object p2, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mMode:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
+    iput-object p2, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->d:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
 
     .line 69
-    iput-object p3, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mScrollDirection:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    iput-object p3, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->e:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
     .line 71
-    sget-object v5, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->a:[I
 
     invoke-virtual {p3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->ordinal()I
 
-    move-result v6
+    move-result v1
 
-    aget v5, v5, v6
+    aget v0, v0, v1
 
-    packed-switch v5, :pswitch_data_19e
+    packed-switch v0, :pswitch_data_19e
 
     .line 77
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    move-result-object v5
+    move-result-object v0
 
-    sget v6, Lcom/bzbs/lib/survey/R$layout;->bz_pull_to_refresh_header_vertical:I
+    sget v1, Lcom/bzbs/lib/survey/R$layout;->bz_pull_to_refresh_header_vertical:I
 
-    invoke-virtual {v5, v6, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+    invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     .line 81
     :goto_1b
-    sget v5, Lcom/bzbs/lib/survey/R$id;->fl_inner:I
+    sget v0, Lcom/bzbs/lib/survey/R$id;->fl_inner:I
 
-    invoke-virtual {p0, v5}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->findViewById(I)Landroid/view/View;
 
-    move-result-object v5
+    move-result-object v0
 
-    check-cast v5, Landroid/widget/FrameLayout;
+    check-cast v0, Landroid/widget/FrameLayout;
 
-    iput-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mInnerLayout:Landroid/widget/FrameLayout;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/FrameLayout;
 
     .line 82
-    iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mInnerLayout:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/FrameLayout;
 
-    sget v6, Lcom/bzbs/lib/survey/R$id;->pull_to_refresh_text:I
+    sget v1, Lcom/bzbs/lib/survey/R$id;->pull_to_refresh_text:I
 
-    invoke-virtual {v5, v6}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
-    move-result-object v5
+    move-result-object v0
 
-    check-cast v5, Landroid/widget/TextView;
+    check-cast v0, Landroid/widget/TextView;
 
-    iput-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderText:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->h:Landroid/widget/TextView;
 
     .line 83
-    iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mInnerLayout:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/FrameLayout;
 
-    sget v6, Lcom/bzbs/lib/survey/R$id;->pull_to_refresh_progress:I
+    sget v1, Lcom/bzbs/lib/survey/R$id;->pull_to_refresh_progress:I
 
-    invoke-virtual {v5, v6}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
-    move-result-object v5
+    move-result-object v0
 
-    check-cast v5, Landroid/widget/ProgressBar;
+    check-cast v0, Landroid/widget/ProgressBar;
 
-    iput-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderProgress:Landroid/widget/ProgressBar;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->c:Landroid/widget/ProgressBar;
 
     .line 84
-    iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mInnerLayout:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/FrameLayout;
 
-    sget v6, Lcom/bzbs/lib/survey/R$id;->pull_to_refresh_sub_text:I
+    sget v1, Lcom/bzbs/lib/survey/R$id;->pull_to_refresh_sub_text:I
 
-    invoke-virtual {v5, v6}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
-    move-result-object v5
+    move-result-object v0
 
-    check-cast v5, Landroid/widget/TextView;
+    check-cast v0, Landroid/widget/TextView;
 
-    iput-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->i:Landroid/widget/TextView;
 
     .line 85
-    iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mInnerLayout:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/FrameLayout;
 
-    sget v6, Lcom/bzbs/lib/survey/R$id;->pull_to_refresh_image:I
+    sget v1, Lcom/bzbs/lib/survey/R$id;->pull_to_refresh_image:I
 
-    invoke-virtual {v5, v6}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->findViewById(I)Landroid/view/View;
 
-    move-result-object v5
+    move-result-object v0
 
-    check-cast v5, Landroid/widget/ImageView;
+    check-cast v0, Landroid/widget/ImageView;
 
-    iput-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderImage:Landroid/widget/ImageView;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->b:Landroid/widget/ImageView;
 
     .line 87
-    iget-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mInnerLayout:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/FrameLayout;
 
-    invoke-virtual {v5}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Landroid/widget/FrameLayout$LayoutParams;
+    check-cast v0, Landroid/widget/FrameLayout$LayoutParams;
 
     .line 89
-    .local v3, "lp":Landroid/widget/FrameLayout$LayoutParams;
-    sget-object v5, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->b:[I
 
     invoke-virtual {p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
 
-    move-result v6
+    move-result v2
 
-    aget v5, v5, v6
+    aget v1, v1, v2
 
-    packed-switch v5, :pswitch_data_1a4
+    packed-switch v1, :pswitch_data_1a4
 
     .line 101
-    sget-object v5, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->VERTICAL:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
-    if-ne p3, v5, :cond_15b
+    if-ne p3, v1, :cond_15b
 
-    const/16 v5, 0x50
+    const/16 v1, 0x50
 
     :goto_6e
-    iput v5, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     .line 104
-    sget v5, Lcom/bzbs/lib/survey/R$string;->pull_to_refresh_pull_label:I
+    sget v0, Lcom/bzbs/lib/survey/R$string;->pull_to_refresh_pull_label:I
 
-    invoke-virtual {p1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mPullLabel:Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->j:Ljava/lang/CharSequence;
 
     .line 105
-    sget v5, Lcom/bzbs/lib/survey/R$string;->pull_to_refresh_refreshing_label:I
+    sget v0, Lcom/bzbs/lib/survey/R$string;->pull_to_refresh_refreshing_label:I
 
-    invoke-virtual {p1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mRefreshingLabel:Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->k:Ljava/lang/CharSequence;
 
     .line 106
-    sget v5, Lcom/bzbs/lib/survey/R$string;->pull_to_refresh_release_label:I
+    sget v0, Lcom/bzbs/lib/survey/R$string;->pull_to_refresh_release_label:I
 
-    invoke-virtual {p1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mReleaseLabel:Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->l:Ljava/lang/CharSequence;
 
     .line 110
     :goto_88
-    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderBackground:I
+    sget v0, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderBackground:I
 
-    invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {p4, v0}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v5
+    move-result v0
 
-    if-eqz v5, :cond_9b
+    if-eqz v0, :cond_9b
 
     .line 111
-    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderBackground:I
+    sget v0, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderBackground:I
 
-    invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p4, v0}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     .line 112
-    .local v0, "background":Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_9b
 
     .line 113
-    invoke-static {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/ViewCompat;->setBackground(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
+    invoke-static {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/ViewCompat;->a(Landroid/view/View;Landroid/graphics/drawable/Drawable;)V
 
     .line 117
-    .end local v0    # "background":Landroid/graphics/drawable/Drawable;
     :cond_9b
-    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderTextAppearance:I
+    sget v0, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderTextAppearance:I
 
-    invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {p4, v0}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v5
+    move-result v0
 
-    if-eqz v5, :cond_b2
+    if-eqz v0, :cond_b2
 
     .line 118
-    new-instance v4, Landroid/util/TypedValue;
+    new-instance v0, Landroid/util/TypedValue;
 
-    invoke-direct {v4}, Landroid/util/TypedValue;-><init>()V
+    invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
     .line 119
-    .local v4, "styleID":Landroid/util/TypedValue;
-    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderTextAppearance:I
+    sget v1, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderTextAppearance:I
 
-    invoke-virtual {p4, v5, v4}, Landroid/content/res/TypedArray;->getValue(ILandroid/util/TypedValue;)Z
+    invoke-virtual {p4, v1, v0}, Landroid/content/res/TypedArray;->getValue(ILandroid/util/TypedValue;)Z
 
     .line 120
-    iget v5, v4, Landroid/util/TypedValue;->data:I
+    iget v0, v0, Landroid/util/TypedValue;->data:I
 
-    invoke-direct {p0, v5}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setTextAppearance(I)V
+    invoke-direct {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setTextAppearance(I)V
 
     .line 122
-    .end local v4    # "styleID":Landroid/util/TypedValue;
     :cond_b2
-    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrSubHeaderTextAppearance:I
+    sget v0, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrSubHeaderTextAppearance:I
 
-    invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {p4, v0}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v5
+    move-result v0
 
-    if-eqz v5, :cond_c9
+    if-eqz v0, :cond_c9
 
     .line 123
-    new-instance v4, Landroid/util/TypedValue;
+    new-instance v0, Landroid/util/TypedValue;
 
-    invoke-direct {v4}, Landroid/util/TypedValue;-><init>()V
+    invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
     .line 124
-    .restart local v4    # "styleID":Landroid/util/TypedValue;
-    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrSubHeaderTextAppearance:I
+    sget v1, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrSubHeaderTextAppearance:I
 
-    invoke-virtual {p4, v5, v4}, Landroid/content/res/TypedArray;->getValue(ILandroid/util/TypedValue;)Z
+    invoke-virtual {p4, v1, v0}, Landroid/content/res/TypedArray;->getValue(ILandroid/util/TypedValue;)Z
 
     .line 125
-    iget v5, v4, Landroid/util/TypedValue;->data:I
+    iget v0, v0, Landroid/util/TypedValue;->data:I
 
-    invoke-direct {p0, v5}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setSubTextAppearance(I)V
+    invoke-direct {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setSubTextAppearance(I)V
 
     .line 129
-    .end local v4    # "styleID":Landroid/util/TypedValue;
     :cond_c9
-    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderTextColor:I
+    sget v0, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderTextColor:I
 
-    invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {p4, v0}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v5
+    move-result v0
 
-    if-eqz v5, :cond_dc
+    if-eqz v0, :cond_dc
 
     .line 130
-    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderTextColor:I
+    sget v0, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderTextColor:I
 
-    invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+    invoke-virtual {p4, v0}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 131
-    .local v1, "colors":Landroid/content/res/ColorStateList;
-    if-eqz v1, :cond_dc
+    if-eqz v0, :cond_dc
 
     .line 132
-    invoke-direct {p0, v1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setTextColor(Landroid/content/res/ColorStateList;)V
+    invoke-direct {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->b(Landroid/content/res/ColorStateList;)V
 
     .line 135
-    .end local v1    # "colors":Landroid/content/res/ColorStateList;
     :cond_dc
-    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderSubTextColor:I
+    sget v0, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderSubTextColor:I
 
-    invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {p4, v0}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v5
+    move-result v0
 
-    if-eqz v5, :cond_ef
+    if-eqz v0, :cond_ef
 
     .line 136
-    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderSubTextColor:I
+    sget v0, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrHeaderSubTextColor:I
 
-    invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+    invoke-virtual {p4, v0}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 137
-    .restart local v1    # "colors":Landroid/content/res/ColorStateList;
-    if-eqz v1, :cond_ef
+    if-eqz v0, :cond_ef
 
     .line 138
-    invoke-direct {p0, v1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setSubTextColor(Landroid/content/res/ColorStateList;)V
+    invoke-direct {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a(Landroid/content/res/ColorStateList;)V
 
     .line 143
-    .end local v1    # "colors":Landroid/content/res/ColorStateList;
     :cond_ef
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     .line 144
-    .local v2, "imageDrawable":Landroid/graphics/drawable/Drawable;
-    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawable:I
+    sget v1, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawable:I
 
-    invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {p4, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v5
+    move-result v1
 
-    if-eqz v5, :cond_fe
+    if-eqz v1, :cond_fe
 
     .line 145
-    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawable:I
+    sget v0, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawable:I
 
-    invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p4, v0}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 150
     :cond_fe
-    sget-object v5, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Mode:[I
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->b:[I
 
     invoke-virtual {p2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;->ordinal()I
 
-    move-result v6
+    move-result v2
 
-    aget v5, v5, v6
+    aget v1, v1, v2
 
-    packed-switch v5, :pswitch_data_1aa
+    packed-switch v1, :pswitch_data_1aa
 
     .line 153
-    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableStart:I
+    sget v1, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableStart:I
 
-    invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {p4, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v5
+    move-result v1
 
-    if-eqz v5, :cond_15e
+    if-eqz v1, :cond_15e
 
     .line 154
-    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableStart:I
+    sget v0, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableStart:I
 
-    invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p4, v0}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 172
     :cond_117
     :goto_117
-    if-nez v2, :cond_125
+    if-nez v0, :cond_125
 
     .line 173
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v5
+    move-result-object v0
 
     invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->getDefaultDrawableResId()I
 
-    move-result v6
+    move-result v1
 
-    invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 177
     :cond_125
-    invoke-virtual {p0, v2}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setLoadingDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {p0, v0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->b(Landroid/graphics/drawable/Drawable;)V
 
     .line 179
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->reset()V
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->h()V
 
     .line 180
     return-void
 
     .line 73
-    .end local v2    # "imageDrawable":Landroid/graphics/drawable/Drawable;
-    .end local v3    # "lp":Landroid/widget/FrameLayout$LayoutParams;
     :pswitch_12c
     invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
-    move-result-object v5
+    move-result-object v0
 
-    sget v6, Lcom/bzbs/lib/survey/R$layout;->bz_pull_to_refresh_header_horizontal:I
+    sget v1, Lcom/bzbs/lib/survey/R$layout;->bz_pull_to_refresh_header_horizontal:I
 
-    invoke-virtual {v5, v6, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
+    invoke-virtual {v0, v1, p0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;)Landroid/view/View;
 
     goto/16 :goto_1b
 
     .line 91
-    .restart local v3    # "lp":Landroid/widget/FrameLayout$LayoutParams;
     :pswitch_137
-    sget-object v5, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->VERTICAL:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
-    if-ne p3, v5, :cond_159
+    if-ne p3, v1, :cond_159
 
-    const/16 v5, 0x30
+    const/16 v1, 0x30
 
     :goto_13d
-    iput v5, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
+    iput v1, v0, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     .line 94
-    sget v5, Lcom/bzbs/lib/survey/R$string;->pull_to_refresh_from_bottom_pull_label:I
+    sget v0, Lcom/bzbs/lib/survey/R$string;->pull_to_refresh_from_bottom_pull_label:I
 
-    invoke-virtual {p1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mPullLabel:Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->j:Ljava/lang/CharSequence;
 
     .line 95
-    sget v5, Lcom/bzbs/lib/survey/R$string;->pull_to_refresh_from_bottom_refreshing_label:I
+    sget v0, Lcom/bzbs/lib/survey/R$string;->pull_to_refresh_from_bottom_refreshing_label:I
 
-    invoke-virtual {p1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mRefreshingLabel:Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->k:Ljava/lang/CharSequence;
 
     .line 96
-    sget v5, Lcom/bzbs/lib/survey/R$string;->pull_to_refresh_from_bottom_release_label:I
+    sget v0, Lcom/bzbs/lib/survey/R$string;->pull_to_refresh_from_bottom_release_label:I
 
-    invoke-virtual {p1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v0
 
-    iput-object v5, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mReleaseLabel:Ljava/lang/CharSequence;
+    iput-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->l:Ljava/lang/CharSequence;
 
     goto/16 :goto_88
 
     .line 91
     :cond_159
-    const/4 v5, 0x3
+    const/4 v1, 0x3
 
     goto :goto_13d
 
     .line 101
     :cond_15b
-    const/4 v5, 0x5
+    const/4 v1, 0x5
 
     goto/16 :goto_6e
 
     .line 155
-    .restart local v2    # "imageDrawable":Landroid/graphics/drawable/Drawable;
     :cond_15e
-    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableTop:I
+    sget v1, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableTop:I
 
-    invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {p4, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v5
+    move-result v1
 
-    if-eqz v5, :cond_117
+    if-eqz v1, :cond_117
 
     .line 156
-    const-string/jumbo v5, "ptrDrawableTop"
+    const-string/jumbo v0, "ptrDrawableTop"
 
-    const-string/jumbo v6, "ptrDrawableStart"
+    const-string/jumbo v1, "ptrDrawableStart"
 
-    invoke-static {v5, v6}, Lcom/handmark/pulltorefresh/library/internal/Utils;->warnDeprecation(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/handmark/pulltorefresh/library/internal/Utils;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 157
-    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableTop:I
+    sget v0, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableTop:I
 
-    invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p4, v0}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v2
+    move-result-object v0
 
     goto :goto_117
 
     .line 162
     :pswitch_176
-    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableEnd:I
+    sget v1, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableEnd:I
 
-    invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {p4, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v5
+    move-result v1
 
-    if-eqz v5, :cond_185
+    if-eqz v1, :cond_185
 
     .line 163
-    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableEnd:I
+    sget v0, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableEnd:I
 
-    invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p4, v0}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v2
+    move-result-object v0
 
     goto :goto_117
 
     .line 164
     :cond_185
-    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableBottom:I
+    sget v1, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableBottom:I
 
-    invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {p4, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v5
+    move-result v1
 
-    if-eqz v5, :cond_117
+    if-eqz v1, :cond_117
 
     .line 165
-    const-string/jumbo v5, "ptrDrawableBottom"
+    const-string/jumbo v0, "ptrDrawableBottom"
 
-    const-string/jumbo v6, "ptrDrawableEnd"
+    const-string/jumbo v1, "ptrDrawableEnd"
 
-    invoke-static {v5, v6}, Lcom/handmark/pulltorefresh/library/internal/Utils;->warnDeprecation(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/handmark/pulltorefresh/library/internal/Utils;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 166
-    sget v5, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableBottom:I
+    sget v0, Lcom/bzbs/lib/survey/R$styleable;->PullToRefresh_ptrDrawableBottom:I
 
-    invoke-virtual {p4, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {p4, v0}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v2
+    move-result-object v0
 
     goto/16 :goto_117
 
@@ -582,72 +557,66 @@
     .end packed-switch
 .end method
 
-.method private setSubHeaderText(Ljava/lang/CharSequence;)V
-    .registers 4
-    .param p1, "label"    # Ljava/lang/CharSequence;
+.method private a(Landroid/content/res/ColorStateList;)V
+    .registers 3
 
     .prologue
-    const/16 v1, 0x8
+    .line 369
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->i:Landroid/widget/TextView;
 
-    .line 347
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
+    if-eqz v0, :cond_9
 
-    if-eqz v0, :cond_11
+    .line 370
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->i:Landroid/widget/TextView;
 
-    .line 348
-    invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
 
-    move-result v0
+    .line 372
+    :cond_9
+    return-void
+.end method
+
+.method private b(Landroid/content/res/ColorStateList;)V
+    .registers 3
+
+    .prologue
+    .line 384
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->h:Landroid/widget/TextView;
+
+    if-eqz v0, :cond_9
+
+    .line 385
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->h:Landroid/widget/TextView;
+
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
+
+    .line 387
+    :cond_9
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->i:Landroid/widget/TextView;
 
     if-eqz v0, :cond_12
 
-    .line 349
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
+    .line 388
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->i:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
 
-    .line 360
-    :cond_11
-    :goto_11
-    return-void
-
-    .line 351
+    .line 390
     :cond_12
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
-
-    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 355
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
-
-    invoke-virtual {v0}, Landroid/widget/TextView;->getVisibility()I
-
-    move-result v0
-
-    if-ne v1, v0, :cond_11
-
-    .line 356
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    goto :goto_11
+    return-void
 .end method
 
 .method private setSubTextAppearance(I)V
     .registers 4
-    .param p1, "value"    # I
 
     .prologue
     .line 363
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->i:Landroid/widget/TextView;
 
     if-eqz v0, :cond_d
 
     .line 364
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->i:Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->getContext()Landroid/content/Context;
 
@@ -660,38 +629,17 @@
     return-void
 .end method
 
-.method private setSubTextColor(Landroid/content/res/ColorStateList;)V
-    .registers 3
-    .param p1, "color"    # Landroid/content/res/ColorStateList;
-
-    .prologue
-    .line 369
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
-
-    if-eqz v0, :cond_9
-
-    .line 370
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
-
-    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
-
-    .line 372
-    :cond_9
-    return-void
-.end method
-
 .method private setTextAppearance(I)V
     .registers 4
-    .param p1, "value"    # I
 
     .prologue
     .line 375
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderText:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->h:Landroid/widget/TextView;
 
     if-eqz v0, :cond_d
 
     .line 376
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderText:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->h:Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->getContext()Landroid/content/Context;
 
@@ -701,12 +649,12 @@
 
     .line 378
     :cond_d
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->i:Landroid/widget/TextView;
 
     if-eqz v0, :cond_1a
 
     .line 379
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->i:Landroid/widget/TextView;
 
     invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->getContext()Landroid/content/Context;
 
@@ -719,47 +667,177 @@
     return-void
 .end method
 
-.method private setTextColor(Landroid/content/res/ColorStateList;)V
+
+# virtual methods
+.method protected abstract a()V
+.end method
+
+.method protected abstract a(F)V
+.end method
+
+.method protected abstract a(Landroid/graphics/drawable/Drawable;)V
+.end method
+
+.method protected abstract b()V
+.end method
+
+.method public final b(F)V
     .registers 3
-    .param p1, "color"    # Landroid/content/res/ColorStateList;
 
     .prologue
-    .line 384
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderText:Landroid/widget/TextView;
+    .line 220
+    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->g:Z
 
-    if-eqz v0, :cond_9
+    if-nez v0, :cond_7
 
-    .line 385
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderText:Landroid/widget/TextView;
+    .line 221
+    invoke-virtual {p0, p1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a(F)V
 
-    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
-
-    .line 387
-    :cond_9
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
-
-    if-eqz v0, :cond_12
-
-    .line 388
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
-
-    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
-
-    .line 390
-    :cond_12
+    .line 223
+    :cond_7
     return-void
 .end method
 
+.method public final b(Landroid/graphics/drawable/Drawable;)V
+    .registers 3
 
-# virtual methods
+    .prologue
+    .line 289
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->b:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 290
+    instance-of v0, p1, Landroid/graphics/drawable/AnimationDrawable;
+
+    iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->g:Z
+
+    .line 293
+    invoke-virtual {p0, p1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a(Landroid/graphics/drawable/Drawable;)V
+
+    .line 294
+    return-void
+.end method
+
+.method protected abstract c()V
+.end method
+
+.method protected abstract d()V
+.end method
+
+.method public final e()V
+    .registers 3
+
+    .prologue
+    .line 226
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->h:Landroid/widget/TextView;
+
+    if-eqz v0, :cond_b
+
+    .line 227
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->h:Landroid/widget/TextView;
+
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->j:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 231
+    :cond_b
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->a()V
+
+    .line 232
+    return-void
+.end method
+
+.method public final f()V
+    .registers 3
+
+    .prologue
+    .line 235
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->h:Landroid/widget/TextView;
+
+    if-eqz v0, :cond_b
+
+    .line 236
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->h:Landroid/widget/TextView;
+
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->k:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 239
+    :cond_b
+    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->g:Z
+
+    if-eqz v0, :cond_26
+
+    .line 240
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->b:Landroid/widget/ImageView;
+
+    invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/graphics/drawable/AnimationDrawable;
+
+    invoke-virtual {v0}, Landroid/graphics/drawable/AnimationDrawable;->start()V
+
+    .line 246
+    :goto_1a
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->i:Landroid/widget/TextView;
+
+    if-eqz v0, :cond_25
+
+    .line 247
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->i:Landroid/widget/TextView;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 249
+    :cond_25
+    return-void
+
+    .line 243
+    :cond_26
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->b()V
+
+    goto :goto_1a
+.end method
+
+.method public final g()V
+    .registers 3
+
+    .prologue
+    .line 252
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->h:Landroid/widget/TextView;
+
+    if-eqz v0, :cond_b
+
+    .line 253
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->h:Landroid/widget/TextView;
+
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->l:Ljava/lang/CharSequence;
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 257
+    :cond_b
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->c()V
+
+    .line 258
+    return-void
+.end method
+
 .method public final getContentSize()I
     .registers 3
 
     .prologue
     .line 195
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$Orientation:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout$1;->a:[I
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mScrollDirection:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->e:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
 
     invoke-virtual {v1}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;->ordinal()I
 
@@ -770,7 +848,7 @@
     packed-switch v0, :pswitch_data_1c
 
     .line 200
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mInnerLayout:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getHeight()I
 
@@ -781,7 +859,7 @@
 
     .line 197
     :pswitch_14
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mInnerLayout:Landroid/widget/FrameLayout;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->f:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getWidth()I
 
@@ -801,245 +879,37 @@
 .method protected abstract getDefaultDrawableResId()I
 .end method
 
-.method public final hideAllViews()V
-    .registers 3
-
-    .prologue
-    const/4 v1, 0x4
-
-    .line 205
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderText:Landroid/widget/TextView;
-
-    invoke-virtual {v0}, Landroid/widget/TextView;->getVisibility()I
-
-    move-result v0
-
-    if-nez v0, :cond_e
-
-    .line 206
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderText:Landroid/widget/TextView;
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    .line 208
-    :cond_e
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderProgress:Landroid/widget/ProgressBar;
-
-    invoke-virtual {v0}, Landroid/widget/ProgressBar;->getVisibility()I
-
-    move-result v0
-
-    if-nez v0, :cond_1b
-
-    .line 209
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderProgress:Landroid/widget/ProgressBar;
-
-    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
-
-    .line 211
-    :cond_1b
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderImage:Landroid/widget/ImageView;
-
-    invoke-virtual {v0}, Landroid/widget/ImageView;->getVisibility()I
-
-    move-result v0
-
-    if-nez v0, :cond_28
-
-    .line 212
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderImage:Landroid/widget/ImageView;
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 214
-    :cond_28
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
-
-    invoke-virtual {v0}, Landroid/widget/TextView;->getVisibility()I
-
-    move-result v0
-
-    if-nez v0, :cond_35
-
-    .line 215
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    .line 217
-    :cond_35
-    return-void
-.end method
-
-.method protected abstract onLoadingDrawableSet(Landroid/graphics/drawable/Drawable;)V
-.end method
-
-.method public final onPull(F)V
-    .registers 3
-    .param p1, "scaleOfLayout"    # F
-
-    .prologue
-    .line 220
-    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mUseIntrinsicAnimation:Z
-
-    if-nez v0, :cond_7
-
-    .line 221
-    invoke-virtual {p0, p1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->onPullImpl(F)V
-
-    .line 223
-    :cond_7
-    return-void
-.end method
-
-.method protected abstract onPullImpl(F)V
-.end method
-
-.method public final pullToRefresh()V
-    .registers 3
-
-    .prologue
-    .line 226
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderText:Landroid/widget/TextView;
-
-    if-eqz v0, :cond_b
-
-    .line 227
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderText:Landroid/widget/TextView;
-
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mPullLabel:Ljava/lang/CharSequence;
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 231
-    :cond_b
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->pullToRefreshImpl()V
-
-    .line 232
-    return-void
-.end method
-
-.method protected abstract pullToRefreshImpl()V
-.end method
-
-.method public final refreshing()V
-    .registers 3
-
-    .prologue
-    .line 235
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderText:Landroid/widget/TextView;
-
-    if-eqz v0, :cond_b
-
-    .line 236
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderText:Landroid/widget/TextView;
-
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mRefreshingLabel:Ljava/lang/CharSequence;
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 239
-    :cond_b
-    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mUseIntrinsicAnimation:Z
-
-    if-eqz v0, :cond_26
-
-    .line 240
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderImage:Landroid/widget/ImageView;
-
-    invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    check-cast v0, Landroid/graphics/drawable/AnimationDrawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/AnimationDrawable;->start()V
-
-    .line 246
-    :goto_1a
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
-
-    if-eqz v0, :cond_25
-
-    .line 247
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    .line 249
-    :cond_25
-    return-void
-
-    .line 243
-    :cond_26
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->refreshingImpl()V
-
-    goto :goto_1a
-.end method
-
-.method protected abstract refreshingImpl()V
-.end method
-
-.method public final releaseToRefresh()V
-    .registers 3
-
-    .prologue
-    .line 252
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderText:Landroid/widget/TextView;
-
-    if-eqz v0, :cond_b
-
-    .line 253
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderText:Landroid/widget/TextView;
-
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mReleaseLabel:Ljava/lang/CharSequence;
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 257
-    :cond_b
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->releaseToRefreshImpl()V
-
-    .line 258
-    return-void
-.end method
-
-.method protected abstract releaseToRefreshImpl()V
-.end method
-
-.method public final reset()V
+.method public final h()V
     .registers 4
 
     .prologue
     const/4 v2, 0x0
 
     .line 261
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderText:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->h:Landroid/widget/TextView;
 
     if-eqz v0, :cond_c
 
     .line 262
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderText:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->h:Landroid/widget/TextView;
 
-    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mPullLabel:Ljava/lang/CharSequence;
+    iget-object v1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->j:Ljava/lang/CharSequence;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 264
     :cond_c
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderImage:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->b:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
     .line 266
-    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mUseIntrinsicAnimation:Z
+    iget-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->g:Z
 
     if-eqz v0, :cond_38
 
     .line 267
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderImage:Landroid/widget/ImageView;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->b:Landroid/widget/ImageView;
 
     invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
 
@@ -1051,12 +921,12 @@
 
     .line 273
     :goto_20
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->i:Landroid/widget/TextView;
 
     if-eqz v0, :cond_37
 
     .line 274
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->i:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -1069,7 +939,7 @@
     if-eqz v0, :cond_3c
 
     .line 275
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->i:Landroid/widget/TextView;
 
     const/16 v1, 0x8
 
@@ -1082,25 +952,21 @@
 
     .line 270
     :cond_38
-    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->resetImpl()V
+    invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->d()V
 
     goto :goto_20
 
     .line 277
     :cond_3c
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
+    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->i:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setVisibility(I)V
 
     goto :goto_37
 .end method
 
-.method protected abstract resetImpl()V
-.end method
-
 .method public final setHeight(I)V
     .registers 3
-    .param p1, "height"    # I
 
     .prologue
     .line 183
@@ -1109,7 +975,6 @@
     move-result-object v0
 
     .line 184
-    .local v0, "lp":Landroid/view/ViewGroup$LayoutParams;
     iput p1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
 
     .line 185
@@ -1119,93 +984,8 @@
     return-void
 .end method
 
-.method public setLastUpdatedLabel(Ljava/lang/CharSequence;)V
-    .registers 2
-    .param p1, "label"    # Ljava/lang/CharSequence;
-
-    .prologue
-    .line 284
-    invoke-direct {p0, p1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->setSubHeaderText(Ljava/lang/CharSequence;)V
-
-    .line 285
-    return-void
-.end method
-
-.method public final setLoadingDrawable(Landroid/graphics/drawable/Drawable;)V
-    .registers 3
-    .param p1, "imageDrawable"    # Landroid/graphics/drawable/Drawable;
-
-    .prologue
-    .line 289
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderImage:Landroid/widget/ImageView;
-
-    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 290
-    instance-of v0, p1, Landroid/graphics/drawable/AnimationDrawable;
-
-    iput-boolean v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mUseIntrinsicAnimation:Z
-
-    .line 293
-    invoke-virtual {p0, p1}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->onLoadingDrawableSet(Landroid/graphics/drawable/Drawable;)V
-
-    .line 294
-    return-void
-.end method
-
-.method public setPullLabel(Ljava/lang/CharSequence;)V
-    .registers 2
-    .param p1, "pullLabel"    # Ljava/lang/CharSequence;
-
-    .prologue
-    .line 297
-    iput-object p1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mPullLabel:Ljava/lang/CharSequence;
-
-    .line 298
-    return-void
-.end method
-
-.method public setRefreshingLabel(Ljava/lang/CharSequence;)V
-    .registers 2
-    .param p1, "refreshingLabel"    # Ljava/lang/CharSequence;
-
-    .prologue
-    .line 301
-    iput-object p1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mRefreshingLabel:Ljava/lang/CharSequence;
-
-    .line 302
-    return-void
-.end method
-
-.method public setReleaseLabel(Ljava/lang/CharSequence;)V
-    .registers 2
-    .param p1, "releaseLabel"    # Ljava/lang/CharSequence;
-
-    .prologue
-    .line 305
-    iput-object p1, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mReleaseLabel:Ljava/lang/CharSequence;
-
-    .line 306
-    return-void
-.end method
-
-.method public setTextTypeface(Landroid/graphics/Typeface;)V
-    .registers 3
-    .param p1, "tf"    # Landroid/graphics/Typeface;
-
-    .prologue
-    .line 310
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderText:Landroid/widget/TextView;
-
-    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
-
-    .line 311
-    return-void
-.end method
-
 .method public final setWidth(I)V
     .registers 3
-    .param p1, "width"    # I
 
     .prologue
     .line 189
@@ -1214,84 +994,11 @@
     move-result-object v0
 
     .line 190
-    .local v0, "lp":Landroid/view/ViewGroup$LayoutParams;
     iput p1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
 
     .line 191
     invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->requestLayout()V
 
     .line 192
-    return-void
-.end method
-
-.method public final showInvisibleViews()V
-    .registers 4
-
-    .prologue
-    const/4 v2, 0x4
-
-    const/4 v1, 0x0
-
-    .line 314
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderText:Landroid/widget/TextView;
-
-    invoke-virtual {v0}, Landroid/widget/TextView;->getVisibility()I
-
-    move-result v0
-
-    if-ne v2, v0, :cond_f
-
-    .line 315
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderText:Landroid/widget/TextView;
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    .line 317
-    :cond_f
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderProgress:Landroid/widget/ProgressBar;
-
-    invoke-virtual {v0}, Landroid/widget/ProgressBar;->getVisibility()I
-
-    move-result v0
-
-    if-ne v2, v0, :cond_1c
-
-    .line 318
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderProgress:Landroid/widget/ProgressBar;
-
-    invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
-
-    .line 320
-    :cond_1c
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderImage:Landroid/widget/ImageView;
-
-    invoke-virtual {v0}, Landroid/widget/ImageView;->getVisibility()I
-
-    move-result v0
-
-    if-ne v2, v0, :cond_29
-
-    .line 321
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mHeaderImage:Landroid/widget/ImageView;
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 323
-    :cond_29
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
-
-    invoke-virtual {v0}, Landroid/widget/TextView;->getVisibility()I
-
-    move-result v0
-
-    if-ne v2, v0, :cond_36
-
-    .line 324
-    iget-object v0, p0, Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;->mSubHeaderText:Landroid/widget/TextView;
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    .line 326
-    :cond_36
     return-void
 .end method

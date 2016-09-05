@@ -6,44 +6,31 @@
 .implements Ljava/lang/Runnable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcn/aigestudio/downloader/bizs/DLManager$DLTask;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "DLThread"
-.end annotation
-
-
 # instance fields
-.field private info:Lcn/aigestudio/downloader/entities/ThreadInfo;
+.field final synthetic a:Lcn/aigestudio/downloader/bizs/DLManager$DLTask;
 
-.field private mListener:Lcn/aigestudio/downloader/interfaces/IDLThreadListener;
+.field private b:Lcn/aigestudio/downloader/entities/ThreadInfo;
 
-.field private progress:I
+.field private c:Lcn/aigestudio/downloader/interfaces/IDLThreadListener;
 
-.field final synthetic this$1:Lcn/aigestudio/downloader/bizs/DLManager$DLTask;
+.field private d:I
 
 
 # direct methods
 .method public constructor <init>(Lcn/aigestudio/downloader/bizs/DLManager$DLTask;Lcn/aigestudio/downloader/entities/ThreadInfo;Lcn/aigestudio/downloader/interfaces/IDLThreadListener;)V
     .registers 4
-    .param p2, "info"    # Lcn/aigestudio/downloader/entities/ThreadInfo;
-    .param p3, "listener"    # Lcn/aigestudio/downloader/interfaces/IDLThreadListener;
 
     .prologue
     .line 295
-    iput-object p1, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->this$1:Lcn/aigestudio/downloader/bizs/DLManager$DLTask;
+    iput-object p1, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->a:Lcn/aigestudio/downloader/bizs/DLManager$DLTask;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 296
-    iput-object p2, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->info:Lcn/aigestudio/downloader/entities/ThreadInfo;
+    iput-object p2, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->b:Lcn/aigestudio/downloader/entities/ThreadInfo;
 
     .line 297
-    iput-object p3, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->mListener:Lcn/aigestudio/downloader/interfaces/IDLThreadListener;
+    iput-object p3, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->c:Lcn/aigestudio/downloader/interfaces/IDLThreadListener;
 
     .line 298
     return-void
@@ -52,546 +39,547 @@
 
 # virtual methods
 .method public run()V
-    .registers 13
+    .registers 10
 
     .prologue
-    const/4 v11, -0x1
+    const/4 v7, -0x1
+
+    const/4 v0, 0x0
 
     .line 302
-    const/4 v1, 0x0
-
-    .line 303
-    .local v1, "conn":Ljava/net/HttpURLConnection;
-    const/4 v5, 0x0
-
-    .line 304
-    .local v5, "raf":Ljava/io/RandomAccessFile;
-    const/4 v3, 0x0
-
     .line 306
-    .local v3, "is":Ljava/io/InputStream;
-    :try_start_4
-    iget-object v8, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->info:Lcn/aigestudio/downloader/entities/ThreadInfo;
+    :try_start_2
+    iget-object v1, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->b:Lcn/aigestudio/downloader/entities/ThreadInfo;
 
-    iget-object v8, v8, Lcn/aigestudio/downloader/entities/ThreadInfo;->realUrl:Ljava/lang/String;
+    iget-object v1, v1, Lcn/aigestudio/downloader/entities/ThreadInfo;->c:Ljava/lang/String;
 
-    invoke-static {v8}, Lcn/aigestudio/downloader/utils/NetUtil;->buildConnection(Ljava/lang/String;)Ljava/net/HttpURLConnection;
+    invoke-static {v1}, Lcn/aigestudio/downloader/utils/NetUtil;->a(Ljava/lang/String;)Ljava/net/HttpURLConnection;
+    :try_end_9
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_9} :catch_179
+    .catchall {:try_start_2 .. :try_end_9} :catchall_164
 
-    move-result-object v1
+    move-result-object v2
 
     .line 307
-    const-string/jumbo v8, "Range"
+    :try_start_a
+    const-string/jumbo v1, "Range"
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v10, "bytes="
+    const-string/jumbo v4, "bytes="
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    iget-object v10, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->info:Lcn/aigestudio/downloader/entities/ThreadInfo;
-
-    iget v10, v10, Lcn/aigestudio/downloader/entities/ThreadInfo;->start:I
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    const-string/jumbo v10, "-"
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    iget-object v10, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->info:Lcn/aigestudio/downloader/entities/ThreadInfo;
-
-    iget v10, v10, Lcn/aigestudio/downloader/entities/ThreadInfo;->end:I
-
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    invoke-virtual {v1, v8, v9}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 309
-    new-instance v6, Ljava/io/RandomAccessFile;
-
-    iget-object v8, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->info:Lcn/aigestudio/downloader/entities/ThreadInfo;
-
-    iget-object v8, v8, Lcn/aigestudio/downloader/entities/ThreadInfo;->dlLocalFile:Ljava/io/File;
-
-    const-string/jumbo v9, "rwd"
-
-    invoke-direct {v6, v8, v9}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
-    :try_end_45
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_45} :catch_167
-    .catchall {:try_start_4 .. :try_end_45} :catchall_165
-
-    .line 311
-    .end local v5    # "raf":Ljava/io/RandomAccessFile;
-    .local v6, "raf":Ljava/io/RandomAccessFile;
-    :try_start_45
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getResponseCode()I
-
-    move-result v8
-
-    const/16 v9, 0xce
-
-    if-ne v8, v9, :cond_113
-
-    .line 312
-    iget-object v8, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->this$1:Lcn/aigestudio/downloader/bizs/DLManager$DLTask;
-
-    # getter for: Lcn/aigestudio/downloader/bizs/DLManager$DLTask;->isResume:Z
-    invoke-static {v8}, Lcn/aigestudio/downloader/bizs/DLManager$DLTask;->access$600(Lcn/aigestudio/downloader/bizs/DLManager$DLTask;)Z
-
-    move-result v8
-
-    if-nez v8, :cond_5e
-
-    .line 313
-    # getter for: Lcn/aigestudio/downloader/bizs/DLManager;->sDBManager:Lcn/aigestudio/downloader/bizs/DBManager;
-    invoke-static {}, Lcn/aigestudio/downloader/bizs/DLManager;->access$200()Lcn/aigestudio/downloader/bizs/DBManager;
-
-    move-result-object v8
-
-    iget-object v9, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->info:Lcn/aigestudio/downloader/entities/ThreadInfo;
-
-    invoke-virtual {v8, v9}, Lcn/aigestudio/downloader/bizs/DBManager;->insertThreadInfo(Lcn/aigestudio/downloader/entities/ThreadInfo;)V
-
-    .line 315
-    :cond_5e
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v3
 
+    iget-object v4, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->b:Lcn/aigestudio/downloader/entities/ThreadInfo;
+
+    iget v4, v4, Lcn/aigestudio/downloader/entities/ThreadInfo;->e:I
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string/jumbo v4, "-"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->b:Lcn/aigestudio/downloader/entities/ThreadInfo;
+
+    iget v4, v4, Lcn/aigestudio/downloader/entities/ThreadInfo;->f:I
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v1, v3}, Ljava/net/HttpURLConnection;->setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 309
+    new-instance v1, Ljava/io/RandomAccessFile;
+
+    iget-object v3, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->b:Lcn/aigestudio/downloader/entities/ThreadInfo;
+
+    iget-object v3, v3, Lcn/aigestudio/downloader/entities/ThreadInfo;->a:Ljava/io/File;
+
+    const-string/jumbo v4, "rwd"
+
+    invoke-direct {v1, v3, v4}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    :try_end_43
+    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_43} :catch_17e
+    .catchall {:try_start_a .. :try_end_43} :catchall_16b
+
+    .line 311
+    :try_start_43
+    invoke-virtual {v2}, Ljava/net/HttpURLConnection;->getResponseCode()I
+
+    move-result v3
+
+    const/16 v4, 0xce
+
+    if-ne v3, v4, :cond_10e
+
+    .line 312
+    iget-object v3, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->a:Lcn/aigestudio/downloader/bizs/DLManager$DLTask;
+
+    invoke-static {v3}, Lcn/aigestudio/downloader/bizs/DLManager$DLTask;->a(Lcn/aigestudio/downloader/bizs/DLManager$DLTask;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_5c
+
+    .line 313
+    invoke-static {}, Lcn/aigestudio/downloader/bizs/DLManager;->b()Lcn/aigestudio/downloader/bizs/DBManager;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->b:Lcn/aigestudio/downloader/entities/ThreadInfo;
+
+    invoke-virtual {v3, v4}, Lcn/aigestudio/downloader/bizs/DBManager;->a(Lcn/aigestudio/downloader/entities/ThreadInfo;)V
+
+    .line 315
+    :cond_5c
+    invoke-virtual {v2}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
+    :try_end_5f
+    .catch Ljava/lang/Exception; {:try_start_43 .. :try_end_5f} :catch_a1
+    .catchall {:try_start_43 .. :try_end_5f} :catchall_172
+
+    move-result-object v0
+
     .line 316
-    iget-object v8, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->info:Lcn/aigestudio/downloader/entities/ThreadInfo;
+    :try_start_60
+    iget-object v3, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->b:Lcn/aigestudio/downloader/entities/ThreadInfo;
 
-    iget v8, v8, Lcn/aigestudio/downloader/entities/ThreadInfo;->start:I
+    iget v3, v3, Lcn/aigestudio/downloader/entities/ThreadInfo;->e:I
 
-    int-to-long v8, v8
+    int-to-long v4, v3
 
-    invoke-virtual {v6, v8, v9}, Ljava/io/RandomAccessFile;->seek(J)V
+    invoke-virtual {v1, v4, v5}, Ljava/io/RandomAccessFile;->seek(J)V
 
     .line 317
-    iget-object v8, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->info:Lcn/aigestudio/downloader/entities/ThreadInfo;
+    iget-object v3, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->b:Lcn/aigestudio/downloader/entities/ThreadInfo;
 
-    iget v8, v8, Lcn/aigestudio/downloader/entities/ThreadInfo;->end:I
+    iget v3, v3, Lcn/aigestudio/downloader/entities/ThreadInfo;->f:I
 
-    iget-object v9, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->info:Lcn/aigestudio/downloader/entities/ThreadInfo;
+    iget-object v4, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->b:Lcn/aigestudio/downloader/entities/ThreadInfo;
 
-    iget v9, v9, Lcn/aigestudio/downloader/entities/ThreadInfo;->start:I
+    iget v4, v4, Lcn/aigestudio/downloader/entities/ThreadInfo;->e:I
 
-    sub-int v7, v8, v9
+    sub-int/2addr v3, v4
 
     .line 318
-    .local v7, "total":I
-    const/16 v8, 0x400
+    const/16 v4, 0x400
 
-    new-array v0, v8, [B
+    new-array v4, v4, [B
 
     .line 320
-    .local v0, "b":[B
-    :cond_78
-    :goto_78
-    iget-object v8, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->this$1:Lcn/aigestudio/downloader/bizs/DLManager$DLTask;
+    :cond_75
+    :goto_75
+    iget-object v5, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->a:Lcn/aigestudio/downloader/bizs/DLManager$DLTask;
 
-    # getter for: Lcn/aigestudio/downloader/bizs/DLManager$DLTask;->isStop:Z
-    invoke-static {v8}, Lcn/aigestudio/downloader/bizs/DLManager$DLTask;->access$700(Lcn/aigestudio/downloader/bizs/DLManager$DLTask;)Z
+    invoke-static {v5}, Lcn/aigestudio/downloader/bizs/DLManager$DLTask;->b(Lcn/aigestudio/downloader/bizs/DLManager$DLTask;)Z
 
-    move-result v8
+    move-result v5
 
-    if-nez v8, :cond_d8
+    if-nez v5, :cond_d4
 
-    invoke-virtual {v3, v0}, Ljava/io/InputStream;->read([B)I
+    invoke-virtual {v0, v4}, Ljava/io/InputStream;->read([B)I
 
-    move-result v4
+    move-result v5
 
-    .local v4, "len":I
-    if-eq v4, v11, :cond_d8
+    if-eq v5, v7, :cond_d4
 
     .line 321
-    const/4 v8, 0x0
+    const/4 v6, 0x0
 
-    invoke-virtual {v6, v0, v8, v4}, Ljava/io/RandomAccessFile;->write([BII)V
+    invoke-virtual {v1, v4, v6, v5}, Ljava/io/RandomAccessFile;->write([BII)V
 
     .line 322
-    iget v8, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->progress:I
+    iget v6, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->d:I
 
-    add-int/2addr v8, v4
+    add-int/2addr v6, v5
 
-    iput v8, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->progress:I
+    iput v6, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->d:I
 
     .line 323
-    iget-object v8, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->mListener:Lcn/aigestudio/downloader/interfaces/IDLThreadListener;
+    iget-object v6, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->c:Lcn/aigestudio/downloader/interfaces/IDLThreadListener;
 
-    invoke-interface {v8, v4}, Lcn/aigestudio/downloader/interfaces/IDLThreadListener;->onThreadProgress(I)V
+    invoke-interface {v6, v5}, Lcn/aigestudio/downloader/interfaces/IDLThreadListener;->a(I)V
 
     .line 324
-    iget v8, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->progress:I
+    iget v5, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->d:I
 
-    if-lt v8, v7, :cond_78
+    if-lt v5, v3, :cond_75
 
     .line 325
-    # getter for: Lcn/aigestudio/downloader/bizs/DLManager;->sDBManager:Lcn/aigestudio/downloader/bizs/DBManager;
-    invoke-static {}, Lcn/aigestudio/downloader/bizs/DLManager;->access$200()Lcn/aigestudio/downloader/bizs/DBManager;
+    invoke-static {}, Lcn/aigestudio/downloader/bizs/DLManager;->b()Lcn/aigestudio/downloader/bizs/DBManager;
 
-    move-result-object v8
+    move-result-object v5
 
-    iget-object v9, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->info:Lcn/aigestudio/downloader/entities/ThreadInfo;
+    iget-object v6, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->b:Lcn/aigestudio/downloader/entities/ThreadInfo;
 
-    iget-object v9, v9, Lcn/aigestudio/downloader/entities/ThreadInfo;->id:Ljava/lang/String;
+    iget-object v6, v6, Lcn/aigestudio/downloader/entities/ThreadInfo;->d:Ljava/lang/String;
 
-    invoke-virtual {v8, v9}, Lcn/aigestudio/downloader/bizs/DBManager;->deleteThreadInfoById(Ljava/lang/String;)V
-    :try_end_a3
-    .catch Ljava/lang/Exception; {:try_start_45 .. :try_end_a3} :catch_a4
-    .catchall {:try_start_45 .. :try_end_a3} :catchall_143
+    invoke-virtual {v5, v6}, Lcn/aigestudio/downloader/bizs/DBManager;->c(Ljava/lang/String;)V
+    :try_end_a0
+    .catch Ljava/lang/Exception; {:try_start_60 .. :try_end_a0} :catch_a1
+    .catchall {:try_start_60 .. :try_end_a0} :catchall_13e
 
-    goto :goto_78
+    goto :goto_75
 
     .line 342
-    .end local v0    # "b":[B
-    .end local v4    # "len":I
-    .end local v7    # "total":I
-    :catch_a4
-    move-exception v2
-
-    move-object v5, v6
+    :catch_a1
+    move-exception v3
 
     .line 343
-    .end local v6    # "raf":Ljava/io/RandomAccessFile;
-    .local v2, "e":Ljava/lang/Exception;
-    .restart local v5    # "raf":Ljava/io/RandomAccessFile;
-    :goto_a6
-    :try_start_a6
-    # getter for: Lcn/aigestudio/downloader/bizs/DLManager;->sDBManager:Lcn/aigestudio/downloader/bizs/DBManager;
-    invoke-static {}, Lcn/aigestudio/downloader/bizs/DLManager;->access$200()Lcn/aigestudio/downloader/bizs/DBManager;
+    :goto_a2
+    :try_start_a2
+    invoke-static {}, Lcn/aigestudio/downloader/bizs/DLManager;->b()Lcn/aigestudio/downloader/bizs/DBManager;
 
-    move-result-object v8
+    move-result-object v3
 
-    iget-object v9, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->info:Lcn/aigestudio/downloader/entities/ThreadInfo;
+    iget-object v4, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->b:Lcn/aigestudio/downloader/entities/ThreadInfo;
 
-    iget-object v9, v9, Lcn/aigestudio/downloader/entities/ThreadInfo;->id:Ljava/lang/String;
+    iget-object v4, v4, Lcn/aigestudio/downloader/entities/ThreadInfo;->d:Ljava/lang/String;
 
-    invoke-virtual {v8, v9}, Lcn/aigestudio/downloader/bizs/DBManager;->queryThreadInfoById(Ljava/lang/String;)Lcn/aigestudio/downloader/entities/ThreadInfo;
+    invoke-virtual {v3, v4}, Lcn/aigestudio/downloader/bizs/DBManager;->d(Ljava/lang/String;)Lcn/aigestudio/downloader/entities/ThreadInfo;
 
-    move-result-object v8
+    move-result-object v3
 
-    if-eqz v8, :cond_c8
+    if-eqz v3, :cond_c4
 
     .line 344
-    iget-object v8, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->info:Lcn/aigestudio/downloader/entities/ThreadInfo;
+    iget-object v3, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->b:Lcn/aigestudio/downloader/entities/ThreadInfo;
 
-    iget-object v9, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->info:Lcn/aigestudio/downloader/entities/ThreadInfo;
+    iget-object v4, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->b:Lcn/aigestudio/downloader/entities/ThreadInfo;
 
-    iget v9, v9, Lcn/aigestudio/downloader/entities/ThreadInfo;->start:I
+    iget v4, v4, Lcn/aigestudio/downloader/entities/ThreadInfo;->e:I
 
-    iget v10, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->progress:I
+    iget v5, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->d:I
 
-    add-int/2addr v9, v10
+    add-int/2addr v4, v5
 
-    iput v9, v8, Lcn/aigestudio/downloader/entities/ThreadInfo;->start:I
+    iput v4, v3, Lcn/aigestudio/downloader/entities/ThreadInfo;->e:I
 
     .line 345
-    # getter for: Lcn/aigestudio/downloader/bizs/DLManager;->sDBManager:Lcn/aigestudio/downloader/bizs/DBManager;
-    invoke-static {}, Lcn/aigestudio/downloader/bizs/DLManager;->access$200()Lcn/aigestudio/downloader/bizs/DBManager;
+    invoke-static {}, Lcn/aigestudio/downloader/bizs/DLManager;->b()Lcn/aigestudio/downloader/bizs/DBManager;
 
-    move-result-object v8
+    move-result-object v3
 
-    iget-object v9, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->info:Lcn/aigestudio/downloader/entities/ThreadInfo;
+    iget-object v4, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->b:Lcn/aigestudio/downloader/entities/ThreadInfo;
 
-    invoke-virtual {v8, v9}, Lcn/aigestudio/downloader/bizs/DBManager;->updateThreadInfo(Lcn/aigestudio/downloader/entities/ThreadInfo;)V
-    :try_end_c8
-    .catchall {:try_start_a6 .. :try_end_c8} :catchall_165
+    invoke-virtual {v3, v4}, Lcn/aigestudio/downloader/bizs/DBManager;->b(Lcn/aigestudio/downloader/entities/ThreadInfo;)V
+    :try_end_c4
+    .catchall {:try_start_a2 .. :try_end_c4} :catchall_13e
 
     .line 349
-    :cond_c8
-    if-eqz v3, :cond_cd
+    :cond_c4
+    if-eqz v0, :cond_c9
 
     .line 350
-    :try_start_ca
-    invoke-virtual {v3}, Ljava/io/InputStream;->close()V
+    :try_start_c6
+    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
 
     .line 352
-    :cond_cd
-    if-eqz v5, :cond_d2
+    :cond_c9
+    if-eqz v1, :cond_ce
 
     .line 353
-    invoke-virtual {v5}, Ljava/io/RandomAccessFile;->close()V
-    :try_end_d2
-    .catch Ljava/io/IOException; {:try_start_ca .. :try_end_d2} :catch_15a
+    invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
+    :try_end_ce
+    .catch Ljava/io/IOException; {:try_start_c6 .. :try_end_ce} :catch_159
 
     .line 358
-    .end local v2    # "e":Ljava/lang/Exception;
-    :cond_d2
-    :goto_d2
-    if-eqz v1, :cond_d7
+    :cond_ce
+    :goto_ce
+    if-eqz v2, :cond_d3
 
     .line 359
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->disconnect()V
+    invoke-virtual {v2}, Ljava/net/HttpURLConnection;->disconnect()V
 
     .line 362
-    :cond_d7
-    :goto_d7
+    :cond_d3
+    :goto_d3
     return-void
 
     .line 328
-    .end local v5    # "raf":Ljava/io/RandomAccessFile;
-    .restart local v0    # "b":[B
-    .restart local v6    # "raf":Ljava/io/RandomAccessFile;
-    .restart local v7    # "total":I
-    :cond_d8
-    :try_start_d8
-    iget-object v8, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->this$1:Lcn/aigestudio/downloader/bizs/DLManager$DLTask;
+    :cond_d4
+    :try_start_d4
+    iget-object v3, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->a:Lcn/aigestudio/downloader/bizs/DLManager$DLTask;
 
-    # getter for: Lcn/aigestudio/downloader/bizs/DLManager$DLTask;->isStop:Z
-    invoke-static {v8}, Lcn/aigestudio/downloader/bizs/DLManager$DLTask;->access$700(Lcn/aigestudio/downloader/bizs/DLManager$DLTask;)Z
+    invoke-static {v3}, Lcn/aigestudio/downloader/bizs/DLManager$DLTask;->b(Lcn/aigestudio/downloader/bizs/DLManager$DLTask;)Z
 
-    move-result v8
+    move-result v3
 
-    if-eqz v8, :cond_102
+    if-eqz v3, :cond_fe
 
-    # getter for: Lcn/aigestudio/downloader/bizs/DLManager;->sDBManager:Lcn/aigestudio/downloader/bizs/DBManager;
-    invoke-static {}, Lcn/aigestudio/downloader/bizs/DLManager;->access$200()Lcn/aigestudio/downloader/bizs/DBManager;
-
-    move-result-object v8
-
-    iget-object v9, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->info:Lcn/aigestudio/downloader/entities/ThreadInfo;
-
-    iget-object v9, v9, Lcn/aigestudio/downloader/entities/ThreadInfo;->id:Ljava/lang/String;
-
-    invoke-virtual {v8, v9}, Lcn/aigestudio/downloader/bizs/DBManager;->queryThreadInfoById(Ljava/lang/String;)Lcn/aigestudio/downloader/entities/ThreadInfo;
-
-    move-result-object v8
-
-    if-eqz v8, :cond_102
-
-    .line 329
-    iget-object v8, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->info:Lcn/aigestudio/downloader/entities/ThreadInfo;
-
-    iget-object v9, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->info:Lcn/aigestudio/downloader/entities/ThreadInfo;
-
-    iget v9, v9, Lcn/aigestudio/downloader/entities/ThreadInfo;->start:I
-
-    iget v10, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->progress:I
-
-    add-int/2addr v9, v10
-
-    iput v9, v8, Lcn/aigestudio/downloader/entities/ThreadInfo;->start:I
-
-    .line 330
-    # getter for: Lcn/aigestudio/downloader/bizs/DLManager;->sDBManager:Lcn/aigestudio/downloader/bizs/DBManager;
-    invoke-static {}, Lcn/aigestudio/downloader/bizs/DLManager;->access$200()Lcn/aigestudio/downloader/bizs/DBManager;
-
-    move-result-object v8
-
-    iget-object v9, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->info:Lcn/aigestudio/downloader/entities/ThreadInfo;
-
-    invoke-virtual {v8, v9}, Lcn/aigestudio/downloader/bizs/DBManager;->updateThreadInfo(Lcn/aigestudio/downloader/entities/ThreadInfo;)V
-    :try_end_102
-    .catch Ljava/lang/Exception; {:try_start_d8 .. :try_end_102} :catch_a4
-    .catchall {:try_start_d8 .. :try_end_102} :catchall_143
-
-    .line 349
-    .end local v0    # "b":[B
-    .end local v7    # "total":I
-    :cond_102
-    if-eqz v3, :cond_107
-
-    .line 350
-    :try_start_104
-    invoke-virtual {v3}, Ljava/io/InputStream;->close()V
-
-    .line 352
-    :cond_107
-    if-eqz v6, :cond_10c
-
-    .line 353
-    invoke-virtual {v6}, Ljava/io/RandomAccessFile;->close()V
-    :try_end_10c
-    .catch Ljava/io/IOException; {:try_start_104 .. :try_end_10c} :catch_155
-
-    .line 358
-    :cond_10c
-    :goto_10c
-    if-eqz v1, :cond_16a
-
-    .line 359
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->disconnect()V
-
-    move-object v5, v6
-
-    .end local v6    # "raf":Ljava/io/RandomAccessFile;
-    .restart local v5    # "raf":Ljava/io/RandomAccessFile;
-    goto :goto_d7
-
-    .line 332
-    .end local v5    # "raf":Ljava/io/RandomAccessFile;
-    .restart local v6    # "raf":Ljava/io/RandomAccessFile;
-    :cond_113
-    :try_start_113
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getResponseCode()I
-
-    move-result v8
-
-    const/16 v9, 0xc8
-
-    if-ne v8, v9, :cond_102
-
-    .line 333
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
+    invoke-static {}, Lcn/aigestudio/downloader/bizs/DLManager;->b()Lcn/aigestudio/downloader/bizs/DBManager;
 
     move-result-object v3
 
+    iget-object v4, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->b:Lcn/aigestudio/downloader/entities/ThreadInfo;
+
+    iget-object v4, v4, Lcn/aigestudio/downloader/entities/ThreadInfo;->d:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Lcn/aigestudio/downloader/bizs/DBManager;->d(Ljava/lang/String;)Lcn/aigestudio/downloader/entities/ThreadInfo;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_fe
+
+    .line 329
+    iget-object v3, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->b:Lcn/aigestudio/downloader/entities/ThreadInfo;
+
+    iget-object v4, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->b:Lcn/aigestudio/downloader/entities/ThreadInfo;
+
+    iget v4, v4, Lcn/aigestudio/downloader/entities/ThreadInfo;->e:I
+
+    iget v5, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->d:I
+
+    add-int/2addr v4, v5
+
+    iput v4, v3, Lcn/aigestudio/downloader/entities/ThreadInfo;->e:I
+
+    .line 330
+    invoke-static {}, Lcn/aigestudio/downloader/bizs/DLManager;->b()Lcn/aigestudio/downloader/bizs/DBManager;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->b:Lcn/aigestudio/downloader/entities/ThreadInfo;
+
+    invoke-virtual {v3, v4}, Lcn/aigestudio/downloader/bizs/DBManager;->b(Lcn/aigestudio/downloader/entities/ThreadInfo;)V
+    :try_end_fe
+    .catch Ljava/lang/Exception; {:try_start_d4 .. :try_end_fe} :catch_a1
+    .catchall {:try_start_d4 .. :try_end_fe} :catchall_13e
+
+    .line 349
+    :cond_fe
+    if-eqz v0, :cond_103
+
+    .line 350
+    :try_start_100
+    invoke-virtual {v0}, Ljava/io/InputStream;->close()V
+
+    .line 352
+    :cond_103
+    if-eqz v1, :cond_108
+
+    .line 353
+    invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
+    :try_end_108
+    .catch Ljava/io/IOException; {:try_start_100 .. :try_end_108} :catch_154
+
+    .line 358
+    :cond_108
+    :goto_108
+    if-eqz v2, :cond_d3
+
+    .line 359
+    invoke-virtual {v2}, Ljava/net/HttpURLConnection;->disconnect()V
+
+    goto :goto_d3
+
+    .line 332
+    :cond_10e
+    :try_start_10e
+    invoke-virtual {v2}, Ljava/net/HttpURLConnection;->getResponseCode()I
+
+    move-result v3
+
+    const/16 v4, 0xc8
+
+    if-ne v3, v4, :cond_fe
+
+    .line 333
+    invoke-virtual {v2}, Ljava/net/HttpURLConnection;->getInputStream()Ljava/io/InputStream;
+    :try_end_119
+    .catch Ljava/lang/Exception; {:try_start_10e .. :try_end_119} :catch_a1
+    .catchall {:try_start_10e .. :try_end_119} :catchall_172
+
+    move-result-object v0
+
     .line 334
-    iget-object v8, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->info:Lcn/aigestudio/downloader/entities/ThreadInfo;
+    :try_start_11a
+    iget-object v3, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->b:Lcn/aigestudio/downloader/entities/ThreadInfo;
 
-    iget v8, v8, Lcn/aigestudio/downloader/entities/ThreadInfo;->start:I
+    iget v3, v3, Lcn/aigestudio/downloader/entities/ThreadInfo;->e:I
 
-    int-to-long v8, v8
+    int-to-long v4, v3
 
-    invoke-virtual {v6, v8, v9}, Ljava/io/RandomAccessFile;->seek(J)V
+    invoke-virtual {v1, v4, v5}, Ljava/io/RandomAccessFile;->seek(J)V
 
     .line 335
-    const/16 v8, 0x400
+    const/16 v3, 0x400
 
-    new-array v0, v8, [B
+    new-array v3, v3, [B
 
     .line 337
-    .restart local v0    # "b":[B
-    :goto_12b
-    iget-object v8, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->this$1:Lcn/aigestudio/downloader/bizs/DLManager$DLTask;
+    :goto_126
+    iget-object v4, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->a:Lcn/aigestudio/downloader/bizs/DLManager$DLTask;
 
-    # getter for: Lcn/aigestudio/downloader/bizs/DLManager$DLTask;->isStop:Z
-    invoke-static {v8}, Lcn/aigestudio/downloader/bizs/DLManager$DLTask;->access$700(Lcn/aigestudio/downloader/bizs/DLManager$DLTask;)Z
-
-    move-result v8
-
-    if-nez v8, :cond_102
-
-    invoke-virtual {v3, v0}, Ljava/io/InputStream;->read([B)I
+    invoke-static {v4}, Lcn/aigestudio/downloader/bizs/DLManager$DLTask;->b(Lcn/aigestudio/downloader/bizs/DLManager$DLTask;)Z
 
     move-result v4
 
-    .restart local v4    # "len":I
-    if-eq v4, v11, :cond_102
+    if-nez v4, :cond_fe
+
+    invoke-virtual {v0, v3}, Ljava/io/InputStream;->read([B)I
+
+    move-result v4
+
+    if-eq v4, v7, :cond_fe
 
     .line 338
-    const/4 v8, 0x0
+    const/4 v5, 0x0
 
-    invoke-virtual {v6, v0, v8, v4}, Ljava/io/RandomAccessFile;->write([BII)V
+    invoke-virtual {v1, v3, v5, v4}, Ljava/io/RandomAccessFile;->write([BII)V
 
     .line 339
-    iget-object v8, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->mListener:Lcn/aigestudio/downloader/interfaces/IDLThreadListener;
+    iget-object v5, p0, Lcn/aigestudio/downloader/bizs/DLManager$DLTask$DLThread;->c:Lcn/aigestudio/downloader/interfaces/IDLThreadListener;
 
-    invoke-interface {v8, v4}, Lcn/aigestudio/downloader/interfaces/IDLThreadListener;->onThreadProgress(I)V
-    :try_end_142
-    .catch Ljava/lang/Exception; {:try_start_113 .. :try_end_142} :catch_a4
-    .catchall {:try_start_113 .. :try_end_142} :catchall_143
+    invoke-interface {v5, v4}, Lcn/aigestudio/downloader/interfaces/IDLThreadListener;->a(I)V
+    :try_end_13d
+    .catch Ljava/lang/Exception; {:try_start_11a .. :try_end_13d} :catch_a1
+    .catchall {:try_start_11a .. :try_end_13d} :catchall_13e
 
-    goto :goto_12b
+    goto :goto_126
 
     .line 348
-    .end local v0    # "b":[B
-    .end local v4    # "len":I
-    :catchall_143
-    move-exception v8
+    :catchall_13e
+    move-exception v3
 
-    move-object v5, v6
+    move-object v8, v3
+
+    move-object v3, v2
+
+    move-object v2, v1
+
+    move-object v1, v0
+
+    move-object v0, v8
 
     .line 349
-    .end local v6    # "raf":Ljava/io/RandomAccessFile;
-    .restart local v5    # "raf":Ljava/io/RandomAccessFile;
-    :goto_145
-    if-eqz v3, :cond_14a
+    :goto_144
+    if-eqz v1, :cond_149
 
     .line 350
-    :try_start_147
-    invoke-virtual {v3}, Ljava/io/InputStream;->close()V
+    :try_start_146
+    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
 
     .line 352
-    :cond_14a
-    if-eqz v5, :cond_14f
+    :cond_149
+    if-eqz v2, :cond_14e
 
     .line 353
-    invoke-virtual {v5}, Ljava/io/RandomAccessFile;->close()V
-    :try_end_14f
-    .catch Ljava/io/IOException; {:try_start_147 .. :try_end_14f} :catch_160
+    invoke-virtual {v2}, Ljava/io/RandomAccessFile;->close()V
+    :try_end_14e
+    .catch Ljava/io/IOException; {:try_start_146 .. :try_end_14e} :catch_15f
 
     .line 358
-    :cond_14f
-    :goto_14f
-    if-eqz v1, :cond_154
+    :cond_14e
+    :goto_14e
+    if-eqz v3, :cond_153
 
     .line 359
-    invoke-virtual {v1}, Ljava/net/HttpURLConnection;->disconnect()V
+    invoke-virtual {v3}, Ljava/net/HttpURLConnection;->disconnect()V
 
-    :cond_154
-    throw v8
-
-    .line 355
-    .end local v5    # "raf":Ljava/io/RandomAccessFile;
-    .restart local v6    # "raf":Ljava/io/RandomAccessFile;
-    :catch_155
-    move-exception v2
-
-    .line 356
-    .local v2, "e":Ljava/io/IOException;
-    invoke-virtual {v2}, Ljava/io/IOException;->printStackTrace()V
-
-    goto :goto_10c
+    :cond_153
+    throw v0
 
     .line 355
-    .end local v6    # "raf":Ljava/io/RandomAccessFile;
-    .local v2, "e":Ljava/lang/Exception;
-    .restart local v5    # "raf":Ljava/io/RandomAccessFile;
-    :catch_15a
-    move-exception v2
+    :catch_154
+    move-exception v0
 
     .line 356
-    .local v2, "e":Ljava/io/IOException;
-    invoke-virtual {v2}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
-    goto/16 :goto_d2
+    goto :goto_108
 
     .line 355
-    .end local v2    # "e":Ljava/io/IOException;
-    :catch_160
-    move-exception v2
+    :catch_159
+    move-exception v0
 
     .line 356
-    .restart local v2    # "e":Ljava/io/IOException;
-    invoke-virtual {v2}, Ljava/io/IOException;->printStackTrace()V
+    invoke-virtual {v0}, Ljava/io/IOException;->printStackTrace()V
 
-    goto :goto_14f
+    goto/16 :goto_ce
+
+    .line 355
+    :catch_15f
+    move-exception v1
+
+    .line 356
+    invoke-virtual {v1}, Ljava/io/IOException;->printStackTrace()V
+
+    goto :goto_14e
 
     .line 348
-    .end local v2    # "e":Ljava/io/IOException;
-    :catchall_165
-    move-exception v8
+    :catchall_164
+    move-exception v1
 
-    goto :goto_145
+    move-object v2, v0
+
+    move-object v3, v0
+
+    move-object v8, v1
+
+    move-object v1, v0
+
+    move-object v0, v8
+
+    goto :goto_144
+
+    :catchall_16b
+    move-exception v1
+
+    move-object v3, v2
+
+    move-object v2, v0
+
+    move-object v8, v0
+
+    move-object v0, v1
+
+    move-object v1, v8
+
+    goto :goto_144
+
+    :catchall_172
+    move-exception v3
+
+    move-object v8, v3
+
+    move-object v3, v2
+
+    move-object v2, v1
+
+    move-object v1, v0
+
+    move-object v0, v8
+
+    goto :goto_144
 
     .line 342
-    :catch_167
-    move-exception v2
+    :catch_179
+    move-exception v1
 
-    goto/16 :goto_a6
+    move-object v1, v0
 
-    .end local v5    # "raf":Ljava/io/RandomAccessFile;
-    .restart local v6    # "raf":Ljava/io/RandomAccessFile;
-    :cond_16a
-    move-object v5, v6
+    move-object v2, v0
 
-    .end local v6    # "raf":Ljava/io/RandomAccessFile;
-    .restart local v5    # "raf":Ljava/io/RandomAccessFile;
-    goto/16 :goto_d7
+    goto/16 :goto_a2
+
+    :catch_17e
+    move-exception v1
+
+    move-object v1, v0
+
+    goto/16 :goto_a2
 .end method

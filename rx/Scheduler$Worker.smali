@@ -6,17 +6,6 @@
 .implements Lrx/Subscription;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lrx/Scheduler;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x409
-    name = "Worker"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -30,7 +19,7 @@
 
 
 # virtual methods
-.method public now()J
+.method public a()J
     .registers 3
 
     .prologue
@@ -42,90 +31,64 @@
     return-wide v0
 .end method
 
-.method public abstract schedule(Lrx/functions/Action0;)Lrx/Subscription;
-.end method
-
-.method public abstract schedule(Lrx/functions/Action0;JLjava/util/concurrent/TimeUnit;)Lrx/Subscription;
-.end method
-
-.method public schedulePeriodically(Lrx/functions/Action0;JJLjava/util/concurrent/TimeUnit;)Lrx/Subscription;
-    .registers 25
-    .param p1, "action"    # Lrx/functions/Action0;
-    .param p2, "initialDelay"    # J
-    .param p4, "period"    # J
-    .param p6, "unit"    # Ljava/util/concurrent/TimeUnit;
+.method public a(Lrx/functions/Action0;JJLjava/util/concurrent/TimeUnit;)Lrx/Subscription;
+    .registers 15
 
     .prologue
     .line 111
-    move-object/from16 v0, p6
+    invoke-virtual {p6, p4, p5}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
 
-    move-wide/from16 v1, p4
-
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
-
-    move-result-wide v10
+    move-result-wide v6
 
     .line 112
-    .local v10, "periodInNanos":J
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    sget-object v0, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
-    invoke-virtual/range {p0 .. p0}, Lrx/Scheduler$Worker;->now()J
+    invoke-virtual {p0}, Lrx/Scheduler$Worker;->a()J
 
-    move-result-wide v14
+    move-result-wide v2
 
-    invoke-virtual {v5, v14, v15}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
+    invoke-virtual {v0, v2, v3}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
 
-    move-result-wide v14
+    move-result-wide v0
 
-    move-object/from16 v0, p6
+    invoke-virtual {p6, p2, p3}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
 
-    move-wide/from16 v1, p2
+    move-result-wide v2
 
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
-
-    move-result-wide v16
-
-    add-long v8, v14, v16
+    add-long v4, v0, v2
 
     .line 114
-    .local v8, "startInNanos":J
-    new-instance v6, Lrx/subscriptions/MultipleAssignmentSubscription;
+    new-instance v2, Lrx/subscriptions/MultipleAssignmentSubscription;
 
-    invoke-direct {v6}, Lrx/subscriptions/MultipleAssignmentSubscription;-><init>()V
+    invoke-direct {v2}, Lrx/subscriptions/MultipleAssignmentSubscription;-><init>()V
 
     .line 115
-    .local v6, "mas":Lrx/subscriptions/MultipleAssignmentSubscription;
-    new-instance v4, Lrx/Scheduler$Worker$1;
+    new-instance v0, Lrx/Scheduler$Worker$1;
 
-    move-object/from16 v5, p0
+    move-object v1, p0
 
-    move-object/from16 v7, p1
+    move-object v3, p1
 
-    invoke-direct/range {v4 .. v11}, Lrx/Scheduler$Worker$1;-><init>(Lrx/Scheduler$Worker;Lrx/subscriptions/MultipleAssignmentSubscription;Lrx/functions/Action0;JJ)V
+    invoke-direct/range {v0 .. v7}, Lrx/Scheduler$Worker$1;-><init>(Lrx/Scheduler$Worker;Lrx/subscriptions/MultipleAssignmentSubscription;Lrx/functions/Action0;JJ)V
 
     .line 126
-    .local v4, "recursiveAction":Lrx/functions/Action0;
-    new-instance v12, Lrx/subscriptions/MultipleAssignmentSubscription;
+    new-instance v1, Lrx/subscriptions/MultipleAssignmentSubscription;
 
-    invoke-direct {v12}, Lrx/subscriptions/MultipleAssignmentSubscription;-><init>()V
+    invoke-direct {v1}, Lrx/subscriptions/MultipleAssignmentSubscription;-><init>()V
 
     .line 128
-    .local v12, "s":Lrx/subscriptions/MultipleAssignmentSubscription;
-    invoke-virtual {v6, v12}, Lrx/subscriptions/MultipleAssignmentSubscription;->set(Lrx/Subscription;)V
+    invoke-virtual {v2, v1}, Lrx/subscriptions/MultipleAssignmentSubscription;->a(Lrx/Subscription;)V
 
     .line 129
-    move-object/from16 v0, p0
+    invoke-virtual {p0, v0, p2, p3, p6}, Lrx/Scheduler$Worker;->a(Lrx/functions/Action0;JLjava/util/concurrent/TimeUnit;)Lrx/Subscription;
 
-    move-wide/from16 v1, p2
+    move-result-object v0
 
-    move-object/from16 v3, p6
-
-    invoke-virtual {v0, v4, v1, v2, v3}, Lrx/Scheduler$Worker;->schedule(Lrx/functions/Action0;JLjava/util/concurrent/TimeUnit;)Lrx/Subscription;
-
-    move-result-object v5
-
-    invoke-virtual {v12, v5}, Lrx/subscriptions/MultipleAssignmentSubscription;->set(Lrx/Subscription;)V
+    invoke-virtual {v1, v0}, Lrx/subscriptions/MultipleAssignmentSubscription;->a(Lrx/Subscription;)V
 
     .line 130
-    return-object v6
+    return-object v2
+.end method
+
+.method public abstract a(Lrx/functions/Action0;JLjava/util/concurrent/TimeUnit;)Lrx/Subscription;
 .end method

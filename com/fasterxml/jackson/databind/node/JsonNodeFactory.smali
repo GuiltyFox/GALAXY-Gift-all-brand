@@ -67,7 +67,6 @@
 
 .method public constructor <init>(Z)V
     .registers 2
-    .param p1, "bigDecimalExact"    # Z
 
     .prologue
     .line 60
@@ -82,7 +81,6 @@
 
 .method public static withExactBigDecimals(Z)Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;
     .registers 2
-    .param p0, "bigDecimalExact"    # Z
 
     .prologue
     .line 84
@@ -103,7 +101,6 @@
 # virtual methods
 .method public POJONode(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/node/POJONode;
     .registers 3
-    .param p1, "pojo"    # Ljava/lang/Object;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -117,30 +114,27 @@
 .end method
 
 .method protected _inIntRange(J)Z
-    .registers 8
-    .param p1, "l"    # J
+    .registers 6
 
     .prologue
     .line 344
     long-to-int v0, p1
 
     .line 345
-    .local v0, "i":I
-    int-to-long v2, v0
+    int-to-long v0, v0
 
     .line 346
-    .local v2, "l2":J
-    cmp-long v1, v2, p1
+    cmp-long v0, v0, p1
 
-    if-nez v1, :cond_8
+    if-nez v0, :cond_8
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     :goto_7
-    return v1
+    return v0
 
     :cond_8
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_7
 .end method
@@ -159,7 +153,6 @@
 
 .method public binaryNode([B)Lcom/fasterxml/jackson/databind/node/BinaryNode;
     .registers 3
-    .param p1, "data"    # [B
 
     .prologue
     .line 291
@@ -172,9 +165,6 @@
 
 .method public binaryNode([BII)Lcom/fasterxml/jackson/databind/node/BinaryNode;
     .registers 5
-    .param p1, "data"    # [B
-    .param p2, "offset"    # I
-    .param p3, "length"    # I
 
     .prologue
     .line 300
@@ -187,7 +177,6 @@
 
 .method public bridge synthetic binaryNode([B)Lcom/fasterxml/jackson/databind/node/ValueNode;
     .registers 3
-    .param p1, "x0"    # [B
 
     .prologue
     .line 13
@@ -200,9 +189,6 @@
 
 .method public bridge synthetic binaryNode([BII)Lcom/fasterxml/jackson/databind/node/ValueNode;
     .registers 5
-    .param p1, "x0"    # [B
-    .param p2, "x1"    # I
-    .param p3, "x2"    # I
 
     .prologue
     .line 13
@@ -215,7 +201,6 @@
 
 .method public booleanNode(Z)Lcom/fasterxml/jackson/databind/node/BooleanNode;
     .registers 3
-    .param p1, "v"    # Z
 
     .prologue
     .line 99
@@ -238,7 +223,6 @@
 
 .method public bridge synthetic booleanNode(Z)Lcom/fasterxml/jackson/databind/node/ValueNode;
     .registers 3
-    .param p1, "x0"    # Z
 
     .prologue
     .line 13
@@ -275,7 +259,6 @@
 
 .method public numberNode(B)Lcom/fasterxml/jackson/databind/node/NumericNode;
     .registers 3
-    .param p1, "v"    # B
 
     .prologue
     .line 120
@@ -288,7 +271,6 @@
 
 .method public numberNode(D)Lcom/fasterxml/jackson/databind/node/NumericNode;
     .registers 4
-    .param p1, "v"    # D
 
     .prologue
     .line 226
@@ -301,7 +283,6 @@
 
 .method public numberNode(F)Lcom/fasterxml/jackson/databind/node/NumericNode;
     .registers 3
-    .param p1, "v"    # F
 
     .prologue
     .line 208
@@ -314,7 +295,6 @@
 
 .method public numberNode(I)Lcom/fasterxml/jackson/databind/node/NumericNode;
     .registers 3
-    .param p1, "v"    # I
 
     .prologue
     .line 156
@@ -327,7 +307,6 @@
 
 .method public numberNode(J)Lcom/fasterxml/jackson/databind/node/NumericNode;
     .registers 4
-    .param p1, "v"    # J
 
     .prologue
     .line 175
@@ -358,7 +337,6 @@
 
 .method public numberNode(Ljava/math/BigDecimal;)Lcom/fasterxml/jackson/databind/node/NumericNode;
     .registers 3
-    .param p1, "v"    # Ljava/math/BigDecimal;
 
     .prologue
     .line 256
@@ -402,7 +380,6 @@
 
 .method public numberNode(Ljava/math/BigInteger;)Lcom/fasterxml/jackson/databind/node/NumericNode;
     .registers 3
-    .param p1, "v"    # Ljava/math/BigInteger;
 
     .prologue
     .line 201
@@ -415,7 +392,6 @@
 
 .method public numberNode(S)Lcom/fasterxml/jackson/databind/node/NumericNode;
     .registers 3
-    .param p1, "v"    # S
 
     .prologue
     .line 138
@@ -428,7 +404,6 @@
 
 .method public bridge synthetic numberNode(B)Lcom/fasterxml/jackson/databind/node/ValueNode;
     .registers 3
-    .param p1, "x0"    # B
 
     .prologue
     .line 13
@@ -441,7 +416,6 @@
 
 .method public bridge synthetic numberNode(D)Lcom/fasterxml/jackson/databind/node/ValueNode;
     .registers 4
-    .param p1, "x0"    # D
 
     .prologue
     .line 13
@@ -454,7 +428,6 @@
 
 .method public bridge synthetic numberNode(F)Lcom/fasterxml/jackson/databind/node/ValueNode;
     .registers 3
-    .param p1, "x0"    # F
 
     .prologue
     .line 13
@@ -467,7 +440,6 @@
 
 .method public bridge synthetic numberNode(I)Lcom/fasterxml/jackson/databind/node/ValueNode;
     .registers 3
-    .param p1, "x0"    # I
 
     .prologue
     .line 13
@@ -480,7 +452,6 @@
 
 .method public bridge synthetic numberNode(J)Lcom/fasterxml/jackson/databind/node/ValueNode;
     .registers 4
-    .param p1, "x0"    # J
 
     .prologue
     .line 13
@@ -493,7 +464,6 @@
 
 .method public numberNode(Ljava/lang/Byte;)Lcom/fasterxml/jackson/databind/node/ValueNode;
     .registers 3
-    .param p1, "value"    # Ljava/lang/Byte;
 
     .prologue
     .line 130
@@ -520,7 +490,6 @@
 
 .method public numberNode(Ljava/lang/Double;)Lcom/fasterxml/jackson/databind/node/ValueNode;
     .registers 4
-    .param p1, "value"    # Ljava/lang/Double;
 
     .prologue
     .line 236
@@ -547,7 +516,6 @@
 
 .method public numberNode(Ljava/lang/Float;)Lcom/fasterxml/jackson/databind/node/ValueNode;
     .registers 3
-    .param p1, "value"    # Ljava/lang/Float;
 
     .prologue
     .line 218
@@ -574,7 +542,6 @@
 
 .method public numberNode(Ljava/lang/Integer;)Lcom/fasterxml/jackson/databind/node/ValueNode;
     .registers 3
-    .param p1, "value"    # Ljava/lang/Integer;
 
     .prologue
     .line 166
@@ -601,7 +568,6 @@
 
 .method public numberNode(Ljava/lang/Long;)Lcom/fasterxml/jackson/databind/node/ValueNode;
     .registers 5
-    .param p1, "value"    # Ljava/lang/Long;
 
     .prologue
     .line 188
@@ -610,11 +576,11 @@
     .line 189
     invoke-virtual {p0}, Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;->nullNode()Lcom/fasterxml/jackson/databind/node/NullNode;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 192
     :goto_6
-    return-object v2
+    return-object v0
 
     .line 191
     :cond_7
@@ -623,32 +589,30 @@
     move-result-wide v0
 
     .line 192
-    .local v0, "l":J
     invoke-virtual {p0, v0, v1}, Lcom/fasterxml/jackson/databind/node/JsonNodeFactory;->_inIntRange(J)Z
 
     move-result v2
 
     if-eqz v2, :cond_17
 
-    long-to-int v2, v0
+    long-to-int v0, v0
 
-    invoke-static {v2}, Lcom/fasterxml/jackson/databind/node/IntNode;->valueOf(I)Lcom/fasterxml/jackson/databind/node/IntNode;
+    invoke-static {v0}, Lcom/fasterxml/jackson/databind/node/IntNode;->valueOf(I)Lcom/fasterxml/jackson/databind/node/IntNode;
 
-    move-result-object v2
+    move-result-object v0
 
     goto :goto_6
 
     :cond_17
     invoke-static {v0, v1}, Lcom/fasterxml/jackson/databind/node/LongNode;->valueOf(J)Lcom/fasterxml/jackson/databind/node/LongNode;
 
-    move-result-object v2
+    move-result-object v0
 
     goto :goto_6
 .end method
 
 .method public numberNode(Ljava/lang/Short;)Lcom/fasterxml/jackson/databind/node/ValueNode;
     .registers 3
-    .param p1, "value"    # Ljava/lang/Short;
 
     .prologue
     .line 148
@@ -675,7 +639,6 @@
 
 .method public bridge synthetic numberNode(Ljava/math/BigDecimal;)Lcom/fasterxml/jackson/databind/node/ValueNode;
     .registers 3
-    .param p1, "x0"    # Ljava/math/BigDecimal;
 
     .prologue
     .line 13
@@ -688,7 +651,6 @@
 
 .method public bridge synthetic numberNode(Ljava/math/BigInteger;)Lcom/fasterxml/jackson/databind/node/ValueNode;
     .registers 3
-    .param p1, "x0"    # Ljava/math/BigInteger;
 
     .prologue
     .line 13
@@ -701,7 +663,6 @@
 
 .method public bridge synthetic numberNode(S)Lcom/fasterxml/jackson/databind/node/ValueNode;
     .registers 3
-    .param p1, "x0"    # S
 
     .prologue
     .line 13
@@ -726,7 +687,6 @@
 
 .method public pojoNode(Ljava/lang/Object;)Lcom/fasterxml/jackson/databind/node/ValueNode;
     .registers 3
-    .param p1, "pojo"    # Ljava/lang/Object;
 
     .prologue
     .line 328
@@ -739,7 +699,6 @@
 
 .method public textNode(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/node/TextNode;
     .registers 3
-    .param p1, "text"    # Ljava/lang/String;
 
     .prologue
     .line 283
@@ -752,7 +711,6 @@
 
 .method public bridge synthetic textNode(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/node/ValueNode;
     .registers 3
-    .param p1, "x0"    # Ljava/lang/String;
 
     .prologue
     .line 13

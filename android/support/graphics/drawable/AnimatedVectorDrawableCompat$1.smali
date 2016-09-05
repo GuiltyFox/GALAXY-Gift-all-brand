@@ -11,14 +11,9 @@
     value = Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;
+.field final synthetic a:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;
 
 
 # direct methods
@@ -27,7 +22,7 @@
 
     .prologue
     .line 629
-    iput-object p1, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$1;->this$0:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;
+    iput-object p1, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$1;->a:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,11 +33,10 @@
 # virtual methods
 .method public invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
     .registers 3
-    .param p1, "who"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 632
-    iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$1;->this$0:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;
+    iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$1;->a:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;
 
     invoke-virtual {v0}, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->invalidateSelf()V
 
@@ -52,13 +46,10 @@
 
 .method public scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
     .registers 6
-    .param p1, "who"    # Landroid/graphics/drawable/Drawable;
-    .param p2, "what"    # Ljava/lang/Runnable;
-    .param p3, "when"    # J
 
     .prologue
     .line 637
-    iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$1;->this$0:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;
+    iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$1;->a:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;
 
     invoke-virtual {v0, p2, p3, p4}, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->scheduleSelf(Ljava/lang/Runnable;J)V
 
@@ -68,12 +59,10 @@
 
 .method public unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
     .registers 4
-    .param p1, "who"    # Landroid/graphics/drawable/Drawable;
-    .param p2, "what"    # Ljava/lang/Runnable;
 
     .prologue
     .line 642
-    iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$1;->this$0:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;
+    iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$1;->a:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;
 
     invoke-virtual {v0, p2}, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->unscheduleSelf(Ljava/lang/Runnable;)V
 

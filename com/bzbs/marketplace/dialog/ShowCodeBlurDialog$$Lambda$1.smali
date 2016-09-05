@@ -6,7 +6,7 @@
 
 
 # static fields
-.field private static final instance:Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog$$Lambda$1;
+.field private static final a:Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog$$Lambda$1;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     invoke-direct {v0}, Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog$$Lambda$1;-><init>()V
 
-    sput-object v0, Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog$$Lambda$1;->instance:Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog$$Lambda$1;
+    sput-object v0, Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog$$Lambda$1;->a:Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog$$Lambda$1;
 
     return-void
 .end method
@@ -30,10 +30,10 @@
     return-void
 .end method
 
-.method public static lambdaFactory$()Landroid/view/View$OnLongClickListener;
+.method public static a()Landroid/view/View$OnLongClickListener;
     .registers 1
 
-    sget-object v0, Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog$$Lambda$1;->instance:Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog$$Lambda$1;
+    sget-object v0, Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog$$Lambda$1;->a:Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog$$Lambda$1;
 
     return-object v0
 .end method
@@ -45,7 +45,7 @@
     .annotation runtime Ljava/lang/invoke/LambdaForm$Hidden;
     .end annotation
 
-    invoke-static {p1}, Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog;->access$lambda$0(Landroid/view/View;)Z
+    invoke-static {p1}, Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog;->a(Landroid/view/View;)Z
 
     move-result v0
 

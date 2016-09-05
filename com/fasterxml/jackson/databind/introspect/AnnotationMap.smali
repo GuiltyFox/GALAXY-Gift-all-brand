@@ -52,7 +52,6 @@
 
     .prologue
     .line 20
-    .local p1, "a":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/Class<+Ljava/lang/annotation/Annotation;>;Ljava/lang/annotation/Annotation;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 21
@@ -64,50 +63,46 @@
 
 .method public static merge(Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;)Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
     .registers 6
-    .param p0, "primary"    # Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
-    .param p1, "secondary"    # Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
     .prologue
     .line 46
     if-eqz p0, :cond_e
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;->_annotations:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;->_annotations:Ljava/util/HashMap;
 
-    if-eqz v3, :cond_e
+    if-eqz v0, :cond_e
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;->_annotations:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;->_annotations:Ljava/util/HashMap;
 
-    invoke-virtual {v3}, Ljava/util/HashMap;->isEmpty()Z
+    invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_10
+    if-eqz v0, :cond_10
 
     :cond_e
     move-object p0, p1
 
     .line 62
-    .end local p0    # "primary":Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
     :cond_f
     :goto_f
     return-object p0
 
     .line 49
-    .restart local p0    # "primary":Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
     :cond_10
     if-eqz p1, :cond_f
 
-    iget-object v3, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;->_annotations:Ljava/util/HashMap;
+    iget-object v0, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;->_annotations:Ljava/util/HashMap;
 
-    if-eqz v3, :cond_f
+    if-eqz v0, :cond_f
 
-    iget-object v3, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;->_annotations:Ljava/util/HashMap;
+    iget-object v0, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;->_annotations:Ljava/util/HashMap;
 
-    invoke-virtual {v3}, Ljava/util/HashMap;->isEmpty()Z
+    invoke-virtual {v0}, Ljava/util/HashMap;->isEmpty()Z
 
-    move-result v3
+    move-result v0
 
-    if-nez v3, :cond_f
+    if-nez v0, :cond_f
 
     .line 52
     new-instance v1, Ljava/util/HashMap;
@@ -115,24 +110,22 @@
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     .line 55
-    .local v1, "annotations":Ljava/util/HashMap;, "Ljava/util/HashMap<Ljava/lang/Class<+Ljava/lang/annotation/Annotation;>;Ljava/lang/annotation/Annotation;>;"
-    iget-object v3, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;->_annotations:Ljava/util/HashMap;
+    iget-object v0, p1, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;->_annotations:Ljava/util/HashMap;
 
-    invoke-virtual {v3}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+    invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-interface {v3}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
-    .local v2, "i$":Ljava/util/Iterator;
     :goto_2d
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_41
+    if-eqz v0, :cond_41
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -141,7 +134,6 @@
     check-cast v0, Ljava/lang/annotation/Annotation;
 
     .line 56
-    .local v0, "ann":Ljava/lang/annotation/Annotation;
     invoke-interface {v0}, Ljava/lang/annotation/Annotation;->annotationType()Ljava/lang/Class;
 
     move-result-object v3
@@ -151,24 +143,23 @@
     goto :goto_2d
 
     .line 59
-    .end local v0    # "ann":Ljava/lang/annotation/Annotation;
     :cond_41
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;->_annotations:Ljava/util/HashMap;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;->_annotations:Ljava/util/HashMap;
 
-    invoke-virtual {v3}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+    invoke-virtual {v0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-interface {v3}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
 
     :goto_4b
     invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_5f
+    if-eqz v0, :cond_5f
 
     invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -177,7 +168,6 @@
     check-cast v0, Ljava/lang/annotation/Annotation;
 
     .line 60
-    .restart local v0    # "ann":Ljava/lang/annotation/Annotation;
     invoke-interface {v0}, Ljava/lang/annotation/Annotation;->annotationType()Ljava/lang/Class;
 
     move-result-object v3
@@ -187,11 +177,9 @@
     goto :goto_4b
 
     .line 62
-    .end local v0    # "ann":Ljava/lang/annotation/Annotation;
     :cond_5f
     new-instance p0, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
-    .end local p0    # "primary":Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
     invoke-direct {p0, v1}, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;-><init>(Ljava/util/HashMap;)V
 
     goto :goto_f
@@ -201,7 +189,6 @@
 # virtual methods
 .method protected final _add(Ljava/lang/annotation/Annotation;)V
     .registers 4
-    .param p1, "ann"    # Ljava/lang/annotation/Annotation;
 
     .prologue
     .line 103
@@ -232,7 +219,6 @@
 
 .method public add(Ljava/lang/annotation/Annotation;)V
     .registers 2
-    .param p1, "ann"    # Ljava/lang/annotation/Annotation;
 
     .prologue
     .line 85
@@ -244,7 +230,6 @@
 
 .method public addIfNotPresent(Ljava/lang/annotation/Annotation;)V
     .registers 4
-    .param p1, "ann"    # Ljava/lang/annotation/Annotation;
 
     .prologue
     .line 76
@@ -333,7 +318,6 @@
 
     .prologue
     .line 28
-    .local p1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<TA;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;->_annotations:Ljava/util/HashMap;
 
     if-nez v0, :cond_6

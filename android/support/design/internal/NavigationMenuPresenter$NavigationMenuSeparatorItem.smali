@@ -6,17 +6,6 @@
 .implements Landroid/support/design/internal/NavigationMenuPresenter$NavigationMenuItem;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/internal/NavigationMenuPresenter;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "NavigationMenuSeparatorItem"
-.end annotation
-
-
 # instance fields
 .field private final mPaddingBottom:I
 
@@ -26,8 +15,6 @@
 # direct methods
 .method public constructor <init>(II)V
     .registers 3
-    .param p1, "paddingTop"    # I
-    .param p2, "paddingBottom"    # I
 
     .prologue
     .line 629

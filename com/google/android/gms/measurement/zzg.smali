@@ -2,30 +2,14 @@
 .super Ljava/lang/Object;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/android/gms/measurement/zzg$zzb;,
-        Lcom/google/android/gms/measurement/zzg$zzc;,
-        Lcom/google/android/gms/measurement/zzg$zza;
-    }
-.end annotation
-
-
 # static fields
-.field private static volatile zzaRx:Lcom/google/android/gms/measurement/zzg;
+.field private static volatile a:Lcom/google/android/gms/measurement/zzg;
 
 
 # instance fields
-.field private final mContext:Landroid/content/Context;
+.field private final b:Landroid/content/Context;
 
-.field private volatile zzPD:Lcom/google/android/gms/internal/zzqh;
-
-.field private final zzaRA:Lcom/google/android/gms/measurement/zzg$zza;
-
-.field private zzaRB:Ljava/lang/Thread$UncaughtExceptionHandler;
-
-.field private final zzaRy:Ljava/util/List;
+.field private final c:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
@@ -36,7 +20,13 @@
     .end annotation
 .end field
 
-.field private final zzaRz:Lcom/google/android/gms/measurement/zzb;
+.field private final d:Lcom/google/android/gms/measurement/zzb;
+
+.field private final e:Lcom/google/android/gms/measurement/zzg$zza;
+
+.field private volatile f:Lcom/google/android/gms/internal/zzqh;
+
+.field private g:Ljava/lang/Thread$UncaughtExceptionHandler;
 
 
 # direct methods
@@ -49,53 +39,37 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iput-object v0, p0, Lcom/google/android/gms/measurement/zzg;->mContext:Landroid/content/Context;
+    iput-object v0, p0, Lcom/google/android/gms/measurement/zzg;->b:Landroid/content/Context;
 
     new-instance v0, Lcom/google/android/gms/measurement/zzg$zza;
 
     invoke-direct {v0, p0}, Lcom/google/android/gms/measurement/zzg$zza;-><init>(Lcom/google/android/gms/measurement/zzg;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/measurement/zzg;->zzaRA:Lcom/google/android/gms/measurement/zzg$zza;
+    iput-object v0, p0, Lcom/google/android/gms/measurement/zzg;->e:Lcom/google/android/gms/measurement/zzg$zza;
 
     new-instance v0, Ljava/util/concurrent/CopyOnWriteArrayList;
 
     invoke-direct {v0}, Ljava/util/concurrent/CopyOnWriteArrayList;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/measurement/zzg;->zzaRy:Ljava/util/List;
+    iput-object v0, p0, Lcom/google/android/gms/measurement/zzg;->c:Ljava/util/List;
 
     new-instance v0, Lcom/google/android/gms/measurement/zzb;
 
     invoke-direct {v0}, Lcom/google/android/gms/measurement/zzb;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/measurement/zzg;->zzaRz:Lcom/google/android/gms/measurement/zzb;
+    iput-object v0, p0, Lcom/google/android/gms/measurement/zzg;->d:Lcom/google/android/gms/measurement/zzb;
 
     return-void
 .end method
 
-.method static synthetic zza(Lcom/google/android/gms/measurement/zzg;)Ljava/util/List;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->zzaRy:Ljava/util/List;
-
-    return-object v0
-.end method
-
-.method static synthetic zza(Lcom/google/android/gms/measurement/zzg;Lcom/google/android/gms/measurement/zzc;)V
-    .registers 2
-
-    invoke-direct {p0, p1}, Lcom/google/android/gms/measurement/zzg;->zzb(Lcom/google/android/gms/measurement/zzc;)V
-
-    return-void
-.end method
-
-.method public static zzaT(Landroid/content/Context;)Lcom/google/android/gms/measurement/zzg;
+.method public static a(Landroid/content/Context;)Lcom/google/android/gms/measurement/zzg;
     .registers 3
 
-    invoke-static {p0}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p0}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    sget-object v0, Lcom/google/android/gms/measurement/zzg;->zzaRx:Lcom/google/android/gms/measurement/zzg;
+    sget-object v0, Lcom/google/android/gms/measurement/zzg;->a:Lcom/google/android/gms/measurement/zzg;
 
     if-nez v0, :cond_16
 
@@ -104,7 +78,7 @@
     monitor-enter v1
 
     :try_start_a
-    sget-object v0, Lcom/google/android/gms/measurement/zzg;->zzaRx:Lcom/google/android/gms/measurement/zzg;
+    sget-object v0, Lcom/google/android/gms/measurement/zzg;->a:Lcom/google/android/gms/measurement/zzg;
 
     if-nez v0, :cond_15
 
@@ -112,7 +86,7 @@
 
     invoke-direct {v0, p0}, Lcom/google/android/gms/measurement/zzg;-><init>(Landroid/content/Context;)V
 
-    sput-object v0, Lcom/google/android/gms/measurement/zzg;->zzaRx:Lcom/google/android/gms/measurement/zzg;
+    sput-object v0, Lcom/google/android/gms/measurement/zzg;->a:Lcom/google/android/gms/measurement/zzg;
 
     :cond_15
     monitor-exit v1
@@ -120,7 +94,7 @@
     .catchall {:try_start_a .. :try_end_16} :catchall_19
 
     :cond_16
-    sget-object v0, Lcom/google/android/gms/measurement/zzg;->zzaRx:Lcom/google/android/gms/measurement/zzg;
+    sget-object v0, Lcom/google/android/gms/measurement/zzg;->a:Lcom/google/android/gms/measurement/zzg;
 
     return-object v0
 
@@ -135,30 +109,46 @@
     throw v0
 .end method
 
-.method static synthetic zzb(Lcom/google/android/gms/measurement/zzg;)Ljava/lang/Thread$UncaughtExceptionHandler;
+.method static synthetic a(Lcom/google/android/gms/measurement/zzg;)Ljava/util/List;
     .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->zzaRB:Ljava/lang/Thread$UncaughtExceptionHandler;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->c:Ljava/util/List;
 
     return-object v0
 .end method
 
-.method private zzb(Lcom/google/android/gms/measurement/zzc;)V
+.method static synthetic a(Lcom/google/android/gms/measurement/zzg;Lcom/google/android/gms/measurement/zzc;)V
+    .registers 2
+
+    invoke-direct {p0, p1}, Lcom/google/android/gms/measurement/zzg;->b(Lcom/google/android/gms/measurement/zzc;)V
+
+    return-void
+.end method
+
+.method static synthetic b(Lcom/google/android/gms/measurement/zzg;)Ljava/lang/Thread$UncaughtExceptionHandler;
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->g:Ljava/lang/Thread$UncaughtExceptionHandler;
+
+    return-object v0
+.end method
+
+.method private b(Lcom/google/android/gms/measurement/zzc;)V
     .registers 7
 
     const-string/jumbo v0, "deliver should be called from worker thread"
 
-    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzx;->zzcy(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/google/android/gms/common/internal/zzx;->c(Ljava/lang/String;)V
 
-    invoke-virtual {p1}, Lcom/google/android/gms/measurement/zzc;->zzzJ()Z
+    invoke-virtual {p1}, Lcom/google/android/gms/measurement/zzc;->f()Z
 
     move-result v0
 
     const-string/jumbo v1, "Measurement must be submitted"
 
-    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzx;->zzb(ZLjava/lang/Object;)V
+    invoke-static {v0, v1}, Lcom/google/android/gms/common/internal/zzx;->b(ZLjava/lang/Object;)V
 
-    invoke-virtual {p1}, Lcom/google/android/gms/measurement/zzc;->zzzG()Ljava/util/List;
+    invoke-virtual {p1}, Lcom/google/android/gms/measurement/zzc;->c()Ljava/util/List;
 
     move-result-object v0
 
@@ -194,7 +184,7 @@
 
     check-cast v0, Lcom/google/android/gms/measurement/zzi;
 
-    invoke-interface {v0}, Lcom/google/android/gms/measurement/zzi;->zzii()Landroid/net/Uri;
+    invoke-interface {v0}, Lcom/google/android/gms/measurement/zzi;->a()Landroid/net/Uri;
 
     move-result-object v3
 
@@ -206,12 +196,12 @@
 
     invoke-interface {v1, v3}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
-    invoke-interface {v0, p1}, Lcom/google/android/gms/measurement/zzi;->zzb(Lcom/google/android/gms/measurement/zzc;)V
+    invoke-interface {v0, p1}, Lcom/google/android/gms/measurement/zzi;->a(Lcom/google/android/gms/measurement/zzc;)V
 
     goto :goto_24
 .end method
 
-.method public static zziS()V
+.method public static d()V
     .registers 2
 
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
@@ -236,138 +226,17 @@
 
 
 # virtual methods
-.method public getContext()Landroid/content/Context;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->mContext:Landroid/content/Context;
-
-    return-object v0
-.end method
-
-.method public zza(Ljava/lang/Thread$UncaughtExceptionHandler;)V
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/android/gms/measurement/zzg;->zzaRB:Ljava/lang/Thread$UncaughtExceptionHandler;
-
-    return-void
-.end method
-
-.method public zzc(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
-    .registers 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<V:",
-            "Ljava/lang/Object;",
-            ">(",
-            "Ljava/util/concurrent/Callable",
-            "<TV;>;)",
-            "Ljava/util/concurrent/Future",
-            "<TV;>;"
-        }
-    .end annotation
-
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
-
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    move-result-object v0
-
-    instance-of v0, v0, Lcom/google/android/gms/measurement/zzg$zzc;
-
-    if-eqz v0, :cond_14
-
-    new-instance v0, Ljava/util/concurrent/FutureTask;
-
-    invoke-direct {v0, p1}, Ljava/util/concurrent/FutureTask;-><init>(Ljava/util/concurrent/Callable;)V
-
-    invoke-virtual {v0}, Ljava/util/concurrent/FutureTask;->run()V
-
-    :goto_13
-    return-object v0
-
-    :cond_14
-    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->zzaRA:Lcom/google/android/gms/measurement/zzg$zza;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/measurement/zzg$zza;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
-
-    move-result-object v0
-
-    goto :goto_13
-.end method
-
-.method zze(Lcom/google/android/gms/measurement/zzc;)V
-    .registers 5
-
-    invoke-virtual {p1}, Lcom/google/android/gms/measurement/zzc;->zzzN()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_f
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string/jumbo v1, "Measurement prototype can\'t be submitted"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_f
-    invoke-virtual {p1}, Lcom/google/android/gms/measurement/zzc;->zzzJ()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_1e
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    const-string/jumbo v1, "Measurement can only be submitted once"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_1e
-    invoke-virtual {p1}, Lcom/google/android/gms/measurement/zzc;->zzzE()Lcom/google/android/gms/measurement/zzc;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lcom/google/android/gms/measurement/zzc;->zzzK()V
-
-    iget-object v1, p0, Lcom/google/android/gms/measurement/zzg;->zzaRA:Lcom/google/android/gms/measurement/zzg$zza;
-
-    new-instance v2, Lcom/google/android/gms/measurement/zzg$1;
-
-    invoke-direct {v2, p0, v0}, Lcom/google/android/gms/measurement/zzg$1;-><init>(Lcom/google/android/gms/measurement/zzg;Lcom/google/android/gms/measurement/zzc;)V
-
-    invoke-virtual {v1, v2}, Lcom/google/android/gms/measurement/zzg$zza;->execute(Ljava/lang/Runnable;)V
-
-    return-void
-.end method
-
-.method public zzf(Ljava/lang/Runnable;)V
-    .registers 3
-
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->zzaRA:Lcom/google/android/gms/measurement/zzg$zza;
-
-    invoke-virtual {v0, p1}, Lcom/google/android/gms/measurement/zzg$zza;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
-
-    return-void
-.end method
-
-.method public zzzR()Lcom/google/android/gms/internal/zzqh;
+.method public a()Lcom/google/android/gms/internal/zzqh;
     .registers 7
 
-    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->zzPD:Lcom/google/android/gms/internal/zzqh;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->f:Lcom/google/android/gms/internal/zzqh;
 
     if-nez v0, :cond_4d
 
     monitor-enter p0
 
     :try_start_5
-    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->zzPD:Lcom/google/android/gms/internal/zzqh;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->f:Lcom/google/android/gms/internal/zzqh;
 
     if-nez v0, :cond_4c
 
@@ -375,32 +244,32 @@
 
     invoke-direct {v2}, Lcom/google/android/gms/internal/zzqh;-><init>()V
 
-    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->b:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v3
 
-    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->b:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v2, v1}, Lcom/google/android/gms/internal/zzqh;->setAppId(Ljava/lang/String;)V
+    invoke-virtual {v2, v1}, Lcom/google/android/gms/internal/zzqh;->c(Ljava/lang/String;)V
 
     invoke-virtual {v3, v1}, Landroid/content/pm/PackageManager;->getInstallerPackageName(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v2, v0}, Lcom/google/android/gms/internal/zzqh;->setAppInstallerId(Ljava/lang/String;)V
+    invoke-virtual {v2, v0}, Lcom/google/android/gms/internal/zzqh;->d(Ljava/lang/String;)V
     :try_end_24
     .catchall {:try_start_5 .. :try_end_24} :catchall_6c
 
     const/4 v0, 0x0
 
     :try_start_25
-    iget-object v4, p0, Lcom/google/android/gms/measurement/zzg;->mContext:Landroid/content/Context;
+    iget-object v4, p0, Lcom/google/android/gms/measurement/zzg;->b:Landroid/content/Context;
 
     invoke-virtual {v4}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
@@ -439,11 +308,11 @@
     :cond_44
     :goto_44
     :try_start_44
-    invoke-virtual {v2, v1}, Lcom/google/android/gms/internal/zzqh;->setAppName(Ljava/lang/String;)V
+    invoke-virtual {v2, v1}, Lcom/google/android/gms/internal/zzqh;->a(Ljava/lang/String;)V
 
-    invoke-virtual {v2, v0}, Lcom/google/android/gms/internal/zzqh;->setAppVersion(Ljava/lang/String;)V
+    invoke-virtual {v2, v0}, Lcom/google/android/gms/internal/zzqh;->b(Ljava/lang/String;)V
 
-    iput-object v2, p0, Lcom/google/android/gms/measurement/zzg;->zzPD:Lcom/google/android/gms/internal/zzqh;
+    iput-object v2, p0, Lcom/google/android/gms/measurement/zzg;->f:Lcom/google/android/gms/internal/zzqh;
 
     :cond_4c
     monitor-exit p0
@@ -451,7 +320,7 @@
     .catchall {:try_start_44 .. :try_end_4d} :catchall_6c
 
     :cond_4d
-    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->zzPD:Lcom/google/android/gms/internal/zzqh;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->f:Lcom/google/android/gms/internal/zzqh;
 
     return-object v0
 
@@ -493,10 +362,123 @@
     throw v0
 .end method
 
-.method public zzzS()Lcom/google/android/gms/internal/zzqj;
+.method public a(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+    .registers 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/concurrent/Callable",
+            "<TV;>;)",
+            "Ljava/util/concurrent/Future",
+            "<TV;>;"
+        }
+    .end annotation
+
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v0
+
+    instance-of v0, v0, Lcom/google/android/gms/measurement/zzg$zzc;
+
+    if-eqz v0, :cond_14
+
+    new-instance v0, Ljava/util/concurrent/FutureTask;
+
+    invoke-direct {v0, p1}, Ljava/util/concurrent/FutureTask;-><init>(Ljava/util/concurrent/Callable;)V
+
+    invoke-virtual {v0}, Ljava/util/concurrent/FutureTask;->run()V
+
+    :goto_13
+    return-object v0
+
+    :cond_14
+    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->e:Lcom/google/android/gms/measurement/zzg$zza;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/measurement/zzg$zza;->submit(Ljava/util/concurrent/Callable;)Ljava/util/concurrent/Future;
+
+    move-result-object v0
+
+    goto :goto_13
+.end method
+
+.method a(Lcom/google/android/gms/measurement/zzc;)V
+    .registers 5
+
+    invoke-virtual {p1}, Lcom/google/android/gms/measurement/zzc;->j()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_f
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string/jumbo v1, "Measurement prototype can\'t be submitted"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_f
+    invoke-virtual {p1}, Lcom/google/android/gms/measurement/zzc;->f()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_1e
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    const-string/jumbo v1, "Measurement can only be submitted once"
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_1e
+    invoke-virtual {p1}, Lcom/google/android/gms/measurement/zzc;->a()Lcom/google/android/gms/measurement/zzc;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Lcom/google/android/gms/measurement/zzc;->g()V
+
+    iget-object v1, p0, Lcom/google/android/gms/measurement/zzg;->e:Lcom/google/android/gms/measurement/zzg$zza;
+
+    new-instance v2, Lcom/google/android/gms/measurement/zzg$1;
+
+    invoke-direct {v2, p0, v0}, Lcom/google/android/gms/measurement/zzg$1;-><init>(Lcom/google/android/gms/measurement/zzg;Lcom/google/android/gms/measurement/zzc;)V
+
+    invoke-virtual {v1, v2}, Lcom/google/android/gms/measurement/zzg$zza;->execute(Ljava/lang/Runnable;)V
+
+    return-void
+.end method
+
+.method public a(Ljava/lang/Runnable;)V
+    .registers 3
+
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
+
+    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->e:Lcom/google/android/gms/measurement/zzg$zza;
+
+    invoke-virtual {v0, p1}, Lcom/google/android/gms/measurement/zzg$zza;->submit(Ljava/lang/Runnable;)Ljava/util/concurrent/Future;
+
+    return-void
+.end method
+
+.method public a(Ljava/lang/Thread$UncaughtExceptionHandler;)V
+    .registers 2
+
+    iput-object p1, p0, Lcom/google/android/gms/measurement/zzg;->g:Ljava/lang/Thread$UncaughtExceptionHandler;
+
+    return-void
+.end method
+
+.method public b()Lcom/google/android/gms/internal/zzqj;
     .registers 4
 
-    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->mContext:Landroid/content/Context;
+    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->b:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -514,19 +496,27 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/google/android/gms/analytics/internal/zzam;->zza(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/google/android/gms/analytics/internal/zzam;->a(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v1, v2}, Lcom/google/android/gms/internal/zzqj;->setLanguage(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Lcom/google/android/gms/internal/zzqj;->a(Ljava/lang/String;)V
 
     iget v2, v0, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    invoke-virtual {v1, v2}, Lcom/google/android/gms/internal/zzqj;->zzip(I)V
+    invoke-virtual {v1, v2}, Lcom/google/android/gms/internal/zzqj;->b(I)V
 
     iget v0, v0, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    invoke-virtual {v1, v0}, Lcom/google/android/gms/internal/zzqj;->zziq(I)V
+    invoke-virtual {v1, v0}, Lcom/google/android/gms/internal/zzqj;->c(I)V
 
     return-object v1
+.end method
+
+.method public c()Landroid/content/Context;
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/gms/measurement/zzg;->b:Landroid/content/Context;
+
+    return-object v0
 .end method

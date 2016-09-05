@@ -3,94 +3,48 @@
 
 
 # direct methods
-.method public static zza(ILjava/lang/Object;)I
-    .registers 4
+.method public static a(I)I
+    .registers 3
 
-    if-nez p0, :cond_c
+    if-nez p0, :cond_b
 
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
+    const-string/jumbo v1, "Given Integer is zero"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    :cond_c
+    :cond_b
     return p0
 .end method
 
-.method public static zza(ZLjava/lang/Object;)V
-    .registers 4
+.method public static a(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(TT;)TT;"
+        }
+    .end annotation
 
-    if-nez p0, :cond_c
+    if-nez p0, :cond_b
 
-    new-instance v0, Ljava/lang/IllegalStateException;
+    new-instance v0, Ljava/lang/NullPointerException;
 
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    const-string/jumbo v1, "null reference"
 
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_c
-    return-void
-.end method
-
-.method public static varargs zza(ZLjava/lang/String;[Ljava/lang/Object;)V
-    .registers 5
-
-    if-nez p0, :cond_c
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-static {p1, p2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
 
     throw v0
 
-    :cond_c
-    return-void
+    :cond_b
+    return-object p0
 .end method
 
-.method public static zzaa(Z)V
-    .registers 2
-
-    if-nez p0, :cond_8
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v0}, Ljava/lang/IllegalStateException;-><init>()V
-
-    throw v0
-
-    :cond_8
-    return-void
-.end method
-
-.method public static zzab(Z)V
-    .registers 2
-
-    if-nez p0, :cond_8
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
-
-    throw v0
-
-    :cond_8
-    return-void
-.end method
-
-.method public static zzb(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public static a(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -118,62 +72,7 @@
     return-object p0
 .end method
 
-.method public static zzb(ZLjava/lang/Object;)V
-    .registers 4
-
-    if-nez p0, :cond_c
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_c
-    return-void
-.end method
-
-.method public static varargs zzb(ZLjava/lang/String;[Ljava/lang/Object;)V
-    .registers 5
-
-    if-nez p0, :cond_c
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    invoke-static {p1, p2}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_c
-    return-void
-.end method
-
-.method public static zzbX(I)I
-    .registers 3
-
-    if-nez p0, :cond_b
-
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    const-string/jumbo v1, "Given Integer is zero"
-
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_b
-    return p0
-.end method
-
-.method public static zzcG(Ljava/lang/String;)Ljava/lang/String;
+.method public static a(Ljava/lang/String;)Ljava/lang/String;
     .registers 3
 
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -194,53 +93,7 @@
     return-object p0
 .end method
 
-.method public static zzcx(Ljava/lang/String;)V
-    .registers 3
-
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    if-eq v0, v1, :cond_10
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_10
-    return-void
-.end method
-
-.method public static zzcy(Ljava/lang/String;)V
-    .registers 3
-
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
-
-    move-result-object v0
-
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    move-result-object v1
-
-    if-ne v0, v1, :cond_10
-
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    throw v0
-
-    :cond_10
-    return-void
-.end method
-
-.method public static zzh(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
+.method public static a(Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/String;
     .registers 4
 
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -263,26 +116,101 @@
     return-object p0
 .end method
 
-.method public static zzy(Ljava/lang/Object;)Ljava/lang/Object;
-    .registers 3
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "<T:",
-            "Ljava/lang/Object;",
-            ">(TT;)TT;"
-        }
-    .end annotation
+.method public static a(Z)V
+    .registers 2
 
-    if-nez p0, :cond_b
+    if-nez p0, :cond_8
 
-    new-instance v0, Ljava/lang/NullPointerException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string/jumbo v1, "null reference"
-
-    invoke-direct {v0, v1}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v0
 
-    :cond_b
-    return-object p0
+    :cond_8
+    return-void
+.end method
+
+.method public static a(ZLjava/lang/Object;)V
+    .registers 4
+
+    if-nez p0, :cond_c
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_c
+    return-void
+.end method
+
+.method public static b(Ljava/lang/String;)V
+    .registers 3
+
+    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    if-eq v0, v1, :cond_10
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_10
+    return-void
+.end method
+
+.method public static b(ZLjava/lang/Object;)V
+    .registers 4
+
+    if-nez p0, :cond_c
+
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_c
+    return-void
+.end method
+
+.method public static c(Ljava/lang/String;)V
+    .registers 3
+
+    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+
+    move-result-object v0
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    if-ne v0, v1, :cond_10
+
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    :cond_10
+    return-void
 .end method

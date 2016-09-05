@@ -3,14 +3,6 @@
 .source "NameTransformer.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/util/NameTransformer$Chained;
-    }
-.end annotation
-
-
 # static fields
 .field public static final NOP:Lcom/fasterxml/jackson/databind/util/NameTransformer;
 
@@ -42,8 +34,6 @@
 
 .method public static chainedTransformer(Lcom/fasterxml/jackson/databind/util/NameTransformer;Lcom/fasterxml/jackson/databind/util/NameTransformer;)Lcom/fasterxml/jackson/databind/util/NameTransformer;
     .registers 3
-    .param p0, "t1"    # Lcom/fasterxml/jackson/databind/util/NameTransformer;
-    .param p1, "t2"    # Lcom/fasterxml/jackson/databind/util/NameTransformer;
 
     .prologue
     .line 94
@@ -56,27 +46,24 @@
 
 .method public static simpleTransformer(Ljava/lang/String;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/util/NameTransformer;
     .registers 6
-    .param p0, "prefix"    # Ljava/lang/String;
-    .param p1, "suffix"    # Ljava/lang/String;
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 34
     if-eqz p0, :cond_1d
 
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v2
 
-    if-lez v3, :cond_1d
+    if-lez v2, :cond_1d
 
-    move v0, v1
+    move v2, v0
 
     .line 35
-    .local v0, "hasPrefix":Z
     :goto_b
     if-eqz p1, :cond_1f
 
@@ -87,60 +74,55 @@
     if-lez v3, :cond_1f
 
     .line 37
-    .local v1, "hasSuffix":Z
     :goto_13
-    if-eqz v0, :cond_27
+    if-eqz v2, :cond_27
 
     .line 38
-    if-eqz v1, :cond_21
+    if-eqz v0, :cond_21
 
     .line 39
-    new-instance v2, Lcom/fasterxml/jackson/databind/util/NameTransformer$2;
+    new-instance v0, Lcom/fasterxml/jackson/databind/util/NameTransformer$2;
 
-    invoke-direct {v2, p0, p1}, Lcom/fasterxml/jackson/databind/util/NameTransformer$2;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {v0, p0, p1}, Lcom/fasterxml/jackson/databind/util/NameTransformer$2;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 85
     :goto_1c
-    return-object v2
+    return-object v0
 
-    .end local v0    # "hasPrefix":Z
-    .end local v1    # "hasSuffix":Z
     :cond_1d
-    move v0, v2
+    move v2, v1
 
     .line 34
     goto :goto_b
 
-    .restart local v0    # "hasPrefix":Z
     :cond_1f
-    move v1, v2
+    move v0, v1
 
     .line 35
     goto :goto_13
 
     .line 56
-    .restart local v1    # "hasSuffix":Z
     :cond_21
-    new-instance v2, Lcom/fasterxml/jackson/databind/util/NameTransformer$3;
+    new-instance v0, Lcom/fasterxml/jackson/databind/util/NameTransformer$3;
 
-    invoke-direct {v2, p0}, Lcom/fasterxml/jackson/databind/util/NameTransformer$3;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p0}, Lcom/fasterxml/jackson/databind/util/NameTransformer$3;-><init>(Ljava/lang/String;)V
 
     goto :goto_1c
 
     .line 70
     :cond_27
-    if-eqz v1, :cond_2f
+    if-eqz v0, :cond_2f
 
     .line 71
-    new-instance v2, Lcom/fasterxml/jackson/databind/util/NameTransformer$4;
+    new-instance v0, Lcom/fasterxml/jackson/databind/util/NameTransformer$4;
 
-    invoke-direct {v2, p1}, Lcom/fasterxml/jackson/databind/util/NameTransformer$4;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, p1}, Lcom/fasterxml/jackson/databind/util/NameTransformer$4;-><init>(Ljava/lang/String;)V
 
     goto :goto_1c
 
     .line 85
     :cond_2f
-    sget-object v2, Lcom/fasterxml/jackson/databind/util/NameTransformer;->NOP:Lcom/fasterxml/jackson/databind/util/NameTransformer;
+    sget-object v0, Lcom/fasterxml/jackson/databind/util/NameTransformer;->NOP:Lcom/fasterxml/jackson/databind/util/NameTransformer;
 
     goto :goto_1c
 .end method

@@ -3,17 +3,6 @@
 .source "SnackbarManager.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/SnackbarManager;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "SnackbarRecord"
-.end annotation
-
-
 # instance fields
 .field private final callback:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
@@ -32,8 +21,6 @@
 # direct methods
 .method constructor <init>(ILandroid/support/design/widget/SnackbarManager$Callback;)V
     .registers 4
-    .param p1, "duration"    # I
-    .param p2, "callback"    # Landroid/support/design/widget/SnackbarManager$Callback;
 
     .prologue
     .line 172
@@ -55,7 +42,6 @@
 
 .method static synthetic access$100(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
     .prologue
     .line 168
@@ -66,8 +52,6 @@
 
 .method static synthetic access$102(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;I)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
-    .param p1, "x1"    # I
 
     .prologue
     .line 168
@@ -78,7 +62,6 @@
 
 .method static synthetic access$200(Landroid/support/design/widget/SnackbarManager$SnackbarRecord;)Ljava/lang/ref/WeakReference;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/SnackbarManager$SnackbarRecord;
 
     .prologue
     .line 168
@@ -91,7 +74,6 @@
 # virtual methods
 .method isSnackbar(Landroid/support/design/widget/SnackbarManager$Callback;)Z
     .registers 3
-    .param p1, "callback"    # Landroid/support/design/widget/SnackbarManager$Callback;
 
     .prologue
     .line 178

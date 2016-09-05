@@ -10,9 +10,6 @@
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonLocation;Ljava/lang/Class;Ljava/lang/String;Ljava/util/Collection;)V
     .registers 6
-    .param p1, "msg"    # Ljava/lang/String;
-    .param p2, "loc"    # Lcom/fasterxml/jackson/core/JsonLocation;
-    .param p4, "propName"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -30,8 +27,6 @@
 
     .prologue
     .line 24
-    .local p3, "referringClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .local p5, "propertyIds":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/lang/Object;>;"
     invoke-direct/range {p0 .. p5}, Lcom/fasterxml/jackson/databind/exc/PropertyBindingException;-><init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonLocation;Ljava/lang/Class;Ljava/lang/String;Ljava/util/Collection;)V
 
     .line 25
@@ -40,9 +35,6 @@
 
 .method public static from(Lcom/fasterxml/jackson/core/JsonParser;Ljava/lang/Object;Ljava/lang/String;Ljava/util/Collection;)Lcom/fasterxml/jackson/databind/exc/UnrecognizedPropertyException;
     .registers 10
-    .param p0, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p1, "fromObjectOrClass"    # Ljava/lang/Object;
-    .param p2, "propertyName"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -59,70 +51,69 @@
 
     .prologue
     .line 41
-    .local p3, "propertyIds":Ljava/util/Collection;, "Ljava/util/Collection<Ljava/lang/Object;>;"
     if-nez p1, :cond_8
 
     .line 42
-    new-instance v2, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    invoke-direct {v2}, Ljava/lang/IllegalArgumentException;-><init>()V
+    invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
-    throw v2
+    throw v0
 
     .line 45
     :cond_8
-    instance-of v2, p1, Ljava/lang/Class;
+    instance-of v0, p1, Ljava/lang/Class;
 
-    if-eqz v2, :cond_48
+    if-eqz v0, :cond_49
 
-    move-object v3, p1
+    move-object v0, p1
 
     .line 46
-    check-cast v3, Ljava/lang/Class;
+    check-cast v0, Ljava/lang/Class;
+
+    move-object v3, v0
 
     .line 50
-    .local v3, "ref":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    :goto_f
-    new-instance v2, Ljava/lang/StringBuilder;
+    :goto_10
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "Unrecognized field \""
+    const-string/jumbo v1, "Unrecognized field \""
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string/jumbo v4, "\" (class "
+    const-string/jumbo v1, "\" (class "
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
     invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    const-string/jumbo v4, "), not marked as ignorable"
+    const-string/jumbo v1, "), not marked as ignorable"
 
-    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
     .line 51
-    .local v1, "msg":Ljava/lang/String;
     new-instance v0, Lcom/fasterxml/jackson/databind/exc/UnrecognizedPropertyException;
 
     invoke-virtual {p0}, Lcom/fasterxml/jackson/core/JsonParser;->getCurrentLocation()Lcom/fasterxml/jackson/core/JsonLocation;
@@ -136,23 +127,18 @@
     invoke-direct/range {v0 .. v5}, Lcom/fasterxml/jackson/databind/exc/UnrecognizedPropertyException;-><init>(Ljava/lang/String;Lcom/fasterxml/jackson/core/JsonLocation;Ljava/lang/Class;Ljava/lang/String;Ljava/util/Collection;)V
 
     .line 54
-    .local v0, "e":Lcom/fasterxml/jackson/databind/exc/UnrecognizedPropertyException;
     invoke-virtual {v0, p1, p2}, Lcom/fasterxml/jackson/databind/exc/UnrecognizedPropertyException;->prependPath(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 55
     return-object v0
 
     .line 48
-    .end local v0    # "e":Lcom/fasterxml/jackson/databind/exc/UnrecognizedPropertyException;
-    .end local v1    # "msg":Ljava/lang/String;
-    .end local v3    # "ref":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    :cond_48
+    :cond_49
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v3
 
-    .restart local v3    # "ref":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    goto :goto_f
+    goto :goto_10
 .end method
 
 

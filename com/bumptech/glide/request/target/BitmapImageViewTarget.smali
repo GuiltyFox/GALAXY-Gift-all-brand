@@ -17,7 +17,6 @@
 # direct methods
 .method public constructor <init>(Landroid/widget/ImageView;)V
     .registers 2
-    .param p1, "view"    # Landroid/widget/ImageView;
 
     .prologue
     .line 14
@@ -29,13 +28,12 @@
 
 
 # virtual methods
-.method protected setResource(Landroid/graphics/Bitmap;)V
+.method protected a(Landroid/graphics/Bitmap;)V
     .registers 3
-    .param p1, "resource"    # Landroid/graphics/Bitmap;
 
     .prologue
     .line 25
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/BitmapImageViewTarget;->view:Landroid/view/View;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/BitmapImageViewTarget;->a:Landroid/view/View;
 
     check-cast v0, Landroid/widget/ImageView;
 
@@ -45,16 +43,14 @@
     return-void
 .end method
 
-.method protected bridge synthetic setResource(Ljava/lang/Object;)V
+.method protected bridge synthetic a(Ljava/lang/Object;)V
     .registers 2
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 12
     check-cast p1, Landroid/graphics/Bitmap;
 
-    .end local p1    # "x0":Ljava/lang/Object;
-    invoke-virtual {p0, p1}, Lcom/bumptech/glide/request/target/BitmapImageViewTarget;->setResource(Landroid/graphics/Bitmap;)V
+    invoke-virtual {p0, p1}, Lcom/bumptech/glide/request/target/BitmapImageViewTarget;->a(Landroid/graphics/Bitmap;)V
 
     return-void
 .end method

@@ -9,7 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/AnnotationDefault;
     value = .subannotation Lcom/google/gson/annotations/SerializedName;
-        alternate = {}
+        b = {}
     .end subannotation
 .end annotation
 
@@ -26,8 +26,8 @@
 
 
 # virtual methods
-.method public abstract alternate()[Ljava/lang/String;
+.method public abstract a()Ljava/lang/String;
 .end method
 
-.method public abstract value()Ljava/lang/String;
+.method public abstract b()[Ljava/lang/String;
 .end method

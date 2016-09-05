@@ -14,8 +14,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;)V
     .registers 4
-    .param p1, "oid"    # Lcom/fasterxml/jackson/databind/introspect/ObjectIdInfo;
-    .param p2, "prop"    # Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
 
     .prologue
     .line 18
@@ -31,7 +29,6 @@
 
 .method protected constructor <init>(Ljava/lang/Class;Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;)V
     .registers 3
-    .param p2, "prop"    # Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -44,7 +41,6 @@
 
     .prologue
     .line 23
-    .local p1, "scope":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-direct {p0, p1}, Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$PropertyGenerator;-><init>(Ljava/lang/Class;)V
 
     .line 24
@@ -57,7 +53,7 @@
 
 # virtual methods
 .method public canUseFor(Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;)Z
-    .registers 6
+    .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -67,48 +63,43 @@
     .end annotation
 
     .prologue
-    .local p1, "gen":Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;, "Lcom/fasterxml/jackson/annotation/ObjectIdGenerator<*>;"
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 33
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v1
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v3
-
-    if-ne v2, v3, :cond_1d
-
-    move-object v0, p1
-
-    .line 34
-    check-cast v0, Lcom/fasterxml/jackson/databind/ser/impl/PropertyBasedObjectIdGenerator;
-
-    .line 35
-    .local v0, "other":Lcom/fasterxml/jackson/databind/ser/impl/PropertyBasedObjectIdGenerator;
-    invoke-virtual {v0}, Lcom/fasterxml/jackson/databind/ser/impl/PropertyBasedObjectIdGenerator;->getScope()Ljava/lang/Class;
-
     move-result-object v2
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/ser/impl/PropertyBasedObjectIdGenerator;->_scope:Ljava/lang/Class;
+    if-ne v1, v2, :cond_1c
 
-    if-ne v2, v3, :cond_1d
+    .line 34
+    check-cast p1, Lcom/fasterxml/jackson/databind/ser/impl/PropertyBasedObjectIdGenerator;
+
+    .line 35
+    invoke-virtual {p1}, Lcom/fasterxml/jackson/databind/ser/impl/PropertyBasedObjectIdGenerator;->getScope()Ljava/lang/Class;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/ser/impl/PropertyBasedObjectIdGenerator;->_scope:Ljava/lang/Class;
+
+    if-ne v1, v2, :cond_1c
 
     .line 42
-    iget-object v2, v0, Lcom/fasterxml/jackson/databind/ser/impl/PropertyBasedObjectIdGenerator;->_property:Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
+    iget-object v1, p1, Lcom/fasterxml/jackson/databind/ser/impl/PropertyBasedObjectIdGenerator;->_property:Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
 
-    iget-object v3, p0, Lcom/fasterxml/jackson/databind/ser/impl/PropertyBasedObjectIdGenerator;->_property:Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
+    iget-object v2, p0, Lcom/fasterxml/jackson/databind/ser/impl/PropertyBasedObjectIdGenerator;->_property:Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
 
-    if-ne v2, v3, :cond_1d
+    if-ne v1, v2, :cond_1c
 
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     .line 45
-    .end local v0    # "other":Lcom/fasterxml/jackson/databind/ser/impl/PropertyBasedObjectIdGenerator;
-    :cond_1d
-    return v1
+    :cond_1c
+    return v0
 .end method
 
 .method public forScope(Ljava/lang/Class;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;
@@ -127,16 +118,13 @@
 
     .prologue
     .line 62
-    .local p1, "scope":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/impl/PropertyBasedObjectIdGenerator;->_scope:Ljava/lang/Class;
 
     if-ne p1, v0, :cond_5
 
-    .end local p0    # "this":Lcom/fasterxml/jackson/databind/ser/impl/PropertyBasedObjectIdGenerator;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/databind/ser/impl/PropertyBasedObjectIdGenerator;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/databind/ser/impl/PropertyBasedObjectIdGenerator;
 
@@ -151,37 +139,33 @@
 
 .method public generateId(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 6
-    .param p1, "forPojo"    # Ljava/lang/Object;
 
     .prologue
     .line 51
     :try_start_0
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/ser/impl/PropertyBasedObjectIdGenerator;->_property:Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/ser/impl/PropertyBasedObjectIdGenerator;->_property:Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;
 
-    invoke-virtual {v1, p1}, Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, p1}, Lcom/fasterxml/jackson/databind/ser/BeanPropertyWriter;->get(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_5
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_5} :catch_7
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_5} :catch_9
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 
     .line 52
     :catch_7
     move-exception v0
 
     .line 53
-    .local v0, "e":Ljava/lang/RuntimeException;
     throw v0
 
     .line 54
-    .end local v0    # "e":Ljava/lang/RuntimeException;
     :catch_9
     move-exception v0
 
     .line 55
-    .local v0, "e":Ljava/lang/Exception;
     new-instance v1, Ljava/lang/IllegalStateException;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -229,7 +213,6 @@
 
 .method public key(Ljava/lang/Object;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator$IdKey;
     .registers 5
-    .param p1, "key"    # Ljava/lang/Object;
 
     .prologue
     .line 74
@@ -248,7 +231,6 @@
 
 .method public newForSerialization(Ljava/lang/Object;)Lcom/fasterxml/jackson/annotation/ObjectIdGenerator;
     .registers 2
-    .param p1, "context"    # Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

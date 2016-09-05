@@ -3,17 +3,6 @@
 .source "MotionEventCompat.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/view/MotionEventCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "HoneycombMr1MotionEventVersionImpl"
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .registers 1
@@ -27,29 +16,12 @@
 
 
 # virtual methods
-.method public getAxisValue(Landroid/view/MotionEvent;I)F
+.method public e(Landroid/view/MotionEvent;I)F
     .registers 4
-    .param p1, "event"    # Landroid/view/MotionEvent;
-    .param p2, "axis"    # I
 
     .prologue
     .line 139
-    invoke-static {p1, p2}, Landroid/support/v4/view/MotionEventCompatHoneycombMr1;->getAxisValue(Landroid/view/MotionEvent;I)F
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public getAxisValue(Landroid/view/MotionEvent;II)F
-    .registers 5
-    .param p1, "event"    # Landroid/view/MotionEvent;
-    .param p2, "axis"    # I
-    .param p3, "pointerIndex"    # I
-
-    .prologue
-    .line 144
-    invoke-static {p1, p2, p3}, Landroid/support/v4/view/MotionEventCompatHoneycombMr1;->getAxisValue(Landroid/view/MotionEvent;II)F
+    invoke-static {p1, p2}, Landroid/support/v4/view/MotionEventCompatHoneycombMr1;->a(Landroid/view/MotionEvent;I)F
 
     move-result v0
 

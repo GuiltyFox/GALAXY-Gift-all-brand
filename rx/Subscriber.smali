@@ -22,15 +22,13 @@
 
 
 # static fields
-.field private static final NOT_SET:Ljava/lang/Long;
+.field private static final a:Ljava/lang/Long;
 
 
 # instance fields
-.field private producer:Lrx/Producer;
+.field private final b:Lrx/internal/util/SubscriptionList;
 
-.field private requested:J
-
-.field private final subscriber:Lrx/Subscriber;
+.field private final c:Lrx/Subscriber;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lrx/Subscriber",
@@ -39,7 +37,9 @@
     .end annotation
 .end field
 
-.field private final subscriptions:Lrx/internal/util/SubscriptionList;
+.field private d:Lrx/Producer;
+
+.field private e:J
 
 
 # direct methods
@@ -54,7 +54,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lrx/Subscriber;->NOT_SET:Ljava/lang/Long;
+    sput-object v0, Lrx/Subscriber;->a:Ljava/lang/Long;
 
     return-void
 .end method
@@ -64,7 +64,6 @@
 
     .prologue
     .line 46
-    .local p0, "this":Lrx/Subscriber;, "Lrx/Subscriber<TT;>;"
     const/4 v0, 0x0
 
     const/4 v1, 0x0
@@ -87,8 +86,6 @@
 
     .prologue
     .line 58
-    .local p0, "this":Lrx/Subscriber;, "Lrx/Subscriber<TT;>;"
-    .local p1, "subscriber":Lrx/Subscriber;, "Lrx/Subscriber<*>;"
     const/4 v0, 0x1
 
     invoke-direct {p0, p1, v0}, Lrx/Subscriber;-><init>(Lrx/Subscriber;Z)V
@@ -99,7 +96,6 @@
 
 .method protected constructor <init>(Lrx/Subscriber;Z)V
     .registers 5
-    .param p2, "shareSubscriptions"    # Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -110,31 +106,29 @@
 
     .prologue
     .line 79
-    .local p0, "this":Lrx/Subscriber;, "Lrx/Subscriber<TT;>;"
-    .local p1, "subscriber":Lrx/Subscriber;, "Lrx/Subscriber<*>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 43
-    sget-object v0, Lrx/Subscriber;->NOT_SET:Ljava/lang/Long;
+    sget-object v0, Lrx/Subscriber;->a:Ljava/lang/Long;
 
     invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v0
 
-    iput-wide v0, p0, Lrx/Subscriber;->requested:J
+    iput-wide v0, p0, Lrx/Subscriber;->e:J
 
     .line 80
-    iput-object p1, p0, Lrx/Subscriber;->subscriber:Lrx/Subscriber;
+    iput-object p1, p0, Lrx/Subscriber;->c:Lrx/Subscriber;
 
     .line 81
     if-eqz p2, :cond_16
 
     if-eqz p1, :cond_16
 
-    iget-object v0, p1, Lrx/Subscriber;->subscriptions:Lrx/internal/util/SubscriptionList;
+    iget-object v0, p1, Lrx/Subscriber;->b:Lrx/internal/util/SubscriptionList;
 
     :goto_13
-    iput-object v0, p0, Lrx/Subscriber;->subscriptions:Lrx/internal/util/SubscriptionList;
+    iput-object v0, p0, Lrx/Subscriber;->b:Lrx/internal/util/SubscriptionList;
 
     .line 82
     return-void
@@ -148,27 +142,25 @@
     goto :goto_13
 .end method
 
-.method private addToRequested(J)V
-    .registers 10
-    .param p1, "n"    # J
+.method private b(J)V
+    .registers 8
 
     .prologue
     .line 161
-    .local p0, "this":Lrx/Subscriber;, "Lrx/Subscriber<TT;>;"
-    iget-wide v2, p0, Lrx/Subscriber;->requested:J
+    iget-wide v0, p0, Lrx/Subscriber;->e:J
 
-    sget-object v4, Lrx/Subscriber;->NOT_SET:Ljava/lang/Long;
+    sget-object v2, Lrx/Subscriber;->a:Ljava/lang/Long;
 
-    invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v4
+    move-result-wide v2
 
-    cmp-long v2, v2, v4
+    cmp-long v0, v0, v2
 
-    if-nez v2, :cond_f
+    if-nez v0, :cond_f
 
     .line 162
-    iput-wide p1, p0, Lrx/Subscriber;->requested:J
+    iput-wide p1, p0, Lrx/Subscriber;->e:J
 
     .line 172
     :goto_e
@@ -176,189 +168,139 @@
 
     .line 164
     :cond_f
-    iget-wide v2, p0, Lrx/Subscriber;->requested:J
+    iget-wide v0, p0, Lrx/Subscriber;->e:J
 
-    add-long v0, v2, p1
+    add-long/2addr v0, p1
 
     .line 166
-    .local v0, "total":J
     const-wide/16 v2, 0x0
 
     cmp-long v2, v0, v2
 
-    if-gez v2, :cond_21
+    if-gez v2, :cond_20
 
     .line 167
-    const-wide v2, 0x7fffffffffffffffL
+    const-wide v0, 0x7fffffffffffffffL
 
-    iput-wide v2, p0, Lrx/Subscriber;->requested:J
+    iput-wide v0, p0, Lrx/Subscriber;->e:J
 
     goto :goto_e
 
     .line 169
-    :cond_21
-    iput-wide v0, p0, Lrx/Subscriber;->requested:J
+    :cond_20
+    iput-wide v0, p0, Lrx/Subscriber;->e:J
 
     goto :goto_e
 .end method
 
 
 # virtual methods
-.method public final add(Lrx/Subscription;)V
-    .registers 3
-    .param p1, "s"    # Lrx/Subscription;
-
-    .prologue
-    .line 93
-    .local p0, "this":Lrx/Subscriber;, "Lrx/Subscriber<TT;>;"
-    iget-object v0, p0, Lrx/Subscriber;->subscriptions:Lrx/internal/util/SubscriptionList;
-
-    invoke-virtual {v0, p1}, Lrx/internal/util/SubscriptionList;->add(Lrx/Subscription;)V
-
-    .line 94
-    return-void
-.end method
-
-.method public final isUnsubscribed()Z
-    .registers 2
-
-    .prologue
-    .line 108
-    .local p0, "this":Lrx/Subscriber;, "Lrx/Subscriber<TT;>;"
-    iget-object v0, p0, Lrx/Subscriber;->subscriptions:Lrx/internal/util/SubscriptionList;
-
-    invoke-virtual {v0}, Lrx/internal/util/SubscriptionList;->isUnsubscribed()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public onStart()V
-    .registers 1
-
-    .prologue
-    .line 118
-    .local p0, "this":Lrx/Subscriber;, "Lrx/Subscriber<TT;>;"
-    return-void
-.end method
-
-.method protected final request(J)V
-    .registers 8
-    .param p1, "n"    # J
+.method protected final a(J)V
+    .registers 6
 
     .prologue
     .line 141
-    .local p0, "this":Lrx/Subscriber;, "Lrx/Subscriber<TT;>;"
-    const-wide/16 v2, 0x0
+    const-wide/16 v0, 0x0
 
-    cmp-long v1, p1, v2
+    cmp-long v0, p1, v0
 
-    if-gez v1, :cond_20
+    if-gez v0, :cond_20
 
     .line 142
-    new-instance v1, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v3, "number requested cannot be negative: "
+    const-string/jumbo v2, "number requested cannot be negative: "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-direct {v1, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v1
-
-    .line 147
-    :cond_20
-    const/4 v0, 0x0
+    throw v0
 
     .line 148
-    .local v0, "producerToRequestFrom":Lrx/Producer;
+    :cond_20
     monitor-enter p0
 
     .line 149
-    :try_start_22
-    iget-object v1, p0, Lrx/Subscriber;->producer:Lrx/Producer;
+    :try_start_21
+    iget-object v0, p0, Lrx/Subscriber;->d:Lrx/Producer;
 
-    if-eqz v1, :cond_2d
+    if-eqz v0, :cond_2c
 
     .line 150
-    iget-object v0, p0, Lrx/Subscriber;->producer:Lrx/Producer;
+    iget-object v0, p0, Lrx/Subscriber;->d:Lrx/Producer;
 
     .line 155
     monitor-exit p0
-    :try_end_29
-    .catchall {:try_start_22 .. :try_end_29} :catchall_32
+    :try_end_28
+    .catchall {:try_start_21 .. :try_end_28} :catchall_31
 
     .line 157
-    invoke-interface {v0, p1, p2}, Lrx/Producer;->request(J)V
+    invoke-interface {v0, p1, p2}, Lrx/Producer;->a(J)V
 
     .line 158
-    :goto_2c
+    :goto_2b
     return-void
 
     .line 152
-    :cond_2d
-    :try_start_2d
-    invoke-direct {p0, p1, p2}, Lrx/Subscriber;->addToRequested(J)V
+    :cond_2c
+    :try_start_2c
+    invoke-direct {p0, p1, p2}, Lrx/Subscriber;->b(J)V
 
     .line 153
     monitor-exit p0
 
-    goto :goto_2c
+    goto :goto_2b
 
     .line 155
-    :catchall_32
-    move-exception v1
+    :catchall_31
+    move-exception v0
 
     monitor-exit p0
-    :try_end_34
-    .catchall {:try_start_2d .. :try_end_34} :catchall_32
+    :try_end_33
+    .catchall {:try_start_2c .. :try_end_33} :catchall_31
 
-    throw v1
+    throw v0
 .end method
 
-.method public setProducer(Lrx/Producer;)V
+.method public a(Lrx/Producer;)V
     .registers 8
-    .param p1, "p"    # Lrx/Producer;
 
     .prologue
     .line 191
-    .local p0, "this":Lrx/Subscriber;, "Lrx/Subscriber<TT;>;"
     const/4 v0, 0x0
 
     .line 192
-    .local v0, "passToSubscriber":Z
     monitor-enter p0
 
     .line 193
     :try_start_2
-    iget-wide v2, p0, Lrx/Subscriber;->requested:J
+    iget-wide v2, p0, Lrx/Subscriber;->e:J
 
     .line 194
-    .local v2, "toRequest":J
-    iput-object p1, p0, Lrx/Subscriber;->producer:Lrx/Producer;
+    iput-object p1, p0, Lrx/Subscriber;->d:Lrx/Producer;
 
     .line 195
-    iget-object v1, p0, Lrx/Subscriber;->subscriber:Lrx/Subscriber;
+    iget-object v1, p0, Lrx/Subscriber;->c:Lrx/Subscriber;
 
     if-eqz v1, :cond_15
 
     .line 197
-    sget-object v1, Lrx/Subscriber;->NOT_SET:Ljava/lang/Long;
+    sget-object v1, Lrx/Subscriber;->a:Ljava/lang/Long;
 
     invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
 
@@ -381,69 +323,101 @@
     if-eqz v0, :cond_23
 
     .line 205
-    iget-object v1, p0, Lrx/Subscriber;->subscriber:Lrx/Subscriber;
+    iget-object v0, p0, Lrx/Subscriber;->c:Lrx/Subscriber;
 
-    iget-object v4, p0, Lrx/Subscriber;->producer:Lrx/Producer;
+    iget-object v1, p0, Lrx/Subscriber;->d:Lrx/Producer;
 
-    invoke-virtual {v1, v4}, Lrx/Subscriber;->setProducer(Lrx/Producer;)V
+    invoke-virtual {v0, v1}, Lrx/Subscriber;->a(Lrx/Producer;)V
 
     .line 214
     :goto_1f
     return-void
 
     .line 202
-    .end local v2    # "toRequest":J
     :catchall_20
-    move-exception v1
+    move-exception v0
 
     :try_start_21
     monitor-exit p0
     :try_end_22
     .catchall {:try_start_21 .. :try_end_22} :catchall_20
 
-    throw v1
+    throw v0
 
     .line 208
-    .restart local v2    # "toRequest":J
     :cond_23
-    sget-object v1, Lrx/Subscriber;->NOT_SET:Ljava/lang/Long;
+    sget-object v0, Lrx/Subscriber;->a:Ljava/lang/Long;
 
-    invoke-virtual {v1}, Ljava/lang/Long;->longValue()J
+    invoke-virtual {v0}, Ljava/lang/Long;->longValue()J
 
-    move-result-wide v4
+    move-result-wide v0
 
-    cmp-long v1, v2, v4
+    cmp-long v0, v2, v0
 
-    if-nez v1, :cond_38
+    if-nez v0, :cond_38
 
     .line 209
-    iget-object v1, p0, Lrx/Subscriber;->producer:Lrx/Producer;
+    iget-object v0, p0, Lrx/Subscriber;->d:Lrx/Producer;
 
-    const-wide v4, 0x7fffffffffffffffL
+    const-wide v2, 0x7fffffffffffffffL
 
-    invoke-interface {v1, v4, v5}, Lrx/Producer;->request(J)V
+    invoke-interface {v0, v2, v3}, Lrx/Producer;->a(J)V
 
     goto :goto_1f
 
     .line 211
     :cond_38
-    iget-object v1, p0, Lrx/Subscriber;->producer:Lrx/Producer;
+    iget-object v0, p0, Lrx/Subscriber;->d:Lrx/Producer;
 
-    invoke-interface {v1, v2, v3}, Lrx/Producer;->request(J)V
+    invoke-interface {v0, v2, v3}, Lrx/Producer;->a(J)V
 
     goto :goto_1f
 .end method
 
-.method public final unsubscribe()V
+.method public final a(Lrx/Subscription;)V
+    .registers 3
+
+    .prologue
+    .line 93
+    iget-object v0, p0, Lrx/Subscriber;->b:Lrx/internal/util/SubscriptionList;
+
+    invoke-virtual {v0, p1}, Lrx/internal/util/SubscriptionList;->a(Lrx/Subscription;)V
+
+    .line 94
+    return-void
+.end method
+
+.method public final b()V
     .registers 2
 
     .prologue
     .line 98
-    .local p0, "this":Lrx/Subscriber;, "Lrx/Subscriber<TT;>;"
-    iget-object v0, p0, Lrx/Subscriber;->subscriptions:Lrx/internal/util/SubscriptionList;
+    iget-object v0, p0, Lrx/Subscriber;->b:Lrx/internal/util/SubscriptionList;
 
-    invoke-virtual {v0}, Lrx/internal/util/SubscriptionList;->unsubscribe()V
+    invoke-virtual {v0}, Lrx/internal/util/SubscriptionList;->b()V
 
     .line 99
+    return-void
+.end method
+
+.method public final c()Z
+    .registers 2
+
+    .prologue
+    .line 108
+    iget-object v0, p0, Lrx/Subscriber;->b:Lrx/internal/util/SubscriptionList;
+
+    invoke-virtual {v0}, Lrx/internal/util/SubscriptionList;->c()Z
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public d()V
+    .registers 1
+
+    .prologue
+    .line 118
     return-void
 .end method

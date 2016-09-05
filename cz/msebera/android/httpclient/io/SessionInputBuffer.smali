@@ -4,56 +4,19 @@
 
 
 # virtual methods
-.method public abstract getMetrics()Lcz/msebera/android/httpclient/io/HttpTransportMetrics;
+.method public abstract a()I
 .end method
 
-.method public abstract isDataAvailable(I)Z
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+.method public abstract a(Lcz/msebera/android/httpclient/util/CharArrayBuffer;)I
+.end method
 
+.method public abstract a([BII)I
+.end method
+
+.method public abstract a(I)Z
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end method
 
-.method public abstract read()I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-.end method
-
-.method public abstract read([B)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-.end method
-
-.method public abstract read([BII)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-.end method
-
-.method public abstract readLine(Lcz/msebera/android/httpclient/util/CharArrayBuffer;)I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
-.end method
-
-.method public abstract readLine()Ljava/lang/String;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
+.method public abstract b()Lcz/msebera/android/httpclient/io/HttpTransportMetrics;
 .end method

@@ -3,17 +3,6 @@
 .source "AsyncHttpResponseHandler.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/loopj/android/http/AsyncHttpResponseHandler;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "ResponderHandler"
-.end annotation
-
-
 # instance fields
 .field private final mResponder:Lcom/loopj/android/http/AsyncHttpResponseHandler;
 
@@ -21,8 +10,6 @@
 # direct methods
 .method constructor <init>(Lcom/loopj/android/http/AsyncHttpResponseHandler;Landroid/os/Looper;)V
     .registers 3
-    .param p1, "mResponder"    # Lcom/loopj/android/http/AsyncHttpResponseHandler;
-    .param p2, "looper"    # Landroid/os/Looper;
 
     .prologue
     .line 504
@@ -39,7 +26,6 @@
 # virtual methods
 .method public handleMessage(Landroid/os/Message;)V
     .registers 3
-    .param p1, "msg"    # Landroid/os/Message;
 
     .prologue
     .line 510

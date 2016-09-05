@@ -8,11 +8,6 @@
     value = Landroid/support/design/widget/FloatingActionButtonIcs;->show(Landroid/support/design/widget/FloatingActionButtonImpl$InternalVisibilityChangedListener;Z)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Landroid/support/design/widget/FloatingActionButtonIcs;
@@ -43,7 +38,6 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 3
-    .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
     .line 123
@@ -63,7 +57,6 @@
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .registers 5
-    .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
     .line 118

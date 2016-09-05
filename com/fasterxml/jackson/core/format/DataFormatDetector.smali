@@ -32,7 +32,6 @@
 
     .prologue
     .line 63
-    .local p1, "detectors":Ljava/util/Collection;, "Ljava/util/Collection<Lcom/fasterxml/jackson/core/JsonFactory;>;"
     invoke-interface {p1}, Ljava/util/Collection;->size()I
 
     move-result v0
@@ -53,7 +52,6 @@
 
 .method public varargs constructor <init>([Lcom/fasterxml/jackson/core/JsonFactory;)V
     .registers 5
-    .param p1, "detectors"    # [Lcom/fasterxml/jackson/core/JsonFactory;
 
     .prologue
     .line 58
@@ -71,10 +69,6 @@
 
 .method private constructor <init>([Lcom/fasterxml/jackson/core/JsonFactory;Lcom/fasterxml/jackson/core/format/MatchStrength;Lcom/fasterxml/jackson/core/format/MatchStrength;I)V
     .registers 5
-    .param p1, "detectors"    # [Lcom/fasterxml/jackson/core/JsonFactory;
-    .param p2, "optMatch"    # Lcom/fasterxml/jackson/core/format/MatchStrength;
-    .param p3, "minMatch"    # Lcom/fasterxml/jackson/core/format/MatchStrength;
-    .param p4, "maxInputLookahead"    # I
 
     .prologue
     .line 101
@@ -98,51 +92,41 @@
 
 .method private _findFormat(Lcom/fasterxml/jackson/core/format/InputAccessor$Std;)Lcom/fasterxml/jackson/core/format/DataFormatMatcher;
     .registers 11
-    .param p1, "acc"    # Lcom/fasterxml/jackson/core/format/InputAccessor$Std;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
-    .line 178
     const/4 v1, 0x0
 
-    .line 179
-    .local v1, "bestMatch":Lcom/fasterxml/jackson/core/JsonFactory;
-    const/4 v2, 0x0
-
+    .line 178
     .line 180
-    .local v2, "bestMatchStrength":Lcom/fasterxml/jackson/core/format/MatchStrength;
-    iget-object v0, p0, Lcom/fasterxml/jackson/core/format/DataFormatDetector;->_detectors:[Lcom/fasterxml/jackson/core/JsonFactory;
+    iget-object v5, p0, Lcom/fasterxml/jackson/core/format/DataFormatDetector;->_detectors:[Lcom/fasterxml/jackson/core/JsonFactory;
 
-    .local v0, "arr$":[Lcom/fasterxml/jackson/core/JsonFactory;
-    array-length v5, v0
+    array-length v6, v5
 
-    .local v5, "len$":I
-    const/4 v4, 0x0
+    const/4 v0, 0x0
 
-    .local v4, "i$":I
-    :goto_6
-    if-ge v4, v5, :cond_3c
+    move v4, v0
 
-    aget-object v3, v0, v4
+    move-object v2, v1
+
+    move-object v0, v1
+
+    :goto_8
+    if-ge v4, v6, :cond_48
+
+    aget-object v3, v5, v4
 
     .line 181
-    .local v3, "f":Lcom/fasterxml/jackson/core/JsonFactory;
     invoke-virtual {p1}, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->reset()V
 
     .line 182
     invoke-virtual {v3, p1}, Lcom/fasterxml/jackson/core/JsonFactory;->hasFormat(Lcom/fasterxml/jackson/core/format/InputAccessor;)Lcom/fasterxml/jackson/core/format/MatchStrength;
 
-    move-result-object v6
+    move-result-object v1
 
     .line 184
-    .local v6, "strength":Lcom/fasterxml/jackson/core/format/MatchStrength;
-    if-eqz v6, :cond_1f
+    if-eqz v1, :cond_46
 
-    invoke-virtual {v6}, Lcom/fasterxml/jackson/core/format/MatchStrength;->ordinal()I
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/format/MatchStrength;->ordinal()I
 
     move-result v7
 
@@ -152,70 +136,86 @@
 
     move-result v8
 
-    if-ge v7, v8, :cond_22
+    if-ge v7, v8, :cond_27
+
+    move-object v1, v2
 
     .line 180
-    :cond_1f
-    add-int/lit8 v4, v4, 0x1
+    :goto_22
+    add-int/lit8 v2, v4, 0x1
 
-    goto :goto_6
+    move v4, v2
+
+    move-object v2, v1
+
+    goto :goto_8
 
     .line 188
-    :cond_22
-    if-eqz v1, :cond_2e
+    :cond_27
+    if-eqz v2, :cond_35
 
     .line 189
-    invoke-virtual {v2}, Lcom/fasterxml/jackson/core/format/MatchStrength;->ordinal()I
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/format/MatchStrength;->ordinal()I
 
     move-result v7
 
-    invoke-virtual {v6}, Lcom/fasterxml/jackson/core/format/MatchStrength;->ordinal()I
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/format/MatchStrength;->ordinal()I
 
     move-result v8
 
-    if-ge v7, v8, :cond_1f
+    if-lt v7, v8, :cond_35
 
-    .line 194
-    :cond_2e
-    move-object v1, v3
+    move-object v1, v2
 
-    .line 195
-    move-object v2, v6
+    .line 190
+    goto :goto_22
 
     .line 196
-    invoke-virtual {v6}, Lcom/fasterxml/jackson/core/format/MatchStrength;->ordinal()I
+    :cond_35
+    invoke-virtual {v1}, Lcom/fasterxml/jackson/core/format/MatchStrength;->ordinal()I
 
-    move-result v7
+    move-result v0
 
-    iget-object v8, p0, Lcom/fasterxml/jackson/core/format/DataFormatDetector;->_optimalMatch:Lcom/fasterxml/jackson/core/format/MatchStrength;
+    iget-object v2, p0, Lcom/fasterxml/jackson/core/format/DataFormatDetector;->_optimalMatch:Lcom/fasterxml/jackson/core/format/MatchStrength;
 
-    invoke-virtual {v8}, Lcom/fasterxml/jackson/core/format/MatchStrength;->ordinal()I
+    invoke-virtual {v2}, Lcom/fasterxml/jackson/core/format/MatchStrength;->ordinal()I
 
-    move-result v8
+    move-result v2
 
-    if-lt v7, v8, :cond_1f
+    if-lt v0, v2, :cond_4b
 
     .line 200
-    .end local v3    # "f":Lcom/fasterxml/jackson/core/JsonFactory;
-    .end local v6    # "strength":Lcom/fasterxml/jackson/core/format/MatchStrength;
-    :cond_3c
-    invoke-virtual {p1, v1, v2}, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->createMatcher(Lcom/fasterxml/jackson/core/JsonFactory;Lcom/fasterxml/jackson/core/format/MatchStrength;)Lcom/fasterxml/jackson/core/format/DataFormatMatcher;
+    :goto_41
+    invoke-virtual {p1, v3, v1}, Lcom/fasterxml/jackson/core/format/InputAccessor$Std;->createMatcher(Lcom/fasterxml/jackson/core/JsonFactory;Lcom/fasterxml/jackson/core/format/MatchStrength;)Lcom/fasterxml/jackson/core/format/DataFormatMatcher;
 
-    move-result-object v7
+    move-result-object v0
 
-    return-object v7
+    return-object v0
+
+    :cond_46
+    move-object v1, v2
+
+    goto :goto_22
+
+    :cond_48
+    move-object v1, v0
+
+    move-object v3, v2
+
+    goto :goto_41
+
+    :cond_4b
+    move-object v0, v1
+
+    move-object v1, v3
+
+    goto :goto_22
 .end method
 
 
 # virtual methods
 .method public findFormat(Ljava/io/InputStream;)Lcom/fasterxml/jackson/core/format/DataFormatMatcher;
     .registers 4
-    .param p1, "in"    # Ljava/io/InputStream;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 123
@@ -236,12 +236,6 @@
 
 .method public findFormat([B)Lcom/fasterxml/jackson/core/format/DataFormatMatcher;
     .registers 3
-    .param p1, "fullInputData"    # [B
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 134
@@ -258,14 +252,6 @@
 
 .method public findFormat([BII)Lcom/fasterxml/jackson/core/format/DataFormatMatcher;
     .registers 5
-    .param p1, "fullInputData"    # [B
-    .param p2, "offset"    # I
-    .param p3, "len"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 147
@@ -281,53 +267,50 @@
 .end method
 
 .method public toString()Ljava/lang/String;
-    .registers 6
+    .registers 5
 
     .prologue
     .line 157
-    new-instance v2, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 158
-    .local v2, "sb":Ljava/lang/StringBuilder;
-    const/16 v3, 0x5b
+    const/16 v0, 0x5b
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 159
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/format/DataFormatDetector;->_detectors:[Lcom/fasterxml/jackson/core/JsonFactory;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/format/DataFormatDetector;->_detectors:[Lcom/fasterxml/jackson/core/JsonFactory;
 
-    array-length v1, v3
+    array-length v2, v0
 
     .line 160
-    .local v1, "len":I
-    if-lez v1, :cond_32
+    if-lez v2, :cond_32
 
     .line 161
-    iget-object v3, p0, Lcom/fasterxml/jackson/core/format/DataFormatDetector;->_detectors:[Lcom/fasterxml/jackson/core/JsonFactory;
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/format/DataFormatDetector;->_detectors:[Lcom/fasterxml/jackson/core/JsonFactory;
 
-    const/4 v4, 0x0
+    const/4 v3, 0x0
 
-    aget-object v3, v3, v4
+    aget-object v0, v0, v3
 
-    invoke-virtual {v3}, Lcom/fasterxml/jackson/core/JsonFactory;->getFormatName()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/fasterxml/jackson/core/JsonFactory;->getFormatName()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 162
     const/4 v0, 0x1
 
-    .local v0, "i":I
     :goto_1c
-    if-ge v0, v1, :cond_32
+    if-ge v0, v2, :cond_32
 
     .line 163
     const-string/jumbo v3, ", "
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 164
     iget-object v3, p0, Lcom/fasterxml/jackson/core/format/DataFormatDetector;->_detectors:[Lcom/fasterxml/jackson/core/JsonFactory;
@@ -338,7 +321,7 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 162
     add-int/lit8 v0, v0, 0x1
@@ -346,23 +329,21 @@
     goto :goto_1c
 
     .line 167
-    .end local v0    # "i":I
     :cond_32
-    const/16 v3, 0x5d
+    const/16 v0, 0x5d
 
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 168
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v0
 
-    return-object v3
+    return-object v0
 .end method
 
 .method public withMaxInputLookahead(I)Lcom/fasterxml/jackson/core/format/DataFormatDetector;
     .registers 6
-    .param p1, "lookaheadBytes"    # I
 
     .prologue
     .line 94
@@ -371,11 +352,9 @@
     if-ne p1, v0, :cond_5
 
     .line 97
-    .end local p0    # "this":Lcom/fasterxml/jackson/core/format/DataFormatDetector;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/core/format/DataFormatDetector;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/core/format/DataFormatDetector;
 
@@ -394,7 +373,6 @@
 
 .method public withMinimalMatch(Lcom/fasterxml/jackson/core/format/MatchStrength;)Lcom/fasterxml/jackson/core/format/DataFormatDetector;
     .registers 6
-    .param p1, "minMatch"    # Lcom/fasterxml/jackson/core/format/MatchStrength;
 
     .prologue
     .line 83
@@ -403,11 +381,9 @@
     if-ne p1, v0, :cond_5
 
     .line 86
-    .end local p0    # "this":Lcom/fasterxml/jackson/core/format/DataFormatDetector;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/core/format/DataFormatDetector;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/core/format/DataFormatDetector;
 
@@ -426,7 +402,6 @@
 
 .method public withOptimalMatch(Lcom/fasterxml/jackson/core/format/MatchStrength;)Lcom/fasterxml/jackson/core/format/DataFormatDetector;
     .registers 6
-    .param p1, "optMatch"    # Lcom/fasterxml/jackson/core/format/MatchStrength;
 
     .prologue
     .line 72
@@ -435,11 +410,9 @@
     if-ne p1, v0, :cond_5
 
     .line 75
-    .end local p0    # "this":Lcom/fasterxml/jackson/core/format/DataFormatDetector;
     :goto_4
     return-object p0
 
-    .restart local p0    # "this":Lcom/fasterxml/jackson/core/format/DataFormatDetector;
     :cond_5
     new-instance v0, Lcom/fasterxml/jackson/core/format/DataFormatDetector;
 

@@ -8,31 +8,25 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;->showDialogMessage(Landroid/content/Context;Ljava/lang/String;)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/samsung/privilege/activity/MainPagerActivity;->a(Landroid/content/Context;Ljava/lang/String;)V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+.field final synthetic a:Landroid/app/Dialog;
 
-.field final synthetic val$dialog:Landroid/app/Dialog;
+.field final synthetic b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/MainPagerActivity;Landroid/app/Dialog;)V
     .registers 3
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/MainPagerActivity;
 
     .prologue
-    .line 858
-    iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$9;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .line 896
+    iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$9;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    iput-object p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$9;->val$dialog:Landroid/app/Dialog;
+    iput-object p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$9;->a:Landroid/app/Dialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,26 +37,25 @@
 # virtual methods
 .method public onClick(Landroid/view/View;)V
     .registers 4
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
-    .line 860
-    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$9;->val$dialog:Landroid/app/Dialog;
+    .line 898
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$9;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 862
-    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$9;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .line 900
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$9;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     const/4 v1, 0x0
 
-    iput-boolean v1, v0, Lcom/samsung/privilege/activity/MainPagerActivity;->gIsShowingMessage:Z
+    iput-boolean v1, v0, Lcom/samsung/privilege/activity/MainPagerActivity;->d:Z
 
-    .line 863
-    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$9;->this$0:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .line 901
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$9;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->checkAndShowDialogMessagePopup()V
+    invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->g()V
 
-    .line 864
+    .line 902
     return-void
 .end method

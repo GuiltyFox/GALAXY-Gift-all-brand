@@ -2,19 +2,12 @@
 .super Ljava/lang/Thread;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "zza"
-.end annotation
-
-
 # instance fields
-.field private zzoO:Ljava/lang/ref/WeakReference;
+.field a:Ljava/util/concurrent/CountDownLatch;
+
+.field b:Z
+
+.field private c:Ljava/lang/ref/WeakReference;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/lang/ref/WeakReference",
@@ -25,11 +18,7 @@
     .end annotation
 .end field
 
-.field private zzoP:J
-
-.field zzoQ:Ljava/util/concurrent/CountDownLatch;
-
-.field zzoR:Z
+.field private d:J
 
 
 # direct methods
@@ -42,9 +31,9 @@
 
     invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
-    iput-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->zzoO:Ljava/lang/ref/WeakReference;
+    iput-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->c:Ljava/lang/ref/WeakReference;
 
-    iput-wide p2, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->zzoP:J
+    iput-wide p2, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->d:J
 
     new-instance v0, Ljava/util/concurrent/CountDownLatch;
 
@@ -52,21 +41,21 @@
 
     invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
 
-    iput-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->zzoQ:Ljava/util/concurrent/CountDownLatch;
+    iput-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->a:Ljava/util/concurrent/CountDownLatch;
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->zzoR:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->b:Z
 
     invoke-virtual {p0}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->start()V
 
     return-void
 .end method
 
-.method private disconnect()V
+.method private c()V
     .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->zzoO:Ljava/lang/ref/WeakReference;
+    iget-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->c:Ljava/lang/ref/WeakReference;
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
 
@@ -76,11 +65,11 @@
 
     if-eqz v0, :cond_10
 
-    invoke-virtual {v0}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->finish()V
+    invoke-virtual {v0}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient;->b()V
 
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->zzoR:Z
+    iput-boolean v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->b:Z
 
     :cond_10
     return-void
@@ -88,23 +77,31 @@
 
 
 # virtual methods
-.method public cancel()V
+.method public a()V
     .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->zzoQ:Ljava/util/concurrent/CountDownLatch;
+    iget-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->a:Ljava/util/concurrent/CountDownLatch;
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
     return-void
 .end method
 
+.method public b()Z
+    .registers 2
+
+    iget-boolean v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->b:Z
+
+    return v0
+.end method
+
 .method public run()V
     .registers 5
 
     :try_start_0
-    iget-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->zzoQ:Ljava/util/concurrent/CountDownLatch;
+    iget-object v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->a:Ljava/util/concurrent/CountDownLatch;
 
-    iget-wide v2, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->zzoP:J
+    iget-wide v2, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->d:J
 
     sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
@@ -114,7 +111,7 @@
 
     if-nez v0, :cond_f
 
-    invoke-direct {p0}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->disconnect()V
+    invoke-direct {p0}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->c()V
     :try_end_f
     .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_f} :catch_10
 
@@ -125,15 +122,7 @@
     :catch_10
     move-exception v0
 
-    invoke-direct {p0}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->disconnect()V
+    invoke-direct {p0}, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->c()V
 
     goto :goto_f
-.end method
-
-.method public zzaM()Z
-    .registers 2
-
-    iget-boolean v0, p0, Lcom/google/android/gms/ads/identifier/AdvertisingIdClient$zza;->zzoR:Z
-
-    return v0
 .end method

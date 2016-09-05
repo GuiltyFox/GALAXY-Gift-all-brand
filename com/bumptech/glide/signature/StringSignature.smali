@@ -7,13 +7,12 @@
 
 
 # instance fields
-.field private final signature:Ljava/lang/String;
+.field private final a:Ljava/lang/String;
 
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 4
-    .param p1, "signature"    # Ljava/lang/String;
 
     .prologue
     .line 14
@@ -33,7 +32,7 @@
 
     .line 18
     :cond_e
-    iput-object p1, p0, Lcom/bumptech/glide/signature/StringSignature;->signature:Ljava/lang/String;
+    iput-object p1, p0, Lcom/bumptech/glide/signature/StringSignature;->a:Ljava/lang/String;
 
     .line 19
     return-void
@@ -41,20 +40,38 @@
 
 
 # virtual methods
+.method public a(Ljava/security/MessageDigest;)V
+    .registers 4
+
+    .prologue
+    .line 42
+    iget-object v0, p0, Lcom/bumptech/glide/signature/StringSignature;->a:Ljava/lang/String;
+
+    const-string/jumbo v1, "UTF-8"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/security/MessageDigest;->update([B)V
+
+    .line 43
+    return-void
+.end method
+
 .method public equals(Ljava/lang/Object;)Z
-    .registers 5
-    .param p1, "o"    # Ljava/lang/Object;
+    .registers 4
 
     .prologue
     .line 23
     if-ne p0, p1, :cond_4
 
     .line 24
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     .line 32
     :goto_3
-    return v1
+    return v0
 
     .line 26
     :cond_4
@@ -62,35 +79,32 @@
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v1
+    move-result-object v0
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v1
 
-    if-eq v1, v2, :cond_12
+    if-eq v0, v1, :cond_12
 
     .line 27
     :cond_10
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_3
 
-    :cond_12
-    move-object v0, p1
-
     .line 30
-    check-cast v0, Lcom/bumptech/glide/signature/StringSignature;
+    :cond_12
+    check-cast p1, Lcom/bumptech/glide/signature/StringSignature;
 
     .line 32
-    .local v0, "that":Lcom/bumptech/glide/signature/StringSignature;
-    iget-object v1, p0, Lcom/bumptech/glide/signature/StringSignature;->signature:Ljava/lang/String;
+    iget-object v0, p0, Lcom/bumptech/glide/signature/StringSignature;->a:Ljava/lang/String;
 
-    iget-object v2, v0, Lcom/bumptech/glide/signature/StringSignature;->signature:Ljava/lang/String;
+    iget-object v1, p1, Lcom/bumptech/glide/signature/StringSignature;->a:Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v1
+    move-result v0
 
     goto :goto_3
 .end method
@@ -100,7 +114,7 @@
 
     .prologue
     .line 37
-    iget-object v0, p0, Lcom/bumptech/glide/signature/StringSignature;->signature:Ljava/lang/String;
+    iget-object v0, p0, Lcom/bumptech/glide/signature/StringSignature;->a:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
@@ -124,7 +138,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/bumptech/glide/signature/StringSignature;->signature:Ljava/lang/String;
+    iget-object v1, p0, Lcom/bumptech/glide/signature/StringSignature;->a:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -147,29 +161,4 @@
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public updateDiskCacheKey(Ljava/security/MessageDigest;)V
-    .registers 4
-    .param p1, "messageDigest"    # Ljava/security/MessageDigest;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/UnsupportedEncodingException;
-        }
-    .end annotation
-
-    .prologue
-    .line 42
-    iget-object v0, p0, Lcom/bumptech/glide/signature/StringSignature;->signature:Ljava/lang/String;
-
-    const-string/jumbo v1, "UTF-8"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
-
-    move-result-object v0
-
-    invoke-virtual {p1, v0}, Ljava/security/MessageDigest;->update([B)V
-
-    .line 43
-    return-void
 .end method

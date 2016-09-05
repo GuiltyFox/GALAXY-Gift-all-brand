@@ -11,11 +11,6 @@
     value = Lcom/rey/material/widget/Spinner$SavedState;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -40,9 +35,8 @@
 
 
 # virtual methods
-.method public createFromParcel(Landroid/os/Parcel;)Lcom/rey/material/widget/Spinner$SavedState;
+.method public a(Landroid/os/Parcel;)Lcom/rey/material/widget/Spinner$SavedState;
     .registers 3
-    .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
     .line 1007
@@ -53,22 +47,8 @@
     return-object v0
 .end method
 
-.method public bridge synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public a(I)[Lcom/rey/material/widget/Spinner$SavedState;
     .registers 3
-    .param p1, "x0"    # Landroid/os/Parcel;
-
-    .prologue
-    .line 1005
-    invoke-virtual {p0, p1}, Lcom/rey/material/widget/Spinner$SavedState$1;->createFromParcel(Landroid/os/Parcel;)Lcom/rey/material/widget/Spinner$SavedState;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public newArray(I)[Lcom/rey/material/widget/Spinner$SavedState;
-    .registers 3
-    .param p1, "size"    # I
 
     .prologue
     .line 1011
@@ -77,13 +57,24 @@
     return-object v0
 .end method
 
-.method public bridge synthetic newArray(I)[Ljava/lang/Object;
+.method public synthetic createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
     .registers 3
-    .param p1, "x0"    # I
 
     .prologue
     .line 1005
-    invoke-virtual {p0, p1}, Lcom/rey/material/widget/Spinner$SavedState$1;->newArray(I)[Lcom/rey/material/widget/Spinner$SavedState;
+    invoke-virtual {p0, p1}, Lcom/rey/material/widget/Spinner$SavedState$1;->a(Landroid/os/Parcel;)Lcom/rey/material/widget/Spinner$SavedState;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public synthetic newArray(I)[Ljava/lang/Object;
+    .registers 3
+
+    .prologue
+    .line 1005
+    invoke-virtual {p0, p1}, Lcom/rey/material/widget/Spinner$SavedState$1;->a(I)[Lcom/rey/material/widget/Spinner$SavedState;
 
     move-result-object v0
 

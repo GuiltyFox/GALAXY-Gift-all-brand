@@ -8,21 +8,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/parceler/Parcels;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "NullParcelable"
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lorg/parceler/Parcels$NullParcelable$NullParcelableCreator;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -68,7 +53,6 @@
 
 .method private constructor <init>(Landroid/os/Parcel;)V
     .registers 2
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
     .line 112
@@ -79,8 +63,6 @@
 
 .method synthetic constructor <init>(Landroid/os/Parcel;Lorg/parceler/Parcels$1;)V
     .registers 3
-    .param p1, "x0"    # Landroid/os/Parcel;
-    .param p2, "x1"    # Lorg/parceler/Parcels$1;
 
     .prologue
     .line 107
@@ -91,7 +73,6 @@
 
 .method synthetic constructor <init>(Lorg/parceler/Parcels$1;)V
     .registers 2
-    .param p1, "x0"    # Lorg/parceler/Parcels$1;
 
     .prologue
     .line 107
@@ -124,8 +105,6 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .registers 3
-    .param p1, "parcel"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
     .prologue
     .line 117

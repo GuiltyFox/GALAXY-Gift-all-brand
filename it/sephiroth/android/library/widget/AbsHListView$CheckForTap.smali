@@ -6,19 +6,8 @@
 .implements Ljava/lang/Runnable;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lit/sephiroth/android/library/widget/AbsHListView;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x10
-    name = "CheckForTap"
-.end annotation
-
-
 # instance fields
-.field final synthetic this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+.field final synthetic a:Lit/sephiroth/android/library/widget/AbsHListView;
 
 
 # direct methods
@@ -27,7 +16,7 @@
 
     .prologue
     .line 2721
-    iput-object p1, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iput-object p1, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -37,139 +26,134 @@
 
 # virtual methods
 .method public run()V
-    .registers 10
+    .registers 7
 
     .prologue
-    const/4 v8, 0x2
+    const/4 v4, 0x2
 
-    const/4 v7, 0x1
+    const/4 v3, 0x1
 
     .line 2725
-    iget-object v4, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iget v4, v4, Lit/sephiroth/android/library/widget/AbsHListView;->mTouchMode:I
+    iget v0, v0, Lit/sephiroth/android/library/widget/AbsHListView;->F:I
 
-    if-nez v4, :cond_9a
+    if-nez v0, :cond_9a
 
     .line 2726
-    iget-object v4, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iput v7, v4, Lit/sephiroth/android/library/widget/AbsHListView;->mTouchMode:I
+    iput v3, v0, Lit/sephiroth/android/library/widget/AbsHListView;->F:I
 
     .line 2727
-    iget-object v4, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iget-object v5, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iget v5, v5, Lit/sephiroth/android/library/widget/AbsHListView;->mMotionPosition:I
+    iget v1, v1, Lit/sephiroth/android/library/widget/AbsHListView;->A:I
 
-    iget-object v6, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v2, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iget v6, v6, Lit/sephiroth/android/library/widget/AbsHListView;->mFirstPosition:I
+    iget v2, v2, Lit/sephiroth/android/library/widget/AbsHListView;->V:I
 
-    sub-int/2addr v5, v6
+    sub-int/2addr v1, v2
 
-    invoke-virtual {v4, v5}, Lit/sephiroth/android/library/widget/AbsHListView;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {v0, v1}, Lit/sephiroth/android/library/widget/AbsHListView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
     .line 2728
-    .local v0, "child":Landroid/view/View;
     if-eqz v0, :cond_9a
 
     invoke-virtual {v0}, Landroid/view/View;->hasFocusable()Z
 
-    move-result v4
+    move-result v1
 
-    if-nez v4, :cond_9a
+    if-nez v1, :cond_9a
 
     .line 2729
-    iget-object v4, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    const/4 v5, 0x0
+    const/4 v2, 0x0
 
-    iput v5, v4, Lit/sephiroth/android/library/widget/AbsHListView;->mLayoutMode:I
+    iput v2, v1, Lit/sephiroth/android/library/widget/AbsHListView;->h:I
 
     .line 2731
-    iget-object v4, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iget-boolean v4, v4, Lit/sephiroth/android/library/widget/AbsHListView;->mDataChanged:Z
+    iget-boolean v1, v1, Lit/sephiroth/android/library/widget/AbsHListView;->aj:Z
 
-    if-nez v4, :cond_a6
+    if-nez v1, :cond_a6
 
     .line 2732
-    invoke-virtual {v0, v7}, Landroid/view/View;->setPressed(Z)V
+    invoke-virtual {v0, v3}, Landroid/view/View;->setPressed(Z)V
 
     .line 2733
-    iget-object v4, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    invoke-virtual {v4, v7}, Lit/sephiroth/android/library/widget/AbsHListView;->setPressed(Z)V
+    invoke-virtual {v1, v3}, Lit/sephiroth/android/library/widget/AbsHListView;->setPressed(Z)V
 
     .line 2734
-    iget-object v4, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    invoke-virtual {v4}, Lit/sephiroth/android/library/widget/AbsHListView;->layoutChildren()V
+    invoke-virtual {v1}, Lit/sephiroth/android/library/widget/AbsHListView;->e()V
 
     .line 2735
-    iget-object v4, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iget-object v5, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v2, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iget v5, v5, Lit/sephiroth/android/library/widget/AbsHListView;->mMotionPosition:I
+    iget v2, v2, Lit/sephiroth/android/library/widget/AbsHListView;->A:I
 
-    invoke-virtual {v4, v5, v0}, Lit/sephiroth/android/library/widget/AbsHListView;->positionSelector(ILandroid/view/View;)V
+    invoke-virtual {v1, v2, v0}, Lit/sephiroth/android/library/widget/AbsHListView;->a(ILandroid/view/View;)V
 
     .line 2736
-    iget-object v4, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    invoke-virtual {v4}, Lit/sephiroth/android/library/widget/AbsHListView;->refreshDrawableState()V
+    invoke-virtual {v0}, Lit/sephiroth/android/library/widget/AbsHListView;->refreshDrawableState()V
 
     .line 2738
     invoke-static {}, Landroid/view/ViewConfiguration;->getLongPressTimeout()I
 
-    move-result v3
+    move-result v1
 
     .line 2739
-    .local v3, "longPressTimeout":I
-    iget-object v4, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    invoke-virtual {v4}, Lit/sephiroth/android/library/widget/AbsHListView;->isLongClickable()Z
+    invoke-virtual {v0}, Lit/sephiroth/android/library/widget/AbsHListView;->isLongClickable()Z
 
     move-result v2
 
     .line 2741
-    .local v2, "longClickable":Z
-    iget-object v4, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iget-object v4, v4, Lit/sephiroth/android/library/widget/AbsHListView;->mSelector:Landroid/graphics/drawable/Drawable;
+    iget-object v0, v0, Lit/sephiroth/android/library/widget/AbsHListView;->m:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v4, :cond_6e
+    if-eqz v0, :cond_6e
 
     .line 2742
-    iget-object v4, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iget-object v4, v4, Lit/sephiroth/android/library/widget/AbsHListView;->mSelector:Landroid/graphics/drawable/Drawable;
+    iget-object v0, v0, Lit/sephiroth/android/library/widget/AbsHListView;->m:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v4}, Landroid/graphics/drawable/Drawable;->getCurrent()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getCurrent()Landroid/graphics/drawable/Drawable;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 2743
-    .local v1, "d":Landroid/graphics/drawable/Drawable;
-    if-eqz v1, :cond_6e
+    if-eqz v0, :cond_6e
 
-    instance-of v4, v1, Landroid/graphics/drawable/TransitionDrawable;
+    instance-of v3, v0, Landroid/graphics/drawable/TransitionDrawable;
 
-    if-eqz v4, :cond_6e
+    if-eqz v3, :cond_6e
 
     .line 2744
     if-eqz v2, :cond_9b
 
     .line 2745
-    check-cast v1, Landroid/graphics/drawable/TransitionDrawable;
+    check-cast v0, Landroid/graphics/drawable/TransitionDrawable;
 
-    .end local v1    # "d":Landroid/graphics/drawable/Drawable;
-    invoke-virtual {v1, v3}, Landroid/graphics/drawable/TransitionDrawable;->startTransition(I)V
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/TransitionDrawable;->startTransition(I)V
 
     .line 2752
     :cond_6e
@@ -177,90 +161,76 @@
     if-eqz v2, :cond_a1
 
     .line 2753
-    iget-object v4, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    # getter for: Lit/sephiroth/android/library/widget/AbsHListView;->mPendingCheckForLongPress:Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;
-    invoke-static {v4}, Lit/sephiroth/android/library/widget/AbsHListView;->access$500(Lit/sephiroth/android/library/widget/AbsHListView;)Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;
+    invoke-static {v0}, Lit/sephiroth/android/library/widget/AbsHListView;->c(Lit/sephiroth/android/library/widget/AbsHListView;)Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;
 
-    move-result-object v4
+    move-result-object v0
 
-    if-nez v4, :cond_85
+    if-nez v0, :cond_85
 
     .line 2754
-    iget-object v4, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    new-instance v5, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;
+    new-instance v2, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;
 
-    iget-object v6, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v3, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    const/4 v7, 0x0
+    const/4 v4, 0x0
 
-    invoke-direct {v5, v6, v7}, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;-><init>(Lit/sephiroth/android/library/widget/AbsHListView;Lit/sephiroth/android/library/widget/AbsHListView$1;)V
+    invoke-direct {v2, v3, v4}, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;-><init>(Lit/sephiroth/android/library/widget/AbsHListView;Lit/sephiroth/android/library/widget/AbsHListView$1;)V
 
-    # setter for: Lit/sephiroth/android/library/widget/AbsHListView;->mPendingCheckForLongPress:Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;
-    invoke-static {v4, v5}, Lit/sephiroth/android/library/widget/AbsHListView;->access$502(Lit/sephiroth/android/library/widget/AbsHListView;Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;)Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;
+    invoke-static {v0, v2}, Lit/sephiroth/android/library/widget/AbsHListView;->a(Lit/sephiroth/android/library/widget/AbsHListView;Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;)Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;
 
     .line 2756
     :cond_85
-    iget-object v4, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    # getter for: Lit/sephiroth/android/library/widget/AbsHListView;->mPendingCheckForLongPress:Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;
-    invoke-static {v4}, Lit/sephiroth/android/library/widget/AbsHListView;->access$500(Lit/sephiroth/android/library/widget/AbsHListView;)Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;
+    invoke-static {v0}, Lit/sephiroth/android/library/widget/AbsHListView;->c(Lit/sephiroth/android/library/widget/AbsHListView;)Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;
 
-    move-result-object v4
+    move-result-object v0
 
-    invoke-virtual {v4}, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->rememberWindowAttachCount()V
+    invoke-virtual {v0}, Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;->a()V
 
     .line 2757
-    iget-object v4, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iget-object v5, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v2, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    # getter for: Lit/sephiroth/android/library/widget/AbsHListView;->mPendingCheckForLongPress:Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;
-    invoke-static {v5}, Lit/sephiroth/android/library/widget/AbsHListView;->access$500(Lit/sephiroth/android/library/widget/AbsHListView;)Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;
+    invoke-static {v2}, Lit/sephiroth/android/library/widget/AbsHListView;->c(Lit/sephiroth/android/library/widget/AbsHListView;)Lit/sephiroth/android/library/widget/AbsHListView$CheckForLongPress;
 
-    move-result-object v5
+    move-result-object v2
 
-    int-to-long v6, v3
+    int-to-long v4, v1
 
-    invoke-virtual {v4, v5, v6, v7}, Lit/sephiroth/android/library/widget/AbsHListView;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0, v2, v4, v5}, Lit/sephiroth/android/library/widget/AbsHListView;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 2766
-    .end local v0    # "child":Landroid/view/View;
-    .end local v2    # "longClickable":Z
-    .end local v3    # "longPressTimeout":I
     :cond_9a
     :goto_9a
     return-void
 
     .line 2747
-    .restart local v0    # "child":Landroid/view/View;
-    .restart local v1    # "d":Landroid/graphics/drawable/Drawable;
-    .restart local v2    # "longClickable":Z
-    .restart local v3    # "longPressTimeout":I
     :cond_9b
-    check-cast v1, Landroid/graphics/drawable/TransitionDrawable;
+    check-cast v0, Landroid/graphics/drawable/TransitionDrawable;
 
-    .end local v1    # "d":Landroid/graphics/drawable/Drawable;
-    invoke-virtual {v1}, Landroid/graphics/drawable/TransitionDrawable;->resetTransition()V
+    invoke-virtual {v0}, Landroid/graphics/drawable/TransitionDrawable;->resetTransition()V
 
     goto :goto_6e
 
     .line 2759
     :cond_a1
-    iget-object v4, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iput v8, v4, Lit/sephiroth/android/library/widget/AbsHListView;->mTouchMode:I
+    iput v4, v0, Lit/sephiroth/android/library/widget/AbsHListView;->F:I
 
     goto :goto_9a
 
     .line 2762
-    .end local v2    # "longClickable":Z
-    .end local v3    # "longPressTimeout":I
     :cond_a6
-    iget-object v4, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$CheckForTap;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iput v8, v4, Lit/sephiroth/android/library/widget/AbsHListView;->mTouchMode:I
+    iput v4, v0, Lit/sephiroth/android/library/widget/AbsHListView;->F:I
 
     goto :goto_9a
 .end method

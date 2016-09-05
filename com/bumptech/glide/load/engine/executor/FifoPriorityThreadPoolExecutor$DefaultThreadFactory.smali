@@ -6,19 +6,8 @@
 .implements Ljava/util/concurrent/ThreadFactory;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "DefaultThreadFactory"
-.end annotation
-
-
 # instance fields
-.field threadNum:I
+.field a:I
 
 
 # direct methods
@@ -32,7 +21,7 @@
     .line 111
     const/4 v0, 0x0
 
-    iput v0, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$DefaultThreadFactory;->threadNum:I
+    iput v0, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$DefaultThreadFactory;->a:I
 
     return-void
 .end method
@@ -41,7 +30,6 @@
 # virtual methods
 .method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
     .registers 5
-    .param p1, "runnable"    # Ljava/lang/Runnable;
 
     .prologue
     .line 114
@@ -57,7 +45,7 @@
 
     move-result-object v1
 
-    iget v2, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$DefaultThreadFactory;->threadNum:I
+    iget v2, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$DefaultThreadFactory;->a:I
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -70,12 +58,11 @@
     invoke-direct {v0, p0, p1, v1}, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$DefaultThreadFactory$1;-><init>(Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$DefaultThreadFactory;Ljava/lang/Runnable;Ljava/lang/String;)V
 
     .line 121
-    .local v0, "result":Ljava/lang/Thread;
-    iget v1, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$DefaultThreadFactory;->threadNum:I
+    iget v1, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$DefaultThreadFactory;->a:I
 
     add-int/lit8 v1, v1, 0x1
 
-    iput v1, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$DefaultThreadFactory;->threadNum:I
+    iput v1, p0, Lcom/bumptech/glide/load/engine/executor/FifoPriorityThreadPoolExecutor$DefaultThreadFactory;->a:I
 
     .line 122
     return-object v0

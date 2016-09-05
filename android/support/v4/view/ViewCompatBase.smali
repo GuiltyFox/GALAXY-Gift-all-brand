@@ -4,31 +4,18 @@
 
 
 # static fields
-.field private static final TAG:Ljava/lang/String; = "ViewCompatBase"
+.field private static a:Ljava/lang/reflect/Field;
 
-.field private static sMinHeightField:Ljava/lang/reflect/Field;
+.field private static b:Z
 
-.field private static sMinHeightFieldFetched:Z
+.field private static c:Ljava/lang/reflect/Field;
 
-.field private static sMinWidthField:Ljava/lang/reflect/Field;
-
-.field private static sMinWidthFieldFetched:Z
+.field private static d:Z
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 26
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method static getBackgroundTintList(Landroid/view/View;)Landroid/content/res/ColorStateList;
+.method static a(Landroid/view/View;)Landroid/content/res/ColorStateList;
     .registers 2
-    .param p0, "view"    # Landroid/view/View;
 
     .prologue
     .line 36
@@ -38,7 +25,6 @@
 
     check-cast p0, Landroid/support/v4/view/TintableBackgroundView;
 
-    .end local p0    # "view":Landroid/view/View;
     invoke-interface {p0}, Landroid/support/v4/view/TintableBackgroundView;->getSupportBackgroundTintList()Landroid/content/res/ColorStateList;
 
     move-result-object v0
@@ -46,16 +32,117 @@
     :goto_a
     return-object v0
 
-    .restart local p0    # "view":Landroid/view/View;
     :cond_b
     const/4 v0, 0x0
 
     goto :goto_a
 .end method
 
-.method static getBackgroundTintMode(Landroid/view/View;)Landroid/graphics/PorterDuff$Mode;
+.method static a(Landroid/view/View;I)V
+    .registers 9
+
+    .prologue
+    .line 114
+    invoke-virtual {p0}, Landroid/view/View;->getTop()I
+
+    move-result v1
+
+    .line 115
+    invoke-virtual {p0, p1}, Landroid/view/View;->offsetTopAndBottom(I)V
+
+    .line 117
+    if-eqz p1, :cond_2a
+
+    .line 119
+    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    move-result-object v0
+
+    .line 120
+    instance-of v2, v0, Landroid/view/View;
+
+    if-eqz v2, :cond_2b
+
+    .line 121
+    invoke-static {p1}, Ljava/lang/Math;->abs(I)I
+
+    move-result v2
+
+    .line 122
+    check-cast v0, Landroid/view/View;
+
+    invoke-virtual {p0}, Landroid/view/View;->getLeft()I
+
+    move-result v3
+
+    sub-int v4, v1, v2
+
+    invoke-virtual {p0}, Landroid/view/View;->getRight()I
+
+    move-result v5
+
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
+
+    move-result v6
+
+    add-int/2addr v1, v6
+
+    add-int/2addr v1, v2
+
+    invoke-virtual {v0, v3, v4, v5, v1}, Landroid/view/View;->invalidate(IIII)V
+
+    .line 131
+    :cond_2a
+    :goto_2a
+    return-void
+
+    .line 128
+    :cond_2b
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    goto :goto_2a
+.end method
+
+.method static a(Landroid/view/View;Landroid/content/res/ColorStateList;)V
+    .registers 3
+
+    .prologue
+    .line 42
+    instance-of v0, p0, Landroid/support/v4/view/TintableBackgroundView;
+
+    if-eqz v0, :cond_9
+
+    .line 43
+    check-cast p0, Landroid/support/v4/view/TintableBackgroundView;
+
+    invoke-interface {p0, p1}, Landroid/support/v4/view/TintableBackgroundView;->setSupportBackgroundTintList(Landroid/content/res/ColorStateList;)V
+
+    .line 45
+    :cond_9
+    return-void
+.end method
+
+.method static a(Landroid/view/View;Landroid/graphics/PorterDuff$Mode;)V
+    .registers 3
+
+    .prologue
+    .line 54
+    instance-of v0, p0, Landroid/support/v4/view/TintableBackgroundView;
+
+    if-eqz v0, :cond_9
+
+    .line 55
+    check-cast p0, Landroid/support/v4/view/TintableBackgroundView;
+
+    invoke-interface {p0, p1}, Landroid/support/v4/view/TintableBackgroundView;->setSupportBackgroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
+
+    .line 57
+    :cond_9
+    return-void
+.end method
+
+.method static b(Landroid/view/View;)Landroid/graphics/PorterDuff$Mode;
     .registers 2
-    .param p0, "view"    # Landroid/view/View;
 
     .prologue
     .line 48
@@ -65,7 +152,6 @@
 
     check-cast p0, Landroid/support/v4/view/TintableBackgroundView;
 
-    .end local p0    # "view":Landroid/view/View;
     invoke-interface {p0}, Landroid/support/v4/view/TintableBackgroundView;->getSupportBackgroundTintMode()Landroid/graphics/PorterDuff$Mode;
 
     move-result-object v0
@@ -73,102 +159,113 @@
     :goto_a
     return-object v0
 
-    .restart local p0    # "view":Landroid/view/View;
     :cond_b
     const/4 v0, 0x0
 
     goto :goto_a
 .end method
 
-.method static getMinimumHeight(Landroid/view/View;)I
-    .registers 4
-    .param p0, "view"    # Landroid/view/View;
+.method static b(Landroid/view/View;I)V
+    .registers 8
 
     .prologue
-    const/4 v2, 0x1
+    .line 134
+    invoke-virtual {p0}, Landroid/view/View;->getLeft()I
 
-    .line 87
-    sget-boolean v0, Landroid/support/v4/view/ViewCompatBase;->sMinHeightFieldFetched:Z
+    move-result v1
 
-    if-nez v0, :cond_18
+    .line 135
+    invoke-virtual {p0, p1}, Landroid/view/View;->offsetLeftAndRight(I)V
 
-    .line 89
-    :try_start_5
-    const-class v0, Landroid/view/View;
+    .line 137
+    if-eqz p1, :cond_2a
 
-    const-string/jumbo v1, "mMinHeight"
-
-    invoke-virtual {v0, v1}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    move-result-object v0
-
-    sput-object v0, Landroid/support/v4/view/ViewCompatBase;->sMinHeightField:Ljava/lang/reflect/Field;
-
-    .line 90
-    sget-object v0, Landroid/support/v4/view/ViewCompatBase;->sMinHeightField:Ljava/lang/reflect/Field;
-
-    const/4 v1, 0x1
-
-    invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
-    :try_end_16
-    .catch Ljava/lang/NoSuchFieldException; {:try_start_5 .. :try_end_16} :catch_2c
-
-    .line 94
-    :goto_16
-    sput-boolean v2, Landroid/support/v4/view/ViewCompatBase;->sMinHeightFieldFetched:Z
-
-    .line 97
-    :cond_18
-    sget-object v0, Landroid/support/v4/view/ViewCompatBase;->sMinHeightField:Ljava/lang/reflect/Field;
-
-    if-eqz v0, :cond_2a
-
-    .line 99
-    :try_start_1c
-    sget-object v0, Landroid/support/v4/view/ViewCompatBase;->sMinHeightField:Ljava/lang/reflect/Field;
-
-    invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 139
+    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
-    check-cast v0, Ljava/lang/Integer;
+    .line 140
+    instance-of v2, v0, Landroid/view/View;
 
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-    :try_end_27
-    .catch Ljava/lang/Exception; {:try_start_1c .. :try_end_27} :catch_29
+    if-eqz v2, :cond_2b
+
+    .line 141
+    invoke-static {p1}, Ljava/lang/Math;->abs(I)I
+
+    move-result v2
+
+    .line 142
+    check-cast v0, Landroid/view/View;
+
+    sub-int v3, v1, v2
+
+    invoke-virtual {p0}, Landroid/view/View;->getTop()I
+
+    move-result v4
+
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+
+    move-result v5
+
+    add-int/2addr v1, v5
+
+    add-int/2addr v1, v2
+
+    invoke-virtual {p0}, Landroid/view/View;->getBottom()I
+
+    move-result v2
+
+    invoke-virtual {v0, v3, v4, v1, v2}, Landroid/view/View;->invalidate(IIII)V
+
+    .line 151
+    :cond_2a
+    :goto_2a
+    return-void
+
+    .line 148
+    :cond_2b
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    goto :goto_2a
+.end method
+
+.method static c(Landroid/view/View;)Z
+    .registers 2
+
+    .prologue
+    .line 60
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     move-result v0
 
-    .line 106
-    :goto_28
+    if-lez v0, :cond_e
+
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
+
+    move-result v0
+
+    if-lez v0, :cond_e
+
+    const/4 v0, 0x1
+
+    :goto_d
     return v0
 
-    .line 100
-    :catch_29
-    move-exception v0
-
-    .line 106
-    :cond_2a
+    :cond_e
     const/4 v0, 0x0
 
-    goto :goto_28
-
-    .line 91
-    :catch_2c
-    move-exception v0
-
-    goto :goto_16
+    goto :goto_d
 .end method
 
-.method static getMinimumWidth(Landroid/view/View;)I
+.method static d(Landroid/view/View;)I
     .registers 4
-    .param p0, "view"    # Landroid/view/View;
 
     .prologue
     const/4 v2, 0x1
 
     .line 64
-    sget-boolean v0, Landroid/support/v4/view/ViewCompatBase;->sMinWidthFieldFetched:Z
+    sget-boolean v0, Landroid/support/v4/view/ViewCompatBase;->b:Z
 
     if-nez v0, :cond_18
 
@@ -182,10 +279,10 @@
 
     move-result-object v0
 
-    sput-object v0, Landroid/support/v4/view/ViewCompatBase;->sMinWidthField:Ljava/lang/reflect/Field;
+    sput-object v0, Landroid/support/v4/view/ViewCompatBase;->a:Ljava/lang/reflect/Field;
 
     .line 67
-    sget-object v0, Landroid/support/v4/view/ViewCompatBase;->sMinWidthField:Ljava/lang/reflect/Field;
+    sget-object v0, Landroid/support/v4/view/ViewCompatBase;->a:Ljava/lang/reflect/Field;
 
     const/4 v1, 0x1
 
@@ -195,17 +292,17 @@
 
     .line 71
     :goto_16
-    sput-boolean v2, Landroid/support/v4/view/ViewCompatBase;->sMinWidthFieldFetched:Z
+    sput-boolean v2, Landroid/support/v4/view/ViewCompatBase;->b:Z
 
     .line 74
     :cond_18
-    sget-object v0, Landroid/support/v4/view/ViewCompatBase;->sMinWidthField:Ljava/lang/reflect/Field;
+    sget-object v0, Landroid/support/v4/view/ViewCompatBase;->a:Ljava/lang/reflect/Field;
 
     if-eqz v0, :cond_2a
 
     .line 76
     :try_start_1c
-    sget-object v0, Landroid/support/v4/view/ViewCompatBase;->sMinWidthField:Ljava/lang/reflect/Field;
+    sget-object v0, Landroid/support/v4/view/ViewCompatBase;->a:Ljava/lang/reflect/Field;
 
     invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -240,9 +337,87 @@
     goto :goto_16
 .end method
 
-.method static isAttachedToWindow(Landroid/view/View;)Z
+.method static e(Landroid/view/View;)I
+    .registers 4
+
+    .prologue
+    const/4 v2, 0x1
+
+    .line 87
+    sget-boolean v0, Landroid/support/v4/view/ViewCompatBase;->d:Z
+
+    if-nez v0, :cond_18
+
+    .line 89
+    :try_start_5
+    const-class v0, Landroid/view/View;
+
+    const-string/jumbo v1, "mMinHeight"
+
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+
+    move-result-object v0
+
+    sput-object v0, Landroid/support/v4/view/ViewCompatBase;->c:Ljava/lang/reflect/Field;
+
+    .line 90
+    sget-object v0, Landroid/support/v4/view/ViewCompatBase;->c:Ljava/lang/reflect/Field;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Ljava/lang/reflect/Field;->setAccessible(Z)V
+    :try_end_16
+    .catch Ljava/lang/NoSuchFieldException; {:try_start_5 .. :try_end_16} :catch_2c
+
+    .line 94
+    :goto_16
+    sput-boolean v2, Landroid/support/v4/view/ViewCompatBase;->d:Z
+
+    .line 97
+    :cond_18
+    sget-object v0, Landroid/support/v4/view/ViewCompatBase;->c:Ljava/lang/reflect/Field;
+
+    if-eqz v0, :cond_2a
+
+    .line 99
+    :try_start_1c
+    sget-object v0, Landroid/support/v4/view/ViewCompatBase;->c:Ljava/lang/reflect/Field;
+
+    invoke-virtual {v0, p0}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Integer;
+
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    :try_end_27
+    .catch Ljava/lang/Exception; {:try_start_1c .. :try_end_27} :catch_29
+
+    move-result v0
+
+    .line 106
+    :goto_28
+    return v0
+
+    .line 100
+    :catch_29
+    move-exception v0
+
+    .line 106
+    :cond_2a
+    const/4 v0, 0x0
+
+    goto :goto_28
+
+    .line 91
+    :catch_2c
+    move-exception v0
+
+    goto :goto_16
+.end method
+
+.method static f(Landroid/view/View;)Z
     .registers 2
-    .param p0, "view"    # Landroid/view/View;
 
     .prologue
     .line 110
@@ -261,223 +436,4 @@
     const/4 v0, 0x0
 
     goto :goto_7
-.end method
-
-.method static isLaidOut(Landroid/view/View;)Z
-    .registers 2
-    .param p0, "view"    # Landroid/view/View;
-
-    .prologue
-    .line 60
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
-
-    move-result v0
-
-    if-lez v0, :cond_e
-
-    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
-
-    move-result v0
-
-    if-lez v0, :cond_e
-
-    const/4 v0, 0x1
-
-    :goto_d
-    return v0
-
-    :cond_e
-    const/4 v0, 0x0
-
-    goto :goto_d
-.end method
-
-.method static offsetLeftAndRight(Landroid/view/View;I)V
-    .registers 9
-    .param p0, "view"    # Landroid/view/View;
-    .param p1, "offset"    # I
-
-    .prologue
-    .line 134
-    invoke-virtual {p0}, Landroid/view/View;->getLeft()I
-
-    move-result v1
-
-    .line 135
-    .local v1, "currentLeft":I
-    invoke-virtual {p0, p1}, Landroid/view/View;->offsetLeftAndRight(I)V
-
-    .line 137
-    if-eqz p1, :cond_2a
-
-    .line 139
-    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v2
-
-    .line 140
-    .local v2, "parent":Landroid/view/ViewParent;
-    instance-of v3, v2, Landroid/view/View;
-
-    if-eqz v3, :cond_2b
-
-    .line 141
-    invoke-static {p1}, Ljava/lang/Math;->abs(I)I
-
-    move-result v0
-
-    .line 142
-    .local v0, "absOffset":I
-    check-cast v2, Landroid/view/View;
-
-    .end local v2    # "parent":Landroid/view/ViewParent;
-    sub-int v3, v1, v0
-
-    invoke-virtual {p0}, Landroid/view/View;->getTop()I
-
-    move-result v4
-
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
-
-    move-result v5
-
-    add-int/2addr v5, v1
-
-    add-int/2addr v5, v0
-
-    invoke-virtual {p0}, Landroid/view/View;->getBottom()I
-
-    move-result v6
-
-    invoke-virtual {v2, v3, v4, v5, v6}, Landroid/view/View;->invalidate(IIII)V
-
-    .line 151
-    .end local v0    # "absOffset":I
-    :cond_2a
-    :goto_2a
-    return-void
-
-    .line 148
-    .restart local v2    # "parent":Landroid/view/ViewParent;
-    :cond_2b
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
-
-    goto :goto_2a
-.end method
-
-.method static offsetTopAndBottom(Landroid/view/View;I)V
-    .registers 9
-    .param p0, "view"    # Landroid/view/View;
-    .param p1, "offset"    # I
-
-    .prologue
-    .line 114
-    invoke-virtual {p0}, Landroid/view/View;->getTop()I
-
-    move-result v1
-
-    .line 115
-    .local v1, "currentTop":I
-    invoke-virtual {p0, p1}, Landroid/view/View;->offsetTopAndBottom(I)V
-
-    .line 117
-    if-eqz p1, :cond_2a
-
-    .line 119
-    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
-
-    move-result-object v2
-
-    .line 120
-    .local v2, "parent":Landroid/view/ViewParent;
-    instance-of v3, v2, Landroid/view/View;
-
-    if-eqz v3, :cond_2b
-
-    .line 121
-    invoke-static {p1}, Ljava/lang/Math;->abs(I)I
-
-    move-result v0
-
-    .line 122
-    .local v0, "absOffset":I
-    check-cast v2, Landroid/view/View;
-
-    .end local v2    # "parent":Landroid/view/ViewParent;
-    invoke-virtual {p0}, Landroid/view/View;->getLeft()I
-
-    move-result v3
-
-    sub-int v4, v1, v0
-
-    invoke-virtual {p0}, Landroid/view/View;->getRight()I
-
-    move-result v5
-
-    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
-
-    move-result v6
-
-    add-int/2addr v6, v1
-
-    add-int/2addr v6, v0
-
-    invoke-virtual {v2, v3, v4, v5, v6}, Landroid/view/View;->invalidate(IIII)V
-
-    .line 131
-    .end local v0    # "absOffset":I
-    :cond_2a
-    :goto_2a
-    return-void
-
-    .line 128
-    .restart local v2    # "parent":Landroid/view/ViewParent;
-    :cond_2b
-    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
-
-    goto :goto_2a
-.end method
-
-.method static setBackgroundTintList(Landroid/view/View;Landroid/content/res/ColorStateList;)V
-    .registers 3
-    .param p0, "view"    # Landroid/view/View;
-    .param p1, "tintList"    # Landroid/content/res/ColorStateList;
-
-    .prologue
-    .line 42
-    instance-of v0, p0, Landroid/support/v4/view/TintableBackgroundView;
-
-    if-eqz v0, :cond_9
-
-    .line 43
-    check-cast p0, Landroid/support/v4/view/TintableBackgroundView;
-
-    .end local p0    # "view":Landroid/view/View;
-    invoke-interface {p0, p1}, Landroid/support/v4/view/TintableBackgroundView;->setSupportBackgroundTintList(Landroid/content/res/ColorStateList;)V
-
-    .line 45
-    :cond_9
-    return-void
-.end method
-
-.method static setBackgroundTintMode(Landroid/view/View;Landroid/graphics/PorterDuff$Mode;)V
-    .registers 3
-    .param p0, "view"    # Landroid/view/View;
-    .param p1, "mode"    # Landroid/graphics/PorterDuff$Mode;
-
-    .prologue
-    .line 54
-    instance-of v0, p0, Landroid/support/v4/view/TintableBackgroundView;
-
-    if-eqz v0, :cond_9
-
-    .line 55
-    check-cast p0, Landroid/support/v4/view/TintableBackgroundView;
-
-    .end local p0    # "view":Landroid/view/View;
-    invoke-interface {p0, p1}, Landroid/support/v4/view/TintableBackgroundView;->setSupportBackgroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
-
-    .line 57
-    :cond_9
-    return-void
 .end method

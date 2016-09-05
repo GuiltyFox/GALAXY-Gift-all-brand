@@ -287,9 +287,6 @@
 
 .method synthetic constructor <init>(Ljava/lang/String;ILcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonValueFormat$1;)V
     .registers 4
-    .param p1, "x0"    # Ljava/lang/String;
-    .param p2, "x1"    # I
-    .param p3, "x2"    # Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonValueFormat$1;
 
     .prologue
     .line 8
@@ -300,7 +297,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonValueFormat;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 8

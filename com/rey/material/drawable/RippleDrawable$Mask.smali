@@ -3,49 +3,23 @@
 .source "RippleDrawable.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/rey/material/drawable/RippleDrawable;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Mask"
-.end annotation
-
-
-# static fields
-.field public static final TYPE_OVAL:I = 0x1
-
-.field public static final TYPE_RECTANGLE:I
-
-
 # instance fields
-.field final bottom:I
+.field final a:I
 
-.field final cornerRadius:[F
+.field final b:[F
 
-.field final left:I
+.field final c:I
 
-.field final right:I
+.field final d:I
 
-.field final top:I
+.field final e:I
 
-.field final type:I
+.field final f:I
 
 
 # direct methods
 .method public constructor <init>(IIIIIIIII)V
     .registers 13
-    .param p1, "type"    # I
-    .param p2, "topLeftCornerRadius"    # I
-    .param p3, "topRightCornerRadius"    # I
-    .param p4, "bottomRightCornerRadius"    # I
-    .param p5, "bottomLeftCornerRadius"    # I
-    .param p6, "left"    # I
-    .param p7, "top"    # I
-    .param p8, "right"    # I
-    .param p9, "bottom"    # I
 
     .prologue
     .line 472
@@ -56,13 +30,13 @@
 
     new-array v0, v0, [F
 
-    iput-object v0, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->cornerRadius:[F
+    iput-object v0, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->b:[F
 
     .line 473
-    iput p1, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->type:I
+    iput p1, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->a:I
 
     .line 475
-    iget-object v0, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->cornerRadius:[F
+    iget-object v0, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->b:[F
 
     const/4 v1, 0x0
 
@@ -71,7 +45,7 @@
     aput v2, v0, v1
 
     .line 476
-    iget-object v0, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->cornerRadius:[F
+    iget-object v0, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->b:[F
 
     const/4 v1, 0x1
 
@@ -80,7 +54,7 @@
     aput v2, v0, v1
 
     .line 478
-    iget-object v0, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->cornerRadius:[F
+    iget-object v0, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->b:[F
 
     const/4 v1, 0x2
 
@@ -89,7 +63,7 @@
     aput v2, v0, v1
 
     .line 479
-    iget-object v0, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->cornerRadius:[F
+    iget-object v0, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->b:[F
 
     const/4 v1, 0x3
 
@@ -98,7 +72,7 @@
     aput v2, v0, v1
 
     .line 481
-    iget-object v0, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->cornerRadius:[F
+    iget-object v0, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->b:[F
 
     const/4 v1, 0x4
 
@@ -107,7 +81,7 @@
     aput v2, v0, v1
 
     .line 482
-    iget-object v0, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->cornerRadius:[F
+    iget-object v0, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->b:[F
 
     const/4 v1, 0x5
 
@@ -116,7 +90,7 @@
     aput v2, v0, v1
 
     .line 484
-    iget-object v0, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->cornerRadius:[F
+    iget-object v0, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->b:[F
 
     const/4 v1, 0x6
 
@@ -125,7 +99,7 @@
     aput v2, v0, v1
 
     .line 485
-    iget-object v0, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->cornerRadius:[F
+    iget-object v0, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->b:[F
 
     const/4 v1, 0x7
 
@@ -134,16 +108,16 @@
     aput v2, v0, v1
 
     .line 487
-    iput p6, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->left:I
+    iput p6, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->c:I
 
     .line 488
-    iput p7, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->top:I
+    iput p7, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->d:I
 
     .line 489
-    iput p8, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->right:I
+    iput p8, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->e:I
 
     .line 490
-    iput p9, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->bottom:I
+    iput p9, p0, Lcom/rey/material/drawable/RippleDrawable$Mask;->f:I
 
     .line 491
     return-void

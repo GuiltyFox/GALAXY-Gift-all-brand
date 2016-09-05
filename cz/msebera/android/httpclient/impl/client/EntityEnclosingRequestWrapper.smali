@@ -7,34 +7,19 @@
 
 
 # annotations
-.annotation build Lcz/msebera/android/httpclient/annotation/NotThreadSafe;
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper$EntityWrapper;
-    }
-.end annotation
-
 .annotation runtime Ljava/lang/Deprecated;
 .end annotation
 
 
 # instance fields
-.field private consumed:Z
+.field private a:Lcz/msebera/android/httpclient/HttpEntity;
 
-.field private entity:Lcz/msebera/android/httpclient/HttpEntity;
+.field private b:Z
 
 
 # direct methods
 .method public constructor <init>(Lcz/msebera/android/httpclient/HttpEntityEnclosingRequest;)V
     .registers 3
-    .param p1, "request"    # Lcz/msebera/android/httpclient/HttpEntityEnclosingRequest;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcz/msebera/android/httpclient/ProtocolException;
-        }
-    .end annotation
 
     .prologue
     .line 64
@@ -45,84 +30,63 @@
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;->setEntity(Lcz/msebera/android/httpclient/HttpEntity;)V
+    invoke-virtual {p0, v0}, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;->a(Lcz/msebera/android/httpclient/HttpEntity;)V
 
     .line 66
     return-void
 .end method
 
-.method static synthetic access$002(Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;Z)Z
+.method static synthetic a(Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;Z)Z
     .registers 2
-    .param p0, "x0"    # Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;
-    .param p1, "x1"    # Z
 
     .prologue
     .line 56
-    iput-boolean p1, p0, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;->consumed:Z
+    iput-boolean p1, p0, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;->b:Z
 
     return p1
 .end method
 
 
 # virtual methods
-.method public expectContinue()Z
-    .registers 4
+.method public a(Lcz/msebera/android/httpclient/HttpEntity;)V
+    .registers 3
 
     .prologue
-    .line 78
-    const-string/jumbo v1, "Expect"
+    .line 73
+    if-eqz p1, :cond_d
 
-    invoke-virtual {p0, v1}, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;->getFirstHeader(Ljava/lang/String;)Lcz/msebera/android/httpclient/Header;
+    new-instance v0, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper$EntityWrapper;
 
-    move-result-object v0
+    invoke-direct {v0, p0, p1}, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper$EntityWrapper;-><init>(Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;Lcz/msebera/android/httpclient/HttpEntity;)V
 
-    .line 79
-    .local v0, "expect":Lcz/msebera/android/httpclient/Header;
-    if-eqz v0, :cond_18
+    :goto_7
+    iput-object v0, p0, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;->a:Lcz/msebera/android/httpclient/HttpEntity;
 
-    const-string/jumbo v1, "100-continue"
+    .line 74
+    const/4 v0, 0x0
 
-    invoke-interface {v0}, Lcz/msebera/android/httpclient/Header;->getValue()Ljava/lang/String;
+    iput-boolean v0, p0, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;->b:Z
 
-    move-result-object v2
+    .line 75
+    return-void
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    .line 73
+    :cond_d
+    const/4 v0, 0x0
 
-    move-result v1
-
-    if-eqz v1, :cond_18
-
-    const/4 v1, 0x1
-
-    :goto_17
-    return v1
-
-    :cond_18
-    const/4 v1, 0x0
-
-    goto :goto_17
+    goto :goto_7
 .end method
 
-.method public getEntity()Lcz/msebera/android/httpclient/HttpEntity;
-    .registers 2
-
-    .prologue
-    .line 69
-    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;->entity:Lcz/msebera/android/httpclient/HttpEntity;
-
-    return-object v0
-.end method
-
-.method public isRepeatable()Z
+.method public a()Z
     .registers 2
 
     .prologue
     .line 84
-    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;->entity:Lcz/msebera/android/httpclient/HttpEntity;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;->a:Lcz/msebera/android/httpclient/HttpEntity;
 
     if-eqz v0, :cond_10
 
-    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;->entity:Lcz/msebera/android/httpclient/HttpEntity;
+    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;->a:Lcz/msebera/android/httpclient/HttpEntity;
 
     invoke-interface {v0}, Lcz/msebera/android/httpclient/HttpEntity;->isRepeatable()Z
 
@@ -130,7 +94,7 @@
 
     if-nez v0, :cond_10
 
-    iget-boolean v0, p0, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;->consumed:Z
+    iget-boolean v0, p0, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;->b:Z
 
     if-nez v0, :cond_12
 
@@ -146,32 +110,49 @@
     goto :goto_11
 .end method
 
-.method public setEntity(Lcz/msebera/android/httpclient/HttpEntity;)V
+.method public expectContinue()Z
     .registers 3
-    .param p1, "entity"    # Lcz/msebera/android/httpclient/HttpEntity;
 
     .prologue
-    .line 73
-    if-eqz p1, :cond_d
+    .line 78
+    const-string/jumbo v0, "Expect"
 
-    new-instance v0, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper$EntityWrapper;
+    invoke-virtual {p0, v0}, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;->getFirstHeader(Ljava/lang/String;)Lcz/msebera/android/httpclient/Header;
 
-    invoke-direct {v0, p0, p1}, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper$EntityWrapper;-><init>(Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;Lcz/msebera/android/httpclient/HttpEntity;)V
+    move-result-object v0
 
-    :goto_7
-    iput-object v0, p0, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;->entity:Lcz/msebera/android/httpclient/HttpEntity;
+    .line 79
+    if-eqz v0, :cond_18
 
-    .line 74
+    const-string/jumbo v1, "100-continue"
+
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/Header;->d()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_18
+
+    const/4 v0, 0x1
+
+    :goto_17
+    return v0
+
+    :cond_18
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;->consumed:Z
+    goto :goto_17
+.end method
 
-    .line 75
-    return-void
+.method public getEntity()Lcz/msebera/android/httpclient/HttpEntity;
+    .registers 2
 
-    .line 73
-    :cond_d
-    const/4 v0, 0x0
+    .prologue
+    .line 69
+    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/client/EntityEnclosingRequestWrapper;->a:Lcz/msebera/android/httpclient/HttpEntity;
 
-    goto :goto_7
+    return-object v0
 .end method

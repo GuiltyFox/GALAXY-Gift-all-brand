@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/util/Pools;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "SimplePool"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -29,19 +20,17 @@
 
 
 # instance fields
-.field private final mPool:[Ljava/lang/Object;
+.field private final a:[Ljava/lang/Object;
 
-.field private mPoolSize:I
+.field private b:I
 
 
 # direct methods
 .method public constructor <init>(I)V
     .registers 4
-    .param p1, "maxPoolSize"    # I
 
     .prologue
     .line 90
-    .local p0, "this":Landroid/support/v4/util/Pools$SimplePool;, "Landroid/support/v4/util/Pools$SimplePool<TT;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 91
@@ -60,14 +49,14 @@
     :cond_e
     new-array v0, p1, [Ljava/lang/Object;
 
-    iput-object v0, p0, Landroid/support/v4/util/Pools$SimplePool;->mPool:[Ljava/lang/Object;
+    iput-object v0, p0, Landroid/support/v4/util/Pools$SimplePool;->a:[Ljava/lang/Object;
 
     .line 95
     return-void
 .end method
 
-.method private isInPool(Ljava/lang/Object;)Z
-    .registers 4
+.method private b(Ljava/lang/Object;)Z
+    .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)Z"
@@ -75,47 +64,40 @@
     .end annotation
 
     .prologue
+    const/4 v1, 0x0
+
     .line 124
-    .local p0, "this":Landroid/support/v4/util/Pools$SimplePool;, "Landroid/support/v4/util/Pools$SimplePool<TT;>;"
-    .local p1, "instance":Ljava/lang/Object;, "TT;"
-    const/4 v0, 0x0
+    move v0, v1
 
-    .local v0, "i":I
-    :goto_1
-    iget v1, p0, Landroid/support/v4/util/Pools$SimplePool;->mPoolSize:I
+    :goto_2
+    iget v2, p0, Landroid/support/v4/util/Pools$SimplePool;->b:I
 
-    if-ge v0, v1, :cond_10
+    if-ge v0, v2, :cond_d
 
     .line 125
-    iget-object v1, p0, Landroid/support/v4/util/Pools$SimplePool;->mPool:[Ljava/lang/Object;
+    iget-object v2, p0, Landroid/support/v4/util/Pools$SimplePool;->a:[Ljava/lang/Object;
 
-    aget-object v1, v1, v0
+    aget-object v2, v2, v0
 
-    if-ne v1, p1, :cond_d
+    if-ne v2, p1, :cond_e
 
     .line 126
     const/4 v1, 0x1
 
     .line 129
-    :goto_c
+    :cond_d
     return v1
 
     .line 124
-    :cond_d
+    :cond_e
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_1
-
-    .line 129
-    :cond_10
-    const/4 v1, 0x0
-
-    goto :goto_c
+    goto :goto_2
 .end method
 
 
 # virtual methods
-.method public acquire()Ljava/lang/Object;
+.method public a()Ljava/lang/Object;
     .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -124,51 +106,46 @@
     .end annotation
 
     .prologue
-    .local p0, "this":Landroid/support/v4/util/Pools$SimplePool;, "Landroid/support/v4/util/Pools$SimplePool<TT;>;"
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 100
-    iget v3, p0, Landroid/support/v4/util/Pools$SimplePool;->mPoolSize:I
+    iget v0, p0, Landroid/support/v4/util/Pools$SimplePool;->b:I
 
-    if-lez v3, :cond_18
+    if-lez v0, :cond_18
 
     .line 101
-    iget v3, p0, Landroid/support/v4/util/Pools$SimplePool;->mPoolSize:I
+    iget v0, p0, Landroid/support/v4/util/Pools$SimplePool;->b:I
 
-    add-int/lit8 v1, v3, -0x1
+    add-int/lit8 v2, v0, -0x1
 
     .line 102
-    .local v1, "lastPooledIndex":I
-    iget-object v3, p0, Landroid/support/v4/util/Pools$SimplePool;->mPool:[Ljava/lang/Object;
+    iget-object v0, p0, Landroid/support/v4/util/Pools$SimplePool;->a:[Ljava/lang/Object;
 
-    aget-object v0, v3, v1
+    aget-object v0, v0, v2
 
     .line 103
-    .local v0, "instance":Ljava/lang/Object;, "TT;"
-    iget-object v3, p0, Landroid/support/v4/util/Pools$SimplePool;->mPool:[Ljava/lang/Object;
+    iget-object v3, p0, Landroid/support/v4/util/Pools$SimplePool;->a:[Ljava/lang/Object;
 
-    aput-object v2, v3, v1
+    aput-object v1, v3, v2
 
     .line 104
-    iget v2, p0, Landroid/support/v4/util/Pools$SimplePool;->mPoolSize:I
+    iget v1, p0, Landroid/support/v4/util/Pools$SimplePool;->b:I
 
-    add-int/lit8 v2, v2, -0x1
+    add-int/lit8 v1, v1, -0x1
 
-    iput v2, p0, Landroid/support/v4/util/Pools$SimplePool;->mPoolSize:I
+    iput v1, p0, Landroid/support/v4/util/Pools$SimplePool;->b:I
 
     .line 107
-    .end local v0    # "instance":Ljava/lang/Object;, "TT;"
-    .end local v1    # "lastPooledIndex":I
     :goto_17
     return-object v0
 
     :cond_18
-    move-object v0, v2
+    move-object v0, v1
 
     goto :goto_17
 .end method
 
-.method public release(Ljava/lang/Object;)Z
+.method public a(Ljava/lang/Object;)Z
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -178,9 +155,7 @@
 
     .prologue
     .line 112
-    .local p0, "this":Landroid/support/v4/util/Pools$SimplePool;, "Landroid/support/v4/util/Pools$SimplePool<TT;>;"
-    .local p1, "instance":Ljava/lang/Object;, "TT;"
-    invoke-direct {p0, p1}, Landroid/support/v4/util/Pools$SimplePool;->isInPool(Ljava/lang/Object;)Z
+    invoke-direct {p0, p1}, Landroid/support/v4/util/Pools$SimplePool;->b(Ljava/lang/Object;)Z
 
     move-result v0
 
@@ -197,27 +172,27 @@
 
     .line 115
     :cond_f
-    iget v0, p0, Landroid/support/v4/util/Pools$SimplePool;->mPoolSize:I
+    iget v0, p0, Landroid/support/v4/util/Pools$SimplePool;->b:I
 
-    iget-object v1, p0, Landroid/support/v4/util/Pools$SimplePool;->mPool:[Ljava/lang/Object;
+    iget-object v1, p0, Landroid/support/v4/util/Pools$SimplePool;->a:[Ljava/lang/Object;
 
     array-length v1, v1
 
     if-ge v0, v1, :cond_24
 
     .line 116
-    iget-object v0, p0, Landroid/support/v4/util/Pools$SimplePool;->mPool:[Ljava/lang/Object;
+    iget-object v0, p0, Landroid/support/v4/util/Pools$SimplePool;->a:[Ljava/lang/Object;
 
-    iget v1, p0, Landroid/support/v4/util/Pools$SimplePool;->mPoolSize:I
+    iget v1, p0, Landroid/support/v4/util/Pools$SimplePool;->b:I
 
     aput-object p1, v0, v1
 
     .line 117
-    iget v0, p0, Landroid/support/v4/util/Pools$SimplePool;->mPoolSize:I
+    iget v0, p0, Landroid/support/v4/util/Pools$SimplePool;->b:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Landroid/support/v4/util/Pools$SimplePool;->mPoolSize:I
+    iput v0, p0, Landroid/support/v4/util/Pools$SimplePool;->b:I
 
     .line 118
     const/4 v0, 0x1

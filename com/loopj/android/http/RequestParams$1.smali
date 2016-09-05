@@ -8,11 +8,6 @@
     value = Lcom/loopj/android/http/RequestParams;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/util/HashMap",

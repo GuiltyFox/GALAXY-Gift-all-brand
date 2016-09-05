@@ -23,7 +23,6 @@
 
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 2
-    .param p1, "encoding"    # Ljava/lang/String;
 
     .prologue
     .line 73
@@ -37,44 +36,39 @@
 .end method
 
 .method public static getResponseString([BLjava/lang/String;)Ljava/lang/String;
-    .registers 8
-    .param p0, "stringBytes"    # [B
-    .param p1, "charset"    # Ljava/lang/String;
+    .registers 7
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
     .line 86
     if-nez p0, :cond_15
 
-    move-object v1, v2
+    move-object v1, v0
 
     .line 87
-    .local v1, "toReturn":Ljava/lang/String;
     :goto_4
-    if-eqz v1, :cond_14
+    if-eqz v1, :cond_28
 
     :try_start_6
-    const-string/jumbo v3, "\ufeff"
+    const-string/jumbo v2, "\ufeff"
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_14
+    if-eqz v2, :cond_28
 
     .line 88
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    invoke-virtual {v1, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 93
-    .end local v1    # "toReturn":Ljava/lang/String;
-    :cond_14
     :goto_14
-    return-object v1
+    return-object v0
 
     .line 86
     :cond_15
@@ -88,21 +82,23 @@
 
     .line 91
     :catch_1b
-    move-exception v0
+    move-exception v1
 
     .line 92
-    .local v0, "e":Ljava/io/UnsupportedEncodingException;
-    sget-object v3, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
+    sget-object v2, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
 
-    const-string/jumbo v4, "TextHttpRH"
+    const-string/jumbo v3, "TextHttpRH"
 
-    const-string/jumbo v5, "Encoding response into string failed"
+    const-string/jumbo v4, "Encoding response into string failed"
 
-    invoke-interface {v3, v4, v5, v0}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-interface {v2, v3, v4, v1}, Lcom/loopj/android/http/LogInterface;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    move-object v1, v2
+    goto :goto_14
 
-    .line 93
+    :cond_28
+    move-object v0, v1
+
+    .line 90
     goto :goto_14
 .end method
 
@@ -113,10 +109,6 @@
 
 .method public onFailure(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
     .registers 6
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBytes"    # [B
-    .param p4, "throwable"    # Ljava/lang/Throwable;
 
     .prologue
     .line 123
@@ -139,9 +131,6 @@
 
 .method public onSuccess(I[Lcz/msebera/android/httpclient/Header;[B)V
     .registers 5
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBytes"    # [B
 
     .prologue
     .line 118

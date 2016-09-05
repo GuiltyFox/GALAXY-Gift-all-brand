@@ -7,35 +7,55 @@
 
 
 # instance fields
-.field private mView:Lit/sephiroth/android/library/widget/AbsHListView;
+.field private a:Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;
 
-.field private mWrapped:Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;
-
-
-# direct methods
-.method public constructor <init>(Lit/sephiroth/android/library/widget/AbsHListView;)V
-    .registers 2
-    .param p1, "view"    # Lit/sephiroth/android/library/widget/AbsHListView;
-
-    .prologue
-    .line 15
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 16
-    iput-object p1, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->mView:Lit/sephiroth/android/library/widget/AbsHListView;
-
-    .line 17
-    return-void
-.end method
+.field private b:Lit/sephiroth/android/library/widget/AbsHListView;
 
 
 # virtual methods
-.method public hasWrappedCallback()Z
+.method public a(Landroid/view/ActionMode;IJZ)V
+    .registers 13
+    .annotation build Landroid/annotation/TargetApi;
+        value = 0xb
+    .end annotation
+
+    .prologue
+    .line 66
+    iget-object v1, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->a:Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;
+
+    move-object v2, p1
+
+    move v3, p2
+
+    move-wide v4, p3
+
+    move v6, p5
+
+    invoke-interface/range {v1 .. v6}, Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;->a(Landroid/view/ActionMode;IJZ)V
+
+    .line 69
+    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->b:Lit/sephiroth/android/library/widget/AbsHListView;
+
+    invoke-virtual {v0}, Lit/sephiroth/android/library/widget/AbsHListView;->getCheckedItemCount()I
+
+    move-result v0
+
+    if-nez v0, :cond_14
+
+    .line 70
+    invoke-virtual {p1}, Landroid/view/ActionMode;->finish()V
+
+    .line 72
+    :cond_14
+    return-void
+.end method
+
+.method public a()Z
     .registers 2
 
     .prologue
     .line 24
-    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->mWrapped:Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;
+    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->a:Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;
 
     if-eqz v0, :cond_6
 
@@ -52,15 +72,13 @@
 
 .method public onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
     .registers 4
-    .param p1, "mode"    # Landroid/view/ActionMode;
-    .param p2, "item"    # Landroid/view/MenuItem;
     .annotation build Landroid/annotation/TargetApi;
         value = 0xb
     .end annotation
 
     .prologue
     .line 46
-    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->mWrapped:Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;
+    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->a:Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;
 
     invoke-interface {v0, p1, p2}, Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;->onActionItemClicked(Landroid/view/ActionMode;Landroid/view/MenuItem;)Z
 
@@ -71,8 +89,6 @@
 
 .method public onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
     .registers 5
-    .param p1, "mode"    # Landroid/view/ActionMode;
-    .param p2, "menu"    # Landroid/view/Menu;
     .annotation build Landroid/annotation/TargetApi;
         value = 0xb
     .end annotation
@@ -81,7 +97,7 @@
     const/4 v0, 0x0
 
     .line 30
-    iget-object v1, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->mWrapped:Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;
+    iget-object v1, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->a:Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;
 
     invoke-interface {v1, p1, p2}, Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;->onCreateActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
 
@@ -90,7 +106,7 @@
     if-eqz v1, :cond_f
 
     .line 31
-    iget-object v1, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->mView:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v1, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->b:Lit/sephiroth/android/library/widget/AbsHListView;
 
     invoke-virtual {v1, v0}, Lit/sephiroth/android/library/widget/AbsHListView;->setLongClickable(Z)V
 
@@ -104,7 +120,6 @@
 
 .method public onDestroyActionMode(Landroid/view/ActionMode;)V
     .registers 5
-    .param p1, "mode"    # Landroid/view/ActionMode;
     .annotation build Landroid/annotation/TargetApi;
         value = 0xb
     .end annotation
@@ -113,39 +128,39 @@
     const/4 v2, 0x1
 
     .line 52
-    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->mWrapped:Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;
+    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->a:Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;
 
     invoke-interface {v0, p1}, Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;->onDestroyActionMode(Landroid/view/ActionMode;)V
 
     .line 53
-    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->mView:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->b:Lit/sephiroth/android/library/widget/AbsHListView;
 
     const/4 v1, 0x0
 
-    iput-object v1, v0, Lit/sephiroth/android/library/widget/AbsHListView;->mChoiceActionMode:Ljava/lang/Object;
+    iput-object v1, v0, Lit/sephiroth/android/library/widget/AbsHListView;->c:Ljava/lang/Object;
 
     .line 56
-    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->mView:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->b:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    invoke-virtual {v0}, Lit/sephiroth/android/library/widget/AbsHListView;->clearChoices()V
+    invoke-virtual {v0}, Lit/sephiroth/android/library/widget/AbsHListView;->a()V
 
     .line 57
-    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->mView:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->b:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iput-boolean v2, v0, Lit/sephiroth/android/library/widget/AbsHListView;->mDataChanged:Z
+    iput-boolean v2, v0, Lit/sephiroth/android/library/widget/AbsHListView;->aj:Z
 
     .line 58
-    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->mView:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->b:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    invoke-virtual {v0}, Lit/sephiroth/android/library/widget/AbsHListView;->rememberSyncState()V
+    invoke-virtual {v0}, Lit/sephiroth/android/library/widget/AbsHListView;->y()V
 
     .line 59
-    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->mView:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->b:Lit/sephiroth/android/library/widget/AbsHListView;
 
     invoke-virtual {v0}, Lit/sephiroth/android/library/widget/AbsHListView;->requestLayout()V
 
     .line 60
-    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->mView:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->b:Lit/sephiroth/android/library/widget/AbsHListView;
 
     invoke-virtual {v0, v2}, Lit/sephiroth/android/library/widget/AbsHListView;->setLongClickable(Z)V
 
@@ -153,74 +168,19 @@
     return-void
 .end method
 
-.method public onItemCheckedStateChanged(Landroid/view/ActionMode;IJZ)V
-    .registers 13
-    .param p1, "mode"    # Landroid/view/ActionMode;
-    .param p2, "position"    # I
-    .param p3, "id"    # J
-    .param p5, "checked"    # Z
-    .annotation build Landroid/annotation/TargetApi;
-        value = 0xb
-    .end annotation
-
-    .prologue
-    .line 66
-    iget-object v1, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->mWrapped:Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;
-
-    move-object v2, p1
-
-    move v3, p2
-
-    move-wide v4, p3
-
-    move v6, p5
-
-    invoke-interface/range {v1 .. v6}, Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;->onItemCheckedStateChanged(Landroid/view/ActionMode;IJZ)V
-
-    .line 69
-    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->mView:Lit/sephiroth/android/library/widget/AbsHListView;
-
-    invoke-virtual {v0}, Lit/sephiroth/android/library/widget/AbsHListView;->getCheckedItemCount()I
-
-    move-result v0
-
-    if-nez v0, :cond_14
-
-    .line 70
-    invoke-virtual {p1}, Landroid/view/ActionMode;->finish()V
-
-    .line 72
-    :cond_14
-    return-void
-.end method
-
 .method public onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
     .registers 4
-    .param p1, "mode"    # Landroid/view/ActionMode;
-    .param p2, "menu"    # Landroid/view/Menu;
     .annotation build Landroid/annotation/TargetApi;
         value = 0xb
     .end annotation
 
     .prologue
     .line 40
-    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->mWrapped:Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;
+    iget-object v0, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->a:Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;
 
     invoke-interface {v0, p1, p2}, Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;->onPrepareActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)Z
 
     move-result v0
 
     return v0
-.end method
-
-.method public setWrapped(Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;)V
-    .registers 2
-    .param p1, "wrapped"    # Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;
-
-    .prologue
-    .line 20
-    iput-object p1, p0, Lit/sephiroth/android/library/util/v11/MultiChoiceModeWrapper;->mWrapped:Lit/sephiroth/android/library/util/v11/MultiChoiceModeListener;
-
-    .line 21
-    return-void
 .end method

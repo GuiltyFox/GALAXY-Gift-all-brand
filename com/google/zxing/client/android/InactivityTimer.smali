@@ -1,43 +1,24 @@
-.class final Lcom/google/zxing/client/android/InactivityTimer;
+.class public final Lcom/google/zxing/client/android/InactivityTimer;
 .super Ljava/lang/Object;
 .source "InactivityTimer.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/google/zxing/client/android/InactivityTimer$1;,
-        Lcom/google/zxing/client/android/InactivityTimer$InactivityAsyncTask;,
-        Lcom/google/zxing/client/android/InactivityTimer$PowerStatusReceiver;
-    }
-.end annotation
-
-
 # static fields
-.field private static final INACTIVITY_DELAY_MS:J = 0x493e0L
-
-.field private static final TAG:Ljava/lang/String;
+.field private static final a:Ljava/lang/String;
 
 
 # instance fields
-.field private final activity:Landroid/app/Activity;
+.field private final b:Landroid/content/Context;
 
-.field private inactivityTask:Landroid/os/AsyncTask;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/AsyncTask",
-            "<",
-            "Ljava/lang/Object;",
-            "Ljava/lang/Object;",
-            "Ljava/lang/Object;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field private final c:Landroid/content/BroadcastReceiver;
 
-.field private final powerStatusReceiver:Landroid/content/BroadcastReceiver;
+.field private d:Z
 
-.field private registered:Z
+.field private e:Landroid/os/Handler;
+
+.field private f:Ljava/lang/Runnable;
+
+.field private g:Z
 
 
 # direct methods
@@ -45,265 +26,135 @@
     .registers 1
 
     .prologue
-    .line 33
+    .line 31
     const-class v0, Lcom/google/zxing/client/android/InactivityTimer;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/zxing/client/android/InactivityTimer;->TAG:Ljava/lang/String;
+    sput-object v0, Lcom/google/zxing/client/android/InactivityTimer;->a:Ljava/lang/String;
 
     return-void
 .end method
 
-.method constructor <init>(Landroid/app/Activity;)V
-    .registers 4
-    .param p1, "activity"    # Landroid/app/Activity;
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/Runnable;)V
+    .registers 5
 
     .prologue
     .line 42
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 37
+    const/4 v0, 0x0
+
+    iput-boolean v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->d:Z
+
     .line 43
-    iput-object p1, p0, Lcom/google/zxing/client/android/InactivityTimer;->activity:Landroid/app/Activity;
+    iput-object p1, p0, Lcom/google/zxing/client/android/InactivityTimer;->b:Landroid/content/Context;
 
     .line 44
+    iput-object p2, p0, Lcom/google/zxing/client/android/InactivityTimer;->f:Ljava/lang/Runnable;
+
+    .line 46
     new-instance v0, Lcom/google/zxing/client/android/InactivityTimer$PowerStatusReceiver;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p0, v1}, Lcom/google/zxing/client/android/InactivityTimer$PowerStatusReceiver;-><init>(Lcom/google/zxing/client/android/InactivityTimer;Lcom/google/zxing/client/android/InactivityTimer$1;)V
 
-    iput-object v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->powerStatusReceiver:Landroid/content/BroadcastReceiver;
-
-    .line 45
-    const/4 v0, 0x0
-
-    iput-boolean v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->registered:Z
-
-    .line 46
-    invoke-virtual {p0}, Lcom/google/zxing/client/android/InactivityTimer;->onActivity()V
+    iput-object v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->c:Landroid/content/BroadcastReceiver;
 
     .line 47
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
+
+    iput-object v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->e:Landroid/os/Handler;
+
+    .line 48
     return-void
 .end method
 
-.method static synthetic access$200(Lcom/google/zxing/client/android/InactivityTimer;)V
-    .registers 1
-    .param p0, "x0"    # Lcom/google/zxing/client/android/InactivityTimer;
-
-    .prologue
-    .line 31
-    invoke-direct {p0}, Lcom/google/zxing/client/android/InactivityTimer;->cancel()V
-
-    return-void
-.end method
-
-.method static synthetic access$300()Ljava/lang/String;
-    .registers 1
-
-    .prologue
-    .line 31
-    sget-object v0, Lcom/google/zxing/client/android/InactivityTimer;->TAG:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method static synthetic access$400(Lcom/google/zxing/client/android/InactivityTimer;)Landroid/app/Activity;
+.method static synthetic a(Lcom/google/zxing/client/android/InactivityTimer;)Landroid/os/Handler;
     .registers 2
-    .param p0, "x0"    # Lcom/google/zxing/client/android/InactivityTimer;
 
     .prologue
-    .line 31
-    iget-object v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->activity:Landroid/app/Activity;
+    .line 29
+    iget-object v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->e:Landroid/os/Handler;
 
     return-object v0
 .end method
 
-.method private declared-synchronized cancel()V
+.method static synthetic a(Lcom/google/zxing/client/android/InactivityTimer;Z)V
+    .registers 2
+
+    .prologue
+    .line 29
+    invoke-direct {p0, p1}, Lcom/google/zxing/client/android/InactivityTimer;->a(Z)V
+
+    return-void
+.end method
+
+.method private a(Z)V
     .registers 3
 
     .prologue
-    .line 76
-    monitor-enter p0
+    .line 95
+    iput-boolean p1, p0, Lcom/google/zxing/client/android/InactivityTimer;->g:Z
 
-    :try_start_1
-    iget-object v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->inactivityTask:Landroid/os/AsyncTask;
+    .line 98
+    iget-boolean v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->d:Z
 
+    if-eqz v0, :cond_9
+
+    .line 100
+    invoke-virtual {p0}, Lcom/google/zxing/client/android/InactivityTimer;->a()V
+
+    .line 102
+    :cond_9
+    return-void
+.end method
+
+.method private d()V
+    .registers 3
+
+    .prologue
     .line 77
-    .local v0, "task":Landroid/os/AsyncTask;, "Landroid/os/AsyncTask<***>;"
-    if-eqz v0, :cond_c
+    iget-boolean v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->d:Z
+
+    if-eqz v0, :cond_e
 
     .line 78
-    const/4 v1, 0x1
+    iget-object v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->b:Landroid/content/Context;
 
-    invoke-virtual {v0, v1}, Landroid/os/AsyncTask;->cancel(Z)Z
+    iget-object v1, p0, Lcom/google/zxing/client/android/InactivityTimer;->c:Landroid/content/BroadcastReceiver;
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
 
     .line 79
-    const/4 v1, 0x0
-
-    iput-object v1, p0, Lcom/google/zxing/client/android/InactivityTimer;->inactivityTask:Landroid/os/AsyncTask;
-    :try_end_c
-    .catchall {:try_start_1 .. :try_end_c} :catchall_e
-
-    .line 81
-    :cond_c
-    monitor-exit p0
-
-    return-void
-
-    .line 76
-    .end local v0    # "task":Landroid/os/AsyncTask;, "Landroid/os/AsyncTask<***>;"
-    :catchall_e
-    move-exception v1
-
-    monitor-exit p0
-
-    throw v1
-.end method
-
-
-# virtual methods
-.method declared-synchronized onActivity()V
-    .registers 4
-
-    .prologue
-    .line 50
-    monitor-enter p0
-
-    :try_start_1
-    invoke-direct {p0}, Lcom/google/zxing/client/android/InactivityTimer;->cancel()V
-
-    .line 51
-    new-instance v0, Lcom/google/zxing/client/android/InactivityTimer$InactivityAsyncTask;
-
-    const/4 v1, 0x0
-
-    invoke-direct {v0, p0, v1}, Lcom/google/zxing/client/android/InactivityTimer$InactivityAsyncTask;-><init>(Lcom/google/zxing/client/android/InactivityTimer;Lcom/google/zxing/client/android/InactivityTimer$1;)V
-
-    iput-object v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->inactivityTask:Landroid/os/AsyncTask;
-
-    .line 52
-    iget-object v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->inactivityTask:Landroid/os/AsyncTask;
-
-    sget-object v1, Landroid/os/AsyncTask;->THREAD_POOL_EXECUTOR:Ljava/util/concurrent/Executor;
-
-    const/4 v2, 0x0
-
-    new-array v2, v2, [Ljava/lang/Object;
-
-    invoke-virtual {v0, v1, v2}, Landroid/os/AsyncTask;->executeOnExecutor(Ljava/util/concurrent/Executor;[Ljava/lang/Object;)Landroid/os/AsyncTask;
-    :try_end_16
-    .catchall {:try_start_1 .. :try_end_16} :catchall_18
-
-    .line 53
-    monitor-exit p0
-
-    return-void
-
-    .line 50
-    :catchall_18
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
-.end method
-
-.method public declared-synchronized onPause()V
-    .registers 3
-
-    .prologue
-    .line 56
-    monitor-enter p0
-
-    :try_start_1
-    invoke-direct {p0}, Lcom/google/zxing/client/android/InactivityTimer;->cancel()V
-
-    .line 57
-    iget-boolean v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->registered:Z
-
-    if-eqz v0, :cond_14
-
-    .line 58
-    iget-object v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->activity:Landroid/app/Activity;
-
-    iget-object v1, p0, Lcom/google/zxing/client/android/InactivityTimer;->powerStatusReceiver:Landroid/content/BroadcastReceiver;
-
-    invoke-virtual {v0, v1}, Landroid/app/Activity;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
-
-    .line 59
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->registered:Z
-    :try_end_12
-    .catchall {:try_start_1 .. :try_end_12} :catchall_1d
+    iput-boolean v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->d:Z
 
-    .line 63
-    :goto_12
-    monitor-exit p0
-
+    .line 81
+    :cond_e
     return-void
-
-    .line 61
-    :cond_14
-    :try_start_14
-    sget-object v0, Lcom/google/zxing/client/android/InactivityTimer;->TAG:Ljava/lang/String;
-
-    const-string/jumbo v1, "PowerStatusReceiver was never registered?"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-    :try_end_1c
-    .catchall {:try_start_14 .. :try_end_1c} :catchall_1d
-
-    goto :goto_12
-
-    .line 56
-    :catchall_1d
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
 .end method
 
-.method public declared-synchronized onResume()V
+.method private e()V
     .registers 5
 
     .prologue
-    .line 66
-    monitor-enter p0
+    .line 84
+    iget-boolean v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->d:Z
 
-    :try_start_1
-    iget-boolean v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->registered:Z
+    if-nez v0, :cond_16
 
-    if-eqz v0, :cond_12
+    .line 85
+    iget-object v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->b:Landroid/content/Context;
 
-    .line 67
-    sget-object v0, Lcom/google/zxing/client/android/InactivityTimer;->TAG:Ljava/lang/String;
-
-    const-string/jumbo v1, "PowerStatusReceiver was already registered?"
-
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 72
-    :goto_d
-    invoke-virtual {p0}, Lcom/google/zxing/client/android/InactivityTimer;->onActivity()V
-    :try_end_10
-    .catchall {:try_start_1 .. :try_end_10} :catchall_25
-
-    .line 73
-    monitor-exit p0
-
-    return-void
-
-    .line 69
-    :cond_12
-    :try_start_12
-    iget-object v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->activity:Landroid/app/Activity;
-
-    iget-object v1, p0, Lcom/google/zxing/client/android/InactivityTimer;->powerStatusReceiver:Landroid/content/BroadcastReceiver;
+    iget-object v1, p0, Lcom/google/zxing/client/android/InactivityTimer;->c:Landroid/content/BroadcastReceiver;
 
     new-instance v2, Landroid/content/IntentFilter;
 
@@ -311,33 +162,85 @@
 
     invoke-direct {v2, v3}, Landroid/content/IntentFilter;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
 
-    .line 70
+    .line 86
     const/4 v0, 0x1
 
-    iput-boolean v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->registered:Z
-    :try_end_24
-    .catchall {:try_start_12 .. :try_end_24} :catchall_25
+    iput-boolean v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->d:Z
 
-    goto :goto_d
-
-    .line 66
-    :catchall_25
-    move-exception v0
-
-    monitor-exit p0
-
-    throw v0
+    .line 88
+    :cond_16
+    return-void
 .end method
 
-.method shutdown()V
+.method private f()V
+    .registers 3
+
+    .prologue
+    .line 91
+    iget-object v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->e:Landroid/os/Handler;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
+
+    .line 92
+    return-void
+.end method
+
+
+# virtual methods
+.method public a()V
+    .registers 5
+
+    .prologue
+    .line 54
+    invoke-direct {p0}, Lcom/google/zxing/client/android/InactivityTimer;->f()V
+
+    .line 55
+    iget-boolean v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->g:Z
+
+    if-eqz v0, :cond_11
+
+    .line 56
+    iget-object v0, p0, Lcom/google/zxing/client/android/InactivityTimer;->e:Landroid/os/Handler;
+
+    iget-object v1, p0, Lcom/google/zxing/client/android/InactivityTimer;->f:Ljava/lang/Runnable;
+
+    const-wide/32 v2, 0x493e0
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 58
+    :cond_11
+    return-void
+.end method
+
+.method public b()V
     .registers 1
 
     .prologue
-    .line 84
-    invoke-direct {p0}, Lcom/google/zxing/client/android/InactivityTimer;->cancel()V
+    .line 64
+    invoke-direct {p0}, Lcom/google/zxing/client/android/InactivityTimer;->e()V
 
-    .line 85
+    .line 65
+    invoke-virtual {p0}, Lcom/google/zxing/client/android/InactivityTimer;->a()V
+
+    .line 66
+    return-void
+.end method
+
+.method public c()V
+    .registers 1
+
+    .prologue
+    .line 72
+    invoke-direct {p0}, Lcom/google/zxing/client/android/InactivityTimer;->f()V
+
+    .line 73
+    invoke-direct {p0}, Lcom/google/zxing/client/android/InactivityTimer;->d()V
+
+    .line 74
     return-void
 .end method

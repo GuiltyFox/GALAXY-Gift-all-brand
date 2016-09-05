@@ -6,7 +6,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/JsonMappingException;)V
     .registers 2
-    .param p1, "cause"    # Lcom/fasterxml/jackson/databind/JsonMappingException;
 
     .prologue
     .line 11
@@ -18,7 +17,6 @@
 
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 2
-    .param p1, "message"    # Ljava/lang/String;
 
     .prologue
     .line 15
@@ -30,8 +28,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JsonMappingException;)V
     .registers 3
-    .param p1, "message"    # Ljava/lang/String;
-    .param p2, "cause"    # Lcom/fasterxml/jackson/databind/JsonMappingException;
 
     .prologue
     .line 19

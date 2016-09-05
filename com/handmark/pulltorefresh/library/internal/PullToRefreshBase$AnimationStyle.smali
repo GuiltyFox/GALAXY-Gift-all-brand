@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x4019
-    name = "AnimationStyle"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum",
@@ -24,11 +15,11 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+.field public static final enum a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
-.field public static final enum FLIP:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+.field public static final enum b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
-.field public static final enum ROTATE:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+.field private static final synthetic c:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
 
 # direct methods
@@ -47,7 +38,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->ROTATE:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     .line 1297
     new-instance v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
@@ -56,22 +47,22 @@
 
     invoke-direct {v0, v1, v3}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->FLIP:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     .line 1286
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->ROTATE:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->FLIP:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    sget-object v1, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     aput-object v1, v0, v3
 
-    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->$VALUES:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    sput-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->c:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     return-void
 .end method
@@ -91,33 +82,32 @@
     return-void
 .end method
 
-.method static getDefault()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+.method static a()Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
     .registers 1
 
     .prologue
     .line 1300
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->ROTATE:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     return-object v0
 .end method
 
-.method static mapIntToValue(I)Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+.method static a(I)Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
     .registers 2
-    .param p0, "modeInt"    # I
 
     .prologue
     .line 1312
     packed-switch p0, :pswitch_data_a
 
     .line 1315
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->ROTATE:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->a:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     .line 1317
     :goto_5
     return-object v0
 
     :pswitch_6
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->FLIP:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->b:Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     goto :goto_5
 
@@ -132,7 +122,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 1286
@@ -152,7 +141,7 @@
 
     .prologue
     .line 1286
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->$VALUES:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->c:[Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;
 
     invoke-virtual {v0}, [Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->clone()Ljava/lang/Object;
 
@@ -165,16 +154,12 @@
 
 
 # virtual methods
-.method createLoadingLayout(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;Landroid/content/res/TypedArray;)Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
+.method a(Landroid/content/Context;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;Landroid/content/res/TypedArray;)Lcom/handmark/pulltorefresh/library/internal/LoadingLayout;
     .registers 7
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "mode"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Mode;
-    .param p3, "scrollDirection"    # Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$Orientation;
-    .param p4, "attrs"    # Landroid/content/res/TypedArray;
 
     .prologue
     .line 1322
-    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->$SwitchMap$com$handmark$pulltorefresh$library$internal$PullToRefreshBase$AnimationStyle:[I
+    sget-object v0, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$4;->d:[I
 
     invoke-virtual {p0}, Lcom/handmark/pulltorefresh/library/internal/PullToRefreshBase$AnimationStyle;->ordinal()I
 

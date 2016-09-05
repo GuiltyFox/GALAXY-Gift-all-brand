@@ -4,7 +4,7 @@
 
 
 # static fields
-.field private static final DEFAULT_INSTANCE:Lrx/plugins/RxJavaSchedulersHook;
+.field private static final a:Lrx/plugins/RxJavaSchedulersHook;
 
 
 # direct methods
@@ -17,7 +17,7 @@
 
     invoke-direct {v0}, Lrx/plugins/RxJavaSchedulersHook;-><init>()V
 
-    sput-object v0, Lrx/plugins/RxJavaSchedulersHook;->DEFAULT_INSTANCE:Lrx/plugins/RxJavaSchedulersHook;
+    sput-object v0, Lrx/plugins/RxJavaSchedulersHook;->a:Lrx/plugins/RxJavaSchedulersHook;
 
     return-void
 .end method
@@ -33,19 +33,19 @@
     return-void
 .end method
 
-.method public static getDefaultInstance()Lrx/plugins/RxJavaSchedulersHook;
+.method public static d()Lrx/plugins/RxJavaSchedulersHook;
     .registers 1
 
     .prologue
     .line 83
-    sget-object v0, Lrx/plugins/RxJavaSchedulersHook;->DEFAULT_INSTANCE:Lrx/plugins/RxJavaSchedulersHook;
+    sget-object v0, Lrx/plugins/RxJavaSchedulersHook;->a:Lrx/plugins/RxJavaSchedulersHook;
 
     return-object v0
 .end method
 
 
 # virtual methods
-.method public getComputationScheduler()Lrx/Scheduler;
+.method public a()Lrx/Scheduler;
     .registers 2
 
     .prologue
@@ -55,7 +55,15 @@
     return-object v0
 .end method
 
-.method public getIOScheduler()Lrx/Scheduler;
+.method public a(Lrx/functions/Action0;)Lrx/functions/Action0;
+    .registers 2
+
+    .prologue
+    .line 79
+    return-object p1
+.end method
+
+.method public b()Lrx/Scheduler;
     .registers 2
 
     .prologue
@@ -65,7 +73,7 @@
     return-object v0
 .end method
 
-.method public getNewThreadScheduler()Lrx/Scheduler;
+.method public c()Lrx/Scheduler;
     .registers 2
 
     .prologue
@@ -73,13 +81,4 @@
     const/4 v0, 0x0
 
     return-object v0
-.end method
-
-.method public onSchedule(Lrx/functions/Action0;)Lrx/functions/Action0;
-    .registers 2
-    .param p1, "action"    # Lrx/functions/Action0;
-
-    .prologue
-    .line 79
-    return-object p1
 .end method

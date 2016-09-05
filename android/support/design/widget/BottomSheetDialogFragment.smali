@@ -18,7 +18,6 @@
 # virtual methods
 .method public onCreateDialog(Landroid/os/Bundle;)Landroid/app/Dialog;
     .registers 5
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
     .line 34
@@ -39,8 +38,6 @@
 
 .method public setupDialog(Landroid/app/Dialog;I)V
     .registers 4
-    .param p1, "dialog"    # Landroid/app/Dialog;
-    .param p2, "style"    # I
 
     .prologue
     .line 40
@@ -51,7 +48,6 @@
     .line 43
     check-cast p1, Landroid/support/design/widget/BottomSheetDialog;
 
-    .end local p1    # "dialog":Landroid/app/Dialog;
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/support/design/widget/BottomSheetDialog;->supportRequestWindowFeature(I)Z
@@ -61,7 +57,6 @@
     return-void
 
     .line 45
-    .restart local p1    # "dialog":Landroid/app/Dialog;
     :cond_b
     invoke-super {p0, p1, p2}, Landroid/support/v7/app/AppCompatDialogFragment;->setupDialog(Landroid/app/Dialog;I)V
 

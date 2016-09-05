@@ -6,17 +6,6 @@
 .implements Ljava/util/concurrent/Executor;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lbolts/AndroidExecutors;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "UIThreadExecutor"
-.end annotation
-
-
 # direct methods
 .method private constructor <init>()V
     .registers 1
@@ -30,7 +19,6 @@
 
 .method synthetic constructor <init>(Lbolts/AndroidExecutors$1;)V
     .registers 2
-    .param p1, "x0"    # Lbolts/AndroidExecutors$1;
 
     .prologue
     .line 135
@@ -43,7 +31,6 @@
 # virtual methods
 .method public execute(Ljava/lang/Runnable;)V
     .registers 4
-    .param p1, "command"    # Ljava/lang/Runnable;
 
     .prologue
     .line 138

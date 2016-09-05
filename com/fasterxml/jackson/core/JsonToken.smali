@@ -328,8 +328,6 @@
 
 .method private constructor <init>(Ljava/lang/String;ILjava/lang/String;I)V
     .registers 11
-    .param p3, "token"    # Ljava/lang/String;
-    .param p4, "id"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -339,11 +337,11 @@
     .end annotation
 
     .prologue
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    const/4 v3, 0x0
+    const/4 v2, 0x1
 
-    const/4 v4, 0x1
+    const/4 v1, 0x0
 
     .line 138
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
@@ -352,95 +350,95 @@
     if-nez p3, :cond_47
 
     .line 140
-    iput-object v2, p0, Lcom/fasterxml/jackson/core/JsonToken;->_serialized:Ljava/lang/String;
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/JsonToken;->_serialized:Ljava/lang/String;
 
     .line 141
-    iput-object v2, p0, Lcom/fasterxml/jackson/core/JsonToken;->_serializedChars:[C
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/JsonToken;->_serializedChars:[C
 
     .line 142
-    iput-object v2, p0, Lcom/fasterxml/jackson/core/JsonToken;->_serializedBytes:[B
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/JsonToken;->_serializedBytes:[B
 
     .line 153
     :cond_e
     iput p4, p0, Lcom/fasterxml/jackson/core/JsonToken;->_id:I
 
     .line 155
-    const/16 v2, 0xa
+    const/16 v0, 0xa
 
-    if-eq p4, v2, :cond_18
+    if-eq p4, v0, :cond_18
 
-    const/16 v2, 0x9
+    const/16 v0, 0x9
 
-    if-ne p4, v2, :cond_65
+    if-ne p4, v0, :cond_65
 
     :cond_18
-    move v2, v4
+    move v0, v2
 
     :goto_19
-    iput-boolean v2, p0, Lcom/fasterxml/jackson/core/JsonToken;->_isBoolean:Z
+    iput-boolean v0, p0, Lcom/fasterxml/jackson/core/JsonToken;->_isBoolean:Z
 
     .line 156
-    const/4 v2, 0x7
+    const/4 v0, 0x7
 
-    if-eq p4, v2, :cond_22
+    if-eq p4, v0, :cond_22
 
-    const/16 v2, 0x8
+    const/16 v0, 0x8
 
-    if-ne p4, v2, :cond_67
+    if-ne p4, v0, :cond_67
 
     :cond_22
-    move v2, v4
+    move v0, v2
 
     :goto_23
-    iput-boolean v2, p0, Lcom/fasterxml/jackson/core/JsonToken;->_isNumber:Z
+    iput-boolean v0, p0, Lcom/fasterxml/jackson/core/JsonToken;->_isNumber:Z
 
     .line 158
-    if-eq p4, v4, :cond_2a
+    if-eq p4, v2, :cond_2a
 
-    const/4 v2, 0x3
+    const/4 v0, 0x3
 
-    if-ne p4, v2, :cond_69
+    if-ne p4, v0, :cond_69
 
     :cond_2a
-    move v2, v4
+    move v0, v2
 
     :goto_2b
-    iput-boolean v2, p0, Lcom/fasterxml/jackson/core/JsonToken;->_isStructStart:Z
+    iput-boolean v0, p0, Lcom/fasterxml/jackson/core/JsonToken;->_isStructStart:Z
 
     .line 159
-    const/4 v2, 0x2
+    const/4 v0, 0x2
 
-    if-eq p4, v2, :cond_33
+    if-eq p4, v0, :cond_33
 
-    const/4 v2, 0x4
+    const/4 v0, 0x4
 
-    if-ne p4, v2, :cond_6b
+    if-ne p4, v0, :cond_6b
 
     :cond_33
-    move v2, v4
+    move v0, v2
 
     :goto_34
-    iput-boolean v2, p0, Lcom/fasterxml/jackson/core/JsonToken;->_isStructEnd:Z
+    iput-boolean v0, p0, Lcom/fasterxml/jackson/core/JsonToken;->_isStructEnd:Z
 
     .line 161
-    iget-boolean v2, p0, Lcom/fasterxml/jackson/core/JsonToken;->_isStructStart:Z
+    iget-boolean v0, p0, Lcom/fasterxml/jackson/core/JsonToken;->_isStructStart:Z
 
-    if-nez v2, :cond_6d
+    if-nez v0, :cond_6d
 
-    iget-boolean v2, p0, Lcom/fasterxml/jackson/core/JsonToken;->_isStructEnd:Z
+    iget-boolean v0, p0, Lcom/fasterxml/jackson/core/JsonToken;->_isStructEnd:Z
 
-    if-nez v2, :cond_6d
+    if-nez v0, :cond_6d
 
-    const/4 v2, 0x5
+    const/4 v0, 0x5
 
-    if-eq p4, v2, :cond_6d
+    if-eq p4, v0, :cond_6d
 
-    const/4 v2, -0x1
+    const/4 v0, -0x1
 
-    if-eq p4, v2, :cond_6d
+    if-eq p4, v0, :cond_6d
 
     :goto_44
-    iput-boolean v4, p0, Lcom/fasterxml/jackson/core/JsonToken;->_isScalar:Z
+    iput-boolean v2, p0, Lcom/fasterxml/jackson/core/JsonToken;->_isScalar:Z
 
     .line 164
     return-void
@@ -452,30 +450,28 @@
     .line 145
     invoke-virtual {p3}, Ljava/lang/String;->toCharArray()[C
 
-    move-result-object v2
+    move-result-object v0
 
-    iput-object v2, p0, Lcom/fasterxml/jackson/core/JsonToken;->_serializedChars:[C
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/JsonToken;->_serializedChars:[C
 
     .line 147
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/JsonToken;->_serializedChars:[C
+    iget-object v0, p0, Lcom/fasterxml/jackson/core/JsonToken;->_serializedChars:[C
 
-    array-length v1, v2
+    array-length v3, v0
 
     .line 148
-    .local v1, "len":I
-    new-array v2, v1, [B
+    new-array v0, v3, [B
 
-    iput-object v2, p0, Lcom/fasterxml/jackson/core/JsonToken;->_serializedBytes:[B
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/JsonToken;->_serializedBytes:[B
+
+    move v0, v1
 
     .line 149
-    const/4 v0, 0x0
-
-    .local v0, "i":I
     :goto_57
-    if-ge v0, v1, :cond_e
+    if-ge v0, v3, :cond_e
 
     .line 150
-    iget-object v2, p0, Lcom/fasterxml/jackson/core/JsonToken;->_serializedBytes:[B
+    iget-object v4, p0, Lcom/fasterxml/jackson/core/JsonToken;->_serializedBytes:[B
 
     iget-object v5, p0, Lcom/fasterxml/jackson/core/JsonToken;->_serializedChars:[C
 
@@ -483,41 +479,39 @@
 
     int-to-byte v5, v5
 
-    aput-byte v5, v2, v0
+    aput-byte v5, v4, v0
 
     .line 149
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_57
 
-    .end local v0    # "i":I
-    .end local v1    # "len":I
     :cond_65
-    move v2, v3
+    move v0, v1
 
     .line 155
     goto :goto_19
 
     :cond_67
-    move v2, v3
+    move v0, v1
 
     .line 156
     goto :goto_23
 
     :cond_69
-    move v2, v3
+    move v0, v1
 
     .line 158
     goto :goto_2b
 
     :cond_6b
-    move v2, v3
+    move v0, v1
 
     .line 159
     goto :goto_34
 
     :cond_6d
-    move v4, v3
+    move v2, v1
 
     .line 161
     goto :goto_44
@@ -525,7 +519,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/fasterxml/jackson/core/JsonToken;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 12

@@ -3,17 +3,6 @@
 .source "JsonPOJOBuilder.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/annotation/JsonPOJOBuilder;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Value"
-.end annotation
-
-
 # instance fields
 .field public final buildMethodName:Ljava/lang/String;
 
@@ -23,7 +12,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/annotation/JsonPOJOBuilder;)V
     .registers 3
-    .param p1, "ann"    # Lcom/fasterxml/jackson/databind/annotation/JsonPOJOBuilder;
 
     .prologue
     .line 69

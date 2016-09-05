@@ -4,45 +4,19 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
+.method public static a(Landroid/view/View;I)V
+    .registers 2
 
     .prologue
-    .line 24
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 30
+    invoke-virtual {p0, p1}, Landroid/view/View;->setAccessibilityLiveRegion(I)V
 
+    .line 31
     return-void
 .end method
 
-.method public static getAccessibilityLiveRegion(Landroid/view/View;)I
+.method public static a(Landroid/view/View;)Z
     .registers 2
-    .param p0, "view"    # Landroid/view/View;
-
-    .prologue
-    .line 26
-    invoke-virtual {p0}, Landroid/view/View;->getAccessibilityLiveRegion()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static isAttachedToWindow(Landroid/view/View;)Z
-    .registers 2
-    .param p0, "view"    # Landroid/view/View;
-
-    .prologue
-    .line 38
-    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static isLaidOut(Landroid/view/View;)Z
-    .registers 2
-    .param p0, "view"    # Landroid/view/View;
 
     .prologue
     .line 34
@@ -53,15 +27,14 @@
     return v0
 .end method
 
-.method public static setAccessibilityLiveRegion(Landroid/view/View;I)V
+.method public static b(Landroid/view/View;)Z
     .registers 2
-    .param p0, "view"    # Landroid/view/View;
-    .param p1, "mode"    # I
 
     .prologue
-    .line 30
-    invoke-virtual {p0, p1}, Landroid/view/View;->setAccessibilityLiveRegion(I)V
+    .line 38
+    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
 
-    .line 31
-    return-void
+    move-result v0
+
+    return v0
 .end method

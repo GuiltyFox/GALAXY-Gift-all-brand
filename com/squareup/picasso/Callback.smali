@@ -3,17 +3,9 @@
 .source "Callback.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/squareup/picasso/Callback$EmptyCallback;
-    }
-.end annotation
-
-
 # virtual methods
-.method public abstract onError()V
+.method public abstract a()V
 .end method
 
-.method public abstract onSuccess()V
+.method public abstract b()V
 .end method

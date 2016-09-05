@@ -11,14 +11,9 @@
     value = Lrx/schedulers/CachedThreadScheduler$CachedWorkerPool;-><init>(JLjava/util/concurrent/TimeUnit;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Lrx/schedulers/CachedThreadScheduler$CachedWorkerPool;
+.field final synthetic a:Lrx/schedulers/CachedThreadScheduler$CachedWorkerPool;
 
 
 # direct methods
@@ -27,7 +22,7 @@
 
     .prologue
     .line 63
-    iput-object p1, p0, Lrx/schedulers/CachedThreadScheduler$CachedWorkerPool$1;->this$0:Lrx/schedulers/CachedThreadScheduler$CachedWorkerPool;
+    iput-object p1, p0, Lrx/schedulers/CachedThreadScheduler$CachedWorkerPool$1;->a:Lrx/schedulers/CachedThreadScheduler$CachedWorkerPool;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,9 +36,9 @@
 
     .prologue
     .line 66
-    iget-object v0, p0, Lrx/schedulers/CachedThreadScheduler$CachedWorkerPool$1;->this$0:Lrx/schedulers/CachedThreadScheduler$CachedWorkerPool;
+    iget-object v0, p0, Lrx/schedulers/CachedThreadScheduler$CachedWorkerPool$1;->a:Lrx/schedulers/CachedThreadScheduler$CachedWorkerPool;
 
-    invoke-virtual {v0}, Lrx/schedulers/CachedThreadScheduler$CachedWorkerPool;->evictExpiredWorkers()V
+    invoke-virtual {v0}, Lrx/schedulers/CachedThreadScheduler$CachedWorkerPool;->b()V
 
     .line 67
     return-void

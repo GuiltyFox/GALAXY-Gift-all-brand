@@ -24,11 +24,9 @@
 # direct methods
 .method public constructor <init>(Landroid/widget/ImageView;)V
     .registers 2
-    .param p1, "view"    # Landroid/widget/ImageView;
 
     .prologue
     .line 17
-    .local p0, "this":Lcom/bumptech/glide/request/target/ImageViewTarget;, "Lcom/bumptech/glide/request/target/ImageViewTarget<TZ;>;"
     invoke-direct {p0, p1}, Lcom/bumptech/glide/request/target/ViewTarget;-><init>(Landroid/view/View;)V
 
     .line 18
@@ -37,49 +35,27 @@
 
 
 # virtual methods
-.method public getCurrentDrawable()Landroid/graphics/drawable/Drawable;
-    .registers 2
-
-    .prologue
-    .line 26
-    .local p0, "this":Lcom/bumptech/glide/request/target/ImageViewTarget;, "Lcom/bumptech/glide/request/target/ImageViewTarget<TZ;>;"
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/ImageViewTarget;->view:Landroid/view/View;
-
-    check-cast v0, Landroid/widget/ImageView;
-
-    invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public onLoadCleared(Landroid/graphics/drawable/Drawable;)V
+.method public a(Landroid/graphics/drawable/Drawable;)V
     .registers 3
-    .param p1, "placeholder"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
-    .line 70
-    .local p0, "this":Lcom/bumptech/glide/request/target/ImageViewTarget;, "Lcom/bumptech/glide/request/target/ImageViewTarget<TZ;>;"
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/ImageViewTarget;->view:Landroid/view/View;
+    .line 37
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/ImageViewTarget;->a:Landroid/view/View;
 
     check-cast v0, Landroid/widget/ImageView;
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 71
+    .line 38
     return-void
 .end method
 
-.method public onLoadFailed(Ljava/lang/Exception;Landroid/graphics/drawable/Drawable;)V
+.method public a(Ljava/lang/Exception;Landroid/graphics/drawable/Drawable;)V
     .registers 4
-    .param p1, "e"    # Ljava/lang/Exception;
-    .param p2, "errorDrawable"    # Landroid/graphics/drawable/Drawable;
 
     .prologue
     .line 59
-    .local p0, "this":Lcom/bumptech/glide/request/target/ImageViewTarget;, "Lcom/bumptech/glide/request/target/ImageViewTarget<TZ;>;"
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/ImageViewTarget;->view:Landroid/view/View;
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/ImageViewTarget;->a:Landroid/view/View;
 
     check-cast v0, Landroid/widget/ImageView;
 
@@ -89,24 +65,15 @@
     return-void
 .end method
 
-.method public onLoadStarted(Landroid/graphics/drawable/Drawable;)V
-    .registers 3
-    .param p1, "placeholder"    # Landroid/graphics/drawable/Drawable;
-
-    .prologue
-    .line 48
-    .local p0, "this":Lcom/bumptech/glide/request/target/ImageViewTarget;, "Lcom/bumptech/glide/request/target/ImageViewTarget<TZ;>;"
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/ImageViewTarget;->view:Landroid/view/View;
-
-    check-cast v0, Landroid/widget/ImageView;
-
-    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 49
-    return-void
+.method protected abstract a(Ljava/lang/Object;)V
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TZ;)V"
+        }
+    .end annotation
 .end method
 
-.method public onResourceReady(Ljava/lang/Object;Lcom/bumptech/glide/request/animation/GlideAnimation;)V
+.method public a(Ljava/lang/Object;Lcom/bumptech/glide/request/animation/GlideAnimation;)V
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -118,12 +85,9 @@
 
     .prologue
     .line 75
-    .local p0, "this":Lcom/bumptech/glide/request/target/ImageViewTarget;, "Lcom/bumptech/glide/request/target/ImageViewTarget<TZ;>;"
-    .local p1, "resource":Ljava/lang/Object;, "TZ;"
-    .local p2, "glideAnimation":Lcom/bumptech/glide/request/animation/GlideAnimation;, "Lcom/bumptech/glide/request/animation/GlideAnimation<-TZ;>;"
     if-eqz p2, :cond_8
 
-    invoke-interface {p2, p1, p0}, Lcom/bumptech/glide/request/animation/GlideAnimation;->animate(Ljava/lang/Object;Lcom/bumptech/glide/request/animation/GlideAnimation$ViewAdapter;)Z
+    invoke-interface {p2, p1, p0}, Lcom/bumptech/glide/request/animation/GlideAnimation;->a(Ljava/lang/Object;Lcom/bumptech/glide/request/animation/GlideAnimation$ViewAdapter;)Z
 
     move-result v0
 
@@ -131,34 +95,55 @@
 
     .line 76
     :cond_8
-    invoke-virtual {p0, p1}, Lcom/bumptech/glide/request/target/ImageViewTarget;->setResource(Ljava/lang/Object;)V
+    invoke-virtual {p0, p1}, Lcom/bumptech/glide/request/target/ImageViewTarget;->a(Ljava/lang/Object;)V
 
     .line 78
     :cond_b
     return-void
 .end method
 
-.method public setDrawable(Landroid/graphics/drawable/Drawable;)V
-    .registers 3
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
+.method public b()Landroid/graphics/drawable/Drawable;
+    .registers 2
 
     .prologue
-    .line 37
-    .local p0, "this":Lcom/bumptech/glide/request/target/ImageViewTarget;, "Lcom/bumptech/glide/request/target/ImageViewTarget<TZ;>;"
-    iget-object v0, p0, Lcom/bumptech/glide/request/target/ImageViewTarget;->view:Landroid/view/View;
+    .line 26
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/ImageViewTarget;->a:Landroid/view/View;
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public b(Landroid/graphics/drawable/Drawable;)V
+    .registers 3
+
+    .prologue
+    .line 70
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/ImageViewTarget;->a:Landroid/view/View;
 
     check-cast v0, Landroid/widget/ImageView;
 
     invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 38
+    .line 71
     return-void
 .end method
 
-.method protected abstract setResource(Ljava/lang/Object;)V
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(TZ;)V"
-        }
-    .end annotation
+.method public c(Landroid/graphics/drawable/Drawable;)V
+    .registers 3
+
+    .prologue
+    .line 48
+    iget-object v0, p0, Lcom/bumptech/glide/request/target/ImageViewTarget;->a:Landroid/view/View;
+
+    check-cast v0, Landroid/widget/ImageView;
+
+    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 49
+    return-void
 .end method

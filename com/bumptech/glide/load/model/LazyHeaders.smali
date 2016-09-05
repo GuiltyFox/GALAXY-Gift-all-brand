@@ -6,29 +6,8 @@
 .implements Lcom/bumptech/glide/load/model/Headers;
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/bumptech/glide/load/model/LazyHeaders$StringHeaderFactory;,
-        Lcom/bumptech/glide/load/model/LazyHeaders$Builder;
-    }
-.end annotation
-
-
 # instance fields
-.field private volatile combinedHeaders:Ljava/util/Map;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/Map",
-            "<",
-            "Ljava/lang/String;",
-            "Ljava/lang/String;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final headers:Ljava/util/Map;
+.field private final c:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/Map",
@@ -38,6 +17,18 @@
             "<",
             "Lcom/bumptech/glide/load/model/LazyHeaderFactory;",
             ">;>;"
+        }
+    .end annotation
+.end field
+
+.field private volatile d:Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/Map",
+            "<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
         }
     .end annotation
 .end field
@@ -61,7 +52,6 @@
 
     .prologue
     .line 24
-    .local p1, "headers":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/util/List<Lcom/bumptech/glide/load/model/LazyHeaderFactory;>;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 25
@@ -69,14 +59,14 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bumptech/glide/load/model/LazyHeaders;->headers:Ljava/util/Map;
+    iput-object v0, p0, Lcom/bumptech/glide/load/model/LazyHeaders;->c:Ljava/util/Map;
 
     .line 26
     return-void
 .end method
 
-.method private generateHeaders()Ljava/util/Map;
-    .registers 10
+.method private b()Ljava/util/Map;
+    .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -90,160 +80,116 @@
 
     .prologue
     .line 42
-    new-instance v0, Ljava/util/HashMap;
+    new-instance v4, Ljava/util/HashMap;
 
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
 
     .line 44
-    .local v0, "combinedHeaders":Ljava/util/Map;, "Ljava/util/Map<Ljava/lang/String;Ljava/lang/String;>;"
-    iget-object v7, p0, Lcom/bumptech/glide/load/model/LazyHeaders;->headers:Ljava/util/Map;
+    iget-object v0, p0, Lcom/bumptech/glide/load/model/LazyHeaders;->c:Ljava/util/Map;
 
-    invoke-interface {v7}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+    invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-interface {v7}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
 
-    .local v5, "i$":Ljava/util/Iterator;
     :goto_f
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v7
+    move-result v0
 
-    if-eqz v7, :cond_56
+    if-eqz v0, :cond_58
 
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Ljava/util/Map$Entry;
+    check-cast v0, Ljava/util/Map$Entry;
 
     .line 45
-    .local v1, "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/List<Lcom/bumptech/glide/load/model/LazyHeaderFactory;>;>;"
     new-instance v6, Ljava/lang/StringBuilder;
 
     invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 46
-    .local v6, "sb":Ljava/lang/StringBuilder;
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/util/List;
+
+    .line 47
+    const/4 v2, 0x0
+
+    move v3, v2
+
+    :goto_28
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v2
+
+    if-ge v3, v2, :cond_4c
+
+    .line 48
+    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
-    check-cast v2, Ljava/util/List;
-
-    .line 47
-    .local v2, "factories":Ljava/util/List;, "Ljava/util/List<Lcom/bumptech/glide/load/model/LazyHeaderFactory;>;"
-    const/4 v4, 0x0
-
-    .local v4, "i":I
-    :goto_27
-    invoke-interface {v2}, Ljava/util/List;->size()I
-
-    move-result v7
-
-    if-ge v4, v7, :cond_4a
-
-    .line 48
-    invoke-interface {v2, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    check-cast v3, Lcom/bumptech/glide/load/model/LazyHeaderFactory;
+    check-cast v2, Lcom/bumptech/glide/load/model/LazyHeaderFactory;
 
     .line 49
-    .local v3, "factory":Lcom/bumptech/glide/load/model/LazyHeaderFactory;
-    invoke-interface {v3}, Lcom/bumptech/glide/load/model/LazyHeaderFactory;->buildHeader()Ljava/lang/String;
+    invoke-interface {v2}, Lcom/bumptech/glide/load/model/LazyHeaderFactory;->a()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v2
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 50
-    invoke-interface {v2}, Ljava/util/List;->size()I
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
-    move-result v7
+    move-result v2
 
-    add-int/lit8 v7, v7, -0x1
+    add-int/lit8 v2, v2, -0x1
 
-    if-eq v4, v7, :cond_47
+    if-eq v3, v2, :cond_48
 
     .line 51
-    const/16 v7, 0x2c
+    const/16 v2, 0x2c
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 47
-    :cond_47
-    add-int/lit8 v4, v4, 0x1
+    :cond_48
+    add-int/lit8 v2, v3, 0x1
 
-    goto :goto_27
+    move v3, v2
+
+    goto :goto_28
 
     .line 54
-    .end local v3    # "factory":Lcom/bumptech/glide/load/model/LazyHeaderFactory;
-    :cond_4a
-    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    :cond_4c
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v0
 
     invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v1
 
-    invoke-interface {v0, v7, v8}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v4, v0, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     goto :goto_f
 
     .line 57
-    .end local v1    # "entry":Ljava/util/Map$Entry;, "Ljava/util/Map$Entry<Ljava/lang/String;Ljava/util/List<Lcom/bumptech/glide/load/model/LazyHeaderFactory;>;>;"
-    .end local v2    # "factories":Ljava/util/List;, "Ljava/util/List<Lcom/bumptech/glide/load/model/LazyHeaderFactory;>;"
-    .end local v4    # "i":I
-    .end local v6    # "sb":Ljava/lang/StringBuilder;
-    :cond_56
-    return-object v0
+    :cond_58
+    return-object v4
 .end method
 
 
 # virtual methods
-.method public equals(Ljava/lang/Object;)Z
-    .registers 5
-    .param p1, "o"    # Ljava/lang/Object;
-
-    .prologue
-    .line 69
-    instance-of v1, p1, Lcom/bumptech/glide/load/model/LazyHeaders;
-
-    if-eqz v1, :cond_10
-
-    move-object v0, p1
-
-    .line 70
-    check-cast v0, Lcom/bumptech/glide/load/model/LazyHeaders;
-
-    .line 71
-    .local v0, "other":Lcom/bumptech/glide/load/model/LazyHeaders;
-    iget-object v1, p0, Lcom/bumptech/glide/load/model/LazyHeaders;->headers:Ljava/util/Map;
-
-    iget-object v2, v0, Lcom/bumptech/glide/load/model/LazyHeaders;->headers:Ljava/util/Map;
-
-    invoke-interface {v1, v2}, Ljava/util/Map;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    .line 73
-    .end local v0    # "other":Lcom/bumptech/glide/load/model/LazyHeaders;
-    :goto_f
-    return v1
-
-    :cond_10
-    const/4 v1, 0x0
-
-    goto :goto_f
-.end method
-
-.method public getHeaders()Ljava/util/Map;
+.method public a()Ljava/util/Map;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -258,7 +204,7 @@
 
     .prologue
     .line 30
-    iget-object v0, p0, Lcom/bumptech/glide/load/model/LazyHeaders;->combinedHeaders:Ljava/util/Map;
+    iget-object v0, p0, Lcom/bumptech/glide/load/model/LazyHeaders;->d:Ljava/util/Map;
 
     if-nez v0, :cond_14
 
@@ -267,12 +213,12 @@
 
     .line 32
     :try_start_5
-    iget-object v0, p0, Lcom/bumptech/glide/load/model/LazyHeaders;->combinedHeaders:Ljava/util/Map;
+    iget-object v0, p0, Lcom/bumptech/glide/load/model/LazyHeaders;->d:Ljava/util/Map;
 
     if-nez v0, :cond_13
 
     .line 33
-    invoke-direct {p0}, Lcom/bumptech/glide/load/model/LazyHeaders;->generateHeaders()Ljava/util/Map;
+    invoke-direct {p0}, Lcom/bumptech/glide/load/model/LazyHeaders;->b()Ljava/util/Map;
 
     move-result-object v0
 
@@ -280,7 +226,7 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bumptech/glide/load/model/LazyHeaders;->combinedHeaders:Ljava/util/Map;
+    iput-object v0, p0, Lcom/bumptech/glide/load/model/LazyHeaders;->d:Ljava/util/Map;
 
     .line 35
     :cond_13
@@ -290,7 +236,7 @@
 
     .line 38
     :cond_14
-    iget-object v0, p0, Lcom/bumptech/glide/load/model/LazyHeaders;->combinedHeaders:Ljava/util/Map;
+    iget-object v0, p0, Lcom/bumptech/glide/load/model/LazyHeaders;->d:Ljava/util/Map;
 
     return-object v0
 
@@ -306,12 +252,43 @@
     throw v0
 .end method
 
+.method public equals(Ljava/lang/Object;)Z
+    .registers 4
+
+    .prologue
+    .line 69
+    instance-of v0, p1, Lcom/bumptech/glide/load/model/LazyHeaders;
+
+    if-eqz v0, :cond_f
+
+    .line 70
+    check-cast p1, Lcom/bumptech/glide/load/model/LazyHeaders;
+
+    .line 71
+    iget-object v0, p0, Lcom/bumptech/glide/load/model/LazyHeaders;->c:Ljava/util/Map;
+
+    iget-object v1, p1, Lcom/bumptech/glide/load/model/LazyHeaders;->c:Ljava/util/Map;
+
+    invoke-interface {v0, v1}, Ljava/util/Map;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    .line 73
+    :goto_e
+    return v0
+
+    :cond_f
+    const/4 v0, 0x0
+
+    goto :goto_e
+.end method
+
 .method public hashCode()I
     .registers 2
 
     .prologue
     .line 78
-    iget-object v0, p0, Lcom/bumptech/glide/load/model/LazyHeaders;->headers:Ljava/util/Map;
+    iget-object v0, p0, Lcom/bumptech/glide/load/model/LazyHeaders;->c:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->hashCode()I
 
@@ -335,7 +312,7 @@
 
     move-result-object v0
 
-    iget-object v1, p0, Lcom/bumptech/glide/load/model/LazyHeaders;->headers:Ljava/util/Map;
+    iget-object v1, p0, Lcom/bumptech/glide/load/model/LazyHeaders;->c:Ljava/util/Map;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 

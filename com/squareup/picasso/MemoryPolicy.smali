@@ -15,15 +15,15 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/squareup/picasso/MemoryPolicy;
+.field public static final enum a:Lcom/squareup/picasso/MemoryPolicy;
 
-.field public static final enum NO_CACHE:Lcom/squareup/picasso/MemoryPolicy;
+.field public static final enum b:Lcom/squareup/picasso/MemoryPolicy;
 
-.field public static final enum NO_STORE:Lcom/squareup/picasso/MemoryPolicy;
+.field private static final synthetic d:[Lcom/squareup/picasso/MemoryPolicy;
 
 
 # instance fields
-.field final index:I
+.field final c:I
 
 
 # direct methods
@@ -44,7 +44,7 @@
 
     invoke-direct {v0, v1, v3, v2}, Lcom/squareup/picasso/MemoryPolicy;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/squareup/picasso/MemoryPolicy;->NO_CACHE:Lcom/squareup/picasso/MemoryPolicy;
+    sput-object v0, Lcom/squareup/picasso/MemoryPolicy;->a:Lcom/squareup/picasso/MemoryPolicy;
 
     .line 28
     new-instance v0, Lcom/squareup/picasso/MemoryPolicy;
@@ -53,27 +53,26 @@
 
     invoke-direct {v0, v1, v2, v4}, Lcom/squareup/picasso/MemoryPolicy;-><init>(Ljava/lang/String;II)V
 
-    sput-object v0, Lcom/squareup/picasso/MemoryPolicy;->NO_STORE:Lcom/squareup/picasso/MemoryPolicy;
+    sput-object v0, Lcom/squareup/picasso/MemoryPolicy;->b:Lcom/squareup/picasso/MemoryPolicy;
 
     .line 19
     new-array v0, v4, [Lcom/squareup/picasso/MemoryPolicy;
 
-    sget-object v1, Lcom/squareup/picasso/MemoryPolicy;->NO_CACHE:Lcom/squareup/picasso/MemoryPolicy;
+    sget-object v1, Lcom/squareup/picasso/MemoryPolicy;->a:Lcom/squareup/picasso/MemoryPolicy;
 
     aput-object v1, v0, v3
 
-    sget-object v1, Lcom/squareup/picasso/MemoryPolicy;->NO_STORE:Lcom/squareup/picasso/MemoryPolicy;
+    sget-object v1, Lcom/squareup/picasso/MemoryPolicy;->b:Lcom/squareup/picasso/MemoryPolicy;
 
     aput-object v1, v0, v2
 
-    sput-object v0, Lcom/squareup/picasso/MemoryPolicy;->$VALUES:[Lcom/squareup/picasso/MemoryPolicy;
+    sput-object v0, Lcom/squareup/picasso/MemoryPolicy;->d:[Lcom/squareup/picasso/MemoryPolicy;
 
     return-void
 .end method
 
 .method private constructor <init>(Ljava/lang/String;II)V
     .registers 4
-    .param p3, "index"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(I)V"
@@ -85,21 +84,20 @@
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 41
-    iput p3, p0, Lcom/squareup/picasso/MemoryPolicy;->index:I
+    iput p3, p0, Lcom/squareup/picasso/MemoryPolicy;->c:I
 
     .line 42
     return-void
 .end method
 
-.method static shouldReadFromMemoryCache(I)Z
+.method static a(I)Z
     .registers 2
-    .param p0, "memoryPolicy"    # I
 
     .prologue
     .line 31
-    sget-object v0, Lcom/squareup/picasso/MemoryPolicy;->NO_CACHE:Lcom/squareup/picasso/MemoryPolicy;
+    sget-object v0, Lcom/squareup/picasso/MemoryPolicy;->a:Lcom/squareup/picasso/MemoryPolicy;
 
-    iget v0, v0, Lcom/squareup/picasso/MemoryPolicy;->index:I
+    iget v0, v0, Lcom/squareup/picasso/MemoryPolicy;->c:I
 
     and-int/2addr v0, p0
 
@@ -116,15 +114,14 @@
     goto :goto_8
 .end method
 
-.method static shouldWriteToMemoryCache(I)Z
+.method static b(I)Z
     .registers 2
-    .param p0, "memoryPolicy"    # I
 
     .prologue
     .line 35
-    sget-object v0, Lcom/squareup/picasso/MemoryPolicy;->NO_STORE:Lcom/squareup/picasso/MemoryPolicy;
+    sget-object v0, Lcom/squareup/picasso/MemoryPolicy;->b:Lcom/squareup/picasso/MemoryPolicy;
 
-    iget v0, v0, Lcom/squareup/picasso/MemoryPolicy;->index:I
+    iget v0, v0, Lcom/squareup/picasso/MemoryPolicy;->c:I
 
     and-int/2addr v0, p0
 
@@ -143,7 +140,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/squareup/picasso/MemoryPolicy;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 19
@@ -163,7 +159,7 @@
 
     .prologue
     .line 19
-    sget-object v0, Lcom/squareup/picasso/MemoryPolicy;->$VALUES:[Lcom/squareup/picasso/MemoryPolicy;
+    sget-object v0, Lcom/squareup/picasso/MemoryPolicy;->d:[Lcom/squareup/picasso/MemoryPolicy;
 
     invoke-virtual {v0}, [Lcom/squareup/picasso/MemoryPolicy;->clone()Ljava/lang/Object;
 

@@ -8,15 +8,12 @@
 
 
 # annotations
-.annotation build Lcz/msebera/android/httpclient/annotation/Immutable;
-.end annotation
-
 .annotation runtime Ljava/lang/Deprecated;
 .end annotation
 
 
 # instance fields
-.field private final nameResolver:Lcz/msebera/android/httpclient/conn/scheme/HostNameResolver;
+.field private final a:Lcz/msebera/android/httpclient/conn/scheme/HostNameResolver;
 
 
 # direct methods
@@ -30,30 +27,13 @@
     .line 76
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lcz/msebera/android/httpclient/conn/scheme/PlainSocketFactory;->nameResolver:Lcz/msebera/android/httpclient/conn/scheme/HostNameResolver;
+    iput-object v0, p0, Lcz/msebera/android/httpclient/conn/scheme/PlainSocketFactory;->a:Lcz/msebera/android/httpclient/conn/scheme/HostNameResolver;
 
     .line 77
     return-void
 .end method
 
-.method public constructor <init>(Lcz/msebera/android/httpclient/conn/scheme/HostNameResolver;)V
-    .registers 2
-    .param p1, "nameResolver"    # Lcz/msebera/android/httpclient/conn/scheme/HostNameResolver;
-    .annotation runtime Ljava/lang/Deprecated;
-    .end annotation
-
-    .prologue
-    .line 70
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 71
-    iput-object p1, p0, Lcz/msebera/android/httpclient/conn/scheme/PlainSocketFactory;->nameResolver:Lcz/msebera/android/httpclient/conn/scheme/HostNameResolver;
-
-    .line 72
-    return-void
-.end method
-
-.method public static getSocketFactory()Lcz/msebera/android/httpclient/conn/scheme/PlainSocketFactory;
+.method public static a()Lcz/msebera/android/httpclient/conn/scheme/PlainSocketFactory;
     .registers 1
 
     .prologue
@@ -68,21 +48,7 @@
 
 # virtual methods
 .method public connectSocket(Ljava/net/Socket;Ljava/lang/String;ILjava/net/InetAddress;ILcz/msebera/android/httpclient/params/HttpParams;)Ljava/net/Socket;
-    .registers 11
-    .param p1, "socket"    # Ljava/net/Socket;
-    .param p2, "host"    # Ljava/lang/String;
-    .param p3, "port"    # I
-    .param p4, "localAddress"    # Ljava/net/InetAddress;
-    .param p5, "localPort"    # I
-    .param p6, "params"    # Lcz/msebera/android/httpclient/params/HttpParams;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Ljava/net/UnknownHostException;,
-            Lcz/msebera/android/httpclient/conn/ConnectTimeoutException;
-        }
-    .end annotation
-
+    .registers 10
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -91,7 +57,6 @@
     const/4 v0, 0x0
 
     .line 147
-    .local v0, "local":Ljava/net/InetSocketAddress;
     if-nez p4, :cond_5
 
     if-lez p5, :cond_c
@@ -100,174 +65,145 @@
     :cond_5
     new-instance v0, Ljava/net/InetSocketAddress;
 
-    .end local v0    # "local":Ljava/net/InetSocketAddress;
     if-lez p5, :cond_20
 
-    .end local p5    # "localPort":I
     :goto_9
     invoke-direct {v0, p4, p5}, Ljava/net/InetSocketAddress;-><init>(Ljava/net/InetAddress;I)V
 
     .line 151
-    .restart local v0    # "local":Ljava/net/InetSocketAddress;
     :cond_c
-    iget-object v3, p0, Lcz/msebera/android/httpclient/conn/scheme/PlainSocketFactory;->nameResolver:Lcz/msebera/android/httpclient/conn/scheme/HostNameResolver;
+    iget-object v1, p0, Lcz/msebera/android/httpclient/conn/scheme/PlainSocketFactory;->a:Lcz/msebera/android/httpclient/conn/scheme/HostNameResolver;
 
-    if-eqz v3, :cond_22
+    if-eqz v1, :cond_22
 
     .line 152
-    iget-object v3, p0, Lcz/msebera/android/httpclient/conn/scheme/PlainSocketFactory;->nameResolver:Lcz/msebera/android/httpclient/conn/scheme/HostNameResolver;
+    iget-object v1, p0, Lcz/msebera/android/httpclient/conn/scheme/PlainSocketFactory;->a:Lcz/msebera/android/httpclient/conn/scheme/HostNameResolver;
 
-    invoke-interface {v3, p2}, Lcz/msebera/android/httpclient/conn/scheme/HostNameResolver;->resolve(Ljava/lang/String;)Ljava/net/InetAddress;
+    invoke-interface {v1, p2}, Lcz/msebera/android/httpclient/conn/scheme/HostNameResolver;->a(Ljava/lang/String;)Ljava/net/InetAddress;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 156
-    .local v2, "remoteAddress":Ljava/net/InetAddress;
     :goto_16
-    new-instance v1, Ljava/net/InetSocketAddress;
+    new-instance v2, Ljava/net/InetSocketAddress;
 
-    invoke-direct {v1, v2, p3}, Ljava/net/InetSocketAddress;-><init>(Ljava/net/InetAddress;I)V
+    invoke-direct {v2, v1, p3}, Ljava/net/InetSocketAddress;-><init>(Ljava/net/InetAddress;I)V
 
     .line 157
-    .local v1, "remote":Ljava/net/InetSocketAddress;
-    invoke-virtual {p0, p1, v1, v0, p6}, Lcz/msebera/android/httpclient/conn/scheme/PlainSocketFactory;->connectSocket(Ljava/net/Socket;Ljava/net/InetSocketAddress;Ljava/net/InetSocketAddress;Lcz/msebera/android/httpclient/params/HttpParams;)Ljava/net/Socket;
+    invoke-virtual {p0, p1, v2, v0, p6}, Lcz/msebera/android/httpclient/conn/scheme/PlainSocketFactory;->connectSocket(Ljava/net/Socket;Ljava/net/InetSocketAddress;Ljava/net/InetSocketAddress;Lcz/msebera/android/httpclient/params/HttpParams;)Ljava/net/Socket;
 
-    move-result-object v3
+    move-result-object v0
 
-    return-object v3
+    return-object v0
 
     .line 148
-    .end local v0    # "local":Ljava/net/InetSocketAddress;
-    .end local v1    # "remote":Ljava/net/InetSocketAddress;
-    .end local v2    # "remoteAddress":Ljava/net/InetAddress;
-    .restart local p5    # "localPort":I
     :cond_20
     const/4 p5, 0x0
 
     goto :goto_9
 
     .line 154
-    .end local p5    # "localPort":I
-    .restart local v0    # "local":Ljava/net/InetSocketAddress;
     :cond_22
     invoke-static {p2}, Ljava/net/InetAddress;->getByName(Ljava/lang/String;)Ljava/net/InetAddress;
 
-    move-result-object v2
+    move-result-object v1
 
-    .restart local v2    # "remoteAddress":Ljava/net/InetAddress;
     goto :goto_16
 .end method
 
 .method public connectSocket(Ljava/net/Socket;Ljava/net/InetSocketAddress;Ljava/net/InetSocketAddress;Lcz/msebera/android/httpclient/params/HttpParams;)Ljava/net/Socket;
-    .registers 12
-    .param p1, "socket"    # Ljava/net/Socket;
-    .param p2, "remoteAddress"    # Ljava/net/InetSocketAddress;
-    .param p3, "localAddress"    # Ljava/net/InetSocketAddress;
-    .param p4, "params"    # Lcz/msebera/android/httpclient/params/HttpParams;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcz/msebera/android/httpclient/conn/ConnectTimeoutException;
-        }
-    .end annotation
+    .registers 8
 
     .prologue
     .line 102
-    const-string/jumbo v4, "Remote address"
+    const-string/jumbo v0, "Remote address"
 
-    invoke-static {p2, v4}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-static {p2, v0}, Lcz/msebera/android/httpclient/util/Args;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 103
-    const-string/jumbo v4, "HTTP parameters"
+    const-string/jumbo v0, "HTTP parameters"
 
-    invoke-static {p4, v4}, Lcz/msebera/android/httpclient/util/Args;->notNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
-
-    .line 104
-    move-object v3, p1
+    invoke-static {p4, v0}, Lcz/msebera/android/httpclient/util/Args;->a(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 105
-    .local v3, "sock":Ljava/net/Socket;
-    if-nez v3, :cond_13
+    if-nez p1, :cond_12
 
     .line 106
     invoke-virtual {p0}, Lcz/msebera/android/httpclient/conn/scheme/PlainSocketFactory;->createSocket()Ljava/net/Socket;
 
-    move-result-object v3
+    move-result-object p1
 
     .line 108
-    :cond_13
-    if-eqz p3, :cond_1f
+    :cond_12
+    if-eqz p3, :cond_1e
 
     .line 109
-    invoke-static {p4}, Lcz/msebera/android/httpclient/params/HttpConnectionParams;->getSoReuseaddr(Lcz/msebera/android/httpclient/params/HttpParams;)Z
+    invoke-static {p4}, Lcz/msebera/android/httpclient/params/HttpConnectionParams;->b(Lcz/msebera/android/httpclient/params/HttpParams;)Z
 
-    move-result v4
+    move-result v0
 
-    invoke-virtual {v3, v4}, Ljava/net/Socket;->setReuseAddress(Z)V
+    invoke-virtual {p1, v0}, Ljava/net/Socket;->setReuseAddress(Z)V
 
     .line 110
-    invoke-virtual {v3, p3}, Ljava/net/Socket;->bind(Ljava/net/SocketAddress;)V
+    invoke-virtual {p1, p3}, Ljava/net/Socket;->bind(Ljava/net/SocketAddress;)V
 
     .line 112
-    :cond_1f
-    invoke-static {p4}, Lcz/msebera/android/httpclient/params/HttpConnectionParams;->getConnectionTimeout(Lcz/msebera/android/httpclient/params/HttpParams;)I
+    :cond_1e
+    invoke-static {p4}, Lcz/msebera/android/httpclient/params/HttpConnectionParams;->e(Lcz/msebera/android/httpclient/params/HttpParams;)I
 
     move-result v0
 
     .line 113
-    .local v0, "connTimeout":I
-    invoke-static {p4}, Lcz/msebera/android/httpclient/params/HttpConnectionParams;->getSoTimeout(Lcz/msebera/android/httpclient/params/HttpParams;)I
+    invoke-static {p4}, Lcz/msebera/android/httpclient/params/HttpConnectionParams;->a(Lcz/msebera/android/httpclient/params/HttpParams;)I
 
-    move-result v2
+    move-result v1
 
     .line 116
-    .local v2, "soTimeout":I
-    :try_start_27
-    invoke-virtual {v3, v2}, Ljava/net/Socket;->setSoTimeout(I)V
+    :try_start_26
+    invoke-virtual {p1, v1}, Ljava/net/Socket;->setSoTimeout(I)V
 
     .line 117
-    invoke-virtual {v3, p2, v0}, Ljava/net/Socket;->connect(Ljava/net/SocketAddress;I)V
-    :try_end_2d
-    .catch Ljava/net/SocketTimeoutException; {:try_start_27 .. :try_end_2d} :catch_2e
+    invoke-virtual {p1, p2, v0}, Ljava/net/Socket;->connect(Ljava/net/SocketAddress;I)V
+    :try_end_2c
+    .catch Ljava/net/SocketTimeoutException; {:try_start_26 .. :try_end_2c} :catch_2d
 
     .line 121
-    return-object v3
+    return-object p1
 
     .line 118
-    :catch_2e
-    move-exception v1
+    :catch_2d
+    move-exception v0
 
     .line 119
-    .local v1, "ex":Ljava/net/SocketTimeoutException;
-    new-instance v4, Lcz/msebera/android/httpclient/conn/ConnectTimeoutException;
+    new-instance v0, Lcz/msebera/android/httpclient/conn/ConnectTimeoutException;
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v6, "Connect to "
+    const-string/jumbo v2, "Connect to "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    const-string/jumbo v6, " timed out"
+    const-string/jumbo v2, " timed out"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v1
 
-    invoke-direct {v4, v5}, Lcz/msebera/android/httpclient/conn/ConnectTimeoutException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcz/msebera/android/httpclient/conn/ConnectTimeoutException;-><init>(Ljava/lang/String;)V
 
-    throw v4
+    throw v0
 .end method
 
 .method public createSocket()Ljava/net/Socket;
@@ -284,7 +220,6 @@
 
 .method public createSocket(Lcz/msebera/android/httpclient/params/HttpParams;)Ljava/net/Socket;
     .registers 3
-    .param p1, "params"    # Lcz/msebera/android/httpclient/params/HttpParams;
 
     .prologue
     .line 87
@@ -297,7 +232,6 @@
 
 .method public final isSecure(Ljava/net/Socket;)Z
     .registers 3
-    .param p1, "sock"    # Ljava/net/Socket;
 
     .prologue
     .line 134

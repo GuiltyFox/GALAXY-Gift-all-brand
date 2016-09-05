@@ -41,7 +41,7 @@
 
     invoke-direct {v0}, Landroid/support/design/internal/ParcelableSparseArray$1;-><init>()V
 
-    invoke-static {v0}, Landroid/support/v4/os/ParcelableCompat;->newCreator(Landroid/support/v4/os/ParcelableCompatCreatorCallbacks;)Landroid/os/Parcelable$Creator;
+    invoke-static {v0}, Landroid/support/v4/os/ParcelableCompat;->a(Landroid/support/v4/os/ParcelableCompatCreatorCallbacks;)Landroid/os/Parcelable$Creator;
 
     move-result-object v0
 
@@ -63,8 +63,6 @@
 
 .method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
     .registers 9
-    .param p1, "source"    # Landroid/os/Parcel;
-    .param p2, "loader"    # Ljava/lang/ClassLoader;
 
     .prologue
     .line 35
@@ -73,15 +71,13 @@
     .line 36
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
-    move-result v2
+    move-result v1
 
     .line 37
-    .local v2, "size":I
-    new-array v1, v2, [I
+    new-array v2, v1, [I
 
     .line 38
-    .local v1, "keys":[I
-    invoke-virtual {p1, v1}, Landroid/os/Parcel;->readIntArray([I)V
+    invoke-virtual {p1, v2}, Landroid/os/Parcel;->readIntArray([I)V
 
     .line 39
     invoke-virtual {p1, p2}, Landroid/os/Parcel;->readParcelableArray(Ljava/lang/ClassLoader;)[Landroid/os/Parcelable;
@@ -89,15 +85,13 @@
     move-result-object v3
 
     .line 40
-    .local v3, "values":[Landroid/os/Parcelable;
     const/4 v0, 0x0
 
-    .local v0, "i":I
     :goto_11
-    if-ge v0, v2, :cond_1d
+    if-ge v0, v1, :cond_1d
 
     .line 41
-    aget v4, v1, v0
+    aget v4, v2, v0
 
     aget-object v5, v3, v0
 
@@ -127,8 +121,6 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .registers 8
-    .param p1, "parcel"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
     .prologue
     .line 52
@@ -137,51 +129,51 @@
     move-result v2
 
     .line 53
-    .local v2, "size":I
-    new-array v1, v2, [I
+    new-array v3, v2, [I
 
     .line 54
-    .local v1, "keys":[I
-    new-array v3, v2, [Landroid/os/Parcelable;
+    new-array v4, v2, [Landroid/os/Parcelable;
 
     .line 55
-    .local v3, "values":[Landroid/os/Parcelable;
     const/4 v0, 0x0
 
-    .local v0, "i":I
-    :goto_9
-    if-ge v0, v2, :cond_1c
+    move v1, v0
+
+    :goto_a
+    if-ge v1, v2, :cond_1e
 
     .line 56
-    invoke-virtual {p0, v0}, Landroid/support/design/internal/ParcelableSparseArray;->keyAt(I)I
+    invoke-virtual {p0, v1}, Landroid/support/design/internal/ParcelableSparseArray;->keyAt(I)I
 
-    move-result v4
+    move-result v0
 
-    aput v4, v1, v0
+    aput v0, v3, v1
 
     .line 57
-    invoke-virtual {p0, v0}, Landroid/support/design/internal/ParcelableSparseArray;->valueAt(I)Ljava/lang/Object;
+    invoke-virtual {p0, v1}, Landroid/support/design/internal/ParcelableSparseArray;->valueAt(I)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v0
 
-    check-cast v4, Landroid/os/Parcelable;
+    check-cast v0, Landroid/os/Parcelable;
 
-    aput-object v4, v3, v0
+    aput-object v0, v4, v1
 
     .line 55
-    add-int/lit8 v0, v0, 0x1
+    add-int/lit8 v0, v1, 0x1
 
-    goto :goto_9
+    move v1, v0
+
+    goto :goto_a
 
     .line 59
-    :cond_1c
+    :cond_1e
     invoke-virtual {p1, v2}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 60
-    invoke-virtual {p1, v1}, Landroid/os/Parcel;->writeIntArray([I)V
+    invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeIntArray([I)V
 
     .line 61
-    invoke-virtual {p1, v3, p2}, Landroid/os/Parcel;->writeParcelableArray([Landroid/os/Parcelable;I)V
+    invoke-virtual {p1, v4, p2}, Landroid/os/Parcel;->writeParcelableArray([Landroid/os/Parcelable;I)V
 
     .line 62
     return-void

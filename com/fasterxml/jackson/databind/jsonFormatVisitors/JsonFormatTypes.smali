@@ -192,7 +192,6 @@
 
 .method public static forValue(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatTypes;
     .registers 2
-    .param p0, "s"    # Ljava/lang/String;
     .annotation runtime Lcom/fasterxml/jackson/annotation/JsonCreator;
     .end annotation
 
@@ -211,7 +210,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatTypes;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 6

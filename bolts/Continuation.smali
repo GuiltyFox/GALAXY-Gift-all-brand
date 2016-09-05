@@ -25,10 +25,4 @@
             "<TTTaskResult;>;)TTContinuationResult;"
         }
     .end annotation
-
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/Exception;
-        }
-    .end annotation
 .end method

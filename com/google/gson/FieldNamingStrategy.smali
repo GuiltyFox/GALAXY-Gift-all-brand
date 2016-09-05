@@ -4,5 +4,5 @@
 
 
 # virtual methods
-.method public abstract translateName(Ljava/lang/reflect/Field;)Ljava/lang/String;
+.method public abstract a(Ljava/lang/reflect/Field;)Ljava/lang/String;
 .end method

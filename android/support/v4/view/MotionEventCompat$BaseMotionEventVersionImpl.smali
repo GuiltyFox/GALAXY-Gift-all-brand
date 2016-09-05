@@ -6,17 +6,6 @@
 .implements Landroid/support/v4/view/MotionEventCompat$MotionEventVersionImpl;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/view/MotionEventCompat;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "BaseMotionEventVersionImpl"
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .registers 1
@@ -30,10 +19,18 @@
 
 
 # virtual methods
-.method public findPointerIndex(Landroid/view/MotionEvent;I)I
+.method public a(Landroid/view/MotionEvent;)I
+    .registers 3
+
+    .prologue
+    .line 77
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public a(Landroid/view/MotionEvent;I)I
     .registers 4
-    .param p1, "event"    # Landroid/view/MotionEvent;
-    .param p2, "pointerId"    # I
 
     .prologue
     .line 47
@@ -52,46 +49,18 @@
     goto :goto_3
 .end method
 
-.method public getAxisValue(Landroid/view/MotionEvent;I)F
-    .registers 4
-    .param p1, "event"    # Landroid/view/MotionEvent;
-    .param p2, "axis"    # I
-
-    .prologue
-    .line 87
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public getAxisValue(Landroid/view/MotionEvent;II)F
-    .registers 5
-    .param p1, "event"    # Landroid/view/MotionEvent;
-    .param p2, "axis"    # I
-    .param p3, "pointerIndex"    # I
-
-    .prologue
-    .line 92
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public getPointerCount(Landroid/view/MotionEvent;)I
+.method public b(Landroid/view/MotionEvent;)I
     .registers 3
-    .param p1, "event"    # Landroid/view/MotionEvent;
 
     .prologue
-    .line 77
-    const/4 v0, 0x1
+    .line 82
+    const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public getPointerId(Landroid/view/MotionEvent;I)I
+.method public b(Landroid/view/MotionEvent;I)I
     .registers 5
-    .param p1, "event"    # Landroid/view/MotionEvent;
-    .param p2, "pointerIndex"    # I
 
     .prologue
     .line 55
@@ -113,21 +82,8 @@
     throw v0
 .end method
 
-.method public getSource(Landroid/view/MotionEvent;)I
-    .registers 3
-    .param p1, "event"    # Landroid/view/MotionEvent;
-
-    .prologue
-    .line 82
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-.method public getX(Landroid/view/MotionEvent;I)F
+.method public c(Landroid/view/MotionEvent;I)F
     .registers 5
-    .param p1, "event"    # Landroid/view/MotionEvent;
-    .param p2, "pointerIndex"    # I
 
     .prologue
     .line 63
@@ -151,10 +107,8 @@
     throw v0
 .end method
 
-.method public getY(Landroid/view/MotionEvent;I)F
+.method public d(Landroid/view/MotionEvent;I)F
     .registers 5
-    .param p1, "event"    # Landroid/view/MotionEvent;
-    .param p2, "pointerIndex"    # I
 
     .prologue
     .line 70
@@ -176,4 +130,14 @@
     invoke-direct {v0, v1}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
 
     throw v0
+.end method
+
+.method public e(Landroid/view/MotionEvent;I)F
+    .registers 4
+
+    .prologue
+    .line 87
+    const/4 v0, 0x0
+
+    return v0
 .end method

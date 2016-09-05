@@ -3,7 +3,7 @@
 
 
 # static fields
-.field private static final zzamq:Ljava/util/regex/Pattern;
+.field private static final a:Ljava/util/regex/Pattern;
 
 
 # direct methods
@@ -16,19 +16,19 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/internal/zzob;->zzamq:Ljava/util/regex/Pattern;
+    sput-object v0, Lcom/google/android/gms/internal/zzob;->a:Ljava/util/regex/Pattern;
 
     return-void
 .end method
 
-.method public static zzcP(Ljava/lang/String;)Z
+.method public static a(Ljava/lang/String;)Z
     .registers 2
 
     if-eqz p0, :cond_a
 
-    sget-object v0, Lcom/google/android/gms/common/internal/zze;->zzaiV:Lcom/google/android/gms/common/internal/zze;
+    sget-object v0, Lcom/google/android/gms/common/internal/zze;->a:Lcom/google/android/gms/common/internal/zze;
 
-    invoke-virtual {v0, p0}, Lcom/google/android/gms/common/internal/zze;->zzb(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v0, p0}, Lcom/google/android/gms/common/internal/zze;->b(Ljava/lang/CharSequence;)Z
 
     move-result v0
 

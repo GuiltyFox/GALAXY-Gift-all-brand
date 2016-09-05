@@ -3,20 +3,9 @@
 .source "SmoothProgressBar.java"
 
 
-# static fields
-.field private static final INTERPOLATOR_ACCELERATE:I = 0x0
-
-.field private static final INTERPOLATOR_ACCELERATEDECELERATE:I = 0x2
-
-.field private static final INTERPOLATOR_DECELERATE:I = 0x3
-
-.field private static final INTERPOLATOR_LINEAR:I = 0x1
-
-
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 27
@@ -30,8 +19,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 31
@@ -44,10 +31,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .registers 32
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyle"    # I
+    .registers 25
 
     .prologue
     .line 35
@@ -56,584 +40,440 @@
     .line 37
     invoke-virtual/range {p0 .. p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->isInEditMode()Z
 
-    move-result v26
+    move-result v3
 
-    if-eqz v26, :cond_22
+    if-eqz v3, :cond_1b
 
     .line 38
-    new-instance v26, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
+    new-instance v3, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
 
-    const/16 v27, 0x1
+    const/4 v4, 0x1
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, p1
 
-    move-object/from16 v1, p1
+    invoke-direct {v3, v0, v4}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;-><init>(Landroid/content/Context;Z)V
 
-    move/from16 v2, v27
+    invoke-virtual {v3}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->a()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
 
-    invoke-direct {v0, v1, v2}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;-><init>(Landroid/content/Context;Z)V
-
-    invoke-virtual/range {v26 .. v26}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->build()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
-
-    move-result-object v26
+    move-result-object v3
 
     move-object/from16 v0, p0
 
-    move-object/from16 v1, v26
-
-    invoke-virtual {v0, v1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setIndeterminateDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v3}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setIndeterminateDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 119
-    :goto_21
+    :goto_1a
     return-void
 
     .line 42
-    :cond_22
+    :cond_1b
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v18
+    move-result-object v5
 
     .line 43
-    .local v18, "res":Landroid/content/res/Resources;
-    sget-object v26, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar:[I
+    sget-object v3, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar:[I
 
-    const/16 v27, 0x0
+    const/4 v4, 0x0
 
     move-object/from16 v0, p1
 
     move-object/from16 v1, p2
 
-    move-object/from16 v2, v26
+    move/from16 v2, p3
 
-    move/from16 v3, p3
+    invoke-virtual {v0, v1, v3, v2, v4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
-    move/from16 v4, v27
-
-    invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
-
-    move-result-object v5
+    move-result-object v3
 
     .line 46
-    .local v5, "a":Landroid/content/res/TypedArray;
-    sget v26, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_color:I
+    sget v4, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_color:I
 
-    sget v27, Lfr/castorflex/android/smoothprogressbar/R$color;->spb_default_color:I
+    sget v6, Lfr/castorflex/android/smoothprogressbar/R$color;->spb_default_color:I
 
-    move-object/from16 v0, v18
+    invoke-virtual {v5, v6}, Landroid/content/res/Resources;->getColor(I)I
 
-    move/from16 v1, v27
+    move-result v6
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getColor(I)I
+    invoke-virtual {v3, v4, v6}, Landroid/content/res/TypedArray;->getColor(II)I
 
-    move-result v27
+    move-result v6
 
-    move/from16 v0, v26
+    .line 47
+    sget v4, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_sections_count:I
 
-    move/from16 v1, v27
+    sget v7, Lfr/castorflex/android/smoothprogressbar/R$integer;->spb_default_sections_count:I
 
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-virtual {v5, v7}, Landroid/content/res/Resources;->getInteger(I)I
+
+    move-result v7
+
+    invoke-virtual {v3, v4, v7}, Landroid/content/res/TypedArray;->getInteger(II)I
+
+    move-result v7
+
+    .line 48
+    sget v4, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_stroke_separator_length:I
+
+    sget v8, Lfr/castorflex/android/smoothprogressbar/R$dimen;->spb_default_stroke_separator_length:I
+
+    invoke-virtual {v5, v8}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v8
 
-    .line 47
-    .local v8, "color":I
-    sget v26, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_sections_count:I
+    invoke-virtual {v3, v4, v8}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
-    sget v27, Lfr/castorflex/android/smoothprogressbar/R$integer;->spb_default_sections_count:I
-
-    move-object/from16 v0, v18
-
-    move/from16 v1, v27
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
-
-    move-result v27
-
-    move/from16 v0, v26
-
-    move/from16 v1, v27
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getInteger(II)I
-
-    move-result v20
-
-    .line 48
-    .local v20, "sectionsCount":I
-    sget v26, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_stroke_separator_length:I
-
-    sget v27, Lfr/castorflex/android/smoothprogressbar/R$dimen;->spb_default_stroke_separator_length:I
-
-    move-object/from16 v0, v18
-
-    move/from16 v1, v27
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
-
-    move-result v27
-
-    move/from16 v0, v26
-
-    move/from16 v1, v27
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
-
-    move-result v21
+    move-result v8
 
     .line 49
-    .local v21, "separatorLength":I
-    sget v26, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_stroke_width:I
+    sget v4, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_stroke_width:I
 
-    sget v27, Lfr/castorflex/android/smoothprogressbar/R$dimen;->spb_default_stroke_width:I
+    sget v9, Lfr/castorflex/android/smoothprogressbar/R$dimen;->spb_default_stroke_width:I
 
-    move-object/from16 v0, v18
+    invoke-virtual {v5, v9}, Landroid/content/res/Resources;->getDimension(I)F
 
-    move/from16 v1, v27
+    move-result v9
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getDimension(I)F
+    invoke-virtual {v3, v4, v9}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
-    move-result v27
-
-    move/from16 v0, v26
-
-    move/from16 v1, v27
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getDimension(IF)F
-
-    move-result v25
+    move-result v9
 
     .line 50
-    .local v25, "strokeWidth":F
-    sget v26, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_speed:I
+    sget v4, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_speed:I
 
-    sget v27, Lfr/castorflex/android/smoothprogressbar/R$string;->spb_default_speed:I
+    sget v10, Lfr/castorflex/android/smoothprogressbar/R$string;->spb_default_speed:I
 
-    move-object/from16 v0, v18
+    invoke-virtual {v5, v10}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
 
-    move/from16 v1, v27
+    move-result-object v10
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v27
-
-    invoke-static/range {v27 .. v27}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
-
-    move-result v27
-
-    move/from16 v0, v26
-
-    move/from16 v1, v27
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
-
-    move-result v22
-
-    .line 51
-    .local v22, "speed":F
-    sget v26, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_progressiveStart_speed:I
-
-    move/from16 v0, v26
-
-    move/from16 v1, v22
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
-
-    move-result v23
-
-    .line 52
-    .local v23, "speedProgressiveStart":F
-    sget v26, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_progressiveStop_speed:I
-
-    move/from16 v0, v26
-
-    move/from16 v1, v22
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getFloat(IF)F
-
-    move-result v24
-
-    .line 53
-    .local v24, "speedProgressiveStop":F
-    sget v26, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_interpolator:I
-
-    const/16 v27, -0x1
-
-    move/from16 v0, v26
-
-    move/from16 v1, v27
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getInteger(II)I
-
-    move-result v14
-
-    .line 54
-    .local v14, "iInterpolator":I
-    sget v26, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_reversed:I
-
-    sget v27, Lfr/castorflex/android/smoothprogressbar/R$bool;->spb_default_reversed:I
-
-    move-object/from16 v0, v18
-
-    move/from16 v1, v27
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
-
-    move-result v27
-
-    move/from16 v0, v26
-
-    move/from16 v1, v27
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v19
-
-    .line 55
-    .local v19, "reversed":Z
-    sget v26, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_mirror_mode:I
-
-    sget v27, Lfr/castorflex/android/smoothprogressbar/R$bool;->spb_default_mirror_mode:I
-
-    move-object/from16 v0, v18
-
-    move/from16 v1, v27
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
-
-    move-result v27
-
-    move/from16 v0, v26
-
-    move/from16 v1, v27
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v16
-
-    .line 56
-    .local v16, "mirrorMode":Z
-    sget v26, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_colors:I
-
-    const/16 v27, 0x0
-
-    move/from16 v0, v26
-
-    move/from16 v1, v27
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-static {v10}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result v10
 
-    .line 57
-    .local v10, "colorsId":I
-    sget v26, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_progressiveStart_activated:I
+    invoke-virtual {v3, v4, v10}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
-    sget v27, Lfr/castorflex/android/smoothprogressbar/R$bool;->spb_default_progressiveStart_activated:I
+    move-result v10
 
-    move-object/from16 v0, v18
+    .line 51
+    sget v4, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_progressiveStart_speed:I
 
-    move/from16 v1, v27
+    invoke-virtual {v3, v4, v10}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
+    move-result v11
 
-    move-result v27
+    .line 52
+    sget v4, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_progressiveStop_speed:I
 
-    move/from16 v0, v26
-
-    move/from16 v1, v27
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v17
-
-    .line 58
-    .local v17, "progressiveStartActivated":Z
-    sget v26, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_background:I
-
-    move/from16 v0, v26
-
-    invoke-virtual {v5, v0}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v6
-
-    .line 59
-    .local v6, "backgroundDrawable":Landroid/graphics/drawable/Drawable;
-    sget v26, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_generate_background_with_colors:I
-
-    const/16 v27, 0x0
-
-    move/from16 v0, v26
-
-    move/from16 v1, v27
-
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {v3, v4, v10}, Landroid/content/res/TypedArray;->getFloat(IF)F
 
     move-result v12
 
-    .line 60
-    .local v12, "generateBackgroundWithColors":Z
-    sget v26, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_gradients:I
+    .line 53
+    sget v4, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_interpolator:I
 
-    const/16 v27, 0x0
+    const/4 v13, -0x1
 
-    move/from16 v0, v26
+    invoke-virtual {v3, v4, v13}, Landroid/content/res/TypedArray;->getInteger(II)I
 
-    move/from16 v1, v27
+    move-result v4
 
-    invoke-virtual {v5, v0, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    .line 54
+    sget v13, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_reversed:I
+
+    sget v14, Lfr/castorflex/android/smoothprogressbar/R$bool;->spb_default_reversed:I
+
+    invoke-virtual {v5, v14}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result v14
+
+    invoke-virtual {v3, v13, v14}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v13
 
+    .line 55
+    sget v14, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_mirror_mode:I
+
+    sget v15, Lfr/castorflex/android/smoothprogressbar/R$bool;->spb_default_mirror_mode:I
+
+    invoke-virtual {v5, v15}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result v15
+
+    invoke-virtual {v3, v14, v15}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
+    move-result v14
+
+    .line 56
+    sget v15, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_colors:I
+
+    const/16 v16, 0x0
+
+    move/from16 v0, v16
+
+    invoke-virtual {v3, v15, v0}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v15
+
+    .line 57
+    sget v16, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_progressiveStart_activated:I
+
+    sget v17, Lfr/castorflex/android/smoothprogressbar/R$bool;->spb_default_progressiveStart_activated:I
+
+    move/from16 v0, v17
+
+    invoke-virtual {v5, v0}, Landroid/content/res/Resources;->getBoolean(I)Z
+
+    move-result v17
+
+    move/from16 v0, v16
+
+    move/from16 v1, v17
+
+    invoke-virtual {v3, v0, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
+    move-result v16
+
+    .line 58
+    sget v17, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_background:I
+
+    move/from16 v0, v17
+
+    invoke-virtual {v3, v0}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v17
+
+    .line 59
+    sget v18, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_generate_background_with_colors:I
+
+    const/16 v19, 0x0
+
+    move/from16 v0, v18
+
+    move/from16 v1, v19
+
+    invoke-virtual {v3, v0, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
+    move-result v18
+
+    .line 60
+    sget v19, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_gradients:I
+
+    const/16 v20, 0x0
+
+    move/from16 v0, v19
+
+    move/from16 v1, v20
+
+    invoke-virtual {v3, v0, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
+    move-result v19
+
     .line 61
-    .local v13, "gradients":Z
-    invoke-virtual {v5}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v3}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 64
-    const/4 v15, 0x0
+    const/4 v3, 0x0
 
     .line 65
-    .local v15, "interpolator":Landroid/view/animation/Interpolator;
-    const/16 v26, -0x1
+    const/16 v20, -0x1
 
-    move/from16 v0, v26
+    move/from16 v0, v20
 
-    if-ne v14, v0, :cond_136
+    if-ne v4, v0, :cond_e1
 
     .line 66
     invoke-virtual/range {p0 .. p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->getInterpolator()Landroid/view/animation/Interpolator;
 
-    move-result-object v15
+    move-result-object v3
 
     .line 68
-    :cond_136
-    if-nez v15, :cond_140
+    :cond_e1
+    if-nez v3, :cond_162
 
     .line 69
-    packed-switch v14, :pswitch_data_1de
+    packed-switch v4, :pswitch_data_164
 
     .line 81
-    new-instance v15, Landroid/view/animation/AccelerateInterpolator;
+    new-instance v3, Landroid/view/animation/AccelerateInterpolator;
 
-    .end local v15    # "interpolator":Landroid/view/animation/Interpolator;
-    invoke-direct {v15}, Landroid/view/animation/AccelerateInterpolator;-><init>()V
+    invoke-direct {v3}, Landroid/view/animation/AccelerateInterpolator;-><init>()V
+
+    move-object v4, v3
 
     .line 85
-    .restart local v15    # "interpolator":Landroid/view/animation/Interpolator;
-    :cond_140
-    :goto_140
-    const/4 v9, 0x0
+    :goto_ec
+    const/4 v3, 0x0
 
     .line 87
-    .local v9, "colors":[I
-    if-eqz v10, :cond_149
+    if-eqz v15, :cond_f3
 
     .line 88
-    move-object/from16 v0, v18
+    invoke-virtual {v5, v15}, Landroid/content/res/Resources;->getIntArray(I)[I
 
-    invoke-virtual {v0, v10}, Landroid/content/res/Resources;->getIntArray(I)[I
-
-    move-result-object v9
+    move-result-object v3
 
     .line 91
-    :cond_149
-    new-instance v26, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
+    :cond_f3
+    new-instance v5, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
 
-    move-object/from16 v0, v26
+    move-object/from16 v0, p1
 
-    move-object/from16 v1, p1
-
-    invoke-direct {v0, v1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;-><init>(Landroid/content/Context;)V
+    invoke-direct {v5, v0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;-><init>(Landroid/content/Context;)V
 
     .line 92
-    move-object/from16 v0, v26
+    invoke-virtual {v5, v10}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->b(F)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
 
-    move/from16 v1, v22
-
-    invoke-virtual {v0, v1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->speed(F)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
-
-    move-result-object v26
+    move-result-object v5
 
     .line 93
-    move-object/from16 v0, v26
+    invoke-virtual {v5, v11}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->c(F)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
 
-    move/from16 v1, v23
-
-    invoke-virtual {v0, v1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->progressiveStartSpeed(F)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
-
-    move-result-object v26
+    move-result-object v5
 
     .line 94
-    move-object/from16 v0, v26
+    invoke-virtual {v5, v12}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->d(F)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
 
-    move/from16 v1, v24
-
-    invoke-virtual {v0, v1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->progressiveStopSpeed(F)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
-
-    move-result-object v26
+    move-result-object v5
 
     .line 95
-    move-object/from16 v0, v26
+    invoke-virtual {v5, v4}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->a(Landroid/view/animation/Interpolator;)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
 
-    invoke-virtual {v0, v15}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->interpolator(Landroid/view/animation/Interpolator;)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
-
-    move-result-object v26
+    move-result-object v4
 
     .line 96
-    move-object/from16 v0, v26
+    invoke-virtual {v4, v7}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->a(I)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
 
-    move/from16 v1, v20
-
-    invoke-virtual {v0, v1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->sectionsCount(I)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
-
-    move-result-object v26
+    move-result-object v4
 
     .line 97
-    move-object/from16 v0, v26
+    invoke-virtual {v4, v8}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->b(I)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
 
-    move/from16 v1, v21
-
-    invoke-virtual {v0, v1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->separatorLength(I)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
-
-    move-result-object v26
+    move-result-object v4
 
     .line 98
-    move-object/from16 v0, v26
+    invoke-virtual {v4, v9}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->a(F)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
 
-    move/from16 v1, v25
-
-    invoke-virtual {v0, v1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->strokeWidth(F)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
-
-    move-result-object v26
+    move-result-object v4
 
     .line 99
-    move-object/from16 v0, v26
+    invoke-virtual {v4, v13}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->a(Z)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
 
-    move/from16 v1, v19
-
-    invoke-virtual {v0, v1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->reversed(Z)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
-
-    move-result-object v26
+    move-result-object v4
 
     .line 100
-    move-object/from16 v0, v26
+    invoke-virtual {v4, v14}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->b(Z)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
 
-    move/from16 v1, v16
-
-    invoke-virtual {v0, v1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->mirrorMode(Z)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
-
-    move-result-object v26
+    move-result-object v4
 
     .line 101
-    move-object/from16 v0, v26
+    move/from16 v0, v16
 
-    move/from16 v1, v17
+    invoke-virtual {v4, v0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->c(Z)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
 
-    invoke-virtual {v0, v1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->progressiveStart(Z)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
-
-    move-result-object v26
+    move-result-object v4
 
     .line 102
-    move-object/from16 v0, v26
+    move/from16 v0, v19
 
-    invoke-virtual {v0, v13}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->gradients(Z)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
+    invoke-virtual {v4, v0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->d(Z)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
 
-    move-result-object v7
+    move-result-object v4
 
     .line 104
-    .local v7, "builder":Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
-    if-eqz v6, :cond_1ab
+    if-eqz v17, :cond_131
 
     .line 105
-    invoke-virtual {v7, v6}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->backgroundDrawable(Landroid/graphics/drawable/Drawable;)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
+    move-object/from16 v0, v17
+
+    invoke-virtual {v4, v0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->a(Landroid/graphics/drawable/Drawable;)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
 
     .line 108
-    :cond_1ab
-    if-eqz v12, :cond_1b0
+    :cond_131
+    if-eqz v18, :cond_136
 
     .line 109
-    invoke-virtual {v7}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->generateBackgroundUsingColors()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
+    invoke-virtual {v4}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->b()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
 
     .line 112
-    :cond_1b0
-    if-eqz v9, :cond_1da
+    :cond_136
+    if-eqz v3, :cond_15e
 
-    array-length v0, v9
+    array-length v5, v3
 
-    move/from16 v26, v0
-
-    if-lez v26, :cond_1da
+    if-lez v5, :cond_15e
 
     .line 113
-    invoke-virtual {v7, v9}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->colors([I)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
+    invoke-virtual {v4, v3}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->a([I)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
 
     .line 117
-    :goto_1ba
-    invoke-virtual {v7}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->build()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
+    :goto_13e
+    invoke-virtual {v4}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->a()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
 
-    move-result-object v11
+    move-result-object v3
 
     .line 118
-    .local v11, "d":Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
     move-object/from16 v0, p0
 
-    invoke-virtual {v0, v11}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setIndeterminateDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v3}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setIndeterminateDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    goto/16 :goto_21
+    goto/16 :goto_1a
 
     .line 71
-    .end local v7    # "builder":Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
-    .end local v9    # "colors":[I
-    .end local v11    # "d":Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
-    :pswitch_1c5
-    new-instance v15, Landroid/view/animation/AccelerateDecelerateInterpolator;
+    :pswitch_149
+    new-instance v3, Landroid/view/animation/AccelerateDecelerateInterpolator;
 
-    .end local v15    # "interpolator":Landroid/view/animation/Interpolator;
-    invoke-direct {v15}, Landroid/view/animation/AccelerateDecelerateInterpolator;-><init>()V
+    invoke-direct {v3}, Landroid/view/animation/AccelerateDecelerateInterpolator;-><init>()V
+
+    move-object v4, v3
 
     .line 72
-    .restart local v15    # "interpolator":Landroid/view/animation/Interpolator;
-    goto/16 :goto_140
+    goto :goto_ec
 
     .line 74
-    :pswitch_1cc
-    new-instance v15, Landroid/view/animation/DecelerateInterpolator;
+    :pswitch_150
+    new-instance v3, Landroid/view/animation/DecelerateInterpolator;
 
-    .end local v15    # "interpolator":Landroid/view/animation/Interpolator;
-    invoke-direct {v15}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
+    invoke-direct {v3}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
+
+    move-object v4, v3
 
     .line 75
-    .restart local v15    # "interpolator":Landroid/view/animation/Interpolator;
-    goto/16 :goto_140
+    goto :goto_ec
 
     .line 77
-    :pswitch_1d3
-    new-instance v15, Landroid/view/animation/LinearInterpolator;
+    :pswitch_157
+    new-instance v3, Landroid/view/animation/LinearInterpolator;
 
-    .end local v15    # "interpolator":Landroid/view/animation/Interpolator;
-    invoke-direct {v15}, Landroid/view/animation/LinearInterpolator;-><init>()V
+    invoke-direct {v3}, Landroid/view/animation/LinearInterpolator;-><init>()V
+
+    move-object v4, v3
 
     .line 78
-    .restart local v15    # "interpolator":Landroid/view/animation/Interpolator;
-    goto/16 :goto_140
+    goto :goto_ec
 
     .line 115
-    .restart local v7    # "builder":Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
-    .restart local v9    # "colors":[I
-    :cond_1da
-    invoke-virtual {v7, v8}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->color(I)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
+    :cond_15e
+    invoke-virtual {v4, v6}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;->c(I)Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Builder;
 
-    goto :goto_1ba
+    goto :goto_13e
+
+    :cond_162
+    move-object v4, v3
+
+    goto :goto_ec
 
     .line 69
-    :pswitch_data_1de
+    :pswitch_data_164
     .packed-switch 0x1
-        :pswitch_1d3
-        :pswitch_1c5
-        :pswitch_1cc
+        :pswitch_157
+        :pswitch_149
+        :pswitch_150
     .end packed-switch
 .end method
 
-.method private checkIndeterminateDrawable()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
-    .registers 4
+.method private a()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
+    .registers 3
 
     .prologue
     .line 210
@@ -642,7 +482,6 @@
     move-result-object v0
 
     .line 211
-    .local v0, "ret":Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_a
 
     instance-of v1, v0, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
@@ -651,460 +490,25 @@
 
     .line 212
     :cond_a
-    new-instance v1, Ljava/lang/RuntimeException;
+    new-instance v0, Ljava/lang/RuntimeException;
 
-    const-string/jumbo v2, "The drawable is not a SmoothProgressDrawable"
+    const-string/jumbo v1, "The drawable is not a SmoothProgressDrawable"
 
-    invoke-direct {v1, v2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 
     .line 213
     :cond_13
     check-cast v0, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
 
-    .end local v0    # "ret":Landroid/graphics/drawable/Drawable;
     return-object v0
 .end method
 
 
 # virtual methods
-.method public applyStyle(I)V
-    .registers 12
-    .param p1, "styleResId"    # I
-
-    .prologue
-    const/4 v9, 0x0
-
-    const/4 v8, 0x0
-
-    .line 122
-    invoke-virtual {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->getContext()Landroid/content/Context;
-
-    move-result-object v5
-
-    const/4 v6, 0x0
-
-    sget-object v7, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar:[I
-
-    invoke-virtual {v5, v6, v7, v8, p1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
-
-    move-result-object v0
-
-    .line 124
-    .local v0, "a":Landroid/content/res/TypedArray;
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_color:I
-
-    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_1e
-
-    .line 125
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_color:I
-
-    invoke-virtual {v0, v5, v8}, Landroid/content/res/TypedArray;->getColor(II)I
-
-    move-result v5
-
-    invoke-virtual {p0, v5}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setSmoothProgressDrawableColor(I)V
-
-    .line 127
-    :cond_1e
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_colors:I
-
-    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_3e
-
-    .line 128
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_colors:I
-
-    invoke-virtual {v0, v5, v8}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v2
-
-    .line 129
-    .local v2, "colorsId":I
-    if-eqz v2, :cond_3e
-
-    .line 130
-    invoke-virtual {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v5
-
-    invoke-virtual {v5, v2}, Landroid/content/res/Resources;->getIntArray(I)[I
-
-    move-result-object v1
-
-    .line 131
-    .local v1, "colors":[I
-    if-eqz v1, :cond_3e
-
-    array-length v5, v1
-
-    if-lez v5, :cond_3e
-
-    .line 132
-    invoke-virtual {p0, v1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setSmoothProgressDrawableColors([I)V
-
-    .line 135
-    .end local v1    # "colors":[I
-    .end local v2    # "colorsId":I
-    :cond_3e
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_sections_count:I
-
-    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_4f
-
-    .line 136
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_sections_count:I
-
-    invoke-virtual {v0, v5, v8}, Landroid/content/res/TypedArray;->getInteger(II)I
-
-    move-result v5
-
-    invoke-virtual {p0, v5}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setSmoothProgressDrawableSectionsCount(I)V
-
-    .line 138
-    :cond_4f
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_stroke_separator_length:I
-
-    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_60
-
-    .line 139
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_stroke_separator_length:I
-
-    invoke-virtual {v0, v5, v8}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
-
-    move-result v5
-
-    invoke-virtual {p0, v5}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setSmoothProgressDrawableSeparatorLength(I)V
-
-    .line 141
-    :cond_60
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_stroke_width:I
-
-    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_71
-
-    .line 142
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_stroke_width:I
-
-    invoke-virtual {v0, v5, v9}, Landroid/content/res/TypedArray;->getDimension(IF)F
-
-    move-result v5
-
-    invoke-virtual {p0, v5}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setSmoothProgressDrawableStrokeWidth(F)V
-
-    .line 144
-    :cond_71
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_speed:I
-
-    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_82
-
-    .line 145
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_speed:I
-
-    invoke-virtual {v0, v5, v9}, Landroid/content/res/TypedArray;->getFloat(IF)F
-
-    move-result v5
-
-    invoke-virtual {p0, v5}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setSmoothProgressDrawableSpeed(F)V
-
-    .line 147
-    :cond_82
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_progressiveStart_speed:I
-
-    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_93
-
-    .line 148
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_progressiveStart_speed:I
-
-    invoke-virtual {v0, v5, v9}, Landroid/content/res/TypedArray;->getFloat(IF)F
-
-    move-result v5
-
-    invoke-virtual {p0, v5}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setSmoothProgressDrawableProgressiveStartSpeed(F)V
-
-    .line 150
-    :cond_93
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_progressiveStop_speed:I
-
-    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_a4
-
-    .line 151
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_progressiveStop_speed:I
-
-    invoke-virtual {v0, v5, v9}, Landroid/content/res/TypedArray;->getFloat(IF)F
-
-    move-result v5
-
-    invoke-virtual {p0, v5}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setSmoothProgressDrawableProgressiveStopSpeed(F)V
-
-    .line 153
-    :cond_a4
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_reversed:I
-
-    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_b5
-
-    .line 154
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_reversed:I
-
-    invoke-virtual {v0, v5, v8}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v5
-
-    invoke-virtual {p0, v5}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setSmoothProgressDrawableReversed(Z)V
-
-    .line 156
-    :cond_b5
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_mirror_mode:I
-
-    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_c6
-
-    .line 157
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_mirror_mode:I
-
-    invoke-virtual {v0, v5, v8}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v5
-
-    invoke-virtual {p0, v5}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setSmoothProgressDrawableMirrorMode(Z)V
-
-    .line 159
-    :cond_c6
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_progressiveStart_activated:I
-
-    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_d7
-
-    .line 160
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_progressiveStart_activated:I
-
-    invoke-virtual {v0, v5, v8}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v5
-
-    invoke-virtual {p0, v5}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setProgressiveStartActivated(Z)V
-
-    .line 162
-    :cond_d7
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_progressiveStart_activated:I
-
-    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_e8
-
-    .line 163
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_progressiveStart_activated:I
-
-    invoke-virtual {v0, v5, v8}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v5
-
-    invoke-virtual {p0, v5}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setProgressiveStartActivated(Z)V
-
-    .line 165
-    :cond_e8
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_gradients:I
-
-    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_f9
-
-    .line 166
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_gradients:I
-
-    invoke-virtual {v0, v5, v8}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v5
-
-    invoke-virtual {p0, v5}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setSmoothProgressDrawableUseGradients(Z)V
-
-    .line 168
-    :cond_f9
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_generate_background_with_colors:I
-
-    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_120
-
-    .line 169
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_generate_background_with_colors:I
-
-    invoke-virtual {v0, v5, v8}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_120
-
-    .line 171
-    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->checkIndeterminateDrawable()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->getColors()[I
-
-    move-result-object v5
-
-    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->checkIndeterminateDrawable()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
-
-    move-result-object v6
-
-    invoke-virtual {v6}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->getStrokeWidth()F
-
-    move-result v6
-
-    invoke-static {v5, v6}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBarUtils;->generateDrawableWithColors([IF)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v5
-
-    .line 170
-    invoke-virtual {p0, v5}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setSmoothProgressDrawableBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 174
-    :cond_120
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_interpolator:I
-
-    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_138
-
-    .line 175
-    sget v5, Lfr/castorflex/android/smoothprogressbar/R$styleable;->SmoothProgressBar_spb_interpolator:I
-
-    const/4 v6, -0x1
-
-    invoke-virtual {v0, v5, v6}, Landroid/content/res/TypedArray;->getInteger(II)I
-
-    move-result v3
-
-    .line 177
-    .local v3, "iInterpolator":I
-    packed-switch v3, :pswitch_data_154
-
-    .line 191
-    const/4 v4, 0x0
-
-    .line 193
-    .local v4, "interpolator":Landroid/view/animation/Interpolator;
-    :goto_133
-    if-eqz v4, :cond_138
-
-    .line 194
-    invoke-virtual {p0, v4}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->setInterpolator(Landroid/view/animation/Interpolator;)V
-
-    .line 197
-    .end local v3    # "iInterpolator":I
-    .end local v4    # "interpolator":Landroid/view/animation/Interpolator;
-    :cond_138
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
-
-    .line 198
-    return-void
-
-    .line 179
-    .restart local v3    # "iInterpolator":I
-    :pswitch_13c
-    new-instance v4, Landroid/view/animation/AccelerateDecelerateInterpolator;
-
-    invoke-direct {v4}, Landroid/view/animation/AccelerateDecelerateInterpolator;-><init>()V
-
-    .line 180
-    .restart local v4    # "interpolator":Landroid/view/animation/Interpolator;
-    goto :goto_133
-
-    .line 182
-    .end local v4    # "interpolator":Landroid/view/animation/Interpolator;
-    :pswitch_142
-    new-instance v4, Landroid/view/animation/DecelerateInterpolator;
-
-    invoke-direct {v4}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
-
-    .line 183
-    .restart local v4    # "interpolator":Landroid/view/animation/Interpolator;
-    goto :goto_133
-
-    .line 185
-    .end local v4    # "interpolator":Landroid/view/animation/Interpolator;
-    :pswitch_148
-    new-instance v4, Landroid/view/animation/LinearInterpolator;
-
-    invoke-direct {v4}, Landroid/view/animation/LinearInterpolator;-><init>()V
-
-    .line 186
-    .restart local v4    # "interpolator":Landroid/view/animation/Interpolator;
-    goto :goto_133
-
-    .line 188
-    .end local v4    # "interpolator":Landroid/view/animation/Interpolator;
-    :pswitch_14e
-    new-instance v4, Landroid/view/animation/AccelerateInterpolator;
-
-    invoke-direct {v4}, Landroid/view/animation/AccelerateInterpolator;-><init>()V
-
-    .line 189
-    .restart local v4    # "interpolator":Landroid/view/animation/Interpolator;
-    goto :goto_133
-
-    .line 177
-    :pswitch_data_154
-    .packed-switch 0x0
-        :pswitch_14e
-        :pswitch_148
-        :pswitch_13c
-        :pswitch_142
-    .end packed-switch
-.end method
-
 .method protected declared-synchronized onDraw(Landroid/graphics/Canvas;)V
     .registers 3
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
 
     .prologue
     .line 202
@@ -1165,39 +569,8 @@
     throw v0
 .end method
 
-.method public progressiveStart()V
-    .registers 2
-
-    .prologue
-    .line 285
-    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->checkIndeterminateDrawable()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->progressiveStart()V
-
-    .line 286
-    return-void
-.end method
-
-.method public progressiveStop()V
-    .registers 2
-
-    .prologue
-    .line 289
-    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->checkIndeterminateDrawable()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->progressiveStop()V
-
-    .line 290
-    return-void
-.end method
-
 .method public setInterpolator(Landroid/view/animation/Interpolator;)V
     .registers 4
-    .param p1, "interpolator"    # Landroid/view/animation/Interpolator;
 
     .prologue
     .line 218
@@ -1209,7 +582,6 @@
     move-result-object v0
 
     .line 220
-    .local v0, "ret":Landroid/graphics/drawable/Drawable;
     if-eqz v0, :cond_12
 
     instance-of v1, v0, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
@@ -1219,8 +591,7 @@
     .line 221
     check-cast v0, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
 
-    .end local v0    # "ret":Landroid/graphics/drawable/Drawable;
-    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->setInterpolator(Landroid/view/animation/Interpolator;)V
+    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->a(Landroid/view/animation/Interpolator;)V
 
     .line 222
     :cond_12
@@ -1229,63 +600,29 @@
 
 .method public setProgressiveStartActivated(Z)V
     .registers 3
-    .param p1, "progressiveStartActivated"    # Z
 
     .prologue
     .line 269
-    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->checkIndeterminateDrawable()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
+    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->a()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->setProgressiveStartActivated(Z)V
+    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->c(Z)V
 
     .line 270
     return-void
 .end method
 
-.method public setSmoothProgressDrawableBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-    .registers 3
-    .param p1, "drawable"    # Landroid/graphics/drawable/Drawable;
-
-    .prologue
-    .line 277
-    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->checkIndeterminateDrawable()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 278
-    return-void
-.end method
-
-.method public setSmoothProgressDrawableCallbacks(Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Callbacks;)V
-    .registers 3
-    .param p1, "listener"    # Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Callbacks;
-
-    .prologue
-    .line 273
-    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->checkIndeterminateDrawable()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->setCallbacks(Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable$Callbacks;)V
-
-    .line 274
-    return-void
-.end method
-
 .method public setSmoothProgressDrawableColor(I)V
     .registers 3
-    .param p1, "color"    # I
 
     .prologue
     .line 233
-    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->checkIndeterminateDrawable()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
+    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->a()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->setColor(I)V
+    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->a(I)V
 
     .line 234
     return-void
@@ -1293,47 +630,29 @@
 
 .method public setSmoothProgressDrawableColors([I)V
     .registers 3
-    .param p1, "colors"    # [I
 
     .prologue
     .line 229
-    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->checkIndeterminateDrawable()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
+    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->a()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->setColors([I)V
+    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->a([I)V
 
     .line 230
     return-void
 .end method
 
-.method public setSmoothProgressDrawableInterpolator(Landroid/view/animation/Interpolator;)V
-    .registers 3
-    .param p1, "interpolator"    # Landroid/view/animation/Interpolator;
-
-    .prologue
-    .line 225
-    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->checkIndeterminateDrawable()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->setInterpolator(Landroid/view/animation/Interpolator;)V
-
-    .line 226
-    return-void
-.end method
-
 .method public setSmoothProgressDrawableMirrorMode(Z)V
     .registers 3
-    .param p1, "mirrorMode"    # Z
 
     .prologue
     .line 265
-    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->checkIndeterminateDrawable()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
+    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->a()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->setMirrorMode(Z)V
+    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->b(Z)V
 
     .line 266
     return-void
@@ -1341,15 +660,14 @@
 
 .method public setSmoothProgressDrawableProgressiveStartSpeed(F)V
     .registers 3
-    .param p1, "speed"    # F
 
     .prologue
     .line 241
-    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->checkIndeterminateDrawable()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
+    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->a()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->setProgressiveStartSpeed(F)V
+    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->b(F)V
 
     .line 242
     return-void
@@ -1357,15 +675,14 @@
 
 .method public setSmoothProgressDrawableProgressiveStopSpeed(F)V
     .registers 3
-    .param p1, "speed"    # F
 
     .prologue
     .line 245
-    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->checkIndeterminateDrawable()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
+    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->a()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->setProgressiveStopSpeed(F)V
+    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->c(F)V
 
     .line 246
     return-void
@@ -1373,15 +690,14 @@
 
 .method public setSmoothProgressDrawableReversed(Z)V
     .registers 3
-    .param p1, "reversed"    # Z
 
     .prologue
     .line 261
-    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->checkIndeterminateDrawable()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
+    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->a()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->setReversed(Z)V
+    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->a(Z)V
 
     .line 262
     return-void
@@ -1389,15 +705,14 @@
 
 .method public setSmoothProgressDrawableSectionsCount(I)V
     .registers 3
-    .param p1, "sectionsCount"    # I
 
     .prologue
     .line 249
-    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->checkIndeterminateDrawable()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
+    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->a()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->setSectionsCount(I)V
+    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->b(I)V
 
     .line 250
     return-void
@@ -1405,15 +720,14 @@
 
 .method public setSmoothProgressDrawableSeparatorLength(I)V
     .registers 3
-    .param p1, "separatorLength"    # I
 
     .prologue
     .line 253
-    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->checkIndeterminateDrawable()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
+    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->a()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->setSeparatorLength(I)V
+    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->c(I)V
 
     .line 254
     return-void
@@ -1421,15 +735,14 @@
 
 .method public setSmoothProgressDrawableSpeed(F)V
     .registers 3
-    .param p1, "speed"    # F
 
     .prologue
     .line 237
-    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->checkIndeterminateDrawable()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
+    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->a()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->setSpeed(F)V
+    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->a(F)V
 
     .line 238
     return-void
@@ -1437,15 +750,14 @@
 
 .method public setSmoothProgressDrawableStrokeWidth(F)V
     .registers 3
-    .param p1, "strokeWidth"    # F
 
     .prologue
     .line 257
-    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->checkIndeterminateDrawable()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
+    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->a()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->setStrokeWidth(F)V
+    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->d(F)V
 
     .line 258
     return-void
@@ -1453,15 +765,14 @@
 
 .method public setSmoothProgressDrawableUseGradients(Z)V
     .registers 3
-    .param p1, "useGradients"    # Z
 
     .prologue
     .line 281
-    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->checkIndeterminateDrawable()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
+    invoke-direct {p0}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;->a()Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->setUseGradients(Z)V
+    invoke-virtual {v0, p1}, Lfr/castorflex/android/smoothprogressbar/SmoothProgressDrawable;->d(Z)V
 
     .line 282
     return-void

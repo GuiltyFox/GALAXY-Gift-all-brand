@@ -8,11 +8,6 @@
     value = Lcom/squareup/picasso/BitmapHunter;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/ThreadLocal",
@@ -36,19 +31,7 @@
 
 
 # virtual methods
-.method protected bridge synthetic initialValue()Ljava/lang/Object;
-    .registers 2
-
-    .prologue
-    .line 52
-    invoke-virtual {p0}, Lcom/squareup/picasso/BitmapHunter$1;->initialValue()Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method protected initialValue()Ljava/lang/StringBuilder;
+.method protected a()Ljava/lang/StringBuilder;
     .registers 3
 
     .prologue
@@ -58,6 +41,18 @@
     const-string/jumbo v1, "Picasso-"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method protected synthetic initialValue()Ljava/lang/Object;
+    .registers 2
+
+    .prologue
+    .line 52
+    invoke-virtual {p0}, Lcom/squareup/picasso/BitmapHunter$1;->a()Ljava/lang/StringBuilder;
+
+    move-result-object v0
 
     return-object v0
 .end method

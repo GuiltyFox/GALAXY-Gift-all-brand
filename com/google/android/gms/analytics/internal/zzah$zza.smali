@@ -2,30 +2,19 @@
 .super Ljava/lang/Object;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/google/android/gms/analytics/internal/zzah;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "zza"
-.end annotation
-
-
 # instance fields
-.field private zzRK:I
+.field final synthetic a:Lcom/google/android/gms/analytics/internal/zzah;
 
-.field private zzRL:Ljava/io/ByteArrayOutputStream;
+.field private b:I
 
-.field final synthetic zzRM:Lcom/google/android/gms/analytics/internal/zzah;
+.field private c:Ljava/io/ByteArrayOutputStream;
 
 
 # direct methods
 .method public constructor <init>(Lcom/google/android/gms/analytics/internal/zzah;)V
     .registers 3
 
-    iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzRM:Lcom/google/android/gms/analytics/internal/zzah;
+    iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->a:Lcom/google/android/gms/analytics/internal/zzah;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -33,45 +22,41 @@
 
     invoke-direct {v0}, Ljava/io/ByteArrayOutputStream;-><init>()V
 
-    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzRL:Ljava/io/ByteArrayOutputStream;
+    iput-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->c:Ljava/io/ByteArrayOutputStream;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getPayload()[B
+.method public a()I
     .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzRL:Ljava/io/ByteArrayOutputStream;
+    iget v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->b:I
 
-    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
-
-    move-result-object v0
-
-    return-object v0
+    return v0
 .end method
 
-.method public zzj(Lcom/google/android/gms/analytics/internal/zzab;)Z
+.method public a(Lcom/google/android/gms/analytics/internal/zzab;)Z
     .registers 7
 
     const/4 v1, 0x0
 
     const/4 v2, 0x1
 
-    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->zzy(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lcom/google/android/gms/common/internal/zzx;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-    iget v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzRK:I
+    iget v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->b:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iget-object v3, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzRM:Lcom/google/android/gms/analytics/internal/zzah;
+    iget-object v3, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->a:Lcom/google/android/gms/analytics/internal/zzah;
 
-    invoke-virtual {v3}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
+    invoke-virtual {v3}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v3
 
-    invoke-virtual {v3}, Lcom/google/android/gms/analytics/internal/zzr;->zzkm()I
+    invoke-virtual {v3}, Lcom/google/android/gms/analytics/internal/zzr;->m()I
 
     move-result v3
 
@@ -83,23 +68,23 @@
     return v0
 
     :cond_17
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzRM:Lcom/google/android/gms/analytics/internal/zzah;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->a:Lcom/google/android/gms/analytics/internal/zzah;
 
-    invoke-virtual {v0, p1, v1}, Lcom/google/android/gms/analytics/internal/zzah;->zza(Lcom/google/android/gms/analytics/internal/zzab;Z)Ljava/lang/String;
+    invoke-virtual {v0, p1, v1}, Lcom/google/android/gms/analytics/internal/zzah;->a(Lcom/google/android/gms/analytics/internal/zzab;Z)Ljava/lang/String;
 
     move-result-object v0
 
     if-nez v0, :cond_2d
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzRM:Lcom/google/android/gms/analytics/internal/zzah;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->a:Lcom/google/android/gms/analytics/internal/zzah;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzah;->zziU()Lcom/google/android/gms/analytics/internal/zzaf;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzah;->p()Lcom/google/android/gms/analytics/internal/zzaf;
 
     move-result-object v0
 
     const-string/jumbo v1, "Error formatting hit"
 
-    invoke-virtual {v0, p1, v1}, Lcom/google/android/gms/analytics/internal/zzaf;->zza(Lcom/google/android/gms/analytics/internal/zzab;Ljava/lang/String;)V
+    invoke-virtual {v0, p1, v1}, Lcom/google/android/gms/analytics/internal/zzaf;->a(Lcom/google/android/gms/analytics/internal/zzab;Ljava/lang/String;)V
 
     move v0, v2
 
@@ -112,34 +97,34 @@
 
     array-length v0, v3
 
-    iget-object v4, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzRM:Lcom/google/android/gms/analytics/internal/zzah;
+    iget-object v4, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->a:Lcom/google/android/gms/analytics/internal/zzah;
 
-    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
+    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v4
 
-    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzr;->zzke()I
+    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzr;->e()I
 
     move-result v4
 
     if-le v0, v4, :cond_4c
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzRM:Lcom/google/android/gms/analytics/internal/zzah;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->a:Lcom/google/android/gms/analytics/internal/zzah;
 
-    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzah;->zziU()Lcom/google/android/gms/analytics/internal/zzaf;
+    invoke-virtual {v0}, Lcom/google/android/gms/analytics/internal/zzah;->p()Lcom/google/android/gms/analytics/internal/zzaf;
 
     move-result-object v0
 
     const-string/jumbo v1, "Hit size exceeds the maximum size limit"
 
-    invoke-virtual {v0, p1, v1}, Lcom/google/android/gms/analytics/internal/zzaf;->zza(Lcom/google/android/gms/analytics/internal/zzab;Ljava/lang/String;)V
+    invoke-virtual {v0, p1, v1}, Lcom/google/android/gms/analytics/internal/zzaf;->a(Lcom/google/android/gms/analytics/internal/zzab;Ljava/lang/String;)V
 
     move v0, v2
 
     goto :goto_16
 
     :cond_4c
-    iget-object v4, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzRL:Ljava/io/ByteArrayOutputStream;
+    iget-object v4, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->c:Ljava/io/ByteArrayOutputStream;
 
     invoke-virtual {v4}, Ljava/io/ByteArrayOutputStream;->size()I
 
@@ -150,7 +135,7 @@
     add-int/lit8 v0, v0, 0x1
 
     :cond_56
-    iget-object v4, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzRL:Ljava/io/ByteArrayOutputStream;
+    iget-object v4, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->c:Ljava/io/ByteArrayOutputStream;
 
     invoke-virtual {v4}, Ljava/io/ByteArrayOutputStream;->size()I
 
@@ -158,13 +143,13 @@
 
     add-int/2addr v0, v4
 
-    iget-object v4, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzRM:Lcom/google/android/gms/analytics/internal/zzah;
+    iget-object v4, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->a:Lcom/google/android/gms/analytics/internal/zzah;
 
-    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzah;->zziV()Lcom/google/android/gms/analytics/internal/zzr;
+    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzah;->q()Lcom/google/android/gms/analytics/internal/zzr;
 
     move-result-object v4
 
-    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzr;->zzkg()I
+    invoke-virtual {v4}, Lcom/google/android/gms/analytics/internal/zzr;->g()I
 
     move-result v4
 
@@ -176,7 +161,7 @@
 
     :cond_6b
     :try_start_6b
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzRL:Ljava/io/ByteArrayOutputStream;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->c:Ljava/io/ByteArrayOutputStream;
 
     invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->size()I
 
@@ -184,26 +169,26 @@
 
     if-lez v0, :cond_7c
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzRL:Ljava/io/ByteArrayOutputStream;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->c:Ljava/io/ByteArrayOutputStream;
 
-    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzah;->zzlm()[B
+    invoke-static {}, Lcom/google/android/gms/analytics/internal/zzah;->c()[B
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Ljava/io/ByteArrayOutputStream;->write([B)V
 
     :cond_7c
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzRL:Ljava/io/ByteArrayOutputStream;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->c:Ljava/io/ByteArrayOutputStream;
 
     invoke-virtual {v0, v3}, Ljava/io/ByteArrayOutputStream;->write([B)V
     :try_end_81
     .catch Ljava/io/IOException; {:try_start_6b .. :try_end_81} :catch_89
 
-    iget v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzRK:I
+    iget v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->b:I
 
     add-int/lit8 v0, v0, 0x1
 
-    iput v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzRK:I
+    iput v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->b:I
 
     move v0, v2
 
@@ -212,21 +197,25 @@
     :catch_89
     move-exception v0
 
-    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzRM:Lcom/google/android/gms/analytics/internal/zzah;
+    iget-object v1, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->a:Lcom/google/android/gms/analytics/internal/zzah;
 
     const-string/jumbo v3, "Failed to write payload when batching hits"
 
-    invoke-virtual {v1, v3, v0}, Lcom/google/android/gms/analytics/internal/zzah;->zze(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual {v1, v3, v0}, Lcom/google/android/gms/analytics/internal/zzah;->e(Ljava/lang/String;Ljava/lang/Object;)V
 
     move v0, v2
 
     goto :goto_16
 .end method
 
-.method public zzln()I
+.method public b()[B
     .registers 2
 
-    iget v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->zzRK:I
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzah$zza;->c:Ljava/io/ByteArrayOutputStream;
 
-    return v0
+    invoke-virtual {v0}, Ljava/io/ByteArrayOutputStream;->toByteArray()[B
+
+    move-result-object v0
+
+    return-object v0
 .end method

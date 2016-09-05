@@ -12,8 +12,6 @@
 # direct methods
 .method private constructor <init>(Landroid/content/Context;Landroid/content/res/TypedArray;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "array"    # Landroid/content/res/TypedArray;
 
     .prologue
     .line 51
@@ -31,9 +29,6 @@
 
 .method public static obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[I)Landroid/support/v7/widget/TintTypedArray;
     .registers 5
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "set"    # Landroid/util/AttributeSet;
-    .param p2, "attrs"    # [I
 
     .prologue
     .line 41
@@ -42,7 +37,6 @@
     move-result-object v0
 
     .line 42
-    .local v0, "array":Landroid/content/res/TypedArray;
     new-instance v1, Landroid/support/v7/widget/TintTypedArray;
 
     invoke-direct {v1, p0, v0}, Landroid/support/v7/widget/TintTypedArray;-><init>(Landroid/content/Context;Landroid/content/res/TypedArray;)V
@@ -52,11 +46,6 @@
 
 .method public static obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[III)Landroid/support/v7/widget/TintTypedArray;
     .registers 7
-    .param p0, "context"    # Landroid/content/Context;
-    .param p1, "set"    # Landroid/util/AttributeSet;
-    .param p2, "attrs"    # [I
-    .param p3, "defStyleAttr"    # I
-    .param p4, "defStyleRes"    # I
 
     .prologue
     .line 47
@@ -65,7 +54,6 @@
     move-result-object v0
 
     .line 48
-    .local v0, "array":Landroid/content/res/TypedArray;
     new-instance v1, Landroid/support/v7/widget/TintTypedArray;
 
     invoke-direct {v1, p0, v0}, Landroid/support/v7/widget/TintTypedArray;-><init>(Landroid/content/Context;Landroid/content/res/TypedArray;)V
@@ -77,8 +65,6 @@
 # virtual methods
 .method public getBoolean(IZ)Z
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "defValue"    # Z
 
     .prologue
     .line 105
@@ -107,8 +93,6 @@
 
 .method public getColor(II)I
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "defValue"    # I
 
     .prologue
     .line 117
@@ -123,7 +107,6 @@
 
 .method public getColorStateList(I)Landroid/content/res/ColorStateList;
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 121
@@ -138,8 +121,6 @@
 
 .method public getDimension(IF)F
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "defValue"    # F
 
     .prologue
     .line 129
@@ -154,8 +135,6 @@
 
 .method public getDimensionPixelOffset(II)I
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "defValue"    # I
 
     .prologue
     .line 133
@@ -170,8 +149,6 @@
 
 .method public getDimensionPixelSize(II)I
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "defValue"    # I
 
     .prologue
     .line 137
@@ -186,29 +163,27 @@
 
 .method public getDrawable(I)Landroid/graphics/drawable/Drawable;
     .registers 5
-    .param p1, "index"    # I
 
     .prologue
     .line 57
-    iget-object v1, p0, Landroid/support/v7/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
+    iget-object v0, p0, Landroid/support/v7/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
 
-    invoke-virtual {v1, p1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_1c
+    if-eqz v0, :cond_1c
 
     .line 58
-    iget-object v1, p0, Landroid/support/v7/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
+    iget-object v0, p0, Landroid/support/v7/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {v1, p1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {v0, p1, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v0
 
     .line 59
-    .local v0, "resourceId":I
     if-eqz v0, :cond_1c
 
     .line 60
@@ -220,48 +195,45 @@
 
     invoke-virtual {v1, v2, v0}, Landroid/support/v7/widget/AppCompatDrawableManager;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 63
-    .end local v0    # "resourceId":I
     :goto_1b
-    return-object v1
+    return-object v0
 
     :cond_1c
-    iget-object v1, p0, Landroid/support/v7/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
+    iget-object v0, p0, Landroid/support/v7/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
 
-    invoke-virtual {v1, p1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v1
+    move-result-object v0
 
     goto :goto_1b
 .end method
 
 .method public getDrawableIfKnown(I)Landroid/graphics/drawable/Drawable;
     .registers 6
-    .param p1, "index"    # I
 
     .prologue
     .line 67
-    iget-object v1, p0, Landroid/support/v7/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
+    iget-object v0, p0, Landroid/support/v7/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
 
-    invoke-virtual {v1, p1}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_1d
+    if-eqz v0, :cond_1d
 
     .line 68
-    iget-object v1, p0, Landroid/support/v7/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
+    iget-object v0, p0, Landroid/support/v7/widget/TintTypedArray;->mWrapped:Landroid/content/res/TypedArray;
 
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {v1, p1, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {v0, p1, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v0
 
     .line 69
-    .local v0, "resourceId":I
     if-eqz v0, :cond_1d
 
     .line 70
@@ -275,23 +247,20 @@
 
     invoke-virtual {v1, v2, v0, v3}, Landroid/support/v7/widget/AppCompatDrawableManager;->getDrawable(Landroid/content/Context;IZ)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 73
-    .end local v0    # "resourceId":I
     :goto_1c
-    return-object v1
+    return-object v0
 
     :cond_1d
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_1c
 .end method
 
 .method public getFloat(IF)F
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "defValue"    # F
 
     .prologue
     .line 113
@@ -306,10 +275,6 @@
 
 .method public getFraction(IIIF)F
     .registers 6
-    .param p1, "index"    # I
-    .param p2, "base"    # I
-    .param p3, "pbase"    # I
-    .param p4, "defValue"    # F
 
     .prologue
     .line 149
@@ -324,7 +289,6 @@
 
 .method public getIndex(I)I
     .registers 3
-    .param p1, "at"    # I
 
     .prologue
     .line 85
@@ -353,8 +317,6 @@
 
 .method public getInt(II)I
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "defValue"    # I
 
     .prologue
     .line 109
@@ -369,8 +331,6 @@
 
 .method public getInteger(II)I
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "defValue"    # I
 
     .prologue
     .line 125
@@ -385,8 +345,6 @@
 
 .method public getLayoutDimension(II)I
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "defValue"    # I
 
     .prologue
     .line 145
@@ -401,8 +359,6 @@
 
 .method public getLayoutDimension(ILjava/lang/String;)I
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "name"    # Ljava/lang/String;
 
     .prologue
     .line 141
@@ -417,7 +373,6 @@
 
 .method public getNonResourceString(I)Ljava/lang/String;
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 101
@@ -446,8 +401,6 @@
 
 .method public getResourceId(II)I
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "defValue"    # I
 
     .prologue
     .line 153
@@ -476,7 +429,6 @@
 
 .method public getString(I)Ljava/lang/String;
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 97
@@ -491,7 +443,6 @@
 
 .method public getText(I)Ljava/lang/CharSequence;
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 93
@@ -506,7 +457,6 @@
 
 .method public getTextArray(I)[Ljava/lang/CharSequence;
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 157
@@ -521,7 +471,6 @@
 
 .method public getType(I)I
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 165
@@ -536,8 +485,6 @@
 
 .method public getValue(ILandroid/util/TypedValue;)Z
     .registers 4
-    .param p1, "index"    # I
-    .param p2, "outValue"    # Landroid/util/TypedValue;
 
     .prologue
     .line 161
@@ -552,7 +499,6 @@
 
 .method public hasValue(I)Z
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 169
@@ -581,7 +527,6 @@
 
 .method public peekValue(I)Landroid/util/TypedValue;
     .registers 3
-    .param p1, "index"    # I
 
     .prologue
     .line 173

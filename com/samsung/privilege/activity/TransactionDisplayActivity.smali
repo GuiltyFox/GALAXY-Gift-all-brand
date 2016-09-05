@@ -4,15 +4,15 @@
 
 
 # instance fields
-.field private animation1:Landroid/view/animation/Animation;
+.field private a:Landroid/widget/RelativeLayout;
 
-.field private animation2:Landroid/view/animation/Animation;
+.field private b:Landroid/widget/ImageView;
 
-.field private contentCode:Landroid/widget/RelativeLayout;
+.field private c:Z
 
-.field private imgBarcode:Landroid/widget/ImageView;
+.field private d:Landroid/view/animation/Animation;
 
-.field private isBarcode:Z
+.field private e:Landroid/view/animation/Animation;
 
 
 # direct methods
@@ -20,627 +20,35 @@
     .registers 2
 
     .prologue
-    .line 27
+    .line 24
     invoke-direct {p0}, Landroid/support/v4/app/FragmentActivity;-><init>()V
 
-    .line 32
+    .line 29
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->isBarcode:Z
+    iput-boolean v0, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->c:Z
 
     return-void
 .end method
 
-.method static synthetic access$000(Lcom/samsung/privilege/activity/TransactionDisplayActivity;)Z
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/TransactionDisplayActivity;
-
-    .prologue
-    .line 27
-    iget-boolean v0, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->isBarcode:Z
-
-    return v0
-.end method
-
-.method static synthetic access$002(Lcom/samsung/privilege/activity/TransactionDisplayActivity;Z)Z
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/TransactionDisplayActivity;
-    .param p1, "x1"    # Z
-
-    .prologue
-    .line 27
-    iput-boolean p1, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->isBarcode:Z
-
-    return p1
-.end method
-
-.method static synthetic access$100(Lcom/samsung/privilege/activity/TransactionDisplayActivity;ZLjava/lang/String;)V
+.method static synthetic a(Lcom/samsung/privilege/activity/TransactionDisplayActivity;ZLjava/lang/String;)V
     .registers 3
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/TransactionDisplayActivity;
-    .param p1, "x1"    # Z
-    .param p2, "x2"    # Ljava/lang/String;
 
     .prologue
-    .line 27
-    invoke-direct {p0, p1, p2}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->swithImageCode(ZLjava/lang/String;)V
+    .line 24
+    invoke-direct {p0, p1, p2}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->a(ZLjava/lang/String;)V
 
     return-void
 .end method
 
-.method static synthetic access$200(Lcom/samsung/privilege/activity/TransactionDisplayActivity;)Landroid/widget/ImageView;
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/TransactionDisplayActivity;
-
-    .prologue
-    .line 27
-    iget-object v0, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->imgBarcode:Landroid/widget/ImageView;
-
-    return-object v0
-.end method
-
-.method static synthetic access$300(Lcom/samsung/privilege/activity/TransactionDisplayActivity;)Landroid/view/animation/Animation;
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/TransactionDisplayActivity;
-
-    .prologue
-    .line 27
-    iget-object v0, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->animation2:Landroid/view/animation/Animation;
-
-    return-object v0
-.end method
-
-.method static synthetic access$400(Lcom/samsung/privilege/activity/TransactionDisplayActivity;)Landroid/view/animation/Animation;
-    .registers 2
-    .param p0, "x0"    # Lcom/samsung/privilege/activity/TransactionDisplayActivity;
-
-    .prologue
-    .line 27
-    iget-object v0, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->animation1:Landroid/view/animation/Animation;
-
-    return-object v0
-.end method
-
-.method private static genIntentForXZing(Ljava/lang/String;Ljava/lang/String;Landroid/widget/ImageView;)Landroid/content/Intent;
-    .registers 6
-    .param p0, "barcode_type"    # Ljava/lang/String;
-    .param p1, "data"    # Ljava/lang/String;
-    .param p2, "imgBarcode"    # Landroid/widget/ImageView;
-
-    .prologue
-    .line 159
-    new-instance v0, Landroid/content/Intent;
-
-    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
-
-    .line 160
-    .local v0, "intent":Landroid/content/Intent;
-    const-string/jumbo v1, "com.google.zxing.client.android.ENCODE"
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 161
-    invoke-virtual {p0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "AZTEC"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_34
-
-    .line 162
-    const-string/jumbo v1, "ENCODE_FORMAT"
-
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->AZTEC:Lcom/google/zxing/BarcodeFormat;
-
-    invoke-virtual {v2}, Lcom/google/zxing/BarcodeFormat;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 203
-    :goto_24
-    const-string/jumbo v1, "ENCODE_TYPE"
-
-    const-string/jumbo v2, "TEXT_TYPE"
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 204
-    const-string/jumbo v1, "ENCODE_DATA"
-
-    invoke-virtual {v0, v1, p1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 205
-    return-object v0
-
-    .line 163
-    :cond_34
-    invoke-virtual {p0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "CODABAR"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_53
-
-    .line 164
-    const-string/jumbo v1, "ENCODE_FORMAT"
-
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->CODABAR:Lcom/google/zxing/BarcodeFormat;
-
-    invoke-virtual {v2}, Lcom/google/zxing/BarcodeFormat;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 165
-    sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
-
-    goto :goto_24
-
-    .line 166
-    :cond_53
-    invoke-virtual {p0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "CODE_39"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_72
-
-    .line 167
-    const-string/jumbo v1, "ENCODE_FORMAT"
-
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->CODE_39:Lcom/google/zxing/BarcodeFormat;
-
-    invoke-virtual {v2}, Lcom/google/zxing/BarcodeFormat;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 168
-    sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
-
-    goto :goto_24
-
-    .line 169
-    :cond_72
-    invoke-virtual {p0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "CODE_93"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_91
-
-    .line 170
-    const-string/jumbo v1, "ENCODE_FORMAT"
-
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->CODE_93:Lcom/google/zxing/BarcodeFormat;
-
-    invoke-virtual {v2}, Lcom/google/zxing/BarcodeFormat;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 171
-    sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
-
-    goto :goto_24
-
-    .line 172
-    :cond_91
-    invoke-virtual {p0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "CODE_128"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_b1
-
-    .line 173
-    const-string/jumbo v1, "ENCODE_FORMAT"
-
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->CODE_128:Lcom/google/zxing/BarcodeFormat;
-
-    invoke-virtual {v2}, Lcom/google/zxing/BarcodeFormat;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 174
-    sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER_CROP:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
-
-    goto/16 :goto_24
-
-    .line 175
-    :cond_b1
-    invoke-virtual {p0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "DATA_MATRIX"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_cc
-
-    .line 176
-    const-string/jumbo v1, "ENCODE_FORMAT"
-
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->DATA_MATRIX:Lcom/google/zxing/BarcodeFormat;
-
-    invoke-virtual {v2}, Lcom/google/zxing/BarcodeFormat;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    goto/16 :goto_24
-
-    .line 177
-    :cond_cc
-    invoke-virtual {p0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "EAN_8"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_e7
-
-    .line 178
-    const-string/jumbo v1, "ENCODE_FORMAT"
-
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->EAN_8:Lcom/google/zxing/BarcodeFormat;
-
-    invoke-virtual {v2}, Lcom/google/zxing/BarcodeFormat;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    goto/16 :goto_24
-
-    .line 179
-    :cond_e7
-    invoke-virtual {p0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "EAN_13"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_102
-
-    .line 180
-    const-string/jumbo v1, "ENCODE_FORMAT"
-
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->EAN_13:Lcom/google/zxing/BarcodeFormat;
-
-    invoke-virtual {v2}, Lcom/google/zxing/BarcodeFormat;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    goto/16 :goto_24
-
-    .line 181
-    :cond_102
-    invoke-virtual {p0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "ITF"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_11d
-
-    .line 182
-    const-string/jumbo v1, "ENCODE_FORMAT"
-
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->ITF:Lcom/google/zxing/BarcodeFormat;
-
-    invoke-virtual {v2}, Lcom/google/zxing/BarcodeFormat;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    goto/16 :goto_24
-
-    .line 183
-    :cond_11d
-    invoke-virtual {p0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "MAXICODE"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_138
-
-    .line 184
-    const-string/jumbo v1, "ENCODE_FORMAT"
-
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->MAXICODE:Lcom/google/zxing/BarcodeFormat;
-
-    invoke-virtual {v2}, Lcom/google/zxing/BarcodeFormat;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    goto/16 :goto_24
-
-    .line 185
-    :cond_138
-    invoke-virtual {p0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "PDF_417"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_153
-
-    .line 186
-    const-string/jumbo v1, "ENCODE_FORMAT"
-
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->PDF_417:Lcom/google/zxing/BarcodeFormat;
-
-    invoke-virtual {v2}, Lcom/google/zxing/BarcodeFormat;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    goto/16 :goto_24
-
-    .line 187
-    :cond_153
-    invoke-virtual {p0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "QR_CODE"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_173
-
-    .line 188
-    const-string/jumbo v1, "ENCODE_FORMAT"
-
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->QR_CODE:Lcom/google/zxing/BarcodeFormat;
-
-    invoke-virtual {v2}, Lcom/google/zxing/BarcodeFormat;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 189
-    sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
-
-    goto/16 :goto_24
-
-    .line 190
-    :cond_173
-    invoke-virtual {p0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "RSS_14"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_18e
-
-    .line 191
-    const-string/jumbo v1, "ENCODE_FORMAT"
-
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->RSS_14:Lcom/google/zxing/BarcodeFormat;
-
-    invoke-virtual {v2}, Lcom/google/zxing/BarcodeFormat;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    goto/16 :goto_24
-
-    .line 192
-    :cond_18e
-    invoke-virtual {p0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "RSS_EXPANDED"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1a9
-
-    .line 193
-    const-string/jumbo v1, "ENCODE_FORMAT"
-
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->RSS_EXPANDED:Lcom/google/zxing/BarcodeFormat;
-
-    invoke-virtual {v2}, Lcom/google/zxing/BarcodeFormat;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    goto/16 :goto_24
-
-    .line 194
-    :cond_1a9
-    invoke-virtual {p0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "UPC_A"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1c4
-
-    .line 195
-    const-string/jumbo v1, "ENCODE_FORMAT"
-
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->UPC_A:Lcom/google/zxing/BarcodeFormat;
-
-    invoke-virtual {v2}, Lcom/google/zxing/BarcodeFormat;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    goto/16 :goto_24
-
-    .line 196
-    :cond_1c4
-    invoke-virtual {p0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "UPC_E"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1df
-
-    .line 197
-    const-string/jumbo v1, "ENCODE_FORMAT"
-
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->UPC_E:Lcom/google/zxing/BarcodeFormat;
-
-    invoke-virtual {v2}, Lcom/google/zxing/BarcodeFormat;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    goto/16 :goto_24
-
-    .line 198
-    :cond_1df
-    invoke-virtual {p0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string/jumbo v2, "UPC_EAN_EXTENSION"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1fa
-
-    .line 199
-    const-string/jumbo v1, "ENCODE_FORMAT"
-
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->UPC_EAN_EXTENSION:Lcom/google/zxing/BarcodeFormat;
-
-    invoke-virtual {v2}, Lcom/google/zxing/BarcodeFormat;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    goto/16 :goto_24
-
-    .line 201
-    :cond_1fa
-    const-string/jumbo v1, "ENCODE_FORMAT"
-
-    sget-object v2, Lcom/google/zxing/BarcodeFormat;->CODE_128:Lcom/google/zxing/BarcodeFormat;
-
-    invoke-virtual {v2}, Lcom/google/zxing/BarcodeFormat;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    goto/16 :goto_24
-.end method
-
-.method private swithImageCode(ZLjava/lang/String;)V
-    .registers 11
-    .param p1, "isBarcode"    # Z
-    .param p2, "serial"    # Ljava/lang/String;
+.method private a(ZLjava/lang/String;)V
+    .registers 7
 
     .prologue
     .line 123
     const-string/jumbo v0, ""
 
     .line 124
-    .local v0, "barcode_type":Ljava/lang/String;
     if-eqz p1, :cond_60
 
     .line 125
@@ -648,470 +56,509 @@
 
     .line 128
     :try_start_8
-    iget-object v5, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->imgBarcode:Landroid/widget/ImageView;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->b:Landroid/widget/ImageView;
 
-    invoke-static {v0, p2, v5}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->genIntentForXZing(Ljava/lang/String;Ljava/lang/String;Landroid/widget/ImageView;)Landroid/content/Intent;
+    invoke-static {v0, p2, v1}, Lcom/samsung/privilege/util/BarcodeUtil;->a(Ljava/lang/String;Ljava/lang/String;Landroid/widget/ImageView;)Landroid/content/Intent;
 
-    move-result-object v3
+    move-result-object v0
 
     .line 129
-    .local v3, "intent":Landroid/content/Intent;
-    new-instance v4, Lcom/bzbs/zxing/QRCodeEncoder;
+    new-instance v1, Lcom/bzbs/zxing/QRCodeEncoder;
 
-    const/16 v5, 0x1f4
+    const/16 v2, 0x1f4
 
-    const/4 v6, 0x0
+    const/4 v3, 0x0
 
-    invoke-direct {v4, p0, v3, v5, v6}, Lcom/bzbs/zxing/QRCodeEncoder;-><init>(Landroid/app/Activity;Landroid/content/Intent;IZ)V
+    invoke-direct {v1, p0, v0, v2, v3}, Lcom/bzbs/zxing/QRCodeEncoder;-><init>(Landroid/app/Activity;Landroid/content/Intent;IZ)V
     :try_end_16
     .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_16} :catch_40
 
     .line 131
-    .local v4, "qrcode":Lcom/bzbs/zxing/QRCodeEncoder;
     :try_start_16
-    invoke-virtual {v4}, Lcom/bzbs/zxing/QRCodeEncoder;->encodeAsBitmap()Landroid/graphics/Bitmap;
+    invoke-virtual {v1}, Lcom/bzbs/zxing/QRCodeEncoder;->a()Landroid/graphics/Bitmap;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 132
-    .local v1, "bitmap":Landroid/graphics/Bitmap;
-    iget-object v5, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->imgBarcode:Landroid/widget/ImageView;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->b:Landroid/widget/ImageView;
 
-    invoke-virtual {v5, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
     :try_end_1f
     .catch Lcom/google/zxing/WriterException; {:try_start_16 .. :try_end_1f} :catch_20
     .catch Ljava/lang/Exception; {:try_start_16 .. :try_end_1f} :catch_40
 
-    .line 156
-    .end local v1    # "bitmap":Landroid/graphics/Bitmap;
-    .end local v3    # "intent":Landroid/content/Intent;
-    .end local v4    # "qrcode":Lcom/bzbs/zxing/QRCodeEncoder;
+    .line 155
     :goto_1f
     return-void
 
     .line 133
-    .restart local v3    # "intent":Landroid/content/Intent;
-    .restart local v4    # "qrcode":Lcom/bzbs/zxing/QRCodeEncoder;
     :catch_20
-    move-exception v2
+    move-exception v0
 
     .line 134
-    .local v2, "e":Lcom/google/zxing/WriterException;
     :try_start_21
-    const-string/jumbo v5, "ZXING"
+    const-string/jumbo v1, "ZXING"
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v7, "(WriterException):"
+    const-string/jumbo v3, "(WriterException):"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-virtual {v2}, Lcom/google/zxing/WriterException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/zxing/WriterException;->getMessage()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_3f
     .catch Ljava/lang/Exception; {:try_start_21 .. :try_end_3f} :catch_40
 
     goto :goto_1f
 
     .line 136
-    .end local v2    # "e":Lcom/google/zxing/WriterException;
-    .end local v3    # "intent":Landroid/content/Intent;
-    .end local v4    # "qrcode":Lcom/bzbs/zxing/QRCodeEncoder;
     :catch_40
-    move-exception v2
+    move-exception v0
 
     .line 137
-    .local v2, "e":Ljava/lang/Exception;
-    const-string/jumbo v5, "ZXING"
+    const-string/jumbo v1, "ZXING"
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v7, "(Exception):"
+    const-string/jumbo v3, "(Exception):"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-virtual {v2}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto :goto_1f
 
-    .line 141
-    .end local v2    # "e":Ljava/lang/Exception;
+    .line 140
     :cond_60
     const-string/jumbo v0, "QR_CODE"
 
-    .line 144
+    .line 143
     :try_start_63
-    iget-object v5, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->imgBarcode:Landroid/widget/ImageView;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->b:Landroid/widget/ImageView;
 
-    invoke-static {v0, p2, v5}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->genIntentForXZing(Ljava/lang/String;Ljava/lang/String;Landroid/widget/ImageView;)Landroid/content/Intent;
+    invoke-static {v0, p2, v1}, Lcom/samsung/privilege/util/BarcodeUtil;->a(Ljava/lang/String;Ljava/lang/String;Landroid/widget/ImageView;)Landroid/content/Intent;
 
-    move-result-object v3
+    move-result-object v0
 
-    .line 145
-    .restart local v3    # "intent":Landroid/content/Intent;
-    new-instance v4, Lcom/bzbs/zxing/QRCodeEncoder;
+    .line 144
+    new-instance v1, Lcom/bzbs/zxing/QRCodeEncoder;
 
-    const/16 v5, 0x1f4
+    const/16 v2, 0x1f4
 
-    const/4 v6, 0x0
+    const/4 v3, 0x0
 
-    invoke-direct {v4, p0, v3, v5, v6}, Lcom/bzbs/zxing/QRCodeEncoder;-><init>(Landroid/app/Activity;Landroid/content/Intent;IZ)V
+    invoke-direct {v1, p0, v0, v2, v3}, Lcom/bzbs/zxing/QRCodeEncoder;-><init>(Landroid/app/Activity;Landroid/content/Intent;IZ)V
     :try_end_71
     .catch Ljava/lang/Exception; {:try_start_63 .. :try_end_71} :catch_9b
 
-    .line 147
-    .restart local v4    # "qrcode":Lcom/bzbs/zxing/QRCodeEncoder;
+    .line 146
     :try_start_71
-    invoke-virtual {v4}, Lcom/bzbs/zxing/QRCodeEncoder;->encodeAsBitmap()Landroid/graphics/Bitmap;
+    invoke-virtual {v1}, Lcom/bzbs/zxing/QRCodeEncoder;->a()Landroid/graphics/Bitmap;
 
-    move-result-object v1
+    move-result-object v0
 
-    .line 148
-    .restart local v1    # "bitmap":Landroid/graphics/Bitmap;
-    iget-object v5, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->imgBarcode:Landroid/widget/ImageView;
+    .line 147
+    iget-object v1, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->b:Landroid/widget/ImageView;
 
-    invoke-virtual {v5, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
     :try_end_7a
     .catch Lcom/google/zxing/WriterException; {:try_start_71 .. :try_end_7a} :catch_7b
     .catch Ljava/lang/Exception; {:try_start_71 .. :try_end_7a} :catch_9b
 
     goto :goto_1f
 
-    .line 149
-    .end local v1    # "bitmap":Landroid/graphics/Bitmap;
+    .line 148
     :catch_7b
-    move-exception v2
+    move-exception v0
 
-    .line 150
-    .local v2, "e":Lcom/google/zxing/WriterException;
+    .line 149
     :try_start_7c
-    const-string/jumbo v5, "ZXING"
+    const-string/jumbo v1, "ZXING"
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v7, "(WriterException):"
+    const-string/jumbo v3, "(WriterException):"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-virtual {v2}, Lcom/google/zxing/WriterException;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/google/zxing/WriterException;->getMessage()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
     :try_end_9a
     .catch Ljava/lang/Exception; {:try_start_7c .. :try_end_9a} :catch_9b
 
     goto :goto_1f
 
-    .line 152
-    .end local v2    # "e":Lcom/google/zxing/WriterException;
-    .end local v3    # "intent":Landroid/content/Intent;
-    .end local v4    # "qrcode":Lcom/bzbs/zxing/QRCodeEncoder;
+    .line 151
     :catch_9b
-    move-exception v2
+    move-exception v0
 
-    .line 153
-    .local v2, "e":Ljava/lang/Exception;
-    const-string/jumbo v5, "ZXING"
+    .line 152
+    const-string/jumbo v1, "ZXING"
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v7, "(Exception):"
+    const-string/jumbo v3, "(Exception):"
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v2
 
-    invoke-virtual {v2}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-static {v5, v6}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
     goto/16 :goto_1f
+.end method
+
+.method static synthetic a(Lcom/samsung/privilege/activity/TransactionDisplayActivity;)Z
+    .registers 2
+
+    .prologue
+    .line 24
+    iget-boolean v0, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->c:Z
+
+    return v0
+.end method
+
+.method static synthetic a(Lcom/samsung/privilege/activity/TransactionDisplayActivity;Z)Z
+    .registers 2
+
+    .prologue
+    .line 24
+    iput-boolean p1, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->c:Z
+
+    return p1
+.end method
+
+.method static synthetic b(Lcom/samsung/privilege/activity/TransactionDisplayActivity;)Landroid/widget/ImageView;
+    .registers 2
+
+    .prologue
+    .line 24
+    iget-object v0, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->b:Landroid/widget/ImageView;
+
+    return-object v0
+.end method
+
+.method static synthetic c(Lcom/samsung/privilege/activity/TransactionDisplayActivity;)Landroid/view/animation/Animation;
+    .registers 2
+
+    .prologue
+    .line 24
+    iget-object v0, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->e:Landroid/view/animation/Animation;
+
+    return-object v0
+.end method
+
+.method static synthetic d(Lcom/samsung/privilege/activity/TransactionDisplayActivity;)Landroid/view/animation/Animation;
+    .registers 2
+
+    .prologue
+    .line 24
+    iget-object v0, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->d:Landroid/view/animation/Animation;
+
+    return-object v0
 .end method
 
 
 # virtual methods
 .method protected onCreate(Landroid/os/Bundle;)V
-    .registers 11
-    .param p1, "arg0"    # Landroid/os/Bundle;
+    .registers 15
 
     .prologue
-    const/4 v8, 0x0
+    const/4 v12, 0x0
 
-    .line 39
+    .line 36
     invoke-super {p0, p1}, Landroid/support/v4/app/FragmentActivity;->onCreate(Landroid/os/Bundle;)V
 
+    .line 37
+    const v0, 0x7f040054
+
+    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->setContentView(I)V
+
+    .line 38
+    const v0, 0x7f050043
+
+    invoke-virtual {p0, v0, v12}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->overridePendingTransition(II)V
+
     .line 40
-    const v7, 0x7f040050
+    const v0, 0x7f1001e9
 
-    invoke-virtual {p0, v7}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->setContentView(I)V
-
-    .line 41
-    const v7, 0x7f050040
-
-    invoke-virtual {p0, v7, v8}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->overridePendingTransition(II)V
-
-    .line 43
-    const v7, 0x7f1001cf
-
-    invoke-virtual {p0, v7}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/widget/TextView;
-
-    .line 44
-    .local v4, "tvTransactionID":Landroid/widget/TextView;
-    const v7, 0x7f1001d1
-
-    invoke-virtual {p0, v7}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v5
-
-    check-cast v5, Landroid/widget/TextView;
-
-    .line 45
-    .local v5, "tvTransactionMsg":Landroid/widget/TextView;
-    const v7, 0x7f10013e
-
-    invoke-virtual {p0, v7}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v7
-
-    check-cast v7, Landroid/widget/RelativeLayout;
-
-    iput-object v7, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->contentCode:Landroid/widget/RelativeLayout;
-
-    .line 46
-    const v7, 0x7f10015a
-
-    invoke-virtual {p0, v7}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v7
-
-    check-cast v7, Landroid/widget/ImageView;
-
-    iput-object v7, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->imgBarcode:Landroid/widget/ImageView;
-
-    .line 47
-    const v7, 0x7f1001d2
-
-    invoke-virtual {p0, v7}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    check-cast v0, Landroid/widget/Button;
+    check-cast v0, Landroid/widget/TextView;
+
+    .line 41
+    const v1, 0x7f1001eb
+
+    invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/widget/TextView;
+
+    .line 42
+    const v2, 0x7f10014a
+
+    invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/RelativeLayout;
+
+    iput-object v2, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->a:Landroid/widget/RelativeLayout;
+
+    .line 43
+    const v2, 0x7f100171
+
+    invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/ImageView;
+
+    iput-object v2, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->b:Landroid/widget/ImageView;
+
+    .line 44
+    const v2, 0x7f1001ec
+
+    invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v2
+
+    check-cast v2, Landroid/widget/Button;
+
+    .line 45
+    const v3, 0x7f1001ea
+
+    invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v3
+
+    .line 47
+    invoke-virtual {p0}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->getIntent()Landroid/content/Intent;
+
+    move-result-object v4
 
     .line 48
-    .local v0, "btnOK":Landroid/widget/Button;
-    const v7, 0x7f1001d0
+    const-string/jumbo v5, "Issuer"
 
-    invoke-virtual {p0, v7}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v4, v5}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v5
+
+    .line 49
+    const-string/jumbo v6, "TransactionId"
+
+    invoke-virtual {v4, v6}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
     .line 50
-    .local v6, "viewBarcode":Landroid/view/View;
-    invoke-virtual {p0}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->getIntent()Landroid/content/Intent;
+    const-string/jumbo v7, "Message"
+
+    invoke-virtual {v4, v7}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    .line 52
+    const-string/jumbo v8, "Refund"
+
+    const-string/jumbo v9, "View Refund"
+
+    const-wide/16 v10, 0x1
+
+    invoke-static {v10, v11}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v10
+
+    invoke-static {v8, v9, v5, v10}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
+
+    .line 54
+    if-eqz v6, :cond_de
+
+    const-string/jumbo v5, ""
+
+    invoke-virtual {v6, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_de
+
+    .line 55
+    invoke-virtual {v0, v12}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 56
+    invoke-virtual {v0, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 61
+    :goto_81
+    if-eqz v7, :cond_e3
+
+    const-string/jumbo v5, ""
+
+    invoke-virtual {v7, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_e3
+
+    .line 62
+    invoke-virtual {v1, v12}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 63
+    invoke-virtual {v1, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 68
+    :goto_92
+    new-instance v1, Lcom/samsung/privilege/activity/TransactionDisplayActivity$1;
+
+    invoke-direct {v1, p0}, Lcom/samsung/privilege/activity/TransactionDisplayActivity$1;-><init>(Lcom/samsung/privilege/activity/TransactionDisplayActivity;)V
+
+    invoke-virtual {v2, v1}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 75
+    const v1, 0x7f05004c
+
+    invoke-static {p0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
     move-result-object v1
 
-    .line 51
-    .local v1, "intent":Landroid/content/Intent;
-    const-string/jumbo v7, "TransactionId"
-
-    invoke-virtual {v1, v7}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 52
-    .local v2, "strId":Ljava/lang/String;
-    const-string/jumbo v7, "Message"
-
-    invoke-virtual {v1, v7}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 54
-    .local v3, "strMsg":Ljava/lang/String;
-    if-eqz v2, :cond_c8
-
-    const-string/jumbo v7, ""
-
-    invoke-virtual {v2, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_c8
-
-    .line 55
-    invoke-virtual {v4, v8}, Landroid/widget/TextView;->setVisibility(I)V
-
-    .line 56
-    invoke-virtual {v4, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 61
-    :goto_6b
-    if-eqz v3, :cond_cd
-
-    const-string/jumbo v7, ""
-
-    invoke-virtual {v3, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v7
-
-    if-nez v7, :cond_cd
-
-    .line 62
-    invoke-virtual {v5, v8}, Landroid/widget/TextView;->setVisibility(I)V
-
-    .line 63
-    invoke-virtual {v5, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 68
-    :goto_7c
-    new-instance v7, Lcom/samsung/privilege/activity/TransactionDisplayActivity$1;
-
-    invoke-direct {v7, p0}, Lcom/samsung/privilege/activity/TransactionDisplayActivity$1;-><init>(Lcom/samsung/privilege/activity/TransactionDisplayActivity;)V
-
-    invoke-virtual {v0, v7}, Landroid/widget/Button;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 75
-    const v7, 0x7f050049
-
-    invoke-static {p0, v7}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
-
-    move-result-object v7
-
-    iput-object v7, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->animation1:Landroid/view/animation/Animation;
+    iput-object v1, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->d:Landroid/view/animation/Animation;
 
     .line 76
-    const v7, 0x7f050023
+    const v1, 0x7f050025
 
-    invoke-static {p0, v7}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
+    invoke-static {p0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
-    move-result-object v7
+    move-result-object v1
 
-    iput-object v7, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->animation2:Landroid/view/animation/Animation;
+    iput-object v1, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->e:Landroid/view/animation/Animation;
 
     .line 77
-    invoke-virtual {v4}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+    invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-interface {v7}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+    invoke-interface {v1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v1
 
-    invoke-direct {p0, v8, v7}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->swithImageCode(ZLjava/lang/String;)V
+    invoke-direct {p0, v12, v1}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->a(ZLjava/lang/String;)V
 
     .line 78
-    new-instance v7, Lcom/samsung/privilege/activity/TransactionDisplayActivity$2;
+    new-instance v1, Lcom/samsung/privilege/activity/TransactionDisplayActivity$2;
 
-    invoke-direct {v7, p0, v4}, Lcom/samsung/privilege/activity/TransactionDisplayActivity$2;-><init>(Lcom/samsung/privilege/activity/TransactionDisplayActivity;Landroid/widget/TextView;)V
+    invoke-direct {v1, p0, v0}, Lcom/samsung/privilege/activity/TransactionDisplayActivity$2;-><init>(Lcom/samsung/privilege/activity/TransactionDisplayActivity;Landroid/widget/TextView;)V
 
-    invoke-virtual {v6, v7}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v3, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 113
-    new-instance v7, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v8, "Wallet Refund "
+    const-string/jumbo v1, "Wallet Refund "
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v0
 
-    const-string/jumbo v8, "Issuer"
+    const-string/jumbo v1, "Issuer"
 
-    invoke-virtual {v1, v8}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v4, v1}, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v1
 
-    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v0
 
-    invoke-static {v7}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsScreen(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;)V
 
     .line 114
     return-void
 
     .line 58
-    :cond_c8
-    const/4 v7, 0x4
+    :cond_de
+    const/4 v5, 0x4
 
-    invoke-virtual {v4, v7}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v0, v5}, Landroid/widget/TextView;->setVisibility(I)V
 
-    goto :goto_6b
+    goto :goto_81
 
     .line 65
-    :cond_cd
-    const/16 v7, 0x8
+    :cond_e3
+    const/16 v5, 0x8
 
-    invoke-virtual {v5, v7}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v1, v5}, Landroid/widget/TextView;->setVisibility(I)V
 
-    goto :goto_7c
+    goto :goto_92
 .end method
 
 .method protected onPause()V
@@ -1124,7 +571,7 @@
     .line 119
     const/4 v0, 0x0
 
-    const v1, 0x7f050044
+    const v1, 0x7f050047
 
     invoke-virtual {p0, v0, v1}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->overridePendingTransition(II)V
 

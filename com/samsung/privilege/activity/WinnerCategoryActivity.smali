@@ -4,9 +4,9 @@
 
 
 # instance fields
-.field private final TAG:Ljava/lang/String;
+.field private final a:Ljava/lang/String;
 
-.field private gHandler:Landroid/os/Handler;
+.field private b:Landroid/os/Handler;
 
 
 # direct methods
@@ -24,12 +24,12 @@
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/WinnerCategoryActivity;->TAG:Ljava/lang/String;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/WinnerCategoryActivity;->a:Ljava/lang/String;
 
     return-void
 .end method
 
-.method private setFragmentWinnerCategory()V
+.method private f()V
     .registers 4
 
     .prologue
@@ -39,7 +39,6 @@
     invoke-direct {v0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;-><init>()V
 
     .line 58
-    .local v0, "fragmentCampaignList":Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/WinnerCategoryActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v1
@@ -55,17 +54,17 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/support/v4/app/FragmentManager;->beginTransaction()Landroid/support/v4/app/FragmentTransaction;
+    invoke-virtual {v1}, Landroid/support/v4/app/FragmentManager;->a()Landroid/support/v4/app/FragmentTransaction;
 
     move-result-object v1
 
-    const v2, 0x7f1001d3
+    const v2, 0x7f100219
 
-    invoke-virtual {v1, v2, v0}, Landroid/support/v4/app/FragmentTransaction;->replace(ILandroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
+    invoke-virtual {v1, v2, v0}, Landroid/support/v4/app/FragmentTransaction;->a(ILandroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Landroid/support/v4/app/FragmentTransaction;->commit()I
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->a()I
 
     .line 69
     return-void
@@ -75,7 +74,6 @@
 # virtual methods
 .method public doBack(Landroid/view/View;)V
     .registers 2
-    .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 72
@@ -87,7 +85,6 @@
 
 .method public onCreate(Landroid/os/Bundle;)V
     .registers 5
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
     .line 24
@@ -98,10 +95,10 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/bzbs/util/LanguageSetting;->SetLanguage(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/bzbs/util/LanguageSetting;->a(Landroid/content/Context;)V
 
     .line 28
-    const v0, 0x7f040052
+    const v0, 0x7f040059
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WinnerCategoryActivity;->setContentView(I)V
 
@@ -110,10 +107,10 @@
 
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
-    iput-object v0, p0, Lcom/samsung/privilege/activity/WinnerCategoryActivity;->gHandler:Landroid/os/Handler;
+    iput-object v0, p0, Lcom/samsung/privilege/activity/WinnerCategoryActivity;->b:Landroid/os/Handler;
 
     .line 33
-    const v0, 0x7f1000b6
+    const v0, 0x7f1000b5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WinnerCategoryActivity;->findViewById(I)Landroid/view/View;
 
@@ -129,7 +126,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/bzbs/data/AppSetting;->FONTS_DEFAULT(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/bzbs/data/AppSetting;->b(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -140,7 +137,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 37
-    const v0, 0x7f10015d
+    const v0, 0x7f100174
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WinnerCategoryActivity;->findViewById(I)Landroid/view/View;
 
@@ -157,13 +154,13 @@
 
     .line 46
     :cond_3f
-    invoke-direct {p0}, Lcom/samsung/privilege/activity/WinnerCategoryActivity;->setFragmentWinnerCategory()V
+    invoke-direct {p0}, Lcom/samsung/privilege/activity/WinnerCategoryActivity;->f()V
 
     .line 49
     :cond_42
     const-string/jumbo v0, "Winner"
 
-    invoke-static {v0}, Lcom/samsung/privilege/GalaxyGift;->sendAnalyticsScreen(Ljava/lang/String;)V
+    invoke-static {v0}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;)V
 
     goto :goto_3e
 .end method

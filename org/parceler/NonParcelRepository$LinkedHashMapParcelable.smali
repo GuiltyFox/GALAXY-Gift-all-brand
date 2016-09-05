@@ -4,21 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/parceler/NonParcelRepository;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "LinkedHashMapParcelable"
-.end annotation
-
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lorg/parceler/NonParcelRepository$LinkedHashMapParcelable$LinkedHashMapParcelableCreator;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lorg/parceler/NonParcelRepository$ConverterParcelable",
@@ -30,9 +15,9 @@
 
 
 # static fields
-.field private static final CONVERTER:Lorg/parceler/converter/LinkedHashMapParcelConverter;
-
 .field public static final CREATOR:Lorg/parceler/NonParcelRepository$LinkedHashMapParcelable$LinkedHashMapParcelableCreator;
+
+.field private static final a:Lorg/parceler/converter/LinkedHashMapParcelConverter;
 
 
 # direct methods
@@ -45,7 +30,7 @@
 
     invoke-direct {v0}, Lorg/parceler/NonParcelRepository$LinkedHashMapParcelable$1;-><init>()V
 
-    sput-object v0, Lorg/parceler/NonParcelRepository$LinkedHashMapParcelable;->CONVERTER:Lorg/parceler/converter/LinkedHashMapParcelConverter;
+    sput-object v0, Lorg/parceler/NonParcelRepository$LinkedHashMapParcelable;->a:Lorg/parceler/converter/LinkedHashMapParcelConverter;
 
     .line 434
     new-instance v0, Lorg/parceler/NonParcelRepository$LinkedHashMapParcelable$LinkedHashMapParcelableCreator;
@@ -61,11 +46,10 @@
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .registers 4
-    .param p1, "parcel"    # Landroid/os/Parcel;
 
     .prologue
     .line 426
-    sget-object v0, Lorg/parceler/NonParcelRepository$LinkedHashMapParcelable;->CONVERTER:Lorg/parceler/converter/LinkedHashMapParcelConverter;
+    sget-object v0, Lorg/parceler/NonParcelRepository$LinkedHashMapParcelable;->a:Lorg/parceler/converter/LinkedHashMapParcelConverter;
 
     const/4 v1, 0x0
 
@@ -77,11 +61,10 @@
 
 .method public constructor <init>(Ljava/util/LinkedHashMap;)V
     .registers 4
-    .param p1, "value"    # Ljava/util/LinkedHashMap;
 
     .prologue
     .line 430
-    sget-object v0, Lorg/parceler/NonParcelRepository$LinkedHashMapParcelable;->CONVERTER:Lorg/parceler/converter/LinkedHashMapParcelConverter;
+    sget-object v0, Lorg/parceler/NonParcelRepository$LinkedHashMapParcelable;->a:Lorg/parceler/converter/LinkedHashMapParcelConverter;
 
     const/4 v1, 0x0
 

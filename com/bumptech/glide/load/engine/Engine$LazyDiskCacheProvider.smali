@@ -6,34 +6,22 @@
 .implements Lcom/bumptech/glide/load/engine/DecodeJob$DiskCacheProvider;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/engine/Engine;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "LazyDiskCacheProvider"
-.end annotation
-
-
 # instance fields
-.field private volatile diskCache:Lcom/bumptech/glide/load/engine/cache/DiskCache;
+.field private final a:Lcom/bumptech/glide/load/engine/cache/DiskCache$Factory;
 
-.field private final factory:Lcom/bumptech/glide/load/engine/cache/DiskCache$Factory;
+.field private volatile b:Lcom/bumptech/glide/load/engine/cache/DiskCache;
 
 
 # direct methods
 .method public constructor <init>(Lcom/bumptech/glide/load/engine/cache/DiskCache$Factory;)V
     .registers 2
-    .param p1, "factory"    # Lcom/bumptech/glide/load/engine/cache/DiskCache$Factory;
 
     .prologue
     .line 315
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 316
-    iput-object p1, p0, Lcom/bumptech/glide/load/engine/Engine$LazyDiskCacheProvider;->factory:Lcom/bumptech/glide/load/engine/cache/DiskCache$Factory;
+    iput-object p1, p0, Lcom/bumptech/glide/load/engine/Engine$LazyDiskCacheProvider;->a:Lcom/bumptech/glide/load/engine/cache/DiskCache$Factory;
 
     .line 317
     return-void
@@ -41,12 +29,12 @@
 
 
 # virtual methods
-.method public getDiskCache()Lcom/bumptech/glide/load/engine/cache/DiskCache;
+.method public a()Lcom/bumptech/glide/load/engine/cache/DiskCache;
     .registers 2
 
     .prologue
     .line 321
-    iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine$LazyDiskCacheProvider;->diskCache:Lcom/bumptech/glide/load/engine/cache/DiskCache;
+    iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine$LazyDiskCacheProvider;->b:Lcom/bumptech/glide/load/engine/cache/DiskCache;
 
     if-nez v0, :cond_1d
 
@@ -55,22 +43,22 @@
 
     .line 323
     :try_start_5
-    iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine$LazyDiskCacheProvider;->diskCache:Lcom/bumptech/glide/load/engine/cache/DiskCache;
+    iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine$LazyDiskCacheProvider;->b:Lcom/bumptech/glide/load/engine/cache/DiskCache;
 
     if-nez v0, :cond_11
 
     .line 324
-    iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine$LazyDiskCacheProvider;->factory:Lcom/bumptech/glide/load/engine/cache/DiskCache$Factory;
+    iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine$LazyDiskCacheProvider;->a:Lcom/bumptech/glide/load/engine/cache/DiskCache$Factory;
 
-    invoke-interface {v0}, Lcom/bumptech/glide/load/engine/cache/DiskCache$Factory;->build()Lcom/bumptech/glide/load/engine/cache/DiskCache;
+    invoke-interface {v0}, Lcom/bumptech/glide/load/engine/cache/DiskCache$Factory;->a()Lcom/bumptech/glide/load/engine/cache/DiskCache;
 
     move-result-object v0
 
-    iput-object v0, p0, Lcom/bumptech/glide/load/engine/Engine$LazyDiskCacheProvider;->diskCache:Lcom/bumptech/glide/load/engine/cache/DiskCache;
+    iput-object v0, p0, Lcom/bumptech/glide/load/engine/Engine$LazyDiskCacheProvider;->b:Lcom/bumptech/glide/load/engine/cache/DiskCache;
 
     .line 326
     :cond_11
-    iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine$LazyDiskCacheProvider;->diskCache:Lcom/bumptech/glide/load/engine/cache/DiskCache;
+    iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine$LazyDiskCacheProvider;->b:Lcom/bumptech/glide/load/engine/cache/DiskCache;
 
     if-nez v0, :cond_1c
 
@@ -79,7 +67,7 @@
 
     invoke-direct {v0}, Lcom/bumptech/glide/load/engine/cache/DiskCacheAdapter;-><init>()V
 
-    iput-object v0, p0, Lcom/bumptech/glide/load/engine/Engine$LazyDiskCacheProvider;->diskCache:Lcom/bumptech/glide/load/engine/cache/DiskCache;
+    iput-object v0, p0, Lcom/bumptech/glide/load/engine/Engine$LazyDiskCacheProvider;->b:Lcom/bumptech/glide/load/engine/cache/DiskCache;
 
     .line 329
     :cond_1c
@@ -89,7 +77,7 @@
 
     .line 331
     :cond_1d
-    iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine$LazyDiskCacheProvider;->diskCache:Lcom/bumptech/glide/load/engine/cache/DiskCache;
+    iget-object v0, p0, Lcom/bumptech/glide/load/engine/Engine$LazyDiskCacheProvider;->b:Lcom/bumptech/glide/load/engine/cache/DiskCache;
 
     return-object v0
 

@@ -20,15 +20,6 @@
 # direct methods
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/PropertyName;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/PropertyName;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;Lcom/fasterxml/jackson/databind/util/Annotations;Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;ILjava/lang/Object;Lcom/fasterxml/jackson/databind/PropertyMetadata;)V
     .registers 17
-    .param p1, "name"    # Lcom/fasterxml/jackson/databind/PropertyName;
-    .param p2, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "wrapperName"    # Lcom/fasterxml/jackson/databind/PropertyName;
-    .param p4, "typeDeser"    # Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
-    .param p5, "contextAnnotations"    # Lcom/fasterxml/jackson/databind/util/Annotations;
-    .param p6, "param"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;
-    .param p7, "index"    # I
-    .param p8, "injectableValueId"    # Ljava/lang/Object;
-    .param p9, "metadata"    # Lcom/fasterxml/jackson/databind/PropertyMetadata;
 
     .prologue
     .line 82
@@ -68,7 +59,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/deser/CreatorProperty;Lcom/fasterxml/jackson/databind/JsonDeserializer;)V
     .registers 4
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -80,7 +70,6 @@
 
     .prologue
     .line 118
-    .local p2, "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     invoke-direct {p0, p1, p2}, Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;-><init>(Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;Lcom/fasterxml/jackson/databind/JsonDeserializer;)V
 
     .line 119
@@ -109,8 +98,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/deser/CreatorProperty;Lcom/fasterxml/jackson/databind/PropertyName;)V
     .registers 4
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
-    .param p2, "newName"    # Lcom/fasterxml/jackson/databind/PropertyName;
 
     .prologue
     .line 105
@@ -142,8 +129,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/deser/CreatorProperty;Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;)V
     .registers 4
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
-    .param p2, "fallbackSetter"    # Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
     .prologue
     .line 129
@@ -173,8 +158,6 @@
 
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/deser/CreatorProperty;Ljava/lang/String;)V
     .registers 4
-    .param p1, "src"    # Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
-    .param p2, "newName"    # Ljava/lang/String;
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -192,15 +175,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Lcom/fasterxml/jackson/databind/JavaType;Lcom/fasterxml/jackson/databind/PropertyName;Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;Lcom/fasterxml/jackson/databind/util/Annotations;Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;ILjava/lang/Object;Z)V
     .registers 21
-    .param p1, "name"    # Ljava/lang/String;
-    .param p2, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .param p3, "wrapperName"    # Lcom/fasterxml/jackson/databind/PropertyName;
-    .param p4, "typeDeser"    # Lcom/fasterxml/jackson/databind/jsontype/TypeDeserializer;
-    .param p5, "contextAnnotations"    # Lcom/fasterxml/jackson/databind/util/Annotations;
-    .param p6, "param"    # Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;
-    .param p7, "index"    # I
-    .param p8, "injectableValueId"    # Ljava/lang/Object;
-    .param p9, "isRequired"    # Z
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 
@@ -246,15 +220,6 @@
 # virtual methods
 .method public deserializeAndSet(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;)V
     .registers 5
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .param p3, "instance"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 203
@@ -270,15 +235,6 @@
 
 .method public deserializeSetAndReturn(Lcom/fasterxml/jackson/core/JsonParser;Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 5
-    .param p1, "jp"    # Lcom/fasterxml/jackson/core/JsonParser;
-    .param p2, "ctxt"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .param p3, "instance"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 211
@@ -295,8 +251,6 @@
 
 .method public findInjectableValue(Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 6
-    .param p1, "context"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .param p2, "beanInstance"    # Ljava/lang/Object;
 
     .prologue
     .line 156
@@ -382,7 +336,6 @@
 
     .prologue
     .line 180
-    .local p1, "acls":Ljava/lang/Class;, "Ljava/lang/Class<TA;>;"
     iget-object v0, p0, Lcom/fasterxml/jackson/databind/deser/CreatorProperty;->_annotated:Lcom/fasterxml/jackson/databind/introspect/AnnotatedParameter;
 
     if-nez v0, :cond_6
@@ -436,13 +389,6 @@
 
 .method public inject(Lcom/fasterxml/jackson/databind/DeserializationContext;Ljava/lang/Object;)V
     .registers 4
-    .param p1, "context"    # Lcom/fasterxml/jackson/databind/DeserializationContext;
-    .param p2, "beanInstance"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 169
@@ -458,13 +404,6 @@
 
 .method public set(Ljava/lang/Object;Ljava/lang/Object;)V
     .registers 6
-    .param p1, "instance"    # Ljava/lang/Object;
-    .param p2, "value"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 220
@@ -517,13 +456,6 @@
 
 .method public setAndReturn(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 6
-    .param p1, "instance"    # Ljava/lang/Object;
-    .param p2, "value"    # Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;
-        }
-    .end annotation
 
     .prologue
     .line 230
@@ -625,7 +557,6 @@
 
 .method public withFallbackSetter(Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;)Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
     .registers 3
-    .param p1, "fallbackSetter"    # Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
 
     .prologue
     .line 147
@@ -638,7 +569,6 @@
 
 .method public withName(Lcom/fasterxml/jackson/databind/PropertyName;)Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
     .registers 3
-    .param p1, "newName"    # Lcom/fasterxml/jackson/databind/PropertyName;
 
     .prologue
     .line 138
@@ -651,7 +581,6 @@
 
 .method public bridge synthetic withName(Lcom/fasterxml/jackson/databind/PropertyName;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/PropertyName;
 
     .prologue
     .line 29
@@ -675,7 +604,6 @@
 
     .prologue
     .line 143
-    .local p1, "deser":Lcom/fasterxml/jackson/databind/JsonDeserializer;, "Lcom/fasterxml/jackson/databind/JsonDeserializer<*>;"
     new-instance v0, Lcom/fasterxml/jackson/databind/deser/CreatorProperty;
 
     invoke-direct {v0, p0, p1}, Lcom/fasterxml/jackson/databind/deser/CreatorProperty;-><init>(Lcom/fasterxml/jackson/databind/deser/CreatorProperty;Lcom/fasterxml/jackson/databind/JsonDeserializer;)V
@@ -685,7 +613,6 @@
 
 .method public bridge synthetic withValueDeserializer(Lcom/fasterxml/jackson/databind/JsonDeserializer;)Lcom/fasterxml/jackson/databind/deser/SettableBeanProperty;
     .registers 3
-    .param p1, "x0"    # Lcom/fasterxml/jackson/databind/JsonDeserializer;
 
     .prologue
     .line 29

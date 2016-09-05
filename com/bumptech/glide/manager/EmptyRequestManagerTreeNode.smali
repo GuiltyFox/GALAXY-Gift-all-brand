@@ -16,26 +16,3 @@
 
     return-void
 .end method
-
-
-# virtual methods
-.method public getDescendants()Ljava/util/Set;
-    .registers 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Ljava/util/Set",
-            "<",
-            "Lcom/bumptech/glide/RequestManager;",
-            ">;"
-        }
-    .end annotation
-
-    .prologue
-    .line 14
-    invoke-static {}, Ljava/util/Collections;->emptySet()Ljava/util/Set;
-
-    move-result-object v0
-
-    return-object v0
-.end method

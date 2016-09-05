@@ -11,24 +11,18 @@
     value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->onResume()V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+.field final synthetic a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
 
 # direct methods
 .method constructor <init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     .prologue
-    .line 379
-    iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$2;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    .line 393
+    iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$2;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -38,79 +32,86 @@
 
 # virtual methods
 .method public run()V
-    .registers 8
+    .registers 6
 
     .prologue
-    .line 383
-    const/4 v0, 0x0
+    const/4 v1, 0x1
 
-    .line 384
-    .local v0, "need_to_refresh":Z
-    :try_start_1
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$2;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    const/4 v2, 0x0
 
-    const v3, 0x7f1000c6
+    .line 397
+    .line 398
+    :try_start_2
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$2;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->findViewById(I)Landroid/view/View;
+    const v3, 0x7f1000c2
 
-    move-result-object v1
+    invoke-virtual {v0, v3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->findViewById(I)Landroid/view/View;
 
-    check-cast v1, Landroid/widget/ScrollView;
+    move-result-object v0
 
-    .line 385
-    .local v1, "scrollRoot":Landroid/widget/ScrollView;
-    invoke-virtual {v1}, Landroid/widget/ScrollView;->getVisibility()I
+    check-cast v0, Landroid/widget/ScrollView;
 
-    move-result v2
+    .line 399
+    invoke-virtual {v0}, Landroid/widget/ScrollView;->getVisibility()I
+
+    move-result v0
 
     const/16 v3, 0x8
 
-    if-ne v2, v3, :cond_15
+    if-ne v0, v3, :cond_38
 
-    .line 386
-    const/4 v0, 0x1
+    move v0, v1
 
-    .line 389
-    :cond_15
-    const/4 v2, 0x1
+    .line 403
+    :goto_16
+    if-ne v0, v1, :cond_35
 
-    if-ne v0, v2, :cond_2b
+    .line 404
+    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->h()Ljava/lang/String;
 
-    .line 390
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$2;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    move-result-object v0
 
-    iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$2;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    const-string/jumbo v1, "getCampaign(resume|need_to_refresh)"
 
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->paramCampaignID:I
-    invoke-static {v3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$500(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)I
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    move-result v3
+    .line 405
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$2;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    iget-object v4, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$2;->this$0:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$2;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    # getter for: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->paramNFCTag:Lcom/bzbs/bean/NFCTag;
-    invoke-static {v4}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$600(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/NFCTag;
+    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->c(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)I
 
-    move-result-object v4
+    move-result v1
 
-    const/4 v5, 0x0
+    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$2;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    const/4 v6, 0x0
+    invoke-static {v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->d(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/NFCTag;
 
-    # invokes: Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getCampaign(ILcom/bzbs/bean/NFCTag;ZZ)V
-    invoke-static {v2, v3, v4, v5, v6}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->access$700(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;ILcom/bzbs/bean/NFCTag;ZZ)V
-    :try_end_2b
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_2b} :catch_2c
+    move-result-object v2
 
-    .line 395
-    .end local v1    # "scrollRoot":Landroid/widget/ScrollView;
-    :cond_2b
-    :goto_2b
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->a(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;ILcom/bzbs/bean/NFCTag;ZZ)V
+    :try_end_35
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_35} :catch_36
+
+    .line 410
+    :cond_35
+    :goto_35
     return-void
 
-    .line 392
-    :catch_2c
-    move-exception v2
+    .line 407
+    :catch_36
+    move-exception v0
 
-    goto :goto_2b
+    goto :goto_35
+
+    :cond_38
+    move v0, v2
+
+    goto :goto_16
 .end method

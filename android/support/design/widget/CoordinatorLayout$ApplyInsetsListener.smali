@@ -6,17 +6,6 @@
 .implements Landroid/support/v4/view/OnApplyWindowInsetsListener;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/CoordinatorLayout;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "ApplyInsetsListener"
-.end annotation
-
-
 # instance fields
 .field final synthetic this$0:Landroid/support/design/widget/CoordinatorLayout;
 
@@ -36,8 +25,6 @@
 
 .method synthetic constructor <init>(Landroid/support/design/widget/CoordinatorLayout;Landroid/support/design/widget/CoordinatorLayout$1;)V
     .registers 3
-    .param p1, "x0"    # Landroid/support/design/widget/CoordinatorLayout;
-    .param p2, "x1"    # Landroid/support/design/widget/CoordinatorLayout$1;
 
     .prologue
     .line 2581
@@ -50,8 +37,6 @@
 # virtual methods
 .method public onApplyWindowInsets(Landroid/view/View;Landroid/support/v4/view/WindowInsetsCompat;)Landroid/support/v4/view/WindowInsetsCompat;
     .registers 4
-    .param p1, "v"    # Landroid/view/View;
-    .param p2, "insets"    # Landroid/support/v4/view/WindowInsetsCompat;
 
     .prologue
     .line 2585

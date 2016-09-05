@@ -3,14 +3,6 @@
 .source "MenuPresenter.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/v7/view/menu/MenuPresenter$Callback;
-    }
-.end annotation
-
-
 # virtual methods
 .method public abstract collapseItemActionView(Landroid/support/v7/view/menu/MenuBuilder;Landroid/support/v7/view/menu/MenuItemImpl;)Z
 .end method
@@ -22,9 +14,6 @@
 .end method
 
 .method public abstract getId()I
-.end method
-
-.method public abstract getMenuView(Landroid/view/ViewGroup;)Landroid/support/v7/view/menu/MenuView;
 .end method
 
 .method public abstract initForMenu(Landroid/content/Context;Landroid/support/v7/view/menu/MenuBuilder;)V
@@ -40,9 +29,6 @@
 .end method
 
 .method public abstract onSubMenuSelected(Landroid/support/v7/view/menu/SubMenuBuilder;)Z
-.end method
-
-.method public abstract setCallback(Landroid/support/v7/view/menu/MenuPresenter$Callback;)V
 .end method
 
 .method public abstract updateMenuView(Z)V

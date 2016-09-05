@@ -3,17 +3,6 @@
 .source "ViewAnimation.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/request/animation/ViewAnimation;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x608
-    name = "AnimationFactory"
-.end annotation
-
-
 # virtual methods
-.method public abstract build()Landroid/view/animation/Animation;
+.method public abstract a()Landroid/view/animation/Animation;
 .end method

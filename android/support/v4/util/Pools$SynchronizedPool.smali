@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v4/util/Pools;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "SynchronizedPool"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -25,17 +16,15 @@
 
 
 # instance fields
-.field private final mLock:Ljava/lang/Object;
+.field private final a:Ljava/lang/Object;
 
 
 # direct methods
 .method public constructor <init>(I)V
     .registers 3
-    .param p1, "maxPoolSize"    # I
 
     .prologue
     .line 149
-    .local p0, "this":Landroid/support/v4/util/Pools$SynchronizedPool;, "Landroid/support/v4/util/Pools$SynchronizedPool<TT;>;"
     invoke-direct {p0, p1}, Landroid/support/v4/util/Pools$SimplePool;-><init>(I)V
 
     .line 139
@@ -43,7 +32,7 @@
 
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-    iput-object v0, p0, Landroid/support/v4/util/Pools$SynchronizedPool;->mLock:Ljava/lang/Object;
+    iput-object v0, p0, Landroid/support/v4/util/Pools$SynchronizedPool;->a:Ljava/lang/Object;
 
     .line 150
     return-void
@@ -51,7 +40,7 @@
 
 
 # virtual methods
-.method public acquire()Ljava/lang/Object;
+.method public a()Ljava/lang/Object;
     .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -61,14 +50,13 @@
 
     .prologue
     .line 154
-    .local p0, "this":Landroid/support/v4/util/Pools$SynchronizedPool;, "Landroid/support/v4/util/Pools$SynchronizedPool<TT;>;"
-    iget-object v1, p0, Landroid/support/v4/util/Pools$SynchronizedPool;->mLock:Ljava/lang/Object;
+    iget-object v1, p0, Landroid/support/v4/util/Pools$SynchronizedPool;->a:Ljava/lang/Object;
 
     monitor-enter v1
 
     .line 155
     :try_start_3
-    invoke-super {p0}, Landroid/support/v4/util/Pools$SimplePool;->acquire()Ljava/lang/Object;
+    invoke-super {p0}, Landroid/support/v4/util/Pools$SimplePool;->a()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -87,7 +75,7 @@
     throw v0
 .end method
 
-.method public release(Ljava/lang/Object;)Z
+.method public a(Ljava/lang/Object;)Z
     .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -97,15 +85,13 @@
 
     .prologue
     .line 161
-    .local p0, "this":Landroid/support/v4/util/Pools$SynchronizedPool;, "Landroid/support/v4/util/Pools$SynchronizedPool<TT;>;"
-    .local p1, "element":Ljava/lang/Object;, "TT;"
-    iget-object v1, p0, Landroid/support/v4/util/Pools$SynchronizedPool;->mLock:Ljava/lang/Object;
+    iget-object v1, p0, Landroid/support/v4/util/Pools$SynchronizedPool;->a:Ljava/lang/Object;
 
     monitor-enter v1
 
     .line 162
     :try_start_3
-    invoke-super {p0, p1}, Landroid/support/v4/util/Pools$SimplePool;->release(Ljava/lang/Object;)Z
+    invoke-super {p0, p1}, Landroid/support/v4/util/Pools$SimplePool;->a(Ljava/lang/Object;)Z
 
     move-result v0
 

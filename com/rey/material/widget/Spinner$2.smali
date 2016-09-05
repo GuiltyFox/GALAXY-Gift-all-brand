@@ -8,19 +8,14 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/rey/material/widget/Spinner;->showPopup()V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/rey/material/widget/Spinner;->f()V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lcom/rey/material/widget/Spinner;
+.field final synthetic a:Lcom/rey/material/widget/ListView;
 
-.field final synthetic val$lv:Lcom/rey/material/widget/ListView;
+.field final synthetic b:Lcom/rey/material/widget/Spinner;
 
 
 # direct methods
@@ -29,9 +24,9 @@
 
     .prologue
     .line 913
-    iput-object p1, p0, Lcom/rey/material/widget/Spinner$2;->this$0:Lcom/rey/material/widget/Spinner;
+    iput-object p1, p0, Lcom/rey/material/widget/Spinner$2;->b:Lcom/rey/material/widget/Spinner;
 
-    iput-object p2, p0, Lcom/rey/material/widget/Spinner$2;->val$lv:Lcom/rey/material/widget/ListView;
+    iput-object p2, p0, Lcom/rey/material/widget/Spinner$2;->a:Lcom/rey/material/widget/ListView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,7 +42,7 @@
     const/4 v2, 0x1
 
     .line 916
-    iget-object v0, p0, Lcom/rey/material/widget/Spinner$2;->val$lv:Lcom/rey/material/widget/ListView;
+    iget-object v0, p0, Lcom/rey/material/widget/Spinner$2;->a:Lcom/rey/material/widget/ListView;
 
     invoke-virtual {v0}, Lcom/rey/material/widget/ListView;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
@@ -56,16 +51,15 @@
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
     .line 917
-    iget-object v0, p0, Lcom/rey/material/widget/Spinner$2;->this$0:Lcom/rey/material/widget/Spinner;
+    iget-object v0, p0, Lcom/rey/material/widget/Spinner$2;->b:Lcom/rey/material/widget/Spinner;
 
-    # getter for: Lcom/rey/material/widget/Spinner;->mArrowDrawable:Lcom/rey/material/drawable/ArrowDrawable;
-    invoke-static {v0}, Lcom/rey/material/widget/Spinner;->access$300(Lcom/rey/material/widget/Spinner;)Lcom/rey/material/drawable/ArrowDrawable;
+    invoke-static {v0}, Lcom/rey/material/widget/Spinner;->b(Lcom/rey/material/widget/Spinner;)Lcom/rey/material/drawable/ArrowDrawable;
 
     move-result-object v0
 
-    sget v1, Lcom/rey/material/drawable/ArrowDrawable;->MODE_UP:I
+    sget v1, Lcom/rey/material/drawable/ArrowDrawable;->b:I
 
-    invoke-virtual {v0, v1, v2}, Lcom/rey/material/drawable/ArrowDrawable;->setMode(IZ)V
+    invoke-virtual {v0, v1, v2}, Lcom/rey/material/drawable/ArrowDrawable;->a(IZ)V
 
     .line 918
     return v2

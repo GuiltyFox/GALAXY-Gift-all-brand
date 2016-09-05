@@ -11,16 +11,11 @@
     value = Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;-><init>(Landroid/support/v7/widget/AppCompatSpinner;Landroid/content/Context;Landroid/util/AttributeSet;I)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$1:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
+.field final synthetic a:Landroid/support/v7/widget/AppCompatSpinner;
 
-.field final synthetic val$this$0:Landroid/support/v7/widget/AppCompatSpinner;
+.field final synthetic b:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
 
 
 # direct methods
@@ -28,10 +23,10 @@
     .registers 3
 
     .prologue
-    .line 702
-    iput-object p1, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$1;->this$1:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
+    .line 708
+    iput-object p1, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$1;->b:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
 
-    iput-object p2, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$1;->val$this$0:Landroid/support/v7/widget/AppCompatSpinner;
+    iput-object p2, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$1;->a:Landroid/support/v7/widget/AppCompatSpinner;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -42,9 +37,6 @@
 # virtual methods
 .method public onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
     .registers 10
-    .param p2, "v"    # Landroid/view/View;
-    .param p3, "position"    # I
-    .param p4, "id"    # J
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -56,18 +48,17 @@
     .end annotation
 
     .prologue
-    .line 705
-    .local p1, "parent":Landroid/widget/AdapterView;, "Landroid/widget/AdapterView<*>;"
-    iget-object v0, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$1;->this$1:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
+    .line 711
+    iget-object v0, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$1;->b:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
 
-    iget-object v0, v0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;->this$0:Landroid/support/v7/widget/AppCompatSpinner;
+    iget-object v0, v0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;->a:Landroid/support/v7/widget/AppCompatSpinner;
 
     invoke-virtual {v0, p3}, Landroid/support/v7/widget/AppCompatSpinner;->setSelection(I)V
 
-    .line 706
-    iget-object v0, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$1;->this$1:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
+    .line 712
+    iget-object v0, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$1;->b:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
 
-    iget-object v0, v0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;->this$0:Landroid/support/v7/widget/AppCompatSpinner;
+    iget-object v0, v0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;->a:Landroid/support/v7/widget/AppCompatSpinner;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/AppCompatSpinner;->getOnItemClickListener()Landroid/widget/AdapterView$OnItemClickListener;
 
@@ -75,15 +66,14 @@
 
     if-eqz v0, :cond_22
 
-    .line 707
-    iget-object v0, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$1;->this$1:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
+    .line 713
+    iget-object v0, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$1;->b:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
 
-    iget-object v0, v0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;->this$0:Landroid/support/v7/widget/AppCompatSpinner;
+    iget-object v0, v0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;->a:Landroid/support/v7/widget/AppCompatSpinner;
 
-    iget-object v1, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$1;->this$1:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
+    iget-object v1, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$1;->b:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
 
-    # getter for: Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;->mAdapter:Landroid/widget/ListAdapter;
-    invoke-static {v1}, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;->access$200(Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;)Landroid/widget/ListAdapter;
+    invoke-static {v1}, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;->a(Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;)Landroid/widget/ListAdapter;
 
     move-result-object v1
 
@@ -93,12 +83,12 @@
 
     invoke-virtual {v0, p2, p3, v2, v3}, Landroid/support/v7/widget/AppCompatSpinner;->performItemClick(Landroid/view/View;IJ)Z
 
-    .line 710
+    .line 716
     :cond_22
-    iget-object v0, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$1;->this$1:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
+    iget-object v0, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$1;->b:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;->dismiss()V
 
-    .line 711
+    .line 717
     return-void
 .end method

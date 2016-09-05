@@ -7,15 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bzbs/lib/survey/bean/StackModel;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1
-    name = "IntegerComparator"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -28,17 +19,16 @@
 
 
 # instance fields
-.field final synthetic this$0:Lcom/bzbs/lib/survey/bean/StackModel;
+.field final synthetic a:Lcom/bzbs/lib/survey/bean/StackModel;
 
 
 # direct methods
 .method public constructor <init>(Lcom/bzbs/lib/survey/bean/StackModel;)V
     .registers 2
-    .param p1, "this$0"    # Lcom/bzbs/lib/survey/bean/StackModel;
 
     .prologue
     .line 164
-    iput-object p1, p0, Lcom/bzbs/lib/survey/bean/StackModel$IntegerComparator;->this$0:Lcom/bzbs/lib/survey/bean/StackModel;
+    iput-object p1, p0, Lcom/bzbs/lib/survey/bean/StackModel$IntegerComparator;->a:Lcom/bzbs/lib/survey/bean/StackModel;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -47,10 +37,8 @@
 
 
 # virtual methods
-.method public compare(Ljava/lang/Integer;Ljava/lang/Integer;)I
+.method public a(Ljava/lang/Integer;Ljava/lang/Integer;)I
     .registers 5
-    .param p1, "o1"    # Ljava/lang/Integer;
-    .param p2, "o2"    # Ljava/lang/Integer;
 
     .prologue
     .line 168
@@ -90,7 +78,7 @@
     goto :goto_b
 .end method
 
-.method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
+.method public synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .registers 4
 
     .prologue
@@ -99,7 +87,7 @@
 
     check-cast p2, Ljava/lang/Integer;
 
-    invoke-virtual {p0, p1, p2}, Lcom/bzbs/lib/survey/bean/StackModel$IntegerComparator;->compare(Ljava/lang/Integer;Ljava/lang/Integer;)I
+    invoke-virtual {p0, p1, p2}, Lcom/bzbs/lib/survey/bean/StackModel$IntegerComparator;->a(Ljava/lang/Integer;Ljava/lang/Integer;)I
 
     move-result v0
 

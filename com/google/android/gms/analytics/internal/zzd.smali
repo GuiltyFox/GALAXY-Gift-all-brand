@@ -3,9 +3,9 @@
 
 
 # instance fields
-.field private zzOQ:Z
+.field private a:Z
 
-.field private zzOR:Z
+.field private b:Z
 
 
 # direct methods
@@ -19,14 +19,14 @@
 
 
 # virtual methods
-.method public isInitialized()Z
+.method public C()Z
     .registers 2
 
-    iget-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzd;->zzOQ:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzd;->a:Z
 
     if-eqz v0, :cond_a
 
-    iget-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzd;->zzOR:Z
+    iget-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzd;->b:Z
 
     if-nez v0, :cond_a
 
@@ -41,25 +41,10 @@
     goto :goto_9
 .end method
 
-.method public zza()V
-    .registers 2
-
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzd;->zzir()V
-
-    const/4 v0, 0x1
-
-    iput-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzd;->zzOQ:Z
-
-    return-void
-.end method
-
-.method protected abstract zzir()V
-.end method
-
-.method protected zzje()V
+.method protected D()V
     .registers 3
 
-    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzd;->isInitialized()Z
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzd;->C()Z
 
     move-result v0
 
@@ -75,4 +60,19 @@
 
     :cond_f
     return-void
+.end method
+
+.method public E()V
+    .registers 2
+
+    invoke-virtual {p0}, Lcom/google/android/gms/analytics/internal/zzd;->a()V
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lcom/google/android/gms/analytics/internal/zzd;->a:Z
+
+    return-void
+.end method
+
+.method protected abstract a()V
 .end method

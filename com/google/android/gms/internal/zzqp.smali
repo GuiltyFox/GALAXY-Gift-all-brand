@@ -14,13 +14,13 @@
 
 
 # instance fields
-.field public mCategory:Ljava/lang/String;
+.field public a:Ljava/lang/String;
 
-.field public zzaRQ:Ljava/lang/String;
+.field public b:J
 
-.field public zzaSc:Ljava/lang/String;
+.field public c:Ljava/lang/String;
 
-.field public zzaSd:J
+.field public d:Ljava/lang/String;
 
 
 # direct methods
@@ -34,30 +34,136 @@
 
 
 # virtual methods
-.method public getLabel()Ljava/lang/String;
+.method public a()Ljava/lang/String;
     .registers 2
 
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->zzaRQ:Ljava/lang/String;
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->a:Ljava/lang/String;
 
     return-object v0
 .end method
 
-.method public getTimeInMillis()J
+.method public a(J)V
+    .registers 4
+
+    iput-wide p1, p0, Lcom/google/android/gms/internal/zzqp;->b:J
+
+    return-void
+.end method
+
+.method public a(Lcom/google/android/gms/internal/zzqp;)V
+    .registers 6
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->a:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_d
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->a:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqp;->a(Ljava/lang/String;)V
+
+    :cond_d
+    iget-wide v0, p0, Lcom/google/android/gms/internal/zzqp;->b:J
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v0, v0, v2
+
+    if-eqz v0, :cond_1a
+
+    iget-wide v0, p0, Lcom/google/android/gms/internal/zzqp;->b:J
+
+    invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/internal/zzqp;->a(J)V
+
+    :cond_1a
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->c:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_27
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->c:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqp;->b(Ljava/lang/String;)V
+
+    :cond_27
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->d:Ljava/lang/String;
+
+    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_34
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->d:Ljava/lang/String;
+
+    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqp;->c(Ljava/lang/String;)V
+
+    :cond_34
+    return-void
+.end method
+
+.method public bridge synthetic a(Lcom/google/android/gms/measurement/zze;)V
+    .registers 2
+
+    check-cast p1, Lcom/google/android/gms/internal/zzqp;
+
+    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/zzqp;->a(Lcom/google/android/gms/internal/zzqp;)V
+
+    return-void
+.end method
+
+.method public a(Ljava/lang/String;)V
+    .registers 2
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/zzqp;->a:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public b()J
     .registers 3
 
-    iget-wide v0, p0, Lcom/google/android/gms/internal/zzqp;->zzaSd:J
+    iget-wide v0, p0, Lcom/google/android/gms/internal/zzqp;->b:J
 
     return-wide v0
 .end method
 
-.method public setTimeInMillis(J)V
-    .registers 4
-    .param p1, "milliseconds"    # J
+.method public b(Ljava/lang/String;)V
+    .registers 2
 
-    .prologue
-    iput-wide p1, p0, Lcom/google/android/gms/internal/zzqp;->zzaSd:J
+    iput-object p1, p0, Lcom/google/android/gms/internal/zzqp;->c:Ljava/lang/String;
 
     return-void
+.end method
+
+.method public c()Ljava/lang/String;
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->c:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public c(Ljava/lang/String;)V
+    .registers 2
+
+    iput-object p1, p0, Lcom/google/android/gms/internal/zzqp;->d:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public d()Ljava/lang/String;
+    .registers 2
+
+    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->d:Ljava/lang/String;
+
+    return-object v0
 .end method
 
 .method public toString()Ljava/lang/String;
@@ -69,13 +175,13 @@
 
     const-string/jumbo v1, "variableName"
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzqp;->zzaSc:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/internal/zzqp;->a:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string/jumbo v1, "timeInMillis"
 
-    iget-wide v2, p0, Lcom/google/android/gms/internal/zzqp;->zzaSd:J
+    iget-wide v2, p0, Lcom/google/android/gms/internal/zzqp;->b:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -85,127 +191,19 @@
 
     const-string/jumbo v1, "category"
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzqp;->mCategory:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/internal/zzqp;->c:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const-string/jumbo v1, "label"
 
-    iget-object v2, p0, Lcom/google/android/gms/internal/zzqp;->zzaRQ:Ljava/lang/String;
+    iget-object v2, p0, Lcom/google/android/gms/internal/zzqp;->d:Ljava/lang/String;
 
     invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static {v0}, Lcom/google/android/gms/internal/zzqp;->zzE(Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/google/android/gms/internal/zzqp;->a(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v0
 
     return-object v0
-.end method
-
-.method public zzAj()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->mCategory:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public zzAr()Ljava/lang/String;
-    .registers 2
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->zzaSc:Ljava/lang/String;
-
-    return-object v0
-.end method
-
-.method public zza(Lcom/google/android/gms/internal/zzqp;)V
-    .registers 6
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->zzaSc:Ljava/lang/String;
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_d
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->zzaSc:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqp;->zzeu(Ljava/lang/String;)V
-
-    :cond_d
-    iget-wide v0, p0, Lcom/google/android/gms/internal/zzqp;->zzaSd:J
-
-    const-wide/16 v2, 0x0
-
-    cmp-long v0, v0, v2
-
-    if-eqz v0, :cond_1a
-
-    iget-wide v0, p0, Lcom/google/android/gms/internal/zzqp;->zzaSd:J
-
-    invoke-virtual {p1, v0, v1}, Lcom/google/android/gms/internal/zzqp;->setTimeInMillis(J)V
-
-    :cond_1a
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->mCategory:Ljava/lang/String;
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_27
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->mCategory:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqp;->zzen(Ljava/lang/String;)V
-
-    :cond_27
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->zzaRQ:Ljava/lang/String;
-
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_34
-
-    iget-object v0, p0, Lcom/google/android/gms/internal/zzqp;->zzaRQ:Ljava/lang/String;
-
-    invoke-virtual {p1, v0}, Lcom/google/android/gms/internal/zzqp;->zzep(Ljava/lang/String;)V
-
-    :cond_34
-    return-void
-.end method
-
-.method public bridge synthetic zza(Lcom/google/android/gms/measurement/zze;)V
-    .registers 2
-
-    check-cast p1, Lcom/google/android/gms/internal/zzqp;
-
-    invoke-virtual {p0, p1}, Lcom/google/android/gms/internal/zzqp;->zza(Lcom/google/android/gms/internal/zzqp;)V
-
-    return-void
-.end method
-
-.method public zzen(Ljava/lang/String;)V
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/zzqp;->mCategory:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public zzep(Ljava/lang/String;)V
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/zzqp;->zzaRQ:Ljava/lang/String;
-
-    return-void
-.end method
-
-.method public zzeu(Ljava/lang/String;)V
-    .registers 2
-
-    iput-object p1, p0, Lcom/google/android/gms/internal/zzqp;->zzaSc:Ljava/lang/String;
-
-    return-void
 .end method

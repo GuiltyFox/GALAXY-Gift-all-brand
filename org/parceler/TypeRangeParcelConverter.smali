@@ -17,7 +17,7 @@
 
 
 # virtual methods
-.method public abstract fromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+.method public abstract c(Landroid/os/Parcel;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -27,7 +27,7 @@
     .end annotation
 .end method
 
-.method public abstract toParcel(Ljava/lang/Object;Landroid/os/Parcel;)V
+.method public abstract c(Ljava/lang/Object;Landroid/os/Parcel;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(T",

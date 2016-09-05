@@ -11,11 +11,6 @@
     value = Lrx/internal/util/ScalarSynchronousObservable;-><init>(Ljava/lang/Object;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
@@ -26,7 +21,7 @@
 
 
 # instance fields
-.field final synthetic val$t:Ljava/lang/Object;
+.field final synthetic a:Ljava/lang/Object;
 
 
 # direct methods
@@ -35,8 +30,7 @@
 
     .prologue
     .line 35
-    .local p0, "this":Lrx/internal/util/ScalarSynchronousObservable$1;, "Lrx/internal/util/ScalarSynchronousObservable.1;"
-    iput-object p1, p0, Lrx/internal/util/ScalarSynchronousObservable$1;->val$t:Ljava/lang/Object;
+    iput-object p1, p0, Lrx/internal/util/ScalarSynchronousObservable$1;->a:Ljava/lang/Object;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -45,22 +39,19 @@
 
 
 # virtual methods
-.method public bridge synthetic call(Ljava/lang/Object;)V
+.method public bridge synthetic a(Ljava/lang/Object;)V
     .registers 2
-    .param p1, "x0"    # Ljava/lang/Object;
 
     .prologue
     .line 35
-    .local p0, "this":Lrx/internal/util/ScalarSynchronousObservable$1;, "Lrx/internal/util/ScalarSynchronousObservable.1;"
     check-cast p1, Lrx/Subscriber;
 
-    .end local p1    # "x0":Ljava/lang/Object;
-    invoke-virtual {p0, p1}, Lrx/internal/util/ScalarSynchronousObservable$1;->call(Lrx/Subscriber;)V
+    invoke-virtual {p0, p1}, Lrx/internal/util/ScalarSynchronousObservable$1;->a(Lrx/Subscriber;)V
 
     return-void
 .end method
 
-.method public call(Lrx/Subscriber;)V
+.method public a(Lrx/Subscriber;)V
     .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -72,14 +63,12 @@
 
     .prologue
     .line 46
-    .local p0, "this":Lrx/internal/util/ScalarSynchronousObservable$1;, "Lrx/internal/util/ScalarSynchronousObservable.1;"
-    .local p1, "s":Lrx/Subscriber;, "Lrx/Subscriber<-TT;>;"
-    iget-object v0, p0, Lrx/internal/util/ScalarSynchronousObservable$1;->val$t:Ljava/lang/Object;
+    iget-object v0, p0, Lrx/internal/util/ScalarSynchronousObservable$1;->a:Ljava/lang/Object;
 
-    invoke-virtual {p1, v0}, Lrx/Subscriber;->onNext(Ljava/lang/Object;)V
+    invoke-virtual {p1, v0}, Lrx/Subscriber;->a_(Ljava/lang/Object;)V
 
     .line 47
-    invoke-virtual {p1}, Lrx/Subscriber;->onCompleted()V
+    invoke-virtual {p1}, Lrx/Subscriber;->i_()V
 
     .line 48
     return-void

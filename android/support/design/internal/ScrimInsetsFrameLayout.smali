@@ -14,7 +14,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 44
@@ -28,8 +27,6 @@
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
     .registers 4
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 48
@@ -42,33 +39,29 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
-    .registers 7
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
+    .registers 6
 
     .prologue
     .line 52
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 41
-    new-instance v1, Landroid/graphics/Rect;
+    new-instance v0, Landroid/graphics/Rect;
 
-    invoke-direct {v1}, Landroid/graphics/Rect;-><init>()V
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
-    iput-object v1, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->mTempRect:Landroid/graphics/Rect;
+    iput-object v0, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->mTempRect:Landroid/graphics/Rect;
 
     .line 54
-    sget-object v1, Landroid/support/design/R$styleable;->ScrimInsetsFrameLayout:[I
+    sget-object v0, Landroid/support/design/R$styleable;->ScrimInsetsFrameLayout:[I
 
-    sget v2, Landroid/support/design/R$style;->Widget_Design_ScrimInsetsFrameLayout:I
+    sget v1, Landroid/support/design/R$style;->Widget_Design_ScrimInsetsFrameLayout:I
 
-    invoke-virtual {p1, p2, v1, p3, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v0, p3, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
     .line 57
-    .local v0, "a":Landroid/content/res/TypedArray;
     sget v1, Landroid/support/design/R$styleable;->ScrimInsetsFrameLayout_insetForeground:I
 
     invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
@@ -81,16 +74,16 @@
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 59
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    invoke-virtual {p0, v1}, Landroid/support/design/internal/ScrimInsetsFrameLayout;->setWillNotDraw(Z)V
+    invoke-virtual {p0, v0}, Landroid/support/design/internal/ScrimInsetsFrameLayout;->setWillNotDraw(Z)V
 
     .line 61
-    new-instance v1, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;
+    new-instance v0, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;
 
-    invoke-direct {v1, p0}, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;-><init>(Landroid/support/design/internal/ScrimInsetsFrameLayout;)V
+    invoke-direct {v0, p0}, Landroid/support/design/internal/ScrimInsetsFrameLayout$1;-><init>(Landroid/support/design/internal/ScrimInsetsFrameLayout;)V
 
-    invoke-static {p0, v1}, Landroid/support/v4/view/ViewCompat;->setOnApplyWindowInsetsListener(Landroid/view/View;Landroid/support/v4/view/OnApplyWindowInsetsListener;)V
+    invoke-static {p0, v0}, Landroid/support/v4/view/ViewCompat;->a(Landroid/view/View;Landroid/support/v4/view/OnApplyWindowInsetsListener;)V
 
     .line 79
     return-void
@@ -98,7 +91,6 @@
 
 .method static synthetic access$000(Landroid/support/design/internal/ScrimInsetsFrameLayout;)Landroid/graphics/Rect;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/internal/ScrimInsetsFrameLayout;
 
     .prologue
     .line 35
@@ -109,8 +101,6 @@
 
 .method static synthetic access$002(Landroid/support/design/internal/ScrimInsetsFrameLayout;Landroid/graphics/Rect;)Landroid/graphics/Rect;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/internal/ScrimInsetsFrameLayout;
-    .param p1, "x1"    # Landroid/graphics/Rect;
 
     .prologue
     .line 35
@@ -121,7 +111,6 @@
 
 .method static synthetic access$100(Landroid/support/design/internal/ScrimInsetsFrameLayout;)Landroid/graphics/drawable/Drawable;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/internal/ScrimInsetsFrameLayout;
 
     .prologue
     .line 35
@@ -134,10 +123,6 @@
 # virtual methods
 .method public draw(Landroid/graphics/Canvas;)V
     .registers 10
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
-        .annotation build Landroid/support/annotation/NonNull;
-        .end annotation
-    .end param
 
     .prologue
     const/4 v7, 0x0
@@ -148,31 +133,28 @@
     .line 85
     invoke-virtual {p0}, Landroid/support/design/internal/ScrimInsetsFrameLayout;->getWidth()I
 
-    move-result v2
-
-    .line 86
-    .local v2, "width":I
-    invoke-virtual {p0}, Landroid/support/design/internal/ScrimInsetsFrameLayout;->getHeight()I
-
     move-result v0
 
+    .line 86
+    invoke-virtual {p0}, Landroid/support/design/internal/ScrimInsetsFrameLayout;->getHeight()I
+
+    move-result v1
+
     .line 87
-    .local v0, "height":I
-    iget-object v3, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsets:Landroid/graphics/Rect;
+    iget-object v2, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsets:Landroid/graphics/Rect;
 
-    if-eqz v3, :cond_94
+    if-eqz v2, :cond_93
 
-    iget-object v3, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsetForeground:Landroid/graphics/drawable/Drawable;
+    iget-object v2, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsetForeground:Landroid/graphics/drawable/Drawable;
 
-    if-eqz v3, :cond_94
+    if-eqz v2, :cond_93
 
     .line 88
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    move-result v1
+    move-result v2
 
     .line 89
-    .local v1, "sc":I
     invoke-virtual {p0}, Landroid/support/design/internal/ScrimInsetsFrameLayout;->getScrollX()I
 
     move-result v3
@@ -194,7 +176,7 @@
 
     iget v4, v4, Landroid/graphics/Rect;->top:I
 
-    invoke-virtual {v3, v7, v7, v2, v4}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {v3, v7, v7, v0, v4}, Landroid/graphics/Rect;->set(IIII)V
 
     .line 93
     iget-object v3, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsetForeground:Landroid/graphics/drawable/Drawable;
@@ -215,9 +197,9 @@
 
     iget v4, v4, Landroid/graphics/Rect;->bottom:I
 
-    sub-int v4, v0, v4
+    sub-int v4, v1, v4
 
-    invoke-virtual {v3, v7, v4, v2, v0}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {v3, v7, v4, v0, v1}, Landroid/graphics/Rect;->set(IIII)V
 
     .line 98
     iget-object v3, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsetForeground:Landroid/graphics/drawable/Drawable;
@@ -246,7 +228,7 @@
 
     iget v6, v6, Landroid/graphics/Rect;->bottom:I
 
-    sub-int v6, v0, v6
+    sub-int v6, v1, v6
 
     invoke-virtual {v3, v7, v4, v5, v6}, Landroid/graphics/Rect;->set(IIII)V
 
@@ -269,7 +251,7 @@
 
     iget v4, v4, Landroid/graphics/Rect;->right:I
 
-    sub-int v4, v2, v4
+    sub-int v4, v0, v4
 
     iget-object v5, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsets:Landroid/graphics/Rect;
 
@@ -279,28 +261,27 @@
 
     iget v6, v6, Landroid/graphics/Rect;->bottom:I
 
-    sub-int v6, v0, v6
+    sub-int/2addr v1, v6
 
-    invoke-virtual {v3, v4, v5, v2, v6}, Landroid/graphics/Rect;->set(IIII)V
+    invoke-virtual {v3, v4, v5, v0, v1}, Landroid/graphics/Rect;->set(IIII)V
 
     .line 108
-    iget-object v3, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsetForeground:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsetForeground:Landroid/graphics/drawable/Drawable;
 
-    iget-object v4, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->mTempRect:Landroid/graphics/Rect;
+    iget-object v1, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->mTempRect:Landroid/graphics/Rect;
 
-    invoke-virtual {v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
 
     .line 109
-    iget-object v3, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsetForeground:Landroid/graphics/drawable/Drawable;
+    iget-object v0, p0, Landroid/support/design/internal/ScrimInsetsFrameLayout;->mInsetForeground:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v3, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+    invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     .line 111
-    invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
+    invoke-virtual {p1, v2}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
     .line 113
-    .end local v1    # "sc":I
-    :cond_94
+    :cond_93
     return-void
 .end method
 
@@ -352,7 +333,6 @@
 
 .method protected onInsetsChanged(Landroid/graphics/Rect;)V
     .registers 2
-    .param p1, "insets"    # Landroid/graphics/Rect;
 
     .prologue
     .line 132

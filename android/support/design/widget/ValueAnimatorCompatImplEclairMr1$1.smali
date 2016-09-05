@@ -11,11 +11,6 @@
     value = Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Landroid/support/design/widget/ValueAnimatorCompatImplEclairMr1;

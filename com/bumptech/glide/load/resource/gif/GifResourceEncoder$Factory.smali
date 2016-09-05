@@ -3,17 +3,6 @@
 .source "GifResourceEncoder.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/bumptech/glide/load/resource/gif/GifResourceEncoder;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "Factory"
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .registers 1
@@ -27,9 +16,8 @@
 
 
 # virtual methods
-.method public buildDecoder(Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;)Lcom/bumptech/glide/gifdecoder/GifDecoder;
+.method public a(Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;)Lcom/bumptech/glide/gifdecoder/GifDecoder;
     .registers 3
-    .param p1, "bitmapProvider"    # Lcom/bumptech/glide/gifdecoder/GifDecoder$BitmapProvider;
 
     .prologue
     .line 133
@@ -40,22 +28,20 @@
     return-object v0
 .end method
 
-.method public buildEncoder()Lcom/bumptech/glide/gifencoder/AnimatedGifEncoder;
+.method public a()Lcom/bumptech/glide/gifdecoder/GifHeaderParser;
     .registers 2
 
     .prologue
-    .line 141
-    new-instance v0, Lcom/bumptech/glide/gifencoder/AnimatedGifEncoder;
+    .line 137
+    new-instance v0, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;
 
-    invoke-direct {v0}, Lcom/bumptech/glide/gifencoder/AnimatedGifEncoder;-><init>()V
+    invoke-direct {v0}, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;-><init>()V
 
     return-object v0
 .end method
 
-.method public buildFrameResource(Landroid/graphics/Bitmap;Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;)Lcom/bumptech/glide/load/engine/Resource;
+.method public a(Landroid/graphics/Bitmap;Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;)Lcom/bumptech/glide/load/engine/Resource;
     .registers 4
-    .param p1, "bitmap"    # Landroid/graphics/Bitmap;
-    .param p2, "bitmapPool"    # Lcom/bumptech/glide/load/engine/bitmap_recycle/BitmapPool;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -78,14 +64,14 @@
     return-object v0
 .end method
 
-.method public buildParser()Lcom/bumptech/glide/gifdecoder/GifHeaderParser;
+.method public b()Lcom/bumptech/glide/gifencoder/AnimatedGifEncoder;
     .registers 2
 
     .prologue
-    .line 137
-    new-instance v0, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;
+    .line 141
+    new-instance v0, Lcom/bumptech/glide/gifencoder/AnimatedGifEncoder;
 
-    invoke-direct {v0}, Lcom/bumptech/glide/gifdecoder/GifHeaderParser;-><init>()V
+    invoke-direct {v0}, Lcom/bumptech/glide/gifencoder/AnimatedGifEncoder;-><init>()V
 
     return-object v0
 .end method

@@ -11,11 +11,6 @@
     value = Lcom/loopj/android/http/JsonHttpResponseHandler;->onFailure(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Lcom/loopj/android/http/JsonHttpResponseHandler;
@@ -32,7 +27,6 @@
 # direct methods
 .method constructor <init>(Lcom/loopj/android/http/JsonHttpResponseHandler;[BI[Lcz/msebera/android/httpclient/Header;Ljava/lang/Throwable;)V
     .registers 6
-    .param p1, "this$0"    # Lcom/loopj/android/http/JsonHttpResponseHandler;
 
     .prologue
     .line 191
@@ -54,33 +48,31 @@
 
 # virtual methods
 .method public run()V
-    .registers 5
+    .registers 4
 
     .prologue
     .line 195
     :try_start_0
-    iget-object v2, p0, Lcom/loopj/android/http/JsonHttpResponseHandler$2;->this$0:Lcom/loopj/android/http/JsonHttpResponseHandler;
+    iget-object v0, p0, Lcom/loopj/android/http/JsonHttpResponseHandler$2;->this$0:Lcom/loopj/android/http/JsonHttpResponseHandler;
 
-    iget-object v3, p0, Lcom/loopj/android/http/JsonHttpResponseHandler$2;->val$responseBytes:[B
+    iget-object v1, p0, Lcom/loopj/android/http/JsonHttpResponseHandler$2;->val$responseBytes:[B
 
-    invoke-virtual {v2, v3}, Lcom/loopj/android/http/JsonHttpResponseHandler;->parseResponse([B)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lcom/loopj/android/http/JsonHttpResponseHandler;->parseResponse([B)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 196
-    .local v1, "jsonResponse":Ljava/lang/Object;
-    iget-object v2, p0, Lcom/loopj/android/http/JsonHttpResponseHandler$2;->this$0:Lcom/loopj/android/http/JsonHttpResponseHandler;
+    iget-object v1, p0, Lcom/loopj/android/http/JsonHttpResponseHandler$2;->this$0:Lcom/loopj/android/http/JsonHttpResponseHandler;
 
-    new-instance v3, Lcom/loopj/android/http/JsonHttpResponseHandler$2$1;
+    new-instance v2, Lcom/loopj/android/http/JsonHttpResponseHandler$2$1;
 
-    invoke-direct {v3, p0, v1}, Lcom/loopj/android/http/JsonHttpResponseHandler$2$1;-><init>(Lcom/loopj/android/http/JsonHttpResponseHandler$2;Ljava/lang/Object;)V
+    invoke-direct {v2, p0, v0}, Lcom/loopj/android/http/JsonHttpResponseHandler$2$1;-><init>(Lcom/loopj/android/http/JsonHttpResponseHandler$2;Ljava/lang/Object;)V
 
-    invoke-virtual {v2, v3}, Lcom/loopj/android/http/JsonHttpResponseHandler;->postRunnable(Ljava/lang/Runnable;)V
+    invoke-virtual {v1, v2}, Lcom/loopj/android/http/JsonHttpResponseHandler;->postRunnable(Ljava/lang/Runnable;)V
     :try_end_12
     .catch Lorg/json/JSONException; {:try_start_0 .. :try_end_12} :catch_13
 
     .line 223
-    .end local v1    # "jsonResponse":Ljava/lang/Object;
     :goto_12
     return-void
 
@@ -89,14 +81,13 @@
     move-exception v0
 
     .line 215
-    .local v0, "ex":Lorg/json/JSONException;
-    iget-object v2, p0, Lcom/loopj/android/http/JsonHttpResponseHandler$2;->this$0:Lcom/loopj/android/http/JsonHttpResponseHandler;
+    iget-object v1, p0, Lcom/loopj/android/http/JsonHttpResponseHandler$2;->this$0:Lcom/loopj/android/http/JsonHttpResponseHandler;
 
-    new-instance v3, Lcom/loopj/android/http/JsonHttpResponseHandler$2$2;
+    new-instance v2, Lcom/loopj/android/http/JsonHttpResponseHandler$2$2;
 
-    invoke-direct {v3, p0, v0}, Lcom/loopj/android/http/JsonHttpResponseHandler$2$2;-><init>(Lcom/loopj/android/http/JsonHttpResponseHandler$2;Lorg/json/JSONException;)V
+    invoke-direct {v2, p0, v0}, Lcom/loopj/android/http/JsonHttpResponseHandler$2$2;-><init>(Lcom/loopj/android/http/JsonHttpResponseHandler$2;Lorg/json/JSONException;)V
 
-    invoke-virtual {v2, v3}, Lcom/loopj/android/http/JsonHttpResponseHandler;->postRunnable(Ljava/lang/Runnable;)V
+    invoke-virtual {v1, v2}, Lcom/loopj/android/http/JsonHttpResponseHandler;->postRunnable(Ljava/lang/Runnable;)V
 
     goto :goto_12
 .end method

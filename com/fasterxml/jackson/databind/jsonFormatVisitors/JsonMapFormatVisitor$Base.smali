@@ -6,17 +6,6 @@
 .implements Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonMapFormatVisitor;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonMapFormatVisitor;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Base"
-.end annotation
-
-
 # instance fields
 .field protected _provider:Lcom/fasterxml/jackson/databind/SerializerProvider;
 
@@ -34,7 +23,6 @@
 
 .method public constructor <init>(Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 2
-    .param p1, "p"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
 
     .prologue
     .line 32
@@ -59,13 +47,6 @@
 
 .method public keyFormat(Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitable;Lcom/fasterxml/jackson/databind/JavaType;)V
     .registers 3
-    .param p1, "handler"    # Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitable;
-    .param p2, "keyType"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
 
     .prologue
     .line 41
@@ -74,7 +55,6 @@
 
 .method public setProvider(Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 2
-    .param p1, "p"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
 
     .prologue
     .line 38
@@ -85,13 +65,6 @@
 
 .method public valueFormat(Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitable;Lcom/fasterxml/jackson/databind/JavaType;)V
     .registers 3
-    .param p1, "handler"    # Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonFormatVisitable;
-    .param p2, "valueType"    # Lcom/fasterxml/jackson/databind/JavaType;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lcom/fasterxml/jackson/databind/JsonMappingException;
-        }
-    .end annotation
 
     .prologue
     .line 43

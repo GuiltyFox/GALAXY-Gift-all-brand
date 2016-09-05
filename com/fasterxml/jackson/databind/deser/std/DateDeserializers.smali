@@ -3,18 +3,6 @@
 .source "DateDeserializers.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/databind/deser/std/DateDeserializers$TimestampDeserializer;,
-        Lcom/fasterxml/jackson/databind/deser/std/DateDeserializers$SqlDateDeserializer;,
-        Lcom/fasterxml/jackson/databind/deser/std/DateDeserializers$DateDeserializer;,
-        Lcom/fasterxml/jackson/databind/deser/std/DateDeserializers$CalendarDeserializer;,
-        Lcom/fasterxml/jackson/databind/deser/std/DateDeserializers$DateBasedDeserializer;
-    }
-.end annotation
-
-
 # static fields
 .field private static final _classNames:Ljava/util/HashSet;
     .annotation system Ldalvik/annotation/Signature;
@@ -30,85 +18,75 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 7
+    .registers 5
 
     .prologue
+    const/4 v0, 0x0
+
     .line 30
-    new-instance v5, Ljava/util/HashSet;
+    new-instance v1, Ljava/util/HashSet;
 
-    invoke-direct {v5}, Ljava/util/HashSet;-><init>()V
+    invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
-    sput-object v5, Lcom/fasterxml/jackson/databind/deser/std/DateDeserializers;->_classNames:Ljava/util/HashSet;
+    sput-object v1, Lcom/fasterxml/jackson/databind/deser/std/DateDeserializers;->_classNames:Ljava/util/HashSet;
 
     .line 32
-    const/4 v5, 0x5
+    const/4 v1, 0x5
 
-    new-array v4, v5, [Ljava/lang/Class;
+    new-array v1, v1, [Ljava/lang/Class;
 
-    const/4 v5, 0x0
+    const-class v2, Ljava/util/Calendar;
 
-    const-class v6, Ljava/util/Calendar;
+    aput-object v2, v1, v0
 
-    aput-object v6, v4, v5
+    const/4 v2, 0x1
 
-    const/4 v5, 0x1
+    const-class v3, Ljava/util/GregorianCalendar;
 
-    const-class v6, Ljava/util/GregorianCalendar;
+    aput-object v3, v1, v2
 
-    aput-object v6, v4, v5
+    const/4 v2, 0x2
 
-    const/4 v5, 0x2
+    const-class v3, Ljava/sql/Date;
 
-    const-class v6, Ljava/sql/Date;
+    aput-object v3, v1, v2
 
-    aput-object v6, v4, v5
+    const/4 v2, 0x3
 
-    const/4 v5, 0x3
+    const-class v3, Ljava/util/Date;
 
-    const-class v6, Ljava/util/Date;
+    aput-object v3, v1, v2
 
-    aput-object v6, v4, v5
+    const/4 v2, 0x4
 
-    const/4 v5, 0x4
+    const-class v3, Ljava/sql/Timestamp;
 
-    const-class v6, Ljava/sql/Timestamp;
-
-    aput-object v6, v4, v5
+    aput-object v3, v1, v2
 
     .line 39
-    .local v4, "numberTypes":[Ljava/lang/Class;, "[Ljava/lang/Class<*>;"
-    move-object v0, v4
+    array-length v2, v1
 
-    .local v0, "arr$":[Ljava/lang/Class;
-    array-length v3, v0
+    :goto_24
+    if-ge v0, v2, :cond_34
 
-    .local v3, "len$":I
-    const/4 v2, 0x0
-
-    .local v2, "i$":I
-    :goto_26
-    if-ge v2, v3, :cond_36
-
-    aget-object v1, v0, v2
+    aget-object v3, v1, v0
 
     .line 40
-    .local v1, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    sget-object v5, Lcom/fasterxml/jackson/databind/deser/std/DateDeserializers;->_classNames:Ljava/util/HashSet;
+    sget-object v4, Lcom/fasterxml/jackson/databind/deser/std/DateDeserializers;->_classNames:Ljava/util/HashSet;
 
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v3
 
-    invoke-virtual {v5, v6}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v3}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
     .line 39
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v0, 0x1
 
-    goto :goto_26
+    goto :goto_24
 
     .line 42
-    .end local v1    # "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    :cond_36
+    :cond_34
     return-void
 .end method
 
@@ -125,7 +103,6 @@
 
 .method public static find(Ljava/lang/Class;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/JsonDeserializer;
     .registers 4
-    .param p1, "clsName"    # Ljava/lang/String;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -140,7 +117,6 @@
 
     .prologue
     .line 46
-    .local p0, "rawType":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     sget-object v0, Lcom/fasterxml/jackson/databind/deser/std/DateDeserializers;->_classNames:Ljava/util/HashSet;
 
     invoke-virtual {v0, p1}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z

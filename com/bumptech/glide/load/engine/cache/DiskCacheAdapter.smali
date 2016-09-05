@@ -19,26 +19,8 @@
 
 
 # virtual methods
-.method public clear()V
-    .registers 1
-
-    .prologue
-    .line 30
-    return-void
-.end method
-
-.method public delete(Lcom/bumptech/glide/load/Key;)V
-    .registers 2
-    .param p1, "key"    # Lcom/bumptech/glide/load/Key;
-
-    .prologue
-    .line 25
-    return-void
-.end method
-
-.method public get(Lcom/bumptech/glide/load/Key;)Ljava/io/File;
+.method public a(Lcom/bumptech/glide/load/Key;)Ljava/io/File;
     .registers 3
-    .param p1, "key"    # Lcom/bumptech/glide/load/Key;
 
     .prologue
     .line 14
@@ -47,12 +29,18 @@
     return-object v0
 .end method
 
-.method public put(Lcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/engine/cache/DiskCache$Writer;)V
+.method public a(Lcom/bumptech/glide/load/Key;Lcom/bumptech/glide/load/engine/cache/DiskCache$Writer;)V
     .registers 3
-    .param p1, "key"    # Lcom/bumptech/glide/load/Key;
-    .param p2, "writer"    # Lcom/bumptech/glide/load/engine/cache/DiskCache$Writer;
 
     .prologue
     .line 20
+    return-void
+.end method
+
+.method public b(Lcom/bumptech/glide/load/Key;)V
+    .registers 2
+
+    .prologue
+    .line 25
     return-void
 .end method

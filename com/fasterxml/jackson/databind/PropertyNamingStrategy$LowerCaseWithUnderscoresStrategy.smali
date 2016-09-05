@@ -3,17 +3,6 @@
 .source "PropertyNamingStrategy.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/PropertyNamingStrategy;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "LowerCaseWithUnderscoresStrategy"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1
@@ -28,126 +17,137 @@
 
 # virtual methods
 .method public translate(Ljava/lang/String;)Ljava/lang/String;
-    .registers 10
-    .param p1, "input"    # Ljava/lang/String;
+    .registers 12
 
     .prologue
-    const/16 v7, 0x5f
+    const/16 v8, 0x5f
+
+    const/4 v3, 0x0
 
     .line 235
-    if-nez p1, :cond_5
+    if-nez p1, :cond_6
 
     .line 263
-    .end local p1    # "input":Ljava/lang/String;
-    :cond_4
-    :goto_4
+    :cond_5
+    :goto_5
     return-object p1
 
     .line 236
-    .restart local p1    # "input":Ljava/lang/String;
-    :cond_5
+    :cond_6
     invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    .line 237
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    mul-int/lit8 v0, v5, 0x2
+
+    invoke-direct {v6, v0}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    move v4, v3
+
+    move v2, v3
+
+    move v0, v3
+
+    .line 240
+    :goto_14
+    if-ge v4, v5, :cond_4c
+
+    .line 242
+    invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
+
+    move-result v1
+
+    .line 243
+    if-gtz v4, :cond_1e
+
+    if-eq v1, v8, :cond_53
+
+    .line 245
+    :cond_1e
+    invoke-static {v1}, Ljava/lang/Character;->isUpperCase(C)Z
+
+    move-result v7
+
+    if-eqz v7, :cond_48
+
+    .line 247
+    if-nez v2, :cond_35
+
+    if-lez v0, :cond_35
+
+    add-int/lit8 v2, v0, -0x1
+
+    invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->charAt(I)C
 
     move-result v2
 
-    .line 237
-    .local v2, "length":I
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    mul-int/lit8 v6, v2, 0x2
-
-    invoke-direct {v3, v6}, Ljava/lang/StringBuilder;-><init>(I)V
-
-    .line 238
-    .local v3, "result":Ljava/lang/StringBuilder;
-    const/4 v4, 0x0
-
-    .line 239
-    .local v4, "resultLength":I
-    const/4 v5, 0x0
-
-    .line 240
-    .local v5, "wasPrevTranslated":Z
-    const/4 v1, 0x0
-
-    .local v1, "i":I
-    :goto_13
-    if-ge v1, v2, :cond_43
-
-    .line 242
-    invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
-
-    move-result v0
-
-    .line 243
-    .local v0, "c":C
-    if-gtz v1, :cond_1d
-
-    if-eq v0, v7, :cond_3e
-
-    .line 245
-    :cond_1d
-    invoke-static {v0}, Ljava/lang/Character;->isUpperCase(C)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_41
-
-    .line 247
-    if-nez v5, :cond_34
-
-    if-lez v4, :cond_34
-
-    add-int/lit8 v6, v4, -0x1
-
-    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->charAt(I)C
-
-    move-result v6
-
-    if-eq v6, v7, :cond_34
+    if-eq v2, v8, :cond_35
 
     .line 249
-    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v6, v8}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 250
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     .line 252
-    :cond_34
-    invoke-static {v0}, Ljava/lang/Character;->toLowerCase(C)C
+    :cond_35
+    invoke-static {v1}, Ljava/lang/Character;->toLowerCase(C)C
 
-    move-result v0
+    move-result v1
 
     .line 253
-    const/4 v5, 0x1
+    const/4 v2, 0x1
+
+    move v9, v1
+
+    move v1, v2
+
+    move v2, v0
+
+    move v0, v9
 
     .line 259
-    :goto_39
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    :goto_3e
+    invoke-virtual {v6, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 260
-    add-int/lit8 v4, v4, 0x1
+    add-int/lit8 v0, v2, 0x1
 
     .line 240
-    :cond_3e
-    add-int/lit8 v1, v1, 0x1
+    :goto_43
+    add-int/lit8 v2, v4, 0x1
 
-    goto :goto_13
+    move v4, v2
+
+    move v2, v1
+
+    goto :goto_14
+
+    :cond_48
+    move v2, v0
+
+    move v0, v1
+
+    move v1, v3
 
     .line 257
-    :cond_41
-    const/4 v5, 0x0
-
-    goto :goto_39
+    goto :goto_3e
 
     .line 263
-    .end local v0    # "c":C
-    :cond_43
-    if-lez v4, :cond_4
+    :cond_4c
+    if-lez v0, :cond_5
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
 
-    goto :goto_4
+    goto :goto_5
+
+    :cond_53
+    move v1, v2
+
+    goto :goto_43
 .end method

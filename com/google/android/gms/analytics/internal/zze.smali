@@ -3,16 +3,16 @@
 
 
 # static fields
-.field public static final VERSION:Ljava/lang/String;
+.field public static final a:Ljava/lang/String;
 
-.field public static final zzOS:Ljava/lang/String;
+.field public static final b:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
     .registers 3
 
-    sget v0, Lcom/google/android/gms/common/GoogleApiAvailability;->GOOGLE_PLAY_SERVICES_VERSION_CODE:I
+    sget v0, Lcom/google/android/gms/common/GoogleApiAvailability;->a:I
 
     div-int/lit16 v0, v0, 0x3e8
 
@@ -28,7 +28,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/analytics/internal/zze;->VERSION:Ljava/lang/String;
+    sput-object v0, Lcom/google/android/gms/analytics/internal/zze;->a:Ljava/lang/String;
 
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -40,7 +40,7 @@
 
     move-result-object v0
 
-    sget-object v1, Lcom/google/android/gms/analytics/internal/zze;->VERSION:Ljava/lang/String;
+    sget-object v1, Lcom/google/android/gms/analytics/internal/zze;->a:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -50,7 +50,7 @@
 
     move-result-object v0
 
-    sput-object v0, Lcom/google/android/gms/analytics/internal/zze;->zzOS:Ljava/lang/String;
+    sput-object v0, Lcom/google/android/gms/analytics/internal/zze;->b:Ljava/lang/String;
 
     return-void
 .end method

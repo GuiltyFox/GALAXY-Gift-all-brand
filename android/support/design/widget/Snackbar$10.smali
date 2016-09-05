@@ -11,11 +11,6 @@
     value = Landroid/support/design/widget/Snackbar;->animateViewOut(I)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$0:Landroid/support/design/widget/Snackbar;
@@ -42,7 +37,6 @@
 # virtual methods
 .method public onAnimationEnd(Landroid/view/animation/Animation;)V
     .registers 4
-    .param p1, "animation"    # Landroid/view/animation/Animation;
 
     .prologue
     .line 593
@@ -59,7 +53,6 @@
 
 .method public onAnimationRepeat(Landroid/view/animation/Animation;)V
     .registers 2
-    .param p1, "animation"    # Landroid/view/animation/Animation;
 
     .prologue
     .line 600
@@ -68,7 +61,6 @@
 
 .method public onAnimationStart(Landroid/view/animation/Animation;)V
     .registers 2
-    .param p1, "animation"    # Landroid/view/animation/Animation;
 
     .prologue
     .line 597

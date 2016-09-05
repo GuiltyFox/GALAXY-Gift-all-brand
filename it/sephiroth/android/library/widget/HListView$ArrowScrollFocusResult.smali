@@ -3,21 +3,10 @@
 .source "HListView.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lit/sephiroth/android/library/widget/HListView;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0xa
-    name = "ArrowScrollFocusResult"
-.end annotation
-
-
 # instance fields
-.field private mAmountToScroll:I
+.field private a:I
 
-.field private mSelectedPosition:I
+.field private b:I
 
 
 # direct methods
@@ -33,7 +22,6 @@
 
 .method synthetic constructor <init>(Lit/sephiroth/android/library/widget/HListView$1;)V
     .registers 2
-    .param p1, "x0"    # Lit/sephiroth/android/library/widget/HListView$1;
 
     .prologue
     .line 2772
@@ -44,38 +32,36 @@
 
 
 # virtual methods
-.method public getAmountToScroll()I
-    .registers 2
-
-    .prologue
-    .line 2790
-    iget v0, p0, Lit/sephiroth/android/library/widget/HListView$ArrowScrollFocusResult;->mAmountToScroll:I
-
-    return v0
-.end method
-
-.method public getSelectedPosition()I
+.method public a()I
     .registers 2
 
     .prologue
     .line 2786
-    iget v0, p0, Lit/sephiroth/android/library/widget/HListView$ArrowScrollFocusResult;->mSelectedPosition:I
+    iget v0, p0, Lit/sephiroth/android/library/widget/HListView$ArrowScrollFocusResult;->a:I
 
     return v0
 .end method
 
-.method populate(II)V
+.method a(II)V
     .registers 3
-    .param p1, "selectedPosition"    # I
-    .param p2, "amountToScroll"    # I
 
     .prologue
     .line 2781
-    iput p1, p0, Lit/sephiroth/android/library/widget/HListView$ArrowScrollFocusResult;->mSelectedPosition:I
+    iput p1, p0, Lit/sephiroth/android/library/widget/HListView$ArrowScrollFocusResult;->a:I
 
     .line 2782
-    iput p2, p0, Lit/sephiroth/android/library/widget/HListView$ArrowScrollFocusResult;->mAmountToScroll:I
+    iput p2, p0, Lit/sephiroth/android/library/widget/HListView$ArrowScrollFocusResult;->b:I
 
     .line 2783
     return-void
+.end method
+
+.method public b()I
+    .registers 2
+
+    .prologue
+    .line 2790
+    iget v0, p0, Lit/sephiroth/android/library/widget/HListView$ArrowScrollFocusResult;->b:I
+
+    return v0
 .end method

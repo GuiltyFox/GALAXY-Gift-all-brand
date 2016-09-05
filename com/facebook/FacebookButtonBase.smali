@@ -24,12 +24,6 @@
 # direct methods
 .method protected constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;IILjava/lang/String;Ljava/lang/String;)V
     .registers 8
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
-    .param p4, "defStyleRes"    # I
-    .param p5, "analyticsButtonCreatedEventName"    # Ljava/lang/String;
-    .param p6, "analyticsButtonTappedEventName"    # Ljava/lang/String;
 
     .prologue
     .line 63
@@ -38,21 +32,21 @@
     invoke-direct {p0, p1, p2, v0}, Landroid/widget/Button;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 64
-    if-nez p4, :cond_a
+    if-nez p4, :cond_16
 
     invoke-virtual {p0}, Lcom/facebook/FacebookButtonBase;->getDefaultStyleResource()I
 
-    move-result p4
+    move-result v0
 
     .line 65
-    :cond_a
-    if-nez p4, :cond_e
+    :goto_a
+    if-nez v0, :cond_e
 
-    sget p4, Lcom/facebook/R$style;->com_facebook_button:I
+    sget v0, Lcom/facebook/R$style;->com_facebook_button:I
 
     .line 66
     :cond_e
-    invoke-virtual {p0, p1, p2, p3, p4}, Lcom/facebook/FacebookButtonBase;->configureButton(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+    invoke-virtual {p0, p1, p2, p3, v0}, Lcom/facebook/FacebookButtonBase;->configureButton(Landroid/content/Context;Landroid/util/AttributeSet;II)V
 
     .line 67
     iput-object p5, p0, Lcom/facebook/FacebookButtonBase;->analyticsButtonCreatedEventName:Ljava/lang/String;
@@ -62,12 +56,16 @@
 
     .line 69
     return-void
+
+    :cond_16
+    move v0, p4
+
+    .line 64
+    goto :goto_a
 .end method
 
 .method static synthetic access$000(Lcom/facebook/FacebookButtonBase;Landroid/content/Context;)V
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/FacebookButtonBase;
-    .param p1, "x1"    # Landroid/content/Context;
 
     .prologue
     .line 46
@@ -78,7 +76,6 @@
 
 .method static synthetic access$100(Lcom/facebook/FacebookButtonBase;)Landroid/view/View$OnClickListener;
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/FacebookButtonBase;
 
     .prologue
     .line 46
@@ -89,7 +86,6 @@
 
 .method static synthetic access$200(Lcom/facebook/FacebookButtonBase;)Landroid/view/View$OnClickListener;
     .registers 2
-    .param p0, "x0"    # Lcom/facebook/FacebookButtonBase;
 
     .prologue
     .line 46
@@ -100,7 +96,6 @@
 
 .method private logButtonCreated(Landroid/content/Context;)V
     .registers 5
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     const/4 v2, 0x0
@@ -111,7 +106,6 @@
     move-result-object v0
 
     .line 201
-    .local v0, "logger":Lcom/facebook/appevents/AppEventsLogger;
     iget-object v1, p0, Lcom/facebook/FacebookButtonBase;->analyticsButtonCreatedEventName:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2, v2}, Lcom/facebook/appevents/AppEventsLogger;->logSdkEvent(Ljava/lang/String;Ljava/lang/Double;Landroid/os/Bundle;)V
@@ -122,7 +116,6 @@
 
 .method private logButtonTapped(Landroid/content/Context;)V
     .registers 5
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     const/4 v2, 0x0
@@ -133,7 +126,6 @@
     move-result-object v0
 
     .line 206
-    .local v0, "logger":Lcom/facebook/appevents/AppEventsLogger;
     iget-object v1, p0, Lcom/facebook/FacebookButtonBase;->analyticsButtonTappedEventName:Ljava/lang/String;
 
     invoke-virtual {v0, v1, v2, v2}, Lcom/facebook/appevents/AppEventsLogger;->logSdkEvent(Ljava/lang/String;Ljava/lang/Double;Landroid/os/Bundle;)V
@@ -143,21 +135,17 @@
 .end method
 
 .method private parseBackgroundAttributes(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-    .registers 10
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
-    .param p4, "defStyleRes"    # I
+    .registers 8
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
     .line 215
     invoke-virtual {p0}, Lcom/facebook/FacebookButtonBase;->isInEditMode()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_8
+    if-eqz v0, :cond_8
 
     .line 242
     :goto_7
@@ -165,99 +153,93 @@
 
     .line 219
     :cond_8
-    const/4 v3, 0x1
+    const/4 v0, 0x1
 
-    new-array v1, v3, [I
+    new-array v0, v0, [I
 
-    const v3, 0x10100d4
+    const v1, 0x10100d4
 
-    aput v3, v1, v4
+    aput v1, v0, v2
 
     .line 222
-    .local v1, "attrsResources":[I
     invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-virtual {v3, p2, v1, p3, p4}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {v1, p2, v0, p3, p4}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 228
-    .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
     :try_start_19
-    invoke-virtual {v0, v3}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    invoke-virtual {v1, v0}, Landroid/content/res/TypedArray;->hasValue(I)Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_3d
+    if-eqz v0, :cond_3d
 
     .line 229
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v3, v4}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {v1, v0, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    move-result v2
+    move-result v0
 
     .line 230
-    .local v2, "backgroundResource":I
-    if-eqz v2, :cond_2e
+    if-eqz v0, :cond_2e
 
     .line 231
-    invoke-virtual {p0, v2}, Lcom/facebook/FacebookButtonBase;->setBackgroundResource(I)V
+    invoke-virtual {p0, v0}, Lcom/facebook/FacebookButtonBase;->setBackgroundResource(I)V
     :try_end_2a
     .catchall {:try_start_19 .. :try_end_2a} :catchall_38
 
     .line 240
-    .end local v2    # "backgroundResource":I
     :goto_2a
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
     goto :goto_7
 
     .line 233
-    .restart local v2    # "backgroundResource":I
     :cond_2e
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
     :try_start_30
-    invoke-virtual {v0, v3, v4}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-virtual {v1, v0, v2}, Landroid/content/res/TypedArray;->getColor(II)I
 
-    move-result v3
+    move-result v0
 
-    invoke-virtual {p0, v3}, Lcom/facebook/FacebookButtonBase;->setBackgroundColor(I)V
+    invoke-virtual {p0, v0}, Lcom/facebook/FacebookButtonBase;->setBackgroundColor(I)V
     :try_end_37
     .catchall {:try_start_30 .. :try_end_37} :catchall_38
 
     goto :goto_2a
 
     .line 240
-    .end local v2    # "backgroundResource":I
     :catchall_38
-    move-exception v3
+    move-exception v0
 
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    throw v3
+    throw v0
 
     .line 237
     :cond_3d
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
     :try_start_3e
-    sget v4, Lcom/facebook/R$color;->com_facebook_blue:I
+    sget v2, Lcom/facebook/R$color;->com_facebook_blue:I
 
-    invoke-virtual {v0, v3, v4}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-virtual {v1, v0, v2}, Landroid/content/res/TypedArray;->getColor(II)I
 
-    move-result v3
+    move-result v0
 
-    invoke-virtual {p0, v3}, Lcom/facebook/FacebookButtonBase;->setBackgroundColor(I)V
+    invoke-virtual {p0, v0}, Lcom/facebook/FacebookButtonBase;->setBackgroundColor(I)V
     :try_end_47
     .catchall {:try_start_3e .. :try_end_47} :catchall_38
 
@@ -265,98 +247,92 @@
 .end method
 
 .method private parseCompoundDrawableAttributes(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-    .registers 12
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
-    .param p4, "defStyleRes"    # I
+    .registers 11
 
     .prologue
     .line 249
-    const/4 v2, 0x5
+    const/4 v0, 0x5
 
-    new-array v1, v2, [I
+    new-array v0, v0, [I
 
-    fill-array-data v1, :array_3c
+    fill-array-data v0, :array_3c
 
     .line 256
-    .local v1, "attrsResources":[I
     invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, p2, v1, p3, p4}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {v1, p2, v0, p3, p4}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 262
-    .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     .line 263
     :try_start_10
-    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
+    invoke-virtual {v1, v0, v2}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
-    move-result v2
+    move-result v0
 
-    const/4 v3, 0x1
-
-    const/4 v4, 0x0
-
-    .line 264
-    invoke-virtual {v0, v3, v4}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v3
-
-    const/4 v4, 0x2
-
-    const/4 v5, 0x0
-
-    .line 265
-    invoke-virtual {v0, v4, v5}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v4
-
-    const/4 v5, 0x3
-
-    const/4 v6, 0x0
-
-    .line 266
-    invoke-virtual {v0, v5, v6}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    move-result v5
-
-    .line 262
-    invoke-virtual {p0, v2, v3, v4, v5}, Lcom/facebook/FacebookButtonBase;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
-
-    .line 267
-    const/4 v2, 0x4
+    const/4 v2, 0x1
 
     const/4 v3, 0x0
 
-    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    .line 264
+    invoke-virtual {v1, v2, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v2
 
-    invoke-virtual {p0, v2}, Lcom/facebook/FacebookButtonBase;->setCompoundDrawablePadding(I)V
+    const/4 v3, 0x2
+
+    const/4 v4, 0x0
+
+    .line 265
+    invoke-virtual {v1, v3, v4}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v3
+
+    const/4 v4, 0x3
+
+    const/4 v5, 0x0
+
+    .line 266
+    invoke-virtual {v1, v4, v5}, Landroid/content/res/TypedArray;->getResourceId(II)I
+
+    move-result v4
+
+    .line 262
+    invoke-virtual {p0, v0, v2, v3, v4}, Lcom/facebook/FacebookButtonBase;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
+
+    .line 267
+    const/4 v0, 0x4
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, v0, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+
+    move-result v0
+
+    invoke-virtual {p0, v0}, Lcom/facebook/FacebookButtonBase;->setCompoundDrawablePadding(I)V
     :try_end_32
     .catchall {:try_start_10 .. :try_end_32} :catchall_36
 
     .line 270
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 272
     return-void
 
     .line 270
     :catchall_36
-    move-exception v2
+    move-exception v0
 
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    throw v2
+    throw v0
 
     .line 249
     nop
@@ -372,87 +348,81 @@
 .end method
 
 .method private parseContentAttributes(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-    .registers 12
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
-    .param p4, "defStyleRes"    # I
+    .registers 11
 
     .prologue
     .line 279
-    const/4 v2, 0x4
+    const/4 v0, 0x4
 
-    new-array v1, v2, [I
+    new-array v0, v0, [I
 
-    fill-array-data v1, :array_32
+    fill-array-data v0, :array_32
 
     .line 285
-    .local v1, "attrsResources":[I
     invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-virtual {v2, p2, v1, p3, p4}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {v1, p2, v0, p3, p4}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 291
-    .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v2, 0x0
+    const/4 v0, 0x0
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     .line 292
     :try_start_10
-    invoke-virtual {v0, v2, v3}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v1, v0, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+
+    move-result v0
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    .line 293
+    invoke-virtual {v1, v2, v3}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
     move-result v2
 
-    const/4 v3, 0x1
+    const/4 v3, 0x2
 
     const/4 v4, 0x0
 
-    .line 293
-    invoke-virtual {v0, v3, v4}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    .line 294
+    invoke-virtual {v1, v3, v4}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
     move-result v3
 
-    const/4 v4, 0x2
+    const/4 v4, 0x3
 
     const/4 v5, 0x0
 
-    .line 294
-    invoke-virtual {v0, v4, v5}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    .line 295
+    invoke-virtual {v1, v4, v5}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
     move-result v4
 
-    const/4 v5, 0x3
-
-    const/4 v6, 0x0
-
-    .line 295
-    invoke-virtual {v0, v5, v6}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
-
-    move-result v5
-
     .line 291
-    invoke-virtual {p0, v2, v3, v4, v5}, Lcom/facebook/FacebookButtonBase;->setPadding(IIII)V
+    invoke-virtual {p0, v0, v2, v3, v4}, Lcom/facebook/FacebookButtonBase;->setPadding(IIII)V
     :try_end_29
     .catchall {:try_start_10 .. :try_end_29} :catchall_2d
 
     .line 297
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 299
     return-void
 
     .line 297
     :catchall_2d
-    move-exception v2
+    move-exception v0
 
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    throw v2
+    throw v0
 
     .line 279
     :array_32
@@ -465,184 +435,166 @@
 .end method
 
 .method private parseTextAttributes(Landroid/content/Context;Landroid/util/AttributeSet;II)V
-    .registers 15
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
-    .param p4, "defStyleRes"    # I
+    .registers 10
 
     .prologue
-    const/4 v9, 0x1
+    const/4 v4, 0x1
 
-    const/4 v8, 0x0
+    const/4 v3, 0x0
 
     .line 306
-    new-array v3, v9, [I
+    new-array v0, v4, [I
 
-    const v6, 0x1010098
+    const v1, 0x1010098
 
-    aput v6, v3, v8
+    aput v1, v0, v3
 
     .line 309
-    .local v3, "colorResources":[I
     invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {v6, p2, v3, p3, p4}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {v1, p2, v0, p3, p4}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 315
-    .local v2, "colorAttrs":Landroid/content/res/TypedArray;
-    const/4 v6, 0x0
+    const/4 v0, 0x0
 
-    const/4 v7, -0x1
+    const/4 v2, -0x1
 
     :try_start_13
-    invoke-virtual {v2, v6, v7}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-virtual {v1, v0, v2}, Landroid/content/res/TypedArray;->getColor(II)I
 
-    move-result v6
+    move-result v0
 
-    invoke-virtual {p0, v6}, Lcom/facebook/FacebookButtonBase;->setTextColor(I)V
+    invoke-virtual {p0, v0}, Lcom/facebook/FacebookButtonBase;->setTextColor(I)V
     :try_end_1a
     .catchall {:try_start_13 .. :try_end_1a} :catchall_6b
 
     .line 317
-    invoke-virtual {v2}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 319
-    new-array v5, v9, [I
+    new-array v0, v4, [I
 
-    const v6, 0x10100af
+    const v1, 0x10100af
 
-    aput v6, v5, v8
+    aput v1, v0, v3
 
     .line 322
-    .local v5, "gravityResources":[I
     invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {v6, p2, v5, p3, p4}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {v1, p2, v0, p3, p4}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
-    move-result-object v4
+    move-result-object v1
 
     .line 328
-    .local v4, "gravityAttrs":Landroid/content/res/TypedArray;
-    const/4 v6, 0x0
+    const/4 v0, 0x0
 
-    const/16 v7, 0x11
+    const/16 v2, 0x11
 
     :try_start_2f
-    invoke-virtual {v4, v6, v7}, Landroid/content/res/TypedArray;->getInt(II)I
+    invoke-virtual {v1, v0, v2}, Landroid/content/res/TypedArray;->getInt(II)I
 
-    move-result v6
+    move-result v0
 
-    invoke-virtual {p0, v6}, Lcom/facebook/FacebookButtonBase;->setGravity(I)V
+    invoke-virtual {p0, v0}, Lcom/facebook/FacebookButtonBase;->setGravity(I)V
     :try_end_36
     .catchall {:try_start_2f .. :try_end_36} :catchall_70
 
     .line 330
-    invoke-virtual {v4}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 332
-    const/4 v6, 0x3
+    const/4 v0, 0x3
 
-    new-array v1, v6, [I
+    new-array v0, v0, [I
 
-    fill-array-data v1, :array_7a
+    fill-array-data v0, :array_7a
 
     .line 337
-    .local v1, "attrsResources":[I
     invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
-    move-result-object v6
+    move-result-object v1
 
-    invoke-virtual {v6, p2, v1, p3, p4}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {v1, p2, v0, p3, p4}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+
+    move-result-object v1
+
+    .line 343
+    const/4 v0, 0x0
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    :try_start_4a
+    invoke-virtual {v1, v2, v3}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    invoke-virtual {p0, v0, v2}, Lcom/facebook/FacebookButtonBase;->setTextSize(IF)V
+
+    .line 344
+    const/4 v0, 0x1
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v1, v0, v2}, Landroid/content/res/TypedArray;->getInt(II)I
+
+    move-result v0
+
+    invoke-static {v0}, Landroid/graphics/Typeface;->defaultFromStyle(I)Landroid/graphics/Typeface;
 
     move-result-object v0
 
-    .line 343
-    .local v0, "a":Landroid/content/res/TypedArray;
-    const/4 v6, 0x0
-
-    const/4 v7, 0x0
-
-    const/4 v8, 0x0
-
-    :try_start_4a
-    invoke-virtual {v0, v7, v8}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
-
-    move-result v7
-
-    int-to-float v7, v7
-
-    invoke-virtual {p0, v6, v7}, Lcom/facebook/FacebookButtonBase;->setTextSize(IF)V
-
-    .line 344
-    const/4 v6, 0x1
-
-    const/4 v7, 0x1
-
-    invoke-virtual {v0, v6, v7}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    move-result v6
-
-    invoke-static {v6}, Landroid/graphics/Typeface;->defaultFromStyle(I)Landroid/graphics/Typeface;
-
-    move-result-object v6
-
-    invoke-virtual {p0, v6}, Lcom/facebook/FacebookButtonBase;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {p0, v0}, Lcom/facebook/FacebookButtonBase;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 345
-    const/4 v6, 0x2
+    const/4 v0, 0x2
 
-    invoke-virtual {v0, v6}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
+    invoke-virtual {v1, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v0
 
-    invoke-virtual {p0, v6}, Lcom/facebook/FacebookButtonBase;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, v0}, Lcom/facebook/FacebookButtonBase;->setText(Ljava/lang/CharSequence;)V
     :try_end_67
     .catchall {:try_start_4a .. :try_end_67} :catchall_75
 
     .line 347
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 349
     return-void
 
     .line 317
-    .end local v0    # "a":Landroid/content/res/TypedArray;
-    .end local v1    # "attrsResources":[I
-    .end local v4    # "gravityAttrs":Landroid/content/res/TypedArray;
-    .end local v5    # "gravityResources":[I
     :catchall_6b
-    move-exception v6
+    move-exception v0
 
-    invoke-virtual {v2}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    throw v6
+    throw v0
 
     .line 330
-    .restart local v4    # "gravityAttrs":Landroid/content/res/TypedArray;
-    .restart local v5    # "gravityResources":[I
     :catchall_70
-    move-exception v6
+    move-exception v0
 
-    invoke-virtual {v4}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    throw v6
+    throw v0
 
     .line 347
-    .restart local v0    # "a":Landroid/content/res/TypedArray;
-    .restart local v1    # "attrsResources":[I
     :catchall_75
-    move-exception v6
+    move-exception v0
 
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    throw v6
+    throw v0
 
     .line 332
     :array_7a
@@ -672,7 +624,6 @@
 # virtual methods
 .method protected callExternalOnClickListener(Landroid/view/View;)V
     .registers 3
-    .param p1, "v"    # Landroid/view/View;
 
     .prologue
     .line 190
@@ -692,10 +643,6 @@
 
 .method protected configureButton(Landroid/content/Context;Landroid/util/AttributeSet;II)V
     .registers 5
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
-    .param p3, "defStyleAttr"    # I
-    .param p4, "defStyleRes"    # I
 
     .prologue
     .line 182
@@ -718,7 +665,7 @@
 .end method
 
 .method protected getActivity()Landroid/app/Activity;
-    .registers 4
+    .registers 3
 
     .prologue
     .line 158
@@ -727,7 +674,6 @@
     move-result-object v0
 
     .line 159
-    .local v0, "context":Landroid/content/Context;
     :goto_4
     instance-of v1, v0, Landroid/app/Activity;
 
@@ -740,12 +686,10 @@
     .line 160
     check-cast v0, Landroid/content/ContextWrapper;
 
-    .end local v0    # "context":Landroid/content/Context;
     invoke-virtual {v0}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .restart local v0    # "context":Landroid/content/Context;
     goto :goto_4
 
     .line 163
@@ -757,19 +701,17 @@
     .line 164
     check-cast v0, Landroid/app/Activity;
 
-    .end local v0    # "context":Landroid/content/Context;
     return-object v0
 
     .line 166
-    .restart local v0    # "context":Landroid/content/Context;
     :cond_1a
-    new-instance v1, Lcom/facebook/FacebookException;
+    new-instance v0, Lcom/facebook/FacebookException;
 
-    const-string/jumbo v2, "Unable to get Activity."
+    const-string/jumbo v1, "Unable to get Activity."
 
-    invoke-direct {v1, v2}, Lcom/facebook/FacebookException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lcom/facebook/FacebookException;-><init>(Ljava/lang/String;)V
 
-    throw v1
+    throw v0
 .end method
 
 .method public getCompoundPaddingLeft()I
@@ -855,7 +797,6 @@
 
 .method protected measureTextWidth(Ljava/lang/String;)I
     .registers 4
-    .param p1, "text"    # Ljava/lang/String;
 
     .prologue
     .line 174
@@ -905,133 +846,112 @@
 .end method
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .registers 15
-    .param p1, "canvas"    # Landroid/graphics/Canvas;
+    .registers 8
 
     .prologue
-    const/4 v10, 0x1
+    const/4 v1, 0x1
 
-    const/4 v11, 0x0
+    const/4 v2, 0x0
 
     .line 117
     invoke-virtual {p0}, Lcom/facebook/FacebookButtonBase;->getGravity()I
 
-    move-result v12
+    move-result v0
 
-    and-int/lit8 v12, v12, 0x1
+    and-int/lit8 v0, v0, 0x1
 
-    if-eqz v12, :cond_4e
+    if-eqz v0, :cond_4b
 
-    move v0, v10
+    move v0, v1
 
     .line 118
-    .local v0, "centered":Z
     :goto_b
-    if-eqz v0, :cond_48
+    if-eqz v0, :cond_45
 
     .line 126
     invoke-virtual {p0}, Lcom/facebook/FacebookButtonBase;->getCompoundPaddingLeft()I
 
-    move-result v2
+    move-result v0
 
     .line 127
-    .local v2, "compoundPaddingLeft":I
     invoke-virtual {p0}, Lcom/facebook/FacebookButtonBase;->getCompoundPaddingRight()I
 
     move-result v3
 
     .line 128
-    .local v3, "compoundPaddingRight":I
     invoke-virtual {p0}, Lcom/facebook/FacebookButtonBase;->getCompoundDrawablePadding()I
 
-    move-result v1
+    move-result v4
 
     .line 129
-    .local v1, "compoundDrawablePadding":I
-    add-int v9, v2, v1
+    add-int/2addr v4, v0
 
     .line 130
-    .local v9, "textX":I
     invoke-virtual {p0}, Lcom/facebook/FacebookButtonBase;->getWidth()I
-
-    move-result v12
-
-    sub-int/2addr v12, v9
-
-    sub-int v6, v12, v3
-
-    .line 131
-    .local v6, "textContentWidth":I
-    invoke-virtual {p0}, Lcom/facebook/FacebookButtonBase;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v12
-
-    invoke-interface {v12}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
-
-    move-result-object v12
-
-    invoke-virtual {p0, v12}, Lcom/facebook/FacebookButtonBase;->measureTextWidth(Ljava/lang/String;)I
-
-    move-result v8
-
-    .line 132
-    .local v8, "textWidth":I
-    sub-int v12, v6, v8
-
-    div-int/lit8 v7, v12, 0x2
-
-    .line 133
-    .local v7, "textPaddingWidth":I
-    invoke-virtual {p0}, Lcom/facebook/FacebookButtonBase;->getPaddingLeft()I
-
-    move-result v12
-
-    sub-int v12, v2, v12
-
-    div-int/lit8 v4, v12, 0x2
-
-    .line 134
-    .local v4, "imagePaddingWidth":I
-    invoke-static {v7, v4}, Ljava/lang/Math;->min(II)I
 
     move-result v5
 
-    .line 135
-    .local v5, "inset":I
-    sub-int v12, v2, v5
+    sub-int v4, v5, v4
 
-    iput v12, p0, Lcom/facebook/FacebookButtonBase;->overrideCompoundPaddingLeft:I
+    sub-int/2addr v4, v3
+
+    .line 131
+    invoke-virtual {p0}, Lcom/facebook/FacebookButtonBase;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v5
+
+    invoke-interface {v5}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {p0, v5}, Lcom/facebook/FacebookButtonBase;->measureTextWidth(Ljava/lang/String;)I
+
+    move-result v5
+
+    .line 132
+    sub-int/2addr v4, v5
+
+    div-int/lit8 v4, v4, 0x2
+
+    .line 133
+    invoke-virtual {p0}, Lcom/facebook/FacebookButtonBase;->getPaddingLeft()I
+
+    move-result v5
+
+    sub-int v5, v0, v5
+
+    div-int/lit8 v5, v5, 0x2
+
+    .line 134
+    invoke-static {v4, v5}, Ljava/lang/Math;->min(II)I
+
+    move-result v4
+
+    .line 135
+    sub-int/2addr v0, v4
+
+    iput v0, p0, Lcom/facebook/FacebookButtonBase;->overrideCompoundPaddingLeft:I
 
     .line 136
-    add-int v12, v3, v5
+    add-int v0, v3, v4
 
-    iput v12, p0, Lcom/facebook/FacebookButtonBase;->overrideCompoundPaddingRight:I
+    iput v0, p0, Lcom/facebook/FacebookButtonBase;->overrideCompoundPaddingRight:I
 
     .line 137
-    iput-boolean v10, p0, Lcom/facebook/FacebookButtonBase;->overrideCompoundPadding:Z
+    iput-boolean v1, p0, Lcom/facebook/FacebookButtonBase;->overrideCompoundPadding:Z
 
     .line 139
-    .end local v1    # "compoundDrawablePadding":I
-    .end local v2    # "compoundPaddingLeft":I
-    .end local v3    # "compoundPaddingRight":I
-    .end local v4    # "imagePaddingWidth":I
-    .end local v5    # "inset":I
-    .end local v6    # "textContentWidth":I
-    .end local v7    # "textPaddingWidth":I
-    .end local v8    # "textWidth":I
-    .end local v9    # "textX":I
-    :cond_48
+    :cond_45
     invoke-super {p0, p1}, Landroid/widget/Button;->onDraw(Landroid/graphics/Canvas;)V
 
     .line 140
-    iput-boolean v11, p0, Lcom/facebook/FacebookButtonBase;->overrideCompoundPadding:Z
+    iput-boolean v2, p0, Lcom/facebook/FacebookButtonBase;->overrideCompoundPadding:Z
 
     .line 141
     return-void
 
-    .end local v0    # "centered":Z
-    :cond_4e
-    move v0, v11
+    :cond_4b
+    move v0, v2
 
     .line 117
     goto :goto_b
@@ -1039,7 +959,6 @@
 
 .method public setFragment(Landroid/support/v4/app/Fragment;)V
     .registers 2
-    .param p1, "fragment"    # Landroid/support/v4/app/Fragment;
 
     .prologue
     .line 82
@@ -1051,7 +970,6 @@
 
 .method protected setInternalOnClickListener(Landroid/view/View$OnClickListener;)V
     .registers 2
-    .param p1, "l"    # Landroid/view/View$OnClickListener;
 
     .prologue
     .line 196
@@ -1063,7 +981,6 @@
 
 .method public setOnClickListener(Landroid/view/View$OnClickListener;)V
     .registers 2
-    .param p1, "l"    # Landroid/view/View$OnClickListener;
 
     .prologue
     .line 95

@@ -96,8 +96,6 @@
 
 .method public constructor <init>(II)V
     .registers 3
-    .param p1, "maxRetries"    # I
-    .param p2, "retrySleepTimeMS"    # I
 
     .prologue
     .line 63
@@ -125,7 +123,6 @@
 
     .prologue
     .line 73
-    .local p0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     sget-object v0, Lcom/loopj/android/http/RetryHandler;->exceptionBlacklist:Ljava/util/HashSet;
 
     invoke-virtual {v0, p0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
@@ -146,7 +143,6 @@
 
     .prologue
     .line 69
-    .local p0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     sget-object v0, Lcom/loopj/android/http/RetryHandler;->exceptionWhitelist:Ljava/util/HashSet;
 
     invoke-virtual {v0, p0}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
@@ -158,8 +154,7 @@
 
 # virtual methods
 .method protected isInList(Ljava/util/HashSet;Ljava/lang/Throwable;)Z
-    .registers 6
-    .param p2, "error"    # Ljava/lang/Throwable;
+    .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -174,7 +169,6 @@
 
     .prologue
     .line 115
-    .local p1, "list":Ljava/util/HashSet;, "Ljava/util/HashSet<Ljava/lang/Class<*>;>;"
     invoke-virtual {p1}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -182,9 +176,9 @@
     :cond_4
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_18
+    if-eqz v0, :cond_18
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -193,161 +187,139 @@
     check-cast v0, Ljava/lang/Class;
 
     .line 116
-    .local v0, "aList":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-virtual {v0, p2}, Ljava/lang/Class;->isInstance(Ljava/lang/Object;)Z
 
-    move-result v2
+    move-result v0
 
-    if-eqz v2, :cond_4
+    if-eqz v0, :cond_4
 
     .line 117
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
     .line 120
-    .end local v0    # "aList":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :goto_17
-    return v1
+    return v0
 
     :cond_18
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_17
 .end method
 
 .method public retryRequest(Ljava/io/IOException;ILcz/msebera/android/httpclient/protocol/HttpContext;)Z
-    .registers 10
-    .param p1, "exception"    # Ljava/io/IOException;
-    .param p2, "executionCount"    # I
-    .param p3, "context"    # Lcz/msebera/android/httpclient/protocol/HttpContext;
+    .registers 8
 
     .prologue
-    const/4 v4, 0x0
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
 
     .line 78
-    const/4 v2, 0x1
-
     .line 80
-    .local v2, "retry":Z
-    const-string/jumbo v5, "http.request_sent"
+    const-string/jumbo v0, "http.request_sent"
 
-    invoke-interface {p3, v5}, Lcz/msebera/android/httpclient/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {p3, v0}, Lcz/msebera/android/httpclient/protocol/HttpContext;->a(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/Boolean;
 
     .line 81
-    .local v0, "b":Ljava/lang/Boolean;
     if-eqz v0, :cond_27
 
     invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
-    move-result v5
+    move-result v0
 
-    if-eqz v5, :cond_27
+    if-eqz v0, :cond_27
 
-    const/4 v3, 0x1
+    move v0, v1
 
     .line 83
-    .local v3, "sent":Z
     :goto_14
-    iget v5, p0, Lcom/loopj/android/http/RetryHandler;->maxRetries:I
+    iget v3, p0, Lcom/loopj/android/http/RetryHandler;->maxRetries:I
 
-    if-le p2, v5, :cond_29
+    if-le p2, v3, :cond_29
 
-    .line 85
-    const/4 v2, 0x0
+    move v1, v2
 
     .line 97
     :cond_19
     :goto_19
-    if-eqz v2, :cond_41
+    if-eqz v1, :cond_3e
 
     .line 99
-    const-string/jumbo v5, "http.request"
+    const-string/jumbo v0, "http.request"
 
-    invoke-interface {p3, v5}, Lcz/msebera/android/httpclient/protocol/HttpContext;->getAttribute(Ljava/lang/String;)Ljava/lang/Object;
+    invoke-interface {p3, v0}, Lcz/msebera/android/httpclient/protocol/HttpContext;->a(Ljava/lang/String;)Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Lcz/msebera/android/httpclient/client/methods/HttpUriRequest;
+    check-cast v0, Lcz/msebera/android/httpclient/client/methods/HttpUriRequest;
 
     .line 100
-    .local v1, "currentReq":Lcz/msebera/android/httpclient/client/methods/HttpUriRequest;
-    if-nez v1, :cond_41
+    if-nez v0, :cond_3e
 
     .line 111
-    .end local v1    # "currentReq":Lcz/msebera/android/httpclient/client/methods/HttpUriRequest;
     :goto_26
-    return v4
+    return v2
 
-    .end local v3    # "sent":Z
     :cond_27
-    move v3, v4
+    move v0, v2
 
     .line 81
     goto :goto_14
 
     .line 86
-    .restart local v3    # "sent":Z
     :cond_29
-    sget-object v5, Lcom/loopj/android/http/RetryHandler;->exceptionWhitelist:Ljava/util/HashSet;
+    sget-object v3, Lcom/loopj/android/http/RetryHandler;->exceptionWhitelist:Ljava/util/HashSet;
 
-    invoke-virtual {p0, v5, p1}, Lcom/loopj/android/http/RetryHandler;->isInList(Ljava/util/HashSet;Ljava/lang/Throwable;)Z
+    invoke-virtual {p0, v3, p1}, Lcom/loopj/android/http/RetryHandler;->isInList(Ljava/util/HashSet;Ljava/lang/Throwable;)Z
 
-    move-result v5
+    move-result v3
 
-    if-eqz v5, :cond_33
-
-    .line 88
-    const/4 v2, 0x1
-
-    goto :goto_19
+    if-nez v3, :cond_19
 
     .line 89
-    :cond_33
-    sget-object v5, Lcom/loopj/android/http/RetryHandler;->exceptionBlacklist:Ljava/util/HashSet;
+    sget-object v3, Lcom/loopj/android/http/RetryHandler;->exceptionBlacklist:Ljava/util/HashSet;
 
-    invoke-virtual {p0, v5, p1}, Lcom/loopj/android/http/RetryHandler;->isInList(Ljava/util/HashSet;Ljava/lang/Throwable;)Z
+    invoke-virtual {p0, v3, p1}, Lcom/loopj/android/http/RetryHandler;->isInList(Ljava/util/HashSet;Ljava/lang/Throwable;)Z
 
-    move-result v5
+    move-result v3
 
-    if-eqz v5, :cond_3d
+    if-eqz v3, :cond_3b
+
+    move v1, v2
 
     .line 91
-    const/4 v2, 0x0
-
     goto :goto_19
 
     .line 92
-    :cond_3d
-    if-nez v3, :cond_19
-
-    .line 94
-    const/4 v2, 0x1
+    :cond_3b
+    if-nez v0, :cond_19
 
     goto :goto_19
 
     .line 105
-    :cond_41
-    if-eqz v2, :cond_4b
+    :cond_3e
+    if-eqz v1, :cond_48
 
     .line 106
-    iget v4, p0, Lcom/loopj/android/http/RetryHandler;->retrySleepTimeMS:I
+    iget v0, p0, Lcom/loopj/android/http/RetryHandler;->retrySleepTimeMS:I
 
-    int-to-long v4, v4
+    int-to-long v2, v0
 
-    invoke-static {v4, v5}, Landroid/os/SystemClock;->sleep(J)V
+    invoke-static {v2, v3}, Landroid/os/SystemClock;->sleep(J)V
 
-    :goto_49
-    move v4, v2
+    :goto_46
+    move v2, v1
 
     .line 111
     goto :goto_26
 
     .line 108
-    :cond_4b
+    :cond_48
     invoke-virtual {p1}, Ljava/io/IOException;->printStackTrace()V
 
-    goto :goto_49
+    goto :goto_46
 .end method

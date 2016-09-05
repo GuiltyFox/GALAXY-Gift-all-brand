@@ -6,17 +6,6 @@
 .implements Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonNullFormatVisitor;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/jsonFormatVisitors/JsonNullFormatVisitor;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
-    name = "Base"
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1

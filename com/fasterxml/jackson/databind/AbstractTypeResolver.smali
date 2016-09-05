@@ -18,8 +18,6 @@
 # virtual methods
 .method public findTypeMapping(Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 4
-    .param p1, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p2, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
 
     .prologue
     .line 30
@@ -30,8 +28,6 @@
 
 .method public resolveAbstractType(Lcom/fasterxml/jackson/databind/DeserializationConfig;Lcom/fasterxml/jackson/databind/JavaType;)Lcom/fasterxml/jackson/databind/JavaType;
     .registers 4
-    .param p1, "config"    # Lcom/fasterxml/jackson/databind/DeserializationConfig;
-    .param p2, "type"    # Lcom/fasterxml/jackson/databind/JavaType;
 
     .prologue
     .line 50

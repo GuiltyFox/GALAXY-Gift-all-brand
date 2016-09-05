@@ -8,17 +8,12 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lit/sephiroth/android/library/widget/AbsHListView;->clearScrollingCache()V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lit/sephiroth/android/library/widget/AbsHListView;->H()V
 .end annotation
 
 
 # instance fields
-.field final synthetic this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+.field final synthetic a:Lit/sephiroth/android/library/widget/AbsHListView;
 
 
 # direct methods
@@ -27,7 +22,7 @@
 
     .prologue
     .line 4525
-    iput-object p1, p0, Lit/sephiroth/android/library/widget/AbsHListView$2;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iput-object p1, p0, Lit/sephiroth/android/library/widget/AbsHListView$2;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -43,29 +38,28 @@
     const/4 v2, 0x0
 
     .line 4529
-    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$2;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$2;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iget-boolean v0, v0, Lit/sephiroth/android/library/widget/AbsHListView;->mCachingStarted:Z
+    iget-boolean v0, v0, Lit/sephiroth/android/library/widget/AbsHListView;->y:Z
 
     if-eqz v0, :cond_30
 
     .line 4530
-    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$2;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$2;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iget-object v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$2;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v1, p0, Lit/sephiroth/android/library/widget/AbsHListView$2;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    iput-boolean v2, v1, Lit/sephiroth/android/library/widget/AbsHListView;->mCachingActive:Z
+    iput-boolean v2, v1, Lit/sephiroth/android/library/widget/AbsHListView;->z:Z
 
-    iput-boolean v2, v0, Lit/sephiroth/android/library/widget/AbsHListView;->mCachingStarted:Z
+    iput-boolean v2, v0, Lit/sephiroth/android/library/widget/AbsHListView;->y:Z
 
     .line 4531
-    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$2;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$2;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    # invokes: Lit/sephiroth/android/library/widget/AbsHListView;->setChildrenDrawnWithCacheEnabled(Z)V
-    invoke-static {v0, v2}, Lit/sephiroth/android/library/widget/AbsHListView;->access$2000(Lit/sephiroth/android/library/widget/AbsHListView;Z)V
+    invoke-static {v0, v2}, Lit/sephiroth/android/library/widget/AbsHListView;->a(Lit/sephiroth/android/library/widget/AbsHListView;Z)V
 
     .line 4532
-    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$2;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$2;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
     invoke-virtual {v0}, Lit/sephiroth/android/library/widget/AbsHListView;->getPersistentDrawingCache()I
 
@@ -76,14 +70,13 @@
     if-nez v0, :cond_23
 
     .line 4533
-    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$2;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$2;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
-    # invokes: Lit/sephiroth/android/library/widget/AbsHListView;->setChildrenDrawingCacheEnabled(Z)V
-    invoke-static {v0, v2}, Lit/sephiroth/android/library/widget/AbsHListView;->access$2100(Lit/sephiroth/android/library/widget/AbsHListView;Z)V
+    invoke-static {v0, v2}, Lit/sephiroth/android/library/widget/AbsHListView;->b(Lit/sephiroth/android/library/widget/AbsHListView;Z)V
 
     .line 4535
     :cond_23
-    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$2;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$2;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
     invoke-virtual {v0}, Lit/sephiroth/android/library/widget/AbsHListView;->isAlwaysDrawnWithCacheEnabled()Z
 
@@ -92,7 +85,7 @@
     if-nez v0, :cond_30
 
     .line 4536
-    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$2;->this$0:Lit/sephiroth/android/library/widget/AbsHListView;
+    iget-object v0, p0, Lit/sephiroth/android/library/widget/AbsHListView$2;->a:Lit/sephiroth/android/library/widget/AbsHListView;
 
     invoke-virtual {v0}, Lit/sephiroth/android/library/widget/AbsHListView;->invalidate()V
 

@@ -15,7 +15,10 @@
 
 
 # virtual methods
-.method public abstract encode(Ljava/lang/Object;Ljava/io/OutputStream;)Z
+.method public abstract a()Ljava/lang/String;
+.end method
+
+.method public abstract a(Ljava/lang/Object;Ljava/io/OutputStream;)Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;",
@@ -23,7 +26,4 @@
             ")Z"
         }
     .end annotation
-.end method
-
-.method public abstract getId()Ljava/lang/String;
 .end method

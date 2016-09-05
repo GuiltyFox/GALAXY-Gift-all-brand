@@ -3,17 +3,6 @@
 .source "TabLayout.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/design/widget/TabLayout;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "Tab"
-.end annotation
-
-
 # static fields
 .field public static final INVALID_POSITION:I = -0x1
 
@@ -39,7 +28,6 @@
 # direct methods
 .method constructor <init>(Landroid/support/design/widget/TabLayout;)V
     .registers 3
-    .param p1, "parent"    # Landroid/support/design/widget/TabLayout;
 
     .prologue
     .line 1099
@@ -59,7 +47,6 @@
 
 .method static synthetic access$000(Landroid/support/design/widget/TabLayout$Tab;)Landroid/support/design/widget/TabLayout;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout$Tab;
 
     .prologue
     .line 1080
@@ -70,7 +57,6 @@
 
 .method static synthetic access$100(Landroid/support/design/widget/TabLayout$Tab;)Landroid/support/design/widget/TabLayout$TabView;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout$Tab;
 
     .prologue
     .line 1080
@@ -81,8 +67,6 @@
 
 .method static synthetic access$102(Landroid/support/design/widget/TabLayout$Tab;Landroid/support/design/widget/TabLayout$TabView;)Landroid/support/design/widget/TabLayout$TabView;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout$Tab;
-    .param p1, "x1"    # Landroid/support/design/widget/TabLayout$TabView;
 
     .prologue
     .line 1080
@@ -93,7 +77,6 @@
 
 .method static synthetic access$200(Landroid/support/design/widget/TabLayout$Tab;)V
     .registers 1
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout$Tab;
 
     .prologue
     .line 1080
@@ -104,7 +87,6 @@
 
 .method static synthetic access$500(Landroid/support/design/widget/TabLayout$Tab;)V
     .registers 1
-    .param p0, "x0"    # Landroid/support/design/widget/TabLayout$Tab;
 
     .prologue
     .line 1080
@@ -169,8 +151,6 @@
 # virtual methods
 .method public getContentDescription()Ljava/lang/CharSequence;
     .registers 2
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
 
     .prologue
     .line 1311
@@ -181,8 +161,6 @@
 
 .method public getCustomView()Landroid/view/View;
     .registers 2
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
 
     .prologue
     .line 1132
@@ -193,8 +171,6 @@
 
 .method public getIcon()Landroid/graphics/drawable/Drawable;
     .registers 2
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
 
     .prologue
     .line 1181
@@ -215,8 +191,6 @@
 
 .method public getTag()Ljava/lang/Object;
     .registers 2
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
 
     .prologue
     .line 1108
@@ -227,8 +201,6 @@
 
 .method public getText()Ljava/lang/CharSequence;
     .registers 2
-    .annotation build Landroid/support/annotation/Nullable;
-    .end annotation
 
     .prologue
     .line 1205
@@ -278,12 +250,6 @@
 
 .method public setContentDescription(I)Landroid/support/design/widget/TabLayout$Tab;
     .registers 3
-    .param p1, "resId"    # I
-        .annotation build Landroid/support/annotation/StringRes;
-        .end annotation
-    .end param
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
 
     .prologue
     .line 1283
@@ -306,12 +272,6 @@
 
 .method public setContentDescription(Ljava/lang/CharSequence;)Landroid/support/design/widget/TabLayout$Tab;
     .registers 2
-    .param p1, "contentDesc"    # Ljava/lang/CharSequence;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
 
     .prologue
     .line 1297
@@ -326,50 +286,37 @@
 
 .method public setCustomView(I)Landroid/support/design/widget/TabLayout$Tab;
     .registers 5
-    .param p1, "resId"    # I
-        .annotation build Landroid/support/annotation/LayoutRes;
-        .end annotation
-    .end param
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
 
     .prologue
     .line 1170
-    iget-object v1, p0, Landroid/support/design/widget/TabLayout$Tab;->mView:Landroid/support/design/widget/TabLayout$TabView;
+    iget-object v0, p0, Landroid/support/design/widget/TabLayout$Tab;->mView:Landroid/support/design/widget/TabLayout$TabView;
 
-    invoke-virtual {v1}, Landroid/support/design/widget/TabLayout$TabView;->getContext()Landroid/content/Context;
+    invoke-virtual {v0}, Landroid/support/design/widget/TabLayout$TabView;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-static {v1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+    invoke-static {v0}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     move-result-object v0
 
     .line 1171
-    .local v0, "inflater":Landroid/view/LayoutInflater;
     iget-object v1, p0, Landroid/support/design/widget/TabLayout$Tab;->mView:Landroid/support/design/widget/TabLayout$TabView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, p1, v1, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {p0, v1}, Landroid/support/design/widget/TabLayout$Tab;->setCustomView(Landroid/view/View;)Landroid/support/design/widget/TabLayout$Tab;
+    invoke-virtual {p0, v0}, Landroid/support/design/widget/TabLayout$Tab;->setCustomView(Landroid/view/View;)Landroid/support/design/widget/TabLayout$Tab;
 
-    move-result-object v1
+    move-result-object v0
 
-    return-object v1
+    return-object v0
 .end method
 
 .method public setCustomView(Landroid/view/View;)Landroid/support/design/widget/TabLayout$Tab;
     .registers 2
-    .param p1, "view"    # Landroid/view/View;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
 
     .prologue
     .line 1150
@@ -384,12 +331,6 @@
 
 .method public setIcon(I)Landroid/support/design/widget/TabLayout$Tab;
     .registers 4
-    .param p1, "resId"    # I
-        .annotation build Landroid/support/annotation/DrawableRes;
-        .end annotation
-    .end param
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
 
     .prologue
     .line 1229
@@ -416,12 +357,6 @@
 
 .method public setIcon(Landroid/graphics/drawable/Drawable;)Landroid/support/design/widget/TabLayout$Tab;
     .registers 2
-    .param p1, "icon"    # Landroid/graphics/drawable/Drawable;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
 
     .prologue
     .line 1216
@@ -436,7 +371,6 @@
 
 .method setPosition(I)V
     .registers 2
-    .param p1, "position"    # I
 
     .prologue
     .line 1195
@@ -448,12 +382,6 @@
 
 .method public setTag(Ljava/lang/Object;)Landroid/support/design/widget/TabLayout$Tab;
     .registers 2
-    .param p1, "tag"    # Ljava/lang/Object;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
 
     .prologue
     .line 1119
@@ -465,12 +393,6 @@
 
 .method public setText(I)Landroid/support/design/widget/TabLayout$Tab;
     .registers 3
-    .param p1, "resId"    # I
-        .annotation build Landroid/support/annotation/StringRes;
-        .end annotation
-    .end param
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
 
     .prologue
     .line 1255
@@ -493,12 +415,6 @@
 
 .method public setText(Ljava/lang/CharSequence;)Landroid/support/design/widget/TabLayout$Tab;
     .registers 2
-    .param p1, "text"    # Ljava/lang/CharSequence;
-        .annotation build Landroid/support/annotation/Nullable;
-        .end annotation
-    .end param
-    .annotation build Landroid/support/annotation/NonNull;
-    .end annotation
 
     .prologue
     .line 1241

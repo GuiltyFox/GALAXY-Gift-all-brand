@@ -101,7 +101,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/facebook/HttpMethod;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 26

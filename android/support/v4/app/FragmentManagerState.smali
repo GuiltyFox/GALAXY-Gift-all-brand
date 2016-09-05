@@ -20,11 +20,11 @@
 
 
 # instance fields
-.field mActive:[Landroid/support/v4/app/FragmentState;
+.field a:[Landroid/support/v4/app/FragmentState;
 
-.field mAdded:[I
+.field b:[I
 
-.field mBackStack:[Landroid/support/v4/app/BackStackState;
+.field c:[Landroid/support/v4/app/BackStackState;
 
 
 # direct methods
@@ -55,7 +55,6 @@
 
 .method public constructor <init>(Landroid/os/Parcel;)V
     .registers 3
-    .param p1, "in"    # Landroid/os/Parcel;
 
     .prologue
     .line 374
@@ -70,14 +69,14 @@
 
     check-cast v0, [Landroid/support/v4/app/FragmentState;
 
-    iput-object v0, p0, Landroid/support/v4/app/FragmentManagerState;->mActive:[Landroid/support/v4/app/FragmentState;
+    iput-object v0, p0, Landroid/support/v4/app/FragmentManagerState;->a:[Landroid/support/v4/app/FragmentState;
 
     .line 376
     invoke-virtual {p1}, Landroid/os/Parcel;->createIntArray()[I
 
     move-result-object v0
 
-    iput-object v0, p0, Landroid/support/v4/app/FragmentManagerState;->mAdded:[I
+    iput-object v0, p0, Landroid/support/v4/app/FragmentManagerState;->b:[I
 
     .line 377
     sget-object v0, Landroid/support/v4/app/BackStackState;->CREATOR:Landroid/os/Parcelable$Creator;
@@ -88,7 +87,7 @@
 
     check-cast v0, [Landroid/support/v4/app/BackStackState;
 
-    iput-object v0, p0, Landroid/support/v4/app/FragmentManagerState;->mBackStack:[Landroid/support/v4/app/BackStackState;
+    iput-object v0, p0, Landroid/support/v4/app/FragmentManagerState;->c:[Landroid/support/v4/app/BackStackState;
 
     .line 378
     return-void
@@ -108,22 +107,20 @@
 
 .method public writeToParcel(Landroid/os/Parcel;I)V
     .registers 4
-    .param p1, "dest"    # Landroid/os/Parcel;
-    .param p2, "flags"    # I
 
     .prologue
     .line 385
-    iget-object v0, p0, Landroid/support/v4/app/FragmentManagerState;->mActive:[Landroid/support/v4/app/FragmentState;
+    iget-object v0, p0, Landroid/support/v4/app/FragmentManagerState;->a:[Landroid/support/v4/app/FragmentState;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 
     .line 386
-    iget-object v0, p0, Landroid/support/v4/app/FragmentManagerState;->mAdded:[I
+    iget-object v0, p0, Landroid/support/v4/app/FragmentManagerState;->b:[I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeIntArray([I)V
 
     .line 387
-    iget-object v0, p0, Landroid/support/v4/app/FragmentManagerState;->mBackStack:[Landroid/support/v4/app/BackStackState;
+    iget-object v0, p0, Landroid/support/v4/app/FragmentManagerState;->c:[Landroid/support/v4/app/BackStackState;
 
     invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeTypedArray([Landroid/os/Parcelable;I)V
 

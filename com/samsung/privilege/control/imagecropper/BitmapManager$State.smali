@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/samsung/privilege/control/imagecropper/BitmapManager;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x401a
-    name = "State"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Enum",
@@ -24,11 +15,11 @@
 
 
 # static fields
-.field private static final synthetic $VALUES:[Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
+.field public static final enum a:Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
 
-.field public static final enum ALLOW:Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
+.field public static final enum b:Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
 
-.field public static final enum CANCEL:Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
+.field private static final synthetic c:[Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
 
 
 # direct methods
@@ -47,7 +38,7 @@
 
     invoke-direct {v0, v1, v2}, Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;->CANCEL:Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
+    sput-object v0, Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;->a:Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
 
     new-instance v0, Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
 
@@ -55,21 +46,21 @@
 
     invoke-direct {v0, v1, v3}, Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;->ALLOW:Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
+    sput-object v0, Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;->b:Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
 
     const/4 v0, 0x2
 
     new-array v0, v0, [Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
 
-    sget-object v1, Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;->CANCEL:Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
+    sget-object v1, Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;->a:Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;->ALLOW:Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
+    sget-object v1, Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;->b:Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
 
     aput-object v1, v0, v3
 
-    sput-object v0, Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;->$VALUES:[Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
+    sput-object v0, Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;->c:[Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
 
     return-void
 .end method
@@ -91,7 +82,6 @@
 
 .method public static valueOf(Ljava/lang/String;)Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
     .registers 2
-    .param p0, "name"    # Ljava/lang/String;
 
     .prologue
     .line 46
@@ -111,7 +101,7 @@
 
     .prologue
     .line 46
-    sget-object v0, Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;->$VALUES:[Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
+    sget-object v0, Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;->c:[Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;
 
     invoke-virtual {v0}, [Lcom/samsung/privilege/control/imagecropper/BitmapManager$State;->clone()Ljava/lang/Object;
 

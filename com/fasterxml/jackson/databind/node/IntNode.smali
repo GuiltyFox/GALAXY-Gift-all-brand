@@ -21,34 +21,32 @@
 
     .prologue
     .line 25
-    const/16 v0, 0xc
+    const/16 v1, 0xc
 
     .line 26
-    .local v0, "count":I
-    new-array v2, v0, [Lcom/fasterxml/jackson/databind/node/IntNode;
+    new-array v0, v1, [Lcom/fasterxml/jackson/databind/node/IntNode;
 
-    sput-object v2, Lcom/fasterxml/jackson/databind/node/IntNode;->CANONICALS:[Lcom/fasterxml/jackson/databind/node/IntNode;
+    sput-object v0, Lcom/fasterxml/jackson/databind/node/IntNode;->CANONICALS:[Lcom/fasterxml/jackson/databind/node/IntNode;
 
     .line 27
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    .local v1, "i":I
     :goto_7
-    if-ge v1, v0, :cond_17
+    if-ge v0, v1, :cond_17
 
     .line 28
     sget-object v2, Lcom/fasterxml/jackson/databind/node/IntNode;->CANONICALS:[Lcom/fasterxml/jackson/databind/node/IntNode;
 
     new-instance v3, Lcom/fasterxml/jackson/databind/node/IntNode;
 
-    add-int/lit8 v4, v1, -0x1
+    add-int/lit8 v4, v0, -0x1
 
     invoke-direct {v3, v4}, Lcom/fasterxml/jackson/databind/node/IntNode;-><init>(I)V
 
-    aput-object v3, v2, v1
+    aput-object v3, v2, v0
 
     .line 27
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_7
 
@@ -59,7 +57,6 @@
 
 .method public constructor <init>(I)V
     .registers 2
-    .param p1, "v"    # I
 
     .prologue
     .line 43
@@ -72,7 +69,6 @@
 
 .method public static valueOf(I)Lcom/fasterxml/jackson/databind/node/IntNode;
     .registers 3
-    .param p0, "i"    # I
 
     .prologue
     .line 46
@@ -107,7 +103,6 @@
 # virtual methods
 .method public asBoolean(Z)Z
     .registers 3
-    .param p1, "defaultValue"    # Z
 
     .prologue
     .line 110
@@ -216,7 +211,6 @@
 
 .method public equals(Ljava/lang/Object;)Z
     .registers 6
-    .param p1, "o"    # Ljava/lang/Object;
 
     .prologue
     const/4 v0, 0x1
@@ -227,13 +221,11 @@
     if-ne p1, p0, :cond_5
 
     .line 128
-    .end local p1    # "o":Ljava/lang/Object;
     :cond_4
     :goto_4
     return v0
 
     .line 124
-    .restart local p1    # "o":Ljava/lang/Object;
     :cond_5
     if-nez p1, :cond_9
 
@@ -250,7 +242,6 @@
     .line 126
     check-cast p1, Lcom/fasterxml/jackson/databind/node/IntNode;
 
-    .end local p1    # "o":Ljava/lang/Object;
     iget v2, p1, Lcom/fasterxml/jackson/databind/node/IntNode;->_value:I
 
     iget v3, p0, Lcom/fasterxml/jackson/databind/node/IntNode;->_value:I
@@ -261,7 +252,6 @@
 
     goto :goto_4
 
-    .restart local p1    # "o":Ljava/lang/Object;
     :cond_17
     move v0, v1
 
@@ -359,14 +349,6 @@
 
 .method public final serialize(Lcom/fasterxml/jackson/core/JsonGenerator;Lcom/fasterxml/jackson/databind/SerializerProvider;)V
     .registers 4
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p2, "provider"    # Lcom/fasterxml/jackson/databind/SerializerProvider;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonProcessingException;
-        }
-    .end annotation
 
     .prologue
     .line 117

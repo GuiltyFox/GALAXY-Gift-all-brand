@@ -11,14 +11,9 @@
     value = Lcom/rey/material/drawable/LinearProgressDrawable;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
-.field final synthetic this$0:Lcom/rey/material/drawable/LinearProgressDrawable;
+.field final synthetic a:Lcom/rey/material/drawable/LinearProgressDrawable;
 
 
 # direct methods
@@ -27,7 +22,7 @@
 
     .prologue
     .line 636
-    iput-object p1, p0, Lcom/rey/material/drawable/LinearProgressDrawable$1;->this$0:Lcom/rey/material/drawable/LinearProgressDrawable;
+    iput-object p1, p0, Lcom/rey/material/drawable/LinearProgressDrawable$1;->a:Lcom/rey/material/drawable/LinearProgressDrawable;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -41,10 +36,9 @@
 
     .prologue
     .line 640
-    iget-object v0, p0, Lcom/rey/material/drawable/LinearProgressDrawable$1;->this$0:Lcom/rey/material/drawable/LinearProgressDrawable;
+    iget-object v0, p0, Lcom/rey/material/drawable/LinearProgressDrawable$1;->a:Lcom/rey/material/drawable/LinearProgressDrawable;
 
-    # invokes: Lcom/rey/material/drawable/LinearProgressDrawable;->update()V
-    invoke-static {v0}, Lcom/rey/material/drawable/LinearProgressDrawable;->access$000(Lcom/rey/material/drawable/LinearProgressDrawable;)V
+    invoke-static {v0}, Lcom/rey/material/drawable/LinearProgressDrawable;->a(Lcom/rey/material/drawable/LinearProgressDrawable;)V
 
     .line 641
     return-void

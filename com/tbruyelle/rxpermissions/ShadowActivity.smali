@@ -20,20 +20,18 @@
     return-void
 .end method
 
-.method private handleIntent(Landroid/content/Intent;)V
+.method private a(Landroid/content/Intent;)V
     .registers 4
-    .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
     .line 26
-    const-string/jumbo v1, "permissions"
+    const-string/jumbo v0, "permissions"
 
-    invoke-virtual {p1, v1}, Landroid/content/Intent;->getStringArrayExtra(Ljava/lang/String;)[Ljava/lang/String;
+    invoke-virtual {p1, v0}, Landroid/content/Intent;->getStringArrayExtra(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
     .line 27
-    .local v0, "permissions":[Ljava/lang/String;
     const/16 v1, 0x2a
 
     invoke-virtual {p0, v0, v1}, Lcom/tbruyelle/rxpermissions/ShadowActivity;->requestPermissions([Ljava/lang/String;I)V
@@ -46,7 +44,6 @@
 # virtual methods
 .method protected onCreate(Landroid/os/Bundle;)V
     .registers 3
-    .param p1, "savedInstanceState"    # Landroid/os/Bundle;
 
     .prologue
     .line 14
@@ -60,7 +57,7 @@
 
     move-result-object v0
 
-    invoke-direct {p0, v0}, Lcom/tbruyelle/rxpermissions/ShadowActivity;->handleIntent(Landroid/content/Intent;)V
+    invoke-direct {p0, v0}, Lcom/tbruyelle/rxpermissions/ShadowActivity;->a(Landroid/content/Intent;)V
 
     .line 18
     :cond_c
@@ -75,11 +72,11 @@
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
     .line 33
-    invoke-static {p0}, Lcom/tbruyelle/rxpermissions/RxPermissions;->getInstance(Landroid/content/Context;)Lcom/tbruyelle/rxpermissions/RxPermissions;
+    invoke-static {p0}, Lcom/tbruyelle/rxpermissions/RxPermissions;->a(Landroid/content/Context;)Lcom/tbruyelle/rxpermissions/RxPermissions;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lcom/tbruyelle/rxpermissions/RxPermissions;->onDestroy()V
+    invoke-virtual {v0}, Lcom/tbruyelle/rxpermissions/RxPermissions;->b()V
 
     .line 34
     return-void
@@ -87,11 +84,10 @@
 
 .method protected onNewIntent(Landroid/content/Intent;)V
     .registers 2
-    .param p1, "intent"    # Landroid/content/Intent;
 
     .prologue
     .line 22
-    invoke-direct {p0, p1}, Lcom/tbruyelle/rxpermissions/ShadowActivity;->handleIntent(Landroid/content/Intent;)V
+    invoke-direct {p0, p1}, Lcom/tbruyelle/rxpermissions/ShadowActivity;->a(Landroid/content/Intent;)V
 
     .line 23
     return-void
@@ -99,17 +95,14 @@
 
 .method public onRequestPermissionsResult(I[Ljava/lang/String;[I)V
     .registers 5
-    .param p1, "requestCode"    # I
-    .param p2, "permissions"    # [Ljava/lang/String;
-    .param p3, "grantResults"    # [I
 
     .prologue
     .line 38
-    invoke-static {p0}, Lcom/tbruyelle/rxpermissions/RxPermissions;->getInstance(Landroid/content/Context;)Lcom/tbruyelle/rxpermissions/RxPermissions;
+    invoke-static {p0}, Lcom/tbruyelle/rxpermissions/RxPermissions;->a(Landroid/content/Context;)Lcom/tbruyelle/rxpermissions/RxPermissions;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1, p2, p3}, Lcom/tbruyelle/rxpermissions/RxPermissions;->onRequestPermissionsResult(I[Ljava/lang/String;[I)V
+    invoke-virtual {v0, p1, p2, p3}, Lcom/tbruyelle/rxpermissions/RxPermissions;->a(I[Ljava/lang/String;[I)V
 
     .line 39
     invoke-virtual {p0}, Lcom/tbruyelle/rxpermissions/ShadowActivity;->finish()V

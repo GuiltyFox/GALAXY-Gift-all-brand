@@ -8,12 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lrx/internal/util/PlatformDependent;->getSystemClassLoader()Ljava/lang/ClassLoader;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
+    value = Lrx/internal/util/PlatformDependent;->c()Ljava/lang/ClassLoader;
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
@@ -40,7 +35,7 @@
 
 
 # virtual methods
-.method public run()Ljava/lang/ClassLoader;
+.method public a()Ljava/lang/ClassLoader;
     .registers 2
 
     .prologue
@@ -52,12 +47,12 @@
     return-object v0
 .end method
 
-.method public bridge synthetic run()Ljava/lang/Object;
+.method public synthetic run()Ljava/lang/Object;
     .registers 2
 
     .prologue
     .line 81
-    invoke-virtual {p0}, Lrx/internal/util/PlatformDependent$1;->run()Ljava/lang/ClassLoader;
+    invoke-virtual {p0}, Lrx/internal/util/PlatformDependent$1;->a()Ljava/lang/ClassLoader;
 
     move-result-object v0
 

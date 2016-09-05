@@ -7,28 +7,23 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/google/android/gms/analytics/internal/zzb;->zzJ(Z)V
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lcom/google/android/gms/analytics/internal/zzb;->a(Z)V
 .end annotation
 
 
 # instance fields
-.field final synthetic zzOJ:Lcom/google/android/gms/analytics/internal/zzb;
+.field final synthetic a:Z
 
-.field final synthetic zzOK:Z
+.field final synthetic b:Lcom/google/android/gms/analytics/internal/zzb;
 
 
 # direct methods
 .method constructor <init>(Lcom/google/android/gms/analytics/internal/zzb;Z)V
     .registers 3
 
-    iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzb$2;->zzOJ:Lcom/google/android/gms/analytics/internal/zzb;
+    iput-object p1, p0, Lcom/google/android/gms/analytics/internal/zzb$2;->b:Lcom/google/android/gms/analytics/internal/zzb;
 
-    iput-boolean p2, p0, Lcom/google/android/gms/analytics/internal/zzb$2;->zzOK:Z
+    iput-boolean p2, p0, Lcom/google/android/gms/analytics/internal/zzb$2;->a:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -40,15 +35,15 @@
 .method public run()V
     .registers 3
 
-    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzb$2;->zzOJ:Lcom/google/android/gms/analytics/internal/zzb;
+    iget-object v0, p0, Lcom/google/android/gms/analytics/internal/zzb$2;->b:Lcom/google/android/gms/analytics/internal/zzb;
 
-    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzb;->zza(Lcom/google/android/gms/analytics/internal/zzb;)Lcom/google/android/gms/analytics/internal/zzl;
+    invoke-static {v0}, Lcom/google/android/gms/analytics/internal/zzb;->a(Lcom/google/android/gms/analytics/internal/zzb;)Lcom/google/android/gms/analytics/internal/zzl;
 
     move-result-object v0
 
-    iget-boolean v1, p0, Lcom/google/android/gms/analytics/internal/zzb$2;->zzOK:Z
+    iget-boolean v1, p0, Lcom/google/android/gms/analytics/internal/zzb$2;->a:Z
 
-    invoke-virtual {v0, v1}, Lcom/google/android/gms/analytics/internal/zzl;->zzJ(Z)V
+    invoke-virtual {v0, v1}, Lcom/google/android/gms/analytics/internal/zzl;->a(Z)V
 
     return-void
 .end method

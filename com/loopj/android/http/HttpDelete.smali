@@ -21,7 +21,6 @@
 
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 3
-    .param p1, "uri"    # Ljava/lang/String;
 
     .prologue
     .line 51
@@ -40,7 +39,6 @@
 
 .method public constructor <init>(Ljava/net/URI;)V
     .registers 2
-    .param p1, "uri"    # Ljava/net/URI;
 
     .prologue
     .line 42

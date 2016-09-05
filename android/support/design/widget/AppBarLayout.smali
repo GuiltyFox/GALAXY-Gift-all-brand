@@ -8,15 +8,6 @@
     value = Landroid/support/design/widget/AppBarLayout$Behavior;
 .end annotation
 
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Landroid/support/design/widget/AppBarLayout$ScrollingViewBehavior;,
-        Landroid/support/design/widget/AppBarLayout$Behavior;,
-        Landroid/support/design/widget/AppBarLayout$LayoutParams;,
-        Landroid/support/design/widget/AppBarLayout$OnOffsetChangedListener;
-    }
-.end annotation
-
 
 # static fields
 .field private static final INVALID_SCROLL_RANGE:I = -0x1
@@ -60,7 +51,6 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 3
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 138
@@ -73,52 +63,49 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 7
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attrs"    # Landroid/util/AttributeSet;
+    .registers 6
 
     .prologue
-    const/4 v1, -0x1
+    const/4 v0, -0x1
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     .line 142
     invoke-direct {p0, p1, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
     .line 123
-    iput v1, p0, Landroid/support/design/widget/AppBarLayout;->mTotalScrollRange:I
+    iput v0, p0, Landroid/support/design/widget/AppBarLayout;->mTotalScrollRange:I
 
     .line 124
-    iput v1, p0, Landroid/support/design/widget/AppBarLayout;->mDownPreScrollRange:I
+    iput v0, p0, Landroid/support/design/widget/AppBarLayout;->mDownPreScrollRange:I
 
     .line 125
-    iput v1, p0, Landroid/support/design/widget/AppBarLayout;->mDownScrollRange:I
+    iput v0, p0, Landroid/support/design/widget/AppBarLayout;->mDownScrollRange:I
 
     .line 131
-    iput v3, p0, Landroid/support/design/widget/AppBarLayout;->mPendingAction:I
+    iput v2, p0, Landroid/support/design/widget/AppBarLayout;->mPendingAction:I
 
     .line 143
-    const/4 v1, 0x1
+    const/4 v0, 0x1
 
-    invoke-virtual {p0, v1}, Landroid/support/design/widget/AppBarLayout;->setOrientation(I)V
+    invoke-virtual {p0, v0}, Landroid/support/design/widget/AppBarLayout;->setOrientation(I)V
 
     .line 145
     invoke-static {p1}, Landroid/support/design/widget/ThemeUtils;->checkAppCompatTheme(Landroid/content/Context;)V
 
     .line 147
-    sget-object v1, Landroid/support/design/R$styleable;->AppBarLayout:[I
+    sget-object v0, Landroid/support/design/R$styleable;->AppBarLayout:[I
 
-    sget v2, Landroid/support/design/R$style;->Widget_Design_AppBarLayout:I
+    sget v1, Landroid/support/design/R$style;->Widget_Design_AppBarLayout:I
 
-    invoke-virtual {p1, p2, v1, v3, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
+    invoke-virtual {p1, p2, v0, v2, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
     .line 149
-    .local v0, "a":Landroid/content/res/TypedArray;
     sget v1, Landroid/support/design/R$styleable;->AppBarLayout_elevation:I
 
-    invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getDimensionPixelSize(II)I
 
     move-result v1
 
@@ -147,7 +134,7 @@
     .line 152
     sget v1, Landroid/support/design/R$styleable;->AppBarLayout_expanded:I
 
-    invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     move-result v1
 
@@ -161,23 +148,23 @@
     invoke-static {p0}, Landroid/support/design/widget/ViewUtils;->setBoundsViewOutlineProvider(Landroid/view/View;)V
 
     .line 159
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    iput-object v1, p0, Landroid/support/design/widget/AppBarLayout;->mListeners:Ljava/util/List;
+    iput-object v0, p0, Landroid/support/design/widget/AppBarLayout;->mListeners:Ljava/util/List;
 
     .line 161
-    iget v1, p0, Landroid/support/design/widget/AppBarLayout;->mTargetElevation:F
+    iget v0, p0, Landroid/support/design/widget/AppBarLayout;->mTargetElevation:F
 
-    invoke-static {p0, v1}, Landroid/support/v4/view/ViewCompat;->setElevation(Landroid/view/View;F)V
+    invoke-static {p0, v0}, Landroid/support/v4/view/ViewCompat;->f(Landroid/view/View;F)V
 
     .line 163
-    new-instance v1, Landroid/support/design/widget/AppBarLayout$1;
+    new-instance v0, Landroid/support/design/widget/AppBarLayout$1;
 
-    invoke-direct {v1, p0}, Landroid/support/design/widget/AppBarLayout$1;-><init>(Landroid/support/design/widget/AppBarLayout;)V
+    invoke-direct {v0, p0}, Landroid/support/design/widget/AppBarLayout$1;-><init>(Landroid/support/design/widget/AppBarLayout;)V
 
-    invoke-static {p0, v1}, Landroid/support/v4/view/ViewCompat;->setOnApplyWindowInsetsListener(Landroid/view/View;Landroid/support/v4/view/OnApplyWindowInsetsListener;)V
+    invoke-static {p0, v0}, Landroid/support/v4/view/ViewCompat;->a(Landroid/view/View;Landroid/support/v4/view/OnApplyWindowInsetsListener;)V
 
     .line 171
     return-void
@@ -185,8 +172,6 @@
 
 .method static synthetic access$000(Landroid/support/design/widget/AppBarLayout;Landroid/support/v4/view/WindowInsetsCompat;)Landroid/support/v4/view/WindowInsetsCompat;
     .registers 3
-    .param p0, "x0"    # Landroid/support/design/widget/AppBarLayout;
-    .param p1, "x1"    # Landroid/support/v4/view/WindowInsetsCompat;
 
     .prologue
     .line 98
@@ -199,7 +184,6 @@
 
 .method static synthetic access$100(Landroid/support/design/widget/AppBarLayout;)Z
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/AppBarLayout;
 
     .prologue
     .line 98
@@ -212,7 +196,6 @@
 
 .method static synthetic access$200(Landroid/support/design/widget/AppBarLayout;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/AppBarLayout;
 
     .prologue
     .line 98
@@ -225,7 +208,6 @@
 
 .method static synthetic access$300(Landroid/support/design/widget/AppBarLayout;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/AppBarLayout;
 
     .prologue
     .line 98
@@ -238,7 +220,6 @@
 
 .method static synthetic access$400(Landroid/support/design/widget/AppBarLayout;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/AppBarLayout;
 
     .prologue
     .line 98
@@ -251,7 +232,6 @@
 
 .method static synthetic access$500(Landroid/support/design/widget/AppBarLayout;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/AppBarLayout;
 
     .prologue
     .line 98
@@ -264,7 +244,6 @@
 
 .method static synthetic access$600(Landroid/support/design/widget/AppBarLayout;)V
     .registers 1
-    .param p0, "x0"    # Landroid/support/design/widget/AppBarLayout;
 
     .prologue
     .line 98
@@ -275,7 +254,6 @@
 
 .method static synthetic access$700(Landroid/support/design/widget/AppBarLayout;)Z
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/AppBarLayout;
 
     .prologue
     .line 98
@@ -288,7 +266,6 @@
 
 .method static synthetic access$800(Landroid/support/design/widget/AppBarLayout;)Ljava/util/List;
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/AppBarLayout;
 
     .prologue
     .line 98
@@ -299,7 +276,6 @@
 
 .method static synthetic access$900(Landroid/support/design/widget/AppBarLayout;)I
     .registers 2
-    .param p0, "x0"    # Landroid/support/design/widget/AppBarLayout;
 
     .prologue
     .line 98
@@ -311,267 +287,257 @@
 .end method
 
 .method private getDownNestedPreScrollRange()I
-    .registers 9
+    .registers 10
 
     .prologue
+    const/4 v3, 0x0
+
     .line 352
-    iget v6, p0, Landroid/support/design/widget/AppBarLayout;->mDownPreScrollRange:I
+    iget v0, p0, Landroid/support/design/widget/AppBarLayout;->mDownPreScrollRange:I
 
-    const/4 v7, -0x1
+    const/4 v1, -0x1
 
-    if-eq v6, v7, :cond_8
+    if-eq v0, v1, :cond_9
 
     .line 354
-    iget v6, p0, Landroid/support/design/widget/AppBarLayout;->mDownPreScrollRange:I
+    iget v0, p0, Landroid/support/design/widget/AppBarLayout;->mDownPreScrollRange:I
 
     .line 384
-    :goto_7
-    return v6
-
-    .line 357
-    :cond_8
-    const/4 v5, 0x0
+    :goto_8
+    return v0
 
     .line 358
-    .local v5, "range":I
+    :cond_9
     invoke-virtual {p0}, Landroid/support/design/widget/AppBarLayout;->getChildCount()I
 
-    move-result v6
+    move-result v0
 
-    add-int/lit8 v3, v6, -0x1
+    add-int/lit8 v0, v0, -0x1
 
-    .local v3, "i":I
-    :goto_f
-    if-ltz v3, :cond_48
+    move v2, v0
+
+    move v1, v3
+
+    :goto_11
+    if-ltz v2, :cond_4c
 
     .line 359
-    invoke-virtual {p0, v3}, Landroid/support/design/widget/AppBarLayout;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v0
-
-    .line 360
-    .local v0, "child":Landroid/view/View;
-    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {p0, v2}, Landroid/support/design/widget/AppBarLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
-    check-cast v4, Landroid/support/design/widget/AppBarLayout$LayoutParams;
+    .line 360
+    invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/support/design/widget/AppBarLayout$LayoutParams;
 
     .line 361
-    .local v4, "lp":Landroid/support/design/widget/AppBarLayout$LayoutParams;
-    invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
+    invoke-virtual {v4}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v5
+
+    .line 362
+    iget v6, v0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
+
+    .line 364
+    and-int/lit8 v7, v6, 0x5
+
+    const/4 v8, 0x5
+
+    if-ne v7, v8, :cond_4a
+
+    .line 366
+    iget v7, v0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->topMargin:I
+
+    iget v0, v0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->bottomMargin:I
+
+    add-int/2addr v0, v7
+
+    add-int/2addr v0, v1
+
+    .line 368
+    and-int/lit8 v1, v6, 0x8
+
+    if-eqz v1, :cond_3c
+
+    .line 370
+    invoke-static {v4}, Landroid/support/v4/view/ViewCompat;->q(Landroid/view/View;)I
 
     move-result v1
 
-    .line 362
-    .local v1, "childHeight":I
-    iget v2, v4, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
-
-    .line 364
-    .local v2, "flags":I
-    and-int/lit8 v6, v2, 0x5
-
-    const/4 v7, 0x5
-
-    if-ne v6, v7, :cond_46
-
-    .line 366
-    iget v6, v4, Landroid/support/design/widget/AppBarLayout$LayoutParams;->topMargin:I
-
-    iget v7, v4, Landroid/support/design/widget/AppBarLayout$LayoutParams;->bottomMargin:I
-
-    add-int/2addr v6, v7
-
-    add-int/2addr v5, v6
-
-    .line 368
-    and-int/lit8 v6, v2, 0x8
-
-    if-eqz v6, :cond_38
-
-    .line 370
-    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->getMinimumHeight(Landroid/view/View;)I
-
-    move-result v6
-
-    add-int/2addr v5, v6
+    add-int/2addr v0, v1
 
     .line 358
-    :cond_35
-    :goto_35
-    add-int/lit8 v3, v3, -0x1
+    :goto_37
+    add-int/lit8 v1, v2, -0x1
 
-    goto :goto_f
+    move v2, v1
+
+    move v1, v0
+
+    goto :goto_11
 
     .line 371
-    :cond_38
-    and-int/lit8 v6, v2, 0x2
+    :cond_3c
+    and-int/lit8 v1, v6, 0x2
 
-    if-eqz v6, :cond_44
+    if-eqz v1, :cond_48
 
     .line 373
-    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->getMinimumHeight(Landroid/view/View;)I
+    invoke-static {v4}, Landroid/support/v4/view/ViewCompat;->q(Landroid/view/View;)I
 
-    move-result v6
+    move-result v1
 
-    sub-int v6, v1, v6
+    sub-int v1, v5, v1
 
-    add-int/2addr v5, v6
+    add-int/2addr v0, v1
 
-    goto :goto_35
+    goto :goto_37
 
     .line 376
-    :cond_44
-    add-int/2addr v5, v1
+    :cond_48
+    add-int/2addr v0, v5
 
-    goto :goto_35
+    goto :goto_37
 
     .line 378
-    :cond_46
-    if-lez v5, :cond_35
+    :cond_4a
+    if-lez v1, :cond_59
 
     .line 384
-    .end local v0    # "child":Landroid/view/View;
-    .end local v1    # "childHeight":I
-    .end local v2    # "flags":I
-    .end local v4    # "lp":Landroid/support/design/widget/AppBarLayout$LayoutParams;
-    :cond_48
-    const/4 v6, 0x0
-
+    :cond_4c
     invoke-direct {p0}, Landroid/support/design/widget/AppBarLayout;->getTopInset()I
 
-    move-result v7
+    move-result v0
 
-    sub-int v7, v5, v7
+    sub-int v0, v1, v0
 
-    invoke-static {v6, v7}, Ljava/lang/Math;->max(II)I
+    invoke-static {v3, v0}, Ljava/lang/Math;->max(II)I
 
-    move-result v6
+    move-result v0
 
-    iput v6, p0, Landroid/support/design/widget/AppBarLayout;->mDownPreScrollRange:I
+    iput v0, p0, Landroid/support/design/widget/AppBarLayout;->mDownPreScrollRange:I
 
-    goto :goto_7
+    goto :goto_8
+
+    :cond_59
+    move v0, v1
+
+    goto :goto_37
 .end method
 
 .method private getDownNestedScrollRange()I
     .registers 10
 
     .prologue
-    .line 391
-    iget v7, p0, Landroid/support/design/widget/AppBarLayout;->mDownScrollRange:I
-
-    const/4 v8, -0x1
-
-    if-eq v7, v8, :cond_8
-
-    .line 393
-    iget v7, p0, Landroid/support/design/widget/AppBarLayout;->mDownScrollRange:I
-
-    .line 422
-    :goto_7
-    return v7
-
-    .line 396
-    :cond_8
-    const/4 v5, 0x0
-
-    .line 397
-    .local v5, "range":I
     const/4 v3, 0x0
 
-    .local v3, "i":I
+    .line 391
+    iget v0, p0, Landroid/support/design/widget/AppBarLayout;->mDownScrollRange:I
+
+    const/4 v1, -0x1
+
+    if-eq v0, v1, :cond_9
+
+    .line 393
+    iget v0, p0, Landroid/support/design/widget/AppBarLayout;->mDownScrollRange:I
+
+    .line 422
+    :goto_8
+    return v0
+
+    .line 397
+    :cond_9
     invoke-virtual {p0}, Landroid/support/design/widget/AppBarLayout;->getChildCount()I
 
-    move-result v6
+    move-result v4
 
-    .local v6, "z":I
-    :goto_e
-    if-ge v3, v6, :cond_39
+    move v2, v3
+
+    move v1, v3
+
+    :goto_f
+    if-ge v2, v4, :cond_46
 
     .line 398
-    invoke-virtual {p0, v3}, Landroid/support/design/widget/AppBarLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Landroid/support/design/widget/AppBarLayout;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v5
+
+    .line 399
+    invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    .line 399
-    .local v0, "child":Landroid/view/View;
-    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/support/design/widget/AppBarLayout$LayoutParams;
+    check-cast v0, Landroid/support/design/widget/AppBarLayout$LayoutParams;
 
     .line 400
-    .local v4, "lp":Landroid/support/design/widget/AppBarLayout$LayoutParams;
-    invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
+    invoke-virtual {v5}, Landroid/view/View;->getMeasuredHeight()I
 
-    move-result v1
+    move-result v6
 
     .line 401
-    .local v1, "childHeight":I
-    iget v7, v4, Landroid/support/design/widget/AppBarLayout$LayoutParams;->topMargin:I
+    iget v7, v0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->topMargin:I
 
-    iget v8, v4, Landroid/support/design/widget/AppBarLayout$LayoutParams;->bottomMargin:I
+    iget v8, v0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->bottomMargin:I
 
     add-int/2addr v7, v8
 
-    add-int/2addr v1, v7
+    add-int/2addr v6, v7
 
     .line 403
-    iget v2, v4, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
+    iget v0, v0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
 
     .line 405
-    .local v2, "flags":I
-    and-int/lit8 v7, v2, 0x1
+    and-int/lit8 v7, v0, 0x1
 
-    if-eqz v7, :cond_39
+    if-eqz v7, :cond_46
 
     .line 407
-    add-int/2addr v5, v1
+    add-int/2addr v1, v6
 
     .line 409
-    and-int/lit8 v7, v2, 0x2
+    and-int/lit8 v0, v0, 0x2
 
-    if-eqz v7, :cond_41
+    if-eqz v0, :cond_42
 
     .line 413
-    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->getMinimumHeight(Landroid/view/View;)I
+    invoke-static {v5}, Landroid/support/v4/view/ViewCompat;->q(Landroid/view/View;)I
 
-    move-result v7
+    move-result v0
 
     invoke-direct {p0}, Landroid/support/design/widget/AppBarLayout;->getTopInset()I
 
-    move-result v8
+    move-result v2
 
-    add-int/2addr v7, v8
+    add-int/2addr v0, v2
 
-    sub-int/2addr v5, v7
+    sub-int v0, v1, v0
 
     .line 422
-    .end local v0    # "child":Landroid/view/View;
-    .end local v1    # "childHeight":I
-    .end local v2    # "flags":I
-    .end local v4    # "lp":Landroid/support/design/widget/AppBarLayout$LayoutParams;
-    :cond_39
-    const/4 v7, 0x0
+    :goto_3b
+    invoke-static {v3, v0}, Ljava/lang/Math;->max(II)I
 
-    invoke-static {v7, v5}, Ljava/lang/Math;->max(II)I
+    move-result v0
 
-    move-result v7
+    iput v0, p0, Landroid/support/design/widget/AppBarLayout;->mDownScrollRange:I
 
-    iput v7, p0, Landroid/support/design/widget/AppBarLayout;->mDownScrollRange:I
-
-    goto :goto_7
+    goto :goto_8
 
     .line 397
-    .restart local v0    # "child":Landroid/view/View;
-    .restart local v1    # "childHeight":I
-    .restart local v2    # "flags":I
-    .restart local v4    # "lp":Landroid/support/design/widget/AppBarLayout$LayoutParams;
-    :cond_41
-    add-int/lit8 v3, v3, 0x1
+    :cond_42
+    add-int/lit8 v0, v2, 0x1
 
-    goto :goto_e
+    move v2, v0
+
+    goto :goto_f
+
+    :cond_46
+    move v0, v1
+
+    goto :goto_3b
 .end method
 
 .method private getPendingAction()I
@@ -595,7 +561,7 @@
 
     iget-object v0, p0, Landroid/support/design/widget/AppBarLayout;->mLastInsets:Landroid/support/v4/view/WindowInsetsCompat;
 
-    invoke-virtual {v0}, Landroid/support/v4/view/WindowInsetsCompat;->getSystemWindowInsetTop()I
+    invoke-virtual {v0}, Landroid/support/v4/view/WindowInsetsCompat;->b()I
 
     move-result v0
 
@@ -686,7 +652,6 @@
 
 .method private setWindowInsets(Landroid/support/v4/view/WindowInsetsCompat;)Landroid/support/v4/view/WindowInsetsCompat;
     .registers 3
-    .param p1, "insets"    # Landroid/support/v4/view/WindowInsetsCompat;
 
     .prologue
     .line 478
@@ -705,7 +670,6 @@
 # virtual methods
 .method public addOnOffsetChangedListener(Landroid/support/design/widget/AppBarLayout$OnOffsetChangedListener;)V
     .registers 3
-    .param p1, "listener"    # Landroid/support/design/widget/AppBarLayout$OnOffsetChangedListener;
 
     .prologue
     .line 181
@@ -731,7 +695,6 @@
 
 .method protected checkLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Z
     .registers 3
-    .param p1, "p"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
     .line 273
@@ -782,7 +745,6 @@
 
 .method public generateLayoutParams(Landroid/util/AttributeSet;)Landroid/support/design/widget/AppBarLayout$LayoutParams;
     .registers 4
-    .param p1, "attrs"    # Landroid/util/AttributeSet;
 
     .prologue
     .line 283
@@ -799,7 +761,6 @@
 
 .method protected generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroid/support/design/widget/AppBarLayout$LayoutParams;
     .registers 3
-    .param p1, "p"    # Landroid/view/ViewGroup$LayoutParams;
 
     .prologue
     .line 288
@@ -812,7 +773,6 @@
 
     check-cast p1, Landroid/widget/LinearLayout$LayoutParams;
 
-    .end local p1    # "p":Landroid/view/ViewGroup$LayoutParams;
     invoke-direct {v0, p1}, Landroid/support/design/widget/AppBarLayout$LayoutParams;-><init>(Landroid/widget/LinearLayout$LayoutParams;)V
 
     .line 293
@@ -820,7 +780,6 @@
     return-object v0
 
     .line 290
-    .restart local p1    # "p":Landroid/view/ViewGroup$LayoutParams;
     :cond_c
     instance-of v0, p1, Landroid/view/ViewGroup$MarginLayoutParams;
 
@@ -831,13 +790,11 @@
 
     check-cast p1, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    .end local p1    # "p":Landroid/view/ViewGroup$LayoutParams;
     invoke-direct {v0, p1}, Landroid/support/design/widget/AppBarLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
     goto :goto_b
 
     .line 293
-    .restart local p1    # "p":Landroid/view/ViewGroup$LayoutParams;
     :cond_18
     new-instance v0, Landroid/support/design/widget/AppBarLayout$LayoutParams;
 
@@ -895,63 +852,60 @@
 .end method
 
 .method final getMinimumHeightForVisibleOverlappingContent()I
-    .registers 5
+    .registers 4
 
     .prologue
     .line 426
     invoke-direct {p0}, Landroid/support/design/widget/AppBarLayout;->getTopInset()I
 
-    move-result v2
+    move-result v0
 
     .line 427
-    .local v2, "topInset":I
-    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->getMinimumHeight(Landroid/view/View;)I
+    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->q(Landroid/view/View;)I
 
     move-result v1
 
     .line 428
-    .local v1, "minHeight":I
     if-eqz v1, :cond_e
 
     .line 430
-    mul-int/lit8 v3, v1, 0x2
+    mul-int/lit8 v1, v1, 0x2
 
-    add-int/2addr v3, v2
+    add-int/2addr v0, v1
 
     .line 435
     :goto_d
-    return v3
+    return v0
 
     .line 434
     :cond_e
     invoke-virtual {p0}, Landroid/support/design/widget/AppBarLayout;->getChildCount()I
 
-    move-result v0
+    move-result v1
 
     .line 435
-    .local v0, "childCount":I
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
-    if-lt v0, v3, :cond_23
+    if-lt v1, v2, :cond_23
 
-    add-int/lit8 v3, v0, -0x1
+    add-int/lit8 v1, v1, -0x1
 
-    invoke-virtual {p0, v3}, Landroid/support/design/widget/AppBarLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/support/design/widget/AppBarLayout;->getChildAt(I)Landroid/view/View;
 
-    move-result-object v3
+    move-result-object v1
 
-    invoke-static {v3}, Landroid/support/v4/view/ViewCompat;->getMinimumHeight(Landroid/view/View;)I
+    invoke-static {v1}, Landroid/support/v4/view/ViewCompat;->q(Landroid/view/View;)I
 
-    move-result v3
+    move-result v1
 
-    mul-int/lit8 v3, v3, 0x2
+    mul-int/lit8 v1, v1, 0x2
 
-    add-int/2addr v3, v2
+    add-int/2addr v0, v1
 
     goto :goto_d
 
     :cond_23
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
     goto :goto_d
 .end method
@@ -970,131 +924,119 @@
     .registers 10
 
     .prologue
-    .line 306
-    iget v7, p0, Landroid/support/design/widget/AppBarLayout;->mTotalScrollRange:I
-
-    const/4 v8, -0x1
-
-    if-eq v7, v8, :cond_8
-
-    .line 307
-    iget v7, p0, Landroid/support/design/widget/AppBarLayout;->mTotalScrollRange:I
-
-    .line 334
-    :goto_7
-    return v7
-
-    .line 310
-    :cond_8
-    const/4 v5, 0x0
-
-    .line 311
-    .local v5, "range":I
     const/4 v3, 0x0
 
-    .local v3, "i":I
+    .line 306
+    iget v0, p0, Landroid/support/design/widget/AppBarLayout;->mTotalScrollRange:I
+
+    const/4 v1, -0x1
+
+    if-eq v0, v1, :cond_9
+
+    .line 307
+    iget v0, p0, Landroid/support/design/widget/AppBarLayout;->mTotalScrollRange:I
+
+    .line 334
+    :goto_8
+    return v0
+
+    .line 311
+    :cond_9
     invoke-virtual {p0}, Landroid/support/design/widget/AppBarLayout;->getChildCount()I
 
-    move-result v6
+    move-result v4
 
-    .local v6, "z":I
-    :goto_e
-    if-ge v3, v6, :cond_34
+    move v2, v3
+
+    move v1, v3
+
+    :goto_f
+    if-ge v2, v4, :cond_46
 
     .line 312
-    invoke-virtual {p0, v3}, Landroid/support/design/widget/AppBarLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v2}, Landroid/support/design/widget/AppBarLayout;->getChildAt(I)Landroid/view/View;
+
+    move-result-object v5
+
+    .line 313
+    invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
-    .line 313
-    .local v0, "child":Landroid/view/View;
-    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/support/design/widget/AppBarLayout$LayoutParams;
+    check-cast v0, Landroid/support/design/widget/AppBarLayout$LayoutParams;
 
     .line 314
-    .local v4, "lp":Landroid/support/design/widget/AppBarLayout$LayoutParams;
-    invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
+    invoke-virtual {v5}, Landroid/view/View;->getMeasuredHeight()I
+
+    move-result v6
+
+    .line 315
+    iget v7, v0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
+
+    .line 317
+    and-int/lit8 v8, v7, 0x1
+
+    if-eqz v8, :cond_46
+
+    .line 319
+    iget v8, v0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->topMargin:I
+
+    add-int/2addr v6, v8
+
+    iget v0, v0, Landroid/support/design/widget/AppBarLayout$LayoutParams;->bottomMargin:I
+
+    add-int/2addr v0, v6
+
+    add-int/2addr v1, v0
+
+    .line 321
+    and-int/lit8 v0, v7, 0x2
+
+    if-eqz v0, :cond_42
+
+    .line 325
+    invoke-static {v5}, Landroid/support/v4/view/ViewCompat;->q(Landroid/view/View;)I
+
+    move-result v0
+
+    sub-int v0, v1, v0
+
+    .line 334
+    :goto_36
+    invoke-direct {p0}, Landroid/support/design/widget/AppBarLayout;->getTopInset()I
 
     move-result v1
 
-    .line 315
-    .local v1, "childHeight":I
-    iget v2, v4, Landroid/support/design/widget/AppBarLayout$LayoutParams;->mScrollFlags:I
+    sub-int/2addr v0, v1
 
-    .line 317
-    .local v2, "flags":I
-    and-int/lit8 v7, v2, 0x1
+    invoke-static {v3, v0}, Ljava/lang/Math;->max(II)I
 
-    if-eqz v7, :cond_34
+    move-result v0
 
-    .line 319
-    iget v7, v4, Landroid/support/design/widget/AppBarLayout$LayoutParams;->topMargin:I
+    iput v0, p0, Landroid/support/design/widget/AppBarLayout;->mTotalScrollRange:I
 
-    add-int/2addr v7, v1
-
-    iget v8, v4, Landroid/support/design/widget/AppBarLayout$LayoutParams;->bottomMargin:I
-
-    add-int/2addr v7, v8
-
-    add-int/2addr v5, v7
-
-    .line 321
-    and-int/lit8 v7, v2, 0x2
-
-    if-eqz v7, :cond_42
-
-    .line 325
-    invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->getMinimumHeight(Landroid/view/View;)I
-
-    move-result v7
-
-    sub-int/2addr v5, v7
-
-    .line 334
-    .end local v0    # "child":Landroid/view/View;
-    .end local v1    # "childHeight":I
-    .end local v2    # "flags":I
-    .end local v4    # "lp":Landroid/support/design/widget/AppBarLayout$LayoutParams;
-    :cond_34
-    const/4 v7, 0x0
-
-    invoke-direct {p0}, Landroid/support/design/widget/AppBarLayout;->getTopInset()I
-
-    move-result v8
-
-    sub-int v8, v5, v8
-
-    invoke-static {v7, v8}, Ljava/lang/Math;->max(II)I
-
-    move-result v7
-
-    iput v7, p0, Landroid/support/design/widget/AppBarLayout;->mTotalScrollRange:I
-
-    goto :goto_7
+    goto :goto_8
 
     .line 311
-    .restart local v0    # "child":Landroid/view/View;
-    .restart local v1    # "childHeight":I
-    .restart local v2    # "flags":I
-    .restart local v4    # "lp":Landroid/support/design/widget/AppBarLayout$LayoutParams;
     :cond_42
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v0, v2, 0x1
 
-    goto :goto_e
+    move v2, v0
+
+    goto :goto_f
+
+    :cond_46
+    move v0, v1
+
+    goto :goto_36
 .end method
 
 .method protected onLayout(ZIIII)V
-    .registers 12
-    .param p1, "changed"    # Z
-    .param p2, "l"    # I
-    .param p3, "t"    # I
-    .param p4, "r"    # I
-    .param p5, "b"    # I
+    .registers 9
 
     .prologue
+    const/4 v0, 0x0
+
     .line 205
     invoke-super/range {p0 .. p5}, Landroid/widget/LinearLayout;->onLayout(ZIIII)V
 
@@ -1102,71 +1044,58 @@
     invoke-direct {p0}, Landroid/support/design/widget/AppBarLayout;->invalidateScrollRanges()V
 
     .line 208
-    const/4 v5, 0x0
-
-    iput-boolean v5, p0, Landroid/support/design/widget/AppBarLayout;->mHaveChildWithInterpolator:Z
+    iput-boolean v0, p0, Landroid/support/design/widget/AppBarLayout;->mHaveChildWithInterpolator:Z
 
     .line 209
-    const/4 v2, 0x0
-
-    .local v2, "i":I
     invoke-virtual {p0}, Landroid/support/design/widget/AppBarLayout;->getChildCount()I
 
-    move-result v4
+    move-result v2
 
-    .local v4, "z":I
+    move v1, v0
+
     :goto_e
-    if-ge v2, v4, :cond_23
+    if-ge v1, v2, :cond_23
 
     .line 210
-    invoke-virtual {p0, v2}, Landroid/support/design/widget/AppBarLayout;->getChildAt(I)Landroid/view/View;
+    invoke-virtual {p0, v1}, Landroid/support/design/widget/AppBarLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
     .line 211
-    .local v0, "child":Landroid/view/View;
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v1
+    move-result-object v0
 
-    check-cast v1, Landroid/support/design/widget/AppBarLayout$LayoutParams;
+    check-cast v0, Landroid/support/design/widget/AppBarLayout$LayoutParams;
 
     .line 212
-    .local v1, "childLp":Landroid/support/design/widget/AppBarLayout$LayoutParams;
-    invoke-virtual {v1}, Landroid/support/design/widget/AppBarLayout$LayoutParams;->getScrollInterpolator()Landroid/view/animation/Interpolator;
+    invoke-virtual {v0}, Landroid/support/design/widget/AppBarLayout$LayoutParams;->getScrollInterpolator()Landroid/view/animation/Interpolator;
 
-    move-result-object v3
+    move-result-object v0
 
     .line 214
-    .local v3, "interpolator":Landroid/view/animation/Interpolator;
-    if-eqz v3, :cond_24
+    if-eqz v0, :cond_24
 
     .line 215
-    const/4 v5, 0x1
+    const/4 v0, 0x1
 
-    iput-boolean v5, p0, Landroid/support/design/widget/AppBarLayout;->mHaveChildWithInterpolator:Z
+    iput-boolean v0, p0, Landroid/support/design/widget/AppBarLayout;->mHaveChildWithInterpolator:Z
 
     .line 219
-    .end local v0    # "child":Landroid/view/View;
-    .end local v1    # "childLp":Landroid/support/design/widget/AppBarLayout$LayoutParams;
-    .end local v3    # "interpolator":Landroid/view/animation/Interpolator;
     :cond_23
     return-void
 
     .line 209
-    .restart local v0    # "child":Landroid/view/View;
-    .restart local v1    # "childLp":Landroid/support/design/widget/AppBarLayout$LayoutParams;
-    .restart local v3    # "interpolator":Landroid/view/animation/Interpolator;
     :cond_24
-    add-int/lit8 v2, v2, 0x1
+    add-int/lit8 v0, v1, 0x1
+
+    move v1, v0
 
     goto :goto_e
 .end method
 
 .method protected onMeasure(II)V
     .registers 3
-    .param p1, "widthMeasureSpec"    # I
-    .param p2, "heightMeasureSpec"    # I
 
     .prologue
     .line 199
@@ -1181,7 +1110,6 @@
 
 .method public removeOnOffsetChangedListener(Landroid/support/design/widget/AppBarLayout$OnOffsetChangedListener;)V
     .registers 3
-    .param p1, "listener"    # Landroid/support/design/widget/AppBarLayout$OnOffsetChangedListener;
 
     .prologue
     .line 192
@@ -1199,11 +1127,10 @@
 
 .method public setExpanded(Z)V
     .registers 3
-    .param p1, "expanded"    # Z
 
     .prologue
     .line 250
-    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->isLaidOut(Landroid/view/View;)Z
+    invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->E(Landroid/view/View;)Z
 
     move-result v0
 
@@ -1215,8 +1142,6 @@
 
 .method public setExpanded(ZZ)V
     .registers 5
-    .param p1, "expanded"    # Z
-    .param p2, "animate"    # Z
 
     .prologue
     .line 266
@@ -1258,7 +1183,6 @@
 
 .method public setOrientation(I)V
     .registers 4
-    .param p1, "orientation"    # I
 
     .prologue
     .line 230
@@ -1285,7 +1209,6 @@
 
 .method public setTargetElevation(F)V
     .registers 2
-    .param p1, "elevation"    # F
 
     .prologue
     .line 453

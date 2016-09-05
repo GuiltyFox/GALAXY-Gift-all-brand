@@ -4,20 +4,20 @@
 
 
 # virtual methods
-.method public abstract get(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+.method public abstract a()Landroid/graphics/Bitmap;
 .end method
 
-.method public abstract getSize(Landroid/graphics/Bitmap;)I
+.method public abstract a(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 .end method
 
-.method public abstract logBitmap(IILandroid/graphics/Bitmap$Config;)Ljava/lang/String;
+.method public abstract a(Landroid/graphics/Bitmap;)V
 .end method
 
-.method public abstract logBitmap(Landroid/graphics/Bitmap;)Ljava/lang/String;
+.method public abstract b(IILandroid/graphics/Bitmap$Config;)Ljava/lang/String;
 .end method
 
-.method public abstract put(Landroid/graphics/Bitmap;)V
+.method public abstract b(Landroid/graphics/Bitmap;)Ljava/lang/String;
 .end method
 
-.method public abstract removeLast()Landroid/graphics/Bitmap;
+.method public abstract c(Landroid/graphics/Bitmap;)I
 .end method

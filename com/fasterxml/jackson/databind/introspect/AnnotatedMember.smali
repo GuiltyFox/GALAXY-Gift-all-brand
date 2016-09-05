@@ -17,7 +17,6 @@
 # direct methods
 .method protected constructor <init>(Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;)V
     .registers 2
-    .param p1, "annotations"    # Lcom/fasterxml/jackson/databind/introspect/AnnotationMap;
 
     .prologue
     .line 28
@@ -34,7 +33,6 @@
 # virtual methods
 .method public final addIfNotPresent(Ljava/lang/annotation/Annotation;)V
     .registers 3
-    .param p1, "a"    # Ljava/lang/annotation/Annotation;
 
     .prologue
     .line 64
@@ -48,7 +46,6 @@
 
 .method public final addOrOverride(Ljava/lang/annotation/Annotation;)V
     .registers 3
-    .param p1, "a"    # Ljava/lang/annotation/Annotation;
 
     .prologue
     .line 55
@@ -136,19 +133,7 @@
 .end method
 
 .method public abstract getValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/UnsupportedOperationException;,
-            Ljava/lang/IllegalArgumentException;
-        }
-    .end annotation
 .end method
 
 .method public abstract setValue(Ljava/lang/Object;Ljava/lang/Object;)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/lang/UnsupportedOperationException;,
-            Ljava/lang/IllegalArgumentException;
-        }
-    .end annotation
 .end method

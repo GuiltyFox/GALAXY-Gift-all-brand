@@ -4,19 +4,8 @@
 
 
 # direct methods
-.method constructor <init>()V
-    .registers 1
-
-    .prologue
-    .line 25
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method static getButtonDrawable(Landroid/widget/CompoundButton;)Landroid/graphics/drawable/Drawable;
+.method static a(Landroid/widget/CompoundButton;)Landroid/graphics/drawable/Drawable;
     .registers 2
-    .param p0, "button"    # Landroid/widget/CompoundButton;
 
     .prologue
     .line 28

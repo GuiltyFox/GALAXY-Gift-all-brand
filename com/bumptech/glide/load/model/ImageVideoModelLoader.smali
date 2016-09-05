@@ -7,12 +7,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/bumptech/glide/load/model/ImageVideoModelLoader$ImageVideoFetcher;
-    }
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<A:",
@@ -27,28 +21,24 @@
 .end annotation
 
 
-# static fields
-.field private static final TAG:Ljava/lang/String; = "IVML"
-
-
 # instance fields
-.field private final fileDescriptorLoader:Lcom/bumptech/glide/load/model/ModelLoader;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lcom/bumptech/glide/load/model/ModelLoader",
-            "<TA;",
-            "Landroid/os/ParcelFileDescriptor;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field private final streamLoader:Lcom/bumptech/glide/load/model/ModelLoader;
+.field private final a:Lcom/bumptech/glide/load/model/ModelLoader;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Lcom/bumptech/glide/load/model/ModelLoader",
             "<TA;",
             "Ljava/io/InputStream;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+.field private final b:Lcom/bumptech/glide/load/model/ModelLoader;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lcom/bumptech/glide/load/model/ModelLoader",
+            "<TA;",
+            "Landroid/os/ParcelFileDescriptor;",
             ">;"
         }
     .end annotation
@@ -74,9 +64,6 @@
 
     .prologue
     .line 27
-    .local p0, "this":Lcom/bumptech/glide/load/model/ImageVideoModelLoader;, "Lcom/bumptech/glide/load/model/ImageVideoModelLoader<TA;>;"
-    .local p1, "streamLoader":Lcom/bumptech/glide/load/model/ModelLoader;, "Lcom/bumptech/glide/load/model/ModelLoader<TA;Ljava/io/InputStream;>;"
-    .local p2, "fileDescriptorLoader":Lcom/bumptech/glide/load/model/ModelLoader;, "Lcom/bumptech/glide/load/model/ModelLoader<TA;Landroid/os/ParcelFileDescriptor;>;"
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 28
@@ -95,10 +82,10 @@
 
     .line 31
     :cond_10
-    iput-object p1, p0, Lcom/bumptech/glide/load/model/ImageVideoModelLoader;->streamLoader:Lcom/bumptech/glide/load/model/ModelLoader;
+    iput-object p1, p0, Lcom/bumptech/glide/load/model/ImageVideoModelLoader;->a:Lcom/bumptech/glide/load/model/ModelLoader;
 
     .line 32
-    iput-object p2, p0, Lcom/bumptech/glide/load/model/ImageVideoModelLoader;->fileDescriptorLoader:Lcom/bumptech/glide/load/model/ModelLoader;
+    iput-object p2, p0, Lcom/bumptech/glide/load/model/ImageVideoModelLoader;->b:Lcom/bumptech/glide/load/model/ModelLoader;
 
     .line 33
     return-void
@@ -106,10 +93,8 @@
 
 
 # virtual methods
-.method public getResourceFetcher(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
+.method public a(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
     .registers 7
-    .param p2, "width"    # I
-    .param p3, "height"    # I
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TA;II)",
@@ -121,59 +106,57 @@
     .end annotation
 
     .prologue
-    .line 37
-    .local p0, "this":Lcom/bumptech/glide/load/model/ImageVideoModelLoader;, "Lcom/bumptech/glide/load/model/ImageVideoModelLoader<TA;>;"
-    .local p1, "model":Ljava/lang/Object;, "TA;"
     const/4 v1, 0x0
 
+    .line 37
     .line 38
-    .local v1, "streamFetcher":Lcom/bumptech/glide/load/data/DataFetcher;, "Lcom/bumptech/glide/load/data/DataFetcher<Ljava/io/InputStream;>;"
-    iget-object v2, p0, Lcom/bumptech/glide/load/model/ImageVideoModelLoader;->streamLoader:Lcom/bumptech/glide/load/model/ModelLoader;
+    iget-object v0, p0, Lcom/bumptech/glide/load/model/ImageVideoModelLoader;->a:Lcom/bumptech/glide/load/model/ModelLoader;
 
-    if-eqz v2, :cond_b
+    if-eqz v0, :cond_21
 
     .line 39
-    iget-object v2, p0, Lcom/bumptech/glide/load/model/ImageVideoModelLoader;->streamLoader:Lcom/bumptech/glide/load/model/ModelLoader;
+    iget-object v0, p0, Lcom/bumptech/glide/load/model/ImageVideoModelLoader;->a:Lcom/bumptech/glide/load/model/ModelLoader;
 
-    invoke-interface {v2, p1, p2, p3}, Lcom/bumptech/glide/load/model/ModelLoader;->getResourceFetcher(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
-
-    move-result-object v1
-
-    .line 41
-    :cond_b
-    const/4 v0, 0x0
-
-    .line 42
-    .local v0, "fileDescriptorFetcher":Lcom/bumptech/glide/load/data/DataFetcher;, "Lcom/bumptech/glide/load/data/DataFetcher<Landroid/os/ParcelFileDescriptor;>;"
-    iget-object v2, p0, Lcom/bumptech/glide/load/model/ImageVideoModelLoader;->fileDescriptorLoader:Lcom/bumptech/glide/load/model/ModelLoader;
-
-    if-eqz v2, :cond_16
-
-    .line 43
-    iget-object v2, p0, Lcom/bumptech/glide/load/model/ImageVideoModelLoader;->fileDescriptorLoader:Lcom/bumptech/glide/load/model/ModelLoader;
-
-    invoke-interface {v2, p1, p2, p3}, Lcom/bumptech/glide/load/model/ModelLoader;->getResourceFetcher(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
+    invoke-interface {v0, p1, p2, p3}, Lcom/bumptech/glide/load/model/ModelLoader;->a(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
 
     move-result-object v0
 
-    .line 46
-    :cond_16
-    if-nez v1, :cond_1a
+    .line 42
+    :goto_b
+    iget-object v2, p0, Lcom/bumptech/glide/load/model/ImageVideoModelLoader;->b:Lcom/bumptech/glide/load/model/ModelLoader;
 
-    if-eqz v0, :cond_20
+    if-eqz v2, :cond_1f
+
+    .line 43
+    iget-object v2, p0, Lcom/bumptech/glide/load/model/ImageVideoModelLoader;->b:Lcom/bumptech/glide/load/model/ModelLoader;
+
+    invoke-interface {v2, p1, p2, p3}, Lcom/bumptech/glide/load/model/ModelLoader;->a(Ljava/lang/Object;II)Lcom/bumptech/glide/load/data/DataFetcher;
+
+    move-result-object v2
+
+    .line 46
+    :goto_15
+    if-nez v0, :cond_19
+
+    if-eqz v2, :cond_1e
 
     .line 47
-    :cond_1a
-    new-instance v2, Lcom/bumptech/glide/load/model/ImageVideoModelLoader$ImageVideoFetcher;
+    :cond_19
+    new-instance v1, Lcom/bumptech/glide/load/model/ImageVideoModelLoader$ImageVideoFetcher;
 
-    invoke-direct {v2, v1, v0}, Lcom/bumptech/glide/load/model/ImageVideoModelLoader$ImageVideoFetcher;-><init>(Lcom/bumptech/glide/load/data/DataFetcher;Lcom/bumptech/glide/load/data/DataFetcher;)V
+    invoke-direct {v1, v0, v2}, Lcom/bumptech/glide/load/model/ImageVideoModelLoader$ImageVideoFetcher;-><init>(Lcom/bumptech/glide/load/data/DataFetcher;Lcom/bumptech/glide/load/data/DataFetcher;)V
 
     .line 49
-    :goto_1f
-    return-object v2
+    :cond_1e
+    return-object v1
 
-    :cond_20
-    const/4 v2, 0x0
+    :cond_1f
+    move-object v2, v1
 
-    goto :goto_1f
+    goto :goto_15
+
+    :cond_21
+    move-object v0, v1
+
+    goto :goto_b
 .end method

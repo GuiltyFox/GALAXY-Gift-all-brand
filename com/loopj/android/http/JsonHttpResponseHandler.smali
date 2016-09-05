@@ -32,7 +32,6 @@
 
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 3
-    .param p1, "encoding"    # Ljava/lang/String;
 
     .prologue
     .line 57
@@ -49,8 +48,6 @@
 
 .method public constructor <init>(Ljava/lang/String;Z)V
     .registers 4
-    .param p1, "encoding"    # Ljava/lang/String;
-    .param p2, "useRFC5179CompatibilityMode"    # Z
 
     .prologue
     .line 77
@@ -70,7 +67,6 @@
 
 .method public constructor <init>(Z)V
     .registers 3
-    .param p1, "useRFC5179CompatibilityMode"    # Z
 
     .prologue
     .line 66
@@ -92,7 +88,6 @@
 
 .method static synthetic access$000(Lcom/loopj/android/http/JsonHttpResponseHandler;)Z
     .registers 2
-    .param p0, "x0"    # Lcom/loopj/android/http/JsonHttpResponseHandler;
 
     .prologue
     .line 37
@@ -115,10 +110,6 @@
 
 .method public onFailure(I[Lcz/msebera/android/httpclient/Header;Ljava/lang/String;Ljava/lang/Throwable;)V
     .registers 8
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseString"    # Ljava/lang/String;
-    .param p4, "throwable"    # Ljava/lang/Throwable;
 
     .prologue
     .line 129
@@ -136,10 +127,6 @@
 
 .method public onFailure(I[Lcz/msebera/android/httpclient/Header;Ljava/lang/Throwable;Lorg/json/JSONArray;)V
     .registers 8
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "throwable"    # Ljava/lang/Throwable;
-    .param p4, "errorResponse"    # Lorg/json/JSONArray;
 
     .prologue
     .line 124
@@ -157,10 +144,6 @@
 
 .method public onFailure(I[Lcz/msebera/android/httpclient/Header;Ljava/lang/Throwable;Lorg/json/JSONObject;)V
     .registers 8
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "throwable"    # Ljava/lang/Throwable;
-    .param p4, "errorResponse"    # Lorg/json/JSONObject;
 
     .prologue
     .line 112
@@ -178,10 +161,6 @@
 
 .method public final onFailure(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
     .registers 11
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBytes"    # [B
-    .param p4, "throwable"    # Ljava/lang/Throwable;
 
     .prologue
     .line 190
@@ -203,7 +182,6 @@
     invoke-direct/range {v0 .. v5}, Lcom/loopj/android/http/JsonHttpResponseHandler$2;-><init>(Lcom/loopj/android/http/JsonHttpResponseHandler;[BI[Lcz/msebera/android/httpclient/Header;Ljava/lang/Throwable;)V
 
     .line 225
-    .local v0, "parser":Ljava/lang/Runnable;
     invoke-virtual {p0}, Lcom/loopj/android/http/JsonHttpResponseHandler;->getUseSynchronousMode()Z
 
     move-result v1
@@ -224,43 +202,37 @@
     invoke-virtual {v1}, Ljava/lang/Thread;->start()V
 
     .line 235
-    .end local v0    # "parser":Ljava/lang/Runnable;
     :goto_20
     return-void
 
     .line 229
-    .restart local v0    # "parser":Ljava/lang/Runnable;
     :cond_21
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     goto :goto_20
 
     .line 232
-    .end local v0    # "parser":Ljava/lang/Runnable;
     :cond_25
-    sget-object v1, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
+    sget-object v0, Lcom/loopj/android/http/AsyncHttpClient;->log:Lcom/loopj/android/http/LogInterface;
 
-    const-string/jumbo v2, "JsonHttpRH"
+    const-string/jumbo v1, "JsonHttpRH"
 
-    const-string/jumbo v3, "response body is null, calling onFailure(Throwable, JSONObject)"
+    const-string/jumbo v2, "response body is null, calling onFailure(Throwable, JSONObject)"
 
-    invoke-interface {v1, v2, v3}, Lcom/loopj/android/http/LogInterface;->v(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-interface {v0, v1, v2}, Lcom/loopj/android/http/LogInterface;->v(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 233
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
-    check-cast v1, Lorg/json/JSONObject;
+    check-cast v0, Lorg/json/JSONObject;
 
-    invoke-virtual {p0, p1, p2, p4, v1}, Lcom/loopj/android/http/JsonHttpResponseHandler;->onFailure(I[Lcz/msebera/android/httpclient/Header;Ljava/lang/Throwable;Lorg/json/JSONObject;)V
+    invoke-virtual {p0, p1, p2, p4, v0}, Lcom/loopj/android/http/JsonHttpResponseHandler;->onFailure(I[Lcz/msebera/android/httpclient/Header;Ljava/lang/Throwable;Lorg/json/JSONObject;)V
 
     goto :goto_20
 .end method
 
 .method public onSuccess(I[Lcz/msebera/android/httpclient/Header;Ljava/lang/String;)V
     .registers 7
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseString"    # Ljava/lang/String;
 
     .prologue
     .line 134
@@ -278,9 +250,6 @@
 
 .method public onSuccess(I[Lcz/msebera/android/httpclient/Header;Lorg/json/JSONArray;)V
     .registers 7
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "response"    # Lorg/json/JSONArray;
 
     .prologue
     .line 100
@@ -298,9 +267,6 @@
 
 .method public onSuccess(I[Lcz/msebera/android/httpclient/Header;Lorg/json/JSONObject;)V
     .registers 7
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "response"    # Lorg/json/JSONObject;
 
     .prologue
     .line 89
@@ -318,15 +284,12 @@
 
 .method public final onSuccess(I[Lcz/msebera/android/httpclient/Header;[B)V
     .registers 6
-    .param p1, "statusCode"    # I
-    .param p2, "headers"    # [Lcz/msebera/android/httpclient/Header;
-    .param p3, "responseBytes"    # [B
 
     .prologue
     .line 139
-    const/16 v1, 0xcc
+    const/16 v0, 0xcc
 
-    if-eq p1, v1, :cond_22
+    if-eq p1, v0, :cond_22
 
     .line 140
     new-instance v0, Lcom/loopj/android/http/JsonHttpResponseHandler$1;
@@ -334,7 +297,6 @@
     invoke-direct {v0, p0, p3, p1, p2}, Lcom/loopj/android/http/JsonHttpResponseHandler$1;-><init>(Lcom/loopj/android/http/JsonHttpResponseHandler;[BI[Lcz/msebera/android/httpclient/Header;)V
 
     .line 177
-    .local v0, "parser":Ljava/lang/Runnable;
     invoke-virtual {p0}, Lcom/loopj/android/http/JsonHttpResponseHandler;->getUseSynchronousMode()Z
 
     move-result v1
@@ -355,204 +317,209 @@
     invoke-virtual {v1}, Ljava/lang/Thread;->start()V
 
     .line 186
-    .end local v0    # "parser":Ljava/lang/Runnable;
     :goto_1d
     return-void
 
     .line 181
-    .restart local v0    # "parser":Ljava/lang/Runnable;
     :cond_1e
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     goto :goto_1d
 
     .line 184
-    .end local v0    # "parser":Ljava/lang/Runnable;
     :cond_22
-    new-instance v1, Lorg/json/JSONObject;
+    new-instance v0, Lorg/json/JSONObject;
 
-    invoke-direct {v1}, Lorg/json/JSONObject;-><init>()V
+    invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
 
-    invoke-virtual {p0, p1, p2, v1}, Lcom/loopj/android/http/JsonHttpResponseHandler;->onSuccess(I[Lcz/msebera/android/httpclient/Header;Lorg/json/JSONObject;)V
+    invoke-virtual {p0, p1, p2, v0}, Lcom/loopj/android/http/JsonHttpResponseHandler;->onSuccess(I[Lcz/msebera/android/httpclient/Header;Lorg/json/JSONObject;)V
 
     goto :goto_1d
 .end method
 
 .method protected parseResponse([B)Ljava/lang/Object;
     .registers 6
-    .param p1, "responseBody"    # [B
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Lorg/json/JSONException;
-        }
-    .end annotation
 
     .prologue
+    const/4 v0, 0x0
+
     .line 246
     if-nez p1, :cond_4
-
-    .line 247
-    const/4 v1, 0x0
 
     .line 274
     :cond_3
     :goto_3
-    return-object v1
-
-    .line 248
-    :cond_4
-    const/4 v1, 0x0
+    return-object v0
 
     .line 250
-    .local v1, "result":Ljava/lang/Object;
+    :cond_4
     invoke-virtual {p0}, Lcom/loopj/android/http/JsonHttpResponseHandler;->getCharset()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {p1, v2}, Lcom/loopj/android/http/JsonHttpResponseHandler;->getResponseString([BLjava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v1}, Lcom/loopj/android/http/JsonHttpResponseHandler;->getResponseString([BLjava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 251
-    .local v0, "jsonString":Ljava/lang/String;
-    if-eqz v0, :cond_32
+    if-eqz v1, :cond_8a
 
     .line 252
-    invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
     .line 253
     iget-boolean v2, p0, Lcom/loopj/android/http/JsonHttpResponseHandler;->useRFC5179CompatibilityMode:Z
 
-    if-eqz v2, :cond_36
+    if-eqz v2, :cond_38
 
     .line 254
     const-string/jumbo v2, "{"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-nez v2, :cond_29
+    if-nez v2, :cond_28
 
     const-string/jumbo v2, "["
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_8a
 
     .line 255
-    :cond_29
-    new-instance v2, Lorg/json/JSONTokener;
+    :cond_28
+    new-instance v0, Lorg/json/JSONTokener;
 
-    invoke-direct {v2, v0}, Lorg/json/JSONTokener;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lorg/json/JSONTokener;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v2}, Lorg/json/JSONTokener;->nextValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lorg/json/JSONTokener;->nextValue()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    .line 271
-    .end local v1    # "result":Ljava/lang/Object;
-    :cond_32
-    :goto_32
-    if-nez v1, :cond_3
+    move-object v3, v1
 
-    .line 272
     move-object v1, v0
 
-    .local v1, "result":Ljava/lang/String;
+    move-object v0, v3
+
+    .line 271
+    :goto_34
+    if-eqz v1, :cond_3
+
+    move-object v0, v1
+
     goto :goto_3
 
     .line 260
-    .local v1, "result":Ljava/lang/Object;
-    :cond_36
+    :cond_38
     const-string/jumbo v2, "{"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_48
+    if-eqz v2, :cond_4a
 
     const-string/jumbo v2, "}"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-nez v2, :cond_5a
+    if-nez v2, :cond_5c
 
-    :cond_48
+    :cond_4a
     const-string/jumbo v2, "["
 
     .line 261
-    invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_64
+    if-eqz v2, :cond_69
 
     const-string/jumbo v2, "]"
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_64
+    if-eqz v2, :cond_69
 
     .line 262
-    :cond_5a
-    new-instance v2, Lorg/json/JSONTokener;
+    :cond_5c
+    new-instance v0, Lorg/json/JSONTokener;
 
-    invoke-direct {v2, v0}, Lorg/json/JSONTokener;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Lorg/json/JSONTokener;-><init>(Ljava/lang/String;)V
 
-    invoke-virtual {v2}, Lorg/json/JSONTokener;->nextValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lorg/json/JSONTokener;->nextValue()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    goto :goto_32
+    move-object v3, v1
+
+    move-object v1, v0
+
+    move-object v0, v3
+
+    goto :goto_34
 
     .line 266
-    :cond_64
+    :cond_69
     const-string/jumbo v2, "\""
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_8a
 
     const-string/jumbo v2, "\""
 
-    invoke-virtual {v0, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_32
+    if-eqz v2, :cond_8a
 
     .line 267
-    const/4 v2, 0x1
+    const/4 v0, 0x1
 
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    move-result v3
+    move-result v2
 
-    add-int/lit8 v3, v3, -0x1
+    add-int/lit8 v2, v2, -0x1
 
-    invoke-virtual {v0, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    invoke-virtual {v1, v0, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    .local v1, "result":Ljava/lang/String;
-    goto :goto_32
+    move-object v3, v1
+
+    move-object v1, v0
+
+    move-object v0, v3
+
+    goto :goto_34
+
+    :cond_8a
+    move-object v3, v1
+
+    move-object v1, v0
+
+    move-object v0, v3
+
+    goto :goto_34
 .end method
 
 .method public setUseRFC5179CompatibilityMode(Z)V
     .registers 2
-    .param p1, "useRFC5179CompatibilityMode"    # Z
 
     .prologue
     .line 282

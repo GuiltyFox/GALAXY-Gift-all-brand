@@ -8,11 +8,6 @@
     value = Lcom/fasterxml/jackson/databind/util/NameTransformer;->simpleTransformer(Ljava/lang/String;Ljava/lang/String;)Lcom/fasterxml/jackson/databind/util/NameTransformer;
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic val$prefix:Ljava/lang/String;
@@ -39,31 +34,29 @@
 # virtual methods
 .method public reverse(Ljava/lang/String;)Ljava/lang/String;
     .registers 6
-    .param p1, "transformed"    # Ljava/lang/String;
 
     .prologue
     .line 44
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/NameTransformer$2;->val$prefix:Ljava/lang/String;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/NameTransformer$2;->val$prefix:Ljava/lang/String;
 
-    invoke-virtual {p1, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {p1, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v1
+    move-result v0
 
-    if-eqz v1, :cond_2b
+    if-eqz v0, :cond_2b
 
     .line 45
-    iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/NameTransformer$2;->val$prefix:Ljava/lang/String;
+    iget-object v0, p0, Lcom/fasterxml/jackson/databind/util/NameTransformer$2;->val$prefix:Ljava/lang/String;
 
-    invoke-virtual {v1}, Ljava/lang/String;->length()I
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    move-result v1
+    move-result v0
 
-    invoke-virtual {p1, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    invoke-virtual {p1, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v0
 
     .line 46
-    .local v0, "str":Ljava/lang/String;
     iget-object v1, p0, Lcom/fasterxml/jackson/databind/util/NameTransformer$2;->val$suffix:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
@@ -89,15 +82,14 @@
 
     invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 50
-    .end local v0    # "str":Ljava/lang/String;
     :goto_2a
-    return-object v1
+    return-object v0
 
     :cond_2b
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     goto :goto_2a
 .end method
@@ -150,7 +142,6 @@
 
 .method public transform(Ljava/lang/String;)Ljava/lang/String;
     .registers 4
-    .param p1, "name"    # Ljava/lang/String;
 
     .prologue
     .line 41

@@ -4,15 +4,6 @@
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/fasterxml/jackson/databind/util/ArrayBuilders;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
-    name = "FloatBuilder"
-.end annotation
-
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lcom/fasterxml/jackson/databind/util/PrimitiveArrayBuilder",
@@ -36,7 +27,6 @@
 # virtual methods
 .method public bridge synthetic _constructArray(I)Ljava/lang/Object;
     .registers 3
-    .param p1, "x0"    # I
 
     .prologue
     .line 126
@@ -49,7 +39,6 @@
 
 .method public final _constructArray(I)[F
     .registers 3
-    .param p1, "len"    # I
 
     .prologue
     .line 131

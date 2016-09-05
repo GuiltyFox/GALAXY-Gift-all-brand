@@ -5,12 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lrx/internal/operators/OperatorBufferWithSize;->call(Lrx/Subscriber;)Lrx/Subscriber;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
+    value = Lrx/internal/operators/OperatorBufferWithSize;->a(Lrx/Subscriber;)Lrx/Subscriber;
 .end annotation
 
 .annotation system Ldalvik/annotation/Signature;
@@ -22,7 +17,7 @@
 
 
 # instance fields
-.field buffer:Ljava/util/List;
+.field a:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
@@ -31,9 +26,9 @@
     .end annotation
 .end field
 
-.field final synthetic this$0:Lrx/internal/operators/OperatorBufferWithSize;
+.field final synthetic b:Lrx/Subscriber;
 
-.field final synthetic val$child:Lrx/Subscriber;
+.field final synthetic c:Lrx/internal/operators/OperatorBufferWithSize;
 
 
 # direct methods
@@ -42,11 +37,9 @@
 
     .prologue
     .line 70
-    .local p0, "this":Lrx/internal/operators/OperatorBufferWithSize$1;, "Lrx/internal/operators/OperatorBufferWithSize.1;"
-    .local p2, "x0":Lrx/Subscriber;, "Lrx/Subscriber<*>;"
-    iput-object p1, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->this$0:Lrx/internal/operators/OperatorBufferWithSize;
+    iput-object p1, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->c:Lrx/internal/operators/OperatorBufferWithSize;
 
-    iput-object p3, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->val$child:Lrx/Subscriber;
+    iput-object p3, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->b:Lrx/Subscriber;
 
     invoke-direct {p0, p2}, Lrx/Subscriber;-><init>(Lrx/Subscriber;)V
 
@@ -55,74 +48,43 @@
 
 
 # virtual methods
-.method public onCompleted()V
-    .registers 4
-
-    .prologue
-    .line 116
-    .local p0, "this":Lrx/internal/operators/OperatorBufferWithSize$1;, "Lrx/internal/operators/OperatorBufferWithSize.1;"
-    iget-object v0, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->buffer:Ljava/util/List;
-
-    .line 117
-    .local v0, "oldBuffer":Ljava/util/List;, "Ljava/util/List<TT;>;"
-    const/4 v2, 0x0
-
-    iput-object v2, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->buffer:Ljava/util/List;
-
-    .line 118
-    if-eqz v0, :cond_c
-
-    .line 120
-    :try_start_7
-    iget-object v2, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->val$child:Lrx/Subscriber;
-
-    invoke-virtual {v2, v0}, Lrx/Subscriber;->onNext(Ljava/lang/Object;)V
-    :try_end_c
-    .catch Ljava/lang/Throwable; {:try_start_7 .. :try_end_c} :catch_12
-
-    .line 126
-    :cond_c
-    iget-object v2, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->val$child:Lrx/Subscriber;
-
-    invoke-virtual {v2}, Lrx/Subscriber;->onCompleted()V
-
-    .line 127
-    :goto_11
-    return-void
-
-    .line 121
-    :catch_12
-    move-exception v1
-
-    .line 122
-    .local v1, "t":Ljava/lang/Throwable;
-    invoke-static {v1, p0}, Lrx/exceptions/Exceptions;->throwOrReport(Ljava/lang/Throwable;Lrx/Observer;)V
-
-    goto :goto_11
-.end method
-
-.method public onError(Ljava/lang/Throwable;)V
+.method public a(Ljava/lang/Throwable;)V
     .registers 3
-    .param p1, "e"    # Ljava/lang/Throwable;
 
     .prologue
     .line 110
-    .local p0, "this":Lrx/internal/operators/OperatorBufferWithSize$1;, "Lrx/internal/operators/OperatorBufferWithSize.1;"
     const/4 v0, 0x0
 
-    iput-object v0, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->buffer:Ljava/util/List;
+    iput-object v0, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->a:Ljava/util/List;
 
     .line 111
-    iget-object v0, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->val$child:Lrx/Subscriber;
+    iget-object v0, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->b:Lrx/Subscriber;
 
-    invoke-virtual {v0, p1}, Lrx/Subscriber;->onError(Ljava/lang/Throwable;)V
+    invoke-virtual {v0, p1}, Lrx/Subscriber;->a(Ljava/lang/Throwable;)V
 
     .line 112
     return-void
 .end method
 
-.method public onNext(Ljava/lang/Object;)V
-    .registers 5
+.method public a(Lrx/Producer;)V
+    .registers 4
+
+    .prologue
+    .line 75
+    iget-object v0, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->b:Lrx/Subscriber;
+
+    new-instance v1, Lrx/internal/operators/OperatorBufferWithSize$1$1;
+
+    invoke-direct {v1, p0, p1}, Lrx/internal/operators/OperatorBufferWithSize$1$1;-><init>(Lrx/internal/operators/OperatorBufferWithSize$1;Lrx/Producer;)V
+
+    invoke-virtual {v0, v1}, Lrx/Subscriber;->a(Lrx/Producer;)V
+
+    .line 93
+    return-void
+.end method
+
+.method public a_(Ljava/lang/Object;)V
+    .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
@@ -131,77 +93,97 @@
 
     .prologue
     .line 97
-    .local p0, "this":Lrx/internal/operators/OperatorBufferWithSize$1;, "Lrx/internal/operators/OperatorBufferWithSize.1;"
-    .local p1, "t":Ljava/lang/Object;, "TT;"
-    iget-object v1, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->buffer:Ljava/util/List;
+    iget-object v0, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->a:Ljava/util/List;
 
-    if-nez v1, :cond_f
+    if-nez v0, :cond_f
 
     .line 98
-    new-instance v1, Ljava/util/ArrayList;
+    new-instance v0, Ljava/util/ArrayList;
 
-    iget-object v2, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->this$0:Lrx/internal/operators/OperatorBufferWithSize;
+    iget-object v1, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->c:Lrx/internal/operators/OperatorBufferWithSize;
 
-    iget v2, v2, Lrx/internal/operators/OperatorBufferWithSize;->count:I
+    iget v1, v1, Lrx/internal/operators/OperatorBufferWithSize;->a:I
 
-    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
 
-    iput-object v1, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->buffer:Ljava/util/List;
+    iput-object v0, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->a:Ljava/util/List;
 
     .line 100
     :cond_f
-    iget-object v1, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->buffer:Ljava/util/List;
+    iget-object v0, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->a:Ljava/util/List;
 
-    invoke-interface {v1, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v0, p1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 101
-    iget-object v1, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->buffer:Ljava/util/List;
+    iget-object v0, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->a:Ljava/util/List;
 
-    invoke-interface {v1}, Ljava/util/List;->size()I
+    invoke-interface {v0}, Ljava/util/List;->size()I
 
-    move-result v1
+    move-result v0
 
-    iget-object v2, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->this$0:Lrx/internal/operators/OperatorBufferWithSize;
+    iget-object v1, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->c:Lrx/internal/operators/OperatorBufferWithSize;
 
-    iget v2, v2, Lrx/internal/operators/OperatorBufferWithSize;->count:I
+    iget v1, v1, Lrx/internal/operators/OperatorBufferWithSize;->a:I
 
-    if-ne v1, v2, :cond_2a
+    if-ne v0, v1, :cond_2a
 
     .line 102
-    iget-object v0, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->buffer:Ljava/util/List;
+    iget-object v0, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->a:Ljava/util/List;
 
     .line 103
-    .local v0, "oldBuffer":Ljava/util/List;, "Ljava/util/List<TT;>;"
     const/4 v1, 0x0
 
-    iput-object v1, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->buffer:Ljava/util/List;
+    iput-object v1, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->a:Ljava/util/List;
 
     .line 104
-    iget-object v1, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->val$child:Lrx/Subscriber;
+    iget-object v1, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->b:Lrx/Subscriber;
 
-    invoke-virtual {v1, v0}, Lrx/Subscriber;->onNext(Ljava/lang/Object;)V
+    invoke-virtual {v1, v0}, Lrx/Subscriber;->a_(Ljava/lang/Object;)V
 
     .line 106
-    .end local v0    # "oldBuffer":Ljava/util/List;, "Ljava/util/List<TT;>;"
     :cond_2a
     return-void
 .end method
 
-.method public setProducer(Lrx/Producer;)V
-    .registers 4
-    .param p1, "producer"    # Lrx/Producer;
+.method public i_()V
+    .registers 3
 
     .prologue
-    .line 75
-    .local p0, "this":Lrx/internal/operators/OperatorBufferWithSize$1;, "Lrx/internal/operators/OperatorBufferWithSize.1;"
-    iget-object v0, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->val$child:Lrx/Subscriber;
+    .line 116
+    iget-object v0, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->a:Ljava/util/List;
 
-    new-instance v1, Lrx/internal/operators/OperatorBufferWithSize$1$1;
+    .line 117
+    const/4 v1, 0x0
 
-    invoke-direct {v1, p0, p1}, Lrx/internal/operators/OperatorBufferWithSize$1$1;-><init>(Lrx/internal/operators/OperatorBufferWithSize$1;Lrx/Producer;)V
+    iput-object v1, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->a:Ljava/util/List;
 
-    invoke-virtual {v0, v1}, Lrx/Subscriber;->setProducer(Lrx/Producer;)V
+    .line 118
+    if-eqz v0, :cond_c
 
-    .line 93
+    .line 120
+    :try_start_7
+    iget-object v1, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->b:Lrx/Subscriber;
+
+    invoke-virtual {v1, v0}, Lrx/Subscriber;->a_(Ljava/lang/Object;)V
+    :try_end_c
+    .catch Ljava/lang/Throwable; {:try_start_7 .. :try_end_c} :catch_12
+
+    .line 126
+    :cond_c
+    iget-object v0, p0, Lrx/internal/operators/OperatorBufferWithSize$1;->b:Lrx/Subscriber;
+
+    invoke-virtual {v0}, Lrx/Subscriber;->i_()V
+
+    .line 127
+    :goto_11
     return-void
+
+    .line 121
+    :catch_12
+    move-exception v0
+
+    .line 122
+    invoke-static {v0, p0}, Lrx/exceptions/Exceptions;->a(Ljava/lang/Throwable;Lrx/Observer;)V
+
+    goto :goto_11
 .end method

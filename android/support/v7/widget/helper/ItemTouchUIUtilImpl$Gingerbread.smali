@@ -6,17 +6,6 @@
 .implements Landroid/support/v7/widget/helper/ItemTouchUIUtil;
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Landroid/support/v7/widget/helper/ItemTouchUIUtilImpl;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
-    name = "Gingerbread"
-.end annotation
-
-
 # direct methods
 .method constructor <init>()V
     .registers 1
@@ -28,13 +17,8 @@
     return-void
 .end method
 
-.method private draw(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/view/View;FF)V
+.method private a(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/view/View;FF)V
     .registers 8
-    .param p1, "c"    # Landroid/graphics/Canvas;
-    .param p2, "parent"    # Landroid/support/v7/widget/RecyclerView;
-    .param p3, "view"    # Landroid/view/View;
-    .param p4, "dX"    # F
-    .param p5, "dY"    # F
 
     .prologue
     .line 105
@@ -59,7 +43,6 @@
 # virtual methods
 .method public clearView(Landroid/view/View;)V
     .registers 3
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 113
@@ -73,13 +56,6 @@
 
 .method public onDraw(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/view/View;FFIZ)V
     .registers 9
-    .param p1, "c"    # Landroid/graphics/Canvas;
-    .param p2, "recyclerView"    # Landroid/support/v7/widget/RecyclerView;
-    .param p3, "view"    # Landroid/view/View;
-    .param p4, "dX"    # F
-    .param p5, "dY"    # F
-    .param p6, "actionState"    # I
-    .param p7, "isCurrentlyActive"    # Z
 
     .prologue
     .line 124
@@ -88,7 +64,7 @@
     if-eq p6, v0, :cond_6
 
     .line 125
-    invoke-direct/range {p0 .. p5}, Landroid/support/v7/widget/helper/ItemTouchUIUtilImpl$Gingerbread;->draw(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/view/View;FF)V
+    invoke-direct/range {p0 .. p5}, Landroid/support/v7/widget/helper/ItemTouchUIUtilImpl$Gingerbread;->a(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/view/View;FF)V
 
     .line 127
     :cond_6
@@ -97,13 +73,6 @@
 
 .method public onDrawOver(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/view/View;FFIZ)V
     .registers 9
-    .param p1, "c"    # Landroid/graphics/Canvas;
-    .param p2, "recyclerView"    # Landroid/support/v7/widget/RecyclerView;
-    .param p3, "view"    # Landroid/view/View;
-    .param p4, "dX"    # F
-    .param p5, "dY"    # F
-    .param p6, "actionState"    # I
-    .param p7, "isCurrentlyActive"    # Z
 
     .prologue
     .line 133
@@ -112,7 +81,7 @@
     if-ne p6, v0, :cond_6
 
     .line 134
-    invoke-direct/range {p0 .. p5}, Landroid/support/v7/widget/helper/ItemTouchUIUtilImpl$Gingerbread;->draw(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/view/View;FF)V
+    invoke-direct/range {p0 .. p5}, Landroid/support/v7/widget/helper/ItemTouchUIUtilImpl$Gingerbread;->a(Landroid/graphics/Canvas;Landroid/support/v7/widget/RecyclerView;Landroid/view/View;FF)V
 
     .line 136
     :cond_6
@@ -121,7 +90,6 @@
 
 .method public onSelected(Landroid/view/View;)V
     .registers 3
-    .param p1, "view"    # Landroid/view/View;
 
     .prologue
     .line 118

@@ -3,16 +3,8 @@
 .source "ZXingScannerView.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lme/dm7/barcodescanner/zxing/ZXingScannerView$ResultHandler;
-    }
-.end annotation
-
-
 # static fields
-.field public static final ALL_FORMATS:Ljava/util/List;
+.field public static final a:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
@@ -25,7 +17,9 @@
 
 
 # instance fields
-.field private mFormats:Ljava/util/List;
+.field private b:Lcom/google/zxing/MultiFormatReader;
+
+.field private c:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List",
@@ -36,9 +30,7 @@
     .end annotation
 .end field
 
-.field private mMultiFormatReader:Lcom/google/zxing/MultiFormatReader;
-
-.field private mResultHandler:Lme/dm7/barcodescanner/zxing/ZXingScannerView$ResultHandler;
+.field private d:Lme/dm7/barcodescanner/zxing/ZXingScannerView$ResultHandler;
 
 
 # direct methods
@@ -51,96 +43,96 @@
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    sput-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->ALL_FORMATS:Ljava/util/List;
+    sput-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->a:Ljava/util/List;
 
     .line 38
-    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->ALL_FORMATS:Ljava/util/List;
+    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->a:Ljava/util/List;
 
-    sget-object v1, Lcom/google/zxing/BarcodeFormat;->UPC_A:Lcom/google/zxing/BarcodeFormat;
+    sget-object v1, Lcom/google/zxing/BarcodeFormat;->o:Lcom/google/zxing/BarcodeFormat;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 39
-    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->ALL_FORMATS:Ljava/util/List;
+    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->a:Ljava/util/List;
 
-    sget-object v1, Lcom/google/zxing/BarcodeFormat;->UPC_E:Lcom/google/zxing/BarcodeFormat;
+    sget-object v1, Lcom/google/zxing/BarcodeFormat;->p:Lcom/google/zxing/BarcodeFormat;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 40
-    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->ALL_FORMATS:Ljava/util/List;
+    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->a:Ljava/util/List;
 
-    sget-object v1, Lcom/google/zxing/BarcodeFormat;->EAN_13:Lcom/google/zxing/BarcodeFormat;
+    sget-object v1, Lcom/google/zxing/BarcodeFormat;->h:Lcom/google/zxing/BarcodeFormat;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 41
-    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->ALL_FORMATS:Ljava/util/List;
+    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->a:Ljava/util/List;
 
-    sget-object v1, Lcom/google/zxing/BarcodeFormat;->EAN_8:Lcom/google/zxing/BarcodeFormat;
+    sget-object v1, Lcom/google/zxing/BarcodeFormat;->g:Lcom/google/zxing/BarcodeFormat;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 42
-    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->ALL_FORMATS:Ljava/util/List;
+    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->a:Ljava/util/List;
 
-    sget-object v1, Lcom/google/zxing/BarcodeFormat;->RSS_14:Lcom/google/zxing/BarcodeFormat;
+    sget-object v1, Lcom/google/zxing/BarcodeFormat;->m:Lcom/google/zxing/BarcodeFormat;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 43
-    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->ALL_FORMATS:Ljava/util/List;
+    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->a:Ljava/util/List;
 
-    sget-object v1, Lcom/google/zxing/BarcodeFormat;->CODE_39:Lcom/google/zxing/BarcodeFormat;
+    sget-object v1, Lcom/google/zxing/BarcodeFormat;->c:Lcom/google/zxing/BarcodeFormat;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 44
-    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->ALL_FORMATS:Ljava/util/List;
+    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->a:Ljava/util/List;
 
-    sget-object v1, Lcom/google/zxing/BarcodeFormat;->CODE_93:Lcom/google/zxing/BarcodeFormat;
+    sget-object v1, Lcom/google/zxing/BarcodeFormat;->d:Lcom/google/zxing/BarcodeFormat;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 45
-    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->ALL_FORMATS:Ljava/util/List;
+    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->a:Ljava/util/List;
 
-    sget-object v1, Lcom/google/zxing/BarcodeFormat;->CODE_128:Lcom/google/zxing/BarcodeFormat;
+    sget-object v1, Lcom/google/zxing/BarcodeFormat;->e:Lcom/google/zxing/BarcodeFormat;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 46
-    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->ALL_FORMATS:Ljava/util/List;
+    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->a:Ljava/util/List;
 
-    sget-object v1, Lcom/google/zxing/BarcodeFormat;->ITF:Lcom/google/zxing/BarcodeFormat;
+    sget-object v1, Lcom/google/zxing/BarcodeFormat;->i:Lcom/google/zxing/BarcodeFormat;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 47
-    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->ALL_FORMATS:Ljava/util/List;
+    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->a:Ljava/util/List;
 
-    sget-object v1, Lcom/google/zxing/BarcodeFormat;->CODABAR:Lcom/google/zxing/BarcodeFormat;
+    sget-object v1, Lcom/google/zxing/BarcodeFormat;->b:Lcom/google/zxing/BarcodeFormat;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 48
-    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->ALL_FORMATS:Ljava/util/List;
+    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->a:Ljava/util/List;
 
-    sget-object v1, Lcom/google/zxing/BarcodeFormat;->QR_CODE:Lcom/google/zxing/BarcodeFormat;
+    sget-object v1, Lcom/google/zxing/BarcodeFormat;->l:Lcom/google/zxing/BarcodeFormat;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 49
-    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->ALL_FORMATS:Ljava/util/List;
+    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->a:Ljava/util/List;
 
-    sget-object v1, Lcom/google/zxing/BarcodeFormat;->DATA_MATRIX:Lcom/google/zxing/BarcodeFormat;
+    sget-object v1, Lcom/google/zxing/BarcodeFormat;->f:Lcom/google/zxing/BarcodeFormat;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     .line 50
-    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->ALL_FORMATS:Ljava/util/List;
+    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->a:Ljava/util/List;
 
-    sget-object v1, Lcom/google/zxing/BarcodeFormat;->PDF_417:Lcom/google/zxing/BarcodeFormat;
+    sget-object v1, Lcom/google/zxing/BarcodeFormat;->k:Lcom/google/zxing/BarcodeFormat;
 
     invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -150,36 +142,19 @@
 
 .method public constructor <init>(Landroid/content/Context;)V
     .registers 2
-    .param p1, "context"    # Landroid/content/Context;
 
     .prologue
     .line 54
     invoke-direct {p0, p1}, Lme/dm7/barcodescanner/core/BarcodeScannerView;-><init>(Landroid/content/Context;)V
 
     .line 55
-    invoke-direct {p0}, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->initMultiFormatReader()V
+    invoke-direct {p0}, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->e()V
 
     .line 56
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .registers 3
-    .param p1, "context"    # Landroid/content/Context;
-    .param p2, "attributeSet"    # Landroid/util/AttributeSet;
-
-    .prologue
-    .line 59
-    invoke-direct {p0, p1, p2}, Lme/dm7/barcodescanner/core/BarcodeScannerView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-
-    .line 60
-    invoke-direct {p0}, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->initMultiFormatReader()V
-
-    .line 61
-    return-void
-.end method
-
-.method private initMultiFormatReader()V
+.method private e()V
     .registers 4
 
     .prologue
@@ -191,10 +166,9 @@
     invoke-direct {v0, v1}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
 
     .line 81
-    .local v0, "hints":Ljava/util/Map;, "Ljava/util/Map<Lcom/google/zxing/DecodeHintType;Ljava/lang/Object;>;"
-    sget-object v1, Lcom/google/zxing/DecodeHintType;->POSSIBLE_FORMATS:Lcom/google/zxing/DecodeHintType;
+    sget-object v1, Lcom/google/zxing/DecodeHintType;->c:Lcom/google/zxing/DecodeHintType;
 
-    invoke-virtual {p0}, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->getFormats()Ljava/util/Collection;
+    invoke-virtual {p0}, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->d()Ljava/util/Collection;
 
     move-result-object v2
 
@@ -205,12 +179,12 @@
 
     invoke-direct {v1}, Lcom/google/zxing/MultiFormatReader;-><init>()V
 
-    iput-object v1, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->mMultiFormatReader:Lcom/google/zxing/MultiFormatReader;
+    iput-object v1, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->b:Lcom/google/zxing/MultiFormatReader;
 
     .line 83
-    iget-object v1, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->mMultiFormatReader:Lcom/google/zxing/MultiFormatReader;
+    iget-object v1, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->b:Lcom/google/zxing/MultiFormatReader;
 
-    invoke-virtual {v1, v0}, Lcom/google/zxing/MultiFormatReader;->setHints(Ljava/util/Map;)V
+    invoke-virtual {v1, v0}, Lcom/google/zxing/MultiFormatReader;->a(Ljava/util/Map;)V
 
     .line 84
     return-void
@@ -218,47 +192,38 @@
 
 
 # virtual methods
-.method public buildLuminanceSource([BII)Lcom/google/zxing/PlanarYUVLuminanceSource;
-    .registers 15
-    .param p1, "data"    # [B
-    .param p2, "width"    # I
-    .param p3, "height"    # I
+.method public a([BII)Lcom/google/zxing/PlanarYUVLuminanceSource;
+    .registers 14
 
     .prologue
-    .line 134
-    invoke-virtual {p0, p2, p3}, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->getFramingRectInPreview(II)Landroid/graphics/Rect;
+    const/4 v9, 0x0
 
-    move-result-object v9
+    .line 134
+    invoke-virtual {p0, p2, p3}, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->a(II)Landroid/graphics/Rect;
+
+    move-result-object v1
 
     .line 135
-    .local v9, "rect":Landroid/graphics/Rect;
-    if-nez v9, :cond_8
-
-    .line 136
-    const/4 v0, 0x0
+    if-nez v1, :cond_8
 
     .line 147
     :goto_7
-    return-object v0
-
-    .line 139
-    :cond_8
-    const/4 v10, 0x0
+    return-object v9
 
     .line 142
-    .local v10, "source":Lcom/google/zxing/PlanarYUVLuminanceSource;
-    :try_start_9
+    :cond_8
+    :try_start_8
     new-instance v0, Lcom/google/zxing/PlanarYUVLuminanceSource;
 
-    iget v4, v9, Landroid/graphics/Rect;->left:I
+    iget v4, v1, Landroid/graphics/Rect;->left:I
 
-    iget v5, v9, Landroid/graphics/Rect;->top:I
+    iget v5, v1, Landroid/graphics/Rect;->top:I
 
-    invoke-virtual {v9}, Landroid/graphics/Rect;->width()I
+    invoke-virtual {v1}, Landroid/graphics/Rect;->width()I
 
     move-result v6
 
-    invoke-virtual {v9}, Landroid/graphics/Rect;->height()I
+    invoke-virtual {v1}, Landroid/graphics/Rect;->height()I
 
     move-result v7
 
@@ -271,27 +236,36 @@
     move v3, p3
 
     invoke-direct/range {v0 .. v8}, Lcom/google/zxing/PlanarYUVLuminanceSource;-><init>([BIIIIIIZ)V
-    :try_end_1e
-    .catch Ljava/lang/Exception; {:try_start_9 .. :try_end_1e} :catch_1f
+    :try_end_1d
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_1d} :catch_1f
 
-    .end local v10    # "source":Lcom/google/zxing/PlanarYUVLuminanceSource;
-    .local v0, "source":Lcom/google/zxing/PlanarYUVLuminanceSource;
+    :goto_1d
+    move-object v9, v0
+
+    .line 147
     goto :goto_7
 
     .line 144
-    .end local v0    # "source":Lcom/google/zxing/PlanarYUVLuminanceSource;
-    .restart local v10    # "source":Lcom/google/zxing/PlanarYUVLuminanceSource;
     :catch_1f
-    move-exception v1
+    move-exception v0
 
-    move-object v0, v10
+    move-object v0, v9
 
-    .end local v10    # "source":Lcom/google/zxing/PlanarYUVLuminanceSource;
-    .restart local v0    # "source":Lcom/google/zxing/PlanarYUVLuminanceSource;
-    goto :goto_7
+    goto :goto_1d
 .end method
 
-.method public getFormats()Ljava/util/Collection;
+.method public a(Lme/dm7/barcodescanner/zxing/ZXingScannerView$ResultHandler;)V
+    .registers 2
+
+    .prologue
+    .line 69
+    iput-object p1, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->d:Lme/dm7/barcodescanner/zxing/ZXingScannerView$ResultHandler;
+
+    .line 70
+    return-void
+.end method
+
+.method public d()Ljava/util/Collection;
     .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -305,277 +279,238 @@
 
     .prologue
     .line 73
-    iget-object v0, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->mFormats:Ljava/util/List;
+    iget-object v0, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->c:Ljava/util/List;
 
     if-nez v0, :cond_7
 
     .line 74
-    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->ALL_FORMATS:Ljava/util/List;
+    sget-object v0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->a:Ljava/util/List;
 
     .line 76
     :goto_6
     return-object v0
 
     :cond_7
-    iget-object v0, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->mFormats:Ljava/util/List;
+    iget-object v0, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->c:Ljava/util/List;
 
     goto :goto_6
 .end method
 
 .method public onPreviewFrame([BLandroid/hardware/Camera;)V
-    .registers 16
-    .param p1, "data"    # [B
-    .param p2, "camera"    # Landroid/hardware/Camera;
+    .registers 12
 
     .prologue
+    const/4 v4, 0x0
+
     .line 88
     invoke-virtual {p2}, Landroid/hardware/Camera;->getParameters()Landroid/hardware/Camera$Parameters;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 89
-    .local v2, "parameters":Landroid/hardware/Camera$Parameters;
-    invoke-virtual {v2}, Landroid/hardware/Camera$Parameters;->getPreviewSize()Landroid/hardware/Camera$Size;
+    invoke-virtual {v0}, Landroid/hardware/Camera$Parameters;->getPreviewSize()Landroid/hardware/Camera$Size;
 
-    move-result-object v5
+    move-result-object v1
 
     .line 90
-    .local v5, "size":Landroid/hardware/Camera$Size;
-    iget v8, v5, Landroid/hardware/Camera$Size;->width:I
+    iget v0, v1, Landroid/hardware/Camera$Size;->width:I
 
     .line 91
-    .local v8, "width":I
-    iget v1, v5, Landroid/hardware/Camera$Size;->height:I
+    iget v1, v1, Landroid/hardware/Camera$Size;->height:I
 
     .line 93
-    .local v1, "height":I
     invoke-virtual {p0}, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->getContext()Landroid/content/Context;
 
-    move-result-object v11
+    move-result-object v2
 
-    invoke-static {v11}, Lme/dm7/barcodescanner/core/DisplayUtils;->getScreenOrientation(Landroid/content/Context;)I
+    invoke-static {v2}, Lme/dm7/barcodescanner/core/DisplayUtils;->b(Landroid/content/Context;)I
 
-    move-result v11
+    move-result v2
 
-    const/4 v12, 0x1
+    const/4 v3, 0x1
 
-    if-ne v11, v12, :cond_37
+    if-ne v2, v3, :cond_86
 
     .line 94
-    array-length v11, p1
+    array-length v2, p1
 
-    new-array v4, v11, [B
+    new-array v2, v2, [B
+
+    move v5, v4
 
     .line 95
-    .local v4, "rotatedData":[B
-    const/4 v10, 0x0
+    :goto_1c
+    if-ge v5, v1, :cond_35
 
-    .local v10, "y":I
-    :goto_1b
-    if-ge v10, v1, :cond_33
+    move v3, v4
 
     .line 96
-    const/4 v9, 0x0
-
-    .local v9, "x":I
-    :goto_1e
-    if-ge v9, v8, :cond_30
+    :goto_1f
+    if-ge v3, v0, :cond_31
 
     .line 97
-    mul-int v11, v9, v1
+    mul-int v6, v3, v1
 
-    add-int/2addr v11, v1
+    add-int/2addr v6, v1
 
-    sub-int/2addr v11, v10
+    sub-int/2addr v6, v5
 
-    add-int/lit8 v11, v11, -0x1
+    add-int/lit8 v6, v6, -0x1
 
-    mul-int v12, v10, v8
+    mul-int v7, v5, v0
 
-    add-int/2addr v12, v9
+    add-int/2addr v7, v3
 
-    aget-byte v12, p1, v12
+    aget-byte v7, p1, v7
 
-    aput-byte v12, v4, v11
+    aput-byte v7, v2, v6
 
     .line 96
-    add-int/lit8 v9, v9, 0x1
+    add-int/lit8 v3, v3, 0x1
 
-    goto :goto_1e
+    goto :goto_1f
 
     .line 95
-    :cond_30
-    add-int/lit8 v10, v10, 0x1
+    :cond_31
+    add-int/lit8 v3, v5, 0x1
 
-    goto :goto_1b
+    move v5, v3
 
-    .line 99
-    .end local v9    # "x":I
-    :cond_33
-    move v7, v8
+    goto :goto_1c
 
-    .line 100
-    .local v7, "tmp":I
-    move v8, v1
-
-    .line 101
-    move v1, v7
-
-    .line 102
-    move-object p1, v4
+    :cond_35
+    move-object p1, v2
 
     .line 105
-    .end local v4    # "rotatedData":[B
-    .end local v7    # "tmp":I
-    .end local v10    # "y":I
-    :cond_37
-    const/4 v3, 0x0
+    :goto_36
+    const/4 v2, 0x0
 
     .line 106
-    .local v3, "rawResult":Lcom/google/zxing/Result;
-    invoke-virtual {p0, p1, v8, v1}, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->buildLuminanceSource([BII)Lcom/google/zxing/PlanarYUVLuminanceSource;
+    invoke-virtual {p0, p1, v1, v0}, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->a([BII)Lcom/google/zxing/PlanarYUVLuminanceSource;
 
-    move-result-object v6
+    move-result-object v0
 
     .line 108
-    .local v6, "source":Lcom/google/zxing/PlanarYUVLuminanceSource;
-    if-eqz v6, :cond_53
+    if-eqz v0, :cond_84
 
     .line 109
-    new-instance v0, Lcom/google/zxing/BinaryBitmap;
+    new-instance v1, Lcom/google/zxing/BinaryBitmap;
 
-    new-instance v11, Lcom/google/zxing/common/HybridBinarizer;
+    new-instance v3, Lcom/google/zxing/common/HybridBinarizer;
 
-    invoke-direct {v11, v6}, Lcom/google/zxing/common/HybridBinarizer;-><init>(Lcom/google/zxing/LuminanceSource;)V
+    invoke-direct {v3, v0}, Lcom/google/zxing/common/HybridBinarizer;-><init>(Lcom/google/zxing/LuminanceSource;)V
 
-    invoke-direct {v0, v11}, Lcom/google/zxing/BinaryBitmap;-><init>(Lcom/google/zxing/Binarizer;)V
+    invoke-direct {v1, v3}, Lcom/google/zxing/BinaryBitmap;-><init>(Lcom/google/zxing/Binarizer;)V
 
     .line 111
-    .local v0, "bitmap":Lcom/google/zxing/BinaryBitmap;
-    :try_start_48
-    iget-object v11, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->mMultiFormatReader:Lcom/google/zxing/MultiFormatReader;
+    :try_start_47
+    iget-object v0, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->b:Lcom/google/zxing/MultiFormatReader;
 
-    invoke-virtual {v11, v0}, Lcom/google/zxing/MultiFormatReader;->decodeWithState(Lcom/google/zxing/BinaryBitmap;)Lcom/google/zxing/Result;
-    :try_end_4d
-    .catch Lcom/google/zxing/ReaderException; {:try_start_48 .. :try_end_4d} :catch_62
-    .catch Ljava/lang/NullPointerException; {:try_start_48 .. :try_end_4d} :catch_69
-    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_48 .. :try_end_4d} :catch_70
-    .catchall {:try_start_48 .. :try_end_4d} :catchall_77
+    invoke-virtual {v0, v1}, Lcom/google/zxing/MultiFormatReader;->b(Lcom/google/zxing/BinaryBitmap;)Lcom/google/zxing/Result;
+    :try_end_4c
+    .catch Lcom/google/zxing/ReaderException; {:try_start_47 .. :try_end_4c} :catch_61
+    .catch Ljava/lang/NullPointerException; {:try_start_47 .. :try_end_4c} :catch_69
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_47 .. :try_end_4c} :catch_71
+    .catchall {:try_start_47 .. :try_end_4c} :catchall_79
 
-    move-result-object v3
+    move-result-object v0
 
     .line 119
-    iget-object v11, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->mMultiFormatReader:Lcom/google/zxing/MultiFormatReader;
+    iget-object v1, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->b:Lcom/google/zxing/MultiFormatReader;
 
-    invoke-virtual {v11}, Lcom/google/zxing/MultiFormatReader;->reset()V
+    invoke-virtual {v1}, Lcom/google/zxing/MultiFormatReader;->a()V
 
     .line 123
-    .end local v0    # "bitmap":Lcom/google/zxing/BinaryBitmap;
-    :cond_53
-    :goto_53
-    if-eqz v3, :cond_7e
+    :goto_52
+    if-eqz v0, :cond_80
 
     .line 124
-    invoke-virtual {p0}, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->stopCamera()V
+    invoke-virtual {p0}, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->c()V
 
     .line 125
-    iget-object v11, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->mResultHandler:Lme/dm7/barcodescanner/zxing/ZXingScannerView$ResultHandler;
+    iget-object v1, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->d:Lme/dm7/barcodescanner/zxing/ZXingScannerView$ResultHandler;
 
-    if-eqz v11, :cond_61
+    if-eqz v1, :cond_60
 
     .line 126
-    iget-object v11, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->mResultHandler:Lme/dm7/barcodescanner/zxing/ZXingScannerView$ResultHandler;
+    iget-object v1, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->d:Lme/dm7/barcodescanner/zxing/ZXingScannerView$ResultHandler;
 
-    invoke-interface {v11, v3}, Lme/dm7/barcodescanner/zxing/ZXingScannerView$ResultHandler;->handleResult(Lcom/google/zxing/Result;)V
+    invoke-interface {v1, v0}, Lme/dm7/barcodescanner/zxing/ZXingScannerView$ResultHandler;->a(Lcom/google/zxing/Result;)V
 
     .line 131
-    :cond_61
-    :goto_61
+    :cond_60
+    :goto_60
     return-void
 
     .line 112
-    .restart local v0    # "bitmap":Lcom/google/zxing/BinaryBitmap;
-    :catch_62
-    move-exception v11
+    :catch_61
+    move-exception v0
 
     .line 119
-    iget-object v11, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->mMultiFormatReader:Lcom/google/zxing/MultiFormatReader;
+    iget-object v0, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->b:Lcom/google/zxing/MultiFormatReader;
 
-    invoke-virtual {v11}, Lcom/google/zxing/MultiFormatReader;->reset()V
+    invoke-virtual {v0}, Lcom/google/zxing/MultiFormatReader;->a()V
 
-    goto :goto_53
+    move-object v0, v2
+
+    .line 120
+    goto :goto_52
 
     .line 114
     :catch_69
-    move-exception v11
+    move-exception v0
 
     .line 119
-    iget-object v11, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->mMultiFormatReader:Lcom/google/zxing/MultiFormatReader;
+    iget-object v0, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->b:Lcom/google/zxing/MultiFormatReader;
 
-    invoke-virtual {v11}, Lcom/google/zxing/MultiFormatReader;->reset()V
+    invoke-virtual {v0}, Lcom/google/zxing/MultiFormatReader;->a()V
 
-    goto :goto_53
+    move-object v0, v2
+
+    .line 120
+    goto :goto_52
 
     .line 116
-    :catch_70
-    move-exception v11
+    :catch_71
+    move-exception v0
 
     .line 119
-    iget-object v11, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->mMultiFormatReader:Lcom/google/zxing/MultiFormatReader;
+    iget-object v0, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->b:Lcom/google/zxing/MultiFormatReader;
 
-    invoke-virtual {v11}, Lcom/google/zxing/MultiFormatReader;->reset()V
+    invoke-virtual {v0}, Lcom/google/zxing/MultiFormatReader;->a()V
 
-    goto :goto_53
+    move-object v0, v2
 
-    :catchall_77
-    move-exception v11
+    .line 120
+    goto :goto_52
 
-    iget-object v12, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->mMultiFormatReader:Lcom/google/zxing/MultiFormatReader;
+    .line 119
+    :catchall_79
+    move-exception v0
 
-    invoke-virtual {v12}, Lcom/google/zxing/MultiFormatReader;->reset()V
+    iget-object v1, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->b:Lcom/google/zxing/MultiFormatReader;
 
-    throw v11
+    invoke-virtual {v1}, Lcom/google/zxing/MultiFormatReader;->a()V
+
+    throw v0
 
     .line 129
-    .end local v0    # "bitmap":Lcom/google/zxing/BinaryBitmap;
-    :cond_7e
+    :cond_80
     invoke-virtual {p2, p0}, Landroid/hardware/Camera;->setOneShotPreviewCallback(Landroid/hardware/Camera$PreviewCallback;)V
 
-    goto :goto_61
-.end method
+    goto :goto_60
 
-.method public setFormats(Ljava/util/List;)V
-    .registers 2
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Ljava/util/List",
-            "<",
-            "Lcom/google/zxing/BarcodeFormat;",
-            ">;)V"
-        }
-    .end annotation
+    :cond_84
+    move-object v0, v2
 
-    .prologue
-    .line 64
-    .local p1, "formats":Ljava/util/List;, "Ljava/util/List<Lcom/google/zxing/BarcodeFormat;>;"
-    iput-object p1, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->mFormats:Ljava/util/List;
+    goto :goto_52
 
-    .line 65
-    invoke-direct {p0}, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->initMultiFormatReader()V
+    :cond_86
+    move v8, v1
 
-    .line 66
-    return-void
-.end method
+    move v1, v0
 
-.method public setResultHandler(Lme/dm7/barcodescanner/zxing/ZXingScannerView$ResultHandler;)V
-    .registers 2
-    .param p1, "resultHandler"    # Lme/dm7/barcodescanner/zxing/ZXingScannerView$ResultHandler;
+    move v0, v8
 
-    .prologue
-    .line 69
-    iput-object p1, p0, Lme/dm7/barcodescanner/zxing/ZXingScannerView;->mResultHandler:Lme/dm7/barcodescanner/zxing/ZXingScannerView$ResultHandler;
-
-    .line 70
-    return-void
+    goto :goto_36
 .end method

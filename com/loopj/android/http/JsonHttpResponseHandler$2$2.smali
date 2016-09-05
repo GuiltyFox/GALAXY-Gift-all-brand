@@ -11,11 +11,6 @@
     value = Lcom/loopj/android/http/JsonHttpResponseHandler$2;->run()V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field final synthetic this$1:Lcom/loopj/android/http/JsonHttpResponseHandler$2;
@@ -26,7 +21,6 @@
 # direct methods
 .method constructor <init>(Lcom/loopj/android/http/JsonHttpResponseHandler$2;Lorg/json/JSONException;)V
     .registers 3
-    .param p1, "this$1"    # Lcom/loopj/android/http/JsonHttpResponseHandler$2;
 
     .prologue
     .line 215

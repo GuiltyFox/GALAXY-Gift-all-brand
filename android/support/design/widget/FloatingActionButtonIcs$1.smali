@@ -8,11 +8,6 @@
     value = Landroid/support/design/widget/FloatingActionButtonIcs;->hide(Landroid/support/design/widget/FloatingActionButtonImpl$InternalVisibilityChangedListener;Z)V
 .end annotation
 
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x0
-    name = null
-.end annotation
-
 
 # instance fields
 .field private mCancelled:Z
@@ -45,7 +40,6 @@
 # virtual methods
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .registers 4
-    .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
     .line 80
@@ -67,7 +61,6 @@
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .registers 5
-    .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
     .line 86
@@ -111,7 +104,6 @@
 
 .method public onAnimationStart(Landroid/animation/Animator;)V
     .registers 5
-    .param p1, "animation"    # Landroid/animation/Animator;
 
     .prologue
     const/4 v2, 0x0

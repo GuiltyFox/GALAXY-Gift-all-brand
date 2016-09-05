@@ -29,82 +29,79 @@
 .end method
 
 .method protected constructor <init>()V
-    .registers 6
+    .registers 5
 
     .prologue
     .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 37
-    const/4 v1, 0x0
+    const/4 v0, 0x0
 
     .line 42
-    .local v1, "v":Lcom/fasterxml/jackson/core/Version;
     :try_start_4
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v2
+    move-result-object v1
 
-    invoke-static {v2}, Lcom/fasterxml/jackson/core/util/VersionUtil;->versionFor(Ljava/lang/Class;)Lcom/fasterxml/jackson/core/Version;
+    invoke-static {v1}, Lcom/fasterxml/jackson/core/util/VersionUtil;->versionFor(Ljava/lang/Class;)Lcom/fasterxml/jackson/core/Version;
     :try_end_b
     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_b} :catch_15
 
-    move-result-object v1
+    move-result-object v0
 
     .line 46
     :goto_c
-    if-nez v1, :cond_12
+    if-nez v0, :cond_12
 
     .line 47
     invoke-static {}, Lcom/fasterxml/jackson/core/Version;->unknownVersion()Lcom/fasterxml/jackson/core/Version;
 
-    move-result-object v1
+    move-result-object v0
 
     .line 49
     :cond_12
-    iput-object v1, p0, Lcom/fasterxml/jackson/core/util/VersionUtil;->_v:Lcom/fasterxml/jackson/core/Version;
+    iput-object v0, p0, Lcom/fasterxml/jackson/core/util/VersionUtil;->_v:Lcom/fasterxml/jackson/core/Version;
 
     .line 50
     return-void
 
     .line 43
     :catch_15
-    move-exception v0
+    move-exception v1
 
     .line 44
-    .local v0, "e":Ljava/lang/Exception;
-    sget-object v2, Ljava/lang/System;->err:Ljava/io/PrintStream;
+    sget-object v1, Ljava/lang/System;->err:Ljava/io/PrintStream;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v4, "ERROR: Failed to load Version information from "
+    const-string/jumbo v3, "ERROR: Failed to load Version information from "
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    move-result-object v4
-
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
     move-result-object v3
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v2, v3}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/io/PrintStream;->println(Ljava/lang/String;)V
 
     goto :goto_c
 .end method
 
 .method private static final _close(Ljava/io/Closeable;)V
     .registers 2
-    .param p0, "c"    # Ljava/io/Closeable;
 
     .prologue
     .line 202
@@ -126,66 +123,66 @@
 
 .method private static doReadVersion(Ljava/io/Reader;)Lcom/fasterxml/jackson/core/Version;
     .registers 6
-    .param p0, "r"    # Ljava/io/Reader;
 
     .prologue
-    .line 119
-    const/4 v3, 0x0
-
-    .local v3, "version":Ljava/lang/String;
-    const/4 v2, 0x0
-
-    .local v2, "group":Ljava/lang/String;
     const/4 v0, 0x0
 
+    .line 119
     .line 121
-    .local v0, "artifact":Ljava/lang/String;
-    new-instance v1, Ljava/io/BufferedReader;
+    new-instance v3, Ljava/io/BufferedReader;
 
-    invoke-direct {v1, p0}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
+    invoke-direct {v3, p0}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
     .line 123
-    .local v1, "br":Ljava/io/BufferedReader;
-    :try_start_8
-    invoke-virtual {v1}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 124
-    if-eqz v3, :cond_18
-
-    .line 125
-    invoke-virtual {v1}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+    :try_start_6
+    invoke-virtual {v3}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+    :try_end_9
+    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_9} :catch_2a
+    .catchall {:try_start_6 .. :try_end_9} :catchall_31
 
     move-result-object v2
 
+    .line 124
+    if-eqz v2, :cond_3b
+
+    .line 125
+    :try_start_c
+    invoke-virtual {v3}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+    :try_end_f
+    .catch Ljava/io/IOException; {:try_start_c .. :try_end_f} :catch_36
+    .catchall {:try_start_c .. :try_end_f} :catchall_31
+
+    move-result-object v1
+
     .line 126
-    if-eqz v2, :cond_18
+    if-eqz v1, :cond_16
 
     .line 127
-    invoke-virtual {v1}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
-    :try_end_17
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_17} :catch_2c
-    .catchall {:try_start_8 .. :try_end_17} :catchall_31
+    :try_start_12
+    invoke-virtual {v3}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+    :try_end_15
+    .catch Ljava/io/IOException; {:try_start_12 .. :try_end_15} :catch_39
+    .catchall {:try_start_12 .. :try_end_15} :catchall_31
 
     move-result-object v0
 
     .line 132
-    :cond_18
-    invoke-static {v1}, Lcom/fasterxml/jackson/core/util/VersionUtil;->_close(Ljava/io/Closeable;)V
+    :cond_16
+    :goto_16
+    invoke-static {v3}, Lcom/fasterxml/jackson/core/util/VersionUtil;->_close(Ljava/io/Closeable;)V
 
     .line 135
-    :goto_1b
-    if-eqz v2, :cond_21
+    :goto_19
+    if-eqz v1, :cond_1f
 
     .line 136
-    invoke-virtual {v2}, Ljava/lang/String;->trim()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 138
-    :cond_21
-    if-eqz v0, :cond_27
+    :cond_1f
+    if-eqz v0, :cond_25
 
     .line 139
     invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
@@ -193,167 +190,178 @@
     move-result-object v0
 
     .line 141
-    :cond_27
-    invoke-static {v3, v2, v0}, Lcom/fasterxml/jackson/core/util/VersionUtil;->parseVersion(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/fasterxml/jackson/core/Version;
-
-    move-result-object v4
-
-    return-object v4
-
-    .line 130
-    :catch_2c
-    move-exception v4
-
-    .line 132
-    invoke-static {v1}, Lcom/fasterxml/jackson/core/util/VersionUtil;->_close(Ljava/io/Closeable;)V
-
-    goto :goto_1b
-
-    :catchall_31
-    move-exception v4
-
-    invoke-static {v1}, Lcom/fasterxml/jackson/core/util/VersionUtil;->_close(Ljava/io/Closeable;)V
-
-    throw v4
-.end method
-
-.method public static mavenVersionFor(Ljava/lang/ClassLoader;Ljava/lang/String;Ljava/lang/String;)Lcom/fasterxml/jackson/core/Version;
-    .registers 11
-    .param p0, "cl"    # Ljava/lang/ClassLoader;
-    .param p1, "groupId"    # Ljava/lang/String;
-    .param p2, "artifactId"    # Ljava/lang/String;
-
-    .prologue
-    .line 158
-    new-instance v5, Ljava/lang/StringBuilder;
-
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v6, "META-INF/maven/"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string/jumbo v6, "\\."
-
-    const-string/jumbo v7, "/"
-
-    invoke-virtual {p1, v6, v7}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string/jumbo v6, "/"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    const-string/jumbo v6, "/pom.properties"
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v5
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {p0, v5}, Ljava/lang/ClassLoader;->getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream;
+    :cond_25
+    invoke-static {v2, v1, v0}, Lcom/fasterxml/jackson/core/util/VersionUtil;->parseVersion(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/fasterxml/jackson/core/Version;
 
     move-result-object v0
 
-    .line 160
-    .local v0, "pomProperties":Ljava/io/InputStream;
-    if-eqz v0, :cond_5f
+    return-object v0
 
-    .line 162
-    :try_start_36
-    new-instance v3, Ljava/util/Properties;
+    .line 130
+    :catch_2a
+    move-exception v1
 
-    invoke-direct {v3}, Ljava/util/Properties;-><init>()V
+    move-object v1, v0
 
-    .line 163
-    .local v3, "props":Ljava/util/Properties;
-    invoke-virtual {v3, v0}, Ljava/util/Properties;->load(Ljava/io/InputStream;)V
+    move-object v2, v0
 
-    .line 164
-    const-string/jumbo v5, "version"
+    .line 132
+    :goto_2d
+    invoke-static {v3}, Lcom/fasterxml/jackson/core/util/VersionUtil;->_close(Ljava/io/Closeable;)V
 
-    invoke-virtual {v3, v5}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+    goto :goto_19
 
-    move-result-object v4
+    :catchall_31
+    move-exception v0
 
-    .line 165
-    .local v4, "versionStr":Ljava/lang/String;
-    const-string/jumbo v5, "artifactId"
+    invoke-static {v3}, Lcom/fasterxml/jackson/core/util/VersionUtil;->_close(Ljava/io/Closeable;)V
 
-    invoke-virtual {v3, v5}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+    throw v0
+
+    .line 130
+    :catch_36
+    move-exception v1
+
+    move-object v1, v0
+
+    goto :goto_2d
+
+    :catch_39
+    move-exception v4
+
+    goto :goto_2d
+
+    :cond_3b
+    move-object v1, v0
+
+    goto :goto_16
+.end method
+
+.method public static mavenVersionFor(Ljava/lang/ClassLoader;Ljava/lang/String;Ljava/lang/String;)Lcom/fasterxml/jackson/core/Version;
+    .registers 8
+
+    .prologue
+    .line 158
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v1, "META-INF/maven/"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "\\."
+
+    const-string/jumbo v2, "/"
+
+    invoke-virtual {p1, v1, v2}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 166
-    .local v1, "pomPropertiesArtifactId":Ljava/lang/String;
-    const-string/jumbo v5, "groupId"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v3, v5}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v0
+
+    const-string/jumbo v1, "/"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "/pom.properties"
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Ljava/lang/ClassLoader;->getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream;
+
+    move-result-object v1
+
+    .line 160
+    if-eqz v1, :cond_5f
+
+    .line 162
+    :try_start_36
+    new-instance v0, Ljava/util/Properties;
+
+    invoke-direct {v0}, Ljava/util/Properties;-><init>()V
+
+    .line 163
+    invoke-virtual {v0, v1}, Ljava/util/Properties;->load(Ljava/io/InputStream;)V
+
+    .line 164
+    const-string/jumbo v2, "version"
+
+    invoke-virtual {v0, v2}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 165
+    const-string/jumbo v3, "artifactId"
+
+    invoke-virtual {v0, v3}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 166
+    const-string/jumbo v4, "groupId"
+
+    invoke-virtual {v0, v4}, Ljava/util/Properties;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
     .line 167
-    .local v2, "pomPropertiesGroupId":Ljava/lang/String;
-    invoke-static {v4, v2, v1}, Lcom/fasterxml/jackson/core/util/VersionUtil;->parseVersion(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/fasterxml/jackson/core/Version;
+    invoke-static {v2, v0, v3}, Lcom/fasterxml/jackson/core/util/VersionUtil;->parseVersion(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/fasterxml/jackson/core/Version;
     :try_end_56
     .catch Ljava/io/IOException; {:try_start_36 .. :try_end_56} :catch_5b
     .catchall {:try_start_36 .. :try_end_56} :catchall_64
 
-    move-result-object v5
+    move-result-object v0
 
     .line 171
-    invoke-static {v0}, Lcom/fasterxml/jackson/core/util/VersionUtil;->_close(Ljava/io/Closeable;)V
+    invoke-static {v1}, Lcom/fasterxml/jackson/core/util/VersionUtil;->_close(Ljava/io/Closeable;)V
 
     .line 174
-    .end local v1    # "pomPropertiesArtifactId":Ljava/lang/String;
-    .end local v2    # "pomPropertiesGroupId":Ljava/lang/String;
-    .end local v3    # "props":Ljava/util/Properties;
-    .end local v4    # "versionStr":Ljava/lang/String;
     :goto_5a
-    return-object v5
+    return-object v0
 
     .line 168
     :catch_5b
-    move-exception v5
+    move-exception v0
 
     .line 171
-    invoke-static {v0}, Lcom/fasterxml/jackson/core/util/VersionUtil;->_close(Ljava/io/Closeable;)V
+    invoke-static {v1}, Lcom/fasterxml/jackson/core/util/VersionUtil;->_close(Ljava/io/Closeable;)V
 
     .line 174
     :cond_5f
     invoke-static {}, Lcom/fasterxml/jackson/core/Version;->unknownVersion()Lcom/fasterxml/jackson/core/Version;
 
-    move-result-object v5
+    move-result-object v0
 
     goto :goto_5a
 
     .line 171
     :catchall_64
-    move-exception v5
+    move-exception v0
 
-    invoke-static {v0}, Lcom/fasterxml/jackson/core/util/VersionUtil;->_close(Ljava/io/Closeable;)V
+    invoke-static {v1}, Lcom/fasterxml/jackson/core/util/VersionUtil;->_close(Ljava/io/Closeable;)V
 
-    throw v5
+    throw v0
 .end method
 
 .method public static packageVersionFor(Ljava/lang/Class;)Lcom/fasterxml/jackson/core/Version;
-    .registers 7
+    .registers 5
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -365,132 +373,117 @@
 
     .prologue
     .line 104
-    .local p0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :try_start_0
-    new-instance v3, Ljava/lang/StringBuilder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     invoke-virtual {p0}, Ljava/lang/Class;->getPackage()Ljava/lang/Package;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4}, Ljava/lang/Package;->getName()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/Package;->getName()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v0
 
-    const-string/jumbo v4, ".PackageVersion"
+    const-string/jumbo v1, ".PackageVersion"
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 105
-    .local v2, "versionInfoClassName":Ljava/lang/String;
-    const/4 v3, 0x1
+    const/4 v1, 0x1
 
     invoke-virtual {p0}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-static {v2, v3, v4}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+    invoke-static {v0, v1, v2}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
     :try_end_24
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_24} :catch_4b
 
     move-result-object v1
 
     .line 108
-    .local v1, "vClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     :try_start_25
     invoke-virtual {v1}, Ljava/lang/Class;->newInstance()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Lcom/fasterxml/jackson/core/Versioned;
+    check-cast v0, Lcom/fasterxml/jackson/core/Versioned;
 
-    invoke-interface {v3}, Lcom/fasterxml/jackson/core/Versioned;->version()Lcom/fasterxml/jackson/core/Version;
+    invoke-interface {v0}, Lcom/fasterxml/jackson/core/Versioned;->version()Lcom/fasterxml/jackson/core/Version;
     :try_end_2e
     .catch Ljava/lang/Exception; {:try_start_25 .. :try_end_2e} :catch_30
 
-    move-result-object v3
+    move-result-object v0
 
     .line 113
-    .end local v1    # "vClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .end local v2    # "versionInfoClassName":Ljava/lang/String;
     :goto_2f
-    return-object v3
+    return-object v0
 
     .line 109
-    .restart local v1    # "vClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .restart local v2    # "versionInfoClassName":Ljava/lang/String;
     :catch_30
     move-exception v0
 
     .line 110
-    .local v0, "e":Ljava/lang/Exception;
     :try_start_31
-    new-instance v3, Ljava/lang/IllegalArgumentException;
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    new-instance v4, Ljava/lang/StringBuilder;
+    new-instance v2, Ljava/lang/StringBuilder;
 
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v5, "Failed to get Versioned out of "
+    const-string/jumbo v3, "Failed to get Versioned out of "
 
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v1
 
-    invoke-direct {v3, v4}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
-    throw v3
+    throw v0
     :try_end_4b
     .catch Ljava/lang/Exception; {:try_start_31 .. :try_end_4b} :catch_4b
 
     .line 112
-    .end local v0    # "e":Ljava/lang/Exception;
-    .end local v1    # "vClass":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
-    .end local v2    # "versionInfoClassName":Ljava/lang/String;
     :catch_4b
     move-exception v0
 
     .line 113
-    .restart local v0    # "e":Ljava/lang/Exception;
-    const/4 v3, 0x0
+    const/4 v0, 0x0
 
     goto :goto_2f
 .end method
 
 .method public static parseVersion(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lcom/fasterxml/jackson/core/Version;
     .registers 12
-    .param p0, "s"    # Ljava/lang/String;
-    .param p1, "groupId"    # Ljava/lang/String;
-    .param p2, "artifactId"    # Ljava/lang/String;
 
     .prologue
     const/4 v4, 0x0
 
     const/4 v8, 0x3
 
-    const/4 v6, 0x2
+    const/4 v7, 0x2
 
-    const/4 v5, 0x1
+    const/4 v6, 0x1
 
     const/4 v3, 0x0
 
@@ -499,58 +492,57 @@
 
     invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    move-result-object p0
+    move-result-object v0
 
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-    move-result v0
+    move-result v1
 
-    if-lez v0, :cond_3e
+    if-lez v1, :cond_3e
 
     .line 180
-    sget-object v0, Lcom/fasterxml/jackson/core/util/VersionUtil;->V_SEP:Ljava/util/regex/Pattern;
+    sget-object v1, Lcom/fasterxml/jackson/core/util/VersionUtil;->V_SEP:Ljava/util/regex/Pattern;
 
-    invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->split(Ljava/lang/CharSequence;)[Ljava/lang/String;
+    invoke-virtual {v1, v0}, Ljava/util/regex/Pattern;->split(Ljava/lang/CharSequence;)[Ljava/lang/String;
 
-    move-result-object v7
+    move-result-object v5
 
     .line 181
-    .local v7, "parts":[Ljava/lang/String;
     new-instance v0, Lcom/fasterxml/jackson/core/Version;
 
-    aget-object v1, v7, v3
+    aget-object v1, v5, v3
 
     invoke-static {v1}, Lcom/fasterxml/jackson/core/util/VersionUtil;->parseVersionPart(Ljava/lang/String;)I
 
     move-result v1
 
-    array-length v2, v7
+    array-length v2, v5
 
-    if-le v2, v5, :cond_3c
+    if-le v2, v6, :cond_3c
 
-    aget-object v2, v7, v5
+    aget-object v2, v5, v6
 
     invoke-static {v2}, Lcom/fasterxml/jackson/core/util/VersionUtil;->parseVersionPart(Ljava/lang/String;)I
 
     move-result v2
 
     :goto_28
-    array-length v5, v7
+    array-length v6, v5
 
-    if-le v5, v6, :cond_31
+    if-le v6, v7, :cond_31
 
-    aget-object v3, v7, v6
+    aget-object v3, v5, v7
 
     invoke-static {v3}, Lcom/fasterxml/jackson/core/util/VersionUtil;->parseVersionPart(Ljava/lang/String;)I
 
     move-result v3
 
     :cond_31
-    array-length v5, v7
+    array-length v6, v5
 
-    if-le v5, v8, :cond_36
+    if-le v6, v8, :cond_36
 
-    aget-object v4, v7, v8
+    aget-object v4, v5, v8
 
     :cond_36
     move-object v5, p1
@@ -560,18 +552,15 @@
     invoke-direct/range {v0 .. v6}, Lcom/fasterxml/jackson/core/Version;-><init>(IIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 187
-    .end local v7    # "parts":[Ljava/lang/String;
     :goto_3b
     return-object v0
 
-    .restart local v7    # "parts":[Ljava/lang/String;
     :cond_3c
     move v2, v3
 
     .line 181
     goto :goto_28
 
-    .end local v7    # "parts":[Ljava/lang/String;
     :cond_3e
     move-object v0, v4
 
@@ -580,57 +569,50 @@
 .end method
 
 .method protected static parseVersionPart(Ljava/lang/String;)I
-    .registers 7
-    .param p0, "s"    # Ljava/lang/String;
+    .registers 6
 
     .prologue
+    const/4 v0, 0x0
+
     .line 191
-    const/4 v3, 0x0
-
     .line 192
-    .local v3, "number":I
-    const/4 v1, 0x0
-
-    .local v1, "i":I
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v2
 
-    .local v2, "len":I
+    move v1, v0
+
     :goto_6
-    if-ge v1, v2, :cond_14
+    if-ge v0, v2, :cond_14
 
     .line 193
-    invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
 
-    move-result v0
+    move-result v3
 
     .line 194
-    .local v0, "c":C
     const/16 v4, 0x39
 
-    if-gt v0, v4, :cond_14
+    if-gt v3, v4, :cond_14
 
     const/16 v4, 0x30
 
-    if-ge v0, v4, :cond_15
+    if-ge v3, v4, :cond_15
 
     .line 197
-    .end local v0    # "c":C
     :cond_14
-    return v3
+    return v1
 
     .line 195
-    .restart local v0    # "c":C
     :cond_15
-    mul-int/lit8 v4, v3, 0xa
+    mul-int/lit8 v1, v1, 0xa
 
-    add-int/lit8 v5, v0, -0x30
+    add-int/lit8 v3, v3, -0x30
 
-    add-int v3, v4, v5
+    add-int/2addr v1, v3
 
     .line 192
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v0, v0, 0x1
 
     goto :goto_6
 .end method
@@ -650,7 +632,7 @@
 .end method
 
 .method public static versionFor(Ljava/lang/Class;)Lcom/fasterxml/jackson/core/Version;
-    .registers 6
+    .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -662,93 +644,80 @@
 
     .prologue
     .line 76
-    .local p0, "cls":Ljava/lang/Class;, "Ljava/lang/Class<*>;"
     invoke-static {p0}, Lcom/fasterxml/jackson/core/util/VersionUtil;->packageVersionFor(Ljava/lang/Class;)Lcom/fasterxml/jackson/core/Version;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 77
-    .local v2, "packageVersion":Lcom/fasterxml/jackson/core/Version;
-    if-eqz v2, :cond_7
+    if-eqz v0, :cond_7
 
     .line 90
-    .end local v2    # "packageVersion":Lcom/fasterxml/jackson/core/Version;
     :goto_6
-    return-object v2
+    return-object v0
 
     .line 80
-    .restart local v2    # "packageVersion":Lcom/fasterxml/jackson/core/Version;
     :cond_7
-    const-string/jumbo v4, "VERSION.txt"
+    const-string/jumbo v0, "VERSION.txt"
 
-    invoke-virtual {p0, v4}, Ljava/lang/Class;->getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream;
+    invoke-virtual {p0, v0}, Ljava/lang/Class;->getResourceAsStream(Ljava/lang/String;)Ljava/io/InputStream;
 
     move-result-object v1
 
     .line 81
-    .local v1, "in":Ljava/io/InputStream;
     if-nez v1, :cond_15
 
     .line 82
     invoke-static {}, Lcom/fasterxml/jackson/core/Version;->unknownVersion()Lcom/fasterxml/jackson/core/Version;
 
-    move-result-object v2
+    move-result-object v0
 
     goto :goto_6
 
     .line 85
     :cond_15
     :try_start_15
-    new-instance v3, Ljava/io/InputStreamReader;
+    new-instance v0, Ljava/io/InputStreamReader;
 
-    const-string/jumbo v4, "UTF-8"
+    const-string/jumbo v2, "UTF-8"
 
-    invoke-direct {v3, v1, v4}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/lang/String;)V
+    invoke-direct {v0, v1, v2}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/lang/String;)V
 
     .line 86
-    .local v3, "reader":Ljava/io/InputStreamReader;
-    invoke-static {v3}, Lcom/fasterxml/jackson/core/util/VersionUtil;->doReadVersion(Ljava/io/Reader;)Lcom/fasterxml/jackson/core/Version;
+    invoke-static {v0}, Lcom/fasterxml/jackson/core/util/VersionUtil;->doReadVersion(Ljava/io/Reader;)Lcom/fasterxml/jackson/core/Version;
     :try_end_20
     .catch Ljava/io/UnsupportedEncodingException; {:try_start_15 .. :try_end_20} :catch_25
     .catchall {:try_start_15 .. :try_end_20} :catchall_2e
 
-    move-result-object v2
+    move-result-object v0
 
     .line 90
-    .end local v2    # "packageVersion":Lcom/fasterxml/jackson/core/Version;
     invoke-static {v1}, Lcom/fasterxml/jackson/core/util/VersionUtil;->_close(Ljava/io/Closeable;)V
 
     goto :goto_6
 
     .line 87
-    .end local v3    # "reader":Ljava/io/InputStreamReader;
-    .restart local v2    # "packageVersion":Lcom/fasterxml/jackson/core/Version;
     :catch_25
     move-exception v0
 
     .line 88
-    .local v0, "e":Ljava/io/UnsupportedEncodingException;
     :try_start_26
     invoke-static {}, Lcom/fasterxml/jackson/core/Version;->unknownVersion()Lcom/fasterxml/jackson/core/Version;
     :try_end_29
     .catchall {:try_start_26 .. :try_end_29} :catchall_2e
 
-    move-result-object v2
+    move-result-object v0
 
     .line 90
-    .end local v2    # "packageVersion":Lcom/fasterxml/jackson/core/Version;
     invoke-static {v1}, Lcom/fasterxml/jackson/core/util/VersionUtil;->_close(Ljava/io/Closeable;)V
 
     goto :goto_6
 
-    .end local v0    # "e":Ljava/io/UnsupportedEncodingException;
-    .restart local v2    # "packageVersion":Lcom/fasterxml/jackson/core/Version;
     :catchall_2e
-    move-exception v4
+    move-exception v0
 
     invoke-static {v1}, Lcom/fasterxml/jackson/core/util/VersionUtil;->_close(Ljava/io/Closeable;)V
 
-    throw v4
+    throw v0
 .end method
 
 

@@ -3,19 +3,8 @@
 .source "AdapterView.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lit/sephiroth/android/library/widget/AdapterView;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x609
-    name = "OnItemClickListener"
-.end annotation
-
-
 # virtual methods
-.method public abstract onItemClick(Lit/sephiroth/android/library/widget/AdapterView;Landroid/view/View;IJ)V
+.method public abstract a(Lit/sephiroth/android/library/widget/AdapterView;Landroid/view/View;IJ)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",

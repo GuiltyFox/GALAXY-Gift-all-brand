@@ -3,19 +3,8 @@
 .source "Spinner.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/rey/material/widget/Spinner;
-.end annotation
-
-.annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x2
-    name = "SpinnerDataSetObserver"
-.end annotation
-
-
 # instance fields
-.field final synthetic this$0:Lcom/rey/material/widget/Spinner;
+.field final synthetic a:Lcom/rey/material/widget/Spinner;
 
 
 # direct methods
@@ -24,7 +13,7 @@
 
     .prologue
     .line 1050
-    iput-object p1, p0, Lcom/rey/material/widget/Spinner$SpinnerDataSetObserver;->this$0:Lcom/rey/material/widget/Spinner;
+    iput-object p1, p0, Lcom/rey/material/widget/Spinner$SpinnerDataSetObserver;->a:Lcom/rey/material/widget/Spinner;
 
     invoke-direct {p0}, Landroid/database/DataSetObserver;-><init>()V
 
@@ -33,8 +22,6 @@
 
 .method synthetic constructor <init>(Lcom/rey/material/widget/Spinner;Lcom/rey/material/widget/Spinner$1;)V
     .registers 3
-    .param p1, "x0"    # Lcom/rey/material/widget/Spinner;
-    .param p2, "x1"    # Lcom/rey/material/widget/Spinner$1;
 
     .prologue
     .line 1050
@@ -50,10 +37,9 @@
 
     .prologue
     .line 1054
-    iget-object v0, p0, Lcom/rey/material/widget/Spinner$SpinnerDataSetObserver;->this$0:Lcom/rey/material/widget/Spinner;
+    iget-object v0, p0, Lcom/rey/material/widget/Spinner$SpinnerDataSetObserver;->a:Lcom/rey/material/widget/Spinner;
 
-    # invokes: Lcom/rey/material/widget/Spinner;->onDataChanged()V
-    invoke-static {v0}, Lcom/rey/material/widget/Spinner;->access$400(Lcom/rey/material/widget/Spinner;)V
+    invoke-static {v0}, Lcom/rey/material/widget/Spinner;->c(Lcom/rey/material/widget/Spinner;)V
 
     .line 1055
     return-void
@@ -64,10 +50,9 @@
 
     .prologue
     .line 1059
-    iget-object v0, p0, Lcom/rey/material/widget/Spinner$SpinnerDataSetObserver;->this$0:Lcom/rey/material/widget/Spinner;
+    iget-object v0, p0, Lcom/rey/material/widget/Spinner$SpinnerDataSetObserver;->a:Lcom/rey/material/widget/Spinner;
 
-    # invokes: Lcom/rey/material/widget/Spinner;->onDataInvalidated()V
-    invoke-static {v0}, Lcom/rey/material/widget/Spinner;->access$500(Lcom/rey/material/widget/Spinner;)V
+    invoke-static {v0}, Lcom/rey/material/widget/Spinner;->d(Lcom/rey/material/widget/Spinner;)V
 
     .line 1060
     return-void

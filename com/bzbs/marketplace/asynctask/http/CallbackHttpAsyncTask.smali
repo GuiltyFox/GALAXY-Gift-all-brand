@@ -16,13 +16,14 @@
 
 
 # virtual methods
-.method public abstract onFailure(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
+.method public abstract a(I[Lcz/msebera/android/httpclient/Header;[B)V
 .end method
 
-.method public onProgress(JJ)V
+.method public abstract a(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
+.end method
+
+.method public a(JJ)V
     .registers 14
-    .param p1, "bytesWritten"    # J
-    .param p3, "totalSize"    # J
 
     .prologue
     .line 16
@@ -60,7 +61,7 @@
 
     long-to-double v0, p1
 
-    const-wide/high16 v6, 0x3ff0000000000000L
+    const-wide/high16 v6, 0x3ff0000000000000L    # 1.0
 
     mul-double/2addr v0, v6
 
@@ -68,7 +69,7 @@
 
     div-double/2addr v0, v6
 
-    const-wide/high16 v6, 0x4059000000000000L
+    const-wide/high16 v6, 0x4059000000000000L    # 100.0
 
     mul-double/2addr v0, v6
 
@@ -90,10 +91,7 @@
 
     .line 16
     :cond_35
-    const-wide/high16 v0, -0x4010000000000000L
+    const-wide/high16 v0, -0x4010000000000000L    # -1.0
 
     goto :goto_27
-.end method
-
-.method public abstract onSuccess(I[Lcz/msebera/android/httpclient/Header;[B)V
 .end method

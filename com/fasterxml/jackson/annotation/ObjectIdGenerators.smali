@@ -3,18 +3,6 @@
 .source "ObjectIdGenerators.java"
 
 
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$UUIDGenerator;,
-        Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$IntSequenceGenerator;,
-        Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$PropertyGenerator;,
-        Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$None;,
-        Lcom/fasterxml/jackson/annotation/ObjectIdGenerators$Base;
-    }
-.end annotation
-
-
 # direct methods
 .method public constructor <init>()V
     .registers 1

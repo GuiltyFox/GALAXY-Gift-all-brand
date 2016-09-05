@@ -33,7 +33,6 @@
 
 .method public constructor <init>(Ljava/lang/String;)V
     .registers 3
-    .param p1, "rootValueSeparator"    # Ljava/lang/String;
 
     .prologue
     .line 48
@@ -55,13 +54,6 @@
 # virtual methods
 .method public beforeArrayValues(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 2
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 131
@@ -70,13 +62,6 @@
 
 .method public beforeObjectEntries(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 2
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 82
@@ -85,7 +70,6 @@
 
 .method public setRootValueSeparator(Ljava/lang/String;)V
     .registers 2
-    .param p1, "sep"    # Ljava/lang/String;
 
     .prologue
     .line 53
@@ -97,13 +81,6 @@
 
 .method public writeArrayValueSeparator(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 3
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 144
@@ -117,14 +94,6 @@
 
 .method public writeEndArray(Lcom/fasterxml/jackson/core/JsonGenerator;I)V
     .registers 4
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p2, "nrOfValues"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 151
@@ -138,14 +107,6 @@
 
 .method public writeEndObject(Lcom/fasterxml/jackson/core/JsonGenerator;I)V
     .registers 4
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .param p2, "nrOfEntries"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 116
@@ -159,13 +120,6 @@
 
 .method public writeObjectEntrySeparator(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 3
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 109
@@ -179,13 +133,6 @@
 
 .method public writeObjectFieldValueSeparator(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 3
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 95
@@ -199,13 +146,6 @@
 
 .method public writeRootValueSeparator(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 3
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 65
@@ -225,13 +165,6 @@
 
 .method public writeStartArray(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 3
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 123
@@ -245,13 +178,6 @@
 
 .method public writeStartObject(Lcom/fasterxml/jackson/core/JsonGenerator;)V
     .registers 3
-    .param p1, "jg"    # Lcom/fasterxml/jackson/core/JsonGenerator;
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Ljava/io/IOException;,
-            Lcom/fasterxml/jackson/core/JsonGenerationException;
-        }
-    .end annotation
 
     .prologue
     .line 74
