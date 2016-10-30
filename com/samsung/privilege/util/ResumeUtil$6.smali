@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 449
+    .line 447
     iput-object p1, p0, Lcom/samsung/privilege/util/ResumeUtil$6;->a:Landroid/app/Activity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,20 +35,20 @@
     .registers 9
 
     .prologue
-    .line 451
+    .line 449
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 452
+    .line 450
     iget-object v0, p0, Lcom/samsung/privilege/util/ResumeUtil$6;->a:Landroid/app/Activity;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->q(Landroid/content/Context;Z)V
 
-    .line 454
+    .line 452
     sget-object v0, Lcom/bzbs/data/AppSetting;->k:Ljava/lang/String;
 
-    .line 456
+    .line 454
     :try_start_b
     iget-object v1, p0, Lcom/samsung/privilege/util/ResumeUtil$6;->a:Landroid/app/Activity;
 
@@ -84,15 +84,15 @@
     :try_end_30
     .catch Landroid/content/ActivityNotFoundException; {:try_start_b .. :try_end_30} :catch_31
 
-    .line 460
+    .line 458
     :goto_30
     return-void
 
-    .line 457
+    .line 455
     :catch_31
     move-exception v1
 
-    .line 458
+    .line 456
     iget-object v1, p0, Lcom/samsung/privilege/util/ResumeUtil$6;->a:Landroid/app/Activity;
 
     new-instance v2, Landroid/content/Intent;

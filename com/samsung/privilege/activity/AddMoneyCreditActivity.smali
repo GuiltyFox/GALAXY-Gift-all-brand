@@ -683,7 +683,7 @@
     .line 104
     const-string/jumbo v1, ""
 
-    const v2, 0x7f090280
+    const v2, 0x7f090281
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->getString(I)Ljava/lang/String;
 
@@ -789,7 +789,7 @@
     invoke-direct {v2, p0, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
     .line 243
-    const v0, 0x7f04012b
+    const v0, 0x7f04012c
 
     invoke-virtual {v2, v0}, Landroid/app/Dialog;->setContentView(I)V
 
@@ -803,7 +803,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 247
-    const v1, 0x7f100612
+    const v1, 0x7f100616
 
     invoke-virtual {v2, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -812,7 +812,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 248
-    const v3, 0x7f09037f
+    const v3, 0x7f090389
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->getString(I)Ljava/lang/String;
 
@@ -837,7 +837,7 @@
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 252
-    const v0, 0x7f100613
+    const v0, 0x7f100617
 
     invoke-virtual {v2, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -853,7 +853,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 283
-    const v0, 0x7f100560
+    const v0, 0x7f100561
 
     invoke-virtual {v2, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 

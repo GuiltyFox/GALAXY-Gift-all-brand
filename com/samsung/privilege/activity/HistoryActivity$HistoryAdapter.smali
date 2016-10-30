@@ -179,7 +179,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v4, 0x7f090341
+    const v4, 0x7f09034b
 
     invoke-virtual {v3, v4}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -370,7 +370,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v4, 0x7f09033c
+    const v4, 0x7f090346
 
     invoke-virtual {v3, v4}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 

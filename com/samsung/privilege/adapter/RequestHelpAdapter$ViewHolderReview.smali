@@ -8,13 +8,13 @@
 
 .field imageHeader:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100672
+        value = 0x7f100676
     .end annotation
 .end field
 
 .field imagePost:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100669
+        value = 0x7f10066d
     .end annotation
 .end field
 
@@ -26,37 +26,37 @@
 
 .field layoutComment:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100629
+        value = 0x7f10062d
     .end annotation
 .end field
 
 .field textCreateDate:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066e
+        value = 0x7f100672
     .end annotation
 .end field
 
 .field textCreateTime:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066f
+        value = 0x7f100673
     .end annotation
 .end field
 
 .field textDisplay:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066d
+        value = 0x7f100671
     .end annotation
 .end field
 
 .field textPost:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100670
+        value = 0x7f100674
     .end annotation
 .end field
 
 .field textViewComment:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10062a
+        value = 0x7f10062e
     .end annotation
 .end field
 

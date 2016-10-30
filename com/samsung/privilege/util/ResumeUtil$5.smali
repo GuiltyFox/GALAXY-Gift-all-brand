@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 461
+    .line 459
     iput-object p1, p0, Lcom/samsung/privilege/util/ResumeUtil$5;->a:Landroid/app/Activity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,16 +35,16 @@
     .registers 5
 
     .prologue
-    .line 463
+    .line 461
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 464
+    .line 462
     iget-object v0, p0, Lcom/samsung/privilege/util/ResumeUtil$5;->a:Landroid/app/Activity;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->q(Landroid/content/Context;Z)V
 
-    .line 465
+    .line 463
     return-void
 .end method

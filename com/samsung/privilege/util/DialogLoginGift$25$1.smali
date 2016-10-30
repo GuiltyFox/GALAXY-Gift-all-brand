@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 1299
+    .line 1308
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$25$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$25;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$25$1;->a:Ljava/lang/String;
@@ -39,7 +39,7 @@
     .registers 19
 
     .prologue
-    .line 1303
+    .line 1312
     :try_start_0
     new-instance v2, Lorg/json/JSONObject;
 
@@ -49,14 +49,14 @@
 
     invoke-direct {v2, v3}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1304
+    .line 1313
     const-string/jumbo v3, "Address"
 
     invoke-static {v2, v3}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1307
+    .line 1316
     if-eqz v3, :cond_24
 
     const-string/jumbo v4, ""
@@ -67,7 +67,7 @@
 
     if-nez v4, :cond_24
 
-    .line 1308
+    .line 1317
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/samsung/privilege/util/DialogLoginGift$25$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$25;
@@ -76,7 +76,7 @@
 
     invoke-static {v4, v3}, Lcom/bzbs/data/UserLogin;->i(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 1310
+    .line 1319
     :cond_24
     move-object/from16 v0, p0
 
@@ -92,7 +92,7 @@
 
     invoke-static {v3, v4}, Lcom/bzbs/data/UserLogin;->g(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 1311
+    .line 1320
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/samsung/privilege/util/DialogLoginGift$25$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$25;
@@ -107,84 +107,84 @@
 
     invoke-static {v3, v4}, Lcom/bzbs/data/UserLogin;->h(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 1313
+    .line 1322
     const-string/jumbo v3, "ShippingFirstName"
 
     invoke-static {v2, v3}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 1314
+    .line 1323
     const-string/jumbo v3, "ShippingLastName"
 
     invoke-static {v2, v3}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 1315
+    .line 1324
     const-string/jumbo v3, "Email"
 
     invoke-static {v2, v3}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v15
 
-    .line 1316
+    .line 1325
     const-string/jumbo v3, "Gender"
 
     invoke-static {v2, v3}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v10
 
-    .line 1317
+    .line 1326
     const-string/jumbo v3, "Region"
 
     invoke-static {v2, v3}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v11
 
-    .line 1318
+    .line 1327
     const-string/jumbo v3, "Address"
 
     invoke-static {v2, v3}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1319
+    .line 1328
     const-string/jumbo v4, "BirthDate"
 
     invoke-static {v2, v4}, Lcom/bzbs/util/JsonUtil;->c(Lorg/json/JSONObject;Ljava/lang/String;)J
 
     move-result-wide v8
 
-    .line 1320
+    .line 1329
     const-string/jumbo v4, "Contact_Number"
 
     invoke-static {v2, v4}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v12
 
-    .line 1321
+    .line 1330
     const-string/jumbo v4, "PhonePurchase"
 
     invoke-static {v2, v4}, Lcom/bzbs/util/JsonUtil;->c(Lorg/json/JSONObject;Ljava/lang/String;)J
 
     move-result-wide v13
 
-    .line 1322
+    .line 1331
     const-string/jumbo v4, "Income"
 
     invoke-static {v2, v4}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v16
 
-    .line 1323
+    .line 1332
     const-string/jumbo v4, "Interests"
 
     invoke-static {v2, v4}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v17
 
-    .line 1325
+    .line 1334
     if-eqz v6, :cond_190
 
     const-string/jumbo v4, ""
@@ -247,7 +247,7 @@
 
     if-eqz v4, :cond_190
 
-    .line 1326
+    .line 1335
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/samsung/privilege/util/DialogLoginGift$25$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$25;
@@ -258,7 +258,7 @@
 
     invoke-static {v4, v5}, Lcom/bzbs/data/UserLogin;->c(Landroid/content/Context;Z)Z
 
-    .line 1331
+    .line 1340
     :goto_de
     if-eqz v15, :cond_1c6
 
@@ -294,7 +294,7 @@
 
     if-nez v4, :cond_1c6
 
-    .line 1332
+    .line 1341
     move-object/from16 v0, p0
 
     iget-object v4, v0, Lcom/samsung/privilege/util/DialogLoginGift$25$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$25;
@@ -305,7 +305,7 @@
 
     invoke-static {v4, v5}, Lcom/bzbs/data/UserLogin;->d(Landroid/content/Context;Z)Z
 
-    .line 1337
+    .line 1346
     :goto_10d
     if-eqz v6, :cond_1d2
 
@@ -337,7 +337,7 @@
 
     if-nez v3, :cond_1d2
 
-    .line 1338
+    .line 1347
     move-object/from16 v0, p0
 
     iget-object v3, v0, Lcom/samsung/privilege/util/DialogLoginGift$25$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$25;
@@ -348,7 +348,7 @@
 
     invoke-static {v3, v4}, Lcom/bzbs/data/UserLogin;->e(Landroid/content/Context;Z)Z
 
-    .line 1343
+    .line 1352
     :goto_138
     move-object/from16 v0, p0
 
@@ -364,7 +364,7 @@
 
     invoke-static {v3, v2}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 1345
+    .line 1354
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/util/DialogLoginGift$25$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$25;
@@ -377,7 +377,7 @@
 
     sput-object v2, Lcom/bzbs/data/AppSetting;->g:Ljava/lang/String;
 
-    .line 1346
+    .line 1355
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/util/DialogLoginGift$25$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$25;
@@ -386,7 +386,7 @@
 
     invoke-static {v2}, Lcom/bzbs/util/GCMUtil;->a(Landroid/content/Context;)V
 
-    .line 1351
+    .line 1360
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/util/DialogLoginGift$25$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$25;
@@ -401,14 +401,14 @@
 
     if-ne v2, v3, :cond_1f3
 
-    .line 1352
+    .line 1361
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->a()Landroid/app/Dialog;
 
     move-result-object v2
 
     invoke-virtual {v2}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1354
+    .line 1363
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/util/DialogLoginGift$25$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$25;
@@ -419,7 +419,7 @@
 
     invoke-static {v2, v3}, Lcom/bzbs/data/UserLogin;->b(Landroid/content/Context;Z)Z
 
-    .line 1356
+    .line 1365
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/util/DialogLoginGift$25$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$25;
@@ -430,7 +430,7 @@
 
     if-ne v2, v3, :cond_1de
 
-    .line 1357
+    .line 1366
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/util/DialogLoginGift$25$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$25;
@@ -439,12 +439,12 @@
 
     invoke-static {v2}, Lcom/bzbs/event/LoginEvents;->a(Ljava/lang/String;)V
 
-    .line 1380
+    .line 1389
     :cond_18f
     :goto_18f
     return-void
 
-    .line 1328
+    .line 1337
     :cond_190
     move-object/from16 v0, p0
 
@@ -460,11 +460,11 @@
 
     goto/16 :goto_de
 
-    .line 1376
+    .line 1385
     :catch_19c
     move-exception v2
 
-    .line 1377
+    .line 1386
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
     move-result-object v3
@@ -493,7 +493,7 @@
 
     invoke-static {v3, v2}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1378
+    .line 1387
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/util/DialogLoginGift$25$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$25;
@@ -504,7 +504,7 @@
 
     goto :goto_18f
 
-    .line 1334
+    .line 1343
     :cond_1c6
     :try_start_1c6
     move-object/from16 v0, p0
@@ -519,7 +519,7 @@
 
     goto/16 :goto_10d
 
-    .line 1340
+    .line 1349
     :cond_1d2
     move-object/from16 v0, p0
 
@@ -533,7 +533,7 @@
 
     goto/16 :goto_138
 
-    .line 1358
+    .line 1367
     :cond_1de
     move-object/from16 v0, p0
 
@@ -545,7 +545,7 @@
 
     if-ne v2, v3, :cond_18f
 
-    .line 1359
+    .line 1368
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/util/DialogLoginGift$25$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$25;
@@ -556,7 +556,7 @@
 
     goto :goto_18f
 
-    .line 1362
+    .line 1371
     :cond_1f3
     move-object/from16 v0, p0
 
@@ -576,7 +576,7 @@
 
     if-eqz v2, :cond_223
 
-    .line 1363
+    .line 1372
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/util/DialogLoginGift$25$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$25;
@@ -605,7 +605,7 @@
 
     goto/16 :goto_18f
 
-    .line 1365
+    .line 1374
     :cond_223
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->a()Landroid/app/Dialog;
 
@@ -613,7 +613,7 @@
 
     invoke-virtual {v2}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1367
+    .line 1376
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/util/DialogLoginGift$25$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$25;
@@ -624,7 +624,7 @@
 
     invoke-static {v2, v3}, Lcom/bzbs/data/UserLogin;->b(Landroid/content/Context;Z)Z
 
-    .line 1369
+    .line 1378
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/util/DialogLoginGift$25$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$25;
@@ -635,7 +635,7 @@
 
     if-ne v2, v3, :cond_24a
 
-    .line 1370
+    .line 1379
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/util/DialogLoginGift$25$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$25;
@@ -646,7 +646,7 @@
 
     goto/16 :goto_18f
 
-    .line 1371
+    .line 1380
     :cond_24a
     move-object/from16 v0, p0
 
@@ -658,7 +658,7 @@
 
     if-ne v2, v3, :cond_18f
 
-    .line 1372
+    .line 1381
     move-object/from16 v0, p0
 
     iget-object v2, v0, Lcom/samsung/privilege/util/DialogLoginGift$25$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$25;

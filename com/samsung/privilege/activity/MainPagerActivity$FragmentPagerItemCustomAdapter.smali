@@ -49,16 +49,16 @@
     .end annotation
 
     .prologue
-    .line 2580
+    .line 2581
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    .line 2581
+    .line 2582
     invoke-direct {p0, p2}, Landroid/support/v4/app/FragmentPagerAdapter;-><init>(Landroid/support/v4/app/FragmentManager;)V
 
-    .line 2582
+    .line 2583
     iput-object p3, p0, Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;->b:Lcom/ogaclejapan/smarttablayout/utils/v4/FragmentPagerItems;
 
-    .line 2583
+    .line 2584
     new-instance v0, Landroid/support/v4/util/SparseArrayCompat;
 
     invoke-virtual {p3}, Lcom/ogaclejapan/smarttablayout/utils/v4/FragmentPagerItems;->size()I
@@ -69,10 +69,10 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;->c:Landroid/support/v4/util/SparseArrayCompat;
 
-    .line 2584
+    .line 2585
     iput-object p4, p0, Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;->d:Ljava/util/ArrayList;
 
-    .line 2585
+    .line 2586
     return-void
 .end method
 
@@ -82,7 +82,7 @@
     .registers 7
 
     .prologue
-    .line 2602
+    .line 2603
     invoke-virtual {p0, p1}, Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;->e(I)Lcom/ogaclejapan/smarttablayout/utils/v4/FragmentPagerItem;
 
     move-result-object v0
@@ -97,12 +97,12 @@
 
     move-result-object v2
 
-    .line 2604
+    .line 2605
     new-instance v3, Landroid/os/Bundle;
 
     invoke-direct {v3}, Landroid/os/Bundle;-><init>()V
 
-    .line 2605
+    .line 2606
     const-string/jumbo v0, "index"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -125,7 +125,7 @@
 
     invoke-virtual {v3, v0, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2626
+    .line 2627
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;->d:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -134,7 +134,7 @@
 
     check-cast v0, Lcom/bzbs/bean/CampaignCategory;
 
-    .line 2627
+    .line 2628
     iget-object v1, v0, Lcom/bzbs/bean/CampaignCategory;->dashboard_key:Ljava/lang/String;
 
     if-eqz v1, :cond_7c
@@ -149,7 +149,7 @@
 
     if-nez v1, :cond_7c
 
-    .line 2628
+    .line 2629
     const-string/jumbo v4, "header_en"
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;->d:Ljava/util/ArrayList;
@@ -164,7 +164,7 @@
 
     invoke-virtual {v3, v4, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2629
+    .line 2630
     const-string/jumbo v4, "header"
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;->d:Ljava/util/ArrayList;
@@ -179,7 +179,7 @@
 
     invoke-virtual {v3, v4, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2630
+    .line 2631
     const-string/jumbo v1, "cat"
 
     iget v4, v0, Lcom/bzbs/bean/CampaignCategory;->cat:I
@@ -190,21 +190,21 @@
 
     invoke-virtual {v3, v1, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2631
+    .line 2632
     const-string/jumbo v1, "dashboard_key"
 
     iget-object v0, v0, Lcom/bzbs/bean/CampaignCategory;->dashboard_key:Ljava/lang/String;
 
     invoke-virtual {v3, v1, v0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2640
+    .line 2641
     :goto_78
     invoke-virtual {v2, v3}, Landroid/support/v4/app/Fragment;->setArguments(Landroid/os/Bundle;)V
 
-    .line 2642
+    .line 2643
     return-object v2
 
-    .line 2633
+    .line 2634
     :cond_7c
     const-string/jumbo v4, "header_en"
 
@@ -220,7 +220,7 @@
 
     invoke-virtual {v3, v4, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2634
+    .line 2635
     const-string/jumbo v4, "header"
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;->d:Ljava/util/ArrayList;
@@ -235,7 +235,7 @@
 
     invoke-virtual {v3, v4, v1}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2635
+    .line 2636
     const-string/jumbo v1, "mode"
 
     iget-object v4, v0, Lcom/bzbs/bean/CampaignCategory;->mode:Ljava/lang/String;
@@ -246,7 +246,7 @@
 
     invoke-virtual {v3, v1, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2636
+    .line 2637
     const-string/jumbo v1, "tags"
 
     iget-object v4, v0, Lcom/bzbs/bean/CampaignCategory;->tags:Ljava/lang/String;
@@ -257,7 +257,7 @@
 
     invoke-virtual {v3, v1, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2637
+    .line 2638
     const-string/jumbo v1, "cat"
 
     iget v4, v0, Lcom/bzbs/bean/CampaignCategory;->cat:I
@@ -268,7 +268,7 @@
 
     invoke-virtual {v3, v1, v4}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2638
+    .line 2639
     const-string/jumbo v1, "list_config"
 
     iget-object v0, v0, Lcom/bzbs/bean/CampaignCategory;->list_config:Ljava/lang/String;
@@ -286,17 +286,17 @@
     .registers 7
 
     .prologue
-    .line 2647
+    .line 2648
     invoke-super {p0, p1, p2}, Landroid/support/v4/app/FragmentPagerAdapter;->a(Landroid/view/ViewGroup;I)Ljava/lang/Object;
 
     move-result-object v1
 
-    .line 2648
+    .line 2649
     instance-of v0, v1, Landroid/support/v4/app/Fragment;
 
     if-eqz v0, :cond_15
 
-    .line 2649
+    .line 2650
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;->c:Landroid/support/v4/util/SparseArrayCompat;
 
     new-instance v3, Ljava/lang/ref/WeakReference;
@@ -309,7 +309,7 @@
 
     invoke-virtual {v2, p2, v3}, Landroid/support/v4/util/SparseArrayCompat;->b(ILjava/lang/Object;)V
 
-    .line 2651
+    .line 2652
     :cond_15
     return-object v1
 .end method
@@ -318,15 +318,15 @@
     .registers 5
 
     .prologue
-    .line 2656
+    .line 2657
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;->c:Landroid/support/v4/util/SparseArrayCompat;
 
     invoke-virtual {v0, p2}, Landroid/support/v4/util/SparseArrayCompat;->c(I)V
 
-    .line 2657
+    .line 2658
     invoke-super {p0, p1, p2, p3}, Landroid/support/v4/app/FragmentPagerAdapter;->a(Landroid/view/ViewGroup;ILjava/lang/Object;)V
 
-    .line 2658
+    .line 2659
     return-void
 .end method
 
@@ -334,19 +334,19 @@
     .registers 2
 
     .prologue
-    .line 2593
+    .line 2594
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;->b:Lcom/ogaclejapan/smarttablayout/utils/v4/FragmentPagerItems;
 
     if-eqz v0, :cond_b
 
-    .line 2594
+    .line 2595
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;->b:Lcom/ogaclejapan/smarttablayout/utils/v4/FragmentPagerItems;
 
     invoke-virtual {v0}, Lcom/ogaclejapan/smarttablayout/utils/v4/FragmentPagerItems;->size()I
 
     move-result v0
 
-    .line 2596
+    .line 2597
     :goto_a
     return v0
 
@@ -360,7 +360,7 @@
     .registers 3
 
     .prologue
-    .line 2662
+    .line 2663
     invoke-virtual {p0, p1}, Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;->e(I)Lcom/ogaclejapan/smarttablayout/utils/v4/FragmentPagerItem;
 
     move-result-object v0
@@ -376,7 +376,7 @@
     .registers 3
 
     .prologue
-    .line 2667
+    .line 2668
     invoke-super {p0, p1}, Landroid/support/v4/app/FragmentPagerAdapter;->d(I)F
 
     move-result v0
@@ -388,7 +388,7 @@
     .registers 3
 
     .prologue
-    .line 2676
+    .line 2677
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$FragmentPagerItemCustomAdapter;->b:Lcom/ogaclejapan/smarttablayout/utils/v4/FragmentPagerItems;
 
     invoke-virtual {v0, p1}, Lcom/ogaclejapan/smarttablayout/utils/v4/FragmentPagerItems;->get(I)Ljava/lang/Object;

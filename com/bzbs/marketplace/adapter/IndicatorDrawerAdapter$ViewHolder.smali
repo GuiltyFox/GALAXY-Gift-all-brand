@@ -10,13 +10,13 @@
 
 .field contentPackSticker:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10067a
+        value = 0x7f10067e
     .end annotation
 .end field
 
 .field imageParentSticker:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10067b
+        value = 0x7f10067f
     .end annotation
 .end field
 

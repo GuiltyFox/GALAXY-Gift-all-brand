@@ -18,7 +18,7 @@
     .registers 6
 
     .prologue
-    .line 837
+    .line 839
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$5;->a:Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;
 
     invoke-direct {p0, p2, p3, p4, p5}, Landroid/os/CountDownTimer;-><init>(JJ)V
@@ -32,7 +32,7 @@
     .registers 4
 
     .prologue
-    .line 846
+    .line 848
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$5;->a:Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$6$1;
@@ -47,7 +47,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 847
+    .line 849
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$5;->a:Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$6$1;
@@ -66,7 +66,7 @@
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$6;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v2, 0x7f09038f
+    const v2, 0x7f090399
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
 
@@ -74,7 +74,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 850
+    .line 852
     return-void
 .end method
 
@@ -84,7 +84,7 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 839
+    .line 841
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$5;->a:Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$6$1;
@@ -97,7 +97,7 @@
 
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 840
+    .line 842
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$5;->a:Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$6$1;
@@ -106,13 +106,13 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$6;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v1, 0x7f090386
+    const v1, 0x7f090390
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 841
+    .line 843
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$5;->a:Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$6$1;
@@ -121,13 +121,13 @@
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$6;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v2, 0x7f09038b
+    const v2, 0x7f090395
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 842
+    .line 844
     iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$5;->a:Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;
 
     iget-object v2, v2, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$6$1;
@@ -216,6 +216,6 @@
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 843
+    .line 845
     return-void
 .end method

@@ -45,7 +45,7 @@
     .end annotation
 
     .prologue
-    const v3, 0x7f10067f
+    const v3, 0x7f100683
 
     const v2, 0x7f100139
 

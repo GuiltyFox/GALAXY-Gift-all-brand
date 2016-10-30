@@ -1117,7 +1117,7 @@
     .line 397
     const-string/jumbo v2, ""
 
-    const v3, 0x7f090280
+    const v3, 0x7f090281
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/LoginActivity;->getString(I)Ljava/lang/String;
 
@@ -1324,7 +1324,7 @@
     :cond_f
     const-string/jumbo v0, ""
 
-    const v1, 0x7f090280
+    const v1, 0x7f090281
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/LoginActivity;->getString(I)Ljava/lang/String;
 

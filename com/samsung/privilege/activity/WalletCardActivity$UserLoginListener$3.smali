@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 350
+    .line 352
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener$3;->b:Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener$3;->a:Ljava/lang/String;
@@ -39,7 +39,7 @@
     .registers 4
 
     .prologue
-    .line 353
+    .line 355
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener$3;->a:Ljava/lang/String;
 
     const-string/jumbo v1, "wallet_create"
@@ -48,9 +48,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_15
+    if-eqz v0, :cond_16
 
-    .line 358
+    .line 360
     :try_start_b
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener$3;->b:Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener;
 
@@ -58,20 +58,22 @@
 
     const-string/jumbo v1, "doActivateCard"
 
-    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Lcom/samsung/privilege/activity/WalletCardActivity;Ljava/lang/String;)V
-    :try_end_15
-    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_15} :catch_16
+    const/4 v2, 0x1
 
-    .line 363
-    :cond_15
-    :goto_15
+    invoke-static {v0, v1, v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Lcom/samsung/privilege/activity/WalletCardActivity;Ljava/lang/String;Z)V
+    :try_end_16
+    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_16} :catch_17
+
+    .line 365
+    :cond_16
+    :goto_16
     return-void
 
-    .line 359
-    :catch_16
+    .line 361
+    :catch_17
     move-exception v0
 
-    .line 360
+    .line 362
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener$3;->b:Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -80,7 +82,7 @@
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v2, 0x7f090375
+    const v2, 0x7f09037f
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
 
@@ -88,5 +90,5 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;Ljava/lang/String;)V
 
-    goto :goto_15
+    goto :goto_16
 .end method

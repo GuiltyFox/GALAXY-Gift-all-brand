@@ -193,7 +193,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    const v4, 0x7f090369
+    const v4, 0x7f090373
 
     invoke-virtual {v3, v4}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 
@@ -273,7 +273,7 @@
 
     iget-object v5, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    const v6, 0x7f09038d
+    const v6, 0x7f090397
 
     invoke-virtual {v5, v6}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 
@@ -353,7 +353,7 @@
 
     iget-object v4, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    const v5, 0x7f090380
+    const v5, 0x7f09038a
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 

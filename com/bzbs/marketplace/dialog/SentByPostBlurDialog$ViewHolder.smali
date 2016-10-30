@@ -8,61 +8,61 @@
 
 .field btnClose:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10028f
+        value = 0x7f100290
     .end annotation
 .end field
 
 .field imgCampaign:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100286
+        value = 0x7f100287
     .end annotation
 .end field
 
 .field layoutRoot:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100284
+        value = 0x7f100285
     .end annotation
 .end field
 
 .field svCondition:Landroid/widget/ScrollView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100289
+        value = 0x7f10028a
     .end annotation
 .end field
 
 .field tvCampaignDesc:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100287
+        value = 0x7f100288
     .end annotation
 .end field
 
 .field tvDraws1:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100299
+        value = 0x7f10029a
     .end annotation
 .end field
 
 .field tvDraws2:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10029a
+        value = 0x7f10029b
     .end annotation
 .end field
 
 .field tvDraws3:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10029b
+        value = 0x7f10029c
     .end annotation
 .end field
 
 .field tvDraws4:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10029c
+        value = 0x7f10029d
     .end annotation
 .end field
 
 .field tvShowTimeRedeem:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100288
+        value = 0x7f100289
     .end annotation
 .end field
 
@@ -173,7 +173,7 @@
 
     iget-object v4, p0, Lcom/bzbs/marketplace/dialog/SentByPostBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/SentByPostBlurDialog;
 
-    const v5, 0x7f0903be
+    const v5, 0x7f0903c8
 
     invoke-virtual {v4, v5}, Lcom/bzbs/marketplace/dialog/SentByPostBlurDialog;->getString(I)Ljava/lang/String;
 

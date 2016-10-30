@@ -100,14 +100,14 @@
     .line 42
     sget-object v0, Lcom/samsung/privilege/util/DialogMyPoint;->c:Landroid/app/Dialog;
 
-    const v1, 0x7f040117
+    const v1, 0x7f040118
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 44
     sget-object v0, Lcom/samsung/privilege/util/DialogMyPoint;->c:Landroid/app/Dialog;
 
-    const v1, 0x7f1005b2
+    const v1, 0x7f1005c3
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -157,7 +157,7 @@
     .line 58
     sget-object v1, Lcom/samsung/privilege/util/DialogMyPoint;->c:Landroid/app/Dialog;
 
-    const v2, 0x7f1005b3
+    const v2, 0x7f1005c4
 
     invoke-virtual {v1, v2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 

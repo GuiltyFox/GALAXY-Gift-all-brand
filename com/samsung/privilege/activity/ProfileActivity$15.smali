@@ -3,12 +3,12 @@
 .source "ProfileActivity.java"
 
 # interfaces
-.implements Landroid/view/View$OnTouchListener;
+.implements Lcom/samsung/privilege/control/toggle/ToggleButton$OnToggleChanged;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lcom/samsung/privilege/activity/ProfileActivity;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lcom/samsung/privilege/activity/ProfileActivity;->j()V
 .end annotation
 
 
@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 788
+    .line 610
     iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$15;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,24 +31,105 @@
 
 
 # virtual methods
-.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .registers 6
+.method public a(Z)V
+    .registers 7
 
     .prologue
-    const/4 v2, 0x1
+    const/4 v4, 0x1
 
-    .line 790
+    .line 613
+    if-ne p1, v4, :cond_1f
+
+    .line 614
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v1, 0x17
+
+    if-lt v0, v1, :cond_1e
+
+    .line 615
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$15;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    invoke-static {v0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->a(Lcom/samsung/privilege/activity/ProfileActivity;Z)Z
+    const/4 v1, 0x2
 
-    .line 791
-    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$15;->a:Lcom/samsung/privilege/activity/ProfileActivity;
+    new-array v1, v1, [Ljava/lang/String;
 
-    const/16 v1, 0xa
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/ProfileActivity;->showDialog(I)V
+    const-string/jumbo v3, "android.permission.ACCESS_COARSE_LOCATION"
 
-    .line 792
-    return v2
+    aput-object v3, v1, v2
+
+    const-string/jumbo v2, "android.permission.ACCESS_FINE_LOCATION"
+
+    aput-object v2, v1, v4
+
+    const/16 v2, 0x12c
+
+    invoke-virtual {v0, v1, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->requestPermissions([Ljava/lang/String;I)V
+
+    .line 626
+    :cond_1e
+    :goto_1e
+    return-void
+
+    .line 619
+    :cond_1f
+    :try_start_1f
+    new-instance v0, Landroid/content/Intent;
+
+    const-string/jumbo v1, "android.settings.APPLICATION_DETAILS_SETTINGS"
+
+    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "package:"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/samsung/privilege/activity/ProfileActivity$15;->a:Lcom/samsung/privilege/activity/ProfileActivity;
+
+    .line 620
+    invoke-virtual {v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getPackageName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+
+    move-result-object v0
+
+    .line 621
+    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$15;->a:Lcom/samsung/privilege/activity/ProfileActivity;
+
+    invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->startActivity(Landroid/content/Intent;)V
+    :try_end_4e
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_1f .. :try_end_4e} :catch_4f
+
+    goto :goto_1e
+
+    .line 622
+    :catch_4f
+    move-exception v0
+
+    .line 623
+    invoke-virtual {v0}, Landroid/content/ActivityNotFoundException;->printStackTrace()V
+
+    goto :goto_1e
 .end method

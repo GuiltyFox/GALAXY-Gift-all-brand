@@ -60,11 +60,11 @@
     move-result-object v1
 
     .line 149
-    const v2, 0x7f040174
+    const v2, 0x7f040175
 
     sget-object v0, Lcom/bzbs/data/AppSetting;->a:Landroid/app/Activity;
 
-    const v3, 0x7f1004f5
+    const v3, 0x7f1004f6
 
     invoke-virtual {v0, v3}, Landroid/app/Activity;->findViewById(I)Landroid/view/View;
 
@@ -77,7 +77,7 @@
     move-result-object v7
 
     .line 152
-    const v0, 0x7f1006c6
+    const v0, 0x7f1006ca
 
     invoke-virtual {v7, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -86,7 +86,7 @@
     check-cast v0, Landroid/widget/RelativeLayout;
 
     .line 153
-    const v1, 0x7f1006c1
+    const v1, 0x7f1006c5
 
     invoke-virtual {v7, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -95,7 +95,7 @@
     check-cast v1, Landroid/widget/ImageView;
 
     .line 154
-    const v2, 0x7f10022d
+    const v2, 0x7f10022e
 
     invoke-virtual {v7, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -104,7 +104,7 @@
     check-cast v2, Landroid/widget/TextView;
 
     .line 155
-    const v3, 0x7f1006c2
+    const v3, 0x7f1006c6
 
     invoke-virtual {v7, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -113,7 +113,7 @@
     check-cast v3, Landroid/widget/TextView;
 
     .line 156
-    const v4, 0x7f1006c3
+    const v4, 0x7f1006c7
 
     invoke-virtual {v7, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -122,7 +122,7 @@
     check-cast v4, Landroid/widget/TextView;
 
     .line 157
-    const v5, 0x7f1006c7
+    const v5, 0x7f1006cb
 
     invoke-virtual {v7, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -131,7 +131,7 @@
     check-cast v5, Landroid/widget/TextView;
 
     .line 158
-    const v6, 0x7f1002fc
+    const v6, 0x7f1002fd
 
     invoke-virtual {v7, v6}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

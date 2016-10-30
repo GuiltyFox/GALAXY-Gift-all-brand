@@ -55,7 +55,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$HistoryAdapter$HistoryViewHolder;->b:Landroid/widget/TextView;
 
     .line 876
-    const v0, 0x7f1002ff
+    const v0, 0x7f100300
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -66,7 +66,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$HistoryAdapter$HistoryViewHolder;->c:Landroid/widget/TextView;
 
     .line 877
-    const v0, 0x7f100504
+    const v0, 0x7f100505
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -77,7 +77,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$HistoryAdapter$HistoryViewHolder;->d:Landroid/widget/TextView;
 
     .line 878
-    const v0, 0x7f1002f8
+    const v0, 0x7f1002f9
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -88,7 +88,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$HistoryAdapter$HistoryViewHolder;->e:Landroid/widget/TextView;
 
     .line 879
-    const v0, 0x7f1002f4
+    const v0, 0x7f1002f5
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -99,7 +99,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$HistoryAdapter$HistoryViewHolder;->f:Landroid/widget/TextView;
 
     .line 880
-    const v0, 0x7f100505
+    const v0, 0x7f100506
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

@@ -805,7 +805,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v4, 0x7f090387
+    const v4, 0x7f090391
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 
@@ -843,7 +843,7 @@
 
     move-result-object v3
 
-    const v4, 0x7f090369
+    const v4, 0x7f090373
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 
@@ -978,7 +978,7 @@
     .line 289
     const-string/jumbo v1, ""
 
-    const v2, 0x7f090280
+    const v2, 0x7f090281
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 
@@ -1200,7 +1200,7 @@
     .line 428
     const-string/jumbo v0, ""
 
-    const v1, 0x7f090280
+    const v1, 0x7f090281
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 
@@ -1386,7 +1386,7 @@
     .line 546
     const-string/jumbo v0, ""
 
-    const v1, 0x7f090280
+    const v1, 0x7f090281
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 

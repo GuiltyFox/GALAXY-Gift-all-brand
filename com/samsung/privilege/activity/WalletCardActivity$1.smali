@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/WalletCardActivity;->a(Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/activity/WalletCardActivity;->a(Ljava/lang/String;Z)V
 .end annotation
 
 
@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 264
+    .line 265
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$1;->a:Landroid/app/Dialog;
@@ -39,12 +39,12 @@
     .registers 7
 
     .prologue
-    .line 266
+    .line 267
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$1;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 268
+    .line 269
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->getApplicationContext()Landroid/content/Context;
@@ -53,12 +53,12 @@
 
     invoke-static {v0}, Lcom/bzbs/data/UserLogin;->R(Landroid/content/Context;)V
 
-    .line 269
+    .line 270
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Lcom/samsung/privilege/activity/WalletCardActivity;)V
 
-    .line 271
+    .line 272
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
@@ -101,6 +101,6 @@
 
     invoke-static {v0, v1, v2, v3, v4}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Lcom/facebook/CallbackManager;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 272
+    .line 273
     return-void
 .end method

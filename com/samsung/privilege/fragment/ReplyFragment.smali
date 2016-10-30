@@ -6,31 +6,31 @@
 # instance fields
 .field btnPost:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10041a
+        value = 0x7f10041b
     .end annotation
 .end field
 
 .field contentCancel:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066a
+        value = 0x7f10066e
     .end annotation
 .end field
 
 .field contentImagePost:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100668
+        value = 0x7f10066c
     .end annotation
 .end field
 
 .field contentPost:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100665
+        value = 0x7f100669
     .end annotation
 .end field
 
 .field edtTextComment:Landroid/widget/EditText;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066b
+        value = 0x7f10066f
     .end annotation
 .end field
 
@@ -51,7 +51,7 @@
 
 .field imagePost:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100669
+        value = 0x7f10066d
     .end annotation
 .end field
 
@@ -65,7 +65,7 @@
 
 .field mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10061b
+        value = 0x7f10061f
     .end annotation
 .end field
 
@@ -81,7 +81,7 @@
 
 .field recyclerView:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100666
+        value = 0x7f10066a
     .end annotation
 .end field
 
@@ -731,7 +731,7 @@
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
     .line 116
-    const v0, 0x7f040148
+    const v0, 0x7f040149
 
     return v0
 .end method
@@ -817,7 +817,7 @@
     .registers 7
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f10041a
+            0x7f10041b
         }
     .end annotation
 

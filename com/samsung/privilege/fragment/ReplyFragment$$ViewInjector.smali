@@ -45,15 +45,15 @@
     .end annotation
 
     .prologue
-    const v6, 0x7f100668
+    const v6, 0x7f10066c
 
-    const v2, 0x7f100666
+    const v2, 0x7f10066a
 
-    const v5, 0x7f100665
+    const v5, 0x7f100669
 
-    const v4, 0x7f10061b
+    const v4, 0x7f10061f
 
-    const v3, 0x7f10041a
+    const v3, 0x7f10041b
 
     .line 11
     const-string/jumbo v0, "field \'recyclerView\'"
@@ -76,7 +76,7 @@
     iput-object v0, p2, Lcom/samsung/privilege/fragment/ReplyFragment;->recyclerView:Landroid/support/v7/widget/RecyclerView;
 
     .line 13
-    const v0, 0x7f100669
+    const v0, 0x7f10066d
 
     const-string/jumbo v1, "field \'imagePost\'"
 
@@ -87,7 +87,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 14
-    const v1, 0x7f100669
+    const v1, 0x7f10066d
 
     const-string/jumbo v2, "field \'imagePost\'"
 
@@ -100,7 +100,7 @@
     iput-object v0, p2, Lcom/samsung/privilege/fragment/ReplyFragment;->imagePost:Landroid/widget/ImageView;
 
     .line 15
-    const v0, 0x7f10066a
+    const v0, 0x7f10066e
 
     const-string/jumbo v1, "field \'contentCancel\'"
 
@@ -111,7 +111,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 16
-    const v1, 0x7f10066a
+    const v1, 0x7f10066e
 
     const-string/jumbo v2, "field \'contentCancel\'"
 
@@ -144,7 +144,7 @@
     iput-object v0, p2, Lcom/samsung/privilege/fragment/ReplyFragment;->contentImagePost:Landroid/widget/LinearLayout;
 
     .line 19
-    const v0, 0x7f10066b
+    const v0, 0x7f10066f
 
     const-string/jumbo v1, "field \'edtTextComment\'"
 
@@ -155,7 +155,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 20
-    const v1, 0x7f10066b
+    const v1, 0x7f10066f
 
     const-string/jumbo v2, "field \'edtTextComment\'"
 

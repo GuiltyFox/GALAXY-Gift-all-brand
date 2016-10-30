@@ -29,7 +29,7 @@
 
     .prologue
     .line 105
-    const v0, 0x7f0903e3
+    const v0, 0x7f0903ed
 
     const/4 v1, 0x0
 

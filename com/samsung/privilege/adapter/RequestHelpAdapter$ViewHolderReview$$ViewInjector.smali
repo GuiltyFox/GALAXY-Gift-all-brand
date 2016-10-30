@@ -45,13 +45,13 @@
     .end annotation
 
     .prologue
-    const v6, 0x7f10066d
+    const v6, 0x7f100671
 
-    const v5, 0x7f100669
+    const v5, 0x7f10066d
 
-    const v4, 0x7f10062a
+    const v4, 0x7f10062e
 
-    const v3, 0x7f100629
+    const v3, 0x7f10062d
 
     const v2, 0x7f1001c4
 
@@ -96,7 +96,7 @@
     iput-object v0, p2, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->textDisplay:Landroid/widget/TextView;
 
     .line 15
-    const v0, 0x7f100670
+    const v0, 0x7f100674
 
     const-string/jumbo v1, "field \'textPost\'"
 
@@ -107,7 +107,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 16
-    const v1, 0x7f100670
+    const v1, 0x7f100674
 
     const-string/jumbo v2, "field \'textPost\'"
 
@@ -120,7 +120,7 @@
     iput-object v0, p2, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->textPost:Landroid/widget/TextView;
 
     .line 17
-    const v0, 0x7f10066f
+    const v0, 0x7f100673
 
     const-string/jumbo v1, "field \'textCreateTime\'"
 
@@ -131,7 +131,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 18
-    const v1, 0x7f10066f
+    const v1, 0x7f100673
 
     const-string/jumbo v2, "field \'textCreateTime\'"
 
@@ -144,7 +144,7 @@
     iput-object v0, p2, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->textCreateTime:Landroid/widget/TextView;
 
     .line 19
-    const v0, 0x7f10066e
+    const v0, 0x7f100672
 
     const-string/jumbo v1, "field \'textCreateDate\'"
 
@@ -155,7 +155,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 20
-    const v1, 0x7f10066e
+    const v1, 0x7f100672
 
     const-string/jumbo v2, "field \'textCreateDate\'"
 
@@ -208,7 +208,7 @@
     iput-object v0, p2, Lcom/samsung/privilege/adapter/RequestHelpAdapter$ViewHolderReview;->textViewComment:Landroid/widget/TextView;
 
     .line 25
-    const v0, 0x7f100672
+    const v0, 0x7f100676
 
     const-string/jumbo v1, "field \'imageHeader\'"
 
@@ -219,7 +219,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 26
-    const v1, 0x7f100672
+    const v1, 0x7f100676
 
     const-string/jumbo v2, "field \'imageHeader\'"
 

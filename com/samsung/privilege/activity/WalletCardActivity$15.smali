@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 1529
+    .line 1531
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$15;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,6 +35,6 @@
     .registers 1
 
     .prologue
-    .line 1535
+    .line 1537
     return-void
 .end method

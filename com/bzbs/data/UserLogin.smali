@@ -27,7 +27,7 @@
     sput-object v0, Lcom/bzbs/data/UserLogin;->b:Ljava/lang/String;
 
     .line 29
-    const-string/jumbo v0, "(nong.annything){100002093463942},(Buzzebees App){100004153410428},(Kieak Kitti){100002510990024},(anchalikaa){539831171},(miewdivasang){1084857009},(Ann Sopawan){1495332876},(MaleePrincess Pattama){682916828},(Pat PK){100001080248961},(Pongsak Meedanpai){100000537824053},(Dev Suwit){100003763346702},(Aob Zaa){1270290084},(IBaas Yo FuNe){1073075453},(Michael Chen){713132344},(Isis Scrubb){100004734994762},(Pupe Monpeera){600156041},(Kik){711052733},(Max){100001501983286},(admin facebook){100000122640577}"
+    const-string/jumbo v0, "(Kik Tewutthatanont){711052733},(Nattinee Pan){536687237},(nong.annything){100002093463942},(Buzzebees App){100004153410428},(Kieak Kitti){100002510990024},(miewdivasang){1084857009},(Ann Sopawan){1495332876},(MaleePrincess Pattama){682916828},(Pat PK){100001080248961},(Pongsak Meedanpai){100000537824053},(Dev Suwit){100003763346702},(Aob Zaa){1270290084},(IBaas Yo FuNe){1073075453},(Michael Chen){713132344},(Isis Scrubb){100004734994762},(Pupe Monpeera){600156041},(admin facebook){100000122640577}"
 
     sput-object v0, Lcom/bzbs/data/UserLogin;->c:Ljava/lang/String;
 

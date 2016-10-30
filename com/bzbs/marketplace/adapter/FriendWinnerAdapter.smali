@@ -190,7 +190,7 @@
 
     iget-object v1, p0, Lcom/bzbs/marketplace/adapter/FriendWinnerAdapter;->a:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f040154
+    const v2, 0x7f040155
 
     const/4 v3, 0x0
 

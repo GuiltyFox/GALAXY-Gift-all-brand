@@ -3,7 +3,7 @@
 .source "ProfileActivity.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/app/DatePickerDialog$OnDateSetListener;
 
 
 # annotations
@@ -13,20 +13,24 @@
 
 
 # instance fields
-.field final synthetic a:Landroid/app/DatePickerDialog;
+.field final synthetic a:Landroid/widget/TextView;
 
-.field final synthetic b:Lcom/samsung/privilege/activity/ProfileActivity;
+.field final synthetic b:Ljava/text/SimpleDateFormat;
+
+.field final synthetic c:Lcom/samsung/privilege/activity/ProfileActivity;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/ProfileActivity;Landroid/app/DatePickerDialog;)V
-    .registers 3
+.method constructor <init>(Lcom/samsung/privilege/activity/ProfileActivity;Landroid/widget/TextView;Ljava/text/SimpleDateFormat;)V
+    .registers 4
 
     .prologue
-    .line 380
-    iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$8;->b:Lcom/samsung/privilege/activity/ProfileActivity;
+    .line 386
+    iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$8;->c:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    iput-object p2, p0, Lcom/samsung/privilege/activity/ProfileActivity$8;->a:Landroid/app/DatePickerDialog;
+    iput-object p2, p0, Lcom/samsung/privilege/activity/ProfileActivity$8;->a:Landroid/widget/TextView;
+
+    iput-object p3, p0, Lcom/samsung/privilege/activity/ProfileActivity$8;->b:Ljava/text/SimpleDateFormat;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,15 +39,33 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 3
+.method public onDateSet(Landroid/widget/DatePicker;III)V
+    .registers 8
 
     .prologue
-    .line 383
-    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$8;->a:Landroid/app/DatePickerDialog;
+    .line 388
+    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
-    invoke-virtual {v0}, Landroid/app/DatePickerDialog;->show()V
+    move-result-object v0
 
-    .line 384
+    .line 389
+    invoke-virtual {v0, p2, p3, p4}, Ljava/util/Calendar;->set(III)V
+
+    .line 390
+    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$8;->a:Landroid/widget/TextView;
+
+    iget-object v2, p0, Lcom/samsung/privilege/activity/ProfileActivity$8;->b:Ljava/text/SimpleDateFormat;
+
+    invoke-virtual {v0}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 391
     return-void
 .end method

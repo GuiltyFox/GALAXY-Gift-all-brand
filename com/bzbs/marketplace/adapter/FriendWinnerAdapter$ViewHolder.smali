@@ -14,7 +14,7 @@
 
 .field textReward:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10067f
+        value = 0x7f100683
     .end annotation
 .end field
 

@@ -248,7 +248,7 @@
     .line 193
     iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity$4;->a:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v3, 0x7f0903e3
+    const v3, 0x7f0903ed
 
     invoke-virtual {v1, v3}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -259,7 +259,7 @@
     .line 194
     iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity$4;->a:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v3, 0x7f09031c
+    const v3, 0x7f090326
 
     invoke-virtual {v1, v3}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -277,7 +277,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/HistoryActivity$4;->a:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v4, 0x7f090329
+    const v4, 0x7f090333
 
     invoke-virtual {v3, v4}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -293,7 +293,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/HistoryActivity$4;->a:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v4, 0x7f09033a
+    const v4, 0x7f090344
 
     .line 198
     invoke-virtual {v3, v4}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
@@ -414,7 +414,7 @@
 
     iget-object v5, p0, Lcom/samsung/privilege/activity/HistoryActivity$4;->a:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v6, 0x7f090280
+    const v6, 0x7f090281
 
     invoke-virtual {v5, v6}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -739,7 +739,7 @@
     .line 252
     iget-object v4, p0, Lcom/samsung/privilege/activity/HistoryActivity$4;->a:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v5, 0x7f0903e3
+    const v5, 0x7f0903ed
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -762,7 +762,7 @@
 
     iget-object v5, p0, Lcom/samsung/privilege/activity/HistoryActivity$4;->a:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v6, 0x7f090329
+    const v6, 0x7f090333
 
     invoke-virtual {v5, v6}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -778,7 +778,7 @@
 
     iget-object v5, p0, Lcom/samsung/privilege/activity/HistoryActivity$4;->a:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v6, 0x7f09033a
+    const v6, 0x7f090344
 
     .line 257
     invoke-virtual {v5, v6}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
@@ -985,7 +985,7 @@
     :cond_383
     iget-object v4, p0, Lcom/samsung/privilege/activity/HistoryActivity$4;->a:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v5, 0x7f09035e
+    const v5, 0x7f090368
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 

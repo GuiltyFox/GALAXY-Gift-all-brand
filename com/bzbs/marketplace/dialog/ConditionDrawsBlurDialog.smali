@@ -405,7 +405,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f040105
+    const v2, 0x7f040106
 
     const/4 v3, 0x0
 
@@ -424,7 +424,7 @@
     .line 105
     iget-object v3, v2, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$ViewHolder;->btnOK:Landroid/widget/Button;
 
-    const v4, 0x7f09033a
+    const v4, 0x7f090344
 
     invoke-virtual {p0, v4}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->getString(I)Ljava/lang/String;
 
@@ -435,7 +435,7 @@
     .line 106
     iget-object v3, v2, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog$ViewHolder;->btnClose:Landroid/widget/Button;
 
-    const v4, 0x7f09032a
+    const v4, 0x7f090334
 
     invoke-virtual {p0, v4}, Lcom/bzbs/marketplace/dialog/ConditionDrawsBlurDialog;->getString(I)Ljava/lang/String;
 

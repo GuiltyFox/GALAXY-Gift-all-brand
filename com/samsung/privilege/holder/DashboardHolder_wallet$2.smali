@@ -156,7 +156,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$2;->a:Landroid/app/Activity;
 
-    const v4, 0x7f090280
+    const v4, 0x7f090281
 
     invoke-virtual {v3, v4}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 

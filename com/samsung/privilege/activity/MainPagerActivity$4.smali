@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 388
+    .line 389
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$4;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$4;->a:Ljava/lang/String;
@@ -39,7 +39,7 @@
     .registers 4
 
     .prologue
-    .line 391
+    .line 392
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$4;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$4;->a:Ljava/lang/String;
@@ -50,9 +50,9 @@
 
     move-result-object v0
 
-    .line 392
+    .line 393
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 393
+    .line 394
     return-void
 .end method

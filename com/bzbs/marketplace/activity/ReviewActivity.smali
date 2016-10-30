@@ -92,7 +92,7 @@
     iput-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->a:Landroid/os/Handler;
 
     .line 72
-    const v0, 0x7f090274
+    const v0, 0x7f090275
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getString(I)Ljava/lang/String;
 

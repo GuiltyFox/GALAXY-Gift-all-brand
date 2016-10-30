@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 710
+    .line 712
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$2;->a:Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 8
 
     .prologue
-    .line 714
+    .line 716
     :try_start_0
     const-string/jumbo v0, "CODE_128"
 
@@ -71,7 +71,7 @@
 
     move-result-object v0
 
-    .line 715
+    .line 717
     new-instance v1, Lcom/bzbs/zxing/QRCodeEncoder;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$2;->a:Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;
@@ -90,13 +90,13 @@
     :try_end_33
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_33} :catch_bb
 
-    .line 717
+    .line 719
     :try_start_33
     invoke-virtual {v1}, Lcom/bzbs/zxing/QRCodeEncoder;->a()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 718
+    .line 720
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$2;->a:Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$6$1;
@@ -112,7 +112,7 @@
     .catch Lcom/google/zxing/WriterException; {:try_start_33 .. :try_end_44} :catch_9a
     .catch Ljava/lang/Exception; {:try_start_33 .. :try_end_44} :catch_bb
 
-    .line 723
+    .line 725
     :goto_44
     :try_start_44
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$2;->a:Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;
@@ -129,7 +129,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 724
+    .line 726
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$2;->a:Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$6$1;
@@ -146,7 +146,7 @@
     :try_end_61
     .catch Ljava/lang/Exception; {:try_start_44 .. :try_end_61} :catch_bb
 
-    .line 729
+    .line 731
     :goto_61
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -200,14 +200,14 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 730
+    .line 732
     return-void
 
-    .line 719
+    .line 721
     :catch_9a
     move-exception v0
 
-    .line 720
+    .line 722
     :try_start_9b
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
@@ -241,11 +241,11 @@
 
     goto :goto_44
 
-    .line 725
+    .line 727
     :catch_bb
     move-exception v0
 
-    .line 726
+    .line 728
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
     move-result-object v1

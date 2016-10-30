@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 1757
+    .line 1758
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$22;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 4
 
     .prologue
-    .line 1760
+    .line 1761
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$22;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->getApplicationContext()Landroid/content/Context;
@@ -54,14 +54,14 @@
 
     if-nez v0, :cond_1b
 
-    .line 1763
+    .line 1764
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$22;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     const-string/jumbo v1, "1054"
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->a(Lcom/samsung/privilege/activity/MainPagerActivity;Ljava/lang/String;)V
 
-    .line 1765
+    .line 1766
     :cond_1b
     return-void
 .end method

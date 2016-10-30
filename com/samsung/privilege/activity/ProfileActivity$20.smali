@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/ProfileActivity;->doUpdate(Landroid/view/View;)V
+    value = Lcom/samsung/privilege/activity/ProfileActivity;->l()V
 .end annotation
 
 
@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 1714
+    .line 1106
     iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$20;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
     invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
@@ -32,13 +32,13 @@
     .registers 8
 
     .prologue
-    .line 1780
+    .line 1130
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 1782
+    .line 1132
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$20;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    invoke-static {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->b(Lcom/samsung/privilege/activity/ProfileActivity;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->c(Lcom/samsung/privilege/activity/ProfileActivity;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -46,7 +46,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "(doUpdate|onFailure)response_code="
+    const-string/jumbo v2, "(getProfileData|onFailure)response_code="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -72,21 +72,26 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1784
+    .line 1134
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$20;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    invoke-static {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->c(Lcom/samsung/privilege/activity/ProfileActivity;)Landroid/app/ProgressDialog;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->d(Lcom/samsung/privilege/activity/ProfileActivity;)Landroid/app/ProgressDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 1786
+    .line 1136
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$20;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
     invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 1787
+    .line 1138
+    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$20;->a:Lcom/samsung/privilege/activity/ProfileActivity;
+
+    invoke-virtual {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->finish()V
+
+    .line 1139
     return-void
 .end method
 
@@ -94,10 +99,10 @@
     .registers 8
 
     .prologue
-    .line 1717
+    .line 1109
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$20;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    invoke-static {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->b(Lcom/samsung/privilege/activity/ProfileActivity;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->c(Lcom/samsung/privilege/activity/ProfileActivity;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -105,7 +110,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "(doUpdate|onComplete)response_code="
+    const-string/jumbo v2, "(getProfileData|onComplete)response_code="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -131,19 +136,23 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1719
+    .line 1112
+    :try_start_28
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$20;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    invoke-static {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->c(Lcom/samsung/privilege/activity/ProfileActivity;)Landroid/app/ProgressDialog;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->d(Lcom/samsung/privilege/activity/ProfileActivity;)Landroid/app/ProgressDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
+    :try_end_31
+    .catch Ljava/lang/Exception; {:try_start_28 .. :try_end_31} :catch_40
 
-    .line 1721
+    .line 1117
+    :goto_31
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$20;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    invoke-static {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->d(Lcom/samsung/privilege/activity/ProfileActivity;)Landroid/os/Handler;
+    invoke-static {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->a(Lcom/samsung/privilege/activity/ProfileActivity;)Landroid/os/Handler;
 
     move-result-object v0
 
@@ -153,6 +162,12 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1776
+    .line 1126
     return-void
+
+    .line 1113
+    :catch_40
+    move-exception v0
+
+    goto :goto_31
 .end method

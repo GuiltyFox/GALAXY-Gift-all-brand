@@ -240,7 +240,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/adapter/RequestHelpAdapter;->a:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f04014b
+    const v2, 0x7f04014c
 
     const/4 v3, 0x0
 

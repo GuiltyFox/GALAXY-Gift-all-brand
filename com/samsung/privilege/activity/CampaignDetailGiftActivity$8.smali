@@ -39,7 +39,7 @@
     .registers 6
 
     .prologue
-    const v3, 0x7f090344
+    const v3, 0x7f09034e
 
     .line 766
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$8;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -85,7 +85,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$8;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    const v2, 0x7f09032a
+    const v2, 0x7f090334
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 

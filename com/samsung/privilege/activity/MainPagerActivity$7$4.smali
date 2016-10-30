@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 698
+    .line 699
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7$4;->a:Lcom/samsung/privilege/activity/MainPagerActivity$7;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 5
 
     .prologue
-    .line 700
+    .line 701
     const/4 v0, 0x0
 
     move v1, v0
@@ -57,7 +57,7 @@
 
     if-ge v1, v0, :cond_35
 
-    .line 701
+    .line 702
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7$4;->a:Lcom/samsung/privilege/activity/MainPagerActivity$7;
 
     iget-object v2, v0, Lcom/samsung/privilege/activity/MainPagerActivity$7;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
@@ -88,14 +88,14 @@
 
     invoke-static {v2, v0, v3}, Lcom/samsung/privilege/activity/MainPagerActivity;->a(Lcom/samsung/privilege/activity/MainPagerActivity;Lcom/bzbs/bean/NFCPlan;Lcom/bzbs/bean/NFCResult;)V
 
-    .line 700
+    .line 701
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_2
 
-    .line 703
+    .line 704
     :cond_35
     return-void
 .end method

@@ -59,7 +59,7 @@
     .registers 13
 
     .prologue
-    const v9, 0x7f090419
+    const v9, 0x7f090423
 
     const v8, 0x7f0202d2
 
@@ -914,7 +914,7 @@
 
     iget-object v6, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v7, 0x7f090341
+    const v7, 0x7f09034b
 
     invoke-virtual {v6, v7}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 
@@ -1188,7 +1188,7 @@
 
     iget-object v5, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v6, 0x7f090341
+    const v6, 0x7f09034b
 
     invoke-virtual {v5, v6}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 
@@ -1376,7 +1376,7 @@
 
     iget-object v6, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v7, 0x7f09033c
+    const v7, 0x7f090346
 
     invoke-virtual {v6, v7}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 
@@ -1447,7 +1447,7 @@
 
     move-result-object v5
 
-    const v6, 0x7f090419
+    const v6, 0x7f090423
 
     invoke-virtual {v5, v6}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -1513,7 +1513,7 @@
 
     iget-object v5, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v6, 0x7f09033c
+    const v6, 0x7f090346
 
     invoke-virtual {v5, v6}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 
@@ -1584,7 +1584,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f090419
+    const v3, 0x7f090423
 
     invoke-virtual {v1, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -2171,7 +2171,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090419
+    const v2, 0x7f090423
 
     invoke-virtual {v1, v2}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -2427,7 +2427,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090419
+    const v2, 0x7f090423
 
     invoke-virtual {v1, v2}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -3056,7 +3056,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090419
+    const v2, 0x7f090423
 
     invoke-virtual {v1, v2}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -3401,7 +3401,7 @@
 
     iget-object v4, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v5, 0x7f090341
+    const v5, 0x7f09034b
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 
@@ -3621,7 +3621,7 @@
 
     iget-object v4, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v5, 0x7f09033c
+    const v5, 0x7f090346
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 
@@ -3692,7 +3692,7 @@
 
     move-result-object v1
 
-    const v3, 0x7f090419
+    const v3, 0x7f090423
 
     invoke-virtual {v1, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 

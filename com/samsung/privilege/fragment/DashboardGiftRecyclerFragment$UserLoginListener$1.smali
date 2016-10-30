@@ -139,7 +139,7 @@
 
     iget-object v1, v1, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$UserLoginListener;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v2, 0x7f090375
+    const v2, 0x7f09037f
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 

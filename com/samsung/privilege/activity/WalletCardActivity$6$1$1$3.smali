@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 735
+    .line 737
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$3;->b:Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$3;->a:Ljava/lang/String;
@@ -41,7 +41,7 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 738
+    .line 740
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -68,7 +68,7 @@
 
     move-result-object v0
 
-    .line 739
+    .line 741
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
     move-result-object v1
@@ -93,7 +93,7 @@
 
     invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 740
+    .line 742
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$3;->b:Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$6$1;
@@ -120,7 +120,7 @@
 
     iget-object v4, v4, Lcom/samsung/privilege/activity/WalletCardActivity$6;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v5, 0x7f090280
+    const v5, 0x7f090281
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
 
@@ -132,7 +132,7 @@
 
     invoke-static {v1, v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Lcom/samsung/privilege/activity/WalletCardActivity;Landroid/app/ProgressDialog;)Landroid/app/ProgressDialog;
 
-    .line 741
+    .line 743
     new-instance v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     invoke-direct {v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;-><init>()V
@@ -145,19 +145,19 @@
 
     iget-object v2, v2, Lcom/samsung/privilege/activity/WalletCardActivity$6;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    .line 742
+    .line 744
     invoke-virtual {v1, v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Landroid/app/Activity;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v1
 
     sget-boolean v2, Lcom/bzbs/data/AppSetting;->Q:Z
 
-    .line 743
+    .line 745
     invoke-virtual {v1, v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v1
 
-    .line 744
+    .line 746
     invoke-virtual {v1, v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Ljava/lang/String;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
@@ -170,7 +170,7 @@
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$6;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    .line 745
+    .line 747
     invoke-virtual {v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
@@ -185,7 +185,7 @@
 
     sget-object v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;->a:Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;
 
-    .line 746
+    .line 748
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
@@ -194,15 +194,15 @@
 
     invoke-direct {v1, p0}, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$3$1;-><init>(Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$3;)V
 
-    .line 747
+    .line 749
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/ResponseListener;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 819
+    .line 821
     invoke-virtual {v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a()Lcom/bzbs/lib/http/okhttp/HttpRequest;
 
-    .line 822
+    .line 824
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -255,6 +255,6 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 823
+    .line 825
     return-void
 .end method

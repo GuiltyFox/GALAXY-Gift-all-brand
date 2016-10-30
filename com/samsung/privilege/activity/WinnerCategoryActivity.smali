@@ -58,7 +58,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f100219
+    const v2, 0x7f10021a
 
     invoke-virtual {v1, v2, v0}, Landroid/support/v4/app/FragmentTransaction;->a(ILandroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
 

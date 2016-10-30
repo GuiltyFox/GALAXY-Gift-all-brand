@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 492
+    .line 493
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$5;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,9 +35,9 @@
     .registers 3
 
     .prologue
-    .line 494
+    .line 495
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 495
+    .line 496
     return-void
 .end method

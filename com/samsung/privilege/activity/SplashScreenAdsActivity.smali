@@ -536,7 +536,7 @@
     .line 110
     iget-object v0, p0, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->c:Landroid/app/ProgressDialog;
 
-    const v1, 0x7f04011f
+    const v1, 0x7f040120
 
     invoke-virtual {v0, v1}, Landroid/app/ProgressDialog;->setContentView(I)V
 
@@ -749,7 +749,7 @@
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 42
-    const v0, 0x7f040170
+    const v0, 0x7f040171
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->setContentView(I)V
 

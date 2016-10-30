@@ -1142,7 +1142,7 @@
     invoke-static {v3, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 213
-    const v2, 0x7f100606
+    const v2, 0x7f10060a
 
     move-object/from16 v0, p1
 
@@ -1155,7 +1155,7 @@
     check-cast v10, Landroid/widget/LinearLayout;
 
     .line 215
-    const v2, 0x7f100286
+    const v2, 0x7f100287
 
     move-object/from16 v0, p1
 
@@ -1168,7 +1168,7 @@
     check-cast v3, Landroid/widget/ImageView;
 
     .line 216
-    const v2, 0x7f100287
+    const v2, 0x7f100288
 
     move-object/from16 v0, p1
 
@@ -1181,7 +1181,7 @@
     check-cast v4, Landroid/widget/TextView;
 
     .line 217
-    const v2, 0x7f10060e
+    const v2, 0x7f100612
 
     move-object/from16 v0, p1
 
@@ -1192,7 +1192,7 @@
     check-cast v2, Landroid/widget/TextView;
 
     .line 218
-    const v2, 0x7f1002a2
+    const v2, 0x7f1002a3
 
     move-object/from16 v0, p1
 
@@ -1203,7 +1203,7 @@
     check-cast v8, Landroid/widget/TextView;
 
     .line 219
-    const v2, 0x7f100607
+    const v2, 0x7f10060b
 
     move-object/from16 v0, p1
 
@@ -1216,7 +1216,7 @@
     check-cast v11, Landroid/widget/TextView;
 
     .line 220
-    const v2, 0x7f100608
+    const v2, 0x7f10060c
 
     move-object/from16 v0, p1
 
@@ -1229,7 +1229,7 @@
     check-cast v12, Landroid/widget/TextView;
 
     .line 221
-    const v2, 0x7f10060d
+    const v2, 0x7f100611
 
     move-object/from16 v0, p1
 
@@ -1264,7 +1264,7 @@
     check-cast v2, Landroid/widget/TextView;
 
     .line 225
-    const v2, 0x7f1002c1
+    const v2, 0x7f1002c2
 
     move-object/from16 v0, p1
 
@@ -1275,7 +1275,7 @@
     check-cast v2, Landroid/widget/TextView;
 
     .line 226
-    const v2, 0x7f1001e8
+    const v2, 0x7f1001e9
 
     move-object/from16 v0, p1
 
@@ -1286,7 +1286,7 @@
     check-cast v13, Landroid/widget/LinearLayout;
 
     .line 228
-    const v2, 0x7f1002bb
+    const v2, 0x7f1002bc
 
     move-object/from16 v0, p1
 
@@ -1299,7 +1299,7 @@
     check-cast v21, Landroid/widget/ImageView;
 
     .line 229
-    const v2, 0x7f1002c4
+    const v2, 0x7f1002c5
 
     move-object/from16 v0, p1
 
@@ -1310,7 +1310,7 @@
     check-cast v2, Landroid/widget/TextView;
 
     .line 230
-    const v2, 0x7f1002ba
+    const v2, 0x7f1002bb
 
     move-object/from16 v0, p1
 
@@ -1321,7 +1321,7 @@
     check-cast v14, Landroid/widget/LinearLayout;
 
     .line 232
-    const v2, 0x7f1002b8
+    const v2, 0x7f1002b9
 
     move-object/from16 v0, p1
 
@@ -1332,7 +1332,7 @@
     check-cast v2, Landroid/widget/RelativeLayout;
 
     .line 233
-    const v2, 0x7f100609
+    const v2, 0x7f10060d
 
     move-object/from16 v0, p1
 
@@ -1343,14 +1343,14 @@
     check-cast v2, Landroid/widget/LinearLayout;
 
     .line 234
-    const v2, 0x7f10060a
+    const v2, 0x7f10060e
 
     move-object/from16 v0, p1
 
     invoke-virtual {v0, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     .line 237
-    const v2, 0x7f1002bd
+    const v2, 0x7f1002be
 
     move-object/from16 v0, p1
 
@@ -1361,7 +1361,7 @@
     check-cast v15, Landroid/widget/LinearLayout;
 
     .line 238
-    const v2, 0x7f1002bf
+    const v2, 0x7f1002c0
 
     move-object/from16 v0, p1
 
@@ -1372,7 +1372,7 @@
     check-cast v16, Landroid/widget/LinearLayout;
 
     .line 239
-    const v2, 0x7f1002c2
+    const v2, 0x7f1002c3
 
     move-object/from16 v0, p1
 
@@ -1394,7 +1394,7 @@
     check-cast v20, Landroid/widget/TextView;
 
     .line 244
-    const v2, 0x7f10060b
+    const v2, 0x7f10060f
 
     move-object/from16 v0, p1
 
@@ -1407,7 +1407,7 @@
     check-cast v22, Landroid/widget/TextView;
 
     .line 245
-    const v2, 0x7f10060c
+    const v2, 0x7f100610
 
     move-object/from16 v0, p1
 
@@ -1436,7 +1436,7 @@
     move-result-object v9
 
     .line 249
-    const v5, 0x7f100288
+    const v5, 0x7f100289
 
     move-object/from16 v0, p1
 
@@ -1935,7 +1935,7 @@
     .line 371
     sget-object v2, Lcom/bzbs/marketplace/dialog/ShowCodeBlurDialog;->k:Landroid/app/Activity;
 
-    const v3, 0x7f09031e
+    const v3, 0x7f090328
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -2580,7 +2580,7 @@
 
     .line 492
     :cond_611
-    const v2, 0x7f1002c5
+    const v2, 0x7f1002c6
 
     move-object/from16 v0, p1
 
@@ -3070,7 +3070,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f040129
+    const v1, 0x7f04012a
 
     const/4 v3, 0x0
 
@@ -3124,7 +3124,7 @@
     invoke-direct {v4, v0, v5}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
 
     .line 166
-    const v0, 0x7f100284
+    const v0, 0x7f100285
 
     invoke-virtual {v3, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3136,7 +3136,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 168
-    const v0, 0x7f10028f
+    const v0, 0x7f100290
 
     invoke-virtual {v3, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3145,7 +3145,7 @@
     check-cast v0, Landroid/widget/Button;
 
     .line 170
-    const v1, 0x7f100286
+    const v1, 0x7f100287
 
     invoke-virtual {v3, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

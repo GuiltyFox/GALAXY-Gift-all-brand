@@ -1,4 +1,4 @@
-.class Lcom/samsung/privilege/activity/ProfileActivity$12$2;
+.class Lcom/samsung/privilege/activity/ProfileActivity$14$2;
 .super Ljava/lang/Object;
 .source "ProfileActivity.java"
 
@@ -8,21 +8,21 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/ProfileActivity$12;->onClick(Landroid/view/View;)V
+    value = Lcom/samsung/privilege/activity/ProfileActivity$14;->onClick(Landroid/view/View;)V
 .end annotation
 
 
 # instance fields
-.field final synthetic a:Lcom/samsung/privilege/activity/ProfileActivity$12;
+.field final synthetic a:Lcom/samsung/privilege/activity/ProfileActivity$14;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/ProfileActivity$12;)V
+.method constructor <init>(Lcom/samsung/privilege/activity/ProfileActivity$14;)V
     .registers 2
 
     .prologue
-    .line 497
-    iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$12$2;->a:Lcom/samsung/privilege/activity/ProfileActivity$12;
+    .line 575
+    iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$14$2;->a:Lcom/samsung/privilege/activity/ProfileActivity$14;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,7 +35,7 @@
     .registers 2
 
     .prologue
-    .line 506
+    .line 584
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .registers 2
 
     .prologue
-    .line 511
+    .line 589
     return-void
 .end method
 
@@ -51,15 +51,15 @@
     .registers 4
 
     .prologue
-    .line 500
-    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$12$2;->a:Lcom/samsung/privilege/activity/ProfileActivity$12;
+    .line 578
+    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$14$2;->a:Lcom/samsung/privilege/activity/ProfileActivity$14;
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/ProfileActivity$12;->a:Landroid/widget/LinearLayout;
+    iget-object v0, v0, Lcom/samsung/privilege/activity/ProfileActivity$14;->a:Landroid/widget/LinearLayout;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 501
+    .line 579
     return-void
 .end method

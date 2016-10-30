@@ -96,7 +96,7 @@
     :cond_6
     const-string/jumbo v0, ""
 
-    const v1, 0x7f090280
+    const v1, 0x7f090281
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/HistoryEWalletListActivity;->getString(I)Ljava/lang/String;
 

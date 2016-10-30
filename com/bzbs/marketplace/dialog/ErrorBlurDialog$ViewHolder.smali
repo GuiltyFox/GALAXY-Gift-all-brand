@@ -6,7 +6,7 @@
 # instance fields
 .field LayoutMainComman:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10028d
+        value = 0x7f10028e
     .end annotation
 .end field
 
@@ -14,43 +14,43 @@
 
 .field btnClose:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10028f
+        value = 0x7f100290
     .end annotation
 .end field
 
 .field btnOK:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1001ec
+        value = 0x7f1001ed
     .end annotation
 .end field
 
 .field imgCampaign:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100286
+        value = 0x7f100287
     .end annotation
 .end field
 
 .field layoutRoot:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100284
+        value = 0x7f100285
     .end annotation
 .end field
 
 .field svCondition:Landroid/widget/ScrollView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100289
+        value = 0x7f10028a
     .end annotation
 .end field
 
 .field tvCampaignDesc:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100287
+        value = 0x7f100288
     .end annotation
 .end field
 
 .field tvError:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10029e
+        value = 0x7f10029f
     .end annotation
 .end field
 

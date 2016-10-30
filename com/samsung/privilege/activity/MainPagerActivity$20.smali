@@ -20,7 +20,7 @@
     .registers 4
 
     .prologue
-    .line 1626
+    .line 1627
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     iput-wide p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->a:J
@@ -36,10 +36,10 @@
     .registers 13
 
     .prologue
-    .line 1655
+    .line 1656
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 1658
+    .line 1659
     :try_start_3
     new-instance v0, Ljava/util/Date;
 
@@ -49,7 +49,7 @@
 
     move-result-wide v0
 
-    .line 1659
+    .line 1660
     const-string/jumbo v2, "MainPager"
 
     const-string/jumbo v3, "getPoints"
@@ -64,11 +64,11 @@
     :try_end_1b
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_1c
 
-    .line 1663
+    .line 1664
     :goto_1b
     return-void
 
-    .line 1660
+    .line 1661
     :catch_1c
     move-exception v0
 
@@ -79,7 +79,7 @@
     .registers 13
 
     .prologue
-    .line 1630
+    .line 1631
     :try_start_0
     new-instance v0, Ljava/util/Date;
 
@@ -89,7 +89,7 @@
 
     move-result-wide v0
 
-    .line 1631
+    .line 1632
     const-string/jumbo v2, "MainPager"
 
     const-string/jumbo v3, "getPoints"
@@ -104,7 +104,7 @@
     :try_end_18
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_83
 
-    .line 1636
+    .line 1637
     :goto_18
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
@@ -142,20 +142,20 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1639
+    .line 1640
     :try_start_40
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1640
+    .line 1641
     const-string/jumbo v1, "points"
 
     invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->c(Lorg/json/JSONObject;Ljava/lang/String;)J
 
     move-result-wide v0
 
-    .line 1641
+    .line 1642
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->getApplicationContext()Landroid/content/Context;
@@ -164,7 +164,7 @@
 
     invoke-static {v2, v0, v1}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;J)Z
 
-    .line 1643
+    .line 1644
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     new-instance v1, Lcom/samsung/privilege/activity/MainPagerActivity$20$1;
@@ -175,15 +175,15 @@
     :try_end_5f
     .catch Ljava/lang/Exception; {:try_start_40 .. :try_end_5f} :catch_60
 
-    .line 1651
+    .line 1652
     :goto_5f
     return-void
 
-    .line 1648
+    .line 1649
     :catch_60
     move-exception v0
 
-    .line 1649
+    .line 1650
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$20;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->a(Lcom/samsung/privilege/activity/MainPagerActivity;)Ljava/lang/String;
@@ -216,7 +216,7 @@
 
     goto :goto_5f
 
-    .line 1632
+    .line 1633
     :catch_83
     move-exception v0
 

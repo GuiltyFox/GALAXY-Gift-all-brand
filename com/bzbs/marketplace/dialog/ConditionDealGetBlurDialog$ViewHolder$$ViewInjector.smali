@@ -45,15 +45,15 @@
     .end annotation
 
     .prologue
-    const v6, 0x7f100288
+    const v6, 0x7f100289
 
-    const v5, 0x7f100287
+    const v5, 0x7f100288
 
-    const v2, 0x7f100286
+    const v2, 0x7f100287
 
-    const v4, 0x7f100284
+    const v4, 0x7f100285
 
-    const v3, 0x7f1001ec
+    const v3, 0x7f1001ed
 
     .line 11
     const-string/jumbo v0, "field \'imgCampaign\'"
@@ -116,7 +116,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog$ViewHolder;->tvShowTimeRedeem:Landroid/widget/TextView;
 
     .line 17
-    const v0, 0x7f10028a
+    const v0, 0x7f10028b
 
     const-string/jumbo v1, "field \'tvCondition1\'"
 
@@ -127,7 +127,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 18
-    const v1, 0x7f10028a
+    const v1, 0x7f10028b
 
     const-string/jumbo v2, "field \'tvCondition1\'"
 
@@ -140,7 +140,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog$ViewHolder;->tvCondition1:Landroid/widget/TextView;
 
     .line 19
-    const v0, 0x7f10028b
+    const v0, 0x7f10028c
 
     const-string/jumbo v1, "field \'tvCondition2\'"
 
@@ -151,7 +151,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 20
-    const v1, 0x7f10028b
+    const v1, 0x7f10028c
 
     const-string/jumbo v2, "field \'tvCondition2\'"
 
@@ -164,7 +164,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog$ViewHolder;->tvCondition2:Landroid/widget/TextView;
 
     .line 21
-    const v0, 0x7f10028c
+    const v0, 0x7f10028d
 
     const-string/jumbo v1, "field \'tvCondition3\'"
 
@@ -175,7 +175,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 22
-    const v1, 0x7f10028c
+    const v1, 0x7f10028d
 
     const-string/jumbo v2, "field \'tvCondition3\'"
 
@@ -188,7 +188,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog$ViewHolder;->tvCondition3:Landroid/widget/TextView;
 
     .line 23
-    const v0, 0x7f100289
+    const v0, 0x7f10028a
 
     const-string/jumbo v1, "field \'svCondition\'"
 
@@ -199,7 +199,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 24
-    const v1, 0x7f100289
+    const v1, 0x7f10028a
 
     const-string/jumbo v2, "field \'svCondition\'"
 
@@ -232,7 +232,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog$ViewHolder;->btnOK:Landroid/widget/Button;
 
     .line 27
-    const v0, 0x7f10028f
+    const v0, 0x7f100290
 
     const-string/jumbo v1, "field \'btnClose\'"
 
@@ -243,7 +243,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 28
-    const v1, 0x7f10028f
+    const v1, 0x7f100290
 
     const-string/jumbo v2, "field \'btnClose\'"
 
@@ -256,7 +256,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog$ViewHolder;->btnClose:Landroid/widget/Button;
 
     .line 29
-    const v0, 0x7f10028d
+    const v0, 0x7f10028e
 
     const-string/jumbo v1, "field \'LayoutMainComman\'"
 
@@ -267,7 +267,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 30
-    const v1, 0x7f10028d
+    const v1, 0x7f10028e
 
     const-string/jumbo v2, "field \'LayoutMainComman\'"
 

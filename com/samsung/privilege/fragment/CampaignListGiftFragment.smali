@@ -190,7 +190,7 @@
     .line 126
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->b:Landroid/view/View;
 
-    const v1, 0x7f100619
+    const v1, 0x7f10061d
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1053,7 +1053,7 @@
 
     .prologue
     .line 73
-    const v0, 0x7f040133
+    const v0, 0x7f040134
 
     const/4 v1, 0x0
 

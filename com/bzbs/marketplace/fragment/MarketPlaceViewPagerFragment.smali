@@ -6,7 +6,7 @@
 # instance fields
 .field contentImageCover:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100655
+        value = 0x7f100659
     .end annotation
 .end field
 
@@ -14,7 +14,7 @@
 
 .field imageMarketCover:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100656
+        value = 0x7f10065a
     .end annotation
 .end field
 
@@ -72,7 +72,7 @@
 
     .prologue
     .line 46
-    const v0, 0x7f040141
+    const v0, 0x7f040142
 
     return v0
 .end method

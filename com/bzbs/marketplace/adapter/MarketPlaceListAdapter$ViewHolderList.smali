@@ -12,13 +12,13 @@
 
 .field contentImageView:Landroid/widget/RelativeLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100660
+        value = 0x7f100664
     .end annotation
 .end field
 
 .field contentItemList:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10065e
+        value = 0x7f100662
     .end annotation
 .end field
 
@@ -34,55 +34,55 @@
 
 .field imageViewCover:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10065c
+        value = 0x7f100660
     .end annotation
 .end field
 
 .field textViewCart:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100664
+        value = 0x7f100668
     .end annotation
 .end field
 
 .field textViewDiscount:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100632
+        value = 0x7f100636
     .end annotation
 .end field
 
 .field textViewFullPrice:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100631
+        value = 0x7f100635
     .end annotation
 .end field
 
 .field textViewPrice:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100630
+        value = 0x7f100634
     .end annotation
 .end field
 
 .field textViewTitle:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10062f
+        value = 0x7f100633
     .end annotation
 .end field
 
 .field textViewType:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100663
+        value = 0x7f100667
     .end annotation
 .end field
 
 .field textViewUsePoint:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100661
+        value = 0x7f100665
     .end annotation
 .end field
 
 .field tvDetail:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100662
+        value = 0x7f100666
     .end annotation
 .end field
 
@@ -634,7 +634,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0903b8
+    const v3, 0x7f0903c2
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -696,7 +696,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0903b8
+    const v3, 0x7f0903c2
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -730,7 +730,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0903c0
+    const v2, 0x7f0903ca
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -1060,7 +1060,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0903a7
+    const v2, 0x7f0903b1
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 

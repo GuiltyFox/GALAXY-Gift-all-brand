@@ -29,7 +29,7 @@
     .registers 6
 
     .prologue
-    .line 1260
+    .line 1269
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$24;->a:Landroid/app/Dialog;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$24;->b:Ljava/lang/String;
@@ -51,12 +51,12 @@
     .registers 6
 
     .prologue
-    .line 1262
+    .line 1271
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$24;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1264
+    .line 1273
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$24;->b:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$24;->c:Ljava/lang/String;
@@ -67,6 +67,6 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
 
-    .line 1265
+    .line 1274
     return-void
 .end method

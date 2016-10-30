@@ -138,7 +138,7 @@
     .line 225
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->e:Landroid/view/View;
 
-    const v1, 0x7f100623
+    const v1, 0x7f100627
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -362,7 +362,7 @@
     invoke-direct {v0, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
     .line 2297
-    const v2, 0x7f0903e3
+    const v2, 0x7f0903ed
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 
@@ -385,7 +385,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090329
+    const v2, 0x7f090333
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 
@@ -399,7 +399,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f09033a
+    const v2, 0x7f090344
 
     .line 2304
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
@@ -3453,7 +3453,7 @@
     move-result-object v1
 
     .line 248
-    const v0, 0x7f10020d
+    const v0, 0x7f10020e
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -3462,7 +3462,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 249
-    const v3, 0x7f1001f4
+    const v3, 0x7f1001f5
 
     invoke-virtual {v1, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -4324,7 +4324,7 @@
 
     const-string/jumbo v3, ""
 
-    const v4, 0x7f090280
+    const v4, 0x7f090281
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 
@@ -5182,7 +5182,7 @@
 
     .prologue
     .line 140
-    const v0, 0x7f04013b
+    const v0, 0x7f04013c
 
     const/4 v1, 0x0
 

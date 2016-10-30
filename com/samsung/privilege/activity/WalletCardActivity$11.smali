@@ -29,7 +29,7 @@
     .registers 6
 
     .prologue
-    .line 1040
+    .line 1042
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$11;->e:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$11;->a:Landroid/view/View;
@@ -51,14 +51,14 @@
     .registers 4
 
     .prologue
-    .line 1048
+    .line 1050
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$11;->a:Landroid/view/View;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1050
+    .line 1052
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$11;->e:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     const v1, 0x7f050025
@@ -67,29 +67,29 @@
 
     move-result-object v0
 
-    .line 1051
+    .line 1053
     new-instance v1, Lcom/samsung/privilege/activity/WalletCardActivity$11$1;
 
     invoke-direct {v1, p0}, Lcom/samsung/privilege/activity/WalletCardActivity$11$1;-><init>(Lcom/samsung/privilege/activity/WalletCardActivity$11;)V
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 1076
+    .line 1078
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$11;->b:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->clearAnimation()V
 
-    .line 1077
+    .line 1079
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$11;->b:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setAnimation(Landroid/view/animation/Animation;)V
 
-    .line 1078
+    .line 1080
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$11;->b:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
 
-    .line 1079
+    .line 1081
     return-void
 .end method
 
@@ -97,7 +97,7 @@
     .registers 2
 
     .prologue
-    .line 1084
+    .line 1086
     return-void
 .end method
 
@@ -105,6 +105,6 @@
     .registers 2
 
     .prologue
-    .line 1044
+    .line 1046
     return-void
 .end method

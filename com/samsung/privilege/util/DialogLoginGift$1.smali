@@ -75,7 +75,13 @@
     :cond_13
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$1;->a:Landroid/content/Context;
 
-    const-string/jumbo v1, "Please allow the permission to login with Galaxy Gift."
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$1;->a:Landroid/content/Context;
+
+    const v2, 0x7f09026c
+
+    invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
 
     invoke-static {v0, v1}, Lcom/bzbs/util/DialogUtil;->b(Landroid/content/Context;Ljava/lang/String;)V
 

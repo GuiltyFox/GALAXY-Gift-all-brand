@@ -298,7 +298,7 @@
 
     iget-object v1, p0, Lcom/bzbs/marketplace/adapter/ReplyAdapter;->a:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f040150
+    const v2, 0x7f040151
 
     invoke-virtual {v1, v2, p1, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -315,7 +315,7 @@
 
     iget-object v1, p0, Lcom/bzbs/marketplace/adapter/ReplyAdapter;->a:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f040149
+    const v2, 0x7f04014a
 
     invoke-virtual {v1, v2, p1, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

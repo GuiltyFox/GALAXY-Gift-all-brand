@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 689
+    .line 691
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 7
 
     .prologue
-    .line 693
+    .line 695
     :try_start_0
     const-string/jumbo v0, "QR_CODE"
 
@@ -71,7 +71,7 @@
 
     move-result-object v0
 
-    .line 694
+    .line 696
     new-instance v1, Lcom/bzbs/zxing/QRCodeEncoder;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;
@@ -90,13 +90,13 @@
     :try_end_33
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_33} :catch_83
 
-    .line 696
+    .line 698
     :try_start_33
     invoke-virtual {v1}, Lcom/bzbs/zxing/QRCodeEncoder;->a()Landroid/graphics/Bitmap;
 
     move-result-object v0
 
-    .line 697
+    .line 699
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$6$1;
@@ -112,7 +112,7 @@
     .catch Lcom/google/zxing/WriterException; {:try_start_33 .. :try_end_44} :catch_62
     .catch Ljava/lang/Exception; {:try_start_33 .. :try_end_44} :catch_83
 
-    .line 702
+    .line 704
     :goto_44
     :try_start_44
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;
@@ -129,7 +129,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 703
+    .line 705
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$6$1$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$6$1;
@@ -144,15 +144,15 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 707
+    .line 709
     :goto_61
     return-void
 
-    .line 698
+    .line 700
     :catch_62
     move-exception v0
 
-    .line 699
+    .line 701
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
     move-result-object v1
@@ -185,11 +185,11 @@
 
     goto :goto_44
 
-    .line 704
+    .line 706
     :catch_83
     move-exception v0
 
-    .line 705
+    .line 707
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
     move-result-object v1

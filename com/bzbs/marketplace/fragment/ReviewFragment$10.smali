@@ -140,15 +140,15 @@
 
 # virtual methods
 .method public a(Landroid/view/View;I)V
-    .registers 7
+    .registers 8
 
     .prologue
-    const/4 v1, 0x1
+    const/4 v4, 0x1
 
     const/4 v3, 0x0
 
     .line 632
-    packed-switch p2, :pswitch_data_42
+    packed-switch p2, :pswitch_data_48
 
     .line 664
     :goto_5
@@ -169,7 +169,7 @@
 
     iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->I:Lcom/tbruyelle/rxpermissions/RxPermissions;
 
-    new-array v1, v1, [Ljava/lang/String;
+    new-array v1, v4, [Ljava/lang/String;
 
     const-string/jumbo v2, "android.permission.WRITE_EXTERNAL_STORAGE"
 
@@ -198,11 +198,17 @@
 
     iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->I:Lcom/tbruyelle/rxpermissions/RxPermissions;
 
+    const/4 v1, 0x2
+
     new-array v1, v1, [Ljava/lang/String;
 
     const-string/jumbo v2, "android.permission.CAMERA"
 
     aput-object v2, v1, v3
+
+    const-string/jumbo v2, "android.permission.WRITE_EXTERNAL_STORAGE"
+
+    aput-object v2, v1, v4
 
     invoke-virtual {v0, v1}, Lcom/tbruyelle/rxpermissions/RxPermissions;->a([Ljava/lang/String;)Lrx/Observable;
 
@@ -220,7 +226,7 @@
     .line 632
     nop
 
-    :pswitch_data_42
+    :pswitch_data_48
     .packed-switch 0x0
         :pswitch_b
         :pswitch_26

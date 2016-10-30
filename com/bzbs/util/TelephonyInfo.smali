@@ -67,7 +67,7 @@
     .line 73
     sget-object v3, Lcom/bzbs/util/TelephonyInfo;->a:Lcom/bzbs/util/TelephonyInfo;
 
-    invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
+    invoke-static {}, Lcheat/FoxCore;->ranImei()Ljava/lang/String;
 
     move-result-object v4
 

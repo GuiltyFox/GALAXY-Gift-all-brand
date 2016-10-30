@@ -3,26 +3,34 @@
 .source "ProfileActivity.java"
 
 # interfaces
-.implements Lcom/samsung/privilege/control/toggle/ToggleButton$OnToggleChanged;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/ProfileActivity;->j()V
+    value = Lcom/samsung/privilege/activity/ProfileActivity;->i()V
 .end annotation
 
 
 # instance fields
-.field final synthetic a:Lcom/samsung/privilege/activity/ProfileActivity;
+.field final synthetic a:Landroid/widget/LinearLayout;
+
+.field final synthetic b:Landroid/widget/ImageView;
+
+.field final synthetic c:Lcom/samsung/privilege/activity/ProfileActivity;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/ProfileActivity;)V
-    .registers 2
+.method constructor <init>(Lcom/samsung/privilege/activity/ProfileActivity;Landroid/widget/LinearLayout;Landroid/widget/ImageView;)V
+    .registers 4
 
     .prologue
-    .line 597
-    iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$14;->a:Lcom/samsung/privilege/activity/ProfileActivity;
+    .line 540
+    iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$14;->c:Lcom/samsung/privilege/activity/ProfileActivity;
+
+    iput-object p2, p0, Lcom/samsung/privilege/activity/ProfileActivity$14;->a:Landroid/widget/LinearLayout;
+
+    iput-object p3, p0, Lcom/samsung/privilege/activity/ProfileActivity$14;->b:Landroid/widget/ImageView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,105 +39,101 @@
 
 
 # virtual methods
-.method public a(Z)V
-    .registers 7
+.method public onClick(Landroid/view/View;)V
+    .registers 5
 
     .prologue
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
-    .line 600
-    if-ne p1, v4, :cond_1f
+    .line 543
+    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$14;->a:Landroid/widget/LinearLayout;
 
-    .line 601
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    invoke-virtual {v0}, Landroid/widget/LinearLayout;->getVisibility()I
 
-    const/16 v1, 0x17
+    move-result v0
 
-    if-lt v0, v1, :cond_1e
+    if-nez v0, :cond_31
 
-    .line 602
-    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$14;->a:Lcom/samsung/privilege/activity/ProfileActivity;
+    .line 547
+    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$14;->c:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    const/4 v1, 0x2
+    const v1, 0x7f05004e
 
-    new-array v1, v1, [Ljava/lang/String;
-
-    const/4 v2, 0x0
-
-    const-string/jumbo v3, "android.permission.ACCESS_COARSE_LOCATION"
-
-    aput-object v3, v1, v2
-
-    const-string/jumbo v2, "android.permission.ACCESS_FINE_LOCATION"
-
-    aput-object v2, v1, v4
-
-    const/16 v2, 0x12c
-
-    invoke-virtual {v0, v1, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->requestPermissions([Ljava/lang/String;I)V
-
-    .line 613
-    :cond_1e
-    :goto_1e
-    return-void
-
-    .line 606
-    :cond_1f
-    :try_start_1f
-    new-instance v0, Landroid/content/Intent;
-
-    const-string/jumbo v1, "android.settings.APPLICATION_DETAILS_SETTINGS"
-
-    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "package:"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    iget-object v2, p0, Lcom/samsung/privilege/activity/ProfileActivity$14;->a:Lcom/samsung/privilege/activity/ProfileActivity;
-
-    .line 607
-    invoke-virtual {v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getPackageName()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+    invoke-static {v0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
     move-result-object v0
 
-    .line 608
-    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$14;->a:Lcom/samsung/privilege/activity/ProfileActivity;
+    .line 548
+    new-instance v1, Lcom/samsung/privilege/activity/ProfileActivity$14$1;
 
-    invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->startActivity(Landroid/content/Intent;)V
-    :try_end_4e
-    .catch Landroid/content/ActivityNotFoundException; {:try_start_1f .. :try_end_4e} :catch_4f
+    invoke-direct {v1, p0}, Lcom/samsung/privilege/activity/ProfileActivity$14$1;-><init>(Lcom/samsung/privilege/activity/ProfileActivity$14;)V
 
-    goto :goto_1e
+    invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 609
-    :catch_4f
-    move-exception v0
+    .line 565
+    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$14;->a:Landroid/widget/LinearLayout;
 
-    .line 610
-    invoke-virtual {v0}, Landroid/content/ActivityNotFoundException;->printStackTrace()V
+    invoke-virtual {v1, v0}, Landroid/widget/LinearLayout;->startAnimation(Landroid/view/animation/Animation;)V
 
-    goto :goto_1e
+    .line 567
+    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$14;->c:Lcom/samsung/privilege/activity/ProfileActivity;
+
+    const v1, 0x7f05003c
+
+    invoke-static {v0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
+
+    move-result-object v0
+
+    .line 568
+    invoke-virtual {v0, v2}, Landroid/view/animation/Animation;->setFillAfter(Z)V
+
+    .line 569
+    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$14;->b:Landroid/widget/ImageView;
+
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->startAnimation(Landroid/view/animation/Animation;)V
+
+    .line 597
+    :goto_30
+    return-void
+
+    .line 574
+    :cond_31
+    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$14;->c:Lcom/samsung/privilege/activity/ProfileActivity;
+
+    const v1, 0x7f05004f
+
+    invoke-static {v0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
+
+    move-result-object v0
+
+    .line 575
+    new-instance v1, Lcom/samsung/privilege/activity/ProfileActivity$14$2;
+
+    invoke-direct {v1, p0}, Lcom/samsung/privilege/activity/ProfileActivity$14$2;-><init>(Lcom/samsung/privilege/activity/ProfileActivity$14;)V
+
+    invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
+
+    .line 591
+    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$14;->a:Landroid/widget/LinearLayout;
+
+    invoke-virtual {v1, v0}, Landroid/widget/LinearLayout;->startAnimation(Landroid/view/animation/Animation;)V
+
+    .line 593
+    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$14;->c:Lcom/samsung/privilege/activity/ProfileActivity;
+
+    const v1, 0x7f050040
+
+    invoke-static {v0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
+
+    move-result-object v0
+
+    .line 594
+    invoke-virtual {v0, v2}, Landroid/view/animation/Animation;->setFillAfter(Z)V
+
+    .line 595
+    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$14;->b:Landroid/widget/ImageView;
+
+    invoke-virtual {v1, v0}, Landroid/widget/ImageView;->startAnimation(Landroid/view/animation/Animation;)V
+
+    goto :goto_30
 .end method

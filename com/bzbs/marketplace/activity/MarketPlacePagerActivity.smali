@@ -1323,7 +1323,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0903ba
+    const v2, 0x7f0903c4
 
     invoke-virtual {p0, v2}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->getString(I)Ljava/lang/String;
 
@@ -1877,7 +1877,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1006bf
+    const v1, 0x7f1006c3
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1992,7 +1992,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1006bf
+    const v1, 0x7f1006c3
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

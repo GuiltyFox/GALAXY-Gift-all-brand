@@ -161,7 +161,7 @@
 
     iget-object v4, p0, Lcom/samsung/privilege/GCMIntentService$1;->b:Landroid/content/Context;
 
-    const v5, 0x7f0903e3
+    const v5, 0x7f0903ed
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

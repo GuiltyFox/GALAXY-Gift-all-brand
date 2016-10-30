@@ -6,7 +6,7 @@
 # instance fields
 .field containerWinner:Landroid/widget/FrameLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10021a
+        value = 0x7f10021b
     .end annotation
 .end field
 
@@ -56,7 +56,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f10021a
+    const v1, 0x7f10021b
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/WinnersActivity;->D:Landroid/support/v4/app/Fragment;
 

@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 1566
+    .line 1575
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$30;->a:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$30;->b:Landroid/widget/TextView;
@@ -39,13 +39,13 @@
     .registers 4
 
     .prologue
-    .line 1571
+    .line 1580
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$30;->a:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$30;->b:Landroid/widget/TextView;
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/DialogMonthYear;->a(Landroid/content/Context;Landroid/widget/TextView;)V
 
-    .line 1572
+    .line 1581
     return-void
 .end method

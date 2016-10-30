@@ -8,13 +8,13 @@
 
 .field contentCode:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1001e1
+        value = 0x7f1001e2
     .end annotation
 .end field
 
 .field tvCode:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1001e2
+        value = 0x7f1001e3
     .end annotation
 .end field
 

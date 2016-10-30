@@ -46,7 +46,7 @@
 
     .prologue
     .line 11
-    const v0, 0x7f1006d4
+    const v0, 0x7f1006d8
 
     const-string/jumbo v1, "method \'onClickUpdate\'"
 
@@ -64,7 +64,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 20
-    const v0, 0x7f1006d5
+    const v0, 0x7f1006d9
 
     const-string/jumbo v1, "method \'onClickUpdate\'"
 
@@ -82,7 +82,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 29
-    const v0, 0x7f1006d6
+    const v0, 0x7f1006da
 
     const-string/jumbo v1, "method \'onClickUpdate\'"
 

@@ -15,7 +15,7 @@
     .registers 2
 
     .prologue
-    .line 294
+    .line 296
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$CheckWalletListener;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
     .registers 3
 
     .prologue
-    .line 294
+    .line 296
     invoke-direct {p0, p1}, Lcom/samsung/privilege/activity/WalletCardActivity$CheckWalletListener;-><init>(Lcom/samsung/privilege/activity/WalletCardActivity;)V
 
     return-void
@@ -39,7 +39,7 @@
     .registers 4
 
     .prologue
-    .line 297
+    .line 299
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$CheckWalletListener;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->b(Lcom/samsung/privilege/activity/WalletCardActivity;)Landroid/os/Handler;
@@ -52,6 +52,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 311
+    .line 313
     return-void
 .end method

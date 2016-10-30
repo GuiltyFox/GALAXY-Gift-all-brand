@@ -8,97 +8,97 @@
 
 .field btnOK:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1001ec
+        value = 0x7f1001ed
     .end annotation
 .end field
 
 .field contentHighRate:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005e4
+        value = 0x7f1005e8
     .end annotation
 .end field
 
 .field contentLessRate:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005e2
+        value = 0x7f1005e6
     .end annotation
 .end field
 
 .field etComment:Landroid/widget/EditText;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005e3
+        value = 0x7f1005e7
     .end annotation
 .end field
 
 .field imgClose:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002a7
+        value = 0x7f1002a8
     .end annotation
 .end field
 
 .field imgRating1:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005dc
+        value = 0x7f1005e0
     .end annotation
 .end field
 
 .field imgRating2:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005dd
+        value = 0x7f1005e1
     .end annotation
 .end field
 
 .field imgRating3:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005de
+        value = 0x7f1005e2
     .end annotation
 .end field
 
 .field imgRating4:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005df
+        value = 0x7f1005e3
     .end annotation
 .end field
 
 .field imgRating5:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005e0
+        value = 0x7f1005e4
     .end annotation
 .end field
 
 .field layoutRoot:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100284
+        value = 0x7f100285
     .end annotation
 .end field
 
 .field progressGoogle:Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100682
+        value = 0x7f100686
     .end annotation
 .end field
 
 .field radioGroup:Landroid/widget/RadioGroup;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005e5
+        value = 0x7f1005e9
     .end annotation
 .end field
 
 .field tvName:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002f3
+        value = 0x7f1002f4
     .end annotation
 .end field
 
 .field tvRatingHeader:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005db
+        value = 0x7f1005df
     .end annotation
 .end field
 
 .field tvTopic:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1005e1
+        value = 0x7f1005e5
     .end annotation
 .end field
 

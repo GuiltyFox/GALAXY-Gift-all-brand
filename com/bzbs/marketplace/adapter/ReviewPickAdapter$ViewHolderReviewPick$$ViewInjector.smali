@@ -45,7 +45,7 @@
     .end annotation
 
     .prologue
-    const v2, 0x7f10067c
+    const v2, 0x7f100680
 
     .line 11
     const-string/jumbo v0, "field \'itemPick\'"

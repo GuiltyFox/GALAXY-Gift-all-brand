@@ -3,7 +3,7 @@
 .source "ProfileActivity.java"
 
 # interfaces
-.implements Landroid/app/DatePickerDialog$OnDateSetListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
@@ -13,24 +13,28 @@
 
 
 # instance fields
-.field final synthetic a:Landroid/widget/TextView;
+.field final synthetic a:Landroid/widget/ArrayAdapter;
 
-.field final synthetic b:Ljava/text/SimpleDateFormat;
+.field final synthetic b:Landroid/widget/TextView;
 
-.field final synthetic c:Lcom/samsung/privilege/activity/ProfileActivity;
+.field final synthetic c:[Ljava/lang/String;
+
+.field final synthetic d:Lcom/samsung/privilege/activity/ProfileActivity;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/ProfileActivity;Landroid/widget/TextView;Ljava/text/SimpleDateFormat;)V
-    .registers 4
+.method constructor <init>(Lcom/samsung/privilege/activity/ProfileActivity;Landroid/widget/ArrayAdapter;Landroid/widget/TextView;[Ljava/lang/String;)V
+    .registers 5
 
     .prologue
-    .line 373
-    iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->c:Lcom/samsung/privilege/activity/ProfileActivity;
+    .line 358
+    iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->d:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    iput-object p2, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->a:Landroid/widget/TextView;
+    iput-object p2, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->a:Landroid/widget/ArrayAdapter;
 
-    iput-object p3, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->b:Ljava/text/SimpleDateFormat;
+    iput-object p3, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->b:Landroid/widget/TextView;
+
+    iput-object p4, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->c:[Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,33 +43,87 @@
 
 
 # virtual methods
-.method public onDateSet(Landroid/widget/DatePicker;III)V
-    .registers 8
+.method public onClick(Landroid/view/View;)V
+    .registers 5
 
     .prologue
-    .line 375
-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+    .line 362
+    :try_start_0
+    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->d:Lcom/samsung/privilege/activity/ProfileActivity;
+
+    invoke-virtual {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->getCurrentFocus()Landroid/view/View;
+
+    move-result-object v1
+
+    .line 363
+    if-eqz v1, :cond_1b
+
+    .line 364
+    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->d:Lcom/samsung/privilege/activity/ProfileActivity;
+
+    const-string/jumbo v2, "input_method"
+
+    invoke-virtual {v0, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 376
-    invoke-virtual {v0, p2, p3, p4}, Ljava/util/Calendar;->set(III)V
+    check-cast v0, Landroid/view/inputmethod/InputMethodManager;
+
+    .line 365
+    invoke-virtual {v1}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
+    :try_end_1b
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_1b} :catch_42
+
+    .line 371
+    :cond_1b
+    :goto_1b
+    new-instance v0, Landroid/app/AlertDialog$Builder;
+
+    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->d:Lcom/samsung/privilege/activity/ProfileActivity;
+
+    invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->d:Lcom/samsung/privilege/activity/ProfileActivity;
+
+    const v2, 0x7f0902da
+
+    invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->a:Landroid/widget/ArrayAdapter;
+
+    new-instance v2, Lcom/samsung/privilege/activity/ProfileActivity$7$1;
+
+    invoke-direct {v2, p0}, Lcom/samsung/privilege/activity/ProfileActivity$7$1;-><init>(Lcom/samsung/privilege/activity/ProfileActivity$7;)V
+
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setAdapter(Landroid/widget/ListAdapter;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
 
     .line 377
-    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->a:Landroid/widget/TextView;
-
-    iget-object v2, p0, Lcom/samsung/privilege/activity/ProfileActivity$7;->b:Ljava/text/SimpleDateFormat;
-
-    invoke-virtual {v0}, Ljava/util/Calendar;->getTime()Ljava/util/Date;
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    invoke-virtual {v2, v0}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
     .line 378
     return-void
+
+    .line 367
+    :catch_42
+    move-exception v0
+
+    goto :goto_1b
 .end method

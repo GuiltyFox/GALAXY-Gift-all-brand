@@ -42,11 +42,11 @@
 
 .field public static final abc_toolbar_collapse_description:I = 0x7f090012
 
-.field public static final appbar_scrolling_view_behavior:I = 0x7f0903e5
+.field public static final appbar_scrolling_view_behavior:I = 0x7f0903ef
 
-.field public static final bottom_sheet_behavior:I = 0x7f0903e9
+.field public static final bottom_sheet_behavior:I = 0x7f0903f3
 
-.field public static final character_counter_pattern:I = 0x7f090408
+.field public static final character_counter_pattern:I = 0x7f090412
 
 .field public static final status_bar_notification_info_overflow:I = 0x7f090042
 

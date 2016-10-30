@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 1546
+    .line 1555
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$28;->a:Landroid/widget/TextView;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$28;->b:Landroid/app/DatePickerDialog;
@@ -39,7 +39,7 @@
     .registers 7
 
     .prologue
-    .line 1549
+    .line 1558
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$28;->a:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
@@ -56,7 +56,7 @@
 
     move-result-object v0
 
-    .line 1550
+    .line 1559
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$28;->b:Landroid/app/DatePickerDialog;
 
     const/4 v2, 0x2
@@ -87,11 +87,11 @@
 
     invoke-virtual {v1, v2, v3, v0}, Landroid/app/DatePickerDialog;->updateDate(III)V
 
-    .line 1551
+    .line 1560
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$28;->b:Landroid/app/DatePickerDialog;
 
     invoke-virtual {v0}, Landroid/app/DatePickerDialog;->show()V
 
-    .line 1552
+    .line 1561
     return-void
 .end method

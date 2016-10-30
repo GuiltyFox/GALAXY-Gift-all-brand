@@ -146,7 +146,7 @@
 
     iget-object v6, v6, Lcom/samsung/privilege/activity/AddMoneyCreditActivity$1;->a:Lcom/samsung/privilege/activity/AddMoneyCreditActivity;
 
-    const v7, 0x7f090369
+    const v7, 0x7f090373
 
     invoke-virtual {v6, v7}, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->getString(I)Ljava/lang/String;
 

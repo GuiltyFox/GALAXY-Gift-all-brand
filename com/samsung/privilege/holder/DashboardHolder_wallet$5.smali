@@ -133,7 +133,7 @@
     .line 535
     iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
-    const v3, 0x7f0903e3
+    const v3, 0x7f0903ed
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -144,7 +144,7 @@
     .line 536
     iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
-    const v3, 0x7f090377
+    const v3, 0x7f090381
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 

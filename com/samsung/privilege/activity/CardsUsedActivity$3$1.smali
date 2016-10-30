@@ -129,7 +129,7 @@
 
     iget-object v3, v3, Lcom/samsung/privilege/activity/CardsUsedActivity$3;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    const v4, 0x7f090387
+    const v4, 0x7f090391
 
     invoke-virtual {v3, v4}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 
@@ -173,7 +173,7 @@
 
     iget-object v2, v2, Lcom/samsung/privilege/activity/CardsUsedActivity$3;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    const v3, 0x7f090369
+    const v3, 0x7f090373
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 

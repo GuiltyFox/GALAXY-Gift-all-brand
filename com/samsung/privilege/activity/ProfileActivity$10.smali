@@ -3,7 +3,7 @@
 .source "ProfileActivity.java"
 
 # interfaces
-.implements Lcom/samsung/privilege/control/toggle/ToggleButton$OnToggleChanged;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
@@ -13,24 +13,28 @@
 
 
 # instance fields
-.field final synthetic a:Landroid/widget/TextView;
+.field final synthetic a:Landroid/widget/ArrayAdapter;
 
 .field final synthetic b:Landroid/widget/TextView;
 
-.field final synthetic c:Lcom/samsung/privilege/activity/ProfileActivity;
+.field final synthetic c:[Ljava/lang/String;
+
+.field final synthetic d:Lcom/samsung/privilege/activity/ProfileActivity;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/ProfileActivity;Landroid/widget/TextView;Landroid/widget/TextView;)V
-    .registers 4
+.method constructor <init>(Lcom/samsung/privilege/activity/ProfileActivity;Landroid/widget/ArrayAdapter;Landroid/widget/TextView;[Ljava/lang/String;)V
+    .registers 5
 
     .prologue
-    .line 411
-    iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$10;->c:Lcom/samsung/privilege/activity/ProfileActivity;
+    .line 405
+    iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$10;->d:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    iput-object p2, p0, Lcom/samsung/privilege/activity/ProfileActivity$10;->a:Landroid/widget/TextView;
+    iput-object p2, p0, Lcom/samsung/privilege/activity/ProfileActivity$10;->a:Landroid/widget/ArrayAdapter;
 
     iput-object p3, p0, Lcom/samsung/privilege/activity/ProfileActivity$10;->b:Landroid/widget/TextView;
+
+    iput-object p4, p0, Lcom/samsung/privilege/activity/ProfileActivity$10;->c:[Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,63 +43,46 @@
 
 
 # virtual methods
-.method public a(Z)V
-    .registers 4
+.method public onClick(Landroid/view/View;)V
+    .registers 5
 
     .prologue
-    .line 414
-    const/4 v0, 0x1
+    .line 408
+    new-instance v0, Landroid/app/AlertDialog$Builder;
 
-    if-ne p1, v0, :cond_1c
+    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$10;->d:Lcom/samsung/privilege/activity/ProfileActivity;
+
+    invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$10;->d:Lcom/samsung/privilege/activity/ProfileActivity;
+
+    const v2, 0x7f0902ff
+
+    invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$10;->a:Landroid/widget/ArrayAdapter;
+
+    new-instance v2, Lcom/samsung/privilege/activity/ProfileActivity$10$1;
+
+    invoke-direct {v2, p0}, Lcom/samsung/privilege/activity/ProfileActivity$10$1;-><init>(Lcom/samsung/privilege/activity/ProfileActivity$10;)V
+
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setAdapter(Landroid/widget/ListAdapter;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    .line 414
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
     .line 415
-    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$10;->a:Landroid/widget/TextView;
-
-    const-string/jumbo v1, "#2ba9e3"
-
-    invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    .line 416
-    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$10;->b:Landroid/widget/TextView;
-
-    const-string/jumbo v1, "#ebebeb"
-
-    invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    .line 421
-    :goto_1b
     return-void
-
-    .line 418
-    :cond_1c
-    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$10;->a:Landroid/widget/TextView;
-
-    const-string/jumbo v1, "#ebebeb"
-
-    invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    .line 419
-    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$10;->b:Landroid/widget/TextView;
-
-    const-string/jumbo v1, "#2ba9e3"
-
-    invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
-
-    goto :goto_1b
 .end method

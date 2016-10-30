@@ -101,7 +101,7 @@
 
     .prologue
     .line 1768
-    const v0, 0x7f040132
+    const v0, 0x7f040133
 
     const/4 v1, 0x0
 
@@ -110,7 +110,7 @@
     move-result-object v1
 
     .line 1770
-    const v0, 0x7f100618
+    const v0, 0x7f10061c
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

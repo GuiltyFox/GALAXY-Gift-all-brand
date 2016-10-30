@@ -1508,7 +1508,7 @@
     .line 281
     const-string/jumbo v0, ""
 
-    const v1, 0x7f090280
+    const v1, 0x7f090281
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
@@ -1701,7 +1701,7 @@
     .line 2941
     const-string/jumbo v0, ""
 
-    const v1, 0x7f090280
+    const v1, 0x7f090281
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
@@ -1880,7 +1880,7 @@
     .line 2862
     const-string/jumbo v0, ""
 
-    const v1, 0x7f090280
+    const v1, 0x7f090281
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
@@ -2057,7 +2057,7 @@
     invoke-direct {v2, p0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;)V
 
     .line 3078
-    const v0, 0x7f04010f
+    const v0, 0x7f040110
 
     invoke-virtual {v2, v0}, Landroid/app/Dialog;->setContentView(I)V
 
@@ -2074,7 +2074,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 3084
-    const v1, 0x7f10028f
+    const v1, 0x7f100290
 
     invoke-virtual {v2, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -2325,7 +2325,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090335
+    const v2, 0x7f09033f
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
@@ -4991,7 +4991,7 @@
     .registers 4
 
     .prologue
-    const v2, 0x7f090344
+    const v2, 0x7f09034e
 
     .line 636
     const v0, 0x7f1000ee
@@ -5002,7 +5002,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const v1, 0x7f090345
+    const v1, 0x7f09034f
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
@@ -5697,7 +5697,7 @@
     .registers 8
 
     .prologue
-    const v6, 0x7f090284
+    const v6, 0x7f090285
 
     .line 973
     const v0, 0x7f1000d1
@@ -5785,7 +5785,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090286
+    const v2, 0x7f090287
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
@@ -5839,7 +5839,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090285
+    const v2, 0x7f090286
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
@@ -5863,7 +5863,7 @@
 
     .line 988
     :cond_a5
-    const v1, 0x7f09028a
+    const v1, 0x7f09028b
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
@@ -6817,7 +6817,7 @@
 
     .line 2499
     :goto_50
-    const v0, 0x7f10055e
+    const v0, 0x7f10055f
 
     invoke-virtual {v1, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -6833,7 +6833,7 @@
     invoke-virtual {v0, v2}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 2507
-    const v0, 0x7f100560
+    const v0, 0x7f100561
 
     invoke-virtual {v1, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -7877,7 +7877,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090346
+    const v2, 0x7f090350
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
@@ -7891,7 +7891,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f090337
+    const v2, 0x7f090341
 
     .line 2590
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;

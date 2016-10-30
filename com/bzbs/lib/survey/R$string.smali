@@ -126,21 +126,21 @@
 
 .field public static final alert_dialog_gps_title:I = 0x7f090083
 
-.field public static final allow_use_message_en:I = 0x7f0903df
+.field public static final allow_use_message_en:I = 0x7f0903e9
 
-.field public static final allow_use_message_th:I = 0x7f0903e0
+.field public static final allow_use_message_th:I = 0x7f0903ea
 
-.field public static final app_fullname:I = 0x7f0903e1
+.field public static final app_fullname:I = 0x7f0903eb
 
-.field public static final app_name:I = 0x7f0903e3
+.field public static final app_name:I = 0x7f0903ed
 
-.field public static final app_picker_name:I = 0x7f0903e4
+.field public static final app_picker_name:I = 0x7f0903ee
 
-.field public static final appbar_scrolling_view_behavior:I = 0x7f0903e5
+.field public static final appbar_scrolling_view_behavior:I = 0x7f0903ef
 
-.field public static final auth_google_play_services_client_facebook_display_name:I = 0x7f0903e6
+.field public static final auth_google_play_services_client_facebook_display_name:I = 0x7f0903f0
 
-.field public static final auth_google_play_services_client_google_display_name:I = 0x7f0903e7
+.field public static final auth_google_play_services_client_google_display_name:I = 0x7f0903f1
 
 .field public static final badge_detail_bar_1_item_1:I = 0x7f09008e
 
@@ -158,65 +158,65 @@
 
 .field public static final badge_tab_2:I = 0x7f090095
 
-.field public static final bookmark_picker_name:I = 0x7f0903e8
+.field public static final bookmark_picker_name:I = 0x7f0903f2
 
-.field public static final bottom_sheet_behavior:I = 0x7f0903e9
+.field public static final bottom_sheet_behavior:I = 0x7f0903f3
 
-.field public static final button_add_calendar:I = 0x7f0903ea
+.field public static final button_add_calendar:I = 0x7f0903f4
 
-.field public static final button_add_contact:I = 0x7f0903eb
+.field public static final button_add_contact:I = 0x7f0903f5
 
-.field public static final button_back:I = 0x7f0903ec
+.field public static final button_back:I = 0x7f0903f6
 
-.field public static final button_book_search:I = 0x7f0903ed
+.field public static final button_book_search:I = 0x7f0903f7
 
-.field public static final button_cancel:I = 0x7f0903ee
+.field public static final button_cancel:I = 0x7f0903f8
 
-.field public static final button_custom_product_search:I = 0x7f0903ef
+.field public static final button_custom_product_search:I = 0x7f0903f9
 
-.field public static final button_dial:I = 0x7f0903f0
+.field public static final button_dial:I = 0x7f0903fa
 
-.field public static final button_done:I = 0x7f0903f1
+.field public static final button_done:I = 0x7f0903fb
 
-.field public static final button_email:I = 0x7f0903f2
+.field public static final button_email:I = 0x7f0903fc
 
-.field public static final button_get_directions:I = 0x7f0903f3
+.field public static final button_get_directions:I = 0x7f0903fd
 
-.field public static final button_google_shopper:I = 0x7f0903f4
+.field public static final button_google_shopper:I = 0x7f0903fe
 
-.field public static final button_mms:I = 0x7f0903f5
+.field public static final button_mms:I = 0x7f0903ff
 
-.field public static final button_ok:I = 0x7f0903f6
+.field public static final button_ok:I = 0x7f090400
 
-.field public static final button_open_browser:I = 0x7f0903f7
+.field public static final button_open_browser:I = 0x7f090401
 
-.field public static final button_product_search:I = 0x7f0903f8
+.field public static final button_product_search:I = 0x7f090402
 
-.field public static final button_search_book_contents:I = 0x7f0903f9
+.field public static final button_search_book_contents:I = 0x7f090403
 
-.field public static final button_share_app:I = 0x7f0903fa
+.field public static final button_share_app:I = 0x7f090404
 
-.field public static final button_share_bookmark:I = 0x7f0903fb
+.field public static final button_share_bookmark:I = 0x7f090405
 
-.field public static final button_share_by_email:I = 0x7f0903fc
+.field public static final button_share_by_email:I = 0x7f090406
 
-.field public static final button_share_by_sms:I = 0x7f0903fd
+.field public static final button_share_by_sms:I = 0x7f090407
 
-.field public static final button_share_clipboard:I = 0x7f0903fe
+.field public static final button_share_clipboard:I = 0x7f090408
 
-.field public static final button_share_contact:I = 0x7f0903ff
+.field public static final button_share_contact:I = 0x7f090409
 
-.field public static final button_show_map:I = 0x7f090400
+.field public static final button_show_map:I = 0x7f09040a
 
-.field public static final button_sms:I = 0x7f090401
+.field public static final button_sms:I = 0x7f09040b
 
-.field public static final button_web_search:I = 0x7f090402
+.field public static final button_web_search:I = 0x7f09040c
 
-.field public static final button_wifi:I = 0x7f090403
+.field public static final button_wifi:I = 0x7f09040d
 
-.field public static final buzzebees_error_message_en:I = 0x7f090404
+.field public static final buzzebees_error_message_en:I = 0x7f09040e
 
-.field public static final buzzebees_error_message_th:I = 0x7f090405
+.field public static final buzzebees_error_message_th:I = 0x7f09040f
 
 .field public static final campaign_detail_ad_botton_post_watchad:I = 0x7f09009d
 
@@ -268,7 +268,7 @@
 
 .field public static final cancel:I = 0x7f0900e1
 
-.field public static final character_counter_pattern:I = 0x7f090408
+.field public static final character_counter_pattern:I = 0x7f090412
 
 .field public static final common_android_wear_notification_needs_update_text:I = 0x7f090023
 
@@ -330,17 +330,17 @@
 
 .field public static final common_open_on_phone:I = 0x7f090040
 
-.field public static final contents_contact:I = 0x7f09040a
+.field public static final contents_contact:I = 0x7f090414
 
-.field public static final contents_email:I = 0x7f09040b
+.field public static final contents_email:I = 0x7f090415
 
-.field public static final contents_location:I = 0x7f09040c
+.field public static final contents_location:I = 0x7f090416
 
-.field public static final contents_phone:I = 0x7f09040d
+.field public static final contents_phone:I = 0x7f090417
 
-.field public static final contents_sms:I = 0x7f09040e
+.field public static final contents_sms:I = 0x7f090418
 
-.field public static final contents_text:I = 0x7f09040f
+.field public static final contents_text:I = 0x7f090419
 
 .field public static final dashboard_baht:I = 0x7f090111
 
@@ -448,15 +448,15 @@
 
 .field public static final dialog_title_address:I = 0x7f09014e
 
-.field public static final edt_field_min_max1:I = 0x7f090399
+.field public static final edt_field_min_max1:I = 0x7f0903a3
 
-.field public static final edt_field_min_max2:I = 0x7f09039a
+.field public static final edt_field_min_max2:I = 0x7f0903a4
 
-.field public static final edt_field_number_only:I = 0x7f09039b
+.field public static final edt_field_number_only:I = 0x7f0903a5
 
-.field public static final enable_gps:I = 0x7f09041b
+.field public static final enable_gps:I = 0x7f090425
 
-.field public static final enable_gps_title:I = 0x7f09041c
+.field public static final enable_gps_title:I = 0x7f090426
 
 .field public static final facebook_button_post:I = 0x7f090166
 
@@ -506,7 +506,7 @@
 
 .field public static final facebook_popup_post_menu_header:I = 0x7f09017d
 
-.field public static final fetching_location:I = 0x7f09041d
+.field public static final fetching_location:I = 0x7f090427
 
 .field public static final friend_list_search_hint:I = 0x7f090181
 
@@ -554,9 +554,9 @@
 
 .field public static final gps_settings:I = 0x7f0901a4
 
-.field public static final has_new_version_message_en:I = 0x7f09041e
+.field public static final has_new_version_message_en:I = 0x7f090428
 
-.field public static final has_new_version_message_th:I = 0x7f09041f
+.field public static final has_new_version_message_th:I = 0x7f090429
 
 .field public static final header_no_review_info:I = 0x7f0901a5
 
@@ -564,21 +564,21 @@
 
 .field public static final header_webview_registration:I = 0x7f0901a7
 
-.field public static final hello_world:I = 0x7f090421
+.field public static final hello_world:I = 0x7f09042b
 
-.field public static final history_clear_one_history_text:I = 0x7f090422
+.field public static final history_clear_one_history_text:I = 0x7f09042c
 
-.field public static final history_clear_text:I = 0x7f090423
+.field public static final history_clear_text:I = 0x7f09042d
 
-.field public static final history_email_title:I = 0x7f090424
+.field public static final history_email_title:I = 0x7f09042e
 
-.field public static final history_empty:I = 0x7f090425
+.field public static final history_empty:I = 0x7f09042f
 
-.field public static final history_empty_detail:I = 0x7f090426
+.field public static final history_empty_detail:I = 0x7f090430
 
-.field public static final history_send:I = 0x7f090427
+.field public static final history_send:I = 0x7f090431
 
-.field public static final history_title:I = 0x7f090428
+.field public static final history_title:I = 0x7f090432
 
 .field public static final info:I = 0x7f0901a9
 
@@ -660,13 +660,13 @@
 
 .field public static final market_use:I = 0x7f0901df
 
-.field public static final menu_encode_mecard:I = 0x7f09043a
+.field public static final menu_encode_mecard:I = 0x7f090444
 
-.field public static final menu_encode_vcard:I = 0x7f09043b
+.field public static final menu_encode_vcard:I = 0x7f090445
 
-.field public static final menu_help:I = 0x7f09043c
+.field public static final menu_help:I = 0x7f090446
 
-.field public static final menu_history:I = 0x7f09043d
+.field public static final menu_history:I = 0x7f090447
 
 .field public static final menu_popup_cancel:I = 0x7f0901ec
 
@@ -700,7 +700,7 @@
 
 .field public static final menu_settings_item_8:I = 0x7f0901fd
 
-.field public static final menu_share:I = 0x7f09043e
+.field public static final menu_share:I = 0x7f090448
 
 .field public static final menu_slide_main_email_sent_to_sales:I = 0x7f0901fe
 
@@ -806,11 +806,11 @@
 
 .field public static final mk_detail_thb:I = 0x7f090233
 
-.field public static final msg_alert_delete_continue:I = 0x7f0903a8
+.field public static final msg_alert_delete_continue:I = 0x7f0903b2
 
-.field public static final msg_alert_delete_continue_footer:I = 0x7f0903a9
+.field public static final msg_alert_delete_continue_footer:I = 0x7f0903b3
 
-.field public static final msg_alert_delete_continue_header:I = 0x7f0903aa
+.field public static final msg_alert_delete_continue_header:I = 0x7f0903b4
 
 .field public static final msg_alert_invalid_phone:I = 0x7f090240
 
@@ -818,65 +818,65 @@
 
 .field public static final msg_alert_survey_character:I = 0x7f090242
 
-.field public static final msg_bulk_mode_scanned:I = 0x7f09043f
+.field public static final msg_bulk_mode_scanned:I = 0x7f090449
 
-.field public static final msg_camera_framework_bug:I = 0x7f090440
+.field public static final msg_camera_framework_bug:I = 0x7f09044a
 
-.field public static final msg_default_format:I = 0x7f090441
+.field public static final msg_default_format:I = 0x7f09044b
 
-.field public static final msg_default_meta:I = 0x7f090442
+.field public static final msg_default_meta:I = 0x7f09044c
 
-.field public static final msg_default_mms_subject:I = 0x7f090443
+.field public static final msg_default_mms_subject:I = 0x7f09044d
 
-.field public static final msg_default_status:I = 0x7f090444
+.field public static final msg_default_status:I = 0x7f09044e
 
-.field public static final msg_default_time:I = 0x7f090445
+.field public static final msg_default_time:I = 0x7f09044f
 
-.field public static final msg_default_type:I = 0x7f090446
+.field public static final msg_default_type:I = 0x7f090450
 
-.field public static final msg_encode_contents_failed:I = 0x7f090447
+.field public static final msg_encode_contents_failed:I = 0x7f090451
 
-.field public static final msg_google_books:I = 0x7f090448
+.field public static final msg_google_books:I = 0x7f090452
 
-.field public static final msg_google_product:I = 0x7f090449
+.field public static final msg_google_product:I = 0x7f090453
 
-.field public static final msg_google_shopper_missing:I = 0x7f09044a
+.field public static final msg_google_shopper_missing:I = 0x7f090454
 
-.field public static final msg_install_google_shopper:I = 0x7f09044b
+.field public static final msg_install_google_shopper:I = 0x7f090455
 
-.field public static final msg_intent_failed:I = 0x7f09044c
+.field public static final msg_intent_failed:I = 0x7f090456
 
-.field public static final msg_redirect:I = 0x7f09044d
+.field public static final msg_redirect:I = 0x7f090457
 
-.field public static final msg_sbc_book_not_searchable:I = 0x7f09044e
+.field public static final msg_sbc_book_not_searchable:I = 0x7f090458
 
-.field public static final msg_sbc_failed:I = 0x7f09044f
+.field public static final msg_sbc_failed:I = 0x7f090459
 
-.field public static final msg_sbc_no_page_returned:I = 0x7f090450
+.field public static final msg_sbc_no_page_returned:I = 0x7f09045a
 
-.field public static final msg_sbc_page:I = 0x7f090451
+.field public static final msg_sbc_page:I = 0x7f09045b
 
-.field public static final msg_sbc_results:I = 0x7f090452
+.field public static final msg_sbc_results:I = 0x7f09045c
 
-.field public static final msg_sbc_searching_book:I = 0x7f090453
+.field public static final msg_sbc_searching_book:I = 0x7f09045d
 
-.field public static final msg_sbc_snippet_unavailable:I = 0x7f090454
+.field public static final msg_sbc_snippet_unavailable:I = 0x7f09045e
 
-.field public static final msg_sbc_unknown_page:I = 0x7f090455
+.field public static final msg_sbc_unknown_page:I = 0x7f09045f
 
-.field public static final msg_share_explanation:I = 0x7f090456
+.field public static final msg_share_explanation:I = 0x7f090460
 
-.field public static final msg_share_subject_line:I = 0x7f090457
+.field public static final msg_share_subject_line:I = 0x7f090461
 
-.field public static final msg_share_text:I = 0x7f090458
+.field public static final msg_share_text:I = 0x7f090462
 
-.field public static final msg_sure:I = 0x7f090459
+.field public static final msg_sure:I = 0x7f090463
 
-.field public static final msg_unmount_usb:I = 0x7f09045a
+.field public static final msg_unmount_usb:I = 0x7f090464
 
-.field public static final my_app_buzzebee:I = 0x7f09045b
+.field public static final my_app_buzzebee:I = 0x7f090465
 
-.field public static final nearby_places:I = 0x7f09045c
+.field public static final nearby_places:I = 0x7f090466
 
 .field public static final nfc_campaign_require:I = 0x7f090245
 
@@ -886,11 +886,11 @@
 
 .field public static final nfc_warning_disable:I = 0x7f090250
 
-.field public static final no:I = 0x7f09045d
+.field public static final no:I = 0x7f090467
 
 .field public static final no_network_connection:I = 0x7f090251
 
-.field public static final no_network_connection_toast:I = 0x7f09045e
+.field public static final no_network_connection_toast:I = 0x7f090468
 
 .field public static final notification_header:I = 0x7f090257
 
@@ -912,400 +912,400 @@
 
 .field public static final pc_distance:I = 0x7f09026b
 
-.field public static final place_label_header_branch:I = 0x7f09026f
+.field public static final place_label_header_branch:I = 0x7f090270
 
-.field public static final place_label_header_place:I = 0x7f090270
+.field public static final place_label_header_place:I = 0x7f090271
 
-.field public static final place_label_km:I = 0x7f090271
+.field public static final place_label_km:I = 0x7f090272
 
-.field public static final place_label_map:I = 0x7f090272
+.field public static final place_label_map:I = 0x7f090273
 
-.field public static final place_label_market_place:I = 0x7f090273
+.field public static final place_label_market_place:I = 0x7f090274
 
-.field public static final place_label_review:I = 0x7f090274
+.field public static final place_label_review:I = 0x7f090275
 
-.field public static final place_label_were_here:I = 0x7f090275
+.field public static final place_label_were_here:I = 0x7f090276
 
-.field public static final place_list_search_hint:I = 0x7f090276
+.field public static final place_list_search_hint:I = 0x7f090277
 
-.field public static final place_message_get_location_1:I = 0x7f090277
+.field public static final place_message_get_location_1:I = 0x7f090278
 
-.field public static final place_message_get_location_2:I = 0x7f090278
+.field public static final place_message_get_location_2:I = 0x7f090279
 
-.field public static final place_message_get_location_3:I = 0x7f090279
+.field public static final place_message_get_location_3:I = 0x7f09027a
 
-.field public static final place_message_get_location_4:I = 0x7f09027a
+.field public static final place_message_get_location_4:I = 0x7f09027b
 
-.field public static final place_message_show_map_error1:I = 0x7f09027b
+.field public static final place_message_show_map_error1:I = 0x7f09027c
 
-.field public static final place_message_show_mk_error1:I = 0x7f09027c
+.field public static final place_message_show_mk_error1:I = 0x7f09027d
 
-.field public static final place_message_show_reveiw_place_error1:I = 0x7f09027d
+.field public static final place_message_show_reveiw_place_error1:I = 0x7f09027e
 
-.field public static final place_review_botton_post_review:I = 0x7f09027e
+.field public static final place_review_botton_post_review:I = 0x7f09027f
 
-.field public static final place_review_header:I = 0x7f09027f
+.field public static final place_review_header:I = 0x7f090280
 
-.field public static final please_wait:I = 0x7f090280
+.field public static final please_wait:I = 0x7f090281
 
-.field public static final point_alert:I = 0x7f090281
+.field public static final point_alert:I = 0x7f090282
 
-.field public static final point_alert_appcenter:I = 0x7f090282
+.field public static final point_alert_appcenter:I = 0x7f090283
 
-.field public static final post_async_message:I = 0x7f09028e
+.field public static final post_async_message:I = 0x7f09028f
 
-.field public static final post_check_your_memory_card:I = 0x7f09028f
+.field public static final post_check_your_memory_card:I = 0x7f090290
 
-.field public static final post_check_your_picture:I = 0x7f090290
+.field public static final post_check_your_picture:I = 0x7f090291
 
-.field public static final post_error:I = 0x7f090291
+.field public static final post_error:I = 0x7f090292
 
-.field public static final post_facebook_retry_cancel_en:I = 0x7f090461
+.field public static final post_facebook_retry_cancel_en:I = 0x7f09046b
 
-.field public static final post_facebook_retry_cancel_th:I = 0x7f090462
+.field public static final post_facebook_retry_cancel_th:I = 0x7f09046c
 
-.field public static final post_header_1:I = 0x7f090293
+.field public static final post_header_1:I = 0x7f090294
 
-.field public static final post_header_2:I = 0x7f090294
+.field public static final post_header_2:I = 0x7f090295
 
-.field public static final post_header_3:I = 0x7f090295
+.field public static final post_header_3:I = 0x7f090296
 
-.field public static final post_header_4:I = 0x7f090296
+.field public static final post_header_4:I = 0x7f090297
 
-.field public static final post_header_5:I = 0x7f090297
+.field public static final post_header_5:I = 0x7f090298
 
-.field public static final post_header_6:I = 0x7f090298
+.field public static final post_header_6:I = 0x7f090299
 
-.field public static final post_header_7:I = 0x7f090299
+.field public static final post_header_7:I = 0x7f09029a
 
-.field public static final post_header_8:I = 0x7f09029a
+.field public static final post_header_8:I = 0x7f09029b
 
-.field public static final post_hint_textbox_post:I = 0x7f09029b
+.field public static final post_hint_textbox_post:I = 0x7f09029c
 
-.field public static final post_hint_textbox_post_1:I = 0x7f09029c
+.field public static final post_hint_textbox_post_1:I = 0x7f09029d
 
-.field public static final post_hint_textbox_post_2:I = 0x7f09029d
+.field public static final post_hint_textbox_post_2:I = 0x7f09029e
 
-.field public static final post_invite_friend_button_done:I = 0x7f09029e
+.field public static final post_invite_friend_button_done:I = 0x7f09029f
 
-.field public static final post_label_1:I = 0x7f09029f
+.field public static final post_label_1:I = 0x7f0902a0
 
-.field public static final post_label_2:I = 0x7f0902a0
+.field public static final post_label_2:I = 0x7f0902a1
 
-.field public static final post_label_button_post:I = 0x7f0902a1
+.field public static final post_label_button_post:I = 0x7f0902a2
 
-.field public static final post_label_textbox_post:I = 0x7f0902a2
+.field public static final post_label_textbox_post:I = 0x7f0902a3
 
-.field public static final post_must_enter_text:I = 0x7f0902a3
+.field public static final post_must_enter_text:I = 0x7f0902a4
 
-.field public static final post_photo_menu_camera:I = 0x7f0902a5
+.field public static final post_photo_menu_camera:I = 0x7f0902a6
 
-.field public static final post_photo_menu_delete:I = 0x7f0902a6
+.field public static final post_photo_menu_delete:I = 0x7f0902a7
 
-.field public static final post_photo_menu_gallery:I = 0x7f0902a7
+.field public static final post_photo_menu_gallery:I = 0x7f0902a8
 
-.field public static final post_require:I = 0x7f0902a9
+.field public static final post_require:I = 0x7f0902aa
 
-.field public static final post_require_text:I = 0x7f0902aa
+.field public static final post_require_text:I = 0x7f0902ab
 
-.field public static final post_success:I = 0x7f0902ab
+.field public static final post_success:I = 0x7f0902ac
 
-.field public static final post_title_header:I = 0x7f0902ac
+.field public static final post_title_header:I = 0x7f0902ad
 
-.field public static final post_to_on_a_friend_timeline:I = 0x7f0902ad
+.field public static final post_to_on_a_friend_timeline:I = 0x7f0902ae
 
-.field public static final post_to_on_your_own_timeline:I = 0x7f0902ae
+.field public static final post_to_on_your_own_timeline:I = 0x7f0902af
 
-.field public static final post_to_review:I = 0x7f0902af
+.field public static final post_to_review:I = 0x7f0902b0
 
-.field public static final preferences_actions_title:I = 0x7f090463
+.field public static final preferences_actions_title:I = 0x7f09046d
 
-.field public static final preferences_auto_focus_title:I = 0x7f090464
+.field public static final preferences_auto_focus_title:I = 0x7f09046e
 
-.field public static final preferences_bulk_mode_summary:I = 0x7f090465
+.field public static final preferences_bulk_mode_summary:I = 0x7f09046f
 
-.field public static final preferences_bulk_mode_title:I = 0x7f090466
+.field public static final preferences_bulk_mode_title:I = 0x7f090470
 
-.field public static final preferences_copy_to_clipboard_title:I = 0x7f090467
+.field public static final preferences_copy_to_clipboard_title:I = 0x7f090471
 
-.field public static final preferences_custom_product_search_summary:I = 0x7f090468
+.field public static final preferences_custom_product_search_summary:I = 0x7f090472
 
-.field public static final preferences_custom_product_search_title:I = 0x7f090469
+.field public static final preferences_custom_product_search_title:I = 0x7f090473
 
-.field public static final preferences_decode_1D_title:I = 0x7f09046a
+.field public static final preferences_decode_1D_title:I = 0x7f090474
 
-.field public static final preferences_decode_Data_Matrix_title:I = 0x7f09046b
+.field public static final preferences_decode_Data_Matrix_title:I = 0x7f090475
 
-.field public static final preferences_decode_QR_title:I = 0x7f09046c
+.field public static final preferences_decode_QR_title:I = 0x7f090476
 
-.field public static final preferences_device_bug_workarounds_title:I = 0x7f09046d
+.field public static final preferences_device_bug_workarounds_title:I = 0x7f090477
 
-.field public static final preferences_disable_continuous_focus_summary:I = 0x7f09046e
+.field public static final preferences_disable_continuous_focus_summary:I = 0x7f090478
 
-.field public static final preferences_disable_continuous_focus_title:I = 0x7f09046f
+.field public static final preferences_disable_continuous_focus_title:I = 0x7f090479
 
-.field public static final preferences_disable_exposure_title:I = 0x7f090470
+.field public static final preferences_disable_exposure_title:I = 0x7f09047a
 
-.field public static final preferences_front_light_auto:I = 0x7f090471
+.field public static final preferences_front_light_auto:I = 0x7f09047b
 
-.field public static final preferences_front_light_off:I = 0x7f090472
+.field public static final preferences_front_light_off:I = 0x7f09047c
 
-.field public static final preferences_front_light_on:I = 0x7f090473
+.field public static final preferences_front_light_on:I = 0x7f09047d
 
-.field public static final preferences_front_light_summary:I = 0x7f090474
+.field public static final preferences_front_light_summary:I = 0x7f09047e
 
-.field public static final preferences_front_light_title:I = 0x7f090475
+.field public static final preferences_front_light_title:I = 0x7f09047f
 
-.field public static final preferences_general_title:I = 0x7f090476
+.field public static final preferences_general_title:I = 0x7f090480
 
-.field public static final preferences_invert_scan_summary:I = 0x7f090477
+.field public static final preferences_invert_scan_summary:I = 0x7f090481
 
-.field public static final preferences_invert_scan_title:I = 0x7f090478
+.field public static final preferences_invert_scan_title:I = 0x7f090482
 
-.field public static final preferences_name:I = 0x7f090479
+.field public static final preferences_name:I = 0x7f090483
 
-.field public static final preferences_play_beep_title:I = 0x7f09047a
+.field public static final preferences_play_beep_title:I = 0x7f090484
 
-.field public static final preferences_remember_duplicates_summary:I = 0x7f09047b
+.field public static final preferences_remember_duplicates_summary:I = 0x7f090485
 
-.field public static final preferences_remember_duplicates_title:I = 0x7f09047c
+.field public static final preferences_remember_duplicates_title:I = 0x7f090486
 
-.field public static final preferences_result_title:I = 0x7f09047d
+.field public static final preferences_result_title:I = 0x7f090487
 
-.field public static final preferences_scanning_title:I = 0x7f09047e
+.field public static final preferences_scanning_title:I = 0x7f090488
 
-.field public static final preferences_search_country:I = 0x7f09047f
+.field public static final preferences_search_country:I = 0x7f090489
 
-.field public static final preferences_supplemental_summary:I = 0x7f090480
+.field public static final preferences_supplemental_summary:I = 0x7f09048a
 
-.field public static final preferences_supplemental_title:I = 0x7f090481
+.field public static final preferences_supplemental_title:I = 0x7f09048b
 
-.field public static final preferences_try_bsplus:I = 0x7f090482
+.field public static final preferences_try_bsplus:I = 0x7f09048c
 
-.field public static final preferences_try_bsplus_summary:I = 0x7f090483
+.field public static final preferences_try_bsplus_summary:I = 0x7f09048d
 
-.field public static final preferences_vibrate_title:I = 0x7f090484
+.field public static final preferences_vibrate_title:I = 0x7f09048e
 
-.field public static final privacy_policy_header:I = 0x7f0902b1
+.field public static final privacy_policy_header:I = 0x7f0902b2
 
-.field public static final profile_setting_alert_address:I = 0x7f0902b2
+.field public static final profile_setting_alert_address:I = 0x7f0902bc
 
-.field public static final profile_setting_caption_contact:I = 0x7f0902b4
+.field public static final profile_setting_caption_contact:I = 0x7f0902be
 
-.field public static final profile_setting_caption_personal:I = 0x7f0902b5
+.field public static final profile_setting_caption_personal:I = 0x7f0902bf
 
-.field public static final profile_setting_checking_address:I = 0x7f0902b6
+.field public static final profile_setting_checking_address:I = 0x7f0902c0
 
-.field public static final profile_setting_checking_address_error:I = 0x7f0902b7
+.field public static final profile_setting_checking_address_error:I = 0x7f0902c1
 
-.field public static final profile_setting_hint_address:I = 0x7f0902b8
+.field public static final profile_setting_hint_address:I = 0x7f0902c2
 
-.field public static final profile_setting_hint_birthday:I = 0x7f0902b9
+.field public static final profile_setting_hint_birthday:I = 0x7f0902c3
 
-.field public static final profile_setting_hint_email:I = 0x7f0902bc
+.field public static final profile_setting_hint_email:I = 0x7f0902c6
 
-.field public static final profile_setting_hint_firstname:I = 0x7f0902bd
+.field public static final profile_setting_hint_firstname:I = 0x7f0902c7
 
-.field public static final profile_setting_hint_lastname:I = 0x7f0902be
+.field public static final profile_setting_hint_lastname:I = 0x7f0902c8
 
-.field public static final profile_setting_hint_mobile:I = 0x7f0902bf
+.field public static final profile_setting_hint_mobile:I = 0x7f0902c9
 
-.field public static final profile_setting_hint_sex:I = 0x7f0902c2
+.field public static final profile_setting_hint_sex:I = 0x7f0902cc
 
-.field public static final profile_setting_label_address:I = 0x7f0902c4
+.field public static final profile_setting_label_address:I = 0x7f0902ce
 
-.field public static final profile_setting_label_birthday:I = 0x7f0902c5
+.field public static final profile_setting_label_birthday:I = 0x7f0902cf
 
-.field public static final profile_setting_label_button_update:I = 0x7f0902c6
+.field public static final profile_setting_label_button_update:I = 0x7f0902d0
 
-.field public static final profile_setting_label_email:I = 0x7f0902c7
+.field public static final profile_setting_label_email:I = 0x7f0902d1
 
-.field public static final profile_setting_label_firstname:I = 0x7f0902c8
+.field public static final profile_setting_label_firstname:I = 0x7f0902d2
 
-.field public static final profile_setting_label_language:I = 0x7f0902c9
+.field public static final profile_setting_label_language:I = 0x7f0902d3
 
-.field public static final profile_setting_label_lastname:I = 0x7f0902ca
+.field public static final profile_setting_label_lastname:I = 0x7f0902d4
 
-.field public static final profile_setting_label_login_with:I = 0x7f0902cb
+.field public static final profile_setting_label_login_with:I = 0x7f0902d5
 
-.field public static final profile_setting_label_mobile:I = 0x7f0902cc
+.field public static final profile_setting_label_mobile:I = 0x7f0902d6
 
-.field public static final profile_setting_label_notification:I = 0x7f0902cd
+.field public static final profile_setting_label_notification:I = 0x7f0902d7
 
-.field public static final profile_setting_label_save_completed:I = 0x7f0902d1
+.field public static final profile_setting_label_save_completed:I = 0x7f0902db
 
-.field public static final profile_setting_label_sex:I = 0x7f0902d2
+.field public static final profile_setting_label_sex:I = 0x7f0902dc
 
-.field public static final profile_setting_label_validate_data:I = 0x7f0902d3
+.field public static final profile_setting_label_validate_data:I = 0x7f0902dd
 
-.field public static final profile_setting_label_varidate_address:I = 0x7f0902d5
+.field public static final profile_setting_label_varidate_address:I = 0x7f0902df
 
-.field public static final profile_setting_label_varidate_email:I = 0x7f0902d6
+.field public static final profile_setting_label_varidate_email:I = 0x7f0902e0
 
-.field public static final profile_setting_label_varidate_first_name:I = 0x7f0902d7
+.field public static final profile_setting_label_varidate_first_name:I = 0x7f0902e1
 
-.field public static final profile_setting_label_varidate_last_name:I = 0x7f0902d8
+.field public static final profile_setting_label_varidate_last_name:I = 0x7f0902e2
 
-.field public static final profile_setting_page_header:I = 0x7f0902dc
+.field public static final profile_setting_page_header:I = 0x7f0902e6
 
-.field public static final profile_setting_select_language:I = 0x7f090486
+.field public static final profile_setting_select_language:I = 0x7f090490
 
-.field public static final profile_setting_select_language_en:I = 0x7f090487
+.field public static final profile_setting_select_language_en:I = 0x7f090491
 
-.field public static final profile_setting_select_language_th:I = 0x7f090488
+.field public static final profile_setting_select_language_th:I = 0x7f090492
 
-.field public static final pull_to_refresh_from_bottom_pull_label:I = 0x7f090489
+.field public static final pull_to_refresh_from_bottom_pull_label:I = 0x7f090493
 
-.field public static final pull_to_refresh_from_bottom_refreshing_label:I = 0x7f09048a
+.field public static final pull_to_refresh_from_bottom_refreshing_label:I = 0x7f090494
 
-.field public static final pull_to_refresh_from_bottom_release_label:I = 0x7f09048b
+.field public static final pull_to_refresh_from_bottom_release_label:I = 0x7f090495
 
-.field public static final pull_to_refresh_pull_label:I = 0x7f09048c
+.field public static final pull_to_refresh_pull_label:I = 0x7f090496
 
-.field public static final pull_to_refresh_refreshing_label:I = 0x7f09048d
+.field public static final pull_to_refresh_refreshing_label:I = 0x7f090497
 
-.field public static final pull_to_refresh_release_label:I = 0x7f09048e
+.field public static final pull_to_refresh_release_label:I = 0x7f090498
 
-.field public static final purchasing_buy_dec:I = 0x7f090308
+.field public static final purchasing_buy_dec:I = 0x7f090312
 
-.field public static final purchasing_buy_dec_2:I = 0x7f090309
+.field public static final purchasing_buy_dec_2:I = 0x7f090313
 
-.field public static final purchasing_buy_dec_3:I = 0x7f09030a
+.field public static final purchasing_buy_dec_3:I = 0x7f090314
 
-.field public static final purchasing_buy_dec_4_1:I = 0x7f09030b
+.field public static final purchasing_buy_dec_4_1:I = 0x7f090315
 
-.field public static final purchasing_buy_dec_4_2:I = 0x7f09030c
+.field public static final purchasing_buy_dec_4_2:I = 0x7f090316
 
-.field public static final purchasing_buy_dec_5:I = 0x7f09030d
+.field public static final purchasing_buy_dec_5:I = 0x7f090317
 
-.field public static final purchasing_deal_free_command_1:I = 0x7f09030e
+.field public static final purchasing_deal_free_command_1:I = 0x7f090318
 
-.field public static final purchasing_deal_free_command_2:I = 0x7f09030f
+.field public static final purchasing_deal_free_command_2:I = 0x7f090319
 
-.field public static final purchasing_deal_free_command_3:I = 0x7f090310
+.field public static final purchasing_deal_free_command_3:I = 0x7f09031a
 
-.field public static final purchasing_deal_free_command_4:I = 0x7f090311
+.field public static final purchasing_deal_free_command_4:I = 0x7f09031b
 
-.field public static final purchasing_draw_check_person:I = 0x7f090312
+.field public static final purchasing_draw_check_person:I = 0x7f09031c
 
-.field public static final purchasing_draw_message_1:I = 0x7f090313
+.field public static final purchasing_draw_message_1:I = 0x7f09031d
 
-.field public static final purchasing_draw_message_2:I = 0x7f090314
+.field public static final purchasing_draw_message_2:I = 0x7f09031e
 
-.field public static final purchasing_draw_message_3:I = 0x7f090315
+.field public static final purchasing_draw_message_3:I = 0x7f09031f
 
-.field public static final purchasing_lable_menu_1:I = 0x7f090316
+.field public static final purchasing_lable_menu_1:I = 0x7f090320
 
-.field public static final purchasing_lable_menu_2:I = 0x7f090317
+.field public static final purchasing_lable_menu_2:I = 0x7f090321
 
-.field public static final purchasing_lable_menu_3:I = 0x7f090318
+.field public static final purchasing_lable_menu_3:I = 0x7f090322
 
-.field public static final purchasing_lable_menu_4:I = 0x7f090319
+.field public static final purchasing_lable_menu_4:I = 0x7f090323
 
-.field public static final purchasing_no_address:I = 0x7f09031a
+.field public static final purchasing_no_address:I = 0x7f090324
 
-.field public static final purchasing_parcel:I = 0x7f09031b
+.field public static final purchasing_parcel:I = 0x7f090325
 
-.field public static final purchasing_send_by_bzbs:I = 0x7f09031d
+.field public static final purchasing_send_by_bzbs:I = 0x7f090327
 
-.field public static final purchasing_this_serial_is_expired:I = 0x7f09031e
+.field public static final purchasing_this_serial_is_expired:I = 0x7f090328
 
-.field public static final purchasing_use_this_shope:I = 0x7f09031f
+.field public static final purchasing_use_this_shope:I = 0x7f090329
 
-.field public static final reset:I = 0x7f090493
+.field public static final reset:I = 0x7f09049d
 
-.field public static final result_address_book:I = 0x7f090494
+.field public static final result_address_book:I = 0x7f09049e
 
-.field public static final result_calendar:I = 0x7f090495
+.field public static final result_calendar:I = 0x7f09049f
 
-.field public static final result_email_address:I = 0x7f090496
+.field public static final result_email_address:I = 0x7f0904a0
 
-.field public static final result_geo:I = 0x7f090497
+.field public static final result_geo:I = 0x7f0904a1
 
-.field public static final result_isbn:I = 0x7f090498
+.field public static final result_isbn:I = 0x7f0904a2
 
-.field public static final result_product:I = 0x7f090499
+.field public static final result_product:I = 0x7f0904a3
 
-.field public static final result_sms:I = 0x7f09049a
+.field public static final result_sms:I = 0x7f0904a4
 
-.field public static final result_tel:I = 0x7f09049b
+.field public static final result_tel:I = 0x7f0904a5
 
-.field public static final result_text:I = 0x7f09049c
+.field public static final result_text:I = 0x7f0904a6
 
-.field public static final result_uri:I = 0x7f09049d
+.field public static final result_uri:I = 0x7f0904a7
 
-.field public static final result_wifi:I = 0x7f09049e
+.field public static final result_wifi:I = 0x7f0904a8
 
-.field public static final review_thanks_approve:I = 0x7f090324
+.field public static final review_thanks_approve:I = 0x7f09032e
 
-.field public static final save:I = 0x7f09049f
+.field public static final save:I = 0x7f0904a9
 
-.field public static final sbc_name:I = 0x7f0904a1
+.field public static final sbc_name:I = 0x7f0904ab
 
 .field public static final status_bar_notification_info_overflow:I = 0x7f090042
 
-.field public static final stream_detail_button_delete_comment:I = 0x7f090325
+.field public static final stream_detail_button_delete_comment:I = 0x7f09032f
 
-.field public static final stream_detail_button_post_comment:I = 0x7f090326
+.field public static final stream_detail_button_post_comment:I = 0x7f090330
 
-.field public static final stream_detail_comment_hint:I = 0x7f090327
+.field public static final stream_detail_comment_hint:I = 0x7f090331
 
-.field public static final string_empty:I = 0x7f090334
+.field public static final string_empty:I = 0x7f09033e
 
-.field public static final survey_confirm_exit:I = 0x7f090348
+.field public static final survey_confirm_exit:I = 0x7f090352
 
-.field public static final survey_dialog_congrats1:I = 0x7f090349
+.field public static final survey_dialog_congrats1:I = 0x7f090353
 
-.field public static final survey_dialog_congrats2:I = 0x7f09034a
+.field public static final survey_dialog_congrats2:I = 0x7f090354
 
-.field public static final survey_dialog_congrats_detail:I = 0x7f09034b
+.field public static final survey_dialog_congrats_detail:I = 0x7f090355
 
-.field public static final survey_dialog_congrats_finish:I = 0x7f09034c
+.field public static final survey_dialog_congrats_finish:I = 0x7f090356
 
-.field public static final survey_dialog_congrats_submit:I = 0x7f09034d
+.field public static final survey_dialog_congrats_submit:I = 0x7f090357
 
-.field public static final survey_dialog_congrats_title:I = 0x7f09034e
+.field public static final survey_dialog_congrats_title:I = 0x7f090358
 
-.field public static final survey_earned_points_already:I = 0x7f09034f
+.field public static final survey_earned_points_already:I = 0x7f090359
 
-.field public static final survey_please_input:I = 0x7f090350
+.field public static final survey_please_input:I = 0x7f09035a
 
-.field public static final survey_submit_fail:I = 0x7f090351
+.field public static final survey_submit_fail:I = 0x7f09035b
 
-.field public static final survey_submit_success:I = 0x7f090352
+.field public static final survey_submit_success:I = 0x7f09035c
 
-.field public static final survey_wrong_answer:I = 0x7f090353
+.field public static final survey_wrong_answer:I = 0x7f09035d
 
-.field public static final term_condition_header:I = 0x7f090354
+.field public static final term_condition_header:I = 0x7f09035e
 
-.field public static final toast_email_invalid:I = 0x7f0903b0
+.field public static final toast_email_invalid:I = 0x7f0903ba
 
-.field public static final toast_msg_qrcode_next:I = 0x7f0904af
+.field public static final toast_msg_qrcode_next:I = 0x7f0904b9
 
-.field public static final txt_activate_location:I = 0x7f0903b6
+.field public static final txt_activate_location:I = 0x7f0903c0
 
-.field public static final txt_active_location_desc:I = 0x7f0903b7
+.field public static final txt_active_location_desc:I = 0x7f0903c1
 
-.field public static final txt_cancel:I = 0x7f0903b9
+.field public static final txt_cancel:I = 0x7f0903c3
 
-.field public static final txt_close:I = 0x7f0903ba
+.field public static final txt_close:I = 0x7f0903c4
 
-.field public static final txt_confirm:I = 0x7f0903bb
+.field public static final txt_confirm:I = 0x7f0903c5
 
-.field public static final txt_do_not_show:I = 0x7f0903bc
+.field public static final txt_do_not_show:I = 0x7f0903c6
 
-.field public static final txt_gps_setting:I = 0x7f0903bd
+.field public static final txt_gps_setting:I = 0x7f0903c7
 
-.field public static final wall_seemore:I = 0x7f09035f
+.field public static final wall_seemore:I = 0x7f090369
 
-.field public static final who_click_like_header:I = 0x7f090391
+.field public static final who_click_like_header:I = 0x7f09039b
 
-.field public static final who_click_like_hint_search:I = 0x7f090392
+.field public static final who_click_like_hint_search:I = 0x7f09039c
 
-.field public static final wifi_changing_network:I = 0x7f0904b4
+.field public static final wifi_changing_network:I = 0x7f0904be
 
-.field public static final wifi_ssid_label:I = 0x7f0904b5
+.field public static final wifi_ssid_label:I = 0x7f0904bf
 
-.field public static final wifi_type_label:I = 0x7f0904b6
+.field public static final wifi_type_label:I = 0x7f0904c0
 
-.field public static final yes:I = 0x7f0904b7
+.field public static final yes:I = 0x7f0904c1

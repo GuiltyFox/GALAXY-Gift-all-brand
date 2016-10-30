@@ -212,7 +212,7 @@
 
     iget-object v4, v4, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$6;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v5, 0x7f090387
+    const v5, 0x7f090391
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 
@@ -242,7 +242,7 @@
 
     iget-object v4, v4, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$6;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v5, 0x7f090369
+    const v5, 0x7f090373
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 
@@ -285,7 +285,7 @@
 
     iget-object v4, v4, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$6;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v5, 0x7f090387
+    const v5, 0x7f090391
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 
@@ -305,7 +305,7 @@
 
     iget-object v4, v4, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$6;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v5, 0x7f090369
+    const v5, 0x7f090373
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 

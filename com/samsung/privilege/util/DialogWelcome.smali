@@ -121,14 +121,14 @@
     .line 48
     sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
 
-    const v1, 0x7f04012f
+    const v1, 0x7f040130
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 50
     sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
 
-    const v1, 0x7f100254
+    const v1, 0x7f100255
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -144,7 +144,7 @@
     .line 55
     sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
 
-    const v1, 0x7f100256
+    const v1, 0x7f100257
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -367,7 +367,7 @@
     :cond_109
     sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
 
-    const v1, 0x7f100255
+    const v1, 0x7f100256
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/WalletCardActivity;->a(Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/activity/WalletCardActivity;->a(Ljava/lang/String;Z)V
 .end annotation
 
 
@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 276
+    .line 277
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$2;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$2;->a:Landroid/app/Dialog;
@@ -39,11 +39,11 @@
     .registers 3
 
     .prologue
-    .line 278
+    .line 279
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$2;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 279
+    .line 280
     return-void
 .end method

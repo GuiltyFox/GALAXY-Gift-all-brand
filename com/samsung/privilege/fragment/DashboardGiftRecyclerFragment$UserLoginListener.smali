@@ -36,17 +36,31 @@
 
 # virtual methods
 .method public a(Ljava/lang/String;)V
-    .registers 2
+    .registers 4
 
     .prologue
+    .line 2799
+    iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$UserLoginListener;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->a(Z)V
+
     .line 2800
     return-void
 .end method
 
 .method public b(Ljava/lang/String;)V
-    .registers 2
+    .registers 4
 
     .prologue
+    .line 2804
+    iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$UserLoginListener;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
+
+    const/4 v1, 0x1
+
+    invoke-virtual {v0, v1}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->a(Z)V
+
     .line 2805
     return-void
 .end method

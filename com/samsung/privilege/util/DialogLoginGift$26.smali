@@ -25,7 +25,7 @@
     .registers 4
 
     .prologue
-    .line 1517
+    .line 1526
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->a:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->b:Landroid/widget/ImageView;
@@ -43,7 +43,7 @@
     .registers 5
 
     .prologue
-    .line 1520
+    .line 1529
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->a:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
@@ -58,30 +58,30 @@
 
     if-eqz v0, :cond_6a
 
-    .line 1521
+    .line 1530
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->a:Landroid/content/Context;
 
     const-string/jumbo v1, "1054"
 
     invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 1522
+    .line 1531
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->b:Landroid/widget/ImageView;
 
     const v1, 0x7f02028d
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1527
+    .line 1536
     :goto_1f
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->a:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/bzbs/util/LanguageSetting;->a(Landroid/content/Context;)V
 
-    .line 1529
+    .line 1538
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->c:Landroid/app/Dialog;
 
-    const v1, 0x7f1005d3
+    const v1, 0x7f1005d7
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -91,7 +91,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->a:Landroid/content/Context;
 
-    const v2, 0x7f0902e4
+    const v2, 0x7f0902ee
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -99,10 +99,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1530
+    .line 1539
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->c:Landroid/app/Dialog;
 
-    const v1, 0x7f1005c9
+    const v1, 0x7f1005cd
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -112,7 +112,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->a:Landroid/content/Context;
 
-    const v2, 0x7f0902e0
+    const v2, 0x7f0902ea
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -120,10 +120,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1531
+    .line 1540
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->c:Landroid/app/Dialog;
 
-    const v1, 0x7f1005cb
+    const v1, 0x7f1005cf
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -133,7 +133,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->a:Landroid/content/Context;
 
-    const v2, 0x7f0902df
+    const v2, 0x7f0902e9
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -141,10 +141,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1532
+    .line 1541
     return-void
 
-    .line 1524
+    .line 1533
     :cond_6a
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->a:Landroid/content/Context;
 
@@ -152,7 +152,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 1525
+    .line 1534
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$26;->b:Landroid/widget/ImageView;
 
     const v1, 0x7f02028e

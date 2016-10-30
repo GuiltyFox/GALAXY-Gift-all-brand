@@ -45,13 +45,13 @@
     .end annotation
 
     .prologue
-    const v6, 0x7f10062d
+    const v6, 0x7f100631
 
-    const v5, 0x7f10062b
+    const v5, 0x7f10062f
 
-    const v4, 0x7f10062a
+    const v4, 0x7f10062e
 
-    const v3, 0x7f100629
+    const v3, 0x7f10062d
 
     const v2, 0x7f1001c4
 
@@ -76,7 +76,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/adapter/ReplyAdapter$ViewHolderReview;->imageProfile:Landroid/widget/ImageView;
 
     .line 13
-    const v0, 0x7f10066d
+    const v0, 0x7f100671
 
     const-string/jumbo v1, "field \'textDisplay\'"
 
@@ -87,7 +87,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 14
-    const v1, 0x7f10066d
+    const v1, 0x7f100671
 
     const-string/jumbo v2, "field \'textDisplay\'"
 
@@ -100,7 +100,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/adapter/ReplyAdapter$ViewHolderReview;->textDisplay:Landroid/widget/TextView;
 
     .line 15
-    const v0, 0x7f100670
+    const v0, 0x7f100674
 
     const-string/jumbo v1, "field \'textPost\'"
 
@@ -111,7 +111,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 16
-    const v1, 0x7f100670
+    const v1, 0x7f100674
 
     const-string/jumbo v2, "field \'textPost\'"
 
@@ -124,7 +124,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/adapter/ReplyAdapter$ViewHolderReview;->textPost:Landroid/widget/TextView;
 
     .line 17
-    const v0, 0x7f10066f
+    const v0, 0x7f100673
 
     const-string/jumbo v1, "field \'textCreateTime\'"
 
@@ -135,7 +135,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 18
-    const v1, 0x7f10066f
+    const v1, 0x7f100673
 
     const-string/jumbo v2, "field \'textCreateTime\'"
 
@@ -148,7 +148,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/adapter/ReplyAdapter$ViewHolderReview;->textCreateTime:Landroid/widget/TextView;
 
     .line 19
-    const v0, 0x7f10066e
+    const v0, 0x7f100672
 
     const-string/jumbo v1, "field \'textCreateDate\'"
 
@@ -159,7 +159,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 20
-    const v1, 0x7f10066e
+    const v1, 0x7f100672
 
     const-string/jumbo v2, "field \'textCreateDate\'"
 
@@ -172,7 +172,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/adapter/ReplyAdapter$ViewHolderReview;->textCreateDate:Landroid/widget/TextView;
 
     .line 21
-    const v0, 0x7f100669
+    const v0, 0x7f10066d
 
     const-string/jumbo v1, "field \'imagePost\'"
 
@@ -183,7 +183,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 22
-    const v1, 0x7f100669
+    const v1, 0x7f10066d
 
     const-string/jumbo v2, "field \'imagePost\'"
 
@@ -236,7 +236,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/adapter/ReplyAdapter$ViewHolderReview;->textViewComment:Landroid/widget/TextView;
 
     .line 27
-    const v0, 0x7f100671
+    const v0, 0x7f100675
 
     const-string/jumbo v1, "field \'btnLike\'"
 
@@ -247,7 +247,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 28
-    const v1, 0x7f100671
+    const v1, 0x7f100675
 
     const-string/jumbo v2, "field \'btnLike\'"
 
@@ -260,7 +260,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/adapter/ReplyAdapter$ViewHolderReview;->btnLike:Landroid/widget/ImageView;
 
     .line 29
-    const v0, 0x7f100672
+    const v0, 0x7f100676
 
     const-string/jumbo v1, "field \'imageHeader\'"
 
@@ -271,7 +271,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 30
-    const v1, 0x7f100672
+    const v1, 0x7f100676
 
     const-string/jumbo v2, "field \'imageHeader\'"
 
@@ -324,7 +324,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/adapter/ReplyAdapter$ViewHolderReview;->layoutLike:Landroid/widget/LinearLayout;
 
     .line 35
-    const v0, 0x7f10066c
+    const v0, 0x7f100670
 
     const-string/jumbo v1, "field \'contentView\'"
 
@@ -335,7 +335,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 36
-    const v1, 0x7f10066c
+    const v1, 0x7f100670
 
     const-string/jumbo v2, "field \'contentView\'"
 
