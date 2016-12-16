@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 953
+    .line 964
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11$2;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 3
 
     .prologue
-    .line 956
+    .line 967
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11$2;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11;->b:Landroid/widget/ProgressBar;
@@ -44,6 +44,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 957
+    .line 968
     return-void
 .end method

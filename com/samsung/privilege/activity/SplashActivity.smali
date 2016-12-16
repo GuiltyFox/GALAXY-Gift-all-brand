@@ -308,7 +308,7 @@
     if-nez v0, :cond_33
 
     .line 86
-    invoke-static {p0, v2}, Lcom/bzbs/data/UserLogin;->q(Landroid/content/Context;Z)V
+    invoke-static {p0, v2}, Lcom/bzbs/data/UserLogin;->r(Landroid/content/Context;Z)V
 
     goto :goto_19
 

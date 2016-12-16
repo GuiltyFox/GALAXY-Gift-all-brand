@@ -426,7 +426,7 @@
     .line 543
     iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->u:Landroid/widget/ImageView;
 
-    const v2, 0x7f0202df
+    const v2, 0x7f0202e6
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -561,7 +561,7 @@
     :cond_19d
     iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->u:Landroid/widget/ImageView;
 
-    const v2, 0x7f0202e0
+    const v2, 0x7f0202e7
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 

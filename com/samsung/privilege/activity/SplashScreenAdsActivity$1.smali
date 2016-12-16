@@ -35,11 +35,21 @@
     .registers 2
 
     .prologue
-    .line 62
+    .line 63
+    :try_start_0
     iget-object v0, p0, Lcom/samsung/privilege/activity/SplashScreenAdsActivity$1;->a:Lcom/samsung/privilege/activity/SplashScreenAdsActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/SplashScreenAdsActivity;->a(Lcom/samsung/privilege/activity/SplashScreenAdsActivity;)V
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_5} :catch_6
 
-    .line 63
+    .line 67
+    :goto_5
     return-void
+
+    .line 64
+    :catch_6
+    move-exception v0
+
+    goto :goto_5
 .end method

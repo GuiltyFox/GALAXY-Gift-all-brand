@@ -4,6 +4,6 @@
 
 
 # static fields
-.field public static final zxing_barcode_scanner:I = 0x7f04017d
+.field public static final zxing_barcode_scanner:I = 0x7f040185
 
-.field public static final zxing_capture:I = 0x7f04017e
+.field public static final zxing_capture:I = 0x7f040186

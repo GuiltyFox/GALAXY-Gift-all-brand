@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 194
+    .line 216
     iput-object p1, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$2;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,13 +35,13 @@
     .registers 3
 
     .prologue
-    .line 197
+    .line 219
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$2;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->a(Lcom/samsung/privilege/fragment/CampaignListGiftFragment;I)V
 
-    .line 198
+    .line 220
     return-void
 .end method

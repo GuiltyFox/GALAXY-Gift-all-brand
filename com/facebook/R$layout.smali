@@ -10,17 +10,17 @@
 
 .field public static final com_facebook_tooltip_bubble:I = 0x7f0400df
 
-.field public static final messenger_button_send_blue_large:I = 0x7f04015d
+.field public static final messenger_button_send_blue_large:I = 0x7f040165
 
-.field public static final messenger_button_send_blue_round:I = 0x7f04015e
+.field public static final messenger_button_send_blue_round:I = 0x7f040166
 
-.field public static final messenger_button_send_blue_small:I = 0x7f04015f
+.field public static final messenger_button_send_blue_small:I = 0x7f040167
 
-.field public static final messenger_button_send_white_large:I = 0x7f040160
+.field public static final messenger_button_send_white_large:I = 0x7f040168
 
-.field public static final messenger_button_send_white_round:I = 0x7f040161
+.field public static final messenger_button_send_white_round:I = 0x7f040169
 
-.field public static final messenger_button_send_white_small:I = 0x7f040162
+.field public static final messenger_button_send_white_small:I = 0x7f04016a
 
 
 # direct methods

@@ -3,26 +3,26 @@
 .source "DialogChangeMobileNoUtil.java"
 
 # interfaces
-.implements Landroid/widget/TextView$OnEditorActionListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogChangeMobileNoUtil;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/util/DialogChangeMobileNoUtil;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 .end annotation
 
 
 # instance fields
-.field final synthetic a:Landroid/widget/RelativeLayout;
+.field final synthetic a:Landroid/app/Dialog;
 
 
 # direct methods
-.method constructor <init>(Landroid/widget/RelativeLayout;)V
+.method constructor <init>(Landroid/app/Dialog;)V
     .registers 2
 
     .prologue
-    .line 108
-    iput-object p1, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$2;->a:Landroid/widget/RelativeLayout;
+    .line 66
+    iput-object p1, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$2;->a:Landroid/app/Dialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,29 +31,15 @@
 
 
 # virtual methods
-.method public onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
-    .registers 5
+.method public onClick(Landroid/view/View;)V
+    .registers 3
 
     .prologue
-    .line 111
-    const/4 v0, 0x4
+    .line 69
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$2;->a:Landroid/app/Dialog;
 
-    if-ne p2, v0, :cond_a
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 112
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$2;->a:Landroid/widget/RelativeLayout;
-
-    invoke-virtual {v0}, Landroid/widget/RelativeLayout;->performClick()Z
-
-    .line 113
-    const/4 v0, 0x1
-
-    .line 115
-    :goto_9
-    return v0
-
-    :cond_a
-    const/4 v0, 0x0
-
-    goto :goto_9
+    .line 70
+    return-void
 .end method

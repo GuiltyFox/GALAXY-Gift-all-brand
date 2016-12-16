@@ -20,7 +20,7 @@
     .registers 3
 
     .prologue
-    .line 332
+    .line 333
     iput-object p1, p0, Lcom/samsung/privilege/util/ResumeUtil$3;->a:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/ResumeUtil$3;->b:Landroid/app/Activity;
@@ -36,10 +36,10 @@
     .registers 8
 
     .prologue
-    .line 361
+    .line 363
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 363
+    .line 365
     invoke-static {}, Lcom/samsung/privilege/util/ResumeUtil;->a()Ljava/lang/String;
 
     move-result-object v0
@@ -74,12 +74,12 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 365
+    .line 367
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/samsung/privilege/util/ResumeUtil;->a(Z)Z
 
-    .line 366
+    .line 368
     return-void
 .end method
 
@@ -87,7 +87,7 @@
     .registers 9
 
     .prologue
-    .line 337
+    .line 338
     :try_start_0
     invoke-static {}, Lcom/samsung/privilege/util/ResumeUtil;->a()Ljava/lang/String;
 
@@ -123,12 +123,12 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 339
+    .line 340
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 341
+    .line 342
     iget-object v1, p0, Lcom/samsung/privilege/util/ResumeUtil$3;->a:Landroid/content/Context;
 
     const-string/jumbo v2, "allow_use"
@@ -143,10 +143,25 @@
 
     invoke-static {v1, v2}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;Z)Z
 
-    .line 342
+    .line 343
     iget-object v1, p0, Lcom/samsung/privilege/util/ResumeUtil$3;->a:Landroid/content/Context;
 
     const-string/jumbo v2, "has_new_version"
+
+    invoke-static {v0, v2}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v2
+
+    invoke-static {v1, v2}, Lcom/bzbs/data/UserLogin;->l(Landroid/content/Context;Z)Z
+
+    .line 345
+    iget-object v1, p0, Lcom/samsung/privilege/util/ResumeUtil$3;->a:Landroid/content/Context;
+
+    const-string/jumbo v2, "is_enable_beacon"
 
     invoke-static {v0, v2}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
 
@@ -156,14 +171,14 @@
 
     move-result v0
 
-    invoke-static {v1, v0}, Lcom/bzbs/data/UserLogin;->l(Landroid/content/Context;Z)Z
+    invoke-static {v1, v0}, Lcom/bzbs/data/UserLogin;->o(Landroid/content/Context;Z)Z
 
-    .line 345
+    .line 347
     iget-object v0, p0, Lcom/samsung/privilege/util/ResumeUtil$3;->b:Landroid/app/Activity;
 
-    if-eqz v0, :cond_59
+    if-eqz v0, :cond_69
 
-    .line 346
+    .line 348
     iget-object v0, p0, Lcom/samsung/privilege/util/ResumeUtil$3;->b:Landroid/app/Activity;
 
     new-instance v1, Lcom/samsung/privilege/util/ResumeUtil$3$1;
@@ -171,24 +186,24 @@
     invoke-direct {v1, p0}, Lcom/samsung/privilege/util/ResumeUtil$3$1;-><init>(Lcom/samsung/privilege/util/ResumeUtil$3;)V
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
-    :try_end_59
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_59} :catch_5e
+    :try_end_69
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_69} :catch_6e
 
-    .line 356
-    :cond_59
-    :goto_59
+    .line 358
+    :cond_69
+    :goto_69
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/samsung/privilege/util/ResumeUtil;->a(Z)Z
 
-    .line 357
+    .line 359
     return-void
 
-    .line 352
-    :catch_5e
+    .line 354
+    :catch_6e
     move-exception v0
 
-    .line 353
+    .line 355
     invoke-static {}, Lcom/samsung/privilege/util/ResumeUtil;->a()Ljava/lang/String;
 
     move-result-object v1
@@ -217,5 +232,5 @@
 
     invoke-static {v1, v0}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_59
+    goto :goto_69
 .end method

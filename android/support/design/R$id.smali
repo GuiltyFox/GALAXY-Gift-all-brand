@@ -4,7 +4,7 @@
 
 
 # static fields
-.field public static final action0:I = 0x7f1006b8
+.field public static final action0:I = 0x7f1006e2
 
 .field public static final action_bar:I = 0x7f1000a4
 
@@ -22,7 +22,7 @@
 
 .field public static final action_context_bar:I = 0x7f1000a5
 
-.field public static final action_divider:I = 0x7f1006bc
+.field public static final action_divider:I = 0x7f1006e6
 
 .field public static final action_menu_divider:I = 0x7f100002
 
@@ -46,7 +46,7 @@
 
 .field public static final buttonPanel:I = 0x7f10008e
 
-.field public static final cancel_action:I = 0x7f1006b9
+.field public static final cancel_action:I = 0x7f1006e3
 
 .field public static final center:I = 0x7f100032
 
@@ -56,7 +56,7 @@
 
 .field public static final checkbox:I = 0x7f10009c
 
-.field public static final chronometer:I = 0x7f1006bd
+.field public static final chronometer:I = 0x7f1006e7
 
 .field public static final clip_horizontal:I = 0x7f100040
 
@@ -74,15 +74,15 @@
 
 .field public static final default_activity_button:I = 0x7f10008a
 
-.field public static final design_bottom_sheet:I = 0x7f100544
+.field public static final design_bottom_sheet:I = 0x7f100554
 
-.field public static final design_menu_item_action_area:I = 0x7f10054b
+.field public static final design_menu_item_action_area:I = 0x7f10055b
 
-.field public static final design_menu_item_action_area_stub:I = 0x7f10054a
+.field public static final design_menu_item_action_area_stub:I = 0x7f10055a
 
-.field public static final design_menu_item_text:I = 0x7f100549
+.field public static final design_menu_item_text:I = 0x7f100559
 
-.field public static final design_navigation_view:I = 0x7f100548
+.field public static final design_navigation_view:I = 0x7f100558
 
 .field public static final disableHome:I = 0x7f100022
 
@@ -90,7 +90,7 @@
 
 .field public static final end:I = 0x7f100035
 
-.field public static final end_padder:I = 0x7f1006c0
+.field public static final end_padder:I = 0x7f1006ea
 
 .field public static final enterAlways:I = 0x7f100029
 
@@ -120,21 +120,21 @@
 
 .field public static final image:I = 0x7f100089
 
-.field public static final info:I = 0x7f1006bf
+.field public static final info:I = 0x7f1006e9
 
 .field public static final item_touch_helper_previous_elevation:I = 0x7f100007
 
 .field public static final left:I = 0x7f100037
 
-.field public static final line1:I = 0x7f1003d4
+.field public static final line1:I = 0x7f1003e4
 
-.field public static final line3:I = 0x7f1003d5
+.field public static final line3:I = 0x7f1003e5
 
 .field public static final listMode:I = 0x7f100020
 
 .field public static final list_item:I = 0x7f10008b
 
-.field public static final media_actions:I = 0x7f1006bb
+.field public static final media_actions:I = 0x7f1006e5
 
 .field public static final middle:I = 0x7f100048
 
@@ -142,7 +142,7 @@
 
 .field public static final multiply:I = 0x7f10003b
 
-.field public static final navigation_header_container:I = 0x7f100547
+.field public static final navigation_header_container:I = 0x7f100557
 
 .field public static final never:I = 0x7f10005a
 
@@ -206,9 +206,9 @@
 
 .field public static final showTitle:I = 0x7f100027
 
-.field public static final snackbar_action:I = 0x7f100546
+.field public static final snackbar_action:I = 0x7f100556
 
-.field public static final snackbar_text:I = 0x7f100545
+.field public static final snackbar_text:I = 0x7f100555
 
 .field public static final snap:I = 0x7f10002d
 
@@ -224,19 +224,19 @@
 
 .field public static final start:I = 0x7f100039
 
-.field public static final status_bar_latest_event_content:I = 0x7f1006ba
+.field public static final status_bar_latest_event_content:I = 0x7f1006e4
 
 .field public static final submit_area:I = 0x7f1000af
 
 .field public static final tabMode:I = 0x7f100021
 
-.field public static final text:I = 0x7f1004a4
+.field public static final text:I = 0x7f1004b4
 
-.field public static final text2:I = 0x7f1006be
+.field public static final text2:I = 0x7f1006e8
 
 .field public static final textSpacerNoButtons:I = 0x7f100097
 
-.field public static final time:I = 0x7f10042f
+.field public static final time:I = 0x7f10043f
 
 .field public static final title:I = 0x7f10008d
 

@@ -45,15 +45,15 @@
     .end annotation
 
     .prologue
-    const v6, 0x7f100660
+    const v6, 0x7f100683
 
-    const v5, 0x7f100636
+    const v5, 0x7f100659
 
-    const v4, 0x7f100635
+    const v4, 0x7f100658
 
-    const v3, 0x7f100634
+    const v3, 0x7f100657
 
-    const v2, 0x7f100633
+    const v2, 0x7f100656
 
     .line 11
     const-string/jumbo v0, "field \'imageViewCover\'"
@@ -116,7 +116,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/adapter/MarketPlaceListAdapter$ViewHolderList;->textViewDiscount:Landroid/widget/TextView;
 
     .line 17
-    const v0, 0x7f100667
+    const v0, 0x7f10068a
 
     const-string/jumbo v1, "field \'textViewType\'"
 
@@ -127,7 +127,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 18
-    const v1, 0x7f100667
+    const v1, 0x7f10068a
 
     const-string/jumbo v2, "field \'textViewType\'"
 
@@ -180,7 +180,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/adapter/MarketPlaceListAdapter$ViewHolderList;->textViewFullPrice:Landroid/widget/TextView;
 
     .line 23
-    const v0, 0x7f100665
+    const v0, 0x7f100688
 
     const-string/jumbo v1, "field \'textViewUsePoint\'"
 
@@ -191,7 +191,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 24
-    const v1, 0x7f100665
+    const v1, 0x7f100688
 
     const-string/jumbo v2, "field \'textViewUsePoint\'"
 
@@ -204,7 +204,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/adapter/MarketPlaceListAdapter$ViewHolderList;->textViewUsePoint:Landroid/widget/TextView;
 
     .line 25
-    const v0, 0x7f100668
+    const v0, 0x7f10068b
 
     const-string/jumbo v1, "field \'textViewCart\'"
 
@@ -215,7 +215,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 26
-    const v1, 0x7f100668
+    const v1, 0x7f10068b
 
     const-string/jumbo v2, "field \'textViewCart\'"
 
@@ -228,7 +228,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/adapter/MarketPlaceListAdapter$ViewHolderList;->textViewCart:Landroid/widget/TextView;
 
     .line 27
-    const v0, 0x7f100666
+    const v0, 0x7f100689
 
     const-string/jumbo v1, "field \'tvDetail\'"
 
@@ -239,7 +239,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 28
-    const v1, 0x7f100666
+    const v1, 0x7f100689
 
     const-string/jumbo v2, "field \'tvDetail\'"
 
@@ -252,7 +252,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/adapter/MarketPlaceListAdapter$ViewHolderList;->tvDetail:Landroid/widget/TextView;
 
     .line 29
-    const v0, 0x7f100664
+    const v0, 0x7f100687
 
     const-string/jumbo v1, "field \'contentImageView\'"
 
@@ -263,7 +263,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 30
-    const v1, 0x7f100664
+    const v1, 0x7f100687
 
     const-string/jumbo v2, "field \'contentImageView\'"
 
@@ -276,7 +276,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/adapter/MarketPlaceListAdapter$ViewHolderList;->contentImageView:Landroid/widget/RelativeLayout;
 
     .line 31
-    const v0, 0x7f100662
+    const v0, 0x7f100685
 
     const-string/jumbo v1, "field \'contentItemList\'"
 
@@ -287,7 +287,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 32
-    const v1, 0x7f100662
+    const v1, 0x7f100685
 
     const-string/jumbo v2, "field \'contentItemList\'"
 

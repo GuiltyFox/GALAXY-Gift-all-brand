@@ -274,7 +274,7 @@
     .line 184
     const/4 v0, 0x0
 
-    invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->q(Landroid/content/Context;Z)V
+    invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->r(Landroid/content/Context;Z)V
 
     .line 191
     :goto_19

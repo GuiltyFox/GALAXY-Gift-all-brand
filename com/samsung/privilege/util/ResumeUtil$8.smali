@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 478
+    .line 480
     iput-object p1, p0, Lcom/samsung/privilege/util/ResumeUtil$8;->a:Landroid/app/Activity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,27 +37,27 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 480
+    .line 482
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 481
+    .line 483
     iget-object v0, p0, Lcom/samsung/privilege/util/ResumeUtil$8;->a:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->o(Landroid/content/Context;Z)Z
-
-    .line 483
-    iget-object v0, p0, Lcom/samsung/privilege/util/ResumeUtil$8;->a:Landroid/app/Activity;
-
-    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->q(Landroid/content/Context;Z)V
+    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->p(Landroid/content/Context;Z)Z
 
     .line 485
-    sget-object v0, Lcom/bzbs/data/AppSetting;->k:Ljava/lang/String;
+    iget-object v0, p0, Lcom/samsung/privilege/util/ResumeUtil$8;->a:Landroid/app/Activity;
+
+    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->r(Landroid/content/Context;Z)V
 
     .line 487
+    sget-object v0, Lcom/bzbs/data/AppSetting;->k:Ljava/lang/String;
+
+    .line 489
     :try_start_14
     iget-object v1, p0, Lcom/samsung/privilege/util/ResumeUtil$8;->a:Landroid/app/Activity;
 
@@ -93,15 +93,15 @@
     :try_end_39
     .catch Landroid/content/ActivityNotFoundException; {:try_start_14 .. :try_end_39} :catch_3a
 
-    .line 491
+    .line 493
     :goto_39
     return-void
 
-    .line 488
+    .line 490
     :catch_3a
     move-exception v1
 
-    .line 489
+    .line 491
     iget-object v1, p0, Lcom/samsung/privilege/util/ResumeUtil$8;->a:Landroid/app/Activity;
 
     new-instance v2, Landroid/content/Intent;

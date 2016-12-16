@@ -334,36 +334,36 @@
 
 .field public static final dialog_badge:I = 0x7f040102
 
-.field public static final dialog_gps:I = 0x7f04010d
+.field public static final dialog_gps:I = 0x7f04010f
 
-.field public static final dialog_gps_original:I = 0x7f04010e
+.field public static final dialog_gps_original:I = 0x7f040110
 
-.field public static final market_bzbs_popup:I = 0x7f04015b
+.field public static final market_bzbs_popup:I = 0x7f040163
 
-.field public static final merge_camera_preview_view_finder:I = 0x7f04015c
+.field public static final merge_camera_preview_view_finder:I = 0x7f040164
 
-.field public static final notification_media_action:I = 0x7f040163
+.field public static final notification_media_action:I = 0x7f04016b
 
-.field public static final notification_media_cancel_action:I = 0x7f040164
+.field public static final notification_media_cancel_action:I = 0x7f04016c
 
-.field public static final notification_template_big_media:I = 0x7f040165
+.field public static final notification_template_big_media:I = 0x7f04016d
 
-.field public static final notification_template_big_media_narrow:I = 0x7f040166
+.field public static final notification_template_big_media_narrow:I = 0x7f04016e
 
-.field public static final notification_template_lines:I = 0x7f040167
+.field public static final notification_template_lines:I = 0x7f04016f
 
-.field public static final notification_template_media:I = 0x7f040168
+.field public static final notification_template_media:I = 0x7f040170
 
-.field public static final notification_template_part_chronometer:I = 0x7f040169
+.field public static final notification_template_part_chronometer:I = 0x7f040171
 
-.field public static final notification_template_part_time:I = 0x7f04016a
+.field public static final notification_template_part_time:I = 0x7f040172
 
-.field public static final qt_content:I = 0x7f04016b
+.field public static final qt_content:I = 0x7f040173
 
-.field public static final select_dialog_item_material:I = 0x7f04016d
+.field public static final select_dialog_item_material:I = 0x7f040175
 
-.field public static final select_dialog_multichoice_material:I = 0x7f04016e
+.field public static final select_dialog_multichoice_material:I = 0x7f040176
 
-.field public static final select_dialog_singlechoice_material:I = 0x7f04016f
+.field public static final select_dialog_singlechoice_material:I = 0x7f040177
 
-.field public static final support_simple_spinner_dropdown_item:I = 0x7f040172
+.field public static final support_simple_spinner_dropdown_item:I = 0x7f04017a

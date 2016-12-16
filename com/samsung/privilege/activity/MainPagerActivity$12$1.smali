@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 990
+    .line 1074
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$12$1;->a:Lcom/samsung/privilege/activity/MainPagerActivity$12;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 3
 
     .prologue
-    .line 993
+    .line 1077
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$12$1;->a:Lcom/samsung/privilege/activity/MainPagerActivity$12;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/MainPagerActivity$12;->c:Landroid/content/Context;
@@ -44,8 +44,8 @@
 
     iget-boolean v1, v1, Lcom/samsung/privilege/activity/MainPagerActivity$12;->d:Z
 
-    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->q(Landroid/content/Context;Z)V
+    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->r(Landroid/content/Context;Z)V
 
-    .line 994
+    .line 1078
     return-void
 .end method

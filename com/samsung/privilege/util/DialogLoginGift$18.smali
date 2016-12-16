@@ -27,7 +27,7 @@
     .registers 5
 
     .prologue
-    .line 1043
+    .line 1114
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$18;->a:Landroid/app/Dialog;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$18;->b:Landroid/widget/ImageView;
@@ -47,19 +47,19 @@
     .registers 6
 
     .prologue
-    .line 1045
+    .line 1116
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$18;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1046
+    .line 1117
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->a()Landroid/app/Dialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1048
+    .line 1119
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$18;->b:Landroid/widget/ImageView;
 
     new-instance v1, Lcom/samsung/privilege/util/DialogLoginGift$18$1;
@@ -70,6 +70,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/widget/ImageView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 1054
+    .line 1125
     return-void
 .end method

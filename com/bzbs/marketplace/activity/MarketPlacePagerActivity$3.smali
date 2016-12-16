@@ -42,7 +42,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f040174
+    const v1, 0x7f04017c
 
     const/4 v2, 0x0
 
@@ -51,7 +51,7 @@
     move-result-object v4
 
     .line 186
-    const v0, 0x7f1006c3
+    const v0, 0x7f1006ed
 
     invoke-virtual {v4, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -103,12 +103,12 @@
     if-nez p2, :cond_4d
 
     .line 198
-    const v2, 0x7f0903be
+    const v2, 0x7f0903dc
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
     .line 199
-    const v1, 0x7f02029a
+    const v1, 0x7f0202a1
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 

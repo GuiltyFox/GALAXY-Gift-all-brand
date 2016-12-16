@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 1546
+    .line 1619
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$27;->a:Landroid/widget/TextView;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$27;->b:Ljava/text/SimpleDateFormat;
@@ -39,15 +39,15 @@
     .registers 8
 
     .prologue
-    .line 1548
+    .line 1621
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 1549
+    .line 1622
     invoke-virtual {v0, p2, p3, p4}, Ljava/util/Calendar;->set(III)V
 
-    .line 1550
+    .line 1623
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$27;->a:Landroid/widget/TextView;
 
     iget-object v2, p0, Lcom/samsung/privilege/util/DialogLoginGift$27;->b:Ljava/text/SimpleDateFormat;
@@ -62,6 +62,6 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1551
+    .line 1624
     return-void
 .end method

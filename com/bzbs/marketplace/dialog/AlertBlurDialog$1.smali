@@ -73,7 +73,7 @@
 
     iget-object v1, p0, Lcom/bzbs/marketplace/dialog/AlertBlurDialog$1;->a:Lcom/bzbs/marketplace/dialog/AlertBlurDialog;
 
-    const v2, 0x7f090411
+    const v2, 0x7f09042f
 
     invoke-virtual {v1, v2}, Lcom/bzbs/marketplace/dialog/AlertBlurDialog;->getString(I)Ljava/lang/String;
 

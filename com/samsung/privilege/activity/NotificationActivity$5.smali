@@ -52,7 +52,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/bzbs/data/UserLogin;->N(Landroid/content/Context;)Ljava/util/ArrayList;
+    invoke-static {v3}, Lcom/bzbs/data/UserLogin;->P(Landroid/content/Context;)Ljava/util/ArrayList;
 
     move-result-object v3
 

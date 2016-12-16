@@ -4,6 +4,6 @@
 
 
 # static fields
-.field public static final spb_default_stroke_separator_length:I = 0x7f0b00cf
+.field public static final spb_default_stroke_separator_length:I = 0x7f0b00d1
 
-.field public static final spb_default_stroke_width:I = 0x7f0b00d0
+.field public static final spb_default_stroke_width:I = 0x7f0b00d2

@@ -179,7 +179,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v4, 0x7f09034b
+    const v4, 0x7f090361
 
     invoke-virtual {v3, v4}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -217,7 +217,7 @@
     .line 881
     iget-object v1, p1, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;->g:Landroid/widget/ImageView;
 
-    const v2, 0x7f020380
+    const v2, 0x7f020389
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -329,7 +329,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0202d2
+    const v1, 0x7f0202d9
 
     invoke-virtual {v0, v1}, Lcom/bumptech/glide/DrawableTypeRequest;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 
@@ -370,7 +370,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v4, 0x7f090346
+    const v4, 0x7f09035c
 
     invoke-virtual {v3, v4}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -392,7 +392,7 @@
     :cond_108
     iget-object v1, p1, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter$HistoryViewHolder;->g:Landroid/widget/ImageView;
 
-    const v2, 0x7f02030d
+    const v2, 0x7f020314
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 

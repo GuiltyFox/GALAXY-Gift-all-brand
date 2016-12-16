@@ -6,19 +6,19 @@
 # instance fields
 .field btnAds:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100657
+        value = 0x7f10067a
     .end annotation
 .end field
 
 .field btnError:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100654
+        value = 0x7f100677
     .end annotation
 .end field
 
 .field mainDlPb1:Landroid/widget/ProgressBar;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100658
+        value = 0x7f10067b
     .end annotation
 .end field
 
@@ -28,19 +28,19 @@
 
 .field textViewPoint:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100637
+        value = 0x7f10065a
     .end annotation
 .end field
 
 .field textViewSubtitle:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100656
+        value = 0x7f100679
     .end annotation
 .end field
 
 .field tvPercentLoader:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10024e
+        value = 0x7f10025e
     .end annotation
 .end field
 
@@ -50,7 +50,7 @@
 
 .field viewShadow:Landroid/view/View;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100655
+        value = 0x7f100678
     .end annotation
 .end field
 
@@ -485,7 +485,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f090350
+    const v3, 0x7f090366
 
     invoke-virtual {p0, v3}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->getString(I)Ljava/lang/String;
 
@@ -499,7 +499,7 @@
 
     move-result-object v0
 
-    const v2, 0x7f090341
+    const v2, 0x7f090357
 
     .line 229
     invoke-virtual {p0, v2}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->getString(I)Ljava/lang/String;
@@ -797,7 +797,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0903ed
+    const v3, 0x7f09040b
 
     invoke-virtual {v2, v3}, Landroid/support/v4/app/FragmentActivity;->getString(I)Ljava/lang/String;
 
@@ -1148,7 +1148,7 @@
     .line 158
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->btnError:Landroid/widget/Button;
 
-    const v1, 0x7f0903bb
+    const v1, 0x7f0903d9
 
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;->getString(I)Ljava/lang/String;
 
@@ -1740,7 +1740,7 @@
     .registers 7
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f100657
+            0x7f10067a
         }
     .end annotation
 

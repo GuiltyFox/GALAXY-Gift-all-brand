@@ -50,7 +50,7 @@
     .registers 5
 
     .prologue
-    const v2, 0x7f10061b
+    const v2, 0x7f10063e
 
     .line 23
     move-object v0, p0
@@ -93,7 +93,7 @@
     .line 36
     sget-object v0, Lcom/samsung/privilege/util/DialogWallet;->b:Landroid/app/Dialog;
 
-    const v1, 0x7f04012e
+    const v1, 0x7f040133
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setContentView(I)V
 

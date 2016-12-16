@@ -54,14 +54,14 @@
     .line 225
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogWelcome$QTPagerAdapter;->a:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f04016b
+    const v1, 0x7f040173
 
     invoke-virtual {v0, v1, p1, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v1
 
     .line 226
-    const v0, 0x7f1006c1
+    const v0, 0x7f1006eb
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

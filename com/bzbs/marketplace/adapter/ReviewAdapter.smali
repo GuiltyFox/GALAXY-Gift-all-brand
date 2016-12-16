@@ -329,7 +329,7 @@
 
     iget-object v1, p0, Lcom/bzbs/marketplace/adapter/ReviewAdapter;->a:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f040151
+    const v2, 0x7f040159
 
     const/4 v3, 0x0
 

@@ -25,7 +25,7 @@
     .registers 4
 
     .prologue
-    .line 57
+    .line 67
     iput-object p1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card$1;->a:Landroid/app/Activity;
 
     iput-object p2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card$1;->b:Lcom/bzbs/bean/DashboardItem;
@@ -43,7 +43,7 @@
     .registers 8
 
     .prologue
-    .line 60
+    .line 70
     new-instance v0, Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card$1;->a:Landroid/app/Activity;
@@ -52,7 +52,14 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 61
+    .line 71
+    const-string/jumbo v1, "wallet_dashboard"
+
+    iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card$1;->b:Lcom/bzbs/bean/DashboardItem;
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
+
+    .line 72
     const-string/jumbo v1, "wallet_issuer"
 
     iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card$1;->b:Lcom/bzbs/bean/DashboardItem;
@@ -61,7 +68,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 62
+    .line 73
     const-string/jumbo v1, "wallet_issuer_name"
 
     iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card$1;->b:Lcom/bzbs/bean/DashboardItem;
@@ -70,7 +77,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 63
+    .line 74
     const-string/jumbo v1, "wallet_ga_label"
 
     iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card$1;->b:Lcom/bzbs/bean/DashboardItem;
@@ -79,7 +86,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 64
+    .line 75
     const-string/jumbo v1, "wallet_image_active"
 
     iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card$1;->b:Lcom/bzbs/bean/DashboardItem;
@@ -88,7 +95,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 65
+    .line 76
     const-string/jumbo v1, "wallet_image_inactive"
 
     iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card$1;->b:Lcom/bzbs/bean/DashboardItem;
@@ -97,7 +104,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 66
+    .line 77
     const-string/jumbo v1, "wallet_promotion"
 
     iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card$1;->b:Lcom/bzbs/bean/DashboardItem;
@@ -106,17 +113,44 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 67
+    .line 78
+    const-string/jumbo v1, "wallet_queue"
+
+    iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card$1;->b:Lcom/bzbs/bean/DashboardItem;
+
+    iget-object v2, v2, Lcom/bzbs/bean/DashboardItem;->wallet_queue:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 79
+    const-string/jumbo v1, "wallet_cardid_color"
+
+    iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card$1;->b:Lcom/bzbs/bean/DashboardItem;
+
+    iget-object v2, v2, Lcom/bzbs/bean/DashboardItem;->wallet_cardid_color:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 80
+    const-string/jumbo v1, "wallet_cardid_shadow"
+
+    iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card$1;->b:Lcom/bzbs/bean/DashboardItem;
+
+    iget-object v2, v2, Lcom/bzbs/bean/DashboardItem;->wallet_cardid_shadow:Ljava/lang/String;
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    .line 81
     iget-object v1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card$1;->a:Landroid/app/Activity;
 
     invoke-virtual {v1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
 
-    .line 69
+    .line 83
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card$1;->b:Lcom/bzbs/bean/DashboardItem;
 
     iget-object v0, v0, Lcom/bzbs/bean/DashboardItem;->ga_label:Ljava/lang/String;
 
-    if-eqz v0, :cond_98
+    if-eqz v0, :cond_be
 
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card$1;->b:Lcom/bzbs/bean/DashboardItem;
 
@@ -128,9 +162,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_98
+    if-nez v0, :cond_be
 
-    .line 70
+    .line 84
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -185,7 +219,7 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 72
-    :cond_98
+    .line 86
+    :cond_be
     return-void
 .end method

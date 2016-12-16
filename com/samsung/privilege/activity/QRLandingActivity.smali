@@ -1693,7 +1693,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->g:Lcom/facebook/CallbackManager;
 
     .line 79
-    const v0, 0x7f1001d9
+    const v0, 0x7f1001db
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/QRLandingActivity;->findViewById(I)Landroid/view/View;
 

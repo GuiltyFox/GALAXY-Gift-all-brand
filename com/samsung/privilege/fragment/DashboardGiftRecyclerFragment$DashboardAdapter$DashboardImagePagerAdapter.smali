@@ -35,18 +35,18 @@
     .end annotation
 
     .prologue
-    .line 2124
+    .line 2161
     iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardImagePagerAdapter;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;
 
     invoke-direct {p0}, Landroid/support/v4/view/PagerAdapter;-><init>()V
 
-    .line 2125
+    .line 2162
     iput-object p2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardImagePagerAdapter;->b:Landroid/app/Activity;
 
-    .line 2126
+    .line 2163
     iput-object p3, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardImagePagerAdapter;->c:Ljava/util/ArrayList;
 
-    .line 2127
+    .line 2164
     return-void
 .end method
 
@@ -60,8 +60,8 @@
 
     const/4 v8, 0x0
 
-    .line 2132
-    .line 2133
+    .line 2169
+    .line 2170
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardImagePagerAdapter;->c:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -70,7 +70,7 @@
 
     check-cast v4, Lcom/bzbs/bean/DashboardItem;
 
-    .line 2134
+    .line 2171
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardImagePagerAdapter;->b:Landroid/app/Activity;
 
     const-string/jumbo v1, "layout_inflater"
@@ -81,7 +81,7 @@
 
     check-cast v0, Landroid/view/LayoutInflater;
 
-    .line 2136
+    .line 2173
     iget-object v1, v4, Lcom/bzbs/bean/DashboardItem;->type:Ljava/lang/String;
 
     const-string/jumbo v2, "hashtag"
@@ -92,21 +92,21 @@
 
     if-eqz v1, :cond_2c
 
-    .line 2137
+    .line 2174
     invoke-virtual {v0, v3, p1, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2138
+    .line 2175
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {p1, v0, v8}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;I)V
 
-    .line 2216
+    .line 2253
     :goto_2b
     return-object v0
 
-    .line 2140
+    .line 2177
     :cond_2c
     iget-object v1, v4, Lcom/bzbs/bean/DashboardItem;->type:Ljava/lang/String;
 
@@ -118,19 +118,19 @@
 
     if-eqz v1, :cond_41
 
-    .line 2141
+    .line 2178
     invoke-virtual {v0, v3, p1, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2142
+    .line 2179
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {p1, v0, v8}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;I)V
 
     goto :goto_2b
 
-    .line 2144
+    .line 2181
     :cond_41
     iget-object v1, v4, Lcom/bzbs/bean/DashboardItem;->type:Ljava/lang/String;
 
@@ -142,7 +142,7 @@
 
     if-eqz v1, :cond_ae
 
-    .line 2145
+    .line 2182
     iget-object v1, v4, Lcom/bzbs/bean/DashboardItem;->size:Ljava/lang/String;
 
     const-string/jumbo v2, "medium"
@@ -153,14 +153,14 @@
 
     if-eqz v1, :cond_70
 
-    .line 2146
+    .line 2183
     const v1, 0x7f0400f2
 
     invoke-virtual {v0, v1, p1, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2147
+    .line 2184
     iget-object v1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardImagePagerAdapter;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;
 
     new-instance v2, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_webview;
@@ -171,14 +171,14 @@
 
     invoke-static {v1, v2, v4}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->a(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;Landroid/support/v7/widget/RecyclerView$ViewHolder;Lcom/bzbs/bean/DashboardItem;)V
 
-    .line 2148
+    .line 2185
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {p1, v0, v8}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;I)V
 
     goto :goto_2b
 
-    .line 2150
+    .line 2187
     :cond_70
     iget-object v1, v4, Lcom/bzbs/bean/DashboardItem;->size:Ljava/lang/String;
 
@@ -190,14 +190,14 @@
 
     if-eqz v1, :cond_94
 
-    .line 2151
+    .line 2188
     const v1, 0x7f0400f1
 
     invoke-virtual {v0, v1, p1, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2152
+    .line 2189
     iget-object v1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardImagePagerAdapter;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;
 
     new-instance v2, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_webview;
@@ -208,14 +208,14 @@
 
     invoke-static {v1, v2, v4}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->a(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;Landroid/support/v7/widget/RecyclerView$ViewHolder;Lcom/bzbs/bean/DashboardItem;)V
 
-    .line 2153
+    .line 2190
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {p1, v0, v8}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;I)V
 
     goto :goto_2b
 
-    .line 2156
+    .line 2193
     :cond_94
     const v1, 0x7f0400f0
 
@@ -223,7 +223,7 @@
 
     move-result-object v0
 
-    .line 2157
+    .line 2194
     iget-object v1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardImagePagerAdapter;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;
 
     new-instance v2, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_webview;
@@ -234,14 +234,14 @@
 
     invoke-static {v1, v2, v4}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->a(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;Landroid/support/v7/widget/RecyclerView$ViewHolder;Lcom/bzbs/bean/DashboardItem;)V
 
-    .line 2158
+    .line 2195
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {p1, v0, v8}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;I)V
 
     goto/16 :goto_2b
 
-    .line 2161
+    .line 2198
     :cond_ae
     iget-object v1, v4, Lcom/bzbs/bean/DashboardItem;->type:Ljava/lang/String;
 
@@ -253,14 +253,14 @@
 
     if-eqz v1, :cond_ef
 
-    .line 2162
+    .line 2199
     const v1, 0x7f0400ed
 
     invoke-virtual {v0, v1, p1, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v6
 
-    .line 2163
+    .line 2200
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardImagePagerAdapter;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -297,17 +297,17 @@
 
     invoke-static/range {v0 .. v5}, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->a(Landroid/app/Activity;Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;Landroid/os/Handler;Landroid/support/v7/widget/RecyclerView$ViewHolder;Lcom/bzbs/bean/DashboardItem;Ljava/lang/String;)V
 
-    .line 2164
+    .line 2201
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {p1, v6, v8}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;I)V
 
     move-object v0, v6
 
-    .line 2165
+    .line 2202
     goto/16 :goto_2b
 
-    .line 2166
+    .line 2203
     :cond_ef
     iget-object v1, v4, Lcom/bzbs/bean/DashboardItem;->type:Ljava/lang/String;
 
@@ -319,14 +319,14 @@
 
     if-eqz v1, :cond_130
 
-    .line 2167
+    .line 2204
     const v1, 0x7f0400ee
 
     invoke-virtual {v0, v1, p1, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v6
 
-    .line 2168
+    .line 2205
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardImagePagerAdapter;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -363,17 +363,17 @@
 
     invoke-static/range {v0 .. v5}, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card;->a(Landroid/app/Activity;Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;Landroid/os/Handler;Landroid/support/v7/widget/RecyclerView$ViewHolder;Lcom/bzbs/bean/DashboardItem;Ljava/lang/String;)V
 
-    .line 2169
+    .line 2206
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {p1, v6, v8}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;I)V
 
     move-object v0, v6
 
-    .line 2170
+    .line 2207
     goto/16 :goto_2b
 
-    .line 2172
+    .line 2209
     :cond_130
     iget-object v1, v4, Lcom/bzbs/bean/DashboardItem;->size:Ljava/lang/String;
 
@@ -389,7 +389,7 @@
 
     if-eqz v1, :cond_160
 
-    .line 2173
+    .line 2210
     iget-object v1, v4, Lcom/bzbs/bean/DashboardItem;->dashboard_layout:Ljava/lang/String;
 
     const-string/jumbo v2, "premium"
@@ -400,32 +400,32 @@
 
     if-eqz v1, :cond_155
 
-    .line 2174
+    .line 2211
     invoke-virtual {v0, v3, p1, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2175
+    .line 2212
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {p1, v0, v8}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;I)V
 
     goto/16 :goto_2b
 
-    .line 2178
+    .line 2215
     :cond_155
     invoke-virtual {v0, v3, p1, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2179
+    .line 2216
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {p1, v0, v8}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;I)V
 
     goto/16 :goto_2b
 
-    .line 2182
+    .line 2219
     :cond_160
     iget-object v1, v4, Lcom/bzbs/bean/DashboardItem;->size:Ljava/lang/String;
 
@@ -441,7 +441,7 @@
 
     if-eqz v1, :cond_1c8
 
-    .line 2183
+    .line 2220
     iget-object v1, v4, Lcom/bzbs/bean/DashboardItem;->type:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -456,19 +456,19 @@
 
     if-eqz v1, :cond_189
 
-    .line 2184
+    .line 2221
     invoke-virtual {v0, v3, p1, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2185
+    .line 2222
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {p1, v0, v8}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;I)V
 
     goto/16 :goto_2b
 
-    .line 2188
+    .line 2225
     :cond_189
     iget-object v1, v4, Lcom/bzbs/bean/DashboardItem;->dashboard_layout:Ljava/lang/String;
 
@@ -480,14 +480,14 @@
 
     if-eqz v1, :cond_1ae
 
-    .line 2189
+    .line 2226
     const v1, 0x7f0400e7
 
     invoke-virtual {v0, v1, p1, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2190
+    .line 2227
     iget-object v1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardImagePagerAdapter;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;
 
     new-instance v2, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium_autoredeem;
@@ -498,14 +498,14 @@
 
     invoke-static {v1, v2, v4}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->b(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;Landroid/support/v7/widget/RecyclerView$ViewHolder;Lcom/bzbs/bean/DashboardItem;)V
 
-    .line 2191
+    .line 2228
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {p1, v0, v8}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;I)V
 
     goto/16 :goto_2b
 
-    .line 2194
+    .line 2231
     :cond_1ae
     const v1, 0x7f0400e6
 
@@ -513,7 +513,7 @@
 
     move-result-object v0
 
-    .line 2195
+    .line 2232
     iget-object v1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardImagePagerAdapter;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;
 
     new-instance v2, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_medium;
@@ -524,14 +524,14 @@
 
     invoke-static {v1, v2, v4}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->c(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;Landroid/support/v7/widget/RecyclerView$ViewHolder;Lcom/bzbs/bean/DashboardItem;)V
 
-    .line 2196
+    .line 2233
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {p1, v0, v8}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;I)V
 
     goto/16 :goto_2b
 
-    .line 2201
+    .line 2238
     :cond_1c8
     iget-object v1, v4, Lcom/bzbs/bean/DashboardItem;->type:Ljava/lang/String;
 
@@ -547,19 +547,19 @@
 
     if-eqz v1, :cond_1e2
 
-    .line 2202
+    .line 2239
     invoke-virtual {v0, v3, p1, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2203
+    .line 2240
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {p1, v0, v8}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;I)V
 
     goto/16 :goto_2b
 
-    .line 2206
+    .line 2243
     :cond_1e2
     iget-object v1, v4, Lcom/bzbs/bean/DashboardItem;->dashboard_layout:Ljava/lang/String;
 
@@ -571,14 +571,14 @@
 
     if-eqz v1, :cond_207
 
-    .line 2207
+    .line 2244
     const v1, 0x7f0400e3
 
     invoke-virtual {v0, v1, p1, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
     move-result-object v0
 
-    .line 2208
+    .line 2245
     iget-object v1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardImagePagerAdapter;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;
 
     new-instance v2, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_big_autoredeem;
@@ -589,14 +589,14 @@
 
     invoke-static {v1, v2, v4}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->d(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;Landroid/support/v7/widget/RecyclerView$ViewHolder;Lcom/bzbs/bean/DashboardItem;)V
 
-    .line 2209
+    .line 2246
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {p1, v0, v8}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;I)V
 
     goto/16 :goto_2b
 
-    .line 2212
+    .line 2249
     :cond_207
     const v1, 0x7f0400e2
 
@@ -604,7 +604,7 @@
 
     move-result-object v0
 
-    .line 2214
+    .line 2251
     iget-object v1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardImagePagerAdapter;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;
 
     new-instance v2, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardHolder_big;
@@ -615,7 +615,7 @@
 
     invoke-virtual {v1, v2, v4}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter;->a(Landroid/support/v7/widget/RecyclerView$ViewHolder;Lcom/bzbs/bean/DashboardItem;)V
 
-    .line 2215
+    .line 2252
     check-cast p1, Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {p1, v0, v8}, Landroid/support/v4/view/ViewPager;->addView(Landroid/view/View;I)V
@@ -627,12 +627,12 @@
     .registers 4
 
     .prologue
-    .line 2225
+    .line 2262
     check-cast p3, Landroid/view/View;
 
     invoke-virtual {p1, p3}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 2226
+    .line 2263
     return-void
 .end method
 
@@ -640,7 +640,7 @@
     .registers 4
 
     .prologue
-    .line 2236
+    .line 2273
     if-ne p1, p2, :cond_4
 
     const/4 v0, 0x1
@@ -658,7 +658,7 @@
     .registers 2
 
     .prologue
-    .line 2231
+    .line 2268
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$DashboardAdapter$DashboardImagePagerAdapter;->c:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -672,6 +672,6 @@
     .registers 1
 
     .prologue
-    .line 2241
+    .line 2278
     return-void
 .end method

@@ -53,7 +53,7 @@
     .end annotation
 
     .prologue
-    const v2, 0x7f10021b
+    const v2, 0x7f10022b
 
     .line 9
     invoke-super {p0, p1, p2, p3}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$$ViewInjector;->inject(Lbutterknife/ButterKnife$Finder;Lcom/bzbs/marketplace/base/BaseAppCompatActivity;Ljava/lang/Object;)V

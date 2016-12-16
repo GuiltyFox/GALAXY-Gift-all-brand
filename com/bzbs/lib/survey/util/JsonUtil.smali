@@ -279,7 +279,61 @@
     goto :goto_20
 .end method
 
-.method public static e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/math/BigDecimal;
+.method public static e(Lorg/json/JSONObject;Ljava/lang/String;)D
+    .registers 6
+
+    .prologue
+    const-wide/16 v0, 0x0
+
+    .line 68
+    :try_start_2
+    invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string/jumbo v3, ""
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_1c
+
+    invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string/jumbo v3, "null"
+
+    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1d
+
+    .line 74
+    :cond_1c
+    :goto_1c
+    return-wide v0
+
+    .line 71
+    :cond_1d
+    invoke-virtual {p0, p1}, Lorg/json/JSONObject;->getDouble(Ljava/lang/String;)D
+    :try_end_20
+    .catch Lorg/json/JSONException; {:try_start_2 .. :try_end_20} :catch_22
+
+    move-result-wide v0
+
+    goto :goto_1c
+
+    .line 73
+    :catch_22
+    move-exception v2
+
+    goto :goto_1c
+.end method
+
+.method public static f(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/math/BigDecimal;
     .registers 6
 
     .prologue

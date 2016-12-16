@@ -275,7 +275,7 @@
     .line 137
     const-string/jumbo v1, ""
 
-    const v2, 0x7f090281
+    const v2, 0x7f090282
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/AddMoneyActivity;->getString(I)Ljava/lang/String;
 
@@ -491,7 +491,7 @@
     if-eqz v3, :cond_81
 
     .line 270
-    const v0, 0x7f09039e
+    const v0, 0x7f0903b6
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyActivity;->getString(I)Ljava/lang/String;
 
@@ -535,7 +535,7 @@
     .line 280
     const-string/jumbo v0, ""
 
-    const v3, 0x7f090281
+    const v3, 0x7f090282
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/AddMoneyActivity;->getString(I)Ljava/lang/String;
 

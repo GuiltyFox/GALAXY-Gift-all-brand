@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 2304
+    .line 2341
     iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     iput-object p2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->a:Lcom/bzbs/bean/DashboardItem;
@@ -39,17 +39,17 @@
     .registers 9
 
     .prologue
-    .line 2306
+    .line 2343
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 2308
+    .line 2345
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     iget-object v1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$7;->a:Lcom/bzbs/bean/DashboardItem;
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->b(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;Lcom/bzbs/bean/DashboardItem;)V
 
-    .line 2310
+    .line 2347
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -118,6 +118,6 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 2311
+    .line 2348
     return-void
 .end method

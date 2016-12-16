@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 215
+    .line 234
     iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$2;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     iput-object p2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$2;->a:Ljava/lang/String;
@@ -39,7 +39,7 @@
     .registers 4
 
     .prologue
-    .line 218
+    .line 237
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$2;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -54,9 +54,9 @@
 
     move-result-object v0
 
-    .line 219
+    .line 238
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 220
+    .line 239
     return-void
 .end method

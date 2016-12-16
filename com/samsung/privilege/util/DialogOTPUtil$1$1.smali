@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 85
+    .line 87
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogOTPUtil$1$1;->a:Lcom/samsung/privilege/util/DialogOTPUtil$1;
 
     invoke-direct {p0}, Lcom/samsung/privilege/util/AddOnPermissions;-><init>()V
@@ -32,7 +32,7 @@
     .registers 4
 
     .prologue
-    .line 98
+    .line 100
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogOTPUtil$1$1;->a:Lcom/samsung/privilege/util/DialogOTPUtil$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogOTPUtil$1;->a:Landroid/content/Context;
@@ -47,7 +47,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/DialogOTPUtil;->a(Landroid/content/Context;Landroid/os/Handler;Landroid/app/Dialog;)V
 
-    .line 99
+    .line 101
     return-void
 .end method
 
@@ -55,13 +55,13 @@
     .registers 5
 
     .prologue
-    .line 88
+    .line 90
     invoke-super {p0, p1}, Lcom/samsung/privilege/util/AddOnPermissions;->a(Z)V
 
-    .line 89
+    .line 91
     if-eqz p1, :cond_15
 
-    .line 90
+    .line 92
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogOTPUtil$1$1;->a:Lcom/samsung/privilege/util/DialogOTPUtil$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogOTPUtil$1;->a:Landroid/content/Context;
@@ -76,11 +76,11 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/DialogOTPUtil;->a(Landroid/content/Context;Landroid/os/Handler;Landroid/app/Dialog;)V
 
-    .line 94
+    .line 96
     :goto_14
     return-void
 
-    .line 92
+    .line 94
     :cond_15
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogOTPUtil$1$1;->a:Lcom/samsung/privilege/util/DialogOTPUtil$1;
 

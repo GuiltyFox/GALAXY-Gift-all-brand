@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 610
+    .line 619
     iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$15;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,17 +37,17 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 613
+    .line 622
     if-ne p1, v4, :cond_1f
 
-    .line 614
+    .line 623
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x17
 
     if-lt v0, v1, :cond_1e
 
-    .line 615
+    .line 624
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$15;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
     const/4 v1, 0x2
@@ -68,12 +68,12 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/samsung/privilege/activity/ProfileActivity;->requestPermissions([Ljava/lang/String;I)V
 
-    .line 626
+    .line 635
     :cond_1e
     :goto_1e
     return-void
 
-    .line 619
+    .line 628
     :cond_1f
     :try_start_1f
     new-instance v0, Landroid/content/Intent;
@@ -94,7 +94,7 @@
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/ProfileActivity$15;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    .line 620
+    .line 629
     invoke-virtual {v2}, Lcom/samsung/privilege/activity/ProfileActivity;->getPackageName()Ljava/lang/String;
 
     move-result-object v2
@@ -115,7 +115,7 @@
 
     move-result-object v0
 
-    .line 621
+    .line 630
     iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$15;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/ProfileActivity;->startActivity(Landroid/content/Intent;)V
@@ -124,11 +124,11 @@
 
     goto :goto_1e
 
-    .line 622
+    .line 631
     :catch_4f
     move-exception v0
 
-    .line 623
+    .line 632
     invoke-virtual {v0}, Landroid/content/ActivityNotFoundException;->printStackTrace()V
 
     goto :goto_1e

@@ -341,7 +341,7 @@
     invoke-virtual {p0, v0, v12}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->overridePendingTransition(II)V
 
     .line 40
-    const v0, 0x7f1001ea
+    const v0, 0x7f1001ec
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -350,7 +350,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 41
-    const v1, 0x7f1001ec
+    const v1, 0x7f1001ee
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -381,7 +381,7 @@
     iput-object v2, p0, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->b:Landroid/widget/ImageView;
 
     .line 44
-    const v2, 0x7f1001ed
+    const v2, 0x7f1001ef
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 
@@ -390,7 +390,7 @@
     check-cast v2, Landroid/widget/Button;
 
     .line 45
-    const v3, 0x7f1001eb
+    const v3, 0x7f1001ed
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/TransactionDisplayActivity;->findViewById(I)Landroid/view/View;
 

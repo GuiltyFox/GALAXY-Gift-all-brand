@@ -45,15 +45,15 @@
     .end annotation
 
     .prologue
-    const v6, 0x7f10066b
+    const v6, 0x7f100696
 
-    const v5, 0x7f10066a
+    const v5, 0x7f100695
 
-    const v4, 0x7f100669
+    const v4, 0x7f100694
 
-    const v2, 0x7f10061f
+    const v2, 0x7f100642
 
-    const v3, 0x7f10025b
+    const v3, 0x7f10026b
 
     .line 11
     const-string/jumbo v0, "field \'recyclerView\'"
@@ -96,7 +96,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/ReviewFragment;->mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     .line 15
-    const v0, 0x7f100678
+    const v0, 0x7f1006a3
 
     const-string/jumbo v1, "field \'btnAddPicture\' and method \'onClickAdd\'"
 
@@ -107,7 +107,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 16
-    const v1, 0x7f100678
+    const v1, 0x7f1006a3
 
     const-string/jumbo v2, "field \'btnAddPicture\'"
 
@@ -127,7 +127,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 25
-    const v0, 0x7f10067b
+    const v0, 0x7f1006a6
 
     const-string/jumbo v1, "field \'btnAddSticker\' and method \'onClickAdd\'"
 
@@ -138,7 +138,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 26
-    const v1, 0x7f10067b
+    const v1, 0x7f1006a6
 
     const-string/jumbo v2, "field \'btnAddSticker\'"
 
@@ -158,7 +158,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 35
-    const v0, 0x7f10066f
+    const v0, 0x7f10069a
 
     const-string/jumbo v1, "field \'edtTextComment\'"
 
@@ -169,7 +169,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 36
-    const v1, 0x7f10066f
+    const v1, 0x7f10069a
 
     const-string/jumbo v2, "field \'edtTextComment\'"
 
@@ -182,7 +182,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/ReviewFragment;->edtTextComment:Landroid/widget/EditText;
 
     .line 37
-    const v0, 0x7f100679
+    const v0, 0x7f1006a4
 
     const-string/jumbo v1, "field \'recyclerItemBelow\'"
 
@@ -193,7 +193,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 38
-    const v1, 0x7f100679
+    const v1, 0x7f1006a4
 
     const-string/jumbo v2, "field \'recyclerItemBelow\'"
 
@@ -226,7 +226,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/ReviewFragment;->viewPager:Landroid/support/v4/view/ViewPager;
 
     .line 41
-    const v0, 0x7f10067d
+    const v0, 0x7f1006a8
 
     const-string/jumbo v1, "field \'listViewHorizontal\'"
 
@@ -237,7 +237,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 42
-    const v1, 0x7f10067d
+    const v1, 0x7f1006a8
 
     const-string/jumbo v2, "field \'listViewHorizontal\'"
 
@@ -250,7 +250,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/ReviewFragment;->listViewHorizontal:Lit/sephiroth/android/library/widget/HListView;
 
     .line 43
-    const v0, 0x7f10066d
+    const v0, 0x7f100698
 
     const-string/jumbo v1, "field \'imagePost\'"
 
@@ -261,7 +261,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 44
-    const v1, 0x7f10066d
+    const v1, 0x7f100698
 
     const-string/jumbo v2, "field \'imagePost\'"
 
@@ -274,7 +274,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/ReviewFragment;->imagePost:Landroid/widget/ImageView;
 
     .line 45
-    const v0, 0x7f10066c
+    const v0, 0x7f100697
 
     const-string/jumbo v1, "field \'contentImagePost\'"
 
@@ -285,7 +285,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 46
-    const v1, 0x7f10066c
+    const v1, 0x7f100697
 
     const-string/jumbo v2, "field \'contentImagePost\'"
 
@@ -298,7 +298,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/ReviewFragment;->contentImagePost:Landroid/widget/LinearLayout;
 
     .line 47
-    const v0, 0x7f10067c
+    const v0, 0x7f1006a7
 
     const-string/jumbo v1, "field \'contentPager\'"
 
@@ -309,7 +309,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 48
-    const v1, 0x7f10067c
+    const v1, 0x7f1006a7
 
     const-string/jumbo v2, "field \'contentPager\'"
 
@@ -362,7 +362,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/ReviewFragment;->contentPost:Landroid/widget/LinearLayout;
 
     .line 53
-    const v0, 0x7f10067a
+    const v0, 0x7f1006a5
 
     const-string/jumbo v1, "field \'tvNoData\'"
 
@@ -373,7 +373,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 54
-    const v1, 0x7f10067a
+    const v1, 0x7f1006a5
 
     const-string/jumbo v2, "field \'tvNoData\'"
 
@@ -386,7 +386,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/ReviewFragment;->tvNoData:Landroid/widget/TextView;
 
     .line 55
-    const v0, 0x7f10066e
+    const v0, 0x7f100699
 
     const-string/jumbo v1, "method \'onClickCancel\'"
 
@@ -404,7 +404,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 64
-    const v0, 0x7f10041b
+    const v0, 0x7f10042b
 
     const-string/jumbo v1, "method \'onClickPost\'"
 

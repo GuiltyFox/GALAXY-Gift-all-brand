@@ -21,13 +21,13 @@
 
 .field mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10061f
+        value = 0x7f100642
     .end annotation
 .end field
 
 .field recyclerView:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066a
+        value = 0x7f100695
     .end annotation
 .end field
 
@@ -263,7 +263,7 @@
 
     .prologue
     .line 43
-    const v0, 0x7f040154
+    const v0, 0x7f04015c
 
     return v0
 .end method

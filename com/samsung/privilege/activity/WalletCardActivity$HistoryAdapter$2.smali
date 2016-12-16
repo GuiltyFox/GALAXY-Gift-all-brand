@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 1423
+    .line 1880
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$2;->b:Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$2;->a:Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;
@@ -39,7 +39,7 @@
     .registers 4
 
     .prologue
-    .line 1431
+    .line 1888
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$2;->a:Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->b:Landroid/widget/RelativeLayout;
@@ -48,7 +48,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 1432
+    .line 1889
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .registers 2
 
     .prologue
-    .line 1437
+    .line 1894
     return-void
 .end method
 
@@ -64,6 +64,6 @@
     .registers 2
 
     .prologue
-    .line 1427
+    .line 1884
     return-void
 .end method

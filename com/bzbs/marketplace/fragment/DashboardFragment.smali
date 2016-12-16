@@ -29,13 +29,13 @@
 
 .field public mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10061f
+        value = 0x7f100642
     .end annotation
 .end field
 
 .field public recyclerViewDashboard:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100620
+        value = 0x7f100643
     .end annotation
 .end field
 
@@ -181,7 +181,7 @@
 
     invoke-virtual {v0, v1}, Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;->a(Lcom/bzbs/marketplace/asynctask/http/CallbackHttpAsyncTask;)V
 
-    .line 169
+    .line 187
     return-void
 .end method
 
@@ -322,28 +322,28 @@
 
     const/4 v3, 0x0
 
-    .line 174
+    .line 192
     const-string/jumbo v7, "big"
 
-    .line 175
+    .line 193
     const-string/jumbo v8, "medium"
 
-    .line 179
+    .line 197
     new-instance v9, Lcom/bzbs/marketplace/model/dashboard/DashboardDataModel;
 
     invoke-direct {v9}, Lcom/bzbs/marketplace/model/dashboard/DashboardDataModel;-><init>()V
 
-    .line 180
+    .line 198
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 182
+    .line 200
     new-instance v10, Ljava/util/ArrayList;
 
     invoke-direct {v10}, Ljava/util/ArrayList;-><init>()V
 
-    .line 183
+    .line 201
     const-string/jumbo v1, "["
 
     invoke-virtual {v10, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -354,7 +354,7 @@
 
     move v4, v3
 
-    .line 184
+    .line 202
     :goto_20
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/DashboardFragment;->i:Ljava/util/ArrayList;
 
@@ -364,7 +364,7 @@
 
     if-ge v2, v0, :cond_1a6
 
-    .line 185
+    .line 203
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/DashboardFragment;->i:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -373,24 +373,24 @@
 
     check-cast v0, Lcom/bzbs/marketplace/model/dashboard/DashboardModel;
 
-    .line 187
+    .line 205
     invoke-virtual {v0}, Lcom/bzbs/marketplace/model/dashboard/DashboardModel;->getSubcampaigndetails()Ljava/util/List;
 
     move-result-object v5
 
     if-eqz v5, :cond_102
 
-    .line 188
+    .line 206
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
     if-eqz v4, :cond_64
 
-    .line 189
+    .line 207
     invoke-virtual {v9, v1}, Lcom/bzbs/marketplace/model/dashboard/DashboardDataModel;->setListDashboard(Ljava/util/List;)V
 
-    .line 191
+    .line 209
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -419,19 +419,19 @@
 
     invoke-virtual {v10, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 193
+    .line 211
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 197
+    .line 215
     :cond_64
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 198
+    .line 216
     invoke-virtual {v9, v1}, Lcom/bzbs/marketplace/model/dashboard/DashboardDataModel;->setListDashboard(Ljava/util/List;)V
 
-    .line 199
+    .line 217
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -460,14 +460,14 @@
 
     invoke-virtual {v10, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 201
+    .line 219
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     move v0, v3
 
-    .line 238
+    .line 256
     :goto_90
     iget-object v4, p0, Lcom/bzbs/marketplace/fragment/DashboardFragment;->i:Ljava/util/ArrayList;
 
@@ -479,17 +479,17 @@
 
     if-ne v2, v4, :cond_1e1
 
-    .line 239
+    .line 257
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
     if-eqz v4, :cond_1dd
 
-    .line 240
+    .line 258
     invoke-virtual {v9, v1}, Lcom/bzbs/marketplace/model/dashboard/DashboardDataModel;->setListDashboard(Ljava/util/List;)V
 
-    .line 242
+    .line 260
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -518,7 +518,7 @@
 
     invoke-virtual {v10, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 244
+    .line 262
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -527,7 +527,7 @@
 
     move v5, v3
 
-    .line 247
+    .line 265
     :goto_ca
     invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
 
@@ -571,7 +571,7 @@
 
     invoke-virtual {v10, v11, v0}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 248
+    .line 266
     const-string/jumbo v0, "]"
 
     invoke-virtual {v10, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -580,7 +580,7 @@
 
     move v4, v5
 
-    .line 184
+    .line 202
     :goto_fd
     add-int/lit8 v0, v2, 0x1
 
@@ -588,7 +588,7 @@
 
     goto/16 :goto_20
 
-    .line 204
+    .line 222
     :cond_102
     invoke-virtual {v0}, Lcom/bzbs/marketplace/model/dashboard/DashboardModel;->getSize()Ljava/lang/String;
 
@@ -613,22 +613,22 @@
     :cond_116
     move v5, v3
 
-    .line 211
+    .line 229
     :goto_117
     if-eqz v5, :cond_14e
 
-    .line 212
+    .line 230
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 214
+    .line 232
     const/4 v0, 0x2
 
     if-ne v4, v0, :cond_1e4
 
-    .line 215
+    .line 233
     invoke-virtual {v9, v1}, Lcom/bzbs/marketplace/model/dashboard/DashboardDataModel;->setListDashboard(Ljava/util/List;)V
 
-    .line 217
+    .line 235
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -657,7 +657,7 @@
 
     invoke-virtual {v10, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 219
+    .line 237
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -666,7 +666,7 @@
 
     goto/16 :goto_90
 
-    .line 208
+    .line 226
     :cond_14a
     add-int/lit8 v4, v4, 0x1
 
@@ -674,14 +674,14 @@
 
     goto :goto_117
 
-    .line 222
+    .line 240
     :cond_14e
     if-ne v4, v6, :cond_178
 
-    .line 223
+    .line 241
     invoke-virtual {v9, v1}, Lcom/bzbs/marketplace/model/dashboard/DashboardDataModel;->setListDashboard(Ljava/util/List;)V
 
-    .line 224
+    .line 242
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -710,19 +710,19 @@
 
     invoke-virtual {v10, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 226
+    .line 244
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 229
+    .line 247
     :cond_178
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 230
+    .line 248
     invoke-virtual {v9, v1}, Lcom/bzbs/marketplace/model/dashboard/DashboardDataModel;->setListDashboard(Ljava/util/List;)V
 
-    .line 232
+    .line 250
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -751,7 +751,7 @@
 
     invoke-virtual {v10, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 234
+    .line 252
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -760,13 +760,13 @@
 
     goto/16 :goto_90
 
-    .line 252
+    .line 270
     :cond_1a6
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 253
+    .line 271
     :goto_1ab
     invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
 
@@ -774,7 +774,7 @@
 
     if-ge v3, v0, :cond_1bd
 
-    .line 254
+    .line 272
     invoke-virtual {v10, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -783,12 +783,12 @@
 
     invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 253
+    .line 271
     add-int/lit8 v3, v3, 0x1
 
     goto :goto_1ab
 
-    .line 257
+    .line 275
     :cond_1bd
     new-instance v0, Lcom/google/gson/Gson;
 
@@ -802,26 +802,26 @@
 
     invoke-direct {v2, p0}, Lcom/bzbs/marketplace/fragment/DashboardFragment$4;-><init>(Lcom/bzbs/marketplace/fragment/DashboardFragment;)V
 
-    .line 258
+    .line 276
     invoke-virtual {v2}, Lcom/bzbs/marketplace/fragment/DashboardFragment$4;->b()Ljava/lang/reflect/Type;
 
     move-result-object v2
 
-    .line 257
+    .line 275
     invoke-virtual {v0, v1, v2}, Lcom/google/gson/Gson;->a(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/util/ArrayList;
 
-    .line 260
+    .line 278
     iget-object v1, p0, Lcom/bzbs/marketplace/fragment/DashboardFragment;->j:Lcom/bzbs/marketplace/adapter/DashboardAdapter;
 
     iget-object v2, p0, Lcom/bzbs/marketplace/fragment/DashboardFragment;->recyclerViewDashboard:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v1, v0, v2}, Lcom/bzbs/marketplace/adapter/DashboardAdapter;->a(Ljava/util/ArrayList;Landroid/support/v7/widget/RecyclerView;)V
 
-    .line 261
+    .line 279
     return-void
 
     :cond_1dd
@@ -849,7 +849,7 @@
 
     .prologue
     .line 54
-    const v0, 0x7f040136
+    const v0, 0x7f04013c
 
     return v0
 .end method
@@ -869,9 +869,9 @@
     .registers 1
 
     .prologue
-    .line 266
+    .line 284
     invoke-super {p0}, Lcom/bzbs/marketplace/base/BaseFragment;->onDestroy()V
 
-    .line 267
+    .line 285
     return-void
 .end method

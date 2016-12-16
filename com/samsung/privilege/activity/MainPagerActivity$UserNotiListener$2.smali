@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 1457
+    .line 1541
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserNotiListener$2;->a:Lcom/samsung/privilege/activity/MainPagerActivity$UserNotiListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,13 +35,13 @@
     .registers 2
 
     .prologue
-    .line 1460
+    .line 1544
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$UserNotiListener$2;->a:Lcom/samsung/privilege/activity/MainPagerActivity$UserNotiListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/MainPagerActivity$UserNotiListener;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->f()V
 
-    .line 1461
+    .line 1545
     return-void
 .end method

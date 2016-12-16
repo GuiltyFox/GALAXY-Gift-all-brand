@@ -121,7 +121,7 @@
     :cond_6
     const-string/jumbo v0, ""
 
-    const v1, 0x7f090281
+    const v1, 0x7f090282
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -414,7 +414,7 @@
     .line 490
     const-string/jumbo v2, ""
 
-    const v3, 0x7f090281
+    const v3, 0x7f090282
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -870,7 +870,7 @@
     .line 507
     const-string/jumbo v3, ""
 
-    const v4, 0x7f090281
+    const v4, 0x7f090282
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -1071,7 +1071,7 @@
     .line 642
     const-string/jumbo v2, ""
 
-    const v3, 0x7f090281
+    const v3, 0x7f090282
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 

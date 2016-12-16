@@ -149,7 +149,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f020297
+    const v5, 0x7f02029e
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -274,7 +274,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f020296
+    const v4, 0x7f02029d
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 

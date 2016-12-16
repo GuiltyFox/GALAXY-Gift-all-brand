@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 443
+    .line 448
     iput-object p1, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
     invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
@@ -32,22 +32,22 @@
     .registers 7
 
     .prologue
-    .line 490
+    .line 495
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 492
+    .line 497
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity;->d:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 493
+    .line 498
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
     invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 495
+    .line 500
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -78,7 +78,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 496
+    .line 501
     return-void
 .end method
 
@@ -86,7 +86,7 @@
     .registers 8
 
     .prologue
-    .line 446
+    .line 451
     sget-object v0, Lcom/samsung/privilege/activity/CardsUsedActivity;->a:Ljava/lang/String;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -119,14 +119,14 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 447
+    .line 452
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity;->d:Landroid/app/ProgressDialog;
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 449
+    .line 454
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity;->b:Landroid/os/Handler;
@@ -137,7 +137,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 485
+    .line 490
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -168,6 +168,6 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 486
+    .line 491
     return-void
 .end method

@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 168
+    .line 173
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogNotification$5;->a:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogNotification$5;->b:Landroid/os/Handler;
@@ -39,13 +39,13 @@
     .registers 3
 
     .prologue
-    .line 171
+    .line 176
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogNotification$5;->a:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogNotification$5;->b:Landroid/os/Handler;
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/DialogNotification;->b(Landroid/content/Context;Landroid/os/Handler;)V
 
-    .line 172
+    .line 177
     return-void
 .end method

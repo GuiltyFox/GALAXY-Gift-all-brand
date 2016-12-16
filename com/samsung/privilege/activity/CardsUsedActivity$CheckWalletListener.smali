@@ -53,3 +53,11 @@
     .line 172
     return-void
 .end method
+
+.method public b(Ljava/lang/String;)V
+    .registers 2
+
+    .prologue
+    .line 182
+    return-void
+.end method

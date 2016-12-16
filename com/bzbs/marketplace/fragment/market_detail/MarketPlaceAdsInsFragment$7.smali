@@ -36,7 +36,7 @@
     .registers 8
 
     .prologue
-    const v2, 0x7f09035b
+    const v2, 0x7f090371
 
     .line 486
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment$7;->b:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceAdsInsFragment;

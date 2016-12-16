@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 2326
+    .line 2337
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19$1;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19$1;->a:Ljava/lang/String;
@@ -39,16 +39,16 @@
     .registers 5
 
     .prologue
-    .line 2329
+    .line 2340
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19$1;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->a:Landroid/widget/ImageView;
 
-    const v1, 0x7f020296
+    const v1, 0x7f02029d
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 2330
+    .line 2341
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19$1;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->a:Landroid/widget/ImageView;
@@ -57,7 +57,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 2331
+    .line 2342
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19$1;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->b:Landroid/widget/ProgressBar;
@@ -66,7 +66,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 2333
+    .line 2344
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19$1;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -79,7 +79,7 @@
 
     iput-boolean v1, v0, Lcom/bzbs/bean/Campaign;->IsLike:Z
 
-    .line 2334
+    .line 2345
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19$1;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -94,7 +94,7 @@
 
     iput v1, v0, Lcom/bzbs/bean/Campaign;->PeopleLike:I
 
-    .line 2335
+    .line 2346
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19$1;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->c:Landroid/widget/TextView;
@@ -113,7 +113,7 @@
 
     iget-object v2, v2, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    const v3, 0x7f09033f
+    const v3, 0x7f090355
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
@@ -163,7 +163,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2338
+    .line 2349
     :try_start_7d
     new-instance v0, Lorg/json/JSONObject;
 
@@ -171,27 +171,27 @@
 
     invoke-direct {v0, v1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 2339
+    .line 2350
     const-string/jumbo v1, "buzzebees"
 
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v0
 
-    .line 2340
+    .line 2351
     const-string/jumbo v1, "points"
 
     invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
     move-result v0
 
-    .line 2341
+    .line 2352
     if-lez v0, :cond_a6
 
-    .line 2342
+    .line 2353
     const-string/jumbo v1, "like"
 
-    .line 2343
+    .line 2354
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19$1;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;
 
     iget-object v2, v2, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$19;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -208,12 +208,12 @@
     :try_end_a6
     .catch Ljava/lang/Exception; {:try_start_7d .. :try_end_a6} :catch_a7
 
-    .line 2348
+    .line 2359
     :cond_a6
     :goto_a6
     return-void
 
-    .line 2345
+    .line 2356
     :catch_a7
     move-exception v0
 

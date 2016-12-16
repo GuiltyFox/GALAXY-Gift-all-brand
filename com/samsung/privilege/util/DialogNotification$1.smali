@@ -14,7 +14,7 @@
     .registers 1
 
     .prologue
-    .line 109
+    .line 114
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$OnScrollListener;-><init>()V
 
     return-void
@@ -26,7 +26,7 @@
     .registers 6
 
     .prologue
-    .line 112
+    .line 117
     invoke-static {}, Lcom/samsung/privilege/util/DialogNotification;->a()Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
     move-result-object v0
@@ -37,7 +37,7 @@
 
     invoke-static {v0}, Lcom/samsung/privilege/util/DialogNotification;->a(I)I
 
-    .line 113
+    .line 118
     invoke-static {}, Lcom/samsung/privilege/util/DialogNotification;->a()Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
     move-result-object v0
@@ -48,7 +48,7 @@
 
     invoke-static {v0}, Lcom/samsung/privilege/util/DialogNotification;->b(I)I
 
-    .line 116
+    .line 121
     invoke-static {}, Lcom/samsung/privilege/util/DialogNotification;->b()Z
 
     move-result v0
@@ -61,7 +61,7 @@
 
     if-nez v0, :cond_34
 
-    .line 117
+    .line 122
     invoke-static {}, Lcom/samsung/privilege/util/DialogNotification;->d()I
 
     move-result v0
@@ -78,10 +78,10 @@
 
     if-lt v0, v1, :cond_34
 
-    .line 118
+    .line 123
     invoke-static {}, Lcom/samsung/privilege/util/DialogNotification;->f()I
 
-    .line 122
+    .line 127
     :cond_34
     return-void
 .end method

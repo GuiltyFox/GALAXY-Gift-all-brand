@@ -49,7 +49,7 @@
 
     .prologue
     .line 59
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->I(Landroid/content/Context;)J
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->J(Landroid/content/Context;)J
 
     move-result-wide v0
 
@@ -256,7 +256,7 @@
     invoke-direct {v1, p0, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
     .line 183
-    const v0, 0x7f040115
+    const v0, 0x7f040117
 
     invoke-virtual {v1, v0}, Landroid/app/Dialog;->setContentView(I)V
 

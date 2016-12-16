@@ -12,7 +12,7 @@
     .registers 1
 
     .prologue
-    .line 1734
+    .line 1745
     invoke-direct {p0}, Landroid/support/v4/app/Fragment;-><init>()V
 
     return-void
@@ -22,22 +22,22 @@
     .registers 7
 
     .prologue
-    .line 1742
+    .line 1753
     new-instance v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;
 
     invoke-direct {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;-><init>()V
 
-    .line 1745
+    .line 1756
     new-instance v1, Landroid/os/Bundle;
 
     invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
 
-    .line 1746
+    .line 1757
     const-string/jumbo v2, "image_url"
 
     invoke-virtual {v1, v2, p0}, Landroid/os/Bundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1747
+    .line 1758
     const-string/jumbo v2, "time"
 
     new-instance v3, Ljava/util/Date;
@@ -50,10 +50,10 @@
 
     invoke-virtual {v1, v2, v4, v5}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 1748
+    .line 1759
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;->setArguments(Landroid/os/Bundle;)V
 
-    .line 1750
+    .line 1761
     return-object v0
 .end method
 
@@ -63,10 +63,10 @@
     .registers 4
 
     .prologue
-    .line 1758
+    .line 1769
     invoke-super {p0, p1}, Landroid/support/v4/app/Fragment;->onCreate(Landroid/os/Bundle;)V
 
-    .line 1759
+    .line 1770
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
@@ -86,10 +86,10 @@
     :goto_14
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;->a:Ljava/lang/String;
 
-    .line 1760
+    .line 1771
     return-void
 
-    .line 1759
+    .line 1770
     :cond_17
     const-string/jumbo v0, ""
 
@@ -100,8 +100,8 @@
     .registers 8
 
     .prologue
-    .line 1768
-    const v0, 0x7f040133
+    .line 1779
+    const v0, 0x7f040139
 
     const/4 v1, 0x0
 
@@ -109,8 +109,8 @@
 
     move-result-object v1
 
-    .line 1770
-    const v0, 0x7f10061c
+    .line 1781
+    const v0, 0x7f10063f
 
     invoke-virtual {v1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -118,7 +118,7 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 1772
+    .line 1783
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$ArrayListFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -133,7 +133,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0202d2
+    const v3, 0x7f0202d9
 
     invoke-virtual {v2, v3}, Lcom/bumptech/glide/DrawableTypeRequest;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 
@@ -147,6 +147,6 @@
 
     invoke-virtual {v2, v0}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
 
-    .line 1774
+    .line 1785
     return-object v1
 .end method

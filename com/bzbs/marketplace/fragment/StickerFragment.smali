@@ -10,7 +10,7 @@
 
 .field recyclerView:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066a
+        value = 0x7f100695
     .end annotation
 .end field
 
@@ -77,7 +77,7 @@
 
     .prologue
     .line 49
-    const v0, 0x7f040152
+    const v0, 0x7f04015a
 
     return v0
 .end method

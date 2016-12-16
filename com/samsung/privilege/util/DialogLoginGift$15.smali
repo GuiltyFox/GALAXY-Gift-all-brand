@@ -24,7 +24,7 @@
     .registers 7
 
     .prologue
-    .line 751
+    .line 761
     iput-wide p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$15;->a:J
 
     iput-object p3, p0, Lcom/samsung/privilege/util/DialogLoginGift$15;->b:Ljava/lang/String;
@@ -44,10 +44,10 @@
     .registers 13
 
     .prologue
-    .line 770
+    .line 780
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 773
+    .line 783
     :try_start_3
     new-instance v0, Ljava/util/Date;
 
@@ -57,7 +57,7 @@
 
     move-result-wide v0
 
-    .line 774
+    .line 784
     const-string/jumbo v2, "Login"
 
     const-string/jumbo v3, "LoginDevice"
@@ -72,7 +72,7 @@
     :try_end_1b
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_4e
 
-    .line 779
+    .line 789
     :goto_1b
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
@@ -108,22 +108,22 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 781
+    .line 791
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->c()Landroid/app/ProgressDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 783
+    .line 793
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$15;->c:Landroid/content/Context;
 
     invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 784
+    .line 794
     return-void
 
-    .line 775
+    .line 785
     :catch_4e
     move-exception v0
 
@@ -134,7 +134,7 @@
     .registers 13
 
     .prologue
-    .line 755
+    .line 765
     :try_start_0
     new-instance v0, Ljava/util/Date;
 
@@ -144,7 +144,7 @@
 
     move-result-wide v0
 
-    .line 756
+    .line 766
     const-string/jumbo v2, "Login"
 
     const-string/jumbo v3, "LoginDevice"
@@ -159,7 +159,7 @@
     :try_end_18
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_52
 
-    .line 761
+    .line 771
     :goto_18
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
@@ -195,14 +195,14 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 763
+    .line 773
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->c()Landroid/app/ProgressDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 765
+    .line 775
     const-string/jumbo v0, "2"
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$15;->b:Ljava/lang/String;
@@ -213,10 +213,10 @@
 
     invoke-static {p4, v0, v1, v2, v3}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
 
-    .line 766
+    .line 776
     return-void
 
-    .line 757
+    .line 767
     :catch_52
     move-exception v0
 

@@ -17,7 +17,7 @@
     .registers 1
 
     .prologue
-    .line 157
+    .line 162
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
     .registers 4
 
     .prologue
-    .line 160
+    .line 165
     invoke-static {}, Lcom/samsung/privilege/util/DialogNotification;->i()Landroid/content/Context;
 
     move-result-object v0
@@ -38,9 +38,9 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;I)Z
 
-    .line 161
+    .line 166
     invoke-static {}, Lcom/bzbs/event/NotiEvents;->b()V
 
-    .line 162
+    .line 167
     return-void
 .end method

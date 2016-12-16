@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogOTPUtil;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/util/DialogOTPUtil;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 .end annotation
 
 
@@ -21,21 +21,23 @@
 
 .field final synthetic d:Ljava/lang/String;
 
-.field final synthetic e:Landroid/widget/EditText;
+.field final synthetic e:Ljava/lang/String;
 
-.field final synthetic f:Landroid/app/Dialog;
+.field final synthetic f:Landroid/widget/EditText;
 
-.field final synthetic g:Ljava/lang/String;
+.field final synthetic g:Landroid/app/Dialog;
 
 .field final synthetic h:Ljava/lang/String;
 
+.field final synthetic i:Ljava/lang/String;
+
 
 # direct methods
-.method constructor <init>(Landroid/widget/TextView;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Landroid/widget/EditText;Landroid/app/Dialog;Ljava/lang/String;Ljava/lang/String;)V
-    .registers 9
+.method constructor <init>(Landroid/widget/TextView;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Landroid/widget/EditText;Landroid/app/Dialog;Ljava/lang/String;Ljava/lang/String;)V
+    .registers 10
 
     .prologue
-    .line 117
+    .line 119
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->a:Landroid/widget/TextView;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->b:Landroid/content/Context;
@@ -44,13 +46,15 @@
 
     iput-object p4, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->d:Ljava/lang/String;
 
-    iput-object p5, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->e:Landroid/widget/EditText;
+    iput-object p5, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->e:Ljava/lang/String;
 
-    iput-object p6, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->f:Landroid/app/Dialog;
+    iput-object p6, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->f:Landroid/widget/EditText;
 
-    iput-object p7, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->g:Ljava/lang/String;
+    iput-object p7, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->g:Landroid/app/Dialog;
 
     iput-object p8, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->h:Ljava/lang/String;
+
+    iput-object p9, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->i:Ljava/lang/String;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -60,10 +64,10 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 9
+    .registers 10
 
     .prologue
-    .line 119
+    .line 121
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->a:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
@@ -82,11 +86,11 @@
 
     if-eqz v0, :cond_14
 
-    .line 136
+    .line 138
     :goto_13
     return-void
 
-    .line 123
+    .line 125
     :cond_14
     invoke-static {}, Lcom/samsung/privilege/util/DialogOTPUtil;->a()Landroid/widget/EditText;
 
@@ -108,7 +112,7 @@
 
     if-gt v0, v1, :cond_32
 
-    .line 124
+    .line 126
     const-string/jumbo v0, "Please enter valid OTP number!"
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->b:Landroid/content/Context;
@@ -119,7 +123,7 @@
 
     goto :goto_13
 
-    .line 128
+    .line 130
     :cond_32
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->b:Landroid/content/Context;
 
@@ -131,7 +135,7 @@
 
     check-cast v0, Landroid/view/inputmethod/InputMethodManager;
 
-    .line 129
+    .line 131
     invoke-static {}, Lcom/samsung/privilege/util/DialogOTPUtil;->a()Landroid/widget/EditText;
 
     move-result-object v1
@@ -144,28 +148,18 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
 
-    .line 131
+    .line 133
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->d:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->b:Landroid/content/Context;
 
     iget-object v2, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->c:Landroid/os/Handler;
 
-    const/4 v3, 0x1
+    iget-object v3, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->e:Ljava/lang/String;
 
-    iget-object v4, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->e:Landroid/widget/EditText;
+    const/4 v4, 0x1
 
-    invoke-virtual {v4}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-static {}, Lcom/samsung/privilege/util/DialogOTPUtil;->a()Landroid/widget/EditText;
-
-    move-result-object v5
+    iget-object v5, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->f:Landroid/widget/EditText;
 
     invoke-virtual {v5}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
@@ -175,29 +169,41 @@
 
     move-result-object v5
 
-    iget-object v6, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->a:Landroid/widget/TextView;
-
-    invoke-virtual {v6}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+    invoke-static {}, Lcom/samsung/privilege/util/DialogOTPUtil;->a()Landroid/widget/EditText;
 
     move-result-object v6
 
-    invoke-interface {v6}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+    invoke-virtual {v6}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v6
 
-    invoke-static/range {v0 .. v6}, Lcom/samsung/privilege/util/DialogOTPUtil;->a(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v6}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    .line 133
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->f:Landroid/app/Dialog;
+    move-result-object v6
+
+    iget-object v7, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->a:Landroid/widget/TextView;
+
+    invoke-virtual {v7}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v7
+
+    invoke-interface {v7}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-static/range {v0 .. v7}, Lcom/samsung/privilege/util/DialogOTPUtil;->a(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 135
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->g:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 135
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->g:Ljava/lang/String;
+    .line 137
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->h:Ljava/lang/String;
 
     const-string/jumbo v1, "Click Activate"
 
-    iget-object v2, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->h:Ljava/lang/String;
+    iget-object v2, p0, Lcom/samsung/privilege/util/DialogOTPUtil$3;->i:Ljava/lang/String;
 
     const-wide/16 v4, 0x1
 

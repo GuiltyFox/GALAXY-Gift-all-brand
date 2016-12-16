@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 1760
+    .line 2201
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$1;->a:Lcom/bzbs/bean/Campaign;
@@ -39,7 +39,7 @@
     .registers 8
 
     .prologue
-    .line 1763
+    .line 2204
     new-instance v0, Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;
@@ -54,7 +54,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1765
+    .line 2206
     const-string/jumbo v1, "campaign_id"
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$1;->a:Lcom/bzbs/bean/Campaign;
@@ -67,7 +67,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 1766
+    .line 2207
     const-string/jumbo v1, "time"
 
     new-instance v2, Ljava/util/Date;
@@ -80,14 +80,14 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 1767
+    .line 2208
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 1769
+    .line 2210
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -102,9 +102,11 @@
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    invoke-static {v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->d(Lcom/samsung/privilege/activity/WalletCardActivity;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->e(Lcom/samsung/privilege/activity/WalletCardActivity;)Lcom/bzbs/bean/DashboardItem;
 
     move-result-object v1
+
+    iget-object v1, v1, Lcom/bzbs/bean/DashboardItem;->wallet_issuer:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -154,6 +156,6 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 1770
+    .line 2211
     return-void
 .end method

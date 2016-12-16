@@ -29,17 +29,27 @@
 
 # virtual methods
 .method public a(I[Lcz/msebera/android/httpclient/Header;[B)V
-    .registers 9
+    .registers 8
 
     .prologue
-    const/4 v4, 0x0
-
     .line 132
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/DashboardFragment$3;->a:Lcom/bzbs/marketplace/fragment/DashboardFragment;
 
-    invoke-static {v0, v4}, Lcom/bzbs/marketplace/fragment/DashboardFragment;->a(Lcom/bzbs/marketplace/fragment/DashboardFragment;Z)V
+    invoke-virtual {v0}, Lcom/bzbs/marketplace/fragment/DashboardFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
-    .line 133
+    move-result-object v0
+
+    if-eqz v0, :cond_41
+
+    .line 134
+    :try_start_8
+    iget-object v0, p0, Lcom/bzbs/marketplace/fragment/DashboardFragment$3;->a:Lcom/bzbs/marketplace/fragment/DashboardFragment;
+
+    const/4 v1, 0x0
+
+    invoke-static {v0, v1}, Lcom/bzbs/marketplace/fragment/DashboardFragment;->a(Lcom/bzbs/marketplace/fragment/DashboardFragment;Z)V
+
+    .line 135
     iget-object v1, p0, Lcom/bzbs/marketplace/fragment/DashboardFragment$3;->a:Lcom/bzbs/marketplace/fragment/DashboardFragment;
 
     new-instance v0, Lcom/google/gson/Gson;
@@ -54,12 +64,12 @@
 
     invoke-direct {v3, p0}, Lcom/bzbs/marketplace/fragment/DashboardFragment$3$1;-><init>(Lcom/bzbs/marketplace/fragment/DashboardFragment$3;)V
 
-    .line 134
+    .line 136
     invoke-virtual {v3}, Lcom/bzbs/marketplace/fragment/DashboardFragment$3$1;->b()Ljava/lang/reflect/Type;
 
     move-result-object v3
 
-    .line 133
+    .line 135
     invoke-virtual {v0, v2, v3}, Lcom/google/gson/Gson;->a(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
 
     move-result-object v0
@@ -68,19 +78,21 @@
 
     invoke-static {v1, v0}, Lcom/bzbs/marketplace/fragment/DashboardFragment;->a(Lcom/bzbs/marketplace/fragment/DashboardFragment;Ljava/util/ArrayList;)Ljava/util/ArrayList;
 
-    .line 136
+    .line 138
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/DashboardFragment$3;->a:Lcom/bzbs/marketplace/fragment/DashboardFragment;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/fragment/DashboardFragment;->b(Lcom/bzbs/marketplace/fragment/DashboardFragment;)V
 
-    .line 137
+    .line 139
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/DashboardFragment$3;->a:Lcom/bzbs/marketplace/fragment/DashboardFragment;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/fragment/DashboardFragment;->mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
 
-    invoke-virtual {v0, v4}, Landroid/support/v4/widget/SwipeRefreshLayout;->setRefreshing(Z)V
+    const/4 v1, 0x0
 
-    .line 138
+    invoke-virtual {v0, v1}, Landroid/support/v4/widget/SwipeRefreshLayout;->setRefreshing(Z)V
+
+    .line 140
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/DashboardFragment$3;->a:Lcom/bzbs/marketplace/fragment/DashboardFragment;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/fragment/DashboardFragment;->mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
@@ -88,37 +100,59 @@
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/support/v4/widget/SwipeRefreshLayout;->setEnabled(Z)V
+    :try_end_41
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_41} :catch_42
 
-    .line 139
+    .line 145
+    :cond_41
+    :goto_41
     return-void
+
+    .line 141
+    :catch_42
+    move-exception v0
+
+    goto :goto_41
 .end method
 
 .method public a(I[Lcz/msebera/android/httpclient/Header;[BLjava/lang/Throwable;)V
     .registers 9
 
     .prologue
-    const/4 v1, 0x0
-
-    .line 143
+    .line 149
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/DashboardFragment$3;->a:Lcom/bzbs/marketplace/fragment/DashboardFragment;
+
+    invoke-virtual {v0}, Lcom/bzbs/marketplace/fragment/DashboardFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_69
+
+    .line 151
+    :try_start_8
+    iget-object v0, p0, Lcom/bzbs/marketplace/fragment/DashboardFragment$3;->a:Lcom/bzbs/marketplace/fragment/DashboardFragment;
+
+    const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/bzbs/marketplace/fragment/DashboardFragment;->a(Lcom/bzbs/marketplace/fragment/DashboardFragment;Z)V
 
-    .line 144
+    .line 152
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/DashboardFragment$3;->a:Lcom/bzbs/marketplace/fragment/DashboardFragment;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/fragment/DashboardFragment;->mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_24
 
-    .line 145
+    .line 153
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/DashboardFragment$3;->a:Lcom/bzbs/marketplace/fragment/DashboardFragment;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/fragment/DashboardFragment;->mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
+
+    const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v4/widget/SwipeRefreshLayout;->setRefreshing(Z)V
 
-    .line 146
+    .line 154
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/DashboardFragment$3;->a:Lcom/bzbs/marketplace/fragment/DashboardFragment;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/fragment/DashboardFragment;->mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
@@ -127,21 +161,21 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/widget/SwipeRefreshLayout;->setEnabled(Z)V
 
-    .line 149
-    :cond_1b
+    .line 157
+    :cond_24
     const-string/jumbo v0, ""
 
-    .line 150
-    if-eqz p3, :cond_25
+    .line 158
+    if-eqz p3, :cond_2e
 
-    .line 151
+    .line 159
     new-instance v0, Ljava/lang/String;
 
     invoke-direct {v0, p3}, Ljava/lang/String;-><init>([B)V
 
-    .line 154
-    :cond_25
-    if-eqz v0, :cond_60
+    .line 162
+    :cond_2e
+    if-eqz v0, :cond_69
 
     const-string/jumbo v1, ""
 
@@ -149,9 +183,9 @@
 
     move-result v1
 
-    if-nez v1, :cond_60
+    if-nez v1, :cond_69
 
-    .line 155
+    .line 163
     new-instance v1, Lcom/google/gson/Gson;
 
     invoke-direct {v1}, Lcom/google/gson/Gson;-><init>()V
@@ -164,7 +198,7 @@
 
     check-cast v0, Lcom/bzbs/marketplace/model/dialog/ErrorDialogModel;
 
-    .line 156
+    .line 164
     iget-object v1, p0, Lcom/bzbs/marketplace/fragment/DashboardFragment$3;->a:Lcom/bzbs/marketplace/fragment/DashboardFragment;
 
     iget-object v1, v1, Lcom/bzbs/marketplace/fragment/DashboardFragment;->a:Landroid/app/Activity;
@@ -196,20 +230,39 @@
     move-result-object v0
 
     invoke-static {v1, v0}, Lcom/bzbs/marketplace/base/BaseFragment;->a(Landroid/content/Context;Ljava/lang/CharSequence;)Landroid/widget/Toast;
+    :try_end_69
+    .catch Ljava/lang/Exception; {:try_start_8 .. :try_end_69} :catch_6a
 
-    .line 158
-    :cond_60
+    .line 170
+    :cond_69
+    :goto_69
     return-void
+
+    .line 166
+    :catch_6a
+    move-exception v0
+
+    goto :goto_69
 .end method
 
 .method public a(Ljava/lang/String;JJJ)V
     .registers 12
 
     .prologue
-    .line 162
+    .line 174
     invoke-super/range {p0 .. p7}, Lcom/bzbs/marketplace/asynctask/http/CallbackHttpAsyncTask;->a(Ljava/lang/String;JJJ)V
 
-    .line 163
+    .line 175
+    iget-object v0, p0, Lcom/bzbs/marketplace/fragment/DashboardFragment$3;->a:Lcom/bzbs/marketplace/fragment/DashboardFragment;
+
+    invoke-virtual {v0}, Lcom/bzbs/marketplace/fragment/DashboardFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_29
+
+    .line 177
+    :try_start_b
     iget-object v1, p0, Lcom/bzbs/marketplace/fragment/DashboardFragment$3;->a:Lcom/bzbs/marketplace/fragment/DashboardFragment;
 
     new-instance v0, Lcom/google/gson/Gson;
@@ -220,12 +273,12 @@
 
     invoke-direct {v2, p0}, Lcom/bzbs/marketplace/fragment/DashboardFragment$3$2;-><init>(Lcom/bzbs/marketplace/fragment/DashboardFragment$3;)V
 
-    .line 164
+    .line 178
     invoke-virtual {v2}, Lcom/bzbs/marketplace/fragment/DashboardFragment$3$2;->b()Ljava/lang/reflect/Type;
 
     move-result-object v2
 
-    .line 163
+    .line 177
     invoke-virtual {v0, p1, v2}, Lcom/google/gson/Gson;->a(Ljava/lang/String;Ljava/lang/reflect/Type;)Ljava/lang/Object;
 
     move-result-object v0
@@ -234,11 +287,21 @@
 
     invoke-static {v1, v0}, Lcom/bzbs/marketplace/fragment/DashboardFragment;->a(Lcom/bzbs/marketplace/fragment/DashboardFragment;Ljava/util/ArrayList;)Ljava/util/ArrayList;
 
-    .line 166
+    .line 180
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/DashboardFragment$3;->a:Lcom/bzbs/marketplace/fragment/DashboardFragment;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/fragment/DashboardFragment;->b(Lcom/bzbs/marketplace/fragment/DashboardFragment;)V
+    :try_end_29
+    .catch Ljava/lang/Exception; {:try_start_b .. :try_end_29} :catch_2a
 
-    .line 167
+    .line 185
+    :cond_29
+    :goto_29
     return-void
+
+    .line 181
+    :catch_2a
+    move-exception v0
+
+    goto :goto_29
 .end method

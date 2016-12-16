@@ -119,7 +119,7 @@
 
     iget-object v1, v1, Lcom/samsung/privilege/util/DialogSearch$5;->c:Landroid/content/Context;
 
-    const v4, 0x7f090342
+    const v4, 0x7f090358
 
     invoke-virtual {v1, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

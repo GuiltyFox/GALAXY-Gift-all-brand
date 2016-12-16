@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 1791
+    .line 1802
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +41,7 @@
 
     const/4 v3, 0x1
 
-    .line 1794
+    .line 1805
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -62,7 +62,7 @@
 
     if-ne v1, v3, :cond_64
 
-    .line 1795
+    .line 1806
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -77,7 +77,7 @@
 
     if-eqz v1, :cond_64
 
-    .line 1796
+    .line 1807
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -96,7 +96,7 @@
 
     if-le v1, v3, :cond_64
 
-    .line 1797
+    .line 1808
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -129,7 +129,7 @@
 
     if-ne v1, v2, :cond_196
 
-    .line 1798
+    .line 1809
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -140,7 +140,7 @@
 
     invoke-virtual {v1, v0, v3}, Landroid/support/v4/view/ViewPager;->setCurrentItem(IZ)V
 
-    .line 1806
+    .line 1817
     :cond_64
     :goto_64
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;
@@ -165,7 +165,7 @@
 
     if-ne v1, v2, :cond_1d7
 
-    .line 1807
+    .line 1818
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -176,7 +176,7 @@
 
     if-eqz v1, :cond_1d7
 
-    .line 1808
+    .line 1819
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -191,7 +191,7 @@
 
     if-le v1, v3, :cond_1d7
 
-    .line 1809
+    .line 1820
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -204,7 +204,7 @@
 
     move-result v1
 
-    .line 1812
+    .line 1823
     invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->h()Ljava/lang/String;
 
     move-result-object v2
@@ -213,7 +213,7 @@
 
     invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1813
+    .line 1824
     invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->h()Ljava/lang/String;
 
     move-result-object v2
@@ -250,7 +250,7 @@
 
     invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1814
+    .line 1825
     invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->h()Ljava/lang/String;
 
     move-result-object v2
@@ -287,7 +287,7 @@
 
     invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1815
+    .line 1826
     invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->h()Ljava/lang/String;
 
     move-result-object v2
@@ -324,7 +324,7 @@
 
     invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1816
+    .line 1827
     invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->h()Ljava/lang/String;
 
     move-result-object v2
@@ -361,7 +361,7 @@
 
     invoke-static {v2, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1818
+    .line 1829
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;
 
     iget-object v2, v2, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -378,7 +378,7 @@
 
     if-ne v1, v2, :cond_1b1
 
-    .line 1820
+    .line 1831
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -391,7 +391,7 @@
 
     move v1, v0
 
-    .line 1828
+    .line 1839
     :goto_15f
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;
 
@@ -405,7 +405,7 @@
 
     move v2, v0
 
-    .line 1829
+    .line 1840
     :goto_16a
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;
 
@@ -423,7 +423,7 @@
 
     if-ge v2, v0, :cond_1bf
 
-    .line 1830
+    .line 1841
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -442,18 +442,18 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    const v3, 0x7f0202a3
+    const v3, 0x7f0202aa
 
     invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1829
+    .line 1840
     add-int/lit8 v0, v2, 0x1
 
     move v2, v0
 
     goto :goto_16a
 
-    .line 1800
+    .line 1811
     :cond_196
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;
 
@@ -481,11 +481,11 @@
 
     goto/16 :goto_64
 
-    .line 1823
+    .line 1834
     :cond_1b1
     add-int/lit8 v1, v1, 0x1
 
-    .line 1824
+    .line 1835
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;
 
     iget-object v2, v2, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -498,7 +498,7 @@
 
     goto :goto_15f
 
-    .line 1832
+    .line 1843
     :cond_1bf
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$SlideImageTask;
 
@@ -518,11 +518,11 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    const v1, 0x7f0202a2
+    const v1, 0x7f0202a9
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1838
+    .line 1849
     :cond_1d7
     return-void
 .end method

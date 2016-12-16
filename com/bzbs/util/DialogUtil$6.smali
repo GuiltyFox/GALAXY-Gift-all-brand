@@ -8,21 +8,33 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/bzbs/util/DialogUtil;->a(Landroid/app/Activity;Landroid/os/Handler;Lcom/bzbs/bean/Campaign;Lcom/bzbs/bean/NFCTag;)V
+    value = Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;Ljava/lang/String;Z)V
 .end annotation
 
 
 # instance fields
 .field final synthetic a:Landroid/app/Dialog;
 
+.field final synthetic b:Landroid/widget/ImageView;
+
+.field final synthetic c:Landroid/content/Context;
+
+.field final synthetic d:Z
+
 
 # direct methods
-.method constructor <init>(Landroid/app/Dialog;)V
-    .registers 2
+.method constructor <init>(Landroid/app/Dialog;Landroid/widget/ImageView;Landroid/content/Context;Z)V
+    .registers 5
 
     .prologue
-    .line 280
+    .line 297
     iput-object p1, p0, Lcom/bzbs/util/DialogUtil$6;->a:Landroid/app/Dialog;
+
+    iput-object p2, p0, Lcom/bzbs/util/DialogUtil$6;->b:Landroid/widget/ImageView;
+
+    iput-object p3, p0, Lcom/bzbs/util/DialogUtil$6;->c:Landroid/content/Context;
+
+    iput-boolean p4, p0, Lcom/bzbs/util/DialogUtil$6;->d:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -32,19 +44,25 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 3
+    .registers 6
 
     .prologue
-    .line 282
+    .line 299
     iget-object v0, p0, Lcom/bzbs/util/DialogUtil$6;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 283
-    const/4 v0, 0x1
+    .line 301
+    iget-object v0, p0, Lcom/bzbs/util/DialogUtil$6;->b:Landroid/widget/ImageView;
 
-    sput-boolean v0, Lcom/bzbs/util/DialogUtil;->a:Z
+    new-instance v1, Lcom/bzbs/util/DialogUtil$6$1;
 
-    .line 284
+    invoke-direct {v1, p0}, Lcom/bzbs/util/DialogUtil$6$1;-><init>(Lcom/bzbs/util/DialogUtil$6;)V
+
+    const-wide/16 v2, 0x1f4
+
+    invoke-virtual {v0, v1, v2, v3}, Landroid/widget/ImageView;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 307
     return-void
 .end method

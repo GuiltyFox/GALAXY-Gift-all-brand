@@ -212,7 +212,7 @@
 
     iget-object v2, p0, Lcom/samsung/privilege/util/RxPermissionUtils;->d:Landroid/content/Context;
 
-    const v3, 0x7f0903c4
+    const v3, 0x7f0903e2
 
     .line 82
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -409,7 +409,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/util/RxPermissionUtils;->d:Landroid/content/Context;
 
-    const v2, 0x7f0903c5
+    const v2, 0x7f0903e3
 
     .line 51
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;

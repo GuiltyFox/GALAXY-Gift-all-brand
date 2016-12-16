@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 409
+    .line 419
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$8$1$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8$1;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$8$1$1;->a:Ljava/lang/String;
@@ -41,7 +41,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 411
+    .line 421
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$8$1$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$8$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8;
@@ -50,7 +50,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setEnabled(Z)V
 
-    .line 412
+    .line 422
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$8$1$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$8$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8;
@@ -59,7 +59,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setEnabled(Z)V
 
-    .line 413
+    .line 423
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$8$1$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$8$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8;
@@ -68,7 +68,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setEnabled(Z)V
 
-    .line 414
+    .line 424
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$8$1$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$8$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8;
@@ -79,18 +79,18 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setBackgroundResource(I)V
 
-    .line 415
+    .line 425
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$8$1$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$8$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$8;->f:Landroid/widget/RelativeLayout;
 
-    const v1, 0x7f020355
+    const v1, 0x7f02035d
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setBackgroundResource(I)V
 
-    .line 417
+    .line 427
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$8$1$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$8$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8;
@@ -105,7 +105,7 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/widget/EditText;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 425
+    .line 435
     :try_start_44
     new-instance v0, Lorg/json/JSONObject;
 
@@ -113,7 +113,7 @@
 
     invoke-direct {v0, v1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 426
+    .line 436
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$8$1$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8$1;
 
     iget-object v1, v1, Lcom/samsung/privilege/util/DialogLoginGift$8$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$8;
@@ -130,11 +130,11 @@
     :try_end_5b
     .catch Ljava/lang/Exception; {:try_start_44 .. :try_end_5b} :catch_5c
 
-    .line 430
+    .line 440
     :goto_5b
     return-void
 
-    .line 427
+    .line 437
     :catch_5c
     move-exception v0
 

@@ -37,7 +37,7 @@
     .registers 5
 
     .prologue
-    .line 180
+    .line 190
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$4;->a:Ljava/lang/String;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$4;->b:Landroid/content/Context;
@@ -57,22 +57,22 @@
     .registers 10
 
     .prologue
-    .line 185
+    .line 195
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->a()Landroid/app/Dialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 187
+    .line 197
     invoke-static {}, Lcom/facebook/AccessToken;->getCurrentAccessToken()Lcom/facebook/AccessToken;
 
     move-result-object v1
 
-    .line 188
+    .line 198
     if-eqz v1, :cond_3e
 
-    .line 190
+    .line 200
     :try_start_d
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$4;->a:Ljava/lang/String;
 
@@ -96,7 +96,7 @@
     :try_end_24
     .catch Ljava/lang/Exception; {:try_start_d .. :try_end_24} :catch_2d
 
-    .line 200
+    .line 210
     :goto_24
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$4;->d:Ljava/lang/String;
 
@@ -104,14 +104,14 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 201
+    .line 211
     return-void
 
-    .line 191
+    .line 201
     :catch_2d
     move-exception v0
 
-    .line 192
+    .line 202
     const-string/jumbo v0, "Can not Login!!!"
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$4;->b:Landroid/content/Context;
@@ -120,14 +120,14 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
 
-    .line 194
+    .line 204
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$4;->b:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->R(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->U(Landroid/content/Context;)V
 
     goto :goto_24
 
-    .line 197
+    .line 207
     :cond_3e
     const-string/jumbo v0, "Can not get Facebook AccessToken!!!"
 
@@ -144,21 +144,21 @@
     .registers 3
 
     .prologue
-    .line 207
+    .line 217
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->a()Landroid/app/Dialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 209
+    .line 219
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$4;->d:Ljava/lang/String;
 
     const-string/jumbo v1, "Click Facebook Login Cancel"
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 210
+    .line 220
     return-void
 .end method
 
@@ -166,21 +166,21 @@
     .registers 4
 
     .prologue
-    .line 216
+    .line 226
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->a()Landroid/app/Dialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 218
+    .line 228
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$4;->d:Ljava/lang/String;
 
     const-string/jumbo v1, "Click Facebook Login Fail"
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 219
+    .line 229
     return-void
 .end method
 
@@ -188,7 +188,7 @@
     .registers 2
 
     .prologue
-    .line 180
+    .line 190
     check-cast p1, Lcom/facebook/login/LoginResult;
 
     invoke-virtual {p0, p1}, Lcom/samsung/privilege/util/DialogLoginGift$4;->a(Lcom/facebook/login/LoginResult;)V

@@ -416,108 +416,108 @@
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->U:Ljava/lang/String;
 
-    .line 351
+    .line 350
     const-string/jumbo v0, "https://wallet.buzzebees.com/"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->V:Ljava/lang/String;
 
-    .line 352
+    .line 351
     const-string/jumbo v0, "https://misc.buzzebees.com/gift/point_eng.html"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->W:Ljava/lang/String;
 
-    .line 353
+    .line 352
     const-string/jumbo v0, "https://misc.buzzebees.com/gift/point_th.html"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->X:Ljava/lang/String;
 
-    .line 354
+    .line 353
     sput v6, Lcom/bzbs/data/AppSetting;->Y:I
 
-    .line 355
+    .line 354
     const/16 v0, 0xe10
 
     sput v0, Lcom/bzbs/data/AppSetting;->Z:I
 
-    .line 356
+    .line 355
     sput v6, Lcom/bzbs/data/AppSetting;->aa:I
 
-    .line 357
+    .line 356
     sput v5, Lcom/bzbs/data/AppSetting;->ab:I
 
-    .line 360
+    .line 359
     sput-boolean v3, Lcom/bzbs/data/AppSetting;->ac:Z
 
-    .line 427
+    .line 426
     const-string/jumbo v0, "GalaxyGift"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->ad:Ljava/lang/String;
 
-    .line 469
+    .line 468
     const-string/jumbo v0, "com.samsung.privilege"
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->ae:Ljava/lang/String;
 
-    .line 472
+    .line 471
     sput v3, Lcom/bzbs/data/AppSetting;->af:I
 
-    .line 473
+    .line 472
     sput v3, Lcom/bzbs/data/AppSetting;->ag:I
 
-    .line 474
+    .line 473
     const/16 v0, 0x1388
 
     sput v0, Lcom/bzbs/data/AppSetting;->ah:I
 
-    .line 475
+    .line 474
     const/16 v0, 0x2710
 
     sput v0, Lcom/bzbs/data/AppSetting;->ai:I
 
-    .line 476
+    .line 475
     sput v4, Lcom/bzbs/data/AppSetting;->aj:I
 
-    .line 477
+    .line 476
     const/16 v0, 0x200
 
     sput v0, Lcom/bzbs/data/AppSetting;->ak:I
 
-    .line 478
+    .line 477
     sput v5, Lcom/bzbs/data/AppSetting;->al:I
 
-    .line 480
+    .line 479
     sput v3, Lcom/bzbs/data/AppSetting;->am:I
 
-    .line 481
+    .line 480
     sput v3, Lcom/bzbs/data/AppSetting;->an:I
 
-    .line 482
+    .line 481
     const/16 v0, 0x19
 
     sput v0, Lcom/bzbs/data/AppSetting;->ao:I
 
-    .line 483
+    .line 482
     const/16 v0, 0x32
 
     sput v0, Lcom/bzbs/data/AppSetting;->ap:I
 
-    .line 485
+    .line 484
     const-wide/16 v0, 0x0
 
     sput-wide v0, Lcom/bzbs/data/AppSetting;->aq:J
 
-    .line 489
+    .line 488
     sput-boolean v3, Lcom/bzbs/data/AppSetting;->ar:Z
 
-    .line 490
+    .line 489
     sput-boolean v4, Lcom/bzbs/data/AppSetting;->as:Z
 
-    .line 492
+    .line 491
     const/16 v0, 0x1e
 
     sput v0, Lcom/bzbs/data/AppSetting;->at:I
 
-    .line 525
+    .line 524
     const/4 v0, 0x3
 
     new-array v0, v0, [Ljava/lang/String;
@@ -538,7 +538,7 @@
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->au:[Ljava/lang/String;
 
-    .line 551
+    .line 550
     sget-object v0, Lcom/bzbs/data/AppSetting;->au:[Ljava/lang/String;
 
     invoke-static {v0}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
@@ -547,13 +547,13 @@
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->av:Ljava/util/List;
 
-    .line 554
+    .line 553
     sput v3, Lcom/bzbs/data/AppSetting;->aw:I
 
-    .line 555
+    .line 554
     sput v3, Lcom/bzbs/data/AppSetting;->ax:I
 
-    .line 557
+    .line 556
     sput v3, Lcom/bzbs/data/AppSetting;->ay:I
 
     return-void
@@ -1713,71 +1713,71 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 561
+    .line 560
     sget-object v0, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
 
     sput-object v0, Lcom/bzbs/lib/survey/LibConst;->e:Ljava/lang/String;
 
-    .line 562
+    .line 561
     sget-object v0, Lcom/bzbs/data/AppSetting;->S:Ljava/lang/String;
 
     sput-object v0, Lcom/bzbs/lib/survey/LibConst;->f:Ljava/lang/String;
 
-    .line 563
+    .line 562
     invoke-static {p0}, Lcom/bzbs/data/AppSetting;->d(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->a(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 564
+    .line 563
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->c(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 565
+    .line 564
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->b(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 566
+    .line 565
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->o(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->d(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 567
+    .line 566
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)J
 
     move-result-wide v0
 
     invoke-static {p0, v0, v1}, Lcom/bzbs/lib/survey/LibUserLogin;->a(Landroid/content/Context;J)Z
 
-    .line 568
+    .line 567
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->e(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 570
+    .line 569
     invoke-static {p0, v2}, Lcom/bzbs/lib/survey/LibUserLogin;->a(Landroid/content/Context;Z)Z
 
-    .line 571
+    .line 570
     invoke-static {p0, v2}, Lcom/bzbs/lib/survey/LibUserLogin;->b(Landroid/content/Context;Z)Z
 
-    .line 572
+    .line 571
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->G(Landroid/content/Context;)Z
 
     move-result v0
 
     invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->c(Landroid/content/Context;Z)Z
 
-    .line 573
+    .line 572
     return-void
 .end method

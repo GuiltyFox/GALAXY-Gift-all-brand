@@ -6,19 +6,19 @@
 # instance fields
 .field btnAddPicture:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100678
+        value = 0x7f1006a3
     .end annotation
 .end field
 
 .field contentImagePost:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066c
+        value = 0x7f100697
     .end annotation
 .end field
 
 .field edtTextComment:Landroid/widget/EditText;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066f
+        value = 0x7f10069a
     .end annotation
 .end field
 
@@ -39,7 +39,7 @@
 
 .field imagePost:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066d
+        value = 0x7f100698
     .end annotation
 .end field
 
@@ -53,7 +53,7 @@
 
 .field mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10061f
+        value = 0x7f100642
     .end annotation
 .end field
 
@@ -65,7 +65,7 @@
 
 .field pvLinearDeterminate:Lcom/rey/material/widget/ProgressView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066b
+        value = 0x7f100696
     .end annotation
 .end field
 
@@ -75,13 +75,13 @@
 
 .field recyclerItemBelow:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100679
+        value = 0x7f1006a4
     .end annotation
 .end field
 
 .field recyclerView:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066a
+        value = 0x7f100695
     .end annotation
 .end field
 
@@ -91,7 +91,7 @@
 
 .field tvResult:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10065e
+        value = 0x7f100681
     .end annotation
 .end field
 
@@ -873,7 +873,7 @@
     .line 275
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->btnAddPicture:Landroid/widget/ImageView;
 
-    const v1, 0x7f020265
+    const v1, 0x7f02026a
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -1570,7 +1570,7 @@
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
     .line 127
-    const v0, 0x7f04014b
+    const v0, 0x7f040153
 
     return v0
 .end method
@@ -1647,7 +1647,7 @@
     .registers 4
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f100678
+            0x7f1006a3
         }
     .end annotation
 
@@ -1675,8 +1675,8 @@
     .registers 6
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f10066e,
-            0x7f10041b
+            0x7f100699,
+            0x7f10042b
         }
     .end annotation
 
@@ -1690,7 +1690,7 @@
 
     move-result v0
 
-    const v1, 0x7f10066e
+    const v1, 0x7f100699
 
     if-ne v0, v1, :cond_f
 

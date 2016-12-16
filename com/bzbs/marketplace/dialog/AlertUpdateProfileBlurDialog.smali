@@ -311,7 +311,7 @@
     invoke-virtual {v5, v2}, Landroid/app/Dialog;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 170
-    const v0, 0x7f100286
+    const v0, 0x7f100296
 
     invoke-virtual {v6, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -329,7 +329,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 172
-    const v2, 0x7f1001ed
+    const v2, 0x7f1001ef
 
     invoke-virtual {v6, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -338,7 +338,7 @@
     check-cast v2, Landroid/widget/Button;
 
     .line 173
-    const v3, 0x7f100290
+    const v3, 0x7f1002a0
 
     invoke-virtual {v6, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

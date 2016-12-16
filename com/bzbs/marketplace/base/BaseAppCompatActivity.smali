@@ -396,13 +396,13 @@
 
     const-string/jumbo v2, ""
 
-    const v3, 0x7f090413
+    const v3, 0x7f090431
 
     invoke-virtual {p0, v3}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getString(I)Ljava/lang/String;
 
     move-result-object v3
 
-    const v4, 0x7f0903ed
+    const v4, 0x7f09040b
 
     invoke-virtual {p0, v4}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getString(I)Ljava/lang/String;
 
@@ -901,7 +901,7 @@
     .line 317
     iget-object v1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->k:Landroid/widget/TextView;
 
-    const v2, 0x7f0903b5
+    const v2, 0x7f0903d3
 
     invoke-virtual {p0, v2}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getString(I)Ljava/lang/String;
 
@@ -979,7 +979,7 @@
     :cond_6e
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->k:Landroid/widget/TextView;
 
-    const v1, 0x7f0903b6
+    const v1, 0x7f0903d4
 
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getString(I)Ljava/lang/String;
 
@@ -990,7 +990,7 @@
     .line 365
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->j:Landroid/widget/TextView;
 
-    const v1, 0x7f0903b7
+    const v1, 0x7f0903d5
 
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getString(I)Ljava/lang/String;
 
@@ -1076,9 +1076,9 @@
     .registers 7
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f1006d8,
-            0x7f1006d9,
-            0x7f1006da
+            0x7f100702,
+            0x7f100703,
+            0x7f100704
         }
     .end annotation
 
@@ -1240,7 +1240,7 @@
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->x:Landroid/os/Handler;
 
     .line 155
-    const v0, 0x7f1006cc
+    const v0, 0x7f1006f6
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1251,7 +1251,7 @@
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->h:Landroid/support/v7/widget/Toolbar;
 
     .line 156
-    const v0, 0x7f100633
+    const v0, 0x7f100656
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1262,7 +1262,7 @@
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->i:Landroid/widget/TextView;
 
     .line 157
-    const v0, 0x7f1006d9
+    const v0, 0x7f100703
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1273,7 +1273,7 @@
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->j:Landroid/widget/TextView;
 
     .line 158
-    const v0, 0x7f1006d8
+    const v0, 0x7f100702
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1284,7 +1284,7 @@
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->k:Landroid/widget/TextView;
 
     .line 159
-    const v0, 0x7f1006da
+    const v0, 0x7f100704
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1295,7 +1295,7 @@
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->l:Landroid/widget/TextView;
 
     .line 160
-    const v0, 0x7f1006d2
+    const v0, 0x7f1006fc
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1306,7 +1306,7 @@
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->n:Landroid/widget/LinearLayout;
 
     .line 161
-    const v0, 0x7f1006d0
+    const v0, 0x7f1006fa
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1317,7 +1317,7 @@
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->o:Landroid/widget/ImageView;
 
     .line 162
-    const v0, 0x7f1006d1
+    const v0, 0x7f1006fb
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1328,7 +1328,7 @@
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->m:Landroid/widget/TextView;
 
     .line 163
-    const v0, 0x7f1006cf
+    const v0, 0x7f1006f9
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1339,7 +1339,7 @@
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->v:Landroid/widget/RelativeLayout;
 
     .line 164
-    const v0, 0x7f1006d4
+    const v0, 0x7f1006fe
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1361,7 +1361,7 @@
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->p:Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
 
     .line 166
-    const v0, 0x7f1006d6
+    const v0, 0x7f100700
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1372,7 +1372,7 @@
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->q:Landroid/widget/RelativeLayout;
 
     .line 167
-    const v0, 0x7f1003a1
+    const v0, 0x7f1003b1
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1383,7 +1383,7 @@
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->r:Landroid/widget/ImageView;
 
     .line 168
-    const v0, 0x7f1006d7
+    const v0, 0x7f100701
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1394,7 +1394,7 @@
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->s:Landroid/widget/ImageView;
 
     .line 169
-    const v0, 0x7f1006d5
+    const v0, 0x7f1006ff
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1405,7 +1405,7 @@
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->t:Landroid/widget/ImageView;
 
     .line 170
-    const v0, 0x7f1006ce
+    const v0, 0x7f1006f8
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 
@@ -1416,7 +1416,7 @@
     iput-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->u:Landroid/widget/ImageView;
 
     .line 172
-    const v0, 0x7f100686
+    const v0, 0x7f1006b1
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->findViewById(I)Landroid/view/View;
 

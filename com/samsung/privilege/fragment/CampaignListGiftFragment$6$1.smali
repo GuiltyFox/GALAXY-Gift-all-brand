@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 336
+    .line 358
     iput-object p1, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$1;->b:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;
 
     iput-object p2, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$1;->a:Ljava/lang/String;
@@ -41,7 +41,7 @@
     .prologue
     const/4 v5, 0x0
 
-    .line 339
+    .line 361
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$1;->b:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;->c:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
@@ -52,11 +52,11 @@
 
     if-nez v0, :cond_c
 
-    .line 394
+    .line 418
     :goto_b
     return-void
 
-    .line 341
+    .line 365
     :cond_c
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$1;->b:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;
 
@@ -74,10 +74,10 @@
 
     check-cast v0, Landroid/support/v4/widget/SwipeRefreshLayout;
 
-    .line 342
+    .line 366
     invoke-virtual {v0, v5}, Landroid/support/v4/widget/SwipeRefreshLayout;->setRefreshing(Z)V
 
-    .line 344
+    .line 368
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$1;->b:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;->c:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
@@ -88,7 +88,7 @@
 
     move-result-object v2
 
-    .line 346
+    .line 370
     :try_start_2b
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -120,7 +120,7 @@
 
     move-result-object v0
 
-    .line 347
+    .line 371
     if-eqz v0, :cond_70
 
     const-string/jumbo v1, ""
@@ -131,7 +131,7 @@
 
     if-nez v1, :cond_70
 
-    .line 348
+    .line 372
     invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v0
@@ -148,7 +148,7 @@
 
     if-eqz v0, :cond_70
 
-    .line 349
+    .line 373
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$1;->b:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;->c:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
@@ -161,15 +161,15 @@
 
     goto :goto_b
 
-    .line 353
+    .line 377
     :catch_6f
     move-exception v0
 
-    .line 357
+    .line 381
     :cond_70
     const/4 v0, 0x0
 
-    .line 359
+    .line 383
     :try_start_71
     new-instance v1, Lorg/json/JSONArray;
 
@@ -183,7 +183,7 @@
 
     move-result-object v1
 
-    .line 361
+    .line 385
     :try_start_7c
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
@@ -199,7 +199,7 @@
 
     if-ge v0, v3, :cond_13b
 
-    .line 362
+    .line 386
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$1;->b:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;->c:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
@@ -208,7 +208,7 @@
 
     invoke-static {v0, v3}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->b(Lcom/samsung/privilege/fragment/CampaignListGiftFragment;Z)Z
 
-    .line 367
+    .line 391
     :goto_92
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$1;->b:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;
 
@@ -216,7 +216,7 @@
 
     if-nez v0, :cond_149
 
-    .line 368
+    .line 392
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$1;->b:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;->c:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
@@ -231,7 +231,7 @@
 
     invoke-static {v0, v3}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->a(Lcom/samsung/privilege/fragment/CampaignListGiftFragment;Lcom/samsung/privilege/fragment/CampaignListGiftFragment$CampaignListAdapter;)Lcom/samsung/privilege/fragment/CampaignListGiftFragment$CampaignListAdapter;
 
-    .line 369
+    .line 393
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$1;->b:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;->c:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
@@ -250,14 +250,14 @@
 
     invoke-virtual {v0, v3}, Landroid/support/v7/widget/RecyclerView;->setAdapter(Landroid/support/v7/widget/RecyclerView$Adapter;)V
 
-    .line 371
+    .line 395
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
     if-nez v0, :cond_e4
 
-    .line 372
+    .line 396
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$1;->b:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;->c:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
@@ -266,7 +266,7 @@
 
     move-result-object v0
 
-    const v3, 0x7f10061e
+    const v3, 0x7f100641
 
     invoke-virtual {v0, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -274,12 +274,12 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 373
+    .line 397
     iget-object v3, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$1;->b:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;
 
     iget-object v3, v3, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;->c:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
-    const v4, 0x7f090342
+    const v4, 0x7f090358
 
     invoke-virtual {v3, v4}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->getString(I)Ljava/lang/String;
 
@@ -287,14 +287,14 @@
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 374
+    .line 398
     const/4 v3, 0x0
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setVisibility(I)V
     :try_end_e4
     .catch Ljava/lang/Exception; {:try_start_7c .. :try_end_e4} :catch_145
 
-    .line 385
+    .line 409
     :cond_e4
     :goto_e4
     if-eqz v1, :cond_132
@@ -312,7 +312,7 @@
 
     if-nez v0, :cond_132
 
-    .line 386
+    .line 410
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -341,7 +341,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LocalFileHelper;->a(Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 387
+    .line 411
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -374,7 +374,7 @@
     :try_end_132
     .catch Ljava/lang/Exception; {:try_start_e6 .. :try_end_132} :catch_160
 
-    .line 393
+    .line 417
     :cond_132
     :goto_132
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$1;->b:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;
@@ -385,7 +385,7 @@
 
     goto/16 :goto_b
 
-    .line 364
+    .line 388
     :cond_13b
     :try_start_13b
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$1;->b:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;
@@ -398,7 +398,7 @@
 
     goto/16 :goto_92
 
-    .line 380
+    .line 404
     :catch_145
     move-exception v0
 
@@ -409,7 +409,7 @@
 
     goto :goto_e4
 
-    .line 377
+    .line 401
     :cond_149
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$1;->b:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;
 
@@ -421,7 +421,7 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$CampaignListAdapter;->a(Ljava/util/List;)V
 
-    .line 378
+    .line 402
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$1;->b:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;->c:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
@@ -436,13 +436,13 @@
 
     goto :goto_e4
 
-    .line 389
+    .line 413
     :catch_160
     move-exception v0
 
     goto :goto_132
 
-    .line 380
+    .line 404
     :catch_162
     move-exception v1
 

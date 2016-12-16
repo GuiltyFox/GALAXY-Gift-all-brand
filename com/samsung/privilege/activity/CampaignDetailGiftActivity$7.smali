@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 747
+    .line 758
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$7;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$7;->a:Landroid/widget/TextView;
@@ -39,9 +39,9 @@
     .registers 6
 
     .prologue
-    const v3, 0x7f09034e
+    const v3, 0x7f090364
 
-    .line 750
+    .line 761
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$7;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     const v1, 0x7f1000f5
@@ -52,7 +52,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 751
+    .line 762
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$7;->a:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
@@ -75,17 +75,17 @@
 
     if-eqz v1, :cond_38
 
-    .line 752
+    .line 763
     const/16 v1, 0x3e8
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 753
+    .line 764
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$7;->a:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$7;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    const v2, 0x7f090334
+    const v2, 0x7f090349
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
@@ -93,17 +93,17 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 758
+    .line 769
     :goto_37
     return-void
 
-    .line 755
+    .line 766
     :cond_38
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 756
+    .line 767
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$7;->a:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$7;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;

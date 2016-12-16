@@ -154,4 +154,4 @@
 
 .field public static final abc_textfield_search_material:I = 0x7f02004e
 
-.field public static final notification_template_icon_bg:I = 0x7f020385
+.field public static final notification_template_icon_bg:I = 0x7f02038e

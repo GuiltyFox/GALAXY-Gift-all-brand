@@ -25,7 +25,7 @@
     .registers 4
 
     .prologue
-    .line 914
+    .line 925
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11$1;->c:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11$1;->a:Ljava/lang/String;
@@ -43,7 +43,7 @@
     .registers 6
 
     .prologue
-    .line 917
+    .line 928
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11$1;->c:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11;->b:Landroid/widget/ProgressBar;
@@ -52,7 +52,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 919
+    .line 930
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11$1;->c:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11;->g:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -71,7 +71,7 @@
 
     invoke-static {v0, v1, v2, v3, v4}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->a(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Ljava/lang/String;ZZZ)V
 
-    .line 922
+    .line 933
     :try_start_1b
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -109,7 +109,7 @@
     :try_end_40
     .catch Ljava/lang/Exception; {:try_start_1b .. :try_end_40} :catch_4d
 
-    .line 927
+    .line 938
     :goto_40
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11$1;->c:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$11;
 
@@ -121,10 +121,10 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 936
+    .line 947
     return-void
 
-    .line 923
+    .line 934
     :catch_4d
     move-exception v0
 

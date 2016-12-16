@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 1394
+    .line 1851
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$1;->a:Lcom/bzbs/bean/HistoryWallet;
@@ -39,7 +39,7 @@
     .registers 8
 
     .prologue
-    .line 1397
+    .line 1854
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$1;->a:Lcom/bzbs/bean/HistoryWallet;
 
     iget v0, v0, Lcom/bzbs/bean/HistoryWallet;->status:I
@@ -48,12 +48,12 @@
 
     if-ne v0, v1, :cond_8
 
-    .line 1411
+    .line 1868
     :cond_7
     :goto_7
     return-void
 
-    .line 1400
+    .line 1857
     :cond_8
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$1;->a:Lcom/bzbs/bean/HistoryWallet;
 
@@ -73,7 +73,7 @@
 
     if-nez v0, :cond_7
 
-    .line 1401
+    .line 1858
     new-instance v0, Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;
@@ -88,7 +88,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 1402
+    .line 1859
     const-string/jumbo v1, "Issuer"
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$1;->a:Lcom/bzbs/bean/HistoryWallet;
@@ -97,7 +97,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1403
+    .line 1860
     const-string/jumbo v1, "TransactionId"
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$1;->a:Lcom/bzbs/bean/HistoryWallet;
@@ -106,7 +106,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1404
+    .line 1861
     const-string/jumbo v1, "Message"
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$1;->a:Lcom/bzbs/bean/HistoryWallet;
@@ -115,14 +115,14 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 1405
+    .line 1862
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 1408
+    .line 1865
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -137,9 +137,11 @@
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    invoke-static {v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->d(Lcom/samsung/privilege/activity/WalletCardActivity;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->e(Lcom/samsung/privilege/activity/WalletCardActivity;)Lcom/bzbs/bean/DashboardItem;
 
     move-result-object v1
+
+    iget-object v1, v1, Lcom/bzbs/bean/DashboardItem;->wallet_issuer:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -155,9 +157,11 @@
 
     iget-object v2, v2, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    invoke-static {v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->d(Lcom/samsung/privilege/activity/WalletCardActivity;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->e(Lcom/samsung/privilege/activity/WalletCardActivity;)Lcom/bzbs/bean/DashboardItem;
 
     move-result-object v2
+
+    iget-object v2, v2, Lcom/bzbs/bean/DashboardItem;->wallet_issuer:Ljava/lang/String;
 
     const-wide/16 v4, 0x1
 

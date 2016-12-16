@@ -25,7 +25,7 @@
     .registers 4
 
     .prologue
-    .line 2451
+    .line 2536
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$38;->c:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$38;->a:Ljava/util/ArrayList;
@@ -43,7 +43,7 @@
     .registers 2
 
     .prologue
-    .line 2516
+    .line 2601
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .registers 4
 
     .prologue
-    .line 2455
+    .line 2540
     return-void
 .end method
 
@@ -59,11 +59,11 @@
     .registers 8
 
     .prologue
-    const v5, 0x7f1006c3
+    const v5, 0x7f1006ed
 
     const v4, 0x7f10010d
 
-    .line 2459
+    .line 2544
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$38;->c:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->j(Lcom/samsung/privilege/activity/MainPagerActivity;)Landroid/view/View;
@@ -72,7 +72,7 @@
 
     if-eqz v0, :cond_6d
 
-    .line 2460
+    .line 2545
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$38;->c:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->j(Lcom/samsung/privilege/activity/MainPagerActivity;)Landroid/view/View;
@@ -85,7 +85,7 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 2461
+    .line 2546
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$38;->c:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->j(Lcom/samsung/privilege/activity/MainPagerActivity;)Landroid/view/View;
@@ -98,14 +98,14 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 2462
+    .line 2547
     sget v2, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->z:I
 
     div-int/lit8 v2, v2, 0x4
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setMinWidth(I)V
 
-    .line 2463
+    .line 2548
     const-string/jumbo v2, "#7ed1f3"
 
     invoke-static {v2}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -114,7 +114,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 2471
+    .line 2556
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$38;->a:Ljava/util/ArrayList;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$38;->c:Lcom/samsung/privilege/activity/MainPagerActivity;
@@ -129,7 +129,7 @@
 
     check-cast v1, Lcom/bzbs/bean/CampaignCategory;
 
-    .line 2473
+    .line 2558
     iget-object v2, v1, Lcom/bzbs/bean/CampaignCategory;->image_url_inactive:Ljava/lang/String;
 
     if-eqz v2, :cond_e7
@@ -144,7 +144,7 @@
 
     if-nez v2, :cond_e7
 
-    .line 2474
+    .line 2559
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$38;->c:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v2}, Lcom/bumptech/glide/Glide;->a(Landroid/support/v4/app/FragmentActivity;)Lcom/bumptech/glide/RequestManager;
@@ -169,7 +169,7 @@
 
     invoke-virtual {v1, v0}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
 
-    .line 2481
+    .line 2566
     :cond_6d
     :goto_6d
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$38;->b:Lcom/ogaclejapan/smarttablayout/SmartTabLayout;
@@ -178,28 +178,28 @@
 
     move-result-object v2
 
-    .line 2482
+    .line 2567
     invoke-virtual {v2, v5}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 2483
+    .line 2568
     invoke-virtual {v2, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 2484
+    .line 2569
     sget v3, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->z:I
 
     div-int/lit8 v3, v3, 0x4
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setMinWidth(I)V
 
-    .line 2486
+    .line 2571
     const-string/jumbo v3, "#ffffff"
 
     invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -208,7 +208,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 2498
+    .line 2583
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$38;->a:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -217,7 +217,7 @@
 
     check-cast v1, Lcom/bzbs/bean/CampaignCategory;
 
-    .line 2500
+    .line 2585
     iget-object v3, v1, Lcom/bzbs/bean/CampaignCategory;->image_url_active:Ljava/lang/String;
 
     if-eqz v3, :cond_123
@@ -232,7 +232,7 @@
 
     if-nez v3, :cond_123
 
-    .line 2501
+    .line 2586
     iget-object v3, p0, Lcom/samsung/privilege/activity/MainPagerActivity$38;->c:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v3}, Lcom/bumptech/glide/Glide;->a(Landroid/support/v4/app/FragmentActivity;)Lcom/bumptech/glide/RequestManager;
@@ -257,7 +257,7 @@
 
     invoke-virtual {v3, v0}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
 
-    .line 2507
+    .line 2592
     :goto_c0
     const-string/jumbo v0, "Main Page"
 
@@ -283,20 +283,20 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2509
+    .line 2594
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$38;->c:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v0, v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->a(Lcom/samsung/privilege/activity/MainPagerActivity;Landroid/view/View;)Landroid/view/View;
 
-    .line 2510
+    .line 2595
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$38;->c:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v0, p1}, Lcom/samsung/privilege/activity/MainPagerActivity;->a(Lcom/samsung/privilege/activity/MainPagerActivity;I)I
 
-    .line 2511
+    .line 2596
     return-void
 
-    .line 2476
+    .line 2561
     :cond_e7
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -330,7 +330,7 @@
 
     move-result-object v1
 
-    .line 2477
+    .line 2562
     iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$38;->c:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v2}, Lcom/bumptech/glide/Glide;->a(Landroid/support/v4/app/FragmentActivity;)Lcom/bumptech/glide/RequestManager;
@@ -355,7 +355,7 @@
 
     goto/16 :goto_6d
 
-    .line 2503
+    .line 2588
     :cond_123
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -389,7 +389,7 @@
 
     move-result-object v3
 
-    .line 2504
+    .line 2589
     iget-object v4, p0, Lcom/samsung/privilege/activity/MainPagerActivity$38;->c:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v4}, Lcom/bumptech/glide/Glide;->a(Landroid/support/v4/app/FragmentActivity;)Lcom/bumptech/glide/RequestManager;

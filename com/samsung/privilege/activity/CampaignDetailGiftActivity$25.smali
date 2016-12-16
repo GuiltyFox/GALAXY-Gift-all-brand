@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 2582
+    .line 2593
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$25;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +35,10 @@
     .registers 6
 
     .prologue
-    .line 2584
+    .line 2595
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 2586
+    .line 2597
     new-instance v0, Landroid/content/Intent;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$25;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -51,18 +51,18 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 2587
+    .line 2598
     const-string/jumbo v1, "force_update"
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 2588
+    .line 2599
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$25;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 2589
+    .line 2600
     return-void
 .end method

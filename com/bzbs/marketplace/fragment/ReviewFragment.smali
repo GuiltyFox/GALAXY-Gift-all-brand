@@ -14,37 +14,37 @@
 
 .field btnAddPicture:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100678
+        value = 0x7f1006a3
     .end annotation
 .end field
 
 .field btnAddSticker:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10067b
+        value = 0x7f1006a6
     .end annotation
 .end field
 
 .field contentImagePost:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066c
+        value = 0x7f100697
     .end annotation
 .end field
 
 .field contentPager:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10067c
+        value = 0x7f1006a7
     .end annotation
 .end field
 
 .field contentPost:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100669
+        value = 0x7f100694
     .end annotation
 .end field
 
 .field edtTextComment:Landroid/widget/EditText;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066f
+        value = 0x7f10069a
     .end annotation
 .end field
 
@@ -65,7 +65,7 @@
 
 .field imagePost:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066d
+        value = 0x7f100698
     .end annotation
 .end field
 
@@ -86,7 +86,7 @@
 
 .field listViewHorizontal:Lit/sephiroth/android/library/widget/HListView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10067d
+        value = 0x7f1006a8
     .end annotation
 .end field
 
@@ -94,7 +94,7 @@
 
 .field mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10061f
+        value = 0x7f100642
     .end annotation
 .end field
 
@@ -106,7 +106,7 @@
 
 .field pvLinearDeterminate:Lcom/rey/material/widget/ProgressView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066b
+        value = 0x7f100696
     .end annotation
 .end field
 
@@ -116,13 +116,13 @@
 
 .field recyclerItemBelow:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100679
+        value = 0x7f1006a4
     .end annotation
 .end field
 
 .field recyclerView:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066a
+        value = 0x7f100695
     .end annotation
 .end field
 
@@ -132,7 +132,7 @@
 
 .field tvNoData:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10067a
+        value = 0x7f1006a5
     .end annotation
 .end field
 
@@ -142,7 +142,7 @@
 
 .field viewPager:Landroid/support/v4/view/ViewPager;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10025b
+        value = 0x7f10026b
     .end annotation
 .end field
 
@@ -708,7 +708,7 @@
     :cond_ce
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->a:Landroid/app/Activity;
 
-    const v1, 0x7f0903b9
+    const v1, 0x7f0903d7
 
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->getString(I)Ljava/lang/String;
 
@@ -1822,7 +1822,7 @@
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
     .line 157
-    const v0, 0x7f04014d
+    const v0, 0x7f040155
 
     return v0
 .end method
@@ -1897,8 +1897,8 @@
     .registers 5
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f100678,
-            0x7f10067b
+            0x7f1006a3,
+            0x7f1006a6
         }
     .end annotation
 
@@ -1952,7 +1952,7 @@
 
     .line 546
     :pswitch_data_22
-    .packed-switch 0x7f100678
+    .packed-switch 0x7f1006a3
         :pswitch_f
         :pswitch_e
         :pswitch_e
@@ -1964,7 +1964,7 @@
     .registers 4
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f10066e
+            0x7f100699
         }
     .end annotation
 
@@ -1984,7 +1984,7 @@
     .registers 7
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f10041b
+            0x7f10042b
         }
     .end annotation
 

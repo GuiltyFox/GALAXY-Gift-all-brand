@@ -14,19 +14,19 @@
 
 .field public static final center:I = 0x7f100032
 
-.field public static final com_facebook_body_frame:I = 0x7f10050c
+.field public static final com_facebook_body_frame:I = 0x7f10051c
 
-.field public static final com_facebook_button_xout:I = 0x7f10050e
+.field public static final com_facebook_button_xout:I = 0x7f10051e
 
-.field public static final com_facebook_fragment_container:I = 0x7f10050a
+.field public static final com_facebook_fragment_container:I = 0x7f10051a
 
-.field public static final com_facebook_login_activity_progress_bar:I = 0x7f10050b
+.field public static final com_facebook_login_activity_progress_bar:I = 0x7f10051b
 
-.field public static final com_facebook_tooltip_bubble_view_bottom_pointer:I = 0x7f100510
+.field public static final com_facebook_tooltip_bubble_view_bottom_pointer:I = 0x7f100520
 
-.field public static final com_facebook_tooltip_bubble_view_text_body:I = 0x7f10050f
+.field public static final com_facebook_tooltip_bubble_view_text_body:I = 0x7f10051f
 
-.field public static final com_facebook_tooltip_bubble_view_top_pointer:I = 0x7f10050d
+.field public static final com_facebook_tooltip_bubble_view_top_pointer:I = 0x7f10051d
 
 .field public static final display_always:I = 0x7f10007e
 
@@ -36,7 +36,7 @@
 
 .field public static final left:I = 0x7f100037
 
-.field public static final messenger_send_button:I = 0x7f1006b7
+.field public static final messenger_send_button:I = 0x7f1006e1
 
 .field public static final never_display:I = 0x7f10007f
 

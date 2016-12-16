@@ -57,28 +57,28 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 379
+    .line 381
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->F(Landroid/content/Context;)Z
 
     move-result v0
 
     if-ne v0, v1, :cond_49
 
-    .line 380
+    .line 382
     sget-object v0, Lcom/samsung/privilege/util/ResumeUtil;->a:Ljava/lang/String;
 
     const-string/jumbo v1, "this token need to logout..."
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 382
+    .line 384
     const-string/jumbo v2, ""
 
-    .line 383
+    .line 385
     const-string/jumbo v0, ""
 
-    .line 385
-    const v1, 0x7f0903ed
+    .line 387
+    const v1, 0x7f09040b
 
     :try_start_18
     invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -87,7 +87,7 @@
 
     move-result-object v1
 
-    .line 386
+    .line 388
     const v2, 0x7f09008b
 
     :try_start_1f
@@ -97,15 +97,15 @@
 
     move-result-object v0
 
-    .line 391
+    .line 393
     :goto_23
     invoke-static {v1, v0, p1}, Lcom/samsung/privilege/util/ResumeUtil;->a(Ljava/lang/String;Ljava/lang/String;Landroid/app/Activity;)V
 
-    .line 425
+    .line 427
     :goto_26
     return-void
 
-    .line 387
+    .line 389
     :catch_27
     move-exception v1
 
@@ -115,7 +115,7 @@
 
     move-object v2, v6
 
-    .line 388
+    .line 390
     :goto_2b
     sget-object v3, Lcom/samsung/privilege/util/ResumeUtil;->a:Ljava/lang/String;
 
@@ -145,7 +145,7 @@
 
     goto :goto_23
 
-    .line 393
+    .line 395
     :cond_49
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->C(Landroid/content/Context;)Z
 
@@ -153,21 +153,21 @@
 
     if-nez v0, :cond_91
 
-    .line 394
+    .line 396
     sget-object v0, Lcom/samsung/privilege/util/ResumeUtil;->a:Ljava/lang/String;
 
     const-string/jumbo v1, "don\'t allow use, close application..."
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 396
+    .line 398
     const-string/jumbo v2, ""
 
-    .line 397
+    .line 399
     const-string/jumbo v0, ""
 
-    .line 399
-    const v1, 0x7f0903ed
+    .line 401
+    const v1, 0x7f09040b
 
     :try_start_60
     invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -176,7 +176,7 @@
 
     move-result-object v1
 
-    .line 400
+    .line 402
     const v2, 0x7f090085
 
     :try_start_67
@@ -186,13 +186,13 @@
 
     move-result-object v0
 
-    .line 405
+    .line 407
     :goto_6b
     invoke-static {v1, v0, p1}, Lcom/samsung/privilege/util/ResumeUtil;->b(Ljava/lang/String;Ljava/lang/String;Landroid/app/Activity;)V
 
     goto :goto_26
 
-    .line 401
+    .line 403
     :catch_6f
     move-exception v1
 
@@ -202,7 +202,7 @@
 
     move-object v2, v6
 
-    .line 402
+    .line 404
     :goto_73
     sget-object v3, Lcom/samsung/privilege/util/ResumeUtil;->a:Ljava/lang/String;
 
@@ -232,7 +232,7 @@
 
     goto :goto_6b
 
-    .line 407
+    .line 409
     :cond_91
     invoke-static {p0}, Lcom/bzbs/data/UserLogin;->D(Landroid/content/Context;)Z
 
@@ -240,21 +240,21 @@
 
     if-ne v0, v1, :cond_da
 
-    .line 408
+    .line 410
     sget-object v0, Lcom/samsung/privilege/util/ResumeUtil;->a:Ljava/lang/String;
 
     const-string/jumbo v1, "have new version?"
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 410
+    .line 412
     const-string/jumbo v2, ""
 
-    .line 411
+    .line 413
     const-string/jumbo v0, ""
 
-    .line 413
-    const v1, 0x7f0903ed
+    .line 415
+    const v1, 0x7f09040b
 
     :try_start_a8
     invoke-virtual {p0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -263,7 +263,7 @@
 
     move-result-object v1
 
-    .line 414
+    .line 416
     const v2, 0x7f090088
 
     :try_start_af
@@ -273,13 +273,13 @@
 
     move-result-object v0
 
-    .line 419
+    .line 421
     :goto_b3
     invoke-static {v1, v0, p1}, Lcom/samsung/privilege/util/ResumeUtil;->c(Ljava/lang/String;Ljava/lang/String;Landroid/app/Activity;)V
 
     goto/16 :goto_26
 
-    .line 415
+    .line 417
     :catch_b8
     move-exception v1
 
@@ -289,7 +289,7 @@
 
     move-object v2, v6
 
-    .line 416
+    .line 418
     :goto_bc
     sget-object v3, Lcom/samsung/privilege/util/ResumeUtil;->a:Ljava/lang/String;
 
@@ -319,7 +319,7 @@
 
     goto :goto_b3
 
-    .line 421
+    .line 423
     :cond_da
     sget-object v0, Lcom/samsung/privilege/util/ResumeUtil;->a:Ljava/lang/String;
 
@@ -329,19 +329,19 @@
 
     goto/16 :goto_26
 
-    .line 415
+    .line 417
     :catch_e4
     move-exception v2
 
     goto :goto_bc
 
-    .line 401
+    .line 403
     :catch_e6
     move-exception v2
 
     goto :goto_73
 
-    .line 387
+    .line 389
     :catch_e8
     move-exception v2
 
@@ -355,7 +355,7 @@
     const/4 v10, 0x1
 
     .line 127
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->I(Landroid/content/Context;)J
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->J(Landroid/content/Context;)J
 
     move-result-wide v0
 
@@ -985,18 +985,18 @@
 
     move-result-object v0
 
-    .line 312
+    .line 313
     invoke-virtual {v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a()Lcom/bzbs/lib/http/okhttp/HttpRequest;
 
-    .line 314
+    .line 315
     invoke-virtual {v2}, Ljava/util/Date;->getTime()J
 
     move-result-wide v0
 
-    .line 315
+    .line 316
     invoke-static {p0, v0, v1}, Lcom/bzbs/data/UserLogin;->b(Landroid/content/Context;J)Z
 
-    .line 376
+    .line 378
     :goto_291
     return-void
 
@@ -1043,11 +1043,11 @@
 
     goto/16 :goto_1d8
 
-    .line 317
+    .line 318
     :cond_2bd
     const-string/jumbo v0, ""
 
-    .line 319
+    .line 320
     :try_start_2c0
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
@@ -1067,7 +1067,7 @@
     :try_end_2cf
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_2c0 .. :try_end_2cf} :catch_34d
 
-    .line 323
+    .line 324
     :goto_2cf
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1089,7 +1089,7 @@
 
     move-result-object v0
 
-    .line 324
+    .line 325
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1114,7 +1114,7 @@
 
     move-result-object v0
 
-    .line 325
+    .line 326
     sget-object v1, Lcom/samsung/privilege/util/ResumeUtil;->a:Ljava/lang/String;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -1137,29 +1137,29 @@
 
     invoke-static {v1, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 326
+    .line 327
     new-instance v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     invoke-direct {v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;-><init>()V
 
-    .line 327
+    .line 328
     invoke-virtual {v1, p1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Landroid/app/Activity;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v1
 
     sget-boolean v3, Lcom/bzbs/data/AppSetting;->Q:Z
 
-    .line 328
+    .line 329
     invoke-virtual {v1, v3}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v1
 
-    .line 329
+    .line 330
     invoke-virtual {v1, v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Ljava/lang/String;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 330
+    .line 331
     invoke-static {p1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
@@ -1170,7 +1170,7 @@
 
     sget-object v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;->a:Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;
 
-    .line 331
+    .line 332
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
@@ -1179,29 +1179,29 @@
 
     invoke-direct {v1, p0, p1}, Lcom/samsung/privilege/util/ResumeUtil$3;-><init>(Landroid/content/Context;Landroid/app/Activity;)V
 
-    .line 332
+    .line 333
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/ResponseListener;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 368
+    .line 370
     invoke-virtual {v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a()Lcom/bzbs/lib/http/okhttp/HttpRequest;
 
-    .line 370
+    .line 372
     invoke-virtual {v2}, Ljava/util/Date;->getTime()J
 
     move-result-wide v0
 
-    .line 371
+    .line 373
     invoke-static {p0, v0, v1}, Lcom/bzbs/data/UserLogin;->b(Landroid/content/Context;J)Z
 
     goto/16 :goto_291
 
-    .line 320
+    .line 321
     :catch_34d
     move-exception v1
 
-    .line 321
+    .line 322
     sget-object v3, Lcom/samsung/privilege/util/ResumeUtil;->a:Ljava/lang/String;
 
     new-instance v4, Ljava/lang/StringBuilder;
@@ -1230,7 +1230,7 @@
 
     goto/16 :goto_2cf
 
-    .line 374
+    .line 376
     :cond_36d
     sget-object v0, Lcom/samsung/privilege/util/ResumeUtil;->a:Ljava/lang/String;
 
@@ -1269,22 +1269,22 @@
     .registers 7
 
     .prologue
-    .line 428
+    .line 430
     invoke-virtual {p2}, Landroid/app/Activity;->isFinishing()Z
 
     move-result v0
 
     if-nez v0, :cond_29
 
-    .line 429
+    .line 431
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 430
+    .line 432
     invoke-virtual {v0, p0}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 431
+    .line 433
     invoke-virtual {v0, p1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
@@ -1303,15 +1303,15 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 438
+    .line 440
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    .line 439
+    .line 441
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 441
+    .line 443
     :cond_29
     return-void
 .end method
@@ -1330,22 +1330,22 @@
     .registers 7
 
     .prologue
-    .line 444
+    .line 446
     invoke-virtual {p2}, Landroid/app/Activity;->isFinishing()Z
 
     move-result v0
 
     if-nez v0, :cond_35
 
-    .line 445
+    .line 447
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 446
+    .line 448
     invoke-virtual {v0, p0}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 447
+    .line 449
     invoke-virtual {v0, p1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
@@ -1372,18 +1372,18 @@
 
     invoke-direct {v3, p2}, Lcom/samsung/privilege/util/ResumeUtil$5;-><init>(Landroid/app/Activity;)V
 
-    .line 459
+    .line 461
     invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 465
+    .line 467
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    .line 466
+    .line 468
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 468
+    .line 470
     :cond_35
     return-void
 .end method
@@ -1392,25 +1392,25 @@
     .registers 7
 
     .prologue
-    .line 471
+    .line 473
     invoke-virtual {p2}, Landroid/app/Activity;->isFinishing()Z
 
     move-result v0
 
     if-nez v0, :cond_47
 
-    .line 472
+    .line 474
     invoke-virtual {p2}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->J(Landroid/content/Context;)Z
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->K(Landroid/content/Context;)Z
 
     move-result v0
 
     if-nez v0, :cond_47
 
-    .line 474
+    .line 476
     :try_start_10
     invoke-virtual {p2}, Landroid/app/Activity;->getApplicationContext()Landroid/content/Context;
 
@@ -1418,17 +1418,17 @@
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->o(Landroid/content/Context;Z)Z
+    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->p(Landroid/content/Context;Z)Z
 
-    .line 476
+    .line 478
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     invoke-direct {v0, p2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 477
+    .line 479
     invoke-virtual {v0, p0}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 478
+    .line 480
     invoke-virtual {v0, p1}, Landroid/app/AlertDialog$Builder;->setMessage(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
     move-result-object v1
@@ -1455,29 +1455,29 @@
 
     invoke-direct {v3, p2}, Lcom/samsung/privilege/util/ResumeUtil$7;-><init>(Landroid/app/Activity;)V
 
-    .line 492
+    .line 494
     invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 498
+    .line 500
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    .line 499
+    .line 501
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
     :try_end_47
     .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_47} :catch_48
 
-    .line 505
+    .line 507
     :cond_47
     :goto_47
     return-void
 
-    .line 500
+    .line 502
     :catch_48
     move-exception v0
 
-    .line 501
+    .line 503
     sget-object v1, Lcom/samsung/privilege/util/ResumeUtil;->a:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;

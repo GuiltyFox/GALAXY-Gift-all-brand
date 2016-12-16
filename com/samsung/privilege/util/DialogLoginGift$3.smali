@@ -29,7 +29,7 @@
     .registers 6
 
     .prologue
-    .line 163
+    .line 173
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$3;->a:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$3;->b:Landroid/os/Handler;
@@ -53,7 +53,7 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 165
+    .line 175
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$3;->a:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/bzbs/data/UserLogin;->A(Landroid/content/Context;)Z
@@ -62,7 +62,7 @@
 
     if-ne v0, v1, :cond_39
 
-    .line 166
+    .line 176
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$3;->a:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/bzbs/data/AppSetting;->k(Landroid/content/Context;)Z
@@ -71,7 +71,7 @@
 
     if-ne v0, v1, :cond_25
 
-    .line 168
+    .line 178
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$3;->a:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$3;->b:Landroid/os/Handler;
@@ -82,7 +82,7 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 173
+    .line 183
     :goto_1c
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$3;->c:Ljava/lang/String;
 
@@ -90,11 +90,11 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 177
+    .line 187
     :goto_24
     return-void
 
-    .line 170
+    .line 180
     :cond_25
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$3;->d:Ljava/lang/String;
 
@@ -114,7 +114,7 @@
 
     goto :goto_1c
 
-    .line 175
+    .line 185
     :cond_39
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$3;->a:Landroid/content/Context;
 

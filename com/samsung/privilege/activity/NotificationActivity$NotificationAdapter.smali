@@ -187,7 +187,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->O(Landroid/content/Context;)I
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->Q(Landroid/content/Context;)I
 
     move-result v0
 
@@ -196,7 +196,7 @@
     .line 287
     iget-object v0, p1, Lcom/samsung/privilege/activity/NotificationActivity$NotificationAdapter$NotificationViewHolder;->b:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f020073
+    const v1, 0x7f020075
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
 
@@ -208,7 +208,7 @@
     :cond_6c
     iget-object v0, p1, Lcom/samsung/privilege/activity/NotificationActivity$NotificationAdapter$NotificationViewHolder;->c:Landroid/widget/ImageView;
 
-    const v1, 0x7f02029f
+    const v1, 0x7f0202a6
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -225,7 +225,7 @@
     :cond_7c
     iget-object v0, p1, Lcom/samsung/privilege/activity/NotificationActivity$NotificationAdapter$NotificationViewHolder;->b:Landroid/widget/LinearLayout;
 
-    const v1, 0x7f020072
+    const v1, 0x7f020074
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
 

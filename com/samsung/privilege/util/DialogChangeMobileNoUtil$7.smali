@@ -3,26 +3,26 @@
 .source "DialogChangeMobileNoUtil.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/widget/TextView$OnEditorActionListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogChangeMobileNoUtil;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/util/DialogChangeMobileNoUtil;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 .end annotation
 
 
 # instance fields
-.field final synthetic a:Landroid/app/Dialog;
+.field final synthetic a:Landroid/widget/RelativeLayout;
 
 
 # direct methods
-.method constructor <init>(Landroid/app/Dialog;)V
+.method constructor <init>(Landroid/widget/RelativeLayout;)V
     .registers 2
 
     .prologue
-    .line 165
-    iput-object p1, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$7;->a:Landroid/app/Dialog;
+    .line 237
+    iput-object p1, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$7;->a:Landroid/widget/RelativeLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -31,15 +31,29 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 3
+.method public onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
+    .registers 5
 
     .prologue
-    .line 167
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$7;->a:Landroid/app/Dialog;
+    .line 240
+    const/4 v0, 0x4
 
-    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
+    if-ne p2, v0, :cond_a
 
-    .line 168
-    return-void
+    .line 241
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$7;->a:Landroid/widget/RelativeLayout;
+
+    invoke-virtual {v0}, Landroid/widget/RelativeLayout;->performClick()Z
+
+    .line 242
+    const/4 v0, 0x1
+
+    .line 244
+    :goto_9
+    return v0
+
+    :cond_a
+    const/4 v0, 0x0
+
+    goto :goto_9
 .end method

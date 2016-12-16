@@ -110,7 +110,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 35
-    const v0, 0x7f040178
+    const v0, 0x7f040180
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewBookingActivity;->setContentView(I)V
 

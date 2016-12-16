@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 479
+    .line 503
     iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4$2;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 3
 
     .prologue
-    .line 482
+    .line 506
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4$2;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -46,11 +46,11 @@
 
     if-nez v0, :cond_b
 
-    .line 488
+    .line 512
     :goto_a
     return-void
 
-    .line 486
+    .line 510
     :cond_b
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4$2;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4;
 
@@ -68,7 +68,7 @@
 
     check-cast v0, Landroid/support/v4/widget/SwipeRefreshLayout;
 
-    .line 487
+    .line 511
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v4/widget/SwipeRefreshLayout;->setRefreshing(Z)V

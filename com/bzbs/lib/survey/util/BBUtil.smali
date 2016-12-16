@@ -78,3 +78,29 @@
 
     goto :goto_8
 .end method
+
+.method public static b(Ljava/lang/String;)F
+    .registers 2
+
+    .prologue
+    .line 65
+    :try_start_0
+    invoke-static {p0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_3} :catch_5
+
+    move-result v0
+
+    .line 67
+    :goto_4
+    return v0
+
+    .line 66
+    :catch_5
+    move-exception v0
+
+    .line 67
+    const/4 v0, 0x0
+
+    goto :goto_4
+.end method

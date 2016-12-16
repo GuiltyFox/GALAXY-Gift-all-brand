@@ -134,11 +134,11 @@
 
 .field public static final abc_textfield_search_material:I = 0x7f02004e
 
-.field public static final design_fab_background:I = 0x7f02025a
+.field public static final design_fab_background:I = 0x7f02025f
 
-.field public static final design_snackbar_background:I = 0x7f02025b
+.field public static final design_snackbar_background:I = 0x7f020260
 
-.field public static final notification_template_icon_bg:I = 0x7f020385
+.field public static final notification_template_icon_bg:I = 0x7f02038e
 
 
 # direct methods

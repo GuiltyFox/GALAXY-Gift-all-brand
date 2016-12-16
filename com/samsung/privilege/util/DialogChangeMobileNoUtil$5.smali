@@ -8,21 +8,21 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogChangeMobileNoUtil;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/util/DialogChangeMobileNoUtil;->b(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 .end annotation
 
 
 # instance fields
-.field final synthetic a:Landroid/widget/RelativeLayout;
+.field final synthetic a:Landroid/app/Dialog;
 
 
 # direct methods
-.method constructor <init>(Landroid/widget/RelativeLayout;)V
+.method constructor <init>(Landroid/app/Dialog;)V
     .registers 2
 
     .prologue
-    .line 152
-    iput-object p1, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$5;->a:Landroid/widget/RelativeLayout;
+    .line 153
+    iput-object p1, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$5;->a:Landroid/app/Dialog;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -35,11 +35,11 @@
     .registers 3
 
     .prologue
-    .line 155
-    iget-object v0, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$5;->a:Landroid/widget/RelativeLayout;
-
-    invoke-virtual {v0}, Landroid/widget/RelativeLayout;->performClick()Z
-
     .line 156
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$5;->a:Landroid/app/Dialog;
+
+    invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
+
+    .line 157
     return-void
 .end method

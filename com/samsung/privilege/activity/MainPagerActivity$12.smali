@@ -29,7 +29,7 @@
     .registers 6
 
     .prologue
-    .line 986
+    .line 1070
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$12;->e:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$12;->a:Landroid/app/Dialog;
@@ -51,12 +51,12 @@
     .registers 6
 
     .prologue
-    .line 988
+    .line 1072
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$12;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 990
+    .line 1074
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$12;->b:Landroid/widget/ImageView;
 
     new-instance v1, Lcom/samsung/privilege/activity/MainPagerActivity$12$1;
@@ -67,6 +67,6 @@
 
     invoke-virtual {v0, v1, v2, v3}, Landroid/widget/ImageView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 996
+    .line 1080
     return-void
 .end method

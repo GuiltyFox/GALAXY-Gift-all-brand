@@ -8,7 +8,7 @@
     .registers 2
 
     .prologue
-    .line 56
+    .line 59
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x8
@@ -30,7 +30,7 @@
     .registers 2
 
     .prologue
-    .line 60
+    .line 63
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x9

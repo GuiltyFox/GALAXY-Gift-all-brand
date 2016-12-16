@@ -46,7 +46,7 @@
     invoke-direct {p0, p1}, Landroid/support/v7/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
     .line 38
-    const v0, 0x7f1001f4
+    const v0, 0x7f1001f9
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -55,7 +55,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card;->a:Landroid/view/View;
 
     .line 39
-    const v0, 0x7f100214
+    const v0, 0x7f100224
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -75,7 +75,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card;->c:Landroid/support/v7/widget/CardView;
 
     .line 42
-    const v0, 0x7f100275
+    const v0, 0x7f100285
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -86,7 +86,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card;->d:Landroid/widget/ImageView;
 
     .line 43
-    const v0, 0x7f100513
+    const v0, 0x7f100523
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -97,7 +97,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card;->e:Landroid/widget/LinearLayout;
 
     .line 44
-    const v0, 0x7f100514
+    const v0, 0x7f100524
 
     invoke-virtual {p1, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -119,16 +119,39 @@
     check-cast p3, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card;
 
     .line 50
+    iget-object v0, p4, Lcom/bzbs/bean/DashboardItem;->line2:Ljava/lang/String;
+
+    if-eqz v0, :cond_ab
+
+    iget-object v0, p4, Lcom/bzbs/bean/DashboardItem;->line2:Ljava/lang/String;
+
+    const-string/jumbo v1, ""
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_ab
+
+    .line 51
     iget-object v0, p3, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card;->f:Landroid/widget/TextView;
 
     iget-object v1, p4, Lcom/bzbs/bean/DashboardItem;->line2:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 51
+    .line 52
+    iget-object v0, p3, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card;->f:Landroid/widget/TextView;
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+
+    .line 57
+    :goto_1e
     iget-object v0, p4, Lcom/bzbs/bean/DashboardItem;->line2_color:Ljava/lang/String;
 
-    if-eqz v0, :cond_23
+    if-eqz v0, :cond_38
 
     iget-object v0, p4, Lcom/bzbs/bean/DashboardItem;->line2_color:Ljava/lang/String;
 
@@ -138,9 +161,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_23
+    if-nez v0, :cond_38
 
-    .line 52
+    .line 58
     iget-object v0, p3, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card;->f:Landroid/widget/TextView;
 
     iget-object v1, p4, Lcom/bzbs/bean/DashboardItem;->line2_color:Ljava/lang/String;
@@ -151,13 +174,28 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 55
-    :cond_23
+    .line 61
+    :cond_38
+    iget-object v0, p4, Lcom/bzbs/bean/DashboardItem;->image_url:Ljava/lang/String;
+
+    if-eqz v0, :cond_b4
+
+    iget-object v0, p4, Lcom/bzbs/bean/DashboardItem;->image_url:Ljava/lang/String;
+
+    const-string/jumbo v1, ""
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_b4
+
+    .line 62
     invoke-static {p0}, Lcom/bumptech/glide/Glide;->a(Landroid/app/Activity;)Lcom/bumptech/glide/RequestManager;
 
     move-result-object v0
 
-    iget-object v1, p4, Lcom/bzbs/bean/DashboardItem;->wallet_image_active:Ljava/lang/String;
+    iget-object v1, p4, Lcom/bzbs/bean/DashboardItem;->image_url:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/bumptech/glide/RequestManager;->a(Ljava/lang/String;)Lcom/bumptech/glide/DrawableTypeRequest;
 
@@ -173,7 +211,8 @@
 
     invoke-virtual {v0, v1}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
 
-    .line 57
+    .line 67
+    :goto_5c
     iget-object v0, p3, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card;->c:Landroid/support/v7/widget/CardView;
 
     new-instance v1, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card$1;
@@ -182,10 +221,10 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/CardView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 75
+    .line 89
     iget-object v0, p4, Lcom/bzbs/bean/DashboardItem;->ga_label:Ljava/lang/String;
 
-    if-eqz v0, :cond_86
+    if-eqz v0, :cond_aa
 
     iget-object v0, p4, Lcom/bzbs/bean/DashboardItem;->ga_label:Ljava/lang/String;
 
@@ -195,9 +234,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_86
+    if-nez v0, :cond_aa
 
-    .line 76
+    .line 90
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -246,7 +285,41 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 78
-    :cond_86
+    .line 92
+    :cond_aa
     return-void
+
+    .line 54
+    :cond_ab
+    iget-object v0, p3, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card;->f:Landroid/widget/TextView;
+
+    const/16 v1, 0x8
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
+
+    goto/16 :goto_1e
+
+    .line 64
+    :cond_b4
+    invoke-static {p0}, Lcom/bumptech/glide/Glide;->a(Landroid/app/Activity;)Lcom/bumptech/glide/RequestManager;
+
+    move-result-object v0
+
+    iget-object v1, p4, Lcom/bzbs/bean/DashboardItem;->wallet_image_active:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Lcom/bumptech/glide/RequestManager;->a(Ljava/lang/String;)Lcom/bumptech/glide/DrawableTypeRequest;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/bumptech/glide/load/engine/DiskCacheStrategy;->a:Lcom/bumptech/glide/load/engine/DiskCacheStrategy;
+
+    invoke-virtual {v0, v1}, Lcom/bumptech/glide/DrawableTypeRequest;->a(Lcom/bumptech/glide/load/engine/DiskCacheStrategy;)Lcom/bumptech/glide/DrawableRequestBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p3, Lcom/samsung/privilege/holder/DashboardHolder_wallet_card;->d:Landroid/widget/ImageView;
+
+    invoke-virtual {v0, v1}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
+
+    goto :goto_5c
 .end method

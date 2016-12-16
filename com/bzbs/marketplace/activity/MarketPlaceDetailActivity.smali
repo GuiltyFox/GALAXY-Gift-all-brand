@@ -139,7 +139,7 @@
 
     const-string/jumbo v1, "BaseMarketDetail::Layout"
 
-    const v2, 0x7f040141
+    const v2, 0x7f040147
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
@@ -195,7 +195,7 @@
 
     const-string/jumbo v1, "BaseMarketDetail::Layout"
 
-    const v2, 0x7f040140
+    const v2, 0x7f040146
 
     invoke-virtual {v0, v1, v2}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 

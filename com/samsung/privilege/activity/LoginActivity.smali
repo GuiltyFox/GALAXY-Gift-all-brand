@@ -1117,7 +1117,7 @@
     .line 397
     const-string/jumbo v2, ""
 
-    const v3, 0x7f090281
+    const v3, 0x7f090282
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/LoginActivity;->getString(I)Ljava/lang/String;
 
@@ -1257,7 +1257,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->M(Landroid/content/Context;)Lcom/bzbs/bean/MessagePopup;
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->O(Landroid/content/Context;)Lcom/bzbs/bean/MessagePopup;
 
     move-result-object v0
 
@@ -1324,7 +1324,7 @@
     :cond_f
     const-string/jumbo v0, ""
 
-    const v1, 0x7f090281
+    const v1, 0x7f090282
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/LoginActivity;->getString(I)Ljava/lang/String;
 

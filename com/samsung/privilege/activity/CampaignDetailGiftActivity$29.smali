@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 3088
+    .line 3100
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$29;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$29;->a:Landroid/app/Dialog;
@@ -39,19 +39,19 @@
     .registers 4
 
     .prologue
-    .line 3090
+    .line 3102
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$29;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 3091
+    .line 3103
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$29;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->a(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Z)Z
 
-    .line 3092
+    .line 3104
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$29;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$29;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -62,6 +62,6 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->b(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Z)V
 
-    .line 3093
+    .line 3105
     return-void
 .end method

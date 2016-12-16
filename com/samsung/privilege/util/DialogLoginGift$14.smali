@@ -27,7 +27,7 @@
     .registers 5
 
     .prologue
-    .line 558
+    .line 568
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->a:Landroid/app/Dialog;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->b:Landroid/content/Context;
@@ -47,24 +47,24 @@
     .registers 5
 
     .prologue
-    .line 560
+    .line 570
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 562
+    .line 572
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->b:Landroid/content/Context;
 
     const/4 v1, 0x1
 
     invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->h(Landroid/content/Context;Z)Z
 
-    .line 564
+    .line 574
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->a()Landroid/app/Dialog;
 
     move-result-object v0
 
-    const v1, 0x7f100595
+    const v1, 0x7f1005a7
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -72,7 +72,7 @@
 
     check-cast v0, Landroid/widget/ImageButton;
 
-    .line 565
+    .line 575
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->a()Landroid/app/Dialog;
 
     move-result-object v1
@@ -85,38 +85,38 @@
 
     check-cast v1, Landroid/widget/RelativeLayout;
 
-    .line 567
+    .line 577
     const/16 v2, 0x8
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageButton;->setVisibility(I)V
 
-    .line 568
+    .line 578
     const/4 v0, 0x0
 
     invoke-virtual {v1, v0}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 570
+    .line 580
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->c:Landroid/widget/ImageButton;
 
     if-eqz v0, :cond_37
 
-    .line 571
+    .line 581
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->c:Landroid/widget/ImageButton;
 
     invoke-virtual {v0}, Landroid/widget/ImageButton;->performClick()Z
 
-    .line 574
+    .line 584
     :cond_37
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->d:Lcom/facebook/login/widget/LoginButton;
 
     if-eqz v0, :cond_40
 
-    .line 575
+    .line 585
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$14;->d:Lcom/facebook/login/widget/LoginButton;
 
     invoke-virtual {v0}, Lcom/facebook/login/widget/LoginButton;->performClick()Z
 
-    .line 577
+    .line 587
     :cond_40
     return-void
 .end method

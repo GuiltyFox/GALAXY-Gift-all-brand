@@ -45,7 +45,7 @@
 
 # virtual methods
 .method public failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
-    .registers 10
+    .registers 11
 
     .prologue
     .line 613
@@ -125,20 +125,22 @@
 
     move-result v0
 
-    if-eqz v0, :cond_84
+    if-eqz v0, :cond_86
 
     .line 625
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$6;->d:Landroid/app/Activity;
 
     iget-object v1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$6;->e:Landroid/os/Handler;
 
-    const-string/jumbo v2, "Dashboard"
+    iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$6;->c:Ljava/lang/String;
 
-    const-string/jumbo v3, "wallet_create"
+    const-string/jumbo v3, "Dashboard"
 
-    iget-object v4, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$6;->c:Ljava/lang/String;
+    const-string/jumbo v4, "wallet_create"
 
-    invoke-static {v0, v1, v2, v3, v4}, Lcom/samsung/privilege/util/DialogOTPUtil;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    iget-object v5, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$6;->c:Ljava/lang/String;
+
+    invoke-static/range {v0 .. v5}, Lcom/samsung/privilege/util/DialogOTPUtil;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 626
     new-instance v0, Ljava/lang/StringBuilder;
@@ -166,11 +168,11 @@
     iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$6;->c:Ljava/lang/String;
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_7f
-    .catch Ljava/lang/Exception; {:try_start_30 .. :try_end_7f} :catch_a8
+    :try_end_81
+    .catch Ljava/lang/Exception; {:try_start_30 .. :try_end_81} :catch_aa
 
     .line 636
-    :goto_7f
+    :goto_81
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/samsung/privilege/holder/DashboardHolder_wallet;->a(Z)Z
@@ -179,8 +181,8 @@
     return-void
 
     .line 628
-    :cond_84
-    :try_start_84
+    :cond_86
+    :try_start_86
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$6;->d:Landroid/app/Activity;
 
     invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
@@ -211,13 +213,13 @@
     iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$6;->c:Ljava/lang/String;
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_a7
-    .catch Ljava/lang/Exception; {:try_start_84 .. :try_end_a7} :catch_a8
+    :try_end_a9
+    .catch Ljava/lang/Exception; {:try_start_86 .. :try_end_a9} :catch_aa
 
-    goto :goto_7f
+    goto :goto_81
 
     .line 631
-    :catch_a8
+    :catch_aa
     move-exception v0
 
     .line 632
@@ -252,7 +254,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_7f
+    goto :goto_81
 .end method
 
 .method public successfully(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V

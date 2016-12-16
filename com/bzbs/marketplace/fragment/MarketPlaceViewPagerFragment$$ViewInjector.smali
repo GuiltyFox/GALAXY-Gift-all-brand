@@ -45,9 +45,9 @@
     .end annotation
 
     .prologue
-    const v3, 0x7f10065a
+    const v3, 0x7f10067d
 
-    const v2, 0x7f100659
+    const v2, 0x7f10067c
 
     .line 11
     const-string/jumbo v0, "field \'contentImageCover\'"

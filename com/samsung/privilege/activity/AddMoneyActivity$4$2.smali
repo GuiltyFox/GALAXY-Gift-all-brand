@@ -47,7 +47,7 @@
     invoke-direct {v1, v0, v2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
     .line 344
-    const v0, 0x7f04012d
+    const v0, 0x7f040131
 
     invoke-virtual {v1, v0}, Landroid/app/Dialog;->setContentView(I)V
 
@@ -60,12 +60,12 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    const v2, 0x7f0202a4
+    const v2, 0x7f0202ab
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 347
-    const v0, 0x7f100618
+    const v0, 0x7f10063b
 
     invoke-virtual {v1, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -77,7 +77,7 @@
 
     iget-object v2, v2, Lcom/samsung/privilege/activity/AddMoneyActivity$4;->a:Lcom/samsung/privilege/activity/AddMoneyActivity;
 
-    const v3, 0x7f09036d
+    const v3, 0x7f090383
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/AddMoneyActivity;->getString(I)Ljava/lang/String;
 
@@ -86,7 +86,7 @@
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 348
-    const v0, 0x7f100619
+    const v0, 0x7f10063c
 
     invoke-virtual {v1, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -98,7 +98,7 @@
 
     iget-object v2, v2, Lcom/samsung/privilege/activity/AddMoneyActivity$4;->a:Lcom/samsung/privilege/activity/AddMoneyActivity;
 
-    const v3, 0x7f09036c
+    const v3, 0x7f090382
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/AddMoneyActivity;->getString(I)Ljava/lang/String;
 

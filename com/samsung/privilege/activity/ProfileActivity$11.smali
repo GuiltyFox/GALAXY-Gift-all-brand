@@ -25,7 +25,7 @@
     .registers 4
 
     .prologue
-    .line 424
+    .line 433
     iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$11;->c:Lcom/samsung/privilege/activity/ProfileActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/ProfileActivity$11;->a:Landroid/widget/TextView;
@@ -43,12 +43,12 @@
     .registers 4
 
     .prologue
-    .line 427
+    .line 436
     const/4 v0, 0x1
 
     if-ne p1, v0, :cond_1c
 
-    .line 428
+    .line 437
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$11;->a:Landroid/widget/TextView;
 
     const-string/jumbo v1, "#2ba9e3"
@@ -59,7 +59,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 429
+    .line 438
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$11;->b:Landroid/widget/TextView;
 
     const-string/jumbo v1, "#ebebeb"
@@ -70,11 +70,11 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 434
+    .line 443
     :goto_1b
     return-void
 
-    .line 431
+    .line 440
     :cond_1c
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$11;->a:Landroid/widget/TextView;
 
@@ -86,7 +86,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 432
+    .line 441
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$11;->b:Landroid/widget/TextView;
 
     const-string/jumbo v1, "#2ba9e3"

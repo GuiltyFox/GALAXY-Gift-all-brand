@@ -1009,7 +1009,7 @@
     .line 235
     const-string/jumbo v0, "UserPackagePrices"
 
-    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/math/BigDecimal;
+    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->f(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/math/BigDecimal;
 
     move-result-object v0
 
@@ -1018,7 +1018,7 @@
     .line 236
     const-string/jumbo v0, "UserSummaryPrices"
 
-    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/math/BigDecimal;
+    invoke-static {p1, v0}, Lcom/bzbs/lib/survey/util/JsonUtil;->f(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/math/BigDecimal;
 
     move-result-object v0
 

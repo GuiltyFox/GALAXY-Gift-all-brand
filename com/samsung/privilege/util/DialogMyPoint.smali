@@ -100,14 +100,14 @@
     .line 42
     sget-object v0, Lcom/samsung/privilege/util/DialogMyPoint;->c:Landroid/app/Dialog;
 
-    const v1, 0x7f040118
+    const v1, 0x7f040119
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 44
     sget-object v0, Lcom/samsung/privilege/util/DialogMyPoint;->c:Landroid/app/Dialog;
 
-    const v1, 0x7f1005c3
+    const v1, 0x7f1005d4
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -157,7 +157,7 @@
     .line 58
     sget-object v1, Lcom/samsung/privilege/util/DialogMyPoint;->c:Landroid/app/Dialog;
 
-    const v2, 0x7f1005c4
+    const v2, 0x7f1005d5
 
     invoke-virtual {v1, v2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -179,7 +179,7 @@
     if-eqz v2, :cond_ae
 
     .line 60
-    const v2, 0x7f020326
+    const v2, 0x7f02032d
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -243,7 +243,7 @@
 
     .line 63
     :cond_ae
-    const v2, 0x7f020325
+    const v2, 0x7f02032c
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 

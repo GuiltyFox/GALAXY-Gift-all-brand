@@ -6,7 +6,7 @@
 # instance fields
 .field LayoutMainComman:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10028e
+        value = 0x7f10029e
     .end annotation
 .end field
 
@@ -14,61 +14,61 @@
 
 .field btnClose:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100290
+        value = 0x7f1002a0
     .end annotation
 .end field
 
 .field btnOK:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1001ed
+        value = 0x7f1001ef
     .end annotation
 .end field
 
 .field imgCampaign:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100287
+        value = 0x7f100297
     .end annotation
 .end field
 
 .field layoutRoot:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100285
+        value = 0x7f100295
     .end annotation
 .end field
 
 .field svCondition:Landroid/widget/ScrollView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10028a
+        value = 0x7f10029a
     .end annotation
 .end field
 
 .field tvCampaignDesc:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100288
+        value = 0x7f100298
     .end annotation
 .end field
 
 .field tvCondition1:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10028b
+        value = 0x7f10029b
     .end annotation
 .end field
 
 .field tvCondition2:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10028c
+        value = 0x7f10029c
     .end annotation
 .end field
 
 .field tvCondition3:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10028d
+        value = 0x7f10029d
     .end annotation
 .end field
 
 .field tvShowTimeRedeem:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100289
+        value = 0x7f100299
     .end annotation
 .end field
 
@@ -97,7 +97,7 @@
     .registers 8
 
     .prologue
-    const v6, 0x7f0202d5
+    const v6, 0x7f0202dc
 
     const/high16 v5, 0x41f00000    # 30.0f
 
@@ -195,7 +195,7 @@
 
     iget-object v4, p0, Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog;
 
-    const v5, 0x7f0903c8
+    const v5, 0x7f0903e6
 
     invoke-virtual {v4, v5}, Lcom/bzbs/marketplace/dialog/ConditionDealGetBlurDialog;->getString(I)Ljava/lang/String;
 

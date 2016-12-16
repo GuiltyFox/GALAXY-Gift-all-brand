@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 699
+    .line 710
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$5;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 7
 
     .prologue
-    .line 702
+    .line 713
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$5;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getApplicationContext()Landroid/content/Context;
@@ -46,7 +46,7 @@
 
     move-result-object v0
 
-    .line 703
+    .line 714
     if-eqz v0, :cond_16
 
     const-string/jumbo v1, ""
@@ -57,11 +57,11 @@
 
     if-nez v0, :cond_16
 
-    .line 708
+    .line 719
     :goto_15
     return-void
 
-    .line 706
+    .line 717
     :cond_16
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$5;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 

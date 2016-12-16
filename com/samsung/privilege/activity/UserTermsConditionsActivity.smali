@@ -32,7 +32,7 @@
 
     .prologue
     .line 46
-    const v0, 0x7f1001e8
+    const v0, 0x7f1001ea
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->findViewById(I)Landroid/view/View;
 

@@ -8,13 +8,13 @@
 
 .field contentCode:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1001e2
+        value = 0x7f1001e4
     .end annotation
 .end field
 
 .field tvCode:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1001e3
+        value = 0x7f1001e5
     .end annotation
 .end field
 
@@ -301,7 +301,7 @@
     invoke-virtual {p0, v0, v1}, Lcom/samsung/privilege/activity/RequestHelpActivity;->a(Ljava/lang/String;Z)V
 
     .line 62
-    const v0, 0x7f0202b7
+    const v0, 0x7f0202be
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/RequestHelpActivity;->a(I)V
 

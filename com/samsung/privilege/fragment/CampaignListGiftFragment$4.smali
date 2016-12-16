@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 218
+    .line 240
     iput-object p1, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$4;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 9
 
     .prologue
-    .line 222
+    .line 244
     :try_start_0
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$4;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
@@ -47,7 +47,7 @@
 
     move-result-object v0
 
-    .line 224
+    .line 246
     new-instance v1, Landroid/content/Intent;
 
     iget-object v2, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$4;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
@@ -60,7 +60,7 @@
 
     invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 226
+    .line 248
     const-string/jumbo v2, "campaign_id"
 
     iget-object v3, v0, Lcom/bzbs/bean/Campaign;->ID:Ljava/lang/String;
@@ -71,7 +71,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/io/Serializable;)Landroid/content/Intent;
 
-    .line 227
+    .line 249
     const-string/jumbo v2, "time"
 
     new-instance v3, Ljava/util/Date;
@@ -84,12 +84,12 @@
 
     invoke-virtual {v1, v2, v4, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;J)Landroid/content/Intent;
 
-    .line 228
+    .line 250
     iget-object v2, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$4;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
     invoke-virtual {v2, v1}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->startActivity(Landroid/content/Intent;)V
 
-    .line 230
+    .line 252
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -148,11 +148,11 @@
     :try_end_76
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_76} :catch_77
 
-    .line 234
+    .line 256
     :goto_76
     return-void
 
-    .line 231
+    .line 253
     :catch_77
     move-exception v0
 

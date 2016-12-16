@@ -98,7 +98,7 @@
     :cond_6
     const-string/jumbo v0, ""
 
-    const v1, 0x7f090281
+    const v1, 0x7f090282
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/CampaignReviewActivity;->getString(I)Ljava/lang/String;
 

@@ -8,19 +8,19 @@
 
 .field contentViewpager:Landroid/support/v7/widget/CardView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100621
+        value = 0x7f100644
     .end annotation
 .end field
 
 .field imageViewCover:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100622
+        value = 0x7f100645
     .end annotation
 .end field
 
 .field textViewLine:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100623
+        value = 0x7f100646
     .end annotation
 .end field
 

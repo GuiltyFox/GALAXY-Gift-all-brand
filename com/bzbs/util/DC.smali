@@ -963,7 +963,7 @@
     invoke-direct {v4, p0, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
     .line 150
-    const v0, 0x7f040115
+    const v0, 0x7f040117
 
     invoke-virtual {v4, v0}, Landroid/app/Dialog;->setContentView(I)V
 
@@ -986,7 +986,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 154
-    const v2, 0x7f1002a8
+    const v2, 0x7f1002b8
 
     invoke-virtual {v4, v2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 

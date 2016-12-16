@@ -45,15 +45,15 @@
     .end annotation
 
     .prologue
-    const v6, 0x7f1005df
+    const v6, 0x7f100602
 
-    const v5, 0x7f1002f4
+    const v5, 0x7f100304
 
-    const v2, 0x7f1002a8
+    const v2, 0x7f1002b8
 
-    const v4, 0x7f100285
+    const v4, 0x7f100295
 
-    const v3, 0x7f1001ed
+    const v3, 0x7f1001ef
 
     .line 11
     const-string/jumbo v0, "field \'imgClose\'"
@@ -96,7 +96,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$ViewHolder;->tvName:Landroid/widget/TextView;
 
     .line 15
-    const v0, 0x7f1005e5
+    const v0, 0x7f100608
 
     const-string/jumbo v1, "field \'tvTopic\'"
 
@@ -107,7 +107,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 16
-    const v1, 0x7f1005e5
+    const v1, 0x7f100608
 
     const-string/jumbo v2, "field \'tvTopic\'"
 
@@ -140,7 +140,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$ViewHolder;->tvRatingHeader:Landroid/widget/TextView;
 
     .line 19
-    const v0, 0x7f1005e6
+    const v0, 0x7f100609
 
     const-string/jumbo v1, "field \'contentLessRate\'"
 
@@ -151,7 +151,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 20
-    const v1, 0x7f1005e6
+    const v1, 0x7f100609
 
     const-string/jumbo v2, "field \'contentLessRate\'"
 
@@ -184,7 +184,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$ViewHolder;->btnOK:Landroid/widget/Button;
 
     .line 23
-    const v0, 0x7f1005e7
+    const v0, 0x7f10060a
 
     const-string/jumbo v1, "field \'etComment\'"
 
@@ -195,7 +195,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 24
-    const v1, 0x7f1005e7
+    const v1, 0x7f10060a
 
     const-string/jumbo v2, "field \'etComment\'"
 
@@ -208,7 +208,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$ViewHolder;->etComment:Landroid/widget/EditText;
 
     .line 25
-    const v0, 0x7f1005e8
+    const v0, 0x7f10060b
 
     const-string/jumbo v1, "field \'contentHighRate\'"
 
@@ -219,7 +219,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 26
-    const v1, 0x7f1005e8
+    const v1, 0x7f10060b
 
     const-string/jumbo v2, "field \'contentHighRate\'"
 
@@ -252,7 +252,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$ViewHolder;->layoutRoot:Landroid/widget/LinearLayout;
 
     .line 29
-    const v0, 0x7f1005e0
+    const v0, 0x7f100603
 
     const-string/jumbo v1, "field \'imgRating1\'"
 
@@ -263,7 +263,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 30
-    const v1, 0x7f1005e0
+    const v1, 0x7f100603
 
     const-string/jumbo v2, "field \'imgRating1\'"
 
@@ -276,7 +276,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$ViewHolder;->imgRating1:Landroid/widget/ImageView;
 
     .line 31
-    const v0, 0x7f1005e1
+    const v0, 0x7f100604
 
     const-string/jumbo v1, "field \'imgRating2\'"
 
@@ -287,7 +287,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 32
-    const v1, 0x7f1005e1
+    const v1, 0x7f100604
 
     const-string/jumbo v2, "field \'imgRating2\'"
 
@@ -300,7 +300,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$ViewHolder;->imgRating2:Landroid/widget/ImageView;
 
     .line 33
-    const v0, 0x7f1005e2
+    const v0, 0x7f100605
 
     const-string/jumbo v1, "field \'imgRating3\'"
 
@@ -311,7 +311,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 34
-    const v1, 0x7f1005e2
+    const v1, 0x7f100605
 
     const-string/jumbo v2, "field \'imgRating3\'"
 
@@ -324,7 +324,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$ViewHolder;->imgRating3:Landroid/widget/ImageView;
 
     .line 35
-    const v0, 0x7f1005e3
+    const v0, 0x7f100606
 
     const-string/jumbo v1, "field \'imgRating4\'"
 
@@ -335,7 +335,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 36
-    const v1, 0x7f1005e3
+    const v1, 0x7f100606
 
     const-string/jumbo v2, "field \'imgRating4\'"
 
@@ -348,7 +348,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$ViewHolder;->imgRating4:Landroid/widget/ImageView;
 
     .line 37
-    const v0, 0x7f1005e4
+    const v0, 0x7f100607
 
     const-string/jumbo v1, "field \'imgRating5\'"
 
@@ -359,7 +359,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 38
-    const v1, 0x7f1005e4
+    const v1, 0x7f100607
 
     const-string/jumbo v2, "field \'imgRating5\'"
 
@@ -372,7 +372,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$ViewHolder;->imgRating5:Landroid/widget/ImageView;
 
     .line 39
-    const v0, 0x7f100686
+    const v0, 0x7f1006b1
 
     const-string/jumbo v1, "field \'progressGoogle\'"
 
@@ -383,7 +383,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 40
-    const v1, 0x7f100686
+    const v1, 0x7f1006b1
 
     const-string/jumbo v2, "field \'progressGoogle\'"
 
@@ -396,7 +396,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/dialog/ReviewGiftBlurDialog$ViewHolder;->progressGoogle:Lfr/castorflex/android/smoothprogressbar/SmoothProgressBar;
 
     .line 41
-    const v0, 0x7f1005e9
+    const v0, 0x7f10060c
 
     const-string/jumbo v1, "field \'radioGroup\'"
 
@@ -407,7 +407,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 42
-    const v1, 0x7f1005e9
+    const v1, 0x7f10060c
 
     const-string/jumbo v2, "field \'radioGroup\'"
 

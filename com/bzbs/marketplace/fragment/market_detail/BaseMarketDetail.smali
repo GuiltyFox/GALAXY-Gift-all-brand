@@ -12,19 +12,19 @@
 # instance fields
 .field contentCondition:Landroid/widget/RelativeLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10064a
+        value = 0x7f10066d
     .end annotation
 .end field
 
 .field contentDetail:Landroid/widget/RelativeLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100649
+        value = 0x7f10066c
     .end annotation
 .end field
 
 .field public contentViewPager:Landroid/widget/RelativeLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10062b
+        value = 0x7f10064e
     .end annotation
 .end field
 
@@ -32,13 +32,13 @@
 
 .field public imageLike:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100630
+        value = 0x7f100653
     .end annotation
 .end field
 
 .field public indicatorViewPager:Lme/relex/circleindicator/CircleIndicator;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10062c
+        value = 0x7f10064f
     .end annotation
 .end field
 
@@ -50,19 +50,19 @@
 
 .field public layoutComment:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10062d
+        value = 0x7f100650
     .end annotation
 .end field
 
 .field public layoutLike:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10062f
+        value = 0x7f100652
     .end annotation
 .end field
 
 .field public layoutShared:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100632
+        value = 0x7f100655
     .end annotation
 .end field
 
@@ -89,43 +89,43 @@
 
 .field public textViewComment:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10062e
+        value = 0x7f100651
     .end annotation
 .end field
 
 .field textViewCondition:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10064d
+        value = 0x7f100670
     .end annotation
 .end field
 
 .field textViewDetail:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10064c
+        value = 0x7f10066f
     .end annotation
 .end field
 
 .field public textViewLike:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100631
+        value = 0x7f100654
     .end annotation
 .end field
 
 .field public textViewTitle:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100633
+        value = 0x7f100656
     .end annotation
 .end field
 
 .field vShadow:Landroid/view/View;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10064b
+        value = 0x7f10066e
     .end annotation
 .end field
 
 .field public viewPager:Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10025b
+        value = 0x7f10026b
     .end annotation
 .end field
 
@@ -515,7 +515,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v2, 0x7f090275
+    const v2, 0x7f090276
 
     invoke-virtual {p0, v2}, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->getString(I)Ljava/lang/String;
 
@@ -776,7 +776,7 @@
     .line 317
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->imageLike:Landroid/widget/ImageView;
 
-    const v1, 0x7f020296
+    const v1, 0x7f02029d
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -823,7 +823,7 @@
     :cond_37
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->imageLike:Landroid/widget/ImageView;
 
-    const v1, 0x7f020297
+    const v1, 0x7f02029e
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -834,7 +834,7 @@
     .registers 7
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f10062d
+            0x7f100650
         }
     .end annotation
 
@@ -1074,8 +1074,8 @@
     .registers 7
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f100649,
-            0x7f10064a
+            0x7f10066c,
+            0x7f10066d
         }
     .end annotation
 
@@ -1101,7 +1101,7 @@
 
     move-result v0
 
-    const v1, 0x7f100649
+    const v1, 0x7f10066c
 
     if-ne v0, v1, :cond_5d
 
@@ -1182,7 +1182,7 @@
 
     move-result v0
 
-    const v1, 0x7f10064a
+    const v1, 0x7f10066d
 
     if-ne v0, v1, :cond_5c
 
@@ -1259,7 +1259,7 @@
     .registers 7
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f10062f
+            0x7f100652
         }
     .end annotation
 

@@ -22,7 +22,7 @@
     .registers 5
 
     .prologue
-    .line 322
+    .line 344
     iput-object p1, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;->c:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
     iput-wide p2, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;->a:J
@@ -40,10 +40,10 @@
     .registers 13
 
     .prologue
-    .line 400
+    .line 424
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 403
+    .line 427
     :try_start_3
     new-instance v0, Ljava/util/Date;
 
@@ -53,7 +53,7 @@
 
     move-result-wide v0
 
-    .line 404
+    .line 428
     const-string/jumbo v2, "CampaignList"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -92,7 +92,7 @@
     :try_end_35
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_35} :catch_72
 
-    .line 409
+    .line 433
     :goto_35
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;->c:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
@@ -130,7 +130,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 411
+    .line 435
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;->c:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
     invoke-static {v0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->l(Lcom/samsung/privilege/fragment/CampaignListGiftFragment;)Landroid/os/Handler;
@@ -143,17 +143,17 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 426
+    .line 454
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;->c:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->a(Lcom/samsung/privilege/fragment/CampaignListGiftFragment;Z)Z
 
-    .line 427
+    .line 455
     return-void
 
-    .line 405
+    .line 429
     :catch_72
     move-exception v0
 
@@ -164,7 +164,7 @@
     .registers 13
 
     .prologue
-    .line 326
+    .line 348
     :try_start_0
     new-instance v0, Ljava/util/Date;
 
@@ -174,7 +174,7 @@
 
     move-result-wide v0
 
-    .line 327
+    .line 349
     const-string/jumbo v2, "CampaignList"
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -213,7 +213,7 @@
     :try_end_32
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_32} :catch_69
 
-    .line 332
+    .line 354
     :goto_32
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;->c:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
@@ -251,7 +251,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 336
+    .line 358
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;->c:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
     invoke-static {v0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->l(Lcom/samsung/privilege/fragment/CampaignListGiftFragment;)Landroid/os/Handler;
@@ -264,10 +264,10 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 396
+    .line 420
     return-void
 
-    .line 328
+    .line 350
     :catch_69
     move-exception v0
 

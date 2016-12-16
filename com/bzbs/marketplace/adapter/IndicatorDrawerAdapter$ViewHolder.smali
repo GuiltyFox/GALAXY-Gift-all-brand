@@ -10,13 +10,13 @@
 
 .field contentPackSticker:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10067e
+        value = 0x7f1006a9
     .end annotation
 .end field
 
 .field imageParentSticker:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10067f
+        value = 0x7f1006aa
     .end annotation
 .end field
 
@@ -83,7 +83,7 @@
 
     move-result-object v2
 
-    const v3, 0x7f0202d5
+    const v3, 0x7f0202dc
 
     invoke-static {v0, v1, v2, v3}, Lcom/bzbs/marketplace/control/InitImage;->a(Landroid/app/Activity;Landroid/widget/ImageView;Ljava/lang/String;I)V
 
