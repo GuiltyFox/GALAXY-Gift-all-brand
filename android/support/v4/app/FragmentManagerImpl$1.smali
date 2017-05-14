@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 514
+    .line 533
     iput-object p1, p0, Landroid/support/v4/app/FragmentManagerImpl$1;->a:Landroid/support/v4/app/FragmentManagerImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,11 +35,11 @@
     .registers 2
 
     .prologue
-    .line 517
+    .line 536
     iget-object v0, p0, Landroid/support/v4/app/FragmentManagerImpl$1;->a:Landroid/support/v4/app/FragmentManagerImpl;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentManagerImpl;->g()Z
 
-    .line 518
+    .line 537
     return-void
 .end method

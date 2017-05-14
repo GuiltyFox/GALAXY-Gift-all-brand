@@ -1,155 +1,110 @@
 .class Lcom/samsung/privilege/activity/WalletCardActivity$23;
-.super Lcom/bzbs/lib/http/okhttp/ResponseListener;
+.super Ljava/lang/Object;
 .source "WalletCardActivity.java"
+
+# interfaces
+.implements Landroid/view/animation/Animation$AnimationListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/WalletCardActivity;->a(Ljava/lang/String;I)V
+    value = Lcom/samsung/privilege/activity/WalletCardActivity;->a(Landroid/view/View;Landroid/view/View;ZZ)V
 .end annotation
 
 
 # instance fields
-.field final synthetic a:I
+.field final synthetic a:Landroid/view/View;
 
-.field final synthetic b:Lcom/samsung/privilege/activity/WalletCardActivity;
+.field final synthetic b:Landroid/view/View;
+
+.field final synthetic c:Z
+
+.field final synthetic d:Z
+
+.field final synthetic e:Lcom/samsung/privilege/activity/WalletCardActivity;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/WalletCardActivity;I)V
-    .registers 3
+.method constructor <init>(Lcom/samsung/privilege/activity/WalletCardActivity;Landroid/view/View;Landroid/view/View;ZZ)V
+    .registers 6
 
     .prologue
-    .line 1711
-    iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$23;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
+    .line 1940
+    iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$23;->e:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    iput p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$23;->a:I
+    iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$23;->a:Landroid/view/View;
 
-    invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
+    iput-object p3, p0, Lcom/samsung/privilege/activity/WalletCardActivity$23;->b:Landroid/view/View;
+
+    iput-boolean p4, p0, Lcom/samsung/privilege/activity/WalletCardActivity$23;->c:Z
+
+    iput-boolean p5, p0, Lcom/samsung/privilege/activity/WalletCardActivity$23;->d:Z
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
-    .registers 8
+.method public onAnimationEnd(Landroid/view/animation/Animation;)V
+    .registers 4
 
     .prologue
-    .line 1763
-    invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
+    .line 1948
+    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$23;->a:Landroid/view/View;
 
-    .line 1765
-    invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
+    const/4 v1, 0x4
 
-    move-result-object v0
+    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    .line 1950
+    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$23;->e:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    const v1, 0x7f050025
 
-    const-string/jumbo v2, "(loadHistory|onFailure)response_code="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string/jumbo v2, ",response="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1771
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$23;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
-
-    invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Lcom/samsung/privilege/activity/WalletCardActivity;)Landroid/os/Handler;
+    invoke-static {v0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
 
     move-result-object v0
 
-    new-instance v1, Lcom/samsung/privilege/activity/WalletCardActivity$23$2;
+    .line 1951
+    new-instance v1, Lcom/samsung/privilege/activity/WalletCardActivity$23$1;
 
-    invoke-direct {v1, p0}, Lcom/samsung/privilege/activity/WalletCardActivity$23$2;-><init>(Lcom/samsung/privilege/activity/WalletCardActivity$23;)V
+    invoke-direct {v1, p0}, Lcom/samsung/privilege/activity/WalletCardActivity$23$1;-><init>(Lcom/samsung/privilege/activity/WalletCardActivity$23;)V
 
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 1778
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$23;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
+    .line 1980
+    iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$23;->b:Landroid/view/View;
 
-    const/4 v1, 0x0
+    invoke-virtual {v1}, Landroid/view/View;->clearAnimation()V
 
-    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->c(Lcom/samsung/privilege/activity/WalletCardActivity;Z)Z
+    .line 1981
+    iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$23;->b:Landroid/view/View;
 
-    .line 1779
+    invoke-virtual {v1, v0}, Landroid/view/View;->setAnimation(Landroid/view/animation/Animation;)V
+
+    .line 1982
+    iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$23;->b:Landroid/view/View;
+
+    invoke-virtual {v1, v0}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
+
+    .line 1983
     return-void
 .end method
 
-.method public successfully(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
-    .registers 8
+.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
+    .registers 2
 
     .prologue
-    .line 1714
-    invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
+    .line 1988
+    return-void
+.end method
 
-    move-result-object v0
+.method public onAnimationStart(Landroid/view/animation/Animation;)V
+    .registers 2
 
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v2, "(loadHistory|onComplete)response_code="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    const-string/jumbo v2, ",response="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1718
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$23;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
-
-    invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Lcom/samsung/privilege/activity/WalletCardActivity;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/samsung/privilege/activity/WalletCardActivity$23$1;
-
-    invoke-direct {v1, p0, p4}, Lcom/samsung/privilege/activity/WalletCardActivity$23$1;-><init>(Lcom/samsung/privilege/activity/WalletCardActivity$23;Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 1759
+    .prologue
+    .line 1944
     return-void
 .end method

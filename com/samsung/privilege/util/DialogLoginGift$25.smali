@@ -26,7 +26,7 @@
     .registers 8
 
     .prologue
-    .line 1367
+    .line 1372
     iput-wide p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->a:J
 
     iput-object p3, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->b:Landroid/os/Handler;
@@ -48,10 +48,10 @@
     .registers 13
 
     .prologue
-    .line 1468
+    .line 1479
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 1471
+    .line 1482
     :try_start_3
     new-instance v0, Ljava/util/Date;
 
@@ -61,7 +61,7 @@
 
     move-result-wide v0
 
-    .line 1472
+    .line 1483
     const-string/jumbo v2, "Login"
 
     const-string/jumbo v3, "GetProfile"
@@ -76,7 +76,7 @@
     :try_end_1b
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_51
 
-    .line 1477
+    .line 1488
     :goto_1b
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
@@ -112,7 +112,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1479
+    .line 1490
     const-string/jumbo v0, "Get Profile Data Fail!!!"
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->c:Landroid/content/Context;
@@ -121,15 +121,15 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
 
-    .line 1480
+    .line 1491
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->c:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->U(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->X(Landroid/content/Context;)V
 
-    .line 1481
+    .line 1492
     return-void
 
-    .line 1473
+    .line 1484
     :catch_51
     move-exception v0
 
@@ -140,7 +140,7 @@
     .registers 13
 
     .prologue
-    .line 1371
+    .line 1376
     :try_start_0
     new-instance v0, Ljava/util/Date;
 
@@ -150,7 +150,7 @@
 
     move-result-wide v0
 
-    .line 1372
+    .line 1377
     const-string/jumbo v2, "Login"
 
     const-string/jumbo v3, "GetProfile"
@@ -165,7 +165,7 @@
     :try_end_18
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_49
 
-    .line 1377
+    .line 1382
     :goto_18
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
@@ -201,7 +201,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1379
+    .line 1384
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$25;->b:Landroid/os/Handler;
 
     new-instance v1, Lcom/samsung/privilege/util/DialogLoginGift$25$1;
@@ -210,10 +210,10 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 1464
+    .line 1475
     return-void
 
-    .line 1373
+    .line 1378
     :catch_49
     move-exception v0
 

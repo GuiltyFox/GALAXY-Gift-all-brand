@@ -172,6 +172,7 @@
 
     const-string/jumbo v0, ".xml"
 
+    .line 350
     invoke-virtual {p2, v0}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
     move-result v0
@@ -457,6 +458,7 @@
 
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserModel;->e:Ljava/util/List;
 
+    .line 673
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -480,10 +482,12 @@
 
     iget-object v3, p0, Landroid/support/v7/widget/ActivityChooserModel;->f:Ljava/util/List;
 
+    .line 675
     invoke-static {v3}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
 
     move-result-object v3
 
+    .line 674
     invoke-interface {v0, v1, v2, v3}, Landroid/support/v7/widget/ActivityChooserModel$ActivitySorter;->sort(Landroid/content/Intent;Ljava/util/List;Ljava/util/List;)V
 
     .line 676
@@ -531,6 +535,7 @@
 
     iget-object v2, p0, Landroid/support/v7/widget/ActivityChooserModel;->i:Landroid/content/Intent;
 
+    .line 692
     invoke-virtual {v1, v2, v0}, Landroid/content/pm/PackageManager;->queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
 
     move-result-object v2
@@ -597,6 +602,7 @@
 
     iget-object v2, p0, Landroid/support/v7/widget/ActivityChooserModel;->h:Ljava/lang/String;
 
+    .line 712
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v2
@@ -938,6 +944,7 @@
 
     const-string/jumbo v5, "time"
 
+    .line 1001
     invoke-interface {v2, v4, v5}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v4
@@ -951,6 +958,7 @@
 
     const-string/jumbo v7, "weight"
 
+    .line 1003
     invoke-interface {v2, v6, v7}, Lorg/xmlpull/v1/XmlPullParser;->getAttributeValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
@@ -1333,6 +1341,7 @@
     :cond_45
     new-instance v1, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;
 
+    .line 485
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
@@ -1524,6 +1533,7 @@
     .line 551
     new-instance v0, Landroid/support/v7/widget/ActivityChooserModel$HistoricalRecord;
 
+    .line 552
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4

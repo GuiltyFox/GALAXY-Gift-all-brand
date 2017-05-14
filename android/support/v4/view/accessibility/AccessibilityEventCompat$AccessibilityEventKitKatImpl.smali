@@ -1,5 +1,5 @@
 .class Landroid/support/v4/view/accessibility/AccessibilityEventCompat$AccessibilityEventKitKatImpl;
-.super Landroid/support/v4/view/accessibility/AccessibilityEventCompat$AccessibilityEventIcsImpl;
+.super Landroid/support/v4/view/accessibility/AccessibilityEventCompat$AccessibilityEventJellyBeanImpl;
 .source "AccessibilityEventCompat.java"
 
 
@@ -8,8 +8,8 @@
     .registers 1
 
     .prologue
-    .line 82
-    invoke-direct {p0}, Landroid/support/v4/view/accessibility/AccessibilityEventCompat$AccessibilityEventIcsImpl;-><init>()V
+    .line 126
+    invoke-direct {p0}, Landroid/support/v4/view/accessibility/AccessibilityEventCompat$AccessibilityEventJellyBeanImpl;-><init>()V
 
     return-void
 .end method
@@ -20,7 +20,7 @@
     .registers 3
 
     .prologue
-    .line 91
+    .line 135
     invoke-static {p1}, Landroid/support/v4/view/accessibility/AccessibilityEventCompatKitKat;->a(Landroid/view/accessibility/AccessibilityEvent;)I
 
     move-result v0
@@ -32,9 +32,9 @@
     .registers 3
 
     .prologue
-    .line 86
+    .line 130
     invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/AccessibilityEventCompatKitKat;->a(Landroid/view/accessibility/AccessibilityEvent;I)V
 
-    .line 87
+    .line 131
     return-void
 .end method

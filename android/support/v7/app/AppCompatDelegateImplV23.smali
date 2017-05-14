@@ -53,6 +53,7 @@
 
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV23;->r:Landroid/app/UiModeManager;
 
+    .line 45
     invoke-virtual {v0}, Landroid/app/UiModeManager;->getNightMode()I
 
     move-result v0

@@ -124,7 +124,7 @@
 
     move-result-object v4
 
-    invoke-static {v4}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v4}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -149,7 +149,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f02029e
+    const v5, 0x7f0202a3
 
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -249,7 +249,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -274,7 +274,7 @@
 
     move-result-object v1
 
-    const v4, 0x7f02029d
+    const v4, 0x7f0202a2
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 

@@ -49,11 +49,13 @@
 
     iget-object v1, p0, Landroid/support/v7/widget/ShareActionProvider$ShareMenuItemOnMenuItemClickListener;->a:Landroid/support/v7/widget/ShareActionProvider;
 
+    .line 359
     # getter for: Landroid/support/v7/widget/ShareActionProvider;->mShareHistoryFileName:Ljava/lang/String;
     invoke-static {v1}, Landroid/support/v7/widget/ShareActionProvider;->access$200(Landroid/support/v7/widget/ShareActionProvider;)Ljava/lang/String;
 
     move-result-object v1
 
+    .line 358
     invoke-static {v0, v1}, Landroid/support/v7/widget/ActivityChooserModel;->a(Landroid/content/Context;Ljava/lang/String;)Landroid/support/v7/widget/ActivityChooserModel;
 
     move-result-object v0
@@ -87,6 +89,7 @@
 
     const-string/jumbo v2, "android.intent.action.SEND_MULTIPLE"
 
+    .line 365
     invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1

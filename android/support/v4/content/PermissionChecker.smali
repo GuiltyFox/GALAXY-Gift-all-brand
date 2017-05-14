@@ -13,6 +13,7 @@
 
     move-result v0
 
+    .line 126
     invoke-static {}, Landroid/os/Process;->myUid()I
 
     move-result v1
@@ -21,6 +22,7 @@
 
     move-result-object v2
 
+    .line 125
     invoke-static {p0, p1, v0, v1, v2}, Landroid/support/v4/content/PermissionChecker;->a(Landroid/content/Context;Ljava/lang/String;IILjava/lang/String;)I
 
     move-result v0

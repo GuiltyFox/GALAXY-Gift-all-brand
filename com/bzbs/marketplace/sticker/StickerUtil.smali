@@ -251,7 +251,7 @@
     if-lez v0, :cond_12f
 
     .line 102
-    invoke-static {p1}, Lcom/bzbs/data/UserLogin;->E(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p1}, Lcom/bzbs/data/UserLogin;->I(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 

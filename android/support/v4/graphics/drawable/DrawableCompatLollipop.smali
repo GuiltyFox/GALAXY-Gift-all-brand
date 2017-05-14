@@ -8,19 +8,19 @@
     .registers 2
 
     .prologue
-    .line 57
+    .line 60
     instance-of v0, p0, Landroid/support/v4/graphics/drawable/TintAwareDrawable;
 
     if-nez v0, :cond_a
 
-    .line 58
+    .line 61
     new-instance v0, Landroid/support/v4/graphics/drawable/DrawableWrapperLollipop;
 
     invoke-direct {v0, p0}, Landroid/support/v4/graphics/drawable/DrawableWrapperLollipop;-><init>(Landroid/graphics/drawable/Drawable;)V
 
     move-object p0, v0
 
-    .line 60
+    .line 63
     :cond_a
     return-object p0
 .end method
@@ -29,10 +29,10 @@
     .registers 3
 
     .prologue
-    .line 36
+    .line 39
     invoke-virtual {p0, p1, p2}, Landroid/graphics/drawable/Drawable;->setHotspot(FF)V
 
-    .line 37
+    .line 40
     return-void
 .end method
 
@@ -40,10 +40,10 @@
     .registers 2
 
     .prologue
-    .line 45
+    .line 48
     invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->setTint(I)V
 
-    .line 46
+    .line 49
     return-void
 .end method
 
@@ -51,10 +51,10 @@
     .registers 5
 
     .prologue
-    .line 41
+    .line 44
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->setHotspotBounds(IIII)V
 
-    .line 42
+    .line 45
     return-void
 .end method
 
@@ -62,10 +62,10 @@
     .registers 2
 
     .prologue
-    .line 49
+    .line 52
     invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->setTintList(Landroid/content/res/ColorStateList;)V
 
-    .line 50
+    .line 53
     return-void
 .end method
 
@@ -73,10 +73,10 @@
     .registers 2
 
     .prologue
-    .line 64
+    .line 67
     invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->applyTheme(Landroid/content/res/Resources$Theme;)V
 
-    .line 65
+    .line 68
     return-void
 .end method
 
@@ -84,10 +84,10 @@
     .registers 5
 
     .prologue
-    .line 78
+    .line 108
     invoke-virtual {p0, p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->inflate(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
 
-    .line 79
+    .line 109
     return-void
 .end method
 
@@ -95,10 +95,10 @@
     .registers 2
 
     .prologue
-    .line 53
+    .line 56
     invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->setTintMode(Landroid/graphics/PorterDuff$Mode;)V
 
-    .line 54
+    .line 57
     return-void
 .end method
 
@@ -106,7 +106,7 @@
     .registers 2
 
     .prologue
-    .line 68
+    .line 71
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->canApplyTheme()Z
 
     move-result v0
@@ -118,7 +118,7 @@
     .registers 2
 
     .prologue
-    .line 72
+    .line 75
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getColorFilter()Landroid/graphics/ColorFilter;
 
     move-result-object v0

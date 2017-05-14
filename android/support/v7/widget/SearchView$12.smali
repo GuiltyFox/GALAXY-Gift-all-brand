@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 1674
+    .line 1751
     iput-object p1, p0, Landroid/support/v7/widget/SearchView$12;->a:Landroid/support/v7/widget/SearchView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 2
 
     .prologue
-    .line 1684
+    .line 1763
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .registers 5
 
     .prologue
-    .line 1676
+    .line 1753
     return-void
 .end method
 
@@ -51,12 +51,12 @@
     .registers 6
 
     .prologue
-    .line 1680
+    .line 1758
     iget-object v0, p0, Landroid/support/v7/widget/SearchView$12;->a:Landroid/support/v7/widget/SearchView;
 
     # invokes: Landroid/support/v7/widget/SearchView;->onTextChanged(Ljava/lang/CharSequence;)V
     invoke-static {v0, p1}, Landroid/support/v7/widget/SearchView;->access$2000(Landroid/support/v7/widget/SearchView;Ljava/lang/CharSequence;)V
 
-    .line 1681
+    .line 1759
     return-void
 .end method

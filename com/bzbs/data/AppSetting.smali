@@ -564,7 +564,7 @@
 
     .prologue
     .line 60
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -585,7 +585,7 @@
 
     .line 62
     :cond_11
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -604,7 +604,7 @@
 
     .line 64
     :cond_22
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -636,7 +636,7 @@
     if-eqz p0, :cond_39
 
     .line 87
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -657,7 +657,7 @@
 
     .line 89
     :cond_13
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -676,7 +676,7 @@
 
     .line 91
     :cond_24
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -715,7 +715,7 @@
     const/high16 v1, 0x41800000    # 16.0f
 
     .line 118
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -734,7 +734,7 @@
 
     .line 120
     :cond_12
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -753,7 +753,7 @@
 
     .line 122
     :cond_21
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -776,12 +776,12 @@
 
     .prologue
     .line 137
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->x(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->C(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     .line 145
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1731,35 +1731,35 @@
     invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->a(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 563
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->c(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 564
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->r(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->b(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 565
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->o(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->u(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-static {p0, v0}, Lcom/bzbs/lib/survey/LibUserLogin;->d(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 566
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)J
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->D(Landroid/content/Context;)J
 
     move-result-wide v0
 
     invoke-static {p0, v0, v1}, Lcom/bzbs/lib/survey/LibUserLogin;->a(Landroid/content/Context;J)Z
 
     .line 567
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1772,7 +1772,7 @@
     invoke-static {p0, v2}, Lcom/bzbs/lib/survey/LibUserLogin;->b(Landroid/content/Context;Z)Z
 
     .line 571
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->G(Landroid/content/Context;)Z
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->K(Landroid/content/Context;)Z
 
     move-result v0
 

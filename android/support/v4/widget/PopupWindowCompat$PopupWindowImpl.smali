@@ -12,6 +12,3 @@
 
 .method public abstract a(Landroid/widget/PopupWindow;Z)V
 .end method
-
-.method public abstract a(Landroid/widget/PopupWindow;)Z
-.end method

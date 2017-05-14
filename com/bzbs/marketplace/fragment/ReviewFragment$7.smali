@@ -29,7 +29,7 @@
     .registers 2
 
     .prologue
-    .line 565
+    .line 575
     iput-object p1, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$7;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-direct {p0}, Lcom/google/gson/reflect/TypeToken;-><init>()V

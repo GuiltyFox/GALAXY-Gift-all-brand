@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 257
+    .line 283
     iput-object p1, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$2;->a:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 4
 
     .prologue
-    .line 269
+    .line 295
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$2;->a:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->contentSubmit:Landroid/widget/RelativeLayout;
@@ -44,7 +44,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 270
+    .line 296
     return-void
 .end method
 
@@ -52,7 +52,7 @@
     .registers 2
 
     .prologue
-    .line 265
+    .line 291
     return-void
 .end method
 
@@ -60,6 +60,6 @@
     .registers 2
 
     .prologue
-    .line 261
+    .line 287
     return-void
 .end method

@@ -30,14 +30,14 @@
     .registers 4
 
     .prologue
-    .line 2239
+    .line 2936
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->j:Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter;
 
-    .line 2240
+    .line 2937
     invoke-direct {p0, p2}, Landroid/support/v7/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
-    .line 2242
-    const v0, 0x7f1001f9
+    .line 2939
+    const v0, 0x7f10020e
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -45,8 +45,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->a:Landroid/view/View;
 
-    .line 2243
-    const v0, 0x7f100224
+    .line 2940
+    const v0, 0x7f10023d
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -54,8 +54,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->b:Landroid/view/View;
 
-    .line 2245
-    const v0, 0x7f10010a
+    .line 2942
+    const v0, 0x7f10010c
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -65,8 +65,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->c:Landroid/support/v7/widget/CardView;
 
-    .line 2246
-    const v0, 0x7f1000ce
+    .line 2943
+    const v0, 0x7f1000d0
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -76,8 +76,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->d:Landroid/widget/LinearLayout;
 
-    .line 2247
-    const v0, 0x7f10010c
+    .line 2944
+    const v0, 0x7f10010e
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -87,8 +87,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->e:Landroid/widget/ImageView;
 
-    .line 2248
-    const v0, 0x7f10010d
+    .line 2945
+    const v0, 0x7f10010f
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -98,8 +98,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->f:Landroid/widget/TextView;
 
-    .line 2249
-    const v0, 0x7f10010e
+    .line 2946
+    const v0, 0x7f100110
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -109,8 +109,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->g:Landroid/widget/TextView;
 
-    .line 2250
-    const v0, 0x7f100110
+    .line 2947
+    const v0, 0x7f100112
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -120,8 +120,8 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->h:Landroid/widget/TextView;
 
-    .line 2251
-    const v0, 0x7f10010f
+    .line 2948
+    const v0, 0x7f100111
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -131,6 +131,6 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$PromotionAdapter$CampaignViewHolder;->i:Landroid/widget/TextView;
 
-    .line 2252
+    .line 2949
     return-void
 .end method

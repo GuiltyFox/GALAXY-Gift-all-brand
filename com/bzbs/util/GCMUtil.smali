@@ -114,7 +114,7 @@
     invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->b(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 37
-    invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->l(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 39
     invoke-static {p0}, Lcom/bzbs/util/GCMUtil;->c(Landroid/content/Context;)V
@@ -182,7 +182,7 @@
     .line 58
     const-string/jumbo v0, ""
 
-    invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->l(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 60
     invoke-static {p0}, Lcom/bzbs/util/GCMUtil;->c(Landroid/content/Context;)V
@@ -195,7 +195,7 @@
 
     .prologue
     .line 65
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -235,7 +235,7 @@
 
     .line 68
     :cond_28
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->h(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->l(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -339,14 +339,14 @@
     .line 81
     const-string/jumbo v4, "device_token"
 
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->v(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->A(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v5
 
     invoke-virtual {v2, v4, v5}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 83
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->u(Landroid/content/Context;)Z
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->z(Landroid/content/Context;)Z
 
     move-result v4
 
@@ -400,7 +400,7 @@
 
     move-result-object v0
 
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->v(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->A(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -448,7 +448,7 @@
 
     move-result-object v4
 
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->w(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->B(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v5
 
@@ -467,7 +467,7 @@
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->w(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->B(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -515,7 +515,7 @@
 
     .line 101
     :cond_149
-    invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->l(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->m(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 103
     sget-object v0, Lcom/bzbs/util/GCMUtil;->a:Ljava/lang/String;

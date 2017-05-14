@@ -4,8 +4,8 @@
 
 
 # virtual methods
-.method public abstract onCloseMenu(Landroid/support/v7/view/menu/MenuBuilder;Z)V
+.method public abstract a(Landroid/support/v7/view/menu/MenuBuilder;Z)V
 .end method
 
-.method public abstract onOpenSubMenu(Landroid/support/v7/view/menu/MenuBuilder;)Z
+.method public abstract a(Landroid/support/v7/view/menu/MenuBuilder;)Z
 .end method

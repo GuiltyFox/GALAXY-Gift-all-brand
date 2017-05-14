@@ -6,19 +6,19 @@
 # instance fields
 .field btnAddPicture:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006a3
+        value = 0x7f1006cf
     .end annotation
 .end field
 
 .field contentImagePost:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100697
+        value = 0x7f1006c3
     .end annotation
 .end field
 
 .field edtTextComment:Landroid/widget/EditText;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10069a
+        value = 0x7f1006c6
     .end annotation
 .end field
 
@@ -39,7 +39,7 @@
 
 .field imagePost:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100698
+        value = 0x7f1006c4
     .end annotation
 .end field
 
@@ -53,7 +53,7 @@
 
 .field mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100642
+        value = 0x7f10066e
     .end annotation
 .end field
 
@@ -65,7 +65,7 @@
 
 .field pvLinearDeterminate:Lcom/rey/material/widget/ProgressView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100696
+        value = 0x7f1006c2
     .end annotation
 .end field
 
@@ -75,13 +75,13 @@
 
 .field recyclerItemBelow:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1006a4
+        value = 0x7f1006d0
     .end annotation
 .end field
 
 .field recyclerView:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100695
+        value = 0x7f1006c1
     .end annotation
 .end field
 
@@ -91,7 +91,7 @@
 
 .field tvResult:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100681
+        value = 0x7f1006ad
     .end annotation
 .end field
 
@@ -107,36 +107,36 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 66
+    .line 69
     invoke-direct {p0}, Lcom/bzbs/marketplace/base/BaseFragment;-><init>()V
 
-    .line 99
+    .line 103
     iput-boolean v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->i:Z
 
-    .line 101
+    .line 105
     iput-boolean v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->k:Z
-
-    .line 106
-    const-string/jumbo v0, ""
-
-    iput-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->o:Ljava/lang/String;
-
-    .line 108
-    const-string/jumbo v0, ""
-
-    iput-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->q:Ljava/lang/String;
-
-    .line 109
-    const-string/jumbo v0, ""
-
-    iput-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->r:Ljava/lang/String;
 
     .line 110
     const-string/jumbo v0, ""
 
+    iput-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->o:Ljava/lang/String;
+
+    .line 112
+    const-string/jumbo v0, ""
+
+    iput-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->q:Ljava/lang/String;
+
+    .line 113
+    const-string/jumbo v0, ""
+
+    iput-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->r:Ljava/lang/String;
+
+    .line 114
+    const-string/jumbo v0, ""
+
     iput-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->s:Ljava/lang/String;
 
-    .line 111
+    .line 115
     iput-boolean v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->t:Z
 
     return-void
@@ -146,7 +146,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     iput p1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->m:I
 
     return p1
@@ -156,7 +156,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     iput-object p1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->p:Landroid/net/Uri;
 
     return-object p1
@@ -168,82 +168,92 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 463
+    .line 475
     new-instance v0, Lcom/bzbs/marketplace/model/review/ReviewModel;
 
     invoke-direct {v0}, Lcom/bzbs/marketplace/model/review/ReviewModel;-><init>()V
 
-    .line 464
-    iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
-
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lcom/bzbs/marketplace/model/review/ReviewModel;->setUserId(Ljava/lang/String;)V
-
-    .line 465
+    .line 476
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
     invoke-static {v1}, Lcom/bzbs/data/UserLogin;->r(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
+    invoke-virtual {v0, v1}, Lcom/bzbs/marketplace/model/review/ReviewModel;->setUserId(Ljava/lang/String;)V
+
+    .line 477
+    iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
+
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->x(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v1
+
     invoke-virtual {v0, v1}, Lcom/bzbs/marketplace/model/review/ReviewModel;->setName(Ljava/lang/String;)V
 
-    .line 466
+    .line 478
     invoke-virtual {v0, p2}, Lcom/bzbs/marketplace/model/review/ReviewModel;->setMessage(Ljava/lang/String;)V
 
-    .line 467
+    .line 479
     invoke-virtual {v0, v2}, Lcom/bzbs/marketplace/model/review/ReviewModel;->setCommentCount(I)V
 
-    .line 468
+    .line 480
     invoke-virtual {v0, v2}, Lcom/bzbs/marketplace/model/review/ReviewModel;->setLikes(I)V
 
-    .line 469
+    .line 481
     new-instance v1, Ljava/util/Date;
 
     invoke-direct {v1}, Ljava/util/Date;-><init>()V
 
-    .line 470
+    .line 482
     invoke-virtual {v1}, Ljava/util/Date;->getTime()J
 
     move-result-wide v2
 
-    .line 471
+    .line 483
     const-wide/16 v4, 0x3e8
 
     div-long/2addr v2, v4
 
     invoke-virtual {v0, v2, v3}, Lcom/bzbs/marketplace/model/review/ReviewModel;->setCreatedTime(J)V
 
-    .line 472
+    .line 484
     invoke-virtual {v0, p4}, Lcom/bzbs/marketplace/model/review/ReviewModel;->setSticker(Ljava/lang/String;)V
 
-    .line 473
+    .line 485
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->s:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Lcom/bzbs/marketplace/model/review/ReviewModel;->setImageUrl(Ljava/lang/String;)V
 
-    .line 474
+    .line 486
     invoke-virtual {v0, p1}, Lcom/bzbs/marketplace/model/review/ReviewModel;->setHeader(Z)V
 
-    .line 475
+    .line 487
     new-instance v1, Ljava/io/File;
 
     invoke-direct {v1, p3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
     invoke-virtual {v0, v1}, Lcom/bzbs/marketplace/model/review/ReviewModel;->setFile(Ljava/io/File;)V
 
-    .line 477
+    .line 489
     return-object v0
+.end method
+
+.method static synthetic a(Lcom/samsung/privilege/fragment/RequestHelpFragment;Ljava/lang/String;)Ljava/lang/String;
+    .registers 2
+
+    .prologue
+    .line 69
+    iput-object p1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->o:Ljava/lang/String;
+
+    return-object p1
 .end method
 
 .method static synthetic a(Lcom/samsung/privilege/fragment/RequestHelpFragment;Ljava/util/ArrayList;)Ljava/util/ArrayList;
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     iput-object p1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->g:Ljava/util/ArrayList;
 
     return-object p1
@@ -253,10 +263,10 @@
     .registers 4
 
     .prologue
-    .line 265
+    .line 269
     if-eqz p1, :cond_d
 
-    .line 266
+    .line 270
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->getCurrentFocus()Landroid/view/View;
@@ -267,7 +277,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/marketplace/util/KeyboardStatus;->a(Landroid/view/View;Landroid/app/Activity;)V
 
-    .line 268
+    .line 272
     :cond_d
     return-void
 .end method
@@ -280,31 +290,43 @@
 
     const/4 v2, 0x1
 
-    .line 498
+    .line 510
     invoke-virtual {p4}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_17
 
-    .line 499
-    packed-switch p1, :pswitch_data_3e
+    .line 511
+    sparse-switch p1, :sswitch_data_4a
 
-    .line 517
+    .line 527
     :cond_b
     :goto_b
+    invoke-virtual {p0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+
+    move-result-object v0
+
+    new-instance v1, Lcom/samsung/privilege/fragment/RequestHelpFragment$8;
+
+    invoke-direct {v1, p0}, Lcom/samsung/privilege/fragment/RequestHelpFragment$8;-><init>(Lcom/samsung/privilege/fragment/RequestHelpFragment;)V
+
+    invoke-static {p1, p2, p3, v0, v1}, Lpl/aprilapps/easyphotopicker/EasyImage;->a(IILandroid/content/Intent;Landroid/app/Activity;Lpl/aprilapps/easyphotopicker/EasyImage$Callbacks;)V
+
+    .line 544
+    :cond_17
     return-void
 
-    .line 501
-    :pswitch_c
+    .line 513
+    :sswitch_18
     if-ne p2, v1, :cond_b
 
-    .line 502
+    .line 514
     invoke-virtual {p3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 503
+    .line 515
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
     invoke-static {v0, v1}, Lcom/bzbs/marketplace/util/OutputMediaFile;->a(Landroid/net/Uri;Landroid/app/Activity;)Ljava/lang/String;
@@ -321,16 +343,16 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->o:Ljava/lang/String;
 
-    .line 504
+    .line 516
     invoke-direct {p0, v2, v2}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a(ZZ)V
 
     goto :goto_b
 
-    .line 508
-    :pswitch_26
+    .line 520
+    :sswitch_32
     if-ne p2, v1, :cond_b
 
-    .line 509
+    .line 521
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->p:Landroid/net/Uri;
 
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
@@ -349,24 +371,24 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->o:Ljava/lang/String;
 
-    .line 510
+    .line 522
     invoke-direct {p0, v2, v2}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a(ZZ)V
 
     goto :goto_b
 
-    .line 499
-    :pswitch_data_3e
-    .packed-switch 0x270e
-        :pswitch_26
-        :pswitch_c
-    .end packed-switch
+    .line 511
+    :sswitch_data_4a
+    .sparse-switch
+        0x1f40 -> :sswitch_18
+        0x2328 -> :sswitch_32
+    .end sparse-switch
 .end method
 
 .method static synthetic a(Lcom/samsung/privilege/fragment/RequestHelpFragment;)V
     .registers 1
 
     .prologue
-    .line 66
+    .line 69
     invoke-direct {p0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->e()V
 
     return-void
@@ -392,8 +414,18 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     invoke-direct {p0, p1}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->b(Z)V
+
+    return-void
+.end method
+
+.method static synthetic a(Lcom/samsung/privilege/fragment/RequestHelpFragment;ZZ)V
+    .registers 3
+
+    .prologue
+    .line 69
+    invoke-direct {p0, p1, p2}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a(ZZ)V
 
     return-void
 .end method
@@ -406,29 +438,29 @@
 
     const/4 v6, 0x1
 
-    .line 357
+    .line 369
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     if-eqz v0, :cond_189
 
-    .line 359
+    .line 371
     new-instance v0, Lcom/bzbs/util/DeviceHelper;
 
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
     invoke-direct {v0, v1}, Lcom/bzbs/util/DeviceHelper;-><init>(Landroid/content/Context;)V
 
-    .line 360
+    .line 372
     invoke-virtual {v0}, Lcom/bzbs/util/DeviceHelper;->d()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 361
+    .line 373
     sget-object v1, Landroid/os/Build$VERSION;->RELEASE:Ljava/lang/String;
 
-    .line 362
+    .line 374
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -455,7 +487,7 @@
 
     move-result-object v2
 
-    .line 364
+    .line 376
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -468,7 +500,7 @@
 
     iget-object v4, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
-    invoke-static {v4}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v4}, Lcom/bzbs/data/UserLogin;->r(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -490,7 +522,7 @@
 
     iget-object v4, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
-    invoke-static {v4}, Lcom/bzbs/data/UserLogin;->p(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v4}, Lcom/bzbs/data/UserLogin;->v(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -512,7 +544,7 @@
 
     iget-object v4, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
-    invoke-static {v4}, Lcom/bzbs/data/UserLogin;->q(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v4}, Lcom/bzbs/data/UserLogin;->w(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v4
 
@@ -572,7 +604,7 @@
 
     move-result-object v0
 
-    .line 365
+    .line 377
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->edtTextComment:Landroid/widget/EditText;
 
     invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -587,7 +619,7 @@
 
     move-result-object v1
 
-    .line 367
+    .line 379
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -606,7 +638,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
-    invoke-static {v3}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/bzbs/data/UserLogin;->r(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -622,7 +654,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
-    invoke-static {v3}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -634,12 +666,12 @@
 
     move-result-object v2
 
-    .line 368
+    .line 380
     new-instance v3, Lcom/loopj/android/http/RequestParams;
 
     invoke-direct {v3}, Lcom/loopj/android/http/RequestParams;-><init>()V
 
-    .line 370
+    .line 382
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -686,15 +718,15 @@
 
     move-result-object v1
 
-    .line 372
+    .line 384
     const-string/jumbo v0, "message"
 
     invoke-virtual {v3, v0, v1}, Lcom/loopj/android/http/RequestParams;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 374
+    .line 386
     iput-boolean v7, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->t:Z
 
-    .line 375
+    .line 387
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->o:Ljava/lang/String;
 
     invoke-virtual {v0}, Ljava/lang/String;->length()I
@@ -705,10 +737,10 @@
 
     if-le v0, v4, :cond_14a
 
-    .line 376
+    .line 388
     iput-boolean v6, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->t:Z
 
-    .line 378
+    .line 390
     :try_start_13d
     const-string/jumbo v0, "source"
 
@@ -722,14 +754,14 @@
     :try_end_14a
     .catch Ljava/io/FileNotFoundException; {:try_start_13d .. :try_end_14a} :catch_18a
 
-    .line 384
+    .line 396
     :cond_14a
     :goto_14a
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 385
+    .line 397
     iget-object v4, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->o:Ljava/lang/String;
 
     iget-object v5, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->r:Ljava/lang/String;
@@ -740,34 +772,34 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 386
+    .line 398
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->g:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 387
+    .line 399
     iput-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->g:Ljava/util/ArrayList;
 
-    .line 388
+    .line 400
     invoke-direct {p0, v7, v6}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a(ZZ)V
 
-    .line 389
+    .line 401
     invoke-direct {p0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->f()V
 
-    .line 391
+    .line 403
     invoke-direct {p0, v6}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a(Z)V
 
-    .line 392
+    .line 404
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->edtTextComment:Landroid/widget/EditText;
 
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->s:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 393
+    .line 405
     invoke-direct {p0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->i()V
 
-    .line 395
+    .line 407
     new-instance v0, Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;
 
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
@@ -778,7 +810,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->v:Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;
 
-    .line 396
+    .line 408
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->v:Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;
 
     new-instance v1, Lcom/samsung/privilege/fragment/RequestHelpFragment$7;
@@ -787,15 +819,15 @@
 
     invoke-virtual {v0, v1}, Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;->a(Lcom/bzbs/marketplace/asynctask/http/CallbackHttpAsyncTask;)V
 
-    .line 447
+    .line 459
     :cond_189
     return-void
 
-    .line 379
+    .line 391
     :catch_18a
     move-exception v0
 
-    .line 380
+    .line 392
     invoke-virtual {v0}, Ljava/io/FileNotFoundException;->printStackTrace()V
 
     goto :goto_14a
@@ -805,39 +837,39 @@
     .registers 4
 
     .prologue
-    .line 452
+    .line 464
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->pvLinearDeterminate:Lcom/rey/material/widget/ProgressView;
 
     if-eqz v0, :cond_17
 
-    .line 453
+    .line 465
     if-eqz p1, :cond_18
 
-    .line 454
+    .line 466
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->pvLinearDeterminate:Lcom/rey/material/widget/ProgressView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/rey/material/widget/ProgressView;->setVisibility(I)V
 
-    .line 455
+    .line 467
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->pvLinearDeterminate:Lcom/rey/material/widget/ProgressView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lcom/rey/material/widget/ProgressView;->setProgress(F)V
 
-    .line 456
+    .line 468
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->pvLinearDeterminate:Lcom/rey/material/widget/ProgressView;
 
     invoke-virtual {v0}, Lcom/rey/material/widget/ProgressView;->a()V
 
-    .line 460
+    .line 472
     :cond_17
     :goto_17
     return-void
 
-    .line 458
+    .line 470
     :cond_18
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->pvLinearDeterminate:Lcom/rey/material/widget/ProgressView;
 
@@ -852,39 +884,39 @@
     .registers 6
 
     .prologue
-    .line 271
+    .line 275
     if-nez p1, :cond_29
 
-    .line 272
+    .line 276
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->s:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->r:Ljava/lang/String;
 
-    .line 273
+    .line 277
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->s:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->q:Ljava/lang/String;
 
-    .line 274
+    .line 278
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->s:Ljava/lang/String;
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->o:Ljava/lang/String;
 
-    .line 275
+    .line 279
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->btnAddPicture:Landroid/widget/ImageView;
 
-    const v1, 0x7f02026a
+    const v1, 0x7f02026d
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 276
+    .line 280
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->contentImagePost:Landroid/widget/LinearLayout;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 277
+    .line 281
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->getCurrentFocus()Landroid/view/View;
@@ -895,11 +927,11 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/marketplace/util/KeyboardStatus;->a(Landroid/view/View;Landroid/app/Activity;)V
 
-    .line 286
+    .line 290
     :goto_28
     return-void
 
-    .line 280
+    .line 284
     :cond_29
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->contentImagePost:Landroid/widget/LinearLayout;
 
@@ -907,10 +939,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
-    .line 281
+    .line 285
     if-eqz p2, :cond_52
 
-    .line 282
+    .line 286
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
     invoke-static {v0}, Lcom/bumptech/glide/Glide;->a(Landroid/app/Activity;)Lcom/bumptech/glide/RequestManager;
@@ -943,7 +975,7 @@
 
     goto :goto_28
 
-    .line 284
+    .line 288
     :cond_52
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
@@ -972,7 +1004,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     iput p1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->n:I
 
     return p1
@@ -982,15 +1014,15 @@
     .registers 4
 
     .prologue
-    .line 141
+    .line 145
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->b(Z)V
 
-    .line 142
+    .line 146
     const/4 v0, 0x0
 
-    .line 143
+    .line 147
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->g:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
@@ -999,7 +1031,7 @@
 
     if-lez v1, :cond_21
 
-    .line 144
+    .line 148
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->g:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->g:Ljava/util/ArrayList;
@@ -1020,17 +1052,17 @@
 
     move-result-object v0
 
-    .line 146
+    .line 150
     :cond_21
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
     iget-object v2, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
-    invoke-static {v2}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/bzbs/data/UserLogin;->r(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -1038,7 +1070,7 @@
 
     move-result-object v0
 
-    .line 147
+    .line 151
     new-instance v1, Lcom/bzbs/marketplace/asynctask/review/ReviewAsynctask;
 
     iget-object v2, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
@@ -1047,7 +1079,7 @@
 
     iput-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->u:Lcom/bzbs/marketplace/asynctask/review/ReviewAsynctask;
 
-    .line 148
+    .line 152
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->u:Lcom/bzbs/marketplace/asynctask/review/ReviewAsynctask;
 
     new-instance v1, Lcom/samsung/privilege/fragment/RequestHelpFragment$1;
@@ -1056,7 +1088,7 @@
 
     invoke-virtual {v0, v1}, Lcom/bzbs/marketplace/asynctask/review/ReviewAsynctask;->a(Lcom/bzbs/marketplace/asynctask/review/ReviewAsynctask$CallbackList;)V
 
-    .line 179
+    .line 183
     return-void
 .end method
 
@@ -1064,14 +1096,14 @@
     .registers 4
 
     .prologue
-    .line 534
+    .line 561
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
     instance-of v0, v0, Lcom/samsung/privilege/activity/RequestHelpActivity;
 
     if-eqz v0, :cond_10
 
-    .line 535
+    .line 562
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
     check-cast v0, Lcom/samsung/privilege/activity/RequestHelpActivity;
@@ -1083,11 +1115,11 @@
     :goto_d
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/RequestHelpActivity;->c(I)V
 
-    .line 537
+    .line 564
     :cond_10
     return-void
 
-    .line 535
+    .line 562
     :cond_11
     const/16 v1, 0x8
 
@@ -1098,7 +1130,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     iget-boolean v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->i:Z
 
     return v0
@@ -1108,7 +1140,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     iput-boolean p1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->k:Z
 
     return p1
@@ -1118,7 +1150,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     iput p1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->l:I
 
     return p1
@@ -1128,7 +1160,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->g:Ljava/util/ArrayList;
 
     return-object v0
@@ -1138,7 +1170,7 @@
     .registers 3
 
     .prologue
-    .line 182
+    .line 186
     new-instance v0, Landroid/support/v7/widget/LinearLayoutManager;
 
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
@@ -1147,7 +1179,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->j:Landroid/support/v7/widget/LinearLayoutManager;
 
-    .line 183
+    .line 187
     new-instance v0, Lcom/samsung/privilege/adapter/RequestHelpAdapter;
 
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
@@ -1156,21 +1188,21 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->h:Lcom/samsung/privilege/adapter/RequestHelpAdapter;
 
-    .line 184
+    .line 188
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->recyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->j:Landroid/support/v7/widget/LinearLayoutManager;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setLayoutManager(Landroid/support/v7/widget/RecyclerView$LayoutManager;)V
 
-    .line 185
+    .line 189
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->recyclerView:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->h:Lcom/samsung/privilege/adapter/RequestHelpAdapter;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setAdapter(Landroid/support/v7/widget/RecyclerView$Adapter;)V
 
-    .line 187
+    .line 191
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->recyclerView:Landroid/support/v7/widget/RecyclerView;
 
     new-instance v1, Lcom/samsung/privilege/fragment/RequestHelpFragment$2;
@@ -1179,7 +1211,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->addOnScrollListener(Landroid/support/v7/widget/RecyclerView$OnScrollListener;)V
 
-    .line 207
+    .line 211
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->h:Lcom/samsung/privilege/adapter/RequestHelpAdapter;
 
     new-instance v1, Lcom/samsung/privilege/fragment/RequestHelpFragment$3;
@@ -1188,7 +1220,7 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/adapter/RequestHelpAdapter;->a(Lcom/bzbs/marketplace/listener/OnTabItemListener;)V
 
-    .line 218
+    .line 222
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     new-instance v1, Lcom/samsung/privilege/fragment/RequestHelpFragment$4;
@@ -1197,7 +1229,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/widget/SwipeRefreshLayout;->a(Landroid/support/v4/widget/SwipeRefreshLayout$OnRefreshListener;)V
 
-    .line 224
+    .line 228
     return-void
 .end method
 
@@ -1205,7 +1237,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     iput-boolean p1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->i:Z
 
     return p1
@@ -1215,22 +1247,22 @@
     .registers 2
 
     .prologue
-    .line 227
+    .line 231
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->i:Z
 
-    .line 228
+    .line 232
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->g:Ljava/util/ArrayList;
 
-    .line 229
+    .line 233
     invoke-direct {p0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->b()V
 
-    .line 230
+    .line 234
     return-void
 .end method
 
@@ -1238,7 +1270,7 @@
     .registers 1
 
     .prologue
-    .line 66
+    .line 69
     invoke-direct {p0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->f()V
 
     return-void
@@ -1248,7 +1280,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     invoke-direct {p0, p1}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a(Z)V
 
     return-void
@@ -1258,7 +1290,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->j:Landroid/support/v7/widget/LinearLayoutManager;
 
     return-object v0
@@ -1268,19 +1300,19 @@
     .registers 3
 
     .prologue
-    .line 233
+    .line 237
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     if-eqz v0, :cond_a
 
-    .line 234
+    .line 238
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v4/widget/SwipeRefreshLayout;->setRefreshing(Z)V
 
-    .line 236
+    .line 240
     :cond_a
     return-void
 .end method
@@ -1289,7 +1321,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     iput-boolean p1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->t:Z
 
     return p1
@@ -1299,25 +1331,25 @@
     .registers 3
 
     .prologue
-    .line 239
+    .line 243
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->h:Lcom/samsung/privilege/adapter/RequestHelpAdapter;
 
     if-eqz v0, :cond_b
 
-    .line 240
+    .line 244
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->h:Lcom/samsung/privilege/adapter/RequestHelpAdapter;
 
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->g:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/adapter/RequestHelpAdapter;->a(Ljava/util/ArrayList;)V
 
-    .line 242
+    .line 246
     :cond_b
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->edtTextComment:Landroid/widget/EditText;
 
     if-eqz v0, :cond_19
 
-    .line 243
+    .line 247
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->edtTextComment:Landroid/widget/EditText;
 
     new-instance v1, Lcom/samsung/privilege/fragment/RequestHelpFragment$5;
@@ -1326,7 +1358,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 249
+    .line 253
     :cond_19
     return-void
 .end method
@@ -1335,7 +1367,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     iget-boolean v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->k:Z
 
     return v0
@@ -1345,7 +1377,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     iget v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->m:I
 
     return v0
@@ -1359,7 +1391,7 @@
 
     const/4 v0, 0x0
 
-    .line 252
+    .line 256
     iget-object v2, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->recyclerItemBelow:Landroid/support/v7/widget/RecyclerView;
 
     if-eqz v2, :cond_22
@@ -1368,7 +1400,7 @@
 
     if-eqz v2, :cond_22
 
-    .line 253
+    .line 257
     iget-object v2, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->recyclerItemBelow:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v2}, Landroid/support/v7/widget/RecyclerView;->getVisibility()I
@@ -1377,22 +1409,22 @@
 
     if-nez v2, :cond_22
 
-    .line 254
+    .line 258
     iget-object v2, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->recyclerItemBelow:Landroid/support/v7/widget/RecyclerView;
 
     const/16 v3, 0x8
 
     invoke-virtual {v2, v3}, Landroid/support/v7/widget/RecyclerView;->setVisibility(I)V
 
-    .line 255
+    .line 259
     invoke-direct {p0, v0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a(I)V
 
-    .line 256
+    .line 260
     iget-object v2, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     invoke-virtual {v2, v1}, Landroid/support/v4/widget/SwipeRefreshLayout;->setEnabled(Z)V
 
-    .line 259
+    .line 263
     :goto_21
     return v0
 
@@ -1406,7 +1438,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     iget v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->l:I
 
     return v0
@@ -1416,21 +1448,21 @@
     .registers 6
 
     .prologue
-    .line 289
+    .line 293
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->recyclerItemBelow:Landroid/support/v7/widget/RecyclerView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setVisibility(I)V
 
-    .line 290
+    .line 294
     new-instance v0, Lcom/bzbs/marketplace/adapter/ReviewPickAdapter;
 
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
     invoke-direct {v0, v1}, Lcom/bzbs/marketplace/adapter/ReviewPickAdapter;-><init>(Landroid/app/Activity;)V
 
-    .line 291
+    .line 295
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->recyclerItemBelow:Landroid/support/v7/widget/RecyclerView;
 
     new-instance v2, Landroid/support/v7/widget/GridLayoutManager;
@@ -1443,19 +1475,19 @@
 
     invoke-virtual {v1, v2}, Landroid/support/v7/widget/RecyclerView;->setLayoutManager(Landroid/support/v7/widget/RecyclerView$LayoutManager;)V
 
-    .line 292
+    .line 296
     iget-object v1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->recyclerItemBelow:Landroid/support/v7/widget/RecyclerView;
 
     invoke-virtual {v1, v0}, Landroid/support/v7/widget/RecyclerView;->setAdapter(Landroid/support/v7/widget/RecyclerView$Adapter;)V
 
-    .line 294
+    .line 298
     new-instance v1, Lcom/samsung/privilege/fragment/RequestHelpFragment$6;
 
     invoke-direct {v1, p0}, Lcom/samsung/privilege/fragment/RequestHelpFragment$6;-><init>(Lcom/samsung/privilege/fragment/RequestHelpFragment;)V
 
     invoke-virtual {v0, v1}, Lcom/bzbs/marketplace/adapter/ReviewPickAdapter;->a(Lcom/bzbs/marketplace/listener/OnTabItemListener;)V
 
-    .line 329
+    .line 341
     return-void
 .end method
 
@@ -1463,7 +1495,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     iget v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->n:I
 
     return v0
@@ -1473,7 +1505,7 @@
     .registers 3
 
     .prologue
-    .line 521
+    .line 548
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->getCurrentFocus()Landroid/view/View;
@@ -1484,7 +1516,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/marketplace/util/KeyboardStatus;->a(Landroid/view/View;Landroid/app/Activity;)V
 
-    .line 522
+    .line 549
     return-void
 .end method
 
@@ -1492,7 +1524,7 @@
     .registers 1
 
     .prologue
-    .line 66
+    .line 69
     invoke-direct {p0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->b()V
 
     return-void
@@ -1502,7 +1534,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->h:Lcom/samsung/privilege/adapter/RequestHelpAdapter;
 
     return-object v0
@@ -1512,7 +1544,7 @@
     .registers 1
 
     .prologue
-    .line 66
+    .line 69
     invoke-direct {p0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->d()V
 
     return-void
@@ -1522,7 +1554,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     invoke-direct {p0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->g()Z
 
     move-result v0
@@ -1534,7 +1566,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->p:Landroid/net/Uri;
 
     return-object v0
@@ -1544,7 +1576,7 @@
     .registers 2
 
     .prologue
-    .line 66
+    .line 69
     iget-boolean v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->t:Z
 
     return v0
@@ -1556,7 +1588,7 @@
     .registers 3
 
     .prologue
-    .line 126
+    .line 130
     invoke-virtual {p0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
@@ -1569,8 +1601,8 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
-    .line 127
-    const v0, 0x7f040153
+    .line 131
+    const v0, 0x7f04015a
 
     return v0
 .end method
@@ -1579,28 +1611,28 @@
     .registers 5
 
     .prologue
-    .line 132
+    .line 136
     invoke-direct {p0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->i()V
 
-    .line 134
+    .line 138
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->g:Ljava/util/ArrayList;
 
-    .line 135
+    .line 139
     const/4 v0, 0x0
 
     invoke-direct {p0, v0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a(Z)V
 
-    .line 136
+    .line 140
     invoke-direct {p0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->c()V
 
-    .line 137
+    .line 141
     invoke-direct {p0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->b()V
 
-    .line 138
+    .line 142
     return-void
 .end method
 
@@ -1608,10 +1640,10 @@
     .registers 8
 
     .prologue
-    .line 495
+    .line 507
     invoke-super {p0, p1, p2, p3}, Lcom/bzbs/marketplace/base/BaseFragment;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 496
+    .line 508
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
     check-cast v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
@@ -1636,10 +1668,10 @@
 
     move-result-object v1
 
-    .line 497
+    .line 509
     invoke-virtual {v0, v1}, Lrx/Observable;->a(Lrx/functions/Action1;)Lrx/Subscription;
 
-    .line 518
+    .line 545
     return-void
 .end method
 
@@ -1647,27 +1679,27 @@
     .registers 4
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f1006a3
+            0x7f1006cf
         }
     .end annotation
 
     .prologue
-    .line 333
+    .line 345
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v4/widget/SwipeRefreshLayout;->setEnabled(Z)V
 
-    .line 335
+    .line 347
     invoke-direct {p0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->h()V
 
-    .line 336
+    .line 348
     const/4 v0, 0x1
 
     invoke-direct {p0, v0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a(I)V
 
-    .line 337
+    .line 349
     return-void
 .end method
 
@@ -1675,8 +1707,8 @@
     .registers 6
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f100699,
-            0x7f10042b
+            0x7f1006c5,
+            0x7f100446
         }
     .end annotation
 
@@ -1685,24 +1717,24 @@
 
     const/4 v2, 0x1
 
-    .line 341
+    .line 353
     invoke-virtual {p1}, Landroid/view/View;->getId()I
 
     move-result v0
 
-    const v1, 0x7f100699
+    const v1, 0x7f1006c5
 
     if-ne v0, v1, :cond_f
 
-    .line 342
+    .line 354
     invoke-direct {p0, v3, v2}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a(ZZ)V
 
-    .line 449
+    .line 461
     :cond_e
     :goto_e
     return-void
 
-    .line 345
+    .line 357
     :cond_f
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
@@ -1714,17 +1746,17 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 346
+    .line 358
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v0
 
     if-nez v0, :cond_2d
 
-    .line 347
+    .line 359
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
-    const v1, 0x7f090251
+    const v1, 0x7f090252
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->getString(I)Ljava/lang/String;
 
@@ -1734,7 +1766,7 @@
 
     goto :goto_e
 
-    .line 351
+    .line 363
     :cond_2d
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->edtTextComment:Landroid/widget/EditText;
 
@@ -1756,7 +1788,7 @@
 
     if-lt v0, v2, :cond_e
 
-    .line 355
+    .line 367
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a:Landroid/app/Activity;
 
     check-cast v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
@@ -1777,7 +1809,7 @@
 
     move-result-object v1
 
-    .line 356
+    .line 368
     invoke-virtual {v0, v1}, Lrx/Observable;->a(Lrx/functions/Action1;)Lrx/Subscription;
 
     goto :goto_e
@@ -1787,31 +1819,31 @@
     .registers 2
 
     .prologue
-    .line 526
+    .line 553
     invoke-super {p0}, Lcom/bzbs/marketplace/base/BaseFragment;->onDestroyView()V
 
-    .line 527
+    .line 554
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->v:Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;
 
     if-eqz v0, :cond_c
 
-    .line 528
+    .line 555
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->v:Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;
 
     invoke-virtual {v0}, Lcom/bzbs/marketplace/asynctask/http/HttpAsynctask;->b()V
 
-    .line 529
+    .line 556
     :cond_c
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->u:Lcom/bzbs/marketplace/asynctask/review/ReviewAsynctask;
 
     if-eqz v0, :cond_15
 
-    .line 530
+    .line 557
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->u:Lcom/bzbs/marketplace/asynctask/review/ReviewAsynctask;
 
     invoke-virtual {v0}, Lcom/bzbs/marketplace/asynctask/review/ReviewAsynctask;->a()V
 
-    .line 531
+    .line 558
     :cond_15
     return-void
 .end method

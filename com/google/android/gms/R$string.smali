@@ -4,9 +4,9 @@
 
 
 # static fields
-.field public static final auth_google_play_services_client_facebook_display_name:I = 0x7f09040e
+.field public static final auth_google_play_services_client_facebook_display_name:I = 0x7f09043d
 
-.field public static final auth_google_play_services_client_google_display_name:I = 0x7f09040f
+.field public static final auth_google_play_services_client_google_display_name:I = 0x7f09043e
 
 .field public static final common_android_wear_notification_needs_update_text:I = 0x7f090023
 

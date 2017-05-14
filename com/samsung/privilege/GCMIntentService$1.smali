@@ -24,7 +24,7 @@
     .registers 5
 
     .prologue
-    .line 137
+    .line 138
     iput-object p1, p0, Lcom/samsung/privilege/GCMIntentService$1;->d:Lcom/samsung/privilege/GCMIntentService;
 
     iput-object p2, p0, Lcom/samsung/privilege/GCMIntentService$1;->a:Lcom/bzbs/bean/MessageGCM;
@@ -44,10 +44,10 @@
     .registers 8
 
     .prologue
-    .line 157
+    .line 158
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 159
+    .line 160
     invoke-static {}, Lcom/samsung/privilege/GCMIntentService;->a()Ljava/lang/String;
 
     move-result-object v0
@@ -82,7 +82,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 160
+    .line 161
     return-void
 .end method
 
@@ -90,7 +90,7 @@
     .registers 12
 
     .prologue
-    .line 140
+    .line 141
     invoke-static {}, Lcom/samsung/privilege/GCMIntentService;->a()Ljava/lang/String;
 
     move-result-object v0
@@ -125,32 +125,32 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 143
+    .line 144
     :try_start_26
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 144
+    .line 145
     new-instance v6, Lcom/bzbs/bean/Campaign;
 
     invoke-direct {v6, v0}, Lcom/bzbs/bean/Campaign;-><init>(Lorg/json/JSONObject;)V
 
-    .line 146
+    .line 147
     iget-object v0, p0, Lcom/samsung/privilege/GCMIntentService$1;->a:Lcom/bzbs/bean/MessageGCM;
 
     iget-object v1, v6, Lcom/bzbs/bean/Campaign;->AgencyID:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/bzbs/bean/MessageGCM;->agency_id:Ljava/lang/String;
 
-    .line 147
+    .line 148
     iget-object v0, p0, Lcom/samsung/privilege/GCMIntentService$1;->a:Lcom/bzbs/bean/MessageGCM;
 
     iget-object v1, v6, Lcom/bzbs/bean/Campaign;->ParentCategoryID:Ljava/lang/String;
 
     iput-object v1, v0, Lcom/bzbs/bean/MessageGCM;->cp_cat_id:Ljava/lang/String;
 
-    .line 149
+    .line 150
     iget-object v0, p0, Lcom/samsung/privilege/GCMIntentService$1;->d:Lcom/samsung/privilege/GCMIntentService;
 
     iget-object v1, p0, Lcom/samsung/privilege/GCMIntentService$1;->b:Landroid/content/Context;
@@ -161,7 +161,7 @@
 
     iget-object v4, p0, Lcom/samsung/privilege/GCMIntentService$1;->b:Landroid/content/Context;
 
-    const v5, 0x7f09040b
+    const v5, 0x7f09043a
 
     invoke-virtual {v4, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -175,11 +175,11 @@
     :try_end_54
     .catch Ljava/lang/Exception; {:try_start_26 .. :try_end_54} :catch_55
 
-    .line 153
+    .line 154
     :goto_54
     return-void
 
-    .line 150
+    .line 151
     :catch_55
     move-exception v0
 

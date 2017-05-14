@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/ResumeUtil;->a(Landroid/content/Context;Landroid/app/Activity;Landroid/os/Handler;Z)V
+    value = Lcom/samsung/privilege/util/ResumeUtil;->a(Landroid/content/Context;Landroid/app/Activity;Landroid/os/Handler;ZZ)V
 .end annotation
 
 
@@ -20,7 +20,7 @@
     .registers 3
 
     .prologue
-    .line 333
+    .line 355
     iput-object p1, p0, Lcom/samsung/privilege/util/ResumeUtil$3;->a:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/ResumeUtil$3;->b:Landroid/app/Activity;
@@ -36,10 +36,10 @@
     .registers 8
 
     .prologue
-    .line 363
+    .line 386
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 365
+    .line 388
     invoke-static {}, Lcom/samsung/privilege/util/ResumeUtil;->a()Ljava/lang/String;
 
     move-result-object v0
@@ -74,21 +74,23 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 367
+    .line 390
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/samsung/privilege/util/ResumeUtil;->a(Z)Z
 
-    .line 368
+    .line 391
     return-void
 .end method
 
 .method public successfully(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
-    .registers 9
+    .registers 10
 
     .prologue
-    .line 338
-    :try_start_0
+    const/4 v4, 0x0
+
+    .line 360
+    :try_start_1
     invoke-static {}, Lcom/samsung/privilege/util/ResumeUtil;->a()Ljava/lang/String;
 
     move-result-object v0
@@ -123,12 +125,12 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 340
+    .line 362
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 342
+    .line 364
     iget-object v1, p0, Lcom/samsung/privilege/util/ResumeUtil$3;->a:Landroid/content/Context;
 
     const-string/jumbo v2, "allow_use"
@@ -141,9 +143,9 @@
 
     move-result v2
 
-    invoke-static {v1, v2}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;Z)Z
+    invoke-static {v1, v2}, Lcom/bzbs/data/UserLogin;->l(Landroid/content/Context;Z)Z
 
-    .line 343
+    .line 365
     iget-object v1, p0, Lcom/samsung/privilege/util/ResumeUtil$3;->a:Landroid/content/Context;
 
     const-string/jumbo v2, "has_new_version"
@@ -156,9 +158,16 @@
 
     move-result v2
 
-    invoke-static {v1, v2}, Lcom/bzbs/data/UserLogin;->l(Landroid/content/Context;Z)Z
+    invoke-static {v1, v2}, Lcom/bzbs/data/UserLogin;->m(Landroid/content/Context;Z)Z
 
-    .line 345
+    .line 367
+    iget-object v1, p0, Lcom/samsung/privilege/util/ResumeUtil$3;->a:Landroid/content/Context;
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v2}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;Z)Z
+
+    .line 368
     iget-object v1, p0, Lcom/samsung/privilege/util/ResumeUtil$3;->a:Landroid/content/Context;
 
     const-string/jumbo v2, "is_enable_beacon"
@@ -171,14 +180,14 @@
 
     move-result v0
 
-    invoke-static {v1, v0}, Lcom/bzbs/data/UserLogin;->o(Landroid/content/Context;Z)Z
+    invoke-static {v1, v0}, Lcom/bzbs/data/UserLogin;->p(Landroid/content/Context;Z)Z
 
-    .line 347
+    .line 370
     iget-object v0, p0, Lcom/samsung/privilege/util/ResumeUtil$3;->b:Landroid/app/Activity;
 
-    if-eqz v0, :cond_69
+    if-eqz v0, :cond_70
 
-    .line 348
+    .line 371
     iget-object v0, p0, Lcom/samsung/privilege/util/ResumeUtil$3;->b:Landroid/app/Activity;
 
     new-instance v1, Lcom/samsung/privilege/util/ResumeUtil$3$1;
@@ -186,24 +195,22 @@
     invoke-direct {v1, p0}, Lcom/samsung/privilege/util/ResumeUtil$3$1;-><init>(Lcom/samsung/privilege/util/ResumeUtil$3;)V
 
     invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
-    :try_end_69
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_69} :catch_6e
+    :try_end_70
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_70} :catch_74
 
-    .line 358
-    :cond_69
-    :goto_69
-    const/4 v0, 0x0
+    .line 381
+    :cond_70
+    :goto_70
+    invoke-static {v4}, Lcom/samsung/privilege/util/ResumeUtil;->a(Z)Z
 
-    invoke-static {v0}, Lcom/samsung/privilege/util/ResumeUtil;->a(Z)Z
-
-    .line 359
+    .line 382
     return-void
 
-    .line 354
-    :catch_6e
+    .line 377
+    :catch_74
     move-exception v0
 
-    .line 355
+    .line 378
     invoke-static {}, Lcom/samsung/privilege/util/ResumeUtil;->a()Ljava/lang/String;
 
     move-result-object v1
@@ -232,5 +239,5 @@
 
     invoke-static {v1, v0}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto :goto_69
+    goto :goto_70
 .end method

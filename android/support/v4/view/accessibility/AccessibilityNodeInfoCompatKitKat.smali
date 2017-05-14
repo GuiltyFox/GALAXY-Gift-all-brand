@@ -8,7 +8,7 @@
     .registers 6
 
     .prologue
-    .line 67
+    .line 78
     invoke-static {p0, p1, p2, p3, p4}, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;->obtain(IIIIZ)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
 
     move-result-object v0
@@ -20,7 +20,7 @@
     .registers 5
 
     .prologue
-    .line 62
+    .line 69
     invoke-static {p0, p1, p2}, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;->obtain(IIZ)Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;
 
     move-result-object v0
@@ -32,14 +32,14 @@
     .registers 2
 
     .prologue
-    .line 43
+    .line 50
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     check-cast p1, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;
 
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCollectionInfo(Landroid/view/accessibility/AccessibilityNodeInfo$CollectionInfo;)V
 
-    .line 45
+    .line 52
     return-void
 .end method
 
@@ -47,12 +47,12 @@
     .registers 2
 
     .prologue
-    .line 72
+    .line 83
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setContentInvalid(Z)V
 
-    .line 73
+    .line 84
     return-void
 .end method
 
@@ -60,13 +60,13 @@
     .registers 2
 
     .prologue
-    .line 48
+    .line 55
     check-cast p0, Landroid/view/accessibility/AccessibilityNodeInfo;
 
     check-cast p1, Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;
 
     invoke-virtual {p0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCollectionItemInfo(Landroid/view/accessibility/AccessibilityNodeInfo$CollectionItemInfo;)V
 
-    .line 50
+    .line 57
     return-void
 .end method

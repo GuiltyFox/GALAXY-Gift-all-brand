@@ -61,7 +61,7 @@
 
     iput-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->d:Landroid/animation/ArgbEvaluator;
 
-    .line 629
+    .line 635
     new-instance v0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$1;
 
     invoke-direct {v0, p0}, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$1;-><init>(Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;)V
@@ -110,15 +110,15 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 325
+    .line 330
     if-nez p1, :cond_8
 
-    .line 326
+    .line 331
     invoke-virtual {p0, p2, p3}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 328
+    .line 333
     :goto_7
     return-object v0
 
@@ -160,24 +160,24 @@
     .registers 5
 
     .prologue
-    .line 527
+    .line 533
     instance-of v0, p1, Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_22
 
     move-object v0, p1
 
-    .line 528
+    .line 534
     check-cast v0, Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->getChildAnimations()Ljava/util/ArrayList;
 
     move-result-object v2
 
-    .line 529
+    .line 535
     if-eqz v2, :cond_22
 
-    .line 530
+    .line 536
     const/4 v0, 0x0
 
     move v1, v0
@@ -189,7 +189,7 @@
 
     if-ge v1, v0, :cond_22
 
-    .line 531
+    .line 537
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -198,28 +198,28 @@
 
     invoke-direct {p0, v0}, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a(Landroid/animation/Animator;)V
 
-    .line 530
+    .line 536
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_f
 
-    .line 535
+    .line 541
     :cond_22
     instance-of v0, p1, Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_4e
 
-    .line 536
+    .line 542
     check-cast p1, Landroid/animation/ObjectAnimator;
 
-    .line 537
+    .line 543
     invoke-virtual {p1}, Landroid/animation/ObjectAnimator;->getPropertyName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 538
+    .line 544
     const-string/jumbo v1, "fillColor"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -236,26 +236,26 @@
 
     if-eqz v0, :cond_4e
 
-    .line 539
+    .line 545
     :cond_3e
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->d:Landroid/animation/ArgbEvaluator;
 
     if-nez v0, :cond_49
 
-    .line 540
+    .line 546
     new-instance v0, Landroid/animation/ArgbEvaluator;
 
     invoke-direct {v0}, Landroid/animation/ArgbEvaluator;-><init>()V
 
     iput-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->d:Landroid/animation/ArgbEvaluator;
 
-    .line 542
+    .line 548
     :cond_49
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->d:Landroid/animation/ArgbEvaluator;
 
     invoke-virtual {p1, v0}, Landroid/animation/ObjectAnimator;->setEvaluator(Landroid/animation/TypeEvaluator;)V
 
-    .line 545
+    .line 551
     :cond_4e
     return-void
 .end method
@@ -264,7 +264,7 @@
     .registers 5
 
     .prologue
-    .line 548
+    .line 554
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->b:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;
 
     iget-object v0, v0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;->b:Landroid/support/graphics/drawable/VectorDrawableCompat;
@@ -273,20 +273,20 @@
 
     move-result-object v0
 
-    .line 549
+    .line 555
     invoke-virtual {p2, v0}, Landroid/animation/Animator;->setTarget(Ljava/lang/Object;)V
 
-    .line 550
+    .line 556
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
 
     if-ge v0, v1, :cond_14
 
-    .line 551
+    .line 557
     invoke-direct {p0, p2}, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a(Landroid/animation/Animator;)V
 
-    .line 553
+    .line 559
     :cond_14
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->b:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;
 
@@ -294,7 +294,7 @@
 
     if-nez v0, :cond_2c
 
-    .line 554
+    .line 560
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->b:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;
 
     new-instance v1, Ljava/util/ArrayList;
@@ -303,7 +303,7 @@
 
     iput-object v1, v0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;->c:Ljava/util/ArrayList;
 
-    .line 555
+    .line 561
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->b:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;
 
     new-instance v1, Landroid/support/v4/util/ArrayMap;
@@ -312,7 +312,7 @@
 
     iput-object v1, v0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;->d:Landroid/support/v4/util/ArrayMap;
 
-    .line 557
+    .line 563
     :cond_2c
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->b:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;
 
@@ -320,14 +320,14 @@
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 558
+    .line 564
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->b:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;
 
     iget-object v0, v0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;->d:Landroid/support/v4/util/ArrayMap;
 
     invoke-virtual {v0, p2, p1}, Landroid/support/v4/util/ArrayMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 562
+    .line 568
     return-void
 .end method
 
@@ -337,21 +337,21 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 581
+    .line 587
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->b:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;
 
     iget-object v3, v0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;->c:Ljava/util/ArrayList;
 
-    .line 582
+    .line 588
     if-nez v3, :cond_9
 
     move v0, v1
 
-    .line 592
+    .line 598
     :goto_8
     return v0
 
-    .line 585
+    .line 591
     :cond_9
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
@@ -359,30 +359,30 @@
 
     move v2, v1
 
-    .line 586
+    .line 592
     :goto_e
     if-ge v2, v4, :cond_22
 
-    .line 587
+    .line 593
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/animation/Animator;
 
-    .line 588
+    .line 594
     invoke-virtual {v0}, Landroid/animation/Animator;->isRunning()Z
 
     move-result v0
 
     if-eqz v0, :cond_1e
 
-    .line 589
+    .line 595
     const/4 v0, 0x1
 
     goto :goto_8
 
-    .line 586
+    .line 592
     :cond_1e
     add-int/lit8 v0, v2, 0x1
 
@@ -393,7 +393,7 @@
     :cond_22
     move v0, v1
 
-    .line 592
+    .line 598
     goto :goto_8
 .end method
 
@@ -403,17 +403,17 @@
     .registers 3
 
     .prologue
-    .line 400
+    .line 405
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_9
 
-    .line 401
+    .line 406
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     invoke-static {v0, p1}, Landroid/support/v4/graphics/drawable/DrawableCompat;->a(Landroid/graphics/drawable/Drawable;Landroid/content/res/Resources$Theme;)V
 
-    .line 405
+    .line 410
     :cond_9
     return-void
 .end method
@@ -422,19 +422,19 @@
     .registers 2
 
     .prologue
-    .line 409
+    .line 415
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_b
 
-    .line 410
+    .line 416
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     invoke-static {v0}, Landroid/support/v4/graphics/drawable/DrawableCompat;->d(Landroid/graphics/drawable/Drawable;)Z
 
     move-result v0
 
-    .line 413
+    .line 419
     :goto_a
     return v0
 
@@ -618,19 +618,19 @@
     .registers 2
 
     .prologue
-    .line 313
+    .line 318
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_b
 
-    .line 314
+    .line 319
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v0
 
-    .line 316
+    .line 321
     :goto_a
     return v0
 
@@ -650,19 +650,19 @@
     .registers 2
 
     .prologue
-    .line 306
+    .line 310
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_b
 
-    .line 307
+    .line 311
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
 
     move-result v0
 
-    .line 309
+    .line 313
     :goto_a
     return v0
 
@@ -718,19 +718,19 @@
     .registers 2
 
     .prologue
-    .line 299
+    .line 302
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_b
 
-    .line 300
+    .line 303
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getOpacity()I
 
     move-result v0
 
-    .line 302
+    .line 305
     :goto_a
     return v0
 
@@ -786,12 +786,12 @@
     .registers 5
 
     .prologue
-    .line 395
+    .line 400
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, p3, v0}, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->inflate(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
 
-    .line 396
+    .line 401
     return-void
 .end method
 
@@ -803,41 +803,41 @@
 
     const/4 v4, 0x0
 
-    .line 334
+    .line 339
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_c
 
-    .line 335
+    .line 340
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     invoke-static {v0, p1, p2, p3, p4}, Landroid/support/v4/graphics/drawable/DrawableCompat;->a(Landroid/graphics/drawable/Drawable;Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
 
-    .line 390
+    .line 395
     :cond_b
     return-void
 
-    .line 338
+    .line 343
     :cond_c
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->getEventType()I
 
     move-result v0
 
-    .line 339
+    .line 344
     :goto_10
     if-eq v0, v5, :cond_b
 
-    .line 340
+    .line 345
     const/4 v1, 0x2
 
     if-ne v0, v1, :cond_4f
 
-    .line 341
+    .line 346
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 345
+    .line 350
     const-string/jumbo v1, "animated-vector"
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -846,42 +846,43 @@
 
     if-eqz v1, :cond_54
 
-    .line 346
+    .line 351
     sget-object v0, Landroid/support/graphics/drawable/AndroidResources;->e:[I
 
+    .line 352
     invoke-static {p1, p4, p3, v0}, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 350
+    .line 355
     invoke-virtual {v0, v4, v4}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v1
 
-    .line 355
+    .line 360
     if-eqz v1, :cond_4c
 
-    .line 356
+    .line 361
     invoke-static {p1, v1, p4}, Landroid/support/graphics/drawable/VectorDrawableCompat;->a(Landroid/content/res/Resources;ILandroid/content/res/Resources$Theme;)Landroid/support/graphics/drawable/VectorDrawableCompat;
 
     move-result-object v1
 
-    .line 358
+    .line 363
     invoke-virtual {v1, v4}, Landroid/support/graphics/drawable/VectorDrawableCompat;->a(Z)V
 
-    .line 359
+    .line 364
     iget-object v2, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->e:Landroid/graphics/drawable/Drawable$Callback;
 
     invoke-virtual {v1, v2}, Landroid/support/graphics/drawable/VectorDrawableCompat;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 360
+    .line 365
     iget-object v2, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->b:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;
 
     iget-object v2, v2, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;->b:Landroid/support/graphics/drawable/VectorDrawableCompat;
 
     if-eqz v2, :cond_48
 
-    .line 361
+    .line 366
     iget-object v2, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->b:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;
 
     iget-object v2, v2, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;->b:Landroid/support/graphics/drawable/VectorDrawableCompat;
@@ -890,17 +891,17 @@
 
     invoke-virtual {v2, v3}, Landroid/support/graphics/drawable/VectorDrawableCompat;->setCallback(Landroid/graphics/drawable/Drawable$Callback;)V
 
-    .line 363
+    .line 368
     :cond_48
     iget-object v2, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->b:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;
 
     iput-object v1, v2, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;->b:Landroid/support/graphics/drawable/VectorDrawableCompat;
 
-    .line 365
+    .line 370
     :cond_4c
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 388
+    .line 393
     :cond_4f
     :goto_4f
     invoke-interface {p2}, Lorg/xmlpull/v1/XmlPullParser;->next()I
@@ -909,7 +910,7 @@
 
     goto :goto_10
 
-    .line 366
+    .line 371
     :cond_54
     const-string/jumbo v1, "target"
 
@@ -919,48 +920,49 @@
 
     if-eqz v0, :cond_4f
 
-    .line 367
+    .line 372
     sget-object v0, Landroid/support/graphics/drawable/AndroidResources;->f:[I
 
+    .line 373
     invoke-virtual {p1, p3, v0}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
 
     move-result-object v0
 
-    .line 370
+    .line 375
     invoke-virtual {v0, v4}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 373
+    .line 378
     invoke-virtual {v0, v5, v4}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v2
 
-    .line 375
+    .line 380
     if-eqz v2, :cond_7a
 
-    .line 376
+    .line 381
     iget-object v3, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->c:Landroid/content/Context;
 
     if-eqz v3, :cond_7e
 
-    .line 377
+    .line 382
     iget-object v3, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->c:Landroid/content/Context;
 
     invoke-static {v3, v2}, Landroid/animation/AnimatorInflater;->loadAnimator(Landroid/content/Context;I)Landroid/animation/Animator;
 
     move-result-object v2
 
-    .line 378
+    .line 383
     invoke-direct {p0, v1, v2}, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a(Ljava/lang/String;Landroid/animation/Animator;)V
 
-    .line 384
+    .line 389
     :cond_7a
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     goto :goto_4f
 
-    .line 380
+    .line 385
     :cond_7e
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -989,12 +991,12 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 566
+    .line 572
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_e
 
-    .line 567
+    .line 573
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     check-cast v0, Landroid/graphics/drawable/AnimatedVectorDrawable;
@@ -1003,47 +1005,47 @@
 
     move-result v0
 
-    .line 577
+    .line 583
     :goto_d
     return v0
 
-    .line 569
+    .line 575
     :cond_e
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->b:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;
 
     iget-object v3, v0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;->c:Ljava/util/ArrayList;
 
-    .line 570
+    .line 576
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     move-result v4
 
     move v2, v1
 
-    .line 571
+    .line 577
     :goto_17
     if-ge v2, v4, :cond_2b
 
-    .line 572
+    .line 578
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/animation/Animator;
 
-    .line 573
+    .line 579
     invoke-virtual {v0}, Landroid/animation/Animator;->isRunning()Z
 
     move-result v0
 
     if-eqz v0, :cond_27
 
-    .line 574
+    .line 580
     const/4 v0, 0x1
 
     goto :goto_d
 
-    .line 571
+    .line 577
     :cond_27
     add-int/lit8 v0, v2, 0x1
 
@@ -1054,7 +1056,7 @@
     :cond_2b
     move v0, v1
 
-    .line 577
+    .line 583
     goto :goto_d
 .end method
 
@@ -1062,19 +1064,19 @@
     .registers 2
 
     .prologue
-    .line 291
+    .line 294
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_b
 
-    .line 292
+    .line 295
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->isStateful()Z
 
     move-result v0
 
-    .line 294
+    .line 297
     :goto_a
     return v0
 
@@ -1355,21 +1357,21 @@
     .registers 3
 
     .prologue
-    .line 254
+    .line 255
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_a
 
-    .line 255
+    .line 256
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     invoke-static {v0, p1}, Landroid/support/v4/graphics/drawable/DrawableCompat;->a(Landroid/graphics/drawable/Drawable;I)V
 
-    .line 260
+    .line 261
     :goto_9
     return-void
 
-    .line 259
+    .line 260
     :cond_a
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->b:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;
 
@@ -1384,21 +1386,21 @@
     .registers 3
 
     .prologue
-    .line 263
+    .line 265
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_a
 
-    .line 264
+    .line 266
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     invoke-static {v0, p1}, Landroid/support/v4/graphics/drawable/DrawableCompat;->a(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
 
-    .line 269
+    .line 271
     :goto_9
     return-void
 
-    .line 268
+    .line 270
     :cond_a
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->b:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;
 
@@ -1413,21 +1415,21 @@
     .registers 3
 
     .prologue
-    .line 272
+    .line 275
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_a
 
-    .line 273
+    .line 276
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     invoke-static {v0, p1}, Landroid/support/v4/graphics/drawable/DrawableCompat;->a(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
 
-    .line 278
+    .line 281
     :goto_9
     return-void
 
-    .line 277
+    .line 280
     :cond_a
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->b:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;
 
@@ -1442,23 +1444,23 @@
     .registers 4
 
     .prologue
-    .line 282
+    .line 285
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_b
 
-    .line 283
+    .line 286
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1, p2}, Landroid/graphics/drawable/Drawable;->setVisible(ZZ)Z
 
     move-result v0
 
-    .line 286
+    .line 289
     :goto_a
     return v0
 
-    .line 285
+    .line 288
     :cond_b
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->b:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;
 
@@ -1466,7 +1468,7 @@
 
     invoke-virtual {v0, p1, p2}, Landroid/support/graphics/drawable/VectorDrawableCompat;->setVisible(ZZ)Z
 
-    .line 286
+    .line 289
     invoke-super {p0, p1, p2}, Landroid/support/graphics/drawable/VectorDrawableCommon;->setVisible(ZZ)Z
 
     move-result v0
@@ -1478,24 +1480,24 @@
     .registers 5
 
     .prologue
-    .line 597
+    .line 603
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_c
 
-    .line 598
+    .line 604
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     check-cast v0, Landroid/graphics/drawable/AnimatedVectorDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->start()V
 
-    .line 613
+    .line 619
     :cond_b
     :goto_b
     return-void
 
-    .line 602
+    .line 608
     :cond_c
     invoke-direct {p0}, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a()Z
 
@@ -1503,17 +1505,17 @@
 
     if-nez v0, :cond_b
 
-    .line 606
+    .line 612
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->b:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;
 
     iget-object v2, v0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;->c:Ljava/util/ArrayList;
 
-    .line 607
+    .line 613
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    .line 608
+    .line 614
     const/4 v0, 0x0
 
     move v1, v0
@@ -1521,24 +1523,24 @@
     :goto_1c
     if-ge v1, v3, :cond_2b
 
-    .line 609
+    .line 615
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/animation/Animator;
 
-    .line 610
+    .line 616
     invoke-virtual {v0}, Landroid/animation/Animator;->start()V
 
-    .line 608
+    .line 614
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_1c
 
-    .line 612
+    .line 618
     :cond_2b
     invoke-virtual {p0}, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->invalidateSelf()V
 
@@ -1549,34 +1551,34 @@
     .registers 5
 
     .prologue
-    .line 617
+    .line 623
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_c
 
-    .line 618
+    .line 624
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->a:Landroid/graphics/drawable/Drawable;
 
     check-cast v0, Landroid/graphics/drawable/AnimatedVectorDrawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/AnimatedVectorDrawable;->stop()V
 
-    .line 627
+    .line 633
     :cond_b
     return-void
 
-    .line 621
+    .line 627
     :cond_c
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->b:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;
 
     iget-object v2, v0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$AnimatedVectorDrawableCompatState;->c:Ljava/util/ArrayList;
 
-    .line 622
+    .line 628
     invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    .line 623
+    .line 629
     const/4 v0, 0x0
 
     move v1, v0
@@ -1584,17 +1586,17 @@
     :goto_16
     if-ge v1, v3, :cond_b
 
-    .line 624
+    .line 630
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/animation/Animator;
 
-    .line 625
+    .line 631
     invoke-virtual {v0}, Landroid/animation/Animator;->end()V
 
-    .line 623
+    .line 629
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0

@@ -32,7 +32,7 @@
     .registers 6
 
     .prologue
-    .line 221
+    .line 225
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity$3;->a:Lcom/samsung/privilege/activity/WebViewCustomInputActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->a(Lcom/samsung/privilege/activity/WebViewCustomInputActivity;)Ljava/lang/String;
@@ -59,17 +59,19 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 222
+    .line 226
     const/4 v0, 0x0
 
     return-object v0
 .end method
 
 .method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
-    .registers 10
+    .registers 11
 
     .prologue
-    const/4 v6, 0x1
+    const/4 v7, 0x1
+
+    const/4 v6, 0x0
 
     .line 179
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity$3;->a:Lcom/samsung/privilege/activity/WebViewCustomInputActivity;
@@ -101,18 +103,19 @@
     .line 181
     const-string/jumbo v0, ""
 
-    .line 182
-    if-eqz p2, :cond_41
+    .line 183
+    if-eqz p2, :cond_43
 
+    :try_start_24
     const-string/jumbo v1, "bzbs_return_url"
 
     invoke-virtual {p2, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_41
+    if-eqz v1, :cond_43
 
-    .line 183
+    .line 184
     const-string/jumbo v1, "?"
 
     invoke-static {v1}, Ljava/util/regex/Pattern;->quote(Ljava/lang/String;)Ljava/lang/String;
@@ -123,25 +126,30 @@
 
     move-result-object v1
 
-    .line 184
+    .line 185
     array-length v2, v1
 
     const/4 v3, 0x2
 
-    if-lt v2, v3, :cond_41
+    if-lt v2, v3, :cond_43
 
-    .line 185
-    aget-object v0, v1, v6
+    .line 186
+    const/4 v2, 0x1
 
-    invoke-virtual {v0}, Ljava/lang/String;->toString()Ljava/lang/String;
+    aget-object v1, v1, v2
+
+    invoke-virtual {v1}, Ljava/lang/String;->toString()Ljava/lang/String;
+    :try_end_42
+    .catch Ljava/lang/Exception; {:try_start_24 .. :try_end_42} :catch_119
 
     move-result-object v0
 
-    .line 189
-    :cond_41
+    .line 193
+    :cond_43
+    :goto_43
     const-string/jumbo v1, "/bzbs_cancel_url"
 
-    .line 193
+    .line 197
     iget-object v2, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity$3;->a:Lcom/samsung/privilege/activity/WebViewCustomInputActivity;
 
     invoke-static {v2}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->b(Lcom/samsung/privilege/activity/WebViewCustomInputActivity;)Ljava/lang/String;
@@ -152,7 +160,7 @@
 
     move-result-object v2
 
-    .line 194
+    .line 198
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -177,7 +185,7 @@
 
     move-result-object v3
 
-    .line 195
+    .line 199
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -208,10 +216,10 @@
 
     move-result-object v2
 
-    .line 197
-    if-eqz p2, :cond_de
+    .line 201
+    if-eqz p2, :cond_e0
 
-    .line 198
+    .line 202
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v4
@@ -224,7 +232,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_a9
+    if-nez v3, :cond_ab
 
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -238,10 +246,10 @@
 
     move-result v2
 
-    if-eqz v2, :cond_e0
+    if-eqz v2, :cond_e1
 
-    .line 199
-    :cond_a9
+    .line 203
+    :cond_ab
     iget-object v1, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity$3;->a:Lcom/samsung/privilege/activity/WebViewCustomInputActivity;
 
     invoke-virtual {v1}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->getApplicationContext()Landroid/content/Context;
@@ -256,53 +264,51 @@
 
     move-result-object v3
 
-    invoke-static {v1, v2, v3, v6}, Lcom/samsung/privilege/util/ResumeUtil;->a(Landroid/content/Context;Landroid/app/Activity;Landroid/os/Handler;Z)V
+    invoke-static {v1, v2, v3, v7, v6}, Lcom/samsung/privilege/util/ResumeUtil;->a(Landroid/content/Context;Landroid/app/Activity;Landroid/os/Handler;ZZ)V
 
-    .line 201
+    .line 205
     const-string/jumbo v1, "content://someURI"
 
     invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object v1
 
-    .line 202
+    .line 206
     new-instance v2, Landroid/content/Intent;
 
     const/4 v3, 0x0
 
     invoke-direct {v2, v3, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 203
+    .line 207
     const-string/jumbo v1, "bzbs_return_url"
 
     invoke-virtual {v2, v1, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 204
+    .line 208
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity$3;->a:Lcom/samsung/privilege/activity/WebViewCustomInputActivity;
 
     const/4 v1, -0x1
 
     invoke-virtual {v0, v1, v2}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->setResult(ILandroid/content/Intent;)V
 
-    .line 205
+    .line 209
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity$3;->a:Lcom/samsung/privilege/activity/WebViewCustomInputActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->finish()V
 
-    .line 207
+    .line 211
     const-string/jumbo v0, ""
 
     invoke-static {v0}, Lcom/bzbs/event/WalletEvents;->b(Ljava/lang/String;)V
 
-    .line 217
-    :cond_de
-    :goto_de
-    const/4 v0, 0x0
-
-    return v0
-
-    .line 208
+    .line 221
     :cond_e0
+    :goto_e0
+    return v6
+
+    .line 212
+    :cond_e1
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0
@@ -315,17 +321,17 @@
 
     move-result v0
 
-    if-eqz v0, :cond_f4
+    if-eqz v0, :cond_f5
 
-    .line 209
+    .line 213
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity$3;->a:Lcom/samsung/privilege/activity/WebViewCustomInputActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->finish()V
 
-    goto :goto_de
+    goto :goto_e0
 
-    .line 210
-    :cond_f4
+    .line 214
+    :cond_f5
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0
@@ -336,9 +342,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_de
+    if-eqz v0, :cond_e0
 
-    .line 211
+    .line 215
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v1, "android.intent.action.VIEW"
@@ -349,15 +355,21 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 212
+    .line 216
     iget-object v1, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity$3;->a:Lcom/samsung/privilege/activity/WebViewCustomInputActivity;
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 213
+    .line 217
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity$3;->a:Lcom/samsung/privilege/activity/WebViewCustomInputActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->finish()V
 
-    goto :goto_de
+    goto :goto_e0
+
+    .line 189
+    :catch_119
+    move-exception v1
+
+    goto/16 :goto_43
 .end method

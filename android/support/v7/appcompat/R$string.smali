@@ -24,6 +24,30 @@
 
 .field public static final abc_capital_on:I = 0x7f090009
 
+.field public static final abc_font_family_body_1_material:I = 0x7f09040d
+
+.field public static final abc_font_family_body_2_material:I = 0x7f09040e
+
+.field public static final abc_font_family_button_material:I = 0x7f09040f
+
+.field public static final abc_font_family_caption_material:I = 0x7f090410
+
+.field public static final abc_font_family_display_1_material:I = 0x7f090411
+
+.field public static final abc_font_family_display_2_material:I = 0x7f090412
+
+.field public static final abc_font_family_display_3_material:I = 0x7f090413
+
+.field public static final abc_font_family_display_4_material:I = 0x7f090414
+
+.field public static final abc_font_family_headline_material:I = 0x7f090415
+
+.field public static final abc_font_family_menu_material:I = 0x7f090416
+
+.field public static final abc_font_family_subhead_material:I = 0x7f090417
+
+.field public static final abc_font_family_title_material:I = 0x7f090418
+
 .field public static final abc_search_hint:I = 0x7f09000a
 
 .field public static final abc_searchview_description_clear:I = 0x7f09000b
@@ -42,4 +66,6 @@
 
 .field public static final abc_toolbar_collapse_description:I = 0x7f090012
 
-.field public static final status_bar_notification_info_overflow:I = 0x7f090042
+.field public static final search_menu_title:I = 0x7f090042
+
+.field public static final status_bar_notification_info_overflow:I = 0x7f090043

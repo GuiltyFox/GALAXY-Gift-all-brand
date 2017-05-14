@@ -42,7 +42,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f04017c
+    const v1, 0x7f040183
 
     const/4 v2, 0x0
 
@@ -51,7 +51,7 @@
     move-result-object v4
 
     .line 186
-    const v0, 0x7f1006ed
+    const v0, 0x7f100719
 
     invoke-virtual {v4, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -60,7 +60,7 @@
     check-cast v0, Landroid/widget/ImageView;
 
     .line 187
-    const v1, 0x7f10010d
+    const v1, 0x7f10010f
 
     invoke-virtual {v4, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -103,12 +103,12 @@
     if-nez p2, :cond_4d
 
     .line 198
-    const v2, 0x7f0903dc
+    const v2, 0x7f0903ff
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(I)V
 
     .line 199
-    const v1, 0x7f0202a1
+    const v1, 0x7f0202a6
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -135,7 +135,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v3
 

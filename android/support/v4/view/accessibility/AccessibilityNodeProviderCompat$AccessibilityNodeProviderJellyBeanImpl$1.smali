@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 48
+    .line 50
     iput-object p1, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderJellyBeanImpl$1;->b:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderJellyBeanImpl;
 
     iput-object p2, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderJellyBeanImpl$1;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
@@ -39,20 +39,21 @@
     .registers 3
 
     .prologue
-    .line 72
+    .line 78
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderJellyBeanImpl$1;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
 
+    .line 79
     invoke-virtual {v0, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->a(I)Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
 
     move-result-object v0
 
-    .line 74
+    .line 80
     if-nez v0, :cond_a
 
-    .line 75
+    .line 81
     const/4 v0, 0x0
 
-    .line 77
+    .line 83
     :goto_9
     return-object v0
 
@@ -79,62 +80,76 @@
     .end annotation
 
     .prologue
-    .line 58
+    .line 60
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderJellyBeanImpl$1;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
 
+    .line 61
     invoke-virtual {v0, p1, p2}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->a(Ljava/lang/String;I)Ljava/util/List;
 
-    move-result-object v2
+    move-result-object v3
 
-    .line 60
-    new-instance v3, Ljava/util/ArrayList;
+    .line 62
+    if-nez v3, :cond_a
 
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+    .line 63
+    const/4 v0, 0x0
 
-    .line 61
-    invoke-interface {v2}, Ljava/util/List;->size()I
+    .line 71
+    :goto_9
+    return-object v0
+
+    .line 65
+    :cond_a
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    .line 66
+    invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v4
 
-    .line 62
+    .line 67
     const/4 v0, 0x0
 
-    move v1, v0
+    move v2, v0
 
-    :goto_11
-    if-ge v1, v4, :cond_24
+    :goto_15
+    if-ge v2, v4, :cond_28
 
-    .line 63
-    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    .line 68
+    invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
 
-    .line 64
+    .line 69
     invoke-virtual {v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 62
-    add-int/lit8 v0, v1, 0x1
+    .line 67
+    add-int/lit8 v0, v2, 0x1
 
-    move v1, v0
+    move v2, v0
 
-    goto :goto_11
+    goto :goto_15
 
-    .line 66
-    :cond_24
-    return-object v3
+    :cond_28
+    move-object v0, v1
+
+    .line 71
+    goto :goto_9
 .end method
 
 .method public a(IILandroid/os/Bundle;)Z
     .registers 5
 
     .prologue
-    .line 52
+    .line 54
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderJellyBeanImpl$1;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->a(IILandroid/os/Bundle;)Z

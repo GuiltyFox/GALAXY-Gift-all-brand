@@ -24,7 +24,7 @@
     .registers 5
 
     .prologue
-    .line 561
+    .line 563
     iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$5;->d:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     iput-object p2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$5;->a:Ljava/util/ArrayList;
@@ -44,10 +44,10 @@
     .registers 7
 
     .prologue
-    .line 586
+    .line 588
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 588
+    .line 590
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$5;->d:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -56,11 +56,11 @@
 
     if-nez v0, :cond_c
 
-    .line 599
+    .line 601
     :goto_b
     return-void
 
-    .line 592
+    .line 594
     :cond_c
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$5;->d:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
@@ -74,7 +74,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 598
+    .line 600
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$5;->d:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     const/4 v1, 0x0
@@ -88,7 +88,7 @@
     .registers 8
 
     .prologue
-    .line 564
+    .line 566
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$5;->d:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -97,11 +97,11 @@
 
     if-nez v0, :cond_9
 
-    .line 582
+    .line 584
     :goto_8
     return-void
 
-    .line 566
+    .line 568
     :cond_9
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$5;->d:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
@@ -139,7 +139,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 570
+    .line 572
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$5;->d:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -152,7 +152,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/app/FragmentActivity;->runOnUiThread(Ljava/lang/Runnable;)V
 
-    .line 576
+    .line 578
     const-string/jumbo v0, ""
 
     invoke-virtual {p4, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -161,7 +161,7 @@
 
     if-nez v0, :cond_74
 
-    .line 577
+    .line 579
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -202,7 +202,7 @@
 
     invoke-static {v0, p4, v1}, Lcom/bzbs/util/LocalFileHelper;->a(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 581
+    .line 583
     :cond_74
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$5;->d:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 

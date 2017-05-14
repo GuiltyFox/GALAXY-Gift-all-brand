@@ -32,15 +32,36 @@
 .end method
 
 .method public static a()V
-    .registers 1
+    .registers 2
 
     .prologue
-    .line 18
+    .line 28
     sget-object v0, Lcom/bzbs/event/NotiEvents;->a:Ljava/util/LinkedList;
 
-    invoke-virtual {v0}, Ljava/util/LinkedList;->clear()V
+    invoke-virtual {v0}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
 
-    .line 19
+    move-result-object v1
+
+    :goto_6
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_16
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Lcom/bzbs/event/NotiEvents$NotiListener;
+
+    .line 29
+    invoke-interface {v0}, Lcom/bzbs/event/NotiEvents$NotiListener;->a()V
+
+    goto :goto_6
+
+    .line 31
+    :cond_16
     return-void
 .end method
 
@@ -91,36 +112,15 @@
     return-void
 .end method
 
-.method public static b()V
+.method public static b(Lcom/bzbs/event/NotiEvents$NotiListener;)V
     .registers 2
 
     .prologue
-    .line 28
+    .line 14
     sget-object v0, Lcom/bzbs/event/NotiEvents;->a:Ljava/util/LinkedList;
 
-    invoke-virtual {v0}, Ljava/util/LinkedList;->iterator()Ljava/util/Iterator;
+    invoke-virtual {v0, p0}, Ljava/util/LinkedList;->remove(Ljava/lang/Object;)Z
 
-    move-result-object v1
-
-    :goto_6
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_16
-
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/bzbs/event/NotiEvents$NotiListener;
-
-    .line 29
-    invoke-interface {v0}, Lcom/bzbs/event/NotiEvents$NotiListener;->a()V
-
-    goto :goto_6
-
-    .line 31
-    :cond_16
+    .line 15
     return-void
 .end method

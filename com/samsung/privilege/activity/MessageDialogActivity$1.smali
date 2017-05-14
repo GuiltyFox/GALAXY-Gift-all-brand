@@ -82,7 +82,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->Q(Landroid/content/Context;)I
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->T(Landroid/content/Context;)I
 
     move-result v1
 

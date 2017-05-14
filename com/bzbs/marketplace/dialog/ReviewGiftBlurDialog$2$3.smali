@@ -102,7 +102,7 @@
 
     move-result-object v4
 
-    const v5, 0x7f0c0004
+    const v5, 0x7f0b0003
 
     invoke-virtual {v4, v5}, Landroid/content/res/Resources;->getInteger(I)I
 
@@ -122,7 +122,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 

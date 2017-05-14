@@ -1,5 +1,5 @@
 .class Landroid/support/v7/widget/AppCompatSpinner$1;
-.super Landroid/support/v7/widget/ListPopupWindow$ForwardingListener;
+.super Landroid/support/v7/widget/ForwardingListener;
 .source "AppCompatSpinner.java"
 
 
@@ -20,23 +20,23 @@
     .registers 4
 
     .prologue
-    .line 253
+    .line 251
     iput-object p1, p0, Landroid/support/v7/widget/AppCompatSpinner$1;->b:Landroid/support/v7/widget/AppCompatSpinner;
 
     iput-object p3, p0, Landroid/support/v7/widget/AppCompatSpinner$1;->a:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
 
-    invoke-direct {p0, p2}, Landroid/support/v7/widget/ListPopupWindow$ForwardingListener;-><init>(Landroid/view/View;)V
+    invoke-direct {p0, p2}, Landroid/support/v7/widget/ForwardingListener;-><init>(Landroid/view/View;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getPopup()Landroid/support/v7/widget/ListPopupWindow;
+.method public getPopup()Landroid/support/v7/view/menu/ShowableListMenu;
     .registers 2
 
     .prologue
-    .line 256
+    .line 254
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatSpinner$1;->a:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
 
     return-object v0
@@ -46,7 +46,7 @@
     .registers 2
 
     .prologue
-    .line 261
+    .line 259
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatSpinner$1;->b:Landroid/support/v7/widget/AppCompatSpinner;
 
     # getter for: Landroid/support/v7/widget/AppCompatSpinner;->mPopup:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
@@ -60,7 +60,7 @@
 
     if-nez v0, :cond_15
 
-    .line 262
+    .line 260
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatSpinner$1;->b:Landroid/support/v7/widget/AppCompatSpinner;
 
     # getter for: Landroid/support/v7/widget/AppCompatSpinner;->mPopup:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
@@ -70,7 +70,7 @@
 
     invoke-virtual {v0}, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;->show()V
 
-    .line 264
+    .line 262
     :cond_15
     const/4 v0, 0x1
 

@@ -17,9 +17,6 @@
 
 
 # virtual methods
-.method public abstract a()I
-.end method
-
 .method public abstract a(ILandroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
 .end method
 
@@ -38,5 +35,11 @@
 .method public abstract b(Landroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
 .end method
 
+.method public abstract c()I
+.end method
+
 .method public abstract c(Landroid/support/v4/app/Fragment;)Landroid/support/v4/app/FragmentTransaction;
+.end method
+
+.method public abstract d()V
 .end method

@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 435
+    .line 436
     iput-object p1, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$2;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 4
 
     .prologue
-    .line 439
+    .line 440
     :try_start_0
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$2;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;
 
@@ -45,7 +45,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100111
+    const v1, 0x7f100113
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -53,19 +53,19 @@
 
     check-cast v0, Landroid/support/v4/widget/SwipeRefreshLayout;
 
-    .line 440
+    .line 441
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v4/widget/SwipeRefreshLayout;->setRefreshing(Z)V
 
-    .line 442
+    .line 443
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$2;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;
 
     iget v0, v0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;->b:I
 
     if-nez v0, :cond_3e
 
-    .line 443
+    .line 444
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$2;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;->c:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
@@ -74,7 +74,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100641
+    const v1, 0x7f10066d
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -82,12 +82,12 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 444
+    .line 445
     iget-object v1, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6$2;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;
 
     iget-object v1, v1, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;->c:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
-    const v2, 0x7f090358
+    const v2, 0x7f090374
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->getString(I)Ljava/lang/String;
 
@@ -95,19 +95,19 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 445
+    .line 446
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
     :try_end_3e
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_3e} :catch_3f
 
-    .line 450
+    .line 451
     :cond_3e
     :goto_3e
     return-void
 
-    .line 447
+    .line 448
     :catch_3f
     move-exception v0
 

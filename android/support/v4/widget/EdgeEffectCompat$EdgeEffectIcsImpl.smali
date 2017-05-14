@@ -11,7 +11,7 @@
     .registers 1
 
     .prologue
-    .line 97
+    .line 106
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 99
+    .line 109
     invoke-static {p1}, Landroid/support/v4/widget/EdgeEffectCompatIcs;->a(Landroid/content/Context;)Ljava/lang/Object;
 
     move-result-object v0
@@ -35,10 +35,10 @@
     .registers 4
 
     .prologue
-    .line 103
+    .line 114
     invoke-static {p1, p2, p3}, Landroid/support/v4/widget/EdgeEffectCompatIcs;->a(Ljava/lang/Object;II)V
 
-    .line 104
+    .line 115
     return-void
 .end method
 
@@ -46,7 +46,7 @@
     .registers 3
 
     .prologue
-    .line 107
+    .line 119
     invoke-static {p1}, Landroid/support/v4/widget/EdgeEffectCompatIcs;->a(Ljava/lang/Object;)Z
 
     move-result v0
@@ -58,7 +58,7 @@
     .registers 4
 
     .prologue
-    .line 115
+    .line 129
     invoke-static {p1, p2}, Landroid/support/v4/widget/EdgeEffectCompatIcs;->a(Ljava/lang/Object;F)Z
 
     move-result v0
@@ -70,7 +70,7 @@
     .registers 5
 
     .prologue
-    .line 131
+    .line 149
     invoke-static {p1, p2}, Landroid/support/v4/widget/EdgeEffectCompatIcs;->a(Ljava/lang/Object;F)Z
 
     move-result v0
@@ -82,7 +82,7 @@
     .registers 4
 
     .prologue
-    .line 123
+    .line 139
     invoke-static {p1, p2}, Landroid/support/v4/widget/EdgeEffectCompatIcs;->a(Ljava/lang/Object;I)Z
 
     move-result v0
@@ -94,7 +94,7 @@
     .registers 4
 
     .prologue
-    .line 127
+    .line 144
     invoke-static {p1, p2}, Landroid/support/v4/widget/EdgeEffectCompatIcs;->a(Ljava/lang/Object;Landroid/graphics/Canvas;)Z
 
     move-result v0
@@ -106,10 +106,10 @@
     .registers 2
 
     .prologue
-    .line 111
+    .line 124
     invoke-static {p1}, Landroid/support/v4/widget/EdgeEffectCompatIcs;->b(Ljava/lang/Object;)V
 
-    .line 112
+    .line 125
     return-void
 .end method
 
@@ -117,7 +117,7 @@
     .registers 3
 
     .prologue
-    .line 119
+    .line 134
     invoke-static {p1}, Landroid/support/v4/widget/EdgeEffectCompatIcs;->c(Ljava/lang/Object;)Z
 
     move-result v0

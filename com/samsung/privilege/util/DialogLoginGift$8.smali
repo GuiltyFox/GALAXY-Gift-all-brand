@@ -281,7 +281,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/util/DialogLoginGift$8;->b:Landroid/content/Context;
 
-    const v4, 0x7f090282
+    const v4, 0x7f090283
 
     invoke-virtual {v3, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -301,14 +301,14 @@
     .line 393
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$8;->e:Landroid/widget/RelativeLayout;
 
-    const v2, 0x7f020057
+    const v2, 0x7f02005a
 
     invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->setBackgroundResource(I)V
 
     .line 394
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$8;->f:Landroid/widget/RelativeLayout;
 
-    const v2, 0x7f020360
+    const v2, 0x7f020365
 
     invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->setBackgroundResource(I)V
 
@@ -355,7 +355,7 @@
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$8;->b:Landroid/content/Context;
 
     .line 402
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 

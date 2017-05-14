@@ -57,7 +57,7 @@
 
     const/4 v1, 0x0
 
-    const v2, 0x7f010356
+    const v2, 0x7f010366
 
     aput v2, v0, v1
 
@@ -68,17 +68,17 @@
     .line 62
     :array_1c
     .array-data 4
-        0x7f01034f
-        0x7f010350
-        0x7f010351
+        0x7f01035f
+        0x7f010360
+        0x7f010361
     .end array-data
 
     .line 66
     :array_26
     .array-data 4
-        0x7f010352
-        0x7f010353
-        0x7f010354
-        0x7f010355
+        0x7f010362
+        0x7f010363
+        0x7f010364
+        0x7f010365
     .end array-data
 .end method

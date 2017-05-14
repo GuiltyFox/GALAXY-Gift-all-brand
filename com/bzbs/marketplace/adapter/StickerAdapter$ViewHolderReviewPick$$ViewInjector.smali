@@ -45,7 +45,7 @@
     .end annotation
 
     .prologue
-    const v2, 0x7f1006ac
+    const v2, 0x7f1006d8
 
     .line 11
     const-string/jumbo v0, "field \'itemSticker\'"

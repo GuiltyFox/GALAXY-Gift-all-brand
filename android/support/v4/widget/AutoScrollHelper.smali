@@ -447,6 +447,7 @@
     :cond_12
     if-eqz v0, :cond_1c
 
+    .line 497
     invoke-virtual {p0, v0}, Landroid/support/v4/widget/AutoScrollHelper;->e(I)Z
 
     move-result v0
@@ -1092,7 +1093,7 @@
     .line 464
     iput-boolean v1, p0, Landroid/support/v4/widget/AutoScrollHelper;->l:Z
 
-    .line 467
+    .line 468
     :pswitch_1c
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
 
@@ -1112,11 +1113,12 @@
 
     int-to-float v4, v4
 
+    .line 467
     invoke-direct {p0, v1, v2, v3, v4}, Landroid/support/v4/widget/AutoScrollHelper;->a(IFFF)F
 
     move-result v2
 
-    .line 469
+    .line 470
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
 
     move-result v3
@@ -1135,6 +1137,7 @@
 
     int-to-float v5, v5
 
+    .line 469
     invoke-direct {p0, v0, v3, v4, v5}, Landroid/support/v4/widget/AutoScrollHelper;->a(IFFF)F
 
     move-result v3

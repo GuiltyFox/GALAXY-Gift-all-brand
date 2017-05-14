@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 218
+    .line 222
     iput-object p1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$4;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,11 +35,11 @@
     .registers 2
 
     .prologue
-    .line 221
+    .line 225
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$4;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
 
     invoke-static {v0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->l(Lcom/samsung/privilege/fragment/RequestHelpFragment;)V
 
-    .line 222
+    .line 226
     return-void
 .end method

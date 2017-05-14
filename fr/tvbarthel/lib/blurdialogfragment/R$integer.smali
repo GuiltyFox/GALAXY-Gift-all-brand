@@ -4,14 +4,12 @@
 
 
 # static fields
-.field public static final abc_config_activityDefaultDur:I = 0x7f0c0006
+.field public static final abc_config_activityDefaultDur:I = 0x7f0b0005
 
-.field public static final abc_config_activityShortDur:I = 0x7f0c0007
+.field public static final abc_config_activityShortDur:I = 0x7f0b0006
 
-.field public static final abc_max_action_buttons:I = 0x7f0c0002
+.field public static final blur_dialog_animation_duration:I = 0x7f0b0007
 
-.field public static final blur_dialog_animation_duration:I = 0x7f0c0008
+.field public static final cancel_button_image_alpha:I = 0x7f0b0009
 
-.field public static final cancel_button_image_alpha:I = 0x7f0c000a
-
-.field public static final status_bar_notification_info_maxnum:I = 0x7f0c000e
+.field public static final status_bar_notification_info_maxnum:I = 0x7f0b000d

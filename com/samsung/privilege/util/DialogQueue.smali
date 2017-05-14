@@ -67,12 +67,12 @@
     invoke-direct {v0, p0, v1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
     .line 40
-    const v1, 0x7f040123
+    const v1, 0x7f040128
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 42
-    const v1, 0x7f1005f4
+    const v1, 0x7f100621
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -85,7 +85,7 @@
     invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 55
-    const v1, 0x7f1005f6
+    const v1, 0x7f100623
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -98,7 +98,7 @@
     invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 65
-    const v1, 0x7f100571
+    const v1, 0x7f10058c
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -111,7 +111,7 @@
     invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 72
-    const v1, 0x7f1005f7
+    const v1, 0x7f100624
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -177,12 +177,12 @@
     invoke-direct {v8, p0, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
     .line 135
-    const v0, 0x7f040124
+    const v0, 0x7f040129
 
     invoke-virtual {v8, v0}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 137
-    const v0, 0x7f1005f8
+    const v0, 0x7f100625
 
     invoke-virtual {v8, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -191,7 +191,7 @@
     check-cast v0, Landroid/widget/TextView;
 
     .line 138
-    const v1, 0x7f1005f9
+    const v1, 0x7f100626
 
     invoke-virtual {v8, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -200,7 +200,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 139
-    const v2, 0x7f1005fa
+    const v2, 0x7f100627
 
     invoke-virtual {v8, v2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -209,7 +209,7 @@
     check-cast v2, Landroid/widget/TextView;
 
     .line 140
-    const v3, 0x7f1005fb
+    const v3, 0x7f100628
 
     invoke-virtual {v8, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -218,7 +218,7 @@
     check-cast v3, Landroid/widget/TextView;
 
     .line 141
-    const v4, 0x7f1005fc
+    const v4, 0x7f100629
 
     invoke-virtual {v8, v4}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -227,7 +227,7 @@
     check-cast v4, Landroid/widget/TextView;
 
     .line 142
-    const v5, 0x7f1005fd
+    const v5, 0x7f10062a
 
     invoke-virtual {v8, v5}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -236,7 +236,7 @@
     check-cast v5, Landroid/widget/TextView;
 
     .line 143
-    const v6, 0x7f1005fe
+    const v6, 0x7f10062b
 
     invoke-virtual {v8, v6}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -245,7 +245,7 @@
     check-cast v6, Landroid/widget/TextView;
 
     .line 144
-    const v7, 0x7f1005ff
+    const v7, 0x7f10062c
 
     invoke-virtual {v8, v7}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -287,7 +287,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v2, 0x7f09033b
+    const v2, 0x7f090354
 
     invoke-virtual {p0, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -345,7 +345,7 @@
     invoke-virtual {v7, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 162
-    const v0, 0x7f100600
+    const v0, 0x7f10062d
 
     invoke-virtual {v8, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -358,7 +358,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 203
-    const v0, 0x7f100601
+    const v0, 0x7f10062e
 
     invoke-virtual {v8, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 

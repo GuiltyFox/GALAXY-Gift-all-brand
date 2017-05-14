@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 84
+    .line 82
     invoke-direct {p0}, Landroid/support/v4/widget/CompoundButtonCompat$BaseCompoundButtonCompat;-><init>()V
 
     return-void
@@ -20,10 +20,10 @@
     .registers 3
 
     .prologue
-    .line 87
+    .line 85
     invoke-static {p1, p2}, Landroid/support/v4/widget/CompoundButtonCompatLollipop;->a(Landroid/widget/CompoundButton;Landroid/content/res/ColorStateList;)V
 
-    .line 88
+    .line 86
     return-void
 .end method
 
@@ -31,9 +31,9 @@
     .registers 3
 
     .prologue
-    .line 97
+    .line 95
     invoke-static {p1, p2}, Landroid/support/v4/widget/CompoundButtonCompatLollipop;->a(Landroid/widget/CompoundButton;Landroid/graphics/PorterDuff$Mode;)V
 
-    .line 98
+    .line 96
     return-void
 .end method

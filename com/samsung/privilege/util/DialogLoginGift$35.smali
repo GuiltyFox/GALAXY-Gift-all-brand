@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 1994
+    .line 2015
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$35;->a:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$35;->b:Landroid/app/Dialog;
@@ -39,17 +39,17 @@
     .registers 6
 
     .prologue
-    .line 1997
+    .line 2018
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$35;->a:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 1998
+    .line 2019
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$35;->a:Landroid/content/Context;
 
-    const v2, 0x7f09040b
+    const v2, 0x7f09043a
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -57,10 +57,10 @@
 
     invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
 
-    .line 1999
+    .line 2020
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$35;->a:Landroid/content/Context;
 
-    const v2, 0x7f0902f5
+    const v2, 0x7f09030e
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -92,17 +92,17 @@
 
     invoke-direct {v3, p0}, Lcom/samsung/privilege/util/DialogLoginGift$35$1;-><init>(Lcom/samsung/privilege/util/DialogLoginGift$35;)V
 
-    .line 2008
+    .line 2029
     invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    .line 2013
+    .line 2034
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
-    .line 2014
+    .line 2035
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 2015
+    .line 2036
     return-void
 .end method

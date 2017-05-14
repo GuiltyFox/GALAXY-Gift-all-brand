@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 74
+    .line 58
     invoke-direct {p0}, Landroid/support/v4/view/ViewConfigurationCompat$HoneycombViewConfigurationVersionImpl;-><init>()V
 
     return-void
@@ -16,11 +16,11 @@
 
 
 # virtual methods
-.method public b(Landroid/view/ViewConfiguration;)Z
+.method public a(Landroid/view/ViewConfiguration;)Z
     .registers 3
 
     .prologue
-    .line 77
+    .line 61
     invoke-static {p1}, Landroid/support/v4/view/ViewConfigurationCompatICS;->a(Landroid/view/ViewConfiguration;)Z
 
     move-result v0

@@ -85,6 +85,7 @@
 
     aput-object v4, v2, v3
 
+    .line 300
     invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v0
@@ -513,17 +514,19 @@
 
     if-eqz p1, :cond_e
 
+    .line 261
     invoke-virtual {p0, p1}, Landroid/support/v7/view/menu/MenuItemWrapperICS;->a(Landroid/view/ActionProvider;)Landroid/support/v7/view/menu/MenuItemWrapperICS$ActionProviderWrapper;
 
     move-result-object v1
 
+    .line 260
     :goto_a
     invoke-interface {v0, v1}, Landroid/support/v4/internal/view/SupportMenuItem;->a(Landroid/support/v4/view/ActionProvider;)Landroid/support/v4/internal/view/SupportMenuItem;
 
     .line 262
     return-object p0
 
-    .line 260
+    .line 261
     :cond_e
     const/4 v1, 0x0
 

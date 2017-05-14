@@ -23,7 +23,7 @@
     .registers 4
 
     .prologue
-    .line 123
+    .line 124
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$1;->b:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
@@ -38,9 +38,9 @@
 
     move-result-object v0
 
-    .line 124
+    .line 125
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 125
+    .line 126
     return-void
 .end method

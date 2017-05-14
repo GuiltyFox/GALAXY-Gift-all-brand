@@ -14,13 +14,13 @@
     .registers 2
 
     .prologue
-    .line 45
+    .line 46
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 46
+    .line 47
     iput-object p1, p0, Landroid/support/v4/view/NestedScrollingParentHelper;->a:Landroid/view/ViewGroup;
 
-    .line 47
+    .line 48
     return-void
 .end method
 
@@ -30,7 +30,7 @@
     .registers 2
 
     .prologue
-    .line 69
+    .line 70
     iget v0, p0, Landroid/support/v4/view/NestedScrollingParentHelper;->b:I
 
     return v0
@@ -40,12 +40,12 @@
     .registers 3
 
     .prologue
-    .line 82
+    .line 83
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v4/view/NestedScrollingParentHelper;->b:I
 
-    .line 83
+    .line 84
     return-void
 .end method
 
@@ -53,9 +53,9 @@
     .registers 4
 
     .prologue
-    .line 58
+    .line 59
     iput p3, p0, Landroid/support/v4/view/NestedScrollingParentHelper;->b:I
 
-    .line 59
+    .line 60
     return-void
 .end method

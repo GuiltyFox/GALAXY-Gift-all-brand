@@ -1,5 +1,5 @@
 .class Landroid/support/v4/graphics/drawable/DrawableWrapperHoneycomb;
-.super Landroid/support/v4/graphics/drawable/DrawableWrapperDonut;
+.super Landroid/support/v4/graphics/drawable/DrawableWrapperGingerbread;
 .source "DrawableWrapperHoneycomb.java"
 
 
@@ -9,18 +9,18 @@
 
     .prologue
     .line 27
-    invoke-direct {p0, p1}, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut;-><init>(Landroid/graphics/drawable/Drawable;)V
+    invoke-direct {p0, p1}, Landroid/support/v4/graphics/drawable/DrawableWrapperGingerbread;-><init>(Landroid/graphics/drawable/Drawable;)V
 
     .line 28
     return-void
 .end method
 
-.method constructor <init>(Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;Landroid/content/res/Resources;)V
+.method constructor <init>(Landroid/support/v4/graphics/drawable/DrawableWrapperGingerbread$DrawableWrapperState;Landroid/content/res/Resources;)V
     .registers 3
 
     .prologue
     .line 31
-    invoke-direct {p0, p1, p2}, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut;-><init>(Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;Landroid/content/res/Resources;)V
+    invoke-direct {p0, p1, p2}, Landroid/support/v4/graphics/drawable/DrawableWrapperGingerbread;-><init>(Landroid/support/v4/graphics/drawable/DrawableWrapperGingerbread$DrawableWrapperState;Landroid/content/res/Resources;)V
 
     .line 32
     return-void
@@ -28,18 +28,18 @@
 
 
 # virtual methods
-.method b()Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;
+.method b()Landroid/support/v4/graphics/drawable/DrawableWrapperGingerbread$DrawableWrapperState;
     .registers 4
 
     .prologue
     .line 42
     new-instance v0, Landroid/support/v4/graphics/drawable/DrawableWrapperHoneycomb$DrawableWrapperStateHoneycomb;
 
-    iget-object v1, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperHoneycomb;->b:Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;
+    iget-object v1, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperHoneycomb;->b:Landroid/support/v4/graphics/drawable/DrawableWrapperGingerbread$DrawableWrapperState;
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, v1, v2}, Landroid/support/v4/graphics/drawable/DrawableWrapperHoneycomb$DrawableWrapperStateHoneycomb;-><init>(Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;Landroid/content/res/Resources;)V
+    invoke-direct {v0, v1, v2}, Landroid/support/v4/graphics/drawable/DrawableWrapperHoneycomb$DrawableWrapperStateHoneycomb;-><init>(Landroid/support/v4/graphics/drawable/DrawableWrapperGingerbread$DrawableWrapperState;Landroid/content/res/Resources;)V
 
     return-object v0
 .end method

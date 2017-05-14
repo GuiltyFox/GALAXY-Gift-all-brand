@@ -10,4 +10,4 @@
 
 .field public static final app_tracker_rewards_staging:I = 0x7f070008
 
-.field public static final nav_states:I = 0x7f07000b
+.field public static final nav_states:I = 0x7f07000c

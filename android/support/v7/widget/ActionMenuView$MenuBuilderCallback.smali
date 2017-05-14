@@ -15,7 +15,7 @@
     .registers 2
 
     .prologue
-    .line 757
+    .line 755
     iput-object p1, p0, Landroid/support/v7/widget/ActionMenuView$MenuBuilderCallback;->a:Landroid/support/v7/widget/ActionMenuView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
     .registers 3
 
     .prologue
-    .line 757
+    .line 755
     invoke-direct {p0, p1}, Landroid/support/v7/widget/ActionMenuView$MenuBuilderCallback;-><init>(Landroid/support/v7/widget/ActionMenuView;)V
 
     return-void
@@ -39,7 +39,7 @@
     .registers 4
 
     .prologue
-    .line 760
+    .line 758
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView$MenuBuilderCallback;->a:Landroid/support/v7/widget/ActionMenuView;
 
     # getter for: Landroid/support/v7/widget/ActionMenuView;->mOnMenuItemClickListener:Landroid/support/v7/widget/ActionMenuView$OnMenuItemClickListener;
@@ -51,6 +51,7 @@
 
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView$MenuBuilderCallback;->a:Landroid/support/v7/widget/ActionMenuView;
 
+    .line 759
     # getter for: Landroid/support/v7/widget/ActionMenuView;->mOnMenuItemClickListener:Landroid/support/v7/widget/ActionMenuView$OnMenuItemClickListener;
     invoke-static {v0}, Landroid/support/v7/widget/ActionMenuView;->access$200(Landroid/support/v7/widget/ActionMenuView;)Landroid/support/v7/widget/ActionMenuView$OnMenuItemClickListener;
 
@@ -77,7 +78,7 @@
     .registers 3
 
     .prologue
-    .line 766
+    .line 764
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView$MenuBuilderCallback;->a:Landroid/support/v7/widget/ActionMenuView;
 
     # getter for: Landroid/support/v7/widget/ActionMenuView;->mMenuBuilderCallback:Landroid/support/v7/view/menu/MenuBuilder$Callback;
@@ -87,7 +88,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 767
+    .line 765
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView$MenuBuilderCallback;->a:Landroid/support/v7/widget/ActionMenuView;
 
     # getter for: Landroid/support/v7/widget/ActionMenuView;->mMenuBuilderCallback:Landroid/support/v7/view/menu/MenuBuilder$Callback;
@@ -97,7 +98,7 @@
 
     invoke-interface {v0, p1}, Landroid/support/v7/view/menu/MenuBuilder$Callback;->onMenuModeChange(Landroid/support/v7/view/menu/MenuBuilder;)V
 
-    .line 769
+    .line 767
     :cond_11
     return-void
 .end method

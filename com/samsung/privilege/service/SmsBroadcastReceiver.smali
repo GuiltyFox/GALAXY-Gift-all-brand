@@ -12,7 +12,7 @@
     .registers 1
 
     .prologue
-    .line 13
+    .line 14
     const-class v0, Lcom/samsung/privilege/service/SmsBroadcastReceiver;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
@@ -28,7 +28,7 @@
     .registers 1
 
     .prologue
-    .line 12
+    .line 13
     invoke-direct {p0}, Landroid/content/BroadcastReceiver;-><init>()V
 
     return-void
@@ -40,7 +40,7 @@
     .prologue
     const/4 v0, 0x0
 
-    .line 62
+    .line 89
     invoke-virtual {p0}, Ljava/lang/String;->toCharArray()[C
 
     move-result-object v2
@@ -54,24 +54,24 @@
 
     aget-char v4, v2, v1
 
-    .line 63
+    .line 90
     invoke-static {v4}, Ljava/lang/Character;->isDigit(C)Z
 
     move-result v4
 
     if-nez v4, :cond_12
 
-    .line 65
+    .line 92
     :goto_11
     return v0
 
-    .line 62
+    .line 89
     :cond_12
     add-int/lit8 v1, v1, 0x1
 
     goto :goto_7
 
-    .line 65
+    .line 92
     :cond_15
     const/4 v0, 0x1
 
@@ -84,142 +84,219 @@
     .registers 9
 
     .prologue
-    .line 17
+    const/4 v3, 0x0
+
+    .line 21
     const-string/jumbo v0, ""
 
-    .line 20
-    :try_start_3
-    invoke-virtual {p1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "content://sms/inbox"
-
-    invoke-static {v1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    .line 32
+    invoke-virtual {p2}, Landroid/content/Intent;->getAction()Ljava/lang/String;
 
     move-result-object v1
 
-    const/4 v2, 0x0
+    const-string/jumbo v2, "android.provider.Telephony.SMS_RECEIVED"
 
-    const/4 v3, 0x0
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    const/4 v4, 0x0
+    move-result v1
 
-    const/4 v5, 0x0
+    if-eqz v1, :cond_54
 
-    invoke-virtual/range {v0 .. v5}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+    .line 33
+    invoke-virtual {p2}, Landroid/content/Intent;->getExtras()Landroid/os/Bundle;
+
+    move-result-object v1
+
+    .line 34
+    if-eqz v1, :cond_54
+
+    .line 36
+    const-string/jumbo v0, "pdus"
+
+    invoke-virtual {v1, v0}, Landroid/os/Bundle;->get(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v0
 
-    .line 21
-    invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
+    check-cast v0, [Ljava/lang/Object;
 
-    .line 22
-    const/16 v1, 0xc
+    check-cast v0, [Ljava/lang/Object;
 
-    invoke-interface {v0, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-    :try_end_1e
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1e} :catch_4e
+    .line 37
+    array-length v1, v0
+
+    if-nez v1, :cond_26
+
+    .line 86
+    :cond_25
+    :goto_25
+    return-void
+
+    .line 41
+    :cond_26
+    array-length v1, v0
+
+    new-array v4, v1, [Landroid/telephony/SmsMessage;
+
+    .line 42
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    move v2, v3
+
+    .line 43
+    :goto_2f
+    array-length v1, v0
+
+    if-ge v2, v1, :cond_4b
+
+    .line 44
+    aget-object v1, v0, v2
+
+    check-cast v1, [B
+
+    check-cast v1, [B
+
+    invoke-static {v1}, Landroid/telephony/SmsMessage;->createFromPdu([B)Landroid/telephony/SmsMessage;
+
+    move-result-object v1
+
+    aput-object v1, v4, v2
+
+    .line 45
+    aget-object v1, v4, v2
+
+    invoke-virtual {v1}, Landroid/telephony/SmsMessage;->getMessageBody()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 43
+    add-int/lit8 v1, v2, 0x1
+
+    move v2, v1
+
+    goto :goto_2f
+
+    .line 47
+    :cond_4b
+    aget-object v0, v4, v3
+
+    invoke-virtual {v0}, Landroid/telephony/SmsMessage;->getOriginatingAddress()Ljava/lang/String;
+
+    .line 48
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 30
-    :goto_1f
-    if-eqz v0, :cond_58
+    .line 56
+    :cond_54
+    if-eqz v0, :cond_25
 
-    :try_start_21
+    :try_start_56
     const-string/jumbo v1, ""
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-nez v1, :cond_58
+    if-nez v1, :cond_25
 
-    .line 31
+    .line 57
+    sget-object v1, Lcom/samsung/privilege/service/SmsBroadcastReceiver;->a:Ljava/lang/String;
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "smsBody="
+
+    invoke-virtual {v2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 58
     const-string/jumbo v1, " "
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v0
 
-    .line 32
-    const/4 v0, 0x0
+    .line 59
+    :goto_7f
+    array-length v1, v0
 
-    :goto_32
-    array-length v2, v1
+    if-ge v3, v1, :cond_25
 
-    if-ge v0, v2, :cond_58
+    .line 60
+    aget-object v1, v0, v3
 
-    .line 33
-    aget-object v2, v1, v0
+    .line 61
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
-    .line 34
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v3
+    move-result v2
 
     const/4 v4, 0x6
 
-    if-ne v3, v4, :cond_4b
+    if-ne v2, v4, :cond_98
 
-    .line 35
-    invoke-static {v2}, Lcom/samsung/privilege/service/SmsBroadcastReceiver;->a(Ljava/lang/String;)Z
-    :try_end_41
-    .catch Ljava/lang/Exception; {:try_start_21 .. :try_end_41} :catch_57
+    .line 62
+    invoke-static {v1}, Lcom/samsung/privilege/service/SmsBroadcastReceiver;->a(Ljava/lang/String;)Z
+    :try_end_8e
+    .catch Ljava/lang/Exception; {:try_start_56 .. :try_end_8e} :catch_9f
 
-    move-result v3
+    move-result v2
 
     const/4 v4, 0x1
 
-    if-ne v3, v4, :cond_4b
+    if-ne v2, v4, :cond_98
 
-    .line 37
-    :try_start_45
-    invoke-static {v2}, Lcom/samsung/privilege/util/DialogOTPUtil;->a(Ljava/lang/String;)V
-    :try_end_48
-    .catch Ljava/lang/Exception; {:try_start_45 .. :try_end_48} :catch_53
+    .line 64
+    :try_start_92
+    invoke-static {v1}, Lcom/samsung/privilege/util/DialogOTPUtil;->a(Ljava/lang/String;)V
+    :try_end_95
+    .catch Ljava/lang/Exception; {:try_start_92 .. :try_end_95} :catch_9b
 
-    .line 43
-    :goto_48
-    :try_start_48
-    invoke-static {v2}, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil;->a(Ljava/lang/String;)V
-    :try_end_4b
-    .catch Ljava/lang/Exception; {:try_start_48 .. :try_end_4b} :catch_55
-
-    .line 32
-    :cond_4b
-    :goto_4b
-    add-int/lit8 v0, v0, 0x1
-
-    goto :goto_32
-
-    .line 25
-    :catch_4e
-    move-exception v0
-
-    .line 26
-    const-string/jumbo v0, ""
-
-    goto :goto_1f
-
-    .line 38
-    :catch_53
-    move-exception v3
-
-    goto :goto_48
-
-    .line 44
-    :catch_55
-    move-exception v2
-
-    goto :goto_4b
-
-    .line 51
-    :catch_57
-    move-exception v0
+    .line 70
+    :goto_95
+    :try_start_95
+    invoke-static {v1}, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil;->a(Ljava/lang/String;)V
+    :try_end_98
+    .catch Ljava/lang/Exception; {:try_start_95 .. :try_end_98} :catch_9d
 
     .line 59
-    :cond_58
-    return-void
+    :cond_98
+    :goto_98
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_7f
+
+    .line 65
+    :catch_9b
+    move-exception v2
+
+    goto :goto_95
+
+    .line 71
+    :catch_9d
+    move-exception v1
+
+    goto :goto_98
+
+    .line 78
+    :catch_9f
+    move-exception v0
+
+    goto :goto_25
 .end method

@@ -56,7 +56,7 @@
 
     .prologue
     .line 37
-    invoke-static {}, Landroid/support/v7/app/AppCompatDelegate;->j()Z
+    invoke-static {}, Landroid/support/v7/app/AppCompatDelegate;->k()Z
 
     move-result v0
 

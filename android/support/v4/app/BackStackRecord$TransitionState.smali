@@ -39,26 +39,26 @@
     .registers 3
 
     .prologue
-    .line 1468
+    .line 1540
     iput-object p1, p0, Landroid/support/v4/app/BackStackRecord$TransitionState;->e:Landroid/support/v4/app/BackStackRecord;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1469
+    .line 1541
     new-instance v0, Landroid/support/v4/util/ArrayMap;
 
     invoke-direct {v0}, Landroid/support/v4/util/ArrayMap;-><init>()V
 
     iput-object v0, p0, Landroid/support/v4/app/BackStackRecord$TransitionState;->a:Landroid/support/v4/util/ArrayMap;
 
-    .line 1470
+    .line 1542
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Landroid/support/v4/app/BackStackRecord$TransitionState;->b:Ljava/util/ArrayList;
 
-    .line 1472
+    .line 1544
     new-instance v0, Landroid/support/v4/app/FragmentTransitionCompat21$EpicenterView;
 
     invoke-direct {v0}, Landroid/support/v4/app/FragmentTransitionCompat21$EpicenterView;-><init>()V

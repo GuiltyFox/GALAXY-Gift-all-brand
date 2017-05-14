@@ -37,10 +37,10 @@
 
     :array_a
     .array-data 4
-        0x7f01012c
-        0x7f01012d
-        0x7f01012e
-        0x7f01012f
-        0x7f010130
+        0x7f010134
+        0x7f010135
+        0x7f010136
+        0x7f010137
+        0x7f010138
     .end array-data
 .end method

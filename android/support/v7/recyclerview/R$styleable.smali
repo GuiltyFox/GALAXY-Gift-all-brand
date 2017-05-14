@@ -38,9 +38,9 @@
     :array_a
     .array-data 4
         0x10100c4
-        0x7f01022f
-        0x7f010230
-        0x7f010231
-        0x7f010232
+        0x7f010239
+        0x7f01023a
+        0x7f01023b
+        0x7f01023c
     .end array-data
 .end method

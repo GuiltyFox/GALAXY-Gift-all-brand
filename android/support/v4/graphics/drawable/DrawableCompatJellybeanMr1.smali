@@ -20,12 +20,12 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 63
+    .line 65
     sget-boolean v0, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->d:Z
 
     if-nez v0, :cond_1b
 
-    .line 65
+    .line 67
     :try_start_5
     const-class v0, Landroid/graphics/drawable/Drawable;
 
@@ -41,7 +41,7 @@
 
     sput-object v0, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->c:Ljava/lang/reflect/Method;
 
-    .line 66
+    .line 68
     sget-object v0, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->c:Ljava/lang/reflect/Method;
 
     const/4 v1, 0x1
@@ -50,17 +50,17 @@
     :try_end_19
     .catch Ljava/lang/NoSuchMethodException; {:try_start_5 .. :try_end_19} :catch_2f
 
-    .line 70
+    .line 72
     :goto_19
     sput-boolean v3, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->d:Z
 
-    .line 73
+    .line 75
     :cond_1b
     sget-object v0, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->c:Ljava/lang/reflect/Method;
 
     if-eqz v0, :cond_47
 
-    .line 75
+    .line 77
     :try_start_1f
     sget-object v0, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->c:Ljava/lang/reflect/Method;
 
@@ -80,15 +80,15 @@
 
     move-result v0
 
-    .line 81
+    .line 83
     :goto_2e
     return v0
 
-    .line 67
+    .line 69
     :catch_2f
     move-exception v0
 
-    .line 68
+    .line 70
     const-string/jumbo v1, "DrawableCompatJellybeanMr1"
 
     const-string/jumbo v2, "Failed to retrieve getLayoutDirection() method"
@@ -97,134 +97,140 @@
 
     goto :goto_19
 
-    .line 76
+    .line 78
     :catch_3a
     move-exception v0
 
-    .line 77
+    .line 79
     const-string/jumbo v1, "DrawableCompatJellybeanMr1"
 
     const-string/jumbo v2, "Failed to invoke getLayoutDirection() via reflection"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 78
+    .line 80
     const/4 v0, 0x0
 
     sput-object v0, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->c:Ljava/lang/reflect/Method;
 
-    .line 81
+    .line 83
     :cond_47
     const/4 v0, -0x1
 
     goto :goto_2e
 .end method
 
-.method public static a(Landroid/graphics/drawable/Drawable;I)V
-    .registers 8
+.method public static a(Landroid/graphics/drawable/Drawable;I)Z
+    .registers 9
 
     .prologue
-    const/4 v5, 0x1
+    const/4 v1, 0x0
+
+    const/4 v0, 0x1
 
     .line 41
-    sget-boolean v0, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->b:Z
+    sget-boolean v2, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->b:Z
 
-    if-nez v0, :cond_20
+    if-nez v2, :cond_21
 
     .line 43
-    :try_start_5
-    const-class v0, Landroid/graphics/drawable/Drawable;
+    :try_start_6
+    const-class v2, Landroid/graphics/drawable/Drawable;
 
-    const-string/jumbo v1, "setLayoutDirection"
+    const-string/jumbo v3, "setLayoutDirection"
 
-    const/4 v2, 0x1
+    const/4 v4, 0x1
 
-    new-array v2, v2, [Ljava/lang/Class;
+    new-array v4, v4, [Ljava/lang/Class;
 
-    const/4 v3, 0x0
+    const/4 v5, 0x0
 
-    sget-object v4, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+    sget-object v6, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
 
-    aput-object v4, v2, v3
+    aput-object v6, v4, v5
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    .line 44
+    invoke-virtual {v2, v3, v4}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
-    move-result-object v0
+    move-result-object v2
 
-    sput-object v0, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->a:Ljava/lang/reflect/Method;
+    sput-object v2, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->a:Ljava/lang/reflect/Method;
 
     .line 45
-    sget-object v0, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->a:Ljava/lang/reflect/Method;
+    sget-object v2, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->a:Ljava/lang/reflect/Method;
 
-    const/4 v1, 0x1
+    const/4 v3, 0x1
 
-    invoke-virtual {v0, v1}, Ljava/lang/reflect/Method;->setAccessible(Z)V
-    :try_end_1e
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_5 .. :try_end_1e} :catch_34
+    invoke-virtual {v2, v3}, Ljava/lang/reflect/Method;->setAccessible(Z)V
+    :try_end_1f
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_6 .. :try_end_1f} :catch_35
 
     .line 49
-    :goto_1e
-    sput-boolean v5, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->b:Z
+    :goto_1f
+    sput-boolean v0, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->b:Z
 
     .line 52
-    :cond_20
-    sget-object v0, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->a:Ljava/lang/reflect/Method;
+    :cond_21
+    sget-object v2, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->a:Ljava/lang/reflect/Method;
 
-    if-eqz v0, :cond_33
+    if-eqz v2, :cond_4d
 
     .line 54
-    :try_start_24
-    sget-object v0, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->a:Ljava/lang/reflect/Method;
+    :try_start_25
+    sget-object v2, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->a:Ljava/lang/reflect/Method;
 
-    const/4 v1, 0x1
+    const/4 v3, 0x1
 
-    new-array v1, v1, [Ljava/lang/Object;
+    new-array v3, v3, [Ljava/lang/Object;
 
-    const/4 v2, 0x0
+    const/4 v4, 0x0
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v3
+    move-result-object v5
 
-    aput-object v3, v1, v2
+    aput-object v5, v3, v4
 
-    invoke-virtual {v0, p0, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_33
-    .catch Ljava/lang/Exception; {:try_start_24 .. :try_end_33} :catch_3f
+    invoke-virtual {v2, p0, v3}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_34
+    .catch Ljava/lang/Exception; {:try_start_25 .. :try_end_34} :catch_40
 
-    .line 60
-    :cond_33
-    :goto_33
-    return-void
+    .line 61
+    :goto_34
+    return v0
 
     .line 46
-    :catch_34
-    move-exception v0
+    :catch_35
+    move-exception v2
 
     .line 47
-    const-string/jumbo v1, "DrawableCompatJellybeanMr1"
+    const-string/jumbo v3, "DrawableCompatJellybeanMr1"
 
-    const-string/jumbo v2, "Failed to retrieve setLayoutDirection(int) method"
+    const-string/jumbo v4, "Failed to retrieve setLayoutDirection(int) method"
 
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-static {v3, v4, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    goto :goto_1e
-
-    .line 55
-    :catch_3f
-    move-exception v0
+    goto :goto_1f
 
     .line 56
-    const-string/jumbo v1, "DrawableCompatJellybeanMr1"
-
-    const-string/jumbo v2, "Failed to invoke setLayoutDirection(int) via reflection"
-
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    :catch_40
+    move-exception v0
 
     .line 57
+    const-string/jumbo v2, "DrawableCompatJellybeanMr1"
+
+    const-string/jumbo v3, "Failed to invoke setLayoutDirection(int) via reflection"
+
+    invoke-static {v2, v3, v0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 58
     const/4 v0, 0x0
 
     sput-object v0, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->a:Ljava/lang/reflect/Method;
 
-    goto :goto_33
+    :cond_4d
+    move v0, v1
+
+    .line 61
+    goto :goto_34
 .end method

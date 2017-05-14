@@ -293,7 +293,7 @@
 
     invoke-direct {v1, p0, v2}, Landroid/support/v7/app/ToolbarActionBar$PanelMenuPresenterCallback;-><init>(Landroid/support/v7/app/ToolbarActionBar;Landroid/support/v7/app/ToolbarActionBar$1;)V
 
-    invoke-virtual {v0, v1}, Landroid/support/v7/view/menu/ListMenuPresenter;->a(Landroid/support/v7/view/menu/MenuPresenter$Callback;)V
+    invoke-virtual {v0, v1}, Landroid/support/v7/view/menu/ListMenuPresenter;->setCallback(Landroid/support/v7/view/menu/MenuPresenter$Callback;)V
 
     .line 556
     iget-object v0, p0, Landroid/support/v7/app/ToolbarActionBar;->g:Landroid/support/v7/view/menu/ListMenuPresenter;
@@ -501,10 +501,12 @@
     .line 477
     if-eqz p2, :cond_20
 
+    .line 478
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getDeviceId()I
 
     move-result v0
 
+    .line 477
     :goto_e
     invoke-static {v0}, Landroid/view/KeyCharacterMap;->load(I)Landroid/view/KeyCharacterMap;
 
@@ -529,7 +531,7 @@
     :cond_1f
     return v1
 
-    .line 477
+    .line 478
     :cond_20
     const/4 v0, -0x1
 
@@ -861,6 +863,7 @@
 
     const/4 v4, 0x0
 
+    .line 455
     invoke-interface {v0, v3, v4, v1}, Landroid/view/Window$Callback;->onPreparePanel(ILandroid/view/View;Landroid/view/Menu;)Z
 
     move-result v0

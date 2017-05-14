@@ -100,7 +100,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f04002c
+    const v1, 0x7f04002d
 
     const/4 v2, 0x0
 
@@ -426,14 +426,14 @@
     .line 543
     iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->u:Landroid/widget/ImageView;
 
-    const v2, 0x7f0202e6
+    const v2, 0x7f0202eb
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 544
     iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->v:Landroid/widget/TextView;
 
-    const v2, 0x7f020054
+    const v2, 0x7f020057
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setBackgroundResource(I)V
 
@@ -561,14 +561,14 @@
     :cond_19d
     iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->u:Landroid/widget/ImageView;
 
-    const v2, 0x7f0202e7
+    const v2, 0x7f0202ec
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 547
     iget-object v1, p1, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->v:Landroid/widget/TextView;
 
-    const v2, 0x7f020055
+    const v2, 0x7f020058
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setBackgroundResource(I)V
 

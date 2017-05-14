@@ -36,7 +36,7 @@
     .registers 3
 
     .prologue
-    .line 130
+    .line 125
     iget-object v0, p0, Landroid/support/v7/view/menu/SubMenuBuilder;->mParentMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/view/menu/MenuBuilder;->collapseItemActionView(Landroid/support/v7/view/menu/MenuItemImpl;)Z
@@ -59,6 +59,7 @@
 
     iget-object v0, p0, Landroid/support/v7/view/menu/SubMenuBuilder;->mParentMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
+    .line 85
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/view/menu/MenuBuilder;->dispatchMenuItemSelected(Landroid/support/v7/view/menu/MenuBuilder;Landroid/view/MenuItem;)Z
 
     move-result v0
@@ -81,7 +82,7 @@
     .registers 3
 
     .prologue
-    .line 125
+    .line 120
     iget-object v0, p0, Landroid/support/v7/view/menu/SubMenuBuilder;->mParentMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/view/menu/MenuBuilder;->expandItemActionView(Landroid/support/v7/view/menu/MenuItemImpl;)Z
@@ -95,7 +96,7 @@
     .registers 4
 
     .prologue
-    .line 135
+    .line 130
     iget-object v0, p0, Landroid/support/v7/view/menu/SubMenuBuilder;->mItem:Landroid/support/v7/view/menu/MenuItemImpl;
 
     if-eqz v0, :cond_e
@@ -106,24 +107,24 @@
 
     move-result v0
 
-    .line 136
+    .line 131
     :goto_a
     if-nez v0, :cond_10
 
-    .line 137
+    .line 132
     const/4 v0, 0x0
 
-    .line 139
+    .line 134
     :goto_d
     return-object v0
 
-    .line 135
+    .line 130
     :cond_e
     const/4 v0, 0x0
 
     goto :goto_a
 
-    .line 139
+    .line 134
     :cond_10
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -181,6 +182,10 @@
     .line 79
     iget-object v0, p0, Landroid/support/v7/view/menu/SubMenuBuilder;->mParentMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
+    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuBuilder;->getRootMenu()Landroid/support/v7/view/menu/MenuBuilder;
+
+    move-result-object v0
+
     return-object v0
 .end method
 
@@ -229,75 +234,70 @@
     .registers 3
 
     .prologue
-    .line 104
-    invoke-virtual {p0}, Landroid/support/v7/view/menu/SubMenuBuilder;->getContext()Landroid/content/Context;
+    .line 103
+    invoke-super {p0, p1}, Landroid/support/v7/view/menu/MenuBuilder;->setHeaderIconInt(I)Landroid/support/v7/view/menu/MenuBuilder;
 
     move-result-object v0
 
-    invoke-static {v0, p1}, Landroid/support/v4/content/ContextCompat;->a(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    check-cast v0, Landroid/view/SubMenu;
 
-    move-result-object v0
-
-    invoke-super {p0, v0}, Landroid/support/v7/view/menu/MenuBuilder;->setHeaderIconInt(Landroid/graphics/drawable/Drawable;)Landroid/support/v7/view/menu/MenuBuilder;
-
-    .line 105
-    return-object p0
+    return-object v0
 .end method
 
 .method public setHeaderIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/SubMenu;
-    .registers 2
+    .registers 3
 
     .prologue
     .line 99
     invoke-super {p0, p1}, Landroid/support/v7/view/menu/MenuBuilder;->setHeaderIconInt(Landroid/graphics/drawable/Drawable;)Landroid/support/v7/view/menu/MenuBuilder;
 
-    .line 100
-    return-object p0
+    move-result-object v0
+
+    check-cast v0, Landroid/view/SubMenu;
+
+    return-object v0
 .end method
 
 .method public setHeaderTitle(I)Landroid/view/SubMenu;
     .registers 3
 
     .prologue
-    .line 114
-    invoke-virtual {p0}, Landroid/support/v7/view/menu/SubMenuBuilder;->getContext()Landroid/content/Context;
+    .line 111
+    invoke-super {p0, p1}, Landroid/support/v7/view/menu/MenuBuilder;->setHeaderTitleInt(I)Landroid/support/v7/view/menu/MenuBuilder;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    check-cast v0, Landroid/view/SubMenu;
 
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-super {p0, v0}, Landroid/support/v7/view/menu/MenuBuilder;->setHeaderTitleInt(Ljava/lang/CharSequence;)Landroid/support/v7/view/menu/MenuBuilder;
-
-    .line 115
-    return-object p0
+    return-object v0
 .end method
 
 .method public setHeaderTitle(Ljava/lang/CharSequence;)Landroid/view/SubMenu;
-    .registers 2
+    .registers 3
 
     .prologue
-    .line 109
+    .line 107
     invoke-super {p0, p1}, Landroid/support/v7/view/menu/MenuBuilder;->setHeaderTitleInt(Ljava/lang/CharSequence;)Landroid/support/v7/view/menu/MenuBuilder;
 
-    .line 110
-    return-object p0
+    move-result-object v0
+
+    check-cast v0, Landroid/view/SubMenu;
+
+    return-object v0
 .end method
 
 .method public setHeaderView(Landroid/view/View;)Landroid/view/SubMenu;
-    .registers 2
+    .registers 3
 
     .prologue
-    .line 119
+    .line 115
     invoke-super {p0, p1}, Landroid/support/v7/view/menu/MenuBuilder;->setHeaderViewInt(Landroid/view/View;)Landroid/support/v7/view/menu/MenuBuilder;
 
-    .line 120
-    return-object p0
+    move-result-object v0
+
+    check-cast v0, Landroid/view/SubMenu;
+
+    return-object v0
 .end method
 
 .method public setIcon(I)Landroid/view/SubMenu;

@@ -23,13 +23,13 @@
     .registers 2
 
     .prologue
-    .line 972
+    .line 1006
     iput-object p1, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->a:Landroid/support/v4/app/FragmentActivity;
 
-    .line 973
+    .line 1007
     invoke-direct {p0, p1}, Landroid/support/v4/app/FragmentHostCallback;-><init>(Landroid/support/v4/app/FragmentActivity;)V
 
-    .line 974
+    .line 1008
     return-void
 .end method
 
@@ -39,7 +39,7 @@
     .registers 3
 
     .prologue
-    .line 1044
+    .line 1086
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->a:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/app/FragmentActivity;->findViewById(I)Landroid/view/View;
@@ -53,12 +53,41 @@
     .registers 6
 
     .prologue
-    .line 1009
+    .line 1043
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->a:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/support/v4/app/FragmentActivity;->startActivityFromFragment(Landroid/support/v4/app/Fragment;Landroid/content/Intent;ILandroid/os/Bundle;)V
 
-    .line 1010
+    .line 1044
+    return-void
+.end method
+
+.method public a(Landroid/support/v4/app/Fragment;Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
+    .registers 18
+
+    .prologue
+    .line 1050
+    iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->a:Landroid/support/v4/app/FragmentActivity;
+
+    move-object v1, p1
+
+    move-object v2, p2
+
+    move v3, p3
+
+    move-object v4, p4
+
+    move v5, p5
+
+    move v6, p6
+
+    move/from16 v7, p7
+
+    move-object/from16 v8, p8
+
+    invoke-virtual/range {v0 .. v8}, Landroid/support/v4/app/FragmentActivity;->startIntentSenderFromFragment(Landroid/support/v4/app/Fragment;Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
+
+    .line 1052
     return-void
 .end method
 
@@ -66,13 +95,13 @@
     .registers 5
 
     .prologue
-    .line 1015
+    .line 1057
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->a:Landroid/support/v4/app/FragmentActivity;
 
     # invokes: Landroid/support/v4/app/FragmentActivity;->requestPermissionsFromFragment(Landroid/support/v4/app/Fragment;[Ljava/lang/String;I)V
     invoke-static {v0, p1, p2, p3}, Landroid/support/v4/app/FragmentActivity;->access$000(Landroid/support/v4/app/FragmentActivity;Landroid/support/v4/app/Fragment;[Ljava/lang/String;I)V
 
-    .line 1017
+    .line 1059
     return-void
 .end method
 
@@ -80,12 +109,12 @@
     .registers 6
 
     .prologue
-    .line 978
+    .line 1012
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->a:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0, p1, p2, p3, p4}, Landroid/support/v4/app/FragmentActivity;->dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
 
-    .line 979
+    .line 1013
     return-void
 .end method
 
@@ -93,14 +122,14 @@
     .registers 2
 
     .prologue
-    .line 1049
+    .line 1091
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->a:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
-    .line 1050
+    .line 1092
     if-eqz v0, :cond_10
 
     invoke-virtual {v0}, Landroid/view/Window;->peekDecorView()Landroid/view/View;
@@ -124,7 +153,7 @@
     .registers 3
 
     .prologue
-    .line 983
+    .line 1017
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->a:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->isFinishing()Z
@@ -148,7 +177,7 @@
     .registers 3
 
     .prologue
-    .line 1021
+    .line 1063
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->a:Landroid/support/v4/app/FragmentActivity;
 
     invoke-static {v0, p1}, Landroid/support/v4/app/ActivityCompat;->a(Landroid/app/Activity;Ljava/lang/String;)Z
@@ -162,7 +191,7 @@
     .registers 3
 
     .prologue
-    .line 988
+    .line 1022
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->a:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->getLayoutInflater()Landroid/view/LayoutInflater;
@@ -182,12 +211,12 @@
     .registers 3
 
     .prologue
-    .line 1038
+    .line 1080
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->a:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/app/FragmentActivity;->onAttachFragment(Landroid/support/v4/app/Fragment;)V
 
-    .line 1039
+    .line 1081
     return-void
 .end method
 
@@ -195,7 +224,7 @@
     .registers 2
 
     .prologue
-    .line 993
+    .line 1027
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->a:Landroid/support/v4/app/FragmentActivity;
 
     return-object v0
@@ -205,12 +234,12 @@
     .registers 2
 
     .prologue
-    .line 998
+    .line 1032
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->a:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->supportInvalidateOptionsMenu()V
 
-    .line 999
+    .line 1033
     return-void
 .end method
 
@@ -218,7 +247,7 @@
     .registers 2
 
     .prologue
-    .line 1027
+    .line 1069
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->a:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->getWindow()Landroid/view/Window;
@@ -242,14 +271,14 @@
     .registers 2
 
     .prologue
-    .line 1032
+    .line 1074
     iget-object v0, p0, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->a:Landroid/support/v4/app/FragmentActivity;
 
     invoke-virtual {v0}, Landroid/support/v4/app/FragmentActivity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
-    .line 1033
+    .line 1075
     if-nez v0, :cond_a
 
     const/4 v0, 0x0
@@ -271,7 +300,7 @@
     .registers 2
 
     .prologue
-    .line 971
+    .line 1005
     invoke-virtual {p0}, Landroid/support/v4/app/FragmentActivity$HostCallbacks;->c()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0

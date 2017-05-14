@@ -15,12 +15,12 @@
     return-void
 .end method
 
-.method constructor <init>(Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;Landroid/content/res/Resources;)V
+.method constructor <init>(Landroid/support/v4/graphics/drawable/DrawableWrapperGingerbread$DrawableWrapperState;Landroid/content/res/Resources;)V
     .registers 3
 
     .prologue
     .line 31
-    invoke-direct {p0, p1, p2}, Landroid/support/v4/graphics/drawable/DrawableWrapperHoneycomb;-><init>(Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;Landroid/content/res/Resources;)V
+    invoke-direct {p0, p1, p2}, Landroid/support/v4/graphics/drawable/DrawableWrapperHoneycomb;-><init>(Landroid/support/v4/graphics/drawable/DrawableWrapperGingerbread$DrawableWrapperState;Landroid/content/res/Resources;)V
 
     .line 32
     return-void
@@ -28,18 +28,18 @@
 
 
 # virtual methods
-.method b()Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;
+.method b()Landroid/support/v4/graphics/drawable/DrawableWrapperGingerbread$DrawableWrapperState;
     .registers 4
 
     .prologue
     .line 47
     new-instance v0, Landroid/support/v4/graphics/drawable/DrawableWrapperKitKat$DrawableWrapperStateKitKat;
 
-    iget-object v1, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperKitKat;->b:Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;
+    iget-object v1, p0, Landroid/support/v4/graphics/drawable/DrawableWrapperKitKat;->b:Landroid/support/v4/graphics/drawable/DrawableWrapperGingerbread$DrawableWrapperState;
 
     const/4 v2, 0x0
 
-    invoke-direct {v0, v1, v2}, Landroid/support/v4/graphics/drawable/DrawableWrapperKitKat$DrawableWrapperStateKitKat;-><init>(Landroid/support/v4/graphics/drawable/DrawableWrapperDonut$DrawableWrapperState;Landroid/content/res/Resources;)V
+    invoke-direct {v0, v1, v2}, Landroid/support/v4/graphics/drawable/DrawableWrapperKitKat$DrawableWrapperStateKitKat;-><init>(Landroid/support/v4/graphics/drawable/DrawableWrapperGingerbread$DrawableWrapperState;Landroid/content/res/Resources;)V
 
     return-object v0
 .end method

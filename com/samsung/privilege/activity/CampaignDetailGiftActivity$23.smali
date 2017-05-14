@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 2554
+    .line 2631
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$23;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iput-boolean p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$23;->a:Z
@@ -39,16 +39,16 @@
     .registers 4
 
     .prologue
-    const v2, 0x7f1000d9
+    const v2, 0x7f1000db
 
-    .line 2558
+    .line 2635
     iget-boolean v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$23;->a:Z
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_19
 
-    .line 2559
+    .line 2636
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$23;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-virtual {v0, v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->findViewById(I)Landroid/view/View;
@@ -63,11 +63,11 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 2564
+    .line 2641
     :goto_18
     return-void
 
-    .line 2561
+    .line 2638
     :cond_19
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$23;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
@@ -75,7 +75,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f020373
+    const v1, 0x7f020378
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundResource(I)V
 

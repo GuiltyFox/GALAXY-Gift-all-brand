@@ -115,7 +115,7 @@
 
     .prologue
     .line 35
-    invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     return-void
 .end method
@@ -125,7 +125,7 @@
 
     .prologue
     .line 35
-    invoke-super {p0, p1}, Landroid/view/View;->setVisibility(I)V
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     return-void
 .end method
@@ -134,7 +134,7 @@
     .registers 4
 
     .prologue
-    .line 258
+    .line 256
     if-eqz p2, :cond_5
 
     sub-int v0, p0, p1
@@ -154,17 +154,17 @@
     .registers 4
 
     .prologue
-    .line 182
+    .line 180
     const-wide/16 v0, 0xc8
 
     invoke-virtual {p0, p1, v0, v1}, Landroid/support/v7/widget/AbsActionBarView;->setupAnimatorToVisibility(IJ)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
     move-result-object v0
 
-    .line 183
+    .line 181
     invoke-virtual {v0}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->c()V
 
-    .line 184
+    .line 182
     return-void
 .end method
 
@@ -172,7 +172,7 @@
     .registers 2
 
     .prologue
-    .line 237
+    .line 235
     invoke-virtual {p0}, Landroid/support/v7/widget/AbsActionBarView;->isOverflowReserved()Z
 
     move-result v0
@@ -200,17 +200,17 @@
     .registers 2
 
     .prologue
-    .line 241
+    .line 239
     iget-object v0, p0, Landroid/support/v7/widget/AbsActionBarView;->mActionMenuPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     if-eqz v0, :cond_9
 
-    .line 242
+    .line 240
     iget-object v0, p0, Landroid/support/v7/widget/AbsActionBarView;->mActionMenuPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionMenuPresenter;->e()Z
 
-    .line 244
+    .line 242
     :cond_9
     return-void
 .end method
@@ -219,17 +219,17 @@
     .registers 2
 
     .prologue
-    .line 154
+    .line 152
     iget-object v0, p0, Landroid/support/v7/widget/AbsActionBarView;->mVisibilityAnim:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
     if-eqz v0, :cond_9
 
-    .line 155
+    .line 153
     iget-object v0, p0, Landroid/support/v7/widget/AbsActionBarView;->mVisAnimListener:Landroid/support/v7/widget/AbsActionBarView$VisibilityAnimListener;
 
     iget v0, v0, Landroid/support/v7/widget/AbsActionBarView$VisibilityAnimListener;->mFinalVisibility:I
 
-    .line 157
+    .line 155
     :goto_8
     return v0
 
@@ -245,7 +245,7 @@
     .registers 2
 
     .prologue
-    .line 147
+    .line 145
     iget v0, p0, Landroid/support/v7/widget/AbsActionBarView;->mContentHeight:I
 
     return v0
@@ -255,19 +255,19 @@
     .registers 2
 
     .prologue
-    .line 212
+    .line 210
     iget-object v0, p0, Landroid/support/v7/widget/AbsActionBarView;->mActionMenuPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     if-eqz v0, :cond_b
 
-    .line 213
+    .line 211
     iget-object v0, p0, Landroid/support/v7/widget/AbsActionBarView;->mActionMenuPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionMenuPresenter;->d()Z
 
     move-result v0
 
-    .line 215
+    .line 213
     :goto_a
     return v0
 
@@ -281,19 +281,19 @@
     .registers 2
 
     .prologue
-    .line 226
+    .line 224
     iget-object v0, p0, Landroid/support/v7/widget/AbsActionBarView;->mActionMenuPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     if-eqz v0, :cond_b
 
-    .line 227
+    .line 225
     iget-object v0, p0, Landroid/support/v7/widget/AbsActionBarView;->mActionMenuPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionMenuPresenter;->h()Z
 
     move-result v0
 
-    .line 229
+    .line 227
     :goto_a
     return v0
 
@@ -307,19 +307,19 @@
     .registers 2
 
     .prologue
-    .line 219
+    .line 217
     iget-object v0, p0, Landroid/support/v7/widget/AbsActionBarView;->mActionMenuPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     if-eqz v0, :cond_b
 
-    .line 220
+    .line 218
     iget-object v0, p0, Landroid/support/v7/widget/AbsActionBarView;->mActionMenuPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionMenuPresenter;->g()Z
 
     move-result v0
 
-    .line 222
+    .line 220
     :goto_a
     return v0
 
@@ -333,7 +333,7 @@
     .registers 2
 
     .prologue
-    .line 233
+    .line 231
     iget-object v0, p0, Landroid/support/v7/widget/AbsActionBarView;->mActionMenuPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     if-eqz v0, :cond_e
@@ -361,7 +361,7 @@
     .registers 7
 
     .prologue
-    .line 248
+    .line 246
     const/high16 v0, -0x80000000
 
     invoke-static {p2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
@@ -370,17 +370,17 @@
 
     invoke-virtual {p1, v0, p3}, Landroid/view/View;->measure(II)V
 
-    .line 251
+    .line 249
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
 
     sub-int v0, p2, v0
 
-    .line 252
+    .line 250
     sub-int/2addr v0, p4
 
-    .line 254
+    .line 252
     const/4 v1, 0x0
 
     invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
@@ -397,17 +397,9 @@
     const/4 v4, 0x0
 
     .line 74
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x8
-
-    if-lt v0, v1, :cond_a
-
-    .line 75
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 80
-    :cond_a
+    .line 78
     invoke-virtual {p0}, Landroid/support/v7/widget/AbsActionBarView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -422,7 +414,7 @@
 
     move-result-object v0
 
-    .line 82
+    .line 80
     sget v1, Landroid/support/v7/appcompat/R$styleable;->ActionBar_height:I
 
     invoke-virtual {v0, v1, v4}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
@@ -431,21 +423,21 @@
 
     invoke-virtual {p0, v1}, Landroid/support/v7/widget/AbsActionBarView;->setContentHeight(I)V
 
-    .line 83
+    .line 81
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 85
+    .line 83
     iget-object v0, p0, Landroid/support/v7/widget/AbsActionBarView;->mActionMenuPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_26
 
-    .line 86
+    .line 84
     iget-object v0, p0, Landroid/support/v7/widget/AbsActionBarView;->mActionMenuPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/ActionMenuPresenter;->a(Landroid/content/res/Configuration;)V
 
-    .line 88
-    :cond_2c
+    .line 86
+    :cond_26
     return-void
 .end method
 
@@ -459,37 +451,37 @@
 
     const/4 v2, 0x0
 
-    .line 121
+    .line 119
     invoke-static {p1}, Landroid/support/v4/view/MotionEventCompat;->a(Landroid/view/MotionEvent;)I
 
     move-result v0
 
-    .line 122
+    .line 120
     if-ne v0, v4, :cond_c
 
-    .line 123
+    .line 121
     iput-boolean v2, p0, Landroid/support/v7/widget/AbsActionBarView;->mEatingHover:Z
 
-    .line 126
+    .line 124
     :cond_c
     iget-boolean v1, p0, Landroid/support/v7/widget/AbsActionBarView;->mEatingHover:Z
 
     if-nez v1, :cond_1a
 
-    .line 127
+    .line 125
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onHoverEvent(Landroid/view/MotionEvent;)Z
 
     move-result v1
 
-    .line 128
+    .line 126
     if-ne v0, v4, :cond_1a
 
     if-nez v1, :cond_1a
 
-    .line 129
+    .line 127
     iput-boolean v3, p0, Landroid/support/v7/widget/AbsActionBarView;->mEatingHover:Z
 
-    .line 133
+    .line 131
     :cond_1a
     const/16 v1, 0xa
 
@@ -499,11 +491,11 @@
 
     if-ne v0, v1, :cond_23
 
-    .line 135
+    .line 133
     :cond_21
     iput-boolean v2, p0, Landroid/support/v7/widget/AbsActionBarView;->mEatingHover:Z
 
-    .line 138
+    .line 136
     :cond_23
     return v3
 .end method
@@ -516,37 +508,37 @@
 
     const/4 v2, 0x1
 
-    .line 97
+    .line 95
     invoke-static {p1}, Landroid/support/v4/view/MotionEventCompat;->a(Landroid/view/MotionEvent;)I
 
     move-result v0
 
-    .line 98
+    .line 96
     if-nez v0, :cond_a
 
-    .line 99
+    .line 97
     iput-boolean v3, p0, Landroid/support/v7/widget/AbsActionBarView;->mEatingTouch:Z
 
-    .line 102
+    .line 100
     :cond_a
     iget-boolean v1, p0, Landroid/support/v7/widget/AbsActionBarView;->mEatingTouch:Z
 
     if-nez v1, :cond_18
 
-    .line 103
+    .line 101
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v1
 
-    .line 104
+    .line 102
     if-nez v0, :cond_18
 
     if-nez v1, :cond_18
 
-    .line 105
+    .line 103
     iput-boolean v2, p0, Landroid/support/v7/widget/AbsActionBarView;->mEatingTouch:Z
 
-    .line 109
+    .line 107
     :cond_18
     if-eq v0, v2, :cond_1d
 
@@ -554,11 +546,11 @@
 
     if-ne v0, v1, :cond_1f
 
-    .line 110
+    .line 108
     :cond_1d
     iput-boolean v3, p0, Landroid/support/v7/widget/AbsActionBarView;->mEatingTouch:Z
 
-    .line 113
+    .line 111
     :cond_1f
     return v2
 .end method
@@ -567,34 +559,34 @@
     .registers 10
 
     .prologue
-    .line 262
+    .line 260
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
 
-    .line 263
+    .line 261
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v1
 
-    .line 264
+    .line 262
     sub-int v2, p4, v1
 
     div-int/lit8 v2, v2, 0x2
 
     add-int/2addr v2, p3
 
-    .line 266
+    .line 264
     if-eqz p5, :cond_19
 
-    .line 267
+    .line 265
     sub-int v3, p2, v0
 
     add-int/2addr v1, v2
 
     invoke-virtual {p1, v3, v2, p2, v1}, Landroid/view/View;->layout(IIII)V
 
-    .line 272
+    .line 270
     :goto_15
     if-eqz p5, :cond_18
 
@@ -603,7 +595,7 @@
     :cond_18
     return v0
 
-    .line 269
+    .line 267
     :cond_19
     add-int v3, p2, v0
 
@@ -618,14 +610,14 @@
     .registers 2
 
     .prologue
-    .line 204
+    .line 202
     new-instance v0, Landroid/support/v7/widget/AbsActionBarView$1;
 
     invoke-direct {v0, p0}, Landroid/support/v7/widget/AbsActionBarView$1;-><init>(Landroid/support/v7/widget/AbsActionBarView;)V
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/AbsActionBarView;->post(Ljava/lang/Runnable;)Z
 
-    .line 209
+    .line 207
     return-void
 .end method
 
@@ -633,13 +625,13 @@
     .registers 2
 
     .prologue
-    .line 142
+    .line 140
     iput p1, p0, Landroid/support/v7/widget/AbsActionBarView;->mContentHeight:I
 
-    .line 143
+    .line 141
     invoke-virtual {p0}, Landroid/support/v7/widget/AbsActionBarView;->requestLayout()V
 
-    .line 144
+    .line 142
     return-void
 .end method
 
@@ -647,28 +639,28 @@
     .registers 3
 
     .prologue
-    .line 188
+    .line 186
     invoke-virtual {p0}, Landroid/support/v7/widget/AbsActionBarView;->getVisibility()I
 
     move-result v0
 
     if-eq p1, v0, :cond_12
 
-    .line 189
+    .line 187
     iget-object v0, p0, Landroid/support/v7/widget/AbsActionBarView;->mVisibilityAnim:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
     if-eqz v0, :cond_f
 
-    .line 190
+    .line 188
     iget-object v0, p0, Landroid/support/v7/widget/AbsActionBarView;->mVisibilityAnim:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
     invoke-virtual {v0}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->b()V
 
-    .line 192
+    .line 190
     :cond_f
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 194
+    .line 192
     :cond_12
     return-void
 .end method
@@ -679,31 +671,31 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 161
+    .line 159
     iget-object v0, p0, Landroid/support/v7/widget/AbsActionBarView;->mVisibilityAnim:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
     if-eqz v0, :cond_a
 
-    .line 162
+    .line 160
     iget-object v0, p0, Landroid/support/v7/widget/AbsActionBarView;->mVisibilityAnim:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
     invoke-virtual {v0}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->b()V
 
-    .line 165
+    .line 163
     :cond_a
     if-nez p1, :cond_2c
 
-    .line 166
+    .line 164
     invoke-virtual {p0}, Landroid/support/v7/widget/AbsActionBarView;->getVisibility()I
 
     move-result v0
 
     if-eqz v0, :cond_15
 
-    .line 167
+    .line 165
     invoke-static {p0, v1}, Landroid/support/v4/view/ViewCompat;->c(Landroid/view/View;F)V
 
-    .line 169
+    .line 167
     :cond_15
     invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->r(Landroid/view/View;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
@@ -715,10 +707,10 @@
 
     move-result-object v0
 
-    .line 170
+    .line 168
     invoke-virtual {v0, p2, p3}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a(J)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    .line 171
+    .line 169
     iget-object v1, p0, Landroid/support/v7/widget/AbsActionBarView;->mVisAnimListener:Landroid/support/v7/widget/AbsActionBarView$VisibilityAnimListener;
 
     invoke-virtual {v1, v0, p1}, Landroid/support/v7/widget/AbsActionBarView$VisibilityAnimListener;->withFinalVisibility(Landroid/support/v4/view/ViewPropertyAnimatorCompat;I)Landroid/support/v7/widget/AbsActionBarView$VisibilityAnimListener;
@@ -727,11 +719,11 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a(Landroid/support/v4/view/ViewPropertyAnimatorListener;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    .line 177
+    .line 175
     :goto_2b
     return-object v0
 
-    .line 174
+    .line 172
     :cond_2c
     invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->r(Landroid/view/View;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
@@ -741,10 +733,10 @@
 
     move-result-object v0
 
-    .line 175
+    .line 173
     invoke-virtual {v0, p2, p3}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->a(J)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
-    .line 176
+    .line 174
     iget-object v1, p0, Landroid/support/v7/widget/AbsActionBarView;->mVisAnimListener:Landroid/support/v7/widget/AbsActionBarView$VisibilityAnimListener;
 
     invoke-virtual {v1, v0, p1}, Landroid/support/v7/widget/AbsActionBarView$VisibilityAnimListener;->withFinalVisibility(Landroid/support/v4/view/ViewPropertyAnimatorCompat;I)Landroid/support/v7/widget/AbsActionBarView$VisibilityAnimListener;
@@ -760,19 +752,19 @@
     .registers 2
 
     .prologue
-    .line 197
+    .line 195
     iget-object v0, p0, Landroid/support/v7/widget/AbsActionBarView;->mActionMenuPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     if-eqz v0, :cond_b
 
-    .line 198
+    .line 196
     iget-object v0, p0, Landroid/support/v7/widget/AbsActionBarView;->mActionMenuPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionMenuPresenter;->c()Z
 
     move-result v0
 
-    .line 200
+    .line 198
     :goto_a
     return v0
 

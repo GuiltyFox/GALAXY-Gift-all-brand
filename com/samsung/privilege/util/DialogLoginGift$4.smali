@@ -123,7 +123,7 @@
     .line 204
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$4;->b:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->U(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->X(Landroid/content/Context;)V
 
     goto :goto_24
 

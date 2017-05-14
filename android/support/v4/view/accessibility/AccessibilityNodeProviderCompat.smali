@@ -13,63 +13,65 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .registers 2
+    .registers 3
 
     .prologue
-    .line 139
+    const/4 v2, 0x0
+
+    .line 155
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x13
 
-    if-lt v0, v1, :cond_e
+    if-lt v0, v1, :cond_f
 
-    .line 140
+    .line 156
     new-instance v0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl;
 
-    invoke-direct {v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl;-><init>()V
+    invoke-direct {v0, v2}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl;-><init>(Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$1;)V
 
     sput-object v0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderImpl;
 
-    .line 146
-    :goto_d
+    .line 162
+    :goto_e
     return-void
 
-    .line 141
-    :cond_e
+    .line 157
+    :cond_f
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x10
 
-    if-lt v0, v1, :cond_1c
+    if-lt v0, v1, :cond_1d
 
-    .line 142
+    .line 158
     new-instance v0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderJellyBeanImpl;
 
-    invoke-direct {v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderJellyBeanImpl;-><init>()V
+    invoke-direct {v0, v2}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderJellyBeanImpl;-><init>(Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$1;)V
 
     sput-object v0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderImpl;
 
-    goto :goto_d
+    goto :goto_e
 
-    .line 144
-    :cond_1c
+    .line 160
+    :cond_1d
     new-instance v0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderStubImpl;
 
     invoke-direct {v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderStubImpl;-><init>()V
 
     sput-object v0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderImpl;
 
-    goto :goto_d
+    goto :goto_e
 .end method
 
 .method public constructor <init>()V
     .registers 2
 
     .prologue
-    .line 151
+    .line 167
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 152
+    .line 168
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderImpl;
 
     invoke-interface {v0, p0}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderImpl;->a(Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;)Ljava/lang/Object;
@@ -78,7 +80,7 @@
 
     iput-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->b:Ljava/lang/Object;
 
-    .line 153
+    .line 169
     return-void
 .end method
 
@@ -86,13 +88,13 @@
     .registers 2
 
     .prologue
-    .line 161
+    .line 177
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 162
+    .line 178
     iput-object p1, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->b:Ljava/lang/Object;
 
-    .line 163
+    .line 179
     return-void
 .end method
 
@@ -102,7 +104,7 @@
     .registers 3
 
     .prologue
-    .line 195
+    .line 212
     const/4 v0, 0x0
 
     return-object v0
@@ -112,7 +114,7 @@
     .registers 2
 
     .prologue
-    .line 169
+    .line 185
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->b:Ljava/lang/Object;
 
     return-object v0
@@ -133,7 +135,7 @@
     .end annotation
 
     .prologue
-    .line 231
+    .line 249
     const/4 v0, 0x0
 
     return-object v0
@@ -143,7 +145,7 @@
     .registers 5
 
     .prologue
-    .line 212
+    .line 229
     const/4 v0, 0x0
 
     return v0
@@ -153,7 +155,7 @@
     .registers 3
 
     .prologue
-    .line 246
+    .line 265
     const/4 v0, 0x0
 
     return-object v0

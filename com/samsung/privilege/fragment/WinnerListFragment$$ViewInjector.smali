@@ -45,9 +45,9 @@
     .end annotation
 
     .prologue
-    const v3, 0x7f100695
+    const v3, 0x7f1006c1
 
-    const v2, 0x7f100642
+    const v2, 0x7f10066e
 
     .line 11
     const-string/jumbo v0, "field \'recyclerView\'"

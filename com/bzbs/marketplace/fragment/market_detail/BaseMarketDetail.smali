@@ -12,19 +12,19 @@
 # instance fields
 .field contentCondition:Landroid/widget/RelativeLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066d
+        value = 0x7f100699
     .end annotation
 .end field
 
 .field contentDetail:Landroid/widget/RelativeLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066c
+        value = 0x7f100698
     .end annotation
 .end field
 
 .field public contentViewPager:Landroid/widget/RelativeLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10064e
+        value = 0x7f10067a
     .end annotation
 .end field
 
@@ -32,13 +32,13 @@
 
 .field public imageLike:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100653
+        value = 0x7f10067f
     .end annotation
 .end field
 
 .field public indicatorViewPager:Lme/relex/circleindicator/CircleIndicator;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10064f
+        value = 0x7f10067b
     .end annotation
 .end field
 
@@ -50,19 +50,19 @@
 
 .field public layoutComment:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100650
+        value = 0x7f10067c
     .end annotation
 .end field
 
 .field public layoutLike:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100652
+        value = 0x7f10067e
     .end annotation
 .end field
 
 .field public layoutShared:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100655
+        value = 0x7f100681
     .end annotation
 .end field
 
@@ -89,43 +89,43 @@
 
 .field public textViewComment:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100651
+        value = 0x7f10067d
     .end annotation
 .end field
 
 .field textViewCondition:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100670
+        value = 0x7f10069c
     .end annotation
 .end field
 
 .field textViewDetail:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066f
+        value = 0x7f10069b
     .end annotation
 .end field
 
 .field public textViewLike:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100654
+        value = 0x7f100680
     .end annotation
 .end field
 
 .field public textViewTitle:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100656
+        value = 0x7f100682
     .end annotation
 .end field
 
 .field vShadow:Landroid/view/View;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10066e
+        value = 0x7f10069a
     .end annotation
 .end field
 
 .field public viewPager:Lcom/bzbs/marketplace/control/autoscrollviewpager/AutoScrollViewPager;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10026b
+        value = 0x7f100286
     .end annotation
 .end field
 
@@ -515,7 +515,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const v2, 0x7f090276
+    const v2, 0x7f090277
 
     invoke-virtual {p0, v2}, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->getString(I)Ljava/lang/String;
 
@@ -679,7 +679,7 @@
 
     iget-object v2, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->a:Landroid/app/Activity;
 
-    invoke-static {v2}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -776,7 +776,7 @@
     .line 317
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->imageLike:Landroid/widget/ImageView;
 
-    const v1, 0x7f02029d
+    const v1, 0x7f0202a2
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -823,7 +823,7 @@
     :cond_37
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->imageLike:Landroid/widget/ImageView;
 
-    const v1, 0x7f02029e
+    const v1, 0x7f0202a3
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -834,7 +834,7 @@
     .registers 7
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f100650
+            0x7f10067c
         }
     .end annotation
 
@@ -873,7 +873,7 @@
     .line 333
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->a:Landroid/app/Activity;
 
-    const v1, 0x7f090251
+    const v1, 0x7f090252
 
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->getString(I)Ljava/lang/String;
 
@@ -934,7 +934,7 @@
     :cond_55
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->a:Landroid/app/Activity;
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1074,8 +1074,8 @@
     .registers 7
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f10066c,
-            0x7f10066d
+            0x7f100698,
+            0x7f100699
         }
     .end annotation
 
@@ -1101,7 +1101,7 @@
 
     move-result v0
 
-    const v1, 0x7f10066c
+    const v1, 0x7f100698
 
     if-ne v0, v1, :cond_5d
 
@@ -1182,7 +1182,7 @@
 
     move-result v0
 
-    const v1, 0x7f10066d
+    const v1, 0x7f100699
 
     if-ne v0, v1, :cond_5c
 
@@ -1259,7 +1259,7 @@
     .registers 7
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f100652
+            0x7f10067e
         }
     .end annotation
 
@@ -1305,7 +1305,7 @@
     .line 262
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->a:Landroid/app/Activity;
 
-    const v1, 0x7f090251
+    const v1, 0x7f090252
 
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->getString(I)Ljava/lang/String;
 
@@ -1366,7 +1366,7 @@
     :cond_5b
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->a:Landroid/app/Activity;
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1390,7 +1390,7 @@
 
     iget-object v1, p0, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->a:Landroid/app/Activity;
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 

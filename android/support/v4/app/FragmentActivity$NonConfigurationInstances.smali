@@ -6,16 +6,7 @@
 # instance fields
 .field a:Ljava/lang/Object;
 
-.field b:Ljava/util/List;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/List",
-            "<",
-            "Landroid/support/v4/app/Fragment;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field b:Landroid/support/v4/app/FragmentManagerNonConfig;
 
 .field c:Landroid/support/v4/util/SimpleArrayMap;
     .annotation system Ldalvik/annotation/Signature;
@@ -35,7 +26,7 @@
     .registers 1
 
     .prologue
-    .line 143
+    .line 133
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

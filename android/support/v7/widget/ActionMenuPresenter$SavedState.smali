@@ -28,7 +28,7 @@
     .registers 1
 
     .prologue
-    .line 598
+    .line 626
     new-instance v0, Landroid/support/v7/widget/ActionMenuPresenter$SavedState$1;
 
     invoke-direct {v0}, Landroid/support/v7/widget/ActionMenuPresenter$SavedState$1;-><init>()V
@@ -42,10 +42,10 @@
     .registers 1
 
     .prologue
-    .line 581
+    .line 609
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 582
+    .line 610
     return-void
 .end method
 
@@ -53,17 +53,17 @@
     .registers 3
 
     .prologue
-    .line 584
+    .line 612
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 585
+    .line 613
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/support/v7/widget/ActionMenuPresenter$SavedState;->a:I
 
-    .line 586
+    .line 614
     return-void
 .end method
 
@@ -73,7 +73,7 @@
     .registers 2
 
     .prologue
-    .line 590
+    .line 618
     const/4 v0, 0x0
 
     return v0
@@ -83,11 +83,11 @@
     .registers 4
 
     .prologue
-    .line 595
+    .line 623
     iget v0, p0, Landroid/support/v7/widget/ActionMenuPresenter$SavedState;->a:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 596
+    .line 624
     return-void
 .end method

@@ -108,20 +108,20 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 741
+    .line 768
     iget-boolean v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->g:Z
 
     if-ne v0, v4, :cond_6
 
-    .line 837
+    .line 864
     :goto_5
     return-void
 
-    .line 745
+    .line 772
     :cond_6
     const-string/jumbo v0, ""
 
-    const v1, 0x7f090282
+    const v1, 0x7f090283
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -133,7 +133,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->c:Landroid/app/ProgressDialog;
 
-    .line 748
+    .line 775
     :try_start_16
     iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->c:Landroid/app/ProgressDialog;
 
@@ -145,10 +145,10 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 749
+    .line 776
     if-eqz v0, :cond_41
 
-    .line 750
+    .line 777
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getAssets()Landroid/content/res/AssetManager;
 
     move-result-object v1
@@ -165,10 +165,10 @@
 
     move-result-object v1
 
-    .line 751
+    .line 778
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 752
+    .line 779
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
@@ -181,7 +181,7 @@
     :try_end_41
     .catch Ljava/lang/Exception; {:try_start_16 .. :try_end_41} :catch_bf
 
-    .line 763
+    .line 790
     :cond_41
     :goto_41
     new-instance v0, Ljava/lang/StringBuilder;
@@ -204,10 +204,10 @@
 
     move-result-object v0
 
-    .line 765
+    .line 792
     if-lez p1, :cond_71
 
-    .line 766
+    .line 793
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -230,7 +230,7 @@
 
     move-result-object v0
 
-    .line 769
+    .line 796
     :cond_71
     iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->a:Ljava/lang/String;
 
@@ -254,37 +254,37 @@
 
     invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 770
+    .line 797
     iput-boolean v4, p0, Lcom/samsung/privilege/activity/HistoryActivity;->g:Z
 
-    .line 771
+    .line 798
     new-instance v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     invoke-direct {v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;-><init>()V
 
-    .line 772
+    .line 799
     invoke-virtual {v1, p0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Landroid/app/Activity;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v1
 
     sget-boolean v2, Lcom/bzbs/data/AppSetting;->Q:Z
 
-    .line 773
+    .line 800
     invoke-virtual {v1, v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v1
 
-    .line 774
+    .line 801
     invoke-virtual {v1, v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Ljava/lang/String;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 775
+    .line 802
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -294,7 +294,7 @@
 
     sget-object v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;->a:Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;
 
-    .line 776
+    .line 803
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
@@ -303,17 +303,17 @@
 
     invoke-direct {v1, p0, p1}, Lcom/samsung/privilege/activity/HistoryActivity$6;-><init>(Lcom/samsung/privilege/activity/HistoryActivity;I)V
 
-    .line 777
+    .line 804
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/ResponseListener;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 836
+    .line 863
     invoke-virtual {v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a()Lcom/bzbs/lib/http/okhttp/HttpRequest;
 
     goto/16 :goto_5
 
-    .line 754
+    .line 781
     :catch_bf
     move-exception v0
 
@@ -331,7 +331,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -414,7 +414,7 @@
     .line 490
     const-string/jumbo v2, ""
 
-    const v3, 0x7f090282
+    const v3, 0x7f090283
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -493,7 +493,7 @@
     .registers 7
 
     .prologue
-    .line 709
+    .line 736
     if-eqz p1, :cond_ab
 
     const-string/jumbo v0, ""
@@ -504,7 +504,7 @@
 
     if-nez v0, :cond_ab
 
-    .line 714
+    .line 741
     :try_start_b
     new-instance v0, Lcom/bzbs/util/DeviceHelper;
 
@@ -514,7 +514,7 @@
 
     invoke-direct {v0, v1}, Lcom/bzbs/util/DeviceHelper;-><init>(Landroid/content/Context;)V
 
-    .line 715
+    .line 742
     const-string/jumbo v1, "<deviceId>"
 
     invoke-virtual {v0}, Lcom/bzbs/util/DeviceHelper;->d()Ljava/lang/String;
@@ -525,7 +525,7 @@
 
     move-result-object p1
 
-    .line 716
+    .line 743
     const-string/jumbo v0, "<uid>"
 
     invoke-static {}, Lcom/facebook/Profile;->getCurrentProfile()Lcom/facebook/Profile;
@@ -542,7 +542,7 @@
 
     move-result-object v0
 
-    .line 721
+    .line 748
     :goto_2e
     :try_start_2e
     const-string/jumbo v1, "https://"
@@ -561,7 +561,7 @@
 
     if-nez v1, :cond_54
 
-    .line 722
+    .line 749
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -580,7 +580,7 @@
 
     move-result-object v0
 
-    .line 724
+    .line 751
     :cond_54
     const-string/jumbo v1, "?"
 
@@ -590,7 +590,7 @@
 
     if-eqz v1, :cond_af
 
-    .line 725
+    .line 752
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -619,7 +619,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -637,7 +637,7 @@
 
     move-result-object v0
 
-    .line 730
+    .line 757
     :goto_8f
     new-instance v1, Landroid/content/Intent;
 
@@ -649,29 +649,29 @@
 
     invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 731
+    .line 758
     const-string/jumbo v2, "url"
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 732
+    .line 759
     const-string/jumbo v0, "enable_webview_back"
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v0, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 733
+    .line 760
     const/4 v0, 0x0
 
     invoke-virtual {p0, v1, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 738
+    .line 765
     :cond_ab
     :goto_ab
     return-void
 
-    .line 717
+    .line 744
     :catch_ac
     move-exception v0
 
@@ -679,7 +679,7 @@
 
     goto :goto_2e
 
-    .line 727
+    .line 754
     :cond_af
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -709,7 +709,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -731,7 +731,7 @@
 
     goto :goto_8f
 
-    .line 734
+    .line 761
     :catch_e2
     move-exception v0
 
@@ -781,7 +781,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -870,7 +870,7 @@
     .line 507
     const-string/jumbo v3, ""
 
-    const v4, 0x7f090282
+    const v4, 0x7f090283
 
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -987,16 +987,16 @@
     .prologue
     const/4 v4, 0x1
 
-    .line 633
+    .line 660
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 634
+    .line 661
     if-eqz v0, :cond_9a
 
     const-string/jumbo v1, ""
@@ -1007,7 +1007,7 @@
 
     if-nez v0, :cond_9a
 
-    .line 636
+    .line 663
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1040,7 +1040,7 @@
 
     move-result-object v0
 
-    .line 637
+    .line 664
     iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity;->a:Ljava/lang/String;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -1063,15 +1063,15 @@
 
     invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 639
+    .line 666
     new-instance v1, Lcom/bzbs/lib/http/okhttp/HttpParams;
 
     invoke-direct {v1}, Lcom/bzbs/lib/http/okhttp/HttpParams;-><init>()V
 
-    .line 642
+    .line 669
     const-string/jumbo v2, ""
 
-    const v3, 0x7f090282
+    const v3, 0x7f090283
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/HistoryActivity;->getString(I)Ljava/lang/String;
 
@@ -1083,39 +1083,39 @@
 
     iput-object v2, p0, Lcom/samsung/privilege/activity/HistoryActivity;->c:Landroid/app/ProgressDialog;
 
-    .line 643
+    .line 670
     new-instance v2, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     invoke-direct {v2}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;-><init>()V
 
-    .line 644
+    .line 671
     invoke-virtual {v2, p0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Landroid/app/Activity;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v2
 
     sget-boolean v3, Lcom/bzbs/data/AppSetting;->Q:Z
 
-    .line 645
+    .line 672
     invoke-virtual {v2, v3}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v2
 
-    .line 646
+    .line 673
     invoke-virtual {v2, v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Ljava/lang/String;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 647
+    .line 674
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpParams;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 648
+    .line 675
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/HistoryActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1125,7 +1125,7 @@
 
     sget-object v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;->b:Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;
 
-    .line 649
+    .line 676
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
@@ -1134,15 +1134,15 @@
 
     invoke-direct {v1, p0, p1, p2}, Lcom/samsung/privilege/activity/HistoryActivity$5;-><init>(Lcom/samsung/privilege/activity/HistoryActivity;Lcom/bzbs/bean/Purchasing;Z)V
 
-    .line 650
+    .line 677
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/ResponseListener;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 704
+    .line 731
     invoke-virtual {v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a()Lcom/bzbs/lib/http/okhttp/HttpRequest;
 
-    .line 706
+    .line 733
     :cond_9a
     return-void
 .end method
@@ -1212,7 +1212,7 @@
 
     .prologue
     .line 114
-    const v0, 0x7f100160
+    const v0, 0x7f100162
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->findViewById(I)Landroid/view/View;
 
@@ -1262,7 +1262,7 @@
 
     .prologue
     .line 127
-    const v0, 0x7f100111
+    const v0, 0x7f100113
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->findViewById(I)Landroid/view/View;
 
@@ -1374,7 +1374,7 @@
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 83
-    const v0, 0x7f040034
+    const v0, 0x7f040035
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->setContentView(I)V
 
@@ -1386,7 +1386,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity;->b:Landroid/os/Handler;
 
     .line 88
-    const v0, 0x7f1000b5
+    const v0, 0x7f1000b7
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryActivity;->findViewById(I)Landroid/view/View;
 

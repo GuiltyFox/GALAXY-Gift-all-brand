@@ -12,32 +12,32 @@
     .registers 2
 
     .prologue
-    .line 39
+    .line 37
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    .line 40
+    .line 38
     const/16 v1, 0x17
 
     if-lt v0, v1, :cond_e
 
-    .line 41
+    .line 39
     new-instance v0, Landroid/support/v4/widget/CompoundButtonCompat$Api23CompoundButtonImpl;
 
     invoke-direct {v0}, Landroid/support/v4/widget/CompoundButtonCompat$Api23CompoundButtonImpl;-><init>()V
 
     sput-object v0, Landroid/support/v4/widget/CompoundButtonCompat;->a:Landroid/support/v4/widget/CompoundButtonCompat$CompoundButtonCompatImpl;
 
-    .line 47
+    .line 45
     :goto_d
     return-void
 
-    .line 42
+    .line 40
     :cond_e
     const/16 v1, 0x15
 
     if-lt v0, v1, :cond_1a
 
-    .line 43
+    .line 41
     new-instance v0, Landroid/support/v4/widget/CompoundButtonCompat$LollipopCompoundButtonImpl;
 
     invoke-direct {v0}, Landroid/support/v4/widget/CompoundButtonCompat$LollipopCompoundButtonImpl;-><init>()V
@@ -46,7 +46,7 @@
 
     goto :goto_d
 
-    .line 45
+    .line 43
     :cond_1a
     new-instance v0, Landroid/support/v4/widget/CompoundButtonCompat$BaseCompoundButtonCompat;
 
@@ -61,7 +61,7 @@
     .registers 2
 
     .prologue
-    .line 174
+    .line 172
     sget-object v0, Landroid/support/v4/widget/CompoundButtonCompat;->a:Landroid/support/v4/widget/CompoundButtonCompat$CompoundButtonCompatImpl;
 
     invoke-interface {v0, p0}, Landroid/support/v4/widget/CompoundButtonCompat$CompoundButtonCompatImpl;->a(Landroid/widget/CompoundButton;)Landroid/graphics/drawable/Drawable;
@@ -75,12 +75,12 @@
     .registers 3
 
     .prologue
-    .line 128
+    .line 126
     sget-object v0, Landroid/support/v4/widget/CompoundButtonCompat;->a:Landroid/support/v4/widget/CompoundButtonCompat$CompoundButtonCompatImpl;
 
     invoke-interface {v0, p0, p1}, Landroid/support/v4/widget/CompoundButtonCompat$CompoundButtonCompatImpl;->a(Landroid/widget/CompoundButton;Landroid/content/res/ColorStateList;)V
 
-    .line 129
+    .line 127
     return-void
 .end method
 
@@ -88,11 +88,11 @@
     .registers 3
 
     .prologue
-    .line 154
+    .line 152
     sget-object v0, Landroid/support/v4/widget/CompoundButtonCompat;->a:Landroid/support/v4/widget/CompoundButtonCompat$CompoundButtonCompatImpl;
 
     invoke-interface {v0, p0, p1}, Landroid/support/v4/widget/CompoundButtonCompat$CompoundButtonCompatImpl;->a(Landroid/widget/CompoundButton;Landroid/graphics/PorterDuff$Mode;)V
 
-    .line 155
+    .line 153
     return-void
 .end method

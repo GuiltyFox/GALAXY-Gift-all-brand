@@ -346,6 +346,17 @@
 
 
 # virtual methods
+.method public a(I)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
+    .registers 2
+
+    .prologue
+    .line 896
+    iput p1, p0, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->u:I
+
+    .line 897
+    return-object p0
+.end method
+
 .method public a(Landroid/app/Activity;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
     .registers 2
 
@@ -454,6 +465,17 @@
     return-object v0
 .end method
 
+.method public b(I)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
+    .registers 2
+
+    .prologue
+    .line 901
+    iput p1, p0, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->v:I
+
+    .line 902
+    return-object p0
+.end method
+
 .method public b(Ljava/lang/String;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
     .registers 6
 
@@ -502,4 +524,15 @@
     iput-object v0, p0, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->i:Lcom/bzbs/lib/http/okhttp/HttpHeaders;
 
     goto :goto_6
+.end method
+
+.method public c(I)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
+    .registers 2
+
+    .prologue
+    .line 906
+    iput p1, p0, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->w:I
+
+    .line 907
+    return-object p0
 .end method

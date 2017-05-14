@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 629
+    .line 635
     iput-object p1, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$1;->a:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,12 +35,12 @@
     .registers 3
 
     .prologue
-    .line 632
+    .line 638
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$1;->a:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;
 
     invoke-virtual {v0}, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->invalidateSelf()V
 
-    .line 633
+    .line 639
     return-void
 .end method
 
@@ -48,12 +48,12 @@
     .registers 6
 
     .prologue
-    .line 637
+    .line 643
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$1;->a:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;
 
     invoke-virtual {v0, p2, p3, p4}, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->scheduleSelf(Ljava/lang/Runnable;J)V
 
-    .line 638
+    .line 644
     return-void
 .end method
 
@@ -61,11 +61,11 @@
     .registers 4
 
     .prologue
-    .line 642
+    .line 648
     iget-object v0, p0, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat$1;->a:Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;
 
     invoke-virtual {v0, p2}, Landroid/support/graphics/drawable/AnimatedVectorDrawableCompat;->unscheduleSelf(Ljava/lang/Runnable;)V
 
-    .line 643
+    .line 649
     return-void
 .end method

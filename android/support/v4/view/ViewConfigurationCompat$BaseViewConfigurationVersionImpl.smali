@@ -11,7 +11,7 @@
     .registers 1
 
     .prologue
-    .line 37
+    .line 36
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -19,23 +19,11 @@
 
 
 # virtual methods
-.method public a(Landroid/view/ViewConfiguration;)I
+.method public a(Landroid/view/ViewConfiguration;)Z
     .registers 3
 
     .prologue
     .line 40
-    invoke-virtual {p1}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public b(Landroid/view/ViewConfiguration;)Z
-    .registers 3
-
-    .prologue
-    .line 46
     const/4 v0, 0x1
 
     return v0

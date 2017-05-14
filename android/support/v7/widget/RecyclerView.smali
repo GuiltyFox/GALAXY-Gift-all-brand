@@ -8912,7 +8912,7 @@
     if-nez v0, :cond_6
 
     .line 2558
-    invoke-static {p1}, Landroid/support/v4/view/MotionEventCompat;->d(Landroid/view/MotionEvent;)I
+    invoke-static {p1}, Landroid/support/v4/view/MotionEventCompat;->c(Landroid/view/MotionEvent;)I
 
     move-result v0
 

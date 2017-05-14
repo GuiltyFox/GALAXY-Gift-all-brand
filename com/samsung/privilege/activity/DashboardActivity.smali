@@ -10,6 +10,8 @@
 
 .field private c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
+.field private d:Lcom/samsung/privilege/activity/DashboardActivity$UserLoginListener;
+
 
 # direct methods
 .method public constructor <init>()V
@@ -26,15 +28,15 @@
     .registers 7
 
     .prologue
-    const v5, 0x7f100175
+    const v5, 0x7f100177
 
-    const v4, 0x7f1000b3
+    const v4, 0x7f1000b5
 
     const/16 v3, 0x8
 
     const/4 v2, 0x0
 
-    .line 88
+    .line 89
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -45,7 +47,7 @@
 
     move-result-object v0
 
-    .line 89
+    .line 90
     if-eqz v0, :cond_46
 
     const-string/jumbo v1, ""
@@ -56,7 +58,7 @@
 
     if-nez v1, :cond_46
 
-    .line 90
+    .line 91
     const-string/jumbo v1, "ADS"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -65,25 +67,25 @@
 
     if-eqz v0, :cond_37
 
-    .line 91
+    .line 92
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/DashboardActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 92
+    .line 93
     invoke-virtual {p0, v5}, Lcom/samsung/privilege/activity/DashboardActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 101
+    .line 102
     :goto_36
     return-void
 
-    .line 94
+    .line 95
     :cond_37
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/DashboardActivity;->findViewById(I)Landroid/view/View;
 
@@ -91,7 +93,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 95
+    .line 96
     invoke-virtual {p0, v5}, Lcom/samsung/privilege/activity/DashboardActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
@@ -100,7 +102,7 @@
 
     goto :goto_36
 
-    .line 98
+    .line 99
     :cond_46
     invoke-virtual {p0, v4}, Lcom/samsung/privilege/activity/DashboardActivity;->findViewById(I)Landroid/view/View;
 
@@ -108,7 +110,7 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 99
+    .line 100
     invoke-virtual {p0, v5}, Lcom/samsung/privilege/activity/DashboardActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
@@ -142,14 +144,14 @@
     .registers 4
 
     .prologue
-    .line 106
+    .line 107
     new-instance v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     invoke-direct {v0}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;-><init>()V
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/DashboardActivity;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    .line 110
+    .line 111
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardActivity;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardActivity;->getIntent()Landroid/content/Intent;
@@ -162,7 +164,7 @@
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->setArguments(Landroid/os/Bundle;)V
 
-    .line 120
+    .line 121
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardActivity;->getSupportFragmentManager()Landroid/support/v4/app/FragmentManager;
 
     move-result-object v0
@@ -171,7 +173,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100174
+    const v1, 0x7f100176
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/DashboardActivity;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
@@ -179,9 +181,9 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->a()I
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->b()I
 
-    .line 121
+    .line 122
     return-void
 .end method
 
@@ -191,7 +193,7 @@
     .registers 4
 
     .prologue
-    .line 170
+    .line 182
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -202,7 +204,7 @@
 
     move-result-object v0
 
-    .line 171
+    .line 183
     if-eqz v0, :cond_28
 
     const-string/jumbo v1, ""
@@ -213,7 +215,7 @@
 
     if-nez v1, :cond_28
 
-    .line 172
+    .line 184
     const-string/jumbo v1, "ADS"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -222,22 +224,22 @@
 
     if-eqz v0, :cond_24
 
-    .line 173
+    .line 185
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/DashboardActivity;->doEnter(Landroid/view/View;)V
 
-    .line 180
+    .line 192
     :goto_23
     return-void
 
-    .line 175
+    .line 187
     :cond_24
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardActivity;->finish()V
 
     goto :goto_23
 
-    .line 178
+    .line 190
     :cond_28
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardActivity;->finish()V
 
@@ -248,12 +250,12 @@
     .registers 5
 
     .prologue
-    .line 183
+    .line 195
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->b(Landroid/content/Context;)Z
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Z
 
     move-result v0
 
@@ -265,22 +267,22 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->c(Landroid/content/Context;)Z
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->g(Landroid/content/Context;)Z
 
     move-result v0
 
     if-nez v0, :cond_1a
 
-    .line 184
+    .line 196
     const/4 v0, 0x0
 
     invoke-static {p0, v0}, Lcom/bzbs/data/UserLogin;->r(Landroid/content/Context;Z)V
 
-    .line 191
+    .line 203
     :goto_19
     return-void
 
-    .line 186
+    .line 198
     :cond_1a
     new-instance v0, Landroid/content/Intent;
 
@@ -292,10 +294,10 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 187
+    .line 199
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/DashboardActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 189
+    .line 201
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardActivity;->finish()V
 
     goto :goto_19
@@ -305,15 +307,15 @@
     .registers 5
 
     .prologue
-    .line 83
+    .line 84
     invoke-super {p0, p1, p2, p3}, Landroid/support/v4/app/FragmentActivity;->onActivityResult(IILandroid/content/Intent;)V
 
-    .line 84
+    .line 85
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardActivity;->a:Lcom/facebook/CallbackManager;
 
     invoke-interface {v0, p1, p2, p3}, Lcom/facebook/CallbackManager;->onActivityResult(IILandroid/content/Intent;)Z
 
-    .line 85
+    .line 86
     return-void
 .end method
 
@@ -364,7 +366,7 @@
     .line 45
     :cond_24
     :goto_24
-    const v0, 0x7f040033
+    const v0, 0x7f040034
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/DashboardActivity;->setContentView(I)V
 
@@ -393,7 +395,7 @@
     invoke-direct {p0}, Lcom/samsung/privilege/activity/DashboardActivity;->a()V
 
     .line 55
-    const v0, 0x7f100174
+    const v0, 0x7f100176
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/DashboardActivity;->findViewById(I)Landroid/view/View;
 
@@ -426,12 +428,12 @@
     .registers 5
 
     .prologue
-    .line 152
+    .line 164
     const/4 v0, 0x4
 
     if-ne p1, v0, :cond_32
 
-    .line 153
+    .line 165
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/DashboardActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v0
@@ -442,7 +444,7 @@
 
     move-result-object v0
 
-    .line 154
+    .line 166
     if-eqz v0, :cond_2d
 
     const-string/jumbo v1, ""
@@ -453,7 +455,7 @@
 
     if-nez v1, :cond_2d
 
-    .line 155
+    .line 167
     const-string/jumbo v1, "ADS"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -462,19 +464,19 @@
 
     if-eqz v0, :cond_28
 
-    .line 156
+    .line 168
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/DashboardActivity;->doEnter(Landroid/view/View;)V
 
-    .line 157
+    .line 169
     const/4 v0, 0x1
 
-    .line 165
+    .line 177
     :goto_27
     return v0
 
-    .line 159
+    .line 171
     :cond_28
     invoke-super {p0, p1, p2}, Landroid/support/v4/app/FragmentActivity;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
@@ -482,7 +484,7 @@
 
     goto :goto_27
 
-    .line 162
+    .line 174
     :cond_2d
     invoke-super {p0, p1, p2}, Landroid/support/v4/app/FragmentActivity;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
@@ -490,7 +492,7 @@
 
     goto :goto_27
 
-    .line 165
+    .line 177
     :cond_32
     invoke-super {p0, p1, p2}, Landroid/support/v4/app/FragmentActivity;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
@@ -500,16 +502,18 @@
 .end method
 
 .method protected onPause()V
-    .registers 1
+    .registers 2
 
     .prologue
-    .line 77
+    .line 78
     invoke-super {p0}, Landroid/support/v4/app/FragmentActivity;->onPause()V
 
-    .line 78
-    invoke-static {}, Lcom/bzbs/event/LoginEvents;->a()V
-
     .line 79
+    iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardActivity;->d:Lcom/samsung/privilege/activity/DashboardActivity$UserLoginListener;
+
+    invoke-static {v0}, Lcom/bzbs/event/LoginEvents;->b(Lcom/bzbs/event/LoginEvents$LoginListener;)V
+
+    .line 80
     return-void
 .end method
 
@@ -527,8 +531,13 @@
 
     invoke-direct {v0, p0, v1}, Lcom/samsung/privilege/activity/DashboardActivity$UserLoginListener;-><init>(Lcom/samsung/privilege/activity/DashboardActivity;Lcom/samsung/privilege/activity/DashboardActivity$1;)V
 
-    invoke-static {v0}, Lcom/bzbs/event/LoginEvents;->a(Lcom/bzbs/event/LoginEvents$LoginListener;)V
+    iput-object v0, p0, Lcom/samsung/privilege/activity/DashboardActivity;->d:Lcom/samsung/privilege/activity/DashboardActivity$UserLoginListener;
 
     .line 73
+    iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardActivity;->d:Lcom/samsung/privilege/activity/DashboardActivity$UserLoginListener;
+
+    invoke-static {v0}, Lcom/bzbs/event/LoginEvents;->a(Lcom/bzbs/event/LoginEvents$LoginListener;)V
+
+    .line 74
     return-void
 .end method

@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 169
+    .line 166
     invoke-direct {p0}, Landroid/support/v4/graphics/drawable/DrawableCompat$HoneycombDrawableImpl;-><init>()V
 
     return-void
@@ -16,27 +16,28 @@
 
 
 # virtual methods
-.method public b(Landroid/graphics/drawable/Drawable;I)V
-    .registers 3
+.method public b(Landroid/graphics/drawable/Drawable;I)Z
+    .registers 4
 
     .prologue
-    .line 172
-    invoke-static {p1, p2}, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->a(Landroid/graphics/drawable/Drawable;I)V
+    .line 169
+    invoke-static {p1, p2}, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->a(Landroid/graphics/drawable/Drawable;I)Z
 
-    .line 173
-    return-void
+    move-result v0
+
+    return v0
 .end method
 
 .method public d(Landroid/graphics/drawable/Drawable;)I
     .registers 3
 
     .prologue
-    .line 177
+    .line 174
     invoke-static {p1}, Landroid/support/v4/graphics/drawable/DrawableCompatJellybeanMr1;->a(Landroid/graphics/drawable/Drawable;)I
 
     move-result v0
 
-    .line 178
+    .line 175
     if-ltz v0, :cond_7
 
     :goto_6

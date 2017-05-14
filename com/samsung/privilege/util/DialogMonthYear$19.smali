@@ -43,7 +43,7 @@
     .line 314
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogMonthYear$19;->a:Landroid/app/Dialog;
 
-    const v1, 0x7f1005cc
+    const v1, 0x7f1005e7
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 

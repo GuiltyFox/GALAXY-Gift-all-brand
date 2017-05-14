@@ -45,18 +45,18 @@
     .end annotation
 
     .prologue
-    const v7, 0x7f100651
+    const v7, 0x7f10067d
 
-    const v6, 0x7f100650
+    const v6, 0x7f10067c
 
-    const v5, 0x7f10064f
+    const v5, 0x7f10067b
 
-    const v4, 0x7f10064e
+    const v4, 0x7f10067a
 
-    const v3, 0x7f10026b
+    const v3, 0x7f100286
 
     .line 11
-    const v0, 0x7f100654
+    const v0, 0x7f100680
 
     const-string/jumbo v1, "field \'textViewLike\'"
 
@@ -67,7 +67,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 12
-    const v1, 0x7f100654
+    const v1, 0x7f100680
 
     const-string/jumbo v2, "field \'textViewLike\'"
 
@@ -80,7 +80,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->textViewLike:Landroid/widget/TextView;
 
     .line 13
-    const v0, 0x7f100653
+    const v0, 0x7f10067f
 
     const-string/jumbo v1, "field \'imageLike\'"
 
@@ -91,7 +91,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 14
-    const v1, 0x7f100653
+    const v1, 0x7f10067f
 
     const-string/jumbo v2, "field \'imageLike\'"
 
@@ -104,7 +104,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->imageLike:Landroid/widget/ImageView;
 
     .line 15
-    const v0, 0x7f100652
+    const v0, 0x7f10067e
 
     const-string/jumbo v1, "field \'layoutLike\' and method \'sendLike\'"
 
@@ -115,7 +115,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 16
-    const v1, 0x7f100652
+    const v1, 0x7f10067e
 
     const-string/jumbo v2, "field \'layoutLike\'"
 
@@ -135,7 +135,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 25
-    const v0, 0x7f100655
+    const v0, 0x7f100681
 
     const-string/jumbo v1, "field \'layoutShared\'"
 
@@ -146,7 +146,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 26
-    const v1, 0x7f100655
+    const v1, 0x7f100681
 
     const-string/jumbo v2, "field \'layoutShared\'"
 
@@ -266,7 +266,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->contentViewPager:Landroid/widget/RelativeLayout;
 
     .line 45
-    const v0, 0x7f100656
+    const v0, 0x7f100682
 
     const-string/jumbo v1, "field \'textViewTitle\'"
 
@@ -277,7 +277,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 46
-    const v1, 0x7f100656
+    const v1, 0x7f100682
 
     const-string/jumbo v2, "field \'textViewTitle\'"
 
@@ -290,7 +290,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->textViewTitle:Landroid/widget/TextView;
 
     .line 47
-    const v0, 0x7f10066f
+    const v0, 0x7f10069b
 
     const-string/jumbo v1, "field \'textViewDetail\'"
 
@@ -301,7 +301,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 48
-    const v1, 0x7f10066f
+    const v1, 0x7f10069b
 
     const-string/jumbo v2, "field \'textViewDetail\'"
 
@@ -314,7 +314,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->textViewDetail:Landroid/widget/TextView;
 
     .line 49
-    const v0, 0x7f100670
+    const v0, 0x7f10069c
 
     const-string/jumbo v1, "field \'textViewCondition\'"
 
@@ -325,7 +325,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 50
-    const v1, 0x7f100670
+    const v1, 0x7f10069c
 
     const-string/jumbo v2, "field \'textViewCondition\'"
 
@@ -338,7 +338,7 @@
     iput-object v0, p2, Lcom/bzbs/marketplace/fragment/market_detail/BaseMarketDetail;->textViewCondition:Landroid/widget/TextView;
 
     .line 51
-    const v0, 0x7f10066c
+    const v0, 0x7f100698
 
     const-string/jumbo v1, "field \'contentDetail\' and method \'onSelectedTab\'"
 
@@ -349,7 +349,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 52
-    const v1, 0x7f10066c
+    const v1, 0x7f100698
 
     const-string/jumbo v2, "field \'contentDetail\'"
 
@@ -369,7 +369,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 61
-    const v0, 0x7f10066d
+    const v0, 0x7f100699
 
     const-string/jumbo v1, "field \'contentCondition\' and method \'onSelectedTab\'"
 
@@ -380,7 +380,7 @@
     check-cast v0, Landroid/view/View;
 
     .line 62
-    const v1, 0x7f10066d
+    const v1, 0x7f100699
 
     const-string/jumbo v2, "field \'contentCondition\'"
 
@@ -400,7 +400,7 @@
     invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 71
-    const v0, 0x7f10066e
+    const v0, 0x7f10069a
 
     const-string/jumbo v1, "field \'vShadow\'"
 

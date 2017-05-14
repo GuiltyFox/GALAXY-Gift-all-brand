@@ -25,7 +25,7 @@
     .registers 4
 
     .prologue
-    .line 319
+    .line 378
     iput-object p1, p0, Landroid/support/v4/app/ActivityCompat$1;->a:[Ljava/lang/String;
 
     iput-object p2, p0, Landroid/support/v4/app/ActivityCompat$1;->b:Landroid/app/Activity;
@@ -43,39 +43,39 @@
     .registers 7
 
     .prologue
-    .line 322
+    .line 381
     iget-object v0, p0, Landroid/support/v4/app/ActivityCompat$1;->a:[Ljava/lang/String;
 
     array-length v0, v0
 
     new-array v1, v0, [I
 
-    .line 324
+    .line 383
     iget-object v0, p0, Landroid/support/v4/app/ActivityCompat$1;->b:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->getPackageManager()Landroid/content/pm/PackageManager;
 
     move-result-object v2
 
-    .line 325
+    .line 384
     iget-object v0, p0, Landroid/support/v4/app/ActivityCompat$1;->b:Landroid/app/Activity;
 
     invoke-virtual {v0}, Landroid/app/Activity;->getPackageName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 327
+    .line 386
     iget-object v0, p0, Landroid/support/v4/app/ActivityCompat$1;->a:[Ljava/lang/String;
 
     array-length v4, v0
 
-    .line 328
+    .line 387
     const/4 v0, 0x0
 
     :goto_15
     if-ge v0, v4, :cond_24
 
-    .line 329
+    .line 388
     iget-object v5, p0, Landroid/support/v4/app/ActivityCompat$1;->a:[Ljava/lang/String;
 
     aget-object v5, v5, v0
@@ -86,12 +86,12 @@
 
     aput v5, v1, v0
 
-    .line 328
+    .line 387
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_15
 
-    .line 333
+    .line 392
     :cond_24
     iget-object v0, p0, Landroid/support/v4/app/ActivityCompat$1;->b:Landroid/app/Activity;
 
@@ -103,6 +103,6 @@
 
     invoke-interface {v0, v2, v3, v1}, Landroid/support/v4/app/ActivityCompat$OnRequestPermissionsResultCallback;->onRequestPermissionsResult(I[Ljava/lang/String;[I)V
 
-    .line 335
+    .line 394
     return-void
 .end method

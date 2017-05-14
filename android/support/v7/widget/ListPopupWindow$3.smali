@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 1104
+    .line 1147
     iput-object p1, p0, Landroid/support/v7/widget/ListPopupWindow$3;->a:Landroid/support/v7/widget/ListPopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,28 +44,28 @@
     .end annotation
 
     .prologue
-    .line 1108
+    .line 1152
     const/4 v0, -0x1
 
     if-eq p3, v0, :cond_f
 
-    .line 1109
+    .line 1153
     iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$3;->a:Landroid/support/v7/widget/ListPopupWindow;
 
-    # getter for: Landroid/support/v7/widget/ListPopupWindow;->mDropDownList:Landroid/support/v7/widget/ListPopupWindow$DropDownListView;
-    invoke-static {v0}, Landroid/support/v7/widget/ListPopupWindow;->access$600(Landroid/support/v7/widget/ListPopupWindow;)Landroid/support/v7/widget/ListPopupWindow$DropDownListView;
+    # getter for: Landroid/support/v7/widget/ListPopupWindow;->mDropDownList:Landroid/support/v7/widget/DropDownListView;
+    invoke-static {v0}, Landroid/support/v7/widget/ListPopupWindow;->access$500(Landroid/support/v7/widget/ListPopupWindow;)Landroid/support/v7/widget/DropDownListView;
 
     move-result-object v0
 
-    .line 1111
+    .line 1155
     if-eqz v0, :cond_f
 
-    .line 1112
+    .line 1156
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Landroid/support/v7/widget/ListPopupWindow$DropDownListView;->a(Landroid/support/v7/widget/ListPopupWindow$DropDownListView;Z)Z
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/DropDownListView;->setListSelectionHidden(Z)V
 
-    .line 1115
+    .line 1159
     :cond_f
     return-void
 .end method
@@ -81,6 +81,6 @@
     .end annotation
 
     .prologue
-    .line 1118
+    .line 1163
     return-void
 .end method

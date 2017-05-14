@@ -12,13 +12,13 @@
     .registers 2
 
     .prologue
-    .line 427
+    .line 592
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 428
+    .line 593
     iput-object p1, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;->a:Ljava/lang/Object;
 
-    .line 429
+    .line 594
     return-void
 .end method
 
@@ -26,7 +26,7 @@
     .registers 14
 
     .prologue
-    .line 423
+    .line 572
     new-instance v7, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;
 
     invoke-static {}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->u()Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityNodeInfoImpl;
@@ -58,7 +58,7 @@
     .registers 2
 
     .prologue
-    .line 412
+    .line 555
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat$CollectionItemInfoCompat;->a:Ljava/lang/Object;
 
     return-object v0

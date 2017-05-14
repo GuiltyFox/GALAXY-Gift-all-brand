@@ -112,7 +112,7 @@
     :goto_1c
     new-instance v0, Landroid/app/Dialog;
 
-    const v1, 0x7f0d00fe
+    const v1, 0x7f0c0106
 
     invoke-direct {v0, p0, v1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
@@ -121,14 +121,14 @@
     .line 48
     sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
 
-    const v1, 0x7f040136
+    const v1, 0x7f04013d
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 50
     sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
 
-    const v1, 0x7f100265
+    const v1, 0x7f100280
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -144,7 +144,7 @@
     .line 55
     sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
 
-    const v1, 0x7f100267
+    const v1, 0x7f100282
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -234,7 +234,7 @@
     move-result v1
 
     .line 110
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v6
 
@@ -338,7 +338,7 @@
     .line 121
     aget-object v5, v3, v1
 
-    const v6, 0x7f02034a
+    const v6, 0x7f02034f
 
     invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -357,7 +357,7 @@
     :cond_100
     aget-object v5, v3, v1
 
-    const v6, 0x7f020348
+    const v6, 0x7f02034d
 
     invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -367,7 +367,7 @@
     :cond_109
     sget-object v0, Lcom/samsung/privilege/util/DialogWelcome;->d:Landroid/app/Dialog;
 
-    const v1, 0x7f100266
+    const v1, 0x7f100281
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 

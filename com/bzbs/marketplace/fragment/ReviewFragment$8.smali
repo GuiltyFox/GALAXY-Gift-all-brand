@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 575
+    .line 585
     iput-object p1, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$8;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 2
 
     .prologue
-    .line 588
+    .line 598
     return-void
 .end method
 
@@ -43,7 +43,7 @@
     .registers 4
 
     .prologue
-    .line 578
+    .line 588
     return-void
 .end method
 
@@ -51,7 +51,7 @@
     .registers 3
 
     .prologue
-    .line 582
+    .line 592
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$8;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->p(Lcom/bzbs/marketplace/fragment/ReviewFragment;)Lcom/bzbs/marketplace/adapter/IndicatorDrawerAdapter;
@@ -60,13 +60,13 @@
 
     invoke-virtual {v0, p1}, Lcom/bzbs/marketplace/adapter/IndicatorDrawerAdapter;->a(I)V
 
-    .line 583
+    .line 593
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$8;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->listViewHorizontal:Lit/sephiroth/android/library/widget/HListView;
 
     invoke-virtual {v0, p1}, Lit/sephiroth/android/library/widget/HListView;->c(I)V
 
-    .line 584
+    .line 594
     return-void
 .end method

@@ -27,7 +27,7 @@
     .registers 5
 
     .prologue
-    .line 1694
+    .line 1715
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$33;->a:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$33;->b:Landroid/widget/ArrayAdapter;
@@ -47,7 +47,7 @@
     .registers 5
 
     .prologue
-    .line 1697
+    .line 1718
     new-instance v0, Landroid/app/AlertDialog$Builder;
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$33;->a:Landroid/content/Context;
@@ -56,7 +56,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$33;->a:Landroid/content/Context;
 
-    const v2, 0x7f090309
+    const v2, 0x7f090322
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -76,13 +76,13 @@
 
     move-result-object v0
 
-    .line 1703
+    .line 1724
     invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
-    .line 1704
+    .line 1725
     return-void
 .end method

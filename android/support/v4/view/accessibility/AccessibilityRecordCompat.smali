@@ -16,25 +16,25 @@
     .registers 2
 
     .prologue
-    .line 506
+    .line 552
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x10
 
     if-lt v0, v1, :cond_e
 
-    .line 507
+    .line 553
     new-instance v0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordJellyBeanImpl;
 
     invoke-direct {v0}, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordJellyBeanImpl;-><init>()V
 
     sput-object v0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordImpl;
 
-    .line 515
+    .line 561
     :goto_d
     return-void
 
-    .line 508
+    .line 554
     :cond_e
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -42,7 +42,7 @@
 
     if-lt v0, v1, :cond_1c
 
-    .line 509
+    .line 555
     new-instance v0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordIcsMr1Impl;
 
     invoke-direct {v0}, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordIcsMr1Impl;-><init>()V
@@ -51,7 +51,7 @@
 
     goto :goto_d
 
-    .line 510
+    .line 556
     :cond_1c
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -59,7 +59,7 @@
 
     if-lt v0, v1, :cond_2a
 
-    .line 511
+    .line 557
     new-instance v0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordIcsImpl;
 
     invoke-direct {v0}, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordIcsImpl;-><init>()V
@@ -68,7 +68,7 @@
 
     goto :goto_d
 
-    .line 513
+    .line 559
     :cond_2a
     new-instance v0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordStubImpl;
 
@@ -81,15 +81,17 @@
 
 .method public constructor <init>(Ljava/lang/Object;)V
     .registers 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 528
+    .line 575
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 529
+    .line 576
     iput-object p1, p0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->b:Ljava/lang/Object;
 
-    .line 530
+    .line 577
     return-void
 .end method
 
@@ -99,14 +101,14 @@
     .registers 4
 
     .prologue
-    .line 734
+    .line 782
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordImpl;
 
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->b:Ljava/lang/Object;
 
     invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordImpl;->b(Ljava/lang/Object;I)V
 
-    .line 735
+    .line 783
     return-void
 .end method
 
@@ -114,14 +116,14 @@
     .registers 4
 
     .prologue
-    .line 714
+    .line 762
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordImpl;
 
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->b:Ljava/lang/Object;
 
     invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordImpl;->a(Ljava/lang/Object;Z)V
 
-    .line 715
+    .line 763
     return-void
 .end method
 
@@ -129,14 +131,14 @@
     .registers 4
 
     .prologue
-    .line 780
+    .line 828
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordImpl;
 
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->b:Ljava/lang/Object;
 
     invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordImpl;->a(Ljava/lang/Object;I)V
 
-    .line 781
+    .line 829
     return-void
 .end method
 
@@ -144,14 +146,14 @@
     .registers 4
 
     .prologue
-    .line 800
+    .line 848
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordImpl;
 
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->b:Ljava/lang/Object;
 
     invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordImpl;->e(Ljava/lang/Object;I)V
 
-    .line 801
+    .line 849
     return-void
 .end method
 
@@ -159,14 +161,14 @@
     .registers 4
 
     .prologue
-    .line 818
+    .line 866
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordImpl;
 
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->b:Ljava/lang/Object;
 
     invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordImpl;->c(Ljava/lang/Object;I)V
 
-    .line 819
+    .line 867
     return-void
 .end method
 
@@ -174,14 +176,14 @@
     .registers 4
 
     .prologue
-    .line 836
+    .line 884
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordImpl;
 
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->b:Ljava/lang/Object;
 
     invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordImpl;->d(Ljava/lang/Object;I)V
 
-    .line 837
+    .line 885
     return-void
 .end method
 
@@ -193,24 +195,24 @@
 
     const/4 v1, 0x0
 
-    .line 1025
+    .line 1073
     if-ne p0, p1, :cond_5
 
-    .line 1042
+    .line 1090
     :cond_4
     :goto_4
     return v0
 
-    .line 1028
+    .line 1076
     :cond_5
     if-nez p1, :cond_9
 
     move v0, v1
 
-    .line 1029
+    .line 1077
     goto :goto_4
 
-    .line 1031
+    .line 1079
     :cond_9
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -224,29 +226,29 @@
 
     move v0, v1
 
-    .line 1032
+    .line 1080
     goto :goto_4
 
-    .line 1034
+    .line 1082
     :cond_15
     check-cast p1, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;
 
-    .line 1035
+    .line 1083
     iget-object v2, p0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->b:Ljava/lang/Object;
 
     if-nez v2, :cond_21
 
-    .line 1036
+    .line 1084
     iget-object v2, p1, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->b:Ljava/lang/Object;
 
     if-eqz v2, :cond_4
 
     move v0, v1
 
-    .line 1037
+    .line 1085
     goto :goto_4
 
-    .line 1039
+    .line 1087
     :cond_21
     iget-object v2, p0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->b:Ljava/lang/Object;
 
@@ -260,7 +262,7 @@
 
     move v0, v1
 
-    .line 1040
+    .line 1088
     goto :goto_4
 .end method
 
@@ -268,14 +270,14 @@
     .registers 4
 
     .prologue
-    .line 853
+    .line 901
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordImpl;
 
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->b:Ljava/lang/Object;
 
     invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordImpl;->f(Ljava/lang/Object;I)V
 
-    .line 854
+    .line 902
     return-void
 .end method
 
@@ -283,14 +285,14 @@
     .registers 4
 
     .prologue
-    .line 871
+    .line 919
     sget-object v0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->a:Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordImpl;
 
     iget-object v1, p0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->b:Ljava/lang/Object;
 
     invoke-interface {v0, v1, p1}, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordImpl;->g(Ljava/lang/Object;I)V
 
-    .line 872
+    .line 920
     return-void
 .end method
 
@@ -298,7 +300,7 @@
     .registers 2
 
     .prologue
-    .line 1019
+    .line 1067
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat;->b:Ljava/lang/Object;
 
     if-nez v0, :cond_6

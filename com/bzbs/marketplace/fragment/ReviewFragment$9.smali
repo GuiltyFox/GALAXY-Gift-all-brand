@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 591
+    .line 601
     iput-object p1, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$9;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,16 +44,16 @@
     .end annotation
 
     .prologue
-    .line 594
+    .line 604
     invoke-virtual {p1}, Lit/sephiroth/android/library/widget/AdapterView;->getId()I
 
     move-result v0
 
-    const v1, 0x7f1006a8
+    const v1, 0x7f1006d4
 
     if-ne v0, v1, :cond_19
 
-    .line 595
+    .line 605
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$9;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->p(Lcom/bzbs/marketplace/fragment/ReviewFragment;)Lcom/bzbs/marketplace/adapter/IndicatorDrawerAdapter;
@@ -62,14 +62,14 @@
 
     invoke-virtual {v0, p3}, Lcom/bzbs/marketplace/adapter/IndicatorDrawerAdapter;->a(I)V
 
-    .line 596
+    .line 606
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$9;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/fragment/ReviewFragment;->viewPager:Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {v0, p3}, Landroid/support/v4/view/ViewPager;->setCurrentItem(I)V
 
-    .line 598
+    .line 608
     :cond_19
     return-void
 .end method

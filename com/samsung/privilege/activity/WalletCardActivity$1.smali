@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 235
+    .line 246
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 4
 
     .prologue
-    .line 238
+    .line 249
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Lcom/samsung/privilege/activity/WalletCardActivity;)Landroid/os/Handler;
@@ -48,7 +48,7 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 252
+    .line 263
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .registers 5
 
     .prologue
-    .line 262
+    .line 273
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
     move-result-object v0
@@ -81,7 +81,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 263
+    .line 274
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     const-string/jumbo v1, "getWalletCardList"
@@ -90,6 +90,6 @@
 
     invoke-virtual {v0, v1, v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Ljava/lang/String;Z)V
 
-    .line 264
+    .line 275
     return-void
 .end method

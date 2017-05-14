@@ -25,15 +25,3 @@
     .line 25
     return-void
 .end method
-
-.method static a(Landroid/widget/PopupWindow;)Z
-    .registers 2
-
-    .prologue
-    .line 28
-    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getOverlapAnchor()Z
-
-    move-result v0
-
-    return v0
-.end method

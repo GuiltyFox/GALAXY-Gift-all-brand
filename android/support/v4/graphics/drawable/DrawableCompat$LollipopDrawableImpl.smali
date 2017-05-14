@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 210
+    .line 207
     invoke-direct {p0}, Landroid/support/v4/graphics/drawable/DrawableCompat$KitKatDrawableImpl;-><init>()V
 
     return-void
@@ -20,10 +20,10 @@
     .registers 4
 
     .prologue
-    .line 213
+    .line 210
     invoke-static {p1, p2, p3}, Landroid/support/v4/graphics/drawable/DrawableCompatLollipop;->a(Landroid/graphics/drawable/Drawable;FF)V
 
-    .line 214
+    .line 211
     return-void
 .end method
 
@@ -31,10 +31,10 @@
     .registers 3
 
     .prologue
-    .line 223
+    .line 220
     invoke-static {p1, p2}, Landroid/support/v4/graphics/drawable/DrawableCompatLollipop;->a(Landroid/graphics/drawable/Drawable;I)V
 
-    .line 224
+    .line 221
     return-void
 .end method
 
@@ -42,10 +42,10 @@
     .registers 6
 
     .prologue
-    .line 218
+    .line 215
     invoke-static {p1, p2, p3, p4, p5}, Landroid/support/v4/graphics/drawable/DrawableCompatLollipop;->a(Landroid/graphics/drawable/Drawable;IIII)V
 
-    .line 219
+    .line 216
     return-void
 .end method
 
@@ -53,10 +53,10 @@
     .registers 3
 
     .prologue
-    .line 228
+    .line 225
     invoke-static {p1, p2}, Landroid/support/v4/graphics/drawable/DrawableCompatLollipop;->a(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
 
-    .line 229
+    .line 226
     return-void
 .end method
 
@@ -64,10 +64,10 @@
     .registers 3
 
     .prologue
-    .line 243
+    .line 240
     invoke-static {p1, p2}, Landroid/support/v4/graphics/drawable/DrawableCompatLollipop;->a(Landroid/graphics/drawable/Drawable;Landroid/content/res/Resources$Theme;)V
 
-    .line 244
+    .line 241
     return-void
 .end method
 
@@ -75,10 +75,10 @@
     .registers 6
 
     .prologue
-    .line 260
+    .line 262
     invoke-static {p1, p2, p3, p4, p5}, Landroid/support/v4/graphics/drawable/DrawableCompatLollipop;->a(Landroid/graphics/drawable/Drawable;Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
 
-    .line 261
+    .line 263
     return-void
 .end method
 
@@ -86,10 +86,10 @@
     .registers 3
 
     .prologue
-    .line 233
+    .line 230
     invoke-static {p1, p2}, Landroid/support/v4/graphics/drawable/DrawableCompatLollipop;->a(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
 
-    .line 234
+    .line 231
     return-void
 .end method
 
@@ -97,7 +97,7 @@
     .registers 3
 
     .prologue
-    .line 238
+    .line 235
     invoke-static {p1}, Landroid/support/v4/graphics/drawable/DrawableCompatLollipop;->a(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -109,7 +109,7 @@
     .registers 3
 
     .prologue
-    .line 248
+    .line 245
     invoke-static {p1}, Landroid/support/v4/graphics/drawable/DrawableCompatLollipop;->b(Landroid/graphics/drawable/Drawable;)Z
 
     move-result v0
@@ -121,7 +121,7 @@
     .registers 3
 
     .prologue
-    .line 253
+    .line 250
     invoke-static {p1}, Landroid/support/v4/graphics/drawable/DrawableCompatLollipop;->c(Landroid/graphics/drawable/Drawable;)Landroid/graphics/ColorFilter;
 
     move-result-object v0

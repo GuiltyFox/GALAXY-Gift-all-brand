@@ -22,7 +22,7 @@
     .registers 4
 
     .prologue
-    .line 467
+    .line 486
     iput-object p1, p0, Landroid/support/v4/widget/SwipeRefreshLayout$4;->c:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     iput p2, p0, Landroid/support/v4/widget/SwipeRefreshLayout$4;->a:I
@@ -40,7 +40,7 @@
     .registers 7
 
     .prologue
-    .line 470
+    .line 489
     iget-object v0, p0, Landroid/support/v4/widget/SwipeRefreshLayout$4;->c:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     invoke-static {v0}, Landroid/support/v4/widget/SwipeRefreshLayout;->b(Landroid/support/v4/widget/SwipeRefreshLayout;)Landroid/support/v4/widget/MaterialProgressDrawable;
@@ -67,6 +67,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/widget/MaterialProgressDrawable;->setAlpha(I)V
 
-    .line 473
+    .line 491
     return-void
 .end method

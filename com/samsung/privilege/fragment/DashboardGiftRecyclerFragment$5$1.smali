@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 570
+    .line 572
     iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$5$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$5;
 
     iput-object p2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$5$1;->a:Ljava/lang/String;
@@ -39,7 +39,7 @@
     .registers 4
 
     .prologue
-    .line 572
+    .line 574
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$5$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$5;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$5;->d:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -52,6 +52,6 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->a(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;Ljava/lang/String;Ljava/util/ArrayList;)V
 
-    .line 573
+    .line 575
     return-void
 .end method

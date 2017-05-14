@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 2984
+    .line 3134
     iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;
 
     iput-object p2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15$1;->a:Ljava/lang/String;
@@ -41,7 +41,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 2988
+    .line 3138
     :try_start_1
     new-instance v0, Lorg/json/JSONArray;
 
@@ -49,52 +49,52 @@
 
     invoke-direct {v0, v1}, Lorg/json/JSONArray;-><init>(Ljava/lang/String;)V
 
-    .line 2989
+    .line 3139
     invoke-virtual {v0}, Lorg/json/JSONArray;->length()I
 
     move-result v1
 
     if-lt v1, v2, :cond_12f
 
-    .line 2990
+    .line 3140
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v0
 
-    .line 2991
+    .line 3141
     const-string/jumbo v1, "Serial"
 
     invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 2992
+    .line 3142
     const-string/jumbo v1, "PrivilegeMessage"
 
     invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 2993
+    .line 3143
     const-string/jumbo v1, "CurrentDate"
 
     invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->c(Lorg/json/JSONObject;Ljava/lang/String;)J
 
-    .line 2994
+    .line 3144
     const-string/jumbo v1, "ExpireIn"
 
     invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->d(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Long;
 
     move-result-object v4
 
-    .line 2996
+    .line 3146
     new-instance v3, Lcom/bzbs/bean/Campaign;
 
     invoke-direct {v3}, Lcom/bzbs/bean/Campaign;-><init>()V
 
-    .line 2997
+    .line 3147
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;->a:Lcom/bzbs/bean/DashboardItem;
@@ -107,7 +107,7 @@
 
     iput-object v0, v3, Lcom/bzbs/bean/Campaign;->ID:Ljava/lang/String;
 
-    .line 2999
+    .line 3149
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;->a:Lcom/bzbs/bean/DashboardItem;
@@ -116,7 +116,7 @@
 
     iput-object v0, v3, Lcom/bzbs/bean/Campaign;->Name:Ljava/lang/String;
 
-    .line 3000
+    .line 3150
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;->a:Lcom/bzbs/bean/DashboardItem;
@@ -125,7 +125,7 @@
 
     iput-object v0, v3, Lcom/bzbs/bean/Campaign;->AgencyName:Ljava/lang/String;
 
-    .line 3001
+    .line 3151
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;->a:Lcom/bzbs/bean/DashboardItem;
@@ -134,7 +134,7 @@
 
     iput-object v0, v3, Lcom/bzbs/bean/Campaign;->Barcode:Ljava/lang/String;
 
-    .line 3002
+    .line 3152
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;->a:Lcom/bzbs/bean/DashboardItem;
@@ -143,7 +143,7 @@
 
     iput-object v0, v3, Lcom/bzbs/bean/Campaign;->Type:Ljava/lang/String;
 
-    .line 3005
+    .line 3155
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -164,7 +164,7 @@
 
     invoke-static {v0, v1, v5}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 3006
+    .line 3156
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -185,14 +185,14 @@
 
     invoke-static {v0, v1, v6}, Lcom/bzbs/data/UserLogin;->b(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
 
-    .line 3008
+    .line 3158
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     invoke-static {v0}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->f(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;)V
 
-    .line 3010
+    .line 3160
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;->a:Lcom/bzbs/bean/DashboardItem;
@@ -217,7 +217,7 @@
 
     if-nez v0, :cond_108
 
-    .line 3012
+    .line 3162
     :try_start_a7
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -225,7 +225,7 @@
 
     if-lt v0, v1, :cond_cb
 
-    .line 3013
+    .line 3163
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -242,10 +242,10 @@
 
     check-cast v0, Landroid/content/ClipboardManager;
 
-    .line 3014
+    .line 3164
     invoke-virtual {v0, v5}, Landroid/content/ClipboardManager;->setText(Ljava/lang/CharSequence;)V
 
-    .line 3016
+    .line 3166
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -256,7 +256,7 @@
     :try_end_cb
     .catch Ljava/lang/Exception; {:try_start_a7 .. :try_end_cb} :catch_13f
 
-    .line 3022
+    .line 3172
     :cond_cb
     :goto_cb
     :try_start_cb
@@ -274,7 +274,7 @@
 
     invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 3023
+    .line 3173
     const-string/jumbo v1, "url"
 
     iget-object v2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;
@@ -285,19 +285,19 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3024
+    .line 3174
     const-string/jumbo v1, "serial"
 
     invoke-virtual {v0, v1, v5}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 3025
+    .line 3175
     const-string/jumbo v1, "enable_webview_back"
 
     const/4 v2, 0x1
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 3026
+    .line 3176
     const-string/jumbo v1, "hide_serial"
 
     iget-object v2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;
@@ -308,7 +308,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Z)Landroid/content/Intent;
 
-    .line 3027
+    .line 3177
     iget-object v1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;
 
     iget-object v1, v1, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -317,11 +317,11 @@
 
     invoke-virtual {v1, v0, v2}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 3039
+    .line 3189
     :goto_107
     return-void
 
-    .line 3030
+    .line 3180
     :cond_108
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;
 
@@ -349,11 +349,11 @@
 
     goto :goto_107
 
-    .line 3035
+    .line 3185
     :catch_11e
     move-exception v0
 
-    .line 3036
+    .line 3186
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -370,7 +370,7 @@
 
     goto :goto_107
 
-    .line 3033
+    .line 3183
     :cond_12f
     :try_start_12f
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$15;
@@ -391,7 +391,7 @@
 
     goto :goto_107
 
-    .line 3018
+    .line 3168
     :catch_13f
     move-exception v0
 

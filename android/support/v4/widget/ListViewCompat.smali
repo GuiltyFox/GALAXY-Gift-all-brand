@@ -24,7 +24,7 @@
 
     .line 39
     :cond_a
-    invoke-static {p0, p1}, Landroid/support/v4/widget/ListViewCompatDonut;->a(Landroid/widget/ListView;I)V
+    invoke-static {p0, p1}, Landroid/support/v4/widget/ListViewCompatGingerbread;->a(Landroid/widget/ListView;I)V
 
     goto :goto_9
 .end method

@@ -74,186 +74,160 @@
 .end method
 
 .method public static canSafelyMutateDrawable(Landroid/graphics/drawable/Drawable;)Z
-    .registers 7
+    .registers 6
 
     .prologue
-    const/16 v3, 0xe
+    const/16 v2, 0xf
 
-    const/4 v1, 0x1
-
-    const/4 v2, 0x0
+    const/4 v1, 0x0
 
     .line 124
-    instance-of v0, p0, Landroid/graphics/drawable/LayerDrawable;
-
-    if-eqz v0, :cond_13
-
-    .line 125
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v3, 0x10
+    if-ge v0, v2, :cond_d
 
-    if-lt v0, v3, :cond_11
+    instance-of v0, p0, Landroid/graphics/drawable/InsetDrawable;
+
+    if-eqz v0, :cond_d
 
     move v0, v1
 
-    :goto_f
-    move v1, v0
-
     .line 158
-    :cond_10
-    :goto_10
-    return v1
-
-    :cond_11
-    move v0, v2
-
-    .line 125
-    goto :goto_f
+    :goto_c
+    return v0
 
     .line 126
-    :cond_13
-    instance-of v0, p0, Landroid/graphics/drawable/InsetDrawable;
-
-    if-eqz v0, :cond_1d
-
-    .line 127
+    :cond_d
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-ge v0, v3, :cond_10
+    if-ge v0, v2, :cond_17
 
-    move v1, v2
-
-    goto :goto_10
-
-    .line 128
-    :cond_1d
-    instance-of v0, p0, Landroid/graphics/drawable/StateListDrawable;
-
-    if-eqz v0, :cond_29
-
-    .line 130
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v3, 0x8
-
-    if-ge v0, v3, :cond_10
-
-    move v1, v2
-
-    goto :goto_10
-
-    .line 131
-    :cond_29
     instance-of v0, p0, Landroid/graphics/drawable/GradientDrawable;
 
-    if-eqz v0, :cond_33
+    if-eqz v0, :cond_17
 
-    .line 134
+    move v0, v1
+
+    .line 129
+    goto :goto_c
+
+    .line 130
+    :cond_17
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    if-ge v0, v3, :cond_10
+    const/16 v2, 0x11
 
-    move v1, v2
+    if-ge v0, v2, :cond_23
 
-    goto :goto_10
+    instance-of v0, p0, Landroid/graphics/drawable/LayerDrawable;
 
-    .line 135
-    :cond_33
+    if-eqz v0, :cond_23
+
+    move v0, v1
+
+    .line 131
+    goto :goto_c
+
+    .line 134
+    :cond_23
     instance-of v0, p0, Landroid/graphics/drawable/DrawableContainer;
 
-    if-eqz v0, :cond_56
+    if-eqz v0, :cond_46
 
-    .line 137
+    .line 136
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getConstantState()Landroid/graphics/drawable/Drawable$ConstantState;
 
     move-result-object v0
 
+    .line 137
+    instance-of v2, v0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;
+
+    if-eqz v2, :cond_73
+
     .line 138
-    instance-of v3, v0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;
-
-    if-eqz v3, :cond_10
-
-    .line 139
     check-cast v0, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;
 
-    .line 141
+    .line 140
     invoke-virtual {v0}, Landroid/graphics/drawable/DrawableContainer$DrawableContainerState;->getChildren()[Landroid/graphics/drawable/Drawable;
 
-    move-result-object v3
+    move-result-object v2
 
-    array-length v4, v3
+    array-length v3, v2
 
-    move v0, v2
+    move v0, v1
 
-    :goto_47
-    if-ge v0, v4, :cond_10
+    :goto_37
+    if-ge v0, v3, :cond_73
 
-    aget-object v5, v3, v0
-
-    .line 142
-    invoke-static {v5}, Landroid/support/v7/widget/DrawableUtils;->canSafelyMutateDrawable(Landroid/graphics/drawable/Drawable;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_53
-
-    move v1, v2
-
-    .line 143
-    goto :goto_10
+    aget-object v4, v2, v0
 
     .line 141
-    :cond_53
+    invoke-static {v4}, Landroid/support/v7/widget/DrawableUtils;->canSafelyMutateDrawable(Landroid/graphics/drawable/Drawable;)Z
+
+    move-result v4
+
+    if-nez v4, :cond_43
+
+    move v0, v1
+
+    .line 142
+    goto :goto_c
+
+    .line 140
+    :cond_43
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_47
+    goto :goto_37
 
-    .line 147
-    :cond_56
+    .line 146
+    :cond_46
     instance-of v0, p0, Landroid/support/v4/graphics/drawable/DrawableWrapper;
 
-    if-eqz v0, :cond_65
+    if-eqz v0, :cond_55
 
-    .line 148
+    .line 147
     check-cast p0, Landroid/support/v4/graphics/drawable/DrawableWrapper;
 
+    .line 149
     invoke-interface {p0}, Landroid/support/v4/graphics/drawable/DrawableWrapper;->a()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
+    .line 147
     invoke-static {v0}, Landroid/support/v7/widget/DrawableUtils;->canSafelyMutateDrawable(Landroid/graphics/drawable/Drawable;)Z
 
-    move-result v1
+    move-result v0
 
-    goto :goto_10
+    goto :goto_c
 
-    .line 151
-    :cond_65
+    .line 150
+    :cond_55
     instance-of v0, p0, Landroid/support/v7/graphics/drawable/DrawableWrapper;
 
-    if-eqz v0, :cond_74
+    if-eqz v0, :cond_64
 
-    .line 152
+    .line 151
     check-cast p0, Landroid/support/v7/graphics/drawable/DrawableWrapper;
 
+    .line 153
     invoke-virtual {p0}, Landroid/support/v7/graphics/drawable/DrawableWrapper;->getWrappedDrawable()Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
+    .line 151
     invoke-static {v0}, Landroid/support/v7/widget/DrawableUtils;->canSafelyMutateDrawable(Landroid/graphics/drawable/Drawable;)Z
 
-    move-result v1
+    move-result v0
 
-    goto :goto_10
+    goto :goto_c
 
-    .line 155
-    :cond_74
+    .line 154
+    :cond_64
     instance-of v0, p0, Landroid/graphics/drawable/ScaleDrawable;
 
-    if-eqz v0, :cond_10
+    if-eqz v0, :cond_73
 
-    .line 156
+    .line 155
     check-cast p0, Landroid/graphics/drawable/ScaleDrawable;
 
     invoke-virtual {p0}, Landroid/graphics/drawable/ScaleDrawable;->getDrawable()Landroid/graphics/drawable/Drawable;
@@ -262,9 +236,15 @@
 
     invoke-static {v0}, Landroid/support/v7/widget/DrawableUtils;->canSafelyMutateDrawable(Landroid/graphics/drawable/Drawable;)Z
 
-    move-result v1
+    move-result v0
 
-    goto :goto_10
+    goto :goto_c
+
+    .line 158
+    :cond_73
+    const/4 v0, 0x1
+
+    goto :goto_c
 .end method
 
 .method static fixDrawable(Landroid/graphics/drawable/Drawable;)V
@@ -280,6 +260,7 @@
 
     const-string/jumbo v0, "android.graphics.drawable.VectorDrawable"
 
+    .line 114
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v1
@@ -368,6 +349,7 @@
 
     new-array v4, v4, [Ljava/lang/Class;
 
+    .line 71
     invoke-virtual {v1, v3, v4}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
 
     move-result-object v1
@@ -619,6 +601,7 @@
 
     const-string/jumbo v0, "ADD"
 
+    .line 186
     invoke-static {v0}, Landroid/graphics/PorterDuff$Mode;->valueOf(Ljava/lang/String;)Landroid/graphics/PorterDuff$Mode;
 
     move-result-object p1

@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 183
+    .line 196
     iput-object p1, p0, Landroid/support/v7/widget/SearchView$2;->a:Landroid/support/v7/widget/SearchView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,12 +35,12 @@
     .registers 2
 
     .prologue
-    .line 185
+    .line 199
     iget-object v0, p0, Landroid/support/v7/widget/SearchView$2;->a:Landroid/support/v7/widget/SearchView;
 
     # invokes: Landroid/support/v7/widget/SearchView;->updateFocusedState()V
     invoke-static {v0}, Landroid/support/v7/widget/SearchView;->access$000(Landroid/support/v7/widget/SearchView;)V
 
-    .line 186
+    .line 200
     return-void
 .end method

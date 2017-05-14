@@ -403,20 +403,6 @@
     goto :goto_9
 .end method
 
-.method public c_()V
-    .registers 1
-
-    .prologue
-    .line 276
-    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/AbstractHttpClientConnection;->j()V
-
-    .line 277
-    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/AbstractHttpClientConnection;->o()V
-
-    .line 278
-    return-void
-.end method
-
 .method public d()Z
     .registers 4
 
@@ -475,6 +461,20 @@
     move-exception v1
 
     goto :goto_7
+.end method
+
+.method public g_()V
+    .registers 1
+
+    .prologue
+    .line 276
+    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/AbstractHttpClientConnection;->j()V
+
+    .line 277
+    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/AbstractHttpClientConnection;->o()V
+
+    .line 278
+    return-void
 .end method
 
 .method protected abstract j()V

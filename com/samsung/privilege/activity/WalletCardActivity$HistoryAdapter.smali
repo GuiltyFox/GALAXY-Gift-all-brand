@@ -43,15 +43,15 @@
     .end annotation
 
     .prologue
-    .line 1788
+    .line 2486
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$Adapter;-><init>()V
 
-    .line 1789
+    .line 2487
     iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->a:Ljava/util/List;
 
-    .line 1790
+    .line 2488
     return-void
 .end method
 
@@ -61,7 +61,7 @@
     .registers 6
 
     .prologue
-    .line 1806
+    .line 2504
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -70,7 +70,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f040058
+    const v1, 0x7f04005a
 
     const/4 v2, 0x0
 
@@ -78,12 +78,12 @@
 
     move-result-object v0
 
-    .line 1807
+    .line 2505
     new-instance v1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;
 
     invoke-direct {v1, p0, v0}, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;-><init>(Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;Landroid/view/View;)V
 
-    .line 1808
+    .line 2506
     return-object v1
 .end method
 
@@ -91,7 +91,7 @@
     .registers 11
 
     .prologue
-    .line 1813
+    .line 2511
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->a:Ljava/util/List;
 
     invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -100,48 +100,35 @@
 
     check-cast v0, Lcom/bzbs/bean/HistoryWallet;
 
-    .line 1815
+    .line 2513
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->d:Landroid/widget/TextView;
 
     iget-object v2, v0, Lcom/bzbs/bean/HistoryWallet;->merchantName:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1817
-    const-string/jumbo v1, "UTC"
+    .line 2515
+    new-instance v1, Ljava/text/SimpleDateFormat;
 
-    invoke-static {v1}, Ljava/util/TimeZone;->getTimeZone(Ljava/lang/String;)Ljava/util/TimeZone;
+    const-string/jumbo v2, "HH:mm"
 
-    move-result-object v1
+    iget-object v3, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    .line 1818
-    new-instance v2, Ljava/text/SimpleDateFormat;
+    invoke-virtual {v3}, Lcom/samsung/privilege/activity/WalletCardActivity;->getApplicationContext()Landroid/content/Context;
 
-    const-string/jumbo v3, "HH:mm"
+    move-result-object v3
 
-    iget-object v4, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
+    invoke-static {v3}, Lcom/bzbs/util/LanguageSetting;->b(Landroid/content/Context;)Ljava/util/Locale;
 
-    invoke-virtual {v4}, Lcom/samsung/privilege/activity/WalletCardActivity;->getApplicationContext()Landroid/content/Context;
+    move-result-object v3
 
-    move-result-object v4
+    invoke-direct {v1, v2, v3}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
 
-    invoke-static {v4}, Lcom/bzbs/util/LanguageSetting;->b(Landroid/content/Context;)Ljava/util/Locale;
-
-    move-result-object v4
-
-    invoke-direct {v2, v3, v4}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
-
-    new-instance v3, Ljava/util/Date;
+    new-instance v2, Ljava/util/Date;
 
     iget-wide v4, v0, Lcom/bzbs/bean/HistoryWallet;->timestamp:J
 
-    invoke-virtual {v1}, Ljava/util/TimeZone;->getRawOffset()I
-
-    move-result v6
-
-    div-int/lit16 v6, v6, 0x3e8
-
-    int-to-long v6, v6
+    const-wide/16 v6, 0x6270
 
     sub-long/2addr v4, v6
 
@@ -149,90 +136,14 @@
 
     mul-long/2addr v4, v6
 
-    invoke-direct {v3, v4, v5}, Ljava/util/Date;-><init>(J)V
+    invoke-direct {v2, v4, v5}, Ljava/util/Date;-><init>(J)V
 
-    invoke-virtual {v2, v3}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 1819
-    iget-object v3, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->e:Landroid/widget/TextView;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    iget-object v5, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
-
-    const v6, 0x7f0903b3
-
-    invoke-virtual {v5, v6}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v5
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    const-string/jumbo v5, " "
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v3, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 1820
-    new-instance v2, Ljava/text/SimpleDateFormat;
-
-    const-string/jumbo v3, "dd MMM yyyy"
-
-    iget-object v4, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
-
-    invoke-virtual {v4}, Lcom/samsung/privilege/activity/WalletCardActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v4
-
-    invoke-static {v4}, Lcom/bzbs/util/LanguageSetting;->b(Landroid/content/Context;)Ljava/util/Locale;
-
-    move-result-object v4
-
-    invoke-direct {v2, v3, v4}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
-
-    new-instance v3, Ljava/util/Date;
-
-    iget-wide v4, v0, Lcom/bzbs/bean/HistoryWallet;->timestamp:J
-
-    invoke-virtual {v1}, Ljava/util/TimeZone;->getRawOffset()I
-
-    move-result v1
-
-    div-int/lit16 v1, v1, 0x3e8
-
-    int-to-long v6, v1
-
-    sub-long/2addr v4, v6
-
-    const-wide/16 v6, 0x3e8
-
-    mul-long/2addr v4, v6
-
-    invoke-direct {v3, v4, v5}, Ljava/util/Date;-><init>(J)V
-
-    invoke-virtual {v2, v3}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+    invoke-virtual {v1, v2}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 1821
-    iget-object v2, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->f:Landroid/widget/TextView;
+    .line 2516
+    iget-object v2, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->e:Landroid/widget/TextView;
 
     new-instance v3, Ljava/lang/StringBuilder;
 
@@ -240,7 +151,7 @@
 
     iget-object v4, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v5, 0x7f0901a8
+    const v5, 0x7f0903d4
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
 
@@ -266,17 +177,87 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1823
+    .line 2517
+    new-instance v1, Ljava/text/SimpleDateFormat;
+
+    const-string/jumbo v2, "dd MMM yyyy"
+
+    iget-object v3, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
+
+    invoke-virtual {v3}, Lcom/samsung/privilege/activity/WalletCardActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/bzbs/util/LanguageSetting;->b(Landroid/content/Context;)Ljava/util/Locale;
+
+    move-result-object v3
+
+    invoke-direct {v1, v2, v3}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
+
+    new-instance v2, Ljava/util/Date;
+
+    iget-wide v4, v0, Lcom/bzbs/bean/HistoryWallet;->timestamp:J
+
+    const-wide/16 v6, 0x6270
+
+    sub-long/2addr v4, v6
+
+    const-wide/16 v6, 0x3e8
+
+    mul-long/2addr v4, v6
+
+    invoke-direct {v2, v4, v5}, Ljava/util/Date;-><init>(J)V
+
+    invoke-virtual {v1, v2}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 2518
+    iget-object v2, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->f:Landroid/widget/TextView;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    iget-object v4, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
+
+    const v5, 0x7f0901a9
+
+    invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string/jumbo v4, " "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 2520
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->i:Landroid/widget/ImageView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1824
+    .line 2521
     iget-object v1, v0, Lcom/bzbs/bean/HistoryWallet;->transactionId:Ljava/lang/String;
 
-    if-eqz v1, :cond_1a6
+    if-eqz v1, :cond_195
 
     iget-object v1, v0, Lcom/bzbs/bean/HistoryWallet;->transactionId:Ljava/lang/String;
 
@@ -286,38 +267,38 @@
 
     move-result v1
 
-    if-nez v1, :cond_1a6
+    if-nez v1, :cond_195
 
-    .line 1825
+    .line 2522
     iget v1, v0, Lcom/bzbs/bean/HistoryWallet;->status:I
 
     const/4 v2, 0x2
 
-    if-ne v1, v2, :cond_188
+    if-ne v1, v2, :cond_177
 
-    .line 1826
+    .line 2523
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->i:Landroid/widget/ImageView;
 
-    const v2, 0x7f020280
+    const v2, 0x7f020283
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1827
+    .line 2524
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->i:Landroid/widget/ImageView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1842
-    :goto_db
+    .line 2539
+    :goto_ca
     new-instance v1, Ljava/text/DecimalFormat;
 
     const-string/jumbo v2, "###,###,##0.00"
 
     invoke-direct {v1, v2}, Ljava/text/DecimalFormat;-><init>(Ljava/lang/String;)V
 
-    .line 1843
+    .line 2540
     iget-object v2, v0, Lcom/bzbs/bean/HistoryWallet;->type:Ljava/lang/String;
 
     const-string/jumbo v3, "topup"
@@ -326,16 +307,16 @@
 
     move-result v2
 
-    if-eqz v2, :cond_1af
+    if-eqz v2, :cond_19e
 
-    .line 1844
+    .line 2541
     iget-object v2, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->d:Landroid/widget/TextView;
 
     iget-object v3, v0, Lcom/bzbs/bean/HistoryWallet;->issuerName:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1845
+    .line 2542
     iget-object v2, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->g:Landroid/widget/TextView;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -366,7 +347,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v4, 0x7f090389
+    const v4, 0x7f0903a5
 
     invoke-virtual {v3, v4}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
 
@@ -382,15 +363,15 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1846
+    .line 2543
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->i:Landroid/widget/ImageView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 1851
-    :goto_12f
+    .line 2548
+    :goto_11e
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->h:Landroid/widget/RelativeLayout;
 
     new-instance v2, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$1;
@@ -399,7 +380,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1871
+    .line 2568
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-virtual {v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->getApplicationContext()Landroid/content/Context;
@@ -430,10 +411,10 @@
 
     invoke-virtual {v1, v2}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
 
-    .line 1873
+    .line 2570
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    invoke-static {v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->k(Lcom/samsung/privilege/activity/WalletCardActivity;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->o(Lcom/samsung/privilege/activity/WalletCardActivity;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -467,65 +448,65 @@
 
     move-result v1
 
-    if-ltz v1, :cond_1e4
+    if-ltz v1, :cond_1d3
 
-    .line 1874
+    .line 2571
     iget-object v0, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->b:Landroid/widget/RelativeLayout;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 1900
-    :goto_187
+    .line 2597
+    :goto_176
     return-void
 
-    .line 1828
-    :cond_188
+    .line 2525
+    :cond_177
     iget v1, v0, Lcom/bzbs/bean/HistoryWallet;->status:I
 
     const/4 v2, 0x3
 
-    if-ne v1, v2, :cond_19d
+    if-ne v1, v2, :cond_18c
 
-    .line 1829
+    .line 2526
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->i:Landroid/widget/ImageView;
 
-    const v2, 0x7f020281
+    const v2, 0x7f020284
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1830
+    .line 2527
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->i:Landroid/widget/ImageView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    goto/16 :goto_db
+    goto/16 :goto_ca
 
-    .line 1832
-    :cond_19d
+    .line 2529
+    :cond_18c
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->i:Landroid/widget/ImageView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    goto/16 :goto_db
+    goto/16 :goto_ca
 
-    .line 1837
-    :cond_1a6
+    .line 2534
+    :cond_195
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->i:Landroid/widget/ImageView;
 
     const/16 v2, 0x8
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    goto/16 :goto_db
+    goto/16 :goto_ca
 
-    .line 1848
-    :cond_1af
+    .line 2545
+    :cond_19e
     iget-object v2, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->g:Landroid/widget/TextView;
 
     new-instance v3, Ljava/lang/StringBuilder;
@@ -556,7 +537,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v4, 0x7f090389
+    const v4, 0x7f0903a5
 
     invoke-virtual {v3, v4}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
 
@@ -572,10 +553,10 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    goto/16 :goto_12f
+    goto/16 :goto_11e
 
-    .line 1876
-    :cond_1e4
+    .line 2573
+    :cond_1d3
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -584,7 +565,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    invoke-static {v3}, Lcom/samsung/privilege/activity/WalletCardActivity;->k(Lcom/samsung/privilege/activity/WalletCardActivity;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/samsung/privilege/activity/WalletCardActivity;->o(Lcom/samsung/privilege/activity/WalletCardActivity;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -614,16 +595,16 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->b(Lcom/samsung/privilege/activity/WalletCardActivity;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->d(Lcom/samsung/privilege/activity/WalletCardActivity;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 1877
+    .line 2574
     iget-object v0, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->b:Landroid/widget/RelativeLayout;
 
     const/4 v1, 0x4
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
 
-    .line 1879
+    .line 2576
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     const v1, 0x7f050050
@@ -632,29 +613,29 @@
 
     move-result-object v0
 
-    .line 1880
+    .line 2577
     new-instance v1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$2;
 
     invoke-direct {v1, p0, p1}, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$2;-><init>(Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;)V
 
     invoke-virtual {v0, v1}, Landroid/view/animation/Animation;->setAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
 
-    .line 1896
+    .line 2593
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->b:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v1}, Landroid/widget/RelativeLayout;->clearAnimation()V
 
-    .line 1897
+    .line 2594
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->b:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v1, v0}, Landroid/widget/RelativeLayout;->setAnimation(Landroid/view/animation/Animation;)V
 
-    .line 1898
+    .line 2595
     iget-object v1, p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;->b:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v1, v0}, Landroid/widget/RelativeLayout;->startAnimation(Landroid/view/animation/Animation;)V
 
-    goto/16 :goto_187
+    goto/16 :goto_176
 .end method
 
 .method public a(Ljava/util/List;)V
@@ -670,12 +651,12 @@
     .end annotation
 
     .prologue
-    .line 1801
+    .line 2499
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->a:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 1802
+    .line 2500
     return-void
 .end method
 
@@ -683,7 +664,7 @@
     .registers 2
 
     .prologue
-    .line 1904
+    .line 2601
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->a:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -697,10 +678,10 @@
     .registers 2
 
     .prologue
-    .line 1909
+    .line 2606
     invoke-super {p0, p1}, Landroid/support/v7/widget/RecyclerView$Adapter;->onAttachedToRecyclerView(Landroid/support/v7/widget/RecyclerView;)V
 
-    .line 1910
+    .line 2607
     return-void
 .end method
 
@@ -708,7 +689,7 @@
     .registers 3
 
     .prologue
-    .line 1784
+    .line 2482
     check-cast p1, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;
 
     invoke-virtual {p0, p1, p2}, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->a(Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;I)V
@@ -720,7 +701,7 @@
     .registers 4
 
     .prologue
-    .line 1784
+    .line 2482
     invoke-virtual {p0, p1, p2}, Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter;->a(Landroid/view/ViewGroup;I)Lcom/samsung/privilege/activity/WalletCardActivity$HistoryAdapter$HistoryViewHolder;
 
     move-result-object v0

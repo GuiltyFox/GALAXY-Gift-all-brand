@@ -28,6 +28,18 @@
     return v0
 .end method
 
+.method public static a(Landroid/view/KeyEvent;)Z
+    .registers 2
+
+    .prologue
+    .line 38
+    invoke-virtual {p0}, Landroid/view/KeyEvent;->isCtrlPressed()Z
+
+    move-result v0
+
+    return v0
+.end method
+
 .method public static b(I)Z
     .registers 2
 

@@ -164,7 +164,7 @@
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogQueue$5;->b:Landroid/content/Context;
 
     .line 178
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 

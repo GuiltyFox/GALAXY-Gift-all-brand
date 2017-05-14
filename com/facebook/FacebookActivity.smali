@@ -215,7 +215,7 @@
     move-result-object v1
 
     .line 81
-    invoke-virtual {v1}, Landroid/support/v4/app/FragmentTransaction;->a()I
+    invoke-virtual {v1}, Landroid/support/v4/app/FragmentTransaction;->b()I
 
     goto :goto_43
 .end method

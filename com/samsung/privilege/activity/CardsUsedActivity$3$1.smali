@@ -110,7 +110,7 @@
 
     move-result-object v3
 
-    invoke-static {v1, v2, v3}, Lcom/bzbs/data/UserLogin;->d(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
+    invoke-static {v1, v2, v3}, Lcom/bzbs/data/UserLogin;->e(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Z
 
     .line 326
     iget-object v1, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$3$1;->b:Lcom/samsung/privilege/activity/CardsUsedActivity$3;
@@ -129,7 +129,7 @@
 
     iget-object v3, v3, Lcom/samsung/privilege/activity/CardsUsedActivity$3;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    const v4, 0x7f0903ad
+    const v4, 0x7f0903cd
 
     invoke-virtual {v3, v4}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 
@@ -173,7 +173,7 @@
 
     iget-object v2, v2, Lcom/samsung/privilege/activity/CardsUsedActivity$3;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    const v3, 0x7f090389
+    const v3, 0x7f0903a5
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 

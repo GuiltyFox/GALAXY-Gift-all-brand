@@ -12,25 +12,25 @@
     .registers 2
 
     .prologue
-    .line 86
+    .line 70
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0xe
 
     if-lt v0, v1, :cond_e
 
-    .line 87
+    .line 71
     new-instance v0, Landroid/support/v4/view/ViewConfigurationCompat$IcsViewConfigurationVersionImpl;
 
     invoke-direct {v0}, Landroid/support/v4/view/ViewConfigurationCompat$IcsViewConfigurationVersionImpl;-><init>()V
 
     sput-object v0, Landroid/support/v4/view/ViewConfigurationCompat;->a:Landroid/support/v4/view/ViewConfigurationCompat$ViewConfigurationVersionImpl;
 
-    .line 95
+    .line 77
     :goto_d
     return-void
 
-    .line 88
+    .line 72
     :cond_e
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -38,7 +38,7 @@
 
     if-lt v0, v1, :cond_1c
 
-    .line 89
+    .line 73
     new-instance v0, Landroid/support/v4/view/ViewConfigurationCompat$HoneycombViewConfigurationVersionImpl;
 
     invoke-direct {v0}, Landroid/support/v4/view/ViewConfigurationCompat$HoneycombViewConfigurationVersionImpl;-><init>()V
@@ -47,25 +47,8 @@
 
     goto :goto_d
 
-    .line 90
+    .line 75
     :cond_1c
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x8
-
-    if-lt v0, v1, :cond_2a
-
-    .line 91
-    new-instance v0, Landroid/support/v4/view/ViewConfigurationCompat$FroyoViewConfigurationVersionImpl;
-
-    invoke-direct {v0}, Landroid/support/v4/view/ViewConfigurationCompat$FroyoViewConfigurationVersionImpl;-><init>()V
-
-    sput-object v0, Landroid/support/v4/view/ViewConfigurationCompat;->a:Landroid/support/v4/view/ViewConfigurationCompat$ViewConfigurationVersionImpl;
-
-    goto :goto_d
-
-    .line 93
-    :cond_2a
     new-instance v0, Landroid/support/v4/view/ViewConfigurationCompat$BaseViewConfigurationVersionImpl;
 
     invoke-direct {v0}, Landroid/support/v4/view/ViewConfigurationCompat$BaseViewConfigurationVersionImpl;-><init>()V
@@ -77,12 +60,12 @@
 
 .method public static a(Landroid/view/ViewConfiguration;)I
     .registers 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 105
-    sget-object v0, Landroid/support/v4/view/ViewConfigurationCompat;->a:Landroid/support/v4/view/ViewConfigurationCompat$ViewConfigurationVersionImpl;
-
-    invoke-interface {v0, p0}, Landroid/support/v4/view/ViewConfigurationCompat$ViewConfigurationVersionImpl;->a(Landroid/view/ViewConfiguration;)I
+    .line 89
+    invoke-virtual {p0}, Landroid/view/ViewConfiguration;->getScaledPagingTouchSlop()I
 
     move-result v0
 
@@ -93,10 +76,10 @@
     .registers 2
 
     .prologue
-    .line 113
+    .line 97
     sget-object v0, Landroid/support/v4/view/ViewConfigurationCompat;->a:Landroid/support/v4/view/ViewConfigurationCompat$ViewConfigurationVersionImpl;
 
-    invoke-interface {v0, p0}, Landroid/support/v4/view/ViewConfigurationCompat$ViewConfigurationVersionImpl;->b(Landroid/view/ViewConfiguration;)Z
+    invoke-interface {v0, p0}, Landroid/support/v4/view/ViewConfigurationCompat$ViewConfigurationVersionImpl;->a(Landroid/view/ViewConfiguration;)Z
 
     move-result v0
 

@@ -1,158 +1,101 @@
 .class Lcom/samsung/privilege/activity/ProfileActivity$23;
-.super Lcom/bzbs/lib/http/okhttp/ResponseListener;
+.super Ljava/lang/Object;
 .source "ProfileActivity.java"
+
+# interfaces
+.implements Lcom/samsung/privilege/control/toggle/ToggleButton$OnToggleChanged;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/ProfileActivity;->doUpdate(Landroid/view/View;)V
+    value = Lcom/samsung/privilege/activity/ProfileActivity;->b(Ljava/lang/String;)V
 .end annotation
 
 
 # instance fields
-.field final synthetic a:Lcom/samsung/privilege/activity/ProfileActivity;
+.field final synthetic a:Landroid/widget/TextView;
+
+.field final synthetic b:Landroid/widget/TextView;
+
+.field final synthetic c:Lcom/samsung/privilege/activity/ProfileActivity;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/ProfileActivity;)V
-    .registers 2
+.method constructor <init>(Lcom/samsung/privilege/activity/ProfileActivity;Landroid/widget/TextView;Landroid/widget/TextView;)V
+    .registers 4
 
     .prologue
-    .line 1815
-    iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$23;->a:Lcom/samsung/privilege/activity/ProfileActivity;
+    .line 1106
+    iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$23;->c:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
+    iput-object p2, p0, Lcom/samsung/privilege/activity/ProfileActivity$23;->a:Landroid/widget/TextView;
+
+    iput-object p3, p0, Lcom/samsung/privilege/activity/ProfileActivity$23;->b:Landroid/widget/TextView;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
-    .registers 8
+.method public a(Z)V
+    .registers 4
 
     .prologue
-    .line 1881
-    invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
+    .line 1109
+    const/4 v0, 0x1
 
-    .line 1883
-    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$23;->a:Lcom/samsung/privilege/activity/ProfileActivity;
+    if-ne p1, v0, :cond_1c
 
-    invoke-static {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->d(Lcom/samsung/privilege/activity/ProfileActivity;)Ljava/lang/String;
+    .line 1110
+    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$23;->a:Landroid/widget/TextView;
 
-    move-result-object v0
+    const-string/jumbo v1, "#ebebeb"
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    move-result v1
 
-    const-string/jumbo v2, "(doUpdate|onFailure)response_code="
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 1111
+    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$23;->b:Landroid/widget/TextView;
 
-    move-result-object v1
+    const-string/jumbo v1, "#2ba9e3"
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
-    move-result-object v1
+    move-result v1
 
-    const-string/jumbo v2, ",response="
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1885
-    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$23;->a:Lcom/samsung/privilege/activity/ProfileActivity;
-
-    invoke-static {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->e(Lcom/samsung/privilege/activity/ProfileActivity;)Landroid/app/ProgressDialog;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
-
-    .line 1887
-    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$23;->a:Lcom/samsung/privilege/activity/ProfileActivity;
-
-    invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
-
-    .line 1888
+    .line 1116
+    :goto_1b
     return-void
-.end method
 
-.method public successfully(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
-    .registers 8
+    .line 1113
+    :cond_1c
+    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$23;->a:Landroid/widget/TextView;
 
-    .prologue
-    .line 1818
-    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$23;->a:Lcom/samsung/privilege/activity/ProfileActivity;
+    const-string/jumbo v1, "#2ba9e3"
 
-    invoke-static {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->d(Lcom/samsung/privilege/activity/ProfileActivity;)Ljava/lang/String;
+    invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
-    move-result-object v0
+    move-result v1
 
-    new-instance v1, Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+    .line 1114
+    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$23;->b:Landroid/widget/TextView;
 
-    const-string/jumbo v2, "(doUpdate|onComplete)response_code="
+    const-string/jumbo v1, "#ebebeb"
 
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
 
-    move-result-object v1
+    move-result v1
 
-    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    move-result-object v1
-
-    const-string/jumbo v2, ",response="
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 1820
-    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$23;->a:Lcom/samsung/privilege/activity/ProfileActivity;
-
-    invoke-static {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->e(Lcom/samsung/privilege/activity/ProfileActivity;)Landroid/app/ProgressDialog;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
-
-    .line 1822
-    iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$23;->a:Lcom/samsung/privilege/activity/ProfileActivity;
-
-    invoke-static {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->a(Lcom/samsung/privilege/activity/ProfileActivity;)Landroid/os/Handler;
-
-    move-result-object v0
-
-    new-instance v1, Lcom/samsung/privilege/activity/ProfileActivity$23$1;
-
-    invoke-direct {v1, p0, p4}, Lcom/samsung/privilege/activity/ProfileActivity$23$1;-><init>(Lcom/samsung/privilege/activity/ProfileActivity$23;Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 1877
-    return-void
+    goto :goto_1b
 .end method

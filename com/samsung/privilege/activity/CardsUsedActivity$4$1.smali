@@ -80,7 +80,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CardsUsedActivity$4;->a:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    const v4, 0x7f100147
+    const v4, 0x7f100149
 
     invoke-virtual {v0, v4}, Lcom/samsung/privilege/activity/CardsUsedActivity;->findViewById(I)Landroid/view/View;
 
@@ -153,7 +153,7 @@
 
     const-string/jumbo v4, "1033"
 
-    invoke-static {v0, v4}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v0, v4}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 473
     iget-object v0, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$4$1;->b:Lcom/samsung/privilege/activity/CardsUsedActivity$4;

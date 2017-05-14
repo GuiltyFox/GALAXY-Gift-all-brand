@@ -15,7 +15,7 @@
     .registers 2
 
     .prologue
-    .line 3054
+    .line 3205
     iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$UserLoginListener;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
     .registers 3
 
     .prologue
-    .line 3054
+    .line 3205
     invoke-direct {p0, p1}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$UserLoginListener;-><init>(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;)V
 
     return-void
@@ -39,14 +39,14 @@
     .registers 4
 
     .prologue
-    .line 3057
+    .line 3208
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$UserLoginListener;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->a(Z)V
 
-    .line 3058
+    .line 3209
     return-void
 .end method
 
@@ -54,14 +54,14 @@
     .registers 4
 
     .prologue
-    .line 3062
+    .line 3213
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$UserLoginListener;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->a(Z)V
 
-    .line 3063
+    .line 3214
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .registers 5
 
     .prologue
-    .line 3067
+    .line 3218
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$UserLoginListener;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     invoke-static {v0}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->a(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;)Ljava/lang/String;
@@ -96,7 +96,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 3068
+    .line 3219
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$UserLoginListener;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     invoke-static {v0}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->b(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;)Landroid/os/Handler;
@@ -105,10 +105,18 @@
 
     new-instance v1, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$UserLoginListener$1;
 
-    invoke-direct {v1, p0, p1}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$UserLoginListener$1;-><init>(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$UserLoginListener;Ljava/lang/String;)V
+    invoke-direct {v1, p0}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$UserLoginListener$1;-><init>(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$UserLoginListener;)V
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 3094
+    .line 3253
+    return-void
+.end method
+
+.method public d(Ljava/lang/String;)V
+    .registers 2
+
+    .prologue
+    .line 3258
     return-void
 .end method

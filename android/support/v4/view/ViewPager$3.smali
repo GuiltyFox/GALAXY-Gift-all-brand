@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 251
+    .line 271
     iput-object p1, p0, Landroid/support/v4/view/ViewPager$3;->a:Landroid/support/v4/view/ViewPager;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,18 +35,18 @@
     .registers 3
 
     .prologue
-    .line 253
+    .line 274
     iget-object v0, p0, Landroid/support/v4/view/ViewPager$3;->a:Landroid/support/v4/view/ViewPager;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Landroid/support/v4/view/ViewPager;->a(Landroid/support/v4/view/ViewPager;I)V
 
-    .line 254
+    .line 275
     iget-object v0, p0, Landroid/support/v4/view/ViewPager$3;->a:Landroid/support/v4/view/ViewPager;
 
     invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->d()V
 
-    .line 255
+    .line 276
     return-void
 .end method

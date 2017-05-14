@@ -22,14 +22,14 @@
     .registers 4
 
     .prologue
-    .line 591
+    .line 564
     iput-object p1, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$2;->b:Landroid/support/v7/widget/ToolbarWidgetWrapper;
 
     iput p2, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$2;->a:I
 
     invoke-direct {p0}, Landroid/support/v4/view/ViewPropertyAnimatorListenerAdapter;-><init>()V
 
-    .line 592
+    .line 565
     const/4 v0, 0x0
 
     iput-boolean v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$2;->c:Z
@@ -43,12 +43,12 @@
     .registers 3
 
     .prologue
-    .line 608
+    .line 581
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$2;->c:Z
 
-    .line 609
+    .line 582
     return-void
 .end method
 
@@ -56,12 +56,12 @@
     .registers 4
 
     .prologue
-    .line 601
+    .line 574
     iget-boolean v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$2;->c:Z
 
     if-nez v0, :cond_f
 
-    .line 602
+    .line 575
     iget-object v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$2;->b:Landroid/support/v7/widget/ToolbarWidgetWrapper;
 
     # getter for: Landroid/support/v7/widget/ToolbarWidgetWrapper;->mToolbar:Landroid/support/v7/widget/Toolbar;
@@ -73,7 +73,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/Toolbar;->setVisibility(I)V
 
-    .line 604
+    .line 577
     :cond_f
     return-void
 .end method
@@ -82,7 +82,7 @@
     .registers 4
 
     .prologue
-    .line 596
+    .line 569
     iget-object v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$2;->b:Landroid/support/v7/widget/ToolbarWidgetWrapper;
 
     # getter for: Landroid/support/v7/widget/ToolbarWidgetWrapper;->mToolbar:Landroid/support/v7/widget/Toolbar;
@@ -94,6 +94,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/Toolbar;->setVisibility(I)V
 
-    .line 597
+    .line 570
     return-void
 .end method

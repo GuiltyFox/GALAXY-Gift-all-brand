@@ -6,31 +6,31 @@
 # instance fields
 .field btnPost:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10042b
+        value = 0x7f100446
     .end annotation
 .end field
 
 .field contentCancel:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100699
+        value = 0x7f1006c5
     .end annotation
 .end field
 
 .field contentImagePost:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100697
+        value = 0x7f1006c3
     .end annotation
 .end field
 
 .field contentPost:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100694
+        value = 0x7f1006c0
     .end annotation
 .end field
 
 .field edtTextComment:Landroid/widget/EditText;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10069a
+        value = 0x7f1006c6
     .end annotation
 .end field
 
@@ -51,7 +51,7 @@
 
 .field imagePost:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100698
+        value = 0x7f1006c4
     .end annotation
 .end field
 
@@ -65,7 +65,7 @@
 
 .field mSwipeRefreshLayout:Landroid/support/v4/widget/SwipeRefreshLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100642
+        value = 0x7f10066e
     .end annotation
 .end field
 
@@ -81,7 +81,7 @@
 
 .field recyclerView:Landroid/support/v7/widget/RecyclerView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100695
+        value = 0x7f1006c1
     .end annotation
 .end field
 
@@ -379,7 +379,7 @@
     .line 173
     iget-object v0, p0, Lcom/samsung/privilege/fragment/ReplyFragment;->a:Landroid/app/Activity;
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -485,7 +485,7 @@
     :cond_21
     iget-object v1, p0, Lcom/samsung/privilege/fragment/ReplyFragment;->a:Landroid/app/Activity;
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -731,7 +731,7 @@
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
     .line 116
-    const v0, 0x7f040151
+    const v0, 0x7f040158
 
     return v0
 .end method
@@ -817,7 +817,7 @@
     .registers 7
     .annotation build Lbutterknife/OnClick;
         value = {
-            0x7f10042b
+            0x7f100446
         }
     .end annotation
 
@@ -857,7 +857,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/fragment/ReplyFragment;->a:Landroid/app/Activity;
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 

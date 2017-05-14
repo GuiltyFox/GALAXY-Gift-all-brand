@@ -51,7 +51,7 @@
     .line 256
     iget-object v0, p0, Lcom/samsung/privilege/activity/AddMoneyCreditActivity$2;->b:Lcom/samsung/privilege/activity/AddMoneyCreditActivity;
 
-    const v1, 0x7f1000ca
+    const v1, 0x7f1000cc
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/AddMoneyCreditActivity;->findViewById(I)Landroid/view/View;
 
@@ -211,7 +211,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 

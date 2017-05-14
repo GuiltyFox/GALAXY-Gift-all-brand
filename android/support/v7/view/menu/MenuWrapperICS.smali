@@ -149,6 +149,7 @@
 
     move/from16 v8, p7
 
+    .line 88
     invoke-interface/range {v1 .. v9}, Landroid/support/v4/internal/view/SupportMenu;->addIntentOptions(IIILandroid/content/ComponentName;[Landroid/content/Intent;Landroid/content/Intent;I[Landroid/view/MenuItem;)I
 
     move-result v2
@@ -212,10 +213,12 @@
 
     check-cast v0, Landroid/support/v4/internal/view/SupportMenu;
 
+    .line 76
     invoke-interface {v0, p1, p2, p3, p4}, Landroid/support/v4/internal/view/SupportMenu;->addSubMenu(IIII)Landroid/view/SubMenu;
 
     move-result-object v0
 
+    .line 75
     invoke-virtual {p0, v0}, Landroid/support/v7/view/menu/MenuWrapperICS;->a(Landroid/view/SubMenu;)Landroid/view/SubMenu;
 
     move-result-object v0

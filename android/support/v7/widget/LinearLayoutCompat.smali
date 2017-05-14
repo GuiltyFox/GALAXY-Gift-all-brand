@@ -176,6 +176,7 @@
     .line 170
     sget v1, Landroid/support/v7/appcompat/R$styleable;->LinearLayoutCompat_android_baselineAlignedChildIndex:I
 
+    .line 171
     invoke-virtual {v0, v1, v4}, Landroid/support/v7/widget/TintTypedArray;->getInt(II)I
 
     move-result v1
@@ -758,6 +759,7 @@
 
     add-int/2addr v1, v2
 
+    .line 358
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutCompat;->getWidth()I
 
     move-result v2
@@ -776,6 +778,7 @@
 
     add-int/2addr v3, p2
 
+    .line 357
     invoke-virtual {v0, v1, p2, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 359
@@ -806,6 +809,7 @@
 
     add-int/2addr v2, p2
 
+    .line 364
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutCompat;->getHeight()I
 
     move-result v3
@@ -820,6 +824,7 @@
 
     sub-int/2addr v3, v4
 
+    .line 363
     invoke-virtual {v0, p2, v1, v2, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 365
@@ -1580,7 +1585,7 @@
     .line 1573
     const/4 v4, -0x1
 
-    .line 1575
+    .line 1576
     invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
@@ -1664,6 +1669,7 @@
 
     add-int/2addr v2, v6
 
+    .line 1631
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v3}, Landroid/support/v7/widget/LinearLayoutCompat;->getNextLocationOffset(Landroid/view/View;)I
@@ -1945,7 +1951,7 @@
 
     move-result v5
 
-    .line 1462
+    .line 1463
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -2409,7 +2415,7 @@
 
     iput v3, v0, Landroid/support/v7/widget/LinearLayoutCompat;->mTotalLength:I
 
-    .line 973
+    .line 974
     :cond_d5
     invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -2518,11 +2524,12 @@
 
     add-int v9, v7, v8
 
-    .line 1051
+    .line 1052
     invoke-static {v4}, Landroid/support/v4/view/ViewCompat;->k(Landroid/view/View;)I
 
     move-result v7
 
+    .line 1051
     move/from16 v0, v19
 
     invoke-static {v0, v7}, Landroid/support/v7/widget/ViewUtils;->combineMeasuredStates(II)I
@@ -2777,6 +2784,7 @@
 
     add-int/2addr v7, v8
 
+    .line 1028
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v4}, Landroid/support/v7/widget/LinearLayoutCompat;->getNextLocationOffset(Landroid/view/View;)I
@@ -2825,6 +2833,7 @@
 
     add-int/2addr v7, v8
 
+    .line 1032
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v4}, Landroid/support/v7/widget/LinearLayoutCompat;->getNextLocationOffset(Landroid/view/View;)I
@@ -2833,6 +2842,7 @@
 
     add-int/2addr v7, v8
 
+    .line 1031
     invoke-static {v6, v7}, Ljava/lang/Math;->max(II)I
 
     move-result v6
@@ -2966,14 +2976,17 @@
 
     aget v7, v25, v7
 
+    .line 1099
     invoke-static {v5, v7}, Ljava/lang/Math;->max(II)I
 
     move-result v5
 
+    .line 1098
     invoke-static {v4, v5}, Ljava/lang/Math;->max(II)I
 
     move-result v4
 
+    .line 1097
     invoke-static {v3, v4}, Ljava/lang/Math;->max(II)I
 
     move-result v3
@@ -2995,14 +3008,17 @@
 
     aget v8, v26, v8
 
+    .line 1102
     invoke-static {v7, v8}, Ljava/lang/Math;->max(II)I
 
     move-result v7
 
+    .line 1101
     invoke-static {v5, v7}, Ljava/lang/Math;->max(II)I
 
     move-result v5
 
+    .line 1100
     invoke-static {v4, v5}, Ljava/lang/Math;->max(II)I
 
     move-result v4
@@ -3101,7 +3117,7 @@
     .line 1120
     goto :goto_2d1
 
-    .line 1123
+    .line 1124
     :cond_2e4
     invoke-virtual {v7}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -3125,6 +3141,7 @@
 
     add-int/2addr v3, v9
 
+    .line 1127
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v7}, Landroid/support/v7/widget/LinearLayoutCompat;->getNextLocationOffset(Landroid/view/View;)I
@@ -3160,6 +3177,7 @@
 
     add-int/2addr v3, v9
 
+    .line 1131
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v7}, Landroid/support/v7/widget/LinearLayoutCompat;->getNextLocationOffset(Landroid/view/View;)I
@@ -3168,6 +3186,7 @@
 
     add-int/2addr v3, v7
 
+    .line 1130
     invoke-static {v8, v3}, Ljava/lang/Math;->max(II)I
 
     move-result v3
@@ -3381,7 +3400,7 @@
 
     goto :goto_391
 
-    .line 1168
+    .line 1169
     :cond_3b3
     invoke-virtual/range {v16 .. v16}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -3414,7 +3433,7 @@
     .line 1176
     sub-int v8, v6, v4
 
-    .line 1178
+    .line 1180
     invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/LinearLayoutCompat;->getPaddingTop()I
 
     move-result v6
@@ -3435,6 +3454,7 @@
 
     iget v13, v3, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->height:I
 
+    .line 1178
     move/from16 v0, p2
 
     invoke-static {v0, v6, v13}, Landroid/support/v7/widget/LinearLayoutCompat;->getChildMeasureSpec(III)I
@@ -3470,15 +3490,17 @@
     :cond_3f0
     const/high16 v13, 0x40000000    # 2.0f
 
+    .line 1194
     invoke-static {v4, v13}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v4
 
+    .line 1193
     move-object/from16 v0, v16
 
     invoke-virtual {v0, v4, v6}, Landroid/view/View;->measure(II)V
 
-    .line 1204
+    .line 1205
     :goto_3fb
     invoke-static/range {v16 .. v16}, Landroid/support/v4/view/ViewCompat;->k(Landroid/view/View;)I
 
@@ -3488,6 +3510,7 @@
 
     and-int/2addr v4, v6
 
+    .line 1204
     invoke-static {v7, v4}, Landroid/support/v7/widget/ViewUtils;->combineMeasuredStates(II)I
 
     move-result v13
@@ -3515,6 +3538,7 @@
 
     add-int/2addr v5, v6
 
+    .line 1210
     move-object/from16 v0, p0
 
     move-object/from16 v1, v16
@@ -3699,6 +3723,7 @@
 
     add-int/2addr v5, v6
 
+    .line 1214
     move-object/from16 v0, p0
 
     move-object/from16 v1, v16
@@ -3709,6 +3734,7 @@
 
     add-int/2addr v5, v6
 
+    .line 1213
     invoke-static {v4, v5}, Ljava/lang/Math;->max(II)I
 
     move-result v4
@@ -3816,14 +3842,17 @@
 
     aget v6, v25, v6
 
+    .line 1256
     invoke-static {v5, v6}, Ljava/lang/Math;->max(II)I
 
     move-result v5
 
+    .line 1255
     invoke-static {v4, v5}, Ljava/lang/Math;->max(II)I
 
     move-result v4
 
+    .line 1254
     invoke-static {v3, v4}, Ljava/lang/Math;->max(II)I
 
     move-result v3
@@ -3845,14 +3874,17 @@
 
     aget v8, v26, v8
 
+    .line 1259
     invoke-static {v6, v8}, Ljava/lang/Math;->max(II)I
 
     move-result v6
 
+    .line 1258
     invoke-static {v5, v6}, Ljava/lang/Math;->max(II)I
 
     move-result v5
 
+    .line 1257
     invoke-static {v4, v5}, Ljava/lang/Math;->max(II)I
 
     move-result v4
@@ -3915,12 +3947,14 @@
 
     shl-int/lit8 v5, v19, 0x10
 
+    .line 1299
     move/from16 v0, p2
 
     invoke-static {v3, v0, v5}, Landroid/support/v4/view/ViewCompat;->a(III)I
 
     move-result v3
 
+    .line 1298
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v4, v3}, Landroid/support/v7/widget/LinearLayoutCompat;->setMeasuredDimension(II)V
@@ -3993,7 +4027,7 @@
 
     goto :goto_569
 
-    .line 1275
+    .line 1276
     :cond_581
     invoke-virtual {v6}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -4014,10 +4048,12 @@
     .line 1280
     const/high16 v3, 0x40000000    # 2.0f
 
+    .line 1281
     invoke-static {v15, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v3
 
+    .line 1282
     invoke-virtual {v6}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v7
@@ -4028,6 +4064,7 @@
 
     move-result v7
 
+    .line 1280
     invoke-virtual {v6, v3, v7}, Landroid/view/View;->measure(II)V
 
     goto :goto_57d
@@ -4458,6 +4495,7 @@
 
     add-int/2addr v7, v8
 
+    .line 665
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v4}, Landroid/support/v7/widget/LinearLayoutCompat;->getNextLocationOffset(Landroid/view/View;)I
@@ -4466,6 +4504,7 @@
 
     add-int/2addr v7, v8
 
+    .line 664
     invoke-static {v6, v7}, Ljava/lang/Math;->max(II)I
 
     move-result v6
@@ -4535,11 +4574,12 @@
 
     move-result v19
 
-    .line 703
+    .line 704
     invoke-static {v4}, Landroid/support/v4/view/ViewCompat;->k(Landroid/view/View;)I
 
     move-result v7
 
+    .line 703
     move/from16 v0, v18
 
     invoke-static {v0, v7}, Landroid/support/v7/widget/ViewUtils;->combineMeasuredStates(II)I
@@ -4759,7 +4799,7 @@
     .line 740
     goto :goto_1e0
 
-    .line 743
+    .line 744
     :cond_1f3
     invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -4783,6 +4823,7 @@
 
     add-int/2addr v3, v8
 
+    .line 748
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v5}, Landroid/support/v7/widget/LinearLayoutCompat;->getNextLocationOffset(Landroid/view/View;)I
@@ -4791,6 +4832,7 @@
 
     add-int/2addr v3, v5
 
+    .line 747
     invoke-static {v7, v3}, Ljava/lang/Math;->max(II)I
 
     move-result v3
@@ -4990,7 +5032,7 @@
     .line 787
     sub-int/2addr v6, v4
 
-    .line 789
+    .line 790
     invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/LinearLayoutCompat;->getPaddingLeft()I
 
     move-result v8
@@ -5011,6 +5053,7 @@
 
     iget v13, v3, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;->width:I
 
+    .line 789
     move/from16 v0, p1
 
     invoke-static {v0, v8, v13}, Landroid/support/v7/widget/LinearLayoutCompat;->getChildMeasureSpec(III)I
@@ -5046,13 +5089,15 @@
     :cond_2c6
     const/high16 v13, 0x40000000    # 2.0f
 
+    .line 804
     invoke-static {v4, v13}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v4
 
+    .line 803
     invoke-virtual {v15, v8, v4}, Landroid/view/View;->measure(II)V
 
-    .line 814
+    .line 815
     :goto_2cf
     invoke-static {v15}, Landroid/support/v4/view/ViewCompat;->k(Landroid/view/View;)I
 
@@ -5060,6 +5105,7 @@
 
     and-int/lit16 v4, v4, -0x100
 
+    .line 814
     invoke-static {v7, v4}, Landroid/support/v7/widget/ViewUtils;->combineMeasuredStates(II)I
 
     move-result v4
@@ -5150,6 +5196,7 @@
 
     add-int/2addr v3, v10
 
+    .line 833
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v15}, Landroid/support/v7/widget/LinearLayoutCompat;->getNextLocationOffset(Landroid/view/View;)I
@@ -5158,6 +5205,7 @@
 
     add-int/2addr v3, v10
 
+    .line 832
     invoke-static {v9, v3}, Ljava/lang/Math;->max(II)I
 
     move-result v3
@@ -5187,10 +5235,12 @@
     :goto_334
     const/high16 v13, 0x40000000    # 2.0f
 
+    .line 809
     invoke-static {v4, v13}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v4
 
+    .line 808
     invoke-virtual {v15, v8, v4}, Landroid/view/View;->measure(II)V
 
     goto :goto_2cf
@@ -5364,7 +5414,7 @@
 
     goto :goto_3a1
 
-    .line 854
+    .line 855
     :cond_3b9
     invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -5382,7 +5432,7 @@
 
     if-lez v3, :cond_3b5
 
-    .line 859
+    .line 860
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v3
@@ -5395,10 +5445,12 @@
 
     const/high16 v6, 0x40000000    # 2.0f
 
+    .line 862
     invoke-static {v14, v6}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v6
 
+    .line 859
     invoke-virtual {v5, v3, v6}, Landroid/view/View;->measure(II)V
 
     goto :goto_3b5
@@ -5607,6 +5659,7 @@
 
     move-result-object v1
 
+    .line 484
     invoke-virtual {p0}, Landroid/support/v7/widget/LinearLayoutCompat;->getChildCount()I
 
     move-result v2

@@ -212,12 +212,14 @@
 
     iget-boolean v3, p0, Landroid/support/v7/view/SupportMenuInflater$MenuState;->s:Z
 
+    .line 426
     invoke-interface {v0, v3}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
 
     move-result-object v0
 
     iget-boolean v3, p0, Landroid/support/v7/view/SupportMenuInflater$MenuState;->t:Z
 
+    .line 427
     invoke-interface {v0, v3}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
 
     move-result-object v3
@@ -228,6 +230,7 @@
 
     move v0, v1
 
+    .line 428
     :goto_19
     invoke-interface {v3, v0}, Landroid/view/MenuItem;->setCheckable(Z)Landroid/view/MenuItem;
 
@@ -235,24 +238,28 @@
 
     iget-object v3, p0, Landroid/support/v7/view/SupportMenuInflater$MenuState;->m:Ljava/lang/CharSequence;
 
+    .line 429
     invoke-interface {v0, v3}, Landroid/view/MenuItem;->setTitleCondensed(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
 
     move-result-object v0
 
     iget v3, p0, Landroid/support/v7/view/SupportMenuInflater$MenuState;->n:I
 
+    .line 430
     invoke-interface {v0, v3}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
 
     move-result-object v0
 
     iget-char v3, p0, Landroid/support/v7/view/SupportMenuInflater$MenuState;->o:C
 
+    .line 431
     invoke-interface {v0, v3}, Landroid/view/MenuItem;->setAlphabeticShortcut(C)Landroid/view/MenuItem;
 
     move-result-object v0
 
     iget-char v3, p0, Landroid/support/v7/view/SupportMenuInflater$MenuState;->p:C
 
+    .line 432
     invoke-interface {v0, v3}, Landroid/view/MenuItem;->setNumericShortcut(C)Landroid/view/MenuItem;
 
     .line 434
@@ -296,7 +303,7 @@
     :cond_56
     move v0, v2
 
-    .line 425
+    .line 427
     goto :goto_19
 
     .line 443
@@ -305,6 +312,7 @@
 
     iget-object v3, p0, Landroid/support/v7/view/SupportMenuInflater$MenuState;->a:Landroid/support/v7/view/SupportMenuInflater;
 
+    .line 444
     invoke-static {v3}, Landroid/support/v7/view/SupportMenuInflater;->c(Landroid/support/v7/view/SupportMenuInflater;)Ljava/lang/Object;
 
     move-result-object v3
@@ -313,6 +321,7 @@
 
     invoke-direct {v0, v3, v4}, Landroid/support/v7/view/SupportMenuInflater$InflatedOnMenuItemClickListener;-><init>(Ljava/lang/Object;Ljava/lang/String;)V
 
+    .line 443
     invoke-interface {p1, v0}, Landroid/view/MenuItem;->setOnMenuItemClickListener(Landroid/view/MenuItem$OnMenuItemClickListener;)Landroid/view/MenuItem;
 
     .line 447
@@ -355,6 +364,7 @@
     .line 458
     iget-object v0, p0, Landroid/support/v7/view/SupportMenuInflater$MenuState;->w:Ljava/lang/String;
 
+    .line 459
     invoke-static {}, Landroid/support/v7/view/SupportMenuInflater;->b()[Ljava/lang/Class;
 
     move-result-object v2
@@ -365,6 +375,7 @@
 
     move-result-object v3
 
+    .line 458
     invoke-direct {p0, v0, v2, v3}, Landroid/support/v7/view/SupportMenuInflater$MenuState;->a(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -670,6 +681,7 @@
     .line 377
     sget v0, Landroid/support/v7/appcompat/R$styleable;->MenuItem_android_alphabeticShortcut:I
 
+    .line 378
     invoke-virtual {v3, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -683,6 +695,7 @@
     .line 379
     sget v0, Landroid/support/v7/appcompat/R$styleable;->MenuItem_android_numericShortcut:I
 
+    .line 380
     invoke-virtual {v3, v0}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     move-result-object v0
@@ -815,16 +828,19 @@
     .line 400
     iget-object v0, p0, Landroid/support/v7/view/SupportMenuInflater$MenuState;->x:Ljava/lang/String;
 
+    .line 401
     invoke-static {}, Landroid/support/v7/view/SupportMenuInflater;->a()[Ljava/lang/Class;
 
     move-result-object v1
 
     iget-object v4, p0, Landroid/support/v7/view/SupportMenuInflater$MenuState;->a:Landroid/support/v7/view/SupportMenuInflater;
 
+    .line 402
     invoke-static {v4}, Landroid/support/v7/view/SupportMenuInflater;->b(Landroid/support/v7/view/SupportMenuInflater;)[Ljava/lang/Object;
 
     move-result-object v4
 
+    .line 400
     invoke-direct {p0, v0, v1, v4}, Landroid/support/v7/view/SupportMenuInflater$MenuState;->a(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0

@@ -12,25 +12,25 @@
     .registers 2
 
     .prologue
-    .line 166
+    .line 129
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0xb
 
     if-lt v0, v1, :cond_e
 
-    .line 167
+    .line 130
     new-instance v0, Landroid/support/v4/view/KeyEventCompat$HoneycombKeyEventVersionImpl;
 
     invoke-direct {v0}, Landroid/support/v4/view/KeyEventCompat$HoneycombKeyEventVersionImpl;-><init>()V
 
     sput-object v0, Landroid/support/v4/view/KeyEventCompat;->a:Landroid/support/v4/view/KeyEventCompat$KeyEventVersionImpl;
 
-    .line 171
+    .line 134
     :goto_d
     return-void
 
-    .line 169
+    .line 132
     :cond_e
     new-instance v0, Landroid/support/v4/view/KeyEventCompat$BaseKeyEventVersionImpl;
 
@@ -45,7 +45,7 @@
     .registers 3
 
     .prologue
-    .line 192
+    .line 155
     sget-object v0, Landroid/support/v4/view/KeyEventCompat;->a:Landroid/support/v4/view/KeyEventCompat$KeyEventVersionImpl;
 
     invoke-virtual {p0}, Landroid/view/KeyEvent;->getMetaState()I
@@ -63,7 +63,7 @@
     .registers 4
 
     .prologue
-    .line 188
+    .line 151
     sget-object v0, Landroid/support/v4/view/KeyEventCompat;->a:Landroid/support/v4/view/KeyEventCompat$KeyEventVersionImpl;
 
     invoke-virtual {p0}, Landroid/view/KeyEvent;->getMetaState()I
@@ -77,15 +77,16 @@
     return v0
 .end method
 
-.method public static b(Landroid/view/KeyEvent;)V
+.method public static b(Landroid/view/KeyEvent;)Z
     .registers 2
 
     .prologue
-    .line 196
+    .line 197
     sget-object v0, Landroid/support/v4/view/KeyEventCompat;->a:Landroid/support/v4/view/KeyEventCompat$KeyEventVersionImpl;
 
-    invoke-interface {v0, p0}, Landroid/support/v4/view/KeyEventCompat$KeyEventVersionImpl;->a(Landroid/view/KeyEvent;)V
+    invoke-interface {v0, p0}, Landroid/support/v4/view/KeyEventCompat$KeyEventVersionImpl;->a(Landroid/view/KeyEvent;)Z
 
-    .line 197
-    return-void
+    move-result v0
+
+    return v0
 .end method

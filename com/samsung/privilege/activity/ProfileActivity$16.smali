@@ -3,12 +3,12 @@
 .source "ProfileActivity.java"
 
 # interfaces
-.implements Lcom/bzbs/event/ProfileEvents$ProfileListener;
+.implements Landroid/view/View$OnClickListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/ProfileActivity;->onResume()V
+    value = Lcom/samsung/privilege/activity/ProfileActivity;->i()V
 .end annotation
 
 
@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 672
+    .line 622
     iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$16;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,15 +31,25 @@
 
 
 # virtual methods
-.method public a()V
-    .registers 2
+.method public onClick(Landroid/view/View;)V
+    .registers 6
 
     .prologue
-    .line 675
+    .line 625
     iget-object v0, p0, Lcom/samsung/privilege/activity/ProfileActivity$16;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    invoke-static {v0}, Lcom/samsung/privilege/activity/ProfileActivity;->b(Lcom/samsung/privilege/activity/ProfileActivity;)V
+    iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$16;->a:Lcom/samsung/privilege/activity/ProfileActivity;
 
-    .line 676
+    invoke-static {v1}, Lcom/samsung/privilege/activity/ProfileActivity;->a(Lcom/samsung/privilege/activity/ProfileActivity;)Landroid/os/Handler;
+
+    move-result-object v1
+
+    const-string/jumbo v2, "profile"
+
+    const-string/jumbo v3, "shipping"
+
+    invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/util/DialogProfile;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 626
     return-void
 .end method

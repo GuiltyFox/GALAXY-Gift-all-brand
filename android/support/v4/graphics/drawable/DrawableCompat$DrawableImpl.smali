@@ -31,10 +31,10 @@
 .method public abstract a(Landroid/graphics/drawable/Drawable;Z)V
 .end method
 
-.method public abstract b(Landroid/graphics/drawable/Drawable;I)V
+.method public abstract b(Landroid/graphics/drawable/Drawable;)Z
 .end method
 
-.method public abstract b(Landroid/graphics/drawable/Drawable;)Z
+.method public abstract b(Landroid/graphics/drawable/Drawable;I)Z
 .end method
 
 .method public abstract c(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;

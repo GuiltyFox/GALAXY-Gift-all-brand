@@ -192,17 +192,6 @@
     return-void
 .end method
 
-.method public a(Landroid/support/v7/view/menu/MenuPresenter$Callback;)V
-    .registers 2
-
-    .prologue
-    .line 133
-    iput-object p1, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->i:Landroid/support/v7/view/menu/MenuPresenter$Callback;
-
-    .line 134
-    return-void
-.end method
-
 .method public b(Landroid/os/Bundle;)V
     .registers 4
 
@@ -351,7 +340,7 @@
     .line 151
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->i:Landroid/support/v7/view/menu/MenuPresenter$Callback;
 
-    invoke-interface {v0, p1, p2}, Landroid/support/v7/view/menu/MenuPresenter$Callback;->onCloseMenu(Landroid/support/v7/view/menu/MenuBuilder;Z)V
+    invoke-interface {v0, p1, p2}, Landroid/support/v7/view/menu/MenuPresenter$Callback;->a(Landroid/support/v7/view/menu/MenuBuilder;Z)V
 
     .line 153
     :cond_9
@@ -464,13 +453,24 @@
     .line 143
     iget-object v0, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->i:Landroid/support/v7/view/menu/MenuPresenter$Callback;
 
-    invoke-interface {v0, p1}, Landroid/support/v7/view/menu/MenuPresenter$Callback;->onOpenSubMenu(Landroid/support/v7/view/menu/MenuBuilder;)Z
+    invoke-interface {v0, p1}, Landroid/support/v7/view/menu/MenuPresenter$Callback;->a(Landroid/support/v7/view/menu/MenuBuilder;)Z
 
     .line 145
     :cond_1a
     const/4 v0, 0x1
 
     goto :goto_7
+.end method
+
+.method public setCallback(Landroid/support/v7/view/menu/MenuPresenter$Callback;)V
+    .registers 2
+
+    .prologue
+    .line 133
+    iput-object p1, p0, Landroid/support/v7/view/menu/ListMenuPresenter;->i:Landroid/support/v7/view/menu/MenuPresenter$Callback;
+
+    .line 134
+    return-void
 .end method
 
 .method public updateMenuView(Z)V

@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 399
+    .line 411
     iput-object p1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$7$1;->b:Lcom/samsung/privilege/fragment/RequestHelpFragment$7;
 
     iput-object p2, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$7$1;->a:[B
@@ -41,21 +41,21 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 402
+    .line 414
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$7$1;->b:Lcom/samsung/privilege/fragment/RequestHelpFragment$7;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/RequestHelpFragment$7;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->d(Lcom/samsung/privilege/fragment/RequestHelpFragment;Z)V
 
-    .line 403
+    .line 415
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$7$1;->b:Lcom/samsung/privilege/fragment/RequestHelpFragment$7;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/RequestHelpFragment$7;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->e(Lcom/samsung/privilege/fragment/RequestHelpFragment;Z)Z
 
-    .line 404
+    .line 416
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$7$1;->b:Lcom/samsung/privilege/fragment/RequestHelpFragment$7;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/RequestHelpFragment$7;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
@@ -66,7 +66,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
-    .line 406
+    .line 418
     new-instance v0, Lcom/google/gson/Gson;
 
     invoke-direct {v0}, Lcom/google/gson/Gson;-><init>()V
@@ -85,15 +85,15 @@
 
     check-cast v0, Lcom/bzbs/marketplace/model/review/ReviewModel;
 
-    .line 408
+    .line 420
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 409
+    .line 421
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 410
+    .line 422
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$7$1;->b:Lcom/samsung/privilege/fragment/RequestHelpFragment$7;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/RequestHelpFragment$7;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
@@ -104,20 +104,20 @@
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 411
+    .line 423
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$7$1;->b:Lcom/samsung/privilege/fragment/RequestHelpFragment$7;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/RequestHelpFragment$7;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a(Lcom/samsung/privilege/fragment/RequestHelpFragment;Ljava/util/ArrayList;)Ljava/util/ArrayList;
 
-    .line 412
+    .line 424
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$7$1;->b:Lcom/samsung/privilege/fragment/RequestHelpFragment$7;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/RequestHelpFragment$7;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
 
     invoke-static {v0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->d(Lcom/samsung/privilege/fragment/RequestHelpFragment;)V
 
-    .line 413
+    .line 425
     return-void
 .end method

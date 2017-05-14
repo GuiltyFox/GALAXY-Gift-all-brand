@@ -41,7 +41,7 @@
 
     new-array v0, v0, [Ljava/lang/Integer;
 
-    const v1, 0x7f02027e
+    const v1, 0x7f020281
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -51,7 +51,7 @@
 
     const/4 v1, 0x1
 
-    const v2, 0x7f02027d
+    const v2, 0x7f020280
 
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
@@ -182,7 +182,7 @@
 
     iget-object v1, p0, Lcom/bzbs/marketplace/adapter/ReviewPickAdapter;->b:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f040157
+    const v2, 0x7f04015e
 
     const/4 v3, 0x0
 

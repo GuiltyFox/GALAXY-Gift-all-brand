@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;->doHistory(Landroid/view/View;)V
+    value = Lcom/samsung/privilege/activity/MainPagerActivity;->doScanQRCode(Landroid/view/View;)V
 .end annotation
 
 
@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 2108
+    .line 2150
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$29;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,27 +32,81 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .registers 5
 
     .prologue
-    .line 2111
-    new-instance v0, Landroid/content/Intent;
+    .line 2157
+    :try_start_0
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$29;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
+    const/16 v1, 0x17
 
-    invoke-virtual {v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->getApplicationContext()Landroid/content/Context;
+    if-lt v0, v1, :cond_32
 
-    move-result-object v1
+    .line 2158
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$29;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    const-class v2, Lcom/samsung/privilege/activity/HistoryActivity;
+    const-string/jumbo v1, "android.permission.CAMERA"
 
-    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->checkSelfPermission(Ljava/lang/String;)I
 
-    .line 2112
-    iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$29;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
+    move-result v0
 
-    invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->startActivity(Landroid/content/Intent;)V
+    .line 2159
+    if-eqz v0, :cond_22
 
-    .line 2116
+    .line 2171
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$29;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    const/4 v1, 0x1
+
+    new-array v1, v1, [Ljava/lang/String;
+
+    const/4 v2, 0x0
+
+    const-string/jumbo v3, "android.permission.CAMERA"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0xc8
+
+    invoke-virtual {v0, v1, v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->requestPermissions([Ljava/lang/String;I)V
+
+    .line 2181
+    :goto_21
     return-void
+
+    .line 2173
+    :cond_22
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$29;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    invoke-static {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->j(Lcom/samsung/privilege/activity/MainPagerActivity;)V
+    :try_end_27
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_27} :catch_28
+
+    goto :goto_21
+
+    .line 2178
+    :catch_28
+    move-exception v0
+
+    .line 2179
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$29;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    const-string/jumbo v1, "Can not open QRCode Scanner!"
+
+    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->b(Lcom/samsung/privilege/activity/MainPagerActivity;Ljava/lang/String;)V
+
+    goto :goto_21
+
+    .line 2176
+    :cond_32
+    :try_start_32
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$29;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    invoke-static {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->j(Lcom/samsung/privilege/activity/MainPagerActivity;)V
+    :try_end_37
+    .catch Ljava/lang/Exception; {:try_start_32 .. :try_end_37} :catch_28
+
+    goto :goto_21
 .end method

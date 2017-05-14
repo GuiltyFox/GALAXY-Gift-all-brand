@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 796
+    .line 794
     iput-object p1, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$2;->a:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 3
 
     .prologue
-    .line 799
+    .line 797
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$2;->a:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
 
     iget-object v1, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$2;->a:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
@@ -48,22 +48,22 @@
 
     if-nez v0, :cond_12
 
-    .line 800
+    .line 798
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$2;->a:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;->dismiss()V
 
-    .line 808
+    .line 806
     :goto_11
     return-void
 
-    .line 802
+    .line 800
     :cond_12
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$2;->a:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;->b()V
 
-    .line 806
+    .line 804
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$2;->a:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
 
     invoke-static {v0}, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;->b(Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;)V

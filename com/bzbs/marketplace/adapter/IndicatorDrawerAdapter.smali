@@ -153,7 +153,7 @@
     .line 62
     iget-object v0, p0, Lcom/bzbs/marketplace/adapter/IndicatorDrawerAdapter;->a:Landroid/view/LayoutInflater;
 
-    const v1, 0x7f040156
+    const v1, 0x7f04015d
 
     const/4 v2, 0x0
 

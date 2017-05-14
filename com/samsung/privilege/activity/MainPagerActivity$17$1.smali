@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 1220
+    .line 1232
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$17$1;->a:Lcom/samsung/privilege/activity/MainPagerActivity$17;
 
     invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
@@ -32,25 +32,25 @@
     .registers 6
 
     .prologue
-    .line 1228
+    .line 1244
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 1230
+    .line 1246
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$17$1;->a:Lcom/samsung/privilege/activity/MainPagerActivity$17;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/MainPagerActivity$17;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 1231
+    .line 1247
     return-void
 .end method
 
 .method public successfully(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
-    .registers 8
+    .registers 9
 
     .prologue
-    .line 1223
+    .line 1235
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$17$1;->a:Lcom/samsung/privilege/activity/MainPagerActivity$17;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/MainPagerActivity$17;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
@@ -63,7 +63,7 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "(transfer_no|onComplete)response_code="
+    const-string/jumbo v2, "(transfer_yes|onComplete)response_code="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -89,6 +89,34 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1224
+    .line 1237
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$17$1;->a:Lcom/samsung/privilege/activity/MainPagerActivity$17;
+
+    iget-object v0, v0, Lcom/samsung/privilege/activity/MainPagerActivity$17;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$17$1;->a:Lcom/samsung/privilege/activity/MainPagerActivity$17;
+
+    iget-object v1, v1, Lcom/samsung/privilege/activity/MainPagerActivity$17;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    iget-object v2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$17$1;->a:Lcom/samsung/privilege/activity/MainPagerActivity$17;
+
+    iget-object v2, v2, Lcom/samsung/privilege/activity/MainPagerActivity$17;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    const v3, 0x7f09028c
+
+    invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/MainPagerActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Lcom/samsung/privilege/activity/MainPagerActivity;->a(Landroid/content/Context;Ljava/lang/String;)V
+
+    .line 1239
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$17$1;->a:Lcom/samsung/privilege/activity/MainPagerActivity$17;
+
+    iget-object v0, v0, Lcom/samsung/privilege/activity/MainPagerActivity$17;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->i()V
+
+    .line 1240
     return-void
 .end method

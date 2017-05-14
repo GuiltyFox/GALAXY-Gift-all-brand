@@ -1,11 +1,14 @@
 .class Landroid/support/v7/widget/PopupMenu$1;
-.super Landroid/support/v7/widget/ListPopupWindow$ForwardingListener;
+.super Ljava/lang/Object;
 .source "PopupMenu.java"
+
+# interfaces
+.implements Landroid/support/v7/view/menu/MenuBuilder$Callback;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/support/v7/widget/PopupMenu;->getDragToOpenListener()Landroid/view/View$OnTouchListener;
+    value = Landroid/support/v7/widget/PopupMenu;-><init>(Landroid/content/Context;Landroid/view/View;III)V
 .end annotation
 
 
@@ -14,65 +17,60 @@
 
 
 # direct methods
-.method constructor <init>(Landroid/support/v7/widget/PopupMenu;Landroid/view/View;)V
-    .registers 3
+.method constructor <init>(Landroid/support/v7/widget/PopupMenu;)V
+    .registers 2
 
     .prologue
-    .line 157
+    .line 104
     iput-object p1, p0, Landroid/support/v7/widget/PopupMenu$1;->a:Landroid/support/v7/widget/PopupMenu;
 
-    invoke-direct {p0, p2}, Landroid/support/v7/widget/ListPopupWindow$ForwardingListener;-><init>(Landroid/view/View;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getPopup()Landroid/support/v7/widget/ListPopupWindow;
-    .registers 2
+.method public onMenuItemSelected(Landroid/support/v7/view/menu/MenuBuilder;Landroid/view/MenuItem;)Z
+    .registers 4
 
     .prologue
-    .line 173
+    .line 107
     iget-object v0, p0, Landroid/support/v7/widget/PopupMenu$1;->a:Landroid/support/v7/widget/PopupMenu;
 
-    # getter for: Landroid/support/v7/widget/PopupMenu;->mPopup:Landroid/support/v7/view/menu/MenuPopupHelper;
-    invoke-static {v0}, Landroid/support/v7/widget/PopupMenu;->access$000(Landroid/support/v7/widget/PopupMenu;)Landroid/support/v7/view/menu/MenuPopupHelper;
+    # getter for: Landroid/support/v7/widget/PopupMenu;->mMenuItemClickListener:Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;
+    invoke-static {v0}, Landroid/support/v7/widget/PopupMenu;->access$000(Landroid/support/v7/widget/PopupMenu;)Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/support/v7/view/menu/MenuPopupHelper;->c()Landroid/support/v7/widget/ListPopupWindow;
+    if-eqz v0, :cond_13
+
+    .line 108
+    iget-object v0, p0, Landroid/support/v7/widget/PopupMenu$1;->a:Landroid/support/v7/widget/PopupMenu;
+
+    # getter for: Landroid/support/v7/widget/PopupMenu;->mMenuItemClickListener:Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;
+    invoke-static {v0}, Landroid/support/v7/widget/PopupMenu;->access$000(Landroid/support/v7/widget/PopupMenu;)Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;
 
     move-result-object v0
 
-    return-object v0
+    invoke-interface {v0, p2}, Landroid/support/v7/widget/PopupMenu$OnMenuItemClickListener;->onMenuItemClick(Landroid/view/MenuItem;)Z
+
+    move-result v0
+
+    .line 110
+    :goto_12
+    return v0
+
+    :cond_13
+    const/4 v0, 0x0
+
+    goto :goto_12
 .end method
 
-.method protected onForwardingStarted()Z
+.method public onMenuModeChange(Landroid/support/v7/view/menu/MenuBuilder;)V
     .registers 2
 
     .prologue
-    .line 160
-    iget-object v0, p0, Landroid/support/v7/widget/PopupMenu$1;->a:Landroid/support/v7/widget/PopupMenu;
-
-    invoke-virtual {v0}, Landroid/support/v7/widget/PopupMenu;->show()V
-
-    .line 161
-    const/4 v0, 0x1
-
-    return v0
-.end method
-
-.method protected onForwardingStopped()Z
-    .registers 2
-
-    .prologue
-    .line 166
-    iget-object v0, p0, Landroid/support/v7/widget/PopupMenu$1;->a:Landroid/support/v7/widget/PopupMenu;
-
-    invoke-virtual {v0}, Landroid/support/v7/widget/PopupMenu;->dismiss()V
-
-    .line 167
-    const/4 v0, 0x1
-
-    return v0
+    .line 115
+    return-void
 .end method

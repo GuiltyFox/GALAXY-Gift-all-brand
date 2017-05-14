@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 476
+    .line 522
     invoke-direct {p0}, Landroid/support/v4/view/accessibility/AccessibilityRecordCompat$AccessibilityRecordIcsImpl;-><init>()V
 
     return-void
@@ -20,10 +20,10 @@
     .registers 3
 
     .prologue
-    .line 489
+    .line 535
     invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/AccessibilityRecordCompatIcsMr1;->a(Ljava/lang/Object;I)V
 
-    .line 490
+    .line 536
     return-void
 .end method
 
@@ -31,9 +31,9 @@
     .registers 3
 
     .prologue
-    .line 494
+    .line 540
     invoke-static {p1, p2}, Landroid/support/v4/view/accessibility/AccessibilityRecordCompatIcsMr1;->b(Ljava/lang/Object;I)V
 
-    .line 495
+    .line 541
     return-void
 .end method

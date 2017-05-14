@@ -15,7 +15,7 @@
     .registers 2
 
     .prologue
-    .line 590
+    .line 591
     iput-object p1, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$UserLoginListener;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
     .registers 3
 
     .prologue
-    .line 590
+    .line 591
     invoke-direct {p0, p1}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$UserLoginListener;-><init>(Lcom/samsung/privilege/fragment/CampaignListGiftFragment;)V
 
     return-void
@@ -39,14 +39,14 @@
     .registers 4
 
     .prologue
-    .line 593
+    .line 594
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$UserLoginListener;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->a(Lcom/samsung/privilege/fragment/CampaignListGiftFragment;I)V
 
-    .line 594
+    .line 595
     return-void
 .end method
 
@@ -54,14 +54,14 @@
     .registers 4
 
     .prologue
-    .line 598
+    .line 599
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$UserLoginListener;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->a(Lcom/samsung/privilege/fragment/CampaignListGiftFragment;I)V
 
-    .line 599
+    .line 600
     return-void
 .end method
 
@@ -69,6 +69,14 @@
     .registers 2
 
     .prologue
-    .line 604
+    .line 605
+    return-void
+.end method
+
+.method public d(Ljava/lang/String;)V
+    .registers 2
+
+    .prologue
+    .line 610
     return-void
 .end method

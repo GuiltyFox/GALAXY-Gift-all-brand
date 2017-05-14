@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 289
+    .line 291
     iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;
 
     iput-object p2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener$1;->a:Ljava/lang/String;
@@ -39,7 +39,7 @@
     .registers 5
 
     .prologue
-    .line 292
+    .line 294
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -70,7 +70,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 294
+    .line 296
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -79,7 +79,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->a(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;Ljava/util/ArrayList;)V
 
-    .line 297
+    .line 299
     :try_start_29
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;
 
@@ -89,7 +89,7 @@
 
     if-eqz v0, :cond_3c
 
-    .line 298
+    .line 300
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -102,16 +102,16 @@
     :try_end_3c
     .catch Ljava/lang/Exception; {:try_start_29 .. :try_end_3c} :catch_3d
 
-    .line 303
+    .line 305
     :cond_3c
     :goto_3c
     return-void
 
-    .line 300
+    .line 302
     :catch_3d
     move-exception v0
 
-    .line 301
+    .line 303
     iget-object v1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;
 
     iget-object v1, v1, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$CheckWalletListener;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;

@@ -59,7 +59,7 @@
     .registers 2
 
     .prologue
-    .line 194
+    .line 195
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter;->c:Landroid/database/Cursor;
 
     return-object v0
@@ -69,19 +69,19 @@
     .registers 3
 
     .prologue
-    .line 396
+    .line 404
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter;->i:Landroid/widget/FilterQueryProvider;
 
     if-eqz v0, :cond_b
 
-    .line 397
+    .line 405
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter;->i:Landroid/widget/FilterQueryProvider;
 
     invoke-interface {v0, p1}, Landroid/widget/FilterQueryProvider;->runQuery(Ljava/lang/CharSequence;)Landroid/database/Cursor;
 
     move-result-object v0
 
-    .line 400
+    .line 408
     :goto_a
     return-object v0
 
@@ -221,18 +221,18 @@
     .registers 3
 
     .prologue
-    .line 315
+    .line 321
     invoke-virtual {p0, p1}, Landroid/support/v4/widget/CursorAdapter;->b(Landroid/database/Cursor;)Landroid/database/Cursor;
 
     move-result-object v0
 
-    .line 316
+    .line 322
     if-eqz v0, :cond_9
 
-    .line 317
+    .line 323
     invoke-interface {v0}, Landroid/database/Cursor;->close()V
 
-    .line 319
+    .line 325
     :cond_9
     return-void
 .end method
@@ -244,26 +244,26 @@
     .registers 4
 
     .prologue
-    .line 332
+    .line 338
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter;->c:Landroid/database/Cursor;
 
     if-ne p1, v0, :cond_6
 
-    .line 333
+    .line 339
     const/4 v0, 0x0
 
-    .line 354
+    .line 360
     :goto_5
     return-object v0
 
-    .line 335
+    .line 341
     :cond_6
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter;->c:Landroid/database/Cursor;
 
-    .line 336
+    .line 342
     if-eqz v0, :cond_1c
 
-    .line 337
+    .line 343
     iget-object v1, p0, Landroid/support/v4/widget/CursorAdapter;->f:Landroid/support/v4/widget/CursorAdapter$ChangeObserver;
 
     if-eqz v1, :cond_13
@@ -272,7 +272,7 @@
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->unregisterContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 338
+    .line 344
     :cond_13
     iget-object v1, p0, Landroid/support/v4/widget/CursorAdapter;->g:Landroid/database/DataSetObserver;
 
@@ -282,14 +282,14 @@
 
     invoke-interface {v0, v1}, Landroid/database/Cursor;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
 
-    .line 340
+    .line 346
     :cond_1c
     iput-object p1, p0, Landroid/support/v4/widget/CursorAdapter;->c:Landroid/database/Cursor;
 
-    .line 341
+    .line 347
     if-eqz p1, :cond_42
 
-    .line 342
+    .line 348
     iget-object v1, p0, Landroid/support/v4/widget/CursorAdapter;->f:Landroid/support/v4/widget/CursorAdapter$ChangeObserver;
 
     if-eqz v1, :cond_29
@@ -298,7 +298,7 @@
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->registerContentObserver(Landroid/database/ContentObserver;)V
 
-    .line 343
+    .line 349
     :cond_29
     iget-object v1, p0, Landroid/support/v4/widget/CursorAdapter;->g:Landroid/database/DataSetObserver;
 
@@ -308,7 +308,7 @@
 
     invoke-interface {p1, v1}, Landroid/database/Cursor;->registerDataSetObserver(Landroid/database/DataSetObserver;)V
 
-    .line 344
+    .line 350
     :cond_32
     const-string/jumbo v1, "_id"
 
@@ -318,28 +318,28 @@
 
     iput v1, p0, Landroid/support/v4/widget/CursorAdapter;->e:I
 
-    .line 345
+    .line 351
     const/4 v1, 0x1
 
     iput-boolean v1, p0, Landroid/support/v4/widget/CursorAdapter;->a:Z
 
-    .line 347
+    .line 353
     invoke-virtual {p0}, Landroid/support/v4/widget/CursorAdapter;->notifyDataSetChanged()V
 
     goto :goto_5
 
-    .line 349
+    .line 355
     :cond_42
     const/4 v1, -0x1
 
     iput v1, p0, Landroid/support/v4/widget/CursorAdapter;->e:I
 
-    .line 350
+    .line 356
     const/4 v1, 0x0
 
     iput-boolean v1, p0, Landroid/support/v4/widget/CursorAdapter;->a:Z
 
-    .line 352
+    .line 358
     invoke-virtual {p0}, Landroid/support/v4/widget/CursorAdapter;->notifyDataSetInvalidated()V
 
     goto :goto_5
@@ -349,7 +349,7 @@
     .registers 5
 
     .prologue
-    .line 296
+    .line 301
     invoke-virtual {p0, p1, p2, p3}, Landroid/support/v4/widget/CursorAdapter;->a(Landroid/content/Context;Landroid/database/Cursor;Landroid/view/ViewGroup;)Landroid/view/View;
 
     move-result-object v0
@@ -361,7 +361,7 @@
     .registers 2
 
     .prologue
-    .line 447
+    .line 456
     iget-boolean v0, p0, Landroid/support/v4/widget/CursorAdapter;->b:Z
 
     if-eqz v0, :cond_18
@@ -378,7 +378,7 @@
 
     if-nez v0, :cond_18
 
-    .line 449
+    .line 458
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter;->c:Landroid/database/Cursor;
 
     invoke-interface {v0}, Landroid/database/Cursor;->requery()Z
@@ -387,7 +387,7 @@
 
     iput-boolean v0, p0, Landroid/support/v4/widget/CursorAdapter;->a:Z
 
-    .line 451
+    .line 460
     :cond_18
     return-void
 .end method
@@ -396,7 +396,7 @@
     .registers 3
 
     .prologue
-    .line 367
+    .line 374
     if-nez p1, :cond_6
 
     const-string/jumbo v0, ""
@@ -416,7 +416,7 @@
     .registers 2
 
     .prologue
-    .line 201
+    .line 203
     iget-boolean v0, p0, Landroid/support/v4/widget/CursorAdapter;->a:Z
 
     if-eqz v0, :cond_f
@@ -425,14 +425,14 @@
 
     if-eqz v0, :cond_f
 
-    .line 202
+    .line 204
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter;->c:Landroid/database/Cursor;
 
     invoke-interface {v0}, Landroid/database/Cursor;->getCount()I
 
     move-result v0
 
-    .line 204
+    .line 206
     :goto_e
     return v0
 
@@ -446,20 +446,20 @@
     .registers 6
 
     .prologue
-    .line 262
+    .line 267
     iget-boolean v0, p0, Landroid/support/v4/widget/CursorAdapter;->a:Z
 
     if-eqz v0, :cond_1b
 
-    .line 263
+    .line 268
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter;->c:Landroid/database/Cursor;
 
     invoke-interface {v0, p1}, Landroid/database/Cursor;->moveToPosition(I)Z
 
-    .line 265
+    .line 270
     if-nez p2, :cond_13
 
-    .line 266
+    .line 271
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter;->d:Landroid/content/Context;
 
     iget-object v1, p0, Landroid/support/v4/widget/CursorAdapter;->c:Landroid/database/Cursor;
@@ -468,7 +468,7 @@
 
     move-result-object p2
 
-    .line 270
+    .line 275
     :cond_13
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter;->d:Landroid/content/Context;
 
@@ -476,7 +476,7 @@
 
     invoke-virtual {p0, p2, v0, v1}, Landroid/support/v4/widget/CursorAdapter;->a(Landroid/view/View;Landroid/content/Context;Landroid/database/Cursor;)V
 
-    .line 273
+    .line 278
     :goto_1a
     return-object p2
 
@@ -490,19 +490,19 @@
     .registers 2
 
     .prologue
-    .line 404
+    .line 413
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter;->h:Landroid/support/v4/widget/CursorFilter;
 
     if-nez v0, :cond_b
 
-    .line 405
+    .line 414
     new-instance v0, Landroid/support/v4/widget/CursorFilter;
 
     invoke-direct {v0, p0}, Landroid/support/v4/widget/CursorFilter;-><init>(Landroid/support/v4/widget/CursorFilter$CursorFilterClient;)V
 
     iput-object v0, p0, Landroid/support/v4/widget/CursorAdapter;->h:Landroid/support/v4/widget/CursorFilter;
 
-    .line 407
+    .line 416
     :cond_b
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter;->h:Landroid/support/v4/widget/CursorFilter;
 
@@ -513,7 +513,7 @@
     .registers 3
 
     .prologue
-    .line 212
+    .line 215
     iget-boolean v0, p0, Landroid/support/v4/widget/CursorAdapter;->a:Z
 
     if-eqz v0, :cond_10
@@ -522,15 +522,15 @@
 
     if-eqz v0, :cond_10
 
-    .line 213
+    .line 216
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter;->c:Landroid/database/Cursor;
 
     invoke-interface {v0, p1}, Landroid/database/Cursor;->moveToPosition(I)Z
 
-    .line 214
+    .line 217
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter;->c:Landroid/database/Cursor;
 
-    .line 216
+    .line 219
     :goto_f
     return-object v0
 
@@ -546,7 +546,7 @@
     .prologue
     const-wide/16 v0, 0x0
 
-    .line 224
+    .line 228
     iget-boolean v2, p0, Landroid/support/v4/widget/CursorAdapter;->a:Z
 
     if-eqz v2, :cond_1a
@@ -555,7 +555,7 @@
 
     if-eqz v2, :cond_1a
 
-    .line 225
+    .line 229
     iget-object v2, p0, Landroid/support/v4/widget/CursorAdapter;->c:Landroid/database/Cursor;
 
     invoke-interface {v2, p1}, Landroid/database/Cursor;->moveToPosition(I)Z
@@ -564,7 +564,7 @@
 
     if-eqz v2, :cond_1a
 
-    .line 226
+    .line 230
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter;->c:Landroid/database/Cursor;
 
     iget v1, p0, Landroid/support/v4/widget/CursorAdapter;->e:I
@@ -573,7 +573,7 @@
 
     move-result-wide v0
 
-    .line 231
+    .line 235
     :cond_1a
     return-wide v0
 .end method
@@ -582,12 +582,12 @@
     .registers 7
 
     .prologue
-    .line 244
+    .line 249
     iget-boolean v0, p0, Landroid/support/v4/widget/CursorAdapter;->a:Z
 
     if-nez v0, :cond_d
 
-    .line 245
+    .line 250
     new-instance v0, Ljava/lang/IllegalStateException;
 
     const-string/jumbo v1, "this should only be called when the cursor is valid"
@@ -596,7 +596,7 @@
 
     throw v0
 
-    .line 247
+    .line 252
     :cond_d
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter;->c:Landroid/database/Cursor;
 
@@ -606,7 +606,7 @@
 
     if-nez v0, :cond_2f
 
-    .line 248
+    .line 253
     new-instance v0, Ljava/lang/IllegalStateException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -631,11 +631,11 @@
 
     throw v0
 
-    .line 251
+    .line 256
     :cond_2f
     if-nez p2, :cond_39
 
-    .line 252
+    .line 257
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter;->d:Landroid/content/Context;
 
     iget-object v1, p0, Landroid/support/v4/widget/CursorAdapter;->c:Landroid/database/Cursor;
@@ -644,7 +644,7 @@
 
     move-result-object p2
 
-    .line 256
+    .line 261
     :cond_39
     iget-object v0, p0, Landroid/support/v4/widget/CursorAdapter;->d:Landroid/content/Context;
 
@@ -652,7 +652,7 @@
 
     invoke-virtual {p0, p2, v0, v1}, Landroid/support/v4/widget/CursorAdapter;->a(Landroid/view/View;Landroid/content/Context;Landroid/database/Cursor;)V
 
-    .line 257
+    .line 262
     return-object p2
 .end method
 
@@ -660,7 +660,7 @@
     .registers 2
 
     .prologue
-    .line 237
+    .line 241
     const/4 v0, 0x1
 
     return v0

@@ -93,14 +93,14 @@
     goto :goto_f
 .end method
 
-.method public i_()V
+.method public m_()V
     .registers 2
 
     .prologue
     .line 43
     iget-object v0, p0, Lrx/internal/operators/OperatorMap$1;->a:Lrx/Subscriber;
 
-    invoke-virtual {v0}, Lrx/Subscriber;->i_()V
+    invoke-virtual {v0}, Lrx/Subscriber;->m_()V
 
     .line 44
     return-void

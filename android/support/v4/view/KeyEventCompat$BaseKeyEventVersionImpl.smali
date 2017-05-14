@@ -11,7 +11,7 @@
     .registers 1
 
     .prologue
-    .line 44
+    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -25,30 +25,30 @@
 
     const/4 v1, 0x0
 
-    .line 55
+    .line 51
     and-int v2, p1, p2
 
     if-eqz v2, :cond_1a
 
     move v2, v0
 
-    .line 56
+    .line 52
     :goto_7
     or-int v3, p3, p4
 
-    .line 57
+    .line 53
     and-int v4, p1, v3
 
     if-eqz v4, :cond_1c
 
-    .line 59
+    .line 55
     :goto_d
     if-eqz v2, :cond_22
 
-    .line 60
+    .line 56
     if-eqz v0, :cond_1e
 
-    .line 61
+    .line 57
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     const-string/jumbo v1, "bad arguments"
@@ -60,31 +60,31 @@
     :cond_1a
     move v2, v1
 
-    .line 55
+    .line 51
     goto :goto_7
 
     :cond_1c
     move v0, v1
 
-    .line 57
+    .line 53
     goto :goto_d
 
-    .line 63
+    .line 59
     :cond_1e
     xor-int/lit8 v0, v3, -0x1
 
     and-int/2addr p0, v0
 
-    .line 67
+    .line 63
     :cond_21
     :goto_21
     return p0
 
-    .line 64
+    .line 60
     :cond_22
     if-eqz v0, :cond_21
 
-    .line 65
+    .line 61
     xor-int/lit8 v0, p2, -0x1
 
     and-int/2addr p0, v0
@@ -98,24 +98,24 @@
     .registers 4
 
     .prologue
-    .line 73
+    .line 69
     and-int/lit16 v0, p1, 0xc0
 
     if-eqz v0, :cond_f
 
-    .line 74
+    .line 70
     or-int/lit8 v0, p1, 0x1
 
-    .line 76
+    .line 72
     :goto_6
     and-int/lit8 v1, v0, 0x30
 
     if-eqz v1, :cond_c
 
-    .line 77
+    .line 73
     or-int/lit8 v0, v0, 0x2
 
-    .line 79
+    .line 75
     :cond_c
     and-int/lit16 v0, v0, 0xf7
 
@@ -127,28 +127,20 @@
     goto :goto_6
 .end method
 
-.method public a(Landroid/view/KeyEvent;)V
-    .registers 2
-
-    .prologue
-    .line 99
-    return-void
-.end method
-
 .method public a(II)Z
     .registers 8
 
     .prologue
     const/4 v0, 0x1
 
-    .line 84
+    .line 80
     invoke-virtual {p0, p1}, Landroid/support/v4/view/KeyEventCompat$BaseKeyEventVersionImpl;->a(I)I
 
     move-result v1
 
     and-int/lit16 v1, v1, 0xf7
 
-    .line 85
+    .line 81
     const/16 v2, 0x40
 
     const/16 v3, 0x80
@@ -157,7 +149,7 @@
 
     move-result v1
 
-    .line 87
+    .line 83
     const/4 v2, 0x2
 
     const/16 v3, 0x10
@@ -168,7 +160,7 @@
 
     move-result v1
 
-    .line 89
+    .line 85
     if-ne v1, p2, :cond_1b
 
     :goto_1a
@@ -180,11 +172,21 @@
     goto :goto_1a
 .end method
 
+.method public a(Landroid/view/KeyEvent;)Z
+    .registers 3
+
+    .prologue
+    .line 95
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
 .method public b(I)Z
     .registers 3
 
     .prologue
-    .line 94
+    .line 90
     invoke-virtual {p0, p1}, Landroid/support/v4/view/KeyEventCompat$BaseKeyEventVersionImpl;->a(I)I
 
     move-result v0

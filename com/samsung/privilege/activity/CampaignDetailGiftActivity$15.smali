@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->o()V
+    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->n()V
 .end annotation
 
 
@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 1620
+    .line 1697
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$15;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 5
 
     .prologue
-    .line 1623
+    .line 1700
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -44,7 +44,7 @@
 
     invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 1625
+    .line 1702
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$15;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->k(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/support/v4/view/ViewPager;
@@ -53,7 +53,7 @@
 
     invoke-virtual {v0}, Landroid/support/v4/view/ViewPager;->getCurrentItem()I
 
-    .line 1627
+    .line 1704
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$15;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->l(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/Campaign;
@@ -72,7 +72,7 @@
 
     if-eqz v0, :cond_31
 
-    .line 1628
+    .line 1705
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$15;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->l(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/Campaign;
@@ -87,7 +87,7 @@
 
     add-int/lit8 v0, v0, -0x1
 
-    .line 1634
+    .line 1711
     :cond_31
     const/4 v0, 0x0
 

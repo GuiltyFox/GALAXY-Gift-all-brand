@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 811
+    .line 809
     iput-object p1, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$3;->b:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
 
     iput-object p2, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$3;->a:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
@@ -39,7 +39,7 @@
     .registers 3
 
     .prologue
-    .line 814
+    .line 812
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$3;->b:Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;
 
     iget-object v0, v0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup;->a:Landroid/support/v7/widget/AppCompatSpinner;
@@ -48,15 +48,15 @@
 
     move-result-object v0
 
-    .line 815
+    .line 813
     if-eqz v0, :cond_f
 
-    .line 816
+    .line 814
     iget-object v1, p0, Landroid/support/v7/widget/AppCompatSpinner$DropdownPopup$3;->a:Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
-    .line 818
+    .line 816
     :cond_f
     return-void
 .end method

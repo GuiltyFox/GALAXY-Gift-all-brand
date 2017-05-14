@@ -914,7 +914,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1035,7 +1035,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->m(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 388
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1117,7 +1117,7 @@
     .line 397
     const-string/jumbo v2, ""
 
-    const v3, 0x7f090282
+    const v3, 0x7f090283
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/LoginActivity;->getString(I)Ljava/lang/String;
 
@@ -1257,7 +1257,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->O(Landroid/content/Context;)Lcom/bzbs/bean/MessagePopup;
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->R(Landroid/content/Context;)Lcom/bzbs/bean/MessagePopup;
 
     move-result-object v0
 
@@ -1324,7 +1324,7 @@
     :cond_f
     const-string/jumbo v0, ""
 
-    const v1, 0x7f090282
+    const v1, 0x7f090283
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/LoginActivity;->getString(I)Ljava/lang/String;
 
@@ -1399,7 +1399,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->m(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 337
     new-instance v0, Ljava/lang/StringBuilder;
@@ -1573,7 +1573,7 @@
     .line 82
     :cond_28
     :goto_28
-    const v0, 0x7f040037
+    const v0, 0x7f040038
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/LoginActivity;->setContentView(I)V
 
@@ -1585,7 +1585,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/LoginActivity;->b:Landroid/os/Handler;
 
     .line 87
-    const v0, 0x7f10017e
+    const v0, 0x7f100180
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/LoginActivity;->findViewById(I)Landroid/view/View;
 
@@ -1615,7 +1615,7 @@
 
     .line 94
     :goto_52
-    const v0, 0x7f10017f
+    const v0, 0x7f100181
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/LoginActivity;->findViewById(I)Landroid/view/View;
 
@@ -1645,7 +1645,7 @@
 
     .line 101
     :goto_6f
-    const v0, 0x7f100181
+    const v0, 0x7f100183
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/LoginActivity;->findViewById(I)Landroid/view/View;
 

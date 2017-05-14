@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 1104
+    .line 1134
     iput-object p1, p0, Landroid/support/v4/widget/SwipeRefreshLayout$7;->a:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     invoke-direct {p0}, Landroid/view/animation/Animation;-><init>()V
@@ -32,11 +32,11 @@
     .registers 4
 
     .prologue
-    .line 1107
+    .line 1137
     iget-object v0, p0, Landroid/support/v4/widget/SwipeRefreshLayout$7;->a:Landroid/support/v4/widget/SwipeRefreshLayout;
 
     invoke-static {v0, p1}, Landroid/support/v4/widget/SwipeRefreshLayout;->b(Landroid/support/v4/widget/SwipeRefreshLayout;F)V
 
-    .line 1108
+    .line 1138
     return-void
 .end method

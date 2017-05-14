@@ -28,7 +28,7 @@
 
 
 # direct methods
-.method public constructor <init>()V
+.method constructor <init>()V
     .registers 4
 
     .prologue
@@ -97,7 +97,7 @@
 
     if-gez v1, :cond_a
 
-    .line 794
+    .line 795
     :goto_9
     return v0
 
@@ -163,6 +163,7 @@
 
     div-float/2addr v2, v3
 
+    .line 795
     invoke-static {v2, v0, v6}, Landroid/support/v4/widget/AutoScrollHelper;->a(FFF)F
 
     move-result v0
@@ -303,6 +304,7 @@
 
     if-lez v0, :cond_18
 
+    .line 783
     invoke-static {}, Landroid/view/animation/AnimationUtils;->currentAnimationTimeMillis()J
 
     move-result-wide v0

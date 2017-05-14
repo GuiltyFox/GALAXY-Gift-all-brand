@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 136
+    .line 138
     iput-object p1, p0, Lcom/samsung/privilege/activity/DashboardActivity$UserLoginListener$2;->a:Lcom/samsung/privilege/activity/DashboardActivity$UserLoginListener;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,13 +35,13 @@
     .registers 2
 
     .prologue
-    .line 139
+    .line 141
     iget-object v0, p0, Lcom/samsung/privilege/activity/DashboardActivity$UserLoginListener$2;->a:Lcom/samsung/privilege/activity/DashboardActivity$UserLoginListener;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/DashboardActivity$UserLoginListener;->a:Lcom/samsung/privilege/activity/DashboardActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/DashboardActivity;->a(Lcom/samsung/privilege/activity/DashboardActivity;)V
 
-    .line 140
+    .line 142
     return-void
 .end method

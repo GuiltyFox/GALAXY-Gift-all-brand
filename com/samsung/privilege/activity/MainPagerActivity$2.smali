@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 355
+    .line 373
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$2;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 2
 
     .prologue
-    .line 374
+    .line 392
     return-void
 .end method
 
@@ -43,12 +43,12 @@
     .registers 3
 
     .prologue
-    .line 363
+    .line 381
     const-string/jumbo v0, "Menu"
 
     invoke-static {v0}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;)V
 
-    .line 364
+    .line 382
     return-void
 .end method
 
@@ -56,7 +56,7 @@
     .registers 3
 
     .prologue
-    .line 359
+    .line 377
     return-void
 .end method
 
@@ -64,6 +64,6 @@
     .registers 2
 
     .prologue
-    .line 369
+    .line 387
     return-void
 .end method

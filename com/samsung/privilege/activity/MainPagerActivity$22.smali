@@ -3,12 +3,12 @@
 .source "MainPagerActivity.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;->doChangeLanguage(Landroid/view/View;)V
+    value = Lcom/samsung/privilege/activity/MainPagerActivity;->i()V
 .end annotation
 
 
@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 1842
+    .line 1862
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$22;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,37 +31,34 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
+.method public run()V
     .registers 4
 
     .prologue
-    .line 1845
+    const/16 v2, 0x8
+
+    .line 1865
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$22;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->getApplicationContext()Landroid/content/Context;
+    const v1, 0x7f10018e
+
+    invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+
+    .line 1866
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$22;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
+
+    const v1, 0x7f10018f
+
+    invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
 
-    const-string/jumbo v1, "1054"
+    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1b
-
-    .line 1848
-    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$22;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
-
-    const-string/jumbo v1, "1054"
-
-    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->a(Lcom/samsung/privilege/activity/MainPagerActivity;Ljava/lang/String;)V
-
-    .line 1850
-    :cond_1b
+    .line 1867
     return-void
 .end method

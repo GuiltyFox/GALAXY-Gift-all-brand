@@ -142,7 +142,7 @@
     :try_start_e
     iget-object v1, p0, Lcom/bzbs/util/NfcUtils$1;->a:Landroid/content/Context;
 
-    const v2, 0x7f09024d
+    const v2, 0x7f09024e
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
     :try_end_16

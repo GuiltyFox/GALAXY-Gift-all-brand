@@ -399,25 +399,6 @@
     goto :goto_7
 .end method
 
-.method public c_()V
-    .registers 2
-
-    .prologue
-    .line 199
-    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/conn/AbstractClientConnAdapter;->m()Lcz/msebera/android/httpclient/conn/OperatedClientConnection;
-
-    move-result-object v0
-
-    .line 200
-    invoke-virtual {p0, v0}, Lcz/msebera/android/httpclient/impl/conn/AbstractClientConnAdapter;->a(Lcz/msebera/android/httpclient/conn/OperatedClientConnection;)V
-
-    .line 201
-    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/OperatedClientConnection;->c_()V
-
-    .line 202
-    return-void
-.end method
-
 .method public d()Z
     .registers 3
 
@@ -453,7 +434,66 @@
     goto :goto_7
 .end method
 
-.method public declared-synchronized d_()V
+.method public f()Ljava/net/InetAddress;
+    .registers 2
+
+    .prologue
+    .line 255
+    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/conn/AbstractClientConnAdapter;->m()Lcz/msebera/android/httpclient/conn/OperatedClientConnection;
+
+    move-result-object v0
+
+    .line 256
+    invoke-virtual {p0, v0}, Lcz/msebera/android/httpclient/impl/conn/AbstractClientConnAdapter;->a(Lcz/msebera/android/httpclient/conn/OperatedClientConnection;)V
+
+    .line 257
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/OperatedClientConnection;->f()Ljava/net/InetAddress;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public g()I
+    .registers 2
+
+    .prologue
+    .line 261
+    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/conn/AbstractClientConnAdapter;->m()Lcz/msebera/android/httpclient/conn/OperatedClientConnection;
+
+    move-result-object v0
+
+    .line 262
+    invoke-virtual {p0, v0}, Lcz/msebera/android/httpclient/impl/conn/AbstractClientConnAdapter;->a(Lcz/msebera/android/httpclient/conn/OperatedClientConnection;)V
+
+    .line 263
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/OperatedClientConnection;->g()I
+
+    move-result v0
+
+    return v0
+.end method
+
+.method public g_()V
+    .registers 2
+
+    .prologue
+    .line 199
+    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/conn/AbstractClientConnAdapter;->m()Lcz/msebera/android/httpclient/conn/OperatedClientConnection;
+
+    move-result-object v0
+
+    .line 200
+    invoke-virtual {p0, v0}, Lcz/msebera/android/httpclient/impl/conn/AbstractClientConnAdapter;->a(Lcz/msebera/android/httpclient/conn/OperatedClientConnection;)V
+
+    .line 201
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/OperatedClientConnection;->g_()V
+
+    .line 202
+    return-void
+.end method
+
+.method public declared-synchronized h_()V
     .registers 5
 
     .prologue
@@ -500,46 +540,6 @@
     monitor-exit p0
 
     throw v0
-.end method
-
-.method public f()Ljava/net/InetAddress;
-    .registers 2
-
-    .prologue
-    .line 255
-    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/conn/AbstractClientConnAdapter;->m()Lcz/msebera/android/httpclient/conn/OperatedClientConnection;
-
-    move-result-object v0
-
-    .line 256
-    invoke-virtual {p0, v0}, Lcz/msebera/android/httpclient/impl/conn/AbstractClientConnAdapter;->a(Lcz/msebera/android/httpclient/conn/OperatedClientConnection;)V
-
-    .line 257
-    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/OperatedClientConnection;->f()Ljava/net/InetAddress;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-.method public g()I
-    .registers 2
-
-    .prologue
-    .line 261
-    invoke-virtual {p0}, Lcz/msebera/android/httpclient/impl/conn/AbstractClientConnAdapter;->m()Lcz/msebera/android/httpclient/conn/OperatedClientConnection;
-
-    move-result-object v0
-
-    .line 262
-    invoke-virtual {p0, v0}, Lcz/msebera/android/httpclient/impl/conn/AbstractClientConnAdapter;->a(Lcz/msebera/android/httpclient/conn/OperatedClientConnection;)V
-
-    .line 263
-    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/OperatedClientConnection;->g()I
-
-    move-result v0
-
-    return v0
 .end method
 
 .method public i()V

@@ -15,7 +15,7 @@
     .registers 2
 
     .prologue
-    .line 1781
+    .line 1308
     iput-object p1, p0, Landroid/support/v7/widget/ListPopupWindow$ListSelectorHider;->a:Landroid/support/v7/widget/ListPopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
     .registers 3
 
     .prologue
-    .line 1781
+    .line 1308
     invoke-direct {p0, p1}, Landroid/support/v7/widget/ListPopupWindow$ListSelectorHider;-><init>(Landroid/support/v7/widget/ListPopupWindow;)V
 
     return-void
@@ -39,11 +39,11 @@
     .registers 2
 
     .prologue
-    .line 1783
+    .line 1311
     iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$ListSelectorHider;->a:Landroid/support/v7/widget/ListPopupWindow;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ListPopupWindow;->clearListSelection()V
 
-    .line 1784
+    .line 1312
     return-void
 .end method

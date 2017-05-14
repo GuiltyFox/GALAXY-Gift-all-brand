@@ -31,10 +31,10 @@
     .prologue
     const/high16 v2, 0x3f800000    # 1.0f
 
-    .line 329
+    .line 330
     sub-float v0, p1, v2
 
-    .line 330
+    .line 331
     mul-float v1, v0, v0
 
     mul-float/2addr v1, v0

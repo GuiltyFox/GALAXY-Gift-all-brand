@@ -477,10 +477,12 @@
     .line 216
     add-int/lit8 v0, v1, 0x1
 
+    .line 217
     invoke-virtual {p0, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v2
 
+    .line 216
     invoke-static {v2}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
 
     move-result v2

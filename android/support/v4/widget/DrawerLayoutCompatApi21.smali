@@ -129,6 +129,7 @@
 
     move-result v0
 
+    .line 49
     invoke-virtual {p1}, Landroid/view/WindowInsets;->getSystemWindowInsetTop()I
 
     move-result v1
@@ -137,6 +138,7 @@
 
     move-result v2
 
+    .line 48
     invoke-virtual {p1, v0, v1, v3, v2}, Landroid/view/WindowInsets;->replaceSystemWindowInsets(IIII)Landroid/view/WindowInsets;
 
     move-result-object p1
@@ -160,6 +162,7 @@
 
     move-result v0
 
+    .line 52
     invoke-virtual {p1}, Landroid/view/WindowInsets;->getSystemWindowInsetRight()I
 
     move-result v1
@@ -168,6 +171,7 @@
 
     move-result v2
 
+    .line 51
     invoke-virtual {p1, v3, v0, v1, v2}, Landroid/view/WindowInsets;->replaceSystemWindowInsets(IIII)Landroid/view/WindowInsets;
 
     move-result-object p1
@@ -194,6 +198,7 @@
 
     move-result v0
 
+    .line 62
     invoke-virtual {p1}, Landroid/view/WindowInsets;->getSystemWindowInsetTop()I
 
     move-result v1
@@ -202,6 +207,7 @@
 
     move-result v2
 
+    .line 61
     invoke-virtual {p1, v0, v1, v3, v2}, Landroid/view/WindowInsets;->replaceSystemWindowInsets(IIII)Landroid/view/WindowInsets;
 
     move-result-object p1
@@ -250,6 +256,7 @@
 
     move-result v0
 
+    .line 65
     invoke-virtual {p1}, Landroid/view/WindowInsets;->getSystemWindowInsetRight()I
 
     move-result v1
@@ -258,6 +265,7 @@
 
     move-result v2
 
+    .line 64
     invoke-virtual {p1, v3, v0, v1, v2}, Landroid/view/WindowInsets;->replaceSystemWindowInsets(IIII)Landroid/view/WindowInsets;
 
     move-result-object p1

@@ -11,7 +11,7 @@
     .registers 1
 
     .prologue
-    .line 900
+    .line 744
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 900
+    .line 744
     invoke-direct {p0}, Landroid/support/v7/widget/AppCompatDrawableManager$AvdcInflateDelegate;-><init>()V
 
     return-void
@@ -33,7 +33,8 @@
     .registers 8
 
     .prologue
-    .line 905
+    .line 749
+    .line 750
     :try_start_0
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
@@ -45,22 +46,22 @@
 
     move-result-object v0
 
-    .line 909
+    .line 753
     :goto_8
     return-object v0
 
-    .line 907
+    .line 751
     :catch_9
     move-exception v0
 
-    .line 908
+    .line 752
     const-string/jumbo v1, "AvdcInflateDelegate"
 
     const-string/jumbo v2, "Exception while inflating <animated-vector>"
 
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 909
+    .line 753
     const/4 v0, 0x0
 
     goto :goto_8

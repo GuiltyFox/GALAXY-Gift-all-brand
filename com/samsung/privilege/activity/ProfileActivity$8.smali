@@ -25,7 +25,7 @@
     .registers 4
 
     .prologue
-    .line 395
+    .line 399
     iput-object p1, p0, Lcom/samsung/privilege/activity/ProfileActivity$8;->c:Lcom/samsung/privilege/activity/ProfileActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/ProfileActivity$8;->a:Landroid/widget/TextView;
@@ -43,15 +43,15 @@
     .registers 8
 
     .prologue
-    .line 397
+    .line 401
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
     move-result-object v0
 
-    .line 398
+    .line 402
     invoke-virtual {v0, p2, p3, p4}, Ljava/util/Calendar;->set(III)V
 
-    .line 399
+    .line 403
     iget-object v1, p0, Lcom/samsung/privilege/activity/ProfileActivity$8;->a:Landroid/widget/TextView;
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/ProfileActivity$8;->b:Ljava/text/SimpleDateFormat;
@@ -66,6 +66,6 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 400
+    .line 404
     return-void
 .end method

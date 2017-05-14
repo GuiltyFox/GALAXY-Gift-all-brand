@@ -208,13 +208,13 @@
     if-nez v4, :cond_6a
 
     .line 472
-    new-instance v4, Landroid/widget/ImageView;
+    new-instance v4, Landroid/support/v7/widget/AppCompatImageView;
 
     invoke-virtual {p0}, Landroid/support/v7/widget/ScrollingTabContainerView$TabView;->getContext()Landroid/content/Context;
 
     move-result-object v5
 
-    invoke-direct {v4, v5}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v4, v5}, Landroid/support/v7/widget/AppCompatImageView;-><init>(Landroid/content/Context;)V
 
     .line 473
     new-instance v5, Landroid/support/v7/widget/LinearLayoutCompat$LayoutParams;
@@ -413,7 +413,7 @@
     .registers 2
 
     .prologue
-    .line 540
+    .line 541
     iget-object v0, p0, Landroid/support/v7/widget/ScrollingTabContainerView$TabView;->c:Landroid/support/v7/app/ActionBar$Tab;
 
     return-object v0
@@ -473,30 +473,30 @@
     .prologue
     const/4 v6, 0x0
 
-    .line 521
+    .line 522
     const/4 v0, 0x2
 
     new-array v0, v0, [I
 
-    .line 522
+    .line 523
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/ScrollingTabContainerView$TabView;->getLocationOnScreen([I)V
 
-    .line 524
+    .line 525
     invoke-virtual {p0}, Landroid/support/v7/widget/ScrollingTabContainerView$TabView;->getContext()Landroid/content/Context;
 
     move-result-object v1
 
-    .line 525
+    .line 526
     invoke-virtual {p0}, Landroid/support/v7/widget/ScrollingTabContainerView$TabView;->getWidth()I
 
     move-result v2
 
-    .line 526
+    .line 527
     invoke-virtual {p0}, Landroid/support/v7/widget/ScrollingTabContainerView$TabView;->getHeight()I
 
     move-result v3
 
-    .line 527
+    .line 528
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v4
@@ -507,7 +507,7 @@
 
     iget v4, v4, Landroid/util/DisplayMetrics;->widthPixels:I
 
-    .line 529
+    .line 530
     iget-object v5, p0, Landroid/support/v7/widget/ScrollingTabContainerView$TabView;->c:Landroid/support/v7/app/ActionBar$Tab;
 
     invoke-virtual {v5}, Landroid/support/v7/app/ActionBar$Tab;->e()Ljava/lang/CharSequence;
@@ -518,7 +518,7 @@
 
     move-result-object v1
 
-    .line 532
+    .line 533
     const/16 v5, 0x31
 
     aget v0, v0, v6
@@ -533,10 +533,10 @@
 
     invoke-virtual {v1, v5, v0, v3}, Landroid/widget/Toast;->setGravity(III)V
 
-    .line 535
+    .line 536
     invoke-virtual {v1}, Landroid/widget/Toast;->show()V
 
-    .line 536
+    .line 537
     const/4 v0, 0x1
 
     return v0

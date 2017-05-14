@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 945
+    .line 1022
     iput-object p1, p0, Landroid/support/v7/widget/SearchView$7;->a:Landroid/support/v7/widget/SearchView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 3
 
     .prologue
-    .line 948
+    .line 1025
     iget-object v0, p0, Landroid/support/v7/widget/SearchView$7;->a:Landroid/support/v7/widget/SearchView;
 
     # getter for: Landroid/support/v7/widget/SearchView;->mSearchButton:Landroid/widget/ImageView;
@@ -45,18 +45,18 @@
 
     if-ne p1, v0, :cond_e
 
-    .line 949
+    .line 1026
     iget-object v0, p0, Landroid/support/v7/widget/SearchView$7;->a:Landroid/support/v7/widget/SearchView;
 
     # invokes: Landroid/support/v7/widget/SearchView;->onSearchClicked()V
     invoke-static {v0}, Landroid/support/v7/widget/SearchView;->access$500(Landroid/support/v7/widget/SearchView;)V
 
-    .line 959
+    .line 1036
     :cond_d
     :goto_d
     return-void
 
-    .line 950
+    .line 1027
     :cond_e
     iget-object v0, p0, Landroid/support/v7/widget/SearchView$7;->a:Landroid/support/v7/widget/SearchView;
 
@@ -67,7 +67,7 @@
 
     if-ne p1, v0, :cond_1c
 
-    .line 951
+    .line 1028
     iget-object v0, p0, Landroid/support/v7/widget/SearchView$7;->a:Landroid/support/v7/widget/SearchView;
 
     # invokes: Landroid/support/v7/widget/SearchView;->onCloseClicked()V
@@ -75,7 +75,7 @@
 
     goto :goto_d
 
-    .line 952
+    .line 1029
     :cond_1c
     iget-object v0, p0, Landroid/support/v7/widget/SearchView$7;->a:Landroid/support/v7/widget/SearchView;
 
@@ -86,7 +86,7 @@
 
     if-ne p1, v0, :cond_2a
 
-    .line 953
+    .line 1030
     iget-object v0, p0, Landroid/support/v7/widget/SearchView$7;->a:Landroid/support/v7/widget/SearchView;
 
     # invokes: Landroid/support/v7/widget/SearchView;->onSubmitQuery()V
@@ -94,7 +94,7 @@
 
     goto :goto_d
 
-    .line 954
+    .line 1031
     :cond_2a
     iget-object v0, p0, Landroid/support/v7/widget/SearchView$7;->a:Landroid/support/v7/widget/SearchView;
 
@@ -105,7 +105,7 @@
 
     if-ne p1, v0, :cond_38
 
-    .line 955
+    .line 1032
     iget-object v0, p0, Landroid/support/v7/widget/SearchView$7;->a:Landroid/support/v7/widget/SearchView;
 
     # invokes: Landroid/support/v7/widget/SearchView;->onVoiceClicked()V
@@ -113,7 +113,7 @@
 
     goto :goto_d
 
-    .line 956
+    .line 1033
     :cond_38
     iget-object v0, p0, Landroid/support/v7/widget/SearchView$7;->a:Landroid/support/v7/widget/SearchView;
 
@@ -124,7 +124,7 @@
 
     if-ne p1, v0, :cond_d
 
-    .line 957
+    .line 1034
     iget-object v0, p0, Landroid/support/v7/widget/SearchView$7;->a:Landroid/support/v7/widget/SearchView;
 
     # invokes: Landroid/support/v7/widget/SearchView;->forceSuggestionQuery()V

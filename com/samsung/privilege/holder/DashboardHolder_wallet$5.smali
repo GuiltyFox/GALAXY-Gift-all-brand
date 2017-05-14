@@ -67,7 +67,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
-    const v2, 0x7f0900c4
+    const v2, 0x7f0900c5
 
     invoke-virtual {v1, v2}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -84,7 +84,7 @@
     :cond_15
     iget-object v0, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -133,7 +133,7 @@
     .line 535
     iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
-    const v3, 0x7f09040b
+    const v3, 0x7f09043a
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 
@@ -144,7 +144,7 @@
     .line 536
     iget-object v2, p0, Lcom/samsung/privilege/holder/DashboardHolder_wallet$5;->a:Landroid/app/Activity;
 
-    const v3, 0x7f09039b
+    const v3, 0x7f0903b8
 
     invoke-virtual {v2, v3}, Landroid/app/Activity;->getString(I)Ljava/lang/String;
 

@@ -100,7 +100,7 @@
 
     aget-object v1, v1, v0
 
-    const v2, 0x7f02034a
+    const v2, 0x7f02034f
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -116,7 +116,7 @@
 
     aget-object v1, v1, v0
 
-    const v2, 0x7f020348
+    const v2, 0x7f02034d
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 

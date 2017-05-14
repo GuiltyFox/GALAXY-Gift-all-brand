@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/WalletCardActivity;->a(Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/activity/WalletCardActivity;->a(Ljava/lang/String;J)V
 .end annotation
 
 
@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 1096
+    .line 1324
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$13;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,19 +37,19 @@
     .prologue
     const v3, 0x7f0f0048
 
-    .line 1099
+    .line 1327
     invoke-static {}, Lcom/bzbs/util/BBUtil;->a()Z
 
     move-result v0
 
     if-nez v0, :cond_18
 
-    .line 1100
+    .line 1328
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$13;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$13;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    const v2, 0x7f0900c4
+    const v2, 0x7f0900c5
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->getString(I)Ljava/lang/String;
 
@@ -57,16 +57,16 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/DialogUtil;->b(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 1126
+    .line 1354
     :cond_17
     :goto_17
     return-void
 
-    .line 1102
+    .line 1330
     :cond_18
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$13;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->L:Landroid/widget/TextView;
+    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->N:Landroid/widget/TextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
@@ -76,7 +76,7 @@
 
     move-result-object v0
 
-    .line 1104
+    .line 1332
     if-eqz v0, :cond_17
 
     const-string/jumbo v1, ""
@@ -87,23 +87,23 @@
 
     if-nez v1, :cond_17
 
-    .line 1105
+    .line 1333
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$13;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity;->n:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->setBackgroundResource(I)V
 
-    .line 1106
+    .line 1334
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$13;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity;->m:Landroid/widget/ImageView;
 
-    const v2, 0x7f0202cd
+    const v2, 0x7f0202d2
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1107
+    .line 1335
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$13;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity;->o:Landroid/widget/TextView;
@@ -116,14 +116,14 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1109
+    .line 1337
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$13;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity;->r:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->setBackgroundResource(I)V
 
-    .line 1110
+    .line 1338
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$13;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity;->s:Landroid/widget/TextView;
@@ -136,14 +136,14 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1112
+    .line 1340
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$13;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity;->v:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v1, v3}, Landroid/widget/RelativeLayout;->setBackgroundResource(I)V
 
-    .line 1113
+    .line 1341
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$13;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity;->w:Landroid/widget/TextView;
@@ -156,7 +156,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1115
+    .line 1343
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$13;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity;->z:Landroid/widget/RelativeLayout;
@@ -165,16 +165,16 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/RelativeLayout;->setBackgroundResource(I)V
 
-    .line 1116
+    .line 1344
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$13;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity;->y:Landroid/widget/ImageView;
 
-    const v2, 0x7f0202ca
+    const v2, 0x7f0202cf
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 1117
+    .line 1345
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$13;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity;->A:Landroid/widget/TextView;
@@ -187,7 +187,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1118
+    .line 1346
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$13;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity;->B:Landroid/widget/TextView;
@@ -200,14 +200,14 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1120
+    .line 1348
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$13;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
     const/4 v2, 0x0
 
     invoke-static {v1, v0, v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Lcom/samsung/privilege/activity/WalletCardActivity;Ljava/lang/String;I)V
 
-    .line 1123
+    .line 1351
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -220,7 +220,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$13;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    invoke-static {v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->e(Lcom/samsung/privilege/activity/WalletCardActivity;)Lcom/bzbs/bean/DashboardItem;
+    invoke-static {v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->d(Lcom/samsung/privilege/activity/WalletCardActivity;)Lcom/bzbs/bean/DashboardItem;
 
     move-result-object v1
 
@@ -238,7 +238,7 @@
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$13;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    invoke-static {v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->e(Lcom/samsung/privilege/activity/WalletCardActivity;)Lcom/bzbs/bean/DashboardItem;
+    invoke-static {v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->d(Lcom/samsung/privilege/activity/WalletCardActivity;)Lcom/bzbs/bean/DashboardItem;
 
     move-result-object v2
 

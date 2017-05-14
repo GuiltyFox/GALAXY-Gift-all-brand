@@ -119,7 +119,7 @@
 
     move-result-object v1
 
-    invoke-static {p1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -295,7 +295,7 @@
 
     sget-object v1, Lcom/bzbs/marketplace/dialog/ConfirmDealsGetBlurDialog;->a:Landroid/app/Activity;
 
-    const v2, 0x7f0d0102
+    const v2, 0x7f0c010a
 
     invoke-direct {v0, v1, v2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
@@ -306,7 +306,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f040107
+    const v2, 0x7f04010a
 
     const/4 v3, 0x0
 

@@ -1,769 +1,96 @@
 .class Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;
-.super Ljava/lang/Object;
+.super Lcom/bzbs/lib/http/okhttp/ResponseListener;
 .source "CampaignDetailGiftActivity.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->a(Ljava/lang/String;ZZ)V
+    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->a(Ljava/lang/String;Lcom/bzbs/lib/http/okhttp/HttpParams;Lcom/bzbs/bean/Campaign;)V
 .end annotation
 
 
 # instance fields
-.field final synthetic a:Ljava/lang/String;
+.field final synthetic a:J
 
-.field final synthetic b:Z
-
-.field final synthetic c:Z
-
-.field final synthetic d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+.field final synthetic b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Ljava/lang/String;ZZ)V
-    .registers 5
+.method constructor <init>(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;J)V
+    .registers 4
 
     .prologue
-    .line 2725
-    iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    .line 3119
+    iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->a:Ljava/lang/String;
+    iput-wide p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->a:J
 
-    iput-boolean p3, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->b:Z
-
-    iput-boolean p4, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->c:Z
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
+.method public failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
     .registers 13
 
     .prologue
-    const/4 v8, 0x1
+    .line 3138
+    invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    const/4 v9, 0x0
+    .line 3141
+    :try_start_3
+    new-instance v0, Ljava/util/Date;
 
-    .line 2730
-    :try_start_2
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->a:Ljava/lang/String;
+    invoke-direct {v0}, Ljava/util/Date;-><init>()V
 
-    const-string/jumbo v1, "<"
+    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
 
-    const-string/jumbo v2, "&lt;"
+    move-result-wide v0
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 3142
+    const-string/jumbo v2, "Campaign"
 
-    move-result-object v0
+    const-string/jumbo v3, "redeemCampaign"
 
-    const-string/jumbo v1, ">"
+    const-string/jumbo v4, "Failure"
 
-    const-string/jumbo v2, "&gt;"
+    iget-wide v6, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->a:J
 
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    sub-long/2addr v0, v6
 
-    move-result-object v0
+    invoke-static {v2, v3, v4, v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
+    :try_end_1b
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_c9
 
-    .line 2732
-    iget-boolean v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->b:Z
-
-    if-ne v1, v8, :cond_ba
-
-    .line 2734
-    new-instance v1, Lorg/json/JSONObject;
-
-    invoke-direct {v1, v0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
-
-    .line 2735
-    const-string/jumbo v0, "Serial"
-
-    invoke-static {v1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v5
-
-    .line 2736
-    const-string/jumbo v0, "PrivilegeMessage"
-
-    invoke-static {v1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+    .line 3147
+    :goto_1b
+    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->g()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 2737
-    const-string/jumbo v2, "CurrentDate"
-
-    invoke-static {v1, v2}, Lcom/bzbs/util/JsonUtil;->c(Lorg/json/JSONObject;Ljava/lang/String;)J
-
-    .line 2738
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    invoke-static {v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->l(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/Campaign;
-
-    move-result-object v2
-
-    iget-object v2, v2, Lcom/bzbs/bean/Campaign;->PointPerUnit:Ljava/lang/String;
-
-    invoke-static {v2}, Lcom/bzbs/util/BBUtil;->b(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    move-result v2
-
-    if-lez v2, :cond_57
-
-    .line 2739
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    invoke-virtual {v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    const-string/jumbo v3, "Points"
-
-    invoke-static {v1, v3}, Lcom/bzbs/util/JsonUtil;->c(Lorg/json/JSONObject;Ljava/lang/String;)J
-
-    move-result-wide v6
-
-    invoke-static {v2, v6, v7}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;J)Z
-
-    .line 2741
-    :cond_57
-    const-string/jumbo v2, "ExpireIn"
-
-    invoke-static {v1, v2}, Lcom/bzbs/util/JsonUtil;->d(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Long;
-
-    move-result-object v4
-
-    .line 2743
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    invoke-static {v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->l(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/Campaign;
-
-    move-result-object v2
-
-    iget-object v2, v2, Lcom/bzbs/bean/Campaign;->Type:Ljava/lang/String;
-
-    const-string/jumbo v3, "0"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_7a
-
-    .line 2744
-    if-eqz v0, :cond_174
-
-    const-string/jumbo v2, ""
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_174
-
-    .line 2763
-    :cond_7a
-    :goto_7a
-    const-string/jumbo v2, "NFCWriteBack"
-
-    invoke-static {v1, v2}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
-    .line 2764
-    if-eqz v1, :cond_252
-
-    const-string/jumbo v2, ""
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_252
-
-    .line 2765
-    new-instance v0, Lcom/bzbs/util/DeviceHelper;
-
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    invoke-virtual {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v1
-
-    invoke-direct {v0, v1}, Lcom/bzbs/util/DeviceHelper;-><init>(Landroid/content/Context;)V
-
-    .line 2766
-    invoke-virtual {v0}, Lcom/bzbs/util/DeviceHelper;->d()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 2768
-    const-string/jumbo v1, "IMEI=<imei>;SERIAL=<serial>;PRICE=<price>;"
-
-    .line 2769
-    const-string/jumbo v2, "<imei>"
-
-    invoke-virtual {v1, v2, v0}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 2770
-    const-string/jumbo v1, "<serial>"
-
-    invoke-virtual {v0, v1, v5}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 2771
-    const-string/jumbo v1, "<price>"
-
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    invoke-static {v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->l(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/Campaign;
-
-    move-result-object v2
-
-    iget-object v2, v2, Lcom/bzbs/bean/Campaign;->PricePerUnit:Ljava/lang/String;
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 2789
-    :cond_ba
-    :goto_ba
-    iget-boolean v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->c:Z
-
-    if-ne v0, v8, :cond_13b
-
-    .line 2790
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->l(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/Campaign;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lcom/bzbs/bean/Campaign;->Website:Ljava/lang/String;
-
-    invoke-static {v0}, Lcom/bzbs/util/BBUtil;->a(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, ""
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-    :try_end_d0
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_d0} :catch_280
-
-    move-result v0
-
-    if-nez v0, :cond_13b
-
-    .line 2792
-    :try_start_d3
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->l(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/Campaign;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lcom/bzbs/bean/Campaign;->Website:Ljava/lang/String;
-
-    invoke-static {v0}, Lcom/bzbs/util/BBUtil;->a(Ljava/lang/Object;)Ljava/lang/String;
-    :try_end_de
-    .catch Ljava/lang/Exception; {:try_start_d3 .. :try_end_de} :catch_28b
-
-    move-result-object v0
-
-    .line 2795
-    :try_start_df
-    new-instance v1, Lcom/bzbs/util/DeviceHelper;
-
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    invoke-virtual {v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v2
-
-    invoke-direct {v1, v2}, Lcom/bzbs/util/DeviceHelper;-><init>(Landroid/content/Context;)V
-
-    .line 2796
-    const-string/jumbo v2, "<deviceId>"
-
-    invoke-virtual {v1}, Lcom/bzbs/util/DeviceHelper;->d()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v2, v1}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 2797
-    const-string/jumbo v1, "<uid>"
-
-    invoke-static {}, Lcom/facebook/Profile;->getCurrentProfile()Lcom/facebook/Profile;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Lcom/facebook/Profile;->getId()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    :try_end_103
-    .catch Ljava/lang/Exception; {:try_start_df .. :try_end_103} :catch_2e7
-
-    move-result-object v0
-
-    .line 2802
-    :goto_104
-    :try_start_104
-    const-string/jumbo v1, "https://"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_12a
-
-    const-string/jumbo v1, "http://"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_12a
-
-    .line 2803
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string/jumbo v2, "http://"
+    const-string/jumbo v2, "(goRedeemCampaignSSLPinning|onFailure)response_code="
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 2805
-    :cond_12a
-    new-instance v1, Landroid/content/Intent;
-
-    const-string/jumbo v2, "android.intent.action.VIEW"
-
-    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v0
-
-    invoke-direct {v1, v2, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
-
-    .line 2806
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->startActivity(Landroid/content/Intent;)V
-    :try_end_13b
-    .catch Ljava/lang/Exception; {:try_start_104 .. :try_end_13b} :catch_28b
-
-    .line 2825
-    :cond_13b
-    :goto_13b
-    :try_start_13b
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->b(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)V
-
-    .line 2826
-    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->h()Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "getCampaign|processJsonRedeem"
-
-    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 2827
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->l(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/Campaign;
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    iget-object v1, v1, Lcom/bzbs/bean/Campaign;->ID:Ljava/lang/String;
+    const-string/jumbo v2, ",response="
 
-    invoke-static {v1}, Lcom/bzbs/util/BBUtil;->b(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    move-result v1
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    invoke-static {v0, v1, v2, v3, v4}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->a(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;ILcom/bzbs/bean/NFCTag;ZZ)V
-
-    .line 2829
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->a(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Z)Z
-
-    .line 2830
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->r(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Z
-
-    move-result v1
-
-    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->b(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Z)V
-
-    .line 2835
-    :goto_173
-    return-void
-
-    .line 2747
-    :cond_174
-    const-string/jumbo v0, ""
-
-    .line 2748
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v2, "<p align=\'center\' style=\'color:#0774b5\'>"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 2750
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    const v3, 0x7f090141
-
-    invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v2, "<br>"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 2751
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    const v3, 0x7f090142
-
-    invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v2, "<br>"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 2752
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    const v3, 0x7f090143
-
-    invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v2, "<br>"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 2753
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    const v3, 0x7f090144
-
-    invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v2, "<br>"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 2755
-    new-instance v2, Ljava/text/SimpleDateFormat;
-
-    const-string/jumbo v3, "dd MMM yyyy"
-
-    invoke-direct {v2, v3}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
-
-    new-instance v3, Ljava/util/Date;
-
-    iget-object v6, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    invoke-static {v6}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->l(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/Campaign;
-
-    move-result-object v6
-
-    iget-wide v6, v6, Lcom/bzbs/bean/Campaign;->VoucherExpireDate:J
-
-    const-wide/16 v10, 0x3e8
-
-    mul-long/2addr v6, v10
-
-    invoke-direct {v3, v6, v7}, Ljava/util/Date;-><init>(J)V
-
-    invoke-virtual {v2, v3}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
-
-    move-result-object v2
-
-    .line 2756
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    .line 2757
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    const-string/jumbo v2, "</p>"
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    goto/16 :goto_7a
-
-    .line 2783
-    :cond_252
-    const-string/jumbo v1, "&lt;"
-
-    const-string/jumbo v2, "<"
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    const-string/jumbo v1, "&gt;"
-
-    const-string/jumbo v2, ">"
-
-    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v6
-
-    .line 2785
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->f(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    iget-object v3, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    invoke-static {v3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->l(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/Campaign;
-
-    move-result-object v3
-
-    iget-object v7, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    invoke-static {v7}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->d(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/NFCTag;
-
-    move-result-object v7
-
-    invoke-static/range {v0 .. v7}, Lcom/samsung/privilege/util/DialogSerialGift;->a(Landroid/content/Context;Landroid/os/Handler;Lcom/bzbs/bean/Purchasing;Lcom/bzbs/bean/Campaign;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Lcom/bzbs/bean/NFCTag;)V
-    :try_end_27e
-    .catch Ljava/lang/Exception; {:try_start_13b .. :try_end_27e} :catch_280
-
-    goto/16 :goto_ba
-
-    .line 2832
-    :catch_280
-    move-exception v0
-
-    .line 2833
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    const-string/jumbo v1, "Error While Redeem...\r\n{Invalid data format}..."
-
-    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->b(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Ljava/lang/String;)V
-
-    goto/16 :goto_173
-
-    .line 2807
-    :catch_28b
-    move-exception v0
-
-    move-object v1, v0
-
-    .line 2810
-    :try_start_28d
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    invoke-virtual {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getApplicationContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;)Z
-    :try_end_296
-    .catch Ljava/lang/Exception; {:try_start_28d .. :try_end_296} :catch_2bb
-
-    move-result v0
-
-    if-eqz v0, :cond_2db
-
-    move v0, v8
-
-    .line 2816
-    :goto_29a
-    if-ne v0, v8, :cond_2dd
-
-    .line 2817
-    :try_start_29c
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string/jumbo v3, "Can\'t go to website:\r\n"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v1}, Ljava/lang/Exception;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     move-result-object v1
 
@@ -771,63 +98,256 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->b(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_13b
+    .line 3149
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    .line 2813
-    :catch_2bb
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->a(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/app/ProgressDialog;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
+
+    .line 3152
+    :try_start_4a
+    new-instance v0, Lorg/json/JSONObject;
+
+    invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+
+    .line 3153
+    const-string/jumbo v1, "error"
+
+    invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+
+    move-result-object v0
+
+    .line 3154
+    const-string/jumbo v1, "id"
+
+    invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 3155
+    const-string/jumbo v2, "message"
+
+    invoke-static {v0, v2}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 3156
+    const-string/jumbo v0, "1411"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_9c
+
+    .line 3157
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    invoke-virtual {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->q(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "2"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_8f
+
+    .line 3158
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    const v2, 0x7f09036b
+
+    invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;Ljava/lang/String;Z)V
+
+    .line 3170
+    :goto_8e
+    return-void
+
+    .line 3160
+    :cond_8f
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
+    :try_end_94
+    .catch Ljava/lang/Exception; {:try_start_4a .. :try_end_94} :catch_95
+
+    goto :goto_8e
+
+    .line 3167
+    :catch_95
     move-exception v0
 
-    .line 2814
-    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->h()Ljava/lang/String;
+    .line 3168
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    move-result-object v2
+    invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    goto :goto_8e
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    .line 3162
+    :cond_9c
+    :try_start_9c
+    const-string/jumbo v0, "1201"
 
-    const-string/jumbo v4, "Exception := "
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result v0
 
-    move-result-object v3
+    if-eqz v0, :cond_c3
 
-    invoke-virtual {v0}, Ljava/lang/Exception;->toString()Ljava/lang/String;
+    .line 3163
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    invoke-static {v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->f(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/os/Handler;
+
+    move-result-object v1
+
+    const-string/jumbo v2, ""
+
+    const-string/jumbo v3, "CampaignDetailGiftActivity"
+
+    const-string/jumbo v4, "redeem"
+
+    iget-object v5, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    invoke-static {v5}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->l(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Lcom/bzbs/bean/Campaign;
+
+    move-result-object v5
+
+    iget-object v5, v5, Lcom/bzbs/bean/Campaign;->Name:Ljava/lang/String;
+
+    const/4 v6, 0x0
+
+    invoke-static/range {v0 .. v6}, Lcom/samsung/privilege/util/DialogOTPUtil;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+
+    goto :goto_8e
+
+    .line 3165
+    :cond_c3
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
+    :try_end_c8
+    .catch Ljava/lang/Exception; {:try_start_9c .. :try_end_c8} :catch_95
+
+    goto :goto_8e
+
+    .line 3143
+    :catch_c9
+    move-exception v0
+
+    goto/16 :goto_1b
+.end method
+
+.method public successfully(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
+    .registers 13
+
+    .prologue
+    .line 3123
+    :try_start_0
+    new-instance v0, Ljava/util/Date;
+
+    invoke-direct {v0}, Ljava/util/Date;-><init>()V
+
+    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
+
+    move-result-wide v0
+
+    .line 3124
+    const-string/jumbo v2, "Campaign"
+
+    const-string/jumbo v3, "redeemCampaign"
+
+    const-string/jumbo v4, "Success"
+
+    iget-wide v6, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->a:J
+
+    sub-long/2addr v0, v6
+
+    invoke-static {v2, v3, v4, v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
+    :try_end_18
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_4f
+
+    .line 3129
+    :goto_18
+    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->g()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "(goRedeemCampaignSSLPinning|onComplete)response_code="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, ",response="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 3131
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+
+    invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->a(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Landroid/app/ProgressDialog;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    move-result-object v0
+    .line 3133
+    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    invoke-static {v2, v0}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
+    const/4 v1, 0x1
 
-    :cond_2db
-    move v0, v9
+    const/4 v2, 0x0
 
-    goto :goto_29a
+    invoke-static {v0, p4, v1, v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->a(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Ljava/lang/String;ZZ)V
 
-    .line 2819
-    :cond_2dd
-    iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$26;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
+    .line 3134
+    return-void
 
-    const-string/jumbo v1, "Can\'t go to website"
+    .line 3125
+    :catch_4f
+    move-exception v0
 
-    invoke-static {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->b(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;Ljava/lang/String;)V
-    :try_end_2e5
-    .catch Ljava/lang/Exception; {:try_start_29c .. :try_end_2e5} :catch_280
-
-    goto/16 :goto_13b
-
-    .line 2798
-    :catch_2e7
-    move-exception v1
-
-    goto/16 :goto_104
+    goto :goto_18
 .end method

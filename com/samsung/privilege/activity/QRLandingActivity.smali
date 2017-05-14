@@ -184,7 +184,7 @@
     .registers 8
 
     .prologue
-    const v4, 0x7f09024a
+    const v4, 0x7f09024b
 
     .line 481
     iget-object v0, p1, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
@@ -945,7 +945,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -1674,7 +1674,7 @@
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 69
-    const v0, 0x7f04004a
+    const v0, 0x7f04004c
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/QRLandingActivity;->setContentView(I)V
 
@@ -1693,7 +1693,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/QRLandingActivity;->g:Lcom/facebook/CallbackManager;
 
     .line 79
-    const v0, 0x7f1001db
+    const v0, 0x7f1001f0
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/QRLandingActivity;->findViewById(I)Landroid/view/View;
 
@@ -1754,7 +1754,7 @@
     if-lez v0, :cond_14d
 
     .line 419
-    const v0, 0x7f09024e
+    const v0, 0x7f09024f
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/QRLandingActivity;->getString(I)Ljava/lang/String;
 

@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 148
+    .line 152
     iput-object p1, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$1;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
 
     invoke-direct {p0}, Lcom/bzbs/marketplace/asynctask/review/ReviewAsynctask$CallbackList;-><init>()V
@@ -32,14 +32,14 @@
     .registers 7
 
     .prologue
-    .line 174
+    .line 178
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$1;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a(Lcom/samsung/privilege/fragment/RequestHelpFragment;Z)V
 
-    .line 175
+    .line 179
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$1;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/RequestHelpFragment;->tvResult:Landroid/widget/TextView;
@@ -54,13 +54,13 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 176
+    .line 180
     :cond_15
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$1;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
 
     invoke-static {v0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a(Lcom/samsung/privilege/fragment/RequestHelpFragment;)V
 
-    .line 177
+    .line 181
     return-void
 .end method
 
@@ -83,35 +83,35 @@
 
     const/4 v1, 0x0
 
-    .line 151
+    .line 155
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$1;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a(Lcom/samsung/privilege/fragment/RequestHelpFragment;Z)V
 
-    .line 152
+    .line 156
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$1;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
 
     invoke-static {v0, v2}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->b(Lcom/samsung/privilege/fragment/RequestHelpFragment;Z)Z
 
-    .line 154
+    .line 158
     invoke-virtual {p4}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
     if-nez v0, :cond_17
 
-    .line 155
+    .line 159
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$1;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
 
     invoke-static {v0, v2}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->c(Lcom/samsung/privilege/fragment/RequestHelpFragment;Z)Z
 
-    .line 158
+    .line 162
     :cond_17
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$1;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
 
     invoke-static {v0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->a(Lcom/samsung/privilege/fragment/RequestHelpFragment;)V
 
-    .line 160
+    .line 164
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$1;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
 
     invoke-static {v0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->b(Lcom/samsung/privilege/fragment/RequestHelpFragment;)Z
@@ -120,7 +120,7 @@
 
     if-eqz v0, :cond_46
 
-    .line 161
+    .line 165
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$1;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
 
     invoke-static {v0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->c(Lcom/samsung/privilege/fragment/RequestHelpFragment;)Ljava/util/ArrayList;
@@ -141,7 +141,7 @@
 
     if-nez v0, :cond_45
 
-    .line 162
+    .line 166
     :cond_38
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$1;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
 
@@ -155,12 +155,12 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 170
+    .line 174
     :cond_45
     :goto_45
     return-void
 
-    .line 167
+    .line 171
     :cond_46
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$1;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
 
@@ -170,7 +170,7 @@
 
     invoke-virtual {v0, p4}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 169
+    .line 173
     iget-object v0, p0, Lcom/samsung/privilege/fragment/RequestHelpFragment$1;->a:Lcom/samsung/privilege/fragment/RequestHelpFragment;
 
     invoke-static {v0}, Lcom/samsung/privilege/fragment/RequestHelpFragment;->d(Lcom/samsung/privilege/fragment/RequestHelpFragment;)V

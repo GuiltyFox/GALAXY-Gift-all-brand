@@ -31,5 +31,8 @@
 .method public abstract onSubMenuSelected(Landroid/support/v7/view/menu/SubMenuBuilder;)Z
 .end method
 
+.method public abstract setCallback(Landroid/support/v7/view/menu/MenuPresenter$Callback;)V
+.end method
+
 .method public abstract updateMenuView(Z)V
 .end method

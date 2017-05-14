@@ -155,16 +155,6 @@
     return-object p0
 .end method
 
-.method public f_()J
-    .registers 3
-
-    .prologue
-    .line 89
-    iget-wide v0, p0, Lokio/Timeout;->d:J
-
-    return-wide v0
-.end method
-
 .method public g()V
     .registers 5
 
@@ -219,7 +209,17 @@
     return-void
 .end method
 
-.method public g_()Z
+.method public j_()J
+    .registers 3
+
+    .prologue
+    .line 89
+    iget-wide v0, p0, Lokio/Timeout;->d:J
+
+    return-wide v0
+.end method
+
+.method public k_()Z
     .registers 2
 
     .prologue
@@ -229,7 +229,7 @@
     return v0
 .end method
 
-.method public h_()Lokio/Timeout;
+.method public l_()Lokio/Timeout;
     .registers 3
 
     .prologue

@@ -117,7 +117,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 43
-    const v0, 0x7f040181
+    const v0, 0x7f040188
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewBuyPointActivity;->setContentView(I)V
 
@@ -132,7 +132,7 @@
     invoke-direct {p0}, Lcom/samsung/privilege/activity/WebViewBuyPointActivity;->a()V
 
     .line 48
-    const v0, 0x7f100250
+    const v0, 0x7f10026b
 
     :try_start_18
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewBuyPointActivity;->findViewById(I)Landroid/view/View;
@@ -173,7 +173,7 @@
     .line 57
     :cond_37
     :goto_37
-    const v0, 0x7f100193
+    const v0, 0x7f100198
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewBuyPointActivity;->findViewById(I)Landroid/view/View;
 
@@ -265,7 +265,7 @@
     if-lez v0, :cond_a1
 
     .line 157
-    const v0, 0x7f10017c
+    const v0, 0x7f10017e
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewBuyPointActivity;->findViewById(I)Landroid/view/View;
 

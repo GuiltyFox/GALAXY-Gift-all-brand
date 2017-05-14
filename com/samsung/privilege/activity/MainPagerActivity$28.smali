@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/MainPagerActivity;->doMyAccount(Landroid/view/View;)V
+    value = Lcom/samsung/privilege/activity/MainPagerActivity;->doNotification(Landroid/view/View;)V
 .end annotation
 
 
@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 2085
+    .line 2089
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$28;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -32,27 +32,20 @@
 
 # virtual methods
 .method public run()V
-    .registers 4
+    .registers 3
 
     .prologue
-    .line 2088
-    new-instance v0, Landroid/content/Intent;
+    .line 2092
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$28;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$28;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    invoke-virtual {v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->getApplicationContext()Landroid/content/Context;
+    invoke-static {v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->f(Lcom/samsung/privilege/activity/MainPagerActivity;)Landroid/os/Handler;
 
     move-result-object v1
 
-    const-class v2, Lcom/samsung/privilege/activity/ProfileActivity;
+    invoke-static {v0, v1}, Lcom/samsung/privilege/util/DialogNotification;->a(Landroid/content/Context;Landroid/os/Handler;)V
 
-    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    .line 2089
-    iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$28;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
-
-    invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->startActivity(Landroid/content/Intent;)V
-
-    .line 2090
+    .line 2093
     return-void
 .end method

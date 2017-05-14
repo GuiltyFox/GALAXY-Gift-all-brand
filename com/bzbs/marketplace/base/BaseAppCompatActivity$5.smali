@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 548
+    .line 565
     iput-object p1, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 6
 
     .prologue
-    .line 551
+    .line 568
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->o:Landroid/widget/ImageView;
@@ -48,7 +48,7 @@
 
     if-ne p1, v0, :cond_56
 
-    .line 553
+    .line 569
     :cond_c
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
@@ -58,7 +58,7 @@
 
     if-eqz v0, :cond_20
 
-    .line 555
+    .line 571
     const-string/jumbo v0, "BZB Campaign Details"
 
     const-string/jumbo v1, "Click Shopping Cart"
@@ -67,7 +67,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 558
+    .line 574
     :cond_20
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
@@ -77,7 +77,7 @@
 
     if-eqz v0, :cond_34
 
-    .line 559
+    .line 575
     const-string/jumbo v0, "BZB Marketplace"
 
     const-string/jumbo v1, "Click Shopping Cart"
@@ -86,13 +86,13 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 564
+    .line 578
     :cond_34
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->g(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -100,7 +100,7 @@
 
     move-result-object v0
 
-    .line 566
+    .line 580
     new-instance v1, Landroid/content/Intent;
 
     iget-object v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
@@ -111,17 +111,17 @@
 
     invoke-direct {v1, v2, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    .line 567
+    .line 581
     const-string/jumbo v2, "url"
 
     invoke-virtual {v1, v2, v0}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 568
+    .line 582
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$5;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
     invoke-virtual {v0, v1}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->startActivity(Landroid/content/Intent;)V
 
-    .line 570
+    .line 584
     :cond_56
     return-void
 .end method

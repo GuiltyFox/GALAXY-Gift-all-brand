@@ -488,7 +488,7 @@
 
     const-string/jumbo v1, "android.permission.CAMERA"
 
-    invoke-static {v0, v1}, Landroid/support/v4/content/ContextCompat;->a(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Landroid/support/v4/content/ContextCompat;->b(Landroid/content/Context;Ljava/lang/String;)I
 
     move-result v0
 

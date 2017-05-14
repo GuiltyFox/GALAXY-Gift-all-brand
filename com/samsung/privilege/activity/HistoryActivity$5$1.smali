@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 655
+    .line 682
     iput-object p1, p0, Lcom/samsung/privilege/activity/HistoryActivity$5$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$5;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/HistoryActivity$5$1;->a:Ljava/lang/String;
@@ -39,7 +39,7 @@
     .registers 9
 
     .prologue
-    .line 659
+    .line 686
     :try_start_0
     new-instance v0, Lorg/json/JSONObject;
 
@@ -47,12 +47,12 @@
 
     invoke-direct {v0, v1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 661
+    .line 688
     new-instance v3, Lcom/bzbs/bean/Campaign;
 
     invoke-direct {v3}, Lcom/bzbs/bean/Campaign;-><init>()V
 
-    .line 662
+    .line 689
     iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity$5$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$5;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/HistoryActivity$5;->a:Lcom/bzbs/bean/Purchasing;
@@ -61,7 +61,7 @@
 
     iput-object v1, v3, Lcom/bzbs/bean/Campaign;->ID:Ljava/lang/String;
 
-    .line 663
+    .line 690
     iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity$5$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$5;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/HistoryActivity$5;->a:Lcom/bzbs/bean/Purchasing;
@@ -74,7 +74,7 @@
 
     iput-object v1, v3, Lcom/bzbs/bean/Campaign;->AgencyID:Ljava/lang/String;
 
-    .line 664
+    .line 691
     iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity$5$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$5;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/HistoryActivity$5;->a:Lcom/bzbs/bean/Purchasing;
@@ -83,7 +83,7 @@
 
     iput-object v1, v3, Lcom/bzbs/bean/Campaign;->AgencyName:Ljava/lang/String;
 
-    .line 665
+    .line 692
     iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity$5$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$5;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/HistoryActivity$5;->a:Lcom/bzbs/bean/Purchasing;
@@ -92,7 +92,7 @@
 
     iput-object v1, v3, Lcom/bzbs/bean/Campaign;->Barcode:Ljava/lang/String;
 
-    .line 666
+    .line 693
     iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity$5$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$5;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/HistoryActivity$5;->a:Lcom/bzbs/bean/Purchasing;
@@ -105,7 +105,7 @@
 
     iput-object v1, v3, Lcom/bzbs/bean/Campaign;->Type:Ljava/lang/String;
 
-    .line 667
+    .line 694
     iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity$5$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$5;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/HistoryActivity$5;->a:Lcom/bzbs/bean/Purchasing;
@@ -118,7 +118,7 @@
 
     iput-object v1, v3, Lcom/bzbs/bean/Campaign;->CategoryID:Ljava/lang/String;
 
-    .line 668
+    .line 695
     iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity$5$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$5;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/HistoryActivity$5;->a:Lcom/bzbs/bean/Purchasing;
@@ -127,20 +127,20 @@
 
     iput v1, v3, Lcom/bzbs/bean/Campaign;->MinutesValidAfterUsed:I
 
-    .line 670
+    .line 697
     const-string/jumbo v5, ""
 
-    .line 671
+    .line 698
     const/4 v4, 0x0
 
-    .line 672
+    .line 699
     const-string/jumbo v1, "WinnerMessage"
 
     invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v6
 
-    .line 674
+    .line 701
     iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$5$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$5;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/HistoryActivity$5;->c:Lcom/samsung/privilege/activity/HistoryActivity;
@@ -163,7 +163,7 @@
     :try_end_6f
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_6f} :catch_8a
 
-    .line 680
+    .line 707
     :goto_6f
     iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$5$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$5;
 
@@ -175,7 +175,7 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 682
+    .line 709
     iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$5$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$5;
 
     iget-boolean v0, v0, Lcom/samsung/privilege/activity/HistoryActivity$5;->b:Z
@@ -184,7 +184,7 @@
 
     if-ne v0, v1, :cond_89
 
-    .line 683
+    .line 710
     iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$5$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$5;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/HistoryActivity$5;->c:Lcom/samsung/privilege/activity/HistoryActivity;
@@ -193,20 +193,20 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/HistoryActivity;->a(Lcom/samsung/privilege/activity/HistoryActivity;I)V
 
-    .line 685
+    .line 712
     :cond_89
     return-void
 
-    .line 675
+    .line 702
     :catch_8a
     move-exception v0
 
-    .line 676
+    .line 703
     invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 677
+    .line 704
     iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity$5$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$5;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/HistoryActivity$5;->c:Lcom/samsung/privilege/activity/HistoryActivity;

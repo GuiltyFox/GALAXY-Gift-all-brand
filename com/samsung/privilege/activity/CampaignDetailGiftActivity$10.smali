@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->m()V
+    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->l()V
 .end annotation
 
 
@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 833
+    .line 868
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$10;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
@@ -32,10 +32,10 @@
     .registers 5
 
     .prologue
-    .line 855
+    .line 890
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 858
+    .line 893
     return-void
 .end method
 
@@ -43,8 +43,8 @@
     .registers 8
 
     .prologue
-    .line 836
-    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->h()Ljava/lang/String;
+    .line 871
+    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->g()Ljava/lang/String;
 
     move-result-object v0
 
@@ -78,29 +78,29 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 839
+    .line 874
     :try_start_26
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 840
+    .line 875
     const-string/jumbo v1, "points"
 
     invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->c(Lorg/json/JSONObject;Ljava/lang/String;)J
 
     move-result-wide v0
 
-    .line 841
+    .line 876
     iget-object v2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$10;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-virtual {v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v2
 
-    invoke-static {v2, v0, v1}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;J)Z
+    invoke-static {v2, v0, v1}, Lcom/bzbs/data/UserLogin;->c(Landroid/content/Context;J)Z
 
-    .line 843
+    .line 878
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$10;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     new-instance v1, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$10$1;
@@ -111,11 +111,11 @@
     :try_end_45
     .catch Ljava/lang/Exception; {:try_start_26 .. :try_end_45} :catch_46
 
-    .line 851
+    .line 886
     :goto_45
     return-void
 
-    .line 848
+    .line 883
     :catch_46
     move-exception v0
 

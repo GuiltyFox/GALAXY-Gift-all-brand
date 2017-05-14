@@ -15,18 +15,30 @@
 # instance fields
 .field final synthetic a:Landroid/app/Dialog;
 
-.field final synthetic b:Lcom/samsung/privilege/activity/MainPagerActivity;
+.field final synthetic b:Landroid/widget/ImageView;
+
+.field final synthetic c:Landroid/content/Context;
+
+.field final synthetic d:Z
+
+.field final synthetic e:Lcom/samsung/privilege/activity/MainPagerActivity;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/MainPagerActivity;Landroid/app/Dialog;)V
-    .registers 3
+.method constructor <init>(Lcom/samsung/privilege/activity/MainPagerActivity;Landroid/app/Dialog;Landroid/widget/ImageView;Landroid/content/Context;Z)V
+    .registers 6
 
     .prologue
-    .line 1083
-    iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$13;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .line 1126
+    iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$13;->e:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/MainPagerActivity$13;->a:Landroid/app/Dialog;
+
+    iput-object p3, p0, Lcom/samsung/privilege/activity/MainPagerActivity$13;->b:Landroid/widget/ImageView;
+
+    iput-object p4, p0, Lcom/samsung/privilege/activity/MainPagerActivity$13;->c:Landroid/content/Context;
+
+    iput-boolean p5, p0, Lcom/samsung/privilege/activity/MainPagerActivity$13;->d:Z
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -36,26 +48,25 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .registers 4
+    .registers 6
 
     .prologue
-    .line 1085
+    .line 1128
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$13;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1087
-    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$13;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
+    .line 1130
+    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$13;->b:Landroid/widget/ImageView;
 
-    const/4 v1, 0x0
+    new-instance v1, Lcom/samsung/privilege/activity/MainPagerActivity$13$1;
 
-    iput-boolean v1, v0, Lcom/samsung/privilege/activity/MainPagerActivity;->d:Z
+    invoke-direct {v1, p0}, Lcom/samsung/privilege/activity/MainPagerActivity$13$1;-><init>(Lcom/samsung/privilege/activity/MainPagerActivity$13;)V
 
-    .line 1088
-    iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$13;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
+    const-wide/16 v2, 0x1f4
 
-    invoke-virtual {v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->g()V
+    invoke-virtual {v0, v1, v2, v3}, Landroid/widget/ImageView;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 1089
+    .line 1136
     return-void
 .end method

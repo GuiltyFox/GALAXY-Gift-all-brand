@@ -39,7 +39,7 @@
     invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;I)Z
 
     .line 166
-    invoke-static {}, Lcom/bzbs/event/NotiEvents;->b()V
+    invoke-static {}, Lcom/bzbs/event/NotiEvents;->a()V
 
     .line 167
     return-void

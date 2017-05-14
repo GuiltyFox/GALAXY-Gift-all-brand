@@ -142,7 +142,7 @@
     :goto_19
     new-instance v0, Landroid/app/Dialog;
 
-    const v2, 0x7f0d00ff
+    const v2, 0x7f0c0107
 
     invoke-direct {v0, p0, v2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
@@ -151,14 +151,14 @@
     .line 90
     sget-object v0, Lcom/samsung/privilege/util/DialogSearch;->l:Landroid/app/Dialog;
 
-    const v2, 0x7f040126
+    const v2, 0x7f04012c
 
     invoke-virtual {v0, v2}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 93
     sget-object v0, Lcom/samsung/privilege/util/DialogSearch;->l:Landroid/app/Dialog;
 
-    const v2, 0x7f1000b5
+    const v2, 0x7f1000b7
 
     invoke-virtual {v0, v2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -183,7 +183,7 @@
     .line 95
     sget-object v0, Lcom/samsung/privilege/util/DialogSearch;->l:Landroid/app/Dialog;
 
-    const v2, 0x7f100137
+    const v2, 0x7f100139
 
     invoke-virtual {v0, v2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -220,7 +220,7 @@
     :goto_68
     sget-object v1, Lcom/samsung/privilege/util/DialogSearch;->l:Landroid/app/Dialog;
 
-    const v3, 0x7f10060e
+    const v3, 0x7f10063b
 
     invoke-virtual {v1, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -278,7 +278,7 @@
     .line 196
     sget-object v0, Lcom/samsung/privilege/util/DialogSearch;->l:Landroid/app/Dialog;
 
-    const v1, 0x7f1005da
+    const v1, 0x7f1005f5
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -296,7 +296,7 @@
     .line 204
     sget-object v0, Lcom/samsung/privilege/util/DialogSearch;->l:Landroid/app/Dialog;
 
-    const v1, 0x7f1005db
+    const v1, 0x7f1005f6
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -528,7 +528,7 @@
     move-result-object v0
 
     .line 224
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -617,7 +617,7 @@
     move-result-object v0
 
     .line 237
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 

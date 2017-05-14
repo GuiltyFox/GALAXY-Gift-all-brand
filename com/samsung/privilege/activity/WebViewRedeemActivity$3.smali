@@ -66,9 +66,11 @@
 .end method
 
 .method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
-    .registers 10
+    .registers 11
 
     .prologue
+    const/4 v7, 0x0
+
     .line 88
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewRedeemActivity$3;->a:Lcom/samsung/privilege/activity/WebViewRedeemActivity;
 
@@ -167,7 +169,7 @@
     move-result-object v1
 
     .line 98
-    if-eqz p2, :cond_c3
+    if-eqz p2, :cond_c4
 
     .line 99
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -182,7 +184,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_89
+    if-eqz v3, :cond_8a
 
     .line 100
     iget-object v3, p0, Lcom/samsung/privilege/activity/WebViewRedeemActivity$3;->a:Lcom/samsung/privilege/activity/WebViewRedeemActivity;
@@ -201,10 +203,10 @@
 
     const/4 v6, 0x1
 
-    invoke-static {v3, v4, v5, v6}, Lcom/samsung/privilege/util/ResumeUtil;->a(Landroid/content/Context;Landroid/app/Activity;Landroid/os/Handler;Z)V
+    invoke-static {v3, v4, v5, v6, v7}, Lcom/samsung/privilege/util/ResumeUtil;->a(Landroid/content/Context;Landroid/app/Activity;Landroid/os/Handler;ZZ)V
 
     .line 103
-    :cond_89
+    :cond_8a
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v3
@@ -217,7 +219,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_a5
+    if-nez v2, :cond_a6
 
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -234,7 +236,7 @@
     if-eqz v1, :cond_c5
 
     .line 104
-    :cond_a5
+    :cond_a6
     const-string/jumbo v0, "content://someURI"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -266,11 +268,9 @@
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->finish()V
 
     .line 136
-    :cond_c3
-    :goto_c3
-    const/4 v0, 0x0
-
-    return v0
+    :cond_c4
+    :goto_c4
+    return v7
 
     .line 109
     :cond_c5
@@ -293,7 +293,7 @@
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->finish()V
 
-    goto :goto_c3
+    goto :goto_c4
 
     .line 111
     :cond_d9
@@ -319,7 +319,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c3
+    if-eqz v0, :cond_c4
 
     .line 115
     :cond_f3
@@ -346,7 +346,7 @@
     :try_end_109
     .catch Ljava/lang/Exception; {:try_start_f3 .. :try_end_109} :catch_10a
 
-    goto :goto_c3
+    goto :goto_c4
 
     .line 118
     :catch_10a
@@ -404,7 +404,7 @@
     :try_end_140
     .catch Landroid/content/ActivityNotFoundException; {:try_start_110 .. :try_end_140} :catch_141
 
-    goto :goto_c3
+    goto :goto_c4
 
     .line 126
     :catch_141
@@ -454,5 +454,5 @@
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->startActivity(Landroid/content/Intent;)V
 
-    goto/16 :goto_c3
+    goto/16 :goto_c4
 .end method

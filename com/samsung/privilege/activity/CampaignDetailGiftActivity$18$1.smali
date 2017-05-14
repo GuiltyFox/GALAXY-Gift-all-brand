@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 2278
+    .line 2355
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,23 +37,23 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 2281
+    .line 2358
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->a:Landroid/widget/ImageView;
 
-    const v1, 0x7f02029e
+    const v1, 0x7f0202a3
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 2282
+    .line 2359
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->a:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 2283
+    .line 2360
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->b:Landroid/widget/ProgressBar;
@@ -62,7 +62,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ProgressBar;->setVisibility(I)V
 
-    .line 2285
+    .line 2362
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -77,7 +77,7 @@
 
     iput v1, v0, Lcom/bzbs/bean/Campaign;->PeopleLike:I
 
-    .line 2286
+    .line 2363
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -90,7 +90,7 @@
 
     if-gez v0, :cond_3e
 
-    .line 2287
+    .line 2364
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
@@ -101,7 +101,7 @@
 
     iput v2, v0, Lcom/bzbs/bean/Campaign;->PeopleLike:I
 
-    .line 2289
+    .line 2366
     :cond_3e
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;
 
@@ -113,7 +113,7 @@
 
     iput-boolean v2, v0, Lcom/bzbs/bean/Campaign;->IsLike:Z
 
-    .line 2290
+    .line 2367
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18$1;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->c:Landroid/widget/TextView;
@@ -132,7 +132,7 @@
 
     iget-object v2, v2, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$18;->d:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    const v3, 0x7f090355
+    const v3, 0x7f090371
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
@@ -182,6 +182,6 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 2291
+    .line 2368
     return-void
 .end method

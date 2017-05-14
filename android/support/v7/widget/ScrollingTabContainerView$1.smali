@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 261
+    .line 260
     iput-object p1, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->b:Landroid/support/v7/widget/ScrollingTabContainerView;
 
     iput-object p2, p0, Landroid/support/v7/widget/ScrollingTabContainerView$1;->a:Landroid/view/View;

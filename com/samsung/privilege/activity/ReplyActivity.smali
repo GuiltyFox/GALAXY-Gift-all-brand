@@ -58,7 +58,7 @@
     .registers 4
 
     .prologue
-    const v2, 0x7f10018e
+    const v2, 0x7f100193
 
     .line 59
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ReplyActivity;->getIntent()Landroid/content/Intent;
@@ -130,7 +130,7 @@
     move-result-object v0
 
     .line 72
-    invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->a()I
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->b()I
 
     .line 85
     :cond_46
@@ -173,7 +173,7 @@
     move-result-object v0
 
     .line 77
-    invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->a()I
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->b()I
 
     goto :goto_46
 .end method
@@ -212,7 +212,7 @@
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/ReplyActivity;->n()V
 
     .line 51
-    const v0, 0x7f0901cd
+    const v0, 0x7f0901ce
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/ReplyActivity;->getString(I)Ljava/lang/String;
 
@@ -248,7 +248,7 @@
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
     .line 39
-    const v0, 0x7f04004e
+    const v0, 0x7f040050
 
     return v0
 .end method

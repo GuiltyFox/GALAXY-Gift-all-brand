@@ -32,9 +32,9 @@
 
     .line 33
     :cond_e
-    new-instance v0, Landroid/support/v4/animation/DonutAnimatorCompatProvider;
+    new-instance v0, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider;
 
-    invoke-direct {v0}, Landroid/support/v4/animation/DonutAnimatorCompatProvider;-><init>()V
+    invoke-direct {v0}, Landroid/support/v4/animation/GingerbreadAnimatorCompatProvider;-><init>()V
 
     sput-object v0, Landroid/support/v4/animation/AnimatorCompatHelper;->a:Landroid/support/v4/animation/AnimatorProvider;
 

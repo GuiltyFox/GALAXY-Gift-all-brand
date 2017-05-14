@@ -6,7 +6,7 @@
 # instance fields
 .field LayoutMainComman:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10029e
+        value = 0x7f1002b9
     .end annotation
 .end field
 
@@ -14,43 +14,43 @@
 
 .field btnClose:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002a0
+        value = 0x7f1002bb
     .end annotation
 .end field
 
 .field btnOK:Landroid/widget/Button;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1001ef
+        value = 0x7f100204
     .end annotation
 .end field
 
 .field imgCampaign:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100297
+        value = 0x7f1002b2
     .end annotation
 .end field
 
 .field layoutRoot:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100295
+        value = 0x7f1002b0
     .end annotation
 .end field
 
 .field svCondition:Landroid/widget/ScrollView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10029a
+        value = 0x7f1002b5
     .end annotation
 .end field
 
 .field tvCampaignDesc:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f100298
+        value = 0x7f1002b3
     .end annotation
 .end field
 
 .field tvError:Landroid/widget/TextView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f1002af
+        value = 0x7f1002ca
     .end annotation
 .end field
 
@@ -85,7 +85,7 @@
     .prologue
     const/high16 v6, 0x41f00000    # 30.0f
 
-    const v5, 0x7f0202dc
+    const v5, 0x7f0202e1
 
     .line 189
     new-instance v0, Landroid/widget/FrameLayout$LayoutParams;
@@ -231,7 +231,7 @@
 
     iget-object v1, p0, Lcom/bzbs/marketplace/dialog/ErrorBlurDialog$ViewHolder;->a:Lcom/bzbs/marketplace/dialog/ErrorBlurDialog;
 
-    const v2, 0x7f0901ba
+    const v2, 0x7f0901bb
 
     invoke-virtual {v1, v2}, Lcom/bzbs/marketplace/dialog/ErrorBlurDialog;->getString(I)Ljava/lang/String;
 

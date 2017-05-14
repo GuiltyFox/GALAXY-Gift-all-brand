@@ -20,7 +20,7 @@
     .registers 4
 
     .prologue
-    .line 1914
+    .line 1935
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogLoginGift$34$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$34;
 
     iput-wide p2, p0, Lcom/samsung/privilege/util/DialogLoginGift$34$1;->a:J
@@ -36,10 +36,10 @@
     .registers 13
 
     .prologue
-    .line 1972
+    .line 1993
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 1975
+    .line 1996
     :try_start_3
     new-instance v0, Ljava/util/Date;
 
@@ -49,7 +49,7 @@
 
     move-result-wide v0
 
-    .line 1976
+    .line 1997
     const-string/jumbo v2, "Login"
 
     const-string/jumbo v3, "Register"
@@ -64,7 +64,7 @@
     :try_end_1b
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_57
 
-    .line 1981
+    .line 2002
     :goto_1b
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
@@ -100,31 +100,31 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1983
+    .line 2004
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->c()Landroid/app/ProgressDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 1985
+    .line 2006
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$34$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$34;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$34;->a:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->U(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->X(Landroid/content/Context;)V
 
-    .line 1986
+    .line 2007
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$34$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$34;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$34;->a:Landroid/content/Context;
 
     invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 1987
+    .line 2008
     return-void
 
-    .line 1977
+    .line 1998
     :catch_57
     move-exception v0
 
@@ -137,7 +137,7 @@
     .prologue
     const/4 v5, 0x1
 
-    .line 1918
+    .line 1939
     :try_start_1
     new-instance v0, Ljava/util/Date;
 
@@ -147,7 +147,7 @@
 
     move-result-wide v0
 
-    .line 1919
+    .line 1940
     const-string/jumbo v2, "Login"
 
     const-string/jumbo v3, "Register"
@@ -162,7 +162,7 @@
     :try_end_19
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_19} :catch_e3
 
-    .line 1924
+    .line 1945
     :goto_19
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
@@ -198,58 +198,58 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 1926
+    .line 1947
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->c()Landroid/app/ProgressDialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 1928
+    .line 1949
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$34$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$34;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$34;->b:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1929
+    .line 1950
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->a()Landroid/app/Dialog;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 1931
+    .line 1952
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$34$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$34;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$34;->a:Landroid/content/Context;
 
-    invoke-static {v0, v5}, Lcom/bzbs/data/UserLogin;->c(Landroid/content/Context;Z)Z
+    invoke-static {v0, v5}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;Z)Z
 
-    .line 1934
+    .line 1955
     :try_start_5b
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1935
+    .line 1956
     const-string/jumbo v1, "buzzebees"
 
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v0
 
-    .line 1936
+    .line 1957
     const-string/jumbo v1, "points"
 
     invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
     move-result v1
 
-    .line 1937
+    .line 1958
     if-lez v1, :cond_80
 
-    .line 1938
+    .line 1959
     const-string/jumbo v2, ""
 
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$34$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$34;
@@ -266,7 +266,7 @@
     :try_end_80
     .catch Ljava/lang/Exception; {:try_start_5b .. :try_end_80} :catch_e1
 
-    .line 1945
+    .line 1966
     :cond_80
     :goto_80
     :try_start_80
@@ -274,21 +274,21 @@
 
     invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 1946
+    .line 1967
     const-string/jumbo v1, "buzzebees"
 
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v0
 
-    .line 1947
+    .line 1968
     const-string/jumbo v1, "badges"
 
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v1
 
-    .line 1948
+    .line 1969
     const/4 v0, 0x0
 
     :goto_94
@@ -298,27 +298,27 @@
 
     if-ge v0, v2, :cond_b8
 
-    .line 1949
+    .line 1970
     invoke-virtual {v1, v0}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v2
 
-    .line 1950
+    .line 1971
     new-instance v3, Lcom/bzbs/bean/BadgeAlert;
 
     invoke-direct {v3, v2}, Lcom/bzbs/bean/BadgeAlert;-><init>(Lorg/json/JSONObject;)V
 
-    .line 1952
+    .line 1973
     new-instance v2, Lcom/bzbs/bean/MessagePopup;
 
     const-string/jumbo v4, "badge"
 
     invoke-direct {v2, v4}, Lcom/bzbs/bean/MessagePopup;-><init>(Ljava/lang/String;)V
 
-    .line 1953
+    .line 1974
     iput-object v3, v2, Lcom/bzbs/bean/MessagePopup;->badgeAlert:Lcom/bzbs/bean/BadgeAlert;
 
-    .line 1955
+    .line 1976
     iget-object v3, p0, Lcom/samsung/privilege/util/DialogLoginGift$34$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$34;
 
     iget-object v3, v3, Lcom/samsung/privilege/util/DialogLoginGift$34;->a:Landroid/content/Context;
@@ -327,24 +327,24 @@
     :try_end_b4
     .catch Ljava/lang/Exception; {:try_start_80 .. :try_end_b4} :catch_b7
 
-    .line 1948
+    .line 1969
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_94
 
-    .line 1958
+    .line 1979
     :catch_b7
     move-exception v0
 
-    .line 1962
+    .line 1983
     :cond_b8
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$34$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$34;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$34;->a:Landroid/content/Context;
 
-    invoke-static {v0, v5}, Lcom/bzbs/data/UserLogin;->b(Landroid/content/Context;Z)Z
+    invoke-static {v0, v5}, Lcom/bzbs/data/UserLogin;->e(Landroid/content/Context;Z)Z
 
-    .line 1963
+    .line 1984
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$34$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$34;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$34;->e:Ljava/lang/String;
@@ -353,19 +353,19 @@
 
     if-ne v0, v1, :cond_d0
 
-    .line 1964
+    .line 1985
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$34$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$34;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$34;->f:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/bzbs/event/LoginEvents;->a(Ljava/lang/String;)V
 
-    .line 1968
+    .line 1989
     :cond_cf
     :goto_cf
     return-void
 
-    .line 1965
+    .line 1986
     :cond_d0
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$34$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$34;
 
@@ -375,7 +375,7 @@
 
     if-ne v0, v1, :cond_cf
 
-    .line 1966
+    .line 1987
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$34$1;->b:Lcom/samsung/privilege/util/DialogLoginGift$34;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogLoginGift$34;->f:Ljava/lang/String;
@@ -384,13 +384,13 @@
 
     goto :goto_cf
 
-    .line 1940
+    .line 1961
     :catch_e1
     move-exception v0
 
     goto :goto_80
 
-    .line 1920
+    .line 1941
     :catch_e3
     move-exception v0
 

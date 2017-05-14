@@ -13,8 +13,6 @@
 # instance fields
 .field private mBackgroundTintHelper:Landroid/support/v7/widget/AppCompatBackgroundHelper;
 
-.field private mDrawableManager:Landroid/support/v7/widget/AppCompatDrawableManager;
-
 .field private mTextHelper:Landroid/support/v7/widget/AppCompatTextHelper;
 
 
@@ -23,7 +21,7 @@
     .registers 3
 
     .prologue
-    .line 48
+    .line 49
     const/4 v0, 0x1
 
     new-array v0, v0, [I
@@ -79,13 +77,6 @@
     invoke-direct {p0, v0, p2, p3}, Landroid/widget/MultiAutoCompleteTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
 
     .line 67
-    invoke-static {}, Landroid/support/v7/widget/AppCompatDrawableManager;->get()Landroid/support/v7/widget/AppCompatDrawableManager;
-
-    move-result-object v0
-
-    iput-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mDrawableManager:Landroid/support/v7/widget/AppCompatDrawableManager;
-
-    .line 69
     invoke-virtual {p0}, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -96,56 +87,54 @@
 
     move-result-object v0
 
-    .line 71
+    .line 69
     invoke-virtual {v0, v2}, Landroid/support/v7/widget/TintTypedArray;->hasValue(I)Z
 
     move-result v1
 
-    if-eqz v1, :cond_25
+    if-eqz v1, :cond_1f
 
-    .line 72
+    .line 70
     invoke-virtual {v0, v2}, Landroid/support/v7/widget/TintTypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
     invoke-virtual {p0, v1}, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->setDropDownBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 74
-    :cond_25
+    .line 72
+    :cond_1f
     invoke-virtual {v0}, Landroid/support/v7/widget/TintTypedArray;->recycle()V
 
-    .line 76
+    .line 74
     new-instance v0, Landroid/support/v7/widget/AppCompatBackgroundHelper;
 
-    iget-object v1, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mDrawableManager:Landroid/support/v7/widget/AppCompatDrawableManager;
-
-    invoke-direct {v0, p0, v1}, Landroid/support/v7/widget/AppCompatBackgroundHelper;-><init>(Landroid/view/View;Landroid/support/v7/widget/AppCompatDrawableManager;)V
+    invoke-direct {v0, p0}, Landroid/support/v7/widget/AppCompatBackgroundHelper;-><init>(Landroid/view/View;)V
 
     iput-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mBackgroundTintHelper:Landroid/support/v7/widget/AppCompatBackgroundHelper;
 
-    .line 77
+    .line 75
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mBackgroundTintHelper:Landroid/support/v7/widget/AppCompatBackgroundHelper;
 
     invoke-virtual {v0, p2, p3}, Landroid/support/v7/widget/AppCompatBackgroundHelper;->a(Landroid/util/AttributeSet;I)V
 
-    .line 79
+    .line 77
     invoke-static {p0}, Landroid/support/v7/widget/AppCompatTextHelper;->a(Landroid/widget/TextView;)Landroid/support/v7/widget/AppCompatTextHelper;
 
     move-result-object v0
 
     iput-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mTextHelper:Landroid/support/v7/widget/AppCompatTextHelper;
 
-    .line 80
+    .line 78
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mTextHelper:Landroid/support/v7/widget/AppCompatTextHelper;
 
     invoke-virtual {v0, p2, p3}, Landroid/support/v7/widget/AppCompatTextHelper;->a(Landroid/util/AttributeSet;I)V
 
-    .line 81
+    .line 79
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mTextHelper:Landroid/support/v7/widget/AppCompatTextHelper;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/AppCompatTextHelper;->a()V
 
-    .line 82
+    .line 80
     return-void
 .end method
 
@@ -155,31 +144,31 @@
     .registers 2
 
     .prologue
-    .line 163
+    .line 157
     invoke-super {p0}, Landroid/widget/MultiAutoCompleteTextView;->drawableStateChanged()V
 
-    .line 164
+    .line 158
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mBackgroundTintHelper:Landroid/support/v7/widget/AppCompatBackgroundHelper;
 
     if-eqz v0, :cond_c
 
-    .line 165
+    .line 159
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mBackgroundTintHelper:Landroid/support/v7/widget/AppCompatBackgroundHelper;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/AppCompatBackgroundHelper;->c()V
 
-    .line 167
+    .line 161
     :cond_c
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mTextHelper:Landroid/support/v7/widget/AppCompatTextHelper;
 
     if-eqz v0, :cond_15
 
-    .line 168
+    .line 162
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mTextHelper:Landroid/support/v7/widget/AppCompatTextHelper;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/AppCompatTextHelper;->a()V
 
-    .line 170
+    .line 164
     :cond_15
     return-void
 .end method
@@ -188,13 +177,14 @@
     .registers 2
 
     .prologue
-    .line 131
+    .line 125
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mBackgroundTintHelper:Landroid/support/v7/widget/AppCompatBackgroundHelper;
 
     if-eqz v0, :cond_b
 
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mBackgroundTintHelper:Landroid/support/v7/widget/AppCompatBackgroundHelper;
 
+    .line 126
     invoke-virtual {v0}, Landroid/support/v7/widget/AppCompatBackgroundHelper;->a()Landroid/content/res/ColorStateList;
 
     move-result-object v0
@@ -212,13 +202,14 @@
     .registers 2
 
     .prologue
-    .line 157
+    .line 151
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mBackgroundTintHelper:Landroid/support/v7/widget/AppCompatBackgroundHelper;
 
     if-eqz v0, :cond_b
 
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mBackgroundTintHelper:Landroid/support/v7/widget/AppCompatBackgroundHelper;
 
+    .line 152
     invoke-virtual {v0}, Landroid/support/v7/widget/AppCompatBackgroundHelper;->b()Landroid/graphics/PorterDuff$Mode;
 
     move-result-object v0
@@ -236,20 +227,20 @@
     .registers 3
 
     .prologue
-    .line 103
+    .line 97
     invoke-super {p0, p1}, Landroid/widget/MultiAutoCompleteTextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 104
+    .line 98
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mBackgroundTintHelper:Landroid/support/v7/widget/AppCompatBackgroundHelper;
 
     if-eqz v0, :cond_c
 
-    .line 105
+    .line 99
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mBackgroundTintHelper:Landroid/support/v7/widget/AppCompatBackgroundHelper;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/AppCompatBackgroundHelper;->a(Landroid/graphics/drawable/Drawable;)V
 
-    .line 107
+    .line 101
     :cond_c
     return-void
 .end method
@@ -258,72 +249,58 @@
     .registers 3
 
     .prologue
-    .line 95
+    .line 89
     invoke-super {p0, p1}, Landroid/widget/MultiAutoCompleteTextView;->setBackgroundResource(I)V
 
-    .line 96
+    .line 90
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mBackgroundTintHelper:Landroid/support/v7/widget/AppCompatBackgroundHelper;
 
     if-eqz v0, :cond_c
 
-    .line 97
+    .line 91
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mBackgroundTintHelper:Landroid/support/v7/widget/AppCompatBackgroundHelper;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/AppCompatBackgroundHelper;->a(I)V
 
-    .line 99
+    .line 93
     :cond_c
     return-void
 .end method
 
 .method public setDropDownBackgroundResource(I)V
-    .registers 4
+    .registers 3
 
     .prologue
-    .line 86
-    iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mDrawableManager:Landroid/support/v7/widget/AppCompatDrawableManager;
-
-    if-eqz v0, :cond_12
-
-    .line 87
-    iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mDrawableManager:Landroid/support/v7/widget/AppCompatDrawableManager;
-
+    .line 84
     invoke-virtual {p0}, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->getContext()Landroid/content/Context;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v0, v1, p1}, Landroid/support/v7/widget/AppCompatDrawableManager;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, p1}, Landroid/support/v7/content/res/AppCompatResources;->b(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->setDropDownBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 91
-    :goto_11
+    .line 85
     return-void
-
-    .line 89
-    :cond_12
-    invoke-super {p0, p1}, Landroid/widget/MultiAutoCompleteTextView;->setDropDownBackgroundResource(I)V
-
-    goto :goto_11
 .end method
 
 .method public setSupportBackgroundTintList(Landroid/content/res/ColorStateList;)V
     .registers 3
 
     .prologue
-    .line 117
+    .line 111
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mBackgroundTintHelper:Landroid/support/v7/widget/AppCompatBackgroundHelper;
 
     if-eqz v0, :cond_9
 
-    .line 118
+    .line 112
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mBackgroundTintHelper:Landroid/support/v7/widget/AppCompatBackgroundHelper;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/AppCompatBackgroundHelper;->a(Landroid/content/res/ColorStateList;)V
 
-    .line 120
+    .line 114
     :cond_9
     return-void
 .end method
@@ -332,17 +309,17 @@
     .registers 3
 
     .prologue
-    .line 143
+    .line 137
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mBackgroundTintHelper:Landroid/support/v7/widget/AppCompatBackgroundHelper;
 
     if-eqz v0, :cond_9
 
-    .line 144
+    .line 138
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mBackgroundTintHelper:Landroid/support/v7/widget/AppCompatBackgroundHelper;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/AppCompatBackgroundHelper;->a(Landroid/graphics/PorterDuff$Mode;)V
 
-    .line 146
+    .line 140
     :cond_9
     return-void
 .end method
@@ -351,20 +328,20 @@
     .registers 4
 
     .prologue
-    .line 174
+    .line 168
     invoke-super {p0, p1, p2}, Landroid/widget/MultiAutoCompleteTextView;->setTextAppearance(Landroid/content/Context;I)V
 
-    .line 175
+    .line 169
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mTextHelper:Landroid/support/v7/widget/AppCompatTextHelper;
 
     if-eqz v0, :cond_c
 
-    .line 176
+    .line 170
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatMultiAutoCompleteTextView;->mTextHelper:Landroid/support/v7/widget/AppCompatTextHelper;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/widget/AppCompatTextHelper;->a(Landroid/content/Context;I)V
 
-    .line 178
+    .line 172
     :cond_c
     return-void
 .end method

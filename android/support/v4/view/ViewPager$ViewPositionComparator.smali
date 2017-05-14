@@ -23,7 +23,7 @@
     .registers 1
 
     .prologue
-    .line 3056
+    .line 3142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -35,45 +35,45 @@
     .registers 7
 
     .prologue
-    .line 3059
+    .line 3145
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v4/view/ViewPager$LayoutParams;
 
-    .line 3060
+    .line 3146
     invoke-virtual {p2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v1
 
     check-cast v1, Landroid/support/v4/view/ViewPager$LayoutParams;
 
-    .line 3061
+    .line 3147
     iget-boolean v2, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->a:Z
 
     iget-boolean v3, v1, Landroid/support/v4/view/ViewPager$LayoutParams;->a:Z
 
     if-eq v2, v3, :cond_1a
 
-    .line 3062
+    .line 3148
     iget-boolean v0, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->a:Z
 
     if-eqz v0, :cond_18
 
     const/4 v0, 0x1
 
-    .line 3064
+    .line 3150
     :goto_17
     return v0
 
-    .line 3062
+    .line 3148
     :cond_18
     const/4 v0, -0x1
 
     goto :goto_17
 
-    .line 3064
+    .line 3150
     :cond_1a
     iget v0, v0, Landroid/support/v4/view/ViewPager$LayoutParams;->e:I
 
@@ -88,7 +88,7 @@
     .registers 4
 
     .prologue
-    .line 3056
+    .line 3142
     check-cast p1, Landroid/view/View;
 
     check-cast p2, Landroid/view/View;

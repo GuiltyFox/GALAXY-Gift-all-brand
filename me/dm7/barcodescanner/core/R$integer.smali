@@ -4,6 +4,6 @@
 
 
 # static fields
-.field public static final viewfinder_border_length:I = 0x7f0c0000
+.field public static final viewfinder_border_length:I = 0x7f0b0000
 
-.field public static final viewfinder_border_width:I = 0x7f0c0001
+.field public static final viewfinder_border_width:I = 0x7f0b0001

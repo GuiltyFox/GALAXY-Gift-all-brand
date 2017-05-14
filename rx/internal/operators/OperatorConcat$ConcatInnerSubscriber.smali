@@ -150,7 +150,7 @@
     return-void
 .end method
 
-.method public i_()V
+.method public m_()V
     .registers 4
 
     .prologue

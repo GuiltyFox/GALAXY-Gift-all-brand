@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 784
+    .line 811
     iput-object p1, p0, Lcom/samsung/privilege/activity/HistoryActivity$6$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$6;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/HistoryActivity$6$1;->a:Ljava/lang/String;
@@ -41,12 +41,12 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 787
+    .line 814
     iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$6$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$6;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/HistoryActivity$6;->b:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v1, 0x7f100111
+    const v1, 0x7f100113
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/HistoryActivity;->findViewById(I)Landroid/view/View;
 
@@ -54,10 +54,10 @@
 
     check-cast v0, Landroid/support/v4/widget/SwipeRefreshLayout;
 
-    .line 788
+    .line 815
     invoke-virtual {v0, v4}, Landroid/support/v4/widget/SwipeRefreshLayout;->setRefreshing(Z)V
 
-    .line 791
+    .line 818
     :try_start_11
     new-instance v0, Lorg/json/JSONArray;
 
@@ -69,7 +69,7 @@
 
     move-result-object v0
 
-    .line 793
+    .line 820
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -78,7 +78,7 @@
 
     if-ge v1, v2, :cond_5d
 
-    .line 794
+    .line 821
     iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity$6$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$6;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/HistoryActivity$6;->b:Lcom/samsung/privilege/activity/HistoryActivity;
@@ -87,7 +87,7 @@
 
     invoke-static {v1, v2}, Lcom/samsung/privilege/activity/HistoryActivity;->a(Lcom/samsung/privilege/activity/HistoryActivity;Z)Z
 
-    .line 799
+    .line 826
     :goto_2c
     iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity$6$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$6;
 
@@ -95,7 +95,7 @@
 
     if-nez v1, :cond_72
 
-    .line 800
+    .line 827
     iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity$6$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$6;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/HistoryActivity$6;->b:Lcom/samsung/privilege/activity/HistoryActivity;
@@ -110,7 +110,7 @@
 
     invoke-static {v1, v2}, Lcom/samsung/privilege/activity/HistoryActivity;->a(Lcom/samsung/privilege/activity/HistoryActivity;Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;)Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;
 
-    .line 801
+    .line 828
     iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$6$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$6;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/HistoryActivity$6;->b:Lcom/samsung/privilege/activity/HistoryActivity;
@@ -131,7 +131,7 @@
     :try_end_55
     .catch Ljava/lang/Exception; {:try_start_11 .. :try_end_55} :catch_66
 
-    .line 810
+    .line 837
     :goto_55
     iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$6$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$6;
 
@@ -139,10 +139,10 @@
 
     invoke-static {v0, v4}, Lcom/samsung/privilege/activity/HistoryActivity;->b(Lcom/samsung/privilege/activity/HistoryActivity;Z)Z
 
-    .line 811
+    .line 838
     return-void
 
-    .line 796
+    .line 823
     :cond_5d
     :try_start_5d
     iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity$6$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$6;
@@ -157,11 +157,11 @@
 
     goto :goto_2c
 
-    .line 806
+    .line 833
     :catch_66
     move-exception v0
 
-    .line 807
+    .line 834
     iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$6$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$6;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/HistoryActivity$6;->b:Lcom/samsung/privilege/activity/HistoryActivity;
@@ -172,7 +172,7 @@
 
     goto :goto_55
 
-    .line 803
+    .line 830
     :cond_72
     :try_start_72
     iget-object v1, p0, Lcom/samsung/privilege/activity/HistoryActivity$6$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$6;
@@ -185,7 +185,7 @@
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/HistoryActivity$HistoryAdapter;->a(Ljava/util/List;)V
 
-    .line 804
+    .line 831
     iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$6$1;->b:Lcom/samsung/privilege/activity/HistoryActivity$6;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/HistoryActivity$6;->b:Lcom/samsung/privilege/activity/HistoryActivity;

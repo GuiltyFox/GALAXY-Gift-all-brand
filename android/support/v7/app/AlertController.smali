@@ -182,6 +182,7 @@
     .line 180
     sget v1, Landroid/support/v7/appcompat/R$styleable;->AlertDialog_singleChoiceItemLayout:I
 
+    .line 181
     invoke-virtual {v0, v1, v3}, Landroid/content/res/TypedArray;->getResourceId(II)I
 
     move-result v1
@@ -755,6 +756,7 @@
     .line 705
     const/4 v0, -0x1
 
+    .line 706
     invoke-static {p0, v0}, Landroid/support/v4/view/ViewCompat;->b(Landroid/view/View;I)Z
 
     move-result v0
@@ -763,6 +765,7 @@
 
     move v0, v1
 
+    .line 705
     :goto_c
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
@@ -773,12 +776,14 @@
     .line 709
     const/4 v0, 0x1
 
+    .line 710
     invoke-static {p0, v0}, Landroid/support/v4/view/ViewCompat;->b(Landroid/view/View;I)Z
 
     move-result v0
 
     if-eqz v0, :cond_1e
 
+    .line 709
     :goto_18
     invoke-virtual {p2, v1}, Landroid/view/View;->setVisibility(I)V
 
@@ -789,13 +794,13 @@
     :cond_1c
     move v0, v2
 
-    .line 705
+    .line 706
     goto :goto_c
 
     :cond_1e
     move v1, v2
 
-    .line 709
+    .line 710
     goto :goto_18
 .end method
 
@@ -938,22 +943,26 @@
 
     iget-object v2, p0, Landroid/support/v7/app/AlertController;->z:Landroid/widget/ImageView;
 
+    .line 659
     invoke-virtual {v2}, Landroid/widget/ImageView;->getPaddingTop()I
 
     move-result v2
 
     iget-object v3, p0, Landroid/support/v7/app/AlertController;->z:Landroid/widget/ImageView;
 
+    .line 660
     invoke-virtual {v3}, Landroid/widget/ImageView;->getPaddingRight()I
 
     move-result v3
 
     iget-object v4, p0, Landroid/support/v7/app/AlertController;->z:Landroid/widget/ImageView;
 
+    .line 661
     invoke-virtual {v4}, Landroid/widget/ImageView;->getPaddingBottom()I
 
     move-result v4
 
+    .line 658
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/TextView;->setPadding(IIII)V
 
     .line 662
@@ -1097,6 +1106,7 @@
     .line 467
     if-eqz v0, :cond_b4
 
+    .line 468
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getVisibility()I
 
     move-result v0
@@ -1109,6 +1119,7 @@
     :goto_59
     if-eqz v2, :cond_b6
 
+    .line 470
     invoke-virtual {v2}, Landroid/view/ViewGroup;->getVisibility()I
 
     move-result v2
@@ -1121,6 +1132,7 @@
     :goto_62
     if-eqz v4, :cond_b8
 
+    .line 472
     invoke-virtual {v4}, Landroid/view/ViewGroup;->getVisibility()I
 
     move-result v4
@@ -1235,19 +1247,19 @@
     :cond_b4
     move v0, v1
 
-    .line 467
+    .line 468
     goto :goto_59
 
     :cond_b6
     move v2, v1
 
-    .line 469
+    .line 470
     goto :goto_62
 
     :cond_b8
     move v5, v1
 
-    .line 471
+    .line 472
     goto :goto_6b
 
     .line 493

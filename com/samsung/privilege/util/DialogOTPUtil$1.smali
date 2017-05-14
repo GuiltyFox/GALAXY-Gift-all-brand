@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/util/DialogOTPUtil;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    value = Lcom/samsung/privilege/util/DialogOTPUtil;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
 .end annotation
 
 
@@ -29,7 +29,7 @@
     .registers 6
 
     .prologue
-    .line 81
+    .line 86
     iput-object p1, p0, Lcom/samsung/privilege/util/DialogOTPUtil$1;->a:Landroid/content/Context;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/DialogOTPUtil$1;->b:Landroid/os/Handler;
@@ -51,21 +51,21 @@
     .registers 8
 
     .prologue
-    .line 83
+    .line 88
     new-instance v0, Lcom/samsung/privilege/util/RxPermissionUtils$Builder;
 
     invoke-direct {v0}, Lcom/samsung/privilege/util/RxPermissionUtils$Builder;-><init>()V
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogOTPUtil$1;->a:Landroid/content/Context;
 
-    .line 84
+    .line 89
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/util/RxPermissionUtils$Builder;->a(Landroid/content/Context;)Lcom/samsung/privilege/util/RxPermissionUtils$Builder;
 
     move-result-object v0
 
     const-string/jumbo v1, "PERMISSION RECEIVE_SMS and READ_SMS Denied!"
 
-    .line 85
+    .line 90
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/util/RxPermissionUtils$Builder;->a(Ljava/lang/String;)Lcom/samsung/privilege/util/RxPermissionUtils$Builder;
 
     move-result-object v0
@@ -86,7 +86,7 @@
 
     aput-object v3, v1, v2
 
-    .line 86
+    .line 91
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/util/RxPermissionUtils$Builder;->a([Ljava/lang/String;)Lcom/samsung/privilege/util/RxPermissionUtils$Builder;
 
     move-result-object v0
@@ -95,15 +95,15 @@
 
     invoke-direct {v1, p0}, Lcom/samsung/privilege/util/DialogOTPUtil$1$1;-><init>(Lcom/samsung/privilege/util/DialogOTPUtil$1;)V
 
-    .line 87
+    .line 92
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/util/RxPermissionUtils$Builder;->a(Lcom/samsung/privilege/util/AddOnPermissions;)Lcom/samsung/privilege/util/RxPermissionUtils$Builder;
 
     move-result-object v0
 
-    .line 102
+    .line 107
     invoke-virtual {v0}, Lcom/samsung/privilege/util/RxPermissionUtils$Builder;->a()Lcom/samsung/privilege/util/RxPermissionUtils;
 
-    .line 104
+    .line 109
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogOTPUtil$1;->d:Ljava/lang/String;
 
     const-string/jumbo v1, "Click OTP"
@@ -118,6 +118,6 @@
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 105
+    .line 110
     return-void
 .end method

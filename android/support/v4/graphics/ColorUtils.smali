@@ -53,10 +53,12 @@
 
     move-result v3
 
+    .line 53
     invoke-static {p1}, Landroid/graphics/Color;->red(I)I
 
     move-result v4
 
+    .line 52
     invoke-static {v3, v1, v4, v0, v2}, Landroid/support/v4/graphics/ColorUtils;->a(IIIII)I
 
     move-result v3
@@ -66,10 +68,12 @@
 
     move-result v4
 
+    .line 55
     invoke-static {p1}, Landroid/graphics/Color;->green(I)I
 
     move-result v5
 
+    .line 54
     invoke-static {v4, v1, v5, v0, v2}, Landroid/support/v4/graphics/ColorUtils;->a(IIIII)I
 
     move-result v4
@@ -79,10 +83,12 @@
 
     move-result v5
 
+    .line 57
     invoke-static {p1}, Landroid/graphics/Color;->blue(I)I
 
     move-result v6
 
+    .line 56
     invoke-static {v5, v1, v6, v0, v2}, Landroid/support/v4/graphics/ColorUtils;->a(IIIII)I
 
     move-result v0

@@ -43,14 +43,14 @@
 
     const/4 v2, 0x0
 
-    .line 28
+    .line 27
     new-instance v0, Ljava/lang/ThreadLocal;
 
     invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
 
     sput-object v0, Landroid/support/v7/widget/ThemeUtils;->i:Ljava/lang/ThreadLocal;
 
-    .line 30
+    .line 29
     new-array v0, v3, [I
 
     const v1, -0x101009e
@@ -59,7 +59,7 @@
 
     sput-object v0, Landroid/support/v7/widget/ThemeUtils;->a:[I
 
-    .line 31
+    .line 30
     new-array v0, v3, [I
 
     const v1, 0x101009c
@@ -68,7 +68,7 @@
 
     sput-object v0, Landroid/support/v7/widget/ThemeUtils;->b:[I
 
-    .line 32
+    .line 31
     new-array v0, v3, [I
 
     const v1, 0x10102fe
@@ -77,7 +77,7 @@
 
     sput-object v0, Landroid/support/v7/widget/ThemeUtils;->c:[I
 
-    .line 33
+    .line 32
     new-array v0, v3, [I
 
     const v1, 0x10100a7
@@ -86,7 +86,7 @@
 
     sput-object v0, Landroid/support/v7/widget/ThemeUtils;->d:[I
 
-    .line 34
+    .line 33
     new-array v0, v3, [I
 
     const v1, 0x10100a0
@@ -95,7 +95,7 @@
 
     sput-object v0, Landroid/support/v7/widget/ThemeUtils;->e:[I
 
-    .line 35
+    .line 34
     new-array v0, v3, [I
 
     const v1, 0x10100a1
@@ -104,7 +104,7 @@
 
     sput-object v0, Landroid/support/v7/widget/ThemeUtils;->f:[I
 
-    .line 36
+    .line 35
     const/4 v0, 0x2
 
     new-array v0, v0, [I
@@ -113,19 +113,19 @@
 
     sput-object v0, Landroid/support/v7/widget/ThemeUtils;->g:[I
 
-    .line 38
+    .line 37
     new-array v0, v2, [I
 
     sput-object v0, Landroid/support/v7/widget/ThemeUtils;->h:[I
 
-    .line 40
+    .line 39
     new-array v0, v3, [I
 
     sput-object v0, Landroid/support/v7/widget/ThemeUtils;->j:[I
 
     return-void
 
-    .line 36
+    .line 35
     :array_50
     .array-data 4
         -0x10100a7
@@ -139,41 +139,41 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 63
+    .line 62
     sget-object v0, Landroid/support/v7/widget/ThemeUtils;->j:[I
 
     aput p1, v0, v1
 
-    .line 64
+    .line 63
     const/4 v0, 0x0
 
     sget-object v1, Landroid/support/v7/widget/ThemeUtils;->j:[I
 
-    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    invoke-static {p0, v0, v1}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[I)Landroid/support/v7/widget/TintTypedArray;
 
     move-result-object v0
 
-    .line 66
+    .line 65
     const/4 v1, 0x0
 
     const/4 v2, 0x0
 
     :try_start_e
-    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-virtual {v0, v1, v2}, Landroid/support/v7/widget/TintTypedArray;->getColor(II)I
     :try_end_11
     .catchall {:try_start_e .. :try_end_11} :catchall_16
 
     move-result v1
 
-    .line 68
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    .line 67
+    invoke-virtual {v0}, Landroid/support/v7/widget/TintTypedArray;->recycle()V
 
     return v1
 
     :catchall_16
     move-exception v1
 
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v0}, Landroid/support/v7/widget/TintTypedArray;->recycle()V
 
     throw v1
 .end method
@@ -182,17 +182,17 @@
     .registers 5
 
     .prologue
-    .line 109
+    .line 108
     invoke-static {p0, p1}, Landroid/support/v7/widget/ThemeUtils;->a(Landroid/content/Context;I)I
 
     move-result v0
 
-    .line 110
+    .line 109
     invoke-static {v0}, Landroid/graphics/Color;->alpha(I)I
 
     move-result v1
 
-    .line 111
+    .line 110
     int-to-float v1, v1
 
     mul-float/2addr v1, p2
@@ -212,7 +212,7 @@
     .registers 2
 
     .prologue
-    .line 100
+    .line 99
     sget-object v0, Landroid/support/v7/widget/ThemeUtils;->i:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
@@ -221,20 +221,20 @@
 
     check-cast v0, Landroid/util/TypedValue;
 
-    .line 101
+    .line 100
     if-nez v0, :cond_14
 
-    .line 102
+    .line 101
     new-instance v0, Landroid/util/TypedValue;
 
     invoke-direct {v0}, Landroid/util/TypedValue;-><init>()V
 
-    .line 103
+    .line 102
     sget-object v1, Landroid/support/v7/widget/ThemeUtils;->i:Ljava/lang/ThreadLocal;
 
     invoke-virtual {v1, v0}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
 
-    .line 105
+    .line 104
     :cond_14
     return-object v0
 .end method
@@ -245,39 +245,39 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 73
+    .line 72
     sget-object v0, Landroid/support/v7/widget/ThemeUtils;->j:[I
 
     aput p1, v0, v1
 
-    .line 74
+    .line 73
     const/4 v0, 0x0
 
     sget-object v1, Landroid/support/v7/widget/ThemeUtils;->j:[I
 
-    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    invoke-static {p0, v0, v1}, Landroid/support/v7/widget/TintTypedArray;->obtainStyledAttributes(Landroid/content/Context;Landroid/util/AttributeSet;[I)Landroid/support/v7/widget/TintTypedArray;
 
     move-result-object v0
 
-    .line 76
+    .line 75
     const/4 v1, 0x0
 
     :try_start_d
-    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
+    invoke-virtual {v0, v1}, Landroid/support/v7/widget/TintTypedArray;->getColorStateList(I)Landroid/content/res/ColorStateList;
     :try_end_10
     .catchall {:try_start_d .. :try_end_10} :catchall_15
 
     move-result-object v1
 
-    .line 78
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    .line 77
+    invoke-virtual {v0}, Landroid/support/v7/widget/TintTypedArray;->recycle()V
 
     return-object v1
 
     :catchall_15
     move-exception v1
 
-    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
+    invoke-virtual {v0}, Landroid/support/v7/widget/TintTypedArray;->recycle()V
 
     throw v1
 .end method
@@ -286,12 +286,12 @@
     .registers 6
 
     .prologue
-    .line 83
+    .line 82
     invoke-static {p0, p1}, Landroid/support/v7/widget/ThemeUtils;->b(Landroid/content/Context;I)Landroid/content/res/ColorStateList;
 
     move-result-object v0
 
-    .line 84
+    .line 83
     if-eqz v0, :cond_17
 
     invoke-virtual {v0}, Landroid/content/res/ColorStateList;->isStateful()Z
@@ -300,7 +300,7 @@
 
     if-eqz v1, :cond_17
 
-    .line 86
+    .line 85
     sget-object v1, Landroid/support/v7/widget/ThemeUtils;->a:[I
 
     invoke-virtual {v0}, Landroid/content/res/ColorStateList;->getDefaultColor()I
@@ -311,17 +311,17 @@
 
     move-result v0
 
-    .line 95
+    .line 94
     :goto_16
     return v0
 
-    .line 90
+    .line 89
     :cond_17
     invoke-static {}, Landroid/support/v7/widget/ThemeUtils;->a()Landroid/util/TypedValue;
 
     move-result-object v0
 
-    .line 92
+    .line 91
     invoke-virtual {p0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     move-result-object v1
@@ -332,12 +332,12 @@
 
     invoke-virtual {v1, v2, v0, v3}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
 
-    .line 93
+    .line 92
     invoke-virtual {v0}, Landroid/util/TypedValue;->getFloat()F
 
     move-result v0
 
-    .line 95
+    .line 94
     invoke-static {p0, p1, v0}, Landroid/support/v7/widget/ThemeUtils;->a(Landroid/content/Context;IF)I
 
     move-result v0

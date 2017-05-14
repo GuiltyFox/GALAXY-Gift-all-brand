@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 967
+    .line 1044
     iput-object p1, p0, Landroid/support/v7/widget/SearchView$8;->a:Landroid/support/v7/widget/SearchView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -39,7 +39,7 @@
 
     const/4 v0, 0x0
 
-    .line 970
+    .line 1048
     iget-object v2, p0, Landroid/support/v7/widget/SearchView$8;->a:Landroid/support/v7/widget/SearchView;
 
     # getter for: Landroid/support/v7/widget/SearchView;->mSearchable:Landroid/app/SearchableInfo;
@@ -49,12 +49,12 @@
 
     if-nez v2, :cond_b
 
-    .line 1000
+    .line 1078
     :cond_a
     :goto_a
     return v0
 
-    .line 981
+    .line 1059
     :cond_b
     iget-object v2, p0, Landroid/support/v7/widget/SearchView$8;->a:Landroid/support/v7/widget/SearchView;
 
@@ -71,6 +71,7 @@
 
     iget-object v2, p0, Landroid/support/v7/widget/SearchView$8;->a:Landroid/support/v7/widget/SearchView;
 
+    .line 1060
     # getter for: Landroid/support/v7/widget/SearchView;->mSearchSrcTextView:Landroid/support/v7/widget/SearchView$SearchAutoComplete;
     invoke-static {v2}, Landroid/support/v7/widget/SearchView;->access$1200(Landroid/support/v7/widget/SearchView;)Landroid/support/v7/widget/SearchView$SearchAutoComplete;
 
@@ -84,7 +85,7 @@
 
     if-eq v2, v3, :cond_2b
 
-    .line 983
+    .line 1061
     iget-object v0, p0, Landroid/support/v7/widget/SearchView$8;->a:Landroid/support/v7/widget/SearchView;
 
     # invokes: Landroid/support/v7/widget/SearchView;->onSuggestionsKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
@@ -94,7 +95,7 @@
 
     goto :goto_a
 
-    .line 988
+    .line 1066
     :cond_2b
     iget-object v2, p0, Landroid/support/v7/widget/SearchView$8;->a:Landroid/support/v7/widget/SearchView;
 
@@ -116,22 +117,22 @@
 
     if-eqz v2, :cond_a
 
-    .line 989
+    .line 1067
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
     move-result v2
 
     if-ne v2, v1, :cond_a
 
-    .line 990
+    .line 1068
     const/16 v2, 0x42
 
     if-ne p2, v2, :cond_a
 
-    .line 991
+    .line 1069
     invoke-virtual {p1}, Landroid/view/View;->cancelLongPress()V
 
-    .line 994
+    .line 1072
     iget-object v2, p0, Landroid/support/v7/widget/SearchView$8;->a:Landroid/support/v7/widget/SearchView;
 
     const/4 v3, 0x0
@@ -147,15 +148,17 @@
 
     move-result-object v4
 
+    .line 1073
     invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object v4
 
+    .line 1072
     # invokes: Landroid/support/v7/widget/SearchView;->launchQuerySearch(ILjava/lang/String;Ljava/lang/String;)V
     invoke-static {v2, v0, v3, v4}, Landroid/support/v7/widget/SearchView;->access$1700(Landroid/support/v7/widget/SearchView;ILjava/lang/String;Ljava/lang/String;)V
 
     move v0, v1
 
-    .line 996
+    .line 1074
     goto :goto_a
 .end method

@@ -139,7 +139,7 @@
     if-ne p2, v2, :cond_a
 
     .line 140
-    invoke-interface {p1}, Lrx/Observer;->i_()V
+    invoke-interface {p1}, Lrx/Observer;->m_()V
 
     .line 151
     :goto_9

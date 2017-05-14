@@ -104,7 +104,7 @@
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->o(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->p(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 237
     new-instance v0, Ljava/lang/StringBuilder;

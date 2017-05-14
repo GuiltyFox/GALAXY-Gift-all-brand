@@ -49,7 +49,7 @@
 
     .prologue
     .line 59
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->J(Landroid/content/Context;)J
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->N(Landroid/content/Context;)J
 
     move-result-wide v0
 
@@ -86,7 +86,7 @@
 
     .line 65
     :cond_1e
-    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->h(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p0}, Lcom/bzbs/data/UserLogin;->l(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -228,7 +228,7 @@
     move-result-wide v0
 
     .line 112
-    invoke-static {p0, v0, v1}, Lcom/bzbs/data/UserLogin;->b(Landroid/content/Context;J)Z
+    invoke-static {p0, v0, v1}, Lcom/bzbs/data/UserLogin;->e(Landroid/content/Context;J)Z
 
     goto :goto_2d
 .end method
@@ -256,12 +256,12 @@
     invoke-direct {v1, p0, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
     .line 183
-    const v0, 0x7f040117
+    const v0, 0x7f04011a
 
     invoke-virtual {v1, v0}, Landroid/app/Dialog;->setContentView(I)V
 
     .line 185
-    const v0, 0x7f100169
+    const v0, 0x7f10016b
 
     invoke-virtual {v1, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -273,7 +273,7 @@
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 189
-    const v0, 0x7f10016d
+    const v0, 0x7f10016f
 
     invoke-virtual {v1, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 

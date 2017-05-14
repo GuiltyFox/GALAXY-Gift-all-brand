@@ -23,7 +23,7 @@
     .line 36
     new-instance v0, Landroid/support/v7/app/AppCompatDialog;
 
-    invoke-virtual {p0}, Landroid/support/v7/app/AppCompatDialogFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
+    invoke-virtual {p0}, Landroid/support/v7/app/AppCompatDialogFragment;->getContext()Landroid/content/Context;
 
     move-result-object v1
 

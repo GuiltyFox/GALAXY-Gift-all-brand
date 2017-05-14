@@ -16,13 +16,14 @@
     return v0
 .end method
 
-.method public static a(Landroid/graphics/drawable/Drawable;I)V
-    .registers 2
+.method public static a(Landroid/graphics/drawable/Drawable;I)Z
+    .registers 3
 
     .prologue
     .line 26
     invoke-virtual {p0, p1}, Landroid/graphics/drawable/Drawable;->setLayoutDirection(I)Z
 
-    .line 27
-    return-void
+    move-result v0
+
+    return v0
 .end method

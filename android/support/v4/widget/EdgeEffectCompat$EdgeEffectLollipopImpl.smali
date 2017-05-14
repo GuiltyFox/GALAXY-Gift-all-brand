@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 135
+    .line 153
     invoke-direct {p0}, Landroid/support/v4/widget/EdgeEffectCompat$EdgeEffectIcsImpl;-><init>()V
 
     return-void
@@ -20,7 +20,7 @@
     .registers 5
 
     .prologue
-    .line 137
+    .line 156
     invoke-static {p1, p2, p3}, Landroid/support/v4/widget/EdgeEffectCompatLollipop;->a(Ljava/lang/Object;FF)Z
 
     move-result v0

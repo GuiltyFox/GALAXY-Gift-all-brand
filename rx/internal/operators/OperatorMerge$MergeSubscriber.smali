@@ -1640,7 +1640,7 @@
 
     .line 614
     :cond_74
-    invoke-virtual {v14}, Lrx/Subscriber;->i_()V
+    invoke-virtual {v14}, Lrx/Subscriber;->m_()V
     :try_end_77
     .catchall {:try_start_1 .. :try_end_77} :catchall_78
 
@@ -2297,7 +2297,7 @@
     goto :goto_9
 .end method
 
-.method public i_()V
+.method public m_()V
     .registers 2
 
     .prologue

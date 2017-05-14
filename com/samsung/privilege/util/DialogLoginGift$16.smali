@@ -118,7 +118,7 @@
     .line 863
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$16;->c:Landroid/content/Context;
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->U(Landroid/content/Context;)V
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->X(Landroid/content/Context;)V
 
     .line 865
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$16;->c:Landroid/content/Context;

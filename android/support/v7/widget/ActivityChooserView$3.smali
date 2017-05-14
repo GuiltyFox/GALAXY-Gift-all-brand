@@ -1,5 +1,5 @@
 .class Landroid/support/v7/widget/ActivityChooserView$3;
-.super Landroid/support/v7/widget/ListPopupWindow$ForwardingListener;
+.super Landroid/support/v7/widget/ForwardingListener;
 .source "ActivityChooserView.java"
 
 
@@ -18,21 +18,21 @@
     .registers 3
 
     .prologue
-    .line 240
+    .line 241
     iput-object p1, p0, Landroid/support/v7/widget/ActivityChooserView$3;->a:Landroid/support/v7/widget/ActivityChooserView;
 
-    invoke-direct {p0, p2}, Landroid/support/v7/widget/ListPopupWindow$ForwardingListener;-><init>(Landroid/view/View;)V
+    invoke-direct {p0, p2}, Landroid/support/v7/widget/ForwardingListener;-><init>(Landroid/view/View;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getPopup()Landroid/support/v7/widget/ListPopupWindow;
+.method public getPopup()Landroid/support/v7/view/menu/ShowableListMenu;
     .registers 2
 
     .prologue
-    .line 243
+    .line 244
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$3;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     # invokes: Landroid/support/v7/widget/ActivityChooserView;->getListPopupWindow()Landroid/support/v7/widget/ListPopupWindow;
@@ -47,12 +47,12 @@
     .registers 2
 
     .prologue
-    .line 248
+    .line 249
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$3;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActivityChooserView;->showPopup()Z
 
-    .line 249
+    .line 250
     const/4 v0, 0x1
 
     return v0
@@ -62,12 +62,12 @@
     .registers 2
 
     .prologue
-    .line 254
+    .line 255
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$3;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActivityChooserView;->dismissPopup()Z
 
-    .line 255
+    .line 256
     const/4 v0, 0x1
 
     return v0

@@ -112,7 +112,7 @@
     .line 100
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$3;->b:Landroid/content/Context;
 
-    const v1, 0x7f0902da
+    const v1, 0x7f0902db
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -242,7 +242,7 @@
 
     iget-object v5, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$3;->b:Landroid/content/Context;
 
-    const v6, 0x7f090282
+    const v6, 0x7f090283
 
     invoke-virtual {v5, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -286,7 +286,7 @@
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$3;->b:Landroid/content/Context;
 
     .line 117
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 

@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 157
+    .line 160
     iput-object p1, p0, Lcom/samsung/privilege/activity/AdminServerConfig2Activity$1;->a:Lcom/samsung/privilege/activity/AdminServerConfig2Activity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,9 +35,9 @@
     .registers 3
 
     .prologue
-    .line 159
+    .line 162
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 160
+    .line 163
     return-void
 .end method

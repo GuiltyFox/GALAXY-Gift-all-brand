@@ -27,7 +27,7 @@
     .registers 1
 
     .prologue
-    .line 142
+    .line 150
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
     .registers 3
 
     .prologue
-    .line 144
+    .line 153
     new-instance v0, Landroid/support/v4/app/FragmentState;
 
     invoke-direct {v0, p1}, Landroid/support/v4/app/FragmentState;-><init>(Landroid/os/Parcel;)V
@@ -51,7 +51,7 @@
     .registers 3
 
     .prologue
-    .line 148
+    .line 158
     new-array v0, p1, [Landroid/support/v4/app/FragmentState;
 
     return-object v0
@@ -61,7 +61,7 @@
     .registers 3
 
     .prologue
-    .line 142
+    .line 150
     invoke-virtual {p0, p1}, Landroid/support/v4/app/FragmentState$1;->a(Landroid/os/Parcel;)Landroid/support/v4/app/FragmentState;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .registers 3
 
     .prologue
-    .line 142
+    .line 150
     invoke-virtual {p0, p1}, Landroid/support/v4/app/FragmentState$1;->a(I)[Landroid/support/v4/app/FragmentState;
 
     move-result-object v0

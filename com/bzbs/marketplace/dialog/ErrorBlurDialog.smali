@@ -356,7 +356,7 @@
 
     sget-object v1, Lcom/bzbs/marketplace/dialog/ErrorBlurDialog;->a:Landroid/app/Activity;
 
-    const v2, 0x7f0d0102
+    const v2, 0x7f0c010a
 
     invoke-direct {v0, v1, v2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
@@ -367,7 +367,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f04010e
+    const v2, 0x7f040111
 
     const/4 v3, 0x0
 

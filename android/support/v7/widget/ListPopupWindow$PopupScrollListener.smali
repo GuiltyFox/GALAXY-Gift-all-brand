@@ -15,7 +15,7 @@
     .registers 2
 
     .prologue
-    .line 1815
+    .line 1345
     iput-object p1, p0, Landroid/support/v7/widget/ListPopupWindow$PopupScrollListener;->a:Landroid/support/v7/widget/ListPopupWindow;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
     .registers 3
 
     .prologue
-    .line 1815
+    .line 1345
     invoke-direct {p0, p1}, Landroid/support/v7/widget/ListPopupWindow$PopupScrollListener;-><init>(Landroid/support/v7/widget/ListPopupWindow;)V
 
     return-void
@@ -39,7 +39,7 @@
     .registers 5
 
     .prologue
-    .line 1819
+    .line 1350
     return-void
 .end method
 
@@ -47,60 +47,58 @@
     .registers 5
 
     .prologue
-    .line 1822
+    .line 1354
     const/4 v0, 0x1
 
-    if-ne p2, v0, :cond_2f
+    if-ne p2, v0, :cond_2d
 
     iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$PopupScrollListener;->a:Landroid/support/v7/widget/ListPopupWindow;
 
+    .line 1355
     invoke-virtual {v0}, Landroid/support/v7/widget/ListPopupWindow;->isInputMethodNotNeeded()Z
 
     move-result v0
 
-    if-nez v0, :cond_2f
+    if-nez v0, :cond_2d
 
     iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$PopupScrollListener;->a:Landroid/support/v7/widget/ListPopupWindow;
 
-    # getter for: Landroid/support/v7/widget/ListPopupWindow;->mPopup:Landroid/widget/PopupWindow;
-    invoke-static {v0}, Landroid/support/v7/widget/ListPopupWindow;->access$1100(Landroid/support/v7/widget/ListPopupWindow;)Landroid/widget/PopupWindow;
-
-    move-result-object v0
+    iget-object v0, v0, Landroid/support/v7/widget/ListPopupWindow;->mPopup:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
 
     move-result-object v0
 
-    if-eqz v0, :cond_2f
+    if-eqz v0, :cond_2d
 
-    .line 1824
+    .line 1356
     iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$PopupScrollListener;->a:Landroid/support/v7/widget/ListPopupWindow;
 
     # getter for: Landroid/support/v7/widget/ListPopupWindow;->mHandler:Landroid/os/Handler;
-    invoke-static {v0}, Landroid/support/v7/widget/ListPopupWindow;->access$1300(Landroid/support/v7/widget/ListPopupWindow;)Landroid/os/Handler;
+    invoke-static {v0}, Landroid/support/v7/widget/ListPopupWindow;->access$700(Landroid/support/v7/widget/ListPopupWindow;)Landroid/os/Handler;
 
     move-result-object v0
 
     iget-object v1, p0, Landroid/support/v7/widget/ListPopupWindow$PopupScrollListener;->a:Landroid/support/v7/widget/ListPopupWindow;
 
     # getter for: Landroid/support/v7/widget/ListPopupWindow;->mResizePopupRunnable:Landroid/support/v7/widget/ListPopupWindow$ResizePopupRunnable;
-    invoke-static {v1}, Landroid/support/v7/widget/ListPopupWindow;->access$1200(Landroid/support/v7/widget/ListPopupWindow;)Landroid/support/v7/widget/ListPopupWindow$ResizePopupRunnable;
+    invoke-static {v1}, Landroid/support/v7/widget/ListPopupWindow;->access$600(Landroid/support/v7/widget/ListPopupWindow;)Landroid/support/v7/widget/ListPopupWindow$ResizePopupRunnable;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
-    .line 1825
+    .line 1357
     iget-object v0, p0, Landroid/support/v7/widget/ListPopupWindow$PopupScrollListener;->a:Landroid/support/v7/widget/ListPopupWindow;
 
     # getter for: Landroid/support/v7/widget/ListPopupWindow;->mResizePopupRunnable:Landroid/support/v7/widget/ListPopupWindow$ResizePopupRunnable;
-    invoke-static {v0}, Landroid/support/v7/widget/ListPopupWindow;->access$1200(Landroid/support/v7/widget/ListPopupWindow;)Landroid/support/v7/widget/ListPopupWindow$ResizePopupRunnable;
+    invoke-static {v0}, Landroid/support/v7/widget/ListPopupWindow;->access$600(Landroid/support/v7/widget/ListPopupWindow;)Landroid/support/v7/widget/ListPopupWindow$ResizePopupRunnable;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ListPopupWindow$ResizePopupRunnable;->run()V
 
-    .line 1827
-    :cond_2f
+    .line 1359
+    :cond_2d
     return-void
 .end method

@@ -12,7 +12,7 @@
     .registers 2
 
     .prologue
-    .line 359
+    .line 357
     iput-object p1, p0, Lcom/samsung/privilege/service/BeaconStarterService$NFCListener;->a:Lcom/samsung/privilege/service/BeaconStarterService;
 
     invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
@@ -26,10 +26,10 @@
     .registers 8
 
     .prologue
-    .line 402
+    .line 404
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 404
+    .line 406
     const-string/jumbo v0, "BeaconStarterService"
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -62,7 +62,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 405
+    .line 407
     return-void
 .end method
 
@@ -72,7 +72,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 362
+    .line 360
     const-string/jumbo v0, "BeaconStarterService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -105,20 +105,20 @@
 
     invoke-static {v0, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 365
+    .line 363
     :try_start_26
     new-instance v0, Lorg/json/JSONObject;
 
     invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
-    .line 367
+    .line 365
     new-instance v3, Lcom/bzbs/bean/NFCResult;
 
     invoke-direct {v3, v0}, Lcom/bzbs/bean/NFCResult;-><init>(Lorg/json/JSONObject;)V
 
     move v2, v1
 
-    .line 369
+    .line 367
     :goto_31
     iget-object v0, v3, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
@@ -128,7 +128,7 @@
 
     if-ge v2, v0, :cond_84
 
-    .line 370
+    .line 368
     iget-object v0, v3, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -137,7 +137,7 @@
 
     check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    .line 371
+    .line 369
     iget-object v4, v0, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
 
     const-string/jumbo v5, "campaign"
@@ -148,29 +148,29 @@
 
     if-eqz v4, :cond_80
 
-    .line 373
+    .line 371
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v4
 
     long-to-int v4, v4
 
-    .line 374
+    .line 372
     new-instance v4, Lcom/bzbs/bean/MessageGCM;
 
     invoke-direct {v4}, Lcom/bzbs/bean/MessageGCM;-><init>()V
 
-    .line 375
+    .line 373
     const-string/jumbo v5, "campaign_beacon"
 
     iput-object v5, v4, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    .line 376
+    .line 374
     iget-object v5, v0, Lcom/bzbs/bean/NFCPlan;->PlanDetail:Ljava/lang/String;
 
     iput-object v5, v4, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 377
+    .line 375
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -193,17 +193,17 @@
 
     iput-object v5, v4, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
 
-    .line 378
+    .line 376
     iget-object v0, v0, Lcom/bzbs/bean/NFCPlan;->AgencyId:Ljava/lang/String;
 
     iput-object v0, v4, Lcom/bzbs/bean/MessageGCM;->agency_id:Ljava/lang/String;
 
-    .line 380
+    .line 378
     iget-object v0, p0, Lcom/samsung/privilege/service/BeaconStarterService$NFCListener;->a:Lcom/samsung/privilege/service/BeaconStarterService;
 
     invoke-static {v0, v4}, Lcom/samsung/privilege/service/BeaconStarterService;->a(Lcom/samsung/privilege/service/BeaconStarterService;Lcom/bzbs/bean/MessageGCM;)V
 
-    .line 369
+    .line 367
     :cond_80
     add-int/lit8 v0, v2, 0x1
 
@@ -211,7 +211,7 @@
 
     goto :goto_31
 
-    .line 384
+    .line 382
     :cond_84
     :goto_84
     iget-object v0, v3, Lcom/bzbs/bean/NFCResult;->planes_action:Ljava/util/ArrayList;
@@ -220,9 +220,9 @@
 
     move-result v0
 
-    if-ge v1, v0, :cond_f1
+    if-ge v1, v0, :cond_d2
 
-    .line 385
+    .line 383
     iget-object v0, v3, Lcom/bzbs/bean/NFCResult;->planes_action:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -231,7 +231,7 @@
 
     check-cast v0, Lcom/bzbs/bean/NFCPlan;
 
-    .line 386
+    .line 384
     iget-object v2, v0, Lcom/bzbs/bean/NFCPlan;->Type:Ljava/lang/String;
 
     const-string/jumbo v4, "post"
@@ -242,22 +242,22 @@
 
     if-eqz v2, :cond_ce
 
-    .line 387
+    .line 385
     new-instance v2, Lcom/bzbs/bean/MessageGCM;
 
     invoke-direct {v2}, Lcom/bzbs/bean/MessageGCM;-><init>()V
 
-    .line 388
+    .line 386
     const-string/jumbo v4, "message_beacon"
 
     iput-object v4, v2, Lcom/bzbs/bean/MessageGCM;->type:Ljava/lang/String;
 
-    .line 389
+    .line 387
     iget-object v4, v0, Lcom/bzbs/bean/NFCPlan;->Message:Ljava/lang/String;
 
     iput-object v4, v2, Lcom/bzbs/bean/MessageGCM;->alert:Ljava/lang/String;
 
-    .line 390
+    .line 388
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -280,19 +280,17 @@
 
     iput-object v4, v2, Lcom/bzbs/bean/MessageGCM;->object_id:Ljava/lang/String;
 
-    .line 391
+    .line 389
     iget-object v0, v0, Lcom/bzbs/bean/NFCPlan;->AgencyId:Ljava/lang/String;
 
     iput-object v0, v2, Lcom/bzbs/bean/MessageGCM;->agency_id:Ljava/lang/String;
 
-    .line 392
+    .line 390
     iget-object v0, p0, Lcom/samsung/privilege/service/BeaconStarterService$NFCListener;->a:Lcom/samsung/privilege/service/BeaconStarterService;
 
     invoke-static {v0, v2}, Lcom/samsung/privilege/service/BeaconStarterService;->b(Lcom/samsung/privilege/service/BeaconStarterService;Lcom/bzbs/bean/MessageGCM;)V
-    :try_end_ce
-    .catch Lorg/json/JSONException; {:try_start_26 .. :try_end_ce} :catch_d2
 
-    .line 384
+    .line 382
     :cond_ce
     add-int/lit8 v0, v1, 0x1
 
@@ -300,11 +298,42 @@
 
     goto :goto_84
 
+    .line 394
+    :cond_d2
+    iget-object v0, v3, Lcom/bzbs/bean/NFCResult;->planes_promp:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    if-gtz v0, :cond_e2
+
+    iget-object v0, v3, Lcom/bzbs/bean/NFCResult;->planes_action:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    if-lez v0, :cond_e7
+
     .line 395
-    :catch_d2
+    :cond_e2
+    iget-object v0, p0, Lcom/samsung/privilege/service/BeaconStarterService$NFCListener;->a:Lcom/samsung/privilege/service/BeaconStarterService;
+
+    invoke-static {v0}, Lcom/samsung/privilege/service/BeaconStarterService;->b(Lcom/samsung/privilege/service/BeaconStarterService;)V
+    :try_end_e7
+    .catch Lorg/json/JSONException; {:try_start_26 .. :try_end_e7} :catch_e8
+
+    .line 400
+    :cond_e7
+    :goto_e7
+    return-void
+
+    .line 397
+    :catch_e8
     move-exception v0
 
-    .line 396
+    .line 398
     const-string/jumbo v1, "BeaconStarterService"
 
     new-instance v2, Ljava/lang/StringBuilder;
@@ -331,7 +360,5 @@
 
     invoke-static {v1, v0}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 398
-    :cond_f1
-    return-void
+    goto :goto_e7
 .end method

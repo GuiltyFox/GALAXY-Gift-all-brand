@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 663
+    .line 662
     iput-object p1, p0, Landroid/support/v7/view/menu/MenuItemImpl$1;->a:Landroid/support/v7/view/menu/MenuItemImpl;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,7 +35,7 @@
     .registers 4
 
     .prologue
-    .line 666
+    .line 665
     iget-object v0, p0, Landroid/support/v7/view/menu/MenuItemImpl$1;->a:Landroid/support/v7/view/menu/MenuItemImpl;
 
     invoke-static {v0}, Landroid/support/v7/view/menu/MenuItemImpl;->a(Landroid/support/v7/view/menu/MenuItemImpl;)Landroid/support/v7/view/menu/MenuBuilder;
@@ -46,6 +46,6 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/view/menu/MenuBuilder;->onItemVisibleChanged(Landroid/support/v7/view/menu/MenuItemImpl;)V
 
-    .line 667
+    .line 666
     return-void
 .end method

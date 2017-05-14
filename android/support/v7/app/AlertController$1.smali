@@ -90,6 +90,7 @@
 
     move-result-object v0
 
+    .line 136
     invoke-virtual {v0}, Landroid/os/Message;->sendToTarget()V
 
     .line 137

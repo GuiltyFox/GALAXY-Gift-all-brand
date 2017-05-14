@@ -31,20 +31,20 @@
     .end annotation
 
     .prologue
-    .line 1728
+    .line 1805
     invoke-direct {p0, p1}, Landroid/support/v4/app/FragmentPagerAdapter;-><init>(Landroid/support/v4/app/FragmentManager;)V
 
-    .line 1725
+    .line 1802
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignImageSlideAdapter;->a:Ljava/util/ArrayList;
 
-    .line 1729
+    .line 1806
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignImageSlideAdapter;->a:Ljava/util/ArrayList;
 
-    .line 1730
+    .line 1807
     return-void
 .end method
 
@@ -54,7 +54,7 @@
     .registers 6
 
     .prologue
-    .line 1739
+    .line 1816
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignImageSlideAdapter;->a:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -63,8 +63,8 @@
 
     check-cast v0, Lcom/bzbs/bean/CampaignGallery;
 
-    .line 1740
-    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->h()Ljava/lang/String;
+    .line 1817
+    invoke-static {}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->g()Ljava/lang/String;
 
     move-result-object v1
 
@@ -88,7 +88,7 @@
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1741
+    .line 1818
     invoke-virtual {v0}, Lcom/bzbs/bean/CampaignGallery;->FullImageUrlLarge()Ljava/lang/String;
 
     move-result-object v0
@@ -104,7 +104,7 @@
     .registers 2
 
     .prologue
-    .line 1734
+    .line 1811
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$CampaignImageSlideAdapter;->a:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I

@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 2519
+    .line 2596
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$22;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$22;->a:Landroid/app/Dialog;
@@ -39,11 +39,11 @@
     .registers 3
 
     .prologue
-    .line 2521
+    .line 2598
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$22;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 2522
+    .line 2599
     return-void
 .end method

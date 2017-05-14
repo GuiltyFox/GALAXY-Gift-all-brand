@@ -66,9 +66,11 @@
 .end method
 
 .method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
-    .registers 9
+    .registers 10
 
     .prologue
+    const/4 v6, 0x0
+
     .line 88
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewBuyPointActivity$3;->a:Lcom/samsung/privilege/activity/WebViewBuyPointActivity;
 
@@ -164,7 +166,7 @@
     move-result-object v0
 
     .line 100
-    if-eqz p2, :cond_130
+    if-eqz p2, :cond_131
 
     .line 101
     iget-object v2, p0, Lcom/samsung/privilege/activity/WebViewBuyPointActivity$3;->a:Lcom/samsung/privilege/activity/WebViewBuyPointActivity;
@@ -285,7 +287,7 @@
 
     move-result v2
 
-    if-eqz v2, :cond_f6
+    if-eqz v2, :cond_f7
 
     .line 105
     iget-object v2, p0, Lcom/samsung/privilege/activity/WebViewBuyPointActivity$3;->a:Lcom/samsung/privilege/activity/WebViewBuyPointActivity;
@@ -304,10 +306,10 @@
 
     const/4 v5, 0x1
 
-    invoke-static {v2, v3, v4, v5}, Lcom/samsung/privilege/util/ResumeUtil;->a(Landroid/content/Context;Landroid/app/Activity;Landroid/os/Handler;Z)V
+    invoke-static {v2, v3, v4, v5, v6}, Lcom/samsung/privilege/util/ResumeUtil;->a(Landroid/content/Context;Landroid/app/Activity;Landroid/os/Handler;ZZ)V
 
     .line 108
-    :cond_f6
+    :cond_f7
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v2
@@ -320,7 +322,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_112
+    if-nez v1, :cond_113
 
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -337,7 +339,7 @@
     if-eqz v0, :cond_132
 
     .line 109
-    :cond_112
+    :cond_113
     const-string/jumbo v0, "content://someURI"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -369,11 +371,9 @@
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/WebViewBuyPointActivity;->finish()V
 
     .line 143
-    :cond_130
-    :goto_130
-    const/4 v0, 0x0
-
-    return v0
+    :cond_131
+    :goto_131
+    return v6
 
     .line 114
     :cond_132
@@ -387,7 +387,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_130
+    if-eqz v0, :cond_131
 
     .line 115
     new-instance v0, Landroid/content/Intent;
@@ -410,5 +410,5 @@
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/WebViewBuyPointActivity;->finish()V
 
-    goto :goto_130
+    goto :goto_131
 .end method

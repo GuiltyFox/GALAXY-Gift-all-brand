@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 108
+    .line 145
     invoke-direct {p0}, Landroid/support/v4/widget/PopupWindowCompat$Api21PopupWindowImpl;-><init>()V
 
     return-void
@@ -20,10 +20,10 @@
     .registers 3
 
     .prologue
-    .line 121
+    .line 158
     invoke-static {p1, p2}, Landroid/support/v4/widget/PopupWindowCompatApi23;->a(Landroid/widget/PopupWindow;I)V
 
-    .line 122
+    .line 159
     return-void
 .end method
 
@@ -31,21 +31,9 @@
     .registers 3
 
     .prologue
-    .line 111
+    .line 148
     invoke-static {p1, p2}, Landroid/support/v4/widget/PopupWindowCompatApi23;->a(Landroid/widget/PopupWindow;Z)V
 
-    .line 112
+    .line 149
     return-void
-.end method
-
-.method public a(Landroid/widget/PopupWindow;)Z
-    .registers 3
-
-    .prologue
-    .line 116
-    invoke-static {p1}, Landroid/support/v4/widget/PopupWindowCompatApi23;->a(Landroid/widget/PopupWindow;)Z
-
-    move-result v0
-
-    return v0
 .end method

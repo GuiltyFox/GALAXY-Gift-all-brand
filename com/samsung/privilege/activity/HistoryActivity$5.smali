@@ -22,7 +22,7 @@
     .registers 4
 
     .prologue
-    .line 650
+    .line 677
     iput-object p1, p0, Lcom/samsung/privilege/activity/HistoryActivity$5;->c:Lcom/samsung/privilege/activity/HistoryActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/HistoryActivity$5;->a:Lcom/bzbs/bean/Purchasing;
@@ -40,10 +40,10 @@
     .registers 8
 
     .prologue
-    .line 691
+    .line 718
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 693
+    .line 720
     iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$5;->c:Lcom/samsung/privilege/activity/HistoryActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/HistoryActivity;->i(Lcom/samsung/privilege/activity/HistoryActivity;)Ljava/lang/String;
@@ -80,7 +80,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 695
+    .line 722
     iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$5;->c:Lcom/samsung/privilege/activity/HistoryActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/HistoryActivity;->j(Lcom/samsung/privilege/activity/HistoryActivity;)Landroid/app/ProgressDialog;
@@ -89,26 +89,26 @@
 
     invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
 
-    .line 697
+    .line 724
     iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$5;->c:Lcom/samsung/privilege/activity/HistoryActivity;
 
     invoke-static {v0, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
 
-    .line 699
+    .line 726
     iget-boolean v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$5;->b:Z
 
     const/4 v1, 0x1
 
     if-ne v0, v1, :cond_44
 
-    .line 700
+    .line 727
     iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$5;->c:Lcom/samsung/privilege/activity/HistoryActivity;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/activity/HistoryActivity;->a(Lcom/samsung/privilege/activity/HistoryActivity;I)V
 
-    .line 702
+    .line 729
     :cond_44
     return-void
 .end method
@@ -117,7 +117,7 @@
     .registers 8
 
     .prologue
-    .line 653
+    .line 680
     iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$5;->c:Lcom/samsung/privilege/activity/HistoryActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/HistoryActivity;->i(Lcom/samsung/privilege/activity/HistoryActivity;)Ljava/lang/String;
@@ -154,7 +154,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 655
+    .line 682
     iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$5;->c:Lcom/samsung/privilege/activity/HistoryActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/HistoryActivity;->k(Lcom/samsung/privilege/activity/HistoryActivity;)Landroid/os/Handler;
@@ -167,6 +167,6 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 687
+    .line 714
     return-void
 .end method

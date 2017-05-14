@@ -8,20 +8,20 @@
     .registers 12
 
     .prologue
-    .line 34
+    .line 35
     new-instance v3, Landroid/app/Dialog;
 
     const v0, 0x1030010
 
     invoke-direct {v3, p0, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
-    .line 36
-    const v0, 0x7f04011a
+    .line 37
+    const v0, 0x7f04011d
 
     invoke-virtual {v3, v0}, Landroid/app/Dialog;->setContentView(I)V
 
-    .line 38
-    const v0, 0x7f1005d6
+    .line 39
+    const v0, 0x7f1005f1
 
     invoke-virtual {v3, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -29,8 +29,8 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 39
-    const v1, 0x7f1002c4
+    .line 40
+    const v1, 0x7f1002df
 
     invoke-virtual {v3, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -38,8 +38,8 @@
 
     check-cast v1, Landroid/widget/TextView;
 
-    .line 40
-    const v2, 0x7f1005d7
+    .line 41
+    const v2, 0x7f1005f2
 
     invoke-virtual {v3, v2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -47,7 +47,7 @@
 
     check-cast v2, Landroid/widget/TextView;
 
-    .line 43
+    .line 44
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -72,7 +72,7 @@
 
     move-result-object v4
 
-    .line 44
+    .line 45
     invoke-static {p0}, Lcom/bumptech/glide/Glide;->b(Landroid/content/Context;)Lcom/bumptech/glide/RequestManager;
 
     move-result-object v5
@@ -89,11 +89,11 @@
 
     invoke-virtual {v4, v0}, Lcom/bumptech/glide/DrawableRequestBuilder;->a(Landroid/widget/ImageView;)Lcom/bumptech/glide/request/target/Target;
 
-    .line 46
+    .line 47
     invoke-virtual {v1, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 47
-    if-eqz p4, :cond_a2
+    .line 48
+    if-eqz p4, :cond_b1
 
     const-string/jumbo v0, ""
 
@@ -101,19 +101,19 @@
 
     move-result v0
 
-    if-nez v0, :cond_a2
-
-    .line 48
-    invoke-virtual {v2, p4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    if-nez v0, :cond_b1
 
     .line 49
+    invoke-virtual {v2, p4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 50
     const/4 v0, 0x0
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 54
+    .line 55
     :goto_69
-    const v0, 0x7f100586
+    const v0, 0x7f1005a1
 
     invoke-virtual {v3, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -121,15 +121,15 @@
 
     check-cast v0, Landroid/widget/RelativeLayout;
 
-    .line 55
+    .line 56
     new-instance v1, Lcom/samsung/privilege/util/DialogNotiBadge$1;
 
     invoke-direct {v1, v3, p5, p0}, Lcom/samsung/privilege/util/DialogNotiBadge$1;-><init>(Landroid/app/Dialog;Ljava/lang/String;Landroid/content/Context;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 99
-    const v0, 0x7f10016d
+    .line 110
+    const v0, 0x7f10016f
 
     invoke-virtual {v3, v0}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -137,14 +137,14 @@
 
     check-cast v0, Landroid/widget/RelativeLayout;
 
-    .line 100
+    .line 111
     new-instance v1, Lcom/samsung/privilege/util/DialogNotiBadge$2;
 
     invoke-direct {v1, v3}, Lcom/samsung/privilege/util/DialogNotiBadge$2;-><init>(Landroid/app/Dialog;)V
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 107
+    .line 118
     invoke-virtual {v3}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -153,26 +153,38 @@
 
     move-result-object v0
 
-    .line 108
+    .line 119
     const/16 v1, 0x11
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
-    .line 109
+    .line 120
     invoke-virtual {v3}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 111
+    .line 122
+    const-string/jumbo v0, "Badge Blink"
+
+    invoke-static {v0}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;)V
+
+    .line 123
+    const-string/jumbo v0, "Gift Badge"
+
+    const-string/jumbo v1, "View Badge"
+
+    invoke-static {v0, v1, p3}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 125
     invoke-virtual {v3}, Landroid/app/Dialog;->show()V
 
-    .line 112
+    .line 126
     return-void
 
-    .line 51
-    :cond_a2
+    .line 52
+    :cond_b1
     const/16 v0, 0x8
 
     invoke-virtual {v2, v0}, Landroid/widget/TextView;->setVisibility(I)V

@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 223
+    .line 224
     iput-object p1, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$3;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -32,7 +32,7 @@
     .registers 6
 
     .prologue
-    .line 226
+    .line 227
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$3;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
     iget-object v1, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$3;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
@@ -47,7 +47,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->b(Lcom/samsung/privilege/fragment/CampaignListGiftFragment;I)I
 
-    .line 227
+    .line 228
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$3;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
     iget-object v1, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$3;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
@@ -62,7 +62,7 @@
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->c(Lcom/samsung/privilege/fragment/CampaignListGiftFragment;I)I
 
-    .line 230
+    .line 231
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$3;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
     invoke-static {v0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->b(Lcom/samsung/privilege/fragment/CampaignListGiftFragment;)Z
@@ -79,7 +79,7 @@
 
     if-nez v0, :cond_4e
 
-    .line 231
+    .line 232
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$3;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
     invoke-static {v0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->d(Lcom/samsung/privilege/fragment/CampaignListGiftFragment;)I
@@ -102,19 +102,19 @@
 
     if-lt v0, v1, :cond_4e
 
-    .line 232
+    .line 233
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$3;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
     invoke-static {v0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->f(Lcom/samsung/privilege/fragment/CampaignListGiftFragment;)I
 
     move-result v0
 
-    .line 233
+    .line 234
     iget-object v1, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$3;->a:Lcom/samsung/privilege/fragment/CampaignListGiftFragment;
 
     invoke-static {v1, v0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->a(Lcom/samsung/privilege/fragment/CampaignListGiftFragment;I)V
 
-    .line 236
+    .line 237
     :cond_4e
     return-void
 .end method

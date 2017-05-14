@@ -192,7 +192,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/util/RxPermissionUtils;->d:Landroid/content/Context;
 
-    const v2, 0x7f0d00fc
+    const v2, 0x7f0c0104
 
     invoke-direct {v0, v1, v2}, Landroid/support/v7/app/AlertDialog$Builder;-><init>(Landroid/content/Context;I)V
 
@@ -212,7 +212,7 @@
 
     iget-object v2, p0, Lcom/samsung/privilege/util/RxPermissionUtils;->d:Landroid/content/Context;
 
-    const v3, 0x7f0903e2
+    const v3, 0x7f090405
 
     .line 82
     invoke-virtual {v2, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
@@ -389,7 +389,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/util/RxPermissionUtils;->d:Landroid/content/Context;
 
-    const v2, 0x7f0d00fc
+    const v2, 0x7f0c0104
 
     invoke-direct {v0, v1, v2}, Landroid/support/v7/app/AlertDialog$Builder;-><init>(Landroid/content/Context;I)V
 
@@ -409,7 +409,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/util/RxPermissionUtils;->d:Landroid/content/Context;
 
-    const v2, 0x7f0903e3
+    const v2, 0x7f090406
 
     .line 51
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;

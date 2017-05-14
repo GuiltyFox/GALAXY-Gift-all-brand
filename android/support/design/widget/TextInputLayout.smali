@@ -1890,7 +1890,7 @@
 
     sget v2, Landroid/support/design/R$color;->design_textinput_error_color_light:I
 
-    invoke-static {v1, v2}, Landroid/support/v4/content/ContextCompat;->b(Landroid/content/Context;I)I
+    invoke-static {v1, v2}, Landroid/support/v4/content/ContextCompat;->c(Landroid/content/Context;I)I
 
     move-result v1
 
@@ -2296,7 +2296,7 @@
 
     sget v2, Landroid/support/design/R$color;->design_textinput_error_color_light:I
 
-    invoke-static {v1, v2}, Landroid/support/v4/content/ContextCompat;->b(Landroid/content/Context;I)I
+    invoke-static {v1, v2}, Landroid/support/v4/content/ContextCompat;->c(Landroid/content/Context;I)I
 
     move-result v1
 

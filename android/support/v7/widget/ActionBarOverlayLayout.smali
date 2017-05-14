@@ -257,15 +257,15 @@
     .registers 2
 
     .prologue
-    .line 594
+    .line 592
     invoke-direct {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->haltActionBarHideOffsetAnimations()V
 
-    .line 595
+    .line 593
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mAddActionBarHideOffset:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 596
+    .line 594
     return-void
 .end method
 
@@ -275,17 +275,17 @@
     .prologue
     const/4 v1, 0x1
 
-    .line 257
+    .line 255
     const/4 v2, 0x0
 
-    .line 258
+    .line 256
     invoke-virtual {p1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v7/widget/ActionBarOverlayLayout$LayoutParams;
 
-    .line 259
+    .line 257
     if-eqz p3, :cond_15
 
     iget v3, v0, Landroid/support/v7/widget/ActionBarOverlayLayout$LayoutParams;->leftMargin:I
@@ -294,14 +294,14 @@
 
     if-eq v3, v4, :cond_15
 
-    .line 261
+    .line 259
     iget v2, p2, Landroid/graphics/Rect;->left:I
 
     iput v2, v0, Landroid/support/v7/widget/ActionBarOverlayLayout$LayoutParams;->leftMargin:I
 
     move v2, v1
 
-    .line 263
+    .line 261
     :cond_15
     if-eqz p4, :cond_22
 
@@ -311,14 +311,14 @@
 
     if-eq v3, v4, :cond_22
 
-    .line 265
+    .line 263
     iget v2, p2, Landroid/graphics/Rect;->top:I
 
     iput v2, v0, Landroid/support/v7/widget/ActionBarOverlayLayout$LayoutParams;->topMargin:I
 
     move v2, v1
 
-    .line 267
+    .line 265
     :cond_22
     if-eqz p6, :cond_2f
 
@@ -328,14 +328,14 @@
 
     if-eq v3, v4, :cond_2f
 
-    .line 269
+    .line 267
     iget v2, p2, Landroid/graphics/Rect;->right:I
 
     iput v2, v0, Landroid/support/v7/widget/ActionBarOverlayLayout$LayoutParams;->rightMargin:I
 
     move v2, v1
 
-    .line 271
+    .line 269
     :cond_2f
     if-eqz p5, :cond_3d
 
@@ -345,14 +345,14 @@
 
     if-eq v3, v4, :cond_3d
 
-    .line 273
+    .line 271
     iget v2, p2, Landroid/graphics/Rect;->bottom:I
 
     iput v2, v0, Landroid/support/v7/widget/ActionBarOverlayLayout$LayoutParams;->bottomMargin:I
 
     move v0, v1
 
-    .line 275
+    .line 273
     :goto_3c
     return v0
 
@@ -366,25 +366,25 @@
     .registers 5
 
     .prologue
-    .line 535
+    .line 533
     instance-of v0, p1, Landroid/support/v7/widget/DecorToolbar;
 
     if-eqz v0, :cond_7
 
-    .line 536
+    .line 534
     check-cast p1, Landroid/support/v7/widget/DecorToolbar;
 
-    .line 538
+    .line 536
     :goto_6
     return-object p1
 
-    .line 537
+    .line 535
     :cond_7
     instance-of v0, p1, Landroid/support/v7/widget/Toolbar;
 
     if-eqz v0, :cond_12
 
-    .line 538
+    .line 536
     check-cast p1, Landroid/support/v7/widget/Toolbar;
 
     invoke-virtual {p1}, Landroid/support/v7/widget/Toolbar;->getWrapper()Landroid/support/v7/widget/DecorToolbar;
@@ -393,7 +393,7 @@
 
     goto :goto_6
 
-    .line 540
+    .line 538
     :cond_12
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -407,6 +407,7 @@
 
     move-result-object v1
 
+    .line 539
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
@@ -432,27 +433,27 @@
     .registers 2
 
     .prologue
-    .line 571
+    .line 569
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mRemoveActionBarHideOffset:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 572
+    .line 570
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mAddActionBarHideOffset:Ljava/lang/Runnable;
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 573
+    .line 571
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mCurrentActionBarTopAnimator:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
     if-eqz v0, :cond_13
 
-    .line 574
+    .line 572
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mCurrentActionBarTopAnimator:Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 
     invoke-virtual {v0}, Landroid/support/v4/view/ViewPropertyAnimatorCompat;->b()V
 
-    .line 576
+    .line 574
     :cond_13
     return-void
 .end method
@@ -548,17 +549,17 @@
     .registers 5
 
     .prologue
-    .line 584
+    .line 582
     invoke-direct {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->haltActionBarHideOffsetAnimations()V
 
-    .line 585
+    .line 583
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mAddActionBarHideOffset:Ljava/lang/Runnable;
 
     const-wide/16 v2, 0x258
 
     invoke-virtual {p0, v0, v2, v3}, Landroid/support/v7/widget/ActionBarOverlayLayout;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 586
+    .line 584
     return-void
 .end method
 
@@ -566,17 +567,17 @@
     .registers 5
 
     .prologue
-    .line 579
+    .line 577
     invoke-direct {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->haltActionBarHideOffsetAnimations()V
 
-    .line 580
+    .line 578
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mRemoveActionBarHideOffset:Ljava/lang/Runnable;
 
     const-wide/16 v2, 0x258
 
     invoke-virtual {p0, v0, v2, v3}, Landroid/support/v7/widget/ActionBarOverlayLayout;->postDelayed(Ljava/lang/Runnable;J)Z
 
-    .line 581
+    .line 579
     return-void
 .end method
 
@@ -584,15 +585,15 @@
     .registers 2
 
     .prologue
-    .line 589
+    .line 587
     invoke-direct {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->haltActionBarHideOffsetAnimations()V
 
-    .line 590
+    .line 588
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mRemoveActionBarHideOffset:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
-    .line 591
+    .line 589
     return-void
 .end method
 
@@ -602,7 +603,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 599
+    .line 597
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mFlingEstimator:Landroid/support/v4/widget/ScrollerCompat;
 
     float-to-int v4, p2
@@ -621,14 +622,14 @@
 
     invoke-virtual/range {v0 .. v8}, Landroid/support/v4/widget/ScrollerCompat;->a(IIIIIIII)V
 
-    .line 600
+    .line 598
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mFlingEstimator:Landroid/support/v4/widget/ScrollerCompat;
 
     invoke-virtual {v0}, Landroid/support/v4/widget/ScrollerCompat;->e()I
 
     move-result v0
 
-    .line 601
+    .line 599
     iget-object v2, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
 
     invoke-virtual {v2}, Landroid/support/v7/widget/ActionBarContainer;->getHeight()I
@@ -649,10 +650,10 @@
     .registers 2
 
     .prologue
-    .line 675
+    .line 673
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 676
+    .line 674
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0}, Landroid/support/v7/widget/DecorToolbar;->canShowOverflowMenu()Z
@@ -666,7 +667,7 @@
     .registers 3
 
     .prologue
-    .line 324
+    .line 322
     instance-of v0, p1, Landroid/support/v7/widget/ActionBarOverlayLayout$LayoutParams;
 
     return v0
@@ -676,15 +677,15 @@
     .registers 2
 
     .prologue
-    .line 729
+    .line 727
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 730
+    .line 728
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0}, Landroid/support/v7/widget/DecorToolbar;->dismissPopupMenus()V
 
-    .line 731
+    .line 729
     return-void
 .end method
 
@@ -694,10 +695,10 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 442
+    .line 440
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->draw(Landroid/graphics/Canvas;)V
 
-    .line 443
+    .line 441
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mWindowContentOverlay:Landroid/graphics/drawable/Drawable;
 
     if-eqz v0, :cond_3b
@@ -706,7 +707,7 @@
 
     if-nez v0, :cond_3b
 
-    .line 444
+    .line 442
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContainer;->getVisibility()I
@@ -717,6 +718,7 @@
 
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
 
+    .line 443
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContainer;->getBottom()I
 
     move-result v0
@@ -737,7 +739,7 @@
 
     float-to-int v0, v0
 
-    .line 447
+    .line 445
     :goto_26
     iget-object v2, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mWindowContentOverlay:Landroid/graphics/drawable/Drawable;
 
@@ -747,27 +749,29 @@
 
     iget-object v4, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mWindowContentOverlay:Landroid/graphics/drawable/Drawable;
 
+    .line 446
     invoke-virtual {v4}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     move-result v4
 
     add-int/2addr v4, v0
 
+    .line 445
     invoke-virtual {v2, v1, v0, v3, v4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 449
+    .line 447
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mWindowContentOverlay:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 451
+    .line 449
     :cond_3b
     return-void
 
     :cond_3c
     move v0, v1
 
-    .line 444
+    .line 443
     goto :goto_26
 .end method
 
@@ -777,20 +781,20 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 280
+    .line 278
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 282
+    .line 280
     invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->u(Landroid/view/View;)I
 
     move-result v0
 
-    .line 283
+    .line 281
     and-int/lit16 v0, v0, 0x100
 
     if-eqz v0, :cond_c
 
-    .line 287
+    .line 285
     :cond_c
     iget-object v1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
 
@@ -808,19 +812,19 @@
 
     move-result v0
 
-    .line 289
+    .line 287
     iget-object v1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mBaseInnerInsets:Landroid/graphics/Rect;
 
     invoke-virtual {v1, p1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 290
+    .line 288
     iget-object v1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mBaseInnerInsets:Landroid/graphics/Rect;
 
     iget-object v2, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mBaseContentInsets:Landroid/graphics/Rect;
 
     invoke-static {p0, v1, v2}, Landroid/support/v7/widget/ViewUtils;->computeFitSystemWindows(Landroid/view/View;Landroid/graphics/Rect;Landroid/graphics/Rect;)V
 
-    .line 291
+    .line 289
     iget-object v1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mLastBaseContentInsets:Landroid/graphics/Rect;
 
     iget-object v2, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mBaseContentInsets:Landroid/graphics/Rect;
@@ -831,7 +835,7 @@
 
     if-nez v1, :cond_35
 
-    .line 293
+    .line 291
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mLastBaseContentInsets:Landroid/graphics/Rect;
 
     iget-object v1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mBaseContentInsets:Landroid/graphics/Rect;
@@ -840,14 +844,14 @@
 
     move v0, v3
 
-    .line 296
+    .line 294
     :cond_35
     if-eqz v0, :cond_3a
 
-    .line 297
+    .line 295
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->requestLayout()V
 
-    .line 304
+    .line 302
     :cond_3a
     return v3
 .end method
@@ -858,7 +862,7 @@
     .prologue
     const/4 v1, -0x1
 
-    .line 309
+    .line 307
     new-instance v0, Landroid/support/v7/widget/ActionBarOverlayLayout$LayoutParams;
 
     invoke-direct {v0, v1, v1}, Landroid/support/v7/widget/ActionBarOverlayLayout$LayoutParams;-><init>(II)V
@@ -882,7 +886,7 @@
     .registers 4
 
     .prologue
-    .line 314
+    .line 312
     new-instance v0, Landroid/support/v7/widget/ActionBarOverlayLayout$LayoutParams;
 
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->getContext()Landroid/content/Context;
@@ -910,7 +914,7 @@
     .registers 3
 
     .prologue
-    .line 319
+    .line 317
     new-instance v0, Landroid/support/v7/widget/ActionBarOverlayLayout$LayoutParams;
 
     invoke-direct {v0, p1}, Landroid/support/v7/widget/ActionBarOverlayLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
@@ -922,7 +926,7 @@
     .registers 2
 
     .prologue
-    .line 560
+    .line 558
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
 
     if-eqz v0, :cond_d
@@ -950,7 +954,7 @@
     .registers 2
 
     .prologue
-    .line 523
+    .line 521
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mParentHelper:Landroid/support/v4/view/NestedScrollingParentHelper;
 
     invoke-virtual {v0}, Landroid/support/v4/view/NestedScrollingParentHelper;->a()I
@@ -964,10 +968,10 @@
     .registers 2
 
     .prologue
-    .line 618
+    .line 616
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 619
+    .line 617
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0}, Landroid/support/v7/widget/DecorToolbar;->getTitle()Ljava/lang/CharSequence;
@@ -981,10 +985,10 @@
     .registers 2
 
     .prologue
-    .line 645
+    .line 643
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 646
+    .line 644
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0}, Landroid/support/v7/widget/DecorToolbar;->hasIcon()Z
@@ -998,10 +1002,10 @@
     .registers 2
 
     .prologue
-    .line 651
+    .line 649
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 652
+    .line 650
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0}, Landroid/support/v7/widget/DecorToolbar;->hasLogo()Z
@@ -1015,10 +1019,10 @@
     .registers 2
 
     .prologue
-    .line 699
+    .line 697
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 700
+    .line 698
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0}, Landroid/support/v7/widget/DecorToolbar;->hideOverflowMenu()Z
@@ -1032,17 +1036,17 @@
     .registers 3
 
     .prologue
-    .line 624
+    .line 622
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 625
+    .line 623
     sparse-switch p1, :sswitch_data_18
 
-    .line 636
+    .line 634
     :goto_6
     return-void
 
-    .line 627
+    .line 625
     :sswitch_7
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
@@ -1050,7 +1054,7 @@
 
     goto :goto_6
 
-    .line 630
+    .line 628
     :sswitch_d
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
@@ -1058,7 +1062,7 @@
 
     goto :goto_6
 
-    .line 633
+    .line 631
     :sswitch_13
     const/4 v0, 0x1
 
@@ -1066,7 +1070,7 @@
 
     goto :goto_6
 
-    .line 625
+    .line 623
     :sswitch_data_18
     .sparse-switch
         0x2 -> :sswitch_7
@@ -1079,7 +1083,7 @@
     .registers 2
 
     .prologue
-    .line 556
+    .line 554
     iget-boolean v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mHideOnContentScroll:Z
 
     return v0
@@ -1099,10 +1103,10 @@
     .registers 2
 
     .prologue
-    .line 687
+    .line 685
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 688
+    .line 686
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0}, Landroid/support/v7/widget/DecorToolbar;->isOverflowMenuShowPending()Z
@@ -1116,10 +1120,10 @@
     .registers 2
 
     .prologue
-    .line 681
+    .line 679
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 682
+    .line 680
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0}, Landroid/support/v7/widget/DecorToolbar;->isOverflowMenuShowing()Z
@@ -1130,31 +1134,23 @@
 .end method
 
 .method protected onConfigurationChanged(Landroid/content/res/Configuration;)V
-    .registers 4
+    .registers 3
 
     .prologue
     .line 215
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x8
-
-    if-lt v0, v1, :cond_9
-
-    .line 216
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 218
-    :cond_9
+    .line 216
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
     invoke-direct {p0, v0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->init(Landroid/content/Context;)V
 
-    .line 219
+    .line 217
     invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->v(Landroid/view/View;)V
 
-    .line 220
+    .line 218
     return-void
 .end method
 
@@ -1176,17 +1172,17 @@
     .registers 15
 
     .prologue
-    .line 416
+    .line 414
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->getChildCount()I
 
     move-result v2
 
-    .line 418
+    .line 416
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->getPaddingLeft()I
 
     move-result v3
 
-    .line 419
+    .line 417
     sub-int v0, p4, p2
 
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->getPaddingRight()I
@@ -1195,12 +1191,12 @@
 
     sub-int/2addr v0, v1
 
-    .line 421
+    .line 419
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->getPaddingTop()I
 
     move-result v4
 
-    .line 422
+    .line 420
     sub-int v0, p5, p3
 
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->getPaddingBottom()I
@@ -1209,7 +1205,7 @@
 
     sub-int/2addr v0, v1
 
-    .line 424
+    .line 422
     const/4 v0, 0x0
 
     move v1, v0
@@ -1217,12 +1213,12 @@
     :goto_1c
     if-ge v1, v2, :cond_47
 
-    .line 425
+    .line 423
     invoke-virtual {p0, v1}, Landroid/support/v7/widget/ActionBarOverlayLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
-    .line 426
+    .line 424
     invoke-virtual {v5}, Landroid/view/View;->getVisibility()I
 
     move-result v0
@@ -1231,41 +1227,41 @@
 
     if-eq v0, v6, :cond_43
 
-    .line 427
+    .line 425
     invoke-virtual {v5}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v7/widget/ActionBarOverlayLayout$LayoutParams;
 
-    .line 429
+    .line 427
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v6
 
-    .line 430
+    .line 428
     invoke-virtual {v5}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v7
 
-    .line 432
+    .line 430
     iget v8, v0, Landroid/support/v7/widget/ActionBarOverlayLayout$LayoutParams;->leftMargin:I
 
     add-int/2addr v8, v3
 
-    .line 433
+    .line 431
     iget v0, v0, Landroid/support/v7/widget/ActionBarOverlayLayout$LayoutParams;->topMargin:I
 
     add-int/2addr v0, v4
 
-    .line 435
+    .line 433
     add-int/2addr v6, v8
 
     add-int/2addr v7, v0
 
     invoke-virtual {v5, v8, v0, v6, v7}, Landroid/view/View;->layout(IIII)V
 
-    .line 424
+    .line 422
     :cond_43
     add-int/lit8 v0, v1, 0x1
 
@@ -1273,7 +1269,7 @@
 
     goto :goto_1c
 
-    .line 438
+    .line 436
     :cond_47
     return-void
 .end method
@@ -1282,25 +1278,25 @@
     .registers 14
 
     .prologue
-    .line 329
+    .line 327
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 331
+    .line 329
     const/4 v7, 0x0
 
-    .line 332
+    .line 330
     const/4 v8, 0x0
 
-    .line 333
+    .line 331
     const/4 v9, 0x0
 
-    .line 335
+    .line 333
     const/4 v6, 0x0
 
-    .line 336
+    .line 334
     const/4 v10, 0x0
 
-    .line 338
+    .line 336
     iget-object v1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
 
     const/4 v3, 0x0
@@ -1315,7 +1311,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/support/v7/widget/ActionBarOverlayLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
-    .line 339
+    .line 337
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContainer;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -1324,9 +1320,10 @@
 
     check-cast v0, Landroid/support/v7/widget/ActionBarOverlayLayout$LayoutParams;
 
-    .line 340
+    .line 338
     iget-object v1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
 
+    .line 339
     invoke-virtual {v1}, Landroid/support/v7/widget/ActionBarContainer;->getMeasuredWidth()I
 
     move-result v1
@@ -1339,13 +1336,15 @@
 
     add-int/2addr v1, v2
 
+    .line 338
     invoke-static {v8, v1}, Ljava/lang/Math;->max(II)I
 
     move-result v8
 
-    .line 342
+    .line 340
     iget-object v1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
 
+    .line 341
     invoke-virtual {v1}, Landroid/support/v7/widget/ActionBarContainer;->getMeasuredHeight()I
 
     move-result v1
@@ -1358,27 +1357,30 @@
 
     add-int/2addr v0, v1
 
+    .line 340
     invoke-static {v7, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v7
 
-    .line 344
+    .line 342
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
 
+    .line 343
     invoke-static {v0}, Landroid/support/v4/view/ViewCompat;->k(Landroid/view/View;)I
 
     move-result v0
 
+    .line 342
     invoke-static {v9, v0}, Landroid/support/v7/widget/ViewUtils;->combineMeasuredStates(II)I
 
     move-result v9
 
-    .line 347
+    .line 345
     invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->u(Landroid/view/View;)I
 
     move-result v0
 
-    .line 348
+    .line 346
     and-int/lit16 v0, v0, 0x100
 
     if-eqz v0, :cond_115
@@ -1387,34 +1389,34 @@
 
     move v1, v0
 
-    .line 350
+    .line 348
     :goto_4e
     if-eqz v1, :cond_119
 
-    .line 353
+    .line 351
     iget v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarHeight:I
 
-    .line 354
+    .line 352
     iget-boolean v2, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mHasNonEmbeddedTabs:Z
 
     if-eqz v2, :cond_61
 
-    .line 355
+    .line 353
     iget-object v2, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
 
     invoke-virtual {v2}, Landroid/support/v7/widget/ActionBarContainer;->getTabContainer()Landroid/view/View;
 
     move-result-object v2
 
-    .line 356
+    .line 354
     if-eqz v2, :cond_61
 
-    .line 358
+    .line 356
     iget v2, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarHeight:I
 
     add-int/2addr v0, v2
 
-    .line 371
+    .line 369
     :cond_61
     :goto_61
     iget-object v2, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mContentInsets:Landroid/graphics/Rect;
@@ -1423,21 +1425,21 @@
 
     invoke-virtual {v2, v3}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 372
+    .line 370
     iget-object v2, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mInnerInsets:Landroid/graphics/Rect;
 
     iget-object v3, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mBaseInnerInsets:Landroid/graphics/Rect;
 
     invoke-virtual {v2, v3}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 373
+    .line 371
     iget-boolean v2, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mOverlayMode:Z
 
     if-nez v2, :cond_12b
 
     if-nez v1, :cond_12b
 
-    .line 374
+    .line 372
     iget-object v1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mContentInsets:Landroid/graphics/Rect;
 
     iget v2, v1, Landroid/graphics/Rect;->top:I
@@ -1446,7 +1448,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->top:I
 
-    .line 375
+    .line 373
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mContentInsets:Landroid/graphics/Rect;
 
     iget v1, v0, Landroid/graphics/Rect;->bottom:I
@@ -1455,7 +1457,7 @@
 
     iput v1, v0, Landroid/graphics/Rect;->bottom:I
 
-    .line 380
+    .line 378
     :goto_83
     iget-object v1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mContent:Landroid/support/v7/widget/ContentFrameLayout;
 
@@ -1473,7 +1475,7 @@
 
     invoke-direct/range {v0 .. v6}, Landroid/support/v7/widget/ActionBarOverlayLayout;->applyInsets(Landroid/view/View;Landroid/graphics/Rect;ZZZZ)Z
 
-    .line 382
+    .line 380
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mLastInnerInsets:Landroid/graphics/Rect;
 
     iget-object v1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mInnerInsets:Landroid/graphics/Rect;
@@ -1484,21 +1486,21 @@
 
     if-nez v0, :cond_a7
 
-    .line 386
+    .line 384
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mLastInnerInsets:Landroid/graphics/Rect;
 
     iget-object v1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mInnerInsets:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 388
+    .line 386
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mContent:Landroid/support/v7/widget/ContentFrameLayout;
 
     iget-object v1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mInnerInsets:Landroid/graphics/Rect;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/ContentFrameLayout;->dispatchFitSystemWindows(Landroid/graphics/Rect;)V
 
-    .line 391
+    .line 389
     :cond_a7
     iget-object v1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mContent:Landroid/support/v7/widget/ContentFrameLayout;
 
@@ -1514,7 +1516,7 @@
 
     invoke-virtual/range {v0 .. v5}, Landroid/support/v7/widget/ActionBarOverlayLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
-    .line 392
+    .line 390
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mContent:Landroid/support/v7/widget/ContentFrameLayout;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ContentFrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -1523,9 +1525,10 @@
 
     check-cast v0, Landroid/support/v7/widget/ActionBarOverlayLayout$LayoutParams;
 
-    .line 393
+    .line 391
     iget-object v1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mContent:Landroid/support/v7/widget/ContentFrameLayout;
 
+    .line 392
     invoke-virtual {v1}, Landroid/support/v7/widget/ContentFrameLayout;->getMeasuredWidth()I
 
     move-result v1
@@ -1538,13 +1541,15 @@
 
     add-int/2addr v1, v2
 
+    .line 391
     invoke-static {v8, v1}, Ljava/lang/Math;->max(II)I
 
     move-result v1
 
-    .line 395
+    .line 393
     iget-object v2, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mContent:Landroid/support/v7/widget/ContentFrameLayout;
 
+    .line 394
     invoke-virtual {v2}, Landroid/support/v7/widget/ContentFrameLayout;->getMeasuredHeight()I
 
     move-result v2
@@ -1557,22 +1562,25 @@
 
     add-int/2addr v0, v2
 
+    .line 393
     invoke-static {v7, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v0
 
-    .line 397
+    .line 395
     iget-object v2, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mContent:Landroid/support/v7/widget/ContentFrameLayout;
 
+    .line 396
     invoke-static {v2}, Landroid/support/v4/view/ViewCompat;->k(Landroid/view/View;)I
 
     move-result v2
 
+    .line 395
     invoke-static {v9, v2}, Landroid/support/v7/widget/ViewUtils;->combineMeasuredStates(II)I
 
     move-result v2
 
-    .line 401
+    .line 399
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->getPaddingLeft()I
 
     move-result v3
@@ -1585,7 +1593,7 @@
 
     add-int/2addr v1, v3
 
-    .line 402
+    .line 400
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->getPaddingTop()I
 
     move-result v3
@@ -1598,7 +1606,7 @@
 
     add-int/2addr v0, v3
 
-    .line 405
+    .line 403
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->getSuggestedMinimumHeight()I
 
     move-result v3
@@ -1607,7 +1615,7 @@
 
     move-result v0
 
-    .line 406
+    .line 404
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->getSuggestedMinimumWidth()I
 
     move-result v3
@@ -1616,23 +1624,25 @@
 
     move-result v1
 
-    .line 408
+    .line 407
     invoke-static {v1, p1, v2}, Landroid/support/v4/view/ViewCompat;->a(III)I
 
     move-result v1
 
     shl-int/lit8 v2, v2, 0x10
 
+    .line 408
     invoke-static {v0, p2, v2}, Landroid/support/v4/view/ViewCompat;->a(III)I
 
     move-result v0
 
+    .line 406
     invoke-virtual {p0, v1, v0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->setMeasuredDimension(II)V
 
-    .line 412
+    .line 410
     return-void
 
-    .line 348
+    .line 346
     :cond_115
     const/4 v0, 0x0
 
@@ -1640,7 +1650,7 @@
 
     goto/16 :goto_4e
 
-    .line 361
+    .line 359
     :cond_119
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
 
@@ -1652,7 +1662,7 @@
 
     if-eq v0, v2, :cond_13b
 
-    .line 364
+    .line 362
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContainer;->getMeasuredHeight()I
@@ -1661,7 +1671,7 @@
 
     goto/16 :goto_61
 
-    .line 377
+    .line 375
     :cond_12b
     iget-object v1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mInnerInsets:Landroid/graphics/Rect;
 
@@ -1671,7 +1681,7 @@
 
     iput v0, v1, Landroid/graphics/Rect;->top:I
 
-    .line 378
+    .line 376
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mInnerInsets:Landroid/graphics/Rect;
 
     iget v1, v0, Landroid/graphics/Rect;->bottom:I
@@ -1694,22 +1704,22 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 499
+    .line 497
     iget-boolean v1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mHideOnContentScroll:Z
 
     if-eqz v1, :cond_7
 
     if-nez p4, :cond_9
 
-    .line 500
+    .line 498
     :cond_7
     const/4 v0, 0x0
 
-    .line 508
+    .line 506
     :goto_8
     return v0
 
-    .line 502
+    .line 500
     :cond_9
     invoke-direct {p0, p2, p3}, Landroid/support/v7/widget/ActionBarOverlayLayout;->shouldHideActionBarOnFling(FF)Z
 
@@ -1717,16 +1727,16 @@
 
     if-eqz v1, :cond_15
 
-    .line 503
+    .line 501
     invoke-direct {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->addActionBarHideOffset()V
 
-    .line 507
+    .line 505
     :goto_12
     iput-boolean v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mAnimatingForFling:Z
 
     goto :goto_8
 
-    .line 505
+    .line 503
     :cond_15
     invoke-direct {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->removeActionBarHideOffset()V
 
@@ -1737,7 +1747,7 @@
     .registers 5
 
     .prologue
-    .line 518
+    .line 516
     const/4 v0, 0x0
 
     return v0
@@ -1747,7 +1757,7 @@
     .registers 5
 
     .prologue
-    .line 514
+    .line 512
     return-void
 .end method
 
@@ -1755,19 +1765,19 @@
     .registers 7
 
     .prologue
-    .line 479
+    .line 477
     iget v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mHideOnContentScrollReference:I
 
     add-int/2addr v0, p3
 
     iput v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mHideOnContentScrollReference:I
 
-    .line 480
+    .line 478
     iget v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mHideOnContentScrollReference:I
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->setActionBarHideOffset(I)V
 
-    .line 481
+    .line 479
     return-void
 .end method
 
@@ -1775,32 +1785,32 @@
     .registers 5
 
     .prologue
-    .line 468
+    .line 466
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mParentHelper:Landroid/support/v4/view/NestedScrollingParentHelper;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/support/v4/view/NestedScrollingParentHelper;->a(Landroid/view/View;Landroid/view/View;I)V
 
-    .line 469
+    .line 467
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->getActionBarHideOffset()I
 
     move-result v0
 
     iput v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mHideOnContentScrollReference:I
 
-    .line 470
+    .line 468
     invoke-direct {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->haltActionBarHideOffsetAnimations()V
 
-    .line 471
+    .line 469
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarVisibilityCallback:Landroid/support/v7/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;
 
     if-eqz v0, :cond_17
 
-    .line 472
+    .line 470
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarVisibilityCallback:Landroid/support/v7/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;
 
     invoke-interface {v0}, Landroid/support/v7/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;->onContentScrollStarted()V
 
-    .line 474
+    .line 472
     :cond_17
     return-void
 .end method
@@ -1809,7 +1819,7 @@
     .registers 5
 
     .prologue
-    .line 460
+    .line 458
     and-int/lit8 v0, p3, 0x2
 
     if-eqz v0, :cond_c
@@ -1822,11 +1832,11 @@
 
     if-eqz v0, :cond_e
 
-    .line 461
+    .line 459
     :cond_c
     const/4 v0, 0x0
 
-    .line 463
+    .line 461
     :goto_d
     return v0
 
@@ -1840,7 +1850,7 @@
     .registers 4
 
     .prologue
-    .line 485
+    .line 483
     iget-boolean v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mHideOnContentScroll:Z
 
     if-eqz v0, :cond_15
@@ -1849,7 +1859,7 @@
 
     if-nez v0, :cond_15
 
-    .line 486
+    .line 484
     iget v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mHideOnContentScrollReference:I
 
     iget-object v1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
@@ -1860,26 +1870,26 @@
 
     if-gt v0, v1, :cond_1f
 
-    .line 487
+    .line 485
     invoke-direct {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->postRemoveActionBarHideOffset()V
 
-    .line 492
+    .line 490
     :cond_15
     :goto_15
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarVisibilityCallback:Landroid/support/v7/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;
 
     if-eqz v0, :cond_1e
 
-    .line 493
+    .line 491
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarVisibilityCallback:Landroid/support/v7/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;
 
     invoke-interface {v0}, Landroid/support/v7/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;->onContentScrollStopped()V
 
-    .line 495
+    .line 493
     :cond_1e
     return-void
 
-    .line 489
+    .line 487
     :cond_1f
     invoke-direct {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->postAddActionBarHideOffset()V
 
@@ -1894,36 +1904,36 @@
 
     const/4 v2, 0x0
 
-    .line 223
+    .line 221
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v3, 0x10
 
     if-lt v0, v3, :cond_b
 
-    .line 224
+    .line 222
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onWindowSystemUiVisibilityChanged(I)V
 
-    .line 226
+    .line 224
     :cond_b
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 227
+    .line 225
     iget v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mLastSystemUiVisibility:I
 
     xor-int v4, v0, p1
 
-    .line 228
+    .line 226
     iput p1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mLastSystemUiVisibility:I
 
-    .line 229
+    .line 227
     and-int/lit8 v0, p1, 0x4
 
     if-nez v0, :cond_3e
 
     move v3, v1
 
-    .line 230
+    .line 228
     :goto_19
     and-int/lit16 v0, p1, 0x100
 
@@ -1931,13 +1941,13 @@
 
     move v0, v1
 
-    .line 231
+    .line 229
     :goto_1e
     iget-object v5, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarVisibilityCallback:Landroid/support/v7/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;
 
     if-eqz v5, :cond_32
 
-    .line 235
+    .line 233
     iget-object v5, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarVisibilityCallback:Landroid/support/v7/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;
 
     if-nez v0, :cond_42
@@ -1945,7 +1955,7 @@
     :goto_26
     invoke-interface {v5, v1}, Landroid/support/v7/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;->enableContentAnimations(Z)V
 
-    .line 236
+    .line 234
     if-nez v3, :cond_2d
 
     if-nez v0, :cond_44
@@ -1955,44 +1965,44 @@
 
     invoke-interface {v0}, Landroid/support/v7/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;->showForSystem()V
 
-    .line 239
+    .line 237
     :cond_32
     :goto_32
     and-int/lit16 v0, v4, 0x100
 
     if-eqz v0, :cond_3d
 
-    .line 240
+    .line 238
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarVisibilityCallback:Landroid/support/v7/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;
 
     if-eqz v0, :cond_3d
 
-    .line 241
+    .line 239
     invoke-static {p0}, Landroid/support/v4/view/ViewCompat;->v(Landroid/view/View;)V
 
-    .line 244
+    .line 242
     :cond_3d
     return-void
 
     :cond_3e
     move v3, v2
 
-    .line 229
+    .line 227
     goto :goto_19
 
     :cond_40
     move v0, v2
 
-    .line 230
+    .line 228
     goto :goto_1e
 
     :cond_42
     move v1, v2
 
-    .line 235
+    .line 233
     goto :goto_26
 
-    .line 237
+    .line 235
     :cond_44
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarVisibilityCallback:Landroid/support/v7/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;
 
@@ -2005,23 +2015,23 @@
     .registers 3
 
     .prologue
-    .line 248
+    .line 246
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->onWindowVisibilityChanged(I)V
 
-    .line 249
+    .line 247
     iput p1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mWindowVisibility:I
 
-    .line 250
+    .line 248
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarVisibilityCallback:Landroid/support/v7/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;
 
     if-eqz v0, :cond_e
 
-    .line 251
+    .line 249
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarVisibilityCallback:Landroid/support/v7/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;
 
     invoke-interface {v0, p1}, Landroid/support/v7/widget/ActionBarOverlayLayout$ActionBarVisibilityCallback;->onWindowVisibilityChanged(I)V
 
-    .line 253
+    .line 251
     :cond_e
     return-void
 .end method
@@ -2030,12 +2040,12 @@
     .registers 2
 
     .prologue
-    .line 527
+    .line 525
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mContent:Landroid/support/v7/widget/ContentFrameLayout;
 
     if-nez v0, :cond_24
 
-    .line 528
+    .line 526
     sget v0, Landroid/support/v7/appcompat/R$id;->action_bar_activity_content:I
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->findViewById(I)Landroid/view/View;
@@ -2046,7 +2056,7 @@
 
     iput-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mContent:Landroid/support/v7/widget/ContentFrameLayout;
 
-    .line 529
+    .line 527
     sget v0, Landroid/support/v7/appcompat/R$id;->action_bar_container:I
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->findViewById(I)Landroid/view/View;
@@ -2057,7 +2067,7 @@
 
     iput-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
 
-    .line 530
+    .line 528
     sget v0, Landroid/support/v7/appcompat/R$id;->action_bar:I
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->findViewById(I)Landroid/view/View;
@@ -2070,7 +2080,7 @@
 
     iput-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
-    .line 532
+    .line 530
     :cond_24
     return-void
 .end method
@@ -2088,15 +2098,15 @@
     .end annotation
 
     .prologue
-    .line 723
+    .line 721
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 724
+    .line 722
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Landroid/support/v7/widget/DecorToolbar;->restoreHierarchyState(Landroid/util/SparseArray;)V
 
-    .line 725
+    .line 723
     return-void
 .end method
 
@@ -2113,15 +2123,15 @@
     .end annotation
 
     .prologue
-    .line 717
+    .line 715
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 718
+    .line 716
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Landroid/support/v7/widget/DecorToolbar;->saveHierarchyState(Landroid/util/SparseArray;)V
 
-    .line 719
+    .line 717
     return-void
 .end method
 
@@ -2129,17 +2139,17 @@
     .registers 4
 
     .prologue
-    .line 564
+    .line 562
     invoke-direct {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->haltActionBarHideOffsetAnimations()V
 
-    .line 565
+    .line 563
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionBarContainer;->getHeight()I
 
     move-result v0
 
-    .line 566
+    .line 564
     const/4 v1, 0x0
 
     invoke-static {p1, v0}, Ljava/lang/Math;->min(II)I
@@ -2150,7 +2160,7 @@
 
     move-result v0
 
-    .line 567
+    .line 565
     iget-object v1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mActionBarTop:Landroid/support/v7/widget/ActionBarContainer;
 
     neg-int v0, v0
@@ -2159,7 +2169,7 @@
 
     invoke-static {v1, v0}, Landroid/support/v4/view/ViewCompat;->b(Landroid/view/View;F)V
 
-    .line 568
+    .line 566
     return-void
 .end method
 
@@ -2218,26 +2228,26 @@
     .registers 3
 
     .prologue
-    .line 546
+    .line 544
     iget-boolean v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mHideOnContentScroll:Z
 
     if-eq p1, v0, :cond_f
 
-    .line 547
+    .line 545
     iput-boolean p1, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mHideOnContentScroll:Z
 
-    .line 548
+    .line 546
     if-nez p1, :cond_f
 
-    .line 549
+    .line 547
     invoke-direct {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->haltActionBarHideOffsetAnimations()V
 
-    .line 550
+    .line 548
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->setActionBarHideOffset(I)V
 
-    .line 553
+    .line 551
     :cond_f
     return-void
 .end method
@@ -2246,15 +2256,15 @@
     .registers 3
 
     .prologue
-    .line 657
+    .line 655
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 658
+    .line 656
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Landroid/support/v7/widget/DecorToolbar;->setIcon(I)V
 
-    .line 659
+    .line 657
     return-void
 .end method
 
@@ -2262,15 +2272,15 @@
     .registers 3
 
     .prologue
-    .line 663
+    .line 661
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 664
+    .line 662
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Landroid/support/v7/widget/DecorToolbar;->setIcon(Landroid/graphics/drawable/Drawable;)V
 
-    .line 665
+    .line 663
     return-void
 .end method
 
@@ -2278,15 +2288,15 @@
     .registers 3
 
     .prologue
-    .line 669
+    .line 667
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 670
+    .line 668
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Landroid/support/v7/widget/DecorToolbar;->setLogo(I)V
 
-    .line 671
+    .line 669
     return-void
 .end method
 
@@ -2294,15 +2304,15 @@
     .registers 4
 
     .prologue
-    .line 711
+    .line 709
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 712
+    .line 710
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0, p1, p2}, Landroid/support/v7/widget/DecorToolbar;->setMenu(Landroid/view/Menu;Landroid/support/v7/view/menu/MenuPresenter$Callback;)V
 
-    .line 713
+    .line 711
     return-void
 .end method
 
@@ -2310,15 +2320,15 @@
     .registers 2
 
     .prologue
-    .line 705
+    .line 703
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 706
+    .line 704
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0}, Landroid/support/v7/widget/DecorToolbar;->setMenuPrepared()V
 
-    .line 707
+    .line 705
     return-void
 .end method
 
@@ -2332,6 +2342,7 @@
     .line 180
     if-eqz p1, :cond_16
 
+    .line 181
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -2354,7 +2365,7 @@
     .line 183
     return-void
 
-    .line 180
+    .line 181
     :cond_16
     const/4 v0, 0x0
 
@@ -2373,7 +2384,7 @@
     .registers 2
 
     .prologue
-    .line 641
+    .line 639
     return-void
 .end method
 
@@ -2381,15 +2392,15 @@
     .registers 3
 
     .prologue
-    .line 606
+    .line 604
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 607
+    .line 605
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Landroid/support/v7/widget/DecorToolbar;->setWindowCallback(Landroid/view/Window$Callback;)V
 
-    .line 608
+    .line 606
     return-void
 .end method
 
@@ -2397,15 +2408,15 @@
     .registers 3
 
     .prologue
-    .line 612
+    .line 610
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 613
+    .line 611
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0, p1}, Landroid/support/v7/widget/DecorToolbar;->setWindowTitle(Ljava/lang/CharSequence;)V
 
-    .line 614
+    .line 612
     return-void
 .end method
 
@@ -2413,7 +2424,7 @@
     .registers 2
 
     .prologue
-    .line 455
+    .line 453
     const/4 v0, 0x0
 
     return v0
@@ -2423,10 +2434,10 @@
     .registers 2
 
     .prologue
-    .line 693
+    .line 691
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionBarOverlayLayout;->pullChildren()V
 
-    .line 694
+    .line 692
     iget-object v0, p0, Landroid/support/v7/widget/ActionBarOverlayLayout;->mDecorToolbar:Landroid/support/v7/widget/DecorToolbar;
 
     invoke-interface {v0}, Landroid/support/v7/widget/DecorToolbar;->showOverflowMenu()Z

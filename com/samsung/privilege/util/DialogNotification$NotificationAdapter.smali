@@ -96,7 +96,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f04003e
+    const v1, 0x7f04003f
 
     const/4 v2, 0x0
 
@@ -218,7 +218,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0202d3
+    const v2, 0x7f0202d8
 
     invoke-virtual {v1, v2}, Lcom/bumptech/glide/DrawableTypeRequest;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 
@@ -244,7 +244,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->Q(Landroid/content/Context;)I
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->T(Landroid/content/Context;)I
 
     move-result v1
 
@@ -253,7 +253,7 @@
     .line 340
     iget-object v1, p1, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->b:Landroid/widget/LinearLayout;
 
-    const v2, 0x7f020075
+    const v2, 0x7f020078
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
 
@@ -281,7 +281,7 @@
     .line 332
     iget-object v1, p1, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->c:Landroid/widget/ImageView;
 
-    const v2, 0x7f0202a6
+    const v2, 0x7f0202ab
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -298,7 +298,7 @@
     :cond_ac
     iget-object v1, p1, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->c:Landroid/widget/ImageView;
 
-    const v2, 0x7f0202d4
+    const v2, 0x7f0202d9
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -315,7 +315,7 @@
     :cond_bc
     iget-object v1, p1, Lcom/samsung/privilege/util/DialogNotification$NotificationAdapter$NotificationViewHolder;->b:Landroid/widget/LinearLayout;
 
-    const v2, 0x7f020074
+    const v2, 0x7f020077
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->setBackgroundResource(I)V
 

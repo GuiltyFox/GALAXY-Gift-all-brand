@@ -30,7 +30,7 @@
 
 .field public vpMain:Landroid/support/v4/view/ViewPager;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10018d
+        value = 0x7f100192
     .end annotation
 .end field
 
@@ -1323,7 +1323,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f0903e2
+    const v2, 0x7f090405
 
     invoke-virtual {p0, v2}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->getString(I)Ljava/lang/String;
 
@@ -1470,7 +1470,7 @@
 
     .prologue
     .line 66
-    const v0, 0x7f04003a
+    const v0, 0x7f04003b
 
     return v0
 .end method
@@ -1877,7 +1877,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1006ed
+    const v1, 0x7f100719
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -1992,7 +1992,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f1006ed
+    const v1, 0x7f100719
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -2114,7 +2114,7 @@
     .line 121
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const v1, 0x7f090251
+    const v1, 0x7f090252
 
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/activity/MarketPlacePagerActivity;->getString(I)Ljava/lang/String;
 

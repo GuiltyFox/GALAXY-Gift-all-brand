@@ -101,6 +101,7 @@
 
     iget v0, p0, Landroid/support/v7/app/AlertController$AlertParams$2;->e:I
 
+    .line 916
     invoke-interface {p3, v0}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v0
@@ -109,13 +110,14 @@
 
     move v0, v1
 
+    .line 915
     :goto_22
     invoke-virtual {v2, v3, v0}, Landroid/widget/ListView;->setItemChecked(IZ)V
 
     .line 917
     return-void
 
-    .line 915
+    .line 916
     :cond_26
     const/4 v0, 0x0
 

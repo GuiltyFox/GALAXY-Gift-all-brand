@@ -14,17 +14,19 @@
 # direct methods
 .method public constructor <init>(Landroid/content/Context;ILandroid/database/Cursor;Z)V
     .registers 6
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 76
+    .line 82
     invoke-direct {p0, p1, p3, p4}, Landroid/support/v4/widget/CursorAdapter;-><init>(Landroid/content/Context;Landroid/database/Cursor;Z)V
 
-    .line 77
+    .line 83
     iput p2, p0, Landroid/support/v4/widget/ResourceCursorAdapter;->k:I
 
     iput p2, p0, Landroid/support/v4/widget/ResourceCursorAdapter;->j:I
 
-    .line 78
+    .line 84
     const-string/jumbo v0, "layout_inflater"
 
     invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -35,7 +37,7 @@
 
     iput-object v0, p0, Landroid/support/v4/widget/ResourceCursorAdapter;->l:Landroid/view/LayoutInflater;
 
-    .line 79
+    .line 85
     return-void
 .end method
 
@@ -45,7 +47,7 @@
     .registers 7
 
     .prologue
-    .line 106
+    .line 112
     iget-object v0, p0, Landroid/support/v4/widget/ResourceCursorAdapter;->l:Landroid/view/LayoutInflater;
 
     iget v1, p0, Landroid/support/v4/widget/ResourceCursorAdapter;->j:I
@@ -63,7 +65,7 @@
     .registers 7
 
     .prologue
-    .line 111
+    .line 117
     iget-object v0, p0, Landroid/support/v4/widget/ResourceCursorAdapter;->l:Landroid/view/LayoutInflater;
 
     iget v1, p0, Landroid/support/v4/widget/ResourceCursorAdapter;->k:I

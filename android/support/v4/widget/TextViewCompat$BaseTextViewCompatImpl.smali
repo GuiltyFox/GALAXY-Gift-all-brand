@@ -24,7 +24,7 @@
 
     .prologue
     .line 76
-    invoke-static {p1}, Landroid/support/v4/widget/TextViewCompatDonut;->a(Landroid/widget/TextView;)I
+    invoke-static {p1}, Landroid/support/v4/widget/TextViewCompatGingerbread;->a(Landroid/widget/TextView;)I
 
     move-result v0
 

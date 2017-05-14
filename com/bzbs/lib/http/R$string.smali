@@ -24,61 +24,61 @@
 
 .field public static final abc_capital_on:I = 0x7f090009
 
-.field public static final abc_list_press_type_01:I = 0x7f0903ea
+.field public static final abc_list_press_type_01:I = 0x7f090419
 
-.field public static final abc_list_press_type_02:I = 0x7f0903eb
+.field public static final abc_list_press_type_02:I = 0x7f09041a
 
-.field public static final abc_list_press_type_03:I = 0x7f0903ec
+.field public static final abc_list_press_type_03:I = 0x7f09041b
 
-.field public static final abc_list_press_type_04:I = 0x7f0903ed
+.field public static final abc_list_press_type_04:I = 0x7f09041c
 
-.field public static final abc_list_press_type_05:I = 0x7f0903ee
+.field public static final abc_list_press_type_05:I = 0x7f09041d
 
-.field public static final abc_list_press_type_06:I = 0x7f0903ef
+.field public static final abc_list_press_type_06:I = 0x7f09041e
 
-.field public static final abc_list_press_type_07:I = 0x7f0903f0
+.field public static final abc_list_press_type_07:I = 0x7f09041f
 
-.field public static final abc_list_press_type_08:I = 0x7f0903f1
+.field public static final abc_list_press_type_08:I = 0x7f090420
 
-.field public static final abc_list_press_type_09:I = 0x7f0903f2
+.field public static final abc_list_press_type_09:I = 0x7f090421
 
-.field public static final abc_list_press_type_10:I = 0x7f0903f3
+.field public static final abc_list_press_type_10:I = 0x7f090422
 
-.field public static final abc_list_press_type_11:I = 0x7f0903f4
+.field public static final abc_list_press_type_11:I = 0x7f090423
 
-.field public static final abc_list_press_type_12:I = 0x7f0903f5
+.field public static final abc_list_press_type_12:I = 0x7f090424
 
-.field public static final abc_list_press_type_13:I = 0x7f0903f6
+.field public static final abc_list_press_type_13:I = 0x7f090425
 
-.field public static final abc_list_press_type_14:I = 0x7f0903f7
+.field public static final abc_list_press_type_14:I = 0x7f090426
 
-.field public static final abc_list_press_type_15:I = 0x7f0903f8
+.field public static final abc_list_press_type_15:I = 0x7f090427
 
-.field public static final abc_list_press_type_16:I = 0x7f0903f9
+.field public static final abc_list_press_type_16:I = 0x7f090428
 
-.field public static final abc_list_press_type_17:I = 0x7f0903fa
+.field public static final abc_list_press_type_17:I = 0x7f090429
 
-.field public static final abc_list_press_type_18:I = 0x7f0903fb
+.field public static final abc_list_press_type_18:I = 0x7f09042a
 
-.field public static final abc_list_press_type_19:I = 0x7f0903fc
+.field public static final abc_list_press_type_19:I = 0x7f09042b
 
-.field public static final abc_list_press_type_20:I = 0x7f0903fd
+.field public static final abc_list_press_type_20:I = 0x7f09042c
 
-.field public static final abc_list_press_type_21:I = 0x7f0903fe
+.field public static final abc_list_press_type_21:I = 0x7f09042d
 
-.field public static final abc_list_press_type_22:I = 0x7f0903ff
+.field public static final abc_list_press_type_22:I = 0x7f09042e
 
-.field public static final abc_list_press_type_23:I = 0x7f090400
+.field public static final abc_list_press_type_23:I = 0x7f09042f
 
-.field public static final abc_list_press_type_24:I = 0x7f090401
+.field public static final abc_list_press_type_24:I = 0x7f090430
 
-.field public static final abc_list_press_type_25:I = 0x7f090402
+.field public static final abc_list_press_type_25:I = 0x7f090431
 
-.field public static final abc_list_press_type_26:I = 0x7f090403
+.field public static final abc_list_press_type_26:I = 0x7f090432
 
-.field public static final abc_list_press_type_27:I = 0x7f090404
+.field public static final abc_list_press_type_27:I = 0x7f090433
 
-.field public static final abc_list_press_type_28:I = 0x7f090405
+.field public static final abc_list_press_type_28:I = 0x7f090434
 
 .field public static final abc_search_hint:I = 0x7f09000a
 
@@ -98,14 +98,14 @@
 
 .field public static final abc_toolbar_collapse_description:I = 0x7f090012
 
-.field public static final app_name:I = 0x7f09040b
+.field public static final app_name:I = 0x7f09043a
 
-.field public static final cr_b:I = 0x7f090438
+.field public static final cr_b:I = 0x7f090467
 
-.field public static final cr_e:I = 0x7f090439
+.field public static final cr_e:I = 0x7f090468
 
-.field public static final cr_sl_n:I = 0x7f09043a
+.field public static final cr_sl_n:I = 0x7f090469
 
-.field public static final status_bar_notification_info_overflow:I = 0x7f090042
+.field public static final status_bar_notification_info_overflow:I = 0x7f090043
 
-.field public static final txt_please_wait:I = 0x7f0904db
+.field public static final txt_please_wait:I = 0x7f09050a

@@ -575,7 +575,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v1}, Landroid/support/v4/app/FragmentTransaction;->b()I
+    invoke-virtual {v1}, Landroid/support/v4/app/FragmentTransaction;->c()I
 
     .line 188
     iget-object v1, p0, Lcom/bumptech/glide/manager/RequestManagerRetriever;->e:Landroid/os/Handler;

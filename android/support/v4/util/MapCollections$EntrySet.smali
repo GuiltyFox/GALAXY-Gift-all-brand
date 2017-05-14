@@ -321,6 +321,7 @@
 
     move v0, v1
 
+    .line 259
     :goto_20
     xor-int/2addr v0, v2
 
@@ -345,6 +346,7 @@
 
     goto :goto_1d
 
+    .line 259
     :cond_2e
     invoke-virtual {v5}, Ljava/lang/Object;->hashCode()I
 

@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 265
+    .line 269
     iput-object p1, p0, Lcom/samsung/privilege/util/ResumeUtil$2$1;->b:Lcom/samsung/privilege/util/ResumeUtil$2;
 
     iput-object p2, p0, Lcom/samsung/privilege/util/ResumeUtil$2$1;->a:Ljava/lang/String;
@@ -39,18 +39,18 @@
     .registers 3
 
     .prologue
-    .line 267
+    .line 271
     iget-object v0, p0, Lcom/samsung/privilege/util/ResumeUtil$2$1;->b:Lcom/samsung/privilege/util/ResumeUtil$2;
 
     iget-object v0, v0, Lcom/samsung/privilege/util/ResumeUtil$2;->a:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/samsung/privilege/util/ResumeUtil$2$1;->b:Lcom/samsung/privilege/util/ResumeUtil$2;
 
-    iget-object v1, v1, Lcom/samsung/privilege/util/ResumeUtil$2;->c:Landroid/app/Activity;
+    iget-object v1, v1, Lcom/samsung/privilege/util/ResumeUtil$2;->b:Landroid/app/Activity;
 
     invoke-static {v0, v1}, Lcom/samsung/privilege/util/ResumeUtil;->a(Landroid/content/Context;Landroid/app/Activity;)V
 
-    .line 269
+    .line 273
     iget-object v0, p0, Lcom/samsung/privilege/util/ResumeUtil$2$1;->a:Ljava/lang/String;
 
     if-eqz v0, :cond_23
@@ -65,16 +65,16 @@
 
     if-nez v0, :cond_23
 
-    .line 270
+    .line 274
     iget-object v0, p0, Lcom/samsung/privilege/util/ResumeUtil$2$1;->b:Lcom/samsung/privilege/util/ResumeUtil$2;
 
-    iget-object v0, v0, Lcom/samsung/privilege/util/ResumeUtil$2;->c:Landroid/app/Activity;
+    iget-object v0, v0, Lcom/samsung/privilege/util/ResumeUtil$2;->b:Landroid/app/Activity;
 
     iget-object v1, p0, Lcom/samsung/privilege/util/ResumeUtil$2$1;->a:Ljava/lang/String;
 
     invoke-static {v0, v1}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 272
+    .line 276
     :cond_23
     return-void
 .end method

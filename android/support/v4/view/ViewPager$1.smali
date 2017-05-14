@@ -27,7 +27,7 @@
     .registers 1
 
     .prologue
-    .line 123
+    .line 142
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
     .registers 5
 
     .prologue
-    .line 126
+    .line 145
     iget v0, p1, Landroid/support/v4/view/ViewPager$ItemInfo;->b:I
 
     iget v1, p2, Landroid/support/v4/view/ViewPager$ItemInfo;->b:I
@@ -53,7 +53,7 @@
     .registers 4
 
     .prologue
-    .line 123
+    .line 142
     check-cast p1, Landroid/support/v4/view/ViewPager$ItemInfo;
 
     check-cast p2, Landroid/support/v4/view/ViewPager$ItemInfo;

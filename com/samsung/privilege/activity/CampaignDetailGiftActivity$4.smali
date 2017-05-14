@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 658
+    .line 692
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$4;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$4;->a:Ljava/lang/String;
@@ -39,7 +39,7 @@
     .registers 4
 
     .prologue
-    .line 661
+    .line 695
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$4;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$4;->a:Ljava/lang/String;
@@ -50,9 +50,9 @@
 
     move-result-object v0
 
-    .line 662
+    .line 696
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V
 
-    .line 663
+    .line 697
     return-void
 .end method

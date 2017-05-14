@@ -1,5 +1,5 @@
 .class Landroid/support/v4/graphics/drawable/DrawableCompat$HoneycombDrawableImpl;
-.super Landroid/support/v4/graphics/drawable/DrawableCompat$EclairDrawableImpl;
+.super Landroid/support/v4/graphics/drawable/DrawableCompat$BaseDrawableImpl;
 .source "DrawableCompat.java"
 
 
@@ -8,8 +8,8 @@
     .registers 1
 
     .prologue
-    .line 157
-    invoke-direct {p0}, Landroid/support/v4/graphics/drawable/DrawableCompat$EclairDrawableImpl;-><init>()V
+    .line 154
+    invoke-direct {p0}, Landroid/support/v4/graphics/drawable/DrawableCompat$BaseDrawableImpl;-><init>()V
 
     return-void
 .end method
@@ -20,10 +20,10 @@
     .registers 2
 
     .prologue
-    .line 160
+    .line 157
     invoke-static {p1}, Landroid/support/v4/graphics/drawable/DrawableCompatHoneycomb;->a(Landroid/graphics/drawable/Drawable;)V
 
-    .line 161
+    .line 158
     return-void
 .end method
 
@@ -31,7 +31,7 @@
     .registers 3
 
     .prologue
-    .line 165
+    .line 162
     invoke-static {p1}, Landroid/support/v4/graphics/drawable/DrawableCompatHoneycomb;->b(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0

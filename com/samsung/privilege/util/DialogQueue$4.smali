@@ -97,7 +97,7 @@
     .line 80
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogQueue$4;->a:Landroid/app/Dialog;
 
-    const v3, 0x7f1005f5
+    const v3, 0x7f100622
 
     invoke-virtual {v0, v3}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -183,7 +183,7 @@
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogQueue$4;->b:Landroid/content/Context;
 
     .line 89
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 

@@ -810,7 +810,7 @@
 
     iget-object v1, p0, Lcom/bzbs/marketplace/adapter/DashboardAdapter;->d:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f040140
+    const v2, 0x7f040147
 
     invoke-virtual {v1, v2, p1, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -867,7 +867,7 @@
 
     iget-object v1, p0, Lcom/bzbs/marketplace/adapter/DashboardAdapter;->d:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f04014e
+    const v2, 0x7f040155
 
     invoke-virtual {v1, v2, p1, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -883,7 +883,7 @@
 
     iget-object v1, p0, Lcom/bzbs/marketplace/adapter/DashboardAdapter;->d:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f04013f
+    const v2, 0x7f040146
 
     invoke-virtual {v1, v2, p1, v3}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 

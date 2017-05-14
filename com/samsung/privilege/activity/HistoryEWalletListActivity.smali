@@ -96,7 +96,7 @@
     :cond_6
     const-string/jumbo v0, ""
 
-    const v1, 0x7f090282
+    const v1, 0x7f090283
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/HistoryEWalletListActivity;->getString(I)Ljava/lang/String;
 
@@ -280,7 +280,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -458,7 +458,7 @@
 
     .prologue
     .line 110
-    const v0, 0x7f100160
+    const v0, 0x7f100162
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryEWalletListActivity;->findViewById(I)Landroid/view/View;
 
@@ -508,7 +508,7 @@
 
     .prologue
     .line 122
-    const v0, 0x7f100111
+    const v0, 0x7f100113
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryEWalletListActivity;->findViewById(I)Landroid/view/View;
 
@@ -620,7 +620,7 @@
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 77
-    const v0, 0x7f040036
+    const v0, 0x7f040037
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryEWalletListActivity;->setContentView(I)V
 
@@ -632,7 +632,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/HistoryEWalletListActivity;->b:Landroid/os/Handler;
 
     .line 82
-    const v0, 0x7f1000b5
+    const v0, 0x7f1000b7
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/HistoryEWalletListActivity;->findViewById(I)Landroid/view/View;
 

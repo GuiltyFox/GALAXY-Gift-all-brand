@@ -266,17 +266,6 @@
     throw v0
 .end method
 
-.method public d_()V
-    .registers 1
-
-    .prologue
-    .line 272
-    invoke-virtual {p0}, Lcz/msebera/android/httpclient/conn/EofSensorInputStream;->close()V
-
-    .line 273
-    return-void
-.end method
-
 .method protected e()V
     .registers 4
 
@@ -332,6 +321,17 @@
     iput-object v2, p0, Lcz/msebera/android/httpclient/conn/EofSensorInputStream;->a:Ljava/io/InputStream;
 
     throw v0
+.end method
+
+.method public h_()V
+    .registers 1
+
+    .prologue
+    .line 272
+    invoke-virtual {p0}, Lcz/msebera/android/httpclient/conn/EofSensorInputStream;->close()V
+
+    .line 273
+    return-void
 .end method
 
 .method public read()I

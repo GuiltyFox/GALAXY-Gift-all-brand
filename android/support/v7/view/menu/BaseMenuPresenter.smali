@@ -157,17 +157,6 @@
 .method public abstract a(Landroid/support/v7/view/menu/MenuItemImpl;Landroid/support/v7/view/menu/MenuView$ItemView;)V
 .end method
 
-.method public a(Landroid/support/v7/view/menu/MenuPresenter$Callback;)V
-    .registers 2
-
-    .prologue
-    .line 148
-    iput-object p1, p0, Landroid/support/v7/view/menu/BaseMenuPresenter;->g:Landroid/support/v7/view/menu/MenuPresenter$Callback;
-
-    .line 149
-    return-void
-.end method
-
 .method protected a(Landroid/view/View;I)V
     .registers 4
 
@@ -315,7 +304,7 @@
     .line 207
     iget-object v0, p0, Landroid/support/v7/view/menu/BaseMenuPresenter;->g:Landroid/support/v7/view/menu/MenuPresenter$Callback;
 
-    invoke-interface {v0, p1, p2}, Landroid/support/v7/view/menu/MenuPresenter$Callback;->onCloseMenu(Landroid/support/v7/view/menu/MenuBuilder;Z)V
+    invoke-interface {v0, p1, p2}, Landroid/support/v7/view/menu/MenuPresenter$Callback;->a(Landroid/support/v7/view/menu/MenuBuilder;Z)V
 
     .line 209
     :cond_9
@@ -334,7 +323,7 @@
     .line 213
     iget-object v0, p0, Landroid/support/v7/view/menu/BaseMenuPresenter;->g:Landroid/support/v7/view/menu/MenuPresenter$Callback;
 
-    invoke-interface {v0, p1}, Landroid/support/v7/view/menu/MenuPresenter$Callback;->onOpenSubMenu(Landroid/support/v7/view/menu/MenuBuilder;)Z
+    invoke-interface {v0, p1}, Landroid/support/v7/view/menu/MenuPresenter$Callback;->a(Landroid/support/v7/view/menu/MenuBuilder;)Z
 
     move-result v0
 
@@ -346,6 +335,17 @@
     const/4 v0, 0x0
 
     goto :goto_a
+.end method
+
+.method public setCallback(Landroid/support/v7/view/menu/MenuPresenter$Callback;)V
+    .registers 2
+
+    .prologue
+    .line 148
+    iput-object p1, p0, Landroid/support/v7/view/menu/BaseMenuPresenter;->g:Landroid/support/v7/view/menu/MenuPresenter$Callback;
+
+    .line 149
+    return-void
 .end method
 
 .method public updateMenuView(Z)V
@@ -425,6 +425,7 @@
 
     check-cast v2, Landroid/support/v7/view/menu/MenuView$ItemView;
 
+    .line 99
     invoke-interface {v2}, Landroid/support/v7/view/menu/MenuView$ItemView;->getItemData()Landroid/support/v7/view/menu/MenuItemImpl;
 
     move-result-object v2
@@ -465,7 +466,7 @@
 
     goto :goto_1d
 
-    .line 98
+    .line 99
     :cond_52
     const/4 v2, 0x0
 

@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 2797
+    .line 2947
     iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$11;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     iput-object p2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$11;->a:Landroid/app/Dialog;
@@ -39,11 +39,11 @@
     .registers 3
 
     .prologue
-    .line 2799
+    .line 2949
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$11;->a:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 2800
+    .line 2950
     return-void
 .end method

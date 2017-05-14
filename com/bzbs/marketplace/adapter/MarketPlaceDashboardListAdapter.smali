@@ -225,7 +225,7 @@
 
     iget-object v1, p0, Lcom/bzbs/marketplace/adapter/MarketPlaceDashboardListAdapter;->a:Landroid/view/LayoutInflater;
 
-    const v2, 0x7f04014c
+    const v2, 0x7f040153
 
     const/4 v3, 0x0
 

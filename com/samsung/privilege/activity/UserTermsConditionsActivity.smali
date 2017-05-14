@@ -32,7 +32,7 @@
 
     .prologue
     .line 46
-    const v0, 0x7f1001ea
+    const v0, 0x7f1001ff
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->findViewById(I)Landroid/view/View;
 
@@ -176,7 +176,7 @@
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->requestWindowFeature(I)Z
 
     .line 37
-    const v0, 0x7f040055
+    const v0, 0x7f040057
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/UserTermsConditionsActivity;->setContentView(I)V
 

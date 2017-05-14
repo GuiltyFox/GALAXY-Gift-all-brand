@@ -33,7 +33,7 @@
     .registers 3
 
     .prologue
-    .line 269
+    .line 274
     const/4 v0, -0x1
 
     return v0
@@ -43,7 +43,7 @@
     .registers 2
 
     .prologue
-    .line 240
+    .line 245
     const/4 v0, 0x0
 
     return-object v0
@@ -51,9 +51,11 @@
 
 .method public a(Landroid/view/View;I)Ljava/lang/Object;
     .registers 5
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 176
+    .line 178
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Required method instantiateItem was not overridden"
@@ -79,12 +81,12 @@
     .registers 3
 
     .prologue
-    .line 291
+    .line 296
     iget-object v0, p0, Landroid/support/v4/view/PagerAdapter;->a:Landroid/database/DataSetObservable;
 
     invoke-virtual {v0, p1}, Landroid/database/DataSetObservable;->registerObserver(Ljava/lang/Object;)V
 
-    .line 292
+    .line 297
     return-void
 .end method
 
@@ -92,23 +94,27 @@
     .registers 3
 
     .prologue
-    .line 251
+    .line 256
     return-void
 .end method
 
 .method public a(Landroid/view/View;)V
     .registers 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 160
+    .line 161
     return-void
 .end method
 
 .method public a(Landroid/view/View;ILjava/lang/Object;)V
     .registers 6
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 193
+    .line 196
     new-instance v0, Ljava/lang/UnsupportedOperationException;
 
     const-string/jumbo v1, "Required method destroyItem was not overridden"
@@ -150,28 +156,32 @@
     .registers 3
 
     .prologue
-    .line 300
+    .line 305
     iget-object v0, p0, Landroid/support/v4/view/PagerAdapter;->a:Landroid/database/DataSetObservable;
 
     invoke-virtual {v0, p1}, Landroid/database/DataSetObservable;->unregisterObserver(Ljava/lang/Object;)V
 
-    .line 301
+    .line 306
     return-void
 .end method
 
 .method public b(Landroid/view/View;)V
     .registers 2
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 220
+    .line 225
     return-void
 .end method
 
 .method public b(Landroid/view/View;ILjava/lang/Object;)V
     .registers 4
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 
     .prologue
-    .line 208
+    .line 212
     return-void
 .end method
 
@@ -201,7 +211,7 @@
     .registers 3
 
     .prologue
-    .line 319
+    .line 324
     const/4 v0, 0x0
 
     return-object v0
@@ -211,35 +221,35 @@
     .registers 2
 
     .prologue
-    .line 277
+    .line 282
     monitor-enter p0
 
-    .line 278
+    .line 283
     :try_start_1
     iget-object v0, p0, Landroid/support/v4/view/PagerAdapter;->b:Landroid/database/DataSetObserver;
 
     if-eqz v0, :cond_a
 
-    .line 279
+    .line 284
     iget-object v0, p0, Landroid/support/v4/view/PagerAdapter;->b:Landroid/database/DataSetObserver;
 
     invoke-virtual {v0}, Landroid/database/DataSetObserver;->onChanged()V
 
-    .line 281
+    .line 286
     :cond_a
     monitor-exit p0
     :try_end_b
     .catchall {:try_start_1 .. :try_end_b} :catchall_11
 
-    .line 282
+    .line 287
     iget-object v0, p0, Landroid/support/v4/view/PagerAdapter;->a:Landroid/database/DataSetObservable;
 
     invoke-virtual {v0}, Landroid/database/DataSetObservable;->notifyChanged()V
 
-    .line 283
+    .line 288
     return-void
 
-    .line 281
+    .line 286
     :catchall_11
     move-exception v0
 
@@ -255,20 +265,20 @@
     .registers 3
 
     .prologue
-    .line 304
+    .line 309
     monitor-enter p0
 
-    .line 305
+    .line 310
     :try_start_1
     iput-object p1, p0, Landroid/support/v4/view/PagerAdapter;->b:Landroid/database/DataSetObserver;
 
-    .line 306
+    .line 311
     monitor-exit p0
 
-    .line 307
+    .line 312
     return-void
 
-    .line 306
+    .line 311
     :catchall_5
     move-exception v0
 
@@ -283,7 +293,7 @@
     .registers 3
 
     .prologue
-    .line 330
+    .line 335
     const/high16 v0, 0x3f800000    # 1.0f
 
     return v0

@@ -284,7 +284,7 @@
     throw v1
 .end method
 
-.method public i_()V
+.method public m_()V
     .registers 4
 
     .prologue
@@ -302,7 +302,7 @@
     :try_start_7
     iget-object v0, p0, Lrx/observers/SafeSubscriber;->b:Lrx/Subscriber;
 
-    invoke-virtual {v0}, Lrx/Subscriber;->i_()V
+    invoke-virtual {v0}, Lrx/Subscriber;->m_()V
     :try_end_c
     .catch Ljava/lang/Throwable; {:try_start_7 .. :try_end_c} :catch_1e
     .catchall {:try_start_7 .. :try_end_c} :catchall_2f

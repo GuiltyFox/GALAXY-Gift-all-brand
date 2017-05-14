@@ -259,6 +259,7 @@
     .line 714
     sub-double v28, v14, p15
 
+    .line 715
     invoke-static/range {v28 .. v29}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v28

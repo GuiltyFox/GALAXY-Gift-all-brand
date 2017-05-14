@@ -27,7 +27,7 @@
     .registers 1
 
     .prologue
-    .line 1868
+    .line 1867
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -51,7 +51,7 @@
     .registers 3
 
     .prologue
-    .line 1874
+    .line 1875
     new-array v0, p1, [Landroid/support/v4/widget/NestedScrollView$SavedState;
 
     return-object v0
@@ -61,7 +61,7 @@
     .registers 3
 
     .prologue
-    .line 1868
+    .line 1867
     invoke-virtual {p0, p1}, Landroid/support/v4/widget/NestedScrollView$SavedState$1;->a(Landroid/os/Parcel;)Landroid/support/v4/widget/NestedScrollView$SavedState;
 
     move-result-object v0
@@ -73,7 +73,7 @@
     .registers 3
 
     .prologue
-    .line 1868
+    .line 1867
     invoke-virtual {p0, p1}, Landroid/support/v4/widget/NestedScrollView$SavedState$1;->a(I)[Landroid/support/v4/widget/NestedScrollView$SavedState;
 
     move-result-object v0

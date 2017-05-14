@@ -14,12 +14,12 @@
     .registers 1
 
     .prologue
-    .line 119
+    .line 128
     const/4 v0, -0x1
 
     sput v0, Landroid/support/v7/app/AppCompatDelegate;->a:I
 
-    .line 121
+    .line 130
     const/4 v0, 0x0
 
     sput-boolean v0, Landroid/support/v7/app/AppCompatDelegate;->b:Z
@@ -31,7 +31,7 @@
     .registers 1
 
     .prologue
-    .line 201
+    .line 212
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,7 +41,7 @@
     .registers 3
 
     .prologue
-    .line 172
+    .line 181
     invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -57,7 +57,7 @@
     .registers 4
 
     .prologue
-    .line 181
+    .line 190
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -77,73 +77,88 @@
     .registers 5
 
     .prologue
-    .line 186
+    .line 195
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    .line 187
+    .line 196
+    invoke-static {}, Landroid/support/v4/os/BuildCompat;->a()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_e
+
+    .line 197
+    new-instance v0, Landroid/support/v7/app/AppCompatDelegateImplN;
+
+    invoke-direct {v0, p0, p1, p2}, Landroid/support/v7/app/AppCompatDelegateImplN;-><init>(Landroid/content/Context;Landroid/view/Window;Landroid/support/v7/app/AppCompatCallback;)V
+
+    .line 205
+    :goto_d
+    return-object v0
+
+    .line 198
+    :cond_e
     const/16 v1, 0x17
 
-    if-lt v0, v1, :cond_c
+    if-lt v0, v1, :cond_18
 
-    .line 188
+    .line 199
     new-instance v0, Landroid/support/v7/app/AppCompatDelegateImplV23;
 
     invoke-direct {v0, p0, p1, p2}, Landroid/support/v7/app/AppCompatDelegateImplV23;-><init>(Landroid/content/Context;Landroid/view/Window;Landroid/support/v7/app/AppCompatCallback;)V
 
-    .line 194
-    :goto_b
-    return-object v0
+    goto :goto_d
 
-    .line 189
-    :cond_c
+    .line 200
+    :cond_18
     const/16 v1, 0xe
 
-    if-lt v0, v1, :cond_16
+    if-lt v0, v1, :cond_22
 
-    .line 190
+    .line 201
     new-instance v0, Landroid/support/v7/app/AppCompatDelegateImplV14;
 
     invoke-direct {v0, p0, p1, p2}, Landroid/support/v7/app/AppCompatDelegateImplV14;-><init>(Landroid/content/Context;Landroid/view/Window;Landroid/support/v7/app/AppCompatCallback;)V
 
-    goto :goto_b
+    goto :goto_d
 
-    .line 191
-    :cond_16
+    .line 202
+    :cond_22
     const/16 v1, 0xb
 
-    if-lt v0, v1, :cond_20
+    if-lt v0, v1, :cond_2c
 
-    .line 192
+    .line 203
     new-instance v0, Landroid/support/v7/app/AppCompatDelegateImplV11;
 
     invoke-direct {v0, p0, p1, p2}, Landroid/support/v7/app/AppCompatDelegateImplV11;-><init>(Landroid/content/Context;Landroid/view/Window;Landroid/support/v7/app/AppCompatCallback;)V
 
-    goto :goto_b
+    goto :goto_d
 
-    .line 194
-    :cond_20
-    new-instance v0, Landroid/support/v7/app/AppCompatDelegateImplV7;
+    .line 205
+    :cond_2c
+    new-instance v0, Landroid/support/v7/app/AppCompatDelegateImplV9;
 
-    invoke-direct {v0, p0, p1, p2}, Landroid/support/v7/app/AppCompatDelegateImplV7;-><init>(Landroid/content/Context;Landroid/view/Window;Landroid/support/v7/app/AppCompatCallback;)V
+    invoke-direct {v0, p0, p1, p2}, Landroid/support/v7/app/AppCompatDelegateImplV9;-><init>(Landroid/content/Context;Landroid/view/Window;Landroid/support/v7/app/AppCompatCallback;)V
 
-    goto :goto_b
+    goto :goto_d
 .end method
 
-.method public static i()I
+.method public static j()I
     .registers 1
 
     .prologue
-    .line 468
+    .line 488
     sget v0, Landroid/support/v7/app/AppCompatDelegate;->a:I
 
     return v0
 .end method
 
-.method public static j()Z
+.method public static k()Z
     .registers 1
 
     .prologue
-    .line 515
+    .line 535
     sget-boolean v0, Landroid/support/v7/app/AppCompatDelegate;->b:Z
 
     return v0
@@ -208,5 +223,8 @@
 .method public abstract g()V
 .end method
 
-.method public abstract h()Z
+.method public abstract h()V
+.end method
+
+.method public abstract i()Z
 .end method

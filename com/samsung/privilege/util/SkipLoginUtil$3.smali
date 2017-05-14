@@ -82,7 +82,7 @@
     .line 128
     iget-object v5, p0, Lcom/samsung/privilege/util/SkipLoginUtil$3;->b:Landroid/content/Context;
 
-    invoke-static {v5, v1}, Lcom/bzbs/data/UserLogin;->b(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v5, v1}, Lcom/bzbs/data/UserLogin;->c(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 129
     iget-object v1, p0, Lcom/samsung/privilege/util/SkipLoginUtil$3;->b:Landroid/content/Context;
@@ -186,7 +186,7 @@
     .line 136
     iget-object v2, p0, Lcom/samsung/privilege/util/SkipLoginUtil$3;->b:Landroid/content/Context;
 
-    invoke-static {v2, v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;Z)Z
+    invoke-static {v2, v1}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;Z)Z
 
     .line 138
     iget-object v1, p0, Lcom/samsung/privilege/util/SkipLoginUtil$3;->b:Landroid/content/Context;
@@ -201,7 +201,7 @@
 
     move-result v2
 
-    invoke-static {v1, v2}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;Z)Z
+    invoke-static {v1, v2}, Lcom/bzbs/data/UserLogin;->l(Landroid/content/Context;Z)Z
 
     .line 139
     iget-object v1, p0, Lcom/samsung/privilege/util/SkipLoginUtil$3;->b:Landroid/content/Context;
@@ -216,7 +216,7 @@
 
     move-result v2
 
-    invoke-static {v1, v2}, Lcom/bzbs/data/UserLogin;->l(Landroid/content/Context;Z)Z
+    invoke-static {v1, v2}, Lcom/bzbs/data/UserLogin;->m(Landroid/content/Context;Z)Z
 
     .line 140
     iget-object v1, p0, Lcom/samsung/privilege/util/SkipLoginUtil$3;->b:Landroid/content/Context;
@@ -231,7 +231,7 @@
 
     move-result v2
 
-    invoke-static {v1, v2}, Lcom/bzbs/data/UserLogin;->m(Landroid/content/Context;Z)Z
+    invoke-static {v1, v2}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;Z)Z
 
     .line 142
     iget-object v1, p0, Lcom/samsung/privilege/util/SkipLoginUtil$3;->b:Landroid/content/Context;
@@ -246,7 +246,7 @@
 
     move-result v2
 
-    invoke-static {v1, v2}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;Z)Z
+    invoke-static {v1, v2}, Lcom/bzbs/data/UserLogin;->o(Landroid/content/Context;Z)Z
     :try_end_c8
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_c8} :catch_f3
 
@@ -265,7 +265,7 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcom/bzbs/data/UserLogin;->p(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v1, v0}, Lcom/bzbs/data/UserLogin;->q(Landroid/content/Context;Ljava/lang/String;)Z
     :try_end_d8
     .catch Ljava/lang/Exception; {:try_start_c8 .. :try_end_d8} :catch_da
 

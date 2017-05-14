@@ -24,15 +24,15 @@
     .prologue
     const/4 v0, -0x1
 
-    .line 3044
+    .line 3130
     invoke-direct {p0, v0, v0}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
 
-    .line 3025
+    .line 3111
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v4/view/ViewPager$LayoutParams;->c:F
 
-    .line 3045
+    .line 3131
     return-void
 .end method
 
@@ -40,15 +40,15 @@
     .registers 6
 
     .prologue
-    .line 3048
+    .line 3134
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 3025
+    .line 3111
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v4/view/ViewPager$LayoutParams;->c:F
 
-    .line 3050
+    .line 3136
     invoke-static {}, Landroid/support/v4/view/ViewPager;->g()[I
 
     move-result-object v0
@@ -57,7 +57,7 @@
 
     move-result-object v0
 
-    .line 3051
+    .line 3137
     const/4 v1, 0x0
 
     const/16 v2, 0x30
@@ -68,9 +68,9 @@
 
     iput v1, p0, Landroid/support/v4/view/ViewPager$LayoutParams;->b:I
 
-    .line 3052
+    .line 3138
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 3053
+    .line 3139
     return-void
 .end method

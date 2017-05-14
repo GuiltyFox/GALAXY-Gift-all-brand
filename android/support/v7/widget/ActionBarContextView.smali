@@ -1331,6 +1331,7 @@
 
     iget v10, v9, Landroid/view/ViewGroup$LayoutParams;->width:I
 
+    .line 290
     invoke-static {v10, v0}, Ljava/lang/Math;->min(II)I
 
     move-result v0
@@ -1349,6 +1350,7 @@
 
     iget v5, v9, Landroid/view/ViewGroup$LayoutParams;->height:I
 
+    .line 294
     invoke-static {v5, v6}, Ljava/lang/Math;->min(II)I
 
     move-result v5
@@ -1361,10 +1363,12 @@
 
     move-result v0
 
+    .line 296
     invoke-static {v5, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v2
 
+    .line 295
     invoke-virtual {v6, v0, v2}, Landroid/view/View;->measure(II)V
 
     .line 299
@@ -1407,7 +1411,7 @@
 
     goto :goto_11b
 
-    .line 251
+    .line 252
     :cond_12c
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
@@ -1454,7 +1458,7 @@
     :cond_143
     move v5, v6
 
-    .line 293
+    .line 294
     goto :goto_105
 
     .line 309

@@ -111,7 +111,7 @@
     if-nez v1, :cond_16
 
     .line 47
-    invoke-virtual {p1}, Lrx/Subscriber;->i_()V
+    invoke-virtual {p1}, Lrx/Subscriber;->m_()V
 
     .line 50
     :goto_15

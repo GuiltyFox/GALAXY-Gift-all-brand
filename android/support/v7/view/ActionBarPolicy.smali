@@ -12,13 +12,13 @@
     .registers 2
 
     .prologue
-    .line 41
+    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 42
+    .line 45
     iput-object p1, p0, Landroid/support/v7/view/ActionBarPolicy;->a:Landroid/content/Context;
 
-    .line 43
+    .line 46
     return-void
 .end method
 
@@ -26,7 +26,7 @@
     .registers 2
 
     .prologue
-    .line 38
+    .line 41
     new-instance v0, Landroid/support/v7/view/ActionBarPolicy;
 
     invoke-direct {v0, p0}, Landroid/support/v7/view/ActionBarPolicy;-><init>(Landroid/content/Context;)V
@@ -37,23 +37,100 @@
 
 # virtual methods
 .method public a()I
-    .registers 3
+    .registers 9
 
     .prologue
-    .line 46
+    const/16 v7, 0x3c0
+
+    const/16 v6, 0x2d0
+
+    const/16 v5, 0x280
+
+    const/16 v4, 0x258
+
+    const/16 v3, 0x1e0
+
+    .line 54
     iget-object v0, p0, Landroid/support/v7/view/ActionBarPolicy;->a:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
 
-    sget v1, Landroid/support/v7/appcompat/R$integer;->abc_max_action_buttons:I
+    .line 55
+    invoke-static {v0}, Landroid/support/v4/content/res/ConfigurationHelper;->b(Landroid/content/res/Resources;)I
 
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getInteger(I)I
+    move-result v1
+
+    .line 56
+    invoke-static {v0}, Landroid/support/v4/content/res/ConfigurationHelper;->a(Landroid/content/res/Resources;)I
+
+    move-result v2
+
+    .line 57
+    invoke-static {v0}, Landroid/support/v4/content/res/ConfigurationHelper;->c(Landroid/content/res/Resources;)I
 
     move-result v0
 
+    .line 59
+    if-gt v0, v4, :cond_28
+
+    if-gt v1, v4, :cond_28
+
+    if-le v1, v7, :cond_24
+
+    if-gt v2, v6, :cond_28
+
+    :cond_24
+    if-le v1, v6, :cond_2a
+
+    if-le v2, v7, :cond_2a
+
+    .line 62
+    :cond_28
+    const/4 v0, 0x5
+
+    .line 71
+    :goto_29
     return v0
+
+    .line 63
+    :cond_2a
+    const/16 v0, 0x1f4
+
+    if-ge v1, v0, :cond_36
+
+    if-le v1, v5, :cond_32
+
+    if-gt v2, v3, :cond_36
+
+    :cond_32
+    if-le v1, v3, :cond_38
+
+    if-le v2, v5, :cond_38
+
+    .line 66
+    :cond_36
+    const/4 v0, 0x4
+
+    goto :goto_29
+
+    .line 67
+    :cond_38
+    const/16 v0, 0x168
+
+    if-lt v1, v0, :cond_3e
+
+    .line 69
+    const/4 v0, 0x3
+
+    goto :goto_29
+
+    .line 71
+    :cond_3e
+    const/4 v0, 0x2
+
+    goto :goto_29
 .end method
 
 .method public b()Z
@@ -62,14 +139,14 @@
     .prologue
     const/4 v0, 0x1
 
-    .line 50
+    .line 76
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x13
 
     if-lt v1, v2, :cond_8
 
-    .line 53
+    .line 79
     :cond_7
     :goto_7
     return v0
@@ -96,7 +173,7 @@
     .registers 2
 
     .prologue
-    .line 58
+    .line 84
     iget-object v0, p0, Landroid/support/v7/view/ActionBarPolicy;->a:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -118,21 +195,7 @@
     .registers 3
 
     .prologue
-    .line 62
-    iget-object v0, p0, Landroid/support/v7/view/ActionBarPolicy;->a:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
-
-    move-result-object v0
-
-    iget v0, v0, Landroid/content/pm/ApplicationInfo;->targetSdkVersion:I
-
-    .line 63
-    const/16 v1, 0x10
-
-    if-lt v0, v1, :cond_19
-
-    .line 64
+    .line 88
     iget-object v0, p0, Landroid/support/v7/view/ActionBarPolicy;->a:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -145,24 +208,7 @@
 
     move-result v0
 
-    .line 69
-    :goto_18
     return v0
-
-    :cond_19
-    iget-object v0, p0, Landroid/support/v7/view/ActionBarPolicy;->a:Landroid/content/Context;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v0
-
-    sget v1, Landroid/support/v7/appcompat/R$bool;->abc_action_bar_embed_tabs_pre_jb:I
-
-    invoke-virtual {v0, v1}, Landroid/content/res/Resources;->getBoolean(I)Z
-
-    move-result v0
-
-    goto :goto_18
 .end method
 
 .method public e()I
@@ -171,7 +217,7 @@
     .prologue
     const/4 v4, 0x0
 
-    .line 73
+    .line 92
     iget-object v0, p0, Landroid/support/v7/view/ActionBarPolicy;->a:Landroid/content/Context;
 
     const/4 v1, 0x0
@@ -184,43 +230,45 @@
 
     move-result-object v1
 
-    .line 75
+    .line 94
     sget v0, Landroid/support/v7/appcompat/R$styleable;->ActionBar_height:I
 
     invoke-virtual {v1, v0, v4}, Landroid/content/res/TypedArray;->getLayoutDimension(II)I
 
     move-result v0
 
-    .line 76
+    .line 95
     iget-object v2, p0, Landroid/support/v7/view/ActionBarPolicy;->a:Landroid/content/Context;
 
     invoke-virtual {v2}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v2
 
-    .line 77
+    .line 96
     invoke-virtual {p0}, Landroid/support/v7/view/ActionBarPolicy;->d()Z
 
     move-result v3
 
     if-nez v3, :cond_28
 
-    .line 79
+    .line 98
     sget v3, Landroid/support/v7/appcompat/R$dimen;->abc_action_bar_stacked_max_height:I
 
+    .line 99
     invoke-virtual {v2, v3}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     move-result v2
 
+    .line 98
     invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
 
     move-result v0
 
-    .line 82
+    .line 101
     :cond_28
     invoke-virtual {v1}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 83
+    .line 102
     return v0
 .end method
 
@@ -228,7 +276,7 @@
     .registers 3
 
     .prologue
-    .line 89
+    .line 108
     iget-object v0, p0, Landroid/support/v7/view/ActionBarPolicy;->a:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
@@ -256,7 +304,7 @@
     .registers 3
 
     .prologue
-    .line 94
+    .line 113
     iget-object v0, p0, Landroid/support/v7/view/ActionBarPolicy;->a:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;

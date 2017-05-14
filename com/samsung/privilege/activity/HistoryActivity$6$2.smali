@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 825
+    .line 852
     iput-object p1, p0, Lcom/samsung/privilege/activity/HistoryActivity$6$2;->a:Lcom/samsung/privilege/activity/HistoryActivity$6;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,12 +35,12 @@
     .registers 3
 
     .prologue
-    .line 828
+    .line 855
     iget-object v0, p0, Lcom/samsung/privilege/activity/HistoryActivity$6$2;->a:Lcom/samsung/privilege/activity/HistoryActivity$6;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/HistoryActivity$6;->b:Lcom/samsung/privilege/activity/HistoryActivity;
 
-    const v1, 0x7f100111
+    const v1, 0x7f100113
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/HistoryActivity;->findViewById(I)Landroid/view/View;
 
@@ -48,11 +48,11 @@
 
     check-cast v0, Landroid/support/v4/widget/SwipeRefreshLayout;
 
-    .line 829
+    .line 856
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v4/widget/SwipeRefreshLayout;->setRefreshing(Z)V
 
-    .line 830
+    .line 857
     return-void
 .end method

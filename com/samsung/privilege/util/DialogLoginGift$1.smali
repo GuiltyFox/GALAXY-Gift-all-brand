@@ -77,7 +77,7 @@
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$1;->a:Landroid/content/Context;
 
-    const v2, 0x7f09026d
+    const v2, 0x7f09026e
 
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 

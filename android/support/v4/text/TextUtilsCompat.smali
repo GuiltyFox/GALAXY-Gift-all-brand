@@ -20,22 +20,22 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 114
+    .line 117
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    .line 115
+    .line 118
     const/16 v1, 0x11
 
     if-lt v0, v1, :cond_26
 
-    .line 116
+    .line 119
     new-instance v0, Landroid/support/v4/text/TextUtilsCompat$TextUtilsCompatJellybeanMr1Impl;
 
     invoke-direct {v0, v2}, Landroid/support/v4/text/TextUtilsCompat$TextUtilsCompatJellybeanMr1Impl;-><init>(Landroid/support/v4/text/TextUtilsCompat$1;)V
 
     sput-object v0, Landroid/support/v4/text/TextUtilsCompat;->b:Landroid/support/v4/text/TextUtilsCompat$TextUtilsCompatImpl;
 
-    .line 146
+    .line 149
     :goto_e
     new-instance v0, Ljava/util/Locale;
 
@@ -47,19 +47,19 @@
 
     sput-object v0, Landroid/support/v4/text/TextUtilsCompat;->a:Ljava/util/Locale;
 
-    .line 148
+    .line 151
     const-string/jumbo v0, "Arab"
 
     sput-object v0, Landroid/support/v4/text/TextUtilsCompat;->c:Ljava/lang/String;
 
-    .line 149
+    .line 152
     const-string/jumbo v0, "Hebr"
 
     sput-object v0, Landroid/support/v4/text/TextUtilsCompat;->d:Ljava/lang/String;
 
     return-void
 
-    .line 118
+    .line 121
     :cond_26
     new-instance v0, Landroid/support/v4/text/TextUtilsCompat$TextUtilsCompatImpl;
 
@@ -74,7 +74,7 @@
     .registers 2
 
     .prologue
-    .line 143
+    .line 146
     sget-object v0, Landroid/support/v4/text/TextUtilsCompat;->b:Landroid/support/v4/text/TextUtilsCompat$TextUtilsCompatImpl;
 
     invoke-virtual {v0, p0}, Landroid/support/v4/text/TextUtilsCompat$TextUtilsCompatImpl;->a(Ljava/util/Locale;)I

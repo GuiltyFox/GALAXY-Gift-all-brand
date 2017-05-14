@@ -73,7 +73,7 @@
 
     iget-object v1, p0, Lcom/bzbs/marketplace/dialog/AlertBlurDialog$1;->a:Lcom/bzbs/marketplace/dialog/AlertBlurDialog;
 
-    const v2, 0x7f09042f
+    const v2, 0x7f09045e
 
     invoke-virtual {v1, v2}, Lcom/bzbs/marketplace/dialog/AlertBlurDialog;->getString(I)Ljava/lang/String;
 
@@ -101,7 +101,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 

@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 253
+    .line 255
     iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$3;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,13 +35,13 @@
     .registers 3
 
     .prologue
-    .line 256
+    .line 258
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$3;->a:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->a(Z)V
 
-    .line 257
+    .line 259
     return-void
 .end method

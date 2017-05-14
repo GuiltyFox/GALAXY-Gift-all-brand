@@ -4,10 +4,10 @@
 
 
 # virtual methods
-.method public abstract a(Landroid/view/KeyEvent;)V
+.method public abstract a(II)Z
 .end method
 
-.method public abstract a(II)Z
+.method public abstract a(Landroid/view/KeyEvent;)Z
 .end method
 
 .method public abstract b(I)Z

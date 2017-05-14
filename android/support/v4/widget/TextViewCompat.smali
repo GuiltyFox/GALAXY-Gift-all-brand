@@ -12,32 +12,32 @@
     .registers 2
 
     .prologue
-    .line 163
+    .line 173
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    .line 164
+    .line 174
     const/16 v1, 0x17
 
     if-lt v0, v1, :cond_e
 
-    .line 165
+    .line 175
     new-instance v0, Landroid/support/v4/widget/TextViewCompat$Api23TextViewCompatImpl;
 
     invoke-direct {v0}, Landroid/support/v4/widget/TextViewCompat$Api23TextViewCompatImpl;-><init>()V
 
     sput-object v0, Landroid/support/v4/widget/TextViewCompat;->a:Landroid/support/v4/widget/TextViewCompat$TextViewCompatImpl;
 
-    .line 175
+    .line 185
     :goto_d
     return-void
 
-    .line 166
+    .line 176
     :cond_e
     const/16 v1, 0x12
 
     if-lt v0, v1, :cond_1a
 
-    .line 167
+    .line 177
     new-instance v0, Landroid/support/v4/widget/TextViewCompat$JbMr2TextViewCompatImpl;
 
     invoke-direct {v0}, Landroid/support/v4/widget/TextViewCompat$JbMr2TextViewCompatImpl;-><init>()V
@@ -46,13 +46,13 @@
 
     goto :goto_d
 
-    .line 168
+    .line 178
     :cond_1a
     const/16 v1, 0x11
 
     if-lt v0, v1, :cond_26
 
-    .line 169
+    .line 179
     new-instance v0, Landroid/support/v4/widget/TextViewCompat$JbMr1TextViewCompatImpl;
 
     invoke-direct {v0}, Landroid/support/v4/widget/TextViewCompat$JbMr1TextViewCompatImpl;-><init>()V
@@ -61,13 +61,13 @@
 
     goto :goto_d
 
-    .line 170
+    .line 180
     :cond_26
     const/16 v1, 0x10
 
     if-lt v0, v1, :cond_32
 
-    .line 171
+    .line 181
     new-instance v0, Landroid/support/v4/widget/TextViewCompat$JbTextViewCompatImpl;
 
     invoke-direct {v0}, Landroid/support/v4/widget/TextViewCompat$JbTextViewCompatImpl;-><init>()V
@@ -76,7 +76,7 @@
 
     goto :goto_d
 
-    .line 173
+    .line 183
     :cond_32
     new-instance v0, Landroid/support/v4/widget/TextViewCompat$BaseTextViewCompatImpl;
 
@@ -91,7 +91,7 @@
     .registers 2
 
     .prologue
-    .line 247
+    .line 257
     sget-object v0, Landroid/support/v4/widget/TextViewCompat;->a:Landroid/support/v4/widget/TextViewCompat$TextViewCompatImpl;
 
     invoke-interface {v0, p0}, Landroid/support/v4/widget/TextViewCompat$TextViewCompatImpl;->a(Landroid/widget/TextView;)I
@@ -105,7 +105,7 @@
     .registers 11
 
     .prologue
-    .line 195
+    .line 205
     sget-object v0, Landroid/support/v4/widget/TextViewCompat;->a:Landroid/support/v4/widget/TextViewCompat$TextViewCompatImpl;
 
     move-object v1, p0
@@ -120,6 +120,6 @@
 
     invoke-interface/range {v0 .. v5}, Landroid/support/v4/widget/TextViewCompat$TextViewCompatImpl;->a(Landroid/widget/TextView;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    .line 196
+    .line 206
     return-void
 .end method

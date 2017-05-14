@@ -289,7 +289,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->b(Landroid/content/Context;)Z
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Z
 
     move-result v0
 
@@ -301,7 +301,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->c(Landroid/content/Context;)Z
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->g(Landroid/content/Context;)Z
 
     move-result v0
 
@@ -343,7 +343,7 @@
     invoke-super {p0, p1}, Landroid/support/v7/app/AppCompatActivity;->onCreate(Landroid/os/Bundle;)V
 
     .line 31
-    const v0, 0x7f04004f
+    const v0, 0x7f040051
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/SplashActivity;->setContentView(I)V
 

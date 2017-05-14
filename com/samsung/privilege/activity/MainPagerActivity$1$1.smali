@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 214
+    .line 218
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1$1;->a:Lcom/samsung/privilege/activity/MainPagerActivity$1;
 
     invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
@@ -32,10 +32,10 @@
     .registers 8
 
     .prologue
-    .line 234
+    .line 238
     invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    .line 236
+    .line 240
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1$1;->a:Lcom/samsung/privilege/activity/MainPagerActivity$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
@@ -74,7 +74,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 237
+    .line 241
     return-void
 .end method
 
@@ -82,7 +82,7 @@
     .registers 8
 
     .prologue
-    .line 217
+    .line 221
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1$1;->a:Lcom/samsung/privilege/activity/MainPagerActivity$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/MainPagerActivity$1;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
@@ -121,7 +121,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 220
+    .line 224
     :try_start_2a
     new-instance v0, Lorg/json/JSONArray;
 
@@ -131,14 +131,14 @@
 
     move-result-object v0
 
-    .line 222
+    .line 226
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
     if-lez v1, :cond_4d
 
-    .line 223
+    .line 227
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -151,7 +151,7 @@
 
     check-cast v0, Lcom/bzbs/bean/QueueItem;
 
-    .line 225
+    .line 229
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$1$1;->a:Lcom/samsung/privilege/activity/MainPagerActivity$1;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/MainPagerActivity$1;->b:Lcom/samsung/privilege/activity/MainPagerActivity;
@@ -162,12 +162,12 @@
     :try_end_4d
     .catch Ljava/lang/Exception; {:try_start_2a .. :try_end_4d} :catch_4e
 
-    .line 230
+    .line 234
     :cond_4d
     :goto_4d
     return-void
 
-    .line 227
+    .line 231
     :catch_4e
     move-exception v0
 

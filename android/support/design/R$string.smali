@@ -42,13 +42,13 @@
 
 .field public static final abc_toolbar_collapse_description:I = 0x7f090012
 
-.field public static final appbar_scrolling_view_behavior:I = 0x7f09040d
+.field public static final appbar_scrolling_view_behavior:I = 0x7f09043c
 
-.field public static final bottom_sheet_behavior:I = 0x7f090411
+.field public static final bottom_sheet_behavior:I = 0x7f090440
 
-.field public static final character_counter_pattern:I = 0x7f090430
+.field public static final character_counter_pattern:I = 0x7f09045f
 
-.field public static final status_bar_notification_info_overflow:I = 0x7f090042
+.field public static final status_bar_notification_info_overflow:I = 0x7f090043
 
 
 # direct methods
@@ -56,7 +56,7 @@
     .registers 1
 
     .prologue
-    .line 771
+    .line 763
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

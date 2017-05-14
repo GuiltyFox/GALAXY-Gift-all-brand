@@ -68,7 +68,7 @@
     invoke-virtual {p1, v0}, Lrx/Subscriber;->a_(Ljava/lang/Object;)V
 
     .line 47
-    invoke-virtual {p1}, Lrx/Subscriber;->i_()V
+    invoke-virtual {p1}, Lrx/Subscriber;->m_()V
 
     .line 48
     return-void

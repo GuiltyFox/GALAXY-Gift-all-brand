@@ -78,7 +78,7 @@
     return-void
 .end method
 
-.method public final i_()V
+.method public final m_()V
     .registers 2
 
     .prologue

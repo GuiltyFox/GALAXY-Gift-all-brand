@@ -66,9 +66,11 @@
 .end method
 
 .method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
-    .registers 10
+    .registers 11
 
     .prologue
+    const/4 v7, 0x0
+
     .line 68
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewBookingActivity$3;->a:Lcom/samsung/privilege/activity/WebViewBookingActivity;
 
@@ -167,7 +169,7 @@
     move-result-object v1
 
     .line 78
-    if-eqz p2, :cond_c3
+    if-eqz p2, :cond_c4
 
     .line 80
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -182,7 +184,7 @@
 
     move-result v3
 
-    if-eqz v3, :cond_89
+    if-eqz v3, :cond_8a
 
     .line 81
     iget-object v3, p0, Lcom/samsung/privilege/activity/WebViewBookingActivity$3;->a:Lcom/samsung/privilege/activity/WebViewBookingActivity;
@@ -201,10 +203,10 @@
 
     const/4 v6, 0x1
 
-    invoke-static {v3, v4, v5, v6}, Lcom/samsung/privilege/util/ResumeUtil;->a(Landroid/content/Context;Landroid/app/Activity;Landroid/os/Handler;Z)V
+    invoke-static {v3, v4, v5, v6, v7}, Lcom/samsung/privilege/util/ResumeUtil;->a(Landroid/content/Context;Landroid/app/Activity;Landroid/os/Handler;ZZ)V
 
     .line 84
-    :cond_89
+    :cond_8a
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v3
@@ -217,7 +219,7 @@
 
     move-result v2
 
-    if-nez v2, :cond_a5
+    if-nez v2, :cond_a6
 
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -234,7 +236,7 @@
     if-eqz v1, :cond_c5
 
     .line 85
-    :cond_a5
+    :cond_a6
     const-string/jumbo v0, "content://someURI"
 
     invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
@@ -266,11 +268,9 @@
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/WebViewBookingActivity;->finish()V
 
     .line 99
-    :cond_c3
-    :goto_c3
-    const/4 v0, 0x0
-
-    return v0
+    :cond_c4
+    :goto_c4
+    return v7
 
     .line 90
     :cond_c5
@@ -293,7 +293,7 @@
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/WebViewBookingActivity;->finish()V
 
-    goto :goto_c3
+    goto :goto_c4
 
     .line 92
     :cond_d9
@@ -307,7 +307,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_c3
+    if-eqz v0, :cond_c4
 
     .line 93
     new-instance v0, Landroid/content/Intent;
@@ -330,5 +330,5 @@
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/WebViewBookingActivity;->finish()V
 
-    goto :goto_c3
+    goto :goto_c4
 .end method

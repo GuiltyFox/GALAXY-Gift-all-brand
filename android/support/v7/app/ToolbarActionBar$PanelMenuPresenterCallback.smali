@@ -35,7 +35,7 @@
 
 
 # virtual methods
-.method public onCloseMenu(Landroid/support/v7/view/menu/MenuBuilder;Z)V
+.method public a(Landroid/support/v7/view/menu/MenuBuilder;Z)V
     .registers 5
 
     .prologue
@@ -64,7 +64,7 @@
     return-void
 .end method
 
-.method public onOpenSubMenu(Landroid/support/v7/view/menu/MenuBuilder;)Z
+.method public a(Landroid/support/v7/view/menu/MenuBuilder;)Z
     .registers 4
 
     .prologue

@@ -1,5 +1,5 @@
 .class public Landroid/support/v4/widget/DrawerLayout$SavedState;
-.super Landroid/view/View$BaseSavedState;
+.super Landroid/support/v4/view/AbsSavedState;
 .source "DrawerLayout.java"
 
 
@@ -33,64 +33,68 @@
     .registers 1
 
     .prologue
-    .line 1982
+    .line 2043
     new-instance v0, Landroid/support/v4/widget/DrawerLayout$SavedState$1;
 
     invoke-direct {v0}, Landroid/support/v4/widget/DrawerLayout$SavedState$1;-><init>()V
+
+    invoke-static {v0}, Landroid/support/v4/os/ParcelableCompat;->a(Landroid/support/v4/os/ParcelableCompatCreatorCallbacks;)Landroid/os/Parcelable$Creator;
+
+    move-result-object v0
 
     sput-object v0, Landroid/support/v4/widget/DrawerLayout$SavedState;->CREATOR:Landroid/os/Parcelable$Creator;
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/os/Parcel;)V
-    .registers 3
+.method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+    .registers 4
 
     .prologue
-    .line 1960
-    invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcel;)V
+    .line 2021
+    invoke-direct {p0, p1, p2}, Landroid/support/v4/view/AbsSavedState;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
 
-    .line 1953
+    .line 2014
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v4/widget/DrawerLayout$SavedState;->a:I
 
-    .line 1961
+    .line 2022
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/support/v4/widget/DrawerLayout$SavedState;->a:I
 
-    .line 1962
+    .line 2023
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/support/v4/widget/DrawerLayout$SavedState;->b:I
 
-    .line 1963
+    .line 2024
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/support/v4/widget/DrawerLayout$SavedState;->c:I
 
-    .line 1964
+    .line 2025
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/support/v4/widget/DrawerLayout$SavedState;->d:I
 
-    .line 1965
+    .line 2026
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
 
     iput v0, p0, Landroid/support/v4/widget/DrawerLayout$SavedState;->e:I
 
-    .line 1966
+    .line 2027
     return-void
 .end method
 
@@ -98,15 +102,15 @@
     .registers 3
 
     .prologue
-    .line 1969
-    invoke-direct {p0, p1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
+    .line 2030
+    invoke-direct {p0, p1}, Landroid/support/v4/view/AbsSavedState;-><init>(Landroid/os/Parcelable;)V
 
-    .line 1953
+    .line 2014
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v4/widget/DrawerLayout$SavedState;->a:I
 
-    .line 1970
+    .line 2031
     return-void
 .end method
 
@@ -116,34 +120,34 @@
     .registers 4
 
     .prologue
-    .line 1974
-    invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
+    .line 2035
+    invoke-super {p0, p1, p2}, Landroid/support/v4/view/AbsSavedState;->writeToParcel(Landroid/os/Parcel;I)V
 
-    .line 1975
+    .line 2036
     iget v0, p0, Landroid/support/v4/widget/DrawerLayout$SavedState;->a:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1976
+    .line 2037
     iget v0, p0, Landroid/support/v4/widget/DrawerLayout$SavedState;->b:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1977
+    .line 2038
     iget v0, p0, Landroid/support/v4/widget/DrawerLayout$SavedState;->c:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1978
+    .line 2039
     iget v0, p0, Landroid/support/v4/widget/DrawerLayout$SavedState;->d:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1979
+    .line 2040
     iget v0, p0, Landroid/support/v4/widget/DrawerLayout$SavedState;->e:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
-    .line 1980
+    .line 2041
     return-void
 .end method

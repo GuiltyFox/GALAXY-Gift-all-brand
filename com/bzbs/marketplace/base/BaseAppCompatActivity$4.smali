@@ -32,7 +32,7 @@
     .registers 13
 
     .prologue
-    const v7, 0x7f090286
+    const v7, 0x7f090287
 
     const/16 v6, 0x8
 
@@ -41,7 +41,7 @@
     .line 326
     iget-object v0, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$4;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const v2, 0x7f0901c5
+    const v2, 0x7f0901c6
 
     invoke-virtual {v0, v2}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getString(I)Ljava/lang/String;
 
@@ -78,7 +78,7 @@
 
     iget-object v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$4;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const v3, 0x7f0903d3
+    const v3, 0x7f0903f6
 
     invoke-virtual {v2, v3}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getString(I)Ljava/lang/String;
 
@@ -202,7 +202,7 @@
 
     iget-object v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$4;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const v3, 0x7f090288
+    const v3, 0x7f090289
 
     invoke-virtual {v2, v3}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getString(I)Ljava/lang/String;
 
@@ -234,7 +234,7 @@
 
     int-to-long v2, v1
 
-    invoke-static {v0, v2, v3}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;J)Z
+    invoke-static {v0, v2, v3}, Lcom/bzbs/data/UserLogin;->c(Landroid/content/Context;J)Z
 
     .line 348
     return-void
@@ -289,7 +289,7 @@
 
     iget-object v2, p0, Lcom/bzbs/marketplace/base/BaseAppCompatActivity$4;->a:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const v3, 0x7f090287
+    const v3, 0x7f090288
 
     invoke-virtual {v2, v3}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->getString(I)Ljava/lang/String;
 

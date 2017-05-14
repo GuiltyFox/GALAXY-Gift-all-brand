@@ -15,7 +15,7 @@
     .registers 2
 
     .prologue
-    .line 772
+    .line 770
     iput-object p1, p0, Landroid/support/v7/widget/ActionMenuView$ActionMenuPresenterCallback;->a:Landroid/support/v7/widget/ActionMenuView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -27,7 +27,7 @@
     .registers 3
 
     .prologue
-    .line 772
+    .line 770
     invoke-direct {p0, p1}, Landroid/support/v7/widget/ActionMenuView$ActionMenuPresenterCallback;-><init>(Landroid/support/v7/widget/ActionMenuView;)V
 
     return-void
@@ -35,19 +35,19 @@
 
 
 # virtual methods
-.method public onCloseMenu(Landroid/support/v7/view/menu/MenuBuilder;Z)V
+.method public a(Landroid/support/v7/view/menu/MenuBuilder;Z)V
     .registers 3
 
     .prologue
-    .line 775
+    .line 773
     return-void
 .end method
 
-.method public onOpenSubMenu(Landroid/support/v7/view/menu/MenuBuilder;)Z
+.method public a(Landroid/support/v7/view/menu/MenuBuilder;)Z
     .registers 3
 
     .prologue
-    .line 779
+    .line 777
     const/4 v0, 0x0
 
     return v0

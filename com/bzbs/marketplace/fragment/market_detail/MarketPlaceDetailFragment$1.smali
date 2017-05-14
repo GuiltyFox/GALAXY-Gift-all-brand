@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 177
+    .line 203
     iput-object p1, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$1;->a:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,11 +35,11 @@
     .registers 7
 
     .prologue
-    .line 180
+    .line 206
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$1;->a:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;
 
     invoke-static {v0, p3}, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->a(Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;I)V
 
-    .line 181
+    .line 207
     return-void
 .end method

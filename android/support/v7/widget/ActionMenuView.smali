@@ -136,31 +136,31 @@
 
     const/4 v2, 0x0
 
-    .line 402
+    .line 400
     invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;
 
-    .line 404
+    .line 402
     invoke-static {p3}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
 
     sub-int/2addr v1, p4
 
-    .line 406
+    .line 404
     invoke-static {p3}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v5
 
-    .line 407
+    .line 405
     invoke-static {v1, v5}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v6
 
-    .line 409
+    .line 407
     instance-of v1, p0, Landroid/support/v7/view/menu/ActionMenuItemView;
 
     if-eqz v1, :cond_5e
@@ -169,7 +169,7 @@
 
     check-cast v1, Landroid/support/v7/view/menu/ActionMenuItemView;
 
-    .line 411
+    .line 409
     :goto_1d
     if-eqz v1, :cond_60
 
@@ -181,7 +181,7 @@
 
     move v5, v4
 
-    .line 414
+    .line 412
     :goto_26
     if-lez p2, :cond_62
 
@@ -189,7 +189,7 @@
 
     if-lt p2, v3, :cond_62
 
-    .line 415
+    .line 413
     :cond_2c
     mul-int v1, p1, p2
 
@@ -199,25 +199,25 @@
 
     move-result v1
 
-    .line 417
+    .line 415
     invoke-virtual {p0, v1, v6}, Landroid/view/View;->measure(II)V
 
-    .line 419
+    .line 417
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v7
 
-    .line 420
+    .line 418
     div-int v1, v7, p1
 
-    .line 421
+    .line 419
     rem-int/2addr v7, p1
 
     if-eqz v7, :cond_42
 
     add-int/lit8 v1, v1, 0x1
 
-    .line 422
+    .line 420
     :cond_42
     if-eqz v5, :cond_47
 
@@ -225,7 +225,7 @@
 
     move v1, v3
 
-    .line 425
+    .line 423
     :cond_47
     :goto_47
     iget-boolean v3, v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z
@@ -236,17 +236,17 @@
 
     move v2, v4
 
-    .line 426
+    .line 424
     :cond_4e
     iput-boolean v2, v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->expandable:Z
 
-    .line 428
+    .line 426
     iput v1, v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->cellsUsed:I
 
-    .line 429
+    .line 427
     mul-int v0, v1, p1
 
-    .line 430
+    .line 428
     const/high16 v2, 0x40000000    # 2.0f
 
     invoke-static {v0, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
@@ -255,10 +255,10 @@
 
     invoke-virtual {p0, v0, v6}, Landroid/view/View;->measure(II)V
 
-    .line 432
+    .line 430
     return v1
 
-    .line 409
+    .line 407
     :cond_5e
     const/4 v1, 0x0
 
@@ -267,7 +267,7 @@
     :cond_60
     move v5, v2
 
-    .line 411
+    .line 409
     goto :goto_26
 
     :cond_62
@@ -280,22 +280,22 @@
     .registers 37
 
     .prologue
-    .line 176
+    .line 174
     invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v23
 
-    .line 177
+    .line 175
     invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v6
 
-    .line 178
+    .line 176
     invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v17
 
-    .line 180
+    .line 178
     invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/ActionMenuView;->getPaddingLeft()I
 
     move-result v7
@@ -306,7 +306,7 @@
 
     add-int/2addr v7, v8
 
-    .line 181
+    .line 179
     invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/ActionMenuView;->getPaddingTop()I
 
     move-result v8
@@ -317,7 +317,7 @@
 
     add-int v19, v8, v9
 
-    .line 183
+    .line 181
     const/4 v8, -0x2
 
     move/from16 v0, p2
@@ -328,27 +328,27 @@
 
     move-result v24
 
-    .line 186
+    .line 184
     sub-int v25, v6, v7
 
-    .line 189
+    .line 187
     move-object/from16 v0, p0
 
     iget v6, v0, Landroid/support/v7/widget/ActionMenuView;->mMinCellSize:I
 
     div-int v9, v25, v6
 
-    .line 190
+    .line 188
     move-object/from16 v0, p0
 
     iget v6, v0, Landroid/support/v7/widget/ActionMenuView;->mMinCellSize:I
 
     rem-int v6, v25, v6
 
-    .line 192
+    .line 190
     if-nez v9, :cond_41
 
-    .line 194
+    .line 192
     const/4 v6, 0x0
 
     move-object/from16 v0, p0
@@ -357,11 +357,11 @@
 
     invoke-virtual {v0, v1, v6}, Landroid/support/v7/widget/ActionMenuView;->setMeasuredDimension(II)V
 
-    .line 385
+    .line 383
     :goto_40
     return-void
 
-    .line 198
+    .line 196
     :cond_41
     move-object/from16 v0, p0
 
@@ -371,30 +371,30 @@
 
     add-int v26, v7, v6
 
-    .line 201
+    .line 199
     const/16 v16, 0x0
 
-    .line 202
+    .line 200
     const/4 v15, 0x0
 
-    .line 203
+    .line 201
     const/4 v10, 0x0
 
-    .line 204
+    .line 202
     const/4 v7, 0x0
 
-    .line 205
+    .line 203
     const/4 v11, 0x0
 
-    .line 208
+    .line 206
     const-wide/16 v12, 0x0
 
-    .line 210
+    .line 208
     invoke-virtual/range {p0 .. p0}, Landroid/support/v7/widget/ActionMenuView;->getChildCount()I
 
     move-result v27
 
-    .line 211
+    .line 209
     const/4 v6, 0x0
 
     move/from16 v18, v6
@@ -406,7 +406,7 @@
 
     if-ge v0, v1, :cond_103
 
-    .line 212
+    .line 210
     move-object/from16 v0, p0
 
     move/from16 v1, v18
@@ -415,7 +415,7 @@
 
     move-result-object v8
 
-    .line 213
+    .line 211
     invoke-virtual {v8}, Landroid/view/View;->getVisibility()I
 
     move-result v6
@@ -434,7 +434,7 @@
 
     move v9, v15
 
-    .line 211
+    .line 209
     :goto_73
     add-int/lit8 v14, v18, 0x1
 
@@ -452,19 +452,19 @@
 
     goto :goto_57
 
-    .line 215
+    .line 213
     :cond_7e
     instance-of v0, v8, Landroid/support/v7/view/menu/ActionMenuItemView;
 
     move/from16 v20, v0
 
-    .line 216
+    .line 214
     add-int/lit8 v14, v7, 0x1
 
-    .line 218
+    .line 216
     if-eqz v20, :cond_9a
 
-    .line 221
+    .line 219
     move-object/from16 v0, p0
 
     iget v6, v0, Landroid/support/v7/widget/ActionMenuView;->mGeneratedItemPadding:I
@@ -485,7 +485,7 @@
 
     invoke-virtual {v8, v6, v7, v0, v1}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 224
+    .line 222
     :cond_9a
     invoke-virtual {v8}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -493,37 +493,37 @@
 
     check-cast v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;
 
-    .line 225
+    .line 223
     const/4 v7, 0x0
 
     iput-boolean v7, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->expanded:Z
 
-    .line 226
+    .line 224
     const/4 v7, 0x0
 
     iput v7, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->extraPixels:I
 
-    .line 227
+    .line 225
     const/4 v7, 0x0
 
     iput v7, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->cellsUsed:I
 
-    .line 228
+    .line 226
     const/4 v7, 0x0
 
     iput-boolean v7, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->expandable:Z
 
-    .line 229
+    .line 227
     const/4 v7, 0x0
 
     iput v7, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->leftMargin:I
 
-    .line 230
+    .line 228
     const/4 v7, 0x0
 
     iput v7, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->rightMargin:I
 
-    .line 231
+    .line 229
     if-eqz v20, :cond_ff
 
     move-object v7, v8
@@ -541,14 +541,14 @@
     :goto_be
     iput-boolean v7, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->preventEdgeOffset:Z
 
-    .line 234
+    .line 232
     iget-boolean v7, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z
 
     if-eqz v7, :cond_101
 
     const/4 v7, 0x1
 
-    .line 236
+    .line 234
     :goto_c5
     move/from16 v0, v26
 
@@ -560,21 +560,21 @@
 
     move-result v20
 
-    .line 239
+    .line 237
     move/from16 v0, v20
 
     invoke-static {v15, v0}, Ljava/lang/Math;->max(II)I
 
     move-result v15
 
-    .line 240
+    .line 238
     iget-boolean v7, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->expandable:Z
 
     if-eqz v7, :cond_321
 
     add-int/lit8 v7, v10, 0x1
 
-    .line 241
+    .line 239
     :goto_db
     iget-boolean v6, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z
 
@@ -582,11 +582,11 @@
 
     const/4 v6, 0x1
 
-    .line 243
+    .line 241
     :goto_e0
     sub-int v11, v9, v20
 
-    .line 244
+    .line 242
     invoke-virtual {v8}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v8
@@ -597,7 +597,7 @@
 
     move-result v10
 
-    .line 245
+    .line 243
     const/4 v8, 0x1
 
     move/from16 v0, v20
@@ -628,7 +628,7 @@
 
     goto/16 :goto_73
 
-    .line 231
+    .line 229
     :cond_ff
     const/4 v7, 0x0
 
@@ -637,10 +637,10 @@
     :cond_101
     move v7, v9
 
-    .line 234
+    .line 232
     goto :goto_c5
 
-    .line 250
+    .line 248
     :cond_103
     if-eqz v11, :cond_140
 
@@ -652,7 +652,7 @@
 
     move v8, v6
 
-    .line 255
+    .line 253
     :goto_10a
     const/16 v18, 0x0
 
@@ -660,22 +660,22 @@
 
     move/from16 v19, v9
 
-    .line 256
+    .line 254
     :goto_110
     if-lez v10, :cond_30e
 
     if-lez v19, :cond_30e
 
-    .line 257
+    .line 255
     const v14, 0x7fffffff
 
-    .line 258
+    .line 256
     const-wide/16 v12, 0x0
 
-    .line 259
+    .line 257
     const/4 v9, 0x0
 
-    .line 260
+    .line 258
     const/4 v6, 0x0
 
     move/from16 v22, v6
@@ -687,7 +687,7 @@
 
     if-ge v0, v1, :cond_163
 
-    .line 261
+    .line 259
     move-object/from16 v0, p0
 
     move/from16 v1, v22
@@ -696,14 +696,14 @@
 
     move-result-object v6
 
-    .line 262
+    .line 260
     invoke-virtual {v6}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v6
 
     check-cast v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;
 
-    .line 265
+    .line 263
     iget-boolean v0, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->expandable:Z
 
     move/from16 v28, v0
@@ -714,7 +714,7 @@
 
     move v9, v14
 
-    .line 260
+    .line 258
     :goto_139
     add-int/lit8 v14, v22, 0x1
 
@@ -726,7 +726,7 @@
 
     goto :goto_11d
 
-    .line 250
+    .line 248
     :cond_140
     const/4 v6, 0x0
 
@@ -734,7 +734,7 @@
 
     goto :goto_10a
 
-    .line 268
+    .line 266
     :cond_143
     iget v0, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->cellsUsed:I
 
@@ -744,28 +744,28 @@
 
     if-ge v0, v14, :cond_153
 
-    .line 269
+    .line 267
     iget v9, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->cellsUsed:I
 
-    .line 270
+    .line 268
     const/4 v6, 0x1
 
     shl-int v6, v6, v22
 
     int-to-long v12, v6
 
-    .line 271
+    .line 269
     const/4 v6, 0x1
 
     goto :goto_139
 
-    .line 272
+    .line 270
     :cond_153
     iget v6, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->cellsUsed:I
 
     if-ne v6, v14, :cond_30a
 
-    .line 273
+    .line 271
     const/4 v6, 0x1
 
     shl-int v6, v6, v22
@@ -776,25 +776,25 @@
 
     or-long v12, v12, v28
 
-    .line 274
+    .line 272
     add-int/lit8 v6, v9, 0x1
 
     move v9, v14
 
     goto :goto_139
 
-    .line 279
+    .line 277
     :cond_163
     or-long v20, v20, v12
 
-    .line 281
+    .line 279
     move/from16 v0, v19
 
     if-le v9, v0, :cond_1ee
 
     move-wide/from16 v12, v20
 
-    .line 310
+    .line 308
     :goto_16b
     if-nez v11, :cond_273
 
@@ -804,7 +804,7 @@
 
     const/4 v6, 0x1
 
-    .line 311
+    .line 309
     :goto_171
     if-lez v19, :cond_2bf
 
@@ -826,7 +826,7 @@
 
     if-le v15, v7, :cond_2bf
 
-    .line 313
+    .line 311
     :cond_184
     invoke-static {v12, v13}, Ljava/lang/Long;->bitCount(J)I
 
@@ -834,10 +834,10 @@
 
     int-to-float v7, v7
 
-    .line 315
+    .line 313
     if-nez v6, :cond_304
 
-    .line 317
+    .line 315
     const-wide/16 v8, 0x1
 
     and-long/2addr v8, v12
@@ -848,7 +848,7 @@
 
     if-eqz v6, :cond_1a8
 
-    .line 318
+    .line 316
     const/4 v6, 0x0
 
     move-object/from16 v0, p0
@@ -863,7 +863,7 @@
 
     check-cast v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;
 
-    .line 319
+    .line 317
     iget-boolean v6, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->preventEdgeOffset:Z
 
     if-nez v6, :cond_1a8
@@ -872,7 +872,7 @@
 
     sub-float/2addr v7, v6
 
-    .line 321
+    .line 319
     :cond_1a8
     const/4 v6, 0x1
 
@@ -890,7 +890,7 @@
 
     if-eqz v6, :cond_304
 
-    .line 322
+    .line 320
     add-int/lit8 v6, v27, -0x1
 
     move-object/from16 v0, p0
@@ -905,7 +905,7 @@
 
     check-cast v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;
 
-    .line 323
+    .line 321
     iget-boolean v6, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->preventEdgeOffset:Z
 
     if-nez v6, :cond_304
@@ -914,7 +914,7 @@
 
     sub-float v6, v7, v6
 
-    .line 327
+    .line 325
     :goto_1ca
     const/4 v7, 0x0
 
@@ -932,7 +932,7 @@
 
     move v7, v6
 
-    .line 330
+    .line 328
     :goto_1d6
     const/4 v6, 0x0
 
@@ -945,7 +945,7 @@
 
     if-ge v9, v0, :cond_2c1
 
-    .line 331
+    .line 329
     const/4 v6, 0x1
 
     shl-int/2addr v6, v9
@@ -962,7 +962,7 @@
 
     move v6, v8
 
-    .line 330
+    .line 328
     :goto_1e9
     add-int/lit8 v8, v9, 0x1
 
@@ -972,11 +972,11 @@
 
     goto :goto_1da
 
-    .line 284
+    .line 282
     :cond_1ee
     add-int/lit8 v22, v14, 0x1
 
-    .line 286
+    .line 284
     const/4 v6, 0x0
 
     move v14, v6
@@ -990,21 +990,21 @@
 
     if-ge v14, v0, :cond_26a
 
-    .line 287
+    .line 285
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v14}, Landroid/support/v7/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v20
 
-    .line 288
+    .line 286
     invoke-virtual/range {v20 .. v20}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v6
 
     check-cast v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;
 
-    .line 289
+    .line 287
     const/16 v21, 0x1
 
     shl-int v21, v21, v14
@@ -1023,7 +1023,7 @@
 
     if-nez v21, :cond_22a
 
-    .line 291
+    .line 289
     iget v6, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->cellsUsed:I
 
     move/from16 v0, v22
@@ -1042,7 +1042,7 @@
 
     move v6, v9
 
-    .line 286
+    .line 284
     :goto_225
     add-int/lit8 v9, v14, 0x1
 
@@ -1052,7 +1052,7 @@
 
     goto :goto_1f6
 
-    .line 295
+    .line 293
     :cond_22a
     if-eqz v8, :cond_257
 
@@ -1068,7 +1068,7 @@
 
     if-ne v9, v0, :cond_257
 
-    .line 297
+    .line 295
     move-object/from16 v0, p0
 
     iget v0, v0, Landroid/support/v7/widget/ActionMenuView;->mGeneratedItemPadding:I
@@ -1099,7 +1099,7 @@
 
     invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->setPadding(IIII)V
 
-    .line 299
+    .line 297
     :cond_257
     iget v0, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->cellsUsed:I
 
@@ -1111,19 +1111,19 @@
 
     iput v0, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->cellsUsed:I
 
-    .line 300
+    .line 298
     const/16 v20, 0x1
 
     move/from16 v0, v20
 
     iput-boolean v0, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->expanded:Z
 
-    .line 301
+    .line 299
     add-int/lit8 v6, v9, -0x1
 
     goto :goto_225
 
-    .line 304
+    .line 302
     :cond_26a
     const/4 v6, 0x1
 
@@ -1133,16 +1133,16 @@
 
     move/from16 v19, v9
 
-    .line 305
+    .line 303
     goto/16 :goto_110
 
-    .line 310
+    .line 308
     :cond_273
     const/4 v6, 0x0
 
     goto/16 :goto_171
 
-    .line 327
+    .line 325
     :cond_276
     const/4 v6, 0x0
 
@@ -1150,7 +1150,7 @@
 
     goto/16 :goto_1d6
 
-    .line 333
+    .line 331
     :cond_27a
     move-object/from16 v0, p0
 
@@ -1158,88 +1158,88 @@
 
     move-result-object v10
 
-    .line 334
+    .line 332
     invoke-virtual {v10}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v6
 
     check-cast v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;
 
-    .line 335
+    .line 333
     instance-of v10, v10, Landroid/support/v7/view/menu/ActionMenuItemView;
 
     if-eqz v10, :cond_29d
 
-    .line 337
+    .line 335
     iput v7, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->extraPixels:I
 
-    .line 338
+    .line 336
     const/4 v8, 0x1
 
     iput-boolean v8, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->expanded:Z
 
-    .line 339
+    .line 337
     if-nez v9, :cond_29a
 
     iget-boolean v8, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->preventEdgeOffset:Z
 
     if-nez v8, :cond_29a
 
-    .line 342
+    .line 340
     neg-int v8, v7
 
     div-int/lit8 v8, v8, 0x2
 
     iput v8, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->leftMargin:I
 
-    .line 344
+    .line 342
     :cond_29a
     const/4 v6, 0x1
 
     goto/16 :goto_1e9
 
-    .line 345
+    .line 343
     :cond_29d
     iget-boolean v10, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z
 
     if-eqz v10, :cond_2ae
 
-    .line 346
+    .line 344
     iput v7, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->extraPixels:I
 
-    .line 347
+    .line 345
     const/4 v8, 0x1
 
     iput-boolean v8, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->expanded:Z
 
-    .line 348
+    .line 346
     neg-int v8, v7
 
     div-int/lit8 v8, v8, 0x2
 
     iput v8, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->rightMargin:I
 
-    .line 349
+    .line 347
     const/4 v6, 0x1
 
     goto/16 :goto_1e9
 
-    .line 354
+    .line 352
     :cond_2ae
     if-eqz v9, :cond_2b4
 
-    .line 355
+    .line 353
     div-int/lit8 v10, v7, 0x2
 
     iput v10, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->leftMargin:I
 
-    .line 357
+    .line 355
     :cond_2b4
     add-int/lit8 v10, v27, -0x1
 
     if-eq v9, v10, :cond_2bc
 
-    .line 358
+    .line 356
     div-int/lit8 v10, v7, 0x2
 
     iput v10, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->rightMargin:I
@@ -1252,11 +1252,11 @@
     :cond_2bf
     move/from16 v8, v18
 
-    .line 367
+    .line 365
     :cond_2c1
     if-eqz v8, :cond_2f0
 
-    .line 368
+    .line 366
     const/4 v6, 0x0
 
     move v7, v6
@@ -1266,26 +1266,26 @@
 
     if-ge v7, v0, :cond_2f0
 
-    .line 369
+    .line 367
     move-object/from16 v0, p0
 
     invoke-virtual {v0, v7}, Landroid/support/v7/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v8
 
-    .line 370
+    .line 368
     invoke-virtual {v8}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v6
 
     check-cast v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;
 
-    .line 372
+    .line 370
     iget-boolean v9, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->expanded:Z
 
     if-nez v9, :cond_2dd
 
-    .line 368
+    .line 366
     :goto_2d9
     add-int/lit8 v6, v7, 0x1
 
@@ -1293,7 +1293,7 @@
 
     goto :goto_2c5
 
-    .line 374
+    .line 372
     :cond_2dd
     iget v9, v6, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->cellsUsed:I
 
@@ -1303,7 +1303,7 @@
 
     add-int/2addr v6, v9
 
-    .line 375
+    .line 373
     const/high16 v9, 0x40000000    # 2.0f
 
     invoke-static {v6, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
@@ -1316,7 +1316,7 @@
 
     goto :goto_2d9
 
-    .line 380
+    .line 378
     :cond_2f0
     const/high16 v6, 0x40000000    # 2.0f
 
@@ -1324,7 +1324,7 @@
 
     if-eq v0, v6, :cond_301
 
-    .line 384
+    .line 382
     :goto_2f6
     move-object/from16 v0, p0
 
@@ -1399,7 +1399,7 @@
     .registers 3
 
     .prologue
-    .line 606
+    .line 604
     if-eqz p1, :cond_8
 
     instance-of v0, p1, Landroid/support/v7/widget/ActionMenuView$LayoutParams;
@@ -1421,17 +1421,17 @@
     .registers 2
 
     .prologue
-    .line 709
+    .line 707
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     if-eqz v0, :cond_9
 
-    .line 710
+    .line 708
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionMenuPresenter;->e()Z
 
-    .line 712
+    .line 710
     :cond_9
     return-void
 .end method
@@ -1440,7 +1440,7 @@
     .registers 3
 
     .prologue
-    .line 734
+    .line 732
     const/4 v0, 0x0
 
     return v0
@@ -1452,17 +1452,17 @@
     .prologue
     const/4 v1, -0x2
 
-    .line 579
+    .line 577
     new-instance v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;
 
     invoke-direct {v0, v1, v1}, Landroid/support/v7/widget/ActionMenuView$LayoutParams;-><init>(II)V
 
-    .line 581
+    .line 579
     const/16 v1, 0x10
 
     iput v1, v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->gravity:I
 
-    .line 582
+    .line 580
     return-object v0
 .end method
 
@@ -1494,7 +1494,7 @@
     .registers 4
 
     .prologue
-    .line 587
+    .line 585
     new-instance v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;
 
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionMenuView;->getContext()Landroid/content/Context;
@@ -1510,10 +1510,10 @@
     .registers 4
 
     .prologue
-    .line 592
+    .line 590
     if-eqz p1, :cond_1c
 
-    .line 593
+    .line 591
     instance-of v0, p1, Landroid/support/v7/widget/ActionMenuView$LayoutParams;
 
     if-eqz v0, :cond_16
@@ -1524,23 +1524,23 @@
 
     invoke-direct {v0, p1}, Landroid/support/v7/widget/ActionMenuView$LayoutParams;-><init>(Landroid/support/v7/widget/ActionMenuView$LayoutParams;)V
 
-    .line 596
+    .line 594
     :goto_d
     iget v1, v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->gravity:I
 
     if-gtz v1, :cond_15
 
-    .line 597
+    .line 595
     const/16 v1, 0x10
 
     iput v1, v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->gravity:I
 
-    .line 601
+    .line 599
     :cond_15
     :goto_15
     return-object v0
 
-    .line 593
+    .line 591
     :cond_16
     new-instance v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;
 
@@ -1548,7 +1548,7 @@
 
     goto :goto_d
 
-    .line 601
+    .line 599
     :cond_1c
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionMenuView;->generateDefaultLayoutParams()Landroid/support/v7/widget/ActionMenuView$LayoutParams;
 
@@ -1609,17 +1609,17 @@
     .registers 3
 
     .prologue
-    .line 611
+    .line 609
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionMenuView;->generateDefaultLayoutParams()Landroid/support/v7/widget/ActionMenuView$LayoutParams;
 
     move-result-object v0
 
-    .line 612
+    .line 610
     const/4 v1, 0x1
 
     iput-boolean v1, v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z
 
-    .line 613
+    .line 611
     return-object v0
 .end method
 
@@ -1629,24 +1629,24 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 640
+    .line 638
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
     if-nez v0, :cond_40
 
-    .line 641
+    .line 639
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionMenuView;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 642
+    .line 640
     new-instance v1, Landroid/support/v7/view/menu/MenuBuilder;
 
     invoke-direct {v1, v0}, Landroid/support/v7/view/menu/MenuBuilder;-><init>(Landroid/content/Context;)V
 
     iput-object v1, p0, Landroid/support/v7/widget/ActionMenuView;->mMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
-    .line 643
+    .line 641
     iget-object v1, p0, Landroid/support/v7/widget/ActionMenuView;->mMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
     new-instance v2, Landroid/support/v7/widget/ActionMenuView$MenuBuilderCallback;
@@ -1655,21 +1655,21 @@
 
     invoke-virtual {v1, v2}, Landroid/support/v7/view/menu/MenuBuilder;->setCallback(Landroid/support/v7/view/menu/MenuBuilder$Callback;)V
 
-    .line 644
+    .line 642
     new-instance v1, Landroid/support/v7/widget/ActionMenuPresenter;
 
     invoke-direct {v1, v0}, Landroid/support/v7/widget/ActionMenuPresenter;-><init>(Landroid/content/Context;)V
 
     iput-object v1, p0, Landroid/support/v7/widget/ActionMenuView;->mPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
-    .line 645
+    .line 643
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionMenuPresenter;->b(Z)V
 
-    .line 646
+    .line 644
     iget-object v1, p0, Landroid/support/v7/widget/ActionMenuView;->mPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mActionMenuPresenterCallback:Landroid/support/v7/view/menu/MenuPresenter$Callback;
@@ -1679,9 +1679,9 @@
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mActionMenuPresenterCallback:Landroid/support/v7/view/menu/MenuPresenter$Callback;
 
     :goto_2f
-    invoke-virtual {v1, v0}, Landroid/support/v7/widget/ActionMenuPresenter;->a(Landroid/support/v7/view/menu/MenuPresenter$Callback;)V
+    invoke-virtual {v1, v0}, Landroid/support/v7/widget/ActionMenuPresenter;->setCallback(Landroid/support/v7/view/menu/MenuPresenter$Callback;)V
 
-    .line 648
+    .line 646
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
     iget-object v1, p0, Landroid/support/v7/widget/ActionMenuView;->mPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
@@ -1690,18 +1690,18 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/support/v7/view/menu/MenuBuilder;->addMenuPresenter(Landroid/support/v7/view/menu/MenuPresenter;Landroid/content/Context;)V
 
-    .line 649
+    .line 647
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     invoke-virtual {v0, p0}, Landroid/support/v7/widget/ActionMenuPresenter;->a(Landroid/support/v7/widget/ActionMenuView;)V
 
-    .line 652
+    .line 650
     :cond_40
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
     return-object v0
 
-    .line 646
+    .line 644
     :cond_43
     new-instance v0, Landroid/support/v7/widget/ActionMenuView$ActionMenuPresenterCallback;
 
@@ -1714,10 +1714,10 @@
     .registers 2
 
     .prologue
-    .line 563
+    .line 561
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionMenuView;->getMenu()Landroid/view/Menu;
 
-    .line 564
+    .line 562
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionMenuPresenter;->b()Landroid/graphics/drawable/Drawable;
@@ -1741,7 +1741,7 @@
     .registers 2
 
     .prologue
-    .line 623
+    .line 621
     const/4 v0, 0x0
 
     return v0
@@ -1753,16 +1753,16 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 718
+    .line 716
     if-nez p1, :cond_5
 
     move v0, v2
 
-    .line 730
+    .line 728
     :goto_4
     return v0
 
-    .line 721
+    .line 719
     :cond_5
     add-int/lit8 v0, p1, -0x1
 
@@ -1770,12 +1770,12 @@
 
     move-result-object v0
 
-    .line 722
+    .line 720
     invoke-virtual {p0, p1}, Landroid/support/v7/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 724
+    .line 722
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionMenuView;->getChildCount()I
 
     move-result v3
@@ -1786,7 +1786,7 @@
 
     if-eqz v3, :cond_20
 
-    .line 725
+    .line 723
     check-cast v0, Landroid/support/v7/widget/ActionMenuView$ActionMenuChildView;
 
     invoke-interface {v0}, Landroid/support/v7/widget/ActionMenuView$ActionMenuChildView;->needsDividerAfter()Z
@@ -1795,7 +1795,7 @@
 
     or-int/2addr v2, v0
 
-    .line 727
+    .line 725
     :cond_20
     if-lez p1, :cond_2f
 
@@ -1805,7 +1805,7 @@
 
     move-object v0, v1
 
-    .line 728
+    .line 726
     check-cast v0, Landroid/support/v7/widget/ActionMenuView$ActionMenuChildView;
 
     invoke-interface {v0}, Landroid/support/v7/widget/ActionMenuView$ActionMenuChildView;->needsDividerBefore()Z
@@ -1826,7 +1826,7 @@
     .registers 2
 
     .prologue
-    .line 687
+    .line 685
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     if-eqz v0, :cond_e
@@ -1854,10 +1854,10 @@
     .registers 2
 
     .prologue
-    .line 628
+    .line 626
     iput-object p1, p0, Landroid/support/v7/widget/ActionMenuView;->mMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
-    .line 629
+    .line 627
     return-void
 .end method
 
@@ -1865,7 +1865,7 @@
     .registers 4
 
     .prologue
-    .line 618
+    .line 616
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
     const/4 v1, 0x0
@@ -1881,7 +1881,7 @@
     .registers 2
 
     .prologue
-    .line 702
+    .line 700
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     if-eqz v0, :cond_e
@@ -1909,7 +1909,7 @@
     .registers 2
 
     .prologue
-    .line 697
+    .line 695
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     if-eqz v0, :cond_e
@@ -1937,7 +1937,7 @@
     .registers 2
 
     .prologue
-    .line 569
+    .line 567
     iget-boolean v0, p0, Landroid/support/v7/widget/ActionMenuView;->mReserveOverflow:Z
 
     return v0
@@ -1948,49 +1948,41 @@
 
     .prologue
     .line 124
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v1, 0x8
-
-    if-lt v0, v1, :cond_9
-
-    .line 125
     invoke-super {p0, p1}, Landroid/support/v7/widget/LinearLayoutCompat;->onConfigurationChanged(Landroid/content/res/Configuration;)V
 
-    .line 128
-    :cond_9
+    .line 126
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1f
 
-    .line 129
+    .line 127
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/ActionMenuPresenter;->updateMenuView(Z)V
 
-    .line 131
+    .line 129
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionMenuPresenter;->g()Z
 
     move-result v0
 
-    if-eqz v0, :cond_25
+    if-eqz v0, :cond_1f
 
-    .line 132
+    .line 130
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionMenuPresenter;->d()Z
 
-    .line 133
+    .line 131
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActionMenuPresenter;->c()Z
 
-    .line 136
-    :cond_25
+    .line 134
+    :cond_1f
     return-void
 .end method
 
@@ -1998,13 +1990,13 @@
     .registers 1
 
     .prologue
-    .line 542
+    .line 540
     invoke-super {p0}, Landroid/support/v7/widget/LinearLayoutCompat;->onDetachedFromWindow()V
 
-    .line 543
+    .line 541
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionMenuView;->dismissPopupMenus()V
 
-    .line 544
+    .line 542
     return-void
 .end method
 
@@ -2012,42 +2004,42 @@
     .registers 21
 
     .prologue
-    .line 437
+    .line 435
     iget-boolean v0, p0, Landroid/support/v7/widget/ActionMenuView;->mFormatItems:Z
 
     if-nez v0, :cond_8
 
-    .line 438
+    .line 436
     invoke-super/range {p0 .. p5}, Landroid/support/v7/widget/LinearLayoutCompat;->onLayout(ZIIII)V
 
-    .line 538
+    .line 536
     :cond_7
     :goto_7
     return-void
 
-    .line 442
+    .line 440
     :cond_8
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionMenuView;->getChildCount()I
 
     move-result v7
 
-    .line 443
+    .line 441
     sub-int v0, p5, p3
 
     div-int/lit8 v8, v0, 0x2
 
-    .line 444
+    .line 442
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionMenuView;->getDividerWidth()I
 
     move-result v9
 
-    .line 446
+    .line 444
     const/4 v5, 0x0
 
-    .line 447
+    .line 445
     const/4 v4, 0x0
 
-    .line 448
+    .line 446
     sub-int v0, p4, p2
 
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionMenuView;->getPaddingRight()I
@@ -2062,15 +2054,15 @@
 
     sub-int v3, v0, v1
 
-    .line 449
+    .line 447
     const/4 v1, 0x0
 
-    .line 450
+    .line 448
     invoke-static {p0}, Landroid/support/v7/widget/ViewUtils;->isLayoutRtl(Landroid/view/View;)Z
 
     move-result v10
 
-    .line 451
+    .line 449
     const/4 v0, 0x0
 
     move v6, v0
@@ -2078,12 +2070,12 @@
     :goto_2a
     if-ge v6, v7, :cond_a2
 
-    .line 452
+    .line 450
     invoke-virtual {p0, v6}, Landroid/support/v7/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v11
 
-    .line 453
+    .line 451
     invoke-virtual {v11}, Landroid/view/View;->getVisibility()I
 
     move-result v0
@@ -2100,7 +2092,7 @@
 
     move v3, v5
 
-    .line 451
+    .line 449
     :goto_3c
     add-int/lit8 v4, v6, 0x1
 
@@ -2116,7 +2108,7 @@
 
     goto :goto_2a
 
-    .line 457
+    .line 455
     :cond_44
     invoke-virtual {v11}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -2124,36 +2116,36 @@
 
     check-cast v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;
 
-    .line 458
+    .line 456
     iget-boolean v2, v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->isOverflowButton:Z
 
     if-eqz v2, :cond_85
 
-    .line 459
+    .line 457
     invoke-virtual {v11}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
 
-    .line 460
+    .line 458
     invoke-virtual {p0, v6}, Landroid/support/v7/widget/ActionMenuView;->hasSupportDividerBeforeChildAt(I)Z
 
     move-result v2
 
     if-eqz v2, :cond_59
 
-    .line 461
+    .line 459
     add-int/2addr v1, v9
 
-    .line 463
+    .line 461
     :cond_59
     invoke-virtual {v11}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v12
 
-    .line 466
+    .line 464
     if-eqz v10, :cond_76
 
-    .line 467
+    .line 465
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionMenuView;->getPaddingLeft()I
 
     move-result v2
@@ -2162,35 +2154,35 @@
 
     add-int/2addr v0, v2
 
-    .line 468
+    .line 466
     add-int v2, v0, v1
 
-    .line 473
+    .line 471
     :goto_68
     div-int/lit8 v13, v12, 0x2
 
     sub-int v13, v8, v13
 
-    .line 474
+    .line 472
     add-int/2addr v12, v13
 
-    .line 475
+    .line 473
     invoke-virtual {v11, v0, v13, v2, v12}, Landroid/view/View;->layout(IIII)V
 
-    .line 477
+    .line 475
     sub-int v1, v3, v1
 
-    .line 478
+    .line 476
     const/4 v0, 0x1
 
     move v2, v4
 
     move v3, v5
 
-    .line 479
+    .line 477
     goto :goto_3c
 
-    .line 470
+    .line 468
     :cond_76
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionMenuView;->getWidth()I
 
@@ -2206,12 +2198,12 @@
 
     sub-int/2addr v2, v0
 
-    .line 471
+    .line 469
     sub-int v0, v2, v1
 
     goto :goto_68
 
-    .line 480
+    .line 478
     :cond_85
     invoke-virtual {v11}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -2225,23 +2217,23 @@
 
     add-int/2addr v2, v0
 
-    .line 481
+    .line 479
     add-int v0, v5, v2
 
-    .line 482
+    .line 480
     sub-int v2, v3, v2
 
-    .line 483
+    .line 481
     invoke-virtual {p0, v6}, Landroid/support/v7/widget/ActionMenuView;->hasSupportDividerBeforeChildAt(I)Z
 
     move-result v3
 
     if-eqz v3, :cond_9a
 
-    .line 484
+    .line 482
     add-int/2addr v0, v9
 
-    .line 486
+    .line 484
     :cond_9a
     add-int/lit8 v3, v4, 0x1
 
@@ -2257,7 +2249,7 @@
 
     goto :goto_3c
 
-    .line 490
+    .line 488
     :cond_a2
     const/4 v0, 0x1
 
@@ -2265,39 +2257,39 @@
 
     if-nez v1, :cond_c6
 
-    .line 492
+    .line 490
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/support/v7/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 493
+    .line 491
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
 
-    .line 494
+    .line 492
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v2
 
-    .line 495
+    .line 493
     sub-int v3, p4, p2
 
     div-int/lit8 v3, v3, 0x2
 
-    .line 496
+    .line 494
     div-int/lit8 v4, v1, 0x2
 
     sub-int/2addr v3, v4
 
-    .line 497
+    .line 495
     div-int/lit8 v4, v2, 0x2
 
     sub-int v4, v8, v4
 
-    .line 498
+    .line 496
     add-int/2addr v1, v3
 
     add-int/2addr v2, v4
@@ -2306,7 +2298,7 @@
 
     goto/16 :goto_7
 
-    .line 502
+    .line 500
     :cond_c6
     if-eqz v1, :cond_100
 
@@ -2315,7 +2307,7 @@
     :goto_c9
     sub-int v0, v4, v0
 
-    .line 503
+    .line 501
     const/4 v1, 0x0
 
     if-lez v0, :cond_102
@@ -2327,10 +2319,10 @@
 
     move-result v3
 
-    .line 505
+    .line 503
     if-eqz v10, :cond_120
 
-    .line 506
+    .line 504
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionMenuView;->getWidth()I
 
     move-result v0
@@ -2341,7 +2333,7 @@
 
     sub-int v1, v0, v1
 
-    .line 507
+    .line 505
     const/4 v0, 0x0
 
     move v2, v0
@@ -2349,19 +2341,19 @@
     :goto_e2
     if-ge v2, v7, :cond_7
 
-    .line 508
+    .line 506
     invoke-virtual {p0, v2}, Landroid/support/v7/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 509
+    .line 507
     invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;
 
-    .line 510
+    .line 508
     invoke-virtual {v4}, Landroid/view/View;->getVisibility()I
 
     move-result v5
@@ -2376,7 +2368,7 @@
 
     move v0, v1
 
-    .line 507
+    .line 505
     :goto_fb
     add-int/lit8 v1, v2, 0x1
 
@@ -2386,47 +2378,47 @@
 
     goto :goto_e2
 
-    .line 502
+    .line 500
     :cond_100
     const/4 v0, 0x1
 
     goto :goto_c9
 
-    .line 503
+    .line 501
     :cond_102
     const/4 v0, 0x0
 
     goto :goto_d0
 
-    .line 514
+    .line 512
     :cond_104
     iget v5, v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->rightMargin:I
 
     sub-int/2addr v1, v5
 
-    .line 515
+    .line 513
     invoke-virtual {v4}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v5
 
-    .line 516
+    .line 514
     invoke-virtual {v4}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v6
 
-    .line 517
+    .line 515
     div-int/lit8 v9, v6, 0x2
 
     sub-int v9, v8, v9
 
-    .line 518
+    .line 516
     sub-int v10, v1, v5
 
     add-int/2addr v6, v9
 
     invoke-virtual {v4, v10, v9, v1, v6}, Landroid/view/View;->layout(IIII)V
 
-    .line 519
+    .line 517
     iget v0, v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->leftMargin:I
 
     add-int/2addr v0, v5
@@ -2437,13 +2429,13 @@
 
     goto :goto_fb
 
-    .line 522
+    .line 520
     :cond_120
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionMenuView;->getPaddingLeft()I
 
     move-result v1
 
-    .line 523
+    .line 521
     const/4 v0, 0x0
 
     move v2, v0
@@ -2451,19 +2443,19 @@
     :goto_126
     if-ge v2, v7, :cond_7
 
-    .line 524
+    .line 522
     invoke-virtual {p0, v2}, Landroid/support/v7/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v4
 
-    .line 525
+    .line 523
     invoke-virtual {v4}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;
 
-    .line 526
+    .line 524
     invoke-virtual {v4}, Landroid/view/View;->getVisibility()I
 
     move-result v5
@@ -2478,7 +2470,7 @@
 
     move v0, v1
 
-    .line 523
+    .line 521
     :goto_13f
     add-int/lit8 v1, v2, 0x1
 
@@ -2488,35 +2480,35 @@
 
     goto :goto_126
 
-    .line 530
+    .line 528
     :cond_144
     iget v5, v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->leftMargin:I
 
     add-int/2addr v1, v5
 
-    .line 531
+    .line 529
     invoke-virtual {v4}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v5
 
-    .line 532
+    .line 530
     invoke-virtual {v4}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v6
 
-    .line 533
+    .line 531
     div-int/lit8 v9, v6, 0x2
 
     sub-int v9, v8, v9
 
-    .line 534
+    .line 532
     add-int v10, v1, v5
 
     add-int/2addr v6, v9
 
     invoke-virtual {v4, v1, v9, v10, v6}, Landroid/view/View;->layout(IIII)V
 
-    .line 535
+    .line 533
     iget v0, v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->rightMargin:I
 
     add-int/2addr v0, v5
@@ -2546,10 +2538,10 @@
 
     const/4 v2, 0x0
 
-    .line 145
+    .line 143
     iget-boolean v3, p0, Landroid/support/v7/widget/ActionMenuView;->mFormatItems:Z
 
-    .line 146
+    .line 144
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
 
     move-result v0
@@ -2563,21 +2555,21 @@
     :goto_d
     iput-boolean v0, p0, Landroid/support/v7/widget/ActionMenuView;->mFormatItems:Z
 
-    .line 148
+    .line 146
     iget-boolean v0, p0, Landroid/support/v7/widget/ActionMenuView;->mFormatItems:Z
 
     if-eq v3, v0, :cond_15
 
-    .line 149
+    .line 147
     iput v2, p0, Landroid/support/v7/widget/ActionMenuView;->mFormatItemsWidth:I
 
-    .line 154
+    .line 152
     :cond_15
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 155
+    .line 153
     iget-boolean v3, p0, Landroid/support/v7/widget/ActionMenuView;->mFormatItems:Z
 
     if-eqz v3, :cond_2c
@@ -2590,72 +2582,72 @@
 
     if-eq v0, v3, :cond_2c
 
-    .line 156
+    .line 154
     iput v0, p0, Landroid/support/v7/widget/ActionMenuView;->mFormatItemsWidth:I
 
-    .line 157
+    .line 155
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/view/menu/MenuBuilder;->onItemsChanged(Z)V
 
-    .line 160
+    .line 158
     :cond_2c
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionMenuView;->getChildCount()I
 
     move-result v3
 
-    .line 161
+    .line 159
     iget-boolean v0, p0, Landroid/support/v7/widget/ActionMenuView;->mFormatItems:Z
 
     if-eqz v0, :cond_3c
 
     if-lez v3, :cond_3c
 
-    .line 162
+    .line 160
     invoke-direct {p0, p1, p2}, Landroid/support/v7/widget/ActionMenuView;->onMeasureExactFormat(II)V
 
-    .line 172
+    .line 170
     :goto_39
     return-void
 
     :cond_3a
     move v0, v2
 
-    .line 146
+    .line 144
     goto :goto_d
 
     :cond_3c
     move v1, v2
 
-    .line 165
+    .line 163
     :goto_3d
     if-ge v1, v3, :cond_51
 
-    .line 166
+    .line 164
     invoke-virtual {p0, v1}, Landroid/support/v7/widget/ActionMenuView;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
-    .line 167
+    .line 165
     invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;
 
-    .line 168
+    .line 166
     iput v2, v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->rightMargin:I
 
     iput v2, v0, Landroid/support/v7/widget/ActionMenuView$LayoutParams;->leftMargin:I
 
-    .line 165
+    .line 163
     add-int/lit8 v0, v1, 0x1
 
     move v1, v0
 
     goto :goto_3d
 
-    .line 170
+    .line 168
     :cond_51
     invoke-super {p0, p1, p2}, Landroid/support/v7/widget/LinearLayoutCompat;->onMeasure(II)V
 
@@ -2666,7 +2658,7 @@
     .registers 2
 
     .prologue
-    .line 669
+    .line 667
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mMenu:Landroid/support/v7/view/menu/MenuBuilder;
 
     return-object v0
@@ -2676,12 +2668,12 @@
     .registers 3
 
     .prologue
-    .line 739
+    .line 737
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/ActionMenuPresenter;->c(Z)V
 
-    .line 740
+    .line 738
     return-void
 .end method
 
@@ -2689,13 +2681,13 @@
     .registers 3
 
     .prologue
-    .line 660
+    .line 658
     iput-object p1, p0, Landroid/support/v7/widget/ActionMenuView;->mActionMenuPresenterCallback:Landroid/support/v7/view/menu/MenuPresenter$Callback;
 
-    .line 661
+    .line 659
     iput-object p2, p0, Landroid/support/v7/widget/ActionMenuView;->mMenuBuilderCallback:Landroid/support/v7/view/menu/MenuBuilder$Callback;
 
-    .line 662
+    .line 660
     return-void
 .end method
 
@@ -2703,10 +2695,10 @@
     .registers 2
 
     .prologue
-    .line 139
+    .line 137
     iput-object p1, p0, Landroid/support/v7/widget/ActionMenuView;->mOnMenuItemClickListener:Landroid/support/v7/widget/ActionMenuView$OnMenuItemClickListener;
 
-    .line 140
+    .line 138
     return-void
 .end method
 
@@ -2714,15 +2706,15 @@
     .registers 3
 
     .prologue
-    .line 552
+    .line 550
     invoke-virtual {p0}, Landroid/support/v7/widget/ActionMenuView;->getMenu()Landroid/view/Menu;
 
-    .line 553
+    .line 551
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/widget/ActionMenuPresenter;->a(Landroid/graphics/drawable/Drawable;)V
 
-    .line 554
+    .line 552
     return-void
 .end method
 
@@ -2730,10 +2722,10 @@
     .registers 2
 
     .prologue
-    .line 574
+    .line 572
     iput-boolean p1, p0, Landroid/support/v7/widget/ActionMenuView;->mReserveOverflow:Z
 
-    .line 575
+    .line 573
     return-void
 .end method
 
@@ -2799,7 +2791,7 @@
     .registers 2
 
     .prologue
-    .line 678
+    .line 676
     iget-object v0, p0, Landroid/support/v7/widget/ActionMenuView;->mPresenter:Landroid/support/v7/widget/ActionMenuPresenter;
 
     if-eqz v0, :cond_e

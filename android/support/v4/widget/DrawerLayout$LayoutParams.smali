@@ -18,15 +18,15 @@
     .registers 4
 
     .prologue
-    .line 2181
+    .line 2242
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(II)V
 
-    .line 2167
+    .line 2228
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->a:I
 
-    .line 2182
+    .line 2243
     return-void
 .end method
 
@@ -36,13 +36,13 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 2173
+    .line 2234
     invoke-direct {p0, p1, p2}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
 
-    .line 2167
+    .line 2228
     iput v1, p0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->a:I
 
-    .line 2175
+    .line 2236
     invoke-static {}, Landroid/support/v4/widget/DrawerLayout;->d()[I
 
     move-result-object v0
@@ -51,17 +51,17 @@
 
     move-result-object v0
 
-    .line 2176
+    .line 2237
     invoke-virtual {v0, v1, v1}, Landroid/content/res/TypedArray;->getInt(II)I
 
     move-result v1
 
     iput v1, p0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->a:I
 
-    .line 2177
+    .line 2238
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
-    .line 2178
+    .line 2239
     return-void
 .end method
 
@@ -69,20 +69,20 @@
     .registers 3
 
     .prologue
-    .line 2190
+    .line 2251
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
-    .line 2167
+    .line 2228
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->a:I
 
-    .line 2191
+    .line 2252
     iget v0, p1, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->a:I
 
     iput v0, p0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->a:I
 
-    .line 2192
+    .line 2253
     return-void
 .end method
 
@@ -90,15 +90,15 @@
     .registers 3
 
     .prologue
-    .line 2195
+    .line 2256
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 2167
+    .line 2228
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->a:I
 
-    .line 2196
+    .line 2257
     return-void
 .end method
 
@@ -106,15 +106,15 @@
     .registers 3
 
     .prologue
-    .line 2199
+    .line 2260
     invoke-direct {p0, p1}, Landroid/view/ViewGroup$MarginLayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
 
-    .line 2167
+    .line 2228
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->a:I
 
-    .line 2200
+    .line 2261
     return-void
 .end method
 
@@ -122,7 +122,7 @@
     .registers 2
 
     .prologue
-    .line 2162
+    .line 2223
     iget v0, p0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->b:F
 
     return v0
@@ -132,7 +132,7 @@
     .registers 2
 
     .prologue
-    .line 2162
+    .line 2223
     iput p1, p0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->b:F
 
     return p1
@@ -142,7 +142,7 @@
     .registers 2
 
     .prologue
-    .line 2162
+    .line 2223
     iput p1, p0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->d:I
 
     return p1
@@ -152,7 +152,7 @@
     .registers 2
 
     .prologue
-    .line 2162
+    .line 2223
     iput-boolean p1, p0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->c:Z
 
     return p1
@@ -162,22 +162,8 @@
     .registers 2
 
     .prologue
-    .line 2162
+    .line 2223
     iget v0, p0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->d:I
-
-    return v0
-.end method
-
-.method static synthetic b(Landroid/support/v4/widget/DrawerLayout$LayoutParams;I)I
-    .registers 3
-
-    .prologue
-    .line 2162
-    iget v0, p0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->d:I
-
-    or-int/2addr v0, p1
-
-    iput v0, p0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->d:I
 
     return v0
 .end method
@@ -186,7 +172,7 @@
     .registers 2
 
     .prologue
-    .line 2162
+    .line 2223
     iget-boolean v0, p0, Landroid/support/v4/widget/DrawerLayout$LayoutParams;->c:Z
 
     return v0

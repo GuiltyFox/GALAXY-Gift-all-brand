@@ -1027,22 +1027,6 @@
     goto :goto_a
 .end method
 
-.method public c_()V
-    .registers 2
-
-    .prologue
-    .line 180
-    invoke-direct {p0}, Lcz/msebera/android/httpclient/impl/conn/ManagedClientConnectionImpl;->q()Lcz/msebera/android/httpclient/conn/OperatedClientConnection;
-
-    move-result-object v0
-
-    .line 181
-    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/OperatedClientConnection;->c_()V
-
-    .line 182
-    return-void
-.end method
-
 .method public close()V
     .registers 3
 
@@ -1100,56 +1084,6 @@
     const/4 v0, 0x1
 
     goto :goto_a
-.end method
-
-.method public d_()V
-    .registers 5
-
-    .prologue
-    .line 436
-    monitor-enter p0
-
-    .line 437
-    :try_start_1
-    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/conn/ManagedClientConnectionImpl;->c:Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;
-
-    if-nez v0, :cond_7
-
-    .line 438
-    monitor-exit p0
-
-    .line 443
-    :goto_6
-    return-void
-
-    .line 440
-    :cond_7
-    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/conn/ManagedClientConnectionImpl;->a:Lcz/msebera/android/httpclient/conn/ClientConnectionManager;
-
-    iget-wide v2, p0, Lcz/msebera/android/httpclient/impl/conn/ManagedClientConnectionImpl;->e:J
-
-    sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
-    invoke-interface {v0, p0, v2, v3, v1}, Lcz/msebera/android/httpclient/conn/ClientConnectionManager;->a(Lcz/msebera/android/httpclient/conn/ManagedClientConnection;JLjava/util/concurrent/TimeUnit;)V
-
-    .line 441
-    const/4 v0, 0x0
-
-    iput-object v0, p0, Lcz/msebera/android/httpclient/impl/conn/ManagedClientConnectionImpl;->c:Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;
-
-    .line 442
-    monitor-exit p0
-
-    goto :goto_6
-
-    :catchall_15
-    move-exception v0
-
-    monitor-exit p0
-    :try_end_17
-    .catchall {:try_start_1 .. :try_end_17} :catchall_15
-
-    throw v0
 .end method
 
 .method public e()V
@@ -1218,6 +1152,22 @@
     return v0
 .end method
 
+.method public g_()V
+    .registers 2
+
+    .prologue
+    .line 180
+    invoke-direct {p0}, Lcz/msebera/android/httpclient/impl/conn/ManagedClientConnectionImpl;->q()Lcz/msebera/android/httpclient/conn/OperatedClientConnection;
+
+    move-result-object v0
+
+    .line 181
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/OperatedClientConnection;->g_()V
+
+    .line 182
+    return-void
+.end method
+
 .method public h()Lcz/msebera/android/httpclient/conn/routing/HttpRoute;
     .registers 2
 
@@ -1233,6 +1183,56 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public h_()V
+    .registers 5
+
+    .prologue
+    .line 436
+    monitor-enter p0
+
+    .line 437
+    :try_start_1
+    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/conn/ManagedClientConnectionImpl;->c:Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;
+
+    if-nez v0, :cond_7
+
+    .line 438
+    monitor-exit p0
+
+    .line 443
+    :goto_6
+    return-void
+
+    .line 440
+    :cond_7
+    iget-object v0, p0, Lcz/msebera/android/httpclient/impl/conn/ManagedClientConnectionImpl;->a:Lcz/msebera/android/httpclient/conn/ClientConnectionManager;
+
+    iget-wide v2, p0, Lcz/msebera/android/httpclient/impl/conn/ManagedClientConnectionImpl;->e:J
+
+    sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-interface {v0, p0, v2, v3, v1}, Lcz/msebera/android/httpclient/conn/ClientConnectionManager;->a(Lcz/msebera/android/httpclient/conn/ManagedClientConnection;JLjava/util/concurrent/TimeUnit;)V
+
+    .line 441
+    const/4 v0, 0x0
+
+    iput-object v0, p0, Lcz/msebera/android/httpclient/impl/conn/ManagedClientConnectionImpl;->c:Lcz/msebera/android/httpclient/impl/conn/HttpPoolEntry;
+
+    .line 442
+    monitor-exit p0
+
+    goto :goto_6
+
+    :catchall_15
+    move-exception v0
+
+    monitor-exit p0
+    :try_end_17
+    .catchall {:try_start_1 .. :try_end_17} :catchall_15
+
+    throw v0
 .end method
 
 .method public i()V

@@ -14,9 +14,9 @@
     if-nez v0, :cond_a
 
     .line 54
-    new-instance v0, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut;
+    new-instance v0, Landroid/support/v4/graphics/drawable/DrawableWrapperGingerbread;
 
-    invoke-direct {v0, p0}, Landroid/support/v4/graphics/drawable/DrawableWrapperDonut;-><init>(Landroid/graphics/drawable/Drawable;)V
+    invoke-direct {v0, p0}, Landroid/support/v4/graphics/drawable/DrawableWrapperGingerbread;-><init>(Landroid/graphics/drawable/Drawable;)V
 
     move-object p0, v0
 

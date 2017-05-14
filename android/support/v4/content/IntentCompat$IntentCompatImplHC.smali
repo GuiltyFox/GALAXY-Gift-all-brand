@@ -27,3 +27,15 @@
 
     return-object v0
 .end method
+
+.method public b(Landroid/content/ComponentName;)Landroid/content/Intent;
+    .registers 3
+
+    .prologue
+    .line 72
+    invoke-static {p1}, Landroid/support/v4/content/IntentCompatHoneycomb;->b(Landroid/content/ComponentName;)Landroid/content/Intent;
+
+    move-result-object v0
+
+    return-object v0
+.end method

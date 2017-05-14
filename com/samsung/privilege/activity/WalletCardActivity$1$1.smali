@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 238
+    .line 249
     iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$1$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$1;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$1$1;->a:Ljava/lang/String;
@@ -39,7 +39,7 @@
     .registers 5
 
     .prologue
-    .line 241
+    .line 252
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
     move-result-object v0
@@ -66,27 +66,27 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 246
+    .line 257
     :try_start_1d
     iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$1$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$1;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->ah:Landroid/widget/RelativeLayout;
+    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->aj:Landroid/widget/RelativeLayout;
 
     invoke-virtual {v0}, Landroid/widget/RelativeLayout;->performClick()Z
     :try_end_26
     .catch Ljava/lang/Exception; {:try_start_1d .. :try_end_26} :catch_27
 
-    .line 250
+    .line 261
     :goto_26
     return-void
 
-    .line 247
+    .line 258
     :catch_27
     move-exception v0
 
-    .line 248
+    .line 259
     invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
     move-result-object v1

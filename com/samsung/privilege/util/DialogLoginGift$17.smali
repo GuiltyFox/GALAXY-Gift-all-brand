@@ -92,12 +92,12 @@
 
     const/4 v6, 0x1
 
-    invoke-static {v5, v6}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Z)Z
+    invoke-static {v5, v6}, Lcom/bzbs/data/UserLogin;->d(Landroid/content/Context;Z)Z
 
     .line 883
     iget-object v5, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
-    invoke-static {v5, v0}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v5, v0}, Lcom/bzbs/data/UserLogin;->b(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 884
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
@@ -108,7 +108,7 @@
 
     move-result-object v5
 
-    invoke-static {v0, v5}, Lcom/bzbs/data/UserLogin;->m(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v0, v5}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 886
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
@@ -119,7 +119,7 @@
 
     move-result-object v5
 
-    invoke-static {v0, v5}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v0, v5}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 887
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
@@ -130,9 +130,20 @@
 
     move-result-object v5
 
-    invoke-static {v0, v5}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v0, v5}, Lcom/bzbs/data/UserLogin;->g(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 889
+    .line 888
+    iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
+
+    const-string/jumbo v5, "userLevel"
+
+    invoke-static {v1, v5}, Lcom/bzbs/util/JsonUtil;->c(Lorg/json/JSONObject;Ljava/lang/String;)J
+
+    move-result-wide v6
+
+    invoke-static {v0, v6, v7}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;J)Z
+
+    .line 890
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     const-string/jumbo v5, "isPremiumUser"
@@ -145,30 +156,30 @@
 
     move-result v5
 
-    invoke-static {v0, v5}, Lcom/bzbs/data/UserLogin;->g(Landroid/content/Context;Z)Z
-    :try_end_61
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_61} :catch_170
+    invoke-static {v0, v5}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;Z)Z
+    :try_end_6d
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_6d} :catch_17c
 
-    .line 892
-    :try_start_61
+    .line 893
+    :try_start_6d
     const-string/jumbo v0, "detail"
 
     invoke-virtual {v1, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v0
 
-    .line 893
-    if-eqz v0, :cond_17c
-
     .line 894
+    if-eqz v0, :cond_188
+
+    .line 895
     const-string/jumbo v5, "ewallet_token"
 
     invoke-static {v0, v5}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 895
-    if-eqz v0, :cond_15b
+    .line 896
+    if-eqz v0, :cond_167
 
     const-string/jumbo v5, ""
 
@@ -176,18 +187,18 @@
 
     move-result v5
 
-    if-nez v5, :cond_15b
+    if-nez v5, :cond_167
 
-    .line 896
+    .line 897
     iget-object v5, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
-    invoke-static {v5, v0}, Lcom/bzbs/data/UserLogin;->d(Landroid/content/Context;Ljava/lang/String;)Z
-    :try_end_81
-    .catch Ljava/lang/Exception; {:try_start_61 .. :try_end_81} :catch_165
+    invoke-static {v5, v0}, Lcom/bzbs/data/UserLogin;->e(Landroid/content/Context;Ljava/lang/String;)Z
+    :try_end_8d
+    .catch Ljava/lang/Exception; {:try_start_6d .. :try_end_8d} :catch_171
 
-    .line 907
-    :goto_81
-    :try_start_81
+    .line 908
+    :goto_8d
+    :try_start_8d
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     invoke-static {v0}, Lcom/bzbs/data/AppSetting;->d(Landroid/content/Context;)Ljava/lang/String;
@@ -200,27 +211,27 @@
 
     move-result v0
 
-    if-eqz v0, :cond_98
+    if-eqz v0, :cond_a4
 
-    .line 908
+    .line 909
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     const-string/jumbo v5, "1108"
 
-    invoke-static {v0, v5}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v0, v5}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 916
-    :cond_98
+    .line 917
+    :cond_a4
     invoke-static {}, Ljava/util/Locale;->getDefault()Ljava/util/Locale;
 
     move-result-object v0
 
     invoke-static {v0}, Ljava/util/Locale;->setDefault(Ljava/util/Locale;)V
-    :try_end_9f
-    .catch Ljava/lang/Exception; {:try_start_81 .. :try_end_9f} :catch_170
+    :try_end_ab
+    .catch Ljava/lang/Exception; {:try_start_8d .. :try_end_ab} :catch_17c
 
-    .line 919
-    :try_start_9f
+    .line 920
+    :try_start_ab
     const-string/jumbo v0, "sponsor_pages"
 
     invoke-static {v1, v0}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
@@ -228,19 +239,19 @@
     move-result-object v0
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->j:Ljava/lang/String;
-    :try_end_a8
-    .catch Ljava/lang/Exception; {:try_start_9f .. :try_end_a8} :catch_186
+    :try_end_b4
+    .catch Ljava/lang/Exception; {:try_start_ab .. :try_end_b4} :catch_192
 
-    .line 925
-    :goto_a8
-    :try_start_a8
+    .line 926
+    :goto_b4
+    :try_start_b4
     const-string/jumbo v0, "updated_points"
 
     invoke-virtual {v1, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v0
 
-    .line 926
+    .line 927
     iget-object v5, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     const-string/jumbo v6, "points"
@@ -249,13 +260,13 @@
 
     move-result-wide v6
 
-    invoke-static {v5, v6, v7}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;J)Z
-    :try_end_bb
-    .catch Ljava/lang/Exception; {:try_start_a8 .. :try_end_bb} :catch_1a8
+    invoke-static {v5, v6, v7}, Lcom/bzbs/data/UserLogin;->c(Landroid/content/Context;J)Z
+    :try_end_c7
+    .catch Ljava/lang/Exception; {:try_start_b4 .. :try_end_c7} :catch_1b4
 
-    .line 930
-    :goto_bb
-    :try_start_bb
+    .line 931
+    :goto_c7
+    :try_start_c7
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
     move-result-object v0
@@ -272,7 +283,7 @@
 
     iget-object v6, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
-    invoke-static {v6}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)J
+    invoke-static {v6}, Lcom/bzbs/data/UserLogin;->D(Landroid/content/Context;)J
 
     move-result-wide v6
 
@@ -285,18 +296,18 @@
     move-result-object v5
 
     invoke-static {v0, v5}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_dc
-    .catch Ljava/lang/Exception; {:try_start_bb .. :try_end_dc} :catch_170
+    :try_end_e8
+    .catch Ljava/lang/Exception; {:try_start_c7 .. :try_end_e8} :catch_17c
 
-    .line 933
-    :try_start_dc
+    .line 934
+    :try_start_e8
     const-string/jumbo v0, "user_rank"
 
     invoke-virtual {v1, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v0
 
-    .line 934
+    .line 935
     iget-object v5, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     const-string/jumbo v6, "rank"
@@ -305,45 +316,45 @@
 
     move-result-object v0
 
-    invoke-static {v5, v0}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;Ljava/lang/String;)Z
-    :try_end_ef
-    .catch Ljava/lang/Exception; {:try_start_dc .. :try_end_ef} :catch_1b2
+    invoke-static {v5, v0}, Lcom/bzbs/data/UserLogin;->o(Landroid/content/Context;Ljava/lang/String;)Z
+    :try_end_fb
+    .catch Ljava/lang/Exception; {:try_start_e8 .. :try_end_fb} :catch_1be
 
-    .line 952
-    :goto_ef
-    :try_start_ef
+    .line 953
+    :goto_fb
+    :try_start_fb
     const-string/jumbo v0, "buzzebees"
 
     invoke-virtual {v1, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v0
 
-    .line 954
+    .line 955
     const-string/jumbo v5, "points"
 
     invoke-static {v0, v5}, Lcom/bzbs/util/JsonUtil;->b(Lorg/json/JSONObject;Ljava/lang/String;)I
 
     move-result v0
 
-    .line 955
-    if-lez v0, :cond_11b
-
     .line 956
+    if-lez v0, :cond_127
+
+    .line 957
     new-instance v5, Lcom/bzbs/bean/MessagePopup;
 
     const-string/jumbo v6, "point"
 
     invoke-direct {v5, v6}, Lcom/bzbs/bean/MessagePopup;-><init>(Ljava/lang/String;)V
 
-    .line 957
+    .line 958
     const-string/jumbo v6, "weeklytopup"
 
     iput-object v6, v5, Lcom/bzbs/bean/MessagePopup;->point_from:Ljava/lang/String;
 
-    .line 958
+    .line 959
     iput v0, v5, Lcom/bzbs/bean/MessagePopup;->point_number:I
 
-    .line 961
+    .line 962
     iget v6, v5, Lcom/bzbs/bean/MessagePopup;->point_number:I
 
     iget-object v5, v5, Lcom/bzbs/bean/MessagePopup;->point_from:Ljava/lang/String;
@@ -355,65 +366,65 @@
     check-cast v0, Landroid/app/Activity;
 
     invoke-static {v6, v5, v7, v0}, Lcom/samsung/privilege/util/AnimationPointGift;->a(ILjava/lang/String;Landroid/os/Handler;Landroid/app/Activity;)V
-    :try_end_11b
-    .catch Ljava/lang/Exception; {:try_start_ef .. :try_end_11b} :catch_332
+    :try_end_127
+    .catch Ljava/lang/Exception; {:try_start_fb .. :try_end_127} :catch_34a
 
-    .line 968
-    :cond_11b
-    :goto_11b
-    :try_start_11b
+    .line 969
+    :cond_127
+    :goto_127
+    :try_start_127
     const-string/jumbo v0, "buzzebees"
 
     invoke-virtual {v1, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v0
 
-    .line 970
+    .line 971
     const-string/jumbo v5, "badges"
 
     invoke-virtual {v0, v5}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v5
 
-    .line 971
+    .line 972
     const/4 v0, 0x0
 
-    :goto_12a
+    :goto_136
     invoke-virtual {v5}, Lorg/json/JSONArray;->length()I
 
     move-result v6
 
-    if-ge v0, v6, :cond_220
+    if-ge v0, v6, :cond_22c
 
-    .line 972
+    .line 973
     invoke-virtual {v5, v0}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v6
 
-    .line 973
+    .line 974
     new-instance v7, Lcom/bzbs/bean/BadgeAlert;
 
     invoke-direct {v7, v6}, Lcom/bzbs/bean/BadgeAlert;-><init>(Lorg/json/JSONObject;)V
 
-    .line 975
+    .line 976
     new-instance v6, Lcom/bzbs/bean/MessagePopup;
 
     const-string/jumbo v8, "badge"
 
     invoke-direct {v6, v8}, Lcom/bzbs/bean/MessagePopup;-><init>(Ljava/lang/String;)V
 
-    .line 976
+    .line 977
     iput-object v7, v6, Lcom/bzbs/bean/MessagePopup;->badgeAlert:Lcom/bzbs/bean/BadgeAlert;
 
-    .line 978
+    .line 979
     iget-object v8, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     invoke-static {v8, v6}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Lcom/bzbs/bean/MessagePopup;)V
-    :try_end_148
-    .catch Ljava/lang/Exception; {:try_start_11b .. :try_end_148} :catch_21f
+    :try_end_154
+    .catch Ljava/lang/Exception; {:try_start_127 .. :try_end_154} :catch_22b
 
-    .line 982
-    :try_start_148
+    .line 983
+    :try_start_154
     iget-object v6, v7, Lcom/bzbs/bean/BadgeAlert;->CustomInfo:Ljava/lang/String;
 
     const-string/jumbo v8, "dashboard:"
@@ -422,56 +433,56 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1d4
+    if-eqz v6, :cond_1e0
 
-    .line 983
+    .line 984
     iget-object v6, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     invoke-static {v6, v7}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Lcom/bzbs/bean/BadgeAlert;)V
-    :try_end_158
-    .catch Ljava/lang/Exception; {:try_start_148 .. :try_end_158} :catch_1e6
+    :try_end_164
+    .catch Ljava/lang/Exception; {:try_start_154 .. :try_end_164} :catch_1f2
 
-    .line 971
-    :cond_158
-    :goto_158
+    .line 972
+    :cond_164
+    :goto_164
     add-int/lit8 v0, v0, 0x1
 
-    goto :goto_12a
+    goto :goto_136
 
-    .line 898
-    :cond_15b
-    :try_start_15b
+    .line 899
+    :cond_167
+    :try_start_167
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     const-string/jumbo v5, ""
 
-    invoke-static {v0, v5}, Lcom/bzbs/data/UserLogin;->d(Landroid/content/Context;Ljava/lang/String;)Z
-    :try_end_163
-    .catch Ljava/lang/Exception; {:try_start_15b .. :try_end_163} :catch_165
+    invoke-static {v0, v5}, Lcom/bzbs/data/UserLogin;->e(Landroid/content/Context;Ljava/lang/String;)Z
+    :try_end_16f
+    .catch Ljava/lang/Exception; {:try_start_167 .. :try_end_16f} :catch_171
 
-    goto/16 :goto_81
-
-    .line 903
-    :catch_165
-    move-exception v0
+    goto/16 :goto_8d
 
     .line 904
-    :try_start_166
+    :catch_171
+    move-exception v0
+
+    .line 905
+    :try_start_172
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     const-string/jumbo v5, ""
 
-    invoke-static {v0, v5}, Lcom/bzbs/data/UserLogin;->d(Landroid/content/Context;Ljava/lang/String;)Z
-    :try_end_16e
-    .catch Ljava/lang/Exception; {:try_start_166 .. :try_end_16e} :catch_170
+    invoke-static {v0, v5}, Lcom/bzbs/data/UserLogin;->e(Landroid/content/Context;Ljava/lang/String;)Z
+    :try_end_17a
+    .catch Ljava/lang/Exception; {:try_start_172 .. :try_end_17a} :catch_17c
 
-    goto/16 :goto_81
+    goto/16 :goto_8d
 
-    .line 1045
-    :catch_170
+    .line 1047
+    :catch_17c
     move-exception v0
 
-    .line 1046
+    .line 1048
     const-string/jumbo v0, "Authentication with BuzzeBees Fail...\r\n{Invalid data format}..."
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
@@ -480,29 +491,29 @@
 
     invoke-static {v0, v1, v2}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
 
-    .line 1048
-    :goto_17b
+    .line 1050
+    :goto_187
     return-void
 
-    .line 901
-    :cond_17c
-    :try_start_17c
+    .line 902
+    :cond_188
+    :try_start_188
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     const-string/jumbo v5, ""
 
-    invoke-static {v0, v5}, Lcom/bzbs/data/UserLogin;->d(Landroid/content/Context;Ljava/lang/String;)Z
-    :try_end_184
-    .catch Ljava/lang/Exception; {:try_start_17c .. :try_end_184} :catch_165
+    invoke-static {v0, v5}, Lcom/bzbs/data/UserLogin;->e(Landroid/content/Context;Ljava/lang/String;)Z
+    :try_end_190
+    .catch Ljava/lang/Exception; {:try_start_188 .. :try_end_190} :catch_171
 
-    goto/16 :goto_81
-
-    .line 920
-    :catch_186
-    move-exception v0
+    goto/16 :goto_8d
 
     .line 921
-    :try_start_187
+    :catch_192
+    move-exception v0
+
+    .line 922
+    :try_start_193
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
     move-result-object v5
@@ -531,26 +542,26 @@
 
     invoke-static {v5, v0}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    goto/16 :goto_a8
-
-    .line 927
-    :catch_1a8
-    move-exception v0
+    goto/16 :goto_b4
 
     .line 928
+    :catch_1b4
+    move-exception v0
+
+    .line 929
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     const-wide/16 v6, 0x0
 
-    invoke-static {v0, v6, v7}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;J)Z
+    invoke-static {v0, v6, v7}, Lcom/bzbs/data/UserLogin;->c(Landroid/content/Context;J)Z
 
-    goto/16 :goto_bb
-
-    .line 935
-    :catch_1b2
-    move-exception v0
+    goto/16 :goto_c7
 
     .line 936
+    :catch_1be
+    move-exception v0
+
+    .line 937
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->b()Ljava/lang/String;
 
     move-result-object v5
@@ -578,14 +589,14 @@
     move-result-object v0
 
     invoke-static {v5, v0}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
-    :try_end_1d2
-    .catch Ljava/lang/Exception; {:try_start_187 .. :try_end_1d2} :catch_170
+    :try_end_1de
+    .catch Ljava/lang/Exception; {:try_start_193 .. :try_end_1de} :catch_17c
 
-    goto/16 :goto_ef
+    goto/16 :goto_fb
 
-    .line 984
-    :cond_1d4
-    :try_start_1d4
+    .line 985
+    :cond_1e0
+    :try_start_1e0
     iget-object v6, v7, Lcom/bzbs/bean/BadgeAlert;->CustomInfo:Ljava/lang/String;
 
     const-string/jumbo v8, "campaignId:"
@@ -594,23 +605,23 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1e9
+    if-eqz v6, :cond_1f5
 
-    .line 985
+    .line 986
     iget-object v6, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     invoke-static {v6, v7}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Lcom/bzbs/bean/BadgeAlert;)V
 
-    goto/16 :goto_158
+    goto/16 :goto_164
 
-    .line 993
-    :catch_1e6
+    .line 994
+    :catch_1f2
     move-exception v6
 
-    goto/16 :goto_158
+    goto/16 :goto_164
 
-    .line 986
-    :cond_1e9
+    .line 987
+    :cond_1f5
     iget-object v6, v7, Lcom/bzbs/bean/BadgeAlert;->CustomInfo:Ljava/lang/String;
 
     const-string/jumbo v8, "campaignbzbId:"
@@ -619,17 +630,17 @@
 
     move-result v6
 
-    if-eqz v6, :cond_1fb
+    if-eqz v6, :cond_207
 
-    .line 987
+    .line 988
     iget-object v6, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     invoke-static {v6, v7}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Lcom/bzbs/bean/BadgeAlert;)V
 
-    goto/16 :goto_158
+    goto/16 :goto_164
 
-    .line 988
-    :cond_1fb
+    .line 989
+    :cond_207
     iget-object v6, v7, Lcom/bzbs/bean/BadgeAlert;->CustomInfo:Ljava/lang/String;
 
     const-string/jumbo v8, "url:"
@@ -638,17 +649,17 @@
 
     move-result v6
 
-    if-eqz v6, :cond_20d
+    if-eqz v6, :cond_219
 
-    .line 989
+    .line 990
     iget-object v6, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     invoke-static {v6, v7}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Lcom/bzbs/bean/BadgeAlert;)V
 
-    goto/16 :goto_158
+    goto/16 :goto_164
 
-    .line 990
-    :cond_20d
+    .line 991
+    :cond_219
     iget-object v6, v7, Lcom/bzbs/bean/BadgeAlert;->CustomInfo:Ljava/lang/String;
 
     const-string/jumbo v8, "categoryId:"
@@ -657,42 +668,42 @@
 
     move-result v6
 
-    if-eqz v6, :cond_158
+    if-eqz v6, :cond_164
 
-    .line 991
+    .line 992
     iget-object v6, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     invoke-static {v6, v7}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Lcom/bzbs/bean/BadgeAlert;)V
-    :try_end_21d
-    .catch Ljava/lang/Exception; {:try_start_1d4 .. :try_end_21d} :catch_1e6
+    :try_end_229
+    .catch Ljava/lang/Exception; {:try_start_1e0 .. :try_end_229} :catch_1f2
 
-    goto/16 :goto_158
+    goto/16 :goto_164
 
-    .line 997
-    :catch_21f
+    .line 998
+    :catch_22b
     move-exception v0
 
-    .line 1001
-    :cond_220
-    :try_start_220
+    .line 1002
+    :cond_22c
+    :try_start_22c
     const-string/jumbo v0, ""
 
     invoke-virtual {v2, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-eqz v0, :cond_271
+    if-eqz v0, :cond_27d
 
-    .line 1023
-    :goto_229
+    .line 1025
+    :goto_235
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->d:Ljava/lang/String;
 
-    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->e(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 1025
-    if-eqz v4, :cond_325
+    .line 1027
+    if-eqz v4, :cond_33d
 
     const-string/jumbo v0, ""
 
@@ -700,25 +711,25 @@
 
     move-result v0
 
-    if-nez v0, :cond_325
+    if-nez v0, :cond_33d
 
-    .line 1026
+    .line 1028
     new-instance v1, Lcom/bzbs/bean/MessagePopup;
 
     const-string/jumbo v0, "message"
 
     invoke-direct {v1, v0}, Lcom/bzbs/bean/MessagePopup;-><init>(Ljava/lang/String;)V
 
-    .line 1027
+    .line 1029
     iput-object v3, v1, Lcom/bzbs/bean/MessagePopup;->message_id:Ljava/lang/String;
 
-    .line 1028
+    .line 1030
     iput-object v4, v1, Lcom/bzbs/bean/MessagePopup;->message_text:Ljava/lang/String;
 
-    .line 1031
+    .line 1033
     iget-object v0, v1, Lcom/bzbs/bean/MessagePopup;->message_id:Ljava/lang/String;
 
-    if-eqz v0, :cond_316
+    if-eqz v0, :cond_32e
 
     iget-object v0, v1, Lcom/bzbs/bean/MessagePopup;->message_id:Ljava/lang/String;
 
@@ -728,9 +739,9 @@
 
     move-result v0
 
-    if-nez v0, :cond_316
+    if-nez v0, :cond_32e
 
-    .line 1032
+    .line 1034
     iget-object v0, v1, Lcom/bzbs/bean/MessagePopup;->message_id:Ljava/lang/String;
 
     const-string/jumbo v2, "2043"
@@ -739,9 +750,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_2ed
+    if-eqz v0, :cond_305
 
-    .line 1033
+    .line 1035
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     iget-object v1, v1, Lcom/bzbs/bean/MessagePopup;->message_text:Ljava/lang/String;
@@ -756,17 +767,17 @@
 
     invoke-static/range {v0 .. v5}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;Landroid/os/Handler;)V
 
-    goto/16 :goto_17b
+    goto/16 :goto_187
 
-    .line 1004
-    :cond_271
+    .line 1005
+    :cond_27d
     const-string/jumbo v0, "version"
 
     invoke-virtual {v1, v0}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
 
     move-result-object v0
 
-    .line 1005
+    .line 1006
     const-string/jumbo v1, "menu_buzzebees_visible"
 
     invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
@@ -777,30 +788,15 @@
 
     move-result v1
 
-    .line 1006
+    .line 1007
     iget-object v2, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
-    invoke-static {v2, v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;Z)Z
-
-    .line 1008
-    iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
-
-    const-string/jumbo v2, "allow_use"
-
-    invoke-static {v0, v2}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v2
-
-    invoke-static {v1, v2}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;Z)Z
+    invoke-static {v2, v1}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;Z)Z
 
     .line 1009
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
-    const-string/jumbo v2, "has_new_version"
+    const-string/jumbo v2, "allow_use"
 
     invoke-static {v0, v2}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
 
@@ -815,7 +811,7 @@
     .line 1010
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
-    const-string/jumbo v2, "token_need_logout"
+    const-string/jumbo v2, "has_new_version"
 
     invoke-static {v0, v2}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
 
@@ -830,7 +826,7 @@
     .line 1011
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
-    const-string/jumbo v2, "is_show_shopping_basket_button_on_marketplace_buzzebees"
+    const-string/jumbo v2, "token_need_logout"
 
     invoke-static {v0, v2}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
 
@@ -845,7 +841,7 @@
     .line 1012
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
-    const-string/jumbo v2, "is_enable_beacon"
+    const-string/jumbo v2, "is_show_shopping_basket_button_on_marketplace_buzzebees"
 
     invoke-static {v0, v2}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
 
@@ -856,39 +852,65 @@
     move-result v2
 
     invoke-static {v1, v2}, Lcom/bzbs/data/UserLogin;->o(Landroid/content/Context;Z)Z
-    :try_end_2d8
-    .catch Ljava/lang/Exception; {:try_start_220 .. :try_end_2d8} :catch_170
 
-    .line 1015
-    :try_start_2d8
+    .line 1013
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
+
+    const-string/jumbo v2, "is_enable_beacon"
+
+    invoke-static {v0, v2}, Lcom/bzbs/util/JsonUtil;->e(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/Boolean;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    move-result v2
+
+    invoke-static {v1, v2}, Lcom/bzbs/data/UserLogin;->p(Landroid/content/Context;Z)Z
+
+    .line 1014
+    iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
+
+    const-string/jumbo v2, "userlevel_show_otherpoint"
+
+    invoke-static {v0, v2}, Lcom/bzbs/util/JsonUtil;->c(Lorg/json/JSONObject;Ljava/lang/String;)J
+
+    move-result-wide v6
+
+    invoke-static {v1, v6, v7}, Lcom/bzbs/data/UserLogin;->b(Landroid/content/Context;J)Z
+    :try_end_2f0
+    .catch Ljava/lang/Exception; {:try_start_22c .. :try_end_2f0} :catch_17c
+
+    .line 1017
+    :try_start_2f0
     const-string/jumbo v1, "show_mygift_on"
 
     invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v0
 
-    .line 1016
+    .line 1018
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     invoke-virtual {v0}, Lorg/json/JSONArray;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcom/bzbs/data/UserLogin;->p(Landroid/content/Context;Ljava/lang/String;)Z
-    :try_end_2e8
-    .catch Ljava/lang/Exception; {:try_start_2d8 .. :try_end_2e8} :catch_2ea
+    invoke-static {v1, v0}, Lcom/bzbs/data/UserLogin;->q(Landroid/content/Context;Ljava/lang/String;)Z
+    :try_end_300
+    .catch Ljava/lang/Exception; {:try_start_2f0 .. :try_end_300} :catch_302
 
-    goto/16 :goto_229
+    goto/16 :goto_235
 
-    .line 1018
-    :catch_2ea
+    .line 1020
+    :catch_302
     move-exception v0
 
-    goto/16 :goto_229
+    goto/16 :goto_235
 
-    .line 1034
-    :cond_2ed
-    :try_start_2ed
+    .line 1036
+    :cond_305
+    :try_start_305
     iget-object v0, v1, Lcom/bzbs/bean/MessagePopup;->message_id:Ljava/lang/String;
 
     const-string/jumbo v2, "2045"
@@ -897,9 +919,9 @@
 
     move-result v0
 
-    if-eqz v0, :cond_307
+    if-eqz v0, :cond_31f
 
-    .line 1035
+    .line 1037
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     iget-object v1, v1, Lcom/bzbs/bean/MessagePopup;->message_text:Ljava/lang/String;
@@ -912,10 +934,10 @@
 
     invoke-static {v0, v1, v2, v3, v4}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Handler;)V
 
-    goto/16 :goto_17b
+    goto/16 :goto_187
 
-    .line 1037
-    :cond_307
+    .line 1039
+    :cond_31f
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     iget-object v1, v1, Lcom/bzbs/bean/MessagePopup;->message_text:Ljava/lang/String;
@@ -928,10 +950,10 @@
 
     invoke-static {v0, v1, v2, v3, v4}, Lcom/samsung/privilege/util/DialogLoginGift;->b(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Handler;)V
 
-    goto/16 :goto_17b
+    goto/16 :goto_187
 
-    .line 1040
-    :cond_316
+    .line 1042
+    :cond_32e
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->b:Landroid/content/Context;
 
     iget-object v1, v1, Lcom/bzbs/bean/MessagePopup;->message_text:Ljava/lang/String;
@@ -944,10 +966,10 @@
 
     invoke-static {v0, v1, v2, v3, v4}, Lcom/samsung/privilege/util/DialogLoginGift;->b(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Handler;)V
 
-    goto/16 :goto_17b
+    goto/16 :goto_187
 
-    .line 1043
-    :cond_325
+    .line 1045
+    :cond_33d
     iget-object v0, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->d:Ljava/lang/String;
 
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->e:Ljava/lang/String;
@@ -957,14 +979,14 @@
     iget-object v3, p0, Lcom/samsung/privilege/util/DialogLoginGift$17;->c:Landroid/os/Handler;
 
     invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/util/DialogLoginGift;->a(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;Landroid/os/Handler;)V
-    :try_end_330
-    .catch Ljava/lang/Exception; {:try_start_2ed .. :try_end_330} :catch_170
+    :try_end_348
+    .catch Ljava/lang/Exception; {:try_start_305 .. :try_end_348} :catch_17c
 
-    goto/16 :goto_17b
+    goto/16 :goto_187
 
-    .line 963
-    :catch_332
+    .line 964
+    :catch_34a
     move-exception v0
 
-    goto/16 :goto_11b
+    goto/16 :goto_127
 .end method

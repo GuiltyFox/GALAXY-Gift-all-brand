@@ -226,7 +226,7 @@
     .line 505
     iget-object v2, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$14;->b:Landroid/content/Context;
 
-    invoke-static {v2, v1}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v2, v1}, Lcom/bzbs/data/UserLogin;->b(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 508
     :cond_5a
@@ -250,7 +250,7 @@
     .line 510
     iget-object v1, p0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$14;->b:Landroid/content/Context;
 
-    invoke-static {v1, v0}, Lcom/bzbs/data/UserLogin;->d(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v1, v0}, Lcom/bzbs/data/UserLogin;->e(Landroid/content/Context;Ljava/lang/String;)Z
 
     .line 513
     :cond_71

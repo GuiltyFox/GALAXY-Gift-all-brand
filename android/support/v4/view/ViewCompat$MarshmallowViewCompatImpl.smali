@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 1662
+    .line 1758
     invoke-direct {p0}, Landroid/support/v4/view/ViewCompat$LollipopViewCompatImpl;-><init>()V
 
     return-void
@@ -20,10 +20,10 @@
     .registers 4
 
     .prologue
-    .line 1670
+    .line 1766
     invoke-static {p1, p2, p3}, Landroid/support/v4/view/ViewCompatMarshmallow;->a(Landroid/view/View;II)V
 
-    .line 1671
+    .line 1767
     return-void
 .end method
 
@@ -31,10 +31,10 @@
     .registers 3
 
     .prologue
-    .line 1681
+    .line 1777
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatMarshmallow;->b(Landroid/view/View;I)V
 
-    .line 1682
+    .line 1778
     return-void
 .end method
 
@@ -42,9 +42,9 @@
     .registers 3
 
     .prologue
-    .line 1686
+    .line 1782
     invoke-static {p1, p2}, Landroid/support/v4/view/ViewCompatMarshmallow;->a(Landroid/view/View;I)V
 
-    .line 1687
+    .line 1783
     return-void
 .end method

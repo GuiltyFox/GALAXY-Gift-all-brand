@@ -70,3 +70,17 @@
 
     return-object v0
 .end method
+
+.method public static b(Landroid/content/ComponentName;)Landroid/content/Intent;
+    .registers 2
+
+    .prologue
+    .line 272
+    sget-object v0, Landroid/support/v4/content/IntentCompat;->a:Landroid/support/v4/content/IntentCompat$IntentCompatImpl;
+
+    invoke-interface {v0, p0}, Landroid/support/v4/content/IntentCompat$IntentCompatImpl;->b(Landroid/content/ComponentName;)Landroid/content/Intent;
+
+    move-result-object v0
+
+    return-object v0
+.end method

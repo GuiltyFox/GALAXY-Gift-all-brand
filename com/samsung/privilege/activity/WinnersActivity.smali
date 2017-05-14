@@ -6,7 +6,7 @@
 # instance fields
 .field containerWinner:Landroid/widget/FrameLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10022b
+        value = 0x7f100244
     .end annotation
 .end field
 
@@ -56,7 +56,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f10022b
+    const v1, 0x7f100244
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/WinnersActivity;->D:Landroid/support/v4/app/Fragment;
 
@@ -66,7 +66,7 @@
     move-result-object v0
 
     .line 54
-    invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->a()I
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->b()I
 
     .line 55
     return-void
@@ -92,7 +92,7 @@
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WinnersActivity;->b(I)V
 
     .line 33
-    const v0, 0x7f09020f
+    const v0, 0x7f090210
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WinnersActivity;->getString(I)Ljava/lang/String;
 
@@ -101,7 +101,7 @@
     invoke-virtual {p0, v0, v1}, Lcom/samsung/privilege/activity/WinnersActivity;->a(Ljava/lang/String;Z)V
 
     .line 34
-    const v0, 0x7f02027c
+    const v0, 0x7f02027f
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WinnersActivity;->a(I)V
 
@@ -124,7 +124,7 @@
 
     .prologue
     .line 24
-    const v0, 0x7f04005a
+    const v0, 0x7f04005c
 
     return v0
 .end method
@@ -163,7 +163,7 @@
     .line 62
     iget-object v0, p0, Lcom/samsung/privilege/activity/WinnersActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const v1, 0x7f090251
+    const v1, 0x7f090252
 
     invoke-virtual {p0, v1}, Lcom/samsung/privilege/activity/WinnersActivity;->getString(I)Ljava/lang/String;
 

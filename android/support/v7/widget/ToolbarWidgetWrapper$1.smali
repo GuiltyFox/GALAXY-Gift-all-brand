@@ -25,12 +25,12 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 186
+    .line 177
     iput-object p1, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->b:Landroid/support/v7/widget/ToolbarWidgetWrapper;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 187
+    .line 178
     new-instance v0, Landroid/support/v7/view/menu/ActionMenuItem;
 
     iget-object v1, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->b:Landroid/support/v7/widget/ToolbarWidgetWrapper;
@@ -48,6 +48,7 @@
 
     iget-object v4, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->b:Landroid/support/v7/widget/ToolbarWidgetWrapper;
 
+    .line 179
     # getter for: Landroid/support/v7/widget/ToolbarWidgetWrapper;->mTitle:Ljava/lang/CharSequence;
     invoke-static {v4}, Landroid/support/v7/widget/ToolbarWidgetWrapper;->access$100(Landroid/support/v7/widget/ToolbarWidgetWrapper;)Ljava/lang/CharSequence;
 
@@ -61,6 +62,7 @@
 
     iput-object v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->a:Landroid/support/v7/view/menu/ActionMenuItem;
 
+    .line 178
     return-void
 .end method
 
@@ -70,7 +72,7 @@
     .registers 5
 
     .prologue
-    .line 191
+    .line 182
     iget-object v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->b:Landroid/support/v7/widget/ToolbarWidgetWrapper;
 
     # getter for: Landroid/support/v7/widget/ToolbarWidgetWrapper;->mWindowCallback:Landroid/view/Window$Callback;
@@ -89,7 +91,7 @@
 
     if-eqz v0, :cond_1c
 
-    .line 192
+    .line 183
     iget-object v0, p0, Landroid/support/v7/widget/ToolbarWidgetWrapper$1;->b:Landroid/support/v7/widget/ToolbarWidgetWrapper;
 
     # getter for: Landroid/support/v7/widget/ToolbarWidgetWrapper;->mWindowCallback:Landroid/view/Window$Callback;
@@ -103,7 +105,7 @@
 
     invoke-interface {v0, v1, v2}, Landroid/view/Window$Callback;->onMenuItemSelected(ILandroid/view/MenuItem;)Z
 
-    .line 194
+    .line 185
     :cond_1c
     return-void
 .end method

@@ -100,7 +100,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f040035
+    const v1, 0x7f040036
 
     const/4 v2, 0x0
 
@@ -289,7 +289,7 @@
 
     iget-object v4, p0, Lcom/samsung/privilege/activity/HistoryEWalletListActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/HistoryEWalletListActivity;
 
-    const v5, 0x7f0901a8
+    const v5, 0x7f0901a9
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/HistoryEWalletListActivity;->getString(I)Ljava/lang/String;
 

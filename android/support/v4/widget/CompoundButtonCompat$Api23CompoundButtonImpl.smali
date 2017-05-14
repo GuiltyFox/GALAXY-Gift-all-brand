@@ -8,7 +8,7 @@
     .registers 1
 
     .prologue
-    .line 106
+    .line 104
     invoke-direct {p0}, Landroid/support/v4/widget/CompoundButtonCompat$LollipopCompoundButtonImpl;-><init>()V
 
     return-void
@@ -20,7 +20,7 @@
     .registers 3
 
     .prologue
-    .line 109
+    .line 107
     invoke-static {p1}, Landroid/support/v4/widget/CompoundButtonCompatApi23;->a(Landroid/widget/CompoundButton;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0

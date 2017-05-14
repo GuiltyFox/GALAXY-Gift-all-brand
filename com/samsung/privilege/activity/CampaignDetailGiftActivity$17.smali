@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->o()V
+    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->n()V
 .end annotation
 
 
@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 1693
+    .line 1770
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$17;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Landroid/support/v7/widget/RecyclerView$SimpleOnItemTouchListener;-><init>()V
@@ -32,7 +32,7 @@
     .registers 4
 
     .prologue
-    .line 1697
+    .line 1774
     :try_start_0
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$17;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
@@ -42,7 +42,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 1698
+    .line 1775
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$17;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->n(Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;)Ljava/util/Timer;
@@ -53,14 +53,14 @@
     :try_end_11
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_11} :catch_13
 
-    .line 1703
+    .line 1780
     :cond_11
     :goto_11
     const/4 v0, 0x0
 
     return v0
 
-    .line 1700
+    .line 1777
     :catch_13
     move-exception v0
 

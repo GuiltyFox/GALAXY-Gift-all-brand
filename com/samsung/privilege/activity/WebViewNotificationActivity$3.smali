@@ -39,11 +39,13 @@
 .end method
 
 .method public shouldOverrideUrlLoading(Landroid/webkit/WebView;Ljava/lang/String;)Z
-    .registers 7
+    .registers 8
 
     .prologue
+    const/4 v4, 0x0
+
     .line 111
-    if-eqz p2, :cond_9c
+    if-eqz p2, :cond_9d
 
     .line 113
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewNotificationActivity$3;->a:Lcom/samsung/privilege/activity/WebViewNotificationActivity;
@@ -113,7 +115,7 @@
     move-result-object v0
 
     .line 117
-    if-eqz p2, :cond_79
+    if-eqz p2, :cond_7a
 
     .line 118
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -128,7 +130,7 @@
 
     move-result v1
 
-    if-nez v1, :cond_67
+    if-nez v1, :cond_68
 
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
@@ -142,10 +144,10 @@
 
     move-result v0
 
-    if-eqz v0, :cond_79
+    if-eqz v0, :cond_7a
 
     .line 119
-    :cond_67
+    :cond_68
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewNotificationActivity$3;->a:Lcom/samsung/privilege/activity/WebViewNotificationActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->getApplicationContext()Landroid/content/Context;
@@ -162,10 +164,10 @@
 
     const/4 v3, 0x1
 
-    invoke-static {v0, v1, v2, v3}, Lcom/samsung/privilege/util/ResumeUtil;->a(Landroid/content/Context;Landroid/app/Activity;Landroid/os/Handler;Z)V
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/samsung/privilege/util/ResumeUtil;->a(Landroid/content/Context;Landroid/app/Activity;Landroid/os/Handler;ZZ)V
 
     .line 123
-    :cond_79
+    :cond_7a
     invoke-virtual {p2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v0
@@ -176,7 +178,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_9c
+    if-eqz v0, :cond_9d
 
     .line 124
     new-instance v0, Landroid/content/Intent;
@@ -200,8 +202,6 @@
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/WebViewNotificationActivity;->finish()V
 
     .line 130
-    :cond_9c
-    const/4 v0, 0x0
-
-    return v0
+    :cond_9d
+    return v4
 .end method

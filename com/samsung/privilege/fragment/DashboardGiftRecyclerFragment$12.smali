@@ -27,7 +27,7 @@
     .registers 5
 
     .prologue
-    .line 2804
+    .line 2954
     iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$12;->d:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     iput-object p2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$12;->a:Landroid/widget/EditText;
@@ -47,9 +47,9 @@
     .registers 7
 
     .prologue
-    const v4, 0x7f0902df
+    const v4, 0x7f0902e0
 
-    .line 2806
+    .line 2956
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$12;->a:Landroid/widget/EditText;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -60,7 +60,7 @@
 
     move-result-object v0
 
-    .line 2808
+    .line 2958
     if-eqz v0, :cond_5a
 
     const-string/jumbo v1, ""
@@ -71,7 +71,7 @@
 
     if-nez v1, :cond_5a
 
-    .line 2809
+    .line 2959
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -80,23 +80,23 @@
 
     if-ne v1, v2, :cond_2d
 
-    .line 2810
+    .line 2960
     iget-object v1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$12;->b:Landroid/app/Dialog;
 
     invoke-virtual {v1}, Landroid/app/Dialog;->dismiss()V
 
-    .line 2811
+    .line 2961
     iget-object v1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$12;->d:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     iget-object v2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$12;->c:Lcom/bzbs/bean/DashboardItem;
 
     invoke-static {v1, v2, v0}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->b(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;Lcom/bzbs/bean/DashboardItem;Ljava/lang/String;)V
 
-    .line 2818
+    .line 2968
     :goto_2c
     return-void
 
-    .line 2813
+    .line 2963
     :cond_2d
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$12;->d:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
@@ -106,7 +106,7 @@
 
     iget-object v2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$12;->d:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v3, 0x7f090310
+    const v3, 0x7f090329
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 
@@ -140,7 +140,7 @@
 
     goto :goto_2c
 
-    .line 2816
+    .line 2966
     :cond_5a
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$12;->d:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
@@ -150,7 +150,7 @@
 
     iget-object v2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$12;->d:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
-    const v3, 0x7f090311
+    const v3, 0x7f09032a
 
     invoke-virtual {v2, v3}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->getString(I)Ljava/lang/String;
 

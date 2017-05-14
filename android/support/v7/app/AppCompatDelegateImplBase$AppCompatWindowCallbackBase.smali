@@ -12,13 +12,13 @@
     .registers 3
 
     .prologue
-    .line 235
+    .line 305
     iput-object p1, p0, Landroid/support/v7/app/AppCompatDelegateImplBase$AppCompatWindowCallbackBase;->a:Landroid/support/v7/app/AppCompatDelegateImplBase;
 
-    .line 236
+    .line 306
     invoke-direct {p0, p2}, Landroid/support/v7/view/WindowCallbackWrapper;-><init>(Landroid/view/Window$Callback;)V
 
-    .line 237
+    .line 307
     return-void
 .end method
 
@@ -28,7 +28,7 @@
     .registers 3
 
     .prologue
-    .line 241
+    .line 311
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplBase$AppCompatWindowCallbackBase;->a:Landroid/support/v7/app/AppCompatDelegateImplBase;
 
     invoke-virtual {v0, p1}, Landroid/support/v7/app/AppCompatDelegateImplBase;->a(Landroid/view/KeyEvent;)Z
@@ -37,6 +37,7 @@
 
     if-nez v0, :cond_e
 
+    .line 312
     invoke-super {p0, p1}, Landroid/support/v7/view/WindowCallbackWrapper;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
     move-result v0
@@ -59,7 +60,7 @@
     .registers 4
 
     .prologue
-    .line 247
+    .line 317
     invoke-super {p0, p1}, Landroid/support/v7/view/WindowCallbackWrapper;->dispatchKeyShortcutEvent(Landroid/view/KeyEvent;)Z
 
     move-result v0
@@ -68,6 +69,7 @@
 
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplBase$AppCompatWindowCallbackBase;->a:Landroid/support/v7/app/AppCompatDelegateImplBase;
 
+    .line 318
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v1
@@ -94,7 +96,7 @@
     .registers 1
 
     .prologue
-    .line 265
+    .line 335
     return-void
 .end method
 
@@ -102,17 +104,17 @@
     .registers 4
 
     .prologue
-    .line 253
+    .line 323
     if-nez p1, :cond_8
 
     instance-of v0, p2, Landroid/support/v7/view/menu/MenuBuilder;
 
     if-nez v0, :cond_8
 
-    .line 256
+    .line 326
     const/4 v0, 0x0
 
-    .line 258
+    .line 328
     :goto_7
     return v0
 
@@ -128,15 +130,15 @@
     .registers 4
 
     .prologue
-    .line 296
+    .line 366
     invoke-super {p0, p1, p2}, Landroid/support/v7/view/WindowCallbackWrapper;->onMenuOpened(ILandroid/view/Menu;)Z
 
-    .line 297
+    .line 367
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplBase$AppCompatWindowCallbackBase;->a:Landroid/support/v7/app/AppCompatDelegateImplBase;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/app/AppCompatDelegateImplBase;->b(ILandroid/view/Menu;)Z
 
-    .line 298
+    .line 368
     const/4 v0, 0x1
 
     return v0
@@ -146,15 +148,15 @@
     .registers 4
 
     .prologue
-    .line 303
+    .line 373
     invoke-super {p0, p1, p2}, Landroid/support/v7/view/WindowCallbackWrapper;->onPanelClosed(ILandroid/view/Menu;)V
 
-    .line 304
+    .line 374
     iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplBase$AppCompatWindowCallbackBase;->a:Landroid/support/v7/app/AppCompatDelegateImplBase;
 
     invoke-virtual {v0, p1, p2}, Landroid/support/v7/app/AppCompatDelegateImplBase;->a(ILandroid/view/Menu;)V
 
-    .line 305
+    .line 375
     return-void
 .end method
 
@@ -164,7 +166,7 @@
     .prologue
     const/4 v1, 0x0
 
-    .line 269
+    .line 339
     instance-of v0, p3, Landroid/support/v7/view/menu/MenuBuilder;
 
     if-eqz v0, :cond_f
@@ -175,7 +177,7 @@
 
     move-object v2, v0
 
-    .line 271
+    .line 341
     :goto_9
     if-nez p1, :cond_12
 
@@ -183,12 +185,12 @@
 
     move v0, v1
 
-    .line 291
+    .line 361
     :cond_e
     :goto_e
     return v0
 
-    .line 269
+    .line 339
     :cond_f
     const/4 v0, 0x0
 
@@ -196,25 +198,25 @@
 
     goto :goto_9
 
-    .line 281
+    .line 351
     :cond_12
     if-eqz v2, :cond_18
 
-    .line 282
+    .line 352
     const/4 v0, 0x1
 
     invoke-virtual {v2, v0}, Landroid/support/v7/view/menu/MenuBuilder;->setOverrideVisibleItems(Z)V
 
-    .line 285
+    .line 355
     :cond_18
     invoke-super {p0, p1, p2, p3}, Landroid/support/v7/view/WindowCallbackWrapper;->onPreparePanel(ILandroid/view/View;Landroid/view/Menu;)Z
 
     move-result v0
 
-    .line 287
+    .line 357
     if-eqz v2, :cond_e
 
-    .line 288
+    .line 358
     invoke-virtual {v2, v1}, Landroid/support/v7/view/menu/MenuBuilder;->setOverrideVisibleItems(Z)V
 
     goto :goto_e

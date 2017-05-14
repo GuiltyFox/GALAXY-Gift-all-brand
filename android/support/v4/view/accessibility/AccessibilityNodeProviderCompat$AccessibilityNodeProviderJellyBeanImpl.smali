@@ -4,12 +4,22 @@
 
 
 # direct methods
-.method constructor <init>()V
+.method private constructor <init>()V
     .registers 1
 
     .prologue
-    .line 43
+    .line 44
     invoke-direct {p0}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderStubImpl;-><init>()V
+
+    return-void
+.end method
+
+.method synthetic constructor <init>(Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$1;)V
+    .registers 2
+
+    .prologue
+    .line 44
+    invoke-direct {p0}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderJellyBeanImpl;-><init>()V
 
     return-void
 .end method
@@ -20,7 +30,7 @@
     .registers 3
 
     .prologue
-    .line 47
+    .line 49
     new-instance v0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderJellyBeanImpl$1;
 
     invoke-direct {v0, p0, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderJellyBeanImpl$1;-><init>(Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderJellyBeanImpl;Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;)V

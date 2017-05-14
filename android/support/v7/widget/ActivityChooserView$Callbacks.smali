@@ -18,7 +18,7 @@
     .registers 2
 
     .prologue
-    .line 552
+    .line 554
     iput-object p1, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -30,7 +30,7 @@
     .registers 3
 
     .prologue
-    .line 552
+    .line 554
     invoke-direct {p0, p1}, Landroid/support/v7/widget/ActivityChooserView$Callbacks;-><init>(Landroid/support/v7/widget/ActivityChooserView;)V
 
     return-void
@@ -40,7 +40,7 @@
     .registers 2
 
     .prologue
-    .line 628
+    .line 633
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     # getter for: Landroid/support/v7/widget/ActivityChooserView;->mOnDismissListener:Landroid/widget/PopupWindow$OnDismissListener;
@@ -50,7 +50,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 629
+    .line 634
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     # getter for: Landroid/support/v7/widget/ActivityChooserView;->mOnDismissListener:Landroid/widget/PopupWindow$OnDismissListener;
@@ -60,7 +60,7 @@
 
     invoke-interface {v0}, Landroid/widget/PopupWindow$OnDismissListener;->onDismiss()V
 
-    .line 631
+    .line 636
     :cond_11
     return-void
 .end method
@@ -71,7 +71,7 @@
     .registers 4
 
     .prologue
-    .line 588
+    .line 592
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     # getter for: Landroid/support/v7/widget/ActivityChooserView;->mDefaultActivityButton:Landroid/widget/FrameLayout;
@@ -81,12 +81,12 @@
 
     if-ne p1, v0, :cond_44
 
-    .line 589
+    .line 593
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActivityChooserView;->dismissPopup()Z
 
-    .line 590
+    .line 594
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     # getter for: Landroid/support/v7/widget/ActivityChooserView;->mAdapter:Landroid/support/v7/widget/ActivityChooserView$ActivityChooserViewAdapter;
@@ -98,7 +98,7 @@
 
     move-result-object v0
 
-    .line 591
+    .line 595
     iget-object v1, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     # getter for: Landroid/support/v7/widget/ActivityChooserView;->mAdapter:Landroid/support/v7/widget/ActivityChooserView$ActivityChooserViewAdapter;
@@ -114,7 +114,7 @@
 
     move-result v0
 
-    .line 592
+    .line 596
     iget-object v1, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     # getter for: Landroid/support/v7/widget/ActivityChooserView;->mAdapter:Landroid/support/v7/widget/ActivityChooserView$ActivityChooserViewAdapter;
@@ -130,15 +130,15 @@
 
     move-result-object v0
 
-    .line 593
+    .line 597
     if-eqz v0, :cond_43
 
-    .line 594
+    .line 598
     const/high16 v1, 0x80000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 595
+    .line 599
     iget-object v1, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     invoke-virtual {v1}, Landroid/support/v7/widget/ActivityChooserView;->getContext()Landroid/content/Context;
@@ -147,12 +147,12 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
 
-    .line 603
+    .line 607
     :cond_43
     :goto_43
     return-void
 
-    .line 597
+    .line 601
     :cond_44
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
@@ -163,7 +163,7 @@
 
     if-ne p1, v0, :cond_5e
 
-    .line 598
+    .line 602
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     const/4 v1, 0x0
@@ -171,7 +171,7 @@
     # setter for: Landroid/support/v7/widget/ActivityChooserView;->mIsSelectingDefaultActivity:Z
     invoke-static {v0, v1}, Landroid/support/v7/widget/ActivityChooserView;->access$602(Landroid/support/v7/widget/ActivityChooserView;Z)Z
 
-    .line 599
+    .line 603
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     iget-object v1, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
@@ -186,7 +186,7 @@
 
     goto :goto_43
 
-    .line 601
+    .line 605
     :cond_5e
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
@@ -199,17 +199,17 @@
     .registers 3
 
     .prologue
-    .line 621
+    .line 626
     invoke-direct {p0}, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a()V
 
-    .line 622
+    .line 627
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     iget-object v0, v0, Landroid/support/v7/widget/ActivityChooserView;->mProvider:Landroid/support/v4/view/ActionProvider;
 
     if-eqz v0, :cond_11
 
-    .line 623
+    .line 628
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     iget-object v0, v0, Landroid/support/v7/widget/ActivityChooserView;->mProvider:Landroid/support/v4/view/ActionProvider;
@@ -218,7 +218,7 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/view/ActionProvider;->subUiVisibilityChanged(Z)V
 
-    .line 625
+    .line 630
     :cond_11
     return-void
 .end method
@@ -236,29 +236,29 @@
     .end annotation
 
     .prologue
-    .line 557
+    .line 560
     invoke-virtual {p1}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v7/widget/ActivityChooserView$ActivityChooserViewAdapter;
 
-    .line 558
+    .line 561
     invoke-virtual {v0, p3}, Landroid/support/v7/widget/ActivityChooserView$ActivityChooserViewAdapter;->getItemViewType(I)I
 
     move-result v0
 
-    .line 559
+    .line 562
     packed-switch v0, :pswitch_data_68
 
-    .line 582
+    .line 585
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     invoke-direct {v0}, Ljava/lang/IllegalArgumentException;-><init>()V
 
     throw v0
 
-    .line 561
+    .line 564
     :pswitch_13
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
@@ -267,18 +267,18 @@
     # invokes: Landroid/support/v7/widget/ActivityChooserView;->showPopupUnchecked(I)V
     invoke-static {v0, v1}, Landroid/support/v7/widget/ActivityChooserView;->access$500(Landroid/support/v7/widget/ActivityChooserView;I)V
 
-    .line 584
+    .line 587
     :cond_1b
     :goto_1b
     return-void
 
-    .line 564
+    .line 567
     :pswitch_1c
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     invoke-virtual {v0}, Landroid/support/v7/widget/ActivityChooserView;->dismissPopup()Z
 
-    .line 565
+    .line 568
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     # getter for: Landroid/support/v7/widget/ActivityChooserView;->mIsSelectingDefaultActivity:Z
@@ -288,10 +288,10 @@
 
     if-eqz v0, :cond_39
 
-    .line 567
+    .line 570
     if-lez p3, :cond_1b
 
-    .line 568
+    .line 571
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     # getter for: Landroid/support/v7/widget/ActivityChooserView;->mAdapter:Landroid/support/v7/widget/ActivityChooserView$ActivityChooserViewAdapter;
@@ -307,7 +307,7 @@
 
     goto :goto_1b
 
-    .line 573
+    .line 576
     :cond_39
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
@@ -322,7 +322,7 @@
 
     if-eqz v0, :cond_64
 
-    .line 574
+    .line 577
     :goto_45
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
@@ -339,15 +339,15 @@
 
     move-result-object v0
 
-    .line 575
+    .line 578
     if-eqz v0, :cond_1b
 
-    .line 576
+    .line 579
     const/high16 v1, 0x80000
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 577
+    .line 580
     iget-object v1, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     invoke-virtual {v1}, Landroid/support/v7/widget/ActivityChooserView;->getContext()Landroid/content/Context;
@@ -358,13 +358,13 @@
 
     goto :goto_1b
 
-    .line 573
+    .line 576
     :cond_64
     add-int/lit8 p3, p3, 0x1
 
     goto :goto_45
 
-    .line 559
+    .line 562
     nop
 
     :pswitch_data_68
@@ -380,7 +380,7 @@
     .prologue
     const/4 v2, 0x1
 
-    .line 608
+    .line 612
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     # getter for: Landroid/support/v7/widget/ActivityChooserView;->mDefaultActivityButton:Landroid/widget/FrameLayout;
@@ -390,7 +390,7 @@
 
     if-ne p1, v0, :cond_26
 
-    .line 609
+    .line 613
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     # getter for: Landroid/support/v7/widget/ActivityChooserView;->mAdapter:Landroid/support/v7/widget/ActivityChooserView$ActivityChooserViewAdapter;
@@ -404,13 +404,13 @@
 
     if-lez v0, :cond_25
 
-    .line 610
+    .line 614
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     # setter for: Landroid/support/v7/widget/ActivityChooserView;->mIsSelectingDefaultActivity:Z
     invoke-static {v0, v2}, Landroid/support/v7/widget/ActivityChooserView;->access$602(Landroid/support/v7/widget/ActivityChooserView;Z)Z
 
-    .line 611
+    .line 615
     iget-object v0, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
 
     iget-object v1, p0, Landroid/support/v7/widget/ActivityChooserView$Callbacks;->a:Landroid/support/v7/widget/ActivityChooserView;
@@ -423,11 +423,11 @@
     # invokes: Landroid/support/v7/widget/ActivityChooserView;->showPopupUnchecked(I)V
     invoke-static {v0, v1}, Landroid/support/v7/widget/ActivityChooserView;->access$500(Landroid/support/v7/widget/ActivityChooserView;I)V
 
-    .line 616
+    .line 620
     :cond_25
     return v2
 
-    .line 614
+    .line 618
     :cond_26
     new-instance v0, Ljava/lang/IllegalArgumentException;
 

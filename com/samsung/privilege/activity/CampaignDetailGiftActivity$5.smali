@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->l()V
+    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->k()V
 .end annotation
 
 
@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 710
+    .line 745
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$5;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,18 +35,18 @@
     .registers 7
 
     .prologue
-    .line 713
+    .line 748
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$5;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getApplicationContext()Landroid/content/Context;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 714
+    .line 749
     if-eqz v0, :cond_16
 
     const-string/jumbo v1, ""
@@ -57,11 +57,11 @@
 
     if-nez v0, :cond_16
 
-    .line 719
+    .line 754
     :goto_15
     return-void
 
-    .line 717
+    .line 752
     :cond_16
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$5;->a:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 

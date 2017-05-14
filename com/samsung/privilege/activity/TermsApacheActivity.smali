@@ -51,7 +51,7 @@
 
     .prologue
     .line 40
-    const v0, 0x7f1001ea
+    const v0, 0x7f1001ff
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/TermsApacheActivity;->findViewById(I)Landroid/view/View;
 
@@ -104,7 +104,7 @@
     move-exception v0
 
     .line 58
-    const v0, 0x7f090058
+    const v0, 0x7f090059
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/TermsApacheActivity;->getString(I)Ljava/lang/String;
 
@@ -143,7 +143,7 @@
     invoke-static {v0}, Lcom/bzbs/util/LanguageSetting;->a(Landroid/content/Context;)V
 
     .line 27
-    const v0, 0x7f040050
+    const v0, 0x7f040052
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/TermsApacheActivity;->setContentView(I)V
 

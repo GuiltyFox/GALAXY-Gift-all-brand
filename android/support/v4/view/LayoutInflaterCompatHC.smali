@@ -135,6 +135,7 @@
 
     const-class v3, Landroid/view/LayoutInflater;
 
+    .line 77
     invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v3
@@ -153,6 +154,7 @@
 
     move-result-object v2
 
+    .line 76
     invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     goto :goto_16

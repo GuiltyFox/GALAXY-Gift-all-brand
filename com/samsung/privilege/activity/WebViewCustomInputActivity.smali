@@ -80,7 +80,7 @@
 
     move-result-object v3
 
-    invoke-static {v3}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v3}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v3
 
@@ -173,7 +173,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -198,7 +198,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/bzbs/data/UserLogin;->r(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -424,7 +424,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -449,7 +449,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/bzbs/data/UserLogin;->g(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/bzbs/data/UserLogin;->k(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -972,10 +972,10 @@
     .registers 2
 
     .prologue
-    .line 311
+    .line 315
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->finish()V
 
-    .line 312
+    .line 316
     return-void
 .end method
 
@@ -991,7 +991,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 134
-    const v0, 0x7f040182
+    const v0, 0x7f040189
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->setContentView(I)V
 
@@ -1006,7 +1006,7 @@
     invoke-direct {p0}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->a()V
 
     .line 139
-    const v0, 0x7f100250
+    const v0, 0x7f10026b
 
     :try_start_18
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->findViewById(I)Landroid/view/View;
@@ -1047,7 +1047,7 @@
     .line 148
     :cond_37
     :goto_37
-    const v0, 0x7f10050d
+    const v0, 0x7f100528
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->findViewById(I)Landroid/view/View;
 
@@ -1122,7 +1122,7 @@
 
     invoke-virtual {v0, v1}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
 
-    .line 230
+    .line 234
     :try_start_84
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->b:Ljava/lang/String;
 
@@ -1138,8 +1138,8 @@
 
     if-lez v0, :cond_a1
 
-    .line 231
-    const v0, 0x7f10017c
+    .line 235
+    const v0, 0x7f10017e
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->findViewById(I)Landroid/view/View;
 
@@ -1147,28 +1147,28 @@
 
     check-cast v0, Landroid/widget/RelativeLayout;
 
-    .line 232
+    .line 236
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
     :try_end_a1
     .catch Ljava/lang/Exception; {:try_start_84 .. :try_end_a1} :catch_cc
 
-    .line 238
+    .line 242
     :cond_a1
     :goto_a1
     if-eqz p1, :cond_a9
 
-    .line 239
+    .line 243
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->a:Landroid/webkit/WebView;
 
     invoke-virtual {v0, p1}, Landroid/webkit/WebView;->restoreState(Landroid/os/Bundle;)Landroid/webkit/WebBackForwardList;
 
-    .line 246
+    .line 250
     :goto_a8
     return-void
 
-    .line 241
+    .line 245
     :cond_a9
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->c:Ljava/lang/String;
 
@@ -1194,7 +1194,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 242
+    .line 246
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->a:Landroid/webkit/WebView;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->b:Ljava/lang/String;
@@ -1203,7 +1203,7 @@
 
     goto :goto_a8
 
-    .line 234
+    .line 238
     :catch_cc
     move-exception v0
 
@@ -1226,10 +1226,10 @@
 
     const/4 v1, 0x1
 
-    .line 264
+    .line 268
     const/4 v0, 0x0
 
-    .line 265
+    .line 269
     iget-object v2, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->b:Ljava/lang/String;
 
     invoke-virtual {v2}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -1246,7 +1246,7 @@
 
     move v0, v1
 
-    .line 269
+    .line 273
     :cond_14
     invoke-virtual {p2}, Landroid/view/KeyEvent;->getAction()I
 
@@ -1254,10 +1254,10 @@
 
     if-nez v2, :cond_1d
 
-    .line 270
+    .line 274
     packed-switch p1, :pswitch_data_76
 
-    .line 295
+    .line 299
     :cond_1d
     invoke-super {p0, p1, p2}, Landroid/app/Activity;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
@@ -1266,12 +1266,12 @@
     :goto_21
     return v1
 
-    .line 272
+    .line 276
     :pswitch_22
     if-ne v0, v1, :cond_59
 
-    .line 273
-    const v0, 0x7f100193
+    .line 277
+    const v0, 0x7f100198
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->findViewById(I)Landroid/view/View;
 
@@ -1281,7 +1281,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->a:Landroid/webkit/WebView;
 
-    .line 274
+    .line 278
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->a:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->canGoBack()Z
@@ -1290,14 +1290,14 @@
 
     if-eqz v0, :cond_3d
 
-    .line 275
+    .line 279
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->a:Landroid/webkit/WebView;
 
     invoke-virtual {v0}, Landroid/webkit/WebView;->goBack()V
 
     goto :goto_21
 
-    .line 277
+    .line 281
     :cond_3d
     const-string/jumbo v0, "content://someURI"
 
@@ -1305,27 +1305,27 @@
 
     move-result-object v0
 
-    .line 278
+    .line 282
     new-instance v2, Landroid/content/Intent;
 
     invoke-direct {v2, v5, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 279
+    .line 283
     const-string/jumbo v0, "bzbs_return_url"
 
     const-string/jumbo v3, ""
 
     invoke-virtual {v2, v0, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 280
+    .line 284
     invoke-virtual {p0, v4, v2}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->setResult(ILandroid/content/Intent;)V
 
-    .line 281
+    .line 285
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->finish()V
 
     goto :goto_21
 
-    .line 285
+    .line 289
     :cond_59
     const-string/jumbo v0, "content://someURI"
 
@@ -1333,27 +1333,27 @@
 
     move-result-object v0
 
-    .line 286
+    .line 290
     new-instance v2, Landroid/content/Intent;
 
     invoke-direct {v2, v5, v0}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
 
-    .line 287
+    .line 291
     const-string/jumbo v0, "bzbs_return_url"
 
     const-string/jumbo v3, ""
 
     invoke-virtual {v2, v0, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 288
+    .line 292
     invoke-virtual {p0, v4, v2}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->setResult(ILandroid/content/Intent;)V
 
-    .line 289
+    .line 293
     invoke-virtual {p0}, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->finish()V
 
     goto :goto_21
 
-    .line 270
+    .line 274
     nop
 
     :pswitch_data_76
@@ -1366,15 +1366,15 @@
     .registers 3
 
     .prologue
-    .line 306
+    .line 310
     invoke-super {p0, p1}, Landroid/app/Activity;->onRestoreInstanceState(Landroid/os/Bundle;)V
 
-    .line 307
+    .line 311
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->a:Landroid/webkit/WebView;
 
     invoke-virtual {v0, p1}, Landroid/webkit/WebView;->restoreState(Landroid/os/Bundle;)Landroid/webkit/WebBackForwardList;
 
-    .line 308
+    .line 312
     return-void
 .end method
 
@@ -1382,14 +1382,14 @@
     .registers 3
 
     .prologue
-    .line 300
+    .line 304
     iget-object v0, p0, Lcom/samsung/privilege/activity/WebViewCustomInputActivity;->a:Landroid/webkit/WebView;
 
     invoke-virtual {v0, p1}, Landroid/webkit/WebView;->saveState(Landroid/os/Bundle;)Landroid/webkit/WebBackForwardList;
 
-    .line 301
+    .line 305
     invoke-super {p0, p1}, Landroid/app/Activity;->onSaveInstanceState(Landroid/os/Bundle;)V
 
-    .line 302
+    .line 306
     return-void
 .end method

@@ -57,14 +57,14 @@
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->h(Landroid/content/Context;Z)Z
+    invoke-static {v0, v1}, Lcom/bzbs/data/UserLogin;->a(Landroid/content/Context;Z)Z
 
     .line 574
     invoke-static {}, Lcom/samsung/privilege/util/DialogLoginGift;->a()Landroid/app/Dialog;
 
     move-result-object v0
 
-    const v1, 0x7f1005a7
+    const v1, 0x7f1005c2
 
     invoke-virtual {v0, v1}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 
@@ -77,7 +77,7 @@
 
     move-result-object v1
 
-    const v2, 0x7f10017f
+    const v2, 0x7f100181
 
     invoke-virtual {v1, v2}, Landroid/app/Dialog;->findViewById(I)Landroid/view/View;
 

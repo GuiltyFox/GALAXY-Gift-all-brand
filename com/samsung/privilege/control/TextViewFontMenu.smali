@@ -96,7 +96,7 @@
     move-result-object v0
 
     .line 37
-    invoke-static {p1}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {p1}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -291,7 +291,7 @@
 
     .line 61
     :cond_c5
-    const-string/jumbo v1, "TextViewFont"
+    const-string/jumbo v1, "TextViewFontMenu"
 
     new-instance v2, Ljava/lang/StringBuilder;
 

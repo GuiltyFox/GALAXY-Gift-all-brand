@@ -178,7 +178,7 @@
     invoke-static {v0}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;)V
 
     .line 125
-    const v0, 0x7f1000b5
+    const v0, 0x7f1000b7
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyActivity;->findViewById(I)Landroid/view/View;
 
@@ -193,7 +193,7 @@
 
     iget-object v2, p0, Lcom/samsung/privilege/activity/AddMoneyActivity;->b:Ljava/lang/String;
 
-    invoke-static {v1, v2}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v2}, Lcom/bzbs/data/UserLogin;->v(Landroid/content/Context;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -275,7 +275,7 @@
     .line 137
     const-string/jumbo v1, ""
 
-    const v2, 0x7f090282
+    const v2, 0x7f090283
 
     invoke-virtual {p0, v2}, Lcom/samsung/privilege/activity/AddMoneyActivity;->getString(I)Ljava/lang/String;
 
@@ -318,7 +318,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -461,7 +461,7 @@
     invoke-static {v0, v3}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 268
-    const v0, 0x7f1000c5
+    const v0, 0x7f1000c7
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyActivity;->findViewById(I)Landroid/view/View;
 
@@ -491,7 +491,7 @@
     if-eqz v3, :cond_81
 
     .line 270
-    const v0, 0x7f0903b6
+    const v0, 0x7f0903d7
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyActivity;->getString(I)Ljava/lang/String;
 
@@ -535,7 +535,7 @@
     .line 280
     const-string/jumbo v0, ""
 
-    const v3, 0x7f090282
+    const v3, 0x7f090283
 
     invoke-virtual {p0, v3}, Lcom/samsung/privilege/activity/AddMoneyActivity;->getString(I)Ljava/lang/String;
 
@@ -579,7 +579,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -706,7 +706,7 @@
     invoke-static {v0}, Lcom/bzbs/util/LanguageSetting;->a(Landroid/content/Context;)V
 
     .line 62
-    const v0, 0x7f04001a
+    const v0, 0x7f04001b
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyActivity;->setContentView(I)V
 
@@ -735,15 +735,6 @@
     invoke-direct {p0}, Lcom/samsung/privilege/activity/AddMoneyActivity;->g()V
 
     .line 71
-    const v0, 0x7f1000c4
-
-    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyActivity;->findViewById(I)Landroid/view/View;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
-
-    .line 72
     const v0, 0x7f1000c6
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyActivity;->findViewById(I)Landroid/view/View;
@@ -752,8 +743,17 @@
 
     invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
 
+    .line 72
+    const v0, 0x7f1000c8
+
+    invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyActivity;->findViewById(I)Landroid/view/View;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2}, Landroid/view/View;->setVisibility(I)V
+
     .line 73
-    const v0, 0x7f1000c3
+    const v0, 0x7f1000c5
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyActivity;->findViewById(I)Landroid/view/View;
 
@@ -766,7 +766,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 75
-    const v0, 0x7f1000c5
+    const v0, 0x7f1000c7
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/AddMoneyActivity;->findViewById(I)Landroid/view/View;
 

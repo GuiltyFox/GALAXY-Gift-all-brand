@@ -442,7 +442,7 @@
     sget-object v0, Lcom/bzbs/marketplace/dialog/AlertBlurDialog;->c:Landroid/content/Context;
 
     :goto_c
-    const v1, 0x7f0d0101
+    const v1, 0x7f0c0109
 
     invoke-direct {v5, v0, v1}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
@@ -458,7 +458,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400ff
+    const v1, 0x7f040102
 
     invoke-virtual {v0, v1, v2, v8}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
@@ -468,7 +468,7 @@
     invoke-virtual {v5, v2}, Landroid/app/Dialog;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 173
-    const v0, 0x7f100296
+    const v0, 0x7f1002b1
 
     invoke-virtual {v6, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -477,7 +477,7 @@
     check-cast v0, Landroid/widget/RelativeLayout;
 
     .line 174
-    const v1, 0x7f1000b5
+    const v1, 0x7f1000b7
 
     invoke-virtual {v6, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -486,7 +486,7 @@
     check-cast v1, Landroid/widget/TextView;
 
     .line 175
-    const v2, 0x7f1001ef
+    const v2, 0x7f100204
 
     invoke-virtual {v6, v2}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -495,7 +495,7 @@
     check-cast v2, Landroid/widget/Button;
 
     .line 176
-    const v3, 0x7f1002a0
+    const v3, 0x7f1002bb
 
     invoke-virtual {v6, v3}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -504,7 +504,7 @@
     check-cast v3, Landroid/widget/Button;
 
     .line 177
-    const v4, 0x7f100169
+    const v4, 0x7f10016b
 
     invoke-virtual {v6, v4}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

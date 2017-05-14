@@ -11,7 +11,7 @@
     .registers 1
 
     .prologue
-    .line 65
+    .line 66
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -23,7 +23,7 @@
     .registers 2
 
     .prologue
-    .line 68
+    .line 69
     return-void
 .end method
 
@@ -31,7 +31,7 @@
     .registers 4
 
     .prologue
-    .line 81
+    .line 82
     return-void
 .end method
 
@@ -39,10 +39,10 @@
     .registers 3
 
     .prologue
-    .line 89
+    .line 90
     invoke-static {p1, p2}, Landroid/support/v4/graphics/drawable/DrawableCompatBase;->a(Landroid/graphics/drawable/Drawable;I)V
 
-    .line 90
+    .line 91
     return-void
 .end method
 
@@ -50,7 +50,7 @@
     .registers 6
 
     .prologue
-    .line 85
+    .line 86
     return-void
 .end method
 
@@ -58,10 +58,10 @@
     .registers 3
 
     .prologue
-    .line 94
+    .line 95
     invoke-static {p1, p2}, Landroid/support/v4/graphics/drawable/DrawableCompatBase;->a(Landroid/graphics/drawable/Drawable;Landroid/content/res/ColorStateList;)V
 
-    .line 95
+    .line 96
     return-void
 .end method
 
@@ -69,7 +69,7 @@
     .registers 3
 
     .prologue
-    .line 124
+    .line 126
     return-void
 .end method
 
@@ -77,10 +77,10 @@
     .registers 6
 
     .prologue
-    .line 140
+    .line 147
     invoke-static {p1, p2, p3, p4, p5}, Landroid/support/v4/graphics/drawable/DrawableCompatBase;->a(Landroid/graphics/drawable/Drawable;Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)V
 
-    .line 141
+    .line 148
     return-void
 .end method
 
@@ -88,10 +88,10 @@
     .registers 3
 
     .prologue
-    .line 99
+    .line 100
     invoke-static {p1, p2}, Landroid/support/v4/graphics/drawable/DrawableCompatBase;->a(Landroid/graphics/drawable/Drawable;Landroid/graphics/PorterDuff$Mode;)V
 
-    .line 100
+    .line 101
     return-void
 .end method
 
@@ -99,15 +99,7 @@
     .registers 3
 
     .prologue
-    .line 72
-    return-void
-.end method
-
-.method public b(Landroid/graphics/drawable/Drawable;I)V
-    .registers 3
-
-    .prologue
-    .line 110
+    .line 73
     return-void
 .end method
 
@@ -115,7 +107,17 @@
     .registers 3
 
     .prologue
-    .line 76
+    .line 77
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public b(Landroid/graphics/drawable/Drawable;I)Z
+    .registers 4
+
+    .prologue
+    .line 111
     const/4 v0, 0x0
 
     return v0
@@ -125,7 +127,7 @@
     .registers 3
 
     .prologue
-    .line 104
+    .line 105
     invoke-static {p1}, Landroid/support/v4/graphics/drawable/DrawableCompatBase;->a(Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -137,7 +139,7 @@
     .registers 3
 
     .prologue
-    .line 114
+    .line 116
     const/4 v0, 0x0
 
     return v0
@@ -147,7 +149,7 @@
     .registers 3
 
     .prologue
-    .line 119
+    .line 121
     const/4 v0, 0x0
 
     return v0
@@ -157,7 +159,7 @@
     .registers 3
 
     .prologue
-    .line 128
+    .line 130
     const/4 v0, 0x0
 
     return v0
@@ -167,7 +169,7 @@
     .registers 3
 
     .prologue
-    .line 133
+    .line 135
     const/4 v0, 0x0
 
     return-object v0

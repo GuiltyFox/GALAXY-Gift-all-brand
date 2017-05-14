@@ -6,7 +6,7 @@
 # instance fields
 .field contentImageCover:Landroid/widget/LinearLayout;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10067c
+        value = 0x7f1006a8
     .end annotation
 .end field
 
@@ -14,7 +14,7 @@
 
 .field imageMarketCover:Landroid/widget/ImageView;
     .annotation build Lbutterknife/InjectView;
-        value = 0x7f10067d
+        value = 0x7f1006a9
     .end annotation
 .end field
 
@@ -72,7 +72,7 @@
 
     .prologue
     .line 46
-    const v0, 0x7f040148
+    const v0, 0x7f04014f
 
     return v0
 .end method
@@ -226,7 +226,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0202d9
+    const v1, 0x7f0202de
 
     invoke-virtual {v0, v1}, Lcom/bumptech/glide/DrawableTypeRequest;->a(I)Lcom/bumptech/glide/DrawableRequestBuilder;
 

@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Landroid/support/v7/widget/AppCompatPopupWindow;->wrapOnScrollChangedListener(Landroid/widget/PopupWindow;)V
+    value = Landroid/support/v7/widget/AppCompatPopupWindow;->a(Landroid/widget/PopupWindow;)V
 .end annotation
 
 
@@ -25,7 +25,7 @@
     .registers 4
 
     .prologue
-    .line 104
+    .line 128
     iput-object p1, p0, Landroid/support/v7/widget/AppCompatPopupWindow$1;->a:Ljava/lang/reflect/Field;
 
     iput-object p2, p0, Landroid/support/v7/widget/AppCompatPopupWindow$1;->b:Landroid/widget/PopupWindow;
@@ -43,7 +43,7 @@
     .registers 3
 
     .prologue
-    .line 108
+    .line 132
     :try_start_0
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatPopupWindow$1;->a:Ljava/lang/reflect/Field;
 
@@ -55,7 +55,7 @@
 
     check-cast v0, Ljava/lang/ref/WeakReference;
 
-    .line 109
+    .line 133
     if-eqz v0, :cond_12
 
     invoke-virtual {v0}, Ljava/lang/ref/WeakReference;->get()Ljava/lang/Object;
@@ -64,12 +64,12 @@
 
     if-nez v0, :cond_13
 
-    .line 117
+    .line 141
     :cond_12
     :goto_12
     return-void
 
-    .line 112
+    .line 136
     :cond_13
     iget-object v0, p0, Landroid/support/v7/widget/AppCompatPopupWindow$1;->c:Landroid/view/ViewTreeObserver$OnScrollChangedListener;
 
@@ -79,7 +79,7 @@
 
     goto :goto_12
 
-    .line 114
+    .line 138
     :catch_19
     move-exception v0
 

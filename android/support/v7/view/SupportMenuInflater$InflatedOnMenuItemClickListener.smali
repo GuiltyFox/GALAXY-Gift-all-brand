@@ -102,6 +102,7 @@
 
     move-result-object v3
 
+    .line 244
     invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     move-result-object v1

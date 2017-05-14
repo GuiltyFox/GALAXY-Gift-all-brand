@@ -1,175 +1,572 @@
 .class Lcom/samsung/privilege/activity/WalletCardActivity$20$1;
-.super Ljava/lang/Object;
+.super Lcom/bzbs/lib/http/okhttp/ResponseListener;
 .source "WalletCardActivity.java"
-
-# interfaces
-.implements Landroid/view/animation/Animation$AnimationListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/WalletCardActivity$20;->onAnimationEnd(Landroid/view/animation/Animation;)V
+    value = Lcom/samsung/privilege/activity/WalletCardActivity$20;->onClick(Landroid/view/View;)V
 .end annotation
 
 
 # instance fields
-.field final synthetic a:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+.field final synthetic a:J
+
+.field final synthetic b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
 
 
 # direct methods
-.method constructor <init>(Lcom/samsung/privilege/activity/WalletCardActivity$20;)V
-    .registers 2
+.method constructor <init>(Lcom/samsung/privilege/activity/WalletCardActivity$20;J)V
+    .registers 4
 
     .prologue
-    .line 1492
-    iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+    .line 1639
+    iput-object p1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-wide p2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->a:J
+
+    invoke-direct {p0}, Lcom/bzbs/lib/http/okhttp/ResponseListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/view/animation/Animation;)V
-    .registers 6
+.method public failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
+    .registers 13
 
     .prologue
-    const/4 v3, 0x4
+    .line 1671
+    invoke-super {p0, p1, p2, p3, p4}, Lcom/bzbs/lib/http/okhttp/ResponseListener;->failure(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
 
-    const/4 v2, 0x1
+    .line 1674
+    :try_start_3
+    new-instance v0, Ljava/util/Date;
 
-    const/4 v1, 0x0
+    invoke-direct {v0}, Ljava/util/Date;-><init>()V
 
-    .line 1500
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
 
-    iget-boolean v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$20;->c:Z
+    move-result-wide v0
 
-    if-ne v0, v2, :cond_1c
+    .line 1675
+    const-string/jumbo v2, "Wallet"
 
-    .line 1501
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+    const-string/jumbo v3, "doVerifyImei"
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$20;->e:Lcom/samsung/privilege/activity/WalletCardActivity;
+    const-string/jumbo v4, "Failure"
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->ah:Landroid/widget/RelativeLayout;
+    iget-wide v6, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->a:J
 
-    invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setVisibility(I)V
+    sub-long/2addr v0, v6
 
-    .line 1502
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+    invoke-static {v2, v3, v4, v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
+    :try_end_1b
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_1b} :catch_165
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$20;->e:Lcom/samsung/privilege/activity/WalletCardActivity;
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->z:Landroid/widget/RelativeLayout;
-
-    invoke-virtual {v0}, Landroid/widget/RelativeLayout;->performClick()Z
-
-    .line 1513
-    :cond_1b
+    .line 1680
     :goto_1b
-    return-void
-
-    .line 1503
-    :cond_1c
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$20;
-
-    iget-boolean v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$20;->d:Z
-
-    if-ne v0, v2, :cond_1b
-
-    .line 1504
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$20;
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$20;->e:Lcom/samsung/privilege/activity/WalletCardActivity;
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->ah:Landroid/widget/RelativeLayout;
-
-    invoke-virtual {v0, v3}, Landroid/widget/RelativeLayout;->setVisibility(I)V
-
-    .line 1505
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$20;
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$20;->e:Lcom/samsung/privilege/activity/WalletCardActivity;
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->G:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVisibility(I)V
-
-    .line 1506
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$20;
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$20;->e:Lcom/samsung/privilege/activity/WalletCardActivity;
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->E:Landroid/widget/LinearLayout;
-
-    invoke-virtual {v0, v3}, Landroid/widget/LinearLayout;->setVisibility(I)V
-
-    .line 1507
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$20;
-
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$20;->e:Lcom/samsung/privilege/activity/WalletCardActivity;
-
-    invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->e(Lcom/samsung/privilege/activity/WalletCardActivity;)Lcom/bzbs/bean/DashboardItem;
+    invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
 
     move-result-object v0
 
-    iget-object v0, v0, Lcom/bzbs/bean/DashboardItem;->wallet_queue:Ljava/lang/String;
+    new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string/jumbo v1, "DEMO"
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "(doVerifyImei|onFailure)response_code="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, ",response="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->d(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1682
+    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+
+    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$20;->f:Lcom/samsung/privilege/activity/WalletCardActivity;
+
+    invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->f(Lcom/samsung/privilege/activity/WalletCardActivity;)Landroid/app/ProgressDialog;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
+
+    .line 1685
+    :try_start_4c
+    new-instance v0, Lorg/json/JSONObject;
+
+    invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+
+    .line 1686
+    const-string/jumbo v1, "error"
+
+    invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+
+    move-result-object v0
+
+    .line 1687
+    const-string/jumbo v1, "id"
+
+    invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 1688
+    const-string/jumbo v2, "message"
+
+    invoke-static {v0, v2}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 1689
+    const-string/jumbo v2, "1201"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_ea
+
+    .line 1690
+    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+
+    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$20;->f:Lcom/samsung/privilege/activity/WalletCardActivity;
+
+    invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->m(Lcom/samsung/privilege/activity/WalletCardActivity;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/samsung/privilege/util/DialogOTPUtil;->a:Ljava/lang/String;
+
+    .line 1691
+    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+
+    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$20;->f:Lcom/samsung/privilege/activity/WalletCardActivity;
+
+    iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+
+    iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$20;->f:Lcom/samsung/privilege/activity/WalletCardActivity;
+
+    invoke-static {v1}, Lcom/samsung/privilege/activity/WalletCardActivity;->a(Lcom/samsung/privilege/activity/WalletCardActivity;)Landroid/os/Handler;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+
+    iget-object v2, v2, Lcom/samsung/privilege/activity/WalletCardActivity$20;->f:Lcom/samsung/privilege/activity/WalletCardActivity;
+
+    invoke-static {v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->d(Lcom/samsung/privilege/activity/WalletCardActivity;)Lcom/bzbs/bean/DashboardItem;
+
+    move-result-object v2
+
+    iget-object v2, v2, Lcom/bzbs/bean/DashboardItem;->wallet_issuer:Ljava/lang/String;
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v4, "Wallet "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    iget-object v4, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+
+    iget-object v4, v4, Lcom/samsung/privilege/activity/WalletCardActivity$20;->f:Lcom/samsung/privilege/activity/WalletCardActivity;
+
+    invoke-static {v4}, Lcom/samsung/privilege/activity/WalletCardActivity;->d(Lcom/samsung/privilege/activity/WalletCardActivity;)Lcom/bzbs/bean/DashboardItem;
+
+    move-result-object v4
+
+    iget-object v4, v4, Lcom/bzbs/bean/DashboardItem;->wallet_issuer:Ljava/lang/String;
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    const-string/jumbo v4, "wallet_create"
+
+    iget-object v5, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+
+    iget-object v5, v5, Lcom/samsung/privilege/activity/WalletCardActivity$20;->f:Lcom/samsung/privilege/activity/WalletCardActivity;
+
+    invoke-static {v5}, Lcom/samsung/privilege/activity/WalletCardActivity;->d(Lcom/samsung/privilege/activity/WalletCardActivity;)Lcom/bzbs/bean/DashboardItem;
+
+    move-result-object v5
+
+    iget-object v5, v5, Lcom/bzbs/bean/DashboardItem;->wallet_issuer:Ljava/lang/String;
+
+    iget-object v6, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+
+    iget-object v6, v6, Lcom/samsung/privilege/activity/WalletCardActivity$20;->f:Lcom/samsung/privilege/activity/WalletCardActivity;
+
+    invoke-static {v6}, Lcom/samsung/privilege/activity/WalletCardActivity;->d(Lcom/samsung/privilege/activity/WalletCardActivity;)Lcom/bzbs/bean/DashboardItem;
+
+    move-result-object v6
+
+    iget-boolean v6, v6, Lcom/bzbs/bean/DashboardItem;->wallet_otp_call_create:Z
+
+    invoke-static/range {v0 .. v6}, Lcom/samsung/privilege/util/DialogOTPUtil;->a(Landroid/content/Context;Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V
+
+    .line 1692
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v1, "Wallet "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+
+    iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$20;->e:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "doVerifyImei Fail:1201"
+
+    iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+
+    iget-object v2, v2, Lcom/samsung/privilege/activity/WalletCardActivity$20;->b:Ljava/lang/String;
+
+    invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1701
+    :goto_e9
+    return-void
+
+    .line 1694
+    :cond_ea
+    iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+
+    iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$20;->f:Lcom/samsung/privilege/activity/WalletCardActivity;
+
+    invoke-static {v1, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
+
+    .line 1695
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "Wallet "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+
+    iget-object v2, v2, Lcom/samsung/privilege/activity/WalletCardActivity$20;->e:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "doVerifyImei Fail:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+
+    iget-object v2, v2, Lcom/samsung/privilege/activity/WalletCardActivity$20;->b:Ljava/lang/String;
+
+    invoke-static {v1, v0, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_124
+    .catch Ljava/lang/Exception; {:try_start_4c .. :try_end_124} :catch_125
+
+    goto :goto_e9
+
+    .line 1697
+    :catch_125
+    move-exception v0
+
+    .line 1698
+    iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+
+    iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$20;->f:Lcom/samsung/privilege/activity/WalletCardActivity;
+
+    invoke-static {v1, p2, p4}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;ILjava/lang/String;)V
+
+    .line 1699
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "Wallet "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+
+    iget-object v2, v2, Lcom/samsung/privilege/activity/WalletCardActivity$20;->e:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v3, "doVerifyImei Fail:"
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v2
+
+    invoke-virtual {v0}, Ljava/lang/Exception;->getMessage()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+
+    iget-object v2, v2, Lcom/samsung/privilege/activity/WalletCardActivity$20;->b:Ljava/lang/String;
+
+    invoke-static {v1, v0, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    goto :goto_e9
+
+    .line 1676
+    :catch_165
+    move-exception v0
+
+    goto/16 :goto_1b
+.end method
+
+.method public successfully(Ljava/lang/String;ILokhttp3/Headers;Ljava/lang/String;)V
+    .registers 13
+
+    .prologue
+    .line 1643
+    :try_start_0
+    new-instance v0, Ljava/util/Date;
+
+    invoke-direct {v0}, Ljava/util/Date;-><init>()V
+
+    invoke-virtual {v0}, Ljava/util/Date;->getTime()J
+
+    move-result-wide v0
+
+    .line 1644
+    const-string/jumbo v2, "Wallet"
+
+    const-string/jumbo v3, "doVerifyImei"
+
+    const-string/jumbo v4, "Success"
+
+    iget-wide v6, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->a:J
+
+    sub-long/2addr v0, v6
+
+    invoke-static {v2, v3, v4, v0, v1}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
+    :try_end_18
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_18} :catch_9b
+
+    .line 1649
+    :goto_18
+    invoke-static {}, Lcom/samsung/privilege/activity/WalletCardActivity;->f()Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v2, "(doVerifyImei|onComplete)response_code="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    const-string/jumbo v2, ",response="
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1651
+    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+
+    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$20;->f:Lcom/samsung/privilege/activity/WalletCardActivity;
+
+    invoke-static {v0}, Lcom/samsung/privilege/activity/WalletCardActivity;->f(Lcom/samsung/privilege/activity/WalletCardActivity;)Landroid/app/ProgressDialog;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/ProgressDialog;->dismiss()V
+
+    .line 1654
+    :try_start_49
+    new-instance v0, Lorg/json/JSONObject;
+
+    invoke-direct {v0, p4}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+
+    .line 1655
+    const-string/jumbo v1, "message"
+
+    invoke-static {v0, v1}, Lcom/bzbs/util/JsonUtil;->a(Lorg/json/JSONObject;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 1657
+    if-eqz v0, :cond_67
+
+    const-string/jumbo v1, ""
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_5a
+    if-nez v1, :cond_67
 
-    .line 1508
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+    .line 1658
+    iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$20;->e:Lcom/samsung/privilege/activity/WalletCardActivity;
+    iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$20;->f:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->r:Landroid/widget/RelativeLayout;
+    invoke-static {v1, v0}, Lcom/bzbs/util/DialogUtil;->a(Landroid/content/Context;Ljava/lang/String;)V
+    :try_end_67
+    .catch Ljava/lang/Exception; {:try_start_49 .. :try_end_67} :catch_99
 
-    invoke-virtual {v0}, Landroid/widget/RelativeLayout;->performClick()Z
+    .line 1664
+    :cond_67
+    :goto_67
+    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
 
-    goto :goto_1b
+    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$20;->f:Lcom/samsung/privilege/activity/WalletCardActivity;
 
-    .line 1510
-    :cond_5a
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+    iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$20;->e:Lcom/samsung/privilege/activity/WalletCardActivity;
+    iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$20;->b:Ljava/lang/String;
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity;->n:Landroid/widget/RelativeLayout;
+    iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
 
-    invoke-virtual {v0}, Landroid/widget/RelativeLayout;->performClick()Z
+    iget-object v2, v2, Lcom/samsung/privilege/activity/WalletCardActivity$20;->e:Ljava/lang/String;
 
-    goto :goto_1b
-.end method
+    invoke-virtual {v0, v1, v2}, Lcom/samsung/privilege/activity/WalletCardActivity;->b(Ljava/lang/String;Ljava/lang/String;)V
 
-.method public onAnimationRepeat(Landroid/view/animation/Animation;)V
-    .registers 2
+    .line 1666
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .prologue
-    .line 1518
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string/jumbo v1, "Wallet "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    iget-object v1, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+
+    iget-object v1, v1, Lcom/samsung/privilege/activity/WalletCardActivity$20;->e:Ljava/lang/String;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string/jumbo v1, "doVerifyImei Success"
+
+    iget-object v2, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->b:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+
+    iget-object v2, v2, Lcom/samsung/privilege/activity/WalletCardActivity$20;->b:Ljava/lang/String;
+
+    invoke-static {v0, v1, v2}, Lcom/samsung/privilege/GalaxyGift;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 1667
     return-void
-.end method
 
-.method public onAnimationStart(Landroid/view/animation/Animation;)V
-    .registers 4
+    .line 1660
+    :catch_99
+    move-exception v0
 
-    .prologue
-    .line 1495
-    iget-object v0, p0, Lcom/samsung/privilege/activity/WalletCardActivity$20$1;->a:Lcom/samsung/privilege/activity/WalletCardActivity$20;
+    goto :goto_67
 
-    iget-object v0, v0, Lcom/samsung/privilege/activity/WalletCardActivity$20;->b:Landroid/view/View;
+    .line 1645
+    :catch_9b
+    move-exception v0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
-
-    .line 1496
-    return-void
+    goto/16 :goto_18
 .end method

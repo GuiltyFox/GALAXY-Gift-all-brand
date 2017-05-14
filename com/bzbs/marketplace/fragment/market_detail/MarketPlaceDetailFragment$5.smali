@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 653
+    .line 673
     iput-object p1, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$5;->a:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,10 +35,10 @@
     .registers 5
 
     .prologue
-    .line 656
+    .line 676
     const-string/jumbo v0, "share"
 
-    .line 657
+    .line 677
     new-instance v1, Landroid/os/Handler;
 
     invoke-direct {v1}, Landroid/os/Handler;-><init>()V
@@ -49,7 +49,7 @@
 
     invoke-static {p1, v0, v1, v2}, Lcom/bzbs/lib/survey/util/AnimationPoint;->a(ILjava/lang/String;Landroid/os/Handler;Landroid/app/Activity;)V
 
-    .line 658
+    .line 678
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment$5;->a:Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;
 
     iget-object v0, v0, Lcom/bzbs/marketplace/fragment/market_detail/MarketPlaceDetailFragment;->a:Landroid/app/Activity;
@@ -58,6 +58,6 @@
 
     invoke-virtual {v0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->l()V
 
-    .line 659
+    .line 679
     return-void
 .end method

@@ -121,7 +121,7 @@
 
     if-nez v2, :cond_14
 
-    .line 141
+    .line 142
     :goto_13
     return v1
 
@@ -148,6 +148,7 @@
 
     if-eqz v2, :cond_3c
 
+    .line 142
     invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v2
@@ -324,11 +325,13 @@
     :goto_22
     if-nez v2, :cond_2b
 
+    .line 154
     :goto_24
     xor-int/2addr v0, v1
 
     return v0
 
+    .line 153
     :cond_26
     invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
@@ -336,6 +339,7 @@
 
     goto :goto_22
 
+    .line 154
     :cond_2b
     invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 

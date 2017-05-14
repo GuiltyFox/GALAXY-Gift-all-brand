@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 629
+    .line 639
     iput-object p1, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$10;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -43,21 +43,21 @@
     .prologue
     const/4 v3, 0x1
 
-    .line 650
+    .line 660
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     if-eqz v0, :cond_31
 
-    .line 651
+    .line 661
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v1, "android.media.action.IMAGE_CAPTURE"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 652
+    .line 662
     iget-object v1, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$10;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-static {v3}, Lcom/bzbs/marketplace/util/OutputMediaFile;->a(I)Landroid/net/Uri;
@@ -66,7 +66,7 @@
 
     invoke-static {v1, v2}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->a(Lcom/bzbs/marketplace/fragment/ReviewFragment;Landroid/net/Uri;)Landroid/net/Uri;
 
-    .line 653
+    .line 663
     const-string/jumbo v1, "output"
 
     iget-object v2, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$10;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
@@ -77,19 +77,19 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Landroid/os/Parcelable;)Landroid/content/Intent;
 
-    .line 654
+    .line 664
     const-string/jumbo v1, "android.intent.extra.videoQuality"
 
     invoke-virtual {v0, v1, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;I)Landroid/content/Intent;
 
-    .line 655
+    .line 665
     iget-object v1, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$10;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     const/16 v2, 0x270e
 
     invoke-virtual {v1, v0, v2}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 659
+    .line 669
     :cond_31
     return-void
 .end method
@@ -106,33 +106,33 @@
     .registers 5
 
     .prologue
-    .line 637
+    .line 647
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     if-eqz v0, :cond_1b
 
-    .line 638
+    .line 648
     new-instance v0, Landroid/content/Intent;
 
     const-string/jumbo v1, "android.intent.action.PICK"
 
     invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    .line 639
+    .line 649
     const-string/jumbo v1, "image/*"
 
     invoke-virtual {v0, v1}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 640
+    .line 650
     iget-object v1, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$10;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     const/16 v2, 0x270f
 
     invoke-virtual {v1, v0, v2}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->startActivityForResult(Landroid/content/Intent;I)V
 
-    .line 644
+    .line 654
     :cond_1b
     return-void
 .end method
@@ -147,19 +147,19 @@
 
     const/4 v3, 0x0
 
-    .line 632
+    .line 642
     packed-switch p2, :pswitch_data_48
 
-    .line 664
+    .line 674
     :goto_5
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$10;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
     invoke-static {v0}, Lcom/bzbs/marketplace/fragment/ReviewFragment;->m(Lcom/bzbs/marketplace/fragment/ReviewFragment;)Z
 
-    .line 665
+    .line 675
     return-void
 
-    .line 635
+    .line 645
     :pswitch_b
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$10;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
@@ -183,12 +183,12 @@
 
     move-result-object v1
 
-    .line 636
+    .line 646
     invoke-virtual {v0, v1}, Lrx/Observable;->a(Lrx/functions/Action1;)Lrx/Subscription;
 
     goto :goto_5
 
-    .line 648
+    .line 658
     :pswitch_26
     iget-object v0, p0, Lcom/bzbs/marketplace/fragment/ReviewFragment$10;->a:Lcom/bzbs/marketplace/fragment/ReviewFragment;
 
@@ -218,12 +218,12 @@
 
     move-result-object v1
 
-    .line 649
+    .line 659
     invoke-virtual {v0, v1}, Lrx/Observable;->a(Lrx/functions/Action1;)Lrx/Subscription;
 
     goto :goto_5
 
-    .line 632
+    .line 642
     nop
 
     :pswitch_data_48

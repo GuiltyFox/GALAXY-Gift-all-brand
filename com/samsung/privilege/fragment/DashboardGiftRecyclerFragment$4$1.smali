@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 442
+    .line 444
     iput-object p1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4;
 
     iput-object p2, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4$1;->a:Ljava/lang/String;
@@ -41,7 +41,7 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 445
+    .line 447
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -52,12 +52,12 @@
 
     if-nez v0, :cond_c
 
-    .line 484
+    .line 486
     :cond_b
     :goto_b
     return-void
 
-    .line 449
+    .line 451
     :cond_c
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4;
 
@@ -69,7 +69,7 @@
 
     move-result-object v4
 
-    .line 451
+    .line 453
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -78,7 +78,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f100111
+    const v1, 0x7f100113
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -86,15 +86,15 @@
 
     check-cast v0, Landroid/support/v4/widget/SwipeRefreshLayout;
 
-    .line 452
+    .line 454
     invoke-virtual {v0, v2}, Landroid/support/v4/widget/SwipeRefreshLayout;->setRefreshing(Z)V
 
-    .line 454
+    .line 456
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 456
+    .line 458
     :try_start_30
     new-instance v0, Lorg/json/JSONArray;
 
@@ -118,7 +118,7 @@
 
     move-object v3, v0
 
-    .line 461
+    .line 463
     :goto_44
     if-eqz v3, :cond_b
 
@@ -130,7 +130,7 @@
 
     move v1, v2
 
-    .line 463
+    .line 465
     :goto_4d
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
@@ -138,14 +138,14 @@
 
     if-ge v1, v0, :cond_74
 
-    .line 464
+    .line 466
     invoke-virtual {v3, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/bzbs/bean/DashboardItem;
 
-    .line 466
+    .line 468
     iget-object v5, v0, Lcom/bzbs/bean/DashboardItem;->type:Ljava/lang/String;
 
     const-string/jumbo v6, "hashtag"
@@ -156,10 +156,10 @@
 
     if-eqz v5, :cond_f9
 
-    .line 467
+    .line 469
     const/4 v2, 0x1
 
-    .line 468
+    .line 470
     iget-object v1, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4;
 
     iget-object v1, v1, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
@@ -174,18 +174,18 @@
 
     invoke-static {v1, v5, v0, v3, v6}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->a(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;Z)V
 
-    .line 473
+    .line 475
     :cond_74
     if-nez v2, :cond_7d
 
-    .line 474
+    .line 476
     iget-object v0, p0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4$1;->b:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4;
 
     iget-object v0, v0, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment$4;->c:Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;
 
     invoke-static {v0, v3}, Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;->b(Lcom/samsung/privilege/fragment/DashboardGiftRecyclerFragment;Ljava/util/ArrayList;)V
 
-    .line 478
+    .line 480
     :cond_7d
     :try_start_7d
     new-instance v0, Ljava/lang/StringBuilder;
@@ -238,7 +238,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/LocalFileHelper;->a(Ljava/lang/String;Landroid/content/Context;)V
 
-    .line 479
+    .line 481
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -295,17 +295,17 @@
 
     goto/16 :goto_b
 
-    .line 480
+    .line 482
     :catch_ed
     move-exception v0
 
     goto/16 :goto_b
 
-    .line 457
+    .line 459
     :catch_f0
     move-exception v0
 
-    .line 458
+    .line 460
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -314,7 +314,7 @@
 
     goto/16 :goto_44
 
-    .line 463
+    .line 465
     :cond_f9
     add-int/lit8 v0, v1, 0x1
 

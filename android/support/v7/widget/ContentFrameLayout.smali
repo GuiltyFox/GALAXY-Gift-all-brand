@@ -352,11 +352,12 @@
 
     move-result v4
 
-    .line 110
+    .line 111
     invoke-static {v3, v4}, Ljava/lang/Math;->min(II)I
 
     move-result v3
 
+    .line 110
     invoke-static {v3, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p1
@@ -414,11 +415,12 @@
 
     move-result v7
 
-    .line 129
+    .line 130
     invoke-static {v3, v7}, Ljava/lang/Math;->min(II)I
 
     move-result v3
 
+    .line 129
     invoke-static {v3, v9}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2

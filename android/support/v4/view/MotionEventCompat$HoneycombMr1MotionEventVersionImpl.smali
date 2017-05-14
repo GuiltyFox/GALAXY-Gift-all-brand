@@ -1,5 +1,5 @@
 .class Landroid/support/v4/view/MotionEventCompat$HoneycombMr1MotionEventVersionImpl;
-.super Landroid/support/v4/view/MotionEventCompat$GingerbreadMotionEventVersionImpl;
+.super Landroid/support/v4/view/MotionEventCompat$BaseMotionEventVersionImpl;
 .source "MotionEventCompat.java"
 
 
@@ -8,19 +8,19 @@
     .registers 1
 
     .prologue
-    .line 135
-    invoke-direct {p0}, Landroid/support/v4/view/MotionEventCompat$GingerbreadMotionEventVersionImpl;-><init>()V
+    .line 59
+    invoke-direct {p0}, Landroid/support/v4/view/MotionEventCompat$BaseMotionEventVersionImpl;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public e(Landroid/view/MotionEvent;I)F
+.method public a(Landroid/view/MotionEvent;I)F
     .registers 4
 
     .prologue
-    .line 139
+    .line 63
     invoke-static {p1, p2}, Landroid/support/v4/view/MotionEventCompatHoneycombMr1;->a(Landroid/view/MotionEvent;I)F
 
     move-result v0

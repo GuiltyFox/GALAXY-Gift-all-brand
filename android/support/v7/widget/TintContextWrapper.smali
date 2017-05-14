@@ -19,7 +19,7 @@
 
 
 # instance fields
-.field private mResources:Landroid/content/res/Resources;
+.field private final mResources:Landroid/content/res/Resources;
 
 .field private final mTheme:Landroid/content/res/Resources$Theme;
 
@@ -51,12 +51,21 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1d
+    if-eqz v0, :cond_26
 
     .line 87
-    invoke-virtual {p0}, Landroid/support/v7/widget/TintContextWrapper;->getResources()Landroid/content/res/Resources;
+    new-instance v0, Landroid/support/v7/widget/VectorEnabledTintResources;
 
-    move-result-object v0
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-direct {v0, p0, v1}, Landroid/support/v7/widget/VectorEnabledTintResources;-><init>(Landroid/content/Context;Landroid/content/res/Resources;)V
+
+    iput-object v0, p0, Landroid/support/v7/widget/TintContextWrapper;->mResources:Landroid/content/res/Resources;
+
+    .line 88
+    iget-object v0, p0, Landroid/support/v7/widget/TintContextWrapper;->mResources:Landroid/content/res/Resources;
 
     invoke-virtual {v0}, Landroid/content/res/Resources;->newTheme()Landroid/content/res/Resources$Theme;
 
@@ -64,7 +73,7 @@
 
     iput-object v0, p0, Landroid/support/v7/widget/TintContextWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 
-    .line 88
+    .line 89
     iget-object v0, p0, Landroid/support/v7/widget/TintContextWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 
     invoke-virtual {p1}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
@@ -73,17 +82,28 @@
 
     invoke-virtual {v0, v1}, Landroid/content/res/Resources$Theme;->setTo(Landroid/content/res/Resources$Theme;)V
 
-    .line 92
-    :goto_1c
+    .line 94
+    :goto_25
     return-void
 
-    .line 90
-    :cond_1d
+    .line 91
+    :cond_26
+    new-instance v0, Landroid/support/v7/widget/TintResources;
+
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v1
+
+    invoke-direct {v0, p0, v1}, Landroid/support/v7/widget/TintResources;-><init>(Landroid/content/Context;Landroid/content/res/Resources;)V
+
+    iput-object v0, p0, Landroid/support/v7/widget/TintContextWrapper;->mResources:Landroid/content/res/Resources;
+
+    .line 92
     const/4 v0, 0x0
 
     iput-object v0, p0, Landroid/support/v7/widget/TintContextWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 
-    goto :goto_1c
+    goto :goto_25
 .end method
 
 .method private static shouldWrap(Landroid/content/Context;)Z
@@ -97,6 +117,7 @@
 
     if-nez v1, :cond_15
 
+    .line 62
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -105,6 +126,7 @@
 
     if-nez v1, :cond_15
 
+    .line 63
     invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object v1
@@ -120,7 +142,7 @@
 
     .line 68
     :cond_16
-    invoke-static {}, Landroid/support/v7/app/AppCompatDelegate;->j()Z
+    invoke-static {}, Landroid/support/v7/app/AppCompatDelegate;->k()Z
 
     move-result v1
 
@@ -237,54 +259,20 @@
 
 # virtual methods
 .method public getResources()Landroid/content/res/Resources;
-    .registers 3
+    .registers 2
 
     .prologue
-    .line 110
-    iget-object v0, p0, Landroid/support/v7/widget/TintContextWrapper;->mResources:Landroid/content/res/Resources;
-
-    if-nez v0, :cond_13
-
-    .line 111
-    iget-object v0, p0, Landroid/support/v7/widget/TintContextWrapper;->mTheme:Landroid/content/res/Resources$Theme;
-
-    if-nez v0, :cond_16
-
-    new-instance v0, Landroid/support/v7/widget/TintResources;
-
-    invoke-super {p0}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-direct {v0, p0, v1}, Landroid/support/v7/widget/TintResources;-><init>(Landroid/content/Context;Landroid/content/res/Resources;)V
-
-    :goto_11
-    iput-object v0, p0, Landroid/support/v7/widget/TintContextWrapper;->mResources:Landroid/content/res/Resources;
-
-    .line 115
-    :cond_13
+    .line 112
     iget-object v0, p0, Landroid/support/v7/widget/TintContextWrapper;->mResources:Landroid/content/res/Resources;
 
     return-object v0
-
-    .line 111
-    :cond_16
-    new-instance v0, Landroid/support/v7/widget/VectorEnabledTintResources;
-
-    invoke-super {p0}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v1
-
-    invoke-direct {v0, p0, v1}, Landroid/support/v7/widget/VectorEnabledTintResources;-><init>(Landroid/content/Context;Landroid/content/res/Resources;)V
-
-    goto :goto_11
 .end method
 
 .method public getTheme()Landroid/content/res/Resources$Theme;
     .registers 2
 
     .prologue
-    .line 96
+    .line 98
     iget-object v0, p0, Landroid/support/v7/widget/TintContextWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 
     if-nez v0, :cond_9
@@ -306,19 +294,19 @@
     .registers 4
 
     .prologue
-    .line 101
+    .line 103
     iget-object v0, p0, Landroid/support/v7/widget/TintContextWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 
     if-nez v0, :cond_8
 
-    .line 102
+    .line 104
     invoke-super {p0, p1}, Landroid/content/ContextWrapper;->setTheme(I)V
 
-    .line 106
+    .line 108
     :goto_7
     return-void
 
-    .line 104
+    .line 106
     :cond_8
     iget-object v0, p0, Landroid/support/v7/widget/TintContextWrapper;->mTheme:Landroid/content/res/Resources$Theme;
 

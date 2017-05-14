@@ -98,6 +98,7 @@
 
     float-to-double v8, v8
 
+    .line 93
     invoke-static {v8, v9}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v8
@@ -182,6 +183,7 @@
 
     mul-double/2addr v8, v4
 
+    .line 102
     invoke-static {v8, v9}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v8
@@ -223,6 +225,7 @@
 
     move-result-wide v10
 
+    .line 110
     invoke-static {v4, v5}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v12

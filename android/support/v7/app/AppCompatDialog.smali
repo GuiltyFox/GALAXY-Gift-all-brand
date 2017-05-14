@@ -49,7 +49,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/support/v7/app/AppCompatDelegate;->h()Z
+    invoke-virtual {v0}, Landroid/support/v7/app/AppCompatDelegate;->i()Z
 
     .line 53
     return-void
@@ -178,7 +178,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/support/v7/app/AppCompatDelegate;->e()V
+    invoke-virtual {v0}, Landroid/support/v7/app/AppCompatDelegate;->f()V
 
     .line 145
     return-void
@@ -193,7 +193,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/support/v7/app/AppCompatDelegate;->g()V
+    invoke-virtual {v0}, Landroid/support/v7/app/AppCompatDelegate;->h()V
 
     .line 63
     invoke-super {p0, p1}, Landroid/app/Dialog;->onCreate(Landroid/os/Bundle;)V
@@ -221,7 +221,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/support/v7/app/AppCompatDelegate;->c()V
+    invoke-virtual {v0}, Landroid/support/v7/app/AppCompatDelegate;->d()V
 
     .line 120
     return-void

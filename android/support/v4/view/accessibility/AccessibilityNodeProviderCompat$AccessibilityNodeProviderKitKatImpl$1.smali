@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 89
+    .line 96
     iput-object p1, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl$1;->b:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl;
 
     iput-object p2, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl$1;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
@@ -39,20 +39,21 @@
     .registers 3
 
     .prologue
-    .line 112
+    .line 123
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl$1;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
 
+    .line 124
     invoke-virtual {v0, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->a(I)Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
 
     move-result-object v0
 
-    .line 114
+    .line 125
     if-nez v0, :cond_a
 
-    .line 115
+    .line 126
     const/4 v0, 0x0
 
-    .line 117
+    .line 128
     :goto_9
     return-object v0
 
@@ -79,62 +80,76 @@
     .end annotation
 
     .prologue
-    .line 99
+    .line 106
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl$1;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
 
+    .line 107
     invoke-virtual {v0, p1, p2}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->a(Ljava/lang/String;I)Ljava/util/List;
 
-    move-result-object v2
+    move-result-object v3
 
-    .line 101
-    new-instance v3, Ljava/util/ArrayList;
+    .line 108
+    if-nez v3, :cond_a
 
-    invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
+    .line 109
+    const/4 v0, 0x0
 
-    .line 102
-    invoke-interface {v2}, Ljava/util/List;->size()I
+    .line 117
+    :goto_9
+    return-object v0
+
+    .line 111
+    :cond_a
+    new-instance v1, Ljava/util/ArrayList;
+
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    .line 112
+    invoke-interface {v3}, Ljava/util/List;->size()I
 
     move-result v4
 
-    .line 103
+    .line 113
     const/4 v0, 0x0
 
-    move v1, v0
+    move v2, v0
 
-    :goto_11
-    if-ge v1, v4, :cond_24
+    :goto_15
+    if-ge v2, v4, :cond_28
 
-    .line 104
-    invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    .line 114
+    invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
 
-    .line 105
+    .line 115
     invoke-virtual {v0}, Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;->a()Ljava/lang/Object;
 
     move-result-object v0
 
-    invoke-interface {v3, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 103
-    add-int/lit8 v0, v1, 0x1
+    .line 113
+    add-int/lit8 v0, v2, 0x1
 
-    move v1, v0
+    move v2, v0
 
-    goto :goto_11
+    goto :goto_15
 
-    .line 107
-    :cond_24
-    return-object v3
+    :cond_28
+    move-object v0, v1
+
+    .line 117
+    goto :goto_9
 .end method
 
 .method public a(IILandroid/os/Bundle;)Z
     .registers 5
 
     .prologue
-    .line 93
+    .line 100
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl$1;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
 
     invoke-virtual {v0, p1, p2, p3}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->a(IILandroid/os/Bundle;)Z
@@ -148,20 +163,20 @@
     .registers 3
 
     .prologue
-    .line 123
+    .line 134
     iget-object v0, p0, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat$AccessibilityNodeProviderKitKatImpl$1;->a:Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;
 
     invoke-virtual {v0, p1}, Landroid/support/v4/view/accessibility/AccessibilityNodeProviderCompat;->b(I)Landroid/support/v4/view/accessibility/AccessibilityNodeInfoCompat;
 
     move-result-object v0
 
-    .line 124
+    .line 135
     if-nez v0, :cond_a
 
-    .line 125
+    .line 136
     const/4 v0, 0x0
 
-    .line 127
+    .line 138
     :goto_9
     return-object v0
 

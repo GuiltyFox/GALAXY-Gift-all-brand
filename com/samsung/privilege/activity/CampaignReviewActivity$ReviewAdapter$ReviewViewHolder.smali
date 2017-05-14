@@ -67,7 +67,7 @@
     invoke-direct {p0, p2}, Landroid/support/v7/widget/RecyclerView$ViewHolder;-><init>(Landroid/view/View;)V
 
     .line 729
-    const v0, 0x7f10011e
+    const v0, 0x7f100120
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -78,7 +78,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->a:Landroid/widget/TextView;
 
     .line 730
-    const v0, 0x7f10011f
+    const v0, 0x7f100121
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -89,7 +89,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->b:Landroid/widget/RelativeLayout;
 
     .line 731
-    const v0, 0x7f100121
+    const v0, 0x7f100123
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -100,7 +100,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->c:Landroid/widget/ImageView;
 
     .line 732
-    const v0, 0x7f100128
+    const v0, 0x7f10012a
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -111,7 +111,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->d:Landroid/widget/TextView;
 
     .line 733
-    const v0, 0x7f100122
+    const v0, 0x7f100124
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -122,7 +122,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->e:Landroid/widget/RelativeLayout;
 
     .line 734
-    const v0, 0x7f100123
+    const v0, 0x7f100125
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -133,7 +133,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->f:Landroid/widget/ProgressBar;
 
     .line 735
-    const v0, 0x7f100124
+    const v0, 0x7f100126
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -144,7 +144,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->g:Landroid/widget/ImageView;
 
     .line 736
-    const v0, 0x7f100125
+    const v0, 0x7f100127
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -155,7 +155,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->h:Landroid/widget/TextView;
 
     .line 737
-    const v0, 0x7f100126
+    const v0, 0x7f100128
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -166,7 +166,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->i:Landroid/widget/ImageView;
 
     .line 738
-    const v0, 0x7f100127
+    const v0, 0x7f100129
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -177,7 +177,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->j:Landroid/widget/TextView;
 
     .line 739
-    const v0, 0x7f100129
+    const v0, 0x7f10012b
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -188,7 +188,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->k:Landroid/widget/RelativeLayout;
 
     .line 740
-    const v0, 0x7f10012a
+    const v0, 0x7f10012c
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -199,7 +199,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->l:Landroid/widget/ImageView;
 
     .line 741
-    const v0, 0x7f10012b
+    const v0, 0x7f10012d
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -210,7 +210,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->m:Landroid/widget/TextView;
 
     .line 742
-    const v0, 0x7f10012c
+    const v0, 0x7f10012e
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -221,7 +221,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->n:Landroid/widget/RelativeLayout;
 
     .line 743
-    const v0, 0x7f10012f
+    const v0, 0x7f100131
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -232,7 +232,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->o:Landroid/widget/TextView;
 
     .line 744
-    const v0, 0x7f100131
+    const v0, 0x7f100133
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -243,7 +243,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->p:Landroid/widget/TextView;
 
     .line 745
-    const v0, 0x7f100130
+    const v0, 0x7f100132
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -254,7 +254,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->q:Landroid/widget/RelativeLayout;
 
     .line 746
-    const v0, 0x7f100132
+    const v0, 0x7f100134
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -265,7 +265,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->r:Landroid/widget/RelativeLayout;
 
     .line 747
-    const v0, 0x7f100134
+    const v0, 0x7f100136
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -276,7 +276,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->s:Landroid/widget/RelativeLayout;
 
     .line 749
-    const v0, 0x7f100133
+    const v0, 0x7f100135
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -287,7 +287,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->t:Landroid/widget/ImageView;
 
     .line 750
-    const v0, 0x7f100136
+    const v0, 0x7f100138
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -298,7 +298,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->u:Landroid/widget/ImageView;
 
     .line 751
-    const v0, 0x7f100135
+    const v0, 0x7f100137
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -309,7 +309,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->v:Landroid/widget/TextView;
 
     .line 752
-    const v0, 0x7f10012d
+    const v0, 0x7f10012f
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -320,7 +320,7 @@
     iput-object v0, p0, Lcom/samsung/privilege/activity/CampaignReviewActivity$ReviewAdapter$ReviewViewHolder;->w:Landroid/widget/ProgressBar;
 
     .line 753
-    const v0, 0x7f10012e
+    const v0, 0x7f100130
 
     invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 

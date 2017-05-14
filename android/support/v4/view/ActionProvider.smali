@@ -185,6 +185,7 @@
 
     move-result-object v1
 
+    .line 295
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object v2
@@ -207,6 +208,7 @@
 
     move-result-object v1
 
+    .line 294
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 298

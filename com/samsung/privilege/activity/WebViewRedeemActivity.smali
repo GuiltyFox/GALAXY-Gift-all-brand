@@ -141,7 +141,7 @@
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
     .line 44
-    const v0, 0x7f040184
+    const v0, 0x7f04018b
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->setContentView(I)V
 
@@ -156,7 +156,7 @@
     invoke-direct {p0}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->a()V
 
     .line 48
-    const v0, 0x7f100705
+    const v0, 0x7f100731
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->findViewById(I)Landroid/view/View;
 
@@ -184,7 +184,7 @@
     if-ne v0, v3, :cond_3d
 
     .line 55
-    const v0, 0x7f1002b1
+    const v0, 0x7f1002cc
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->findViewById(I)Landroid/view/View;
 
@@ -197,7 +197,7 @@
 
     .line 59
     :cond_3d
-    const v0, 0x7f100193
+    const v0, 0x7f100198
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->findViewById(I)Landroid/view/View;
 
@@ -289,7 +289,7 @@
     if-lez v0, :cond_a7
 
     .line 150
-    const v0, 0x7f10017c
+    const v0, 0x7f10017e
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->findViewById(I)Landroid/view/View;
 
@@ -329,7 +329,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -344,7 +344,7 @@
 
     move-result-object v2
 
-    invoke-static {v2}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -502,7 +502,7 @@
 
     .line 199
     :pswitch_1d
-    const v0, 0x7f100193
+    const v0, 0x7f100198
 
     invoke-virtual {p0, v0}, Lcom/samsung/privilege/activity/WebViewRedeemActivity;->findViewById(I)Landroid/view/View;
 

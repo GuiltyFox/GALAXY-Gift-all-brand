@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field final synthetic c:Landroid/support/v7/app/AppCompatDelegateImplV23;
+.field final synthetic d:Landroid/support/v7/app/AppCompatDelegateImplV23;
 
 
 # direct methods
@@ -13,7 +13,7 @@
 
     .prologue
     .line 54
-    iput-object p1, p0, Landroid/support/v7/app/AppCompatDelegateImplV23$AppCompatWindowCallbackV23;->c:Landroid/support/v7/app/AppCompatDelegateImplV23;
+    iput-object p1, p0, Landroid/support/v7/app/AppCompatDelegateImplV23$AppCompatWindowCallbackV23;->d:Landroid/support/v7/app/AppCompatDelegateImplV23;
 
     .line 55
     invoke-direct {p0, p1, p2}, Landroid/support/v7/app/AppCompatDelegateImplV14$AppCompatWindowCallbackV14;-><init>(Landroid/support/v7/app/AppCompatDelegateImplV14;Landroid/view/Window$Callback;)V
@@ -39,9 +39,9 @@
 
     .prologue
     .line 60
-    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV23$AppCompatWindowCallbackV23;->c:Landroid/support/v7/app/AppCompatDelegateImplV23;
+    iget-object v0, p0, Landroid/support/v7/app/AppCompatDelegateImplV23$AppCompatWindowCallbackV23;->d:Landroid/support/v7/app/AppCompatDelegateImplV23;
 
-    invoke-virtual {v0}, Landroid/support/v7/app/AppCompatDelegateImplV23;->n()Z
+    invoke-virtual {v0}, Landroid/support/v7/app/AppCompatDelegateImplV23;->o()Z
 
     move-result v0
 

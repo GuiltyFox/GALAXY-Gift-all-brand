@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 419
+    .line 418
     iput-object p1, p0, Landroid/support/v4/widget/MaterialProgressDrawable$2;->b:Landroid/support/v4/widget/MaterialProgressDrawable;
 
     iput-object p2, p0, Landroid/support/v4/widget/MaterialProgressDrawable$2;->a:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
@@ -39,7 +39,7 @@
     .registers 2
 
     .prologue
-    .line 429
+    .line 428
     return-void
 .end method
 
@@ -49,17 +49,17 @@
     .prologue
     const/4 v2, 0x0
 
-    .line 433
+    .line 432
     iget-object v0, p0, Landroid/support/v4/widget/MaterialProgressDrawable$2;->a:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
 
     invoke-virtual {v0}, Landroid/support/v4/widget/MaterialProgressDrawable$Ring;->l()V
 
-    .line 434
+    .line 433
     iget-object v0, p0, Landroid/support/v4/widget/MaterialProgressDrawable$2;->a:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
 
     invoke-virtual {v0}, Landroid/support/v4/widget/MaterialProgressDrawable$Ring;->b()V
 
-    .line 435
+    .line 434
     iget-object v0, p0, Landroid/support/v4/widget/MaterialProgressDrawable$2;->a:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
 
     iget-object v1, p0, Landroid/support/v4/widget/MaterialProgressDrawable$2;->a:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
@@ -70,33 +70,33 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v4/widget/MaterialProgressDrawable$Ring;->b(F)V
 
-    .line 436
+    .line 435
     iget-object v0, p0, Landroid/support/v4/widget/MaterialProgressDrawable$2;->b:Landroid/support/v4/widget/MaterialProgressDrawable;
 
     iget-boolean v0, v0, Landroid/support/v4/widget/MaterialProgressDrawable;->a:Z
 
     if-eqz v0, :cond_2b
 
-    .line 439
+    .line 438
     iget-object v0, p0, Landroid/support/v4/widget/MaterialProgressDrawable$2;->b:Landroid/support/v4/widget/MaterialProgressDrawable;
 
     iput-boolean v2, v0, Landroid/support/v4/widget/MaterialProgressDrawable;->a:Z
 
-    .line 440
+    .line 439
     const-wide/16 v0, 0x534
 
     invoke-virtual {p1, v0, v1}, Landroid/view/animation/Animation;->setDuration(J)V
 
-    .line 441
+    .line 440
     iget-object v0, p0, Landroid/support/v4/widget/MaterialProgressDrawable$2;->a:Landroid/support/v4/widget/MaterialProgressDrawable$Ring;
 
     invoke-virtual {v0, v2}, Landroid/support/v4/widget/MaterialProgressDrawable$Ring;->a(Z)V
 
-    .line 445
+    .line 444
     :goto_2a
     return-void
 
-    .line 443
+    .line 442
     :cond_2b
     iget-object v0, p0, Landroid/support/v4/widget/MaterialProgressDrawable$2;->b:Landroid/support/v4/widget/MaterialProgressDrawable;
 
@@ -123,13 +123,13 @@
     .registers 4
 
     .prologue
-    .line 423
+    .line 422
     iget-object v0, p0, Landroid/support/v4/widget/MaterialProgressDrawable$2;->b:Landroid/support/v4/widget/MaterialProgressDrawable;
 
     const/4 v1, 0x0
 
     invoke-static {v0, v1}, Landroid/support/v4/widget/MaterialProgressDrawable;->a(Landroid/support/v4/widget/MaterialProgressDrawable;F)F
 
-    .line 424
+    .line 423
     return-void
 .end method

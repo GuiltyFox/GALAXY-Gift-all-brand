@@ -7,37 +7,31 @@
 .method public abstract A(Landroid/view/View;)Z
 .end method
 
-.method public abstract B(Landroid/view/View;)Z
+.method public abstract B(Landroid/view/View;)Landroid/content/res/ColorStateList;
 .end method
 
-.method public abstract C(Landroid/view/View;)Landroid/content/res/ColorStateList;
+.method public abstract C(Landroid/view/View;)Landroid/graphics/PorterDuff$Mode;
 .end method
 
-.method public abstract D(Landroid/view/View;)Landroid/graphics/PorterDuff$Mode;
+.method public abstract D(Landroid/view/View;)V
 .end method
 
-.method public abstract E(Landroid/view/View;)V
+.method public abstract E(Landroid/view/View;)Z
 .end method
 
-.method public abstract F(Landroid/view/View;)Z
+.method public abstract F(Landroid/view/View;)F
 .end method
 
-.method public abstract G(Landroid/view/View;)F
+.method public abstract G(Landroid/view/View;)Z
 .end method
 
 .method public abstract H(Landroid/view/View;)Z
-.end method
-
-.method public abstract I(Landroid/view/View;)Z
 .end method
 
 .method public abstract a(II)I
 .end method
 
 .method public abstract a(III)I
-.end method
-
-.method public abstract a(Landroid/view/View;)I
 .end method
 
 .method public abstract a(Landroid/view/View;Landroid/support/v4/view/WindowInsetsCompat;)Landroid/support/v4/view/WindowInsetsCompat;
@@ -79,6 +73,9 @@
 .method public abstract a(Landroid/view/ViewGroup;Z)V
 .end method
 
+.method public abstract a(Landroid/view/View;)Z
+.end method
+
 .method public abstract a(Landroid/view/View;I)Z
 .end method
 
@@ -97,6 +94,9 @@
 .method public abstract b(Landroid/view/View;I)Z
 .end method
 
+.method public abstract c(Landroid/view/View;)V
+.end method
+
 .method public abstract c(Landroid/view/View;F)V
 .end method
 
@@ -106,10 +106,7 @@
 .method public abstract c(Landroid/view/View;Z)V
 .end method
 
-.method public abstract c(Landroid/view/View;)Z
-.end method
-
-.method public abstract d(Landroid/view/View;)V
+.method public abstract d(Landroid/view/View;)I
 .end method
 
 .method public abstract d(Landroid/view/View;F)V
@@ -118,7 +115,7 @@
 .method public abstract d(Landroid/view/View;I)V
 .end method
 
-.method public abstract e(Landroid/view/View;)I
+.method public abstract e(Landroid/view/View;)F
 .end method
 
 .method public abstract e(Landroid/view/View;F)V
@@ -127,7 +124,7 @@
 .method public abstract e(Landroid/view/View;I)V
 .end method
 
-.method public abstract f(Landroid/view/View;)F
+.method public abstract f(Landroid/view/View;)I
 .end method
 
 .method public abstract f(Landroid/view/View;F)V
@@ -139,10 +136,10 @@
 .method public abstract g(Landroid/view/View;)I
 .end method
 
-.method public abstract h(Landroid/view/View;)I
+.method public abstract h(Landroid/view/View;)Landroid/view/ViewParent;
 .end method
 
-.method public abstract i(Landroid/view/View;)Landroid/view/ViewParent;
+.method public abstract i(Landroid/view/View;)I
 .end method
 
 .method public abstract j(Landroid/view/View;)I
@@ -154,10 +151,10 @@
 .method public abstract l(Landroid/view/View;)I
 .end method
 
-.method public abstract m(Landroid/view/View;)I
+.method public abstract m(Landroid/view/View;)Z
 .end method
 
-.method public abstract n(Landroid/view/View;)Z
+.method public abstract n(Landroid/view/View;)F
 .end method
 
 .method public abstract o(Landroid/view/View;)F
@@ -166,29 +163,29 @@
 .method public abstract p(Landroid/view/View;)F
 .end method
 
-.method public abstract q(Landroid/view/View;)F
+.method public abstract q(Landroid/view/View;)I
 .end method
 
 .method public abstract r(Landroid/view/View;)I
 .end method
 
-.method public abstract s(Landroid/view/View;)I
+.method public abstract s(Landroid/view/View;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
 .end method
 
-.method public abstract t(Landroid/view/View;)Landroid/support/v4/view/ViewPropertyAnimatorCompat;
+.method public abstract t(Landroid/view/View;)I
 .end method
 
-.method public abstract u(Landroid/view/View;)I
+.method public abstract u(Landroid/view/View;)V
 .end method
 
-.method public abstract v(Landroid/view/View;)V
+.method public abstract v(Landroid/view/View;)F
 .end method
 
-.method public abstract w(Landroid/view/View;)F
+.method public abstract x(Landroid/view/View;)Z
 .end method
 
-.method public abstract y(Landroid/view/View;)Z
+.method public abstract y(Landroid/view/View;)V
 .end method
 
-.method public abstract z(Landroid/view/View;)V
+.method public abstract z(Landroid/view/View;)Z
 .end method

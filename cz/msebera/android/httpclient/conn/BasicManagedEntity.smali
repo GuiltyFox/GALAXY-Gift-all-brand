@@ -285,7 +285,7 @@
     :try_start_5
     iget-object v0, p0, Lcz/msebera/android/httpclient/conn/BasicManagedEntity;->a:Lcz/msebera/android/httpclient/conn/ManagedClientConnection;
 
-    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/ManagedClientConnection;->d_()V
+    invoke-interface {v0}, Lcz/msebera/android/httpclient/conn/ManagedClientConnection;->h_()V
     :try_end_a
     .catchall {:try_start_5 .. :try_end_a} :catchall_d
 
@@ -339,17 +339,6 @@
     return-void
 .end method
 
-.method public d_()V
-    .registers 1
-
-    .prologue
-    .line 124
-    invoke-direct {p0}, Lcz/msebera/android/httpclient/conn/BasicManagedEntity;->d()V
-
-    .line 125
-    return-void
-.end method
-
 .method public getContent()Ljava/io/InputStream;
     .registers 3
 
@@ -366,6 +355,17 @@
     invoke-direct {v0, v1, p0}, Lcz/msebera/android/httpclient/conn/EofSensorInputStream;-><init>(Ljava/io/InputStream;Lcz/msebera/android/httpclient/conn/EofSensorWatcher;)V
 
     return-object v0
+.end method
+
+.method public h_()V
+    .registers 1
+
+    .prologue
+    .line 124
+    invoke-direct {p0}, Lcz/msebera/android/httpclient/conn/BasicManagedEntity;->d()V
+
+    .line 125
+    return-void
 .end method
 
 .method public isRepeatable()Z

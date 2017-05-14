@@ -32,6 +32,8 @@
 
 .field private n:I
 
+.field private o:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$UserLoginListener;
+
 
 # direct methods
 .method public constructor <init>()V
@@ -68,7 +70,7 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->m:Ljava/lang/String;
 
-    .line 146
+    .line 147
     const/4 v0, 0x2
 
     iput v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->n:I
@@ -112,7 +114,7 @@
     .registers 4
 
     .prologue
-    .line 131
+    .line 132
     :try_start_0
     invoke-virtual {p0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->getArguments()Landroid/os/Bundle;
 
@@ -120,7 +122,7 @@
 
     if-eqz v0, :cond_27
 
-    .line 132
+    .line 133
     invoke-virtual {p0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->getArguments()Landroid/os/Bundle;
 
     move-result-object v0
@@ -129,7 +131,7 @@
 
     move-result-object v0
 
-    .line 133
+    .line 134
     if-eqz v0, :cond_1a
 
     const-string/jumbo v1, ""
@@ -140,11 +142,11 @@
 
     if-nez v1, :cond_1a
 
-    .line 142
+    .line 143
     :goto_19
     return-object v0
 
-    .line 136
+    .line 137
     :cond_1a
     invoke-virtual {p0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -160,7 +162,7 @@
 
     goto :goto_19
 
-    .line 139
+    .line 140
     :cond_27
     invoke-virtual {p0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
@@ -178,11 +180,11 @@
 
     goto :goto_19
 
-    .line 141
+    .line 142
     :catch_34
     move-exception v0
 
-    .line 142
+    .line 143
     const-string/jumbo v0, ""
 
     goto :goto_19
@@ -194,10 +196,10 @@
     .prologue
     const/4 v2, 0x2
 
-    .line 148
+    .line 149
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->b:Landroid/view/View;
 
-    const v1, 0x7f100640
+    const v1, 0x7f10066c
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -207,14 +209,14 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->d:Landroid/support/v7/widget/RecyclerView;
 
-    .line 149
+    .line 150
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->d:Landroid/support/v7/widget/RecyclerView;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setHasFixedSize(Z)V
 
-    .line 151
+    .line 152
     invoke-virtual {p0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -227,13 +229,13 @@
 
     and-int/lit8 v0, v0, 0xf
 
-    .line 152
+    .line 153
     packed-switch v0, :pswitch_data_48
 
-    .line 166
+    .line 167
     iput v2, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->n:I
 
-    .line 170
+    .line 171
     :goto_25
     new-instance v0, Landroid/support/v7/widget/GridLayoutManager;
 
@@ -247,17 +249,17 @@
 
     iput-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->e:Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
-    .line 171
+    .line 172
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->d:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v1, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->e:Landroid/support/v7/widget/RecyclerView$LayoutManager;
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->setLayoutManager(Landroid/support/v7/widget/RecyclerView$LayoutManager;)V
 
-    .line 177
+    .line 178
     return-void
 
-    .line 154
+    .line 155
     :pswitch_3a
     const/4 v0, 0x3
 
@@ -265,25 +267,25 @@
 
     goto :goto_25
 
-    .line 157
+    .line 158
     :pswitch_3e
     iput v2, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->n:I
 
     goto :goto_25
 
-    .line 160
+    .line 161
     :pswitch_41
     iput v2, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->n:I
 
     goto :goto_25
 
-    .line 163
+    .line 164
     :pswitch_44
     iput v2, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->n:I
 
     goto :goto_25
 
-    .line 152
+    .line 153
     nop
 
     :pswitch_data_48
@@ -301,16 +303,16 @@
     .prologue
     const/4 v6, 0x1
 
-    .line 281
+    .line 282
     iget-boolean v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->g:Z
 
     if-ne v0, v6, :cond_6
 
-    .line 458
+    .line 459
     :goto_5
     return-void
 
-    .line 300
+    .line 301
     :cond_6
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->c:Landroid/os/Handler;
 
@@ -320,19 +322,19 @@
 
     invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
-    .line 309
+    .line 310
     const-string/jumbo v0, "mode"
 
     invoke-direct {p0, v0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 310
+    .line 311
     if-nez v0, :cond_1c
 
     const-string/jumbo v0, ""
 
-    .line 311
+    .line 312
     :cond_1c
     const-string/jumbo v1, "tags"
 
@@ -340,21 +342,21 @@
 
     move-result-object v1
 
-    .line 312
+    .line 313
     const-string/jumbo v2, "cat"
 
     invoke-direct {p0, v2}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
-    .line 313
+    .line 314
     const-string/jumbo v3, "list_config"
 
     invoke-direct {p0, v3}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 315
+    .line 316
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -375,7 +377,7 @@
 
     move-result-object v4
 
-    .line 316
+    .line 317
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -406,7 +408,7 @@
 
     move-result-object v4
 
-    .line 317
+    .line 318
     const-string/jumbo v5, "cat"
 
     invoke-virtual {v0, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -415,7 +417,7 @@
 
     if-eqz v5, :cond_11b
 
-    .line 318
+    .line 319
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -448,17 +450,17 @@
 
     move-result-object v0
 
-    .line 324
+    .line 325
     :goto_93
     invoke-virtual {p0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 325
+    .line 326
     if-eqz v1, :cond_163
 
     const-string/jumbo v2, ""
@@ -469,11 +471,11 @@
 
     if-nez v1, :cond_163
 
-    .line 331
+    .line 332
     :goto_a6
     if-lez p1, :cond_c0
 
-    .line 332
+    .line 333
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -496,7 +498,7 @@
 
     move-result-object v0
 
-    .line 335
+    .line 336
     :cond_c0
     iget-object v1, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->a:Ljava/lang/String;
 
@@ -520,10 +522,10 @@
 
     invoke-static {v1, v2}, Lcom/bzbs/util/LogUtil;->a(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 336
+    .line 337
     iput-boolean v6, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->g:Z
 
-    .line 337
+    .line 338
     new-instance v1, Ljava/util/Date;
 
     invoke-direct {v1}, Ljava/util/Date;-><init>()V
@@ -532,12 +534,12 @@
 
     move-result-wide v2
 
-    .line 338
+    .line 339
     new-instance v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     invoke-direct {v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;-><init>()V
 
-    .line 339
+    .line 340
     invoke-virtual {p0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v4
@@ -548,22 +550,22 @@
 
     sget-boolean v4, Lcom/bzbs/data/AppSetting;->Q:Z
 
-    .line 340
+    .line 341
     invoke-virtual {v1, v4}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Z)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v1
 
-    .line 341
+    .line 342
     invoke-virtual {v1, v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Ljava/lang/String;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 342
+    .line 343
     invoke-virtual {p0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -573,7 +575,7 @@
 
     sget-object v1, Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;->a:Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;
 
-    .line 343
+    .line 344
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/HttpRequest$HttpMethod;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
@@ -582,17 +584,17 @@
 
     invoke-direct {v1, p0, v2, v3, p1}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$6;-><init>(Lcom/samsung/privilege/fragment/CampaignListGiftFragment;JI)V
 
-    .line 344
+    .line 345
     invoke-virtual {v0, v1}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a(Lcom/bzbs/lib/http/okhttp/ResponseListener;)Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;
 
     move-result-object v0
 
-    .line 457
+    .line 458
     invoke-virtual {v0}, Lcom/bzbs/lib/http/okhttp/HttpRequest$Builder;->a()Lcom/bzbs/lib/http/okhttp/HttpRequest;
 
     goto/16 :goto_5
 
-    .line 319
+    .line 320
     :cond_11b
     const-string/jumbo v2, "tags"
 
@@ -602,7 +604,7 @@
 
     if-eqz v0, :cond_149
 
-    .line 320
+    .line 321
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -637,7 +639,7 @@
 
     goto/16 :goto_93
 
-    .line 322
+    .line 323
     :cond_149
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -663,7 +665,7 @@
 
     goto/16 :goto_93
 
-    .line 328
+    .line 329
     :cond_163
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -683,7 +685,7 @@
 
     move-result-object v1
 
-    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->t(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v1}, Lcom/bzbs/data/UserLogin;->y(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -732,10 +734,10 @@
     .registers 5
 
     .prologue
-    .line 215
+    .line 216
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->b:Landroid/view/View;
 
-    const v1, 0x7f100111
+    const v1, 0x7f100113
 
     invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
@@ -743,14 +745,14 @@
 
     check-cast v0, Landroid/support/v4/widget/SwipeRefreshLayout;
 
-    .line 216
+    .line 217
     new-instance v1, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$2;
 
     invoke-direct {v1, p0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$2;-><init>(Lcom/samsung/privilege/fragment/CampaignListGiftFragment;)V
 
     invoke-virtual {v0, v1}, Landroid/support/v4/widget/SwipeRefreshLayout;->a(Landroid/support/v4/widget/SwipeRefreshLayout$OnRefreshListener;)V
 
-    .line 223
+    .line 224
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->d:Landroid/support/v7/widget/RecyclerView;
 
     new-instance v1, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$3;
@@ -759,12 +761,12 @@
 
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->addOnScrollListener(Landroid/support/v7/widget/RecyclerView$OnScrollListener;)V
 
-    .line 239
+    .line 240
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->d:Landroid/support/v7/widget/RecyclerView;
 
     new-instance v1, Lcom/bzbs/event/RecyclerItemClickListener;
 
-    .line 240
+    .line 241
     invoke-virtual {p0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v2
@@ -775,10 +777,10 @@
 
     invoke-direct {v1, v2, v3}, Lcom/bzbs/event/RecyclerItemClickListener;-><init>(Landroid/content/Context;Lcom/bzbs/event/RecyclerItemClickListener$OnItemClickListener;)V
 
-    .line 239
+    .line 240
     invoke-virtual {v0, v1}, Landroid/support/v7/widget/RecyclerView;->addOnItemTouchListener(Landroid/support/v7/widget/RecyclerView$OnItemTouchListener;)V
 
-    .line 259
+    .line 260
     return-void
 .end method
 
@@ -818,14 +820,14 @@
     .prologue
     const/4 v3, 0x0
 
-    .line 262
+    .line 263
     const-string/jumbo v0, "cat"
 
     invoke-direct {p0, v0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->a(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 263
+    .line 264
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -852,7 +854,7 @@
 
     move-result-object v0
 
-    .line 264
+    .line 265
     const-string/jumbo v1, ""
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -861,7 +863,7 @@
 
     if-nez v1, :cond_48
 
-    .line 266
+    .line 267
     :try_start_2d
     new-instance v1, Lorg/json/JSONArray;
 
@@ -871,14 +873,14 @@
 
     move-result-object v0
 
-    .line 268
+    .line 269
     new-instance v1, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$CampaignListAdapter;
 
     invoke-direct {v1, p0, v0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$CampaignListAdapter;-><init>(Lcom/samsung/privilege/fragment/CampaignListGiftFragment;Ljava/util/List;)V
 
     iput-object v1, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->f:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$CampaignListAdapter;
 
-    .line 269
+    .line 270
     iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->d:Landroid/support/v7/widget/RecyclerView;
 
     iget-object v1, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->f:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$CampaignListAdapter;
@@ -887,21 +889,21 @@
     :try_end_44
     .catch Ljava/lang/Exception; {:try_start_2d .. :try_end_44} :catch_4c
 
-    .line 274
+    .line 275
     :goto_44
     invoke-direct {p0, v3}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->a(I)V
 
-    .line 278
+    .line 279
     :goto_47
     return-void
 
-    .line 276
+    .line 277
     :cond_48
     invoke-direct {p0, v3}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->a(I)V
 
     goto :goto_47
 
-    .line 270
+    .line 271
     :catch_4c
     move-exception v0
 
@@ -1056,7 +1058,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1071,7 +1073,7 @@
 
     .prologue
     .line 77
-    const v0, 0x7f04013a
+    const v0, 0x7f040141
 
     const/4 v1, 0x0
 
@@ -1091,24 +1093,26 @@
     .registers 1
 
     .prologue
-    .line 116
+    .line 117
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onDestroy()V
 
-    .line 117
+    .line 118
     return-void
 .end method
 
 .method public onPause()V
-    .registers 1
+    .registers 2
 
     .prologue
-    .line 109
+    .line 110
     invoke-super {p0}, Landroid/support/v4/app/Fragment;->onPause()V
 
-    .line 111
-    invoke-static {}, Lcom/bzbs/event/LoginEvents;->a()V
-
     .line 112
+    iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->o:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$UserLoginListener;
+
+    invoke-static {v0}, Lcom/bzbs/event/LoginEvents;->b(Lcom/bzbs/event/LoginEvents$LoginListener;)V
+
+    .line 113
     return-void
 .end method
 
@@ -1126,42 +1130,47 @@
 
     invoke-direct {v0, p0, v1}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment$UserLoginListener;-><init>(Lcom/samsung/privilege/fragment/CampaignListGiftFragment;Lcom/samsung/privilege/fragment/CampaignListGiftFragment$1;)V
 
+    iput-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->o:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$UserLoginListener;
+
+    .line 96
+    iget-object v0, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->o:Lcom/samsung/privilege/fragment/CampaignListGiftFragment$UserLoginListener;
+
     invoke-static {v0}, Lcom/bzbs/event/LoginEvents;->a(Lcom/bzbs/event/LoginEvents$LoginListener;)V
 
-    .line 98
-    :try_start_c
+    .line 99
+    :try_start_10
     invoke-virtual {p0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->getActivity()Landroid/support/v4/app/FragmentActivity;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 99
+    .line 100
     iget-object v1, p0, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->m:Ljava/lang/String;
 
     invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_1f
+    if-nez v0, :cond_23
 
-    .line 100
+    .line 101
     invoke-direct {p0}, Lcom/samsung/privilege/fragment/CampaignListGiftFragment;->c()V
-    :try_end_1f
-    .catch Ljava/lang/Exception; {:try_start_c .. :try_end_1f} :catch_20
+    :try_end_23
+    .catch Ljava/lang/Exception; {:try_start_10 .. :try_end_23} :catch_24
 
-    .line 105
-    :cond_1f
-    :goto_1f
+    .line 106
+    :cond_23
+    :goto_23
     return-void
 
-    .line 102
-    :catch_20
+    .line 103
+    :catch_24
     move-exception v0
 
-    goto :goto_1f
+    goto :goto_23
 .end method
 
 .method public onViewCreated(Landroid/view/View;Landroid/os/Bundle;)V

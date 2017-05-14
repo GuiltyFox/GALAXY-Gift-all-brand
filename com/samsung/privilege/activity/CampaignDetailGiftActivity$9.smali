@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->l()V
+    value = Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->k()V
 .end annotation
 
 
@@ -23,7 +23,7 @@
     .registers 3
 
     .prologue
-    .line 790
+    .line 825
     iput-object p1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$9;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
     iput-object p2, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$9;->a:Landroid/widget/TextView;
@@ -39,12 +39,12 @@
     .registers 6
 
     .prologue
-    const v3, 0x7f090364
+    const v3, 0x7f090380
 
-    .line 793
+    .line 828
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$9;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    const v1, 0x7f100105
+    const v1, 0x7f100107
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->findViewById(I)Landroid/view/View;
 
@@ -52,7 +52,7 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    .line 794
+    .line 829
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$9;->a:Landroid/widget/TextView;
 
     invoke-virtual {v1}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
@@ -75,17 +75,17 @@
 
     if-eqz v1, :cond_38
 
-    .line 795
+    .line 830
     const/16 v1, 0x3e8
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 796
+    .line 831
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$9;->a:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$9;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;
 
-    const v2, 0x7f090349
+    const v2, 0x7f090362
 
     invoke-virtual {v1, v2}, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;->getString(I)Ljava/lang/String;
 
@@ -93,17 +93,17 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 801
+    .line 836
     :goto_37
     return-void
 
-    .line 798
+    .line 833
     :cond_38
     const/4 v1, 0x3
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 799
+    .line 834
     iget-object v0, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$9;->a:Landroid/widget/TextView;
 
     iget-object v1, p0, Lcom/samsung/privilege/activity/CampaignDetailGiftActivity$9;->b:Lcom/samsung/privilege/activity/CampaignDetailGiftActivity;

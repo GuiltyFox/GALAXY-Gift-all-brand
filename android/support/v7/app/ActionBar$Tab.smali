@@ -3,12 +3,17 @@
 .source "ActionBar.java"
 
 
+# annotations
+.annotation runtime Ljava/lang/Deprecated;
+.end annotation
+
+
 # direct methods
 .method public constructor <init>()V
     .registers 1
 
     .prologue
-    .line 1129
+    .line 1145
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -78,7 +78,7 @@
 
     iget-object v2, v2, Lcom/bzbs/marketplace/fragment/MarketPlaceListFragment;->a:Landroid/app/Activity;
 
-    invoke-static {v2}, Lcom/bzbs/data/UserLogin;->f(Landroid/content/Context;)Ljava/lang/String;
+    invoke-static {v2}, Lcom/bzbs/data/UserLogin;->j(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v2
 

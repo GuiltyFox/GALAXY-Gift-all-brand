@@ -41,3 +41,21 @@
     .line 42
     return-object v0
 .end method
+
+.method public b(Landroid/content/ComponentName;)Landroid/content/Intent;
+    .registers 4
+
+    .prologue
+    .line 58
+    invoke-virtual {p0, p1}, Landroid/support/v4/content/IntentCompat$IntentCompatImplBase;->a(Landroid/content/ComponentName;)Landroid/content/Intent;
+
+    move-result-object v0
+
+    .line 59
+    const v1, 0x10008000
+
+    invoke-virtual {v0, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    .line 61
+    return-object v0
+.end method

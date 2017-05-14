@@ -84,3 +84,11 @@
     .line 422
     return-void
 .end method
+
+.method public d(Ljava/lang/String;)V
+    .registers 2
+
+    .prologue
+    .line 427
+    return-void
+.end method

@@ -92,7 +92,7 @@
     iput-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->a:Landroid/os/Handler;
 
     .line 72
-    const v0, 0x7f090276
+    const v0, 0x7f090277
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getString(I)Ljava/lang/String;
 
@@ -101,7 +101,7 @@
     invoke-virtual {p0, v0, v3}, Lcom/bzbs/marketplace/activity/ReviewActivity;->a(Ljava/lang/String;Z)V
 
     .line 73
-    const v0, 0x7f020274
+    const v0, 0x7f020277
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->a(I)V
 
@@ -217,7 +217,7 @@
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
     .line 46
-    const v0, 0x7f04004e
+    const v0, 0x7f040050
 
     return v0
 .end method
@@ -282,7 +282,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f10018e
+    const v1, 0x7f100193
 
     iget-object v2, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->D:Landroid/support/v4/app/Fragment;
 
@@ -292,7 +292,7 @@
     move-result-object v0
 
     .line 129
-    invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->a()I
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentTransaction;->b()I
 
     .line 130
     return-void
@@ -320,7 +320,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/support/v4/app/FragmentManager;->e()I
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentManager;->d()I
 
     move-result v0
 
@@ -331,7 +331,7 @@
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/support/v4/app/FragmentManager;->c()V
+    invoke-virtual {v0}, Landroid/support/v4/app/FragmentManager;->b()V
 
     goto :goto_7
 
@@ -346,10 +346,10 @@
     .registers 3
 
     .prologue
-    .line 200
+    .line 210
     invoke-super {p0}, Lcom/bzbs/marketplace/base/BaseAppCompatActivity;->onResume()V
 
-    .line 201
+    .line 211
     const-string/jumbo v0, "connectivity"
 
     invoke-virtual {p0, v0}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
@@ -358,17 +358,17 @@
 
     check-cast v0, Landroid/net/ConnectivityManager;
 
-    .line 202
+    .line 212
     invoke-virtual {v0}, Landroid/net/ConnectivityManager;->getActiveNetworkInfo()Landroid/net/NetworkInfo;
 
     move-result-object v0
 
     if-nez v0, :cond_1e
 
-    .line 203
+    .line 213
     iget-object v0, p0, Lcom/bzbs/marketplace/activity/ReviewActivity;->g:Lcom/bzbs/marketplace/base/BaseAppCompatActivity;
 
-    const v1, 0x7f090251
+    const v1, 0x7f090252
 
     invoke-virtual {p0, v1}, Lcom/bzbs/marketplace/activity/ReviewActivity;->getString(I)Ljava/lang/String;
 
@@ -376,7 +376,7 @@
 
     invoke-static {v0, v1}, Lcom/bzbs/util/DialogUtil;->b(Landroid/content/Context;Ljava/lang/String;)V
 
-    .line 205
+    .line 215
     :cond_1e
     return-void
 .end method

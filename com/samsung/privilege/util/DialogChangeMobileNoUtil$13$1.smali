@@ -69,7 +69,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$13;->g:Landroid/widget/RelativeLayout;
 
-    const v1, 0x7f020056
+    const v1, 0x7f020059
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setBackgroundResource(I)V
 
@@ -78,7 +78,7 @@
 
     iget-object v0, v0, Lcom/samsung/privilege/util/DialogChangeMobileNoUtil$13;->e:Landroid/widget/RelativeLayout;
 
-    const v1, 0x7f020366
+    const v1, 0x7f02036b
 
     invoke-virtual {v0, v1}, Landroid/widget/RelativeLayout;->setBackgroundResource(I)V
 

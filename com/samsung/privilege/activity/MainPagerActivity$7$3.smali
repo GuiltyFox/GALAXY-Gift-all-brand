@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 772
+    .line 796
     iput-object p1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7$3;->a:Lcom/samsung/privilege/activity/MainPagerActivity$7;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,12 +35,12 @@
     .registers 3
 
     .prologue
-    .line 774
+    .line 798
     iget-object v0, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7$3;->a:Lcom/samsung/privilege/activity/MainPagerActivity$7;
 
     iget-object v0, v0, Lcom/samsung/privilege/activity/MainPagerActivity$7;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
-    const v1, 0x7f1000b4
+    const v1, 0x7f1000b6
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/MainPagerActivity;->findViewById(I)Landroid/view/View;
 
@@ -48,27 +48,27 @@
 
     check-cast v0, Landroid/widget/ImageView;
 
-    .line 775
+    .line 799
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7$3;->a:Lcom/samsung/privilege/activity/MainPagerActivity$7;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/MainPagerActivity$7;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->registerForContextMenu(Landroid/view/View;)V
 
-    .line 776
+    .line 800
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7$3;->a:Lcom/samsung/privilege/activity/MainPagerActivity$7;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/MainPagerActivity$7;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->openContextMenu(Landroid/view/View;)V
 
-    .line 777
+    .line 801
     iget-object v1, p0, Lcom/samsung/privilege/activity/MainPagerActivity$7$3;->a:Lcom/samsung/privilege/activity/MainPagerActivity$7;
 
     iget-object v1, v1, Lcom/samsung/privilege/activity/MainPagerActivity$7;->a:Lcom/samsung/privilege/activity/MainPagerActivity;
 
     invoke-virtual {v1, v0}, Lcom/samsung/privilege/activity/MainPagerActivity;->unregisterForContextMenu(Landroid/view/View;)V
 
-    .line 778
+    .line 802
     return-void
 .end method

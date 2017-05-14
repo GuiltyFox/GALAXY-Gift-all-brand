@@ -100,7 +100,7 @@
 
     move-result-object v0
 
-    const v1, 0x7f0400da
+    const v1, 0x7f0400dc
 
     const/4 v2, 0x0
 
@@ -193,7 +193,7 @@
 
     iget-object v3, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    const v4, 0x7f090389
+    const v4, 0x7f0903a5
 
     invoke-virtual {v3, v4}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 
@@ -273,7 +273,7 @@
 
     iget-object v5, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    const v6, 0x7f0903b3
+    const v6, 0x7f0903d4
 
     invoke-virtual {v5, v6}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 
@@ -353,7 +353,7 @@
 
     iget-object v4, p0, Lcom/samsung/privilege/activity/CardsUsedActivity$HistoryAdapter;->b:Lcom/samsung/privilege/activity/CardsUsedActivity;
 
-    const v5, 0x7f0903a4
+    const v5, 0x7f0903c1
 
     invoke-virtual {v4, v5}, Lcom/samsung/privilege/activity/CardsUsedActivity;->getString(I)Ljava/lang/String;
 
@@ -404,7 +404,7 @@
     .line 834
     iget-object v1, p1, Lcom/samsung/privilege/activity/CardsUsedActivity$HistoryAdapter$HistoryViewHolder;->g:Landroid/widget/ImageView;
 
-    const v2, 0x7f020280
+    const v2, 0x7f020283
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -453,7 +453,7 @@
     .line 842
     iget-object v1, p1, Lcom/samsung/privilege/activity/CardsUsedActivity$HistoryAdapter$HistoryViewHolder;->g:Landroid/widget/ImageView;
 
-    const v2, 0x7f020281
+    const v2, 0x7f020284
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 

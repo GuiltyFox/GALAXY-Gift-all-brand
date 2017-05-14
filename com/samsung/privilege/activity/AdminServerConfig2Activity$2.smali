@@ -21,7 +21,7 @@
     .registers 2
 
     .prologue
-    .line 125
+    .line 128
     iput-object p1, p0, Lcom/samsung/privilege/activity/AdminServerConfig2Activity$2;->a:Lcom/samsung/privilege/activity/AdminServerConfig2Activity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,13 +35,13 @@
     .registers 6
 
     .prologue
-    .line 127
+    .line 130
     invoke-interface {p1}, Landroid/content/DialogInterface;->cancel()V
 
-    .line 129
+    .line 132
     iget-object v0, p0, Lcom/samsung/privilege/activity/AdminServerConfig2Activity$2;->a:Lcom/samsung/privilege/activity/AdminServerConfig2Activity;
 
-    const v1, 0x7f10022e
+    const v1, 0x7f100249
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -59,10 +59,10 @@
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->R:Ljava/lang/String;
 
-    .line 130
+    .line 133
     iget-object v0, p0, Lcom/samsung/privilege/activity/AdminServerConfig2Activity$2;->a:Lcom/samsung/privilege/activity/AdminServerConfig2Activity;
 
-    const v1, 0x7f10022f
+    const v1, 0x7f10024a
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -80,10 +80,10 @@
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->S:Ljava/lang/String;
 
-    .line 131
+    .line 134
     iget-object v0, p0, Lcom/samsung/privilege/activity/AdminServerConfig2Activity$2;->a:Lcom/samsung/privilege/activity/AdminServerConfig2Activity;
 
-    const v1, 0x7f100230
+    const v1, 0x7f10024b
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -101,10 +101,10 @@
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->T:Ljava/lang/String;
 
-    .line 132
+    .line 135
     iget-object v0, p0, Lcom/samsung/privilege/activity/AdminServerConfig2Activity$2;->a:Lcom/samsung/privilege/activity/AdminServerConfig2Activity;
 
-    const v1, 0x7f100231
+    const v1, 0x7f10024c
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -122,7 +122,7 @@
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->V:Ljava/lang/String;
 
-    .line 133
+    .line 136
     iget-object v0, p0, Lcom/samsung/privilege/activity/AdminServerConfig2Activity$2;->a:Lcom/samsung/privilege/activity/AdminServerConfig2Activity;
 
     invoke-virtual {v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->getApplicationContext()Landroid/content/Context;
@@ -131,7 +131,7 @@
 
     iget-object v0, p0, Lcom/samsung/privilege/activity/AdminServerConfig2Activity$2;->a:Lcom/samsung/privilege/activity/AdminServerConfig2Activity;
 
-    const v2, 0x7f100232
+    const v2, 0x7f10024d
 
     invoke-virtual {v0, v2}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -147,12 +147,12 @@
 
     move-result-object v0
 
-    invoke-static {v1, v0}, Lcom/bzbs/data/UserLogin;->m(Landroid/content/Context;Ljava/lang/String;)Z
+    invoke-static {v1, v0}, Lcom/bzbs/data/UserLogin;->n(Landroid/content/Context;Ljava/lang/String;)Z
 
-    .line 138
+    .line 141
     iget-object v0, p0, Lcom/samsung/privilege/activity/AdminServerConfig2Activity$2;->a:Lcom/samsung/privilege/activity/AdminServerConfig2Activity;
 
-    const v1, 0x7f100233
+    const v1, 0x7f10024e
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -170,10 +170,10 @@
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->q:Ljava/lang/String;
 
-    .line 139
+    .line 142
     iget-object v0, p0, Lcom/samsung/privilege/activity/AdminServerConfig2Activity$2;->a:Lcom/samsung/privilege/activity/AdminServerConfig2Activity;
 
-    const v1, 0x7f100234
+    const v1, 0x7f10024f
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -191,10 +191,10 @@
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->r:Ljava/lang/String;
 
-    .line 141
+    .line 144
     iget-object v0, p0, Lcom/samsung/privilege/activity/AdminServerConfig2Activity$2;->a:Lcom/samsung/privilege/activity/AdminServerConfig2Activity;
 
-    const v1, 0x7f100235
+    const v1, 0x7f100250
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -212,10 +212,10 @@
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->t:Ljava/lang/String;
 
-    .line 142
+    .line 145
     iget-object v0, p0, Lcom/samsung/privilege/activity/AdminServerConfig2Activity$2;->a:Lcom/samsung/privilege/activity/AdminServerConfig2Activity;
 
-    const v1, 0x7f100236
+    const v1, 0x7f100251
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -233,10 +233,10 @@
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->y:Ljava/lang/String;
 
-    .line 143
+    .line 146
     iget-object v0, p0, Lcom/samsung/privilege/activity/AdminServerConfig2Activity$2;->a:Lcom/samsung/privilege/activity/AdminServerConfig2Activity;
 
-    const v1, 0x7f100237
+    const v1, 0x7f100252
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -254,10 +254,10 @@
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->z:Ljava/lang/String;
 
-    .line 145
+    .line 148
     iget-object v0, p0, Lcom/samsung/privilege/activity/AdminServerConfig2Activity$2;->a:Lcom/samsung/privilege/activity/AdminServerConfig2Activity;
 
-    const v1, 0x7f100238
+    const v1, 0x7f100253
 
     invoke-virtual {v0, v1}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->findViewById(I)Landroid/view/View;
 
@@ -275,11 +275,11 @@
 
     sput-object v0, Lcom/bzbs/data/AppSetting;->B:Ljava/lang/String;
 
-    .line 155
+    .line 158
     iget-object v0, p0, Lcom/samsung/privilege/activity/AdminServerConfig2Activity$2;->a:Lcom/samsung/privilege/activity/AdminServerConfig2Activity;
 
     invoke-static {v0}, Lcom/samsung/privilege/activity/AdminServerConfig2Activity;->a(Lcom/samsung/privilege/activity/AdminServerConfig2Activity;)V
 
-    .line 156
+    .line 159
     return-void
 .end method
