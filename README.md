@@ -8,6 +8,7 @@ Regex:
 const-string v$2, "GT-I9100"
 const-string v$2, "SM-N920C"
 const-string v$2, "SM-G935F"
+const-string v$2, "SM-G955FD"
 
 Normal:
 invoke-virtual {v0}, Landroid/telephony/TelephonyManager;->getDeviceId()Ljava/lang/String;
